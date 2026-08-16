@@ -1,0 +1,27 @@
+{
+  "name": "dutchs-doggy-daycare",
+  "version": "1.0.0",
+  "description": "Dutch's Doggy Daycare — a three-timer dog care game.",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "check": "awk '/<script>/{flag=1;next}/<\\/script>/{flag=0}flag' www/index.html > /tmp/game.js && node --check /tmp/game.js && python3 scripts/validate.py",
+    "playtest": "node scripts/playtest.js 120",
+    "probe:save": "node scripts/save-probe.js",
+    "probe:layout": "node scripts/layout-probe.js",
+    "verify": "npm run check && npm run playtest && npm run probe:save && npm run probe:layout"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
+    "@capacitor/ios": "^8.5.0",
+    "@revenuecat/purchases-capacitor": "^13.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

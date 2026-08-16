@@ -1,0 +1,180 @@
+# Codemagic CI/CD for Dutch's Doggy Daycare.
+#
+# Same shape as the ScrubbyBob / Preceptor MCCQE pipelines, with the two
+# differences that matter for a hand-written game:
+#   1. No bundler build — the game is a self-contained HTML file, so webDir is
+#      `www` rather than `dist` and there is no Vite step.
+#   2. Every workflow runs scripts/bundle-assets.sh first. That downloads all of
+#      the game art plus the icon and splash from the CDN, rewrites the URLs to
+#      relative paths, generates the icon/splash sets and syncs. It is why the
+#      shipped binary plays in airplane mode even though the repo does not carry
+#      the binaries: CI runners can reach the CDN, the environment that prepared
+#      this repo could not.
+#
+# After signup: Add application -> connect this Git repo -> it auto-detects this
+# file -> Start build. Artifacts (APK / AAB / IPA) appear under each build.
+#
+# REMINDER: bump versionCode in android/app/build.gradle by +1 before every Play
+# upload, or Play rejects the .aab as a duplicate.
+
+definitions:
+  scripts:
+    - &bundle_assets
+      name: Bundle remote assets into the app (offline build)
+      script: |
+        # Best effort. macOS runners may refuse pip under PEP 668; the script
+        # falls back to `sips`, so this must never fail a build.
+        python3 -m pip install --quiet --disable-pip-version-check Pillow \
+          || python3 -m pip install --quiet --disable-pip-version-check --break-system-packages Pillow \
+          || echo "Pillow unavailable — bundle-assets.sh will use sips instead"
+        chmod +x ./scripts/bundle-assets.sh
+        ./scripts/bundle-assets.sh
+    - &validate
+      name: Validate (IP scan, portrait audit, monetization, offline)
+      script: |
+        awk '/<script>/{flag=1;next}/<\/script>/{flag=0}flag' www/index.html > /tmp/game.js
+        node --check /tmp/game.js
+        python3 scripts/validate.py
+
+workflows:
+  android-debug:
+    name: Dutch Android (debug APK)
+    max_build_duration: 30
+    instance_type: linux_x2
+    environment:
+      # Node 22, not 20: the Capacitor 8 CLI declares engines >=22.0.0 and exits
+      # fatally on older runtimes, which kills `cap sync` at the end of the
+      # bundle step. The error message never mentions Node.
+      node: 22
+      java: 17
+    scripts:
+      - name: Install JS dependencies
+        script: npm install --no-audit --no-fund
+      - *bundle_assets
+      - *validate
+      - name: Build debug APK
+        script: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew assembleDebug
+    artifacts:
+      - android/app/build/outputs/**/*.apk
+
+  android-release:
+    name: Dutch Android (signed release AAB)
+    max_build_duration: 30
+    instance_type: linux_x2
+    environment:
+      node: 22
+      java: 17
+      # No `groups:` yet. Codemagic fails a build at pre-flight if the yaml names
+      # a variable group that does not exist ("unknown variable group"), which
+      # kills the workflow before a single step runs. This stays commented until
+      # the group exists in the UI.
+      # Once dutch_signing exists in the Codemagic UI, uncomment:
+      #   groups:
+      #     - dutch_signing
+    scripts:
+      - name: Decode keystore from secret
+        # Skips cleanly when the vars are absent: build.gradle then leaves the
+        # release unsigned instead of failing, so this workflow still produces
+        # an installable APK before signing is set up.
+        script: |
+          if [ -z "${DUTCH_KEYSTORE_BASE64:-}" ]; then
+            echo "No keystore configured — release will be built unsigned."
+          else
+            echo "$DUTCH_KEYSTORE_BASE64" | base64 --decode > "$CM_BUILD_DIR/dutch-release.jks"
+            echo "DUTCH_STORE_FILE=$CM_BUILD_DIR/dutch-release.jks" >> "$CM_ENV"
+          fi
+      - name: Install JS dependencies
+        script: npm install --no-audit --no-fund
+      - *bundle_assets
+      - *validate
+      - name: Build signed release APK + AAB
+        script: |
+          cd android
+          chmod +x ./gradlew
+          ./gradlew assembleRelease bundleRelease
+    artifacts:
+      - android/app/build/outputs/**/*.aab
+      - android/app/build/outputs/**/*.apk
+
+# Codemagic UI -> your app -> Environment variables -> group "dutch_signing":
+#   DUTCH_KEYSTORE_BASE64 = base64 of your .jks   (mark Secure)
+#       macOS/Linux:  base64 -i dutch-release.jks | pbcopy
+#   DUTCH_STORE_PASSWORD  = your store password   (Secure)
+#   DUTCH_KEY_ALIAS       = dutchgolden
+#   DUTCH_KEY_PASSWORD    = your key password     (Secure)
+#
+# android/app/build.gradle already reads those env vars for the release
+# signingConfig (DUTCH_* names so this keystore stays isolated from the other
+# apps'). Nothing further to wire — just create the env group above and
+# uncomment the `groups:` block. If the vars are absent the release build is
+# left unsigned rather than failing, so android-debug always works with no setup.
+
+  ios-release:
+    name: Dutch iOS (TestFlight / App Store)
+    # iOS MUST build on macOS. Free tier includes limited Mac minutes.
+    instance_type: mac_mini_m2
+    max_build_duration: 60
+    integrations:
+      app_store_connect: preceptor_appstore   # reuse the existing API key in the Codemagic UI
+    environment:
+      node: 22
+      xcode: latest
+      # No `cocoapods:` — Capacitor 8 uses Swift Package Manager. This project
+      # has no Podfile and no separate .xcworkspace; Xcode resolves the
+      # CapApp-SPM package during the build.
+      groups:
+        # Deliberately shared with the other apps in this Codemagic account.
+        # IOS_CERT_KEY is an Apple *account*-level distribution signing key, not
+        # an app-level one — one certificate signs many apps, and Apple caps how
+        # many you can create, so sharing it is correct rather than a shortcut.
+        # If this project ever moves to its own Codemagic app, create a group
+        # there with the same IOS_CERT_KEY value and rename this line.
+        - preceptor_mccqe_ios
+      vars:
+        BUNDLE_ID: "com.dhoota.dutchgolden"
+    scripts:
+      - name: Install JS dependencies
+        script: npm install --no-audit --no-fund
+      - *bundle_assets
+      - *validate
+      - name: Ensure iOS platform exists
+        script: |
+          if [ ! -d "ios" ]; then npx cap add ios; fi
+      - name: Set unique iOS build number
+        script: |
+          cd ios/App
+          agvtool new-version -all "$BUILD_NUMBER"
+      - name: Restore persistent iOS signing key
+        # Persistent key decoded per build rather than regenerated — Apple caps
+        # distribution certs, and regenerating eventually fails with "requires a
+        # provisioning profile".
+        script: |
+          if [ -z "$IOS_CERT_KEY" ]; then
+            echo "IOS_CERT_KEY not set — check the preceptor_mccqe_ios env group."; exit 1
+          fi
+          echo "$IOS_CERT_KEY" | base64 --decode > "$CM_BUILD_DIR/ios_cert.key"
+      - name: Set up code signing
+        script: |
+          keychain initialize
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --certificate-key=@file:"$CM_BUILD_DIR/ios_cert.key" \
+            --create
+          keychain add-certificates
+          xcode-project use-profiles
+      - name: Build signed IPA
+        # --project, not --workspace: an SPM-based Capacitor project has no
+        # standalone .xcworkspace to point at.
+        script: |
+          xcode-project build-ipa \
+            --project "ios/App/App.xcodeproj" \
+            --scheme "App"
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      app_store_connect:
+        auth: integration
+        submit_to_testflight: true

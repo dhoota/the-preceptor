@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0f3b3d">
+<title>Dutch's Doggy Daycare</title>
+<style>
+/* ==========================================================================
+   Dutch's Doggy Daycare — one self-contained file, no bundler, no framework.
+   Everything is greppable in one place on purpose.
+   ========================================================================== */
+:root{
+  --cream:#fdf6e9; --cream2:#f6e9d2; --ink:#2b2118; --ink2:#6b5946;
+  --teal:#0f3b3d; --teal2:#1b5f5c; --teal3:#2f8f86;
+  --gold:#f2b134; --gold2:#e08e26; --rose:#e05a5a; --leaf:#5aa860;
+  --sky:#7fc4d8; --plum:#7d5ba6;
+  --shadow:0 6px 0 rgba(0,0,0,.18); --soft:0 8px 26px rgba(0,0,0,.20);
+  --r:18px; --r2:26px;
+  --safeT:env(safe-area-inset-top,0px); --safeB:env(safe-area-inset-bottom,0px);
+  --bg:var(--cream); --panel:#fffaf0; --line:rgba(43,33,24,.12);
+}
+body.thNight{ --bg:#141b2b; --panel:#1e2740; --cream:#141b2b; --cream2:#1a2237;
+  --ink:#f0e9dc; --ink2:#b6aa96; --line:rgba(255,255,255,.14); }
+body.thMeadow{ --bg:#eef7e6; --panel:#fbfff5; --cream:#eef7e6; --cream2:#dcecd0;
+  --teal:#2c5a2e; --teal2:#3f7a41; --teal3:#63a765; }
+body.thSunset{ --bg:#fdeee4; --panel:#fff6ee; --cream:#fdeee4; --cream2:#f8ddca;
+  --teal:#7a3b2e; --teal2:#a4523d; --teal3:#d0764f; }
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;height:100%;overflow:hidden;overscroll-behavior:none}
+body{
+  font-family:"Nunito",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  background:var(--bg); color:var(--ink);
+  -webkit-user-select:none;user-select:none;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;-webkit-user-drag:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+
+#app{position:fixed;inset:0;display:flex;flex-direction:column;overflow:hidden}
+.scr{position:absolute;inset:0;display:none;flex-direction:column;overflow:hidden}
+.scr.on{display:flex}
+.pad{padding-top:calc(var(--safeT) + 8px);padding-bottom:calc(var(--safeB) + 8px)}
+.scroll{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;flex:1;min-height:0}
+
+/* ---- generic chrome ---- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--teal3);color:#fff;border-radius:var(--r);
+  padding:13px 20px;font-weight:800;font-size:16px;letter-spacing:.2px;
+  box-shadow:var(--shadow);transition:transform .08s ease, filter .12s ease;
+  min-height:48px;
+}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.btn.gold{background:var(--gold);color:#3a2a08}
+.btn.rose{background:var(--rose)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:none;border:2px solid var(--line)}
+.btn.wide{width:100%}
+.btn[disabled]{filter:grayscale(.7) brightness(.9);opacity:.65;pointer-events:none}
+.card{background:var(--panel);border-radius:var(--r2);box-shadow:var(--soft);padding:16px}
+.h1{font-size:clamp(24px,6.5vw,38px);font-weight:900;line-height:1.05;margin:0}
+.h2{font-size:clamp(17px,4.4vw,22px);font-weight:900;margin:0}
+.sub{color:var(--ink2);font-size:14px;font-weight:600;line-height:1.45}
+.row{display:flex;align-items:center;gap:10px}
+.sp{flex:1}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--cream2);
+  border-radius:999px;padding:6px 12px;font-weight:800;font-size:14px}
+.pill img{width:20px;height:20px;object-fit:contain}
+.tag{font-size:11px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;
+  padding:3px 9px;border-radius:999px;background:var(--cream2);color:var(--ink2)}
+
+/* ---- title ---- */
+#titleScr{background:var(--bg)}
+#titleBg{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;opacity:.98}
+#titleVeil{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(15,59,61,.10) 0%,rgba(15,59,61,.02) 38%,rgba(15,59,61,.72) 100%)}
+#titleInner{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;
+  padding:calc(var(--safeT) + 14px) 18px calc(var(--safeB) + 18px)}
+#logo{text-align:center;margin-top:6px}
+#logo .l1{font-size:clamp(15px,4vw,20px);font-weight:900;letter-spacing:3px;
+  text-transform:uppercase;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+#logo .l2{font-size:clamp(34px,10vw,58px);font-weight:900;line-height:.95;color:#fff;
+  text-shadow:0 4px 0 var(--teal),0 8px 22px rgba(0,0,0,.45);margin-top:2px}
+#titleDutch{width:min(58%,240px);margin:8px auto 0;object-fit:contain;
+  filter:drop-shadow(0 12px 24px rgba(0,0,0,.35));animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@media (max-height:700px){ #titleDutch{width:min(42%,170px)} }
+#titleMenu{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+#titleMenu .btn{font-size:18px;padding:16px}
+.menuGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.menuGrid .btn{flex-direction:column;gap:4px;font-size:13px;padding:12px 6px;
+  background:rgba(255,255,255,.92);color:var(--teal)}
+.menuGrid .btn .ic{font-size:22px;line-height:1}
+
+/* ---- top HUD ---- */
+#topbar{display:flex;align-items:center;gap:8px;padding:calc(var(--safeT) + 8px) 12px 8px;
+  background:linear-gradient(180deg,var(--panel),rgba(255,250,240,0));z-index:5;flex:0 0 auto}
+#topbar .pill{background:rgba(0,0,0,.06)}
+#dayChip{font-weight:900;font-size:15px}
+#phaseChip{font-size:11px}
+
+/* corner timer ring — the thing the whole game hangs off */
+#clockWrap{position:relative;width:62px;height:62px;flex:0 0 auto}
+#clockWrap svg{transform:rotate(-90deg);display:block}
+#clockRing{transition:stroke-dashoffset .25s linear, stroke .3s ease}
+#clockTxt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:17px;font-variant-numeric:tabular-nums}
+#clockWrap.warn #clockTxt{color:var(--gold2)}
+#clockWrap.crit #clockTxt{color:var(--rose)}
+#clockWrap.crit{animation:pulse .7s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+
+/* care meter */
+#careWrap{flex:1;min-width:60px}
+#careBar{height:12px;border-radius:999px;background:rgba(0,0,0,.12);overflow:hidden}
+#careFill{height:100%;width:100%;border-radius:999px;
+  background:linear-gradient(90deg,var(--leaf),var(--teal3));transition:width .3s ease,background .3s ease}
+#careFill.low{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+#careFill.crit{background:linear-gradient(90deg,var(--rose),#b83b3b)}
+
+/* ---- play field ---- */
+#playScr{background:var(--bg)}
+#fieldBg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+#playInner{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-height:0}
+#dogZone{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;
+  display:flex;flex-wrap:wrap;align-content:flex-start;justify-content:center;
+  gap:10px;padding:6px 10px 10px}
+
+.dog{position:relative;width:calc(50% - 5px);max-width:190px;
+  background:var(--panel);border-radius:var(--r2);box-shadow:var(--soft);
+  padding:8px;display:flex;flex-direction:column;align-items:center;gap:6px;
+  border:3px solid transparent;transition:transform .12s ease,border-color .15s ease,opacity .3s ease}
+.dog.target{border-color:var(--gold);transform:scale(1.03)}
+.dog.done{opacity:.55}
+.dog.pop{animation:pop .42s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.13)}100%{transform:scale(1)}}
+.dog.shake{animation:shake .34s ease}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.dog .por{width:100%;aspect-ratio:1/1;border-radius:var(--r);object-fit:cover;background:var(--cream2)}
+.dog .nm{font-weight:900;font-size:13px;line-height:1.1;text-align:center}
+.dog .br{font-size:10px;font-weight:700;color:var(--ink2);text-align:center;line-height:1.1}
+.dog .ring{position:absolute;top:6px;right:6px;width:36px;height:36px}
+.dog .ring svg{transform:rotate(-90deg)}
+.want{position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+  background:#fff;border-radius:14px;padding:4px;box-shadow:0 4px 12px rgba(0,0,0,.22);
+  border:2px solid var(--gold);display:flex;align-items:center;gap:4px;z-index:3}
+.want img{width:30px;height:30px;object-fit:contain}
+.badge{position:absolute;top:6px;left:6px;font-size:9px;font-weight:900;
+  padding:3px 7px;border-radius:999px;background:var(--rose);color:#fff;letter-spacing:.4px}
+.badge.ok{background:var(--leaf)}
+.badge.warn{background:var(--gold2)}
+.stateIc{position:absolute;bottom:44px;right:8px;font-size:22px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+
+/* ---- tray ---- */
+#trayZone{flex:0 0 auto;background:var(--panel);border-radius:var(--r2) var(--r2) 0 0;
+  box-shadow:0 -6px 22px rgba(0,0,0,.14);padding:10px 8px calc(var(--safeB) + 10px);z-index:6}
+#trayHint{text-align:center;font-size:12px;font-weight:800;color:var(--ink2);margin-bottom:6px;min-height:16px}
+#tray{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.item{width:62px;height:62px;border-radius:var(--r);background:var(--cream2);
+  display:flex;align-items:center;justify-content:center;position:relative;
+  box-shadow:0 3px 0 rgba(0,0,0,.14);transition:transform .1s ease,box-shadow .1s ease}
+.item img{width:48px;height:48px;object-fit:contain;pointer-events:none}
+.item:active{transform:translateY(2px)}
+.item.sel{transform:translateY(-8px) scale(1.08);box-shadow:0 8px 0 var(--gold2);background:#fff}
+.item .lbl{position:absolute;bottom:-3px;left:0;right:0;text-align:center;font-size:8px;
+  font-weight:900;color:var(--ink2);text-transform:uppercase;letter-spacing:.3px}
+#ghost{position:fixed;width:64px;height:64px;pointer-events:none;z-index:99;
+  transform:translate(-50%,-50%);display:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+#ghost img{width:100%;height:100%;object-fit:contain}
+
+/* boost rail */
+#boostRail{display:flex;justify-content:center;gap:8px;margin-top:8px}
+.boostBtn{position:relative;width:52px;height:52px;border-radius:16px;background:var(--cream2);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 rgba(0,0,0,.14)}
+.boostBtn img{width:36px;height:36px;object-fit:contain}
+.boostBtn .ct{position:absolute;top:-5px;right:-5px;background:var(--teal3);color:#fff;
+  font-size:10px;font-weight:900;border-radius:999px;min-width:19px;height:19px;
+  display:flex;align-items:center;justify-content:center;padding:0 4px}
+.boostBtn.empty{filter:grayscale(1);opacity:.5}
+
+/* floating score popups */
+.fx{position:fixed;pointer-events:none;z-index:80;font-weight:900;font-size:18px;
+  text-shadow:0 2px 4px rgba(0,0,0,.35);animation:rise 1s ease-out forwards}
+@keyframes rise{0%{opacity:1;transform:translate(-50%,0) scale(.7)}
+  30%{transform:translate(-50%,-18px) scale(1.15)}
+  100%{opacity:0;transform:translate(-50%,-64px) scale(1)}}
+
+/* ---- day card / results / overlays ---- */
+.sheet{position:absolute;inset:0;background:rgba(20,14,8,.62);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;padding:18px;z-index:40}
+.sheet.on{display:flex}
+.sheetBox{width:100%;max-width:430px;max-height:92%;overflow-y:auto;
+  background:var(--panel);border-radius:var(--r2);box-shadow:var(--soft);padding:20px;
+  animation:sheetIn .3s cubic-bezier(.2,1.4,.4,1)}
+@keyframes sheetIn{from{opacity:0;transform:translateY(24px) scale(.95)}to{opacity:1;transform:none}}
+.starsRow{display:flex;justify-content:center;gap:8px;font-size:38px;margin:6px 0 2px}
+.star{opacity:.25;transition:opacity .3s ease,transform .3s ease}
+.star.lit{opacity:1;animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
+.statLine{display:flex;justify-content:space-between;padding:7px 0;
+  border-bottom:1px dashed var(--line);font-weight:700;font-size:14px}
+.statLine:last-child{border-bottom:0}
+.statLine b{font-weight:900}
+
+/* dogdex */
+.dexGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:10px;padding:12px}
+.dexCard{background:var(--panel);border-radius:var(--r);box-shadow:var(--soft);padding:8px;text-align:center}
+.dexCard img{width:100%;aspect-ratio:1/1;border-radius:12px;object-fit:cover;background:var(--cream2)}
+.dexCard.locked img{filter:grayscale(1) brightness(.55) contrast(.8)}
+.dexCard .nm{font-weight:900;font-size:12px;margin-top:5px;line-height:1.1}
+.dexCard .lv{font-size:10px;font-weight:800;color:var(--ink2)}
+.lvBar{height:5px;border-radius:999px;background:rgba(0,0,0,.12);margin-top:4px;overflow:hidden}
+.lvBar i{display:block;height:100%;background:var(--gold);border-radius:999px}
+
+/* shop */
+.tabs{display:flex;gap:6px;padding:10px 12px 0}
+.tabs .tb{flex:1;text-align:center;padding:10px 6px;border-radius:14px 14px 0 0;
+  font-weight:900;font-size:13px;background:rgba(0,0,0,.06);color:var(--ink2)}
+.tabs .tb.on{background:var(--panel);color:var(--ink);box-shadow:0 -3px 10px rgba(0,0,0,.08)}
+.shopList{padding:12px;display:flex;flex-direction:column;gap:10px}
+.shopRow{display:flex;align-items:center;gap:12px;background:var(--panel);
+  border-radius:var(--r);box-shadow:var(--soft);padding:12px}
+.shopRow img{width:52px;height:52px;object-fit:contain;flex:0 0 auto}
+.shopRow .txt{flex:1;min-width:0}
+.shopRow .tt{font-weight:900;font-size:15px;line-height:1.15}
+.shopRow .ds{font-size:12px;color:var(--ink2);font-weight:600;line-height:1.3;margin-top:2px}
+.shopRow .buy{flex:0 0 auto}
+.lvDots{display:flex;gap:3px;margin-top:5px}
+.lvDots i{width:14px;height:6px;border-radius:3px;background:rgba(0,0,0,.14)}
+.lvDots i.on{background:var(--gold)}
+
+/* misc */
+.sceneWrap{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.sceneWrap img.por{width:132px;height:132px;border-radius:50%;object-fit:cover;
+  border:5px solid var(--gold);box-shadow:var(--soft);background:var(--cream2)}
+.speech{background:var(--cream2);border-radius:var(--r);padding:14px;font-weight:700;
+  font-size:15px;line-height:1.5;text-align:left;width:100%}
+.speech .who{display:block;font-size:12px;font-weight:900;letter-spacing:.8px;
+  text-transform:uppercase;color:var(--teal3);margin-bottom:5px}
+.streakRow{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.sDay{width:40px;height:52px;border-radius:12px;background:var(--cream2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:10px;font-weight:900;color:var(--ink2);gap:2px}
+.sDay.got{background:var(--leaf);color:#fff}
+.sDay.today{outline:3px solid var(--gold);outline-offset:1px}
+.sDay .v{font-size:13px}
+#toast{position:fixed;left:50%;bottom:calc(var(--safeB) + 96px);transform:translateX(-50%);
+  background:rgba(20,14,8,.92);color:#fff;padding:11px 18px;border-radius:999px;
+  font-weight:800;font-size:14px;z-index:95;opacity:0;transition:opacity .25s ease;
+  pointer-events:none;max-width:90vw;text-align:center}
+#toast.on{opacity:1}
+.emptyNote{text-align:center;padding:28px 18px;color:var(--ink2);font-weight:700;font-size:14px;line-height:1.5}
+
+@media (min-width:430px){
+  .dog.wide{width:calc(33.333% - 7px)}
+}
+@media (min-width:700px){
+  .dog,.dog.wide{width:calc(25% - 8px);max-width:210px}
+  #dogZone{gap:14px;padding:10px 20px 14px}
+  .item{width:74px;height:74px}
+  .item img{width:56px;height:56px}
+  #trayZone{padding-left:24px;padding-right:24px}
+  .dexGrid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));padding:20px}
+  .shopList{padding:20px;max-width:720px;margin:0 auto;width:100%}
+  #titleInner{max-width:560px;margin:0 auto;width:100%}
+}
+@media (max-height:680px){
+  .dog .por{aspect-ratio:1.15/1}
+  .item{width:54px;height:54px}
+  .item img{width:42px;height:42px}
+  #clockWrap{width:54px;height:54px}
+}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- ================= TITLE ================= -->
+  <div class="scr on" id="titleScr">
+    <img id="titleBg" alt="">
+    <div id="titleVeil"></div>
+    <div id="titleInner">
+      <div id="logo">
+        <div class="l1">Dutch the Golden</div>
+        <div class="l2">Doggy<br>Daycare</div>
+      </div>
+      <img id="titleDutch" alt="Dutch the Golden">
+      <div class="sp"></div>
+      <div id="titleMenu">
+        <div class="row" style="justify-content:center;gap:8px;margin-bottom:2px">
+          <span class="pill" style="background:rgba(255,255,255,.92)"><img id="tCoinIc" alt=""><span id="tCoins">0</span></span>
+          <span class="pill" style="background:rgba(255,255,255,.92)"><img id="tBoneIc" alt=""><span id="tBones">0</span></span>
+          <span class="pill" style="background:rgba(255,255,255,.92)">❤️ <span id="tHearts">5</span></span>
+        </div>
+        <button class="btn gold wide" id="btnPlay">Open the Daycare</button>
+        <div class="menuGrid">
+          <button class="btn" id="btnDex"><span class="ic">🐾</span>Dogdex</button>
+          <button class="btn" id="btnShop"><span class="ic">🛍️</span>Shop</button>
+          <button class="btn" id="btnSet"><span class="ic">⚙️</span>Settings</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= PLAY ================= -->
+  <div class="scr" id="playScr">
+    <img id="fieldBg" alt="">
+    <div id="playInner">
+      <div id="topbar">
+        <div style="min-width:0;flex:1">
+          <div class="row" style="gap:6px">
+            <span id="dayChip">Day 1</span>
+            <span class="tag" id="phaseChip">Mealtime</span>
+          </div>
+          <div id="careWrap" style="margin-top:6px">
+            <div id="careBar"><div id="careFill"></div></div>
+          </div>
+          <div class="row" style="gap:6px;margin-top:6px">
+            <span class="pill" style="padding:3px 9px;font-size:12px"><img id="hCoinIc" alt=""><span id="hCoins">0</span></span>
+            <span class="pill" style="padding:3px 9px;font-size:12px" id="comboPill">×1</span>
+          </div>
+        </div>
+        <div id="clockWrap">
+          <svg width="62" height="62" viewBox="0 0 62 62">
+            <circle cx="31" cy="31" r="26" fill="rgba(0,0,0,.07)" stroke="rgba(0,0,0,.10)" stroke-width="7"></circle>
+            <circle id="clockRing" cx="31" cy="31" r="26" fill="none" stroke="#2f8f86"
+                    stroke-width="7" stroke-linecap="round" stroke-dasharray="163.4" stroke-dashoffset="0"></circle>
+          </svg>
+          <div id="clockTxt">45</div>
+        </div>
+        <button class="btn ghost" id="btnPause" style="padding:8px 12px;min-height:auto">⏸</button>
+      </div>
+
+      <div id="dogZone"></div>
+
+      <div id="trayZone">
+        <div id="trayHint">Tap a bowl, then tap the dog who asked for it</div>
+        <div id="tray"></div>
+        <div id="boostRail"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SHEETS ================= -->
+  <div class="sheet" id="dayScr"><div class="sheetBox" id="dayBox"></div></div>
+  <div class="sheet" id="endScr"><div class="sheetBox" id="endBox"></div></div>
+  <div class="sheet" id="storyScr"><div class="sheetBox" id="storyBox"></div></div>
+  <div class="sheet" id="rewardScr"><div class="sheetBox" id="rewardBox"></div></div>
+  <div class="sheet" id="pauseScr"><div class="sheetBox" id="pauseBox"></div></div>
+  <div class="sheet" id="setScr"><div class="sheetBox" id="setBox"></div></div>
+
+  <!-- ================= DOGDEX ================= -->
+  <div class="scr" id="dexScr">
+    <div class="row pad" style="padding-left:14px;padding-right:14px;gap:10px">
+      <button class="btn ghost" id="dexBack" style="padding:9px 14px;min-height:auto">‹ Back</button>
+      <div class="h2">Dogdex</div>
+      <div class="sp"></div>
+      <span class="pill" id="dexCount">0 / 0</span>
+    </div>
+    <div class="scroll"><div class="dexGrid" id="dexGrid"></div></div>
+  </div>
+
+  <!-- ================= SHOP ================= -->
+  <div class="scr" id="shopScr">
+    <div class="row pad" style="padding-left:14px;padding-right:14px;gap:10px">
+      <button class="btn ghost" id="shopBack" style="padding:9px 14px;min-height:auto">‹ Back</button>
+      <div class="h2">Shop</div>
+      <div class="sp"></div>
+      <span class="pill"><img id="sCoinIc" alt=""><span id="sCoins">0</span></span>
+      <span class="pill"><img id="sBoneIc" alt=""><span id="sBones">0</span></span>
+    </div>
+    <div class="tabs">
+      <div class="tb on" id="tabU">Upgrades</div>
+      <div class="tb" id="tabB">Boosts</div>
+      <div class="tb" id="tabP">Bones</div>
+    </div>
+    <div class="scroll" style="background:var(--panel)"><div class="shopList" id="shopList"></div></div>
+  </div>
+
+  <div id="ghost"><img id="ghostImg" alt=""></div>
+  <div id="toast"></div>
+</div>
+
+<script>
+/* ============================================================================
+   0. STORAGE SHIM — must run before anything else.
+
+   The single worst bug of the previous project: the game was written against a
+   host that provided window.storage. Inside a Capacitor WebView it does not
+   exist, so every save threw into a silent catch and every launch started at
+   day 1. It fails quietly, so normal playtesting never reveals it. This shim
+   guarantees the API exists, backed by localStorage, falling back to memory in
+   private mode or when storage is blocked entirely.
+   scripts/save-probe.js verifies this end to end after every change.
+   ========================================================================== */
+(function(){
+  if(window.storage) return;
+  var mem = {}, ls = null;
+  try{ ls = window.localStorage; ls.setItem("__probe","1"); ls.removeItem("__probe"); }
+  catch(e){ ls = null; }
+  window.storage = {
+    get: function(k){
+      var v = null;
+      try{ v = ls ? ls.getItem(k) : (k in mem ? mem[k] : null); }catch(e){ v = mem[k] || null; }
+      return Promise.resolve({value:v});
+    },
+    set: function(k,v){
+      try{ if(ls) ls.setItem(k,v); else mem[k]=v; }catch(e){ mem[k]=v; }
+      return Promise.resolve();
+    }
+  };
+})();
+
+/* ============================================================================
+   1. ART — every image in the game, declared statically in one flat object.
+
+   Rule learned the hard way: adding cast at runtime by patching ART afterwards
+   is invisible to the portrait audit in scripts/validate.py, so a missing image
+   ships. Everything goes here, and every character/food/item refers to it by
+   a static art-key string that validate.py resolves.
+
+   scripts/bundle-assets.sh rewrites these CDN URLs to relative assets/ paths at
+   build time so the shipped binary plays in airplane mode.
+   ========================================================================== */
+var ART = {
+  /* --- Dutch, the main character --- */
+  dutch:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_6c89a8e4-d9d9-4e86-948c-a1af8f5dd646.png",
+  dutch_h:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_9936e951-8a50-4498-a689-9d01a3149f08.png",
+  dutch_a:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_fe6d70b8-cfba-4c19-bc5f-245c4a2f05f3.png",
+  dutchFull:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_3ab75caf-acaf-478b-9169-c22bb6dfd608.png",
+  /* --- the breeds --- */
+  frenchie:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_55ac4812-99f9-4d77-b7fb-abc5e6bf1720.png",
+  shepherd:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_1da0b980-6d1b-4fec-b1e1-5c411db22f64.png",
+  dachshund:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_f10db374-e81c-4cc9-9701-fd1038c3a039.png",
+  corgi:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_e43c73ed-f430-4c1b-a716-ceab96250786.png",
+  husky:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_1d7d67df-2ebf-448e-92f1-b65af9cdea55.png",
+  poodle:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_e253610b-9adb-453b-aae1-ef9017184209.png",
+  beagle:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_f5044f9b-b0fe-4aa8-81d6-815a5585058c.png",
+  chihuahua:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_46bb8743-56e0-45cc-b921-062f74104f70.png",
+  greatdane:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_231934_c613ac42-5f99-4e04-b123-5e72d8ef1fe4.png",
+  shihtzu:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_762f2f4b-d6b9-4e19-ada1-6411051dac4a.png",
+  collie:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_9dfe786c-e6af-42a2-8b64-6bca9ade6814.png",
+  pug:          "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_763dfaf7-2a5d-49ec-925c-3ede6622c12a.png",
+  rottweiler:   "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_2c12ec43-425b-4c27-a3cb-d0a935880819.png",
+  labrador:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_2463f979-92eb-4bc7-9934-bf5d6ddbed1b.png",
+  bernese:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_fb859a4f-78d7-4ab2-897e-271e3bc6f927.png",
+  aussie:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_a25779b5-8890-4850-82b8-f1d8d73679a8.png",
+  boxer:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_bc304d67-74b6-42b1-89b3-2ec8e3af4c45.png",
+  yorkie:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_1eedd7c3-4631-4313-aa93-ad16bb8bb215.png",
+  doberman:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_da3768df-42e2-4127-a18a-38b0019c8e78.png",
+  stbernard:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_bf7930d3-cd12-4df0-bbae-e6d938994dae.png",
+  samoyed:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232141_cbd61b57-a765-4a9d-83a3-9b92f8cbf6b3.png",
+  dalmatian:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_19df1ecf-6cd6-448f-8acb-c5d6293b82c1.png",
+  shiba:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_310c8c9b-7e79-45a3-81be-67197f59314d.png",
+  basset:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_408e7cbb-07ba-49a7-9fb8-015259a5128e.png",
+  cocker:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_b53e49a3-2773-4965-a38f-d879341bee02.png",
+  pomeranian:   "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_a146d37e-b863-477e-9cff-37553f9430c6.png",
+  newfoundland: "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_d6004808-4552-4fe8-b369-bdb19ecdfa41.png",
+  jackrussell:  "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_cdd8cee5-ad3f-4919-ad73-48fc675725fb.png",
+  maltese:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_5f4cdcce-cdcb-43aa-a777-638ad8cdf927.png",
+  bulldog:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_038204f6-fafc-44b2-bdec-ecb255da4cc7.png",
+  weimaraner:   "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_ffeac3ea-8148-4ecf-bc73-f3ac04c7a1b3.png",
+  malamute:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_09cf4cfc-8c91-467c-8e14-4640eecfaf99.png",
+  setter:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232213_b4a0c1b0-02da-46f7-86dc-8dda57536a6d.png",
+  /* --- scenes --- */
+  bgKitchen:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_10ca5c67-fb9f-4f44-b859-75aaa5d2f875.png",
+  bgPark:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_232ac3fa-9ac4-416e-b30f-736a328cfe49.png",
+  bgNight:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_c8efd3b9-6738-4302-b821-0bdf57f615c5.png",
+  bgHouse:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_ee0021f3-eb45-4c59-a28e-f640ba7c0e17.png",
+  /* --- currency and reward icons --- */
+  boneIcon:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_32dfc13b-17dc-4ab7-b35b-a7e33c9fe092.png",
+  coinIcon:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_2dd3472b-991a-4641-9d63-cad312effcca.png",
+  trophy:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_d6ca95d2-3186-488b-b578-42ef66ea61ff.png",
+  passCrest:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_3165e157-7397-4cd6-b64c-8343bb89ed16.png",
+  crate:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_720e608e-cd63-45f7-b10c-def7c7c371d0.png",
+  /* --- foods --- */
+  kibble:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_b045c081-ae10-4852-a7c6-340795f0547b.png",
+  chicken:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_5ae56ca4-1320-41be-aeee-6763bf30f13b.png",
+  salmon:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232441_50599e46-6245-48bb-86f5-cfddd7a9a7cc.png",
+  beef:         "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_7aa7c203-3430-45eb-b567-cdda541fba11.png",
+  lamb:         "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_e1e2d656-86cd-4d97-be5b-04b65fc1e727.png",
+  turkey:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_c6ee835e-a1dc-4b84-a7a3-0e135f66aeeb.png",
+  egg:          "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_38bb951c-8f67-43a1-b31a-a82fbdaba4ae.png",
+  rice:         "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_c809e9c6-7bf8-4f8c-9ec0-754d2a3028ff.png",
+  carrot:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_7a8bcbf6-416c-4221-a906-00d374c5b1a5.png",
+  pumpkin:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_589a1d49-1e64-4b50-a4ac-f980c90a5223.png",
+  peanut:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_8a30b932-a74b-4ede-aee7-a3f5e0ad53aa.png",
+  berry:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232348_11cc897c-523c-47d7-b7a2-09add131813c.png",
+  cheese:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232441_8885518f-f418-4e67-96cd-d424d6c1833c.png",
+  broth:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232441_7e641c17-3c35-4005-8990-a5abb25fb87a.png",
+  sweetpot:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232441_3cb34e09-6a5c-4c04-9b46-58a7534ea74b.png",
+  yogurt:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232442_1eae14e3-0483-476c-9162-c7ca398008b9.png",
+  /* --- walk gear --- */
+  leash:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232506_76eccda1-6aa2-48b9-ab63-09841bf5a2d3.png",
+  harness:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232507_5cccd884-4818-47db-8b21-4e5b769d900e.png",
+  raincoat:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232506_9479a7d8-4cc4-495c-8e35-f4e1454de68b.png",
+  booties:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232506_91f1c55d-ee2c-4b51-b2a0-50c357834272.png",
+  coolvest:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232506_fea4dc30-d8ae-4e6e-98d7-27987e674754.png",
+  hivis:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232506_da86f839-a3f0-40c6-afce-f204fd9b18d7.png",
+  /* --- bedtime comforts --- */
+  blanket:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232441_f0dc82c2-409a-47c5-8ea1-3127bdf9bf7e.png",
+  plushie:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232442_3fb95f0c-49db-49dd-b176-f45fe7913986.png",
+  chewtoy:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232441_ed10cdc1-cbec-4742-aa4c-8d7280f45bf0.png",
+  nightlight:   "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232441_b837e653-19aa-4f04-b1aa-073ad14370ed.png",
+  brush:        "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232442_9a1140de-c34c-4b83-b462-deca631b2e30.png",
+  waterbowl:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232442_86257109-9cd8-4c91-b79f-c256161374be.png",
+  musicbox:     "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232441_0829d970-9175-444d-8f37-5957f2541ad8.png",
+  pillow:       "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232507_ebefd34e-6e51-478c-b3a4-06d091def815.png",
+  /* --- boosts and sundries --- */
+  frostTreat:   "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232507_027e71a5-6c48-42c9-9889-82834a9aa8f8.png",
+  whistle:      "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232507_05e10105-9c94-40aa-bcfe-3697dd85de8a.png",
+  clockBone:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232507_19b67282-65ac-45a3-aecb-6b0d0413c6f2.png",
+  heartRefill:  "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232507_3338c280-cbc8-42f8-b253-a88068aa38d0.png",
+  mopBucket:    "https://d8j0ntlcm91z4.cloudfront.net/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232507_2dabd98b-c750-438b-a97b-ed437a898028.png"
+};
+
+/* Emotion variants, keyed by the portrait name they belong to. Only Dutch has
+   them today; validate.py checks both the key and each variant resolve in ART,
+   so adding a variant for another dog is a two-line change that cannot silently
+   reference a missing file. */
+var EMO = {
+  dutch: {a: "dutch_a", h: "dutch_h"}
+};
+
+/* ============================================================================
+   2. CONTENT — foods, gear, comforts, breeds, chapters, story.
+   ========================================================================== */
+var TOTAL_DAYS = 250, CHAPTER_LEN = 25, STORY_DAYS = 150;
+
+var FOODS = {
+  kibble:   {img:"kibble",   name:"Kibble"},
+  chicken:  {img:"chicken",  name:"Chicken"},
+  salmon:   {img:"salmon",   name:"Salmon"},
+  beef:     {img:"beef",     name:"Beef"},
+  lamb:     {img:"lamb",     name:"Lamb"},
+  turkey:   {img:"turkey",   name:"Turkey"},
+  egg:      {img:"egg",      name:"Egg"},
+  rice:     {img:"rice",     name:"Rice"},
+  carrot:   {img:"carrot",   name:"Carrot"},
+  pumpkin:  {img:"pumpkin",  name:"Pumpkin"},
+  peanut:   {img:"peanut",   name:"Peanut"},
+  berry:    {img:"berry",    name:"Berries"},
+  cheese:   {img:"cheese",   name:"Cheese"},
+  broth:    {img:"broth",    name:"Broth"},
+  sweetpot: {img:"sweetpot", name:"Sweet Pot"},
+  yogurt:   {img:"yogurt",   name:"Yogurt"}
+};
+/* Unlock order keeps the early game readable — a day-2 player picks between
+   four bowls, not sixteen. */
+var FOOD_ORDER = ["kibble","chicken","carrot","rice","beef","egg","salmon","pumpkin",
+                  "turkey","peanut","cheese","berry","lamb","yogurt","broth","sweetpot"];
+
+var GEAR = {
+  leash:    {img:"leash",    name:"Leash"},
+  harness:  {img:"harness",  name:"Harness"},
+  raincoat: {img:"raincoat", name:"Raincoat"},
+  booties:  {img:"booties",  name:"Booties"},
+  coolvest: {img:"coolvest", name:"Cool Vest"},
+  hivis:    {img:"hivis",    name:"Hi-Vis"}
+};
+var GEAR_ORDER = ["leash","harness","raincoat","booties","coolvest","hivis"];
+
+var COMFORTS = {
+  blanket:    {img:"blanket",    name:"Blanket"},
+  plushie:    {img:"plushie",    name:"Plushie"},
+  chewtoy:    {img:"chewtoy",    name:"Chew Toy"},
+  nightlight: {img:"nightlight", name:"Nightlight"},
+  brush:      {img:"brush",      name:"Brushing"},
+  waterbowl:  {img:"waterbowl",  name:"Water"},
+  musicbox:   {img:"musicbox",   name:"Lullaby"},
+  pillow:     {img:"pillow",     name:"Pillow"}
+};
+var COMFORT_ORDER = ["blanket","waterbowl","plushie","chewtoy","pillow","nightlight","brush","musicbox"];
+
+/* Weather drives which walk gear a dog will ask for. A rainy day is a raincoat
+   day; a hot day is a cool-vest day. It is a small thing that makes day 90 feel
+   different from day 12 without any new systems. */
+var WEATHER = [
+  {k:"sun",   name:"Sunny",  ic:"☀️", gear:["leash","harness","hivis"]},
+  {k:"rain",  name:"Rainy",  ic:"🌧️", gear:["raincoat","booties","leash"]},
+  {k:"hot",   name:"Hot",    ic:"🔥", gear:["coolvest","harness","hivis"]},
+  {k:"cold",  name:"Chilly", ic:"❄️", gear:["booties","raincoat","harness"]},
+  {k:"dusk",  name:"Dusky",  ic:"🌙", gear:["hivis","leash","harness"]}
+];
+
+/* --- the cast. size drives portion and walk length; fav is the food this dog
+   asks for far more often than any other, which is what makes the Dogdex worth
+   reading rather than just filling. --- */
+var BREEDS = [
+  {k:"dutch",        img:"dutch",        name:"Dutch",     breed:"Golden Retriever",     size:"l", fav:"chicken",  day:1,   rar:"star", fact:"Runs the place. Has never once turned down a second breakfast."},
+  {k:"corgi",        img:"corgi",        name:"Biscuit",   breed:"Pembroke Corgi",       size:"s", fav:"cheese",   day:1,   rar:"c",    fact:"Short legs, long opinions. Herds the other dogs toward their bowls."},
+  {k:"beagle",       img:"beagle",       name:"Bugle",     breed:"Beagle",               size:"m", fav:"turkey",   day:1,   rar:"c",    fact:"Can smell dinner being decided three rooms away."},
+  {k:"frenchie",     img:"frenchie",     name:"Pierre",    breed:"French Bulldog",       size:"s", fav:"yogurt",   day:2,   rar:"c",    fact:"Snores at a volume that has been described as structural."},
+  {k:"labrador",     img:"labrador",     name:"Cocoa",     breed:"Chocolate Labrador",   size:"l", fav:"salmon",   day:3,   rar:"c",    fact:"Believes every bowl on the counter is provisionally hers."},
+  {k:"pug",          img:"pug",          name:"Dumpling",  breed:"Pug",                  size:"s", fav:"pumpkin",  day:4,   rar:"c",    fact:"Two speeds: asleep, and looking for somewhere to be asleep."},
+  {k:"husky",        img:"husky",        name:"Blizzard",  breed:"Siberian Husky",       size:"l", fav:"beef",     day:6,   rar:"u",    fact:"Will argue. Out loud. About the walk route."},
+  {k:"dachshund",    img:"dachshund",    name:"Noodle",    breed:"Dachshund",            size:"s", fav:"lamb",     day:8,   rar:"c",    fact:"Length of a baguette, courage of a much larger loaf."},
+  {k:"shepherd",     img:"shepherd",     name:"Sergeant",  breed:"German Shepherd",      size:"l", fav:"beef",     day:10,  rar:"u",    fact:"Counts the dogs at bedtime. Twice."},
+  {k:"poodle",       img:"poodle",       name:"Apricot",   breed:"Standard Poodle",      size:"m", fav:"berry",    day:12,  rar:"u",    fact:"Will not settle until the blanket corners are square."},
+  {k:"chihuahua",    img:"chihuahua",    name:"Peanut",    breed:"Chihuahua",            size:"s", fav:"peanut",   day:14,  rar:"c",    fact:"Ninety grams of dog and roughly forty kilos of attitude."},
+  {k:"collie",       img:"collie",       name:"Comet",     breed:"Border Collie",        size:"m", fav:"rice",     day:16,  rar:"u",    fact:"Has invented four games you do not understand yet."},
+  {k:"shihtzu",      img:"shihtzu",      name:"Mochi",     breed:"Shih Tzu",             size:"s", fav:"egg",      day:18,  rar:"c",    fact:"Requires the lullaby. Not a lullaby. The lullaby."},
+  {k:"boxer",        img:"boxer",        name:"Rocky",     breed:"Boxer",                size:"l", fav:"chicken",  day:21,  rar:"c",    fact:"Greets everyone as though they have returned from a long war."},
+  {k:"bernese",      img:"bernese",      name:"Alp",       breed:"Bernese Mountain Dog", size:"l", fav:"broth",    day:25,  rar:"u",    fact:"Moves like weather. Slowly, and then all at once."},
+  {k:"yorkie",       img:"yorkie",       name:"Duchess",   breed:"Yorkshire Terrier",    size:"s", fav:"salmon",   day:29,  rar:"u",    fact:"Sleeps on the pillow. The good pillow. Yours."},
+  {k:"dalmatian",    img:"dalmatian",    name:"Domino",    breed:"Dalmatian",            size:"l", fav:"kibble",   day:33,  rar:"u",    fact:"Nobody has ever finished counting the spots. Several have tried."},
+  {k:"shiba",        img:"shiba",        name:"Sesame",    breed:"Shiba Inu",            size:"m", fav:"rice",     day:38,  rar:"r",    fact:"Will do it. In a moment. When it was his idea."},
+  {k:"basset",       img:"basset",       name:"Barnaby",   breed:"Basset Hound",         size:"m", fav:"sweetpot", day:43,  rar:"u",    fact:"Ears arrive at a room approximately one second before he does."},
+  {k:"aussie",       img:"aussie",       name:"Marbles",   breed:"Australian Shepherd",  size:"m", fav:"carrot",   day:48,  rar:"r",    fact:"One blue eye watching you, one brown eye watching the door."},
+  {k:"rottweiler",   img:"rottweiler",   name:"Tank",      breed:"Rottweiler",           size:"l", fav:"beef",     day:54,  rar:"u",    fact:"Enormous. Gentle. Frightened of the vacuum cleaner."},
+  {k:"cocker",       img:"cocker",       name:"Honey",     breed:"Cocker Spaniel",       size:"m", fav:"berry",    day:60,  rar:"u",    fact:"Ears trail through the water bowl every single time."},
+  {k:"pomeranian",   img:"pomeranian",   name:"Pom",       breed:"Pomeranian",           size:"s", fav:"cheese",   day:67,  rar:"r",    fact:"Ninety percent floof. The remaining ten percent is bark."},
+  {k:"stbernard",    img:"stbernard",    name:"Bruno",     breed:"Saint Bernard",        size:"l", fav:"broth",    day:74,  rar:"r",    fact:"Carries the barrel everywhere. Has never disclosed what is in it."},
+  {k:"samoyed",      img:"samoyed",      name:"Sugar",     breed:"Samoyed",              size:"l", fav:"yogurt",   day:82,  rar:"r",    fact:"Smiles constantly. Sheds a second, smaller dog every spring."},
+  {k:"doberman",     img:"doberman",     name:"Onyx",      breed:"Doberman",             size:"l", fav:"turkey",   day:90,  rar:"r",    fact:"Elegant, watchful, and secretly desperate to be on the sofa."},
+  {k:"jackrussell",  img:"jackrussell",  name:"Pip",       breed:"Jack Russell Terrier", size:"s", fav:"egg",      day:99,  rar:"u",    fact:"Has energy the way the sea has water."},
+  {k:"maltese",      img:"maltese",      name:"Pearl",     breed:"Maltese",              size:"s", fav:"yogurt",   day:108, rar:"r",    fact:"Small, white, and completely certain of her own importance."},
+  {k:"bulldog",      img:"bulldog",      name:"Winston",   breed:"English Bulldog",      size:"m", fav:"lamb",     day:118, rar:"r",    fact:"Will get up. Has decided when. It is not now."},
+  {k:"weimaraner",   img:"weimaraner",   name:"Ash",       breed:"Weimaraner",           size:"l", fav:"salmon",   day:130, rar:"r",    fact:"Grey as fog and twice as good at appearing beside you silently."},
+  {k:"malamute",     img:"malamute",     name:"Timber",    breed:"Alaskan Malamute",     size:"l", fav:"beef",     day:145, rar:"e",    fact:"Built for a colder country. Settles for the tiled floor."},
+  {k:"newfoundland", img:"newfoundland", name:"Captain",   breed:"Newfoundland",         size:"l", fav:"salmon",   day:165, rar:"e",    fact:"Wants everyone out of the deep end, at all times, immediately."},
+  {k:"setter",       img:"setter",       name:"Ember",     breed:"Irish Setter",         size:"l", fav:"chicken",  day:190, rar:"e",    fact:"Runs like a rumour. Comes back eventually."},
+  {k:"greatdane",    img:"greatdane",    name:"Mr Grey",   breed:"Great Dane",           size:"l", fav:"broth",    day:220, rar:"e",    fact:"A horse who has been told he is a lapdog and chose to believe it."}
+];
+var RARITY = {c:{n:"Common",cl:"var(--ink2)"}, u:{n:"Uncommon",cl:"var(--leaf)"},
+              r:{n:"Rare",cl:"var(--sky)"}, e:{n:"Epic",cl:"var(--plum)"},
+              star:{n:"Founder",cl:"var(--gold2)"}};
+
+var CHAPTERS = [
+  {from:1,   to:25,  t:"The First Bowl",      l:"Start where you are. Feed who is in front of you."},
+  {from:26,  to:50,  t:"Rain on the Round",   l:"The weather is not an excuse. It is just the weather."},
+  {from:51,  to:75,  t:"The Long Walk",       l:"Steady beats fast, every single day."},
+  {from:76,  to:100, t:"Full House",          l:"Ask for help before you need it, not after."},
+  {from:101, to:125, t:"Lights Out",          l:"Rest is part of the work, not a reward for it."},
+  {from:126, to:150, t:"The Old Dog",         l:"Patience is a skill. Nobody is born with it."},
+  {from:151, to:175, t:"Storm Week",          l:"You can only do the next right thing. So do that."},
+  {from:176, to:200, t:"The Quiet Season",    l:"Kindness costs nothing and compounds like interest."},
+  {from:201, to:225, t:"Every Breed a Story", l:"Everyone is difficult until you know why."},
+  {from:226, to:250, t:"Dutch's Daycare",     l:"You built this. One bowl at a time."}
+];
+
+var WISDOM = [
+  "A tired dog is a good dog. A fed dog is a happy one.",
+  "Feed first. Walk second. Everything else is negotiable.",
+  "Nobody settles at bedtime if the afternoon went badly.",
+  "Rush the bowls and you will spend the evening with a mop.",
+  "The loudest dog is rarely the hungriest one.",
+  "Small dogs, small portions, enormous feelings.",
+  "You cannot hurry a Basset Hound. Physics forbids it.",
+  "Every dog here was somebody's whole world once.",
+  "The walk is not a chore. It is the best part of their day.",
+  "Do it properly at nine and you will be asleep by ten.",
+  "Consistency is just kindness repeated on a schedule.",
+  "A house with thirty dogs in it is quiet exactly once a night.",
+  "Learn the favourite. The favourite buys you thirty seconds.",
+  "The mop is not a punishment. It is a lesson with a handle.",
+  "Bruno has never told anyone what is in the barrel."
+];
+
+/* Story beats are sparse on purpose — most days are unscripted and get a wisdom
+   card instead. Keyed by day number. */
+var STORY = {
+  1:   {who:"Dutch", img:"dutch_h", t:"Right. You're the new hand. Here's the whole job: every dog gets the food it asks for, before its bowl timer runs out. Then we walk them. Then we get them down for the night. Miss a step and you'll be meeting the mop."},
+  2:   {who:"Dutch", img:"dutch",   t:"Feed first. Always feed first. A dog that hasn't eaten won't take the leash, and a dog that won't take the leash has an accident on my floor. That is the entire chain, and it has never once been broken by rushing."},
+  5:   {who:"Biscuit", img:"corgi", t:"You put the cheese in the wrong bowl yesterday. I noticed. Everyone noticed. I'm not upset, I'm simply keeping a list."},
+  9:   {who:"Dutch", img:"dutch",   t:"Learn their favourites. Bugle will eat anything, but he'll wait quietly for turkey. That patience is worth more than any timer you can buy."},
+  14:  {who:"Peanut", img:"chihuahua", t:"I am small. This is a fact about my body, not about my needs. I would like the peanut butter, and I would like it now, thank you."},
+  20:  {who:"Dutch", img:"dutch_h", t:"Twenty days. The place hasn't burned down and nobody's slept hungry. That's not nothing — that's the job."},
+  26:  {who:"Dutch", img:"dutch",   t:"Rain today. Coats on before the door opens, or we come back to a hallway that needs towels. The weather changes what they need. It never changes that they need it."},
+  33:  {who:"Domino", img:"dalmatian", t:"People always ask about the spots. Nobody ever asks how I'm sleeping. I'm sleeping badly, since you ask. It's the nightlight. It's too bright."},
+  40:  {who:"Blizzard", img:"husky", t:"I have reviewed the walk route and I have notes. Extensive notes. I will be sharing them, loudly, for the entire duration of the walk."},
+  50:  {who:"Dutch", img:"dutch_h", t:"Halfway through the second chapter and you've stopped looking at the clock every four seconds. That's what getting good looks like. It's quiet."},
+  60:  {who:"Honey", img:"cocker",  t:"My ears go in the water bowl. Every time. I know they do. I've decided it's part of who I am."},
+  74:  {who:"Bruno", img:"stbernard", t:"You've had a hard week. I can tell. Sit down for a moment. The barrel stays shut, but the offer of sitting down is genuine."},
+  90:  {who:"Dutch", img:"dutch",   t:"Onyx came in shaking. Big dog, thin skin. Give him the water bowl at bedtime and don't make a fuss about it. Some of them need the fuss. Some of them need you not to."},
+  100: {who:"Dutch", img:"dutch_h", t:"A hundred days. Full house most nights now. You know who wants what before they ask. Do you understand how rare that is?"},
+  118: {who:"Winston", img:"bulldog", t:"I am aware the walk is starting. I am aware that everyone is waiting. I would like it noted that I will be getting up, and that the timing of that is mine."},
+  130: {who:"Dutch", img:"dutch",   t:"Ash doesn't eat when it's noisy. Never has. Feed him first, before the others start, and he'll clear the bowl. Everyone's got a thing. Finding it is the whole trick."},
+  150: {who:"Dutch", img:"dutch_h", t:"A hundred and fifty. There are dogs here who've never known a hungry night because of you. Keep going. There are more coming."},
+  175: {who:"Mr Grey", img:"greatdane", t:"I am told I am very large. I am also told I am on the sofa. Both of these things will continue to be true."},
+  200: {who:"Dutch", img:"dutch",   t:"Two hundred days. When you started, you couldn't get four dogs down before lights out. Look at the hall now. Look at how quiet it is."},
+  225: {who:"Dutch", img:"dutch_h", t:"Twenty-five to go. I've been thinking about what happens after. The daycare doesn't need me the way it did. It needs you. It's been needing you for a while."},
+  250: {who:"Dutch", img:"dutch_h", t:"Two hundred and fifty days. Every bowl filled, every dog walked, every light out on time. It's yours now. Put your name on the sign — I'll help you carry the ladder."}
+};
+
+/* ============================================================================
+   3. SAVE STATE
+
+   Rule: the schema only ever gains fields. Dead fields stay so that old saves
+   migrate cleanly rather than resetting somebody's 200 days of progress.
+   ========================================================================== */
+var SAVE_KEY = "dutch.daycare.save.v1";
+var HEART_MAX = 5, HEART_MS = 12*60*1000;
+
+var S = {
+  v: 1,
+  day: 1, best: 1,
+  coins: 0, bones: 0,
+  hearts: HEART_MAX, heartAt: 0,
+  stars: {}, dex: {}, up: {}, boosts: {}, owned: {},
+  themes: ["classic"], theme: "classic",
+  storySeen: {}, achv: {},
+  streak: 0, streakStamp: 0, claimed: {},
+  pass: 0,
+  totalServed: 0, totalWalks: 0, totalSleeps: 0,
+  perfectDays: 0, accidents: 0, mistakes: 0,
+  tutorial: 0, sound: 1, ngPlus: 0,
+  offlineAt: 0, offlineSeen: 0
+};
+
+function persist(){
+  try{ window.storage.set(SAVE_KEY, JSON.stringify(S)); }catch(e){}
+}
+function load(){
+  return window.storage.get(SAVE_KEY).then(function(r){
+    if(!r || !r.value) return false;
+    var o;
+    try{ o = JSON.parse(r.value); }catch(e){ return false; }
+    if(!o || typeof o !== "object") return false;
+    for(var k in o){ if(Object.prototype.hasOwnProperty.call(o,k)) S[k] = o[k]; }
+    // Defensive migration: any field added after a save was written stays at
+    // its default rather than becoming undefined and poisoning arithmetic.
+    if(typeof S.coins !== "number" || isNaN(S.coins)) S.coins = 0;
+    if(typeof S.bones !== "number" || isNaN(S.bones)) S.bones = 0;
+    if(typeof S.hearts !== "number" || isNaN(S.hearts)) S.hearts = HEART_MAX;
+    if(!S.dex) S.dex = {}; if(!S.up) S.up = {}; if(!S.boosts) S.boosts = {};
+    if(!S.owned) S.owned = {}; if(!S.stars) S.stars = {}; if(!S.claimed) S.claimed = {};
+    if(!S.themes || !S.themes.length) S.themes = ["classic"];
+    return true;
+  }).catch(function(){ return false; });
+}
+
+/* ============================================================================
+   4. ECONOMY — upgrades, boosts, entitlements.
+   ========================================================================== */
+var UPGRADES = {
+  prep:   {img:"kibble",     name:"Prep Station",  ds:"Longer mealtime clock.",      max:5, base:180,  step:2.05},
+  gate:   {img:"leash",      name:"Wide Gate",     ds:"Longer walk clock.",          max:5, base:220,  step:2.05},
+  beds:   {img:"pillow",     name:"Comfy Beds",    ds:"Longer bedtime clock.",       max:5, base:220,  step:2.05},
+  jar:    {img:"coinIcon",   name:"Treat Jar",     ds:"More coins per happy dog.",   max:5, base:300,  step:2.25},
+  clicker:{img:"whistle",    name:"Clicker",       ds:"Combo holds far longer.",     max:5, base:340,  step:2.25},
+  patient:{img:"heartRefill",name:"Calm Hand",     ds:"Dogs wait longer at the bowl.",max:5,base:260,  step:2.15},
+  mat:    {img:"mopBucket",  name:"Mud Mat",       ds:"Accidents cost much less.",   max:5, base:280,  step:2.15},
+  yard:   {img:"bgPark",     name:"Big Yard",      ds:"More dogs per day, more pay.",max:5, base:420,  step:2.45}
+};
+var UP_ORDER = ["prep","gate","beds","jar","patient","clicker","mat","yard"];
+function upLv(k){ return S.up[k] || 0; }
+function upCost(k){ var u = UPGRADES[k]; return Math.round(u.base * Math.pow(u.step, upLv(k))); }
+
+var BOOSTS = {
+  frost:  {img:"frostTreat",  name:"Frost Treat", ds:"Freeze every clock for 6 seconds.", coin:260, bone:8},
+  whistle:{img:"whistle",     name:"Whistle",     ds:"Instantly settle one waiting dog.", coin:340, bone:10},
+  clock:  {img:"clockBone",   name:"Clock Bone",  ds:"Add 15 seconds to the clock.",      coin:300, bone:9},
+  heart:  {img:"heartRefill", name:"Heart",       ds:"Refill one heart right away.",      coin:0,   bone:12}
+};
+var BOOST_ORDER = ["frost","whistle","clock","heart"];
+function boostCt(k){ return S.boosts[k] || 0; }
+
+/* Permanent entitlements. Every one of these is granted either by a coin/bone
+   purchase or by a non-consumable store product; the game reads the flag, never
+   the receipt. */
+function has(k){ return !!S.owned[k]; }
+function coinMult(){
+  var m = 1 + 0.12 * upLv("jar");
+  if(has("collar")) m += 0.25;
+  if(has("pass"))   m += 0.50;
+  return m;
+}
+
+var THEMES = {
+  classic:{name:"Daycare Cream", cl:""},
+  night:  {name:"Night Shift",   cl:"thNight"},
+  meadow: {name:"Meadow",        cl:"thMeadow"},
+  sunset: {name:"Sunset Kennel", cl:"thSunset"}
+};
+
+/* ============================================================================
+   5. IN-APP PURCHASES
+
+   v1.0 ships with the placeholder key, which means IAP.available() is false,
+   the Bones tab is hidden outright, and the app genuinely has no purchase
+   surface — which is what lets the listing declare "no in-app purchases"
+   truthfully. Setting KEY to a real RevenueCat key in 1.1 turns the entire
+   storefront on, and the listing, App Privacy and description all flip with it.
+
+   No price is ever written in this file. Prices come from the store at runtime
+   via priceString so the app is correct in every currency; validate.py fails
+   the build if a currency literal appears anywhere in the source.
+   ========================================================================== */
+var IAP = {
+  KEY: "REVENUECAT_PUBLIC_APPLE_KEY",   // <- replace in 1.1 to switch the store on
+  offerings: null, ready: false, busy: false,
+
+  plugin: function(){
+    return (window.Capacitor && window.Capacitor.Plugins && window.Capacitor.Plugins.Purchases) || null;
+  },
+  available: function(){
+    return !!this.plugin() && this.KEY.indexOf("REVENUECAT_") !== 0;
+  },
+  init: function(){
+    if(!this.available()) return Promise.resolve(false);
+    var p = this.plugin(), self = this;
+    return p.configure({apiKey:this.KEY})
+      .then(function(){ return p.getOfferings(); })
+      .then(function(o){
+        self.offerings = (o && o.current) || null;
+        self.ready = !!self.offerings;
+        return self.ready;
+      })
+      .then(function(ok){ return self.sync().then(function(){ return ok; }); })
+      .catch(function(){ self.ready = false; return false; });
+  },
+  packages: function(){
+    return (this.offerings && this.offerings.availablePackages) || [];
+  },
+  find: function(sku){
+    var ps = this.packages();
+    for(var i=0;i<ps.length;i++){
+      var p = ps[i];
+      if(p.identifier === sku) return p;
+      if(p.product && p.product.identifier === sku) return p;
+    }
+    return null;
+  },
+  /* The localized price string straight from the store. Never a literal. */
+  priceOf: function(sku){
+    var p = this.find(sku);
+    return (p && p.product && p.product.priceString) || "—";
+  },
+  buy: function(sku){
+    var p = this.find(sku), self = this;
+    if(!p) return Promise.reject(new Error("unavailable"));
+    if(this.busy) return Promise.reject(new Error("busy"));
+    this.busy = true;
+    return this.plugin().purchasePackage({aPackage:p}).then(function(res){
+      self.busy = false;
+      // Prefer the customerInfo returned by the purchase over re-fetching it.
+      // A network round trip immediately after a successful charge is exactly
+      // when a flaky connection costs the player the thing they just paid for.
+      self.apply(res && res.customerInfo, sku);
+      return true;
+    }).catch(function(e){
+      self.busy = false;
+      throw e;
+    });
+  },
+  restorePurchases: function(){
+    if(!this.available()) return Promise.resolve(false);
+    var self = this;
+    return this.plugin().restorePurchases().then(function(res){
+      self.apply(res && res.customerInfo, null);
+      return true;
+    }).catch(function(){ return false; });
+  },
+  sync: function(){
+    if(!this.available()) return Promise.resolve(false);
+    var self = this;
+    return this.plugin().getCustomerInfo().then(function(res){
+      self.apply(res && res.customerInfo, null);
+      return true;
+    }).catch(function(){ return false; });
+  },
+  /* Non-consumables and the subscription are server-owned: read them back from
+     entitlements every time rather than trusting a local flag. Consumables are
+     granted locally at purchase, because they are spent immediately. */
+  apply: function(info, justBought){
+    if(info && info.entitlements && info.entitlements.active){
+      var a = info.entitlements.active;
+      S.owned.collar = !!a.collar || !!S.owned.collar;
+      S.owned.deluxe = !!a.deluxe || !!S.owned.deluxe;
+      S.owned.costume= !!a.costume|| !!S.owned.costume;
+      S.owned.themes = !!a.themes || !!S.owned.themes;
+      S.owned.pass   = !!a.pass;   // subscription: authoritative, can lapse
+      if(S.owned.themes) unlockAllThemes();
+    }
+    if(justBought && STORE_ITEMS[justBought] && STORE_ITEMS[justBought].grant){
+      STORE_ITEMS[justBought].grant();
+    }
+    persist(); paintCurrency(); if(curScreen === "shop") paintShop();
+  }
+};
+
+/* The full catalog. Product identifiers only — no prices, no copy that implies
+   one. Deliberately laddered: a small consumable, a mid consumable that most
+   buyers land on, two whale tiers, one high-value one-time starter, permanent
+   quality-of-life non-consumables, and a subscription at the top. */
+var STORE_ITEMS = {
+  bones_s:  {kind:"c", img:"boneIcon",  name:"Pocket of Bones",  ds:"A small handful of bones.",
+             grant:function(){ addBones(100); }},
+  bones_m:  {kind:"c", img:"boneIcon",  name:"Sack of Bones",    ds:"Best for a weekend of boosts.", tag:"POPULAR",
+             grant:function(){ addBones(550); }},
+  bones_l:  {kind:"c", img:"crate",     name:"Crate of Bones",   ds:"A serious restock.",
+             grant:function(){ addBones(1200); }},
+  bones_xl: {kind:"c", img:"crate",     name:"Wagon of Bones",   ds:"For the long haul.", tag:"BEST VALUE",
+             grant:function(){ addBones(3000); }},
+  bones_xxl:{kind:"c", img:"trophy",    name:"Kennel Vault",     ds:"Everything, all at once.",
+             grant:function(){ addBones(7000); }},
+  coins_m:  {kind:"c", img:"coinIcon",  name:"Coin Jar",         ds:"A pile of kibble coins.",
+             grant:function(){ addCoins(6000); }},
+  coins_l:  {kind:"c", img:"coinIcon",  name:"Coin Chest",       ds:"Skip a week of grinding.",
+             grant:function(){ addCoins(20000); }},
+  starter:  {kind:"c", img:"crate",     name:"Starter Kennel",   ds:"Bones, coins and a full set of boosts.", tag:"ONE TIME",
+             grant:function(){ addBones(400); addCoins(5000);
+               ["frost","whistle","clock"].forEach(function(b){ S.boosts[b] = boostCt(b) + 5; }); }},
+  collar:   {kind:"n", img:"passCrest", name:"Golden Collar",    ds:"Permanently earn more coins from every dog.",
+             grant:function(){ S.owned.collar = true; }},
+  deluxe:   {kind:"n", img:"boneIcon",  name:"Dutch's Deluxe Kit",ds:"Two extra tray slots, forever.",
+             grant:function(){ S.owned.deluxe = true; }},
+  costume:  {kind:"n", img:"plushie",   name:"Costume Chest",    ds:"Bandanas and hats for the whole kennel.",
+             grant:function(){ S.owned.costume = true; }},
+  themes:   {kind:"n", img:"bgNight",   name:"Kennel Themes",    ds:"Unlock every daycare colour scheme.",
+             grant:function(){ S.owned.themes = true; unlockAllThemes(); }},
+  pass:     {kind:"s", img:"passCrest", name:"Golden Pass",      ds:"Daily bones, far more coins, and an exclusive breed.", tag:"MEMBERSHIP",
+             grant:function(){ S.owned.pass = true; }}
+};
+var STORE_ORDER = ["starter","bones_s","bones_m","bones_l","bones_xl","bones_xxl",
+                   "coins_m","coins_l","collar","deluxe","costume","themes","pass"];
+
+function unlockAllThemes(){
+  for(var k in THEMES){
+    if(Object.prototype.hasOwnProperty.call(THEMES,k) && S.themes.indexOf(k) < 0) S.themes.push(k);
+  }
+}
+
+/* ============================================================================
+   6. RUNTIME STATE + small helpers
+   ========================================================================== */
+var D = null;                  // rebuilt every phase; never persisted
+var phaseSeq = 0;              // stamps deferred callbacks so a stale one cannot fire
+var curScreen = "title";
+var overlayOpen = false;       // any full-screen sheet: the loop must not run
+var timer = null;
+var grace = 0;                 // post-overlay breathing room, in ticks
+var TICK_MS = 100;
+
+function $(s){ return document.querySelector(s); }
+function el(t,c,x){ var e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e; }
+function clamp(v,a,b){ return v<a?a:(v>b?b:v); }
+function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
+function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function fmt(n){ n = Math.floor(n||0); return n >= 10000 ? (n/1000).toFixed(n>=100000?0:1)+"k" : String(n); }
+
+function toast(msg){
+  var t = $("#toast"); t.textContent = msg; t.classList.add("on");
+  clearTimeout(toast._t); toast._t = setTimeout(function(){ t.classList.remove("on"); }, 1700);
+}
+function buzz(ms){
+  if(!S.sound) return;
+  try{ if(navigator.vibrate) navigator.vibrate(ms||12); }catch(e){}
+}
+function addCoins(n){ S.coins = Math.max(0, Math.round(S.coins + n)); paintCurrency(); }
+function addBones(n){ S.bones = Math.max(0, Math.round(S.bones + n)); paintCurrency(); }
+
+function chapterOf(d){
+  for(var i=0;i<CHAPTERS.length;i++){ if(d >= CHAPTERS[i].from && d <= CHAPTERS[i].to) return CHAPTERS[i]; }
+  return CHAPTERS[CHAPTERS.length-1];
+}
+
+/* Two-phase difficulty. A linear ramp tuned for the first month is unplayable
+   by day 250, so it climbs steeply for thirty days and then almost flattens,
+   with a hard ceiling that the endless tail is allowed to nudge slightly. */
+function diff(){
+  var d = S.day <= 30 ? 0.5 + (S.day-1)*0.05 : 1.95 + (S.day-30)*0.0035;
+  return Math.min(d, S.day > STORY_DAYS ? 3.2 : 2.8);
+}
+
+/* Hearts regenerate on the wall clock so the game is playable in short bursts
+   without ever hard-blocking someone who just wants one more day. */
+function regenHearts(){
+  if(S.hearts >= HEART_MAX){ S.heartAt = Date.now(); return; }
+  if(!S.heartAt){ S.heartAt = Date.now(); return; }
+  var gained = Math.floor((Date.now() - S.heartAt) / HEART_MS);
+  if(gained > 0){
+    S.hearts = Math.min(HEART_MAX, S.hearts + gained);
+    S.heartAt = S.hearts >= HEART_MAX ? Date.now() : S.heartAt + gained*HEART_MS;
+  }
+}
+function spendHeart(){
+  regenHearts();
+  if(S.hearts <= 0) return false;
+  if(S.hearts === HEART_MAX) S.heartAt = Date.now();
+  S.hearts--; persist(); return true;
+}
+
+/* Unlocked content scales with the day so a new player is never shown sixteen
+   near-identical bowls on day one. */
+function unlockedFoods(){
+  var n = clamp(3 + Math.floor(S.day/9), 3, FOOD_ORDER.length);
+  return FOOD_ORDER.slice(0, n);
+}
+function unlockedGear(w){
+  var n = clamp(2 + Math.floor(S.day/22), 2, GEAR_ORDER.length);
+  var base = GEAR_ORDER.slice(0, n);
+  // Weather gear is always available on a day that calls for it, even if the
+  // player has not reached its normal unlock day — otherwise a rainy day 5
+  // would ask for a raincoat that is not on the shelf.
+  (w ? w.gear : []).forEach(function(g){ if(GEAR[g] && base.indexOf(g) < 0) base.push(g); });
+  return base;
+}
+function unlockedComforts(){
+  var n = clamp(2 + Math.floor(S.day/16), 2, COMFORT_ORDER.length);
+  return COMFORT_ORDER.slice(0, n);
+}
+function rosterFor(day){
+  return BREEDS.filter(function(b){ return b.day <= day; });
+}
+
+/* Tray capacity. The lesson from the previous game: the input limit and the
+   maximum the game can ask for must never be the same number. Here the tray
+   must always be able to hold one of everything the dogs want, plus decoys, so
+   TRAY_SLOTS is kept comfortably above MAX_DOGS and asserted in playtest.js. */
+var MAX_DOGS = 6;
+function traySlots(){ return 8 + (has("deluxe") ? 2 : 0); }
+/* The floor rises on its own so the daycare visibly fills up over 250 days;
+   Big Yard brings that curve forward rather than being the only source of it. */
+function maxDogs(){
+  var byDay = 2 + Math.floor(S.day / 16);
+  return clamp(byDay + Math.floor(upLv("yard") * 0.5), 2, MAX_DOGS);
+}
+
+/* ============================================================================
+   7. BUILDING A DAY
+   ========================================================================== */
+function dogCount(){
+  var n = 2 + Math.floor(diff() * 1.5);
+  return clamp(n, 2, maxDogs());
+}
+
+function newDay(){
+  var roster = rosterFor(S.day);
+  var w = WEATHER[(S.day * 7 + 3) % WEATHER.length];
+  var n = dogCount();
+  var picked = shuffle(roster.slice()).slice(0, n);
+  // Dutch always works the floor, and on any day where the roster is thin the
+  // remaining slots repeat rather than shrink the day below its target size.
+  while(picked.length < n) picked.push(roster[picked.length % roster.length]);
+
+  D = {
+    phase: "feed",
+    weather: w,
+    dogs: picked.map(function(b, i){ return makeDog(b, i); }),
+    clock: 0, clockMax: 0,
+    combo: 0, mult: 1, comboT: 0,
+    care: 100,
+    coinsEarned: 0, bonesEarned: 0,
+    served: 0, walked: 0, slept: 0,
+    misses: 0, wrongs: 0, accidents: 0,
+    sel: null, frozen: 0, done: false, failed: false,
+    tray: []
+  };
+  enterPhase("feed");
+}
+
+function makeDog(b, i){
+  return {
+    k: b.k, ref: b, name: b.name, img: b.img, size: b.size, slot: i,
+    want: null, t: 0, tmax: 1,
+    fed: false, walked: false, slept: false,
+    missed: false, state: "wait"
+  };
+}
+
+/* Patience scales down with difficulty and up with the Calm Hand upgrade.
+   Small dogs are impatient, big dogs are placid — it reads as personality and
+   also happens to be the difficulty dial. */
+function patienceFor(dog){
+  var base = 26 - diff() * 4.2;
+  if(dog.size === "s") base -= 3;
+  if(dog.size === "l") base += 4;
+  base += upLv("patient") * 2.2;
+  return Math.max(7, base);
+}
+
+function phaseClock(ph){
+  var n = D.dogs.length, t;
+  if(ph === "feed") t = 30 + n * 6.5 + upLv("prep") * 5;
+  else if(ph === "walk") t = 24 + n * 5.0 + upLv("gate") * 5;
+  else t = 24 + n * 5.0 + upLv("beds") * 5;
+  t -= diff() * 3.2;
+  return Math.max(16, Math.round(t));
+}
+
+/* The want table for each phase. Feed leans hard on each dog's favourite —
+   which is exactly what makes learning the Dogdex pay off — but not so hard
+   that the day becomes a memory test with no reading. */
+function rollWant(dog, ph){
+  if(ph === "feed"){
+    var pool = unlockedFoods();
+    if(pool.indexOf(dog.ref.fav) >= 0 && Math.random() < 0.55) return dog.ref.fav;
+    return pick(pool);
+  }
+  if(ph === "walk"){
+    var g = unlockedGear(D.weather);
+    // On a weather day the matching gear dominates, which is the tell the
+    // player learns to read off the weather chip in the header.
+    var wg = D.weather.gear.filter(function(x){ return g.indexOf(x) >= 0; });
+    if(wg.length && Math.random() < 0.65) return pick(wg);
+    return pick(g);
+  }
+  var c = unlockedComforts();
+  // A dog that skipped its walk is wound up and always wants the calming items.
+  if(!dog.walked){
+    var calm = ["musicbox","brush","nightlight","blanket"].filter(function(x){ return c.indexOf(x) >= 0; });
+    if(calm.length) return pick(calm);
+  }
+  return pick(c);
+}
+
+function enterPhase(ph){
+  D.phase = ph;
+  D.sel = null;
+  D.clockMax = phaseClock(ph);
+  D.clock = D.clockMax;
+  D.frozen = 0;
+
+  var unfed = 0;
+  D.dogs.forEach(function(d){
+    d.missed = false;
+    d.want = rollWant(d, ph);
+    d.tmax = patienceFor(d) * (ph === "feed" ? 1 : 1.25);
+    d.t = d.tmax;
+    if(ph === "feed"){
+      d.state = d.fed ? "done" : "wait";
+    }else if(ph === "walk"){
+      // Feed before you walk. A dog that never got its bowl will not take the
+      // leash, so it is resolved right here as an accident rather than sitting
+      // in the round as an unsolvable card the player cannot clear.
+      if(d.walked)   d.state = "done";
+      else if(d.fed) d.state = "wait";
+      else { d.state = "accident"; d.missed = true; unfed++; }
+    }else{
+      d.state = d.slept ? "done" : "wait";
+    }
+  });
+
+  if(unfed > 0){
+    D.accidents += unfed; S.accidents += unfed;
+    var bill = Math.round(unfed * 45 * (1 - upLv("mat") * 0.15));
+    addCoins(-Math.min(S.coins, bill));
+    D.care = clamp(D.care - unfed * 6, 0, 100);
+    toast(unfed === 1
+      ? "One dog never ate — it could not go out. Mop: " + fmt(bill) + " coins."
+      : unfed + " dogs never ate — they could not go out. Mop: " + fmt(bill) + " coins.");
+  }
+
+  buildTray();
+  paintPlay();
+  startTimer();
+  // An empty round (every dog already resolved — e.g. nobody got fed at all)
+  // must still advance, after the repaint so the player sees why. The sequence
+  // stamp stops a queued callback from firing into a phase that moved on.
+  var seq = ++phaseSeq;
+  if(!pending()) setTimeout(function(){
+    if(D && !D.done && phaseSeq === seq) finishPhase();
+  }, 700);
+}
+
+/* Dogs still waiting on the player in this phase. */
+function pending(){
+  if(!D) return 0;
+  var n = 0;
+  for(var i=0;i<D.dogs.length;i++){ if(D.dogs[i].state === "wait") n++; }
+  return n;
+}
+
+/* The tray always contains every item the waiting dogs want, then fills the
+   remaining slots with plausible decoys. Building it want-first is what makes
+   an unsolvable day structurally impossible rather than merely unlikely. */
+function buildTray(){
+  var ph = D.phase;
+  var pool = ph === "feed" ? unlockedFoods() : (ph === "walk" ? unlockedGear(D.weather) : unlockedComforts());
+  var need = [];
+  D.dogs.forEach(function(d){
+    if(d.state !== "done" && d.want && need.indexOf(d.want) < 0) need.push(d.want);
+  });
+  var decoys = shuffle(pool.filter(function(x){ return need.indexOf(x) < 0; }));
+  var tray = need.concat(decoys).slice(0, Math.max(need.length, Math.min(traySlots(), pool.length)));
+  D.tray = shuffle(tray);
+}
+
+function tableFor(ph){ return ph === "feed" ? FOODS : (ph === "walk" ? GEAR : COMFORTS); }
+function phaseName(ph){ return ph === "feed" ? "Mealtime" : (ph === "walk" ? "Walk Time" : "Bedtime"); }
+function phaseBg(ph){ return ph === "feed" ? ART.bgKitchen : (ph === "walk" ? ART.bgPark : ART.bgNight); }
+function phaseHint(ph){
+  if(ph === "feed") return "Tap a bowl, then tap the dog who asked for it";
+  if(ph === "walk") return "Gear each dog up — a hungry dog will not go out";
+  return "Settle every dog before lights out";
+}
+
+/* ============================================================================
+   8. THE CORE INTERACTION — deliver an item to a dog.
+
+   Every input path funnels through here: tap-select-then-tap, pointer drag, the
+   whistle boost, and the automated playtest. One function means the harness
+   exercises exactly the code the player does.
+   ========================================================================== */
+function deliver(itemKey, idx){
+  if(!D || D.done || overlayOpen) return false;
+  var dog = D.dogs[idx];
+  if(!dog || dog.state !== "wait") return false;
+  if(D.tray.indexOf(itemKey) < 0) return false;
+
+  // Belt and braces on the rule the whole game hangs off: feed before you walk.
+  // enterPhase already resolves unfed dogs out of the walk round, so this only
+  // fires if something else (a boost, a future feature) routes around it.
+  if(D.phase === "walk" && !dog.fed){
+    penalty(4, dog, "Hungry!");
+    shakeDog(idx);
+    return false;
+  }
+
+  if(itemKey !== dog.want){
+    D.wrongs++; S.mistakes++;
+    penalty(5, dog, "Nope");
+    shakeDog(idx);
+    D.combo = 0; D.mult = 1;
+    paintCombo();
+    return false;
+  }
+
+  // Correct.
+  dog.state = "done";
+  if(D.phase === "feed"){ dog.fed = true;  D.served++; S.totalServed++; }
+  if(D.phase === "walk"){ dog.walked = true; D.walked++; S.totalWalks++; }
+  if(D.phase === "bed"){  dog.slept = true;  D.slept++;  S.totalSleeps++; }
+
+  D.combo++;
+  D.comboT = 4.5 + upLv("clicker") * 1.6;
+  D.mult = 1 + Math.min(4, Math.floor(D.combo / 3)) * 0.25;
+
+  // Reward promptness: a dog served with most of its patience left pays more.
+  var speed = clamp(dog.t / dog.tmax, 0, 1);
+  var base = (dog.size === "l" ? 26 : dog.size === "m" ? 20 : 15) + Math.round(diff() * 6);
+  var gain = Math.round(base * (0.6 + speed * 0.7) * D.mult * coinMult());
+  D.coinsEarned += gain;
+  addCoins(gain);
+  bumpDex(dog.k);
+
+  if(D.combo > 0 && D.combo % 12 === 0){ D.bonesEarned += 1; addBones(1); }
+
+  popDog(idx, "+" + gain, "var(--leaf)");
+  buzz(10);
+  paintCombo();
+  buildTray();
+  paintPlay();
+
+  if(!pending()) finishPhase();
+  return true;
+}
+
+function penalty(n, dog, label){
+  D.care = clamp(D.care - n, 0, 100);
+  if(dog) popDog(dog.slot, label || "-", "var(--rose)");
+  paintCare();
+  buzz(24);
+  if(D.care <= 0 && !D.done) failDay();
+}
+
+function shakeDog(i){
+  var n = document.querySelector('.dog[data-i="'+i+'"]');
+  if(!n) return;
+  n.classList.remove("shake"); void n.offsetWidth; n.classList.add("shake");
+}
+function popDog(i, txt, col){
+  var n = document.querySelector('.dog[data-i="'+i+'"]');
+  if(!n) return;
+  n.classList.remove("pop"); void n.offsetWidth; n.classList.add("pop");
+  if(txt){
+    var b = n.getBoundingClientRect();
+    var f = el("div","fx",txt);
+    f.style.left = (b.left + b.width/2) + "px";
+    f.style.top  = (b.top + 18) + "px";
+    f.style.color = col || "var(--gold)";
+    document.body.appendChild(f);
+    setTimeout(function(){ if(f.parentNode) f.parentNode.removeChild(f); }, 1000);
+  }
+}
+
+function bumpDex(k){
+  var e = S.dex[k] || (S.dex[k] = {seen:1, served:0, lv:1});
+  e.seen = 1; e.served++;
+  var need = e.lv * 8;
+  if(e.served >= need && e.lv < 5){ e.lv++; toast(dogName(k) + " reached level " + e.lv + "!"); }
+}
+function dogName(k){
+  for(var i=0;i<BREEDS.length;i++){ if(BREEDS[i].k === k) return BREEDS[i].name; }
+  return k;
+}
+
+/* ============================================================================
+   9. THE CLOCK
+
+   Every modal stops it. The previous game left the loop running under its
+   reward overlay and drained a whole customer's patience during the
+   celebration; the guard below plus the grace period on close is the fix.
+   ========================================================================== */
+function startTimer(){
+  stopTimer();
+  timer = setInterval(tick, TICK_MS);
+}
+function stopTimer(){ if(timer){ clearInterval(timer); timer = null; } }
+
+function tick(){
+  if(!D || D.done) return;
+  if(overlayOpen) return;                 // <- the guard that matters
+  if(grace > 0){ grace--; return; }
+
+  var dt = TICK_MS / 1000;
+  if(D.frozen > 0){ D.frozen -= dt; paintClock(); return; }
+
+  D.clock -= dt;
+
+  if(D.comboT > 0){
+    D.comboT -= dt;
+    if(D.comboT <= 0){ D.combo = 0; D.mult = 1; paintCombo(); }
+  }
+
+  // Per-dog patience only runs during mealtime; the walk and bedtime rounds are
+  // paced by the single shared clock so they read as one collective push.
+  if(D.phase === "feed"){
+    for(var i=0;i<D.dogs.length;i++){
+      var d = D.dogs[i];
+      if(d.state === "done" || d.missed) continue;
+      d.t -= dt;
+      if(d.t <= 0){
+        d.t = 0; d.missed = true; d.state = "tired";
+        D.misses++;
+        penalty(9, d, "Tired");
+      }
+    }
+  }
+
+  if(D.clock <= 0){ D.clock = 0; timeUp(); return; }
+  paintClock();
+  paintRings();
+}
+
+function timeUp(){
+  var late = D.dogs.filter(function(d){ return d.state === "wait"; });
+  if(!late.length){ finishPhase(); return; }
+
+  late.forEach(function(d){
+    d.missed = true;
+    if(D.phase === "feed"){ d.state = "tired"; }
+    else if(D.phase === "walk"){ d.state = "accident"; D.accidents++; S.accidents++; }
+    else { d.state = "awake"; }
+  });
+  D.misses += late.length;
+
+  if(D.phase === "walk"){
+    // The accident the player was warned about. Mud Mat softens the bill.
+    var cost = Math.round(late.length * 60 * (1 - upLv("mat") * 0.15));
+    addCoins(-Math.min(S.coins, cost));
+    D.care = clamp(D.care - late.length * 8, 0, 100);
+    paintPlay();
+    showReward({
+      img: ART.mopBucket,
+      title: late.length === 1 ? "One accident" : late.length + " accidents",
+      body: "Dogs that never got out had nowhere else to go. Cleaning up costs " + fmt(cost) + " coins.",
+      btn: "Get the mop"
+    }, afterPhase);
+    return;
+  }
+
+  if(D.phase === "bed"){
+    D.care = clamp(D.care - late.length * 7, 0, 100);
+    paintPlay();
+    showReward({
+      img: ART.nightlight,
+      title: late.length === 1 ? "One dog still up" : late.length + " dogs still up",
+      body: "They barked most of the night. Everyone starts tomorrow a little frayed.",
+      btn: "Turn in"
+    }, afterPhase);
+    return;
+  }
+
+  paintPlay();
+  afterPhase();
+}
+
+function finishPhase(){
+  // A clean sweep is worth saying out loud — it is the moment the loop rewards.
+  var clean = D.dogs.every(function(d){ return !d.missed; });
+  if(clean && D.phase !== "bed"){
+    var bonus = Math.round(40 * (1 + diff()) * coinMult());
+    addCoins(bonus); D.coinsEarned += bonus;
+    toast("Clean round! +" + fmt(bonus));
+  }
+  afterPhase();
+}
+
+function afterPhase(){
+  if(D.done) return;
+  if(D.phase === "feed"){ enterPhase("walk"); return; }
+  if(D.phase === "walk"){ enterPhase("bed"); return; }
+  endDay(false);
+}
+
+function failDay(){
+  if(D.done) return;
+  D.done = true; D.failed = true;
+  stopTimer();
+  spendHeart();
+  persist();
+  showEnd();
+}
+
+/* ============================================================================
+   10. DAY START / DAY END
+   ========================================================================== */
+function beginDay(){
+  regenHearts();
+  if(S.hearts <= 0){
+    showReward({
+      img: ART.heartRefill,
+      title: "The kennel is resting",
+      body: "You are out of hearts. One comes back every few minutes — or spend bones to refill one now.",
+      btn: "Wait it out",
+      alt: boostCt("heart") > 0 ? "Use a Heart boost" : (S.bones >= BOOSTS.heart.bone ? "Refill for " + BOOSTS.heart.bone + " bones" : null),
+      onAlt: function(){
+        if(boostCt("heart") > 0){ S.boosts.heart--; }
+        else if(S.bones >= BOOSTS.heart.bone){ addBones(-BOOSTS.heart.bone); }
+        else return;
+        S.hearts = Math.min(HEART_MAX, S.hearts + 1); persist(); paintCurrency();
+        beginDay();
+      }
+    }, function(){ go("title"); });
+    return;
+  }
+  showDayCard();
+}
+
+function showDayCard(){
+  var ch = chapterOf(S.day);
+  var isChapterStart = (S.day === ch.from);
+  var w = WEATHER[(S.day * 7 + 3) % WEATHER.length];
+  var box = $("#dayBox"); box.innerHTML = "";
+
+  var head = el("div","row");
+  head.appendChild(el("div","tag", "Chapter " + (CHAPTERS.indexOf(ch)+1)));
+  head.appendChild(el("div","sp"));
+  head.appendChild(el("div","tag", w.ic + " " + w.name));
+  box.appendChild(head);
+
+  box.appendChild(el("div","h1","Day " + S.day));
+  box.appendChild(el("div","h2", ch.t));
+  var sub = el("div","sub", isChapterStart ? ch.l : pick(WISDOM));
+  sub.style.marginTop = "8px";
+  box.appendChild(sub);
+
+  var stats = el("div"); stats.style.margin = "14px 0 4px";
+  var roster = rosterFor(S.day);
+  addStat(stats, "Dogs on the floor", String(dogCount()));
+  addStat(stats, "Breeds in the daycare", String(roster.length) + " / " + BREEDS.length);
+  addStat(stats, "Hearts", "❤️ " + S.hearts + " / " + HEART_MAX);
+  if(S.streak > 1) addStat(stats, "Day streak", "🔥 " + S.streak);
+  box.appendChild(stats);
+
+  var go1 = el("button","btn gold wide","Start the day");
+  go1.onclick = function(){
+    closeOverlay();
+    if(STORY[S.day] && !S.storySeen[S.day]) showStory(S.day, startPlay);
+    else startPlay();
+  };
+  box.appendChild(go1);
+
+  var back = el("button","btn ghost wide","Back to the porch");
+  back.style.marginTop = "8px";
+  back.onclick = function(){ closeOverlay(); go("title"); };
+  box.appendChild(back);
+
+  overlay("#dayScr");
+}
+function addStat(parent, k, v){
+  var r = el("div","statLine");
+  r.appendChild(el("span",null,k));
+  r.appendChild(el("b",null,v));
+  parent.appendChild(r);
+}
+
+function showStory(day, done){
+  var s = STORY[day];
+  if(!s){ done(); return; }
+  S.storySeen[day] = 1; persist();
+  var box = $("#storyBox"); box.innerHTML = "";
+  var wrap = el("div","sceneWrap");
+  var im = el("img","por"); im.src = ART[s.img] || ART.dutch; im.alt = s.who;
+  wrap.appendChild(im);
+  var sp = el("div","speech");
+  var who = el("span","who", s.who); sp.appendChild(who);
+  sp.appendChild(document.createTextNode(s.t));
+  wrap.appendChild(sp);
+  var b = el("button","btn gold wide","Continue");
+  b.onclick = function(){ closeOverlay(); done(); };
+  wrap.appendChild(b);
+  box.appendChild(wrap);
+  overlay("#storyScr");
+}
+
+function startPlay(){
+  go("play");
+  newDay();
+}
+
+function endDay(failed){
+  if(D && D.done) return;
+  if(!D) return;
+  D.done = true; D.failed = !!failed;
+  stopTimer();
+
+  if(!failed){
+    var perfect = (D.misses === 0 && D.wrongs === 0);
+    var stars = D.misses === 0 ? 3 : (D.misses <= 2 ? 2 : 1);
+    var prev = S.stars[S.day] || 0;
+    if(stars > prev) S.stars[S.day] = stars;
+    if(perfect) S.perfectDays++;
+
+    // End-of-day purse. Stars matter more than raw coins here so replaying an
+    // early day for three stars stays worth doing at day 200.
+    var purse = Math.round((60 + D.dogs.length * 18) * stars * (0.8 + diff()*0.25) * coinMult());
+    addCoins(purse);
+    D.coinsEarned += purse;
+    var bones = stars === 3 ? 3 : (stars === 2 ? 1 : 0);
+    if(perfect) bones += 2;
+    if(bones){ addBones(bones); D.bonesEarned += bones; }
+
+    S.pass += stars;
+    if(S.day >= S.best) S.best = S.day;
+    if(S.day < TOTAL_DAYS) S.day++;
+    bumpStreak();
+    checkAchievements();
+  }else{
+    // A failed day costs a heart but never progress already banked.
+  }
+  persist();
+  showEnd();
+}
+
+function bumpStreak(){
+  var today = Math.floor(Date.now() / 86400000);
+  if(S.streakStamp === today) return;
+  S.streak = (S.streakStamp === today - 1) ? S.streak + 1 : 1;
+  S.streakStamp = today;
+}
+
+var ACHIEVEMENTS = [
+  {k:"first",   n:"First Bowl",      d:"Serve your first dog.",           img:"kibble",     ok:function(){ return S.totalServed >= 1; },   bones:2},
+  {k:"fifty",   n:"Fifty Bowls",     d:"Serve fifty dogs.",               img:"chicken",    ok:function(){ return S.totalServed >= 50; },  bones:5},
+  {k:"fivehun", n:"Five Hundred",    d:"Serve five hundred dogs.",        img:"crate",      ok:function(){ return S.totalServed >= 500; }, bones:20},
+  {k:"walker",  n:"Good Walker",     d:"Complete a hundred walks.",       img:"leash",      ok:function(){ return S.totalWalks >= 100; },  bones:10},
+  {k:"nightowl",n:"Lights Out",      d:"Settle a hundred dogs at night.", img:"nightlight", ok:function(){ return S.totalSleeps >= 100; }, bones:10},
+  {k:"perfect5",n:"Five Perfect",    d:"Finish five days with no misses.",img:"trophy",     ok:function(){ return S.perfectDays >= 5; },   bones:12},
+  {k:"dex10",   n:"Ten Friends",     d:"Meet ten different breeds.",      img:"dutch_h",    ok:function(){ return dexSeen() >= 10; },      bones:8},
+  {k:"dexall",  n:"The Whole Pack",  d:"Meet every breed.",               img:"passCrest",  ok:function(){ return dexSeen() >= BREEDS.length; }, bones:50},
+  {k:"day50",   n:"Fifty Days",      d:"Reach day fifty.",                img:"bgHouse",    ok:function(){ return S.best >= 50; },         bones:15},
+  {k:"day150",  n:"A Hundred Fifty", d:"Reach day one hundred and fifty.",img:"bgPark",     ok:function(){ return S.best >= 150; },        bones:30},
+  {k:"day250",  n:"Every Last Day",  d:"Reach day two hundred and fifty.",img:"trophy",     ok:function(){ return S.best >= TOTAL_DAYS; }, bones:100}
+];
+function dexSeen(){ var n=0; for(var k in S.dex){ if(S.dex[k] && S.dex[k].seen) n++; } return n; }
+function checkAchievements(){
+  ACHIEVEMENTS.forEach(function(a){
+    if(S.achv[a.k]) return;
+    if(!a.ok()) return;
+    S.achv[a.k] = 1;
+    addBones(a.bones);
+    pendingRewards.push({img: ART[a.img], title: a.n, body: a.d + "  +" + a.bones + " bones", btn:"Nice"});
+  });
+}
+var pendingRewards = [];
+
+function showEnd(){
+  var box = $("#endBox"); box.innerHTML = "";
+  var failed = D.failed;
+  var stars = failed ? 0 : (D.misses === 0 ? 3 : (D.misses <= 2 ? 2 : 1));
+
+  box.appendChild(el("div","tag", failed ? "Day lost" : "Day complete"));
+  box.appendChild(el("div","h1", failed ? "Too much chaos" : "Lights out"));
+
+  var sr = el("div","starsRow");
+  for(var i=0;i<3;i++){
+    var s = el("span","star" + (i < stars ? " lit" : ""), "⭐");
+    s.style.animationDelay = (i*0.12) + "s";
+    sr.appendChild(s);
+  }
+  box.appendChild(sr);
+
+  var stats = el("div"); stats.style.margin = "12px 0";
+  addStat(stats, "Fed",      D.served + " / " + D.dogs.length);
+  addStat(stats, "Walked",   D.walked + " / " + D.dogs.length);
+  addStat(stats, "Settled",  D.slept  + " / " + D.dogs.length);
+  addStat(stats, "Wrong bowls", String(D.wrongs));
+  if(D.accidents) addStat(stats, "Accidents", String(D.accidents));
+  addStat(stats, "Coins earned", fmt(D.coinsEarned));
+  if(D.bonesEarned) addStat(stats, "Bones earned", String(D.bonesEarned));
+  box.appendChild(stats);
+
+  if(failed){
+    var msg = el("div","sub","The care meter emptied. You lost a heart — the day is still there when you are ready.");
+    msg.style.marginBottom = "12px";
+    box.appendChild(msg);
+    var retry = el("button","btn gold wide", S.hearts > 0 ? "Try day " + S.day + " again" : "Out of hearts");
+    if(S.hearts <= 0) retry.setAttribute("disabled","");
+    retry.onclick = function(){ closeOverlay(); beginDay(); };
+    box.appendChild(retry);
+  }else{
+    var nxt = el("button","btn gold wide", S.day > TOTAL_DAYS ? "The end" : "On to day " + S.day);
+    nxt.onclick = function(){ closeOverlay(); beginDay(); };
+    box.appendChild(nxt);
+  }
+
+  var home = el("button","btn ghost wide","Back to the porch");
+  home.style.marginTop = "8px";
+  home.onclick = function(){ closeOverlay(); go("title"); };
+  box.appendChild(home);
+
+  overlay("#endScr");
+  if(pendingRewards.length) drainRewards();
+}
+
+function drainRewards(){
+  if(!pendingRewards.length){ overlay("#endScr"); return; }
+  var r = pendingRewards.shift();
+  setTimeout(function(){ showReward(r, drainRewards); }, 320);
+}
+
+/* Builds the reward sheet AND opens it. The primary button always closes the
+   overlay before running onDone, so no caller can strand the loop paused. */
+function showReward(o, onDone){
+  var box = $("#rewardBox"); box.innerHTML = "";
+  var wrap = el("div","sceneWrap");
+  if(o.img){ var im = el("img","por"); im.src = o.img; im.alt = ""; wrap.appendChild(im); }
+  wrap.appendChild(el("div","h2", o.title || ""));
+  if(o.body) wrap.appendChild(el("div","sub", o.body));
+  var b = el("button","btn gold wide", o.btn || "OK");
+  b.onclick = function(){ closeOverlay(); if(onDone) onDone(); };
+  wrap.appendChild(b);
+  if(o.alt){
+    var b2 = el("button","btn ghost wide", o.alt);
+    b2.style.marginTop = "8px";
+    b2.onclick = function(){ closeOverlay(); if(o.onAlt) o.onAlt(); };
+    wrap.appendChild(b2);
+  }
+  box.appendChild(wrap);
+  overlay("#rewardScr");
+}
+
+/* ============================================================================
+   11. BOOSTS
+   ========================================================================== */
+function useBoost(k){
+  if(!D || D.done || overlayOpen) return false;
+  if(boostCt(k) <= 0){ toast("None left — stock up in the Shop."); return false; }
+  S.boosts[k] = boostCt(k) - 1;
+  if(k === "frost"){ D.frozen = 6; toast("Every clock frozen for six seconds."); }
+  if(k === "clock"){ D.clock += 15; D.clockMax = Math.max(D.clockMax, D.clock); toast("Fifteen seconds added."); }
+  if(k === "whistle"){
+    var waiting = D.dogs.filter(function(d){ return d.state === "wait"; });
+    if(!waiting.length){ S.boosts[k]++; toast("Nobody is waiting."); return false; }
+    // Pick whoever is closest to running out — the whistle should feel like a
+    // rescue, not a random freebie.
+    waiting.sort(function(a,b){ return (a.t/a.tmax) - (b.t/b.tmax); });
+    var d = waiting[0];
+    if(D.phase === "walk" && !d.fed) d.fed = true;
+    deliver(d.want, d.slot);
+  }
+  if(k === "heart"){
+    S.hearts = Math.min(HEART_MAX, S.hearts + 1);
+    toast("Heart restored.");
+  }
+  persist(); paintBoosts(); paintClock(); paintCurrency();
+  return true;
+}
+
+/* ============================================================================
+   12. RENDERING
+   ========================================================================== */
+function paintCurrency(){
+  var c = fmt(S.coins), b = fmt(S.bones);
+  ["#tCoins","#hCoins","#sCoins"].forEach(function(s){ var n=$(s); if(n) n.textContent = c; });
+  ["#tBones","#sBones"].forEach(function(s){ var n=$(s); if(n) n.textContent = b; });
+  regenHearts();
+  var h = $("#tHearts"); if(h) h.textContent = S.hearts + "/" + HEART_MAX;
+}
+
+function paintCare(){
+  if(!D) return;
+  var f = $("#careFill");
+  f.style.width = D.care + "%";
+  f.className = D.care <= 25 ? "crit" : (D.care <= 55 ? "low" : "");
+}
+
+function paintClock(){
+  if(!D) return;
+  var w = $("#clockWrap"), r = $("#clockRing"), t = $("#clockTxt");
+  var frac = clamp(D.clock / Math.max(1, D.clockMax), 0, 1);
+  var C = 2 * Math.PI * 26;
+  r.setAttribute("stroke-dasharray", C.toFixed(1));
+  r.setAttribute("stroke-dashoffset", (C * (1 - frac)).toFixed(1));
+  var col = D.frozen > 0 ? "#7fc4d8" : (frac > 0.5 ? "#2f8f86" : (frac > 0.22 ? "#f2b134" : "#e05a5a"));
+  r.setAttribute("stroke", col);
+  t.textContent = Math.ceil(D.clock);
+  w.className = D.frozen > 0 ? "" : (frac <= 0.22 ? "crit" : (frac <= 0.5 ? "warn" : ""));
+}
+
+function paintCombo(){
+  if(!D) return;
+  var p = $("#comboPill");
+  p.textContent = "×" + D.mult.toFixed(2).replace(/\.?0+$/,"");
+  p.style.background = D.combo >= 3 ? "var(--gold)" : "rgba(0,0,0,.06)";
+}
+
+function paintRings(){
+  if(!D || D.phase !== "feed") return;
+  for(var i=0;i<D.dogs.length;i++){
+    var d = D.dogs[i];
+    var n = document.querySelector('.dog[data-i="'+i+'"] .pRing');
+    if(!n) continue;
+    var frac = d.state === "done" ? 1 : clamp(d.t / d.tmax, 0, 1);
+    var C = 2 * Math.PI * 15;
+    n.setAttribute("stroke-dasharray", C.toFixed(1));
+    n.setAttribute("stroke-dashoffset", (C * (1 - frac)).toFixed(1));
+    n.setAttribute("stroke", d.state === "done" ? "#5aa860" : (frac > 0.45 ? "#2f8f86" : (frac > 0.2 ? "#f2b134" : "#e05a5a")));
+  }
+}
+
+function paintPlay(){
+  if(!D) return;
+  $("#dayChip").textContent = "Day " + S.day;
+  $("#phaseChip").textContent = D.weather.ic + " " + phaseName(D.phase);
+  $("#trayHint").textContent = phaseHint(D.phase);
+  var bg = $("#fieldBg");
+  var want = phaseBg(D.phase);
+  if(bg.getAttribute("src") !== want) bg.src = want;
+
+  paintCare(); paintClock(); paintCombo(); paintCurrency();
+
+  var zone = $("#dogZone");
+  zone.innerHTML = "";
+  var wide = D.dogs.length >= 5;
+  D.dogs.forEach(function(d, i){
+    var n = el("div","dog" + (wide ? " wide" : "") + (d.state === "done" ? " done" : ""));
+    n.setAttribute("data-i", String(i));
+
+    if(d.state !== "done" && d.want){
+      var wb = el("div","want");
+      var wi = el("img"); wi.src = ART[tableFor(D.phase)[d.want].img]; wi.alt = tableFor(D.phase)[d.want].name;
+      wb.appendChild(wi);
+      n.appendChild(wb);
+    }
+
+    var por = el("img","por"); por.src = ART[d.img]; por.alt = d.name;
+    n.appendChild(por);
+    n.appendChild(el("div","nm", d.name));
+    n.appendChild(el("div","br", d.ref.breed));
+
+    if(D.phase === "feed" && d.state !== "done"){
+      var ring = el("div","ring");
+      ring.innerHTML = '<svg width="36" height="36" viewBox="0 0 36 36">'
+        + '<circle cx="18" cy="18" r="15" fill="rgba(255,255,255,.85)" stroke="rgba(0,0,0,.10)" stroke-width="4"></circle>'
+        + '<circle class="pRing" cx="18" cy="18" r="15" fill="none" stroke="#2f8f86" stroke-width="4" stroke-linecap="round"></circle></svg>';
+      n.appendChild(ring);
+    }
+
+    var badge = null;
+    if(d.state === "done")        badge = el("div","badge ok","✓");
+    else if(d.state === "hungry") badge = el("div","badge","HUNGRY");
+    else if(d.state === "tired")  badge = el("div","badge warn","TIRED");
+    else if(d.state === "accident")badge = el("div","badge","OOPS");
+    else if(d.state === "awake")  badge = el("div","badge warn","AWAKE");
+    else if(D.phase !== "feed" && !d.fed) badge = el("div","badge","HUNGRY");
+    if(badge) n.appendChild(badge);
+
+    var ic = d.state === "done" ? (D.phase === "bed" ? "💤" : "💚")
+           : d.state === "tired" ? "😪" : d.state === "accident" ? "💦"
+           : d.state === "awake" ? "🐕‍🦺" : "";
+    if(ic) n.appendChild(el("div","stateIc", ic));
+
+    n.addEventListener("pointerup", function(ev){
+      ev.preventDefault();
+      if(D.sel){ deliver(D.sel, i); D.sel = null; paintTray(); }
+    });
+    zone.appendChild(n);
+  });
+
+  paintTray();
+  paintBoosts();
+  paintRings();
+}
+
+function paintTray(){
+  if(!D) return;
+  var tbl = tableFor(D.phase);
+  var t = $("#tray"); t.innerHTML = "";
+  D.tray.forEach(function(k){
+    var def = tbl[k]; if(!def) return;
+    var n = el("div","item" + (D.sel === k ? " sel" : ""));
+    n.setAttribute("data-k", k);
+    var im = el("img"); im.src = ART[def.img]; im.alt = def.name;
+    n.appendChild(im);
+    n.appendChild(el("div","lbl", def.name));
+    t.appendChild(n);
+  });
+}
+
+function paintBoosts(){
+  var r = $("#boostRail"); r.innerHTML = "";
+  BOOST_ORDER.forEach(function(k){
+    if(k === "heart") return;           // hearts are a menu action, not in-round
+    var b = BOOSTS[k], ct = boostCt(k);
+    var n = el("div","boostBtn" + (ct <= 0 ? " empty" : ""));
+    var im = el("img"); im.src = ART[b.img]; im.alt = b.name;
+    n.appendChild(im);
+    n.appendChild(el("div","ct", String(ct)));
+    n.onclick = function(){ useBoost(k); };
+    r.appendChild(n);
+  });
+}
+
+/* ---- tray input: tap to select, or drag straight onto a dog --------------- */
+(function trayInput(){
+  var dragging = false, dragKey = null;
+  var tray = null, ghost = null, gimg = null;
+
+  function itemAt(target){
+    var n = target;
+    while(n && n !== document.body){
+      if(n.classList && n.classList.contains("item")) return n;
+      n = n.parentNode;
+    }
+    return null;
+  }
+  function dogIndexAt(x, y){
+    var e = document.elementFromPoint(x, y);
+    while(e && e !== document.body){
+      if(e.classList && e.classList.contains("dog")) return Number(e.getAttribute("data-i"));
+      e = e.parentNode;
+    }
+    return -1;
+  }
+  function highlight(i){
+    var all = document.querySelectorAll(".dog");
+    for(var j=0;j<all.length;j++) all[j].classList.toggle("target", j === i);
+  }
+
+  document.addEventListener("pointerdown", function(ev){
+    if(!D || overlayOpen) return;
+    tray = tray || $("#tray");
+    var it = itemAt(ev.target);
+    if(!it || !tray.contains(it)) return;
+    dragKey = it.getAttribute("data-k");
+    dragging = true;
+    D.sel = dragKey;
+    paintTray();
+    ghost = ghost || $("#ghost"); gimg = gimg || $("#ghostImg");
+    var tbl = tableFor(D.phase);
+    if(tbl[dragKey]){
+      gimg.src = ART[tbl[dragKey].img];
+      ghost.style.display = "block";
+      ghost.style.left = ev.clientX + "px";
+      ghost.style.top = ev.clientY + "px";
+    }
+  }, {passive:true});
+
+  document.addEventListener("pointermove", function(ev){
+    if(!dragging) return;
+    ghost.style.left = ev.clientX + "px";
+    ghost.style.top = ev.clientY + "px";
+    highlight(dogIndexAt(ev.clientX, ev.clientY));
+  }, {passive:true});
+
+  document.addEventListener("pointerup", function(ev){
+    if(!dragging) return;
+    dragging = false;
+    ghost.style.display = "none";
+    highlight(-1);
+    var i = dogIndexAt(ev.clientX, ev.clientY);
+    if(i >= 0){
+      // A real drag landed on a dog: deliver and clear the selection.
+      deliver(dragKey, i);
+      D.sel = null;
+      paintTray();
+    }
+    // Otherwise the selection stays lifted so tap-then-tap still works.
+    dragKey = null;
+  }, {passive:true});
+})();
+
+/* ============================================================================
+   13. SCREENS
+   ========================================================================== */
+function go(name){
+  curScreen = name;
+  ["titleScr","playScr","dexScr","shopScr"].forEach(function(id){
+    document.getElementById(id).classList.remove("on");
+  });
+  if(name === "title"){ document.getElementById("titleScr").classList.add("on"); stopTimer(); paintCurrency(); }
+  if(name === "play"){  document.getElementById("playScr").classList.add("on"); }
+  if(name === "dex"){   document.getElementById("dexScr").classList.add("on"); paintDex(); }
+  if(name === "shop"){  document.getElementById("shopScr").classList.add("on"); paintShop(); }
+}
+
+/* Any sheet opening pauses the loop; closing it grants a short grace period so
+   the player is not immediately punished for the interruption. */
+function overlay(sel, _unused){
+  document.querySelectorAll(".sheet").forEach(function(n){ n.classList.remove("on"); });
+  document.querySelector(sel).classList.add("on");
+  overlayOpen = true;
+}
+function closeOverlay(){
+  document.querySelectorAll(".sheet").forEach(function(n){ n.classList.remove("on"); });
+  overlayOpen = false;
+  grace = 8;                            // ~0.8s before the clock resumes biting
+}
+
+/* ---- Dogdex -------------------------------------------------------------- */
+function paintDex(){
+  var g = $("#dexGrid"); g.innerHTML = "";
+  var seen = 0;
+  BREEDS.forEach(function(b){
+    var e = S.dex[b.k];
+    var known = !!(e && e.seen);
+    if(known) seen++;
+    var c = el("div","dexCard" + (known ? "" : " locked"));
+    var im = el("img"); im.src = ART[b.img]; im.alt = known ? b.name : "Not yet met";
+    c.appendChild(im);
+    c.appendChild(el("div","nm", known ? b.name : "???"));
+    c.appendChild(el("div","lv", known ? (RARITY[b.rar].n + " · Lv " + e.lv) : ("Day " + b.day)));
+    if(known){
+      var bar = el("div","lvBar"); var fill = el("i");
+      var need = e.lv * 8;
+      fill.style.width = Math.min(100, Math.round((e.served % need) / need * 100)) + "%";
+      bar.appendChild(fill); c.appendChild(bar);
+      c.onclick = function(){ showDexCard(b, e); };
+    }
+    g.appendChild(c);
+  });
+  $("#dexCount").textContent = seen + " / " + BREEDS.length;
+}
+function showDexCard(b, e){
+  var box = $("#rewardBox"); box.innerHTML = "";
+  var wrap = el("div","sceneWrap");
+  var im = el("img","por"); im.src = ART[b.img]; im.alt = b.name;
+  wrap.appendChild(im);
+  wrap.appendChild(el("div","h2", b.name));
+  var t = el("div","tag", RARITY[b.rar].n); t.style.color = RARITY[b.rar].cl;
+  wrap.appendChild(t);
+  wrap.appendChild(el("div","sub", b.breed));
+  var stats = el("div"); stats.style.width = "100%"; stats.style.margin = "6px 0";
+  addStat(stats, "Level", String(e.lv) + " / 5");
+  addStat(stats, "Times cared for", String(e.served));
+  addStat(stats, "Favourite", FOODS[b.fav] ? FOODS[b.fav].name : b.fav);
+  addStat(stats, "Size", b.size === "l" ? "Large" : b.size === "m" ? "Medium" : "Small");
+  wrap.appendChild(stats);
+  var q = el("div","speech"); q.textContent = b.fact; wrap.appendChild(q);
+  var btn = el("button","btn gold wide","Close");
+  btn.onclick = closeOverlay;
+  wrap.appendChild(btn);
+  box.appendChild(wrap);
+  overlay("#rewardScr");
+}
+
+/* ---- Shop ---------------------------------------------------------------- */
+var shopTab = "U";
+function paintShop(){
+  // Hiding the Bones tab outright is the part that matters. A tab that opens
+  // onto "store unavailable" reads to a reviewer as a broken feature and
+  // contradicts a listing that declares no purchases.
+  var storeOn = IAP.available();
+  $("#tabP").style.display = storeOn ? "" : "none";
+  if(!storeOn && shopTab === "P") shopTab = "U";
+  ["U","B","P"].forEach(function(t){ $("#tab"+t).classList.toggle("on", shopTab === t); });
+
+  var list = $("#shopList"); list.innerHTML = "";
+  paintCurrency();
+  if(shopTab === "U") paintUpgrades(list);
+  else if(shopTab === "B") paintBoostShop(list);
+  else paintStore(list);
+}
+
+function shopRow(imgKey, title, desc, buttonLabel, onBuy, extra, disabled){
+  var r = el("div","shopRow");
+  var im = el("img"); im.src = ART[imgKey]; im.alt = "";
+  r.appendChild(im);
+  var t = el("div","txt");
+  var tt = el("div","tt", title);
+  t.appendChild(tt);
+  t.appendChild(el("div","ds", desc));
+  if(extra) t.appendChild(extra);
+  r.appendChild(t);
+  var b = el("button","btn gold buy", buttonLabel);
+  b.style.padding = "10px 14px"; b.style.fontSize = "14px"; b.style.minHeight = "auto";
+  if(disabled) b.setAttribute("disabled","");
+  b.onclick = onBuy;
+  r.appendChild(b);
+  return r;
+}
+
+function paintUpgrades(list){
+  UP_ORDER.forEach(function(k){
+    var u = UPGRADES[k], lv = upLv(k), maxed = lv >= u.max, cost = upCost(k);
+    var dots = el("div","lvDots");
+    for(var i=0;i<u.max;i++) dots.appendChild(el("i", i < lv ? "on" : null));
+    var row = shopRow(u.img, u.name, u.ds,
+      maxed ? "Maxed" : fmt(cost),
+      function(){
+        if(upLv(k) >= u.max) return;
+        var c = upCost(k);
+        if(S.coins < c){ toast("Not enough coins yet."); return; }
+        addCoins(-c); S.up[k] = upLv(k) + 1; persist(); paintShop();
+        toast(u.name + " upgraded to level " + S.up[k] + ".");
+      }, dots, maxed || S.coins < cost);
+    list.appendChild(row);
+  });
+}
+
+function paintBoostShop(list){
+  BOOST_ORDER.forEach(function(k){
+    var b = BOOSTS[k];
+    var have = el("div","ds", "You have " + boostCt(k));
+    have.style.fontWeight = "800"; have.style.color = "var(--teal3)";
+    if(b.coin > 0){
+      list.appendChild(shopRow(b.img, b.name, b.ds, fmt(b.coin), function(){
+        if(S.coins < b.coin){ toast("Not enough coins yet."); return; }
+        addCoins(-b.coin); S.boosts[k] = boostCt(k) + 1; persist(); paintShop();
+        toast(b.name + " added.");
+      }, have, S.coins < b.coin));
+    }
+    list.appendChild(shopRow(b.img, b.name + " ×3", "Three at a discount, paid in bones.",
+      String(Math.round(b.bone * 2.5)) + " 🦴", function(){
+      var c = Math.round(b.bone * 2.5);
+      if(S.bones < c){ toast("Not enough bones."); return; }
+      addBones(-c); S.boosts[k] = boostCt(k) + 3; persist(); paintShop();
+      toast("Three " + b.name + " added.");
+    }, null, S.bones < Math.round(b.bone * 2.5)));
+  });
+
+  // Themes are a coin sink that never touches gameplay balance — the safest
+  // possible place to park surplus currency.
+  Object.keys(THEMES).forEach(function(k){
+    if(k === "classic") return;
+    var owned = S.themes.indexOf(k) >= 0;
+    list.appendChild(shopRow("bgHouse", THEMES[k].name, owned ? "Owned — tap to wear it." : "A new look for the whole daycare.",
+      owned ? (S.theme === k ? "Worn" : "Wear") : "1200",
+      function(){
+        if(owned){ S.theme = k; applyTheme(); persist(); paintShop(); return; }
+        if(S.coins < 1200){ toast("Not enough coins yet."); return; }
+        addCoins(-1200); S.themes.push(k); S.theme = k; applyTheme(); persist(); paintShop();
+      }, null, !owned && S.coins < 1200));
+  });
+}
+
+function paintStore(list){
+  if(!IAP.available()){
+    list.appendChild(el("div","emptyNote","The bone store is not part of this version."));
+    return;
+  }
+  if(!IAP.ready){
+    list.appendChild(el("div","emptyNote","Loading the store…"));
+    return;
+  }
+  STORE_ORDER.forEach(function(sku){
+    var it = STORE_ITEMS[sku];
+    var pkg = IAP.find(sku);
+    if(!pkg) return;                                // never show what cannot be sold
+    if(it.kind === "n" && has(sku)) {
+      list.appendChild(shopRow(it.img, it.name, "Owned. Thank you.", "Owned", function(){}, null, true));
+      return;
+    }
+    var extra = it.tag ? el("div","tag", it.tag) : null;
+    if(extra) extra.style.marginTop = "5px";
+    list.appendChild(shopRow(it.img, it.name, it.ds, IAP.priceOf(sku), function(){
+      IAP.buy(sku).then(function(){
+        toast("Thank you!"); persist(); paintShop();
+      }).catch(function(e){
+        if(e && /cancel/i.test(String(e.message || e))) return;
+        toast("That did not go through.");
+      });
+    }, extra));
+  });
+
+  var restore = el("button","btn ghost wide","Restore Purchases");
+  restore.setAttribute("data-restore","1");
+  restore.style.marginTop = "6px";
+  restore.onclick = function(){
+    IAP.restorePurchases().then(function(ok){ toast(ok ? "Purchases restored." : "Nothing to restore."); paintShop(); });
+  };
+  list.appendChild(restore);
+}
+
+/* ---- Settings + pause ---------------------------------------------------- */
+function showSettings(){
+  var box = $("#setBox"); box.innerHTML = "";
+  box.appendChild(el("div","h2","Settings"));
+
+  var sound = el("button","btn ghost wide", (S.sound ? "Sound & haptics: On" : "Sound & haptics: Off"));
+  sound.style.marginTop = "12px";
+  sound.onclick = function(){ S.sound = S.sound ? 0 : 1; persist(); showSettings(); };
+  box.appendChild(sound);
+
+  if(S.themes.length > 1){
+    var th = el("button","btn ghost wide","Theme: " + THEMES[S.theme].name);
+    th.style.marginTop = "8px";
+    th.onclick = function(){
+      var i = S.themes.indexOf(S.theme);
+      S.theme = S.themes[(i+1) % S.themes.length];
+      applyTheme(); persist(); showSettings();
+    };
+    box.appendChild(th);
+  }
+
+  var stats = el("div"); stats.style.margin = "14px 0";
+  addStat(stats, "Best day", String(S.best));
+  addStat(stats, "Dogs cared for", fmt(S.totalServed));
+  addStat(stats, "Walks completed", fmt(S.totalWalks));
+  addStat(stats, "Perfect days", String(S.perfectDays));
+  addStat(stats, "Breeds met", dexSeen() + " / " + BREEDS.length);
+  box.appendChild(stats);
+
+  if(IAP.available()){
+    var rp = el("button","btn ghost wide","Restore Purchases");
+    rp.setAttribute("data-restore","1");
+    rp.onclick = function(){ IAP.restorePurchases().then(function(ok){ toast(ok ? "Purchases restored." : "Nothing to restore."); }); };
+    box.appendChild(rp);
+  }
+
+  var ach = el("div"); ach.style.marginTop = "12px";
+  ach.appendChild(el("div","h2","Achievements"));
+  ACHIEVEMENTS.forEach(function(a){
+    var r = el("div","statLine");
+    r.appendChild(el("span",null,(S.achv[a.k] ? "🏆 " : "🔒 ") + a.n));
+    r.appendChild(el("b",null, S.achv[a.k] ? "Done" : a.d));
+    ach.appendChild(r);
+  });
+  box.appendChild(ach);
+
+  var close = el("button","btn gold wide","Close");
+  close.style.marginTop = "14px";
+  close.onclick = closeOverlay;
+  box.appendChild(close);
+  overlay("#setScr");
+}
+
+function showPause(){
+  var box = $("#pauseBox"); box.innerHTML = "";
+  box.appendChild(el("div","h2","Paused"));
+  box.appendChild(el("div","sub","Everyone is waiting patiently. The clock is stopped."));
+  var r = el("button","btn gold wide","Back to it"); r.style.marginTop = "14px";
+  r.onclick = closeOverlay; box.appendChild(r);
+  var q = el("button","btn ghost wide","Give up the day"); q.style.marginTop = "8px";
+  q.onclick = function(){ closeOverlay(); if(D && !D.done){ D.done = true; stopTimer(); } go("title"); };
+  box.appendChild(q);
+  overlay("#pauseScr");
+}
+
+function applyTheme(){
+  document.body.className = THEMES[S.theme] ? THEMES[S.theme].cl : "";
+}
+
+/* ---- daily streak / offline earnings ------------------------------------- */
+function showWelcome(){
+  var today = Math.floor(Date.now() / 86400000);
+  var offlineCoins = 0;
+  if(S.offlineAt){
+    var mins = Math.min(8 * 60, (Date.now() - S.offlineAt) / 60000);
+    // The idle trickle exists to make reopening the app feel like arriving
+    // somewhere, not to replace playing. It is capped at eight hours.
+    offlineCoins = Math.round(mins * (2 + upLv("yard") * 1.5) * coinMult());
+  }
+  var newStreak = (S.streakStamp === today) ? S.streak : (S.streakStamp === today - 1 ? S.streak : 0);
+  if(!offlineCoins && !newStreak){ return false; }
+
+  var box = $("#rewardBox"); box.innerHTML = "";
+  var wrap = el("div","sceneWrap");
+  var im = el("img","por"); im.src = ART.dutch_h; im.alt = "Dutch";
+  wrap.appendChild(im);
+  wrap.appendChild(el("div","h2","Welcome back"));
+
+  if(newStreak > 0){
+    var row = el("div","streakRow");
+    for(var i=1;i<=7;i++){
+      var d = el("div","sDay" + (i <= (newStreak % 7 || 7) ? " got" : "") + (i === ((newStreak % 7) || 7) ? " today" : ""));
+      d.appendChild(el("div",null,"D" + i));
+      d.appendChild(el("div","v", String(i * 2)));
+      row.appendChild(d);
+    }
+    wrap.appendChild(el("div","sub","Day streak: " + newStreak));
+    wrap.appendChild(row);
+  }
+  if(offlineCoins > 0){
+    addCoins(offlineCoins);
+    wrap.appendChild(el("div","sub","The kennel kept ticking over while you were away: +" + fmt(offlineCoins) + " coins."));
+  }
+  var b = el("button","btn gold wide","Thanks, Dutch");
+  b.onclick = closeOverlay;
+  wrap.appendChild(b);
+  box.appendChild(wrap);
+  overlay("#rewardScr");
+  return true;
+}
+
+/* ============================================================================
+   14. BOOT
+   ========================================================================== */
+function paintStaticArt(){
+  $("#titleBg").src = ART.bgHouse;
+  $("#titleDutch").src = ART.dutchFull;
+  ["#tCoinIc","#hCoinIc","#sCoinIc"].forEach(function(s){ var n=$(s); if(n) n.src = ART.coinIcon; });
+  ["#tBoneIc","#sBoneIc"].forEach(function(s){ var n=$(s); if(n) n.src = ART.boneIcon; });
+}
+
+function wire(){
+  $("#btnPlay").onclick = function(){ beginDay(); };
+  $("#btnDex").onclick  = function(){ go("dex"); };
+  $("#btnShop").onclick = function(){ go("shop"); };
+  $("#btnSet").onclick  = function(){ showSettings(); };
+  $("#dexBack").onclick = function(){ go("title"); };
+  $("#shopBack").onclick= function(){ go("title"); };
+  $("#btnPause").onclick= function(){ showPause(); };
+  $("#tabU").onclick = function(){ shopTab = "U"; paintShop(); };
+  $("#tabB").onclick = function(){ shopTab = "B"; paintShop(); };
+  $("#tabP").onclick = function(){ shopTab = "P"; paintShop(); };
+
+  // Leaving the app must both stop the clock and stamp the offline timer, or
+  // the idle payout reads the wrong window and the loop keeps draining in the
+  // background on Android.
+  document.addEventListener("visibilitychange", function(){
+    if(document.hidden){
+      S.offlineAt = Date.now(); persist();
+      if(D && !D.done && curScreen === "play" && !overlayOpen) showPause();
+    }
+  });
+  window.addEventListener("pagehide", function(){ S.offlineAt = Date.now(); persist(); });
+}
+
+function boot(){
+  paintStaticArt();
+  wire();
+  load().then(function(){
+    applyTheme();
+    regenHearts();
+    if(!S.dex[BREEDS[0].k]) S.dex[BREEDS[0].k] = {seen:1, served:0, lv:1};
+    paintCurrency();
+    return IAP.init();
+  }).then(function(){
+    paintCurrency();
+    var shown = showWelcome();
+    S.offlineAt = Date.now();
+    persist();
+    if(!shown) closeOverlay();
+  }).catch(function(){
+    paintCurrency();
+  });
+}
+
+if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+else boot();
+
+/* Exposed for scripts/playtest.js — the harness drives the same functions the
+   player does rather than a parallel mock of them. */
+window.S = S; window.D = D; window.ART = ART;
+window.beginDay = beginDay; window.startPlay = startPlay; window.newDay = newDay;
+window.deliver = deliver; window.enterPhase = enterPhase; window.afterPhase = afterPhase;
+window.endDay = endDay; window.tick = tick; window.persist = persist;
+window.useBoost = useBoost; window.buildTray = buildTray; window.dogCount = dogCount;
+window.traySlots = traySlots; window.diff = diff; window.rosterFor = rosterFor;
+</script>
+</body>
+</html>

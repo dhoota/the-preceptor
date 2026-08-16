@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Dutch\'s Doggy Daycare</string>
+    <string name="title_activity_main">Dutch\'s Doggy Daycare</string>
+    <string name="package_name">com.dhoota.dutchgolden</string>
+    <string name="custom_url_scheme">com.dhoota.dutchgolden</string>
+</resources>
