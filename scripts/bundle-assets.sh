@@ -28,7 +28,7 @@ URL_PREFIX="${ASSET_URL_PREFIX:-https://d8j0ntlcm91z4}"
 ICON_URL="${ICON_URL:-$HOST/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_a7d562c7-7422-45c4-9f21-79084c742f1a.png}"
 # Splash: generated at 2K then upscaled to 4K, so the resize down to 2732 stays
 # sharp instead of being interpolated up from a smaller original.
-SPLASH_URL="${SPLASH_URL:-$HOST/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_232253_5475adce-c774-440c-bfde-3166a55e2e63.png}"
+SPLASH_URL="${SPLASH_URL:-$HOST/user_3EtwLgJyGWKJ5f55jawOYZp2o0t/hf_20260816_234740_a1b53687-e215-426f-bb43-e81a49083488.png}"
 
 say() { printf '\n\033[1m%s\033[0m\n' "$*"; }
 

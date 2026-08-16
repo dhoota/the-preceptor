@@ -2134,11 +2134,41 @@ function showSettings(){
   });
   box.appendChild(ach);
 
+  var reset = el("button","btn ghost wide","Reset progress");
+  reset.style.marginTop = "14px";
+  reset.onclick = confirmReset;
+  box.appendChild(reset);
+
   var close = el("button","btn gold wide","Close");
-  close.style.marginTop = "14px";
+  close.style.marginTop = "8px";
   close.onclick = closeOverlay;
   box.appendChild(close);
   overlay("#setScr");
+}
+
+/* The privacy policy promises this control, so it has to exist and it has to
+   actually clear the stored save rather than just resetting the in-memory copy
+   — otherwise the next persist() writes the old progress straight back. */
+function confirmReset(){
+  // The safe option is the primary button, under the thumb; erasing is the
+  // secondary one.
+  showReward({
+    img: ART.mopBucket,
+    title: "Start over?",
+    body: "This clears everything stored on this device: your day, your coins and bones, "
+        + "the Dogdex, upgrades and achievements. It cannot be undone. Purchases are not "
+        + "affected and can be restored.",
+    btn: "Keep my progress",
+    alt: "Erase everything",
+    onAlt: function(){
+      stopTimer();
+      D = null;
+      window.storage.set(SAVE_KEY, "").then(function(){
+        try{ if(window.localStorage) window.localStorage.removeItem(SAVE_KEY); }catch(e){}
+        location.reload();
+      });
+    }
+  }, null);
 }
 
 function showPause(){
