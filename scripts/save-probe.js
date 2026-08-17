@@ -95,10 +95,76 @@ const server = http.createServer((req, res) => {
   const failed = Object.keys(checks).filter(k => !checks[k]);
   const persisted = failed.length === 0;
 
-  console.log(JSON.stringify({ api, wrote, afterReload: after, checks, PERSISTED: persisted }, null, 2));
+  // ---- Reset must actually reset ------------------------------------------
+  // This half exists because the persistence half above cannot see the bug it
+  // is testing for. `location.reload()` fires `pagehide`, whose handler calls
+  // persist(), which writes the in-memory S back through a SYNCHRONOUS
+  // localStorage.setItem — so a reset that clears storage and then reloads
+  // silently restores everything it just deleted. It looked correct in review,
+  // it passed every other check, and the privacy policy promises it works.
+  let resetOk = null, afterReset = null;
+  if (persisted) {
+    await page.evaluate(() => {
+      // Take the destructive branch of the confirmation sheet directly.
+      confirmReset();
+      const alt = document.querySelector('#rewardBox .btn.ghost');
+      if (alt) alt.click();
+    });
+    // The wipe reloads the page; wait for that to land.
+    await page.waitForTimeout(2500);
+
+    afterReset = await page.evaluate(() => ({
+      day: typeof S !== 'undefined' ? S.day : null,
+      coins: typeof S !== 'undefined' ? S.coins : null,
+      bones: typeof S !== 'undefined' ? S.bones : null,
+      upPrep: typeof S !== 'undefined' ? (S.up && S.up.prep) || 0 : null,
+      dexCorgi: typeof S !== 'undefined' ? !!(S.dex && S.dex.corgi) : null,
+      collar: typeof S !== 'undefined' ? !!(S.owned && S.owned.collar) : null,
+      totalServed: typeof S !== 'undefined' ? S.totalServed : null,
+      // After a wipe the game boots fresh and immediately saves that fresh
+      // state, so an EMPTY key is the wrong thing to look for. What matters is
+      // that whatever is stored is a new save and not the old one resurrected.
+      stored: (() => {
+        try {
+          const raw = window.localStorage.getItem('dutch.daycare.save.v1');
+          if (!raw) return null;
+          const o = JSON.parse(raw);
+          return { day: o.day, coins: o.coins, totalServed: o.totalServed };
+        } catch (e) { return 'unreadable'; }
+      })(),
+    }));
+
+    const resetChecks = {
+      dayBackToOne: afterReset.day === 1,
+      coinsCleared: afterReset.coins === 0,
+      bonesCleared: afterReset.bones === 0,
+      upgradesCleared: afterReset.upPrep === 0,
+      dogdexCleared: afterReset.dexCorgi === false,
+      entitlementsCleared: afterReset.collar === false,
+      countersCleared: afterReset.totalServed === 0,
+      // The blocker this test exists for: the pagehide handler writing the old
+      // save back over the wipe during the reload.
+      storageNotResurrected: !afterReset.stored ||
+        (afterReset.stored !== 'unreadable' &&
+         afterReset.stored.day === 1 &&
+         !afterReset.stored.coins &&
+         !afterReset.stored.totalServed),
+    };
+    const resetFailed = Object.keys(resetChecks).filter(k => !resetChecks[k]);
+    resetOk = resetFailed.length === 0;
+    afterReset.checks = resetChecks;
+    if (!resetOk) {
+      console.log('\nRESET DID NOT CLEAR: ' + resetFailed.join(', '));
+      console.log('(if storageNotResurrected is false, the pagehide -> persist() ' +
+                  'handler wrote the old save back over the wipe during the reload)');
+    }
+  }
+
+  console.log(JSON.stringify({ api, wrote, afterReload: after, checks,
+                               PERSISTED: persisted, afterReset, RESET_WORKS: resetOk }, null, 2));
   if (!persisted) console.log('\nfields that did not survive a reload: ' + failed.join(', '));
 
   await browser.close();
   server.close();
-  process.exit(persisted ? 0 : 1);
+  process.exit(persisted && resetOk ? 0 : 1);
 })();

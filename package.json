@@ -10,7 +10,8 @@
     "probe:save": "node scripts/save-probe.js",
     "probe:layout": "node scripts/layout-probe.js",
     "probe:screens": "node scripts/screens-probe.js",
-    "verify": "npm run check && npm run playtest && npm run probe:save && npm run probe:layout && npm run probe:screens"
+    "probe:input": "node scripts/input-probe.js",
+    "verify": "npm run check && npm run playtest && npm run probe:save && npm run probe:layout && npm run probe:screens && npm run probe:input"
   },
   "keywords": [],
   "author": "",

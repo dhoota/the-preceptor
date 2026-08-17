@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#0f3b3d">
+<meta name="color-scheme" content="light">
 <title>Dutch's Doggy Daycare</title>
 <style>
 /* ==========================================================================
@@ -12,6 +13,9 @@
    Everything is greppable in one place on purpose.
    ========================================================================== */
 :root{
+  /* Declared so Android Chrome's "auto dark theme for web contents" leaves the
+     palette alone. Without it the whole game is force-inverted. */
+  color-scheme:light;
   --cream:#fdf6e9; --cream2:#f6e9d2; --ink:#2b2118; --ink2:#6b5946;
   --teal:#0f3b3d; --teal2:#1b5f5c; --teal3:#2f8f86;
   --gold:#f2b134; --gold2:#e08e26; --rose:#e05a5a; --leaf:#5aa860;
@@ -21,7 +25,7 @@
   --safeT:env(safe-area-inset-top,0px); --safeB:env(safe-area-inset-bottom,0px);
   --bg:var(--cream); --panel:#fffaf0; --line:rgba(43,33,24,.12);
 }
-body.thNight{ --bg:#141b2b; --panel:#1e2740; --cream:#141b2b; --cream2:#1a2237;
+body.thNight{ color-scheme:dark; --bg:#141b2b; --panel:#1e2740; --cream:#141b2b; --cream2:#1a2237;
   --ink:#f0e9dc; --ink2:#b6aa96; --line:rgba(255,255,255,.14); }
 body.thMeadow{ --bg:#eef7e6; --panel:#fbfff5; --cream:#eef7e6; --cream2:#dcecd0;
   --teal:#2c5a2e; --teal2:#3f7a41; --teal3:#63a765; }
@@ -126,10 +130,10 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 #playInner{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-height:0}
 #playBody{flex:1;min-height:0;display:flex;flex-direction:column}
 #dogZone{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;
-  display:flex;flex-wrap:wrap;align-content:flex-start;justify-content:center;
-  gap:10px;padding:6px 10px 10px}
+  display:flex;flex-wrap:wrap;align-content:center;justify-content:center;
+  gap:10px;padding:10px 10px 14px}
 
-.dog{position:relative;width:calc(50% - 5px);max-width:190px;
+.dog{position:relative;width:calc(50% - 5px);max-width:190px;touch-action:manipulation;
   background:var(--panel);border-radius:var(--r2);box-shadow:var(--soft);
   padding:8px;display:flex;flex-direction:column;align-items:center;gap:6px;
   border:3px solid transparent;transition:transform .12s ease,border-color .15s ease,opacity .3s ease}
@@ -142,7 +146,8 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .dog .por{width:100%;aspect-ratio:1/1;border-radius:var(--r);object-fit:cover;background:var(--cream2)}
 .dog .nm{font-weight:900;font-size:13px;line-height:1.1;text-align:center}
 .dog .br{font-size:10px;font-weight:700;color:var(--ink2);text-align:center;line-height:1.1}
-.dog .ring{position:absolute;top:6px;right:6px;width:36px;height:36px}
+.dog .ring{position:absolute;top:6px;right:6px;width:38px;height:38px;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.25))}
 .dog .ring svg{transform:rotate(-90deg)}
 .want{position:absolute;top:-10px;left:50%;transform:translateX(-50%);
   background:#fff;border-radius:14px;padding:4px;box-shadow:0 4px 12px rgba(0,0,0,.22);
@@ -158,10 +163,14 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 #trayZone{flex:0 0 auto;background:var(--panel);border-radius:var(--r2) var(--r2) 0 0;
   box-shadow:0 -6px 22px rgba(0,0,0,.14);padding:10px 8px calc(var(--safeB) + 10px);z-index:6}
 #trayHint{text-align:center;font-size:12px;font-weight:800;color:var(--ink2);margin-bottom:6px;min-height:16px}
-#tray{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+#tray{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;touch-action:none}
 .item{width:62px;height:62px;border-radius:var(--r);background:var(--cream2);
   display:flex;align-items:center;justify-content:center;position:relative;
-  box-shadow:0 3px 0 rgba(0,0,0,.14);transition:transform .1s ease,box-shadow .1s ease}
+  box-shadow:0 3px 0 rgba(0,0,0,.14);transition:transform .1s ease,box-shadow .1s ease;
+  /* The drag belongs to us, not to the scroller. Without this the browser
+     claims the gesture as a pan the instant the finger moves and fires
+     pointercancel, so dragging a bowl onto a dog silently does nothing. */
+  touch-action:none}
 .item img{width:48px;height:48px;object-fit:contain;pointer-events:none}
 .item:active{transform:translateY(2px)}
 .item.sel{transform:translateY(-8px) scale(1.08);box-shadow:0 8px 0 var(--gold2);background:#fff}
@@ -649,9 +658,9 @@ var BREEDS = [
   {k:"maltese",      img:"maltese",      name:"Pearl",     breed:"Maltese",              size:"s", fav:"yogurt",   day:108, rar:"r",    fact:"Small, white, and completely certain of her own importance."},
   {k:"bulldog",      img:"bulldog",      name:"Winston",   breed:"English Bulldog",      size:"m", fav:"lamb",     day:118, rar:"r",    fact:"Will get up. Has decided when. It is not now."},
   {k:"weimaraner",   img:"weimaraner",   name:"Ash",       breed:"Weimaraner",           size:"l", fav:"salmon",   day:130, rar:"r",    fact:"Grey as fog and twice as good at appearing beside you silently."},
-  {k:"malamute",     img:"malamute",     name:"Timber",    breed:"Alaskan Malamute",     size:"l", fav:"beef",     day:145, rar:"e",    fact:"Built for a colder country. Settles for the tiled floor."},
-  {k:"newfoundland", img:"newfoundland", name:"Captain",   breed:"Newfoundland",         size:"l", fav:"salmon",   day:165, rar:"e",    fact:"Wants everyone out of the deep end, at all times, immediately."},
-  {k:"setter",       img:"setter",       name:"Ember",     breed:"Irish Setter",         size:"l", fav:"chicken",  day:190, rar:"e",    fact:"Runs like a rumour. Comes back eventually."},
+  {k:"malamute",     img:"malamute",     name:"Timber",    breed:"Alaskan Malamute",     size:"l", fav:"beef",     day:142, rar:"e",    fact:"Built for a colder country. Settles for the tiled floor."},
+  {k:"newfoundland", img:"newfoundland", name:"Captain",   breed:"Newfoundland",         size:"l", fav:"salmon",   day:160, rar:"e",    fact:"Wants everyone out of the deep end, at all times, immediately."},
+  {k:"setter",       img:"setter",       name:"Ember",     breed:"Irish Setter",         size:"l", fav:"chicken",  day:178, rar:"e",    fact:"Runs like a rumour. Comes back eventually."},
   {k:"greatdane",    img:"greatdane",    name:"Mr Grey",   breed:"Great Dane",           size:"l", fav:"broth",    day:220, rar:"e",    fact:"A horse who has been told he is a lapdog and chose to believe it."}
 ];
 var RARITY = {c:{n:"Common",cl:"var(--ink2)"}, u:{n:"Uncommon",cl:"var(--leaf)"},
@@ -777,7 +786,7 @@ var STORY = {
   163: {who:"Captain", img:"newfoundland", t:"Water in the yard. I've been in it, it's fine, but I would like everyone else out of it immediately and I intend to keep saying so until that happens."},
   166: {who:"Dutch", img:"dutch",   t:"You can't fix the week. Nobody can fix the week. You can fill the next bowl, and then the one after it, and it turns out that if you do that for long enough the week ends up fixed anyway."},
   170: {who:"Comet", img:"collie",  t:"I invented a fifth game. It's for when the wind is loud and the little ones are frightened. It's not a very good game. It worked though."},
-  175: {who:"Mr Grey", img:"greatdane", t:"I am told I am very large. I am also told I am on the sofa. Both of these things will continue to be true."},
+  175: {who:"Dutch", img:"dutch",   t:"Storm week's over. Nobody's hurt, the roof's tarped, and every dog in this building ate three times a day through all of it. I've been doing this a long while and I have never had a week go that badly and end that well."},
 
   /* ---------------- Chapter 8 — The Quiet Season ---------------- */
   177: {who:"Dutch", img:"dutch",   t:"Roof's back on. It's quieter than it was and it'll stay quieter for a while. Don't fill the quiet up with work just because you've forgotten what else to do with it."},
@@ -794,6 +803,7 @@ var STORY = {
   210: {who:"Winston", img:"bulldog", t:"The slowness. You've never rushed me, not once, and I'd like to explain it rather than let you keep guessing. It hurts to start. Once I'm going I'm fine. Starting is the whole of it."},
   214: {who:"Tank", img:"rottweiler", t:"The vacuum. It's not the noise. It's that the last house put me out in the yard whenever it came on, and it came on a lot, and it was a cold yard. You've done the hallway while I'm out every time. I noticed the first week."},
   218: {who:"Mochi", img:"shihtzu", t:"The music box was hers. She'd wind it at bedtime, every night, for eleven years. I didn't come here with anything else. You've never once asked me to settle without it."},
+  223: {who:"Mr Grey", img:"greatdane", t:"I am told I am very large. I am also told I am on the sofa. Both of these things will continue to be true."},
   222: {who:"Dutch", img:"dutch",   t:"You know all of them now. Not their favourites — anyone can learn a favourite. You know their reasons. There were three people before you and not one of them got that far."},
   225: {who:"Dutch", img:"dutch_h", t:"Twenty-five to go. I've been thinking about what happens after. The daycare doesn't need me the way it did. It needs you. It's been needing you for a while."},
 
@@ -832,7 +842,12 @@ var S = {
   offlineAt: 0, offlineSeen: 0
 };
 
+var resetting = false;   // true while a progress wipe is in flight
 function persist(){
+  // Hard stop during a reset. The reload that follows a wipe fires `pagehide`,
+  // and that handler calls persist() — which would synchronously write the
+  // in-memory S straight back over the storage we just cleared.
+  if(resetting) return;
   try{ window.storage.set(SAVE_KEY, JSON.stringify(S)); }catch(e){}
 }
 function load(){
@@ -847,9 +862,21 @@ function load(){
     if(typeof S.coins !== "number" || isNaN(S.coins)) S.coins = 0;
     if(typeof S.bones !== "number" || isNaN(S.bones)) S.bones = 0;
     if(typeof S.hearts !== "number" || isNaN(S.hearts)) S.hearts = HEART_MAX;
+    // day feeds diff() -> phaseClock() -> D.clock. A non-numeric or zero day
+    // turns the whole clock into NaN, which never reaches zero, so no round ever
+    // times out and the corner timer reads "NaN".
+    S.day = Math.floor(Number(S.day));
+    if(!(S.day >= 1) || S.day > TOTAL_DAYS) S.day = 1;
+    S.best = Math.floor(Number(S.best));
+    if(!(S.best >= 1) || S.best > TOTAL_DAYS) S.best = S.day;
+    if(typeof S.heartAt !== "number" || !isFinite(S.heartAt) || S.heartAt < 0) S.heartAt = 0;
+    if(typeof S.offlineAt !== "number" || !isFinite(S.offlineAt) || S.offlineAt < 0) S.offlineAt = 0;
+    S.hearts = clamp(Math.floor(S.hearts), 0, HEART_MAX);
     if(!S.dex) S.dex = {}; if(!S.up) S.up = {}; if(!S.boosts) S.boosts = {};
     if(!S.owned) S.owned = {}; if(!S.stars) S.stars = {}; if(!S.claimed) S.claimed = {};
-    if(!S.themes || !S.themes.length) S.themes = ["classic"];
+    if(!S.storySeen) S.storySeen = {}; if(!S.achv) S.achv = {};
+    if(!S.theme || !THEMES[S.theme]) S.theme = "classic";
+    if(!S.themes || !S.themes.length || !S.themes.join) S.themes = ["classic"];
     return true;
   }).catch(function(){ return false; });
 }
@@ -932,6 +959,17 @@ var IAP = {
         return self.ready;
       })
       .then(function(ok){ return self.sync().then(function(){ return ok; }); })
+      .then(function(ok){
+        // Deferred purchases (Ask to Buy, or a charge that completed after the
+        // app was killed) arrive here rather than through purchasePackage.
+        // Without this listener a parent-approved purchase is never observed.
+        try{
+          if(p.addCustomerInfoUpdateListener){
+            p.addCustomerInfoUpdateListener(function(info){ self.apply(info, null); });
+          }
+        }catch(e){}
+        return ok;
+      })
       .catch(function(){ self.ready = false; return false; });
   },
   packages: function(){
@@ -1091,8 +1129,13 @@ function diff(){
 /* Hearts regenerate on the wall clock so the game is playable in short bursts
    without ever hard-blocking someone who just wants one more day. */
 function regenHearts(){
-  if(S.hearts >= HEART_MAX){ S.heartAt = Date.now(); return; }
-  if(!S.heartAt){ S.heartAt = Date.now(); return; }
+  var now = Date.now();
+  // A heartAt in the future never decreases, so a device clock set forward and
+  // then back (or a timezone/DST correction after the save was written) would
+  // freeze regeneration until real time caught up — possibly for months.
+  if(S.heartAt > now) S.heartAt = now;
+  if(S.hearts >= HEART_MAX){ S.heartAt = now; return; }
+  if(!S.heartAt){ S.heartAt = now; return; }
   var gained = Math.floor((Date.now() - S.heartAt) / HEART_MS);
   if(gained > 0){
     S.hearts = Math.min(HEART_MAX, S.hearts + gained);
@@ -1154,10 +1197,14 @@ function newDay(){
   var roster = rosterFor(S.day);
   var w = WEATHER[(S.day * 7 + 3) % WEATHER.length];
   var n = dogCount();
-  var picked = shuffle(roster.slice()).slice(0, n);
-  // Dutch always works the floor, and on any day where the roster is thin the
-  // remaining slots repeat rather than shrink the day below its target size.
-  while(picked.length < n) picked.push(roster[picked.length % roster.length]);
+  // Dutch always works the floor — he is the main character, and a day without
+  // him is a day the story is talking about somebody who is not there.
+  var dutch = roster.filter(function(b){ return b.k === "dutch"; });
+  var rest  = shuffle(roster.filter(function(b){ return b.k !== "dutch"; }));
+  var picked = dutch.concat(rest).slice(0, n);
+  // On a thin early roster the remaining slots repeat rather than shrink the
+  // day below its target size.
+  while(picked.length < n) picked.push(rest[picked.length % Math.max(1, rest.length)] || roster[0]);
 
   D = {
     phase: "feed",
@@ -1261,7 +1308,7 @@ function enterPhase(ph){
     D.accidents += unfed; S.accidents += unfed;
     var bill = Math.round(unfed * 45 * (1 - upLv("mat") * 0.15));
     addCoins(-Math.min(S.coins, bill));
-    D.care = clamp(D.care - unfed * 6, 0, 100);
+    drainCare(unfed * 6);
     toast(unfed === 1
       ? "One dog never ate — it could not go out. Mop: " + fmt(bill) + " coins."
       : unfed + " dogs never ate — they could not go out. Mop: " + fmt(bill) + " coins.");
@@ -1372,12 +1419,18 @@ function deliver(itemKey, idx){
   return true;
 }
 
-function penalty(n, dog, label){
+/* Single place care is ever removed. Everything drains through here so the
+   fail condition cannot be bypassed by a code path that forgot to check it. */
+function drainCare(n){
   D.care = clamp(D.care - n, 0, 100);
-  if(dog) popDog(dog.slot, label || "-", "var(--rose)");
   paintCare();
+  return D.care <= 0;
+}
+function penalty(n, dog, label){
+  var empty = drainCare(n);
+  if(dog) popDog(dog.slot, label || "-", "var(--rose)");
   buzz(24);
-  if(D.care <= 0 && !D.done) failDay();
+  if(empty && !D.done) failDay();
 }
 
 function shakeDog(i){
@@ -1463,6 +1516,7 @@ function timeUp(){
   var late = D.dogs.filter(function(d){ return d.state === "wait"; });
   if(!late.length){ finishPhase(); return; }
 
+  if(D.phase === "feed") drainCare(late.length * 9);
   late.forEach(function(d){
     d.missed = true;
     if(D.phase === "feed"){ d.state = "tired"; }
@@ -1475,7 +1529,7 @@ function timeUp(){
     // The accident the player was warned about. Mud Mat softens the bill.
     var cost = Math.round(late.length * 60 * (1 - upLv("mat") * 0.15));
     addCoins(-Math.min(S.coins, cost));
-    D.care = clamp(D.care - late.length * 8, 0, 100);
+    drainCare(late.length * 8);
     paintPlay();
     showReward({
       img: ART.mopBucket,
@@ -1487,7 +1541,7 @@ function timeUp(){
   }
 
   if(D.phase === "bed"){
-    D.care = clamp(D.care - late.length * 7, 0, 100);
+    drainCare(late.length * 7);
     paintPlay();
     showReward({
       img: ART.nightlight,
@@ -1515,6 +1569,10 @@ function finishPhase(){
 
 function afterPhase(){
   if(D.done) return;
+  // A phase-level drain (accidents, dogs left awake) can empty the meter after
+  // the round is already over. The day is lost here rather than continuing with
+  // a visibly empty bar.
+  if(D.care <= 0){ failDay(); return; }
   if(D.phase === "feed"){ enterPhase("walk"); return; }
   if(D.phase === "walk"){ enterPhase("bed"); return; }
   endDay(false);
@@ -1727,8 +1785,18 @@ function showEnd(){
     retry.onclick = function(){ closeOverlay(); beginDay(); };
     box.appendChild(retry);
   }else{
-    var nxt = el("button","btn gold wide", S.day > TOTAL_DAYS ? "The end" : "On to day " + S.day);
+    // S.day is pinned at TOTAL_DAYS, so `> TOTAL_DAYS` was never true and the
+    // final day looped forever as "On to day 250". Completing the last day is
+    // what finishes the game.
+    var finished = (S.day >= TOTAL_DAYS) && !!S.stars[TOTAL_DAYS];
+    var nxt = el("button","btn gold wide", finished ? "Play day " + TOTAL_DAYS + " again" : "On to day " + S.day);
     nxt.onclick = function(){ closeOverlay(); beginDay(); };
+    if(finished){
+      var fin = el("div","sub","That's every one of the " + TOTAL_DAYS +
+        " days. The sign has both names on it now. Any day is yours to play again.");
+      fin.style.margin = "4px 0 12px";
+      box.appendChild(fin);
+    }
     box.appendChild(nxt);
   }
 
@@ -1737,14 +1805,14 @@ function showEnd(){
   home.onclick = function(){ closeOverlay(); go("title"); };
   box.appendChild(home);
 
-  overlay("#endScr");
-  if(pendingRewards.length) drainRewards();
+  if(pendingRewards.length) drainRewards();   // lands on #endScr when the queue empties
+  else overlay("#endScr");
 }
 
 function drainRewards(){
   if(!pendingRewards.length){ overlay("#endScr"); return; }
   var r = pendingRewards.shift();
-  setTimeout(function(){ showReward(r, drainRewards); }, 320);
+  showReward(r, drainRewards);
 }
 
 /* Builds the reward sheet AND opens it. The primary button always closes the
@@ -1879,9 +1947,10 @@ function paintPlay(){
 
     if(D.phase === "feed" && d.state !== "done"){
       var ring = el("div","ring");
-      ring.innerHTML = '<svg width="36" height="36" viewBox="0 0 36 36">'
-        + '<circle cx="18" cy="18" r="15" fill="rgba(255,255,255,.85)" stroke="rgba(0,0,0,.10)" stroke-width="4"></circle>'
-        + '<circle class="pRing" cx="18" cy="18" r="15" fill="none" stroke="#2f8f86" stroke-width="4" stroke-linecap="round"></circle></svg>';
+      ring.innerHTML = '<svg width="38" height="38" viewBox="0 0 38 38">'
+        + '<circle cx="19" cy="19" r="15" fill="#fffaf0" stroke="rgba(0,0,0,.06)" stroke-width="1"></circle>'
+        + '<circle cx="19" cy="19" r="15" fill="none" stroke="#d9cdb8" stroke-width="5"></circle>'
+        + '<circle class="pRing" cx="19" cy="19" r="15" fill="none" stroke="#2f8f86" stroke-width="5" stroke-linecap="round"></circle></svg>';
       n.appendChild(ring);
     }
 
@@ -1899,10 +1968,10 @@ function paintPlay(){
            : d.state === "awake" ? "🐕‍🦺" : "";
     if(ic) n.appendChild(el("div","stateIc", ic));
 
-    n.addEventListener("pointerup", function(ev){
-      ev.preventDefault();
-      if(D.sel){ deliver(D.sel, i); D.sel = null; paintTray(); }
-    });
+    // Deliberately NO per-dog pointer listener. All delivery — tap-then-tap and
+    // drag alike — goes through the single document-level handler in trayInput,
+    // because two entry points meant a mouse/trackpad release over a dog fired
+    // both and double-penalised every wrong item.
     zone.appendChild(n);
   });
 
@@ -1965,6 +2034,13 @@ function paintBoosts(){
     var all = document.querySelectorAll(".dog");
     for(var j=0;j<all.length;j++) all[j].classList.toggle("target", j === i);
   }
+  // One place to put the visual state back, so no exit path can strand the
+  // ghost image on screen.
+  function endDrag(){
+    dragging = false;
+    if(ghost) ghost.style.display = "none";
+    highlight(-1);
+  }
 
   document.addEventListener("pointerdown", function(ev){
     if(!D || overlayOpen) return;
@@ -1992,21 +2068,50 @@ function paintBoosts(){
     highlight(dogIndexAt(ev.clientX, ev.clientY));
   }, {passive:true});
 
+  // The single authority for delivery. Handles both interaction styles:
+  //   drag  — pointerdown on a tray item, release over a dog
+  //   tap   — tap a tray item to lift it, then tap a dog
   document.addEventListener("pointerup", function(ev){
-    if(!dragging) return;
-    dragging = false;
-    ghost.style.display = "none";
-    highlight(-1);
+    if(!D || overlayOpen){ endDrag(); return; }
     var i = dogIndexAt(ev.clientX, ev.clientY);
-    if(i >= 0){
-      // A real drag landed on a dog: deliver and clear the selection.
-      deliver(dragKey, i);
+
+    if(dragging){
+      endDrag();
+      if(i >= 0){
+        deliver(dragKey, i);
+        D.sel = null;
+        paintTray();
+      }
+      // Released anywhere else: the selection stays lifted so tap-then-tap works.
+      dragKey = null;
+      return;
+    }
+
+    // Not dragging — a plain tap on a dog spends whatever is currently lifted.
+    if(i >= 0 && D.sel){
+      deliver(D.sel, i);
       D.sel = null;
       paintTray();
     }
-    // Otherwise the selection stays lifted so tap-then-tap still works.
-    dragKey = null;
   }, {passive:true});
+
+  // An incoming call, a notification-shade pull or the app switcher fires
+  // pointercancel instead of pointerup. Without this the drag stayed armed and
+  // the next innocent tap on a dog delivered the stale item.
+  document.addEventListener("pointercancel", function(){
+    endDrag();
+    dragKey = null;
+    if(D){ D.sel = null; paintTray(); }
+  }, {passive:true});
+
+  // Backgrounding the app mid-drag is the same situation by another route.
+  document.addEventListener("visibilitychange", function(){
+    if(document.hidden){
+      endDrag();
+      dragKey = null;
+      if(D){ D.sel = null; }
+    }
+  });
 })();
 
 /* ============================================================================
@@ -2045,7 +2150,11 @@ function paintDex(){
     var known = !!(e && e.seen);
     if(known) seen++;
     var c = el("div","dexCard" + (known ? "" : " locked"));
-    var im = el("img"); im.src = ART[b.img]; im.alt = known ? b.name : "Not yet met";
+    var im = el("img");
+    // 34 portraits at full size decoded simultaneously is real memory pressure
+    // in a WebView; let the browser defer everything below the fold.
+    im.loading = "lazy"; im.decoding = "async";
+    im.src = ART[b.img]; im.alt = known ? b.name : "Not yet met";
     c.appendChild(im);
     c.appendChild(el("div","nm", known ? b.name : "???"));
     c.appendChild(el("div","lv", known ? (RARITY[b.rar].n + " · Lv " + e.lv) : ("Day " + b.day)));
@@ -2284,12 +2393,13 @@ function confirmReset(){
     btn: "Keep my progress",
     alt: "Erase everything",
     onAlt: function(){
+      resetting = true;            // must be set before anything can persist()
       stopTimer();
       D = null;
       window.storage.set(SAVE_KEY, "").then(function(){
         try{ if(window.localStorage) window.localStorage.removeItem(SAVE_KEY); }catch(e){}
         location.reload();
-      });
+      }).catch(function(){ resetting = false; });
     }
   }, null);
 }

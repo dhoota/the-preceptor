@@ -143,6 +143,17 @@ if m_total and story_days:
     empty = [(a, b) for a, b in chapters if not any(a <= d <= b for d in story_days)]
     if empty:
         warns.append("chapters with no story beats: %s" % empty)
+
+    # A dog cannot narrate a day before the player could possibly have met it —
+    # the Dogdex would still be showing that breed as "???" while it talks.
+    unlock = {k: int(d) for k, d in re.findall(r'\{k:"(\w+)",\s*img:"\w+",[^}]*?day:(\d+),', src)}
+    beats = re.findall(r"^\s{2}(\d+):\s*\{who:\"[^\"]+\",\s*img:\"(\w+)\"", src, re.M)
+    early = [(int(day), art) for day, art in beats
+             if art in unlock and unlock[art] > int(day)]
+    print("story speakers:     %d checked, %d speaking before they arrive" % (len(beats), len(early)))
+    if early:
+        fails.append("story beats whose speaker has not joined yet (day, breed): %s"
+                     % [(d, a, "arrives day %d" % unlock[a]) for d, a in early])
 else:
     warns.append("could not read TOTAL_DAYS / STORY to check story coverage")
 
