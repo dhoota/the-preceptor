@@ -183,12 +183,13 @@ screenshots to the exact size. **It refuses to fake an iPad shot from an iPhone
 one** — 0.46 against 0.75 aspect discards 38% of the image and still shows a
 phone layout, which is a guideline 2.3.10 rejection.
 
-> **Decide this early.** `TARGETED_DEVICE_FAMILY` is currently `"1,2"`, which
-> means iPad is supported and iPad screenshots are mandatory. If you do not have
-> an iPad, either borrow one, or set it to `"1"` in **both** build
-> configurations in `ios/App/App.xcodeproj/project.pbxproj` and add iPad in 1.1.
-> `layout-probe.js` already confirms the layout is correct on all six iPad
-> viewports, so shipping iPad is a photography problem, not a code problem.
+> **iPad is in.** `TARGETED_DEVICE_FAMILY` is `"1,2"` and the game has a real
+> tablet layout — above 900px the tray becomes a right-hand rail rather than a
+> stretched bottom strip. `layout-probe.js` confirms all six iPad viewports
+> render clean and reports which layout each one resolved to. So iPad
+> screenshots at exactly 2064 × 2752 are **required**, and shoot them in
+> **landscape on a 12.9"/13" iPad** so the rail layout is what the reviewer and
+> the store page actually see.
 
 ### The five shots, in order
 
@@ -204,8 +205,14 @@ without a caption.
    Caption: **"Feed them first — or they won't go out"**
 4. **Bedtime.** Night background, blankets and lullabies, two dogs already 💤.
    Caption: **"Get everyone down before lights out"**
-5. **A story beat.** Dutch's portrait and a line of dialogue.
-   Caption: **"250 days. Ten chapters. No ads."**
+5. **A story beat.** Dutch's portrait and a line of dialogue — day 74 (Bruno
+   and the barrel) or day 147 (Dutch admitting his hips) both land without
+   context.
+   Caption: **"250 days. 87 story beats. No ads."**
+
+For the iPad set, reshoot 1, 3 and 4 in landscape so the tray rail is visible —
+that layout is the single clearest signal to a reviewer that this is a real iPad
+build and not a blown-up phone app.
 
 Take them on a real device after `bundle-assets.sh` has run — this environment
 cannot reach the asset CDN, so anything rendered here has empty art boxes.

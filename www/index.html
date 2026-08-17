@@ -124,6 +124,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 #playScr{background:var(--bg)}
 #fieldBg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
 #playInner{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;min-height:0}
+#playBody{flex:1;min-height:0;display:flex;flex-direction:column}
 #dogZone{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;
   display:flex;flex-wrap:wrap;align-content:flex-start;justify-content:center;
   gap:10px;padding:6px 10px 10px}
@@ -235,7 +236,7 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
 .sceneWrap img.por{width:132px;height:132px;border-radius:50%;object-fit:cover;
   border:5px solid var(--gold);box-shadow:var(--soft);background:var(--cream2)}
 .speech{background:var(--cream2);border-radius:var(--r);padding:14px;font-weight:700;
-  font-size:15px;line-height:1.5;text-align:left;width:100%}
+  font-size:15px;line-height:1.5;text-align:left;width:100%;white-space:pre-line}
 .speech .who{display:block;font-size:12px;font-weight:900;letter-spacing:.8px;
   text-transform:uppercase;color:var(--teal3);margin-bottom:5px}
 .streakRow{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:10px 0}
@@ -256,14 +257,42 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
   .dog.wide{width:calc(33.333% - 7px)}
 }
 @media (min-width:700px){
-  .dog,.dog.wide{width:calc(25% - 8px);max-width:210px}
-  #dogZone{gap:14px;padding:10px 20px 14px}
+  .dog,.dog.wide{width:calc(33.333% - 8px);max-width:240px}
+  #dogZone{gap:14px;padding:10px 20px 14px;align-content:center}
   .item{width:74px;height:74px}
   .item img{width:56px;height:56px}
   #trayZone{padding-left:24px;padding-right:24px}
+  #topbar{padding-left:24px;padding-right:24px}
+  .dog .nm{font-size:15px}
+  .dog .br{font-size:11px}
   .dexGrid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));padding:20px}
   .shopList{padding:20px;max-width:720px;margin:0 auto;width:100%}
   #titleInner{max-width:560px;margin:0 auto;width:100%}
+  .sheetBox{max-width:520px;padding:26px}
+  #clockWrap{width:74px;height:74px}
+  #clockTxt{font-size:21px}
+}
+/* Tablet proper: the tray moves to a right-hand rail so the dogs get the room
+   and the layout stops reading as a stretched phone. 900px catches every iPad
+   landscape plus 13" portrait; the smaller portrait iPads keep the bottom tray,
+   where a 320px rail would squeeze the dog grid instead of helping it. */
+@media (min-width:900px){
+  #playBody{flex-direction:row}
+  #dogZone{flex:1;padding:14px 18px}
+  #trayZone{flex:0 0 320px;overflow-y:auto;align-self:stretch;
+    border-radius:var(--r2) 0 0 var(--r2);
+    box-shadow:-8px 0 24px rgba(0,0,0,.12);
+    padding:18px 16px calc(var(--safeB) + 18px);
+    display:flex;flex-direction:column}
+  #trayHint{font-size:13px;margin-bottom:12px}
+  #tray{align-content:flex-start}
+  #boostRail{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+  .dog,.dog.wide{width:calc(33.333% - 10px);max-width:230px}
+}
+@media (min-width:1100px){
+  #trayZone{flex:0 0 360px}
+  .dog,.dog.wide{width:calc(25% - 11px)}
+  #dogZone{padding:18px 24px}
 }
 @media (max-height:680px){
   .dog .por{aspect-ratio:1.15/1}
@@ -332,12 +361,14 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
         <button class="btn ghost" id="btnPause" style="padding:8px 12px;min-height:auto">⏸</button>
       </div>
 
-      <div id="dogZone"></div>
+      <div id="playBody">
+        <div id="dogZone"></div>
 
-      <div id="trayZone">
-        <div id="trayHint">Tap a bowl, then tap the dog who asked for it</div>
-        <div id="tray"></div>
-        <div id="boostRail"></div>
+        <div id="trayZone">
+          <div id="trayHint">Tap a bowl, then tap the dog who asked for it</div>
+          <div id="tray"></div>
+          <div id="boostRail"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -658,29 +689,121 @@ var WISDOM = [
   "Bruno has never told anyone what is in the barrel."
 ];
 
-/* Story beats are sparse on purpose — most days are unscripted and get a wisdom
-   card instead. Keyed by day number. */
+/* Story beats are sparse against 250 days on purpose — roughly one every three
+   or four days, so an unscripted day still gets a wisdom card and the beats
+   never feel like a queue to clear. Keyed by day number.
+
+   The arc: you arrive as the new hand and Dutch teaches you the chain. The
+   daycare fills up, Dutch slows down, a storm week nearly breaks the place, and
+   by day 250 he is handing you the sign. Three long threads run underneath —
+   Bruno's barrel (day 74, 157, 235), Biscuit's list (5, 184, 243), and Dutch's
+   hips, which he mentions once and then stops mentioning. */
 var STORY = {
+  /* ---------------- Chapter 1 — The First Bowl ---------------- */
   1:   {who:"Dutch", img:"dutch_h", t:"Right. You're the new hand. Here's the whole job: every dog gets the food it asks for, before its bowl timer runs out. Then we walk them. Then we get them down for the night. Miss a step and you'll be meeting the mop."},
   2:   {who:"Dutch", img:"dutch",   t:"Feed first. Always feed first. A dog that hasn't eaten won't take the leash, and a dog that won't take the leash has an accident on my floor. That is the entire chain, and it has never once been broken by rushing."},
+  3:   {who:"Biscuit", img:"corgi", t:"Corgi. Biscuit. I run the floor — Dutch runs the building, which is different. If the bowls go out in the wrong order I will let you know about it. I'd rather you heard that from me now."},
+  4:   {who:"Bugle", img:"beagle",  t:"I'll eat anything. Genuinely anything. But if you bring turkey I'll sit down and wait for it properly, and you'll get to see what a well-behaved dog looks like. Your choice really."},
   5:   {who:"Biscuit", img:"corgi", t:"You put the cheese in the wrong bowl yesterday. I noticed. Everyone noticed. I'm not upset, I'm simply keeping a list."},
+  7:   {who:"Pierre", img:"frenchie", t:"You will hear something in the night that sounds like furniture being moved. It is me. There is nothing to be done about it and I would ask you not to bring it up."},
   9:   {who:"Dutch", img:"dutch",   t:"Learn their favourites. Bugle will eat anything, but he'll wait quietly for turkey. That patience is worth more than any timer you can buy."},
+  11:  {who:"Cocoa", img:"labrador", t:"Quick question. That bowl on the counter — is that spoken for? Only asking. I'm not going to do anything about it. I'd just like to know where I stand."},
+  13:  {who:"Dumpling", img:"pug",  t:"I have two speeds. Asleep, and walking somewhere in order to be asleep there instead. People find this funny. I find it efficient."},
   14:  {who:"Peanut", img:"chihuahua", t:"I am small. This is a fact about my body, not about my needs. I would like the peanut butter, and I would like it now, thank you."},
+  16:  {who:"Dutch", img:"dutch",   t:"The walk isn't a chore you get through so the day can end. For most of them it's the best forty minutes they have. Carry that in your head when the clock's tight and you'll rush the right things."},
+  18:  {who:"Noodle", img:"dachshund", t:"I am aware of what I look like. I am the length of a baguette. What I would like understood is that inside this shape there is a much larger and considerably braver dog."},
   20:  {who:"Dutch", img:"dutch_h", t:"Twenty days. The place hasn't burned down and nobody's slept hungry. That's not nothing — that's the job."},
+  22:  {who:"Blizzard", img:"husky", t:"New arrival. Husky. I want to be upfront: I will be vocal. Not distressed — vocal. There is a difference and you'll learn it in about a week."},
+  25:  {who:"Dutch", img:"dutch",   t:"First chapter done. You started where you were and you fed who was in front of you, which is the only way anyone has ever started anything. Tomorrow it rains."},
+
+  /* ---------------- Chapter 2 — Rain on the Round ---------------- */
   26:  {who:"Dutch", img:"dutch",   t:"Rain today. Coats on before the door opens, or we come back to a hallway that needs towels. The weather changes what they need. It never changes that they need it."},
+  28:  {who:"Sergeant", img:"shepherd", t:"I count them at bedtime. Then I count them again. You may think this is unnecessary. On the night it is necessary, you will not think that."},
+  30:  {who:"Apricot", img:"poodle", t:"I'm not being difficult about the blanket. I'm being specific. The corners go square. When they go square I sleep through, and when they don't, nobody does."},
   33:  {who:"Domino", img:"dalmatian", t:"People always ask about the spots. Nobody ever asks how I'm sleeping. I'm sleeping badly, since you ask. It's the nightlight. It's too bright."},
+  35:  {who:"Dutch", img:"dutch",   t:"You've had two mop days this week. I'm not telling you off — I'm telling you where it came from. Both times you were three bowls behind at mealtime and tried to make it up on the walk. It doesn't make up. It never has."},
+  38:  {who:"Comet", img:"collie",  t:"I've invented four games. You don't know the rules to any of them yet. That's fine, you're new — but you should know that I'm keeping score in all four."},
   40:  {who:"Blizzard", img:"husky", t:"I have reviewed the walk route and I have notes. Extensive notes. I will be sharing them, loudly, for the entire duration of the walk."},
+  43:  {who:"Mochi", img:"shihtzu", t:"It has to be the lullaby. Not a lullaby. The one with the little turning handle. I'm sorry, I know how that sounds, but I've tried and I cannot settle without it."},
+  46:  {who:"Rocky", img:"boxer",   t:"YOU'RE BACK. I know you only went to the pantry. I know. But you came BACK, and I think that's worth marking properly every single time."},
   50:  {who:"Dutch", img:"dutch_h", t:"Halfway through the second chapter and you've stopped looking at the clock every four seconds. That's what getting good looks like. It's quiet."},
+
+  /* ---------------- Chapter 3 — The Long Walk ---------------- */
+  52:  {who:"Alp", img:"bernese",   t:"I know I'm slow. I'd like to point out that I have never once been late. Those are different problems and only one of them is mine."},
+  55:  {who:"Dutch", img:"dutch",   t:"You're fast now. Faster than I was at your stage, honestly. So here's the next thing: fast isn't the goal. Steady is. Fast has bad days. Steady doesn't."},
+  58:  {who:"Duchess", img:"yorkie", t:"I sleep on the pillow. I'm aware it's your pillow. I've thought about it at some length and my position is that possession is what matters here."},
   60:  {who:"Honey", img:"cocker",  t:"My ears go in the water bowl. Every time. I know they do. I've decided it's part of who I am."},
+  63:  {who:"Dutch", img:"dutch",   t:"You handled the whole morning round on your own today. I sat down for it. First time I've sat down for a morning round in nine years, and I'll be honest with you — I didn't hate it."},
+  66:  {who:"Sesame", img:"shiba",  t:"I will do it. I'm going to do it. What I'm not going to do is do it the second you ask, because then it looks like it was your idea, and we'd both know that wasn't true."},
+  70:  {who:"Barnaby", img:"basset", t:"My ears get to a room about a second before the rest of me. It means I'm always arriving twice. Nobody warns you that this is tiring."},
   74:  {who:"Bruno", img:"stbernard", t:"You've had a hard week. I can tell. Sit down for a moment. The barrel stays shut, but the offer of sitting down is genuine."},
+  75:  {who:"Dutch", img:"dutch",   t:"Three chapters. Seventy-five days. There are dogs in this building who've never had a bad night since you got here, and they'll never know that, and that's the job too."},
+
+  /* ---------------- Chapter 4 — Full House ---------------- */
+  77:  {who:"Dutch", img:"dutch",   t:"We're full. Properly full — every bed, every night. Which means I need you to start asking me for help before you need it, not after. After is just a report on something that already went wrong."},
+  80:  {who:"Marbles", img:"aussie", t:"Blue eye on you. Brown eye on the door. It isn't a trick and I can't turn it off. Somebody in this building has to be watching the door, and it's been me since I got here."},
+  84:  {who:"Tank", img:"rottweiler", t:"I'm going to be straight with you because you'll find out anyway. The vacuum cleaner. I can't. I've tried, I'm fifty kilos, and I cannot."},
+  87:  {who:"Dutch", img:"dutch",   t:"Don't make a thing of Tank and the vacuum. Don't tiptoe round it either. Just do the hallway after he's out on the walk, and never once mention that you planned it. That's the whole trick with the big ones."},
   90:  {who:"Dutch", img:"dutch",   t:"Onyx came in shaking. Big dog, thin skin. Give him the water bowl at bedtime and don't make a fuss about it. Some of them need the fuss. Some of them need you not to."},
+  93:  {who:"Pom", img:"pomeranian", t:"I am ninety percent hair. I'm told this constantly, as though it's news to me, as though I don't have to carry it around all day."},
+  96:  {who:"Dutch", img:"dutch",   t:"I'm not doing the early shift any more. Not can't — won't, for now, while it's still my choice which one it is. You've got the mornings. I'll be down by nine."},
   100: {who:"Dutch", img:"dutch_h", t:"A hundred days. Full house most nights now. You know who wants what before they ask. Do you understand how rare that is?"},
+
+  /* ---------------- Chapter 5 — Lights Out ---------------- */
+  102: {who:"Dutch", img:"dutch",   t:"Bedtime's the hard round now, not mealtime. That flips for everyone eventually. Thirty dogs who've had a good day still have to be talked into admitting it's over."},
+  105: {who:"Sugar", img:"samoyed", t:"I smile constantly. It isn't a mood — it's just the shape of my face. It has got me out of trouble roughly four hundred times and I've never once corrected anyone."},
+  108: {who:"Pearl", img:"maltese", t:"I'm small, I'm white, and I'm important. I understand only one of those is verifiable. I'd ask you to take the third on trust."},
+  112: {who:"Dutch", img:"dutch",   t:"Power went at half nine last night. Thirty dogs, no lights, and you got every one of them down with a torch in your teeth. I watched from the stairs. I didn't come down because you didn't need me to."},
+  115: {who:"Onyx", img:"doberman", t:"I am aware of the impression I make. Sleek, watchful, faintly alarming. What I would actually like, more than anything in the world, is to be allowed on the sofa."},
   118: {who:"Winston", img:"bulldog", t:"I am aware the walk is starting. I am aware that everyone is waiting. I would like it noted that I will be getting up, and that the timing of that is mine."},
+  121: {who:"Dutch", img:"dutch",   t:"You worked eleven days without a proper break. I'm not impressed, I'm worried. Rest isn't the reward for the work. It's part of it, same as the mop and the bowls."},
+  125: {who:"Dutch", img:"dutch",   t:"Halfway. A hundred and twenty-five days. Say that out loud somewhere quiet tonight and see how it lands."},
+
+  /* ---------------- Chapter 6 — The Old Dog ---------------- */
+  127: {who:"Dutch", img:"dutch",   t:"There's a dog coming in tomorrow that three places have already turned down. Old, silent, doesn't eat in company. I've said yes. I'd like you to be the one who takes him in."},
   130: {who:"Dutch", img:"dutch",   t:"Ash doesn't eat when it's noisy. Never has. Feed him first, before the others start, and he'll clear the bowl. Everyone's got a thing. Finding it is the whole trick."},
+  133: {who:"Ash", img:"weimaraner", t:"You'll turn round and I'll be there. I don't mean to do it. Grey dog, quiet floor — by the time you notice me I've been beside you a while. I ate this morning. First time in three places."},
+  137: {who:"Dutch", img:"dutch",   t:"Patience isn't a personality. Nobody's born with it and nobody keeps it by accident. It's a skill, you practise it on the difficult ones, and Ash is going to teach you more of it than the last hundred days did."},
+  140: {who:"Pip", img:"jackrussell", t:"I've got energy the way the sea has water. You can't ask me to have less of it. You can only decide where you'd like it pointed, and I'd suggest the yard."},
+  144: {who:"Timber", img:"malamute", t:"I was built for a colder country than this one. I've made my peace with it. The tiled floor by the back door is the coldest thing in the building and I have claimed it permanently."},
+  147: {who:"Dutch", img:"dutch",   t:"My hips are going. There. I've said it once and I'm not saying it again, so don't start watching me on the stairs. Just — take the far end of the walk from now on. Don't ask, just take it."},
   150: {who:"Dutch", img:"dutch_h", t:"A hundred and fifty. There are dogs here who've never known a hungry night because of you. Keep going. There are more coming."},
+
+  /* ---------------- Chapter 7 — Storm Week ---------------- */
+  151: {who:"Dutch", img:"dutch",   t:"There's weather coming in and it's not the kind we coat up for. Get the walks done early all week. If I say come in, everyone comes in, and we sort out whose bowl is whose afterwards."},
+  154: {who:"Sergeant", img:"shepherd", t:"I counted twice tonight and I'll count a third time. Thirty-one. Everyone is in. You can go to bed — I'll do the last one myself."},
+  157: {who:"Bruno", img:"stbernard", t:"Bad night. Come and sit with your back against me, the wall's cold. The barrel stays shut. It has stayed shut through worse than this and it'll stay shut through tonight."},
+  160: {who:"Dutch", img:"dutch_a", t:"Roof's gone over the east beds. Nobody's hurt. Move them into the kitchen, blankets off the dryer, and we'll do bedtime in one room like it's a hundred years ago. Don't stop to feel about it yet."},
+  163: {who:"Captain", img:"newfoundland", t:"Water in the yard. I've been in it, it's fine, but I would like everyone else out of it immediately and I intend to keep saying so until that happens."},
+  166: {who:"Dutch", img:"dutch",   t:"You can't fix the week. Nobody can fix the week. You can fill the next bowl, and then the one after it, and it turns out that if you do that for long enough the week ends up fixed anyway."},
+  170: {who:"Comet", img:"collie",  t:"I invented a fifth game. It's for when the wind is loud and the little ones are frightened. It's not a very good game. It worked though."},
   175: {who:"Mr Grey", img:"greatdane", t:"I am told I am very large. I am also told I am on the sofa. Both of these things will continue to be true."},
+
+  /* ---------------- Chapter 8 — The Quiet Season ---------------- */
+  177: {who:"Dutch", img:"dutch",   t:"Roof's back on. It's quieter than it was and it'll stay quieter for a while. Don't fill the quiet up with work just because you've forgotten what else to do with it."},
+  180: {who:"Ember", img:"setter",  t:"I run like a rumour. I'll be at the end of the field before you've finished calling. I always come back — I'd just rather do the coming back in my own time."},
+  184: {who:"Biscuit", img:"corgi", t:"I've still got the list. You should know it hasn't had anything new on it since about day sixty. I keep it now for the same reason anyone keeps anything. Force of habit, and it's mine."},
+  188: {who:"Dutch", img:"dutch",   t:"Kindness costs nothing and it compounds like interest. You've been putting it in daily for six months without noticing. Look at how they come to the door when they hear you. That's the balance."},
+  192: {who:"Peanut", img:"chihuahua", t:"I was rude to you on your fourteenth day. About the peanut butter. I've been carrying it around and I'd like it dealt with. There. It's dealt with."},
+  196: {who:"Dutch", img:"dutch",   t:"Somebody asked me today who runs this place. I said my name because it's on the sign. I stood there afterwards thinking about how that wasn't strictly true any more."},
   200: {who:"Dutch", img:"dutch",   t:"Two hundred days. When you started, you couldn't get four dogs down before lights out. Look at the hall now. Look at how quiet it is."},
+
+  /* ---------------- Chapter 9 — Every Breed a Story ---------------- */
+  202: {who:"Dutch", img:"dutch",   t:"Everyone here is difficult until you know why. That's not a soft thing to say, it's the most practical sentence in this building. Every single one of them has a reason and every reason is short."},
+  206: {who:"Blizzard", img:"husky", t:"You've never once told me to be quiet. Two hundred days. My last place used to shut me in the utility room for it. So — that's why I argue about the route. It's the only argument I've ever been allowed to have."},
+  210: {who:"Winston", img:"bulldog", t:"The slowness. You've never rushed me, not once, and I'd like to explain it rather than let you keep guessing. It hurts to start. Once I'm going I'm fine. Starting is the whole of it."},
+  214: {who:"Tank", img:"rottweiler", t:"The vacuum. It's not the noise. It's that the last house put me out in the yard whenever it came on, and it came on a lot, and it was a cold yard. You've done the hallway while I'm out every time. I noticed the first week."},
+  218: {who:"Mochi", img:"shihtzu", t:"The music box was hers. She'd wind it at bedtime, every night, for eleven years. I didn't come here with anything else. You've never once asked me to settle without it."},
+  222: {who:"Dutch", img:"dutch",   t:"You know all of them now. Not their favourites — anyone can learn a favourite. You know their reasons. There were three people before you and not one of them got that far."},
   225: {who:"Dutch", img:"dutch_h", t:"Twenty-five to go. I've been thinking about what happens after. The daycare doesn't need me the way it did. It needs you. It's been needing you for a while."},
+
+  /* ---------------- Chapter 10 — Dutch's Daycare ---------------- */
+  227: {who:"Dutch", img:"dutch",   t:"Here's what I'd like. Not a handover in one afternoon with a folder. Twenty-five days where I do less each morning and you don't say anything about it. By the end, nothing will have happened, and everything will have."},
+  231: {who:"Sergeant", img:"shepherd", t:"I counted thirty-two tonight. There are thirty-one dogs in this building. I counted you. I've been counting you for about four months and I decided you should know."},
+  235: {who:"Bruno", img:"stbernard", t:"Sit down. I'm opening the barrel.\n\nPhotographs. That's all it's ever been. Every dog who came through here and got a good ending. Dutch put the first one in. There's room for a lot more, and from tomorrow you're the one who decides what goes in it."},
+  239: {who:"Dutch", img:"dutch",   t:"The sign. I've had a look at it and there's honestly plenty of room under my name. I'm not being sentimental — it's a wide sign, it was always going to hold two."},
+  243: {who:"Biscuit", img:"corgi", t:"Final entry on the list, and then I'm putting it away. Day two hundred and forty-three. Bowls out in the right order, every dog, no notes.\n\nI want it on the record that it took you a while. I also want it on the record that you got there."},
+  247: {who:"Dutch", img:"dutch",   t:"Last quiet one before the end. I'm not going anywhere, you understand — I'll be on the porch, I'll be at bedtime, I'll be unbearable about the blanket corners. I'm just not carrying it any more. You are."},
   250: {who:"Dutch", img:"dutch_h", t:"Two hundred and fifty days. Every bowl filled, every dog walked, every light out on time. It's yours now. Put your name on the sign — I'll help you carry the ladder."}
 };
 

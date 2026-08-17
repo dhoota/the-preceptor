@@ -14,12 +14,12 @@ previous app.
 - [ ] **Create the App Store Connect record.** Without it the upload fails with
       `Cannot determine the Apple ID from Bundle ID`, which does not say what is
       actually wrong.
-- [ ] **Decide iPad now.** `TARGETED_DEVICE_FAMILY` is `"1,2"`, so iPad
-      screenshots at exactly 2064 × 2752 are mandatory. No iPad? Set it to `"1"`
-      in **both** build configurations in
-      `ios/App/App.xcodeproj/project.pbxproj` and add iPad in 1.1.
-      `layout-probe.js` confirms the layout already works on all six iPad
-      viewports, so this is purely a question of whether you can photograph one.
+- [ ] **iPad screenshots at exactly 2064 × 2752.** iPad is a committed target:
+      `TARGETED_DEVICE_FAMILY` is `"1,2"` and the game has a dedicated tablet
+      layout (tray rail above 900px), verified on all six iPad viewports by
+      `layout-probe.js`. Shoot them **in landscape on a 12.9"/13" iPad** so the
+      rail is what the reviewer sees. This is the only remaining hard
+      dependency on physical hardware.
 - [ ] **Game Center.** `ios/App/App/App.entitlements` declares
       `com.apple.developer.game-center` and `CODE_SIGN_ENTITLEMENTS` is set in
       both configurations. The game has no GameKit features, so the cleaner

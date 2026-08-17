@@ -120,6 +120,32 @@ print("weather gear:       %d unknown" % len(set(bad_gear)))
 if bad_gear:
     fails.append("weather asks for gear that does not exist: %s" % sorted(set(bad_gear)))
 
+# ---- 3c. story coverage -----------------------------------------------------
+# A beat keyed past the last day is written, paid for, and unreachable — the
+# kind of thing you only notice when someone finishes the game and asks where
+# the ending was.
+m_total = re.search(r"var TOTAL_DAYS = (\d+)", src)
+story_days = sorted(int(d) for d in re.findall(r"^\s{2}(\d+):\s*\{who:", src, re.M))
+if m_total and story_days:
+    total = int(m_total.group(1))
+    unreachable = [d for d in story_days if d < 1 or d > total]
+    print("story beats:        %d, days %d-%d of %d" %
+          (len(story_days), story_days[0], story_days[-1], total))
+    if unreachable:
+        fails.append("story beats keyed outside day 1-%d and therefore unreachable: %s"
+                     % (total, unreachable))
+    if story_days[-1] != total:
+        warns.append("the last story beat is day %d but the game runs to %d — "
+                     "there is no ending on the final day" % (story_days[-1], total))
+    # A chapter with no beats at all reads as a dead stretch.
+    chapters = [(int(a), int(b)) for a, b in
+                re.findall(r"\{from:(\d+),\s*to:(\d+),", src)]
+    empty = [(a, b) for a, b in chapters if not any(a <= d <= b for d in story_days)]
+    if empty:
+        warns.append("chapters with no story beats: %s" % empty)
+else:
+    warns.append("could not read TOTAL_DAYS / STORY to check story coverage")
+
 # ---- 4. remote assets -------------------------------------------------------
 remote = len(re.findall(r"https://d8j0ntlcm91z4[^\"']+", src))
 local = len(set(re.findall(r"assets/[A-Za-z0-9._-]+\.(?:png|jpg|jpeg|webp|mp4)", src)))

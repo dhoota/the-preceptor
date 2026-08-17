@@ -62,7 +62,7 @@ const server = http.createServer((req, res) => {
       const overflowY = de.scrollHeight - de.clientHeight;
       // Is any key play element pushed outside the viewport?
       const clipped = [];
-      ['topbar', 'dogZone', 'trayZone', 'tray', 'clockWrap', 'boostRail'].forEach(id => {
+      ['topbar', 'playBody', 'dogZone', 'trayZone', 'tray', 'clockWrap', 'boostRail'].forEach(id => {
         const el = document.getElementById(id);
         if (!el) { clipped.push(id + ' MISSING'); return; }
         const b = el.getBoundingClientRect();
@@ -79,7 +79,10 @@ const server = http.createServer((req, res) => {
       document.querySelectorAll('.dog').forEach(n => {
         widest = Math.max(widest, Math.round(n.getBoundingClientRect().width));
       });
+      const body = document.getElementById('playBody');
+      const lay = body && getComputedStyle(body).flexDirection === 'row' ? 'tablet-rail' : 'phone-stack';
       return {
+        layout: lay,
         overflowX, overflowY, clipped,
         dogs: document.querySelectorAll('.dog').length,
         widestDog: widest,

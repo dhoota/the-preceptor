@@ -39,8 +39,11 @@ heart. Hearts refill on the wall clock, five maximum, one every twelve minutes.
 - **34 breeds**, each with a portrait, a size, a favourite food and a Dogdex
   entry that levels up as you care for them. Learning a favourite is worth real
   seconds, which is what makes the collection more than a checklist.
-- **250 days across 10 chapters**, 21 scripted story beats, and a wisdom card on
-  every unscripted day.
+- **250 days across 10 chapters** and **87 scripted story beats** — roughly one
+  every three days — with a wisdom card on every unscripted day. Three threads
+  run underneath the arc: Bruno's barrel (set up day 74, referenced day 157,
+  opened day 235), Biscuit's list (days 5, 184, 243), and Dutch handing the
+  place over one morning at a time through the last chapter.
 - **16 foods, 6 pieces of walk gear, 8 comforts**, unlocking gradually so day one
   is three bowls, not sixteen.
 - **5 weather states** that change what gear the walk needs — a rainy day is a
@@ -66,6 +69,24 @@ SUBMIT.md               the submission blockers App Store Connect hides
 One self-contained HTML file is a deliberate constraint. The whole game stays
 greppable, diffable, and testable in a browser with no build step.
 
+### iPad
+
+iPad is a first-class target, not a stretched phone. Above 900px the tray moves
+from a bottom strip to a **right-hand rail**, the dog grid gets the room, and the
+boost bar sits at the foot of the rail — which is the layout the 13" iPad
+screenshot has to show. `layout-probe.js` reports which layout each viewport
+resolved to, so a regression that silently drops the rail fails visibly rather
+than merely looking worse:
+
+| Viewport | Layout |
+| --- | --- |
+| iPhone SE / 15 Pro / Pro Max | phone-stack |
+| iPad mini + Pro 11 portrait, Split View ½ | phone-stack |
+| iPad Pro 13 portrait, Pro 11 + 13 landscape | **tablet-rail** |
+
+`TARGETED_DEVICE_FAMILY` stays `"1,2"`. iPad screenshots at exactly 2064 × 2752
+are required — see `LAUNCH_KIT.md` §4.
+
 ## Verification — run all five before every push
 
 ```bash
@@ -87,10 +108,10 @@ Current status — all five green:
 | Script | Result |
 | --- | --- |
 | `node --check` | pass |
-| `validate.py` | pass, 136 portrait refs resolved, 0 hard-coded prices |
+| `validate.py` | pass, 203 portrait refs resolved, 87 story beats covering days 1–250, 0 hard-coded prices |
 | `playtest.js 250` | 250 days, 3519 deliveries, 0 issues |
 | `save-probe.js` | `PERSISTED: true`, 10 fields survive a reload |
-| `layout-probe.js` | 0 of 9 viewports overflow or clip |
+| `layout-probe.js` | 0 of 9 viewports overflow or clip; tablet rail confirmed on the three widest |
 
 `playtest.js` earned its place on the first run: it caught the dog count being
 pinned at three for the entire game unless the player happened to buy Big Yard,
