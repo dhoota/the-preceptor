@@ -87,7 +87,7 @@ than merely looking worse:
 `TARGETED_DEVICE_FAMILY` stays `"1,2"`. iPad screenshots at exactly 2064 × 2752
 are required — see `LAUNCH_KIT.md` §4.
 
-## Verification — run all five before every push
+## Verification — run all six before every push
 
 ```bash
 export CHROME_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome
@@ -99,11 +99,12 @@ python3 scripts/validate.py     # IP scan, portrait audit, monetization, invaria
 node scripts/playtest.js 250    # plays 250 days through the real functions
 node scripts/save-probe.js      # the silent save-loss bug
 node scripts/layout-probe.js    # 9 iPhone/iPad viewports
+node scripts/screens-probe.js   # every screen the playtest does not touch
 ```
 
 Or `npm run verify`. Together they take about two minutes.
 
-Current status — all five green:
+Current status — all six green:
 
 | Script | Result |
 | --- | --- |
@@ -112,10 +113,16 @@ Current status — all five green:
 | `playtest.js 250` | 250 days, 3519 deliveries, 0 issues |
 | `save-probe.js` | `PERSISTED: true`, 10 fields survive a reload |
 | `layout-probe.js` | 0 of 9 viewports overflow or clip; tablet rail confirmed on the three widest |
+| `screens-probe.js` | Dogdex, shop, settings, day card and story beats all render and behave |
 
-`playtest.js` earned its place on the first run: it caught the dog count being
-pinned at three for the entire game unless the player happened to buy Big Yard,
-which would have made day 60 play exactly like day 6.
+`playtest.js` drives the three play rounds; `screens-probe.js` covers everything
+else — it walks the menus, opens every sheet, buys an upgrade and checks it
+charges, exercises the reset dialog, and proves the storefront cannot be reached
+even when `paintStore()` is called directly with the placeholder key in place.
+
+Both earned their keep. `playtest.js` caught the dog count being pinned at three
+for the entire game unless the player happened to buy Big Yard, which would have
+made day 60 play exactly like day 6.
 
 ## Assets
 

@@ -9,7 +9,8 @@
     "playtest": "node scripts/playtest.js 120",
     "probe:save": "node scripts/save-probe.js",
     "probe:layout": "node scripts/layout-probe.js",
-    "verify": "npm run check && npm run playtest && npm run probe:save && npm run probe:layout"
+    "probe:screens": "node scripts/screens-probe.js",
+    "verify": "npm run check && npm run playtest && npm run probe:save && npm run probe:layout && npm run probe:screens"
   },
   "keywords": [],
   "author": "",

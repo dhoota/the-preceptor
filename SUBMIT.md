@@ -94,4 +94,4 @@ export CHROME_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome
 npm run verify
 ```
 
-All five must be green. Current state: they are.
+All six must be green. Current state: they are.
