@@ -75,7 +75,12 @@ const S = {
   loeys: { id: "ghent", citation: "Loeys BL, Dietz HC, Braverman AC, et al. The revised Ghent nosology for the Marfan syndrome. J Med Genet. 2010.", url: "https://pubmed.ncbi.nlm.nih.gov/20591885/" },
   rosen: {
     id: "rosen",
-    citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter on ophthalmology.",
+    citation: "Walls RM, Hockberger RS, Gausche-Hill M, et al, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 57, Ophthalmology.",
+  },
+  copPhotokeratitis: {
+    id: "cop-photokeratitis",
+    citation: "The College of Optometrists. Photokeratitis (ultraviolet [UV] burn, arc eye, snow blindness). Clinical Management Guidelines. 2025.",
+    url: "https://www.college-optometrists.org/clinical-guidance/clinical-management-guidelines/photokeratitis_ultraviolet_uv_burn_arceye_snowblin",
   },
   zhou: {
     id: "open-globe",
@@ -226,7 +231,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         explanation:
           "Punctate staining in the exposed band of both corneas, with pain starting hours after long sun exposure on snow without goggles, is ultraviolet keratitis. Symptoms typically begin 6 to 12 hours after exposure. Adenovirus usually starts in one eye with discharge and a tender preauricular node. Allergy causes itch rather than severe pain. Abrasions follow a scratch and stain as a defined defect. Herpes simplex keratitis is usually one sided with a branching dendrite.",
         keyFeature: { topic: "eye", n: 3 },
-        source: "rosen",
+        source: "cop-photokeratitis",
       },
       {
         id: "q3",
@@ -263,7 +268,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         source: "corneal-abrasion",
       },
     ],
-    sources: [S.rosen, S.aaoKeratitis, S.wipperman],
+    sources: [S.copPhotokeratitis, S.aaoKeratitis, S.wipperman],
     ...META,
   },
   {
