@@ -736,7 +736,7 @@ export const SOB_S51_SAMPS: Samp[] = [
         options: ["4.5 points", "6 points", "7.5 points", "9 points", "10.5 points"],
         correct: 2,
         explanation:
-          "She scores 3 because PE is the most likely diagnosis, 1.5 for a heart rate above 100/minute, 1.5 for surgery within 4 weeks and 1.5 for a previous DVT, a total of 7.5. That is above 4.5, so PE is likely, and Thrombosis Canada advises going straight to imaging without a D-dimer. A score of 6 leaves out either the surgery or the old DVT, and 4.5 leaves out both. A score of 9 counts surgery and immobilization as two items, although they form one. A score of 10.5 adds 3 points for signs of DVT, and her legs are normal.",
+          "She scores 3 because PE is the most likely diagnosis, 1.5 for a heart rate above 100/minute, 1.5 for surgery within 4 weeks and 1.5 for a previous DVT, a total of 7.5. That is 4.5 or more, so PE is likely, and Thrombosis Canada advises going straight to imaging without a D-dimer. A score of 6 leaves out either the surgery or the old DVT, and 4.5 leaves out both. A score of 9 counts surgery and immobilization as two items, although they form one. A score of 10.5 adds 3 points for signs of DVT, and her legs are normal.",
         keyFeature: { topic: "sob", n: 5 },
         source: "tc-pe",
       },
@@ -748,7 +748,7 @@ export const SOB_S51_SAMPS: Samp[] = [
         prompt: "Which of the following is the most appropriate next step in the evaluation for pulmonary embolism?",
         options: [
           "D-dimer to decide on discharge",
-          "Discharge as PE is excluded",
+          "Discharge with outpatient follow up",
           "Echocardiography to exclude PE",
           "Repeat CT angiogram in 1 week",
           "Ventilation perfusion scan",
@@ -986,7 +986,7 @@ export const SOB_S51_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "menu",
-        update: "His airway is secured by awake nasal intubation.",
+        update: "His airway is secured by awake nasal intubation with a flexible scope, and he is sedated for ongoing ventilation.",
         prompt: "Which of the following should be arranged now to treat the underlying infection?",
         select: 2,
         options: [
@@ -1436,14 +1436,14 @@ export const SOB_S51_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A high-pitched inspiratory noise that is loudest over the neck, with no wheeze, is stridor from narrowing at or near the larynx. Bronchodilators relax the smooth muscle of the lower airways and do nothing for a fixed laryngeal obstruction. Four months of hoarseness, weight loss, heavy smoking and drinking and a hard neck node point to a laryngeal cancer. COPD and asthma cause expiratory wheeze and a prolonged expiration, not inspiratory stridor over the neck. Poor inhaler technique or a slowly resolving bronchitis would not explain the stridor, the hoarseness or the node.",
+          "A high-pitched inspiratory noise that is loudest over the neck, with no wheeze, is stridor from narrowing at or near the larynx. Bronchodilators relax the smooth muscle of the lower airways and do nothing for a fixed laryngeal obstruction. Four months of hoarseness, weight loss, heavy smoking and drinking and a firm neck node point to a laryngeal cancer. COPD and asthma cause expiratory wheeze and a prolonged expiration, not inspiratory stridor over the neck. Poor inhaler technique or a slowly resolving bronchitis would not explain the stridor, the hoarseness or the node.",
         keyFeature: { topic: "sob", n: 1 },
         source: "eskander",
       },
       {
         id: "q2",
         kind: "menu",
-        prompt: "Which of the following findings in this patient are not explained by a diagnosis of COPD?",
+        prompt: "Which of the following findings in this patient point to a problem other than COPD?",
         select: 3,
         options: [
           "Breathlessness when walking",
@@ -2123,7 +2123,7 @@ export const SOB_S51_SAMPS: Samp[] = [
         prompt: "Which of the following is the most appropriate first step in her treatment?",
         options: [
           "CT pulmonary angiogram",
-          "epoprostenol infusion restarted",
+          "epoprostenol infusion",
           "norepinephrine infusion",
           "normal saline 1 L IV bolus",
           "Rapid sequence intubation",
@@ -2137,7 +2137,7 @@ export const SOB_S51_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "Epoprostenol is restarted on a hospital pump through a peripheral IV. Blood drawn on arrival shows a lactate of 4.6 mmol/L, a high sensitivity troponin I of 60 ng/L and a BNP of 2400 ng/L. Nasal prongs at 3 L/minute raise her O2 saturation to 93%.",
+        update: "Epoprostenol is restarted on a hospital pump through a peripheral IV. Arrival blood shows lactate 4.6 mmol/L, high sensitivity troponin I 60 ng/L and BNP 2400 ng/L. Oxygen at 3 L/minute by nasal prongs raises her O2 saturation to 93%.",
         prompt: "Which of the following findings best shows that her right heart failure was causing inadequate tissue perfusion?",
         options: [
           "BNP of 2400 ng/L",
@@ -2163,8 +2163,8 @@ export const SOB_S51_SAMPS: Samp[] = [
           "Continue her usual tadalafil",
           "Halve the epoprostenol dose",
           "Hold macitentan until she stabilizes",
-          "metoprolol 5 mg IV for tachycardia",
-          "Stop epoprostenol for the flushing",
+          "metoprolol 5 mg IV",
+          "Stop the epoprostenol infusion",
         ],
         correct: [0, 1],
         explanation:

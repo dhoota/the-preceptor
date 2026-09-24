@@ -49,7 +49,7 @@ Scope: the five SAMPs rebuilt after the first two reviews (sob-23, sob-33, sob-3
 - Harris M et al. BTS community acquired pneumonia in children. Thorax. 2011: https://www.brit-thoracic.org.uk/document-library/guidelines/pneumonia-in-children/bts-guideline-for-the-management-of-community-acquired-pneumonia-in-children-update/
 - Davidson AC et al. BTS/ICS acute hypercapnic respiratory failure. Thorax. 2016. Obesity hypoventilation and oxygen target recommendations confirmed by search.
 - Mokhlesi B et al. ATS obesity hypoventilation guideline. 2019: https://doi.org/10.1164/rccm.201905-1071ST
-- Eskander A, de Almeida JR, Irish JC. N Engl J Med. 2019;381:1940-9: https://pubmed.ncbi.nlm.nih.gov/32074437/
+- Eskander A, de Almeida JR, Irish JC. N Engl J Med. 2019, volume 381, pages 1940 to 1949: https://pubmed.ncbi.nlm.nih.gov/32074437/
 - Law JA et al. CAFG Part 2. Can J Anesth. 2021: https://doi.org/10.1007/s12630-021-02008-z
 
 ## Overlap search
