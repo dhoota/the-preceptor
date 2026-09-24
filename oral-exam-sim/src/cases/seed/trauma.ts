@@ -17,17 +17,30 @@ export const trauma: OralCase = {
     { topic: "airway", n: 4 },
   ],
   summary: "A 27 year old motorcyclist arrives by ground ambulance to a hospital that is not a trauma centre.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 60 bed regional hospital in Ontario. It is not a trauma centre. " +
-    "There is a general surgeon on call from home, about 40 minutes away. CT is available. " +
-    "The blood bank holds 4 units of O negative and 6 units of O positive red cells. Frozen plasma takes about 25 minutes to thaw. Fibrinogen concentrate is stocked. " +
-    "The nearest lead trauma hospital is about 70 minutes away by Ornge helicopter. " +
-    "Jordan Kwan is 27 years old, about 85 kg. His motorcycle hit a guardrail at highway speed about 40 minutes ago. " +
-    "Paramedics gave 500 mL of normal saline and placed a cervical collar. No tranexamic acid was given. " +
-    "Arrival vitals: heart rate 136, blood pressure 76/48, respiratory rate 30, SpO2 89 percent on a non rebreather mask, temperature 35.4, GCS 13, capillary glucose 8.4 mmol/L. CTAS 1. " +
-    "The nurse says: 'He is pale and sweaty. He says his chest and his hips hurt. The team is here. What do you want?'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. It is not a trauma centre, and the lead trauma hospital is 70 minutes away by Ornge helicopter. " +
+    "A 27 year old man arrives by ambulance 40 minutes after his motorcycle hit a guardrail at highway speed.",
+  card: {
+    vitals: {
+      temperature: "35.4°C",
+      pulse: "136/minute",
+      resp: "30/minute",
+      bp: "76/48 mmHg",
+      o2sat: "89% on a non rebreather mask",
+      weight: "85 kg (187 lb), estimated",
+    },
+    medications: "None",
+    allergies: "None",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "Injury and prehospital history",
+      result:
+        "His motorcycle hit a guardrail at highway speed about 40 minutes before arrival. He says his chest and his hips hurt. " +
+        "Paramedics gave 500 mL of normal saline and placed a cervical collar. No tranexamic acid was given.",
+    },
     { id: "airway", label: "Airway", result: "Talking in short sentences. No stridor. No blood in the mouth. Cervical collar in place." },
     {
       id: "chest",
@@ -79,14 +92,19 @@ export const trauma: OralCase = {
     {
       id: "ample",
       label: "AMPLE history",
-      result: "No allergies. No medications. Healthy. Last meal 3 hours ago. Two beers earlier in the evening according to a friend.",
+      result: "No allergies. No medications. Healthy. Last meal 3 hours ago.",
+    },
+    {
+      id: "friend",
+      label: "Collateral from his friend",
+      result: "He had two beers earlier in the evening.",
     },
     {
       id: "labs",
       label: "Blood gas and labs",
       result:
         "pH 7.21. Base excess minus 9. Lactate 6.4 mmol/L. Hemoglobin 98 g/L. Platelets 188 x 10^9/L. INR 1.4. Fibrinogen 1.3 g/L. " +
-        "Ionized calcium 1.02 mmol/L. Potassium 4.2 mmol/L. Ethanol 12 mmol/L.",
+        "Capillary glucose at triage 8.4 mmol/L. Ionized calcium 1.02 mmol/L. Potassium 4.2 mmol/L. Ethanol 12 mmol/L.",
     },
     {
       id: "chest-tube",
@@ -100,7 +118,10 @@ export const trauma: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Resus",
-      text: "He is on the stretcher in resus. You have two nurses, a respiratory therapist and a lab tech.",
+      text:
+        "He is on the stretcher in resus. Triage made him CTAS 1. His GCS is 13. He is pale and sweaty. You have two nurses, a respiratory therapist and a lab tech. " +
+        "CT is available. The general surgeon on call is at home, about 40 minutes away. The blood bank holds 4 units of O negative and 6 units of O positive red cells. " +
+        "Frozen plasma takes about 25 minutes to thaw. Fibrinogen concentrate is stocked. The nurse asks, 'The team is here. What do you want?'",
       next: "q-primary",
     },
     {
@@ -108,15 +129,17 @@ export const trauma: OralCase = {
       id: "q-primary",
       phase: "Primary survey",
       prompt: "Take me through your primary survey. How do you run the team, and what bedside imaging do you want?",
-      seconds: 120,
+      seconds: 115,
       modelAnswer: [
         "Assign roles out loud. Use closed loop communication.",
         "Airway with cervical spine protection. Breathing. Circulation. Disability. Exposure.",
         "Two large bore IVs or IO. Warm the patient and all fluids and products.",
         "eFAST, portable chest X ray and pelvic X ray in resus.",
         "Do interventions as you find problems, not after the survey.",
+        "AMPLE history, mechanism, prehospital fluids and tranexamic acid, and head injury symptoms.",
+        "Secondary survey with log roll, perineum and a neurological exam once the primary survey is done.",
       ],
-      rubric: ["tr-p1", "tr-p4", "tr-p5"],
+      rubric: ["tr-p1", "tr-p4", "tr-p5", "tr-a1", "tr-a2", "tr-a3", "tr-x1"],
       next: "q-chest",
     },
     {
@@ -124,7 +147,7 @@ export const trauma: OralCase = {
       id: "q-chest",
       phase: "Breathing",
       prompt: "His left chest is dull with reduced air entry and subcutaneous emphysema. SpO2 is 89 percent. What will you do, and how?",
-      seconds: 60,
+      seconds: 57,
       modelAnswer: [
         "Left hemopneumothorax until proven otherwise.",
         "Finger thoracostomy in the 4th or 5th intercostal space, mid axillary line.",
@@ -149,7 +172,7 @@ export const trauma: OralCase = {
       id: "q-blood",
       phase: "Circulation",
       prompt: "What is your first blood product, how many units, and will you give more saline? What is your blood pressure target?",
-      seconds: 60,
+      seconds: 57,
       modelAnswer: [
         "Activate the massive hemorrhage protocol now.",
         "Uncrossmatched O red cells. O positive is fine for an adult male.",
@@ -181,7 +204,7 @@ export const trauma: OralCase = {
       id: "q-txa",
       phase: "Hemorrhage control",
       prompt: "When and how will you give tranexamic acid? Where exactly do you place the pelvic binder?",
-      seconds: 60,
+      seconds: 57,
       modelAnswer: [
         "Tranexamic acid 1 g IV over 10 minutes now.",
         "Then 1 g IV over 8 hours.",
@@ -230,7 +253,7 @@ export const trauma: OralCase = {
       id: "q-ct",
       phase: "Decision",
       prompt: "What do you say to the radiologist? Where is he bleeding from? Your local surgeon offers a damage control laparotomy here. How do you decide?",
-      seconds: 90,
+      seconds: 86,
       modelAnswer: [
         "An unstable patient does not go to CT.",
         "Sources are chest, abdomen and pelvis.",
@@ -258,7 +281,7 @@ export const trauma: OralCase = {
       id: "q-labs",
       phase: "Labs",
       prompt: "His ionized calcium is 1.02 mmol/L, fibrinogen 1.3 g/L and temperature 35.2. What do you give?",
-      seconds: 60,
+      seconds: 57,
       modelAnswer: [
         "Calcium chloride 1 g IV, or calcium gluconate 3 g IV.",
         "Keep ionized calcium above 1.1 mmol/L.",
@@ -280,7 +303,7 @@ export const trauma: OralCase = {
       id: "q-handover",
       phase: "Handover",
       prompt: "Give me your handover.",
-      seconds: 90,
+      seconds: 86,
       modelAnswer: [
         "Use a structure such as MIST or SBAR.",
         "Mechanism, time of injury and injuries found.",
@@ -304,7 +327,7 @@ export const trauma: OralCase = {
       id: "q-tbi",
       phase: "Head injury",
       prompt: "How does this change your blood pressure target? Talk me through your intubation, with drugs and doses.",
-      seconds: 90,
+      seconds: 86,
       modelAnswer: [
         "Signs of herniation. Head injury now changes the target.",
         "Systolic at least 110 mmHg at his age. Avoid any hypotension.",
@@ -336,7 +359,7 @@ export const trauma: OralCase = {
       id: "q-icp",
       phase: "Intracranial pressure",
       prompt: "What will you give for raised intracranial pressure, what would you avoid, and what are your ventilation targets?",
-      seconds: 60,
+      seconds: 57,
       modelAnswer: [
         "Hypertonic saline, e.g. 3 percent 250 mL IV.",
         "Avoid mannitol while he is hypotensive.",
@@ -352,7 +375,7 @@ export const trauma: OralCase = {
       id: "q-partner",
       phase: "Family",
       prompt: "His partner has just arrived in the waiting room. What will you tell her?",
-      seconds: 60,
+      seconds: 57,
       modelAnswer: [
         "Meet her in a private room with a nurse or social worker.",
         "Explain he has serious bleeding and a head injury.",
@@ -369,7 +392,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Runs a structured primary survey with clear team roles and closed loop communication.",
       points: 2,
       teaching: "Say roles out loud at the start. Closed loop orders prevent missed or duplicated tasks.",
@@ -378,7 +401,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Decompresses and drains the left chest with finger thoracostomy and a chest tube.",
       points: 3,
       critical: true,
@@ -388,7 +411,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Places a pelvic binder centred over the greater trochanters, not the iliac crests.",
       points: 2,
       critical: true,
@@ -398,7 +421,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Obtains two large bore IVs or IO and warms the patient and all products.",
       points: 1,
       teaching: "Hypothermia worsens coagulopathy. Warm everything from the start.",
@@ -407,7 +430,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p5",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses eFAST, chest X ray and pelvic X ray at the bedside to find the source.",
       points: 1,
       teaching: "Bedside imaging finds the source without leaving resus.",
@@ -416,7 +439,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Activates the massive hemorrhage protocol early and stops crystalloid in favour of blood.",
       points: 3,
       critical: true,
@@ -426,7 +449,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives tranexamic acid 1 g IV over 10 minutes within 3 hours of injury, then 1 g over 8 hours.",
       points: 3,
       critical: true,
@@ -436,7 +459,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Targets a balanced ratio of red cells to plasma of about 1 to 1 with platelets per protocol.",
       points: 2,
       teaching: "Balanced transfusion treats trauma coagulopathy. Ask for plasma to be thawed as soon as you activate.",
@@ -445,7 +468,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces calcium, e.g. calcium chloride 1 g IV, to keep ionized calcium above 1.1 mmol/L.",
       points: 1,
       teaching: "Citrate in blood products binds calcium. Low calcium worsens clotting and contractility.",
@@ -454,7 +477,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces fibrinogen at or under 1.5 g/L, e.g. fibrinogen concentrate 3 to 4 g or cryoprecipitate 10 units per local protocol.",
       points: 1,
       teaching: "Fibrinogen falls first in trauma bleeding. Replace it early.",
@@ -463,7 +486,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h6",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses permissive hypotension with systolic about 80 to 90 while there is no sign of severe brain injury.",
       points: 1,
       teaching: "A lower target limits bleeding until surgical control. It does not apply with severe brain injury, where the European guideline targets a mean arterial pressure of at least 80 mmHg.",
@@ -472,7 +495,7 @@ export const trauma: OralCase = {
     {
       id: "tr-d1",
       competency: "disposition",
-      criterion: "data",
+      criterion: "process",
       text: "Declines CT for a hemodynamically unstable patient and explains why.",
       points: 2,
       teaching: "The CT scanner is a dangerous place for an unstable patient. The images will not change the need for transfer.",
@@ -481,7 +504,7 @@ export const trauma: OralCase = {
     {
       id: "tr-d2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies chest, abdomen and pelvis as bleeding sources.",
       points: 1,
       teaching: "Think of the five places to bleed: chest, abdomen, pelvis, long bones and the floor. Chest tube output over 1,500 mL at once, or about 200 mL/h for 2 to 4 hours, suggests the need for thoracotomy.",
@@ -490,25 +513,25 @@ export const trauma: OralCase = {
     {
       id: "tr-d3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Discusses local damage control surgery versus immediate transfer with the trauma team leader and surgeon.",
       points: 1,
       teaching: "When transfer is long and the patient is unstable, local damage control can save a life. Decide together.",
-      source: "criticall",
+      source: "atls",
     },
     {
       id: "tr-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls the lead trauma hospital through CritiCall early, before imaging is complete.",
       points: 2,
       teaching: "Call as soon as you know he needs a trauma centre. Transfer time is part of resuscitation.",
-      source: "criticall",
+      source: "atls",
     },
     {
       id: "tr-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a concise structured handover, e.g. MIST or SBAR, with vital sign trend, products and tranexamic acid time.",
       points: 2,
       teaching: "A short structured handover lets the receiving team prepare the right room and people.",
@@ -517,7 +540,7 @@ export const trauma: OralCase = {
     {
       id: "tr-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks to the partner honestly and compassionately in a private space.",
       points: 1,
       teaching: "Families remember the first conversation. Be honest and give a clear next step.",
@@ -526,7 +549,7 @@ export const trauma: OralCase = {
     {
       id: "tr-t1",
       competency: "management",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes herniation and raises the systolic target to at least 110 mmHg for his age.",
       points: 2,
       teaching: "In brain injury, hypotension reduces cerebral perfusion. The Brain Trauma Foundation targets systolic at least 110 mmHg for ages 15 to 49 and over 70, and at least 100 mmHg for ages 50 to 69.",
@@ -535,7 +558,7 @@ export const trauma: OralCase = {
     {
       id: "tr-t2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Resuscitates before intubation and uses reduced dose induction, e.g. ketamine 0.5 to 1 mg/kg with rocuronium 1.2 to 1.6 mg/kg.",
       points: 2,
       teaching: "Shocked patients arrest at induction. Resuscitate first, cut the induction dose and raise the paralytic dose.",
@@ -544,7 +567,7 @@ export const trauma: OralCase = {
     {
       id: "tr-t3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives hypertonic saline, e.g. 3 percent 250 mL IV, and avoids mannitol while hypotensive.",
       points: 1,
       teaching: "Mannitol causes diuresis and can worsen hypotension. Hypertonic saline supports volume.",
@@ -553,7 +576,7 @@ export const trauma: OralCase = {
     {
       id: "tr-t4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Targets SpO2 above 94 percent and pCO2 35 to 40, with brief hyperventilation only as a bridge.",
       points: 1,
       teaching: "Hyperventilation lowers pressure by causing vasoconstriction. Prolonged use causes brain ischemia.",
@@ -562,17 +585,53 @@ export const trauma: OralCase = {
     {
       id: "tr-t5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Elevates the head of the bed with spine precautions and keeps the collar from obstructing venous return.",
       points: 1,
       teaching: "Head up about 30 degrees and a loose collar help venous drainage from the brain.",
       source: "btf",
     },
+    {
+      id: "tr-a1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes an AMPLE history: allergies, medications, past illness, last meal and events, including alcohol.",
+      points: 3,
+      teaching: "AMPLE is quick and changes care. Anticoagulants, a full stomach and alcohol all matter for bleeding, airway and head injury assessment.",
+      source: "atls",
+    },
+    {
+      id: "tr-a2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the mechanism and prehospital care: speed, helmet damage, time of injury, fluids given and whether tranexamic acid was given.",
+      points: 3,
+      teaching: "Mechanism predicts injury pattern. The time of injury and whether tranexamic acid was given decide whether you can still give it within 3 hours.",
+      source: "crash2",
+    },
+    {
+      id: "tr-a3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about head injury symptoms: loss of consciousness, amnesia, headache and vomiting.",
+      points: 2,
+      teaching: "Amnesia for the crash and a cracked helmet mean a real head injury. Its severity later decides whether permissive hypotension is still safe.",
+      source: "btf",
+    },
+    {
+      id: "tr-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Completes a secondary survey with a log roll, perineal exam, and neurological exam with GCS and pupils.",
+      points: 2,
+      teaching: "The secondary survey finds injuries the primary survey misses. Scrotal bruising suggests a pelvic fracture. A baseline GCS and pupils let you spot herniation later.",
+      source: "atls",
+    },
   ],
   sources: [
     {
       id: "atls",
-      citation: "American College of Surgeons. Advanced Trauma Life Support. 11th edition. 2025.",
+      citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support. 11th edition. 2025.",
       url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/",
     },
     {
@@ -580,12 +639,23 @@ export const trauma: OralCase = {
       citation: "Rossaint R, et al. The European guideline on management of major bleeding and coagulopathy following trauma. Sixth edition. Critical Care. 2023.",
       url: "https://link.springer.com/article/10.1186/s13054-023-04327-7",
     },
-    { id: "crash2", citation: "CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. The Lancet. 2010." },
-    { id: "proppr", citation: "Holcomb JB, et al. PROPPR randomized clinical trial of plasma, platelet and red blood cell ratios in severe trauma. JAMA. 2015." },
-    { id: "btf", citation: "Brain Trauma Foundation. Guidelines for the management of severe traumatic brain injury. Fourth edition. 2016." },
-    { id: "criticall", citation: "CritiCall Ontario. Provincial emergency referral and transfer service.", url: "https://www.criticall.org" },
+    {
+      id: "crash2",
+      citation: "CRASH-2 trial collaborators, Shakur H, et al. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage (CRASH-2). The Lancet. 2010.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/20554319/",
+    },
+    {
+      id: "proppr",
+      citation: "Holcomb JB, et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio and mortality in patients with severe trauma. The PROPPR randomized clinical trial. JAMA. 2015.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/25647203/",
+    },
+    {
+      id: "btf",
+      citation: "Carney N, et al. Guidelines for the management of severe traumatic brain injury, fourth edition. Brain Trauma Foundation. Neurosurgery. 2017.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/27654000/",
+    },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

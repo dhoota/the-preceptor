@@ -16,31 +16,46 @@ export const chestPain: OralCase = {
     { topic: "ems", n: 3 },
   ],
   summary: "A 61 year old man with sudden chest pain at a small hospital with no cath lab.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the only physician on shift at a 30 bed rural hospital in northern Ontario. " +
-    "There is a CT scanner with an on call technologist who can be in within 30 minutes. " +
-    "There is no cath lab. The nearest PCI centre is more than 3 hours away once transport is counted. " +
-    "Gordon Akiwenzie is 61 years old. He had sudden severe chest pain at 06:40 while splitting wood. " +
-    "He arrived by ambulance at 07:20. " +
-    "Triage vitals: heart rate 58, blood pressure 168/92 in the right arm, respiratory rate 22, SpO2 95 percent on room air, temperature 36.4, capillary glucose 7.8 mmol/L. CTAS 1. " +
-    "The nurse hands you a 12 lead ECG and says: 'There is ST elevation in the inferior leads. " +
-    "Paramedics gave aspirin 160 mg chewed and one nitro spray. " +
-    "The cardiologist at the regional centre saw the ECG and wants to know if we are giving tenecteplase. I have it drawn up with the heparin.'",
+    "You are working in the emergency department of a rural hospital in northern Ontario when the following patient arrives. " +
+    "There is no cath lab, CT needs a technologist who is 30 minutes away, and the nearest PCI centre is over 3 hours away. " +
+    "A 61 year old man arrives by ambulance with sudden severe chest pain.",
+  card: {
+    vitals: {
+      temperature: "36.4°C",
+      pulse: "58/minute",
+      resp: "22/minute",
+      bp: "168/92 mmHg (right arm)",
+      o2sat: "95% on room air",
+    },
+    medications: "None",
+    allergies: "None",
+  },
   findings: [
     {
       id: "pain-history",
-      label: "Pain history",
+      label: "History of presenting illness",
       result:
+        "The pain began suddenly at 06:40 while he was splitting wood. He arrived by ambulance at 07:20. " +
+        "Paramedics gave aspirin 160 mg chewed and one nitroglycerin spray. " +
         "He says the pain was 10 out of 10 at the very start. It felt like tearing and went straight through to between his shoulder blades. " +
         "He nearly passed out once. The pain is now 7 out of 10 and seems to be moving lower into his back. No prior similar pain.",
     },
     {
       id: "pmh",
-      label: "Past history and medications",
-      result:
-        "Hypertension for 12 years. He stopped amlodipine 3 months ago because he felt fine. Smokes 20 cigarettes a day. " +
-        "No diabetes, no prior MI, no surgery. No anticoagulants. No drug use. His brother died suddenly at 58. No allergies.",
+      label: "Past and family history",
+      result: "Hypertension for 12 years. No diabetes, no prior MI, no surgery. His brother died suddenly at 58.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "He stopped amlodipine 3 months ago because he felt fine. No anticoagulants. No allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Smokes 20 cigarettes a day. No drug use.",
     },
     {
       id: "ecg",
@@ -87,7 +102,7 @@ export const chestPain: OralCase = {
       id: "labs",
       label: "Blood work",
       result:
-        "High sensitivity troponin T 48 ng/L. Hemoglobin 138 g/L. Platelets 210 x 10^9/L. Creatinine 104 µmol/L. Potassium 4.1 mmol/L. " +
+        "Capillary glucose at triage 7.8 mmol/L. High sensitivity troponin T 48 ng/L. Hemoglobin 138 g/L. Platelets 210 x 10^9/L. Creatinine 104 µmol/L. Potassium 4.1 mmol/L. " +
         "INR 1.0. Lactate 2.6 mmol/L. Type and screen sent. Group O positive.",
     },
     {
@@ -118,6 +133,8 @@ export const chestPain: OralCase = {
       id: "s-open",
       phase: "At the bedside",
       text:
+        "You are the only physician on shift at this 30 bed hospital. He is in resus on the monitor. Triage made him CTAS 1. The nurse hands you a 12 lead ECG and says there is ST elevation in the inferior leads. " +
+        "The cardiologist at the regional centre has seen the ECG and wants to know if you are giving tenecteplase. The nurse has it drawn up with the heparin. " +
         "He is pale and says the pain is going through to his back. The nurse is waiting for your order on the tenecteplase.",
       next: "q-first",
     },
@@ -131,11 +148,12 @@ export const chestPain: OralCase = {
         "Monitor, two large bore IVs, type and screen.",
         "Pause before any fibrinolytic. Aortic dissection is on the differential.",
         "Ask about tearing pain, back radiation and near syncope.",
+        "Ask about blood pressure control, smoking, family history of sudden death, anticoagulants and what paramedics gave.",
         "Check both arm pressures and pulses, listen for aortic regurgitation, check neuro.",
         "Bedside echo and portable chest X ray before deciding.",
         "Fentanyl 25 to 50 mcg IV titrated for pain.",
       ],
-      rubric: ["cp-r1", "cp-r2", "cp-r3", "cp-r4"],
+      rubric: ["cp-r1", "cp-r2", "cp-r3", "cp-r4", "cp-h1", "cp-h2", "cp-h3"],
       choices: [
         {
           id: "c-screen",
@@ -364,7 +382,7 @@ export const chestPain: OralCase = {
         "Avoid large volume pericardiocentesis because it can worsen bleeding.",
         "In a peri arrest, controlled small volume drainage to a systolic of about 90 is a last resort.",
       ],
-      rubric: ["cp-m5"],
+      rubric: ["cp-m5", "cp-p1"],
       choices: [
         {
           id: "c-support",
@@ -426,7 +444,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Places patient on monitor, obtains two large bore IVs, and sends type and screen early.",
       points: 1,
       teaching: "A patient with possible aortic catastrophe needs blood ready early. Two large bore lines let you run infusions and products together.",
@@ -435,7 +453,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Pauses before fibrinolysis and screens for aortic dissection with a focused history of pain character and radiation.",
       points: 3,
       critical: true,
@@ -445,7 +463,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r3",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Checks both arm blood pressures and pulses.",
       points: 2,
       teaching: "A difference of more than 20 mmHg between arms or a pulse deficit strongly suggests dissection. It takes one minute to check.",
@@ -454,7 +472,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives IV opioid analgesia, e.g. fentanyl 25 to 50 mcg IV titrated.",
       points: 1,
       teaching: "Pain drives catecholamines and shear stress. Opioids help control heart rate and pressure.",
@@ -463,7 +481,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids further nitrates given inferior and right ventricular involvement until the diagnosis is clear.",
       points: 1,
       teaching: "ST elevation in V4R suggests right ventricular involvement. Nitrates can cause profound hypotension in this setting.",
@@ -472,7 +490,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-d1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes that dissection into the right coronary ostium can cause inferior ST elevation.",
       points: 2,
       teaching: "The right coronary ostium is the one most often involved by a type A flap. Inferior STEMI plus back pain should raise the question.",
@@ -481,7 +499,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-d2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Performs a bedside echo looking for aortic root dilation, intimal flap, effusion and aortic regurgitation.",
       points: 2,
       teaching: "A root over 4 cm, a flap or a new effusion on POCUS supports dissection. A normal POCUS does not rule it out.",
@@ -490,7 +508,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-d3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Interprets the widened mediastinum on chest X ray.",
       points: 1,
       teaching: "A mediastinum over 8 cm on an AP film is a clue to dissection. A normal chest X ray does not exclude it.",
@@ -499,7 +517,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-d4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Obtains CT angiography of the aorta while stable, with monitoring and an escort.",
       points: 2,
       teaching: "CT angiography is the test of choice in a stable patient. An unstable patient should not leave resus for imaging.",
@@ -508,7 +526,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Withholds tenecteplase and heparin, and gives no further antiplatelet agents.",
       points: 3,
       critical: true,
@@ -518,7 +536,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts IV beta blockade first, e.g. esmolol 500 mcg/kg over 1 minute then 50 to 300 mcg/kg/min, or labetalol 20 mg IV repeated every 10 minutes to effect.",
       points: 2,
       teaching: "Rate control reduces the force on the aortic wall. Esmolol is short acting and easy to stop if the pressure falls. ESC 2024 names labetalol as a first choice.",
@@ -527,7 +545,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "States targets of heart rate about 60 or lower and systolic under 120, about 100 to 120, using the higher arm reading.",
       points: 2,
       teaching: "ESC 2024 targets a heart rate of 60 or less and a systolic under 120. ACC and AHA 2022 accept a heart rate of 60 to 80. Use the higher arm, because the lower arm is reduced by the dissection.",
@@ -536,7 +554,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Adds a vasodilator such as nitroprusside or nitroglycerin only after rate control.",
       points: 1,
       teaching: "A vasodilator alone causes reflex tachycardia and more shear. Beta block first, then vasodilate.",
@@ -545,7 +563,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m5",
       competency: "resuscitation",
-      criterion: "diagnosis",
+      criterion: "management",
       text: "Recognizes tamponade, stops antihypertensives, gives cautious fluid and blood, and avoids large volume pericardiocentesis.",
       points: 2,
       teaching: "Tamponade in type A dissection needs surgery. Draining a large volume raises pressure and can restart bleeding from the aorta.",
@@ -554,7 +572,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Declines the cardiologist's request respectfully and shares the objective findings that support dissection.",
       points: 2,
       teaching: "Disagree with data, not with the person. The physician at the bedside holds responsibility for the order.",
@@ -563,25 +581,25 @@ export const chestPain: OralCase = {
     {
       id: "cp-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Contacts cardiac surgery at a tertiary centre early through CritiCall Ontario or the local equivalent.",
       points: 2,
       teaching: "CritiCall finds the accepting surgeon and bed. Call as soon as dissection is likely, not after every test.",
-      source: "criticall",
+      source: "acc-aha-aorta",
     },
     {
       id: "cp-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a clear structured handover to the receiving team and transport crew.",
       points: 1,
       teaching: "Include times, drugs and doses, targets, images and the reason fibrinolysis was withheld.",
-      source: "criticall",
+      source: "warren-transport",
     },
     {
       id: "cp-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the diagnosis and plan honestly to the patient and his wife.",
       points: 1,
       teaching: "Use plain words. A tear in the main artery that needs urgent surgery is clearer than a technical term.",
@@ -590,7 +608,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-s1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges emergent transfer to a centre with cardiac surgery, not only a PCI centre.",
       points: 3,
       critical: true,
@@ -600,16 +618,16 @@ export const chestPain: OralCase = {
     {
       id: "cp-s2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Requests a critical care escort with blood products and infusions running.",
       points: 1,
       teaching: "He may deteriorate in transit. The escort must be able to titrate infusions and give blood.",
-      source: "criticall",
+      source: "warren-transport",
     },
     {
       id: "cp-s3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents the reasoning for withholding fibrinolysis and the consultant discussion.",
       points: 1,
       teaching: "Clear documentation protects the patient and you. Record the findings, the contraindication and who you spoke with.",
@@ -618,10 +636,46 @@ export const chestPain: OralCase = {
     {
       id: "cp-s4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Anticipates collapse with positive pressure ventilation and avoids intubation unless necessary.",
       points: 1,
       teaching: "Positive pressure reduces venous return. In tamponade that can cause arrest at induction.",
+      source: "esc-aorta",
+    },
+    {
+      id: "cp-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about hypertension, adherence to blood pressure medication, smoking and a family history of sudden death.",
+      points: 2,
+      teaching: "Uncontrolled hypertension is the main risk factor for aortic dissection. A relative who died suddenly young raises the question of heritable aortic disease.",
+      source: "acc-aha-aorta",
+    },
+    {
+      id: "cp-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks what paramedics gave and about anticoagulant use before deciding on fibrinolysis.",
+      points: 1,
+      teaching: "Prior aspirin, nitrates and anticoagulants change bleeding risk and the fibrinolytic checklist. Ask before you order.",
+      source: "ccs-stemi",
+    },
+    {
+      id: "cp-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about syncope and transient neurological symptoms such as limb weakness or tingling.",
+      points: 1,
+      teaching: "Near syncope and brief focal symptoms point to branch vessel involvement. They make dissection more likely than a simple STEMI.",
+      source: "acc-aha-aorta",
+    },
+    {
+      id: "cp-p1",
+      competency: "resuscitation",
+      criterion: "process",
+      text: "Reassesses pressure, heart rate and the bedside echo after each intervention and changes the goal from pressure control to perfusion when he becomes hypotensive.",
+      points: 1,
+      teaching: "A dissection patient can move from hypertension to tamponade within minutes. Repeat the echo and pressures after each step and say the new goal out loud.",
       source: "esc-aorta",
     },
   ],
@@ -633,7 +687,7 @@ export const chestPain: OralCase = {
     },
     {
       id: "esc-aorta",
-      citation: "European Society of Cardiology. 2024 ESC Guidelines for the management of peripheral arterial and aortic diseases. European Heart Journal. 2024.",
+      citation: "Mazzolai L, et al. European Society of Cardiology. 2024 ESC Guidelines for the management of peripheral arterial and aortic diseases. European Heart Journal. 2024.",
       url: "https://academic.oup.com/eurheartj/article/45/36/3538/7738955",
     },
     {
@@ -641,9 +695,13 @@ export const chestPain: OralCase = {
       citation: "Wong GC, et al. 2019 Canadian Cardiovascular Society and Canadian Association of Interventional Cardiology Guidelines on the Acute Management of ST Elevation Myocardial Infarction. Focused Update on Regionalization and Reperfusion. Canadian Journal of Cardiology. 2019.",
       url: "https://onlinecjc.ca/article/S0828-282X(18)31321-7/fulltext",
     },
-    { id: "criticall", citation: "CritiCall Ontario. Provincial emergency referral and transfer service.", url: "https://www.criticall.org" },
+    {
+      id: "warren-transport",
+      citation: "Warren J, et al. Guidelines for the inter and intrahospital transport of critically ill patients. Critical Care Medicine. 2004.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/14707589/",
+    },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

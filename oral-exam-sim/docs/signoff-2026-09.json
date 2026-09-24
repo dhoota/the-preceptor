@@ -530,11 +530,6 @@
   "tox-15"
  ],
  "cases": [
-  "chest-pain-rural",
-  "febrile-infant",
-  "overdose-mixed",
-  "trauma-motorcycle",
-  "ethics-goals-of-care",
   "refractory-vf-arrest",
   "dialysis-hyperkalemia-arrest",
   "refractory-anaphylaxis-beta-blocker",
@@ -630,5 +625,15 @@
   "crowded-resus-room",
   "northern-snowmobile-transfer",
   "waiting-room-slump"
- ]
+ ],
+ "withdrawn": {
+  "cases": [
+   "chest-pain-rural",
+   "ethics-goals-of-care",
+   "febrile-infant",
+   "overdose-mixed",
+   "trauma-motorcycle"
+  ]
+ },
+ "withdrawnNote": "Oral cases realigned to the CFPC card and score sheet after sign-off. Arjan approved sending them back to physician review."
 }

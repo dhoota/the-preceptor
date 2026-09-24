@@ -17,14 +17,23 @@ export const febrileInfant: OralCase = {
     { topic: "airway", n: 4 },
   ],
   summary: "A 3 week old brought in by her parents because she is not feeding and is hard to wake.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in a community emergency department in Ontario. There is no pediatric ICU on site. " +
-    "Amara Osei is 3 weeks old. Her parents brought her in because she has fed poorly since last evening and is hard to wake this morning. " +
-    "Triage vitals: heart rate 204, respiratory rate 62, blood pressure 58/32, SpO2 94 percent on room air, rectal temperature 38.6. CTAS 1. " +
-    "The triage nurse says: 'She is floppy and mottled. Her cap refill is about 4 seconds. I have put her in resus. Her weight on the scale is 3.6 kg. Mom is very upset.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. There is no pediatric ICU on site. " +
+    "A 3 week old girl is carried in by her parents because she has fed poorly since last evening and is hard to wake this morning.",
+  card: {
+    vitals: {
+      temperature: "38.6°C rectal",
+      pulse: "204/minute",
+      resp: "62/minute",
+      bp: "58/32 mmHg",
+      o2sat: "94% on room air",
+      weight: "3.6 kg (7.9 lb)",
+    },
+    medications: "None",
+    allergies: "None known",
+  },
   findings: [
-    { id: "weight", label: "Weight", result: "3.6 kg. Birth weight was 3.4 kg." },
     { id: "glucose", label: "Point of care glucose", result: "Capillary glucose 2.1 mmol/L." },
     {
       id: "exam",
@@ -41,11 +50,17 @@ export const febrileInfant: OralCase = {
         "No murmur. Femoral pulses present and equal to the brachial pulses. Right hand SpO2 95 percent, foot SpO2 94 percent. Liver edge 1 cm below the costal margin.",
     },
     {
-      id: "birth-history",
-      label: "Birth and feeding history",
+      id: "hpi",
+      label: "History of presenting illness",
       result:
-        "Term at 39 weeks by vaginal delivery. Mother was GBS positive and received two doses of intrapartum penicillin more than 4 hours before delivery. " +
-        "No maternal fever. No known maternal herpes. Discharged on day 2. Breastfeeding well until last evening. Only 2 wet diapers in the last 24 hours. No sick contacts.",
+        "Breastfeeding well until last evening. Since then she has fed poorly. This morning she is hard to wake. Only 2 wet diapers in the last 24 hours. No sick contacts.",
+    },
+    {
+      id: "birth-history",
+      label: "Birth and perinatal history",
+      result:
+        "Term at 39 weeks by vaginal delivery. Birth weight 3.4 kg. Mother was GBS positive and received two doses of intrapartum penicillin more than 4 hours before delivery. " +
+        "No maternal fever. No known maternal herpes. Discharged on day 2.",
     },
     {
       id: "social",
@@ -86,7 +101,9 @@ export const febrileInfant: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Resus",
-      text: "You walk into resus. The baby is limp on the stretcher. Her mother is standing in the corner crying.",
+      text:
+        "You walk into resus. Triage made her CTAS 1. The triage nurse says she is floppy and mottled with a capillary refill of about 4 seconds. " +
+        "The baby is limp on the stretcher. Her mother is standing in the corner crying.",
       next: "q-first",
     },
     {
@@ -101,8 +118,10 @@ export const febrileInfant: OralCase = {
         "Point of care glucose right away.",
         "IV access, or IO if IV fails quickly.",
         "Blood culture, gas, lactate, CBC, electrolytes and ionized calcium with the line.",
+        "Ask the parents about feeding, wet diapers, perinatal GBS and HSV risk, sick contacts and the home situation.",
+        "Examine the fontanelle, skin, perfusion and liver edge.",
       ],
-      rubric: ["fi-r1", "fi-d2"],
+      rubric: ["fi-r1", "fi-d2", "fi-h1", "fi-h2", "fi-h3", "fi-x1"],
       next: "q-access",
     },
     {
@@ -354,7 +373,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r1",
       competency: "leadership",
-      criterion: "diagnosis",
+      criterion: "process",
       text: "Recognizes septic shock and calls for help, including pediatric resources, early.",
       points: 1,
       teaching: "Tachycardia, mottling and slow capillary refill are shock in a neonate. Low blood pressure is a late sign.",
@@ -363,7 +382,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "process",
       text: "Moves to intraosseous access after failed IV attempts within about 90 seconds.",
       points: 2,
       teaching: "In a shocked infant, IO access is fast and reliable. Do not lose minutes to repeated IV attempts.",
@@ -372,7 +391,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives crystalloid 10 to 20 mL/kg (about 36 to 72 mL) with reassessment of perfusion, liver size and lungs after each bolus.",
       points: 3,
       critical: true,
@@ -382,7 +401,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats hypoglycemia with D10W 2 mL/kg IV or IO (about 7 mL) and rechecks glucose within 15 to 30 minutes.",
       points: 2,
       critical: true,
@@ -392,7 +411,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r5",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts epinephrine 0.05 to 0.3 mcg/kg/min by peripheral IV or IO for fluid refractory shock.",
       points: 2,
       teaching: "Epinephrine can run peripherally or by IO at low dose. Do not wait for a central line.",
@@ -401,7 +420,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-d1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Draws a blood culture before antibiotics without delaying them.",
       points: 1,
       teaching: "One culture drawn with the first line is enough. Never hold antibiotics to get more samples.",
@@ -410,7 +429,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-d2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Obtains catheter urine, gas, lactate, CBC, electrolytes and ionized calcium.",
       points: 1,
       teaching: "These guide resuscitation and help find the source. Urine should be a catheter or suprapubic sample.",
@@ -419,7 +438,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-d3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Defers the LP while the infant is unstable and plans it once stable.",
       points: 2,
       teaching: "Positioning for an LP can cause apnea and collapse. Treat first and tap later. CSF can still be useful after antibiotics.",
@@ -428,7 +447,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-d4",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Considers duct dependent heart disease, adrenal crisis, inborn errors, HSV and non accidental injury, and screens for them.",
       points: 2,
       teaching: "Not every shocked neonate has sepsis. Pre and post ductal saturations, femoral pulses and electrolytes are quick screens.",
@@ -437,7 +456,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-a1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives empiric antibiotics within one hour without waiting for the LP.",
       points: 3,
       critical: true,
@@ -447,7 +466,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-a2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses ampicillin 75 mg/kg IV plus cefotaxime 50 to 75 mg/kg IV, or ceftazidime or cefepime if cefotaxime is unavailable.",
       points: 2,
       teaching: "Ampicillin covers Listeria and enterococcus. A third generation cephalosporin covers GBS and Gram negative organisms and reaches the CSF. Gentamicin does not reach the CSF well.",
@@ -456,7 +475,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-a3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Adds acyclovir 20 mg/kg IV for possible neonatal HSV.",
       points: 2,
       teaching: "Neonatal HSV can present without vesicles or maternal history. Seizures and a sick neonate should prompt acyclovir.",
@@ -465,7 +484,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-a4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids ceftriaxone in an infant under 28 days and can explain why.",
       points: 1,
       teaching: "Ceftriaxone displaces bilirubin and can precipitate with IV calcium in neonates. Shocked neonates often need calcium, so cefotaxime is the safer choice.",
@@ -474,7 +493,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-s1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Rechecks glucose and gives a benzodiazepine, e.g. lorazepam or midazolam 0.1 mg/kg IV or IO (about 0.36 mg).",
       points: 2,
       teaching: "Treat reversible causes first. Low glucose, sodium and calcium can all cause neonatal seizures.",
@@ -483,7 +502,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-s2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses phenobarbital 20 mg/kg IV (about 72 mg) as second line, or levetiracetam 40 to 60 mg/kg.",
       points: 1,
       teaching: "The ILAE neonatal guideline makes phenobarbital the first antiseizure drug in neonates. Watch for respiratory depression and hypotension.",
@@ -492,25 +511,25 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-s3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses a 3.0 cuffed or 3.5 uncuffed tube at about 9.5 to 10 cm at the lip.",
       points: 1,
       teaching: "For a term neonate, lip depth is roughly weight in kg plus 6 cm. Confirm with end tidal CO2 and X ray.",
-      source: "hsf-pals",
+      source: "aha-pals",
     },
     {
       id: "fi-s4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Resuscitates before induction and uses a stable agent, e.g. ketamine about 1 mg/kg with rocuronium 1 mg/kg, with atropine and epinephrine ready.",
       points: 2,
       teaching: "Shocked infants arrest at induction. Fill the tank, pick a stable drug and have push dose epinephrine drawn up.",
-      source: "hsf-pals",
+      source: "aha-pals",
     },
     {
       id: "fi-c1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges early transfer through the pediatric critical care transport team or CritiCall.",
       points: 2,
       teaching: "Call the transport team as soon as she is critically ill. Their travel time is part of her resuscitation.",
@@ -519,7 +538,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains to the parents in plain language, gives honest uncertainty about outcome, and checks understanding.",
       points: 1,
       teaching: "Parents remember how they were told. Be honest, avoid jargon, and give them a next step.",
@@ -528,7 +547,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Addresses the mother's guilt about GBS status with accurate reassurance.",
       points: 1,
       teaching: "Intrapartum antibiotics prevent early onset GBS but not late onset disease. She did nothing wrong.",
@@ -537,11 +556,47 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover with antibiotic times, doses, fluids given and outstanding results.",
       points: 1,
       teaching: "The receiving team needs exact times and doses. Write them on the transfer sheet as you go.",
       source: "ssc-peds",
+    },
+    {
+      id: "fi-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the course since last evening: feeding, wet diapers, level of alertness, fever at home and sick contacts.",
+      points: 3,
+      teaching: "Poor feeding, fewer wet diapers and new drowsiness in a neonate are red flags for sepsis. They also tell you how dry she is before you give fluid.",
+      source: "cps-febrile",
+    },
+    {
+      id: "fi-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about perinatal risk: gestation, maternal GBS status and intrapartum antibiotics, maternal fever and maternal herpes.",
+      points: 2,
+      teaching: "Maternal GBS and intrapartum antibiotics shape the likely organism. Neonatal HSV often occurs with no known maternal history, so a negative answer does not remove the need for acyclovir.",
+      source: "cps-febrile",
+    },
+    {
+      id: "fi-h3",
+      competency: "professionalism",
+      criterion: "history",
+      text: "Asks about the home situation, supports and any prior child protection involvement as part of the screen for non accidental injury.",
+      points: 2,
+      teaching: "Non accidental injury belongs on the differential of a shocked or seizing neonate. A brief, non judgemental social history is part of every such assessment.",
+      source: "trekk-neonate",
+    },
+    {
+      id: "fi-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines the fontanelle, the skin for petechiae, vesicles and bruising, and perfusion including capillary refill and liver edge.",
+      points: 2,
+      teaching: "A full fontanelle suggests meningitis. Vesicles suggest HSV and bruising suggests injury. The liver edge is your baseline before fluid boluses.",
+      source: "trekk-neonate",
     },
   ],
   sources: [
@@ -552,12 +607,12 @@ export const febrileInfant: OralCase = {
     },
     {
       id: "cps-febrile",
-      citation: "Canadian Paediatric Society. Management of well appearing febrile young infants aged 90 days or younger. Position statement. Paediatrics and Child Health. 2024.",
+      citation: "Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society. Management of well appearing febrile young infants aged 90 days or younger. Position statement. 2023, updated 2026.",
       url: "https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days",
     },
     {
       id: "trekk-neonate",
-      citation: "TREKK. Critically ill neonate algorithm and emergency department order set, version 2.1. 2025.",
+      citation: "TREKK. Order Set: Critically Ill Neonate. Version 2.1. 2025.",
       url: "https://trekk.ca/resources/order-set-critically-ill-neonate",
     },
     {
@@ -566,12 +621,12 @@ export const febrileInfant: OralCase = {
       url: "https://onlinelibrary.wiley.com/doi/10.1111/epi.17745",
     },
     {
-      id: "hsf-pals",
-      citation: "Heart and Stroke Foundation of Canada. 2025 Guidelines for CPR and Emergency Cardiovascular Care, Canadian edition, including pediatric advanced life support.",
-      url: "https://cpr.heartandstroke.ca/s/article/2025-Guidelines?language=en_US",
+      id: "aha-pals",
+      citation: "Lasa JJ, et al. Part 8. Pediatric Advanced Life Support. 2025 American Heart Association and American Academy of Pediatrics Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/41122885/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

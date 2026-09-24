@@ -15,14 +15,30 @@ export const ethicsCommunication: OralCase = {
     { topic: "delirium-agitation", n: 5 },
   ],
   summary: "An 86 year old woman is brought in unresponsive from her retirement home. Her family arrives.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in a community emergency department in Ontario. Neurosurgery is at a tertiary centre 2 hours away and is available by phone. " +
-    "Margit Havel is 86 years old and lives in a retirement home. Staff found her at 07:10 not speaking and not moving her right side. She was last seen well at 22:00 last night. " +
-    "Triage vitals: heart rate 88 and irregular, blood pressure 196/104, respiratory rate 18 with snoring, SpO2 93 percent on room air, temperature 36.9, capillary glucose 7.2 mmol/L. " +
-    "GCS 8 (E2 V1 M5). Weight 58 kg. CTAS 1. " +
-    "The nurse says: 'The retirement home sent her medication list and a folder of papers. She is on apixaban. Her son and daughter are both on their way.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. Neurosurgery is at a tertiary centre 2 hours away and is available by phone. " +
+    "An 86 year old woman is brought in from her retirement home because staff found her this morning not speaking and not moving her right side.",
+  card: {
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "88/minute, irregular",
+      resp: "18/minute, snoring",
+      bp: "196/104 mmHg",
+      o2sat: "93% on room air",
+      weight: "58 kg (128 lb)",
+    },
+    medications: "Apixaban 2.5 mg twice daily, ramipril 5 mg daily, atorvastatin 20 mg daily, vitamin D",
+    allergies: "None",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "Retirement home staff found her at 07:10 not speaking and not moving her right side. She was last seen well at 22:00 last night. " +
+        "The home sent her medication list and a folder of papers.",
+    },
     {
       id: "ct-head",
       label: "CT head",
@@ -50,14 +66,19 @@ export const ethicsCommunication: OralCase = {
       id: "history",
       label: "Past history and baseline function",
       result:
-        "Atrial fibrillation, hypertension and osteoarthritis. Mild memory loss but she manages her own day and walks with a walker. " +
-        "She is a retired piano teacher and plays every afternoon for the other residents. Widowed 6 years ago.",
+        "Atrial fibrillation, hypertension and osteoarthritis. Mild memory loss but she manages her own day and walks with a walker.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result:
+        "She lives in a retirement home. She is a retired piano teacher and plays every afternoon for the other residents. Widowed 6 years ago.",
     },
     {
       id: "acp",
       label: "Advance care planning documents",
       result:
-        "A power of attorney for personal care signed in 2021 names her son Daniel Havel as attorney. " +
+        "A power of attorney for personal care signed in 2021 names her son as attorney. " +
         "An advance care planning note in her handwriting dated 2023 says: 'If I cannot recognize my family or play my music, I do not want to be kept alive on machines. Let me be comfortable.' " +
         "No do not resuscitate confirmation form is on file.",
     },
@@ -65,7 +86,7 @@ export const ethicsCommunication: OralCase = {
       id: "labs",
       label: "Blood work",
       result:
-        "Hemoglobin 124 g/L. Platelets 176 x 10^9/L. INR 1.3. PTT 36 seconds. Creatinine 96 µmol/L with an eGFR of 48. Sodium 139 mmol/L. Potassium 4.3 mmol/L. Anti Xa level for apixaban pending.",
+        "Capillary glucose at triage 7.2 mmol/L. Hemoglobin 124 g/L. Platelets 176 x 10^9/L. INR 1.3. PTT 36 seconds. Creatinine 96 µmol/L with an eGFR of 48. Sodium 139 mmol/L. Potassium 4.3 mmol/L. Anti Xa level for apixaban pending.",
     },
     { id: "ecg", label: "ECG", result: "Atrial fibrillation at 86. No acute ST changes." },
     {
@@ -79,13 +100,13 @@ export const ethicsCommunication: OralCase = {
       id: "son",
       label: "Collateral from her son",
       result:
-        "Daniel says his mother talked about this often after his father spent 3 weeks on a ventilator before he died. She told him she never wanted that. He is tearful and says he wants to do what she asked.",
+        "He says his mother talked about this often after his father spent 3 weeks on a ventilator before he died. She told him she never wanted that. He is tearful and says he wants to do what she asked.",
     },
     {
       id: "daughter",
       label: "Collateral from her daughter",
       result:
-        "Rosa lives in Vancouver and visited last month. She says her mother was 'sharp as a tack' at dinner last week. She says, 'People recover from strokes all the time. She would want a chance.'",
+        "She lives in Vancouver and visited last month. She says her mother was 'sharp as a tack' at dinner last week. She says, 'People recover from strokes all the time. She would want a chance.'",
     },
   ],
   start: "s-open",
@@ -94,7 +115,9 @@ export const ethicsCommunication: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "At the bedside",
-      text: "She is snoring and not following commands. The respiratory therapist asks, 'Are we tubing her?'",
+      text:
+        "Triage made her CTAS 1. The retirement home sent her medication list and a folder of papers. Her son and daughter are both on their way. " +
+        "She is snoring and not following commands. The respiratory therapist asks, 'Are we tubing her?'",
       next: "q-airway",
     },
     {
@@ -109,8 +132,9 @@ export const ethicsCommunication: OralCase = {
         "She is maintaining oxygenation with simple measures.",
         "Hold off on intubation while you clarify her wishes with her substitute decision maker.",
         "Intubate if she cannot be oxygenated and no known wish refuses it.",
+        "Ask when she was last seen well and her baseline. Examine GCS, pupils, gaze and power. Urgent CT head.",
       ],
-      rubric: ["ec-k1"],
+      rubric: ["ec-k1", "ec-h1", "ec-x1"],
       choices: [
         {
           id: "c-support",
@@ -141,8 +165,9 @@ export const ethicsCommunication: OralCase = {
         "PCC 50 units/kg IV to a maximum of 3,000 units, about 2,900 units, or per local protocol.",
         "Do not wait for the anti Xa level. Andexanet has conditional Health Canada approval but is rarely stocked.",
         "Neurosurgery consult by phone.",
+        "Confirm the apixaban dose and the time of the last dose.",
       ],
-      rubric: ["ec-k2", "ec-k3"],
+      rubric: ["ec-k2", "ec-k3", "ec-h2"],
       next: "q-consent",
     },
     {
@@ -157,8 +182,9 @@ export const ethicsCommunication: OralCase = {
         "The exception is a known prior capable wish refusing that treatment.",
         "Her note is a wish, not a consent. It guides her substitute decision maker.",
         "Keep trying to reach the substitute decision maker.",
+        "Ask the home about a power of attorney and read the papers they sent.",
       ],
-      rubric: ["ec-s4"],
+      rubric: ["ec-s4", "ec-h3"],
       next: "s-family",
     },
     {
@@ -166,21 +192,21 @@ export const ethicsCommunication: OralCase = {
       id: "s-family",
       phase: "The family arrives",
       text:
-        "Neurosurgery says the bleed is not operable and the prognosis is very poor. Her son Daniel and daughter Rosa arrive. " +
-        "Daniel says his mother would not want machines. Rosa is angry and says, 'You are giving up on her. I want her intubated and sent to the big hospital now.'",
+        "Neurosurgery says the bleed is not operable and the prognosis is very poor. Her son and daughter arrive. " +
+        "Her son says his mother would not want machines. Her daughter is angry and says, 'You are giving up on her. I want her intubated and sent to the big hospital now.'",
       next: "q-sdm",
     },
     {
       kind: "question",
       id: "q-sdm",
       phase: "Substitute decision maker",
-      prompt: "Is Mrs. Havel capable? Who is her substitute decision maker, and what must that person follow?",
+      prompt: "Is the patient capable? Who is her substitute decision maker, and what must that person follow?",
       seconds: 90,
       modelAnswer: [
         "She is incapable. She cannot understand or communicate. Document this.",
-        "Daniel is her attorney for personal care.",
+        "Her son is her attorney for personal care.",
         "In the Health Care Consent Act hierarchy the attorney ranks above her children.",
-        "Rosa is not the substitute decision maker.",
+        "Her daughter is not the substitute decision maker.",
         "The substitute decision maker must follow known prior capable wishes that apply.",
         "Without applicable wishes, act in her best interests.",
       ],
@@ -188,17 +214,17 @@ export const ethicsCommunication: OralCase = {
       choices: [
         {
           id: "c-poa",
-          label: "I explained that Daniel is her attorney for personal care and must follow her prior wishes.",
+          label: "I explained that her son is her attorney for personal care and must follow her prior wishes.",
           next: "q-meeting",
-          quality: "strong", feedback: "Strong. Daniel is her attorney for personal care and ranks above her children in the Health Care Consent Act hierarchy. He must follow her known prior capable wishes. You explained this without taking sides.",
+          quality: "strong", feedback: "Strong. Her son is her attorney for personal care and ranks above her children in the Health Care Consent Act hierarchy. He must follow her known prior capable wishes. You explained this without taking sides.",
         },
         {
           id: "c-both",
-          label: "I told them both children had to agree, and since Rosa wanted everything we would intubate.",
+          label: "I told them both children had to agree, and since her daughter wanted everything we would intubate.",
           next: "s-wrong-sdm",
-          quality: "unsafe", feedback: "Unsafe. Children do not share the decision when an attorney for personal care exists. Daniel is the legal decision maker. Following Rosa would ignore her mother's written wishes.",
+          quality: "unsafe", feedback: "Unsafe. Children do not share the decision when an attorney for personal care exists. Her son is the legal decision maker. Following her daughter would ignore her mother's written wishes.",
         },
-        { id: "c-unilateral", label: "I told them I would decide what is medically best myself.", next: "s-unilateral", quality: "partial", feedback: "Partial. You should give a clear medical recommendation. But consent for treatment comes from the substitute decision maker. The examiner wanted you to identify Daniel and involve him." },
+        { id: "c-unilateral", label: "I told them I would decide what is medically best myself.", next: "s-unilateral", quality: "partial", feedback: "Partial. You should give a clear medical recommendation. But consent for treatment comes from the substitute decision maker. The examiner wanted you to identify her son and involve him." },
       ],
     },
     {
@@ -206,14 +232,14 @@ export const ethicsCommunication: OralCase = {
       id: "s-wrong-sdm",
       phase: "Minutes later",
       text:
-        "Daniel shows the nurse his power of attorney document. The charge nurse points out that he is the legal decision maker. Daniel is upset that his mother's wishes were nearly ignored. You now need to correct your plan.",
+        "Her son shows the nurse his power of attorney document. The charge nurse points out that he is the legal decision maker. He is upset that his mother's wishes were nearly ignored. You now need to correct your plan.",
       next: "q-meeting",
     },
     {
       kind: "say",
       id: "s-unilateral",
       phase: "Minutes later",
-      text: "Rosa says she will file a complaint. Daniel says no one has asked what his mother wanted. Neither child trusts the plan.",
+      text: "Her daughter says she will file a complaint. Her son says no one has asked what his mother wanted. Neither child trusts the plan.",
       next: "q-meeting",
     },
     {
@@ -228,7 +254,7 @@ export const ethicsCommunication: OralCase = {
         "Warning shot, then a clear prognosis in plain words.",
         "Ask what she valued and what she said about this situation.",
         "Recommend a plan based on her values. Do not ask if they want everything done.",
-        "Acknowledge Rosa's grief without arguing.",
+        "Acknowledge the daughter's grief without arguing.",
         "Offer palliative care, spiritual care and social work.",
       ],
       rubric: ["ec-k4", "ec-g1", "ec-g2", "ec-g3", "ec-g4", "ec-g5"],
@@ -237,9 +263,9 @@ export const ethicsCommunication: OralCase = {
           id: "c-recommend",
           label: "I sat down with both, gave a warning shot, explained the prognosis plainly and recommended comfort focused care based on her values.",
           next: "q-conflict",
-          quality: "strong", feedback: "Strong. A private room, a warning shot and a plain prognosis set up the conversation. A recommendation based on her values takes the weight of the decision off the family. Acknowledge Rosa's grief without arguing.",
+          quality: "strong", feedback: "Strong. A private room, a warning shot and a plain prognosis set up the conversation. A recommendation based on her values takes the weight of the decision off the family. Acknowledge the daughter's grief without arguing.",
         },
-        { id: "c-menu", label: "I asked them whether they wanted everything done.", next: "s-menu", quality: "partial", feedback: "Partial. Asking if they want everything done offers a menu without advice. It shifts the burden to the family. The examiner wanted a recommendation grounded in what Mrs. Havel valued." },
+        { id: "c-menu", label: "I asked them whether they wanted everything done.", next: "s-menu", quality: "partial", feedback: "Partial. Asking if they want everything done offers a menu without advice. It shifts the burden to the family. The examiner wanted a recommendation grounded in what the patient valued." },
       ],
     },
     {
@@ -247,14 +273,14 @@ export const ethicsCommunication: OralCase = {
       id: "s-menu",
       phase: "In the room",
       text:
-        "Rosa says, 'Yes, of course we want everything.' Daniel looks down and says nothing. The question put the burden of the decision on them and hid your medical advice.",
+        "Her daughter says, 'Yes, of course we want everything.' Her son looks down and says nothing. The question put the burden of the decision on them and hid your medical advice.",
       next: "q-conflict",
     },
     {
       kind: "question",
       id: "q-conflict",
       phase: "Conflict",
-      prompt: "Rosa says she will call a lawyer. What resources and next steps are there when a family cannot agree?",
+      prompt: "Her daughter says she will call a lawyer. What resources and next steps are there when a family cannot agree?",
       seconds: 60,
       modelAnswer: [
         "Stay calm and keep talking. Offer time and a second meeting.",
@@ -279,10 +305,10 @@ export const ethicsCommunication: OralCase = {
       kind: "question",
       id: "q-disclose",
       phase: "Disclosure",
-      prompt: "Will you tell the family? What exactly will you say? Rosa asks, 'Is that why she is dying?'",
+      prompt: "Will you tell the family? What exactly will you say? Her daughter asks, 'Is that why she is dying?'",
       seconds: 120,
       modelAnswer: [
-        "Disclose today to Daniel as her substitute decision maker, with Rosa present if he agrees.",
+        "Disclose today to her son as her substitute decision maker, with her daughter present if he agrees.",
         "State the facts: the reversal medication was delayed about 95 minutes.",
         "Apologize sincerely. In Ontario an apology is not an admission of liability.",
         "Be honest that the bleed was already very large and the effect of the delay is uncertain.",
@@ -293,7 +319,7 @@ export const ethicsCommunication: OralCase = {
       choices: [
         {
           id: "c-disclose",
-          label: "I told Daniel and Rosa today what happened, apologized, said the effect on her outcome is uncertain, and explained what happens next.",
+          label: "I told her son and daughter today what happened, apologized, said the effect on her outcome is uncertain, and explained what happens next.",
           next: "q-report",
           quality: "strong", feedback: "Strong. Disclose promptly to the substitute decision maker. State the facts, apologize and admit the effect is uncertain. In Ontario an apology is not an admission of liability.",
         },
@@ -311,7 +337,7 @@ export const ethicsCommunication: OralCase = {
       id: "s-hidden",
       phase: "Two weeks later",
       text:
-        "Rosa requests the chart and sees the order and administration times. She files a complaint with the hospital and the College. The family says the worst part was finding out on their own.",
+        "Her daughter requests the chart and sees the order and administration times. She files a complaint with the hospital and the College. The family says the worst part was finding out on their own.",
       next: "q-report",
     },
     {
@@ -319,7 +345,7 @@ export const ethicsCommunication: OralCase = {
       id: "s-blame",
       phase: "Later that day",
       text:
-        "Rosa asks for the nurse's name. The nurse hears about it and is distressed. The review later finds the order failed in the electronic system. Blaming a person was not accurate or fair.",
+        "Her daughter asks for the nurse's name. The nurse hears about it and is distressed. The review later finds the order failed in the electronic system. Blaming a person was not accurate or fair.",
       next: "q-report",
     },
     {
@@ -342,7 +368,7 @@ export const ethicsCommunication: OralCase = {
       kind: "say",
       id: "s-comfort",
       phase: "The plan",
-      text: "Daniel asks that his mother be kept comfortable and not intubated. Rosa is crying but says she understands. There is no ward bed yet.",
+      text: "Her son asks that his mother be kept comfortable and not intubated. Her daughter is crying but says she understands. There is no ward bed yet.",
       next: "q-comfort",
     },
     {
@@ -367,7 +393,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-k1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Supports the airway with positioning, suction and an adjunct, and does not reflexively intubate before goals are clarified.",
       points: 2,
       teaching: "Simple airway measures often buy time. Intubation is a treatment that needs consent when there is time to get it.",
@@ -376,7 +402,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-k2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Lowers systolic pressure toward about 140 to 160 with a titratable agent, e.g. labetalol 10 to 20 mg IV, avoiding large rapid drops.",
       points: 1,
       teaching: "Canadian guidance says a systolic target under 140 to 160 for the first 24 to 48 hours may be reasonable. Avoid big swings in pressure.",
@@ -385,7 +411,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-k3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Reverses apixaban with PCC 50 units/kg IV to a maximum of 3,000 units, or per local protocol.",
       points: 2,
       teaching: "Canadian stroke guidance uses PCC 50 units/kg to a maximum of 3,000 units. Thrombosis Canada also accepts a fixed 2,000 units. Give it quickly and confirm it was given.",
@@ -394,7 +420,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-k4",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Consults neurosurgery and states the prognosis in plain terms.",
       points: 1,
       teaching: "A clear specialist opinion helps families understand prognosis. Offer the family a direct call if helpful.",
@@ -403,7 +429,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Determines and documents that the patient is incapable of making treatment decisions.",
       points: 1,
       teaching: "Capacity is decision specific. Document why she cannot understand or appreciate the decision.",
@@ -412,7 +438,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s2",
       competency: "professionalism",
-      criterion: "approach",
+      criterion: "history",
       text: "Identifies the son as attorney for personal care, who ranks above other children in the HCCA hierarchy.",
       points: 3,
       critical: true,
@@ -422,7 +448,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Explains that the substitute decision maker must follow known prior capable wishes that apply, and otherwise act in her best interests.",
       points: 2,
       teaching: "The substitute decision maker speaks for the patient, not for themselves. Prior capable wishes come first.",
@@ -431,7 +457,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s4",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Knows emergency treatment without consent is permitted when delay would cause serious harm, unless a known prior capable wish refuses it.",
       points: 1,
       teaching: "The Health Care Consent Act emergency exception lets you treat while you reach the decision maker.",
@@ -440,7 +466,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s5",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Names ethics consultation and the Consent and Capacity Board as routes for unresolved conflict.",
       points: 1,
       teaching: "Hospital ethics helps most conflicts. The Board handles disputes about whether the decision maker follows the Act.",
@@ -449,7 +475,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Meets the family together in a private room, sits down, and introduces everyone present.",
       points: 1,
       teaching: "Setting matters. Sitting down signals time and respect.",
@@ -458,7 +484,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a warning shot, then an honest and clear prognosis without jargon.",
       points: 2,
       teaching: "A warning shot prepares people for bad news. Then say it plainly and pause.",
@@ -467,7 +493,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Makes a recommendation based on her values rather than asking if they want everything done.",
       points: 2,
       teaching: "Families should not carry the medical decision alone. Recommend a plan that fits what the patient valued.",
@@ -476,7 +502,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Acknowledges the daughter's emotion with empathy and does not argue.",
       points: 1,
       teaching: "Anger is often grief. Name the emotion before giving more information.",
@@ -485,7 +511,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g5",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Involves social work, spiritual care and palliative care.",
       points: 1,
       teaching: "A team approach supports the family and the clinicians. Palliative care can help in the emergency department.",
@@ -494,7 +520,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-d1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Discloses the delay promptly to the substitute decision maker and family with facts, a sincere apology, and next steps.",
       points: 3,
       critical: true,
@@ -504,7 +530,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-d2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Is honest about uncertainty and does not speculate, minimize or blame individuals.",
       points: 2,
       critical: true,
@@ -514,7 +540,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-d3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Reports the incident through the hospital safety reporting system and informs the charge nurse or department lead.",
       points: 1,
       teaching: "Reporting drives system fixes. Most errors come from systems, not single people.",
@@ -523,7 +549,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-d4",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Knows the Ontario Apology Act protects an apology from being an admission of liability, and may call the CMPA for advice.",
       points: 1,
       teaching: "You can say sorry without admitting legal fault. The CMPA can advise on disclosure.",
@@ -532,7 +558,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-p1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Writes comfort care orders, e.g. hydromorphone 0.2 to 0.5 mg subcut as needed, glycopyrrolate 0.2 to 0.4 mg subcut for secretions, and mouth care.",
       points: 1,
       teaching: "Treat dyspnea, secretions and agitation. Stop tests that do not add comfort.",
@@ -541,7 +567,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-p2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents capacity, the substitute decision maker, prior wishes, the discussion, the code status and the disclosure facts.",
       points: 2,
       teaching: "Good notes let the next team continue the plan without repeating hard conversations.",
@@ -550,7 +576,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-p3",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Keeps the incident report separate from the medical record.",
       points: 1,
       teaching: "Chart the facts of care and disclosure. The incident report and quality review stay in the safety system.",
@@ -559,11 +585,47 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-p4",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Notifies Ontario Health (Trillium Gift of Life Network) as required by the Gift of Life Act.",
       points: 1,
       teaching: "Designated Ontario hospitals must notify Trillium Gift of Life when death is imminent or has occurred. Their trained staff assess donation options and usually raise them with the family.",
       source: "tgln",
+    },
+    {
+      id: "ec-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks when she was last seen well, how she was found, and her baseline function and cognition.",
+      points: 2,
+      teaching: "The last seen well time sets the stroke timeline. Her baseline function is what the family and the team will weigh when they discuss goals of care.",
+      source: "hsf-stroke",
+    },
+    {
+      id: "ec-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulant use and the time of the last dose.",
+      points: 2,
+      teaching: "A factor Xa inhibitor taken within the last day changes the plan for an intracerebral hemorrhage. The dose and time decide on reversal.",
+      source: "hsf-stroke",
+    },
+    {
+      id: "ec-h3",
+      competency: "professionalism",
+      criterion: "history",
+      text: "Asks whether she has a power of attorney for personal care or written wishes, and reads the papers the home sent.",
+      points: 2,
+      teaching: "An attorney for personal care and prior capable wishes change who decides and what they must follow. Look for them before the family arrives.",
+      source: "hcca",
+    },
+    {
+      id: "ec-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines GCS, pupils, gaze and limb power, and gets an urgent CT head.",
+      points: 2,
+      teaching: "A focused neurological exam sets the baseline. Urgent imaging separates hemorrhage from ischemic stroke and decides reversal.",
+      source: "hsf-stroke",
     },
   ],
   sources: [
@@ -576,7 +638,7 @@ export const ethicsCommunication: OralCase = {
     },
     {
       id: "cmpa",
-      citation: "Canadian Medical Protective Association. Disclosing harm from healthcare delivery. Open and honest communication with patients.",
+      citation: "Canadian Medical Protective Association. Disclosing harm from healthcare delivery. Open and honest communication with patients. Version 3. 2017.",
       url: "https://www.cmpa-acpm.ca/en/advice-publications/browse-articles/2015/disclosing-harm-from-healthcare-delivery-open-and-honest-communication-with-patients",
     },
     {
@@ -590,7 +652,7 @@ export const ethicsCommunication: OralCase = {
       url: "https://www.ontario.ca/laws/statute/90h20",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
