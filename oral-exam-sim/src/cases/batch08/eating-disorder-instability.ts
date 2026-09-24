@@ -16,14 +16,36 @@ export const eatingDisorderInstability: OralCase = {
     { topic: "suicide-risk", n: 1 },
   ],
   summary: "A 19 year old university student is brought in by her roommate after fainting on a treadmill.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working in the emergency department of an academic hospital in a university city in Ontario. There is internal medicine, an adult eating disorders program, psychiatry, a dietitian on call and an ICU. The hospital is a Schedule 1 psychiatric facility. " +
-    "Sophie Lindqvist is 19 years old. She fainted on a treadmill at the campus gym. Her roommate came with her. " +
-    "Triage vitals lying down: heart rate 42, blood pressure 84/52, respiratory rate 14, SpO2 99 percent on room air, oral temperature 35.3, capillary glucose 3.0 mmol/L. " +
-    "Height 168 cm and weight 41.2 kg, giving a BMI of 14.6. CTAS 2. " +
-    "The nurse says: 'She is very thin and cold. She wants to leave and says she just skipped lunch.'",
+    "You are working in the emergency department of a tertiary care centre in a university city in Ontario when the following patient arrives. " +
+    "It has an adult eating disorders program and is a Schedule 1 psychiatric facility. " +
+    "A 19 year old woman arrives by ambulance after she fainted on a treadmill at the campus gym.",
+  card: {
+    vitals: {
+      temperature: "35.3°C oral",
+      pulse: "42/minute lying",
+      resp: "14/minute",
+      bp: "84/52 mmHg lying",
+      o2sat: "99% on room air",
+      weight: "41.2 kg (91 lb)",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "triage",
+      label: "Triage",
+      result:
+        "She fainted on a treadmill at the campus gym. Her roommate came with her. Capillary glucose 3.0 mmol/L. Height 168 cm and weight 41.2 kg, giving a BMI of 14.6. CTAS 2. The nurse says: 'She is very thin and cold. She wants to leave and says she just skipped lunch.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "An academic hospital. There is internal medicine, an adult eating disorders program, psychiatry, a dietitian on call and an ICU. The hospital is a Schedule 1 psychiatric facility.",
+    },
     {
       id: "orthostatics",
       label: "Orthostatic vitals",
@@ -159,8 +181,10 @@ export const eatingDisorderInstability: OralCase = {
         "Mood and suicide risk. Mortality in anorexia nervosa is high and suicide contributes.",
         "Differential: hyperthyroidism, type 1 diabetes, celiac disease, inflammatory bowel disease, adrenal insufficiency, malignancy.",
         "Pregnancy test.",
+        "The faint: exertion, prodrome, palpitations, chest pain and previous episodes.",
+        "Medications, supplements, alcohol and drugs.",
       ],
-      rubric: ["ed-a2", "ed-a3"],
+      rubric: ["ed-a2", "ed-a3", "ed-h1", "ed-h2", "ed-h3"],
       next: "q-lytes",
     },
     {
@@ -350,7 +374,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Identifies high risk markers: heart rate in the low 40s, hypotension, hypothermia, hypoglycemia, orthostatic changes, low potassium and long QT.",
       points: 3,
       critical: true,
@@ -360,7 +384,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses small fluid boluses with reassessment and treats hypoglycemia with oral glucose or dextrose 10 percent.",
       points: 2,
       teaching: "Starved hearts are small and fail with large volumes. Concentrated dextrose boluses cause rebound hypoglycemia.",
@@ -369,7 +393,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Asks about purging, laxatives, exercise and suicidal thoughts.",
       points: 2,
       teaching: "Purging drives the potassium and alkalosis. Suicide is a major cause of death in eating disorders.",
@@ -378,7 +402,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-a3",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Considers medical causes of weight loss such as hyperthyroidism, diabetes, celiac disease, inflammatory bowel disease and adrenal insufficiency.",
       points: 1,
       teaching: "Most young women with this picture have an eating disorder, but a brief medical screen avoids missing another cause.",
@@ -387,7 +411,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces magnesium and potassium carefully on a monitor and avoids QT prolonging drugs.",
       points: 2,
       teaching: "Magnesium must be replaced for potassium to correct. Ondansetron and antipsychotics add to QT risk.",
@@ -396,7 +420,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes high refeeding risk and gives thiamine before feeding.",
       points: 2,
       teaching: "Low BMI, minimal intake and low baseline electrolytes all raise refeeding risk.",
@@ -405,7 +429,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts nutrition the same day with phosphate, potassium, magnesium and glucose checks every 12 hours for 3 days, then daily for the first week.",
       points: 3,
       critical: true,
@@ -415,7 +439,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Assesses capacity specific to admission and refeeding, focusing on appreciation.",
       points: 2,
       teaching: "Patients with eating disorders often understand facts but cannot apply them to themselves. That is a failure of appreciation.",
@@ -424,7 +448,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Knows a Form 1 authorizes detention for psychiatric assessment, not medical treatment, and gives a Form 42.",
       points: 2,
       teaching: "Lack of competence to care for herself with likely serious physical impairment meets Form 1 Box A. Medical treatment still needs consent from her or her substitute decision maker.",
@@ -433,7 +457,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Does not allow her to leave while medically unstable and incapable of that decision.",
       points: 3,
       critical: true,
@@ -443,7 +467,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks without judgment, avoids weight talk, and links treatment to her own goals.",
       points: 1,
       teaching: "Collaborative language improves engagement. Arguing about body image does not.",
@@ -452,7 +476,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to a monitored medical bed with the eating disorders team, psychiatry, supervised meals and daily labs.",
       points: 2,
       teaching: "Medical stabilization comes before psychiatric admission. Bathroom and meal supervision limit purging.",
@@ -461,11 +485,38 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Coordinates medicine, the dietitian, psychiatry and the eating disorders program in the admission plan.",
       points: 1,
       teaching: "Eating disorder care fails when teams work in silos. One clear plan prevents gaps.",
       source: "meed",
+    },
+    {
+      id: "ed-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the faint: exertion, prodrome, palpitations, chest pain and previous episodes.",
+      points: 2,
+      teaching: "Syncope in a patient with an eating disorder is a marker of medical instability. Exertional syncope also needs a cardiac cause ruled out.",
+      source: "sahm",
+    },
+    {
+      id: "ed-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about her weight loss over time, her daily intake and her menstrual history.",
+      points: 1,
+      teaching: "The rate of weight loss and very low intake predict medical risk and refeeding risk better than weight alone.",
+      source: "sahm",
+    },
+    {
+      id: "ed-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about medications, supplements, and alcohol or drug use.",
+      points: 1,
+      teaching: "Diuretics, diet pills, stimulants and substances add to electrolyte and cardiac risk and change the treatment plan.",
+      source: "sahm",
     },
   ],
   sources: [
@@ -491,7 +542,7 @@ export const eatingDisorderInstability: OralCase = {
       citation: "Government of Ontario. Health Care Consent Act, 1996. S.O. 1996, c. 2, Sched. A.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

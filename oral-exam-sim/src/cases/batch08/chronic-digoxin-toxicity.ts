@@ -16,14 +16,36 @@ export const chronicDigoxinToxicity: OralCase = {
     { topic: "arrhythmia", n: 6 },
   ],
   summary: "An 82 year old man with atrial fibrillation has several days of nausea, poor intake and confusion.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 45 bed hospital in the Ottawa Valley. There is a four bed ICU, an internist on call, and transcutaneous pacing. " +
-    "There is no cardiology or transvenous pacing on site. The regional cardiac centre is 90 minutes away by land. " +
-    "Albert Doucette is 82 years old and weighs 68 kg. His wife brought him in because he has vomited for three days, stopped eating, and has been muddled since yesterday. " +
-    "Triage vitals: heart rate 38 and regular, blood pressure 92/56, respiratory rate 18, SpO2 95 percent on room air, temperature 36.6, capillary glucose 5.8 mmol/L. CTAS 2. " +
-    "The nurse says: 'He says the lights in here have yellow rings around them. His wife brought his blister pack.'",
+    "You are working in the emergency department of a community hospital in the Ottawa Valley when the following patient arrives. " +
+    "There is no cardiology or transvenous pacing, and the regional cardiac centre is 90 minutes away by land. " +
+    "An 82 year old man is brought in by his wife after three days of vomiting.",
+  card: {
+    vitals: {
+      temperature: "36.6°C",
+      pulse: "38/minute, regular",
+      resp: "18/minute",
+      bp: "92/56 mmHg",
+      o2sat: "95% on room air",
+      weight: "68 kg (150 lb)",
+    },
+    medications: "Digoxin, metoprolol, furosemide, apixaban. Clarithromycin from a walk in clinic.",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness and triage",
+      result:
+        "He has vomited for three days, stopped eating, and has been muddled since yesterday. His wife brought him in. At triage he was CTAS 2 with a capillary glucose of 5.8 mmol/L. The nurse says: 'He says the lights in here have yellow rings around them. His wife brought his blister pack.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 45 bed hospital. There is a four bed ICU, an internist on call, and transcutaneous pacing. There is no cardiology or transvenous pacing on site. The regional cardiac centre is 90 minutes away by land.",
+    },
     {
       id: "ecg",
       label: "ECG",
@@ -106,8 +128,9 @@ export const chronicDigoxinToxicity: OralCase = {
         "Send digoxin level, potassium, creatinine, magnesium, calcium and troponin.",
         "Also consider beta blocker effect, hyperkalemia alone, ischemia and sepsis. Hold the metoprolol.",
         "Call pharmacy to bring the digoxin immune fab to the bedside.",
+        "Ask his wife about the vomiting, intake, doses taken while sick, new drugs, visual halos and his usual kidney function.",
       ],
-      rubric: ["dg-r1", "dg-a1", "dg-a2"],
+      rubric: ["dg-r1", "dg-a1", "dg-a2", "dg-h1", "dg-h2", "dg-h3"],
       choices: [
         {
           id: "c-dig",
@@ -401,7 +424,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Places pacing pads, monitor and IV access before further workup.",
       points: 1,
       teaching: "Complete heart block with hypotension can deteriorate fast. Pads on early allow rescue if he arrests.",
@@ -410,7 +433,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes chronic digoxin toxicity from regularized slow AF, visual halos, GI symptoms and confusion.",
       points: 3,
       critical: true,
@@ -420,7 +443,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Identifies clarithromycin and acute kidney injury as precipitants.",
       points: 2,
       teaching: "Macrolides, amiodarone, verapamil and other P glycoprotein inhibitors raise digoxin levels. Kidney injury cuts clearance.",
@@ -429,7 +452,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "States indications for fab: dangerous dysrhythmia, instability, altered mental status, potassium over 5.0 mmol/L, end organ injury.",
       points: 2,
       teaching: "Treat the patient, not just the level. Chronic toxicity can be severe with levels only mildly raised.",
@@ -438,7 +461,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Recognizes bidirectional ventricular tachycardia as a sign of digoxin toxicity.",
       points: 1,
       teaching: "Bidirectional VT has few causes. Digoxin toxicity is the classic one.",
@@ -447,7 +470,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a5",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Knows total digoxin levels are not interpretable after fab and follows the patient clinically.",
       points: 1,
       teaching: "The assay measures fab bound digoxin. The total level rises after treatment even as toxicity resolves.",
@@ -456,7 +479,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives digoxin immune fab promptly for life threatening chronic toxicity.",
       points: 3,
       critical: true,
@@ -466,7 +489,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Calculates the chronic dose correctly: level in ng/mL times weight in kg divided by 100, about 3 vials, or gives 1 to 2 vials and repeats.",
       points: 2,
       teaching: "Convert nmol/L to ng/mL by dividing by 1.28. Titrated small doses work well in chronic toxicity and conserve stock.",
@@ -475,7 +498,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats bidirectional VT with more fab, magnesium 2 g IV and lidocaine 1 to 1.5 mg/kg, and avoids amiodarone.",
       points: 2,
       critical: true,
@@ -485,7 +508,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Anticipates hypokalemia after fab and replaces potassium and magnesium.",
       points: 1,
       teaching: "When the sodium potassium pump recovers, potassium moves back into cells. Check it hourly at first.",
@@ -494,7 +517,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls the poison centre and involves pharmacy in dosing and restocking.",
       points: 1,
       teaching: "Poison centres advise on dosing, repeat doses and rebound. Pharmacy knows the local stock.",
@@ -503,7 +526,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the cause to his wife without blame and gives sick day guidance.",
       points: 1,
       teaching: "Families often feel responsible. Clear sick day rules prevent recurrence.",
@@ -512,7 +535,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to a monitored bed for at least 24 hours because of rebound risk with kidney injury.",
       points: 2,
       teaching: "In kidney injury the fab digoxin complex clears slowly. Free digoxin can rebound over 24 to 72 hours.",
@@ -521,7 +544,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Stops digoxin and arranges review of rate control and the interacting drug with the family doctor.",
       points: 1,
       teaching: "Digoxin is a second line rate control agent in AF. Reconsider whether he needs it at all.",
@@ -530,11 +553,38 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges resupply of antidote from the regional centre and considers transfer if more is needed.",
       points: 1,
       teaching: "Small sites stock limited antidote. Replacing it quickly protects this patient and the next one.",
       source: "chan",
+    },
+    {
+      id: "dg-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the course of the vomiting, his oral intake, whether he kept taking digoxin, and the time of the last dose.",
+      points: 2,
+      teaching: "Chronic digoxin toxicity follows reduced clearance while the usual dose continues. The time of the last dose also tells you whether the level is interpretable.",
+      source: "chan",
+    },
+    {
+      id: "dg-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes a full medication history, including the new clarithromycin, and asks about visual changes such as yellow or green halos.",
+      points: 2,
+      teaching: "Macrolides, amiodarone, verapamil and diuretics raise digoxin levels or its toxicity. Xanthopsia and GI upset are early clues to toxicity.",
+      source: "chan",
+    },
+    {
+      id: "dg-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks why he takes digoxin, what his kidney function has been, and his wishes about treatment.",
+      points: 1,
+      teaching: "Digoxin is a rate control drug that needs dose review in kidney disease. Knowing his baseline and goals shapes how hard you push and whether he transfers.",
+      source: "ccs-af",
     },
   ],
   sources: [
@@ -554,11 +604,11 @@ export const chronicDigoxinToxicity: OralCase = {
     },
     {
       id: "monograph",
-      citation: "DigiFab (digoxin immune fab, ovine). Canadian product monograph. Paladin Labs.",
-      url: "https://pdf.hres.ca/dpd_pm/00046345.PDF",
+      citation: "BTG International Inc. DigiFab (digoxin immune fab, ovine) product monograph. Date of revision November 25, 2022.",
+      url: "https://digifab.health/getmedia/3f1076f4-7959-4a6b-8b66-a364f662c644/product-monograph_English_Updated-Dec-2022.pdf",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

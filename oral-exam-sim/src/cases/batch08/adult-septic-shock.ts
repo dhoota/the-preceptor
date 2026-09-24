@@ -16,14 +16,36 @@ export const adultSepticShock: OralCase = {
     { topic: "shock", n: 7 },
   ],
   summary: "A 74 year old woman arrives with fever, abdominal pain and new confusion.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working evenings in the emergency department of a 300 bed community hospital in Ontario. There is an ICU, general surgery, CT, and interventional radiology on call. " +
-    "Gastroenterology does ERCP on site, and the gastroenterologist on call is at home tonight. " +
-    "Lorraine Beaudoin is 74 years old and weighs 70 kg. She is a retired teacher. Her husband says she has had right upper belly pain and shaking chills for two days and became confused this afternoon. " +
-    "Triage vitals: heart rate 124, blood pressure 78/44, respiratory rate 28, SpO2 93 percent on room air, temperature 39.2, capillary glucose 9.1 mmol/L. CTAS 1. " +
-    "The nurse says: 'Her eyes look yellow. Her knees are mottled. I have one IV in.'",
+    "You are working in the emergency department of a community hospital in Ontario when the following patient arrives. " +
+    "It is evening, and the gastroenterologist who does ERCP is on call from home. " +
+    "A 74 year old woman is brought in by her husband with abdominal pain, fever and new confusion.",
+  card: {
+    vitals: {
+      temperature: "39.2°C",
+      pulse: "124/minute",
+      resp: "28/minute",
+      bp: "78/44 mmHg",
+      o2sat: "93% on room air",
+      weight: "70 kg (154 lb)",
+    },
+    medications: "Ramipril, metformin",
+    allergies: "No allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness and triage",
+      result:
+        "She is a retired teacher. Her husband says she has had right upper belly pain and shaking chills for two days and became confused this afternoon. At triage she was CTAS 1 with a capillary glucose of 9.1 mmol/L. The nurse says: 'Her eyes look yellow. Her knees are mottled. I have one IV in.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 300 bed community hospital. There is an ICU, general surgery, CT, and interventional radiology on call. Gastroenterology does ERCP on site, and the gastroenterologist on call is at home tonight.",
+    },
     {
       id: "exam",
       label: "Physical exam",
@@ -107,7 +129,7 @@ export const adultSepticShock: OralCase = {
         "Norepinephrine if MAP stays under 65. Do not wait for a central line.",
         "Bedside ultrasound to look for the source and guide fluid.",
       ],
-      rubric: ["ss-r1", "ss-m1", "ss-r2"],
+      rubric: ["ss-r1", "ss-m1", "ss-r2", "ss-o1"],
       choices: [
         {
           id: "c-bundle",
@@ -158,8 +180,9 @@ export const adultSepticShock: OralCase = {
         "Severe cholangitis by Tokyo criteria because of organ dysfunction: shock, confusion, kidney injury, low platelets and raised INR.",
         "She needs biliary drainage as soon as she is stabilized. ERCP is first choice. Percutaneous drainage by IR if ERCP is not possible.",
         "Antibiotics alone will not control an obstructed infected duct.",
+        "History from her husband: timeline of pain, rigors and confusion, known gallstones, other symptoms, medications, allergies and goals of care.",
       ],
-      rubric: ["ss-a1", "ss-a2"],
+      rubric: ["ss-a1", "ss-a2", "ss-h1", "ss-h2", "ss-h3", "ss-h4"],
       next: "s-pressor",
     },
     {
@@ -357,7 +380,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-r1",
       competency: "resuscitation",
-      criterion: "approach",
+      criterion: "physical",
       text: "Recognizes septic shock with hypoperfusion from hypotension, mottling, confusion and lactate 5.2 mmol/L.",
       points: 2,
       teaching: "Septic shock means vasopressors are needed for a MAP of 65 with a lactate over 2 despite fluid. Mottling, confusion and a lactate of 4 or more show poor perfusion.",
@@ -366,7 +389,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Draws blood cultures and gives broad spectrum antibiotics within 1 hour, such as piperacillin tazobactam 4.5 g IV.",
       points: 3,
       critical: true,
@@ -376,7 +399,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives balanced crystalloid toward 30 mL/kg in boluses with reassessment after each.",
       points: 2,
       teaching: "Surviving Sepsis suggests at least 30 mL/kg in the first 3 hours for hypoperfusion. Reassess often to avoid overload.",
@@ -385,7 +408,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies acute cholangitis from an obstructing common bile duct stone.",
       points: 2,
       teaching: "Fever, jaundice and right upper quadrant pain with a dilated duct on ultrasound is cholangitis.",
@@ -394,7 +417,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Grades it as severe because of organ dysfunction and states it needs urgent biliary drainage.",
       points: 2,
       teaching: "Severe cholangitis with organ failure needs drainage as soon as the patient is stabilized.",
@@ -403,7 +426,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts norepinephrine peripherally, at about 0.05 to 0.1 mcg/kg/min, titrated to MAP 65 or more, without waiting for central access.",
       points: 3,
       critical: true,
@@ -413,7 +436,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses bedside ultrasound and repeat lactate to guide further fluid.",
       points: 1,
       teaching: "Early goal directed protocols did not improve outcome. Individual reassessment matters more than fixed targets.",
@@ -422,7 +445,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Pushes for source control tonight by ERCP, or percutaneous drainage if ERCP is not possible.",
       points: 3,
       critical: true,
@@ -432,7 +455,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Adds vasopressin 0.03 units/min and hydrocortisone 50 mg IV every 6 hours for rising norepinephrine needs.",
       points: 2,
       teaching: "Surviving Sepsis suggests vasopressin when norepinephrine reaches about 0.25 to 0.5 mcg/kg/min, and hydrocortisone for ongoing vasopressor need.",
@@ -441,7 +464,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Plans a safe intubation: resuscitate first, reduced dose induction, push dose pressor ready.",
       points: 2,
       teaching: "Induction removes sympathetic tone. Shock patients often arrest at intubation without preparation.",
@@ -450,7 +473,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Advocates respectfully with the consultant and gives a structured handover to the ICU.",
       points: 2,
       teaching: "State the severity, the criteria and the specific request. Offer an alternative such as IR drainage.",
@@ -459,7 +482,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Tells her husband honestly that she is critically ill and explains the plan.",
       points: 1,
       teaching: "Honest words about the risk of death prepare families. Confirm goals of care early.",
@@ -468,10 +491,55 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to the ICU, holds metformin and ramipril, and plans to narrow antibiotics based on cultures.",
       points: 1,
       teaching: "Metformin and ACE inhibitors worsen kidney injury and lactic acidosis in shock. Narrow therapy once the organism is known.",
+      source: "ssc",
+    },
+    {
+      id: "ss-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks her husband about the pain, fever and rigors, jaundice, and when the confusion started.",
+      points: 2,
+      teaching: "Fever, jaundice and right upper quadrant pain suggest cholangitis. Confusion and hypotension on top of that mark severe disease.",
+      source: "tg18-dx",
+    },
+    {
+      id: "ss-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about known gallstones and past biliary disease or procedures.",
+      points: 2,
+      teaching: "Known stones, prior ERCP or a biliary stent make an obstructed, infected duct far more likely.",
+      source: "tg18-dx",
+    },
+    {
+      id: "ss-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about medications, drug allergies and her goals of care.",
+      points: 1,
+      teaching: "Allergies guide the antibiotic choice. Goals of care should be discussed early in septic shock so treatment matches her wishes.",
+      source: "ssc",
+    },
+    {
+      id: "ss-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about urinary, respiratory and skin symptoms to look for another source.",
+      points: 1,
+      teaching: "A focused systems review finds or excludes other sources before you commit to one diagnosis.",
+      source: "ssc",
+    },
+    {
+      id: "ss-o1",
+      competency: "leadership",
+      criterion: "process",
+      text: "Calls for help early, assigns roles, and reassesses perfusion after each intervention.",
+      points: 2,
+      teaching: "Septic shock needs parallel tasks. Clear roles and repeated reassessment of mental status, capillary refill, urine output and lactate keep the plan on track.",
       source: "ssc",
     },
   ],
@@ -494,7 +562,7 @@ export const adultSepticShock: OralCase = {
       citation: "PRISM Investigators. Early, goal directed therapy for septic shock: a patient level meta analysis. N Engl J Med. 2017.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -15,14 +15,36 @@ export const severeAlcoholWithdrawal: OralCase = {
     { topic: "loc", n: 2 },
   ],
   summary: "A 54 year old man is brought in after a seizure at home and is now tremulous, sweaty and hallucinating.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working in the emergency department of a community hospital in Ontario with an ICU, CT and an internist on call. " +
-    "Glen Morrissette is 54 years old and weighs 78 kg. Paramedics were called after his partner saw him have a generalized seizure lasting about one minute. He hit the back of his head on the kitchen floor. " +
-    "He usually drinks a 26 ounce bottle of vodka a day. His last drink was about 48 hours ago because he ran out of money. " +
-    "Triage vitals: heart rate 128, blood pressure 176/102, respiratory rate 24, SpO2 95 percent on room air, temperature 38.0, capillary glucose 3.6 mmol/L. CTAS 2. " +
-    "The nurse says: 'He is shaking all over and picking at the sheets. He says there are bugs on the wall. CIWA is 29.'",
+    "You are working in the emergency department of a community hospital in Ontario when the following patient arrives. " +
+    "There is an ICU, CT and an internist on call. " +
+    "A 54 year old man is brought in by paramedics after his partner saw him have a seizure at home.",
+  card: {
+    vitals: {
+      temperature: "38.0°C",
+      pulse: "128/minute",
+      resp: "24/minute",
+      bp: "176/102 mmHg",
+      o2sat: "95% on room air",
+      weight: "78 kg (172 lb)",
+    },
+    medications: "Not recorded. No benzodiazepines or opioids at home.",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness and triage",
+      result:
+        "Paramedics were called after his partner saw him have a generalized seizure lasting about one minute. He hit the back of his head on the kitchen floor. At triage he was CTAS 2 with a capillary glucose of 3.6 mmol/L. The nurse says: 'He is shaking all over and picking at the sheets. He says there are bugs on the wall. CIWA is 29.'",
+    },
+    {
+      id: "alcohol",
+      label: "Alcohol use",
+      result:
+        "He usually drinks a 26 ounce bottle of vodka a day. His last drink was about 48 hours ago because he ran out of money.",
+    },
     {
       id: "exam",
       label: "Physical exam",
@@ -98,8 +120,10 @@ export const severeAlcoholWithdrawal: OralCase = {
         "Treat the low glucose now. Do not delay dextrose to wait for thiamine.",
         "Start a benzodiazepine immediately for severe withdrawal.",
         "Send electrolytes, magnesium, phosphate, liver tests, lipase, ketones, CK, ethanol and osmolality.",
+        "History from paramedics and his partner: usual intake, last drink, past withdrawal seizures or delirium, other drugs, eating and the head strike.",
+        "Examine for Wernicke signs, head injury, liver disease and infection.",
       ],
-      rubric: ["aw-r1", "aw-m1"],
+      rubric: ["aw-r1", "aw-m1", "aw-h1", "aw-h2", "aw-h3", "aw-h4", "aw-x1"],
       choices: [
         {
           id: "c-thiamine-high",
@@ -374,7 +398,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats hypoglycemia immediately without waiting for thiamine.",
       points: 2,
       teaching: "Low glucose injures the brain now. Give thiamine as soon as possible but never delay glucose for it.",
@@ -383,7 +407,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives high dose IV thiamine, such as 500 mg, for suspected Wernicke encephalopathy.",
       points: 3,
       critical: true,
@@ -393,7 +417,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses CIWA-Ar to grade severity and recognizes it cannot be scored in a delirious patient.",
       points: 1,
       teaching: "CIWA-Ar needs a patient who can answer questions. In delirium use signs and sedation scales.",
@@ -402,7 +426,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Front loads diazepam 10 to 20 mg IV every 5 to 10 minutes to a calm but rousable endpoint.",
       points: 3,
       critical: true,
@@ -412,7 +436,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Looks for other causes and complications: head injury, infection, ketoacidosis, electrolyte losses and QT prolongation.",
       points: 2,
       teaching: "Withdrawal is common but not the only problem. Seizure with head injury needs CT. Fever needs a search for infection.",
@@ -421,7 +445,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces magnesium, potassium and phosphate and gives dextrose containing fluid for alcoholic ketoacidosis.",
       points: 2,
       teaching: "Potassium will not correct until magnesium is replaced. Dextrose and fluid switch off ketogenesis.",
@@ -430,7 +454,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-m4",
       competency: "management",
-      criterion: "diagnosis",
+      criterion: "management",
       text: "Recognizes benzodiazepine resistant withdrawal and adds phenobarbital, with propofol and intubation if still refractory.",
       points: 3,
       critical: true,
@@ -440,7 +464,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls the ICU early when high benzodiazepine doses fail.",
       points: 1,
       teaching: "Delirium tremens can need airway support. Bring in help before the crisis.",
@@ -449,7 +473,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Assesses capacity when he tries to leave and keeps him under emergency treatment provisions with the least restrictive approach.",
       points: 2,
       teaching: "A delirious patient is usually incapable. Emergency treatment without consent is allowed when delay risks serious harm.",
@@ -458,7 +482,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits him to the ICU or step down unit.",
       points: 2,
       teaching: "Delirium tremens needing phenobarbital or large benzodiazepine doses is an ICU condition.",
@@ -467,7 +491,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Discusses alcohol use without judgment and supports his goal to stop.",
       points: 1,
       teaching: "A serious event is a window for change. Respectful conversation raises the chance he will engage.",
@@ -476,10 +500,55 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Offers naltrexone or acamprosate and referral to addiction medicine, and avoids a benzodiazepine prescription at discharge.",
       points: 2,
       teaching: "Naltrexone and acamprosate are first line for alcohol use disorder. Choose acamprosate when liver disease is a concern. Take home benzodiazepines add overdose risk with alcohol.",
+      source: "crism",
+    },
+    {
+      id: "aw-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about his usual daily alcohol intake and the time of his last drink.",
+      points: 2,
+      teaching: "Withdrawal seizures peak at 6 to 48 hours after the last drink and delirium at 48 to 96 hours. The timeline tells you where he is on that curve.",
+      source: "asam",
+    },
+    {
+      id: "aw-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past withdrawal seizures, delirium tremens and admissions for withdrawal.",
+      points: 2,
+      teaching: "A history of complicated withdrawal is the strongest predictor of severe withdrawal this time.",
+      source: "asam",
+    },
+    {
+      id: "aw-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about other sedatives, opioids and drugs, his medications, and known liver disease.",
+      points: 1,
+      teaching: "Co use of sedatives changes the withdrawal picture and the risk of oversedation. Liver disease affects the choice of benzodiazepine.",
+      source: "asam",
+    },
+    {
+      id: "aw-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about his recent eating and about the fall and head strike during the seizure.",
+      points: 1,
+      teaching: "Poor intake raises the risk of Wernicke encephalopathy, ketoacidosis and refeeding problems. A head strike needs imaging in a confused patient.",
+      source: "crism",
+    },
+    {
+      id: "aw-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines for nystagmus, ophthalmoplegia and ataxia, head injury, and signs of liver disease or infection.",
+      points: 2,
+      teaching: "Wernicke encephalopathy rarely shows the full triad. Any one sign in a malnourished drinker is enough to treat with high dose thiamine.",
       source: "crism",
     },
   ],
@@ -509,7 +578,7 @@ export const severeAlcoholWithdrawal: OralCase = {
       citation: "Government of Ontario. Health Care Consent Act, 1996. S.O. 1996, c. 2, Sched. A.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -14,14 +14,35 @@ export const suicidalPatientLeaving: OralCase = {
     { topic: "delirium-agitation", n: 3 },
   ],
   summary: "A 49 year old man brought in late at night by his sister says he is fine and stands up to leave.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are the only physician overnight at a 40 bed hospital in a farming town in southwestern Ontario. " +
-    "The hospital is not a Schedule 1 psychiatric facility. The nearest one is 70 km away. There is one security guard overnight and an OPP detachment in town. " +
-    "Darren Vos is 49 years old and runs a dairy farm. His sister brought him in at 23:10. " +
-    "Triage vitals: heart rate 96, blood pressure 142/88, respiratory rate 16, SpO2 98 percent on room air, temperature 36.6, capillary glucose 6.4 mmol/L. CTAS 2. " +
-    "The triage nurse says: 'He smells of alcohol and says he only came to get some sleep. His sister pulled me aside and said she found him in his truck in the machine shed with his rifle on the seat. Now he is putting his boots back on.'",
+    "You are working in the emergency department of a rural hospital in a farming town in southwestern Ontario when the following patient arrives. " +
+    "You are the only physician overnight, and the nearest Schedule 1 psychiatric facility is 70 km away. " +
+    "A 49 year old dairy farmer arrives with his sister at 23:10 after a worrying text.",
+  card: {
+    vitals: {
+      temperature: "36.6°C",
+      pulse: "96/minute",
+      resp: "16/minute",
+      bp: "142/88 mmHg",
+      o2sat: "98% on room air",
+    },
+    medications: "None",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "triage",
+      label: "Triage",
+      result:
+        "His sister brought him in at 23:10. CTAS 2. Capillary glucose 6.4 mmol/L. The triage nurse says: 'He smells of alcohol and says he only came to get some sleep. His sister pulled me aside and said she found him in his truck in the machine shed with his rifle on the seat. Now he is putting his boots back on.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 40 bed hospital. It is not a Schedule 1 psychiatric facility. The nearest one is 70 km away. There is one security guard overnight and an OPP detachment in town.",
+    },
     {
       id: "sister",
       label: "Collateral from his sister",
@@ -156,7 +177,7 @@ export const suicidalPatientLeaving: OralCase = {
         "Risk scores such as SAD PERSONS should not be used to decide disposition. Use structured clinical judgment.",
         "Conclusion: high acute risk.",
       ],
-      rubric: ["su-a1", "su-a2", "su-a3"],
+      rubric: ["su-a1", "su-a2", "su-a3", "su-h1", "su-h2"],
       next: "q-form",
     },
     {
@@ -171,8 +192,9 @@ export const suicidalPatientLeaving: OralCase = {
         "He meets Form 1 Box A: threats and a likely attempt, with likely serious bodily harm to himself, and an apparent mental disorder.",
         "Complete the Form 1 now after examining him yourself. Reassess him as he sobers, but do not delay the safety decision.",
         "Screen for co ingestion. Acetaminophen and salicylate are negative.",
+        "Examine him for injuries and co ingestion, and do a mental status exam.",
       ],
-      rubric: ["su-a4", "su-d1"],
+      rubric: ["su-a4", "su-d1", "su-x1"],
       choices: [
         {
           id: "c-form-now",
@@ -384,7 +406,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-r1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Prevents him from leaving before assessment and arranges one to one observation in a safe room.",
       points: 3,
       critical: true,
@@ -394,7 +416,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks calmly and directly, explaining his concern for the patient's safety.",
       points: 1,
       teaching: "A clear, respectful explanation often prevents a confrontation.",
@@ -403,7 +425,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Asks directly about ideation, intent, plan, means and preparatory acts.",
       points: 2,
       teaching: "Asking about suicide does not increase risk. Preparatory acts such as goodbye messages carry great weight.",
@@ -412,7 +434,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Uses collateral from his sister and weighs it above his current denial.",
       points: 2,
       teaching: "Patients at high risk often minimize. Collateral and actions are more reliable than statements.",
@@ -421,7 +443,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-a3",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Identifies risk factors including firearm access, family history, separation, financial loss, alcohol and hopelessness, and does not rely on a risk score.",
       points: 2,
       teaching: "Risk scores predict poorly for individuals. Structured clinical judgment guides the decision.",
@@ -430,7 +452,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-a4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Assesses cognition rather than waiting for a specific alcohol level before acting.",
       points: 1,
       teaching: "Psychiatric assessment can proceed based on cognition. A falling alcohol level does not lower the risk from earlier actions.",
@@ -439,7 +461,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Completes a Form 1 because he meets criteria for likely serious bodily harm to himself.",
       points: 3,
       critical: true,
@@ -449,7 +471,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "States that a Form 1 requires a personal exam within 7 days before signing, allows detention in a Schedule 1 facility for up to 72 hours for assessment, and does not authorize treatment.",
       points: 2,
       teaching: "Know the limits of the form. Treatment still needs consent or an emergency.",
@@ -458,7 +480,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives him a Form 42 and explains his right to a lawyer.",
       points: 1,
       teaching: "Form 42 tells the patient why he is held and that he can speak with a lawyer.",
@@ -467,7 +489,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "De-escalates with acknowledgment, explanation and choices before using medication or restraint.",
       points: 2,
       teaching: "Offering control through choices often settles an angry patient. Restraint is a last resort.",
@@ -476,7 +498,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "If medication is needed, chooses oral first and an antipsychotic such as haloperidol 5 mg IM over a large benzodiazepine dose given recent alcohol.",
       points: 1,
       teaching: "Benzodiazepines add to alcohol induced respiratory depression. Monitor after any parenteral sedation.",
@@ -485,7 +507,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges removal of firearms with police and family.",
       points: 3,
       critical: true,
@@ -495,7 +517,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Discloses only what is needed to reduce a significant risk of serious bodily harm, tells the patient, and documents it.",
       points: 2,
       teaching: "Ontario privacy law permits disclosure without consent to reduce a significant risk of serious bodily harm. Keep it limited and documented.",
@@ -504,7 +526,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Advocates with the psychiatrist using specific risk findings and requests acceptance.",
       points: 1,
       teaching: "Describe actions and collateral, not labels. A small site cannot safely hold a Form 1 patient for 72 hours.",
@@ -513,7 +535,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-d3",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges safe transfer by police or ambulance with the Form 1, notes and a phone handover.",
       points: 1,
       teaching: "A complete handover prevents the receiving team from missing the collateral that drove your decision.",
@@ -522,11 +544,38 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Treats him with dignity and addresses practical barriers such as the farm.",
       points: 1,
       teaching: "Practical worries drive patients to leave. Solving them builds trust for the next contact with care.",
       source: "stanley",
+    },
+    {
+      id: "su-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks how much he drank tonight, his usual drinking since the separation, and any other drugs or ingestions.",
+      points: 2,
+      teaching: "Alcohol raises acute suicide risk and lowers inhibition. Ask about co ingestion in every patient with suicidal ideation.",
+      source: "perlman",
+    },
+    {
+      id: "su-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about prior attempts or self harm, past psychiatric care and recent near misses such as the ATV crash.",
+      points: 1,
+      teaching: "A past attempt is one of the strongest predictors of suicide. An unexplained single vehicle crash may be an unrecognized attempt.",
+      source: "perlman",
+    },
+    {
+      id: "su-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines him for injuries and signs of co ingestion and does a mental status exam.",
+      points: 2,
+      teaching: "Medical assessment should be guided by history and exam, not routine testing. The mental status exam documents mood, thought content, insight and judgment.",
+      source: "acep-psych",
     },
   ],
   sources: [
@@ -541,7 +590,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "perlman",
       citation:
-        "Perlman CM, et al. Suicide risk assessment inventory: a resource guide for Canadian health care organizations. Ontario Hospital Association and Canadian Patient Safety Institute. 2011.",
+        "Perlman CM, Neufeld E, Martin L, Goy M, Hirdes JP. Suicide risk assessment guide: a resource for health care organizations. Ontario Hospital Association and Canadian Patient Safety Institute. 2011.",
     },
     {
       id: "acep-psych",
@@ -558,7 +607,7 @@ export const suicidalPatientLeaving: OralCase = {
         "Wilson MP, et al. The psychopharmacology of agitation: consensus statement of the American Association for Emergency Psychiatry Project BETA Psychopharmacology Workgroup. West J Emerg Med. 2012.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

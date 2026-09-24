@@ -16,14 +16,36 @@ export const psychosisMedicalCause: OralCase = {
     { topic: "seizures", n: 4 },
   ],
   summary: "A 46 year old man with no psychiatric history is paranoid and acting oddly, and triage has called the crisis team.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in the emergency department of a regional hospital in northern Ontario. There is CT around the clock, MRI on weekdays, an inpatient psychiatry unit, internal medicine and an ICU. " +
-    "Neurology is available by phone from a tertiary centre. " +
-    "Raymond Tremblay is 46 years old and weighs 82 kg. He is an accountant with no psychiatric history. His wife brought him in because for three days he has been accusing her of poisoning his food and saying the house smells of burnt rubber. " +
-    "Triage vitals: heart rate 108, blood pressure 138/84, respiratory rate 18, SpO2 97 percent on room air, temperature 38.1, capillary glucose 6.8 mmol/L. CTAS 3. " +
-    "The triage nurse has put him in the mental health assessment room and paged the crisis worker. She tells you: 'He is paranoid and a bit feverish. Probably a first break.'",
+    "You are working in the emergency department of a community hospital in northern Ontario when the following patient arrives. " +
+    "Neurology is by phone from a tertiary centre. " +
+    "A 46 year old man is brought in by his wife because he believes she is poisoning his food, and triage has paged the crisis worker.",
+  card: {
+    vitals: {
+      temperature: "38.1°C",
+      pulse: "108/minute",
+      resp: "18/minute",
+      bp: "138/84 mmHg",
+      o2sat: "97% on room air",
+      weight: "82 kg (181 lb)",
+    },
+    medications: "Not recorded. No new medications.",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness and triage",
+      result:
+        "He is an accountant with no psychiatric history. For three days he has been accusing his wife of poisoning his food and saying the house smells of burnt rubber. At triage he was CTAS 3 with a capillary glucose of 6.8 mmol/L. The triage nurse put him in the mental health assessment room and paged the crisis worker. She tells you: 'He is paranoid and a bit feverish. Probably a first break.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A regional hospital. There is CT around the clock, MRI on weekdays, an inpatient psychiatry unit, internal medicine and an ICU. Neurology is available by phone from a tertiary centre.",
+    },
     {
       id: "mse",
       label: "Mental status and cognition",
@@ -102,8 +124,9 @@ export const psychosisMedicalCause: OralCase = {
         "Inattention and disorientation that fluctuate are delirium, not primary psychosis.",
         "Olfactory hallucinations and the staring spell with lip smacking suggest temporal lobe seizures.",
         "Move him to a monitored medical bed and start a full medical workup.",
+        "Take collateral from his wife: time course, the recent flu like illness, staring spells, substances, travel and psychiatric history.",
       ],
-      rubric: ["ps-a1", "ps-a2"],
+      rubric: ["ps-a1", "ps-a2", "ps-h1", "ps-h2", "ps-h3"],
       choices: [
         {
           id: "c-medical",
@@ -392,7 +415,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes delirium rather than primary psychosis from inattention, disorientation, fever and fluctuation.",
       points: 3,
       critical: true,
@@ -402,7 +425,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies olfactory hallucinations and the staring spell as temporal lobe features.",
       points: 2,
       teaching: "HSV favours the temporal lobes. Smell hallucinations and focal seizures are clues.",
@@ -411,7 +434,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders a broad workup including CT then LP with HSV PCR, blood cultures, metabolic tests, HIV and syphilis serology, MRI and EEG.",
       points: 2,
       teaching: "Encephalitis workup is broad. MRI is the most sensitive imaging test and EEG finds nonconvulsive seizures.",
@@ -420,7 +443,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-a4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Interprets the CSF as viral encephalitis and knows an early negative HSV PCR does not exclude it.",
       points: 2,
       teaching: "PCR can be negative in the first 72 hours. Repeat the LP if suspicion stays high.",
@@ -429,7 +452,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts acyclovir 10 mg/kg IV every 8 hours without waiting for LP, PCR or MRI.",
       points: 3,
       critical: true,
@@ -439,7 +462,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Covers bacterial meningitis with ceftriaxone 2 g IV, vancomycin and dexamethasone 10 mg IV until the CSF excludes it.",
       points: 2,
       teaching: "Fever and altered mental status can be bacterial meningitis. Give dexamethasone before or with the first antibiotic dose.",
@@ -448,7 +471,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Manages the airway during the seizure with positioning, suction, oxygen and a check of glucose.",
       points: 1,
       teaching: "Protect the airway and correct hypoxia while you give drugs.",
@@ -457,7 +480,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats the seizure with lorazepam 4 mg IV repeated once, then a second line agent such as levetiracetam 60 mg/kg to a maximum of 4500 mg.",
       points: 3,
       critical: true,
@@ -467,7 +490,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Assesses capacity for the LP, finds him incapable, and obtains consent from his wife as substitute decision maker.",
       points: 2,
       teaching: "Capacity is specific to each decision. A spouse comes after a guardian, an attorney for personal care and a board appointed representative on the Health Care Consent Act list.",
@@ -476,7 +499,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Knows a Form 1 does not authorize treatment and explains each step to the patient even when he is incapable.",
       points: 1,
       teaching: "The Mental Health Act allows detention for assessment, not treatment. Medical care needs consent or an emergency.",
@@ -485,7 +508,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains to his wife that this is a brain infection, not a mental illness, and is honest about prognosis.",
       points: 1,
       teaching: "Families are frightened by psychosis. Naming the cause and the treatment reassures them.",
@@ -494,10 +517,37 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU or a monitored bed with neurology input and transfers through CritiCall if EEG is not available.",
       points: 2,
       teaching: "Encephalitis with seizures needs monitoring and EEG. A psychiatric unit is not the right place.",
+      source: "venkatesan",
+    },
+    {
+      id: "ps-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes collateral from his wife on the time course, the recent flu like illness and headache, and any staring spells or abnormal movements.",
+      points: 2,
+      teaching: "Abrupt onset after a febrile prodrome points to encephalitis. Witnessed staring with lip smacking suggests focal seizures from the temporal lobe.",
+      source: "venkatesan",
+    },
+    {
+      id: "ps-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about drugs, alcohol, medications, and personal and family psychiatric history.",
+      points: 2,
+      teaching: "New psychosis after 40 with no personal or family psychiatric history is a red flag for a medical cause. Substances and medications are common reversible causes.",
+      source: "acep-psych",
+    },
+    {
+      id: "ps-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about travel, immune suppression, HIV risk and animal or insect exposure.",
+      points: 1,
+      teaching: "Exposure and immune history widens the encephalitis differential and changes the tests and empiric treatment.",
       source: "venkatesan",
     },
   ],
@@ -530,7 +580,7 @@ export const psychosisMedicalCause: OralCase = {
       citation: "Government of Ontario. Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A, and Mental Health Act, R.S.O. 1990, c. M.7.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -16,14 +16,36 @@ export const febrileNeutropenia: OralCase = {
     { topic: "infectious-diseases", n: 8 },
   ],
   summary: "A 57 year old woman on treatment for breast cancer calls the oncology line with fever and rigors and is sent to the emergency department.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working in the emergency department of an academic hospital in Ontario with an on site regional cancer centre, oncology on call, infectious diseases, interventional radiology and an ICU. " +
-    "The waiting room is full and there are 14 patients waiting to be seen. " +
-    "Patricia Nkemelu is 57 years old and weighs 65 kg. She is receiving adjuvant chemotherapy for breast cancer through an implanted port. Her last cycle of docetaxel and cyclophosphamide was 9 days ago. She had a temperature of 38.7 at home with shaking chills. " +
-    "Triage vitals: heart rate 116, blood pressure 96/58, respiratory rate 22, SpO2 96 percent on room air, temperature 38.9, capillary glucose 7.4 mmol/L. " +
-    "The triage nurse says: 'She looks okay. Can she wait out front until her blood count comes back? We have no beds.'",
+    "You are working in the emergency department of a tertiary care centre in Ontario when the following patient arrives. " +
+    "The department is full, with 14 patients waiting. " +
+    "A 57 year old woman on chemotherapy for breast cancer has fever and shaking chills, and the triage nurse asks if she can wait out front.",
+  card: {
+    vitals: {
+      temperature: "38.9°C",
+      pulse: "116/minute",
+      resp: "22/minute",
+      bp: "96/58 mmHg",
+      o2sat: "96% on room air",
+      weight: "65 kg (143 lb)",
+    },
+    medications: "Docetaxel and cyclophosphamide chemotherapy. Dexamethasone premedication.",
+    allergies: "Penicillin, as listed in her chart",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness and triage",
+      result:
+        "She is receiving adjuvant chemotherapy for breast cancer through an implanted port. Her last cycle of docetaxel and cyclophosphamide was 9 days ago. She had a temperature of 38.7 at home with shaking chills. Capillary glucose 7.4 mmol/L at triage. The triage nurse says: 'She looks okay. Can she wait out front until her blood count comes back? We have no beds.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "An academic hospital with an on site regional cancer centre, oncology on call, infectious diseases, interventional radiology and an ICU.",
+    },
     {
       id: "exam",
       label: "Physical exam",
@@ -209,8 +231,9 @@ export const febrileNeutropenia: OralCase = {
         "Chest X ray, respiratory viral swab, C. difficile testing if diarrhea.",
         "Lactate, CBC with differential, creatinine and liver tests.",
         "Avoid rectal temperatures and digital rectal exams.",
+        "Ask about localizing symptoms, the last cycle and growth factor, prophylaxis, steroids and prior resistant organisms.",
       ],
-      rubric: ["fn-a3"],
+      rubric: ["fn-a3", "fn-h1", "fn-h2", "fn-h3"],
       next: "q-dispo",
     },
     {
@@ -276,8 +299,9 @@ export const febrileNeutropenia: OralCase = {
         "Consider broadening to meropenem if she deteriorates or has risk for resistant organisms.",
         "Consider stress dose hydrocortisone if vasopressor needs rise.",
         "Tell oncology now.",
+        "Reassess perfusion and lactate after each intervention.",
       ],
-      rubric: ["fn-r1", "fn-c1"],
+      rubric: ["fn-r1", "fn-c1", "fn-o1"],
       choices: [
         {
           id: "c-pressor",
@@ -347,7 +371,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Treats fever during chemotherapy as febrile neutropenia until proven otherwise, recognizing day 9 as the expected nadir.",
       points: 2,
       teaching: "Neutrophil counts usually bottom out 7 to 14 days after chemotherapy. Fever at that time is presumed neutropenic.",
@@ -356,7 +380,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives empiric antibiotics within 60 minutes of arrival without waiting for the CBC.",
       points: 3,
       critical: true,
@@ -366,7 +390,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Overrides the queue to room her immediately despite a full department.",
       points: 1,
       teaching: "Fever in a chemotherapy patient is a time critical presentation. Triage systems should flag it.",
@@ -375,7 +399,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses an antipseudomonal beta lactam, cefepime 2 g IV or piperacillin tazobactam 4.5 g IV, plus vancomycin for instability and port infection.",
       points: 3,
       critical: true,
@@ -385,7 +409,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Clarifies the penicillin allergy history and recognizes a low risk reaction.",
       points: 2,
       teaching: "Most penicillin allergy labels are not true allergy. A benign delayed childhood rash is low risk and cephalosporins are usually safe.",
@@ -394,7 +418,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-a3",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Does a focused source search including the port, mouth, perianal inspection and abdomen, with cultures from each lumen and a peripheral vein, and avoids rectal exams.",
       points: 2,
       teaching: "Neutropenic patients show few signs of inflammation. Paired cultures help identify a line source.",
@@ -403,7 +427,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-d1",
       competency: "disposition",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses clinical judgment over the MASCC score and admits for IV antibiotics.",
       points: 3,
       critical: true,
@@ -413,7 +437,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts norepinephrine to a MAP of 65 or more after fluid and calls the ICU.",
       points: 2,
       teaching: "Neutropenic septic shock is managed like any septic shock, with early vasopressors and ICU care.",
@@ -422,7 +446,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-m3",
       competency: "management",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes a port pocket infection with bacteremia and plans device removal.",
       points: 2,
       teaching: "A port pocket or tunnel infection, or septic shock from a line, generally needs the device removed.",
@@ -431,7 +455,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Involves oncology, the ICU and interventional radiology early.",
       points: 1,
       teaching: "Oncology knows her regimen and plan. Early team involvement speeds line removal and ICU care.",
@@ -440,7 +464,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains to her husband that this is an infection from chemotherapy, not a sign of cancer return, and is honest about severity.",
       points: 1,
       teaching: "Families often fear recurrence. Separate the infection from the cancer clearly.",
@@ -449,11 +473,47 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Knows the criteria for adding vancomycin and does not add it routinely.",
       points: 1,
       teaching: "Routine vancomycin does not improve outcome in stable patients. Add it for the specific indications.",
       source: "idsa-fn",
+    },
+    {
+      id: "fn-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks when her last chemotherapy cycle was, which agents she received, and whether she had growth factor support.",
+      points: 2,
+      teaching: "Most regimens reach the neutrophil nadir 7 to 14 days after a cycle. No growth factor support makes profound neutropenia more likely.",
+      source: "idsa-fn",
+    },
+    {
+      id: "fn-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about localizing symptoms: cough, urinary symptoms, diarrhea, abdominal pain, mouth sores and pain at the port.",
+      points: 2,
+      teaching: "Neutropenic patients show few signs of inflammation, so symptoms often point to the source before the exam does.",
+      source: "idsa-fn",
+    },
+    {
+      id: "fn-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about antibiotic prophylaxis, steroid use, prior resistant organisms and recent hospital care.",
+      points: 1,
+      teaching: "Prophylaxis, steroids and past resistant organisms change the risk and the empiric antibiotic choice.",
+      source: "idsa-fn",
+    },
+    {
+      id: "fn-o1",
+      competency: "resuscitation",
+      criterion: "process",
+      text: "Reassesses perfusion and lactate after each fluid bolus and escalates promptly when she does not respond.",
+      points: 2,
+      teaching: "Frequent reassessment catches the move from sepsis to septic shock early. Escalation should not wait for the next scheduled review.",
+      source: "ssc",
     },
   ],
   sources: [
@@ -486,7 +546,7 @@ export const febrileNeutropenia: OralCase = {
       citation: "Shenoy ES, et al. Evaluation and management of penicillin allergy: a review. JAMA. 2019.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

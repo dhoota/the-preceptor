@@ -16,14 +16,35 @@ export const severeAgitationSedation: OralCase = {
     { topic: "airway", n: 5 },
   ],
   summary: "Police bring a young man who is shouting and fighting to the emergency department after he ran through traffic.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are the attending in a busy urban emergency department in Toronto. There is a security team, a psychiatric emergency service, an ICU and CT. " +
-    "Police bring in Marcus Ferreira, 29 years old, estimated weight 90 kg. They apprehended him under section 17 of the Mental Health Act after he ran through traffic shouting that people were chasing him. " +
-    "A friend told police he had been using crystal meth for two days. " +
-    "Triage vitals, taken with difficulty: heart rate 142, blood pressure 170/98, respiratory rate 28, SpO2 97 percent with a poor trace, tympanic temperature 38.7. CTAS 1. " +
-    "The charge nurse calls you: 'He is on a stretcher in resus 2. Two officers and a guard are holding him face down. He is screaming and soaked in sweat.'",
+    "You are working in the emergency department of a tertiary care centre in Toronto when the following patient arrives. " +
+    "Police bring in a 29 year old man they apprehended under section 17 of the Mental Health Act after he ran through traffic shouting that people were chasing him.",
+  card: {
+    vitals: {
+      temperature: "38.7°C tympanic",
+      pulse: "142/minute",
+      resp: "28/minute",
+      bp: "170/98 mmHg",
+      o2sat: "97%, poor trace",
+      weight: "About 90 kg (198 lb), estimated",
+    },
+    medications: "None known",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "Police report and triage",
+      result:
+        "A friend told police he had been using crystal meth for two days. Triage vitals were taken with difficulty. CTAS 1. The charge nurse calls you: 'He is on a stretcher in resus 2. Two officers and a guard are holding him face down. He is screaming and soaked in sweat.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A busy urban emergency department. There is a security team, a psychiatric emergency service, an ICU and CT.",
+    },
     {
       id: "appearance",
       label: "Appearance and behaviour",
@@ -231,8 +252,9 @@ export const severeAgitationSedation: OralCase = {
         "Full exam for trauma. CT head for the scalp injury and altered mental status.",
         "ECG, troponin, electrolytes, CK, lactate, creatinine and urinalysis.",
         "LP if fever and altered mental status persist without another explanation.",
+        "History from police and his friend: what he took and when, days awake, other drugs, psychiatric history, medications and allergies.",
       ],
-      rubric: ["ag-a1", "ag-a2"],
+      rubric: ["ag-a1", "ag-a2", "ag-h1", "ag-h2", "ag-h3", "ag-x1"],
       next: "q-cool",
     },
     {
@@ -390,7 +412,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Ends prone restraint immediately and positions him supine or lateral.",
       points: 3,
       critical: true,
@@ -400,7 +422,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates with rocuronium rather than succinylcholine and sets a high minute ventilation.",
       points: 2,
       teaching: "Succinylcholine raises potassium and is dangerous in rhabdomyolysis. Match his own minute ventilation to avoid worsening acidosis.",
@@ -409,7 +431,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Takes charge, assigns roles and uses a coordinated team for restraint and sedation.",
       points: 2,
       teaching: "A clear leader, one person per limb and one voice make restraint faster and safer for everyone.",
@@ -418,7 +440,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Attempts brief verbal de-escalation with one calm voice while preparing sedation.",
       points: 1,
       teaching: "De-escalation is always the first step. When a patient cannot engage, it runs alongside, not instead of, sedation.",
@@ -427,7 +449,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses a fast IM agent at the right dose: ketamine 4 to 5 mg/kg IM or midazolam 5 to 10 mg IM.",
       points: 3,
       critical: true,
@@ -437,7 +459,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Keeps continuous SpO2 and capnography monitoring with a nurse at the bedside after sedation.",
       points: 2,
       critical: true,
@@ -447,7 +469,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Measures glucose and core temperature once the patient is safe.",
       points: 1,
       teaching: "Hypoglycemia and hyperthermia are fast killers. Tympanic readings underestimate core temperature.",
@@ -456,7 +478,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Considers medical causes including head injury, CNS infection, serotonin toxicity, NMS, thyroid storm and withdrawal.",
       points: 2,
       teaching: "Agitation is a symptom. Look for a medical cause before calling it psychiatric or drug related.",
@@ -465,7 +487,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts active evaporative or ice cooling to about 38.5 to 39 and gives more benzodiazepine, not antipyretics.",
       points: 3,
       teaching: "Toxic hyperthermia comes from muscle activity, not a raised set point. Acetaminophen does not help.",
@@ -474,7 +496,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats rhabdomyolysis with isotonic fluid aiming for a urine output of about 200 to 300 mL/h and watches potassium.",
       points: 2,
       teaching: "Early fluid protects the kidneys from myoglobin. Check potassium often since it can rise quickly.",
@@ -483,7 +505,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains that emergency treatment without consent is allowed when an incapable patient faces serious harm.",
       points: 2,
       teaching: "The Health Care Consent Act allows emergency treatment without consent and preserves the common law duty to restrain. A police apprehension alone does not authorize treatment.",
@@ -492,7 +514,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Uses the least restrictive restraint, removes it as soon as safe, and documents the reasons and monitoring.",
       points: 1,
       teaching: "Restraint is a last resort. Good documentation shows why less restrictive options were not enough.",
@@ -501,7 +523,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits him to the ICU and plans psychiatric assessment and a Form 1 decision once medically stable.",
       points: 1,
       teaching: "Medical stabilization comes first. The Mental Health Act assessment follows once he can be examined.",
@@ -510,10 +532,46 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges care for the injured staff member and a brief team debrief.",
       points: 1,
       teaching: "Violent events hurt staff physically and emotionally. A short debrief improves safety and learning.",
+      source: "beta-overview",
+    },
+    {
+      id: "ag-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Gets the story from police: what he took and when, how long he has been awake, and any fall, assault or other injury.",
+      points: 2,
+      teaching: "Days of stimulant use without sleep point to sympathomimetic toxicity and exhaustion. A fall or fight raises the chance of head injury.",
+      source: "beta-overview",
+    },
+    {
+      id: "ag-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Calls the friend for collateral on his pattern of use, psychiatric history, medications and allergies.",
+      points: 2,
+      teaching: "Collateral is often the only history in severe agitation. It separates a first psychotic episode from stimulant psychosis and finds medical clues.",
+      source: "beta-overview",
+    },
+    {
+      id: "ag-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about other drugs and withdrawal risk, including alcohol, benzodiazepines and serotonergic drugs.",
+      points: 2,
+      teaching: "Co ingestions and withdrawal change the differential and the choice of sedative. Alcohol or benzodiazepine withdrawal needs more benzodiazepine.",
+      source: "acep-agitation",
+    },
+    {
+      id: "ag-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines him once he is safe for trauma, clonus, rigidity, pupils and other toxidrome signs.",
+      points: 2,
+      teaching: "Clonus suggests serotonin toxicity and lead pipe rigidity suggests NMS. A full trauma survey finds injuries that restraint and sedation can hide.",
       source: "beta-overview",
     },
   ],
@@ -546,10 +604,10 @@ export const severeAgitationSedation: OralCase = {
     },
     {
       id: "restraint-act",
-      citation: "Government of Ontario. Patient Restraints Minimization Act, 2001.",
+      citation: "Government of Ontario. Patient Restraints Minimization Act, 2001. S.O. 2001, c. 16.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
