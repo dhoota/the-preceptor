@@ -100,6 +100,8 @@ export function tokens(text: string): string[] {
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
     .replace(/[^a-z0-9.%/ ]+/g, " ")
+    // "5mg" reads as "5 mg", so doses match however they are spaced.
+    .replace(/([0-9])([a-z])/g, "$1 $2")
     .replace(/(?<![0-9])\.|\.(?![0-9])/g, " ")
     .split(/\s+/)
     .filter(Boolean)

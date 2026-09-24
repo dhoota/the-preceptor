@@ -25,6 +25,8 @@ describe("matching", () => {
   it("normalises case, punctuation, accents and plurals", () => {
     expect(tokens("Épinéphrine, 0.5 mg I.M.!")).toEqual(["epinephrine", "0.5", "mg", "i", "m"]);
     expect(lineMatches("give IV fluids bolus", ["fluid bolus"])).toBe(true);
+    expect(lineMatches("ketorolac 15mg IV", ["ketorolac 15 mg"])).toBe(true);
+    expect(lineMatches("epi 0.5mg/kg", ["0.5 mg/kg"])).toBe(true);
   });
   it("ignores a negated phrase", () => {
     expect(lineMatches("no nitrates", ["nitrate"])).toBe(false);
