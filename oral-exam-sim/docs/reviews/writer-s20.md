@@ -5,17 +5,17 @@ File: `src/samps/s20/abuse-domestic.ts` (export `ABUSE_DOMESTIC_S20`). `src/samp
 ## Count, mix and key positions
 
 - 23 SAMPs, ids abuse-domestic-16 to abuse-domestic-38.
-- 80 questions. 73 single and 7 menu. 10 SAMPs have 4 questions and 13 have 3.
-- A menu question appears in 7 of 23 SAMPs (16, 17, 19, 27, 29, 33, 34).
-- Single key positions, first to fifth: 15, 14, 16, 15, 13. The highest is 22 percent.
-- The key is the longest option in 18 of 73 singles (25 percent).
+- 80 questions. 74 single and 6 menu. 10 SAMPs have 4 questions and 13 have 3.
+- A menu question appears in 6 of 23 SAMPs (17, 19, 27, 29, 33, 34).
+- Single key positions, first to fifth: 14, 14, 16, 17, 13. The highest is 23 percent.
+- The key is the longest option in 20 of 74 singles (27 percent).
 - Checks: `tsc` is clean for s20. `SAMP_BATCH=s20 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts` passes (488 tests).
 
-Case mix: 8 children (infants, a toddler, a preschooler, an 8-year-old, an 11-year-old, a 13-year-old and a 16-year-old), 1 youth of 17, 5 older adults, 9 other adults. Settings include tertiary sites and two rural hospitals. Provinces named when a statute is tested: Ontario, British Columbia and Alberta. Neither the scenarios nor the teaching points repeat s01 SAMPs 01 to 15.
+Case mix: 8 children (infants, a toddler, a preschooler, an 8-year-old, an 11-year-old, a 13-year-old and a 16-year-old), 1 youth of 17, 5 older adults, 9 other adults. Settings include tertiary sites and two rural hospitals. Provinces named when a statute is tested: Ontario, British Columbia and Nova Scotia. Neither the scenarios nor the teaching points repeat s01 SAMPs 01 to 15.
 
 | SAMP | Title | Keys (S = single, position) | Key features |
 |---|---|---|---|
-| 16 | Infant with bleeding from the mouth | S3 M S2 S1 | 2, 3, 6, 5 |
+| 16 | School-aged boy with a sore forearm | S3 S4 S2 S1 | 2, 3, 6, 5 |
 | 17 | Infant who stopped breathing after a feed | S4 S5 M S2 | 2, 3, 3, 6 |
 | 18 | Preschool child with vomiting after a fall | S1 S2 S4 S4 | 2, 3, 3, 6 |
 | 19 | Toddler with sores on her feet | S3 S5 M S5 | 2, 3, 5, 6 |
@@ -24,7 +24,7 @@ Case mix: 8 children (infants, a toddler, a preschooler, an 8-year-old, an 11-ye
 | 22 | Adolescent with a painful hand | S3 S1 S2 S4 | 2, 4, 6, 5 |
 | 23 | Child with recurrent low blood sugar | S3 S2 S5 S5 | 2, 2, 3, 6 |
 | 24 | Older woman after another fall at home | S4 S1 S3 S1 | 2, 4, 6, 5 |
-| 25 | Supportive living resident with hip pain | S1 S5 S1 | 2, 6, 4 |
+| 25 | Older man found cold on his bedroom floor | S1 S5 S4 | 2, 4, 6 |
 | 26 | Older man with weakness and weight loss | S4 S5 S4 | 1, 6, 5 |
 | 27 | Woman with recurrent palpitations | S5 S4 S1 M | 1, 1, 4, 5 |
 | 28 | Woman with a hand laceration at night | S4 S2 S5 | 2, 6, 5 |
@@ -95,3 +95,28 @@ Checked on PubMed (abstract and author list) unless noted.
 - 36 q1: the Lancet abstract gives the age criterion as "age >65". The rule as used in practice is 65 or older. The patient is 71, so the key holds either way.
 - Wording in several distractors reflects expert consensus rather than trial data: couples counselling being unsafe after disclosure, and caregiver respite in 24 q4.
 - Side note on s01: abuse-domestic-01 and abuse-domestic-11 cite SOGC Clinical Practice Guideline No. 157 (2005). PubMed now lists it as RETIRED (PMID 15999433). I did not use it here.
+
+## Rework
+
+The Lens A review (`docs/reviews/samps-s20-lensA.md`) found that two SAMPs repeated signed-off s01 SAMPs. Both were rebuilt from scratch under the same ids. Every other Lens A fix was kept.
+
+- **abuse-domestic-16** repeated s01 abuse-domestic-06. It is now a 9-year-old boy in Ontario with a forearm injury blamed on a bike fall. Loop-shaped cord bruises turn up on his back and buttocks when he changes into a gown. The key features stay 2, 3, 6 and 5.
+  - q1 (KF2): a patterned bruise in a protected area.
+  - q2 (KF3): a head-to-toe skin examination. Skeletal survey is a distractor only, with the reason that it is routine under 2 years.
+  - q3 (KF6): the CYFSA duty is ongoing. A new report is needed even though a children's aid society file is already open. The duty is direct and cannot be passed on.
+  - q4 (KF5): a child life specialist to help him through the examination and photographs.
+  - The menu question and the sibling, TEN-4 and rib fracture material are gone.
+- **abuse-domestic-25** repeated s01 abuse-domestic-05. It is now a 78-year-old man with Parkinson disease and dementia in Nova Scotia, living at home with a paid nephew caregiver who locks him in his room. The key features stay 2, 4 and 6.
+  - q1 (KF2): circumferential wrist abrasions from restraint.
+  - q2 (KF4): see him alone, although the nephew says he holds power of attorney.
+  - q3 (KF6): the Nova Scotia Adult Protection Act, s.5, requires every person with information that an adult is in need of protection to report to the Minister through Adult Protection Services.
+  - This case has no care home, no hip fracture and no Alberta Act. The Alberta and Rosen 2016 sources were removed because nothing else cited them.
+- Before writing, I searched `src/samps/` for the new scenarios (loop bruises, restraint marks, child life, Nova Scotia adult protection, an open child welfare file) and found no overlap.
+- **New sources, both verified:**
+  - Romito B, Jewell J, Jackson M, AAP Committee on Hospital Care and Association of Child Life Professionals. Child life services. Pediatrics 2021. https://pubmed.ncbi.nlm.nih.gov/33372119/
+  - Nova Scotia Adult Protection Act, R.S.N.S. 1989, c. 2, as amended 2014. I read sections 3(b) and 5(1) in the official PDF: https://nslegislature.ca/sites/default/files/legc/statutes/adult%20protection.pdf
+  - The CYFSA ongoing duty (s.125(2)) was confirmed through the OCSWSSW and OACAS guidance, as before.
+- **For reviewers:**
+  - 25 q2 rests on Lachs 2015 in general terms, not a specific passage. The claim is that a power of attorney gives no right to attend the interview.
+  - 16 q4 rests on the child life abstract, which covers preparation and coping for procedures.
+- **Effect on the batch:** the key feature counts are unchanged. The singles now number 74 and the menus 6. The gates pass.

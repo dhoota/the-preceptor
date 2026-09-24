@@ -59,7 +59,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Curved, loop-shaped bruises reproduce the shape of a folded cord or cable, and the back and buttocks are protected areas that a fall from a bike rarely strikes. A patterned bruise in a protected area points strongly to inflicted injury. Abrasions on both knees, a shin bruise and a sore forearm fit the fall he describes. A normal forearm x-ray rules out a fracture but says nothing about how he was hurt.",
+          "Curved, loop-shaped bruises reproduce the shape of a folded cord or cable, and the back and buttocks are protected areas that a fall from a bike rarely strikes. A patterned bruise in a protected area points strongly to inflicted injury. Abrasions on both knees, a shin bruise and a sore forearm fit the bike fall his mother describes. A normal forearm x-ray rules out a fracture but says nothing about how he was hurt.",
         keyFeature: { topic: "abuse-domestic", n: 2 },
         source: "cps-bruise",
       },
@@ -76,7 +76,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "The loop marks were found only when he undressed, which shows that injuries under clothing are missed unless the whole body is examined. This includes the scalp, ears, mouth, neck, back, buttocks and external genitalia, with each injury measured and documented. Bruises are often painless, and a guarded child may not point to them. Examining or imaging only the forearm misses everything else. A skeletal survey is routine under 2 years of age. At 9 years, imaging is guided by pain, tenderness or deformity.",
+          "The loop marks were found only when he undressed, which shows that injuries under clothing are missed unless the whole body is examined. This includes the scalp, ears, mouth, neck, back, buttocks and external genitalia, with each injury measured and documented. A guarded child who looks to his mother before he answers may not point to them. Examining or imaging only the forearm misses everything else. A skeletal survey is routine under 2 years of age. At 9 years, imaging is guided by pain, tenderness or deformity.",
         keyFeature: { topic: "abuse-domestic", n: 3 },
         source: "cps-bruise",
       },
@@ -94,7 +94,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Ontario's duty to report is ongoing. A person who has already reported, or who knows of an earlier report, must report again directly to the children's aid society each time there are new reasonable grounds to suspect a child under 16 needs protection. His disclosure and the loop marks are new grounds. An open file does not remove the duty. The report cannot be passed to the school or to his mother, and it does not wait for the worker to ask.",
+          "In Ontario every person with reasonable grounds to suspect that a child under 16 needs protection must report immediately and directly to a children's aid society, without relying on anyone else to report. The school's earlier report does not discharge his duty. The duty is also ongoing, so additional grounds need a further report even after earlier reports. His disclosure and the loop marks are new grounds, and an open file does not remove the duty. The report cannot be passed to the school or to his mother, and it does not wait for the worker to ask.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "cyfsa",
       },
@@ -296,7 +296,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
     alsoTopics: ["burns"],
     title: "Toddler with sores on her feet",
     stem:
-      "A 22-month-old girl is brought to the emergency department by her father after daycare staff noticed sores on her feet this morning. He says she has had a rash for a few days and has been scratching. She walks well and has no past illnesses. She lives with her father and his partner.\n\nShe is playful and afebrile. On the soles of both feet there are four round, punched-out, partial thickness lesions, each 8 mm across, with raised margins and a uniform depth. Two are crusted and two are moist. A fifth identical lesion is on the left buttock. There are no blisters and no lesions elsewhere.",
+      "A 22-month-old girl is brought to the emergency department by her father after daycare staff noticed sores on her feet this morning. He says she has had a rash for a few days and has been scratching. She walks well and has no past illnesses. She lives with her father and his partner.\n\nShe is playful and afebrile. On the soles of both feet there are four round, punched-out, partial thickness lesions, each 8 mm across, with raised margins and a uniform depth. Two are crusted and two are moist. A fifth identical lesion is on the left buttock. There are no blisters and no lesions elsewhere. The rest of the examination is normal.",
     vitals: { temperature: "36.8°C tympanic", pulse: "110/minute", resp: "26/minute", o2sat: "99% on room air", weight: "11.5 kg" },
     questions: [
       {
@@ -546,7 +546,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
     alsoTopics: ["msk"],
     title: "Adolescent with a painful hand",
     stem:
-      "A 16-year-old boy presents to the emergency department in Ontario alone at 23:30 with a painful left hand. He says he punched a wall 2 hours ago. He lives with his father and his 9-year-old sister. He has no medical history.\n\nHe becomes guarded when asked about home. There is swelling and tenderness over the fifth metacarpal and abrasions over the knuckles. There are parallel linear bruises across the back of both thighs and a healed scar on the chin. An x-ray shows an angulated fracture of the fifth metacarpal neck.",
+      "A 16-year-old boy presents to the emergency department in Ontario alone at 23:30 with a painful left hand. He says he punched a wall 2 hours ago. He lives with his father and his 9-year-old sister. He has no medical history.\n\nHe becomes guarded when asked about home. There is swelling and tenderness over the fifth metacarpal and abrasions over the knuckles. There are parallel linear bruises across the back of both thighs, a scrape over the right shin and a healed scar on the chin. An x-ray shows an angulated fracture of the fifth metacarpal neck.",
     vitals: { temperature: "36.7°C oral", pulse: "96/minute", resp: "16/minute", bp: "124/74 mmHg", o2sat: "99% on room air", weight: "64 kg" },
     questions: [
       {
@@ -557,12 +557,12 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
           "Abrasions over the knuckles",
           "Healed scar on the chin",
           "Parallel linear thigh bruises",
+          "Scrape over the right shin",
           "Swelling over the fifth metacarpal",
-          "Tenderness of the left wrist",
         ],
         correct: 2,
         explanation:
-          "Parallel linear bruises on the back of the thighs are a pattern injury from a belt, cord or stick, and falls or sports do not produce them in that location. Knuckle abrasions and fifth metacarpal swelling fit his own account of punching a wall. A healed chin scar is common in adolescents and cannot be dated or linked to a cause. Wrist tenderness is not in his examination and would not point to assault in any case.",
+          "Parallel linear bruises on the back of the thighs are a pattern injury from a belt, cord or stick, and falls or sports do not produce them in that location. Knuckle abrasions and fifth metacarpal swelling fit his own account of punching a wall. A healed chin scar is common in adolescents and cannot be dated or linked to a cause. A scrape over the shin is common in an active adolescent and has no pattern that points to another person.",
         keyFeature: { topic: "abuse-domestic", n: 2 },
         source: "cps-bruise",
       },
@@ -586,7 +586,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "He says his father beats him with a belt when he drinks, and last night he hit back. He asks you not to tell anyone.",
+        update: "He says his father beats him with a belt when he drinks, and tonight he hit back. He asks you not to tell anyone.",
         prompt: "Which of the following best describes the duty to report under Ontario law in this situation?",
         options: [
           "Mandatory for both children",
@@ -645,7 +645,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         correct: 2,
         explanation:
           "Insulin and C-peptide drawn during hypoglycemia separate the main causes of repeated, unexplained lows in a child without diabetes. A high insulin with a suppressed C-peptide means the insulin came from outside the body. Some insulin assays miss insulin analogues, so a suppressed C-peptide during hypoglycemia is suspicious even when the insulin level is not high. His mother has access to insulin, and earlier workups found nothing. Cortisol and growth hormone look for hormone deficiency, and ammonia and lactate look for metabolic disease, but neither answers the question that his access to insulin raises. Salicylate toxicity rarely presents as isolated hypoglycemia. Thyroid tests do not explain severe lows.",
-        keyFeature: { topic: "abuse-domestic", n: 2 },
+        keyFeature: { topic: "abuse-domestic", n: 3 },
         source: "fabricated",
       },
       {
@@ -663,7 +663,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         correct: 1,
         explanation:
           "A high insulin level with an undetectable C-peptide shows that the insulin did not come from his pancreas, because the pancreas releases insulin and C-peptide together. An insulinoma and a sulfonylurea both raise C-peptide, and no sulfonylurea was found. Adrenal insufficiency and ketotic hypoglycemia both occur with low insulin. In a child with a caregiver who has access to insulin, this result means insulin has been given to him, which is caregiver-fabricated illness until proven otherwise.",
-        keyFeature: { topic: "abuse-domestic", n: 2 },
+        keyFeature: { topic: "abuse-domestic", n: 1 },
         source: "cryer",
       },
       {
@@ -825,7 +825,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "The nephew is the person suspected of confining him, so he should not be present while the patient describes his injuries. A power of attorney lets someone make certain decisions for a person, but it gives no right to sit in on a medical interview. People with moderate dementia can often describe recent events. Capacity is judged decision by decision and is not a condition for telling his story. Having the nephew answer, attend or write the account lets the suspected abuser shape the history.",
+          "The nephew is the person suspected of confining him, so he should not be present while the patient describes his injuries. A power of attorney lets someone make certain decisions for a person, but it gives no right to sit in on a medical interview. Dementia does not remove the need to hear his own account, and a separate interview can reveal a history that differs from the caregiver's. Capacity is judged decision by decision and is not a condition for telling his story. Having the nephew answer, attend or write the account lets the suspected abuser shape the history.",
         keyFeature: { topic: "abuse-domestic", n: 4 },
         source: "lachs",
       },
@@ -843,7 +843,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Nova Scotia's Adult Protection Act requires every person who has information indicating that an adult is in need of protection to report it to the Minister, through Adult Protection Services, even when the information is confidential. He is being physically abused where he lives and cannot protect himself because of dementia and Parkinson disease, so he meets that definition. The Act requires no court hearing, his agreement or his nephew's consent, and the nephew is the suspected abuser. Police may also become involved, but a call to police alone does not meet the duty in the Act.",
+          "Nova Scotia's Adult Protection Act requires every person who has information indicating that an adult is in need of protection to report it to the Minister, through Adult Protection Services, even when the information is confidential. He is being physically abused where he lives, cannot protect himself because of dementia and Parkinson disease, and is unable to arrange his own protection, so he meets that definition. The Act requires no court hearing, his agreement or his nephew's consent, and the nephew is the suspected abuser. Police may also become involved, but a call to police alone does not meet the duty in the Act.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "ns-apa",
       },
@@ -920,7 +920,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
     topic: "abuse-domestic",
     title: "Woman with recurrent palpitations",
     stem:
-      "A 42-year-old woman presents to the emergency department at 16:00 with chest tightness and palpitations that began 3 hours ago. This is her fourth visit in 4 months for similar symptoms, and each workup was normal. She takes no medications. During the assessment her phone rings repeatedly. She says it is her husband, who likes to know where she is, and she answers each call. She startles when a curtain is pulled open.\n\nShe is anxious but well perfused. The heart and lung examination is normal. The ECG shows sinus rhythm at 98/minute. High-sensitivity troponin is below the reference limit.",
+      "A 42-year-old woman presents to the emergency department at 16:00 with chest tightness and palpitations at rest that began 3 hours ago. This is her fourth visit in 4 months for similar symptoms, and each workup was normal. She takes no medications. During the assessment her phone rings repeatedly. She says it is her husband, who likes to know where she is, and she answers each call. She startles when a curtain is pulled open.\n\nShe is anxious but well perfused. The heart and lung examination is normal. The ECG shows sinus rhythm at 98/minute. High-sensitivity troponin is below the reference limit.",
     vitals: { temperature: "36.8°C oral", pulse: "98/minute", resp: "18/minute", bp: "132/80 mmHg", o2sat: "99% on room air" },
     questions: [
       {
@@ -992,7 +992,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: [3, 5, 7],
         explanation:
-          "A woman who discloses partner violence should be offered safety planning, referral to specialized violence services and follow-up, so that support continues after this visit. Joint counselling can expose her to retaliation for what she says. A police report is her choice, and no law requires one for a capable adult. Four normal workups and a normal ECG and troponin today give no reason for cardiology testing. An anxiolytic treats a symptom without addressing its cause.",
+          "A woman who discloses partner violence should be offered safety planning, referral to specialized violence services and follow-up, so that support continues after this visit. Joint counselling can expose her to retaliation for what she says. A police report is her choice, and no law requires one for a capable adult. Three earlier normal workups and a normal ECG and troponin today give no reason for cardiology testing. An anxiolytic treats a symptom without addressing its cause.",
         keyFeature: { topic: "abuse-domestic", n: 5 },
         source: "who-ipv",
       },
@@ -1040,7 +1040,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Her husband's access to a gun, recent separation from a controlling partner and a threat with a weapon are among the strongest risk factors for intimate partner homicide, and his threat to kill her adds to the danger. She cannot safely return to an apartment he broke into tonight, so a shelter bed at a confidential address should be arranged before she leaves. A safety plan or crisis number alone sends her back to the same place. A call to police is her choice and does not make the apartment safe. She has no psychiatric illness that would justify admission.",
+          "Her husband's access to a gun, their recent separation and his threat with a weapon are among the strongest risk factors for intimate partner homicide, and his threat to kill her adds to the danger. She cannot safely return to an apartment he broke into tonight, so a shelter bed at a confidential address should be arranged before she leaves. A safety plan or crisis number alone sends her back to the same place. A call to police is her choice and does not make the apartment safe. She has no psychiatric illness that would justify admission.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "femicide",
       },
@@ -1227,7 +1227,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features in her record is the strongest clue to undisclosed violence?",
+        prompt: "Which of the following features of her presentation is the strongest clue to undisclosed violence?",
         options: [
           "Arrival by ambulance at 03:00",
           "Blood alcohol of 52 mmol/L",
@@ -1433,7 +1433,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "British Columbia's Gunshot and Stab Wound Disclosure Act requires the health care facility to tell local police the patient's name, if known, the fact that he is being treated for a stab wound and the name of the facility. His wound was inflicted by another person, so the exclusion for self-inflicted or accidental wounds does not apply, and consent is not needed. The Act does not require a full account of the assault, which stays confidential. It is not limited to life-threatening wounds. Adult protection services are for adults who cannot protect themselves, and he is capable.",
+          "British Columbia's Gunshot and Stab Wound Disclosure Act requires the health care facility to tell local police the patient's name, if known, the fact that he is being treated for a stab wound and the name and location of the facility. His wound was inflicted by another person, so the exclusion for self-inflicted or accidental wounds does not apply, and consent is not needed. The Act does not require a full account of the assault, which stays confidential. It is not limited to life-threatening wounds. Adult protection services are for adults who cannot protect themselves, and nothing suggests that he cannot.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "bc-gsw",
       },
@@ -1484,7 +1484,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
     topic: "abuse-domestic",
     title: "Woman with multiple sclerosis found in bed",
     stem:
-      "A 48-year-old woman with multiple sclerosis who uses a wheelchair is brought to the emergency department by ambulance. A home care nurse found her in a soiled bed at her first visit in 2 months. Her partner, her only caregiver, had cancelled the earlier visits. Baclofen was prescribed three times daily 6 weeks ago, and the bottle brought with her is still full. She says little while her partner is in the room.\n\nHer mucous membranes are dry. Her leg spasticity is worse than at her last clinic visit. There is a stage 3 sacral pressure injury. The bedding is soaked with urine. Serum sodium is 149 mmol/L.",
+      "A 48-year-old woman with multiple sclerosis who uses a wheelchair is brought to the emergency department by ambulance. A home care nurse found her in a soiled bed at her first visit in 2 months. Her husband, her only caregiver, had cancelled the earlier visits. Baclofen was prescribed three times daily 6 weeks ago, and the bottle brought with her is still full. She says little while her partner is in the room.\n\nHer mucous membranes are dry. Her leg spasticity is worse than at her last clinic visit. There is a stage 3 sacral pressure injury. The bedding is soaked with urine. Serum sodium is 149 mmol/L.",
     vitals: { temperature: "37.4°C oral", pulse: "108/minute", resp: "18/minute", bp: "102/64 mmHg", o2sat: "97% on room air", weight: "52 kg" },
     questions: [
       {
@@ -1665,7 +1665,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Ontario's duty to report covers sexual abuse of a child under 16 by a person having charge of the child, and an uncle who babysits her has charge while caring for her. Her disclosure gives reasonable grounds to suspect, so the report goes directly and promptly to a children's aid society. It does not depend on physical findings, which are usually absent. Police are often involved by the society but do not replace the report to it. Waiting for a forensic interview delays a report that is due now.",
+          "Ontario's duty to report covers sexual abuse of a child under 16 by a person having charge of the child, and an uncle who babysits her has charge while caring for her. Her disclosure gives reasonable grounds to suspect, so the report goes directly and immediately to a children's aid society. It does not depend on physical findings, which are usually absent. Police are often involved by the society but do not replace the report to it. Waiting for a forensic interview delays a report that is due now.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "cyfsa",
       },
@@ -1713,7 +1713,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         correct: 2,
         explanation:
           "Estrangement from a controlling partner was one of the strongest risk factors for intimate partner femicide in a multisite case control study, so leaving can raise danger and women weigh that risk when they return. Returning does not mean the abuse is minor, accepted or of no concern to her, and she has a new dislocation. A shelter stay offers safety for a time but does not stop a partner's violence once she returns.",
-        keyFeature: { topic: "abuse-domestic", n: 1 },
+        keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "femicide",
       },
       {
