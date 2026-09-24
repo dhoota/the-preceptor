@@ -1,0 +1,528 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const secondaryPneumothoraxCopd: OralCase = {
+  id: "secondary-pneumothorax-copd",
+  title: "Worse after a coughing fit",
+  blueprint: "resp",
+  alsoCovers: ["procedures"],
+  summary: "A 66 year old man with a chronic lung condition becomes suddenly more breathless after coughing.",
+  durationMinutes: 14,
+  stem:
+    "You are working at a community hospital ED in Sherbrooke, Quebec. There is CT, a respiratory therapist, a respirologist on call and thoracic surgery at the regional centre 20 minutes away. " +
+    "Gérald Tremblay is 66 years old and weighs 64 kg. He has severe COPD. Two hours ago he had a hard coughing fit and felt a sharp pain in his right chest. He has been much more breathless since. " +
+    "Triage vitals: heart rate 112, blood pressure 142/86, respiratory rate 28, SpO2 86 percent on room air, temperature 36.8, capillary glucose 7.1 mmol/L. CTAS 2. " +
+    "The triage nurse says: 'He says this is not like his usual flare ups. He cannot lie down.'",
+  findings: [
+    {
+      id: "exam",
+      label: "Chest exam",
+      result:
+        "Using accessory muscles. Trachea midline. Reduced air entry on the right with a hyperresonant percussion note. Scattered wheeze on the left. " +
+        "No subcutaneous emphysema. JVP not raised. No leg swelling.",
+    },
+    {
+      id: "history",
+      label: "Past history",
+      result:
+        "Severe COPD with emphysema. FEV1 38 percent predicted. Known large bulla at the left apex on a CT from last year. No prior pneumothorax. " +
+        "Still smokes a few cigarettes a day. Takes an inhaled triple therapy inhaler. Lives with his wife, who has dementia and depends on him. No anticoagulants.",
+    },
+    {
+      id: "pocus",
+      label: "Lung ultrasound",
+      result:
+        "Right anterior chest: no lung sliding, no B lines. A lung point is seen in the right mid axillary line. " +
+        "Left anterior chest: lung sliding is hard to see in the upper zone over the known bulla, present in the lower zones.",
+    },
+    {
+      id: "cxr",
+      label: "Chest X ray",
+      result:
+        "Right pneumothorax with a visible pleural line. Interpleural distance 3.2 cm at the level of the hilum. No mediastinal shift. " +
+        "Large thin walled lucency at the left apex with faint lung markings crossing it. Hyperinflated lungs.",
+    },
+    {
+      id: "gas",
+      label: "Venous blood gas on 2 L nasal prongs",
+      result: "pH 7.34. pCO2 52 mmHg. HCO3 29 mmol/L.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Hemoglobin 152 g/L. White cells 8.9 x 10^9/L. Platelets 260 x 10^9/L. INR 1.0. Creatinine 81 µmol/L. Potassium 4.2 mmol/L. High sensitivity troponin T 9 ng/L.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Sinus tachycardia at 112. Right axis deviation. No acute ST changes.",
+    },
+    {
+      id: "ct",
+      label: "CT chest (if ordered)",
+      result:
+        "Moderate right pneumothorax. Large left apical bulla unchanged from last year with no pneumothorax on the left. Emphysema in both upper lobes.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the acute bay",
+      text: "He is sitting forward on the stretcher, breathing through pursed lips. The nurse has placed nasal prongs and an IV.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "Initial assessment",
+      prompt: "What is your differential and what do you do first?",
+      seconds: 60,
+      modelAnswer: [
+        "Differential: pneumothorax, COPD exacerbation, pneumonia, PE, ACS, rib fracture from coughing.",
+        "Sudden pleuritic pain with unilateral reduced air entry suggests pneumothorax.",
+        "Oxygen to a target of 88 to 92 percent because he is a CO2 retainer.",
+        "Lung ultrasound, chest X ray, blood gas and ECG.",
+        "Do not start NIV until pneumothorax is excluded.",
+      ],
+      rubric: ["sp-a1", "sp-m1"],
+      next: "q-imaging",
+    },
+    {
+      kind: "question",
+      id: "q-imaging",
+      phase: "Imaging",
+      prompt: "Here is the ultrasound and the chest X ray. The resident says: 'There is a pneumothorax on both sides. I will put in two drains.' What do you think?",
+      seconds: 90,
+      modelAnswer: [
+        "A lung point on the right confirms a right pneumothorax.",
+        "The left apical lucency is his known bulla. Lung markings cross it and the old CT shows it.",
+        "Absent sliding over a bulla is not diagnostic. A drain into a bulla can cause a bronchopleural fistula.",
+        "CT chest if there is any doubt about the left side.",
+        "Right sided drain only.",
+      ],
+      rubric: ["sp-a2", "sp-a3"],
+      choices: [
+        {
+          id: "c-right-only",
+          label: "I confirmed the right pneumothorax with the lung point, told the resident the left lucency is his known bulla, and planned a right drain only with CT if any doubt remained.",
+          next: "q-plan",
+          quality: "strong",
+          feedback:
+            "Correct. A lung point is highly specific for pneumothorax. Bullae mimic pneumothorax on X ray and ultrasound. Comparing with the old CT and getting a new one when unsure prevents a drain into a bulla.",
+        },
+        {
+          id: "c-ct-first",
+          label: "I sent him for CT before doing anything on either side.",
+          next: "s-ct-first",
+          quality: "partial",
+          feedback:
+            "CT is the right tool to separate a bulla from a pneumothorax. The right pneumothorax is already clear on two tests and he is hypoxic. Treat the confirmed side and use CT for the uncertain side.",
+        },
+        {
+          id: "c-both",
+          label: "I agreed and asked the resident to place drains on both sides.",
+          next: "s-both",
+          quality: "unsafe",
+          feedback:
+            "Putting a drain into a bulla can create a persistent air leak and a bronchopleural fistula. It can even cause a pneumothorax that was not there. Always separate a bulla from a pneumothorax before you drain.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ct-first",
+      phase: "Thirty minutes later",
+      text: "In CT his SpO2 falls to 82 percent and he is very distressed. The CT confirms a right pneumothorax only. The left lucency is his known bulla.",
+      next: "q-plan",
+    },
+    {
+      kind: "say",
+      id: "s-both",
+      phase: "At the bedside",
+      text:
+        "The nurse pulls up last year's CT report on the screen. It describes a 9 cm left apical bulla. She asks if you still want the left drain. You cancel it.",
+      next: "q-plan",
+    },
+    {
+      kind: "question",
+      id: "q-plan",
+      phase: "Treatment plan",
+      prompt: "How do you treat his right pneumothorax, and where does he go?",
+      seconds: 90,
+      modelAnswer: [
+        "This is a secondary spontaneous pneumothorax. He is symptomatic and the rim is over 2 cm.",
+        "Small bore chest drain, 12 to 14 Fr by Seldinger technique.",
+        "Admit to hospital under respirology or medicine.",
+        "Needle aspiration is less successful in secondary pneumothorax and still needs admission.",
+        "Conservative outpatient care is not safe with severe COPD.",
+      ],
+      rubric: ["sp-m2", "sp-d1"],
+      choices: [
+        {
+          id: "c-drain",
+          label: "I placed a 12 Fr Seldinger chest drain in the right safe triangle and admitted him under respirology.",
+          next: "q-procedure",
+          quality: "strong",
+          feedback:
+            "This fits current guidance. Secondary pneumothorax in a breathless patient needs a drain and admission. Small bore drains are as effective as large ones and less painful.",
+        },
+        {
+          id: "c-aspirate",
+          label: "I did a needle aspiration and planned to send him home if the repeat film looked good.",
+          next: "s-aspirate",
+          quality: "partial",
+          feedback:
+            "Aspiration can be tried in a small, minimally symptomatic secondary pneumothorax. Success rates are lower than in primary pneumothorax. He has little reserve and should be admitted either way.",
+        },
+        {
+          id: "c-observe",
+          label: "I gave oxygen and planned outpatient follow up in 48 hours because he is not in tension.",
+          next: "s-observe",
+          quality: "unsafe",
+          feedback:
+            "A secondary pneumothorax in severe COPD can kill even when small. He is hypoxic and breathless with a 3.2 cm rim. He needs a drain and admission.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-aspirate",
+      phase: "One hour later",
+      text: "You aspirate 900 mL of air. The repeat film shows the lung is still 2 cm from the chest wall. He is still short of breath. The respirologist asks for a drain and admission.",
+      next: "q-procedure",
+    },
+    {
+      kind: "say",
+      id: "s-observe",
+      phase: "Forty minutes later",
+      text: "The nurse calls you back. His SpO2 is 84 percent on 3 L and he cannot finish a sentence. The respirologist on the phone asks for a drain now and admission.",
+      next: "q-procedure",
+    },
+    {
+      kind: "question",
+      id: "q-procedure",
+      phase: "The procedure",
+      prompt: "Describe how you place the drain safely.",
+      seconds: 90,
+      modelAnswer: [
+        "Informed consent. Check platelets and INR.",
+        "Position with the arm above the head. Mark the safe triangle: lateral border of pectoralis major, anterior border of latissimus dorsi, and a base at the level of the nipple, about the 5th intercostal space.",
+        "Ultrasound to confirm site. Aseptic technique.",
+        "Lidocaine 1 percent, no more than 3 mg/kg without epinephrine, about 190 mg or 19 mL in this 64 kg man.",
+        "Seldinger technique over the upper border of the rib. Connect to an underwater seal without suction at first.",
+        "Confirm position on X ray. Check swinging and bubbling.",
+      ],
+      rubric: ["sp-p1", "sp-m3"],
+      next: "s-tension",
+    },
+    {
+      kind: "say",
+      id: "s-tension",
+      phase: "While you set up the drain",
+      text:
+        "A second respiratory therapist, trying to help with his CO2 of 52, has put him on BiPAP at 14 over 6. " +
+        "Within minutes his pressure falls to 78/46. Heart rate 138. SpO2 76 percent. His trachea is shifting to the left and the right chest is silent.",
+      next: "q-tension",
+    },
+    {
+      kind: "question",
+      id: "q-tension",
+      phase: "Deterioration",
+      prompt: "What is happening and what do you do right now?",
+      seconds: 60,
+      modelAnswer: [
+        "Tension pneumothorax made worse by positive pressure ventilation.",
+        "Stop the BiPAP.",
+        "Decompress now. Needle at the 4th or 5th intercostal space in the anterior axillary line, or finger thoracostomy at the same site.",
+        "Then place the drain.",
+        "Do not wait for a chest X ray.",
+      ],
+      rubric: ["sp-r1", "sp-r2"],
+      choices: [
+        {
+          id: "c-decompress",
+          label: "I stopped the BiPAP, decompressed with a needle at the right 5th intercostal space anterior axillary line, then placed the drain.",
+          next: "q-leak",
+          quality: "strong",
+          feedback:
+            "Correct and fast. Tension is a clinical diagnosis. The lateral site has a thinner chest wall than the 2nd space and a higher success rate in adults. Positive pressure should never be applied over an undrained pneumothorax.",
+        },
+        {
+          id: "c-xray",
+          label: "I ordered a portable chest X ray to confirm tension before decompressing.",
+          next: "s-xray",
+          quality: "partial",
+          feedback:
+            "Tension pneumothorax is a clinical diagnosis. Waiting for an X ray in a patient with a pressure of 78 risks arrest. Stop the BiPAP and decompress now.",
+        },
+        {
+          id: "c-intubate",
+          label: "I intubated him for hypoxia and increased the ventilator pressure.",
+          next: "s-intubate",
+          quality: "unsafe",
+          feedback:
+            "More positive pressure on a tension pneumothorax will cause arrest. The air must be let out first. Intubation does not fix a mechanical problem in the chest.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-xray",
+      phase: "Four minutes later",
+      text: "His pressure is 60 by palpation and he is barely responsive. The radiology tech is still setting up. You stop the BiPAP and do a finger thoracostomy. There is a rush of air and his pressure rises to 110/70.",
+      next: "q-leak",
+    },
+    {
+      kind: "say",
+      id: "s-intubate",
+      phase: "Two minutes later",
+      text:
+        "After induction he loses his pulse. PEA. The RT disconnects the bag. You perform a right finger thoracostomy during CPR. Air rushes out and he regains a pulse after one cycle. A drain is placed.",
+      next: "q-leak",
+    },
+    {
+      kind: "question",
+      id: "q-leak",
+      phase: "After the drain",
+      prompt: "The drain is in and the lung is up on X ray. It is bubbling with every breath and cough. How do you manage the drain and when do you call thoracic surgery?",
+      seconds: 60,
+      modelAnswer: [
+        "Continuous bubbling means an ongoing air leak.",
+        "Never clamp a bubbling drain.",
+        "Underwater seal without routine suction. Add suction only if the lung fails to expand.",
+        "Treat any COPD exacerbation component with bronchodilators and steroids.",
+        "Seek a thoracic surgery opinion early if the air leak persists or the lung will not expand. Most guidance says by about 48 hours to 5 days.",
+        "Pleurodesis or surgery is usually offered after a first secondary pneumothorax if fit.",
+      ],
+      rubric: ["sp-m3", "sp-d2"],
+      next: "q-leave",
+    },
+    {
+      kind: "question",
+      id: "q-leave",
+      phase: "He wants to leave",
+      prompt: "An hour later he says: 'Take this tube out. My wife has dementia and is alone at home. I have to go.' What do you do?",
+      seconds: 90,
+      modelAnswer: [
+        "Acknowledge the worry about his wife. It is the real barrier.",
+        "Assess his capacity for this decision.",
+        "Explain the risks in plain words: collapse of the lung again and possibly death.",
+        "Call social work, family or community services to get care for his wife tonight.",
+        "If he still refuses and is capable, respect it, with the safest plan possible and clear return advice. Document.",
+      ],
+      rubric: ["sp-c1", "sp-p2"],
+      choices: [
+        {
+          id: "c-solve",
+          label: "I acknowledged his worry, checked his capacity, explained the risk, and got social work to arrange someone to stay with his wife so he could stay.",
+          next: "q-debrief",
+          quality: "strong",
+          feedback:
+            "This solves the real problem. Most patients who want to leave have a reason you can help with. A capable patient still decides, but you should remove the barrier first.",
+        },
+        {
+          id: "c-heimlich",
+          label: "I attached a one way flutter valve and let him go home with the drain and follow up tomorrow.",
+          next: "s-heimlich",
+          quality: "partial",
+          feedback:
+            "Ambulatory valves are used in selected primary pneumothorax. He has a secondary pneumothorax, a persistent air leak and just had a tension event. The examiner wanted admission and a solution for his wife's care.",
+        },
+        {
+          id: "c-pull",
+          label: "I took the drain out and discharged him because it is his choice.",
+          next: "s-pull",
+          quality: "unsafe",
+          feedback:
+            "Respecting autonomy does not mean skipping capacity assessment and risk discussion. Removing a bubbling drain will almost certainly cause a recurrence. You also did not try to fix the reason he wants to leave.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-heimlich",
+      phase: "At the door",
+      text: "The respirologist calls and asks you not to discharge him with an active air leak. The charge nurse offers to call social work. They find a neighbour and a home care worker for tonight. He agrees to stay.",
+      next: "q-debrief",
+    },
+    {
+      kind: "say",
+      id: "s-pull",
+      phase: "Two hours later",
+      text: "He returns by ambulance. SpO2 80 percent. The lung has collapsed again. A new drain is placed. Social work arranges care for his wife. He is admitted.",
+      next: "q-debrief",
+    },
+    {
+      kind: "question",
+      id: "q-debrief",
+      phase: "Debrief",
+      prompt: "The team is upset about the BiPAP event. What do you do about it, and what advice does he need at discharge?",
+      seconds: 60,
+      modelAnswer: [
+        "Brief team debrief without blame. Positive pressure over an undrained pneumothorax was the trigger.",
+        "Report through the hospital safety system. Suggest a check for pneumothorax before NIV in the RT protocol.",
+        "Disclose the event to the patient.",
+        "Discharge advice: stop smoking, no flying until the pneumothorax has resolved on X ray and the respirologist agrees, return if breathless or chest pain.",
+        "Respirology follow up and discussion of pleurodesis to prevent recurrence.",
+      ],
+      rubric: ["sp-l1", "sp-p3", "sp-d2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "He is admitted under respirology with a drain in place and his wife is safe at home with support. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "sp-a1",
+      competency: "assessment",
+      text: "Considers pneumothorax early in a COPD patient with sudden pleuritic pain and unilateral findings.",
+      points: 2,
+      teaching: "Not every breathless COPD patient has an exacerbation. Sudden change after coughing is a pneumothorax clue.",
+      source: "bts",
+    },
+    {
+      id: "sp-m1",
+      competency: "management",
+      text: "Gives oxygen to a target of 88 to 92 percent in a known CO2 retainer.",
+      points: 1,
+      teaching: "His pCO2 is 52. Controlled oxygen avoids worsening hypercapnia while treating hypoxemia.",
+      source: "bts",
+    },
+    {
+      id: "sp-a2",
+      competency: "assessment",
+      text: "Uses a lung point to confirm pneumothorax and recognizes that absent sliding over a bulla is not diagnostic.",
+      points: 2,
+      teaching: "A lung point is close to 100 percent specific. Bullae, adhesions and emphysema can all abolish sliding.",
+      source: "bts",
+    },
+    {
+      id: "sp-a3",
+      competency: "assessment",
+      text: "Distinguishes a large bulla from pneumothorax and avoids placing a drain into a bulla, using CT when uncertain.",
+      points: 3,
+      critical: true,
+      teaching: "A drain in a bulla can create a bronchopleural fistula. Compare with prior imaging and get a CT if in doubt.",
+      source: "bts",
+    },
+    {
+      id: "sp-m2",
+      competency: "management",
+      text: "Places a small bore chest drain for a symptomatic secondary pneumothorax over 2 cm.",
+      points: 2,
+      teaching: "Secondary pneumothorax has higher mortality and lower aspiration success than primary. Breathless patients need a drain.",
+      source: "bts",
+    },
+    {
+      id: "sp-d1",
+      competency: "disposition",
+      text: "Admits the patient rather than discharging with outpatient follow up.",
+      points: 2,
+      teaching: "All secondary pneumothoraces should be admitted. Patients with severe lung disease have little reserve.",
+      source: "bts",
+    },
+    {
+      id: "sp-p1",
+      competency: "management",
+      text: "Describes safe drain insertion: consent, safe triangle, ultrasound, correct lidocaine dose and Seldinger technique.",
+      points: 1,
+      teaching: "The safe triangle keeps the drain away from the internal mammary artery, breast tissue and large muscles. Staying above the nipple line protects the liver and spleen. Keep plain lidocaine at or under 3 mg/kg.",
+      source: "bts",
+    },
+    {
+      id: "sp-m3",
+      competency: "management",
+      text: "Uses an underwater seal without routine suction and never clamps a bubbling drain.",
+      points: 1,
+      teaching: "Clamping a drain with an air leak can cause tension. Suction is only added if the lung does not re expand.",
+      source: "bts",
+    },
+    {
+      id: "sp-r1",
+      competency: "resuscitation",
+      text: "Recognizes tension pneumothorax clinically and decompresses without waiting for an X ray.",
+      points: 3,
+      critical: true,
+      teaching: "Hypotension, hypoxia, tracheal shift and a silent side are enough. Needle or finger decompression comes before imaging.",
+      source: "atls",
+    },
+    {
+      id: "sp-r2",
+      competency: "resuscitation",
+      text: "Stops positive pressure ventilation and uses the 4th or 5th intercostal space anterior or mid axillary line for decompression.",
+      points: 2,
+      teaching: "Positive pressure turns a simple pneumothorax into tension. The lateral site has a thinner chest wall in most adults.",
+      source: "atls",
+    },
+    {
+      id: "sp-d2",
+      competency: "disposition",
+      text: "Seeks early thoracic surgery input for a persistent air leak and gives advice on smoking, flying and recurrence prevention.",
+      points: 1,
+      teaching: "Persistent leaks need surgical review. Recurrence after secondary pneumothorax is common, so definitive prevention is usually offered.",
+      source: "bts",
+    },
+    {
+      id: "sp-c1",
+      competency: "communication",
+      text: "Explores the reason he wants to leave and engages social work to arrange care for his wife.",
+      points: 2,
+      teaching: "The best way to prevent a discharge against advice is to fix the reason for it. Ask what is making him want to go.",
+      source: "cmpa",
+    },
+    {
+      id: "sp-p2",
+      competency: "professionalism",
+      text: "Assesses capacity and explains the specific risks before accepting a refusal, and documents the discussion.",
+      points: 2,
+      critical: true,
+      teaching: "A capable patient may refuse care. The physician must confirm capacity, give clear risk information and document.",
+      source: "cmpa",
+    },
+    {
+      id: "sp-l1",
+      competency: "leadership",
+      text: "Leads a blame free debrief and reports the BiPAP event through the safety system with a system fix.",
+      points: 1,
+      teaching: "The error came from a gap in process, not one person. A protocol check before NIV prevents repeat events.",
+      source: "cpsi",
+    },
+    {
+      id: "sp-p3",
+      competency: "professionalism",
+      text: "Discloses the adverse event to the patient.",
+      points: 1,
+      teaching: "Patients have a right to know about harm during care. Disclose what happened and what is being done.",
+      source: "cpsi",
+    },
+  ],
+  sources: [
+    {
+      id: "bts",
+      citation: "Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society Guideline for pleural disease. Thorax. 2023.",
+      url: "https://www.brit-thoracic.org.uk/document-library/guidelines/pleural-disease/bts-guideline-for-pleural-disease/",
+    },
+    {
+      id: "atls",
+      citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
+    },
+    {
+      id: "cmpa",
+      citation: "Canadian Medical Protective Association. Consent. A guide for Canadian physicians.",
+    },
+    {
+      id: "cpsi",
+      citation: "Canadian Patient Safety Institute. Canadian Disclosure Guidelines. Being open with patients and families. 2011.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

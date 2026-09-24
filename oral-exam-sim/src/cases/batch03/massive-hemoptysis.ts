@@ -1,0 +1,482 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const massiveHemoptysis: OralCase = {
+  id: "massive-hemoptysis",
+  title: "Blood in the emesis basin",
+  blueprint: "resp",
+  alsoCovers: ["resus", "systems"],
+  summary: "A 63 year old man on treatment for cancer arrives coughing and spitting blood.",
+  durationMinutes: 15,
+  stem:
+    "You are working at a community hospital ED in Owen Sound, Ontario. There is CT, an anesthetist on call, a 6 bed ICU and a blood bank. There is no interventional radiology or thoracic surgery. " +
+    "The nearest centre with both is about 2 hours by land or 45 minutes by air. " +
+    "Bernard Kowalczyk is 63 years old and weighs 80 kg. He is having chemoradiation for a right lung cancer and takes apixaban 5 mg twice daily for atrial fibrillation. His last dose was at 07:00. It is now 13:00. " +
+    "Triage vitals: heart rate 108, blood pressure 118/72, respiratory rate 26, SpO2 90 percent on room air, temperature 37.2. CTAS 2. " +
+    "The nurse says: 'He has coughed up about two cups of bright red blood since noon. He just filled half a basin in triage.'",
+  findings: [
+    {
+      id: "exam",
+      label: "Exam",
+      result:
+        "Pale and frightened. Fresh blood on his lips and shirt. Coarse crackles over the right chest, worse at the base. Left chest clear. " +
+        "No blood in the nose or posterior pharynx on inspection. Abdomen soft. No melena on history.",
+    },
+    {
+      id: "history",
+      label: "History from patient and chart",
+      result:
+        "Stage III squamous cell carcinoma of the right upper lobe diagnosed 4 months ago. Receiving chemoradiation with curative intent. " +
+        "Atrial fibrillation on apixaban. Creatinine clearance about 70 mL/min. Smoked for 40 years, quit at diagnosis. Wants full treatment. No prior hemoptysis this large.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Hemoglobin 104 g/L. Baseline 2 weeks ago 118 g/L. Platelets 188 x 10^9/L. INR 1.3. aPTT 34 seconds. Fibrinogen 3.1 g/L. " +
+        "Creatinine 92 µmol/L. Lactate 2.8 mmol/L. Crossmatch for 4 units sent. Apixaban specific anti Xa level is a send out test.",
+    },
+    {
+      id: "gas",
+      label: "Venous blood gas",
+      result: "pH 7.36. pCO2 42 mmHg. HCO3 23 mmol/L.",
+    },
+    {
+      id: "cxr",
+      label: "Portable chest X ray",
+      result:
+        "Right upper lobe mass 6 cm with central cavitation. New patchy airspace opacity in the right middle and lower zones. Left lung clear. No pneumothorax.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Atrial fibrillation at 108. No acute ST changes.",
+    },
+    {
+      id: "ct",
+      label: "CT angiogram of the chest (if he is stable enough)",
+      result:
+        "Cavitating right upper lobe mass abutting the right upper lobe bronchus. Enlarged and tortuous right bronchial artery, 3 mm, feeding the mass. " +
+        "Blood filling the right middle and lower lobe airways. No pulmonary artery pseudoaneurysm. No pulmonary embolism.",
+    },
+    {
+      id: "wife",
+      label: "Collateral from his wife",
+      result:
+        "His wife says he has been coughing small streaks of blood for a week and did not want to bother anyone. She asks if this means the cancer is winning.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In resus",
+      text: "He is sitting up coughing into a basin. There is about 150 mL of bright red blood in it. The nurse has one IV and has sent blood work.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First minutes",
+      prompt: "What do you do in the first five minutes?",
+      seconds: 90,
+      modelAnswer: [
+        "Call for help. Anesthesia to the bedside.",
+        "Position him bleeding side down, right lateral decubitus, to protect the good left lung.",
+        "Oxygen. Two large bore IVs. Crossmatch 4 units and activate the massive hemorrhage protocol if needed.",
+        "Hold apixaban. Two suction set ups and an airway cart at the bedside.",
+        "Confirm this is lung blood, not upper airway or GI.",
+      ],
+      rubric: ["mh-r1", "mh-a1", "mh-l1"],
+      choices: [
+        {
+          id: "c-position",
+          label: "I laid him right side down, gave oxygen, placed a second large bore IV, crossmatched 4 units, set up two suctions and called anesthesia.",
+          next: "q-reverse",
+          quality: "strong",
+          feedback:
+            "Good. The bleeding lung is the right one based on the tumour and the crackles. Placing it down keeps blood out of the left lung. Getting anesthesia early matters because the airway can be lost quickly.",
+        },
+        {
+          id: "c-ct",
+          label: "I sent him straight to CT angiogram to find the source.",
+          next: "s-ct",
+          quality: "partial",
+          feedback:
+            "CT angiogram is valuable for planning embolization. Sending an actively bleeding patient to CT before securing positioning, access and an airway plan is risky. Stabilize first.",
+        },
+        {
+          id: "c-left",
+          label: "I laid him left side down so the blood would drain out of the right lung.",
+          next: "s-left",
+          quality: "unsafe",
+          feedback:
+            "This is backwards. With the good lung down, gravity sends blood from the right lung into the left. Both lungs fill and he cannot oxygenate. The bleeding side goes down.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ct",
+      phase: "In CT",
+      text: "On the scanner table he coughs 200 mL of blood and his SpO2 falls to 82 percent. The technologist calls a code. You bring him back to resus and lay him right side down.",
+      next: "q-reverse",
+    },
+    {
+      kind: "say",
+      id: "s-left",
+      phase: "Five minutes later",
+      text: "His SpO2 falls to 83 percent. You hear new crackles in the left chest. The anesthetist arrives and turns him right side down. His SpO2 slowly improves to 89 percent.",
+      next: "q-reverse",
+    },
+    {
+      kind: "question",
+      id: "q-reverse",
+      phase: "Stopping the bleeding",
+      prompt: "What will you give to reverse his anticoagulant and reduce bleeding? Give doses.",
+      seconds: 60,
+      modelAnswer: [
+        "Hold apixaban. Last dose 6 hours ago, so there is a significant drug effect.",
+        "Four factor prothrombin complex concentrate 2000 units IV as a fixed dose, or 25 to 50 units/kg to a maximum of 3000 units, per local protocol.",
+        "Andexanet alfa has only conditional Health Canada approval, is not publicly funded and is rarely stocked. Do not wait for it.",
+        "Tranexamic acid 1 g IV over 10 minutes.",
+        "Nebulized tranexamic acid 500 mg is an option in hemoptysis.",
+        "Transfuse red cells for ongoing bleeding. Vitamin K and plasma do not reverse apixaban.",
+      ],
+      rubric: ["mh-m1", "mh-m2"],
+      choices: [
+        {
+          id: "c-pcc",
+          label: "I gave PCC 2000 units IV, tranexamic acid 1 g IV and nebulized tranexamic acid 500 mg.",
+          next: "s-massive",
+          quality: "strong",
+          feedback:
+            "This is sound. PCC 2000 units is the usual Canadian option for life threatening bleeding on a factor Xa inhibitor. It supports clotting but does not truly reverse apixaban. Tranexamic acid, IV or nebulized, is low risk and may reduce bleeding in hemoptysis.",
+        },
+        {
+          id: "c-ffp",
+          label: "I gave vitamin K 10 mg IV and 4 units of frozen plasma.",
+          next: "s-ffp",
+          quality: "partial",
+          feedback:
+            "Vitamin K and plasma treat warfarin, not apixaban. Plasma adds volume and delays the effective drug. Use PCC for a factor Xa inhibitor.",
+        },
+        {
+          id: "c-idarucizumab",
+          label: "I gave idarucizumab 5 g IV to reverse the apixaban.",
+          next: "s-idarucizumab",
+          quality: "unsafe",
+          feedback:
+            "Idarucizumab only reverses dabigatran. It has no effect on apixaban. Giving the wrong reversal agent wastes time while he bleeds.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ffp",
+      phase: "Pharmacy call",
+      text: "The pharmacist calls to say plasma will not reverse apixaban. She has PCC ready. You give PCC 2000 units and tranexamic acid 1 g IV.",
+      next: "s-massive",
+    },
+    {
+      kind: "say",
+      id: "s-idarucizumab",
+      phase: "Pharmacy call",
+      text: "The pharmacist refuses to release idarucizumab for apixaban. She suggests PCC. You give PCC 2000 units and tranexamic acid 1 g IV.",
+      next: "s-massive",
+    },
+    {
+      kind: "say",
+      id: "s-massive",
+      phase: "Twenty minutes later",
+      text:
+        "He has a violent coughing fit and brings up about 300 mL of blood. SpO2 78 percent. Heart rate 128. Blood pressure 92/58. He is gurgling and panicked. The anesthetist is at the bedside.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway",
+      prompt: "What is your airway plan?",
+      seconds: 90,
+      modelAnswer: [
+        "Intubate now. He cannot clear the blood.",
+        "Keep him right side down or head up until induction. Two suctions running.",
+        "Hemodynamically cautious RSI: ketamine 1 mg/kg IV, about 80 mg, and rocuronium 1.2 mg/kg IV, about 100 mg. Blood running.",
+        "Large tube, 8.0 or larger, to allow bronchoscopy and suction.",
+        "Plan B if blood keeps flooding: advance the tube into the left main bronchus to isolate the good lung.",
+      ],
+      rubric: ["mh-r2", "mh-r3"],
+      choices: [
+        {
+          id: "c-rsi",
+          label: "I had the anesthetist intubate with ketamine and rocuronium, an 8.0 tube, two suctions and blood running, with a plan to advance into the left main bronchus if needed.",
+          next: "q-isolate",
+          quality: "strong",
+          feedback:
+            "Correct. A large tube allows a bronchoscope and big suction catheter. Having a lung isolation plan before you start is what the examiner wanted.",
+        },
+        {
+          id: "c-small",
+          label: "I intubated with a 7.0 tube because it passes more easily.",
+          next: "s-small",
+          quality: "partial",
+          feedback:
+            "The airway is secured, which is good. A 7.0 tube is too small for a therapeutic bronchoscope and clots block it easily. Use an 8.0 or larger in hemoptysis.",
+        },
+        {
+          id: "c-bipap",
+          label: "I put him on BiPAP to improve his oxygen while the blood settles.",
+          next: "s-bipap",
+          quality: "unsafe",
+          feedback:
+            "NIV in active hemoptysis pushes blood deeper into the lungs and blocks clearance. It also risks aspiration into the mask. He needs a definitive airway.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-small",
+      phase: "After intubation",
+      text: "Blood clots keep blocking the 7.0 tube. The RT suctions repeatedly. The anesthetist exchanges it for an 8.0 over a bougie.",
+      next: "q-isolate",
+    },
+    {
+      kind: "say",
+      id: "s-bipap",
+      phase: "Three minutes later",
+      text: "Blood fills the BiPAP mask. SpO2 is 70 percent. The anesthetist removes the mask and intubates with an 8.0 tube.",
+      next: "q-isolate",
+    },
+    {
+      kind: "question",
+      id: "q-isolate",
+      phase: "After intubation",
+      prompt: "He is intubated but blood keeps welling up the tube and his SpO2 is 84 percent on FiO2 1.0. What now?",
+      seconds: 60,
+      modelAnswer: [
+        "Isolate the good lung. Advance the tube into the left main bronchus, ideally over a bronchoscope.",
+        "Blind left mainstem placement often goes right instead. If no scope, turn his head to the right and rotate the tube toward the left before advancing. Confirm breath sounds on the left only and lung sliding on the left.",
+        "Anesthesia may place a bronchial blocker in the right main bronchus or a double lumen tube.",
+        "Keep the right side down.",
+        "Continue transfusion. Activate the massive hemorrhage protocol if needed.",
+        "Accept one lung ventilation with a lower tidal volume.",
+      ],
+      rubric: ["mh-r3"],
+      next: "q-definitive",
+    },
+    {
+      kind: "question",
+      id: "q-definitive",
+      phase: "Definitive care",
+      prompt: "After left mainstem intubation his SpO2 is 93 percent. How will the bleeding be stopped, and how do you arrange it?",
+      seconds: 90,
+      modelAnswer: [
+        "Bronchial artery embolization is first line definitive treatment.",
+        "CT angiogram if stable enough, to map the bronchial arteries for IR.",
+        "Call CritiCall Ontario to reach IR, thoracic surgery and ICU at the tertiary centre.",
+        "Critical care transport by Ornge with blood, suction and a clear handover.",
+        "Thoracic surgery is backup if embolization fails.",
+      ],
+      rubric: ["mh-m3", "mh-d1", "mh-l2"],
+      choices: [
+        {
+          id: "c-bae",
+          label: "I got a CT angiogram, called CritiCall to arrange bronchial artery embolization at the tertiary centre, and sent him by critical care air transport with blood.",
+          next: "q-family",
+          quality: "strong",
+          feedback:
+            "Correct. Embolization controls most bronchial artery bleeding. The CT angiogram helps IR plan and saves time on arrival. Early CritiCall involvement gets the right teams ready.",
+        },
+        {
+          id: "c-wait",
+          label: "I admitted him to our ICU and asked for a bronchoscopy in the morning.",
+          next: "s-wait",
+          quality: "partial",
+          feedback:
+            "Bronchoscopy helps localize and can temporize, but it is not definitive. Massive hemoptysis can recur at any time. He needs a centre with IR and thoracic surgery tonight.",
+        },
+        {
+          id: "c-land",
+          label: "I sent him by land ambulance with a primary care paramedic crew to save time.",
+          next: "s-land",
+          quality: "unsafe",
+          feedback:
+            "An intubated patient with one lung ventilation and active bleeding needs a critical care escort. A primary care crew cannot manage the airway or transfuse. This is an unsafe transfer.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-wait",
+      phase: "Two hours later",
+      text: "The ICU nurse calls. He has had another 200 mL of blood up the tube and needed 2 more units. The ICU physician asks you to call CritiCall now.",
+      next: "q-family",
+    },
+    {
+      kind: "say",
+      id: "s-land",
+      phase: "At the door",
+      text: "The paramedic crew declines. They are not trained to manage a ventilated patient. The ICU physician calls CritiCall and Ornge sends a critical care crew.",
+      next: "q-family",
+    },
+    {
+      kind: "question",
+      id: "q-family",
+      phase: "His wife",
+      prompt: "His wife asks: 'Is the cancer winning? Is he going to die?' What do you say?",
+      seconds: 60,
+      modelAnswer: [
+        "Sit down. Ask what she understands so far.",
+        "Explain the bleeding in plain words: a blood vessel near the tumour is bleeding into his lung.",
+        "Be honest that this is life threatening and there is a treatment that often works.",
+        "Do not guess at cancer prognosis. His oncology team will discuss it.",
+        "He wanted full treatment and that is what is happening. Tell her where he is going and how to get there.",
+      ],
+      rubric: ["mh-c1", "mh-p1"],
+      next: "q-handover",
+    },
+    {
+      kind: "question",
+      id: "q-handover",
+      phase: "Handover",
+      prompt: "The critical care crew arrives. Give me the key points of your handover.",
+      seconds: 60,
+      modelAnswer: [
+        "Identity, diagnosis and the source: right upper lobe tumour with bronchial artery bleed.",
+        "Airway: 8.0 tube advanced into the left main bronchus. Depth at the teeth. Keep right side down.",
+        "Drugs: PCC, tranexamic acid, induction agents and times. Units of blood given.",
+        "Current vitals and ventilator settings. Blood sent with the crew.",
+        "Plan: bronchial artery embolization. Accepting physician and destination.",
+      ],
+      rubric: ["mh-l2", "mh-d1"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "The crew lifts off with him right side down. The IR team is waiting. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "mh-r1",
+      competency: "resuscitation",
+      text: "Positions the patient with the bleeding side down to protect the good lung.",
+      points: 3,
+      critical: true,
+      teaching: "Gravity keeps blood in the bleeding lung. The side of the tumour and the exam usually tell you which side is bleeding.",
+      source: "chest",
+    },
+    {
+      id: "mh-a1",
+      competency: "assessment",
+      text: "Confirms the blood comes from the lungs and not the nose, mouth or GI tract.",
+      points: 1,
+      teaching: "Hematemesis and nasopharyngeal bleeding can mimic hemoptysis. Bright red frothy blood with a known lung lesion points to the airway.",
+      source: "chest",
+    },
+    {
+      id: "mh-l1",
+      competency: "leadership",
+      text: "Calls anesthesia early and prepares suction, airway equipment, access and blood before the airway is lost.",
+      points: 2,
+      teaching: "Patients with massive hemoptysis die from asphyxia, not blood loss. Prepare for the airway before the next big bleed.",
+      source: "chest",
+    },
+    {
+      id: "mh-m1",
+      competency: "management",
+      text: "Gives PCC 2000 units, or 25 to 50 units/kg to a maximum of 3000 units, for life threatening bleeding on apixaban, and avoids agents that do not work.",
+      points: 2,
+      teaching: "Vitamin K, plasma and idarucizumab do not work for factor Xa inhibitors. PCC is the common Canadian option because andexanet is rarely available.",
+      source: "nac",
+    },
+    {
+      id: "mh-m2",
+      competency: "management",
+      text: "Gives tranexamic acid IV 1 g and considers nebulized tranexamic acid 500 mg.",
+      points: 1,
+      teaching: "Nebulized tranexamic acid reduced bleeding in a randomized trial of hemoptysis. It is cheap and low risk.",
+      source: "txa",
+    },
+    {
+      id: "mh-r2",
+      competency: "resuscitation",
+      text: "Intubates early with an 8.0 or larger tube with two suctions and hemodynamically cautious induction.",
+      points: 3,
+      critical: true,
+      teaching: "A large tube allows bronchoscopy and big suction catheters. Small tubes clot off.",
+      source: "chest",
+    },
+    {
+      id: "mh-r3",
+      competency: "resuscitation",
+      text: "Isolates the good lung by advancing the tube into the left main bronchus or using a bronchial blocker when bleeding continues.",
+      points: 2,
+      teaching: "Lung isolation keeps blood out of the good lung. Mainstem intubation of the nonbleeding side is the simplest ED option. A bronchoscope makes left sided placement far more reliable.",
+      source: "chest",
+    },
+    {
+      id: "mh-m3",
+      competency: "management",
+      text: "Identifies bronchial artery embolization as first line definitive therapy and uses CT angiogram to guide it when stable.",
+      points: 2,
+      teaching: "Most massive hemoptysis comes from bronchial arteries. Embolization controls it in most patients.",
+      source: "chest",
+    },
+    {
+      id: "mh-d1",
+      competency: "disposition",
+      text: "Arranges urgent transfer through CritiCall to a centre with IR and thoracic surgery with a critical care escort.",
+      points: 3,
+      critical: true,
+      teaching: "Rebleeding is common and unpredictable. The destination needs IR and thoracic surgery, and the crew must manage a ventilated bleeding patient.",
+      source: "chest",
+    },
+    {
+      id: "mh-l2",
+      competency: "leadership",
+      text: "Gives a structured handover including tube position, drugs given, blood products and the plan.",
+      points: 1,
+      teaching: "The crew must know the tube is in the left main bronchus. Moving him can dislodge it.",
+      source: "chest",
+    },
+    {
+      id: "mh-c1",
+      competency: "communication",
+      text: "Speaks with his wife in plain language, is honest about the danger and avoids guessing cancer prognosis.",
+      points: 1,
+      teaching: "Explain what is happening now and what will be done. Leave long term cancer prognosis to the oncology team.",
+      source: "chest",
+    },
+    {
+      id: "mh-p1",
+      competency: "professionalism",
+      text: "Confirms and respects his stated wish for full treatment.",
+      points: 1,
+      teaching: "His goals were set with his oncology team. Emergency care should follow them unless he or his substitute decision maker changes them.",
+      source: "chest",
+    },
+  ],
+  sources: [
+    {
+      id: "chest",
+      citation: "Davidson K, Shojaee S. Managing massive hemoptysis. Chest. 2020.",
+    },
+    {
+      id: "txa",
+      citation: "Wand O, Guber E, Guber A, et al. Inhaled tranexamic acid for hemoptysis treatment. A randomized controlled trial. Chest. 2018.",
+    },
+    {
+      id: "nac",
+      citation: "National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. 2022.",
+      url: "https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

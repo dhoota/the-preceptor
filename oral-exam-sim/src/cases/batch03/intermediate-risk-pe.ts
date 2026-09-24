@@ -1,0 +1,534 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const intermediateRiskPe: OralCase = {
+  id: "intermediate-risk-pe",
+  title: "Fainted on the stairs",
+  blueprint: "resp",
+  alsoCovers: ["cardio", "resus"],
+  summary: "A 54 year old man is brought in after fainting at home and is short of breath.",
+  durationMinutes: 15,
+  stem:
+    "You are working at a teaching hospital ED in Ottawa. CT, an ICU, interventional radiology and cardiac surgery are available. There is a pulmonary embolism response team you can page. " +
+    "Kevin Lachance is 54 years old and weighs 92 kg. Three days ago he drove 16 hours from Winnipeg. This morning he fainted while climbing the stairs and has been breathless since. " +
+    "Triage vitals: heart rate 118, blood pressure 104/68, respiratory rate 26, SpO2 89 percent on room air, temperature 37.4, capillary glucose 6.2 mmol/L. CTAS 2. " +
+    "The triage nurse says: 'His wife says he was grey and out for about 10 seconds. He looks a bit better now but he cannot walk to the bathroom.'",
+  findings: [
+    {
+      id: "exam",
+      label: "Cardiorespiratory exam",
+      result:
+        "Anxious and diaphoretic. JVP 6 cm above the sternal angle. Loud P2. No murmur. Chest clear. Right calf 3 cm larger than the left and tender. Warm peripheries. Capillary refill 2 seconds.",
+    },
+    {
+      id: "history",
+      label: "History",
+      result:
+        "Previously well. Takes ramipril for blood pressure. No cancer. No recent surgery or trauma. No prior clots. His father had a blood clot in his 60s. " +
+        "No bleeding history, no stroke, no ulcers. No head injury in the faint. Nonsmoker.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Sinus tachycardia at 118. S wave in I, Q wave and T inversion in III. T wave inversion V1 to V4. Incomplete right bundle branch block.",
+    },
+    {
+      id: "echo",
+      label: "Bedside echo",
+      result:
+        "Right ventricle larger than the left in the apical four chamber view, ratio about 1.1. Septal flattening with a D shaped left ventricle. " +
+        "Hypokinetic RV free wall with apical sparing. TAPSE 13 mm. No pericardial effusion. IVC 2.4 cm with minimal collapse.",
+    },
+    {
+      id: "leg-us",
+      label: "Leg ultrasound",
+      result: "Noncompressible right popliteal vein with echogenic thrombus. Left leg compressible.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "High sensitivity troponin T 64 ng/L. NT proBNP 2140 ng/L. Lactate 2.3 mmol/L. Hemoglobin 146 g/L. Platelets 238 x 10^9/L. " +
+        "Creatinine 88 µmol/L. INR 1.0. aPTT 29 seconds. Fibrinogen 3.4 g/L.",
+    },
+    {
+      id: "gas",
+      label: "Venous blood gas",
+      result: "pH 7.40. pCO2 31 mmHg. HCO3 20 mmol/L.",
+    },
+    {
+      id: "ctpa",
+      label: "CT pulmonary angiogram",
+      result:
+        "Large saddle embolus at the main pulmonary artery bifurcation extending into both lower lobe arteries. RV to LV diameter ratio 1.4. " +
+        "Reflux of contrast into the IVC and hepatic veins. No infarct. No aortic dissection.",
+    },
+    {
+      id: "scores",
+      label: "Risk scores",
+      result: "Simplified PESI 2 points: heart rate 110 or more, and SpO2 under 90 percent.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In resus",
+      text: "He is on the monitor and breathing fast. His wife is at the bedside. The nurse has one IV in.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First ten minutes",
+      prompt: "What is your differential and what do you do in the first ten minutes?",
+      seconds: 90,
+      modelAnswer: [
+        "Pulmonary embolism is most likely: long drive, syncope, hypoxia, tachycardia and a swollen right calf.",
+        "Also consider ACS, arrhythmia, tamponade, dissection and pneumothorax.",
+        "Oxygen to SpO2 over 90 percent. Monitor, second IV, bloods including troponin and BNP.",
+        "Bedside echo for RV strain and leg ultrasound for DVT.",
+        "High pretest probability and low bleeding risk: start anticoagulation before CT.",
+        "CT pulmonary angiogram once he is stable enough to go.",
+      ],
+      rubric: ["pe-a1", "pe-a2", "pe-m1"],
+      next: "q-fluid",
+    },
+    {
+      kind: "question",
+      id: "q-fluid",
+      phase: "Blood pressure",
+      prompt: "His pressure dips to 96/62 on the monitor. The nurse has hung a 2 L bag of Ringer's lactate on a pressure bag. What do you tell her?",
+      seconds: 60,
+      modelAnswer: [
+        "The RV is dilated and the IVC is full. Large volumes can worsen RV failure.",
+        "A small challenge of up to 500 mL is reasonable if the IVC is not plethoric. Here it is full.",
+        "Start norepinephrine early if systolic falls under 90 mmHg.",
+        "Reassess with echo after any fluid.",
+      ],
+      rubric: ["pe-r1"],
+      choices: [
+        {
+          id: "c-small",
+          label: "I stopped the pressure bag, held further fluid because the IVC is full, and had norepinephrine ready if his systolic fell under 90.",
+          next: "s-ct",
+          quality: "strong",
+          feedback:
+            "Correct. A failing RV is on the steep part of its pressure curve. Extra volume pushes the septum into the LV and lowers output. Norepinephrine supports RV perfusion pressure.",
+        },
+        {
+          id: "c-onelitre",
+          label: "I gave 1 L quickly and reassessed.",
+          next: "s-onelitre",
+          quality: "partial",
+          feedback:
+            "You did reassess, which is good. One litre is more than most experts would give with a plethoric IVC and a D shaped LV. The examiner wanted a cautious approach of 500 mL or less and early norepinephrine.",
+        },
+        {
+          id: "c-twolitres",
+          label: "I let the 2 L run in because he is hypotensive and needs preload.",
+          next: "s-twolitres",
+          quality: "unsafe",
+          feedback:
+            "Aggressive fluid in acute RV failure can precipitate collapse. The RV dilates further and the LV is squeezed. The pressure often falls rather than rises.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-onelitre",
+      phase: "Fifteen minutes later",
+      text: "His pressure is 98/64. The RV looks a little larger on echo. His SpO2 has not changed. The nurse stops the fluid on your instruction.",
+      next: "s-ct",
+    },
+    {
+      kind: "say",
+      id: "s-twolitres",
+      phase: "Twenty minutes later",
+      text:
+        "After about 1.5 L his pressure is 86/54 and he is more short of breath. The echo shows the septum bowing further into the LV. You stop the fluid and start norepinephrine at 0.05 mcg/kg/min. His pressure recovers to 102/66.",
+      next: "s-ct",
+    },
+    {
+      kind: "say",
+      id: "s-ct",
+      phase: "CT result",
+      text:
+        "He goes to CT with a nurse and a monitor. The CT shows a saddle embolus with RV to LV ratio of 1.4. Troponin T is 64 ng/L and NT proBNP is 2140 ng/L. Back in resus his pressure is 104/66.",
+      next: "q-risk",
+    },
+    {
+      kind: "question",
+      id: "q-risk",
+      phase: "Risk stratification",
+      prompt: "Risk stratify him. Explain the category and what it means for his treatment.",
+      seconds: 60,
+      modelAnswer: [
+        "He is not high risk because his systolic pressure is 90 or above without vasopressors.",
+        "sPESI is 2, so he is not low risk.",
+        "RV dysfunction on echo and CT plus a raised troponin make him intermediate high risk.",
+        "Intermediate high risk means anticoagulation and close monitoring, not routine lysis.",
+        "Rescue reperfusion if he decompensates.",
+      ],
+      rubric: ["pe-a3", "pe-a4"],
+      next: "q-anticoag",
+    },
+    {
+      kind: "question",
+      id: "q-anticoag",
+      phase: "Anticoagulation",
+      prompt: "Which anticoagulant do you start, and at what dose?",
+      seconds: 60,
+      modelAnswer: [
+        "Parenteral anticoagulation now. LMWH is the guideline default for most PE, including intermediate risk.",
+        "Enoxaparin 1 mg/kg every 12 hours, about 90 mg, is a sound choice.",
+        "UFH is often preferred when rescue reperfusion looks likely, because it can be stopped quickly.",
+        "UFH dose: bolus 80 units/kg, about 7400 units, then 18 units/kg/h, about 1650 units/h, titrated by the local nomogram.",
+        "Avoid a DOAC until he is stable, usually after 48 to 72 hours.",
+      ],
+      rubric: ["pe-m1", "pe-m2"],
+      choices: [
+        {
+          id: "c-ufh",
+          label: "I started unfractionated heparin, 80 units/kg bolus then 18 units/kg/h, because he may need rescue lysis.",
+          next: "q-lysis",
+          quality: "strong",
+          feedback:
+            "Good choice. UFH has a short half life and can be stopped or adjusted if he needs lysis or a procedure. The weight based bolus and infusion are correct. LMWH would also have been acceptable.",
+        },
+        {
+          id: "c-lmwh",
+          label: "I gave enoxaparin 1 mg/kg subcutaneously every 12 hours.",
+          next: "q-lysis",
+          quality: "strong",
+          feedback:
+            "This is guideline concordant. ESC and Thrombosis Canada favour LMWH over UFH for most PE, including intermediate risk. UFH is a reasonable alternative when rescue reperfusion looks likely. Rescue lysis can still be given after enoxaparin if he crashes.",
+        },
+        {
+          id: "c-doac",
+          label: "I started apixaban 10 mg twice daily and asked the internist about early discharge.",
+          next: "s-doac",
+          quality: "unsafe",
+          feedback:
+            "He has an sPESI of 2, RV dysfunction and a raised troponin. He is not a candidate for early discharge. He needs parenteral anticoagulation and a monitored bed for the next 48 to 72 hours.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-doac",
+      phase: "Internist call",
+      text:
+        "The internist declines early discharge. She points out his heart rate of 118, SpO2 of 89 percent and RV strain. She asks you to start UFH and admit him to the step down unit.",
+      next: "q-lysis",
+    },
+    {
+      kind: "question",
+      id: "q-lysis",
+      phase: "Thrombolysis question",
+      prompt: "The cardiology resident says: 'His troponin is up and his RV is huge. Shouldn't we give tPA now?' What do you say?",
+      seconds: 60,
+      modelAnswer: [
+        "Routine systemic lysis is not recommended for intermediate high risk PE.",
+        "The PEITHO trial showed less hemodynamic collapse but more major bleeding and stroke, with no clear mortality benefit.",
+        "Anticoagulate and monitor closely in a step down or ICU bed.",
+        "Rescue lysis or catheter therapy if he decompensates.",
+        "Involve the PE response team now.",
+      ],
+      rubric: ["pe-m3", "pe-c1"],
+      choices: [
+        {
+          id: "c-monitor",
+          label: "I explained that routine lysis is not recommended here, cited the bleeding risk from PEITHO, paged the PE response team and set a plan for rescue lysis if he became hypotensive.",
+          next: "s-shock",
+          quality: "strong",
+          feedback:
+            "This is the current standard. Intermediate high risk patients are watched on anticoagulation with a clear trigger for rescue reperfusion. PEITHO found intracranial bleeding in 2 percent with full dose tenecteplase.",
+        },
+        {
+          id: "c-halfdose",
+          label: "I agreed and ordered half dose alteplase, 50 mg IV, now.",
+          next: "s-halfdose",
+          quality: "partial",
+          feedback:
+            "Reduced dose lysis is being studied but is not standard for normotensive patients. It still carries bleeding risk. The examiner wanted anticoagulation, close monitoring and a rescue plan.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-halfdose",
+      phase: "ICU consult",
+      text:
+        "The ICU attending arrives before the drug is mixed. She asks to hold it and treat him as intermediate high risk with a rescue plan. The PE response team agrees. The order is cancelled.",
+      next: "s-shock",
+    },
+    {
+      kind: "say",
+      id: "s-shock",
+      phase: "Three hours later, still in the ED",
+      text:
+        "You are called back. His pressure has been 82/50 for 15 minutes. Heart rate 128. SpO2 86 percent on 6 L. He is clammy and confused. Lactate is 4.2 mmol/L. " +
+        "Echo shows a larger RV with no effusion. The ICU bed is not yet ready and IR says the interventional team is 90 minutes away.",
+      next: "q-shock",
+    },
+    {
+      kind: "question",
+      id: "q-shock",
+      phase: "Decompensation",
+      prompt: "What has happened and what do you do now?",
+      seconds: 90,
+      modelAnswer: [
+        "He is now high risk PE with obstructive shock.",
+        "Systemic thrombolysis: alteplase 100 mg IV over 2 hours after a rapid contraindication check.",
+        "Norepinephrine for pressure. No further fluid.",
+        "Avoid intubation if possible. Use high flow oxygen.",
+        "Most North American protocols stop the UFH infusion during the 2 hour alteplase run. ESC allows it to continue. Follow the local protocol.",
+        "Restart UFH without a bolus once the aPTT is under about twice normal. If he had enoxaparin, lysis still proceeds and UFH starts about 12 hours after the last dose.",
+        "Catheter therapy or surgical embolectomy if lysis fails or is contraindicated.",
+      ],
+      rubric: ["pe-r2", "pe-r3", "pe-r4"],
+      choices: [
+        {
+          id: "c-lyse",
+          label: "I called it high risk PE, checked contraindications, gave alteplase 100 mg IV over 2 hours, ran norepinephrine and avoided intubation.",
+          next: "q-consent",
+          quality: "strong",
+          feedback:
+            "Correct. Sustained hypotension makes this high risk PE and systemic lysis is recommended. Norepinephrine supports the RV. Avoiding intubation protects him from collapse at induction.",
+        },
+        {
+          id: "c-wait-ir",
+          label: "I gave 500 mL of fluid and started dobutamine while we wait 90 minutes for IR.",
+          next: "s-wait-ir",
+          quality: "partial",
+          feedback:
+            "Catheter directed therapy is a good option when lysis is contraindicated. Here there is no contraindication and he is in shock now. A 90 minute wait is too long. Dobutamine alone may drop his pressure further.",
+        },
+        {
+          id: "c-intubate",
+          label: "I intubated him for his hypoxia and confusion before anything else.",
+          next: "s-intubate",
+          quality: "unsafe",
+          feedback:
+            "Induction and positive pressure in massive PE often cause arrest. Sedatives drop vascular tone and positive pressure lowers RV preload. Reperfuse first and use high flow oxygen.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-wait-ir",
+      phase: "Twenty minutes later",
+      text: "His pressure falls to 70/40 on dobutamine. The ICU fellow arrives and asks why he has not been lysed. You start norepinephrine and give alteplase 100 mg over 2 hours.",
+      next: "q-consent",
+    },
+    {
+      kind: "say",
+      id: "s-intubate",
+      phase: "At induction",
+      text:
+        "Two minutes after induction he goes into PEA. CPR starts. You give alteplase 50 mg IV push and continue CPR. After 12 minutes he has a pulse with a pressure of 88/50 on norepinephrine.",
+      next: "q-consent",
+    },
+    {
+      kind: "question",
+      id: "q-consent",
+      phase: "Consent and safety",
+      prompt: "His wife is at the bedside. What contraindications did you check, and what do you tell her about the risks?",
+      seconds: 90,
+      modelAnswer: [
+        "Absolute: prior hemorrhagic stroke, ischemic stroke in 6 months, CNS tumour, major trauma or surgery or head injury in 3 weeks, bleeding disorder, active bleeding.",
+        "Relative: uncontrolled hypertension, pregnancy, recent GI bleed, anticoagulant use, noncompressible punctures.",
+        "Tell her in plain words that the clot is blocking blood flow to the lungs and he is in shock.",
+        "The clot buster can save his life but carries a risk of serious bleeding, including about 2 percent risk of bleeding in the brain.",
+        "Document the discussion. Emergency treatment can proceed if consent is not possible.",
+      ],
+      rubric: ["pe-a5", "pe-c2"],
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "After lysis",
+      prompt: "An hour into the infusion his pressure is 108/70. Where does he go, what do you monitor, and what is the longer term plan?",
+      seconds: 60,
+      modelAnswer: [
+        "ICU admission with handover to the PE response team.",
+        "Neuro checks and bleeding checks. Avoid arterial punctures and IM injections.",
+        "Restart UFH without a bolus per protocol, with aPTT checks.",
+        "Anticoagulation for at least 3 months. Consider extended treatment since this was not clearly provoked.",
+        "Follow up for persistent breathlessness and screening for chronic thromboembolic pulmonary hypertension.",
+      ],
+      rubric: ["pe-d1", "pe-d2", "pe-l1"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "He is admitted to the ICU with his pressure improving. His wife stays with him. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "pe-a1",
+      competency: "assessment",
+      text: "Identifies pulmonary embolism as the leading diagnosis and names key alternatives including ACS, tamponade and dissection.",
+      points: 1,
+      teaching: "Syncope with hypoxia and tachycardia after immobility is PE until proven otherwise. A broad differential still matters.",
+      source: "esc",
+    },
+    {
+      id: "pe-a2",
+      competency: "assessment",
+      text: "Uses bedside echo and leg ultrasound to look for RV strain and DVT.",
+      points: 2,
+      teaching: "A dilated RV, septal flattening and a DVT support PE at the bedside. They also help if he becomes too unstable for CT.",
+      source: "esc",
+    },
+    {
+      id: "pe-m1",
+      competency: "management",
+      text: "Starts anticoagulation before imaging when pretest probability is high and bleeding risk is low.",
+      points: 2,
+      teaching: "Do not wait for CT to anticoagulate a high probability patient. Delay adds risk of clot extension.",
+      source: "esc",
+    },
+    {
+      id: "pe-r1",
+      competency: "resuscitation",
+      text: "Limits fluid to 500 mL or less in RV failure and uses norepinephrine for hypotension.",
+      points: 2,
+      teaching: "Large fluid boluses worsen RV dilation and can drop cardiac output. Norepinephrine restores RV coronary perfusion.",
+      source: "esc",
+    },
+    {
+      id: "pe-a3",
+      competency: "assessment",
+      text: "Classifies him as intermediate high risk using blood pressure, sPESI, RV dysfunction and troponin.",
+      points: 3,
+      critical: true,
+      teaching: "Normotensive plus sPESI of 1 or more plus RV dysfunction plus raised troponin is intermediate high risk. This group needs monitoring and a rescue plan.",
+      source: "esc",
+    },
+    {
+      id: "pe-a4",
+      competency: "assessment",
+      text: "States that sPESI of 1 or more excludes early discharge.",
+      points: 1,
+      teaching: "Only low risk patients with sPESI 0 and no RV dysfunction should be considered for outpatient treatment.",
+      source: "tc",
+    },
+    {
+      id: "pe-m2",
+      competency: "management",
+      text: "Starts parenteral anticoagulation at a correct dose, such as enoxaparin 1 mg/kg every 12 hours or UFH 80 units/kg then 18 units/kg/h, and names the tradeoff if reperfusion is likely.",
+      points: 2,
+      teaching: "LMWH is preferred for most PE. UFH can be stopped quickly, which matters if lysis, catheter therapy or surgery is likely.",
+      source: "esc",
+    },
+    {
+      id: "pe-m3",
+      competency: "management",
+      text: "Does not give routine systemic thrombolysis to a normotensive intermediate high risk patient.",
+      points: 3,
+      critical: true,
+      teaching: "PEITHO showed fewer collapses but more major bleeding and stroke with routine lysis. Anticoagulate and monitor, and lyse if he decompensates.",
+      source: "peitho",
+    },
+    {
+      id: "pe-c1",
+      competency: "communication",
+      text: "Explains the reasoning to the cardiology resident and involves the PE response team early.",
+      points: 1,
+      teaching: "A shared plan with clear triggers stops repeated debates at the bedside. PE response teams exist for this decision.",
+      source: "esc",
+    },
+    {
+      id: "pe-r2",
+      competency: "resuscitation",
+      text: "Recognizes sustained hypotension as conversion to high risk PE.",
+      points: 2,
+      teaching: "Systolic under 90 mmHg for 15 minutes, or needing vasopressors, defines high risk. Reperfusion is then indicated.",
+      source: "esc",
+    },
+    {
+      id: "pe-r3",
+      competency: "resuscitation",
+      text: "Gives systemic alteplase 100 mg IV over 2 hours for high risk PE without contraindication, or 50 mg bolus in arrest.",
+      points: 3,
+      critical: true,
+      teaching: "Rescue lysis is recommended when an intermediate risk patient decompensates. In arrest, a bolus dose is given and CPR continues.",
+      source: "esc",
+    },
+    {
+      id: "pe-r4",
+      competency: "resuscitation",
+      text: "Avoids intubation where possible in massive PE and plans for collapse if it is needed.",
+      points: 2,
+      teaching: "Induction drugs and positive pressure can tip a failing RV into arrest. Oxygenate with high flow and reperfuse first.",
+      source: "esc",
+    },
+    {
+      id: "pe-a5",
+      competency: "assessment",
+      text: "Lists absolute and relative contraindications to thrombolysis and checks them quickly.",
+      points: 1,
+      teaching: "Prior hemorrhagic stroke, recent stroke, CNS tumour, recent major trauma or surgery, and active bleeding are absolute. Check in under two minutes.",
+      source: "esc",
+    },
+    {
+      id: "pe-c2",
+      competency: "communication",
+      text: "Explains the benefits and bleeding risk of thrombolysis to his wife in plain words and documents the discussion.",
+      points: 1,
+      teaching: "State the danger, the treatment and the key risk. Emergency treatment can proceed if the patient cannot consent.",
+      source: "peitho",
+    },
+    {
+      id: "pe-d1",
+      competency: "disposition",
+      text: "Admits to ICU with neuro and bleeding checks and a plan for heparin after lysis.",
+      points: 1,
+      teaching: "The first 24 hours after lysis carry the highest bleeding risk. Avoid arterial punctures and IM injections.",
+      source: "tc",
+    },
+    {
+      id: "pe-d2",
+      competency: "disposition",
+      text: "Plans anticoagulation for at least 3 months, considers extended therapy, and arranges follow up for chronic symptoms.",
+      points: 1,
+      teaching: "Unprovoked or weakly provoked PE often warrants extended anticoagulation. Ongoing breathlessness at 3 months needs assessment for CTEPH.",
+      source: "tc",
+    },
+    {
+      id: "pe-l1",
+      competency: "leadership",
+      text: "Coordinates ICU, the PE response team and IR, and gives a structured handover.",
+      points: 1,
+      teaching: "Several teams touch a high risk PE. One physician must hold the plan and hand it over clearly.",
+      source: "esc",
+    },
+  ],
+  sources: [
+    {
+      id: "esc",
+      citation:
+        "Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism developed in collaboration with the European Respiratory Society. European Heart Journal. 2020.",
+    },
+    {
+      id: "peitho",
+      citation:
+        "Meyer G, Vicaut E, Danays T, et al. Fibrinolysis for patients with intermediate risk pulmonary embolism. New England Journal of Medicine. 2014.",
+    },
+    {
+      id: "tc",
+      citation: "Thrombosis Canada. Clinical guide on pulmonary embolism treatment.",
+      url: "https://thrombosiscanada.ca/",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

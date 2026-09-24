@@ -1,0 +1,468 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const exertionalHeatStroke: OralCase = {
+  id: "exertional-heat-stroke",
+  title: "Collapse near the finish line",
+  blueprint: "enviro",
+  alsoCovers: ["resus", "systems"],
+  summary: "A 23 year old runner collapses late in a summer road race and arrives confused and combative.",
+  durationMinutes: 14,
+  stem:
+    "You are working at an urban teaching hospital ED in Ottawa on a hot July morning. The humidex is 38. A half marathon is running nearby. " +
+    "There is an ICU, nephrology on call and plenty of ice from the cafeteria. There is no cooling tub in the department but there is a body bag and a large tarp. " +
+    "Owen Pritchard is 23 years old and weighs 74 kg. He collapsed at kilometre 19. Race medical staff saw him stagger, fall and then fight off help. The race medical tent had no immersion tub. He was driven straight here in 12 minutes. " +
+    "Triage vitals: heart rate 148, blood pressure 94/52, respiratory rate 32, SpO2 96 percent on room air, rectal temperature 41.8 °C, capillary glucose 4.6 mmol/L. GCS 11. CTAS 1. " +
+    "The paramedic says: 'He was swinging at us in the truck. He is hot to touch and still sweating.'",
+  findings: [
+    {
+      id: "exam",
+      label: "Exam",
+      result:
+        "Confused and agitated. GCS 11 (E3 V3 M5). Hot, flushed and sweating. Pupils 4 mm and reactive. No neck stiffness. No focal deficit. " +
+        "Chest clear. No rash. No needle marks. Moves all limbs.",
+    },
+    {
+      id: "collateral",
+      label: "Collateral from his running partner",
+      result:
+        "He trained for this race but had a stomach bug three days ago. He took a caffeine based pre workout powder this morning. No other drugs or alcohol. " +
+        "He drank water and sports drink at every station. No medical history. No medications.",
+    },
+    {
+      id: "lytes",
+      label: "Electrolytes and renal",
+      result: "Sodium 136 mmol/L. Potassium 5.4 mmol/L. Chloride 101 mmol/L. Bicarbonate 16 mmol/L. Creatinine 168 µmol/L. Urea 9.4 mmol/L. Glucose 4.9 mmol/L.",
+    },
+    {
+      id: "gas",
+      label: "Venous blood gas",
+      result: "pH 7.21. pCO2 32 mmHg. HCO3 13 mmol/L. Lactate 6.2 mmol/L.",
+    },
+    {
+      id: "muscle-liver",
+      label: "CK and liver tests",
+      result: "Creatine kinase 4800 U/L. AST 210 U/L. ALT 180 U/L. Bilirubin 22 µmol/L.",
+    },
+    {
+      id: "heme",
+      label: "Blood count and clotting",
+      result: "Hemoglobin 158 g/L. White cells 16.4 x 10^9/L. Platelets 98 x 10^9/L. INR 1.5. Fibrinogen 1.8 g/L.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Sinus tachycardia at 146. Normal intervals. No peaked T waves.",
+    },
+    {
+      id: "urine",
+      label: "Urine",
+      result: "Dark brown urine. Dipstick positive for blood with few red cells on microscopy.",
+    },
+    {
+      id: "tox",
+      label: "Toxicology screen",
+      result: "Acetaminophen and salicylate undetectable. Ethanol undetectable. Urine drug screen negative.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In resus",
+      text:
+        "He is thrashing on the stretcher and pulling at the monitor leads. The nurse has one IV. The resident asks if he should order a CT head and give acetaminophen for the fever.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First minutes",
+      prompt: "What is your diagnosis and what do you do right now?",
+      seconds: 90,
+      modelAnswer: [
+        "Exertional heat stroke: core temperature over 40 °C with CNS dysfunction after exertion.",
+        "Cool first. Immediate cold water immersion. In the ED, a body bag or tarp filled with ice water works.",
+        "Aim for a cooling rate of at least 0.15 °C per minute.",
+        "Continuous rectal temperature.",
+        "Check glucose. Airway support as needed. Do not delay cooling for CT.",
+        "No acetaminophen or NSAIDs. They do not work in heat stroke and can harm the liver or kidneys.",
+      ],
+      rubric: ["hs-a1", "hs-r1", "hs-m1"],
+      choices: [
+        {
+          id: "c-immerse",
+          label: "I put him in a body bag filled with ice water up to the neck, with a rectal probe in place, and held the CT head.",
+          next: "q-ddx",
+          quality: "strong",
+          feedback:
+            "This is the key action. Survival depends on the time above 40 °C. Cold water immersion cools fastest, often at 0.2 °C per minute or more. A body bag or tarp brings immersion to any ED.",
+        },
+        {
+          id: "c-packs",
+          label: "I put ice packs in his groin and armpits, set up a fan and sent him for CT head first.",
+          next: "s-packs",
+          quality: "partial",
+          feedback:
+            "Ice packs and fans cool slowly, often under 0.05 °C per minute. CT delays the only treatment that matters. The examiner wanted immediate immersion.",
+        },
+        {
+          id: "c-tylenol",
+          label: "I gave acetaminophen 1 g and a cooling blanket and planned to reassess in 30 minutes.",
+          next: "s-tylenol",
+          quality: "unsafe",
+          feedback:
+            "Heat stroke is not a fever. The hypothalamic set point is normal so antipyretics do nothing. Acetaminophen adds stress to an injured liver. A cooling blanket is far too slow.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-packs",
+      phase: "Twenty five minutes later",
+      text: "He returns from CT. The scan is normal. His rectal temperature is 41.4 °C. The nurse asks if she can fill the body bag with ice water now. You start immersion.",
+      next: "q-ddx",
+    },
+    {
+      kind: "say",
+      id: "s-tylenol",
+      phase: "Thirty minutes later",
+      text: "His temperature is 41.6 °C. He is less responsive. The charge nurse brings a body bag and six buckets of ice water and asks to start immersion. You agree.",
+      next: "q-ddx",
+    },
+    {
+      kind: "question",
+      id: "q-ddx",
+      phase: "Differential and tests",
+      prompt: "While he cools, what else could this be, and what tests do you want?",
+      seconds: 60,
+      modelAnswer: [
+        "Exercise associated hyponatremia: check sodium before giving fluid.",
+        "Sympathomimetic toxicity from stimulants, serotonin syndrome, NMS, thyroid storm.",
+        "Meningitis or encephalitis. Hypoglycemia. Cardiac arrest or arrhythmia.",
+        "Labs: electrolytes, glucose, gas, lactate, CK, liver tests, CBC, INR, fibrinogen, urinalysis.",
+        "ECG. Toxicology screen as indicated.",
+        "Cautious isotonic fluid, 1 to 2 L, guided by sodium and blood pressure.",
+      ],
+      rubric: ["hs-a2", "hs-m2"],
+      next: "s-seizure",
+    },
+    {
+      kind: "say",
+      id: "s-seizure",
+      phase: "Eight minutes into immersion",
+      text: "His rectal temperature is 40.3 °C. He starts a generalized tonic clonic seizure. His head is being held above the water. SpO2 is 90 percent.",
+      next: "q-seizure",
+    },
+    {
+      kind: "question",
+      id: "q-seizure",
+      phase: "Seizure",
+      prompt: "What do you do?",
+      seconds: 60,
+      modelAnswer: [
+        "Keep cooling. Do not pull him out of the water.",
+        "Support the airway with the head out of the water. Oxygen.",
+        "Midazolam 5 mg IV, or 10 mg IM if no access, repeated once if needed.",
+        "Check glucose.",
+        "Intubate only if the airway cannot be maintained. Avoid succinylcholine with high potassium and rhabdomyolysis.",
+      ],
+      rubric: ["hs-r2"],
+      choices: [
+        {
+          id: "c-midaz",
+          label: "I kept him in the ice water, supported his airway, gave midazolam 5 mg IV and rechecked his glucose.",
+          next: "q-stop",
+          quality: "strong",
+          feedback:
+            "Correct. Seizures are common during heat stroke and cooling. Benzodiazepines stop the seizure and reduce shivering and agitation. Cooling must continue.",
+        },
+        {
+          id: "c-intubate",
+          label: "I pulled him out of the water and did an RSI with succinylcholine.",
+          next: "s-intubate",
+          quality: "partial",
+          feedback:
+            "Airway protection may be needed, but it should not stop cooling. Succinylcholine is risky with a potassium of 5.4 and rhabdomyolysis. Use rocuronium if you must intubate and keep him cooling.",
+        },
+        {
+          id: "c-phenytoin",
+          label: "I loaded phenytoin 20 mg/kg IV as my first drug.",
+          next: "s-phenytoin",
+          quality: "unsafe",
+          feedback:
+            "A benzodiazepine is always first line for an active seizure. Phenytoin takes 20 minutes or more to infuse and can drop blood pressure. It does nothing for the heat.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-intubate",
+      phase: "Ten minutes later",
+      text:
+        "He is intubated on the stretcher. His temperature has climbed back to 41.1 °C. His potassium is now 6.1 mmol/L. The RT and nurses help you put him back in the ice water while ventilated.",
+      next: "q-stop",
+    },
+    {
+      kind: "say",
+      id: "s-phenytoin",
+      phase: "Five minutes later",
+      text: "He is still seizing and his blood pressure is 84/48. The nurse gives midazolam 5 mg IV on your order and the seizure stops.",
+      next: "q-stop",
+    },
+    {
+      kind: "question",
+      id: "q-stop",
+      phase: "When to stop",
+      prompt: "His rectal temperature is falling. When will you stop cooling and why?",
+      seconds: 60,
+      modelAnswer: [
+        "Stop active cooling at about 38.5 to 39 °C. WMS gives 38.3 to 38.8 °C and ACSM about 38.9 °C.",
+        "Remove from the water to avoid overshoot hypothermia.",
+        "Keep monitoring core temperature. Rebound rise is possible.",
+        "Level of consciousness is not a reliable guide. The number is.",
+      ],
+      rubric: ["hs-m4"],
+      choices: [
+        {
+          id: "c-39",
+          label: "I stopped immersion at 38.9 °C, took him out of the water and kept the rectal probe running.",
+          next: "q-labs",
+          quality: "strong",
+          feedback:
+            "Correct. Stopping at about 38.5 to 39 °C avoids overcooling. Continued monitoring catches rebound hyperthermia.",
+        },
+        {
+          id: "c-37",
+          label: "I kept cooling until he reached 37 °C.",
+          next: "s-37",
+          quality: "unsafe",
+          feedback:
+            "Temperature keeps falling after removal from ice water. Cooling to 37 °C risks hypothermia with shivering and arrhythmia. Stop at about 38.5 to 39 °C.",
+        },
+        {
+          id: "c-40",
+          label: "I stopped at 40 °C because he started talking.",
+          next: "s-40",
+          quality: "partial",
+          feedback:
+            "Mental status improves before the core is safe. Stopping at 40 °C leaves him in the injury range. Use a number, not the mental status.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-37",
+      phase: "Twenty minutes later",
+      text: "His rectal temperature is 34.9 °C. He is shivering violently and has runs of atrial fibrillation. You warm him with blankets and forced air.",
+      next: "q-labs",
+    },
+    {
+      kind: "say",
+      id: "s-40",
+      phase: "Fifteen minutes later",
+      text: "His temperature rises back to 40.8 °C and he becomes confused again. You put him back in the ice water and stop at 38.9 °C.",
+      next: "q-labs",
+    },
+    {
+      kind: "question",
+      id: "q-labs",
+      phase: "Complications",
+      prompt: "He is now 38.8 °C and drowsy but protecting his airway. Look at his labs. What complications is he developing and how do you manage them?",
+      seconds: 90,
+      modelAnswer: [
+        "Rhabdomyolysis with pigment in the urine. Acute kidney injury. Isotonic fluid to a urine output of about 1 to 3 mL/kg/h, roughly 100 to 200 mL/h, if lungs and pressure allow. Stop pushing fluid if he stays oliguric.",
+        "Acute liver injury. Liver enzymes often peak 24 to 48 hours later.",
+        "Early DIC: low platelets, raised INR, low fibrinogen.",
+        "Lactic acidosis from shock and seizures.",
+        "Hyperkalemia risk. Repeat potassium and ECG often.",
+        "No dantrolene. It has no proven role in exertional heat stroke.",
+      ],
+      rubric: ["hs-a3", "hs-m5"],
+      next: "s-hyperk",
+    },
+    {
+      kind: "say",
+      id: "s-hyperk",
+      phase: "Two hours later",
+      text:
+        "He has passed only 40 mL of urine in the last hour. Potassium is 6.8 mmol/L. CK is 18 400 U/L. Platelets 61 x 10^9/L. INR 2.1. The ECG now shows peaked T waves and a QRS of 118 ms.",
+      next: "q-hyperk",
+    },
+    {
+      kind: "question",
+      id: "q-hyperk",
+      phase: "Hyperkalemia",
+      prompt: "What do you do now, with doses?",
+      seconds: 90,
+      modelAnswer: [
+        "Calcium to stabilize the membrane: calcium gluconate 10 percent 30 mL IV, or calcium chloride 10 percent 10 mL IV through a good line.",
+        "Shift potassium: regular insulin 10 units IV with 25 g of dextrose IV, and salbutamol 10 to 20 mg nebulized.",
+        "Check glucose at least hourly for 6 hours after insulin. Hypoglycemia is common. Consider sodium bicarbonate for the acidosis.",
+        "Call nephrology now for dialysis. He is oliguric.",
+        "Admit to ICU. Correct coagulopathy only if bleeding or for procedures.",
+      ],
+      rubric: ["hs-r3", "hs-d1"],
+      next: "q-systems",
+    },
+    {
+      kind: "question",
+      id: "q-systems",
+      phase: "Beyond the bedside",
+      prompt: "The race medical director calls. Two more runners are on their way with high temperatures. His parents also arrive. What do you say to each?",
+      seconds: 90,
+      modelAnswer: [
+        "To the race director: cool first, transport second. Immerse on site until 39 °C before transport.",
+        "Advise an immersion tub or tarp and ice at the medical tent, with rectal thermometry.",
+        "Prepare your ED for two more: ice, body bags, staff. Alert the charge nurse.",
+        "To his parents: plain explanation of heat stroke, organ injury and ICU care. Kidney support may be needed.",
+        "Return to activity only after recovery, normal labs and physician clearance with a gradual plan.",
+      ],
+      rubric: ["hs-l1", "hs-c1", "hs-d2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "He goes to the ICU for dialysis. Your team fills two more body bags with ice water. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "hs-a1",
+      competency: "assessment",
+      text: "Diagnoses exertional heat stroke from core temperature over 40 °C with CNS dysfunction after exertion.",
+      points: 2,
+      teaching: "Sweating does not exclude exertional heat stroke. Any confused, hot athlete has heat stroke until proven otherwise.",
+      source: "wms",
+    },
+    {
+      id: "hs-r1",
+      competency: "resuscitation",
+      text: "Starts cold water immersion immediately, improvising with a body bag or tarp, before CT or other tests.",
+      points: 3,
+      critical: true,
+      teaching: "Morbidity depends on time above 40 °C. Immersion cools fastest. Cool first, transport or image second.",
+      source: "acsm",
+    },
+    {
+      id: "hs-m1",
+      competency: "management",
+      text: "Uses continuous rectal temperature and avoids antipyretics.",
+      points: 2,
+      teaching: "Oral, tympanic and axillary readings are unreliable. Antipyretics do not lower temperature in heat stroke.",
+      source: "wms",
+    },
+    {
+      id: "hs-a2",
+      competency: "assessment",
+      text: "Considers hyponatremia, stimulant toxicity, serotonin syndrome, infection and hypoglycemia.",
+      points: 1,
+      teaching: "Exercise associated hyponatremia can look similar. Check sodium before giving large volumes of fluid.",
+      source: "wms",
+    },
+    {
+      id: "hs-m2",
+      competency: "management",
+      text: "Gives cautious isotonic fluid guided by sodium and blood pressure.",
+      points: 1,
+      teaching: "Many patients are only mildly dry and pressure improves with cooling. Large volumes can cause edema.",
+      source: "wms",
+    },
+    {
+      id: "hs-r2",
+      competency: "resuscitation",
+      text: "Treats seizures with a benzodiazepine while continuing immersion.",
+      points: 2,
+      teaching: "Midazolam 5 mg IV or 10 mg IM stops seizures and reduces shivering. Keep the head out of the water and keep cooling.",
+      source: "acsm",
+    },
+    {
+      id: "hs-m4",
+      competency: "management",
+      text: "Stops active cooling at about 38.5 to 39 °C and monitors for overshoot and rebound.",
+      points: 2,
+      teaching: "Temperature continues to fall after removal from ice water. Stop early enough to avoid hypothermia.",
+      source: "wms",
+    },
+    {
+      id: "hs-a3",
+      competency: "assessment",
+      text: "Identifies rhabdomyolysis, acute kidney injury, liver injury and DIC from the labs.",
+      points: 2,
+      teaching: "Heat stroke injures every organ. Labs often worsen over the first 24 to 72 hours.",
+      source: "acsm",
+    },
+    {
+      id: "hs-m5",
+      competency: "management",
+      text: "Treats rhabdomyolysis with fluids to a urine output target and does not give dantrolene.",
+      points: 1,
+      teaching: "Dantrolene has no proven benefit in exertional heat stroke and is still under study. Fluid is the main therapy for pigment nephropathy.",
+      source: "acsm",
+    },
+    {
+      id: "hs-r3",
+      competency: "resuscitation",
+      text: "Treats hyperkalemia with ECG changes using IV calcium, insulin with dextrose and salbutamol, with correct doses.",
+      points: 3,
+      critical: true,
+      teaching: "Calcium protects the heart within minutes. Insulin and salbutamol shift potassium. Only dialysis removes it in oliguric AKI.",
+      source: "ukka",
+    },
+    {
+      id: "hs-d1",
+      competency: "disposition",
+      text: "Involves nephrology for dialysis and admits to ICU.",
+      points: 2,
+      teaching: "Oliguric AKI with rising potassium needs dialysis. Early referral avoids a crisis.",
+      source: "acsm",
+    },
+    {
+      id: "hs-l1",
+      competency: "leadership",
+      text: "Advises the race medical team to cool on site before transport and prepares the ED for more patients.",
+      points: 2,
+      teaching: "Cool first, transport second. On site immersion is the most effective way to prevent death at mass participation events.",
+      source: "acsm",
+    },
+    {
+      id: "hs-c1",
+      competency: "communication",
+      text: "Explains heat stroke and the expected course to his parents in plain words.",
+      points: 1,
+      teaching: "Families need to know the organ injury may worsen before it improves. Be clear about ICU and possible dialysis.",
+      source: "wms",
+    },
+    {
+      id: "hs-d2",
+      competency: "disposition",
+      text: "Plans a gradual, physician cleared return to activity after recovery.",
+      points: 1,
+      teaching: "Return to training should wait until symptoms resolve and labs normalize. A graded return reduces recurrence.",
+      source: "acsm",
+    },
+  ],
+  sources: [
+    {
+      id: "wms",
+      citation:
+        "Eifling KP, Gaudio FG, Dumke C, et al. Wilderness Medical Society Clinical Practice Guidelines for the Prevention and Treatment of Heat Illness. 2024 update. Wilderness and Environmental Medicine. 2024.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/38425235/",
+    },
+    {
+      id: "acsm",
+      citation: "Roberts WO, Armstrong LE, Sawka MN, et al. ACSM expert consensus statement on exertional heat illness. Recognition, management, and return to activity. Current Sports Medicine Reports. 2021.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/34524191/",
+    },
+    {
+      id: "ukka",
+      citation: "UK Kidney Association. Clinical practice guidelines. Treatment of acute hyperkalaemia in adults. 2020.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

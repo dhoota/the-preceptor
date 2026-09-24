@@ -1,0 +1,469 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const drowningCottageLake: OralCase = {
+  id: "drowning-cottage-lake",
+  title: "Two friends from the dock",
+  blueprint: "enviro",
+  alsoCovers: ["resus", "systems"],
+  summary: "Two 19 year olds arrive together from a cottage lake, one unresponsive and one coughing.",
+  durationMinutes: 15,
+  stem:
+    "You are working at a community hospital ED in Huntsville, Ontario, on a July long weekend. There is a respiratory therapist, CT, and a 6 bed ICU. " +
+    "Tertiary referral is through CritiCall Ontario and transport by Ornge. " +
+    "Mateo Sandoval is 19 years old, about 180 cm and 78 kg. At 16:40 he jumped feet first off a dock to swim to a raft after two beers. Friends noticed he was missing about four minutes later and found him face down in 2.5 m of water. " +
+    "A friend with lifeguard training gave rescue breaths and CPR. He had a pulse after about 6 minutes of CPR, before paramedics arrived. " +
+    "On arrival at 17:30: heart rate 124, blood pressure 102/60, SpO2 84 percent with bag valve mask on 15 L, rectal temperature 35.1 °C, capillary glucose 9.2 mmol/L. GCS 6. CTAS 1. " +
+    "His friend Noah, also 19, swam out to help him and is in the waiting room. The paramedic says: 'There is pink froth coming up every time we bag him.'",
+  findings: [
+    {
+      id: "exam",
+      label: "Exam",
+      result:
+        "GCS 6 (E1 V1 M4). Pupils 4 mm and reactive. Pink frothy fluid in the mouth. Coarse crackles in both lungs. Abdomen distended from bagging. " +
+        "No scalp wound or bruising. No step in the spine. Skin cool.",
+    },
+    {
+      id: "witness",
+      label: "Witness account",
+      result:
+        "Noah says Mateo jumped in feet first, not a dive. He did not hit the dock or the bottom. He was a weak swimmer and had two beers. He was underwater for about 4 minutes before they found him.",
+    },
+    {
+      id: "gas",
+      label: "Arterial blood gas after intubation",
+      result: "On FiO2 1.0 and PEEP 8: pH 7.19. pCO2 54 mmHg. pO2 62 mmHg. HCO3 19 mmol/L. Lactate 5.4 mmol/L.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Sodium 139 mmol/L. Potassium 3.8 mmol/L. Creatinine 92 µmol/L. Glucose 10.4 mmol/L. Hemoglobin 151 g/L. White cells 14.2 x 10^9/L. " +
+        "Ethanol 14 mmol/L. High sensitivity troponin T 38 ng/L. CK 310 U/L.",
+    },
+    {
+      id: "cxr",
+      label: "Chest X ray after intubation",
+      result: "Endotracheal tube 4 cm above the carina. Bilateral patchy perihilar airspace opacities. No pneumothorax. Gastric tube in the stomach.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Sinus tachycardia at 118. Normal intervals. No ST elevation.",
+    },
+    {
+      id: "pocus",
+      label: "Bedside ultrasound",
+      result: "Diffuse B lines in both lungs. Lung sliding present on both sides. Left ventricle mildly reduced. No pericardial effusion.",
+    },
+    {
+      id: "noah",
+      label: "Noah's assessment",
+      result:
+        "One hour after the rescue: coughed a lot at the scene, now feels fine. Heart rate 88. Respiratory rate 16. SpO2 97 percent on room air. Temperature 36.6 °C. Chest clear. Alert and walking.",
+    },
+    {
+      id: "parents",
+      label: "Mateo's parents",
+      result: "His parents are driving up from Toronto and will arrive in about two hours. They are on the phone asking to speak to the doctor.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In resus",
+      text: "The paramedic is still bagging. Frothy pink fluid is bubbling around the mask. The RT is at the head of the bed and asks for your plan.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "Airway",
+      prompt: "What are your immediate priorities?",
+      seconds: 90,
+      modelAnswer: [
+        "Hypoxemia is the core problem in drowning. Secure oxygenation and ventilation.",
+        "GCS 6 and SpO2 84 percent: intubate now.",
+        "RSI with a hemodynamically neutral agent such as ketamine 1 to 1.5 mg/kg and rocuronium 1.2 mg/kg.",
+        "Suction ready. Orogastric tube after intubation to decompress the stomach.",
+        "PEEP from the start. Monitor, IV access, glucose and temperature.",
+      ],
+      rubric: ["dr-r1", "dr-a1"],
+      choices: [
+        {
+          id: "c-rsi",
+          label: "I intubated with ketamine 100 mg and rocuronium 100 mg, with suction ready, then placed an orogastric tube and started PEEP.",
+          next: "q-cspine",
+          quality: "strong",
+          feedback:
+            "Correct. Drowning kills through hypoxia. A definitive airway with PEEP is needed for his GCS and oxygenation. Decompressing the stomach improves ventilation and lowers aspiration risk.",
+        },
+        {
+          id: "c-bag",
+          label: "I kept bagging him because his pulse is back and he may wake up soon.",
+          next: "s-bag",
+          quality: "partial",
+          feedback:
+            "He cannot protect his airway at GCS 6 and his SpO2 is 84 percent despite bagging. Continued bagging fills his stomach and raises aspiration risk. He needs intubation with PEEP.",
+        },
+        {
+          id: "c-heimlich",
+          label: "I did abdominal thrusts and tilted him head down to drain water from his lungs.",
+          next: "s-heimlich",
+          quality: "unsafe",
+          feedback:
+            "Abdominal thrusts are not recommended at any point in drowning. They do not remove water from the lungs. They cause vomiting and aspiration and delay ventilation.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-bag",
+      phase: "Ten minutes later",
+      text: "He vomits lake water and beer into the mask. SpO2 falls to 76 percent. The RT suctions and you intubate with ketamine and rocuronium. An orogastric tube drains 600 mL.",
+      next: "q-cspine",
+    },
+    {
+      kind: "say",
+      id: "s-heimlich",
+      phase: "Two minutes later",
+      text: "He vomits a large volume. SpO2 falls to 70 percent. The RT suctions him and you intubate. Thick gastric contents are suctioned from the tube.",
+      next: "q-cspine",
+    },
+    {
+      kind: "question",
+      id: "q-cspine",
+      phase: "Spine",
+      prompt: "The paramedic asks if he should have been on a backboard with a collar. What do you think?",
+      seconds: 60,
+      modelAnswer: [
+        "Routine spinal motion restriction is not needed in drowning.",
+        "Consider it with a mechanism such as diving into shallow water, a fall from height or signs of injury.",
+        "Here the jump was feet first and witnessed, with no head strike.",
+        "Immobilization can delay airway care and worsen ventilation.",
+        "Examine the spine when possible and image if the history changes.",
+      ],
+      rubric: ["dr-a2"],
+      choices: [
+        {
+          id: "c-noimmob",
+          label: "I said no. It was a feet first jump with no head strike, so I did not immobilize but I will image if anything suggests injury.",
+          next: "q-vent",
+          quality: "strong",
+          feedback:
+            "Correct. Cervical spine injury is rare in drowning without a clear mechanism. Immobilization should not delay airway and breathing care.",
+        },
+        {
+          id: "c-immob",
+          label: "I said yes and put him on a backboard with a collar before anything else.",
+          next: "s-immob",
+          quality: "partial",
+          feedback:
+            "Spinal motion restriction is reasonable with a diving injury or signs of trauma. It is not routine and can delay oxygenation. The examiner wanted a decision based on the mechanism.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-immob",
+      phase: "Five minutes later",
+      text: "The collar makes it harder to suction and the RT struggles to keep the tube secure. Noah confirms the jump was feet first. You remove the board and keep the collar only until you can clear him.",
+      next: "q-vent",
+    },
+    {
+      kind: "question",
+      id: "q-vent",
+      phase: "Ventilation",
+      prompt: "The RT asks for ventilator settings. What do you order?",
+      seconds: 60,
+      modelAnswer: [
+        "Lung protective ventilation. Predicted body weight about 75 kg.",
+        "Tidal volume 6 mL/kg, about 450 mL.",
+        "PEEP 8 to 10 cmH2O to start, titrated upward. FiO2 1.0 then wean to SpO2 92 to 96 percent.",
+        "Plateau pressure under 30 cmH2O. Rate 18 to 22 to manage CO2.",
+        "Avoid hyperoxia and hyperventilation after cardiac arrest.",
+      ],
+      rubric: ["dr-m1"],
+      next: "s-hypox",
+    },
+    {
+      kind: "say",
+      id: "s-hypox",
+      phase: "Thirty minutes later",
+      text:
+        "His SpO2 is 82 percent on FiO2 1.0 and PEEP 10. Pink fluid is filling the tube. Plateau pressure 28 cmH2O. Blood pressure 92/54. The chest X ray shows bilateral opacities and the tube is in good position.",
+      next: "q-hypox",
+    },
+    {
+      kind: "question",
+      id: "q-hypox",
+      phase: "Worsening oxygenation",
+      prompt: "What is happening and what do you do?",
+      seconds: 90,
+      modelAnswer: [
+        "Surfactant washout and noncardiogenic pulmonary edema, an ARDS picture.",
+        "Check DOPES: tube position, obstruction, pneumothorax, equipment, stacking.",
+        "Increase PEEP stepwise to 12 to 15 cmH2O. Keep tidal volume at 6 mL/kg.",
+        "Deep sedation and paralysis to improve synchrony.",
+        "Norepinephrine for blood pressure rather than large volumes of fluid.",
+        "Early call to the tertiary ICU about prone positioning and ECMO.",
+      ],
+      rubric: ["dr-r2", "dr-l1"],
+      choices: [
+        {
+          id: "c-peep",
+          label: "I checked DOPES, raised PEEP to 14, paralyzed him, started norepinephrine and called CritiCall about ICU, proning and possible ECMO.",
+          next: "q-other",
+          quality: "strong",
+          feedback:
+            "This is right. Drowning lungs need PEEP to recruit alveoli that lost surfactant. Norepinephrine supports pressure as PEEP rises. Early contact with an ECMO centre is key when oxygenation fails.",
+        },
+        {
+          id: "c-bigtv",
+          label: "I increased the tidal volume to 10 mL/kg to open up his lungs.",
+          next: "s-bigtv",
+          quality: "partial",
+          feedback:
+            "Large tidal volumes injure lungs and raise plateau pressure. Recruitment in drowning comes from PEEP, not volume. Keep 6 mL/kg and plateau under 30.",
+        },
+        {
+          id: "c-lasix",
+          label: "I gave furosemide 40 mg IV for the pulmonary edema.",
+          next: "s-lasix",
+          quality: "unsafe",
+          feedback:
+            "This is not volume overload. Diuretics will drop his blood pressure without fixing the leak or the surfactant loss. The treatment is PEEP and supportive care.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-bigtv",
+      phase: "Ten minutes later",
+      text: "Plateau pressure is 38 cmH2O. SpO2 is 80 percent. Blood pressure is 84/48. The RT asks to go back to 450 mL and raise the PEEP. You agree and start norepinephrine.",
+      next: "q-other",
+    },
+    {
+      kind: "say",
+      id: "s-lasix",
+      phase: "Twenty minutes later",
+      text: "His blood pressure is 76/40. His oxygenation is no better. You start norepinephrine and raise the PEEP to 14. SpO2 improves to 90 percent.",
+      next: "q-other",
+    },
+    {
+      kind: "question",
+      id: "q-other",
+      phase: "Other care",
+      prompt: "The nurse asks about antibiotics for lake water, steroids and warming him up. What do you say?",
+      seconds: 60,
+      modelAnswer: [
+        "No routine antibiotics. Treat only if signs of infection develop, or consider them after grossly contaminated water such as sewage.",
+        "No steroids. They do not help drowning.",
+        "He was resuscitated from arrest. Do not rush to rewarm. Prevent fever for at least 72 hours.",
+        "Check glucose, electrolytes and ethanol. Look for injuries and intoxicants.",
+        "Fresh water and salt water drowning are managed the same way.",
+      ],
+      rubric: ["dr-m2", "dr-m3"],
+      next: "q-friend",
+    },
+    {
+      kind: "question",
+      id: "q-friend",
+      phase: "The second patient",
+      prompt: "Noah wants to go back to the cottage. He coughed a lot at the scene but feels fine now. What do you do?",
+      seconds: 60,
+      modelAnswer: [
+        "He had a submersion event with coughing. Symptoms can start hours later.",
+        "Observe for 4 to 6 hours with repeat vitals, SpO2 and lung exam.",
+        "Discharge if he stays well with normal SpO2 and a clear chest, with a responsible adult.",
+        "Return if cough, breathlessness, chest pain, fever or drowsiness.",
+        "Offer support. He just rescued his friend.",
+      ],
+      rubric: ["dr-d1", "dr-c2"],
+      choices: [
+        {
+          id: "c-observe",
+          label: "I kept him for about 6 hours from the event with repeat vitals and SpO2, then discharged him with a friend and clear return advice.",
+          next: "q-parents",
+          quality: "strong",
+          feedback:
+            "Correct. Most people who deteriorate do so within 4 to 6 hours. A normal exam and SpO2 at that point allow safe discharge.",
+        },
+        {
+          id: "c-xray",
+          label: "I got a chest X ray and discharged him because it was normal.",
+          next: "s-xray",
+          quality: "partial",
+          feedback:
+            "A normal early chest X ray does not rule out delayed deterioration. Observation time with repeat SpO2 and exam is what matters.",
+        },
+        {
+          id: "c-go",
+          label: "I let him go now because he feels fine.",
+          next: "s-go",
+          quality: "unsafe",
+          feedback:
+            "He coughed after a submersion event. Delayed respiratory symptoms can appear hours later. He needs a period of observation before discharge.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-xray",
+      phase: "Three hours later",
+      text: "Noah comes back with a new cough and SpO2 of 92 percent. His chest X ray now shows faint patchy opacities. He is admitted for observation and oxygen.",
+      next: "q-parents",
+    },
+    {
+      kind: "say",
+      id: "s-go",
+      phase: "Three hours later",
+      text: "Noah comes back by ambulance with cough and SpO2 of 91 percent. He is admitted for observation and oxygen.",
+      next: "q-parents",
+    },
+    {
+      kind: "question",
+      id: "q-parents",
+      phase: "Transfer and family",
+      prompt: "Ornge will arrive in 30 minutes. His parents are on the phone. What do you tell them, and what goes in your handover?",
+      seconds: 90,
+      modelAnswer: [
+        "Confirm who you are speaking to. Speak plainly.",
+        "He was under water for about 4 minutes, his heart stopped and was restarted after 6 minutes of CPR.",
+        "His lungs are badly injured and he is on a breathing machine. He is going to a larger ICU.",
+        "It is too early to know about brain recovery. Short submersion and quick CPR are good signs.",
+        "Handover: timeline, submersion and CPR times, airway, ventilator settings, drugs, gas, temperature and plan.",
+      ],
+      rubric: ["dr-c1", "dr-d2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "The Ornge crew takes over and he leaves for the tertiary ICU. Noah is being watched in the department. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "dr-r1",
+      competency: "resuscitation",
+      text: "Intubates promptly for GCS 6 and hypoxemia with suction ready and places an orogastric tube.",
+      points: 3,
+      critical: true,
+      teaching: "Hypoxia drives injury in drowning. Early airway control with PEEP and gastric decompression improves oxygenation.",
+      source: "wms",
+    },
+    {
+      id: "dr-a1",
+      competency: "assessment",
+      text: "Recognizes hypoxemia as the core problem in drowning and avoids manoeuvres to drain water from the lungs.",
+      points: 2,
+      teaching: "Abdominal thrusts and head down positioning do not remove aspirated water. They cause vomiting and delay ventilation.",
+      source: "szpilman",
+    },
+    {
+      id: "dr-a2",
+      competency: "assessment",
+      text: "Decides on spinal motion restriction based on mechanism rather than using it routinely.",
+      points: 1,
+      teaching: "Cervical spine injury in drowning is uncommon without diving, a fall or obvious trauma. Routine immobilization can delay airway care.",
+      source: "wms",
+    },
+    {
+      id: "dr-m1",
+      competency: "management",
+      text: "Sets lung protective ventilation at 6 mL/kg predicted body weight with PEEP and plateau under 30 cmH2O.",
+      points: 2,
+      teaching: "Drowning lungs behave like ARDS. Low tidal volumes protect them. PEEP recruits alveoli.",
+      source: "szpilman",
+    },
+    {
+      id: "dr-r2",
+      competency: "resuscitation",
+      text: "Responds to worsening hypoxemia with a DOPES check, higher PEEP, paralysis and vasopressor support instead of diuretics or large tidal volumes.",
+      points: 3,
+      critical: true,
+      teaching: "Surfactant loss causes the leak. PEEP is the main tool. Diuretics drop pressure without helping.",
+      source: "wms",
+    },
+    {
+      id: "dr-l1",
+      competency: "leadership",
+      text: "Contacts CritiCall early for ICU transfer and discussion of proning and ECMO.",
+      points: 2,
+      teaching: "ECMO centres need time to plan. Call when oxygenation is failing, not after arrest.",
+      source: "szpilman",
+    },
+    {
+      id: "dr-m2",
+      competency: "management",
+      text: "Avoids routine antibiotics and steroids after drowning.",
+      points: 1,
+      teaching: "Neither improves outcomes. Give antibiotics only for signs of infection or grossly contaminated water.",
+      source: "wms",
+    },
+    {
+      id: "dr-m3",
+      competency: "management",
+      text: "Applies post arrest care including fever prevention and glucose and electrolyte checks.",
+      points: 1,
+      teaching: "After ROSC, avoid fever and do not rush to rewarm a mildly cold patient. Check glucose and look for intoxicants.",
+      source: "hsf",
+    },
+    {
+      id: "dr-d1",
+      competency: "disposition",
+      text: "Observes the asymptomatic rescuer for 4 to 6 hours before discharge with clear return advice.",
+      points: 2,
+      critical: true,
+      teaching: "Delayed symptoms appear within hours. An early normal chest X ray is not enough to discharge.",
+      source: "wms",
+    },
+    {
+      id: "dr-c2",
+      competency: "communication",
+      text: "Acknowledges the rescuer's experience and offers support.",
+      points: 1,
+      teaching: "Rescuers are often traumatized. A brief word of support and a follow up resource matter.",
+      source: "szpilman",
+    },
+    {
+      id: "dr-c1",
+      competency: "communication",
+      text: "Gives his parents an honest plain language update that includes prognostic uncertainty.",
+      points: 1,
+      teaching: "Submersion time and time to effective CPR are the main predictors. It is too early to say more in the ED.",
+      source: "szpilman",
+    },
+    {
+      id: "dr-d2",
+      competency: "disposition",
+      text: "Gives a structured handover to the transport team including submersion time, CPR duration and ventilator settings.",
+      points: 1,
+      teaching: "The receiving ICU needs the timeline to judge prognosis. Include drugs, gas results and temperature.",
+      source: "hsf",
+    },
+  ],
+  sources: [
+    {
+      id: "wms",
+      citation:
+        "Davis CA, Schmidt AC, Sempsrott JR, et al. Wilderness Medical Society Clinical Practice Guidelines for the Treatment and Prevention of Drowning. 2024 update. Wilderness and Environmental Medicine. 2024.",
+      url: "https://journals.sagepub.com/doi/10.1177/10806032241227460",
+    },
+    {
+      id: "szpilman",
+      citation: "Szpilman D, Bierens JJ, Handley AJ, Orlowski JP. Drowning. New England Journal of Medicine. 2012.",
+    },
+    {
+      id: "hsf",
+      citation: "Heart and Stroke Foundation of Canada. Guidelines for CPR and emergency cardiovascular care. Post cardiac arrest care.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};
