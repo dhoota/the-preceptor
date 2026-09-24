@@ -17,14 +17,38 @@ export const rupturedEctopicPregnancy: OralCase = {
     { topic: "shock", n: 3 },
   ],
   summary: "A 27 year old woman collapses at work and arrives pale, tachycardic and hypotensive.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working in a 180 bed community hospital emergency department in southern Ontario. " +
-    "The blood bank holds 4 units of O negative red cells and runs a massive hemorrhage protocol. The on call gynecologist is at home, 25 minutes away. " +
-    "Maëlle Tremblay is 27 years old. A coworker found her on the floor of the office washroom. She fainted again when she stood up for the paramedics. " +
-    "Triage vitals: heart rate 128, blood pressure 82/50, respiratory rate 24, SpO2 98 percent on room air, temperature 36.2, capillary glucose 5.6 mmol/L. CTAS 1. " +
-    "The paramedic says: 'She has lower belly pain and pain in her right shoulder. We gave 500 mL of saline. She says her period is a bit late but she is sure she is not pregnant.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "Paramedics bring in a 27 year old woman whom a coworker found on the floor of the office washroom. She fainted again when she stood up. " +
+    "The on call gynecologist is at home, 25 minutes away.",
+  card: {
+    vitals: {
+      temperature: "36.2°C",
+      pulse: "128/minute",
+      resp: "24/minute",
+      bp: "82/50 mmHg",
+      o2sat: "98% on room air",
+      weight: "Not recorded",
+    },
+    medications: "No anticoagulants. Other medications not recorded.",
+    allergies: "No allergies",
+  },
   findings: [
+    {
+      id: "paramedic",
+      label: "Paramedic report",
+      result:
+        "A coworker found her on the floor of the office washroom. She fainted again when she stood up for the paramedics. At triage: capillary glucose 5.6 mmol/L, CTAS 1. " +
+        "The paramedic says: 'She has lower belly pain and pain in her right shoulder. We gave 500 mL of saline. She says her period is a bit late but she is sure she is not pregnant.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 180 bed community hospital in southern Ontario. The blood bank holds 4 units of O negative red cells and runs a massive hemorrhage protocol. " +
+        "The on call gynecologist is at home, 25 minutes away.",
+    },
     {
       id: "history",
       label: "History from the patient",
@@ -104,8 +128,9 @@ export const rupturedEctopicPregnancy: OralCase = {
         "Bedside urine hCG and bedside ultrasound now. Do not send her to radiology.",
         "Start uncrossmatched O negative red cells rather than more crystalloid.",
         "Call the gynecologist in now for the operating room, not for a consult.",
+        "Targeted history while the team works: last period, spotting, the pain and shoulder tip pain, contraception, past pregnancies and STI.",
       ],
-      rubric: ["ec-a1", "ec-a2", "ec-r1", "ec-l1"],
+      rubric: ["ec-h1", "ec-h2", "ec-h3", "ec-a1", "ec-a2", "ec-r1", "ec-l1"],
       choices: [
         {
           id: "c-bedside",
@@ -311,8 +336,9 @@ export const rupturedEctopicPregnancy: OralCase = {
         "If the airway must be secured here, resuscitate first, then use a reduced dose induction agent such as ketamine 0.5 mg/kg.",
         "Full dose paralytic, for example rocuronium 1.2 to 1.6 mg/kg, because onset is slower in shock.",
         "Push dose epinephrine or phenylephrine drawn up. Most experienced operator. Preoxygenate.",
+        "Confirm anticoagulant use, allergies and the last meal for the anesthetist.",
       ],
-      rubric: ["ec-r5"],
+      rubric: ["ec-h4", "ec-r5"],
       next: "q-rh",
     },
     {
@@ -374,9 +400,45 @@ export const rupturedEctopicPregnancy: OralCase = {
   ],
   rubric: [
     {
+      id: "ec-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about her menstrual and pregnancy history: last menstrual period, spotting, contraception and previous pregnancies.",
+      points: 2,
+      teaching: "A late period with 3 days of spotting is an early pregnancy until proven otherwise. A patient's certainty that she is not pregnant does not rule it out.",
+      source: "sogc-ectopic",
+    },
+    {
+      id: "ec-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the pain: sudden onset, site, radiation to the shoulder tip and the faints.",
+      points: 2,
+      teaching: "Shoulder tip pain with syncope points to blood irritating the diaphragm. It means a large hemoperitoneum.",
+      source: "sogc-ectopic",
+    },
+    {
+      id: "ec-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about risk factors for ectopic pregnancy: previous sexually transmitted infection or pelvic inflammatory disease, previous ectopic, tubal surgery and fertility treatment.",
+      points: 2,
+      teaching: "Previous chlamydia raises the risk of tubal pregnancy. Fertility treatment raises the risk of heterotopic pregnancy.",
+      source: "sogc-ectopic",
+    },
+    {
+      id: "ec-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulant use, allergies and the last meal before she goes to the operating room.",
+      points: 1,
+      teaching: "An AMPLE history takes seconds and changes the anesthetic and transfusion plan.",
+      source: "atls",
+    },
+    {
       id: "ec-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Considers ruptured ectopic pregnancy in any woman of reproductive age with syncope, abdominal pain or shock.",
       points: 2,
       teaching: "Patient report of no pregnancy does not rule it out. Every woman of reproductive age with shock or syncope needs an hCG.",
@@ -385,7 +447,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Performs a bedside urine hCG and bedside ultrasound in the resuscitation room rather than sending her to imaging.",
       points: 3,
       critical: true,
@@ -395,7 +457,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "States that free fluid in the right upper quadrant indicates a large hemoperitoneum and that no hCG level rules out rupture.",
       points: 2,
       teaching: "Fluid in Morison pouch in early pregnancy predicts the need for surgery. Ectopic pregnancies rupture at low and high hCG values.",
@@ -404,7 +466,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Obtains two large bore IVs, sends group and crossmatch and starts uncrossmatched O negative red cells early.",
       points: 2,
       teaching: "Start blood as soon as shock is recognized. O negative units protect a woman of childbearing age from Rh sensitization.",
@@ -413,7 +475,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Activates the massive hemorrhage protocol and gives red cells, plasma and platelets in a balanced ratio.",
       points: 3,
       critical: true,
@@ -423,7 +485,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Limits crystalloid and uses a permissive systolic target of about 80 to 90 mmHg until surgical control.",
       points: 2,
       teaching: "Large volume crystalloid and high pressure targets increase bleeding before the vessel is controlled.",
@@ -432,7 +494,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces calcium and fibrinogen during transfusion, for example calcium chloride 1 g IV and fibrinogen above 2 g/L.",
       points: 1,
       teaching: "Citrate in blood products binds calcium. Low ionized calcium worsens clotting and cardiac contractility.",
@@ -441,7 +503,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r5",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids induction in the ED if possible and, if required, resuscitates first and uses a reduced dose induction agent.",
       points: 2,
       teaching: "Induction and positive pressure in hemorrhagic shock can cause arrest. Intubate in the OR with the surgeon ready when you can.",
@@ -450,7 +512,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Moves the patient to the operating room for surgical control without waiting for further imaging.",
       points: 3,
       critical: true,
@@ -460,7 +522,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives Rh immune globulin, for example 300 mcg IM or IV, to an Rh D negative patient with an ectopic pregnancy.",
       points: 2,
       teaching: "Rh D negative patients with an ectopic pregnancy should receive Rh immune globulin within 72 hours to prevent alloimmunization.",
@@ -469,7 +531,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Declines the request for CT respectfully, shares objective findings and asks clearly for the operating room.",
       points: 2,
       teaching: "State the findings, the risk of travel and the specific request. The bedside physician owns the safety of the patient in the department.",
@@ -478,7 +540,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the diagnosis, loss of the pregnancy and fertility outlook to the partner honestly and with compassion.",
       points: 2,
       teaching: "Use plain words and name the loss. Many patients conceive after an ectopic pregnancy, but detail belongs to the surgeon after surgery.",
@@ -487,7 +549,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover to the OR team with products given, labs and ongoing needs.",
       points: 1,
       teaching: "A clear handover keeps the massive hemorrhage protocol running without gaps between teams.",
@@ -496,7 +558,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Respects patient confidentiality when speaking with the partner and checks what the patient wants shared.",
       points: 1,
       teaching: "Pregnancy information belongs to the patient. Share what is needed for her care and what she agrees to share.",
@@ -505,7 +567,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Mobilizes gynecology, anesthesia and the operating room early and in parallel with resuscitation.",
       points: 2,
       teaching: "Call the surgeon, anesthesia and OR together. Each call made in parallel shortens time to hemorrhage control.",
@@ -514,7 +576,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a debrief and identifies system changes, such as early OR notification and a no travel rule for unstable patients.",
       points: 1,
       teaching: "Delays in hemorrhage cases are usually system delays. Debriefs turn them into fixes.",
@@ -523,7 +585,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges direct transfer from the resuscitation room to the operating room with the protocol and monitoring continuing.",
       points: 1,
       teaching: "The patient should go from resus to the OR with blood running and an escort, not through a ward or imaging.",
@@ -544,7 +606,9 @@ export const rupturedEctopicPregnancy: OralCase = {
     },
     {
       id: "cbs-guide",
-      citation: "Canadian Blood Services. Clinical Guide to Transfusion. Chapter on massive hemorrhage and emergency transfusion.",
+      citation:
+        "Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clarke G, Chargé S, editors. Clinical Guide to Transfusion. Chapter 11. Canadian Blood Services. 2021.",
+      url: "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion",
     },
     {
       id: "atls",
@@ -557,10 +621,11 @@ export const rupturedEctopicPregnancy: OralCase = {
     },
     {
       id: "acep-us",
-      citation: "American College of Emergency Physicians. Ultrasound guidelines: emergency, point of care and clinical ultrasound guidelines in medicine.",
+      citation: "American College of Emergency Physicians. Ultrasound Guidelines: Emergency, Point-of-Care, and Clinical Ultrasound Guidelines in Medicine. Annals of Emergency Medicine. 2023.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/37596025/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

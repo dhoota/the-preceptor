@@ -17,14 +17,37 @@ export const sexualAssaultCare: OralCase = {
     { topic: "suicide-risk", n: 1 },
   ],
   summary: "A young woman asks for emergency contraception and says she does not want to talk about what happened.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working an evening shift at a 350 bed hospital in Ontario. The hospital hosts a Sexual Assault and Domestic Violence Treatment Centre. The on call sexual assault nurse examiner can be in within 45 minutes. " +
-    "Kiara Beaudoin is 22 years old. She arrives with a friend at 23:00. " +
-    "Triage vitals: heart rate 96, blood pressure 124/78, respiratory rate 16, SpO2 99 percent on room air, temperature 36.8. She weighs 82 kg. CTAS 3. " +
-    "The triage nurse says: 'She says she was at a party last night and woke up this morning in an apartment she did not know. She thinks she had sex but does not remember. " +
-    "She only wants the morning after pill. She does not want the police. Her voice sounds hoarse.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It is 23:00. A 22 year old woman arrives with a friend and asks only for the morning after pill. Her voice sounds hoarse. " +
+    "The hospital hosts a Sexual Assault and Domestic Violence Treatment Centre.",
+  card: {
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "96/minute",
+      resp: "16/minute",
+      bp: "124/78 mmHg",
+      o2sat: "99% on room air",
+      weight: "82 kg (181 lb)",
+    },
+    medications: "No contraception. Other medications not recorded.",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "triage",
+      label: "Triage note",
+      result:
+        "CTAS 3. The triage nurse says: 'She says she was at a party last night and woke up this morning in an apartment she did not know. She thinks she had sex but does not remember. " +
+        "She only wants the morning after pill. She does not want the police. Her voice sounds hoarse.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 350 bed hospital in Ontario. It hosts a Sexual Assault and Domestic Violence Treatment Centre. The on call sexual assault nurse examiner can be in within 45 minutes.",
+    },
     {
       id: "history",
       label: "History, with her permission",
@@ -101,8 +124,9 @@ export const sexualAssaultCare: OralCase = {
         "Offer the sexual assault nurse examiner and explain the services available without pressure.",
         "Ask her not to void or wash if possible, and if she must void, collect the urine because drug facilitated assault is possible.",
         "Only ask what is needed for care. She does not have to give a detailed account.",
+        "Focused history with permission: timing, loss of consciousness, neck compression, condom use, alcohol and drugs.",
       ],
-      rubric: ["sa-p1", "sa-a1", "sa-c1"],
+      rubric: ["sa-h1", "sa-h4", "sa-p1", "sa-a1", "sa-c1"],
       choices: [
         {
           id: "c-trauma",
@@ -202,8 +226,9 @@ export const sexualAssaultCare: OralCase = {
         "Ulipristal acetate 30 mg PO once, effective up to 120 hours. Preferred oral option here.",
         "Levonorgestrel 1.5 mg is less effective after 72 hours. The Canadian label warns it is less effective above 75 kg and may not work above 80 kg. She weighs 82 kg.",
         "Delay starting hormonal contraception for 5 days after ulipristal.",
+        "Confirm her last menstrual period, cycle length, current contraception and pregnancy test first.",
       ],
-      rubric: ["sa-m2"],
+      rubric: ["sa-h2", "sa-m2"],
       choices: [
         {
           id: "c-upa",
@@ -262,7 +287,7 @@ export const sexualAssaultCare: OralCase = {
         "Baseline HIV, hepatitis B serology, hepatitis C, syphilis, creatinine and pregnancy test.",
         "Hepatitis B: she has immunity with anti HBs over 10 IU/L. Tetanus booster for clean abrasions only if more than 10 years since the last dose. Hers was 8 years ago, so none is needed.",
       ],
-      rubric: ["sa-m3", "sa-m4"],
+      rubric: ["sa-h3", "sa-m3", "sa-m4"],
       next: "q-evidence",
     },
     {
@@ -382,9 +407,45 @@ export const sexualAssaultCare: OralCase = {
   ],
   rubric: [
     {
+      id: "sa-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "With her permission, asks only what care needs: the time of the assault, type of contact, condom use, loss of consciousness and any pressure on her neck.",
+      points: 2,
+      teaching: "The time since the assault sets the windows for contraception, PEP and evidence collection. A disclosure of neck compression with blackout changes the work up.",
+      source: "ontario-network",
+    },
+    {
+      id: "sa-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about her last menstrual period, cycle length, contraception and previous pregnancies before choosing emergency contraception.",
+      points: 2,
+      teaching: "Day 13 of a regular 28 day cycle with no contraception is the highest risk time. It makes the most effective method worth offering.",
+      source: "sogc-ec",
+    },
+    {
+      id: "sa-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about hepatitis B and tetanus immunization before planning prophylaxis.",
+      points: 1,
+      teaching: "Immunization history, confirmed by serology, decides whether hepatitis B vaccine or immune globulin and a tetanus booster are needed.",
+      source: "hiv-pep",
+    },
+    {
+      id: "sa-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about alcohol and drug use, the memory gap and whether she has voided or washed, because drug facilitated assault is possible.",
+      points: 1,
+      teaching: "Amnesia after two drinks suggests a drug facilitated assault. Early urine collection preserves toxicology evidence.",
+      source: "ontario-network",
+    },
+    {
       id: "sa-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Screens for injuries first, including strangulation, head injury and intoxication.",
       points: 2,
       teaching: "Medical stability comes before forensic care. Ask directly about strangulation because patients may not volunteer it.",
@@ -393,7 +454,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes non fatal strangulation with loss of consciousness, petechiae and voice change as high risk.",
       points: 2,
       teaching: "Strangulation can cause arterial dissection and delayed airway swelling even with minimal external marks.",
@@ -402,7 +463,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-a3",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Screens for suicidal thoughts and ongoing safety before discharge.",
       points: 1,
       teaching: "Sexual assault raises the risk of depression, PTSD and suicide. Ask directly and plan where she will stay.",
@@ -411,7 +472,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-m1",
       competency: "management",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders CT angiography of the head and neck after strangulation with loss of consciousness.",
       points: 3,
       critical: true,
@@ -421,7 +482,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Offers a copper IUD and ulipristal 30 mg PO as emergency contraception within 120 hours.",
       points: 3,
       critical: true,
@@ -431,7 +492,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Offers gonorrhea, chlamydia and trichomonas prophylaxis, for example ceftriaxone 500 mg IM and doxycycline 100 mg twice daily for 7 days.",
       points: 2,
       teaching: "Canadian guidance now recommends ceftriaxone 500 mg IM for gonorrhea. Add chlamydia coverage if it has not been excluded.",
@@ -440,7 +501,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Offers HIV post exposure prophylaxis within 72 hours with a three drug regimen for 28 days and baseline testing.",
       points: 2,
       teaching: "PEP works best when started early and no later than 72 hours. Give a starter pack and arrange follow up.",
@@ -449,7 +510,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Uses a trauma informed approach: privacy, explanation, permission and control over each step.",
       points: 2,
       teaching: "Giving the patient choices at every step counters the loss of control that defines an assault.",
@@ -458,7 +519,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the evidence kit clearly, including the time window of about 12 days and the option of storage without a police report.",
       points: 2,
       teaching: "Patients can have evidence collected and stored while they decide. Care does not depend on reporting.",
@@ -467,7 +528,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Responds to the police officer politely, offers to pass on a message and documents the request.",
       points: 1,
       teaching: "You can be helpful without disclosing. Ask the patient if she wants to meet the officer.",
@@ -476,7 +537,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents objectively with her words in quotes, a body diagram and no legal conclusions.",
       points: 1,
       teaching: "Clinical notes may be used in court. Describe what you saw and heard. Do not state whether an assault occurred.",
@@ -485,7 +546,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Offers the sexual assault nurse examiner and treatment centre services without pressure.",
       points: 1,
       teaching: "Specialized centres provide medical, forensic and counselling care. Offer them as options.",
@@ -494,7 +555,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "States that there is no mandatory reporting of sexual assault of a capable adult in Ontario.",
       points: 2,
       teaching: "Reporting duties exist for a child in need of protection, not for a capable adult. The decision to report is hers.",
@@ -503,7 +564,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Refuses to disclose health information to police without consent, a warrant or a court order.",
       points: 3,
       critical: true,
@@ -513,7 +574,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges follow up at the treatment centre with repeat testing, PEP review, return precautions and crisis resources.",
       points: 2,
       teaching: "Follow up covers PEP adherence, repeat HIV and syphilis testing, pregnancy testing and mental health support.",
@@ -523,8 +584,8 @@ export const sexualAssaultCare: OralCase = {
   sources: [
     {
       id: "ontario-network",
-      citation: "Ontario Network of Sexual Assault and Domestic Violence Treatment Centres. Guidance on care and evidence collection after sexual assault.",
-      url: "https://www.sadvtreatmentcentres.ca/",
+      citation: "Ontario Network of Sexual Assault/Domestic Violence Treatment Centres. Standards of Care. Second edition. 2019.",
+      url: "https://www.sadvtreatmentcentres.ca/assets/resource_library/public/Standards%20of%20Care%20-%202019.pdf",
     },
     {
       id: "phac-gc",
@@ -538,11 +599,15 @@ export const sexualAssaultCare: OralCase = {
     },
     {
       id: "sogc-ec",
-      citation: "Society of Obstetricians and Gynaecologists of Canada. Clinical practice guideline on emergency contraception.",
+      citation:
+        "Black A, Guilbert E, et al. Society of Obstetricians and Gynaecologists of Canada. Canadian Contraception Consensus Chapter 3: Emergency Contraception. Journal of Obstetrics and Gynaecology Canada. 2015.",
+      url: "https://doi.org/10.1016/S1701-2163(16)39372-0",
     },
     {
       id: "strangulation",
-      citation: "Training Institute on Strangulation Prevention. Recommendations for the medical and radiographic evaluation of acute adult non fatal strangulation.",
+      citation:
+        "Training Institute on Strangulation Prevention, Medical Advisory Board. Recommendations for the Medical/Radiographic Evaluation of Acute Adult Non/Near Fatal Strangulation. 2022.",
+      url: "https://www.allianceforhope.org/training-institute-on-strangulation-prevention/resources/recommendations-for-the-medicalradiographic-evaluation-of-acute-adult-nonnear-fatal-strangulation",
     },
     {
       id: "phipa",
@@ -550,7 +615,7 @@ export const sexualAssaultCare: OralCase = {
       url: "https://www.ontario.ca/laws/statute/04p03",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -17,14 +17,44 @@ export const calciumChannelBlockerOverdose: OralCase = {
     { topic: "shock", n: 8 },
   ],
   summary: "A 58 year old woman is brought in dizzy and hypotensive after taking tablets during an argument.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in a 250 bed community hospital in Ontario with a 10 bed ICU and a cardiologist on call. There is no ECMO. The nearest ECMO centre is 90 minutes away by land and 40 minutes by Ornge helicopter. " +
-    "Linda Kowalczyk is 58 years old and weighs 72 kg. Her husband found her with an empty bottle of verapamil SR 240 mg tablets about 2 hours after an argument. " +
-    "He thinks the bottle had about 25 tablets left. " +
-    "Triage vitals: heart rate 42, blood pressure 74/40, respiratory rate 18, SpO2 97 percent on room air, temperature 36.5, capillary glucose 16.8 mmol/L. GCS 15. CTAS 1. " +
-    "The nurse says: 'She is awake but pale. She says she feels like she will faint when she sits up. She is not diabetic.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 58 year old woman is brought in after her husband found her with an empty bottle of her verapamil tablets. She feels faint when she sits up. " +
+    "There is no ECMO on site. The nearest ECMO centre is 90 minutes away by land.",
+  card: {
+    vitals: {
+      temperature: "36.5°C",
+      pulse: "42/minute",
+      resp: "18/minute",
+      bp: "74/40 mmHg",
+      o2sat: "97% on room air",
+      weight: "72 kg (159 lb)",
+    },
+    medications: "Verapamil SR 240 mg daily. Escitalopram 10 mg daily.",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "Her husband found her with an empty bottle of verapamil SR 240 mg tablets about 2 hours after an argument. He thinks the bottle had about 25 tablets left. " +
+        "She says she feels like she will faint when she sits up. At triage: capillary glucose 16.8 mmol/L, GCS 15, CTAS 1. " +
+        "The nurse says: 'She is awake but pale. She is not diabetic.'",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "Hypertension treated with verapamil. Low mood, seen by her family doctor this year. She is not diabetic.",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 250 bed community hospital in Ontario with a 10 bed ICU and a cardiologist on call. No ECMO. " +
+        "The nearest ECMO centre is 90 minutes away by land and 40 minutes by Ornge helicopter.",
+    },
     {
       id: "ecg",
       label: "ECG",
@@ -94,8 +124,9 @@ export const calciumChannelBlockerOverdose: OralCase = {
         "Calcium chloride 1 g IV (10 mL of 10 percent) or calcium gluconate 3 g (30 mL of 10 percent). Repeat every 10 to 20 minutes or start an infusion.",
         "Atropine 1 mg IV for bradycardia, though it often fails.",
         "Start high dose insulin early and a vasopressor for ongoing shock. Avoid intubation before hemodynamic support.",
+        "Asks the husband for the product, tablet count and time, other medications, intent and whether she has diabetes.",
       ],
-      rubric: ["ccb-a1", "ccb-r1", "ccb-m1"],
+      rubric: ["ccb-h1", "ccb-h2", "ccb-h4", "ccb-a1", "ccb-r1", "ccb-m1"],
       choices: [
         {
           id: "c-resus",
@@ -343,7 +374,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
         "Glucose checks every 15 to 30 minutes in transit. Dextrose must not stop.",
         "Intentional overdose. She will need a psychiatric assessment when medically able. Hold under the Mental Health Act if needed.",
       ],
-      rubric: ["ccb-c2", "ccb-d2"],
+      rubric: ["ccb-h3", "ccb-c2", "ccb-d2"],
       next: "end",
     },
     {
@@ -354,9 +385,45 @@ export const calciumChannelBlockerOverdose: OralCase = {
   ],
   rubric: [
     {
+      id: "ccb-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the ingestion: the product and formulation, the number of tablets and the time taken. Sustained release verapamil 240 mg, about 25 tablets, about 2 hours ago.",
+      points: 2,
+      teaching: "The dose, the formulation and the time set the expected course. About 6 g of a sustained release product means shock that can worsen for many hours.",
+      source: "st-onge",
+    },
+    {
+      id: "ccb-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about other medications and co-ingestants in the home, including beta blockers, digoxin, acetaminophen, salicylate, alcohol and her escitalopram.",
+      points: 2,
+      teaching: "Co-ingestants change the treatment. Escitalopram matters later because methylene blue can cause serotonin toxicity.",
+      source: "goldfrank",
+    },
+    {
+      id: "ccb-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about intent, previous attempts and her mood history from her husband.",
+      points: 2,
+      teaching: "An intentional overdose needs a suicide risk history. Collateral from family is often the best source when the patient is critically ill.",
+      source: "goldfrank",
+    },
+    {
+      id: "ccb-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks whether she has diabetes before interpreting the glucose of 16.8 mmol/L.",
+      points: 1,
+      teaching: "Hyperglycemia in a patient without diabetes points to calcium channel blockade of insulin release and marks a severe poisoning.",
+      source: "st-onge",
+    },
+    {
       id: "ccb-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes a severe sustained release verapamil overdose with delayed and prolonged toxicity.",
       points: 2,
       teaching: "Sustained release products can cause worsening shock many hours after ingestion. Plan for deterioration.",
@@ -365,7 +432,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses hyperglycemia and bedside echo to judge severity and the type of shock.",
       points: 2,
       teaching: "Hyperglycemia reflects blocked insulin release and correlates with severity. Echo separates vasodilation from pump failure.",
@@ -374,7 +441,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives calcium early, for example calcium chloride 1 g IV or calcium gluconate 3 g, repeated or as an infusion.",
       points: 2,
       teaching: "Calcium can partly overcome channel blockade. It is a first step, not the whole treatment.",
@@ -383,7 +450,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts norepinephrine for vasodilatory shock and adds epinephrine for poor contractility.",
       points: 2,
       teaching: "The consensus recommends vasopressors for shock alongside high dose insulin. Choose by echo findings.",
@@ -392,7 +459,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates only after hemodynamic support, with reduced dose induction and push dose vasopressor ready.",
       points: 3,
       critical: true,
@@ -402,7 +469,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Consults the poison centre early.",
       points: 1,
       teaching: "Poison centres help with doses, rescue therapies and escalation. Call early in a severe overdose.",
@@ -411,7 +478,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives activated charcoal 50 g and considers whole bowel irrigation for a sustained release product when safe.",
       points: 1,
       teaching: "Decontamination can reduce ongoing absorption from sustained release tablets. Airway protection and bowel function must be adequate.",
@@ -420,7 +487,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives high dose insulin as a 1 unit/kg bolus and 1 unit/kg/h infusion titrated up to 10 units/kg/h with dextrose.",
       points: 3,
       critical: true,
@@ -430,7 +497,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Monitors glucose every 15 to 30 minutes and potassium closely during high dose insulin.",
       points: 2,
       teaching: "Hypoglycemia is the main complication. Potassium falls from intracellular shift and needs replacement only when low.",
@@ -439,7 +506,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Refers early for VA ECMO when shock is refractory to maximal therapy.",
       points: 3,
       critical: true,
@@ -449,7 +516,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Plans psychiatric assessment after medical recovery and uses the Mental Health Act if needed.",
       points: 1,
       teaching: "An intentional overdose needs a mental health assessment before discharge from hospital.",
@@ -458,7 +525,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks honestly with the husband about the risk of death and addresses his guilt.",
       points: 1,
       teaching: "Family members often blame themselves. Name the feeling and reassure them without false promises.",
@@ -467,7 +534,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover with doses, rates, trends and the need for ongoing dextrose and glucose checks.",
       points: 1,
       teaching: "Stopping dextrose during transport while insulin runs can be fatal. Make it explicit.",
@@ -476,7 +543,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Offers social work support to the husband and checks on his wellbeing.",
       points: 1,
       teaching: "Family members of overdose patients are under great stress. A brief check on their support is good care.",
@@ -500,7 +567,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
       citation: "Nelson LS, et al, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw Hill. 2019.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

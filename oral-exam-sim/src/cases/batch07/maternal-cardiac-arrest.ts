@@ -17,14 +17,37 @@ export const maternalCardiacArrest: OralCase = {
     { topic: "arrhythmia", n: 8 },
   ],
   summary: "A woman in her third trimester arrives short of breath and faints at triage.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 300 bed urban community hospital in Ontario. The hospital has a labour and delivery unit, an in house obstetrician and anesthetist, and a level 2 nursery. There is no cardiac surgery or ECMO. " +
-    "Amara Nwosu is 38 years old and 33 weeks pregnant with her second baby. She weighs 96 kg. " +
-    "She has had 3 days of shortness of breath and right calf pain after a 14 hour car trip. She fainted in the triage line. " +
-    "Vitals: heart rate 138, blood pressure 84/56, respiratory rate 32, SpO2 86 percent on room air, temperature 37.2. CTAS 1. " +
-    "The triage nurse says: 'She was grey and sweaty when she went down. She is awake now but says she feels like she is dying.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 38 year old woman who is 33 weeks pregnant with her second baby arrives short of breath and faints in the triage line. " +
+    "There is an in house obstetrician and anesthetist. There is no cardiac surgery or ECMO.",
+  card: {
+    vitals: {
+      temperature: "37.2°C",
+      pulse: "138/minute",
+      resp: "32/minute",
+      bp: "84/56 mmHg",
+      o2sat: "86% on room air",
+      weight: "96 kg (212 lb)",
+    },
+    medications: "No anticoagulants. Other medications not recorded.",
+    allergies: "No allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "She has had 3 days of shortness of breath and right calf pain after a 14 hour car trip. She fainted in the triage line. CTAS 1. " +
+        "The triage nurse says: 'She was grey and sweaty when she went down. She is awake now but says she feels like she is dying.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 300 bed urban community hospital in Ontario. It has a labour and delivery unit, an in house obstetrician and anesthetist, and a level 2 nursery. There is no cardiac surgery or ECMO.",
+    },
     {
       id: "exam",
       label: "Initial exam",
@@ -96,8 +119,9 @@ export const maternalCardiacArrest: OralCase = {
         "Call obstetrics, anesthesia and the neonatal team now. Get the hysterotomy kit and neonatal warmer to the room.",
         "Start unfractionated heparin 80 units/kg IV bolus, about 7700 units for 96 kg, if no contraindication. It keeps thrombolysis and surgery options open.",
         "Anticipate arrest. Plan thrombolysis if she deteriorates.",
+        "Brief history while the teams gather: onset of dyspnea, calf pain, the long car trip, the faint, past VTE and family history.",
       ],
-      rubric: ["mca-a1", "mca-r1", "mca-l1"],
+      rubric: ["mca-h1", "mca-h2", "mca-a1", "mca-r1", "mca-l1"],
       choices: [
         {
           id: "c-prepare",
@@ -280,8 +304,9 @@ export const maternalCardiacArrest: OralCase = {
         "If she arrests again, give alteplase 50 mg IV as a bolus and continue CPR for at least 60 to 90 minutes.",
         "Activate the massive hemorrhage protocol in advance. Uterotonics for tone.",
         "Catheter directed therapy, surgical embolectomy and ECMO are not available here. Call CritiCall in parallel.",
+        "Uses the bleeding history already gathered: no anticoagulants, an uncomplicated first pregnancy and no allergies.",
       ],
-      rubric: ["mca-a2", "mca-m2", "mca-c1"],
+      rubric: ["mca-h3", "mca-a2", "mca-m2", "mca-c1"],
       choices: [
         {
           id: "c-lyse",
@@ -409,9 +434,36 @@ export const maternalCardiacArrest: OralCase = {
   ],
   rubric: [
     {
+      id: "mca-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the onset and course: 3 days of shortness of breath, right calf pain after a 14 hour car trip, and the faint at triage.",
+      points: 2,
+      teaching: "Syncope with dyspnea and a painful swollen leg after prolonged travel is massive PE until proven otherwise. Pregnancy raises the risk further.",
+      source: "esc-pe",
+    },
+    {
+      id: "mca-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about previous VTE and family history of clots. Her mother had a PE after a hip replacement.",
+      points: 2,
+      teaching: "A family history of VTE raises the pretest probability and may point to an inherited thrombophilia.",
+      source: "esc-pe",
+    },
+    {
+      id: "mca-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulant use, bleeding risks, the course of this and her last pregnancy, and allergies before heparin and thrombolysis.",
+      points: 2,
+      teaching: "A short targeted history of bleeding risk before an arrest makes the later thrombolysis decision faster and safer.",
+      source: "esc-pe",
+    },
+    {
       id: "mca-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies massive PE from the history, calf swelling, ECG and right ventricular strain on bedside echo.",
       points: 2,
       teaching: "Pregnancy increases VTE risk several fold. Bedside echo showing RV dilation in a hypotensive patient supports treating as massive PE.",
@@ -420,7 +472,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Recognizes the post ROSC echo findings of RV failure and clot in transit as an indication for reperfusion.",
       points: 1,
       teaching: "A clot in the right heart with shock carries very high mortality. Reperfusion should not wait for CT.",
@@ -429,7 +481,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses left uterine displacement and places IV access above the diaphragm.",
       points: 2,
       teaching: "Aortocaval compression can reduce cardiac output sharply after 20 weeks. Drugs given below the diaphragm may not reach the heart.",
@@ -438,7 +490,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs standard ACLS with unchanged drug doses and continuous manual left uterine displacement.",
       points: 2,
       teaching: "Epinephrine 1 mg every 3 to 5 minutes and standard defibrillation energies apply in pregnancy. Manual displacement beats a tilt.",
@@ -447,7 +499,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Assigns the airway to the most experienced operator and anticipates a difficult airway.",
       points: 1,
       teaching: "Pregnancy causes airway edema, faster desaturation and aspiration risk. Use a smaller tube and have a supraglottic backup.",
@@ -456,7 +508,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Sets post ROSC targets for oxygenation, ventilation and blood pressure, and avoids fever.",
       points: 1,
       teaching: "Target SpO2 92 to 98 percent, normal PaCO2 and MAP at least 65. Avoid hyperthermia after arrest.",
@@ -465,7 +517,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs resuscitative hysterotomy at the arrest site when there is no ROSC by 4 minutes, aiming for delivery by 5 minutes.",
       points: 3,
       critical: true,
@@ -475,7 +527,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives systemic thrombolysis for massive PE with arrest despite recent hysterotomy, with a bleeding plan in place.",
       points: 3,
       critical: true,
@@ -485,7 +537,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Manages post lysis bleeding with surgical control, massive hemorrhage protocol, fibrinogen replacement and uterotonics.",
       points: 2,
       teaching: "Fibrinogen falls after alteplase. Replace to above 2 g/L and let obstetrics control the uterus.",
@@ -494,7 +546,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Makes a rapid shared decision with obstetrics and anesthesia about thrombolysis.",
       points: 1,
       teaching: "A 60 second huddle aligns the team on risk and prepares everyone for bleeding.",
@@ -503,7 +555,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Informs the husband compassionately and clearly, and arranges care for the child.",
       points: 2,
       teaching: "Use a private room, a warning shot and plain facts. Make sure a child is not left alone or in the resuscitation room.",
@@ -512,7 +564,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents key times and the reasoning for hysterotomy and thrombolysis.",
       points: 1,
       teaching: "Accurate times support the care team and quality review. Record who was present and the decisions made.",
@@ -521,7 +573,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Keeps the family updated about both mother and newborn and offers spiritual and social support.",
       points: 1,
       teaching: "The family now has two critically ill patients to worry about. Coordinate updates from both teams.",
@@ -530,7 +582,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Activates the obstetric, anesthesia and neonatal teams before the arrest and prepares the hysterotomy kit.",
       points: 3,
       critical: true,
@@ -540,7 +592,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a team debrief, supports staff and plans simulation.",
       points: 1,
       teaching: "Maternal arrest is rare and stressful. Debriefs and simulation improve readiness and team wellbeing.",
@@ -549,7 +601,7 @@ export const maternalCardiacArrest: OralCase = {
     {
       id: "mca-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges ICU care and early discussion with a tertiary centre about ECMO or embolectomy, without transferring an unstable bleeding patient.",
       points: 2,
       teaching: "Advanced PE therapies are regional resources. Call early, but stabilize bleeding before transport.",
@@ -574,7 +626,7 @@ export const maternalCardiacArrest: OralCase = {
       url: "https://doi.org/10.1093/eurheartj/ehz405",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

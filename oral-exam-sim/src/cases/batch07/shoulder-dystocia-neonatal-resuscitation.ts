@@ -15,14 +15,39 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     { topic: "multiple-patients", n: 3 },
   ],
   summary: "A woman in active labour arrives at a small rural emergency department with no obstetric service.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the only physician in a 12 bed rural hospital in northwestern Ontario. There is no obstetric service. The nearest birthing unit is 95 km away. " +
-    "You have two nurses, a neonatal resuscitation cart with a radiant warmer, bag and mask, laryngeal mask airway size 1, umbilical catheter kit and a pulse oximeter. A second physician is on call from home, 20 minutes away. " +
-    "Destiny Keeshig is 31 years old, G4P3, at 39 weeks. She has gestational diabetes treated with insulin. An ultrasound 2 weeks ago estimated the baby at 4.2 kg. " +
-    "Her contractions started 90 minutes ago and she was driving to the birthing unit when her waters broke. " +
-    "Vitals: heart rate 104, blood pressure 132/84, respiratory rate 22, temperature 37.1. The nurse says: 'She says she has to push. I can see the head.'",
+    "You are working in the emergency department of a rural hospital when the following patient arrives. " +
+    "A 31 year old woman at 39 weeks in labour with her fourth baby says she has to push. " +
+    "You are the only physician. There is no obstetric service. The nearest birthing unit is 95 km away.",
+  card: {
+    vitals: {
+      temperature: "37.1°C",
+      pulse: "104/minute",
+      resp: "22/minute",
+      bp: "132/84 mmHg",
+      o2sat: "Not recorded",
+      weight: "Not recorded",
+    },
+    medications: "Insulin for gestational diabetes",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "She is G4P3 at 39 weeks. Her contractions started 90 minutes ago and she was driving to the birthing unit when her waters broke. " +
+        "She has gestational diabetes treated with insulin. An ultrasound 2 weeks ago estimated the baby at 4.2 kg. " +
+        "The nurse says: 'She says she has to push. I can see the head.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 12 bed rural hospital in northwestern Ontario with two nurses on shift. There is a neonatal resuscitation cart with a radiant warmer, bag and mask, laryngeal mask airway size 1, umbilical catheter kit and a pulse oximeter. " +
+        "A second physician is on call from home, 20 minutes away.",
+    },
     {
       id: "maternal-exam",
       label: "Maternal exam",
@@ -95,8 +120,9 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
         "Radiant warmer on, warm towels, hat, bag and mask with correct size, suction, oximeter and ECG leads.",
         "Oxytocin 10 IU IM drawn up for the third stage.",
         "Position the mother at the end of the bed so manoeuvres are possible.",
+        "Quick history: onset of labour, membranes and fluid, gestational diabetes and insulin, estimated fetal weight, group B strep, and past birth weights and shoulders.",
       ],
-      rubric: ["sd-l1", "sd-a1"],
+      rubric: ["sd-h1", "sd-h2", "sd-h3", "sd-l1", "sd-a1"],
       next: "s-turtle",
     },
     {
@@ -383,7 +409,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
         "Avoid hyperthermia. Passive cooling only under direction of the neonatal team with core temperature monitoring.",
         "Note the limp right arm as a likely brachial plexus injury. Check the clavicle and humerus.",
       ],
-      rubric: ["sd-a3", "sd-m5", "sd-d1"],
+      rubric: ["sd-a4", "sd-a3", "sd-m5", "sd-d1"],
       choices: [
         {
           id: "c-cool",
@@ -453,9 +479,45 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
   ],
   rubric: [
     {
+      id: "sd-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the labour: when contractions started, when the membranes ruptured, the colour of the fluid and the urge to push.",
+      points: 2,
+      teaching: "A fast fourth labour with an urge to push means delivery will happen here. Prepare for mother and baby now rather than plan a transfer.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about this pregnancy: gestational age, gestational diabetes and insulin, the estimated fetal weight, group B strep status and blood group.",
+      points: 3,
+      teaching: "Insulin treated gestational diabetes and an estimated weight over 4 kg raise the risk of shoulder dystocia and neonatal hypoglycemia.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about previous births: how many, the birth weights and any difficulty delivering the shoulders.",
+      points: 2,
+      teaching: "A previous shoulder dystocia is one of the strongest risk factors for another one.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-a4",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines the newborn for birth injury after the dystocia: a limp arm from brachial plexus injury and fractures of the clavicle or humerus.",
+      points: 1,
+      teaching: "Brachial plexus injury is the most common neonatal injury after shoulder dystocia. Document the arm exam before transfer.",
+      source: "rcog-sd",
+    },
+    {
       id: "sd-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Identifies risk factors for shoulder dystocia before delivery: macrosomia, gestational diabetes and a previous difficult shoulder.",
       points: 1,
       teaching: "Most dystocias are not predictable, but known risk factors let you brief the team and position the mother in advance.",
@@ -464,7 +526,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes shoulder dystocia from the turtle sign and failed delivery with routine traction, and notes the time.",
       points: 2,
       teaching: "Head retraction against the perineum is the turtle sign. The head to body interval guides urgency and documentation.",
@@ -473,7 +535,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes neonatal encephalopathy and hypoglycemia after resuscitation.",
       points: 2,
       teaching: "Lethargy, low tone and a weak suck after a hypoxic birth suggest moderate encephalopathy. Check glucose early in infants of diabetic mothers.",
@@ -482,7 +544,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs initial steps: warm, dry, stimulate, position the airway and suction only if needed.",
       points: 1,
       teaching: "Initial steps take about 30 seconds. Deep or routine suctioning can cause bradycardia.",
@@ -491,7 +553,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts positive pressure ventilation in 21 percent oxygen within 60 seconds for apnea or heart rate under 100.",
       points: 3,
       critical: true,
@@ -501,7 +563,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses the MR SOPA corrective steps and an alternative airway to achieve chest movement before starting compressions.",
       points: 3,
       critical: true,
@@ -511,7 +573,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives compressions at 3 to 1 with 100 percent oxygen for heart rate under 60 after effective ventilation.",
       points: 2,
       teaching: "Use the two thumb technique on the lower third of the sternum. 90 compressions and 30 breaths make 120 events per minute.",
@@ -520,7 +582,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs McRoberts and suprapubic pressure as first manoeuvres.",
       points: 2,
       teaching: "McRoberts straightens the sacrum and rotates the pubis. Suprapubic pressure from the fetal back side moves the anterior shoulder.",
@@ -529,7 +591,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids fundal pressure and strong or downward traction.",
       points: 3,
       critical: true,
@@ -539,7 +601,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Moves on to internal manoeuvres such as posterior arm delivery or internal rotation, then the all fours position.",
       points: 2,
       teaching: "If first manoeuvres fail within about 30 seconds, go inside. Posterior arm delivery reduces the shoulder diameter.",
@@ -548,7 +610,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "States correct neonatal epinephrine doses: 0.02 mg/kg IV of 0.1 mg/mL, or 0.1 mg/kg endotracheal, and volume 10 mL/kg.",
       points: 2,
       teaching: "IV or IO is the preferred route. For a 4.3 kg baby the IV dose is about 0.09 mg, which is 0.9 mL of 0.1 mg/mL.",
@@ -557,7 +619,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats neonatal hypoglycemia with D10W 2 mL/kg IV followed by a glucose infusion.",
       points: 1,
       teaching: "Hypoglycemia adds to hypoxic brain injury. Infants of diabetic mothers are at high risk in the first hours.",
@@ -566,7 +628,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m6",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives oxytocin 10 IU IM for the third stage and anticipates postpartum hemorrhage and perineal injury.",
       points: 1,
       teaching: "Macrosomia and dystocia raise the risk of atony and severe tears. Examine the perineum and watch blood loss.",
@@ -575,7 +637,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents head delivery time, body delivery time, anterior shoulder, manoeuvres in order and cord gases.",
       points: 2,
       teaching: "Complete documentation supports the family, the receiving team and any later review.",
@@ -584,7 +646,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains events and the baby's condition honestly to the parents, including possible arm weakness.",
       points: 1,
       teaching: "Parents need to hear what happened in plain words. Many brachial plexus injuries recover, but follow up is essential.",
@@ -593,7 +655,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls for help early and assigns separate clinicians to the mother and the newborn.",
       points: 2,
       teaching: "Two patients need two teams. Mobilize the backup physician and transport before delivery.",
@@ -602,7 +664,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a team debrief after a stressful resuscitation.",
       points: 1,
       teaching: "Debriefs improve future performance and support staff after a traumatic delivery.",
@@ -611,7 +673,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls neonatal transport early for possible therapeutic hypothermia and avoids hyperthermia.",
       points: 3,
       critical: true,
@@ -642,7 +704,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
       url: "https://doi.org/10.1093/pch/pxz134",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

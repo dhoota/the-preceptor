@@ -15,14 +15,38 @@ export const postpartumHemorrhage: OralCase = {
     { topic: "multiple-patients", n: 3 },
   ],
   summary: "A woman arrives by ambulance with ongoing bleeding an hour after a planned home birth.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 250 bed community hospital in Ontario. There is a labour and delivery unit upstairs, but the only obstetrician on call is in the middle of a cesarean section. " +
-    "The hospital has a massive hemorrhage protocol, fibrinogen concentrate and a uterine tamponade balloon in the ED. There is no interventional radiology on site. " +
-    "Jasmine Okafor is 34 years old. She gave birth to her third baby at home 55 minutes ago with a registered midwife. The placenta delivered 25 minutes after the baby. " +
-    "Triage vitals: heart rate 132, blood pressure 78/44, respiratory rate 26, SpO2 97 percent on room air, temperature 37.6. CTAS 1. " +
-    "The midwife says: 'She bled about 1200 mL at home and it has not stopped. I gave oxytocin 10 units IM after the baby and rubbed the uterus. The baby is with her partner in the waiting room.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 34 year old woman arrives by ambulance with her midwife. She is bleeding heavily 55 minutes after a home birth. " +
+    "The only obstetrician on call is in the middle of a cesarean section. There is no interventional radiology on site.",
+  card: {
+    vitals: {
+      temperature: "37.6°C",
+      pulse: "132/minute",
+      resp: "26/minute",
+      bp: "78/44 mmHg",
+      o2sat: "97% on room air",
+      weight: "Not recorded",
+    },
+    medications: "Salbutamol a few times a month. Iron supplements.",
+    allergies: "No allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "Midwife's report",
+      result:
+        "She gave birth to her third baby at home 55 minutes ago with a registered midwife. The placenta delivered 25 minutes after the baby. CTAS 1. " +
+        "The midwife says: 'She bled about 1200 mL at home and it has not stopped. I gave oxytocin 10 units IM after the baby and rubbed the uterus. The baby is with her partner in the waiting room.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 250 bed community hospital in Ontario. There is a labour and delivery unit upstairs, but the only obstetrician on call is in the middle of a cesarean section. " +
+        "The hospital has a massive hemorrhage protocol, fibrinogen concentrate and a uterine tamponade balloon in the ED. There is no interventional radiology on site.",
+    },
     {
       id: "vitals",
       label: "Repeat vitals",
@@ -162,8 +186,9 @@ export const postpartumHemorrhage: OralCase = {
         "Tissue: missing cotyledon and echogenic material in the cavity suggest retained placenta.",
         "Trauma: small perineal tear only. Check cervix and vaginal walls. Rule out uterine inversion.",
         "Thrombin: fibrinogen 1.6 g/L and rising INR show early consumptive and dilutional coagulopathy.",
+        "History from the midwife: time of birth, time and completeness of the placenta, blood loss, uterotonics given and risk factors.",
       ],
-      rubric: ["pph-a1", "pph-a2"],
+      rubric: ["pph-h1", "pph-h3", "pph-a1", "pph-a2"],
       next: "q-second-line",
     },
     {
@@ -177,8 +202,9 @@ export const postpartumHemorrhage: OralCase = {
         "Avoid carboprost. She has asthma and it can cause severe bronchospasm.",
         "Sublingual or oral misoprostol, for example 400 mcg, as an adjunct only. SOGC advises against the rectal route.",
         "Continue oxytocin infusion. Repeat tranexamic acid 1 g after 30 minutes if bleeding continues.",
+        "Asks about asthma and blood pressure in pregnancy before choosing the agent.",
       ],
-      rubric: ["pph-m2", "pph-m3"],
+      rubric: ["pph-h2", "pph-m2", "pph-m3"],
       choices: [
         {
           id: "c-ergo",
@@ -363,7 +389,7 @@ export const postpartumHemorrhage: OralCase = {
         "Offer skin to skin or feeding support with the midwife if the mother is too unwell.",
         "Invite questions and arrange a social worker.",
       ],
-      rubric: ["pph-c2", "pph-p1"],
+      rubric: ["pph-h4", "pph-c2", "pph-p1"],
       next: "q-debrief",
     },
     {
@@ -391,9 +417,45 @@ export const postpartumHemorrhage: OralCase = {
   ],
   rubric: [
     {
+      id: "pph-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the midwife about the birth and third stage: time of birth, time of placental delivery and whether it was complete, estimated blood loss and uterotonics given.",
+      points: 2,
+      teaching: "A placenta delivered at 25 minutes and a missing cotyledon point to retained tissue. The blood loss so far and the oxytocin already given set the next step.",
+      source: "sogc-pph",
+    },
+    {
+      id: "pph-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about asthma and blood pressure in pregnancy before choosing a second line uterotonic.",
+      points: 2,
+      teaching: "Asthma with a past ICU admission rules out carboprost. A normal pressure in pregnancy allows ergonovine.",
+      source: "sogc-pph",
+    },
+    {
+      id: "pph-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about risk factors and past history: parity, previous births and bleeding, bleeding disorders, medications and allergies.",
+      points: 2,
+      teaching: "Grand multiparity, a previous hemorrhage or a bleeding disorder change the expected course. Allergies matter before drugs and blood products.",
+      source: "sogc-pph",
+    },
+    {
+      id: "pph-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the newborn: gestation, condition at birth and who is caring for the baby now.",
+      points: 1,
+      teaching: "A newborn born at home has not been checked in hospital. Someone must own the baby's care while the mother is resuscitated.",
+      source: "sogc-pph",
+    },
+    {
       id: "pph-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Systematically assesses the four Ts: tone, tissue, trauma and thrombin.",
       points: 2,
       teaching: "Most postpartum hemorrhage is atony, but retained tissue, trauma and coagulopathy often coexist. Look for all four.",
@@ -402,7 +464,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies retained placenta from the missing cotyledon and the echogenic material on bedside ultrasound.",
       points: 2,
       teaching: "Always inspect the placenta. Retained tissue stops the uterus from contracting and makes uterotonics fail.",
@@ -411,7 +473,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes severe hemorrhage with shock and activates the massive hemorrhage protocol with early red cells.",
       points: 3,
       critical: true,
@@ -421,7 +483,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Empties the bladder with a Foley catheter and performs uterine massage or bimanual compression.",
       points: 1,
       teaching: "A full bladder prevents uterine contraction. Bimanual compression is a bridge that anyone can start.",
@@ -430,7 +492,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces fibrinogen to a level above 2 g/L with fibrinogen concentrate or cryoprecipitate.",
       points: 2,
       critical: true,
@@ -440,7 +502,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-r4",
       competency: "resuscitation",
-      criterion: "data",
+      criterion: "management",
       text: "Gives calcium chloride 1 g IV for ionized calcium below 1.1 mmol/L and uses balanced product ratios.",
       points: 1,
       teaching: "Ionized calcium is the best measure in hemorrhage. Calcium chloride has three times the elemental calcium of gluconate.",
@@ -449,7 +511,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives oxytocin, 5 IU IV slowly then an infusion of 20 to 40 IU in 1 L, and tranexamic acid 1 g IV early.",
       points: 3,
       critical: true,
@@ -459,7 +521,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses ergonovine 0.25 mg IM as the second line agent in a normotensive patient.",
       points: 2,
       teaching: "Ergonovine is potent but causes vasoconstriction. Avoid it in hypertension, preeclampsia and with HIV protease inhibitors.",
@@ -468,7 +530,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids carboprost because of asthma and uses sublingual rather than rectal misoprostol as an adjunct.",
       points: 2,
       teaching: "Carboprost is a prostaglandin F2 alpha and causes bronchospasm. Rectal misoprostol has the slowest onset and lowest levels.",
@@ -477,7 +539,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs manual exploration of the uterine cavity with analgesia to remove retained tissue and clots.",
       points: 2,
       teaching: "When tissue is retained, clearing the cavity is often the step that stops the bleeding. Give antibiotics afterwards.",
@@ -486,7 +548,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Places a uterine tamponade balloon filled with 300 to 500 mL for ongoing bleeding.",
       points: 1,
       teaching: "Tamponade controls most atonic bleeding that does not respond to drugs and bridges to surgery or transfer.",
@@ -495,7 +557,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Communicates clearly with obstetrics about status and need for the OR, and arranges transfer through CritiCall only if stable.",
       points: 1,
       teaching: "Define the need precisely. Surgery comes first in an unstable patient. Transfer for embolization only when she is stable.",
@@ -504,7 +566,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Updates the partner honestly, including the possibility of hysterectomy, in plain language.",
       points: 1,
       teaching: "Families remember the first conversation. Prepare them for serious outcomes without taking away hope.",
@@ -513,7 +575,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Ensures the newborn is assessed and cared for while the mother is being resuscitated.",
       points: 1,
       teaching: "The newborn is a second patient. Assign a clinician to check temperature, feeding and glucose risk.",
@@ -522,7 +584,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls for help early and assigns roles to the ED team and the midwife.",
       points: 2,
       teaching: "Hemorrhage response is a team task. Give the midwife a clear role such as compression or recording blood loss.",
@@ -531,7 +593,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a debrief including the midwife and reviews protocol activation and communication.",
       points: 1,
       teaching: "SOGC recommends regular multidisciplinary simulation and review of hemorrhage events.",
@@ -540,7 +602,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Moves an unstable patient to the OR for surgical control rather than transferring her.",
       points: 2,
       teaching: "If drugs and tamponade fail, prompt surgery saves lives. Do not put an unstable patient in an aircraft.",
@@ -549,7 +611,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Plans postpartum follow up, including VTE prophylaxis once bleeding stops, iron and documentation of totals.",
       points: 1,
       teaching: "Postpartum hemorrhage and transfusion raise VTE risk. Anemia and lactation problems need follow up.",
@@ -570,10 +632,12 @@ export const postpartumHemorrhage: OralCase = {
     },
     {
       id: "cbs-guide",
-      citation: "Canadian Blood Services. Clinical Guide to Transfusion.",
+      citation:
+        "Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clarke G, Chargé S, editors. Clinical Guide to Transfusion. Chapter 11. Canadian Blood Services. 2021.",
+      url: "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

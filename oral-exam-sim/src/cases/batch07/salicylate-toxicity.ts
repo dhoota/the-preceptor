@@ -16,14 +16,37 @@ export const salicylateToxicity: OralCase = {
     { topic: "suicide-risk", n: 3 },
   ],
   summary: "A 36 year old man arrives vomiting and breathing quickly after taking pills from his medicine cabinet.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in a 200 bed community hospital in Ontario with an 8 bed ICU. Nephrology offers hemodialysis in house, but the dialysis nurse is on call from home and needs about 90 minutes to set up. " +
-    "Owen Lachance is 36 years old and weighs 70 kg. His sister brought him in. " +
-    "He told her he took 'a whole bottle' of pills about 6 hours ago after a breakup. " +
-    "Triage vitals: heart rate 118, blood pressure 128/76, respiratory rate 34, SpO2 96 percent on room air, temperature 38.1, capillary glucose 5.2 mmol/L. CTAS 2. " +
-    "The nurse says: 'He keeps vomiting and says his ears are ringing. He seems anxious. Do you want something to calm him down?'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 36 year old man is brought in by his sister after he told her he took a bottle of pills. He is vomiting and breathing fast. " +
+    "Hemodialysis is in house, but the dialysis nurse needs about 90 minutes to set up.",
+  card: {
+    vitals: {
+      temperature: "38.1°C",
+      pulse: "118/minute",
+      resp: "34/minute",
+      bp: "128/76 mmHg",
+      o2sat: "96% on room air",
+      weight: "70 kg (154 lb)",
+    },
+    medications: "None. He stopped sertraline 2 months ago.",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "He told his sister he took 'a whole bottle' of pills about 6 hours ago after a breakup. He keeps vomiting and says his ears are ringing. " +
+        "At triage: capillary glucose 5.2 mmol/L, CTAS 2. The nurse says: 'He seems anxious. Do you want something to calm him down?'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A 200 bed community hospital in Ontario with an 8 bed ICU. Nephrology offers hemodialysis in house, but the dialysis nurse is on call from home and needs about 90 minutes to set up.",
+    },
     {
       id: "bottle",
       label: "Pill bottle",
@@ -97,8 +120,9 @@ export const salicylateToxicity: OralCase = {
         "Activated charcoal 50 g PO if he can protect his airway. Enteric coated tablets may absorb for many hours.",
         "Sodium bicarbonate 1 to 2 mEq/kg IV bolus, then 150 mEq in 1 L of D5W at about 200 to 250 mL/h.",
         "Replace potassium. Serial salicylate levels and gases every 2 hours. Tell nephrology early.",
+        "Asks what he took, how many and when, whether he has tinnitus, and what else was in the house.",
       ],
-      rubric: ["sal-a1", "sal-m1", "sal-m2", "sal-c1"],
+      rubric: ["sal-h1", "sal-h2", "sal-h3", "sal-a1", "sal-m1", "sal-m2", "sal-c1"],
       choices: [
         {
           id: "c-bicarb",
@@ -340,7 +364,7 @@ export const salicylateToxicity: OralCase = {
         "One to one observation. Remove means of harm.",
         "Psychiatry consult once medically stable. Involve his sister with his consent.",
       ],
-      rubric: ["sal-p1", "sal-d1"],
+      rubric: ["sal-h4", "sal-p1", "sal-d1"],
       next: "q-dispo",
     },
     {
@@ -366,9 +390,45 @@ export const salicylateToxicity: OralCase = {
   ],
   rubric: [
     {
+      id: "sal-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the ingestion: the product and formulation, the number of tablets and the time. Enteric coated ASA 325 mg, up to 100 tablets, about 6 hours ago.",
+      points: 2,
+      teaching: "Enteric coated tablets absorb slowly and levels can keep rising for many hours. The tablet count and weight give the dose in mg/kg.",
+      source: "goldfrank",
+    },
+    {
+      id: "sal-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about symptoms of salicylism: tinnitus, vomiting and confusion.",
+      points: 1,
+      teaching: "Tinnitus and vomiting are early clues to salicylate toxicity. New confusion marks severe poisoning.",
+      source: "nejm-sal",
+    },
+    {
+      id: "sal-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about co-ingestants and other medications in the home, including acetaminophen, alcohol and antidepressants.",
+      points: 2,
+      teaching: "Mixed overdoses are common. Acetaminophen is often taken with ASA and needs its own level and treatment.",
+      source: "goldfrank",
+    },
+    {
+      id: "sal-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks his sister about intent, previous attempts, depression and treatment, and his supports.",
+      points: 2,
+      teaching: "He told his sister he wanted to die and stopped his sertraline. Collateral history shapes the risk assessment and the need for a Form 1.",
+      source: "ontario-mha",
+    },
+    {
       id: "sal-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes salicylate toxicity from the history, tinnitus, vomiting, fever and hyperpnea, and estimates the dose in mg/kg.",
       points: 2,
       teaching: "Tinnitus, vomiting and rapid breathing are early clues. Over 150 mg/kg is toxic and over 500 mg/kg can be lethal.",
@@ -377,7 +437,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Interprets a mixed respiratory alkalosis and high anion gap metabolic acidosis and a rising level from delayed absorption.",
       points: 2,
       teaching: "Enteric coated or large ingestions can peak many hours later. Serial levels every 2 hours until they fall.",
@@ -386,7 +446,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies confusion and non cardiogenic pulmonary edema as markers of severe toxicity.",
       points: 2,
       teaching: "Neurological signs and new hypoxemia signal severe poisoning regardless of the level.",
@@ -395,7 +455,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids intubation if possible and, if needed, gives bicarbonate first and matches pre intubation minute ventilation.",
       points: 3,
       critical: true,
@@ -405,7 +465,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids sedatives that reduce respiratory drive.",
       points: 2,
       teaching: "Hyperventilation keeps the pH up. Benzodiazepines or opioids can precipitate collapse.",
@@ -414,7 +474,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives activated charcoal 50 g and starts sodium bicarbonate 1 to 2 mEq/kg IV then an infusion of 150 mEq in 1 L of D5W.",
       points: 3,
       critical: true,
@@ -424,7 +484,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces potassium and targets urine pH 7.5 to 8.0 with serum pH no higher than about 7.55.",
       points: 2,
       teaching: "Urine will not alkalinize while the patient is hypokalemic. Keep potassium at 4 mmol/L or more.",
@@ -433,7 +493,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges emergency hemodialysis for altered mental status, level over 7.2 mmol/L or new hypoxemia.",
       points: 3,
       critical: true,
@@ -443,7 +503,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives dextrose to a confused patient despite normal serum glucose.",
       points: 1,
       teaching: "Brain glucose can be low when blood glucose is normal. Give dextrose to any salicylate poisoned patient with altered mental status.",
@@ -452,7 +512,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m6",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses intermittent hemodialysis and states stopping criteria of clinical improvement and a level under about 1.4 mmol/L.",
       points: 1,
       teaching: "Intermittent hemodialysis clears salicylate fastest. Recheck for rebound after it ends.",
@@ -461,7 +521,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Consults the poison centre and nephrology early, before dialysis criteria are met.",
       points: 1,
       teaching: "Dialysis takes time to organize. An early heads up avoids delay when the patient worsens.",
@@ -470,7 +530,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured ICU handover with levels, times, gases, treatments and ventilator settings.",
       points: 1,
       teaching: "The receiving team must know that routine ventilator settings are dangerous for this patient.",
@@ -479,7 +539,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Assesses capacity and uses emergency treatment without consent or an Ontario Form 1 when he tries to leave.",
       points: 2,
       teaching: "An incapable patient can be treated in an emergency under the Health Care Consent Act. A Form 1 detains for psychiatric assessment but is not consent to medical treatment.",
@@ -488,7 +548,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges one to one observation and psychiatry consultation once he is medically stable.",
       points: 1,
       teaching: "Suicide risk remains after medical recovery. Plan the psychiatric assessment before transfer to the ward.",
@@ -497,7 +557,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Identifies a system improvement such as early dialysis notification or a ventilator warning in the protocol.",
       points: 1,
       teaching: "Salicylate deaths often follow predictable errors. Build safeguards into local protocols.",
@@ -531,7 +591,7 @@ export const salicylateToxicity: OralCase = {
       url: "https://www.ontario.ca/laws/statute/96h02",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

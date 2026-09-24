@@ -10,14 +10,40 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
   priorityTopic: "tox",
   keyFeatures: [{ topic: "tox", n: 2 }, { topic: "tox", n: 3 }, { topic: "tox", n: 8 }, { topic: "loc", n: 2 }],
   summary: "A 29 year old man is brought in after shelter staff found him unresponsive in a laneway.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working in a busy urban emergency department in Ontario. The hospital runs a Rapid Access Addiction Medicine clinic on weekday mornings and has an addiction medicine physician on call by phone. A social worker is on shift until midnight. " +
-    "Jordan Whitehorse is 29 years old and weighs about 68 kg. Shelter staff found him unresponsive behind the shelter at 19:40 and gave naloxone 4 mg intranasally. " +
-    "Paramedics found him breathing 4 times a minute, gave bag mask ventilation and naloxone 0.4 mg IM. " +
-    "Arrival vitals at 20:05: heart rate 96, blood pressure 118/70, respiratory rate 6, SpO2 84 percent on room air, temperature 35.9, capillary glucose 6.2 mmol/L. GCS 7. CTAS 1. " +
-    "The paramedic says: 'He woke a bit after the first dose, then drifted off again. Shelter staff say he usually smokes fentanyl.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It is 20:05. Paramedics bring in a 29 year old man whom shelter staff found unresponsive behind the shelter. " +
+    "The hospital runs a Rapid Access Addiction Medicine clinic on weekday mornings.",
+  card: {
+    vitals: {
+      temperature: "35.9°C",
+      pulse: "96/minute",
+      resp: "6/minute",
+      bp: "118/70 mmHg",
+      o2sat: "84% on room air",
+      weight: "About 68 kg (150 lb)",
+    },
+    medications: "None",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "Prehospital report",
+      result:
+        "Shelter staff found him unresponsive behind the shelter at 19:40 and gave naloxone 4 mg intranasally. " +
+        "Paramedics found him breathing 4 times a minute, gave bag mask ventilation and naloxone 0.4 mg IM. " +
+        "On arrival at 20:05: capillary glucose 6.2 mmol/L, GCS 7, CTAS 1. " +
+        "The paramedic says: 'He woke a bit after the first dose, then drifted off again. Shelter staff say he usually smokes fentanyl.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result:
+        "A busy urban emergency department in Ontario. The hospital runs a Rapid Access Addiction Medicine clinic on weekday mornings and has an addiction medicine physician on call by phone. " +
+        "A social worker is on shift until midnight.",
+    },
     {
       id: "exam",
       label: "Primary survey",
@@ -159,8 +185,9 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
         "Do not chase full wakefulness with more naloxone. It will not reverse these and will worsen withdrawal.",
         "Do not give flumazenil. It can cause seizures in benzodiazepine dependent patients.",
         "Supportive care, airway monitoring, pressure area care. Reassess for other causes.",
+        "Asks what he used, how and when, and whether he also uses benzodiazepines, alcohol or other sedatives.",
       ],
-      rubric: ["op-a1", "op-m1"],
+      rubric: ["op-h1", "op-h2", "op-a1", "op-m1"],
       choices: [
         {
           id: "c-support",
@@ -285,8 +312,9 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
         "A day 1 total of 16 to 32 mg is supported for people using fentanyl, sometimes called high dose or macro dosing.",
         "Explain that it dissolves under the tongue over several minutes. Do not swallow.",
         "Adjuncts for symptoms: ondansetron, loperamide, acetaminophen or ibuprofen.",
+        "Before dosing, asks about his last fentanyl use, past methadone or buprenorphine and his goals, and scores withdrawal with COWS.",
       ],
-      rubric: ["op-m2"],
+      rubric: ["op-h3", "op-a2", "op-m2"],
       choices: [
         {
           id: "c-macro",
@@ -394,7 +422,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
         "Wound care for the shin ulcer. HIV and hepatitis C results follow up. Offer hepatitis vaccines.",
         "Clear written instructions because he has no phone.",
       ],
-      rubric: ["op-d2", "op-m4"],
+      rubric: ["op-h4", "op-d2", "op-m4"],
       next: "q-stigma",
     },
     {
@@ -437,9 +465,54 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
   ],
   rubric: [
     {
+      id: "op-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the paramedics and shelter staff what he used, how and when, and how he responded to each naloxone dose.",
+      points: 2,
+      teaching: "Smoked fentanyl, the time of last use and a brief response to naloxone that faded set the risk of renarcotization and guide observation.",
+      source: "crism",
+    },
+    {
+      id: "op-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about benzodiazepines, alcohol and other sedatives, including benzodiazepines mixed into his supply.",
+      points: 2,
+      teaching: "Benzodiazepine adulterants are common in the unregulated supply. They explain sedation that persists after breathing recovers.",
+      source: "crism",
+    },
+    {
+      id: "op-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes an opioid use history once he is awake: daily amount, last use, previous overdoses, past methadone or buprenorphine and his goals.",
+      points: 2,
+      teaching: "Two overdoses this year and a wish to stop make this a key moment to offer buprenorphine. The time of last fentanyl use guides when to start.",
+      source: "crism",
+    },
+    {
+      id: "op-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Asks about housing, a phone, a health card, a current prescriber and supports such as the shelter case worker.",
+      points: 1,
+      teaching: "A safe discharge plan depends on how he can be reached and where he can fill a prescription. No phone means written instructions and a direct referral.",
+      source: "hawk",
+    },
+    {
+      id: "op-a2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Scores withdrawal with the Clinical Opiate Withdrawal Scale before the first dose and reassesses it after each dose.",
+      points: 2,
+      teaching: "An objective COWS score confirms enough withdrawal to start and shows whether further doses are working.",
+      source: "crism",
+    },
+    {
       id: "op-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes persistent sedation after adequate breathing as a likely sedative co exposure such as a benzodiazepine adulterant.",
       points: 2,
       teaching: "Benzodiazepine and other sedative adulterants are common in the Canadian fentanyl supply. Naloxone does not reverse them.",
@@ -448,7 +521,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Ventilates with bag mask and oxygen before and during naloxone.",
       points: 2,
       teaching: "Hypoventilation is the problem. Bag mask ventilation treats it immediately while naloxone takes effect.",
@@ -457,7 +530,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Titrates naloxone in small IV doses, 0.04 to 0.1 mg, to adequate breathing rather than full wakefulness.",
       points: 3,
       critical: true,
@@ -467,7 +540,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids flumazenil and further naloxone for persistent sedation, and gives supportive care.",
       points: 2,
       teaching: "Flumazenil can provoke seizures. More naloxone only worsens withdrawal when breathing is already adequate.",
@@ -476,7 +549,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-m2",
       competency: "management",
-      criterion: "data",
+      criterion: "management",
       text: "Starts buprenorphine naloxone 8 mg SL at COWS of about 8 or more and repeats doses toward 16 to 32 mg on day 1.",
       points: 3,
       critical: true,
@@ -486,7 +559,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats precipitated withdrawal with more buprenorphine plus symptom adjuncts, and avoids full agonists.",
       points: 2,
       teaching: "The fix for buprenorphine precipitated withdrawal is more buprenorphine, not less.",
@@ -495,7 +568,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Provides a bridging buprenorphine prescription and a take home naloxone kit.",
       points: 2,
       teaching: "A prescription to the next appointment prevents a gap in treatment. Naloxone kits save lives in the community.",
@@ -504,7 +577,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Responds to his wish to leave with empathy and a clear offer of treatment.",
       points: 2,
       teaching: "Acknowledging withdrawal and offering relief is more effective than confrontation.",
@@ -513,7 +586,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains precipitated withdrawal honestly and reassures him that more buprenorphine will help.",
       points: 1,
       teaching: "Patients who understand what is happening are more likely to stay through a difficult start.",
@@ -522,7 +595,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Assesses capacity and respects the right of a capable adult to leave, with harm reduction advice.",
       points: 2,
       teaching: "Opioid use disorder with withdrawal is not a Form 1 criterion on its own. Respect autonomy and reduce harm.",
@@ -531,7 +604,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Addresses a colleague's stigmatizing comment respectfully and reframes addiction as a treatable illness.",
       points: 1,
       teaching: "Stigma drives people away from care. Leaders model respectful language and share the evidence.",
@@ -540,7 +613,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives overdose risk counselling: do not use alone, use supervised sites or the National Overdose Response Service.",
       points: 1,
       teaching: "The risk of death is highest in the weeks after an overdose. Harm reduction advice is part of every discharge.",
@@ -549,7 +622,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Observes until safe using early discharge criteria and arranges next day addiction clinic follow up.",
       points: 3,
       critical: true,
@@ -559,7 +632,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
     {
       id: "op-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Proposes system supports such as an ED buprenorphine order set, naloxone kits and a referral pathway.",
       points: 1,
       teaching: "ED buprenorphine programs work best with order sets, a pathway to follow up and staff education.",
@@ -589,7 +662,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
       url: "https://doi.org/10.1001/jamanetworkopen.2021.17128",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
