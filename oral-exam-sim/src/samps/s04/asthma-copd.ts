@@ -41,7 +41,7 @@ const TREKK_ASTHMA: Source = {
 };
 const ROSEN: Source = {
   id: "rosen",
-  citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier.",
+  citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. 2023.",
 };
 const CCS_HF: Source = {
   id: "ccs-hf",
@@ -71,8 +71,8 @@ const PE_COPD: Source = {
 };
 const THROMBOSIS_CANADA: Source = {
   id: "thrombosis-canada",
-  citation: "Thrombosis Canada. Clinical guide. Pulmonary embolism. Diagnosis and management.",
-  url: "https://thrombosiscanada.ca",
+  citation: "Thrombosis Canada. Clinical guides. Pulmonary embolism (PE): diagnosis. 2025. Pulmonary embolism (PE): treatment. 2023.",
+  url: "https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_83.pdf",
 };
 const WAO: Source = {
   id: "wao-anaphylaxis",
@@ -92,12 +92,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     topic: "asthma-copd",
     title: "Breathless after a cold",
     stem:
-      "A 26 year old woman with asthma since childhood arrives by ambulance with two days of worsening breathlessness after a cold. She has used her salbutamol inhaler every hour since last night. HR 124, RR 30, BP 128/76, SpO2 90% on room air, T 37.4 C. Weight 62 kg. She speaks in short phrases, uses her neck muscles to breathe and has diffuse expiratory wheeze.",
+      "A 26-year-old woman with asthma since childhood arrives by ambulance with two days of worsening breathlessness after a cold. She has used her salbutamol inhaler every hour since last night. She speaks in short phrases, uses her neck muscles to breathe and has diffuse expiratory wheeze.",
+    vitals: { temperature: "37.4°C", pulse: "124/minute", resp: "30/minute", bp: "128/76 mmHg", o2sat: "90% on room air", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE elements of her past asthma history that would place her at high risk of a fatal or near fatal attack.",
+        prompt: "What elements of her past asthma history would place her at high risk of a fatal or near fatal attack?",
         required: 3,
         accept: [
           { id: "icu", text: "Previous intubation or ICU admission for asthma", match: ["intubation", "intubated", "icu", "intensive care", "mechanical ventilation", "ventilated"] },
@@ -117,7 +118,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE medications you would give in the first 20 minutes. Include the dose and route for each.",
+        prompt: "What medications, with the dose and route of each, would you give in the first 20 minutes?",
         required: 3,
         accept: [
           { id: "salb", text: "Salbutamol 5 mg by nebulizer or 4 to 8 puffs by MDI with spacer, every 20 minutes", match: ["salbutamol 5 mg", "salbutamol 5mg", "salbutamol 2.5 mg", "salbutamol 2.5mg", "salbutamol 4 puff", "salbutamol 5 puff", "salbutamol 6 puff", "salbutamol 8 puff", "salbutamol 10 puff", "salbutamol 400 mcg", "salbutamol 800 mcg", "ventolin 5 mg", "ventolin 8 puff"] },
@@ -139,16 +140,16 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "After three rounds of bronchodilators she says she feels a little better. HR 116, RR 26, SpO2 94% on 2 L nasal prongs.",
-        prompt: "Which of the following is the most useful objective measure of the severity of her attack now? Select one.",
+        update: "After three rounds of bronchodilators she says she feels a little better. Pulse is 116/minute, respiratory rate 26/minute and SpO2 94% on 2 L/minute by nasal prongs.",
+        prompt: "Which of the following is the most useful objective measure of the severity of her attack now?",
         options: [
-          "Her own rating of breathlessness",
-          "Peak expiratory flow or FEV1 compared with predicted or personal best",
-          "Oxygen saturation on nasal prongs",
-          "Portable chest radiograph",
-          "Loudness of the wheeze on auscultation",
+          "Loudness of the wheeze on chest auscultation",
+          "Oxygen saturation on 2 L/minute by nasal prongs",
+          "Patient rating of breathlessness on a numeric rating scale",
+          "Peak flow or FEV1 compared with predicted or personal best",
+          "Portable chest radiograph for hyperinflation",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "Peak flow or FEV1 as a percentage of predicted or personal best is the standard objective measure and guides disposition. Symptoms and wheeze correlate poorly with obstruction, and a quiet chest can mean severe disease. Saturation on supplemental oxygen hides the degree of obstruction.",
         keyFeature: { topic: "asthma-copd", n: 3 },
@@ -157,8 +158,8 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        update: "One hour later her peak flow is 38% of predicted and HR is 118. She is alert and tiring slightly.",
-        prompt: "List TWO further treatments you would now add. Include the dose for any drug.",
+        update: "One hour later her peak flow is 38% of predicted and her pulse is 118/minute. She is alert and tiring slightly.",
+        prompt: "What further treatments, with the dose of any drug, would you now add?",
         required: 2,
         accept: [
           { id: "mg", text: "Magnesium sulfate 2 g IV over 20 minutes", match: ["magnesium 2 g", "magnesium sulfate 2", "mgso4 2", "magnesium 2", "mag sulfate 2", "magnesium 2g", "magnesium sulfate 2g", "mgso4 2g"] },
@@ -187,12 +188,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     topic: "asthma-copd",
     title: "Drowsy after the ambulance ride",
     stem:
-      "A 71 year old man with COPD (FEV1 38% of predicted) has three days of increased breathlessness with more sputum that has turned green. Paramedics gave oxygen by non-rebreather mask at 15 L per minute. He is now drowsy but rousable to voice. HR 108, RR 28, BP 152/88, SpO2 99% on the mask, T 37.8 C. Weight 70 kg. Venous gas: pH 7.24, pCO2 82 mmHg, HCO3 34 mmol/L.",
+      "A 71-year-old man with COPD (FEV1 38% of predicted) has three days of increased breathlessness with more sputum that has turned green. Paramedics gave oxygen by non-rebreather mask at 15 L/minute. He is now drowsy but rousable to voice. Venous gas: pH 7.24, pCO2 82 mmHg, HCO3 34 mmol/L.",
+    vitals: { temperature: "37.8°C", pulse: "108/minute", resp: "28/minute", bp: "152/88 mmHg", o2sat: "99% on non-rebreather mask at 15 L/minute", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings in this presentation that indicate a severe, life threatening exacerbation.",
+        prompt: "What findings in this presentation indicate a severe, life threatening exacerbation?",
         required: 3,
         accept: [
           { id: "loc", text: "Drowsiness or decreased level of consciousness", match: ["drowsy", "drowsiness", "decreased loc", "level of consciousness", "altered mental", "confusion", "mental status", "somnolent", "obtunded"] },
@@ -209,9 +211,15 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which oxygen saturation target is most appropriate for him? Select one.",
-        options: ["100%", "94 to 98%", "88 to 92%", "85 to 88%", "Any value, as long as he is on the non-rebreather"],
-        correct: 2,
+        prompt: "Which of the following oxygen saturation targets is most appropriate for him?",
+        options: [
+          "85 to 88%",
+          "88 to 92%",
+          "94 to 98%",
+          "98 to 100%",
+          "No target while he is on the non-rebreather mask",
+        ],
+        correct: 1,
         explanation:
           "In COPD with hypercapnia, oxygen is titrated to 88 to 92%, often with a Venturi mask. High flow oxygen worsens hypercapnia through ventilation perfusion mismatch and the Haldane effect. Oxygen should never be withdrawn abruptly in a hypoxic patient.",
         keyFeature: { topic: "asthma-copd", n: 7 },
@@ -221,7 +229,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Oxygen is weaned and you decide to start BiPAP.",
-        prompt: "List THREE contraindications to noninvasive ventilation you must check for before starting.",
+        prompt: "What contraindications to noninvasive ventilation must you check for before starting?",
         required: 3,
         accept: [
           { id: "airway", text: "Unable to protect the airway or coma", match: ["protect airway", "protect the airway", "airway protection", "not protect airway", "no airway protection", "coma", "gcs", "unconscious", "unresponsive"] },
@@ -242,7 +250,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Give the systemic corticosteroid you would prescribe. Include the drug, dose and duration.",
+        prompt: "What systemic corticosteroid would you prescribe, including the drug, dose and duration?",
         required: 1,
         accept: [
           { id: "pred", text: "Prednisone 40 mg PO daily for 5 days, or an IV equivalent such as methylprednisolone while he is on BiPAP", match: ["prednisone 40", "prednisone 30", "prednisone 50", "prednisone 40mg", "prednisone 50mg", "prednisolone 40", "prednisolone 30", "prednisolone 50", "methylprednisolone 40", "methylprednisolone 60", "methylprednisolone 125", "methylprednisolone 125mg", "solumedrol 125"] },
@@ -259,17 +267,17 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
         id: "q5",
         kind: "single",
         update: "After one hour on BiPAP he is more alert. Repeat venous gas: pH 7.30, pCO2 70 mmHg.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in his management?",
         options: [
-          "Proceed to intubation because the pCO2 remains above 60 mmHg",
-          "Stop BiPAP and switch to nasal prongs at 2 L per minute",
-          "Continue BiPAP, repeat the gas in 1 to 2 hours and arrange a monitored bed",
-          "Give lorazepam to improve mask tolerance",
+          "Continue BiPAP, gas in 1 to 2 hours, monitored bed",
           "Discharge home with prednisone and antibiotics",
+          "Give lorazepam to improve mask tolerance",
+          "Proceed to rapid sequence intubation now",
+          "Stop BiPAP and switch to nasal prongs at 2 L/minute",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "Improving pH and mental status within one to two hours predict NIV success. The trend matters more than an absolute pCO2 in a chronic retainer. He needs continued NIV and admission to a monitored setting with serial gases.",
+          "Improving pH and mental status within one to two hours predict NIV success. The trend matters more than an absolute pCO2 in a chronic retainer. He needs continued NIV and admission to a monitored setting with serial gases. A pCO2 still above 60 mmHg is not by itself a reason to intubate while pH and alertness improve.",
         keyFeature: { topic: "asthma-copd", n: 3 },
         source: "ers-ats-niv",
       },
@@ -285,12 +293,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     alsoTopics: ["sob"],
     title: "A toddler who started wheezing",
     stem:
-      "A 22 month old boy is brought in with cough and wheeze that began suddenly yesterday afternoon. His mother says he had a coughing and gagging spell while his older brother was sharing a bag of trail mix. He has never wheezed before and has no fever. Weight 12 kg. HR 130, RR 36, SpO2 95% on room air, T 36.9 C. There is a monophonic wheeze and reduced air entry over the right chest. No stridor.",
+      "A 22-month-old boy is brought in with cough and wheeze that began suddenly yesterday afternoon. His mother says he had a coughing and gagging spell while his older brother was sharing a bag of trail mix. He has never wheezed before and has no fever. There is a monophonic wheeze and reduced air entry over the right chest. No stridor.",
+    vitals: { temperature: "36.9°C", pulse: "130/minute", resp: "36/minute", o2sat: "95% on room air", weight: "12 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE diagnoses other than asthma you would consider for a first episode of wheeze in this child.",
+        prompt: "What diagnoses other than asthma would you consider for a first episode of wheeze in this child?",
         required: 3,
         accept: [
           { id: "fb", text: "Aspirated foreign body", match: ["foreign body", "aspiration", "aspirated", "fb"] },
@@ -311,17 +320,17 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which initial imaging is most appropriate? Select one.",
+        prompt: "Which of the following is the most appropriate initial imaging for this child?",
         options: [
-          "Single inspiratory chest radiograph only",
-          "Inspiratory and expiratory chest films, or bilateral decubitus films if he cannot cooperate",
-          "CT chest with contrast",
+          "Anteroposterior and lateral inspiratory chest radiographs",
+          "CT of the chest with IV contrast",
+          "Inspiratory and expiratory, or decubitus, chest films",
           "Lateral soft tissue neck radiograph only",
           "No imaging, treat as asthma and reassess",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "Most aspirated nuts are radiolucent. Air trapping on an expiratory or dependent decubitus film is the typical clue, with the affected lung failing to deflate. A normal radiograph does not exclude the diagnosis when the history is suggestive.",
+          "Most aspirated nuts are radiolucent. Air trapping on an expiratory or dependent decubitus film is the typical clue, with the affected lung failing to deflate. A normal radiograph does not exclude the diagnosis when the history is suggestive. Bilateral decubitus films replace the expiratory film when a child cannot cooperate.",
         keyFeature: { topic: "asthma-copd", n: 1 },
         source: "rosen",
       },
@@ -329,7 +338,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "The decubitus films show persistent hyperinflation of the right lung when he lies on his right side.",
-        prompt: "List TWO next steps in management.",
+        prompt: "What are the next steps in management?",
         required: 2,
         accept: [
           { id: "bronch", text: "Urgent consultation for rigid bronchoscopy by ENT, pediatric surgery or respirology", match: ["bronchoscopy", "ent", "otolaryngology", "pediatric surgery", "paediatric surgery", "thoracic surgery", "respirology"] },
@@ -350,7 +359,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO features on history or examination that should make you suspect an inhaled foreign body in any wheezing child.",
+        prompt: "What features on history or examination should make you suspect an inhaled foreign body in any wheezing child?",
         required: 2,
         accept: [
           { id: "choke", text: "Witnessed or reported choking or sudden coughing episode", match: ["choking", "choke", "gagging", "sudden cough", "coughing episode", "witnessed"] },
@@ -377,12 +386,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     alsoTopics: ["pulmonary-edema"],
     title: "Wheezing at three in the morning",
     stem:
-      "A 74 year old woman with no history of lung disease wakes at 03:00 unable to breathe and wheezing. She has had a week of increasing breathlessness on exertion and now sleeps on three pillows. History of myocardial infarction six years ago, hypertension and type 2 diabetes. Medications are metformin, ramipril and ASA. BP 186/102, HR 112, RR 30, SpO2 86% on room air, T 36.8 C. Weight 78 kg. There is diffuse wheeze with fine crackles at both bases, raised JVP and pitting ankle edema.",
+      "A 74-year-old woman with no history of lung disease wakes at 03:00 unable to breathe and wheezing. She has had a week of increasing breathlessness on exertion and now sleeps on three pillows. History of myocardial infarction six years ago, hypertension and type 2 diabetes. Medications are metformin, ramipril and ASA. There is diffuse wheeze with fine crackles at both bases, raised JVP and pitting ankle edema.",
+    vitals: { temperature: "36.8°C", pulse: "112/minute", resp: "30/minute", bp: "186/102 mmHg", o2sat: "86% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE diagnoses other than asthma or COPD that you must consider for her wheeze.",
+        prompt: "What diagnoses other than asthma or COPD must you consider for her wheeze?",
         required: 3,
         accept: [
           { id: "chf", text: "Acute heart failure with pulmonary edema", match: ["heart failure", "chf", "pulmonary edema", "pulmonary oedema", "cardiac asthma", "chf exacerbation", "scape", "lv failure"] },
@@ -401,7 +411,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE investigations you would obtain in the first 30 minutes to confirm your leading diagnosis.",
+        prompt: "What investigations would you obtain in the first 30 minutes to confirm your leading diagnosis?",
         required: 3,
         accept: [
           { id: "ecg", text: "12 lead ECG", match: ["ecg", "ekg", "electrocardiogram"] },
@@ -420,7 +430,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "ECG shows sinus tachycardia with LVH and no new ST elevation. Lung ultrasound shows diffuse bilateral B lines and the LV looks poorly contracting.",
-        prompt: "List TWO treatments you would start now.",
+        prompt: "What treatments would you start now?",
         required: 2,
         accept: [
           { id: "ntg", text: "Nitroglycerin, sublingual 0.4 mg repeated or IV infusion titrated to blood pressure", match: ["nitroglycerin", "nitro", "ntg", "gtn", "nitrate", "nitroglycerine"] },
@@ -440,7 +450,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO precipitants of her decompensation that you would look for.",
+        prompt: "What precipitants of her decompensation would you look for?",
         required: 2,
         accept: [
           { id: "ischemia", text: "Myocardial ischemia or infarction", match: ["ischemia", "ischaemia", "infarction", "acs", "mi", "acute coronary"] },
@@ -469,19 +479,19 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Sudden deterioration during treatment",
     stem:
-      "A 19 year old man with asthma has been treated for 40 minutes with salbutamol, ipratropium and oral prednisone. Weight 70 kg. He suddenly clutches the left side of his chest and becomes more distressed. HR 138, BP 84/50, RR 36, SpO2 82% on a non-rebreather mask. The trachea is deviated to the right. Breath sounds are absent on the left and the left chest is hyperresonant.",
+      "A 19-year-old man with asthma has been treated for 40 minutes with salbutamol, ipratropium and oral prednisone. He suddenly clutches the left side of his chest and becomes more distressed. The trachea is deviated to the right. Breath sounds are absent on the left and the left chest is hyperresonant.",
+    vitals: { pulse: "138/minute", resp: "36/minute", bp: "84/50 mmHg", o2sat: "82% on non-rebreather mask", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate immediate step? Select one.",
+        prompt: "Which of the following is the most appropriate immediate step in his management?",
         options: [
-          "Portable chest radiograph",
-          "CT chest",
+          "Epinephrine 0.5 mg IM in the lateral thigh",
+          "Increase salbutamol to continuous nebulization now",
           "Needle or finger decompression of the left chest",
-          "Increase salbutamol to continuous nebulization",
-          "Epinephrine 0.5 mg IM",
-          "Rapid sequence intubation",
+          "Portable chest radiograph at the bedside",
+          "Rapid sequence intubation and ventilation",
         ],
         correct: 2,
         explanation:
@@ -492,7 +502,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Give ONE acceptable anatomic site for needle decompression in this adult.",
+        prompt: "What is an acceptable anatomic site for needle decompression in this adult?",
         required: 1,
         accept: [
           { id: "lat", text: "4th or 5th intercostal space just anterior to the midaxillary line", match: ["4th intercostal", "fourth intercostal", "5th intercostal", "fifth intercostal", "midaxillary", "mid axillary", "4th ics", "5th ics"] },
@@ -506,8 +516,8 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        update: "There is a rush of air on decompression. BP improves to 108/70 and SpO2 to 91%.",
-        prompt: "List TWO next steps in managing the pneumothorax.",
+        update: "There is a rush of air on decompression. BP improves to 108/70 mmHg and SpO2 to 91%.",
+        prompt: "What are the next steps in managing the pneumothorax?",
         required: 2,
         accept: [
           { id: "tube", text: "Left chest tube or tube thoracostomy", match: ["chest tube", "tube thoracostomy", "thoracostomy", "pigtail", "chest drain", "intercostal drain"] },
@@ -524,7 +534,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE other coexisting conditions you should look for when an asthma exacerbation does not respond as expected.",
+        prompt: "What other coexisting conditions should you look for when an asthma exacerbation does not respond as expected?",
         required: 3,
         accept: [
           { id: "pneumonia", text: "Pneumonia", match: ["pneumonia"] },
@@ -554,13 +564,20 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     topic: "asthma-copd",
     title: "A school age child with a cough overnight",
     stem:
-      "A 6 year old girl with known asthma has had two days of a runny nose and was wheezing overnight. Her father gave two puffs of salbutamol without a spacer at 04:00. Weight 21 kg. HR 132, RR 34, SpO2 91% on room air, T 37.9 C. She has suprasternal retractions and visible scalene contraction. Air entry is reduced at both bases and she has expiratory wheeze only.",
+      "A 6-year-old girl with known asthma has had two days of a runny nose and was wheezing overnight. Her father gave two puffs of salbutamol without a spacer at 04:00. She has suprasternal retractions and visible scalene contraction. Air entry is reduced at both bases and she has expiratory wheeze only.",
+    vitals: { temperature: "37.9°C", pulse: "132/minute", resp: "34/minute", o2sat: "91% on room air", weight: "21 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Using the Pediatric Respiratory Assessment Measure (PRAM), what is her score and severity? Select one.",
-        options: ["PRAM 3, mild", "PRAM 5, moderate", "PRAM 7, moderate", "PRAM 8, severe", "PRAM 11, severe"],
+        prompt: "Which of the following is her Pediatric Respiratory Assessment Measure (PRAM) score and severity?",
+        options: [
+          "PRAM 3, mild",
+          "PRAM 5, moderate",
+          "PRAM 7, moderate",
+          "PRAM 8, severe",
+          "PRAM 11, severe",
+        ],
         correct: 3,
         explanation:
           "SpO2 below 92% scores 2, suprasternal retractions 2, scalene contraction 2, reduced air entry at the bases 1 and expiratory wheeze 1. The total of 8 falls in the severe range of 8 to 12. PRAM is the validated Canadian tool for grading and reassessing pediatric asthma.",
@@ -570,7 +587,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO inhaled bronchodilators you would give now. Include the dose and delivery method for each.",
+        prompt: "What inhaled bronchodilators, with the dose and delivery method of each, would you give now?",
         required: 2,
         accept: [
           { id: "salb", text: "Salbutamol 5 mg by nebulizer, continuous or back to back over the first hour, or 10 puffs of 100 mcg by MDI with spacer every 20 minutes", match: ["salbutamol 10 puff", "salbutamol 5 mg", "salbutamol 5mg", "salbutamol 1000 mcg", "continuous salbutamol", "continuous nebulized salbutamol", "salbutamol 15 mg", "ventolin 10 puff", "ventolin 5 mg"] },
@@ -585,13 +602,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which corticosteroid order is most appropriate? Select one.",
+        prompt: "Which of the following corticosteroid orders is most appropriate for her?",
         options: [
           "Dexamethasone 0.6 mg/kg PO, 12 mg",
-          "Prednisolone 5 mg/kg PO",
           "Inhaled budesonide alone",
-          "Methylprednisolone 30 mg/kg IV",
-          "No steroid because a viral illness triggered the attack",
+          "Methylprednisolone 30 mg/kg IV, 630 mg",
+          "Prednisolone 5 mg/kg PO",
+          "No systemic corticosteroid",
         ],
         correct: 0,
         explanation:
@@ -603,7 +620,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "After an hour of treatment her PRAM is 2 and SpO2 is 96% on room air. This is sustained three hours after her last salbutamol.",
-        prompt: "List THREE interventions before discharge that reduce the risk of an early return visit.",
+        prompt: "What interventions before discharge reduce the risk of an early return visit?",
         required: 3,
         accept: [
           { id: "spacer", text: "Teach and check MDI technique with a spacer", match: ["spacer", "aerochamber", "inhaler technique", "mdi technique", "technique"] },
@@ -635,12 +652,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     topic: "asthma-copd",
     title: "Ready to go back to work",
     stem:
-      "A 31 year old roofer with asthma was treated three hours ago with salbutamol, ipratropium and prednisone 50 mg PO. He now feels well and wants to leave. HR 96, RR 18, SpO2 97% on room air. Peak flow is 480 L per minute. His predicted is 590 L per minute. He uses his salbutamol several times a day and takes his fluticasone inhaler only when he feels bad. He smokes 10 cigarettes a day.",
+      "A 31-year-old roofer with asthma was treated three hours ago with salbutamol, ipratropium and prednisone 50 mg PO. He now feels well and wants to leave. Peak flow is 480 L/minute. His predicted is 590 L/minute. He uses his salbutamol several times a day and takes his fluticasone inhaler only when he feels bad. He smokes 10 cigarettes a day.",
+    vitals: { pulse: "96/minute", resp: "18/minute", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO objective checks you would complete before discharge.",
+        prompt: "What objective checks would you complete before discharge?",
         required: 2,
         accept: [
           { id: "pef", text: "Peak flow or FEV1 above 70% of predicted, sustained 60 minutes after the last bronchodilator", match: ["peak flow", "pef", "pefr", "fev1", "spirometry"] },
@@ -656,7 +674,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO medications you would prescribe at discharge.",
+        prompt: "What medications would you prescribe at discharge?",
         required: 2,
         accept: [
           { id: "pred", text: "Prednisone 40 to 50 mg PO daily for 5 to 7 days", match: ["prednisone", "prednisolone", "oral steroid", "oral corticosteroid", "dexamethasone"] },
@@ -674,7 +692,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE education or follow up measures you would arrange.",
+        prompt: "What education or follow up measures would you arrange?",
         required: 3,
         accept: [
           { id: "technique", text: "Check and correct inhaler technique", match: ["inhaler technique", "technique", "spacer", "mdi"] },
@@ -694,7 +712,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO features of his current history that raise his risk of a future severe exacerbation.",
+        prompt: "What features of his current history raise his risk of a future severe exacerbation?",
         required: 2,
         accept: [
           { id: "saba", text: "Frequent salbutamol use", match: ["salbutamol", "saba", "reliever", "ventolin"] },
@@ -720,12 +738,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Fever and more sputum",
     stem:
-      "A 66 year old woman with COPD and a 40 pack year history has four days of fever, rusty sputum and worsening breathlessness. T 38.9 C, HR 112, BP 104/62, RR 30, SpO2 85% on room air. Weight 58 kg. She is alert and oriented. There are coarse crackles at the right base.",
+      "A 66-year-old woman with COPD and a 40 pack year history has four days of fever, rusty sputum and worsening breathlessness. She is alert and oriented. There are coarse crackles at the right base.",
+    vitals: { temperature: "38.9°C", pulse: "112/minute", resp: "30/minute", bp: "104/62 mmHg", o2sat: "85% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE investigations you would order now.",
+        prompt: "What investigations would you order now?",
         required: 3,
         accept: [
           { id: "cxr", text: "Chest radiograph", match: ["chest x ray", "cxr", "chest radiograph", "chest film"] },
@@ -746,15 +765,15 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which oxygen strategy is most appropriate while you await her blood gas? Select one.",
+        prompt: "Which of the following oxygen strategies is most appropriate while you await her blood gas?",
         options: [
-          "Non-rebreather mask at 15 L per minute targeting 100%",
-          "Venturi mask starting at 28% titrated to SpO2 88 to 92%",
-          "Nasal prongs at 6 L per minute targeting 96 to 98%",
+          "High flow nasal cannula at 60 L/minute with FiO2 1.0",
+          "Nasal prongs at 6 L/minute targeting 96 to 98%",
+          "Non-rebreather mask at 15 L/minute targeting 100%",
+          "Venturi mask from 28%, titrated to SpO2 88 to 92%",
           "No oxygen until the blood gas returns",
-          "High flow nasal cannula at 60 L per minute with FiO2 1.0",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "Controlled oxygen with a Venturi mask gives a predictable FiO2 and avoids worsening hypercapnia. Target 88 to 92% until a gas shows she does not retain CO2. Withholding oxygen from a hypoxic patient is never appropriate.",
         keyFeature: { topic: "asthma-copd", n: 5 },
@@ -764,7 +783,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Chest radiograph shows right lower lobe consolidation. Urea is 6.8 mmol/L. She has no features of severe pneumonia needing ICU. You admit her to a medical ward.",
-        prompt: "Name ONE appropriate empiric antibiotic regimen.",
+        prompt: "What is an appropriate empiric antibiotic regimen?",
         required: 1,
         accept: [
           { id: "bl-mac", text: "Ceftriaxone plus azithromycin or clarithromycin", match: ["ceftriaxone azithromycin", "ceftriaxone azithro", "ceftriaxone clarithromycin", "cefotaxime azithromycin", "ceftriaxone macrolide", "beta lactam macrolide", "ceftriaxone doxycycline", "amoxicillin clavulanate azithromycin"] },
@@ -782,7 +801,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Would you give a systemic corticosteroid? If so, give the drug, dose and duration.",
+        prompt: "What systemic corticosteroid, if any, would you give, including the drug, dose and duration?",
         required: 1,
         accept: [
           { id: "pred", text: "Yes. Prednisone 40 mg PO daily for 5 days", match: ["prednisone 40", "prednisone 30", "prednisone 50", "prednisolone 40", "prednisolone 50", "methylprednisolone 40", "methylprednisolone 60"] },
@@ -804,12 +823,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     alsoTopics: ["airway"],
     title: "Quieter but not better",
     stem:
-      "A 23 year old woman with asthma, two prior ICU admissions and one intubation, has had 90 minutes of treatment with continuous salbutamol, three doses of ipratropium, methylprednisolone 125 mg IV and magnesium sulfate 2 g IV. Weight 55 kg. Her respiratory rate has fallen from 36 to 12. HR 142, BP 104/60, SpO2 88% on a non-rebreather mask. She is slumped forward, answers in single words and her eyes keep closing. Air movement is barely audible. Venous gas: pH 7.18, pCO2 68 mmHg.",
+      "A 23-year-old woman with asthma, two prior ICU admissions and one intubation, has had 90 minutes of treatment with continuous salbutamol, three doses of ipratropium, methylprednisolone 125 mg IV and magnesium sulfate 2 g IV. Her respiratory rate has fallen from 36/minute to 12/minute. She is slumped forward, answers in single words and her eyes keep closing. Air movement is barely audible. Venous gas: pH 7.18, pCO2 68 mmHg.",
+    vitals: { pulse: "142/minute", resp: "12/minute", bp: "104/60 mmHg", o2sat: "88% on non-rebreather mask", weight: "55 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings that tell you she is close to respiratory arrest.",
+        prompt: "What findings tell you she is close to respiratory arrest?",
         required: 3,
         accept: [
           { id: "loc", text: "Drowsiness or decreased level of consciousness", match: ["drowsy", "drowsiness", "eyes closing", "level of consciousness", "decreased loc", "altered mental", "somnolent", "obtunded", "mental status", "confusion"] },
@@ -827,15 +847,15 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in her management?",
         options: [
-          "Trial of BiPAP and reassess in 30 minutes",
           "Rapid sequence intubation by the most experienced operator",
+          "Repeat venous blood gas in 30 minutes",
+          "Salbutamol driven by heliox via face mask",
           "Second dose of magnesium sulfate 2 g IV",
-          "Heliox by face mask",
-          "Repeat blood gas in 30 minutes",
+          "Trial of BiPAP with reassessment in 30 minutes",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Decreasing level of consciousness with a rising pCO2 despite maximal therapy is an indication for intubation. NIV requires an alert, cooperative patient who can protect her airway. Delay risks a peri-arrest intubation.",
         keyFeature: { topic: "asthma-copd", n: 7 },
@@ -844,7 +864,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "Name the preferred induction agent for her. Include the dose for this patient.",
+        prompt: "What is the preferred induction agent for her, including the dose for this patient?",
         required: 1,
         accept: [
           { id: "ketamine", text: "Ketamine 1 to 2 mg/kg IV, about 55 to 110 mg", match: ["ketamine 1 mg/kg", "ketamine 1.5 mg/kg", "ketamine 2 mg/kg", "ketamine 1mg/kg", "ketamine 2mg/kg", "ketamine 1 to 2", "ketamine 100mg", "ketamine 80mg", "ketamine 60mg", "ketamine 55", "ketamine 60", "ketamine 70", "ketamine 75", "ketamine 80", "ketamine 90", "ketamine 100", "ketamine 110"] },
@@ -858,7 +878,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE initial ventilator strategies that limit dynamic hyperinflation.",
+        prompt: "What initial ventilator strategies limit dynamic hyperinflation?",
         required: 3,
         accept: [
           { id: "rr", text: "Low set rate of about 8 to 10 breaths per minute", match: ["low respiratory rate", "low rate", "slow rate", "rate 8", "rate 10", "rr 8", "rr 10", "decrease rate", "reduce rate", "lower rate"] },
@@ -881,8 +901,8 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q5",
         kind: "short",
-        update: "Five minutes after intubation her BP is 62/30, HR 150 and SpO2 84%. Peak airway pressures are very high.",
-        prompt: "List TWO immediate actions.",
+        update: "Five minutes after intubation her BP is 62/30 mmHg, pulse 150/minute and SpO2 84%. Peak airway pressures are very high.",
+        prompt: "What are your immediate actions?",
         required: 2,
         accept: [
           { id: "disconnect", text: "Disconnect from the ventilator to allow full exhalation, with gentle chest compression", match: ["disconnect", "off the ventilator", "off ventilator", "allow exhalation", "compress chest", "chest compression"] },
@@ -908,12 +928,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     topic: "asthma-copd",
     title: "Wheeze in the third trimester",
     stem:
-      "A 29 year old woman, G2P1 at 31 weeks, has asthma. She stopped her budesonide inhaler early in pregnancy because she worried it might harm the baby. She has two days of worsening wheeze. HR 118, RR 28, BP 118/70, SpO2 92% on room air, T 37.0 C. Peak flow is 45% of her personal best. Fetal heart rate is 150.",
+      "A 29-year-old woman, G2P1 at 31 weeks, has asthma. She stopped her budesonide inhaler early in pregnancy because she worried it might harm the baby. She has two days of worsening wheeze. Peak flow is 45% of her personal best. Fetal heart rate is 150/minute.",
+    vitals: { temperature: "37.0°C", pulse: "118/minute", resp: "28/minute", bp: "118/70 mmHg", o2sat: "92% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE treatments you would start now.",
+        prompt: "What treatments would you start now?",
         required: 3,
         accept: [
           { id: "salb", text: "Inhaled salbutamol, repeated every 20 minutes", match: ["salbutamol", "ventolin", "saba", "beta agonist"] },
@@ -930,9 +951,15 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which maternal oxygen saturation target is most appropriate? Select one.",
-        options: ["88 to 92%", "90 to 92%", "95% or higher", "85% or higher", "No target, oxygen only if she is cyanosed"],
-        correct: 2,
+        prompt: "Which of the following maternal oxygen saturation targets is most appropriate?",
+        options: [
+          "85% or higher",
+          "88 to 92%",
+          "90 to 92%",
+          "95% or higher",
+          "No target, oxygen only if she is cyanosed",
+        ],
+        correct: 3,
         explanation:
           "In pregnancy, maternal SpO2 is kept at 95% or higher to protect fetal oxygenation. The fetus is sensitive to small drops in maternal oxygen content. The COPD target of 88 to 92% does not apply.",
         keyFeature: { topic: "asthma-copd", n: 5 },
@@ -941,7 +968,8 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "She asks whether the steroids and inhalers will harm her baby. List TWO key counselling points.",
+        update: "She asks whether the steroids and inhalers will harm her baby.",
+        prompt: "What are the key counselling points?",
         required: 2,
         accept: [
           { id: "uncontrolled", text: "Uncontrolled asthma poses a greater risk to the baby than asthma medications", match: ["uncontrolled asthma", "greater risk", "asthma itself", "hypoxia", "benefit outweigh", "risk of asthma"] },
@@ -958,7 +986,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO additional elements of her asthma history that would help you decide on disposition.",
+        prompt: "What additional elements of her asthma history would help you decide on disposition?",
         required: 2,
         accept: [
           { id: "icu", text: "Previous intubation or ICU admission", match: ["intubation", "intubated", "icu", "intensive care", "ventilated", "mechanical ventilation"] },
@@ -985,12 +1013,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     alsoTopics: ["dvt-pe"],
     title: "Breathless a week after surgery",
     stem:
-      "A 68 year old man with COPD had a left total knee replacement eight days ago. He has had one day of increased breathlessness. Sputum is unchanged and he has no fever. HR 116, RR 26, BP 132/80, SpO2 86% on room air (baseline 93%), T 37.1 C. Weight 92 kg. There is a faint expiratory wheeze. The left calf is 3 cm larger than the right.",
+      "A 68-year-old man with COPD had a left total knee replacement eight days ago. He has had one day of increased breathlessness. Sputum is unchanged and he has no fever. His baseline SpO2 is 93%. There is a faint expiratory wheeze. The left calf is 3 cm larger than the right.",
+    vitals: { temperature: "37.1°C", pulse: "116/minute", resp: "26/minute", bp: "132/80 mmHg", o2sat: "86% on room air", weight: "92 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that make a simple COPD exacerbation a less likely explanation.",
+        prompt: "What features make a simple COPD exacerbation a less likely explanation?",
         required: 3,
         accept: [
           { id: "sputum", text: "No change in sputum volume or colour", match: ["sputum", "no change sputum", "unchanged sputum", "no purulence"] },
@@ -1008,9 +1037,15 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate diagnostic test? Select one.",
-        options: ["D-dimer", "CT pulmonary angiogram", "Ventilation perfusion scan", "Chest radiograph alone", "Arterial blood gas"],
-        correct: 1,
+        prompt: "Which of the following is the most appropriate diagnostic test for him?",
+        options: [
+          "Arterial blood gas on room air",
+          "Chest radiograph alone",
+          "CT pulmonary angiogram",
+          "Quantitative D-dimer assay",
+          "Ventilation perfusion scan",
+        ],
+        correct: 2,
         explanation:
           "His pretest probability is high, so a D-dimer should be skipped. Underlying COPD makes a VQ scan more likely to be nondiagnostic. CT pulmonary angiography also shows alternative diagnoses.",
         keyFeature: { topic: "dvt-pe", n: 5 },
@@ -1019,8 +1054,8 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        update: "CT shows bilateral segmental emboli. RV to LV ratio is 0.8. Troponin is normal. BP remains 130/78.",
-        prompt: "List TWO elements of management.",
+        update: "CT shows bilateral segmental emboli. RV to LV ratio is 0.8. Troponin is normal. BP remains 130/78 mmHg.",
+        prompt: "What are the key elements of his management?",
         required: 2,
         accept: [
           { id: "anticoag", text: "Therapeutic anticoagulation, for example apixaban, rivaroxaban or LMWH", match: ["anticoagulation", "anticoagulant", "apixaban", "rivaroxaban", "edoxaban", "dabigatran", "enoxaparin", "dalteparin", "tinzaparin", "heparin", "lmwh", "doac"] },
@@ -1046,12 +1081,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     topic: "asthma-copd",
     title: "Third visit this year",
     stem:
-      "A 16 year old boy with asthma is seen for his third ED visit this year. Weight 60 kg. He was prescribed fluticasone 125 mcg two puffs twice daily but says he does not take it. He goes through two salbutamol inhalers a month and vapes daily. After salbutamol, ipratropium and prednisone his peak flow is 78% of predicted and he feels well.",
+      "A 16-year-old boy with asthma is seen for his third emergency department visit this year. He was prescribed fluticasone 125 mcg two puffs twice daily but says he does not take it. He goes through two salbutamol inhalers a month and vapes daily. After salbutamol, ipratropium and prednisone his peak flow is 78% of predicted and he feels well.",
+    vitals: { weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE additional history questions you would ask to judge his risk of a fatal attack.",
+        prompt: "What additional history questions would you ask to judge his risk of a fatal attack?",
         required: 3,
         accept: [
           { id: "icu", text: "Previous ICU admission or intubation", match: ["intubation", "intubated", "icu", "intensive care", "ventilated", "mechanical ventilation"] },
@@ -1070,16 +1106,15 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which controller regimen is most appropriate for him at discharge? Select one.",
+        prompt: "Which of the following controller regimens is most appropriate for him at discharge?",
         options: [
-          "Salbutamol as needed only",
           "Budesonide formoterol as maintenance and reliever therapy",
-          "Montelukast alone",
-          "Salmeterol alone",
-          "Oral theophylline",
           "Fluticasone only on days with symptoms",
+          "Montelukast 10 mg PO daily as the only controller",
+          "Salbutamol as needed with no daily controller",
+          "Salmeterol inhaler twice daily as the only controller",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "For adolescents and adults, an inhaled corticosteroid with formoterol used as both maintenance and reliever reduces severe exacerbations compared with SABA based regimens. It also ensures every reliever dose delivers steroid. LABA without an inhaled steroid is unsafe in asthma.",
         keyFeature: { topic: "asthma-copd", n: 6 },
@@ -1088,7 +1123,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE strategies to reduce his chance of an early return visit.",
+        prompt: "What strategies would reduce his chance of an early return visit?",
         required: 3,
         accept: [
           { id: "technique", text: "Teach and check inhaler technique", match: ["inhaler technique", "technique", "spacer", "demonstrate", "demonstration"] },
@@ -1107,17 +1142,17 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "menu",
-        prompt: "In addition to his controller, which of the following should he be prescribed? Select one, or None if none are required.",
+        prompt: "Which of the following should he be prescribed in addition to his controller?",
         options: [
+          "Amoxicillin 500 mg PO three times daily for 7 days",
+          "Home nebulizer with salbutamol",
+          "Montelukast 10 mg PO daily",
           "Prednisone 50 mg PO daily for 5 days",
           "Prednisone 5 mg PO daily for 5 days",
-          "Amoxicillin 500 mg PO three times daily for 7 days",
-          "Montelukast 10 mg PO daily",
-          "Home nebulizer with salbutamol",
           "None",
         ],
         select: 1,
-        correct: [0],
+        correct: [3],
         explanation:
           "An adult dose oral steroid course for 5 to 7 days is recommended after an ED treated exacerbation. There is no indication for antibiotics. A home nebulizer offers no advantage over an MDI with spacer.",
         keyFeature: { topic: "asthma-copd", n: 6 },
@@ -1135,21 +1170,21 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     alsoTopics: ["anaphylaxis"],
     title: "Tight chest after dinner out",
     stem:
-      "A 41 year old woman with mild asthma develops wheeze and throat tightness 15 minutes after eating at a restaurant. Paramedics gave salbutamol 5 mg by nebulizer with little effect. HR 128, BP 82/48, RR 30, SpO2 91% on room air. Weight 70 kg. She has hives across her trunk, swollen lips and diffuse wheeze.",
+      "A 41-year-old woman with mild asthma develops wheeze and throat tightness 15 minutes after eating at a restaurant. Paramedics gave salbutamol 5 mg by nebulizer with little effect. She has hives across her trunk, swollen lips and diffuse wheeze.",
+    vitals: { pulse: "128/minute", resp: "30/minute", bp: "82/48 mmHg", o2sat: "91% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is the most likely diagnosis? Select one.",
+        prompt: "Which of the following is the most likely diagnosis for her presentation?",
         options: [
-          "Severe asthma exacerbation",
           "Anaphylaxis",
-          "Panic attack",
-          "ACE inhibitor angioedema",
+          "Isolated angioedema",
           "Scombroid poisoning",
+          "Severe asthma attack",
           "Vasovagal reaction",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Acute onset after a likely allergen with skin, respiratory and cardiovascular involvement is anaphylaxis. Asthma alone does not cause urticaria, lip swelling and hypotension. Patients with asthma are at higher risk of fatal anaphylaxis.",
         keyFeature: { topic: "asthma-copd", n: 1 },
@@ -1158,7 +1193,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "What is the first drug you would give? Include the dose and route.",
+        prompt: "What is the first drug you would give, including the dose and route?",
         required: 1,
         accept: [
           { id: "epi", text: "Epinephrine 0.5 mg IM (1 mg/mL) in the anterolateral thigh", match: ["epinephrine 0.5 mg im", "epinephrine 0.5mg im", "epinephrine 0.5 mg intramuscular", "epinephrine 0.5 im", "epi 0.5 mg im", "epi 0.5mg im", "adrenaline 0.5 mg im", "adrenaline 0.5mg im", "epinephrine 500 mcg im", "epinephrine 0.5 mg thigh", "epinephrine 0.5 mg 1 mg/ml", "epinephrine 0.01 mg/kg im"] },
@@ -1174,8 +1209,8 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        update: "After two doses of IM epinephrine five minutes apart, BP is 88/54 and she is still wheezing.",
-        prompt: "List THREE further treatments aimed at her hypotension and bronchospasm.",
+        update: "After two doses of IM epinephrine five minutes apart, BP is 88/54 mmHg and she is still wheezing.",
+        prompt: "What further treatments would you give for her hypotension and bronchospasm?",
         required: 3,
         accept: [
           { id: "fluid", text: "IV crystalloid bolus of 1 to 2 L", match: ["fluid bolus", "bolus", "crystalloid", "normal saline", "ringer", "iv fluid"] },
@@ -1194,7 +1229,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO features that help distinguish anaphylaxis from an asthma exacerbation.",
+        prompt: "What features help distinguish anaphylaxis from an asthma exacerbation?",
         required: 2,
         accept: [
           { id: "skin", text: "Skin or mucosal involvement such as hives, flushing or lip swelling", match: ["hive", "urticaria", "flushing", "lip swelling", "angioedema", "skin", "mucosal", "rash", "itch"] },
@@ -1220,12 +1255,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     topic: "asthma-copd",
     title: "Wanting to go home after a bad day",
     stem:
-      "A 63 year old woman with COPD arrived six hours ago with increased breathlessness and more purulent sputum. She was treated with salbutamol, ipratropium and prednisone 40 mg PO. She now feels close to her usual self. SpO2 92% on room air at rest, RR 20, HR 92. She quit smoking two years ago. She uses tiotropium daily. She has had two exacerbations treated with prednisone in the past year and no admissions. She lives with her husband.",
+      "A 63-year-old woman with COPD arrived six hours ago with increased breathlessness and more purulent sputum. She was treated with salbutamol, ipratropium and prednisone 40 mg PO. She now feels close to her usual self. She quit smoking two years ago. She uses tiotropium daily. She has had two exacerbations treated with prednisone in the past year and no admissions. She lives with her husband.",
+    vitals: { pulse: "92/minute", resp: "20/minute", o2sat: "92% on room air at rest" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO objective checks you would complete before discharge.",
+        prompt: "What objective checks would you complete before discharge?",
         required: 2,
         accept: [
           { id: "walk", text: "Ambulation test with oximetry, without desaturation below about 88% or marked breathlessness", match: ["ambulate", "ambulation", "ambulatory", "walk", "exertion", "road test", "exercise", "stair"] },
@@ -1242,7 +1278,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO medications you would prescribe at discharge for this exacerbation.",
+        prompt: "What medications would you prescribe at discharge for this exacerbation?",
         required: 2,
         accept: [
           { id: "pred", text: "Prednisone 40 mg PO daily to complete 5 days", match: ["prednisone", "prednisolone", "oral steroid", "oral corticosteroid"] },
@@ -1259,7 +1295,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE measures to reduce her risk of future exacerbations.",
+        prompt: "What measures would reduce her risk of future exacerbations?",
         required: 3,
         accept: [
           { id: "inhaler", text: "Escalate maintenance to LAMA LABA or triple therapy and review inhaler technique", match: ["laba", "dual bronchodilator", "escalate", "step up", "inhaler technique", "technique", "triple therapy", "triple inhaler", "trelegy", "breztri", "ics laba lama"] },
@@ -1277,15 +1313,15 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which single factor best predicts that she will have another exacerbation? Select one.",
+        prompt: "Which of the following factors best predicts that she will have another exacerbation?",
         options: [
+          "Female sex in a patient with COPD",
+          "Her age of 63 years at presentation",
+          "Purulent colour of her sputum at today's visit",
+          "Resting SpO2 of 92% on room air",
           "Two treated exacerbations in the past year",
-          "Her age of 63",
-          "The colour of her sputum today",
-          "Resting SpO2 of 92%",
-          "Being female",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "A history of frequent exacerbations is the strongest predictor of future events. Two or more moderate exacerbations a year, or one requiring admission, defines a high risk patient. This history should drive escalation of therapy and follow up.",
         keyFeature: { topic: "asthma-copd", n: 2 },
@@ -1302,12 +1338,13 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
     topic: "asthma-copd",
     title: "Looking calmer after two hours",
     stem:
-      "A 52 year old man with asthma has had two hours of treatment with repeated salbutamol and ipratropium and methylprednisolone 125 mg IV. The nurse says he looks calmer. His respiratory rate has fallen from 34 to 22. He is diaphoretic with paradoxical abdominal movement. He remains alert and follows commands. HR 128, SpO2 91% on 6 L by mask. Venous pCO2 was 34 mmHg on arrival and is now 52 mmHg with pH 7.29. Weight 90 kg.",
+      "A 52-year-old man with asthma has had two hours of treatment with repeated salbutamol and ipratropium and methylprednisolone 125 mg IV. The nurse says he looks calmer. His respiratory rate has fallen from 34/minute to 22/minute. He is diaphoretic with paradoxical abdominal movement. He remains alert and follows commands. Venous pCO2 was 34 mmHg on arrival and is now 52 mmHg with pH 7.29.",
+    vitals: { pulse: "128/minute", resp: "22/minute", o2sat: "91% on 6 L/minute by mask", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO findings that show he is tiring rather than improving.",
+        prompt: "What findings show he is tiring rather than improving?",
         required: 2,
         accept: [
           { id: "co2", text: "pCO2 rising from low to high", match: ["pco2", "co2", "hypercapnia", "hypercarbia", "rising"] },
@@ -1325,15 +1362,15 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in his management?",
         options: [
-          "Reassure the nurse and plan discharge when the peak flow improves",
-          "Start BiPAP in the resuscitation room with an intubation plan ready and early ICU involvement",
           "Give midazolam 2 mg IV to reduce his anxiety",
-          "Start an aminophylline infusion",
-          "Repeat methylprednisolone 125 mg IV",
+          "Plan discharge once his peak flow improves",
+          "Repeat methylprednisolone 125 mg IV now",
+          "Start an aminophylline loading dose and infusion",
+          "Start BiPAP in resuscitation, ready to intubate, involve ICU",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "He is fatiguing but still alert and cooperative, so a closely watched BiPAP trial is reasonable. The team must be ready to intubate if he worsens. Sedating an asthmatic outside of intubation can cause arrest.",
         keyFeature: { topic: "asthma-copd", n: 7 },
@@ -1342,7 +1379,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE findings during the BiPAP trial that would prompt you to intubate.",
+        prompt: "What findings during the BiPAP trial would prompt you to intubate?",
         required: 3,
         accept: [
           { id: "loc", text: "Declining level of consciousness", match: ["level of consciousness", "decreased loc", "drowsy", "drowsiness", "confusion", "obtunded", "somnolent", "mental status", "gcs"] },
@@ -1362,7 +1399,7 @@ export const ASTHMA_COPD_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Name ONE drug treatment not yet given that is recommended for his severe exacerbation. Include the dose.",
+        prompt: "What drug treatment not yet given is recommended for his severe exacerbation, including the dose?",
         required: 1,
         accept: [
           { id: "mg", text: "Magnesium sulfate 2 g IV over 20 minutes", match: ["magnesium 2 g", "magnesium sulfate 2", "mgso4 2", "magnesium 2", "mag sulfate 2", "magnesium 2g", "magnesium sulfate 2g", "mgso4 2g"] },

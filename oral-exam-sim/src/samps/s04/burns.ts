@@ -7,11 +7,11 @@ const AUTHOR = "Draft for review by Arjan Dhoot, MD";
 
 const ABLS: Source = {
   id: "abls",
-  citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual.",
+  citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update.",
 };
 const ABA_REFERRAL: Source = {
   id: "aba-referral",
-  citation: "American Burn Association. Guidelines for burn patient referral.",
+  citation: "American Burn Association. Guidelines for burn patient referral. Advice on transfer and consultation. 2022.",
   url: "https://www.ameriburn.org/burn-care-team/resources/guidelines-for-burn-patient-referral",
 };
 const ATLS: Source = {
@@ -20,7 +20,7 @@ const ATLS: Source = {
 };
 const ROSEN: Source = {
   id: "rosen",
-  citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier.",
+  citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. 2023.",
 };
 const CO: Source = {
   id: "hampson-co",
@@ -52,7 +52,7 @@ const CPS_PAIN: Source = {
 };
 const CIG_TETANUS: Source = {
   id: "cig-tetanus",
-  citation: "Public Health Agency of Canada. Canadian Immunization Guide. Tetanus toxoid.",
+  citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Tetanus toxoid. Updated 2026.",
   url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html",
 };
 const ISBI: Source = {
@@ -68,12 +68,13 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["airway"],
     title: "Carried out of a basement fire",
     stem:
-      "A 38 year old man is carried out of a burning basement by firefighters after about 10 minutes inside. He has partial and full thickness burns to the face, neck, chest and both arms, estimated at 30% TBSA. Weight 84 kg. HR 122, BP 134/80, RR 28, SpO2 95% on a non-rebreather mask. GCS 15. His voice sounds hoarse to his wife.",
+      "A 38-year-old man is carried out of a burning basement by firefighters after about 10 minutes inside. He has partial and full thickness burns to the face, neck, chest and both arms, estimated at 30% TBSA. GCS 15. His voice sounds hoarse to his wife.",
+    vitals: { pulse: "122/minute", resp: "28/minute", bp: "134/80 mmHg", o2sat: "95% on non-rebreather mask", weight: "84 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings on history or examination that would suggest inhalation injury.",
+        prompt: "What findings on history or examination would suggest inhalation injury?",
         required: 3,
         accept: [
           { id: "space", text: "Fire in an enclosed space", match: ["enclosed space", "closed space", "confined space", "basement", "indoor"] },
@@ -94,13 +95,13 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate airway plan? Select one.",
+        prompt: "Which of the following is the most appropriate airway plan for him?",
         options: [
-          "Observe on high flow oxygen and reassess in 4 hours",
-          "Early intubation now by the most experienced operator, with a surgical airway kit open",
-          "Nebulized racemic epinephrine and reassess",
           "Dexamethasone 10 mg IV to prevent airway swelling",
-          "Intubate only if SpO2 falls below 90%",
+          "Intubate now by most experienced operator, surgical kit open",
+          "Intubate only if SpO2 falls below 90% on oxygen",
+          "Nebulized racemic epinephrine and reassess",
+          "Observe on high flow oxygen and reassess in 4 hours",
         ],
         correct: 1,
         explanation:
@@ -111,7 +112,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO specific preparations for intubating this patient.",
+        prompt: "What specific preparations would you make for intubating this patient?",
         required: 2,
         accept: [
           { id: "tube", text: "Use a large endotracheal tube, 7.5 mm or larger in an adult", match: ["large tube", "large ett", "7.5", "8.0", "8 mm", "largest tube", "big tube", "size 8"] },
@@ -130,7 +131,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Before intubation he rates his pain at 10 out of 10. Give ONE appropriate analgesic order. Include the drug, dose and route.",
+        update: "Before intubation he rates his pain at 10 out of 10.",
+        prompt: "What analgesic would you order, including the drug, dose and route?",
         required: 1,
         accept: [
           { id: "fentanyl", text: "Fentanyl 1 mcg/kg IV, about 50 to 100 mcg, repeated every 5 to 10 minutes to effect", match: ["fentanyl 50 mcg iv", "fentanyl 75 mcg iv", "fentanyl 80 mcg iv", "fentanyl 100 mcg iv", "fentanyl 50mcg iv", "fentanyl 75mcg iv", "fentanyl 100mcg iv", "fentanyl 1 mcg/kg iv", "fentanyl 1 mcg/kg", "fentanyl 1mcg/kg", "fentanyl 50 iv", "fentanyl 100 iv", "fentanyl 75 iv"] },
@@ -158,13 +160,20 @@ export const BURNS_SAMPS: Samp[] = [
     topic: "burns",
     title: "A garage flash fire",
     stem:
-      "A 35 year old man was pouring gasoline in his garage when it ignited at 14:00. He arrives at your ED at 16:00. Paramedics started a line and gave 1 L of Ringer's lactate. Weight 80 kg. HR 118, BP 128/76, RR 22, SpO2 98% on room air. He has deep partial and full thickness burns to the entire anterior trunk, the whole of the right arm and the anterior surface of the left leg. His face is red without blisters.",
+      "A 35-year-old man was pouring gasoline in his garage when it ignited at 14:00. He arrives at your emergency department at 16:00. Paramedics started a line and gave 1 L of Ringer's lactate. He has deep partial and full thickness burns to the entire anterior trunk, the whole of the right arm and the anterior surface of the left leg. His face is red without blisters.",
+    vitals: { pulse: "118/minute", resp: "22/minute", bp: "128/76 mmHg", o2sat: "98% on room air", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Using the rule of nines, what TBSA should be used for his fluid calculation? Select one.",
-        options: ["27%", "36%", "40%", "45%", "54%"],
+        prompt: "Which of the following TBSA values, using the rule of nines, should be used for his fluid calculation?",
+        options: [
+          "27%",
+          "36%",
+          "40%",
+          "45%",
+          "54%",
+        ],
         correct: 1,
         explanation:
           "Anterior trunk 18%, whole right arm 9% and anterior left leg 9% give 36%. Superficial burns such as the red, unblistered face are not counted. Overestimating TBSA is common and leads to over resuscitation.",
@@ -174,7 +183,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Using the ABA consensus formula of 2 mL/kg/%TBSA of Ringer's lactate for the first 24 hours, give (1) the total 24 hour volume and (2) the hourly rate you would run now for the rest of the first 8 hours.",
+        prompt: "Using the ABA consensus formula of 2 mL/kg/%TBSA of Ringer's lactate for the first 24 hours, what are the total 24 hour volume and the hourly rate you would run now for the rest of the first 8 hours?",
         required: 2,
         accept: [
           { id: "total", text: "Total 5760 mL over 24 hours", match: ["5760", "5,760", "5760ml", "5.76", "5.8 l", "5800"] },
@@ -192,8 +201,14 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which hourly urine output target is most appropriate for him? Select one.",
-        options: ["0.1 mL/kg/h", "0.5 mL/kg/h, about 30 to 50 mL per hour", "1 to 1.5 mL/kg/h", "2 mL/kg/h", "Any output above 200 mL per hour"],
+        prompt: "Which of the following hourly urine output targets is most appropriate for him?",
+        options: [
+          "0.1 mL/kg/h, about 8 mL per hour",
+          "0.5 mL/kg/h, about 30 to 50 mL per hour",
+          "1 to 1.5 mL/kg/h, about 100 mL per hour",
+          "2 mL/kg/h, about 160 mL per hour",
+          "2.5 mL/kg/h, about 200 mL per hour",
+        ],
         correct: 1,
         explanation:
           "For adult thermal burns the target is 0.5 mL/kg/h, roughly 30 to 50 mL per hour. Higher targets drive fluid creep and edema complications. Children under about 30 kg target 1 mL/kg/h. Adults with pigmented urine after electrical injury target 75 to 100 mL per hour until it clears.",
@@ -203,8 +218,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        update: "Four hours after injury his urine output has been 15 mL per hour for two consecutive hours. BP 118/70, HR 116.",
-        prompt: "List TWO actions you would take.",
+        update: "Four hours after injury his urine output has been 15 mL per hour for two consecutive hours. BP 118/70 mmHg, pulse 116/minute.",
+        prompt: "What actions would you take?",
         required: 2,
         accept: [
           { id: "increase", text: "Increase the fluid rate by about 20 to 30%, then reassess hourly", match: ["increase rate", "increase fluid", "increase infusion", "increase ringer", "increase lr", "increase the rate", "increase iv", "up the rate", "titrate up", "one third", "20%", "25%", "30%", "33%"] },
@@ -233,12 +248,12 @@ export const BURNS_SAMPS: Samp[] = [
     topic: "burns",
     title: "Throbbing fingertips",
     stem:
-      "A 44 year old man presents at 23:00 with severe throbbing pain in the tips of three fingers of his right hand. The pain started about six hours after he finished work and is now 10 out of 10. He denies any injury. He works at a car detailing shop. The fingertips look almost normal apart from slight pallor under the nails. Vital signs are normal.",
+      "A 44-year-old man presents at 23:00 with severe throbbing pain in the tips of three fingers of his right hand. The pain started about six hours after he finished work and is now 10 out of 10. He denies any injury. He works at a car detailing shop. The fingertips look almost normal apart from slight pallor under the nails. Vital signs are normal.",
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO specific history questions that would help explain his pain.",
+        prompt: "What specific history questions would help explain his pain?",
         required: 2,
         accept: [
           { id: "chemical", text: "Any contact with chemicals at work", match: ["chemical", "acid", "caustic", "corrosive", "solvent"] },
@@ -257,7 +272,7 @@ export const BURNS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "He used an aluminium wheel cleaner that contains hydrofluoric acid. One of his gloves had a hole in it.",
-        prompt: "List TWO treatments for his fingers.",
+        prompt: "What treatments would you give for his fingers?",
         required: 2,
         accept: [
           { id: "irrigate", text: "Copious irrigation with water", match: ["irrigation", "irrigate", "water", "wash"] },
@@ -279,7 +294,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO systemic complications of hydrofluoric acid exposure you would consider.",
+        prompt: "What systemic complications of hydrofluoric acid exposure would you consider?",
         required: 2,
         accept: [
           { id: "ca", text: "Hypocalcemia", match: ["hypocalcemia", "hypocalcaemia", "low calcium", "calcium"] },
@@ -296,15 +311,15 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which is the best endpoint to judge whether his local treatment is adequate? Select one.",
+        prompt: "Which of the following is the best endpoint to judge whether his local treatment is adequate?",
         options: [
-          "Resolution of pain",
+          "Completing 60 minutes of irrigation",
+          "Normal ECG and QT interval",
           "Normal serum calcium",
+          "Resolution of pain",
           "Return of normal nail colour",
-          "Completion of 60 minutes of irrigation",
-          "Normal ECG",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Pain tracks ongoing fluoride activity in the tissue. Treatment is repeated or escalated until the pain resolves. Serum calcium and ECG monitor systemic toxicity, not local control.",
         keyFeature: { topic: "burns", n: 6 },
@@ -322,12 +337,13 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Found in a smoke filled apartment",
     stem:
-      "A 58 year old woman is pulled from a smoke filled apartment after about 20 minutes. She was found unresponsive. She now opens her eyes to voice and is confused. GCS 11. She has superficial partial thickness burns to both hands, about 4% TBSA, and soot around her nostrils. Weight 65 kg. HR 124, BP 92/58, RR 26, SpO2 99% on a non-rebreather mask. Lactate 11 mmol/L. Carboxyhemoglobin 28%.",
+      "A 58-year-old woman is pulled from a smoke filled apartment after about 20 minutes. She was found unresponsive. She now opens her eyes to voice and is confused. GCS 11. She has superficial partial thickness burns to both hands, about 4% TBSA, and soot around her nostrils. Lactate 11 mmol/L. Carboxyhemoglobin 28%.",
+    vitals: { pulse: "124/minute", resp: "26/minute", bp: "92/58 mmHg", o2sat: "99% on non-rebreather mask", weight: "65 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE associated injuries or toxic exposures you must assess for.",
+        prompt: "What associated injuries or toxic exposures must you assess for?",
         required: 3,
         accept: [
           { id: "co", text: "Carbon monoxide poisoning", match: ["carbon monoxide", "co poisoning", "co toxicity", "co level", "co exposure", "carboxyhemoglobin", "cohb"] },
@@ -345,13 +361,14 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Her lactate is 11 mmol/L and she remains hypotensive. Which treatment is most appropriate now? Select one.",
+        update: "Her lactate is 11 mmol/L and she remains hypotensive.",
+        prompt: "Which of the following treatments is most appropriate for her now?",
         options: [
           "Hydroxocobalamin 5 g IV over 15 minutes",
-          "Sodium nitrite 300 mg IV",
-          "Methylene blue 1 mg/kg IV",
           "Hydroxocobalamin 70 mg IV",
+          "Methylene blue 1 mg/kg IV",
           "Sodium bicarbonate 100 mmol IV and observe",
+          "Sodium nitrite 300 mg IV",
         ],
         correct: 0,
         explanation:
@@ -362,7 +379,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO features in any carbon monoxide poisoned patient that should prompt discussion of hyperbaric oxygen.",
+        prompt: "What features in any carbon monoxide poisoned patient should prompt discussion of hyperbaric oxygen?",
         required: 2,
         accept: [
           { id: "loc", text: "Loss of consciousness", match: ["loss of consciousness", "loc", "syncope", "unresponsive", "unconscious"] },
@@ -381,7 +398,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO reasons in this case to consider early intubation.",
+        prompt: "What are the reasons in this case to consider early intubation?",
         required: 2,
         accept: [
           { id: "gcs", text: "Depressed level of consciousness", match: ["gcs", "level of consciousness", "decreased loc", "confusion", "confused", "unable to protect", "airway protection", "protect airway"] },
@@ -407,12 +424,13 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["abuse-domestic"],
     title: "A toddler with sore feet",
     stem:
-      "An 18 month old boy is brought in by his mother's partner, who says the child climbed into a hot bath yesterday evening while he was on the phone. Weight 11 kg. HR 150, RR 30, T 37.6 C. There are partial thickness burns to both feet and lower legs up to mid calf with a sharp, symmetric upper border. There are no splash marks. Estimated TBSA is 8%.",
+      "An 18-month-old boy is brought in by his mother's partner, who says the child climbed into a hot bath yesterday evening while he was on the phone. There are partial thickness burns to both feet and lower legs up to mid calf with a sharp, symmetric upper border. There are no splash marks. Estimated TBSA is 8%.",
+    vitals: { temperature: "37.6°C", pulse: "150/minute", resp: "30/minute", weight: "11 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of this presentation that are concerning for an inflicted injury.",
+        prompt: "What features of this presentation are concerning for an inflicted injury?",
         required: 3,
         accept: [
           { id: "delay", text: "Delay in seeking care", match: ["delay", "delayed", "yesterday", "late presentation"] },
@@ -431,7 +449,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "He screams when his feet are touched and you need to examine and dress the wounds. Give ONE appropriate analgesic order. Include the drug, dose and route.",
+        update: "He screams when his feet are touched and you need to examine and dress the wounds.",
+        prompt: "What analgesic would you order, including the drug, dose and route?",
         required: 1,
         accept: [
           { id: "infent", text: "Intranasal fentanyl 1.5 mcg/kg, about 15 to 17 mcg", match: ["fentanyl 1.5 mcg/kg", "fentanyl 1.5mcg/kg", "fentanyl 15 mcg", "fentanyl 16 mcg", "fentanyl 17 mcg", "fentanyl 15mcg", "fentanyl 16mcg", "fentanyl 20 mcg intranasal", "fentanyl 2 mcg/kg intranasal"] },
@@ -451,7 +470,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO steps in his disposition.",
+        prompt: "What are the steps in his disposition?",
         required: 2,
         accept: [
           { id: "report", text: "Report to child protection services", match: ["child protection", "cas", "children's aid", "childrens aid", "report", "cps", "child welfare", "social service"] },
@@ -469,15 +488,15 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which statement about your duty to report in Ontario is correct? Select one.",
+        prompt: "Which of the following best describes your duty to report in Ontario?",
         options: [
-          "You must be certain of abuse before reporting",
-          "You may ask a nurse or social worker to report on your behalf",
-          "You must report directly and promptly when you have reasonable grounds to suspect a child is in need of protection",
-          "Reporting requires the consent of the child's mother",
-          "You should wait for the skeletal survey result before reporting",
+          "Be certain of abuse before reporting",
+          "Delegate the report to a nurse or social worker",
+          "Get the mother's consent before reporting",
+          "Report directly, promptly, on reasonable grounds to suspect",
+          "Wait for the skeletal survey before reporting",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
           "Ontario law requires a professional with reasonable grounds to suspect abuse to report directly to a children's aid society without delay. The duty cannot be delegated and does not need certainty or consent. Other provinces have similar laws.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
@@ -495,12 +514,13 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["environmental"],
     title: "A lineman brought in from the field",
     stem:
-      "A 32 year old utility lineman contacted a 14 400 volt line while working from a bucket truck 4 m above the ground. Coworkers say he had a brief loss of consciousness. Weight 85 kg. HR 104, BP 138/82, RR 18, SpO2 97% on room air. There is a charred wound on the right palm and another on the left heel. The visible burns total about 3% TBSA. His right forearm is firm and his urine is dark red brown.",
+      "A 32-year-old utility lineman contacted a 14 400 volt line while working from a bucket truck 4 m above the ground. Coworkers say he had a brief loss of consciousness. There is a charred wound on the right palm and another on the left heel. The visible burns total about 3% TBSA. His right forearm is firm and his urine is dark red brown.",
+    vitals: { pulse: "104/minute", resp: "18/minute", bp: "138/82 mmHg", o2sat: "97% on room air", weight: "85 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE complications of this injury you would look for.",
+        prompt: "What complications of this injury would you look for?",
         required: 3,
         accept: [
           { id: "rhabdo", text: "Rhabdomyolysis with myoglobinuria and acute kidney injury", match: ["rhabdomyolysis", "rhabdo", "myoglobin", "kidney", "renal", "aki", "ck"] },
@@ -520,7 +540,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE investigations you would order.",
+        prompt: "What investigations would you order?",
         required: 3,
         accept: [
           { id: "ecg", text: "12 lead ECG and continuous cardiac monitoring", match: ["ecg", "ekg", "cardiac monitor", "telemetry", "monitoring"] },
@@ -539,11 +559,18 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "His urine remains pigmented. What urine output target should guide his fluids? Select one.",
-        options: ["0.5 mL/kg/h, about 40 mL per hour", "75 to 100 mL per hour, about 1 mL/kg/h, until the urine clears", "0.25 mL/kg/h to avoid edema", "3 mL/kg/h", "No target, give fluids by the Parkland formula only"],
-        correct: 1,
+        update: "His urine remains pigmented.",
+        prompt: "Which of the following urine output targets should guide his fluids?",
+        options: [
+          "0.25 mL/kg/h, about 20 mL per hour",
+          "0.5 mL/kg/h, about 40 mL per hour",
+          "3 mL/kg/h, about 250 mL per hour",
+          "75 to 100 mL per hour until the urine clears",
+          "No target, give fluids by the Parkland formula only",
+        ],
+        correct: 3,
         explanation:
-          "Pigmented urine after electrical injury calls for a higher target of about 75 to 100 mL per hour in an adult until it clears. Burn formulas underestimate the need because the visible TBSA is small. Titrate to output rather than formula.",
+          "Pigmented urine after electrical injury calls for a higher target of about 75 to 100 mL per hour in an adult, about 1 mL/kg/h, until it clears. Burn formulas underestimate the need because the visible TBSA is small. Titrate to output rather than formula.",
         keyFeature: { topic: "burns", n: 4 },
         source: "abls",
       },
@@ -551,7 +578,7 @@ export const BURNS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "An hour later his right forearm is tense and painful on passive finger extension.",
-        prompt: "List TWO next steps.",
+        prompt: "What are the next steps?",
         required: 2,
         accept: [
           { id: "surgery", text: "Urgent surgical consultation for fasciotomy", match: ["fasciotomy", "surgery", "surgeon", "plastic", "burn surgeon", "orthopedic", "orthopaedic"] },
@@ -578,12 +605,13 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Harder and harder to bag",
     stem:
-      "A 50 year old man's clothing caught fire at a campfire. He arrives from a regional hospital three hours after the injury, intubated. Weight 88 kg. He has full thickness burns encircling the chest and upper abdomen and both arms, about 40% TBSA. Peak airway pressures have risen steadily and he is now hard to bag. SpO2 88% on FiO2 1.0. BP 104/64, HR 126.",
+      "A 50-year-old man's clothing caught fire at a campfire. He arrives from a regional hospital three hours after the injury, intubated. He has full thickness burns encircling the chest and upper abdomen and both arms, about 40% TBSA. Peak airway pressures have risen steadily and he is now hard to bag.",
+    vitals: { pulse: "126/minute", bp: "104/64 mmHg", o2sat: "88% on FiO2 1.0", weight: "88 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO causes of his rising airway pressure you should consider.",
+        prompt: "What causes of his rising airway pressure should you consider?",
         required: 2,
         accept: [
           { id: "eschar", text: "Restrictive circumferential chest eschar", match: ["eschar", "circumferential", "restrictive", "chest wall"] },
@@ -601,15 +629,15 @@ export const BURNS_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "The tube is in good position and there is no pneumothorax on ultrasound.",
-        prompt: "Which intervention is most appropriate? Select one.",
+        prompt: "Which of the following interventions is most appropriate for his rising airway pressure?",
         options: [
-          "Increase PEEP to 15 cm H2O",
-          "Chest escharotomy along both anterior axillary lines joined across the costal margin",
-          "Bilateral chest tubes",
-          "Neuromuscular blockade alone",
-          "Fasciotomy of both arms",
+          "Add neuromuscular blockade as the only change in management",
+          "Bilateral chest tube insertion at the bedside",
+          "Chest escharotomy along both anterior axillary lines",
+          "Decompressive fasciotomy of both arms",
+          "Increase PEEP to 15 cm H2O and recheck",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Escharotomy incisions along the anterior axillary lines, joined across the upper abdomen, free the chest wall. Ventilation usually improves immediately. It is done at the bedside with electrocautery or a scalpel under analgesia and sedation.",
         keyFeature: { topic: "burns", n: 1 },
@@ -618,7 +646,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "Before the escharotomy, give ONE analgesic or sedative order for this intubated patient. Include the drug, dose and route.",
+        prompt: "What analgesic or sedative would you order for this intubated patient before the escharotomy, including the drug, dose and route?",
         required: 1,
         accept: [
           { id: "fent", text: "Fentanyl 1 to 2 mcg/kg IV bolus, about 100 to 150 mcg, then infusion", match: ["fentanyl 100 mcg", "fentanyl 150 mcg", "fentanyl 100mcg", "fentanyl 150mcg", "fentanyl 1 mcg/kg", "fentanyl 2 mcg/kg", "fentanyl 100", "fentanyl 150", "fentanyl 1 to 2", "fentanyl 50 mcg"] },
@@ -638,7 +666,7 @@ export const BURNS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "After the escharotomy he is easy to ventilate. You are preparing him for air transfer to the provincial burn centre.",
-        prompt: "List THREE things to do before he leaves.",
+        prompt: "What would you do before he leaves?",
         required: 3,
         accept: [
           { id: "tube", text: "Secure the tube with ties and confirm position", match: ["secure tube", "secure the tube", "tube tie", "tie", "tube position", "confirm tube"] },
@@ -668,12 +696,13 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["abuse-domestic"],
     title: "Found by her daughter",
     stem:
-      "An 81 year old woman is brought in by her daughter, who found her at home with wounds on both thighs. The patient says she spilled a kettle two days ago. She has type 2 diabetes with peripheral neuropathy, uses a walker and lives alone. Weight 52 kg. Vital signs are normal. There are burns over the anterior thighs, about 5% TBSA. Some areas are white, dry and do not blanch.",
+      "An 81-year-old woman is brought in by her daughter, who found her at home with wounds on both thighs. The patient says she spilled a kettle two days ago. She has type 2 diabetes with peripheral neuropathy, uses a walker and lives alone. Vital signs are normal. There are burns over the anterior thighs, about 5% TBSA. Some areas are white, dry and do not blanch.",
+    vitals: { weight: "52 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE factors in this case that favour admission or burn centre referral rather than discharge.",
+        prompt: "What factors in this case favour admission or burn centre referral rather than discharge?",
         required: 3,
         accept: [
           { id: "age", text: "Older age", match: ["age", "elderly", "older", "81"] },
@@ -692,15 +721,15 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which finding best indicates a full thickness burn? Select one.",
+        prompt: "Which of the following findings best indicates a full thickness burn?",
         options: [
+          "Exquisite pain to light touch over the burn",
           "Intact blisters over pink moist skin",
+          "Painful erythema without any blisters",
           "Red skin that blanches with brisk capillary refill",
-          "White or leathery skin that does not blanch and has reduced sensation",
-          "Exquisite pain to light touch",
-          "Erythema without blisters",
+          "White or leathery, nonblanching skin with reduced sensation",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "Full thickness burns are dry, white or leathery, do not blanch and have reduced sensation because the nerve endings are destroyed. Her neuropathy makes sensation a less reliable guide. Burns in older adults are often deeper than they look.",
         keyFeature: { topic: "burns", n: 5 },
@@ -709,7 +738,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO other issues you would explore about how this injury happened.",
+        prompt: "What other issues would you explore about how this injury happened?",
         required: 2,
         accept: [
           { id: "neglect", text: "Elder abuse or neglect", match: ["abuse", "neglect", "elder"] },
@@ -726,7 +755,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Her last tetanus booster was more than 20 years ago. What tetanus prophylaxis does she need?",
+        update: "Her last tetanus booster was more than 20 years ago.",
+        prompt: "What tetanus prophylaxis does she need?",
         required: 1,
         accept: [
           { id: "td", text: "Tetanus toxoid containing vaccine such as Tdap or Td", match: ["tdap", "td", "tetanus toxoid", "tetanus booster", "tetanus vaccine", "adacel", "boostrix"] },
@@ -748,20 +778,20 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["analgesia-sedation"],
     title: "Grabbed the wrong handle",
     stem:
-      "A 27 year old right handed graphic designer grabbed the handle of a cast iron pan that had been in a hot oven. She arrives 40 minutes later. There are blistered, pink, moist burns across the palm and the palmar surface of the fingers of her right hand, about 1.5% TBSA. They blanch with brisk refill and are very painful. She is otherwise well.",
+      "A 27-year-old right-handed graphic designer grabbed the handle of a cast iron pan that had been in a hot oven. She arrives 40 minutes later. There are blistered, pink, moist burns across the palm and the palmar surface of the fingers of her right hand, about 1.5% TBSA. They blanch with brisk refill and are very painful. She is otherwise well.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which disposition is most appropriate? Select one.",
+        prompt: "Which of the following dispositions is most appropriate for her?",
         options: [
-          "Discharge with family doctor follow up in two weeks",
-          "Discharge with prompt referral to a burn centre or plastic surgery clinic for assessment",
           "Admit to general surgery for daily dressings",
-          "Discharge with no follow up because the TBSA is under 2%",
           "Admit to the ICU for fluid resuscitation",
+          "Discharge, prompt burn centre or plastic surgery referral",
+          "Discharge with family doctor follow up in two weeks",
+          "Discharge with no planned follow up",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Partial thickness burns of the hands meet burn centre referral criteria regardless of size because of the risk to function. Most can be managed as outpatients with early specialist review. Small TBSA alone does not make a hand burn minor.",
         keyFeature: { topic: "burns", n: 5 },
@@ -770,7 +800,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE elements of her wound care in the ED.",
+        prompt: "What are the elements of her wound care in the emergency department?",
         required: 3,
         accept: [
           { id: "cool", text: "Cool running water for 20 minutes, which still helps up to 3 hours after injury", match: ["cool", "running water", "cold water", "20 minute"] },
@@ -794,7 +824,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO analgesic strategies for her ED care and first days at home.",
+        prompt: "What analgesic strategies would you use in the emergency department and for her first days at home?",
         required: 2,
         accept: [
           { id: "acet", text: "Regular acetaminophen", match: ["acetaminophen", "tylenol", "paracetamol"] },
@@ -821,20 +851,21 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Pulled from a burning car",
     stem:
-      "A 40 year old driver is extracted from a burning car after a head on collision on the highway. He arrives 40 minutes after the crash. Weight 90 kg. HR 134, BP 78/40, RR 28, SpO2 94% on a non-rebreather mask. GCS 14. He has partial and full thickness burns to both legs and the lower trunk, about 20% TBSA. His abdomen is tender and FAST shows fluid in Morison's pouch.",
+      "A 40-year-old driver is extracted from a burning car after a head on collision on the highway. He arrives 40 minutes after the crash. GCS 14. He has partial and full thickness burns to both legs and the lower trunk, about 20% TBSA. His abdomen is tender and FAST shows fluid in Morison's pouch.",
+    vitals: { pulse: "134/minute", resp: "28/minute", bp: "78/40 mmHg", o2sat: "94% on non-rebreather mask", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is the most likely cause of his hypotension? Select one.",
+        prompt: "Which of the following is the most likely cause of his hypotension?",
         options: [
           "Burn shock from capillary leak",
-          "Hemorrhage from an intra-abdominal injury",
           "Carbon monoxide poisoning",
-          "Neurogenic shock",
-          "Pain",
+          "Hemorrhage from an intra-abdominal injury",
+          "Neurogenic shock from a thoracic spinal cord injury",
+          "Vasovagal response to pain",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Burn shock develops over hours and rarely causes hypotension in the first hour. Early hypotension in a burned patient is hemorrhage until proven otherwise. His positive FAST points to the abdomen.",
         keyFeature: { topic: "burns", n: 1 },
@@ -843,7 +874,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE immediate interventions for his shock.",
+        prompt: "What immediate interventions would you perform for his shock?",
         required: 3,
         accept: [
           { id: "mtp", text: "Activate the massive transfusion protocol and give blood products", match: ["massive transfusion", "mtp", "blood", "prbc", "packed red", "plasma", "transfusion", "transfuse"] },
@@ -863,7 +894,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO other injuries or exposures you must specifically look for in this patient.",
+        prompt: "What other injuries or exposures must you specifically look for in this patient?",
         required: 2,
         accept: [
           { id: "spine", text: "Spinal injury", match: ["spine", "spinal", "c spine", "cervical"] },
@@ -881,7 +912,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "He is in severe pain. Give ONE appropriate analgesic order given his hypotension. Include the drug, dose and route.",
+        update: "He is in severe pain.",
+        prompt: "What analgesic would you order given his hypotension, including the drug, dose and route?",
         required: 1,
         accept: [
           { id: "ketamine", text: "Ketamine 0.1 to 0.3 mg/kg IV, about 10 to 25 mg", match: ["ketamine 0.1", "ketamine 0.2", "ketamine 0.3", "ketamine 10 mg", "ketamine 15 mg", "ketamine 20 mg", "ketamine 25 mg"] },
@@ -908,17 +940,18 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["airway", "multiple-trauma"],
     title: "An explosion at the ice hut",
     stem:
-      "A 45 year old man was lighting a propane heater in his ice fishing hut when it exploded one hour ago. Weight 100 kg. He has partial thickness burns to the face, neck, anterior chest and both arms, about 25% TBSA. His eyebrows are singed. Over 30 minutes in your department his voice has become muffled and a soft inspiratory stridor has appeared. HR 116, BP 142/88, RR 24, SpO2 96% on a non-rebreather mask.",
+      "A 45-year-old man was lighting a propane heater in his ice fishing hut when it exploded one hour ago. He has partial thickness burns to the face, neck, anterior chest and both arms, about 25% TBSA. His eyebrows are singed. Over 30 minutes in your department his voice has become muffled and a soft inspiratory stridor has appeared.",
+    vitals: { pulse: "116/minute", resp: "24/minute", bp: "142/88 mmHg", o2sat: "96% on non-rebreather mask", weight: "100 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in his management?",
         options: [
-          "Nebulized epinephrine and dexamethasone, then reassess",
-          "Intubate now by the most experienced operator with surgical airway backup",
           "Arrange ENT nasendoscopy in the morning",
-          "BiPAP to support his breathing",
+          "Intubate now by most experienced operator, surgical backup",
+          "Nebulized epinephrine and dexamethasone, then reassess",
+          "Start BiPAP to support his breathing",
           "Wait for a carboxyhemoglobin level before deciding",
         ],
         correct: 1,
@@ -930,18 +963,18 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Which TWO statements about his intubation are correct? Select TWO.",
+        prompt: "Which of the following statements about his intubation are correct?",
         options: [
-          "Succinylcholine is safe to use in the first 24 hours after a burn",
-          "Succinylcholine is contraindicated at any time after a burn",
-          "Use the largest tube possible, ideally 7.5 mm or more",
-          "Use a 6.0 mm tube as routine to pass the swollen glottis",
+          "Awake intubation is contraindicated in airway burns",
           "Cut the tube short to reduce dead space",
           "Nasal intubation is preferred in facial burns",
-          "Awake intubation is contraindicated in airway burns",
+          "Succinylcholine is contraindicated at any time after a burn",
+          "Succinylcholine is safe within 24 hours of a burn",
+          "Use a 6.0 mm tube routinely for the swollen glottis",
+          "Use the largest tube possible, ideally 7.5 mm or more",
         ],
         select: 2,
-        correct: [0, 2],
+        correct: [4, 6],
         explanation:
           "The hyperkalemic risk of succinylcholine begins after about 24 to 48 hours as receptors upregulate. A large tube allows bronchoscopy and clearance of casts, although smaller sizes must be on hand. Facial swelling will increase, so the tube is never cut short.",
         keyFeature: { topic: "airway", n: 5 },
@@ -950,7 +983,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO methods to confirm tube placement after intubation.",
+        prompt: "What methods would you use to confirm tube placement after intubation?",
         required: 2,
         accept: [
           { id: "etco2", text: "Continuous waveform capnography", match: ["capnography", "etco2", "end tidal", "co2 detector", "capnometry"] },
@@ -969,7 +1002,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "The nearest burn centre is 300 km away. List THREE steps to prepare him for transport.",
+        update: "The nearest burn centre is 300 km away.",
+        prompt: "What steps would you take to prepare him for transport?",
         required: 3,
         accept: [
           { id: "tube", text: "Secure the endotracheal tube with ties and plan for swelling", match: ["secure tube", "secure the tube", "secure ett", "endotracheal", "ett", "tie"] },
@@ -999,12 +1033,13 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "A splash at the plant",
     stem:
-      "A 38 year old woman at an industrial cleaning plant was splashed with a concentrated acid solution on both forearms and one thigh 30 minutes ago, about 5% TBSA. She was showered at the site. The product contains hydrofluoric acid. She now reports tingling around her mouth and muscle cramps. HR 112, BP 118/70, SpO2 98%. Weight 64 kg. ECG shows a QTc of 520 ms.",
+      "A 38-year-old woman at an industrial cleaning plant was splashed with a concentrated acid solution on both forearms and one thigh 30 minutes ago, about 5% TBSA. She was showered at the site. The product contains hydrofluoric acid. She now reports tingling around her mouth and muscle cramps. Her SpO2 is 98%. ECG shows a QTc of 520 ms.",
+    vitals: { pulse: "112/minute", bp: "118/70 mmHg", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE electrolyte abnormalities you expect.",
+        prompt: "What electrolyte abnormalities do you expect?",
         required: 3,
         accept: [
           { id: "ca", text: "Hypocalcemia", match: ["hypocalcemia", "hypocalcaemia", "low calcium", "calcium"] },
@@ -1021,7 +1056,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO systemic treatments to give now. Include the dose for each.",
+        prompt: "What systemic treatments, with the dose of each, would you give now?",
         required: 2,
         accept: [
           { id: "ca", text: "IV calcium, either calcium chloride 10% 10 mL (1 g) through a secure line or calcium gluconate 10% 30 mL (3 g), repeated as needed", match: ["calcium chloride 1 g", "calcium chloride 10 ml", "cacl 1 g", "calcium chloride 1g", "cacl2 1 g", "calcium gluconate 3 g", "calcium gluconate 30 ml", "calcium gluconate 3g", "calcium gluconate 2 g", "calcium gluconate 2g", "calcium gluconate 20 ml"] },
@@ -1036,13 +1071,13 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which disposition is most appropriate after initial treatment? Select one.",
+        prompt: "Which of the following dispositions is most appropriate after initial treatment?",
         options: [
           "Discharge once the tingling resolves",
-          "Observation in the ED for 4 hours then discharge",
-          "Admission to a monitored critical care bed with serial electrolytes and burn centre input",
-          "Admission to a surgical ward without monitoring",
-          "Transfer to a hyperbaric unit",
+          "Four hours of observation, then discharge",
+          "Monitored ICU bed, serial electrolytes, burn centre input",
+          "Surgical ward bed without cardiac or electrolyte monitoring",
+          "Transfer to a hyperbaric oxygen unit",
         ],
         correct: 2,
         explanation:
@@ -1053,7 +1088,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO local treatments for her skin.",
+        prompt: "What local treatments would you give for her skin?",
         required: 2,
         accept: [
           { id: "irrigate", text: "Continued copious water irrigation", match: ["irrigation", "irrigate", "water", "wash", "shower"] },
@@ -1078,12 +1113,13 @@ export const BURNS_SAMPS: Samp[] = [
     topic: "burns",
     title: "Weather delays the transfer",
     stem:
-      "A 45 year old woman sustained a 50% TBSA deep partial and full thickness burn in a house fire six hours ago. She was intubated for inhalation injury. Weight 70 kg. A snowstorm has grounded the transport aircraft and she will remain in your rural ED for several more hours. Ringer's lactate is running at 900 mL per hour. Urine output over the last two hours has been 140 and 130 mL. BP 112/64, HR 118.",
+      "You are working in a rural emergency department. A 45-year-old woman sustained a 50% TBSA deep partial and full thickness burn in a house fire six hours ago. She was intubated for inhalation injury. A snowstorm has grounded the transport aircraft and she will remain in your department for several more hours. Ringer's lactate is running at 900 mL per hour. Urine output over the last two hours has been 140 and 130 mL.",
+    vitals: { pulse: "118/minute", bp: "112/64 mmHg", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What hourly urine output target should guide her fluids? Give the value in mL per hour.",
+        prompt: "What hourly urine output target, in mL per hour, should guide her fluids?",
         required: 1,
         accept: [
           { id: "uo", text: "About 35 mL per hour, which is 0.5 mL/kg/h, with a range of 30 to 50 mL per hour", match: ["35", "0.5 ml/kg/h", "0.5 ml/kg/hr", "0.5 ml/kg", "0.5ml/kg/h", "30 to 50", "30 50", "0.5 ml kg", "30 ml", "40 ml", "50 ml"] },
@@ -1097,7 +1133,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Her output is well above target. List TWO actions.",
+        update: "Her output is well above target.",
+        prompt: "What actions would you take?",
         required: 2,
         accept: [
           { id: "reduce", text: "Reduce the infusion rate by about 20 to 30%", match: ["reduce", "decrease", "lower", "wean", "titrate down", "cut back", "turn down"] },
@@ -1114,7 +1151,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE complications of over resuscitation you would watch for.",
+        prompt: "What complications of over resuscitation would you watch for?",
         required: 3,
         accept: [
           { id: "abd", text: "Abdominal compartment syndrome", match: ["abdominal compartment", "intra abdominal hypertension", "bladder pressure"] },
@@ -1132,7 +1169,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "The nurse notes she grimaces and becomes tachycardic with every turn. List TWO analgesia or sedation measures for the coming hours. Include a dose for any drug.",
+        update: "The nurse notes she grimaces and becomes tachycardic with every turn.",
+        prompt: "What analgesia or sedation measures, with a dose for any drug, would you use for the coming hours?",
         required: 2,
         accept: [
           { id: "fent", text: "Fentanyl infusion, for example 1 to 2 mcg/kg/h with boluses", match: ["fentanyl infusion", "fentanyl 1 mcg/kg/h", "fentanyl 2 mcg/kg/h", "fentanyl 50 mcg/h", "fentanyl 100 mcg/h", "fentanyl 1 to 2", "fentanyl drip"] },
@@ -1158,12 +1196,13 @@ export const BURNS_SAMPS: Samp[] = [
     topic: "burns",
     title: "Screaming in the ambulance bay",
     stem:
-      "A 30 year old man was scalded by steam from a burst pipe at a pulp mill 45 minutes ago. He has blistered partial thickness burns to the back, buttocks and backs of both thighs, about 22% TBSA. Paramedics gave morphine 10 mg IM on scene. He is screaming in pain. Weight 75 kg. HR 128, BP 138/84, RR 24, SpO2 98% on room air.",
+      "A 30-year-old man was scalded by steam from a burst pipe at a pulp mill 45 minutes ago. He has blistered partial thickness burns to the back, buttocks and backs of both thighs, about 22% TBSA. Paramedics gave morphine 10 mg IM on scene. He is screaming in pain.",
+    vitals: { pulse: "128/minute", resp: "24/minute", bp: "138/84 mmHg", o2sat: "98% on room air", weight: "75 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Give ONE analgesic order for now. Include the drug, dose and route.",
+        prompt: "What analgesic would you order now, including the drug, dose and route?",
         required: 1,
         accept: [
           { id: "fent", text: "Fentanyl 1 mcg/kg IV, about 75 mcg, repeated every 5 minutes to effect", match: ["fentanyl 75 mcg iv", "fentanyl 50 mcg iv", "fentanyl 100 mcg iv", "fentanyl 1 mcg/kg iv", "fentanyl 1 mcg/kg", "fentanyl 75 iv", "fentanyl 50 iv", "fentanyl 100 iv"] },
@@ -1180,7 +1219,7 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO reasons why intramuscular opioid is a poor choice in major burns.",
+        prompt: "Why is intramuscular opioid a poor choice in major burns?",
         required: 2,
         accept: [
           { id: "absorb", text: "Unreliable absorption because of poor tissue perfusion and edema", match: ["absorption", "absorbed", "perfusion", "edema", "oedema", "unreliable", "erratic"] },
@@ -1196,8 +1235,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        update: "He is comfortable. You have started fluids and a urinary catheter. Your ED has no burn service.",
-        prompt: "List THREE reasons or steps that determine his disposition.",
+        update: "He is comfortable. You have started fluids and a urinary catheter. Your emergency department has no burn service.",
+        prompt: "What reasons or steps determine his disposition?",
         required: 3,
         accept: [
           { id: "tbsa", text: "Partial thickness burns of 10% TBSA or more meet burn centre referral criteria", match: ["10%", "tbsa", "size", "22%", "extent", "percent"] },
@@ -1215,17 +1254,17 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which statement about cooling as part of his pain control is most accurate? Select one.",
+        prompt: "Which of the following is the most appropriate approach to cooling as part of his pain control?",
         options: [
-          "Apply ice packs to all burned areas for 30 minutes",
-          "Cooling is contraindicated for steam burns",
-          "Cool running water for 20 minutes helps small burns, but large burns should be cooled briefly while preventing hypothermia",
-          "Cold wet sheets should be kept on for the transfer",
-          "Cooling has no benefit after the first 5 minutes",
+          "Apply crushed ice packs to burned areas for 30 minutes",
+          "Avoid cooling for steam burns",
+          "Keep cold wet sheets on for the transfer",
+          "Limit cooling of large burns and prevent hypothermia",
+          "Stop cooling after the first 5 minutes",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "Cool running water reduces pain and depth and still helps up to about 3 hours after injury. In large burns, core temperature must be protected, so cooling is limited and the patient is then dried and covered. Ice and wet sheets cause hypothermia and deepen injury.",
+          "Cool running water reduces pain and depth and still helps up to about 3 hours after injury. In large burns, core temperature must be protected, so cooling is limited and the patient is then dried and covered. Ice and wet sheets cause hypothermia and deepen injury. Cool running water for 20 minutes helps small burns. Cooling is not contraindicated for steam burns.",
         keyFeature: { topic: "burns", n: 3 },
         source: "isbi",
       },
@@ -1241,12 +1280,13 @@ export const BURNS_SAMPS: Samp[] = [
     alsoTopics: ["asthma-copd"],
     title: "A spark near the nasal prongs",
     stem:
-      "A 72 year old man with COPD on home oxygen at 2 L per minute lit a cigarette while wearing his nasal prongs. There was a flash at his face. He has superficial partial thickness burns to the nose, upper lip and cheeks. His nasal hairs and eyebrows are singed. His voice is normal and there is no stridor. There is no soot in his mouth. SpO2 90% on 2 L, his usual baseline. Carboxyhemoglobin 6%.",
+      "A 72-year-old man with COPD on home oxygen at 2 L/minute lit a cigarette while wearing his nasal prongs. There was a flash at his face. He has superficial partial thickness burns to the nose, upper lip and cheeks. His nasal hairs and eyebrows are singed. His voice is normal and there is no stridor. There is no soot in his mouth. His SpO2 is at his usual baseline. Carboxyhemoglobin 6%.",
+    vitals: { o2sat: "90% on 2 L/minute by nasal prongs" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO findings that, if they developed, would raise your concern for significant airway injury.",
+        prompt: "What findings, if they developed, would raise your concern for significant airway injury?",
         required: 2,
         accept: [
           { id: "voice", text: "Hoarseness or voice change", match: ["hoarse", "hoarseness", "voice", "dysphonia"] },
@@ -1264,15 +1304,15 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "How should you interpret his carboxyhemoglobin of 6%? Select one.",
+        prompt: "Which of the following is the best interpretation of his carboxyhemoglobin of 6%?",
         options: [
-          "Significant carbon monoxide poisoning needing hyperbaric oxygen",
-          "Within the expected range for a smoker",
-          "Proof of cyanide toxicity",
+          "A reason for early intubation",
           "An indication for hydroxocobalamin",
-          "A reason to intubate",
+          "Carbon monoxide poisoning needing hyperbaric oxygen",
+          "Evidence of coexisting cyanide toxicity",
+          "Within the expected range for a smoker",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "Smokers commonly have carboxyhemoglobin up to about 10%. A level of 6% after a brief flash without smoke exposure is expected. It does not indicate hyperbaric oxygen or cyanide treatment.",
         keyFeature: { topic: "burns", n: 1 },
@@ -1281,7 +1321,8 @@ export const BURNS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "After a period of observation his airway remains normal. List THREE considerations for his disposition.",
+        update: "After a period of observation his airway remains normal.",
+        prompt: "What considerations apply to his disposition?",
         required: 3,
         accept: [
           { id: "face", text: "Facial burns meet burn centre referral or consultation criteria", match: ["burn centre", "burn center", "plastic", "referral", "face burn", "facial burn"] },

@@ -904,6 +904,143 @@
    "after": [
     "Admit or arrange a safe alternative"
    ]
+  },
+  "asthma-copd-01#q3": {
+   "batch": "s04",
+   "before": [
+    "Peak expiratory flow or FEV1 compared with predicted or personal best"
+   ],
+   "after": [
+    "Peak flow or FEV1 compared with predicted or personal best"
+   ]
+  },
+  "asthma-copd-02#q5": {
+   "batch": "s04",
+   "before": [
+    "Continue BiPAP, repeat the gas in 1 to 2 hours and arrange a monitored bed"
+   ],
+   "after": [
+    "Continue BiPAP, gas in 1 to 2 hours, monitored bed"
+   ]
+  },
+  "asthma-copd-03#q2": {
+   "batch": "s04",
+   "before": [
+    "Inspiratory and expiratory chest films, or bilateral decubitus films if he cannot cooperate"
+   ],
+   "after": [
+    "Inspiratory and expiratory, or decubitus, chest films"
+   ]
+  },
+  "asthma-copd-08#q2": {
+   "batch": "s04",
+   "before": [
+    "Venturi mask starting at 28% titrated to SpO2 88 to 92%"
+   ],
+   "after": [
+    "Venturi mask from 28%, titrated to SpO2 88 to 92%"
+   ]
+  },
+  "asthma-copd-15#q2": {
+   "batch": "s04",
+   "before": [
+    "Start BiPAP in the resuscitation room with an intubation plan ready and early ICU involvement"
+   ],
+   "after": [
+    "Start BiPAP in resuscitation, ready to intubate, involve ICU"
+   ]
+  },
+  "burns-01#q2": {
+   "batch": "s04",
+   "before": [
+    "Early intubation now by the most experienced operator, with a surgical airway kit open"
+   ],
+   "after": [
+    "Intubate now by most experienced operator, surgical kit open"
+   ]
+  },
+  "burns-05#q4": {
+   "batch": "s04",
+   "before": [
+    "You must report directly and promptly when you have reasonable grounds to suspect a child is in need of protection"
+   ],
+   "after": [
+    "Report directly, promptly, on reasonable grounds to suspect"
+   ]
+  },
+  "burns-06#q3": {
+   "batch": "s04",
+   "before": [
+    "75 to 100 mL per hour, about 1 mL/kg/h, until the urine clears"
+   ],
+   "after": [
+    "75 to 100 mL per hour until the urine clears"
+   ]
+  },
+  "burns-07#q2": {
+   "batch": "s04",
+   "before": [
+    "Chest escharotomy along both anterior axillary lines joined across the costal margin"
+   ],
+   "after": [
+    "Chest escharotomy along both anterior axillary lines"
+   ]
+  },
+  "burns-08#q2": {
+   "batch": "s04",
+   "before": [
+    "White or leathery skin that does not blanch and has reduced sensation"
+   ],
+   "after": [
+    "White or leathery, nonblanching skin with reduced sensation"
+   ]
+  },
+  "burns-09#q1": {
+   "batch": "s04",
+   "before": [
+    "Discharge with prompt referral to a burn centre or plastic surgery clinic for assessment"
+   ],
+   "after": [
+    "Discharge, prompt burn centre or plastic surgery referral"
+   ]
+  },
+  "burns-11#q1": {
+   "batch": "s04",
+   "before": [
+    "Intubate now by the most experienced operator with surgical airway backup"
+   ],
+   "after": [
+    "Intubate now by most experienced operator, surgical backup"
+   ]
+  },
+  "burns-11#q2": {
+   "batch": "s04",
+   "before": [
+    "Succinylcholine is safe to use in the first 24 hours after a burn",
+    "Use the largest tube possible, ideally 7.5 mm or more"
+   ],
+   "after": [
+    "Succinylcholine is safe within 24 hours of a burn",
+    "Use the largest tube possible, ideally 7.5 mm or more"
+   ]
+  },
+  "burns-12#q3": {
+   "batch": "s04",
+   "before": [
+    "Admission to a monitored critical care bed with serial electrolytes and burn centre input"
+   ],
+   "after": [
+    "Monitored ICU bed, serial electrolytes, burn centre input"
+   ]
+  },
+  "burns-14#q4": {
+   "batch": "s04",
+   "before": [
+    "Cool running water for 20 minutes helps small burns, but large burns should be cooled briefly while preventing hypothermia"
+   ],
+   "after": [
+    "Limit cooling of large burns and prevent hypothermia"
+   ]
   }
  }
 }
