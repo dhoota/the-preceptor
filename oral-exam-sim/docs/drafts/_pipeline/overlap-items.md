@@ -7,3 +7,21 @@
 - s53 tox-16, 21, 28, 39 being reworked now.
 - s20 abuse-domestic-20 q1 vs s06 msk-13 (spiral femur, skeletal survey). Skeletal survey keyed 4 times in s20. Sibling screening twice. Capable adult no report twice.
 - s53 house fire cyanide case (tox.ts line ~701) may overlap s32 loc-38 and s26 burns.
+- s51 sob-26 Ludwig angina repeats airway-20 (s21) and the Ludwig SAMP in s41. sob-37 q2 q3 teaching repeats s25 and s17 (bicarbonate in chronic hypercapnia, NIV O2 88 to 92).
+- s43 lacerations-36 q3 close to lacerations-07 (s13).
+- s36 environmental-19 q3 (core probe) and 21 q3 (gentle handling) partly overlap s09 write-in teaching.
+- HIGH s29 msk-16 near duplicate of s06 msk-02 (Maisonneuve). msk-27 q1 q3 repeat s06 msk-11. msk-34 q1 q3 repeat s06 msk-08. msk-24 shoulder tip pain (s01 s10 s38 s44 s50 s45). msk-37 q2 q3 repeat s20.
+- HIGH s26 burns-20 repeats signed-off s04 burns-03 (HF acid). burns-31 q2 overlaps s45 abdominal compartment syndrome.
+- s31 critical-appraisal-27 repeats s07 SAMP 09 (two-gate design). 22 repeats s07 02 q4 (significant below MCID). 19 repeats s07 07 q3 (ITT in noninferiority). 34 repeats s07 pyuria in LTC and s08 oxybutynin delirium. 20 vs s07 02, 21 vs s34 benzodiazepine taper.
+- s53 tox-26 HF acid overlaps s26 burns-20 and s04 burns-03.
+- s37 eye-25 repeats s10 eye-11 setup. eye-23 and eye-35 q1 repeat s10 eye-10 hyphema teaching. eye-37 repeats s10 eye-01 drug-induced angle closure.
+- HIGH s38 first-trimester-bleeding-19 repeats s10 first-trimester-bleeding-07 (case, q1 q3). 25 q1 metoprolol blunting pulse repeats s50 shock-32. Ruptured ectopic overlaps s50 shock-17 and s10 ftb-01.
+- s30 cqi-23 q3 overlaps s13 multiple-patients q2 (access block). cqi-18 q3 read-back overlaps s13 multiple-patients q4. cqi-21 q3 vs cqi-10.
+- s43 lacerations-29 q1 and 36 q1 vs each other and s13 lac-02 q1. lac-23 vs lac-02. lac-31 q4 vs s41 travel dog bite q4. lac-18 q1 vs s52 suicide-risk-31 q1. lac-24 q2 vs lac-08 q4, lac-37 vs lac-10 (low).
+- s52 suicide-risk-28 q1 acetaminophen level after intentional ingestion repeats s17 s26 s08 s53. 31 overlaps s17 suicide-risk-02. Lesser: 20 q4, 22 q2, 23 q2, 25, 33, 36, 38 vs s17. Follow-up calls keyed 3 times (22 q3, 30 q3, 34 q3).
+- s34 delirium-agitation-35 repeats infected obstructed stone (s12, s01). 'Intact attention means no delirium' taught 4 times (22 q4, 30 q1, 36 q1, 38 q1) plus s08. Lower: 20 q1 vs 27 q4 and s08, 23 vs s08, 28 29 vs s08, 26 vs s32, 34 vs s53.
+- s44 multiple-patients-22 q1 q2 vs s35 ems-24. 33 q3 and 28 q2 vs ems-35. 31 q3 vs s18 St Paul's rule. 35 q1 q2 vs s14 measles. 27 q1, 16 q4, 23 q2 q4 vs s13.
+- s35 ems-30 q1 q2 repeat s19 dissection teaching. ems-16 q4 vs s09 ems-04, ems-18 q1 vs s09 ems-05, ems-21 q4 vs s09 ems-02, ems-24 q2 and ems-27 q4 vs s44 mp-22, ems-28 q3 vs s50, ems-33 vs s09 ems-03.
+- HIGH s47 pre-eclampsia-23 q1 repeats s15 pe-12 q1 (and 16 q1, 31 q1 in batch: 4 atypical-symptoms HELLP questions). 34 q2 repeats s15 pe-14 q1 (labetalol avoided, nifedipine). 37 q3 repeats s15 pe-02 q3 (HELLP menu). Low: 28 q3 vs s15-11 q4, 27 q1 vs s15-05.
+- s44 mp-22 q2 q3 close to s35 ems-25 q1 q3 and ems-27 q2 q4 (low).
+- s36 environmental-23, 17, 26 vs s09 (medium).

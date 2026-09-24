@@ -66,3 +66,32 @@
 - s53 tox-35 q1 key feature does not map. tox-45 q3 arterial vs venous pH switch.
 - s42 ischemic-heart-disease-23 q1 first hs-cTnT 66 above ESC 0 h rule-in 52. 38 q1 full-dose tenecteplase distractor in a 77-year-old.
 - s20 abuse-domestic-22 q3 sister report under CYFSA s.125 (inference). 24 q4 caregiver strain key. 33 q2 key wording.
+- s51 sob-23 q3 serial leg US after nondiagnostic V/Q at high pretest (Thrombosis Canada vs Wells 1998). sob-43 rebuilt as stopped epoprostenol infusion.
+- s20 abuse-domestic-25 q2 power of attorney and interview rests on Lachs 2015 in general terms.
+- s43 lacerations-29 rituximab treated as humoral immune deficiency for TIG. 28 no antibiotics after tongue repair.
+- s47 PROGNOSIS cutoff and NPV, ADAMTS13 <10% from memory. 27 q1 pause magnesium infusion for low urine output.
+- s29 msk-28 q4 key rebuilt (nonoperative Achilles: fewer wound complications). msk-19 q1 rebuilt. msk-34 q2 rebuilt to unknown tetanus (cefazolin, vaccine, TIG).
+- s26 burns-21 q2 q4 rebuilt, burns-22 q1 deleted. burns-20 q3 IV regional vs intra-arterial calcium. burns-38 q3 age 36 criterion for HBO. burns-36 q3 dexmedetomidine not offered.
+- s31 critical-appraisal-33 q4 LMWH in cast immobilization (NICE vs ACCP 2012). 28 q4 US IDSA only.
+- s34 delirium-agitation-21 q2 lorazepam 1 mg IV first dose at 72. 25 q3 PCI under Quebec CCQ art 13. 33 q2 CMPA emergency principle for intoxicated patient leaving.
+- s37 eye-25 q3 vanc plus ceftazidime vs fluoroquinolone. eye-21 q2 stop vs taper steroid drops. eye-27 q2 anticoagulation statement. eye-33 natamycin via SAP.
+- s26 burns-37 stem changed to reach 14% TBSA. burns-17 q1 repeat fentanyl ceiling 50 mcg (TREKK).
+- s31 critical-appraisal-19 noninferiority margin changed to 5 points and CIs recomputed.
+- s38 ftb-17 q3 same-day review. 35 q3 progesterone to 10 weeks. 36 q2 low anti-D titre. 37 q4 SOGC 460 via secondary summary.
+- s20 abuse-domestic-24 q2 mild dementia reliability unsourced. 32 q2 PHIPA exception not cited.
+- s37 eye-38 q4 outpatient follow-up for subluxated lens at 20/200.
+- s47 pre-eclampsia-25 q3 ACOG platelet threshold. 28 q1 sFlt-1/PlGF availability. 26 q2 average exactly 160.
+- s30 cqi-28 stem depends on province (shared dispensing records). cqi-28 q1 med history requirement applies to admitted patients.
+- s43 lac-18 q3 discharge approach. lac-28 q2 repair needed. lac-23 q2 closing bites (IDSA vs newer trials).
+- s52 suicide-risk-26 q3 and 27 q3 follow-up within 7 days not in CPS source. 25 q3 Winnipeg case cites BC guideline.
+- s34 delirium-agitation-19 q3 SSKI not marketed in Canada (Lugol). 28 q4 akathisia options. 33 q3 option without dose.
+- s36 environmental-23 q3 iloprost with acute subdural, SAP only. environmental-21 q4 AHA 2025 Part 10 on shocks below 30C. environmental-24 dextrose protocol.
+- s44 CTAS 2025 revision unchecked (16 q1, 29 q1 q3, 34 q1 q2). 24 q2 SOFA 3 not reachable. 20 q4 SALT rescue breaths. s30 cqi-18 q2 apixaban 'daily' distractor.
+- s35 ems-35 q3 IM field TXA as loading dose. ems-26 q1 crush statements from Sever abstract. ems-25 q2 radiation PPE risk. ems-29 q3 bicarbonate. s34 delirium-agitation-35 sepsis with hypotension wording.
+- s48 pulmonary-edema-33 q3 morphine in stage 4 CKD. pe-30 CCS home support citation unverified.
+- s35 ems-35 q3 IM field TXA and 8 h infusion. ems-27 q4 pediatric pralidoxime dose. s44 multiple-patients-24 SOFA breathing rule before ventilation.
+- s36 environmental-38 rebuilt by Lens B as intrathecal baclofen withdrawal in heat (one review only). Confirm combined cooling key and restoring the pump as ED key.
+- s48 Lens B: reject or keep pulmonary-edema-39 and 40 (near copies of 23 and 31). Repeated teaching 16 q1 (s28, s42), 21 q1 (s12, s05), 35 q2 (s51 sob-17), 38 q1 (s15 pe-03). Four questions key "NIV failing, intubate". 29 q1 bendopnea at BMI 43 may be weak.
+- Sourcing batch 1 (docs/reviews/sourcing-batch1.md): analgesia-sedation-16 oral to IV hydromorphone ratio has no guideline figure (assumed about 2.5 to 1), ESMO 10 to 15% from abstract, q2 still cites Tintinalli. delirium-agitation-19 Canadian iodine product not checked with Health Canada. cva-40 q2 CSBPR ICH module not opened. loc-37 mannitol rests on ENLS consensus, loc-26 bicarbonate on Emergency Care BC plus review. ems-29 q3 neonatal bicarbonate point needs a neonatal resuscitation source or removal.
+- Overlap pass 1 review (docs/reviews/samps-overlap-pass-review.md): s42 ischemic-heart-disease-23 q2 key rests on 3 Wells points for "PE most likely". s42 ischemic-heart-disease-46 q3 epinephrine start dose from AHA algorithm, not the cited review. s50 shock-39 rebuilt as obstructive HCM, confirm q3 restart metoprolol on phenylephrine. s42 ischemic-heart-disease-27 q3 "no fibrinolysis without ST elevation" does not allow for posterior MI (correct for this case).
+- s50 shock-45 toddler iron and whole bowel irrigation also keyed in signed-off s18. Physician to decide if shock-45 changes.
