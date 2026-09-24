@@ -50,13 +50,12 @@ export function composeWrittenMock(
   const pool = samps.filter((s) => opts.allowed?.(s.id) ?? true);
   const byTopic = new Map<string, Samp[]>();
   for (const s of pool) byTopic.set(s.topic, [...(byTopic.get(s.topic) ?? []), s]);
-  const queues = new Map(
-    [...byTopic].map(([t, list]) => {
-      const fresh = shuffle(list.filter((s) => !opts.seen?.has(s.id)), rand);
-      const old = shuffle(list.filter((s) => opts.seen?.has(s.id)), rand);
-      return [t, [...fresh, ...old]] as const;
-    }),
-  );
+  const queues = new Map<string, Samp[]>();
+  for (const [t, list] of byTopic) {
+    const fresh = shuffle(list.filter((s) => !opts.seen?.has(s.id)), rand);
+    const old = shuffle(list.filter((s) => opts.seen?.has(s.id)), rand);
+    queues.set(t, [...fresh, ...old]);
+  }
   const out: string[] = [];
   let topics = shuffle([...queues.keys()], rand);
   while (out.length < Math.min(count, pool.length)) {

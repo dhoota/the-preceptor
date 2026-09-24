@@ -34,7 +34,7 @@ describe("validateCase", () => {
   it("reports unreachable nodes and untested rubric items", () => {
     const c = clone();
     c.nodes.push({ kind: "end", id: "orphan", text: "x" });
-    c.rubric.push({ id: "x1", competency: "resuscitation", text: "x", points: 1, teaching: "x", source: "s1" });
+    c.rubric.push({ id: "x1", competency: "resuscitation", criterion: "plan", text: "x", points: 1, teaching: "x", source: "s1" });
     const errs = validateCase(c).join();
     expect(errs).toContain('"orphan" is unreachable');
     expect(errs).toContain('rubric "x1" is never tested');
