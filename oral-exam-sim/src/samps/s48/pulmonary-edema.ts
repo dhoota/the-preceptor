@@ -29,19 +29,22 @@ const KLONER: Source = {
 };
 const PAD: Source = {
   id: "pad",
-  citation: "Aboyans V, Ricco JB, Bartelink MEL, et al. 2017 ESC Guidelines on the diagnosis and treatment of peripheral arterial diseases, in collaboration with the European Society for Vascular Surgery. Eur Heart J. 2018.",
+  citation: "Mazzolai L, Teixido-Tura G, Lanzi S, et al. 2024 ESC Guidelines for the management of peripheral arterial and aortic diseases. Eur Heart J. 2024.",
+  url: "https://doi.org/10.1093/eurheartj/ehae179",
 };
 const PREG: Source = {
   id: "preg",
-  citation: "Regitz-Zagrosek V, Roos-Hesselink JW, Bauersachs J, et al. 2018 ESC Guidelines for the management of cardiovascular diseases during pregnancy. Eur Heart J. 2018.",
+  citation: "De Backer J, Haugaa KH, Hasselberg NE, et al. 2025 ESC Guidelines for the management of cardiovascular disease and pregnancy. Eur Heart J. 2025.",
+  url: "https://doi.org/10.1093/eurheartj/ehaf193",
 };
 const VHD: Source = {
   id: "vhd",
-  citation: "Vahanian A, Beyersdorf F, Praz F, et al. 2021 ESC/EACTS Guidelines for the management of valvular heart disease. Eur Heart J. 2021.",
+  citation: "Praz F, Borger MA, Lanz J, et al. 2025 ESC/EACTS Guidelines for the management of valvular heart disease. Eur Heart J. 2025.",
 };
-const TTS: Source = {
-  id: "tts",
-  citation: "Ghadri JR, Wittstein IS, Prasad A, et al. International expert consensus document on takotsubo syndrome (part II). Diagnostic workup, outcome, and management. Eur Heart J. 2018.",
+const BTSPROC: Source = {
+  id: "btsproc",
+  citation: "Asciak R, Bedawi EO, Bhatnagar R, et al. British Thoracic Society clinical statement on pleural procedures. Thorax. 2023.",
+  url: "https://doi.org/10.1136/thorax-2022-219371",
 };
 
 const MCCORD: Source = {
@@ -59,8 +62,8 @@ const BOYER: Source = {
 };
 const CRISM: Source = {
   id: "crism",
-  citation: "Bruneau J, Ahamad K, Goyer ME, et al. Management of opioid use disorders. A national clinical practice guideline. CMAJ. 2018.",
-  url: "https://doi.org/10.1503/cmaj.170958",
+  citation: "Yakovenko I, Mukaneza Y, Germe K, et al. Management of opioid use disorder. 2024 update to the national clinical practice guideline. CMAJ. 2024.",
+  url: "https://doi.org/10.1503/cmaj.241173",
 };
 const NPPE: Source = {
   id: "nppe",
@@ -75,9 +78,15 @@ const PSGN: Source = {
   citation: "Rodriguez-Iturbe B, Musser JM. The current state of poststreptococcal glomerulonephritis. J Am Soc Nephrol. 2008.",
 };
 
-const EXTRIP: Source = {
-  id: "extrip",
-  citation: "Juurlink DN, Gosselin S, Kielstein JT, et al. Extracorporeal treatment for salicylate poisoning. Systematic review and recommendations from the EXTRIP workgroup. Ann Emerg Med. 2015.",
+const ICOS: Source = {
+  id: "icos",
+  citation: "Herrmann J, Lenihan D, Armenian S, et al. Defining cardiovascular toxicities of cancer therapies. An International Cardio-Oncology Society (IC-OS) consensus statement. Eur Heart J. 2022.",
+  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8803367/",
+};
+const SITC: Source = {
+  id: "sitc",
+  citation: "Brahmer JR, Abu-Sbeih H, Ascierto PA, et al. Society for Immunotherapy of Cancer (SITC) clinical practice guideline on immune checkpoint inhibitor-related adverse events. J Immunother Cancer. 2021.",
+  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8237720/",
 };
 const PACING: Source = {
   id: "pacing",
@@ -85,7 +94,8 @@ const PACING: Source = {
 };
 const ACLS: Source = {
   id: "acls",
-  citation: "Panchal AR, Bartos JA, Cabanas JG, et al. Part 3. Adult basic and advanced life support. 2020 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2020.",
+  citation: "Wigginton JG, Agarwal S, Bartos JA, et al. Part 9. Adult advanced life support. 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025.",
+  url: "https://doi.org/10.1161/CIR.0000000000001376",
 };
 const CLOZ: Source = {
   id: "cloz",
@@ -106,9 +116,9 @@ const OHFRS: Source = {
   citation: "Stiell IG, Perry JJ, Clement CM, et al. Prospective and explicit clinical validation of the Ottawa Heart Failure Risk Scale, with and without use of quantitative NT-proBNP. Acad Emerg Med. 2017.",
   url: "https://doi.org/10.1111/acem.13141",
 };
-const MAHLER: Source = {
-  id: "mahler",
-  citation: "Mahler DA, Selecky PA, Harrod CG, et al. American College of Chest Physicians consensus statement on the management of dyspnea in patients with advanced lung or heart disease. Chest. 2010.",
+const BCPAL: Source = {
+  id: "bcpal",
+  citation: "BC Centre for Palliative Care. B.C. inter-professional palliative symptom management guidelines. Dyspnea. 2017.",
 };
 const SSC: Source = {
   id: "ssc",
@@ -123,9 +133,10 @@ const DROWN: Source = {
   id: "drown",
   citation: "Szpilman D, Bierens JJ, Handley AJ, Orlowski JP. Drowning. N Engl J Med. 2012.",
 };
-const ACS: Source = {
-  id: "acs",
-  citation: "Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.",
+const STEMI: Source = {
+  id: "stemi",
+  citation: "Wong GC, Welsford M, Ainsworth C, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction. Focused update on regionalization and reperfusion. Can J Cardiol. 2019.",
+  url: "https://doi.org/10.1016/j.cjca.2018.11.031",
 };
 
 export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
@@ -134,30 +145,13 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
     topic: "pulmonary-edema",
     title: "Breathless in front of the television",
     stem:
-      "A 71-year-old man presents to the emergency department with 90 minutes of worsening shortness of breath that began while he was watching television. He has hypertension, type 2 diabetes and benign prostatic hyperplasia. His pharmacy list shows amlodipine and metformin. He takes no diuretic. He is sweaty, sitting upright and cannot finish a sentence, but he is alert and follows commands. The JVP is 5 cm above the sternal angle. There are crackles to the mid zones of both lungs and trace ankle edema.",
+      "A 71-year-old man presents to the emergency department with 90 minutes of worsening shortness of breath that began while he was watching television. He has hypertension, type 2 diabetes and benign prostatic hyperplasia. He takes amlodipine, ramipril, metformin, a second diabetes tablet he cannot name, and tadalafil 5 mg daily for his prostate, last taken 9 hours ago. He takes no diuretic. He is sweaty, sitting upright and cannot finish a sentence, but he is alert and follows commands. The JVP is 5 cm above the sternal angle. There are crackles to the mid zones of both lungs and trace ankle edema.",
     vitals: { temperature: "36.9°C oral", pulse: "118/minute", resp: "34/minute", bp: "194/108 mmHg", o2sat: "85% on 10 L/minute by face mask" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following medication histories must be clarified before he receives nitroglycerin?",
-        options: [
-          "Adherence to his antihypertensive medications",
-          "Current dose of his home diuretic",
-          "Recent beta-blocker dose",
-          "Recent phosphodiesterase 5 inhibitor use",
-          "Timing of his last metformin dose",
-        ],
-        correct: 3,
-        explanation:
-          "A man with benign prostatic hyperplasia may take tadalafil, which is often missing from a pharmacy list when it is bought privately. A phosphodiesterase 5 inhibitor taken with a nitrate can cause profound hypotension. Kloner found the interaction with tadalafil persisted at 24 hours and was gone by 48 hours. Missed antihypertensives may explain the episode but do not make nitroglycerin unsafe. He takes no diuretic. A recent beta-blocker or metformin dose does not interact with nitroglycerin.",
-        keyFeature: { topic: "pulmonary-edema", n: 1 },
-        source: "kloner",
-      },
-      {
-        id: "q2",
-        kind: "single",
-        update: "He takes tadalafil 5 mg daily for his prostate and took it 9 hours ago. Noninvasive ventilation is started.",
+        update: "Noninvasive ventilation is started. After 10 minutes his BP is 188/104 mmHg and his saturation is 89%.",
         prompt: "Which of the following is the most appropriate medication to give him next?",
         options: [
           "furosemide 40 mg IV",
@@ -168,38 +162,34 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Tadalafil taken 9 hours ago rules out any nitrate, whether sublingual or a low dose infusion, because the interaction lasts at least 24 hours. Noninvasive ventilation already lowers his preload and afterload. He is congested and takes no diuretic, and the ESC guideline suggests furosemide 20 to 40 mg IV as the starting dose for a diuretic naive patient. Labetalol lowers contractility during acute pulmonary edema and can precipitate shock. Morphine is not recommended routinely and is linked to more intubation.",
+          "Tadalafil taken 9 hours ago rules out any nitrate, whether sublingual or a low dose infusion. Kloner found the fall in BP with nitroglycerin was still greater at 24 hours after tadalafil and had gone by 48 hours. Noninvasive ventilation already lowers his preload and afterload. He is congested and takes no diuretic, and the ESC guideline suggests furosemide 20 to 40 mg IV as the starting dose for a diuretic naive patient. Labetalol lowers contractility during acute pulmonary edema and can precipitate shock. Morphine is not recommended routinely and is linked to more intubation.",
         keyFeature: { topic: "pulmonary-edema", n: 1 },
-        source: "eschf",
+        source: "kloner",
       },
       {
-        id: "q3",
-        kind: "menu",
-        select: 3,
-        update: "After 40 minutes on noninvasive ventilation his BP is 158/92 mmHg, his pulse is 98/minute and his saturation is 94%.",
-        prompt: "Which of the following investigations are most useful now to find the cause of this episode?",
+        id: "q2",
+        kind: "single",
+        update:
+          "After 40 minutes on noninvasive ventilation his BP is 158/92 mmHg, his pulse is 98/minute and his saturation is 94%. His daughter says the second diabetes tablet was started 2 months ago, and his ankles have swollen since.",
+        prompt: "Which of the following of his regular medications most likely contributed to this episode?",
         options: [
-          "Bedside echocardiography",
-          "Blood cultures",
-          "CT pulmonary angiography",
-          "D-dimer level",
-          "Electrocardiogram",
-          "High-sensitivity troponin",
-          "Serum lipase",
-          "Sputum culture",
-          "Urine drug screen",
+          "amlodipine",
+          "metformin",
+          "pioglitazone",
+          "ramipril",
+          "tadalafil",
         ],
-        correct: [0, 4, 5],
+        correct: 2,
         explanation:
-          "He has no fever and a hypertensive onset with bilateral crackles, so the search is for a cardiac trigger. The ESC guideline asks for an ECG and a troponin at once to find acute coronary syndrome or arrhythmia, and early echocardiography to show ventricular function, valve disease and wall motion. Blood and sputum cultures look for infection he does not show. D-dimer and CT pulmonary angiography do not fit a hypertensive onset with bilateral crackles. Lipase and a drug screen do not target the usual cardiac causes.",
+          "Of the options, the only diabetes drug besides metformin is pioglitazone, so it is the tablet started 2 months ago, after which his ankles swelled. The ESC guideline notes that thiazolidinediones cause sodium and water retention and does not recommend them in heart failure, because they increase the risk of worsening and admission. Amlodipine causes ankle swelling by dilating arterioles, not by retaining fluid, and it does not cause pulmonary edema. Ramipril lowers afterload and is protective. Metformin does not retain fluid. Tadalafil matters for nitrate safety but does not cause fluid retention.",
         keyFeature: { topic: "pulmonary-edema", n: 2 },
         source: "eschf",
       },
       {
-        id: "q4",
+        id: "q3",
         kind: "single",
         update:
-          "The ECG shows left ventricular hypertrophy without acute ischemic change. Troponin is below the 99th percentile twice. Echo shows an ejection fraction of 55% with concentric hypertrophy and no valve disease.",
+          "The ECG shows sinus rhythm with left ventricular hypertrophy and no acute ischemic change. Troponin is below the 99th percentile twice. Echo shows an ejection fraction of 55% with concentric hypertrophy and no valve disease. Pioglitazone has been stopped.",
         prompt: "Which of the following changes to his long-term care best reduces the chance of another episode?",
         options: [
           "Add a long-acting oral nitrate",
@@ -210,7 +200,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A preserved ejection fraction with concentric hypertrophy and an onset at a BP of 194/108 mmHg point to uncontrolled hypertension as the driver. The ESC guideline advises treating hypertension and other causes in heart failure with preserved ejection fraction. A long-acting nitrate cannot be combined with his daily tadalafil. Two normal troponins and no ischemic change do not call for angiography. Digoxin and ivabradine slow the rate but do not treat the cause, and he is in sinus rhythm.",
+          "A preserved ejection fraction with concentric hypertrophy and an onset at a BP of 194/108 mmHg point to uncontrolled hypertension as the remaining driver now that pioglitazone has stopped. The ESC guideline advises treating hypertension and other causes in heart failure with preserved ejection fraction. A long-acting nitrate cannot be combined with his daily tadalafil. Two normal troponins and no ischemic change do not call for angiography. Digoxin and ivabradine slow the rate but do not treat the cause, and he is in sinus rhythm.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
         source: "eschf",
       },
@@ -225,7 +215,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
     topic: "pulmonary-edema",
     title: "Third night-time admission this year",
     stem:
-      "A 77-year-old woman is brought to the emergency department by ambulance with sudden shortness of breath that woke her at 0300. This is her third such episode in 5 months. Each time she recovered within a day on nitroglycerin and a diuretic. An echocardiogram 4 months ago showed an ejection fraction of 60% and no valve disease. She has hypertension on amlodipine, hydrochlorothiazide and doxazosin, claudication and a 50 pack-year smoking history. Last month ramipril was started, and her creatinine rose from 98 to 162 umol/L within 2 weeks, so it was stopped. She has crackles at both bases, an epigastric bruit and no leg edema.",
+      "A 77-year-old woman is brought to the emergency department by ambulance with sudden shortness of breath that woke her at 0300. This is her third such episode in 5 months. Each time she recovered within a day on nitroglycerin and a diuretic. An echocardiogram 4 months ago showed an ejection fraction of 60%, normal wall thickness and no valve disease. She has hypertension on amlodipine, hydrochlorothiazide and doxazosin, claudication and a 50 pack-year smoking history. Last month ramipril was started, and her creatinine rose from 98 to 162 umol/L within 2 weeks, so it was stopped. She has crackles at both bases, an epigastric bruit and no leg edema.",
     vitals: { temperature: "36.6°C oral", pulse: "96/minute", resp: "30/minute", bp: "204/96 mmHg", o2sat: "88% on room air" },
     questions: [
       {
@@ -242,7 +232,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Recurrent flash pulmonary edema with a normal ejection fraction, resistant hypertension on three drugs, a 65% rise in creatinine within 2 weeks of ramipril, an abdominal bruit and diffuse atherosclerosis together point to bilateral renal artery stenosis. The ESC guideline names flash pulmonary edema as a feature of this condition. Her echo showed no septal hypertrophy or outflow obstruction. Heart block would give a slow pulse, not 96/minute. Pheochromocytoma and primary aldosteronism do not explain the creatinine rise with an ACE inhibitor.",
+          "Recurrent flash pulmonary edema with a normal ejection fraction, resistant hypertension on three drugs, a 65% rise in creatinine within 2 weeks of ramipril, an abdominal bruit and diffuse atherosclerosis together point to bilateral renal artery stenosis. The ESC guideline lists hypertensive pulmonary edema among the high-risk features of this condition. Her echo showed normal wall thickness, which argues against hypertrophic cardiomyopathy. Heart block would give a slow pulse, not 96/minute. Pheochromocytoma and primary aldosteronism do not explain the creatinine rise with an ACE inhibitor.",
         keyFeature: { topic: "pulmonary-edema", n: 2 },
         source: "pad",
       },
@@ -259,7 +249,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "The ESC peripheral arterial disease guideline recommends duplex ultrasound as the first imaging test for renal artery stenosis, with CT or MR angiography as alternatives. It advises against captopril scintigraphy and plasma renin testing to screen for this diagnosis. Selective angiography is invasive and is kept for when revascularization is planned. An aldosterone to renin ratio and urine metanephrines look for other causes of secondary hypertension that fit her history less well.",
+          "The 2024 ESC peripheral arterial and aortic disease guideline recommends duplex ultrasound as the first imaging test for renal artery stenosis, with CT or MR angiography when duplex is inconclusive. Captopril scintigraphy is a functional test, not the first-line imaging the guideline names. Selective angiography is invasive and is kept for when revascularization is planned. An aldosterone to renin ratio and urine metanephrines look for other causes of secondary hypertension that fit her history less well.",
         keyFeature: { topic: "pulmonary-edema", n: 2 },
         source: "pad",
       },
@@ -277,7 +267,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "The ESC guideline advises against routine revascularization of renal artery stenosis but says it may be considered for patients with recurrent unexplained heart failure or sudden pulmonary edema, as she has had three times. Kidneys over 9 cm suggest viable tissue to save. Restarting an ACE inhibitor with bilateral stenosis risks another rise in creatinine. A loop diuretic or spironolactone treats volume but not the cause of these episodes. Home CPAP treats sleep apnea, which she has not been shown to have.",
+          "The ESC guideline advises against routine revascularization of renal artery stenosis but says it should be considered after optimal medical therapy when there are high-risk features such as hypertensive pulmonary edema, which she has had three times, and the kidney is still viable. Kidneys longer than 8 cm are one sign of viability, and hers measure over 9 cm. Restarting an ACE inhibitor with bilateral stenosis risks another rise in creatinine. A loop diuretic or spironolactone treats volume but not the cause of these episodes. Home CPAP treats sleep apnea, which she has not been shown to have.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
         source: "pad",
       },
@@ -293,7 +283,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
     alsoTopics: ["arrhythmia"],
     title: "Pink sputum at 29 weeks",
     stem:
-      "A 27-year-old woman who is 29 weeks pregnant presents to the emergency department with 2 days of worsening shortness of breath, orthopnea and cough with pink frothy sputum. She moved to Canada from Eritrea 1 year ago. As a child she had monthly penicillin injections for a heart problem. She has had one prenatal visit and takes a prenatal vitamin. She is anxious and speaking in short phrases. The first heart sound is loud and there is a low-pitched diastolic rumble at the apex. There are crackles to the mid zones of both lungs. There is no leg edema and the fundal height is 29 cm.",
+      "A 27-year-old woman who is 29 weeks pregnant presents to the emergency department with 2 days of worsening shortness of breath, orthopnea and cough with pink frothy sputum. She moved to Canada from Eritrea 1 year ago. As a child she had monthly penicillin injections for a heart problem. She has had one prenatal visit and takes a prenatal vitamin. She is anxious and speaking in short phrases. The first heart sound is loud and there is a low-pitched diastolic rumble at the apex. There are crackles to the mid zones of both lungs. There is no leg edema and the fundal height is 29 cm. The ECG shows atrial fibrillation at 148/minute.",
     vitals: { temperature: "37.1°C oral", pulse: "148/minute irregular", resp: "32/minute", bp: "112/68 mmHg", o2sat: "89% on room air", weight: "70 kg" },
     questions: [
       {
@@ -326,7 +316,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "In mitral stenosis a fast rate shortens diastole and raises left atrial pressure, so slowing the rate is the main treatment. The ESC pregnancy guideline recommends a beta-1 selective blocker such as metoprolol. Digoxin is a second-line agent and works poorly against high sympathetic drive. Atenolol is linked to fetal growth restriction and acts slowly by mouth. Amiodarone is kept for when other drugs fail, because of fetal thyroid effects. Adenosine only transiently slows atrial fibrillation.",
+          "In mitral stenosis a fast rate shortens diastole and raises left atrial pressure, so slowing the rate is the main treatment. The ESC pregnancy guideline recommends beta-blockers in symptomatic mitral stenosis, and IV metoprolol is the preferred beta-1 selective agent. Digoxin is an alternative when beta-blockers are not enough and works poorly against high sympathetic drive. Atenolol is linked to fetal growth restriction and acts slowly by mouth. Amiodarone can cause fetal thyroid dysfunction and bradycardia, and its routine use in pregnancy is contraindicated. Adenosine only transiently slows atrial fibrillation.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
         source: "preg",
       },
@@ -344,7 +334,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Crackles and hypoxemia persist after rate control, and the ESC pregnancy guideline advises a loop diuretic for congestion in mitral stenosis, used with care for placental flow. Enalapril is contraindicated in pregnancy because of fetal kidney toxicity. Nitroprusside risks fetal cyanide toxicity. Spironolactone has antiandrogen effects on a male fetus and is avoided. Dobutamine speeds the heart and shortens diastolic filling, which worsens a fixed mitral obstruction.",
+          "Crackles and hypoxemia persist after rate control, and the ESC pregnancy guideline recommends a diuretic when congestion persists despite a beta-blocker in mitral stenosis, used with care for placental flow. Enalapril is contraindicated in pregnancy because of fetal kidney toxicity. Nitroprusside risks fetal cyanide toxicity. Spironolactone has antiandrogen effects on a male fetus and is avoided. Dobutamine speeds the heart and shortens diastolic filling, which worsens a fixed mitral obstruction.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
         source: "preg",
       },
@@ -362,7 +352,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Atrial fibrillation with mitral stenosis and a dilated left atrium carries a high risk of left atrial thrombus, and the ESC pregnancy guideline recommends therapeutic low molecular weight heparin or unfractionated heparin. Enoxaparin 1 mg/kg twice daily at 70 kg is 70 mg. DOACs are not recommended in pregnancy and are not indicated for atrial fibrillation with moderate or severe mitral stenosis. ASA does not prevent cardioembolic stroke adequately. Leaving her without anticoagulation ignores a very high stroke risk.",
+          "Atrial fibrillation with mitral stenosis and a dilated left atrium carries a high risk of left atrial thrombus, and the ESC pregnancy guideline recommends full therapeutic-dose anticoagulation, with low molecular weight heparin or a vitamin K antagonist. Enoxaparin 1 mg/kg twice daily at 70 kg is 70 mg. DOACs are contraindicated in pregnancy and are not indicated for atrial fibrillation with moderate or severe mitral stenosis. ASA does not prevent cardioembolic stroke adequately. Leaving her without anticoagulation ignores a very high stroke risk.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
         source: "preg",
       },
@@ -460,66 +450,68 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
   {
     id: "pulmonary-edema-20",
     topic: "pulmonary-edema",
-    title: "Chest tightness two days after a funeral",
+    title: "Chest ache after moving furniture",
     stem:
-      "A 68-year-old woman is brought to the emergency department by ambulance with 3 hours of chest tightness and shortness of breath. Her husband died suddenly 2 days ago. She has hypothyroidism treated with levothyroxine. Paramedics gave nitroglycerin 0.4 mg sublingually, after which she became light-headed. She is pale and diaphoretic. There is a harsh systolic murmur at the left lower sternal border and crackles at both lung bases. The ECG shows ST elevation from V2 to V5. Your hospital has a cardiac catheterization laboratory.",
-    vitals: { temperature: "36.7°C oral", pulse: "118/minute", resp: "28/minute", bp: "84/52 mmHg", o2sat: "88% on room air" },
+      "A 31-year-old man presents to the emergency department with 4 days of left-sided chest ache and shortness of breath that began while he was moving furniture. He waited because he thought he had strained a muscle. He smokes tobacco and has no medical history. He is speaking in full sentences. Breath sounds are absent over the left chest and the trachea is midline. A chest X-ray shows a complete left pneumothorax with the lung collapsed toward the hilum and no mediastinal shift. A 12F chest drain is inserted and connected to an underwater seal without suction.",
+    vitals: { temperature: "36.8°C oral", pulse: "104/minute", resp: "24/minute", bp: "128/78 mmHg", o2sat: "91% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step to establish the cause of her presentation?",
+        update:
+          "Forty minutes later he has repeated coughing and pink frothy sputum. He has not vomited. His saturation is 85% on 6 L/minute. The drain is bubbling and swinging. A repeat X-ray shows the left lung expanded, with new airspace opacity throughout it.",
+        prompt: "Which of the following is the most likely cause of his new hypoxemia?",
         options: [
-          "Cardiac MRI within 24 hours",
-          "CT coronary angiography",
-          "Emergency coronary angiography",
-          "Serial troponin in 3 hours",
-          "Transthoracic echo at 48 hours",
+          "Aspiration pneumonitis",
+          "Hemothorax from the drain",
+          "Pulmonary embolism",
+          "Re-expansion pulmonary edema",
+          "Tension pneumothorax",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "ST elevation in V2 to V5 with shock must be treated as an anterior STEMI until angiography shows otherwise, even though an emotional trigger raises the question of takotsubo syndrome. The takotsubo consensus advises urgent coronary angiography with left ventriculography for patients with ST elevation. MRI, a repeat troponin and a delayed echo all postpone reperfusion. CT coronary angiography does not allow treatment and is not advised in an unstable patient.",
+          "Cough, pink frothy sputum and hypoxemia within an hour of draining a lung that had been collapsed for 4 days, with new opacity confined to the re-expanded lung, fit re-expansion pulmonary edema. The BTS statement describes hypoxemia and new alveolar infiltrates after rapid re-expansion, usually within the first hour, and notes the risk when a large pneumothorax is drained. A bubbling, swinging drain and an expanded lung argue against tension pneumothorax. A hemothorax shows pleural fluid, not airspace opacity with frothy sputum. Embolism would not confine new opacity to the drained lung, and he has not vomited to aspirate.",
         keyFeature: { topic: "pulmonary-edema", n: 2 },
-        source: "tts",
+        source: "btsproc",
       },
       {
         id: "q2",
         kind: "single",
-        update:
-          "Angiography shows no obstructive coronary disease. The left ventricle balloons at the apex with a hyperkinetic base. Echo shows systolic anterior motion of the mitral valve and a left ventricular outflow gradient of 70 mmHg. There is no pericardial effusion.",
-        prompt: "Which of the following best explains her low blood pressure?",
+        prompt: "Which of the following is the most appropriate immediate step in his management?",
         options: [
-          "Cardiac tamponade",
-          "Dynamic outflow tract obstruction",
-          "Papillary muscle rupture",
-          "Right ventricular infarction",
-          "Ventricular septal rupture",
+          "Apply suction to the drain",
+          "Clamp the chest drain",
+          "furosemide 40 mg IV",
+          "Oxygen with the drain unclamped",
+          "Remove the chest drain",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Apical ballooning with a hyperkinetic base, systolic anterior motion of the mitral valve and a 70 mmHg outflow gradient mean the base is obstructing its own outflow. The consensus notes this in a minority of takotsubo cases and warns that nitrates and volume loss worsen it, as her light-headedness after nitroglycerin suggests. Her coronaries are open, so infarct-related rupture of a papillary muscle or the septum is unlikely. Echo did not show pericardial fluid. Right ventricular infarction needs an occluded right coronary artery.",
-        keyFeature: { topic: "pulmonary-edema", n: 2 },
-        source: "tts",
+          "The BTS statement manages re-expansion pulmonary edema with oxygen to target saturations and advises against clamping a bubbling drain, because a continuing air leak can build into a tension pneumothorax. Clamping is the step for a drain placed for an effusion, not for this bubbling pneumothorax drain. Suction speeds re-expansion, and the statement advises against routine suction at the first drainage of a pneumothorax. Removing the drain lets the pneumothorax recur. Diuretics are used by some clinicians but are not evidence based.",
+        keyFeature: { topic: "pulmonary-edema", n: 3 },
+        source: "btsproc",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following infusions is most appropriate to support her blood pressure?",
+        update:
+          "Thirty minutes later he is on a nonrebreather mask at 15 L/minute. His saturation is 84% and his respiratory rate is 34/minute. He is alert and follows commands. The drain is still bubbling.",
+        prompt: "Which of the following is the most appropriate next step in his respiratory support?",
         options: [
-          "dobutamine infusion",
-          "dopamine infusion",
-          "milrinone infusion",
-          "nitroglycerin infusion",
-          "phenylephrine infusion",
+          "Clamp the drain, then start CPAP",
+          "Continue nonrebreather for 1 hour",
+          "CPAP with the drain left open",
+          "Rapid sequence intubation",
+          "Venturi mask at 40%",
         ],
-        correct: 4,
+        correct: 2,
         explanation:
-          "With dynamic outflow obstruction, anything that makes the base contract harder or empties the ventricle raises the gradient. The takotsubo consensus advises avoiding inotropes in this setting and suggests a pure alpha agonist such as phenylephrine, which raises afterload and widens the outflow tract. Dobutamine, dopamine and milrinone all increase contractility and can worsen the obstruction. Nitroglycerin reduces preload and afterload and has already made her light-headed.",
+          "Worsening hypoxemia on a nonrebreather in an alert patient calls for positive pressure. The BTS statement lists CPAP or high flow oxygen for re-expansion pulmonary edema, and with a pneumothorax it requires a functioning open drain, because positive pressure can otherwise cause tension. Clamping before CPAP removes that protection. Another hour on the nonrebreather lets him tire. A Venturi mask gives less oxygen than the mask he is failing on. He is alert and protecting his airway, so intubation is kept for failure of positive pressure support.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
-        source: "tts",
+        source: "btsproc",
       },
     ],
-    sources: [TTS],
+    sources: [BTSPROC],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -550,7 +542,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: [4, 7],
         explanation:
-          "Cocaine drives his hypertension, tachycardia and agitation through sympathetic excess, and the AHA statement advises a benzodiazepine and nitroglycerin as the first drugs. Lorazepam lowers central sympathetic outflow, and nitroglycerin lowers preload and afterload at a BP of 212/124 mmHg. The statement advises against beta-blockers in acute cocaine toxicity, because unopposed alpha stimulation can raise pressure and worsen coronary spasm, and that includes esmolol, metoprolol and labetalol. Haloperidol can lower the seizure threshold and impair heat loss. Ketamine adds sympathetic stimulation. Morphine is not recommended routinely in pulmonary edema.",
+          "Cocaine drives his hypertension, tachycardia and agitation through sympathetic excess, and the AHA statement advises a benzodiazepine and nitroglycerin as the first drugs. Lorazepam lowers central sympathetic outflow, and nitroglycerin lowers preload and afterload at a BP of 212/124 mmHg. The statement advises against beta-blockers in acute cocaine toxicity, because unopposed alpha stimulation can raise pressure and worsen coronary spasm, which rules out esmolol and metoprolol. Labetalol is at most a later option once a vasodilator has been given, because its beta effect predominates. Haloperidol can lower the seizure threshold and impair heat loss. Ketamine adds sympathetic stimulation. Morphine is not recommended routinely in pulmonary edema.",
         keyFeature: { topic: "pulmonary-edema", n: 1 },
         source: "mccord",
       },
@@ -569,7 +561,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Noninvasive ventilation needs a cooperative patient, and he cannot keep the mask on. A saturation of 81% with a pH of 7.21 and a rising PCO2 after 30 minutes means NIV has failed, and the ERS/ATS guideline warns that delayed intubation in NIV failure worsens outcomes. High flow oxygen and a nonrebreather give less support than the NIV he is already failing. Haloperidol carries risk in cocaine toxicity and will not fix respiratory failure. Physical restraint of an agitated patient with stimulant toxicity worsens heat production and acidosis and does not treat respiratory failure.",
+          "Noninvasive ventilation needs a cooperative patient, and he cannot keep the mask on. A saturation of 81% with a pH of 7.21 and a PCO2 of 58 mmHg after 30 minutes means NIV has failed, and the ERS/ATS guideline warns that delayed intubation in NIV failure worsens outcomes. High flow oxygen and a nonrebreather give less support than the NIV he is already failing. Haloperidol carries risk in cocaine toxicity and will not fix respiratory failure. Physical restraint of an agitated patient with stimulant toxicity worsens heat production and acidosis and does not treat respiratory failure.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
         source: "niv",
       },
@@ -588,7 +580,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "He remains hypertensive with ischemic ST depression and pulmonary edema after cocaine. The AHA statement recommends nitroglycerin, which relieves coronary vasoconstriction and lowers preload and afterload, and it can be titrated quickly by infusion. Esmolol, metoprolol and labetalol are beta-blockers, which the statement advises against in the acute phase of cocaine toxicity. Oral clonidine cannot be titrated and acts slowly in an intubated patient.",
+          "He remains hypertensive with ischemic ST depression and pulmonary edema after cocaine. The AHA statement recommends nitroglycerin, which relieves coronary vasoconstriction and lowers preload and afterload, and it can be titrated quickly by infusion. Esmolol and metoprolol are beta-blockers, which the statement advises against in the acute phase of cocaine toxicity. Labetalol is only a conditional option after a vasodilator, and its beta effect predominates and does not reverse coronary vasoconstriction. Oral clonidine cannot be titrated and acts slowly in an intubated patient.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
         source: "mccord",
       },
@@ -620,7 +612,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Pink frothy sputum and diffuse B-lines within minutes of opioid reversal, with normal left ventricular function and no raised JVP, fit opioid-associated noncardiogenic pulmonary edema. Radke and colleagues describe this with many opioids, often around the time of naloxone reversal. A normal ventricle argues against a cardiogenic cause. No vomiting was seen, and aspiration usually gives patchy dependent change rather than diffuse B-lines. He did not inject, so septic emboli are unlikely. Alveolar hemorrhage is rare and is not linked to naloxone reversal.",
+          "Pink frothy sputum and diffuse B-lines soon after opioid reversal, with normal left ventricular function and no raised JVP, fit opioid-associated noncardiogenic pulmonary edema. Radke and colleagues describe this with many opioids, often around the time of naloxone reversal. A normal ventricle argues against a cardiogenic cause. No vomiting was seen, and aspiration usually gives patchy dependent change rather than diffuse B-lines. He did not inject, so septic emboli are unlikely. Alveolar hemorrhage is rare and is not linked to naloxone reversal.",
         keyFeature: { topic: "pulmonary-edema", n: 2 },
         source: "radke",
       },
@@ -678,7 +670,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: [0, 4, 7],
         explanation:
-          "Checking his saturation while he walks shows he can manage exertion before he leaves. The Canadian national guideline recommends buprenorphine-naloxone as first-line treatment for opioid use disorder, and a take-home naloxone kit lets others reverse the next overdose. His edema was noncardiogenic, and bedside ultrasound showed a normal ventricle, so a formal echo and serial troponins add little. This edema clears within a day or two, so repeat imaging is not needed. He is on room air, so home oxygen has no role.",
+          "Checking his saturation while he walks shows he can manage exertion before he leaves. The 2024 Canadian national guideline names buprenorphine and methadone as first-line opioid agonist treatments and supports access to take-home naloxone kits. Offering buprenorphine-naloxone now starts one of those first-line options, and a kit lets others reverse the next overdose. His edema was noncardiogenic, and bedside ultrasound showed a normal ventricle, so a formal echo and serial troponins add little. This edema clears within a day or two, so repeat imaging is not needed. He is on room air, so home oxygen has no role.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
         source: "crism",
       },
@@ -746,7 +738,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A saturation of 85% on an FiO2 of 0.8, a respiratory rate of 40/minute, accessory muscle use and fatigue after 30 minutes mean CPAP is failing. He needs intubation and ventilation with PEEP before he tires into arrest. Watching longer wastes the time left to intubate safely. High flow oxygen gives less positive pressure than the CPAP he is failing. Racemic epinephrine treats upper airway swelling, and his laryngospasm has resolved. Bhattacharya and colleagues note that diuretics are often given but can cause hypovolemia and do not replace ventilatory support.",
+          "A saturation of 85% on an FiO2 of 0.8, a respiratory rate of 40/minute, accessory muscle use and fatigue after 30 minutes mean CPAP is failing. He needs intubation and ventilation with PEEP before he tires into arrest. Watching longer wastes the time left to intubate safely. High flow oxygen gives less positive pressure than the CPAP he is failing. Racemic epinephrine treats upper airway swelling, and his laryngospasm has resolved. Bhattacharya and colleagues include diuresis in supportive care unless the patient is in shock, but furosemide acts too slowly to rescue failing CPAP and does not replace ventilatory support.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
         source: "nppe",
       },
@@ -915,71 +907,71 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
   {
     id: "pulmonary-edema-26",
     topic: "pulmonary-edema",
-    alsoTopics: ["tox"],
-    title: "Confused and breathless with sore knees",
+    title: "Double vision during cancer treatment",
     stem:
-      "An 81-year-old woman is brought to the emergency department by her son with 3 days of increasing confusion and shortness of breath. Her family physician suspected pneumonia by phone. She has osteoarthritis of both knees and hypertension treated with hydrochlorothiazide. For 3 weeks she has taken ASA 650 mg four times daily for knee pain, in addition to her daily ASA 81 mg. She is restless and oriented to person only. She is breathing deeply and fast. There are fine crackles in both lungs. There is no leg edema.",
-    vitals: { temperature: "37.9°C oral", pulse: "112/minute", resp: "32/minute", bp: "128/70 mmHg", o2sat: "89% on room air", weight: "58 kg" },
+      "A 67-year-old man presents to the emergency department with 3 days of shortness of breath, fatigue and aching thighs. For 2 days he has had double vision and droopy eyelids. He has metastatic melanoma. He received his first dose of nivolumab with ipilimumab 4 weeks ago and his second dose 7 days ago. He has hypertension treated with ramipril. He is tired but alert. There is bilateral ptosis and weakness of hip flexion. The JVP is 5 cm above the sternal angle. There are crackles at both lung bases. There is no leg edema.",
+    vitals: { temperature: "37.1°C oral", pulse: "112/minute", resp: "26/minute", bp: "108/68 mmHg", o2sat: "90% on room air", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
         update:
-          "Na 138 mmol/L, Cl 102 mmol/L, HCO3 14 mmol/L, creatinine 128 umol/L. Venous gas: pH 7.44, PCO2 21 mmHg. The chest X-ray shows bilateral perihilar airspace opacities with a normal heart size.",
-        prompt: "Which of the following investigations is most important to send now to explain her presentation?",
+          "High-sensitivity troponin I is 1850 ng/L (reference below 26 ng/L) and CK is 4200 U/L. The ECG shows sinus tachycardia with a new right bundle branch block and a PR interval of 240 ms. Bedside echo shows an ejection fraction of 40% and no pericardial effusion.",
+        prompt: "Which of the following is the most likely cause of his pulmonary edema?",
         options: [
-          "NT-proBNP level",
-          "Serum lactate",
-          "Serum salicylate level",
-          "Sputum culture",
-          "Urine legionella antigen",
+          "Acute coronary syndrome",
+          "Checkpoint inhibitor myocarditis",
+          "Immunotherapy pneumonitis",
+          "Malignant pericardial effusion",
+          "Pulmonary tumour embolism",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "Her anion gap is 138 minus 102 minus 14, or 22 mmol/L, yet her pH is 7.44 because a PCO2 of 21 mmHg shows a primary respiratory alkalosis. That mixed pattern, with confusion, noncardiogenic edema with a normal heart size and 3 weeks of high dose ASA, points to chronic salicylate toxicity. It is often mistaken for pneumonia or sepsis in older adults. Lactate, sputum culture and legionella antigen follow the pneumonia label. NT-proBNP looks for cardiac failure, which a normal heart size and no edema make less likely.",
+          "A very high troponin with new conduction disease and a reduced ejection fraction, weeks after starting nivolumab with ipilimumab, point to immune checkpoint inhibitor myocarditis. The International Cardio-Oncology Society definition accepts a troponin elevation with two minor criteria once acute coronary syndrome is excluded. He has several: the clinical syndrome, new conduction system disease, a fall in systolic function, and other immune-related adverse events, particularly myositis and myasthenia gravis, which fit his CK of 4200 U/L, hip flexor weakness and ptosis. Acute coronary syndrome does not explain the muscle and eyelid findings. Pneumonitis does not raise troponin or cause conduction block. Echo shows no effusion. Tumour emboli strain the right ventricle rather than cause left-sided failure.",
         keyFeature: { topic: "pulmonary-edema", n: 2 },
-        source: "extrip",
+        source: "icos",
       },
       {
         id: "q2",
         kind: "single",
-        update: "Her salicylate level is 4.1 mmol/L. She needs 6 L/minute of oxygen by nasal prongs to keep her saturation at 92%.",
-        prompt: "Which of the following is the most appropriate treatment to remove the salicylate?",
+        prompt: "Which of the following is the most appropriate treatment directed at the cause of his heart failure?",
         options: [
-          "Bicarbonate infusion alone",
-          "furosemide 40 mg IV",
-          "Hemodialysis now",
-          "Repeat level in 2 hours",
-          "Whole bowel irrigation",
+          "Dual antiplatelet therapy",
+          "Full-dose heparin infusion",
+          "High-dose IV corticosteroids",
+          "Pyridostigmine by mouth alone",
+          "Resume immunotherapy after diuresis",
         ],
         correct: 2,
         explanation:
-          "The EXTRIP workgroup recommends extracorporeal treatment regardless of the salicylate level when there is altered mental status or new hypoxemia needing oxygen, and she has both. Pulmonary edema in salicylate poisoning carries a high mortality. Bicarbonate alkalinization helps, but it cannot remove salicylate fast enough on its own and adds sodium and fluid to edematous lungs. Furosemide does not enhance salicylate removal. Whole bowel irrigation is for acute ingestion of enteric-coated tablets, not chronic use. Waiting for another level delays treatment she already qualifies for.",
+          "Myocarditis from a checkpoint inhibitor is an immune injury, and the SITC guideline advises high-dose corticosteroids as soon as the diagnosis is likely, methylprednisolone 1000 mg IV daily for 3 to 5 days, with further immunosuppression if there is no response within 24 hours. The same guideline advises that permanent discontinuation of the checkpoint inhibitor be seriously considered, so resuming it after diuresis would risk restarting the injury. Dual antiplatelet therapy and heparin treat a coronary occlusion he does not have. Pyridostigmine may ease the eyelid weakness but does nothing for the inflammation in his heart.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
-        source: "extrip",
+        source: "sitc",
       },
       {
         id: "q3",
         kind: "menu",
         select: 2,
-        update: "While dialysis is set up she becomes drowsy and her respiratory effort weakens. The team decides to intubate her.",
-        prompt: "Which of the following measures most reduce the risk of worsening acidemia around her intubation?",
+        update:
+          "Four hours later he is drowsy, his voice is weak and he struggles to clear secretions. His saturation is 85% on a nonrebreather mask. His BP is 82/54 mmHg, his hands are cool and lactate is 4.3 mmol/L.",
+        prompt: "Which of the following are the most appropriate next steps in his management?",
         options: [
-          "Bicarbonate bolus before induction",
-          "Hold bicarbonate during intubation",
-          "Low tidal volume at a rate of 12/minute",
-          "Match her pre-intubation minute ventilation",
-          "Permissive hypercapnia after intubation",
-          "No bag ventilation during apnea",
+          "Bilevel noninvasive ventilation",
+          "Endotracheal intubation",
+          "furosemide 80 mg IV",
+          "High flow nasal oxygen",
+          "milrinone infusion",
+          "norepinephrine infusion",
+          "normal saline 2 L IV",
         ],
-        correct: [0, 3],
+        correct: [1, 5],
         explanation:
-          "Her own breathing held her PCO2 at 21 mmHg, and any rise in PCO2 lets more salicylate cross into the brain. The EXTRIP review warns that intubation can worsen acidemia and salicylate toxicity. A bicarbonate bolus before induction and a ventilator rate and tidal volume set to match her previous minute ventilation limit the rise in acid. A rate of 12/minute, permissive hypercapnia and prolonged apnea all let the PCO2 climb. Stopping bicarbonate removes the alkalinization that keeps salicylate out of the tissues.",
+          "Drowsiness, bulbar weakness and poor secretion clearance mean he cannot protect his airway, which makes noninvasive ventilation unsafe, so he needs intubation. A BP of 82/54 mmHg with cool hands and a lactate of 4.3 mmol/L is cardiogenic shock, and the ESC heart failure guideline suggests norepinephrine to restore perfusion pressure. Bilevel ventilation and high flow oxygen do not protect his airway. Milrinone and furosemide lower his pressure further. A 2 L saline bolus will worsen his pulmonary edema.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
-        source: "extrip",
+        source: "eschf",
       },
     ],
-    sources: [EXTRIP],
+    sources: [ICOS, SITC, ESCHF],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1057,7 +1049,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
   {
     id: "pulmonary-edema-28",
     topic: "pulmonary-edema",
-    title: "Flu symptoms three weeks after a new medication",
+    title: "Flu symptoms 18 days after a new medication",
     stem:
       "You are working in a community hospital emergency department. A 24-year-old man presents with 3 days of fever, muscle aches, cough and shortness of breath. He was started on clozapine 18 days ago for treatment-resistant schizophrenia, and the dose was increased to 250 mg daily last week. He takes no other medications. A walk-in clinic told him he had influenza 2 days ago. He is tired but alert. The JVP is 5 cm above the sternal angle and there are crackles at both lung bases. There is no rigidity.",
     vitals: { temperature: "38.4°C oral", pulse: "128/minute", resp: "28/minute", bp: "102/64 mmHg", o2sat: "91% on room air" },
@@ -1113,7 +1105,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "He is in cardiogenic shock with an ejection fraction of about 20% and a lactate of 4.8 mmol/L, despite starting a vasopressor. The ESC guideline recommends rapid transfer of cardiogenic shock to a tertiary centre with round-the-clock cardiac catheterization and mechanical circulatory support. Fulminant myocarditis in a young patient can recover fully if he is bridged through the acute phase. A community ICU, step-down unit or ward cannot offer mechanical support if he worsens. A psychiatric unit cannot manage shock.",
+          "He is in cardiogenic shock with an ejection fraction of about 20% and a lactate of 4.8 mmol/L, despite starting a vasopressor. The ESC guideline advises that short-term mechanical circulatory support should be considered in cardiogenic shock as a bridge to recovery or decision, and that venoarterial ECMO may be considered in fulminant myocarditis, so he needs a centre that can provide it. Fulminant myocarditis in a young patient can recover fully if he is bridged through the acute phase. A community ICU, step-down unit or ward cannot offer mechanical support if he worsens. A psychiatric unit cannot manage shock.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
         source: "eschf",
       },
@@ -1129,23 +1121,23 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
     alsoTopics: ["asthma-copd"],
     title: "Adult-onset asthma that inhalers do not help",
     stem:
-      "A 52-year-old man presents to the emergency department with 4 months of shortness of breath on exertion and a night-time cough with wheeze. His family physician diagnosed adult-onset asthma. Salbutamol and a budesonide-formoterol inhaler have not helped. He now stops after one flight of stairs. He has hypertension, obstructive sleep apnea and a BMI of 43 kg/m2. He is comfortable at rest. The JVP cannot be seen. There are faint crackles at both bases and 1+ ankle edema. There is scattered expiratory wheeze.",
+      "A 58-year-old man presents to the emergency department with 4 months of shortness of breath on exertion and a night-time cough with wheeze. His family physician diagnosed adult-onset asthma. Salbutamol and a budesonide-formoterol inhaler have not helped. He now has to rest halfway up the stairs at home. He has hypertension, obstructive sleep apnea and a BMI of 43 kg/m2. He is comfortable at rest. The JVP cannot be seen. There are faint crackles at both bases and 1+ ankle edema. There is scattered expiratory wheeze.",
     vitals: { temperature: "36.7°C oral", pulse: "94/minute", resp: "20/minute", bp: "156/96 mmHg", o2sat: "95% on room air", weight: "138 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first test in the emergency department to look for heart failure?",
+        prompt: "Which of the following additional symptoms would most suggest heart failure rather than asthma in this man?",
         options: [
-          "CT pulmonary angiography",
-          "D-dimer level",
-          "Methacholine challenge",
-          "NT-proBNP level",
-          "Serum troponin level",
+          "Breathless when bending to tie shoes",
+          "Chest tightness after hard exercise",
+          "Cough on exposure to cold air",
+          "Symptoms worse in pollen season",
+          "Wheeze after contact with cats",
         ],
-        correct: 3,
+        correct: 0,
         explanation:
-          "Exertional dyspnea and night cough that do not respond to inhalers, with basal crackles and ankle edema, raise the question of heart failure presenting as asthma. The ESC guideline recommends a natriuretic peptide as the first test when heart failure is suspected, because a low level makes it unlikely. Troponin looks for myocardial injury, not heart failure itself. D-dimer and CT angiography look for embolism, which a 4-month course does not suggest. Methacholine challenge tests for asthma and is not done in the emergency department.",
+          "Breathlessness on bending forward, called bendopnea, comes from a rise in filling pressure when the abdomen is compressed, and the ESC guideline lists it among the less typical symptoms of heart failure, a feature of advanced disease. With his night cough, basal crackles, ankle edema and failed inhalers, it points to cardiac wheeze. Chest tightness after hard exercise, cough in cold air, pollen season symptoms and wheeze after contact with cats are typical asthma triggers and point toward airway disease, not the heart.",
         keyFeature: { topic: "pulmonary-edema", n: 5 },
         source: "eschf",
       },
@@ -1155,7 +1147,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         update: "His NT-proBNP is 410 pg/mL. Creatinine is 84 umol/L. The ECG shows sinus rhythm with left ventricular hypertrophy.",
         prompt: "Which of the following best describes this NT-proBNP result in his case?",
         options: [
-          "Diagnostic of heart failure at age 52",
+          "Diagnostic of heart failure at age 58",
           "Excludes heart failure at any age",
           "Falsely raised by his obesity",
           "Indeterminate and lowered by obesity",
@@ -1163,7 +1155,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "His NT-proBNP of 410 pg/mL is above the rule-out threshold of 300 pg/mL but below the age-specific rule-in threshold of 900 pg/mL for ages 50 to 75, so it is indeterminate. The Heart Failure Association guidance notes that obesity lowers natriuretic peptide levels, so a value in this range at a BMI of 43 kg/m2 should raise concern rather than reassure. It does not exclude heart failure, and obesity does not raise the level. Sleep apnea is not a main cause of a raised value, and his normal creatinine removes kidney disease as a reason.",
+          "His NT-proBNP of 410 pg/mL is above the acute rule-out threshold of 300 pg/mL, and above the 125 pg/mL used for gradual symptoms, but below the acute rule-in threshold of 900 pg/mL that both the HFA guidance and the ESC guideline set at age 58, so it is indeterminate. The Heart Failure Association guidance notes that obesity lowers natriuretic peptide levels and suggests cut-offs about half as high. That gives 150 pg/mL to rule out and 450 pg/mL to rule in, and 410 pg/mL still falls between them, so at a BMI of 43 kg/m2 it should raise concern rather than reassure. It does not exclude heart failure, and obesity does not raise the level. Sleep apnea is not a main cause of a raised value, and his normal creatinine removes kidney disease as a reason.",
         keyFeature: { topic: "pulmonary-edema", n: 5 },
         source: "hfanp",
       },
@@ -1267,7 +1259,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "She passed a walk test, so the barrier to a safe discharge is at home. She lives alone, cannot name her medications and stopped her diuretic because of urgency and a fall. The CCS guideline supports a multidisciplinary plan with home care and help with medications for patients at high risk of readmission. A week of weights in hospital delays discharge without fixing adherence. Strict fluid restriction has little evidence. A repeat NT-proBNP does not change her plan. Changing to torsemide does not solve her urgency or her memory problem.",
+          "She passed a walk test, so the barrier to a safe discharge is at home. She lives alone, cannot name her medications and stopped her diuretic because of urgency and a fall. The CCS guideline supports a multidisciplinary plan with home care and help with medications for patients at high risk of readmission. A week of weights in hospital delays discharge without fixing adherence. Strict fluid restriction has little evidence. A repeat NT-proBNP does not change her plan. Changing to torsemide does not solve her urgency or her difficulty managing her pills.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
         source: "ccshf",
       },
@@ -1288,18 +1280,18 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        update: "Creatinine is 164 umol/L, which matches his baseline. Potassium is 4.6 mmol/L and sodium 134 mmol/L.",
-        prompt: "Which of the following is the most appropriate first IV dose of furosemide for him?",
+        update: "Creatinine is 164 umol/L, which matches his baseline. Potassium is 4.6 mmol/L. He is given furosemide 160 mg IV, equal to his total daily oral dose.",
+        prompt: "Which of the following is the most useful early measure of his response to this dose?",
         options: [
-          "furosemide 20 mg IV",
-          "furosemide 40 mg IV",
-          "furosemide 80 mg IV",
-          "furosemide 160 mg IV",
-          "furosemide 640 mg IV",
+          "Chest X-ray at 6 hours",
+          "Daily weight tomorrow morning",
+          "NT-proBNP at 6 hours",
+          "Serum creatinine at 6 hours",
+          "Spot urine sodium at 2 hours",
         ],
-        correct: 3,
+        correct: 4,
         explanation:
-          "He takes 80 mg twice daily, a total of 160 mg by mouth each day. The ESC guideline advises a first IV dose of 1 to 2 times the daily oral dose in a patient already on a loop diuretic, so 160 to 320 mg, and 160 mg is the only option in that range. Doses of 20, 40 and 80 mg are below his usual daily intake and will not reach the threshold for natriuresis in chronic kidney disease. A dose of 640 mg is 4 times his daily dose and risks hypotension and ototoxicity.",
+          "The ESC guideline advises checking the diuretic response soon after the first dose, with a spot urine sodium at 2 hours or the hourly urine output over 6 hours, so a poor response can be met by doubling the dose the same day. A urine sodium above 50 to 70 mmol/L at 2 hours marks a good response. A weight tomorrow comes too late to adjust today's dosing. Serum creatinine can rise during effective decongestion and does not measure natriuresis. A chest X-ray and NT-proBNP change too slowly to guide the next dose.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
         source: "eschf",
       },
@@ -1356,19 +1348,20 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate bedside test of his readiness for discharge?",
+        update: "He has lost 0.4 kg since arrival. His JVP is 7 cm above the sternal angle and he has 2+ pitting edema to the mid shins.",
+        prompt: "Which of the following findings most strongly argues against discharging him now?",
         options: [
-          "Bedside spirometry",
-          "Orthostatic vital signs",
-          "Peak expiratory flow",
-          "Treadmill stress ECG",
-          "Walk test with oximetry",
+          "Age of 76 years",
+          "Ejection fraction of 35%",
+          "Heart rate of 84/minute",
+          "Need for NIV on arrival",
+          "Persistent signs of congestion",
         ],
         correct: 4,
         explanation:
-          "A patient who looks well at rest may still become breathless, tachycardic or hypoxic when he walks, and the Ottawa Heart Failure Risk Scale includes a 3-minute walk test with pulse and oximetry for this reason. A heart rate of 110/minute or more, a low saturation or being unable to walk adds risk. Orthostatic vital signs test volume status after diuresis but not exertional tolerance. Spirometry and peak flow assess airway disease. A treadmill stress ECG looks for ischemia and is not a bedside test in the emergency department.",
+          "A JVP of 7 cm, 2+ edema and a weight loss of only 0.4 kg show he is still congested, however well he feels. The ESC guideline notes that persistent congestion before discharge is associated with a higher risk of readmission and death, and asks that treatment keep the patient free of congestion. His age and ejection fraction are fixed risks that do not change today. A heart rate of 84/minute at rest is reassuring. Noninvasive ventilation on arrival showed how sick he was but has already been weaned.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
-        source: "ohfrs",
+        source: "eschf",
       },
       {
         id: "q2",
@@ -1396,12 +1389,12 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "A score of 5 places him in the very high risk group of the Ottawa Heart Failure Risk Scale, with a much higher rate of serious adverse events within 14 days, including death and readmission. His pulse of 116/minute on a short walk shows he is not ready for home, however well he feels at rest. Early clinic review and home nursing suit patients at low risk, not this score. Four more hours of observation will not change his history, urea or walk test result.",
+          "A score of 5 places him in the very high risk group of the Ottawa Heart Failure Risk Scale, with a much higher rate of serious adverse events, which include death within 30 days and relapse needing admission within 14 days. His pulse of 116/minute on a short walk shows he is not ready for home, however well he feels at rest. Early clinic review and home nursing suit patients at low risk, not this score. Four more hours of observation will not change his history, urea or walk test result.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
         source: "ohfrs",
       },
     ],
-    sources: [OHFRS],
+    sources: [OHFRS, ESCHF],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1464,12 +1457,12 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "The American College of Chest Physicians statement on dyspnea in advanced heart and lung disease supports opioids as the main drug treatment for refractory breathlessness. A low starting dose such as morphine 2.5 mg SC suits an opioid naive 89-year-old, titrated to effect. Morphine clears through the kidney, so the interval should be watched with her stage 4 disease. Fentanyl 100 mcg IV is a large dose for someone who has never had opioids. Benzodiazepines at these doses sedate but do little for breathlessness on their own. Salbutamol treats bronchospasm, not edema.",
+          "Her breathlessness is now a crisis at the end of life, and the B.C. palliative symptom guideline uses an opioid as the first drug, with morphine given SC or IV and repeated every 5 to 10 minutes until she is comfortable. A reduced starting dose such as 2.5 mg SC suits an opioid naive 89-year-old with stage 4 kidney disease, in whom morphine metabolites can accumulate, so repeat doses should be watched. Fentanyl 100 mcg IV is a large first dose for someone who has never had opioids. The guideline keeps benzodiazepines as an addition for anxiety or a second-line agent, not the sole drug for breathlessness. Salbutamol treats bronchospasm, not edema.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
-        source: "mahler",
+        source: "bcpal",
       },
     ],
-    sources: [NIV, MAHLER],
+    sources: [NIV, BCPAL],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1533,7 +1526,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A falling level of consciousness, a pH of 7.22 with a rising PCO2 and shock needing norepinephrine all argue against noninvasive ventilation. The ERS/ATS guideline supports NIV in alert patients with cardiogenic edema, but reduced consciousness and hemodynamic instability make NIV unsafe here, so she needs intubation. Bilevel NIV and CPAP risk aspiration in a drowsy patient. High flow oxygen does not correct hypercapnia. Waiting an hour risks arrest. Induction should be planned for her low pressure.",
+          "A falling level of consciousness, a pH of 7.22 with a PCO2 of 58 mmHg and shock needing norepinephrine all argue against noninvasive ventilation. The ERS/ATS guideline supports NIV in alert patients with cardiogenic edema, but reduced consciousness and hemodynamic instability make NIV unsafe here, so she needs intubation. Bilevel NIV and CPAP risk aspiration in a drowsy patient. High flow oxygen does not correct hypercapnia. Waiting an hour risks arrest. Induction should be planned for her low pressure.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
         source: "niv",
       },
@@ -1549,7 +1542,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
     alsoTopics: ["ems"],
     title: "Two hours from the nearest ICU",
     stem:
-      "You are working in a rural hospital emergency department. There is no bilevel ventilator, but you have a CPAP mask set. The nearest ICU is 2 hours away by air. A 73-year-old man is brought in by ambulance with 1 hour of severe shortness of breath that woke him from sleep. He has hypertension and type 2 diabetes. He takes no diuretic and no erectile dysfunction drugs. He is sweaty, sitting upright and speaking 2 or 3 words at a time. He is alert. There are crackles to the mid zones of both lungs and mild ankle edema.",
+      "You are working in a rural hospital emergency department. There is no bilevel ventilator, but you have a CPAP mask set. The nearest ICU is 2 hours away by air. A 73-year-old man is brought in by ambulance with 1 hour of severe shortness of breath that woke him from sleep. He has hypertension and type 2 diabetes. He takes no diuretic and no phosphodiesterase 5 inhibitor. He is sweaty, sitting upright and speaking 2 or 3 words at a time. He is alert. There are crackles to the mid zones of both lungs and mild ankle edema.",
     vitals: { temperature: "36.8°C oral", pulse: "122/minute", resp: "36/minute", bp: "196/110 mmHg", o2sat: "84% on 15 L/minute by nonrebreather mask" },
     questions: [
       {
@@ -1576,42 +1569,43 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "CPAP at 10 cm H2O and a nitroglycerin infusion are started. The flight team is 90 minutes away. You reassess him every 15 minutes.",
-        prompt: "Which of the following findings would most strongly signal that CPAP is failing?",
+        update:
+          "CPAP at 10 cm H2O, three sublingual nitroglycerin doses and furosemide are given. A nitroglycerin infusion runs at 50 mcg/minute. Twenty minutes later his BP is 204/116 mmHg, his respiratory rate is 38/minute and his saturation 86%. He is alert.",
+        prompt: "Which of the following is the most appropriate medication to give him next?",
         options: [
-          "Crackles still heard at both bases",
-          "Heart rate falling to 100/minute",
-          "Pink frothy sputum inside the mask",
-          "Saturation of 92% on CPAP",
-          "Somnolence with a rising PCO2",
+          "diltiazem 10 mg IV",
+          "labetalol 20 mg IV",
+          "metoprolol 5 mg IV",
+          "morphine 4 mg IV",
+          "nitroglycerin 1 mg IV",
         ],
         correct: 4,
         explanation:
-          "Somnolence with a rising PCO2 means he is tiring and retaining carbon dioxide, and the ERS/ATS guideline treats worsening consciousness and gas exchange on NIV as signs of failure that call for intubation. Basal crackles often persist for hours while the patient improves. A falling heart rate and a saturation of 92% are signs of response. Frothy sputum in the mask is expected early and does not by itself mean failure, if he stays alert and his gas exchange improves.",
+          "His BP has risen to 204/116 mmHg despite CPAP and a low dose infusion, so vasodilation needs to escalate quickly with an IV bolus. The ESC guideline notes that nitroglycerin can be given as 1 to 2 mg boluses in severely hypertensive acute pulmonary edema, while watching for hypotension. Diltiazem, metoprolol and labetalol all reduce contractility in a failing ventricle and can tip him into shock. Morphine is not recommended routinely in acute heart failure.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
-        source: "niv",
+        source: "eschf",
       },
       {
         id: "q3",
         kind: "single",
         update:
-          "Forty minutes later he is hard to rouse. A venous gas shows pH 7.18 and PCO2 70 mmHg. His BP is 150/88 mmHg. The flight team arrives in 50 minutes.",
-        prompt: "Which of the following is the most appropriate plan for his transfer?",
+          "His BP falls to 162/94 mmHg. His saturation is still 87%. He has a full beard, air hisses from around the mask and the CPAP pressure gauge will not hold 10 cm H2O. He is alert and calm.",
+        prompt: "Which of the following is the most appropriate next step in his respiratory support?",
         options: [
-          "Endotracheal intubation before the flight",
-          "Nonrebreather mask for the flight",
-          "Stay on CPAP during the flight",
-          "Transfer by ground on CPAP",
-          "Wait until he improves to transfer",
+          "Increase CPAP to 15 cm H2O",
+          "morphine 4 mg IV",
+          "Rapid sequence intubation",
+          "Refit or change the CPAP mask",
+          "Switch to a nonrebreather mask",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
-          "He has failed CPAP, with a falling level of consciousness, a pH of 7.18 and a PCO2 of 70 mmHg. The ERS/ATS guideline warns that delayed intubation after NIV failure worsens outcomes, and a flight is the worst place to manage a deteriorating airway. Continuing CPAP in the air or on a longer ground trip leaves a drowsy patient on a mask that is failing. A nonrebreather gives less support than CPAP. Waiting to improve is not realistic with worsening hypercapnia.",
+          "The pressure gauge cannot hold 10 cm H2O because of a large leak around his beard, so he is not receiving the CPAP that was set. Masip and colleagues stress choosing the right interface and avoiding excessive leak for NIV to work. Refitting the mask or changing it to one that seals should come before any escalation in an alert, calm patient. A higher pressure only increases the leak. Intubation is not needed while he is alert and the fault is correctable. A nonrebreather removes positive pressure. Morphine is not recommended routinely.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
-        source: "niv",
+        source: "masip",
       },
     ],
-    sources: [ESCHF, NIV],
+    sources: [ESCHF, MASIP],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1670,7 +1664,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
           "Large tidal volumes of 10 mL/kg",
           "Permissive hypercapnia",
           "Titrated PEEP with normocapnia",
-          "Zero PEEP to protect her ICP",
+          "Zero PEEP with normocapnia",
         ],
         correct: 3,
         explanation:
@@ -1706,7 +1700,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "She is alert with a saturation of 92% and crackles in one area, which Szpilman and colleagues grade as mild, needing oxygen, warmth and observation. Drowning injures surfactant and causes noncardiogenic edema, so oxygen with close monitoring treats it while watching for delayed worsening. Intubation is for falling consciousness or failing oxygenation. Furosemide at 1 mg/kg does not help drowning edema, which is not a volume problem. Corticosteroids have no proven role. Prophylactic antibiotics are not advised after a pool submersion.",
+          "She is alert with a saturation of 92% and crackles in one area, which fits grade 2 in the classification of Szpilman and colleagues, treated with low-flow oxygen and observation. Drowning injures surfactant and causes noncardiogenic edema, so oxygen with close monitoring treats it while watching for delayed worsening. Intubation is for falling consciousness or failing oxygenation. Furosemide at 1 mg/kg does not help drowning edema, which is not a volume problem. Corticosteroids have no proven role. Prophylactic antibiotics are not advised after a pool submersion.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
         source: "drown",
       },
@@ -1724,7 +1718,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Szpilman and colleagues advise that a patient who has no symptoms, a normal examination and normal oxygenation after 6 to 8 hours of observation can go home. She has a saturation of 98% on room air, a respiratory rate of 24/minute and a clear chest after 6 hours. Her parents need clear advice to return for cough, fast breathing or fever. An overnight stay or 12 more hours adds little to a normal 6 hour period. A chest X-ray will not change the decision when her examination and saturation are normal.",
+          "Szpilman and colleagues note that most grade 2 patients return to normal within 6 to 8 hours on oxygen and can then be sent home. She has a saturation of 98% on room air, a respiratory rate of 24/minute and a clear chest after 6 hours. Her parents need clear advice to return for cough, fast breathing or fever. An overnight stay or 12 more hours adds little to a normal 6 hour period. A chest X-ray will not change the decision when her examination and saturation are normal.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
         source: "drown",
       },
@@ -1775,7 +1769,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Orthopnea and a JVP of 6 cm above the sternal angle point to raised filling pressures, and in a never smoker with no airway disease they make cardiac wheeze from pulmonary edema likely. The ESC guideline lists orthopnea and raised venous pressure among the more specific signs of heart failure. Diffuse wheeze occurs with both asthma and pulmonary edema. Absence of fever and sputum narrows the list but does not point to the heart. Nausea is common to many acute illnesses.",
+          "Orthopnea and a JVP of 6 cm above the sternal angle point to raised filling pressures, and in a never smoker with no airway disease they make cardiac wheeze from pulmonary edema likely. The ESC guideline lists orthopnea among the typical symptoms of heart failure and a raised jugular venous pressure among its more specific signs, while wheezing is a less typical symptom. Diffuse wheeze occurs with both asthma and pulmonary edema. Absence of fever and sputum narrows the list but does not point to the heart. Nausea is common to many acute illnesses.",
         keyFeature: { topic: "pulmonary-edema", n: 5 },
         source: "eschf",
       },
@@ -1794,9 +1788,9 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Anterior ST elevation with reciprocal change is a STEMI, even without chest pain, which is common in older women with diabetes. The ESC ACS guideline recommends primary PCI when it can be done promptly, and acute heart failure is a further reason to choose it. Fibrinolysis is for when PCI cannot be done in time, and the laboratory is available now. Serial troponin, CT angiography and waiting for an echo all delay reperfusion of an occluded artery.",
+          "Anterior ST elevation with reciprocal change is a STEMI, even without chest pain, which is common in older women with diabetes. The CCS and CAIC guideline recommends primary PCI when it can be delivered within 120 minutes of first medical contact, and her laboratory is available now. Fibrinolysis is for patients who cannot reach PCI within that time. Serial troponin, CT angiography and waiting for an echo all delay reperfusion of an occluded artery.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
-        source: "acs",
+        source: "stemi",
       },
       {
         id: "q3",
@@ -1817,7 +1811,7 @@ export const PULMONARY_EDEMA_S48_SAMPS: Samp[] = [
         source: "niv",
       },
     ],
-    sources: [ESCHF, ACS, NIV],
+    sources: [ESCHF, STEMI, NIV],
     reviewed: false,
     author: AUTHOR,
     version: 1,
