@@ -2293,6 +2293,109 @@
    "after": [
     "Hyperhydration without potassium, urate lowering, oncology"
    ]
+  },
+  "pre-eclampsia-01#q3": {
+   "batch": "s15",
+   "before": [
+    "Admit to the obstetrical unit for maternal and fetal assessment and a decision on timing of delivery"
+   ],
+   "after": [
+    "Admit to obstetrics for maternal and fetal assessment"
+   ]
+  },
+  "pre-eclampsia-04#q2": {
+   "batch": "s15",
+   "before": [
+    "Magnesium sulfate 4 g IV over 5 to 20 minutes then 1 g/h"
+   ],
+   "after": [
+    "Magnesium sulfate 4 g IV load then 1 g/h"
+   ]
+  },
+  "pre-eclampsia-06#q3": {
+   "batch": "s15",
+   "before": [
+    "Magnesium sulfate 4 g IV then 1 g/h",
+    "Urgent obstetrical consultation for delivery once she is stabilized"
+   ],
+   "after": [
+    "Magnesium sulfate 4 g IV then 1 g/h",
+    "Urgent obstetrical consultation for delivery once stable"
+   ]
+  },
+  "pre-eclampsia-14#q2": {
+   "batch": "s15",
+   "before": [
+    "Systolic below 160 and diastolic below 110, then aiming for a diastolic of about 85"
+   ],
+   "after": [
+    "Below 160/110, then a diastolic of about 85"
+   ]
+  },
+  "pulmonary-edema-01#q2": {
+   "batch": "s15",
+   "before": [
+    "Nitroglycerin 0.4 mg sublingual every 5 minutes while an IV infusion is started at about 50 to 100 mcg/min and titrated up rapidly"
+   ],
+   "after": [
+    "Repeated sublingual 0.4 mg plus IV 50 to 100 mcg/min"
+   ]
+  },
+  "pulmonary-edema-02#q1": {
+   "batch": "s15",
+   "before": [
+    "Immediate transfer for primary PCI, activating the PCI centre now"
+   ],
+   "after": [
+    "Immediate activation and transfer for primary PCI"
+   ]
+  },
+  "pulmonary-edema-05#q1": {
+   "batch": "s15",
+   "before": [
+    "Synchronized electrical cardioversion with procedural sedation"
+   ],
+   "after": [
+    "Synchronized cardioversion with procedural sedation"
+   ]
+  },
+  "pulmonary-edema-07#q2": {
+   "batch": "s15",
+   "before": [
+    "SpO2 falls to 87% and heart rate rises to 118 bpm"
+   ],
+   "after": [
+    "SpO2 falls to 87%, heart rate rises to 118 bpm"
+   ]
+  },
+  "pulmonary-edema-08#q3": {
+   "batch": "s15",
+   "before": [
+    "Ketamine 1 mg/kg and rocuronium 1.2 mg/kg, with norepinephrine ready"
+   ],
+   "after": [
+    "Ketamine 1 mg/kg, rocuronium 1.2 mg/kg, norepinephrine ready"
+   ]
+  },
+  "pulmonary-edema-09#q4": {
+   "batch": "s15",
+   "before": [
+    "Discharge with oral furosemide, a formal echocardiogram and heart function clinic review within 2 weeks, plus alcohol cessation support"
+   ],
+   "after": [
+    "Discharge on oral furosemide, echo and clinic within 2 weeks"
+   ]
+  },
+  "pulmonary-edema-14#q2": {
+   "batch": "s15",
+   "before": [
+    "Norepinephrine or phenylephrine infusion to maintain perfusion pressure",
+    "Furosemide 20 mg IV with close BP monitoring"
+   ],
+   "after": [
+    "Norepinephrine or phenylephrine infusion",
+    "Furosemide 20 mg IV with close BP monitoring"
+   ]
   }
  }
 }

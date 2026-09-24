@@ -40,12 +40,12 @@ const S = {
   tintinalli: {
     id: "tintinalli",
     citation:
-      "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on maternal emergencies after 20 weeks of pregnancy and in the postpartum period.",
+      "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on maternal emergencies after 20 weeks of pregnancy and in the postpartum period.",
   },
   rosen: {
     id: "rosen",
     citation:
-      "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on acute complications of pregnancy, headache and seizures.",
+      "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on acute complications of pregnancy, headache and seizures.",
   },
 } satisfies Record<string, Source>;
 
@@ -66,13 +66,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["headache"],
     title: "Headache late in pregnancy",
     stem:
-      "A 29 year old G2P1 at 36 weeks and 2 days presents with 2 days of bifrontal headache that has not settled with acetaminophen. She denies visual change. Her blood pressure at the 20 week prenatal visit was 104/62. Triage vitals: BP 138/88, repeated 15 minutes later at 136/86, HR 92, RR 16, T 36.8 C, SpO2 98% on room air. Weight 78 kg. Her neurological examination is normal. The triage nurse suggests a migraine cocktail and discharge because her blood pressure is below 140/90.",
+      "A 29-year-old G2P1 at 36 weeks and 2 days presents with 2 days of bifrontal headache that has not settled with acetaminophen. She denies visual change. Her blood pressure at the 20-week prenatal visit was 104/62 mmHg. Her BP is 136/86 mmHg when repeated 15 minutes after triage. Her neurological examination is normal. The triage nurse suggests a migraine cocktail and discharge because her blood pressure is below 140/90 mmHg.",
+    vitals: { temperature: "36.8°C", pulse: "92/minute", resp: "16/minute", bp: "138/88 mmHg", o2sat: "98% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of this presentation that keep pre-eclampsia on your differential despite a blood pressure below 140/90.",
+        prompt: "What features of this presentation keep pre-eclampsia on the differential despite a blood pressure below 140/90 mmHg?",
         accept: [
           { id: "rise", text: "Blood pressure has risen substantially from her baseline", match: ["baseline", "rise"] },
           { id: "ha", text: "New persistent headache that does not respond to analgesia", match: ["headache"] },
@@ -88,7 +89,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "List FOUR investigations you would order now to assess for pre-eclampsia.",
+        prompt: "What investigations would you order now to assess for pre-eclampsia?",
         accept: [
           { id: "cbc", text: "CBC with platelet count", match: ["cbc", "platelet"] },
           { id: "cr", text: "Serum creatinine", match: ["creatinine"] },
@@ -112,26 +113,27 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update:
-          "Urine protein to creatinine ratio 52 mg/mmol. Platelets 142 x 10^9/L, AST 38 U/L, creatinine 64 µmol/L. Repeat BP 142/92. Her headache persists. The fetal heart rate tracing is normal.",
-        prompt: "Which is the most appropriate disposition? Select one.",
+          "Urine protein to creatinine ratio 52 mg/mmol. Platelets 142 x 10^9/L, AST 38 U/L, creatinine 64 micromol/L. Repeat BP 142/92. Her headache persists. The fetal heart rate tracing is normal.",
+        prompt: "Which of the following is the most appropriate disposition for this patient?",
         options: [
-          "Discharge with sumatriptan and family physician follow-up in 1 week",
-          "Discharge with a home BP monitor and a prenatal visit in 48 hours",
-          "Admit to the obstetrical unit for maternal and fetal assessment and a decision on timing of delivery",
-          "Outpatient CT head, then reassess in the emergency department",
-          "Admit to the internal medicine service for BP control",
+          "Admit to internal medicine for BP control",
+          "Admit to obstetrics for maternal and fetal assessment",
+          "Discharge with home BP monitoring and review in 48 hours",
+          "Discharge with sumatriptan and follow-up in 1 week",
+          "Outpatient CT head and reassessment in the department",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "She now meets criteria for pre-eclampsia with a persistent headache, which is an adverse condition. Pre-eclampsia is managed in hospital with obstetrics, and delivery timing depends on gestation and maternal and fetal status. Discharge risks eclampsia or HELLP at home.",
+          "She now meets criteria for pre-eclampsia with a persistent headache, which is an adverse condition. Pre-eclampsia is managed in hospital with obstetrics, who complete the maternal and fetal assessment and decide on timing of delivery. Delivery timing depends on gestation and maternal and fetal status. Discharge risks eclampsia or HELLP at home.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "sogc-hdp",
       },
       {
         id: "q4",
         kind: "short",
+        update: "While awaiting obstetrics she asks for something for her headache.",
         required: 2,
-        prompt: "While awaiting obstetrics she asks for something for her headache. List TWO appropriate medications for her headache.",
+        prompt: "What medications are appropriate for her headache?",
         accept: [
           { id: "acet", text: "Acetaminophen", match: ["acetaminophen"] },
           { id: "meto", text: "Metoclopramide IV", match: ["metoclopramide"] },
@@ -167,13 +169,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["abdominal-pain"],
     title: "Epigastric pain at 33 weeks",
     stem:
-      "A 31 year old primigravida at 33 weeks and 4 days has had 6 hours of epigastric and right upper quadrant pain with nausea and 2 episodes of vomiting. A walk-in clinic gave her an antacid yesterday. BP 148/96, HR 98, RR 18, T 36.9 C, SpO2 97% on room air. Weight 70 kg. She is tender in the epigastrium and right upper quadrant without peritonism. Fetal heart rate is 140 bpm.",
+      "A 31-year-old primigravida at 33 weeks and 4 days has had 6 hours of epigastric and right upper quadrant pain with nausea and 2 episodes of vomiting. A walk-in clinic gave her an antacid yesterday. She is tender in the epigastrium and right upper quadrant without peritonism. Fetal heart rate is 140/minute.",
+    vitals: { temperature: "36.9°C", pulse: "98/minute", resp: "18/minute", bp: "148/96 mmHg", o2sat: "97% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE diagnoses you must consider.",
+        prompt: "What diagnoses must you consider?",
         accept: [
           { id: "hellp", text: "HELLP syndrome", match: ["hellp"] },
           { id: "pet", text: "Pre-eclampsia with liver involvement", match: ["pre eclampsia", "preeclampsia"] },
@@ -196,7 +199,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "List FOUR blood tests that will confirm or exclude your leading diagnosis.",
+        prompt: "What blood tests will confirm or exclude your leading diagnosis?",
         accept: [
           { id: "cbc", text: "CBC", match: ["cbc", "platelet"] },
           { id: "ast", text: "AST", match: ["ast"] },
@@ -220,21 +223,21 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         update:
-          "Hb 104 g/L, platelets 68 x 10^9/L, AST 212 U/L, ALT 180 U/L, LDH 780 U/L, bilirubin 28 µmol/L, creatinine 72 µmol/L, glucose 5.1 mmol/L, INR 1.0. Urine protein to creatinine ratio 90 mg/mmol. Repeat BP 152/98.",
-        prompt: "Select TWO medications to give now.",
+          "Hb 104 g/L, platelets 68 x 10^9/L, AST 212 U/L, ALT 180 U/L, LDH 780 U/L, bilirubin 28 micromol/L, creatinine 72 micromol/L, glucose 5.1 mmol/L, INR 1.0. Urine protein to creatinine ratio 90 mg/mmol. Repeat BP 152/98.",
+        prompt: "Which of the following medications are most appropriate to give her now?",
         options: [
-          "Magnesium sulfate 4 g IV load then 1 g/h",
-          "Magnesium sulfate 2 g IV load then 0.5 g/h",
-          "Betamethasone 12 mg IM, repeated in 24 hours",
           "Betamethasone 6 mg IM once",
-          "Dexamethasone 10 mg IV every 12 hours to raise the platelet count",
-          "Platelet transfusion 1 adult dose",
+          "Betamethasone 12 mg IM, repeated in 24 hours",
+          "Dexamethasone 10 mg IV every 12 hours",
           "Enoxaparin 40 mg subcutaneous daily",
           "Ketorolac 30 mg IV",
+          "Magnesium sulfate 2 g IV load then 0.5 g/h",
+          "Magnesium sulfate 4 g IV load then 1 g/h",
           "Phenytoin 20 mg/kg IV",
+          "Platelet transfusion 1 adult dose",
         ],
         select: 2,
-        correct: [0, 2],
+        correct: [6, 1],
         explanation:
           "HELLP is a severe form of pre-eclampsia and warrants magnesium sulfate for seizure prophylaxis. At 33 weeks, betamethasone 12 mg IM for 2 doses 24 hours apart improves neonatal outcomes if delivery can be safely delayed. Steroids to raise platelets for maternal benefit are not recommended. Platelets are not needed at 68 x 10^9/L without bleeding or a procedure.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
@@ -252,7 +255,8 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["headache"],
     title: "Headache one week after delivery",
     stem:
-      "A 34 year old woman delivered vaginally 7 days ago after an uncomplicated pregnancy. She had an epidural. She presents with a severe generalized headache for 1 day and blurred vision. She is breastfeeding. BP 172/114, repeated 15 minutes later at 168/112. HR 88, RR 16, T 36.7 C, SpO2 98%. Weight 68 kg. GCS 15. No focal neurological deficit.",
+      "A 34-year-old woman delivered vaginally 7 days ago after an uncomplicated pregnancy. She had an epidural. She presents with a severe generalized headache for 1 day and blurred vision. She is breastfeeding. Her BP is 168/112 mmHg when repeated 15 minutes later. Her SpO2 is 98%. GCS 15. No focal neurological deficit.",
+    vitals: { temperature: "36.7°C", pulse: "88/minute", resp: "16/minute", bp: "172/114 mmHg", weight: "68 kg" },
     questions: [
       {
         id: "q1",
@@ -276,7 +280,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO medications you would give in the next 30 minutes. Include drug, dose and route.",
+        prompt: "What medications, with drug, dose and route, would you give in the next 30 minutes?",
         accept: [
           { id: "lab", text: "Labetalol 20 mg IV", match: LAB_IV },
           { id: "labpo", text: "Labetalol 200 mg PO", match: LAB_PO },
@@ -299,7 +303,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE other serious causes of severe headache that you must consider in a postpartum patient.",
+        prompt: "What other serious causes of severe headache must you consider in a postpartum patient?",
         accept: [
           { id: "cvst", text: "Cerebral venous sinus thrombosis", match: ["venous", "cvst"] },
           { id: "pres", text: "Posterior reversible encephalopathy syndrome", match: ["posterior reversible", "reversible encephalopathy", "posterior encephalopathy"] },
@@ -322,7 +326,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "After 2 doses of labetalol her BP is 148/94. She is on magnesium sulfate. Her headache is improving.",
-        prompt: "List TWO findings that would prompt urgent neuroimaging in this patient.",
+        prompt: "What findings would prompt urgent neuroimaging in this patient?",
         accept: [
           { id: "focal", text: "Focal neurological deficit", match: ["focal"] },
           { id: "loc", text: "Decreased level of consciousness or confusion", match: ["consciousness", "confusion", "altered mental status"] },
@@ -349,13 +353,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["seizures"],
     title: "Seizure in triage at 30 weeks",
     stem:
-      "A 22 year old primigravida at 30 weeks and 1 day came in with a headache. While being triaged she has a generalized tonic clonic seizure that has lasted 90 seconds so far. BP 176/112, HR 120, SpO2 88% on room air. Capillary glucose 5.4 mmol/L. Weight 82 kg. She has no IV access yet.",
+      "A 22-year-old primigravida at 30 weeks and 1 day came in with a headache. While being triaged she has a generalized tonic clonic seizure that has lasted 90 seconds so far. Capillary glucose 5.4 mmol/L. She has no IV access yet.",
+    vitals: { pulse: "120/minute", bp: "176/112 mmHg", o2sat: "88% on room air", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate actions while she is seizing.",
+        prompt: "What immediate actions would you take while she is seizing?",
         accept: [
           { id: "lat", text: "Place her in the left lateral position to displace the uterus", match: ["left lateral", "uterine displacement", "lateral"] },
           { id: "airway", text: "Protect the airway and suction", match: ["airway", "suction"] },
@@ -379,18 +384,17 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate anticonvulsant? Select one.",
+        prompt: "Which of the following is the most appropriate anticonvulsant for this patient?",
         options: [
-          "Lorazepam 4 mg IV, repeated once",
-          "Magnesium sulfate 4 g IV over 5 to 20 minutes then 1 g/h",
-          "Magnesium sulfate 2 g IV then 0.5 g/h",
-          "Phenytoin 20 mg/kg IV",
-          "Levetiracetam 60 mg/kg IV",
-          "Midazolam 10 mg IM",
+          "Levetiracetam 60 mg/kg IV over 10 minutes",
+          "Lorazepam 4 mg IV over 2 minutes, repeated once",
+          "Magnesium sulfate 2 g IV load then 0.5 g/h",
+          "Magnesium sulfate 4 g IV load then 1 g/h",
+          "Phenytoin 20 mg/kg IV at up to 50 mg/minute",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Magnesium sulfate is the drug of choice for eclampsia. It prevents recurrent seizures better than diazepam or phenytoin. The loading dose is 4 g IV followed by 1 g/h. If IV access is delayed, 10 g IM (5 g into each buttock) is an alternative. Benzodiazepines are reserved for when magnesium is not available or seizures persist.",
+          "Magnesium sulfate is the drug of choice for eclampsia. It prevents recurrent seizures better than diazepam or phenytoin. The loading dose is 4 g IV over 5 to 20 minutes, followed by 1 g/h. If IV access is delayed, 10 g IM (5 g into each buttock) is an alternative. Benzodiazepines are reserved for when magnesium is not available or seizures persist.",
         keyFeature: { topic: "seizures", n: 4 },
         source: "eclampsia-trial",
       },
@@ -399,7 +403,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "Her seizure stops after 2 minutes. IV access is obtained and the magnesium infusion is running. Fifteen minutes later she has a second generalized seizure.",
-        prompt: "What is your next anticonvulsant step? Include drug, dose and route.",
+        prompt: "What is your next anticonvulsant step, with drug, dose and route?",
         accept: [
           {
             id: "mg2",
@@ -421,7 +425,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Seizures have stopped. She is drowsy but protecting her airway. BP 170/110. Fetal heart rate 110 bpm and recovering.",
-        prompt: "List THREE further management steps in the next hour.",
+        prompt: "What further management steps would you take in the next hour?",
         accept: [
           { id: "bp", text: "Treat the severe hypertension with IV labetalol, IV hydralazine or oral nifedipine", match: ["labetalol", "hydralazine", "nifedipine", "antihypertensive"] },
           { id: "fhr", text: "Continuous fetal heart rate monitoring", match: ["fetal"] },
@@ -455,13 +459,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["tox", "ems"],
     title: "Drowsy patient awaiting transfer",
     stem:
-      "You work in a rural emergency department. A 27 year old at 35 weeks with pre-eclampsia with severe features has been waiting 6 hours for an obstetrical transfer. She received magnesium sulfate 4 g IV, and the pump was programmed at 2 g/h instead of the ordered 1 g/h. The nurse calls you because she is hard to rouse. RR 9, SpO2 91% on room air, BP 138/88, HR 64. Patellar reflexes are absent. Urine output has been 60 mL over 4 hours. Creatinine is 132 µmol/L, up from 70 µmol/L on arrival.",
+      "You are working in a rural emergency department. A 27-year-old at 35 weeks with pre-eclampsia with severe features has been waiting 6 hours for an obstetrical transfer. She received magnesium sulfate 4 g IV, and the pump was programmed at 2 g/h instead of the ordered 1 g/h. The nurse calls you because she is hard to rouse. Patellar reflexes are absent. Urine output has been 60 mL over 4 hours. Creatinine is 132 micromol/L, up from 70 micromol/L on arrival.",
+    vitals: { pulse: "64/minute", resp: "9/minute", bp: "138/88 mmHg", o2sat: "91% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO factors that explain her condition.",
+        prompt: "What factors explain her condition?",
         accept: [
           { id: "rate", text: "Infusion running at double the intended rate", match: ["double rate", "infusion rate", "wrong rate", "2 g/h", "pump", "programming", "medication error", "overdose"] },
           { id: "renal", text: "Acute kidney injury reducing magnesium clearance", match: ["kidney", "oliguria", "urine output", "creatinine", "renal"] },
@@ -476,7 +481,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate actions. Include the dose and route of any drug.",
+        prompt: "What immediate actions would you take, with the dose and route of any drug?",
         accept: [
           { id: "stop", text: "Stop the magnesium infusion", match: ["stop", "hold", "discontinue", "turn off magnesium", "pause magnesium"] },
           {
@@ -506,7 +511,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Twenty minutes after calcium she is alert, RR 16, SpO2 97%. The magnesium level returns at 5.9 mmol/L. The critical care transport team arrives.",
-        prompt: "List THREE things you will arrange or hand over before she leaves.",
+        prompt: "What will you arrange or hand over before she leaves?",
         accept: [
           { id: "mgplan", text: "A clear written magnesium plan, held or restarted at a reduced rate guided by level, reflexes and urine output", match: ["magnesium"] },
           { id: "ca", text: "Calcium gluconate available during transport", match: ["calcium"] },
@@ -537,13 +542,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["loc", "seizures"],
     title: "Confusion at term",
     stem:
-      "A 36 year old G3P2 at 38 weeks and 1 day is brought in by her partner with 3 hours of confusion. She moved from another province at 12 weeks and has had no prenatal care since. BP 150/98, repeated at 154/100. HR 104, RR 18, T 37.1 C, SpO2 97% on room air. GCS 13 (E3 V4 M6). Capillary glucose 4.8 mmol/L. No focal deficit. Fundal height is consistent with term.",
+      "A 36-year-old G3P2 at 38 weeks and 1 day is brought in by her partner with 3 hours of confusion. She moved from another province at 12 weeks and has had no prenatal care since. Her BP is 154/100 mmHg on repeat. GCS 13 (E3 V4 M6). Capillary glucose 4.8 mmol/L. No focal deficit. Fundal height is consistent with term.",
+    vitals: { temperature: "37.1°C", pulse: "104/minute", resp: "18/minute", bp: "150/98 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE causes of her confusion that you must consider.",
+        prompt: "What causes of her confusion must you consider?",
         accept: [
           { id: "ecl", text: "Eclampsia with a postictal state after an unwitnessed seizure", match: ["eclampsia", "postictal", "pre eclampsia"] },
           { id: "pres", text: "Posterior reversible encephalopathy syndrome", match: ["posterior reversible", "reversible encephalopathy", "posterior encephalopathy"] },
@@ -565,7 +571,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO pieces of collateral history you would seek from her partner.",
+        prompt: "What collateral history would you seek from her partner?",
         accept: [
           { id: "seiz", text: "Any seizure activity, tongue biting or incontinence", match: ["seizure", "tongue", "incontinence"] },
           { id: "ha", text: "Preceding headache", match: ["headache"] },
@@ -588,20 +594,20 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         update: "Her partner found her on the bathroom floor this morning. She had bitten her tongue and was incontinent of urine.",
-        prompt: "Select TWO immediate management steps.",
+        prompt: "Which of the following are the most appropriate immediate management steps for this patient?",
         options: [
-          "Magnesium sulfate 4 g IV then 1 g/h",
-          "Magnesium sulfate 1 g IV once",
-          "Urgent obstetrical consultation for delivery once she is stabilized",
-          "Levetiracetam 60 mg/kg IV",
-          "Phenytoin 20 mg/kg IV",
-          "Lorazepam 4 mg IV now",
-          "Lumbar puncture before any treatment",
           "Hydralazine 20 mg IV bolus",
+          "Levetiracetam 60 mg/kg IV load",
+          "Lorazepam 4 mg IV, repeated once",
+          "Lumbar puncture before any treatment",
+          "Magnesium sulfate 1 g IV once",
+          "Magnesium sulfate 4 g IV then 1 g/h",
           "Oxytocin induction started in the emergency department",
+          "Phenytoin 20 mg/kg IV load",
+          "Urgent obstetrical consultation for delivery once stable",
         ],
         select: 2,
-        correct: [0, 2],
+        correct: [5, 8],
         explanation:
           "The history now confirms eclampsia. Magnesium sulfate prevents further seizures and is superior to phenytoin or benzodiazepines. Delivery is the definitive treatment and is planned with obstetrics after stabilization. Hydralazine at 20 mg is too large a bolus and her BP is not in the severe range.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
@@ -611,7 +617,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings that would prompt urgent head CT in this patient.",
+        prompt: "What findings would prompt urgent head CT in this patient?",
         accept: [
           { id: "focal", text: "New focal neurological deficit", match: ["focal"] },
           { id: "gcs", text: "GCS that fails to improve or falls, or persistently decreased consciousness", match: ["gcs", "consciousness"] },
@@ -639,7 +645,8 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["abdominal-pain", "shock"],
     title: "Return visit with right upper quadrant pain",
     stem:
-      "A 38 year old G2P1 at 37 weeks has known gallstones. She was seen at another emergency department yesterday for right upper quadrant pain, diagnosed with biliary colic and discharged. She returns with worse pain radiating to the right shoulder and nausea. BP 134/86 (her baseline is 118/74), HR 108, RR 20, T 37.0 C, SpO2 97%. Weight 88 kg. Labs: Hb 98 g/L (112 yesterday), platelets 61 x 10^9/L, AST 420 U/L, ALT 360 U/L, LDH 1040 U/L, bilirubin 34 µmol/L, lipase normal, glucose 4.9 mmol/L, creatinine 88 µmol/L. Ultrasound shows gallstones without wall thickening or pericholecystic fluid.",
+      "A 38-year-old G2P1 at 37 weeks has known gallstones. She was seen at another emergency department yesterday for right upper quadrant pain, diagnosed with biliary colic and discharged. She returns with worse pain radiating to the right shoulder and nausea. Her baseline BP is 118/74 mmHg. Her SpO2 is 97%. Labs: Hb 98 g/L (112 g/L yesterday), platelets 61 x 10^9/L, AST 420 U/L, ALT 360 U/L, LDH 1 040 U/L, bilirubin 34 micromol/L, lipase normal, glucose 4.9 mmol/L, creatinine 88 micromol/L. Ultrasound shows gallstones without wall thickening or pericholecystic fluid.",
+    vitals: { temperature: "37.0°C", pulse: "108/minute", resp: "20/minute", bp: "134/86 mmHg", weight: "88 kg" },
     questions: [
       {
         id: "q1",
@@ -663,7 +670,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of this presentation that argue against a biliary cause as the full explanation.",
+        prompt: "What features of this presentation argue against a biliary cause as the full explanation?",
         accept: [
           { id: "plt", text: "Thrombocytopenia", match: ["platelet", "thrombocytopenia"] },
           { id: "ldh", text: "Markedly raised LDH suggesting hemolysis", match: ["ldh", "hemolysis"] },
@@ -685,7 +692,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Thirty minutes later she reports sudden worsening pain. HR 132, BP 88/50. Her abdomen is more distended. Fetal heart rate 100 bpm.",
-        prompt: "List TWO complications that could explain this deterioration.",
+        prompt: "What complications could explain this deterioration?",
         accept: [
           { id: "liver", text: "Rupture of a subcapsular liver hematoma", match: ["liver", "hepatic", "hematoma"] },
           { id: "abrupt", text: "Placental abruption", match: ["abruption"] },
@@ -701,7 +708,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are your immediate management steps?",
         accept: [
           { id: "mtp", text: "Activate the massive hemorrhage protocol", match: ["massive", "mtp"] },
           { id: "blood", text: "Transfuse uncrossmatched O negative red cells", match: ["transfusion", "transfuse", "o negative"] },
@@ -732,13 +739,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["ems"],
     title: "Twin pregnancy in a rural department",
     stem:
-      "You work in a rural emergency department 2 hours by road from the regional centre with a level 3 NICU. A 33 year old primigravida with a twin pregnancy conceived by IVF is at 28 weeks and 3 days. She has a mild headache. BP 162/108, repeated 15 minutes later at 164/110. HR 90, RR 16, SpO2 98%. Weight 74 kg. Urine dipstick 3+ protein. Platelets 118 x 10^9/L, AST 45 U/L, creatinine 70 µmol/L.",
+      "You are working in a rural emergency department 2 hours by road from the regional centre with a level 3 NICU. A 33-year-old primigravida with a twin pregnancy conceived by IVF is at 28 weeks and 3 days. She has a mild headache. Her BP is 164/110 mmHg when repeated 15 minutes later. Her SpO2 is 98%. Urine dipstick 3+ protein. Platelets 118 x 10^9/L, AST 45 U/L, creatinine 70 micromol/L.",
+    vitals: { pulse: "90/minute", resp: "16/minute", bp: "162/108 mmHg", weight: "74 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE risk factors for pre-eclampsia in this patient.",
+        prompt: "What are the risk factors for pre-eclampsia in this patient?",
         accept: [
           { id: "nullip", text: "Nulliparity", match: ["nulliparity", "nulliparous", "first pregnancy", "primigravida"] },
           { id: "twins", text: "Multiple gestation", match: ["multiple", "twin"] },
@@ -753,7 +761,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE medications you would give before transfer. Include drug, dose and route.",
+        prompt: "What medications, with drug, dose and route, would you give before transfer?",
         accept: [
           { id: "lab", text: "Labetalol 20 mg IV, repeated at 20 to 80 mg every 30 minutes to a maximum of 300 mg", match: LAB_IV },
           { id: "labpo", text: "Labetalol 200 mg PO", match: LAB_PO },
@@ -776,7 +784,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE things you will arrange for a safe transfer.",
+        prompt: "What will you arrange for a safe transfer?",
         accept: [
           { id: "accept", text: "Physician to physician acceptance by the receiving obstetrician and NICU", match: ["obstetrician", "nicu"] },
           { id: "team", text: "A critical care transport team or escort able to manage eclampsia and the airway", match: ["critical care", "escort"] },
@@ -807,13 +815,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["pulmonary-edema", "sob"],
     title: "Short of breath four days after caesarean",
     stem:
-      "A 40 year old woman is 4 days after a caesarean section done at 37 weeks for pre-eclampsia. She went home yesterday on labetalol 200 mg PO three times daily. She returns with 12 hours of dyspnea and orthopnea. BP 176/108, HR 118, RR 30, T 37.2 C, SpO2 86% on room air. Weight 92 kg. She has bibasilar crackles. Bedside ultrasound shows diffuse B lines, grossly normal left ventricular function and no pericardial effusion. Her legs are symmetric and nontender.",
+      "A 40-year-old woman is 4 days after a caesarean section done at 37 weeks for pre-eclampsia. She went home yesterday on labetalol 200 mg PO three times daily. She returns with 12 hours of dyspnea and orthopnea. She has bibasilar crackles. Bedside ultrasound shows diffuse B lines, grossly normal left ventricular function and no pericardial effusion. Her legs are symmetric and nontender.",
+    vitals: { temperature: "37.2°C", pulse: "118/minute", resp: "30/minute", bp: "176/108 mmHg", o2sat: "86% on room air", weight: "92 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE diagnoses you should consider for her dyspnea.",
+        prompt: "What diagnoses should you consider for her dyspnea?",
         accept: [
           { id: "pe", text: "Pulmonary edema from pre-eclampsia", match: ["pulmonary edema", "hypertensive"] },
           { id: "ppcm", text: "Peripartum cardiomyopathy", match: ["peripartum", "cardiomyopathy"] },
@@ -832,7 +841,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate treatments. Include doses where relevant.",
+        prompt: "What immediate treatments would you give, with doses where relevant?",
         accept: [
           { id: "niv", text: "Noninvasive ventilation such as CPAP or BiPAP", match: ["cpap", "noninvasive", "niv", "bipap"] },
           { id: "furo", text: "Furosemide 20 to 40 mg IV", match: ["furosemide"] },
@@ -857,7 +866,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE blood tests to look for HELLP and other end organ involvement.",
+        prompt: "What blood tests would you order to look for HELLP and other end organ involvement?",
         accept: [
           { id: "plt", text: "Platelet count", match: ["platelet", "cbc"] },
           { id: "ast", text: "AST", match: ["ast", "alt", "liver"] },
@@ -887,13 +896,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["eye"],
     title: "Patchy vision at 32 weeks",
     stem:
-      "A 26 year old G2P1 at 32 weeks and 5 days has had 2 hours of flashing lights and patchy loss of vision in both eyes. BP 164/112, repeated 15 minutes later at 166/110. HR 96, RR 16, SpO2 97%. Weight 64 kg. Visual acuity is counting fingers in both eyes. Pupils react briskly to light. Fundoscopy is normal. Labs: platelets 96 x 10^9/L, AST 80 U/L, creatinine 90 µmol/L, urine protein to creatinine ratio 110 mg/mmol.",
+      "A 26-year-old G2P1 at 32 weeks and 5 days has had 2 hours of flashing lights and patchy loss of vision in both eyes. Her BP is 166/110 mmHg when repeated 15 minutes later. Her SpO2 is 97%. Visual acuity is counting fingers in both eyes. Pupils react briskly to light. Fundoscopy is normal. Labs: platelets 96 x 10^9/L, AST 80 U/L, creatinine 90 micromol/L, urine protein to creatinine ratio 110 mg/mmol.",
+    vitals: { pulse: "96/minute", resp: "16/minute", bp: "164/112 mmHg", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of the eye and neurological assessment you would document.",
+        prompt: "What elements of the eye and neurological assessment would you document?",
         accept: [
           { id: "va", text: "Visual acuity in each eye", match: ["acuity"] },
           { id: "fields", text: "Visual fields by confrontation", match: ["field"] },
@@ -912,21 +922,21 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Select TWO treatments to give now.",
+        prompt: "Which of the following treatments are most appropriate to give now?",
         options: [
+          "Enalapril 10 mg PO",
+          "Furosemide 40 mg IV",
+          "Hydralazine 20 mg IV bolus",
           "Labetalol 20 mg IV",
           "Labetalol 200 mg IV",
-          "Hydralazine 20 mg IV bolus",
-          "Nifedipine 10 mg capsule bitten and held under the tongue",
-          "Magnesium sulfate 4 g IV then 1 g/h",
           "Magnesium sulfate 1 g IV then 1 g/h",
-          "Enalapril 10 mg PO",
-          "Sodium nitroprusside infusion",
-          "Furosemide 40 mg IV",
+          "Magnesium sulfate 4 g IV then 1 g/h",
           "Mannitol 1 g/kg IV",
+          "Nifedipine 10 mg capsule bitten sublingually",
+          "Sodium nitroprusside infusion",
         ],
         select: 2,
-        correct: [0, 4],
+        correct: [3, 6],
         explanation:
           "Labetalol 20 mg IV is the correct starting dose, repeated at 20 to 80 mg every 30 minutes up to 300 mg. Magnesium sulfate 4 g IV then 1 g/h prevents eclampsia. Hydralazine 20 mg and a bitten nifedipine capsule risk abrupt hypotension and fetal compromise. ACE inhibitors are contraindicated before delivery.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
@@ -936,7 +946,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings in this patient that indicate severe pre-eclampsia or its complications.",
+        prompt: "What findings in this patient indicate severe pre-eclampsia or its complications?",
         accept: [
           { id: "bp", text: "Severe hypertension of 160/110 or higher", match: ["160/110", "severe hypertension", "164/112"] },
           { id: "vis", text: "Visual disturbance or cortical blindness", match: ["visual", "blind"] },
@@ -946,7 +956,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         ],
         unacceptable: [{ text: "The amount of proteinuria as a marker of severity", match: ["proteinuria"] }],
         explanation:
-          "Severe BP, visual disturbance, thrombocytopenia, raised AST and a creatinine of 90 µmol/L are all adverse features. ISSHP counts a creatinine of 90 µmol/L or more as kidney involvement. The amount of proteinuria no longer defines severity. Cortical blindness is a severe complication, so delivery is indicated once she is stable.",
+          "Severe BP, visual disturbance, thrombocytopenia, raised AST and a creatinine of 90 micromol/L are all adverse features. ISSHP counts a creatinine of 90 micromol/L or more as kidney involvement. The amount of proteinuria no longer defines severity. Cortical blindness is a severe complication, so delivery is indicated once she is stable.",
         keyFeature: { topic: "pre-eclampsia", n: 2 },
         source: "isshp",
       },
@@ -961,13 +971,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     topic: "pre-eclampsia",
     title: "Office blood pressure referral at 26 weeks",
     stem:
-      "A 37 year old G3P2 at 26 weeks is sent in by her family physician for a BP of 152/98 and new ankle swelling. She has chronic hypertension on nifedipine XL 30 mg daily and type 2 diabetes on insulin. BMI 38. She has no symptoms. BP 150/96, repeated at 148/94. HR 86. Weight 112 kg. Urine dipstick 1+ protein. Fetal heart rate 145 bpm.",
+      "A 37-year-old G3P2 at 26 weeks is sent in by her family physician for a BP of 152/98 mmHg and new ankle swelling. She has chronic hypertension on nifedipine XL 30 mg daily and type 2 diabetes on insulin. BMI 38. She has no symptoms. Her BP is 148/94 mmHg on repeat. Urine dipstick 1+ protein. Fetal heart rate 145/minute.",
+    vitals: { pulse: "86/minute", bp: "150/96 mmHg", weight: "112 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE risk factors for pre-eclampsia in this patient.",
+        prompt: "What are the risk factors for pre-eclampsia in this patient?",
         accept: [
           { id: "htn", text: "Chronic hypertension", match: ["chronic hypertension", "hypertension"] },
           { id: "dm", text: "Pre-existing diabetes", match: ["diabetes"] },
@@ -983,7 +994,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that would establish superimposed pre-eclampsia in this patient.",
+        prompt: "What findings would establish superimposed pre-eclampsia in this patient?",
         accept: [
           { id: "prot", text: "New proteinuria with protein to creatinine ratio of 30 mg/mmol or more", match: ["proteinuria", "protein creatinine"] },
           { id: "plt", text: "Platelets below 100 x 10^9/L", match: ["platelet"] },
@@ -1007,17 +1018,18 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Her urine dipstick shows 1+ protein. What is the most appropriate next step? Select one.",
+        update: "Her urine dipstick shows 1+ protein.",
+        prompt: "Which of the following is the most appropriate next step in assessing her proteinuria?",
         options: [
           "Diagnose superimposed pre-eclampsia",
-          "Send a spot urine protein to creatinine ratio",
-          "Start a 24 hour urine collection and decide once it is complete",
-          "Disregard the result because dipsticks are unreliable",
+          "Disregard the dipstick result",
           "Repeat the dipstick at the next prenatal visit",
+          "Send a spot urine protein to creatinine ratio",
+          "Start a 24-hour urine collection before deciding",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "A dipstick of 1+ is a screen, not a diagnosis. SOGC recommends quantifying with a spot urine protein to creatinine ratio, where 30 mg/mmol or more is significant. A 24 hour collection is slower and adds little in the emergency department.",
+          "A dipstick of 1+ is a screen, not a diagnosis. SOGC recommends quantifying with a spot urine protein to creatinine ratio, where 30 mg/mmol or more is significant. A 24-hour collection is slower and adds little in the emergency department. Disregarding the dipstick is wrong because a positive screen still needs quantifying.",
         keyFeature: { topic: "pre-eclampsia", n: 2 },
         source: "sogc-hdp",
       },
@@ -1026,8 +1038,8 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update:
-          "Protein to creatinine ratio 18 mg/mmol. Platelets 210 x 10^9/L, AST 22 U/L, creatinine 58 µmol/L. Obstetrics sees her, increases her nifedipine XL to 60 mg daily and arranges review in 3 days.",
-        prompt: "List THREE symptoms that should prompt her to return immediately.",
+          "Protein to creatinine ratio 18 mg/mmol. Platelets 210 x 10^9/L, AST 22 U/L, creatinine 58 micromol/L. Obstetrics sees her, increases her nifedipine XL to 60 mg daily and arranges review in 3 days.",
+        prompt: "What symptoms should prompt her to return immediately?",
         accept: [
           { id: "ha", text: "Severe or persistent headache", match: ["headache"] },
           { id: "vis", text: "Visual disturbance", match: ["visual", "vision"] },
@@ -1058,13 +1070,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["loc"],
     title: "Vomiting teenager at 34 weeks",
     stem:
-      "A 17 year old primigravida at 34 weeks and 2 days has had 1 day of nausea, 5 episodes of vomiting, malaise and mild epigastric discomfort. Her sister has gastroenteritis. BP 132/86 (first trimester 96/58), HR 104, RR 18, T 37.3 C, SpO2 98%. Weight 58 kg. She has mild epigastric tenderness. The triage protocol has already given ondansetron with a plan to discharge her once she tolerates fluids.",
+      "A 17-year-old primigravida at 34 weeks and 2 days has had 1 day of nausea, 5 episodes of vomiting, malaise and mild epigastric discomfort. Her sister has gastroenteritis. Her first trimester BP was 96/58 mmHg. Her SpO2 is 98%. She has mild epigastric tenderness. The triage protocol has already given ondansetron with a plan to discharge her once she tolerates fluids.",
+    vitals: { temperature: "37.3°C", pulse: "104/minute", resp: "18/minute", bp: "132/86 mmHg", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that make you unwilling to accept gastroenteritis without further workup.",
+        prompt: "What features make you unwilling to accept gastroenteritis without further workup?",
         accept: [
           { id: "bp", text: "BP rise from her first trimester baseline", match: ["baseline", "blood pressure"] },
           { id: "ga", text: "Third trimester pregnancy", match: ["third trimester", "20 week"] },
@@ -1084,8 +1097,8 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update:
-          "Labs: Hb 118 g/L, platelets 84 x 10^9/L, AST 164 U/L, LDH 690 U/L, bilirubin 62 µmol/L, glucose 2.9 mmol/L, INR 1.8, fibrinogen 1.2 g/L, creatinine 138 µmol/L.",
-        prompt: "List THREE results that point toward acute fatty liver of pregnancy rather than HELLP alone.",
+          "Labs: Hb 118 g/L, platelets 84 x 10^9/L, AST 164 U/L, LDH 690 U/L, bilirubin 62 micromol/L, glucose 2.9 mmol/L, INR 1.8, fibrinogen 1.2 g/L, creatinine 138 micromol/L.",
+        prompt: "What results point toward acute fatty liver of pregnancy rather than HELLP alone?",
         accept: [
           { id: "gluc", text: "Hypoglycemia", match: ["glucose", "hypoglycemia"] },
           { id: "inr", text: "Prolonged INR", match: ["inr", "coagulopathy"] },
@@ -1104,7 +1117,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "She becomes drowsy and difficult to engage. Repeat capillary glucose is 2.6 mmol/L.",
-        prompt: "List TWO immediate treatments. Include doses where relevant.",
+        prompt: "What immediate treatments would you give, with doses where relevant?",
         accept: [
           { id: "d50", text: "Dextrose 25 g IV (50 mL of D50W)", match: ["dextrose", "d50", "d50w", "d10", "d10w", "glucose"] },
           { id: "cryo", text: "Cryoprecipitate or fibrinogen concentrate", match: ["cryo", "fibrinogen"] },
@@ -1123,7 +1136,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO other conditions that can mimic HELLP syndrome with thrombocytopenia and organ dysfunction.",
+        prompt: "What other conditions can mimic HELLP syndrome with thrombocytopenia and organ dysfunction?",
         accept: [
           { id: "ttp", text: "Thrombotic thrombocytopenic purpura", match: ["ttp", "thrombotic"] },
           { id: "hus", text: "Hemolytic uremic syndrome", match: ["hus", "uremic"] },
@@ -1150,13 +1163,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["seizures", "headache"],
     title: "Seizure ten days after delivery",
     stem:
-      "A 30 year old woman delivered vaginally with an epidural 10 days ago. Her BP was normal throughout pregnancy. She has had a worsening headache for 3 days and today had a witnessed generalized seizure lasting 2 minutes. On arrival she is postictal with GCS 12 and improving. BP 158/102, HR 100, RR 18, T 37.4 C, SpO2 96%. Capillary glucose 6.2 mmol/L. Weight 71 kg. There is a subtle left pronator drift.",
+      "A 30-year-old woman delivered vaginally with an epidural 10 days ago. Her BP was normal throughout pregnancy. She has had a worsening headache for 3 days and today had a witnessed generalized seizure lasting 2 minutes. On arrival she is postictal with GCS 12 and improving. Her SpO2 is 96%. Capillary glucose 6.2 mmol/L. There is a subtle left pronator drift.",
+    vitals: { temperature: "37.4°C", pulse: "100/minute", resp: "18/minute", bp: "158/102 mmHg", weight: "71 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE diagnoses you must consider.",
+        prompt: "What diagnoses must you consider?",
         accept: [
           { id: "ecl", text: "Late postpartum eclampsia", match: ["eclampsia"] },
           { id: "cvst", text: "Cerebral venous sinus thrombosis", match: ["venous", "cvst"] },
@@ -1176,17 +1190,17 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which imaging is most appropriate now? Select one.",
+        prompt: "Which of the following is the most appropriate imaging for this patient now?",
         options: [
-          "No imaging, because this is typical eclampsia",
-          "Noncontrast CT head only",
           "CT head with CT venography, or MRI with MR venography",
-          "Lumbar puncture before any imaging",
-          "EEG before imaging",
+          "Electroencephalogram before any imaging",
+          "Lumbar puncture before any neuroimaging",
+          "Noncontrast CT head only, without venous sinus imaging",
+          "No neuroimaging at this stage",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "A late postpartum seizure with a focal deficit needs brain and venous imaging. Noncontrast CT alone can miss venous sinus thrombosis. MRI best shows PRES but CT venography is often faster in the emergency department.",
+          "A late postpartum seizure with a focal deficit needs brain and venous imaging. This is not typical eclampsia, so omitting imaging is unsafe. Noncontrast CT alone can miss venous sinus thrombosis. MRI best shows PRES but CT venography is often faster in the emergency department.",
         keyFeature: { topic: "seizures", n: 6 },
         source: "rosen",
       },
@@ -1195,7 +1209,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "Imaging shows bilateral parieto-occipital vasogenic edema consistent with PRES. The venous sinuses are patent. There is no hemorrhage.",
-        prompt: "What medication would you give to prevent further seizures? Include drug, dose and route.",
+        prompt: "What medication, with drug, dose and route, would you give to prevent further seizures?",
         accept: [{ id: "mg", text: "Magnesium sulfate 4 g IV then 1 g/h", match: MG_LOAD }],
         unacceptable: [
           { text: "Phenytoin", match: ["phenytoin"] },
@@ -1209,8 +1223,9 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
+        update: "She recovers fully.",
         required: 2,
-        prompt: "She recovers fully. List TWO counselling points before she leaves hospital.",
+        prompt: "What counselling points would you give her before she leaves hospital?",
         accept: [
           { id: "drive", text: "Do not drive until cleared by her physician", match: ["driving", "drive", "not drive", "no driving", "avoid driving"] },
           { id: "asa", text: "Low dose aspirin starting before 16 weeks in any future pregnancy", match: ["aspirin", "asa"] },
@@ -1238,25 +1253,26 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["pulmonary-edema", "asthma-copd"],
     title: "Severe blood pressure in a patient with asthma",
     stem:
-      "A 32 year old G2P1 at 36 weeks and 4 days is referred from her prenatal clinic with BP 168/112. She has severe asthma on budesonide and formoterol and was admitted to the ICU for asthma 2 years ago. She has a mild headache. In the emergency department BP is 170/114, repeated 15 minutes later at 168/112. HR 88, RR 18, SpO2 97% on room air. Weight 66 kg. Chest has faint end expiratory wheeze.",
+      "A 32-year-old G2P1 at 36 weeks and 4 days is referred from her prenatal clinic with BP 168/112 mmHg. She has severe asthma on budesonide and formoterol and was admitted to the ICU for asthma 2 years ago. She has a mild headache. In the emergency department her BP is 168/112 mmHg when repeated 15 minutes later. Chest has faint end expiratory wheeze.",
+    vitals: { pulse: "88/minute", resp: "18/minute", bp: "170/114 mmHg", o2sat: "97% on room air", weight: "66 kg" },
     questions: [
       {
         id: "q1",
         kind: "menu",
-        prompt: "Select TWO appropriate first antihypertensive options for this patient.",
+        prompt: "Which of the following are the most appropriate first antihypertensive options for this patient?",
         options: [
+          "Clonidine 0.2 mg PO",
+          "Enalaprilat 1.25 mg IV",
+          "Furosemide 40 mg IV",
+          "Hydralazine 5 mg IV",
           "Labetalol 20 mg IV",
           "Labetalol 200 mg PO",
-          "Nifedipine immediate release 10 mg PO",
-          "Hydralazine 5 mg IV",
           "Metoprolol 5 mg IV",
-          "Enalaprilat 1.25 mg IV",
+          "Nifedipine immediate release 10 mg PO",
           "Sodium nitroprusside infusion",
-          "Furosemide 40 mg IV",
-          "Clonidine 0.2 mg PO",
         ],
         select: 2,
-        correct: [2, 3],
+        correct: [7, 3],
         explanation:
           "Labetalol is a nonselective beta blocker and is avoided in asthma, particularly with prior ICU admission. Immediate release oral nifedipine or IV hydralazine are effective alternatives. ACE inhibitors are contraindicated before delivery and nitroprusside is reserved for refractory cases.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
@@ -1265,15 +1281,15 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "What is the most appropriate BP target over the first hour? Select one.",
+        prompt: "Which of the following is the most appropriate BP target over the first hour?",
         options: [
-          "Below 120/80",
-          "Systolic below 160 and diastolic below 110, then aiming for a diastolic of about 85",
-          "Reduce the mean arterial pressure by 50% in the first hour",
-          "Diastolic below 70",
-          "No treatment until the BP exceeds 180/120",
+          "Below 160/110, then a diastolic of about 85",
+          "Below 120/80 within the first hour",
+          "Diastolic below 70 within the first hour",
+          "Mean arterial pressure 50% lower within 1 hour",
+          "No treatment until BP exceeds 180/120",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Severe hypertension in pregnancy is treated promptly to reduce stroke risk, aiming first for below 160/110. Once controlled, SOGC targets a diastolic of about 85. Overly rapid or deep reductions reduce uteroplacental perfusion and can cause fetal distress.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
@@ -1285,7 +1301,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         required: 2,
         update:
           "Her BP comes down to 150/98 after nifedipine. An hour later she reports tightness and says her asthma is acting up. RR 28, SpO2 91% on room air. You hear fine inspiratory crackles at both bases in addition to wheeze.",
-        prompt: "List TWO bedside findings or tests that would support pulmonary edema over an asthma exacerbation.",
+        prompt: "What bedside findings or tests would support pulmonary edema over an asthma exacerbation?",
         accept: [
           { id: "blines", text: "Bilateral B lines on lung ultrasound", match: ["b line", "ultrasound", "pocus"] },
           { id: "crackles", text: "Bibasilar crackles", match: ["crackle"] },
@@ -1313,13 +1329,14 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
     alsoTopics: ["first-trimester-bleeding"],
     title: "Hypertension and vomiting at 17 weeks",
     stem:
-      "A 24 year old primigravida at 17 weeks by her last menstrual period is sent from a walk-in clinic with BP 162/104. She has had headache and vomiting for 3 days and light vaginal spotting today. She has had no prenatal ultrasound. BP 160/104, repeated at 164/106. HR 112, RR 18, T 36.9 C, SpO2 98%. Weight 60 kg. Fundal height is at the umbilicus. She has a fine tremor.",
+      "A 24-year-old primigravida at 17 weeks by her last menstrual period is sent from a walk-in clinic with BP 162/104 mmHg. She has had headache and vomiting for 3 days and light vaginal spotting today. She has had no prenatal ultrasound. Her BP is 164/106 mmHg on repeat. Her SpO2 is 98%. Fundal height is at the umbilicus. She has a fine tremor.",
+    vitals: { temperature: "36.9°C", pulse: "112/minute", resp: "18/minute", bp: "160/104 mmHg", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "Pre-eclampsia before 20 weeks is unusual. List TWO conditions that can cause it this early.",
+        prompt: "Pre-eclampsia before 20 weeks is unusual. What conditions can cause it this early?",
         accept: [
           { id: "molar", text: "Molar pregnancy or gestational trophoblastic disease", match: ["molar", "mole", "trophoblastic"] },
           { id: "multi", text: "Multiple gestation", match: ["multiple", "twin"] },
@@ -1338,7 +1355,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "List FOUR investigations you would order now.",
+        prompt: "What investigations would you order now?",
         accept: [
           { id: "us", text: "Pelvic ultrasound", match: ["ultrasound"] },
           { id: "hcg", text: "Quantitative beta hCG", match: ["hcg"] },
@@ -1362,7 +1379,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Ultrasound shows a complete molar pregnancy with no fetus. Beta hCG is 480 000 IU/L. Free T4 is elevated. She is Rh negative.",
-        prompt: "List THREE management steps.",
+        prompt: "What are your management steps?",
         accept: [
           { id: "evac", text: "Urgent gynecology consultation for suction evacuation", match: ["evacuation", "suction", "d c", "gynecology", "gynaecology", "gyne"] },
           { id: "bp", text: "Treat the severe BP with labetalol, nifedipine or hydralazine", match: ["nifedipine", "hydralazine", "antihypertensive", "labetalol"] },
@@ -1377,7 +1394,7 @@ export const PRE_ECLAMPSIA_SAMPS: Samp[] = [
           { text: "Oxytocin induction before evacuation", match: ["oxytocin induction"] },
         ],
         explanation:
-          "The delivery equivalent for a mole is prompt vacuum evacuation, after BP and thyroid stabilization. SOGC 408 offers anti-D to Rh negative patients after evacuation. SOGC 448 (2024) says it is not required once a complete mole is certain, but suggests 300 µg for pregnancy loss after 12 weeks, so giving it here is reasonable. Medical evacuation and oxytocin before evacuation are avoided because of bleeding and embolization risk.",
+          "The delivery equivalent for a mole is prompt vacuum evacuation, after BP and thyroid stabilization. SOGC 408 offers anti-D to Rh negative patients after evacuation. SOGC 448 (2024) says it is not required once a complete mole is certain, but suggests 300 mcg for pregnancy loss after 12 weeks, so giving it here is reasonable. Medical evacuation and oxytocin before evacuation are avoided because of bleeding and embolization risk.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "sogc-gtd",
       },

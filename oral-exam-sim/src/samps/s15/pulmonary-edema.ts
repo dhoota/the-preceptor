@@ -46,7 +46,8 @@ const S = {
   },
   cbs: {
     id: "cbs-guide",
-    citation: "Canadian Blood Services. Clinical Guide to Transfusion. Chapter on adverse transfusion reactions.",
+    citation: "Laureano M, Khandelwal A, Yan M. Transfusion reactions. In: Khandelwal A, Abe T, editors. Clinical Guide to Transfusion. Canadian Blood Services. 2022.",
+    url: "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/transfusion-reactions",
   },
   escValve: {
     id: "esc-valve",
@@ -65,12 +66,12 @@ const S = {
   tintinalli: {
     id: "tintinalli",
     citation:
-      "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on acute heart failure, valvular emergencies and airway management.",
+      "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on acute heart failure, valvular emergencies and airway management.",
   },
   rosen: {
     id: "rosen",
     citation:
-      "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on heart failure, renal failure and hyperkalemia.",
+      "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on heart failure, renal failure and hyperkalemia.",
   },
 } satisfies Record<string, Source>;
 
@@ -84,13 +85,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     topic: "pulmonary-edema",
     title: "Woken at night unable to breathe",
     stem:
-      "A 72 year old woman woke at 0300 acutely short of breath. She has hypertension and type 2 diabetes. On arrival by ambulance she is sitting bolt upright, diaphoretic and speaking in 2 word phrases. BP 214/118, HR 124 sinus, RR 36, T 36.6 C, SpO2 81% on room air and 88% on a non-rebreather mask. She is alert. Crackles extend to the mid lung fields. Weight 84 kg. The ECG shows sinus tachycardia with left ventricular hypertrophy and no ST elevation.",
+      "A 72-year-old woman woke at 0300 acutely short of breath. She has hypertension and type 2 diabetes. On arrival by ambulance she is sitting bolt upright, diaphoretic and speaking in 2-word phrases. Her SpO2 is 88% on a non-rebreather mask. She is alert. Crackles extend to the mid lung fields. The ECG shows sinus tachycardia with left ventricular hypertrophy and no ST elevation.",
+    vitals: { temperature: "36.6°C", pulse: "124/minute", resp: "36/minute", bp: "214/118 mmHg", o2sat: "81% on room air", weight: "84 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate treatments.",
+        prompt: "What immediate treatments would you give?",
         accept: [
           { id: "niv", text: "Noninvasive ventilation with CPAP or BiPAP", match: NIV },
           { id: "ntg", text: "High dose nitroglycerin, sublingual then IV infusion", match: NTG },
@@ -111,17 +113,17 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which nitroglycerin regimen is most appropriate? Select one.",
+        prompt: "Which of the following nitroglycerin regimens is most appropriate for this patient?",
         options: [
-          "Nitroglycerin patch 0.4 mg/h",
-          "Nitroglycerin 0.4 mg sublingual every 5 minutes while an IV infusion is started at about 50 to 100 mcg/min and titrated up rapidly",
-          "Nitroglycerin IV at 5 mcg/min, increased by 5 mcg/min every 10 minutes",
-          "Nitroglycerin 0.4 mg sublingual once, then reassess in 1 hour",
-          "Hold nitroglycerin until the chest X-ray confirms pulmonary edema",
+          "IV 5 mcg/min, increased by 5 mcg/min every 10 minutes",
+          "Repeated sublingual 0.4 mg plus IV 50 to 100 mcg/min",
+          "Sublingual 0.4 mg once, then reassess in 1 hour",
+          "Transdermal patch 0.4 mg/h alone",
+          "No nitroglycerin until a chest X-ray confirms edema",
         ],
         correct: 1,
         explanation:
-          "In hypertensive pulmonary edema the benefit of nitrates depends on getting an adequate dose in quickly. Repeated sublingual doses bridge to an infusion that is titrated up to effect while watching the BP. A patch or a slow chest pain style titration is too little, too late.",
+          "In hypertensive pulmonary edema the benefit of nitrates depends on getting an adequate dose in quickly. Repeated sublingual doses every 5 minutes bridge to an IV infusion that is started at about 50 to 100 mcg/min and titrated up rapidly to effect while watching the BP. A patch or a slow chest pain style titration is too little, too late.",
         keyFeature: { topic: "pulmonary-edema", n: 1 },
         source: "tintinalli",
       },
@@ -130,7 +132,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         kind: "short",
         required: 4,
         update: "Thirty minutes later on BiPAP and a nitroglycerin infusion, she is calmer. BP 156/88, HR 102, RR 24, SpO2 95%.",
-        prompt: "List FOUR investigations to identify the cause of her pulmonary edema.",
+        prompt: "What investigations would you order to identify the cause of her pulmonary edema?",
         accept: [
           { id: "ecg", text: "Serial ECGs for ischemia or arrhythmia", match: ["ecg", "electrocardiogram"] },
           { id: "trop", text: "Troponin, repeated", match: ["troponin"] },
@@ -153,7 +155,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "Before starting BiPAP, list TWO contraindications you would check for.",
+        prompt: "Before starting BiPAP, what contraindications would you check for?",
         accept: [
           { id: "loc", text: "Decreased level of consciousness or inability to protect the airway", match: ["consciousness", "gcs", "airway", "obtunded", "unresponsive"] },
           { id: "vomit", text: "Active vomiting or high aspiration risk", match: ["vomiting", "aspiration"] },
@@ -182,38 +184,38 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease", "shock"],
     title: "Rural department, chest pressure and dyspnea",
     stem:
-      "You work in a rural emergency department. The nearest PCI centre is 110 km away, about 80 minutes by land. A 64 year old man has 3 hours of chest pressure and is now very short of breath. BP 84/56, HR 116 sinus, RR 32, SpO2 86% on a non-rebreather mask. His skin is cool and mottled and he has crackles to the apices. Lactate 5.1 mmol/L. Weight 90 kg. The ECG shows ST elevation in V1 to V5. Paramedics gave ASA 160 mg chewed.",
+      "You are working in a rural emergency department. The nearest PCI centre is 110 km away, about 80 minutes by land. A 64-year-old man has 3 hours of chest pressure and is now very short of breath. The monitor shows sinus tachycardia. His skin is cool and mottled and he has crackles to the apices. Lactate 5.1 mmol/L. The ECG shows ST elevation in V1 to V5. Paramedics gave ASA 160 mg chewed.",
+    vitals: { pulse: "116/minute", resp: "32/minute", bp: "84/56 mmHg", o2sat: "86% on a non-rebreather mask", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which reperfusion strategy is most appropriate? Select one.",
+        prompt: "Which of the following reperfusion strategies is most appropriate for this patient?",
         options: [
-          "Tenecteplase now and admit to your hospital",
-          "Immediate transfer for primary PCI, activating the PCI centre now",
           "Admit and stabilize for 24 hours before transfer",
-          "No reperfusion because cardiogenic shock is a contraindication",
-          "CT pulmonary angiogram before deciding",
+          "CT pulmonary angiogram before reperfusion",
+          "Immediate activation and transfer for primary PCI",
+          "Tenecteplase now, then admission to this hospital",
+          "No reperfusion in cardiogenic shock",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "Patients with STEMI and cardiogenic shock benefit most from early mechanical revascularization, and fibrinolysis is less effective in shock. With about 80 minutes of transport, emergent transfer for primary PCI is preferred. CCS suggests considering fibrinolysis before transfer only when excessive delays to catheterization are expected. Keeping him in a non-PCI hospital is never appropriate.",
+          "Patients with STEMI and cardiogenic shock benefit most from early mechanical revascularization, and fibrinolysis is less effective in shock. With about 80 minutes of transport, emergent transfer for primary PCI is preferred, with the PCI centre activated now. Cardiogenic shock is not a contraindication to reperfusion. CCS suggests considering fibrinolysis before transfer only when excessive delays to catheterization are expected. Keeping him in a non-PCI hospital is never appropriate.",
         keyFeature: { topic: "ischemic-heart-disease", n: 6 },
         source: "ccs-stemi",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which vasoactive agent should be started first? Select one.",
+        prompt: "Which of the following vasoactive agents should be started first in this patient?",
         options: [
-          "Norepinephrine infusion",
           "Dopamine infusion",
-          "Phenylephrine infusion",
-          "Nitroglycerin infusion",
           "Milrinone infusion",
+          "Norepinephrine infusion",
+          "Phenylephrine infusion",
           "Vasopressin infusion alone",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "Norepinephrine is the preferred first vasopressor in cardiogenic shock. It restores perfusion pressure with fewer arrhythmias than dopamine. An inotrope such as dobutamine can be added once pressure is supported. Milrinone and nitrates worsen hypotension.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
@@ -223,7 +225,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO medications commonly given in STEMI or pulmonary edema that you would withhold in this patient.",
+        prompt: "What medications commonly given in STEMI or pulmonary edema would you withhold in this patient?",
         accept: [
           { id: "ntg", text: "Nitroglycerin", match: [...NTG, "no nitro", "avoid nitro", "hold nitro", "withhold nitro", "no nitroglycerin", "avoid nitroglycerin", "hold nitroglycerin", "withhold nitroglycerin", "no nitrate", "avoid nitrate", "nitrate contraindicated", "nitroglycerin contraindicated", "nitro contraindicated", "nitrate avoided", "nitroglycerin withheld"] },
           { id: "bb", text: "Beta blocker such as metoprolol", match: ["beta blocker", "metoprolol", "bisoprolol", "atenolol", "blocker", "avoid beta blocker", "no beta blocker", "hold beta blocker", "withhold beta blocker", "no metoprolol", "avoid metoprolol", "hold metoprolol", "beta blocker contraindicated", "metoprolol contraindicated", "beta blocker withheld"] },
@@ -245,7 +247,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "While awaiting the transport team his SpO2 falls to 80% and he is tiring. You decide to intubate.",
-        prompt: "List THREE steps to reduce the risk of peri-intubation arrest.",
+        prompt: "What steps would you take to reduce the risk of peri-intubation arrest?",
         accept: [
           { id: "preox", text: "Preoxygenate with NIV or BVM with PEEP", match: ["preoxygenat", "preoxygenate", "preoxygenation", "peep", "bvm"] },
           { id: "press", text: "Have norepinephrine running or push dose vasopressor ready", match: ["norepinephrine", "push dose", "vasopressor", "pressor", "phenylephrine", "epinephrine"] },
@@ -274,13 +276,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["asthma-copd", "sob"],
     title: "Wheezy older woman labelled with COPD",
     stem:
-      "An 81 year old woman has a label of COPD but has never had spirometry. She quit smoking 30 years ago after 20 pack years. For 2 weeks she has had worsening exertional dyspnea and now wheezes at night. She has been sleeping in her recliner. Paramedics gave salbutamol with little effect. BP 168/94, HR 104 irregular, RR 26, T 36.8 C, SpO2 89% on room air. Weight 71 kg (66 kg at a clinic visit 1 month ago). She has expiratory wheeze, fine crackles at both bases and pitting edema to mid shin.",
+      "An 81-year-old woman has a label of COPD but has never had spirometry. She quit smoking 30 years ago after 20 pack years. For 2 weeks she has had worsening exertional dyspnea and now wheezes at night. She has been sleeping in her recliner. Paramedics gave salbutamol with little effect. Her weight was 66 kg at a clinic visit 1 month ago. She has expiratory wheeze, fine crackles at both bases and pitting edema to mid shin.",
+    vitals: { temperature: "36.8°C", pulse: "104/minute irregular", resp: "26/minute", bp: "168/94 mmHg", o2sat: "89% on room air", weight: "71 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that suggest heart failure rather than a COPD exacerbation.",
+        prompt: "What features suggest heart failure rather than a COPD exacerbation?",
         accept: [
           { id: "orth", text: "Orthopnea, sleeping in a recliner", match: ["orthopnea", "recliner", "sleeping upright", "pnd", "paroxysmal"] },
           { id: "wt", text: "Weight gain of 5 kg", match: ["weight"] },
@@ -301,7 +304,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE tests that would help confirm heart failure in the emergency department.",
+        prompt: "What tests would help confirm heart failure in the emergency department?",
         accept: [
           { id: "bnp", text: "NT-proBNP or BNP", match: ["bnp"] },
           { id: "us", text: "Lung ultrasound for B lines", match: ["ultrasound", "b line", "pocus"] },
@@ -318,8 +321,9 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
+        update: "NT-proBNP is 6 400 pg/mL and the ECG shows atrial fibrillation at 104/minute.",
         required: 3,
-        prompt: "NT-proBNP is 6400 pg/mL and the ECG shows atrial fibrillation at 104. List THREE initial treatments.",
+        prompt: "What initial treatments would you give?",
         accept: [
           { id: "furo", text: "Furosemide 40 mg IV", match: ["furosemide", "lasix", "loop diuretic"] },
           { id: "ntg", text: "Nitroglycerin sublingual, topical or IV", match: NTG },
@@ -338,7 +342,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO other conditions besides heart failure that can present with new wheeze in an older adult.",
+        prompt: "What conditions other than heart failure can present with new wheeze in an older adult?",
         accept: [
           { id: "pe", text: "Pulmonary embolism", match: ["embolism", "pe"] },
           { id: "pna", text: "Pneumonia", match: ["pneumonia"] },
@@ -367,13 +371,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["arrhythmia"],
     title: "Dialysis patient on a Sunday",
     stem:
-      "A 58 year old man on hemodialysis Monday, Wednesday and Friday missed his Friday session. It is now Sunday. He is anuric. He has 12 hours of dyspnea and orthopnea. BP 192/104, HR 58, RR 30, T 36.5 C, SpO2 84% on room air. Weight is 4.5 kg above his dry weight. He has crackles to the mid lung fields and a functioning left forearm fistula.",
+      "A 58-year-old man on hemodialysis Monday, Wednesday and Friday missed his Friday session. It is now Sunday. He is anuric. He has 12 hours of dyspnea and orthopnea. His weight is 4.5 kg above his dry weight. He has crackles to the mid lung fields and a functioning left forearm fistula.",
+    vitals: { temperature: "36.5°C", pulse: "58/minute", resp: "30/minute", bp: "192/104 mmHg", o2sat: "84% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE treatments to start while dialysis is being arranged.",
+        prompt: "What treatments would you start while dialysis is being arranged?",
         accept: [
           { id: "niv", text: "Noninvasive ventilation with CPAP or BiPAP", match: NIV },
           { id: "ntg", text: "High dose nitroglycerin", match: NTG },
@@ -392,7 +397,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "Besides volume overload, list THREE other causes of his decompensation or life threatening complications to look for.",
+        prompt: "Besides volume overload, what other causes of his decompensation or life-threatening complications would you look for?",
         accept: [
           { id: "k", text: "Hyperkalemia", match: ["hyperkalemia", "potassium"] },
           { id: "acs", text: "Myocardial ischemia or infarction", match: ["ischemia", "infarction", "acs", "mi", "troponin"] },
@@ -414,7 +419,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "The monitor shows a wide complex rhythm at 52 bpm. Potassium is 7.4 mmol/L.",
-        prompt: "List TWO ECG findings that would point to hyperkalemia as the cause of this rhythm.",
+        prompt: "What ECG findings would point to hyperkalemia as the cause of this rhythm?",
         accept: [
           { id: "peaked", text: "Peaked T waves", match: ["peaked", "tall t", "tented"] },
           { id: "p", text: "Flattened or absent P waves", match: ["p wave", "absent p", "flat p"] },
@@ -433,7 +438,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE treatments now. Include the dose of any drug.",
+        prompt: "What treatments, with the dose of any drug, would you give now?",
         accept: [
           {
             id: "ca",
@@ -470,23 +475,24 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["arrhythmia"],
     title: "Palpitations in a patient with a weak heart",
     stem:
-      "A 76 year old man with heart failure with reduced ejection fraction (LVEF 30%) takes sacubitril and valsartan, bisoprolol, spironolactone, dapagliflozin and furosemide 40 mg daily. He has 6 hours of palpitations and increasing dyspnea. He is drowsy but answers questions. Rhythm is irregular at 168 bpm. BP 86/58, RR 30, SpO2 88% on 6 L nasal prongs. Crackles to the mid lung fields. Weight 78 kg.",
+      "A 76-year-old man with heart failure with reduced ejection fraction (LVEF 30%) takes sacubitril and valsartan, bisoprolol, spironolactone, dapagliflozin and furosemide 40 mg daily. He has 6 hours of palpitations and increasing dyspnea. He is drowsy but answers questions. Crackles to the mid lung fields.",
+    vitals: { pulse: "168/minute irregular", resp: "30/minute", bp: "86/58 mmHg", o2sat: "88% on 6 L/minute by nasal prongs", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "The ECG confirms atrial fibrillation with rapid ventricular response. What is the most appropriate immediate treatment? Select one.",
+        update: "The ECG confirms atrial fibrillation with rapid ventricular response.",
+        prompt: "Which of the following is the most appropriate immediate treatment for this patient?",
         options: [
-          "Diltiazem 0.25 mg/kg IV",
-          "Synchronized electrical cardioversion with procedural sedation",
-          "Metoprolol 5 mg IV",
           "Digoxin 0.25 mg IV and reassess in 2 hours",
-          "Adenosine 6 mg IV",
-          "Start heparin and cardiovert only after a transesophageal echo",
+          "Diltiazem 0.25 mg/kg IV over 2 minutes",
+          "Heparin and transesophageal echo before cardioversion",
+          "Metoprolol 5 mg IV every 5 minutes for 3 doses",
+          "Synchronized cardioversion with procedural sedation",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "He is unstable with hypotension, pulmonary edema and altered mentation. Urgent synchronized cardioversion is indicated regardless of AF duration. Diltiazem and IV beta blockers can cause collapse in decompensated HFrEF.",
+          "He is unstable with hypotension, pulmonary edema and altered mentation. Urgent synchronized electrical cardioversion is indicated regardless of AF duration, so waiting for anticoagulation and a transesophageal echo is not appropriate. Diltiazem and IV beta blockers can cause collapse in decompensated HFrEF.",
         keyFeature: { topic: "arrhythmia", n: 4 },
         source: "ccs-af",
       },
@@ -494,7 +500,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE possible triggers of his atrial fibrillation that you would look for.",
+        prompt: "What possible triggers of his atrial fibrillation would you look for?",
         accept: [
           { id: "isch", text: "Myocardial ischemia", match: ["ischemia", "acs", "infarction", "mi", "troponin"] },
           { id: "thyroid", text: "Thyrotoxicosis", match: ["thyroid", "thyrotoxicosis", "tsh", "hyperthyroid"] },
@@ -518,20 +524,20 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         update: "After cardioversion he is in sinus rhythm for 20 minutes, then reverts to atrial fibrillation at 140 bpm. BP 102/66. He is more alert.",
-        prompt: "Select TWO appropriate agents for rate or rhythm control.",
+        prompt: "Which of the following agents are most appropriate for rate or rhythm control now?",
         options: [
-          "Diltiazem 0.25 mg/kg IV",
-          "Verapamil 5 mg IV",
+          "Adenosine 12 mg IV rapid push",
           "Amiodarone 150 mg IV over 10 minutes then infusion",
           "Digoxin 0.25 mg IV, repeated to a loading dose",
+          "Diltiazem 0.25 mg/kg IV over 2 minutes",
+          "Flecainide 300 mg PO as a single dose",
+          "Ibutilide 1 mg IV over 10 minutes",
           "Metoprolol 5 mg IV every 5 minutes for 3 doses",
-          "Flecainide 300 mg PO",
-          "Procainamide 17 mg/kg IV",
-          "Adenosine 12 mg IV",
-          "Ibutilide 1 mg IV",
+          "Procainamide 17 mg/kg IV over 60 minutes",
+          "Verapamil 5 mg IV over 2 minutes",
         ],
         select: 2,
-        correct: [2, 3],
+        correct: [1, 2],
         explanation:
           "In acute decompensated HFrEF, CCS/CHRS guidance suggests IV digoxin or amiodarone may be considered for acute rate control. Nondihydropyridine calcium channel blockers are contraindicated in HFrEF and IV beta blockers are risky while he is hypotensive and congested. Class IC drugs are contraindicated with structural heart disease.",
         keyFeature: { topic: "pulmonary-edema", n: 3 },
@@ -549,13 +555,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["gi-bleed"],
     title: "Tired and breathless for three weeks",
     stem:
-      "An 84 year old woman has 3 weeks of fatigue and exertional dyspnea. Her family physician attributed this to deconditioning. Today she could not walk to the bathroom. She has coronary artery disease and osteoarthritis. Medications include ASA 81 mg daily and naproxen 500 mg twice daily. BP 138/64, HR 108, RR 24, T 36.6 C, SpO2 91% on room air. Weight 52 kg. She is pale. There are crackles at both bases, the JVP is 5 cm above the sternal angle and she has mild ankle edema.",
+      "An 84-year-old woman has 3 weeks of fatigue and exertional dyspnea. Her family physician attributed this to deconditioning. Today she could not walk to the bathroom. She has coronary artery disease and osteoarthritis. Medications include ASA 81 mg daily and naproxen 500 mg twice daily. She is pale. There are crackles at both bases, the JVP is 5 cm above the sternal angle and she has mild ankle edema.",
+    vitals: { temperature: "36.6°C", pulse: "108/minute", resp: "24/minute", bp: "138/64 mmHg", o2sat: "91% on room air", weight: "52 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings in this presentation that suggest heart failure is contributing to her dyspnea.",
+        prompt: "What findings in this presentation suggest heart failure is contributing to her dyspnea?",
         accept: [
           { id: "crackles", text: "Bibasilar crackles", match: ["crackle", "rale"] },
           { id: "jvp", text: "Elevated JVP", match: ["jvp", "jugular"] },
@@ -576,8 +583,8 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        update: "Hb 58 g/L (118 g/L six months ago), MCV 71 fL, urea 17 mmol/L, creatinine 88 µmol/L. Rectal exam shows black stool.",
-        prompt: "List TWO clues to the source of her blood loss.",
+        update: "Hb 58 g/L (118 g/L six months ago), MCV 71 fL, urea 17 mmol/L, creatinine 88 micromol/L. Rectal exam shows black stool.",
+        prompt: "What clues point to the source of her blood loss?",
         accept: [
           { id: "nsaid", text: "NSAID use", match: ["nsaid", "naproxen"] },
           { id: "asa", text: "ASA use", match: ["asa", "aspirin", "antiplatelet"] },
@@ -594,7 +601,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of your transfusion plan that reduce the risk of worsening her pulmonary edema.",
+        prompt: "What elements of your transfusion plan reduce the risk of worsening her pulmonary edema?",
         accept: [
           { id: "one", text: "Transfuse one unit at a time and reassess", match: ["one unit", "1 unit", "single unit"] },
           { id: "slow", text: "Slow infusion rate, about 1 mL/kg/h or over 3 to 4 hours", match: ["slow", "ml/kg", "over 3", "over 4", "infusion rate", "slower rate"] },
@@ -623,13 +630,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     topic: "pulmonary-edema",
     title: "Feels better and wants to go home",
     stem:
-      "A 69 year old man with heart failure with reduced ejection fraction (LVEF 35%) ran out of furosemide 5 days ago and has had 3 days of increasing dyspnea. He received furosemide 80 mg IV and has diuresed 1.8 L. He now feels well at rest. BP 132/78, HR 84 sinus, RR 18, SpO2 95% on room air. His troponin is low positive and unchanged on repeat. ECG is unchanged from prior. Potassium 4.1 mmol/L, creatinine 118 µmol/L (baseline 110), NT-proBNP 3800 pg/mL. He lives alone in a third floor walk-up apartment and wants to go home.",
+      "A 69-year-old man with heart failure with reduced ejection fraction (LVEF 35%) ran out of furosemide 5 days ago and has had 3 days of increasing dyspnea. He received furosemide 80 mg IV and has diuresed 1.8 L. He now feels well at rest. The monitor shows sinus rhythm. His troponin is low positive and unchanged on repeat. ECG is unchanged from prior. Potassium 4.1 mmol/L, creatinine 118 micromol/L (baseline 110 micromol/L), NT-proBNP 3 800 pg/mL. He lives alone in a third floor walk-up apartment and wants to go home.",
+    vitals: { pulse: "84/minute", resp: "18/minute", bp: "132/78 mmHg", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE things you would assess before deciding he can go home.",
+        prompt: "What would you assess before deciding he can go home?",
         accept: [
           { id: "walk", text: "Ambulation or walk test with SpO2 and heart rate", match: ["walk", "ambulat", "ambulation", "ambulate", "exertion", "stairs"] },
           { id: "home", text: "Home situation, supports and ability to manage stairs", match: ["home", "support", "living", "alone"] },
@@ -649,17 +657,18 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "You do a 3 minute walk test in the department. Which finding most suggests he is not safe for discharge? Select one.",
+        update: "You do a 3-minute walk test in the department.",
+        prompt: "Which of the following findings most suggests that he is not safe for discharge?",
         options: [
+          "BP rises from 132/78 to 150/82 mmHg",
           "Heart rate rises from 84 to 96 bpm",
-          "SpO2 falls to 87% and heart rate rises to 118 bpm",
-          "He reports mild tiredness but completes the walk",
-          "SpO2 stays at 94%",
-          "BP rises to 150/82",
+          "Mild tiredness, but he completes the full 3 minutes",
+          "SpO2 falls to 87%, heart rate rises to 118 bpm",
+          "SpO2 stays at 94% throughout the walk",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Desaturation below 90% or a heart rate of 110 or more during a 3 minute walk test predicts serious adverse events after ED discharge. Mild fatigue with stable vitals is expected. This objective test is part of the Ottawa Heart Failure Risk Scale.",
+          "Desaturation below 90% or a heart rate of 110 or more during a 3-minute walk test predicts serious adverse events after ED discharge. Mild fatigue with stable vitals is expected. This objective test is part of the Ottawa Heart Failure Risk Scale.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
         source: "ohfrs",
       },
@@ -668,7 +677,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "He completes the walk test with SpO2 93% and HR 96. His daughter will stay with him for a week.",
-        prompt: "List THREE elements of his discharge plan.",
+        prompt: "What are the elements of his discharge plan?",
         accept: [
           { id: "fu", text: "Follow-up with his physician or heart function clinic within 7 to 14 days", match: ["follow up", "followup", "clinic", "within 1 week", "within 2 week", "7 day", "14 day"] },
           { id: "rx", text: "Refill furosemide and review his full heart failure regimen", match: ["furosemide", "refill", "prescription"] },
@@ -696,13 +705,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["airway"],
     title: "An hour on the mask",
     stem:
-      "A 77 year old man with ischemic cardiomyopathy has been on BiPAP (IPAP 12, EPAP 6 cm H2O, FiO2 0.8) for 60 minutes for pulmonary edema. He has received a nitroglycerin infusion at 100 mcg/min and furosemide 80 mg IV. He is now drowsy with GCS 11. RR 34, SpO2 86%, BP 104/62 (it was 170/96 on arrival), HR 118. Venous gas pH 7.18, pCO2 68 mmHg. He has vomited once into the mask. Weight 95 kg.",
+      "A 77-year-old man with ischemic cardiomyopathy has been on BiPAP (IPAP 12, EPAP 6 cm H2O, FiO2 0.8) for 60 minutes for pulmonary edema. He has received a nitroglycerin infusion at 100 mcg/min and furosemide 80 mg IV. He is now drowsy with GCS 11. His BP was 170/96 mmHg on arrival. Venous gas pH 7.18, pCO2 68 mmHg. He has vomited once into the mask.",
+    vitals: { pulse: "118/minute", resp: "34/minute", bp: "104/62 mmHg", o2sat: "86% on BiPAP with FiO2 0.8", weight: "95 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that indicate NIV is failing.",
+        prompt: "What findings indicate that NIV is failing?",
         accept: [
           { id: "gcs", text: "Falling level of consciousness", match: ["gcs", "consciousness", "drowsy", "mental status"] },
           { id: "acid", text: "Worsening respiratory acidosis and hypercapnia", match: ["acidosis", "ph", "pco2", "hypercapnia", "co2"] },
@@ -720,15 +730,15 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "What is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in management?",
         options: [
-          "Increase IPAP to 20 cm H2O and reassess in 1 hour",
+          "High flow nasal cannula instead of BiPAP",
+          "Increase IPAP to 20 cm H2O, reassess in 1 hour",
+          "Morphine 2 mg IV and continued BiPAP",
+          "Naloxone 0.4 mg IV and continued BiPAP",
           "Rapid sequence intubation",
-          "Switch to high flow nasal cannula",
-          "Naloxone 0.4 mg IV",
-          "Morphine 2 mg IV for air hunger",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "He meets several criteria for NIV failure and cannot protect his airway. Intubation should not be delayed. Higher pressures with a depressed level of consciousness and vomiting increase aspiration risk.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
@@ -737,15 +747,16 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "His BP is 104/62 and falling. Which induction regimen is most appropriate? Select one.",
+        update: "His BP is 104/62 mmHg and falling.",
+        prompt: "Which of the following induction regimens is most appropriate for this patient?",
         options: [
-          "Propofol 2 mg/kg and rocuronium 1.2 mg/kg",
-          "Ketamine 1 mg/kg and rocuronium 1.2 mg/kg, with norepinephrine ready",
-          "Midazolam 10 mg IV and no paralytic",
-          "Fentanyl 5 mcg/kg and succinylcholine 1.5 mg/kg",
           "Awake intubation with topical anesthesia only",
+          "Fentanyl 5 mcg/kg and succinylcholine 1.5 mg/kg",
+          "Ketamine 1 mg/kg, rocuronium 1.2 mg/kg, norepinephrine ready",
+          "Midazolam 10 mg IV and no paralytic",
+          "Propofol 2 mg/kg and rocuronium 1.2 mg/kg",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "He is at high risk of post-intubation hypotension from sedation and from positive pressure lowering preload. Ketamine at a modest dose, or reduced dose etomidate, is more hemodynamically stable than propofol or large doses of midazolam or fentanyl. Have a vasopressor ready before induction.",
         keyFeature: { topic: "airway", n: 5 },
@@ -755,7 +766,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO initial ventilator settings or strategies after intubation.",
+        prompt: "What initial ventilator settings or strategies would you use after intubation?",
         accept: [
           { id: "peep", text: "Moderate to high PEEP, about 8 to 10 cm H2O", match: ["peep"] },
           { id: "vt", text: "Tidal volume 6 to 8 mL/kg ideal body weight", match: ["tidal volume", "ml/kg", "vt"] },
@@ -782,13 +793,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["sob"],
     title: "Six weeks of shortness of breath on stairs",
     stem:
-      "A 55 year old man has 6 weeks of progressive dyspnea on exertion. He now stops after 1 flight of stairs. He has a dry cough at night. A walk-in clinic gave him azithromycin and then a salbutamol inhaler without improvement. He drinks about 8 beers a day and has untreated hypertension. BP 154/96, HR 102 regular, RR 20, T 36.7 C, SpO2 94% on room air. Weight 98 kg. He has an S3, a JVP 4 cm above the sternal angle, fine crackles at both bases and trace ankle edema.",
+      "A 55-year-old man has 6 weeks of progressive dyspnea on exertion. He now stops after 1 flight of stairs. He has a dry cough at night. A walk-in clinic gave him azithromycin and then a salbutamol inhaler without improvement. He drinks about 8 beers a day and has untreated hypertension. He has an S3, a JVP 4 cm above the sternal angle, fine crackles at both bases and trace ankle edema.",
+    vitals: { temperature: "36.7°C", pulse: "102/minute regular", resp: "20/minute", bp: "154/96 mmHg", o2sat: "94% on room air", weight: "98 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that suggest heart failure rather than a respiratory infection or asthma.",
+        prompt: "What features suggest heart failure rather than a respiratory infection or asthma?",
         accept: [
           { id: "s3", text: "S3 gallop", match: ["s3", "gallop"] },
           { id: "jvp", text: "Elevated JVP", match: ["jvp", "jugular"] },
@@ -811,7 +823,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE tests you would order in the emergency department to confirm the diagnosis.",
+        prompt: "What tests would you order in the emergency department to confirm the diagnosis?",
         accept: [
           { id: "bnp", text: "NT-proBNP or BNP", match: ["bnp"] },
           { id: "cxr", text: "Chest X-ray", match: ["x ray", "cxr"] },
@@ -830,8 +842,8 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "NT-proBNP 2900 pg/mL. Bedside ultrasound shows a dilated left ventricle with severely reduced function and bilateral B lines. The ECG shows sinus tachycardia with left bundle branch block, old compared with a tracing from 2 years ago.",
-        prompt: "List THREE causes of a new dilated cardiomyopathy that you would consider in this patient.",
+        update: "NT-proBNP 2 900 pg/mL. Bedside ultrasound shows a dilated left ventricle with severely reduced function and bilateral B lines. The ECG shows sinus tachycardia with left bundle branch block, old compared with a tracing from 2 years ago.",
+        prompt: "What causes of a new dilated cardiomyopathy would you consider in this patient?",
         accept: [
           { id: "etoh", text: "Alcohol related cardiomyopathy", match: ["alcohol", "etoh"] },
           { id: "isch", text: "Ischemic heart disease", match: ["ischemic", "ischemia", "coronary", "cad", "infarction"] },
@@ -855,17 +867,17 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "After furosemide 40 mg IV he diureses 1.2 L. He walks the hallway for 3 minutes with SpO2 94% and HR 104. His partner will drive him home and stays with him. Troponin is normal twice.",
-        prompt: "Which disposition is most appropriate? Select one.",
+        prompt: "Which of the following dispositions is most appropriate for this patient?",
         options: [
-          "Discharge with oral furosemide, a formal echocardiogram and heart function clinic review within 2 weeks, plus alcohol cessation support",
-          "Discharge with a salbutamol inhaler and family physician review as needed",
-          "Admit to the ICU for invasive monitoring",
+          "Discharge on oral furosemide, echo and clinic within 2 weeks",
           "Discharge with a second course of antibiotics",
-          "Discharge with no medications until the echocardiogram is done",
+          "Discharge with salbutamol and family physician review",
+          "Discharge without medication until the echo is done",
+          "ICU admission for invasive monitoring",
         ],
         correct: 0,
         explanation:
-          "He is stable after diuresis, passes a walk test and has support at home. New heart failure can be managed as an outpatient when rapid follow-up for echocardiography and guideline directed therapy is arranged. Addressing alcohol use is part of treating the cause.",
+          "He is stable after diuresis, passes a walk test and has support at home. New heart failure can be managed as an outpatient when rapid follow-up for echocardiography and guideline directed therapy is arranged. The plan is oral furosemide, a formal echocardiogram and heart function clinic review within 2 weeks. Alcohol cessation support is part of treating the cause.",
         keyFeature: { topic: "pulmonary-edema", n: 6 },
         source: "ccs-hf-2021",
       },
@@ -881,13 +893,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["sob", "pre-eclampsia"],
     title: "Cough five weeks after delivery",
     stem:
-      "A 31 year old woman delivered twins vaginally 5 weeks ago. Her pregnancy was complicated by gestational hypertension. She has 2 weeks of cough and dyspnea and now cannot lie flat. A walk-in clinic diagnosed bronchitis. She is breastfeeding. BP 112/74, HR 118, RR 26, T 37.0 C, SpO2 91% on room air. Weight 74 kg. Her JVP is raised and she has crackles to the mid lung fields. Bedside ultrasound shows a dilated left ventricle with severely reduced function, bilateral B lines and no pericardial effusion.",
+      "A 31-year-old woman delivered twins vaginally 5 weeks ago. Her pregnancy was complicated by gestational hypertension. She has 2 weeks of cough and dyspnea and now cannot lie flat. A walk-in clinic diagnosed bronchitis. She is breastfeeding. Her JVP is raised and she has crackles to the mid lung fields. Bedside ultrasound shows a dilated left ventricle with severely reduced function, bilateral B lines and no pericardial effusion.",
+    vitals: { temperature: "37.0°C", pulse: "118/minute", resp: "26/minute", bp: "112/74 mmHg", o2sat: "91% on room air", weight: "74 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE diagnoses you would consider for her dyspnea.",
+        prompt: "What diagnoses would you consider for her dyspnea?",
         accept: [
           { id: "ppcm", text: "Peripartum cardiomyopathy", match: ["peripartum", "cardiomyopathy", "ppcm"] },
           { id: "pe", text: "Pulmonary embolism", match: ["embolism", "pe"] },
@@ -908,7 +921,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "Her symptoms were attributed to bronchitis. List THREE features that should have raised concern for heart failure.",
+        prompt: "Her symptoms were attributed to bronchitis. What features should have raised concern for heart failure?",
         accept: [
           { id: "orth", text: "Orthopnea", match: ["orthopnea", "lie flat", "pnd"] },
           { id: "tachy", text: "Persistent tachycardia", match: ["tachycardia", "heart rate"] },
@@ -930,7 +943,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO immediate treatments. Include doses where relevant.",
+        prompt: "What immediate treatments would you give, with doses where relevant?",
         accept: [
           { id: "furo", text: "Furosemide 20 to 40 mg IV", match: ["furosemide", "lasix", "loop diuretic"] },
           { id: "o2", text: "Supplemental oxygen", match: ["oxygen"] },
@@ -956,13 +969,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Sudden breathlessness after a week of indigestion",
     stem:
-      "A 70 year old woman had 2 days of indigestion 6 days ago and did not seek care. Tonight she developed sudden severe dyspnea. BP 96/60, HR 118, RR 36, SpO2 84% on a non-rebreather mask. She has crackles throughout both lungs and a soft holosystolic murmur at the apex. The ECG shows inferior Q waves with 1 mm persistent ST elevation in II, III and aVF. Weight 64 kg.",
+      "A 70-year-old woman had 2 days of indigestion 6 days ago and did not seek care. Tonight she developed sudden severe dyspnea. She has crackles throughout both lungs and a soft holosystolic murmur at the apex. The ECG shows inferior Q waves with 1 mm persistent ST elevation in II, III and aVF.",
+    vitals: { pulse: "118/minute", resp: "36/minute", bp: "96/60 mmHg", o2sat: "84% on a non-rebreather mask", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE mechanical complications of myocardial infarction that could explain this presentation.",
+        prompt: "What mechanical complications of myocardial infarction could explain this presentation?",
         accept: [
           { id: "pmr", text: "Papillary muscle rupture with acute mitral regurgitation", match: ["papillary", "mitral"] },
           { id: "vsr", text: "Ventricular septal rupture", match: ["septal", "vsd", "vsr"] },
@@ -981,7 +995,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Bedside echo shows a flail posterior mitral leaflet with severe regurgitation and a hyperdynamic left ventricle. BP falls to 86/54.",
-        prompt: "List THREE temporizing measures while you arrange definitive care.",
+        prompt: "What temporizing measures would you use while you arrange definitive care?",
         accept: [
           { id: "ventil", text: "Positive pressure ventilation with NIV or intubation", match: ["niv", "bipap", "cpap", "intubat", "intubation", "intubate", "ventilation"] },
           { id: "iabp", text: "Intra-aortic balloon pump or other mechanical support", match: ["balloon", "iabp", "impella", "mechanical support", "ecmo"] },
@@ -1025,22 +1039,23 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     topic: "pulmonary-edema",
     title: "Breathless during the second unit",
     stem:
-      "An 82 year old woman weighing 60 kg is receiving red cells in your department for Hb 62 g/L from chronic GI blood loss. She has heart failure with preserved ejection fraction. The first unit ran over 1 hour. The second unit was started at 250 mL/h. Forty minutes into it she becomes acutely short of breath. BP 188/96 (142/70 before transfusion), HR 108, RR 30, T 37.1 C (36.9 C before), SpO2 86% on room air. She has new bibasilar crackles and a raised JVP.",
+      "An 82-year-old woman is receiving red cells in your department for Hb 62 g/L from chronic GI blood loss. She has heart failure with preserved ejection fraction. The first unit ran over 1 hour. The second unit was started at 250 mL/h. Forty minutes into it she becomes acutely short of breath. Before the transfusion her BP was 142/70 mmHg and her temperature was 36.9°C. She has new bibasilar crackles and a raised JVP.",
+    vitals: { temperature: "37.1°C", pulse: "108/minute", resp: "30/minute", bp: "188/96 mmHg", o2sat: "86% on room air", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is the most likely diagnosis? Select one.",
+        prompt: "Which of the following is the most likely cause of her acute dyspnea?",
         options: [
-          "Transfusion related acute lung injury",
-          "Transfusion associated circulatory overload",
           "Acute hemolytic transfusion reaction",
+          "Acute lung injury related to the transfusion",
           "Anaphylactic transfusion reaction",
           "Febrile nonhemolytic transfusion reaction",
+          "Transfusion associated circulatory overload",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "Hypertension, a raised JVP and crackles during a rapid transfusion in an older patient with heart failure fit transfusion associated circulatory overload. TRALI typically causes hypotension and fever with a normal JVP. Anaphylaxis causes hypotension, wheeze and urticaria.",
+          "Hypertension, a raised JVP and crackles during a rapid transfusion in an older patient with heart failure fit transfusion associated circulatory overload. Transfusion related acute lung injury (TRALI) typically causes hypotension and fever with a normal JVP. Anaphylaxis causes hypotension, wheeze and urticaria.",
         keyFeature: { topic: "pulmonary-edema", n: 2 },
         source: "cbs-guide",
       },
@@ -1048,7 +1063,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are your immediate management steps?",
         accept: [
           { id: "stop", text: "Stop the transfusion", match: ["stop", "discontinue", "hold"] },
           { id: "upright", text: "Sit upright", match: ["upright", "sit up"] },
@@ -1069,7 +1084,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "She improves within an hour. Her Hb is now 71 g/L and she remains symptomatic from anemia.",
-        prompt: "List TWO strategies to reduce the risk of this happening again.",
+        prompt: "What strategies would reduce the risk of this happening again?",
         accept: [
           { id: "slow", text: "Slower infusion rate, about 1 mL/kg/h", match: ["slow", "ml/kg", "infusion rate", "over 3", "over 4"] },
           { id: "diur", text: "Diuretic before or between units", match: ["furosemide", "diuretic", "lasix"] },
@@ -1094,13 +1109,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     topic: "pulmonary-edema",
     title: "Weight gain after a new prescription",
     stem:
-      "A 74 year old man with heart failure with reduced ejection fraction (LVEF 30%) takes furosemide 80 mg PO twice daily, bisoprolol, sacubitril and valsartan, spironolactone and empagliflozin. He has 1 week of worsening dyspnea and a 4 kg weight gain. A walk-in clinic started naproxen 10 days ago for knee pain, and he ate several salty holiday meals. BP 146/82, HR 88 sinus, RR 22, T 36.8 C, SpO2 93% on room air. He has crackles at the bases and edema to the knees. Potassium 5.3 mmol/L, creatinine 142 µmol/L (baseline 115), sodium 133 mmol/L.",
+      "A 74-year-old man with heart failure with reduced ejection fraction (LVEF 30%) takes furosemide 80 mg PO twice daily, bisoprolol, sacubitril and valsartan, spironolactone and empagliflozin. He has 1 week of worsening dyspnea and a 4 kg weight gain. A walk-in clinic started naproxen 10 days ago for knee pain, and he ate several salty holiday meals. The monitor shows sinus rhythm. He has crackles at the bases and edema to the knees. Potassium 5.3 mmol/L, creatinine 142 micromol/L (baseline 115 micromol/L), sodium 133 mmol/L.",
+    vitals: { temperature: "36.8°C", pulse: "88/minute", resp: "22/minute", bp: "146/82 mmHg", o2sat: "93% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR precipitants of heart failure decompensation you would look for in this patient.",
+        prompt: "What precipitants of heart failure decompensation would you look for in this patient?",
         accept: [
           { id: "nsaid", text: "NSAID use", match: ["nsaid", "naproxen", "anti inflammatory"] },
           { id: "salt", text: "Dietary sodium or fluid excess", match: ["sodium", "salt", "dietary", "diet"] },
@@ -1124,13 +1140,13 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which initial diuretic strategy is most appropriate? Select one.",
+        prompt: "Which of the following initial diuretic strategies is most appropriate for this patient?",
         options: [
-          "Furosemide 20 mg IV once",
+          "Furosemide 20 mg IV once, then reassess in 6 hours",
           "Furosemide 160 mg IV, then reassess urine output and weight",
-          "Increase his oral furosemide to 120 mg twice daily and discharge",
-          "Add hydrochlorothiazide 25 mg PO alone",
-          "Hold all diuretics because his creatinine has risen",
+          "Furosemide 120 mg PO twice daily and discharge",
+          "Hold all diuretics until the creatinine returns to baseline",
+          "Hydrochlorothiazide 25 mg PO alone",
         ],
         correct: 1,
         explanation:
@@ -1142,8 +1158,8 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "After 2 doses of IV furosemide in the observation unit he has lost 3.5 kg and is back near his dry weight. Creatinine is 128 µmol/L, potassium 4.8 mmol/L. His walk test is normal.",
-        prompt: "List THREE discharge instructions or changes to his management.",
+        update: "After 2 doses of IV furosemide in the observation unit he has lost 3.5 kg and is back near his dry weight. Creatinine is 128 micromol/L, potassium 4.8 mmol/L. His walk test is normal.",
+        prompt: "What discharge instructions or changes to his management would you make?",
         accept: [
           { id: "nsaid", text: "Stop naproxen and avoid all NSAIDs", match: ["stop naproxen", "stop nsaid", "avoid nsaid", "no nsaid", "discontinue naproxen", "discontinue nsaid", "hold naproxen", "avoid naproxen", "no naproxen", "naproxen contraindicated", "nsaid contraindicated", "nsaid avoided"] },
           { id: "salt", text: "Sodium restriction advice", match: ["sodium", "salt"] },
@@ -1176,13 +1192,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Breathless man with a loud murmur",
     stem:
-      "An 86 year old man has known severe aortic stenosis (valve area 0.7 cm2) and is awaiting assessment for transcatheter valve replacement. He has 2 days of increasing dyspnea and fainted while walking yesterday. BP 92/64, HR 104 sinus, RR 30, T 36.6 C, SpO2 88% on 4 L nasal prongs. He has a harsh late peaking systolic murmur radiating to the carotids, a soft S2 and crackles to the mid lung fields. Weight 70 kg.",
+      "An 86-year-old man has known severe aortic stenosis (valve area 0.7 cm2) and is awaiting assessment for transcatheter valve replacement. He has 2 days of increasing dyspnea and fainted while walking yesterday. The monitor shows sinus tachycardia. He has a harsh late peaking systolic murmur radiating to the carotids, a soft S2 and crackles to the mid lung fields.",
+    vitals: { temperature: "36.6°C", pulse: "104/minute", resp: "30/minute", bp: "92/64 mmHg", o2sat: "88% on 4 L/minute by nasal prongs", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE causes of his acute decompensation that you would look for.",
+        prompt: "What causes of his acute decompensation would you look for?",
         accept: [
           { id: "af", text: "New atrial fibrillation with loss of atrial kick", match: ["atrial fibrillation", "af", "arrhythmia"] },
           { id: "isch", text: "Myocardial ischemia", match: ["ischemia", "acs", "infarction", "mi", "troponin"] },
@@ -1203,19 +1220,19 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Select TWO appropriate initial treatments.",
+        prompt: "Which of the following are the most appropriate initial treatments for this patient?",
         options: [
-          "Nitroglycerin 0.4 mg sublingual every 5 minutes",
-          "Nitroglycerin infusion at 100 mcg/min",
-          "Norepinephrine or phenylephrine infusion to maintain perfusion pressure",
+          "Enalaprilat 1.25 mg IV bolus",
           "Furosemide 20 mg IV with close BP monitoring",
-          "Normal saline 1 L bolus",
-          "Metoprolol 5 mg IV",
-          "Hydralazine 10 mg IV",
-          "Enalaprilat 1.25 mg IV",
+          "Hydralazine 10 mg IV bolus",
+          "Metoprolol 5 mg IV over 2 minutes",
+          "Nitroglycerin infusion at 100 mcg/min",
+          "Nitroglycerin 0.4 mg sublingual every 5 minutes",
+          "Norepinephrine or phenylephrine infusion",
+          "Normal saline 1 L IV bolus",
         ],
         select: 2,
-        correct: [2, 3],
+        correct: [6, 1],
         explanation:
           "Severe aortic stenosis with pulmonary edema and hypotension needs coronary perfusion pressure maintained with a vasopressor. Gentle diuresis relieves congestion. Nitrates and other vasodilators drop BP without increasing flow across a fixed valve. A fluid bolus worsens the edema.",
         keyFeature: { topic: "pulmonary-edema", n: 4 },
@@ -1241,8 +1258,9 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
+        update: "His work of breathing worsens.",
         required: 2,
-        prompt: "His work of breathing worsens. List TWO precautions if you start NIV or intubate him.",
+        prompt: "What precautions would you take if you start NIV or intubate him?",
         accept: [
           { id: "lowp", text: "Use lower initial pressures and titrate slowly, since positive pressure reduces preload", match: ["lower pressure", "low pressure", "titrate", "low peep", "preload"] },
           { id: "press", text: "Vasopressor running before induction or NIV", match: ["vasopressor", "pressor", "norepinephrine", "phenylephrine", "push dose"] },
@@ -1270,13 +1288,14 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Fever and sudden dyspnea in a young man",
     stem:
-      "A 38 year old man who injects hydromorphone has 5 days of fever and rigors and developed severe dyspnea over the last 3 hours. T 39.2 C, BP 108/38, HR 128, RR 34, SpO2 86% on a non-rebreather mask. Weight 68 kg. He has bounding pulses, an early diastolic murmur at the left sternal border and crackles to the mid lung fields. Bedside echo shows a hyperdynamic left ventricle, a mobile echodensity on the aortic valve and a wide regurgitant jet.",
+      "A 38-year-old man who injects hydromorphone has 5 days of fever and rigors and developed severe dyspnea over the last 3 hours. He has bounding pulses, an early diastolic murmur at the left sternal border and crackles to the mid lung fields. Bedside echo shows a hyperdynamic left ventricle, a mobile echodensity on the aortic valve and a wide regurgitant jet.",
+    vitals: { temperature: "39.2°C", pulse: "128/minute", resp: "34/minute", bp: "108/38 mmHg", o2sat: "86% on a non-rebreather mask", weight: "68 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations to confirm the cause and its complications.",
+        prompt: "What investigations would you order to confirm the cause and its complications?",
         accept: [
           { id: "bc", text: "Three sets of blood cultures before antibiotics", match: ["blood culture", "culture"] },
           { id: "echo", text: "Formal transthoracic then transesophageal echocardiogram", match: ["echo", "tte", "tee", "echocardiogram", "transesophageal"] },
@@ -1332,7 +1351,7 @@ export const PULMONARY_EDEMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "While awaiting transfer his BP falls to 84/30 and he is tiring.",
-        prompt: "List TWO appropriate supportive measures.",
+        prompt: "What supportive measures are appropriate?",
         accept: [
           { id: "intub", text: "Intubation with positive pressure ventilation", match: ["intubat", "intubation", "intubate", "ventilation", "niv", "bipap", "cpap"] },
           { id: "norepi", text: "Norepinephrine", match: ["norepinephrine", "vasopressor", "pressor"] },
