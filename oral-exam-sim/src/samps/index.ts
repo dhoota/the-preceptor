@@ -19,6 +19,41 @@ import { SAMPS_S15 } from "./s15";
 import { SAMPS_S16 } from "./s16";
 import { SAMPS_S17 } from "./s17";
 import { SAMPS_S18 } from "./s18";
+import { SAMPS_S19 } from "./s19";
+import { SAMPS_S20 } from "./s20";
+import { SAMPS_S21 } from "./s21";
+import { SAMPS_S22 } from "./s22";
+import { SAMPS_S23 } from "./s23";
+import { SAMPS_S24 } from "./s24";
+import { SAMPS_S25 } from "./s25";
+import { SAMPS_S26 } from "./s26";
+import { SAMPS_S27 } from "./s27";
+import { SAMPS_S28 } from "./s28";
+import { SAMPS_S29 } from "./s29";
+import { SAMPS_S30 } from "./s30";
+import { SAMPS_S31 } from "./s31";
+import { SAMPS_S32 } from "./s32";
+import { SAMPS_S33 } from "./s33";
+import { SAMPS_S34 } from "./s34";
+import { SAMPS_S35 } from "./s35";
+import { SAMPS_S36 } from "./s36";
+import { SAMPS_S37 } from "./s37";
+import { SAMPS_S38 } from "./s38";
+import { SAMPS_S39 } from "./s39";
+import { SAMPS_S40 } from "./s40";
+import { SAMPS_S41 } from "./s41";
+import { SAMPS_S42 } from "./s42";
+import { SAMPS_S43 } from "./s43";
+import { SAMPS_S44 } from "./s44";
+import { SAMPS_S45 } from "./s45";
+import { SAMPS_S46 } from "./s46";
+import { SAMPS_S47 } from "./s47";
+import { SAMPS_S48 } from "./s48";
+import { SAMPS_S49 } from "./s49";
+import { SAMPS_S50 } from "./s50";
+import { SAMPS_S51 } from "./s51";
+import { SAMPS_S52 } from "./s52";
+import { SAMPS_S53 } from "./s53";
 
 export const SAMP_BATCHES: Record<string, Samp[]> = {
   s01: SAMPS_S01,
@@ -39,6 +74,41 @@ export const SAMP_BATCHES: Record<string, Samp[]> = {
   s16: SAMPS_S16,
   s17: SAMPS_S17,
   s18: SAMPS_S18,
+  s19: SAMPS_S19,
+  s20: SAMPS_S20,
+  s21: SAMPS_S21,
+  s22: SAMPS_S22,
+  s23: SAMPS_S23,
+  s24: SAMPS_S24,
+  s25: SAMPS_S25,
+  s26: SAMPS_S26,
+  s27: SAMPS_S27,
+  s28: SAMPS_S28,
+  s29: SAMPS_S29,
+  s30: SAMPS_S30,
+  s31: SAMPS_S31,
+  s32: SAMPS_S32,
+  s33: SAMPS_S33,
+  s34: SAMPS_S34,
+  s35: SAMPS_S35,
+  s36: SAMPS_S36,
+  s37: SAMPS_S37,
+  s38: SAMPS_S38,
+  s39: SAMPS_S39,
+  s40: SAMPS_S40,
+  s41: SAMPS_S41,
+  s42: SAMPS_S42,
+  s43: SAMPS_S43,
+  s44: SAMPS_S44,
+  s45: SAMPS_S45,
+  s46: SAMPS_S46,
+  s47: SAMPS_S47,
+  s48: SAMPS_S48,
+  s49: SAMPS_S49,
+  s50: SAMPS_S50,
+  s51: SAMPS_S51,
+  s52: SAMPS_S52,
+  s53: SAMPS_S53,
 };
 
 export const SAMPS: Samp[] = Object.values(SAMP_BATCHES).flat();

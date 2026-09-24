@@ -1,0 +1,250 @@
+{
+ "note": "Expansion to 1,500 SAMPs. One batch per priority topic. New ids continue the topic numbering from 16.",
+ "batches": {
+  "s19": {
+   "topic": "abdominal-pain",
+   "name": "Abdominal pain",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s20": {
+   "topic": "abuse-domestic",
+   "name": "Abuse (domestic)",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s21": {
+   "topic": "airway",
+   "name": "Airway management",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s22": {
+   "topic": "analgesia-sedation",
+   "name": "Analgesia/sedation",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s23": {
+   "topic": "anaphylaxis",
+   "name": "Anaphylaxis",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s24": {
+   "topic": "arrhythmia",
+   "name": "Arrhythmia",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s25": {
+   "topic": "asthma-copd",
+   "name": "Asthma/COPD",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s26": {
+   "topic": "burns",
+   "name": "Burns",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s27": {
+   "topic": "cva",
+   "name": "Cerebrovascular accident (CVA)",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s28": {
+   "topic": "chest-pain",
+   "name": "Chest pain",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s29": {
+   "topic": "msk",
+   "name": "Common fractures/MSK",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s30": {
+   "topic": "cqi",
+   "name": "Continuous quality improvement (CQI)",
+   "count": 20,
+   "tier": "C",
+   "firstId": 16
+  },
+  "s31": {
+   "topic": "critical-appraisal",
+   "name": "Critical appraisal",
+   "count": 21,
+   "tier": "C",
+   "firstId": 16
+  },
+  "s32": {
+   "topic": "loc",
+   "name": "Decreased level of consciousness",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s33": {
+   "topic": "dvt-pe",
+   "name": "Deep venous thrombosis (DVT) and pulmonary embolus (PE)",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s34": {
+   "topic": "delirium-agitation",
+   "name": "Delirium/agitation",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s35": {
+   "topic": "ems",
+   "name": "Emergency medical services (EMS)",
+   "count": 21,
+   "tier": "C",
+   "firstId": 16
+  },
+  "s36": {
+   "topic": "environmental",
+   "name": "Environmental",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s37": {
+   "topic": "eye",
+   "name": "Eye: red eye and loss of vision",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s38": {
+   "topic": "first-trimester-bleeding",
+   "name": "First trimester bleeding",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s39": {
+   "topic": "gi-bleed",
+   "name": "Gastrointestinal (GI) bleed",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s40": {
+   "topic": "headache",
+   "name": "Headache",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s41": {
+   "topic": "infectious-diseases",
+   "name": "Infectious diseases",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s42": {
+   "topic": "ischemic-heart-disease",
+   "name": "Ischemic heart disease",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s43": {
+   "topic": "lacerations",
+   "name": "Lacerations",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s44": {
+   "topic": "multiple-patients",
+   "name": "Multiple patients",
+   "count": 20,
+   "tier": "C",
+   "firstId": 16
+  },
+  "s45": {
+   "topic": "multiple-trauma",
+   "name": "Multiple trauma",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s46": {
+   "topic": "pediatric-fever",
+   "name": "Pediatric fever",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s47": {
+   "topic": "pre-eclampsia",
+   "name": "Pre-eclampsia",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s48": {
+   "topic": "pulmonary-edema",
+   "name": "Pulmonary edema",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s49": {
+   "topic": "seizures",
+   "name": "Seizures",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s50": {
+   "topic": "shock",
+   "name": "Shock/dehydration",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s51": {
+   "topic": "sob",
+   "name": "Shortness of breath",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  },
+  "s52": {
+   "topic": "suicide-risk",
+   "name": "Suicide risk",
+   "count": 23,
+   "tier": "B",
+   "firstId": 16
+  },
+  "s53": {
+   "topic": "tox",
+   "name": "Toxicology",
+   "count": 32,
+   "tier": "A",
+   "firstId": 16
+  }
+ }
+}

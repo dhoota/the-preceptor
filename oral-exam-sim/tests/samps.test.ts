@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import signoff from "../docs/signoff-2026-09.json";
+import expansion from "../docs/samp-expansion.json";
 import { PRIORITY_TOPICS, topicById } from "@/blueprint/priorityTopics";
 import { validateSamp } from "@/engine/samp";
 import { SAMPS, SAMP_BATCHES } from "@/samps";
@@ -43,9 +44,12 @@ describe("SAMP bank", () => {
 
   if (only) {
     const topics = [...new Set(target.map((s) => s.topic))];
-    it(`batch ${only} has 15 SAMPs per topic`, () => {
+    // Batches s01 to s18 hold 15 per topic. Expansion batches follow docs/samp-expansion.json.
+    const planned = (expansion.batches as Record<string, { topic: string; count: number }>)[only];
+    it(`batch ${only} has its planned SAMPs per topic`, () => {
       expect(target.length).toBeGreaterThan(0);
-      for (const t of topics) expect(target.filter((s) => s.topic === t).length, t).toBe(15);
+      if (planned) expect(topics, "one topic per expansion batch").toEqual([planned.topic]);
+      for (const t of topics) expect(target.filter((s) => s.topic === t).length, t).toBe(planned?.count ?? 15);
     });
     it(`batch ${only} tests every key feature of its topics`, () => {
       const cov = coverage(target);
