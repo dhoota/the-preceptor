@@ -20,6 +20,9 @@ const SIZES = [
   { name: "iphone-6.5", w: 1284, h: 2778, dpr: 3 },
   { name: "ipad-13", w: 2064, h: 2752, dpr: 2 },
   { name: "play-phone", w: 1080, h: 1920, dpr: 3 },
+  // Play tablet fields ask for 16:9 or 9:16.
+  { name: "play-tablet-7", w: 1200, h: 2133, dpr: 3 },
+  { name: "play-tablet-10", w: 1440, h: 2560, dpr: 2 },
 ];
 
 const CAPTIONS = [
