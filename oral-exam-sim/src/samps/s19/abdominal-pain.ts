@@ -6,7 +6,13 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
 
 const S = {
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, and colleagues, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Acute abdominal pain chapter." },
+  goonewardene: { id: "sterile-pyuria", citation: "Goonewardene S, Persad R. Sterile pyuria: a forgotten entity. Ther Adv Urol. 2015.", url: "https://doi.org/10.1177/1756287215592570" },
+  scottUa: { id: "scott-ua-appendicitis", citation: "Scott JH, Amin M, Harty JI. Abnormal urinalysis in appendicitis. J Urol. 1983.", url: "https://pubmed.ncbi.nlm.nih.gov/6854742/" },
+  salemis: { id: "rsh-ct", citation: "Salemis NS, Gourgiotis S, Karalis G. Diagnostic evaluation and management of patients with rectus sheath hematoma: a retrospective study. Int J Surg. 2010.", url: "https://pubmed.ncbi.nlm.nih.gov/20227535/" },
+  cohenZoster: { id: "nejm-zoster", citation: "Cohen JI. Clinical practice: herpes zoster. N Engl J Med. 2013.", url: "https://pubmed.ncbi.nlm.nih.gov/23863052/" },
+  woodIh: { id: "rygb-ih-review", citation: "Wood CG, Horowitz JM, Kelahan LC, and colleagues. Internal hernias after Roux-en-Y gastric bypass: clues to a challenging diagnosis. Radiographics. 2025.", url: "https://doi.org/10.1148/rg.240197" },
+  dilauro: { id: "rygb-ih-ct", citation: "Dilauro M, McInnes MDF, Schieda N, and colleagues. Internal hernia after laparoscopic Roux-en-Y gastric bypass: optimal CT signs for diagnosis and clinical decision making. Radiology. 2017.", url: "https://pubmed.ncbi.nlm.nih.gov/27689925/" },
+  altinoz: { id: "rygb-ih-laparoscopy", citation: "Altinoz A, Maasher A, Jouhar F, and colleagues. Diagnostic laparoscopy is more accurate than computerized tomography for internal hernia after Roux-en-Y gastric bypass. Am J Surg. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/31668708/" },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023." },
   aha22: { id: "aha-aorta", citation: "Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.", url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001106" },
   wsesAmi: { id: "wses-ami", citation: "Bala M and colleagues. Acute mesenteric ischemia: updated guidelines of the World Society of Emergency Surgery. World J Emerg Surg. 2022.", url: "https://wjes.biomedcentral.com/articles/10.1186/s13017-022-00443-x" },
@@ -488,7 +494,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Inflamed bowel lying against the bladder or ureter can cause sterile pyuria, so leukocytes in the urine do not make a urinary source likely when the pain is constant and localized to the left lower quadrant. Leukocytes alone do not confirm cystitis, and she has no dysuria. Absent nitrites do not exclude infection, because some organisms do not form nitrite. Antibiotics for a presumed urinary infection would delay the real diagnosis. A urine culture takes days and does not explain localized abdominal tenderness.",
         keyFeature: { topic: "abdominal-pain", n: 8 },
-        source: "tintinalli",
+        source: "sterile-pyuria",
       },
       {
         id: "q2",
@@ -514,7 +520,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         source: "wses-div",
       },
     ],
-    sources: [S.tintinalli, S.wsesDiv],
+    sources: [S.goonewardene, S.wsesDiv],
     ...META,
   },
   {
@@ -555,12 +561,12 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["Abdominal x-ray series", "CT abdomen with IV contrast", "Diagnostic laparoscopy", "MRI of the pelvis", "Transvaginal ultrasound"],
         correct: 1,
         explanation:
-          "Contrast CT confirms a rectus sheath hematoma, shows its size and extent and can show active extravasation that would need embolization. Plain films cannot show a hematoma. Laparoscopy is invasive and unnecessary for a wall lesion. MRI is slow and less available. Transvaginal ultrasound examines the pelvic organs, not the abdominal wall.",
+          "CT is the diagnostic test of choice for a rectus sheath hematoma. It confirms the diagnosis and shows the size and extent of the bleed, and IV contrast can show active extravasation. Plain films cannot show a hematoma. Laparoscopy is invasive and unnecessary for a wall lesion. MRI is slow and less available. Transvaginal ultrasound examines the pelvic organs, not the abdominal wall.",
         keyFeature: { topic: "abdominal-pain", n: 5 },
-        source: "tintinalli",
+        source: "rsh-ct",
       },
     ],
-    sources: [S.rosen, S.tintinalli],
+    sources: [S.rosen, S.salemis],
     ...META,
   },
   {
@@ -722,7 +728,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Pain and heightened sensitivity to light touch confined to one dermatome, with a soft abdomen and normal tests, point to a nerve root cause such as herpes zoster before the rash appears. Costovertebral angle tenderness suggests a renal cause. Guarding suggests peritoneal irritation. A psoas sign points to retroperitoneal inflammation such as appendicitis or a psoas abscess. A tender flank mass suggests a renal or retroperitoneal process.",
         keyFeature: { topic: "abdominal-pain", n: 3 },
-        source: "tintinalli",
+        source: "nejm-zoster",
       },
       {
         id: "q2",
@@ -749,7 +755,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         source: "rosen",
       },
     ],
-    sources: [S.tintinalli, S.rosen],
+    sources: [S.cohenZoster, S.rosen],
     ...META,
   },
   {
@@ -870,9 +876,9 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["Dysuria points to a urinary source", "Leukocytes make appendicitis unlikely", "Negative nitrites exclude cystitis", "Pyuria confirms a urinary infection", "Pyuria is common in appendicitis"],
         correct: 4,
         explanation:
-          "An inflamed appendix lying near the bladder or ureter often causes pyuria and mild urinary discomfort, so these findings do not lower the likelihood of appendicitis when pain has migrated to the right lower quadrant. Pyuria alone does not confirm a urinary infection. Mild dysuria is also seen with pelvic appendicitis. Negative nitrites do not exclude infection. None of these findings should delay assessment for appendicitis.",
+          "About a quarter of children with appendicitis have an abnormal urinalysis, often because the inflamed appendix lies near the bladder or ureter. Pyuria and mild urinary discomfort therefore do not lower the likelihood of appendicitis when pain has migrated to the right lower quadrant. Pyuria alone does not confirm a urinary infection. Mild dysuria is also seen with pelvic appendicitis. Negative nitrites do not exclude infection. None of these findings should delay assessment for appendicitis.",
         keyFeature: { topic: "abdominal-pain", n: 8 },
-        source: "tintinalli",
+        source: "scott-ua-appendicitis",
       },
       {
         id: "q2",
@@ -909,7 +915,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         source: "samuel-pas",
       },
     ],
-    sources: [S.tintinalli, S.samuel, S.cwcCaps],
+    sources: [S.scottUa, S.samuel, S.cwcCaps],
     ...META,
   },
   {
@@ -1330,7 +1336,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Severe intermittent pain after meals, recurrent episodes and major weight loss after a Roux-en-Y bypass suggest an internal hernia, which can strangulate bowel and is easily missed because the abdomen stays soft. Dumping causes cramps, diarrhea and flushing soon after eating, not pain that makes her writhe for hours. A marginal ulcer causes burning epigastric pain and is less immediately dangerous. Functional dyspepsia and irritable bowel syndrome are diagnoses of exclusion.",
         keyFeature: { topic: "abdominal-pain", n: 2 },
-        source: "tintinalli",
+        source: "rygb-ih-review",
       },
       {
         id: "q2",
@@ -1342,7 +1348,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Pain that makes her writhe while the abdomen stays soft is pain out of proportion, and recurrent episodes after a Roux-en-Y bypass fit intermittent internal herniation. The absence of distension or guarding is common early in closed loop obstruction and is not reassuring. A normal lactate does not exclude ischemia. Young age does not protect against internal hernia.",
         keyFeature: { topic: "abdominal-pain", n: 2 },
-        source: "tintinalli",
+        source: "rygb-ih-review",
       },
       {
         id: "q3",
@@ -1353,7 +1359,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Contrast CT is the preferred test for suspected internal hernia after gastric bypass and may show a mesenteric swirl or clustered small bowel loops. Ultrasound and plain films are limited by gas and cannot show the mesentery well. MRI is slower and less available. An upper GI study follows contrast through the Roux limb only, so it cannot opacify the excluded biliopancreatic limb or show the mesentery, and it misses many internal hernias.",
         keyFeature: { topic: "abdominal-pain", n: 5 },
-        source: "tintinalli",
+        source: "rygb-ih-ct",
       },
       {
         id: "q4",
@@ -1363,12 +1369,12 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["Discharge with a proton pump inhibitor", "Gastric emptying study", "Repeat CT in 24 hours", "Upper endoscopy as outpatient", "Urgent surgical assessment"],
         correct: 4,
         explanation:
-          "CT can miss an intermittent internal hernia, and persistent severe pain after bypass surgery warrants urgent surgical assessment, often with diagnostic laparoscopy, rather than reliance on a normal scan. Discharge on a proton pump inhibitor treats a marginal ulcer that has not been shown. A repeat CT tomorrow delays care while bowel may strangulate. A gastric emptying study and outpatient endoscopy do not address the danger.",
+          "CT can miss an intermittent internal hernia. In one series of patients who went on to diagnostic laparoscopy after bypass, CT had been falsely negative in 44 to 50%. Persistent severe pain after bypass surgery warrants urgent surgical assessment, often with diagnostic laparoscopy, rather than reliance on a normal scan. Discharge on a proton pump inhibitor treats a marginal ulcer that has not been shown. A repeat CT tomorrow delays care while bowel may strangulate. A gastric emptying study and outpatient endoscopy do not address the danger.",
         keyFeature: { topic: "abdominal-pain", n: 6 },
-        source: "tintinalli",
+        source: "rygb-ih-laparoscopy",
       },
     ],
-    sources: [S.tintinalli],
+    sources: [S.woodIh, S.dilauro, S.altinoz],
     ...META,
   },
   {

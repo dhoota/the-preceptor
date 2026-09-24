@@ -21,7 +21,15 @@ const S = {
   "cbs": {"id": "cbs", "citation": "Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical Guide to Transfusion. Canadian Blood Services. 2021.", "url": "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion"},
   "halt-it": {"id": "halt-it", "citation": "HALT-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial. Lancet. 2020."},
   "rosen": {"id": "rosen", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023."},
-  "tintinalli": {"id": "tintinalli", "citation": "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020."},
+  "araki": {"id": "araki-vkdb", "citation": "Araki S, Shirahata A. Vitamin K deficiency bleeding in infancy. Nutrients. 2020.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7146284/"},
+  "piccirillo": {"id": "piccirillo-peds-gib", "citation": "Piccirillo M, Pucinischi V, Mennini M, et al. Gastrointestinal bleeding in children: diagnostic approach. Ital J Pediatr. 2024.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10807079/"},
+  "spencer": {"id": "spencer-ptb", "citation": "Spencer GM, Wilson CA, Davidson J, et al. International practice variation in post-tonsillectomy hemorrhage: a survey study of pediatric otolaryngologists. World J Otorhinolaryngol Head Neck Surg. 2025.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13398467/"},
+  "secilmis": {"id": "intussusception-neuro", "citation": "Secilmis Y, Gumustekin Bilgin S, Dogan AB. Neurologic presentations of pediatric intussusception lead to diagnostic delay and increased need for surgery. Am Surg. 2026.", "url": "https://pubmed.ncbi.nlm.nih.gov/42092742/"},
+  "trekk-ge": {"id": "trekk-gastroenteritis", "citation": "TREKK. Bottom line recommendations: gastroenteritis. Version 5.0. 2025.", "url": "https://trekk.ca/resources/bottom-line-recommendations-gastroenteritis"},
+  "apsa-intuss": {"id": "apsa-intussusception", "citation": "Kelley-Quon LI, Arthur LG, Williams RF, et al. Management of intussusception in children: a systematic review. American Pediatric Surgical Association Outcomes and Evidence-Based Practice Committee. J Pediatr Surg. 2021.", "url": "https://pubmed.ncbi.nlm.nih.gov/33158508/"},
+  "romano": {"id": "sigenp-peds-gib", "citation": "Romano C, Oliva S, Martellossi S, et al. Pediatric gastrointestinal bleeding: perspectives from the Italian Society of Pediatric Gastroenterology. World J Gastroenterol. 2017.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5330817/"},
+  "fpiap": {"id": "sigenp-fpiap", "citation": "Coppola S, Carucci L, Anania C, et al. Diagnosis and management of food protein-induced allergic proctocolitis in the pediatric age: a position paper from the Italian Society for Pediatric Gastroenterology, Hepatology, and Nutrition and the Italian Society for Pediatric Allergy and Immunology. Pediatr Allergy Immunol. 2025.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12706178/"},
+  "applegate": {"id": "applegate", "citation": "Applegate KE. Evidence-based diagnosis of malrotation and volvulus. Pediatr Radiol. 2009.", "url": "https://pubmed.ncbi.nlm.nih.gov/19308378/"},
   "cps-vitk": {"id": "cps-vitk", "citation": "Ng E, Loewy AD. Guidelines for vitamin K prophylaxis in newborns. Canadian Paediatric Society and College of Family Physicians of Canada position statement. Paediatr Child Health. 2018.", "url": "https://cps.ca/en/documents/position/vitamin-k-prophylaxis-in-newborns"},
   "freedman": {"id": "freedman", "citation": "Freedman SB, Xie J, Neufeld MS, et al. Shiga toxin-producing Escherichia coli infection, antibiotics, and risk of developing hemolytic uremic syndrome: a meta-analysis. Clin Infect Dis. 2016."},
   "wfh": {"id": "wfh", "citation": "Srivastava A, Santagostino E, Dougall A, et al. WFH guidelines for the management of hemophilia, 3rd edition. Haemophilia. 2020."},
@@ -188,7 +196,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "tintinalli"
+        "source": "araki-vkdb"
       },
       {
         "id": "q3",
@@ -213,7 +221,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "tintinalli"
+        "source": "araki-vkdb"
       },
       {
         "id": "q4",
@@ -236,7 +244,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
         "source": "cps-vitk"
       }
     ],
-    "sources": [S["cps-vitk"], S["tintinalli"]],
+    "sources": [S["cps-vitk"], S["araki"]],
     ...META,
   },
   {
@@ -269,7 +277,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "tintinalli"
+        "source": "piccirillo-peds-gib"
       },
       {
         "id": "q2",
@@ -289,7 +297,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "tintinalli"
+        "source": "piccirillo-peds-gib"
       },
       {
         "id": "q3",
@@ -309,10 +317,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "tintinalli"
+        "source": "piccirillo-peds-gib"
       }
     ],
-    "sources": [S["tintinalli"]],
+    "sources": [S["piccirillo"]],
     ...META,
   },
   {
@@ -346,7 +354,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "tintinalli"
+        "source": "spencer-ptb"
       },
       {
         "id": "q2",
@@ -365,7 +373,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 5
         },
-        "source": "tintinalli"
+        "source": "piccirillo-peds-gib"
       },
       {
         "id": "q3",
@@ -404,10 +412,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "tintinalli"
+        "source": "spencer-ptb"
       }
     ],
-    "sources": [S["cbs"], S["tintinalli"]],
+    "sources": [S["cbs"], S["piccirillo"], S["spencer"]],
     ...META,
   },
   {
@@ -593,7 +601,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 3
         },
-        "source": "tintinalli"
+        "source": "intussusception-neuro"
       },
       {
         "id": "q2",
@@ -613,7 +621,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "tintinalli"
+        "source": "piccirillo-peds-gib"
       },
       {
         "id": "q3",
@@ -632,7 +640,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 5
         },
-        "source": "tintinalli"
+        "source": "trekk-gastroenteritis"
       },
       {
         "id": "q4",
@@ -652,10 +660,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "tintinalli"
+        "source": "apsa-intussusception"
       }
     ],
-    "sources": [S["tintinalli"]],
+    "sources": [S["secilmis"], S["piccirillo"], S["trekk-ge"], S["apsa-intuss"]],
     ...META,
   },
   {
@@ -1505,7 +1513,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "tintinalli"
+        "source": "piccirillo-peds-gib"
       },
       {
         "id": "q2",
@@ -1543,7 +1551,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "tintinalli"
+        "source": "sigenp-peds-gib"
       },
       {
         "id": "q4",
@@ -1563,10 +1571,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "tintinalli"
+        "source": "sigenp-peds-gib"
       }
     ],
-    "sources": [S["cbs-peds"], S["tintinalli"]],
+    "sources": [S["piccirillo"], S["cbs-peds"], S["romano"]],
     ...META,
   },
   {
@@ -2347,7 +2355,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "tintinalli"
+        "source": "sigenp-fpiap"
       },
       {
         "id": "q2",
@@ -2361,12 +2369,12 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "Upper endoscopy and colonoscopy"
         ],
         "correct": 1,
-        "explanation": "Removing dairy from the mother's diet while breastfeeding continues usually clears the bleeding within days to weeks. Stopping breastfeeding is unnecessary, and a standard cow's milk formula contains the protein that causes the problem. Antibiotics do not treat an allergic process. Endoscopy is not needed in a well infant with a typical picture.",
+        "explanation": "A 2 to 4 week trial of removing cow's milk protein from the mother's diet, while breastfeeding continues, usually clears the visible blood within days. Stopping breastfeeding is unnecessary, and a standard cow's milk formula contains the protein that causes the problem. Antibiotics do not treat an allergic process. Endoscopy is not needed in a well infant with a typical picture.",
         "keyFeature": {
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "tintinalli"
+        "source": "sigenp-fpiap"
       },
       {
         "id": "q3",
@@ -2385,10 +2393,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "tintinalli"
+        "source": "applegate"
       }
     ],
-    "sources": [S["tintinalli"]],
+    "sources": [S["fpiap"], S["applegate"]],
     ...META,
   },
   {

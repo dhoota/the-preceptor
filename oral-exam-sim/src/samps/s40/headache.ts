@@ -14,7 +14,16 @@ const S = {
   friedmanIih: { id: "iih-criteria", citation: "Friedman DI, Liu GT, Digre KB. Revised diagnostic criteria for the pseudotumor cerebri syndrome in adults and children. Neurology. 2013." },
   robbins: { id: "ahs-cluster", citation: "Robbins MS, Starling AJ, Pringsheim TM, Becker WJ, Schwedt TJ. Treatment of cluster headache: the American Headache Society evidence-based guidelines. Headache. 2016." },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on headache, stroke, ophthalmology and drugs of abuse." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on headache, head and neck infections, and paediatric neurological and renal emergencies." },
+  jonzzon: { id: "shunt-nof", citation: "Jonzzon S, Price A, Truong N, et al. Neuro-ophthalmological findings in pediatric ventricular shunt failure: a systematic review. J Neurosurg Pediatr. 2025.", url: "https://pubmed.ncbi.nlm.nih.gov/40215619/" },
+  hanak: { id: "shunt-complications", citation: "Hanak BW, Bonow RH, Harris CA, Browd SR. Cerebrospinal fluid shunting complications in children. Pediatr Neurosurg. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5915307/" },
+  ferras: { id: "vp-shunt-ed", citation: "Ferras M, McCauley N, Stead T, Ganti L, Desai B. Ventriculoperitoneal shunts in the emergency department: a review. Cureus. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7053664/" },
+  smiljkovic: { id: "sinusitis-intracranial", citation: "Smiljkovic M, Tat J, Richardson SE, et al. A 20-year study of intracranial pyogenic complications of sinusitis in children. Pediatr Infect Dis J. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/37851970/" },
+  ahaCvt: { id: "aha-cvt", citation: "Saposnik G, Bushnell C, Coutinho JM, et al. Diagnosis and management of cerebral venous thrombosis: a scientific statement from the American Heart Association. Stroke. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/38284265/" },
+  weerasinghe: { id: "septic-cst", citation: "Weerasinghe D, Lueck CJ. Septic cavernous sinus thrombosis: case report and review of the literature. Neuroophthalmology. 2016.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5120738/" },
+  wilneGuide: { id: "headsmart-guideline", citation: "Wilne S, Koller K, Collier J, et al. The diagnosis of brain tumours in children: a guideline to assist healthcare professionals in the assessment of children who may have a brain tumour. Arch Dis Child. 2010.", url: "https://pubmed.ncbi.nlm.nih.gov/20371594/" },
+  wilneMeta: { id: "cns-tumour-presentation", citation: "Wilne S, Collier J, Kennedy C, et al. Presentation of childhood CNS tumours: a systematic review and meta-analysis. Lancet Oncol. 2007.", url: "https://pubmed.ncbi.nlm.nih.gov/17644483/" },
+  kdigo: { id: "kdigo-gn", citation: "Kidney Disease: Improving Global Outcomes (KDIGO) Glomerular Diseases Work Group. KDIGO 2021 clinical practice guideline for the management of glomerular diseases. Kidney Int. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/34556256/" },
+  ong: { id: "apsgn-review", citation: "Ong LT. Management and outcomes of acute post-streptococcal glomerulonephritis in children. World J Nephrol. 2022.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9521512/" },
   uppal: { id: "pdph-consensus", citation: "Uppal V, Russell R, Sondekoppam R, et al. Consensus practice guidelines on postdural puncture headache from a multisociety, international working group: a summary report. JAMA Netw Open. 2023." },
   nath: { id: "lp-needles", citation: "Nath S, Koziarz A, Badhiwala JH, et al. Atraumatic versus conventional lumbar puncture needles: a systematic review and meta-analysis. Lancet. 2018." },
   rajasekaran: { id: "uk-apoplexy", citation: "Rajasekaran S, Vanderpump M, Baldeweg S, et al. UK guidelines for the management of pituitary apoplexy. Clin Endocrinol (Oxf). 2011." },
@@ -667,7 +676,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Limited upward gaze, part of the setting-sun sign, results from pressure on the dorsal midbrain by dilated ventricles and is a specific sign of raised pressure in shunt failure. His pulse of 64/minute with BP 128/70 mmHg is also worrying, since slowing of the pulse with rising BP is part of the Cushing response. Vomiting is common in gastroenteritis and is nonspecific. Absence of fever, an intact shunt tract and equal pupils do not exclude obstruction.",
         keyFeature: { topic: "headache", n: 3 },
-        source: "tintinalli",
+        source: "shunt-nof",
       },
       {
         id: "q2",
@@ -684,7 +693,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Headache, repeated vomiting, drowsiness, impaired upgaze and a Cushing pattern in a child with a shunt indicate shunt malfunction until proven otherwise, most often from proximal obstruction. Shunt infection usually occurs within months of surgery and typically causes fever, which he does not have. Gastroenteritis, cyclic vomiting and abdominal migraine do not cause drowsiness with impaired upgaze.",
         keyFeature: { topic: "headache", n: 2 },
-        source: "tintinalli",
+        source: "shunt-complications",
       },
       {
         id: "q3",
@@ -706,7 +715,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "His drowsiness, vomiting and impaired upgaze point to shunt failure, which needs brain imaging, by CT or a rapid-sequence MRI, to compare ventricle size with earlier studies, plus shunt series radiographs to look for disconnection or fracture of the tubing, and urgent neurosurgical consultation. A lumbar puncture is dangerous with obstructive hydrocephalus. He has no fever to justify empiric antibiotics, and dexamethasone does not treat shunt obstruction. Discharge or an oral fluid trial would miss a life-threatening problem.",
         keyFeature: { topic: "headache", n: 6 },
-        source: "tintinalli",
+        source: "vp-shunt-ed",
       },
       {
         id: "q4",
@@ -723,10 +732,10 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Children with shunts often present in a similar way each time the shunt fails, so a parent's account of earlier malfunctions is one of the most useful clues to the current problem. Sick contacts matter for gastroenteritis, but he has none, and a viral illness does not explain drowsiness with impaired upgaze. Details of his premature birth, a family history of migraine and immunization timing do not change the urgency of assessing the shunt.",
         keyFeature: { topic: "headache", n: 1 },
-        source: "tintinalli",
+        source: "vp-shunt-ed",
       },
     ],
-    sources: [S.tintinalli],
+    sources: [S.jonzzon, S.hanak, S.ferras],
     ...META,
   },
   {
@@ -1000,7 +1009,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "A tender fluctuant forehead swelling with fever and headache after frontal sinusitis in an adolescent is a Pott puffy tumour, a subperiosteal abscess from frontal bone osteomyelitis. Eyelid swelling and painful or limited eye movements are absent, which argues against preseptal and orbital cellulitis. Uncomplicated sinusitis does not produce a fluctuant forehead mass. An infected epidermoid cyst would not follow sinus symptoms with fever and vomiting.",
         keyFeature: { topic: "headache", n: 4 },
-        source: "tintinalli",
+        source: "sinusitis-intracranial",
       },
       {
         id: "q2",
@@ -1040,7 +1049,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Frontal osteomyelitis with subperiosteal and epidural abscesses needs admission and IV antibiotics that cover streptococci, Staphylococcus aureus and anaerobes with good CNS penetration, plus surgical drainage. Otolaryngology drains the sinus and subperiosteal collection and neurosurgery assesses the epidural collection. Bedside incision does not address the sinus or intracranial disease. Oral amoxicillin has already failed. Lumbar puncture does not help with an intracranial collection and carries risk.",
         keyFeature: { topic: "headache", n: 6 },
-        source: "tintinalli",
+        source: "sinusitis-intracranial",
       },
       {
         id: "q4",
@@ -1060,7 +1069,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         source: "cfp-abrs",
       },
     ],
-    sources: [S.tintinalli, S.kaplan],
+    sources: [S.smiljkovic, S.kaplan],
     ...META,
   },
   {
@@ -2072,9 +2081,9 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "His proptosis, ophthalmoplegia and spread to the other eye need contrast-enhanced CT of the head and orbits, or MRI with venography, which shows filling defects and enlargement of the cavernous sinus and any orbital abscess. A non-contrast CT can miss the thrombosis. Ultrasound and facial radiographs cannot image the sinus, and neck angiography examines arteries rather than the intracranial veins.",
+          "His proptosis, ophthalmoplegia and spread to the other eye need contrast-enhanced CT of the head and orbits, with CT venography, or MRI with MR venography. These show filling defects and enlargement of the cavernous sinus and any orbital abscess. A non-contrast CT can miss the thrombosis. Ultrasound and facial radiographs cannot image the sinus, and neck angiography examines arteries rather than the intracranial veins.",
         keyFeature: { topic: "headache", n: 6 },
-        source: "tintinalli",
+        source: "aha-cvt",
       },
       {
         id: "q3",
@@ -2094,10 +2103,10 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Septic cavernous sinus thrombosis after a facial boil is usually caused by Staphylococcus aureus, including MRSA, so empiric therapy is IV vancomycin with a third-generation cephalosporin such as ceftriaxone, with metronidazole added for a dental or sinus source. Cefazolin lacks MRSA cover and CNS penetration, and oral cephalexin or clindamycin are inadequate for an intracranial infection. Acyclovir and amphotericin B do not treat a bacterial infection.",
         keyFeature: { topic: "headache", n: 6 },
-        source: "tintinalli",
+        source: "septic-cst",
       },
     ],
-    sources: [S.tintinalli, S.rosen],
+    sources: [S.rosen, S.ahaCvt, S.weerasinghe],
     ...META,
   },
   {
@@ -2140,7 +2149,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "In a child with nocturnal headache, morning vomiting and ataxia, fundoscopy for papilledema is essential to detect raised intracranial pressure, which adds urgency to imaging and neurosurgical input. Sinus, nasal and ear findings would suggest infection, and he has no fever. Cervical lymph nodes are not relevant to this presentation.",
         keyFeature: { topic: "headache", n: 3 },
-        source: "tintinalli",
+        source: "headsmart-guideline",
       },
       {
         id: "q3",
@@ -2156,9 +2165,9 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Gait ataxia with a head tilt and signs of raised pressure from blocked CSF flow point to the posterior fossa, where about half of childhood brain tumours arise, such as medulloblastoma, pilocytic astrocytoma and ependymoma. Frontal and temporal lobe lesions cause personality change, seizures or hemiparesis rather than ataxia. A pituitary lesion causes visual field loss and hormone changes, and a spinal cord lesion does not cause headache with morning vomiting.",
+          "Gait ataxia with a head tilt and signs of raised pressure from blocked CSF flow point to the posterior fossa. Vomiting, headache, abnormal gait and papilledema are the most frequent features of posterior fossa tumours in children, such as medulloblastoma, pilocytic astrocytoma and ependymoma. Frontal and temporal lobe lesions cause personality change, seizures or hemiparesis rather than ataxia. A pituitary lesion causes visual field loss and hormone changes, and a spinal cord lesion does not cause headache with morning vomiting.",
         keyFeature: { topic: "headache", n: 3 },
-        source: "tintinalli",
+        source: "cns-tumour-presentation",
       },
       {
         id: "q4",
@@ -2178,7 +2187,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         source: "aan-child-imaging",
       },
     ],
-    sources: [S.lewis, S.tintinalli],
+    sources: [S.lewis, S.wilneGuide, S.wilneMeta],
     ...META,
   },
   {
@@ -2204,7 +2213,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Cola-coloured urine, edema and hypertension about 2 weeks after an untreated sore throat point to post-streptococcal glomerulonephritis, and the latent period after pharyngitis is the most specific clue to the cause. The headache results from the hypertension. Edema and dark urine show a nephritic syndrome but not its cause. Absence of fever is nonspecific.",
         keyFeature: { topic: "headache", n: 1 },
-        source: "tintinalli",
+        source: "kdigo-gn",
       },
       {
         id: "q2",
@@ -2219,9 +2228,9 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A low C3 that returns to normal within about 8 weeks supports post-streptococcal glomerulonephritis, along with evidence of recent streptococcal infection such as raised antistreptolysin O titres. A throat culture is often negative 2 weeks after pharyngitis. Renal ultrasound, antinuclear antibody and urine protein electrophoresis do not confirm the diagnosis.",
+          "A low serum C3, found in about 90% of children with post-streptococcal glomerulonephritis because immune complexes activate the alternative complement pathway, supports the diagnosis. Evidence of recent streptococcal infection, such as raised antistreptolysin O titres, adds to it. A throat culture shows whether streptococci are in the throat now but does not show the complement consumption that marks this nephritis. Renal ultrasound, antinuclear antibody and urine protein electrophoresis do not confirm the diagnosis.",
         keyFeature: { topic: "headache", n: 2 },
-        source: "tintinalli",
+        source: "apsgn-review",
       },
       {
         id: "q3",
@@ -2243,7 +2252,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         source: "aap-bp",
       },
     ],
-    sources: [S.tintinalli, S.flynn],
+    sources: [S.kdigo, S.ong, S.flynn],
     ...META,
   },
   {
