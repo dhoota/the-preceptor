@@ -2463,6 +2463,174 @@
    "after": [
     "Normal saline or Ringer's lactate 500 mL bolus then reassess"
    ]
+  },
+  "sob-01#q2": {
+   "batch": "s17",
+   "before": [
+    "Awake flexible bronchoscopic intubation with topical anesthesia, with a surgical airway set up and the neck marked"
+   ],
+   "after": [
+    "Awake flexible bronchoscopic intubation with double setup"
+   ]
+  },
+  "sob-02#q2": {
+   "batch": "s17",
+   "before": [
+    "Dexamethasone 0.6 mg/kg PO",
+    "Nebulized epinephrine 1 mg/mL, 0.5 mL/kg to a maximum of 5 mL"
+   ],
+   "after": [
+    "Dexamethasone 0.6 mg/kg PO",
+    "Nebulized epinephrine 1 mg/mL, 0.5 mL/kg, maximum 5 mL"
+   ]
+  },
+  "sob-04#q4": {
+   "batch": "s17",
+   "before": [
+    "Ketamine 1.5 mg/kg IV for induction",
+    "Respiratory rate 10 per minute, tidal volume 6 to 8 mL/kg ideal body weight, long expiratory time, accepting hypercapnia"
+   ],
+   "after": [
+    "Ketamine 1.5 mg/kg IV for induction",
+    "Rate 10/minute, tidal volume 6 to 8 mL/kg, long expiration"
+   ]
+  },
+  "sob-05#q3": {
+   "batch": "s17",
+   "before": [
+    "BiPAP starting near IPAP 10 cm H2O and EPAP 5 cm H2O, titrated to comfort and PaCO2"
+   ],
+   "after": [
+    "BiPAP starting near IPAP 10 and EPAP 5 cm H2O"
+   ]
+  },
+  "sob-09#q4": {
+   "batch": "s17",
+   "before": [
+    "Match or exceed her pre intubation minute ventilation, continue bicarbonate and check a gas within minutes"
+   ],
+   "after": [
+    "Match or exceed her pre intubation minute ventilation"
+   ]
+  },
+  "sob-10#q2": {
+   "batch": "s17",
+   "before": [
+    "D-dimer"
+   ],
+   "after": [
+    "D-dimer level"
+   ]
+  },
+  "sob-15#q2": {
+   "batch": "s17",
+   "before": [
+    "Epinephrine 0.5 mg IM in the anterolateral thigh"
+   ],
+   "after": [
+    "Epinephrine 0.5 mg IM"
+   ]
+  },
+  "suicide-risk-01#q4": {
+   "batch": "s17",
+   "before": [
+    "Form 1 permits detention in a psychiatric facility for up to 72 hours for psychiatric assessment",
+    "Form 42 must be given promptly to the patient and tells him the reasons for detention and his right to a lawyer"
+   ],
+   "after": [
+    "Form 1 permits detention for assessment, up to 72 hours",
+    "Form 42 tells him the reasons and right to counsel"
+   ]
+  },
+  "suicide-risk-02#q2": {
+   "batch": "s17",
+   "before": [
+    "Asking directly about suicidal thoughts does not increase risk and is recommended"
+   ],
+   "after": [
+    "Asking directly about suicidal thoughts does not raise risk"
+   ]
+  },
+  "suicide-risk-05#q2": {
+   "batch": "s17",
+   "before": [
+    "Obtain consent from his substitute decision maker, or treat under the emergency provision if one cannot be reached promptly"
+   ],
+   "after": [
+    "Substitute decision maker consent or emergency provision"
+   ]
+  },
+  "suicide-risk-06#q2": {
+   "batch": "s17",
+   "before": [
+    "Develop a safety plan with her and her sister and discharge home with arranged follow up"
+   ],
+   "after": [
+    "Discharge home with a safety plan and arranged follow up"
+   ]
+  },
+  "suicide-risk-08#q2": {
+   "batch": "s17",
+   "before": [
+    "Prevent him leaving using the least restrictive means, and complete a Form 1 if he meets its criteria"
+   ],
+   "after": [
+    "Prevent him leaving by the least restrictive means"
+   ]
+  },
+  "suicide-risk-11#q1": {
+   "batch": "s17",
+   "before": [
+    "Police may bring him for examination by a physician without a Form 1, and must stay until the facility takes custody"
+   ],
+   "after": [
+    "Police need no Form 1 but must remain for handover"
+   ]
+  },
+  "suicide-risk-11#q4": {
+   "batch": "s17",
+   "before": [
+    "Medication may be given as a chemical restraint to prevent serious bodily harm, with monitoring and documentation"
+   ],
+   "after": [
+    "Chemical restraint is allowed to prevent serious bodily harm"
+   ]
+  },
+  "suicide-risk-12#q4": {
+   "batch": "s17",
+   "before": [
+    "The Form 1 still authorizes bringing her in, and the 72 hour period starts when she arrives at the psychiatric facility"
+   ],
+   "after": [
+    "The Form 1 is valid, with 72 hours from arrival"
+   ]
+  },
+  "suicide-risk-13#q4": {
+   "batch": "s17",
+   "before": [
+    "Exposure to a peer's suicide increases risk in other youth and warrants active outreach"
+   ],
+   "after": [
+    "Peer suicide exposure raises risk and warrants outreach"
+   ]
+  },
+  "suicide-risk-14#q2": {
+   "batch": "s17",
+   "before": [
+    "Brief validating intervention, review her crisis plan, contact her therapist and discharge with follow up"
+   ],
+   "after": [
+    "Brief validating intervention and discharge with follow up"
+   ]
+  },
+  "suicide-risk-15#q4": {
+   "batch": "s17",
+   "before": [
+    "Risk scales have poor predictive value and should not be used alone to decide disposition"
+   ],
+   "after": [
+    "Risk scales should not be used alone to decide disposition"
+   ]
   }
  }
 }

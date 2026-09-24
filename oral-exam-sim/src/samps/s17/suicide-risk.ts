@@ -9,17 +9,19 @@ const S = {
   mha: { id: "mha", citation: "Mental Health Act, R.S.O. 1990, c. M.7 (Ontario), and its regulation and prescribed forms." },
   hcca: { id: "hcca", citation: "Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A (Ontario)." },
   phipa: { id: "phipa", citation: "Personal Health Information Protection Act, 2004, S.O. 2004, c. 3, Sched. A (Ontario)." },
-  cpsi: { id: "cpsi", citation: "Canadian Patient Safety Institute and Ontario Hospital Association. Suicide Risk Assessment Guide. A Resource for Health Care Organizations." },
-  cpsYouth: { id: "cps-youth", citation: "Canadian Paediatric Society. Position statement. Suicidal ideation and behaviour.", url: "https://cps.ca/en/documents/position/suicidal-ideation-and-behaviour" },
-  canmat: { id: "canmat", citation: "Canadian Network for Mood and Anxiety Treatments (CANMAT). Clinical guidelines for the management of adults with major depressive disorder, including pharmacotherapy and special populations." },
+  bolton: { id: "bolton", citation: "Bolton JM, Gunnell D, Turecki G. Suicide risk assessment and intervention in people with mental illness. BMJ. 2015." },
+  cpsYouth: { id: "cps-youth", citation: "Korczak DJ, Canadian Paediatric Society Mental Health and Developmental Disabilities Committee. Suicidal ideation and behaviour. Paediatr Child Health. 2015. Updated 2019, reaffirmed 2024.", url: "https://cps.ca/en/documents/position/suicidal-ideation-and-behaviour" },
+  canmat: { id: "canmat", citation: "MacQueen GM, et al. Canadian Network for Mood and Anxiety Treatments (CANMAT) 2016 clinical guidelines for the management of adults with major depressive disorder. Section 6. Special populations: youth, women, and the elderly. Can J Psychiatry. 2016." },
+  canmat3: { id: "canmat-3", citation: "Kennedy SH, et al. Canadian Network for Mood and Anxiety Treatments (CANMAT) 2016 clinical guidelines for the management of adults with major depressive disorder. Section 3. Pharmacological treatments. Can J Psychiatry. 2016." },
+  canmatBd: { id: "canmat-bd", citation: "Yatham LN, et al. Canadian Network for Mood and Anxiety Treatments (CANMAT) and International Society for Bipolar Disorders (ISBD) 2018 guidelines for the management of patients with bipolar disorder. Bipolar Disord. 2018." },
   stanley: { id: "stanley", citation: "Stanley B, Brown GK. Safety planning intervention. A brief intervention to mitigate suicide risk. Cogn Behav Pract. 2012." },
-  ccsmh: { id: "ccsmh", citation: "Canadian Coalition for Seniors' Mental Health. National guidelines for seniors' mental health. The assessment of suicide risk and prevention of suicide." },
-  nice: { id: "nice", citation: "National Institute for Health and Care Excellence. Self-harm. Assessment, management and preventing recurrence. NICE guideline NG225." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on suicide, psychosis and mood disorders." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on opioids and acetaminophen poisoning." },
-  line988: { id: "988", citation: "9-8-8 Suicide Crisis Helpline. National suicide crisis line for Canada, available by call or text.", url: "https://988.ca" },
-  hope: { id: "hope", citation: "Indigenous Services Canada. Hope for Wellness Help Line for Indigenous peoples in Canada.", url: "https://www.hopeforwellness.ca/" },
-  fnmwc: { id: "fnmwc", citation: "Health Canada and Assembly of First Nations. First Nations Mental Wellness Continuum Framework." },
+  ccsmh: { id: "ccsmh", citation: "Canadian Coalition for Seniors' Mental Health. National guidelines for seniors' mental health. The assessment of suicide risk and prevention of suicide. 2006.", url: "https://ccsmh.ca/wp-content/uploads/2016/03/NatlGuideline_Suicide.pdf" },
+  nice: { id: "nice", citation: "National Institute for Health and Care Excellence. Self-harm. Assessment, management and preventing recurrence. NICE guideline NG225. 2022." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2022. Chapters on suicide, psychosis and mood disorders." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on opioids and acetaminophen poisoning." },
+  line988: { id: "988", citation: "Centre for Addiction and Mental Health, funded by the Government of Canada. 9-8-8 Suicide Crisis Helpline. National suicide crisis line for Canada, available by call or text. 2026.", url: "https://988.ca" },
+  hope: { id: "hope", citation: "Indigenous Services Canada. Hope for Wellness Help Line for Indigenous peoples in Canada. 2025.", url: "https://www.sac-isc.gc.ca/eng/1576089519527/1576089566478" },
+  fnmwc: { id: "fnmwc", citation: "Health Canada and Assembly of First Nations. First Nations Mental Wellness Continuum Framework. Summary report. 2014.", url: "https://www.sac-isc.gc.ca/eng/1576093687903" },
 } satisfies Record<string, Source>;
 
 export const SUICIDE_RISK_SAMPS: Samp[] = [
@@ -28,13 +30,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     topic: "suicide-risk",
     title: "Asking for something to help him sleep",
     stem:
-      "At 23:00 in an Ontario emergency department, a 54 year old man asks for a prescription for sleeping pills. He was laid off from his job at the mill 3 months ago and his wife moved out 2 months ago. He says he has not slept properly in weeks. He is calm and cooperative and his breath alcohol is zero. Vital signs are normal. When you ask directly, he tells you he has been thinking of shooting himself with his hunting rifle, which is at home.",
+      "At 23:00 in an Ontario emergency department, a 54-year-old man asks for a prescription for sleeping pills. He was laid off from his job at the mill 3 months ago and his wife moved out 2 months ago. He says he has not slept properly in weeks. He is calm and cooperative and his breath alcohol is zero. Vital signs are normal. When you ask directly, he tells you he has been thinking of shooting himself with his hunting rifle, which is at home.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR further risk factors you ask him about.",
+        prompt: "What further risk factors do you ask him about?",
         accept: [
           { id: "prior", text: "Previous suicide attempts or self-harm", match: ["previous attempt", "prior attempt", "past attempt", "self harm", "attempt"] },
           { id: "hopeless", text: "Hopelessness", match: ["hopelessness", "hopeless"] },
@@ -52,13 +54,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Male sex, middle age, job loss and separation already place him at raised risk. Previous attempts, hopelessness, depression, substance use, poor supports and impulsivity add most to that risk. Mnemonics like SAD PERSONS help recall these factors but should not be used as a score to decide disposition.",
         keyFeature: { topic: "suicide-risk", n: 1 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of his suicidal thinking that you must characterize.",
+        prompt: "What features of his suicidal thinking must you characterize?",
         accept: [
           { id: "plan", text: "How specific and detailed the plan is", match: ["plan", "detail", "specific"] },
           { id: "intent", text: "His intent to act and timeline", match: ["intent", "timeline", "when", "date"] },
@@ -72,14 +74,14 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Risk rises as ideation moves to a specific plan, intent, preparation and access to a lethal method. A firearm is the most lethal common method in Canada, especially among men in rural areas. Reasons for living and deterrents inform the protective side of the formulation.",
         keyFeature: { topic: "suicide-risk", n: 1 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q3",
         kind: "short",
         required: 3,
-        update: "He has chosen a date next week and has written a letter to his children. After talking with you he says he feels a bit better and wants to go home to sleep. He declines admission.",
-        prompt: "You decide to complete a Form 1 under the serious harm test. List THREE findings you must document to support it.",
+        update: "He has chosen a date next week and has written a letter to his children. After talking with you he says he feels a bit better and wants to go home to sleep. He declines admission. You decide to complete a Form 1 under the serious harm test.",
+        prompt: "What findings must you document to support it?",
         accept: [
           { id: "threat", text: "He has threatened to cause bodily harm to himself, with a plan and date", match: ["threat", "threatened", "plan", "date", "bodily harm to himself", "suicidal"] },
           { id: "disorder", text: "He is apparently suffering from a mental disorder such as major depression", match: ["mental disorder", "depression", "depressive", "mental illness"] },
@@ -97,24 +99,24 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q4",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO statements about Form 1 and Form 42 are correct? Select TWO.",
+        prompt: "Which of the following statements about Form 1 and Form 42 are correct?",
         options: [
-          "Form 1 permits detention in a psychiatric facility for up to 72 hours for psychiatric assessment",
-          "Form 42 must be given promptly to the patient and tells him the reasons for detention and his right to a lawyer",
-          "Form 1 authorizes treatment with an antidepressant without his consent",
+          "A justice of the peace must approve a Form 1",
+          "Form 1 authorizes antidepressant treatment without consent",
+          "Form 42 is given to the family, not the patient",
+          "Form 1 permits detention for assessment, up to 72 hours",
           "Form 1 permits detention for up to 2 weeks",
-          "Form 42 is given to the family rather than the patient",
+          "Form 42 tells him the reasons and right to counsel",
           "Only a psychiatrist may sign a Form 1",
-          "A justice of the peace must approve a Form 1 before it takes effect",
         ],
-        correct: [0, 1],
+        correct: [3, 5],
         explanation:
-          "Any physician who has personally examined the patient may sign a Form 1, which allows up to 72 hours of detention for assessment. The signing physician must promptly give the patient Form 42, which states the reasons for detention and the right to retain and instruct counsel without delay. Form 1 authorizes detention and assessment, not treatment. Treatment still needs capable consent or a substitute decision maker.",
+          "Any physician who has personally examined the patient may sign a Form 1, which allows up to 72 hours of detention in a psychiatric facility for psychiatric assessment. The signing physician must promptly give the patient Form 42, which states the reasons for detention and the right to retain and instruct counsel without delay. Form 1 authorizes detention and assessment, not treatment. Treatment still needs capable consent or a substitute decision maker.",
         keyFeature: { topic: "suicide-risk", n: 3 },
         source: "mha",
       },
     ],
-    sources: [S.cpsi, S.mha],
+    sources: [S.bolton, S.mha],
     ...META,
   },
   {
@@ -123,13 +125,14 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     alsoTopics: ["loc"],
     title: "Found on the kitchen floor",
     stem:
-      "An 82 year old man is brought by ambulance after a neighbour found him on his kitchen floor. He thinks he slipped yesterday evening. His wife died 8 months ago and he lives alone. He has heart failure and type 2 diabetes. He has lost 8 kg in 3 months. The paramedics report an empty fridge, a pile of unopened mail and full blister packs for the past 3 weeks. HR 104, BP 108/62, T 36.4 C. He is dry. Creatinine is 210 umol/L, up from 95 umol/L. CK is 2400 U/L. He says he is just tired.",
+      "An 82-year-old man is brought by ambulance after a neighbour found him on his kitchen floor. He thinks he slipped yesterday evening. His wife died 8 months ago and he lives alone. He has heart failure and type 2 diabetes. He has lost 8 kg in 3 months. The paramedics report an empty fridge, a pile of unopened mail and full blister packs for the past 3 weeks. He is dry. Creatinine is 210 umol/L, up from 95 umol/L. CK is 2 400 U/L. He says he is just tired.",
+    vitals: { temperature: "36.4°C", pulse: "104/minute", bp: "108/62 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of this presentation that should make you consider hidden suicidality.",
+        prompt: "What features of this presentation should make you consider hidden suicidality?",
         accept: [
           { id: "meds", text: "He has stopped taking his medications", match: ["medication", "blister pack", "stopped", "nonadherence", "non adherence", "not taking"] },
           { id: "intake", text: "Weight loss and poor food intake", match: ["weight loss", "not eating", "empty fridge", "food", "intake"] },
@@ -148,17 +151,18 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Your resident is reluctant to ask him about suicide in case it upsets him. Which statement is correct? Select one.",
+        update: "Your resident is reluctant to ask him about suicide in case it upsets him.",
+        prompt: "Which of the following statements about asking him about suicide is correct?",
         options: [
-          "Asking directly about suicidal thoughts does not increase risk and is recommended",
-          "Asking about suicide may plant the idea in an older adult",
-          "Suicide should only be asked about if the patient raises low mood first",
           "A validated risk score can replace direct questions",
-          "Questions about suicide are best left to the psychiatry consultant",
+          "Ask about suicide only if he raises low mood first",
+          "Asking about suicide may plant the idea in older adults",
+          "Asking directly about suicidal thoughts does not raise risk",
+          "Questions about suicide are best left to the psychiatry team",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
-          "Asking directly and plainly about suicidal thoughts does not increase suicidality and often brings relief. Older adults rarely volunteer suicidal thoughts. Scores cannot replace a direct conversation, and the emergency physician is often the only clinician who sees the patient in time.",
+          "Asking directly and plainly about suicidal thoughts does not increase suicidality and often brings relief, so it is recommended. Older adults rarely volunteer suicidal thoughts. Scores cannot replace a direct conversation, and the emergency physician is often the only clinician who sees the patient in time.",
         keyFeature: { topic: "suicide-risk", n: 2 },
         source: "ccsmh",
       },
@@ -167,7 +171,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "He tells you he stopped his pills so that it would be over sooner. He has also been saving his late wife's hydromorphone tablets.",
-        prompt: "List THREE risk factors for suicide in this man that are especially important in older adults.",
+        prompt: "What risk factors for suicide in this man are especially important in older adults?",
         accept: [
           { id: "male", text: "Older male sex", match: ["male", "man", "older", "age"] },
           { id: "widow", text: "Recent bereavement or widowhood", match: ["bereavement", "widow", "widower", "wife died", "grief", "loss"] },
@@ -187,7 +191,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE sources of collateral history you will seek.",
+        prompt: "What sources of collateral history will you seek?",
         accept: [
           { id: "family", text: "His children or other family", match: ["family", "children", "son", "daughter", "relative"] },
           { id: "fp", text: "His family physician", match: ["family physician", "family doctor", "gp", "primary care"] },
@@ -212,13 +216,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     alsoTopics: ["abuse-domestic"],
     title: "A car in the ditch six weeks after delivery",
     stem:
-      "A 29 year old woman is brought in by police after her car left a dry rural road in daylight and went into a ditch. She was alone and has only minor bruising. She delivered her second baby 6 weeks ago and the baby was at home with her partner. The partner arrives and tells you she has barely slept in weeks, cries most days and last night said the children would be better off without her. She says she just lost focus for a moment.",
+      "A 29-year-old woman is brought in by police after her car left a dry rural road in daylight and went into a ditch. She was alone and has only minor bruising. She delivered her second baby 6 weeks ago and the baby was at home with her partner. The partner arrives and tells you she has barely slept in weeks, cries most days and last night said the children would be better off without her. She says she just lost focus for a moment.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that make you concerned this crash was a suicide attempt.",
+        prompt: "What features make you concerned this crash was a suicide attempt?",
         accept: [
           { id: "pp", text: "Postpartum period", match: ["postpartum", "post partum", "after delivery", "perinatal"] },
           { id: "burden", text: "Statement that the children would be better off without her", match: ["better off", "burden", "without her"] },
@@ -236,7 +240,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that would suggest postpartum psychosis rather than postpartum depression.",
+        prompt: "What features would suggest postpartum psychosis rather than postpartum depression?",
         accept: [
           { id: "halluc", text: "Hallucinations", match: ["hallucination", "voices", "hearing"] },
           { id: "delusion", text: "Delusions, especially about the baby", match: ["delusion", "delusional", "paranoia", "paranoid"] },
@@ -255,7 +259,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO questions or actions to protect her children.",
+        prompt: "What questions or actions will protect her children?",
         accept: [
           { id: "harm", text: "Ask directly about thoughts of harming the baby or her other child", match: ["harm the baby", "harming the baby", "harm baby", "harm the children", "harm her children", "infanticide", "infanticidal", "harm child", "harming"] },
           { id: "care", text: "Confirm who is caring for the children now and that they are safe", match: ["caring for", "who is with", "caregiver", "childcare", "child care", "safe", "partner"] },
@@ -272,15 +276,15 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Psychiatry diagnoses severe postpartum depression without psychosis and recommends starting an antidepressant. She is breastfeeding.",
-        prompt: "Which statement is most accurate? Select one.",
+        prompt: "Which of the following statements about her antidepressant treatment is most accurate?",
         options: [
-          "Sertraline is a reasonable first choice while breastfeeding",
-          "She must stop breastfeeding before any antidepressant is started",
-          "All SSRIs are contraindicated while breastfeeding",
           "A benzodiazepine alone is the preferred first treatment",
-          "Antidepressants take effect within 48 hours in the postpartum period",
+          "All SSRIs are contraindicated while breastfeeding",
+          "Antidepressants take full effect within 48 hours postpartum",
+          "Breastfeeding must stop before starting an antidepressant",
+          "Sertraline is a reasonable first choice while breastfeeding",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "Sertraline has low transfer into breast milk and a long safety record, so it is commonly a first choice in breastfeeding women. Untreated maternal depression carries real risks for mother and infant. Response takes weeks, so safety planning and close follow up are still needed.",
         keyFeature: { topic: "suicide-risk", n: 5 },
@@ -296,13 +300,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Tablets after a group chat",
     stem:
-      "A 15 year old girl is brought in by her parents 2 hours after she told a friend she had swallowed a handful of ibuprofen. There are fresh superficial cuts on her left forearm. Messages in a class group chat had mocked her for several days. She weighs 50 kg. Vital signs are normal and she is alert. She says she took 12 tablets of 200 mg ibuprofen and nothing else.",
+      "A 15-year-old girl is brought in by her parents 2 hours after she told a friend she had swallowed a handful of ibuprofen. There are fresh superficial cuts on her left forearm. Messages in a class group chat had mocked her for several days. She weighs 50 kg. Vital signs are normal and she is alert. She says she took 12 tablets of 200 mg ibuprofen and nothing else.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations you order for this intentional ingestion.",
+        prompt: "What investigations do you order for this intentional ingestion?",
         accept: [
           { id: "apap", text: "Acetaminophen level", match: ["acetaminophen", "paracetamol", "apap", "tylenol"] },
           { id: "ecg", text: "ECG", match: ["ecg", "ekg", "electrocardiogram"] },
@@ -321,7 +325,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "List FOUR areas of her psychosocial history you explore with her alone.",
+        prompt: "What areas of her psychosocial history do you explore with her alone?",
         accept: [
           { id: "home", text: "Home life and family relationships", match: ["home", "family"] },
           { id: "school", text: "School, education and bullying", match: ["school", "education", "bullying", "cyberbullying"] },
@@ -341,7 +345,8 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "She asks you not to tell her parents anything she says. List TWO points you explain about confidentiality.",
+        update: "She asks you not to tell her parents anything she says.",
+        prompt: "What points do you explain about confidentiality?",
         accept: [
           { id: "kept", text: "Most of what she shares will stay confidential", match: ["confidential", "private", "stay between"] },
           { id: "limits", text: "Information about serious risk to her life or safety must be shared to keep her safe", match: ["serious risk", "risk to her", "safety", "harm", "limit"] },
@@ -358,7 +363,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Her acetaminophen level is undetectable. After assessment by you and the child and youth mental health team, her risk is judged low. She and her parents agree with a plan to go home.",
-        prompt: "List THREE instructions you give her parents about making the home safer.",
+        prompt: "What instructions do you give her parents about making the home safer?",
         accept: [
           { id: "meds", text: "Lock up or remove all medications, including over the counter drugs", match: ["medication", "medicine", "pill", "tablet", "lock up", "lockbox", "over the counter"] },
           { id: "firearms", text: "Remove any firearms from the home or store them locked off site", match: ["firearm", "gun", "rifle"] },
@@ -377,7 +382,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "List TWO follow up or crisis supports you arrange before she leaves.",
+        prompt: "What follow up or crisis supports do you arrange before she leaves?",
         accept: [
           { id: "fu", text: "Confirmed appointment with child and youth mental health within days", match: ["appointment", "follow up", "follow-up", "mental health", "counsellor", "therapist", "psychiatry"] },
           { id: "khp", text: "Kids Help Phone", match: ["kids help phone"] },
@@ -402,13 +407,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     alsoTopics: ["tox", "delirium-agitation"],
     title: "Refusing the antidote",
     stem:
-      "A 23 year old man is brought to an Ontario emergency department by paramedics after texting a friend that he had taken 40 tablets of 500 mg acetaminophen. The ingestion was 6 hours ago, after his partner ended their relationship. He weighs 70 kg. He is alert, sober and oriented. Vital signs are normal. His 6 hour acetaminophen level is well above the treatment line. He refuses acetylcysteine and says he wants to leave.",
+      "A 23-year-old man is brought to an Ontario emergency department by paramedics after texting a friend that he had taken 40 tablets of 500 mg acetaminophen. The ingestion was 6 hours ago, after his partner ended their relationship. He weighs 70 kg. He is alert, sober and oriented. Vital signs are normal. His 6 hour acetaminophen level is well above the treatment line. He refuses acetylcysteine and says he wants to leave.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "Under the Ontario Health Care Consent Act, list the TWO abilities a person must have to be capable of making this treatment decision.",
+        prompt: "Under the Ontario Health Care Consent Act, what abilities must a person have to be capable of making this treatment decision?",
         accept: [
           { id: "understand", text: "Able to understand the information relevant to the decision", match: ["understand", "comprehend"] },
           { id: "appreciate", text: "Able to appreciate the reasonably foreseeable consequences of a decision or lack of decision", match: ["appreciate", "consequence", "foreseeable"] },
@@ -423,15 +428,15 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "He can repeat back what you told him but insists he will not be harmed because the pills were only regular strength. After careful assessment, you find him incapable of consenting to acetylcysteine.",
-        prompt: "Which is the most appropriate way to proceed with treatment? Select one.",
+        prompt: "Which of the following is the most appropriate way to proceed with treatment?",
         options: [
-          "Treat under the Form 1, since it authorizes treatment",
-          "Obtain consent from his substitute decision maker, or treat under the emergency provision if one cannot be reached promptly",
-          "Respect his refusal and let him leave against medical advice",
-          "Wait for the psychiatry consultation in the morning before any treatment",
-          "Apply to the Consent and Capacity Board before starting treatment",
+          "Substitute decision maker consent or emergency provision",
+          "Treat after a Consent and Capacity Board hearing",
+          "Treat under the authority of the Form 1",
+          "Uphold his refusal and let him leave against advice",
+          "Wait for the morning psychiatry consultation before treating",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "An incapable patient's treatment needs consent from the highest ranking available substitute decision maker. When delay would risk serious bodily harm and no substitute decision maker can be reached promptly, the Health Care Consent Act permits emergency treatment without consent. A Form 1 authorizes detention for assessment, not treatment. Waiting risks liver failure.",
         keyFeature: { topic: "delirium-agitation", n: 5 },
@@ -442,7 +447,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "While you are calling his mother, he pulls out his IV and walks toward the exit.",
-        prompt: "List THREE actions you take now.",
+        prompt: "What actions do you take now?",
         accept: [
           { id: "form1", text: "Complete a Form 1 on the serious harm test", match: ["form 1", "form one"] },
           { id: "form42", text: "Give him a Form 42", match: ["form 42"] },
@@ -462,7 +467,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO things Form 42 tells him.",
+        prompt: "What does Form 42 tell him?",
         accept: [
           { id: "reasons", text: "The reasons he is being detained", match: ["reason", "why"] },
           { id: "counsel", text: "His right to retain and instruct a lawyer without delay", match: ["lawyer", "counsel", "legal"] },
@@ -482,13 +487,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     topic: "suicide-risk",
     title: "Wishing she could disappear",
     stem:
-      "A 34 year old woman comes in with her sister. Her partner of 6 years ended their relationship last week. Yesterday she told her sister she wished she could just disappear. She has no plan, no intent and no past attempts. She has never seen a psychiatrist. She drinks 2 glasses of wine a week. She works as a dental hygienist, has a dog she adores and is booked on a trip with her sister next month. She is sober, calm, tearful at times and engaged. There are no psychotic features.",
+      "A 34-year-old woman comes in with her sister. Her partner of 6 years ended their relationship last week. Yesterday she told her sister she wished she could just disappear. She has no plan, no intent and no past attempts. She has never seen a psychiatrist. She drinks 2 glasses of wine a week. She works as a dental hygienist, has a dog she adores and is booked on a trip with her sister next month. She is sober, calm, tearful at times and engaged. There are no psychotic features.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE protective factors in her history.",
+        prompt: "What protective factors are in her history?",
         accept: [
           { id: "sister", text: "A supportive sister", match: ["sister", "support", "family"] },
           { id: "future", text: "Future oriented plans such as the trip", match: ["future", "trip", "plans"] },
@@ -501,30 +506,30 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Protective factors include social connection, reasons for living, future plans, employment and help seeking. They do not cancel risk factors but shape the formulation and the discharge plan. The absence of a plan, intent or past attempts lowers her acute risk.",
         keyFeature: { topic: "suicide-risk", n: 1 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
-          "Develop a safety plan with her and her sister and discharge home with arranged follow up",
-          "Detain her involuntarily because she expressed a wish to disappear",
           "Admit her to psychiatry as a voluntary patient",
-          "Keep her until a psychiatrist sees her tomorrow, whatever her wishes",
-          "Discharge with a prescription for 30 lorazepam tablets for sleep",
+          "Await a psychiatrist in hospital tomorrow against her will",
+          "Detain her involuntarily under a Form 1",
+          "Discharge her with 30 lorazepam tablets for sleep",
+          "Discharge home with a safety plan and arranged follow up",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "Passive ideation without plan, intent or prior attempts, with strong supports and engagement, is low acute risk. A collaborative outpatient plan is appropriate and respects her autonomy. Admission offers little here, and she would not meet the legal test for involuntary detention. A large supply of a sedative adds a means of overdose.",
+          "Passive ideation without plan, intent or prior attempts, with strong supports and engagement, is low acute risk. Developing a safety plan with her and her sister and discharging her home with arranged follow up is appropriate and respects her autonomy. Admission offers little here, and she would not meet the legal test for involuntary detention. A large supply of a sedative adds a means of overdose.",
         keyFeature: { topic: "suicide-risk", n: 4 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q3",
         kind: "short",
         required: 4,
-        prompt: "List FOUR components of the written safety plan you build with her.",
+        prompt: "What components of the written safety plan do you build with her?",
         accept: [
           { id: "warning", text: "Personal warning signs and triggers", match: ["warning sign", "trigger"] },
           { id: "coping", text: "Internal coping strategies she can use alone", match: ["coping", "distraction", "self soothe", "activity", "exercise"] },
@@ -543,7 +548,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE things you confirm before she leaves.",
+        prompt: "What do you confirm before she leaves?",
         accept: [
           { id: "fu", text: "A follow up appointment with a date, time and clinician", match: ["appointment", "follow up", "follow-up", "date", "time"] },
           { id: "agree", text: "She agrees with and understands the plan", match: ["agree", "agreement", "understand", "collaborative"] },
@@ -556,10 +561,10 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "A discharge is safe when the plan is shared, specific and agreed. Concrete follow up with a named clinician and time is better than advice to see someone. A support person and crisis numbers cover the period until then.",
         keyFeature: { topic: "suicide-risk", n: 4 },
-        source: "cpsi",
+        source: "bolton",
       },
     ],
-    sources: [S.cpsi, S.stanley],
+    sources: [S.bolton, S.stanley],
     ...META,
   },
   {
@@ -567,13 +572,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     topic: "suicide-risk",
     title: "Three weeks until the family doctor is back",
     stem:
-      "A 41 year old man has had low mood, poor sleep, low energy and loss of interest for 3 months. He has had occasional passive thoughts that he would not mind not waking up, with no plan, intent or past attempts. He has a supportive wife and 2 children. His family physician is away for 3 weeks and the mental health intake is in 2 weeks. After assessment you judge his acute risk as low. You and he agree to start an antidepressant today.",
+      "A 41-year-old man has had low mood, poor sleep, low energy and loss of interest for 3 months. He has had occasional passive thoughts that he would not mind not waking up, with no plan, intent or past attempts. He has a supportive wife and 2 children. His family physician is away for 3 weeks and the mental health intake is in 2 weeks. After assessment you judge his acute risk as low. You and he agree to start an antidepressant today.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE things you check before prescribing an SSRI.",
+        prompt: "What do you check before prescribing an SSRI?",
         accept: [
           { id: "bipolar", text: "Personal or family history of mania or bipolar disorder", match: ["bipolar", "mania", "manic", "hypomania"] },
           { id: "interact", text: "Interacting drugs, such as other serotonergic agents or MAO inhibitors", match: ["interaction", "serotonergic", "maoi", "tramadol", "triptan", "other medication", "drug interaction"] },
@@ -587,30 +592,30 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "An antidepressant alone can trigger mania in unrecognized bipolar disorder, so ask about prior highs and family history. Serotonergic combinations can cause serotonin syndrome. SSRIs increase bleeding risk with anticoagulants and NSAIDs.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "canmat",
+        source: "canmat-3",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is an appropriate starting regimen? Select one.",
+        prompt: "Which of the following is an appropriate starting regimen for him?",
         options: [
-          "Sertraline 50 mg PO once daily",
-          "Sertraline 200 mg PO once daily",
           "Amitriptyline 150 mg PO at bedtime",
           "Escitalopram 40 mg PO once daily",
           "Fluoxetine 80 mg PO once daily",
+          "Sertraline 200 mg PO once daily",
+          "Sertraline 50 mg PO once daily",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "Sertraline 50 mg daily is a standard starting dose, sometimes begun at 25 mg to limit early side effects. The other SSRI doses are above usual starting or maximum doses. Tricyclics are dangerous in overdose and are a poor first choice in a patient with suicidal thoughts.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "canmat",
+        source: "canmat-3",
       },
       {
         id: "q3",
         kind: "short",
         required: 4,
-        prompt: "List FOUR counselling points about the medication.",
+        prompt: "What counselling points do you give about the medication?",
         accept: [
           { id: "onset", text: "Benefit takes 2 to 4 weeks to start and 6 to 8 weeks for full effect", match: ["week", "delay", "takes time", "onset", "not immediate"] },
           { id: "gi", text: "Early nausea or stomach upset, usually short lived", match: ["nausea", "gi", "stomach", "diarrhea", "diarrhoea"] },
@@ -625,13 +630,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Patients who expect a delayed benefit and early side effects are more likely to persist. Health Canada has warned about behavioural activation and emerging suicidal thoughts early in treatment, particularly in young people, so patients should know to return. Stopping suddenly causes discontinuation symptoms.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "canmat",
+        source: "canmat-3",
       },
       {
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO prescribing steps that reduce the risk of the medication being used in an overdose.",
+        prompt: "What prescribing steps reduce the risk of the medication being used in an overdose?",
         accept: [
           { id: "qty", text: "Dispense a limited supply, such as 2 weeks, with no early refills", match: ["limited supply", "small supply", "limited quantity", "small quantity", "2 week", "two week", "1 week", "one week", "limit", "no refill"] },
           { id: "safe", text: "Choose an agent that is relatively safe in overdose rather than a tricyclic", match: ["safe in overdose", "avoid tca", "avoid tricyclic", "no tca", "no tricyclic", "ssri"] },
@@ -642,10 +647,10 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Limiting the quantity at hand reduces the lethality of an impulsive overdose. SSRIs have a wide safety margin compared with tricyclics. Adding sedatives increases overdose lethality, especially with alcohol.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "canmat",
+        source: "canmat-3",
       },
     ],
-    sources: [S.canmat],
+    sources: [S.canmat3],
     ...META,
   },
   {
@@ -653,13 +658,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     topic: "suicide-risk",
     title: "Said at closing time",
     stem:
-      "Police bring a 38 year old man to an Ontario emergency department at 01:30 after he told a bartender he was going to kill himself. He is loud, slurring and unsteady. His serum ethanol is 62 mmol/L. Vital signs are normal and there are no signs of injury. He says he was joking and demands to leave.",
+      "Police bring a 38-year-old man to an Ontario emergency department at 01:30 after he told a bartender he was going to kill himself. He is loud, slurring and unsteady. His serum ethanol is 62 mmol/L. Vital signs are normal and there are no signs of injury. He says he was joking and demands to leave.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO reasons you cannot complete a reliable suicide risk assessment right now.",
+        prompt: "Why can you not complete a reliable suicide risk assessment right now?",
         accept: [
           { id: "unreliable", text: "Intoxication makes his statements and denials unreliable", match: ["unreliable", "reliability", "reliable", "intoxication", "intoxicated", "drunk"] },
           { id: "impulsive", text: "Acute intoxication increases impulsivity and short term risk", match: ["impulsivity", "impulsive", "disinhibition", "disinhibited"] },
@@ -676,17 +681,17 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "He staggers toward the exit, saying he will walk home along the highway.",
-        prompt: "Which is the most appropriate action? Select one.",
+        prompt: "Which of the following is the most appropriate action at this point?",
         options: [
-          "Let him leave because he said he was joking",
-          "Prevent him leaving using the least restrictive means, and complete a Form 1 if he meets its criteria",
-          "Ask police to arrest him for public intoxication",
-          "Give haloperidol 10 mg IM and apply four point restraints until sober",
-          "Have him sign a form stating he is leaving against medical advice",
+          "Accept his retraction and let him leave",
+          "Ask the police to arrest him for public intoxication",
+          "Haloperidol 10 mg IM and four point restraints",
+          "Have him sign an against medical advice form",
+          "Prevent him leaving by the least restrictive means",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "An intoxicated patient who has voiced suicidal intent and lacks capacity cannot safely leave. Staff have a common law duty to prevent imminent harm, and a Form 1 provides legal authority if the serious harm test is met. Use the least restrictive measures, such as verbal de-escalation and security presence. A signed AMA form has no value when capacity is absent.",
+          "An intoxicated patient who has voiced suicidal intent and lacks capacity cannot safely leave. Staff have a common law duty to prevent imminent harm, and a Form 1 provides legal authority if the serious harm test is met. Prevent him leaving using the least restrictive measures, such as verbal de-escalation and security presence, and complete a Form 1 if he meets its criteria. A signed AMA form has no value when capacity is absent.",
         keyFeature: { topic: "suicide-risk", n: 3 },
         source: "mha",
       },
@@ -695,7 +700,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Seven hours later his ethanol is 11 mmol/L. He is clinically sober and says he was drunk and did not mean it.",
-        prompt: "List THREE things you do before deciding whether he can go home.",
+        prompt: "What do you do before deciding whether he can go home?",
         accept: [
           { id: "reassess", text: "Repeat a full suicide risk assessment now that he is sober", match: ["reassess", "repeat assessment", "repeat risk", "full assessment", "risk assessment"] },
           { id: "collateral", text: "Get collateral from family, friends or the police", match: ["collateral", "family", "friend", "police", "partner"] },
@@ -708,14 +713,14 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Retraction after sobering is common and does not alone establish low risk. Collateral often reveals prior attempts, recent losses or access to firearms. Alcohol use disorder is a major chronic risk factor that should shape the plan.",
         keyFeature: { topic: "suicide-risk", n: 1 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q4",
         kind: "short",
         required: 3,
         update: "He discloses daily heavy drinking since his divorce. After reassessment his acute suicide risk is low and he wants help with his drinking.",
-        prompt: "List THREE items to include in his discharge plan.",
+        prompt: "What items do you include in his discharge plan?",
         accept: [
           { id: "raam", text: "Referral to a rapid access addiction medicine clinic or addiction services", match: ["raam", "addiction", "rapid access", "withdrawal management", "detox"] },
           { id: "meds", text: "Discuss anti-craving medication such as naltrexone or acamprosate", match: ["naltrexone", "acamprosate", "anticraving", "anti craving", "craving"] },
@@ -729,10 +734,10 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Alcohol use disorder raises long term suicide risk and is treatable. Rapid access addiction clinics and anti-craving medications work. His safety plan should name drinking as a warning sign, and he should know that abrupt cessation after heavy use can cause dangerous withdrawal.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "cpsi",
+        source: "bolton",
       },
     ],
-    sources: [S.rosen, S.mha, S.cpsi],
+    sources: [S.rosen, S.mha, S.bolton],
     ...META,
   },
   {
@@ -741,13 +746,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "A clear day on the highway",
     stem:
-      "In Ontario, a 46 year old man was the only occupant of a car that struck a bridge abutment at highway speed at noon on a dry, clear day. Police found no skid marks and he was not wearing a seatbelt. After the trauma survey he has a sternal fracture and chest wall bruising and is hemodynamically stable. His wife arrives. She says his business failed last month and he recently asked her about the terms of his life insurance.",
+      "In Ontario, a 46-year-old man was the only occupant of a car that struck a bridge abutment at highway speed at noon on a dry, clear day. Police found no skid marks and he was not wearing a seatbelt. After the trauma survey he has a sternal fracture and chest wall bruising and is hemodynamically stable. His wife arrives. She says his business failed last month and he recently asked her about the terms of his life insurance.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that suggest the crash may have been intentional.",
+        prompt: "What features suggest the crash may have been intentional?",
         accept: [
           { id: "svc", text: "Single vehicle crash into a fixed object", match: ["single vehicle", "fixed object", "abutment", "bridge"] },
           { id: "skid", text: "No skid marks or braking", match: ["skid", "braking", "brake"] },
@@ -766,7 +771,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE other ED presentations that may conceal a suicide attempt.",
+        prompt: "What other emergency department presentations may conceal a suicide attempt?",
         accept: [
           { id: "od", text: "Accidental overdose or medication error", match: ["overdose", "medication error", "ingestion"] },
           { id: "fall", text: "Fall from a height", match: ["fall", "jump", "height"] },
@@ -782,14 +787,14 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Self-harm is often hidden behind trauma, poisoning or metabolic presentations. Clinicians should ask directly when the mechanism does not fit the story. Older, postpartum and substance using patients are especially likely to present this way.",
         keyFeature: { topic: "suicide-risk", n: 2 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q3",
         kind: "short",
         required: 3,
         update: "He admits he meant to die and is disappointed he survived. He is admitted to the trauma service for 24 hours of cardiac monitoring.",
-        prompt: "List THREE precautions you order for his safety while he is in hospital.",
+        prompt: "What precautions do you order for his safety while he is in hospital?",
         accept: [
           { id: "obs", text: "Constant observation by a sitter", match: ["constant observation", "one to one", "1 to 1", "sitter", "close observation", "observation"] },
           { id: "search", text: "Search belongings and remove potential weapons", match: ["search", "belonging", "weapon"] },
@@ -803,13 +808,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Patients who have made a serious attempt remain at high risk on medical and surgical wards, which are not designed for suicide prevention. Constant observation, removing means and early psychiatric assessment reduce inpatient suicide. The plan must survive shift changes and transfers.",
         keyFeature: { topic: "suicide-risk", n: 3 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO reasons for particular concern about the period after he eventually leaves hospital.",
+        prompt: "What are the reasons for particular concern about the period after he eventually leaves hospital?",
         accept: [
           { id: "postdc", text: "Suicide risk is highest in the weeks after discharge", match: ["after discharge", "post discharge", "weeks after", "highest risk", "early period"] },
           { id: "prior", text: "A prior serious attempt is the strongest predictor of death by suicide", match: ["prior attempt", "previous attempt", "strongest predictor", "attempt"] },
@@ -824,7 +829,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         source: "nice",
       },
     ],
-    sources: [S.rosen, S.cpsi, S.nice],
+    sources: [S.rosen, S.bolton, S.nice],
     ...META,
   },
   {
@@ -833,14 +838,15 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "An extra dose by mistake",
     stem:
-      "A 61 year old woman with chronic low back pain is brought in after her daughter found her unresponsive in bed. She takes hydromorphone, gabapentin and duloxetine. Paramedics found RR 6 and pinpoint pupils and gave naloxone 0.4 mg IV with good response. She is now awake and says she took an extra dose by mistake. HR 88, BP 124/70, RR 14, SpO2 96% on room air.",
+      "A 61-year-old woman with chronic low back pain is brought in after her daughter found her unresponsive in bed. She takes hydromorphone, gabapentin and duloxetine. Paramedics found a respiratory rate of 6/minute and pinpoint pupils and gave naloxone 0.4 mg IV with good response. She is now awake and says she took an extra dose by mistake.",
+    vitals: { pulse: "88/minute", resp: "14/minute", bp: "124/70 mmHg", o2sat: "96% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
         update: "The daughter says the hydromorphone bottle was filled with a month's supply 3 days ago and is now empty. Her mother recently gave away her jewellery to her grandchildren.",
-        prompt: "List THREE features that make an accidental overdose unlikely.",
+        prompt: "What features make an accidental overdose unlikely?",
         accept: [
           { id: "qty", text: "The quantity missing from a recently filled prescription", match: ["empty", "quantity", "month", "missing", "bottle", "large amount"] },
           { id: "giving", text: "Giving away belongings", match: ["giving away", "gave away", "jewellery", "jewelry", "belonging", "possession"] },
@@ -853,13 +859,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Many deliberate overdoses in older adults with chronic pain are first labelled accidental. A large missing quantity and giving away valued possessions point to intent. Chronic pain roughly doubles suicide risk, and opioid access makes attempts more lethal.",
         keyFeature: { topic: "suicide-risk", n: 2 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE sources of collateral you use to clarify what she took.",
+        prompt: "What sources of collateral do you use to clarify what she took?",
         accept: [
           { id: "daughter", text: "Her daughter's account", match: ["daughter", "family"] },
           { id: "pharm", text: "Community pharmacy dispensing records", match: ["pharmacy", "pharmacist", "dispensing"] },
@@ -877,7 +883,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO toxicologic concerns for the next several hours.",
+        prompt: "What are the toxicologic concerns for the next several hours?",
         accept: [
           { id: "renarc", text: "Recurrent respiratory depression as naloxone wears off", match: ["recurrent", "renarcotization", "wears off", "wear off", "respiratory depression", "resedation"] },
           { id: "er", text: "Extended release hydromorphone prolonging toxicity", match: ["extended release", "controlled release", "sustained release", "long acting"] },
@@ -897,7 +903,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "She later discloses she wanted to die because of the pain. After psychiatric assessment, she is admitted voluntarily. You are asked to recommend changes to her opioid plan for discharge in the future.",
-        prompt: "List THREE recommendations.",
+        prompt: "What are your recommendations?",
         accept: [
           { id: "dispense", text: "Frequent small dispensing, such as weekly or daily", match: ["weekly", "daily dispensing", "small quantity", "frequent dispensing", "limited supply", "dispensing interval"] },
           { id: "naloxone", text: "Take home naloxone kit with teaching for family", match: ["naloxone kit", "take home naloxone", "naloxone"] },
@@ -911,10 +917,10 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Reducing the quantity of opioid on hand and adding naloxone lowers the lethality of another attempt. Abruptly stopping opioids can worsen pain and increase suicide risk. Treating pain and depression together addresses the drivers of her attempt.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "cpsi",
+        source: "bolton",
       },
     ],
-    sources: [S.cpsi, S.tintinalli],
+    sources: [S.bolton, S.tintinalli],
     ...META,
   },
   {
@@ -923,22 +929,22 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     alsoTopics: ["delirium-agitation"],
     title: "Brought in from the bridge",
     stem:
-      "Police bring in a 27 year old man they found standing outside the railing of a bridge. They used their authority under section 17 of the Ontario Mental Health Act. He has schizophrenia and stopped his antipsychotic 2 months ago. He is pacing, muttering and says the voices told him he must jump to save his family. Vital signs are normal. Glucose is 5.8 mmol/L.",
+      "Police bring in a 27-year-old man they found standing outside the railing of a bridge. They used their authority under section 17 of the Ontario Mental Health Act. He has schizophrenia and stopped his antipsychotic 2 months ago. He is pacing, muttering and says the voices told him he must jump to save his family. Vital signs are normal. Glucose is 5.8 mmol/L.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which statement about his arrival is correct? Select one.",
+        prompt: "Which of the following statements about his arrival is correct?",
         options: [
-          "Police may bring him for examination by a physician without a Form 1, and must stay until the facility takes custody",
-          "Police needed a justice of the peace order before bringing him",
           "He is automatically detained for 72 hours on arrival",
-          "Police may leave as soon as he is registered at triage",
-          "He is free to leave if he asks, until a psychiatrist sees him",
+          "He is free to leave until a psychiatrist sees him",
+          "Police may leave once he is registered at triage",
+          "Police need no Form 1 but must remain for handover",
+          "Police needed a justice of the peace order first",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
-          "Section 17 lets police take a person for examination by a physician when they observe behaviour meeting the criteria and it would be dangerous to wait for a justice of the peace. Police must remain until the facility takes custody. Detention beyond that requires the physician to complete a Form 1.",
+          "Section 17 lets police take a person for examination by a physician when they observe behaviour meeting the criteria and it would be dangerous to wait for a justice of the peace. No Form 1 is needed for this. Police must remain until the facility takes custody. Detention beyond that requires the physician to complete a Form 1.",
         keyFeature: { topic: "suicide-risk", n: 3 },
         source: "mha",
       },
@@ -946,7 +952,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of his psychosis that you assess because they affect suicide risk.",
+        prompt: "What features of his psychosis do you assess because they affect suicide risk?",
         accept: [
           { id: "command", text: "Content of command hallucinations and whether he intends to obey", match: ["command", "obey", "voices", "hallucination"] },
           { id: "delusion", text: "Delusions of guilt, persecution or rescue", match: ["delusion", "persecutory", "guilt", "paranoia"] },
@@ -967,7 +973,8 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "You complete a Form 1. List TWO further steps required by the Mental Health Act.",
+        update: "You complete a Form 1.",
+        prompt: "What further steps does the Mental Health Act require?",
         accept: [
           { id: "form42", text: "Promptly give him a Form 42", match: ["form 42"] },
           { id: "inform", text: "Inform him of the reasons for detention and his right to a lawyer", match: ["right to counsel", "lawyer", "counsel", "reason"] },
@@ -984,13 +991,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "He becomes more agitated, punches the wall and threatens a nurse. He refuses oral medication.",
-        prompt: "Which statement about giving him IM medication now is correct? Select one.",
+        prompt: "Which of the following statements about giving him IM medication now is correct?",
         options: [
-          "The Form 1 authorizes any psychiatric treatment, including starting a long acting antipsychotic",
-          "Medication may be given as a chemical restraint to prevent serious bodily harm, with monitoring and documentation",
-          "Medication requires his written consent because he is capable of refusing",
-          "An application to the Consent and Capacity Board is needed first",
-          "No medication or restraint may be used while he is on a Form 1",
+          "A Consent and Capacity Board application is needed first",
+          "Chemical restraint is allowed to prevent serious bodily harm",
+          "IM medication needs his written informed consent",
+          "The Form 1 authorizes a long acting injectable antipsychotic",
+          "No medication or restraint is allowed under a Form 1",
         ],
         correct: 1,
         explanation:
@@ -1008,13 +1015,14 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     alsoTopics: ["delirium-agitation"],
     title: "Not eating for a month",
     stem:
-      "A 49 year old woman is brought to an Ontario emergency department by her husband. She has bipolar I disorder with 2 previous admissions for depression, each of which responded well to lithium. She stopped lithium 3 months ago. For a month she has barely eaten or slept, stays in bed and has stopped showering. She has lost 9 kg. She says there is nothing wrong and she wants to go home. She denies suicidal thoughts. HR 108, BP 104/66. She is dry and slow to respond. There is no delirium on testing.",
+      "A 49-year-old woman is brought to an Ontario emergency department by her husband. She has bipolar I disorder with 2 previous admissions for depression, each of which responded well to lithium. She stopped lithium 3 months ago. For a month she has barely eaten or slept, stays in bed and has stopped showering. She has lost 9 kg. She says there is nothing wrong and she wants to go home. She denies suicidal thoughts. She is dry and slow to respond. There is no delirium on testing.",
+    vitals: { pulse: "108/minute", bp: "104/66 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that raise concern for suicide risk even though she denies suicidal thoughts.",
+        prompt: "What features raise concern for suicide risk even though she denies suicidal thoughts?",
         accept: [
           { id: "neglect", text: "Self-neglect with poor intake and weight loss", match: ["self neglect", "neglect", "not eating", "weight loss", "intake", "hygiene", "showering"] },
           { id: "stopped", text: "Stopping lithium, an effective treatment", match: ["stopped lithium", "stopping lithium", "lithium", "nonadherence", "non adherence", "stopped medication"] },
@@ -1026,13 +1034,14 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Suicidality can show as passive self-destruction through self-neglect rather than stated intent. Bipolar disorder has one of the highest suicide rates of any psychiatric illness. Stopping lithium removes a treatment with specific anti-suicide effects.",
         keyFeature: { topic: "suicide-risk", n: 2 },
-        source: "canmat",
+        source: "canmat-bd",
       },
       {
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "The psychiatrist on call advises that the Box B criteria of Form 1 fit her history best. List FOUR Box B criteria that you must document.",
+        update: "The psychiatrist on call advises that the Box B criteria of Form 1 fit her history best.",
+        prompt: "What Box B criteria must you document?",
         accept: [
           { id: "prior", text: "She has previously received treatment for a mental disorder of an ongoing or recurring nature", match: ["previously received treatment", "previous treatment", "prior treatment", "previously treated", "recurring", "ongoing"] },
           { id: "improve", text: "She showed clinical improvement with that treatment", match: ["improvement", "improved", "responded"] },
@@ -1049,9 +1058,16 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "She has no guardian, no power of attorney for personal care and no board appointed representative. Her husband, adult son and mother are all involved. Who is her substitute decision maker? Select one.",
-        options: ["Her husband", "Her adult son", "Her mother", "Her psychiatrist", "The Public Guardian and Trustee"],
-        correct: 0,
+        update: "She has no guardian, no power of attorney for personal care and no board appointed representative. Her husband, adult son and mother are all involved.",
+        prompt: "Which of the following people is her substitute decision maker?",
+        options: [
+          "Her adult son",
+          "Her family physician",
+          "Her husband",
+          "Her mother",
+          "Her psychiatrist",
+        ],
+        correct: 2,
         explanation:
           "Under the Health Care Consent Act hierarchy, a spouse or partner ranks above children and parents when there is no guardian, attorney for personal care or board appointed representative. The Public Guardian and Trustee is the decision maker of last resort. Physicians are never the substitute decision maker.",
         keyFeature: { topic: "delirium-agitation", n: 5 },
@@ -1060,22 +1076,23 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "A colleague asks about a different Ontario patient. Her family physician examined her and signed a Form 1 four days ago, and police bring her to your ED today. Which statement is correct? Select one.",
+        update: "A colleague asks about a different Ontario patient. Her family physician examined her and signed a Form 1 four days ago, and police bring her to your emergency department today.",
+        prompt: "Which of the following statements about this Form 1 is correct?",
         options: [
-          "The Form 1 still authorizes bringing her in, and the 72 hour period starts when she arrives at the psychiatric facility",
+          "The emergency physician must sign a new Form 1 first",
           "The Form 1 expired 72 hours after it was signed",
-          "The Form 1 is valid for 24 hours only",
-          "The Form 1 permits detention for 2 weeks from the day it was signed",
-          "The ED physician must sign a new Form 1 before she can be held",
+          "The Form 1 is valid, with 72 hours from arrival",
+          "The Form 1 lasts only 24 hours from signing",
+          "The Form 1 permits 2 weeks of detention from signing",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
-          "A Form 1 must be signed within 7 days of the physician's examination and authorizes taking the person to a psychiatric facility within 7 days of signing. The 72 hour detention starts on arrival at the facility. Knowing these time limits avoids unlawful detention and unnecessary repeat forms.",
+          "A Form 1 must be signed within 7 days of the physician's examination and authorizes taking the person to a psychiatric facility within 7 days of signing. The Form 1 still authorizes bringing her in, and the 72 hour detention starts on arrival at the psychiatric facility. Knowing these time limits avoids unlawful detention and unnecessary repeat forms.",
         keyFeature: { topic: "suicide-risk", n: 3 },
         source: "mha",
       },
     ],
-    sources: [S.canmat, S.mha, S.hcca],
+    sources: [S.canmatBd, S.mha, S.hcca],
     ...META,
   },
   {
@@ -1083,13 +1100,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     topic: "suicide-risk",
     title: "Flown in from a northern community",
     stem:
-      "A 16 year old First Nations youth is flown to your regional hospital from a remote fly-in community in northern Ontario. Two weeks ago a close friend died by suicide. Last night his cousin found him in a shed with a rope around his neck and cut him down. He was not unconscious. His neck shows a faint abrasion only and his neurological exam is normal. He is quiet and says little. His aunt came with him.",
+      "A 16-year-old First Nations youth is flown to your regional hospital from a remote fly-in community in northern Ontario. Two weeks ago a close friend died by suicide. Last night his cousin found him in a shed with a rope around his neck and cut him down. He was not unconscious. His neck shows a faint abrasion only and his neurological exam is normal. He is quiet and says little. His aunt came with him.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE factors, known or to ask about, that increase his suicide risk.",
+        prompt: "What factors, known or to ask about, increase his suicide risk?",
         accept: [
           { id: "exposure", text: "Recent suicide of a close friend", match: ["friend", "exposure", "contagion", "cluster", "peer suicide"] },
           { id: "attempt", text: "An interrupted hanging attempt, a highly lethal method", match: ["hanging", "interrupted", "attempt", "lethal", "ligature", "rope"] },
@@ -1110,7 +1127,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE ways you make his assessment culturally safe so that he can speak openly.",
+        prompt: "How do you make his assessment culturally safe so that he can speak openly?",
         accept: [
           { id: "navigator", text: "Offer an Indigenous patient navigator or liaison", match: ["navigator", "liaison", "indigenous health"] },
           { id: "elder", text: "Offer access to an Elder or traditional healing if he wishes", match: ["elder", "traditional", "ceremony", "smudge", "healer"] },
@@ -1130,7 +1147,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "After admission and assessment, the team plans his return home with outpatient care.",
-        prompt: "List THREE components of his discharge plan.",
+        prompt: "What are the components of his discharge plan?",
         accept: [
           { id: "fu", text: "Confirmed follow up by telepsychiatry or visiting mental health team with a date", match: ["telepsychiatry", "virtual", "otn", "follow up", "follow-up", "appointment", "telehealth"] },
           { id: "local", text: "Handover to the community mental health worker or nursing station", match: ["nursing station", "community mental health", "mental health worker", "community", "handover"] },
@@ -1148,17 +1165,17 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which statement about suicide exposure in youth is correct? Select one.",
+        prompt: "Which of the following statements about suicide exposure in youth is correct?",
         options: [
-          "Exposure to a peer's suicide increases risk in other youth and warrants active outreach",
-          "Talking with youth about a peer's suicide increases their risk and should be avoided",
-          "Suicide clusters occur only in large cities",
-          "Exposure to a peer's suicide is protective because it shows the harm to families",
+          "Clusters of suicide occur only in large cities",
+          "Discussing a peer's suicide with youth raises their risk",
+          "Exposure to a peer's suicide is protective for other youth",
           "Hospital admission removes the risk from exposure",
+          "Peer suicide exposure raises risk and warrants outreach",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "Suicide exposure is a recognized risk factor in adolescents and clusters are well described. Postvention, including outreach to friends and safe messaging, reduces contagion. Open, supportive conversation does not increase risk.",
+          "Exposure to a peer's suicide is a recognized risk factor in other youth, clusters are well described and active outreach is warranted. Postvention, including outreach to friends and safe messaging, reduces contagion. Open, supportive conversation does not increase risk.",
         keyFeature: { topic: "suicide-risk", n: 1 },
         source: "cps-youth",
       },
@@ -1171,13 +1188,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     topic: "suicide-risk",
     title: "Her fourth visit this month",
     stem:
-      "A 26 year old woman with borderline personality disorder presents for the fourth time this month. She is in a dialectical behaviour therapy program. After an argument with her roommate she made superficial cuts to her forearm with a razor. She describes thoughts of death that she says are the same as always. She has a crisis plan on file written with her therapist. She is sober. The cuts need only adhesive strips.",
+      "A 26-year-old woman with borderline personality disorder presents for the fourth time this month. She is in a dialectical behaviour therapy program. After an argument with her roommate she made superficial cuts to her forearm with a razor. She describes thoughts of death that she says are the same as always. She has a crisis plan on file written with her therapist. She is sober. The cuts need only adhesive strips.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that would suggest her acute risk is higher than her chronic baseline today.",
+        prompt: "What findings would suggest her acute risk is higher than her chronic baseline today?",
         accept: [
           { id: "method", text: "A new plan, method or escalation in lethality", match: ["new plan", "new method", "lethality", "escalation", "more lethal", "change in method"] },
           { id: "stressor", text: "A major new loss or stressor", match: ["loss", "stressor", "breakup", "eviction"] },
@@ -1197,17 +1214,18 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Her risk appears to be at her chronic baseline. Which is the most appropriate plan? Select one.",
+        update: "Her risk appears to be at her chronic baseline.",
+        prompt: "Which of the following is the most appropriate plan for her today?",
         options: [
-          "Brief validating intervention, review her crisis plan, contact her therapist and discharge with follow up",
-          "Admit her to psychiatry for safety",
-          "Detain her involuntarily because she self-harmed",
-          "Discharge without assessment because she visits often",
+          "Brief validating intervention and discharge with follow up",
+          "Detain her involuntarily under a Form 1",
+          "Discharge her home without a risk assessment",
           "Discharge with a prescription for clonazepam to settle her",
+          "Psychiatric admission for her safety",
         ],
         correct: 0,
         explanation:
-          "For chronic suicidality at baseline, a brief compassionate intervention that reinforces her existing crisis plan and outpatient therapy works best. Admission can reinforce crisis driven care and disrupt effective therapy. Benzodiazepines can disinhibit and add an overdose risk.",
+          "For chronic suicidality at baseline, a brief validating intervention works best. Review her existing crisis plan, contact her therapist and discharge her with follow up, which reinforces her outpatient therapy. Admission can reinforce crisis driven care and disrupt effective therapy. Benzodiazepines can disinhibit and add an overdose risk.",
         keyFeature: { topic: "suicide-risk", n: 4 },
         source: "nice",
       },
@@ -1215,7 +1233,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of an ED care plan for patients with frequent visits for chronic suicidality.",
+        prompt: "What are the elements of an emergency department care plan for patients with frequent visits for chronic suicidality?",
         accept: [
           { id: "plan", text: "An individualized care plan on file, accessible to ED staff", match: ["care plan", "individualized", "individualised", "on file", "flag"] },
           { id: "coord", text: "Coordination with her outpatient therapist or psychiatrist", match: ["therapist", "psychiatrist", "outpatient team", "coordination", "dbt"] },
@@ -1234,7 +1252,7 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO common errors in the ED care of patients like her.",
+        prompt: "What are common errors in the emergency department care of patients like her?",
         accept: [
           { id: "dismiss", text: "Dismissing the visit without a proper risk assessment", match: ["dismiss", "dismissing", "no assessment", "without assessment", "skip assessment", "not assessing"] },
           { id: "stigma", text: "Punitive or stigmatizing attitudes", match: ["punitive", "stigma", "stigmatizing", "stigmatising", "judgmental", "attitude", "attention seeking"] },
@@ -1258,13 +1276,13 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
     topic: "suicide-risk",
     title: "Going home to the farm",
     stem:
-      "A 67 year old farmer took 20 zopiclone tablets with rye whisky 2 days after being told he has inoperable lung cancer. His wife found him within an hour. He is now medically cleared after 14 hours of observation. The psychiatry consultant assesses him as no longer having intent, finds him capable and agrees with his wish to go home with close outpatient care. His wife tells you there are 4 long guns in a cabinet in the house and that he has been drinking daily since the diagnosis.",
+      "A 67-year-old farmer took 20 zopiclone tablets with rye whisky 2 days after being told he has inoperable lung cancer. His wife found him within an hour. He is now medically cleared after 14 hours of observation. The psychiatry consultant assesses him as no longer having intent, finds him capable and agrees with his wish to go home with close outpatient care. His wife tells you there are 4 long guns in a cabinet in the house and that he has been drinking daily since the diagnosis.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of a firearm safety plan for this household.",
+        prompt: "What are the elements of a firearm safety plan for this household?",
         accept: [
           { id: "remove", text: "Remove all firearms from the home, to a relative, a firearms dealer or police for temporary storage", match: ["remove", "removal", "off site", "offsite", "relative", "dealer", "police", "store elsewhere"] },
           { id: "ammo", text: "Remove or separately lock the ammunition", match: ["ammunition", "ammo"] },
@@ -1276,13 +1294,14 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "Firearms are the most lethal means of suicide and are common in rural homes. Temporary removal from the home is best and is often acceptable framed as a time limited safety step. Locking alone is weaker because the patient may have access to keys.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "He asks you not to discuss his care with his wife. List TWO accurate points about confidentiality and collateral in Ontario.",
+        update: "He asks you not to discuss his care with his wife.",
+        prompt: "What are accurate points about confidentiality and collateral in Ontario?",
         accept: [
           { id: "listen", text: "You may receive information from his wife without breaching confidentiality", match: ["receive information", "listen", "collateral", "hear from"] },
           { id: "risk", text: "Disclosure without consent is permitted if needed to reduce a significant risk of serious bodily harm", match: ["significant risk", "serious bodily harm", "serious harm", "risk of harm"] },
@@ -1299,7 +1318,8 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 4,
-        prompt: "He agrees to involve his wife. List FOUR components of his outpatient plan.",
+        update: "He agrees to involve his wife.",
+        prompt: "What are the components of his outpatient plan?",
         accept: [
           { id: "fu", text: "A confirmed follow up appointment with date and time within days", match: ["appointment", "follow up", "follow-up", "date", "within days"] },
           { id: "onc", text: "Early oncology and palliative care contact for symptom and psychosocial support", match: ["oncology", "palliative", "cancer"] },
@@ -1314,27 +1334,28 @@ export const SUICIDE_RISK_SAMPS: Samp[] = [
         explanation:
           "A new serious diagnosis, older male sex, alcohol and firearm access make the post discharge period dangerous. A confirmed appointment, early oncology and palliative support, and crisis contacts cover the first days. Removing firearms and limiting sedatives cut the lethality of any further attempt.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "cpsi",
+        source: "bolton",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Your resident calculated a SAD PERSONS score and asks whether it can guide disposition. Which statement is correct? Select one.",
+        update: "Your resident calculated a SAD PERSONS score and asks whether it can guide disposition.",
+        prompt: "Which of the following statements about suicide risk scales is correct?",
         options: [
-          "Risk scales have poor predictive value and should not be used alone to decide disposition",
-          "A low score means discharge is safe without further assessment",
-          "A high score mandates a Form 1",
-          "Scales accurately predict which patients will die by suicide within a year",
+          "A high score mandates completing a Form 1",
+          "A low score means discharge is safe without more assessment",
           "A structured scale is only needed for patients over 65",
+          "Risk scales should not be used alone to decide disposition",
+          "Scales accurately predict suicide deaths within a year",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Risk scales such as SAD PERSONS have poor sensitivity and positive predictive value for future suicide. They can prompt a thorough inquiry but must not decide who is admitted or discharged. Disposition rests on a clinical formulation of risk factors, protective factors and needs.",
         keyFeature: { topic: "suicide-risk", n: 1 },
         source: "nice",
       },
     ],
-    sources: [S.cpsi, S.phipa, S.nice],
+    sources: [S.bolton, S.phipa, S.nice],
     ...META,
   },
 ];

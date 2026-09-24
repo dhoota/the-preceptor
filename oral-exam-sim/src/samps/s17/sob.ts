@@ -7,26 +7,24 @@ const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", ve
 
 const S = {
   cafg: { id: "cafg", citation: "Law JA, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Can J Anesth. 2021." },
-  cpsCroup: { id: "cps-croup", citation: "Canadian Paediatric Society. Position statement. Acute management of croup in the emergency department." },
-  trekkCroup: { id: "trekk-croup", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Croup." },
-  ctsAsthma: { id: "cts-asthma", citation: "Canadian Thoracic Society. Asthma guidelines, including recognition and management of severe asthma." },
-  gina: { id: "gina", citation: "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention." },
-  ctsCopd: { id: "cts-copd", citation: "Canadian Thoracic Society. COPD guidelines, including management of acute exacerbations." },
-  gold: { id: "gold", citation: "Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management and Prevention of COPD." },
+  cpsCroup: { id: "cps-croup", citation: "Ortiz-Alvarez O, Canadian Paediatric Society Acute Care Committee. Acute management of croup in the emergency department. Paediatr Child Health. 2017.", url: "https://cps.ca/en/documents/position/acute-management-of-croup" },
+  trekkCroup: { id: "trekk-croup", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Croup. Version 4.0. 2023.", url: "https://trekk.ca/resources/bottom-line-recommendations-croup" },
+  gina: { id: "gina", citation: "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2024 update.", url: "https://ginasthma.org/wp-content/uploads/2024/05/GINA-2024-Strategy-Report-24_05_22_WMS.pdf" },
+  gold: { id: "gold", citation: "Agusti A, et al. Global Initiative for Chronic Obstructive Lung Disease 2023 Report. GOLD executive summary. Am J Respir Crit Care Med. 2023." },
   ersNiv: { id: "ers-niv", citation: "Rochwerg B, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. Eur Respir J. 2017." },
-  ccsHf: { id: "ccs-hf", citation: "Canadian Cardiovascular Society and Canadian Heart Failure Society. Heart failure guidelines, including management of acute heart failure." },
+  ccsHf: { id: "ccs-hf", citation: "Ezekowitz JA, et al. 2017 Comprehensive update of the Canadian Cardiovascular Society guidelines for the management of heart failure. Can J Cardiol. 2017." },
   idsaCap: { id: "idsa-cap", citation: "Metlay JP, et al. Diagnosis and treatment of adults with community-acquired pneumonia. An official clinical practice guideline of the American Thoracic Society and Infectious Diseases Society of America. Am J Respir Crit Care Med. 2019." },
-  dcDka: { id: "dc-dka", citation: "Diabetes Canada Clinical Practice Guidelines. Hyperglycemic emergencies in adults." },
+  dcDka: { id: "dc-dka", citation: "Goguen J, Gilbert J. Diabetes Canada 2018 Clinical Practice Guidelines. Hyperglycemic emergencies in adults. Can J Diabetes. 2018." },
   extripSal: { id: "extrip-sal", citation: "Juurlink DN, et al. Extracorporeal treatment for salicylate poisoning. Systematic review and recommendations from the EXTRIP workgroup. Ann Emerg Med. 2015." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on dyspnea, salicylates and neuromuscular disorders." },
-  thrombCan: { id: "thromb-can", citation: "Thrombosis Canada. Clinical guides. Pulmonary embolism diagnosis and treatment." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on dyspnea, salicylates and neuromuscular disorders." },
+  thrombCan: { id: "thromb-can", citation: "Thrombosis Canada. Clinical guide. Pulmonary embolism (PE): diagnosis. 2025.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_83.pdf" },
   perc: { id: "perc", citation: "Kline JA, et al. Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism. J Thromb Haemost. 2004." },
   adjust: { id: "adjust", citation: "Righini M, et al. Age-adjusted D-dimer cutoff levels to rule out pulmonary embolism. The ADJUST-PE study. JAMA. 2014." },
   escPe: { id: "esc-pe", citation: "Konstantinides SV, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020." },
   artemis: { id: "artemis", citation: "van der Pol LM, et al. Pregnancy-adapted YEARS algorithm for diagnosis of suspected pulmonary embolism. N Engl J Med. 2019." },
-  sogcVte: { id: "sogc-vte", citation: "Society of Obstetricians and Gynaecologists of Canada. Clinical practice guideline. Venous thromboembolism and antithrombotic therapy in pregnancy." },
-  bts: { id: "bts", citation: "British Thoracic Society. Guideline for pleural disease, including spontaneous pneumothorax." },
-  atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. Chapter on thoracic trauma." },
+  sogcVte: { id: "sogc-vte", citation: "Chan WS, Rey E, Kent NE, et al. Venous thromboembolism and antithrombotic therapy in pregnancy. SOGC clinical practice guideline. J Obstet Gynaecol Can. 2014." },
+  bts: { id: "bts", citation: "Roberts ME, et al. British Thoracic Society guideline for pleural disease, including spontaneous pneumothorax. Thorax. 2023." },
+  atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th ed. 2018. Chapter on thoracic trauma." },
   waoAna: { id: "wao-ana", citation: "Cardona V, et al. World Allergy Organization Anaphylaxis Guidance 2020. World Allergy Organ J. 2020." },
 } satisfies Record<string, Source>;
 
@@ -37,13 +35,14 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["airway", "anaphylaxis"],
     title: "Woke up with a thick tongue",
     stem:
-      "A 64 year old woman arrives by private car at 06:00. She woke with swollen lips and a thick tongue. Over the past hour her voice has become muffled and she is spitting saliva into a basin. She has hypertension and type 2 diabetes treated with ramipril, which was started 5 months ago, and metformin. She has no itch and no rash. HR 104, BP 158/92, RR 24, SpO2 95% on room air, T 36.8 C. She sits upright and leans forward. There is soft inspiratory stridor. The tongue and floor of mouth are visibly swollen. Air entry is equal and the chest is clear.",
+      "A 64-year-old woman arrives by private car at 06:00. She woke with swollen lips and a thick tongue. Over the past hour her voice has become muffled and she is spitting saliva into a basin. She has hypertension and type 2 diabetes treated with ramipril, which was started 5 months ago, and metformin. She has no itch and no rash. She sits upright and leans forward. There is soft inspiratory stridor. The tongue and floor of mouth are visibly swollen. Air entry is equal and the chest is clear.",
+    vitals: { temperature: "36.8°C", pulse: "104/minute", resp: "24/minute", bp: "158/92 mmHg", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings from this presentation that place the obstruction in the upper airway rather than the lower airway.",
+        prompt: "What findings in this presentation place the obstruction in the upper airway rather than the lower airway?",
         accept: [
           { id: "stridor", text: "Inspiratory stridor", match: ["stridor"] },
           { id: "voice", text: "Muffled or changed voice", match: ["voice", "muffled", "hoarse", "hoarseness", "dysphonia"] },
@@ -62,17 +61,17 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "Twenty minutes later her voice is barely audible and the stridor is louder. She can still maintain her own oxygenation.",
-        prompt: "Which is the most appropriate airway strategy? Select one.",
+        prompt: "Which of the following is the most appropriate airway strategy for her?",
         options: [
-          "Rapid sequence intubation with video laryngoscopy by the first available physician",
-          "Awake flexible bronchoscopic intubation with topical anesthesia, with a surgical airway set up and the neck marked",
-          "Trial of BiPAP to splint the airway open",
+          "Awake flexible bronchoscopic intubation with double setup",
           "High flow nasal oxygen and observation for 4 hours",
           "Immediate surgical cricothyrotomy before any other attempt",
+          "Rapid sequence intubation with video laryngoscopy",
+          "Trial of BiPAP to splint the airway open",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "Progressive angioedema with voice loss is a predicted difficult airway. Keeping spontaneous breathing with an awake technique avoids a cannot intubate cannot oxygenate situation after paralysis. A double setup with front of neck access ready is essential. Positive pressure does not relieve tissue swelling and delays definitive care.",
+          "Progressive angioedema with voice loss is a predicted difficult airway. Awake flexible bronchoscopic intubation with topical anesthesia keeps spontaneous breathing and avoids a cannot intubate cannot oxygenate situation after paralysis. A double setup, with a surgical airway set up and the neck marked, is essential. Positive pressure does not relieve tissue swelling and delays definitive care.",
         keyFeature: { topic: "sob", n: 3 },
         source: "cafg",
       },
@@ -80,7 +79,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE preparations you make before the airway attempt.",
+        prompt: "What preparations do you make before the airway attempt?",
         accept: [
           { id: "help", text: "Call the most experienced airway help available, such as anesthesia or ENT", match: ["anesthesia", "anaesthesia", "anesthesiologist", "ent", "otolaryngology", "experienced", "call for help"] },
           { id: "fona", text: "Open the front of neck access kit and palpate or ultrasound mark the cricothyroid membrane", match: ["cricothyroid", "cricothyrotomy", "front of neck", "scalpel", "surgical airway"] },
@@ -100,7 +99,7 @@ export const SOB_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "She is extubated in the ICU 2 days later and is ready to go home.",
-        prompt: "List TWO discharge instructions specific to the likely cause of this episode.",
+        prompt: "What discharge instructions are specific to the likely cause of this episode?",
         accept: [
           { id: "stop", text: "Stop ramipril permanently and never take any ACE inhibitor again", match: ["stop ramipril", "stop ace", "discontinue ramipril", "discontinue ace", "never take ace", "avoid ace"] },
           { id: "alert", text: "Record ACE inhibitor angioedema as an allergy or intolerance and wear a medical alert", match: ["medical alert", "medicalert", "allergy list", "intolerance", "chart alert"] },
@@ -123,13 +122,14 @@ export const SOB_SAMPS: Samp[] = [
     topic: "sob",
     title: "Noisy breathing in the night",
     stem:
-      "A 20 month old boy is carried in by his father at 02:30. He has had a runny nose for 2 days. Tonight he woke with a harsh cough that sounds like a seal and noisy breathing. He is fully immunized. He took a bottle of milk 3 hours ago. T 38.1 C, HR 150, RR 40, SpO2 96% on room air. Weight 12 kg. He is restless and clinging to his father. There is inspiratory stridor at rest with suprasternal and subcostal retractions. Air entry is mildly decreased. He is not drooling.",
+      "A 20-month-old boy is carried in by his father at 02:30. He has had a runny nose for 2 days. Tonight he woke with a harsh cough that sounds like a seal and noisy breathing. He is fully immunized. He took a bottle of milk 3 hours ago. He is restless and clinging to his father. There is inspiratory stridor at rest with suprasternal and subcostal retractions. Air entry is mildly decreased. He is not drooling.",
+    vitals: { temperature: "38.1°C", pulse: "150/minute", resp: "40/minute", o2sat: "96% on room air", weight: "12 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that favour viral croup over epiglottitis or bacterial tracheitis.",
+        prompt: "What features favour viral croup over epiglottitis or bacterial tracheitis?",
         accept: [
           { id: "bark", text: "Barking, seal like cough", match: ["barking", "barky", "bark", "seal"] },
           { id: "prodrome", text: "Coryzal prodrome with gradual onset", match: ["coryza", "coryzal", "runny nose", "prodrome", "gradual onset", "uri", "urti", "viral prodrome"] },
@@ -148,18 +148,18 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO treatments should he receive now? Select TWO.",
+        prompt: "Which of the following treatments should he receive at this time?",
         options: [
+          "Amoxicillin 40 mg/kg PO",
+          "Cool mist humidification",
           "Dexamethasone 0.6 mg/kg PO",
           "Dexamethasone 0.06 mg/kg PO",
-          "Nebulized epinephrine 1 mg/mL, 0.5 mL/kg to a maximum of 5 mL",
           "Epinephrine 0.01 mg/kg IM",
-          "Nebulized salbutamol 2.5 mg",
-          "Cool mist humidification",
-          "Amoxicillin 40 mg/kg PO",
           "Nebulized budesonide as the only steroid",
+          "Nebulized epinephrine 1 mg/mL, 0.5 mL/kg, maximum 5 mL",
+          "Nebulized salbutamol 2.5 mg",
         ],
-        correct: [0, 2],
+        correct: [2, 6],
         explanation:
           "Stridor at rest with retractions is moderate to severe croup. Oral dexamethasone reduces severity and return visits. The CPS dose is 0.6 mg/kg, and doses as low as 0.15 mg/kg are also accepted, so 0.06 mg/kg is too low. Nebulized epinephrine gives rapid but temporary relief of subglottic edema. Humidified air has no proven benefit and salbutamol treats the wrong level of the airway.",
         keyFeature: { topic: "sob", n: 3 },
@@ -169,7 +169,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that would indicate impending respiratory failure in this child.",
+        prompt: "What findings would indicate impending respiratory failure in this child?",
         accept: [
           { id: "loc", text: "Decreased level of consciousness or lethargy", match: ["lethargy", "lethargic", "decreased loc", "decreased level of consciousness", "drowsy", "obtunded", "altered mental status"] },
           { id: "fatigue", text: "Fatigue or decreasing respiratory effort", match: ["fatigue", "tiring", "tired", "decreasing effort", "decreased effort"] },
@@ -190,7 +190,7 @@ export const SOB_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Thirty minutes after treatment he is asleep on his father with no stridor at rest and mild retractions only.",
-        prompt: "List TWO conditions that must be met before discharge home.",
+        prompt: "What conditions must be met before discharge home?",
         accept: [
           { id: "obs", text: "Observe at least 2 hours after the last epinephrine dose", match: ["2 hour", "two hour", "observe", "observation"] },
           { id: "nostridor", text: "No stridor at rest", match: ["no stridor", "without stridor", "stridor resolved"] },
@@ -215,14 +215,21 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["asthma-copd"],
     title: "A toddler who coughed at a party",
     stem:
-      "A 2 year old girl is brought in 3 hours after a sudden bout of coughing and gagging at her brother's birthday party. Bowls of mixed nuts were on a low table. The coughing settled after a few minutes but she still coughs now and then. She has no history of wheeze and no fever. HR 132, RR 34, SpO2 95% on room air, T 37.0 C. She is alert and playing. There is decreased air entry over the right lower chest with a focal expiratory wheeze on that side. There is no stridor.",
+      "A 2-year-old girl is brought in 3 hours after a sudden bout of coughing and gagging at her brother's birthday party. Bowls of mixed nuts were on a low table. The coughing settled after a few minutes but she still coughs now and then. She has no history of wheeze and no fever. She is alert and playing. There is decreased air entry over the right lower chest with a focal expiratory wheeze on that side. There is no stridor.",
+    vitals: { temperature: "37.0°C", pulse: "132/minute", resp: "34/minute", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Where is the obstruction most likely located? Select one.",
-        options: ["Supraglottic larynx", "Subglottic trachea", "Right main or lower lobe bronchus", "Left main bronchus", "Upper esophagus"],
-        correct: 2,
+        prompt: "Which of the following is the most likely location of the obstruction?",
+        options: [
+          "Esophagus at the cricopharyngeus",
+          "Larynx above the vocal cords",
+          "Left main or lower lobe bronchus",
+          "Right main or lower lobe bronchus",
+          "Subglottic trachea below the cords",
+        ],
+        correct: 3,
         explanation:
           "A unilateral wheeze with reduced air entry after a choking episode points to a bronchial foreign body. The right side is more often involved in older children and adults because of the straighter right bronchus. Absence of stridor and voice change argues against a laryngeal or tracheal object.",
         keyFeature: { topic: "sob", n: 1 },
@@ -232,7 +239,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO imaging approaches that increase the yield for an aspirated nut.",
+        prompt: "What imaging approaches increase the yield for an aspirated nut?",
         accept: [
           { id: "insexp", text: "Inspiratory and expiratory chest radiographs", match: ["inspiratory expiratory", "expiratory film", "expiratory view", "expiratory xray", "expiratory x ray", "expiratory cxr", "expiratory radiograph"] },
           { id: "decub", text: "Bilateral lateral decubitus chest radiographs", match: ["decubitus"] },
@@ -250,7 +257,7 @@ export const SOB_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "The chest radiographs are read as normal. Her mother asks whether they can go home.",
-        prompt: "List TWO elements of your plan now.",
+        prompt: "What are the elements of your plan now?",
         accept: [
           { id: "bronch", text: "Consult paediatric ENT or surgery for rigid bronchoscopy", match: ["bronchoscopy", "ent", "otolaryngology", "paediatric surgery", "pediatric surgery", "thoracic surgery"] },
           { id: "npo", text: "Keep her NPO", match: ["npo", "nil by mouth", "nothing by mouth"] },
@@ -269,7 +276,7 @@ export const SOB_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "While waiting for the operating room she suddenly cannot cry or cough and becomes cyanotic. She is still conscious.",
-        prompt: "List TWO immediate interventions in the order you would use them if she deteriorates.",
+        prompt: "What immediate interventions would you use, in order, if she deteriorates?",
         accept: [
           { id: "abdo", text: "Abdominal thrusts while she is conscious", match: ["abdominal thrust", "heimlich"] },
           { id: "cpr", text: "Start CPR with chest compressions if she becomes unresponsive", match: ["cpr", "chest compression"] },
@@ -293,13 +300,14 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["asthma-copd", "airway"],
     title: "Worsening wheeze after a cold",
     stem:
-      "A 27 year old woman with asthma arrives by ambulance. She has had a cold for 3 days and has used her salbutamol inhaler every hour today. She stopped her controller inhaler 4 months ago when her prescription ran out. She speaks in short phrases. HR 128, BP 132/78, RR 32, SpO2 89% on room air, T 37.4 C. She is using her accessory muscles and has diffuse expiratory wheeze. She cannot perform a peak flow.",
+      "A 27-year-old woman with asthma arrives by ambulance. She has had a cold for 3 days and has used her salbutamol inhaler every hour today. She stopped her controller inhaler 4 months ago when her prescription ran out. She speaks in short phrases. She is using her accessory muscles and has diffuse expiratory wheeze. She cannot perform a peak flow.",
+    vitals: { temperature: "37.4°C", pulse: "128/minute", resp: "32/minute", bp: "132/78 mmHg", o2sat: "89% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE further items of history that would identify her as at high risk of fatal asthma.",
+        prompt: "What further items of history would identify her as at high risk of fatal asthma?",
         accept: [
           { id: "intub", text: "Previous intubation for asthma", match: ["intubation", "intubated", "ventilated", "mechanical ventilation"] },
           { id: "icu", text: "Previous ICU admission", match: ["icu", "intensive care"] },
@@ -319,7 +327,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE medications you order in the first 20 minutes. Include dose and route.",
+        prompt: "What medications, with dose and route, do you order in the first 20 minutes?",
         accept: [
           { id: "salb", text: "Salbutamol 2.5 to 5 mg nebulized or 8 to 10 puffs by MDI with spacer every 20 minutes or continuous", match: ["salbutamol 5 mg", "salbutamol 5mg", "salbutamol 2.5 mg", "salbutamol 2.5mg", "salbutamol puff", "salbutamol continuous", "salbutamol 10 puff", "salbutamol 8 puff", "ventolin 5 mg"] },
           { id: "ipra", text: "Ipratropium 500 mcg nebulized or 4 to 8 puffs by MDI every 20 minutes for 3 doses", match: ["ipratropium 500", "ipratropium 0.5 mg", "ipratropium 0.5mg", "ipratropium puff", "atrovent 500", "ipratropium 250"] },
@@ -334,14 +342,14 @@ export const SOB_SAMPS: Samp[] = [
         explanation:
           "Severe asthma needs repeated high dose short acting bronchodilator plus ipratropium, early systemic steroid and IV magnesium. Oral prednisone works as well as IV steroid when the patient can swallow. GINA advises that sedatives be strictly avoided in acute asthma, because sedating an anxious, hypoxemic patient removes her respiratory drive and can precipitate arrest.",
         keyFeature: { topic: "asthma-copd", n: 5 },
-        source: "cts-asthma",
+        source: "gina",
       },
       {
         id: "q3",
         kind: "short",
         required: 3,
-        update: "After 1 hour she is drowsy and answers in single words. The chest is now quiet. SpO2 90% on a 10 L mask. Venous gas pH 7.24, PCO2 62 mm Hg.",
-        prompt: "List THREE findings that show she is heading into respiratory failure.",
+        update: "After 1 hour she is drowsy and answers in single words. The chest is now quiet. O2 sat 90% on a 10 L/minute mask. Venous gas pH 7.24, PCO2 62 mmHg.",
+        prompt: "What findings show she is heading into respiratory failure?",
         accept: [
           { id: "loc", text: "Drowsiness or decreased level of consciousness", match: ["drowsy", "drowsiness", "decreased loc", "decreased level of consciousness", "altered mental status", "confusion", "obtunded"] },
           { id: "silent", text: "Silent chest", match: ["silent chest", "quiet chest", "no wheeze", "absent wheeze", "decreased air entry"] },
@@ -354,30 +362,31 @@ export const SOB_SAMPS: Samp[] = [
         explanation:
           "A normal or rising PCO2 in a tachypneic asthmatic means she can no longer ventilate. A silent chest reflects minimal airflow, not improvement. Drowsiness is a late and ominous sign that should prompt immediate airway planning.",
         keyFeature: { topic: "sob", n: 4 },
-        source: "cts-asthma",
+        source: "gina",
       },
       {
         id: "q4",
         kind: "menu",
         select: 2,
-        prompt: "You decide to intubate. Which TWO choices are most appropriate? Select TWO.",
+        update: "You decide to intubate.",
+        prompt: "Which of the following choices are most appropriate for her intubation and ventilation?",
         options: [
+          "Applied PEEP of 15 cm H2O",
           "Ketamine 1.5 mg/kg IV for induction",
           "Propofol 3 mg/kg IV bolus for induction",
-          "Initial respiratory rate 24 per minute to correct the acidosis",
-          "Respiratory rate 10 per minute, tidal volume 6 to 8 mL/kg ideal body weight, long expiratory time, accepting hypercapnia",
-          "PEEP 15 cm H2O to stent the airways",
-          "Tidal volume 12 mL/kg to clear CO2",
+          "Rate 24/minute targeting a normal PCO2",
+          "Rate 10/minute, tidal volume 6 to 8 mL/kg, long expiration",
           "Stop inhaled bronchodilators once the tube is in",
+          "Tidal volume 12 mL/kg ideal body weight",
         ],
-        correct: [0, 3],
+        correct: [1, 4],
         explanation:
-          "Ketamine keeps blood pressure and adds bronchodilation. The main danger after intubation is breath stacking with auto PEEP and cardiovascular collapse. A low rate, modest tidal volume and long expiratory time with permissive hypercapnia reduce that risk. Large propofol boluses cause hypotension in a preload dependent patient.",
+          "Ketamine keeps blood pressure and adds bronchodilation. The main danger after intubation is breath stacking with auto PEEP and cardiovascular collapse. A rate of about 10/minute, a tidal volume of 6 to 8 mL/kg ideal body weight and a long expiratory time, accepting hypercapnia, reduce that risk. Large propofol boluses cause hypotension in a preload dependent patient.",
         keyFeature: { topic: "airway", n: 5 },
         source: "tintinalli",
       },
     ],
-    sources: [S.gina, S.ctsAsthma, S.tintinalli],
+    sources: [S.gina, S.tintinalli],
     ...META,
   },
   {
@@ -386,24 +395,31 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["asthma-copd"],
     title: "Home oxygen and a worse week",
     stem:
-      "A 71 year old man with severe COPD uses 2 L/min of home oxygen. For 3 days he has had more breathlessness and thick green sputum. He is sitting forward, pursed lip breathing, and speaking in phrases. HR 112, BP 148/86, RR 30, SpO2 82% on 2 L/min, T 37.9 C. He is alert but says he is exhausted. Arterial gas on 2 L/min: pH 7.28, PaCO2 72 mm Hg, PaO2 50 mm Hg, HCO3 33 mmol/L.",
+      "A 71-year-old man with severe COPD uses 2 L/minute of home oxygen. For 3 days he has had more breathlessness and thick green sputum. He is sitting forward, pursed lip breathing, and speaking in phrases. He is alert but says he is exhausted. Arterial gas on 2 L/minute: pH 7.28, PaCO2 72 mmHg, PaO2 50 mmHg, HCO3 33 mmol/L.",
+    vitals: { temperature: "37.9°C", pulse: "112/minute", resp: "30/minute", bp: "148/86 mmHg", o2sat: "82% on 2 L/minute oxygen" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What oxygen saturation target is most appropriate? Select one.",
-        options: ["85 to 88%", "88 to 92%", "92 to 96%", "94 to 98%", "Above 98%"],
-        correct: 1,
+        prompt: "Which of the following oxygen saturation targets is most appropriate for him?",
+        options: [
+          "80 to 84%",
+          "85 to 87%",
+          "88 to 92%",
+          "93 to 96%",
+          "97 to 100%",
+        ],
+        correct: 2,
         explanation:
           "In hypercapnic COPD, uncontrolled high flow oxygen worsens hypercapnia through ventilation perfusion mismatch and the Haldane effect. A target of 88 to 92% avoids both hypoxia and oxygen induced CO2 retention. Oxygen should never be withheld from a hypoxemic patient.",
         keyFeature: { topic: "asthma-copd", n: 5 },
-        source: "cts-copd",
+        source: "gold",
       },
       {
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of his arterial gas that indicate he needs ventilatory support.",
+        prompt: "What features of his arterial gas indicate he needs ventilatory support?",
         accept: [
           { id: "ph", text: "Acidemia with pH below 7.35", match: ["ph", "acidemia", "acidosis", "acidotic"] },
           { id: "co2", text: "PaCO2 above 45 mm Hg with acidosis, meaning acute hypercapnia", match: ["paco2", "pco2", "hypercapnia", "hypercarbia", "co2 72", "co2"] },
@@ -411,25 +427,24 @@ export const SOB_SAMPS: Samp[] = [
           { id: "acute", text: "Bicarbonate too low for the degree of hypercapnia, so an acute on chronic process", match: ["acute on chronic", "inadequate compensation", "incomplete compensation", "bicarbonate", "hco3"] },
         ],
         explanation:
-          "A pH below 7.35 with PaCO2 above 45 mm Hg defines acute hypercapnic respiratory failure and is the trigger for NIV in COPD. The raised bicarbonate shows chronic retention, but the low pH shows he has decompensated on top of it.",
+          "A pH below 7.35 with PaCO2 above 45 mmHg defines acute hypercapnic respiratory failure and is the trigger for NIV in COPD. The raised bicarbonate shows chronic retention, but the low pH shows he has decompensated on top of it.",
         keyFeature: { topic: "sob", n: 4 },
         source: "ers-niv",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which ventilatory support is most appropriate now? Select one.",
+        prompt: "Which of the following forms of ventilatory support is most appropriate now?",
         options: [
-          "BiPAP starting near IPAP 10 cm H2O and EPAP 5 cm H2O, titrated to comfort and PaCO2",
-          "CPAP 10 cm H2O alone",
-          "High flow nasal cannula at 60 L/min with FiO2 1.0",
-          "Rapid sequence intubation now",
-          "Non rebreather mask at 15 L/min",
-          "Continue 2 L/min nasal prongs and repeat the gas in 2 hours",
+          "BiPAP starting near IPAP 10 and EPAP 5 cm H2O",
+          "Continue 2 L/minute nasal prongs, repeat gas in 2 hours",
+          "CPAP 10 cm H2O by full face mask",
+          "High flow nasal cannula, 60 L/minute and FiO2 1.0",
+          "Rapid sequence intubation and ventilation",
         ],
         correct: 0,
         explanation:
-          "Bilevel NIV reduces intubation and mortality in hypercapnic COPD exacerbations with pH 7.25 to 7.35 and is reasonable below that with close watch. He is alert and protecting his airway, so NIV is first. CPAP alone gives no inspiratory support to unload the muscles.",
+          "Bilevel NIV reduces intubation and mortality in hypercapnic COPD exacerbations with pH 7.25 to 7.35 and is reasonable below that with close watch. He is alert and protecting his airway, so NIV is first. Start near IPAP 10 cm H2O and EPAP 5 cm H2O and titrate to comfort and PaCO2. CPAP alone gives no inspiratory support to unload the muscles.",
         keyFeature: { topic: "sob", n: 3 },
         source: "ers-niv",
       },
@@ -437,7 +452,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE drug therapies for this exacerbation.",
+        prompt: "What drug therapies are indicated for this exacerbation?",
         accept: [
           { id: "saba", text: "Short acting beta agonist such as salbutamol", match: ["salbutamol", "saba", "beta agonist", "ventolin"] },
           { id: "sama", text: "Short acting anticholinergic such as ipratropium", match: ["ipratropium", "anticholinergic", "sama", "atrovent"] },
@@ -448,14 +463,14 @@ export const SOB_SAMPS: Samp[] = [
         explanation:
           "Inhaled short acting bronchodilators, a short course of systemic corticosteroid and an antibiotic when sputum purulence has increased are the core of exacerbation care. Five days of prednisone is as effective as longer courses. Methylxanthines add toxicity without benefit.",
         keyFeature: { topic: "asthma-copd", n: 6 },
-        source: "cts-copd",
+        source: "gold",
       },
       {
         id: "q5",
         kind: "short",
         required: 3,
-        update: "After 90 minutes on BiPAP he is harder to rouse and has vomited once. Repeat gas: pH 7.18, PaCO2 94 mm Hg.",
-        prompt: "List THREE reasons to move to intubation now.",
+        update: "After 90 minutes on BiPAP he is harder to rouse and has vomited once. Repeat gas: pH 7.18, PaCO2 94 mmHg.",
+        prompt: "What are the reasons to move to intubation now?",
         accept: [
           { id: "loc", text: "Worsening level of consciousness", match: ["consciousness", "loc", "drowsy", "rouse", "obtunded", "mental status", "gcs"] },
           { id: "gas", text: "Worsening acidosis and hypercapnia despite NIV", match: ["worsening acidosis", "worsening ph", "rising co2", "rising pco2", "rising paco2", "worsening gas", "worsening hypercapnia", "ph 7.18", "failed niv", "failure of niv"] },
@@ -469,7 +484,7 @@ export const SOB_SAMPS: Samp[] = [
         source: "ers-niv",
       },
     ],
-    sources: [S.ctsCopd, S.ersNiv],
+    sources: [S.gold, S.ersNiv],
     ...META,
   },
   {
@@ -478,13 +493,14 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["dvt-pe", "asthma-copd"],
     title: "Not her usual flare",
     stem:
-      "A 68 year old woman with moderate COPD was discharged 10 days ago after an 8 day admission for pneumonia. Since yesterday she has been more short of breath with sharp right sided chest pain on inspiration. Her cough and sputum are unchanged from baseline. Her usual SpO2 is 92% on room air. HR 118, BP 124/76, RR 28, SpO2 86% on room air, T 37.1 C. There is minimal wheeze, no more than her usual. Her right calf is 2 cm larger than the left.",
+      "A 68-year-old woman with moderate COPD was discharged 10 days ago after an 8 day admission for pneumonia. Since yesterday she has been more short of breath with sharp right sided chest pain on inspiration. Her cough and sputum are unchanged from baseline. Her usual O2 sat is 92% on room air. There is minimal wheeze, no more than her usual. Her right calf is 2 cm larger than the left.",
+    vitals: { temperature: "37.1°C", pulse: "118/minute", resp: "28/minute", bp: "124/76 mmHg", o2sat: "86% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that suggest a cause other than a COPD exacerbation.",
+        prompt: "What features suggest a cause other than a COPD exacerbation?",
         accept: [
           { id: "sputum", text: "No change in cough or sputum", match: ["unchanged sputum", "cough unchanged", "unchanged cough", "no change in cough", "no change in sputum", "no sputum", "no change sputum", "no increase sputum", "no purulence", "no change cough", "no increased sputum", "baseline sputum"] },
           { id: "pleuritic", text: "Pleuritic chest pain", match: ["pleuritic", "chest pain", "pain on inspiration"] },
@@ -502,7 +518,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE acute diagnoses, other than a COPD exacerbation, that you must consider in her.",
+        prompt: "What acute diagnoses, other than a COPD exacerbation, must you consider in her?",
         accept: [
           { id: "pe", text: "Pulmonary embolism", match: ["pulmonary embolism", "pe", "embolus"] },
           { id: "ptx", text: "Pneumothorax", match: ["pneumothorax", "ptx"] },
@@ -520,15 +536,16 @@ export const SOB_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Her Wells score puts PE in the likely range. Which is the most appropriate next test? Select one.",
+        update: "Her Wells score puts PE in the likely range.",
+        prompt: "Which of the following is the most appropriate next test?",
         options: [
-          "D-dimer, with imaging only if positive",
           "CT pulmonary angiogram",
+          "D-dimer, with imaging only if positive",
+          "Portable chest radiograph alone",
+          "Transthoracic echocardiogram",
           "Ventilation perfusion scan",
-          "Chest radiograph alone",
-          "Echocardiogram",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "With a PE likely score, a negative D-dimer cannot safely exclude PE and D-dimer is often raised after recent admission anyway. Underlying lung disease makes a VQ scan likely to be nondiagnostic, so CT pulmonary angiography is preferred. CT also shows pneumothorax, pneumonia and effusion.",
         keyFeature: { topic: "dvt-pe", n: 5 },
@@ -539,7 +556,7 @@ export const SOB_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "CT shows right segmental and subsegmental emboli. The RV is normal in size. Troponin is normal.",
-        prompt: "List TWO findings that favour admission over outpatient treatment for her.",
+        prompt: "What findings favour admission over outpatient treatment for her?",
         accept: [
           { id: "o2", text: "Hypoxemia needing supplemental oxygen, SpO2 below 90%", match: ["oxygen", "hypoxemia", "hypoxia", "spo2", "saturation"] },
           { id: "lung", text: "Chronic lung disease with poor reserve", match: ["chronic lung", "copd", "cardiopulmonary", "reserve"] },
@@ -562,13 +579,14 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["pulmonary-edema"],
     title: "Fever, cough and a weak heart",
     stem:
-      "A 79 year old man with ischemic cardiomyopathy and an ejection fraction of 30% has had a productive cough and fever for 3 days. Tonight he woke gasping and could not lie flat. T 38.4 C, HR 116 regular, BP 172/98, RR 34, SpO2 84% on room air. He is diaphoretic and speaking in 2 to 3 word phrases. JVP is elevated. There are crackles to the mid lung fields bilaterally and bronchial breath sounds at the right base.",
+      "A 79-year-old man with ischemic cardiomyopathy and an ejection fraction of 30% has had a productive cough and fever for 3 days. Tonight he woke gasping and could not lie flat. He is diaphoretic and speaking in 2 to 3 word phrases. JVP is elevated. There are crackles to the mid lung fields bilaterally and bronchial breath sounds at the right base.",
+    vitals: { temperature: "38.4°C", pulse: "116/minute regular", resp: "34/minute", bp: "172/98 mmHg", o2sat: "84% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE bedside or rapid tests that will help you sort out the causes of his dyspnea in the next 15 minutes.",
+        prompt: "What bedside or rapid tests will help you sort out the causes of his dyspnea in the next 15 minutes?",
         accept: [
           { id: "pocus", text: "Lung point of care ultrasound for B lines and consolidation", match: ["ultrasound", "pocus", "b line"] },
           { id: "ecg", text: "12 lead ECG", match: ["ecg", "ekg", "electrocardiogram"] },
@@ -588,7 +606,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE treatments you start immediately for his respiratory distress.",
+        prompt: "What treatments do you start immediately for his respiratory distress?",
         accept: [
           { id: "niv", text: "Noninvasive ventilation with CPAP or BiPAP", match: ["niv", "bipap", "cpap", "noninvasive", "non invasive", "positive pressure"] },
           { id: "nitro", text: "Nitroglycerin, sublingual then IV infusion titrated to blood pressure", match: ["nitroglycerin", "nitro", "ntg", "nitrate"] },
@@ -607,7 +625,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "State an appropriate empiric antibiotic regimen for his pneumonia, given he needs admission to a ward bed or higher.",
+        prompt: "What is an appropriate empiric antibiotic regimen for his pneumonia, given he needs admission to a ward bed or higher?",
         accept: [
           { id: "betamac", text: "Ceftriaxone plus a macrolide such as azithromycin", match: ["ceftriaxone azithromycin", "ceftriaxone macrolide", "ceftriaxone clarithromycin", "cefotaxime azithromycin", "cefotaxime macrolide", "ceftriaxone doxycycline"] },
           { id: "fq", text: "Respiratory fluoroquinolone alone, such as levofloxacin or moxifloxacin", match: ["levofloxacin", "moxifloxacin", "respiratory fluoroquinolone"] },
@@ -625,8 +643,8 @@ export const SOB_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        update: "Forty minutes later on BiPAP and a nitroglycerin infusion, he is confused and mottled. HR 124, BP 84/52, SpO2 88% on FiO2 0.8.",
-        prompt: "List THREE changes you make to his management now.",
+        update: "Forty minutes later on BiPAP and a nitroglycerin infusion, he is confused and mottled. Pulse 124/minute, BP 84/52 mmHg, O2 sat 88% on FiO2 0.8.",
+        prompt: "What changes do you make to his management now?",
         accept: [
           { id: "stopnitro", text: "Stop the nitroglycerin infusion", match: ["stop nitro", "stop nitroglycerin", "stop ntg", "hold nitro", "hold nitroglycerin", "discontinue nitro", "discontinue nitroglycerin"] },
           { id: "intub", text: "Intubate for worsening mental status and hypoxemia", match: ["intubate", "intubation", "ett", "invasive ventilation", "rsi"] },
@@ -651,13 +669,14 @@ export const SOB_SAMPS: Samp[] = [
     topic: "sob",
     title: "Deep breathing and a sore stomach",
     stem:
-      "A 19 year old woman with type 1 diabetes has had 2 days of vomiting and crampy abdominal pain. She tells triage she cannot catch her breath. She has been skipping insulin doses because her pump supplies ran out. HR 124, BP 102/64, RR 32 with deep regular breaths, SpO2 99% on room air, T 37.2 C. Her mucous membranes are dry and her chest is clear. Glucose 28 mmol/L. Venous gas pH 6.98, PCO2 14 mm Hg, HCO3 3 mmol/L. Na 131, K 5.6, Cl 98 mmol/L.",
+      "A 19-year-old woman with type 1 diabetes has had 2 days of vomiting and crampy abdominal pain. She tells triage she cannot catch her breath. She has been skipping insulin doses because her pump supplies ran out. Her breathing is deep and regular. Her mucous membranes are dry and her chest is clear. Glucose 28 mmol/L. Venous gas pH 6.98, PCO2 14 mmHg, HCO3 3 mmol/L. Na 131, K 5.6, Cl 98 mmol/L.",
+    vitals: { temperature: "37.2°C", pulse: "124/minute", resp: "32/minute", bp: "102/64 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that tell you her dyspnea is not from a lung problem.",
+        prompt: "What features tell you her dyspnea is not from a lung problem?",
         accept: [
           { id: "sat", text: "Normal oxygen saturation", match: ["saturation", "spo2", "oxygenation", "no hypoxia"] },
           { id: "clear", text: "Clear chest on auscultation", match: ["clear chest", "clear lung", "normal lung", "normal chest"] },
@@ -675,7 +694,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE initial treatments for her metabolic problem. Include specifics.",
+        prompt: "What are the initial treatments, with specifics, for her metabolic problem?",
         accept: [
           { id: "fluid", text: "0.9% saline 1 L IV bolus, repeated to restore perfusion", match: ["saline", "normal saline", "ns", "crystalloid", "ringer", "plasmalyte", "fluid bolus", "iv fluid"] },
           { id: "insulin", text: "Regular insulin infusion at 0.1 units/kg/h once K is at least 3.3 mmol/L", match: ["insulin infusion", "insulin drip", "insulin 0.1", "iv insulin"] },
@@ -694,7 +713,7 @@ export const SOB_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Two hours later she is drowsy with a GCS of 11. A colleague suggests intubation to protect her airway.",
-        prompt: "List THREE considerations before and during intubation of this patient.",
+        prompt: "What are the considerations before and during intubation of this patient?",
         accept: [
           { id: "cause", text: "Look for a reversible cause of drowsiness first, such as hypoglycemia or cerebral edema", match: ["hypoglycemia", "cerebral edema", "glucose check", "reversible cause"] },
           { id: "apnea", text: "Loss of her respiratory compensation during apnea can drop the pH and cause arrest", match: ["apnea", "compensation", "arrest", "worsening acidosis"] },
@@ -719,13 +738,15 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Breathless and muddled at 78",
     stem:
-      "A 78 year old woman is brought from home by her son. She has been short of breath and increasingly confused for 2 days. She has osteoarthritis and has been taking extra strength ASA tablets from the pharmacy shelf several times a day for knee pain. She complains of a ringing in her ears. T 37.9 C, HR 112, BP 138/72, RR 30, SpO2 94% on room air. She has fine crackles at both bases. The chest radiograph shows mild bilateral interstitial opacities. Arterial gas: pH 7.44, PaCO2 24 mm Hg, HCO3 16 mmol/L. Na 140, Cl 104 mmol/L. Glucose 6.2 mmol/L. Creatinine 124 umol/L.",
+      "A 78-year-old woman is brought from home by her son. She has been short of breath and increasingly confused for 2 days. She has osteoarthritis and has been taking extra strength ASA tablets from the pharmacy shelf several times a day for knee pain. She complains of a ringing in her ears. She has fine crackles at both bases. The chest radiograph shows mild bilateral interstitial opacities. Arterial gas: pH 7.44, PaCO2 24 mmHg, HCO3 16 mmol/L. Na 140, Cl 104 mmol/L. Glucose 6.2 mmol/L. Creatinine 124 umol/L.",
+    vitals: { temperature: "37.9°C", pulse: "112/minute", resp: "30/minute", bp: "138/72 mmHg", o2sat: "94% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "The admitting team plans to treat her for pneumonia. List THREE clues that point to a toxicologic cause.",
+        update: "The admitting team plans to treat her for pneumonia.",
+        prompt: "What clues point to a toxicologic cause?",
         accept: [
           { id: "mixed", text: "Mixed respiratory alkalosis and metabolic acidosis", match: ["mixed", "respiratory alkalosis", "metabolic acidosis"] },
           { id: "gap", text: "Raised anion gap of 20", match: ["anion gap", "gap"] },
@@ -743,7 +764,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "State the single test that confirms your suspicion.",
+        prompt: "What single test confirms your suspicion?",
         accept: [{ id: "level", text: "Serum salicylate level", match: ["salicylate level", "asa level", "aspirin level", "serum salicylate", "salicylate concentration"] }],
         unacceptable: [{ text: "Urine drug screen", match: ["urine drug", "tox screen", "urine screen"] }],
         explanation:
@@ -755,8 +776,8 @@ export const SOB_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "The salicylate level is 4.1 mmol/L. She remains confused. SpO2 has fallen to 89% on room air.",
-        prompt: "List THREE treatments she needs.",
+        update: "The salicylate level is 4.1 mmol/L. She remains confused. O2 sat has fallen to 89% on room air.",
+        prompt: "What treatments does she need?",
         accept: [
           { id: "bicarb", text: "Sodium bicarbonate IV bolus then infusion to alkalinize urine to pH 7.5 to 8", match: ["bicarbonate", "bicarb", "nahco3", "alkalinization", "alkalinize"] },
           { id: "hd", text: "Urgent hemodialysis with nephrology", match: ["hemodialysis", "dialysis", "hd", "nephrology", "extracorporeal"] },
@@ -776,17 +797,17 @@ export const SOB_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "While dialysis is being arranged, she becomes obtunded and her respiratory effort weakens. Intubation is needed.",
-        prompt: "Which ventilator approach is most appropriate after intubation? Select one.",
+        prompt: "Which of the following ventilator approaches is most appropriate after intubation?",
         options: [
-          "Rate 14 and tidal volume 6 mL/kg with lung protective settings",
-          "Match or exceed her pre intubation minute ventilation, continue bicarbonate and check a gas within minutes",
-          "Permissive hypercapnia to limit barotrauma",
-          "Stop the bicarbonate infusion once the tube is secured",
           "Delay intubation and use BiPAP despite obtundation",
+          "Match or exceed her pre intubation minute ventilation",
+          "Permissive hypercapnia to limit barotrauma",
+          "Rate 14/minute and tidal volume 6 mL/kg",
+          "Stop the bicarbonate infusion once the tube is secured",
         ],
         correct: 1,
         explanation:
-          "Her tachypnea was keeping her pH up and salicylate out of the brain. A normal ventilator rate lets PCO2 rise, the pH fall and more salicylate enter the CNS, which can cause sudden death. Keep minute ventilation high, continue alkalinization and recheck the gas early.",
+          "Her tachypnea was keeping her pH up and salicylate out of the brain. A normal ventilator rate lets PCO2 rise, the pH fall and more salicylate enter the CNS, which can cause sudden death. Match or exceed her pre intubation minute ventilation, continue the bicarbonate and recheck the gas within minutes.",
         keyFeature: { topic: "tox", n: 4 },
         source: "tintinalli",
       },
@@ -800,13 +821,14 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["dvt-pe"],
     title: "Sharp pain with each breath",
     stem:
-      "A 26 year old woman has had sharp left sided chest pain for a day. It is worse when she breathes in. She is mildly short of breath climbing stairs. She takes a combined oral contraceptive. She has no hemoptysis, recent surgery or prior clot. HR 92, BP 118/74, RR 18, SpO2 98% on room air, T 36.9 C. Her legs are normal. The ECG shows sinus rhythm and the chest radiograph is normal. You judge PE to be less likely than another diagnosis.",
+      "A 26-year-old woman has had sharp left sided chest pain for a day. It is worse when she breathes in. She is mildly short of breath climbing stairs. She takes a combined oral contraceptive. She has no hemoptysis, recent surgery or prior clot. Her legs are normal. The ECG shows sinus rhythm and the chest radiograph is normal. You judge PE to be less likely than another diagnosis.",
+    vitals: { temperature: "36.9°C", pulse: "92/minute", resp: "18/minute", bp: "118/74 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE further history items that you need to estimate her VTE risk.",
+        prompt: "What further history items do you need to estimate her VTE risk?",
         accept: [
           { id: "fhx", text: "Family history of VTE or known thrombophilia", match: ["family history", "thrombophilia"] },
           { id: "preg", text: "Possible pregnancy or recent postpartum state", match: ["pregnancy", "pregnant", "postpartum", "lmp"] },
@@ -825,13 +847,13 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "She has none of these. Her Wells score is 0.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
-          "No testing for PE because she is PERC negative",
-          "D-dimer",
           "CT pulmonary angiogram",
+          "D-dimer level",
+          "Leg compression ultrasound",
           "Ventilation perfusion scan",
-          "Bilateral leg compression ultrasound",
+          "No further testing for PE",
         ],
         correct: 1,
         explanation:
@@ -843,8 +865,8 @@ export const SOB_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        update: "Her D-dimer is 1240 ng/mL FEU. The laboratory cutoff is 500 ng/mL.",
-        prompt: "State the most appropriate next diagnostic step.",
+        update: "Her D-dimer is 1 240 ng/mL FEU. The laboratory cutoff is 500 ng/mL.",
+        prompt: "What is the most appropriate next diagnostic step?",
         accept: [
           { id: "ctpa", text: "CT pulmonary angiogram", match: ["ctpa", "ct pulmonary", "ct angiogram", "ct angiography", "ct chest"] },
           { id: "vq", text: "Ventilation perfusion scan, since her chest radiograph is normal", match: ["vq", "v/q", "ventilation perfusion"] },
@@ -862,11 +884,12 @@ export const SOB_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 1,
-        prompt: "Your resident asks about another patient. He is 64 years old, PE unlikely by Wells, with a D-dimer of 590 ng/mL FEU. State his age adjusted D-dimer cutoff and whether PE is excluded.",
+        update: "Your resident asks about another patient. He is a 64-year-old man, PE unlikely by Wells, with a D-dimer of 590 ng/mL FEU.",
+        prompt: "What is his age adjusted D-dimer cutoff, and is PE excluded?",
         accept: [{ id: "cut", text: "640 ng/mL FEU, so PE is excluded without imaging", match: ["640"] }],
         unacceptable: [{ text: "The standard 500 ng/mL cutoff applies, so he needs imaging", match: ["needs imaging", "need imaging", "requires imaging", "needs ct", "needs ctpa", "order ctpa"] }],
         explanation:
-          "For patients over 50, the age adjusted cutoff is age times 10 ng/mL FEU. For a 64 year old that is 640 ng/mL. His result of 590 is below it, so PE is excluded in a PE unlikely patient. This reduces imaging without increasing missed PE.",
+          "For patients over 50, the age adjusted cutoff is age times 10 ng/mL FEU. For a 64-year-old that is 640 ng/mL. His result of 590 is below it, so PE is excluded in a PE unlikely patient. This reduces imaging without increasing missed PE.",
         keyFeature: { topic: "sob", n: 5 },
         source: "adjust",
       },
@@ -880,13 +903,15 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["dvt-pe", "shock"],
     title: "Collapse during chemotherapy",
     stem:
-      "A 55 year old man with metastatic pancreatic cancer on chemotherapy fainted at home after 2 hours of worsening breathlessness. He is now awake. HR 128, BP 86/58, RR 32, SpO2 85% on room air rising to 91% on a non rebreather, T 37.0 C. His neck veins are distended and his chest is clear. His right leg has been swollen for a week. The portable chest radiograph is normal.",
+      "A 55-year-old man with metastatic pancreatic cancer on chemotherapy fainted at home after 2 hours of worsening breathlessness. He is now awake. His neck veins are distended and his chest is clear. His right leg has been swollen for a week. The portable chest radiograph is normal.",
+    vitals: { temperature: "37.0°C", pulse: "128/minute", resp: "32/minute", bp: "86/58 mmHg", o2sat: "85% on room air, rising to 91% on a non rebreather mask" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "Your resident wants a D-dimer and says the normal chest radiograph makes PE less likely. List TWO reasons this reasoning is wrong.",
+        update: "Your resident wants a D-dimer and says the normal chest radiograph makes PE less likely.",
+        prompt: "What are the reasons this reasoning is wrong?",
         accept: [
           { id: "highptp", text: "Pretest probability is high, so a negative D-dimer cannot exclude PE", match: ["pretest", "high probability", "high risk", "cannot exclude", "cannot rule out", "negative d dimer"] },
           { id: "cancer", text: "D-dimer is commonly raised in cancer, so it adds little", match: ["cancer", "malignancy", "nonspecific", "specificity", "false positive", "always positive", "elevated"] },
@@ -902,7 +927,8 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "He is too unstable for CT. List TWO bedside ultrasound findings that would support massive PE.",
+        update: "He is too unstable for CT.",
+        prompt: "What bedside ultrasound findings would support massive PE?",
         accept: [
           { id: "rv", text: "Dilated right ventricle, RV to LV ratio above 1", match: ["rv dilation", "dilated rv", "right ventricle", "rv enlarge", "rv larger", "rv to lv", "rv/lv"] },
           { id: "dsign", text: "Septal flattening, D sign", match: ["d sign", "septal", "septum"] },
@@ -921,19 +947,19 @@ export const SOB_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         select: 2,
-        update: "Echo shows a markedly dilated RV with septal flattening. There is a noncompressible right femoral vein. BP is now 78/50.",
-        prompt: "Select TWO immediate treatments.",
+        update: "Echo shows a markedly dilated RV with septal flattening. There is a noncompressible right femoral vein. BP is now 78/50 mmHg.",
+        prompt: "Which of the following immediate treatments are most appropriate for him?",
         options: [
           "Alteplase 100 mg IV over 2 hours",
           "Alteplase 0.9 mg/kg IV, maximum 90 mg",
-          "Norepinephrine infusion",
-          "Normal saline 2 L IV bolus",
-          "Furosemide 40 mg IV",
           "Apixaban 10 mg PO",
+          "Furosemide 40 mg IV",
           "Immediate rapid sequence intubation",
           "IVC filter insertion",
+          "Norepinephrine infusion",
+          "Normal saline 2 L IV bolus",
         ],
-        correct: [0, 2],
+        correct: [0, 6],
         explanation:
           "Massive PE with persistent hypotension is an indication for systemic thrombolysis unless contraindicated. The standard PE regimen is alteplase 100 mg over 2 hours. Norepinephrine supports RV perfusion. Large fluid volumes overdistend the failing RV, and intubation can cause arrest from loss of preload and sympathetic drive.",
         keyFeature: { topic: "sob", n: 3 },
@@ -943,7 +969,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE contraindications to thrombolysis you must screen for in this patient.",
+        prompt: "What contraindications to thrombolysis must you screen for in this patient?",
         accept: [
           { id: "brainmets", text: "Brain metastases or other intracranial tumour", match: ["brain metastase", "brain metastasis", "brain met", "intracranial tumour", "intracranial tumor", "intracranial neoplasm", "brain lesion", "cns tumour", "cns metastase"] },
           { id: "ich", text: "Any prior intracranial hemorrhage", match: ["intracranial hemorrhage", "ich", "brain bleed", "hemorrhagic stroke"] },
@@ -968,20 +994,21 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["dvt-pe"],
     title: "Breathless at 28 weeks",
     stem:
-      "A 31 year old woman, G2P1 at 28 weeks gestation, has had 2 days of breathlessness and right sided pleuritic chest pain. Her left calf has been sore and swollen for 4 days. The pregnancy has been uncomplicated. HR 108, BP 112/68, RR 24, SpO2 95% on room air, T 36.8 C. The left calf is 3 cm larger than the right and tender. Fetal heart rate is 145.",
+      "A 31-year-old woman, G2P1 at 28 weeks gestation, has had 2 days of breathlessness and right sided pleuritic chest pain. Her left calf has been sore and swollen for 4 days. The pregnancy has been uncomplicated. The left calf is 3 cm larger than the right and tender. The fetal heart rate is 145/minute.",
+    vitals: { temperature: "36.8°C", pulse: "108/minute", resp: "24/minute", bp: "112/68 mmHg", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate first diagnostic test? Select one.",
+        prompt: "Which of the following is the most appropriate first diagnostic test?",
         options: [
-          "Left leg compression ultrasound",
           "CT pulmonary angiogram",
-          "Ventilation perfusion scan",
-          "D-dimer",
+          "D-dimer concentration",
+          "Left leg compression ultrasound",
           "MRI pulmonary angiogram",
+          "Ventilation perfusion lung scan",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "When a pregnant patient with suspected PE has leg symptoms, compression ultrasound comes first. A proximal DVT confirms VTE and justifies full anticoagulation with no chest imaging or fetal radiation. MR angiography is not validated for PE diagnosis.",
         keyFeature: { topic: "dvt-pe", n: 5 },
@@ -991,8 +1018,8 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        update: "The leg ultrasound shows no DVT. Her D-dimer is 1450 ng/mL FEU.",
-        prompt: "List TWO appropriate next steps.",
+        update: "The leg ultrasound shows no DVT. Her D-dimer is 1 450 ng/mL FEU.",
+        prompt: "What are the appropriate next steps?",
         accept: [
           { id: "ctpa", text: "CT pulmonary angiogram", match: ["ctpa", "ct pulmonary", "ct angiogram", "ct angiography", "ct chest"] },
           { id: "vq", text: "Ventilation perfusion scan, often preceded by a chest radiograph", match: ["vq", "v/q", "ventilation perfusion", "perfusion scan"] },
@@ -1002,7 +1029,7 @@ export const SOB_SAMPS: Samp[] = [
         ],
         unacceptable: [{ text: "No imaging because D-dimer is always high in pregnancy", match: ["skip imaging", "no imaging needed", "no imaging required", "no chest imaging", "discharge home"], dangerous: true }],
         explanation:
-          "In the pregnancy adapted YEARS approach, a negative leg ultrasound does not end the workup. A D-dimer of 1000 ng/mL or more needs chest imaging whatever the YEARS items, so her result of 1450 mandates imaging. D-dimer rises in pregnancy but a high value cannot be dismissed. Empiric LMWH is appropriate if imaging is delayed.",
+          "In the pregnancy adapted YEARS approach, a negative leg ultrasound does not end the workup. A D-dimer of 1 000 ng/mL or more needs chest imaging whatever the YEARS items, so her result of 1 450 mandates imaging. D-dimer rises in pregnancy but a high value cannot be dismissed. Empiric LMWH is appropriate if imaging is delayed.",
         keyFeature: { topic: "sob", n: 5 },
         source: "artemis",
       },
@@ -1010,7 +1037,8 @@ export const SOB_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "She is worried about radiation to her baby. List TWO accurate counselling points.",
+        update: "She is worried about radiation to her baby.",
+        prompt: "What are accurate counselling points for her?",
         accept: [
           { id: "dose", text: "The fetal dose from CTPA or VQ is far below the level linked to fetal harm", match: ["below", "low dose", "very low", "far below", "small dose", "minimal", "negligible"] },
           { id: "risk", text: "Missing a PE is a greater risk to her and the baby than the imaging", match: ["missed pe", "missing pe", "missing a pe", "untreated pe", "greater risk", "risk of not"] },
@@ -1028,15 +1056,15 @@ export const SOB_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "CT shows a right lower lobe segmental PE. Her weight is 78 kg and her creatinine is normal.",
-        prompt: "Which is the most appropriate treatment? Select one.",
+        prompt: "Which of the following is the most appropriate anticoagulant treatment for her?",
         options: [
-          "Enoxaparin 1 mg/kg SC every 12 hours",
-          "Warfarin with a target INR of 2 to 3",
           "Apixaban 10 mg PO twice daily for 7 days",
+          "ASA 81 mg PO once daily until delivery",
+          "Enoxaparin 1 mg/kg SC every 12 hours",
           "Rivaroxaban 15 mg PO twice daily for 21 days",
-          "ASA 81 mg PO daily",
+          "Warfarin with a target INR of 2 to 3",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "LMWH is the anticoagulant of choice in pregnancy because it does not cross the placenta. Warfarin is teratogenic and direct oral anticoagulants are not recommended in pregnancy. Treatment continues through pregnancy and for at least 6 weeks postpartum, with a total of at least 3 months.",
         keyFeature: { topic: "dvt-pe", n: 6 },
@@ -1052,13 +1080,15 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["airway"],
     title: "Weak legs, then weak breathing",
     stem:
-      "A 42 year old man had a diarrheal illness 2 weeks ago. For 5 days he has had tingling feet and weakness that has climbed from his legs to his arms. Today he feels short of breath when lying flat and his cough is weak. He speaks in short sentences. HR 104, BP 146/92, RR 26 and shallow, SpO2 97% on room air, T 36.9 C. Venous gas: pH 7.38, PCO2 43 mm Hg. He has symmetric weakness of all limbs and no reflexes.",
+      "A 42-year-old man had a diarrheal illness 2 weeks ago. For 5 days he has had tingling feet and weakness that has climbed from his legs to his arms. Today he feels short of breath when lying flat and his cough is weak. He speaks in short sentences and his breathing is shallow. Venous gas: pH 7.38, PCO2 43 mmHg. He has symmetric weakness of all limbs and no reflexes.",
+    vitals: { temperature: "36.9°C", pulse: "104/minute", resp: "26/minute", bp: "146/92 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "Your resident says his breathing is fine because the saturation and gas are normal. List TWO reasons this is unsafe.",
+        update: "Your resident says his breathing is fine because the saturation and gas are normal.",
+        prompt: "What are the reasons this is unsafe?",
         accept: [
           { id: "late", text: "Hypoxemia and hypercapnia are late findings in neuromuscular failure", match: ["late", "late sign", "late finding"] },
           { id: "normalco2", text: "A normal PCO2 in a tachypneic patient means he is barely compensating", match: ["normal pco2", "normal co2", "should be low", "barely compensating", "inappropriately normal"] },
@@ -1075,7 +1105,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE bedside measures you will use to follow his respiratory function.",
+        prompt: "What bedside measures will you use to follow his respiratory function?",
         accept: [
           { id: "fvc", text: "Forced vital capacity", match: ["fvc", "vital capacity"] },
           { id: "nif", text: "Negative inspiratory force or maximal inspiratory pressure", match: ["nif", "negative inspiratory", "mip", "maximal inspiratory", "inspiratory pressure"] },
@@ -1095,15 +1125,15 @@ export const SOB_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "His FVC is 14 mL/kg and his NIF is minus 20 cm H2O. He is coughing on sips of water.",
-        prompt: "Which is the most appropriate respiratory plan? Select one.",
+        prompt: "Which of the following is the most appropriate respiratory plan?",
         options: [
-          "Controlled intubation now",
-          "BiPAP trial and reassess in 2 hours",
-          "High flow nasal cannula and repeat FVC in 4 hours",
           "Admit to a ward with continuous oximetry",
-          "IVIG first and intubate only if the gas becomes abnormal",
+          "Begin IVIG and intubate only if the gas worsens",
+          "BiPAP trial and reassess in 2 hours",
+          "Controlled intubation now",
+          "High flow nasal cannula, repeat FVC in 4 hours",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "An FVC below 20 mL/kg, a NIF weaker than minus 30 cm H2O and bulbar weakness each predict the need for ventilation. A planned intubation is far safer than a crash airway. BiPAP is a poor choice with bulbar weakness and a progressive disease. IVIG helps later but will not reverse weakness today.",
         keyFeature: { topic: "sob", n: 3 },
@@ -1112,15 +1142,15 @@ export const SOB_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which neuromuscular blocker is most appropriate for his intubation? Select one.",
+        prompt: "Which of the following neuromuscular blockers is most appropriate for his intubation?",
         options: [
-          "Succinylcholine 1.5 mg/kg IV",
-          "Succinylcholine 0.5 mg/kg IV",
           "Rocuronium 1.2 mg/kg IV",
           "Rocuronium 0.3 mg/kg IV",
+          "Succinylcholine 1.5 mg/kg IV",
+          "Succinylcholine 0.5 mg/kg IV",
           "No paralytic, induction agent alone",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
           "Denervation upregulates extrajunctional acetylcholine receptors, so succinylcholine can cause life threatening hyperkalemia in Guillain Barre syndrome. Rocuronium at an RSI dose is safe. A low dose gives poor intubating conditions.",
         keyFeature: { topic: "airway", n: 5 },
@@ -1130,7 +1160,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 3,
-        prompt: "List THREE other neuromuscular causes of respiratory failure you would consider in an ED patient with weakness and dyspnea.",
+        prompt: "What other neuromuscular causes of respiratory failure would you consider in an emergency department patient with weakness and dyspnea?",
         accept: [
           { id: "mg", text: "Myasthenic crisis", match: ["myasthenia", "myasthenic", "mg crisis"] },
           { id: "botulism", text: "Botulism", match: ["botulism", "botulinum"] },
@@ -1156,18 +1186,19 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["asthma-copd"],
     title: "Sudden chest pain in a young man",
     stem:
-      "A 24 year old man with mild asthma was using his salbutamol more often this week for a cold. An hour ago he felt a sudden sharp pain in the left chest and became very short of breath. He now looks grey and sweaty. HR 138, BP 78/40, RR 36, SpO2 80% on a non rebreather mask. Breath sounds are absent on the left, the left chest is hyperresonant, the trachea is shifted to the right and the neck veins are distended.",
+      "A 24-year-old man with mild asthma was using his salbutamol more often this week for a cold. An hour ago he felt a sudden sharp pain in the left chest and became very short of breath. He now looks grey and sweaty. Breath sounds are absent on the left, the left chest is hyperresonant, the trachea is shifted to the right and the neck veins are distended.",
+    vitals: { pulse: "138/minute", resp: "36/minute", bp: "78/40 mmHg", o2sat: "80% on a non rebreather mask" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate immediate action? Select one.",
+        prompt: "Which of the following is the most appropriate immediate action?",
         options: [
-          "Portable chest radiograph to confirm the diagnosis",
-          "Needle or finger decompression of the left chest",
-          "Rapid sequence intubation",
           "Continuous nebulized salbutamol and IV magnesium",
-          "CT chest",
+          "Needle or finger decompression of the left chest",
+          "Portable chest radiograph before any procedure",
+          "Rapid sequence intubation and ventilation",
+          "Urgent CT scan of the chest",
         ],
         correct: 1,
         explanation:
@@ -1179,7 +1210,7 @@ export const SOB_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings in this patient that separate tension physiology from a simple pneumothorax.",
+        prompt: "What findings in this patient separate tension physiology from a simple pneumothorax?",
         accept: [
           { id: "bp", text: "Hypotension", match: ["hypotension", "low blood pressure", "shock", "bp 78"] },
           { id: "trachea", text: "Tracheal deviation away from the affected side", match: ["trachea", "tracheal"] },
@@ -1199,7 +1230,7 @@ export const SOB_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "After decompression and a left chest tube, the lung re-expands. The tube is removed 3 days later and he is ready for discharge.",
-        prompt: "List THREE pieces of advice or follow up arrangements at discharge.",
+        prompt: "What advice or follow up arrangements do you give at discharge?",
         accept: [
           { id: "smoke", text: "Stop smoking tobacco and cannabis", match: ["smoking", "smoke", "cannabis", "tobacco", "stop smoking", "quit smoking", "smoking cessation", "no smoking", "avoid smoking", "stop cannabis", "no cannabis", "avoid cannabis"] },
           { id: "fly", text: "Avoid air travel until the pneumothorax has resolved on a follow up radiograph", match: ["air travel", "fly", "flying", "flight", "airplane", "avoid air travel", "avoid flying", "no flying", "no air travel", "don fly", "avoid flight"] },
@@ -1224,13 +1255,14 @@ export const SOB_SAMPS: Samp[] = [
     alsoTopics: ["anaphylaxis", "airway"],
     title: "Throat tightness after dinner",
     stem:
-      "A 35 year old woman walks into triage from a restaurant across the street. Ten minutes after eating a shrimp dish she developed itchy hives, a tight throat and wheezing. She has no prior allergy history. Her voice is hoarse. HR 130, BP 84/50, RR 28, SpO2 91% on room air. She has widespread urticaria, lip swelling, soft inspiratory stridor and scattered expiratory wheeze. Weight 70 kg.",
+      "A 35-year-old woman walks into triage from a restaurant across the street. Ten minutes after eating a shrimp dish she developed itchy hives, a tight throat and wheezing. She has no prior allergy history. Her voice is hoarse. She has widespread urticaria, lip swelling, soft inspiratory stridor and scattered expiratory wheeze.",
+    vitals: { pulse: "130/minute", resp: "28/minute", bp: "84/50 mmHg", o2sat: "91% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings that show her upper airway is involved.",
+        prompt: "What findings show her upper airway is involved?",
         accept: [
           { id: "hoarse", text: "Hoarse voice", match: ["hoarse", "hoarseness", "voice", "dysphonia"] },
           { id: "stridor", text: "Inspiratory stridor", match: ["stridor"] },
@@ -1247,18 +1279,17 @@ export const SOB_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate first medication? Select one.",
+        prompt: "Which of the following is the most appropriate first medication?",
         options: [
-          "Epinephrine 0.5 mg IM in the anterolateral thigh",
-          "Epinephrine 0.5 mg IV push",
           "Diphenhydramine 50 mg IV",
+          "Epinephrine 0.5 mg IM",
+          "Epinephrine 0.5 mg IV push",
           "Methylprednisolone 125 mg IV",
-          "Epinephrine 0.05 mg IM",
           "Salbutamol 5 mg nebulized",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
-          "IM epinephrine 0.01 mg/kg of the 1 mg/mL solution, up to 0.5 mg in adults, is first line. It can be repeated every 5 to 15 minutes. Undiluted IV bolus epinephrine causes dangerous hypertension and arrhythmia. Antihistamines and steroids do not treat airway edema or shock.",
+          "IM epinephrine 0.01 mg/kg of the 1 mg/mL solution, up to 0.5 mg in adults, is first line. Give it into the anterolateral thigh. It can be repeated every 5 to 15 minutes. Undiluted IV bolus epinephrine causes dangerous hypertension and arrhythmia. Antihistamines and steroids do not treat airway edema or shock.",
         keyFeature: { topic: "anaphylaxis", n: 3 },
         source: "wao-ana",
       },
@@ -1266,8 +1297,8 @@ export const SOB_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "After two IM epinephrine doses 5 minutes apart her BP is 80/46 and her stridor is louder.",
-        prompt: "List THREE next interventions.",
+        update: "After two IM epinephrine doses 5 minutes apart her BP is 80/46 mmHg and her stridor is louder.",
+        prompt: "What are the next interventions?",
         accept: [
           { id: "infusion", text: "Epinephrine infusion titrated to effect", match: ["epinephrine infusion", "epinephrine drip", "epi infusion", "epi drip", "adrenaline infusion"] },
           { id: "fluid", text: "Crystalloid bolus 1 to 2 L IV", match: ["fluid", "saline", "crystalloid", "ringer", "bolus"] },
@@ -1288,7 +1319,7 @@ export const SOB_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "She improves and is observed overnight. The next morning she is well.",
-        prompt: "List THREE items in her discharge plan.",
+        prompt: "What items belong in her discharge plan?",
         accept: [
           { id: "ai", text: "Prescribe an epinephrine autoinjector, ideally two", match: ["autoinjector", "auto injector", "epipen", "allerject", "emerade"] },
           { id: "teach", text: "Teach when and how to use the autoinjector", match: ["teach", "training", "how to use", "technique"] },
