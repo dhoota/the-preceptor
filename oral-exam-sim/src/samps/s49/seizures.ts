@@ -20,7 +20,9 @@ const S = {
   cmaCardio: { id: "cma-cardio", citation: "Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles. 10th edition. 2023. Cardiovascular diseases section.", url: "https://driversguide.ca/sections/cardiovascular-diseases" },
   aero: { id: "aero", citation: "Aeronautics Act, R.S.C. 1985, c. A-2, section 6.5 (Canada). Medical and optometric information. 1985, as amended.", url: "https://laws-lois.justice.gc.ca/eng/acts/A-2/section-6.5.html" },
   nice: { id: "nice", citation: "National Institute for Health and Care Excellence. Epilepsies in children, young people and adults. NICE guideline NG217. 2022.", url: "https://www.nice.org.uk/guidance/ng217" },
-  goldfrank: { id: "goldfrank", citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019." },
+  gfAtypical: { id: "goldfrank-atypical-antidepressants", citation: "Stork CM. Serotonin reuptake inhibitors and atypical antidepressants. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Serotonin Reuptake Inhibitors and Atypical Antidepressants.", url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210274776" },
+  ecbcTca: { id: "ecbc-tca", citation: "Purssell R. Emergency Care BC. Clinical summary: tricyclic antidepressant overdose. Last reviewed 2018.", url: "https://emergencycarebc.ca/clinical_resource/clinical-summary/tricyclic-antidepressant-overdose-2/" },
+  ahaTox: { id: "aha-tox-2023", citation: "Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023.", url: "https://doi.org/10.1161/CIR.0000000000001161" },
   sogc: { id: "sogc", citation: "Magee LA, et al. Guideline No. 426. Hypertensive disorders of pregnancy. Diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022." },
   cvt: { id: "cvt", citation: "Field TS, Lindsay MP, Wein T, et al. Canadian Stroke Best Practice Recommendations, 7th edition. Cerebral venous thrombosis, 2024. Can J Neurol Sci. 2024.", url: "https://www.strokebestpractices.ca/recommendations/cerebral-venous-thrombosis" },
   csbpr: { id: "csbpr", citation: "Heran M, Lindsay P, Gubitz G, et al. Canadian Stroke Best Practice Recommendations. Acute stroke management, 7th edition practice guidelines update, 2022. Can J Neurol Sci. 2024.", url: "https://www.strokebestpractices.ca/recommendations/acute-stroke-management" },
@@ -43,7 +45,11 @@ const S = {
   btf: { id: "btf", citation: "Carney N, Totten AM, O'Reilly C, et al. Guidelines for the management of severe traumatic brain injury, fourth edition. Brain Trauma Foundation. Neurosurgery. 2017.", url: "https://braintrauma.org/coma/guidelines/severe-tbi" },
   starr: { id: "starr", citation: "Starr P, Klein-Schwartz W, Spiller H, et al. Incidence and onset of delayed seizures after overdoses of extended-release bupropion. Am J Emerg Med. 2009.", url: "https://pubmed.ncbi.nlm.nih.gov/19857406/" },
   bullock: { id: "bullock", citation: "Bullock MR, Chesnut R, Ghajar J, et al. Surgical management of acute epidural hematomas. Surgical Management of Traumatic Brain Injury Author Group. Neurosurgery. 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16710967/" },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter on seizures." },
+  rosen88: { id: "rosen-ch88", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 88, Seizure.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosen169: { id: "rosen-ch169", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 169, Pediatric Neurologic Disorders.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosen174: { id: "rosen-ch174", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 174, Medical Emergencies During Pregnancy.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  ilaeCae: { id: "ilae-cae", citation: "International League Against Epilepsy. EpilepsyDiagnosis.org. Childhood absence epilepsy: overview and EEG. Last updated 2024.", url: "https://www.epilepsydiagnosis.org/syndrome/cae-eeg.html" },
+  ilaeTemporal: { id: "ilae-temporal", citation: "International League Against Epilepsy. EpilepsyDiagnosis.org. Temporal lobe seizure. Last updated 2024.", url: "https://www.epilepsydiagnosis.org/seizure/temporal-overview.html" },
 } satisfies Record<string, Source>;
 
 const T = "seizures";
@@ -257,7 +263,7 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "Large bupropion overdoses can widen the QRS by slowing cardiac conduction, and a QRS of 130 ms calls for a trial of sodium bicarbonate, ICU monitoring and readiness for dysrhythmias. A QTc of 470 ms is shorter than her first tracing. Sinus tachycardia is expected from sympathomimetic toxicity and is already present. T wave inversion in V1 can be normal. Small U waves do not change management here.",
         keyFeature: { topic: T, n: 2 },
-        source: "goldfrank",
+        source: "goldfrank-atypical-antidepressants",
       },
       {
         id: "q3",
@@ -293,10 +299,10 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "Toxic seizures that persist after benzodiazepines are treated with other GABA agonists. Phenobarbital or propofol with a secured airway are the usual choices. Fosphenytoin works poorly for toxic seizures and is avoided. Flumazenil reverses the benzodiazepine and can worsen seizures. Physostigmine can provoke seizures. Oral carbamazepine is slow and unsafe in a patient who is seizing.",
         keyFeature: { topic: T, n: 4 },
-        source: "goldfrank",
+        source: "goldfrank-atypical-antidepressants",
       },
     ],
-    sources: [S.trekk, S.goldfrank, S.starr],
+    sources: [S.trekk, S.gfAtypical, S.starr],
     ...META,
   },
 
@@ -324,9 +330,9 @@ export const SEIZURES_S49: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A QRS of 148 ms with a large terminal R in aVR shows sodium channel blockade from the tricyclic. The treatment is hypertonic sodium bicarbonate, 1 to 2 mmol/kg, so 85 to 170 mmol for 85 kg. Amiodarone prolongs conduction and can worsen toxicity. Lidocaine is a second line option for dysrhythmias that persist after bicarbonate. Magnesium is for torsades, which is not present. Physostigmine can cause bradycardia and asystole in tricyclic poisoning.",
+          "A QRS of 148 ms with a large terminal R in aVR shows sodium channel blockade from the tricyclic. The treatment is hypertonic sodium bicarbonate, 1 to 2 mmol/kg, so 85 to 170 mmol for 85 kg. The benefit and safety of amiodarone here are uncertain. Lidocaine is kept for dysrhythmias that persist after bicarbonate, and it lowers the seizure threshold, which matters after his seizure. Magnesium is for torsades, which is not present. Physostigmine can cause bradycardia and asystole in tricyclic poisoning.",
         keyFeature: { topic: T, n: 2 },
-        source: "goldfrank",
+        source: "ecbc-tca",
       },
       {
         id: "q2",
@@ -344,7 +350,7 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "Benzodiazepines are first line for tricyclic seizures. Stopping the seizure quickly matters because the acidosis it causes worsens sodium channel blockade. Phenytoin also blocks sodium channels and is avoided in tricyclic poisoning. Flumazenil can precipitate seizures. Haloperidol lowers the seizure threshold and prolongs the QT. Physostigmine is dangerous with a wide QRS.",
         keyFeature: { topic: T, n: 4 },
-        source: "goldfrank",
+        source: "ecbc-tca",
       },
       {
         id: "q3",
@@ -359,12 +365,12 @@ export const SEIZURES_S49: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Bicarbonate is repeated to narrow the QRS and correct hypotension, keeping serum pH around 7.50 to 7.55. A pH of 7.60 or more risks severe alkalemia, hypokalemia and reduced cerebral blood flow. Sodium and bicarbonate levels are checked for safety, but high values are not the goal. Urine alkalinization is the target in salicylate poisoning, not tricyclic toxicity.",
+          "Bicarbonate boluses are titrated to narrow the QRS and correct hypotension. Emergency Care BC repeats boluses until the QRS narrows or the serum pH reaches 7.55. AHA experts advise that serum pH should not exceed 7.50 to 7.55 and serum sodium should not exceed 150 to 155 mmol/L, to avoid harm from the treatment. A pH of 7.60 or more is beyond this limit, and hypertonic bicarbonate can also cause hypokalemia. High sodium or bicarbonate values are not the goal. Urine alkalinization is the target in salicylate poisoning, not tricyclic toxicity.",
         keyFeature: { topic: T, n: 2 },
-        source: "goldfrank",
+        source: "aha-tox-2023",
       },
     ],
-    sources: [S.goldfrank],
+    sources: [S.ecbcTca, S.ahaTox],
     ...META,
   },
 
@@ -477,7 +483,7 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "Many brief daily staring spells with abrupt return to activity suggest absence seizures, which are easily mistaken for inattention. Having the child hyperventilate for about 3 minutes often provokes an absence at the bedside. Orthostatic vitals assess syncope, and she has no falls. Gentle restraint separates jitteriness from seizures in newborns. A glabellar tap and visual tracking test other neurological functions and do not provoke absences.",
         keyFeature: { topic: T, n: 1 },
-        source: "rosen",
+        source: "ilae-cae",
       },
       {
         id: "q2",
@@ -515,7 +521,7 @@ export const SEIZURES_S49: Samp[] = [
         source: "nice",
       },
     ],
-    sources: [S.rosen, S.nice],
+    sources: [S.ilaeCae, S.nice],
     ...META,
   },
 
@@ -832,7 +838,7 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "His seizures are caused by severe hypocalcemia, a quickly reversible cause that anticonvulsants will not correct. Slow IV calcium gluconate with cardiac monitoring treats the cause. Levetiracetam and phenobarbital do not correct the calcium. His magnesium of 0.80 mmol/L is normal, so magnesium is not needed. Oral vitamin D is part of later treatment but acts far too slowly to stop seizures.",
         keyFeature: { topic: T, n: 2 },
-        source: "rosen",
+        source: "rosen-ch169",
       },
       {
         id: "q2",
@@ -869,7 +875,7 @@ export const SEIZURES_S49: Samp[] = [
         source: "ward",
       },
     ],
-    sources: [S.rosen, S.ward],
+    sources: [S.rosen169, S.ward],
     ...META,
   },
 
@@ -950,10 +956,10 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "At 26 weeks the uterus compresses the vena cava when she lies supine, so left lateral tilt or manual uterine displacement protects cardiac output. The fetus is viable, so fetal heart monitoring and obstetric involvement are needed. Treatment of status must not wait for obstetrics. Emergency delivery is not a treatment for maternal status epilepticus, which is stopped with drugs first. She has no contractions, so tocolysis has no role.",
         keyFeature: { topic: T, n: 4 },
-        source: "rosen",
+        source: "rosen-ch174",
       },
     ],
-    sources: [S.pennell, S.pack, S.rosen],
+    sources: [S.pennell, S.pack, S.rosen174],
     ...META,
   },
 
@@ -1016,10 +1022,10 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "In known epilepsy, a typical seizure with a clear precipitant, full recovery, no head injury and a normal examination does not need emergency neuroimaging. His falling valproate level explains the cluster. Age alone is not an indication for CT in a patient with established epilepsy. MRI and CT angiography answer questions that his presentation does not raise.",
         keyFeature: { topic: T, n: 7 },
-        source: "rosen",
+        source: "rosen-ch88",
       },
     ],
-    sources: [S.mancl, S.rosen],
+    sources: [S.mancl, S.rosen88],
     ...META,
   },
 
@@ -1068,7 +1074,7 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "Missed doses explain this seizure, and the drug has controlled his epilepsy well when taken. Resuming the usual dose, with a plan such as reminders and supervised dosing away from home, addresses the cause. Changing or stopping an effective drug, or switching to phenytoin, adds risk without benefit. Doubling the dose adds side effects without evidence of benefit.",
         keyFeature: { topic: T, n: 7 },
-        source: "rosen",
+        source: "rosen-ch169",
       },
       {
         id: "q3",
@@ -1088,7 +1094,7 @@ export const SEIZURES_S49: Samp[] = [
         source: "trekk",
       },
     ],
-    sources: [S.trekk, S.rosen],
+    sources: [S.trekk, S.rosen169],
     ...META,
   },
 
@@ -1134,7 +1140,7 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "After 30 minutes of generalized movements she still has regular breathing, an O2 sat of 99% and reactive pupils, she reacts to her name, and the features point to a nonepileptic event. Generalized epileptic convulsions of this length often cause desaturation or cyanosis. Repeated benzodiazepines, loading doses and intubation expose patients with nonepileptic events to real harm, so supportive observation is appropriate. EEG during an event is the best test when there is doubt, and escalation is resumed if it shows seizure activity or her condition changes. Painful or noxious stimuli are unhelpful and damage trust.",
         keyFeature: { topic: T, n: 3 },
-        source: "rosen",
+        source: "rosen-ch88",
       },
       {
         id: "q3",
@@ -1155,7 +1161,7 @@ export const SEIZURES_S49: Samp[] = [
         source: "lafrance",
       },
     ],
-    sources: [S.lafrance, S.rosen],
+    sources: [S.lafrance, S.rosen88],
     ...META,
   },
 
@@ -1250,9 +1256,9 @@ export const SEIZURES_S49: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Benzodiazepines treat the seizures, agitation, tachycardia and hypertension of cocaine toxicity, and they reduce heat production from muscle activity. Haloperidol lowers the seizure threshold and impairs heat loss. Beta blockers are avoided in acute cocaine toxicity because of concern for unopposed alpha stimulation, and sedation often controls the BP. Phenytoin is not effective for toxin induced seizures.",
+          "Benzodiazepines treat the seizures, agitation, tachycardia and hypertension of cocaine toxicity, and they reduce heat production from muscle activity. Haloperidol does not treat seizures and may impair heat loss. The safety of beta blockers such as metoprolol or labetalol in cocaine toxicity is controversial, and sedation often controls the BP. Phenytoin does not treat his agitation, tachycardia or hypertension.",
         keyFeature: { topic: T, n: 4 },
-        source: "goldfrank",
+        source: "aha-tox-2023",
       },
       {
         id: "q2",
@@ -1269,7 +1275,7 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "His hyperthermia comes from muscle activity and sympathetic overdrive, not a change in the hypothalamic set point, so it needs rapid external cooling such as ice water immersion together with sedation. A temperature above 41°C is life threatening. Antipyretics do not work on this kind of hyperthermia. Dantrolene has no proven role in stimulant toxicity. Bromocriptine is used for neuroleptic malignant syndrome, not cocaine toxicity.",
         keyFeature: { topic: T, n: 2 },
-        source: "goldfrank",
+        source: "aha-tox-2023",
       },
       {
         id: "q3",
@@ -1287,10 +1293,10 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "Seizure, severe agitation, prone restraint and hyperthermia all cause rhabdomyolysis, which can lead to hyperkalemia and acute kidney injury. Potassium, creatinine and CK guide fluids and monitoring. A drug screen adds little when cocaine use is known and will not change treatment. Prolactin, alcohol level and pancreatic enzymes do not address the dangerous complications here.",
         keyFeature: { topic: T, n: 2 },
-        source: "goldfrank",
+        source: "aha-tox-2023",
       },
     ],
-    sources: [S.goldfrank],
+    sources: [S.ahaTox],
     ...META,
   },
 
@@ -1654,10 +1660,10 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "Her convulsion followed a night of 3 hours of sleep, and sleep deprivation and alcohol are strong triggers in juvenile myoclonic epilepsy. Regular sleep lowers her risk. Exercise is encouraged with sensible precautions. Diet, evening fluids and phone use are not established triggers.",
         keyFeature: { topic: T, n: 7 },
-        source: "rosen",
+        source: "rosen-ch88",
       },
     ],
-    sources: [S.fisher, S.nice, S.cma, S.rosen],
+    sources: [S.fisher, S.nice, S.cma, S.rosen88],
     ...META,
   },
 
@@ -1822,7 +1828,7 @@ export const SEIZURES_S49: Samp[] = [
         explanation:
           "Brief repeated spells of staring with lip smacking and picking at clothes, then 15 minutes of confusion and no memory of the event, are focal seizures with impaired awareness. In older adults new epilepsy often shows up as confusion or unexplained falls. Transient global amnesia lasts hours and has no automatisms. Transient ischemic attacks cause loss of function, not repetitive movements. Metformin alone rarely causes hypoglycemia, and his glucose is normal. Vasovagal syncope does not cause automatisms or prolonged confusion.",
         keyFeature: { topic: T, n: 1 },
-        source: "rosen",
+        source: "ilae-temporal",
       },
       {
         id: "q2",
@@ -1837,9 +1843,9 @@ export const SEIZURES_S49: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "New focal seizures after age 60 are usually caused by vascular disease, tumour or neurodegenerative disease, so MRI is the best test for a structural cause. An EEG supports the diagnosis and helps classify the seizures. Holter monitoring, lying and standing BP and tilt testing investigate syncope, and these spells are not syncope. Carotid ultrasound does not explain stereotyped automatisms.",
+          "NICE advises an MRI for people diagnosed with epilepsy, other than idiopathic generalized epilepsy, to look for a structural cause. A routine EEG supports the diagnosis and gives information about the seizure type. Holter monitoring, lying and standing BP and tilt testing investigate syncope, and these spells are not syncope. Carotid ultrasound does not explain stereotyped automatisms.",
         keyFeature: { topic: T, n: 6 },
-        source: "rosen",
+        source: "nice",
       },
       {
         id: "q3",
@@ -1859,7 +1865,7 @@ export const SEIZURES_S49: Samp[] = [
         source: "cma",
       },
     ],
-    sources: [S.rosen, S.cma],
+    sources: [S.ilaeTemporal, S.nice, S.cma],
     ...META,
   },
 

@@ -60,9 +60,55 @@ const SRC_DC_HYPO_2023: Source = {
   citation: "Lega IC, Yale JF, Chadha A, et al. Hypoglycemia in adults. Diabetes Canada Clinical Practice Guidelines. Canadian Journal of Diabetes 2023.",
   url: "https://doi.org/10.1016/j.jcjd.2023.08.003",
 };
-const SRC_GOLDFRANK: Source = {
-  id: "goldfrank",
-  citation: "Nelson LS, Howland MA, Lewin NA, et al., editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019.",
+const SRC_WHO_POCKET: Source = {
+  id: "who-pocket-book",
+  citation: "World Health Organization. Pocket book of hospital care for children. Guidelines for the management of common childhood illnesses. 2nd edition. WHO. 2013.",
+  url: "https://www.ncbi.nlm.nih.gov/books/NBK154447/",
+};
+const SRC_GLATSTEIN_OCTREOTIDE: Source = {
+  id: "glatstein-octreotide",
+  citation: "Glatstein M, Scolnik D, Bentur Y. Octreotide for the treatment of sulfonylurea poisoning. Clinical Toxicology 2012.",
+  url: "https://doi.org/10.3109/15563650.2012.734626",
+};
+const SRC_GF_ANTIDIABETICS: Source = {
+  id: "goldfrank-antidiabetics",
+  citation: "Bosse GM. Antidiabetics and hypoglycemics/antiglycemics. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter: Antidiabetics and Hypoglycemics/Antiglycemics.",
+  url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210272153",
+};
+const SRC_AACT_METHANOL: Source = {
+  id: "aact-methanol",
+  citation: "Barceloux DG, Bond GR, Krenzelok EP, Cooper H, Vale JA. American Academy of Clinical Toxicology practice guidelines on the treatment of methanol poisoning. Journal of Toxicology. Clinical Toxicology 2002.",
+  url: "https://doi.org/10.1081/clt-120006745",
+};
+const SRC_GF_CH4: Source = {
+  id: "goldfrank-ch4",
+  citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter 4, Principles of Managing the Acutely Poisoned or Overdosed Patient.",
+  url: "https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html",
+};
+const SRC_NICE_DELIRIUM: Source = {
+  id: "nice-delirium",
+  citation: "National Institute for Health and Care Excellence. Delirium: prevention, diagnosis and management in hospital and long-term care. Clinical guideline CG103. 2010, updated 2023.",
+  url: "https://www.nice.org.uk/guidance/cg103",
+};
+const SRC_CANMAT_BIPOLAR: Source = {
+  id: "canmat-bipolar",
+  citation: "Yatham LN, Kennedy SH, Parikh SV, et al. Canadian Network for Mood and Anxiety Treatments (CANMAT) and International Society for Bipolar Disorders (ISBD) 2018 guidelines for the management of patients with bipolar disorder. Bipolar Disorders 2018.",
+  url: "https://doi.org/10.1111/bdi.12609",
+};
+const SRC_GF_ANTIEPILEPTICS: Source = {
+  id: "goldfrank-antiepileptics",
+  citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter: Antiepileptics.",
+  url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210272255",
+};
+const SRC_GF_CARNITINE: Source = {
+  id: "goldfrank-carnitine",
+  citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Antidotes in Depth: L-Carnitine.",
+  url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210262359",
+};
+const SRC_GF_ETHANOL: Source = {
+  id: "goldfrank-ethanol",
+  citation: "Yip L. Ethanol. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter 76, Ethanol.",
+  url: "https://accessemergencymedicine.mhmedical.com/content.aspx?legacysectionid=goldtox11_ch76",
 };
 const SRC_SSC_2021: Source = {
   id: "ssc-2021",
@@ -529,9 +575,9 @@ export const LOC_S32: Samp[] = [
         prompt: "Which of the following is the most appropriate initial treatment for this child?",
         options: ["dextrose 50% 30 mL IV", "dextrose 10% 15 mL IV", "dextrose 10% 75 mL IV", "glucagon 0.5 mg IM", "octreotide 15 mcg SC"],
         correct: 2,
-        explanation: "Hypoglycemia in a child is treated with about 0.5 g/kg of IV dextrose. For 15 kg that is 7.5 g, or 75 mL of dextrose 10%. The 15 mL dose gives only 1.5 g, or 0.1 g/kg. Dextrose 50% is too concentrated for a small child's peripheral vein. Glucagon gives only a brief rise and is not first line when IV access is in place. Octreotide is an adjunct for recurrent hypoglycemia, not the first treatment of a glucose of 1.8 mmol/L.",
+        explanation: "WHO advises 5 mL/kg of IV dextrose 10%, which is 0.5 g/kg, for hypoglycemia in a child. For 15 kg that is 75 mL, or 7.5 g. The 15 mL dose gives only 1.5 g, or 0.1 g/kg. Dextrose 50% is too concentrated for a small child's peripheral vein. Glucagon is not needed when IV access is in place. Octreotide is an adjunct for recurrent hypoglycemia, not the first treatment of a glucose of 1.8 mmol/L.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "goldfrank",
+        source: "who-pocket-book",
       },
       {
         id: "q2",
@@ -541,7 +587,7 @@ export const LOC_S32: Samp[] = [
         correct: 3,
         explanation: "Knowing which diabetes drugs the child could have taken sets the expected duration of hypoglycemia and the treatment. A sulfonylurea can cause recurrent hypoglycemia for many hours and may need octreotide and admission, while metformin alone rarely causes hypoglycemia. The grandfather's HbA1c, clinic visits, glucose checks and years with diabetes do not change the child's management.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "goldfrank",
+        source: "goldfrank-antidiabetics",
       },
       {
         id: "q3",
@@ -550,9 +596,9 @@ export const LOC_S32: Samp[] = [
         prompt: "Which of the following is the most appropriate treatment for the recurrent hypoglycemia?",
         options: ["activated charcoal 15 g PO", "diazoxide 45 mg PO", "glucagon 0.5 mg IM", "hydrocortisone 30 mg IV", "octreotide 15 mcg SC"],
         correct: 4,
-        explanation: "Gliclazide stimulates insulin release, and each dose of dextrose triggers more insulin, so hypoglycemia recurs. Octreotide blocks insulin release and is the preferred treatment, at about 1 mcg/kg, which is 15 mcg SC for this child. Diazoxide is less effective and can cause hypotension. Glucagon gives only a short rise. Hydrocortisone has no role. Charcoal is unlikely to help at least 7 hours after ingestion and is risky in a drowsy child.",
+        explanation: "Gliclazide stimulates insulin release, and each dose of dextrose triggers more insulin, so hypoglycemia recurs. Octreotide blocks insulin release and is the preferred treatment. The suggested pediatric dose is 1 to 1.5 mcg/kg, so 15 mcg SC is 1 mcg/kg for this child. Octreotide worked better than diazoxide in human studies. Glucagon gives at most a short rise. Hydrocortisone does not block insulin release. Charcoal is unlikely to help at least 7 hours after ingestion and is risky in a drowsy child.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "goldfrank",
+        source: "glatstein-octreotide",
       },
       {
         id: "q4",
@@ -560,12 +606,12 @@ export const LOC_S32: Samp[] = [
         prompt: "Which of the following is the most appropriate disposition for this child?",
         options: ["Discharge after 4 hours of normal glucose", "Discharge once he tolerates food", "Discharge with a home glucometer", "Observe in the ED for 6 hours", "Ward admission with glucose checks"],
         correct: 4,
-        explanation: "A modified release sulfonylurea can cause hypoglycemia for many hours after ingestion, and he has already needed octreotide for a recurrence. He needs admission with frequent glucose checks until he has been free of hypoglycemia off treatment. A 4 or 6 hour period of normal glucose is too short to exclude late recurrence. Eating does not prevent recurrence, and a home glucometer cannot replace monitored care.",
+        explanation: "In reported children, sulfonylurea hypoglycemia began up to 16 hours after ingestion, and half had a recurrence even after octreotide. He has already needed octreotide for a recurrence. He needs admission with frequent glucose checks until he has been free of hypoglycemia off treatment. A 4 or 6 hour period of normal glucose is too short to exclude late recurrence. Eating does not prevent recurrence, and a home glucometer cannot replace monitored care.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "goldfrank",
+        source: "glatstein-octreotide",
       },
     ],
-    sources: [SRC_GOLDFRANK],
+    sources: [SRC_WHO_POCKET, SRC_GF_ANTIDIABETICS, SRC_GLATSTEIN_OCTREOTIDE],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -711,9 +757,9 @@ export const LOC_S32: Samp[] = [
         prompt: "Which of the following is the most appropriate antidote for this patient?",
         options: ["flumazenil 0.2 mg IV", "fomepizole 15 mg/kg IV", "physostigmine 1 mg IV", "pyridoxine 50 mg IV", "sodium thiosulfate 12.5 g IV"],
         correct: 1,
-        explanation: "Fomepizole blocks alcohol dehydrogenase and stops methanol being converted to formic acid, which causes the acidosis and eye injury. The loading dose is 15 mg/kg, or 1050 mg for 70 kg. Pyridoxine is a cofactor given for ethylene glycol, not methanol, where folic acid is the cofactor. Physostigmine treats anticholinergic toxicity, flumazenil reverses benzodiazepines, and sodium thiosulfate treats cyanide.",
+        explanation: "Fomepizole blocks alcohol dehydrogenase and stops methanol being converted to formic acid, which causes the acidosis and eye injury. It is the preferred antidote over ethanol. The loading dose is 15 mg/kg, or 1050 mg for 70 kg. Pyridoxine is a cofactor given for ethylene glycol. In methanol poisoning, folinic acid is given to speed the breakdown of formate. Physostigmine treats anticholinergic toxicity, flumazenil reverses benzodiazepines, and sodium thiosulfate treats cyanide.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "goldfrank",
+        source: "aact-methanol",
       },
       {
         id: "q4",
@@ -727,7 +773,7 @@ export const LOC_S32: Samp[] = [
         source: "extrip-methanol",
       },
     ],
-    sources: [SRC_EXTRIP_METHANOL, SRC_GOLDFRANK],
+    sources: [SRC_EXTRIP_METHANOL, SRC_AACT_METHANOL],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -758,7 +804,7 @@ export const LOC_S32: Samp[] = [
         correct: [0, 1],
         explanation: "Acetaminophen is a common and often silent co-ingestion in intentional overdose, and it has an effective antidote, so a level is needed. Capillary glucose has not been checked, and hypoglycemia is a quickly reversible cause of decreased consciousness. A serum amitriptyline level is not available in time and guides care less than the ECG. A urine drug screen does not change management. EEG, lumbar puncture and MRI are not indicated.",
         keyFeature: { topic: "loc", n: 1 },
-        source: "goldfrank",
+        source: "goldfrank-ch4",
       },
       {
         id: "q3",
@@ -769,7 +815,7 @@ export const LOC_S32: Samp[] = [
         correct: 3,
         explanation: "Her GCS has fallen to 6 (E2 V1 M3), her gag is weak and tricyclic poisoning can cause seizures and further decline, so she needs a definitive airway. After intubation, ventilation must keep up with her needs, because a rise in PCO2 causes acidemia that worsens cardiac toxicity. Noninvasive ventilation is unsafe when she cannot protect her airway. Bag-valve-mask ventilation, a nasopharyngeal airway or the recovery position do not protect against aspiration.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "goldfrank",
+        source: "ecbc-tca",
       },
       {
         id: "q4",
@@ -779,10 +825,10 @@ export const LOC_S32: Samp[] = [
         correct: 4,
         explanation: "The time she was last seen well gives the latest possible time of ingestion. Serious tricyclic toxicity usually appears within about 6 hours, so this sets how long she must be monitored. It also sets the timing of the acetaminophen level, which is read against the time since ingestion. Her employment, migraine history, psychiatrist's name and usual alcohol intake do not change immediate management.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "goldfrank",
+        source: "ecbc-tca",
       },
     ],
-    sources: [SRC_ECBC_TCA, SRC_GOLDFRANK],
+    sources: [SRC_ECBC_TCA, SRC_GF_CH4],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -802,7 +848,7 @@ export const LOC_S32: Samp[] = [
         correct: 1,
         explanation: "Ramipril, naproxen and diarrhea all reduce lithium clearance, and her creatinine has more than doubled, so lithium has accumulated to 3.4 mmol/L. Confusion, coarse tremor, myoclonus and slurred speech are typical of chronic lithium toxicity. Her BP of 106/64 mmHg excludes hypertensive encephalopathy. Serotonin syndrome is unlikely because she takes no serotonergic drug besides lithium, and she has no fever to suggest it or encephalitis. Nonconvulsive status stays on the differential but is not needed to explain her findings.",
         keyFeature: { topic: "loc", n: 1 },
-        source: "goldfrank",
+        source: "extrip-lithium",
       },
       {
         id: "q2",
@@ -812,7 +858,7 @@ export const LOC_S32: Samp[] = [
         correct: 2,
         explanation: "A description of her usual function is what shows that her drowsiness and confusion are new rather than her baseline. The diarrhea, the new pill and her daily lithium help explain the cause, but they do not describe her usual mental state. Knee pain explains the naproxen but says nothing about her baseline. Collateral history about baseline is essential in any patient who cannot give a reliable history.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "goldfrank",
+        source: "nice-delirium",
       },
       {
         id: "q3",
@@ -833,10 +879,10 @@ export const LOC_S32: Samp[] = [
         correct: 1,
         explanation: "Lithium must be held while she is toxic, and both ramipril and naproxen reduce lithium clearance and harm kidney function, so all three are stopped. Holding only naproxen or only ramipril leaves the other interacting drug in place and continues lithium while she is toxic. Ibuprofen is also an NSAID with the same effect on lithium. A half dose of lithium still adds to a toxic level.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "goldfrank",
+        source: "canmat-bipolar",
       },
     ],
-    sources: [SRC_GOLDFRANK, SRC_EXTRIP_LITHIUM],
+    sources: [SRC_EXTRIP_LITHIUM, SRC_NICE_DELIRIUM, SRC_CANMAT_BIPOLAR],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1108,10 +1154,10 @@ export const LOC_S32: Samp[] = [
         correct: 3,
         explanation: "The pharmacy dispensing record shows how many tablets he received and when, and a count of what remains shows how many he has taken. He cannot give a reliable history in his current state. The discharge summary and the family physician's chart show what was prescribed, not what he took. A urine opioid screen is qualitative and does not show the amount.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "goldfrank",
+        source: "goldfrank-ch4",
       },
     ],
-    sources: [SRC_OPIOID_NEJM, SRC_GOLDFRANK],
+    sources: [SRC_OPIOID_NEJM, SRC_GF_CH4],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1131,7 +1177,7 @@ export const LOC_S32: Samp[] = [
         correct: 2,
         explanation: "Her ammonia of 148 umol/L with a normal ALT, bilirubin and INR points to valproate-induced hyperammonemic encephalopathy, which can occur at therapeutic drug levels. A normal INR and bilirubin exclude acute liver failure. Her level of 620 umol/L is within range and her mother's tablet count shows no missing doses, which argues against overdose. She has no fever or focal signs to suggest encephalitis, and she takes no serotonergic drug.",
         keyFeature: { topic: "loc", n: 1 },
-        source: "goldfrank",
+        source: "goldfrank-antiepileptics",
       },
       {
         id: "q2",
@@ -1141,7 +1187,7 @@ export const LOC_S32: Samp[] = [
         correct: 3,
         explanation: "Her mother's count of the remaining tablets shows that no extra doses were taken, which together with a level in the therapeutic range makes overdose unlikely. The duration of her bipolar disorder and her recent mood may raise concern about self-harm but do not show what she took. The psychiatrist's name and the timing of her last period do not help decide whether she overdosed.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "goldfrank",
+        source: "goldfrank-ch4",
       },
       {
         id: "q3",
@@ -1151,10 +1197,10 @@ export const LOC_S32: Samp[] = [
         correct: 0,
         explanation: "Levocarnitine is used for valproate-associated hyperammonemia, because valproate depletes carnitine and impairs the urea cycle. A loading dose of 100 mg/kg IV is 6 g for 60 kg. Rifaximin lowers gut ammonia in cirrhosis, which is not her problem. Naloxone and physostigmine treat opioid and anticholinergic toxicity, which she does not have. Thiamine does not treat hyperammonemia.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "goldfrank",
+        source: "goldfrank-carnitine",
       },
     ],
-    sources: [SRC_GOLDFRANK],
+    sources: [SRC_GF_ANTIEPILEPTICS, SRC_GF_CH4, SRC_GF_CARNITINE],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1359,7 +1405,7 @@ export const LOC_S32: Samp[] = [
         correct: 0,
         explanation: "Alcohol inhibits gluconeogenesis, and adolescents are prone to hypoglycemia after binge drinking. IV dextrose of about 0.5 g/kg treats it, and 250 mL of dextrose 10% is 25 g, about 0.5 g/kg for 48 kg. Glucagon works poorly when alcohol has depleted glycogen stores. Oral glucose is unsafe in a patient who cannot protect her airway. She has no opioid features, and thiamine does not raise glucose.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "goldfrank",
+        source: "goldfrank-ethanol",
       },
       {
         id: "q2",
@@ -1370,7 +1416,7 @@ export const LOC_S32: Samp[] = [
         correct: 1,
         explanation: "Her glucose is now normal, and an ethanol of 14 mmol/L, about 65 mg/dL, causes only mild impairment in most people and does not explain a patient who opens her eyes only to pressure. Another cause, such as a co-ingested sedative, head injury or seizure, must be sought. Hypoglycemia no longer explains her state once corrected. Letting her sleep it off or repeating the ethanol level risks missing a serious cause.",
         keyFeature: { topic: "loc", n: 4 },
-        source: "goldfrank",
+        source: "goldfrank-ethanol",
       },
       {
         id: "q3",
@@ -1381,10 +1427,10 @@ export const LOC_S32: Samp[] = [
         correct: [0, 1],
         explanation: "Her decreased level of consciousness is not explained by her ethanol level or her corrected glucose, so her friends should be asked about other drugs at the party, such as sedatives or GHB, and about any fall or blow to the head. Both directly change testing and treatment. The brand of vodka, how she arrived, the hosts' names and whether her parents know do not change her immediate care, although her parents must be contacted.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "goldfrank",
+        source: "goldfrank-ch4",
       },
     ],
-    sources: [SRC_GOLDFRANK],
+    sources: [SRC_GF_ETHANOL, SRC_GF_CH4],
     reviewed: false,
     author: AUTHOR,
     version: 1,

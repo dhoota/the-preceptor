@@ -28,9 +28,26 @@ const S = {
   hunter: { id: "hunter", citation: "Dunkley EJ, Isbister GK, Sibbritt D, Dawson AH, Whyte IM. The Hunter Serotonin Toxicity Criteria: simple and accurate diagnostic decision rules for serotonin toxicity. QJM. 2003.", url: "https://pubmed.ncbi.nlm.nih.gov/12925718/" },
   boyer: { id: "boyer-serotonin", citation: "Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med. 2005.", url: "https://pubmed.ncbi.nlm.nih.gov/15784664/" },
   dawson: { id: "dawson-anticholinergic", citation: "Dawson AH, Buckley NA. Pharmacological management of anticholinergic delirium: theory, evidence and practice. Br J Clin Pharmacol. 2016.", url: "https://pubmed.ncbi.nlm.nih.gov/26589572/" },
-  goldfrank: { id: "goldfrank", citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019." },
+  goldfrankCh3: { id: "goldfrank-ch3", citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter 3, Initial Evaluation of the Patient: Vital Signs and Toxic Syndromes.", url: "https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html" },
+  ahaTox: { id: "aha-tox-2023", citation: "Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023.", url: "https://doi.org/10.1161/CIR.0000000000001161" },
   epstein: { id: "epstein-heatstroke", citation: "Epstein Y, Yanovich R. Heatstroke. N Engl J Med. 2019.", url: "https://pubmed.ncbi.nlm.nih.gov/31216400/" },
-  nelson: { id: "nelson", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024." },
+  nelson221: { id: "nelson-ch221", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 221, Fever in the Older Child.", url: "https://www.inspectioncopy.elsevier.com/book/details/9780323883054" },
+  nelson196: { id: "nelson-ch196", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 196, Juvenile Idiopathic Arthritis.", url: "https://www.inspectioncopy.elsevier.com/book/details/9780323883054" },
+  nelson545: { id: "nelson-ch545", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 545, Lymphoma.", url: "https://www.inspectioncopy.elsevier.com/book/details/9780323883054" },
+  nelson301: { id: "nelson-ch301", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 301, Epstein-Barr Virus.", url: "https://www.inspectioncopy.elsevier.com/book/details/9780323883054" },
+  nelson303: { id: "nelson-ch303", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 303, Roseola (Human Herpesviruses 6 and 7).", url: "https://www.inspectioncopy.elsevier.com/book/details/9780323883054" },
+  nelson227: { id: "nelson-ch227", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 227, Staphylococcus.", url: "https://www.inspectioncopy.elsevier.com/book/details/9780323883054" },
+  nelson299: { id: "nelson-ch299", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 299, Herpes Simplex Virus.", url: "https://www.inspectioncopy.elsevier.com/book/details/9780323883054" },
+  nelson229: { id: "nelson-ch229", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 229, Group A Streptococcus.", url: "https://www.inspectioncopy.elsevier.com/book/details/9780323883054" },
+  nelson210: { id: "nelson-ch210", citation: "Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 210, Vasculitis Syndromes.", url: "https://www.inspectioncopy.elsevier.com/book/details/9780323883054" },
+  niceFever: { id: "nice-fever-under-5", citation: "National Institute for Health and Care Excellence. Fever in under 5s: assessment and initial management. NICE guideline NG143. 2019, updated 2021.", url: "https://www.nice.org.uk/guidance/ng143" },
+  ilar: { id: "ilar-jia", citation: "Petty RE, Southwood TR, Manners P, et al. International League of Associations for Rheumatology classification of juvenile idiopathic arthritis: second revision, Edmonton, 2001. J Rheumatol. 2004.", url: "https://pubmed.ncbi.nlm.nih.gov/14760812/" },
+  aplar: { id: "aplar-sjia", citation: "Arkachaisri T, Teh KL, Vilaiyuk S, et al. The Asia-Pacific League of Associations for Rheumatology consensus recommendations on the management of systemic juvenile idiopathic arthritis (juvenile Still's disease). Int J Rheum Dis. 2026.", url: "https://doi.org/10.1111/1756-185x.70810" },
+  sjsPeds: { id: "sjs-peds-guidelines", citation: "Creighton R, Gupta S, Langille C, Sutherland A. Diagnosis and management of Stevens-Johnson syndrome and toxic epidermal necrolysis in pediatric patients: a systematic review of clinical guidelines and consensus statements. Pediatr Dermatol. 2026.", url: "https://doi.org/10.1111/pde.70149" },
+  niceEczema: { id: "nice-eczema", citation: "National Institute for Health and Care Excellence. Atopic eczema in under 12s: diagnosis and management. Clinical guideline CG57. 2007, updated 2025.", url: "https://www.nice.org.uk/guidance/cg57" },
+  eularIgav: { id: "eular-igav", citation: "Ozen S, Pistorio A, Iusan SM, et al. EULAR/PRINTO/PRES criteria for Henoch-Schonlein purpura, childhood polyarteritis nodosa, childhood Wegener granulomatosis and childhood Takayasu arteritis. Ankara 2008. Part II: final classification criteria. Ann Rheum Dis. 2010.", url: "https://doi.org/10.1136/ard.2009.116657" },
+  narchi: { id: "narchi-hsp", citation: "Narchi H. Risk of long term renal impairment and duration of follow up recommended for Henoch-Schonlein purpura with normal or minimal urinary findings: a systematic review. Arch Dis Child. 2005.", url: "https://doi.org/10.1136/adc.2005.074641" },
+  whoHfmd: { id: "who-hfmd", citation: "World Health Organization Regional Office for the Western Pacific. A guide to clinical management and public health response for hand, foot and mouth disease (HFMD). 2011.", url: "https://iris.who.int/handle/10665/207490" },
   mermel: { id: "idsa-line", citation: "Mermel LA, Allon M, Bouza E, et al. Clinical practice guidelines for the diagnosis and management of intravascular catheter-related infection: 2009 update by the Infectious Diseases Society of America. Clin Infect Dis. 2009.", url: "https://pubmed.ncbi.nlm.nih.gov/19489710/" },
 } satisfies Record<string, Source>;
 
@@ -787,7 +804,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "His parents declined all vaccines, so he lacks pneumococcal and Haemophilus influenzae type b protection. Conjugate vaccines have made occult bacteremia rare in immunized toddlers, but an unimmunized child aged 3 to 36 months with high fever and no source remains at higher risk, protected only in part by herd immunity. Risk of bacteremia is higher in younger infants, so being older than 12 months does not add risk. Improvement after an antipyretic does not separate bacterial from viral illness. Daycare attendance and a short fever mainly raise the chance of a viral infection.",
         keyFeature: { topic: "pediatric-fever", n: 1 },
-        source: "nelson",
+        source: "nelson-ch221",
       },
       {
         id: "q2",
@@ -844,12 +861,12 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "He looks well, is drinking, has a negative catheter urinalysis and a normal WBC of 11.4 x 10^9/L, so a viral illness is the most likely cause of his fever. Antibiotics are not given for a presumed viral fever, but his blood culture result is followed and his parents are told to return if he worsens. Empiric ceftriaxone or amoxicillin without a bacterial source would treat many children to help few and adds side effects and resistance. A lumbar puncture is not indicated without meningeal signs or a change in behaviour.",
+          "He looks well, is drinking, has a negative catheter urinalysis and a normal WBC of 11.4 x 10^9/L, so a viral illness is the most likely cause of his fever. Antibiotics are not given for a presumed viral fever, but his blood culture result is followed and his parents are told to return if he worsens. NICE advises against oral antibiotics for fever without an apparent source, and a child with no amber or red features can be cared for at home with advice on when to return. Empiric ceftriaxone or amoxicillin would treat many children to help few and adds side effects and resistance. A lumbar puncture is not indicated without meningeal signs or a change in behaviour.",
         keyFeature: { topic: "pediatric-fever", n: 7 },
-        source: "nelson",
+        source: "nice-fever-under-5",
       },
     ],
-    sources: [S.nelson, S.cpsUti, S.aapFever],
+    sources: [S.nelson221, S.cpsUti, S.aapFever, S.niceFever],
     ...META,
   },
 
@@ -1116,7 +1133,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "A daily fever for 3 weeks that spikes each evening and returns to normal, with an evanescent pink rash that comes with the fever, arthritis, lymphadenopathy and splenomegaly, is typical of systemic juvenile idiopathic arthritis. Septic arthritis does not explain 3 weeks of fever with a rash and two affected joints. Lyme arthritis usually affects one large joint without daily fever spikes, and rheumatic fever causes a migratory arthritis after streptococcal pharyngitis without quotidian fever spikes, lymphadenopathy or splenomegaly. Leukemia can mimic this picture and is excluded before treatment, but the daily fever with a fading rash favours systemic arthritis.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
-        source: "nelson",
+        source: "ilar-jia",
       },
       {
         id: "q2",
@@ -1133,7 +1150,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Leukemia and neuroblastoma can present with fever, bone or joint pain, lymphadenopathy and splenomegaly, and corticosteroids can partly treat leukemia and hide the diagnosis. A bone marrow examination is therefore done before steroids when malignancy has not been excluded. Serum antinuclear antibody and rheumatoid factor are usually negative in systemic arthritis and do not change management. An MRI of the knee and an echocardiogram cannot exclude malignancy.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
-        source: "nelson",
+        source: "nelson-ch196",
       },
       {
         id: "q3",
@@ -1167,12 +1184,12 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Macrophage activation syndrome is a life-threatening complication of systemic arthritis that is treated promptly with high dose IV corticosteroids, often with anakinra or cyclosporine, under rheumatology and critical care guidance. A higher NSAID dose does not control the cytokine storm. Platelet transfusion does not treat the cause and is kept for bleeding. IV immune globulin is not the primary treatment, and antibiotics alone do not treat the inflammation, although infection is excluded at the same time.",
+          "Macrophage activation syndrome is a life-threatening complication of systemic arthritis that is treated promptly with pulse IV methylprednisolone under rheumatology and critical care guidance. Cyclosporine or anakinra is added if the response is inadequate after 48 to 72 hours. A higher NSAID dose does not control the cytokine storm. Platelet transfusion does not treat the cause and is kept for bleeding. IV immune globulin is not the primary treatment, and antibiotics alone do not treat the inflammation, although infection is excluded at the same time.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
-        source: "nelson",
+        source: "aplar-sjia",
       },
     ],
-    sources: [S.nelson, S.mas],
+    sources: [S.ilar, S.nelson196, S.mas, S.aplar],
     ...META,
   },
 
@@ -1200,7 +1217,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Weeks of fever, drenching night sweats and loss of more than 10% of body weight (6 of 58 kg, about 10.3%) are B symptoms of lymphoma. A firm, painless supraclavicular node with cough and breathlessness lying flat suggests a mediastinal mass, typical of Hodgkin lymphoma in adolescents. Mycoplasma pneumonia should have responded to antibiotics and does not cause B symptoms for 5 weeks. She has no tuberculosis exposure or travel. Mononucleosis causes a shorter illness without weight loss of this degree, and a reactive node is usually tender and does not explain the night sweats and orthopnea.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
-        source: "nelson",
+        source: "nelson-ch545",
       },
       {
         id: "q2",
@@ -1217,7 +1234,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Breathlessness lying flat and a dry cough raise concern for an anterior mediastinal mass, so a chest radiograph comes first to look for a mass and airway compression. It guides the safety of later procedures, because sedation or general anesthesia with a large mass can cause airway or cardiovascular collapse. A node biopsy and a marrow aspirate and biopsy follow once the mass has been assessed. A Monospot test and pulmonary function tests do not address the immediate airway risk.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
-        source: "nelson",
+        source: "nelson-ch545",
       },
       {
         id: "q3",
@@ -1236,10 +1253,10 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "A large anterior mediastinal mass narrowing the trachea can cause sudden airway obstruction or cardiovascular collapse when the patient lies flat or is sedated, so she is kept upright and sedation is avoided. Imaging is done without sedation, in a position she tolerates. Elective intubation and general anesthesia carry a high risk of collapse and need planning by experienced teams. Corticosteroids given before tissue is obtained can obscure the diagnosis of lymphoma, so the decision to give them before a biopsy rests with oncology unless she develops respiratory distress.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
-        source: "nelson",
+        source: "nelson-ch545",
       },
     ],
-    sources: [S.nelson],
+    sources: [S.nelson545],
     ...META,
   },
 
@@ -1268,7 +1285,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Hot, flushed, dry skin with delirium, picking at the air, 7 mm pupils, reduced bowel sounds and a palpable bladder form the anticholinergic toxidrome, and an open bottle of diphenhydramine was within reach. Heat builds up because he cannot sweat. Sympathomimetic and serotonin toxicity both cause sweating, and serotonin toxicity also causes clonus and hyperreflexia. He has no neck stiffness or rash, and meningitis or influenza would not explain the dry skin, dilated pupils and urinary retention.",
         keyFeature: { topic: "pediatric-fever", n: 6 },
-        source: "goldfrank",
+        source: "goldfrank-ch3",
       },
       {
         id: "q2",
@@ -1285,9 +1302,9 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A QRS of 128 ms reflects sodium channel blockade from diphenhydramine overdose, which is treated with IV sodium bicarbonate 1 to 2 mmol/kg, here 15 mmol for 15 kg, repeated to narrow the QRS. Procainamide and amiodarone also block sodium channels and can worsen conduction. Physostigmine is avoided while the QRS is wide from sodium channel blockade, because it can cause bradycardia and asystole. Magnesium treats torsades de pointes, which he does not have.",
+          "A QRS of 128 ms reflects sodium channel blockade, a known effect of diphenhydramine. Life-threatening cardiotoxicity from a sodium channel blocker is treated with IV sodium bicarbonate 1 to 2 mmol/kg, here 15 mmol for 15 kg, repeated to narrow the QRS. Procainamide and amiodarone also block sodium channels and can worsen conduction. Physostigmine is usually avoided while the QRS is wide, because of concern for bradycardia and asystole. Magnesium treats torsades de pointes, which he does not have.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "goldfrank",
+        source: "aha-tox-2023",
       },
       {
         id: "q3",
@@ -1304,7 +1321,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "His temperature rises from agitation and loss of sweating, not from a raised hypothalamic set point, so acetaminophen and ibuprofen do not lower it. Treatment is sedation with a benzodiazepine to control agitation, with active external cooling. Antipsychotics such as haloperidol can prolong the QRS and QT intervals, lower the seizure threshold and impair heat loss, so they are avoided. Dantrolene has no established role in drug-induced hyperthermia of this kind.",
         keyFeature: { topic: "environmental", n: 2 },
-        source: "goldfrank",
+        source: "goldfrank-ch3",
       },
       {
         id: "q4",
@@ -1326,7 +1343,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         source: "dawson-anticholinergic",
       },
     ],
-    sources: [S.goldfrank, S.dawson],
+    sources: [S.goldfrankCh3, S.ahaTox, S.dawson],
     ...META,
   },
 
@@ -1445,7 +1462,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Her flushed but sweaty skin points to a sympathomimetic toxidrome, because anticholinergic drugs block sweating and leave the skin hot and dry. Her brother's lisdexamfetamine, an amphetamine, fits this picture. Agitation, hyperthermia, tachycardia and dilated pupils occur in both toxidromes, so they do not separate them. Her normal bowel sounds also argue against anticholinergic toxicity.",
         keyFeature: { topic: "pediatric-fever", n: 6 },
-        source: "goldfrank",
+        source: "goldfrank-ch3",
       },
       {
         id: "q2",
@@ -1460,9 +1477,9 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Benzodiazepines are first-line for sympathomimetic agitation because they reduce central stimulation, which lowers heat production, heart rate and blood pressure. Midazolam 0.1 mg/kg is 1.2 mg for 12 kg, titrated to effect. Physical restraint without sedation increases heat production and the risk of rhabdomyolysis. Diphenhydramine adds anticholinergic effects and impairs sweating. Propranolol can leave alpha stimulation unopposed and worsen hypertension, and haloperidol is at most a second-line choice after benzodiazepines.",
+          "Benzodiazepines are first-line for sympathomimetic agitation because they reduce central stimulation, which lowers heat production, heart rate and blood pressure. Midazolam 0.1 mg/kg is 1.2 mg for 12 kg, titrated to effect. Physical restraint without sedation increases heat production and the risk of rhabdomyolysis. Diphenhydramine adds anticholinergic effects and impairs sweating. Propranolol does not treat the agitation that drives her heat production. Haloperidol can control agitation, but it does not relax muscles or treat seizures as a benzodiazepine does.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "goldfrank",
+        source: "aha-tox-2023",
       },
       {
         id: "q3",
@@ -1479,9 +1496,9 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Her temperature of 40.4°C comes from muscle activity and agitation, so treatment is continued benzodiazepine sedation with active external cooling, such as mist and fanning or ice packs. Acetaminophen and ibuprofen act on the hypothalamic set point and do not lower drug-induced hyperthermia. Restraint increases heat production as she struggles. Dantrolene is not a standard treatment for sympathomimetic hyperthermia.",
+          "Her temperature of 40.4°C comes from muscle activity and agitation, so treatment is continued benzodiazepine sedation with rapid external cooling. Evaporative cooling with mist and fanning, or immersion, lowers temperature faster than ice packs. Acetaminophen and ibuprofen act on the hypothalamic set point and do not lower drug-induced hyperthermia. Restraint increases heat production as she struggles. Dantrolene is not a standard treatment for sympathomimetic hyperthermia.",
         keyFeature: { topic: "environmental", n: 2 },
-        source: "goldfrank",
+        source: "aha-tox-2023",
       },
       {
         id: "q4",
@@ -1498,10 +1515,10 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Prolonged agitation and a temperature of 40.4°C in sympathomimetic toxicity can cause rhabdomyolysis, detected by a rising creatine kinase, with a risk of acute kidney injury and hyperkalemia. A lead level, ammonia and amylase do not identify this complication. Thyroid function tests would only matter if thyrotoxicosis were suspected, and the missing lisdexamfetamine explains her findings.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "aha-tox-2023",
       },
     ],
-    sources: [S.goldfrank],
+    sources: [S.goldfrankCh3, S.ahaTox],
     ...META,
   },
 
@@ -1772,7 +1789,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Exudative tonsillitis, posterior cervical lymphadenopathy, fatigue and a palpable spleen in an adolescent suggest Epstein-Barr virus infection, and many patients with mononucleosis who take amoxicillin develop a maculopapular rash that does not usually mean a lasting penicillin allergy. He has no mucosal ulcers, blisters or peeling to suggest Stevens-Johnson syndrome, and no swelling or wheeze to suggest anaphylaxis. Measles and scarlet fever do not explain the splenomegaly, and the scarlet fever rash is a fine sandpaper rash rather than one that follows amoxicillin.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nelson-ch301",
       },
       {
         id: "q2",
@@ -1789,7 +1806,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Infectious mononucleosis is a viral illness, so the amoxicillin is stopped and he receives fluids, rest and analgesia. Switching to azithromycin or cephalexin treats a bacterial infection he is unlikely to have, and continuing amoxicillin gives no benefit while the rash persists. Corticosteroids are reserved for complications such as impending airway obstruction, which he does not have.",
         keyFeature: { topic: "pediatric-fever", n: 7 },
-        source: "nelson",
+        source: "nelson-ch301",
       },
       {
         id: "q3",
@@ -1806,10 +1823,10 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Skin pain, mucosal erosions, blisters and skin detachment are warning signs of Stevens-Johnson syndrome or toxic epidermal necrolysis, which need urgent assessment and withdrawal of the drug. An itchy, symmetric maculopapular rash on the trunk and arms without mucosal involvement fits the benign amoxicillin rash of mononucleosis. Onset a few days after starting a drug is common to both benign and severe reactions, so timing alone does not separate them.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "sjs-peds-guidelines",
       },
     ],
-    sources: [S.nelson],
+    sources: [S.nelson301, S.sjsPeds],
     ...META,
   },
 
@@ -1837,7 +1854,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Three days of high fever in a well-looking infant, followed by a pink, blanching rash on the trunk and neck as the fever resolves, is typical of roseola infantum from human herpesvirus 6. Measles causes cough, coryza and conjunctivitis with fever that continues as the rash spreads, and she is immunized. Meningococcemia causes a nonblanching petechial or purpuric rash in an unwell child. Erythema infectiosum causes slapped cheeks, and scarlet fever is uncommon at this age and causes a sandpaper rash with pharyngitis.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nelson-ch303",
       },
       {
         id: "q2",
@@ -1856,7 +1873,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Roseola is caused by human herpesvirus 6, so antibiotics have no benefit and the amoxicillin can be stopped. The rash appeared as the fever settled, which is the expected course of roseola rather than a drug reaction, so she should not be labelled penicillin allergic without further assessment. Switching to azithromycin or adding an antihistamine continues treatment of an infection she does not have.",
         keyFeature: { topic: "pediatric-fever", n: 7 },
-        source: "nelson",
+        source: "nelson-ch303",
       },
       {
         id: "q3",
@@ -1893,10 +1910,10 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "A rash that does not blanch with pressure suggests petechiae or purpura from meningococcemia or another serious infection, and lethargy or an ill appearance in a febrile infant with a rash needs urgent assessment for sepsis. Pink, blanching macules on the trunk that appear after 3 days of fever, as the fever resolves, and spare the face are typical of roseola. Mild irritability is common during the febrile phase of viral illness.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nice-fever-under-5",
       },
     ],
-    sources: [S.nelson, S.aapFever],
+    sources: [S.nelson303, S.aapFever, S.niceFever],
     ...META,
   },
 
@@ -1924,7 +1941,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Tender, diffuse erythema that is worse in skin folds, with flaccid blisters and skin that slides off with rubbing, a positive Nikolsky sign, after crusted sores around the nose points to staphylococcal scalded skin syndrome. Stevens-Johnson syndrome and toxic epidermal necrolysis involve the mouth and eyes and usually follow a drug, and he takes none. Bullous impetigo forms localized blisters without widespread tender erythema. Streptococcal toxic shock syndrome is marked by shock and organ dysfunction, and his blood pressure and capillary refill are normal.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nelson-ch227",
       },
       {
         id: "q2",
@@ -1941,7 +1958,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "His normal mouth and eyes favour staphylococcal scalded skin syndrome, in which the toxin splits the superficial epidermis and spares the mucous membranes. Toxic epidermal necrolysis causes full-thickness epidermal necrosis with erosions of the mouth, eyes and genitals. Fever, tender red skin, flaccid blisters and a positive Nikolsky sign occur in both conditions, so they do not separate them.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nelson-ch227",
       },
       {
         id: "q3",
@@ -1958,10 +1975,10 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Widespread skin involvement with fever and a pulse of 162/minute in a 2-year-old calls for admission for IV antistaphylococcal antibiotics such as cloxacillin, fluid replacement, analgesia and gentle skin care. Oral therapy with outpatient review is not appropriate for this extent of disease at his age. Topical mupirocin and silver sulfadiazine do not treat the toxin-producing infection. Corticosteroids do not help and can worsen infection.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nelson-ch227",
       },
     ],
-    sources: [S.nelson],
+    sources: [S.nelson227],
     ...META,
   },
 
@@ -1989,7 +2006,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Clusters of uniform punched-out erosions and umbilicated vesicles with hemorrhagic crusts on eczematous skin, with fever, pain and recent contact with a cold sore, are typical of eczema herpeticum from herpes simplex virus. Impetigo causes honey-coloured crusts and does not form punched-out erosions. Varicella appears in crops over the whole body, with lesions at different stages, rather than clustered on eczema. Molluscum lesions are painless firm papules without fever, and contact dermatitis does not cause fever or punched-out erosions.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nice-eczema",
       },
       {
         id: "q2",
@@ -2006,7 +2023,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Fever, facial pain, refusal to eat and lesions reaching the eyelid show extensive eczema herpeticum, which can spread and disseminate quickly, so she needs IV acyclovir 10 mg/kg every 8 hours, here 140 mg for 14 kg. Cephalexin and clindamycin treat secondary bacterial infection but not the underlying herpes simplex virus. Topical mupirocin does not treat the viral infection, and fluconazole treats fungal infection, which she does not have.",
         keyFeature: { topic: "pediatric-fever", n: 3 },
-        source: "nelson",
+        source: "nelson-ch299",
       },
       {
         id: "q3",
@@ -2024,12 +2041,12 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: [2, 6],
         explanation:
-          "Lesions on the eyelid put her at risk of herpes simplex keratitis, so she needs urgent ophthalmology assessment even though her conjunctivae look clear now. A swab of a vesicle or erosion for HSV PCR confirms the diagnosis, so a skin biopsy is not needed. Dermatology follow-up, a serum IgE level and food allergy testing do not address the acute infection. Emollients can continue on unaffected skin.",
+          "Lesions on the eyelid put her at risk of herpes simplex keratitis, so she needs same-day ophthalmology assessment even though her conjunctivae look clear now. A swab of a vesicle or erosion for HSV PCR confirms the diagnosis, so a skin biopsy is not needed. NICE advises same-day dermatology advice, so a clinic visit in 2 weeks is too late. A serum IgE level and food allergy testing do not address the acute infection. Emollients can continue on unaffected skin.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nice-eczema",
       },
     ],
-    sources: [S.nelson],
+    sources: [S.niceEczema, S.nelson299],
     ...META,
   },
 
@@ -2058,7 +2075,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "A fine, rough sandpaper rash accentuated in skin folds with Pastia lines, circumoral pallor, a strawberry tongue and exudative tonsillitis after contact with streptococcal pharyngitis is scarlet fever from group A streptococcus. Kawasaki disease needs fever for about 5 days and usually causes conjunctival injection and hand or foot changes, which he does not have. Measles causes cough, coryza and conjunctivitis with a blotchy rash. Toxic shock syndrome causes hypotension and organ dysfunction, and a viral exanthem does not explain these streptococcal features.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nelson-ch229",
       },
       {
         id: "q2",
@@ -2116,7 +2133,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         source: "cps-gas",
       },
     ],
-    sources: [S.nelson, S.cpsGas],
+    sources: [S.nelson229, S.cpsGas],
     ...META,
   },
 
@@ -2260,12 +2277,12 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "After the brief sleepiness that follows a febrile seizure, a child should return to normal, as he has. Persistent drowsiness, a seizure lasting more than 5 minutes, a stiff neck, a rash that does not blanch or difficulty breathing needs immediate reassessment for meningitis or another serious illness. Clear nasal discharge, night cough and another day of fever are expected with a viral infection, and a temperature of 39°C is common with viral illness.",
+          "After the brief sleepiness that follows a febrile seizure, a child should return to normal, as he has. NICE advises parents to seek help if the child has another fit, develops a rash that does not blanch or seems less well. Drowsiness that does not improve shows a child who is less well and needs immediate reassessment for meningitis or another serious illness. Clear nasal discharge, night cough and another day of fever are expected with a viral infection, and a temperature of 39°C is common with viral illness.",
         keyFeature: { topic: "pediatric-fever", n: 2 },
-        source: "nelson",
+        source: "nice-fever-under-5",
       },
     ],
-    sources: [S.aapFsDx, S.aapFs, S.nelson],
+    sources: [S.aapFsDx, S.aapFs, S.niceFever],
     ...META,
   },
 
@@ -2293,7 +2310,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "Palpable, nonblanching purpura on the buttocks and backs of the legs, with ankle arthritis, crampy abdominal pain and a recent upper respiratory infection in a well child, is typical of IgA vasculitis, also called Henoch-Schonlein purpura. Meningococcemia causes a rapidly spreading petechial or purpuric rash in an ill child with poor perfusion, which he does not have. Immune thrombocytopenia and leukemia cause flat petechiae and bruising from low platelets rather than palpable purpura with arthritis. Hemolytic uremic syndrome usually follows bloody diarrhea and causes pallor and kidney injury.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "eular-igav",
       },
       {
         id: "q2",
@@ -2314,7 +2331,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         explanation:
           "A CBC with blood film shows a normal platelet count in IgA vasculitis, which separates it from thrombocytopenic causes of purpura such as immune thrombocytopenia and leukemia. A urinalysis looks for hematuria and proteinuria from kidney involvement, the main source of long-term harm. Serum IgA, antinuclear antibody and a skin biopsy do not change emergency management. A lumbar puncture and throat culture are not indicated, and ultrasound rather than CT is used if intussusception is suspected.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "nelson-ch210",
       },
       {
         id: "q3",
@@ -2331,12 +2348,12 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Kidney involvement in IgA vasculitis can appear weeks to months after the rash, so he needs repeated urinalysis and blood pressure checks for about 6 months even though the first urinalysis is nearly normal. Corticosteroids do not prevent kidney disease and are reserved for severe abdominal pain or significant nephritis. ASA is avoided in children because of the risk of Reye syndrome, and acetaminophen or an NSAID with normal kidney function treats the joint pain. Discharge without follow-up would miss late nephritis.",
+          "Kidney involvement in IgA vasculitis can appear weeks after the rash. In a systematic review, 97% of urine abnormalities appeared within 6 months, and no long-term kidney impairment followed a normal urinalysis. He needs repeated urinalysis and blood pressure checks for 6 months even though the first urinalysis is nearly normal. Corticosteroids are not needed for his mild skin and joint disease and do not replace monitoring. ASA is avoided in children because of the risk of Reye syndrome, and acetaminophen or an NSAID with normal kidney function treats the joint pain. Discharge without follow-up would miss late nephritis.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "narchi-hsp",
       },
     ],
-    sources: [S.nelson],
+    sources: [S.eularIgav, S.nelson210, S.narchi],
     ...META,
   },
 
@@ -2362,9 +2379,9 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A full, tense anterior fontanelle when the infant is calm is a sign of raised intracranial pressure, and with inconsolable irritability and a high-pitched cry it makes bacterial meningitis likely. Neck stiffness is often absent at this age, so the fontanelle is a more useful sign. Fever, tachycardia and reduced feeding occur in many febrile illnesses and are less specific. Normal capillary refill does not exclude meningitis.",
+          "A full, tense anterior fontanelle when the infant is calm is a sign of raised intracranial pressure, and with inconsolable irritability and a high-pitched cry it makes bacterial meningitis likely. NICE lists a bulging fontanelle and a high-pitched cry as red flags, and warns that classic signs of meningitis are often absent in infants. Fever, tachycardia and reduced feeding occur in many febrile illnesses and are less specific. Normal capillary refill does not exclude meningitis.",
         keyFeature: { topic: "pediatric-fever", n: 2 },
-        source: "nelson",
+        source: "nice-fever-under-5",
       },
       {
         id: "q2",
@@ -2403,7 +2420,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         source: "cps-meningitis",
       },
     ],
-    sources: [S.cpsMening, S.nelson],
+    sources: [S.cpsMening, S.niceFever],
     ...META,
   },
 
@@ -2497,9 +2514,9 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Ulcers on the tongue and soft palate with small oval vesicles on the palms, soles and buttocks during a daycare outbreak are typical of hand, foot and mouth disease from enteroviruses such as coxsackievirus A16. Herpetic gingivostomatitis causes swollen, bleeding gums and lip lesions, and his gums are normal. Varicella produces crops of vesicles concentrated on the trunk. Kawasaki disease and measles do not cause oral ulcers with vesicles on the hands and feet.",
+          "Ulcers on the tongue and soft palate with small oval vesicles on the palms, soles and buttocks during a daycare outbreak are typical of hand, foot and mouth disease from enteroviruses such as coxsackievirus A16. Herpetic gingivostomatitis causes swollen, bleeding gums and lip lesions, and his gums are normal. Varicella covers a larger area, including the scalp, and spares the palms and soles. Kawasaki disease and measles do not cause oral ulcers with vesicles on the hands and feet.",
         keyFeature: { topic: "pediatric-fever", n: 4 },
-        source: "nelson",
+        source: "who-hfmd",
       },
       {
         id: "q2",
@@ -2516,9 +2533,9 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Dry mucous membranes and one wet diaper in 10 hours show dehydration from painful swallowing, and hand, foot and mouth disease is a self-limited enteroviral infection, so treatment is analgesia followed by oral rehydration. Antibiotics have no role in a viral infection. Acyclovir does not treat enteroviruses, and nystatin treats candida. Viscous lidocaine is avoided in young children because swallowed doses can cause seizures.",
+          "Dry mucous membranes and one wet diaper in 10 hours show dehydration from painful swallowing, and hand, foot and mouth disease is a self-limited enteroviral infection, so treatment is analgesia followed by oral rehydration. Antibiotics have no role in a viral infection. Acyclovir does not treat enteroviruses, and nystatin treats candida. Viscous lidocaine is best avoided in young children, who may swallow a toxic dose.",
         keyFeature: { topic: "pediatric-fever", n: 7 },
-        source: "nelson",
+        source: "who-hfmd",
       },
       {
         id: "q3",
@@ -2538,7 +2555,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         source: "aap-antipyretic",
       },
     ],
-    sources: [S.nelson, S.aapFever],
+    sources: [S.whoHfmd, S.aapFever],
     ...META,
   },
 ];
