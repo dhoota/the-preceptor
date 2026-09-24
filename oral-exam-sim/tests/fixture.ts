@@ -34,10 +34,10 @@ export const FIXTURE: OralCase = {
     { kind: "end", id: "end", text: "That ends the case." },
   ],
   rubric: [
-    { id: "r1", competency: "resuscitation", criterion: "plan", text: "Places patient on a monitor", points: 2, teaching: "Monitor first.", source: "s1" },
-    { id: "r2", competency: "resuscitation", criterion: "plan", text: "Gives a fluid bolus", points: 2, critical: true, teaching: "Bolus early.", source: "s1" },
-    { id: "d1", competency: "disposition", criterion: "diagnosis", text: "Admits to ICU", points: 3, teaching: "ICU.", source: "s2" },
-    { id: "d2", competency: "disposition", criterion: "approach", text: "Updates the family", points: 3, teaching: "Talk to family.", source: "s2" },
+    { id: "r1", competency: "resuscitation", criterion: "management", text: "Places patient on a monitor", points: 2, teaching: "Monitor first.", source: "s1" },
+    { id: "r2", competency: "resuscitation", criterion: "management", text: "Gives a fluid bolus", points: 2, critical: true, teaching: "Bolus early.", source: "s1" },
+    { id: "d1", competency: "disposition", criterion: "physical", text: "Admits to ICU", points: 3, teaching: "ICU.", source: "s2" },
+    { id: "d2", competency: "disposition", criterion: "history", text: "Updates the family", points: 3, teaching: "Talk to family.", source: "s2" },
   ],
   sources: [
     { id: "s1", citation: "Test source one." },

@@ -6,7 +6,7 @@ The app covers both components of the CFPC Examination of Added Competence in Em
 
 ## 0. Before anything else
 
-1. Review the content. New content ships with `reviewed: false`. The first 525 SAMPs and 100 oral cases were signed off by Arjan Dhoot, MD on 24 September 2026. Their ids are listed in `docs/signoff-2026-09.json`, and the tests require `reviewed: true` exactly for those ids.
+1. Review the content. New content ships with `reviewed: false`. The first 525 SAMPs and 100 oral cases were signed off by Arjan Dhoot, MD on 24 September 2026. Their ids are listed in `docs/signoff-2026-09.json`, and the tests require `reviewed: true` exactly for those ids. All 100 oral cases were then realigned to the CFPC oral card, reading time and four row score sheet, with Arjan's approval. They left the sign-off (listed under `withdrawn`) and are back to `reviewed: false` for a re-check. The realign reports are `docs/reviews/oral-realign-*.md`.
    - Oral: 100 cases in `src/cases/seed/` and `src/cases/batch01/` to `batch10/`. Blueprint in `docs/BLUEPRINT.md`.
    - Written: 525 SAMPs in `src/samps/s01/` to `s18/`, 15 per priority topic. Blueprint in `docs/SAMP_BLUEPRINT.md`.
 2. Start with the adversarial review reports in `docs/reviews/`. Each batch had a separate clinical review against current Canadian guidance. The reports list what was corrected, the sources checked and what still needs a physician's eye.

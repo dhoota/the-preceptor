@@ -60,19 +60,8 @@ export const ORAL_CRITERIA = [
 
 export type OralCriterionId = (typeof ORAL_CRITERIA)[number]["id"];
 
-/**
- * TEMPORARY while the case batches are remapped to the CFPC score sheet rows.
- * Old criterion ids count toward the nearest row. Remove once every case uses
- * the new ids.
- */
-export const LEGACY_CRITERION: Record<string, OralCriterionId> = {
-  approach: "history",
-  data: "physical",
-  diagnosis: "physical",
-  plan: "management",
-};
-export const toCriterion = (id: string): OralCriterionId | undefined =>
-  ORAL_CRITERIA.find((c) => c.id === id)?.id ?? LEGACY_CRITERION[id];
+/** The score sheet row for an id, if it is one. */
+export const toCriterion = (id: string): OralCriterionId | undefined => ORAL_CRITERIA.find((c) => c.id === id)?.id;
 
 export const criterionLabel = (id: string) => ORAL_CRITERIA.find((c) => c.id === id)?.label ?? id;
 
@@ -154,7 +143,7 @@ export interface RubricItem {
   /** ID of an entry in the case's `sources`. */
   source: string;
   /** Score sheet row this item counts toward. */
-  criterion: OralCriterionId | keyof typeof LEGACY_CRITERION;
+  criterion: OralCriterionId;
 }
 
 export interface OralCard {
