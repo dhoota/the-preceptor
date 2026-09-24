@@ -68,10 +68,35 @@ const S = {
     id: "eclampsia-trial",
     citation: "Eclampsia Trial Collaborative Group. Which anticonvulsant for women with eclampsia? Evidence from the Collaborative Eclampsia Trial. Lancet. 1995.",
   },
-  tintinalli: {
-    id: "tintinalli",
-    citation:
-      "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on maternal emergencies after 20 weeks of pregnancy and in the postpartum period.",
+  ramoska: {
+    id: "ramoska-pregnancy-history",
+    citation: "Ramoska EA, Sacchetti AD, Nepp M. Reliability of patient history in determining the possibility of pregnancy. Ann Emerg Med. 1989.",
+    url: "https://doi.org/10.1016/s0196-0644(89)80310-5",
+  },
+  oyelese: {
+    id: "oyelese-abruption",
+    citation: "Oyelese Y, Ananth CV. Placental abruption. Obstet Gynecol. 2006.",
+    url: "https://doi.org/10.1097/01.AOG.0000239439.04364.9a",
+  },
+  acog723: {
+    id: "acog-723",
+    citation: "American College of Obstetricians and Gynecologists. Committee Opinion No. 723: Guidelines for diagnostic imaging during pregnancy and lactation. Obstet Gynecol. 2017.",
+    url: "https://pubmed.ncbi.nlm.nih.gov/28937575/",
+  },
+  figo: {
+    id: "figo-pph",
+    citation: "Escobar MF, Nassar AH, Theron G, et al. FIGO recommendations on the management of postpartum hemorrhage 2022. Int J Gynaecol Obstet. 2022.",
+    url: "https://doi.org/10.1002/ijgo.14116",
+  },
+  johnson: {
+    id: "johnson-pyelonephritis",
+    citation: "Johnson JR, Russo TA. Acute pyelonephritis in adults. N Engl J Med. 2018.",
+    url: "https://doi.org/10.1056/NEJMcp1702758",
+  },
+  acog171: {
+    id: "acog-171",
+    citation: "American College of Obstetricians and Gynecologists. Practice Bulletin No. 171: Management of preterm labor. Obstet Gynecol. 2016.",
+    url: "https://pubmed.ncbi.nlm.nih.gov/27661654/",
   },
 } satisfies Record<string, Source>;
 
@@ -243,9 +268,9 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         options: ["Bedside pregnancy test", "CT head without contrast", "Lumbar puncture", "Plasma metanephrines", "Serum drug screen"],
         correct: 0,
         explanation:
-          "A firm midline mass above the umbilicus with irregular periods is a gravid uterus until proven otherwise, whatever she reports about sexual activity. Headache, vomiting and a BP of 162/106 mmHg in a pregnancy beyond 20 weeks would mean pre-eclampsia. A bedside pregnancy test takes minutes and changes the whole workup. CT head may still be needed but would not explain her hypertension. Lumbar puncture is premature before a diagnosis. Metanephrines and a drug screen look for rarer causes and take longer.",
+          "A firm midline mass above the umbilicus with irregular periods is a gravid uterus until proven otherwise. History is an unreliable way to exclude pregnancy, and in an emergency department study at least 10% of patients who said they could not be pregnant were, so a denial of sexual activity does not settle it. Headache, vomiting and a BP of 162/106 mmHg in a pregnancy beyond 20 weeks would mean pre-eclampsia. A bedside pregnancy test takes minutes and changes the whole workup. CT head may still be needed but would not explain her hypertension. Lumbar puncture is premature before a diagnosis. Metanephrines and a drug screen look for rarer causes and take longer.",
         keyFeature: { topic: "pre-eclampsia", n: 1 },
-        source: "tintinalli",
+        source: "ramoska-pregnancy-history",
       },
       {
         id: "q2",
@@ -299,7 +324,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         source: "isshp-2021",
       },
     ],
-    sources: [S.tintinalli, S.sogc, S.isshp],
+    sources: [S.ramoska, S.sogc, S.isshp],
     ...META,
   },
   /* 19 ------------------------------------------------------------------ */
@@ -555,7 +580,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         explanation:
           "Sudden constant pain with a firm, tender uterus and dark bleeding in a woman with pre-eclampsia is placental abruption, a uteroplacental complication of pre-eclampsia, and smoking adds to the risk. A pulse of 118/minute and a BP of 104/68 mmHg, far below her recent readings, suggest concealed blood loss. Placenta previa bleeds painlessly from a soft uterus. Preterm labour gives intermittent pain with relaxation between contractions. Uterine rupture is rare without a uterine scar, and a hepatic hematoma causes upper abdominal pain.",
         keyFeature: { topic: "pre-eclampsia", n: 1 },
-        source: "tintinalli",
+        source: "oyelese-abruption",
       },
       {
         id: "q2",
@@ -574,9 +599,9 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         ],
         correct: [0, 1, 2],
         explanation:
-          "Abruption can cause heavy concealed bleeding and consumptive coagulopathy, so she needs a CBC with platelets, a fibrinogen level and a group and crossmatch now. A low fibrinogen predicts severe hemorrhage and guides replacement. Ultrasound misses many abruptions, so a normal scan cannot exclude one and must not delay care. D-dimer is raised in normal pregnancy and adds nothing. A repeat PCR, uric acid and lipase do not change management.",
+          "Abruption can cause heavy concealed bleeding and disseminated intravascular coagulation, so she needs a CBC with platelets, a fibrinogen level and a group and crossmatch now. A low fibrinogen marks consumptive coagulopathy and guides replacement. Abruption is a clinical diagnosis, and ultrasound is of limited value, so a normal scan cannot exclude one and must not delay care. D-dimer is raised in normal pregnancy and adds nothing. A repeat PCR, uric acid and lipase do not change management.",
         keyFeature: { topic: "pre-eclampsia", n: 2 },
-        source: "tintinalli",
+        source: "oyelese-abruption",
       },
       {
         id: "q3",
@@ -604,52 +629,50 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         options: ["Albumin 5% infusion", "Cryoprecipitate", "Platelets only", "Protamine sulfate", "Vitamin K IV"],
         correct: 1,
         explanation:
-          "A fibrinogen of 1.1 g/L with an INR of 1.6 is consumptive coagulopathy from abruption, and fibrinogen falls first and furthest. Cryoprecipitate replaces fibrinogen, given with red cells and plasma as bleeding requires. Platelets alone leave the fibrinogen deficit, and a count of 74 x 10^9/L is not the main problem. Vitamin K corrects deficiency, not consumption. Protamine reverses heparin, which she has not received. Albumin adds volume without clotting factors.",
+          "A fibrinogen of 1.1 g/L with an INR of 1.6 is consumptive coagulopathy from abruption, and fibrinogen falls first and furthest. Cryoprecipitate replaces fibrinogen, given with red cells and plasma as bleeding requires. Platelets alone leave the fibrinogen deficit, and a count of 74 x 10^9/L is not the main problem. Vitamin K corrects deficiency, not consumption. Protamine reverses heparin, which she has not received. Albumin adds volume without clotting factors. Coagulopathy from abruption is managed aggressively while delivery removes its cause.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
-        source: "tintinalli",
+        source: "oyelese-abruption",
       },
     ],
-    sources: [S.tintinalli, S.isshp],
+    sources: [S.oyelese, S.isshp],
     ...META,
   },
   /* 23 ------------------------------------------------------------------ */
   {
     id: "pre-eclampsia-23",
     topic: "pre-eclampsia",
-    alsoTopics: ["infectious-diseases"],
-    title: "Aches and nausea in flu season",
+    title: "Birth in the department",
     stem:
-      "A 27-year-old woman, G2P1 at 33 weeks and 4 days, presents to the emergency department with 2 days of malaise, aching muscles and nausea. Her 3-year-old has had a fever and cough this week. She has mild upper abdominal discomfort but no headache or visual change. At 30 weeks her BP was 112 mmHg systolic and 70 mmHg diastolic. She takes a prenatal vitamin. She looks tired. The chest is clear. There is mild epigastric and right upper quadrant tenderness. The uterus is soft and nontender. Reflexes are 2+. The fetal heart rate is 140/minute.",
-    vitals: { temperature: "37.6°C oral", pulse: "96/minute", resp: "18/minute", bp: "146/94 mmHg", o2sat: "98% on room air", weight: "69 kg" },
+      "You are working in a community hospital emergency department. A 27-year-old woman, G2P1 at 36 weeks and 4 days, arrives in strong labour and gives birth to a vigorous baby 10 minutes later, before the obstetrician arrives. Pre-eclampsia was diagnosed 3 days ago, and she takes labetalol 200 mg PO three times daily. She has no other medical conditions and no asthma. Blood drawn on arrival shows platelets 78 x 10^9/L, AST 264 U/L, ALT 231 U/L, LDH 760 U/L, creatinine 71 umol/L, INR 1.0 and glucose 5.1 mmol/L, with schistocytes on the film. Oxytocin 10 units IM was given after the birth, and the placenta delivered complete.",
+    vitals: { temperature: "36.9°C oral", pulse: "104/minute", resp: "18/minute", bp: "154/100 mmHg", o2sat: "98% on room air", weight: "69 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        update: "A repeat BP 15 minutes later in the same arm is 144/92 mmHg.",
-        prompt: "Which of the following is the most appropriate next step in her care?",
+        update: "Fifteen minutes later she is bleeding heavily, with about 700 mL of blood loss, and the uterus is soft. Uterine massage has started and an oxytocin infusion is running.",
+        prompt: "Which of the following medications for her postpartum hemorrhage carries the greatest risk in her case?",
         options: [
-          "Chest x-ray with abdominal shielding",
-          "Discharge with oseltamivir 75 mg PO BID",
-          "Influenza swab and discharge home",
-          "Oral rehydration and reassessment",
-          "Platelets, liver enzymes and LDH",
+          "carbetocin 100 mcg IV",
+          "carboprost 250 mcg IM",
+          "ergonovine 0.2 mg IM",
+          "misoprostol 800 mcg SL",
+          "tranexamic acid 1 g IV",
         ],
-        correct: 4,
+        correct: 2,
         explanation:
-          "Her readings average 145/93 mmHg, new since a BP of 112/70 mmHg at 30 weeks, and she has malaise, nausea and right upper quadrant tenderness. ACOG notes that HELLP often starts insidiously, with malaise in up to 90% and nausea or vomiting in about half, and that up to 15% lack hypertension or proteinuria. Platelets, liver enzymes and LDH answer the question within hours. Her child's illness makes influenza tempting, but a swab or oseltamivir with discharge could miss HELLP. Rehydration and a chest x-ray do not address it.",
-        keyFeature: { topic: "pre-eclampsia", n: 3 },
-        source: "acog-222",
+          "Ergonovine is an ergot alkaloid that constricts blood vessels and can raise BP sharply, so FIGO advises using it only when hypertensive disorders have been excluded. She has pre-eclampsia with HELLP and a BP of 154/100 mmHg, so ergonovine risks severe hypertension and stroke. Sublingual misoprostol 800 mcg is a recommended treatment when bleeding continues. Tranexamic acid 1 g IV is recommended as soon as hemorrhage is diagnosed and within 3 hours of birth. Carboprost is an accepted second-line uterotonic, and she has no asthma. Carbetocin is a long-acting oxytocin analogue without a vasoconstrictor effect of this kind.",
+        keyFeature: { topic: "pre-eclampsia", n: 4 },
+        source: "figo-pph",
       },
       {
         id: "q2",
         kind: "single",
-        update:
-          "Platelets 78 x 10^9/L, AST 264 U/L, ALT 231 U/L, LDH 760 U/L, creatinine 71 umol/L, INR 1.0, glucose 5.1 mmol/L. The film shows schistocytes. Influenza PCR is negative. She is admitted to obstetrics.",
+        update: "The bleeding settles after misoprostol and tranexamic acid, with a total blood loss of 900 mL. She is admitted to the obstetric unit.",
         prompt: "Which of the following is the longest acceptable interval between her repeat laboratory tests?",
         options: ["4 hours", "12 hours", "24 hours", "48 hours", "72 hours"],
         correct: 1,
         explanation:
-          "ACOG advises very close monitoring in HELLP syndrome, with laboratory tests at least every 12 hours until delivery and after it, because the platelet count can fall by about 40% a day as liver enzymes rise. From 78 x 10^9/L, a 40% fall would bring her to about 47 x 10^9/L within a day, since 78 x 0.6 = 46.8. Intervals of 24 to 72 hours would miss that fall. Testing every 4 hours is acceptable when she is unstable, but it is not the longest safe interval.",
+          "ACOG advises very close monitoring in HELLP syndrome, with laboratory tests at least every 12 hours, because the platelet count can fall by about 40% a day as liver enzymes rise, and the disease can worsen in the first days after birth. From 78 x 10^9/L, a 40% fall would bring her to about 47 x 10^9/L within a day, since 78 x 0.6 = 46.8. Intervals of 24 to 72 hours would miss that fall. Testing every 4 hours is acceptable when she is unstable, but it is not the longest safe interval.",
         keyFeature: { topic: "pre-eclampsia", n: 3 },
         source: "acog-222",
       },
@@ -657,7 +680,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update:
-          "She has a caesarean the next morning. Twelve hours after birth her platelets are 52 x 10^9/L and AST 298 U/L. Fibrinogen is 3.0 g/L and INR 1.0. She has not received heparin. Her BP is 138/86 mmHg.",
+          "Twelve hours after birth her platelets are 52 x 10^9/L and AST 298 U/L. Fibrinogen is 3.0 g/L and INR 1.0. She has not received heparin. Her BP is 138/86 mmHg.",
         prompt: "Which of the following is the most likely explanation for her falling platelet count?",
         options: [
           "Acute fatty liver of pregnancy",
@@ -668,12 +691,12 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "In HELLP syndrome the platelet count often keeps falling after birth, reaching its lowest point at a mean of 23 hours, and the disease can peak in the first 2 days. With supportive care 90% have platelets above 100 x 10^9/L within 7 days. ACOG advises reassessing the diagnosis, for example for thrombotic thrombocytopenic purpura, only if platelets still fall and enzymes still rise after day 4. A fibrinogen of 3.0 g/L and an INR of 1.0 argue against DIC. She has had no heparin. Fatty liver would bring coagulopathy or hypoglycemia.",
+          "In HELLP syndrome the platelet count often keeps falling after birth, reaching its lowest point at a mean of 23 hours, and the disease can peak in the first 2 days. With supportive care 90% have platelets above 100 x 10^9/L within 7 days. ACOG advises reassessing the diagnosis, for example for thrombotic thrombocytopenic purpura, only if platelets still fall and enzymes still rise after day 4. A fibrinogen of 3.0 g/L and an INR of 1.0 argue against DIC after her hemorrhage. She has had no heparin. Fatty liver would bring coagulopathy or hypoglycemia.",
         keyFeature: { topic: "pre-eclampsia", n: 3 },
         source: "acog-222",
       },
     ],
-    sources: [S.acog222],
+    sources: [S.figo, S.acog222],
     ...META,
   },
   /* 24 ------------------------------------------------------------------ */
@@ -993,9 +1016,9 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Sudden severe headache with vomiting, a GCS of 13 and a new arm drift suggest intracerebral hemorrhage, and noncontrast CT of the head confirms it within minutes. The fetal radiation dose from head CT is negligible. MRI with venography takes longer and is better suited to stable patients or to cerebral venous thrombosis. Lumbar puncture is unsafe before a mass lesion is excluded. An EEG and carotid Doppler do not assess hemorrhage.",
+          "Sudden severe headache with vomiting, a GCS of 13 and a new arm drift suggest intracerebral hemorrhage, and noncontrast CT of the head confirms it within minutes. ACOG advises that the radiation from CT is far below the dose linked to fetal harm, and a needed CT should not be withheld in pregnancy. MRI with venography takes longer and is better suited to stable patients or to cerebral venous thrombosis. Lumbar puncture is unsafe before a mass lesion is excluded. An EEG and carotid Doppler do not assess hemorrhage.",
         keyFeature: { topic: "pre-eclampsia", n: 2 },
-        source: "tintinalli",
+        source: "acog-723",
       },
       {
         id: "q3",
@@ -1038,7 +1061,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         source: "isshp-2021",
       },
     ],
-    sources: [S.martin, S.tintinalli, S.isshp],
+    sources: [S.martin, S.acog723, S.isshp],
     ...META,
   },
   /* 30 ------------------------------------------------------------------ */
@@ -1119,19 +1142,19 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         id: "q1",
         kind: "single",
         update: "Urinalysis shows 2+ protein with no nitrites and no leukocytes. The triage nurse asks for an antibiotic order.",
-        prompt: "Which of the following is the most appropriate next step in her care?",
+        prompt: "Which of the following findings most argues against pyelonephritis as the cause of her pain?",
         options: [
-          "Blood and urine cultures only",
-          "ceftriaxone 1 g IV and admit to obstetrics",
-          "Discharge with nitrofurantoin",
-          "Renal ultrasound for obstruction",
-          "Repeat BP, platelets, liver enzymes",
+          "Costovertebral angle tenderness",
+          "Previous UTI at 24 weeks",
+          "Proteinuria of 2+ on dipstick",
+          "Right-sided flank pain",
+          "Urine free of leukocytes and nitrites",
         ],
         correct: 4,
         explanation:
-          "Right upper quadrant pain, nausea, 3+ reflexes and 2+ proteinuria at 30 weeks, with a BP of 138/88 mmHg against a baseline of 108/66 mmHg, suggest pre-eclampsia or HELLP rather than pyelonephritis. The urinalysis shows no nitrites or leukocytes and she has no fever. A repeat BP with platelets, liver enzymes, creatinine and a PCR decides it within hours. Antibiotics, cultures or discharge on nitrofurantoin treat an infection she probably does not have. A renal ultrasound does not assess the liver or platelets.",
+          "Pyuria is present in nearly all cases of acute pyelonephritis, so a urine free of leukocytes and nitrites should prompt a search for another diagnosis, and she also has no fever. Right upper quadrant pain, nausea and 3+ reflexes at 30 weeks, with a BP of 138/88 mmHg against a baseline of 108/66 mmHg, point toward pre-eclampsia or HELLP, which calls for a repeat BP, PCR, platelets and liver enzymes rather than an antibiotic. Costovertebral angle tenderness, right flank pain and a previous UTI all fit pyelonephritis. Proteinuria can occur in either condition, so it does not argue against infection.",
         keyFeature: { topic: "pre-eclampsia", n: 1 },
-        source: "acog-222",
+        source: "johnson-pyelonephritis",
       },
       {
         id: "q2",
@@ -1164,7 +1187,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         source: "isshp-2021",
       },
     ],
-    sources: [S.acog222, S.isshp],
+    sources: [S.johnson, S.acog222, S.isshp],
     ...META,
   },
   /* 32 ------------------------------------------------------------------ */
@@ -1222,7 +1245,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Two systolic readings above 160 mmHg confirm severe hypertension, which needs treatment within 30 to 60 minutes. ISSHP states that antihypertensives, including nifedipine, can be used at the same time as magnesium sulfate, so there is no reason to stop magnesium. Treating only when the diastolic reaches 110 mmHg ignores the stroke risk of severe systolic pressure. ISSHP advises swallowing nifedipine whole rather than biting it or giving it sublingually. Waiting an hour delays needed treatment.",
+          "Two systolic readings of 160 mmHg or more confirm severe hypertension, which needs treatment within 30 to 60 minutes. ISSHP states that antihypertensives, including nifedipine, can be used at the same time as magnesium sulfate, so there is no reason to stop magnesium. Treating only when the diastolic reaches 110 mmHg ignores the stroke risk of severe systolic pressure. ISSHP advises swallowing nifedipine whole rather than biting it or giving it sublingually. Waiting an hour delays needed treatment.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "isshp-2021",
       },
@@ -1332,13 +1355,13 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "A repeat BP at 1320 in the same arm is 170/110 mmHg. Her pulse is 46/minute.",
-        prompt: "Which of the following is the most appropriate first antihypertensive for her?",
-        options: ["enalaprilat 1.25 mg IV", "hydralazine 20 mg IV", "labetalol 20 mg IV", "metoprolol 5 mg IV", "nifedipine 10 mg PO"],
-        correct: 4,
+        prompt: "Which of the following is the longest acceptable delay from confirmation of her severe hypertension to the first antihypertensive dose?",
+        options: ["15 minutes", "60 minutes", "90 minutes", "120 minutes", "240 minutes"],
+        correct: 1,
         explanation:
-          "Two severe readings need treatment within 30 to 60 minutes. ACOG advises avoiding labetalol in women with bradycardia or heart block, and her pulse is 46/minute, so immediate-release nifedipine 10 mg PO is the better first-line choice, and its reflex tachycardia does her no harm. Metoprolol would slow her pulse further in the same way. Hydralazine is also first-line but starts at 5 mg IV, and 20 mg is its maximum cumulative dose. Enalaprilat is fetotoxic.",
+          "A systolic BP of 160 mmHg or more or a diastolic of 110 mmHg or more, confirmed on repeat, is severe hypertension, and her readings of 172/112 and 170/110 mmHg meet it. ACOG advises that first-line treatment start as soon as possible, within 30 to 60 minutes of confirmation, to lower the risk of maternal stroke. A first dose at 15 minutes is good care but is not the limit. Delays of 90, 120 or 240 minutes fall outside that window and leave her exposed to severe hypertension for no benefit. Her slow resting pulse from training does not change this urgency, although it favours immediate-release nifedipine or hydralazine over labetalol as the first drug.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
-        source: "acog-222",
+        source: "acog-767",
       },
       {
         id: "q3",
@@ -1360,7 +1383,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         source: "sogc-376",
       },
     ],
-    sources: [S.sogc, S.acog222, S.sogc376],
+    sources: [S.sogc, S.acog767, S.sogc376],
     ...META,
   },
   /* 35 ------------------------------------------------------------------ */
@@ -1493,17 +1516,17 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step before any tocolysis is considered?",
+        prompt: "Which of the following findings most suggests a cause other than preterm labour for her pain?",
         options: [
-          "indomethacin 50 mg PO now",
-          "nifedipine 20 mg PO now",
-          "Platelets, liver enzymes and PCR",
-          "terbutaline 0.25 mg SC now",
-          "Transvaginal cervical length only",
+          "Back pain with the tightening",
+          "Contractions every 8 to 10 minutes",
+          "Epigastric tenderness",
+          "Previous preterm birth at 34 weeks",
+          "Soft uterus between contractions",
         ],
         correct: 2,
         explanation:
-          "Epigastric tenderness, 3+ reflexes and a BP of 142/90 mmHg against a baseline of 104/64 mmHg mean her back and upper abdominal pain may be HELLP or pre-eclampsia rather than preterm labour. Platelets, liver enzymes and a PCR, with a repeat BP, settle that within hours. Tocolysis would be wrong if delivery is indicated. Indomethacin is an NSAID that harms platelet and kidney function. Nifedipine and terbutaline would alter her BP and pulse before the cause is clear. Cervical length alone does not assess pre-eclampsia.",
+          "Epigastric or right upper quadrant pain and tenderness is a typical presenting feature of HELLP syndrome, and here it comes with 3+ reflexes and a BP of 142/90 mmHg against a baseline of 104/64 mmHg. Preterm labour does not cause epigastric tenderness. Back pain with tightening, regular contractions, a soft uterus between them and a previous preterm birth all fit preterm labour and do not point elsewhere, so they could lead to tocolysis while HELLP is missed.",
         keyFeature: { topic: "pre-eclampsia", n: 1 },
         source: "acog-222",
       },
@@ -1528,27 +1551,23 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
       },
       {
         id: "q3",
-        kind: "menu",
-        select: 2,
-        prompt: "Which of the following medications are the most appropriate to give her now?",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate approach to her contractions?",
         options: [
-          "betamethasone 12 mg IM",
-          "dexamethasone 10 mg IV",
-          "furosemide 20 mg IV",
+          "Bed rest and a fluid bolus",
           "indomethacin 50 mg PO",
-          "magnesium sulfate 4 g IV",
           "nifedipine 20 mg PO",
-          "Platelet transfusion",
           "terbutaline 0.25 mg SC",
+          "No tocolytic medication",
         ],
-        correct: [0, 4],
+        correct: 4,
         explanation:
-          "HELLP at 29 weeks means birth is planned soon, so tocolysis with indomethacin, nifedipine or terbutaline is not appropriate. Betamethasone 12 mg IM, repeated in 24 hours, matures the fetal lungs. Magnesium sulfate 4 g IV, then 1 g/hour, protects against eclampsia and, with planned birth at 33 weeks and 6 days or earlier, reduces cerebral palsy in the baby. High-dose dexamethasone to raise the platelet count in HELLP has not improved outcomes. Platelets of 88 x 10^9/L need no transfusion, and she has no pulmonary edema for furosemide to treat.",
+          "HELLP syndrome is pre-eclampsia with severe features, which ACOG lists as a contraindication to tocolysis, because the risks of prolonging the pregnancy outweigh those of preterm birth and delivery is the treatment. Indomethacin is also an NSAID that impairs platelet and kidney function, which matters with platelets of 88 x 10^9/L. Nifedipine and terbutaline act on BP and heart rate. Bed rest and hydration have not been shown to prevent preterm birth, and a fluid bolus risks pulmonary edema in pre-eclampsia. Her care now centres on magnesium sulfate, betamethasone and planned birth.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
-        source: "sogc-376",
+        source: "acog-171",
       },
     ],
-    sources: [S.acog222, S.sogc376],
+    sources: [S.acog222, S.acog171],
     ...META,
   },
   /* 38 ------------------------------------------------------------------ */
@@ -1591,9 +1610,9 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Persistent confusion after a crash, possibly caused by a seizure, needs a noncontrast CT head to exclude traumatic bleeding and intracranial complications of eclampsia such as hemorrhage. The fetal radiation dose from head CT is negligible. Gadolinium is avoided in pregnancy unless essential, and MRI takes longer. Lumbar puncture is unsafe before imaging. An EEG is not needed for a seizure with a clear cause, and a drug screen does not look for bleeding.",
+          "Persistent confusion after a crash, possibly caused by a seizure, needs a noncontrast CT head to exclude traumatic bleeding and intracranial complications of eclampsia such as hemorrhage. ACOG advises that CT radiation is far below the dose linked to fetal harm and that a needed CT should not be withheld. Gadolinium is limited in pregnancy to cases where it clearly improves care, and MRI takes longer. Lumbar puncture is unsafe before imaging. An EEG is not needed for a seizure with a clear cause, and a drug screen does not look for bleeding.",
         keyFeature: { topic: "pre-eclampsia", n: 2 },
-        source: "tintinalli",
+        source: "acog-723",
       },
       {
         id: "q3",
@@ -1615,7 +1634,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
         source: "acog-222",
       },
     ],
-    sources: [S.acog222, S.tintinalli],
+    sources: [S.acog222, S.acog723],
     ...META,
   },
 ];

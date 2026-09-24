@@ -10,7 +10,21 @@ const S = {
   cigTet: { id: "cig-tetanus", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Tetanus toxoid. Tetanus prophylaxis in wound management. Updated 2026.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html" },
   idsa: { id: "idsa-ssti", citation: "Stevens DL, Bisno AL, Chambers HF, and colleagues. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.", url: "https://academic.oup.com/cid/article/59/2/e10/2895845" },
   rh: { id: "roberts-hedges", citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapters on wound preparation, laceration repair, foreign body removal and local anesthesia." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, and colleagues, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on wound evaluation, hand injuries, hand infections and soft tissue foreign bodies." },
+  rupert: { id: "rupert-fb", citation: "Rupert J, Honeycutt JD, Odom MR. Foreign bodies in the skin: evaluation and management. Am Fam Physician. 2020.", url: "https://www.aafp.org/pubs/afp/issues/2020/0615/p740.html" },
+  clark: { id: "clark-hand-infections", citation: "Clark DC. Common acute hand infections. Am Fam Physician. 2003.", url: "https://www.aafp.org/pubs/afp/issues/2003/1201/p2167.html" },
+  bottini: { id: "bottini-condyle", citation: "Bottini GB, Roccia F, Sobrero F. Management of pediatric mandibular condyle fractures: a literature review. J Clin Med. 2024.", url: "https://doi.org/10.3390/jcm13226921" },
+  lemmon: { id: "lemmon-fingertip", citation: "Lemmon JA, Janis JE, Rohrich RJ. Soft-tissue injuries of the fingertip: methods of evaluation and treatment. An algorithmic approach. Plast Reconstr Surg. 2008.", url: "https://pubmed.ncbi.nlm.nih.gov/18766028/" },
+  griffinExt: { id: "griffin-extensor", citation: "Griffin M, Hindocha S, Jordan D, Saleh M, Khan W. Management of extensor tendon injuries. Open Orthop J. 2012.", url: "https://doi.org/10.2174/1874325001206010036" },
+  elson: { id: "elson-test", citation: "Elson RA. Rupture of the central slip of the extensor hood of the finger. A test for early diagnosis. J Bone Joint Surg Br. 1986.", url: "https://doi.org/10.1302/0301-620X.68B2.3958008" },
+  kalkan: { id: "kalkan-ring", citation: "Kalkan A, Kose O, Tas M, Meric G. Review of techniques for the removal of trapped rings on fingers with a proposed new algorithm. Am J Emerg Med. 2013.", url: "https://doi.org/10.1016/j.ajem.2013.06.009" },
+  smithRing: { id: "ring-avulsion", citation: "Smith L, Immerman I, Schroeder N, Shapiro LM. Current concepts in ring avulsion injuries. J Hand Surg Am. 2026.", url: "https://doi.org/10.1016/j.jhsa.2026.01.020" },
+  neon: { id: "neon-trial", citation: "Wormald JCR, Gardiner MD, Jerosch-Herold C, Cook J, and colleagues. The NEON (Nerve rEpair Or Not) trial: a randomized controlled trial of microsurgical repair versus nerve alignment for digital nerve injury. Br J Surg. 2025.", url: "https://doi.org/10.1093/bjs/znaf174" },
+  dy: { id: "dy-ulnar", citation: "Dy CJ, Mackinnon SE. Ulnar neuropathy: evaluation and management. Curr Rev Musculoskelet Med. 2016.", url: "https://doi.org/10.1007/s12178-016-9327-x" },
+  griffinNerve: { id: "nerve-repair", citation: "Griffin JW, Hogan MV, Chhabra AB, Deal DN. Peripheral nerve repair and reconstruction. J Bone Joint Surg Am. 2013.", url: "https://doi.org/10.2106/JBJS.L.00704" },
+  pengas: { id: "pengas-extensor", citation: "Pengas IP, Assiotis A, Khan W, Spalding T. Adult native knee extensor mechanism ruptures. Injury. 2016.", url: "https://doi.org/10.1016/j.injury.2016.06.032" },
+  pierpont: { id: "nail-gun", citation: "Pierpont YN, Pappas-Politis E, Naidu DK, Salas RE, Johnson EL, Payne WG. Nail-gun injuries to the hand. Eplasty. 2008.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2586285/" },
+  micieli: { id: "nhl-visors", citation: "Micieli JA, Zurakowski D, Ahmed IIK. Impact of visors on eye and orbital injuries in the National Hockey League. Can J Ophthalmol. 2014.", url: "https://doi.org/10.1016/j.jcjo.2014.03.008" },
+  cdcCapno: { id: "cdc-capnocytophaga", citation: "Centers for Disease Control and Prevention. Clinical overview of Capnocytophaga. 2025.", url: "https://www.cdc.gov/capnocytophaga/hcp/clinical-overview/index.html" },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on wound management, hand injuries and mammalian bites." },
   quinnRisk: { id: "quinn-golden-period", citation: "Quinn JV, Polevoi SK, Kohn MA. Traumatic lacerations: what are the risks for infection and has the 'golden period' of laceration care disappeared? Emerg Med J. 2014.", url: "https://pubmed.ncbi.nlm.nih.gov/23314208/" },
   cps: { id: "cps-suicidal-ideation", citation: "Korczak DJ, Canadian Paediatric Society Mental Health and Developmental Disabilities Committee. Suicidal ideation and behaviour. Paediatr Child Health. 2015. Reaffirmed 2024.", url: "https://cps.ca/en/documents/position/suicidal-ideation-and-behaviour" },
@@ -45,7 +59,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Inability to cross the index and middle fingers means the interossei are weak, and sensory loss over the little finger and ulnar ring finger matches ulnar nerve territory. At the wrist the ulnar nerve runs beside the ulnar artery under the flexor carpi ulnaris. The median nerve supplies sensation to the thumb, index and middle finger pads. The anterior interosseous nerve is purely motor and branches in the proximal forearm. The superficial radial nerve supplies the dorsal radial hand. A cut flexor carpi ulnaris tendon weakens wrist flexion but causes no sensory loss.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "dy-ulnar",
       },
       {
         id: "q2",
@@ -73,12 +87,12 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "An ulnar nerve injury at the wrist needs microsurgical repair by a hand surgeon, ideally within days. The emergency physician irrigates the wound, closes the skin, splints the wrist and arranges the early review the surgeon has offered. Nerve repair without magnification gives poor results. Review at 3 weeks lets the cut nerve ends retract and makes primary repair harder. A clean glass wound seen at 1 hour does not need to be left open, and antibiotics do not replace timely repair.",
+          "A cut ulnar nerve at the wrist is repaired by a hand surgeon, and direct repair of the nerve ends is the standard of care when it is possible. The emergency physician irrigates the wound, closes the skin, splints the wrist and arranges the early review the surgeon has offered. Nerve repair is an operating room procedure, not an emergency department one. Waiting 3 weeks lets the ends retract and scar, which makes direct repair harder. A clean glass wound seen at 1 hour does not need to be left open, and antibiotics do not replace repair.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "nerve-repair",
       },
     ],
-    sources: [S.tintinalli, S.rh],
+    sources: [S.dy, S.rh, S.griffinNerve],
     ...META,
   },
   {
@@ -276,10 +290,10 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "A tense pad with a fluid collection is a felon, an abscess within the closed, septated compartments of the fingertip pulp, and it needs surgical drainage as well as antibiotics. Pus under pressure there can cause necrosis of the pulp and osteomyelitis of the distal phalanx. Needle aspiration does not decompress the separate compartments. Soaks and elevation do not drain pus. Nail removal treats pus under the nail, not in the pulp. Waiting 48 hours for another scan delays drainage.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "clark-hand-infections",
       },
     ],
-    sources: [S.rh, S.idsa, S.tintinalli],
+    sources: [S.rh, S.idsa, S.clark],
     ...META,
   },
   {
@@ -297,9 +311,9 @@ export const LACERATIONS_S43: Samp[] = [
         options: ["Cervical spine ligament injury", "Mandibular condyle fracture", "Nasal septal hematoma", "Orbital floor fracture", "Zygomatic arch fracture"],
         correct: 1,
         explanation:
-          "A blow to the point of the chin drives the mandible backward and transmits the force to the condyles, the most common site of mandibular fracture in young children. Holding her jaw is a clue. Look for pain in front of the ear, malocclusion, deviation on opening and limited opening. She moves her neck freely without pain, which makes a cervical injury unlikely. Nasal, orbital floor and zygomatic injuries follow blows to the midface, not the chin.",
+          "A blow to the point of the chin drives the mandible backward and transmits the force to the condyles. The condyle is often involved when a child's mandible breaks, and under 5 years of age these fractures are uncommon and mostly follow falls. Holding her jaw is a clue. Look for pain in front of the ear, malocclusion, deviation on opening and limited opening. She moves her neck freely without pain, which makes a cervical injury unlikely. Nasal, orbital floor and zygomatic injuries follow blows to the midface, not the chin.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "bottini-condyle",
       },
       {
         id: "q2",
@@ -309,9 +323,9 @@ export const LACERATIONS_S43: Samp[] = [
         options: ["CT of the mandible", "Dental clinic review in 1 week", "Discharge on a soft diet", "Skull radiograph series", "Ultrasound of the jaw"],
         correct: 0,
         explanation:
-          "Pain in front of the ear, deviation toward that side on opening and malocclusion point to a condylar fracture. CT shows the condyles clearly and does not need the cooperation a panoramic film needs from a 3-year-old. A missed condylar fracture in a young child can disturb jaw growth or lead to ankylosis of the joint, so it needs a diagnosis and surgical follow-up. Skull films show the condyles poorly. Ultrasound is not a reliable test for this fracture. Discharge or dental review without imaging leaves the fracture undiagnosed.",
+          "Pain in front of the ear, deviation toward that side on opening and malocclusion point to a condylar fracture. CT shows the condyles clearly, and a panoramic film alone is now considered inadequate to assess them. A missed condylar fracture in a young child can lead to ankylosis of the joint, facial deformity or malocclusion, so it needs a diagnosis and surgical follow-up. Skull films show the condyles poorly. Ultrasound is not a reliable test for this fracture. Discharge or dental review without imaging leaves the fracture undiagnosed.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "bottini-condyle",
       },
       {
         id: "q3",
@@ -332,7 +346,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "roberts-hedges",
       },
     ],
-    sources: [S.tintinalli, S.rh],
+    sources: [S.bottini, S.rh],
     ...META,
   },
   {
@@ -476,27 +490,21 @@ export const LACERATIONS_S43: Samp[] = [
     id: "lacerations-23",
     topic: TOPIC,
     alsoTopics: ["infectious-diseases"],
-    title: "Neighbour's dog and a man with liver disease",
+    title: "Feeding his daughter's dog",
     stem:
-      "A 61-year-old man presents to the emergency department 5 hours after his neighbour's dog bit his right calf when he stepped into its yard. He has alcohol-related cirrhosis with ascites and takes spironolactone and furosemide. He has no allergies. The dog is healthy, vaccinated against rabies and confined at home. His last tetanus booster was 2 years ago.\n\nThere are four puncture wounds and a 3 cm irregular laceration on the posterior calf. Both lower legs have pitting edema. There is no redness around the wounds. The calf is soft, and the foot is warm with normal sensation and movement.",
+      "A 61-year-old man presents to the emergency department 5 hours after his daughter's dog bit his right calf while he was feeding it at her home. He has alcohol-related cirrhosis with ascites and still drinks about six beers a day. He takes spironolactone and furosemide and has no allergies. The dog is healthy, vaccinated against rabies and can be kept at his daughter's home. His last tetanus booster was 2 years ago.\n\nThere are four puncture wounds and a 3 cm irregular laceration on the posterior calf. Both lower legs have pitting edema. There is no redness around the wounds. The calf is soft, and the foot is warm with normal sensation and movement.",
     vitals: { temperature: "36.6°C oral", pulse: "88/minute", resp: "16/minute", bp: "108/64 mmHg", o2sat: "97% on room air", weight: "74 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate antibiotic plan for this bite?",
-        options: [
-          "Amoxicillin-clavulanate for 14 days",
-          "Amoxicillin-clavulanate for 3 to 5 days",
-          "Antibiotics only if infection develops",
-          "Cephalexin for 5 days",
-          "Single dose of IV cefazolin",
-        ],
+        prompt: "Which of the following organisms is the most important threat to this man after this bite?",
+        options: ["Aeromonas hydrophila", "Capnocytophaga canimorsus", "Eikenella corrodens", "Pseudomonas aeruginosa", "Vibrio vulnificus"],
         correct: 1,
         explanation:
-          "IDSA 2014 recommends preemptive antibiotics for 3 to 5 days after a dog bite in a patient with advanced liver disease or with edema of the bitten area, and he has both. Amoxicillin-clavulanate covers Pasteurella, streptococci, staphylococci and anaerobes. Waiting for infection is unsafe in a host at risk of Capnocytophaga and Pasteurella sepsis. Cephalexin has poor activity against Pasteurella multocida. A single IV dose is too short, and 14 days is a treatment course rather than prophylaxis.",
-        keyFeature: { topic: TOPIC, n: 4 },
-        source: "idsa-ssti",
+          "After a dog bite, Capnocytophaga canimorsus can progress quickly from a local infection to sepsis, shock and death, with symptoms usually starting 3 to 5 days later. About 60% of infections occur in people with heavy alcohol use, asplenia or immune compromise, and he drinks heavily and has cirrhosis. Vibrio vulnificus is also dangerous in liver disease, but it comes from salt water and raw shellfish, not a dog bite. Aeromonas hydrophila is a fresh water organism. Eikenella corrodens is typical of human bites. Pseudomonas aeruginosa follows punctures through wet footwear.",
+        keyFeature: { topic: TOPIC, n: 1 },
+        source: "cdc-capnocytophaga",
       },
       {
         id: "q2",
@@ -531,12 +539,12 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: [1, 2],
         explanation:
-          "A bite in a patient with advanced liver disease needs a recheck in 1 to 2 days and clear advice to return at once with fever or chills, because bite related sepsis can progress within hours in such a host. The dog is healthy, vaccinated and confined, so local public health can arrange observation of the dog instead of rabies vaccine. His booster 2 years ago means no tetanus vaccine is due. Soaking macerates an open wound. Stopping his diuretic would worsen edema. A tight bandage over a bite impairs drainage.",
+          "A bite in a patient with advanced liver disease needs a recheck in 1 to 2 days and clear advice to return at once with fever or chills, because bite related sepsis can progress within hours in such a host. The dog is healthy, vaccinated and can be kept at home, so local public health can arrange observation of the dog instead of rabies vaccine. His booster 2 years ago means no tetanus vaccine is due. Soaking macerates an open wound. Stopping his diuretic would worsen edema. A tight bandage over a bite impairs drainage.",
         keyFeature: { topic: TOPIC, n: 4 },
         source: "idsa-ssti",
       },
     ],
-    sources: [S.idsa],
+    sources: [S.cdcCapno, S.idsa],
     ...META,
   },
   {
@@ -702,9 +710,9 @@ export const LACERATIONS_S43: Samp[] = [
         options: ["Glass fragment", "Plastic bead", "Steel needle", "Stone chip", "Wood splinter"],
         correct: 4,
         explanation:
-          "Organic material such as wood, thorns and plant matter provokes an intense inflammatory reaction and carries bacteria and fungi, so a retained splinter often leads to infection, abscess or a granuloma. That is why the type of material in the history changes how hard you look for it. Glass, steel, stone and plastic are relatively inert and may stay in tissue without reaction, unless they cause pain, lie near a tendon, nerve or joint, or were contaminated.",
+          "Vegetative material such as wood and plant spines is highly reactive, so a retained splinter provokes inflammation and often leads to infection or a granuloma. That is why the type of material in the history changes how hard you look for it. Glass and metal are much less reactive, and small inert fragments deep in tissue and away from vital structures may even be left in place. Stone and plastic are also relatively inert unless they were contaminated or lie near a tendon, nerve or joint.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "rupert-fb",
       },
       {
         id: "q2",
@@ -731,12 +739,12 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A retained wooden splinter causes ongoing inflammation and infection and breaks into fragments over time, so a superficial one found on ultrasound is removed. An incision along its length, marked with the ultrasound, lets it be lifted out whole. Blind probing through a 3 mm puncture tends to break wood into pieces. Antibiotics do not treat a retained foreign body. Soaking does not draw out an embedded splinter. A 4 week delay invites infection.",
+          "Wood is highly reactive, so a retained splinter keeps causing inflammation and is removed rather than left. A superficial one found on ultrasound lies close enough to reach through a small incision over it, marked with the ultrasound, so it can be lifted out whole. Blind probing through a 3 mm puncture tends to break wood into pieces. Antibiotics do not treat a retained foreign body. Soaking does not draw out an embedded splinter. A 4 week delay leaves reactive material in the palm and invites infection.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "rupert-fb",
       },
     ],
-    sources: [S.tintinalli, S.davis],
+    sources: [S.rupert, S.davis],
     ...META,
   },
   {
@@ -760,9 +768,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A fragment thrown by a grinder moves fast enough to pass through skin and lodge deep through a tiny entry wound, so the mechanism, not the size of the wound, predicts a retained foreign body. Not feeling an object under the skin does not exclude one. Dried blood, the time since injury and the dorsal site do not change the likelihood of a retained fragment.",
+          "A metal fragment thrown at high velocity by a grinder can pass through skin and lodge deep through a tiny entry wound, while low velocity objects tend to stay superficial. So the mechanism, not the size of the wound, predicts a retained foreign body. Not feeling an object under the skin does not exclude one. Dried blood, the time since injury and the dorsal site do not change the likelihood of a retained fragment.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "rupert-fb",
       },
       {
         id: "q2",
@@ -777,9 +785,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Metal is radiopaque, so radiographs in two planes are the first test and show the size, depth and position of a metallic fragment. MRI is contraindicated when a fragment may be ferromagnetic. Ultrasound can find metal but is operator dependent and is used to guide removal once films have located it. Probing a 2 mm wound blindly rarely finds a deep fragment and can push it further in. The mechanism is too concerning to stop without imaging.",
+          "Metal is radiopaque, so radiographs in two planes are the first test and show the size, depth and position of a metallic fragment. MRI is contraindicated with a metallic object, which can shift and damage nearby structures. Ultrasound is most useful for radiolucent material such as wood and can guide removal once films have located a fragment. Probing a 2 mm wound blindly rarely finds a deep fragment and can push it further in. The mechanism is too concerning to stop without imaging.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "rupert-fb",
       },
       {
         id: "q3",
@@ -795,12 +803,12 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "A small, inert metal fragment deep in muscle and away from the wrist joint, with normal tendon function, sensation and perfusion, can be left in place, because searching for it blindly often fails and damages tissue. He is told it was left, what to watch for, and that it can be removed later if it causes pain, infection or movement problems. MRI is contraindicated with a possibly ferromagnetic fragment. A clean wound with an inert fragment does not need antibiotics. Urgent surgical removal is not needed without symptoms or structures at risk.",
+          "A small, inert metal fragment deep in muscle and away from the wrist joint, with normal tendon function, sensation and perfusion, can be left in place when the risks of removal outweigh the benefits. A deep search often fails and damages tissue, and a retained fragment may later work its way toward the surface. He is told it was left, what to watch for, and that it can be removed later if it causes pain, infection or loss of function. MRI is contraindicated with a metallic fragment. A clean wound with an inert fragment does not need antibiotics. Urgent surgical removal is not needed without symptoms or structures at risk.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "rupert-fb",
       },
     ],
-    sources: [S.tintinalli],
+    sources: [S.rupert],
     ...META,
   },
   {
@@ -956,9 +964,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Even when no bone is visible, a radiograph shows whether the tuft of the distal phalanx is fractured or lies just beneath the wound. Bone involvement turns the injury into an open fracture and changes management toward bone trimming or hand surgery review. The rest of the finger is pink, so a Doppler study of the digital arteries adds nothing. Ultrasound and MRI do not answer the question of bone involvement as simply. Dressing the wound without imaging can miss an open tuft fracture.",
+          "Even when no bone is visible, digit radiographs show whether the distal phalanx is fractured and reveal some foreign bodies. Bone involvement turns the injury into an open fracture and changes management toward bone shortening or hand surgery review. The rest of the finger is pink, so a Doppler study of the digital arteries adds nothing. Ultrasound and MRI do not answer the question of bone involvement as simply. Dressing the wound without imaging can miss an open tuft fracture.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "lemmon-fingertip",
       },
       {
         id: "q2",
@@ -974,9 +982,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "A pulp amputation of about 1 cm by 1 cm or less, with no exposed bone, heals well by secondary intention with simple nonadherent dressings, and it gives good sensation and contour. Replantation is for more proximal amputations with vessels large enough to repair. Bone shortening is for exposed bone, and there is none. Tight closure of the pulp pulls the nail bed over the tip and can leave a hooked, tender nail. Local flaps are for larger wounds or exposed bone and are done by hand surgeons.",
+          "A small tip defect of 0.8 square cm, under 1.5 square cm, with no exposed bone heals well by secondary intention with simple nonadherent dressings, and it gives good bulk, function and sensation, though healing takes 3 to 4 weeks. A distal tip injury is rarely suitable for replantation. Bone shortening is for exposed bone, and there is none. Pulling the pulp tightly over the tip drags the nail bed down and can leave a hooked nail. Local flaps are for larger wounds or exposed bone and are done by hand surgeons.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "lemmon-fingertip",
       },
       {
         id: "q3",
@@ -997,7 +1005,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "roberts-hedges",
       },
     ],
-    sources: [S.tintinalli, S.rh],
+    sources: [S.lemmon, S.rh],
     ...META,
   },
   {
@@ -1006,7 +1014,7 @@ export const LACERATIONS_S43: Samp[] = [
     alsoTopics: ["msk"],
     title: "Boy's foot and a ride-on mower",
     stem:
-      "A 9-year-old boy is brought to the emergency department by his parents 45 minutes after his right foot went under a ride-on lawn mower driven by his older brother. He was wearing running shoes. He is healthy and fully immunized, with his last tetanus-containing vaccine at age 5.\n\nThere is a 6 cm ragged laceration across the dorsum of the forefoot with grass and soil in the wound. Bone is visible in the base of the wound over the second and third metatarsals. The toes are pink with a capillary refill of 2 seconds. He cannot extend the second and third toes. Sensation of the toes is normal.",
+      "A 10-year-old boy is brought to the emergency department by his parents 45 minutes after his right foot went under a ride-on lawn mower driven by his older brother. He was wearing running shoes. He is healthy and completed his routine childhood vaccines, with his last tetanus-containing vaccine at age 4.\n\nThere is a 6 cm ragged laceration across the dorsum of the forefoot with grass and soil in the wound. Bone is visible in the base of the wound over the second and third metatarsals. The toes are pink with a capillary refill of 2 seconds. He cannot extend the second and third toes. Sensation of the toes is normal.",
     vitals: { temperature: "36.9°C tympanic", pulse: "126/minute", resp: "24/minute", bp: "112/70 mmHg", o2sat: "99% on room air", weight: "30 kg" },
     questions: [
       {
@@ -1027,7 +1035,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Bone visible in the base of a wound over the metatarsals means open fractures until proven otherwise, and inability to extend the second and third toes after a dorsal forefoot laceration means their extensor tendons are cut. The pink toes with a capillary refill of 2 seconds argue against arterial occlusion. Compartment syndrome develops over hours and is not suggested at 45 minutes. A tibialis anterior rupture causes weak ankle dorsiflexion, not loss of toe extension. Nothing points to a Lisfranc or plantar fascia injury.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "acs-tqip-ortho",
       },
       {
         id: "q2",
@@ -1067,22 +1075,22 @@ export const LACERATIONS_S43: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following is the most appropriate tetanus prophylaxis for him at this visit?",
+        prompt: "Which of the following vaccines is most appropriate for his tetanus prophylaxis at this visit?",
         options: [
-          "DTaP-IPV and immune globulin",
-          "Tdap and immune globulin",
-          "Tdap vaccine alone",
-          "Tetanus immune globulin alone",
-          "No vaccine or immune globulin",
+          "DTaP-IPV vaccine",
+          "Td vaccine",
+          "Tdap vaccine",
+          "Tetanus toxoid alone",
+          "No vaccine at this visit",
         ],
-        correct: 4,
+        correct: 2,
         explanation:
-          "A mower wound soiled with grass and soil is tetanus prone, but he has had a complete series and his last dose was 4 years ago. Under the Canadian Immunization Guide, a person with 3 or more doses whose last dose was less than 5 years ago needs neither vaccine nor immune globulin, even for a tetanus prone wound. Tdap would be the product at his age if a dose were due, and DTaP-IPV is for children under 7. Immune globulin is for an unknown or incomplete history or humoral immune deficiency.",
+          "A mower wound soiled with grass and soil is not clean and minor. He has had 3 or more doses, and his last dose was 6 years ago, at age 4. Under the Canadian Immunization Guide, a person with 3 or more doses whose last dose was 5 to 10 years ago needs a vaccine booster but no immune globulin for such a wound. The guide advises that children 7 years of age and older receive the adolescent and adult formulation that includes pertussis, so at 10 years he receives Tdap. DTaP-IPV is authorized for children under 7. Td leaves out the pertussis component the guide advises for his age. Tetanus toxoid alone is not available in Canada, where it comes only in combination vaccines. Giving nothing would ignore the 5 year limit for wounds that are not clean and minor.",
         keyFeature: { topic: TOPIC, n: 4 },
         source: "cig-tetanus",
       },
     ],
-    sources: [S.tintinalli, S.tqip, S.cigTet],
+    sources: [S.tqip, S.cigTet],
     ...META,
   },
   {
@@ -1106,9 +1114,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Extensor tendons on the back of the hand can be cut through most of their width and still extend the finger fully, and connections between neighbouring tendons can extend a finger even when its own tendon is divided. Weakness or pain when extension is resisted is the finding that suggests a partial laceration. Full extension, a normal cascade, local swelling and wound tenderness are all compatible with a partial tendon cut and do not exclude one.",
+          "Full active extension of the fingers can remain even after an extensor tendon on the back of the hand has been cut, so extension must be tested against resistance to pick up a partial laceration. Weakness or pain when extension is resisted is the finding that suggests one. Full extension, a normal cascade, local swelling and wound tenderness are all compatible with a partial tendon cut and do not exclude one.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "griffin-extensor",
       },
       {
         id: "q2",
@@ -1146,7 +1154,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "roberts-hedges",
       },
     ],
-    sources: [S.tintinalli, S.rh],
+    sources: [S.griffinExt, S.rh],
     ...META,
   },
   {
@@ -1172,7 +1180,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "The ring is still on an injured, swelling finger and acts as a tourniquet, so it is cut off at once with a ring cutter and the hand is checked for other rings. A tight dressing adds constriction to a finger that is already ischemic. Suturing the laceration comes after vascular assessment and surgical review. Waiting 6 hours with a pale, cool finger risks losing it. Heparin is not started before the surgeon has assessed the injury.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "kalkan-ring",
       },
       {
         id: "q2",
@@ -1187,9 +1195,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A ring avulsion with a pale, cool finger, a capillary refill of 5 seconds and reduced sensation on both sides means the digital arteries and nerves are injured, and the finger needs urgent microvascular repair by a hand surgeon to survive. Discharge, medical admission or simple closure with buddy taping leaves an ischemic finger without repair. Leeches treat venous congestion after a repair, not arterial insufficiency.",
+          "A ring avulsion with a pale, cool finger, a capillary refill of 5 seconds and reduced sensation on both sides means the digital arteries and nerves are injured, and the finger needs urgent microvascular repair by a hand surgeon to survive. For injuries beyond the flexor digitorum superficialis insertion, revascularization now saves about 80% to 85% of fingers. Discharge, medical admission or simple closure with buddy taping leaves an ischemic finger without repair. Leeches treat venous congestion after a repair, not arterial insufficiency.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "ring-avulsion",
       },
       {
         id: "q3",
@@ -1209,7 +1217,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "cig-tetanus",
       },
     ],
-    sources: [S.tintinalli, S.cigTet],
+    sources: [S.kalkan, S.smithRing, S.cigTet],
     ...META,
   },
   {
@@ -1268,12 +1276,12 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "A smooth radial pad after immersion suggests the radial digital nerve is cut, and digital nerve injuries at the level of the middle phalanx are repaired by a hand surgeon under magnification, usually within days. The skin is closed and the family is given a prompt referral. Reassurance alone leaves a repairable nerve without repair. Nerve repair in the emergency department in a 2-year-old is not appropriate. A clean glass wound seen at 1 hour needs neither delayed closure nor antibiotics.",
+          "A smooth radial pad after immersion suggests the radial digital nerve is cut. The skin is closed and the family is given a prompt hand surgery referral, because the surgeon explores the nerve in the operating room and decides between suture repair and alignment of the ends. In a trial in adults, microsurgical suture repair gave no clear benefit over alignment alone, so the choice belongs to the surgeon. Reassurance alone skips that assessment. Nerve exploration in the emergency department in a 2-year-old is not appropriate. A clean glass wound seen at 1 hour needs neither delayed closure nor antibiotics.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "neon-trial",
       },
     ],
-    sources: [S.tindall, S.rosen, S.tintinalli],
+    sources: [S.tindall, S.rosen, S.neon],
     ...META,
   },
   {
@@ -1298,9 +1306,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A laceration just below the patella lies over the patellar tendon, so an active straight leg raise, or knee extension against gravity, tests whether the extensor mechanism is intact. Drawer, McMurray and valgus stress tests look for ligament and meniscal injuries from twisting, are painful in a fresh wound and do not assess the tendon at risk. The Thompson test assesses the Achilles tendon, which is far from this wound.",
+          "A laceration just below the patella lies over the patellar tendon, so an active straight leg raise, or knee extension against gravity, tests whether the extensor mechanism is intact. Inability to extend the knee actively is the finding that makes the diagnosis, and it is easily overlooked in a busy department. Drawer, McMurray and valgus stress tests look for ligament and meniscal injuries from twisting, are painful in a fresh wound and do not assess the tendon at risk. The Thompson test assesses the Achilles tendon, which is far from this wound.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "pengas-extensor",
       },
       {
         id: "q2",
@@ -1309,9 +1317,9 @@ export const LACERATIONS_S43: Samp[] = [
         options: ["Bone scan of the knee", "CT angiogram of the leg", "Knee radiographs", "MRI of the knee", "Ultrasound of the calf veins"],
         correct: 2,
         explanation:
-          "A chainsaw carries enough energy to fracture the patella or tibial tubercle, and broken chain links or other metal can be left in the wound. Knee radiographs show fractures, radiopaque debris and air in the joint that suggests joint penetration. MRI is slow and not needed to plan an open repair. His pulses are normal, so CT angiography is not indicated. A bone scan and calf vein ultrasound do not answer these questions.",
+          "A chainsaw carries enough energy to fracture the patella, and patellar fractures are a more common cause of extensor mechanism failure than tendon tears. Knee radiographs show a fracture or avulsion, radiopaque debris such as broken chain links, and air in the joint that suggests joint penetration. MRI is slow and not needed to plan an open repair. His pulses are normal, so CT angiography is not indicated. A bone scan and calf vein ultrasound do not answer these questions.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "pengas-extensor",
       },
       {
         id: "q3",
@@ -1330,79 +1338,76 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: [1, 2],
         explanation:
-          "Loss of the straight leg raise with a palpable gap means the patellar tendon is cut, and an open tendon injury in a contaminated chainsaw wound needs orthopedic surgery for debridement, washout and repair. Until then the knee is held straight in an immobilizer to take tension off the tendon ends. A brace locked at 90 degrees pulls the ends apart. Skin closure with discharge, physiotherapy or weight bearing leaves the extensor mechanism unrepaired. A tight circumferential bandage can compromise the swollen leg.",
+          "Loss of the straight leg raise with a palpable gap means the patellar tendon is cut. Extensor mechanism ruptures do best with early surgery, and an open injury in a contaminated chainsaw wound also needs debridement and washout, so orthopedic surgery is consulted now. Until then the knee is held straight in an immobilizer to take tension off the tendon ends. A brace locked at 90 degrees pulls the ends apart. Skin closure with discharge, physiotherapy or weight bearing leaves the extensor mechanism unrepaired. A tight circumferential bandage can compromise the swollen leg.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "pengas-extensor",
       },
     ],
-    sources: [S.tintinalli],
+    sources: [S.pengas],
     ...META,
   },
   {
     id: "lacerations-36",
     topic: TOPIC,
-    title: "Fall from a ladder the day before",
+    title: "Wine glass broken at the sink",
     stem:
-      "A 36-year-old man presents to the emergency department at 10:00. At 14:00 the previous day he fell from a ladder onto a pile of scrap lumber at a job site. He covered his wounds with bandages and went home. He has type 1 diabetes treated with an insulin pump. His last tetanus booster was 4 years ago.\n\nThere is a 3 cm clean, gaping laceration on the forehead and a 7 cm laceration on the front of the shin with dirt in its base and ragged edges. Neither wound is red or draining. The neurological examination is normal.",
+      "A 36-year-old man presents to the emergency department 2 hours after a wine glass broke in his hand while he was washing dishes. He is right handed and works as a bookkeeper. He is healthy, takes no medications and had a Td booster 4 years ago.\n\nThere is a 1.5 cm transverse laceration on the back of the right middle finger, directly over the proximal interphalangeal (PIP) joint. Bleeding has stopped. The finger rests in a normal position, and he can fully extend it. Sensation and capillary refill are normal. A radiograph shows no fracture and no foreign body.",
     vitals: { temperature: "36.8°C oral", pulse: "84/minute", resp: "14/minute", bp: "128/78 mmHg", o2sat: "99% on room air", weight: "81 kg" },
     questions: [
       {
         id: "q1",
-        kind: "menu",
-        select: 4,
-        prompt: "Which of the following features of the shin wound or patient increase the risk that this wound becomes infected?",
+        kind: "single",
+        prompt: "Which of the following examination manoeuvres best detects a cut central slip of the extensor tendon in this finger?",
         options: [
-          "Absence of redness at the edges",
-          "Age of 36 years",
-          "Contamination with dirt",
-          "Diabetes on an insulin pump",
-          "Length of 7 cm",
-          "Location on the lower leg",
-          "Tetanus booster 4 years ago",
+          "Elson test with the PIP bent over a table",
+          "Finkelstein test at the wrist",
+          "Froment sign with a key pinch",
+          "Isolated superficial flexor test",
+          "Tenodesis with passive wrist extension",
         ],
-        correct: [2, 3, 4, 5],
+        correct: 0,
         explanation:
-          "In a multicentre emergency department cohort, diabetes, a lower extremity site, visible contamination and a length over 5 cm predicted wound infection, and this shin wound has all four. His age adds little risk. A current tetanus booster protects against tetanus, not bacterial infection. The absence of redness today does not remove the risk carried by these features.",
-        keyFeature: { topic: TOPIC, n: 1 },
-        source: "quinn-golden-period",
+          "A wound over the back of the PIP joint lies over the central slip, and full active extension does not exclude a cut, because the lateral bands can still extend the joint at first. In the Elson test the PIP joint is bent to 90 degrees over the edge of a table and he extends the middle phalanx against resistance. No extension force at the PIP joint with the distal joint held rigidly straight means the central slip is completely ruptured. A partial cut may show only as weakness or pain, so the wound is also explored. The Finkelstein test looks for de Quervain tenosynovitis. The Froment sign tests the ulnar nerve. The superficial flexor test and the tenodesis effect assess the flexor tendons.",
+        keyFeature: { topic: TOPIC, n: 2 },
+        source: "elson-test",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate management of the forehead laceration, 20 hours after injury?",
+        update: "The Elson test shows painful but present PIP extension. Under local anesthesia the central slip is cut through about 30% of its width. The joint capsule is intact. The skin is closed.",
+        prompt: "Which of the following splints is most appropriate for this finger?",
         options: [
-          "Delayed closure in 3 to 5 days",
-          "Healing by secondary intention",
-          "Irrigation and primary closure",
-          "Oral antibiotics, then closure",
-          "Refer to plastic surgery next week",
+          "Buddy tape to the ring finger",
+          "DIP extension splint only",
+          "PIP extension splint, DIP free",
+          "Volar splint with all joints bent",
+          "Wrist splint with fingers free",
         ],
         correct: 2,
         explanation:
-          "The face has a rich blood supply and a low infection rate, so a clean forehead laceration can be irrigated and closed primarily 20 hours after injury, which gives the best cosmetic result. In a large cohort, time from injury to closure was not linked to infection. Secondary intention or delayed closure leaves a wider scar on the face. Antibiotics before closure are not needed for a clean facial wound, and a week's delay for a simple forehead laceration gains nothing.",
+          "A central slip cut through about 30% of its width, well under half, can be managed with a splint. The PIP joint is held straight while the distal joint and wrist are left free, usually for 4 to 6 weeks, so the tendon ends stay together and the lateral bands do not slide. Buddy taping and a wrist splint let the PIP joint bend and pull the injured slip apart. A splint for the distal joint alone treats a mallet injury, not this one. Holding all joints bent stretches the central slip.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "quinn-golden-period",
+        source: "griffin-extensor",
       },
       {
         id: "q3",
         kind: "single",
-        update: "The shin wound is irrigated and devitalized tissue is trimmed. The base still has scattered embedded debris.",
-        prompt: "Which of the following is the most appropriate management of the shin laceration at this visit?",
+        prompt: "Which of the following is the most appropriate follow-up plan for this injury?",
         options: [
-          "Delayed closure at 3 to 5 days",
-          "Primary closure with staples",
-          "Skin graft in the department",
-          "Tight primary closure with sutures",
-          "Tissue adhesive closure",
+          "Family doctor review in 3 weeks",
+          "Hand surgery review within a week",
+          "Physiotherapy for early motion",
+          "Return only if the finger deforms",
+          "Suture removal in 10 days only",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
-          "Unlike the forehead, this shin wound has four risk factors for infection and debris that cleaning has not fully removed, so it is packed and dressed and closed after 3 to 5 days if it stays clean. Closing it now with sutures, staples or tissue adhesive traps bacteria in a contaminated wound in a patient with diabetes. A skin graft is not needed for a wound whose edges can be brought together later.",
+          "An open central slip injury is followed by a hand surgeon within days, who decides whether it needs repair or can be treated with the splint, and supervises the splinting. Early diagnosis and treatment give the best chance of a good result, while a missed injury can progress to a fixed boutonniere deformity that is much harder to correct. Waiting 3 weeks or until the finger deforms loses that chance. Early motion bends the PIP joint and separates the slip. Suture removal alone does not check the tendon.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "griffin-extensor",
       },
     ],
-    sources: [S.quinnRisk, S.rh],
+    sources: [S.elson, S.griffinExt],
     ...META,
   },
   {
@@ -1426,9 +1431,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Radiographs in two planes show where the tip lies, whether the nail has bent or split, whether it has entered bone or a joint, and whether barbs or a curled tip would tear tissue on removal. MRI is contraindicated with a steel nail in the hand. Ultrasound cannot map a nail's path through or beside bone. Pulling the nail before imaging risks tearing structures along its path, and cutting it flush makes later removal harder.",
+          "Radiographs with at least two views are always obtained first and are checked for fractures, joint penetration and barbs on the nail shaft, which decide how and where the nail can be removed. MRI is unsafe with a steel nail in the hand. Ultrasound cannot map a nail's path through or beside bone. Pulling the nail before imaging risks tearing structures with its barbs, and cutting it flush before the path is known leaves nothing to grasp if exploration is needed.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "nail-gun",
       },
       {
         id: "q2",
@@ -1444,9 +1449,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A nail that enters a joint carries skin and debris into it, so it is removed by the hand surgeon with irrigation of the joint to prevent septic arthritis. Removal in the emergency department cannot wash out the joint, with or without oral cephalexin. Leaving the nail in place or cutting it and waiting for clinic delays washout of a contaminated joint.",
+          "A nail that enters a joint carries skin and debris into it. When the joint space, tendons or neurovascular bundles may be injured, the nail is removed in the operating room with exploration, debridement and irrigation to prevent septic arthritis. Removal in the emergency department cannot wash out the joint, with or without oral cephalexin. Leaving the nail in place or cutting it and waiting for clinic delays washout of a contaminated joint.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "nail-gun",
       },
       {
         id: "q3",
@@ -1461,12 +1466,12 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "A nail driven into a joint is an open joint injury, so an early IV antibiotic that covers skin flora, such as cefazolin, is given before washout to lower the risk of septic arthritis. Oral ciprofloxacin covers staphylococci and streptococci poorly. Metronidazole covers only anaerobes. Topical antibiotic on the skin does not reach the joint. Waiting for cultures lets infection become established.",
+          "A nail driven into a joint is an open joint injury, so an IV first-generation cephalosporin such as cefazolin, which covers skin flora, is given before washout to lower the risk of septic arthritis. Oral ciprofloxacin covers staphylococci and streptococci poorly. Metronidazole covers only anaerobes. Topical antibiotic on the skin does not reach the joint. Waiting for cultures lets infection become established.",
         keyFeature: { topic: TOPIC, n: 4 },
-        source: "tintinalli",
+        source: "nail-gun",
       },
     ],
-    sources: [S.tintinalli],
+    sources: [S.pierpont],
     ...META,
   },
   {
@@ -1491,9 +1496,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "A stick striking the brow of an unprotected face can rupture the globe, cause a hyphema or retrobulbar hemorrhage, or injure the optic nerve, so visual acuity and examination of the globe come first and are recorded before repair. Corneal reflex testing assesses brainstem and trigeminal function. Nasal bone palpation and the tongue blade bite test look for nasal and mandibular fractures, which a brow wound does not suggest. Weber and Rinne tests assess hearing.",
+          "High sticks are a leading cause of eye and orbital injury in hockey, and players without a visor are about four times more likely to have one. A stick striking the brow of an unprotected face can rupture the globe, cause a hyphema or injure the optic nerve, so visual acuity and examination of the globe come first and are recorded before repair. Corneal reflex testing assesses brainstem and trigeminal function. Nasal bone palpation and the tongue blade bite test look for nasal and mandibular fractures, which a brow wound does not suggest. Weber and Rinne tests assess hearing.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "nhl-visors",
       },
       {
         id: "q2",
@@ -1542,7 +1547,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "roberts-hedges",
       },
     ],
-    sources: [S.tintinalli, S.rh],
+    sources: [S.micieli, S.rh],
     ...META,
   },
 ];
