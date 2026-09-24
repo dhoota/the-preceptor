@@ -10,14 +10,21 @@ export const interpreterConsentReduction: OralCase = {
   priorityTopic: "msk",
   keyFeatures: [{ topic: "msk", n: 5 }, { topic: "msk", n: 7 }, { topic: "analgesia-sedation", n: 3 }, { topic: "analgesia-sedation", n: 5 }],
   summary: "A 63 year old woman who speaks only Tamil needs an urgent procedure. Her teenage grandson is the only one who speaks English.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working an evening shift at a busy community emergency department in the Greater Toronto Area. " +
-    "The hospital has a 24 hour telephone interpreter service and a video interpreter tablet that is staffed until 23:00. " +
-    "Orthopedics is on call from home. Procedural sedation is done in the department with a respiratory therapist. " +
-    "Kamala Sivakumar is 63 years old. She missed a step at home and fell with her right foot twisted under her. " +
-    "Triage vitals: heart rate 98, blood pressure 150/88, respiratory rate 18, SpO2 97 percent on room air, temperature 36.7, capillary glucose 7.9 mmol/L. CTAS 2. " +
-    "The nurse says: 'Her ankle is badly deformed and the foot looks dusky. She only speaks Tamil. Her grandson Arun is 15 and has been translating. He says she has sugar and pressure pills.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. A 63 year old woman who speaks only Tamil fell at home and has a deformed right ankle with a dusky foot. Her 15 year old grandson has been translating.",
+  card: {
+    vitals: {
+      temperature: "36.7°C",
+      pulse: "98/minute",
+      resp: "18/minute",
+      bp: "150/88 mmHg",
+      o2sat: "97% on room air",
+      weight: "72 kg (159 lb)",
+    },
+    medications: "Metformin 1000 mg twice daily, ramipril 10 mg daily. No blood thinners.",
+    allergies: "No known drug allergies",
+  },
   findings: [
     {
       id: "ankle",
@@ -40,17 +47,26 @@ export const interpreterConsentReduction: OralCase = {
     },
     {
       id: "grandson",
-      label: "About Arun",
+      label: "About her grandson",
       result:
-        "Arun is 15 and in grade 10. He was born in Canada and speaks Tamil at home. He says he is not sure of some medical words. " +
+        "Her grandson is 15 and in grade 10. He was born in Canada and speaks Tamil at home. He says he is not sure of some medical words. " +
         "He is pale and keeps looking at his grandmother's foot.",
     },
     {
       id: "history",
-      label: "History through the interpreter",
+      label: "History of the fall through the interpreter",
+      result: "She missed a step at home and fell with her right foot twisted under her. Last meal was rice and dal about 2 hours ago.",
+    },
+    {
+      id: "pmh",
+      label: "Past history through the interpreter",
       result:
-        "Type 2 diabetes on metformin 1000 mg twice daily. Hypertension on ramipril 10 mg daily. No blood thinners. No known drug allergies. " +
-        "Last meal was rice and dal about 2 hours ago. She had a gallbladder operation 10 years ago in Sri Lanka and was very confused for two days afterwards. She snores but has no diagnosed sleep apnea.",
+        "Type 2 diabetes. Hypertension. She had a gallbladder operation 10 years ago in Sri Lanka and was very confused for two days afterwards. She snores but has no diagnosed sleep apnea.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "Metformin 1000 mg twice daily. Ramipril 10 mg daily. No blood thinners. No known drug allergies.",
     },
     {
       id: "airway",
@@ -69,7 +85,7 @@ export const interpreterConsentReduction: OralCase = {
       id: "daughter",
       label: "Her daughter",
       result:
-        "Priya, 38, arrives 20 minutes after triage. She speaks fluent English. She says her mother worries easily and she usually makes medical decisions for the family.",
+        "Her daughter, 38, arrives 20 minutes after triage. She speaks fluent English. She says her mother worries easily and she usually makes medical decisions for the family.",
     },
     {
       id: "labs",
@@ -83,6 +99,16 @@ export const interpreterConsentReduction: OralCase = {
       result:
         "Foot pink and warm. Capillary refill 2 seconds. Dorsalis pedis palpable. Skin tenting resolved. Post reduction X ray shows the talus back under the tibia. Sensation normal once awake.",
     },
+    {
+      id: "triage",
+      label: "Triage note",
+      result: "CTAS 2. Capillary glucose 7.9 mmol/L. The nurse says: 'Her ankle is badly deformed and the foot looks dusky. She only speaks Tamil. Her grandson is 15 and has been translating. He says she has sugar and pressure pills.'",
+    },
+    {
+      id: "setting",
+      label: "Hospital resources",
+      result: "Evening shift at a busy community emergency department in the Greater Toronto Area. The hospital has a 24 hour telephone interpreter service and a video interpreter tablet that is staffed until 23:00. Orthopedics is on call from home. Procedural sedation is done in the department with a respiratory therapist.",
+    },
   ],
   start: "s-open",
   nodes: [
@@ -91,7 +117,7 @@ export const interpreterConsentReduction: OralCase = {
       id: "s-open",
       phase: "At the bedside",
       text:
-        "Mrs. Sivakumar is holding her grandson's hand and crying out when anyone touches the foot. Arun says, 'She wants to know if you can fix it.' The nurse asks how you want to proceed.",
+        "The patient is holding her grandson's hand and crying out when anyone touches the foot. Her grandson says, 'She wants to know if you can fix it.' The nurse asks how you want to proceed.",
       next: "q-first",
     },
     {
@@ -102,17 +128,18 @@ export const interpreterConsentReduction: OralCase = {
       seconds: 90,
       modelAnswer: [
         "Check the neurovascular status. This is a limb threat with skin at risk.",
+        "Take a focused history. Mechanism, last meal, medications, blood thinners and allergies.",
         "Give IV analgesia now. Fentanyl about 1 mcg/kg IV.",
         "Request a professional Tamil interpreter by phone right away.",
-        "Use Arun only for immediate basics like pain, allergies and blood thinners while waiting.",
+        "Use her grandson only for immediate basics like pain, allergies and blood thinners while waiting.",
         "Set up for procedural sedation in parallel so there is no delay once consent is obtained.",
         "If the foot were pulseless with no interpreter reachable, treat under the emergency provisions.",
       ],
-      rubric: ["ic-a1", "ic-m1", "ic-c1"],
+      rubric: ["ic-a1", "ic-m1", "ic-c1", "ic-h1", "ic-h2"],
       choices: [
         {
           id: "c-phone",
-          label: "I gave fentanyl, called the phone interpreter line immediately, asked Arun only about allergies and blood thinners, and had the team set up for sedation while we waited.",
+          label: "I gave fentanyl, called the phone interpreter line immediately, asked her grandson only about allergies and blood thinners, and had the team set up for sedation while we waited.",
           next: "s-connect",
           quality: "strong",
           feedback:
@@ -120,7 +147,7 @@ export const interpreterConsentReduction: OralCase = {
         },
         {
           id: "c-arun",
-          label: "I asked Arun to explain the sedation and reduction to her and she signed the consent form.",
+          label: "I asked her grandson to explain the sedation and reduction to her and she signed the consent form.",
           next: "s-arun",
           quality: "partial",
           feedback:
@@ -141,7 +168,7 @@ export const interpreterConsentReduction: OralCase = {
       id: "s-arun",
       phase: "Five minutes later",
       text:
-        "The nurse, who understands some Tamil, quietly tells you that Arun told his grandmother she would be 'asleep for one second and then it is fixed'. He did not mention breathing problems or the chance it might not work. Arun looks close to tears. You call the phone interpreter line.",
+        "The nurse, who understands some Tamil, quietly tells you that her grandson told his grandmother she would be 'asleep for one second and then it is fixed'. He did not mention breathing problems or the chance it might not work. He looks close to tears. You call the phone interpreter line.",
       next: "s-connect",
     },
     {
@@ -149,7 +176,7 @@ export const interpreterConsentReduction: OralCase = {
       id: "s-emergency",
       phase: "In the procedure room",
       text:
-        "As the respiratory therapist places the nasal cannula, Mrs. Sivakumar pulls away and shouts. Arun says she thinks you are going to operate. " +
+        "As the respiratory therapist places the nasal cannula, The patient pulls away and shouts. Her grandson says she thinks you are going to operate. " +
         "The nurse points out the phone interpreter can connect in a few minutes. You stop and call the line.",
       next: "s-connect",
     },
@@ -172,7 +199,7 @@ export const interpreterConsentReduction: OralCase = {
         "Confirm the language and dialect match. Note the interpreter's name or ID number.",
         "Speak directly to the patient in the first person. Face her, not the phone.",
         "Short sentences. Pause for interpretation. Avoid jargon and idioms.",
-        "Ask her privately whether she wants Arun in the room.",
+        "Ask her privately whether she wants her grandson in the room.",
         "Use teach back to check understanding.",
       ],
       rubric: ["ic-c2", "ic-c3"],
@@ -183,27 +210,27 @@ export const interpreterConsentReduction: OralCase = {
       id: "s-daughter",
       phase: "The daughter arrives",
       text:
-        "Priya arrives, out of breath. Before you can speak she says: 'Please do not tell her about all the risks. She will panic and refuse. In our family I make these decisions. Give me the form and I will sign it.'",
+        "Her daughter arrives, out of breath. Before you can speak she says: 'Please do not tell her about all the risks. She will panic and refuse. In our family I make these decisions. Give me the form and I will sign it.'",
       next: "q-daughter",
     },
     {
       kind: "question",
       id: "q-daughter",
       phase: "Family request",
-      prompt: "How do you respond to Priya?",
+      prompt: "How do you respond to her daughter?",
       seconds: 75,
       modelAnswer: [
         "Acknowledge her worry and her role in the family.",
         "Explain that her mother is capable, so the decision is legally her mother's.",
         "A substitute decision maker only decides when the patient is incapable.",
-        "Ask Mrs. Sivakumar, through the interpreter, how much she wants to know and who she wants involved.",
-        "Invite Priya to stay and support her mother. Keep the professional interpreter on the line.",
+        "Ask the patient, through the interpreter, how much she wants to know and who she wants involved.",
+        "Invite her daughter to stay and support her mother. Keep the professional interpreter on the line.",
       ],
       rubric: ["ic-p1", "ic-c4"],
       choices: [
         {
           id: "c-ask-patient",
-          label: "I thanked Priya, explained her mother is capable and must give her own consent, then asked her mother through Meena how much she wanted to know and whether she wanted Priya involved.",
+          label: "I thanked her daughter, explained her mother is capable and must give her own consent, then asked her mother through Meena how much she wanted to know and whether she wanted her daughter involved.",
           next: "q-consent",
           quality: "strong",
           feedback:
@@ -211,19 +238,19 @@ export const interpreterConsentReduction: OralCase = {
         },
         {
           id: "c-priya-signs",
-          label: "I let Priya sign the consent as next of kin since she is the family decision maker.",
+          label: "I let her daughter sign the consent as next of kin since she is the family decision maker.",
           next: "s-priya-signs",
           quality: "unsafe",
           feedback:
-            "Under the Health Care Consent Act a substitute decision maker only acts when the patient is incapable. Mrs. Sivakumar is capable. Consent from Priya is not valid consent for her mother.",
+            "Under the Health Care Consent Act a substitute decision maker only acts when the patient is incapable. The patient is capable. Consent from her daughter is not valid consent for her mother.",
         },
         {
           id: "c-priya-interprets",
-          label: "I hung up with the phone interpreter and let Priya interpret, since she is fluent and it is faster.",
+          label: "I hung up with the phone interpreter and let her daughter interpret, since she is fluent and it is faster.",
           next: "s-priya-interprets",
           quality: "partial",
           feedback:
-            "Family interpreters filter and soften, especially when they have a view on the decision. Priya has just told you she wants risks withheld. Keep the professional interpreter for consent. Priya can still be present to support.",
+            "Family interpreters filter and soften, especially when they have a view on the decision. Her daughter has just told you she wants risks withheld. Keep the professional interpreter for consent. She can still be present to support.",
         },
       ],
     },
@@ -232,7 +259,7 @@ export const interpreterConsentReduction: OralCase = {
       id: "s-priya-signs",
       phase: "In the procedure room",
       text:
-        "The charge nurse sees the form and says the hospital policy does not allow a relative to consent for a capable adult. The respiratory therapist will not start until consent is sorted out. You go back to Mrs. Sivakumar with Meena on the line.",
+        "The charge nurse sees the form and says the hospital policy does not allow a relative to consent for a capable adult. The respiratory therapist will not start until consent is sorted out. You go back to the patient with Meena on the line.",
       next: "q-consent",
     },
     {
@@ -240,7 +267,7 @@ export const interpreterConsentReduction: OralCase = {
       id: "s-priya-interprets",
       phase: "A few minutes later",
       text:
-        "The nurse, who speaks some Tamil, tells you Priya said to her mother, 'It is nothing, just sign.' Mrs. Sivakumar looks confused. You reconnect to the phone interpreter service.",
+        "The nurse, who speaks some Tamil, tells you her daughter said to her mother, 'It is nothing, just sign.' The patient looks confused. You reconnect to the phone interpreter service.",
       next: "q-consent",
     },
     {
@@ -248,7 +275,7 @@ export const interpreterConsentReduction: OralCase = {
       id: "q-consent",
       phase: "Informed consent",
       prompt:
-        "Through Meena, Mrs. Sivakumar says she wants to hear everything and wants Priya to stay. Obtain her consent for procedural sedation and closed reduction. What must you cover for the consent to be valid in Ontario?",
+        "Through Meena, the patient says she wants to hear everything and wants her daughter to stay. Obtain her consent for procedural sedation and closed reduction. What must you cover for the consent to be valid in Ontario?",
       seconds: 120,
       modelAnswer: [
         "Nature of the treatment. Medicine to make her sleepy, then pulling the ankle back into place and a splint.",
@@ -266,7 +293,7 @@ export const interpreterConsentReduction: OralCase = {
       id: "s-question",
       phase: "Her question",
       text:
-        "Mrs. Sivakumar asks, through Meena, whether the sleeping medicine will make her confused like after her gallbladder operation. She ate rice about 2 hours ago. She agrees to go ahead once her question is answered.",
+        "The patient asks, through Meena, whether the sleeping medicine will make her confused like after her gallbladder operation. She ate rice about 2 hours ago. She agrees to go ahead once her question is answered.",
       next: "q-sedation",
     },
     {
@@ -277,12 +304,13 @@ export const interpreterConsentReduction: OralCase = {
       seconds: 75,
       modelAnswer: [
         "Honest answer. Brief confusion on waking can happen but a short sedation is not the same as a general anesthetic.",
+        "Ask about past anesthetic problems and about snoring or sleep apnea.",
         "A recent meal is not a reason to delay a limb threatening reduction. Use the lightest effective depth.",
         "Propofol in small boluses such as 0.5 mg/kg then 0.25 mg/kg, or ketamine 1 mg/kg IV with a plan for emergence reactions.",
         "Respiratory therapist, capnography, suction, airway equipment, dedicated monitoring nurse.",
         "Keep the interpreter available for waking and discharge.",
       ],
-      rubric: ["ic-m3"],
+      rubric: ["ic-m3", "ic-h3"],
       next: "s-drop",
     },
     {
@@ -304,7 +332,7 @@ export const interpreterConsentReduction: OralCase = {
         "This is an emergency. Serious bodily harm is likely without prompt treatment.",
         "Health Care Consent Act section 25 allows treatment of an apparently capable person when a language barrier prevents consent.",
         "Conditions. Reasonable steps to find a means of communication have failed, delay would prolong suffering or risk serious harm, and there is no reason to think she would refuse.",
-        "Use Arun for comfort and simple explanation, not as the source of consent.",
+        "Use her grandson for comfort and simple explanation, not as the source of consent.",
         "Treat only what is needed for the emergency. Keep trying to find an interpreter.",
         "Document the emergency, the steps taken to find an interpreter and why treatment could not wait.",
       ],
@@ -328,11 +356,11 @@ export const interpreterConsentReduction: OralCase = {
         },
         {
           id: "c-arun-consent",
-          label: "I would ask Arun to give consent on her behalf as the family member present.",
+          label: "I would ask her grandson to give consent on her behalf as the family member present.",
           next: "s-arun-consent",
           quality: "partial",
           feedback:
-            "The foot gets treated, but on the wrong legal basis. Arun is not her substitute decision maker, and she is capable. His agreement adds nothing legally and burdens a child. The correct basis is the emergency provision, documented in the chart.",
+            "The foot gets treated, but on the wrong legal basis. Her grandson is not her substitute decision maker, and she is capable. His agreement adds nothing legally and burdens a child. The correct basis is the emergency provision, documented in the chart.",
         },
       ],
     },
@@ -372,14 +400,14 @@ export const interpreterConsentReduction: OralCase = {
       kind: "end",
       id: "end",
       text:
-        "Orthopedics admits her for fixation in the morning. Priya thanks you for including her mother. Arun asks if he did something wrong. You tell him he helped a great deal. That is the end of the case.",
+        "Orthopedics admits her for fixation in the morning. Her daughter thanks you for including her mother. Her grandson asks if he did something wrong. You tell him he helped a great deal. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "ic-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes a limb threatening fracture dislocation with vascular compromise and skin at risk.",
       points: 2,
       teaching: "A dusky foot with tented skin needs reduction within minutes to hours. Urgency shapes the consent approach.",
@@ -388,7 +416,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Assesses capacity through the interpreter. Understands the information and appreciates the consequences.",
       points: 2,
       teaching: "Capacity in Ontario means able to understand the relevant information and appreciate the foreseeable consequences of a decision. A language barrier is not incapacity.",
@@ -397,7 +425,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Repeats the neurovascular exam and imaging after reduction.",
       points: 1,
       teaching: "Confirm the pulse, capillary refill and joint position after every reduction. Document them.",
@@ -406,7 +434,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives IV analgesia promptly while arranging an interpreter.",
       points: 1,
       teaching: "A language barrier should never delay pain relief. Fentanyl about 1 mcg/kg IV is a reasonable start.",
@@ -415,7 +443,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Offers realistic alternatives such as reduction under analgesia or a block, or operative reduction.",
       points: 1,
       teaching: "Alternatives are a required part of informed consent. Name them even when one option is clearly best.",
@@ -424,7 +452,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Plans safe sedation and does not delay a limb threatening reduction for fasting time.",
       points: 2,
       teaching: "Recent food intake is not a reason to delay urgent procedural sedation. Choose the lightest effective depth and be ready to manage the airway.",
@@ -433,7 +461,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Requests a professional interpreter immediately and limits the grandson to simple immediate facts.",
       points: 3,
       critical: true,
@@ -443,7 +471,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Briefs the interpreter and speaks directly to the patient in short first person sentences.",
       points: 2,
       teaching: "A short pre brief sets the purpose and asks for verbatim interpretation. Talk to the patient, not about her.",
@@ -452,7 +480,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Uses teach back to confirm understanding.",
       points: 1,
       teaching: "Ask the patient to explain the plan in her own words. Nodding is not understanding.",
@@ -461,7 +489,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Keeps the professional interpreter for consent rather than switching to a family member.",
       points: 2,
       teaching: "Family members filter information, most of all when they hold a view on the decision.",
@@ -470,7 +498,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Does not accept consent from a relative for a capable patient and asks the patient how she wants information shared.",
       points: 3,
       critical: true,
@@ -480,7 +508,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Covers the Health Care Consent Act elements. Nature, benefits, material risks, side effects, alternatives and consequences of no treatment, with answers to her questions.",
       points: 3,
       critical: true,
@@ -490,7 +518,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "States the emergency treatment provision for a language barrier and its conditions.",
       points: 2,
       teaching: "Section 25 allows emergency treatment of an apparently capable person when a language barrier blocks consent, reasonable steps have failed and delay risks serious harm.",
@@ -499,7 +527,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents the emergency, the attempts to find an interpreter and the reasons for proceeding when the emergency provision is used.",
       points: 1,
       teaching: "The chart must show why treatment could not wait and what was tried. Continue efforts to communicate.",
@@ -508,7 +536,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents the interpreter's name or ID and flags the chart for interpreter needs in future encounters.",
       points: 1,
       teaching: "Recording the interpreter supports the validity of consent. A chart flag protects the next team.",
@@ -517,7 +545,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges orthopedic follow up or admission for fixation of the unstable fracture.",
       points: 1,
       teaching: "A trimalleolar fracture dislocation is unstable and usually needs operative fixation.",
@@ -526,11 +554,38 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives discharge or admission information through the interpreter with written instructions in her language where available.",
       points: 1,
       teaching: "Understanding at the end of the visit matters as much as at consent. Return precautions must be understood.",
       source: "karliner",
+    },
+    {
+      id: "ic-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks how and when she fell and when she last ate.",
+      points: 2,
+      teaching: "The mechanism predicts the injury. The time of the last meal informs the sedation plan but does not delay a limb threatening reduction.",
+      source: "green-sedation",
+    },
+    {
+      id: "ic-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about diabetes, hypertension, medications, blood thinners and allergies.",
+      points: 2,
+      teaching: "Blood thinners, allergies and comorbidity change the sedation and reduction plan. Ask even when the grandson is the only interpreter for the first minutes.",
+      source: "green-sedation",
+    },
+    {
+      id: "ic-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past anesthetic problems and about snoring or sleep apnea.",
+      points: 2,
+      teaching: "Confusion after a past anesthetic and snoring raise the risk of emergence delirium and airway trouble. Ask before choosing the agent.",
+      source: "green-sedation",
     },
   ],
   sources: [
@@ -541,23 +596,26 @@ export const interpreterConsentReduction: OralCase = {
     },
     {
       id: "cpso-consent",
-      citation: "College of Physicians and Surgeons of Ontario. Policy. Consent to Treatment.",
+      citation: "College of Physicians and Surgeons of Ontario. Policy. Consent to Treatment. Updated 2025.",
       url: "https://www.cpso.on.ca/Physicians/Policies-Guidance/Policies/Consent-to-Treatment",
     },
     {
       id: "flores",
       citation: "Flores G, et al. Errors in medical interpretation and their potential clinical consequences in pediatric encounters. Pediatrics. 2003.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/12509547/",
     },
     {
       id: "karliner",
       citation: "Karliner LS, et al. Do professional interpreters improve clinical care for patients with limited English proficiency? A systematic review of the literature. Health Services Research. 2007.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/17362215/",
     },
     {
       id: "green-sedation",
       citation: "Green SM, et al. Unscheduled procedural sedation. A multidisciplinary consensus practice guideline. Annals of Emergency Medicine. 2019.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/31029297/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

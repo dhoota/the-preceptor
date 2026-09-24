@@ -10,14 +10,21 @@ export const waitingRoomSlump: OralCase = {
   priorityTopic: "cqi",
   keyFeatures: [{ topic: "cqi", n: 1 }, { topic: "cqi", n: 2 }, { topic: "shock", n: 4 }, { topic: "shock", n: 6 }],
   summary: "A woman who has waited more than three hours is found unwell in the waiting room. After you stabilize her, you must find out how it happened.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 250 bed community hospital in Ontario. It is 14:10 on a Tuesday. " +
-    "The department has 30 stretchers, all full, with 11 admitted patients waiting for beds. There are 38 people in the waiting room and one triage nurse. " +
-    "The hospital has an ICU, on call urology and interventional radiology. " +
-    "A security guard runs to the charge desk. A woman in the waiting room is slumped in her chair and will not answer him. " +
-    "Her name is Margaret Oduya. She is 71 years old. The triage record shows she was triaged at 10:40 as CTAS 3 with 'urinary symptoms and weakness'. " +
-    "Current vitals: heart rate 128, blood pressure 76/42, respiratory rate 30, SpO2 90 percent on room air, temperature 39.4. She opens her eyes to voice but is confused.",
+    "You are working in the emergency department of a community hospital when the following patient arrives. A 71 year old woman triaged 3.5 hours ago with urinary symptoms and weakness is found slumped in a waiting room chair and will not answer the security guard.",
+  card: {
+    vitals: {
+      temperature: "39.4°C",
+      pulse: "128/minute",
+      resp: "30/minute",
+      bp: "76/42 mmHg",
+      o2sat: "90% on room air",
+      weight: "Not recorded",
+    },
+    medications: "Ramipril 10 mg daily, metformin 500 mg twice daily",
+    allergies: "None known",
+  },
   findings: [
     {
       id: "triage-note",
@@ -28,9 +35,18 @@ export const waitingRoomSlump: OralCase = {
     },
     {
       id: "history",
-      label: "Past history and medications",
-      result:
-        "Hypertension on ramipril 10 mg daily. Type 2 diabetes on metformin 500 mg twice daily. Kidney stone 6 years ago. No allergies. Lives with her son and daughter in law. Fully independent. Wants full treatment.",
+      label: "Past history",
+      result: "Hypertension. Type 2 diabetes. Kidney stone 6 years ago.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "Ramipril 10 mg daily. Metformin 500 mg twice daily. No allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history and wishes",
+      result: "Lives with her son and daughter in law. Fully independent. Wants full treatment.",
     },
     {
       id: "exam",
@@ -68,8 +84,9 @@ export const waitingRoomSlump: OralCase = {
     },
     {
       id: "waiting-log",
-      label: "Waiting room log for today",
+      label: "Department status and waiting room log for today",
       result:
+        "A 250 bed community hospital in Ontario with an ICU, on call urology and interventional radiology. The department has 30 stretchers, all full, with 11 admitted patients waiting for beds. There are 38 people in the waiting room and one triage nurse. " +
         "The reassessment nurse position was unfilled because of a sick call. The triage nurse triaged 26 patients between 07:00 and 14:00. " +
         "No sepsis screening tool is used at triage. The electronic board shows a CTAS 3 reassessment overdue flag, but it is only visible from the charge desk.",
     },
@@ -81,7 +98,12 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "son",
       label: "Her son",
-      result: "David Oduya arrives at 15:15. His wife had to leave at 12:30 for work. He is angry and asks why nobody checked on his mother for three and a half hours.",
+      result: "Her son arrives at 15:15. His wife had to leave at 12:30 for work. He is angry and asks why nobody checked on his mother for three and a half hours.",
+    },
+    {
+      id: "found",
+      label: "How she was found",
+      result: "It is 14:10 on a Tuesday. A security guard runs to the charge desk. She is slumped in her waiting room chair and will not answer him. The triage record shows she was triaged at 10:40 as CTAS 3 with 'urinary symptoms and weakness'. She opens her eyes to voice but is confused.",
     },
   ],
   start: "s-open",
@@ -90,7 +112,7 @@ export const waitingRoomSlump: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "14:10",
-      text: "The charge nurse has found a free resus bay by moving a stable patient to the hallway. Mrs. Oduya is on a wheelchair on the way.",
+      text: "The charge nurse has found a free resus bay by moving a stable patient to the hallway. The patient is on a wheelchair on the way.",
       next: "q-resus",
     },
     {
@@ -106,8 +128,9 @@ export const waitingRoomSlump: OralCase = {
         "Crystalloid 30 mL/kg, given in boluses with reassessment.",
         "Bedside ultrasound for a source and for fluid tolerance.",
         "Hold metformin and ramipril. Check goals of care.",
+        "Ask about urinary symptoms, intake and when the confusion began.",
       ],
-      rubric: ["wr-r1", "wr-a1"],
+      rubric: ["wr-r1", "wr-a1", "wr-h1", "wr-h3"],
       choices: [
         {
           id: "c-bundle",
@@ -166,13 +189,13 @@ export const waitingRoomSlump: OralCase = {
       seconds: 75,
       modelAnswer: [
         "Norepinephrine to a mean arterial pressure of 65. A peripheral start is acceptable.",
-        "This is likely an infected obstructed kidney. It needs urgent drainage.",
+        "This is likely an infected obstructed kidney. It needs urgent drainage. Her past kidney stone fits.",
         "Non contrast CT once norepinephrine is running and a nurse can travel with her, to confirm the stone and plan drainage.",
         "Call urology now for stent or interventional radiology for nephrostomy tonight.",
         "Call ICU. She needs vasopressors and close monitoring.",
         "Antibiotics alone are not enough.",
       ],
-      rubric: ["wr-m1", "wr-d1"],
+      rubric: ["wr-m1", "wr-d1", "wr-h2"],
       choices: [
         {
           id: "c-drain",
@@ -212,7 +235,7 @@ export const waitingRoomSlump: OralCase = {
         "No sepsis screen and no investigations started at triage.",
         "Contributing system factors. Unfilled reassessment nurse role, high triage volume, access block, overdue flag not visible.",
       ],
-      rubric: ["wr-a2", "wr-a3"],
+      rubric: ["wr-a2", "wr-a3", "wr-h4"],
       next: "q-nurse",
     },
     {
@@ -220,7 +243,7 @@ export const waitingRoomSlump: OralCase = {
       id: "s-son",
       phase: "15:15",
       text:
-        "While urology is on the way, her son David arrives. He says: 'My wife sat with her for two hours and nobody looked at her. " +
+        "While urology is on the way, her son arrives. He says: 'My wife sat with her for two hours and nobody looked at her. " +
         "She told the nurse Mom was confused. Why did nobody check on her? Who is responsible for this?'",
       next: "q-son",
     },
@@ -228,7 +251,7 @@ export const waitingRoomSlump: OralCase = {
       kind: "question",
       id: "q-son",
       phase: "Her son",
-      prompt: "What do you say to David?",
+      prompt: "What do you say to her son?",
       seconds: 90,
       modelAnswer: [
         "Find a private space. Sit down. Let him speak.",
@@ -271,7 +294,7 @@ export const waitingRoomSlump: OralCase = {
       id: "s-defend",
       phase: "In the family room",
       text:
-        "David says, 'So it is fine that she sat there for three and a half hours?' He asks for your name and the patient relations number. You pause and start again, with an apology.",
+        "Her son says, 'So it is fine that she sat there for three and a half hours?' He asks for your name and the patient relations number. You pause and start again, with an apology.",
       next: "q-review",
     },
     {
@@ -279,7 +302,7 @@ export const waitingRoomSlump: OralCase = {
       id: "s-blame",
       phase: "The next day",
       text:
-        "David asks patient relations to have the triage nurse fired. Mei hears about it from a colleague and goes home sick. The manager asks you to meet her. You return to David to correct the record and explain that the review will look at the whole system.",
+        "Her son asks patient relations to have the triage nurse fired. Mei hears about it from a colleague and goes home sick. The manager asks you to meet her. You return to her son to correct the record and explain that the review will look at the whole system.",
       next: "q-review",
     },
     {
@@ -375,14 +398,14 @@ export const waitingRoomSlump: OralCase = {
       kind: "end",
       id: "end",
       text:
-        "Mrs. Oduya leaves the ICU on day 3 and goes home on day 9. The department adds a sepsis screen at triage and a visible reassessment alert. David is invited to hear the findings. That is the end of the case.",
+        "The patient leaves the ICU on day 3 and goes home on day 9. The department adds a sepsis screen at triage and a visible reassessment alert. Her son is invited to hear the findings. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "wr-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes septic shock and gives broad spectrum antibiotics within 1 hour with 30 mL/kg crystalloid.",
       points: 3,
       critical: true,
@@ -392,7 +415,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses bedside ultrasound to look for a source and guide fluid.",
       points: 1,
       teaching: "Hydronephrosis on ultrasound in a septic patient points to an obstructed infected kidney.",
@@ -401,7 +424,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Identifies under triage using the CTAS sepsis modifier. Fever with three SIRS criteria is CTAS 2.",
       points: 2,
       teaching: "CTAS assigns level 2 to a febrile adult who looks septic. That means three SIRS criteria, or hemodynamic compromise, respiratory distress or altered level of consciousness.",
@@ -410,7 +433,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies the failure to reassess and knows CTAS reassessment intervals.",
       points: 2,
       teaching: "CTAS reassessment is every 15 minutes for level 2 and every 30 minutes for level 3. Triage is a snapshot, not a guarantee.",
@@ -419,7 +442,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts norepinephrine for a mean arterial pressure under 65 after fluid and arranges urgent source control.",
       points: 3,
       critical: true,
@@ -429,7 +452,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Admits to ICU while on vasopressors.",
       points: 1,
       teaching: "Patients with septic shock on vasopressors need a critical care bed, not a ward.",
@@ -438,7 +461,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Discloses early to the son. States what is known, apologizes, and commits to a review and follow up.",
       points: 3,
       critical: true,
@@ -448,7 +471,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Commits to sharing the review findings with the family.",
       points: 1,
       teaching: "Post analysis disclosure tells the family what was learned and what changed. It closes the loop.",
@@ -457,7 +480,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Does not blame individual staff or make excuses when speaking with the family.",
       points: 2,
       teaching: "Blame and excuses both damage trust. Stick to facts, apology and the plan.",
@@ -466,7 +489,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Supports the triage nurse and treats the event through a just culture lens.",
       points: 2,
       teaching: "Staff involved in harm are often second victims. Human error in an overloaded system calls for support and system repair, not discipline.",
@@ -475,7 +498,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents facts and the disclosure in the chart without assigning blame.",
       points: 1,
       teaching: "The chart records care. Concerns about process belong in the incident report.",
@@ -484,7 +507,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Informs the charge nurse and manager so staff support is in place.",
       points: 1,
       teaching: "Leaders make sure no one involved in a serious incident is left alone with it.",
@@ -493,7 +516,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Files a written patient safety incident report the same day and suggests a structured analysis.",
       points: 2,
       teaching: "The Canadian Incident Analysis Framework guides a system focused review of contributing factors.",
@@ -502,7 +525,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-l3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Recommends strong system fixes such as a protected reassessment role, automatic vital sign alerts and triage sepsis screening.",
       points: 2,
       teaching: "Forcing functions and standardization are stronger than education or reminders alone.",
@@ -511,25 +534,64 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-l4",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Links waiting room risk to access block and escalates it to hospital leadership.",
       points: 1,
       teaching: "Boarded admitted patients fill stretchers and push sick patients into the waiting room. That is a hospital problem.",
       source: "caep-crowding",
+    },
+    {
+      id: "wr-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes the history of the illness. Three days of burning urine, two days of poor intake, weakness and new confusion.",
+      points: 2,
+      teaching: "A urinary source with new confusion in an older adult is sepsis until proven otherwise. The time course dates the illness.",
+      source: "ssc",
+    },
+    {
+      id: "wr-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past kidney stones, diabetes, medications and allergies.",
+      points: 2,
+      teaching: "A past kidney stone raises the chance of an obstructed infected kidney. Metformin and ramipril need holding in shock and acute kidney injury.",
+      source: "ssc",
+    },
+    {
+      id: "wr-h3",
+      competency: "communication",
+      criterion: "history",
+      text: "Gets collateral from family and confirms goals of care. She is independent and wants full treatment.",
+      points: 1,
+      teaching: "Confirmed goals of care let you escalate to vasopressors, ICU and drainage without delay.",
+      source: "ssc",
+    },
+    {
+      id: "wr-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Reviews the triage record, including the vital signs at 10:40 and the family report of confusion.",
+      points: 1,
+      teaching: "The triage record shows what was known and when. It is the starting point for finding the gaps.",
+      source: "ctas",
     },
   ],
   sources: [
     {
       id: "ctas",
       citation: "Bullard MJ, et al. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) guidelines 2016. CJEM. 2017.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/28756800/",
     },
     {
       id: "ssc",
       citation: "Evans L, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Critical Care Medicine. 2021.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/34605781/",
     },
     {
       id: "ciaf",
       citation: "Incident Analysis Collaborating Parties. Canadian Incident Analysis Framework. Canadian Patient Safety Institute. 2012.",
+      url: "https://psnet.ahrq.gov/issue/canadian-incident-analysis-framework",
     },
     {
       id: "cpsi-disclosure",
@@ -538,15 +600,16 @@ export const waitingRoomSlump: OralCase = {
     },
     {
       id: "cpso-disclosure",
-      citation: "College of Physicians and Surgeons of Ontario. Policy. Disclosure of Harm.",
+      citation: "College of Physicians and Surgeons of Ontario. Policy. Disclosure of Harm. Updated 2019.",
       url: "https://www.cpso.on.ca/physicians/policies-guidance/policies/disclosure-of-harm",
     },
     {
       id: "caep-crowding",
       citation: "Affleck A, Parks P, Drummond A, Rowe BH, Ovens HJ. Emergency department overcrowding and access block. CAEP position statement. CJEM. 2013.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/24176460/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

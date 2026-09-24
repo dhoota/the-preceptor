@@ -10,24 +10,48 @@ export const crowdedResusRoom: OralCase = {
   priorityTopic: "arrhythmia",
   keyFeatures: [{ topic: "arrhythmia", n: 4 }, { topic: "arrhythmia", n: 8 }, { topic: "ischemic-heart-disease", n: 6 }, { topic: "multiple-patients", n: 3 }, { topic: "cqi", n: 5 }],
   summary: "You lead a resuscitation that goes off course as more people arrive and start giving orders.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a community teaching hospital in Ontario. It is 10:26 on a weekday. " +
-    "The hospital has a 24 hour cath lab, an ICU, and a cardiology service in house. " +
-    "Your resus team is two nurses, a respiratory therapist, a first year family medicine resident and a medical student. A mechanical CPR device is available. " +
-    "Paramedics patch: 'Fifty two year old man collapsed at the gym. Witnessed. Bystander CPR in under a minute. Shockable rhythm on our pads. Three shocks, two doses of epinephrine and amiodarone 300 mg. Still in VF. Four minutes out.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. Paramedics are four minutes out with a 52 year old man who collapsed at the gym and is still in ventricular fibrillation after three shocks. Your team is two nurses, a respiratory therapist, a first year resident and a medical student.",
+  card: {
+    vitals: {
+      temperature: "Not recorded",
+      pulse: "No pulse. Ventricular fibrillation on the paramedic monitor",
+      resp: "Ventilated through a supraglottic airway",
+      bp: "Not obtainable. CPR in progress",
+      o2sat: "Not recorded",
+      weight: "Not recorded",
+    },
+    medications: "Ramipril, dose not recorded",
+    allergies: "None known",
+  },
   findings: [
     {
       id: "handover",
       label: "Paramedic handover",
       result:
-        "Collapse at 10:12. Bystander CPR at 10:13. First shock at 10:19. Shocks at 10:19, 10:21 and 10:23, all anterior lateral pads. Epinephrine 1 mg at 10:22 and 10:26. Amiodarone 300 mg at 10:25. " +
-        "Supraglottic airway in place with good chest rise. End tidal CO2 22 mmHg.",
+        "Collapsed at the gym. Witnessed. Collapse at 10:12. Bystander CPR at 10:13. First shock at 10:19. Shocks at 10:19, 10:21 and 10:23, all anterior lateral pads. Epinephrine 1 mg at 10:22 and 10:26. Amiodarone 300 mg at 10:25. " +
+        "Supraglottic airway in place with good chest rise. End tidal CO2 22 mmHg. Still in VF, four minutes out.",
     },
     {
       id: "history",
       label: "History from his wife by phone",
-      result: "Chest pressure on and off for two days. Smoker. Hypertension on ramipril. No known heart disease. No allergies.",
+      result: "Chest pressure on and off for two days before the collapse.",
+    },
+    {
+      id: "pmh",
+      label: "Past history from his wife",
+      result: "Hypertension. No known heart disease. No allergies.",
+    },
+    {
+      id: "meds",
+      label: "Medications from his wife",
+      result: "Ramipril. She does not know the dose.",
+    },
+    {
+      id: "social",
+      label: "Social history from his wife",
+      result: "Smoker.",
     },
     {
       id: "rhythm",
@@ -65,6 +89,11 @@ export const crowdedResusRoom: OralCase = {
       result:
         "Nurse Jas on drugs and documentation. Nurse Karen on compressions rotation and defibrillator. Respiratory therapist Omar on airway. " +
         "Dr. Lee, a first year resident. A third year medical student. Dr. Grant, the staff cardiologist, arrives at 10:36.",
+    },
+    {
+      id: "resources",
+      label: "Hospital resources",
+      result: "A community teaching hospital in Ontario. It is 10:26 on a weekday. The hospital has a 24 hour cath lab, an ICU, and a cardiology service in house. A mechanical CPR device is available.",
     },
   ],
   start: "s-open",
@@ -133,6 +162,7 @@ export const crowdedResusRoom: OralCase = {
       prompt: "He has had three shocks, two doses of epinephrine and amiodarone 300 mg. What is your plan for the next shock and drugs?",
       seconds: 60,
       modelAnswer: [
+        "Confirm the timeline with the paramedics. Collapse, CPR, shocks and drug times.",
         "This is refractory VF.",
         "Change the defibrillation strategy. Vector change to anterior posterior pads, or double sequential defibrillation with two defibrillators.",
         "Amiodarone 150 mg as the second dose. Lidocaine is an alternative.",
@@ -140,7 +170,7 @@ export const crowdedResusRoom: OralCase = {
         "Look for reversible causes. Acute coronary occlusion is most likely.",
         "Early call to cardiology and the cath lab.",
       ],
-      rubric: ["cr-m2", "cr-m3"],
+      rubric: ["cr-m2", "cr-m3", "cr-h1"],
       choices: [
         {
           id: "c-vector",
@@ -309,9 +339,10 @@ export const crowdedResusRoom: OralCase = {
         "Where we are. Refractory VF since 10:12. Shock count and epinephrine doses read back by the recorder. 450 mg of amiodarone.",
         "What is next. Double sequential shock at the next check. When the next epinephrine is due.",
         "Likely cause. Anterior coronary occlusion. Cath lab being prepared.",
+        "Reversible causes checked. Echo at a pulse check, gas and end tidal CO2.",
         "Ask. Has anyone got a concern or something I have missed?",
       ],
-      rubric: ["cr-c3", "cr-l3"],
+      rubric: ["cr-c3", "cr-l3", "cr-x2"],
       next: "s-rosc",
     },
     {
@@ -335,8 +366,9 @@ export const crowdedResusRoom: OralCase = {
         "Deliberate temperature control for the comatose patient, between 32 and 37.5 degrees. Prevent fever.",
         "Offer his wife a chance to be present with a staff member to support and explain.",
         "Update her honestly. He is alive but critically ill.",
+        "Ask his wife about symptoms before the collapse, his history, medications and allergies.",
       ],
-      rubric: ["cr-m5", "cr-d1", "cr-c4"],
+      rubric: ["cr-m5", "cr-d1", "cr-c4", "cr-h2", "cr-h3", "cr-x1"],
       next: "q-debrief",
     },
     {
@@ -391,7 +423,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Runs a pre brief with named roles, a shared plan and permission to speak up.",
       points: 2,
       teaching: "Roles and a plan set before the patient arrives reduce confusion and freezing under stress.",
@@ -400,7 +432,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Keeps a single team leader and gives the arriving expert a defined role, or hands over leadership explicitly.",
       points: 3,
       critical: true,
@@ -410,7 +442,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-l3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Stays hands off at the foot of the bed and re sets the room with a brief summary.",
       points: 2,
       teaching: "A ten seconds for ten minutes pause during compressions rebuilds the shared mental model.",
@@ -419,7 +451,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-l4",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Runs a short hot debrief focused on learning and team wellbeing.",
       points: 1,
       teaching: "Hot debriefs are brief and structured. They surface safety issues while memory is fresh.",
@@ -428,7 +460,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m1",
       competency: "management",
-      criterion: "approach",
+      criterion: "management",
       text: "Plans for refractory VF before arrival with a second defibrillator and anterior posterior pads ready.",
       points: 1,
       teaching: "Anticipating the next step turns a scramble into a planned change.",
@@ -437,7 +469,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Changes defibrillation strategy after three failed shocks, using vector change or double sequential defibrillation.",
       points: 2,
       teaching: "In DOSE VF, both strategies improved survival to discharge compared with standard defibrillation. Guidelines rate them as may be considered after 3 or more failed shocks.",
@@ -446,7 +478,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives amiodarone 150 mg as the second dose and tracks the cumulative dose.",
       points: 1,
       teaching: "Amiodarone is 300 mg then 150 mg in shock refractory VF. Lidocaine is an alternative.",
@@ -455,7 +487,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Stops the long compression pause immediately and keeps pauses under 10 seconds.",
       points: 3,
       critical: true,
@@ -465,7 +497,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Sets post arrest targets. SpO2 90 to 98 percent, mean arterial pressure at least 65 and deliberate temperature control.",
       points: 2,
       teaching: "Avoid hypoxia, hyperoxia and hypotension after return of circulation. They all worsen brain injury.",
@@ -474,7 +506,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks up directly, by name, with a clear instruction.",
       points: 2,
       teaching: "In a crisis, specific named instructions work. Vague comments to the room are ignored.",
@@ -483,7 +515,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Uses closed loop communication to challenge an unsafe drug order by stating the cumulative dose.",
       points: 2,
       teaching: "Saying the dose already given out loud lets the team catch the error without a confrontation.",
@@ -492,7 +524,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Invites concerns from the team during the summary.",
       points: 1,
       teaching: "Asking 'what am I missing?' lowers the hierarchy and uncovers errors.",
@@ -501,7 +533,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Offers family presence with a support person and gives an honest update.",
       points: 1,
       teaching: "Families often value being present. A dedicated staff member explains what is happening.",
@@ -510,7 +542,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-d1",
       competency: "disposition",
-      criterion: "data",
+      criterion: "management",
       text: "Sends the patient for emergent coronary angiography for STEMI after arrest.",
       points: 2,
       critical: true,
@@ -520,7 +552,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Stays calm and respectful with the consultant while holding the line on patient safety.",
       points: 2,
       teaching: "Firm and calm beats loud. Disagree about the plan, not about the person.",
@@ -529,7 +561,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Addresses the consultant's behaviour privately and escalates only if it recurs or is serious.",
       points: 1,
       teaching: "Most conflict resolves with an early private conversation that focuses on behaviour and its effect on care.",
@@ -538,41 +570,91 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives the resident supportive private feedback and thanks the nurse who spoke up.",
       points: 1,
       teaching: "Feedback should build skill without shame. Recognizing speaking up makes it more likely next time.",
       source: "carne",
+    },
+    {
+      id: "cr-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Gets the prehospital timeline from the paramedics. Time of collapse, bystander CPR, each shock, each drug with its time, and the airway.",
+      points: 2,
+      teaching: "The timeline tells you how long he has been down and when the next drug is due. The recorder should read it back.",
+      source: "aha-als",
+    },
+    {
+      id: "cr-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks his wife about symptoms before the collapse, such as two days of chest pressure.",
+      points: 2,
+      teaching: "Chest pressure before a VF arrest points to coronary occlusion. It supports emergent angiography.",
+      source: "aha-pca",
+    },
+    {
+      id: "cr-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past history, medications, allergies and smoking.",
+      points: 2,
+      teaching: "Risk factors and medications inform the cause of the arrest and post arrest drug choices.",
+      source: "aha-pca",
+    },
+    {
+      id: "cr-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Reads the post arrest ECG as an anterior STEMI and names coronary occlusion as the likely cause.",
+      points: 2,
+      teaching: "ST elevation after return of circulation identifies the patients who gain most from emergent angiography.",
+      source: "aha-pca",
+    },
+    {
+      id: "cr-x2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Looks for reversible causes during the arrest with end tidal CO2, a bedside echo at a pulse check and a blood gas.",
+      points: 1,
+      teaching: "Echo and gas results can rule out tamponade, a massive PE and hyperkalemia without long pauses.",
+      source: "aha-als",
     },
   ],
   sources: [
     {
       id: "carne",
       citation: "Carne B, Kennedy M, Gray T. Review article. Crisis resource management in emergency medicine. Emergency Medicine Australasia. 2012.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/22313554/",
     },
     {
       id: "hicks",
       citation: "Hicks C, Petrosoniak A. The human factor. Optimizing trauma team performance in dynamic clinical environments. Emergency Medicine Clinics of North America. 2018.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/29132571/",
     },
     {
       id: "dose-vf",
       citation: "Cheskes S, et al. Defibrillation strategies for refractory ventricular fibrillation. New England Journal of Medicine. 2022.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/36342151/",
     },
     {
       id: "aha-als",
       citation: "Wigginton JG, et al. Part 9. Adult advanced life support. 2025 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025. Adopted in the Heart and Stroke Foundation of Canada edition.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/41122884/",
     },
     {
       id: "aha-pca",
       citation: "Hirsch KG, et al. Part 11. Post cardiac arrest care. 2025 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/41122894/",
     },
     {
       id: "cpso-behaviour",
-      citation: "College of Physicians and Surgeons of Ontario. Policy. Professional Behaviour.",
+      citation: "College of Physicians and Surgeons of Ontario. Policy. Professional Behaviour. Updated 2024.",
       url: "https://www.cpso.on.ca/Physicians/Policies-Guidance/Policies/Physician-Behaviour-in-the-Professional-Environmen",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

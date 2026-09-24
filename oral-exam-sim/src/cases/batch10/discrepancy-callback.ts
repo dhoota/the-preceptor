@@ -10,15 +10,21 @@ export const discrepancyCallback: OralCase = {
   priorityTopic: "cqi",
   keyFeatures: [{ topic: "cqi", n: 1 }, { topic: "cqi", n: 2 }, { topic: "msk", n: 4 }, { topic: "analgesia-sedation", n: 2 }],
   summary: "A radiology report flags a patient you discharged two nights ago. You must call her back and talk with her and her daughter.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are starting a day shift at a 220 bed community hospital in southwestern Ontario. " +
-    "The department has 28 stretchers, a radiologist on site until 17:00, and orthopedic surgery on call from home. " +
-    "Each morning the charge nurse hands the day physician the radiology discrepancy list. " +
-    "Today it has one name. Rosa Marchetti is 78 years old. You saw her yourself two nights ago at 23:40 after a fall at home. " +
-    "You read her pelvis and left hip X rays as normal and sent her home with acetaminophen and a walker. " +
-    "The final radiology report, signed yesterday at 16:10, reads: 'Subtle nondisplaced subcapital fracture of the left femoral neck. Suggest clinical correlation.' " +
-    "The charge nurse says: 'The list got missed yesterday afternoon. Nobody has called her yet.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. A 78 year old woman you discharged two nights ago after a fall is on this morning's radiology discrepancy list for her hip X rays. Nobody has called her yet.",
+  card: {
+    vitals: {
+      temperature: "Not recorded",
+      pulse: "88/minute, irregular, at the first visit",
+      resp: "Not recorded",
+      bp: "146/82 mmHg at the first visit",
+      o2sat: "Not recorded",
+      weight: "Not recorded",
+    },
+    medications: "Apixaban 5 mg twice daily, amlodipine 5 mg daily. Acetaminophen 1 g four times daily since discharge.",
+    allergies: "None known",
+  },
   findings: [
     {
       id: "first-visit",
@@ -39,14 +45,22 @@ export const discrepancyCallback: OralCase = {
       id: "phone-contact",
       label: "Phone contact on the chart",
       result:
-        "Home number and her daughter Lucia's mobile number are listed. The chart notes Mrs. Marchetti gave verbal permission two nights ago to share information with Lucia.",
+        "Home number and her daughter's mobile number are listed. The chart notes the patient gave verbal permission two nights ago to share information with her daughter.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "Atrial fibrillation. Hypertension. Osteoporosis on no treatment. No cognitive concerns.",
     },
     {
       id: "meds",
-      label: "Medications and history",
-      result:
-        "Atrial fibrillation on apixaban 5 mg twice daily. Hypertension on amlodipine 5 mg daily. Osteoporosis on no treatment. " +
-        "Lives alone in a bungalow. Independent before the fall. No cognitive concerns. No allergies.",
+      label: "Medications and allergies",
+      result: "Apixaban 5 mg twice daily. Amlodipine 5 mg daily. No allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Lives alone in a bungalow. Independent before the fall.",
     },
     {
       id: "return-status",
@@ -81,17 +95,24 @@ export const discrepancyCallback: OralCase = {
     },
     {
       id: "daughter",
-      label: "Lucia, her daughter",
+      label: "Her daughter",
       result:
-        "Lucia is 51. She drove her mother home two nights ago. She has read the radiology report on the hospital patient portal this morning. " +
+        "Her daughter is 51. She drove her mother home two nights ago. She has read the radiology report on the hospital patient portal this morning. " +
         "She is upset and wants to know why nobody called.",
     },
     {
       id: "policy",
-      label: "Department discrepancy policy",
+      label: "Department setting and discrepancy policy",
       result:
+        "A 220 bed community hospital in southwestern Ontario. The department has 28 stretchers. A radiologist is on site until 17:00. Orthopedic surgery is on call from home. " +
+        "Each morning the charge nurse hands the day physician the radiology discrepancy list. " +
         "Discrepancies are to be reviewed by the on duty emergency physician on the day they are reported. Significant findings require same day patient contact and a documented plan. " +
         "The list is printed and left in a tray at the charge desk.",
+    },
+    {
+      id: "discrepancy",
+      label: "The discrepancy and the final report",
+      result: "You are starting a day shift. You saw her yourself two nights ago at 23:40 after a fall at home. You read her pelvis and left hip X rays as normal and sent her home with acetaminophen and a walker. The final radiology report, signed yesterday at 16:10, reads: 'Subtle nondisplaced subcapital fracture of the left femoral neck. Suggest clinical correlation.' The charge nurse says: 'The list got missed yesterday afternoon. Nobody has called her yet.'",
     },
   ],
   start: "s-open",
@@ -117,8 +138,9 @@ export const discrepancyCallback: OralCase = {
         "Arrange return by ambulance, nothing to eat, and bring her medication list.",
         "Ask when she last took apixaban.",
         "Prepare to meet her and her daughter in person when she arrives.",
+        "Ask who is with her at home and how she will get to the ambulance.",
       ],
-      rubric: ["dc-a1", "dc-m1", "dc-d1"],
+      rubric: ["dc-a1", "dc-m1", "dc-d1", "dc-h3"],
       choices: [
         {
           id: "c-call-now",
@@ -151,7 +173,7 @@ export const discrepancyCallback: OralCase = {
       id: "s-clerk",
       phase: "Forty minutes later",
       text:
-        "The clerk reports that Lucia is driving her mother in. Mrs. Marchetti walked to the car with her walker and cried out getting in. Lucia wants to speak to a doctor now. You call her back.",
+        "The clerk reports that her daughter is driving her in. The patient walked to the car with her walker and cried out getting in. Her daughter wants to speak to a doctor now. You call her back.",
       next: "q-phone",
     },
     {
@@ -159,23 +181,24 @@ export const discrepancyCallback: OralCase = {
       id: "s-fax",
       phase: "An hour later",
       text:
-        "Lucia phones the department. Her mother could not get up from the toilet this morning and needed help back to bed. Lucia has read the report on the portal. The charge nurse puts her through to you.",
+        "Her daughter phones the department. Her mother could not get up from the toilet this morning and needed help back to bed. She has read the report on the portal. The charge nurse puts her through to you.",
       next: "q-phone",
     },
     {
       kind: "question",
       id: "q-phone",
       phase: "On the phone",
-      prompt: "Mrs. Marchetti and Lucia are on speaker phone. What do you say?",
+      prompt: "The patient and her daughter are on speaker phone. What do you say?",
       seconds: 75,
       modelAnswer: [
-        "Introduce myself and confirm I am speaking with Mrs. Marchetti. Confirm she is happy for Lucia to hear.",
+        "Introduce myself and confirm I am speaking with the patient. Confirm she is happy for her daughter to hear.",
         "Say plainly that the final X ray report shows a break in the top of the thigh bone.",
         "Say that I did not see it when I looked at the X ray two nights ago, and that I am sorry.",
+        "Ask how she has been. Pain, walking and any new fall.",
         "Give clear instructions: do not walk on it, ambulance is coming, nothing to eat.",
         "Say I will meet them when they arrive and explain everything in person.",
       ],
-      rubric: ["dc-c1", "dc-c2"],
+      rubric: ["dc-c1", "dc-c2", "dc-h1"],
       next: "s-arrive",
     },
     {
@@ -183,8 +206,8 @@ export const discrepancyCallback: OralCase = {
       id: "s-arrive",
       phase: "Back in the department",
       text:
-        "Mrs. Marchetti arrives at 10:05. Her left leg is now shortened and externally rotated. She rates her pain 9 out of 10. " +
-        "The repeat X ray shows the fracture is now displaced. Lucia is at the bedside with her arms crossed.",
+        "The patient arrives at 10:05. Her left leg is now shortened and externally rotated. She rates her pain 9 out of 10. " +
+        "The repeat X ray shows the fracture is now displaced. Her daughter is at the bedside with her arms crossed.",
       next: "q-clinical",
     },
     {
@@ -201,7 +224,7 @@ export const discrepancyCallback: OralCase = {
         "Delirium prevention. Glasses, hearing aids, family present, avoid sedating drugs.",
         "Screen the cause of the fall. It was a mechanical trip with no syncope.",
       ],
-      rubric: ["dc-m2", "dc-m3"],
+      rubric: ["dc-m2", "dc-m3", "dc-h2", "dc-h4"],
       next: "q-disclose",
     },
     {
@@ -209,7 +232,7 @@ export const discrepancyCallback: OralCase = {
       id: "q-disclose",
       phase: "The disclosure meeting",
       prompt:
-        "Her pain is controlled after a fascia iliaca block. Dr. Okafor has seen her and plans a hemiarthroplasty tomorrow. You sit down with Mrs. Marchetti and Lucia. Take me through the conversation.",
+        "Her pain is controlled after a fascia iliaca block. Dr. Okafor has seen her and plans a hemiarthroplasty tomorrow. You sit down with the patient and her daughter. Take me through the conversation.",
       seconds: 120,
       modelAnswer: [
         "Quiet private space. Sit down. Ask who she wants present. Turn off the pager if possible.",
@@ -253,7 +276,7 @@ export const discrepancyCallback: OralCase = {
       id: "s-minimize",
       phase: "At the bedside",
       text:
-        "Lucia says: 'So nobody is responsible? It sat on a list for a day while she walked around on a broken hip.' Mrs. Marchetti looks at you and waits.",
+        "Her daughter says: 'So nobody is responsible? It sat on a list for a day while she walked around on a broken hip.' The patient looks at you and waits.",
       next: "s-anger",
     },
     {
@@ -261,7 +284,7 @@ export const discrepancyCallback: OralCase = {
       id: "s-new-fall",
       phase: "At the bedside",
       text:
-        "Lucia holds up her phone. 'The report says the break was on the X ray from Tuesday. She has not fallen again. Why are you telling us something different?' " +
+        "Her daughter holds up her phone. 'The report says the break was on the X ray from Tuesday. She has not fallen again. Why are you telling us something different?' " +
         "You correct yourself and explain what actually happened. The room is now much colder.",
       next: "s-anger",
     },
@@ -270,14 +293,14 @@ export const discrepancyCallback: OralCase = {
       id: "s-anger",
       phase: "Hard questions",
       text:
-        "Lucia leans forward. 'Are you saying this is your fault? Would she have needed surgery anyway? Should we be talking to a lawyer?'",
+        "Her daughter leans forward. 'Are you saying this is your fault? Would she have needed surgery anyway? Should we be talking to a lawyer?'",
       next: "q-anger",
     },
     {
       kind: "question",
       id: "q-anger",
       phase: "Hard questions",
-      prompt: "How do you answer Lucia?",
+      prompt: "How do you answer her daughter?",
       seconds: 90,
       modelAnswer: [
         "Acknowledge her anger. It is reasonable.",
@@ -320,7 +343,7 @@ export const discrepancyCallback: OralCase = {
       id: "s-shutdown",
       phase: "At the bedside",
       text:
-        "Lucia says: 'That is exactly what I expected.' Mrs. Marchetti quietly asks you whether she will walk again. You sit back down and answer her.",
+        "Her daughter says: 'That is exactly what I expected.' The patient quietly asks you whether she will walk again. You sit back down and answer her.",
       next: "q-chart",
     },
     {
@@ -328,7 +351,7 @@ export const discrepancyCallback: OralCase = {
       id: "s-blame",
       phase: "Later that day",
       text:
-        "Lucia repeats your comment to the patient relations office and to the radiologist, who comes to find you. The disclosure has now become a dispute between colleagues. You return to the bedside and correct the record.",
+        "Her daughter repeats your comment to the patient relations office and to the radiologist, who comes to find you. The disclosure has now become a dispute between colleagues. You return to the bedside and correct the record.",
       next: "q-chart",
     },
     {
@@ -426,7 +449,7 @@ export const discrepancyCallback: OralCase = {
       kind: "question",
       id: "q-followup",
       phase: "Before you go home",
-      prompt: "Lucia asks if she will hear from anyone again, and whether this could happen to someone else. What do you tell her?",
+      prompt: "Her daughter asks if she will hear from anyone again, and whether this could happen to someone else. What do you tell her?",
       seconds: 60,
       modelAnswer: [
         "Disclosure is a process, not one conversation.",
@@ -442,14 +465,14 @@ export const discrepancyCallback: OralCase = {
       kind: "end",
       id: "end",
       text:
-        "Mrs. Marchetti has her hemiarthroplasty the next afternoon. Lucia thanks you for being straight with them and asks to hear about the review. That is the end of the case.",
+        "The patient has her hemiarthroplasty the next afternoon. Her daughter thanks you for being straight with them and asks to hear about the review. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "dc-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Reviews the original images personally and accepts the discrepancy as a significant missed injury.",
       points: 1,
       teaching: "Look at the films yourself before calling. You need to understand the finding to explain it honestly.",
@@ -458,7 +481,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Knows that subtle femoral neck fractures can be occult and that CT or MRI is used when pain persists with normal films.",
       points: 1,
       teaching: "Plain films miss a small share of hip fractures. Inability to bear weight or persistent groin pain with normal films calls for further imaging.",
@@ -467,7 +490,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Tells the patient to stop weight bearing and arranges ambulance return.",
       points: 3,
       critical: true,
@@ -477,7 +500,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives prompt analgesia, preferably a fascia iliaca or femoral nerve block plus titrated opioid.",
       points: 2,
       teaching: "Regional blocks reduce opioid needs and delirium in older adults with hip fracture. Do them in the ED.",
@@ -486,7 +509,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges urgent orthopedic care with surgery as soon as possible and manages the apixaban.",
       points: 2,
       teaching: "The Ontario quality standard asks for surgery within 48 hours of first arrival at hospital, and a missed first visit counts against that clock. Hold the DOAC and give the surgical team the last dose time and renal function.",
@@ -495,7 +518,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Makes the callback personally and promptly rather than delegating it.",
       points: 2,
       teaching: "The physician involved is usually best placed to make first contact. Delay adds harm and erodes trust.",
@@ -504,7 +527,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Confirms identity and consent to speak in front of the daughter before sharing results.",
       points: 1,
       teaching: "Speaker phone calls need a privacy check. Ask the patient who can hear and whether that is all right.",
@@ -513,7 +536,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Discloses the facts of what happened in plain language, including that the fracture was on the first X ray.",
       points: 3,
       critical: true,
@@ -523,7 +546,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Sets up the meeting well. Private space, seated, patient chooses who attends, checks their understanding first.",
       points: 1,
       teaching: "The setting shapes how the message lands. Sitting down and asking what they know first lowers the temperature.",
@@ -532,7 +555,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c5",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Answers the question about fault and outcome honestly without speculating or blaming others.",
       points: 2,
       teaching: "Say what is known. She would still have needed surgery, possibly a smaller one. Avoid firm predictions the surgeon has not made and guesses about causes still under review.",
@@ -541,7 +564,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c6",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Offers a named contact and a follow up conversation to share the results of the review.",
       points: 1,
       teaching: "Disclosure continues over time. Families want to know what was learned and what changed.",
@@ -550,7 +573,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Makes a clear apology that expresses regret for the harm.",
       points: 2,
       teaching: "An apology such as 'I am sorry I missed the break' is expected. In Ontario it cannot be used as an admission of liability.",
@@ -559,7 +582,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Does not mislead the family, minimize the event or blame colleagues.",
       points: 3,
       critical: true,
@@ -569,7 +592,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents in a new timed entry and never alters the original record.",
       points: 2,
       teaching: "Records must not be changed after the fact to alter meaning. Additions are made as new dated entries.",
@@ -578,7 +601,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-p4",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Seeks advice from the CMPA and support for their own wellbeing.",
       points: 1,
       teaching: "Calling the CMPA is prudent and does not delay disclosure. Physicians involved in harm often need support themselves.",
@@ -587,7 +610,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Files a patient safety incident report and informs the department chief or quality lead.",
       points: 2,
       teaching: "Reporting starts the learning process. It is separate from disclosure and does not assign blame.",
@@ -596,7 +619,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Identifies the unactioned discrepancy list as a system failure in its own right.",
       points: 1,
       teaching: "A result that sits for a day is a second, separate failure. It is often the easier one to fix.",
@@ -605,7 +628,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-l3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Proposes reliable fixes such as an electronic discrepancy worklist with clear ownership and escalation.",
       points: 2,
       teaching: "Design out reliance on memory. Forcing functions and clear owners beat reminders and education alone.",
@@ -614,7 +637,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-d1",
       competency: "disposition",
-      criterion: "approach",
+      criterion: "history",
       text: "Asks about the last anticoagulant dose and tells her to fast before she comes in.",
       points: 1,
       teaching: "Small practical steps on the phone save hours before surgery.",
@@ -623,11 +646,47 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Confirms admission under orthopedics with a clear handover of the disclosure to the inpatient team.",
       points: 1,
       teaching: "The inpatient team needs to know what the family has been told so the message stays consistent.",
       source: "cpsi-disclosure",
+    },
+    {
+      id: "dc-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "On the phone, asks how she has been since discharge. Pain, whether she can bear weight, and any new fall.",
+      points: 2,
+      teaching: "New pain or loss of weight bearing suggests the fracture has displaced. The answer sets how fast she must come back.",
+      source: "hqo-hip",
+    },
+    {
+      id: "dc-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Reviews the first visit history. Mechanism, head strike, syncope and anticoagulant use.",
+      points: 2,
+      teaching: "A mechanical trip with no syncope needs no cardiac workup. Apixaban use shapes the timing of surgery.",
+      source: "hqo-hip",
+    },
+    {
+      id: "dc-h3",
+      competency: "disposition",
+      criterion: "history",
+      text: "Asks about her home situation and who can help her. She lives alone.",
+      points: 1,
+      teaching: "Living alone affects how she gets back safely today and what rehabilitation she will need.",
+      source: "hqo-hip",
+    },
+    {
+      id: "dc-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about baseline function and memory before the fall.",
+      points: 1,
+      teaching: "Baseline function and cognition guide the choice of operation and the risk of delirium.",
+      source: "hqo-hip",
     },
   ],
   sources: [
@@ -638,17 +697,17 @@ export const discrepancyCallback: OralCase = {
     },
     {
       id: "cmpa",
-      citation: "Canadian Medical Protective Association. Disclosing harm from healthcare delivery. Open and honest communication with patients.",
+      citation: "Canadian Medical Protective Association. Disclosing harm from healthcare delivery. Open and honest communication with patients. 2017.",
       url: "https://www.cmpa-acpm.ca/en/advice-publications/browse-articles/2015/disclosing-harm-from-healthcare-delivery-open-and-honest-communication-with-patients",
     },
     {
       id: "cpso-disclosure",
-      citation: "College of Physicians and Surgeons of Ontario. Policy. Disclosure of Harm.",
+      citation: "College of Physicians and Surgeons of Ontario. Policy. Disclosure of Harm. Updated 2019.",
       url: "https://www.cpso.on.ca/physicians/policies-guidance/policies/disclosure-of-harm",
     },
     {
       id: "cpso-records",
-      citation: "College of Physicians and Surgeons of Ontario. Policy. Medical Records Documentation.",
+      citation: "College of Physicians and Surgeons of Ontario. Policy. Medical Records Documentation. Updated 2020.",
       url: "https://www.cpso.on.ca/Physicians/Policies-Guidance/Policies/Medical-Records-Documentation",
     },
     {
@@ -659,9 +718,10 @@ export const discrepancyCallback: OralCase = {
     {
       id: "hqo-hip",
       citation: "Health Quality Ontario, now Ontario Health. Quality standard. Hip fracture. Care for people with fragility fractures. Updated 2024.",
+      url: "https://www.hqontario.ca/Evidence-to-Improve-Care/Quality-Standards/View-All-Quality-Standards/Hip-Fracture",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

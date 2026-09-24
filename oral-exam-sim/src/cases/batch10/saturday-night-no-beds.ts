@@ -10,14 +10,21 @@ export const saturdayNightNoBeds: OralCase = {
   priorityTopic: "multiple-patients",
   keyFeatures: [{ topic: "multiple-patients", n: 1 }, { topic: "multiple-patients", n: 2 }, { topic: "multiple-patients", n: 3 }, { topic: "multiple-patients", n: 4 }, { topic: "ischemic-heart-disease", n: 6 }, { topic: "cva", n: 3 }],
   summary: "Three time critical patients arrive at once into a department full of admitted patients.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician in charge at a 450 bed community hospital in Ontario. It is 21:00 on a Saturday. " +
-    "The hospital has a 24 hour cath lab with the team on call from home, a designated stroke centre with CT angiography, and an ICU. " +
-    "Your department has 36 stretchers. " +
-    "The charge nurse, Dana, finds you and says: 'Three EMS patches in five minutes. An anterior STEMI 12 minutes out. The field line to the cath lab did not connect so they are coming here. " +
-    "A 74 year old woman with right sided weakness and trouble speaking, last seen well at 20:25, 8 minutes out. " +
-    "And the medic in hallway bay 4 says his patient's pressure is dropping. He has been on their stretcher for 95 minutes. I have nowhere to put any of them.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. An 83 year old man from a long term care home with fever and confusion has waited 95 minutes on a paramedic stretcher in your full department. A STEMI and a code stroke are minutes away.",
+  card: {
+    vitals: {
+      temperature: "38.9°C",
+      pulse: "118/minute",
+      resp: "26/minute",
+      bp: "84/48 mmHg",
+      o2sat: "91% on 2 L/minute oxygen",
+      weight: "Not recorded",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "board",
@@ -48,6 +55,7 @@ export const saturdayNightNoBeds: OralCase = {
       id: "hospital",
       label: "Hospital status",
       result:
+        "A 450 bed community hospital in Ontario with a 24 hour cath lab (team on call from home), a designated stroke centre with CT angiography, and an ICU. The department has 36 stretchers. " +
         "Hospital occupancy 112 percent. 9 inpatients have discharge orders but have not left. The medicine ward has 3 unfunded surge beds that are closed tonight. " +
         "The overcapacity policy allows the administrator on call to move admitted patients to inpatient unit hallways.",
     },
@@ -90,6 +98,11 @@ export const saturdayNightNoBeds: OralCase = {
       result:
         "Reached by phone at 21:40. Says: 'The whole hospital is full. There is nothing I can do tonight. Just do your best.'",
     },
+    {
+      id: "patches",
+      label: "The charge nurse's report at 21:00",
+      result: "It is 21:00 on a Saturday. The charge nurse, Dana, says: 'Three EMS patches in five minutes. An anterior STEMI 12 minutes out. The field line to the cath lab did not connect so they are coming here. A 74 year old woman with right sided weakness and trouble speaking, last seen well at 20:25, 8 minutes out. And the medic in hallway bay 4 says his patient's pressure is dropping. He has been on their stretcher for 95 minutes. I have nowhere to put any of them.'",
+    },
   ],
   start: "s-open",
   nodes: [
@@ -97,7 +110,7 @@ export const saturdayNightNoBeds: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "21:00",
-      text: "Dana is waiting. Your colleague is in the middle of a lumbar puncture. The physician assistant is in the minor treatment area.",
+      text: "The charge nurse, Dana, has just told you about three EMS patches in five minutes and is waiting. Your colleague is in the middle of a lumbar puncture. The physician assistant is in the minor treatment area.",
       next: "q-first",
     },
     {
@@ -166,12 +179,13 @@ export const saturdayNightNoBeds: OralCase = {
       seconds: 60,
       modelAnswer: [
         "Cath lab activated by phone on the transmitted ECG.",
+        "Confirm symptom onset, first medical contact time and the drugs already given.",
         "Target first medical contact to device time under 90 minutes.",
         "Use the one free resus bay only as a brief stop until the lab is open, then straight to the lab.",
         "Aspirin already given. Heparin and a P2Y12 inhibitor per the interventionalist.",
         "Defibrillator pads on. A nurse stays with him. No stretcher space is needed.",
       ],
-      rubric: ["sn-m2"],
+      rubric: ["sn-m2", "sn-h2"],
       next: "q-stroke",
     },
     {
@@ -182,12 +196,13 @@ export const saturdayNightNoBeds: OralCase = {
       seconds: 75,
       modelAnswer: [
         "Code stroke. Straight to CT on the EMS stretcher. Do not wait for a department bed.",
+        "Confirm last seen well, anticoagulants, recent surgery or bleeding, and weight.",
         "Non contrast CT and CT angiography together.",
         "Tenecteplase 0.25 mg/kg, maximum 25 mg, if no contraindication. For her 68 kg that is 17 mg. Blood pressure under 185/110 first.",
         "Call the endovascular centre if there is a large vessel occlusion.",
         "Assign a nurse for neuro checks after thrombolysis. ICU or stroke unit bed is needed.",
       ],
-      rubric: ["sn-m3", "sn-c1"],
+      rubric: ["sn-m3", "sn-c1", "sn-h1"],
       choices: [
         {
           id: "c-direct-ct",
@@ -236,8 +251,9 @@ export const saturdayNightNoBeds: OralCase = {
         "Two IVs, cultures, lactate, broad antibiotics within 1 hour. Urosepsis likely. A long term care resident may carry resistant organisms, so choose per the local antibiogram, such as piperacillin tazobactam.",
         "Crystalloid up to 30 mL/kg in boluses with reassessment. Norepinephrine for a mean arterial pressure under 65 after fluid. Peripheral start is acceptable.",
         "Goals of care from the long term care home file.",
+        "Get the paramedic handover. Urinary or chest symptoms, medications and allergies.",
       ],
-      rubric: ["sn-m4", "sn-d1"],
+      rubric: ["sn-m4", "sn-d1", "sn-h3", "sn-x1"],
       choices: [
         {
           id: "c-take",
@@ -391,7 +407,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-l1",
       competency: "leadership",
-      criterion: "approach",
+      criterion: "history",
       text: "Takes a quick overview of the whole department with the charge nurse before acting.",
       points: 1,
       teaching: "One minute of situational awareness prevents the leader from fixating on the loudest problem.",
@@ -400,7 +416,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Delegates each time critical patient to a named clinician and pathway rather than doing everything personally.",
       points: 3,
       critical: true,
@@ -410,7 +426,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-l3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Escalates to hospital administration with specific requests including moving admitted patients to inpatient hallways.",
       points: 3,
       critical: true,
@@ -420,7 +436,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-l4",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Holds a team huddle and rebalances workload under pressure.",
       points: 1,
       teaching: "A brief huddle restores a shared plan and tells staff that their concerns have been heard and escalated.",
@@ -429,7 +445,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Personally assesses and treats the shocked patient nobody else is covering.",
       points: 2,
       teaching: "The patient in the hallway on a paramedic stretcher is the one most likely to be forgotten.",
@@ -438,7 +454,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Activates the cath lab and routes the STEMI directly there, with a first medical contact to device target under 90 minutes.",
       points: 2,
       teaching: "Direct to lab pathways avoid the crowded department. Aspirin should already be in, with anticoagulation per the interventional team.",
@@ -447,7 +463,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Sends the stroke patient directly to CT and gives tenecteplase 0.25 mg/kg to a maximum of 25 mg with blood pressure under 185/110.",
       points: 2,
       teaching: "Canadian targets are a median door to needle time of 30 minutes or less and 60 minutes or less in 90 percent of patients. Direct to CT pathways keep crowding off the critical path.",
@@ -456,7 +472,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats septic shock promptly with cultures, antibiotics within 1 hour, 30 mL/kg crystalloid and norepinephrine for a mean arterial pressure under 65.",
       points: 3,
       critical: true,
@@ -466,7 +482,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Arranges reassessment of waiting patients at CTAS intervals and re triages on change.",
       points: 2,
       teaching: "CTAS sets reassessment at every 15 minutes for level 2 and 30 minutes for level 3. Waiting patients deteriorate unseen.",
@@ -475,7 +491,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Uses closed loop communication with the stroke and cath lab teams and the paramedics.",
       points: 1,
       teaching: "Confirm who is doing what. Parallel pathways fail when two people each think the other made the call.",
@@ -484,7 +500,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Frames the escalation calmly with numbers and names the next step in the chain if needed.",
       points: 2,
       teaching: "Concrete data and specific asks get action. Anger without a request does not.",
@@ -493,7 +509,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Accepts the ambulance handover and releases the crew.",
       points: 2,
       teaching: "Offload delay leaves communities without ambulances. Once at the hospital, the patient is the hospital's responsibility.",
@@ -502,7 +518,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Uses medical directives at triage and a vertical rapid assessment zone to keep patients moving.",
       points: 1,
       teaching: "Starting tests at triage and seeing stable patients in chairs shortens waits without new beds.",
@@ -511,7 +527,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Checks in with distressed staff and plans a debrief.",
       points: 1,
       teaching: "Moral distress from working in unsafe conditions is common. Leaders should name it and act on it.",
@@ -520,29 +536,69 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Files safety reports and a written summary of the risk to leadership.",
       points: 1,
       teaching: "Crowding harms patients. Written reports and data make that harm visible and support system change.",
       source: "caep-crowding",
+    },
+    {
+      id: "sn-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Confirms the stroke patient's last seen well time, anticoagulant use, recent surgery or bleeding, glucose and weight before tenecteplase.",
+      points: 2,
+      teaching: "Eligibility and the dose depend on these facts. Confirm them while she is moving to CT so they do not add delay.",
+      source: "csbpr",
+    },
+    {
+      id: "sn-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Confirms the STEMI patient's symptom onset, first medical contact time and the drugs paramedics gave.",
+      points: 1,
+      teaching: "Onset and first medical contact set the reperfusion clock. Knowing what was given avoids double dosing.",
+      source: "ccs-stemi",
+    },
+    {
+      id: "sn-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Gets a focused history for the hallway patient from the paramedic and the long term care file. Source symptoms, time course, medications, allergies and goals of care.",
+      points: 2,
+      teaching: "The paramedic and the transfer file are the only history for a confused patient. Goals of care decide how far to escalate.",
+      source: "ssc",
+    },
+    {
+      id: "sn-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Recognizes septic shock with a likely urinary source in the hallway patient.",
+      points: 2,
+      teaching: "Fever, confusion, hypotension and tachypnea in a long term care resident are septic shock until proven otherwise. Look for a source on exam and in the urine.",
+      source: "ssc",
     },
   ],
   sources: [
     {
       id: "caep-crowding",
       citation: "Affleck A, Parks P, Drummond A, Rowe BH, Ovens HJ. Emergency department overcrowding and access block. CAEP position statement. CJEM. 2013.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/24176460/",
     },
     {
       id: "viccellio",
       citation: "Viccellio A, et al. The association between transfer of emergency department boarders to inpatient hallways and mortality. A 4 year experience. Annals of Emergency Medicine. 2009.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/19345442/",
     },
     {
       id: "ctas",
       citation: "Bullard MJ, et al. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) guidelines 2016. CJEM. 2017.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/28756800/",
     },
     {
       id: "ccs-stemi",
       citation: "Wong GC, et al. 2019 Canadian Cardiovascular Society and Canadian Association of Interventional Cardiology guidelines on the acute management of ST elevation myocardial infarction. Focused update on regionalization and reperfusion. Canadian Journal of Cardiology. 2019.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/30760415/",
     },
     {
       id: "csbpr",
@@ -552,9 +608,10 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "ssc",
       citation: "Evans L, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Critical Care Medicine. 2021.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/34605781/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

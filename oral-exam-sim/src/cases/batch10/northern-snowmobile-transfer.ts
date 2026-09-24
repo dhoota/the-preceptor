@@ -10,14 +10,21 @@ export const northernSnowmobileTransfer: OralCase = {
   priorityTopic: "multiple-trauma",
   keyFeatures: [{ topic: "multiple-trauma", n: 5 }, { topic: "multiple-trauma", n: 8 }, { topic: "ems", n: 3 }, { topic: "airway", n: 2 }],
   summary: "A young man with a head injury at a small northern hospital needs care that is 380 km away, and the weather is closing in.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the only physician on shift at a 25 bed hospital in northwestern Ontario. It is 19:40 on a Saturday in January. " +
-    "You have a CT scanner with remote radiology reading, three nurses, and a respiratory therapist on call from home. " +
-    "The local land ambulance base has two primary care paramedic crews. The nearest neurosurgery is at a regional trauma centre 380 km away. The local airport is 15 minutes away. " +
-    "Evan Tremblay is 24 years old. At about 18:00 his snowmobile hit a tree. He was knocked out briefly, then walked and talked. Friends drove him in at 19:05. " +
-    "Triage vitals: heart rate 70, blood pressure 150/86, respiratory rate 16, SpO2 97 percent on room air, temperature 36.1, capillary glucose 6.3 mmol/L. GCS 14. " +
-    "The radiologist phones: 'Right temporal epidural hematoma, 22 mm thick, with 8 mm of midline shift and an overlying skull fracture. C spine CT is normal.'",
+    "You are working in the emergency department of a rural hospital when the following patient arrives. A 24 year old man was knocked out briefly when his snowmobile hit a tree, and friends drove him in. You are the only physician on shift, and the nearest neurosurgery is 380 km away.",
+  card: {
+    vitals: {
+      temperature: "36.1°C",
+      pulse: "70/minute",
+      resp: "16/minute",
+      bp: "150/86 mmHg",
+      o2sat: "97% on room air",
+      weight: "About 85 kg (187 lb)",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "primary",
@@ -33,8 +40,9 @@ export const northernSnowmobileTransfer: OralCase = {
     },
     {
       id: "ct",
-      label: "CT head",
+      label: "CT head and C spine",
       result:
+        "The radiologist phones at 19:40: 'Right temporal epidural hematoma, 22 mm thick, with 8 mm of midline shift and an overlying skull fracture. C spine CT is normal.' " +
         "Biconvex right temporal extradural collection 22 mm thick. Midline shift 8 mm. Effacement of the right lateral ventricle. Nondisplaced right temporal bone fracture. No other injury.",
     },
     {
@@ -80,6 +88,21 @@ export const northernSnowmobileTransfer: OralCase = {
       label: "His mother",
       result: "Arrives at 20:30. She knows he crashed but not how serious it is. She wants to travel with him.",
     },
+    {
+      id: "crash",
+      label: "History of the crash from his friends",
+      result: "At about 18:00 his snowmobile hit a tree. He was knocked out briefly, then walked and talked. Friends drove him in at 19:05.",
+    },
+    {
+      id: "triage",
+      label: "Triage",
+      result: "Capillary glucose 6.3 mmol/L. GCS 14.",
+    },
+    {
+      id: "setting",
+      label: "Hospital and transport resources",
+      result: "A 25 bed hospital in northwestern Ontario. It is 19:40 on a Saturday in January. You have a CT scanner with remote radiology reading, three nurses, and a respiratory therapist on call from home. The local land ambulance base has two primary care paramedic crews. The nearest neurosurgery is at a regional trauma centre 380 km away. The local airport is 15 minutes away.",
+    },
   ],
   start: "s-open",
   nodes: [
@@ -87,7 +110,7 @@ export const northernSnowmobileTransfer: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "19:40",
-      text: "Evan is on a stretcher in your resus room, talking but drowsy. His friends are in the waiting room. The nurse asks what you want to do.",
+      text: "The patient is on a stretcher in your resus room, talking but drowsy. His friends are in the waiting room. The radiologist has just phoned with his CT results. The nurse asks what you want to do.",
       next: "q-first",
     },
     {
@@ -98,13 +121,14 @@ export const northernSnowmobileTransfer: OralCase = {
       seconds: 90,
       modelAnswer: [
         "This is a surgical lesion with mass effect. He needs neurosurgery as fast as possible.",
+        "Confirm the mechanism, loss of consciousness, time of injury, headache and vomiting.",
         "Call CritiCall now as a life or limb request. Push the images to the receiving site.",
         "Head of bed up 30 degrees. Two IVs. Neuro checks every 15 minutes.",
         "Avoid hypoxia and hypotension. Keep systolic at least 110 for his age.",
         "Tranexamic acid 1 g IV over 10 minutes then 1 g over 8 hours. He is within 3 hours.",
         "Call in the respiratory therapist and prepare for intubation.",
       ],
-      rubric: ["nt-a1", "nt-d1", "nt-m1"],
+      rubric: ["nt-a1", "nt-d1", "nt-m1", "nt-h1", "nt-h2"],
       choices: [
         {
           id: "c-criticall",
@@ -152,7 +176,7 @@ export const northernSnowmobileTransfer: OralCase = {
       id: "s-deteriorate",
       phase: "20:05",
       text:
-        "Evan is now GCS 8. His right pupil is 6 mm and sluggish. Heart rate 54. Blood pressure 176/72. His breathing is irregular. The respiratory therapist has just arrived.",
+        "He is now GCS 8. His right pupil is 6 mm and sluggish. Heart rate 54. Blood pressure 176/72. His breathing is irregular. The respiratory therapist has just arrived.",
       next: "q-airway",
     },
     {
@@ -163,13 +187,14 @@ export const northernSnowmobileTransfer: OralCase = {
       seconds: 90,
       modelAnswer: [
         "Rapid sequence intubation now. He cannot protect his airway and must travel.",
+        "Ask about allergies, medications, anticoagulants and alcohol before induction.",
         "Preoxygenate. Keep SpO2 above 90 percent throughout.",
         "Hemodynamically stable induction. Ketamine 1 to 2 mg/kg or etomidate 0.3 mg/kg. Rocuronium 1.2 mg/kg.",
         "Avoid hypotension. Push dose vasopressor ready. Keep systolic at least 110.",
         "His C spine CT is normal. Handle the neck gently and follow local clearance practice.",
         "After the tube. End tidal CO2 35 to 40. Sedation and analgesia infusions.",
       ],
-      rubric: ["nt-r1", "nt-r2"],
+      rubric: ["nt-r1", "nt-r2", "nt-h3"],
       choices: [
         {
           id: "c-rsi",
@@ -362,10 +387,11 @@ export const northernSnowmobileTransfer: OralCase = {
         "Targets. Systolic at least 110, SpO2 above 90, end tidal CO2 35 to 40.",
         "What to do if the pupil dilates again. Hypertonic saline dose and brief hyperventilation.",
         "Who to call en route. Sending physician and Ornge transport medicine.",
+        "Get collateral and next of kin details from his friends and his mother.",
         "Tell his mother honestly. Bleeding on the brain that needs urgent surgery. He is very sick.",
         "Explain where he is going and how she can get there. She usually cannot ride in the aircraft.",
       ],
-      rubric: ["nt-c2", "nt-c3"],
+      rubric: ["nt-c2", "nt-c3", "nt-h4"],
       next: "q-after",
     },
     {
@@ -388,14 +414,14 @@ export const northernSnowmobileTransfer: OralCase = {
       kind: "end",
       id: "end",
       text:
-        "The road rendezvous goes smoothly. Evan has a craniotomy shortly after midnight. Three days later he is extubated and talking. That is the end of the case.",
+        "The road rendezvous goes smoothly. He has a craniotomy shortly after midnight. Three days later he is extubated and talking. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "nt-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes a large epidural hematoma with mass effect as a neurosurgical emergency despite GCS 14.",
       points: 3,
       critical: true,
@@ -405,7 +431,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Checks tube position, ventilator settings and oxygen supply on the transport equipment before departure.",
       points: 1,
       teaching: "Problems found at the door are easy to fix. Problems found on the road are not.",
@@ -414,7 +440,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates promptly with a hemodynamically stable induction and a vasopressor ready.",
       points: 2,
       teaching: "A single episode of hypotension or hypoxia worsens outcome after head injury.",
@@ -423,7 +449,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Targets systolic at least 110, SpO2 above 90 and end tidal CO2 35 to 40.",
       points: 3,
       critical: true,
@@ -433,7 +459,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives tranexamic acid 1 g over 10 minutes then 1 g over 8 hours within 3 hours of injury.",
       points: 1,
       teaching: "CRASH 3 showed reduced head injury death with early tranexamic acid in mild to moderate injury. Benefit falls with time.",
@@ -442,7 +468,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives hyperosmolar therapy for herniation, such as 3 percent saline 250 mL or mannitol 1 g/kg.",
       points: 2,
       teaching: "Osmotherapy lowers ICP within minutes and buys time to decompression.",
@@ -451,7 +477,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses hyperventilation only briefly as a bridge and avoids a pCO2 of 25 or less.",
       points: 1,
       teaching: "Deep or prolonged hyperventilation causes cerebral vasoconstriction and ischemia.",
@@ -460,7 +486,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls CritiCall immediately as a life or limb request so acceptance and transport run in parallel.",
       points: 2,
       teaching: "CritiCall connects the sending physician, the accepting specialist and Ornge in one conference.",
@@ -469,7 +495,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses the fastest safe transport, such as a road rendezvous with an air crew, rather than waiting for weather.",
       points: 3,
       critical: true,
@@ -479,7 +505,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-d3",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Packages the patient fully with secured tube, continuous capnography, infusions, extra doses and records.",
       points: 2,
       teaching: "Prepare for the worst event on the road. Carry what you would need to treat it.",
@@ -488,7 +514,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Matches escort skills to the patient and arranges physician coverage for the department.",
       points: 2,
       teaching: "The sending physician decides who escorts. A rural department cannot be left without a physician.",
@@ -497,7 +523,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents the timeline and decisions and debriefs the team.",
       points: 1,
       teaching: "A clear timeline supports the receiving team and later review of transfer delays.",
@@ -506,7 +532,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Keeps the neurosurgeon and Ornge in a shared plan with confirmed timings.",
       points: 1,
       teaching: "Closed loop communication across three sites prevents the operating room being ready at the wrong time.",
@@ -515,7 +541,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover with targets and an if then plan for deterioration.",
       points: 2,
       teaching: "Escort teams need explicit targets and a plan for the most likely emergency.",
@@ -524,7 +550,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Tells his mother honestly how sick he is and how she can reach him.",
       points: 1,
       teaching: "Families are often separated from patients in northern transfers. Give practical details as well as the diagnosis.",
@@ -533,35 +559,74 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Accepts ongoing responsibility until handover to the transport crew and stays available.",
       points: 1,
       teaching: "The sending physician remains responsible for the patient until care is formally handed over.",
       source: "warren",
+    },
+    {
+      id: "nt-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the mechanism, the time of injury, loss of consciousness and the lucid interval.",
+      points: 2,
+      teaching: "Brief loss of consciousness followed by a lucid interval is the classic history of an epidural hematoma.",
+      source: "atls",
+    },
+    {
+      id: "nt-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about headache, vomiting and drowsiness since the crash.",
+      points: 2,
+      teaching: "Worsening headache and repeated vomiting signal rising intracranial pressure before the GCS falls.",
+      source: "atls",
+    },
+    {
+      id: "nt-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about alcohol or drugs, anticoagulants, medications and allergies before induction.",
+      points: 1,
+      teaching: "Alcohol can cloud the neurological exam. Anticoagulants and allergies change the drug plan.",
+      source: "atls",
+    },
+    {
+      id: "nt-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Gets collateral and next of kin details from his friends and his mother.",
+      points: 1,
+      teaching: "Witnesses give the mechanism and the lucid interval. Next of kin details matter before a long transfer.",
+      source: "atls",
     },
   ],
   sources: [
     {
       id: "btf",
       citation: "Carney N, et al. Guidelines for the management of severe traumatic brain injury. Fourth edition. Brain Trauma Foundation. Neurosurgery. 2017.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/27654000/",
     },
     {
       id: "crash3",
       citation: "CRASH 3 trial collaborators. Effects of tranexamic acid on death, disability, vascular occlusive events and other morbidities in patients with acute traumatic brain injury (CRASH 3). The Lancet. 2019.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/31623894/",
     },
     {
       id: "criticall",
-      citation: "CritiCall Ontario. Emergency consultation and referral service for Ontario hospitals.",
-      url: "https://www.criticall.org",
+      citation: "Ontario Ministry of Health. Ontario Life or Limb Policy. 2024. Updated 2025.",
+      url: "https://www.ontario.ca/page/ontario-life-or-limb-policy",
     },
     {
       id: "ornge",
-      citation: "Ornge. Air ambulance and critical care land transport services in Ontario.",
-      url: "https://www.ornge.ca",
+      citation: "Ornge. 2024/2025 Annual Report. 2025.",
+      url: "https://www.ornge.ca/Media/Ornge/Documents/Publications/Annual%20Report/Annual-Report-2024-2025.pdf",
     },
     {
       id: "warren",
       citation: "Warren J, et al. Guidelines for the inter and intrahospital transport of critically ill patients. Critical Care Medicine. 2004.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/14707589/",
     },
     {
       id: "atls",
@@ -569,7 +634,7 @@ export const northernSnowmobileTransfer: OralCase = {
       url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

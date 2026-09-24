@@ -10,14 +10,21 @@ export const highwayBusCollision: OralCase = {
   priorityTopic: "multiple-patients",
   keyFeatures: [{ topic: "multiple-patients", n: 1 }, { topic: "multiple-patients", n: 3 }, { topic: "multiple-patients", n: 4 }, { topic: "multiple-trauma", n: 1 }, { topic: "multiple-trauma", n: 2 }],
   summary: "Paramedics warn of many injured adults and children heading to a regional hospital that is not a trauma centre.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician in charge at a 300 bed regional hospital in central Ontario on a Friday in February. It is 15:20. " +
-    "The hospital has general surgery, orthopedics and anesthesia on call in house, two operating rooms running elective lists, one CT scanner and no pediatric intensive care. " +
-    "The nearest lead trauma hospital with pediatric trauma care is 110 km away. " +
-    "The paramedic supervisor calls the department directly: 'A coach bus carrying a school ski club has collided with a transport truck on the highway, 25 minutes from you. " +
-    "Incident command is set up on scene. We estimate 30 or more patients, about half of them children. First ambulances will reach you in 20 minutes. You are the closest hospital.' " +
-    "The charge nurse is standing beside you, waiting.",
+    "You are working in the emergency department of a community hospital when the following patient arrives. Paramedics call to say a bus carrying a school ski club has hit a transport truck 25 minutes away, with 30 or more patients, about half of them children. The nearest lead trauma hospital is 110 km away.",
+  card: {
+    vitals: {
+      temperature: "Not recorded",
+      pulse: "Not recorded",
+      resp: "Not recorded",
+      bp: "Not recorded",
+      o2sat: "Not recorded",
+      weight: "Not recorded",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "board",
@@ -48,6 +55,7 @@ export const highwayBusCollision: OralCase = {
       id: "peds",
       label: "Pediatric resources",
       result:
+        "No pediatric intensive care. The nearest lead trauma hospital with pediatric trauma care is 110 km away. " +
         "Two length based resuscitation tapes with colour coded equipment bags. Pediatric airway cart in resus. Pediatrician on call from home.",
     },
     {
@@ -95,6 +103,11 @@ export const highwayBusCollision: OralCase = {
       result:
         "Heart rate 124, blood pressure 102/68, respiratory rate 36, SpO2 86 percent. Absent breath sounds on the left. Chest wall crepitus. FAST shows no abdominal fluid.",
     },
+    {
+      id: "call",
+      label: "The paramedic supervisor's call",
+      result: "You are the emergency physician in charge at a 300 bed regional hospital in central Ontario. It is 15:20 on a Friday in February. The paramedic supervisor calls the department directly: 'A coach bus carrying a school ski club has collided with a transport truck on the highway, 25 minutes from you. Incident command is set up on scene. We estimate 30 or more patients, about half of them children. First ambulances will reach you in 20 minutes. You are the closest hospital.' The charge nurse is standing beside you, waiting.",
+    },
   ],
   start: "s-open",
   nodes: [
@@ -117,7 +130,7 @@ export const highwayBusCollision: OralCase = {
         "Confirm the key facts back to the paramedic supervisor: number, types of injury, children, arrival times.",
         "Stay in the department as the medical lead. Do not go to the scene.",
       ],
-      rubric: ["mc-l1"],
+      rubric: ["mc-l1", "mc-h1"],
       choices: [
         {
           id: "c-code-orange",
@@ -176,7 +189,7 @@ export const highwayBusCollision: OralCase = {
         "Alert the blood bank and prepare pediatric equipment. Use MCI tag numbers for registration.",
         "Contact CritiCall early to line up the lead trauma hospital and pediatric trauma centre.",
       ],
-      rubric: ["mc-l2", "mc-l3", "mc-d1"],
+      rubric: ["mc-l2", "mc-l3", "mc-d1", "mc-h4"],
       next: "s-wave",
     },
     {
@@ -272,11 +285,12 @@ export const highwayBusCollision: OralCase = {
       modelAnswer: [
         "Close the main entrance to casualties. Route everyone through the single triage point.",
         "Re triage every self presenter. Field status is not reliable and triage is dynamic.",
+        "Ask each self presenter where they sat, about seat belts and about pain.",
         "The boy goes straight to resus. He is shocked with a seat belt sign.",
         "Set up a family reception and reunification area away from the department with social work and spiritual care.",
         "Keep registration going with MCI numbers so children are not lost or mixed up.",
       ],
-      rubric: ["mc-a3", "mc-c1"],
+      rubric: ["mc-a3", "mc-c1", "mc-h2"],
       choices: [
         {
           id: "c-retriage",
@@ -317,8 +331,9 @@ export const highwayBusCollision: OralCase = {
         "7 year old. She has a blown pupil and Cushing physiology, so she is herniating. Intubate with neuroprotective targets. Give 3 percent saline 2 to 5 mL/kg IV. CT head only if it does not delay transfer.",
         "She needs a neurosurgeon. Use the helicopter for her through CritiCall to the pediatric trauma centre.",
         "Do not send an unstable bleeding patient on a long flight when a surgeon is on site.",
+        "Get an AMPLE history for each red patient from the patient, a chaperone or the paramedics.",
       ],
-      rubric: ["mc-m1", "mc-d2", "mc-m2"],
+      rubric: ["mc-m1", "mc-d2", "mc-m2", "mc-h3"],
       choices: [
         {
           id: "c-allocate",
@@ -419,7 +434,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Activates the hospital external disaster plan early and stays in the department as medical lead.",
       points: 3,
       critical: true,
@@ -429,7 +444,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Creates capacity by discharging, moving admitted patients and holding the operating rooms.",
       points: 2,
       teaching: "Surge capacity comes from clearing current patients as much as from calling in staff.",
@@ -438,7 +453,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-l3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Sets up a single triage entry point, treatment zones with named leads and incident management roles.",
       points: 2,
       teaching: "A clear structure with defined roles prevents freelancing. Incident management uses a single chain of command.",
@@ -447,7 +462,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-l4",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Stands down deliberately, restores the department and contributes to an after action review.",
       points: 1,
       teaching: "Recovery is a planned phase. The after action review is how the plan gets better.",
@@ -456,7 +471,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Applies START correctly to adults, including the respiratory rate over 30 and apnea after repositioning rules.",
       points: 2,
       teaching: "START sorts by walking, breathing, perfusion and mental status. It takes under a minute per patient.",
@@ -465,7 +480,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Applies JumpSTART to children, including respiratory rate under 15 or over 45 and 5 rescue breaths for an apneic child with a pulse.",
       points: 3,
       critical: true,
@@ -475,7 +490,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Re triages self presenting and walking patients and recognizes the shocked child with a seat belt sign.",
       points: 2,
       teaching: "Triage is dynamic. Walking wounded after a high energy crash can hide serious abdominal injury.",
@@ -484,7 +499,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Sends the unstable bleeding patient to the operating room rather than to CT or a long transfer.",
       points: 3,
       critical: true,
@@ -494,7 +509,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Decompresses the chest of the patient with tension physiology before imaging.",
       points: 1,
       teaching: "Tension pneumothorax is a clinical diagnosis. Decompress first, image later.",
@@ -503,7 +518,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Conserves O negative blood for children and females of childbearing potential and asks for resupply early.",
       points: 2,
       teaching: "O positive is safe for adult males and older women in an emergency. O negative is the scarcest resource in a mass casualty incident.",
@@ -512,7 +527,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Contacts CritiCall early to arrange trauma and pediatric trauma centre capacity.",
       points: 1,
       teaching: "Early notice lets receiving centres prepare and lets transport be matched to the sickest patients.",
@@ -521,7 +536,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses the single available aircraft for the patient who needs a service only the trauma centre can provide.",
       points: 2,
       teaching: "Match scarce transport to the need that cannot be met locally. Here that is pediatric neurosurgery.",
@@ -530,7 +545,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Opens a staffed family reception and reunification area away from treatment zones.",
       points: 1,
       teaching: "Parents arriving in numbers need a place, a person and accurate information. It keeps treatment areas clear.",
@@ -539,7 +554,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Refers media to hospital communications and gives no patient information.",
       points: 1,
       teaching: "Only the designated spokesperson speaks to media. Patient privacy still applies in a disaster.",
@@ -548,7 +563,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Does not start CPR on an adult who stays apneic after airway repositioning during a mass casualty incident.",
       points: 2,
       teaching: "Mass casualty triage aims for the greatest good for the greatest number. Resources go to salvageable patients first.",
@@ -557,7 +572,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Matches families to children using the registration system and gives updates in private.",
       points: 1,
       teaching: "Misidentification of children is a known disaster risk. MCI numbers link each child to the right family.",
@@ -566,10 +581,46 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Runs a hot debrief and arranges psychological support for staff.",
       points: 1,
       teaching: "Pediatric mass casualty events are hard on staff. Early support and follow up reduce lasting distress.",
+      source: "caep-disaster",
+    },
+    {
+      id: "mc-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Confirms with the paramedic supervisor the number of patients, their ages, injury types, field triage categories and arrival times.",
+      points: 2,
+      teaching: "The call is the history of the incident. Numbers, ages and timing decide how much capacity to open.",
+      source: "caep-disaster",
+    },
+    {
+      id: "mc-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks each self presenting patient where they sat, about seat belt use, and about pain, such as abdominal pain.",
+      points: 2,
+      teaching: "Mechanism and symptoms unmask hidden injury in walking patients after a high energy crash.",
+      source: "atls",
+    },
+    {
+      id: "mc-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Gets an AMPLE history for each red patient from the patient, a chaperone or the paramedics.",
+      points: 1,
+      teaching: "Allergies, medications, past history, last meal and events change drug choices and surgical risk. A chaperone may be the only source for a child.",
+      source: "atls",
+    },
+    {
+      id: "mc-h4",
+      competency: "leadership",
+      criterion: "history",
+      text: "Asks for the current state of the department. Board, staffing, blood supply, operating rooms and CT.",
+      points: 1,
+      teaching: "You cannot plan a surge without knowing what is already in use. Ask before assigning space and staff.",
       source: "caep-disaster",
     },
   ],
@@ -577,6 +628,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "start",
       citation: "Benson M, Koenig KL, Schultz CH. Disaster triage. START, then SAVE. A new method of dynamic triage for victims of a catastrophic earthquake. Prehospital and Disaster Medicine. 1996.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/10159733/",
     },
     {
       id: "jumpstart",
@@ -584,11 +636,11 @@ export const highwayBusCollision: OralCase = {
     },
     {
       id: "oha-codes",
-      citation: "Ontario Hospital Association. Standardized hospital emergency colour codes. Code Orange for external disasters.",
+      citation: "Ontario Hospital Association. Emergency management toolkit. Developing a sustainable emergency management program for hospitals. 2008.",
     },
     {
       id: "ems-ims",
-      citation: "Government of Ontario. Emergency Management Ontario. Incident Management System (IMS) Guidance. Version 2.0.",
+      citation: "Government of Ontario. Emergency Management Ontario. Incident Management System (IMS) Guidance. Version 2.0. 2022.",
       url: "https://www.ontario.ca/document/incident-management-system-ims-guidance-version-2",
     },
     {
@@ -602,7 +654,7 @@ export const highwayBusCollision: OralCase = {
       url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
