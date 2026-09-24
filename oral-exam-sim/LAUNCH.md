@@ -36,18 +36,19 @@ The iOS home screen truncates long names under the icon. "Preceptor: CCFP-EM" wi
 
 The app record exists under `com.preceptor.oral`. Update the name to Preceptor: CCFP-EM.
 
-1. Monetization > In-App Purchases. Three Non-Consumables:
+1. Monetization > In-App Purchases. App Store Connect has none yet. Create all three as new Non-Consumables:
 
    | Reference name | Product ID | Price |
    |---|---|---|
    | Complete: written and oral | `ccfpem_complete_lifetime` | CA$199.99 |
    | Written: SAMP bank | `ccfpem_written_lifetime` | CA$149.99 |
-   | Oral: oral simulator | `oral_full_lifetime` (the existing record) | CA$99.99 |
+   | Oral: oral simulator | `oral_full_lifetime` | CA$99.99 |
 
    Add a paywall screenshot and this review note to each: "Ten SAMPs and two oral cases are free. Complete opens both components. Written or Oral opens one. Restore is in More and on the paywall."
 2. Agreements, Tax and Banking and the Paid Apps agreement must be active.
 3. Stay in the App Store Small Business Program (15 percent).
 4. App Privacy: see `store/listing.md`.
+5. Export compliance: `Info.plist` sets `ITSAppUsesNonExemptEncryption` to false. The app uses only the encryption built into iOS (HTTPS to the stores), so uploads skip the export compliance question.
 
 ## 4. Google Play Console
 

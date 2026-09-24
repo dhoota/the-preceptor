@@ -28,7 +28,7 @@ export const RC_OFFERING = "ccfpem";
 
 export type ProductKey = "complete" | "written" | "oral";
 
-/** Store product IDs. `oral_full_lifetime` keeps the record already created. */
+/** Store product IDs. All three are created new in App Store Connect and Play Console. */
 export const PRODUCTS: Record<ProductKey, { id: string; grants: (keyof typeof ENTITLEMENTS)[]; fallbackPrice: string }> = {
   complete: { id: "ccfpem_complete_lifetime", grants: ["written", "oral"], fallbackPrice: "CA$199.99" },
   written: { id: "ccfpem_written_lifetime", grants: ["written"], fallbackPrice: "CA$149.99" },
