@@ -43,6 +43,8 @@ function buildHistory(bank: MockBank): { answers: Answered[]; mocks: Mock[]; fla
   const now = Date.now();
   const pool = [...bank.items, ...bank.cases.flatMap((c) => c.items)];
   const picks = pool.filter(() => rand() < 0.6);
+  // At least one answer in every Client Needs area the bank covers, so Progress has no empty rows.
+  for (const n of NEED_IDS) if (!picks.some((i) => i.need === n)) picks.push(...pool.filter((i) => i.need === n).slice(0, 2));
   const answers: Answered[] = picks.map((it, k) => {
     const skill = 0.45 + (k / Math.max(1, picks.length)) * 0.35;
     const max = maxScore(it);
@@ -91,6 +93,8 @@ export async function applySeed(fromUrl: boolean, forceDemo = false): Promise<vo
       }
     }
   }
+  // The screenshot script reads the bank to pick and answer items by kind.
+  (window as unknown as { __BANK?: unknown }).__BANK = getBank();
   if (!fromUrl) return;
   const { answers, mocks, flags } = buildHistory(getBank());
   localStorage.setItem("nclexrn_answers_v1", JSON.stringify(answers));
