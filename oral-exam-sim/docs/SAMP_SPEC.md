@@ -14,6 +14,7 @@ Rules carry a source tag so you know why they exist:
 
 - Do not copy or paraphrase CFPC sample SAMPs, published question banks, textbooks or any recalled exam content. Use the CFPC samples only to understand the format. [CFPC]
 - Invent every patient, number and detail. The clinical teaching may be standard. The scenario and wording must be yours. [QA]
+- No question, prompt, stem, explanation or reviewer reference may derive from examination content. That covers recalled items, candidate forums and prep material built from recall. A match to the CFPC samples or to known recall is a rebuild, not an edit. [QA]
 - No stem may be a near copy of another SAMP in the bank. The tests reject two stems whose word trigram overlap is 0.5 or more. [QA]
 
 ## 2. Format
@@ -70,14 +71,21 @@ From 2027 every case on the CFPC SAMP exam is multiple choice (MCQ) or short men
 - No distractor is also correct. If two options could both be defended, rewrite one. [QA]
 - The option states the action or finding only. The reason why lives in `explanation`, never in the option. [QA]
 - Length parity. The keyed option must not stand out. In the CFPC sample it averages 1.1 times the mean distractor length. The rule: at most 1.5 times. Across a batch it is the longest option in no more than 35 percent of `single` questions. [CFPC] [QA]
+- Why this matters. In the MCCQE bank the key was the longest option in about 60 percent of items before audit. A test-taker who picked the longest option scored far above chance without reading the stem. Writers make the key longer because they add the qualifier that makes it right. [QA]
+- Fix length bias by moving the qualifying or justifying clause out of the key and into the explanation. Do not pad distractors with filler to match. Padding is worse than the disease: it adds cues and wrong detail. A distractor may be lengthened only with a real, specific clinical detail of the same kind the key carries. [QA]
+- Distractors match the key in specificity. If the key names a drug, dose and route, so does each distractor. [QA]
+- No "all of the above", "none of the above", "both A and B" or any reference to another option by letter. A cross reference breaks when options are reordered, and it cues the answer. "None" as a menu answer is allowed (section 6). [QA]
 - No absolute words in options: always, never, completely, entirely, absolutely, invariably, guaranteed. Test-takers learn that absolutes mark wrong answers. [QA]
-- Position balance. The key must not always sit in the first few positions. In the CFPC sample it appears in every position, often the last. Alphabetical order decides position, so choose and word distractors so the key lands in different positions. Across a batch no position holds more than 30 percent of `single` keys, and every position from first to fifth holds at least one. [CFPC] [QA]
+- Position balance. The key must not always sit in the first few positions. In the CFPC sample it appears in every position, often the last. Alphabetical order decides position, so choose and word distractors so the key lands in different positions. Across an expansion batch no position holds more than 25 percent of `single` keys (30 percent for the conformed s01 to s18 batches), and every position from first to fifth holds at least one. [CFPC] [QA]
+- Balance parity and position before the accuracy review, not after. A late rebalance rewords options the reviewers already checked. [QA]
 
 ## 8. Explanations
 
 This is where most real defects were found. [QA]
 
-- 3 to 6 short sentences, at least 150 characters.
+- The explanation is the product. It is what a candidate learns from. 3 to 6 short sentences, at least 200 characters. Aim for about 300. [QA]
+- No formulaic openers ("The clinical picture suggests", "This is the classic presentation of", "It is important to note", "In conclusion"), no mnemonics and no cute phrasing. Start with the finding that decides the answer. [QA]
+- Give each tempting distractor a true reason at the same level of detail as the key's reason. "Not indicated" is not a reason. [QA]
 - Order: why the keyed answer is right, tied to specific facts in the stem. Then why each tempting distractor is wrong, named plainly. Do not restate the citation. The app shows it.
 - Every claim must trace to the stem, an update or the cited source. Never add a finding the case did not give.
 - Every reason given for rejecting a distractor must itself be true. A right key with a false reason teaches something false.
@@ -93,6 +101,7 @@ This is where most real defects were found. [QA]
 - Use the current Canadian guideline as the source of record: CAEP, CPS, TREKK, Heart and Stroke, CCS, CTS, SOGC, Thrombosis Canada, Diabetes Canada, Canadian Immunization Guide, PHAC, Hypertension Canada, Canadian decision rules. Use international guidance where no Canadian one exists. Never use a US or UK guideline in place of a current Canadian one. [QA]
 - Check the guideline year. Stale recommendations are a known defect class. [QA]
 - Use products and formulations sold in Canada. [QA]
+- When a threshold or dose differs between references, state in the stem which one applies ("Using the Canadian Cardiovascular Society 2020 guideline") or key only what every current reference agrees on. [QA]
 - When practice depends on the province, say so in the stem or keep the key to wording that is true everywhere. Name the province when a statute is tested. [QA]
 
 ## 10. Units and notation
@@ -159,9 +168,10 @@ For expansion batches the tests enforce:
 - Prompts of 10 to 30 words.
 - Options in alphabetical or numeric order, None or "No ..." last, at most 60 characters, no final period, no absolute words.
 - Similar option lengths: longest at most 2.1 times the shortest (2.6 in a menu). The key at most 1.5 times the mean distractor length.
-- Per batch: no key position above 30 percent, every position used, and the key longest in no more than 35 percent of `single` questions.
+- Per batch: no key position above 25 percent (30 percent for conformed batches), every position used, and the key longest in no more than 35 percent of `single` questions.
 - Vitals in the `vitals` field in the right formats. No blood pressure in the stem text. Hyphenated ages.
-- Explanations of at least 150 characters that never call the keyed answer wrong.
+- Explanations of at least 200 characters that never call the keyed answer wrong and have no formulaic opener.
+- No "all of the above", "none of the above" or reference to another option by letter.
 - Every citation names a year and is not a category.
 - No near duplicate stems across the bank.
 

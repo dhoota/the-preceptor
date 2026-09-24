@@ -25,6 +25,10 @@ const CONFORMED = new Set<string>([...conformance.batches, ...(process.env.CONFO
 const batches = [...Object.keys(PLAN), ...CONFORMED].filter((b) => (only ? b === only : true));
 
 const ABSOLUTE = /\b(always|never|completely|entirely|absolutely|invariably|guaranteed)\b/i;
+/** Options that point at other options, or break once options are reordered. */
+const CROSS_REF = /\b(all|none) of the above\b|\bboth [a-e] and [a-e]\b|\b(option|answer) [a-e]\b|\b[a-e] and [a-e] only\b/i;
+/** Formulaic openers that read as machine written (MCCQE bank lesson). */
+const AI_OPENER = /\b(the clinical picture (indicates|suggests)|this is the classic presentation of|classic presentation of|it is important to note|in conclusion)\b/i;
 const LAST_OK = /^(none|no)\b/i;
 const CATEGORY_CITATION = /\b(standard|general|usual|common)\b.*\breferences?\b|^(canadian )?guidelines?\.?$|reference text/i;
 
@@ -170,13 +174,15 @@ for (const b of batches) {
                   expect(o, "no final period").not.toMatch(/\.$/);
                   expect(words(o), o).toBeLessThanOrEqual(10);
                   expect(o, "no absolute words").not.toMatch(ABSOLUTE);
+                  expect(o, "no all or none of the above, no reference to another option").not.toMatch(CROSS_REF);
                 }
                 expect(parityOk(q), "key no longer than 1.5 times the mean distractor").toBe(true);
                 expect(spreadOk(q), `similar option lengths: ${q.options.map((o) => o.length).join(",")}`).toBe(true);
                 for (const o of q.options) expect(o.length, o).toBeLessThanOrEqual(60);
               });
             it("explains without contradicting the key", () => {
-              if (full) expect(q.explanation.length).toBeGreaterThanOrEqual(150);
+              if (full) expect(q.explanation.length, "explanations are the product: at least 200 characters").toBeGreaterThanOrEqual(200);
+              if (full) expect(q.explanation, "no formulaic openers").not.toMatch(AI_OPENER);
               expect(contradictsKey(q)).toBe(false);
             });
           });
@@ -194,7 +200,8 @@ for (const b of batches) {
         const len = q.options[q.correct].length;
         if (q.options.every((o, i) => i === q.correct || o.length < len)) longest++;
       }
-      expect(Math.max(...pos) / singles.length, `positions ${pos.join(",")}`).toBeLessThanOrEqual(0.3);
+      // Expansion batches: no position above 25 percent (the MCCQE hard gate). Legacy batches: 30 percent.
+      expect(Math.max(...pos) / singles.length, `positions ${pos.join(",")}`).toBeLessThanOrEqual(full ? 0.25 : 0.3);
       expect(pos.every((n) => n > 0), `every position holds a key: ${pos.join(",")}`).toBe(true);
       expect(longest / singles.length, "key is the single longest option").toBeLessThanOrEqual(0.35);
     });
@@ -256,6 +263,10 @@ describe("gate self test", () => {
     expect(optionsOrdered(["10 to 20%", "21 to 40%", "41 to 60%"])).toBe(true);
     expect(optionsOrdered(["epinephrine 0.5 mg IM", "epinephrine 0.3 mg IM", "glucagon 1 mg IV"])).toBe(true);
     expect(ABSOLUTE.test("Never give fluids")).toBe(true);
+    expect(CROSS_REF.test("None of the above")).toBe(true);
+    expect(CROSS_REF.test("Both A and C")).toBe(true);
+    expect(CROSS_REF.test("None")).toBe(false);
+    expect(AI_OPENER.test("This is the classic presentation of appendicitis.")).toBe(true);
     const q = { kind: "single", id: "q", prompt: "Which of the following?", options: ["a", "b", "c", "d", "a very long and detailed keyed answer"], correct: 4, explanation: "", keyFeature: { topic: "x", n: 1 }, source: "s" } as SampQuestion;
     expect(parityOk(q)).toBe(false);
     expect(spreadOk(q)).toBe(false);

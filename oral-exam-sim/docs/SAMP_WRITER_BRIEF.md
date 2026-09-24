@@ -25,9 +25,9 @@ Write the topic file 4 to 6 SAMPs at a time: create it with the first few, then 
 
 1. Build the case first: stem, vitals and the updates. Put every fact the explanations will need into the case.
 2. Write the question and the keyed answer.
-3. Write 4 distractors that a partly prepared candidate might choose. Make them the same length and grammar as the key. No strawmen. None may also be defensible.
-4. Sort the options alphabetically ("None" or "No ..." last) and set `correct`. Across the batch, aim for the key in each position about equally. Adjust distractor wording to move the key.
-5. Write the explanation: why the key is right, tied to stem facts, then why each tempting distractor is wrong. Every reason must be true. Recompute every number.
+3. Write 4 distractors that a partly prepared candidate might choose. Make them the same length, grammar and specificity as the key. No strawmen. None may also be defensible. If the key runs long, move its qualifying clause into the explanation. Never pad a distractor with filler. No "all" or "none of the above" and no reference to another option.
+4. Sort the options alphabetically ("None" or "No ..." last) and set `correct`. Across the batch, aim for the key in each position about equally. No position may hold more than 25 percent of `single` keys. Balance this as you write, not at the end. Adjust distractor wording to move the key.
+5. Write the explanation: why the key is right, tied to stem facts, then why each tempting distractor is wrong. Every reason must be true. Recompute every number. At least 200 characters, about 300 is the aim. Open with the deciding finding, never a stock phrase such as "The clinical picture suggests". No mnemonics.
 6. Cite a real source with an author or body, a work and a year. Verify it with WebSearch or WebFetch. Never invent one.
 
 ## Checks before you report
