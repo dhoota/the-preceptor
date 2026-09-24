@@ -3,9 +3,80 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const TINT: Source = {
-  id: "tintinalli",
-  citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine. A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020.",
+const HUXTABLE: Source = {
+  id: "huxtable-opioid-tolerant",
+  citation: "Huxtable CA, Roberts LJ, Somogyi AA, Macintyre PE. Acute pain management in opioid-tolerant patients. A growing challenge. Anaesth Intensive Care. 2011.",
+  url: "https://doi.org/10.1177/0310057X1103900505",
+};
+const CPIC: Source = {
+  id: "cpic-opioids",
+  citation:
+    "Crews KR, Monte AA, Huddart R, et al. Clinical Pharmacogenetics Implementation Consortium guideline for CYP2D6, OPRM1, and COMT genotypes and select opioid therapy. Clin Pharmacol Ther. 2021.",
+  url: "https://doi.org/10.1002/cpt.2149",
+};
+const KARLINER: Source = {
+  id: "karliner-interpreters",
+  citation:
+    "Karliner LS, Jacobs EA, Chen AH, Mutha S. Do professional interpreters improve clinical care for patients with limited English proficiency? A systematic review of the literature. Health Serv Res. 2007.",
+  url: "https://doi.org/10.1111/j.1475-6773.2006.00629.x",
+};
+const ACP_LBP: Source = {
+  id: "acp-low-back-pain",
+  citation:
+    "Qaseem A, Wilt TJ, McLean RM, Forciea MA. Noninvasive treatments for acute, subacute, and chronic low back pain. A clinical practice guideline from the American College of Physicians. Ann Intern Med. 2017.",
+  url: "https://doi.org/10.7326/M16-2367",
+};
+const DAVISON: Source = {
+  id: "davison-kidney-pain",
+  citation: "Davison SN. Clinical pharmacology considerations in pain management in patients with advanced kidney failure. Clin J Am Soc Nephrol. 2019.",
+  url: "https://doi.org/10.2215/CJN.05180418",
+};
+const ASA_OSA: Source = {
+  id: "asa-osa",
+  citation:
+    "American Society of Anesthesiologists Task Force on Perioperative Management of Patients with Obstructive Sleep Apnea. Practice guidelines for the perioperative management of patients with obstructive sleep apnea. An updated report. Anesthesiology. 2014.",
+  url: "https://doi.org/10.1097/ALN.0000000000000053",
+};
+const FLUMAZENIL_PM: Source = {
+  id: "flumazenil-pm",
+  citation: "Fresenius Kabi Canada. Flumazenil Injection, USP. Canadian product monograph. Revised 2025.",
+  url: "https://www.fresenius-kabi.com/content/dam/fresenius-kabi/ca/products/product-documents/iv-drugs/flumazenil-injection_/Flumazenil-EN-PM-081525.pdf.coredownload.inline.pdf",
+};
+const BOAST: Source = {
+  id: "boast-compartment",
+  citation: "British Orthopaedic Association. BOAST. Diagnosis and management of compartment syndrome of the extremities. 2014, updated 2025.",
+  url: "https://www.boa.ac.uk/resource/boast-10-pdf.html",
+};
+const BASURTO: Source = {
+  id: "basurto-pancreatitis",
+  citation: "Basurto Ona X, Rigau Comas D, Urrútia G. Opioids for acute pancreatitis pain. Cochrane Database Syst Rev. 2013.",
+  url: "https://doi.org/10.1002/14651858.CD009179.pub2",
+};
+const OSULLIVAN: Source = {
+  id: "osullivan-femur",
+  citation:
+    "O'Sullivan L, Nasta S, Whitaker J, Rashid S, Zamora R. Hemoglobin trends and transfusion risk in isolated femoral shaft fractures. A multi-year retrospective analysis. Eur J Orthop Surg Traumatol. 2025.",
+  url: "https://doi.org/10.1007/s00590-025-04436-9",
+};
+const TQIP: Source = {
+  id: "acs-tqip-pain",
+  citation: "American College of Surgeons Trauma Quality Programs. Best practices guidelines for acute pain management in trauma patients. 2020.",
+  url: "https://www.facs.org/media/exob3dwk/acute_pain_guidelines.pdf",
+};
+const KETOROLAC_PM: Source = {
+  id: "ketorolac-pm",
+  citation: "Juno Pharmaceuticals. Ketorolac Tromethamine Injection, USP. Canadian product monograph. Revised 2023.",
+  url: "https://pdf.hres.ca/dpd_pm/00072814.PDF",
+};
+const CIAVOLA: Source = {
+  id: "ciavola-analgosedation",
+  citation: "Ciavola L, Sogni F, Mucci B, et al. Analgosedation in pediatric emergency care. A comprehensive scoping review. Pharmaceuticals (Basel). 2024.",
+  url: "https://doi.org/10.3390/ph17111506",
+};
+const ALFORD: Source = {
+  id: "alford-oat-pain",
+  citation: "Alford DP, Compton P, Samet JH. Acute pain management for patients receiving maintenance methadone or buprenorphine therapy. Ann Intern Med. 2006.",
+  url: "https://doi.org/10.7326/0003-4819-144-2-200601170-00010",
 };
 const RH: Source = {
   id: "roberts-hedges",
@@ -222,9 +293,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Continue it at his usual dose", "Double the next scheduled dose", "Hold it until the pain is controlled", "Replace it with a fentanyl patch", "Switch it to oral morphine"],
         correct: 0,
         explanation:
-          "Continuing his usual long-acting hydromorphone keeps his baseline opioid requirement covered, so the acute doses can treat the new fracture pain. Holding it would leave him underdosed and at risk of withdrawal. Doubling it gives a delayed effect that cannot be titrated. A fentanyl patch takes 12 hours or more to reach effect and cannot be titrated for acute pain. Switching to morphine adds conversion error with no benefit.",
+          "He is opioid tolerant, so his usual long-acting hydromorphone is continued to cover his baseline need and prevent withdrawal, and extra short-acting doses treat the new fracture pain. Holding it would leave him underdosed and at risk of withdrawal. Doubling it gives a delayed effect that cannot be titrated. A fentanyl patch is slow to reach effect and cannot be titrated for acute pain. Switching to morphine adds conversion error with no benefit.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "huxtable-opioid-tolerant",
       },
       {
         id: "q3",
@@ -251,7 +322,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "schwenk-ketamine",
       },
     ],
-    sources: [TINT, ESMO_PAIN, SCHWENK],
+    sources: [HUXTABLE, ESMO_PAIN, SCHWENK],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -296,12 +367,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["codeine 15 mg PO", "ketamine 22 mg IV", "morphine 1.5 mg IV", "morphine 4.5 mg IV", "No further analgesia"],
         correct: 2,
         explanation:
-          "A FLACC score of 6 is still moderate to severe pain, so a titrated IV opioid is needed on top of the block. Morphine 0.1 mg/kg is 1.5 mg for 15 kg and can be repeated after reassessment. 4.5 mg is 0.3 mg/kg, three times a standard single IV dose. Codeine is not recommended for children under 12 in Canada because its conversion to morphine is unpredictable. Ketamine 22 mg is about 1.5 mg/kg, a dissociative sedation dose rather than an analgesic dose. Stopping now leaves him in pain.",
+          "A FLACC score of 6 is still moderate to severe pain, so a titrated IV opioid is needed on top of the block. The Canadian Paediatric Society lists IV morphine at 0.05 to 0.1 mg/kg a dose, so 0.1 mg/kg is 1.5 mg for 15 kg, repeated after reassessment. 4.5 mg is 0.3 mg/kg, three times the top of that range. Codeine should not be used in children in Canada. Ketamine 22 mg is about 1.5 mg/kg, a dissociative sedation dose rather than an analgesic dose. Stopping now leaves him in pain.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "cps-pain",
       },
     ],
-    sources: [FLACC, BLACK, TINT],
+    sources: [FLACC, BLACK, CPS22],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -334,9 +405,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Give lorazepam 1 mg SL", "Give morphine 2 mg IV and reassess", "Give morphine 10 mg IV as one bolus", "Reassess her pain in 2 hours", "Wait for the acetaminophen to act"],
         correct: 1,
         explanation:
-          "Her pain is still 6 out of 10 while she is alert with a normal respiratory rate, so a further small IV dose followed by reassessment is the correct titration step. Morphine 10 mg as one bolus risks oversedation and hypoventilation, which also threatens fetal oxygenation. Reassessing in 2 hours, or waiting for acetaminophen alone, leaves her pain undertreated. Lorazepam treats anxiety, not pain.",
+          "Her pain is still 6 out of 10 while she is alert with a normal respiratory rate, so a further small IV dose followed by reassessment is the correct titration step. In an emergency department protocol, giving another small opioid dose whenever the patient still wanted more gave satisfactory relief in most patients. Morphine 10 mg as one bolus risks oversedation and hypoventilation, which also threatens fetal oxygenation. Reassessing in 2 hours, or waiting for acetaminophen alone, leaves her pain undertreated. Lorazepam treats anxiety, not pain.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "chang-titration",
       },
       {
         id: "q3",
@@ -357,7 +428,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "hqo-acute-opioids",
       },
     ],
-    sources: [HC_NSAID, TINT, HQO],
+    sources: [HC_NSAID, CHANG16, HQO],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -419,12 +490,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "After propofol and fentanyl he should leave with a responsible adult and should not drive, operate machinery or make important decisions for the rest of the day, because subtle impairment outlasts apparent recovery. Driving after an hour or leaving alone ignores that impairment. Propofol is short acting, so a routine 6-hour stay for delayed apnea is not needed once he is back to baseline. There is no reason to hold clozapine for 48 hours.",
+          "After propofol and fentanyl he should leave with a responsible adult who can report problems, and he should not drive, operate machinery or make important decisions until the drug effects have worn off. Driving after an hour or leaving alone ignores that residual impairment. Propofol is short acting, so a routine 6-hour stay for delayed apnea is not needed once he is back to baseline. There is no reason to hold clozapine for 48 hours.",
         keyFeature: { topic: TOPIC, n: 6 },
-        source: "tintinalli",
+        source: "asa-moderate-sedation",
       },
     ],
-    sources: [GREEN11, MINER07, TINT],
+    sources: [GREEN11, MINER07, ASA18],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -507,7 +578,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "Codeine is a prodrug that must be converted to morphine by CYP2D6, and people with low CYP2D6 activity get little analgesia from it. His lack of response on several occasions fits this pattern and should be taken at face value. Nothing in his history supports drug seeking or tolerance. Codeine is not cleared unusually fast by the kidneys. A low dose from a friend would not explain repeated failures with prescriptions.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "cpic-opioids",
       },
       {
         id: "q2",
@@ -555,7 +626,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "moore-dental",
       },
     ],
-    sources: [TINT, RH, MOORE],
+    sources: [CPIC, RH, MOORE],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -576,9 +647,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Infer it from his vital signs", "Numeric scale through his son", "Numeric scale via an interpreter", "Observe his facial expression only", "Wait until he reports pain himself"],
         correct: 2,
         explanation:
-          "He can self-report if he has language access, and self-report is the reference standard for pain. A trained medical interpreter avoids the filtering seen here, where his son says he is fine. Vital signs are a poor guide to pain intensity. Observation alone is a fallback for patients who cannot self-report. Waiting for him to ask may leave pain untreated in a patient who does not want to be a bother.",
+          "He can self-report if he has language access, and self-report is the reference standard for pain. Professional interpreters improve communication and clinical care compared with ad hoc interpreters such as family members, and they avoid the filtering seen here, where his son says he is fine. Vital signs are a poor guide to pain intensity. Observation alone is a fallback for patients who cannot self-report. Waiting for him to ask may leave pain untreated in a patient who does not want to be a bother.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "karliner-interpreters",
       },
       {
         id: "q2",
@@ -622,7 +693,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "chang-titration",
       },
     ],
-    sources: [TINT, MARCO, CHANG13, CHANG16],
+    sources: [KARLINER, MARCO, CHANG13, CHANG16],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -679,12 +750,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         ],
         correct: [3, 5],
         explanation:
-          "Staying active within pain limits speeds recovery compared with bed rest for acute low back pain, and superficial heat is a reasonable adjunct for short-term relief. Bed rest, a brace worn all day and a month off work all encourage deconditioning and delay return to function. Traction has no proven benefit.",
+          "Patients with acute low back pain should be advised to remain active as tolerated, and superficial heat is a recommended first-line nondrug treatment with moderate-quality evidence. Bed rest and a month off work encourage deconditioning and delay return to function. Lumbar supports showed no benefit for pain or function in acute back pain, and the evidence for traction is insufficient to recommend it.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "acp-low-back-pain",
       },
     ],
-    sources: [FRIEDMAN, TINT],
+    sources: [FRIEDMAN, ACP_LBP],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -704,9 +775,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["acetaminophen 650 mg PO every 6 hours", "codeine 30 mg PO every 4 hours", "ibuprofen 400 mg PO every 6 hours", "naproxen 500 mg PO twice daily with food", "tramadol 50 mg PO every 6 hours"],
         correct: 0,
         explanation:
-          "Scheduled acetaminophen is the safest baseline analgesic for an 86-year-old with an eGFR of 32 mL/minute, and 650 mg every 6 hours is 2.6 g a day, a cautious total for her weight of 48 kg. Ibuprofen and naproxen can worsen her kidney function and raise bleeding risk. Codeine depends on variable activation by CYP2D6, and its metabolites accumulate in kidney disease. Tramadol lowers the seizure threshold and can cause delirium and hyponatremia in older adults.",
+          "Acetaminophen needs no dose change for reduced kidney function, so scheduled acetaminophen is the safest baseline analgesic for an 86-year-old with an eGFR of 32 mL/minute. 650 mg every 6 hours is 2.6 g a day, below a 3 g daily maximum and cautious for her weight of 48 kg. Ibuprofen and naproxen can reduce kidney function and raise bleeding risk in older adults. Codeine has unpredictable CYP2D6 metabolism and its metabolites accumulate in kidney disease. Tramadol adds seizure and serotonergic risks.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "davison-kidney-pain",
       },
       {
         id: "q2",
@@ -738,12 +809,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         ],
         correct: [0, 3, 4],
         explanation:
-          "Scheduled acetaminophen, a small supply of low-dose immediate-release hydromorphone for breakthrough pain and a laxative to prevent opioid constipation make a safe plan for an 86-year-old with kidney disease. Celecoxib still carries kidney risk with an eGFR of 32 mL/minute. Codeine relies on variable activation by CYP2D6, and tramadol can cause delirium and hyponatremia. Bed rest promotes deconditioning, and zopiclone adds fall and delirium risk.",
+          "Scheduled acetaminophen, a small supply of low-dose immediate-release hydromorphone for breakthrough pain and a laxative started with the opioid make a safe plan for an 86-year-old with kidney disease. Opioid constipation is nearly universal, so a bowel routine is prescribed pre-emptively. Celecoxib is still an NSAID with kidney risk at an eGFR of 32 mL/minute. Codeine metabolites accumulate in kidney disease, and tramadol adds seizure and serotonergic risks. Bed rest promotes deconditioning, and zopiclone adds sedation and falls.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "davison-kidney-pain",
       },
     ],
-    sources: [TINT, CHANG13],
+    sources: [DAVISON, CHANG13],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -888,9 +959,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Aspiration of gastric contents", "Emergence delirium", "Hypotension and collapse", "Laryngospasm on induction", "Malignant hyperthermia"],
         correct: 2,
         explanation:
-          "Severe aortic stenosis fixes his cardiac output, so a fall in vascular resistance from sedatives can cause hypotension, reduced coronary perfusion and collapse. His exertional dyspnea and a valve area of 0.7 cm2 mark severe disease. Laryngospasm is rare in adult sedation. Malignant hyperthermia is triggered by volatile anesthetics and succinylcholine, not by sedative agents. He has no stated recent meal, and emergence reactions are unpleasant but rarely dangerous.",
+          "Cardiovascular disease is a recognized risk factor for hypotension during procedural sedation. Severe aortic stenosis limits how much his heart can raise its output, so a fall in vascular resistance from sedatives can cause hypotension, reduced coronary perfusion and collapse. His exertional dyspnea and a valve area of 0.7 cm2 mark severe disease. Laryngospasm is rare in adult sedation. Malignant hyperthermia is triggered by volatile anesthetics and succinylcholine, not by sedatives. He has no stated recent meal, and emergence reactions are rarely dangerous.",
         keyFeature: { topic: TOPIC, n: 5 },
-        source: "tintinalli",
+        source: "asa-moderate-sedation",
       },
       {
         id: "q2",
@@ -934,7 +1005,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "asa-moderate-sedation",
       },
     ],
-    sources: [TINT, ACEP14, MINER_ETOM, ASA18],
+    sources: [ACEP14, MINER_ETOM, ASA18],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -985,9 +1056,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Absence of prior medical illness", "Alert mental status on arrival", "BP 98/64 and pulse 118/minute", "Left chest pain on breathing", "Pain rated 9 out of 10"],
         correct: 2,
         explanation:
-          "A pulse of 118/minute with a BP of 98/64 despite 1 L of crystalloid suggests ongoing blood loss, and sedatives can remove his compensatory sympathetic drive and cause hypotension. That makes hemodynamic risk the key finding in his pre-sedation assessment, and it favours local anesthesia with titrated analgesia over deep sedation. His alert state and lack of illness lower his risk. His chest pain and pain score guide analgesia but are not sedation risk factors.",
+          "A pulse of 118/minute with a BP of 98/64 despite 1 L of crystalloid suggests ongoing blood loss. Drug effects are magnified in hemodynamically unstable trauma patients, and sedatives can worsen shock. That makes hemodynamic risk the key finding in his pre-sedation assessment, and it favours local anesthesia with titrated analgesia over deep sedation. His alert state and lack of illness lower his risk. His chest pain and pain score guide analgesia but are not sedation risk factors.",
         keyFeature: { topic: TOPIC, n: 5 },
-        source: "tintinalli",
+        source: "acs-tqip-pain",
       },
       {
         id: "q4",
@@ -997,12 +1068,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["fentanyl 250 mcg IV", "fentanyl 50 mcg IV", "ketorolac 30 mg IV", "lorazepam 1 mg IV", "meperidine 75 mg IM"],
         correct: 1,
         explanation:
-          "Fentanyl in small doses, 50 mcg for 80 kg being about 0.6 mcg/kg, gives rapid titratable analgesia with little effect on BP and can be repeated. 250 mcg is about 3 mcg/kg at once and risks apnea and chest wall rigidity. Ketorolac remains unwise with active bleeding. Lorazepam does not treat pain, and IM meperidine is painful, erratic and has a neurotoxic metabolite.",
+          "Fentanyl has minimal effects on hemodynamic status, which suits a trauma patient who has just lost 900 mL of blood. Doses of 25 to 50 mcg, 50 mcg being about 0.6 mcg/kg for 80 kg, give rapid titratable analgesia and can be repeated after reassessment. 250 mcg is about 3 mcg/kg at once and risks apnea. Ketorolac remains unwise with active bleeding. Lorazepam does not treat pain, and IM meperidine is painful, erratic and has a neurotoxic metabolite.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "acs-tqip-pain",
       },
     ],
-    sources: [MOTOV, RH, TINT],
+    sources: [MOTOV, RH, TQIP],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1153,12 +1224,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "He now has severe pain from an open fracture and is calm enough to be reassessed, so titrated IV opioid doses are appropriate. Stimulant use tonight is not a reason to withhold analgesia. Acetaminophen alone cannot control 9 out of 10 fracture pain. A further full dissociative IM dose is not needed now that his agitation has settled, and haloperidol does not treat pain.",
+          "He now has severe pain from an open fracture and is calm enough to be reassessed, so titrated IV opioid doses are appropriate. Trauma pain guidance advises that opioids should not be withheld solely because of substance use, and stimulant use tonight is not a reason to withhold analgesia. Acetaminophen alone cannot control 9 out of 10 fracture pain. A further full dissociative IM dose is not needed now that his agitation has settled, and haloperidol does not treat pain.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "acs-tqip-pain",
       },
     ],
-    sources: [COLE, GREEN11, TINT],
+    sources: [COLE, GREEN11, TQIP],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1256,9 +1327,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         ],
         correct: [1, 4, 6],
         explanation:
-          "His OSA, a neck circumference of 46 cm, a Mallampati class III view and a BMI of 42 predict rapid desaturation and difficult rescue ventilation. A ramped head-up position improves airway patency and oxygen reserve, preoxygenation lengthens the safe time before desaturation, and capnography gives early warning of hypoventilation. Propofol should be dosed on lean body weight and titrated in small increments, not given as a large bolus on total weight. A deep sedation target and a flat supine position increase airway risk, and routine atropine has no role.",
+          "His OSA, a neck circumference of 46 cm, a Mallampati class III view and a BMI of 42 predict airway obstruction and rapid desaturation. In OSA, sedation raises the risk of undetected airway obstruction, so ventilation is monitored continuously by capnography, and a semi-upright or other nonsupine position is preferred to flat supine. Oxygen given before sedation lengthens the safe time before desaturation. A large bolus dosed on his total weight of 136 kg and a deep sedation target both deepen airway risk. Routine atropine has no role.",
         keyFeature: { topic: TOPIC, n: 5 },
-        source: "tintinalli",
+        source: "asa-osa",
       },
       {
         id: "q3",
@@ -1285,12 +1356,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["flumazenil 0.2 mg IV", "naloxone 0.4 mg IV", "Nasal airway and jaw thrust", "Rapid sequence intubation", "succinylcholine 1.5 mg/kg IV"],
         correct: 2,
         explanation:
-          "Snoring with chest movement but a flattening capnography waveform is upper airway obstruction from soft tissue collapse, which his OSA and obesity predispose to. A jaw thrust with a nasal airway usually restores airflow promptly, followed by bag-mask ventilation if it does not. Flumazenil and naloxone reverse drugs he did not receive. Intubation and succinylcholine are not first steps before simple airway manoeuvres have been tried.",
+          "Snoring with chest movement but a flattening capnography waveform is upper airway obstruction from soft tissue collapse, which sedation makes more likely in a patient with OSA and obesity. A jaw thrust with a nasal airway usually restores airflow promptly, followed by bag-mask ventilation if it does not. Flumazenil and naloxone reverse drugs he did not receive. Intubation and succinylcholine are not first steps before simple airway manoeuvres have been tried.",
         keyFeature: { topic: TOPIC, n: 6 },
-        source: "tintinalli",
+        source: "asa-osa",
       },
     ],
-    sources: [ASAPS, TINT, ANDOLFATTO],
+    sources: [ASAPS, ASA_OSA, ANDOLFATTO],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1311,9 +1382,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["flumazenil 0.5 mg IV", "naloxone 2 mg IV push", "Obtain an arterial blood gas first", "Open the airway and bag-mask", "Rapid sequence intubation"],
         correct: 3,
         explanation:
-          "With a respiratory rate of 6/minute and an O2 sat of 86%, the first priority is to open her airway and assist ventilation with a bag-mask device while reversal is prepared. Reversal drugs take time and do not replace ventilation. A 2 mg push of naloxone is a large dose that can cause abrupt pain and agitation. A blood gas delays treatment, and intubation is not needed if bag-mask ventilation works and reversal is effective.",
+          "With a respiratory rate of 6/minute and an O2 sat of 86%, the first priority is to open her airway and give positive pressure ventilation with a bag-mask device, because her own breathing is inadequate. Reversal agents are for when airway support and ventilation are not enough, and they take time to act. A 2 mg push of naloxone is a large dose, and abrupt opioid reversal can cause pain, hypertension and tachycardia. A blood gas delays treatment, and intubation is not needed if bag-mask ventilation works.",
         keyFeature: { topic: TOPIC, n: 6 },
-        source: "tintinalli",
+        source: "asa-moderate-sedation",
       },
       {
         id: "q2",
@@ -1323,9 +1394,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Flumazenil and naloxone together", "Flumazenil 0.2 mg IV, repeated", "Naloxone 2 mg IM once", "Naloxone 0.04 mg IV, titrated", "No reversal, ventilate until awake"],
         correct: 3,
         explanation:
-          "Fentanyl is a likely contributor to her hypoventilation and small pupils, and small naloxone doses starting at 0.04 mg IV, titrated to breathing, restore ventilation while limiting abrupt reversal. Flumazenil should be avoided because she has taken clonazepam daily for 10 years, and sudden benzodiazepine reversal can cause withdrawal seizures. A single 2 mg IM dose is less controllable and slower to act. Prolonged bag-mask ventilation without reversal is possible, but titrated naloxone restores her own breathing sooner and more safely.",
+          "Flumazenil should be avoided because she has taken clonazepam daily for 10 years, and in long-term benzodiazepine users it can trigger withdrawal with seizures. Fentanyl is a likely contributor to her hypoventilation and small pupils, so small naloxone doses starting at 0.04 mg IV, titrated to breathing, restore ventilation while limiting abrupt reversal. A single 2 mg IM dose is less controllable and slower to act. Prolonged bag-mask ventilation without reversal is possible, but titrated naloxone restores her own breathing sooner.",
         keyFeature: { topic: TOPIC, n: 6 },
-        source: "tintinalli",
+        source: "flumazenil-pm",
       },
       {
         id: "q3",
@@ -1335,9 +1406,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Admit to the ICU for 24 hours", "Discharge once she is talking", "Monitor continuously until stable", "Naloxone infusion for 12 hours", "Spot checks of vital signs every 2 hours"],
         correct: 2,
         explanation:
-          "Naloxone may wear off before the combined effects of midazolam and fentanyl, so she needs continuous oximetry and capnography until she is back to baseline and has stayed stable after the last naloxone dose. Discharge once she is talking ignores the risk of resedation, and spot checks every 2 hours could miss it. A 12-hour naloxone infusion is for long-acting opioid toxicity, not procedural fentanyl. ICU admission is not needed now that she breathes adequately.",
+          "Naloxone may wear off before the combined effects of midazolam and fentanyl, so she needs continuous monitoring until she is back to baseline. After reversal, enough time, up to 2 hours, must pass after the last dose to be sure sedation and hypoventilation do not recur. Discharge once she is talking ignores the risk of resedation, and spot checks every 2 hours could miss it. A 12-hour naloxone infusion is for long-acting opioid toxicity, not procedural fentanyl. ICU admission is not needed now that she breathes adequately.",
         keyFeature: { topic: TOPIC, n: 6 },
-        source: "tintinalli",
+        source: "asa-moderate-sedation",
       },
       {
         id: "q4",
@@ -1357,7 +1428,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "asa-moderate-sedation",
       },
     ],
-    sources: [TINT, ASA18],
+    sources: [ASA18, FLUMAZENIL_PM],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1500,21 +1571,21 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Pain out of proportion to the injury, pain on passive stretch of the finger flexors and a rising opioid need despite repeated doses are the earliest signs of compartment syndrome. A strong radial pulse and normal capillary refill do not exclude it, because pulses usually persist until late. Attributing the escalating pain to anxiety, drug seeking, hyperalgesia after two small doses or an ordinary crush injury risks missing a limb-threatening diagnosis.",
+          "Pain out of proportion to the injury and pain on passive movement of the involved muscles are the key clinical findings of compartment syndrome, and his pain is rising despite repeated opioid doses. A strong radial pulse and normal capillary refill do not exclude it, because pulses are normally present. Attributing the escalating pain to anxiety, drug seeking, hyperalgesia after two small doses or an ordinary crush injury risks missing a limb-threatening diagnosis.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "boast-compartment",
       },
       {
         id: "q2",
         kind: "single",
         update: "Orthopedics is called urgently to assess him for compartment syndrome.",
         prompt: "Which of the following analgesic approaches is most appropriate while he waits for the orthopedic assessment?",
-        options: ["Brachial plexus block for relief", "Elevate the arm well above the heart", "Hold analgesia until surgical review", "Tight elastic wrap for swelling", "Titrate IV hydromorphone to effect"],
+        options: ["Brachial plexus block for relief", "Give oral acetaminophen alone", "Hold analgesia until surgical review", "Tight elastic wrap for swelling", "Titrate IV hydromorphone to effect"],
         correct: 4,
         explanation:
-          "Analgesia should not be withheld while surgical review is arranged, so titrated IV hydromorphone continues with frequent reassessment of pain and of the forearm. A brachial plexus block could mask the escalating pain that tracks compartment syndrome before the diagnosis is settled. Raising the arm well above the heart lowers perfusion pressure, so the limb is kept at heart level. A tight wrap raises compartment pressure further.",
+          "Analgesia should not be withheld while surgical review is arranged, so titrated IV hydromorphone continues, with each dose and its effect recorded and the forearm reassessed often. A brachial plexus block would stop clinical assessment of the forearm and could mask the escalating pain that tracks compartment syndrome, so it needs a joint decision with the surgeon. Oral acetaminophen alone will not control 10 out of 10 pain. Circumferential dressings are released in suspected compartment syndrome, so a tight wrap is wrong.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "boast-compartment",
       },
       {
         id: "q3",
@@ -1523,12 +1594,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Distal pulse checks", "Hourly heart rate and BP trend", "Sedation score alone", "Serial numeric pain scores", "Visual forearm swelling"],
         correct: 3,
         explanation:
-          "Repeated numeric pain scores recorded with each dose, alongside the passive stretch examination, show whether pain is escalating despite analgesia, which is the key warning of compartment syndrome. Heart rate and BP are a poor guide to pain intensity. Pulses usually stay present until late. A sedation score tracks opioid safety, not pain, and visible swelling does not reliably reflect compartment pressure.",
+          "Patients at risk of compartment syndrome need repeated documented assessment of their level of pain and response to analgesia, with the dose and rate of opioids recorded. Serial numeric pain scores alongside the passive stretch examination show whether pain is escalating despite analgesia. Heart rate and BP are a poor guide to pain intensity. Pulses are normally present in compartment syndrome. A sedation score tracks opioid safety, not pain, and visible swelling does not reliably reflect compartment pressure.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "boast-compartment",
       },
     ],
-    sources: [TINT],
+    sources: [BOAST],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1549,9 +1620,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["codeine 30 mg PO every 4 hours", "hydromorphone 0.5 mg IV, titrated", "meperidine 25 mg IV every 3 hours", "morphine 5 mg IV every 4 hours", "tramadol 50 mg PO every 6 hours"],
         correct: 1,
         explanation:
-          "In end-stage kidney disease, small titrated doses of hydromorphone are preferred because its metabolites cause fewer problems than those of morphine. Morphine's active metabolite accumulates and causes prolonged sedation and respiratory depression. Codeine is converted to morphine and shares the problem. Meperidine's metabolite normeperidine accumulates and can cause seizures. Tramadol accumulates in kidney failure and, with her sertraline, raises the risk of serotonin syndrome and seizures.",
+          "In kidney failure, a strong opioid at a low dose with careful titration is used, and hydromorphone is preferred because its metabolite is removed by dialysis. Patients with adverse effects on morphine often improve after a switch to hydromorphone. Morphine metabolites accumulate in advanced kidney disease. Codeine has unpredictable metabolism and should be avoided. Meperidine has a neurotoxic metabolite. Tramadol can cause seizures, and with her sertraline it raises the risk of serotonin syndrome.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "davison-kidney-pain",
       },
       {
         id: "q2",
@@ -1566,9 +1637,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Acetaminophen needs little or no dose change in kidney failure and is the safest nonopioid adjunct for her. NSAIDs such as ibuprofen, ketorolac and celecoxib can destroy any residual kidney function, raise potassium and increase the risk of GI bleeding. Gabapentin is cleared by the kidneys and accumulates to cause sedation and falls, and three doses a day is far above what dialysis patients can clear.",
+          "Acetaminophen needs no dose change in kidney failure and is the safest nonopioid adjunct for her. NSAIDs such as ibuprofen, ketorolac and celecoxib can cause a severe and sometimes irreversible fall in residual kidney function, raise potassium and increase the risk of GI bleeding. Gabapentin is cleared by the kidneys and removed by dialysis, so it accumulates between sessions and causes sleepiness, dizziness and unsteady gait. A standard three-times-daily dose is not suitable for her.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "davison-kidney-pain",
       },
       {
         id: "q3",
@@ -1578,12 +1649,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Choose codeine instead", "Consider it a true allergy", "Ignore it as a common complaint", "Record it and pick another opioid", "Use oxycodone plus haloperidol 0.5 mg"],
         correct: 3,
         explanation:
-          "A previous adverse response to a specific analgesic is part of a structured pain history and should shape the plan, so it is recorded and another opioid is chosen. Confusion with hallucinations is an adverse effect, not an allergy. Dismissing it, or adding haloperidol so the same drug can be used, ignores her experience. Codeine is converted to morphine and should be avoided in kidney failure.",
+          "A previous adverse response to a specific analgesic is part of a structured pain history and should shape the plan. When a strong opioid causes unacceptable adverse effects, an alternative should be sought, so the reaction is recorded and another opioid is chosen. Confusion with hallucinations is an adverse effect, not an allergy. Dismissing it, or adding haloperidol so the same drug can be used, ignores her experience. Codeine should be avoided in kidney failure.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "davison-kidney-pain",
       },
     ],
-    sources: [TINT],
+    sources: [DAVISON],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1604,9 +1675,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["acetaminophen 1 g IV alone", "hydromorphone 1 mg IV, then titrate", "ketorolac 30 mg IV alone", "meperidine 50 mg IV every 4 hours as needed", "morphine 5 mg IM, then wait"],
         correct: 1,
         explanation:
-          "Her 9 out of 10 pain needs a strong IV opioid given in titrated doses, such as hydromorphone 1 mg IV repeated as needed. The old concern that morphine or hydromorphone worsens pancreatitis through the sphincter of Oddi is not supported, so meperidine offers no advantage and has a neurotoxic metabolite. IM morphine absorbs unpredictably and hurts. Acetaminophen or ketorolac alone will not control this pain, and ketorolac adds kidney and bleeding risk in a vomiting patient.",
+          "Her 9 out of 10 pain needs a strong IV opioid given in titrated doses, such as hydromorphone 1 mg IV repeated as needed. In a systematic review, opioids were an appropriate choice for acute pancreatitis pain, reduced the need for extra analgesia and showed no more pancreatitis complications than other analgesics. Meperidine therefore offers no advantage and has a neurotoxic metabolite. IM morphine absorbs unpredictably and hurts. Acetaminophen or ketorolac alone will not control this pain.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "basurto-pancreatitis",
       },
       {
         id: "q2",
@@ -1639,7 +1710,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "chang-titration",
       },
     ],
-    sources: [TINT, CHANG16],
+    sources: [BASURTO, CHANG16],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1660,9 +1731,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Anxiety about the crash", "Normal for his age", "Opioid withdrawal", "Pain alone, so treat the pain", "Possible hidden blood loss"],
         correct: 4,
         explanation:
-          "A closed femoral shaft fracture can hide 1 L or more of blood in the thigh, so a pulse of 124/minute with a BP of 102/66 must be treated as possible hemorrhage, even though pain also raises the pulse. Attributing it to pain alone risks missing shock. Anxiety and withdrawal are not supported by his history, and this pulse is not normal for a 26-year-old.",
+          "A pulse of 124/minute with a BP of 102/66 after a high-energy crash must be treated as possible hemorrhage, even though pain also raises the pulse. A femoral shaft fracture can bleed into the thigh, and in a large series of isolated femoral shaft fractures hemoglobin fell after injury and about half the patients needed transfusion. Attributing the pulse to pain alone risks missing shock. Anxiety and withdrawal are not supported by his history, and this pulse is not normal for a 26-year-old.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "osullivan-femur",
       },
       {
         id: "q2",
@@ -1682,12 +1753,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["fentanyl 300 mcg IV once", "fentanyl 50 mcg IV, titrated", "hydromorphone 4 mg IV once", "morphine 20 mg IM once", "morphine 2 mg IV every hour as needed"],
         correct: 1,
         explanation:
-          "Fentanyl has a rapid onset and causes less hypotension than morphine, so doses of about 0.5 to 1 mcg/kg, 50 mcg here, repeated every few minutes to effect, suit a patient with a pulse of 124/minute and a BP of 102/66. 300 mcg is 4 mcg/kg at once and risks apnea and chest wall rigidity. Hydromorphone 4 mg in one dose is large and not titrated. IM morphine absorbs unpredictably, and 2 mg every hour undertreats 10 out of 10 pain.",
+          "Fentanyl has minimal effects on hemodynamic status and is a first-line option for severe pain in trauma patients who may be unstable, which suits a pulse of 124/minute and a BP of 102/66. Its short half-life means frequent reassessment and repeat 25 to 50 mcg doses. 300 mcg is 4 mcg/kg at once and risks apnea. Hydromorphone 4 mg in one dose is large and not titrated. IM morphine absorbs unpredictably, and 2 mg every hour undertreats 10 out of 10 pain.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "acs-tqip-pain",
       },
     ],
-    sources: [TINT, RH],
+    sources: [OSULLIVAN, RH, TQIP],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1726,9 +1797,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "She took naproxen 2 hours ago, and ketorolac on top of it combines two NSAIDs, adding GI bleeding and kidney risk without more analgesia. Giving the acetaminophen and heat from the plan while omitting the ketorolac respects the plan and avoids the duplication. A larger ketorolac dose or more naproxen increases the risk further. Switching to IV hydromorphone goes against the plan without a new reason.",
+          "She took naproxen 2 hours ago, and the Canadian ketorolac monograph contraindicates use with other NSAIDs because there is no evidence of added benefit and side effects such as GI bleeding and kidney injury add up. Giving the acetaminophen and heat from the plan while omitting the ketorolac respects the plan and avoids the duplication. A larger ketorolac dose or more naproxen increases the risk further. Switching to IV hydromorphone goes against the plan without a new reason.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "tintinalli",
+        source: "ketorolac-pm",
       },
       {
         id: "q3",
@@ -1743,7 +1814,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "busse-opioids",
       },
     ],
-    sources: [BUSSE, TINT],
+    sources: [BUSSE, KETOROLAC_PM],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1817,12 +1888,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         ],
         correct: [1, 4],
         explanation:
-          "Discharge after sedation requires a return to baseline mental status with stable vital signs, and a responsible adult to accompany him and stay with him, since he lives alone and may have residual impairment. If no one is available he should stay for observation. A routine 6-hour stay, a full meal, overnight fasting and electrolytes are not required, and naloxone has no role after propofol.",
+          "Discharge after sedation requires a return to baseline mental status with stable vital signs, and a responsible adult to accompany him home and report any problems, since he lives alone and may have residual impairment. If no one is available he should stay for observation. A routine 6-hour stay, a full meal, overnight fasting and electrolytes are not required, and naloxone has no role after propofol.",
         keyFeature: { topic: TOPIC, n: 6 },
-        source: "tintinalli",
+        source: "asa-moderate-sedation",
       },
     ],
-    sources: [ASA18, MINER07, TINT],
+    sources: [ASA18, MINER07],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2082,12 +2153,12 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["acetaminophen 650 mg PO every 6 hours", "celecoxib 200 mg PO twice daily", "codeine 30 mg PO every 4 hours as needed", "ibuprofen 400 mg PO every 6 hours", "meperidine 50 mg PO every 4 hours"],
         correct: 0,
         explanation:
-          "Acetaminophen adds analgesia without the kidney and bleeding risks that matter with an eGFR of 34 mL/minute, apixaban and a past ulcer, and 650 mg every 6 hours, 2.6 g a day, is a cautious total for a 71-year-old without liver disease. Celecoxib and ibuprofen are NSAIDs and carry those risks. Codeine metabolites accumulate in kidney disease, and meperidine has a neurotoxic metabolite that accumulates when kidney function is reduced.",
+          "Acetaminophen needs no dose change for reduced kidney function and adds analgesia without bleeding risk, which matters with an eGFR of 34 mL/minute, apixaban and a past ulcer. 650 mg every 6 hours is 2.6 g a day, below a 3 g daily maximum. Celecoxib and ibuprofen are NSAIDs, and anticoagulants further raise their bleeding risk. Codeine has unpredictable metabolism and its metabolites accumulate in kidney disease. Meperidine has a neurotoxic metabolite.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "davison-kidney-pain",
       },
     ],
-    sources: [ACR, TINT],
+    sources: [ACR, DAVISON],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2108,9 +2179,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["His age under 18 years", "His fear of needles", "His last meal time", "His pain score of 7 out of 10", "His residual pneumothorax"],
         correct: 4,
         explanation:
-          "Nitrous oxide diffuses into closed air-filled spaces faster than nitrogen can leave them, so it can enlarge a pneumothorax, and his X-ray 3 days ago still showed residual air. It should not be used for him. His age and his fear of needles would otherwise favour it. Nitrous oxide alone at 50% or less produces minimal sedation, so his last meal matters little, and his pain score does not affect the choice.",
+          "Nitrous oxide diffuses rapidly into air-filled spaces and raises their pressure, so a pneumothorax is a contraindication, and his X-ray 3 days ago still showed residual air. It should not be used for him. His age and his fear of needles would otherwise favour it. A 50% mixture with oxygen keeps spontaneous breathing and airway reflexes and is used without fasting, so his last meal matters little, and his pain score does not affect the choice.",
         keyFeature: { topic: TOPIC, n: 5 },
-        source: "tintinalli",
+        source: "ciavola-analgosedation",
       },
       {
         id: "q2",
@@ -2135,7 +2206,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "cps-procedures",
       },
     ],
-    sources: [TINT, RH, CPS19],
+    sources: [CIAVOLA, RH, CPS19],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2156,9 +2227,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Check a urine drug screen first", "Measure her pupil size", "Obtain an ECG before any opioid", "Order a serum methadone level", "Verify her methadone dose"],
         correct: 4,
         explanation:
-          "Confirming her daily methadone dose and the time of her last witnessed dose with her pharmacy establishes her baseline opioid tolerance, which determines how much additional analgesia she will need. A urine drug screen does not measure pain or tolerance. A serum methadone level is not available in time and does not guide acute dosing. Pupil size is not a measure of analgesic need. An ECG may be useful with methadone but should not delay analgesia.",
+          "Her methadone dose should be verified with her pharmacy or prescriber, together with the time of her last witnessed dose. That establishes her baseline opioid tolerance, which determines how much additional analgesia she will need, since patients on methadone usually need higher and more frequent opioid doses. A urine drug screen does not measure pain or tolerance. A serum methadone level does not guide acute dosing. Pupil size is not a measure of analgesic need. An ECG should not delay analgesia.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "alford-oat-pain",
       },
       {
         id: "q2",
@@ -2203,7 +2274,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "hqo-acute-opioids",
       },
     ],
-    sources: [TINT, HQO, HANDOLL],
+    sources: [ALFORD, HQO, HANDOLL],
     reviewed: false,
     author: AUTHOR,
     version: 1,
