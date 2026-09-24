@@ -5,7 +5,7 @@
 //   npx -y -p playwright@1 node store/tools/make-assets.mjs [http://localhost:5173]
 //
 // Needs a Chromium that Playwright can launch. Set CHROMIUM_PATH to use a
-// specific binary. Output goes to store/screenshots/<size>/ and store/graphics/.
+// specific binary. Set ONLY=<size name> to render one size. Output goes to store/screenshots/<size>/ and store/graphics/.
 
 import { chromium } from "playwright";
 import { mkdirSync, readFileSync } from "node:fs";
@@ -23,13 +23,13 @@ const SIZES = [
 ];
 
 const CAPTIONS = [
-  ["01-case-bank", "Run the case out loud."],
-  ["02-question", "Timed questions, like the real oral."],
-  ["03-ask-for", "Ask for results when you need them."],
-  ["04-choices", "The case follows your decisions."],
-  ["05-feedback", "Feedback on every choice."],
-  ["06-report", "A report with your top three fixes."],
-  ["07-dashboard", "See where you stand across the blueprint."],
+  ["01-written", "Practise SAMPs in every exam format."],
+  ["02-samp-key", "Answer keys scored like an examiner."],
+  ["03-mock", "A timed four hour mock exam."],
+  ["04-station", "12 minute oral stations."],
+  ["05-feedback", "Feedback on every oral decision."],
+  ["06-criteria", "Mark yourself on the examiner criteria."],
+  ["07-topics", "Every priority topic and key feature."],
   ["08-review", "Review what you missed until it sticks."],
 ];
 
@@ -55,70 +55,140 @@ async function captureApp(size) {
   const shots = {};
   const snap = async (key) => (shots[key] = await page.screenshot({ type: "png" }));
   const click = (name) => page.getByRole("button", { name, exact: false }).first().click();
+  const tab = (name) => page.locator(".tabs button", { hasText: name }).first().click();
   const wait = (ms = 250) => page.waitForTimeout(ms);
+  const scrollTo = async (text, offset = 120) => {
+    await page.getByText(text).first().waitFor();
+    await page.evaluate(
+      ([t, o]) => {
+        const el = [...document.querySelectorAll("body *")].find((e) => e.childElementCount === 0 && e.textContent?.includes(t));
+        if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - o);
+      },
+      [text, offset],
+    );
+    await wait();
+  };
 
   await page.goto(`${base}/?seed=1`);
   await wait(800);
-  // Buy the full bank (simulated in the dev server) so no lock icons show.
-  await page.getByRole("button", { name: "Get all cases" }).click();
-  await click("Buy the full case bank");
+  // Buy everything (simulated in the dev server) so no lock icons show.
+  await click("Get full access");
+  await click("Buy complete");
   await wait();
-  await snap("01-case-bank");
 
-  // First case: question, findings, choices, feedback.
-  await page.locator(".caserow").first().click();
-  await click("Start practice case");
-  await click("Begin");
+  // 01 Written tab: topics with scores.
+  await tab("Written");
   await wait();
-  for (let i = 0; i < 6 && !(await page.getByRole("button", { name: "Done answering" }).count()); i++) {
+  await scrollTo("Practice by priority topic", 90);
+  await snap("01-written");
+
+  // 02 A marked SAMP. Pick one that opens with short answer questions.
+  const pick = await page.evaluate(() => {
+    const samps = window.__SAMPS ?? [];
+    return samps.find((s) => s.questions.length >= 3 && s.questions[0].kind === "short" && s.questions[0].required >= 3 && (s.questions[0].unacceptable ?? []).length > 0) ?? samps[0];
+  });
+  // Open the topic by name, then the SAMP by title.
+  await page.evaluate((t) => {
+    const rows = [...document.querySelectorAll(".caserow")];
+    const names = window.__TOPIC_NAMES ?? {};
+    const row = rows.find((r) => r.textContent?.includes(names[t] ?? "\u0000"));
+    (row ?? rows[0]).click();
+  }, pick.topic);
+  await wait();
+  await page.locator(".caserow", { hasText: pick.title }).first().click();
+  await wait();
+  for (const [qi, q] of pick.questions.entries()) {
+    if (q.kind === "short") {
+      const lines = q.accept.slice(0, q.required).map((a) => a.text);
+      if (qi === 0 && q.unacceptable?.length) lines[lines.length - 1] = q.unacceptable[0].text;
+      const inputs = page.locator(".shortline input");
+      for (let i = 0; i < lines.length; i++) await inputs.nth(i).fill(lines[i]);
+    } else if (q.kind === "single") {
+      await page.locator(".opt").nth(q.correct).click();
+    } else {
+      for (const k of q.correct) await page.locator(".opt").nth(k).click();
+    }
+    await wait(100);
+    if (qi < pick.questions.length - 1) await click("Next question");
+    else await click("Mark this SAMP");
+    await wait(150);
+  }
+  await page.locator(".sampq.marked").first().waitFor();
+  await page.evaluate(() => {
+    const el = document.querySelector(".sampq.marked");
+    if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 70);
+  });
+  await wait();
+  await snap("02-samp-key");
+
+  // 03 A full mock exam in progress.
+  await page.locator(".top .back").click();
+  await wait();
+  await page.locator("button.nextcase", { hasText: "Full mock" }).click();
+  await wait(1200);
+  const first = page.locator(".shortline input").first();
+  if (await first.count()) await first.fill("Serial troponin at 0 and 3 hours");
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await wait(300);
+  await snap("03-mock");
+  await page.locator(".top .back").click();
+  await wait();
+
+  // 04 and 05 A mock oral station, then feedback on a decision.
+  await tab("Oral");
+  await wait();
+  await page.locator("button.nextcase", { hasText: "Mock oral" }).click();
+  await wait();
+  await click("Go to station 1");
+  await wait();
+  await click("I have read the stem");
+  await wait(2300);
+  for (let i = 0; i < 6 && !(await page.getByRole("button", { name: "Done answering" }).count()) && !(await page.locator(".choice").count()); i++) {
     await click("Continue");
     await wait(150);
   }
-  await page.getByRole("button", { name: "Ask for" }).first().click();
-  await wait();
-  await snap("03-ask-for");
-  await page.locator(".sheet .grid button").nth(0).click();
-  await page.getByRole("button", { name: "Ask for" }).first().click();
-  await page.locator(".sheet .grid button").nth(2).click();
-  await wait(1500);
-  await snap("02-question");
-
-  // Advance to the first branching question.
+  if (await page.getByRole("button", { name: "Ask for" }).count()) {
+    await page.getByRole("button", { name: "Ask for" }).first().click();
+    await page.locator(".sheet .grid button").nth(0).click();
+    await wait(300);
+  }
+  await snap("04-station");
   for (let i = 0; i < 20; i++) {
+    if (await page.locator(".choice").count()) break;
     if (await page.getByRole("button", { name: "Done answering" }).count()) await click("Done answering");
     await wait(150);
     if (await page.locator(".choice").count()) break;
     if (await page.getByRole("button", { name: "Next question" }).count()) await click("Next question");
     else if (await page.getByRole("button", { name: "Continue" }).count()) await click("Continue");
+    await wait(150);
   }
-  await snap("04-choices");
   await page.locator(".choice").nth(1).click();
   await wait();
   await snap("05-feedback");
-
-  // A seeded report. Open the most recent history entry from Progress.
-  await page.getByRole("button", { name: "Exit case" }).click();
-  await page.getByRole("button", { name: "Progress", exact: true }).click();
+  await page.locator(".top .back").click();
   await wait();
-  await snap("07-dashboard-top");
+
+  // 06 A seeded oral report, at the examiner criteria.
+  await tab("Progress");
+  await wait();
+  // An older seeded attempt, so the criteria bars are not all full.
   await page.evaluate(() => {
-    const el = document.querySelector(".heat");
-    if (el) window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 150);
+    const rows = document.querySelectorAll("button.row");
+    rows[Math.min(6, rows.length - 1)]?.click();
   });
+  await scrollTo("Examiner criteria", 70);
+  await snap("06-criteria");
+  await page.locator(".top .back").click();
   await wait();
-  await snap("07-dashboard");
-  // Open the most recent seeded report from the history list.
-  await page.evaluate(() => document.querySelector("button.row")?.click());
-  await page.getByText("Top three things to fix").waitFor();
-  await wait(200);
-  await page.getByText("Top three things to fix").scrollIntoViewIfNeeded();
-  await page.evaluate(() => window.scrollBy(0, -260));
-  await wait();
-  await snap("06-report");
 
-  if (await page.locator(".top .back").count()) await page.locator(".top .back").click();
+  // 07 Priority topics with key feature coverage.
+  await tab("Progress");
   await wait();
-  await page.locator(".tabs button").nth(1).click();
+  await scrollTo("CFPC priority topics", 70);
+  await snap("07-topics");
+
+  // 08 Spaced review.
+  await tab("Review");
   await wait();
   await click("Show the point");
   await wait();
@@ -145,7 +215,7 @@ async function compose(size, shot, caption, out) {
   await ctx.close();
 }
 
-for (const size of SIZES) {
+for (const size of SIZES.filter((x) => !process.env.ONLY || x.name === process.env.ONLY)) {
   const dir = join(root, "store", "screenshots", size.name);
   mkdirSync(dir, { recursive: true });
   const shots = await captureApp(size);
@@ -170,9 +240,9 @@ mkdirSync(g, { recursive: true });
   await page.setContent(`<!doctype html><body style="margin:0;width:1024px;height:500px;background:#00305C;display:flex;align-items:center;font-family:'Iowan Old Style',Charter,Georgia,serif;color:#fff">
     <div style="width:210px;height:210px;margin:0 56px 0 84px;flex:none">${markSvg("#FFFFFF")}</div>
     <div>
-      <div style="font:700 15px/1 -apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:0.18em;color:#E0B43C;text-transform:uppercase">CCFP-EM style oral practice</div>
-      <div style="font-size:64px;font-weight:600;line-height:1.05;margin-top:14px">Preceptor: Oral</div>
-      <div style="font-size:26px;line-height:1.35;margin-top:16px;color:#C9D8EA;max-width:560px">100 branching cases. Timed questions. Feedback on every decision. Fully offline.</div>
+      <div style="font:700 15px/1 -apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:0.18em;color:#E0B43C;text-transform:uppercase">Written and oral exam practice</div>
+      <div style="font-size:64px;font-weight:600;line-height:1.05;margin-top:14px">Preceptor: CCFP-EM</div>
+      <div style="font-size:26px;line-height:1.35;margin-top:16px;color:#C9D8EA;max-width:560px">Original SAMPs with examiner style keys. 12 minute oral stations. Fully offline.</div>
     </div></body>`);
   await page.screenshot({ path: join(g, "play-feature-1024x500.png") });
   await ctx.close();

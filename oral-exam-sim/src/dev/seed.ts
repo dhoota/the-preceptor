@@ -1,5 +1,6 @@
 import { CASES } from "@/cases";
-import { advance, atEnd, choicesFor, currentNode, finishAttempt, newAttempt, updateDeckFromAttempt, type Attempt, type Deck, type SelfMark } from "@/engine";
+import type { SampAttempt } from "@/lib/storage";
+import { advance, atEnd, choicesFor, currentNode, finishAttempt, markSamp, newAttempt, updateDeckFromAttempt, type Attempt, type Deck, type Samp, type SampResponse, type SelfMark } from "@/engine";
 
 /**
  * Development only. Builds a believable practice history so the dashboard
@@ -37,4 +38,31 @@ export function seedHistory(count = 26): { attempts: Attempt[]; deck: Deck } {
     deck = updateDeckFromAttempt(deck, c.id, done.score!.missed, Object.keys(marks).filter((id) => marks[id] === "yes"), t);
   });
   return { attempts, deck };
+}
+
+/**
+ * Development only. A believable written history: some SAMPs in most topics,
+ * with a mix of right, partly right and wrong answers that improves over time.
+ */
+export function seedSampHistory(samps: Samp[], perTopic = 3): SampAttempt[] {
+  let rand = 11;
+  const next = () => ((rand = (rand * 48271) % 2147483647) / 2147483647);
+  const day = 86_400_000;
+  const topics = [...new Set(samps.map((s) => s.topic))];
+  const picks = topics.flatMap((t, ti) => (ti % 6 === 5 ? [] : samps.filter((s) => s.topic === t).slice(0, perTopic)));
+  const start = Date.now() - picks.length * 0.4 * day;
+  return picks.map((s, k) => {
+    const skill = 0.4 + (k / picks.length) * 0.4;
+    const responses: Record<string, SampResponse> = {};
+    for (const q of s.questions) {
+      const good = next() < skill;
+      if (q.kind === "single") responses[q.id] = { kind: "single", choice: good ? q.correct : (q.correct + 1) % q.options.length };
+      else if (q.kind === "menu") responses[q.id] = { kind: "menu", choices: good ? q.correct : q.correct.slice(0, Math.max(0, q.correct.length - 1)) };
+      else {
+        const n = good ? q.required : Math.max(1, Math.floor(q.required / 2));
+        responses[q.id] = { kind: "short", lines: q.accept.slice(0, n).map((a) => a.text) };
+      }
+    }
+    return { id: `seed-samp-${k}`, sampId: s.id, topic: s.topic, mode: "practice", at: start + k * 0.4 * day, responses, mark: markSamp(s, responses) };
+  });
 }

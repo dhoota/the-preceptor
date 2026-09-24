@@ -177,7 +177,8 @@ export function webAdapter(dev: boolean): PurchasesAdapter {
 }
 
 export function defaultAdapter(): PurchasesAdapter {
-  return isNative() ? revenueCat : webAdapter(Boolean(import.meta.env?.DEV));
+  // VITE_SEED is set only for the static build the screenshot script uses.
+  return isNative() ? revenueCat : webAdapter(Boolean(import.meta.env?.DEV || import.meta.env?.VITE_SEED === "1"));
 }
 
 /**

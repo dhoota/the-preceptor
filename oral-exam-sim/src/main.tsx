@@ -6,9 +6,15 @@ import { AppProvider } from "./state";
 
 async function boot() {
   // Dev only: ?seed=1 loads a sample history for screenshots. Stripped from production builds.
-  if (import.meta.env.DEV && new URLSearchParams(location.search).has("seed")) {
-    const { seedHistory } = await import("./dev/seed");
+  // VITE_SEED=1 keeps it in a static build made only for the screenshot script.
+  if ((import.meta.env.DEV || import.meta.env.VITE_SEED === "1") && new URLSearchParams(location.search).has("seed")) {
+    const { seedHistory, seedSampHistory } = await import("./dev/seed");
+    const { SAMPS } = await import("./samps");
     const { attempts, deck } = seedHistory();
+    localStorage.setItem("samp_attempts_v1", JSON.stringify(seedSampHistory(SAMPS)));
+    // The screenshot script reads answer keys from here to fill in a SAMP.
+    const { PRIORITY_TOPICS } = await import("./blueprint/priorityTopics");
+    Object.assign(window, { __SAMPS: SAMPS, __TOPIC_NAMES: Object.fromEntries(PRIORITY_TOPICS.map((t) => [t.id, t.name])) });
     localStorage.setItem("oral_attempts_v1", JSON.stringify(attempts));
     localStorage.setItem("oral_review_deck_v1", JSON.stringify(deck));
     localStorage.setItem("oral_settings_v1", JSON.stringify({ acceptedDisclaimer: true, speak: false, rate: 1, revealEachQuestion: true }));
