@@ -1,0 +1,177 @@
+import type { ItemMeta, Source } from "@/engine/types";
+
+/** Shared defaults for batch c19 items. */
+export const meta = (id: string, over: Partial<ItemMeta>): ItemMeta => ({
+  id,
+  need: "PA",
+  topic: "",
+  cjmm: "recognize",
+  process: "clinical-judgment",
+  difficulty: 3,
+  stem: "",
+  rationale: "",
+  sources: [],
+  canada: "",
+  reviewed: false,
+  version: 1,
+  ...over,
+});
+
+export const SRC: Record<string, Source> = {
+  who: {
+    body: "World Health Organization",
+    work: "Responding to Intimate Partner Violence and Sexual Violence Against Women: WHO Clinical and Policy Guidelines",
+    year: 2013,
+    url: "https://www.ncbi.nlm.nih.gov/books/NBK174250/",
+  },
+  glass: {
+    body: "Glass N, Laughon K, Campbell J, et al.",
+    work: "Non-fatal Strangulation is an Important Risk Factor for Homicide of Women. Journal of Emergency Medicine 35(3):329",
+    year: 2008,
+    url: "https://www.sciencedirect.com/science/article/abs/pii/S0736467907004143",
+  },
+  danger: {
+    body: "Campbell JC, Webster DW, Glass N",
+    work: "The Danger Assessment: Validation of a Lethality Risk Assessment Instrument for Intimate Partner Femicide. Journal of Interpersonal Violence 24(4):653",
+    year: 2009,
+    url: "https://pubmed.ncbi.nlm.nih.gov/18667689/",
+  },
+  strangle: {
+    body: "Smock W, Sturgeon S. Training Institute on Strangulation Prevention",
+    work: "Recommendations for the Medical/Radiographic Evaluation of Acute Adult, Non-Fatal Strangulation",
+    year: 2017,
+    url: "https://depts.washington.edu/wasafe/pdfs_docs/Recommendations-for-Medical-Radiographic-Evaluation-of-Acute-Adult-Non-Fatal-Strangulation-2017.pdf",
+  },
+  halter: {
+    body: "Halter MJ",
+    work: "Varcarolis' Foundations of Psychiatric-Mental Health Nursing: A Clinical Approach, 9th edition",
+    year: 2022,
+    url: "https://evolve.elsevier.com/cs/product/9780323697071",
+  },
+  start: {
+    body: "Benson M, Koenig KL, Schultz CH",
+    work: "Disaster Triage: START, then SAVE. A New Method of Dynamic Triage for Victims of a Catastrophic Earthquake. Prehospital and Disaster Medicine 11(2):117",
+    year: 1996,
+    url: "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EC54009D37A0BC3D14A9BBFE6B6C42A8/S1049023X0004276Xa.pdf/disaster_triage_start_then_savea_new_method_of_dynamic_triage_for_victims_of_a_catastrophic_earthquake.pdf",
+  },
+  bleed: {
+    body: "Bulger EM, Snyder D, Schoelles K, et al. American College of Surgeons Committee on Trauma",
+    work: "An Evidence-based Prehospital Guideline for External Hemorrhage Control. Prehospital Emergency Care 18(2):163",
+    year: 2014,
+    url: "https://pubmed.ncbi.nlm.nih.gov/24641269/",
+  },
+  berlin: {
+    body: "ARDS Definition Task Force, Ranieri VM, Rubenfeld GD, et al.",
+    work: "Acute Respiratory Distress Syndrome: The Berlin Definition. JAMA 307(23):2526",
+    year: 2012,
+    url: "https://www.unboundmedicine.com/medline/citation/22797452/full_citation",
+  },
+  ardsnet: {
+    body: "Acute Respiratory Distress Syndrome Network",
+    work: "Ventilation with Lower Tidal Volumes as Compared with Traditional Tidal Volumes for Acute Lung Injury and the Acute Respiratory Distress Syndrome. New England Journal of Medicine 342(18):1301",
+    year: 2000,
+    url: "https://www.nejm.org/doi/full/10.1056/NEJM200005043421801",
+  },
+  fan: {
+    body: "Fan E, Del Sorbo L, Goligher EC, et al. American Thoracic Society, European Society of Intensive Care Medicine and Society of Critical Care Medicine",
+    work: "Mechanical Ventilation in Adult Patients with Acute Respiratory Distress Syndrome. American Journal of Respiratory and Critical Care Medicine 195(9):1253",
+    year: 2017,
+    url: "https://pubmed.ncbi.nlm.nih.gov/28459336/",
+  },
+  propofol: {
+    body: "Fresenius Kabi USA",
+    work: "DIPRIVAN (propofol) injectable emulsion, prescribing information",
+    year: 2025,
+    url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d1ae9e26-ffd6-43df-bbd6-869cdede6afe",
+  },
+  padis: {
+    body: "Devlin JW, Skrobik Y, Gelinas C, et al. Society of Critical Care Medicine",
+    work: "Clinical Practice Guidelines for the Prevention and Management of Pain, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU. Critical Care Medicine 46(9):e825",
+    year: 2018,
+    url: "https://pubmed.ncbi.nlm.nih.gov/30113379/",
+  },
+  macduff: {
+    body: "MacDuff A, Arnold A, Harvey J. British Thoracic Society Pleural Disease Guideline Group",
+    work: "Management of Spontaneous Pneumothorax: British Thoracic Society Pleural Disease Guideline 2010. Thorax 65(Suppl 2):ii18",
+    year: 2010,
+    url: "https://doi.org/10.1136/thx.2010.136986",
+  },
+  coker: {
+    body: "Coker RK, Armstrong A, Church AC, et al. British Thoracic Society",
+    work: "BTS Clinical Statement on Air Travel for Passengers with Respiratory Disease. Thorax 77(4):329",
+    year: 2022,
+    url: "https://doi.org/10.1136/thoraxjnl-2021-218110",
+  },
+  shea: {
+    body: "Klompas M, Branson R, Cawcutt K, et al. Society for Healthcare Epidemiology of America",
+    work: "Strategies to Prevent Ventilator-associated Pneumonia, Ventilator-associated Events, and Nonventilator Hospital-acquired Pneumonia in Acute-care Hospitals: 2022 Update. Infection Control and Hospital Epidemiology 43(6):687",
+    year: 2022,
+    url: "https://stacks.cdc.gov/view/cdc/150381/cdc_150381_DS1.pdf",
+  },
+  nicotine: {
+    body: "H-E-B. US National Library of Medicine DailyMed",
+    work: "Nicotine Transdermal System, Drug Facts label",
+    year: 2023,
+    url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=da35e19d-b0aa-8a5f-140e-7601bd2027fe",
+  },
+  daly: {
+    body: "Daly C, Cody JD, Khan I, Rabindranath KS, Vale L, Wallace SA. Cochrane Kidney and Transplant Group",
+    work: "Double Bag or Y-set Versus Standard Transfer Systems for Continuous Ambulatory Peritoneal Dialysis in End-stage Kidney Disease. Cochrane Database of Systematic Reviews CD003078",
+    year: 2014,
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6457793/",
+  },
+  siegel: {
+    body: "Siegel JD, Rhinehart E, Jackson M, Chiarello L. Healthcare Infection Control Practices Advisory Committee",
+    work: "2007 Guideline for Isolation Precautions: Preventing Transmission of Infectious Agents in Healthcare Settings",
+    year: 2007,
+    url: "https://www.cdc.gov/infection-control/hcp/isolation-precautions/index.html",
+  },
+  hinkle: {
+    body: "Hinkle JL, Cheever KH, Overbaugh KJ",
+    work: "Brunner and Suddarth's Textbook of Medical-Surgical Nursing, 15th edition",
+    year: 2022,
+    url: "https://openlibrary.org/isbn/9781975161033",
+  },
+  harding: {
+    body: "Harding MM, Kwong J, Hagler D, Reinisch C",
+    work: "Lewis's Medical-Surgical Nursing: Assessment and Management of Clinical Problems, 12th edition",
+    year: 2023,
+    url: "https://shop.elsevier.com/books/lewiss-medical-surgical-nursing/harding/978-0-323-78961-5",
+  },
+  smoking: {
+    body: "Krist AH, Davidson KW, Mangione CM, et al. US Preventive Services Task Force",
+    work: "Interventions for Tobacco Smoking Cessation in Adults, Including Pregnant Persons. JAMA 325(3):265",
+    year: 2021,
+    url: "https://pubmed.ncbi.nlm.nih.gov/33464343/",
+  },
+  kdigo: {
+    body: "Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group",
+    work: "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. Kidney International 105(4S):S117",
+    year: 2024,
+    url: "https://pubmed.ncbi.nlm.nih.gov/38490803/",
+  },
+  metformin: {
+    body: "US Food and Drug Administration",
+    work: "FDA Drug Safety Communication: FDA revises warnings regarding use of the diabetes medicine metformin in certain patients with reduced kidney function",
+    year: 2016,
+    url: "https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-revises-warnings-regarding-use-diabetes-medicine-metformin-certain",
+  },
+  kdoqi: {
+    body: "Ikizler TA, Burrowes JD, Byham-Gray LD, et al. National Kidney Foundation KDOQI",
+    work: "KDOQI Clinical Practice Guideline for Nutrition in CKD: 2020 Update. American Journal of Kidney Diseases 76(3 Suppl 1):S1",
+    year: 2020,
+    url: "https://pubmed.ncbi.nlm.nih.gov/32829751/",
+  },
+  ispd: {
+    body: "Li PK, Chow KM, Cho Y, et al. International Society for Peritoneal Dialysis",
+    work: "ISPD Peritonitis Guideline Recommendations: 2022 Update on Prevention and Treatment. Peritoneal Dialysis International 42(2):110",
+    year: 2022,
+    url: "https://pubmed.ncbi.nlm.nih.gov/35264029/",
+  },
+  epogen: {
+    body: "Amgen",
+    work: "EPOGEN (epoetin alfa) injection, prescribing information",
+    year: 2024,
+    url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=1f2d0b28-9cc5-4523-80b8-637fdaf3f7a5",
+  },
+};
