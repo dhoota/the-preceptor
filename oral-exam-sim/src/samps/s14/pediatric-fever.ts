@@ -1,0 +1,1332 @@
+// DRAFT. Written for exam practice only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { Samp } from "@/engine/samp";
+import type { Source } from "@/engine/types";
+
+const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+
+const S = {
+  cpsInfant: { id: "cps-infant", citation: "Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024.", url: "https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days" },
+  aap: { id: "aap-infant", citation: "Pantell RH, et al. Evaluation and management of well-appearing febrile infants 8 to 60 days old. Pediatrics. 2021." },
+  pecarn: { id: "pecarn-infant", citation: "Kuppermann N, et al. A clinical prediction rule to identify febrile infants 60 days and younger at low risk for serious bacterial infections. JAMA Pediatr. 2019." },
+  ssc: { id: "ssc-peds", citation: "Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of septic shock and sepsis-associated organ dysfunction in children. Pediatr Crit Care Med. 2020." },
+  trekk: { id: "trekk-sepsis", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Paediatric sepsis." },
+  phacMening: { id: "phac-mening", citation: "Public Health Agency of Canada. Guidelines for the prevention and control of meningococcal disease. Canada Communicable Disease Report. 2005." },
+  cigMeasles: { id: "cig-measles", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Measles vaccine, including post-exposure prophylaxis with immune globulin." },
+  aha: { id: "aha-kawasaki", citation: "McCrindle BW, et al. Diagnosis, treatment, and long-term management of Kawasaki disease: a scientific statement for health professionals from the American Heart Association. Circulation. 2017." },
+  catmat: { id: "catmat", citation: "Committee to Advise on Tropical Medicine and Travel (CATMAT). Canadian recommendations for the prevention and treatment of malaria. Public Health Agency of Canada." },
+  whoMalaria: { id: "who-malaria", citation: "World Health Organization. WHO guidelines for malaria." },
+  cpsAom: { id: "cps-aom", citation: "Le Saux N, Robinson JL. Canadian Paediatric Society. Management of acute otitis media in children six months of age and older. Paediatr Child Health. 2016." },
+  cpsFever: { id: "cps-fever", citation: "Canadian Paediatric Society. Caring for Kids. Fever and temperature taking." },
+  cwc: { id: "cwc-caep", citation: "Choosing Wisely Canada. Emergency medicine recommendations from the Canadian Association of Emergency Physicians." },
+  dart: { id: "dart", citation: "Dart RC, et al. Acetaminophen poisoning: an evidence-based consensus guideline for out-of-hospital management. Clin Toxicol. 2006." },
+  dart2023: { id: "dart-2023", citation: "Dart RC, Mullins ME, Matoushek T, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open. 2023." },
+  extrip: { id: "extrip-sal", citation: "Juurlink DN, et al. Extracorporeal treatment for salicylate poisoning: systematic review and recommendations from the EXTRIP workgroup. Ann Emerg Med. 2015." },
+  goldfrank: { id: "goldfrank", citation: "Nelson LS, et al, editors. Goldfrank's Toxicologic Emergencies. McGraw Hill. Chapter on salicylates." },
+  acsm: { id: "acsm-heat", citation: "Roberts WO, et al. ACSM expert consensus statement on exertional heat illness: recognition, management, and return to activity. Curr Sports Med Rep. 2021." },
+  fn: { id: "fn-peds", citation: "Lehrnbecher T, et al. Guideline for the management of fever and neutropenia in pediatric patients with cancer and hematopoietic cell transplantation recipients: 2023 update. J Clin Oncol. 2023." },
+  tls: { id: "tls", citation: "Coiffier B, et al. Guidelines for the management of pediatric and adult tumor lysis syndrome: an evidence-based review. J Clin Oncol. 2008." },
+  nelson: { id: "nelson", citation: "Kliegman RM, et al, editors. Nelson Textbook of Pediatrics. Elsevier. Chapters on fever without a focus and the leukemias." },
+  cpsUti: { id: "cps-uti", citation: "Robinson JL, et al. Canadian Paediatric Society. Urinary tract infection in infants and children: Diagnosis and management. Paediatr Child Health. 2014." },
+  idsa: { id: "idsa-ssti", citation: "Stevens DL, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014." },
+} satisfies Record<string, Source>;
+
+export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
+  /* 01 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-01",
+    topic: "pediatric-fever",
+    title: "Twelve day old with a warm forehead",
+    stem:
+      "A 12 day old boy is brought in because his mother felt he was warm. He was born at term by vaginal delivery after an uncomplicated pregnancy. Rectal temperature 38.4°C. HR 162, RR 44, SpO2 99%. Weight 3.6 kg. He is feeding well, alert and consolable. He has mild visible jaundice. The fontanelle is flat and there is no rash.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 4,
+        prompt: "List FOUR investigations you order.",
+        accept: [
+          { id: "bcx", text: "Blood culture", match: ["blood culture"] },
+          { id: "cbc", text: "CBC with differential", match: ["cbc", "complete blood count", "neutrophil", "anc", "white count", "wbc"] },
+          { id: "ua", text: "Urinalysis by catheter", match: ["urinalysis", "ua", "urine dip", "urine analysis"] },
+          { id: "ucx", text: "Urine culture by catheter", match: ["urine culture", "urine", "catheter"] },
+          { id: "lp", text: "Lumbar puncture for CSF cell count, glucose, protein, Gram stain and culture", match: ["lumbar puncture", "lp", "csf"] },
+          { id: "pct", text: "Procalcitonin or CRP", match: ["procalcitonin", "pct", "crp", "c reactive"] },
+          { id: "hsv", text: "HSV PCR testing if risk factors are present", match: ["hsv", "herpes"] },
+          { id: "bili", text: "Bilirubin", match: ["bilirubin"] },
+          { id: "entero", text: "Enterovirus PCR on CSF", match: ["enterovirus"] },
+        ],
+        unacceptable: [{ text: "Bag urine specimen for culture", match: ["bag"] }],
+        explanation:
+          "In the first 28 days of life a well appearance does not exclude bacteremia or meningitis. The CPS advises a CBC, CRP or procalcitonin, blood culture, urinalysis and urine culture for every febrile neonate. A lumbar puncture is advised for high risk neonates and is often done in low risk ones too. Bag specimens are contaminated too often to use for culture.",
+        keyFeature: { topic: "pediatric-fever", n: 1 },
+        source: "cps-infant",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        select: 2,
+        prompt: "After the lumbar puncture you decide to start empiric antibiotics while results are pending. Which TWO do you order? Select TWO.",
+        options: [
+          "Ampicillin 75 mg/kg IV (270 mg) every 6 hours",
+          "Gentamicin 5 mg/kg IV (18 mg) every 24 hours",
+          "Ceftriaxone 50 mg/kg IV (180 mg) every 24 hours",
+          "Amoxicillin 30 mg/kg PO every 8 hours",
+          "Ampicillin 25 mg/kg IV (90 mg) every 12 hours",
+          "Vancomycin 15 mg/kg IV every 6 hours",
+          "Azithromycin 10 mg/kg IV daily",
+        ],
+        correct: [0, 1],
+        explanation:
+          "The CPS regimen for a term infant aged 8 to 28 days is ampicillin 75 mg/kg every 6 hours with gentamicin or tobramycin 5 mg/kg every 24 hours. Ampicillin covers Listeria and enterococcus, and the aminoglycoside covers gram negative organisms. If meningitis is suspected, add cefotaxime or use it in place of the aminoglycoside. Ceftriaxone is avoided in neonates, especially with jaundice, because it displaces bilirubin and must not be given with IV calcium.",
+        keyFeature: { topic: "pediatric-fever", n: 3 },
+        source: "cps-infant",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO findings that would lead you to add empiric acyclovir.",
+        accept: [
+          { id: "seizure", text: "Seizures", match: ["seizure"] },
+          { id: "vesicles", text: "Skin, eye or mouth vesicles", match: ["vesicle", "vesicular", "blister"] },
+          { id: "maternal", text: "Maternal history of genital HSV or lesions at delivery", match: ["maternal", "mother", "genital", "herpes"] },
+          { id: "csf", text: "CSF pleocytosis with a negative Gram stain", match: ["pleocytosis", "csf white", "csf wbc"] },
+          { id: "alt", text: "Elevated ALT", match: ["alt", "transaminase", "liver enzyme"] },
+          { id: "ill", text: "Ill appearance, lethargy or hypothermia", match: ["ill appearing", "ill appearance", "hypothermia", "lethargy", "lethargic"] },
+          { id: "plt", text: "Thrombocytopenia", match: ["thrombocytopenia", "low platelet"] },
+        ],
+        explanation:
+          "Neonatal HSV often presents without skin lesions and has high mortality if treatment is delayed. Seizures, vesicles, CSF pleocytosis, raised transaminases and ill appearance all raise concern. Acyclovir is given at 20 mg/kg IV every 8 hours while HSV PCR results are pending.",
+        keyFeature: { topic: "pediatric-fever", n: 3 },
+        source: "aap-infant",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "The urinalysis is negative. CBC, CRP and procalcitonin are normal. CSF has 3 white cells and a negative Gram stain.",
+        prompt: "Which is the most appropriate disposition? Select one.",
+        options: [
+          "Discharge home with a recheck in 24 hours",
+          "Discharge home on oral amoxicillin",
+          "Discharge home once the blood culture is negative at 12 hours",
+          "Admit and observe until all cultures are negative at 36 hours, with or without continuing antibiotics",
+          "Give one dose of ceftriaxone and discharge",
+        ],
+        correct: 3,
+        explanation:
+          "The CPS advises hospital observation for every febrile infant aged 28 days or younger, even when low risk. Observe until cultures are negative at 36 hours. With a normal CSF, continuing antibiotics is optional. Normal initial results do not make discharge from the emergency department safe.",
+        keyFeature: { topic: "pediatric-fever", n: 1 },
+        source: "cps-infant",
+      },
+    ],
+    sources: [S.cpsInfant, S.aap],
+    ...META,
+  },
+
+  /* 02 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-02",
+    topic: "pediatric-fever",
+    title: "Six week old with fever at home",
+    stem:
+      "A 6 week old boy had a rectal temperature of 38.3°C at home three hours ago. He was born at term and has been well. In the ED his rectal temperature is 38.2°C. HR 158, RR 40, SpO2 99%. Weight 4.8 kg. He is feeding well, alert and smiling, with normal perfusion. There is no focus on exam.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE initial investigations.",
+        accept: [
+          { id: "ua", text: "Urinalysis on a catheter specimen", match: ["urinalysis", "ua", "urine dip", "urine analysis"] },
+          { id: "ucx", text: "Urine culture by catheter", match: ["urine culture", "catheter urine", "urine"] },
+          { id: "bcx", text: "Blood culture", match: ["blood culture"] },
+          { id: "pct", text: "Procalcitonin", match: ["procalcitonin", "pct"] },
+          { id: "anc", text: "CBC with absolute neutrophil count", match: ["cbc", "neutrophil", "anc", "white count", "wbc", "complete blood count"] },
+          { id: "crp", text: "CRP", match: ["crp", "c reactive"] },
+        ],
+        unacceptable: [{ text: "Bag urine specimen for culture", match: ["bag"] }],
+        explanation:
+          "Well-appearing febrile infants 29 to 60 days old are risk stratified with a urinalysis and inflammatory markers. Procalcitonin is the most useful marker, with ANC and CRP as alternatives. The PECARN rule uses a negative urinalysis, ANC at or below 4.09 x 10^9/L and procalcitonin at or below 1.71 µg/L. The AAP guideline uses a procalcitonin cut off of 0.5 µg/L.",
+        keyFeature: { topic: "pediatric-fever", n: 1 },
+        source: "pecarn-infant",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "The urinalysis is negative. ANC 3.1 x 10^9/L, procalcitonin 0.2 µg/L, CRP 8 mg/L. He remains well appearing and is feeding.",
+        prompt: "Which is the most appropriate disposition? Select one.",
+        options: [
+          "Lumbar puncture and admission for IV ceftriaxone",
+          "Discharge home without antibiotics, with reassessment in 24 to 48 hours and follow up of the blood culture",
+          "Discharge home on oral amoxicillin",
+          "Admit and start IV ampicillin and gentamicin",
+          "Give IM ceftriaxone and discharge without a lumbar puncture",
+        ],
+        correct: 1,
+        explanation:
+          "A well-appearing infant of 29 to 60 days with a negative urinalysis and normal inflammatory markers is at low risk of invasive bacterial infection. The CPS allows discharge without a lumbar puncture or antibiotics when follow up within 24 to 48 hours is assured. Admission for observation until cultures are negative at 24 hours is an alternative. Giving antibiotics without a lumbar puncture muddies any later meningitis workup.",
+        keyFeature: { topic: "pediatric-fever", n: 1 },
+        source: "cps-infant",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        prompt: "His parents ask how to give acetaminophen. Write TWO parts of your instructions, including the dose.",
+        accept: [
+          { id: "dose", text: "Acetaminophen 15 mg/kg, about 72 mg (0.9 mL of the 80 mg/mL drops)", match: ["72 mg", "70 mg", "75 mg", "60 mg", "48 mg", "15 mg/kg", "15mg/kg", "10 mg/kg", "0.9 ml", "0.8 ml", "0.7 ml", "0.6 ml"] },
+          { id: "interval", text: "Every 4 to 6 hours, no more than 5 doses or 75 mg/kg in 24 hours", match: ["every 4", "every 6", "q4", "q6", "q4h", "q6h", "4 to 6", "5 dose", "five dose", "75 mg/kg"] },
+          { id: "syringe", text: "Measure with the oral syringe that comes with the product", match: ["syringe", "measuring device", "dosing device"] },
+          { id: "ibu", text: "Do not use ibuprofen under 6 months of age", match: ["avoid ibuprofen", "no ibuprofen", "not ibuprofen", "don ibuprofen", "never ibuprofen", "ibuprofen under"] },
+          { id: "comfort", text: "Treat for comfort, not to reach a normal temperature", match: ["comfort", "not the number"] },
+        ],
+        unacceptable: [
+          { text: "160 mg dose", match: ["160 mg"] },
+          { text: "400 mg dose", match: ["400 mg"], dangerous: true },
+        ],
+        explanation:
+          "Antipyretics are dosed by weight at 10 to 15 mg/kg of acetaminophen. Canadian infant drops are 80 mg/mL, so small volume errors cause large dose errors. Ibuprofen is not labelled for infants under 6 months. The goal is comfort, not a number on the thermometer.",
+        keyFeature: { topic: "pediatric-fever", n: 8 },
+        source: "cps-fever",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE signs that should make his parents bring him back right away.",
+        accept: [
+          { id: "feed", text: "Poor feeding", match: ["feeding", "feed", "not eating", "refuse"] },
+          { id: "lethargy", text: "Lethargy or hard to wake", match: ["lethargic", "lethargy", "hard to wake", "sleepy", "drowsy", "floppy"] },
+          { id: "wet", text: "Fewer wet diapers", match: ["wet diaper", "urine output", "diaper", "peeing"] },
+          { id: "breath", text: "Breathing difficulty, grunting or pauses", match: ["breathing", "grunting", "apnea", "apnoea"] },
+          { id: "colour", text: "Pale, mottled or blue colour", match: ["mottled", "pale", "colour", "color", "blue"] },
+          { id: "rash", text: "New rash, especially spots that do not blanch", match: ["rash", "petechiae", "spot"] },
+          { id: "irritable", text: "Inconsolable crying or irritability", match: ["inconsolable", "irritable", "irritability"] },
+          { id: "vomit", text: "Repeated vomiting", match: ["vomit", "vomiting"] },
+          { id: "font", text: "Bulging fontanelle", match: ["fontanelle", "fontanel"] },
+        ],
+        explanation:
+          "Early sepsis in young infants shows as changes in feeding, alertness, colour and breathing more than as fever height. Parents need concrete signs to watch for. A scheduled recheck in 24 hours is part of safe discharge.",
+        keyFeature: { topic: "pediatric-fever", n: 2 },
+        source: "aap-infant",
+      },
+    ],
+    sources: [S.pecarn, S.cpsInfant, S.aap, S.cpsFever],
+    ...META,
+  },
+
+  /* 03 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-03",
+    topic: "pediatric-fever",
+    alsoTopics: ["shock"],
+    title: "Sleepy nine month old",
+    stem:
+      "A 9 month old girl has had fever for 2 days. Today she is sleepy, has taken only a few ounces and has had one wet diaper. She is fully immunized. Temperature 39.6°C. HR 196, RR 52, BP 64/32, SpO2 95% on room air. Weight 8.5 kg. Capillary refill is 4 seconds and her legs are mottled. She responds only to painful stimulus. There is no rash.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "Other than fever, list THREE findings that indicate sepsis with poor perfusion.",
+        accept: [
+          { id: "hr", text: "Tachycardia of 196", match: ["tachycardia", "heart rate", "196"] },
+          { id: "crt", text: "Capillary refill of 4 seconds", match: ["capillary refill", "cap refill", "crt"] },
+          { id: "mottled", text: "Mottled legs", match: ["mottled", "mottling"] },
+          { id: "loc", text: "Decreased level of consciousness", match: ["lethargy", "lethargic", "sleepy", "drowsy", "mental status", "decreased level", "painful stimulus", "responds only"] },
+          { id: "feed", text: "Poor feeding", match: ["feeding", "feed"] },
+          { id: "uo", text: "Decreased urine output", match: ["diaper", "urine output", "oliguria"] },
+          { id: "rr", text: "Tachypnea", match: ["tachypnea", "tachypnoea", "respiratory rate"] },
+          { id: "bp", text: "Hypotension for age", match: ["hypotension", "blood pressure", "bp 64", "hypotensive"] },
+        ],
+        explanation:
+          "Altered mental status, poor feeding, reduced urine output and poor perfusion are the signs of paediatric sepsis. Hypotension is a late sign in children. Her systolic pressure is below the 70 mmHg lower limit for infants, so she is in decompensated shock.",
+        keyFeature: { topic: "pediatric-fever", n: 2 },
+        source: "trekk-sepsis",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        select: 2,
+        prompt: "Which TWO antimicrobials do you give? Select TWO.",
+        options: [
+          "Ceftriaxone 100 mg/kg IV (850 mg)",
+          "Ceftriaxone 10 mg/kg IV (85 mg)",
+          "Ampicillin 50 mg/kg IV",
+          "Vancomycin 15 mg/kg IV (130 mg)",
+          "Vancomycin 1 g IV",
+          "Amoxicillin 400 mg PO",
+          "Azithromycin 10 mg/kg IV",
+          "Gentamicin 7 mg/kg IV",
+        ],
+        correct: [0, 3],
+        explanation:
+          "Septic shock without a source in an infant needs coverage of pneumococcus, meningococcus, Hib and resistant organisms, at doses that treat meningitis. Give antibiotics within the first hour and do not delay them for a lumbar puncture. Ampicillin is not needed for Listeria beyond early infancy.",
+        keyFeature: { topic: "pediatric-fever", n: 3 },
+        source: "ssc-peds",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE other resuscitation steps for the first hour.",
+        accept: [
+          { id: "io", text: "IV or intraosseous access", match: ["intraosseous", "io", "iv access"] },
+          { id: "bolus", text: "Crystalloid bolus 10 to 20 mL/kg (85 to 170 mL)", match: ["bolus", "10 ml/kg", "20 ml/kg", "crystalloid", "ringer", "normal saline", "fluid"] },
+          { id: "reassess", text: "Reassess after each bolus for hepatomegaly and crackles", match: ["reassess", "hepatomegaly", "crackle", "overload"] },
+          { id: "glucose", text: "Check and correct glucose", match: ["glucose", "sugar", "dextrose"] },
+          { id: "bcx", text: "Blood culture without delaying antibiotics", match: ["blood culture", "culture"] },
+          { id: "lactate", text: "Lactate and blood gas", match: ["lactate", "blood gas", "vbg"] },
+          { id: "epi", text: "Epinephrine infusion if shock persists after fluids", match: ["epinephrine", "adrenaline", "inotrope", "vasoactive"] },
+          { id: "o2", text: "Supplemental oxygen", match: ["oxygen"] },
+          { id: "ca", text: "Check and correct ionized calcium", match: ["calcium"] },
+        ],
+        unacceptable: [{ text: "Lumbar puncture before antibiotics", match: ["wait for lp", "wait for lumbar puncture", "wait for csf"], dangerous: true }],
+        explanation:
+          "Give fluid in 10 to 20 mL/kg aliquots, up to 40 to 60 mL/kg in the first hour, reassessing after each for overload. Hypoglycemia is common in septic infants and easy to miss. A lumbar puncture in an unstable child is unsafe and must not delay antibiotics.",
+        keyFeature: { topic: "shock", n: 4 },
+        source: "ssc-peds",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "After 40 mL/kg of crystalloid her BP is 66/34, capillary refill is 5 seconds and her liver edge is now 3 cm below the costal margin.",
+        prompt: "Which is the most appropriate next step? Select one.",
+        options: [
+          "Further 20 mL/kg boluses to a total of 100 mL/kg",
+          "Dopamine 10 mcg/kg/min",
+          "Epinephrine infusion 0.05 to 0.3 mcg/kg/min through the IO or a peripheral line",
+          "Hydrocortisone before any vasoactive drug",
+          "Wait for central access before starting a vasoactive drug",
+        ],
+        correct: 2,
+        explanation:
+          "Cold shock that persists after 40 to 60 mL/kg, especially with new hepatomegaly, needs a vasoactive infusion. Epinephrine is preferred for cold shock and can start peripherally or by IO. Dopamine is no longer favoured. Hydrocortisone is for refractory shock or known adrenal risk.",
+        keyFeature: { topic: "shock", n: 7 },
+        source: "ssc-peds",
+      },
+    ],
+    sources: [S.trekk, S.ssc],
+    ...META,
+  },
+
+  /* 04 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-04",
+    topic: "pediatric-fever",
+    alsoTopics: ["infectious-diseases"],
+    title: "Preschooler with fever and new spots",
+    stem:
+      "A 3 year old girl has had fever for 12 hours. Her father noticed purple spots on her legs an hour ago that are spreading. She attends daycare and has a 5 year old brother. Temperature 39.8°C. HR 170, RR 34, BP 84/50, SpO2 97%. Weight 14 kg. Capillary refill is 3 seconds. She is irritable but consolable.",
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which rash feature most strongly suggests invasive bacterial infection? Select one.",
+        options: [
+          "Blanching red macules on the trunk",
+          "Nonblanching petechiae and purpura spreading on the legs",
+          "A few petechiae above the nipple line after forceful coughing",
+          "A lacy rash on the arms after bright red cheeks",
+          "Urticarial wheals that move over hours",
+        ],
+        correct: 1,
+        explanation:
+          "Fever with spreading nonblanching petechiae or purpura below the nipple line is meningococcemia until proven otherwise. Petechiae only in the distribution of the superior vena cava after coughing or vomiting are usually benign. Lacy rashes and moving wheals are typical of viral exanthems and urticaria.",
+        keyFeature: { topic: "pediatric-fever", n: 4 },
+        source: "trekk-sepsis",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "Write TWO empiric antimicrobial orders. Include drug, dose and route.",
+        accept: [
+          { id: "cef", text: "Ceftriaxone 100 mg/kg IV or IO (1.4 g), or IM if access is delayed", match: ["ceftriaxone 100 mg/kg", "ceftriaxone 100mg/kg", "ceftriaxone 1.4 g", "ceftriaxone 1.4g", "ceftriaxone 1400 mg", "ceftriaxone 1400mg", "cefotaxime 75 mg/kg", "cefotaxime 1 g"] },
+          { id: "vanc", text: "Vancomycin 15 mg/kg IV (210 mg)", match: ["vancomycin 15 mg/kg", "vancomycin 15mg/kg", "vancomycin 210", "vanco 15 mg/kg", "vancomycin 200"] },
+          { id: "now", text: "Give immediately, before lumbar puncture or other tests", match: ["immediately", "before lp", "before lumbar", "within 1 hour", "within one hour", "within an hour", "stat"] },
+        ],
+        unacceptable: [
+          { text: "Wait for a lumbar puncture before antibiotics", match: ["wait for lp", "wait for lumbar", "wait for csf"], dangerous: true },
+          { text: "Ceftriaxone 50 mg/kg", match: ["ceftriaxone 50 mg/kg", "ceftriaxone 50mg/kg"] },
+        ],
+        explanation:
+          "Mortality from meningococcal disease rises with every hour of delay. Give ceftriaxone at meningitic doses immediately, by IM injection if access is difficult. Vancomycin covers resistant pneumococcus until meningitis is excluded. A lumbar puncture in a child who may be in shock can wait.",
+        keyFeature: { topic: "pediatric-fever", n: 3 },
+        source: "trekk-sepsis",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE infection control or public health actions.",
+        accept: [
+          { id: "droplet", text: "Droplet precautions for the first 24 hours of antibiotics", match: ["droplet", "isolation", "mask"] },
+          { id: "notify", text: "Notify the local public health unit", match: ["public health", "report", "notify", "notifiable"] },
+          { id: "contacts", text: "Chemoprophylaxis for household and daycare contacts", match: ["prophylaxis", "chemoprophylaxis", "rifampin", "ciprofloxacin", "contact"] },
+          { id: "hcw", text: "Prophylaxis for staff with unprotected exposure to her secretions", match: ["health care worker", "staff", "unprotected"] },
+          { id: "vaccine", text: "Vaccination of contacts when the serogroup is vaccine preventable", match: ["vaccine", "vaccination", "immunization", "immunisation"] },
+        ],
+        explanation:
+          "Invasive meningococcal disease is reportable. Public health identifies close contacts, who need prophylaxis as soon as possible, ideally within 24 hours. Staff need prophylaxis only after unprotected contact with secretions, such as intubation without a mask.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "phac-mening",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Her 5 year old brother weighs 20 kg and is well. Which is the most appropriate prophylaxis? Select one.",
+        options: [
+          "Rifampin 10 mg/kg (200 mg) PO every 12 hours for 2 days",
+          "Rifampin 20 mg/kg PO as a single dose",
+          "Amoxicillin 50 mg/kg PO daily for 10 days",
+          "Azithromycin 10 mg/kg PO daily for 5 days",
+          "No prophylaxis unless he develops symptoms",
+        ],
+        correct: 0,
+        explanation:
+          "Rifampin 10 mg/kg (maximum 600 mg) every 12 hours for 2 days is standard for children, with a single IM dose of ceftriaxone as an alternative. Amoxicillin does not eradicate carriage. Waiting for symptoms misses the window for prevention.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "phac-mening",
+      },
+    ],
+    sources: [S.trekk, S.phacMening],
+    ...META,
+  },
+
+  /* 05 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-05",
+    topic: "pediatric-fever",
+    alsoTopics: ["infectious-diseases"],
+    title: "Toddler with fever, cough and red eyes",
+    stem:
+      "A 20 month old boy has had fever for 4 days with cough, runny nose and red eyes. Today a red blotchy rash started behind his ears and on his face and is spreading down his trunk. His parents chose not to vaccinate him. The family returned from visiting relatives abroad 10 days ago. Temperature 39.9°C. HR 150, RR 36, SpO2 96%. Weight 11 kg. He has been sitting in the busy waiting room for an hour.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE features in the history or exam that point to a serious viral exanthem rather than a benign one.",
+        accept: [
+          { id: "unvax", text: "Unvaccinated", match: ["unvaccinated", "unimmunized", "unimmunised", "not vaccinated", "no mmr", "vaccine", "vaccination"] },
+          { id: "travel", text: "Recent travel with possible exposure", match: ["travel", "outbreak", "exposure", "abroad"] },
+          { id: "prodrome", text: "Prodrome of cough, coryza and conjunctivitis", match: ["cough", "coryza", "conjunctivitis", "three c", "prodrome", "red eye"] },
+          { id: "koplik", text: "Koplik spots on the buccal mucosa", match: ["koplik"] },
+          { id: "spread", text: "Rash starting at the hairline and face and spreading downward", match: ["hairline", "face", "behind ear", "head to toe", "cephalocaudal", "spreading down", "spread down"] },
+          { id: "fever", text: "High fever for several days before the rash", match: ["fever before", "high fever", "several day"] },
+        ],
+        explanation:
+          "Measles starts with high fever and cough, coryza and conjunctivitis for several days. The rash begins at the hairline and moves down the body. Koplik spots are pathognomonic but short lived. An unvaccinated child with travel exposure should be isolated on suspicion alone.",
+        keyFeature: { topic: "pediatric-fever", n: 4 },
+        source: "cig-measles",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO infection control actions you take right away.",
+        accept: [
+          { id: "airborne", text: "Airborne isolation in a negative pressure room", match: ["airborne", "negative pressure"] },
+          { id: "n95", text: "Staff wear N95 respirators and only immune staff enter", match: ["n95", "immune staff", "respirator"] },
+          { id: "mask", text: "Put a surgical mask on the child while moving him", match: ["mask"] },
+          { id: "ph", text: "Notify public health immediately", match: ["public health", "notify", "report"] },
+          { id: "contacts", text: "Identify exposed people in the waiting room", match: ["contact", "waiting room", "exposed"] },
+        ],
+        unacceptable: [{ text: "Droplet precautions only", match: ["droplet only", "droplet precaution only", "only droplet"] }],
+        explanation:
+          "Measles is airborne and among the most contagious infections known. The virus stays in room air for up to 2 hours. Isolate in a negative pressure room, restrict entry to immune staff and call public health early so exposed contacts can be offered prophylaxis in time.",
+        keyFeature: { topic: "pediatric-fever", n: 4 },
+        source: "cig-measles",
+      },
+      {
+        id: "q3",
+        kind: "menu",
+        select: 2,
+        prompt: "A 4 month old infant and his mother, who is pregnant and not immune, were in the waiting room with him 3 hours ago. Select TWO correct post-exposure measures.",
+        options: [
+          "MMR vaccine for the 4 month old",
+          "Intramuscular immune globulin 0.5 mL/kg for the 4 month old",
+          "MMR vaccine for the pregnant mother",
+          "Intravenous immune globulin 400 mg/kg for the pregnant mother",
+          "Oral acyclovir for both",
+          "Vitamin A for both",
+          "No prophylaxis unless symptoms develop",
+        ],
+        correct: [1, 3],
+        explanation:
+          "Infants under 6 months are too young for MMR and receive IM immune globulin within 6 days. MMR is a live vaccine and is contraindicated in pregnancy, so a susceptible pregnant contact receives IV immune globulin. Acyclovir has no activity against measles.",
+        keyFeature: { topic: "infectious-diseases", n: 10 },
+        source: "cig-measles",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO complications of this illness that you assess for before disposition.",
+        accept: [
+          { id: "pna", text: "Pneumonia", match: ["pneumonia", "pneumonitis"] },
+          { id: "aom", text: "Otitis media", match: ["otitis", "ear infection"] },
+          { id: "enceph", text: "Encephalitis", match: ["encephalitis", "encephalopathy"] },
+          { id: "dehyd", text: "Dehydration from diarrhea and poor intake", match: ["dehydration", "diarrhea", "diarrhoea"] },
+          { id: "eye", text: "Keratitis or corneal ulceration", match: ["keratitis", "cornea", "corneal"] },
+          { id: "croup", text: "Laryngotracheobronchitis", match: ["croup", "laryngotracheobronchitis"] },
+          { id: "seizure", text: "Seizures", match: ["seizure"] },
+        ],
+        explanation:
+          "Pneumonia causes most measles deaths in children. Otitis media, diarrhea with dehydration and encephalitis are also common. Vitamin A reduces morbidity and mortality and is recommended for children with measles.",
+        keyFeature: { topic: "pediatric-fever", n: 4 },
+        source: "cig-measles",
+      },
+    ],
+    sources: [S.cigMeasles],
+    ...META,
+  },
+
+  /* 06 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-06",
+    topic: "pediatric-fever",
+    title: "Six days of fever despite antibiotics",
+    stem:
+      "A 3 year old boy has had fever for 6 days. A walk-in clinic started amoxicillin 3 days ago for a sore throat, without improvement. He is very irritable. Temperature 39.5°C. HR 150, RR 28, BP 98/58, SpO2 99%. Weight 16 kg. Both eyes are red without discharge. His lips are red and cracked and his tongue is bright red. He has a blotchy rash on his trunk. His hands and feet are red and puffy. There is a 2 cm tender node on the left side of his neck.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 4,
+        prompt: "List FOUR principal clinical criteria that he meets for the diagnosis you suspect.",
+        accept: [
+          { id: "eyes", text: "Bilateral nonexudative conjunctival injection", match: ["conjunctival", "conjunctivitis", "eye", "red eye", "conjunctiva"] },
+          { id: "oral", text: "Oral changes: red cracked lips and strawberry tongue", match: ["lip", "strawberry", "oral", "mouth", "tongue"] },
+          { id: "rash", text: "Polymorphous rash", match: ["rash", "exanthem"] },
+          { id: "extremity", text: "Red, swollen hands and feet", match: ["hand", "feet", "foot", "extremity", "edema", "oedema", "swollen", "desquamation", "peeling"] },
+          { id: "node", text: "Cervical lymph node at least 1.5 cm", match: ["lymphadenopathy", "node", "lymph"] },
+        ],
+        explanation:
+          "Kawasaki disease is diagnosed with fever for at least 5 days plus at least 4 of the 5 principal features. He has all five. The criteria often appear one at a time, so ask about features that have already resolved. Incomplete disease is common in infants.",
+        keyFeature: { topic: "pediatric-fever", n: 5 },
+        source: "aha-kawasaki",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        select: 2,
+        prompt: "Which TWO treatments are indicated? Select TWO.",
+        options: [
+          "IV immune globulin 2 g/kg (32 g) as a single infusion over 10 to 12 hours",
+          "IV immune globulin 400 mg/kg daily for 5 days",
+          "ASA at moderate to high dose (30 to 100 mg/kg/day) divided four times daily",
+          "ASA 3 to 5 mg/kg/day alone without immune globulin",
+          "Ibuprofen 10 mg/kg every 6 hours for fever",
+          "Prednisone 2 mg/kg/day in place of immune globulin",
+          "Ceftriaxone 50 mg/kg IV daily",
+        ],
+        correct: [0, 2],
+        explanation:
+          "A single dose of IVIG 2 g/kg given within the first 10 days of illness reduces coronary aneurysms from about 25% to about 4%. ASA is given with it at moderate to high dose until the fever settles, then at low dose. Ibuprofen blocks the antiplatelet effect of ASA. Steroids are an adjunct for high risk patients, not a substitute.",
+        keyFeature: { topic: "pediatric-fever", n: 5 },
+        source: "aha-kawasaki",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE investigations that support the diagnosis or guide management.",
+        accept: [
+          { id: "echo", text: "Echocardiogram for coronary artery changes", match: ["echo", "echocardiogram", "echocardiography", "coronary"] },
+          { id: "crp", text: "CRP and ESR", match: ["crp", "esr", "sed rate", "c reactive", "sedimentation"] },
+          { id: "cbc", text: "CBC for anemia, leukocytosis and later thrombocytosis", match: ["cbc", "platelet", "complete blood count", "white count"] },
+          { id: "alb", text: "Albumin and ALT", match: ["albumin", "alt", "liver"] },
+          { id: "ua", text: "Urinalysis for sterile pyuria", match: ["urinalysis", "urine", "ua", "pyuria"] },
+          { id: "ecg", text: "ECG", match: ["ecg", "ekg"] },
+          { id: "gas", text: "Throat swab to exclude group A streptococcus", match: ["strep", "throat swab", "throat culture"] },
+          { id: "ntprobnp", text: "NT-proBNP", match: ["bnp", "probnp"] },
+        ],
+        explanation:
+          "Kawasaki disease is a clinical diagnosis, but inflammatory markers support it and help with incomplete cases. The echocardiogram establishes a coronary baseline and should not delay IVIG. Low albumin, raised ALT, sterile pyuria and later thrombocytosis are supportive.",
+        keyFeature: { topic: "pediatric-fever", n: 5 },
+        source: "aha-kawasaki",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO other conditions that can cause prolonged fever with rash and red eyes in a child.",
+        accept: [
+          { id: "misc", text: "Multisystem inflammatory syndrome in children", match: ["mis c", "misc", "multisystem inflammatory", "pims"] },
+          { id: "scarlet", text: "Scarlet fever", match: ["scarlet", "strep", "streptococcal"] },
+          { id: "measles", text: "Measles", match: ["measles"] },
+          { id: "adeno", text: "Adenovirus", match: ["adenovirus"] },
+          { id: "tss", text: "Toxic shock syndrome", match: ["toxic shock"] },
+          { id: "drug", text: "Drug reaction such as Stevens Johnson syndrome or serum sickness like reaction", match: ["drug reaction", "stevens", "sjs", "serum sickness", "drug eruption"] },
+          { id: "jia", text: "Systemic juvenile idiopathic arthritis", match: ["juvenile", "jia", "still"] },
+          { id: "lepto", text: "Leptospirosis or rickettsial infection", match: ["leptospirosis", "rickettsia", "rocky mountain"] },
+        ],
+        explanation:
+          "Several serious conditions mimic Kawasaki disease. Recent amoxicillin raises the question of a drug reaction. MIS-C overlaps strongly and often has more gastrointestinal symptoms and shock. Exudative conjunctivitis or pharyngitis point toward adenovirus or streptococcus instead.",
+        keyFeature: { topic: "pediatric-fever", n: 5 },
+        source: "aha-kawasaki",
+      },
+    ],
+    sources: [S.aha],
+    ...META,
+  },
+
+  /* 07 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-07",
+    topic: "pediatric-fever",
+    alsoTopics: ["infectious-diseases"],
+    title: "Fever after a family visit abroad",
+    stem:
+      "An 8 year old girl returned 12 days ago from a month visiting grandparents in rural Ghana. She did not take malaria prophylaxis. She has had fever for 4 days with headache and vomiting. Temperature 39.9°C. HR 142, RR 30, BP 98/60, SpO2 97%. Weight 26 kg. GCS 15. She has mild scleral icterus and a palpable spleen tip. Her family doctor diagnosed a viral illness two days ago.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO tests to confirm the diagnosis you most suspect.",
+        accept: [
+          { id: "smear", text: "Thick and thin blood smears", match: ["smear", "thick", "thin", "blood film"] },
+          { id: "rdt", text: "Malaria rapid antigen test", match: ["rapid", "rdt", "antigen", "binaxnow"] },
+          { id: "repeat", text: "Repeat smears every 12 to 24 hours for a total of three if negative", match: ["repeat", "three set", "3 set", "serial"] },
+          { id: "pcr", text: "Malaria PCR", match: ["pcr"] },
+        ],
+        explanation:
+          "Any fever within a year of travel to an endemic area is malaria until proven otherwise. Children visiting friends and relatives are at highest risk because they rarely take prophylaxis. One negative smear does not exclude malaria, so repeat up to three sets.",
+        keyFeature: { topic: "pediatric-fever", n: 5 },
+        source: "catmat",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 3,
+        update: "The smear shows Plasmodium falciparum with 6% parasitemia. Glucose 2.0 mmol/L. Hemoglobin 72 g/L. Bilirubin 58 µmol/L.",
+        prompt: "List THREE features of severe malaria that she has or that you must look for.",
+        accept: [
+          { id: "para", text: "Parasitemia above 5%", match: ["parasitemia", "parasitaemia", "5%"] },
+          { id: "glucose", text: "Hypoglycemia", match: ["hypoglycemia", "hypoglycaemia", "glucose"] },
+          { id: "cns", text: "Impaired consciousness or seizures", match: ["seizure", "consciousness", "cerebral", "gcs", "coma", "confusion"] },
+          { id: "acid", text: "Metabolic acidosis or raised lactate", match: ["acidosis", "lactate", "bicarbonate"] },
+          { id: "renal", text: "Acute kidney injury", match: ["renal", "creatinine", "kidney"] },
+          { id: "jaundice", text: "Jaundice", match: ["jaundice", "bilirubin", "icterus"] },
+          { id: "resp", text: "Respiratory distress or pulmonary edema", match: ["respiratory distress", "pulmonary edema", "pulmonary oedema", "ards"] },
+          { id: "shock", text: "Shock", match: ["shock", "hypotension"] },
+          { id: "bleed", text: "Abnormal bleeding", match: ["bleeding", "dic"] },
+          { id: "anemia", text: "Severe anemia", match: ["anemia", "anaemia", "hemoglobin", "haemoglobin"] },
+        ],
+        explanation:
+          "Severe falciparum malaria is defined by high parasitemia or any sign of organ dysfunction. Canadian guidance uses parasitemia of 5% or more, while WHO uses more than 10%. Hypoglycemia below 2.2 mmol/L is common in children and worsens with quinine. Any one criterion mandates parenteral therapy and admission to a monitored bed.",
+        keyFeature: { topic: "infectious-diseases", n: 5 },
+        source: "catmat",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "Which is the most appropriate antimalarial treatment? Select one.",
+        options: [
+          "Oral chloroquine",
+          "Oral atovaquone and proguanil",
+          "IV artesunate 2.4 mg/kg at 0, 12 and 24 hours, then daily",
+          "Oral primaquine",
+          "Oral doxycycline alone",
+        ],
+        correct: 2,
+        explanation:
+          "IV artesunate is first line for severe malaria in children and adults and clears parasites faster than quinine. Obtain it urgently through the pathway set out in current CATMAT guidance. Chloroquine resistance is widespread in West Africa. Oral regimens are for uncomplicated malaria only.",
+        keyFeature: { topic: "pediatric-fever", n: 5 },
+        source: "catmat",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO other infections to consider in a febrile child returning from West Africa.",
+        accept: [
+          { id: "typhoid", text: "Enteric fever", match: ["typhoid", "enteric fever", "salmonella"] },
+          { id: "dengue", text: "Dengue", match: ["dengue"] },
+          { id: "mening", text: "Bacterial meningitis", match: ["meningitis", "meningococcal"] },
+          { id: "hep", text: "Viral hepatitis", match: ["hepatitis"] },
+          { id: "vhf", text: "Viral hemorrhagic fever such as Lassa", match: ["hemorrhagic fever", "haemorrhagic fever", "lassa", "ebola", "vhf"] },
+          { id: "tb", text: "Tuberculosis", match: ["tuberculosis", "tb"] },
+          { id: "rick", text: "Rickettsial infection", match: ["rickettsia", "rickettsial", "tick bite"] },
+          { id: "schisto", text: "Schistosomiasis", match: ["schistosomiasis", "katayama"] },
+          { id: "uti", text: "Common infections such as UTI or pneumonia", match: ["uti", "urinary", "pneumonia"] },
+        ],
+        explanation:
+          "Travel adds to, rather than replaces, the usual causes of fever. Typhoid and dengue are common in returning travellers. Ask about exposures such as fresh water, ticks and sick contacts, and check public health alerts for viral hemorrhagic fever.",
+        keyFeature: { topic: "infectious-diseases", n: 5 },
+        source: "catmat",
+      },
+    ],
+    sources: [S.catmat],
+    ...META,
+  },
+
+  /* 08 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-08",
+    topic: "pediatric-fever",
+    alsoTopics: ["infectious-diseases"],
+    title: "Preschooler pulling at his ear",
+    stem:
+      "A 3 year old boy has had ear pain since last night. Temperature 38.6°C. HR 124, RR 24, SpO2 99%. Weight 15 kg. He is playful and eating. The right tympanic membrane is red and bulging with no discharge. The left is normal. He has had no ear infections this year and no recent antibiotics. His parents can easily return.",
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which is the most appropriate management? Select one.",
+        options: [
+          "Amoxicillin 90 mg/kg/day for 10 days starting now",
+          "Analgesia and watchful waiting for 48 hours, with reassessment or a delayed prescription",
+          "Amoxicillin and clavulanate starting now",
+          "Ciprofloxacin ear drops",
+          "Referral for tympanostomy tubes",
+        ],
+        correct: 1,
+        explanation:
+          "Most acute otitis media resolves on its own. For a well child 6 months or older with mild symptoms, no otorrhea and reliable follow up, watchful waiting with good analgesia is recommended. Antibiotics start if he is not better in 48 hours. This avoids side effects and resistance.",
+        keyFeature: { topic: "pediatric-fever", n: 7 },
+        source: "cps-aom",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "Write weight based orders for TWO analgesic antipyretics. Include dose and interval.",
+        accept: [
+          { id: "ibu", text: "Ibuprofen 10 mg/kg (150 mg) PO every 6 to 8 hours", match: ["ibuprofen 150", "ibuprofen 10 mg/kg", "ibuprofen 10mg/kg", "advil 150", "motrin 150", "ibuprofen 7.5 ml"] },
+          { id: "apap", text: "Acetaminophen 15 mg/kg (225 mg) PO every 4 to 6 hours, maximum 75 mg/kg/day", match: ["acetaminophen 225", "acetaminophen 220", "acetaminophen 240", "acetaminophen 15 mg/kg", "acetaminophen 15mg/kg", "tylenol 225", "tylenol 240", "tylenol 15 mg/kg", "acetaminophen 7 ml"] },
+        ],
+        unacceptable: [
+          { text: "Ibuprofen 400 mg", match: ["ibuprofen 400", "advil 400", "motrin 400"] },
+          { text: "Acetaminophen 500 mg", match: ["acetaminophen 500", "tylenol 500"], dangerous: true },
+        ],
+        explanation:
+          "Antipyretic doses are 10 mg/kg for ibuprofen and 15 mg/kg for acetaminophen. Dosing by age ignores the wide range of weights at each age and leads to under and over dosing. An adult 500 mg tablet is over 30 mg/kg for this child and, repeated, risks liver injury.",
+        keyFeature: { topic: "pediatric-fever", n: 8 },
+        source: "cps-fever",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE features that would make you start antibiotics now rather than wait.",
+        accept: [
+          { id: "age", text: "Age under 6 months", match: ["6 month", "under 6", "younger than 6", "less than 6"] },
+          { id: "otorrhea", text: "Otorrhea or perforation", match: ["otorrhea", "otorrhoea", "perforation", "perforated", "discharge", "drainage"] },
+          { id: "severe", text: "Moderate to severe illness, such as fever of 39°C or more, severe pain or toxic appearance", match: ["39", "high fever", "severe", "toxic", "ill appearing", "unwell"] },
+          { id: "duration", text: "Symptoms for more than 48 hours", match: ["48 hour", "48 h", "2 day", "two day"] },
+          { id: "fu", text: "Unreliable follow up", match: ["follow up", "followup", "no follow up", "no reliable follow up", "unable to return", "cannot return"] },
+          { id: "immuno", text: "Immunocompromise", match: ["immunocompromise", "immunocompromised", "immunodeficiency", "immunosuppressed"] },
+          { id: "complication", text: "Suspected complication such as mastoiditis", match: ["mastoiditis", "complication"] },
+        ],
+        explanation:
+          "The Canadian Paediatric Society advises immediate antibiotics for infants under 6 months, children who are moderately or severely ill, and those with otorrhea. Watchful waiting also needs a family that can return or fill a delayed prescription. Without these features the benefit of antibiotics is small.",
+        keyFeature: { topic: "pediatric-fever", n: 7 },
+        source: "cps-aom",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        update: "He returns 60 hours later. The fever continues and the drum is still bulging.",
+        prompt: "Write the first line antibiotic order. List TWO elements: the drug with dose, and the duration.",
+        accept: [
+          { id: "amox", text: "Amoxicillin 75 to 90 mg/kg/day PO divided twice daily, or 45 to 60 mg/kg/day divided three times daily", match: ["amoxicillin 75", "amoxicillin 80", "amoxicillin 90", "amoxicillin 1350", "amoxicillin 1125", "amoxicillin 1200", "amoxicillin 600", "amoxicillin 675", "amoxicillin 45 mg/kg", "amoxicillin 40 mg/kg", "amoxicillin 60 mg/kg"] },
+          { id: "dur", text: "Five days because he is 2 years or older with a non severe course", match: ["5 day", "five day"] },
+        ],
+        unacceptable: [
+          { text: "Macrolide first line", match: ["azithromycin", "clarithromycin"] },
+          { text: "Cefixime first line", match: ["cefixime"] },
+          { text: "Amoxicillin clavulanate without a reason", match: ["clavulanate", "clavulanic", "clavulin"] },
+        ],
+        explanation:
+          "High dose amoxicillin covers most resistant pneumococci and is first line. Children 2 years and older with non severe disease need only 5 days. Ten days is for those under 2 years, those with perforation and those with recurrent disease. Amoxicillin clavulanate is reserved for recent amoxicillin use or treatment failure.",
+        keyFeature: { topic: "infectious-diseases", n: 8 },
+        source: "cps-aom",
+      },
+    ],
+    sources: [S.cpsAom, S.cpsFever],
+    ...META,
+  },
+
+  /* 09 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-09",
+    topic: "pediatric-fever",
+    alsoTopics: ["tox"],
+    title: "Toddler with a cold and a worried grandmother",
+    stem:
+      "A 22 month old boy has had fever, runny nose and cough for 3 days. Temperature 39.1°C. HR 140, RR 30, SpO2 98%. Weight 12 kg. He is alert and drinking. His throat is mildly red. His ears and chest are normal. His mother asks for antibiotics because he is not getting better. His grandmother has been caring for him.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO elements of your management of his respiratory illness.",
+        accept: [
+          { id: "noabx", text: "No antibiotics, explaining that the illness is viral", match: ["no antibiotic", "avoid antibiotic", "antibiotics not", "not need antibiotic", "viral", "without antibiotic"] },
+          { id: "fluids", text: "Encourage fluids", match: ["fluid", "hydration", "drink"] },
+          { id: "saline", text: "Saline nose drops and suction", match: ["saline", "suction", "nasal"] },
+          { id: "honey", text: "Honey for cough, as he is over 1 year", match: ["honey"] },
+          { id: "otc", text: "Avoid over the counter cough and cold medicines under 6 years", match: ["cough and cold", "cough medicine", "decongestant", "cold medicine", "cough syrup", "avoid cough medicine", "no cough medicine", "avoid cough syrup", "no cough syrup", "avoid decongestant", "no decongestant", "avoid cold medicine", "no cold medicine", "avoid over the counter", "no over the counter", "avoid otc", "no otc"] },
+          { id: "return", text: "Clear return advice for breathing difficulty, poor drinking or fever beyond 5 days", match: ["return", "come back", "safety net"] },
+          { id: "comfort", text: "Antipyretics for comfort dosed by weight", match: ["antipyretic", "comfort", "acetaminophen", "ibuprofen"] },
+        ],
+        unacceptable: [{ text: "Prescribe amoxicillin", match: ["prescribe amoxicillin", "start amoxicillin", "give amoxicillin", "amoxicillin 90", "amoxicillin 80", "amoxicillin 45"] }],
+        explanation:
+          "Fever, rhinorrhea and cough with normal ears and chest is a viral upper respiratory infection. Antibiotics do not shorten it and cause diarrhea, rash and resistance. Validate the parents' concern and give specific reasons to return.",
+        keyFeature: { topic: "pediatric-fever", n: 7 },
+        source: "cwc-caep",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "You ask about fever medicine. The grandmother has been giving 5 mL of the acetaminophen infant drops (80 mg/mL) every 4 hours around the clock for 2 days, thinking it was the children's syrup. He has vomited twice today.",
+        prompt: "About how much acetaminophen has he been receiving per day? Select one.",
+        options: ["About 50 mg/kg/day", "About 100 mg/kg/day", "About 150 mg/kg/day", "About 200 mg/kg/day", "About 300 mg/kg/day"],
+        correct: 3,
+        explanation:
+          "Five millilitres of 80 mg/mL drops is 400 mg. Six doses a day is 2400 mg, or 200 mg/kg/day for a 12 kg child. That is more than double the maximum of 75 mg/kg/day. Confusing the concentrated drops with the 160 mg per 5 mL syrup is a classic Canadian dosing error.",
+        keyFeature: { topic: "pediatric-fever", n: 8 },
+        source: "cps-fever",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO investigations you order now.",
+        accept: [
+          { id: "level", text: "Serum acetaminophen level", match: ["acetaminophen level", "apap level", "tylenol level", "paracetamol level", "serum acetaminophen", "acetaminophen concentration"] },
+          { id: "alt", text: "ALT or AST", match: ["alt", "ast", "liver enzyme", "transaminase", "liver function", "lft"] },
+          { id: "inr", text: "INR", match: ["inr"] },
+          { id: "glucose", text: "Glucose", match: ["glucose"] },
+          { id: "cr", text: "Creatinine", match: ["creatinine", "renal function"] },
+        ],
+        explanation:
+          "After repeated supratherapeutic ingestion, a single acetaminophen level and ALT identify who needs treatment. The Rumack Matthew nomogram does not apply because there is no single time of ingestion. INR and glucose show hepatic function if the ALT is raised.",
+        keyFeature: { topic: "tox", n: 7 },
+        source: "dart",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "The acetaminophen level is 150 µmol/L and ALT is 180 U/L.",
+        prompt: "Which is the most appropriate management? Select one.",
+        options: [
+          "Plot the level on the nomogram and treat only if above the line",
+          "Start IV acetylcysteine",
+          "Activated charcoal 1 g/kg",
+          "Stop acetaminophen and discharge with a recheck in 24 hours",
+          "Hemodialysis",
+        ],
+        correct: 1,
+        explanation:
+          "After repeated supratherapeutic ingestion, an acetaminophen level of 20 mg/L (about 132 µmol/L) or more, or a raised ALT, is an indication for acetylcysteine. The nomogram is invalid for repeated ingestions. Charcoal has no role this long after the doses. Continue acetylcysteine until the level is undetectable and the ALT is improving.",
+        keyFeature: { topic: "tox", n: 4 },
+        source: "dart-2023",
+      },
+      {
+        id: "q5",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO counselling points to prevent another dosing error.",
+        accept: [
+          { id: "weight", text: "Dose by weight, not by age", match: ["weight"] },
+          { id: "syringe", text: "Use the syringe or device that comes with the product", match: ["syringe", "measuring device", "dosing device", "device"] },
+          { id: "conc", text: "Check the concentration, because infant drops and children's syrup differ", match: ["concentration", "80 mg/ml", "drops", "formulation", "strength"] },
+          { id: "max", text: "Maximum of 5 doses in 24 hours", match: ["5 dose", "five dose", "maximum", "max", "no more than 5"] },
+          { id: "log", text: "Keep a written log shared by all caregivers", match: ["log", "record", "write down", "chart"] },
+          { id: "combo", text: "Avoid other products that also contain acetaminophen", match: ["combination", "cold medicine", "other product", "avoid other product", "avoid combination", "no other product", "avoid cold medicine"] },
+        ],
+        explanation:
+          "Most paediatric acetaminophen toxicity is unintentional and comes from repeated dosing errors. Several caregivers, different concentrations and household spoons are common causes. Weight based doses with the supplied syringe and a shared log prevent most of them.",
+        keyFeature: { topic: "pediatric-fever", n: 8 },
+        source: "cps-fever",
+      },
+    ],
+    sources: [S.cwc, S.cpsFever, S.dart, S.dart2023],
+    ...META,
+  },
+
+  /* 10 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-10",
+    topic: "pediatric-fever",
+    alsoTopics: ["tox"],
+    title: "Toddler with fever and fast breathing",
+    stem:
+      "A 2 year old girl has had vomiting and fast breathing for 6 hours. Her grandmother is visiting from out of province. Temperature 38.7°C. HR 160, RR 48 and deep, SpO2 99% on room air. Weight 13 kg. She is irritable. Her chest is clear and there is no rash or focus of infection. Venous gas: pH 7.31, pCO2 22 mmHg, HCO3 11 mmol/L. Sodium 140, chloride 104 mmol/L. Glucose 3.6 mmol/L.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE non-infectious causes of her fever and tachypnea to consider.",
+        accept: [
+          { id: "sal", text: "Salicylate poisoning", match: ["salicylate", "asa", "aspirin", "wintergreen", "acetylsalicylic"] },
+          { id: "symp", text: "Sympathomimetic ingestion", match: ["sympathomimetic", "amphetamine", "cocaine", "stimulant"] },
+          { id: "antichol", text: "Anticholinergic ingestion", match: ["anticholinergic", "diphenhydramine", "antihistamine"] },
+          { id: "heat", text: "Heat illness", match: ["heat", "hyperthermia"] },
+          { id: "dka", text: "Diabetic ketoacidosis", match: ["dka", "diabetic ketoacidosis", "diabetes"] },
+          { id: "serotonin", text: "Serotonin toxicity", match: ["serotonin"] },
+          { id: "thyroid", text: "Thyrotoxicosis", match: ["thyrotoxicosis", "thyroid", "hyperthyroid"] },
+          { id: "metformin", text: "Other toxic causes of metabolic acidosis such as iron or metformin", match: ["iron", "metformin", "toxic alcohol"] },
+        ],
+        explanation:
+          "A child with fever, deep rapid breathing and a high anion gap acidosis with low pCO2 has a mixed respiratory alkalosis and metabolic acidosis. That pattern is typical of salicylate toxicity. A visiting grandparent is a classic source of medications and liniments. Always consider toxins and heat when fever has no focus.",
+        keyFeature: { topic: "pediatric-fever", n: 6 },
+        source: "goldfrank",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO questions to ask the family to identify a possible exposure.",
+        accept: [
+          { id: "meds", text: "What medications does the grandmother have with her", match: ["medication", "medicine", "pill", "grandmother", "purse", "bag"] },
+          { id: "topical", text: "Any topical products such as oil of wintergreen or muscle rubs", match: ["wintergreen", "topical", "muscle rub", "liniment", "cream", "ointment"] },
+          { id: "time", text: "When could she have got into something", match: ["time", "when"] },
+          { id: "amount", text: "How much is missing", match: ["amount", "how much", "missing", "count"] },
+          { id: "other", text: "Any other products in reach such as cleaning products or plants", match: ["other product", "household", "cleaning", "plant"] },
+        ],
+        explanation:
+          "Grandparents' bags often contain aspirin, opioids, cardiac drugs and liniments that are not in child resistant containers. Oil of wintergreen is highly concentrated methyl salicylate, and one teaspoon can kill a toddler. Ask directly, because families may not think of topical products as medicines.",
+        keyFeature: { topic: "tox", n: 1 },
+        source: "goldfrank",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        update: "The grandmother uses a wintergreen muscle rub and the bottle was found open. The salicylate level is 4.1 mmol/L.",
+        prompt: "List THREE management steps.",
+        accept: [
+          { id: "bicarb", text: "Sodium bicarbonate bolus then infusion to a urine pH of 7.5 to 8", match: ["bicarbonate", "alkalinization", "alkalinisation", "urine ph", "alkalinize"] },
+          { id: "k", text: "Replace potassium to allow urinary alkalinization", match: ["potassium"] },
+          { id: "dextrose", text: "Dextrose in fluids even with a normal glucose", match: ["dextrose", "glucose"] },
+          { id: "poison", text: "Call the poison centre", match: ["poison"] },
+          { id: "neph", text: "Early nephrology consultation for possible hemodialysis", match: ["dialysis", "hemodialysis", "haemodialysis", "nephrology"] },
+          { id: "serial", text: "Serial salicylate levels and gases every 2 hours", match: ["serial", "repeat level", "repeat salicylate", "every 2 hour"] },
+          { id: "charcoal", text: "Activated charcoal if early and the airway is protected", match: ["charcoal"] },
+          { id: "noint", text: "Avoid intubation if possible, and match her minute ventilation if it is required", match: ["avoid intubation", "minute ventilation", "hyperventilate"] },
+        ],
+        explanation:
+          "Alkalinization traps salicylate in the urine and keeps it out of the brain, but it fails if the child is hypokalemic. Brain glucose can be low despite a normal serum glucose, so add dextrose. Intubation that allows the pCO2 to rise can cause abrupt deterioration and death.",
+        keyFeature: { topic: "tox", n: 4 },
+        source: "goldfrank",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO indications for hemodialysis in salicylate poisoning.",
+        accept: [
+          { id: "cns", text: "Altered mental status or seizures", match: ["mental status", "seizure", "confusion", "neurologic", "coma", "altered"] },
+          { id: "level", text: "Salicylate level above 7.2 mmol/L, or above 6.5 mmol/L with impaired kidney function", match: ["7.2", "6.5", "100 mg/dl", "level above"] },
+          { id: "renal", text: "Impaired kidney function", match: ["renal", "kidney"] },
+          { id: "lung", text: "New hypoxemia or pulmonary edema", match: ["pulmonary edema", "pulmonary oedema", "hypoxemia", "hypoxia", "ards"] },
+          { id: "ph", text: "pH 7.20 or lower", match: ["ph", "acidemia", "acidosis"] },
+          { id: "fail", text: "Deterioration despite standard therapy", match: ["despite", "refractory", "failure of", "fail"] },
+        ],
+        explanation:
+          "EXTRIP recommends dialysis for high levels, altered mental status, new hypoxemia, severe acidemia or failure of standard care. Neurologic signs mean salicylate has entered the brain and are an indication at any level. Dialysis removes salicylate and corrects acidosis.",
+        keyFeature: { topic: "tox", n: 6 },
+        source: "extrip-sal",
+      },
+    ],
+    sources: [S.goldfrank, S.extrip],
+    ...META,
+  },
+
+  /* 11 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-11",
+    topic: "pediatric-fever",
+    alsoTopics: ["environmental"],
+    title: "Collapse at a soccer tournament",
+    stem:
+      "An 11 year old boy collapsed during his third soccer game of the day. It is 34°C and humid. He is confused and combative. Rectal temperature 41.3°C. HR 158, BP 94/50, RR 34, SpO2 97%. GCS 12. Weight 38 kg. His skin is hot and sweaty. His coach says he had a cold last week.",
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which is the most important first step? Select one.",
+        options: [
+          "Acetaminophen 15 mg/kg PR",
+          "CT head before any treatment",
+          "Immediate whole body cold water immersion with continuous monitoring",
+          "Lumbar puncture and IV ceftriaxone before cooling",
+          "Dantrolene 2.5 mg/kg IV",
+        ],
+        correct: 2,
+        explanation:
+          "Exertional heat stroke is diagnosed by core temperature above 40°C with central nervous system dysfunction after exertion. Survival depends on how fast the temperature falls. Cold water immersion is the fastest method. Antipyretics do not work because the hypothalamic set point is normal.",
+        keyFeature: { topic: "environmental", n: 1 },
+        source: "acsm-heat",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE elements of your cooling plan.",
+        accept: [
+          { id: "immersion", text: "Cold or ice water immersion", match: ["immersion", "ice bath", "cold water", "ice water"] },
+          { id: "evap", text: "Evaporative cooling with mist and fans if immersion is not possible", match: ["evaporative", "fan", "mist", "spray"] },
+          { id: "packs", text: "Ice packs to the neck, axillae and groin", match: ["ice pack", "groin", "axilla", "neck"] },
+          { id: "coldiv", text: "Cold IV fluids", match: ["cold iv", "cold saline", "chilled", "cold fluid"] },
+          { id: "stop", text: "Stop active cooling at about 38.5 to 39°C", match: ["38.5", "38.9", "39", "stop cooling"] },
+          { id: "core", text: "Continuous rectal or esophageal temperature", match: ["rectal", "core", "esophageal", "oesophageal"] },
+          { id: "benzo", text: "Benzodiazepine for agitation or shivering", match: ["benzodiazepine", "shivering", "midazolam", "lorazepam", "diazepam"] },
+        ],
+        unacceptable: [{ text: "Antipyretics", match: ["acetaminophen", "ibuprofen", "antipyretic", "tylenol"] }],
+        explanation:
+          "Aim to lower the temperature below 39°C within 30 minutes. Stopping near 38.5 to 39°C avoids overshoot hypothermia. Oral and tympanic temperatures are unreliable, so monitor rectal or esophageal temperature. Benzodiazepines control agitation and shivering that generate heat.",
+        keyFeature: { topic: "environmental", n: 2 },
+        source: "acsm-heat",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        prompt: "His coach suggests an infection. List THREE other causes of hyperthermia with altered mental status that you consider.",
+        accept: [
+          { id: "stim", text: "Stimulant ingestion such as ADHD medication, energy products or amphetamine", match: ["stimulant", "amphetamine", "sympathomimetic", "methylphenidate", "adhd", "cocaine", "energy drink", "caffeine"] },
+          { id: "antichol", text: "Anticholinergic toxicity", match: ["anticholinergic", "diphenhydramine"] },
+          { id: "serotonin", text: "Serotonin toxicity", match: ["serotonin"] },
+          { id: "nms", text: "Neuroleptic malignant syndrome", match: ["neuroleptic", "nms"] },
+          { id: "cns", text: "Meningitis or encephalitis", match: ["meningitis", "encephalitis"] },
+          { id: "thyroid", text: "Thyroid storm", match: ["thyroid", "thyrotoxicosis"] },
+          { id: "mh", text: "Malignant hyperthermia", match: ["malignant hyperthermia"] },
+          { id: "sepsis", text: "Sepsis", match: ["sepsis", "septic"] },
+          { id: "sal", text: "Salicylate toxicity", match: ["salicylate", "aspirin"] },
+        ],
+        explanation:
+          "Heat stroke is the most likely cause, but drugs such as stimulants and anticholinergics can cause or worsen it. CNS infection can present the same way and is harder to exclude in a confused child. Cool first, then reassess and investigate if mental status does not recover with normothermia.",
+        keyFeature: { topic: "pediatric-fever", n: 6 },
+        source: "acsm-heat",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE complications you screen for with laboratory tests.",
+        accept: [
+          { id: "ck", text: "Rhabdomyolysis", match: ["ck", "rhabdomyolysis", "creatine kinase"] },
+          { id: "aki", text: "Acute kidney injury", match: ["creatinine", "renal", "kidney"] },
+          { id: "k", text: "Hyperkalemia", match: ["potassium", "hyperkalemia", "hyperkalaemia"] },
+          { id: "glucose", text: "Hypoglycemia", match: ["glucose", "hypoglycemia", "hypoglycaemia"] },
+          { id: "liver", text: "Liver injury", match: ["alt", "liver", "transaminase", "ast"] },
+          { id: "dic", text: "Coagulopathy or DIC", match: ["dic", "inr", "coagulopathy", "platelet", "fibrinogen"] },
+          { id: "na", text: "Exertional hyponatremia", match: ["sodium", "hyponatremia", "hyponatraemia"] },
+          { id: "lactate", text: "Lactic acidosis", match: ["lactate", "acidosis", "blood gas"] },
+        ],
+        explanation:
+          "Heat stroke injures muscle, kidney, liver and the clotting system. Liver enzymes often peak 24 to 72 hours after the event. Hyponatremia from drinking large volumes of water can mimic heat stroke and changes fluid management.",
+        keyFeature: { topic: "environmental", n: 2 },
+        source: "acsm-heat",
+      },
+    ],
+    sources: [S.acsm],
+    ...META,
+  },
+
+  /* 12 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-12",
+    topic: "pediatric-fever",
+    title: "Fever in a child receiving chemotherapy",
+    stem:
+      "A 7 year old girl with acute lymphoblastic leukemia had chemotherapy 8 days ago. She has a port. Her mother measured an oral temperature of 38.4°C at home. In triage her temperature is 38.6°C. HR 128, BP 96/58, RR 24, SpO2 98%. Weight 22 kg. She looks tired but well perfused. Her last ANC a week ago was 0.8 x 10^9/L.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO features that make this fever high risk and time critical.",
+        accept: [
+          { id: "chemo", text: "Recent chemotherapy with expected neutropenia", match: ["chemotherapy", "chemo", "neutropenia", "neutropenic", "anc", "nadir"] },
+          { id: "line", text: "Indwelling central line", match: ["central line", "port", "cvc", "line"] },
+          { id: "leuk", text: "Underlying leukemia", match: ["leukemia", "leukaemia", "malignancy", "cancer"] },
+          { id: "hr", text: "Tachycardia", match: ["tachycardia", "heart rate"] },
+        ],
+        explanation:
+          "Children with cancer who are, or are expected to be, neutropenic can deteriorate from bacteremia within hours. A central line adds risk of line infection. Treat this as febrile neutropenia before the count is back.",
+        keyFeature: { topic: "pediatric-fever", n: 1 },
+        source: "fn-peds",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "Write TWO elements of your antimicrobial plan. Include the drug with dose and the time target.",
+        accept: [
+          { id: "drug", text: "Antipseudomonal beta lactam such as piperacillin tazobactam 100 mg/kg (piperacillin component) IV or cefepime 50 mg/kg IV", match: ["piperacillin", "pip tazo", "tazocin", "cefepime", "meropenem"] },
+          { id: "time", text: "Give within 60 minutes of arrival", match: ["60 minute", "1 hour", "one hour", "within an hour", "60 min"] },
+          { id: "cx", text: "Blood cultures from each lumen of the port before the first dose", match: ["culture", "lumen"] },
+        ],
+        unacceptable: [
+          { text: "Ceftriaxone", match: ["ceftriaxone"] },
+          { text: "Wait for the ANC before antibiotics", match: ["wait for anc", "wait for cbc", "wait for count", "wait for neutrophil", "await anc", "await cbc", "await count", "await neutrophil"], dangerous: true },
+        ],
+        explanation:
+          "Empiric monotherapy with an antipseudomonal beta lactam is recommended for febrile neutropenia. Give it within 60 minutes of arrival without waiting for the count. Ceftriaxone does not reliably cover Pseudomonas.",
+        keyFeature: { topic: "pediatric-fever", n: 3 },
+        source: "fn-peds",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        update: "Her ANC is 0.1 x 10^9/L. Thirty minutes after her first dose her BP is 74/40, HR 160 and capillary refill is 4 seconds.",
+        prompt: "List TWO changes to her antimicrobial therapy.",
+        accept: [
+          { id: "vanc", text: "Add vancomycin", match: ["vancomycin", "vanco"] },
+          { id: "amino", text: "Add an aminoglycoside such as gentamicin or tobramycin", match: ["gentamicin", "tobramycin", "aminoglycoside", "amikacin"] },
+          { id: "carba", text: "Change to meropenem", match: ["meropenem", "carbapenem"] },
+          { id: "fungal", text: "Consider antifungal cover if shock persists", match: ["antifungal", "caspofungin", "micafungin", "amphotericin"] },
+        ],
+        explanation:
+          "Hemodynamic instability in febrile neutropenia calls for broader cover of resistant gram negatives, gram positives and MRSA. Add vancomycin and a second gram negative agent or change to a carbapenem. Treat shock with fluid and vasoactive drugs at the same time.",
+        keyFeature: { topic: "pediatric-fever", n: 3 },
+        source: "fn-peds",
+      },
+    ],
+    sources: [S.fn],
+    ...META,
+  },
+
+  /* 13 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-13",
+    topic: "pediatric-fever",
+    title: "Three weeks of on and off fever",
+    stem:
+      "A 4 year old boy has had intermittent fever for 3 weeks. He is tired, has lost weight and wakes at night with leg pain. This week he refuses to walk. He has been seen twice for a viral illness. Temperature 38.4°C. HR 132, RR 24, BP 100/60, SpO2 98%. Weight 17 kg. He is pale. There are bruises on his shins and back, scattered petechiae, cervical lymph nodes, and the liver and spleen are palpable.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE diagnoses to consider.",
+        accept: [
+          { id: "leuk", text: "Acute leukemia or other malignancy such as lymphoma or neuroblastoma", match: ["leukemia", "leukaemia", "malignancy", "cancer", "lymphoma", "neuroblastoma", "oncologic"] },
+          { id: "jia", text: "Systemic juvenile idiopathic arthritis", match: ["juvenile", "jia", "still"] },
+          { id: "osteo", text: "Osteomyelitis or septic arthritis", match: ["osteomyelitis", "septic arthritis"] },
+          { id: "ebv", text: "EBV or CMV infection", match: ["ebv", "epstein", "mononucleosis", "mono", "cmv"] },
+          { id: "sle", text: "Systemic lupus erythematosus", match: ["lupus", "sle"] },
+          { id: "hlh", text: "Hemophagocytic lymphohistiocytosis", match: ["hlh", "hemophagocytic", "haemophagocytic"] },
+          { id: "tb", text: "Tuberculosis", match: ["tuberculosis", "tb"] },
+          { id: "endo", text: "Endocarditis", match: ["endocarditis"] },
+          { id: "abuse", text: "Non accidental injury", match: ["abuse", "non accidental", "nonaccidental"] },
+        ],
+        explanation:
+          "Prolonged fever with pallor, bruising, bone pain and hepatosplenomegaly is leukemia until proven otherwise. Night time bone pain and refusal to walk reflect marrow infiltration. Systemic JIA and infection are the main alternatives. Do not accept repeated viral diagnoses when fever persists.",
+        keyFeature: { topic: "pediatric-fever", n: 5 },
+        source: "nelson",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE initial investigations.",
+        accept: [
+          { id: "cbc", text: "CBC with differential", match: ["cbc", "complete blood count", "differential"] },
+          { id: "smear", text: "Peripheral blood smear", match: ["smear", "blood film", "peripheral film"] },
+          { id: "ldh", text: "LDH and uric acid", match: ["ldh", "uric acid", "lactate dehydrogenase", "urate"] },
+          { id: "lytes", text: "Electrolytes, creatinine, calcium and phosphate", match: ["phosphate", "potassium", "electrolyte", "creatinine", "calcium"] },
+          { id: "cxr", text: "Chest X-ray for a mediastinal mass", match: ["chest x ray", "cxr", "mediastinal", "chest xray"] },
+          { id: "coag", text: "INR, PTT and fibrinogen", match: ["inr", "coag", "fibrinogen", "ptt"] },
+          { id: "esr", text: "ESR and CRP", match: ["esr", "crp"] },
+          { id: "bcx", text: "Blood culture", match: ["blood culture"] },
+          { id: "xray", text: "X-rays of the painful legs", match: ["leg x ray", "x ray leg", "x ray of the leg", "femur", "tibia"] },
+        ],
+        explanation:
+          "A CBC and smear usually make the diagnosis. LDH, uric acid, potassium and phosphate screen for tumour lysis. A chest X-ray looks for a mediastinal mass, which changes how the child can be sedated and positioned.",
+        keyFeature: { topic: "pediatric-fever", n: 5 },
+        source: "nelson",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        update: "WBC 86 x 10^9/L with blasts on the smear. Hemoglobin 68 g/L, platelets 22 x 10^9/L. Potassium 5.6 mmol/L, uric acid 620 µmol/L, phosphate 2.4 mmol/L. Chest X-ray shows a widened mediastinum.",
+        prompt: "Which is the most appropriate action now? Select one.",
+        options: [
+          "Dexamethasone 0.6 mg/kg IV for his bone pain",
+          "Procedural sedation for a bone marrow aspirate in the emergency department",
+          "IV hyperhydration without potassium, tumour lysis monitoring, a uric acid lowering drug and urgent oncology consultation",
+          "Supine CT chest under sedation to define the mass",
+          "Platelet transfusion to above 100 x 10^9/L",
+        ],
+        correct: 2,
+        explanation:
+          "He has hyperleukocytosis with early tumour lysis. Hyperhydration without potassium and a uric acid lowering agent protect the kidneys. Steroids before diagnosis can blur the diagnosis and trigger severe tumour lysis. Sedation or lying flat with a mediastinal mass can cause airway and cardiovascular collapse.",
+        keyFeature: { topic: "pediatric-fever", n: 5 },
+        source: "tls",
+      },
+    ],
+    sources: [S.nelson, S.tls],
+    ...META,
+  },
+
+  /* 14 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-14",
+    topic: "pediatric-fever",
+    alsoTopics: ["infectious-diseases"],
+    title: "Four month old who is off her feeds",
+    stem:
+      "A 4 month old girl has had fever for 2 days. She has vomited twice today, is taking about half her usual feeds and has been fussier than usual. There are no cough or cold symptoms. Rectal temperature 39.1°C. HR 176, RR 40, SpO2 99%. Weight 6.2 kg. Capillary refill is 2 seconds. She is alert, irritable and consolable. There is no focus on exam.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO features in this presentation that concern you for a serious infection.",
+        accept: [
+          { id: "feed", text: "Poor feeding", match: ["feeding", "feed", "intake"] },
+          { id: "vomit", text: "Vomiting", match: ["vomit", "vomiting", "emesis"] },
+          { id: "hr", text: "Tachycardia out of proportion to fever", match: ["tachycardia", "heart rate", "176"] },
+          { id: "irritable", text: "Irritability", match: ["irritable", "irritability", "fussy", "fussier"] },
+          { id: "nofocus", text: "Fever without a source", match: ["no focus", "no source", "without a source", "without source"] },
+        ],
+        explanation:
+          "Subtle signs matter more than fever height in young infants. Poor feeding, vomiting and irritability can be the only signs of pyelonephritis, bacteremia or meningitis. Reassess her heart rate once the fever is treated.",
+        keyFeature: { topic: "pediatric-fever", n: 2 },
+        source: "cps-uti",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO acceptable ways to collect urine for culture in this infant.",
+        accept: [
+          { id: "cath", text: "In and out catheterization", match: ["catheterization", "catheterisation", "catheter", "in and out", "in out", "straight cath", "cath"] },
+          { id: "spa", text: "Suprapubic aspiration", match: ["suprapubic", "spa"] },
+          { id: "cc", text: "Clean catch with bladder stimulation", match: ["clean catch", "quick wee", "midstream", "bladder stimulation"] },
+        ],
+        unacceptable: [{ text: "Bag specimen", match: ["bag"] }],
+        explanation:
+          "Catheter or suprapubic specimens give reliable cultures. A clean catch with bladder stimulation is a reasonable alternative in some centres. Bag specimens have contamination rates too high for culture and should only be used for a screening dipstick.",
+        keyFeature: { topic: "pediatric-fever", n: 1 },
+        source: "cps-uti",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        update: "The catheter urinalysis shows positive leukocyte esterase and nitrite with pyuria. After ondansetron she keeps down an oral trial.",
+        prompt: "List TWO parts of your treatment plan.",
+        accept: [
+          { id: "abx", text: "Oral cefixime 8 mg/kg once daily, adjusted to local resistance", match: ["cefixime", "cephalexin", "cefprozil", "amoxicillin clavulanate", "tmp smx", "trimethoprim", "septra", "cefuroxime"] },
+          { id: "oral", text: "Oral therapy is appropriate because she is well and tolerating fluids", match: ["oral", "po"] },
+          { id: "dur", text: "Total of 7 to 10 days", match: ["7 day", "10 day", "seven day", "ten day", "7 to 10"] },
+          { id: "us", text: "Renal and bladder ultrasound", match: ["ultrasound", "rbus", "renal bladder"] },
+          { id: "fu", text: "Follow the culture and reassess in 48 hours", match: ["follow up", "culture result", "48 hour", "reassess", "sensitivities"] },
+          { id: "iv", text: "IV antibiotics if she cannot keep fluids down or looks unwell", match: ["iv if", "intravenous if", "admit if"] },
+        ],
+        unacceptable: [{ text: "Nitrofurantoin", match: ["nitrofurantoin", "macrobid"] }],
+        explanation:
+          "A well infant over 2 months with febrile UTI who tolerates oral intake can be treated with oral antibiotics for 7 to 10 days. A renal and bladder ultrasound is recommended after a first febrile UTI under 2 years. Nitrofurantoin does not reach renal tissue and is not used for pyelonephritis.",
+        keyFeature: { topic: "infectious-diseases", n: 8 },
+        source: "cps-uti",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        prompt: "Write TWO parts of your antipyretic order for her. Include the dose.",
+        accept: [
+          { id: "dose", text: "Acetaminophen 15 mg/kg, about 90 mg (about 1.2 mL of 80 mg/mL drops)", match: ["90 mg", "93 mg", "95 mg", "96 mg", "80 mg", "60 mg", "15 mg/kg", "15mg/kg", "10 mg/kg", "1.2 ml", "1 ml"] },
+          { id: "interval", text: "Every 4 to 6 hours, no more than 5 doses or 75 mg/kg in 24 hours", match: ["every 4", "every 6", "q4", "q6", "q4h", "q6h", "4 to 6", "5 dose", "five dose", "75 mg/kg"] },
+          { id: "noibu", text: "Avoid ibuprofen under 6 months of age", match: ["avoid ibuprofen", "no ibuprofen", "not ibuprofen", "don ibuprofen", "never ibuprofen", "ibuprofen under"] },
+          { id: "syringe", text: "Measure with an oral syringe", match: ["syringe"] },
+        ],
+        unacceptable: [
+          { text: "Ibuprofen at this age", match: ["ibuprofen 60", "ibuprofen 10 mg/kg", "ibuprofen 5 mg/kg", "advil", "motrin"] },
+          { text: "160 mg dose", match: ["160 mg"] },
+        ],
+        explanation:
+          "Acetaminophen is dosed at 10 to 15 mg/kg, which for 6.2 kg is 60 to 90 mg. Dosing by weight avoids the errors of age based charts. Ibuprofen is not labelled for infants under 6 months in Canada.",
+        keyFeature: { topic: "pediatric-fever", n: 8 },
+        source: "cps-fever",
+      },
+    ],
+    sources: [S.cpsUti, S.cpsFever],
+    ...META,
+  },
+
+  /* 15 ------------------------------------------------------------------ */
+  {
+    id: "pediatric-fever-15",
+    topic: "pediatric-fever",
+    alsoTopics: ["infectious-diseases"],
+    title: "Red skin after chickenpox",
+    stem:
+      "A 6 year old girl had chickenpox 5 days ago. Today she has high fever, vomiting and diarrhea, and her skin has turned red all over. One pox lesion on her left thigh is red, swollen and very painful. Temperature 40.1°C. HR 168, RR 32, BP 74/40, SpO2 96%. Weight 20 kg. Capillary refill is 4 seconds and she is drowsy. Her eyes are red.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE features that make this rash dangerous rather than a benign viral exanthem.",
+        accept: [
+          { id: "shock", text: "Hypotension and poor perfusion", match: ["hypotension", "shock", "blood pressure", "perfusion", "capillary refill"] },
+          { id: "erythro", text: "Diffuse sunburn like erythroderma", match: ["erythroderma", "sunburn", "diffuse", "all over"] },
+          { id: "pain", text: "Severe pain at the thigh lesion", match: ["pain", "painful"] },
+          { id: "super", text: "Superinfected varicella lesion", match: ["superinfection", "superinfected", "cellulitis", "varicella lesion", "pox lesion"] },
+          { id: "mucosa", text: "Mucosal or conjunctival involvement", match: ["mucosa", "mucosal", "mucous", "conjunctival", "red eye"] },
+          { id: "toxic", text: "Ill or toxic appearance with altered mental status", match: ["toxic", "ill appearing", "drowsy", "lethargic", "mental status"] },
+          { id: "gi", text: "Vomiting and diarrhea as multisystem involvement", match: ["vomiting", "diarrhea", "diarrhoea", "multisystem", "multiorgan"] },
+          { id: "petechiae", text: "Nonblanching petechiae or purpura", match: ["nonblanching", "non blanching", "petechiae", "purpura"] },
+        ],
+        explanation:
+          "Fever, diffuse erythroderma and hypotension define toxic shock syndrome. A painful, swollen varicella lesion is a common entry point for group A streptococcus and may hide necrotizing fasciitis. A benign viral exanthem does not come with shock or pain out of proportion.",
+        keyFeature: { topic: "pediatric-fever", n: 4 },
+        source: "idsa-ssti",
+      },
+      {
+        id: "q2",
+        kind: "menu",
+        select: 2,
+        prompt: "Which TWO antibiotics do you give now? Select TWO.",
+        options: [
+          "Clindamycin 13 mg/kg IV (260 mg)",
+          "Ceftriaxone 100 mg/kg IV (2 g)",
+          "Clindamycin 5 mg/kg PO",
+          "Acyclovir 20 mg/kg IV",
+          "Amoxicillin 50 mg/kg PO",
+          "Azithromycin 10 mg/kg IV",
+          "Gentamicin 7 mg/kg IV",
+        ],
+        correct: [0, 1],
+        explanation:
+          "A beta lactam kills the organism and clindamycin suppresses toxin production, which is why the combination is used in toxic shock. With shock and a possible necrotizing infection, add vancomycin if MRSA cannot be excluded. Acyclovir is not needed for uncomplicated varicella at this stage and does not treat the bacterial infection.",
+        keyFeature: { topic: "pediatric-fever", n: 3 },
+        source: "idsa-ssti",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO other interventions directed at the infection.",
+        accept: [
+          { id: "surg", text: "Urgent surgical assessment for necrotizing fasciitis and debridement", match: ["surgery", "surgical", "surgeon", "debridement", "necrotizing", "necrotising", "fasciitis"] },
+          { id: "ivig", text: "IV immune globulin for streptococcal toxic shock", match: ["ivig", "immune globulin", "immunoglobulin"] },
+          { id: "cultures", text: "Blood and wound cultures", match: ["culture", "swab"] },
+          { id: "imaging", text: "Imaging of the thigh without delaying surgery", match: ["ultrasound", "ct", "mri", "imaging"] },
+          { id: "ph", text: "Notify public health of invasive group A streptococcal disease", match: ["public health", "notify", "report"] },
+        ],
+        explanation:
+          "Pain out of proportion at a varicella lesion with shock is necrotizing fasciitis until surgery proves otherwise. Imaging must not delay exploration. IVIG neutralizes superantigens and is used as an adjunct in streptococcal toxic shock. Invasive group A streptococcal disease is reportable.",
+        keyFeature: { topic: "infectious-diseases", n: 4 },
+        source: "idsa-ssti",
+      },
+    ],
+    sources: [S.idsa],
+    ...META,
+  },
+];
