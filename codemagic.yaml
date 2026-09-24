@@ -1,7 +1,8 @@
 # Codemagic CI for Preceptor: CCFP-EM (com.preceptor.oral).
 # Codemagic reads codemagic.yaml only from the repository root. The app
 # lives in oral-exam-sim/, so every workflow sets working_directory to that
-# folder and artifact paths are given from the repository root.
+# folder. Artifact paths are written relative to that working directory:
+# build 1 found no artifacts when they were prefixed with oral-exam-sim/.
 #
 # This file mirrors oral-exam-sim/codemagic.yaml. Keep the two in step.
 # tests/platform.test.ts checks the workflow ids, groups and integration
@@ -46,7 +47,7 @@ workflows:
           chmod +x ./gradlew
           ./gradlew :app:assembleDebug
     artifacts:
-      - oral-exam-sim/android/app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.apk
 
   android-release:
     name: Preceptor CCFP-EM Android (signed release)
@@ -75,8 +76,8 @@ workflows:
           chmod +x ./gradlew
           ./gradlew :app:assembleRelease :app:bundleRelease
     artifacts:
-      - oral-exam-sim/android/app/build/outputs/**/*.apk
-      - oral-exam-sim/android/app/build/outputs/**/*.aab
+      - android/app/build/outputs/**/*.apk
+      - android/app/build/outputs/**/*.aab
 
   android-play-internal:
     name: Preceptor CCFP-EM Android (publish to Play internal track)
@@ -123,7 +124,7 @@ workflows:
           chmod +x ./gradlew
           ./gradlew :app:bundleRelease
     artifacts:
-      - oral-exam-sim/android/app/build/outputs/**/*.aab
+      - android/app/build/outputs/**/*.aab
     publishing:
       google_play:
         credentials: $GCLOUD_SERVICE_ACCOUNT_CREDENTIALS
@@ -172,7 +173,7 @@ workflows:
         script: |
           xcode-project build-ipa --workspace "ios/App/App.xcworkspace" --scheme "App"
     artifacts:
-      - oral-exam-sim/build/ios/ipa/*.ipa
+      - build/ios/ipa/*.ipa
     publishing:
       app_store_connect:
         auth: integration

@@ -217,7 +217,11 @@ describe("Codemagic", () => {
     expect(ids(root)).toEqual(ids(local));
     expect(root.match(/^    working_directory: oral-exam-sim$/gm)?.length).toBe(4);
     for (const s of ["preceptor_signing", "preceptor_play", "app_store_connect: preceptor_appstore"]) expect(root, s).toContain(s);
-    for (const a of root.match(/^      - [^*\s]\S*\/\S*$/gm) ?? []) expect(a, "artifact paths start at the repo root").toMatch(/^      - oral-exam-sim\//);
+    // With working_directory set, Codemagic resolves artifact globs from that folder
+    // (build 1 found nothing with an oral-exam-sim/ prefix), so the paths match the local file.
+    const arts = (y: string) => y.match(/^      - [^*\s]\S*\/\S*$/gm) ?? [];
+    expect(arts(root)).toEqual(arts(local));
+    for (const a of arts(root)) expect(a).not.toMatch(/oral-exam-sim\//);
     // Every script step of the local file appears in the root file.
     for (const m of local.matchAll(/^\s+name: (.+)$/gm)) expect(root).toContain(m[1]);
   });
