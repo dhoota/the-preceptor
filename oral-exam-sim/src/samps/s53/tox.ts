@@ -36,9 +36,11 @@ const S = {
   bcAud: { id: "bc-aud", citation: "British Columbia Centre on Substance Use and BC Ministry of Health. Provincial guideline for the clinical management of high-risk drinking and alcohol use disorder. 2019.", url: "https://www.bccsu.ca/alcohol-use-disorder/" },
   ecbcOat: { id: "ecbc-missed-oat", citation: "Kestler A, Miles I, Chai J, Brar R. Missed OAT doses. Emergency Care BC clinical summary. 2024.", url: "https://emergencycarebc.ca/clinical_resource/clinical-summary/missed-oat-doses/" },
   rosenson: { id: "rosenson-phenobarbital", citation: "Rosenson J, Clements C, Simon B, et al. Phenobarbital for acute alcohol withdrawal: a prospective randomized double-blind placebo-controlled study. J Emerg Med. 2013.", url: "https://pubmed.ncbi.nlm.nih.gov/22999778/" },
-  marquardt: { id: "marquardt-hcq", citation: "Marquardt K, Albertson TE. Treatment of hydroxychloroquine overdose. Am J Emerg Med. 2001.", url: "https://pubmed.ncbi.nlm.nih.gov/11553945/" },
+  marquardt: { id: "marquardt-hcq", citation: "Marquardt K, Albertson TE. Treatment of hydroxychloroquine overdose. Am J Emerg Med. 2001.", url: "https://pubmed.ncbi.nlm.nih.gov/11555803/" },
   long: { id: "long-hyperkalemia", citation: "Long B, Warix JR, Koyfman A. Controversies in management of hyperkalemia. J Emerg Med. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/29731287/" },
   extripTheo: { id: "extrip-theophylline", citation: "Ghannoum M, Wiegand TJ, Liu KD, et al. Extracorporeal treatment for theophylline poisoning: systematic review and recommendations from the EXTRIP workgroup. Clin Toxicol. 2015.", url: "https://pubmed.ncbi.nlm.nih.gov/25715736/" },
+  riou: { id: "riou-chloroquine", citation: "Riou B, Barriot P, Rimailho A, Baud FJ. Treatment of severe chloroquine poisoning. N Engl J Med. 1988.", url: "https://pubmed.ncbi.nlm.nih.gov/3336379/" },
+  paris: { id: "paris-n2o", citation: "Paris A, Lake L, Joseph A, et al. Nitrous oxide-induced subacute combined degeneration of the cord: diagnosis and treatment. Pract Neurol. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/36813556/" },
   garakani: { id: "garakani-n2o", citation: "Garakani A, Jaffe RJ, Savla D, et al. Neurologic, psychiatric, and other medical manifestations of nitrous oxide abuse: a systematic review of the case literature. Am J Addict. 2016.", url: "https://onlinelibrary.wiley.com/doi/10.1111/ajad.12372" },
 } satisfies Record<string, Source>;
 
@@ -59,7 +61,7 @@ export const TOX_S53: Samp[] = [
         options: ["Her last menstrual period", "The bottle label and tablet count", "The name of her rheumatologist", "Whether she drove herself here", "Whether she has eaten today"],
         correct: 1,
         explanation:
-          "The label names hydroxychloroquine and the dispensed count of 100 tablets sets an upper limit on what she took, which is what turns a drowsy patient with a QRS of 126 ms into a recognized cardiotoxic ingestion needing bicarbonate, potassium and high dose sedation. Her rheumatologist can confirm the prescription later but not within the hour. A menstrual history matters for pregnancy testing rather than for this decision. How she travelled and when she last ate do not alter the treatment of her conduction delay.",
+          "The label names hydroxychloroquine and the dispensed count of 100 tablets sets an upper limit on what she took, which is what turns a drowsy patient with a QRS of 126 ms into a recognized cardiotoxic ingestion needing epinephrine, high dose diazepam and close watch on her potassium. Her rheumatologist can confirm the prescription later but not within the hour. A menstrual history matters for pregnancy testing rather than for this decision. How she travelled and when she last ate do not alter the treatment of her conduction delay.",
         keyFeature: { topic: "tox", n: 1 },
         source: "marquardt-hcq",
       },
@@ -70,20 +72,20 @@ export const TOX_S53: Samp[] = [
         options: ["Hepatic failure with jaundice", "Hypoglycemia with seizures", "Pulmonary edema from fluid", "Severe hyperthermia", "Ventricular dysrhythmia and arrest"],
         correct: 4,
         explanation:
-          "Hydroxychloroquine blocks fast sodium and potassium channels, and she already has a QRS of 126 ms, a QTc of 520 ms and a blood pressure of 84/48 mmHg, so ventricular dysrhythmia and arrest are what the next hour holds. Hypoglycemia can follow chloroquine drugs but her glucose is 6.0 mmol/L and it is not the threat that kills first. Hyperthermia and pulmonary edema are not features of this poisoning, and hepatic failure is not described after an acute ingestion.",
+          "Hydroxychloroquine blocks fast sodium and potassium channels, and she already has a QRS of 126 ms, a QTc of 520 ms and a blood pressure of 84/48 mmHg, so ventricular dysrhythmia and arrest are what the next hour holds. Hypoglycemia can follow chloroquine drugs but her glucose is 6.0 mmol/L and it is not the threat that kills first. Hyperthermia is not a feature of this poisoning, pulmonary edema is a later problem of large fluid and vasopressor loads rather than the event of the next hour, and hepatic failure is not described after an acute ingestion.",
         keyFeature: { topic: "tox", n: 5 },
         source: "marquardt-hcq",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following treatments best addresses her QRS duration of 126 ms?",
-        options: ["amiodarone 300 mg IV", "calcium chloride 1 g IV", "lidocaine 100 mg IV", "magnesium sulfate 2 g IV", "sodium bicarbonate 100 mmol IV"],
-        correct: 4,
+        prompt: "Which of the following is the most appropriate treatment for her blood pressure of 84/48 mmHg?",
+        options: ["calcium chloride bolus IV", "epinephrine infusion IV", "glucagon bolus IV", "lipid emulsion 20% bolus IV", "vasopressin infusion IV"],
+        correct: 1,
         explanation:
-          "Sodium channel blockade widened her QRS to 126 ms, and hypertonic sodium bicarbonate raises extracellular sodium and pH and narrows it. For her weight of 64 kg, 100 mmol is about 1.6 mmol/kg. Amiodarone blocks potassium channels and would lengthen a QTc already at 520 ms. Lidocaine blocks the same sodium channels and is held for a dysrhythmia that persists after bicarbonate. Calcium treats calcium channel blocker poisoning and hyperkalemia, and her potassium is 2.4 mmol/L. Magnesium is for torsades rather than for a wide QRS.",
+          "Hydroxychloroquine both dilates vessels and depresses the myocardium, and epinephrine treats both. It is the vasopressor in the regimen of early ventilation, high dose diazepam and epinephrine that improved survival after severe chloroquine poisoning, and the same approach is used for hydroxychloroquine. Her QRS of 126 ms is treated with hypertonic sodium bicarbonate at the same time, with the potassium rechecked because bicarbonate drives it lower. Vasopressin constricts vessels without supporting a failing myocardium. Glucagon is used for beta blocker poisoning. Lipid emulsion is kept for arrest or shock that fails standard care, and its support here rests on case reports. Calcium treats calcium channel blocker poisoning and hyperkalemia, and her potassium is 2.4 mmol/L.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "aha-2023",
+        source: "riou-chloroquine",
       },
       {
         id: "q4",
@@ -93,12 +95,12 @@ export const TOX_S53: Samp[] = [
         select: 3,
         correct: [2, 4, 5],
         explanation:
-          "Her potassium of 2.4 mmol/L reflects potassium driven into cells rather than lost from the body, so it is measured repeatedly because it rebounds as the drug is cleared and as bicarbonate is given. Serial ECGs follow the QRS of 126 ms and the QTc of 520 ms. She reached for pills during an argument, so a silent acetaminophen co-ingestion is possible and a measurable concentration would start acetylcysteine. A urine drug screen reports classes she is not suspected of taking. Creatine kinase follows prolonged seizures, and a head CT and chest film are for focal findings or hypoxia she does not have.",
+          "Her potassium of 2.4 mmol/L reflects potassium driven into cells rather than lost from the body. It falls further when bicarbonate is given and can rebound as the drug is cleared, so it is measured repeatedly and replaced with care. Serial ECGs follow the QRS of 126 ms and the QTc of 520 ms. She reached for pills during an argument, so a silent acetaminophen co-ingestion is possible and a measurable concentration would start acetylcysteine. A urine drug screen reports classes she is not suspected of taking. Creatine kinase follows prolonged seizures, which she has not had. A head CT is for a focal deficit or head injury, which the case does not describe, and a chest film is for hypoxia, and her saturation is 97%.",
         keyFeature: { topic: "tox", n: 7 },
         source: "tenenbein-screen",
       },
     ],
-    sources: [S.marquardt, S.aha, S.tenenbein],
+    sources: [S.marquardt, S.riou, S.tenenbein],
     ...META,
   },
 
@@ -344,7 +346,7 @@ export const TOX_S53: Samp[] = [
     topic: "tox",
     title: "Weak legs after swallowing a bottle of tablets",
     stem:
-      "You are working in a rural hospital 300 km from the nearest dialysis unit. A 52-year-old man presents 2 hours after swallowing about 60 of his potassium chloride 20 mmol sustained release tablets. He takes them with a thiazide for hypertension and has no kidney disease. He feels nauseated and his legs feel heavy. Creatinine 92 umol/L, K 7.6 mmol/L, Na 139 mmol/L, glucose 6.1 mmol/L and venous pH 7.38. The ECG shows peaked T waves with a PR interval of 240 ms and a QRS of 118 ms.",
+      "You are working in a rural hospital emergency department 300 km from the nearest dialysis unit. A 52-year-old man presents 2 hours after swallowing about 60 of his potassium chloride 20 mmol sustained release tablets. He takes them with a thiazide for hypertension and has no kidney disease. He feels nauseated and his legs feel heavy. Creatinine 92 umol/L, K 7.6 mmol/L, Na 139 mmol/L, glucose 6.1 mmol/L and venous pH 7.38. The ECG shows peaked T waves with a PR interval of 240 ms and a QRS of 118 ms.",
     vitals: { temperature: "36.7°C oral", pulse: "52/minute", resp: "18/minute", bp: "132/80 mmHg", o2sat: "98% on room air", weight: "84 kg" },
     questions: [
       {
@@ -361,13 +363,13 @@ export const TOX_S53: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first treatment for his ECG changes?",
-        options: ["calcium gluconate 3 g IV", "insulin 10 units with dextrose IV", "salbutamol 20 mg nebulized", "sodium bicarbonate 100 mmol IV", "sodium polystyrene sulfonate PO"],
-        correct: 0,
+        prompt: "Which of the following best describes how his potassium will change over the next few hours?",
+        options: ["Fall as his kidneys excrete it", "Fall as it shifts into cells", "Rise as the tablets keep releasing", "Stay level after the first peak", "Swing low from his thiazide"],
+        correct: 2,
         explanation:
-          "Calcium raises the threshold potential and stabilizes the myocardium within minutes, which is what a PR of 240 ms and a QRS of 118 ms at a potassium of 7.6 mmol/L call for first. Insulin with dextrose and nebulized salbutamol both move potassium into cells but take 15 to 30 minutes and leave the membrane unprotected in the meantime. Bicarbonate shifts potassium only when there is acidemia to correct, and his pH is 7.38. Sodium polystyrene sulfonate acts over hours in the colon and does not treat the ECG.",
-        keyFeature: { topic: "tox", n: 2 },
-        source: "long-hyperkalemia",
+          "Sustained release tablets keep releasing potassium for hours, and 2 hours after swallowing 60 tablets holding 1200 mmol only part of the load has been absorbed, so a potassium already at 7.6 mmol/L is expected to keep rising. His creatinine of 92 umol/L means his kidneys do excrete potassium, but they cannot keep pace with a load of this size. Some potassium moves into cells, which is why insulin and salbutamol buy time, but that shift is temporary and cannot absorb the whole load. A level that stays flat assumes absorption has finished, which it has not with a modified release product. His thiazide promotes urinary potassium loss over days rather than hours and will not lower a level the tablets are still raising.",
+        keyFeature: { topic: "tox", n: 5 },
+        source: "wbi-position",
       },
       {
         id: "q3",
@@ -376,7 +378,7 @@ export const TOX_S53: Samp[] = [
         options: ["Activated charcoal 50 g PO", "Gastric lavage with a large tube", "Milk to bind the tablets", "Repeat dose charcoal by tube", "Whole bowel irrigation by tube"],
         correct: 4,
         explanation:
-          "Polyethylene glycol by tube moves sustained release tablets through the bowel before the rest of their potassium is released, which is the situation the whole bowel irrigation position paper describes for modified release products. Charcoal does not bind potassium, whether given once or repeatedly. Lavage 2 hours after a large tablet load recovers little and risks aspiration. Milk neither binds the salt nor speeds its passage, and it adds volume to a nauseated patient.",
+          "Polyethylene glycol by tube moves sustained release tablets through the bowel before the rest of their potassium is released, which is the situation in which whole bowel irrigation is recommended for modified release products. Charcoal does not bind potassium, whether given once or repeatedly. Lavage 2 hours after a large tablet load recovers little and risks aspiration. Milk neither binds the salt nor speeds its passage, and it adds volume to a nauseated patient.",
         keyFeature: { topic: "tox", n: 6 },
         source: "wbi-position",
       },
@@ -389,7 +391,7 @@ export const TOX_S53: Samp[] = [
         select: 3,
         correct: [0, 1, 4],
         explanation:
-          "A potassium that climbs to 7.9 mmol/L with new leg weakness while tablets continue to release needs removal rather than further shifting alone, so transfer for hemodialysis is arranged from a hospital 300 km away while insulin with dextrose holds the potassium down and hourly ECG and potassium measurements track the rise. More potassium by any route or a potassium sparing diuretic would add to the load. Bicarbonate shifts potassium only in acidemia, and his pH is 7.38. Sodium polystyrene sulfonate works too slowly to be relied on here.",
+          "A potassium that climbs to 7.9 mmol/L with new leg weakness while tablets continue to release needs removal rather than further shifting alone, so transfer for hemodialysis is arranged from a hospital 300 km away while insulin with dextrose holds the potassium down and hourly ECG and potassium measurements track the rise. Calcium is repeated while the ECG stays abnormal, since it protects the heart without lowering the potassium. More potassium by any route or a potassium sparing diuretic would add to the load. Bicarbonate shifts potassium only in acidemia, and his pH is 7.38. Sodium polystyrene sulfonate works too slowly to be relied on here.",
         keyFeature: { topic: "tox", n: 4 },
         source: "long-hyperkalemia",
       },
@@ -767,7 +769,7 @@ export const TOX_S53: Samp[] = [
         options: ["Gastric lavage then charcoal", "Multiple dose activated charcoal", "Sodium bicarbonate infusion", "Sorbitol cathartic alone", "Urinary alkalinization"],
         correct: 1,
         explanation:
-          "Theophylline is absorbed slowly from sustained release tablets and undergoes enterohepatic recirculation, so repeated charcoal keeps binding drug in the gut and shortens its half life. She is alert and can protect her airway, and her vomiting is treated so the charcoal stays down. Lavage 3 hours after tablets recovers little and risks aspiration in a vomiting patient. Repeated cathartics cause fluid and electrolyte loss without added benefit. Theophylline is not cleared by alkalinizing the urine or by bicarbonate, and her pH is 7.46.",
+          "Theophylline is absorbed slowly from sustained release tablets, and repeated charcoal binds drug still in the gut and draws theophylline back from the blood across the bowel wall, which shortens its half life. She is alert and can protect her airway, and her vomiting is treated so the charcoal stays down. Lavage 3 hours after tablets recovers little and risks aspiration in a vomiting patient. Repeated cathartics cause fluid and electrolyte loss without added benefit. Theophylline is not cleared by alkalinizing the urine or by bicarbonate, and her pH is 7.46.",
         keyFeature: { topic: "tox", n: 6 },
         source: "extrip-theophylline",
       },
@@ -775,10 +777,10 @@ export const TOX_S53: Samp[] = [
         id: "q2",
         kind: "single",
         prompt: "Which of the following is the most appropriate management of her potassium of 2.8 mmol/L?",
-        options: ["cautious potassium replacement IV", "insulin with dextrose IV", "magnesium sulfate 2 g IV", "propranolol 1 mg IV", "salbutamol nebulized 5 mg"],
-        correct: 0,
+        options: ["insulin with dextrose IV", "magnesium sulfate 2 g IV", "potassium chloride 10 mmol/hour IV", "salbutamol nebulized 5 mg", "sodium bicarbonate 50 mmol IV"],
+        correct: 2,
         explanation:
-          "Theophylline stimulates beta 2 receptors and drives potassium into cells, so her total body potassium is near normal and the measured 2.8 mmol/L rebounds as the drug is cleared. Replacement is given cautiously with repeated measurement rather than in large loads. Insulin with dextrose and nebulized salbutamol would push the potassium lower. Magnesium is replaced when it is low but does not correct this shift. Short acting beta blockade is considered for hypotension with tachydysrhythmia in a patient without lung disease rather than as treatment of the potassium.",
+          "Theophylline raises circulating catecholamines, which stimulate beta 2 receptors and drive potassium into cells, so her total body potassium is near normal and the measured 2.8 mmol/L rebounds as the drug is cleared. Potassium chloride at 10 mmol/hour is a cautious rate, given with repeated measurement rather than in large loads. Insulin with dextrose and nebulized salbutamol would push the potassium lower. Magnesium is replaced when it is low but does not correct this shift. Bicarbonate would also move potassium into cells, and her pH is already 7.46.",
         keyFeature: { topic: "tox", n: 4 },
         source: "goldfrank",
       },
@@ -787,10 +789,10 @@ export const TOX_S53: Samp[] = [
         kind: "menu",
         prompt: "Which of the following investigations should be ordered for her at this point?",
         options: ["Chest radiograph", "Head CT without contrast", "Repeat theophylline concentration", "Serum acetaminophen level", "Serum magnesium and potassium", "Twelve lead ECG", "Urine drug screen", "Venous blood gas"],
-        select: 3,
-        correct: [2, 4, 5],
+        select: 4,
+        correct: [2, 3, 4, 5],
         explanation:
-          "Absorption from sustained release tablets continues for many hours, so the theophylline concentration is repeated to show whether it is still climbing above the 210 umol/L measured at 3 hours. Magnesium and potassium are followed because both fall with beta 2 stimulation and both set the risk of dysrhythmia. Serial ECGs track the rate of 136/minute and the rhythm. A urine drug screen does not report theophylline. She took tablets from a named bottle, and a head CT, a chest film and a blood gas are for findings she does not have with a saturation of 98% and a clear sensorium.",
+          "Absorption from sustained release tablets continues for many hours, so the theophylline concentration is repeated to show whether it is still climbing above the 210 umol/L measured at 3 hours. Magnesium and potassium are followed because both fall with beta 2 stimulation and both set the risk of dysrhythmia. Serial ECGs track the rate of 136/minute and the rhythm. Forty tablets from another person's supply may be an intentional overdose, so an acetaminophen level is sent, because a silent co-ingestion would need acetylcysteine. A urine drug screen does not report theophylline. A head CT and a chest film are for findings she does not have with a saturation of 98% and a clear sensorium, and her venous gas has already given the pH and lactate.",
         keyFeature: { topic: "tox", n: 7 },
         source: "extrip-theophylline",
       },
@@ -1424,9 +1426,9 @@ export const TOX_S53: Samp[] = [
         options: ["Nerve conduction studies", "Serum lead concentration", "Serum methylmalonic acid level", "Serum vitamin B12 concentration", "Thyroid stimulating hormone"],
         correct: 2,
         explanation:
-          "Nitrous oxide oxidizes the cobalt in vitamin B12 and stops it working as a cofactor, so the substrate that the cofactor should process accumulates and methylmalonic acid rises even when the stored vitamin measures normal. A B12 concentration is still sent but a normal value does not exclude the injury. Nerve conduction studies show a neuropathy without naming its cause and do not assess the cord. Lead poisoning gives a motor neuropathy with abdominal pain, and thyroid disease does not produce loss of position sense with brisk knee reflexes.",
+          "Nitrous oxide oxidizes the cobalt in vitamin B12 and stops it working as a cofactor, so the substrates of the cobalamin dependent enzymes accumulate and methylmalonic acid rises even when the vitamin measures normal. A B12 concentration is still sent but a normal value does not exclude the injury. Nerve conduction studies show a neuropathy without naming its cause and do not assess the cord. Lead poisoning gives a motor neuropathy with abdominal pain, and thyroid disease does not produce loss of position sense with brisk knee reflexes.",
         keyFeature: { topic: "tox", n: 7 },
-        source: "garakani-n2o",
+        source: "paris-n2o",
       },
       {
         id: "q3",
@@ -1443,15 +1445,15 @@ export const TOX_S53: Samp[] = [
         id: "q4",
         kind: "single",
         prompt: "Which of the following is the most appropriate treatment for him now?",
-        options: ["Folic acid 5 mg PO daily", "Hydroxocobalamin 1 mg IM", "Methylprednisolone 1 g IV", "Plasma exchange over 5 days", "Pyridoxine 100 mg PO daily"],
-        correct: 1,
+        options: ["Cyanocobalamin 1000 mcg IM", "Folic acid 5 mg PO daily", "Methylprednisolone 1 g IV", "Plasma exchange over 5 days", "Pyridoxine 100 mg PO daily"],
+        correct: 0,
         explanation:
-          "Parenteral cobalamin replaces the cofactor that nitrous oxide has inactivated and is given alongside advice to stop inhaling, which together give the best chance that his numbness and gait recover. Folic acid corrects the blood picture without protecting the cord and can leave a neurological deficit to progress. Methylprednisolone and plasma exchange treat immune mediated myelopathies, which his 4 month exposure history does not describe. Pyridoxine treats isoniazid neuropathy and seizures rather than this one.",
+          "Parenteral cobalamin replaces the cofactor that nitrous oxide has inactivated and is given alongside advice to stop inhaling, which together give the best chance that his numbness and gait recover. Cyanocobalamin is the injectable form sold in Canada, and the hydroxocobalamin used in British guidance is equally effective. Folic acid corrects the blood picture without protecting the cord and can leave a neurological deficit to progress. Methylprednisolone and plasma exchange treat immune mediated myelopathies, which his 4 month exposure history does not describe. Pyridoxine treats isoniazid neuropathy and seizures rather than this one.",
         keyFeature: { topic: "tox", n: 2 },
-        source: "goldfrank",
+        source: "paris-n2o",
       },
     ],
-    sources: [S.garakani, S.goldfrank],
+    sources: [S.garakani, S.paris],
     ...META,
   },
 
