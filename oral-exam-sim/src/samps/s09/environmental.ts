@@ -6,21 +6,21 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
 
 const S = {
-  wmsHeat: { id: "wms-heat", citation: "Wilderness Medical Society. Clinical practice guidelines for the prevention and treatment of heat illness. Wilderness Environ Med." },
-  wmsHypo: { id: "wms-hypo", citation: "Wilderness Medical Society. Clinical practice guidelines for the out-of-hospital evaluation and treatment of accidental hypothermia. Wilderness Environ Med." },
+  wmsHeat: { id: "wms-heat", citation: "Eifling KP, et al. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of heat illness. 2024 update. Wilderness Environ Med. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/38425235/" },
+  wmsHypo: { id: "wms-hypo", citation: "Dow J, et al. Wilderness Medical Society clinical practice guidelines for the out-of-hospital evaluation and treatment of accidental hypothermia. 2019 update. Wilderness Environ Med. 2019.", url: "https://pubmed.ncbi.nlm.nih.gov/31740369/" },
   wmsFrost: { id: "wms-frost", citation: "Wilderness Medical Society. Clinical practice guidelines for the prevention and treatment of frostbite. 2024 update. Wilderness Environ Med. 2024.", url: "https://journals.sagepub.com/doi/10.1177/10806032231222359" },
-  wmsDrown: { id: "wms-drown", citation: "Wilderness Medical Society. Clinical practice guidelines for the treatment and prevention of drowning. Wilderness Environ Med." },
-  wmsLightning: { id: "wms-lightning", citation: "Wilderness Medical Society. Clinical practice guidelines for the prevention and treatment of lightning injuries. Wilderness Environ Med." },
+  wmsDrown: { id: "wms-drown", citation: "Davis CA, et al. Wilderness Medical Society clinical practice guidelines for the treatment and prevention of drowning. 2024 update. Wilderness Environ Med. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/38379489/" },
+  wmsLightning: { id: "wms-lightning", citation: "Davis C, et al. Wilderness Medical Society practice guidelines for the prevention and treatment of lightning injuries. 2014 update. Wilderness Environ Med. 2014.", url: "https://pubmed.ncbi.nlm.nih.gov/25498265/" },
   erc: { id: "erc", citation: "European Resuscitation Council Guidelines 2021. Cardiac arrest in special circumstances. Resuscitation. 2021. Reaffirmed in the ERC 2025 special circumstances guidelines.", url: "https://www.sciencedirect.com/science/article/pii/S0300957221000642" },
   hope: { id: "hope", citation: "Pasquier M, et al. Hypothermia outcome prediction after extracorporeal life support for hypothermic cardiac arrest patients. The HOPE score. Resuscitation. 2018." },
-  uhmsDcs: { id: "uhms-dcs", citation: "Undersea and Hyperbaric Medical Society. Best practice guidelines. Prevention and treatment of decompression sickness and arterial gas embolism." },
-  navy: { id: "navy", citation: "United States Navy. U.S. Navy Diving Manual. Chapters on diagnosis and recompression treatment of decompression sickness and arterial gas embolism." },
-  danFlying: { id: "dan-flying", citation: "Divers Alert Network. Flying after recreational diving. Workshop proceedings and consensus guidelines." },
-  ataThyro: { id: "ata-thyro", citation: "American Thyroid Association. Guidelines for the diagnosis and management of hyperthyroidism and other causes of thyrotoxicosis." },
-  ataHypo: { id: "ata-hypo", citation: "American Thyroid Association. Guidelines for the treatment of hypothyroidism." },
-  abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Provider Manual. Chapter on electrical injury." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on heat illness, dysbarism and electrical and lightning injuries." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on heat emergencies, diving disorders and electrical injuries." },
+  uhmsDcs: { id: "uhms-dcs", citation: "Undersea and Hyperbaric Medical Society. UHMS best practice guidelines. Prevention and treatment of decompression sickness and arterial gas embolism. 2011.", url: "https://www.uhms.org/images/DCS-AGE-Committee/dcsandage_prevandmgt_uhms-fi.pdf" },
+  navy: { id: "navy", citation: "Naval Sea Systems Command. U.S. Navy Diving Manual. Revision 7, Change A. 2018. Chapters on diagnosis and recompression treatment of decompression sickness and arterial gas embolism." },
+  danFlying: { id: "dan-flying", citation: "Sheffield PJ, Vann RD, editors. Flying After Recreational Diving Workshop proceedings. Divers Alert Network. 2004." },
+  ataThyro: { id: "ata-thyro", citation: "Ross DS, et al. 2016 American Thyroid Association guidelines for diagnosis and management of hyperthyroidism and other causes of thyrotoxicosis. Thyroid. 2016." },
+  ataHypo: { id: "ata-hypo", citation: "Jonklaas J, et al. Guidelines for the treatment of hypothyroidism. American Thyroid Association task force on thyroid hormone replacement. Thyroid. 2014." },
+  abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update. Chapter on electrical injury." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on heat illness, dysbarism and electrical and lightning injuries." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on heat emergencies, diving disorders and electrical injuries." },
 } satisfies Record<string, Source>;
 
 export const ENVIRONMENTAL_SAMPS: Samp[] = [
@@ -30,37 +30,38 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "Collapse near a marathon finish line",
     stem:
-      "You are the physician in the medical tent at a city marathon in late May. It is 27 C and humid. A 24 year old woman collapsed at kilometre 40. She is confused and combative. HR 152, BP 102/60, RR 28, SpO2 97% on room air, capillary glucose 5.4 mmol/L. Rectal temperature is 42.1 C.",
+      "You are the physician in the medical tent at a city marathon in late May. It is 27°C and humid. A 24-year-old woman collapsed at kilometre 40. She is confused and combative. Her capillary glucose is 5.4 mmol/L.",
+    vitals: { temperature: "42.1°C rectal", pulse: "152/minute", resp: "28/minute", bp: "102/60 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List the TWO clinical criteria that define the most likely diagnosis.",
+        prompt: "What clinical criteria define the most likely diagnosis?",
         accept: [
           { id: "temp", text: "Core temperature above 40 C", match: ["temperature", "40", "hyperthermia", "core temp", "rectal"] },
           { id: "cns", text: "Central nervous system dysfunction such as confusion, seizure or coma", match: ["cns", "confusion", "confused", "mental status", "altered", "neuro", "neurological", "neurologic", "encephalopathy", "combative", "seizure", "coma", "delirium"] },
           { id: "exertion", text: "Exertion or heat exposure as the setting", match: ["exertion", "exercise", "heat exposure", "running", "marathon"] },
         ],
         explanation:
-          "Exertional heat stroke is defined by a core temperature usually above 40 C with central nervous system dysfunction. Sweating may persist in exertional heat stroke. Any runner who collapses confused on a warm day has heat stroke until a rectal temperature proves otherwise.",
+          "Exertional heat stroke is defined by a core temperature usually above 40°C with central nervous system dysfunction. Sweating may persist in exertional heat stroke. Any runner who collapses confused on a warm day has heat stroke until a rectal temperature proves otherwise.",
         keyFeature: { topic: "environmental", n: 1 },
         source: "wms-heat",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate cooling method? Select one.",
+        prompt: "Which of the following is the most appropriate cooling method for her?",
         options: [
-          "Ice packs to the neck, axillae and groin",
-          "Whole body cold water immersion in the tent now",
+          "Cold IV normal saline 2 L in the tent",
           "Evaporative cooling with fans during transport to hospital",
-          "Cold IV normal saline 2 L",
-          "Transport immediately to the ED for cooling",
+          "Ice packs to the neck, axillae and groin",
+          "Immediate transport to hospital for cooling",
+          "Whole body cold water immersion in the tent now",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "Cold water immersion gives the fastest cooling rate and is the standard for exertional heat stroke. The rule is cool first, transport second. Survival approaches 100% when temperature falls below 39 C within 30 minutes. Ice packs to the groin and axillae alone are much slower.",
+          "Cold water immersion gives the fastest cooling rate and is the standard for exertional heat stroke. The rule is cool first, transport second. Survival approaches 100% when temperature falls below 39°C within 30 minutes. Ice packs to the groin and axillae alone are much slower.",
         keyFeature: { topic: "environmental", n: 1 },
         source: "wms-heat",
       },
@@ -68,7 +69,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO things you monitor during immersion, including when you stop.",
+        prompt: "What do you monitor during immersion, including when you stop?",
         accept: [
           { id: "probe", text: "Continuous rectal temperature probe", match: ["rectal", "core temp", "temperature probe", "continuous temperature"] },
           { id: "stop", text: "Remove from water at about 39 C to avoid overshoot", match: ["39", "38.9", "38.6", "38.5", "stop", "remove"] },
@@ -77,7 +78,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
           { id: "glucose", text: "Glucose and sodium if available", match: ["glucose", "sodium"] },
         ],
         explanation:
-          "Temperature must be tracked continuously with a rectal probe because oral and tympanic readings are unreliable. Stop immersion at about 39 C to prevent rebound hypothermia. Improving mental status is reassuring. A persistent deficit after cooling needs another explanation.",
+          "Temperature must be tracked continuously with a rectal probe because oral and tympanic readings are unreliable. Stop immersion at about 39°C to prevent rebound hypothermia. Improving mental status is reassuring. A persistent deficit after cooling needs another explanation.",
         keyFeature: { topic: "environmental", n: 1 },
         source: "wms-heat",
       },
@@ -85,13 +86,13 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q4",
         kind: "menu",
         select: 1,
-        prompt: "Which medication should be added to physical cooling? Select one, or None if none are required.",
+        prompt: "Which of the following medications should be added to physical cooling for her?",
         options: [
           "Acetaminophen 1 g PO",
-          "Ibuprofen 400 mg PO",
-          "Dantrolene 2.5 mg/kg IV",
           "Bromocriptine 2.5 mg PO",
           "Cyproheptadine 12 mg PO",
+          "Dantrolene 2.5 mg/kg IV",
+          "Ibuprofen 400 mg PO",
           "None",
         ],
         correct: [5],
@@ -104,8 +105,8 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 3,
-        update: "She is cooled to 39 C in 18 minutes and becomes oriented. She is taken to hospital.",
-        prompt: "List THREE complications you look for with laboratory testing.",
+        update: "She is cooled to 39°C in 18 minutes and becomes oriented. She is taken to hospital.",
+        prompt: "What complications do you look for with laboratory testing?",
         accept: [
           { id: "rhabdo", text: "Rhabdomyolysis with CK", match: ["rhabdo", "rhabdomyolysis", "ck", "creatine kinase"] },
           { id: "aki", text: "Acute kidney injury with creatinine", match: ["kidney", "renal", "creatinine", "aki"] },
@@ -132,13 +133,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "An older man found confused during a heat wave",
     stem:
-      "During the fourth day of a summer heat wave, a 79 year old man is brought from his third floor apartment, which has no air conditioning. A neighbour found him confused. He has schizophrenia and hypertension. Medications are olanzapine, benztropine and hydrochlorothiazide. HR 124, BP 96/58, RR 26, SpO2 93% on room air. Rectal temperature is 41.3 C. His skin is hot and dry.",
+      "During the fourth day of a summer heat wave, a 79-year-old man is brought from his third floor apartment, which has no air conditioning. A neighbour found him confused. He has schizophrenia and hypertension. Medications are olanzapine, benztropine and hydrochlorothiazide. His skin is hot and dry.",
+    vitals: { temperature: "41.3°C rectal", pulse: "124/minute", resp: "26/minute", bp: "96/58 mmHg", o2sat: "93% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE factors in this history that increase his risk of heat illness.",
+        prompt: "What factors in this history increase his risk of heat illness?",
         accept: [
           { id: "age", text: "Older age", match: ["age", "older", "elderly", "79"] },
           { id: "ac", text: "No air conditioning in an upper floor apartment", match: ["air condition", "ac", "apartment", "floor"] },
@@ -157,18 +159,18 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Select TWO effective cooling methods to start now.",
+        prompt: "Which of the following are effective cooling methods to start now?",
         options: [
-          "Cold water immersion",
-          "Evaporative cooling with lukewarm water spray and fans",
           "Acetaminophen 1 g rectally",
-          "Ice packs to the groin and axillae as the only method",
-          "Cooling blanket as the only method",
+          "Cold water immersion",
+          "Cooling blanket alone",
           "Dantrolene 2.5 mg/kg IV",
-          "Warm IV fluids",
+          "Evaporative cooling with lukewarm spray and fans",
+          "Ice packs to the groin and axillae alone",
           "Wait for blood cultures before cooling",
+          "Warm IV normal saline bolus",
         ],
-        correct: [0, 1],
+        correct: [1, 4],
         explanation:
           "Cold water immersion is the most effective method and is safe in older patients with monitoring. Evaporative cooling with spray and fans is a good alternative or addition when immersion is impractical. Ice packs and cooling blankets alone are too slow. Cooling must never wait for investigations.",
         keyFeature: { topic: "environmental", n: 2 },
@@ -178,7 +180,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "While cooling, list THREE other causes of his fever and confusion that you must consider.",
+        prompt: "While cooling, what other causes of his fever and confusion must you consider?",
         accept: [
           { id: "sepsis", text: "Sepsis, including pneumonia or meningitis", match: ["sepsis", "infection", "pneumonia", "meningitis", "encephalitis", "septic"] },
           { id: "nms", text: "Neuroleptic malignant syndrome", match: ["neuroleptic malignant", "nms"] },
@@ -199,7 +201,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations that would help distinguish these causes or guide treatment.",
+        prompt: "What investigations would help distinguish these causes or guide treatment?",
         accept: [
           { id: "cultures", text: "Blood cultures", match: ["blood culture", "culture"] },
           { id: "ck", text: "CK", match: ["ck", "creatine kinase"] },
@@ -232,13 +234,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Fever and rigidity after a recent ED visit",
     stem:
-      "A 32 year old man with schizophrenia is brought from his group home in July. Two days ago he received haloperidol 10 mg IM twice in another ED for agitation, and his haloperidol decanoate dose was recently increased. He is now mute and diaphoretic. Temperature 40.4 C rectal, HR 128, BP 172/104 then 118/70 ten minutes later. He has generalized lead pipe rigidity. CK is 18 400 U/L.",
+      "A 32-year-old man with schizophrenia is brought from his group home in July. Two days ago he received haloperidol 10 mg IM twice in another ED for agitation, and his haloperidol decanoate dose was recently increased. He is now mute and diaphoretic. A repeat BP ten minutes after the first reading is 118/70 mmHg. He has generalized lead pipe rigidity. CK is 18 400 U/L.",
+    vitals: { temperature: "40.4°C rectal", pulse: "128/minute", bp: "172/104 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO clinical features that help distinguish this condition from serotonin syndrome.",
+        prompt: "What clinical features help distinguish this condition from serotonin syndrome?",
         accept: [
           { id: "rigidity", text: "Lead pipe rigidity rather than clonus", match: ["rigidity", "lead pipe", "clonus"] },
           { id: "reflex", text: "Normal or reduced reflexes rather than hyperreflexia", match: ["reflex", "reflexes", "hyporeflexia", "hyperreflexia"] },
@@ -256,7 +259,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         accept: [
           { id: "stop", text: "Stop all antipsychotics", match: ["stop", "discontinue", "hold", "withdraw"] },
           { id: "cool", text: "Aggressive active cooling with several methods", match: ["cool", "cooling", "ice", "evaporative", "evaporation", "immersion"] },
@@ -279,18 +282,19 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         select: 2,
-        prompt: "His temperature remains 40 C and rigidity persists after an hour. Select TWO appropriate specific therapies.",
+        update: "His temperature remains 40°C and rigidity persists after an hour.",
+        prompt: "Which of the following are appropriate specific therapies for him now?",
         options: [
+          "Acetaminophen 1 g IV",
           "Bromocriptine 2.5 mg via NG tube every 8 hours",
           "Bromocriptine 50 mg via NG tube once",
-          "Dantrolene 1 to 2.5 mg/kg IV",
-          "Dantrolene 25 mg/kg IV",
           "Cyproheptadine 12 mg via NG tube",
+          "Dantrolene 25 mg/kg IV",
+          "Dantrolene 1 to 2.5 mg/kg IV",
           "Haloperidol 5 mg IV",
           "Succinylcholine 1.5 mg/kg IV",
-          "Acetaminophen 1 g IV",
         ],
-        correct: [0, 2],
+        correct: [1, 5],
         explanation:
           "Bromocriptine is a dopamine agonist started at 2.5 mg two or three times daily. Dantrolene at 1 to 2.5 mg/kg IV reduces muscle heat production in severe rigidity. Cyproheptadine treats serotonin syndrome. Succinylcholine risks hyperkalemia in rhabdomyolysis.",
         keyFeature: { topic: "environmental", n: 2 },
@@ -300,7 +304,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO complications to monitor for over the next 48 hours.",
+        prompt: "What complications do you monitor for over the next 48 hours?",
         accept: [
           { id: "aki", text: "Acute kidney injury from rhabdomyolysis", match: ["kidney", "renal", "aki", "creatinine", "rhabdo", "rhabdomyolysis"] },
           { id: "k", text: "Hyperkalemia", match: ["potassium", "hyperkalemia", "hyperkalaemia"] },
@@ -327,13 +331,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "A roofer who collapsed at work",
     stem:
-      "A 45 year old woman working on a roof in July is brought in after becoming confused and agitated. Temperature 40.2 C rectal, HR 168 irregularly irregular, BP 146/64, RR 28. She has a fine tremor and a diffuse goitre. Her co-worker says she lost weight recently and stopped a thyroid pill two months ago.",
+      "A 45-year-old woman working on a roof in July is brought in after becoming confused and agitated. Her pulse is irregularly irregular. She has a fine tremor and a diffuse goitre. Her co-worker says she lost weight recently and stopped a thyroid pill two months ago.",
+    vitals: { temperature: "40.2°C rectal", pulse: "168/minute irregular", resp: "28/minute", bp: "146/64 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO cooling measures you start immediately.",
+        prompt: "What cooling measures do you start immediately?",
         accept: [
           { id: "evap", text: "Evaporative cooling with water spray and fans", match: ["evaporative", "evaporation", "spray", "fan", "mist"] },
           { id: "immersion", text: "Cold water immersion", match: ["immersion", "ice water", "cold water"] },
@@ -353,7 +358,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE clues that point to a cause other than environmental heat alone.",
+        prompt: "What clues point to a cause other than environmental heat alone?",
         accept: [
           { id: "goitre", text: "Goitre", match: ["goitre", "goiter", "thyroid enlargement"] },
           { id: "stopped", text: "Stopped antithyroid medication", match: ["stopped", "thyroid pill", "methimazole", "medication"] },
@@ -372,35 +377,34 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         select: 3,
-        prompt: "Select THREE appropriate treatments for the underlying condition.",
+        prompt: "Which of the following are appropriate treatments for her underlying condition?",
         options: [
-          "Propranolol 60 to 80 mg PO every 4 hours",
-          "Propylthiouracil 500 to 1000 mg PO load, then 250 mg every 4 hours",
+          "Amiodarone 150 mg IV for rate control",
+          "ASA 650 mg PO every 4 hours",
+          "Dantrolene 2.5 mg/kg IV once",
           "Hydrocortisone 100 mg IV every 8 hours",
-          "Potassium iodide before any thionamide",
-          "Levothyroxine 100 mcg IV",
-          "ASA 650 mg PO",
-          "Amiodarone 150 mg IV as the first line rate control",
-          "Dantrolene 2.5 mg/kg IV",
+          "Levothyroxine 100 mcg IV once",
+          "Potassium iodide PO before any thionamide",
+          "Propranolol 60 to 80 mg PO every 4 hours",
+          "Propylthiouracil 500 to 1000 mg PO, then 250 mg q4h",
         ],
-        correct: [0, 1, 2],
-        explanation:
-          "Thyroid storm treatment combines a beta blocker, a thionamide to block synthesis, iodine at least an hour after the thionamide, and glucocorticoids. Iodine given first can fuel more hormone synthesis. Amiodarone contains iodine and is not first line.",
+        correct: [3, 6, 7],
+        explanation: "Thyroid storm treatment combines a beta blocker, a thionamide to block synthesis, iodine at least an hour after the thionamide, and glucocorticoids. Propylthiouracil is loaded at 500 to 1000 mg PO, then given as 250 mg every 4 hours. Iodine given first can fuel more hormone synthesis. Amiodarone contains iodine and is not first line.",
         keyFeature: { topic: "environmental", n: 2 },
         source: "ata-thyro",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "When should iodine be given in relation to the thionamide? Select one.",
+        prompt: "Which of the following describes when iodine should be given in relation to the thionamide?",
         options: [
-          "At the same time",
           "At least 1 hour after the thionamide",
           "At least 1 hour before the thionamide",
-          "Only after 24 hours of thionamide",
+          "At the same time as the thionamide",
           "Iodine is contraindicated in thyroid storm",
+          "Only after 24 hours of thionamide",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Iodine blocks hormone release, but it is also substrate for new hormone synthesis. Giving the thionamide first blocks organification so iodine cannot be used to make more hormone. The usual gap is at least 1 hour.",
         keyFeature: { topic: "environmental", n: 2 },
@@ -417,13 +421,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "A snowshoer found after a night outdoors",
     stem:
-      "Police search and rescue bring in a 52 year old man who was lost snowshoeing for 9 hours at minus 18 C. He is drowsy and not shivering. GCS 12, HR 42, BP 92/58, RR 10. SpO2 does not read. The triage oral thermometer displays LO. The ECG shows sinus bradycardia with J waves.",
+      "Police search and rescue bring in a 52-year-old man who was lost snowshoeing for 9 hours at minus 18°C. He is drowsy and not shivering. His GCS is 12. SpO2 does not read. The triage oral thermometer displays LO. The ECG shows sinus bradycardia with J waves.",
+    vitals: { pulse: "42/minute", resp: "10/minute", bp: "92/58 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO reliable ways to measure his core temperature.",
+        prompt: "What are reliable ways to measure his core temperature?",
         accept: [
           { id: "eso", text: "Esophageal probe in the lower third, once the airway is secured", match: ["esophageal", "oesophageal"] },
           { id: "rectal", text: "Low reading rectal probe", match: ["rectal"] },
@@ -436,25 +441,25 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
           { text: "Axillary or temporal thermometer", match: ["axillary", "temporal", "forehead"] },
         ],
         explanation:
-          "An esophageal probe is most accurate once the airway is protected. Rectal and bladder probes are acceptable but lag during rewarming. Standard thermometers often do not read below 34 C. Infrared tympanic and oral readings are unreliable in the cold.",
+          "An esophageal probe is most accurate once the airway is protected. Rectal and bladder probes are acceptable but lag during rewarming. Standard thermometers often do not read below 34°C. Infrared tympanic and oral readings are unreliable in the cold.",
         keyFeature: { topic: "environmental", n: 3 },
         source: "wms-hypo",
       },
       {
         id: "q2",
         kind: "single",
-        update: "A rectal probe reads 29.8 C.",
-        prompt: "Which is the most appropriate rewarming strategy? Select one.",
+        update: "A rectal probe reads 29.8°C.",
+        prompt: "Which of the following is the most appropriate rewarming strategy for him?",
         options: [
-          "Passive rewarming with blankets only",
-          "Active external rewarming with forced air plus warmed IV fluids, and alert an ECLS capable centre",
+          "Forced air, warmed IV fluids and ECLS centre alert",
           "Immediate ECMO cannulation while he has a perfusing rhythm",
-          "Immersion in a 42 C bath",
-          "Warm peritoneal lavage",
+          "Immersion of the body in a 42°C bath",
+          "Passive rewarming with blankets only",
+          "Warm peritoneal lavage through a catheter",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "He has moderate hypothermia with a perfusing rhythm. Forced air warming, warm blankets and warmed IV fluids at 38 to 42 C rewarm at about 1 to 2 C per hour. Extracorporeal rewarming is reserved for cardiac arrest or instability that does not respond. His core temperature below 30 C and heart rate below 45 are European criteria for early contact with, or direct transfer to, an ECLS centre in case he arrests. Warm baths cause vasodilation and collapse.",
+          "He has moderate hypothermia with a perfusing rhythm. Forced air warming, warm blankets and warmed IV fluids at 38 to 42°C rewarm at about 1 to 2°C per hour. Extracorporeal rewarming is reserved for cardiac arrest or instability that does not respond. His core temperature below 30°C and heart rate below 45 are European criteria for early contact with, or direct transfer to, an ECLS centre in case he arrests. Warm baths cause vasodilation and collapse.",
         keyFeature: { topic: "environmental", n: 3 },
         source: "wms-hypo",
       },
@@ -462,7 +467,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE precautions during his resuscitation.",
+        prompt: "What precautions do you take during his resuscitation?",
         accept: [
           { id: "gentle", text: "Gentle handling and keep him horizontal", match: ["gentle", "horizontal", "avoid rough", "no rough", "avoid jostling", "minimal movement", "handling", "rough", "movement"] },
           { id: "monitor", text: "Continuous cardiac monitoring with pads on", match: ["monitor", "pad", "defib", "defibrillator", "defibrillation"] },
@@ -482,18 +487,18 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "While moving him to the CT table, he goes into ventricular fibrillation. Core temperature is 29.5 C.",
-        prompt: "Which is the most appropriate management? Select one.",
+        update: "While moving him to the CT table, he goes into ventricular fibrillation. Core temperature is 29.5°C.",
+        prompt: "Which of the following is the most appropriate management now?",
         options: [
-          "CPR, up to three shocks, hold epinephrine until core temperature is above 30 C, and arrange extracorporeal rewarming",
-          "Standard ACLS with epinephrine every 3 to 5 minutes and shocks every 2 minutes, with forced air warming only",
-          "Stop resuscitation, since VF below 30 C is not survivable",
           "Amiodarone 300 mg IV before any shock",
+          "CPR, up to 3 shocks, hold epinephrine, ECLS rewarming",
           "Forced air warming and delay CPR until he is warmer",
+          "Standard ACLS drugs and shocks, forced air warming only",
+          "Stop resuscitation and pronounce death",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
-          "Below 30 C the heart often does not respond to shocks or drugs, and drugs accumulate. European guidance allows up to three shocks, then withholds further shocks and epinephrine until above 30 C. AHA guidance, which Heart and Stroke Canada follows, allows standard shocks and epinephrine alongside rewarming. Either way, the priority is extracorporeal rewarming. Hypothermic arrest has good survival with extracorporeal rewarming, so it is a reason to escalate, not stop.",
+          "Below 30°C the heart often does not respond to shocks or drugs, and drugs accumulate. European guidance allows up to three shocks, then withholds further shocks and epinephrine until above 30°C. AHA guidance, which Heart and Stroke Canada follows, allows standard shocks and epinephrine alongside rewarming. Either way, the priority is extracorporeal rewarming. Hypothermic arrest has good survival with extracorporeal rewarming, so it is a reason to escalate, not stop.",
         keyFeature: { topic: "environmental", n: 3 },
         source: "erc",
       },
@@ -501,7 +506,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "Looking back at his first ECG, list TWO findings typical of hypothermia.",
+        prompt: "Looking back at his first ECG, what findings are typical of hypothermia?",
         accept: [
           { id: "jwave", text: "Osborn or J waves", match: ["osborn", "j wave", "j point"] },
           { id: "brady", text: "Sinus bradycardia", match: ["bradycardia", "slow"] },
@@ -526,13 +531,13 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "A man found in a snowbank",
     stem:
-      "Paramedics bring in a 34 year old man found in a snowbank at 0500 after leaving a party. He had been seen walking at 0100. Bystanders heard him moaning when he was found, and he became pulseless just as paramedics arrived. He has had 40 minutes of CPR. He is intubated. Rhythm is VF. Esophageal temperature is 23.8 C. The nearest ECMO centre is 45 minutes away by land.",
+      "Paramedics bring in a 34-year-old man found in a snowbank at 0500 after leaving a party. He had been seen walking at 0100. Bystanders heard him moaning when he was found, and he became pulseless just as paramedics arrived. He has had 40 minutes of CPR. He is intubated. Rhythm is VF. Esophageal temperature is 23.8°C. The nearest ECMO centre is 45 minutes away by land.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that support continuing resuscitation with extracorporeal rewarming.",
+        prompt: "What features support continuing resuscitation with extracorporeal rewarming?",
         accept: [
           { id: "temp", text: "Core temperature below 30 C, consistent with hypothermic arrest", match: ["temperature", "23.8", "below 30", "below 32", "hypothermia", "hypothermic"] },
           { id: "witnessed", text: "Arrest occurred after cooling, witnessed by paramedics", match: ["witnessed", "arrest after", "cooled before", "moaning", "signs of life"] },
@@ -549,15 +554,15 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which rewarming method is most appropriate? Select one.",
+        prompt: "Which of the following rewarming methods is most appropriate for him?",
         options: [
+          "Extracorporeal life support by VA ECMO or bypass",
           "Forced air warming and warm IV fluids",
-          "Extracorporeal life support with VA ECMO or cardiopulmonary bypass",
-          "Warm bladder irrigation",
-          "Hemodialysis",
+          "Hemodialysis with a warmed circuit",
+          "Warm bladder irrigation via catheter",
           "Warm humidified oxygen alone",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "ECLS rewarms at several degrees per hour while providing full circulation and oxygenation. It is the method of choice for hypothermic cardiac arrest. If ECLS is truly unavailable, thoracic lavage is the best alternative, but it is far less effective.",
         keyFeature: { topic: "environmental", n: 3 },
@@ -567,7 +572,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO measures for his transfer to the ECMO centre.",
+        prompt: "What measures do you take for his transfer to the ECMO centre?",
         accept: [
           { id: "mech", text: "Mechanical CPR device", match: ["mechanical", "lucas", "autopulse", "device"] },
           { id: "notify", text: "Pre-notify the ECMO team to be ready on arrival", match: ["notify", "ecmo team", "activate", "ready"] },
@@ -585,15 +590,15 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which finding would most strongly argue against extracorporeal rewarming in an adult? Select one.",
+        prompt: "Which of the following findings would most strongly argue against extracorporeal rewarming in an adult?",
         options: [
-          "Serum potassium 14 mmol/L",
-          "pH 6.9",
-          "Lactate 12 mmol/L",
-          "Glucose 15 mmol/L",
+          "Arterial pH 6.9",
           "Fixed dilated pupils",
+          "Serum glucose 15 mmol/L",
+          "Serum lactate 12 mmol/L",
+          "Serum potassium 14 mmol/L",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "A very high potassium suggests cell death before cooling, often from asphyxia. No adult has survived with a potassium above 12 mmol/L, and older sources used 10 mmol/L. The HOPE score is now preferred where possible. Acidosis, lactate and fixed pupils are expected and do not predict death in hypothermic arrest.",
         keyFeature: { topic: "environmental", n: 3 },
@@ -602,17 +607,17 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        prompt: "When may resuscitation be stopped in hypothermic cardiac arrest without another lethal cause? Select one.",
+        prompt: "Which of the following is the point at which resuscitation may be stopped in hypothermic cardiac arrest without another lethal cause?",
         options: [
-          "When core temperature reaches 28 C",
-          "When core temperature has been restored to at least 32 C and asystole persists",
-          "After 60 minutes of CPR regardless of temperature",
-          "When the pupils are fixed and dilated",
-          "When core temperature reaches 37 C",
+          "Core temperature reaching 28°C",
+          "Core temperature reaching 37°C",
+          "Fixed and dilated pupils on examination",
+          "Persistent asystole after rewarming to at least 32°C",
+          "Sixty minutes of CPR regardless of temperature",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "The patient is not dead until warm and dead. Resuscitation continues until core temperature is at least 32 C. Termination is then reasonable if asystole persists. Pupils and duration of CPR are unreliable guides in hypothermia.",
+          "The patient is not dead until warm and dead. Resuscitation continues until core temperature is at least 32°C. Termination is then reasonable if asystole persists. Pupils and duration of CPR are unreliable guides in hypothermia.",
         keyFeature: { topic: "environmental", n: 3 },
         source: "erc",
       },
@@ -627,13 +632,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "An older woman found cold at home",
     stem:
-      "An 81 year old woman is brought in after her son found her in bed, confused, in a house heated only by a small space heater. She has been slowing down for months. Bladder temperature is 31.4 C. HR 48, BP 90/52, RR 10, SpO2 94% on room air. She is not shivering. Her face is puffy and her tongue appears large.",
+      "An 81-year-old woman is brought in after her son found her in bed, confused, in a house heated only by a small space heater. She has been slowing down for months. Bladder temperature is 31.4°C. She is not shivering. Her face is puffy and her tongue appears large.",
+    vitals: { pulse: "48/minute", resp: "10/minute", bp: "90/52 mmHg", o2sat: "94% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE underlying causes you must look for in this patient.",
+        prompt: "What underlying causes must you look for in this patient?",
         accept: [
           { id: "thyroid", text: "Hypothyroidism or myxedema", match: ["thyroid", "myxedema", "myxoedema"] },
           { id: "sepsis", text: "Sepsis", match: ["sepsis", "infection", "septic", "pneumonia", "uti"] },
@@ -655,7 +661,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations to send now.",
+        prompt: "What investigations do you send now?",
         accept: [
           { id: "tsh", text: "TSH and free T4", match: ["tsh", "t4", "thyroid"] },
           { id: "cortisol", text: "Random cortisol", match: ["cortisol"] },
@@ -678,16 +684,16 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "After two hours of forced air warming and warmed fluids, her temperature has risen only 0.3 C per hour. Sodium is 127 mmol/L and glucose 3.4 mmol/L. TSH is pending.",
-        prompt: "Which is the most appropriate treatment? Select one.",
+        update: "After two hours of forced air warming and warmed fluids, her temperature has risen only 0.3°C per hour. Sodium is 127 mmol/L and glucose 3.4 mmol/L. TSH is pending.",
+        prompt: "Which of the following is the most appropriate treatment now?",
         options: [
-          "Levothyroxine 200 to 400 mcg IV plus hydrocortisone 100 mg IV",
-          "Levothyroxine 25 mcg PO daily",
           "Hydrocortisone 100 mg IV alone and wait for the TSH",
-          "Levothyroxine 300 mcg IV alone",
+          "IV levothyroxine 200 to 400 mcg plus hydrocortisone 100 mg",
+          "Levothyroxine 300 mcg IV alone without a steroid",
+          "Levothyroxine 25 mcg PO daily with continued warming",
           "Wait for the TSH before any hormone therapy",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Failure to rewarm with active external warming suggests an endocrine cause. Suspected myxedema coma is treated empirically with IV levothyroxine. Hydrocortisone is given first or together because adrenal insufficiency may coexist and thyroid hormone can precipitate adrenal crisis.",
         keyFeature: { topic: "environmental", n: 3 },
@@ -697,7 +703,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO complications to anticipate during rewarming.",
+        prompt: "What complications do you anticipate during rewarming?",
         accept: [
           { id: "hypotension", text: "Rewarming hypotension from vasodilation", match: ["hypotension", "vasodilation", "vasodilatation", "shock"] },
           { id: "arrhythmia", text: "Arrhythmias such as atrial fibrillation or VF", match: ["arrhythmia", "vf", "fibrillation", "dysrhythmia"] },
@@ -725,13 +731,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "A child pulled from a frozen pond",
     stem:
-      "A 4 year old boy, 17 kg, fell through the ice on a pond in March. Firefighters pulled him out after about 12 minutes under water. He was pulseless and apneic. Paramedics have done CPR for 20 minutes. He is 25 minutes from your pediatric tertiary centre, which has ECMO. The paramedic patches to you from the ambulance.",
+      "A 4-year-old boy fell through the ice on a pond in March. Firefighters pulled him out after about 12 minutes under water. He was pulseless and apneic. Paramedics have done CPR for 20 minutes. He is 25 minutes from your pediatric tertiary centre, which has ECMO. The paramedic patches to you from the ambulance.",
+    vitals: { weight: "17 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO directions for the crew during transport.",
+        prompt: "What directions do you give the crew during transport?",
         accept: [
           { id: "vent", text: "Prioritize ventilation and oxygenation with bag valve mask or airway", match: ["ventilate", "ventilation", "ventilator", "breath", "oxygen", "bvm", "bag", "airway"] },
           { id: "cpr", text: "Continue high quality CPR", match: ["continue cpr", "cpr", "compression"] },
@@ -749,16 +756,16 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "He arrives in asystole. Rectal temperature is 26.9 C.",
-        prompt: "Which is the most appropriate plan? Select one.",
+        update: "He arrives in asystole. Rectal temperature is 26.9°C.",
+        prompt: "Which of the following is the most appropriate plan for him?",
         options: [
-          "Stop resuscitation because submersion exceeded 10 minutes",
           "Continue CPR and proceed to ECMO rewarming",
-          "Forced air warming for 10 minutes, then stop if no ROSC",
-          "Stop resuscitation because he is in asystole",
-          "Continue CPR until core temperature reaches 30 C, then stop",
+          "Continue CPR to a core temperature of 30°C, then stop",
+          "Forced air warming 10 minutes, then stop if no ROSC",
+          "Stop resuscitation for persistent asystole",
+          "Stop resuscitation for submersion over 10 minutes",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Submersion in icy water can cool a small child quickly and protect the brain. Pediatric survivors of long ice water submersion have been rewarmed with ECMO. Asystole and submersion time are not reliable reasons to stop while he is this cold.",
         keyFeature: { topic: "environmental", n: 3 },
@@ -768,7 +775,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO factors associated with poor outcome in drowning.",
+        prompt: "What factors are associated with poor outcome in drowning?",
         accept: [
           { id: "sub", text: "Submersion longer than 10 minutes", match: ["submersion", "duration", "10 minute", "time under"] },
           { id: "cpr", text: "Delay to effective CPR", match: ["delay", "bystander cpr", "time to cpr"] },
@@ -788,8 +795,8 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        update: "He is placed on ECMO and has ROSC at 33 C.",
-        prompt: "List TWO complications to anticipate in the next 24 hours.",
+        update: "He is placed on ECMO and has ROSC at 33°C.",
+        prompt: "What complications do you anticipate in the next 24 hours?",
         accept: [
           { id: "ards", text: "ARDS or pulmonary edema", match: ["ards", "pulmonary edema", "pulmonary oedema", "lung injury", "respiratory distress"] },
           { id: "brain", text: "Hypoxic brain injury and cerebral edema", match: ["brain", "cerebral", "hypoxic", "neuro", "neurological", "neurologic", "seizure"] },
@@ -816,13 +823,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "Hard white fingers in January",
     stem:
-      "A 38 year old man is brought in by police at 0300 in January. He slept outside after drinking. The overnight low was minus 29 C. Both hands are white, hard and numb to the wrists. Rectal temperature is 34.6 C. HR 96, BP 118/70, glucose 4.8 mmol/L. He has not been rewarmed.",
+      "A 38-year-old man is brought in by police at 0300 in January. He slept outside after drinking. The overnight low was minus 29°C. Both hands are white, hard and numb to the wrists. His glucose is 4.8 mmol/L. He has not been rewarmed.",
+    vitals: { temperature: "34.6°C rectal", pulse: "96/minute", bp: "118/70 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO priorities before rewarming his hands.",
+        prompt: "What are the priorities before rewarming his hands?",
         accept: [
           { id: "core", text: "Correct systemic hypothermia first, to about 35 C", match: ["hypothermia", "hypothermic", "core", "35", "systemic"] },
           { id: "abc", text: "Assess and support airway, breathing and circulation", match: ["abc", "airway", "circulation", "resuscitate", "resuscitation"] },
@@ -833,7 +841,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
           { id: "fluids", text: "IV fluids for volume depletion", match: ["fluid"] },
         ],
         explanation:
-          "Systemic hypothermia takes priority because it threatens life. Wilderness guidance suggests a core temperature of at least 35 C before rewarming frostbite. Thawing is intensely painful and needs parenteral analgesia.",
+          "Systemic hypothermia takes priority because it threatens life. Wilderness guidance suggests a core temperature of at least 35°C before rewarming frostbite. Thawing is intensely painful and needs parenteral analgesia.",
         keyFeature: { topic: "environmental", n: 3 },
         source: "wms-frost",
       },
@@ -841,20 +849,19 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Select TWO appropriate treatments for his hands.",
+        prompt: "Which of the following are appropriate treatments for his hands?",
         options: [
-          "Immersion in circulating water at 37 to 39 C until tissue is soft and red or purple",
-          "Immersion in water at 44 to 46 C for 10 minutes",
           "Dry heat from a heater or heat lamp",
+          "Ibuprofen 400 mg PO twice daily",
+          "Immersion in circulating water at 37 to 39°C",
+          "Immersion in water at 44 to 46°C for 10 minutes",
+          "Prednisone 50 mg PO daily",
           "Rubbing the hands with snow",
           "Slow passive rewarming at room temperature",
-          "Ibuprofen 400 mg PO twice daily",
-          "Prednisone 50 mg PO daily",
-          "Warfarin",
+          "Warfarin 5 mg PO daily",
         ],
-        correct: [0, 5],
-        explanation:
-          "Rapid rewarming in 37 to 39 C water, usually about 30 minutes, is the standard. Hotter water burns insensate tissue and dry heat is uncontrolled. Rubbing causes further injury. Ibuprofen, about 12 mg/kg/day divided twice daily (400 mg twice daily for most adults), inhibits prostaglandins and thromboxane that drive progressive ischemia.",
+        correct: [1, 2],
+        explanation: "Rapid rewarming in circulating 37 to 39°C water, usually about 30 minutes until the tissue is soft and red or purple, is the standard. Hotter water burns insensate tissue and dry heat is uncontrolled. Rubbing causes further injury. Ibuprofen, about 12 mg/kg/day divided twice daily (400 mg twice daily for most adults), inhibits prostaglandins and thromboxane that drive progressive ischemia.",
         keyFeature: { topic: "environmental", n: 3 },
         source: "wms-frost",
       },
@@ -863,7 +870,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "After rewarming, several fingers remain cyanotic beyond the PIP joints and have hemorrhagic blisters. It is 4 hours since rewarming.",
-        prompt: "List THREE further management steps.",
+        prompt: "What are the further management steps?",
         accept: [
           { id: "tpa", text: "Discuss thrombolysis with tPA within 24 hours of injury, ideally within 12 hours, at a capable centre", match: ["tpa", "alteplase", "thrombolys", "tissue plasminogen"] },
           { id: "iloprost", text: "Consider IV iloprost", match: ["iloprost", "prostacyclin"] },
@@ -887,9 +894,15 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which test best predicts tissue viability? Select one.",
-        options: ["Plain X-ray of the hands", "Technetium 99m bone scintigraphy", "MRI", "Nerve conduction studies", "CT of the hands without contrast"],
-        correct: 1,
+        prompt: "Which of the following tests best predicts tissue viability in his hands?",
+        options: [
+          "CT of the hands without contrast",
+          "MRI of the hands",
+          "Nerve conduction studies",
+          "Plain X-ray of the hands",
+          "Technetium 99m bone scintigraphy",
+        ],
+        correct: 4,
         explanation:
           "Technetium 99m bone scintigraphy shows early loss of perfusion and predicts amputation level. Digital angiography is the alternative used during thrombolysis. Plain films are normal early.",
         keyFeature: { topic: "environmental", n: 3 },
@@ -906,13 +919,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "Back pain and leg numbness after a weekend trip",
     stem:
-      "A 42 year old man presents at 2100 with mid back pain, tingling in both legs and difficulty passing urine. Today he did three wreck dives to 30 m on air in a Great Lakes marine park. He surfaced from the last dive at 1600 and drove home. HR 88, BP 136/84, SpO2 98% on room air. He has decreased sensation below T10 and mild bilateral leg weakness.",
+      "A 42-year-old man presents at 2100 with mid back pain, tingling in both legs and difficulty passing urine. Today he did three wreck dives to 30 m on air in a Great Lakes marine park. He surfaced from the last dive at 1600 and drove home. He has decreased sensation below T10 and mild bilateral leg weakness.",
+    vitals: { pulse: "88/minute", bp: "136/84 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE further details of the dive history you want.",
+        prompt: "What further details of the dive history do you want?",
         accept: [
           { id: "profile", text: "Depth and bottom time of each dive", match: ["depth", "bottom time", "profile", "time at depth"] },
           { id: "ascent", text: "Ascent rate, missed safety or decompression stops", match: ["ascent", "safety stop", "decompression stop", "missed stop", "rapid"] },
@@ -934,7 +948,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate treatments.",
+        prompt: "What are the immediate treatments?",
         accept: [
           { id: "o2", text: "100% oxygen by non-rebreather or demand valve", match: ["oxygen", "o2", "non rebreather", "nonrebreather"] },
           { id: "fluids", text: "Isotonic IV fluids without glucose", match: ["fluid", "saline", "ringer", "crystalloid"] },
@@ -957,13 +971,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "The nearest chamber is 300 km away. Which transport is most appropriate? Select one.",
+        update: "The nearest hyperbaric chamber is 300 km away.",
+        prompt: "Which of the following is the most appropriate mode of transport to the chamber?",
         options: [
-          "Commercial flight",
-          "Unpressurized aircraft cruising at 8000 feet",
-          "Land ambulance or aircraft pressurized to sea level or flown very low",
+          "Commercial airline flight with oxygen",
           "Delay transfer until symptoms stabilize for 24 hours",
+          "Land ambulance or aircraft at sea level cabin pressure",
           "Private car driven by his wife",
+          "Unpressurized aircraft cruising at 8 000 feet",
         ],
         correct: 2,
         explanation:
@@ -974,15 +989,15 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which recompression schedule is the usual initial treatment for his condition? Select one.",
+        prompt: "Which of the following recompression schedules is the usual initial treatment for his condition?",
         options: [
+          "In-water recompression on air",
+          "Normobaric 100% oxygen for 24 hours",
           "US Navy Treatment Table 5",
           "US Navy Treatment Table 6",
           "US Navy Treatment Table 9",
-          "100% oxygen at 1 atmosphere for 24 hours",
-          "In-water recompression on air",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "Treatment Table 6 is the standard first treatment for neurological decompression sickness and gas embolism. It uses oxygen at 2.8 atmospheres with air breaks. Table 5 is for pain only cases that resolve quickly. Table 9 is used for carbon monoxide and some wound indications.",
         keyFeature: { topic: "environmental", n: 4 },
@@ -999,13 +1014,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "Collapse at a quarry dive site",
     stem:
-      "A 27 year old woman on her fourth open water training dive in a flooded quarry panicked at 18 m and shot to the surface holding her breath. Within 2 minutes of surfacing she became confused and could not move her left arm. Paramedics report she now has left arm weakness, chest pain and crackling under the skin of her neck. HR 110, BP 128/76, RR 24, SpO2 93% on oxygen by mask.",
+      "A 27-year-old woman on her fourth open water training dive in a flooded quarry panicked at 18 m and shot to the surface holding her breath. Within 2 minutes of surfacing she became confused and could not move her left arm. Paramedics report she now has left arm weakness, chest pain and crackling under the skin of her neck.",
+    vitals: { pulse: "110/minute", resp: "24/minute", bp: "128/76 mmHg", o2sat: "93% on oxygen by mask" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that favour arterial gas embolism over decompression sickness.",
+        prompt: "What features favour arterial gas embolism over decompression sickness?",
         accept: [
           { id: "onset", text: "Onset within about 10 minutes of surfacing", match: ["onset", "within minute", "immediate", "10 minute", "2 minute", "sudden"] },
           { id: "breathhold", text: "Rapid or breath holding ascent", match: ["breath hold", "breath holding", "rapid ascent", "panic", "uncontrolled ascent"] },
@@ -1022,7 +1038,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO investigations to obtain quickly before hyperbaric treatment.",
+        prompt: "What investigations do you obtain quickly before hyperbaric treatment?",
         accept: [
           { id: "cxr", text: "Chest X-ray for pneumothorax", match: ["chest x ray", "cxr", "xray", "chest film"] },
           { id: "us", text: "Lung ultrasound for pneumothorax", match: ["ultrasound", "pocus"] },
@@ -1041,13 +1057,13 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Chest X-ray shows a 15% left pneumothorax and pneumomediastinum.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
-          "Proceed to hyperbaric treatment without chest drainage",
+          "Cancel hyperbaric treatment altogether",
           "Insert a chest tube, then proceed to hyperbaric treatment",
-          "Cancel hyperbaric treatment because of the pneumothorax",
+          "Needle decompression if she deteriorates in the chamber",
           "Observe for 6 hours and repeat the X-ray",
-          "Needle decompression only if she deteriorates in the chamber",
+          "Proceed to hyperbaric treatment without chest drainage",
         ],
         correct: 1,
         explanation:
@@ -1059,7 +1075,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "Beyond those already found, list TWO other manifestations of pulmonary barotrauma to look for.",
+        prompt: "Beyond those already found, what other manifestations of pulmonary barotrauma do you look for?",
         accept: [
           { id: "pericard", text: "Pneumopericardium", match: ["pneumopericardium", "pericardial"] },
           { id: "hemoptysis", text: "Hemoptysis from alveolar hemorrhage", match: ["hemoptysis", "haemoptysis", "alveolar hemorrhage", "blood"] },
@@ -1084,13 +1100,13 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "Vertigo after a morning dive",
     stem:
-      "A 33 year old diver presents with severe vertigo, nausea, right ear pain, tinnitus and hearing loss. She had trouble equalizing her right ear on descent and forced repeated Valsalva manoeuvres. Symptoms began during descent at about 6 m. The dive was 35 minutes to a maximum of 14 m with a normal ascent. The right tympanic membrane is hemorrhagic. She has horizontal nystagmus. The rest of her neurological exam is normal.",
+      "A 33-year-old diver presents with severe vertigo, nausea, right ear pain, tinnitus and hearing loss. She had trouble equalizing her right ear on descent and forced repeated Valsalva manoeuvres. Symptoms began during descent at about 6 m. The dive was 35 minutes to a maximum of 14 m with a normal ascent. The right tympanic membrane is hemorrhagic. She has horizontal nystagmus. The rest of her neurological exam is normal.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that favour inner ear barotrauma over inner ear decompression sickness.",
+        prompt: "What features favour inner ear barotrauma over inner ear decompression sickness?",
         accept: [
           { id: "descent", text: "Onset during descent rather than after ascent", match: ["descent", "onset", "timing", "before ascent"] },
           { id: "equalize", text: "Difficulty equalizing and forceful Valsalva", match: ["equalize", "equalizing", "equalization", "equalise", "equalising", "valsalva"] },
@@ -1107,15 +1123,15 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management for her?",
         options: [
-          "Urgent hyperbaric recompression",
-          "Urgent ENT assessment, head elevated rest, no straining and no diving",
-          "Immediate myringotomy",
-          "Gentamicin ear drops",
           "Discharge with meclizine and resume diving in 48 hours",
+          "Gentamicin ear drops four times daily",
+          "Immediate myringotomy by the ENT service",
+          "Urgent ENT review, head up rest, no straining or diving",
+          "Urgent hyperbaric recompression on Table 6",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "Inner ear barotrauma with a possible perilymph fistula needs ENT assessment, rest and avoidance of pressure changes. Recompression can worsen a fistula and is not indicated when barotrauma is clear. If inner ear decompression sickness cannot be excluded, discuss with a hyperbaric physician.",
         keyFeature: { topic: "environmental", n: 4 },
@@ -1125,7 +1141,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO pieces of discharge advice.",
+        prompt: "What discharge advice do you give?",
         accept: [
           { id: "nodive", text: "No diving until cleared by ENT", match: ["no diving", "avoid diving", "not dive", "no dive", "stop diving", "no further diving"] },
           { id: "nofly", text: "Avoid flying", match: ["avoid flying", "no flying", "not fly", "no flight", "avoid flight", "no air travel", "avoid air travel", "don fly"] },
@@ -1142,8 +1158,15 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Her dive buddy is well but plans to fly home. He did two dives a day for five days without decompression stops. What is the minimum recommended surface interval before flying? Select one.",
-        options: ["2 hours", "6 hours", "12 hours", "18 hours", "72 hours"],
+        update: "Her dive buddy is well but plans to fly home. He did two dives a day for five days without decompression stops.",
+        prompt: "Which of the following is the minimum recommended surface interval before he flies?",
+        options: [
+          "2 hours",
+          "6 hours",
+          "12 hours",
+          "18 hours",
+          "72 hours",
+        ],
         correct: 3,
         explanation:
           "Consensus guidance recommends at least 12 hours after a single no decompression dive and at least 18 hours after multiple dives per day or multiple days of diving. Dives needing decompression stops call for substantially longer. Flying too soon can provoke decompression sickness.",
@@ -1162,13 +1185,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     alsoTopics: ["burns"],
     title: "A power line worker",
     stem:
-      "A 36 year old power line worker contacted a 14 400 volt line. He was thrown about 3 m from a ladder. He is awake and talking. HR 112, BP 132/80, RR 20, SpO2 97% on room air. He has a 2 cm charred wound on the right palm and a 3 cm wound on the left heel. He has no other visible burns.",
+      "A 36-year-old power line worker contacted a 14 400 volt line. He was thrown about 3 m from a ladder. He is awake and talking. He has a 2 cm charred wound on the right palm and a 3 cm wound on the left heel. He has no other visible burns.",
+    vitals: { pulse: "112/minute", resp: "20/minute", bp: "132/80 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR injuries or complications you must look for that may not be apparent from his skin.",
+        prompt: "What injuries or complications must you look for that may not be apparent from his skin?",
         accept: [
           { id: "cardiac", text: "Arrhythmia or myocardial injury", match: ["arrhythmia", "dysrhythmia", "cardiac", "myocardial", "myocarditis", "heart"] },
           { id: "rhabdo", text: "Rhabdomyolysis and myoglobinuric kidney injury", match: ["rhabdo", "rhabdomyolysis", "myoglobin", "kidney", "renal", "muscle"] },
@@ -1192,7 +1216,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations or monitoring you order now.",
+        prompt: "What investigations or monitoring do you order now?",
         accept: [
           { id: "ecg", text: "12 lead ECG", match: ["ecg", "12 lead"] },
           { id: "monitor", text: "Continuous cardiac monitoring", match: ["monitor", "monitoring", "telemetry"] },
@@ -1214,17 +1238,16 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "His urine is dark red brown. CK is 42 000 U/L.",
-        prompt: "Which is the most appropriate fluid target? Select one.",
+        prompt: "Which of the following is the most appropriate fluid target for him?",
         options: [
-          "Parkland formula based on burn surface area only",
-          "Urine output 0.5 mL/kg/h",
-          "Urine output about 1 to 1.5 mL/kg/h, roughly 75 to 100 mL/h, until the urine clears",
-          "Restrict fluids to prevent compartment syndrome",
           "Furosemide to keep urine output above 3 mL/kg/h",
+          "Parkland formula based on burn surface area only",
+          "Restrict fluids to prevent compartment syndrome",
+          "Urine output 0.5 mL/kg/h until the urine clears",
+          "Urine output 75 to 100 mL/h until the urine clears",
         ],
-        correct: 2,
-        explanation:
-          "Formulas based on burn surface area underestimate fluid needs in electrical injury because the damage is deep. With myoglobinuria, fluids are titrated to a higher urine output of about 75 to 100 mL/h in adults until the urine clears. Diuretics before adequate volume worsen kidney injury.",
+        correct: 4,
+        explanation: "Formulas based on burn surface area underestimate fluid needs in electrical injury because the damage is deep. With myoglobinuria, fluids are titrated to a higher urine output of about 1 to 1.5 mL/kg/h, roughly 75 to 100 mL/h in adults, until the urine clears. Diuretics before adequate volume worsen kidney injury.",
         keyFeature: { topic: "environmental", n: 5 },
         source: "abls",
       },
@@ -1233,7 +1256,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Six hours later his right forearm is tense and he has severe pain with passive finger extension.",
-        prompt: "List TWO actions you take now.",
+        prompt: "What actions do you take now?",
         accept: [
           { id: "surgery", text: "Urgent surgical consultation for fasciotomy", match: ["fasciotomy", "surgery", "surgeon", "surgical", "plastic", "decompress"] },
           { id: "pressure", text: "Measure compartment pressures if the diagnosis is uncertain", match: ["compartment pressure", "pressure"] },
@@ -1260,13 +1283,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
     topic: "environmental",
     title: "Two household shocks",
     stem:
-      "A 26 year old woman at 24 weeks gestation felt a jolt and tingling up her right arm when she touched a faulty kettle at home, 120 volts. She did not lose consciousness and feels well now. HR 84, BP 112/68. There is no visible burn. Her ECG is normal sinus rhythm. The fetal heart rate is 148 on Doppler.",
+      "A 26-year-old woman at 24 weeks gestation felt a jolt and tingling up her right arm when she touched a faulty kettle at home, 120 volts. She did not lose consciousness and feels well now. There is no visible burn. Her ECG is normal sinus rhythm. The fetal heart rate is 148/minute on Doppler.",
+    vitals: { pulse: "84/minute", bp: "112/68 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that would make you monitor a patient after a low voltage electrical injury.",
+        prompt: "What features would make you monitor a patient after a low voltage electrical injury?",
         accept: [
           { id: "loc", text: "Loss of consciousness", match: ["loss of consciousness", "loc", "unconscious", "syncope"] },
           { id: "ecg", text: "Abnormal ECG or documented arrhythmia", match: ["ecg", "arrhythmia", "dysrhythmia"] },
@@ -1286,13 +1310,13 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate plan for her? Select one.",
+        prompt: "Which of the following is the most appropriate plan for her?",
         options: [
-          "Discharge now, since the ECG is normal",
-          "Admit to telemetry for 24 hours",
+          "Admit to telemetry for 24 hours of cardiac monitoring",
+          "Discharge now with routine prenatal follow up",
           "Obstetrical assessment with a period of fetal monitoring",
-          "Serial troponins at 0 and 6 hours",
-          "Urgent obstetric ultrasound only",
+          "Serial troponins at 0 and 6 hours, then discharge",
+          "Urgent obstetric ultrasound, then discharge",
         ],
         correct: 2,
         explanation:
@@ -1304,8 +1328,8 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        update: "Later, a 2 year old boy is brought in after biting an extension cord. He has a grey white burn at the left corner of the mouth. He is playful, with a normal ECG.",
-        prompt: "List TWO complications to warn his parents about.",
+        update: "Later, a 2-year-old boy is brought in after biting an extension cord. He has a grey white burn at the left corner of the mouth. He is playful, with a normal ECG.",
+        prompt: "What complications do you warn his parents about?",
         accept: [
           { id: "bleed", text: "Delayed labial artery bleeding when the eschar separates, about 5 to 14 days later", match: ["bleed", "labial artery", "hemorrhage", "haemorrhage", "eschar"] },
           { id: "scar", text: "Scarring and microstomia", match: ["scar", "microstomia", "contracture", "deformity"] },
@@ -1321,15 +1345,15 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which is the most appropriate disposition for the boy? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for the boy?",
         options: [
           "Admit for 24 hours of cardiac monitoring",
-          "Discharge with bleeding instructions and plastic surgery follow up",
+          "Admit to hospital until the eschar separates",
+          "CT head and observation before discharge",
+          "Discharge with bleeding advice and plastic surgery follow up",
           "Immediate debridement under general anesthesia",
-          "CT head before discharge",
-          "Admit until the eschar separates",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "A well child with a household low voltage injury and a normal ECG does not need cardiac monitoring. Oral commissure burns are managed conservatively with close plastic surgery or dental follow up. Reliable caregivers who can apply pressure are essential.",
         keyFeature: { topic: "environmental", n: 5 },
@@ -1352,8 +1376,14 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which patient should receive resuscitation first? Select one.",
-        options: ["Patient A", "Patient B", "Patient C", "Patient D", "None, all should be moved to shelter first"],
+        prompt: "Which of the following patients should receive resuscitation first from the paramedics?",
+        options: [
+          "Patient A",
+          "Patient B",
+          "Patient C",
+          "Patient D",
+          "None, move all to shelter first",
+        ],
         correct: 1,
         explanation:
           "Lightning strike uses reverse triage. Victims who show signs of life usually survive. The apparently dead often have a primary respiratory arrest after the heart restarts, and they can be saved with prompt ventilation and CPR.",
@@ -1364,8 +1394,8 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        update: "Patient A arrives. His legs are mottled, cool and pulseless with no movement. His blood pressure is 128/76.",
-        prompt: "List TWO elements of your assessment or management of his legs.",
+        update: "Patient A arrives. His legs are mottled, cool and pulseless with no movement. His blood pressure is 128/76 mmHg.",
+        prompt: "What are the elements of your assessment or management of his legs?",
         accept: [
           { id: "kerauno", text: "Recognize likely keraunoparalysis, which is usually transient", match: ["keraunoparalysis", "transient", "vasospasm", "autonomic"] },
           { id: "spine", text: "Spinal motion restriction and imaging to exclude spinal injury", match: ["spine", "spinal", "collar", "ct", "mri"] },
@@ -1382,7 +1412,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 4,
-        prompt: "List FOUR injuries or complications to look for in lightning victims.",
+        prompt: "What injuries or complications do you look for in lightning victims?",
         accept: [
           { id: "tm", text: "Tympanic membrane rupture", match: ["tympanic", "tm", "eardrum", "ear drum", "hearing"] },
           { id: "eye", text: "Eye injury including later cataracts", match: ["eye", "cataract"] },
@@ -1403,15 +1433,15 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Patient B has return of spontaneous circulation after 6 minutes of CPR. His pupils are fixed and dilated.",
-        prompt: "Which is the most appropriate approach? Select one.",
+        prompt: "Which of the following is the most appropriate approach to his care?",
         options: [
-          "Stop resuscitation, since fixed dilated pupils indicate brain death",
-          "Continue full resuscitation, since fixed dilated pupils are not reliable after lightning",
-          "Limit care to comfort measures",
-          "Wait for pupils to react before intubation",
+          "Continue full resuscitation",
           "Give atropine to reverse the pupil findings",
+          "Limit care to comfort measures",
+          "Stop resuscitation and declare brain death",
+          "Wait for pupils to react before intubation",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Autonomic disturbance after lightning can cause fixed dilated pupils in patients who recover fully. Pupils should not be used to stop resuscitation or withdraw care. Full post-arrest care is indicated.",
         keyFeature: { topic: "environmental", n: 5 },
@@ -1422,7 +1452,7 @@ export const ENVIRONMENTAL_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Patient D, who is walking, has ruptured tympanic membranes and feels well otherwise. His ECG is normal.",
-        prompt: "List TWO elements of his discharge plan.",
+        prompt: "What are the elements of his discharge plan?",
         accept: [
           { id: "ent", text: "ENT or audiology follow up for the tympanic membranes and hearing", match: ["ent", "audiology", "audiogram", "hearing", "otolaryngology"] },
           { id: "eye", text: "Eye examination and follow up because cataracts can develop later", match: ["eye", "ophthalmology", "cataract", "vision"] },

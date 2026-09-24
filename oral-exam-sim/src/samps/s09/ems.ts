@@ -6,24 +6,24 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
 
 const S = {
-  alsPcs: { id: "als-pcs", citation: "Ontario Ministry of Health. Advanced Life Support Patient Care Standards, including the base hospital medical directives." },
-  blsPcs: { id: "bls-pcs", citation: "Ontario Ministry of Health. Basic Life Support Patient Care Standards, including the paramedic prompt cards for stroke, STEMI and field trauma triage." },
+  alsPcs: { id: "als-pcs", citation: "Ontario Ministry of Health. Advanced Life Support Patient Care Standards, version 5.5, including the base hospital medical directives. 2025.", url: "https://www.ontario.ca/files/2026-08/moh-advanced-life-support-als-patient-care-standards-pcs-5.5-en-2025-08-18.pdf" },
+  blsPcs: { id: "bls-pcs", citation: "Ontario Ministry of Health. Basic Life Support Patient Care Standards, version 3.4, including the paramedic prompt cards for stroke, STEMI and field trauma triage. 2023.", url: "https://files.ontario.ca/moh_2/moh-standards-basic-life-support-patient-care-standards-v3-4-en-2023-03-10.pdf" },
   hcca: { id: "hcca", citation: "Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A (Ontario)." },
-  criticall: { id: "criticall", citation: "CritiCall Ontario. Emergency consultation and referral service for Ontario hospitals." },
-  ornge: { id: "ornge", citation: "Ornge. Air ambulance and critical care transport service for Ontario." },
+  criticall: { id: "criticall", citation: "CritiCall Ontario. Backgrounder and fact sheet. Emergency consultation and referral service for Ontario hospitals. 2019." },
+  ornge: { id: "ornge", citation: "Ornge. Annual report 2024/2025. Air ambulance and critical care transport service for Ontario. 2025.", url: "https://www.ornge.ca/Media/Ornge/Documents/Publications/Annual%20Report/Annual-Report-2024-2025.pdf" },
   ccsStemi: { id: "ccs-stemi", citation: "Canadian Cardiovascular Society and Canadian Association of Interventional Cardiology. Guidelines on the acute management of ST-elevation myocardial infarction. Focused update on regionalization and reperfusion. Can J Cardiol. 2019.", url: "https://pubmed.ncbi.nlm.nih.gov/30760415/" },
-  csbpr: { id: "csbpr", citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management." },
-  fieldTriage: { id: "field-triage", citation: "American College of Surgeons Committee on Trauma. National Guideline for the Field Triage of Injured Patients." },
-  atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. Chapter on transfer to definitive care." },
-  btf: { id: "btf", citation: "Brain Trauma Foundation. Guidelines for the management of severe traumatic brain injury." },
+  csbpr: { id: "csbpr", citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute Stroke Management module. 7th edition, 2022 update.", url: "https://pubmed.ncbi.nlm.nih.gov/36529857/" },
+  fieldTriage: { id: "field-triage", citation: "Newgard CD, et al. National guideline for the field triage of injured patients. Recommendations of the National Expert Panel on Field Triage, 2021. J Trauma Acute Care Surg. 2022.", url: "https://pubmed.ncbi.nlm.nih.gov/35475939/" },
+  atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025. Content on transfer to definitive care.", url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/" },
+  btf: { id: "btf", citation: "Carney N, et al. Guidelines for the management of severe traumatic brain injury, fourth edition. Brain Trauma Foundation. Neurosurgery. 2017.", url: "https://pubmed.ncbi.nlm.nih.gov/27654000/" },
   tor: { id: "tor", citation: "Morrison LJ, et al. Validation of a rule for termination of resuscitation in out-of-hospital cardiac arrest. N Engl J Med. 2006." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on emergency medical services, air medical transport and disaster preparedness." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on prehospital care, mass gatherings, disasters and hazardous materials." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on emergency medical services, air medical transport and disaster preparedness." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on prehospital care, mass gatherings, disasters and hazardous materials." },
   start: { id: "start", citation: "Benson M, Koenig KL, Schultz CH. Disaster triage: START, then SAVE. A new method of dynamic triage for victims of a catastrophic earthquake. Prehosp Disaster Med. 1996." },
-  ohaCodes: { id: "oha-codes", citation: "Ontario Hospital Association. Emergency management toolkit and standardized hospital emergency codes." },
-  trekkDka: { id: "trekk-dka", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Diabetic ketoacidosis." },
-  dcPeds: { id: "dc-peds", citation: "Diabetes Canada Clinical Practice Guidelines. Type 1 diabetes in children and adolescents." },
-  uhms: { id: "uhms", citation: "Undersea and Hyperbaric Medical Society. Hyperbaric oxygen therapy indications. Carbon monoxide poisoning." },
+  ohaCodes: { id: "oha-codes", citation: "Ontario Hospital Association. OHA Emergency Management Toolkit. Developing a sustainable emergency management program for hospitals, including the standardized hospital emergency codes. 2008." },
+  trekkDka: { id: "trekk-dka", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Diabetic ketoacidosis. Version 4.0. 2023.", url: "https://trekk.ca/resources/bottom-line-recommendations-diabetic-ketoacidosis" },
+  dcPeds: { id: "dc-peds", citation: "Wherrett DK, et al. Diabetes Canada 2018 Clinical Practice Guidelines. Type 1 diabetes in children and adolescents. Can J Diabetes. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/29650103/" },
+  uhms: { id: "uhms", citation: "Undersea and Hyperbaric Medical Society. Hyperbaric Medicine Indications Manual. 15th ed. 2023. Carbon monoxide poisoning." },
   weaver: { id: "weaver", citation: "Weaver LK, et al. Hyperbaric oxygen for acute carbon monoxide poisoning. N Engl J Med. 2002." },
 } satisfies Record<string, Source>;
 
@@ -35,20 +35,21 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Patch from a residence with chest pain",
     stem:
-      "You are the emergency physician at a community hospital with no cardiac catheterization laboratory. The regional PCI centre is 35 minutes away by land. An advanced care paramedic crew patches to you from a home 10 minutes from your hospital. The patient is a 61 year old man with 40 minutes of crushing retrosternal pain. HR 88, BP 142/86, RR 20, SpO2 96% on room air. The paramedic reads the 12 lead ECG as 3 mm ST elevation in II, III and aVF with ST depression in I and aVL.",
+      "You are the emergency physician at a community hospital with no cardiac catheterization laboratory. The regional PCI centre is 35 minutes away by land. An advanced care paramedic crew patches to you from a home 10 minutes from your hospital. The patient is a 61-year-old man with 40 minutes of crushing retrosternal pain. The paramedic reads the 12 lead ECG as 3 mm ST elevation in II, III and aVF with ST depression in I and aVL.",
+    vitals: { pulse: "88/minute", resp: "20/minute", bp: "142/86 mmHg", o2sat: "96% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate direction to the crew? Select one.",
+        prompt: "Which of the following is the most appropriate direction to the crew?",
         options: [
-          "Transport to your emergency department for fibrinolysis",
-          "Bypass your hospital and transport directly to the PCI centre with cath lab pre-activation",
-          "Transport to your emergency department for a physician confirmed ECG first",
+          "Bypass to the PCI centre with cath lab pre-activation",
           "Remain on scene and request an air ambulance",
-          "Transport to your emergency department and arrange interfacility transfer after assessment",
+          "Transport to your hospital for a physician confirmed ECG",
+          "Transport to your hospital for fibrinolysis",
+          "Transport to your hospital, then transfer after assessment",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Primary PCI is preferred when first medical contact to device time can be kept within 90 minutes. A 35 minute transport easily allows this. Stopping at a non-PCI hospital adds delay without benefit. Field STEMI bypass with pre-activation is the core of Canadian STEMI regionalization.",
         keyFeature: { topic: "ems", n: 1 },
@@ -58,7 +59,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "The paramedic asks about giving nitroglycerin. List TWO pieces of information you need first.",
+        prompt: "The paramedic asks about giving nitroglycerin. What information do you need first?",
         accept: [
           { id: "sbp", text: "Current systolic blood pressure", match: ["blood pressure", "sbp", "systolic", "bp"] },
           { id: "pde5", text: "Recent phosphodiesterase 5 inhibitor use such as sildenafil or tadalafil", match: ["phosphodiesterase", "pde5", "pde", "sildenafil", "tadalafil", "vardenafil", "viagra", "erectile", "no pde5", "no sildenafil", "no viagra", "no tadalafil"] },
@@ -75,8 +76,8 @@ export const EMS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        update: "One nitroglycerin spray was given before your call. En route the paramedic calls back. HR is 46 and BP 82/50. The patient is pale and lightheaded.",
-        prompt: "List TWO field interventions you direct now.",
+        update: "One nitroglycerin spray was given before your call. En route the paramedic calls back. HR is 46 and BP 82/50 mmHg. The patient is pale and lightheaded.",
+        prompt: "What field interventions do you direct now?",
         accept: [
           { id: "stop", text: "Hold further nitroglycerin", match: ["stop nitro", "hold nitro", "no more nitro", "stop nitroglycerin", "hold nitroglycerin", "no further nitro", "no further nitroglycerin", "no more nitroglycerin", "no nitroglycerin", "no nitro", "stop nitrate", "hold nitrate", "no nitrate", "no further nitrate"] },
           { id: "fluid", text: "Normal saline bolus, for example 250 to 500 mL IV", match: ["fluid", "saline", "bolus", "ringer"] },
@@ -94,7 +95,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO time points the crew must relay to the PCI team at handover.",
+        prompt: "What time points must the crew relay to the PCI team at handover?",
         accept: [
           { id: "onset", text: "Symptom onset time", match: ["onset", "pain started", "symptom start"] },
           { id: "fmc", text: "Time of first medical contact", match: ["first medical contact", "first contact", "fmc", "patient contact", "arrival on scene"] },
@@ -119,18 +120,19 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["cva"],
     title: "Highway patch with sudden weakness",
     stem:
-      "You work in a small rural emergency department with no CT scanner. A primary care paramedic crew patches from a highway rest stop. A 72 year old woman developed sudden right arm and face weakness and difficulty speaking. Her husband says she was last seen well 70 minutes ago. HR 92 irregular, BP 188/102, SpO2 95% on room air, glucose 6.2 mmol/L. The crew's large vessel occlusion screen is positive with left gaze deviation, aphasia and a dense right arm. Your ED is 15 minutes away. The regional comprehensive stroke centre that offers thrombolysis and thrombectomy is 45 minutes away.",
+      "You work in a small rural emergency department with no CT scanner. A primary care paramedic crew patches from a highway rest stop. A 72-year-old woman developed sudden right arm and face weakness and difficulty speaking. Her husband says she was last seen well 70 minutes ago. Her glucose is 6.2 mmol/L. The crew's large vessel occlusion screen is positive with left gaze deviation, aphasia and a dense right arm. Your ED is 15 minutes away. The regional comprehensive stroke centre that offers thrombolysis and thrombectomy is 45 minutes away.",
+    vitals: { pulse: "92/minute irregular", bp: "188/102 mmHg", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate direction? Select one.",
+        prompt: "Which of the following is the most appropriate direction to the crew?",
         options: [
-          "Transport to your emergency department for assessment first",
-          "Transport directly to the comprehensive stroke centre with pre-notification",
+          "Give ASA 160 mg chewed and go to nearest hospital",
+          "Pre-notify and transport directly to the stroke centre",
           "Remain on scene until an air ambulance arrives",
-          "Transport to your emergency department and arrange CT at another site",
-          "Give ASA 160 mg chewed and transport to the nearest hospital",
+          "Transport to your hospital for assessment first",
+          "Transport to your hospital, then arrange CT elsewhere",
         ],
         correct: 1,
         explanation:
@@ -142,7 +144,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE things you ask the crew to confirm or bring before leaving the scene.",
+        prompt: "What do you ask the crew to confirm or bring before leaving the scene?",
         accept: [
           { id: "lkw", text: "Exact last known well time", match: ["last known well", "last seen well", "lkw", "onset time", "time of onset"] },
           { id: "witness", text: "Bring the husband or get his phone number for the stroke team", match: ["husband", "witness", "phone number", "contact number", "family"] },
@@ -160,7 +162,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO en route instructions for this patient.",
+        prompt: "What en route instructions do you give for this patient?",
         accept: [
           { id: "npo", text: "Nothing by mouth until a swallow screen is done", match: ["npo", "nothing by mouth", "nil by mouth", "swallow"] },
           { id: "iv", text: "IV access if within scope without delaying transport", match: ["iv access", "intravenous access", "iv line"] },
@@ -184,15 +186,15 @@ export const EMS_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Twenty minutes into transport the crew calls back. She had a generalized seizure that has now stopped, but she is snoring, SpO2 is 84% despite an oral airway and bag valve mask, and she has vomited. The stroke centre is still 25 minutes away. Your ED is 10 minutes away.",
-        prompt: "Which is the most appropriate direction? Select one.",
+        prompt: "Which of the following is the most appropriate direction to the crew now?",
         options: [
-          "Continue to the stroke centre because thrombectomy is time critical",
-          "Divert to your emergency department for airway management",
-          "Stop the ambulance and wait for an advanced care paramedic intercept",
           "Continue to the stroke centre and give oral glucose",
+          "Continue to the stroke centre for thrombectomy",
+          "Divert to your emergency department for airway management",
           "Return to the rest stop and request air ambulance",
+          "Stop and wait for an advanced care paramedic intercept",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "An airway that primary care paramedics cannot maintain is an indication to go to the closest emergency department. Hypoxia will harm the brain far more than a brief delay to thrombectomy. Your team should prepare suction and intubation equipment and arrange onward transfer after stabilization.",
         keyFeature: { topic: "ems", n: 1 },
@@ -210,13 +212,14 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Incoming patients from a highway collision",
     stem:
-      "You are the emergency physician at a lead trauma hospital at 0200. An advanced care paramedic crew patches to report a single vehicle rollover on the highway. Their patient is a 28 year old man who was ejected. GCS 8, HR 132, BP 78/40, RR 28, SpO2 90% on high flow oxygen. A second crew is bringing the driver, who has a femur deformity but stable vital signs. ETA for the first patient is 12 minutes.",
+      "You are the emergency physician at a lead trauma hospital at 0200. An advanced care paramedic crew patches to report a single vehicle rollover on the highway. Their patient is a 28-year-old man who was ejected. His GCS is 8. A second crew is bringing the driver, who has a femur deformity but stable vital signs. ETA for the first patient is 12 minutes.",
+    vitals: { pulse: "132/minute", resp: "28/minute", bp: "78/40 mmHg", o2sat: "90% on high flow oxygen" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE further pieces of information you want from the crew during this patch.",
+        prompt: "What further information do you want from the crew during this patch?",
         accept: [
           { id: "injuries", text: "Injuries found, such as chest, abdomen, pelvis or long bone", match: ["injuries", "injury", "chest", "abdomen", "pelvi"] },
           { id: "treatment", text: "Treatments given, such as fluids, airway adjunct or pelvic binder", match: ["treatment", "fluid", "intervention", "binder", "given"] },
@@ -235,7 +238,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "List FOUR actions to prepare your department and hospital before the first patient arrives.",
+        prompt: "What actions prepare your department and hospital before the first patient arrives?",
         accept: [
           { id: "team", text: "Activate the trauma team", match: ["trauma team", "trauma code", "activate trauma"] },
           { id: "mtp", text: "Activate the massive haemorrhage protocol with uncrossmatched O blood in the room", match: ["massive", "mhp", "mtp", "o negative", "o neg", "uncrossmatched", "blood"] },
@@ -258,7 +261,7 @@ export const EMS_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "The patient arrives. The paramedic gives a brief handover while your team moves him to the stretcher.",
-        prompt: "List THREE pieces of information that only the paramedics can give you.",
+        prompt: "What information can only the paramedics give you?",
         accept: [
           { id: "scene", text: "Scene findings such as vehicle damage, intrusion or ejection distance", match: ["scene", "vehicle", "intrusion", "ejection", "damage", "rollover"] },
           { id: "gcs", text: "GCS at scene and any lucid interval", match: ["gcs", "level of consciousness", "loc", "lucid", "initial neuro", "initial neurological", "initial neurologic"] },
@@ -277,15 +280,15 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which finding reported by the crew is a field triage criterion that on its own justifies bypass to a trauma centre? Select one.",
+        prompt: "Which of the following findings reported by the crew, on its own, justifies bypass to a trauma centre under field triage criteria?",
         options: [
-          "Age over 55",
+          "Age over 55 years",
+          "Alcohol intoxication",
           "Ejection from the vehicle",
           "Isolated closed wrist fracture",
-          "Intoxication",
           "Vehicle speed of 50 km/h",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Ejection is a high risk mechanism criterion in field triage guidelines. Age and intoxication are special considerations that lower the threshold but do not mandate bypass alone. The physiological criteria this patient also meets, GCS and hypotension, are the strongest triggers.",
         keyFeature: { topic: "ems", n: 1 },
@@ -302,17 +305,17 @@ export const EMS_SAMPS: Samp[] = [
     topic: "ems",
     title: "Request for direction during a home resuscitation",
     stem:
-      "You are the base hospital physician on call. An advanced care paramedic crew patches from a rural home 40 minutes from the nearest hospital. A 68 year old man collapsed in his garage. His wife found him and called 911, but no one started CPR. The first rhythm was asystole. After 22 minutes of resuscitation with a supraglottic airway, three doses of epinephrine and no shocks, he remains in asystole. End tidal CO2 is 8 mmHg. The garage is heated and he is warm to touch. No vehicle or fuel burning appliance was running. The crew asks for direction.",
+      "You are the base hospital physician on call. An advanced care paramedic crew patches from a rural home 40 minutes from the nearest hospital. A 68-year-old man collapsed in his garage. His wife found him and called 911, but no one started CPR. The first rhythm was asystole. After 22 minutes of resuscitation with a supraglottic airway, three doses of epinephrine and no shocks, he remains in asystole. End tidal CO2 is 8 mmHg. The garage is heated and he is warm to touch. No vehicle or fuel burning appliance was running. The crew asks for direction.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate direction? Select one.",
+        prompt: "Which of the following is the most appropriate direction to the crew?",
         options: [
           "Authorize termination of resuscitation in the home",
-          "Load and transport with ongoing CPR",
           "Continue resuscitation on scene for another 20 minutes",
           "Give sodium bicarbonate and reassess",
+          "Load and transport with ongoing CPR",
           "Request a helicopter for ECPR",
         ],
         correct: 0,
@@ -325,7 +328,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of this arrest that support termination.",
+        prompt: "What features of this arrest support termination?",
         accept: [
           { id: "notems", text: "Arrest not witnessed by EMS", match: ["not witnessed by ems", "not ems witnessed", "unwitnessed by ems", "unwitnessed", "not witnessed"] },
           { id: "noshock", text: "No shock delivered", match: ["no shock", "not shocked", "non shockable", "nonshockable", "asystole"] },
@@ -343,7 +346,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO circumstances that would make you continue resuscitation and transport instead.",
+        prompt: "What circumstances would make you continue resuscitation and transport instead?",
         accept: [
           { id: "hypo", text: "Hypothermia", match: ["hypothermia", "hypothermic", "cold"] },
           { id: "tox", text: "Suspected poisoning or overdose", match: ["overdose", "poison", "tox", "toxic", "toxicity", "ingestion"] },
@@ -365,7 +368,7 @@ export const EMS_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "You authorize termination of resuscitation.",
-        prompt: "List TWO further instructions you give the crew.",
+        prompt: "What further instructions do you give the crew?",
         accept: [
           { id: "doc", text: "Document the time of death and your name as the authorizing physician", match: ["document", "time of death", "physician name", "record"] },
           { id: "family", text: "Support the wife and arrange someone to stay with her", match: ["wife", "family", "support", "bereavement", "grief"] },
@@ -389,13 +392,13 @@ export const EMS_SAMPS: Samp[] = [
     topic: "ems",
     title: "A patient who wants the crew to leave",
     stem:
-      "You are the base hospital physician in Ontario. A primary care paramedic crew patches from a home. A 58 year old man with type 2 diabetes was found confused and sweaty by his wife. Glucose was 1.9 mmol/L. He received glucagon 1 mg IM and then oral glucose gel. Twenty minutes later he is alert and oriented, glucose 5.8 mmol/L, and he wants the crew to leave. His medications are glyburide and metformin. He skipped lunch after taking glyburide.",
+      "You are the base hospital physician in Ontario. A primary care paramedic crew patches from a home. A 58-year-old man with type 2 diabetes was found confused and sweaty by his wife. Glucose was 1.9 mmol/L. He received glucagon 1 mg IM and then oral glucose gel. Twenty minutes later he is alert and oriented, glucose 5.8 mmol/L, and he wants the crew to leave. His medications are glyburide and metformin. He skipped lunch after taking glyburide.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO abilities he must show to be capable of refusing transport.",
+        prompt: "What abilities must he show to be capable of refusing transport?",
         accept: [
           { id: "understand", text: "Understand the information relevant to the decision", match: ["understand"] },
           { id: "appreciate", text: "Appreciate the reasonably foreseeable consequences of refusing", match: ["appreciate", "consequence"] },
@@ -411,15 +414,15 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate advice to the crew? Select one.",
+        prompt: "Which of the following is the most appropriate advice to the crew?",
         options: [
-          "Release him after he eats a meal, since glucose is now normal",
-          "Strongly advise transport for observation because recurrent hypoglycemia is likely",
           "Give a second dose of glucagon, then release him",
-          "Release him if his wife agrees to check his glucose in the morning",
-          "Transport him against his will because he is diabetic",
+          "Release him after he eats a meal",
+          "Release him if his wife rechecks glucose in the morning",
+          "Strongly advise transport for observation",
+          "Transport him against his will",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "Sulfonylureas cause prolonged and recurrent hypoglycemia. Glucagon effect lasts well under an hour and hepatic glycogen may be depleted. Treat and release is unsafe in sulfonylurea hypoglycemia, so the crew should recommend ED observation.",
         keyFeature: { topic: "ems", n: 1 },
@@ -430,7 +433,7 @@ export const EMS_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "You speak to him on the patch. He understands the risk and the consequences and still refuses. He is capable.",
-        prompt: "List THREE instructions you give the crew before they leave.",
+        prompt: "What instructions do you give the crew before they leave?",
         accept: [
           { id: "meal", text: "Ensure he eats a meal with complex carbohydrate before they leave", match: ["eat", "meal", "carbohydrate", "food"] },
           { id: "adult", text: "Confirm a responsible adult will stay with him", match: ["adult", "wife", "stay with", "not alone"] },
@@ -449,13 +452,13 @@ export const EMS_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Three hours later his wife calls 911 again. He is sweaty, combative and confused. Glucose is 2.0 mmol/L. He shouts at the crew to leave him alone.",
-        prompt: "What is the legal basis for treating and transporting him now? Select one.",
+        prompt: "Which of the following is the legal basis for treating and transporting him now?",
         options: [
           "A Form 1 under the Mental Health Act",
-          "Consent from his wife as substitute decision maker is required first",
-          "Emergency treatment without consent, since he is incapable and delay would cause serious harm",
+          "Consent from his wife as substitute decision maker",
+          "Emergency treatment without consent",
           "His earlier refusal must be respected",
-          "Police apprehension is required before any treatment",
+          "Police apprehension before any treatment",
         ],
         correct: 2,
         explanation:
@@ -475,13 +478,14 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Handover from a hotel call",
     stem:
-      "A paramedic crew brings in a 24 year old man found unresponsive on a hotel bathroom floor by a friend. He is now drowsy but rousable. HR 96, BP 118/72, RR 12, SpO2 93% on 2 L nasal prongs, glucose 6.4 mmol/L. His pupils are small. The crew is eager to leave for another call.",
+      "A paramedic crew brings in a 24-year-old man found unresponsive on a hotel bathroom floor by a friend. He is now drowsy but rousable. His glucose is 6.4 mmol/L. His pupils are small. The crew is eager to leave for another call.",
+    vitals: { pulse: "96/minute", resp: "12/minute", bp: "118/72 mmHg", o2sat: "93% on 2 L/minute by nasal prongs" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR pieces of information you want from the crew before they leave.",
+        prompt: "What information do you want from the crew before they leave?",
         accept: [
           { id: "nalox", text: "Naloxone dose, route, timing and response", match: ["naloxone", "narcan"] },
           { id: "initial", text: "Initial vital signs including RR, SpO2 and GCS", match: ["initial", "first vital", "vital sign", "saturation", "respiratory rate", "gcs"] },
@@ -503,7 +507,7 @@ export const EMS_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "The crew says he had RR 4 and SpO2 70% when found. He received naloxone 0.4 mg IM and 2 mg intranasal with only partial improvement in breathing after 10 minutes. His friend said the powder was sold as fentanyl.",
-        prompt: "List TWO explanations for the partial response to naloxone that you must consider.",
+        prompt: "What explanations for the partial response to naloxone must you consider?",
         accept: [
           { id: "benzo", text: "Non-opioid sedative adulterant such as a novel benzodiazepine", match: ["benzodiazepine", "benzo", "etizolam", "bromazolam", "sedative"] },
           { id: "xylazine", text: "Xylazine or another veterinary sedative adulterant", match: ["xylazine", "alpha 2", "medetomidine", "veterinary"] },
@@ -521,15 +525,15 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which additional piece of EMS information would most lengthen your observation period? Select one.",
+        prompt: "Which of the following additional pieces of EMS information would most lengthen your observation period?",
         options: [
-          "Naloxone was given intranasally",
-          "A methadone bottle with his name was found in his bag",
-          "He was found in a hotel rather than at home",
+          "A methadone bottle labelled with his name in his bag",
           "He vomited once in the ambulance and is now alert",
+          "He was found in a hotel rather than at home",
           "His friend also used the same powder and is well",
+          "Naloxone was given intranasally",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Methadone has a long and variable half life, so respiratory depression can recur hours after naloxone wears off. Observation should be extended, often with a naloxone infusion if doses are repeatedly needed. The route of naloxone and the setting do not change the observation period.",
         keyFeature: { topic: "ems", n: 2 },
@@ -547,13 +551,14 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Handover of an older woman found on the floor",
     stem:
-      "A primary care paramedic crew brings in an 84 year old woman found on her kitchen floor by a neighbour this morning. She lives alone. She is drowsy, oriented to person only, and cannot say how long she was down. HR 104, BP 104/60, RR 20, SpO2 95% on room air, temperature 35.1 C.",
+      "A primary care paramedic crew brings in an 84-year-old woman found on her kitchen floor by a neighbour this morning. She lives alone. She is drowsy, oriented to person only, and cannot say how long she was down.",
+    vitals: { temperature: "35.1°C", pulse: "104/minute", resp: "20/minute", bp: "104/60 mmHg", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR questions to ask the paramedics about the scene.",
+        prompt: "What questions do you ask the paramedics about the scene?",
         accept: [
           { id: "lastseen", text: "When she was last seen or heard from well", match: ["last seen", "last known", "last spoke", "how long", "down time", "downtime"] },
           { id: "temp", text: "Temperature inside the home", match: ["temperature", "cold", "heat", "thermostat"] },
@@ -576,7 +581,7 @@ export const EMS_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "The crew tells you the house was cold because the furnace was not working. The neighbour who found her had a headache and felt nauseated. A space heater was running in the kitchen.",
-        prompt: "List THREE actions you take now.",
+        prompt: "What actions do you take now?",
         accept: [
           { id: "cohb", text: "Measure carboxyhemoglobin on a venous or arterial co-oximetry gas", match: ["carboxyhemoglobin", "carboxyhaemoglobin", "cohb", "co level", "co oximetry", "carbon monoxide level"] },
           { id: "o2", text: "High flow oxygen by non-rebreather mask", match: ["non rebreather", "nonrebreather", "high flow oxygen", "100% oxygen", "100% o2", "nrb"] },
@@ -595,15 +600,16 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Her carboxyhemoglobin is 24% and she remains confused after an hour of oxygen. Which is the most appropriate next step? Select one.",
+        update: "Her carboxyhemoglobin is 24% and she remains confused after an hour of oxygen.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
-          "Continue non-rebreather oxygen and recheck the level in 6 hours",
-          "Discuss hyperbaric oxygen with the regional hyperbaric centre",
+          "Continue non-rebreather oxygen and recheck in 6 hours",
+          "Discharge once the level is below 10%",
+          "Discuss with the regional hyperbaric oxygen centre",
           "Give hydroxocobalamin 5 g IV",
           "Intubate for hyperventilation",
-          "Discharge once the level is below 10%",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Persistent neurological abnormality after CO exposure is an accepted indication to discuss hyperbaric oxygen. It may reduce delayed neurocognitive sequelae. Hydroxocobalamin is for cyanide, which is not expected from a space heater.",
         keyFeature: { topic: "tox", n: 2 },
@@ -621,13 +627,14 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "A deteriorating hockey player in a rural hospital",
     stem:
-      "You are working alone overnight in a rural hospital 250 km from the nearest neurosurgical centre. A 19 year old man fell backward at a hockey game and struck his head on the ice. He was briefly unconscious, then talking normally for an hour. Now his GCS is 9 (E2 V2 M5). Left pupil is 5 mm and sluggish. HR 64, BP 162/88, SpO2 96% on room air. CT shows a 2.5 cm left temporal epidural hematoma with 6 mm midline shift.",
+      "You are working alone overnight in a rural hospital 250 km from the nearest neurosurgical centre. A 19-year-old man fell backward at a hockey game and struck his head on the ice. He was briefly unconscious, then talking normally for an hour. Now his GCS is 9 (E2 V2 M5). Left pupil is 5 mm and sluggish. CT shows a 2.5 cm left temporal epidural hematoma with 6 mm midline shift.",
+    vitals: { pulse: "64/minute", bp: "162/88 mmHg", o2sat: "96% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO calls you make to arrange definitive care.",
+        prompt: "What calls do you make to arrange definitive care?",
         accept: [
           { id: "criticall", text: "The provincial transfer and bed access line, such as CritiCall in Ontario, for an accepting bed", match: ["criticall", "critical call", "transfer centre", "transfer center", "transfer line", "bed access", "accepting bed", "patient transfer"] },
           { id: "neuro", text: "Neurosurgeon at the regional centre", match: ["neurosurgery", "neurosurgeon", "neurosurgical"] },
@@ -643,7 +650,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "List FOUR things you do to prepare him for a long transfer.",
+        prompt: "What do you do to prepare him for a long transfer?",
         accept: [
           { id: "intubate", text: "Intubate to protect the airway", match: ["intubate", "intubation", "intubated", "secure airway", "ett", "rsi"] },
           { id: "iv", text: "Two large bore IVs", match: ["two iv", "2 iv", "large bore", "iv access"] },
@@ -668,18 +675,18 @@ export const EMS_SAMPS: Samp[] = [
         kind: "menu",
         select: 2,
         update: "While waiting for the aircraft, his left pupil becomes 7 mm and fixed and he develops extensor posturing.",
-        prompt: "Select TWO appropriate immediate interventions.",
+        prompt: "Which of the following are appropriate immediate interventions for him now?",
         options: [
+          "Brief hyperventilation to PaCO2 30 to 35 mmHg",
+          "Dexamethasone 10 mg IV",
+          "Hyperventilation to PaCO2 20 mmHg",
+          "Labetalol IV to a systolic BP of 120 mmHg",
           "Mannitol 1 g/kg IV",
           "Mannitol 0.1 g/kg IV",
-          "Dexamethasone 10 mg IV",
-          "Brief hyperventilation to PaCO2 30 to 35 mmHg",
-          "Hyperventilation to PaCO2 20 mmHg",
-          "Normal saline 2 L IV bolus to raise cerebral perfusion",
-          "Phenytoin 20 mg/kg IV as the first step",
-          "Lower systolic pressure to 120 mmHg with labetalol",
+          "Normal saline 2 L IV bolus",
+          "Phenytoin 20 mg/kg IV",
         ],
-        correct: [0, 3],
+        correct: [0, 4],
         explanation:
           "Clinical herniation warrants hyperosmolar therapy and brief moderate hyperventilation as a bridge to surgery. Mannitol at 0.25 to 1 g/kg is effective. Steroids worsen outcome in head injury. Deep hyperventilation causes cerebral ischemia. A large normal saline bolus in a hypertensive patient does not treat herniation.",
         keyFeature: { topic: "ems", n: 3 },
@@ -689,7 +696,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO steps to reduce the risk of airway or tube problems during the flight.",
+        prompt: "What steps reduce the risk of airway or tube problems during the flight?",
         accept: [
           { id: "secure", text: "Secure the tube well and document its depth", match: ["secure", "tie", "tape", "depth"] },
           { id: "etco2", text: "Continuous waveform capnography", match: ["capnography", "etco2", "end tidal"] },
@@ -716,18 +723,19 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "A snowmobiler awaiting a flight",
     stem:
-      "You are the physician at a small northern hospital. A 45 year old man rolled his snowmobile. He has right sided chest wall pain. HR 104, BP 128/80, RR 22, SpO2 94% on 4 L nasal prongs, temperature 35.4 C. Chest X-ray shows three right rib fractures and a 20% right pneumothorax. CT is not available. He needs transfer to a trauma centre by fixed wing aircraft, a 90 minute flight.",
+      "You are the physician at a small northern hospital. A 45-year-old man rolled his snowmobile. He has right sided chest wall pain. Chest X-ray shows three right rib fractures and a 20% right pneumothorax. CT is not available. He needs transfer to a trauma centre by fixed wing aircraft, a 90 minute flight.",
+    vitals: { temperature: "35.4°C", pulse: "104/minute", resp: "22/minute", bp: "128/80 mmHg", o2sat: "94% on 4 L/minute by nasal prongs" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate management of the pneumothorax before flight? Select one.",
+        prompt: "Which of the following is the most appropriate management of the pneumothorax before the flight?",
         options: [
-          "Observe on oxygen, since he is stable",
-          "Insert a chest tube before departure",
-          "Needle decompression only if he deteriorates in flight",
-          "Request that the flight crew carry a needle decompression kit",
           "Delay the flight 6 hours and repeat the chest X-ray",
+          "Insert a chest tube before departure",
+          "Needle decompression if he deteriorates in flight",
+          "Observe on oxygen during the flight",
+          "Send a needle decompression kit with the flight crew",
         ],
         correct: 1,
         explanation:
@@ -739,7 +747,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO other air filled spaces or devices that need attention before a flight.",
+        prompt: "What other air filled spaces or devices need attention before a flight?",
         accept: [
           { id: "cuff", text: "Endotracheal tube cuff", match: ["cuff", "endotracheal", "ett"] },
           { id: "stomach", text: "Stomach, decompressed with a gastric tube", match: ["stomach", "gastric", "ng", "og"] },
@@ -759,7 +767,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE other steps to prepare him for the flight.",
+        prompt: "What other steps prepare him for the flight?",
         accept: [
           { id: "iv", text: "Two IV lines", match: ["two iv", "2 iv", "iv access", "iv line", "large bore", "intravenous access", "second iv"] },
           { id: "analgesia", text: "Analgesia, such as IV opioid or a regional block", match: ["analgesia", "analgesic", "pain", "opioid", "fentanyl", "morphine", "hydromorphone", "block"] },
@@ -779,15 +787,15 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which patient most needs the cabin pressurized to sea level? Select one.",
+        prompt: "Which of the following patients most needs the aircraft cabin pressurized to sea level?",
         options: [
+          "A child with diabetic ketoacidosis",
           "A diver with arterial gas embolism",
+          "A patient with a femur fracture in traction",
           "A patient with a stable pelvic fracture in a binder",
           "A patient with STEMI after fibrinolysis",
-          "A child with DKA",
-          "A patient with a femur fracture in traction",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "In gas embolism and decompression illness, any drop in ambient pressure enlarges bubbles and worsens injury. These patients need a sea level cabin or very low altitude flight. The others tolerate usual cabin pressure with standard precautions.",
         keyFeature: { topic: "ems", n: 3 },
@@ -805,20 +813,21 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Chest pain far from a catheterization lab",
     stem:
-      "You work in a hospital 2.5 hours by road from the nearest PCI centre. Air transport is grounded by weather. A 55 year old woman, 70 kg, walked in with 90 minutes of chest pain. ECG shows 4 mm ST elevation in V1 to V5. HR 96, BP 134/82. She has no bleeding history and no contraindications to fibrinolysis.",
+      "You work in a hospital 2.5 hours by road from the nearest PCI centre. Air transport is grounded by weather. A 55-year-old woman walked in with 90 minutes of chest pain. ECG shows 4 mm ST elevation in V1 to V5. She has no bleeding history and no contraindications to fibrinolysis.",
+    vitals: { pulse: "96/minute", bp: "134/82 mmHg", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate reperfusion strategy? Select one.",
+        prompt: "Which of the following is the most appropriate reperfusion strategy for her?",
         options: [
-          "Land transfer for primary PCI",
-          "Weight based tenecteplase now, then transfer",
           "Half dose tenecteplase now, then transfer",
           "Heparin infusion and transfer when the weather clears",
+          "Land transfer for primary PCI",
           "Tenecteplase only if pain persists after 1 hour",
+          "Weight based tenecteplase now, then transfer",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "When first medical contact to device time will exceed 120 minutes, give fibrinolysis within 30 minutes of arrival. Full weight based tenecteplase is used under 75 years of age. Half dose is used for age 75 and older in the pharmacoinvasive approach.",
         keyFeature: { topic: "ischemic-heart-disease", n: 6 },
@@ -828,7 +837,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO antithrombotic medications to give with the fibrinolytic.",
+        prompt: "What antithrombotic medications do you give with the fibrinolytic?",
         accept: [
           { id: "asa", text: "ASA 160 mg chewed", match: ["asa", "aspirin", "acetylsalicylic"] },
           { id: "clopidogrel", text: "Clopidogrel 300 mg loading dose (75 mg if over 75 years)", match: ["clopidogrel", "plavix"] },
@@ -847,7 +856,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE steps to prepare her for the long land transfer.",
+        prompt: "What steps prepare her for the long land transfer?",
         accept: [
           { id: "pads", text: "Defibrillator pads on and continuous cardiac monitoring", match: ["pad", "defib", "defibrillator", "defibrillation", "monitor"] },
           { id: "crew", text: "An advanced care or critical care crew able to manage arrhythmias", match: ["advanced care", "critical care", "acp", "crew", "escort", "nurse", "physician"] },
@@ -866,15 +875,15 @@ export const EMS_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Seventy minutes after tenecteplase she still has chest pain. ST elevation has fallen by only 20%. The weather has cleared.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
-          "Repeat tenecteplase",
-          "Urgent air transfer for rescue PCI",
           "Observe and repeat the ECG in 3 hours",
+          "Repeat a full dose of tenecteplase",
           "Start a nitroglycerin infusion and admit locally",
           "Transfer for elective angiography within 24 hours",
+          "Urgent air transfer for rescue PCI",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "Less than 50% ST resolution at 60 to 90 minutes means failed reperfusion. Rescue PCI is indicated. Repeat fibrinolysis adds bleeding risk without benefit.",
         keyFeature: { topic: "ems", n: 3 },
@@ -891,13 +900,14 @@ export const EMS_SAMPS: Samp[] = [
     topic: "ems",
     title: "A sick child awaiting a transport team",
     stem:
-      "You are working in a community hospital. A 7 year old girl, 25 kg, with new onset diabetes has vomiting and deep rapid breathing. Glucose 32 mmol/L, venous pH 6.98, bicarbonate 4 mmol/L, potassium 4.6 mmol/L, GCS 14. She received 10 mL/kg normal saline. The pediatric critical care transport team will arrive in 3 hours and the drive back is 2 hours.",
+      "You are working in a community hospital. A 7-year-old girl with new onset diabetes has vomiting and deep rapid breathing. Glucose 32 mmol/L, venous pH 6.98, bicarbonate 4 mmol/L, potassium 4.6 mmol/L, GCS 14. She received 10 mL/kg normal saline. The pediatric critical care transport team will arrive in 3 hours and the drive back is 2 hours.",
+    vitals: { weight: "25 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE treatments or monitoring that should be in place before the team arrives.",
+        prompt: "What treatments or monitoring should be in place before the team arrives?",
         accept: [
           { id: "insulin", text: "Insulin infusion 0.05 to 0.1 units/kg/h without a bolus", match: ["insulin infusion", "insulin drip", "insulin 0.1", "insulin 0.05"] },
           { id: "fluids", text: "Rehydration fluids at a calculated rate over 48 hours", match: ["fluid", "rehydration", "saline"] },
@@ -919,32 +929,32 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "The nurse asks whether she should be intubated for the transfer because she is drowsy. Which is the best response? Select one.",
+        update: "The nurse asks whether she should be intubated for the transfer because she is drowsy.",
+        prompt: "Which of the following is the most appropriate response to the nurse?",
         options: [
-          "Intubate now because the transport is long",
-          "Avoid intubation and monitor closely, since intubation can worsen acidosis and cerebral edema",
-          "Intubate only if pH remains below 7.0",
+          "Avoid intubation and monitor closely",
           "Give sodium bicarbonate to avoid intubation",
           "Intubate and set the ventilator to a normal PaCO2",
+          "Intubate now for the long transport",
+          "Intubate only if pH remains below 7.0",
         ],
-        correct: 1,
-        explanation:
-          "Intubating a child in severe DKA is high risk. Loss of compensatory hyperventilation can cause rapid acidosis and cardiovascular collapse. If it becomes essential, ventilation must match her pre-intubation minute ventilation. A GCS of 14 is not an indication.",
+        correct: 0,
+        explanation: "Intubating a child in severe DKA is high risk. Intubation can worsen acidosis and cerebral edema, so avoid it and monitor her closely. Loss of compensatory hyperventilation can cause rapid acidosis and cardiovascular collapse. If it becomes essential, ventilation must match her pre-intubation minute ventilation. A GCS of 14 is not an indication.",
         keyFeature: { topic: "ems", n: 3 },
         source: "trekk-dka",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which medication should be ready at the bedside and sent with her for the most feared complication? Select one.",
+        prompt: "Which of the following medications should be ready at the bedside and sent with her for the most feared complication?",
         options: [
-          "Mannitol 0.5 to 1 g/kg IV",
           "Dexamethasone 0.6 mg/kg IV",
-          "Sodium bicarbonate 1 mmol/kg IV",
           "Insulin 0.1 units/kg IV bolus",
           "Lorazepam 0.1 mg/kg IV",
+          "Mannitol 0.5 to 1 g/kg IV",
+          "Sodium bicarbonate 1 mmol/kg IV",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Cerebral edema is the leading cause of DKA death in children. Signs include headache, bradycardia, hypertension, falling GCS and incontinence. Treat with mannitol 0.5 to 1 g/kg or 3% saline 2.5 to 5 mL/kg, and reduce the fluid rate.",
         keyFeature: { topic: "ems", n: 3 },
@@ -954,7 +964,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO items to include in your handover to the transport team.",
+        prompt: "What items do you include in your handover to the transport team?",
         accept: [
           { id: "fluids", text: "Total fluid volumes given and current rate", match: ["fluid", "volume", "bolus"] },
           { id: "insulin", text: "Insulin start time and rate", match: ["insulin"] },
@@ -986,7 +996,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE pieces of information you want from the scene commander.",
+        prompt: "What information do you want from the scene commander?",
         accept: [
           { id: "number", text: "Total number of patients", match: ["number of patient", "how many", "total number", "number"] },
           { id: "triage", text: "Number in each triage category", match: ["triage", "category", "red", "critical"] },
@@ -1004,8 +1014,15 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Using START triage, a 16 year old cannot walk. RR is 34, the radial pulse is present and he follows commands. Which category is he? Select one.",
-        options: ["Green, minor", "Yellow, delayed", "Red, immediate", "Black, expectant", "Yellow until reassessed at hospital"],
+        update: "A 16-year-old cannot walk. His respiratory rate is 34/minute, the radial pulse is present and he follows commands.",
+        prompt: "Which of the following START triage categories should he be assigned?",
+        options: [
+          "Black, expectant",
+          "Green, minor",
+          "Red, immediate",
+          "Yellow, delayed",
+          "Yellow until reassessed",
+        ],
         correct: 2,
         explanation:
           "In START, a respiratory rate over 30 places the patient in the immediate category regardless of other findings. Absent radial pulse or capillary refill over 2 seconds and inability to follow commands are the other red triggers. He is not walking, so he is not green.",
@@ -1015,13 +1032,14 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "A 6 year old is not breathing after the airway is repositioned but has a palpable pulse. Under JumpSTART, which is the next field action? Select one.",
+        update: "A 6-year-old is not breathing after the airway is repositioned but has a palpable pulse.",
+        prompt: "Which of the following is the next field action under JumpSTART triage?",
         options: [
-          "Tag black and move on",
+          "Begin full CPR with chest compressions",
           "Give five rescue breaths, then tag red if breathing resumes",
-          "Begin full CPR",
+          "Intubate on scene before transport to hospital",
+          "Tag black and move on to the next child",
           "Tag red and move on without intervention",
-          "Intubate on scene",
         ],
         correct: 1,
         explanation:
@@ -1033,7 +1051,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 4,
-        prompt: "List FOUR steps to prepare your hospital.",
+        prompt: "What steps prepare your hospital?",
         accept: [
           { id: "code", text: "Activate the external disaster plan, Code Orange in Ontario and many provinces", match: ["code orange", "disaster plan", "emergency plan", "incident command", "mass casualty plan"] },
           { id: "staff", text: "Call in extra physicians, nurses and staff", match: ["staff", "call in", "fan out", "callback", "extra physician", "nurse"] },
@@ -1056,7 +1074,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "List TWO principles you advise the scene commander to use when distributing patients.",
+        prompt: "What principles do you advise the scene commander to use when distributing patients?",
         accept: [
           { id: "spread", text: "Distribute patients across several hospitals rather than sending all to the closest", match: ["distribute", "spread", "several hospital", "multiple hospital", "other hospital", "not all"] },
           { id: "trauma", text: "Send the most critical patients to the trauma centre", match: ["trauma centre", "trauma center", "most critical", "most injured", "red to"] },
@@ -1081,13 +1099,13 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Several sick workers at a greenhouse",
     stem:
-      "An advanced care paramedic supervisor patches to your emergency department from a large greenhouse 20 minutes away. Six workers became unwell after a pesticide tank ruptured. Several are vomiting, drooling and wheezing. One has HR 42, copious secretions and pinpoint pupils. Fire services with a hazardous materials team are on scene.",
+      "An advanced care paramedic supervisor patches to your emergency department from a large greenhouse 20 minutes away. Six workers became unwell after a pesticide tank ruptured. Several are vomiting, drooling and wheezing. One has a pulse of 42/minute, copious secretions and pinpoint pupils. Fire services with a hazardous materials team are on scene.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE directions you give to EMS before transport.",
+        prompt: "What directions do you give to EMS before transport?",
         accept: [
           { id: "decon", text: "Decontaminate at the scene before transport, with clothing removed and skin washed", match: ["decontaminate", "decontamination", "decon", "remove clothing", "undress", "wash"] },
           { id: "ppe", text: "Paramedics wear appropriate PPE", match: ["ppe", "protective", "glove", "gown"] },
@@ -1107,18 +1125,19 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "The most severely affected worker, 80 kg, arrives decontaminated with bronchorrhea and HR 40. Select TWO appropriate treatments.",
+        update: "The most severely affected worker, 80 kg, arrives decontaminated with bronchorrhea and a pulse of 40/minute.",
+        prompt: "Which of the following are appropriate treatments for this worker?",
         options: [
-          "Atropine 0.5 mg IV once",
-          "Atropine 1 to 2 mg IV, doubling every 5 minutes until secretions dry",
+          "Atropine 0.5 mg IV once only",
+          "Atropine 1 to 2 mg IV, doubled every 5 minutes",
+          "Epinephrine 1 mg IV every 3 to 5 minutes",
+          "Glucagon 5 mg IV over 2 minutes",
+          "Physostigmine 1 mg IV over 5 minutes",
           "Pralidoxime 30 mg/kg IV over 30 minutes",
-          "Physostigmine 1 mg IV",
+          "Pralidoxime 500 mg/kg IV over 30 minutes",
           "Succinylcholine for intubation",
-          "Pralidoxime 500 mg/kg IV",
-          "Glucagon 5 mg IV",
-          "Epinephrine 1 mg IV",
         ],
-        correct: [1, 2],
+        correct: [1, 5],
         explanation:
           "Atropine is titrated rapidly by doubling doses until bronchial secretions clear. Heart rate and pupils are poor end points. Pralidoxime reactivates acetylcholinesterase if given before aging. Physostigmine is itself a cholinesterase inhibitor and would worsen toxicity.",
         keyFeature: { topic: "tox", n: 2 },
@@ -1127,8 +1146,14 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "He needs intubation. Which paralytic is most appropriate? Select one.",
-        options: ["Succinylcholine 1.5 mg/kg", "Rocuronium 1.2 mg/kg", "No paralytic, awake intubation only", "Succinylcholine 0.5 mg/kg", "Cisatracurium 0.1 mg/kg"],
+        prompt: "Which of the following paralytic agents is most appropriate for his intubation?",
+        options: [
+          "Cisatracurium 0.1 mg/kg",
+          "Rocuronium 1.2 mg/kg",
+          "Succinylcholine 0.5 mg/kg",
+          "Succinylcholine 1.5 mg/kg",
+          "No paralytic, awake intubation only",
+        ],
         correct: 1,
         explanation:
           "Succinylcholine is metabolized by plasma cholinesterase, which organophosphates inhibit. Paralysis can last for hours. Rocuronium at 1.2 mg/kg gives rapid, reliable conditions.",
@@ -1139,7 +1164,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE ways to prepare your department for more exposed patients.",
+        prompt: "How do you prepare your department for more exposed patients?",
         accept: [
           { id: "decon", text: "Set up a decontamination area outside the ED entrance", match: ["decon", "decontaminate", "decontamination"] },
           { id: "lock", text: "Control entrances so contaminated patients cannot walk in", match: ["lock", "secure entrance", "control entrance", "entrance", "security"] },
@@ -1167,13 +1192,13 @@ export const EMS_SAMPS: Samp[] = [
     alsoTopics: ["environmental"],
     title: "Summer festival medical planning",
     stem:
-      "You are the medical director for a three day outdoor music festival expecting 40 000 people. The forecast is 34 C with high humidity. The on-site medical team has physicians, nurses and paramedics, and the local EMS service has two dedicated ambulances. Your hospital is 15 minutes away.",
+      "You are the medical director for a three day outdoor music festival expecting 40 000 people. The forecast is 34°C with high humidity. The on-site medical team has physicians, nurses and paramedics, and the local EMS service has two dedicated ambulances. Your hospital is 15 minutes away.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE conditions the on-site team should be ready to treat.",
+        prompt: "What conditions should the on-site team be ready to treat?",
         accept: [
           { id: "heat", text: "Heat exhaustion and heat stroke", match: ["heat"] },
           { id: "stim", text: "Stimulant toxicity such as MDMA or amphetamines", match: ["mdma", "stimulant", "amphetamine", "ecstasy", "cocaine", "sympathomimetic"] },
@@ -1195,8 +1220,8 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        update: "On day two, the on-site physician calls. A 19 year old man took MDMA and is confused and agitated. Rectal temperature 41.4 C, HR 152, BP 150/90.",
-        prompt: "List THREE directions for his care before and during transport.",
+        update: "On day two, the on-site physician calls. A 19-year-old man took MDMA and is confused and agitated. Rectal temperature 41.4°C, HR 152, BP 150/90 mmHg.",
+        prompt: "What directions do you give for his care before and during transport?",
         accept: [
           { id: "cool", text: "Start cooling now with ice water immersion before transport", match: ["immersion", "immerse", "ice water", "cold water", "cool", "cooling", "ice", "evaporative"] },
           { id: "benzo", text: "Benzodiazepine for agitation, such as midazolam", match: ["benzodiazepine", "midazolam", "diazepam", "lorazepam"] },
@@ -1212,23 +1237,23 @@ export const EMS_SAMPS: Samp[] = [
           { text: "Physical restraint without sedation", match: ["physical restraint", "restraints only", "restrain only", "restrain without sedation", "restraint without sedation"] },
         ],
         explanation:
-          "Temperature above 41 C with altered mental status is life threatening. Cool first, transport second, because minutes at this temperature drive organ injury. Benzodiazepines reduce heat production from agitation. Antipyretics do not work in hyperthermia and restraints increase heat production.",
+          "Temperature above 41°C with altered mental status is life threatening. Cool first, transport second, because minutes at this temperature drive organ injury. Benzodiazepines reduce heat production from agitation. Antipyretics do not work in hyperthermia and restraints increase heat production.",
         keyFeature: { topic: "ems", n: 4 },
         source: "tintinalli",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Later, a 21 year old woman who took MDMA and drank large amounts of water has a generalized seizure. Point of care sodium is 117 mmol/L.",
-        prompt: "Which is the most appropriate initial treatment? Select one.",
+        update: "Later, a 21-year-old woman who took MDMA and drank large amounts of water has a generalized seizure. Point of care sodium is 117 mmol/L.",
+        prompt: "Which of the following is the most appropriate initial treatment?",
         options: [
-          "3% saline 100 mL IV over 10 minutes, repeated up to three times",
-          "Normal saline 1 L IV bolus",
           "Fluid restriction alone",
-          "3% saline 500 mL IV over 10 minutes",
           "Furosemide 40 mg IV",
+          "Normal saline 1 L IV bolus",
+          "3% saline 100 mL IV over 10 minutes",
+          "3% saline 500 mL IV over 10 minutes",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Severe symptomatic hyponatremia needs a rapid rise of 4 to 6 mmol/L to stop seizures. A 100 mL bolus of 3% saline, repeated up to three times, is standard. Normal saline can worsen hyponatremia when ADH is high, as with MDMA.",
         keyFeature: { topic: "ems", n: 4 },
@@ -1238,7 +1263,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO event level measures that reduce harm and hospital transports at this festival.",
+        prompt: "What event level measures reduce harm and hospital transports at this festival?",
         accept: [
           { id: "water", text: "Free water and cooling stations or shaded areas", match: ["water", "cooling station", "shade", "misting"] },
           { id: "naloxone", text: "Naloxone kits and harm reduction services", match: ["naloxone", "harm reduction"] },
@@ -1272,7 +1297,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE directions you give EMS for field management.",
+        prompt: "What directions do you give EMS for field management?",
         accept: [
           { id: "remove", text: "Remove everyone from the homes and away from the source", match: ["remove", "evacuate", "evacuation", "fresh air", "leave the home", "out of the home"] },
           { id: "o2", text: "High flow oxygen by non-rebreather for all symptomatic patients", match: ["non rebreather", "nonrebreather", "high flow", "100% oxygen", "100% o2", "oxygen"] },
@@ -1292,17 +1317,18 @@ export const EMS_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 3,
-        prompt: "The patients arrive and levels are drawn. Select the THREE who most warrant urgent discussion with the hyperbaric centre.",
+        update: "The patients arrive and carboxyhemoglobin (COHb) levels are drawn.",
+        prompt: "Which of the following patients most warrant urgent discussion with the hyperbaric centre?",
         options: [
-          "A 28 year old man with headache and carboxyhemoglobin 14%",
-          "A 31 year old woman at 30 weeks gestation with nausea and carboxyhemoglobin 17%",
-          "A 58 year old man who was unconscious at the scene, now carboxyhemoglobin 11%",
-          "A 9 year old with vomiting and carboxyhemoglobin 8%",
-          "A 40 year old woman with dizziness and carboxyhemoglobin 19%",
-          "A 67 year old man with chest pain, new ST depression and carboxyhemoglobin 22%",
-          "A 35 year old man, asymptomatic, carboxyhemoglobin 6%",
+          "9-year-old child with vomiting, COHb 8%",
+          "28-year-old man with headache, COHb 14%",
+          "31-year-old woman, 30 weeks pregnant, nausea, COHb 17%",
+          "35-year-old man who is asymptomatic, COHb 6%",
+          "40-year-old woman with dizziness, COHb 19%",
+          "58-year-old man, unconscious at scene, COHb now 11%",
+          "67-year-old man, chest pain, new ST depression, COHb 22%",
         ],
-        correct: [1, 2, 5],
+        correct: [2, 5, 6],
         explanation:
           "Accepted indications to consider hyperbaric oxygen include loss of consciousness, neurological deficits, cardiac ischemia, severe acidosis, carboxyhemoglobin above 25%, and pregnancy with a level above about 15% (some centres use 20%). The fetus is especially vulnerable because fetal hemoglobin binds CO avidly. Headache or dizziness alone at moderate levels is treated with normobaric oxygen.",
         keyFeature: { topic: "tox", n: 2 },
@@ -1312,7 +1338,7 @@ export const EMS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE steps to prepare your hospital for this surge.",
+        prompt: "What steps prepare your hospital for this surge?",
         accept: [
           { id: "masks", text: "Gather non-rebreather masks and oxygen supply", match: ["mask", "oxygen supply", "non rebreather", "nonrebreather", "oxygen"] },
           { id: "gas", text: "Ensure co-oximetry blood gas capacity", match: ["co oximetry", "blood gas", "cohb", "lab"] },
@@ -1332,8 +1358,14 @@ export const EMS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which is the approximate half life of carboxyhemoglobin while breathing 100% oxygen at normal atmospheric pressure? Select one.",
-        options: ["5 minutes", "20 minutes", "75 minutes", "5 hours", "12 hours"],
+        prompt: "Which of the following is the approximate half life of carboxyhemoglobin while breathing 100% oxygen at normal atmospheric pressure?",
+        options: [
+          "5 minutes",
+          "20 minutes",
+          "75 minutes",
+          "300 minutes",
+          "720 minutes",
+        ],
         correct: 2,
         explanation:
           "The half life of carboxyhemoglobin is about 4 to 5 hours on room air, about 60 to 90 minutes on 100% oxygen, and about 20 to 30 minutes with hyperbaric oxygen. Oxygen should continue until symptoms resolve and the level is low, often for at least 6 hours.",

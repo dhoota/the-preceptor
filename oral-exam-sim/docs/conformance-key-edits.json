@@ -1365,6 +1365,227 @@
    "after": [
     "Pneumonia is the likely source, despite the pyuria"
    ]
+  },
+  "ems-01#q1": {
+   "batch": "s09",
+   "before": [
+    "Bypass your hospital and transport directly to the PCI centre with cath lab pre-activation"
+   ],
+   "after": [
+    "Bypass to the PCI centre with cath lab pre-activation"
+   ]
+  },
+  "ems-02#q1": {
+   "batch": "s09",
+   "before": [
+    "Transport directly to the comprehensive stroke centre with pre-notification"
+   ],
+   "after": [
+    "Pre-notify and transport directly to the stroke centre"
+   ]
+  },
+  "ems-05#q2": {
+   "batch": "s09",
+   "before": [
+    "Strongly advise transport for observation because recurrent hypoglycemia is likely"
+   ],
+   "after": [
+    "Strongly advise transport for observation"
+   ]
+  },
+  "ems-05#q4": {
+   "batch": "s09",
+   "before": [
+    "Emergency treatment without consent, since he is incapable and delay would cause serious harm"
+   ],
+   "after": [
+    "Emergency treatment without consent"
+   ]
+  },
+  "ems-06#q3": {
+   "batch": "s09",
+   "before": [
+    "A methadone bottle with his name was found in his bag"
+   ],
+   "after": [
+    "A methadone bottle labelled with his name in his bag"
+   ]
+  },
+  "ems-07#q3": {
+   "batch": "s09",
+   "before": [
+    "Discuss hyperbaric oxygen with the regional hyperbaric centre"
+   ],
+   "after": [
+    "Discuss with the regional hyperbaric oxygen centre"
+   ]
+  },
+  "ems-11#q2": {
+   "batch": "s09",
+   "before": [
+    "Avoid intubation and monitor closely, since intubation can worsen acidosis and cerebral edema"
+   ],
+   "after": [
+    "Avoid intubation and monitor closely"
+   ]
+  },
+  "ems-13#q2": {
+   "batch": "s09",
+   "before": [
+    "Atropine 1 to 2 mg IV, doubling every 5 minutes until secretions dry",
+    "Pralidoxime 30 mg/kg IV over 30 minutes"
+   ],
+   "after": [
+    "Atropine 1 to 2 mg IV, doubled every 5 minutes",
+    "Pralidoxime 30 mg/kg IV over 30 minutes"
+   ]
+  },
+  "ems-14#q3": {
+   "batch": "s09",
+   "before": [
+    "3% saline 100 mL IV over 10 minutes, repeated up to three times"
+   ],
+   "after": [
+    "3% saline 100 mL IV over 10 minutes"
+   ]
+  },
+  "ems-15#q2": {
+   "batch": "s09",
+   "before": [
+    "A 31 year old woman at 30 weeks gestation with nausea and carboxyhemoglobin 17%",
+    "A 58 year old man who was unconscious at the scene, now carboxyhemoglobin 11%",
+    "A 67 year old man with chest pain, new ST depression and carboxyhemoglobin 22%"
+   ],
+   "after": [
+    "31-year-old woman, 30 weeks pregnant, nausea, COHb 17%",
+    "58-year-old man, unconscious at scene, COHb now 11%",
+    "67-year-old man, chest pain, new ST depression, COHb 22%"
+   ]
+  },
+  "environmental-02#q2": {
+   "batch": "s09",
+   "before": [
+    "Cold water immersion",
+    "Evaporative cooling with lukewarm water spray and fans"
+   ],
+   "after": [
+    "Cold water immersion",
+    "Evaporative cooling with lukewarm spray and fans"
+   ]
+  },
+  "environmental-04#q3": {
+   "batch": "s09",
+   "before": [
+    "Propranolol 60 to 80 mg PO every 4 hours",
+    "Propylthiouracil 500 to 1000 mg PO load, then 250 mg every 4 hours",
+    "Hydrocortisone 100 mg IV every 8 hours"
+   ],
+   "after": [
+    "Hydrocortisone 100 mg IV every 8 hours",
+    "Propranolol 60 to 80 mg PO every 4 hours",
+    "Propylthiouracil 500 to 1000 mg PO, then 250 mg q4h"
+   ]
+  },
+  "environmental-05#q2": {
+   "batch": "s09",
+   "before": [
+    "Active external rewarming with forced air plus warmed IV fluids, and alert an ECLS capable centre"
+   ],
+   "after": [
+    "Forced air, warmed IV fluids and ECLS centre alert"
+   ]
+  },
+  "environmental-05#q4": {
+   "batch": "s09",
+   "before": [
+    "CPR, up to three shocks, hold epinephrine until core temperature is above 30 C, and arrange extracorporeal rewarming"
+   ],
+   "after": [
+    "CPR, up to 3 shocks, hold epinephrine, ECLS rewarming"
+   ]
+  },
+  "environmental-06#q2": {
+   "batch": "s09",
+   "before": [
+    "Extracorporeal life support with VA ECMO or cardiopulmonary bypass"
+   ],
+   "after": [
+    "Extracorporeal life support by VA ECMO or bypass"
+   ]
+  },
+  "environmental-06#q5": {
+   "batch": "s09",
+   "before": [
+    "When core temperature has been restored to at least 32 C and asystole persists"
+   ],
+   "after": [
+    "Persistent asystole after rewarming to at least 32°C"
+   ]
+  },
+  "environmental-07#q3": {
+   "batch": "s09",
+   "before": [
+    "Levothyroxine 200 to 400 mcg IV plus hydrocortisone 100 mg IV"
+   ],
+   "after": [
+    "IV levothyroxine 200 to 400 mcg plus hydrocortisone 100 mg"
+   ]
+  },
+  "environmental-09#q2": {
+   "batch": "s09",
+   "before": [
+    "Immersion in circulating water at 37 to 39 C until tissue is soft and red or purple",
+    "Ibuprofen 400 mg PO twice daily"
+   ],
+   "after": [
+    "Ibuprofen 400 mg PO twice daily",
+    "Immersion in circulating water at 37 to 39°C"
+   ]
+  },
+  "environmental-10#q3": {
+   "batch": "s09",
+   "before": [
+    "Land ambulance or aircraft pressurized to sea level or flown very low"
+   ],
+   "after": [
+    "Land ambulance or aircraft at sea level cabin pressure"
+   ]
+  },
+  "environmental-12#q2": {
+   "batch": "s09",
+   "before": [
+    "Urgent ENT assessment, head elevated rest, no straining and no diving"
+   ],
+   "after": [
+    "Urgent ENT review, head up rest, no straining or diving"
+   ]
+  },
+  "environmental-13#q3": {
+   "batch": "s09",
+   "before": [
+    "Urine output about 1 to 1.5 mL/kg/h, roughly 75 to 100 mL/h, until the urine clears"
+   ],
+   "after": [
+    "Urine output 75 to 100 mL/h until the urine clears"
+   ]
+  },
+  "environmental-14#q4": {
+   "batch": "s09",
+   "before": [
+    "Discharge with bleeding instructions and plastic surgery follow up"
+   ],
+   "after": [
+    "Discharge with bleeding advice and plastic surgery follow up"
+   ]
+  },
+  "environmental-15#q4": {
+   "batch": "s09",
+   "before": [
+    "Continue full resuscitation, since fixed dilated pupils are not reliable after lightning"
+   ],
+   "after": [
+    "Continue full resuscitation"
+   ]
   }
  }
 }
