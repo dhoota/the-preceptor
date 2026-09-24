@@ -1,0 +1,528 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const ethicsCommunication: OralCase = {
+  id: "ethics-goals-of-care",
+  title: "An elderly woman from a retirement home",
+  domain: "Ethics and communication",
+  summary: "An 86 year old woman is brought in unresponsive from her retirement home. Her family arrives.",
+  durationMinutes: 15,
+  stem:
+    "You are working in a community emergency department in Ontario. Neurosurgery is at a tertiary centre 2 hours away and is available by phone. " +
+    "Margit Havel is 86 years old and lives in a retirement home. Staff found her at 07:10 not speaking and not moving her right side. She was last seen well at 22:00 last night. " +
+    "Triage vitals: heart rate 88 and irregular, blood pressure 196/104, respiratory rate 18 with snoring, SpO2 93 percent on room air, temperature 36.9, capillary glucose 7.2 mmol/L. " +
+    "GCS 8 (E2 V1 M5). Weight 58 kg. CTAS 1. " +
+    "The nurse says: 'The retirement home sent her medication list and a folder of papers. She is on apixaban. Her son and daughter are both on their way.'",
+  findings: [
+    {
+      id: "ct-head",
+      label: "CT head",
+      result:
+        "Left thalamic intracerebral hemorrhage of about 55 mL with extension into the lateral and third ventricles. Early hydrocephalus. Midline shift 7 mm. No subarachnoid blood.",
+    },
+    {
+      id: "neuro",
+      label: "Neurological exam",
+      result: "GCS 8 (E2 V1 M5). Pupils 3 mm and reactive. Gaze deviated to the left. Dense right hemiplegia. No response to verbal commands. Gag weak.",
+    },
+    {
+      id: "airway",
+      label: "Airway assessment",
+      result:
+        "Snoring that improves with a jaw thrust and a nasal airway. Pooling secretions cleared with suction. SpO2 96 percent on 2 L nasal prongs after repositioning. No vomiting.",
+    },
+    {
+      id: "meds",
+      label: "Medication list",
+      result:
+        "Apixaban 5 mg twice daily for atrial fibrillation. Last dose given at 20:00 last night. Also ramipril 5 mg daily, atorvastatin 20 mg daily, and vitamin D. No allergies.",
+    },
+    {
+      id: "history",
+      label: "Past history and baseline function",
+      result:
+        "Atrial fibrillation, hypertension and osteoarthritis. Mild memory loss but she manages her own day and walks with a walker. " +
+        "She is a retired piano teacher and plays every afternoon for the other residents. Widowed 6 years ago.",
+    },
+    {
+      id: "acp",
+      label: "Advance care planning documents",
+      result:
+        "A power of attorney for personal care signed in 2021 names her son Daniel Havel as attorney. " +
+        "An advance care planning note in her handwriting dated 2023 says: 'If I cannot recognize my family or play my music, I do not want to be kept alive on machines. Let me be comfortable.' " +
+        "No do not resuscitate confirmation form is on file.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Hemoglobin 124 g/L. Platelets 176 x 10^9/L. INR 1.3. PTT 36 seconds. Creatinine 96 µmol/L with an eGFR of 48. Sodium 139 mmol/L. Potassium 4.3 mmol/L. Anti Xa level for apixaban pending.",
+    },
+    { id: "ecg", label: "ECG", result: "Atrial fibrillation at 86. No acute ST changes." },
+    {
+      id: "neurosurgery",
+      label: "Neurosurgery opinion",
+      result:
+        "The neurosurgeon reviews the images remotely. This is not a surgical lesion. She would not recommend an external ventricular drain given the size and location. " +
+        "She expects a very poor outcome and recommends a goals of care discussion. She is happy to speak with the family by phone.",
+    },
+    {
+      id: "son",
+      label: "Collateral from her son",
+      result:
+        "Daniel says his mother talked about this often after his father spent 3 weeks on a ventilator before he died. She told him she never wanted that. He is tearful and says he wants to do what she asked.",
+    },
+    {
+      id: "daughter",
+      label: "Collateral from her daughter",
+      result:
+        "Rosa lives in Vancouver and visited last month. She says her mother was 'sharp as a tack' at dinner last week. She says, 'People recover from strokes all the time. She would want a chance.'",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "At the bedside",
+      text: "She is snoring and not following commands. The respiratory therapist asks, 'Are we tubing her?'",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway",
+      prompt: "How will you manage her airway right now? Does she need intubation?",
+      seconds: 60,
+      modelAnswer: [
+        "Reposition, suction, jaw thrust and a nasal airway.",
+        "Oxygen to SpO2 above 92 percent.",
+        "She is maintaining oxygenation with simple measures.",
+        "Hold off on intubation while you clarify her wishes with her substitute decision maker.",
+        "Intubate if she cannot be oxygenated and no known wish refuses it.",
+      ],
+      rubric: ["ec-k1"],
+      choices: [
+        {
+          id: "c-support",
+          label: "I supported her airway with positioning, suction and a nasal airway, and held off on intubation while I reached her family.",
+          next: "q-bp",
+          quality: "strong",
+        },
+        { id: "c-intubate", label: "I intubated her right away before asking about her wishes.", next: "s-intubated", quality: "partial" },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-intubated",
+      phase: "Later",
+      text:
+        "She is now on a ventilator. When her son arrives he says she told him many times she never wanted this. Removing the tube later will need a consent discussion with her substitute decision maker. The conversation is now harder.",
+      next: "q-bp",
+    },
+    {
+      kind: "question",
+      id: "q-bp",
+      phase: "Treatment",
+      prompt: "The CT shows a large intracerebral hemorrhage. What is your blood pressure target, and how will you reverse her apixaban?",
+      seconds: 60,
+      modelAnswer: [
+        "Lower systolic toward about 140 to 160 with a titratable agent.",
+        "Labetalol 10 to 20 mg IV, repeated, avoiding large or fast drops.",
+        "PCC about 50 units/kg IV, about 2,900 units, or per local protocol.",
+        "Andexanet if available and in local protocol.",
+        "Neurosurgery consult by phone.",
+      ],
+      rubric: ["ec-k2", "ec-k3"],
+      next: "q-consent",
+    },
+    {
+      kind: "question",
+      id: "q-consent",
+      phase: "Consent",
+      prompt: "Her son is not answering his phone yet. What can you do without consent, and what does her advance care planning note mean in Ontario?",
+      seconds: 60,
+      modelAnswer: [
+        "She is incapable of making treatment decisions now.",
+        "Under the Health Care Consent Act, emergency treatment can proceed without consent when delay would cause serious harm.",
+        "The exception is a known prior capable wish refusing that treatment.",
+        "Her note is a wish, not a consent. It guides her substitute decision maker.",
+        "Keep trying to reach the substitute decision maker.",
+      ],
+      rubric: ["ec-s4"],
+      next: "s-family",
+    },
+    {
+      kind: "say",
+      id: "s-family",
+      phase: "The family arrives",
+      text:
+        "Neurosurgery says the bleed is not operable and the prognosis is very poor. Her son Daniel and daughter Rosa arrive. " +
+        "Daniel says his mother would not want machines. Rosa is angry and says, 'You are giving up on her. I want her intubated and sent to the big hospital now.'",
+      next: "q-sdm",
+    },
+    {
+      kind: "question",
+      id: "q-sdm",
+      phase: "Substitute decision maker",
+      prompt: "Is Mrs. Havel capable? Who is her substitute decision maker, and what must that person follow?",
+      seconds: 90,
+      modelAnswer: [
+        "She is incapable. She cannot understand or communicate. Document this.",
+        "Daniel is her attorney for personal care.",
+        "In the Health Care Consent Act hierarchy the attorney ranks above her children.",
+        "Rosa is not the substitute decision maker.",
+        "The substitute decision maker must follow known prior capable wishes that apply.",
+        "Without applicable wishes, act in her best interests.",
+      ],
+      rubric: ["ec-s1", "ec-s2", "ec-s3"],
+      choices: [
+        {
+          id: "c-poa",
+          label: "I explained that Daniel is her attorney for personal care and must follow her prior wishes.",
+          next: "q-meeting",
+          quality: "strong",
+        },
+        {
+          id: "c-both",
+          label: "I told them both children had to agree, and since Rosa wanted everything we would intubate.",
+          next: "s-wrong-sdm",
+          quality: "unsafe",
+        },
+        { id: "c-unilateral", label: "I told them I would decide what is medically best myself.", next: "s-unilateral", quality: "partial" },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-wrong-sdm",
+      phase: "Minutes later",
+      text:
+        "Daniel shows the nurse his power of attorney document. The charge nurse points out that he is the legal decision maker. Daniel is upset that his mother's wishes were nearly ignored. You now need to correct your plan.",
+      next: "q-meeting",
+    },
+    {
+      kind: "say",
+      id: "s-unilateral",
+      phase: "Minutes later",
+      text: "Rosa says she will file a complaint. Daniel says no one has asked what his mother wanted. Neither child trusts the plan.",
+      next: "q-meeting",
+    },
+    {
+      kind: "question",
+      id: "q-meeting",
+      phase: "Family meeting",
+      prompt: "Walk me through how you would run this family meeting.",
+      seconds: 120,
+      modelAnswer: [
+        "Private room. Sit down. Introduce everyone. Bring a nurse or social worker.",
+        "Ask what they understand so far.",
+        "Warning shot, then a clear prognosis in plain words.",
+        "Ask what she valued and what she said about this situation.",
+        "Recommend a plan based on her values. Do not ask if they want everything done.",
+        "Acknowledge Rosa's grief without arguing.",
+        "Offer palliative care, spiritual care and social work.",
+      ],
+      rubric: ["ec-k4", "ec-g1", "ec-g2", "ec-g3", "ec-g4", "ec-g5"],
+      choices: [
+        {
+          id: "c-recommend",
+          label: "I sat down with both, gave a warning shot, explained the prognosis plainly and recommended comfort focused care based on her values.",
+          next: "q-conflict",
+          quality: "strong",
+        },
+        { id: "c-menu", label: "I asked them whether they wanted everything done.", next: "s-menu", quality: "partial" },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-menu",
+      phase: "In the room",
+      text:
+        "Rosa says, 'Yes, of course we want everything.' Daniel looks down and says nothing. The question put the burden of the decision on them and hid your medical advice.",
+      next: "q-conflict",
+    },
+    {
+      kind: "question",
+      id: "q-conflict",
+      phase: "Conflict",
+      prompt: "Rosa says she will call a lawyer. What resources and next steps are there when a family cannot agree?",
+      seconds: 60,
+      modelAnswer: [
+        "Stay calm and keep talking. Offer time and a second meeting.",
+        "Offer the neurosurgeon to speak with the family by phone.",
+        "Involve social work, spiritual care and palliative care.",
+        "Ethics consultation through the hospital.",
+        "The Consent and Capacity Board if the substitute decision maker is not following the Act.",
+      ],
+      rubric: ["ec-s5", "ec-g5"],
+      next: "s-error",
+    },
+    {
+      kind: "say",
+      id: "s-error",
+      phase: "A private word",
+      text:
+        "The primary nurse asks to speak with you. She has found that the PCC was ordered at 08:05 but not given until 09:40. The order was never released to pharmacy. " +
+        "The repeat CT shows the bleed grew from 55 to 61 mL.",
+      next: "q-disclose",
+    },
+    {
+      kind: "question",
+      id: "q-disclose",
+      phase: "Disclosure",
+      prompt: "Will you tell the family? What exactly will you say? Rosa asks, 'Is that why she is dying?'",
+      seconds: 120,
+      modelAnswer: [
+        "Disclose today to Daniel as her substitute decision maker, with Rosa present if he agrees.",
+        "State the facts: the reversal medication was delayed about 95 minutes.",
+        "Apologize sincerely. In Ontario an apology is not an admission of liability.",
+        "Be honest that the bleed was already very large and the effect of the delay is uncertain.",
+        "Do not speculate or blame individuals.",
+        "Explain what will be reviewed and who will follow up.",
+      ],
+      rubric: ["ec-d1", "ec-d2", "ec-d4"],
+      choices: [
+        {
+          id: "c-disclose",
+          label: "I told Daniel and Rosa today what happened, apologized, said the effect on her outcome is uncertain, and explained what happens next.",
+          next: "q-report",
+          quality: "strong",
+        },
+        {
+          id: "c-hide",
+          label: "I decided not to mention it because it probably did not change her outcome.",
+          next: "s-hidden",
+          quality: "unsafe",
+        },
+        { id: "c-blame", label: "I told them a nurse forgot to give the medication.", next: "s-blame", quality: "partial" },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-hidden",
+      phase: "Two weeks later",
+      text:
+        "Rosa requests the chart and sees the order and administration times. She files a complaint with the hospital and the College. The family says the worst part was finding out on their own.",
+      next: "q-report",
+    },
+    {
+      kind: "say",
+      id: "s-blame",
+      phase: "Later that day",
+      text:
+        "Rosa asks for the nurse's name. The nurse hears about it and is distressed. The review later finds the order failed in the electronic system. Blaming a person was not accurate or fair.",
+      next: "q-report",
+    },
+    {
+      kind: "question",
+      id: "q-report",
+      phase: "After disclosure",
+      prompt: "What reporting and follow up happens after the disclosure? What goes in the chart, and what does not?",
+      seconds: 60,
+      modelAnswer: [
+        "Report through the hospital safety reporting system.",
+        "Tell the charge nurse or department lead.",
+        "Consider calling the CMPA for advice.",
+        "Chart: capacity, substitute decision maker, prior wishes, the discussion, code status and the facts of the disclosure.",
+        "Keep the incident report and any quality review out of the chart.",
+      ],
+      rubric: ["ec-d3", "ec-p2", "ec-p3", "ec-d4"],
+      next: "s-comfort",
+    },
+    {
+      kind: "say",
+      id: "s-comfort",
+      phase: "The plan",
+      text: "Daniel asks that his mother be kept comfortable and not intubated. Rosa is crying but says she understands. There is no ward bed yet.",
+      next: "q-comfort",
+    },
+    {
+      kind: "question",
+      id: "q-comfort",
+      phase: "Comfort care",
+      prompt: "What comfort care orders will you write? Are there any notification requirements in Ontario?",
+      seconds: 60,
+      modelAnswer: [
+        "Opioid for dyspnea or distress, e.g. hydromorphone 0.2 to 0.5 mg subcut as needed.",
+        "Glycopyrrolate 0.2 to 0.4 mg subcut for secretions.",
+        "Midazolam for agitation. Mouth care. Stop routine vitals and blood work.",
+        "Private room and open visiting for family.",
+        "Notify Trillium Gift of Life Network as required in Ontario.",
+      ],
+      rubric: ["ec-p1", "ec-p4"],
+      next: "end",
+    },
+    { kind: "end", id: "end", text: "She is moved to a private room with her family. That is the end of the case." },
+  ],
+  domains: [
+    { id: "clinical", name: "Clinical assessment and initial care" },
+    { id: "capacity", name: "Capacity and substitute decision making" },
+    { id: "goc", name: "Goals of care communication" },
+    { id: "disclosure", name: "Disclosure of a patient safety incident" },
+    { id: "dispo", name: "Documentation and disposition" },
+  ],
+  rubric: [
+    {
+      id: "ec-k1",
+      domain: "clinical",
+      text: "Supports the airway with positioning, suction and an adjunct, and does not reflexively intubate before goals are clarified.",
+      points: 2,
+      teaching: "Simple airway measures often buy time. Intubation is a treatment that needs consent when there is time to get it.",
+    },
+    {
+      id: "ec-k2",
+      domain: "clinical",
+      text: "Lowers systolic pressure toward about 140 to 160 with a titratable agent, e.g. labetalol 10 to 20 mg IV, avoiding large rapid drops.",
+      points: 1,
+      teaching: "Early controlled lowering may limit hematoma growth. Avoid big swings in pressure.",
+    },
+    {
+      id: "ec-k3",
+      domain: "clinical",
+      text: "Reverses apixaban with PCC about 50 units/kg IV or per local protocol.",
+      points: 2,
+      teaching: "Factor Xa inhibitor related bleeding is treated with PCC or andexanet. Give it quickly and confirm it was given.",
+    },
+    {
+      id: "ec-k4",
+      domain: "clinical",
+      text: "Consults neurosurgery and states the prognosis in plain terms.",
+      points: 1,
+      teaching: "A clear specialist opinion helps families understand prognosis. Offer the family a direct call if helpful.",
+    },
+    {
+      id: "ec-s1",
+      domain: "capacity",
+      text: "Determines and documents that the patient is incapable of making treatment decisions.",
+      points: 1,
+      teaching: "Capacity is decision specific. Document why she cannot understand or appreciate the decision.",
+    },
+    {
+      id: "ec-s2",
+      domain: "capacity",
+      text: "Identifies the son as attorney for personal care, who ranks above other children in the HCCA hierarchy.",
+      points: 3,
+      critical: true,
+      teaching: "Ontario order: guardian, attorney for personal care, board appointed representative, spouse or partner, children, parents, siblings, other relatives.",
+    },
+    {
+      id: "ec-s3",
+      domain: "capacity",
+      text: "Explains that the substitute decision maker must follow known prior capable wishes that apply, and otherwise act in her best interests.",
+      points: 2,
+      teaching: "The substitute decision maker speaks for the patient, not for themselves. Prior capable wishes come first.",
+    },
+    {
+      id: "ec-s4",
+      domain: "capacity",
+      text: "Knows emergency treatment without consent is permitted when delay would cause serious harm, unless a known prior capable wish refuses it.",
+      points: 1,
+      teaching: "The Health Care Consent Act emergency exception lets you treat while you reach the decision maker.",
+    },
+    {
+      id: "ec-s5",
+      domain: "capacity",
+      text: "Names ethics consultation and the Consent and Capacity Board as routes for unresolved conflict.",
+      points: 1,
+      teaching: "Hospital ethics helps most conflicts. The Board handles disputes about whether the decision maker follows the Act.",
+    },
+    {
+      id: "ec-g1",
+      domain: "goc",
+      text: "Meets the family together in a private room, sits down, and introduces everyone present.",
+      points: 1,
+      teaching: "Setting matters. Sitting down signals time and respect.",
+    },
+    {
+      id: "ec-g2",
+      domain: "goc",
+      text: "Gives a warning shot, then an honest and clear prognosis without jargon.",
+      points: 2,
+      teaching: "A warning shot prepares people for bad news. Then say it plainly and pause.",
+    },
+    {
+      id: "ec-g3",
+      domain: "goc",
+      text: "Makes a recommendation based on her values rather than asking if they want everything done.",
+      points: 2,
+      teaching: "Families should not carry the medical decision alone. Recommend a plan that fits what the patient valued.",
+    },
+    {
+      id: "ec-g4",
+      domain: "goc",
+      text: "Acknowledges the daughter's emotion with empathy and does not argue.",
+      points: 1,
+      teaching: "Anger is often grief. Name the emotion before giving more information.",
+    },
+    {
+      id: "ec-g5",
+      domain: "goc",
+      text: "Involves social work, spiritual care and palliative care.",
+      points: 1,
+      teaching: "A team approach supports the family and the clinicians. Palliative care can help in the emergency department.",
+    },
+    {
+      id: "ec-d1",
+      domain: "disclosure",
+      text: "Discloses the delay promptly to the substitute decision maker and family with facts, a sincere apology, and next steps.",
+      points: 3,
+      critical: true,
+      teaching: "Patients and families have a right to know about harm or possible harm. Disclose early, even before the review is done.",
+    },
+    {
+      id: "ec-d2",
+      domain: "disclosure",
+      text: "Is honest about uncertainty and does not speculate, minimize or blame individuals.",
+      points: 2,
+      critical: true,
+      teaching: "Share what is known. Say what is not yet known and when you will follow up.",
+    },
+    {
+      id: "ec-d3",
+      domain: "disclosure",
+      text: "Reports the incident through the hospital safety reporting system and informs the charge nurse or department lead.",
+      points: 1,
+      teaching: "Reporting drives system fixes. Most errors come from systems, not single people.",
+    },
+    {
+      id: "ec-d4",
+      domain: "disclosure",
+      text: "Knows the Ontario Apology Act protects an apology from being an admission of liability, and may call the CMPA for advice.",
+      points: 1,
+      teaching: "You can say sorry without admitting legal fault. The CMPA can advise on disclosure.",
+    },
+    {
+      id: "ec-p1",
+      domain: "dispo",
+      text: "Writes comfort care orders, e.g. hydromorphone 0.2 to 0.5 mg subcut as needed, glycopyrrolate 0.2 to 0.4 mg subcut for secretions, and mouth care.",
+      points: 1,
+      teaching: "Treat dyspnea, secretions and agitation. Stop tests that do not add comfort.",
+    },
+    {
+      id: "ec-p2",
+      domain: "dispo",
+      text: "Documents capacity, the substitute decision maker, prior wishes, the discussion, the code status and the disclosure facts.",
+      points: 2,
+      teaching: "Good notes let the next team continue the plan without repeating hard conversations.",
+    },
+    {
+      id: "ec-p3",
+      domain: "dispo",
+      text: "Keeps the incident report separate from the medical record.",
+      points: 1,
+      teaching: "Chart the facts of care and disclosure. The incident report and quality review stay in the safety system.",
+    },
+    {
+      id: "ec-p4",
+      domain: "dispo",
+      text: "Notifies Trillium Gift of Life Network as required in Ontario.",
+      points: 1,
+      teaching: "Ontario hospitals must notify Trillium Gift of Life of imminent or actual deaths. They assess donation options.",
+    },
+  ],
+  passThreshold: 0.6,
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

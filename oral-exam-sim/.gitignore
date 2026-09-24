@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+.env.*
+
+# Signing material. Never commit.
+*.jks
+*.keystore
+keystore.properties
+google-services.json
+GoogleService-Info.plist
+*.mobileprovision
+*.p12
+*.cer
+ios_cert.key
+*.certSigningRequest

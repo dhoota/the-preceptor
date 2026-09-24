@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Preceptor: Oral</string>
+    <string name="title_activity_main">Preceptor: Oral</string>
+    <string name="package_name">com.preceptor.oral</string>
+    <string name="custom_url_scheme">com.preceptor.oral</string>
+</resources>
