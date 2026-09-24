@@ -58,7 +58,8 @@ describe("SAMP bank", () => {
         expect(missing, t).toEqual([]);
       }
     });
-    it(`batch ${only} is at least 60 percent short answer`, () => {
+    // Legacy write-in batches only. Expansion batches are MCQ only (tests/samp-quality.test.ts).
+    if (!planned) it(`batch ${only} is at least 60 percent short answer`, () => {
       const qs = target.flatMap((s) => s.questions);
       expect(qs.filter((q) => q.kind === "short").length / qs.length).toBeGreaterThanOrEqual(0.6);
     });
