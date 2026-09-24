@@ -174,7 +174,7 @@ export const PART4: Item[] = [
       stem: "A client receiving chemotherapy has a white blood cell count of 2400/mm3, segmented neutrophils 15% and bands 5%. Calculate the absolute neutrophil count. Which value is correct?",
       rationale:
         "The absolute neutrophil count adds segmented neutrophils and bands, then applies that share to the white cell count. Segmented neutrophils 15% plus bands 5% gives 20%. Twenty percent of 2400/mm3 is 480/mm3. This is below 500/mm3, which is severe neutropenia and a high risk for infection. The nurse puts neutropenic precautions in place and reports the result.",
-      refs: ["Neutropenia is an absolute neutrophil count below 500/mm3, or one expected to fall below 500/mm3 within 48 hours."],
+      refs: ["An absolute neutrophil count below 500/mm3 is severe neutropenia."],
       calc: { expr: "2400 * (15 + 5) / 100", answer: 480, unit: "/mm3", round: 0, steps: ["15 + 5 = 20", "2400 * 20 / 100 = 480"] },
       sources: [FREIFELD, { body: "Medical Council of Canada", work: "Normal Lab Values", year: 2020, url: "https://mcc.ca/examinations-assessments/resources-to-help-with-exam-prep/normal-lab-values/" }],
       canada: "Canadian labs report the absolute neutrophil count as x 10^9/L, with a Medical Council of Canada adult range of 2.0 to 7.5 x 10^9/L. This result reads as 0.48 x 10^9/L, below the 0.5 x 10^9/L cutoff.",

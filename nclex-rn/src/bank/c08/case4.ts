@@ -84,7 +84,7 @@ export const CASE4: CaseStudy = {
         ],
         rationale:
           "The absolute neutrophil count adds mature and band neutrophils and applies the total to the white cell count. Segmented neutrophils 18% plus bands 4% is 22%. 1400/mm3 times 22% is 308/mm3. A count below 500/mm3 is neutropenia. With a temperature of 38.6°C, she has febrile neutropenia.",
-        refs: ["Neutropenia is an absolute neutrophil count below 500/mm3, or one expected to fall below 500/mm3 within 48 hours."],
+        refs: ["In febrile neutropenia guidance, neutropenia means an absolute neutrophil count below 500/mm3, or one expected to fall below 500/mm3 within 48 hours."],
         calc: { expr: "1400 * (18 + 4) / 100", answer: 308, unit: "/mm3", round: 0, steps: ["18 + 4 = 22", "1400 * 22 / 100 = 308"] },
         sources: [SRC.freifeld, { body: "Medical Council of Canada", work: "Normal lab values reference list", year: 2020, url: "https://mcc.ca/examinations-assessments/resources-to-help-with-exam-prep/normal-lab-values/" }],
         canada: "Canadian labs report cell counts in SI units, so the white cell count reads 1.4 x 10^9/L and the absolute neutrophil count 0.31 x 10^9/L. Neutropenia is a count below 0.5 x 10^9/L.",
