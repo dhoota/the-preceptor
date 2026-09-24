@@ -817,7 +817,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Ketamine at 1 to 2 mg/kg is a bronchodilator and keeps blood pressure up. Propofol also relaxes bronchi but causes hypotension in a dehydrated patient with high intrathoracic pressure. Ketamine 0.2 mg/kg is an analgesic dose, not an induction dose.",
+          "Ketamine at 1 to 2 mg/kg is a bronchodilator and keeps blood pressure up. Propofol also relaxes bronchi but causes hypotension, which high intrathoracic pressure makes worse. Ketamine 0.2 mg/kg is an analgesic dose, not an induction dose.",
         keyFeature: { topic: "airway", n: 5 },
         source: "walls",
       },

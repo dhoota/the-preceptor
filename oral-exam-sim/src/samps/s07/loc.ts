@@ -1478,7 +1478,7 @@ export const LOC: Samp[] = [
           { id: "aki", text: "Acute kidney injury", match: ["kidney", "renal", "aki"] },
         ],
         explanation:
-          "Most episodes of hepatic encephalopathy have a precipitant, and treating it is as important as lactulose. A diagnostic paracentesis should be done in any patient with ascites and encephalopathy. A low grade fever raises concern for SBP here.",
+          "Most episodes of hepatic encephalopathy have a precipitant, and treating it is as important as lactulose. If examination finds ascites, a diagnostic paracentesis is indicated to look for SBP. A low grade fever raises concern for SBP here.",
         keyFeature: { topic: "loc", n: 1 },
         source: "aasld-easl-he",
       },

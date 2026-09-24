@@ -863,7 +863,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "You have one free ventilator and one airway team. Four residents arrive together.\nA. A 91-year-old with soot in the nares, normal voice and O2 sat 96%.\nB. A 69-year-old with a mild cough and O2 sat 95%.\nC. An 84-year-old with a documented wish for no intubation, now in respiratory distress.\nD. A 76-year-old with stridor, hoarseness and oropharyngeal swelling, who wants full treatment.\nE. An 88-year-old with 5% partial thickness hand burns.",
+        update: "You have one free ventilator and one airway team. Five residents arrive together.\nA. A 91-year-old with soot in the nares, normal voice and O2 sat 96%.\nB. A 69-year-old with a mild cough and O2 sat 95%.\nC. An 84-year-old with a documented wish for no intubation, now in respiratory distress.\nD. A 76-year-old with stridor, hoarseness and oropharyngeal swelling, who wants full treatment.\nE. An 88-year-old with 5% partial thickness hand burns.",
         prompt: "Which of the following residents should the airway team intubate first?",
         options: [
           "Resident A",
