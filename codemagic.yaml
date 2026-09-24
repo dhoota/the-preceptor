@@ -19,8 +19,8 @@ definitions:
       name: Unit tests and case validation
       script: npm test
     - &launch_gate
-      name: Launch gate. 100 oral cases, 500 SAMPs, every key feature covered
-      script: LAUNCH_GATE=1 npx vitest run tests/cases.test.ts tests/samps.test.ts
+      name: Launch gate. Content minimums and real RevenueCat keys
+      script: LAUNCH_GATE=1 npx vitest run tests/cases.test.ts tests/samps.test.ts tests/platform.test.ts
     - &build_web
       name: Build web bundle (Vite)
       script: npm run build

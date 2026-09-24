@@ -1,6 +1,21 @@
 import { describe, expect, it } from "vitest";
 import { FREE_CASE_COUNT, FREE_SAMP_TOPICS, canOpenCase, canOpenSamp, freeCaseIds, freeSampIds } from "@/lib/access";
-import { NO_ACCESS, PRODUCTS, accessFrom, reconcileAccess, webAdapter, type Access, type PurchasesAdapter } from "@/lib/purchases";
+import {
+  NO_ACCESS,
+  PRODUCTS,
+  RC_KEY_ANDROID,
+  RC_KEY_IOS,
+  RC_OFFERING,
+  accessFrom,
+  allKeysConfigured,
+  ccfpemPackages,
+  findPackage,
+  keysConfigured,
+  reconcileAccess,
+  webAdapter,
+  type Access,
+  type PurchasesAdapter,
+} from "@/lib/purchases";
 import { MAX_ATTEMPTS, createRepo, memoryKV } from "@/lib/storage";
 import { speakable } from "@/lib/speech";
 import { newAttempt } from "@/engine";
@@ -147,6 +162,48 @@ describe("speakable", () => {
       "BP 80 over 50, glucose 2.1 millimoles per litre, give 20 millilitres per kilogram I V",
     );
   });
+});
+
+describe("RevenueCat offering", () => {
+  // The shared RevenueCat project's Current offering belongs to another app.
+  const other = { availablePackages: [{ identifier: "$rc_annual", product: { identifier: "preceptor_ccfp_annual" } }] };
+  const mine = {
+    availablePackages: [
+      { identifier: "complete", product: { identifier: "ccfpem_complete_lifetime" } },
+      { identifier: "written", product: { identifier: "ccfpem_written_lifetime" } },
+      { identifier: "oral", product: { identifier: "oral_full_lifetime" } },
+    ],
+  };
+  it("uses the ccfpem offering by id, never offerings.current", () => {
+    expect(RC_OFFERING).toBe("ccfpem");
+    expect(ccfpemPackages({ current: other, all: { default: other, ccfpem: mine } })).toBe(mine.availablePackages);
+    expect(ccfpemPackages({ current: other, all: { default: other } })).toEqual([]);
+    expect(ccfpemPackages(null)).toEqual([]);
+  });
+  it("finds packages complete, written and oral", () => {
+    for (const k of ["complete", "written", "oral"] as const) expect(findPackage(mine.availablePackages, k)?.identifier).toBe(k);
+    const byProduct = [{ identifier: "x", product: { identifier: "oral_full_lifetime" } }];
+    expect(findPackage(byProduct, "oral")?.identifier).toBe("x");
+    expect(findPackage(other.availablePackages, "complete")).toBeUndefined();
+  });
+  it("never reads offerings.current in the source", async () => {
+    const { readFileSync } = await import("node:fs");
+    const src = readFileSync(new URL("../src/lib/purchases.ts", import.meta.url), "utf8");
+    expect(src.replace(/\/\/.*$|\/\*[\s\S]*?\*\//gm, "")).not.toMatch(/\.current\b/);
+  });
+  it("has the Android public key and checks keys per platform", () => {
+    expect(RC_KEY_ANDROID).toMatch(/^goog_[A-Za-z0-9]+$/);
+    expect(keysConfigured("android")).toBe(true);
+    expect(keysConfigured("web")).toBe(false);
+    expect(RC_KEY_IOS.startsWith("appl_")).toBe(true);
+  });
+  // Release builds run LAUNCH_GATE=1. They must not ship with a placeholder key.
+  if (process.env.LAUNCH_GATE)
+    it("launch gate: both store keys are real", () => {
+      expect(RC_KEY_IOS, "iOS RevenueCat key is still a placeholder").not.toContain("REPLACE");
+      expect(RC_KEY_ANDROID, "Android RevenueCat key is still a placeholder").not.toContain("REPLACE");
+      expect(allKeysConfigured()).toBe(true);
+    });
 });
 
 describe("Codemagic", () => {

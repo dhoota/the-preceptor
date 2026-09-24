@@ -10,12 +10,20 @@
  * Owner setup is in LAUNCH.md.
  */
 
-// Public SDK keys. Safe to ship in the app. REPLACE with the keys from
-// RevenueCat > Project > API keys. Placeholders keep purchases disabled.
+// Public SDK keys. Safe to ship in the app. From RevenueCat > Project > API
+// keys. A placeholder keeps purchases off on that platform, and the launch
+// gate (LAUNCH_GATE=1 tests/platform.test.ts) fails while one remains.
+// The iOS key arrives once the App Store in-app purchase key is uploaded.
 export const RC_KEY_IOS = "appl_REPLACE_WITH_CCFPEM_IOS_PUBLIC_KEY";
-export const RC_KEY_ANDROID = "goog_REPLACE_WITH_CCFPEM_ANDROID_PUBLIC_KEY";
+export const RC_KEY_ANDROID = "goog_ytowRSJmXGIejpeGDKurvANZWCy";
 
 export const ENTITLEMENTS = { written: "written_access", oral: "oral_full_access" } as const;
+
+/**
+ * All Preceptor apps share one RevenueCat project, and its Current offering
+ * belongs to another app. Always fetch this offering by id. Never use
+ * offerings.current.
+ */
 export const RC_OFFERING = "ccfpem";
 
 export type ProductKey = "complete" | "written" | "oral";
@@ -61,8 +69,18 @@ export function isNative(): boolean {
   return platform() === "ios" || platform() === "android";
 }
 
-export function keysConfigured(): boolean {
-  return !RC_KEY_IOS.includes("REPLACE") && !RC_KEY_ANDROID.includes("REPLACE");
+const isPlaceholder = (key: string) => key.includes("REPLACE");
+
+/** True when the key for this platform is real. Web never has one. */
+export function keysConfigured(p: string = platform()): boolean {
+  if (p === "ios") return !isPlaceholder(RC_KEY_IOS);
+  if (p === "android") return !isPlaceholder(RC_KEY_ANDROID);
+  return false;
+}
+
+/** Both store keys are real. Required before a release build. */
+export function allKeysConfigured(): boolean {
+  return !isPlaceholder(RC_KEY_IOS) && !isPlaceholder(RC_KEY_ANDROID);
 }
 
 let mod: RCModule | null = null;
@@ -95,10 +113,22 @@ export function accessFrom(ci: CustomerInfoLike): Access {
   return { written: Boolean(active[ENTITLEMENTS.written]), oral: Boolean(active[ENTITLEMENTS.oral]) };
 }
 
+type PackageLike = { identifier?: string; product?: { identifier?: string; priceString?: string } };
+type OfferingsLike = { all?: Record<string, { availablePackages?: PackageLike[] } | undefined>; current?: unknown } | null | undefined;
+
+/** Packages of the CCFP-EM offering only. Never falls back to offerings.current. */
+export function ccfpemPackages<P extends PackageLike>(offerings: OfferingsLike): P[] {
+  return (offerings?.all?.[RC_OFFERING]?.availablePackages ?? []) as P[];
+}
+
+/** The package for a product: by package id (complete, written, oral), else by store product id. */
+export function findPackage<P extends PackageLike>(pkgs: P[], key: ProductKey): P | undefined {
+  return pkgs.find((p) => p.identifier === key) ?? pkgs.find((p) => p.product?.identifier === PRODUCTS[key].id);
+}
+
 async function packages(m: RCModule) {
   const offerings = await m.Purchases.getOfferings();
-  const off = offerings?.all?.[RC_OFFERING] ?? offerings?.current ?? null;
-  return off?.availablePackages ?? [];
+  return ccfpemPackages<(typeof offerings.all)[string]["availablePackages"][number]>(offerings);
 }
 
 export const revenueCat: PurchasesAdapter = {
@@ -124,7 +154,7 @@ export const revenueCat: PurchasesAdapter = {
     const m = await rc();
     if (!m) return "unavailable";
     try {
-      const pkg = (await packages(m)).find((p) => p.product?.identifier === PRODUCTS[product].id);
+      const pkg = findPackage(await packages(m), product);
       if (!pkg) return "unavailable";
       const res = await m.Purchases.purchasePackage({ aPackage: pkg });
       const got = accessFrom(res?.customerInfo);
@@ -141,7 +171,7 @@ export const revenueCat: PurchasesAdapter = {
       const pkgs = await packages(m);
       const out: Partial<Record<ProductKey, string>> = {};
       for (const key of Object.keys(PRODUCTS) as ProductKey[]) {
-        const p = pkgs.find((x) => x.product?.identifier === PRODUCTS[key].id);
+        const p = findPackage(pkgs, key);
         if (p?.product?.priceString) out[key] = p.product.priceString;
       }
       return out;

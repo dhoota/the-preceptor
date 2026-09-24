@@ -12,15 +12,11 @@ The app covers both components of the CFPC Examination of Added Competence in Em
 2. Start with the adversarial review reports in `docs/reviews/`. Each batch had a separate clinical review against current Canadian guidance. The reports list what was corrected, the sources checked and what still needs a physician's eye.
 3. For SAMPs, read each answer key as an examiner would. Check the acceptable answers, the required count, the unacceptable answers and anything flagged dangerous. Check that the match phrases would catch the ways a candidate might write a correct answer.
 4. When an item is signed off, change `reviewed: false` to `reviewed: true` and add its id to a sign-off file in `docs/`. Bump `version` if you edit it. If a signed-off item changes later, remove its id and set it back to `reviewed: false`. The Draft tag disappears once reviewed.
-5. Run `npm test`. Release builds also run the launch gate: at least 100 oral cases with at least 5 per area, at least 500 SAMPs, and every CFPC key feature tested by at least one written question.
+5. Run `npm test`. Release builds also run the launch gate (`LAUNCH_GATE=1`): the content minimums in `tests/cases.test.ts` and `tests/samps.test.ts`, and real RevenueCat keys for both stores in `tests/platform.test.ts`. The gate fails while either key is still a placeholder.
 
-## 1. Give the app its own repo
+## 1. Repository and Codemagic app
 
-Codemagic only reads `codemagic.yaml` from a repo root. The other Preceptor apps each have their own repo. Do the same here.
-
-1. Create a private repo, for example `dhoota/preceptor-ccfpem`.
-2. Copy the contents of `oral-exam-sim/` into its root.
-3. Push to `main`.
+The Codemagic app "Preceptor: CCFP-EM" (id 6ab4a0114e7acd498ad4caf1) builds from `dhoota/the-preceptor`. Codemagic reads `codemagic.yaml` only from the repository root, so the root holds a copy of `oral-exam-sim/codemagic.yaml` with `working_directory: oral-exam-sim` on every workflow. Keep the two files in step. `tests/platform.test.ts` checks that they match.
 
 ## 2. App identity
 
@@ -61,19 +57,24 @@ The app record exists under `com.preceptor.oral`. Update the name to Preceptor: 
 
 ## 5. RevenueCat
 
+All Preceptor apps share one RevenueCat project. Its Current offering belongs to another app, so this app fetches its offering by id (`offerings.all["ccfpem"]`) and never reads `offerings.current`. Do not make `ccfpem` the Current offering.
+
 1. Products: import all three product IDs from both stores.
 2. Entitlements:
    - `written_access`: attach `ccfpem_complete_lifetime` and `ccfpem_written_lifetime`.
    - `oral_full_access`: attach `ccfpem_complete_lifetime` and `oral_full_lifetime`.
-3. Offerings: create `ccfpem` with three packages (custom identifiers `complete`, `written`, `oral`), each holding its product from both stores. Mark it Current.
-4. Paste the two public SDK keys into `src/lib/purchases.ts` in place of the `REPLACE` placeholders.
+   Complete grants both.
+3. Offering `ccfpem` with three packages, custom identifiers `complete`, `written` and `oral`, each holding its product from both stores. The app finds a package by its identifier, then by product ID.
+4. Public SDK keys in `src/lib/purchases.ts`:
+   - Android: done (`goog_...`).
+   - iOS: still a placeholder. Upload the App Store in-app purchase key in RevenueCat, then paste the `appl_...` key. Until then purchases stay off on iOS and the release launch gate fails.
 5. Test with a sandbox Apple ID and a Play licence tester. Buy Written, then Oral, confirm both open. Delete, reinstall, Restore.
 
 A candidate who already owns one component sees only the other one offered. Complete is shown only to someone who owns neither.
 
 ## 6. Codemagic
 
-1. Add the new repo in Codemagic. Link the existing `preceptor_signing` and `preceptor_play` groups and the `preceptor_appstore` integration. Reuse the same `IOS_CERT_KEY`.
+1. The Codemagic app "Preceptor: CCFP-EM" uses the root `codemagic.yaml` (section 1). Link the existing `preceptor_signing` and `preceptor_play` groups and the `preceptor_appstore` integration. Reuse the same `IOS_CERT_KEY`.
 2. Workflows: `android-debug`, `android-release`, `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only).
 3. Every workflow runs `npm test`. Release workflows also run the launch gate.
 
