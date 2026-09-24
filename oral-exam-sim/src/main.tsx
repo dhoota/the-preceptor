@@ -4,13 +4,30 @@ import "./styles.css";
 import { App } from "./App";
 import { AppProvider } from "./state";
 
-createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <AppProvider>
-      <App />
-    </AppProvider>
-  </React.StrictMode>,
-);
+async function boot() {
+  // Dev only: ?seed=1 loads a sample history for screenshots. Stripped from production builds.
+  if (import.meta.env.DEV && new URLSearchParams(location.search).has("seed")) {
+    const { seedHistory } = await import("./dev/seed");
+    const { attempts, deck } = seedHistory();
+    localStorage.setItem("oral_attempts_v1", JSON.stringify(attempts));
+    localStorage.setItem("oral_review_deck_v1", JSON.stringify(deck));
+    localStorage.setItem("oral_settings_v1", JSON.stringify({ acceptedDisclaimer: true, speak: false, rate: 1, revealEachQuestion: true }));
+    history.replaceState(null, "", location.pathname);
+  }
+  render();
+}
+
+function render() {
+  createRoot(document.getElementById("root")!).render(
+    <React.StrictMode>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </React.StrictMode>,
+  );
+}
+
+boot();
 
 // Hide the app content in the task switcher, as the other Preceptor apps do.
 (async () => {

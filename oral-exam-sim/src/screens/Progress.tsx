@@ -4,11 +4,29 @@ import { BAND_LABEL, STANDARD, heatmap, readiness, suggestNext, trend, type Tren
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
+const AREA_SHORT: Record<string, string> = {
+  resus: "Resus",
+  cardio: "Cardio",
+  resp: "Resp",
+  neuro: "Neuro",
+  trauma: "Trauma",
+  peds: "Peds",
+  obgyn: "OB and GYN",
+  tox: "Tox",
+  enviro: "Enviro",
+  psych: "Mental health",
+  id: "Infection",
+  geri: "Geriatrics",
+  procedures: "Procedures",
+  ethics: "Ethics",
+  comm: "Comm",
+  systems: "Systems",
+};
 const bin = (p: number) => (p < 40 ? 0 : p < 60 ? 1 : p < 70 ? 2 : p < 85 ? 3 : 4);
 const SHORT: Record<string, string> = {
-  assessment: "Assess",
+  assessment: "Dx",
   resuscitation: "Resus",
-  management: "Manage",
+  management: "Mgmt",
   communication: "Comm",
   disposition: "Dispo",
   professionalism: "Prof",
@@ -113,7 +131,7 @@ export function Progress({ go }: { go: Go }) {
         <table className="heat" style={{ marginTop: 10 }}>
           <thead>
             <tr>
-              <th className="row">Area</th>
+              <th className="rh">Area</th>
               {heat.columns.map((col) => (
                 <th key={col.id} title={col.label}>
                   {SHORT[col.id]}
@@ -124,12 +142,11 @@ export function Progress({ go }: { go: Go }) {
           <tbody>
             {heat.rows.map((r) => (
               <tr key={r.area}>
-                <th className="row" scope="row">
-                  {r.label}
-                  <div className="muted mono" style={{ fontSize: 10.5 }}>
+                <th className="rh" scope="row" title={r.label}>
+                  <span className="an">{AREA_SHORT[r.area] ?? r.label}</span>
+                  <span className="muted mono ac">
                     {r.tried}/{r.total}
-                    {r.percent !== null && ` · ${r.percent}%`}
-                  </div>
+                  </span>
                 </th>
                 {r.cells.map((cell, i) =>
                   cell.percent === null ? (

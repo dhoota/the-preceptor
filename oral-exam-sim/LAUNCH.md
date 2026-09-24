@@ -6,11 +6,12 @@ The app is fully offline. It calls no AI and no server of ours. The only network
 
 ## 0. Before anything else
 
-1. Review all five cases. Each case file is in `src/cases/`. Each one ships with `reviewed: false`.
-2. Read every stem, question, model answer and rubric line. Check every dose and threshold. The reviewer notes are at the end of this file.
-3. When a case is signed off, change `reviewed: false` to `reviewed: true` in that file. Bump `version` if you edit it.
-4. The "Draft" tag disappears from a case once it is reviewed. Do not ship a store build with draft cases unless you mean to.
-5. Run `npm test`. It checks every case graph, the house style and the offline rule.
+1. Review all 100 cases. They are in `src/cases/seed/` and `src/cases/batch01/` to `batch10/`. Each one ships with `reviewed: false`. The blueprint is in `docs/BLUEPRINT.md`.
+2. Start with the adversarial review reports in `docs/reviews/`. Each batch had a separate clinical review against current Canadian guidance. The reports list what was corrected, the sources checked and what still needs a physician's eye.
+3. Read every stem, question, choice feedback, model answer and rubric line. Check every dose and threshold. The seed case notes are at the end of this file.
+4. When a case is signed off, change `reviewed: false` to `reviewed: true` in that file. Bump `version` if you edit it.
+5. The "Draft" tag disappears from a case once it is reviewed. Do not ship a store build with draft cases unless you mean to.
+6. Run `npm test`. It checks every case graph, the house style and the offline rule. Release builds also run `LAUNCH_GATE=1`, which fails unless there are at least 100 cases and at least 5 in every blueprint area.
 
 ## 1. Give the app its own repo
 
@@ -91,7 +92,7 @@ The workflows mirror Preceptor CCFP and reuse its groups. Nothing new is secret.
    - `android-release`: signed APK and AAB.
    - `android-play-internal`: manual. Uploads to the Play internal track only.
    - `ios-release`: signed IPA to TestFlight only.
-5. Every workflow runs `npm test` before building. A broken case or a network call in the source fails the build.
+5. Every workflow runs `npm test` before building. A broken case or a network call in the source fails the build. Release workflows also run the launch gate.
 6. The Play upload key: you can reuse the Preceptor keystore as the upload key. Play App Signing holds the real app signing key.
 
 ## 7. Price proposal
@@ -118,7 +119,14 @@ If you want tiers later, add case packs as separate non-consumables (for example
 
 ## 8. Store listing
 
-Copy is in `store/listing.md`. Screenshots are in `store/screenshots/`. Retake them on a real device once the cases are reviewed. Apple needs 6.9 inch and 13 inch iPad sizes. Play needs phone and 7 inch tablet shots.
+Everything for the store records is in `store/`:
+
+- `store/listing.md`: identifiers, name, subtitle, promotional text, keywords, description, What's New, Play short and full description, release notes, privacy answers for both stores, age rating answers and review notes. `tests/listing.test.ts` checks every field against the store character limits and the house style.
+- `store/screenshots/iphone-6.9/` (1320 by 2868), `iphone-6.5/` (1284 by 2778), `ipad-13/` (2064 by 2752) and `play-phone/` (1080 by 1920). Eight captioned screens each.
+- `store/graphics/play-icon-512.png` and `store/graphics/play-feature-1024x500.png`.
+- The App Store icon (1024) comes from `assets/icon-only.png` through the Xcode asset catalog.
+
+To regenerate the screenshots after content changes, run `npm run dev`, then `npx -y -p playwright@1 node store/tools/make-assets.mjs`. The script loads a sample history with `?seed=1`, which only works in the dev server.
 
 ## 9. Website
 

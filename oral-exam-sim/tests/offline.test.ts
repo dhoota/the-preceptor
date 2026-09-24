@@ -23,11 +23,10 @@ const FORBIDDEN = [
   /new\s+WebSocket/,
   /EventSource/,
   /navigator\.sendBeacon/,
-  /anthropic/i,
-  /openai/i,
-  /supabase/i,
-  /stripe/i,
-  /api_key|apiKey\s*:\s*process\.env/i,
+  // SDK imports, not plain words. Case text may say "stripe" or "open AI" clinically.
+  /(from|import|require)\s*\(?\s*["'](@anthropic-ai|anthropic|openai|@supabase|supabase|stripe|axios|firebase|@google)/i,
+  /api\.anthropic\.com|api\.openai\.com/i,
+  /process\.env/,
 ];
 
 describe("offline guarantee", () => {
