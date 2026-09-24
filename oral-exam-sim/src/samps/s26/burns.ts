@@ -50,7 +50,7 @@ export const BURNS_S26: Samp[] = [
         options: ["18%", "27%", "31.5%", "36%", "45%"],
         correct: 1,
         explanation:
-          "Deep partial thickness burns of the anterior trunk count 18% and the anterior surface of each arm counts 4.5%, so 18 + 4.5 + 4.5 = 27%. The erythema on her neck has no blisters and blanches, so it is superficial and is left out of the TBSA. Adding the front of the neck gives about 31.5%, which overstates the burn and the fluid. 36% would count both arms in full. 18% counts the trunk and forgets the arms.",
+          "Deep partial thickness burns of the anterior trunk count 18% and the anterior surface of each arm counts 4.5%, so 18 + 4.5 + 4.5 = 27%. The erythema on her neck has no blisters and blanches, so it is superficial and is left out of the TBSA. 31.5% adds 4.5% for the front of the head and neck, but her face is spared and the neck erythema is superficial, so it overstates the burn and the fluid. 36% would count both arms in full. 18% counts the trunk and forgets the arms.",
         keyFeature: { topic: "burns", n: 4 },
         source: "aba-referral",
       },
@@ -183,11 +183,11 @@ export const BURNS_S26: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following investigations is most important to add because of her long time on the floor?",
+        prompt: "Which of the following blood tests is most important to add for her now?",
         options: ["Blood cultures, two sets", "Carboxyhemoglobin level", "Creatine kinase level", "Serum lipase level", "Thyroid stimulating hormone"],
         correct: 2,
         explanation:
-          "About 16 hours pinned on the floor, a deep contact burn and dark brown urine point to rhabdomyolysis, so creatine kinase is needed along with creatinine and potassium. A carboxyhemoglobin level adds little because an electric heater burns no fuel and makes no carbon monoxide. Her low grade temperature fits prolonged immobility and tissue injury better than bacteremia at this stage. Lipase and thyroid testing do not change her early management.",
+          "Up to 16 hours on the floor, a deep contact burn and dark brown urine point to rhabdomyolysis, so creatine kinase is needed along with creatinine and potassium. A carboxyhemoglobin level adds little because an electric heater burns no fuel and makes no carbon monoxide. Her low grade temperature fits prolonged immobility and tissue injury better than bacteremia at this stage. Lipase and thyroid testing do not change her early management.",
         keyFeature: { topic: "burns", n: 1 },
         source: "bosch-rhabdo",
       },
@@ -338,7 +338,7 @@ export const BURNS_S26: Samp[] = [
         options: ["Burn over 5% TBSA at any strength", "Concentrated acid over 1% TBSA", "Delayed onset of pain", "Household product source", "Inhalation of the fumes", "Normal skin appearance", "Pain limited to the fingertips"],
         correct: [0, 1, 4],
         explanation:
-          "Systemic toxicity with hypocalcemia, hypomagnesemia and arrhythmia is a risk after any burn with acid stronger than 50%, which includes concentrated acid over 1% TBSA, after any strength on more than 5% TBSA, and after inhalation or ingestion. Delayed pain, household products and near normal skin all point to a dilute acid, as in her case. Pain limited to the fingertips reflects a small area. None of these three raises systemic risk on its own.",
+          "Systemic toxicity with hypocalcemia, hypomagnesemia and arrhythmia is a risk after any burn with acid stronger than 50%, which includes concentrated acid over 1% TBSA, after any strength on more than 5% TBSA, and after inhalation or ingestion. Delayed pain, household products and near normal skin all point to a dilute acid, as in her case. Pain limited to the fingertips reflects a small area. None of these four raises systemic risk on its own.",
         keyFeature: { topic: "burns", n: 1 },
         source: "mckee-hf",
       },
@@ -370,7 +370,7 @@ export const BURNS_S26: Samp[] = [
         kind: "single",
         update: "He is intubated. After 1 L of Ringer's lactate his BP is 82/48 mmHg. Carboxyhemoglobin is 18%. Lactate is 12 mmol/L. Hydroxocobalamin is stocked in the department.",
         prompt: "Which of the following is the most appropriate approach to his suspected cyanide poisoning?",
-        options: ["Await a whole blood cyanide level", "Give hydroxocobalamin 5 g IV now", "Hyperbaric oxygen before any antidote", "Repeat the lactate after 1 L more fluid", "Start norepinephrine and reassess"],
+        options: ["Await a whole blood cyanide level", "Give hydroxocobalamin IV now", "Hyperbaric oxygen before any antidote", "Repeat the lactate after 1 L more fluid", "Start norepinephrine and reassess"],
         correct: 1,
         explanation:
           "An enclosed space fire with burning foam, coma, hypotension that persists after fluid and a lactate of 12 mmol/L point to cyanide, so hydroxocobalamin 5 g IV over 15 minutes is given now on clinical grounds. A blood cyanide level takes hours to return and cannot guide emergency treatment. Hyperbaric oxygen is aimed at carbon monoxide, and moving an unstable patient to a chamber delays the antidote. Repeating the lactate after more fluid lets cyanide keep blocking cellular respiration. A vasopressor may be needed later, but it does not reverse the cause of his shock.",
@@ -392,10 +392,10 @@ export const BURNS_S26: Samp[] = [
         id: "q4",
         kind: "single",
         prompt: "Which of the following ventilator oxygen settings is most appropriate for him over the first hours?",
-        options: ["FiO2 0.21 once the lactate falls", "FiO2 0.4 titrated to SpO2 above 94%", "FiO2 0.6 with PEEP of 15 cmH2O", "FiO2 1.0 until carboxyhemoglobin clears", "FiO2 titrated to SpO2 of 88 to 92%"],
+        options: ["FiO2 0.21 after the lactate falls", "FiO2 0.4 aiming for SpO2 above 94%", "FiO2 0.6 plus PEEP of 15 cmH2O", "FiO2 1.0 until carboxyhemoglobin clears", "FiO2 weaned to SpO2 of 88 to 92%"],
         correct: 3,
         explanation:
-          "With a carboxyhemoglobin of 18%, an FiO2 of 1.0 shortens the half life of carbon monoxide and is kept until the level is normal, while hydroxocobalamin treats the cyanide. A standard pulse oximeter reads carboxyhemoglobin as oxyhemoglobin, so his SpO2 overstates his oxygen content, and weaning the FiO2 to any SpO2 target, above 94% or 88 to 92%, undertreats the carbon monoxide. Dropping to room air once the lactate falls ignores carbon monoxide still bound to hemoglobin. High PEEP does not speed carbon monoxide elimination and can lower his BP further.",
+          "With a carboxyhemoglobin of 18%, an FiO2 of 1.0 shortens the half life of carbon monoxide and is kept until the level is normal, while hydroxocobalamin treats the cyanide. A standard pulse oximeter reads carboxyhemoglobin as oxyhemoglobin, so his SpO2 overstates his oxygen content, and weaning the FiO2 to any SpO2 target, above 94% or 88 to 92%, undertreats the carbon monoxide. Dropping to room air after the lactate falls ignores carbon monoxide still bound to hemoglobin. High PEEP does not speed carbon monoxide elimination and can lower his BP further.",
         keyFeature: { topic: "burns", n: 1 },
         source: "hampson-co",
       },
@@ -427,10 +427,10 @@ export const BURNS_S26: Samp[] = [
         id: "q2",
         kind: "single",
         prompt: "Which of the following spinal injuries is most likely given his mechanism and heel findings?",
-        options: ["Atlantoaxial dislocation", "Cervical facet dislocation", "Lumbar burst fracture", "Odontoid peg fracture", "Thoracic chance fracture"],
+        options: ["Atlantoaxial dislocation", "Cervical facet dislocation", "Lumbar burst fracture", "Odontoid peg fracture", "Thoracic Chance fracture"],
         correct: 2,
         explanation:
-          "A fall onto the feet sends an axial load up through the heels to the thoracolumbar junction, and calcaneal fractures are linked with lumbar burst fractures. His back pain fits that pattern, so the thoracolumbar spine needs CT. A chance fracture is a flexion distraction injury, classically from a lap belt. Cervical facet, odontoid and atlantoaxial injuries follow head and neck mechanisms, and he has no neck pain in the stem.",
+          "A fall onto the feet sends an axial load up through the heels to the thoracolumbar junction, and calcaneal fractures are linked with lumbar burst fractures. His back pain fits that pattern, so the thoracolumbar spine needs CT. A Chance fracture is a flexion distraction injury, classically from a lap belt. Cervical facet, odontoid and atlantoaxial injuries follow head and neck mechanisms, and he has no neck pain in the stem.",
         keyFeature: { topic: "burns", n: 1 },
         source: "atls",
       },
@@ -498,7 +498,7 @@ export const BURNS_S26: Samp[] = [
         options: ["19 mL/hour", "38 mL/hour", "76 mL/hour", "100 mL/hour", "150 mL/hour"],
         correct: 1,
         explanation:
-          "For an adult with a thermal burn the urine output target is 0.5 mL/kg/hour, which is 38 mL/hour at 76 kg. Aiming higher, at 76 mL/hour or 1 mL/kg/hour, drives excess fluid and worsens edema in the burned arm and chest. 100 mL/hour is the higher goal used after high voltage electrical injury with pigmented urine, which he does not have. 150 mL/hour is about 2 mL/kg/hour, beyond even that goal. 19 mL/hour accepts under-resuscitation.",
+          "For an adult with a thermal burn the urine output target is 0.5 mL/kg/hour, which is 38 mL/hour at 76 kg. Aiming higher, at 76 mL/hour or 1 mL/kg/hour, drives excess fluid and worsens edema in the burned arm and chest. 100 mL/hour is the higher goal used after high voltage electrical injury with pigmented urine, and his is a flame burn. 150 mL/hour is about 2 mL/kg/hour, beyond even that goal. 19 mL/hour accepts under-resuscitation.",
         keyFeature: { topic: "burns", n: 4 },
         source: "abls",
       },
@@ -578,7 +578,7 @@ export const BURNS_S26: Samp[] = [
         options: ["Dexamethasone and transfer awake", "Intubate before the transfer", "Nasal airway and transfer awake", "Nebulized epinephrine and transfer", "Transfer awake with a paramedic"],
         correct: 1,
         explanation:
-          "A deep facial and neck burn of this size, singed nasal hair, swollen lips and a change in voice predict airway swelling that will peak during a 4 hour flight, and large volume resuscitation will add to it. Intubating now, in a controlled setting, is safer than attempting it in the aircraft. Dexamethasone and nebulized epinephrine do not prevent burn edema. A nasal airway does not protect the larynx. A paramedic escort cannot solve a failed airway at altitude.",
+          "A deep facial and neck burn of this size, singed nasal hair, swollen lips and a change in voice predict airway swelling that will worsen during a 4 hour flight, and large volume resuscitation will add to it. Intubating now, in a controlled setting, is safer than attempting it in the aircraft. Dexamethasone and nebulized epinephrine do not prevent burn edema. A nasal airway does not protect the larynx. A paramedic escort cannot solve a failed airway at altitude.",
         keyFeature: { topic: "burns", n: 2 },
         source: "walker-inhalation",
       },
@@ -646,7 +646,7 @@ export const BURNS_S26: Samp[] = [
         options: ["Admit for IV analgesia", "Discharge with burn clinic follow-up", "Early grafting by plastic surgery", "Transfer to a burn centre", "No follow-up after discharge"],
         correct: 1,
         explanation:
-          "A superficial partial thickness burn of about 3.5% in a healthy adult who can manage her own dressings and lives with support can be treated as an outpatient, with review in a burn clinic within a few days to confirm healing. Partial thickness burns under 10% call for consultation, not transfer. Admission for IV analgesia is not needed when oral analgesia controls her pain. Burns that blanch and are moist usually heal without grafting. Discharge without follow-up misses burns that deepen over the first days.",
+          "A superficial partial thickness burn of about 3.5% in a healthy adult who can manage her own dressings and lives with support can be treated as an outpatient, with review in a burn clinic within a few days to confirm healing. Partial thickness burns under 10% call for consultation, not transfer. Admission for IV analgesia is not needed for pain of 6 out of 10 from a burn of this size, which oral analgesia can control. Burns that blanch and are moist usually heal without grafting. Discharge without follow-up misses burns that deepen over the first days.",
         keyFeature: { topic: "burns", n: 5 },
         source: "aba-referral",
       },
@@ -670,7 +670,7 @@ export const BURNS_S26: Samp[] = [
     topic: "burns",
     title: "Warming his feet",
     stem:
-      "A 66-year-old man presents to the emergency department with painless blisters on both feet. Two days ago he soaked his feet in a basin of hot water to warm them after shovelling snow. He did not notice the water was too hot. He has type 2 diabetes with peripheral neuropathy and takes metformin and insulin glargine. He lives alone on a farm. His last tetanus booster was 12 years ago after a full primary series.\n\nThere are burns over the soles and the backs of both feet up to the ankles. Most areas are blistered and pink, and two areas on the left sole are white, dry and do not blanch. Monofilament sensation is absent in both feet. Capillary glucose is 16.8 mmol/L.",
+      "A 66-year-old man presents to the emergency department with painless blisters on both feet. Two days ago he soaked his feet in a basin of hot water to warm them after shovelling snow. He did not notice the water was too hot. He has type 2 diabetes with peripheral neuropathy and takes metformin and insulin glargine. He lives alone on a farm. His last tetanus booster was 12 years ago after a full primary series.\n\nThere are burns over the soles and the backs of both feet up to the ankles, about 7% TBSA. Most areas are blistered and pink, and two areas on the left sole are white, dry and do not blanch. Monofilament sensation is absent in both feet. Capillary glucose is 16.8 mmol/L.",
     vitals: { temperature: "36.9°C oral", pulse: "88/minute", resp: "16/minute", bp: "142/84 mmHg", o2sat: "97% on room air", weight: "94 kg" },
     questions: [
       {
@@ -716,7 +716,7 @@ export const BURNS_S26: Samp[] = [
     topic: "burns",
     title: "A mark on the back of the hand",
     stem:
-      "A 14-month-old girl is brought to the emergency department by her father, who says she touched a hot iron yesterday while he was ironing. He did not seek care until her daycare asked about the wound this morning. She is cruising along furniture but not yet walking alone.\n\nShe is quiet and watchful. On the back of the right hand there is a sharply outlined, triangular, partial thickness burn with the shape of an iron's sole plate. The palm is not burned. On the left buttock there is a round, crusted burn about 8 mm across that is partly healed. There is no bruising elsewhere. The examination is otherwise normal.",
+      "A 14-month-old girl is brought to the emergency department by her father, who says she touched a hot iron yesterday while he was ironing. He did not seek care until her daycare asked about the wound this morning. She is cruising along furniture but not yet walking alone. Her immunizations are up to date.\n\nShe is quiet and watchful. On the back of the right hand there is a sharply outlined, triangular, partial thickness burn with the shape of an iron's sole plate. The palm is not burned. On the left buttock there is a round, crusted burn about 8 mm across that is partly healed. There is no bruising elsewhere. The examination is otherwise normal.",
     vitals: { temperature: "36.8°C axillary", pulse: "124/minute", resp: "28/minute", bp: "92/58 mmHg", o2sat: "99% on room air", weight: "10 kg" },
     questions: [
       {
@@ -760,7 +760,7 @@ export const BURNS_S26: Samp[] = [
         options: ["ibuprofen 50 mg PO", "ibuprofen 100 mg PO", "ibuprofen 200 mg PO", "ibuprofen 400 mg PO", "ibuprofen 600 mg PO"],
         correct: 1,
         explanation:
-          "A small, day old partial thickness burn in a calm toddler causes mild to moderate pain, and ibuprofen at 10 mg/kg is the first choice, which is 100 mg at 10 kg. 50 mg is only 5 mg/kg and underdoses her. 200 mg is 20 mg/kg, twice the dose. 400 mg is an adult dose. 600 mg is the adult maximum single dose and is 60 mg/kg for her.",
+          "A small, day old partial thickness burn in a quiet toddler causes mild to moderate pain, and ibuprofen at 10 mg/kg is the first choice, which is 100 mg at 10 kg. 50 mg is only 5 mg/kg and underdoses her. 200 mg is 20 mg/kg, twice the dose. 400 mg is an adult dose. 600 mg is a large adult dose and is 60 mg/kg for her.",
         keyFeature: { topic: "burns", n: 3 },
         source: "trekk-pain",
       },
@@ -783,7 +783,7 @@ export const BURNS_S26: Samp[] = [
         options: ["Contact with wet concrete at work", "Exposure to cold water", "New soap or detergent at home", "Recent sun exposure", "Use of vibrating power tools"],
         correct: 0,
         explanation:
-          "Severe, delayed pain with blisters confined to the skin under wet gloves and knee pads, and skin that feels slippery, point to an alkali burn, and wet cement or concrete is the common source. Asking directly about chemical contact at work is the key step. Cold exposure causes numbness and pallor, not blistered burns. A new soap causes itchy dermatitis. Sun exposure spares skin covered by gloves. Vibrating tools cause numbness and blanching of the fingers, not burns of the knees.",
+          "Severe, delayed pain with blisters confined to the skin under his gloves and knee pads, and skin that feels slippery, point to an alkali burn, and wet cement or concrete is the common source. Asking directly about chemical contact at work is the key step. Cold exposure causes numbness and pallor, not blistered burns. A new soap causes itchy dermatitis. Sun exposure spares skin covered by gloves. Vibrating tools cause numbness and blanching of the fingers, not burns of the knees.",
         keyFeature: { topic: "burns", n: 6 },
         source: "palao-chemical",
       },
@@ -916,7 +916,7 @@ export const BURNS_S26: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following other pressures should be measured given his swollen face and fluid volume?",
+        prompt: "Which of the following additional pressures should be monitored during his ongoing resuscitation?",
         options: ["Central venous pressure", "Intracranial pressure", "Intraocular pressure", "Pulmonary artery wedge pressure", "Transpulmonary thermodilution indices"],
         correct: 2,
         explanation:
@@ -1147,7 +1147,7 @@ export const BURNS_S26: Samp[] = [
         options: ["Admit to the ward for observation", "Dexamethasone 10 mg IV", "Nebulized racemic epinephrine", "Repeat assessment in 1 hour", "Secure the airway now"],
         correct: 4,
         explanation:
-          "Swelling of the lips and tongue and a new hoarse voice within 20 minutes of a deep facial burn show upper airway edema that will worsen for many hours, so the airway should be secured now, before stridor appears and intubation becomes much harder. Waiting for stridor, reassessing in an hour or admitting to a ward risks a failed airway. Dexamethasone and racemic epinephrine do not reverse thermal edema.",
+          "Swelling of the lips and tongue and a new hoarse voice over 20 minutes, within an hour of a deep facial burn show upper airway edema that will worsen for many hours, so the airway should be secured now, before stridor appears and intubation becomes much harder. Waiting for stridor, reassessing in an hour or admitting to a ward risks a failed airway. Dexamethasone and racemic epinephrine do not reverse thermal edema.",
         keyFeature: { topic: "burns", n: 2 },
         source: "walker-inhalation",
       },
@@ -1183,7 +1183,7 @@ export const BURNS_S26: Samp[] = [
     topic: "burns",
     title: "Gasoline on the bonfire",
     stem:
-      "A 15-year-old boy is brought to the emergency department by his parents 1 hour after he threw gasoline onto a backyard bonfire and the flames flashed back at him. The fire was outdoors. He has no medical history.\n\nHe is alert and speaks in full sentences with a normal voice. There is no stridor, cough or soot in the nose or mouth. The tips of his eyebrows are singed. There are red, blistered, blanching burns on the forehead and cheeks, and on the front of both forearms and hands. The total burn is 14% TBSA. The chest is clear.",
+      "A 15-year-old boy is brought to the emergency department by his parents 1 hour after he threw gasoline onto a backyard bonfire and the flames flashed back at him. The fire was outdoors. He has no medical history.\n\nHe is alert and speaks in full sentences with a normal voice. There is no stridor, cough or soot in the nose or mouth. The tips of his eyebrows are singed. There are red, blistered, blanching burns on the forehead and cheeks, and on the front of both arms and hands. The total burn is 14% TBSA. The chest is clear.",
     vitals: { temperature: "36.8°C oral", pulse: "108/minute", resp: "18/minute", bp: "124/74 mmHg", o2sat: "99% on room air", weight: "60 kg" },
     questions: [
       {
@@ -1240,7 +1240,7 @@ export const BURNS_S26: Samp[] = [
     topic: "burns",
     title: "Smoke in the workshop",
     stem:
-      "A 62-year-old man is brought to the emergency department by ambulance after a fire in his basement workshop. He tried to fight it and was in the smoke for about 20 minutes before he got out. He has hypertension and takes amlodipine. He does not smoke.\n\nHe is alert with a normal voice and no stridor. There is soot in both nostrils and he coughs up black sputum. His face is not burned. There are partial thickness burns on the backs of both hands, about 2% TBSA. The chest is clear. Carboxyhemoglobin is 16% and venous lactate is 1.8 mmol/L. His ECG shows sinus rhythm with no ischemic changes.",
+      "A 62-year-old man is brought to the emergency department by ambulance after a fire in his basement workshop. He tried to fight it and was in the smoke for about 20 minutes before he got out. He has hypertension and takes amlodipine. He does not smoke.\n\nHe is alert with a normal voice and no stridor. The neurologic examination is normal. There is soot in both nostrils and he coughs up black sputum. His face is not burned. There are partial thickness burns on the backs of both hands, about 2% TBSA. The chest is clear. Carboxyhemoglobin is 16% and venous lactate is 1.8 mmol/L. His ECG shows sinus rhythm with no ischemic changes.",
     vitals: { temperature: "36.9°C oral", pulse: "98/minute", resp: "20/minute", bp: "148/88 mmHg", o2sat: "97% on 15 L/minute by nonrebreather mask", weight: "84 kg" },
     questions: [
       {
