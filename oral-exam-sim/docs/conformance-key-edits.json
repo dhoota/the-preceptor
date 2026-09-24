@@ -1586,6 +1586,165 @@
    "after": [
     "Continue full resuscitation"
    ]
+  },
+  "gi-bleed-02#q2": {
+   "batch": "s11",
+   "before": [
+    "No transfusion now. Recheck hemoglobin and transfuse if it falls below about 70 to 80 g/L"
+   ],
+   "after": [
+    "No transfusion now, recheck, transfuse below 70 to 80 g/L"
+   ]
+  },
+  "gi-bleed-05#q3": {
+   "batch": "s11",
+   "before": [
+    "Direct pressure and a topical vasoconstrictor, then silver nitrate cautery of the bleeding point"
+   ],
+   "after": [
+    "Pressure, vasoconstrictor, then focal silver nitrate cautery"
+   ]
+  },
+  "gi-bleed-08#q3": {
+   "batch": "s11",
+   "before": [
+    "Pantoprazole 80 mg IV bolus",
+    "Erythromycin 250 mg IV about 30 to 120 minutes before endoscopy"
+   ],
+   "after": [
+    "Erythromycin 250 mg IV about 30 to 120 minutes before",
+    "Pantoprazole 80 mg IV bolus"
+   ]
+  },
+  "gi-bleed-12#q5": {
+   "batch": "s11",
+   "before": [
+    "Continue it, or hold it only briefly and resume once hemostasis is achieved"
+   ],
+   "after": [
+    "Continue, or hold briefly and resume after hemostasis"
+   ]
+  },
+  "gi-bleed-13#q3": {
+   "batch": "s11",
+   "before": [
+    "Do not give it. In GI bleeding it does not reduce death and increases venous thrombosis"
+   ],
+   "after": [
+    "Withhold tranexamic acid"
+   ]
+  },
+  "gi-bleed-14#q2": {
+   "batch": "s11",
+   "before": [
+    "Hold anticoagulation and perform a rectal exam and GI assessment"
+   ],
+   "after": [
+    "Hold anticoagulation, do rectal exam and GI assessment"
+   ]
+  },
+  "gi-bleed-14#q3": {
+   "batch": "s11",
+   "before": [
+    "Transfuse red cells now and reassess, aiming for a hemoglobin of at least 80 g/L"
+   ],
+   "after": [
+    "Transfuse red cells now, reassess, target 80 g/L or more"
+   ]
+  },
+  "gi-bleed-15#q3": {
+   "batch": "s11",
+   "before": [
+    "Arrange urgent transfer to the gastroenterology centre with blood and octreotide running and a physician or critical care escort"
+   ],
+   "after": [
+    "Urgent transfer with escort, blood and octreotide running"
+   ]
+  },
+  "headache-01#q2": {
+   "batch": "s11",
+   "before": [
+    "She needs investigation for SAH because she is 40 or older and the onset was during exertion"
+   ],
+   "after": [
+    "Investigate SAH given age 40 or more and exertional onset"
+   ]
+  },
+  "headache-02#q2": {
+   "batch": "s11",
+   "before": [
+    "Nimodipine 60 mg PO or by nasogastric tube every 4 hours",
+    "Labetalol 10 to 20 mg IV, repeated to keep systolic BP below about 160"
+   ],
+   "after": [
+    "Labetalol 10 to 20 mg IV repeated, systolic below 160",
+    "Nimodipine 60 mg enterally every 4 hours"
+   ]
+  },
+  "headache-04#q3": {
+   "batch": "s11",
+   "before": [
+    "Blood cultures, then antibiotics immediately, with LP deferred until she is stable"
+   ],
+   "after": [
+    "Blood cultures, immediate antibiotics, LP once stable"
+   ]
+  },
+  "headache-06#q2": {
+   "batch": "s11",
+   "before": [
+    "Magnesium sulfate 4 g IV over 15 to 20 minutes, then 1 g/h",
+    "Labetalol 20 mg IV, repeated every 30 minutes as needed"
+   ],
+   "after": [
+    "Labetalol 20 mg IV, repeated every 30 minutes as needed",
+    "Magnesium sulfate 4 g IV load, then 1 g/h"
+   ]
+  },
+  "headache-08#q3": {
+   "batch": "s11",
+   "before": [
+    "Start high dose glucocorticoids today and arrange temporal artery ultrasound or biopsy within 1 to 2 weeks"
+   ],
+   "after": [
+    "High dose steroids now, biopsy or ultrasound within 2 weeks"
+   ]
+  },
+  "headache-09#q4": {
+   "batch": "s11",
+   "before": [
+    "Same day ophthalmology assessment for laser peripheral iridotomy"
+   ],
+   "after": [
+    "Same day ophthalmology for laser peripheral iridotomy"
+   ]
+  },
+  "headache-12#q2": {
+   "batch": "s11",
+   "before": [
+    "Carboxyhemoglobin level by co-oximetry on a venous or arterial blood gas"
+   ],
+   "after": [
+    "Carboxyhemoglobin by co-oximetry on a blood gas"
+   ]
+  },
+  "headache-13#q4": {
+   "batch": "s11",
+   "before": [
+    "Avoid starting topical steroids in the ED and arrange ophthalmology review within 24 hours"
+   ],
+   "after": [
+    "Defer steroid drops to ophthalmology review within 24 hours"
+   ]
+  },
+  "headache-14#q4": {
+   "batch": "s11",
+   "before": [
+    "Antithrombotic therapy, such as ASA, with prompt stroke prevention follow up"
+   ],
+   "after": [
+    "Antithrombotic such as ASA, prompt stroke prevention review"
+   ]
   }
  }
 }

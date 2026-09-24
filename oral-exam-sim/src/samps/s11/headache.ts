@@ -13,22 +13,22 @@ const S = {
   ahaSah: { id: "aha-sah", citation: "Hoh BL, et al. 2023 Guideline for the management of patients with aneurysmal subarachnoid hemorrhage: a guideline from the American Heart Association and American Stroke Association. Stroke. 2023." },
   idsaMen: { id: "idsa-men", citation: "Tunkel AR, et al. Practice guidelines for the management of bacterial meningitis. Clin Infect Dis. 2004." },
   idsaEnc: { id: "idsa-enc", citation: "Tunkel AR, et al. The management of encephalitis: clinical practice guidelines by the Infectious Diseases Society of America. Clin Infect Dis. 2008." },
-  phacMen: { id: "phac-men", citation: "Public Health Agency of Canada. Guidelines for the prevention and control of invasive meningococcal disease." },
+  phacMen: { id: "phac-men", citation: "Public Health Agency of Canada. Guidelines for the prevention and control of meningococcal disease. Can Commun Dis Rep. 2005. Volume 31 Supplement 1.", url: "https://www.phac-aspc.gc.ca/publicat/ccdr-rmtc/05pdf/31s1_e.pdf" },
   sogc: { id: "sogc", citation: "Magee LA, et al. Guideline No. 426: Hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022." },
   cvt: { id: "cvt", citation: "Saposnik G, et al. Diagnosis and management of cerebral venous thrombosis: a scientific statement from the American Heart Association. Stroke. 2024." },
   bsrGca: { id: "bsr-gca", citation: "Mackie SL, et al. British Society for Rheumatology guideline on diagnosis and treatment of giant cell arteritis. Rheumatology (Oxford). 2020." },
   eular: { id: "eular", citation: "Hellmich B, et al. 2018 update of the EULAR recommendations for the management of large vessel vasculitis. Ann Rheum Dis. 2020." },
-  aao: { id: "aao", citation: "American Academy of Ophthalmology. Preferred Practice Pattern. Primary angle closure disease." },
+  aao: { id: "aao", citation: "Gedde SJ, Chen PP, Muir KW, et al. American Academy of Ophthalmology Preferred Practice Pattern. Primary angle-closure disease. Ophthalmology. 2021." },
   ahs: { id: "ahs", citation: "Orr SL, Friedman BW, Christie S, et al. Management of adults with acute migraine in the emergency department: the American Headache Society evidence assessment of parenteral pharmacotherapies. Headache. 2016." },
   chs: { id: "chs", citation: "Worthington I, et al. Canadian Headache Society guideline: acute drug therapy for migraine headache. Can J Neurol Sci. 2013." },
   hcNsaid: { id: "hc-nsaid", citation: "Health Canada. Public advisory. Use of non-steroidal anti-inflammatory drugs (NSAIDs) beyond 20 weeks of pregnancy and risk of kidney damage in unborn babies, leading to low amniotic fluid. 2020.", url: "https://recalls-rappels.canada.ca/en/alert-recall/use-non-steroidal-anti-inflammatory-drugs-nsaids-beyond-20-weeks-pregnancy-and-risk" },
   acogHa: { id: "acog-ha", citation: "American College of Obstetricians and Gynecologists. Clinical Practice Guideline No. 3. Headaches in pregnancy and postpartum. Obstet Gynecol. 2022." },
   weaver: { id: "weaver", citation: "Weaver LK, et al. Hyperbaric oxygen for acute carbon monoxide poisoning. N Engl J Med. 2002." },
-  uhms: { id: "uhms", citation: "Undersea and Hyperbaric Medical Society. Hyperbaric oxygen therapy indications. Carbon monoxide poisoning." },
+  uhms: { id: "uhms", citation: "Huang E, editor. Undersea and Hyperbaric Medical Society. Hyperbaric Medicine Indications Manual. 15th ed. Chapter on carbon monoxide poisoning. 2024." },
   cadiss: { id: "cadiss", citation: "CADISS trial investigators. Antiplatelet treatment compared with anticoagulation treatment for cervical artery dissection (CADISS): a randomised trial. Lancet Neurol. 2015." },
-  csbpr: { id: "csbpr", citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management and secondary prevention of stroke." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on headache, ophthalmology and brain tumours." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on headache, eye emergencies and herpes zoster." },
+  csbpr: { id: "csbpr", citation: "Heran M, Lindsay P, Gubitz G, et al. Canadian Stroke Best Practice Recommendations: acute stroke management, 7th edition practice guidelines update, 2022. Can J Neurol Sci. 2024." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on headache, ophthalmology and brain tumours." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on headache, eye emergencies and herpes zoster." },
 } satisfies Record<string, Source>;
 
 export const HEADACHE_SAMPS: Samp[] = [
@@ -37,13 +37,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     topic: "headache",
     title: "Sudden headache at the gym",
     stem:
-      "A 44 year old woman developed a severe headache 3 hours ago while lifting weights at the gym. It peaked within seconds. She vomited once. She did not lose consciousness. She has no history of similar headaches. GCS 15, HR 90, BP 152/88, RR 16, T 36.8°C. Neurological exam is normal and she can flex her neck fully.",
+      "A 44-year-old woman developed a severe headache 3 hours ago while lifting weights at the gym. It peaked within seconds. She vomited once. She did not lose consciousness. She has no history of similar headaches. GCS 15. Neurological exam is normal and she can flex her neck fully.",
+    vitals: { temperature: "36.8°C", pulse: "90/minute", resp: "16/minute", bp: "152/88 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR features of the headache history you would clarify to build your differential.",
+        prompt: "What features of the headache history would you clarify to build your differential?",
         accept: [
           { id: "onset", text: "Speed of onset and time to peak intensity", match: ["onset", "peak", "thunderclap", "sudden", "instant"] },
           { id: "severity", text: "Severity and whether it is the worst ever", match: ["severity", "worst", "severe"] },
@@ -67,13 +68,13 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which statement about the Ottawa SAH Rule in this patient is correct? Select one.",
+        prompt: "Which of the following statements about the Ottawa SAH Rule in this patient is correct?",
         options: [
-          "It does not apply because her neurological exam is normal",
-          "She needs investigation for SAH because she is 40 or older and the onset was during exertion",
-          "She can be discharged because she has full neck flexion",
-          "It applies only to patients older than 50",
-          "She needs investigation only because she vomited",
+          "Discharge is safe given her full neck flexion",
+          "Investigate SAH given age 40 or more and exertional onset",
+          "Investigate SAH only because she vomited",
+          "Rule applies only to patients older than 50",
+          "Rule does not apply with a normal neurological exam",
         ],
         correct: 1,
         explanation:
@@ -85,15 +86,15 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Non contrast CT head on a modern multidetector scanner is done 4 hours after onset. A staff radiologist reports it as normal.",
-        prompt: "Which is the most appropriate next step regarding SAH? Select one.",
+        prompt: "Which of the following is the most appropriate next step regarding SAH?",
         options: [
-          "Lumbar puncture now",
           "Lumbar puncture at 12 hours after onset",
-          "No further testing for SAH is needed",
+          "Lumbar puncture now",
           "MRI brain before discharge",
           "Repeat CT head in 6 hours",
+          "No further testing for SAH is needed",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "A normal CT within 6 hours of headache onset, on a modern scanner read by a qualified radiologist, had a sensitivity near 100 percent for SAH in the Ottawa cohort. LP adds little and has false positives from traumatic taps. This applies only to neurologically intact patients with a headache and a clear onset time.",
         keyFeature: { topic: "headache", n: 2 },
@@ -103,7 +104,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO other serious causes of thunderclap headache that a normal non contrast CT does not exclude.",
+        prompt: "What other serious causes of thunderclap headache does a normal non contrast CT not exclude?",
         accept: [
           { id: "rcvs", text: "Reversible cerebral vasoconstriction syndrome", match: ["rcvs", "vasoconstriction"] },
           { id: "dissect", text: "Cervical artery dissection", match: ["dissection"] },
@@ -135,13 +136,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["loc"],
     title: "Blood on the CT",
     stem:
-      "A 54 year old man had a sudden severe headache 2 hours ago while shovelling snow. CT head shows diffuse subarachnoid blood in the basal cisterns. He takes no medications. GCS 14 (E4 V4 M6), HR 64, BP 188/102, RR 16, SpO2 97%. No focal deficits. Weight 90 kg.",
+      "A 54-year-old man had a sudden severe headache 2 hours ago while shovelling snow. CT head shows diffuse subarachnoid blood in the basal cisterns. He takes no medications. GCS 14 (E4 V4 M6). No focal deficits.",
+    vitals: { pulse: "64/minute", resp: "16/minute", bp: "188/102 mmHg", o2sat: "97% on arrival", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR immediate management priorities.",
+        prompt: "What are the immediate management priorities?",
         accept: [
           { id: "nsx", text: "Urgent neurosurgery consult or transfer to a neurosurgical centre", match: ["neurosurgery", "neurosurgeon", "neurosurgical"] },
           { id: "bp", text: "Lower blood pressure to a systolic below about 160", match: ["blood pressure", "labetalol", "nicardipine", "antihypertensive", "sbp", "systolic"] },
@@ -168,20 +170,20 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO medication orders are most appropriate now? Select TWO.",
+        prompt: "Which of the following medication orders are most appropriate for him now?",
         options: [
-          "Nimodipine 60 mg PO or by nasogastric tube every 4 hours",
-          "Nimodipine 60 mg IV bolus",
-          "Labetalol 10 to 20 mg IV, repeated to keep systolic BP below about 160",
-          "Hydralazine 40 mg IV",
-          "Nifedipine 10 mg sublingual",
-          "Tranexamic acid 1 g IV",
-          "Phenytoin 20 mg/kg IV",
-          "Dexamethasone 10 mg IV",
+          "Dexamethasone 10 mg IV every 6 hours",
+          "Hydralazine 40 mg IV, repeated every 30 minutes",
+          "Labetalol 10 to 20 mg IV repeated, systolic below 160",
+          "Nifedipine 10 mg sublingual, repeated as needed",
+          "Nimodipine 60 mg enterally every 4 hours",
+          "Nimodipine 60 mg IV bolus every 4 hours",
+          "Phenytoin 20 mg/kg IV loading dose",
+          "Tranexamic acid 1 g IV, then 1 g infusion",
         ],
-        correct: [0, 2],
+        correct: [2,  4],
         explanation:
-          "Enteral nimodipine for 21 days improves neurological outcome after aneurysmal SAH. Giving it IV as a bolus can cause severe hypotension. Titratable IV labetalol or nicardipine avoids the abrupt drops seen with sublingual nifedipine or large hydralazine doses. Steroids, routine antifibrinolytics and prophylactic phenytoin are not recommended.",
+          "Enteral nimodipine 60 mg every 4 hours, PO or by nasogastric tube, for 21 days improves neurological outcome after aneurysmal SAH. Giving it IV as a bolus can cause severe hypotension. Titratable IV labetalol 10 to 20 mg, repeated to keep systolic BP below about 160, or nicardipine avoids the abrupt drops seen with sublingual nifedipine or large hydralazine doses. Steroids, routine antifibrinolytics and prophylactic phenytoin are not recommended.",
         keyFeature: { topic: "headache", n: 6 },
         source: "aha-sah",
       },
@@ -189,8 +191,8 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "Two hours later, while awaiting transfer, his GCS falls to 9. Pupils are equal. BP is 150/86.",
-        prompt: "List THREE likely causes of his deterioration.",
+        update: "Two hours later, while awaiting transfer, his GCS falls to 9. Pupils are equal. BP is 150/86 mmHg.",
+        prompt: "What are the likely causes of his deterioration?",
         accept: [
           { id: "rebleed", text: "Aneurysm rebleeding", match: ["rebleed", "rebleeding", "re bleed", "rerupture", "re rupture"] },
           { id: "hydro", text: "Acute hydrocephalus", match: ["hydrocephalus"] },
@@ -219,13 +221,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     topic: "headache",
     title: "Headache that started yesterday",
     stem:
-      "A 37 year old man had a sudden severe occipital headache that peaked within a minute yesterday afternoon. He comes in 20 hours later because it has not gone away. He has never had a headache like this. HR 78, BP 134/82, T 36.9°C, GCS 15. Non contrast CT head done 21 hours after onset is normal.",
+      "A 37-year-old man had a sudden severe occipital headache that peaked within a minute yesterday afternoon. He comes in 20 hours later because it has not gone away. He has never had a headache like this. GCS 15. Non contrast CT head done 21 hours after onset is normal.",
+    vitals: { temperature: "36.9°C", pulse: "78/minute", bp: "134/82 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE physical findings you would specifically look for.",
+        prompt: "What physical findings would you specifically look for?",
         accept: [
           { id: "papill", text: "Papilledema on fundoscopy", match: ["papilledema", "fundoscopy", "fundi", "fundus", "optic disc"] },
           { id: "focal", text: "Focal neurological deficit including cranial nerve palsy", match: ["focal", "cranial nerve", "weakness", "pronator drift", "third nerve", "diplopia"] },
@@ -244,15 +247,16 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "His exam is normal. What is the most appropriate next step? Select one.",
+        update: "His exam is normal.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
-          "Discharge with analgesia and family physician follow up",
+          "Discharge with analgesia",
+          "Electroencephalography",
           "Lumbar puncture",
           "Outpatient MRI brain",
           "Repeat CT head in 24 hours",
-          "EEG",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "CT sensitivity for SAH falls after 6 hours as blood is cleared. Beyond 6 hours a normal CT does not rule out SAH, and LP is needed to look for red cells and xanthochromia. CT angiography is an accepted alternative in many Canadian centres, but it finds incidental aneurysms and does not detect nonaneurysmal bleeding.",
         keyFeature: { topic: "headache", n: 6 },
@@ -262,13 +266,13 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "LP opening pressure is 17 cm H2O. Tube 1 has 1400 x 10^6/L red cells and tube 4 has 380 x 10^6/L red cells. There is no xanthochromia. White cells are 2 x 10^6/L.",
-        prompt: "What is the best interpretation? Select one.",
+        prompt: "Which of the following is the best interpretation of these results?",
         options: [
           "Aneurysmal SAH is ruled out",
-          "SAH is confirmed",
-          "The result is indeterminate and CT angiography is required",
-          "The fall in red cells between tubes proves a traumatic tap",
-          "The LP should be repeated at a higher level",
+          "Falling red cell count proves a traumatic tap",
+          "Indeterminate result that requires CT angiography",
+          "Repeat LP at a higher interspace is needed",
+          "SAH is confirmed by the red cells",
         ],
         correct: 0,
         explanation:
@@ -286,13 +290,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Fever and headache in a university student",
     stem:
-      "A 19 year old woman who lives in a university residence has had fever, headache and vomiting for 12 hours. Her roommate says she is getting sleepy. T 39.4°C, HR 124, BP 92/54, RR 24, SpO2 97%, GCS 14. Weight 60 kg. She has no allergies.",
+      "A 19-year-old woman who lives in a university residence has had fever, headache and vomiting for 12 hours. Her roommate says she is getting sleepy. GCS 14. She has no allergies.",
+    vitals: { temperature: "39.4°C", pulse: "124/minute", resp: "24/minute", bp: "92/54 mmHg", o2sat: "97% on arrival", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE things you would specifically look for on examination.",
+        prompt: "What would you specifically look for on examination?",
         accept: [
           { id: "rash", text: "Petechial or purpuric rash over the whole skin", match: ["rash", "petechiae", "petechial", "purpura", "purpuric", "skin"] },
           { id: "mening", text: "Neck stiffness or meningismus", match: ["neck stiffness", "meningismus", "nuchal rigidity", "kernig", "brudzinski", "stiff neck", "neck"] },
@@ -312,18 +317,18 @@ export const HEADACHE_SAMPS: Samp[] = [
         kind: "menu",
         select: 3,
         update: "She has scattered non blanching petechiae on her legs and trunk and a stiff neck.",
-        prompt: "Which THREE medications should she receive now? Select THREE.",
+        prompt: "Which of the following medications should she receive at this time?",
         options: [
+          "Acyclovir 10 mg/kg IV",
+          "Ampicillin 2 g IV",
+          "Cefazolin 2 g IV",
           "Ceftriaxone 2 g IV",
           "Ceftriaxone 1 g IV",
-          "Vancomycin 20 mg/kg IV",
           "Dexamethasone 10 mg IV",
           "Dexamethasone 4 mg PO",
-          "Ampicillin 2 g IV",
-          "Acyclovir 10 mg/kg IV",
-          "Cefazolin 2 g IV",
+          "Vancomycin 20 mg/kg IV",
         ],
-        correct: [0, 2, 3],
+        correct: [3,  5,  7],
         explanation:
           "Empiric therapy for community acquired bacterial meningitis in a young adult is ceftriaxone 2 g IV plus vancomycin to cover resistant pneumococcus. Dexamethasone 10 mg IV is given before or with the first antibiotic dose. Ampicillin for Listeria is added at age 50 or older, in immunocompromise, alcohol use disorder or pregnancy.",
         keyFeature: { topic: "infectious-diseases", n: 8 },
@@ -332,13 +337,13 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "What is the correct sequence? Select one.",
+        prompt: "Which of the following is the most appropriate sequence of initial management?",
         options: [
-          "CT head, then LP, then antibiotics",
-          "LP, then antibiotics once the CSF Gram stain is back",
-          "Blood cultures, then antibiotics immediately, with LP deferred until she is stable",
           "Antibiotics only after the platelet count is known",
           "Blood cultures, CT head, then antibiotics",
+          "Blood cultures, immediate antibiotics, LP once stable",
+          "CT head, then LP, then antibiotics",
+          "LP, then antibiotics once the CSF Gram stain is back",
         ],
         correct: 2,
         explanation:
@@ -350,7 +355,8 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "Neisseria meningitidis grows in her blood cultures. List TWO groups of people who need chemoprophylaxis.",
+        update: "Neisseria meningitidis grows in her blood cultures.",
+        prompt: "What groups of people need chemoprophylaxis?",
         accept: [
           { id: "house", text: "Roommates and household contacts", match: ["roommate", "household", "live with", "lives with", "share a room", "shared room", "sleep"] },
           { id: "kiss", text: "Intimate or kissing contacts", match: ["kissing", "intimate", "sexual partner", "boyfriend", "girlfriend", "partner"] },
@@ -370,7 +376,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 1,
-        prompt: "Write ONE chemoprophylaxis regimen for an adult contact. Include drug, dose and route.",
+        prompt: "What chemoprophylaxis regimen would you prescribe for an adult contact, including drug, dose and route?",
         accept: [
           { id: "cipro", text: "Ciprofloxacin 500 mg PO once", match: ["ciprofloxacin 500", "cipro 500"] },
           { id: "rif", text: "Rifampin 600 mg PO every 12 hours for 2 days", match: ["rifampin 600", "rifampicin 600"] },
@@ -394,13 +400,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Fever, confusion and a twitching arm",
     stem:
-      "A 69 year old woman has had fever and headache for two days and has become confused. Today she had a 2 minute episode of right arm jerking that stopped on its own. She has rheumatoid arthritis treated with methotrexate and prednisone 10 mg daily. T 38.6°C, HR 112, BP 138/78, RR 20, SpO2 96%, GCS 13 (E3 V4 M6). Capillary glucose 7.4 mmol/L. Weight 64 kg.",
+      "A 69-year-old woman has had fever and headache for two days and has become confused. Today she had a 2 minute episode of right arm jerking that stopped on its own. She has rheumatoid arthritis treated with methotrexate and prednisone 10 mg daily. GCS 13 (E3 V4 M6). Capillary glucose 7.4 mmol/L.",
+    vitals: { temperature: "38.6°C", pulse: "112/minute", resp: "20/minute", bp: "138/78 mmHg", o2sat: "96% on arrival", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features in this case that call for CT head before lumbar puncture.",
+        prompt: "What features in this case call for CT head before lumbar puncture?",
         accept: [
           { id: "immuno", text: "Immunocompromise from methotrexate and prednisone", match: ["immunocompromise", "immunocompromised", "immunosuppression", "immunosuppressed", "methotrexate", "prednisone", "steroid"] },
           { id: "seizure", text: "New onset seizure", match: ["seizure"] },
@@ -417,7 +424,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "List FOUR empiric medications to give before the CT. Include the dose of each, except vancomycin.",
+        prompt: "What empiric medications would you give before the CT, including the dose of each except vancomycin?",
         accept: [
           { id: "cef", text: "Ceftriaxone 2 g IV every 12 hours", match: ["ceftriaxone 2 g", "ceftriaxone 2g", "ceftriaxone 2000"] },
           { id: "vanc", text: "Vancomycin IV, dosed by weight and levels", match: ["vancomycin"] },
@@ -455,7 +462,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO investigations that would help confirm this diagnosis.",
+        prompt: "What investigations would help confirm this diagnosis?",
         accept: [
           { id: "pcr", text: "CSF HSV PCR", match: ["pcr"] },
           { id: "mri", text: "MRI brain", match: ["mri"] },
@@ -476,13 +483,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["pre-eclampsia"],
     title: "Headache late in a first pregnancy",
     stem:
-      "A 30 year old woman, G1P0 at 35 weeks, has had a frontal headache for 8 hours that acetaminophen did not help. She sees flashing spots and has upper abdominal pain. BP 172/112, repeated 15 minutes later at 168/110. HR 96, RR 18, SpO2 98%. Weight 82 kg. Reflexes are brisk with 2 beats of clonus.",
+      "A 30-year-old woman, G1P0 at 35 weeks, has had a frontal headache for 8 hours that acetaminophen did not help. She sees flashing spots and has upper abdominal pain. A repeat BP 15 minutes later is 168/110 mmHg. Reflexes are brisk with 2 beats of clonus.",
+    vitals: { pulse: "96/minute", resp: "18/minute", bp: "172/112 mmHg", o2sat: "98% on arrival", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR laboratory tests you would order.",
+        prompt: "What laboratory tests would you order?",
         accept: [
           { id: "cbc", text: "CBC with platelets", match: ["cbc", "platelet", "hemoglobin"] },
           { id: "lft", text: "AST and ALT", match: ["ast", "alt", "liver enzyme", "liver function", "transaminase", "lft"] },
@@ -505,21 +513,21 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO medications should be given now? Select TWO.",
+        prompt: "Which of the following medications should be given to her now?",
         options: [
-          "Magnesium sulfate 4 g IV over 15 to 20 minutes, then 1 g/h",
-          "Magnesium sulfate 1 g IV over 15 minutes, then 0.5 g/h",
+          "Enalapril 1.25 mg IV every 6 hours",
+          "Furosemide 40 mg IV, repeated in 1 hour",
+          "Hydralazine 50 mg IV, repeated every 30 minutes",
+          "Labetalol 200 mg IV bolus, repeated every 30 minutes",
           "Labetalol 20 mg IV, repeated every 30 minutes as needed",
-          "Labetalol 200 mg IV",
-          "Enalapril 1.25 mg IV",
-          "Hydralazine 50 mg IV",
-          "Furosemide 40 mg IV",
-          "Phenytoin 20 mg/kg IV",
-          "Lorazepam 4 mg IV",
+          "Lorazepam 4 mg IV, repeated in 5 minutes",
+          "Magnesium sulfate 1 g IV load, then 0.5 g/h",
+          "Magnesium sulfate 4 g IV load, then 1 g/h",
+          "Phenytoin 20 mg/kg IV loading dose",
         ],
-        correct: [0, 2],
+        correct: [4,  7],
         explanation:
-          "Magnesium sulfate prevents eclampsia and is superior to phenytoin and benzodiazepines. Severe hypertension of 160/110 or more needs treatment within about 30 to 60 minutes, with IV labetalol, oral nifedipine or IV hydralazine in small doses. ACE inhibitors are contraindicated in pregnancy.",
+          "Magnesium sulfate prevents eclampsia and is superior to phenytoin and benzodiazepines. The 4 g IV loading dose is given over 15 to 20 minutes, then 1 g/h. Severe hypertension of 160/110 or more needs treatment within about 30 to 60 minutes, with IV labetalol, oral nifedipine or IV hydralazine in small doses. ACE inhibitors are contraindicated in pregnancy.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
         source: "sogc",
       },
@@ -528,7 +536,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "One hour into the magnesium infusion she is drowsy, her RR is 9 and her patellar reflexes are absent.",
-        prompt: "List TWO immediate actions.",
+        prompt: "What are the immediate actions?",
         accept: [
           { id: "stop", text: "Stop the magnesium infusion", match: ["stop magnesium", "stop infusion", "hold magnesium", "stop mg", "discontinue magnesium", "discontinue infusion", "hold infusion", "stop mgso4", "hold mgso4", "discontinue mgso4", "stop drip", "turn off magnesium"] },
           { id: "ca", text: "Calcium gluconate 1 g IV (10 mL of 10%)", match: ["calcium gluconate", "calcium chloride", "calcium", "ca gluconate", "gluconate"] },
@@ -543,15 +551,15 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Once she is stable, what is the definitive management? Select one.",
+        prompt: "Once she is stable, which of the following is the definitive management?",
         options: [
-          "Urgent obstetric care with planning for delivery",
-          "Admission to medicine for BP control and outpatient follow up",
+          "Admit to medicine for BP control and follow up",
+          "CT head and neurology consult before any obstetric plan",
           "Discharge home once BP is below 150/100",
           "Expectant management until 37 weeks",
-          "CT head and neurology consult before any obstetric plan",
+          "Urgent obstetric care with planning for delivery",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "Delivery is the definitive treatment for pre-eclampsia. At 35 weeks with severe features, delivery after maternal stabilization is indicated. The ED role is to stabilize, prevent seizures, control BP and involve obstetrics immediately.",
         keyFeature: { topic: "pre-eclampsia", n: 4 },
@@ -566,13 +574,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     topic: "headache",
     title: "Headache and a seizure after delivery",
     stem:
-      "A 27 year old woman delivered vaginally with an epidural 9 days ago. She has had a worsening headache for 4 days, worst in the morning and when lying down, with vomiting. Today she had a generalized seizure at home that lasted 1 minute. She is now drowsy but oriented. HR 92, BP 132/84, RR 16, SpO2 98%, T 37.2°C, capillary glucose 5.8 mmol/L.",
+      "A 27-year-old woman delivered vaginally with an epidural 9 days ago. She has had a worsening headache for 4 days, worst in the morning and when lying down, with vomiting. Today she had a generalized seizure at home that lasted 1 minute. She is now drowsy but oriented. Capillary glucose 5.8 mmol/L.",
+    vitals: { temperature: "37.2°C", pulse: "92/minute", resp: "16/minute", bp: "132/84 mmHg", o2sat: "98% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE serious diagnoses you must consider.",
+        prompt: "What serious diagnoses must you consider?",
         accept: [
           { id: "cvt", text: "Cerebral venous sinus thrombosis", match: ["venous", "cvt", "sinus thrombosis", "cvst"] },
           { id: "eclampsia", text: "Postpartum eclampsia or pre-eclampsia", match: ["eclampsia", "pre eclampsia", "preeclampsia"] },
@@ -596,7 +605,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE examination findings you would specifically look for.",
+        prompt: "What examination findings would you specifically look for?",
         accept: [
           { id: "papill", text: "Papilledema on fundoscopy", match: ["papilledema", "fundoscopy", "fundi", "fundus", "optic disc"] },
           { id: "focal", text: "Focal motor or sensory deficits", match: ["focal", "weakness", "hemiparesis", "sensory", "pronator drift"] },
@@ -617,15 +626,15 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "She has bilateral papilledema and no focal deficit. Urine protein is negative. Non contrast CT shows a hyperdense superior sagittal sinus.",
-        prompt: "Which investigation best confirms the diagnosis? Select one.",
+        prompt: "Which of the following investigations would best confirm the suspected diagnosis?",
         options: [
-          "CT venography or MR venography",
-          "Lumbar puncture with opening pressure",
           "Carotid Doppler ultrasound",
-          "EEG",
-          "CT perfusion",
+          "CT perfusion imaging of the brain",
+          "CT venography or MR venography",
+          "Electroencephalography",
+          "Lumbar puncture with opening pressure",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "CT or MR venography shows the filling defect of the thrombosed sinus. A normal non contrast CT does not exclude CVT. LP is not diagnostic and adds risk with raised intracranial pressure.",
         keyFeature: { topic: "headache", n: 6 },
@@ -636,7 +645,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "CT venography confirms superior sagittal sinus thrombosis with a small hemorrhagic venous infarct.",
-        prompt: "List TWO management steps.",
+        prompt: "What are the management steps?",
         accept: [
           { id: "ac", text: "Anticoagulate with LMWH or unfractionated heparin despite the hemorrhage", match: ["heparin", "lmwh", "enoxaparin", "dalteparin", "tinzaparin", "anticoagulation", "anticoagulate", "anticoagulant"] },
           { id: "aed", text: "Antiseizure medication such as levetiracetam, given she has seized", match: ["levetiracetam", "antiseizure", "anticonvulsant", "antiepileptic", "keppra", "phenytoin"] },
@@ -664,13 +673,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["eye"],
     title: "New temple pain in an older woman",
     stem:
-      "A 74 year old woman has had a new right sided temporal headache for 3 weeks. It hurts to brush her hair. She feels tired and has lost 3 kg. This morning her right eye vision went dark like a curtain for about 10 minutes, then returned. HR 84, BP 146/82, T 37.6°C. Visual acuity is 20/25 in both eyes.",
+      "A 74-year-old woman has had a new right sided temporal headache for 3 weeks. It hurts to brush her hair. She feels tired and has lost 3 kg. This morning her right eye vision went dark like a curtain for about 10 minutes, then returned. Visual acuity is 20/25 in both eyes.",
+    vitals: { temperature: "37.6°C", pulse: "84/minute", bp: "146/82 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE more history features you would ask about.",
+        prompt: "What other history features would you ask about?",
         accept: [
           { id: "jaw", text: "Jaw claudication", match: ["jaw"] },
           { id: "pmr", text: "Shoulder or hip girdle pain and morning stiffness", match: ["shoulder", "hip", "girdle", "polymyalgia", "pmr", "morning stiffness"] },
@@ -691,7 +701,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE examination findings you would look for.",
+        prompt: "What examination findings would you look for?",
         accept: [
           { id: "ta", text: "Temporal artery tenderness, thickening, nodularity or reduced pulse", match: ["temporal artery", "temporal arterie", "temporal pulse"] },
           { id: "fundus", text: "Pale swollen optic disc on fundoscopy", match: ["fundoscopy", "fundus", "optic disc", "disc swelling", "pallor", "fundi"] },
@@ -711,15 +721,15 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "ESR 88 mm/h, CRP 64 mg/L, platelets 510 x 10^9/L. Examination is otherwise normal.",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management at this time?",
         options: [
-          "Arrange temporal artery biopsy and start glucocorticoids only if it is positive",
-          "Start high dose glucocorticoids today and arrange temporal artery ultrasound or biopsy within 1 to 2 weeks",
-          "Prednisone 10 mg PO daily and follow up with her family physician",
+          "ASA 81 mg PO daily, ophthalmology referral within one month",
+          "Biopsy first, steroids only if the biopsy is positive",
+          "High dose steroids now, biopsy or ultrasound within 2 weeks",
           "Ibuprofen and repeat ESR in one week",
-          "ASA 81 mg daily and ophthalmology referral in one month",
+          "Prednisone 10 mg PO daily and family physician follow up",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Suspected GCA with visual symptoms is an emergency. High dose glucocorticoids should start the same day, before confirmation, to prevent permanent blindness. Many guidelines suggest IV methylprednisolone when there are visual symptoms, otherwise oral prednisone 40 to 60 mg. Biopsy or ultrasound yield is preserved for 1 to 2 weeks after steroids start.",
         keyFeature: { topic: "headache", n: 4 },
@@ -729,7 +739,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO referrals or follow up arrangements.",
+        prompt: "What referrals or follow up arrangements would you make?",
         accept: [
           { id: "ophtho", text: "Urgent ophthalmology assessment", match: ["ophthalmology", "ophthalmologist"] },
           { id: "rheum", text: "Rheumatology", match: ["rheumatology", "rheumatologist"] },
@@ -752,13 +762,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["eye"],
     title: "Headache and vomiting after dinner out",
     stem:
-      "A 67 year old woman developed a right sided headache, right eye pain and blurred vision 3 hours ago while at a dimly lit restaurant. She has vomited three times and sees halos around lights. She took dimenhydrinate at home for the nausea. HR 92, BP 162/90, RR 16, T 36.8°C.",
+      "A 67-year-old woman developed a right sided headache, right eye pain and blurred vision 3 hours ago while at a dimly lit restaurant. She has vomited three times and sees halos around lights. She took dimenhydrinate at home for the nausea.",
+    vitals: { temperature: "36.8°C", pulse: "92/minute", resp: "16/minute", bp: "162/90 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR examination findings that would support your leading diagnosis.",
+        prompt: "What examination findings would support your leading diagnosis?",
         accept: [
           { id: "pupil", text: "Mid dilated, poorly reactive pupil", match: ["pupil", "mid dilated", "fixed"] },
           { id: "red", text: "Conjunctival or ciliary injection", match: ["injection", "red eye", "injected", "ciliary flush", "redness"] },
@@ -777,19 +788,19 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 3,
-        update: "Intraocular pressure in the right eye is 58 mm Hg. The left is 16 mm Hg.",
-        prompt: "Which THREE medications should she receive now? Select THREE.",
+        update: "Intraocular pressure in the right eye is 58 mmHg. The left is 16 mmHg.",
+        prompt: "Which of the following medications should she receive now for her right eye?",
         options: [
-          "Timolol 0.5%, one drop in the right eye",
-          "Timolol 5%, one drop in the right eye",
-          "Acetazolamide 500 mg IV",
           "Acetazolamide 50 mg IV",
+          "Acetazolamide 500 mg IV",
           "Apraclonidine 1%, one drop in the right eye",
           "Atropine 1%, one drop in the right eye",
           "Cyclopentolate 1%, one drop in the right eye",
           "Pilocarpine 4% every 5 minutes for one hour",
+          "Timolol 0.5%, one drop in the right eye",
+          "Timolol 5%, one drop in the right eye",
         ],
-        correct: [0, 2, 4],
+        correct: [1,  2,  6],
         explanation:
           "Initial therapy lowers pressure with a topical beta blocker, an alpha agonist and a carbonic anhydrase inhibitor such as acetazolamide 500 mg IV or PO. Low dose pilocarpine is added once pressure starts to fall. Repeated high strength pilocarpine can worsen the block. Cycloplegics and mydriatics dilate the pupil and make the closure worse.",
         keyFeature: { topic: "headache", n: 4 },
@@ -799,7 +810,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO classes of medication that can precipitate this condition.",
+        prompt: "What classes of medication can precipitate this condition?",
         accept: [
           { id: "anticholinergic", text: "Anticholinergics and first generation antihistamines such as dimenhydrinate", match: ["anticholinergic", "antihistamine", "dimenhydrinate", "diphenhydramine", "scopolamine", "oxybutynin", "ipratropium"] },
           { id: "symp", text: "Sympathomimetics such as pseudoephedrine or decongestants", match: ["sympathomimetic", "pseudoephedrine", "decongestant", "adrenergic", "phenylephrine", "epinephrine"] },
@@ -816,15 +827,16 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "After treatment her pressure is 32 mm Hg and falling. Which disposition is most appropriate? Select one.",
+        update: "After treatment her pressure is 32 mmHg and falling.",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
-          "Same day ophthalmology assessment for laser peripheral iridotomy",
-          "Discharge with timolol drops and optometry follow up in one week",
-          "Recheck pressure in the ED tomorrow",
           "CT head and neurology referral",
+          "Discharge on timolol with optometry review in one week",
           "Discharge with analgesia once vomiting settles",
+          "Recheck pressure in the ED tomorrow",
+          "Same day ophthalmology for laser peripheral iridotomy",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "Medical therapy only buys time. Laser peripheral iridotomy is the definitive treatment and is usually also offered to the other eye, which is at high risk. Ophthalmology should see her the same day.",
         keyFeature: { topic: "headache", n: 4 },
@@ -839,13 +851,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     topic: "headache",
     title: "Her usual headache, only worse",
     stem:
-      "A 29 year old woman has had a right sided throbbing headache for 14 hours with nausea, light sensitivity and two episodes of vomiting. She has had similar headaches since age 15 but says this one is worse. She took ibuprofen 400 mg and rizatriptan 10 mg 4 hours ago without relief. HR 88, BP 118/72, T 36.7°C. Neurological exam including fundi is normal. Beta hCG is negative. Weight 62 kg.",
+      "A 29-year-old woman has had a right sided throbbing headache for 14 hours with nausea, light sensitivity and two episodes of vomiting. She has had similar headaches since age 15 but says this one is worse. She took ibuprofen 400 mg and rizatriptan 10 mg 4 hours ago without relief. Neurological exam including fundi is normal. Beta hCG is negative.",
+    vitals: { temperature: "36.7°C", pulse: "88/minute", bp: "118/72 mmHg", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that support a primary migraine rather than a secondary headache.",
+        prompt: "What features support a primary migraine rather than a secondary headache?",
         accept: [
           { id: "similar", text: "Similar to previous attacks over many years", match: ["similar", "typical", "previous", "prior", "since age", "long history", "history of migraine", "usual"] },
           { id: "photo", text: "Photophobia or phonophobia", match: ["photophobia", "phonophobia", "light", "sound"] },
@@ -867,15 +880,15 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate first parenteral treatment? Select one.",
+        prompt: "Which of the following is the most appropriate first parenteral treatment for her?",
         options: [
+          "Dihydroergotamine 1 mg IV",
           "Hydromorphone 1 mg IV",
+          "Meperidine 50 mg IM",
           "Prochlorperazine 10 mg IV",
           "Sumatriptan 6 mg SC",
-          "Dihydroergotamine 1 mg IV",
-          "Meperidine 50 mg IM",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "IV prochlorperazine or metoclopramide is first line in the ED. She took rizatriptan 4 hours ago, so another triptan or dihydroergotamine within 24 hours is contraindicated. Opioids are less effective, increase return visits and should be avoided as first line.",
         keyFeature: { topic: "headache", n: 5 },
@@ -886,7 +899,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Twenty minutes later she is restless, cannot sit still and feels anxious.",
-        prompt: "Name the likely cause and ONE treatment with dose.",
+        prompt: "What is the likely cause, and what treatment with dose would you give?",
         accept: [
           { id: "akath", text: "Akathisia from the dopamine antagonist", match: ["akathisia", "extrapyramidal"] },
           { id: "tx", text: "Diphenhydramine 25 to 50 mg IV", match: ["diphenhydramine 25", "diphenhydramine 50", "benadryl 25", "benadryl 50", "benztropine 1", "benztropine 2", "midazolam 1", "midazolam 2", "lorazepam 0.5", "lorazepam 1"] },
@@ -905,7 +918,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Her headache has resolved.",
-        prompt: "List TWO things you would do before discharge to reduce recurrence or return visits.",
+        prompt: "What would you do before discharge to reduce recurrence or return visits?",
         accept: [
           { id: "dex", text: "Dexamethasone 10 mg IV to reduce early recurrence", match: ["dexamethasone", "decadron", "steroid"] },
           { id: "nsaid", text: "Home plan with an NSAID such as naproxen for recurrence", match: ["naproxen", "nsaid", "ibuprofen"] },
@@ -935,13 +948,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["pre-eclampsia"],
     title: "Headache with aura in pregnancy",
     stem:
-      "A 33 year old woman, G2P1 at 31 weeks, has a throbbing left sided headache that began 6 hours ago after 20 minutes of zigzag lines in her vision. She has had migraine with aura since her teens, and this feels typical. The aura has resolved. BP 128/82 (110/70 in the first trimester), HR 86, T 36.8°C. Neurological exam is normal.",
+      "A 33-year-old woman, G2P1 at 31 weeks, has a throbbing left sided headache that began 6 hours ago after 20 minutes of zigzag lines in her vision. She has had migraine with aura since her teens, and this feels typical. The aura has resolved. Her BP in the first trimester was 110/70 mmHg. Neurological exam is normal.",
+    vitals: { temperature: "36.8°C", pulse: "86/minute", bp: "128/82 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations to exclude pre-eclampsia.",
+        prompt: "What investigations would you order to exclude pre-eclampsia?",
         accept: [
           { id: "bp", text: "Repeated blood pressure measurements", match: ["repeat blood pressure", "serial blood pressure", "repeat bp", "blood pressure"] },
           { id: "urine", text: "Urine protein to creatinine ratio or dipstick", match: ["urine protein", "protein creatinine", "proteinuria", "urinalysis", "dipstick", "urine"] },
@@ -961,18 +975,18 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        update: "All results are normal. Repeat BP is 122/78.",
-        prompt: "Which TWO treatments are most appropriate for her migraine? Select TWO.",
+        update: "All results are normal. Repeat BP is 122/78 mmHg.",
+        prompt: "Which of the following treatments are most appropriate for her migraine?",
         options: [
           "Acetaminophen 1 g PO",
-          "Metoclopramide 10 mg IV",
-          "Ibuprofen 400 mg PO",
           "Dihydroergotamine 1 mg IV",
           "Hydromorphone 2 mg IV",
+          "Ibuprofen 400 mg PO",
+          "Metoclopramide 10 mg IV",
           "Naproxen 500 mg PO",
           "Valproate 500 mg IV",
         ],
-        correct: [0, 1],
+        correct: [0,  4],
         explanation:
           "Acetaminophen and metoclopramide are preferred in pregnancy. Health Canada and the FDA advised in 2020 against NSAIDs from 20 weeks because of fetal kidney injury and low amniotic fluid, and later use also risks ductal closure. Ergots are contraindicated and valproate is teratogenic. Opioids are less effective and not first line.",
         keyFeature: { topic: "headache", n: 5 },
@@ -982,7 +996,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO medications or classes to avoid for her migraine at this stage of pregnancy.",
+        prompt: "What medications or classes should she avoid for migraine at this stage of pregnancy?",
         accept: [
           { id: "nsaid", text: "NSAIDs after 20 weeks", match: ["nsaid", "ibuprofen", "naproxen", "ketorolac", "anti inflammatory", "avoid nsaid", "no nsaid", "nsaid contraindicated", "nsaid avoided", "avoid ibuprofen", "no ibuprofen", "avoid naproxen", "no naproxen"] },
           { id: "ergot", text: "Ergots such as dihydroergotamine", match: ["ergot", "ergotamine", "dihydroergotamine", "dhe", "avoid ergot", "no ergot", "ergot contraindicated", "avoid dhe", "no dhe", "avoid dihydroergotamine", "no dihydroergotamine"] },
@@ -1000,7 +1014,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO symptoms that should prompt her to return urgently.",
+        prompt: "What symptoms should prompt her to return urgently?",
         accept: [
           { id: "new", text: "A headache different from her usual or sudden in onset", match: ["different", "sudden", "thunderclap", "worst", "new headache", "unusual"] },
           { id: "vision", text: "Visual loss or a prolonged aura", match: ["vision", "visual", "blind", "aura longer", "prolonged aura"] },
@@ -1028,13 +1042,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "A family with headaches in January",
     stem:
-      "In January, a 41 year old man comes in with a dull headache, nausea and dizziness since waking. He had the same symptoms yesterday morning that improved at work. His children aged 6 and 9 have had headaches and vomiting for two days, and the dog has been lethargic. HR 104, BP 128/80, RR 18, SpO2 99% on room air, T 36.6°C, GCS 15. Neurological exam is normal.",
+      "In January, a 41-year-old man comes in with a dull headache, nausea and dizziness since waking. He had the same symptoms yesterday morning that improved at work. His children aged 6 and 9 have had headaches and vomiting for two days, and the dog has been lethargic. GCS 15. Neurological exam is normal.",
+    vitals: { temperature: "36.6°C", pulse: "104/minute", resp: "18/minute", bp: "128/80 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE history questions that would support your leading diagnosis.",
+        prompt: "What history questions would support your leading diagnosis?",
         accept: [
           { id: "house", text: "Whether other household members or pets are affected", match: ["household", "family", "other people", "pet", "dog", "children", "kid"] },
           { id: "away", text: "Whether symptoms improve away from home", match: ["away from home", "improve", "better", "outside"] },
@@ -1052,17 +1067,17 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which test confirms the diagnosis? Select one.",
+        prompt: "Which of the following tests would best confirm the suspected diagnosis?",
         options: [
-          "Carboxyhemoglobin level by co-oximetry on a venous or arterial blood gas",
-          "Pulse oximetry",
+          "Carboxyhemoglobin by co-oximetry on a blood gas",
+          "Continuous pulse oximetry on room air",
+          "Non contrast CT of the head",
           "PaO2 on an arterial blood gas",
-          "CT head",
-          "Serum lactate",
+          "Serum lactate on a venous blood gas",
         ],
         correct: 0,
         explanation:
-          "Co-oximetry measures carboxyhemoglobin directly, and venous samples are adequate. Standard pulse oximetry and PaO2 are normal in CO poisoning. The level may underestimate severity if oxygen was given before sampling.",
+          "Co-oximetry measures carboxyhemoglobin directly on a venous or arterial blood gas, and venous samples are adequate. Standard pulse oximetry and PaO2 are normal in CO poisoning. The level may underestimate severity if oxygen was given before sampling.",
         keyFeature: { topic: "headache", n: 6 },
         source: "rosen",
       },
@@ -1071,7 +1086,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "His carboxyhemoglobin is 28%. ECG shows sinus tachycardia without ischemia. Troponin is normal.",
-        prompt: "List TWO immediate management steps.",
+        prompt: "What are the immediate management steps?",
         accept: [
           { id: "o2", text: "100% oxygen by non rebreather mask", match: ["100% oxygen", "100% o2", "non rebreather", "nonrebreather", "nrb", "high flow oxygen", "high flow o2", "15 l"] },
           { id: "hbo", text: "Discuss hyperbaric oxygen with the regional hyperbaric centre", match: ["hyperbaric", "hbo"] },
@@ -1088,7 +1103,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that would favour hyperbaric oxygen therapy in CO poisoning.",
+        prompt: "What features would favour hyperbaric oxygen therapy in CO poisoning?",
         accept: [
           { id: "loc", text: "Loss of consciousness or syncope", match: ["loss of consciousness", "syncope", "loc", "unconscious"] },
           { id: "neuro", text: "Neurological deficits, confusion, seizure or coma", match: ["neurologic", "neurological", "confusion", "seizure", "coma", "altered", "cerebellar"] },
@@ -1113,7 +1128,8 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["eye"],
     title: "Burning forehead pain",
     stem:
-      "A 71 year old man with type 2 diabetes has had burning pain over his right forehead and around his right eye for 3 days, with a right sided headache. This morning he noticed blisters on his right forehead and the tip of his nose. His right eye is red and sensitive to light. HR 82, BP 144/84, T 37.4°C.",
+      "A 71-year-old man with type 2 diabetes has had burning pain over his right forehead and around his right eye for 3 days, with a right sided headache. This morning he noticed blisters on his right forehead and the tip of his nose. His right eye is red and sensitive to light.",
+    vitals: { temperature: "37.4°C", pulse: "82/minute", bp: "144/84 mmHg" },
     questions: [
       {
         id: "q1",
@@ -1136,7 +1152,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of the eye examination you would perform.",
+        prompt: "What elements of the eye examination would you perform?",
         accept: [
           { id: "va", text: "Visual acuity", match: ["visual acuity", "acuity", "snellen"] },
           { id: "slit", text: "Slit lamp examination", match: ["slit lamp"] },
@@ -1157,7 +1173,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Write the antiviral prescription. Include drug, dose, frequency and duration.",
+        prompt: "What antiviral prescription would you write, including drug, dose, frequency and duration?",
         accept: [
           { id: "vala", text: "Valacyclovir 1 g PO three times daily for 7 days", match: ["valacyclovir 1 g", "valacyclovir 1g", "valacyclovir 1000"] },
           { id: "fam", text: "Famciclovir 500 mg PO three times daily for 7 days", match: ["famciclovir 500"] },
@@ -1174,17 +1190,18 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Slit lamp shows anterior chamber cells. Which statement about topical corticosteroids is most appropriate? Select one.",
+        update: "Slit lamp shows anterior chamber cells.",
+        prompt: "Which of the following statements about topical corticosteroids is most appropriate?",
         options: [
-          "Start prednisolone acetate 1% drops in the ED and review in 2 weeks",
-          "Avoid starting topical steroids in the ED and arrange ophthalmology review within 24 hours",
+          "Defer steroid drops to ophthalmology review within 24 hours",
           "Prescribe a steroid and antibiotic combination drop",
-          "Prescribe topical anesthetic drops for home use",
-          "Topical steroids are always contraindicated in zoster eye disease",
+          "Prescribe topical anesthetic drops for pain control at home",
+          "Start prednisolone acetate 1% drops, review in 2 weeks",
+          "Topical steroids are contraindicated in zoster eye disease",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "Topical steroids may be used for zoster uveitis, but only under ophthalmology with slit lamp follow up, because they can worsen HSV keratitis if the diagnosis is wrong and raise pressure. Emergency physicians should not start them routinely. Topical anesthetics for home use damage the cornea.",
+          "Topical steroids may be used for zoster uveitis, but only under ophthalmology with slit lamp follow up, because they can worsen HSV keratitis if the diagnosis is wrong and raise pressure. Emergency physicians should not start them routinely, and ophthalmology review within 24 hours is arranged. Topical anesthetics for home use damage the cornea.",
         keyFeature: { topic: "eye", n: 4 },
         source: "tintinalli",
       },
@@ -1198,13 +1215,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     alsoTopics: ["cva"],
     title: "Neck pain and a droopy eyelid",
     stem:
-      "A 43 year old man has had left sided neck pain and a left frontal headache for 2 days. The pain started the day after he was checked hard into the boards during a recreational hockey game. His wife noticed his left eyelid drooping today. He has no weakness. HR 76, BP 142/86, RR 14, T 36.7°C, GCS 15.",
+      "A 43-year-old man has had left sided neck pain and a left frontal headache for 2 days. The pain started the day after he was checked hard into the boards during a recreational hockey game. His wife noticed his left eyelid drooping today. He has no weakness. GCS 15.",
+    vitals: { temperature: "36.7°C", pulse: "76/minute", resp: "14/minute", bp: "142/86 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE specific examination findings you would look for.",
+        prompt: "What specific examination findings would you look for?",
         accept: [
           { id: "pupil", text: "Pupil asymmetry, best seen in dim light", match: ["pupil", "anisocoria", "miosis"] },
           { id: "ptosis", text: "Degree of ptosis", match: ["ptosis", "eyelid"] },
@@ -1242,15 +1260,15 @@ export const HEADACHE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which investigation is most appropriate? Select one.",
+        prompt: "Which of the following investigations is most appropriate for the suspected diagnosis?",
         options: [
-          "CT angiography of the head and neck",
           "Carotid Doppler ultrasound alone",
-          "Non contrast CT head alone",
+          "CT angiography of the head and neck",
+          "Lumbar puncture with opening pressure",
           "MRI brain without vascular imaging",
-          "Lumbar puncture",
+          "Non contrast CT head alone",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "CT angiography of the head and neck is fast and widely available for dissection. MRI with MR angiography and fat saturated sequences is an alternative. Doppler can miss distal internal carotid dissections near the skull base.",
         keyFeature: { topic: "headache", n: 6 },
@@ -1260,13 +1278,13 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "CT angiography confirms a left internal carotid artery dissection without occlusion. There is no infarct.",
-        prompt: "Which management is most appropriate? Select one.",
+        prompt: "Which of the following is the most appropriate management for him?",
         options: [
-          "Antithrombotic therapy, such as ASA, with prompt stroke prevention follow up",
-          "Tenecteplase now",
+          "Antithrombotic such as ASA, prompt stroke prevention review",
           "Discharge with naproxen and no follow up",
-          "Emergency carotid endarterectomy",
+          "Emergency carotid endarterectomy by vascular surgery tonight",
           "Return to hockey in one week if the headache settles",
+          "Tenecteplase now at the acute stroke dose",
         ],
         correct: 0,
         explanation:
@@ -1283,13 +1301,14 @@ export const HEADACHE_SAMPS: Samp[] = [
     topic: "headache",
     title: "Weeks of morning headaches",
     stem:
-      "A 61 year old man has had headaches for 3 weeks. They are worst when he wakes and when he coughs, and he vomited twice this week. His wife says he has trouble finding words and seems less like himself. He smokes 40 pack years. HR 72, BP 148/88, RR 16, T 36.7°C, GCS 15.",
+      "A 61-year-old man has had headaches for 3 weeks. They are worst when he wakes and when he coughs, and he vomited twice this week. His wife says he has trouble finding words and seems less like himself. He smokes 40 pack years. GCS 15.",
+    vitals: { temperature: "36.7°C", pulse: "72/minute", resp: "16/minute", bp: "148/88 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE red flag features in this history.",
+        prompt: "What are the red flag features in this history?",
         accept: [
           { id: "age", text: "New headache after age 50", match: ["age", "over 50", "older than 50", "new headache"] },
           { id: "prog", text: "Progressive headache over weeks", match: ["progressive", "worsening", "weeks"] },
@@ -1308,7 +1327,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE examination findings you would specifically look for.",
+        prompt: "What examination findings would you specifically look for?",
         accept: [
           { id: "papill", text: "Papilledema", match: ["papilledema", "fundoscopy", "fundi", "fundus", "optic disc"] },
           { id: "focal", text: "Focal weakness or pronator drift", match: ["focal", "weakness", "pronator drift", "hemiparesis", "motor"] },
@@ -1329,7 +1348,7 @@ export const HEADACHE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Non contrast CT shows a 3 cm left frontal mass with surrounding vasogenic edema and 5 mm of midline shift.",
-        prompt: "List TWO immediate management steps.",
+        prompt: "What are the immediate management steps?",
         accept: [
           { id: "dex", text: "Dexamethasone 10 mg IV", match: ["dexamethasone", "decadron", "steroid"] },
           { id: "nsx", text: "Neurosurgery consult", match: ["neurosurgery", "neurosurgeon", "neurosurgical"] },

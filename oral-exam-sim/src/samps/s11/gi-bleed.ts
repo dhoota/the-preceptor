@@ -16,13 +16,13 @@ const S = {
   stanley: { id: "stanley", citation: "Stanley AJ, et al. Comparison of risk scoring systems for patients presenting with upper gastrointestinal bleeding: international multicentre prospective study. BMJ. 2017." },
   bsgLgib: { id: "bsg-lgib", citation: "Oakland K, et al. Diagnosis and management of acute lower gastrointestinal bleeding: guidelines from the British Society of Gastroenterology. Gut. 2019." },
   acgLgib: { id: "acg-lgib", citation: "Sengupta N, et al. Management of patients with acute lower gastrointestinal bleeding: an updated ACG guideline. Am J Gastroenterol. 2023." },
-  tcDoac: { id: "tc-doac", citation: "Thrombosis Canada. Clinical guide on the management of bleeding in patients taking a DOAC." },
-  tcWarfarin: { id: "tc-warfarin", citation: "Thrombosis Canada. Clinical guide on warfarin, including management of bleeding and a high INR." },
-  cbs: { id: "cbs", citation: "Canadian Blood Services. Clinical Guide to Transfusion. Chapters on massive hemorrhage and emergency blood issue." },
+  tcDoac: { id: "tc-doac", citation: "Thrombosis Canada. Clinical guide: DOACs: management of bleeding. 2024.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/MANAGEMENTOFBLEEDINGINPATIENTS_75.pdf" },
+  tcWarfarin: { id: "tc-warfarin", citation: "Thrombosis Canada. Clinical guide: warfarin. 2024.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/WARFARIN_40.pdf" },
+  cbs: { id: "cbs", citation: "Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clarke G, Chargé S, editors. Clinical Guide to Transfusion. Chapter 11. Canadian Blood Services. 2021.", url: "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion" },
   pollack: { id: "pollack", citation: "Pollack CV Jr, et al. Idarucizumab for dabigatran reversal. N Engl J Med. 2015." },
   mint: { id: "mint", citation: "Carson JL, et al. Restrictive or liberal transfusion strategy in myocardial infarction and anemia. N Engl J Med. 2023. The MINT trial." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on gastrointestinal bleeding, esophagus and aortic disease." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on gastrointestinal bleeding in adults and children." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on gastrointestinal bleeding, esophagus and aortic disease." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on gastrointestinal bleeding in adults and children." },
 } satisfies Record<string, Source>;
 
 export const GI_BLEED_SAMPS: Samp[] = [
@@ -31,13 +31,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
     topic: "gi-bleed",
     title: "Man brought in vomiting blood",
     stem:
-      "A 58 year old man is brought in by paramedics after two large episodes of bright red hematemesis at home. His partner says he drinks about 12 beers a day and has not seen a doctor in years. He is drowsy but answers questions. HR 124, BP 84/50, RR 24, SpO2 95% on room air, T 36.3°C, GCS 14. Weight about 80 kg.",
+      "A 58-year-old man is brought in by paramedics after two large episodes of bright red hematemesis at home. His partner says he drinks about 12 beers a day and has not seen a doctor in years. He is drowsy but answers questions. GCS 14. His weight is about 80 kg.",
+    vitals: { temperature: "36.3°C", pulse: "124/minute", resp: "24/minute", bp: "84/50 mmHg", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE physical findings you would look for that suggest chronic liver disease or portal hypertension.",
+        prompt: "What physical findings would you look for that suggest chronic liver disease or portal hypertension?",
         accept: [
           { id: "jaundice", text: "Jaundice or scleral icterus", match: ["jaundice", "icterus"] },
           { id: "spider", text: "Spider angiomas", match: ["spider"] },
@@ -62,7 +63,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "List FOUR immediate resuscitation actions.",
+        prompt: "What immediate resuscitation actions would you take?",
         accept: [
           { id: "iv", text: "Two large bore IV lines", match: ["large bore", "two iv", "2 iv", "two peripheral", "2 peripheral", "iv access", "intraosseous"] },
           { id: "xm", text: "Group and crossmatch", match: ["crossmatch", "cross match", "type and screen", "type and cross", "group and screen"] },
@@ -85,18 +86,18 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO medications are specifically indicated now for suspected variceal bleeding? Select TWO.",
+        prompt: "Which of the following medications are specifically indicated now for suspected variceal bleeding?",
         options: [
+          "Ceftriaxone 1 g IV daily",
+          "Frozen plasma 4 units to correct an INR of 1.9",
           "Octreotide 50 mcg IV bolus, then 50 mcg/h infusion",
           "Octreotide 500 mcg IV bolus, then 500 mcg/h infusion",
-          "Ceftriaxone 1 g IV daily",
+          "Propranolol 20 mg PO twice daily",
           "Tranexamic acid 1 g IV over 10 minutes",
-          "Propranolol 20 mg PO",
-          "Vitamin K 10 mg IV",
-          "Frozen plasma 4 units to correct an INR of 1.9",
-          "Vancomycin 1 g IV",
+          "Vancomycin 1 g IV every 12 hours",
+          "Vitamin K 10 mg IV daily",
         ],
-        correct: [0, 2],
+        correct: [0,  2],
         explanation:
           "A vasoactive drug started before endoscopy lowers portal pressure and improves control of bleeding. Octreotide is the agent used in Canada, and antibiotic prophylaxis with ceftriaxone lowers infection, rebleeding and death in cirrhosis with GI bleeding. Beta blockers are held in shock. Tranexamic acid does not help and plasma adds volume without fixing the rebalanced coagulation of cirrhosis.",
         keyFeature: { topic: "gi-bleed", n: 6 },
@@ -107,7 +108,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Endoscopy shows a spurting esophageal varix. Band ligation fails. He is intubated and still bleeding.",
-        prompt: "List TWO rescue measures.",
+        prompt: "What rescue measures are available for his bleeding?",
         accept: [
           { id: "balloon", text: "Balloon tamponade such as a Minnesota or Sengstaken Blakemore tube", match: ["balloon", "sengstaken", "blakemore", "minnesota", "linton"] },
           { id: "stent", text: "Self expanding esophageal metal stent", match: ["stent"] },
@@ -128,13 +129,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
     topic: "gi-bleed",
     title: "Black stools and light headedness",
     stem:
-      "A 67 year old woman has had three days of black stools and feels light headed when she stands. She has knee osteoarthritis. She has no chest pain and no known heart disease. HR 96, BP 118/70, RR 16, SpO2 98%. Weight 62 kg. Hemoglobin 94 g/L (128 g/L one year ago), urea 14.2 mmol/L, creatinine 88 micromol/L, INR 1.0, platelets 260 x 10^9/L.",
+      "A 67-year-old woman has had three days of black stools and feels light headed when she stands. She has knee osteoarthritis. She has no chest pain and no known heart disease. Hemoglobin 94 g/L (128 g/L one year ago), urea 14.2 mmol/L, creatinine 88 micromol/L, INR 1.0, platelets 260 x 10^9/L.",
+    vitals: { pulse: "96/minute", resp: "16/minute", bp: "118/70 mmHg", o2sat: "98% on arrival", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE medications or substances you would specifically ask about.",
+        prompt: "What medications or substances would you specifically ask about?",
         accept: [
           { id: "nsaid", text: "NSAIDs such as ibuprofen or naproxen", match: ["nsaid", "ibuprofen", "naproxen", "anti inflammatory"] },
           { id: "asa", text: "ASA", match: ["asa", "aspirin"] },
@@ -153,15 +155,15 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which transfusion plan is most appropriate now? Select one.",
+        prompt: "Which of the following is the most appropriate transfusion plan for her now?",
         options: [
-          "Transfuse 2 units of red cells to reach a hemoglobin above 100 g/L",
-          "Transfuse 1 unit of red cells now because she is symptomatic on standing",
-          "No transfusion now. Recheck hemoglobin and transfuse if it falls below about 70 to 80 g/L",
-          "Give frozen plasma 2 units",
-          "Give IV iron now instead of monitoring",
+          "Frozen plasma 2 units IV",
+          "IV iron now instead of repeat hemoglobin",
+          "Red cells 1 unit now for symptoms on standing",
+          "Red cells 2 units to a hemoglobin above 100 g/L",
+          "No transfusion now, recheck, transfuse below 70 to 80 g/L",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "A restrictive strategy lowers rebleeding and death in upper GI bleeding compared with liberal transfusion. Without cardiovascular disease, guidelines use a threshold of about 70 to 80 g/L. She is hemodynamically stable at 94 g/L. Plasma is not indicated with a normal INR.",
         keyFeature: { topic: "gi-bleed", n: 5 },
@@ -171,7 +173,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Write your acid suppression order. Include the drug, dose and route.",
+        prompt: "What acid suppression order would you write, including the drug, dose and route?",
         accept: [
           { id: "panto80", text: "Pantoprazole 80 mg IV bolus, then 8 mg/h infusion or 40 mg IV twice daily", match: ["pantoprazole 80", "esomeprazole 80", "80 mg iv", "pantoprazole 40 mg iv"] },
         ],
@@ -188,13 +190,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Her Glasgow Blatchford score is 11. Which disposition is most appropriate? Select one.",
+        update: "Her Glasgow Blatchford score is 11.",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
-          "Discharge with outpatient endoscopy within one week",
+          "Abdominal CT angiography now",
           "Admit for endoscopy within 24 hours",
-          "Emergency endoscopy within 2 hours",
-          "CT angiography now",
           "Admit to ICU for an octreotide infusion",
+          "Discharge with outpatient endoscopy within one week",
+          "Emergency endoscopy within 2 hours",
         ],
         correct: 1,
         explanation:
@@ -212,13 +215,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
     alsoTopics: ["loc"],
     title: "Collapse in the bathroom",
     stem:
-      "A 79 year old man fainted on the bathroom floor at 0600 and woke within a minute. He has no chest pain, abdominal pain or vomiting. He has atrial fibrillation on apixaban 5 mg twice daily and takes over the counter ibuprofen for back pain. HR 108 irregular, BP 98/58 (usually 140s systolic), RR 18, SpO2 97%, T 36.7°C, capillary glucose 6.8 mmol/L. His conjunctivae are pale. ECG shows atrial fibrillation at 108 with no acute ischemic change.",
+      "A 79-year-old man fainted on the bathroom floor at 0600 and woke within a minute. He has no chest pain, abdominal pain or vomiting. He has atrial fibrillation on apixaban 5 mg twice daily and takes over the counter ibuprofen for back pain. His usual systolic BP is in the 140s. Capillary glucose is 6.8 mmol/L. His conjunctivae are pale. ECG shows atrial fibrillation at 108 with no acute ischemic change.",
+    vitals: { temperature: "36.7°C", pulse: "108/minute irregular", resp: "18/minute", bp: "98/58 mmHg", o2sat: "97% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE serious causes of his syncope that you must consider.",
+        prompt: "What serious causes of his syncope must you consider?",
         accept: [
           { id: "gi", text: "Occult gastrointestinal bleeding", match: ["gi", "gastrointestinal", "ulcer", "blood loss", "melena", "peptic"] },
           { id: "arr", text: "Arrhythmia such as heart block or ventricular tachycardia", match: ["arrhythmia", "dysrhythmia", "ventricular tachycardia", "heart block"] },
@@ -238,7 +242,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "Name the ONE bedside examination most likely to confirm the leading diagnosis quickly.",
+        prompt: "What bedside examination is most likely to confirm the leading diagnosis quickly?",
         accept: [
           { id: "dre", text: "Digital rectal examination for melena", match: ["rectal", "dre", "melena"] },
         ],
@@ -251,8 +255,8 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "Rectal examination shows black tarry stool. Hemoglobin 71 g/L (130 g/L three months ago), urea 21 mmol/L, creatinine 110 micromol/L, INR 1.3. His last apixaban dose was 3 hours ago. BP falls to 86/52 despite 1 L of Ringer's lactate.",
-        prompt: "List THREE management steps specific to his anticoagulant and his bleeding.",
+        update: "Rectal examination shows black tarry stool. Hemoglobin 71 g/L (130 g/L three months ago), urea 21 mmol/L, creatinine 110 micromol/L, INR 1.3. His last apixaban dose was 3 hours ago. BP falls to 86/52 mmHg despite 1 L of Ringer's lactate.",
+        prompt: "What management steps are specific to his anticoagulant and his bleeding?",
         accept: [
           { id: "hold", text: "Hold apixaban", match: ["hold apixaban", "stop apixaban", "discontinue apixaban", "hold anticoagulant", "stop anticoagulant", "hold anticoagulation", "stop anticoagulation", "discontinue anticoagulation"] },
           { id: "pcc", text: "Reverse with prothrombin complex concentrate 50 units/kg (maximum 3000 units) or a fixed 2000 units, or andexanet where available", match: ["prothrombin complex", "pcc", "octaplex", "beriplex", "andexanet"] },
@@ -282,13 +286,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Large volume rectal bleeding in a young man",
     stem:
-      "A 45 year old man has passed three large maroon and red stools with clots over 2 hours. He feels faint. He has taken ibuprofen 800 mg three times daily for three weeks for a back injury. He has no abdominal pain. HR 126, BP 86/52, RR 22, SpO2 97%. He is pale and diaphoretic. Hemoglobin 82 g/L, urea 19.8 mmol/L, creatinine 84 micromol/L, INR 1.1.",
+      "A 45-year-old man has passed three large maroon and red stools with clots over 2 hours. He feels faint. He has taken ibuprofen 800 mg three times daily for three weeks for a back injury. He has no abdominal pain. He is pale and diaphoretic. Hemoglobin 82 g/L, urea 19.8 mmol/L, creatinine 84 micromol/L, INR 1.1.",
+    vitals: { pulse: "126/minute", resp: "22/minute", bp: "86/52 mmHg", o2sat: "97% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that suggest an upper GI source for this bleeding.",
+        prompt: "What features suggest an upper GI source for this bleeding?",
         accept: [
           { id: "shock", text: "Hemodynamic instability or shock with hematochezia", match: ["shock", "hypotension", "tachycardia", "hemodynamic", "unstable"] },
           { id: "urea", text: "Elevated urea or high urea to creatinine ratio", match: ["urea", "bun"] },
@@ -305,16 +310,16 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Resuscitation is under way. Which is the most appropriate first diagnostic procedure? Select one.",
+        update: "Resuscitation is under way.",
+        prompt: "Which of the following is the most appropriate first diagnostic procedure?",
         options: [
-          "Colonoscopy after bowel preparation",
-          "Upper endoscopy",
-          "Tagged red blood cell scan",
-          "Nasogastric lavage to decide on upper endoscopy",
           "Flexible sigmoidoscopy",
-          "Capsule endoscopy",
+          "Nasogastric lavage",
+          "Tagged red blood cell scan",
+          "Upper endoscopy",
+          "Urgent colonoscopy",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "With shock, a urea to creatinine ratio well above 100 (19.8 mmol/L against 0.084 mmol/L) and heavy NSAID use, the most likely source is a bleeding duodenal ulcer. The ACG guideline advises upper endoscopy first when hematochezia with instability suggests an upper source. The BSG favours CT angiography first for unstable lower GI bleeding when an upper source is not suspected, and CTA is a reasonable next step if the upper endoscopy is negative. A negative nasogastric aspirate does not exclude a duodenal source.",
         keyFeature: { topic: "gi-bleed", n: 2 },
@@ -323,15 +328,16 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "The blood bank says crossmatched blood will take 45 minutes. Which is the most appropriate immediate product? Select one.",
+        update: "The blood bank says crossmatched blood will take 45 minutes.",
+        prompt: "Which of the following is the most appropriate product to give immediately?",
         options: [
+          "Albumin 5% 500 mL IV",
+          "Frozen plasma 4 units first",
           "Normal saline 2 L, then reassess",
-          "5% albumin 500 mL",
           "Uncrossmatched group O red cells now",
           "Wait for crossmatched red cells",
-          "Frozen plasma 4 units first",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
           "In hemorrhagic shock, give uncrossmatched group O red cells rather than waiting. For an adult man, O positive red cells are acceptable and conserve O negative stock. Colloid and large crystalloid volumes add no oxygen carrying capacity and dilute clotting factors.",
         keyFeature: { topic: "shock", n: 3 },
@@ -342,7 +348,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Upper endoscopy shows a 1.5 cm posterior duodenal bulb ulcer with active spurting. Endoscopic therapy fails to stop the bleeding.",
-        prompt: "List TWO next options for definitive hemostasis.",
+        prompt: "What are the next options for definitive hemostasis?",
         accept: [
           { id: "tae", text: "Transcatheter arterial embolization by interventional radiology", match: ["embolization", "interventional radiology", "angiography"] },
           { id: "surg", text: "Surgery to oversew the ulcer", match: ["surgery", "surgical", "laparotomy"] },
@@ -362,13 +368,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
     topic: "gi-bleed",
     title: "Blood in the vomit after a cold",
     stem:
-      "A 34 year old woman woke at 0400 and vomited dark red clots once. She has had a cold for four days and had a nosebleed the evening before that stopped with pressure. She takes no medications and drinks rarely. HR 88, BP 124/78, RR 16, SpO2 99%. Hemoglobin 136 g/L.",
+      "A 34-year-old woman woke at 0400 and vomited dark red clots once. She has had a cold for four days and had a nosebleed the evening before that stopped with pressure. She takes no medications and drinks rarely. Hemoglobin 136 g/L.",
+    vitals: { pulse: "88/minute", resp: "16/minute", bp: "124/78 mmHg", o2sat: "99% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE areas you would examine to look for a source outside the GI tract.",
+        prompt: "What areas would you examine to look for a source outside the GI tract?",
         accept: [
           { id: "nose", text: "Nose and nasal septum with a speculum and good light", match: ["nose", "nasal", "septum"] },
           { id: "pharynx", text: "Posterior pharynx and oropharynx", match: ["pharynx", "nasopharynx", "oropharynx", "throat"] },
@@ -384,7 +391,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that would favour hemoptysis over hematemesis.",
+        prompt: "What features would favour hemoptysis over hematemesis?",
         accept: [
           { id: "froth", text: "Bright red and frothy", match: ["frothy", "foamy"] },
           { id: "cough", text: "Coughed up rather than vomited", match: ["cough", "coughed", "coughing"] },
@@ -407,17 +414,17 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Anterior rhinoscopy shows a small oozing vessel on the left anterior septum. The pharynx has a trickle of old blood. Her chest is clear.",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management of her bleeding?",
         options: [
-          "Direct pressure and a topical vasoconstrictor, then silver nitrate cautery of the bleeding point",
+          "CT of the paranasal sinuses with contrast",
+          "Posterior nasal packing using an inflatable balloon catheter",
+          "Pressure, vasoconstrictor, then focal silver nitrate cautery",
           "Silver nitrate cautery of both sides of the septum",
-          "Urgent upper endoscopy",
-          "Posterior nasal packing",
-          "CT of the sinuses",
+          "Urgent upper endoscopy by gastroenterology",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
-          "Her hematemesis came from swallowed blood from an anterior septal bleed. Focal cautery after pressure and vasoconstriction is appropriate. Cauterizing both sides of the septum risks perforation. With a clear ENT source and a normal hemoglobin, endoscopy is not needed.",
+          "Her hematemesis came from swallowed blood from an anterior septal bleed. Direct pressure and a topical vasoconstrictor, then silver nitrate cautery of the bleeding point only, is appropriate. Cauterizing both sides of the septum risks perforation. With a clear ENT source and a normal hemoglobin, endoscopy is not needed.",
         keyFeature: { topic: "gi-bleed", n: 4 },
         source: "rosen",
       },
@@ -430,7 +437,8 @@ export const GI_BLEED_SAMPS: Samp[] = [
     topic: "gi-bleed",
     title: "Brief hematemesis in an older man with a vascular history",
     stem:
-      "A 72 year old man vomited about 200 mL of bright red blood 3 hours ago. It stopped and he now feels well. He had an open abdominal aortic aneurysm repair with a synthetic graft six years ago. He has coronary disease and takes ASA 81 mg daily. HR 94, BP 132/80, RR 16, SpO2 97%. Abdomen is soft with a healed midline scar. Hemoglobin 118 g/L.",
+      "A 72-year-old man vomited about 200 mL of bright red blood 3 hours ago. It stopped and he now feels well. He had an open abdominal aortic aneurysm repair with a synthetic graft six years ago. He has coronary disease and takes ASA 81 mg daily. Abdomen is soft with a healed midline scar. Hemoglobin 118 g/L.",
+    vitals: { pulse: "94/minute", resp: "16/minute", bp: "132/80 mmHg", o2sat: "97% on arrival" },
     questions: [
       {
         id: "q1",
@@ -448,15 +456,15 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate next investigation? Select one.",
+        prompt: "Which of the following is the most appropriate next investigation?",
         options: [
+          "Abdominal ultrasound of the aortic graft",
           "CT angiography of the abdomen and pelvis",
+          "Tagged red blood cell nuclear scan",
           "Upper endoscopy tomorrow morning",
-          "Tagged red blood cell scan",
-          "Abdominal ultrasound",
           "Upright abdominal radiograph",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "CT angiography can show loss of the fat plane between graft and bowel, perigraft gas or fluid, and contrast extravasation. It should be done promptly with vascular surgery aware. Endoscopy is often also done, but a next day scope is too slow for a possible herald bleed.",
         keyFeature: { topic: "abdominal-pain", n: 5 },
@@ -466,7 +474,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO other actions you would take now while awaiting imaging.",
+        prompt: "What other actions would you take now while awaiting imaging?",
         accept: [
           { id: "vasc", text: "Consult vascular surgery now", match: ["vascular surgery", "vascular surgeon"] },
           { id: "xm", text: "Group and crossmatch several units", match: ["crossmatch", "type and screen", "massive"] },
@@ -493,7 +501,8 @@ export const GI_BLEED_SAMPS: Samp[] = [
     alsoTopics: ["chest-pain"],
     title: "Streaks of blood after a night out",
     stem:
-      "A 26 year old man vomited six times after binge drinking at a party. The last two vomits had streaks of bright red blood and one small coffee ground emesis. He now feels well apart from a sore throat. He takes no medications. HR 84 and BP 128/76 lying and standing, RR 14, SpO2 99%. Rectal exam shows brown stool. Hemoglobin 152 g/L, urea 5.1 mmol/L, creatinine 76 micromol/L.",
+      "A 26-year-old man vomited six times after binge drinking at a party. The last two vomits had streaks of bright red blood and one small coffee ground emesis. He now feels well apart from a sore throat. He takes no medications. His pulse and BP are the same lying and standing. Rectal exam shows brown stool. Hemoglobin 152 g/L, urea 5.1 mmol/L, creatinine 76 micromol/L.",
+    vitals: { pulse: "84/minute", resp: "14/minute", bp: "128/76 mmHg", o2sat: "99% on arrival" },
     questions: [
       {
         id: "q1",
@@ -514,7 +523,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "What is his Glasgow Blatchford score? Select one.",
+        prompt: "Which of the following is his Glasgow Blatchford score based on these findings?",
         options: ["0", "1", "2", "3", "6"],
         correct: 0,
         explanation:
@@ -525,15 +534,15 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which disposition is most appropriate? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for him?",
         options: [
-          "Discharge with advice and outpatient follow up",
           "Admit for endoscopy within 24 hours",
+          "Discharge with advice and outpatient follow up",
           "Emergency endoscopy tonight",
-          "Observe for 24 hours with serial hemoglobin",
           "IV pantoprazole infusion and admit",
+          "Observe for 24 hours with serial hemoglobin",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "A Glasgow Blatchford score of 0 or 1 identifies patients at very low risk of needing intervention or dying, and they can be managed as outpatients. The score outperforms other tools for this purpose. Admission adds cost and risk without benefit.",
         keyFeature: { topic: "gi-bleed", n: 6 },
@@ -543,7 +552,8 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "He asks whether the vomiting could have caused a more serious injury. List TWO findings that would suggest esophageal perforation.",
+        update: "He asks whether the vomiting could have caused a more serious injury.",
+        prompt: "What findings would suggest esophageal perforation?",
         accept: [
           { id: "cp", text: "Severe chest pain", match: ["chest pain", "retrosternal", "abdominal pain", "swallowing"] },
           { id: "emph", text: "Subcutaneous emphysema or crepitus in the neck", match: ["emphysema", "crepitus", "hamman"] },
@@ -567,20 +577,21 @@ export const GI_BLEED_SAMPS: Samp[] = [
     alsoTopics: ["airway"],
     title: "Collapse with hematemesis in a young woman",
     stem:
-      "A 31 year old woman with a known duodenal ulcer stopped her PPI two months ago. Tonight she vomited a large amount of blood at home and fainted. She smokes and does not drink alcohol. There is no history of liver disease. HR 138, BP 72/40, RR 28, SpO2 94% on room air. She is cool and mottled, GCS 13. Weight 58 kg.",
+      "A 31-year-old woman with a known duodenal ulcer stopped her PPI two months ago. Tonight she vomited a large amount of blood at home and fainted. She smokes and does not drink alcohol. There is no history of liver disease. She is cool and mottled, GCS 13.",
+    vitals: { pulse: "138/minute", resp: "28/minute", bp: "72/40 mmHg", o2sat: "94% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which red cell product is most appropriate right now? Select one.",
+        prompt: "Which of the following red cell products is most appropriate for her right now?",
         options: [
+          "Albumin 25% while awaiting blood",
+          "Fully crossmatched red cells in 45 minutes",
+          "Group specific red cells in 15 minutes",
           "Uncrossmatched O negative red cells",
           "Uncrossmatched O positive red cells",
-          "Group specific red cells in 15 minutes",
-          "Fully crossmatched red cells in 45 minutes",
-          "25% albumin while awaiting blood",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "She is in hemorrhagic shock and cannot wait for crossmatched blood. Females of childbearing potential should receive O negative red cells to avoid RhD alloimmunization and later hemolytic disease of the fetus and newborn. Switch to group specific, then crossmatched blood as soon as it is available.",
         keyFeature: { topic: "gi-bleed", n: 5 },
@@ -590,7 +601,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 4,
-        prompt: "List FOUR blood tests to send now.",
+        prompt: "What blood tests would you send now?",
         accept: [
           { id: "xm", text: "Group and crossmatch", match: ["crossmatch", "cross match", "type and screen", "type and cross", "group and screen"] },
           { id: "cbc", text: "CBC", match: ["cbc", "hemoglobin", "platelet"] },
@@ -611,20 +622,20 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO medications are indicated before endoscopy? Select TWO.",
+        prompt: "Which of the following medications are indicated for her before endoscopy?",
         options: [
+          "Ceftriaxone 1 g IV daily",
+          "Desmopressin 0.3 mcg/kg IV",
+          "Erythromycin 250 mg IV about 30 to 120 minutes before",
+          "Octreotide 50 mcg IV bolus, then 50 mcg/h",
           "Pantoprazole 80 mg IV bolus",
           "Pantoprazole 40 mg PO",
-          "Erythromycin 250 mg IV about 30 to 120 minutes before endoscopy",
-          "Tranexamic acid 1 g IV, then 3 g over 24 hours",
-          "Octreotide 50 mcg IV bolus, then 50 mcg/h",
-          "Ceftriaxone 1 g IV",
-          "Vitamin K 10 mg IV",
-          "Desmopressin 0.3 mcg/kg IV",
+          "Tranexamic acid 1 g IV, then 3 g infusion",
+          "Vitamin K 10 mg IV once",
         ],
-        correct: [0, 2],
+        correct: [2,  4],
         explanation:
-          "IV PPI is standard for suspected ulcer bleeding. IV erythromycin before endoscopy clears the stomach of blood, improves the view and reduces the need for repeat endoscopy. High dose tranexamic acid did not reduce death and increased venous thrombosis in the HALT-IT trial. Octreotide and ceftriaxone are for suspected variceal bleeding in cirrhosis.",
+          "IV PPI is standard for suspected ulcer bleeding. IV erythromycin about 30 to 120 minutes before endoscopy clears the stomach of blood, improves the view and reduces the need for repeat endoscopy. High dose tranexamic acid did not reduce death and increased venous thrombosis in the HALT-IT trial. Octreotide and ceftriaxone are for suspected variceal bleeding in cirrhosis.",
         keyFeature: { topic: "gi-bleed", n: 6 },
         source: "icg",
       },
@@ -633,7 +644,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "After 3 units of red cells her GCS falls to 10 and she vomits blood again. You decide to intubate before endoscopy.",
-        prompt: "List THREE measures to reduce the risk of aspiration or cardiovascular collapse during intubation.",
+        prompt: "What measures would reduce the risk of aspiration or cardiovascular collapse during intubation?",
         accept: [
           { id: "resus", text: "Resuscitate with blood before induction", match: ["blood before", "transfuse before", "resuscitate before", "transfuse prior", "resuscitate prior", "blood prior", "resuscitation before", "resuscitation prior"] },
           { id: "ketamine", text: "Hemodynamically stable induction agent such as ketamine", match: ["ketamine", "etomidate", "reduced dose"] },
@@ -657,7 +668,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "She has now received 6 units of red cells, 4 units of plasma and a dose of platelets.",
-        prompt: "List THREE complications of massive transfusion you would monitor and treat.",
+        prompt: "What complications of massive transfusion would you monitor and treat?",
         accept: [
           { id: "ca", text: "Hypocalcemia from citrate", match: ["hypocalcemia", "calcium"] },
           { id: "cold", text: "Hypothermia", match: ["hypothermia"] },
@@ -682,7 +693,8 @@ export const GI_BLEED_SAMPS: Samp[] = [
     topic: "gi-bleed",
     title: "Maroon stools in a toddler",
     stem:
-      "A 2 year old boy is brought in after two large maroon stools in the past 3 hours. He has had no abdominal pain, vomiting or fever and was playing normally until today. He looks pale. HR 164, BP 84/50, RR 30, capillary refill 3 seconds. Weight 12 kg. His abdomen is soft and non tender. Hemoglobin 76 g/L.",
+      "A 2-year-old boy is brought in after two large maroon stools in the past 3 hours. He has had no abdominal pain, vomiting or fever and was playing normally until today. He looks pale. Capillary refill is 3 seconds. His abdomen is soft and non tender. Hemoglobin 76 g/L.",
+    vitals: { pulse: "164/minute", resp: "30/minute", bp: "84/50 mmHg", weight: "12 kg" },
     questions: [
       {
         id: "q1",
@@ -705,7 +717,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO initial resuscitation orders. Include volumes for any fluid or blood product.",
+        prompt: "What initial resuscitation orders would you give, including volumes for any fluid or blood product?",
         accept: [
           { id: "rbc10", text: "Red cells 10 to 15 mL/kg (about 120 to 180 mL)", match: ["10 ml/kg red", "15 ml/kg red", "10 ml/kg prbc", "15 ml/kg prbc", "10 ml/kg blood", "15 ml/kg blood", "10 ml/kg rbc", "15 ml/kg rbc", "10 cc/kg", "15 cc/kg", "120 ml red", "150 ml red", "180 ml red", "120 ml prbc", "150 ml prbc", "180 ml prbc", "120 ml blood", "150 ml blood", "180 ml blood"] },
           { id: "ns", text: "Crystalloid bolus 10 to 20 mL/kg while blood is prepared", match: ["20 ml/kg saline", "20 ml/kg crystalloid", "20 ml/kg ringer", "10 ml/kg saline", "10 ml/kg crystalloid"] },
@@ -723,15 +735,15 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which investigation best confirms the diagnosis? Select one.",
+        prompt: "Which of the following investigations would best confirm the suspected diagnosis?",
         options: [
-          "Technetium 99m pertechnetate scan",
           "Abdominal ultrasound",
           "Air contrast enema",
-          "Colonoscopy",
+          "Colonoscopy under sedation",
           "Plain abdominal radiograph",
+          "Technetium 99m pertechnetate scan",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "Pertechnetate is taken up by ectopic gastric mucosa, which is present in most bleeding Meckel diverticula. A negative scan does not fully exclude it, and pediatric surgery may proceed to laparoscopy when suspicion is high. Ultrasound and enema are the tests for intussusception.",
         keyFeature: { topic: "abdominal-pain", n: 5 },
@@ -747,13 +759,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
     alsoTopics: ["delirium-agitation"],
     title: "Confusion in a nursing home resident",
     stem:
-      "An 84 year old woman is sent from her long term care home with two days of increasing confusion and fatigue. She fell yesterday without injury. Staff report no vomiting or complaints of pain. She has mild dementia, atrial fibrillation on dabigatran 110 mg twice daily, chronic kidney disease (eGFR 38 mL/min) and osteoarthritis. HR 104, BP 102/60 (usually 150/80), RR 20, SpO2 96%, T 36.8°C, capillary glucose 7.2 mmol/L. She is inattentive and oriented only to person.",
+      "An 84-year-old woman is sent from her long term care home with two days of increasing confusion and fatigue. She fell yesterday without injury. Staff report no vomiting or complaints of pain. She has mild dementia, atrial fibrillation on dabigatran 110 mg twice daily, chronic kidney disease (eGFR 38 mL/min) and osteoarthritis. Her usual BP is 150/80 mmHg. Capillary glucose is 7.2 mmol/L. She is inattentive and oriented only to person.",
+    vitals: { temperature: "36.8°C", pulse: "104/minute", resp: "20/minute", bp: "102/60 mmHg", o2sat: "96% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR investigations to look for the cause of her delirium.",
+        prompt: "What investigations would you order to look for the cause of her delirium?",
         accept: [
           { id: "cbc", text: "CBC with hemoglobin", match: ["cbc", "hemoglobin"] },
           { id: "lytes", text: "Electrolytes including sodium", match: ["electrolyte", "sodium"] },
@@ -780,7 +793,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Hemoglobin is 64 g/L (118 g/L three months ago). Urea 24.6 mmol/L, creatinine 131 micromol/L. CT head is normal.",
-        prompt: "List TWO findings in this case that point to an upper GI bleed as the cause.",
+        prompt: "What findings in this case point to an upper GI bleed as the cause?",
         accept: [
           { id: "urea", text: "Urea raised out of proportion to creatinine", match: ["urea", "bun"] },
           { id: "hb", text: "Large fall in hemoglobin from baseline", match: ["hemoglobin", "anemia"] },
@@ -796,17 +809,16 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Rectal exam shows melena. Her BP falls to 84/50 after the first unit of red cells. Her last dabigatran dose was 5 hours ago.",
-        prompt: "Which reversal strategy is most appropriate? Select one.",
+        update: "Rectal exam shows melena. Her BP falls to 84/50 mmHg after the first unit of red cells. Her last dabigatran dose was 5 hours ago.",
+        prompt: "Which of the following reversal strategies is most appropriate for her now?",
         options: [
-          "Idarucizumab 5 g IV",
-          "Prothrombin complex concentrate 50 units/kg IV",
-          "Vitamin K 10 mg IV",
-          "Protamine 50 mg IV",
+          "Four factor PCC 50 units/kg IV",
           "Frozen plasma 15 mL/kg",
-          "Urgent hemodialysis before any other therapy",
+          "Idarucizumab 5 g IV",
+          "Urgent hemodialysis",
+          "Vitamin K 10 mg IV",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "Idarucizumab 5 g IV rapidly and specifically reverses dabigatran and is indicated for life threatening bleeding. Her renal impairment prolongs dabigatran clearance, which makes reversal more important. PCC is a second line option only if idarucizumab is unavailable. Dialysis removes dabigatran but is slow to arrange in an unstable patient.",
         keyFeature: { topic: "gi-bleed", n: 6 },
@@ -816,7 +828,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "Before planning endoscopy, list TWO things you need to establish about her care wishes.",
+        prompt: "What do you need to establish about her care wishes before planning endoscopy?",
         accept: [
           { id: "sdm", text: "Identify her substitute decision maker", match: ["substitute decision maker", "sdm", "power of attorney"] },
           { id: "ad", text: "Advance directive", match: ["advance directive", "goals of care", "code status", "level of care"] },
@@ -836,13 +848,15 @@ export const GI_BLEED_SAMPS: Samp[] = [
     topic: "gi-bleed",
     title: "Melena in a man with known liver disease",
     stem:
-      "A 55 year old man with alcohol related cirrhosis and known esophageal varices has had melena for 24 hours and one coffee ground emesis. He stopped his propranolol a month ago. He is mildly confused with asterixis. HR 102, BP 104/64, RR 18, SpO2 96%, T 36.9°C. Hemoglobin 78 g/L, platelets 62 x 10^9/L, INR 1.9, bilirubin 58 micromol/L, albumin 26 g/L, creatinine 98 micromol/L, sodium 131 mmol/L. His abdomen is mildly distended with shifting dullness.",
+      "A 55-year-old man with alcohol related cirrhosis and known esophageal varices has had melena for 24 hours and one coffee ground emesis. He stopped his propranolol a month ago. He is mildly confused with asterixis. Hemoglobin 78 g/L, platelets 62 x 10^9/L, INR 1.9, bilirubin 58 micromol/L, albumin 26 g/L, creatinine 98 micromol/L, sodium 131 mmol/L. His abdomen is mildly distended with shifting dullness.",
+    vitals: { temperature: "36.9°C", pulse: "102/minute", resp: "18/minute", bp: "104/64 mmHg", o2sat: "96% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "The admitting resident plans to transfuse to a hemoglobin of 100 g/L and give frozen plasma to correct the INR. List TWO reasons you disagree.",
+        update: "The admitting resident plans to transfuse to a hemoglobin of 100 g/L and give frozen plasma to correct the INR.",
+        prompt: "Why do you disagree with this plan?",
         accept: [
           { id: "portal", text: "Over transfusion raises portal pressure and increases rebleeding", match: ["portal pressure", "volume"] },
           { id: "rebleed", text: "Liberal transfusion increases rebleeding and death", match: ["rebleeding", "rebleed"] },
@@ -859,7 +873,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE medications to start now. Include the dose for each.",
+        prompt: "What medications would you start now, including the dose of each?",
         accept: [
           { id: "oct", text: "Octreotide 50 mcg IV bolus, then 50 mcg/h", match: ["octreotide 50 mcg", "octreotide 50 microgram", "octreotide 50 ug", "octreotide 50 mcg/h"] },
           { id: "cef", text: "Ceftriaxone 1 g IV daily", match: ["ceftriaxone 1 g", "ceftriaxone 1000"] },
@@ -883,7 +897,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "Apart from the bleed itself, list TWO precipitants of his encephalopathy you would look for.",
+        prompt: "Apart from the bleed itself, what precipitants of his encephalopathy would you look for?",
         accept: [
           { id: "sbp", text: "Spontaneous bacterial peritonitis, by diagnostic paracentesis", match: ["peritonitis", "sbp"] },
           { id: "inf", text: "Other infection such as UTI or pneumonia", match: ["infection"] },
@@ -904,15 +918,15 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Endoscopy shows an actively bleeding esophageal varix, which is banded successfully. His Child Pugh score is 12 (class C).",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
           "Continue octreotide for 24 hours, then discharge",
-          "Refer for pre-emptive TIPS within 72 hours",
-          "Restart propranolol 80 mg twice daily today while octreotide continues",
-          "Insert a balloon tamponade tube as prophylaxis",
+          "Prophylactic balloon tamponade tube",
           "Refer for a surgical portosystemic shunt",
+          "Refer for pre-emptive TIPS within 72 hours",
+          "Restart propranolol 80 mg twice daily today",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "Baveno VII recommends pre-emptive TIPS within 72 hours, ideally within 24, for Child Pugh C below 14 or Child Pugh B above 7 with active bleeding at endoscopy. It reduces rebleeding and death in these high risk patients. Balloon tamponade is only a rescue bridge. Beta blockers restart after the vasoactive drug stops.",
         keyFeature: { topic: "gi-bleed", n: 6 },
@@ -927,13 +941,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
     topic: "gi-bleed",
     title: "Painless rectal bleeding in an older man",
     stem:
-      "A 76 year old man has had three painless bright red stools with clots today. Colonoscopy two years ago showed sigmoid diverticulosis. He takes ASA 81 mg daily for a coronary stent placed five years ago, and ramipril. HR 88, BP 138/76, RR 16, SpO2 97%. Rectal exam shows fresh red blood and no visible hemorrhoidal bleeding. Hemoglobin 121 g/L (138 g/L last year), urea 6.8 mmol/L, creatinine 90 micromol/L, INR 1.0.",
+      "A 76-year-old man has had three painless bright red stools with clots today. Colonoscopy two years ago showed sigmoid diverticulosis. He takes ASA 81 mg daily for a coronary stent placed five years ago, and ramipril. Rectal exam shows fresh red blood and no visible hemorrhoidal bleeding. Hemoglobin 121 g/L (138 g/L last year), urea 6.8 mmol/L, creatinine 90 micromol/L, INR 1.0.",
+    vitals: { pulse: "88/minute", resp: "16/minute", bp: "138/76 mmHg", o2sat: "97% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE likely sources of his bleeding.",
+        prompt: "What are the likely sources of his bleeding?",
         accept: [
           { id: "div", text: "Diverticular bleeding", match: ["diverticular", "diverticulosis"] },
           { id: "angio", text: "Angiodysplasia", match: ["angiodysplasia", "arteriovenous", "avm"] },
@@ -953,7 +968,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings that, if present, would make you suspect an upper GI source instead.",
+        prompt: "What findings, if present, would make you suspect an upper GI source instead?",
         accept: [
           { id: "shock", text: "Hemodynamic instability or shock", match: ["shock", "hypotension", "tachycardia", "unstable"] },
           { id: "urea", text: "Raised urea or urea to creatinine ratio", match: ["urea", "bun"] },
@@ -971,16 +986,16 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Two hours later he passes another large bloody stool. HR 118, BP 92/58. Repeat urea is 7.0 mmol/L. There is no hematemesis and no upper GI history.",
-        prompt: "Which is the most appropriate next investigation? Select one.",
+        update: "Two hours later he passes another large bloody stool. Pulse 118/minute, BP 92/58 mmHg. Repeat urea is 7.0 mmol/L. There is no hematemesis and no upper GI history.",
+        prompt: "Which of the following is the most appropriate next investigation?",
         options: [
+          "Colonoscopy tomorrow after bowel preparation",
           "CT angiography of the abdomen and pelvis",
-          "Colonoscopy tomorrow after a 4 L bowel preparation",
-          "Tagged red blood cell scan",
-          "Capsule endoscopy",
           "Plain abdominal radiograph",
+          "Tagged red blood cell nuclear scan",
+          "Video capsule endoscopy",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "In hemodynamically significant lower GI bleeding, CT angiography quickly localizes active bleeding and guides embolization. With no upper GI features and a normal urea, an upper source is unlikely. If CTA is negative and bleeding continues, upper endoscopy is the next step.",
         keyFeature: { topic: "gi-bleed", n: 2 },
@@ -991,7 +1006,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "CT angiography shows active contrast extravasation in the sigmoid colon.",
-        prompt: "List TWO next steps.",
+        prompt: "What are the next steps?",
         accept: [
           { id: "emb", text: "Transcatheter embolization by interventional radiology, ideally within an hour", match: ["embolization", "interventional radiology", "angiography"] },
           { id: "surg", text: "General surgery consult", match: ["surgery", "surgical"] },
@@ -1006,15 +1021,15 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        prompt: "What is the most appropriate plan for his ASA? Select one.",
+        prompt: "Which of the following is the most appropriate plan for his ASA?",
         options: [
-          "Stop it permanently",
-          "Continue it, or hold it only briefly and resume once hemostasis is achieved",
+          "Continue, or hold briefly and resume after hemostasis",
           "Give a platelet transfusion to reverse it",
-          "Replace it with clopidogrel",
-          "Hold it for 6 weeks",
+          "Hold ASA for 6 weeks, then reassess",
+          "Replace ASA with clopidogrel 75 mg daily",
+          "Stop ASA permanently after this bleed",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "ASA for secondary cardiovascular prevention protects against thrombotic events and death. Guidelines suggest not stopping it, or resuming it as soon as hemostasis is achieved. Platelet transfusion for antiplatelet associated GI bleeding is not recommended.",
         keyFeature: { topic: "ischemic-heart-disease", n: 7 },
@@ -1029,13 +1044,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
     topic: "gi-bleed",
     title: "Vomiting blood on warfarin",
     stem:
-      "A 70 year old woman on warfarin for atrial fibrillation presents with melena and one episode of hematemesis. She finished a course of trimethoprim sulfamethoxazole for a urinary tract infection three days ago. HR 118, BP 88/56, RR 22, SpO2 96%. Weight 70 kg. INR 6.8, hemoglobin 84 g/L, platelets 210 x 10^9/L.",
+      "A 70-year-old woman on warfarin for atrial fibrillation presents with melena and one episode of hematemesis. She finished a course of trimethoprim sulfamethoxazole for a urinary tract infection three days ago. INR 6.8, hemoglobin 84 g/L, platelets 210 x 10^9/L.",
+    vitals: { pulse: "118/minute", resp: "22/minute", bp: "88/56 mmHg", o2sat: "96% on arrival", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE factors that commonly raise the INR in a patient on warfarin.",
+        prompt: "What factors commonly raise the INR in a patient on warfarin?",
         accept: [
           { id: "abx", text: "Antibiotics such as trimethoprim sulfamethoxazole or a fluoroquinolone", match: ["antibiotic", "trimethoprim", "septra", "ciprofloxacin", "metronidazole", "fluconazole"] },
           { id: "amio", text: "Amiodarone", match: ["amiodarone"] },
@@ -1057,7 +1073,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO agents you would give to reverse her anticoagulation. Include the dose and route of vitamin K.",
+        prompt: "What agents would you give to reverse her anticoagulation, including the dose and route of vitamin K?",
         accept: [
           { id: "vitk", text: "Vitamin K 10 mg IV", match: ["vitamin k 10 mg iv", "vitamin k 10 mg intravenous", "vit k 10 mg iv", "phytonadione 10 mg iv", "phytonadione 10 mg intravenous"] },
           { id: "pcc", text: "Prothrombin complex concentrate dosed by INR and weight", match: ["prothrombin complex", "pcc", "octaplex", "beriplex"] },
@@ -1078,15 +1094,16 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "A colleague suggests tranexamic acid. Which response is most appropriate? Select one.",
+        update: "A colleague suggests tranexamic acid.",
+        prompt: "Which of the following is the most appropriate response to this suggestion?",
         options: [
-          "Give 1 g IV over 10 minutes, then 1 g over 8 hours as in trauma",
           "Give 4 g IV over 24 hours",
-          "Do not give it. In GI bleeding it does not reduce death and increases venous thrombosis",
-          "Give it only if endoscopy is delayed beyond 24 hours",
-          "Give it orally after endoscopy",
+          "Give 1 g IV, then 1 g over 8 hours",
+          "Give only if endoscopy is delayed over 24 hours",
+          "Give orally after endoscopy",
+          "Withhold tranexamic acid",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "HALT-IT randomized about 12 000 patients with GI bleeding. High dose tranexamic acid did not reduce death from bleeding and increased venous thromboembolism and seizures. It should not be used routinely in GI bleeding.",
         keyFeature: { topic: "gi-bleed", n: 6 },
@@ -1096,7 +1113,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO resuscitation measures other than reversal that you would order now.",
+        prompt: "What resuscitation measures other than reversal would you order now?",
         accept: [
           { id: "iv", text: "Two large bore IV lines", match: ["large bore", "two iv", "2 iv", "two peripheral", "intraosseous"] },
           { id: "xm", text: "Group and crossmatch", match: ["crossmatch", "cross match", "type and screen", "type and cross", "group and screen"] },
@@ -1122,13 +1139,14 @@ export const GI_BLEED_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Chest pressure and pallor",
     stem:
-      "A 66 year old man has had two days of chest pressure on exertion and one hour of pressure at rest. Paramedics gave ASA 160 mg chewed. HR 110, BP 108/66, RR 20, SpO2 96%. He looks pale. ECG shows 1 mm horizontal ST depression in V4 to V6. High sensitivity troponin is 88 ng/L. Hemoglobin 72 g/L. No previous values are available. The resident is about to order a heparin bolus and infusion.",
+      "A 66-year-old man has had two days of chest pressure on exertion and one hour of pressure at rest. Paramedics gave ASA 160 mg chewed. He looks pale. ECG shows 1 mm horizontal ST depression in V4 to V6. High sensitivity troponin is 88 ng/L. Hemoglobin 72 g/L. No previous values are available. The resident is about to order a heparin bolus and infusion.",
+    vitals: { pulse: "110/minute", resp: "20/minute", bp: "108/66 mmHg", o2sat: "96% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE history questions you would ask to find the cause of his anemia.",
+        prompt: "What history questions would you ask to find the cause of his anemia?",
         accept: [
           { id: "melena", text: "Black or tarry stools", match: ["black", "melena", "tarry"] },
           { id: "hemat", text: "Vomiting blood or coffee grounds", match: ["hematemesis", "vomiting blood", "coffee ground"] },
@@ -1148,15 +1166,15 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
-          "Give the heparin bolus and infusion and add ticagrelor 180 mg",
-          "Hold anticoagulation and perform a rectal exam and GI assessment",
-          "Activate the catheterization laboratory for emergent angiography",
-          "Give tenecteplase",
-          "Start a nitroglycerin infusion and repeat troponin in 3 hours without further testing",
+          "Emergent coronary angiography",
+          "Heparin bolus and infusion plus ticagrelor 180 mg",
+          "Hold anticoagulation, do rectal exam and GI assessment",
+          "Nitroglycerin infusion and repeat troponin in 3 hours",
+          "Tenecteplase IV at weight based dose",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "This picture fits type 2 myocardial injury from anemia until proven otherwise. The ECG shows ST depression, not STEMI. Heparin and more antiplatelet therapy could worsen an occult bleed. Assess for GI bleeding before any antithrombotic escalation.",
         keyFeature: { topic: "gi-bleed", n: 3 },
@@ -1165,16 +1183,16 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Rectal exam shows melena. BP 104/64, HR 108. He still has chest pressure.",
-        prompt: "Which transfusion plan is most appropriate? Select one.",
+        update: "Rectal exam shows melena. BP 104/64 mmHg, pulse 108/minute. He still has chest pressure.",
+        prompt: "Which of the following transfusion plans is most appropriate for him now?",
         options: [
-          "No transfusion unless hemoglobin falls below 70 g/L",
-          "Transfuse red cells now and reassess, aiming for a hemoglobin of at least 80 g/L",
+          "Erythropoietin with IV iron instead of red cells",
+          "IV iron infusion instead of red cells",
+          "Transfuse red cells now, reassess, target 80 g/L or more",
           "Transfuse to a hemoglobin above 130 g/L",
-          "IV iron only",
-          "Erythropoietin",
+          "No transfusion unless hemoglobin falls below 70 g/L",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Active myocardial ischemia raises the transfusion threshold. Guidelines for GI bleeding suggest a higher threshold, such as 80 g/L or more, in cardiovascular disease. The MINT trial compared a liberal threshold of 100 g/L with a restrictive threshold of 70 to 80 g/L in myocardial infarction with anemia and found a nonsignificant trend toward fewer deaths or reinfarctions with the liberal strategy. Transfuse one unit at a time and reassess symptoms and hemoglobin.",
         keyFeature: { topic: "gi-bleed", n: 5 },
@@ -1184,7 +1202,7 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO consultations you would request.",
+        prompt: "What consultations would you request?",
         accept: [
           { id: "gi", text: "Gastroenterology for endoscopy within 24 hours", match: ["gastroenterology", "endoscopy"] },
           { id: "cards", text: "Cardiology to plan antithrombotic therapy and timing of angiography", match: ["cardiology", "cardiologist"] },
@@ -1205,26 +1223,27 @@ export const GI_BLEED_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Hematemesis at a rural hospital",
     stem:
-      "You work at a rural hospital without endoscopy. The nearest gastroenterology service is 2 hours away by road. A 60 year old man is brought in by a friend after three episodes of large volume hematemesis. The friend says he drinks heavily. No records are available. HR 116, BP 96/60, RR 20, SpO2 96%. He has spider angiomas, palmar erythema and a distended abdomen with shifting dullness. Hemoglobin 88 g/L, platelets 74 x 10^9/L, INR 1.7.",
+      "You are working in a rural hospital without endoscopy. The nearest gastroenterology service is 2 hours away by road. A 60-year-old man is brought in by a friend after three episodes of large volume hematemesis. The friend says he drinks heavily. No records are available. He has spider angiomas, palmar erythema and a distended abdomen with shifting dullness. Hemoglobin 88 g/L, platelets 74 x 10^9/L, INR 1.7.",
+    vitals: { pulse: "116/minute", resp: "20/minute", bp: "96/60 mmHg", o2sat: "96% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "menu",
         select: 4,
-        prompt: "Which FOUR medications are appropriate before endoscopy? Select FOUR.",
+        prompt: "Which of the following medications are appropriate for him before endoscopy?",
         options: [
-          "Octreotide 50 mcg IV bolus, then 50 mcg/h",
-          "Octreotide 500 mcg IV bolus, then 500 mcg/h",
           "Ceftriaxone 1 g IV",
           "Ceftriaxone 2 g IV every 12 hours",
-          "Pantoprazole 80 mg IV",
           "Erythromycin 250 mg IV",
-          "Tranexamic acid 1 g IV",
-          "Propranolol 40 mg PO",
           "Frozen plasma 15 mL/kg",
+          "Octreotide 50 mcg IV bolus, then 50 mcg/h",
+          "Octreotide 500 mcg IV bolus, then 500 mcg/h",
+          "Pantoprazole 80 mg IV",
+          "Propranolol 40 mg PO",
+          "Tranexamic acid 1 g IV",
           "Vitamin K 10 mg IV",
         ],
-        correct: [0, 2, 4, 5],
+        correct: [0,  2,  4,  6],
         explanation:
           "His stigmata make variceal bleeding likely, so give octreotide and ceftriaxone 1 g IV. An ulcer is still possible, so a PPI is reasonable until endoscopy. Erythromycin improves the endoscopic view if there is no QT prolongation. Tranexamic acid, beta blockers during shock and plasma to correct the INR are not recommended.",
         keyFeature: { topic: "gi-bleed", n: 6 },
@@ -1234,7 +1253,8 @@ export const GI_BLEED_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "The nurse asks why you are limiting crystalloid. List TWO harms of large volume crystalloid in this patient.",
+        update: "The nurse asks why you are limiting crystalloid.",
+        prompt: "What are the harms of large volume crystalloid in this patient?",
         accept: [
           { id: "portal", text: "Raises portal pressure and worsens variceal bleeding", match: ["portal pressure", "rebleeding"] },
           { id: "coag", text: "Dilutional coagulopathy", match: ["coagulopathy", "dilute", "dilution"] },
@@ -1252,17 +1272,18 @@ export const GI_BLEED_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "After initial resuscitation his HR is 104 and BP 104/64. Which disposition is most appropriate? Select one.",
+        update: "After initial resuscitation his pulse is 104/minute and BP 104/64 mmHg.",
+        prompt: "Which of the following is the most appropriate disposition for him?",
         options: [
-          "Arrange urgent transfer to the gastroenterology centre with blood and octreotide running and a physician or critical care escort",
           "Admit locally and ask gastroenterology to see him next week",
-          "Place a balloon tamponade tube before transfer in case he rebleeds",
-          "Obtain CT angiography locally before deciding",
           "Admit to your ward and repeat hemoglobin every 6 hours",
+          "Balloon tamponade tube placed before transfer",
+          "Obtain CT angiography locally before deciding",
+          "Urgent transfer with escort, blood and octreotide running",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "Suspected variceal bleeding needs endoscopy within 12 hours, so transfer should not wait. Send him with ongoing blood, octreotide and an escort able to manage the airway and rebleeding. Consider intubation before transfer if hematemesis continues or mental status falls. Balloon tamponade is a rescue for uncontrolled bleeding, not a prophylactic measure.",
+          "Suspected variceal bleeding needs endoscopy within 12 hours, so urgent transfer to the gastroenterology centre should not wait. Send him with ongoing blood, octreotide and a physician or critical care escort able to manage the airway and rebleeding. Consider intubation before transfer if hematemesis continues or mental status falls. Balloon tamponade is a rescue for uncontrolled bleeding, not a prophylactic measure.",
         keyFeature: { topic: "ems", n: 3 },
         source: "baveno",
       },
