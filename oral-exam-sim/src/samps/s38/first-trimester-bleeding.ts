@@ -169,7 +169,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Bright red bleeding at thirteen weeks",
     stem:
-      "A 30-year-old woman presents to the emergency department with 6 hours of light bright red vaginal bleeding after intercourse. She is 13 weeks and 2 days pregnant. A dating ultrasound at 8 weeks showed a single live intrauterine pregnancy. She has no pain. Her prenatal record states that her blood type is Rh D negative on serology and that RHD genotyping found weak D type 1. Her antibody screen was negative.\n\nBedside ultrasound shows a live intrauterine pregnancy with a heart rate of 158/minute and no subchorionic collection. The abdomen is soft and nontender.",
+      "A 30-year-old woman presents to the emergency department with 6 hours of light bright red vaginal bleeding after intercourse. She is 13 weeks and 2 days pregnant. This is her first pregnancy. A dating ultrasound at 8 weeks showed a single live intrauterine pregnancy. She has no pain. Her prenatal record states that her blood type is Rh D negative on serology and that RHD genotyping found weak D type 1. Her antibody screen was negative.\n\nBedside ultrasound shows a live intrauterine pregnancy with a heart rate of 158/minute and no subchorionic collection. The abdomen is soft and nontender.",
     vitals: { temperature: "36.7°C oral", pulse: "80/minute", resp: "14/minute", bp: "112/68 mmHg", o2sat: "99% on room air" },
     questions: [
       {
@@ -186,7 +186,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A smooth, red, pedunculated mass coming from a closed os that bleeds on contact is an endocervical polyp, and it explains postcoital bleeding. Ectropion is a flat red area around the os, not a mass. Carcinoma looks irregular and friable rather than smooth. The ultrasound shows no subchorionic collection. A visible cervical source means this is not uterine bleeding from a threatened miscarriage.",
+          "A smooth, red mass protruding from a closed os that bleeds on contact is an endocervical polyp, and it explains postcoital bleeding. Ectropion is a flat red area around the os, not a mass. Carcinoma looks irregular and friable rather than smooth. The ultrasound shows no subchorionic collection. A visible cervical source means this is not uterine bleeding from a threatened miscarriage.",
         keyFeature: { topic: "first-trimester-bleeding", n: 3 },
         source: "rosen",
       },
@@ -220,7 +220,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Bleeding from a polyp with a live pregnancy has a good outlook, and she should return if bleeding becomes heavy or cramping begins, since those suggest a uterine cause. Bed rest does not prevent pregnancy loss. Progesterone is considered only for bleeding with a prior miscarriage, which she has not had. Removing a polyp in pregnancy is left to her obstetric provider, as it can bleed. Weekly scans do not change outcomes.",
+          "Bleeding from a polyp with a live pregnancy has a good outlook, and she should return if bleeding becomes heavy or cramping begins, since those suggest a uterine cause. Bed rest does not prevent pregnancy loss. Vaginal progesterone is considered for uterine bleeding in a patient with a prior miscarriage, and her bleeding is cervical with no prior loss. Removing a polyp in pregnancy is left to her obstetric provider, as it can bleed. Weekly scans do not change outcomes.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
         source: "rosen",
       },
@@ -261,25 +261,25 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "Her hemoglobin returns at 121 g/L. The resident notes that it is normal and suggests the bleeding has not been significant.",
-        prompt: "Which of the following is the best interpretation of her hemoglobin?",
+        update: "Tissue is removed from the os with ring forceps. Her pulse falls to 108/minute and BP rises to 104/64 mmHg, but she is soaking a pad every 15 minutes.",
+        prompt: "Which of the following is the most accurate interpretation of her current status?",
         options: [
-          "Lags behind acute blood loss",
-          "Rules out significant blood loss",
-          "Shows that transfusion is not needed",
-          "Suggests hemoconcentration from vomiting",
-          "Suggests her vital signs reflect anxiety",
+          "Anxiety causing her tachycardia",
+          "Compensated shock with ongoing loss",
+          "Normal heart rate for 10 weeks of pregnancy",
+          "Shock resolved after tissue removal",
+          "Vasovagal reaction to the speculum",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
-          "In acute hemorrhage whole blood is lost, so the hemoglobin concentration falls only after fluid shifts or crystalloid dilute it, often hours later. A value of 121 g/L therefore does not measure what she has lost. Her pulse of 122/minute, pale cool skin and soaking 6 pads in 2 hours are the better guide. Anxiety does not explain cool hands and a BP of 96/60 mmHg. She has not been vomiting.",
+          "A pulse of 108/minute while she soaks a pad every 15 minutes, which is 4 pads an hour, means she is still bleeding heavily and only compensating. Removing tissue often slows bleeding, but better numbers after one step do not mean shock has resolved, and young patients hold their BP until late. Pregnancy raises the resting heart rate by at most 10 to 20/minute, and less at 10 weeks. A vasovagal reaction slows the pulse rather than speeding it. Anxiety cannot be assumed while she is losing this much blood.",
         keyFeature: { topic: "first-trimester-bleeding", n: 1 },
         source: "rosen",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Tissue is removed from the os. Bleeding slows but remains heavy. After 1 L of crystalloid and 1 unit of red cells her pulse is 118/minute and BP 98/62 mmHg.",
+        update: "Bleeding remains heavy. After 1 L of crystalloid and 1 unit of red cells her pulse is 118/minute and BP 98/62 mmHg.",
         prompt: "Which of the following is the most appropriate definitive treatment for her bleeding?",
         options: [
           "Misoprostol 600 mcg PO and observe",
@@ -372,8 +372,8 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Testosterone often stops menses but does not reliably prevent ovulation, so a transgender man with a sperm-producing partner needs contraception if he does not want to conceive. Amenorrhea on testosterone is not proof of infertility, as this pregnancy shows. Testosterone can harm a developing fetus and should be stopped once pregnancy is confirmed. It has no effect on where a pregnancy implants.",
-        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+          "Testosterone often stops menses but does not reliably prevent ovulation, so a transgender man with a sperm-producing partner needs contraception if he does not want to conceive. Amenorrhea on testosterone is not proof of infertility, as this pregnancy shows. Longer use does not make it reliable, so condoms or another method are still needed after a year or more. Testosterone can harm a developing fetus and should be stopped once pregnancy is confirmed.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
         source: "wpath-soc8",
       },
     ],
@@ -521,7 +521,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "The Supreme Court of Canada struck down the Criminal Code abortion law in 1988, and no criminal law on abortion has replaced it, so ending her own pregnancy is not an offence and there is nothing to report. Her health information is confidential. Saying this plainly lets her accept care without fear and opens a talk about follow-up, contraception and safe access to abortion care. No gestational limit or source of the tablets creates a duty to report her.",
+          "The Supreme Court of Canada struck down the Criminal Code abortion law in 1988, Parliament repealed that section in 2019, and no criminal law on abortion has replaced it, so ending her own pregnancy is not an offence and there is nothing to report. Her health information is confidential. Saying this plainly lets her accept care without fear and opens a talk about follow-up, contraception and safe access to abortion care. No gestational limit or source of the tablets creates a duty to report her.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
         source: "scc-morgentaler",
       },
@@ -597,7 +597,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Painless spotting after two cesareans",
     stem:
-      "A 34-year-old woman presents to the emergency department with 1 day of painless spotting. She is 7 weeks and 1 day by a certain last menstrual period. She has had two cesarean deliveries, the last 14 months ago. She has no other medical problems.\n\nSpeculum examination shows a small amount of blood and a closed os. Bimanual examination finds a nontender uterus with no adnexal mass. Radiology transvaginal ultrasound shows a gestational sac with a yolk sac and a 5 mm embryo with cardiac activity. The sac lies low in the anterior uterus at the level of the cesarean scar. The upper cavity and the cervical canal are empty. The myometrium between the sac and the bladder measures 2 mm, and there is rich blood flow around the sac.",
+      "A 34-year-old woman presents to the emergency department with 1 day of painless spotting. She is 7 weeks and 1 day by a certain last menstrual period. She has had two cesarean deliveries, the last 14 months ago. She has no other medical problems.\n\nSpeculum examination shows a small amount of blood and a closed os. Bimanual examination finds a nontender uterus with no adnexal mass. Radiology transvaginal ultrasound shows a gestational sac with a yolk sac and a 10 mm embryo with cardiac activity. The sac lies low in the anterior uterus at the level of the cesarean scar. The upper cavity and the cervical canal are empty. The myometrium between the sac and the bladder measures 2 mm, and there is rich blood flow around the sac.",
     vitals: { temperature: "36.6°C oral", pulse: "78/minute", resp: "14/minute", bp: "118/72 mmHg", o2sat: "99% on room air" },
     questions: [
       {
@@ -685,24 +685,25 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next investigation for her?",
+        update: "Point of care ultrasound shows free fluid in the pelvis and hepatorenal space and no intrauterine pregnancy.",
+        prompt: "Which of the following is the most appropriate next step in her management?",
         options: [
-          "CT abdomen and pelvis with contrast",
+          "Emergency gynecology for the operating room",
           "Formal pelvic ultrasound in radiology",
-          "Orthostatic vital sign measurement",
-          "Point of care abdominal ultrasound",
-          "Quantitative serum beta hCG",
+          "Glucagon 5 mg IV to restore her heart rate",
+          "Methotrexate 50 mg/m2 IM",
+          "Serial hemoglobin with observation",
         ],
-        correct: 3,
+        correct: 0,
         explanation:
-          "Point of care ultrasound at the bedside can show free fluid in the pelvis and hepatorenal space within minutes and, with a positive pregnancy test, send her straight to surgery. A formal scan or CT moves a possibly bleeding patient out of the resuscitation area. Standing a patient who nearly fainted risks collapse, and beta blockade makes orthostatic changes unreliable. The hCG level does not change the next step.",
-        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+          "Hepatorenal free fluid with a positive pregnancy test and an empty uterus means a ruptured ectopic pregnancy, and near syncope with guarding shows major bleeding whatever her pulse. She needs the operating room now. Glucagon treats beta blocker poisoning, and a pulse of 76/minute on her usual metoprolol dose is a blunted response, not toxicity, so a faster rate would not replace lost blood. Methotrexate is only for a stable, unruptured tubal pregnancy. A formal scan or serial hemoglobin delays surgery while she bleeds.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
         source: "rosen",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Ultrasound shows free fluid in the pelvis and hepatorenal space and no intrauterine pregnancy. She has a left salpingectomy for a ruptured tubal pregnancy and recovers well.",
+        update: "She has a left salpingectomy for a ruptured tubal pregnancy and recovers well.",
         prompt: "Which of the following is the most important advice for her about a future pregnancy?",
         options: [
           "Early assessment to locate the pregnancy",
@@ -778,10 +779,10 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "Fetal red cells enter the maternal circulation at delivery, and before routine prophylaxis about 7% of Rh D negative patients delivering an Rh D positive baby were sensitized within 6 months. She recalls no injection after her last birth. She has had no injection in this pregnancy, so the antibody is not passive. Today's bleed is too recent to produce a titre of 1:32. Rh D negative blood does not sensitize, and antibodies are acquired, not inherited.",
         keyFeature: { topic: "first-trimester-bleeding", n: 5 },
-        source: "cbs-hdfn",
+        source: "sogc-rh",
       },
     ],
-    sources: [S.cbs],
+    sources: [S.cbs, S.sogcRh],
     ...META,
   },
   {
@@ -904,7 +905,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "In a large prospective cohort, about 28% of women had symptoms suggesting post-traumatic stress 1 month after miscarriage or ectopic pregnancy, with anxiety and depression also common. Her distress is expected, and naming it, offering follow-up and giving her resources helps. Grief does not depend on gestation. Waiting for her to ask misses many who need support, and a new pregnancy does not prevent grief.",
+          "In a large prospective cohort, 29% of women met screening criteria for post-traumatic stress 1 month after miscarriage or ectopic pregnancy, with anxiety and depression also common. Her distress is expected, and naming it, offering follow-up and giving her resources helps. Grief does not depend on gestation. Waiting for her to ask misses many who need support, and a new pregnancy does not prevent grief.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
         source: "farren-ptsd",
       },
@@ -918,7 +919,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
     alsoTopics: ["shock"],
     title: "Collapse far from a surgeon",
     stem:
-      "You are working in a rural hospital emergency department with no surgeon, no gynecologist and no radiology ultrasound. The nearest surgical centre is 2 hours away by road. The blood bank holds 4 units of O Rh D negative red cells. A 25-year-old woman is brought to the emergency department by her partner after fainting. She has had 3 hours of lower abdominal pain. Her last menstrual period was 8 weeks ago.\n\nShe is pale and diaphoretic. The abdomen is distended with guarding. A urine pregnancy test is positive. Your bedside ultrasound shows free fluid in the hepatorenal space and no intrauterine pregnancy.",
+      "You are working in a rural hospital emergency department with no surgeon, no gynecologist and no radiology ultrasound. The nearest surgical centre is 2 hours away by road. The blood bank holds 4 units of O Rh D negative red cells. A 25-year-old woman is brought to the emergency department by her partner after fainting. She has had 3 hours of lower abdominal pain. Her last menstrual period was 8 weeks ago. Her blood group is not known.\n\nShe is pale and diaphoretic. The abdomen is distended with guarding. A urine pregnancy test is positive. Your bedside ultrasound shows free fluid in the hepatorenal space and no intrauterine pregnancy.",
     vitals: { temperature: "36.2°C oral", pulse: "132/minute", resp: "26/minute", bp: "80/50 mmHg", o2sat: "98% on room air" },
     questions: [
       {
@@ -1082,7 +1083,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "She is non-sensitized, Rh D negative and past 12 weeks, so SOGC suggests 300 mcg of Rh immune globulin after a threatened miscarriage, given within 72 hours of the bleed. Her bleeding began 20 hours ago, so she is well within that window. The 120 mcg dose is an option only in the first 12 weeks. The routine dose at 28 weeks does not cover today's event. A Kleihauer Betke test is used to size doses after 20 weeks.",
+          "She is non-sensitized, Rh D negative and past 12 weeks, so SOGC suggests 300 mcg of Rh immune globulin after a threatened miscarriage, given within 72 hours of the bleed. Her bleeding began 20 hours ago, so she is well within that window. SOGC names 300 mcg, not 120 mcg, for these events after 12 weeks. The routine dose at 28 weeks does not cover today's event. A Kleihauer Betke test is used to size doses after 20 weeks.",
         keyFeature: { topic: "first-trimester-bleeding", n: 5 },
         source: "sogc-rh",
       },
@@ -1203,7 +1204,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "She chooses misoprostol at home.",
+        update: "She chooses misoprostol 600 mcg PO and plans to take it at home tonight with her partner present.",
         prompt: "Which of the following should prompt her to return to the emergency department urgently after taking misoprostol?",
         options: [
           "Bleeding that lasts about 2 weeks",
@@ -1374,13 +1375,13 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Second bleed in one week",
     stem:
-      "A 29-year-old woman presents to the emergency department with bright red vaginal bleeding that began after intercourse 2 hours ago. She is 12 weeks and 5 days pregnant by a dating ultrasound at 8 weeks. Six days ago another hospital saw her for spotting and gave Rh immune globulin 300 mcg IM. She has no pain and takes a prenatal vitamin.\n\nThe abdomen is soft and nontender. Bedside ultrasound shows a live intrauterine pregnancy with a heart rate of 162/minute. Her blood group is O Rh D negative. Today the antibody screen is positive, identified as anti-D with a titre of 1:2.",
+      "A 29-year-old woman presents to the emergency department with bright red vaginal bleeding that began after intercourse 2 hours ago. She is 12 weeks and 5 days pregnant by a dating ultrasound at 8 weeks. This is her first pregnancy. She has never had a transfusion. Six days ago another hospital saw her for spotting and gave Rh immune globulin 300 mcg IM. She has no pain and takes a prenatal vitamin.\n\nThe abdomen is soft and nontender. Bedside ultrasound shows a live intrauterine pregnancy with a heart rate of 162/minute. Her blood group is O Rh D negative. Today the antibody screen is positive, identified as anti-D with a titre of 1:2.",
     vitals: { temperature: "36.6°C oral", pulse: "88/minute", resp: "16/minute", bp: "118/70 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        update: "Speculum examination shows a 2 cm laceration in the posterior vaginal fornix oozing bright blood. The cervix is closed and no blood comes from the os.",
+        update: "Speculum examination shows a 2 cm laceration in the posterior vaginal fornix oozing bright blood. The cervix is closed, with no polyp or ectropion, and no blood comes from the os.",
         prompt: "Which of the following is the most likely source of her bleeding?",
         options: [
           "Cervical ectropion",
@@ -1479,7 +1480,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Her antibody screen today is negative.",
+        update: "Her antibody screen today is negative. Her bleeding began 2 days ago and remains light.",
         prompt: "Using SOGC Guideline No. 448, which of the following is the most appropriate Rh immune globulin plan for her?",
         options: [
           "Kleihauer Betke test before dosing",
@@ -1490,7 +1491,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Ultrasound dates this loss at 12 weeks and 4 days, past 12 weeks, so SOGC suggests 300 mcg of Rh immune globulin within 72 hours for a non-sensitized Rh D negative patient. Her negative screen shows the doses from her last pregnancy have cleared and she was not sensitized. Without a known last period, the scan sets the gestation that decides the dose. The 120 mcg dose applies before 12 weeks.",
+          "Ultrasound dates this loss at 12 weeks and 4 days, past 12 weeks, so SOGC suggests 300 mcg of Rh immune globulin within 72 hours for a non-sensitized Rh D negative patient. Her negative screen shows the doses from her last pregnancy have cleared and she was not sensitized. Without a known last period, the scan sets the gestation that decides the dose, and SOGC names 300 mcg, not 120 mcg, after 12 weeks. A Kleihauer Betke test sizes doses only after 20 weeks, and waiting 4 weeks to repeat the screen would miss the 72 hour window.",
         keyFeature: { topic: "first-trimester-bleeding", n: 5 },
         source: "sogc-rh",
       },
@@ -1562,17 +1563,18 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most important advice for her follow-up after evacuation?",
+        update: "One week later, pathology confirms a complete hydatidiform mole. Her hCG has already started to fall.",
+        prompt: "Which of the following is the recommended hCG surveillance for her after evacuation of a complete mole?",
         options: [
-          "Conceive again as soon as she wishes",
-          "Follow-up needs only one hCG level",
-          "Reliable contraception during hCG follow-up",
-          "Surveillance ends at the first normal hCG",
-          "Tubal ligation to prevent recurrence",
+          "Monthly hCG for 2 years after evacuation",
+          "Pelvic ultrasound monthly for 6 months",
+          "Single hCG level 4 weeks after evacuation",
+          "Weekly to 3 normal results, then monthly for 6 months",
+          "Weekly until one normal result, then stop",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "Serial hCG after a mole detects persistent trophoblastic disease, and a new pregnancy would raise hCG and hide it, so reliable contraception is recommended for the whole follow-up. After a complete mole, hCG is checked weekly until undetectable for 3 weeks and then monthly for 6 months, so one level or the first normal value is not enough. Permanent contraception is not needed to prevent recurrence.",
+          "After a complete mole, SOGC recommends weekly hCG from 2 weeks after evacuation until it is undetectable for 3 weeks in a row, then monthly for 6 months, to detect persistent trophoblastic disease early. One level, or stopping at the first normal result, misses late rises, and even a partial mole needs a confirming level a month later. Ultrasound does not detect persistent disease as early as hCG. Two years of monthly tests exceeds the schedule. She needs reliable contraception throughout.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
         source: "sogc-gtd",
       },
