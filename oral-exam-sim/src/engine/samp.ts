@@ -106,12 +106,25 @@ export function tokens(text: string): string[] {
     .map((w) => (w.length > 3 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w));
 }
 
-/** True when every word of any phrase appears in the line. */
+/** Words that negate what follows: "no nitrates", "avoid heparin", "don't intubate". */
+export const NEGATIONS = new Set(["no", "not", "avoid", "withhold", "hold", "never", "don", "dont", "stop", "discontinue", "contraindicated", "without"]);
+/** How many words before a phrase a negation still applies to. */
+const NEGATION_WINDOW = 3;
+
+/**
+ * True when every word of any phrase appears in the line, in any order,
+ * and the phrase is not negated. A phrase counts as negated when a negation
+ * word sits within three words before its first word, unless the phrase
+ * itself contains a negation ("avoid nitrates" matches "avoid all nitrates").
+ */
 export function lineMatches(line: string, phrases: string[]): boolean {
-  const have = new Set(tokens(line));
+  const words = tokens(line);
   return phrases.some((p) => {
     const need = tokens(p);
-    return need.length > 0 && need.every((w) => have.has(w));
+    if (!need.length || !need.every((w) => words.includes(w))) return false;
+    if (need.some((w) => NEGATIONS.has(w))) return true;
+    const first = Math.min(...need.map((w) => words.indexOf(w)));
+    return !words.slice(Math.max(0, first - NEGATION_WINDOW), first).some((w) => NEGATIONS.has(w));
   });
 }
 

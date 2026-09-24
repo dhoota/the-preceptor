@@ -26,6 +26,17 @@ describe("matching", () => {
     expect(tokens("Épinéphrine, 0.5 mg I.M.!")).toEqual(["epinephrine", "0.5", "mg", "i", "m"]);
     expect(lineMatches("give IV fluids bolus", ["fluid bolus"])).toBe(true);
   });
+  it("ignores a negated phrase", () => {
+    expect(lineMatches("no nitrates", ["nitrate"])).toBe(false);
+    expect(lineMatches("avoid giving heparin", ["heparin"])).toBe(false);
+    expect(lineMatches("don't intubate yet", ["intubate"])).toBe(false);
+    expect(lineMatches("stop the infusion and give calcium chloride", ["calcium"])).toBe(true);
+    expect(lineMatches("avoid all nitrates", ["avoid nitrate"])).toBe(true);
+    expect(lineMatches("ct head", ["ct head"])).toBe(true);
+  });
+  it("does not zero a question for a negated dangerous answer", () => {
+    expect(markShort(short, ["no epinephrine IV push", "oxygen", "salbutamol"]).earned).toBe(2);
+  });
   it("needs every word of a phrase, in any order", () => {
     expect(lineMatches("IM epinephrine 0.5 mg", ["epinephrine im"])).toBe(true);
     expect(lineMatches("epinephrine", ["epinephrine im"])).toBe(false);
