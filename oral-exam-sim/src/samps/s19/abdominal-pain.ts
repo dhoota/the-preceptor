@@ -13,7 +13,16 @@ const S = {
   woodIh: { id: "rygb-ih-review", citation: "Wood CG, Horowitz JM, Kelahan LC, and colleagues. Internal hernias after Roux-en-Y gastric bypass: clues to a challenging diagnosis. Radiographics. 2025.", url: "https://doi.org/10.1148/rg.240197" },
   dilauro: { id: "rygb-ih-ct", citation: "Dilauro M, McInnes MDF, Schieda N, and colleagues. Internal hernia after laparoscopic Roux-en-Y gastric bypass: optimal CT signs for diagnosis and clinical decision making. Radiology. 2017.", url: "https://pubmed.ncbi.nlm.nih.gov/27689925/" },
   altinoz: { id: "rygb-ih-laparoscopy", citation: "Altinoz A, Maasher A, Jouhar F, and colleagues. Diagnostic laparoscopy is more accurate than computerized tomography for internal hernia after Roux-en-Y gastric bypass. Am J Surg. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/31668708/" },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023." },
+  rosenCh23: { id: "rosen-ch23", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 23, Abdominal Pain.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh78: { id: "rosen-ch78", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 78, Small Intestine.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh166: { id: "rosen-ch166", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 166, Pediatric Gastrointestinal Disorders.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  tg18Flow: { id: "tg18-flowchart", citation: "Okamoto K, Suzuki K, Takada T, et al. Tokyo Guidelines 2018: flowchart for the management of acute cholecystitis. J Hepatobiliary Pancreat Sci. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/29045062/" },
+  cdcZoster: { id: "cdc-zoster", citation: "Centers for Disease Control and Prevention. Clinical overview of shingles (herpes zoster). Page last updated 2024.", url: "https://www.cdc.gov/shingles/hcp/clinical-overview/index.html" },
+  beutner: { id: "beutner-valacyclovir", citation: "Beutner KR, Friedman DJ, Forszpaniak C, Andersen PL, Wood MJ. Valaciclovir compared with acyclovir for improved therapy for herpes zoster in immunocompetent adults. Antimicrob Agents Chemother. 1995.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC162779/" },
+  eccoCd: { id: "ecco-cd-surgery", citation: "Adamina M, Minozzi S, Warusavitarne J, et al. ECCO guidelines on therapeutics in Crohn's disease: surgical treatment. J Crohns Colitis. 2024.", url: "https://doi.org/10.1093/ecco-jcc/jjae089" },
+  wsesElderly: { id: "wses-elderly-appendicitis", citation: "Fugazzola P, Ceresoli M, Agnoletti V, et al. The SIFIPAC/WSES/SICG/SIMEU guidelines for diagnosis and treatment of acute appendicitis in the elderly (2019 edition). World J Emerg Surg. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7063712/" },
+  wsesCdi: { id: "wses-cdi", citation: "Sartelli M, Di Bella S, McFarland LV, et al. 2019 update of the WSES guidelines for management of Clostridioides (Clostridium) difficile infection in surgical patients. World J Emerg Surg. 2019.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC6394026/" },
+  escAcs: { id: "esc-acs-2023", citation: "Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/37622654/" },
   aha22: { id: "aha-aorta", citation: "Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.", url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001106" },
   wsesAmi: { id: "wses-ami", citation: "Bala M and colleagues. Acute mesenteric ischemia: updated guidelines of the World Society of Emergency Surgery. World J Emerg Surg. 2022.", url: "https://wjes.biomedcentral.com/articles/10.1186/s13017-022-00443-x" },
   tg18Chole: { id: "tg18-chole", citation: "Yokoe M and colleagues. Tokyo Guidelines 2018: diagnostic criteria and severity grading of acute cholecystitis. J Hepatobiliary Pancreat Sci. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/29032636/" },
@@ -256,10 +265,10 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Imaging confirms acute calculous cholecystitis in a patient fit for surgery, so the surgeon is involved now for admission, IV antibiotics and early laparoscopic cholecystectomy. Discharge, with or without antibiotics, risks gangrene or perforation. ERCP treats common duct stones, and her bilirubin and ALT are normal. Percutaneous cholecystostomy is for patients too ill or frail for surgery.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
-        source: "rosen",
+        source: "tg18-flowchart",
       },
     ],
-    sources: [S.tg18Chole, S.acrRuq, S.rosen],
+    sources: [S.tg18Chole, S.acrRuq, S.tg18Flow],
     ...META,
   },
   {
@@ -423,10 +432,10 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "A likely strangulated hernia with obstruction needs fluid resuscitation for vomiting and tachycardia, nasogastric decompression, and broad-spectrum antibiotics because the bowel may be ischemic. Manual reduction risks returning dead bowel to the abdomen. Oral contrast and a laxative have no role in a strangulated obstruction going to surgery. Nitrofurantoin treats a bacteriuria that is unlikely to explain her illness.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
-        source: "rosen",
+        source: "rosen-ch78",
       },
     ],
-    sources: [S.idsaAsb, S.wsesHernia, S.rosen],
+    sources: [S.idsaAsb, S.wsesHernia, S.rosenCh78],
     ...META,
   },
   {
@@ -541,7 +550,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "A mass that stays palpable when the rectus muscles are tensed, the Fothergill sign, lies in the abdominal wall. An intraperitoneal or adnexal mass becomes harder to feel because the tensed muscles cover it. A retroperitoneal mass is deeper still and is rarely palpable this way. Peritoneal irritation causes guarding and rebound, not a discrete firm mass.",
         keyFeature: { topic: "abdominal-pain", n: 1 },
-        source: "rosen",
+        source: "rosen-ch23",
       },
       {
         id: "q2",
@@ -552,7 +561,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Sudden pain during coughing in a patient taking apixaban, an abdominal wall mass and a fall in hemoglobin from 128 to 102 g/L point to a rectus sheath hematoma from a torn epigastric vessel. An incarcerated Spigelian hernia would usually cause obstruction, and she is passing flatus with normal bowel sounds. An appendiceal abscess develops over days with fever and lies inside the abdomen. Ovarian torsion is rare at 78 and produces an intra-abdominal mass. Colon cancer does not cause sudden pain with a coughing fit.",
         keyFeature: { topic: "abdominal-pain", n: 1 },
-        source: "rosen",
+        source: "rsh-ct",
       },
       {
         id: "q3",
@@ -566,7 +575,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         source: "rsh-ct",
       },
     ],
-    sources: [S.rosen, S.salemis],
+    sources: [S.salemis, S.rosenCh23],
     ...META,
   },
   {
@@ -738,9 +747,9 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["Herpes zoster", "Left renal colic", "Pyelonephritis", "Splenic infarction", "Thoracic disc herniation"],
         correct: 0,
         explanation:
-          "Burning, unilateral pain in a band that stops at the midline, with allodynia, a normal abdomen and normal tests in an older immunosuppressed patient is typical of herpes zoster before the rash. The rash usually follows within a few days. Renal colic is colicky and usually causes hematuria, and her urinalysis is normal. Pyelonephritis causes fever and pyuria. A splenic infarct causes left upper quadrant tenderness, not skin allodynia. A thoracic disc herniation is rare, and zoster is far more likely in an immunosuppressed older adult with burning pain confined to one band.",
+          "Burning, unilateral pain in a band that stops at the midline, with allodynia, a normal abdomen and normal tests in an older immunosuppressed patient is typical of herpes zoster before the rash. The pain often starts in the area where the rash will later appear. Renal colic is colicky and usually causes hematuria, and her urinalysis is normal. Pyelonephritis causes fever and pyuria. A splenic infarct causes left upper quadrant tenderness, not skin allodynia. A thoracic disc herniation is rare, and zoster is far more likely in an immunosuppressed older adult with burning pain confined to one band.",
         keyFeature: { topic: "abdominal-pain", n: 3 },
-        source: "rosen",
+        source: "cdc-zoster",
       },
       {
         id: "q3",
@@ -750,12 +759,12 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["Acyclovir 400 mg PO three times daily", "Prednisone 50 mg PO daily alone", "Topical acyclovir cream", "Valacyclovir 1 g PO three times daily", "Valacyclovir 500 mg PO once daily"],
         correct: 3,
         explanation:
-          "Valacyclovir 1 g three times daily for 7 days, started within 72 hours of the rash, shortens acute zoster and is especially warranted in an older, immunosuppressed patient. Acyclovir for zoster needs 800 mg five times daily, so 400 mg three times daily is too little. Valacyclovir 500 mg once daily is a herpes simplex suppression dose. Topical acyclovir does not treat zoster. Prednisone alone gives no antiviral effect.",
+          "Valacyclovir 1 g three times daily for 7 days is an established regimen for acute zoster. In a large trial in adults aged 50 or older, it relieved zoster pain faster than acyclovir 800 mg five times daily. At 71 and taking methotrexate and prednisone, she should be treated. Acyclovir 400 mg three times daily is well below the 800 mg five times daily used for zoster. Valacyclovir 500 mg once daily is also far below the zoster dose. Topical acyclovir does not reach the infected nerve. Prednisone alone gives no antiviral effect.",
         keyFeature: { topic: "infectious-diseases", n: 8 },
-        source: "rosen",
+        source: "beutner-valacyclovir",
       },
     ],
-    sources: [S.cohenZoster, S.rosen],
+    sources: [S.cohenZoster, S.cdcZoster, S.beutner],
     ...META,
   },
   {
@@ -798,10 +807,10 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Shock, peritonitis and bloody stool in an infant with bilious vomiting mean the midgut is probably ischemic, so the pediatric surgeon should take him to the operating room while resuscitation continues. Waiting 2 hours for a contrast study loses bowel. A plain film for free air does not change the need for surgery. Serial examinations and an overnight wait are unsafe when every hour of volvulus adds bowel loss.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
-        source: "rosen",
+        source: "rosen-ch166",
       },
     ],
-    sources: [S.applegate, S.rosen],
+    sources: [S.applegate, S.rosenCh166],
     ...META,
   },
   {
@@ -1218,10 +1227,10 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "A Crohn abscess of this size is treated with IV antibiotics and percutaneous drainage, arranged with the surgical team, with any resection planned later once sepsis settles. Emergency resection is for free perforation or failed drainage. Steroids and more infliximab increase the risk of an undrained infection. A febrile, tachycardic patient with an abscess is not safe for discharge.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
-        source: "rosen",
+        source: "ecco-cd-surgery",
       },
     ],
-    sources: [S.brenner, S.smithBindman, S.rosen],
+    sources: [S.brenner, S.smithBindman, S.eccoCd],
     ...META,
   },
   {
@@ -1289,7 +1298,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Older adults with appendicitis often present late with vague symptoms, and perforation is found at diagnosis in a much higher share than in younger adults. Fever is often absent, and his temperature of 37.0°C does not lower the likelihood. The WBC can be normal, as his is. Symptoms tend to build slowly, and classic migration of pain is often missing.",
         keyFeature: { topic: "abdominal-pain", n: 1 },
-        source: "rosen",
+        source: "wses-elderly-appendicitis",
       },
       {
         id: "q2",
@@ -1313,10 +1322,10 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "A stable patient with a well-formed appendiceal abscess is usually treated with IV antibiotics and percutaneous drainage, decided with the surgeon, because early operation on the inflamed mass carries more complications. Emergency appendectomy is for peritonitis or failed nonoperative care. A man of 88 with an abscess who lives alone needs admission, not discharge. Colonoscopy is done later to exclude a tumour, not before treatment. An abscess needs antibiotics.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
-        source: "rosen",
+        source: "wses-elderly-appendicitis",
       },
     ],
-    sources: [S.rosen, S.acrRlq],
+    sources: [S.acrRlq, S.wsesElderly],
     ...META,
   },
   {
@@ -1445,7 +1454,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "In Clostridioides difficile infection, fewer stools with new distension can mean ileus and toxic megacolon, a sign of fulminant disease. Her fever, WBC of 31.4 x 10^9/L, lactate of 3.2 mmol/L and kidney injury confirm she is worse, not better. Antimotility drugs can precipitate megacolon. Stool testing is still useful when stool is available, and testing should not be delayed.",
         keyFeature: { topic: "abdominal-pain", n: 6 },
-        source: "rosen",
+        source: "wses-cdi",
       },
       {
         id: "q2",
@@ -1456,7 +1465,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "CT shows colonic dilatation, wall thickening, perforation and other causes of her sepsis, and helps the surgeon judge the need for colectomy. Endoscopy risks perforating a dilated, inflamed colon. Ultrasound is limited by gas in a distended abdomen. MRI is slow and not suited to an unstable patient.",
         keyFeature: { topic: "abdominal-pain", n: 5 },
-        source: "rosen",
+        source: "wses-cdi",
       },
       {
         id: "q3",
@@ -1469,10 +1478,10 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "Fulminant colitis with megacolon is treated with high-dose oral or nasogastric vancomycin plus IV metronidazole, and a surgeon should be involved early because colectomy may be lifesaving. With ileus, rectal vancomycin may be added because oral drug may not reach the colon. IV vancomycin does not reach the colon lumen. Loperamide worsens ileus and megacolon. Colonoscopy risks perforation and is not needed to confirm the diagnosis.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
-        source: "rosen",
+        source: "wses-cdi",
       },
     ],
-    sources: [S.rosen],
+    sources: [S.wsesCdi],
     ...META,
   },
   {
@@ -1598,9 +1607,9 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["Serial ECG and troponin", "Trial of antacid and discharge", "Ultrasound of the gallbladder", "Upper endoscopy as outpatient", "Viscous lidocaine and discharge"],
         correct: 0,
         explanation:
-          "Epigastric discomfort with nausea and fatigue in an older woman with diabetes is a common atypical presentation of acute coronary syndrome. Relief with an antacid does not separate cardiac from GI pain, and a single early troponin does not exclude myocardial infarction. A repeat ECG and troponin at the interval set by the local pathway are needed. Discharge after an antacid or lidocaine trial risks a missed infarction. Gallbladder ultrasound and endoscopy do not address the dangerous diagnosis first, and her liver enzymes and lipase are normal.",
+          "Epigastric discomfort with nausea and fatigue in an older woman with diabetes can be acute coronary syndrome. Epigastric pain is a recognized chest pain equivalent, and people with diabetes more often present with non-specific symptoms. Relief with an antacid does not separate cardiac from GI pain, and a single early troponin does not exclude myocardial infarction. A repeat ECG and troponin at the interval set by the local pathway are needed. Discharge after an antacid or lidocaine trial risks a missed infarction. Gallbladder ultrasound and endoscopy do not address the dangerous diagnosis first, and her liver enzymes and lipase are normal.",
         keyFeature: { topic: "abdominal-pain", n: 3 },
-        source: "rosen",
+        source: "esc-acs-2023",
       },
       {
         id: "q2",
@@ -1612,7 +1621,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         explanation:
           "A rise in troponin from 9 to 64 ng/L with new horizontal ST depression in a woman with diabetes, hypertension and dyslipidemia is a non-ST elevation myocardial infarction. Pericarditis causes diffuse ST elevation and pleuritic pain. Biliary colic and esophageal spasm do not cause a troponin rise. Myocarditis can raise troponin but usually follows a viral illness in a younger patient and rarely causes regional ST depression.",
         keyFeature: { topic: "ischemic-heart-disease", n: 5 },
-        source: "rosen",
+        source: "esc-acs-2023",
       },
       {
         id: "q3",
@@ -1621,12 +1630,12 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["ASA 160 mg chewed", "ASA 81 mg chewed", "Clopidogrel 75 mg PO", "Enteric-coated ASA 81 mg", "Ibuprofen 400 mg PO"],
         correct: 0,
         explanation:
-          "ASA 160 mg chewed, a common Canadian loading dose within the 160 to 325 mg range, gives rapid platelet inhibition in acute coronary syndrome. A single 81 mg tablet is a maintenance dose, not a loading dose. Enteric coating delays absorption. Clopidogrel 75 mg is a maintenance dose without the loading dose. Ibuprofen and other NSAIDs raise cardiovascular risk and interfere with ASA.",
+          "ASA 160 mg chewed falls within the 150 to 300 mg oral loading dose in the 2023 ESC guideline, and chewing gives rapid platelet inhibition in acute coronary syndrome. A single 81 mg tablet is a maintenance dose, not a loading dose. Enteric coating delays absorption. Clopidogrel 75 mg is a maintenance dose without the loading dose. Ibuprofen and other NSAIDs raise cardiovascular risk and interfere with ASA.",
         keyFeature: { topic: "chest-pain", n: 2 },
-        source: "rosen",
+        source: "esc-acs-2023",
       },
     ],
-    sources: [S.rosen],
+    sources: [S.escAcs],
     ...META,
   },
   {

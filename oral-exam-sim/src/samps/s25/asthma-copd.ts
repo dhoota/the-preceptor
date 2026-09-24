@@ -60,9 +60,40 @@ const BRENNER: Source = {
   citation: "Brenner B, Corbridge T, Kazzi A. Intubation and mechanical ventilation of the asthmatic patient in respiratory failure. J Emerg Med. 2009.",
   url: "https://pubmed.ncbi.nlm.nih.gov/19683662/",
 };
-const ROSEN: Source = {
-  id: "rosen",
-  citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. 2023.",
+const ROSEN_CH2: Source = {
+  id: "rosen-ch2",
+  citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 2, Mechanical Ventilation and Noninvasive Ventilatory Support.",
+  url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html",
+};
+const ROSEN_CH65: Source = {
+  id: "rosen-ch65",
+  citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 65, Dysrhythmias.",
+  url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html",
+};
+const ROSEN_CH113: Source = {
+  id: "rosen-ch113",
+  citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 113, Acid-Base Disorders.",
+  url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html",
+};
+const ROSEN_CH163: Source = {
+  id: "rosen-ch163",
+  citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 163, Pediatric Lower Airway Obstruction.",
+  url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html",
+};
+const ROSEN_CH165: Source = {
+  id: "rosen-ch165",
+  citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 165, Pediatric Cardiac Disorders.",
+  url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html",
+};
+const IND_ANTICHOLINERGIC: Source = {
+  id: "ind-anticholinergic",
+  citation: "Ind PW, Dixon CM, Fuller RW, Barnes PJ. Anticholinergic blockade of beta-blocker-induced bronchoconstriction. Am Rev Respir Dis. 1989.",
+  url: "https://doi.org/10.1164/ajrccm/139.6.1390",
+};
+const ATSDR_CHLORINE: Source = {
+  id: "atsdr-chlorine",
+  citation: "Agency for Toxic Substances and Disease Registry. Medical management guidelines for chlorine. Page last reviewed 2014.",
+  url: "https://wwwn.cdc.gov/TSP/MMG/MMGDetails.aspx?mmgid=198&toxid=36",
 };
 const BTS_PLEURAL: Source = {
   id: "bts-pleural",
@@ -397,7 +428,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         explanation:
           "An irregular rhythm faster than 100/minute with at least three P wave shapes and varying PR intervals is multifocal atrial tachycardia, which is strongly linked to decompensated lung disease. Atrial fibrillation has no organized P waves. Atrial flutter shows regular flutter waves. Sinus tachycardia with premature beats has one dominant P wave shape. A wandering atrial pacemaker has the same P wave pattern at a rate under 100/minute, and her rate is 136/minute.",
         keyFeature: { topic: "asthma-copd", n: 4 },
-        source: "rosen",
+        source: "rosen-ch65",
       },
       {
         id: "q2",
@@ -414,7 +445,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         explanation:
           "Multifocal atrial tachycardia is driven by the underlying lung disease and hypoxemia, so treating the exacerbation and correcting her SpO2 of 86% is the first step. Cardioversion does not work because there are several atrial foci. Adenosine and a modified Valsalva manoeuvre do not terminate the rhythm, because it is not a reentrant tachycardia. Digoxin is generally ineffective for rate control in this rhythm and is not a first step.",
         keyFeature: { topic: "asthma-copd", n: 4 },
-        source: "rosen",
+        source: "rosen-ch65",
       },
       {
         id: "q3",
@@ -452,7 +483,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         source: "gold",
       },
     ],
-    sources: [ROSEN, ERS_ATS_NIV, GOLD],
+    sources: [ERS_ATS_NIV, GOLD, ROSEN_CH65],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1263,7 +1294,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         explanation:
           "Inhaled bronchodilators should start at once, and adding ipratropium gives a route of bronchodilation that does not depend on beta receptors while beta blockade may blunt salbutamol. Her BP is normal and she is only mildly bradycardic, so glucagon for beta blocker toxicity is not needed. Epinephrine is for anaphylaxis, which she does not have. Magnesium is reserved for severe bronchospasm that fails initial treatment. Prednisone alone delays relief of her symptoms.",
         keyFeature: { topic: "asthma-copd", n: 5 },
-        source: "rosen",
+        source: "ind-anticholinergic",
       },
       {
         id: "q3",
@@ -1283,7 +1314,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         source: "gina",
       },
     ],
-    sources: [GINA, ROSEN],
+    sources: [GINA, IND_ANTICHOLINERGIC],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1315,9 +1346,9 @@ export const ASTHMA_COPD_S25: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Mixing bleach with an acid releases chlorine, a yellow-green gas of intermediate water solubility that irritates the eyes, throat and airways and causes bronchospasm. Chloramine is released when bleach is mixed with ammonia, not acid. Ammonia is highly soluble and mainly burns the upper airway. Carbon monoxide is colourless and does not cause eye irritation or wheeze. Hydrogen sulfide smells of rotten eggs and is not produced by these products.",
+          "Mixing bleach with an acid releases chlorine, a yellow-green gas that irritates the eyes, throat and airways and can constrict the airways. Chloramine is released when bleach is mixed with ammonia, not acid. Ammonia is highly soluble and mainly burns the upper airway. Carbon monoxide is colourless and does not cause eye irritation or wheeze. Hydrogen sulfide smells of rotten eggs and is not produced by these products.",
         keyFeature: { topic: "asthma-copd", n: 1 },
-        source: "rosen",
+        source: "atsdr-chlorine",
       },
       {
         id: "q2",
@@ -1355,7 +1386,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         source: "white-chlorine",
       },
     ],
-    sources: [ROSEN, WHITE_CHLORINE],
+    sources: [WHITE_CHLORINE, ATSDR_CHLORINE],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1478,7 +1509,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         explanation:
           "He looks well at rest with a peak flow of 75% of his best (330 of 440 L/minute), but rest can hide incomplete recovery. Watching him walk or climb stairs with oximetry tests whether the improvement holds with exertion before he goes home. A chest radiograph and venous gas are not needed in an uncomplicated exacerbation that is improving. Waiting 4 more hours for a repeat peak flow delays discharge without testing him under effort. A second dexamethasone dose is optional and does not show whether he is ready.",
         keyFeature: { topic: "asthma-copd", n: 8 },
-        source: "rosen",
+        source: "rosen-ch163",
       },
       {
         id: "q2",
@@ -1517,7 +1548,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         source: "gina",
       },
     ],
-    sources: [ROSEN, TREKK_ASTHMA, GINA],
+    sources: [TREKK_ASTHMA, GINA, ROSEN_CH163],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1646,7 +1677,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         explanation:
           "A focused cardiac ultrasound at the bedside can quickly show a dilated, poorly contracting ventricle and change management within minutes. A viral swab does not assess cardiac function. A 6-year-old in distress may not do a reliable peak flow, and it would not separate asthma from heart failure. A magnesium level and a venous gas do not identify a cardiac cause.",
         keyFeature: { topic: "asthma-copd", n: 4 },
-        source: "rosen",
+        source: "rosen-ch165",
       },
       {
         id: "q3",
@@ -1667,7 +1698,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         source: "trekk-severe",
       },
     ],
-    sources: [TREKK_SEVERE, ROSEN],
+    sources: [TREKK_SEVERE, ROSEN_CH165],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2491,7 +2522,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         explanation:
           "When well her pCO2 was 52 mmHg with an HCO3 of 32 mmol/L, a compensated chronic respiratory acidosis. Her pCO2 has now risen by 18 mmHg to 70 mmHg, and her HCO3 has risen only by 2 mmol/L to 34 mmol/L, about the 1 mmol/L per 10 mmHg expected for an acute rise. Her pH of 7.30 is acidemic. This is an acute rise on top of chronic retention. Her HCO3 is above the level expected from the acute change alone, which argues against a pure acute acidosis or an added metabolic acidosis. A primary metabolic alkalosis does not fit an acidemic pH.",
         keyFeature: { topic: "asthma-copd", n: 3 },
-        source: "rosen",
+        source: "rosen-ch113",
       },
       {
         id: "q2",
@@ -2526,10 +2557,10 @@ export const ASTHMA_COPD_S25: Samp[] = [
         explanation:
           "The difference between IPAP and EPAP is the pressure support that ventilates her. Of these settings, only an IPAP of 10 with an EPAP of 5 cm H2O gives pressure support at a tolerable starting level, and IPAP is then titrated upward to lower her pCO2. Equal IPAP and EPAP gives no pressure support and acts like CPAP, as does CPAP alone. An IPAP below the EPAP is not a valid setting. Starting at 30 and 20 cm H2O is poorly tolerated and risks gastric insufflation and hypotension.",
         keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "rosen",
+        source: "rosen-ch2",
       },
     ],
-    sources: [ROSEN, GOLD],
+    sources: [GOLD, ROSEN_CH113, ROSEN_CH2],
     reviewed: false,
     author: AUTHOR,
     version: 1,

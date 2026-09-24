@@ -20,7 +20,18 @@ const S = {
   "tc-doac": {"id": "tc-doac", "citation": "Thrombosis Canada. Clinical guide: DOACs: management of bleeding. 2024.", "url": "https://thrombosiscanada.ca/clinical_guides/pdfs/MANAGEMENTOFBLEEDINGINPATIENTS_75.pdf"},
   "cbs": {"id": "cbs", "citation": "Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical Guide to Transfusion. Canadian Blood Services. 2021.", "url": "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion"},
   "halt-it": {"id": "halt-it", "citation": "HALT-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial. Lancet. 2020."},
-  "rosen": {"id": "rosen", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023."},
+  "rosen-ch20": {"id": "rosen-ch20", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 20, Hemoptysis.", "url": "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"},
+  "rosen-ch26": {"id": "rosen-ch26", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 26, Gastrointestinal Bleeding.", "url": "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"},
+  "rosen-ch56": {"id": "rosen-ch56", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 56, Oral Medicine.", "url": "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"},
+  "rosen-ch75": {"id": "rosen-ch75", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 75, Esophagus, Stomach, and Duodenum.", "url": "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"},
+  "rosen-ch184": {"id": "rosen-ch184", "citation": "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 184, The Morbidly Obese Patient.", "url": "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"},
+  "aao-epistaxis": {"id": "aao-epistaxis", "citation": "Tunkel DE, Anne S, Payne SC, et al. Clinical practice guideline: nosebleed (epistaxis). American Academy of Otolaryngology-Head and Neck Surgery Foundation. Otolaryngol Head Neck Surg. 2020.", "url": "https://doi.org/10.1177/0194599819890327"},
+  "acr-hemoptysis": {"id": "acr-hemoptysis", "citation": "Expert Panel on Thoracic Imaging, Olsen KM, Manouchehr-Pour S, et al. ACR Appropriateness Criteria hemoptysis. J Am Coll Radiol. 2020.", "url": "https://pubmed.ncbi.nlm.nih.gov/32370959/"},
+  "hc-nsaid-pregnancy": {"id": "hc-nsaid-pregnancy", "citation": "Health Canada. Use of non-steroidal anti-inflammatory drugs (NSAIDs) beyond 20 weeks of pregnancy and risk of kidney damage in unborn babies, leading to low amniotic fluid. Public advisory. 2020.", "url": "https://recalls-rappels.canada.ca/en/alert-recall/use-non-steroidal-anti-inflammatory-drugs-nsaids-beyond-20-weeks-pregnancy-and-risk"},
+  "ese-es-gcai": {"id": "ese-es-gcai", "citation": "Beuschlein F, Else T, Bancos I, et al. European Society of Endocrinology and Endocrine Society joint clinical guideline: diagnosis and therapy of glucocorticoid-induced adrenal insufficiency. J Clin Endocrinol Metab. 2024.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11180513/"},
+  "beran-mu": {"id": "beran-marginal-ulcer", "citation": "Beran A, Shaear M, Al-Mudares S, et al. Predictors of marginal ulcer after gastric bypass: a systematic review and meta-analysis. J Gastrointest Surg. 2023.", "url": "https://doi.org/10.1007/s11605-023-05619-7"},
+  "srygley": {"id": "srygley-ugib", "citation": "Srygley FD, Gerardo CJ, Tran T, Fisher DA. Does this patient have a severe upper gastrointestinal bleed? JAMA. 2012.", "url": "https://pubmed.ncbi.nlm.nih.gov/22416103/"},
+  "sdcep": {"id": "sdcep-anticoagulants", "citation": "Scottish Dental Clinical Effectiveness Programme. Management of dental patients taking anticoagulants or antiplatelet drugs. 2nd ed. 2022.", "url": "https://www.sdcep.org.uk/published-guidance/anticoagulants-and-antiplatelets/"},
   "araki": {"id": "araki-vkdb", "citation": "Araki S, Shirahata A. Vitamin K deficiency bleeding in infancy. Nutrients. 2020.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7146284/"},
   "piccirillo": {"id": "piccirillo-peds-gib", "citation": "Piccirillo M, Pucinischi V, Mennini M, et al. Gastrointestinal bleeding in children: diagnostic approach. Ital J Pediatr. 2024.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10807079/"},
   "spencer": {"id": "spencer-ptb", "citation": "Spencer GM, Wilson CA, Davidson J, et al. International practice variation in post-tonsillectomy hemorrhage: a survey study of pediatric otolaryngologists. World J Otorhinolaryngol Head Neck Surg. 2025.", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13398467/"},
@@ -697,7 +708,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "rosen"
+        "source": "aao-epistaxis"
       },
       {
         "id": "q2",
@@ -717,7 +728,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "rosen"
+        "source": "aao-epistaxis"
       },
       {
         "id": "q3",
@@ -740,7 +751,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
         "source": "tc-doac"
       }
     ],
-    "sources": [S["rosen"], S["tc-doac"]],
+    "sources": [S["tc-doac"], S["aao-epistaxis"]],
     ...META,
   },
   {
@@ -774,7 +785,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "rosen"
+        "source": "rosen-ch20"
       },
       {
         "id": "q2",
@@ -801,7 +812,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "rosen"
+        "source": "rosen-ch20"
       },
       {
         "id": "q3",
@@ -821,10 +832,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "rosen"
+        "source": "acr-hemoptysis"
       }
     ],
-    "sources": [S["rosen"]],
+    "sources": [S["rosen-ch20"], S["acr-hemoptysis"]],
     ...META,
   },
   {
@@ -899,12 +910,12 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "Use ibuprofen only at night"
         ],
         "correct": 1,
-        "explanation": "Ibuprofen caused or worsened this bleed and is also avoided in the second half of pregnancy because of effects on fetal kidneys and the ductus arteriosus. It should be stopped, and acetaminophen used for pain. Naproxen is another NSAID with the same risks. Taking ibuprofen with meals, at night only or with famotidine does not remove the risk of recurrent ulcer bleeding.",
+        "explanation": "Ibuprofen caused or worsened this bleed. Health Canada also advises against NSAIDs from 20 weeks of pregnancy because they can harm the fetal kidneys, and they are contraindicated from 28 weeks. She is at 30 weeks, so ibuprofen should be stopped, and acetaminophen used for pain. Naproxen is another NSAID with the same risks. Taking ibuprofen with meals, at night only or with famotidine does not remove the risk of recurrent ulcer bleeding.",
         "keyFeature": {
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "rosen"
+        "source": "hc-nsaid-pregnancy"
       },
       {
         "id": "q4",
@@ -926,7 +937,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
         "source": "icg"
       }
     ],
-    "sources": [S["asge-preg"], S["cbs"], S["icg"], S["rosen"]],
+    "sources": [S["asge-preg"], S["cbs"], S["icg"], S["hc-nsaid-pregnancy"]],
     ...META,
   },
   {
@@ -961,7 +972,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 3
         },
-        "source": "rosen"
+        "source": "rosen-ch26"
       },
       {
         "id": "q2",
@@ -1023,7 +1034,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
         "source": "gerson"
       }
     ],
-    "sources": [S["gerson"], S["icg"], S["rosen"]],
+    "sources": [S["gerson"], S["icg"], S["rosen-ch26"]],
     ...META,
   },
   {
@@ -1077,7 +1088,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "rosen"
+        "source": "ese-es-gcai"
       },
       {
         "id": "q3",
@@ -1118,7 +1129,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
         "source": "icg"
       }
     ],
-    "sources": [S["blatchford"], S["icg"], S["rosen"]],
+    "sources": [S["blatchford"], S["icg"], S["ese-es-gcai"]],
     ...META,
   },
   {
@@ -1254,12 +1265,12 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           3,
           5
         ],
-        "explanation": "A marginal ulcer forms at the gastrojejunal anastomosis after gastric bypass. Smoking and NSAIDs are the strongest modifiable risk factors, and stopping acid suppression removes protection. Her age and female sex are not established risk factors. The dental abscess matters only because it led to ibuprofen use.",
+        "explanation": "A marginal ulcer forms at the gastrojejunal anastomosis after gastric bypass. In a meta-analysis, smoking was a clear predictor of marginal ulcer. NSAID use showed a trend toward higher risk and PPI use a trend toward lower risk, so her ibuprofen and stopping omeprazole also count against her. Age and female sex were not predictors. The dental abscess matters only because it led to ibuprofen use.",
         "keyFeature": {
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "rosen"
+        "source": "beran-marginal-ulcer"
       },
       {
         "id": "q2",
@@ -1298,7 +1309,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "rosen"
+        "source": "rosen-ch184"
       },
       {
         "id": "q4",
@@ -1313,15 +1324,15 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "Weekly vitamin B12 injections"
         ],
         "correct": 0,
-        "explanation": "Smoking is a major risk factor for marginal ulcers and for their recurrence, so stopping smoking is the most important change, along with avoiding NSAIDs and taking a PPI. Naproxen is another NSAID and would raise the risk again. Iron and vitamin B12 treat deficiencies common after bypass but do not prevent ulcers. A liquid diet does not prevent marginal ulceration.",
+        "explanation": "Smoking was the clearest modifiable predictor of marginal ulcer in a meta-analysis, so stopping smoking is the most important change. Avoiding NSAIDs and taking a PPI also make sense. Naproxen is another NSAID and would raise the risk again. Iron and vitamin B12 treat deficiencies common after bypass but do not prevent ulcers. A liquid diet does not prevent marginal ulceration.",
         "keyFeature": {
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "rosen"
+        "source": "beran-marginal-ulcer"
       }
     ],
-    "sources": [S["rosen"], S["villanueva"]],
+    "sources": [S["villanueva"], S["beran-mu"], S["rosen-ch184"]],
     ...META,
   },
   {
@@ -1355,7 +1366,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "rosen"
+        "source": "rosen-ch26"
       },
       {
         "id": "q2",
@@ -1374,7 +1385,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "rosen"
+        "source": "rosen-ch26"
       },
       {
         "id": "q3",
@@ -1394,10 +1405,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "rosen"
+        "source": "rosen-ch26"
       }
     ],
-    "sources": [S["rosen"]],
+    "sources": [S["rosen-ch26"]],
     ...META,
   },
   {
@@ -1925,7 +1936,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "rosen"
+        "source": "rosen-ch75"
       },
       {
         "id": "q2",
@@ -1967,7 +1978,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
         "source": "icg"
       }
     ],
-    "sources": [S["icg"], S["rosen"], S["villanueva"]],
+    "sources": [S["icg"], S["villanueva"], S["rosen-ch75"]],
     ...META,
   },
   {
@@ -2198,7 +2209,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "rosen"
+        "source": "rosen-ch26"
       },
       {
         "id": "q2",
@@ -2217,7 +2228,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "rosen"
+        "source": "rosen-ch26"
       },
       {
         "id": "q3",
@@ -2236,10 +2247,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 1
         },
-        "source": "rosen"
+        "source": "rosen-ch26"
       }
     ],
-    "sources": [S["rosen"]],
+    "sources": [S["rosen-ch26"]],
     ...META,
   },
   {
@@ -2273,7 +2284,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 3
         },
-        "source": "rosen"
+        "source": "rosen-ch26"
       },
       {
         "id": "q2",
@@ -2288,12 +2299,12 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "Urea high relative to creatinine"
         ],
         "correct": 4,
-        "explanation": "Blood digested in the upper gut is absorbed as protein and raises urea out of proportion to creatinine. Her urea of 21.4 mmol/L with a creatinine of 104 umol/L fits an upper source, likely an NSAID ulcer. Maroon stool is seen in brisk upper bleeding as well as in right colon bleeding, so it does not separate them. The hemoglobin level, the lack of pain and anticoagulation do not indicate where the bleeding comes from.",
+        "explanation": "Blood digested in the upper gut is absorbed as protein and raises urea out of proportion to creatinine. Her urea of 21.4 mmol/L with a creatinine of 104 umol/L fits an upper source, likely an NSAID ulcer. In conventional units her urea nitrogen to creatinine ratio is about 51, and a ratio above 30 made an upper source more likely in a systematic review. Maroon stool is seen in brisk upper bleeding as well as in right colon bleeding, so it does not separate them. The hemoglobin level, the lack of pain and anticoagulation do not indicate where the bleeding comes from.",
         "keyFeature": {
           "topic": "gi-bleed",
           "n": 2
         },
-        "source": "rosen"
+        "source": "srygley-ugib"
       },
       {
         "id": "q3",
@@ -2322,7 +2333,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
         "source": "tc-doac"
       }
     ],
-    "sources": [S["rosen"], S["tc-doac"]],
+    "sources": [S["tc-doac"], S["rosen-ch26"], S["srygley"]],
     ...META,
   },
   {
@@ -2505,7 +2516,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 2
         },
-        "source": "rosen"
+        "source": "rosen-ch26"
       },
       {
         "id": "q2",
@@ -2572,7 +2583,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
         "source": "icg"
       }
     ],
-    "sources": [S["halt-it"], S["icg"], S["rosen"]],
+    "sources": [S["halt-it"], S["icg"], S["rosen-ch26"]],
     ...META,
   },
   {
@@ -2775,7 +2786,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "rosen"
+        "source": "rosen-ch56"
       },
       {
         "id": "q2",
@@ -2795,7 +2806,7 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 4
         },
-        "source": "rosen"
+        "source": "sdcep-anticoagulants"
       },
       {
         "id": "q3",
@@ -2815,10 +2826,10 @@ export const GI_BLEED_S39_SAMPS: Samp[] = [
           "topic": "gi-bleed",
           "n": 6
         },
-        "source": "rosen"
+        "source": "sdcep-anticoagulants"
       }
     ],
-    "sources": [S["rosen"]],
+    "sources": [S["rosen-ch56"], S["sdcep"]],
     ...META,
   },
 ];

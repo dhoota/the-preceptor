@@ -13,7 +13,13 @@ const S = {
   mollan: { id: "iih-consensus", citation: "Mollan SP, Davies B, Silver NC, et al. Idiopathic intracranial hypertension: consensus guidelines on management. J Neurol Neurosurg Psychiatry. 2018." },
   friedmanIih: { id: "iih-criteria", citation: "Friedman DI, Liu GT, Digre KB. Revised diagnostic criteria for the pseudotumor cerebri syndrome in adults and children. Neurology. 2013." },
   robbins: { id: "ahs-cluster", citation: "Robbins MS, Starling AJ, Pringsheim TM, Becker WJ, Schwedt TJ. Treatment of cluster headache: the American Headache Society evidence-based guidelines. Headache. 2016." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on headache, stroke, ophthalmology and drugs of abuse." },
+  rosenCh17: { id: "rosen-ch17", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 17, Diplopia.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh18: { id: "rosen-ch18", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 18, Red and Painful Eye.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh33: { id: "rosen-ch33", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 33, Head Trauma.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh57: { id: "rosen-ch57", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 57, Ophthalmology.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh87: { id: "rosen-ch87", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 87, Stroke.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh144: { id: "rosen-ch144", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 144, Cocaine and Other Sympathomimetics.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  ahaTox: { id: "aha-poisoning-2023", citation: "Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023.", url: "https://doi.org/10.1161/CIR.0000000000001161" },
   jonzzon: { id: "shunt-nof", citation: "Jonzzon S, Price A, Truong N, et al. Neuro-ophthalmological findings in pediatric ventricular shunt failure: a systematic review. J Neurosurg Pediatr. 2025.", url: "https://pubmed.ncbi.nlm.nih.gov/40215619/" },
   hanak: { id: "shunt-complications", citation: "Hanak BW, Bonow RH, Harris CA, Browd SR. Cerebrospinal fluid shunting complications in children. Pediatr Neurosurg. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5915307/" },
   ferras: { id: "vp-shunt-ed", citation: "Ferras M, McCauley N, Stead T, Ganti L, Desai B. Ventriculoperitoneal shunts in the emergency department: a review. Cureus. 2020.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7053664/" },
@@ -270,7 +276,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "A red, painful eye with severe periorbital headache must prompt exclusion of acute angle-closure glaucoma, which can cost vision within hours. Here the small right pupil, normal visual acuity and stereotyped nightly attacks with tearing and nasal blockage favour cluster headache, whereas glaucoma typically gives a mid-dilated, poorly reactive pupil and reduced acuity. Conjunctivitis, episcleritis and subconjunctival hemorrhage do not cause severe headache with autonomic features.",
         keyFeature: { topic: "headache", n: 4 },
-        source: "rosen",
+        source: "rosen-ch18",
       },
       {
         id: "q3",
@@ -311,7 +317,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         source: "ahs-cluster",
       },
     ],
-    sources: [S.ichd, S.rosen, S.robbins],
+    sources: [S.ichd, S.robbins, S.rosenCh18],
     ...META,
   },
   {
@@ -843,7 +849,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Anticoagulation is a major risk factor for subdural hematoma in older adults, who often do not recall the minor trauma, such as the one suggested by his forehead bruise. A new headache after age 50 with confusion, gait change and a drift in a patient on apixaban needs urgent CT. A dull quality and gradual onset over weeks are typical of chronic subdural hematoma and do not lower concern. Metoprolol and normal pupils do not change the risk.",
         keyFeature: { topic: "headache", n: 1 },
-        source: "rosen",
+        source: "rosen-ch33",
       },
       {
         id: "q2",
@@ -879,7 +885,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "A symptomatic chronic subdural hematoma 18 mm thick with 7 mm of midline shift, confusion and a drift needs neurosurgical assessment for drainage. Treating him as delirium or dementia misses a reversible cause of his decline. Discharge or transfer to rehabilitation is unsafe with mass effect.",
         keyFeature: { topic: "headache", n: 2 },
-        source: "rosen",
+        source: "rosen-ch33",
       },
       {
         id: "q4",
@@ -896,10 +902,10 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "A dilated, unreactive pupil on the side of the hematoma signals uncal herniation compressing the third nerve and needs emergency decompression. The forehead bruise points to the mechanism. The irregular pulse reflects his known atrial fibrillation. A mild drift and disorientation are already present and reflect mass effect but do not by themselves indicate herniation.",
         keyFeature: { topic: "headache", n: 3 },
-        source: "rosen",
+        source: "rosen-ch33",
       },
     ],
-    sources: [S.rosen, S.nac],
+    sources: [S.nac, S.rosenCh33],
     ...META,
   },
   {
@@ -1311,7 +1317,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "A patient who cannot stand after a sudden headache with vomiting may have a cerebellar lesion even when limb strength is normal lying down. Testing gait, sitting balance and limb coordination reveals the truncal and limb ataxia of a cerebellar hemorrhage or infarct, which is missed if only strength is examined. Reflexes, plantar responses, jaw jerk and visual fields test other pathways and do not detect cerebellar dysfunction.",
         keyFeature: { topic: "headache", n: 3 },
-        source: "rosen",
+        source: "rosen-ch87",
       },
       {
         id: "q2",
@@ -1350,7 +1356,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         source: "aha-ich",
       },
     ],
-    sources: [S.rosen, S.greenberg],
+    sources: [S.greenberg, S.rosenCh87],
     ...META,
   },
   {
@@ -2066,7 +2072,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Swelling of the left eyelid shows spread to the other eye, through the connections between the two cavernous sinuses, which is characteristic of cavernous sinus thrombosis and does not occur with orbital cellulitis. Reduced forehead sensation from the first division of the trigeminal nerve, which runs in the wall of the sinus, also points to it. Proptosis, lid swelling, painful ophthalmoplegia and fever occur in both conditions.",
         keyFeature: { topic: "headache", n: 3 },
-        source: "rosen",
+        source: "rosen-ch57",
       },
       {
         id: "q2",
@@ -2106,7 +2112,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         source: "septic-cst",
       },
     ],
-    sources: [S.rosen, S.ahaCvt, S.weerasinghe],
+    sources: [S.ahaCvt, S.weerasinghe, S.rosenCh57],
     ...META,
   },
   {
@@ -2279,7 +2285,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Sweating, agitation, tachycardia, severe hypertension, dilated pupils and a raised temperature with a sudden headache and hemiparesis at a party suggest cocaine or amphetamine use, which causes intracerebral hemorrhage, subarachnoid hemorrhage and stroke. Knowing about stimulant use changes the treatment of his agitation and BP. Family history of migraine, immunizations, travel and sexual history do not explain this acute picture.",
         keyFeature: { topic: "headache", n: 1 },
-        source: "rosen",
+        source: "rosen-ch144",
       },
       {
         id: "q2",
@@ -2296,9 +2302,9 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "His agitation, tachycardia, hypertension and raised temperature after cocaine call for a benzodiazepine, first-line for cocaine-induced agitation, which reduces the sympathetic drive. Ketamine is itself sympathomimetic and would raise his BP further. Haloperidol can impair heat loss and lower the seizure threshold. Beta blockade alone with metoprolol is generally avoided in acute cocaine toxicity, and sublingual nitroglycerin is unreliable for this degree of hypertension.",
+          "His agitation, tachycardia, hypertension and raised temperature after cocaine call for a benzodiazepine, first-line for cocaine-induced agitation, which reduces the sympathetic drive. Ketamine is itself sympathomimetic and would raise his BP further. Haloperidol can impair heat loss and lower the seizure threshold. The safety of beta blockers such as metoprolol in cocaine toxicity is uncertain, so metoprolol is not a first choice. Nitroglycerin can treat cocaine-related coronary spasm but does not treat his agitation.",
         keyFeature: { topic: "headache", n: 6 },
-        source: "rosen",
+        source: "aha-poisoning-2023",
       },
       {
         id: "q3",
@@ -2318,7 +2324,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         source: "aha-ich",
       },
     ],
-    sources: [S.rosen, S.greenberg],
+    sources: [S.greenberg, S.rosenCh144, S.ahaTox],
     ...META,
   },
   {
@@ -2414,7 +2420,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "Pupil involvement in a third nerve palsy suggests compression of the pupillomotor fibres on the surface of the nerve, most importantly by a posterior communicating artery aneurysm. Microvascular palsies from diabetes and hypertension usually spare the pupil. Ptosis, limited eye movements and periorbital pain occur with both causes, and normal acuity does not help.",
         keyFeature: { topic: "headache", n: 3 },
-        source: "rosen",
+        source: "rosen-ch17",
       },
       {
         id: "q2",
@@ -2431,7 +2437,7 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "A pupil-involving third nerve palsy needs urgent vascular imaging, and CT or MR angiography detects most posterior communicating artery aneurysms. An expanding aneurysm may be about to rupture, so this cannot wait. A non-contrast CT can miss an unruptured aneurysm. Checking glycemic control assumes a microvascular cause, and an ESR tests for giant cell arteritis, which does not explain a pupil-involving palsy here.",
         keyFeature: { topic: "headache", n: 6 },
-        source: "rosen",
+        source: "rosen-ch17",
       },
       {
         id: "q3",
@@ -2450,10 +2456,10 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
         explanation:
           "An aneurysm that causes a new third nerve palsy is symptomatic and has a high short-term risk of rupture, so it needs urgent neurovascular or neurosurgical treatment, usually coiling or clipping. Outpatient review or repeat imaging delays treatment. BP control alone does not secure the aneurysm, and the palsy is from compression rather than diabetes.",
         keyFeature: { topic: "headache", n: 2 },
-        source: "rosen",
+        source: "rosen-ch17",
       },
     ],
-    sources: [S.rosen],
+    sources: [S.rosenCh17],
     ...META,
   },
   {
