@@ -1,5 +1,5 @@
 import { latestPerCase } from "./score";
-import type { Samp, SampMark } from "./samp";
+import { sampFormat, type Samp, type SampMark } from "./samp";
 import type { Attempt, OralCase } from "./types";
 
 /**
@@ -39,7 +39,8 @@ function shuffle<T>(xs: T[], rand: () => number): T[] {
 /**
  * Blueprint balanced draw: one SAMP per topic in turn, topics in random
  * order, until the count is reached. SAMPs the candidate has not seen come
- * first within each topic.
+ * first within each topic. Only multiple choice and menu SAMPs are drawn,
+ * as on the exam from 2027.
  */
 export function composeWrittenMock(
   samps: Samp[],
@@ -47,7 +48,7 @@ export function composeWrittenMock(
   opts: { rand?: () => number; seen?: Set<string>; allowed?: (id: string) => boolean } = {},
 ): string[] {
   const rand = opts.rand ?? Math.random;
-  const pool = samps.filter((s) => opts.allowed?.(s.id) ?? true);
+  const pool = samps.filter((s) => sampFormat(s) === "mcq" && (opts.allowed?.(s.id) ?? true));
   const byTopic = new Map<string, Samp[]>();
   for (const s of pool) byTopic.set(s.topic, [...(byTopic.get(s.topic) ?? []), s]);
   const queues = new Map<string, Samp[]>();

@@ -122,3 +122,14 @@ describe("SAMP marking", () => {
     expect(m.score).toBe(0.5);
   });
 });
+
+describe("instruction display", () => {
+  it("strips an instruction written into the prompt", async () => {
+    const { stripInstruction } = await import("../src/screens/SampParts");
+    expect(stripInstruction("What would you give? List THREE.")).toBe("What would you give?");
+    expect(stripInstruction("Which of the following is best? Select one.")).toBe("Which of the following is best?");
+    expect(stripInstruction("Which apply? Select one, or None if none are required.")).toBe("Which apply?");
+    expect(stripInstruction("Give ONE answer.")).toBe("");
+    expect(stripInstruction("List the causes of a raised anion gap.")).toBe("List the causes of a raised anion gap.");
+  });
+});

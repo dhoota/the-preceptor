@@ -76,6 +76,29 @@ export interface ShortQuestion extends QuestionBase {
 
 export type SampQuestion = SingleQuestion | MenuQuestion | ShortQuestion;
 
+/**
+ * Vital signs in CFPC order, shown as a labelled list under the stem.
+ * Values carry their units: "38.2°C rectal", "96/minute", "118/72 mmHg",
+ * "97% on room air", "24 kg".
+ */
+export interface Vitals {
+  temperature?: string;
+  pulse?: string;
+  resp?: string;
+  bp?: string;
+  o2sat?: string;
+  weight?: string;
+}
+
+export const VITAL_LABELS: [keyof Vitals, string][] = [
+  ["temperature", "Temperature"],
+  ["pulse", "Pulse"],
+  ["resp", "Resp."],
+  ["bp", "BP"],
+  ["o2sat", "O2 sat"],
+  ["weight", "Weight"],
+];
+
 export interface Samp {
   id: string;
   /** Primary CFPC priority topic id. */
@@ -84,11 +107,24 @@ export interface Samp {
   /** Neutral heading. Must not give away the diagnosis. */
   title: string;
   stem: string;
+  /** Vital signs as a list. New SAMPs put vitals here, not in the stem. */
+  vitals?: Vitals;
   questions: SampQuestion[];
   sources: Source[];
   reviewed: boolean;
   author: string;
   version: number;
+}
+
+/**
+ * The CFPC exam moves to multiple choice and short menu questions from
+ * 2027. A SAMP with no write-in question is "mcq". Anything else is
+ * "writein" practice. Mock exams draw only from "mcq" SAMPs.
+ */
+export type SampFormat = "mcq" | "writein";
+
+export function sampFormat(s: Samp): SampFormat {
+  return s.questions.every((q) => q.kind !== "short") ? "mcq" : "writein";
 }
 
 /* Answer matching ------------------------------------------------------- */

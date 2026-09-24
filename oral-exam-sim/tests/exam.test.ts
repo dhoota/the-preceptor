@@ -6,6 +6,7 @@ import {
   markSamp,
   newAttempt,
   rng,
+  sampFormat,
   topicStats,
   type OralCase,
   type Samp,
@@ -39,6 +40,15 @@ describe("written mock", () => {
   it("respects access and stops when the pool runs out", () => {
     const ids = composeWrittenMock(bank, 50, { rand: rng(3), allowed: (id) => id.endsWith("-1") });
     expect(ids.sort()).toEqual(["a-1", "b-1", "c-1"]);
+  });
+  it("draws only multiple choice and menu SAMPs", () => {
+    const writein: Samp = {
+      ...samp("w-1", "a"),
+      questions: [{ kind: "short", id: "q1", prompt: "p?", required: 1, accept: [{ id: "k", text: "k", match: ["k"] }], explanation: "x", keyFeature: { topic: "a", n: 1 }, source: "s1" }],
+    };
+    expect(sampFormat(writein)).toBe("writein");
+    expect(sampFormat(bank[0])).toBe("mcq");
+    expect(composeWrittenMock([writein, ...bank], 50, { rand: rng(5) })).not.toContain("w-1");
   });
   it("is reproducible with the same seed", () => {
     expect(composeWrittenMock(bank, 5, { rand: rng(9) })).toEqual(composeWrittenMock(bank, 5, { rand: rng(9) }));

@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { PRIORITY_TOPICS, topicName } from "@/blueprint/priorityTopics";
-import { MOCK_WRITTEN, composeWrittenMock, markSamp, type Samp, type SampResponse } from "@/engine";
+import { MOCK_WRITTEN, composeWrittenMock, markSamp, sampFormat, type Samp, type SampResponse } from "@/engine";
 import { SAMPS, getSamp } from "@/samps";
 import { freeSampIds } from "@/lib/access";
 import type { MockExam, SampAttempt } from "@/lib/storage";
@@ -80,7 +80,7 @@ export function Written({ go }: { go: Go }) {
                 Full mock · {MOCK_WRITTEN.full.minutes / 60} hours {!app.access.written && <Lock />}
               </div>
               <div className="muted small">
-                {MOCK_WRITTEN.full.samps} SAMPs balanced across the priority topics. Timed like the real written exam. No
+                {MOCK_WRITTEN.full.samps} multiple choice and menu SAMPs balanced across the priority topics. Timed like the real written exam. No
                 marking until you submit.
               </div>
             </button>
@@ -178,6 +178,7 @@ export function TopicSamps({ id, go }: { id: string; go: Go }) {
                   <span className="meta">
                     <span className="tag">{s.questions.length} questions</span>
                     {free.has(s.id) && !app.access.written && <span className="tag free">Free</span>}
+                    {sampFormat(s) === "writein" && <span className="tag">Write-in</span>}
                     {!s.reviewed && <span className="tag warn">Draft</span>}
                   </span>
                 </span>

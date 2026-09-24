@@ -1,15 +1,54 @@
 import { topicName } from "@/blueprint/priorityTopics";
-import { markQuestion, type Samp, type SampQuestion, type SampResponse } from "@/engine/samp";
+import { VITAL_LABELS, markQuestion, type Samp, type SampQuestion, type SampResponse } from "@/engine/samp";
 
-const WORD = ["", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX"];
+const WORD = ["", "one", "two", "three", "four", "five", "six"];
+const NUM = "(one|two|three|four|five|six|[1-6])";
 
+/** Plain text instruction, for speech or export. */
 export function instruction(q: SampQuestion): string {
   if (q.kind === "single") return "Select one.";
   if (q.kind === "menu") {
     const none = q.options.some((o) => /^none\b/i.test(o));
     return `Select ${WORD[q.select] ?? q.select}${none ? ", or None if none are required" : ""}.`;
   }
-  return `List ${WORD[q.required] ?? q.required}.`;
+  return `List ${(WORD[q.required] ?? String(q.required)).toUpperCase()}.`;
+}
+
+/**
+ * The instruction in CFPC style. Only the number word is bold: lower case
+ * for multiple choice and menus, capitals for write-in.
+ */
+export function Instruction({ q }: { q: SampQuestion }) {
+  if (q.kind === "single") return <>Select <b>one</b>.</>;
+  if (q.kind === "menu") {
+    const none = q.options.some((o) => /^none\b/i.test(o));
+    return (
+      <>
+        Select <b>{WORD[q.select] ?? q.select}</b>
+        {none ? ", or None if none are required" : ""}.
+      </>
+    );
+  }
+  return <>List <b>{(WORD[q.required] ?? String(q.required)).toUpperCase()}</b>.</>;
+}
+
+/**
+ * Removes an instruction written into the prompt, so it is not shown twice.
+ * The app adds the instruction from the question kind and count.
+ */
+export function stripInstruction(prompt: string): string {
+  return prompt
+    .replace(new RegExp(`\\s*(select|list|give)\\s+${NUM}(\\s+answers?)?(,? or none if none (are|is) required)?\\.?\\s*$`, "i"), "")
+    .trim();
+}
+
+/** Prompt then instruction, as the CFPC shows them. */
+function PromptLine({ q }: { q: SampQuestion }) {
+  return (
+    <span className="selectable">
+      {stripInstruction(q.prompt)} <Instruction q={q} />
+    </span>
+  );
 }
 
 export function emptyResponse(q: SampQuestion): SampResponse {
@@ -34,6 +73,18 @@ export function SampStem({ s, showTopic = true }: { s: Samp; showTopic?: boolean
       {s.stem.split(/\n+/).map((p, i) => (
         <p key={i}>{p}</p>
       ))}
+      {s.vitals && (
+        <>
+          <p style={{ marginBottom: 4 }}>Vital signs:</p>
+          <ul className="vitals">
+            {VITAL_LABELS.filter(([k]) => s.vitals![k]).map(([k, label]) => (
+              <li key={k}>
+                {label}: {s.vitals![k]}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
     </div>
   );
 }
@@ -56,9 +107,7 @@ export function QuestionInput({
       {q.update && <p className="sampupdate selectable">{q.update}</p>}
       <div className="qhead">
         <span className="mono qn">Q{n}</span>
-        <span className="selectable">
-          {q.prompt} <b>{instruction(q)}</b>
-        </span>
+        <PromptLine q={q} />
       </div>
       {q.kind === "short" && r.kind === "short" && (
         <div className="shortlines">
@@ -71,6 +120,7 @@ export function QuestionInput({
                 autoComplete="off"
                 autoCapitalize="off"
                 spellCheck={false}
+                maxLength={99}
                 onChange={(e) => onChange({ kind: "short", lines: r.lines.map((x, j) => (j === i ? e.target.value : x)) })}
                 aria-label={`Answer ${i + 1}`}
               />
@@ -137,9 +187,7 @@ export function MarkedQuestion({
       {q.update && <p className="sampupdate selectable">{q.update}</p>}
       <div className="qhead">
         <span className="mono qn">Q{n}</span>
-        <span className="selectable">
-          {q.prompt} <b>{instruction(q)}</b>
-        </span>
+        <PromptLine q={q} />
         <span className={`qscore mono ${pct === 100 ? "ok" : pct === 0 ? "no" : "part"}`}>
           {m.earned}/{m.max}
         </span>
