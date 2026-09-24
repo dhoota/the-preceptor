@@ -275,14 +275,14 @@ export const CQI_S30: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "An hour later the laboratory phones the resident with a critical result: repeat hemoglobin 58 g/L.",
-        prompt: "Which of the following is the most appropriate way for the resident to receive this critical result by phone?",
-        options: ["Ask for the result to be faxed", "Hand the phone to the bedside nurse", "Read back the value and identifiers", "Wait for it to appear in the chart", "Write it on the whiteboard for later"],
-        correct: 2,
+        update: "An hour later the repeat hemoglobin is 58 g/L. The resident calls the gastroenterologist back and plans to end the call with a clear recommendation.",
+        prompt: "Which of the following statements best fits the recommendation element of SBAR for this second call?",
+        options: ["He takes apixaban and naproxen", "His hemoglobin has fallen to 58 g/L", "I think he is still bleeding", "Please come in now for urgent endoscopy", "What do you think we should do"],
+        correct: 3,
         explanation:
-          "Reading back the value and the patient identifiers lets the laboratory confirm that the right result reached the right clinician for the right patient. Read-back is one of the communication strategies Accreditation Canada lists for safe information transfer. A fax or waiting for the chart adds delay to a critical result in a bleeding patient. Passing the phone to the nurse moves the result away from the person who will act on it. A note on a whiteboard can be missed and is not a record.",
+          "The recommendation states what the caller needs and how soon. Asking the consultant to come in now for urgent endoscopy is specific and time bound, and a hemoglobin of 58 g/L in a man who is tachycardic with a soft BP justifies it. The new hemoglobin updates the situation. Apixaban and naproxen are background. Saying he is still bleeding is an assessment. Asking what the consultant thinks leaves the decision open and invites delay, which is the gap the recommendation step of SBAR is meant to close.",
         keyFeature: { topic: "cqi", n: 5 },
-        source: "rop-2021",
+        source: "haig-sbar",
       },
       {
         id: "q4",
