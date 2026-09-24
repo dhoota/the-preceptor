@@ -148,3 +148,20 @@ describe("speakable", () => {
     );
   });
 });
+
+describe("Codemagic", () => {
+  // Codemagic reads only the repository root file. It must mirror this folder's copy.
+  it("root codemagic.yaml mirrors oral-exam-sim/codemagic.yaml", async () => {
+    const { readFileSync } = await import("node:fs");
+    const root = readFileSync(new URL("../../codemagic.yaml", import.meta.url), "utf8");
+    const local = readFileSync(new URL("../codemagic.yaml", import.meta.url), "utf8");
+    const ids = (y: string) => [...y.slice(y.indexOf("workflows:")).matchAll(/^  ([a-z0-9-]+):$/gm)].map((m) => m[1]);
+    expect(ids(root)).toEqual(["android-debug", "android-release", "android-play-internal", "ios-release"]);
+    expect(ids(root)).toEqual(ids(local));
+    expect(root.match(/^    working_directory: oral-exam-sim$/gm)?.length).toBe(4);
+    for (const s of ["preceptor_signing", "preceptor_play", "app_store_connect: preceptor_appstore"]) expect(root, s).toContain(s);
+    for (const a of root.match(/^      - [^*\s]\S*\/\S*$/gm) ?? []) expect(a, "artifact paths start at the repo root").toMatch(/^      - oral-exam-sim\//);
+    // Every script step of the local file appears in the root file.
+    for (const m of local.matchAll(/^\s+name: (.+)$/gm)) expect(root).toContain(m[1]);
+  });
+});
