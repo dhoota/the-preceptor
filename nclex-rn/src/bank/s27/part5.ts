@@ -1,0 +1,266 @@
+import type { Item } from "@/engine/types";
+import {
+  AGARWAL,
+  BEERS,
+  CPSC,
+  FDA_CODEINE,
+  FLU_ANTIVIRAL,
+  GINA,
+  LEHNE,
+  METRIC,
+  TAMIFLU,
+  TOUHY,
+  WONG,
+  meta,
+} from "./common";
+
+export const PART5: Item[] = [
+  {
+    ...meta("rn-s27-41", "PPT", {
+      topic: "Drowsy child after tonsil surgery",
+      cjmm: "prioritize",
+      process: "clinical-judgment",
+      difficulty: 5,
+      stem: "A 5-year-old child had a tonsillectomy 2 days ago. At home the parent gave acetaminophen with codeine elixir left from an older sibling's prescription. In the emergency department the child is hard to rouse. Respiratory rate is 8/minute and SpO2 is 86% on room air. Pupils are pinpoint. No blood is seen in the mouth. Complete the diagram by choosing the condition the child is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
+      rationale:
+        "Codeine is changed to morphine in the liver. Some children convert it fast and reach high morphine levels. Deep sedation, a respiratory rate of 8/minute, SpO2 of 86% and pinpoint pupils fit opioid toxicity. Codeine is contraindicated for pain after tonsillectomy in children. Naloxone reverses the opioid. Bag-mask breaths with oxygen support breathing until it works. Respiratory rate and oxygen saturation show the response.",
+      refs: ["Codeine is contraindicated in children younger than 12 years and for pain after tonsillectomy or adenoidectomy in children younger than 18 years."],
+      sources: [FDA_CODEINE, WONG],
+    }),
+    kind: "bowtie",
+    conditions: [
+      { text: "Bleeding after tonsillectomy", why: "No blood is seen in the mouth, and bleeding does not cause pinpoint pupils." },
+      { text: "Opioid toxicity", why: "Deep sedation, slow breathing, low SpO2 and pinpoint pupils after codeine fit opioid toxicity." },
+      { text: "Dehydration from poor intake", why: "Dehydration does not cause pinpoint pupils or a respiratory rate of 8/minute." },
+      { text: "Acetaminophen liver injury", why: "Early acetaminophen injury causes nausea, not deep sedation with slow breathing." },
+    ],
+    actions: [
+      { text: "Give naloxone as prescribed", why: "Naloxone reverses opioid effects on breathing and alertness." },
+      { text: "Give the next elixir dose for pain", why: "More codeine would deepen the toxicity." },
+      { text: "Offer cold fluids by mouth", why: "A child who is hard to rouse can aspirate oral fluids." },
+      { text: "Give bag-mask breaths with oxygen", why: "Assisted breaths support oxygenation until naloxone takes effect." },
+      { text: "Apply an ice collar to the neck", why: "An ice collar eases throat pain but does not treat the toxicity." },
+    ],
+    parameters: [
+      { text: "Urine specific gravity", why: "This reflects hydration, which is not the main problem." },
+      { text: "Respiratory rate and depth", why: "Breathing shows whether naloxone is working and whether sedation returns." },
+      { text: "Throat culture result", why: "No infection is suspected, and a culture does not guide opioid reversal." },
+      { text: "Oxygen saturation", why: "SpO2 of 86% should rise as breathing improves." },
+      { text: "Bowel sounds", why: "Bowel sounds do not show the response to opioid reversal." },
+    ],
+    correct: { condition: 1, actions: [0, 3], parameters: [1, 3] },
+  },
+  {
+    ...meta("rn-s27-42", "PPT", {
+      topic: "Sodium trend after starting an antidepressant",
+      cjmm: "evaluate",
+      process: "clinical-judgment",
+      difficulty: 4,
+      trend: true,
+      stem: "An 81-year-old client started sertraline 50 mg by mouth daily 3 weeks ago for depression. The home health nurse reviews weekly findings. Based on the trend, which interpretation is most accurate?",
+      tabs: [
+        {
+          title: "Weekly Findings",
+          table: {
+            head: ["Finding", "Week 0", "Week 1", "Week 2", "Week 3"],
+            rows: [
+              ["Serum sodium", "139 mEq/L (139 mmol/L)", "135 mEq/L (135 mmol/L)", "130 mEq/L (130 mmol/L)", "125 mEq/L (125 mmol/L)"],
+              ["Weight", "62 kg", "62 kg", "63 kg", "63 kg"],
+              ["Mental status", "Alert, oriented", "Alert, oriented", "Slow to answer", "Confused, unsteady gait"],
+              ["Mood", "Sad, low energy", "Sad, low energy", "Less tearful", "Less tearful"],
+            ],
+          },
+        },
+      ],
+      rationale:
+        "Sodium fell from 139 mEq/L to 125 mEq/L over 3 weeks after sertraline began. Confusion and an unsteady gait appeared as sodium dropped below 135 mEq/L. Weight rose slightly, which fits water retention, not fluid loss. Antidepressants of this class can cause inappropriate antidiuretic hormone release in older adults. Sodium is monitored closely when they start. Mood is improving, so worse depression does not explain the change.",
+      refs: ["Normal serum sodium is 135 to 145 mEq/L (135 to 145 mmol/L).", "SSRIs can cause SIADH or hyponatremia in older adults. Sodium is monitored closely when starting or changing the dose."],
+      sources: [BEERS, LEHNE, { body: "Medical Council of Canada", work: "Normal lab values reference list", year: 2020, url: "https://mcc.ca/examinations-assessments/resources-to-help-with-exam-prep/normal-lab-values/" }],
+      canada: "Canadian labs report serum sodium in mmol/L only, with the same numbers as mEq/L. The Medical Council of Canada lists 136 to 146 mmol/L as normal, so 125 mmol/L is low.",
+    }),
+    kind: "mc",
+    options: [
+      { text: "Expected adjustment to the new drug", why: "A steady fall in sodium with new confusion is an adverse effect, not an expected adjustment." },
+      { text: "Worsening depression needing more drug", why: "Mood is improving, and a higher dose could lower sodium further." },
+      { text: "Hyponatremia linked to the sertraline", why: "Sodium fell to 125 mEq/L with confusion and slight weight gain after sertraline began." },
+      { text: "Dehydration from poor fluid intake", why: "Dehydration raises sodium and lowers weight. Here sodium fell and weight rose." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s27-43", "PPT", {
+      topic: "Inhaler device for a toddler",
+      cjmm: "action",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A 2-year-old child with asthma has a new prescription for albuterol by metered-dose inhaler. Which technique should the nurse teach the parent?",
+      rationale:
+        "Children 3 years and younger cannot coordinate a deep breath with the spray. A spacer with a face mask lets the child breathe calmly after the puff is released into the chamber. About 5 breaths clear the chamber. A mouthpiece and breath hold need skills a 2-year-old lacks. A dry powder inhaler needs a fast, strong breath.",
+      refs: ["Children 0 to 3 years use a metered-dose inhaler with a spacer and face mask, taking about 5 breaths per puff."],
+      sources: [GINA, { body: "Health Canada", work: "Drug Product Database, Ventolin HFA (salbutamol), DIN 02241497", year: 2026, url: "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=65137" }],
+      canada: "Albuterol is sold in Canada as salbutamol, for example Ventolin HFA. Canadian prescriptions and charts use the name salbutamol.",
+    }),
+    kind: "mc",
+    options: [
+      { text: "Use a spacer with a face mask for 5 calm breaths", why: "A face mask and spacer let a toddler inhale the dose with normal breathing." },
+      { text: "Spray the inhaler into the mouth as the child inhales", why: "A toddler cannot time a breath with the spray, so most of the dose is lost." },
+      { text: "Use a spacer with a mouthpiece and a breath hold", why: "A mouthpiece and breath hold need skills a 2-year-old does not have." },
+      { text: "Switch to a dry powder inhaler for easier use", why: "A dry powder inhaler needs a fast, deep breath that a toddler cannot make." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s27-44", "PPT", {
+      topic: "Storing medicines around grandchildren",
+      cjmm: "action",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A 72-year-old client takes metoprolol, glipizide and oxycodone. The client will care for 2 grandchildren, ages 2 and 4, each weekday. Which instructions should the nurse give? Select all that apply.",
+      rationale:
+        "Many young children who swallow prescription pills find them after an adult has taken them out of child-resistant packaging. Loose pills, plastic bags and weekly organizers are common sources. Keeping pills in child-resistant containers, closing the cap fully each time and storing them up high and out of sight prevent many of these exposures. Small doses of glipizide or oxycodone can harm a young child.",
+      sources: [AGARWAL, CPSC],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Keep a weekly pill organizer on the counter", why: "Most weekly organizers are not child resistant and are easy for a child to open." },
+      { text: "Keep pills in child-resistant containers", why: "Child-resistant packaging slows a young child's access to pills." },
+      { text: "Carry the day's pills in a small plastic bag", why: "Plastic bags give no protection and are a common source of child exposures." },
+      { text: "Store medicines up high and out of sight", why: "Storage out of reach and sight prevents a child from finding pills." },
+      { text: "Leave loose pills by the coffee maker", why: "Loose pills left out are a leading source of exposures in young children." },
+      { text: "Close the cap fully after each use", why: "A cap left loose defeats the child-resistant design." },
+    ],
+    correct: [1, 3, 5],
+  },
+  {
+    ...meta("rn-s27-45", "PPT", {
+      topic: "Risk of drug harm in an older adult",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "An 84-year-old client is admitted after a fall. The client takes 11 prescription drugs daily from 4 prescribers who do not share records. Creatinine clearance is 32 mL/minute. Serum albumin is 2.8 g/dL (28 g/L). The client fills all prescriptions at one pharmacy. A daughter checks the pill organizer each week and brings all medicines to each visit. Which findings raise this client's risk of an adverse drug event? Select all that apply.",
+      rationale:
+        "Taking many drugs raises the chance of interactions and errors. Several prescribers without shared records can duplicate or conflict. A creatinine clearance of 32 mL/minute slows removal of renally cleared drugs. Albumin of 2.8 g/dL leaves more of a highly bound drug free and active. One pharmacy, a daughter's weekly checks and bringing all medicines to visits help catch problems.",
+      refs: ["Normal serum albumin is 3.5 g/dL (35 g/L) to 5.0 g/dL (50 g/L)."],
+      sources: [TOUHY, LEHNE, { body: "Medical Council of Canada", work: "Normal lab values reference list", year: 2020, url: "https://mcc.ca/examinations-assessments/resources-to-help-with-exam-prep/normal-lab-values/" }],
+      canada: "Canadian labs report albumin in g/L only, so this result reads 28 g/L. The Medical Council of Canada lists 34 to 50 g/L as normal.",
+    }),
+    kind: "sata",
+    options: [
+      { text: "Fills all prescriptions at one pharmacy", why: "One pharmacy can screen every drug for interactions, which lowers risk." },
+      { text: "Takes 11 prescription drugs daily", why: "Polypharmacy raises the chance of interactions and dosing errors." },
+      { text: "Daughter checks the pill organizer weekly", why: "A weekly check by a caregiver catches missed or doubled doses." },
+      { text: "Creatinine clearance of 32 mL/minute", why: "Reduced kidney function lets renally cleared drugs build up." },
+      { text: "Brings all medicines to each visit", why: "Bringing all medicines lets the prescriber review the full list." },
+      { text: "Has 4 prescribers who do not share records", why: "Unshared records can lead to duplicate or conflicting drugs." },
+      { text: "Serum albumin of 2.8 g/dL (28 g/L)", why: "Low albumin leaves more of a highly bound drug free and active." },
+    ],
+    correct: [1, 3, 5, 6],
+  },
+  {
+    ...meta("rn-s27-46", "PPT", {
+      topic: "Giving an oral liquid to an infant",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 1,
+      stem: "A 4-month-old infant is prescribed amoxicillin oral suspension 2.5 mL twice daily. Which method should the nurse use to give the dose?",
+      rationale:
+        "An oral syringe measures 2.5 mL exactly. Small amounts placed in the side of the cheek let the infant swallow without choking. A dose mixed in a full bottle is lost if the infant does not finish it. A squirt toward the back of the throat can cause gagging or aspiration. A kitchen teaspoon does not measure mL reliably.",
+      sources: [WONG, METRIC],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Mix the dose into a full bottle of formula", why: "If the infant does not finish the bottle, part of the dose is lost." },
+      { text: "Give small amounts by syringe into the cheek", why: "Small amounts in the cheek let the infant swallow safely with an exact dose." },
+      { text: "Squirt the whole dose toward the back of the throat", why: "A fast squirt toward the throat can cause gagging or aspiration." },
+      { text: "Measure the dose with a kitchen teaspoon", why: "Kitchen spoons vary in size and do not measure 2.5 mL reliably." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s27-47", "PPT", {
+      topic: "Longer aminoglycoside interval in a newborn",
+      cjmm: "analyze",
+      process: "teaching",
+      difficulty: 4,
+      stem: "A 3-day-old newborn is prescribed gentamicin IV every 24 hours for suspected sepsis. A nursing student asks why the dosing interval is longer than it is for older children. Which explanation should the nurse give?",
+      rationale:
+        "Gentamicin leaves the body almost entirely through the kidneys. A newborn's kidneys filter slowly, so the drug stays in the blood longer. A longer interval keeps the trough low and lowers the risk of kidney and ear damage. Newborns have more body water than older children, not less. Gentamicin is not broken down by the liver and binds little to albumin.",
+      sources: [LEHNE, WONG],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Immature kidneys clear the drug slowly", why: "Slow kidney filtration in a newborn keeps gentamicin in the blood longer." },
+      { text: "Newborn liver enzymes clear it faster", why: "Gentamicin is cleared by the kidneys, and newborn liver enzymes are immature." },
+      { text: "Newborns have less total body water", why: "Newborns have more body water than older children, not less." },
+      { text: "More of the drug binds to albumin", why: "Gentamicin binds little to albumin, and newborns have lower albumin levels." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s27-48", "PPT", {
+      topic: "Parent teaching for an oral antiviral",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 3,
+      stem: "The nurse teaches the parent of a 7-year-old child who starts oseltamivir for influenza. Which two statements by the parent show understanding? Select two.",
+      rationale:
+        "Oseltamivir for influenza is given twice daily for 5 days. Nausea and vomiting are common and are less likely when doses are taken with food. The full course is given even if the fever ends. The drug does not replace the yearly vaccine. Unusual behavior or confusion is reported to the primary health care provider. Benefit is greatest when started within 48 hours of symptom onset.",
+      refs: ["Oseltamivir treatment is given twice daily for 5 days and works best when started within 48 hours of symptom onset."],
+      sources: [FLU_ANTIVIRAL, TAMIFLU],
+    }),
+    kind: "msn",
+    select: 2,
+    options: [
+      { text: "\"Giving each dose with food may ease nausea.\"", why: "Food lowers the chance of nausea and vomiting with this drug." },
+      { text: "\"I can stop the medicine once the fever breaks.\"", why: "The full 5-day course is given even after the fever ends." },
+      { text: "\"This medicine replaces the yearly flu shot.\"", why: "Treatment does not give lasting protection. The yearly vaccine is still advised." },
+      { text: "\"I will give it twice a day for 5 days.\"", why: "Treatment is given twice daily for 5 days." },
+      { text: "\"It only helps if started within 12 hours.\"", why: "Benefit is greatest within 48 hours of symptom onset, not only 12 hours." },
+      { text: "\"New confusion would be an expected effect.\"", why: "Unusual behavior or confusion is reported promptly. It is not treated as expected." },
+    ],
+    correct: [0, 3],
+  },
+  {
+    ...meta("rn-s27-49", "PPT", {
+      topic: "Daily inhaled steroid for a school-age child",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 3,
+      stem: "The nurse teaches the parent of a 6-year-old child who starts fluticasone by metered-dose inhaler with a spacer, 1 puff twice daily. Which statement by the parent shows understanding?",
+      rationale:
+        "Rinsing the mouth and spitting after each dose lowers the risk of oral thrush and hoarseness. Fluticasone is a controller that reduces airway inflammation over time. It is taken every day, even when the child feels well. It does not relieve an acute attack. A short-acting bronchodilator such as albuterol is used for sudden wheezing.",
+      sources: [GINA, LEHNE, { body: "Health Canada", work: "Drug Product Database, Ventolin HFA (salbutamol), DIN 02241497", year: 2026, url: "https://health-products.canada.ca/dpd-bdpp/info?lang=eng&code=65137" }],
+      canada: "The short-acting reliever albuterol is sold in Canada as salbutamol, for example Ventolin HFA. Canadian prescriptions and charts use the name salbutamol.",
+    }),
+    kind: "mc",
+    options: [
+      { text: "\"I will give it only when my child is wheezing.\"", why: "A controller works over time and is taken daily, not only with symptoms." },
+      { text: "\"I will stop it once my child has a week without symptoms.\"", why: "Stopping when well lets inflammation return. Daily use continues." },
+      { text: "\"I will use it in place of albuterol during an attack.\"", why: "Fluticasone does not open the airways quickly. Albuterol treats an attack." },
+      { text: "\"My child will rinse and spit after each dose.\"", why: "Rinsing and spitting lowers the risk of thrush and hoarseness." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s27-50", "PPT", {
+      topic: "Safe medication use after discharge",
+      cjmm: "generate",
+      process: "teaching",
+      difficulty: 2,
+      stem: "An 80-year-old client is going home with 9 medications, 3 of them new. Which actions by the nurse lower the risk of medication errors at home? Select all that apply.",
+      rationale:
+        "Comparing the home list with the discharge list catches omissions, duplicates and stopped drugs. Teach-back confirms the client can explain each drug in their own words. A written list with the purpose and schedule of each drug supports correct use. Using up old bottles can continue a stopped drug. Stopping a drug alone or splitting tablets without advice can cause harm.",
+      sources: [TOUHY],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Advise finishing old bottles before new ones", why: "Old bottles may hold drugs that were stopped or changed." },
+      { text: "Compare the home list with the discharge list", why: "Reconciliation finds omissions, duplicates and stopped drugs." },
+      { text: "Advise stopping any drug that causes side effects", why: "Stopping some drugs suddenly is harmful. Side effects are reported first." },
+      { text: "Have the client explain each drug back", why: "Teach-back confirms the client understands the plan." },
+      { text: "Suggest splitting tablets to save money", why: "Some tablets are unsafe to split, so the pharmacist is asked first." },
+      { text: "Give a written list of each drug and its purpose", why: "A written list supports correct use at home." },
+    ],
+    correct: [1, 3, 5],
+  },
+];

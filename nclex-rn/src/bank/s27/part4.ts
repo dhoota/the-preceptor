@@ -1,0 +1,261 @@
+import type { Item } from "@/engine/types";
+import {
+  APA_DEMENTIA,
+  CASCADE,
+  FDA_APAP,
+  FDA_COUGH,
+  FLU_ANTIVIRAL,
+  ISMP_CRUSH,
+  LEHNE,
+  ONDANSETRON,
+  PROMETHAZINE,
+  REYE,
+  ROCHON,
+  TAMIFLU,
+  TOUHY,
+  ZITHROMAX,
+  meta,
+} from "./common";
+
+export const PART4: Item[] = [
+  {
+    ...meta("rn-s27-31", "PPT", {
+      topic: "Oral antiviral volume for a young child",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 3-year-old child who weighs 12 kg has influenza. The prescription is oseltamivir 30 mg by mouth twice daily for 5 days. The oral suspension contains 6 mg/mL. How many mL should the nurse give for each dose?",
+      rationale:
+        "The child weighs 12 kg, so 30 mg twice daily matches the labeled dose for 15 kg or less. The suspension holds 6 mg in each mL. Dividing 30 mg by 6 mg/mL gives 5 mL. An oral syringe measures the dose. Giving it with food can ease nausea.",
+      refs: ["Oseltamivir treatment for children 1 year and older: 30 mg twice daily if 15 kg or less, 45 mg twice daily if over 15 kg to 23 kg."],
+      calc: { expr: "30 / 6", answer: 5, unit: "mL", round: 0, steps: ["30 / 6 = 5"] },
+      sources: [TAMIFLU, FLU_ANTIVIRAL],
+    }),
+    kind: "mc",
+    options: [
+      { text: "2.5 mL", why: "This volume fits an older 12 mg/mL product. The suspension here holds 6 mg/mL." },
+      { text: "5 mL", why: "A 30 mg dose divided by 6 mg/mL is 5 mL." },
+      { text: "7.5 mL", why: "This volume holds 45 mg, the dose for children over 15 kg to 23 kg." },
+      { text: "10 mL", why: "This volume gives both daily doses at once." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s27-32", "PPT", {
+      topic: "Checking a weight-based macrolide dose",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A 4-year-old child who weighs 20 kg has community-acquired pneumonia. The prescription is azithromycin 400 mg by mouth on day 1, then 200 mg daily on days 2 to 5. The drug label lists 10 mg/kg on day 1, then 5 mg/kg on days 2 to 5. What day 1 dose fits the label for this child?",
+      rationale:
+        "The labeled day 1 dose is 10 mg/kg. For 20 kg that is 200 mg. The prescribed 400 mg is double the labeled amount. The days 2 to 5 doses of 200 mg are also double the 100 mg that 5 mg/kg gives. The nurse holds the dose and clarifies the prescription with the primary health care provider.",
+      calc: { expr: "10 * 20", answer: 200, unit: "mg", round: 0, steps: ["10 * 20 = 200"] },
+      sources: [ZITHROMAX],
+    }),
+    kind: "mc",
+    options: [
+      { text: "100 mg", why: "This is 5 mg/kg, the labeled dose for days 2 to 5." },
+      { text: "200 mg", why: "Ten mg/kg for 20 kg is 200 mg, half of what was prescribed." },
+      { text: "400 mg", why: "This is the prescribed amount. It equals 20 mg/kg, double the labeled day 1 dose." },
+      { text: "500 mg", why: "This is the adult day 1 dose for pneumonia. It is far above 10 mg/kg for this child." },
+    ],
+    correct: 1,
+  },
+  {
+    ...meta("rn-s27-33", "PPT", {
+      topic: "Antiemetic choice for a toddler",
+      cjmm: "prioritize",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "An 18-month-old child who weighs 11 kg has vomited 6 times since morning. The nurse reviews the new prescriptions. Which prescription should the nurse clarify first?",
+      rationale:
+        "Promethazine carries a boxed warning against use in children younger than 2 years. Fatal respiratory depression has occurred at a wide range of doses. The child is 18 months old, so this prescription is clarified before any dose. Ondansetron has no such age warning, and 1.1 mg is 0.1 mg/kg for 11 kg. Oral rehydration and rectal acetaminophen carry no age-based warning here.",
+      refs: ["Promethazine is contraindicated in children younger than 2 years because of fatal respiratory depression.", "Ondansetron injection carries no boxed warning for young children. The labeled pediatric IV dose is 0.1 mg/kg for 40 kg or less."],
+      sources: [PROMETHAZINE, ONDANSETRON],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Promethazine 6.25 mg IV once", why: "Promethazine can cause fatal respiratory depression in children younger than 2 years." },
+      { text: "Ondansetron 1.1 mg IV once", why: "Ondansetron has no age-based boxed warning, and 1.1 mg is 0.1 mg/kg for 11 kg." },
+      { text: "Oral rehydration solution 5 mL every 5 minutes", why: "Small, frequent sips of oral rehydration solution are a safe way to replace fluid." },
+      { text: "Acetaminophen 160 mg rectally as needed", why: "Rectal acetaminophen has no age-based warning and avoids the vomited oral route." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s27-34", "PPT", {
+      topic: "Cold care for a preschool child",
+      cjmm: "action",
+      process: "teaching",
+      difficulty: 2,
+      stem: "The parent of a 3-year-old child with a cold asks how to ease the child's cough and stuffy nose at home. Which instructions should the nurse give? Select all that apply.",
+      rationale:
+        "Makers of over-the-counter cough and cold products label them not for use under 4 years. The child is 3. Saline drops, a cool-mist humidifier and extra fluids ease symptoms without drug risk. Many cold products share active ingredients, so reading the Drug Facts label prevents a double dose. Adult products are not given to children. A warm-mist device is not advised.",
+      refs: ["Over-the-counter cough and cold products are labeled not for use in children under 4 years."],
+      sources: [FDA_COUGH, { body: "Canadian Paediatric Society", work: "Colds in Children. Caring for Kids", year: 2021, url: "https://caringforkids.cps.ca/handouts/health-conditions-and-treatments/colds_in_children" }],
+      canada: "The Canadian Paediatric Society advises against over-the-counter cough and cold medicines for any child younger than 6 years. This is a higher cutoff than the US label age of 4 years.",
+    }),
+    kind: "sata",
+    options: [
+      { text: "Give an over-the-counter cough syrup at bedtime", why: "These products are labeled not for children under 4, and the child is 3." },
+      { text: "Use saline nose drops for stuffiness", why: "Saline keeps the nasal passages moist and eases stuffiness." },
+      { text: "Give half of an adult cold tablet", why: "Products made for adults are not given to children, even in part." },
+      { text: "Run a cool-mist humidifier in the room", why: "Cool mist eases congestion without a burn risk." },
+      { text: "Check Drug Facts labels for shared ingredients", why: "Many products share ingredients, so checking labels prevents a double dose." },
+      { text: "Run a warm-mist vaporizer near the bed", why: "Warm mist is not advised. It can worsen congestion and can scald." },
+      { text: "Offer extra fluids through the day", why: "Fluids keep the child hydrated and thin the mucus." },
+    ],
+    correct: [1, 3, 4, 6],
+  },
+  {
+    ...meta("rn-s27-35", "PPT", {
+      topic: "Hidden acetaminophen in an older adult",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A 79-year-old client takes hydrocodone and acetaminophen 5 mg/325 mg, 2 tablets every 6 hours around the clock for hip pain. The client also takes 2 acetaminophen 500 mg tablets twice daily for arthritis. What total daily dose of acetaminophen does the client take?",
+      rationale:
+        "The combination product is taken 4 times a day at 2 tablets of 325 mg each. That gives 2600 mg. The arthritis tablets add 2 tablets of 500 mg twice daily, which is 2000 mg. The total is 4600 mg, which exceeds the 4000 mg daily limit. The nurse reports this to the primary health care provider.",
+      refs: ["Adults take no more than 4000 mg of acetaminophen in 24 hours."],
+      calc: {
+        expr: "325 * 2 * (24 / 6) + 500 * 2 * 2",
+        answer: 4600,
+        unit: "mg",
+        round: 0,
+        steps: ["24 / 6 = 4", "325 * 2 * 4 = 2600", "500 * 2 * 2 = 2000", "2600 + 2000 = 4600"],
+      },
+      sources: [FDA_APAP, LEHNE, { body: "Health Canada", work: "Notice: Limiting the Strength of Acetaminophen to 325 mg per Dosage Unit in Prescription Combination Products", year: 2016, url: "https://www.canada.ca/en/health-canada/services/drugs-health-products/drug-products/announcements/notice-limiting-strength-acetaminophen-325-dosage-unit-prescription-combination-products.html" }, { body: "Health Canada", work: "Drug Product Database, products containing hydrocodone", year: 2026, url: "https://health-products.canada.ca/dpd-bdpp/" }],
+      canada: "No hydrocodone and acetaminophen product is sold in Canada. Canadian prescription combinations pair acetaminophen with drugs such as codeine or oxycodone, and Health Canada limits them to 325 mg of acetaminophen per unit.",
+    }),
+    kind: "mc",
+    options: [
+      { text: "2600 mg", why: "This counts only the combination product and leaves out the arthritis tablets." },
+      { text: "3300 mg", why: "This counts 1 combination tablet per dose instead of 2." },
+      { text: "3600 mg", why: "This counts the arthritis tablets once daily instead of twice." },
+      { text: "4600 mg", why: "The combination product gives 2600 mg and the arthritis tablets give 2000 mg." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s27-36", "PPT", {
+      topic: "Ankle swelling after a new antihypertensive",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A 76-year-old client started amlodipine 10 mg daily 3 weeks ago. The client now has swelling of both ankles. Lungs are clear, and weight is unchanged from 3 weeks ago. A new prescription reads furosemide 20 mg by mouth daily for the swelling. What should the nurse do?",
+      rationale:
+        "Ankle swelling is a common, dose-related effect of amlodipine. It comes from dilation of small arteries, not from fluid overload. Clear lungs and a stable weight support this. Treating a drug effect with another drug is a prescribing cascade. Furosemide eases this swelling little and adds risks such as low potassium and falls. The nurse asks whether amlodipine is the cause.",
+      sources: [CASCADE, ROCHON],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Give the furosemide and recheck the ankles tomorrow", why: "This starts a prescribing cascade. A diuretic eases this swelling little and adds risk." },
+      { text: "Teach the client to limit daily fluids to 1 L", why: "The swelling is not from fluid excess. Weight is stable and the lungs are clear." },
+      { text: "Ask whether amlodipine is causing the swelling", why: "Amlodipine often causes ankle swelling, so a dose change may be the better fix." },
+      { text: "Add a potassium supplement with the furosemide", why: "This adds a third drug to treat the effects of the first two." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s27-37", "PPT", {
+      topic: "Aging and drug handling",
+      cjmm: "analyze",
+      process: "nursing-process",
+      difficulty: 4,
+      stem: "The nurse plans drug therapy for an 84-year-old client. Match each age-related change to its likely effect on drug therapy.",
+      rationale:
+        "Lower kidney function slows the removal of renally cleared drugs, so they build up. More body fat stores lipid-soluble drugs such as diazepam and prolongs their effect. Less body water shrinks the space water-soluble drugs spread into, so levels rise. Less albumin leaves more of a highly bound drug free and active. First-pass liver clearance slows with age. Absorption changes little.",
+      sources: [LEHNE, TOUHY],
+    }),
+    kind: "dnd",
+    scoring: "zero-one",
+    targets: ["Lower creatinine clearance", "More body fat, less lean mass", "Less total body water", "Lower serum albumin"],
+    tokens: [
+      { text: "Faster first-pass clearance by the liver", why: "Liver blood flow and first-pass clearance fall with age." },
+      { text: "Renally cleared drugs accumulate", why: "Slower kidney clearance lets these drugs build up." },
+      { text: "Lipid-soluble drugs act longer", why: "More fat stores drugs such as diazepam and prolongs their effect." },
+      { text: "Faster absorption from the stomach", why: "Absorption changes little with age and does not speed up." },
+      { text: "Water-soluble drugs reach higher levels", why: "Less body water means a smaller space for the drug, so levels rise." },
+      { text: "More free drug from highly bound agents", why: "Less albumin binds less drug, so more stays free and active." },
+    ],
+    correct: [1, 2, 4, 5],
+  },
+  {
+    ...meta("rn-s27-38", "PPT", {
+      topic: "Fever care during chickenpox",
+      cjmm: "action",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A 6-year-old child has chickenpox with a temperature of 38.6°C (101.5°F) and mild nausea. The parent asks what medicine to give. Which instruction should the nurse give?",
+      rationale:
+        "Aspirin and other salicylates given during a viral illness such as chickenpox are linked to Reye syndrome. Acetaminophen dosed by weight treats the fever safely. Bismuth subsalicylate is a salicylate, so it carries the same concern. Adult products are not given to children.",
+      sources: [REYE, FDA_COUGH],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Give acetaminophen dosed by the child's weight", why: "Acetaminophen treats fever in a child with chickenpox without a Reye syndrome link." },
+      { text: "Give low-dose aspirin every 4 to 6 hours", why: "Aspirin during chickenpox is linked to Reye syndrome." },
+      { text: "Give bismuth subsalicylate for the nausea", why: "This product contains a salicylate, which carries the Reye syndrome concern." },
+      { text: "Give half of an adult cold and flu tablet", why: "Products made for adults are not given to children and may hold hidden ingredients." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s27-39", "PPT", {
+      topic: "Tablets unsafe to crush",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A 74-year-old resident in long-term care now has trouble swallowing whole tablets. The nurse reviews the medication list with the pharmacist. Which medications should the nurse avoid crushing? Select all that apply.",
+      rationale:
+        "Crushing an extended-release tablet such as nifedipine releases the whole dose at once. Enteric-coated aspirin and delayed-release pantoprazole lose the coating that protects the stomach or the drug. Tamsulosin capsules are modified release. Plain acetaminophen, lisinopril and furosemide tablets are immediate release. The pharmacist can suggest a liquid or another form for the unsafe ones.",
+      sources: [ISMP_CRUSH, LEHNE],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Acetaminophen 325 mg oral tablet", why: "This is an immediate-release tablet that may be crushed." },
+      { text: "Nifedipine extended-release 30 mg tablet", why: "Crushing releases the whole dose at once and can cause low blood pressure." },
+      { text: "Lisinopril 10 mg oral tablet", why: "This is an immediate-release tablet that may be crushed." },
+      { text: "Aspirin enteric-coated 81 mg tablet", why: "The coating protects the stomach. Crushing removes it." },
+      { text: "Furosemide 20 mg oral tablet", why: "This is an immediate-release tablet that may be crushed." },
+      { text: "Pantoprazole delayed-release 40 mg tablet", why: "The coating protects the drug from stomach acid. Crushing destroys it." },
+      { text: "Tamsulosin 0.4 mg capsule", why: "The capsule holds modified-release beads that are not crushed or opened." },
+    ],
+    correct: [1, 3, 5, 6],
+  },
+  {
+    ...meta("rn-s27-40", "PPT", {
+      topic: "Evening agitation in dementia",
+      cjmm: "generate",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "An 86-year-old resident with Alzheimer disease has been restless and calling out each evening for 2 weeks. The resident is not a danger to self or others. A family member asks about starting quetiapine. Complete the following sentence by choosing from the lists of options.",
+      rationale:
+        "Antipsychotics raise the risk of death in older adults with dementia. They are reserved for severe, dangerous or distressing symptoms after other measures fail. This resident is not a danger to self or others. The first step is to look for triggers such as pain, noise or a full bladder and use nondrug measures. Restraints and benzodiazepines add harm.",
+      sources: [APA_DEMENTIA],
+    }),
+    kind: "cloze",
+    scoring: "zero-one",
+    template: "In older adults with dementia, antipsychotics raise the risk of {0}. The nurse should first plan {1}.",
+    blanks: [
+      {
+        options: [
+          { text: "death", why: "Antipsychotics raise mortality in older adults with dementia." },
+          { text: "hypoglycemia", why: "Quetiapine is linked to high blood glucose, not low." },
+          { text: "kidney stones", why: "Antipsychotics are not linked to kidney stones." },
+          { text: "bleeding", why: "Bleeding is not a main risk of antipsychotics." },
+        ],
+        correct: 0,
+      },
+      {
+        options: [
+          { text: "a larger quetiapine dose at night", why: "The drug is not yet indicated, and a higher dose adds risk." },
+          { text: "a review of triggers such as pain or noise", why: "Finding and treating triggers comes before any antipsychotic." },
+          { text: "physical restraint in the evening", why: "Restraints raise agitation and injury risk." },
+          { text: "a bedtime dose of a benzodiazepine", why: "Benzodiazepines raise fall and delirium risk in older adults." },
+        ],
+        correct: 1,
+      },
+    ],
+  },
+];

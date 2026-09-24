@@ -1,0 +1,286 @@
+import type { Item } from "@/engine/types";
+import {
+  AOM,
+  BRIGHT,
+  HALTER,
+  LARC_EXT,
+  MIRENA,
+  NEXPLANON,
+  NCI_SMOKELESS,
+  NIAAA,
+  NPEP,
+  ONDANSETRON,
+  RECOVERY,
+  SPR,
+  STI,
+  USPSTF_SKIN,
+  WONG,
+  meta,
+} from "./common";
+
+export const PART3: Item[] = [
+  {
+    ...meta("rn-s27-21", "HPM", {
+      topic: "Teaching after chlamydia treatment",
+      cjmm: "action",
+      process: "teaching",
+      difficulty: 3,
+      stem: "A 21-year-old client is prescribed doxycycline 100 mg by mouth twice daily for 7 days to treat chlamydia. Which two instructions should the nurse include? Select two.",
+      rationale:
+        "Sex is avoided until the 7-day course is finished and symptoms have cleared. Recent partners need testing and treatment, or the client can be reinfected. A retest is advised about 3 months after treatment even when every dose was taken. Doxycycline is taken upright with water to prevent esophageal injury.",
+      refs: ["After chlamydia treatment, sex is avoided until a 7-day regimen is complete and partners are treated. Retesting is advised about 3 months after treatment."],
+      sources: [STI, { body: "Public Health Agency of Canada", work: "Chlamydia and LGV Guide: Treatment and Follow-up", year: 2022, url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/chlamydia-lgv/treatment-follow-up.html" }],
+      canada: "Chlamydia is nationally notifiable in Canada, so cases are reported to local public health in every province and territory. PHAC guidance calls for partners from the 60 days before testing or symptom onset to be notified and treated.",
+    }),
+    kind: "msn",
+    select: 2,
+    options: [
+      { text: "Avoid sex until the 7 days of treatment are done", why: "Waiting until the course is complete prevents spread to partners." },
+      { text: "Retesting is not needed if every dose is taken", why: "Reinfection is common, so a retest is advised about 3 months after treatment." },
+      { text: "Take each dose lying down right after", why: "Lying down after doxycycline can cause esophageal ulcers. The client stays upright." },
+      { text: "Recent partners need testing and treatment", why: "Treating partners prevents reinfection and further spread." },
+      { text: "Sex is safe once the first dose is taken", why: "One dose of a 7-day course does not clear the infection." },
+      { text: "Stop the capsules when the discharge clears", why: "Symptoms can clear before the infection does, so the full course is taken." },
+    ],
+    correct: [0, 3],
+  },
+  {
+    ...meta("rn-s27-22", "HPM", {
+      topic: "Indoor tanning before an event",
+      cjmm: "action",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A 17-year-old client with fair skin and freckles plans to use a tanning bed before prom. She says a base tan will stop her from burning on a beach trip afterward. Which advice should the nurse give?",
+      rationale:
+        "Fair skin and freckles put this client in the group that benefits most from sun safety counseling. Indoor tanning raises the risk of melanoma and other skin cancers. A base tan gives little protection against sunburn. Sunscreen inside a tanning bed does not make the exposure safe. Early morning tanning outdoors still adds ultraviolet exposure.",
+      sources: [USPSTF_SKIN],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Build a base tan in short sessions", why: "A base tan offers little sunburn protection, and each session adds skin cancer risk." },
+      { text: "Use sunscreen during tanning bed sessions", why: "Sunscreen does not make indoor tanning safe for fair skin." },
+      { text: "Avoid indoor tanning beds", why: "Avoiding indoor tanning lowers the risk of melanoma and other skin cancers." },
+      { text: "Limit outdoor tanning to early morning", why: "Any deliberate tanning adds ultraviolet damage, even at lower intensity." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s27-23", "HPM", {
+      topic: "Care after a high-risk HIV exposure",
+      cjmm: "prioritize",
+      process: "clinical-judgment",
+      difficulty: 5,
+      stem: "A 26-year-old client comes to an urgent care clinic 30 hours after receptive anal sex without a condom. The partner has HIV and stopped treatment 6 months ago. The client does not take PrEP. A rapid HIV antigen and antibody test today is negative. Complete the diagram by choosing the condition the client most needs care for, 2 actions to take and 2 parameters to monitor.",
+      rationale:
+        "Receptive anal sex with a partner who has stopped treatment is a substantial exposure. At 30 hours the client is inside the 72-hour window for nonoccupational postexposure prophylaxis. The negative test shows no established infection. A 28-day course starts now, with baseline tests for hepatitis B and other sexually transmitted infections. Serum creatinine is checked at baseline. HIV testing is repeated at 4 to 6 and 12 weeks.",
+      refs: ["Nonoccupational postexposure prophylaxis is a 28-day course started within 72 hours of exposure. Baseline tests include creatinine and hepatitis B. HIV tests follow at 4 to 6 and 12 weeks."],
+      sources: [NPEP],
+    }),
+    kind: "bowtie",
+    conditions: [
+      { text: "Established HIV infection", why: "Today's antigen and antibody test is negative, so infection is not established." },
+      { text: "Substantial HIV exposure within 72 hours", why: "The exposure type, the untreated partner and the 30-hour timing all fit this condition." },
+      { text: "Exposure too late for nPEP", why: "The window is 72 hours, and the client is at 30 hours." },
+      { text: "Low-risk exposure needing no care", why: "Receptive anal sex with an untreated partner is among the highest-risk sexual exposures." },
+    ],
+    actions: [
+      { text: "Wait 2 weeks and repeat the HIV test", why: "Waiting would pass the 72-hour window for postexposure drugs." },
+      { text: "Start a 28-day nPEP course today", why: "Starting within 72 hours gives the best chance of preventing infection." },
+      { text: "Start daily PrEP in place of nPEP", why: "PrEP prevents future exposures. It is offered after nPEP, not in place of it." },
+      { text: "Test for hepatitis B and other STIs", why: "Baseline testing finds other infections from the same exposure." },
+      { text: "Give one antiretroviral dose only", why: "A single dose does not provide the full 28 days of protection." },
+    ],
+    parameters: [
+      { text: "Fasting blood glucose level", why: "Glucose does not guide postexposure prophylaxis." },
+      { text: "HIV tests at 4 to 6 and 12 weeks", why: "Repeat testing confirms whether infection occurred despite treatment." },
+      { text: "Weekly chest x-ray", why: "A chest x-ray does not detect HIV or drug effects." },
+      { text: "Baseline serum creatinine", why: "Some regimens affect the kidneys, so creatinine is checked at the start." },
+      { text: "CD4 count every week", why: "CD4 counts guide care of known HIV, not postexposure follow-up." },
+    ],
+    correct: { condition: 1, actions: [1, 3], parameters: [1, 3] },
+  },
+  {
+    ...meta("rn-s27-24", "HPM", {
+      topic: "Oral lesion with smokeless tobacco",
+      cjmm: "analyze",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 17-year-old baseball player uses moist snuff every day and holds it inside the lower lip. The nurse finds a white patch inside the lower lip that does not rub off. He has no fever and no sore throat. Complete the following sentence by choosing from the lists of options.",
+      rationale:
+        "A white patch that does not rub off at the site where snuff is held fits leukoplakia. Leukoplakia can turn into cancer, and smokeless tobacco causes oral cancer. Daily use at the same site adds to the risk. Thrush plaques wipe off. No fever and no sore throat argue against strep throat. Age and sports do not point to any listed condition.",
+      sources: [NCI_SMOKELESS],
+    }),
+    kind: "cloze",
+    scoring: "triad",
+    template: "The client is at highest risk for {0} as evidenced by {1} and {2}.",
+    blanks: [
+      {
+        options: [
+          { text: "oral candidiasis", why: "Candidiasis plaques wipe off. This patch does not." },
+          { text: "oral cancer", why: "A fixed white patch where snuff is held can be leukoplakia, a precancerous lesion." },
+          { text: "strep throat", why: "The client has no fever and no sore throat." },
+          { text: "vitamin C deficiency", why: "The stem gives no bleeding gums, bruising or poor diet." },
+        ],
+        correct: 1,
+      },
+      {
+        options: [
+          { text: "a normal temperature", why: "A normal temperature does not point to cancer risk." },
+          { text: "a fixed white patch", why: "A white patch that does not rub off is a warning sign of leukoplakia." },
+          { text: "no sore throat", why: "The absence of a sore throat does not point to any listed condition." },
+          { text: "playing baseball", why: "The sport is not a risk. The snuff use common in the sport is." },
+        ],
+        correct: 1,
+      },
+      {
+        options: [
+          { text: "being 17 years old", why: "Age alone does not point to the lesion." },
+          { text: "the absence of fever", why: "A normal temperature does not support cancer risk." },
+          { text: "daily snuff held in the lip", why: "Daily contact at the same site drives the lesion and the cancer risk." },
+          { text: "his baseball practice", why: "Practice does not cause oral lesions." },
+        ],
+        correct: 2,
+      },
+    ],
+  },
+  {
+    ...meta("rn-s27-25", "HPM", {
+      topic: "Risk behaviors in a college student",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "The nurse reviews the intake note of a 19-year-old college student at a wellness visit. Click to highlight the behaviors that raise the student's risk of injury or illness.",
+      rationale:
+        "Texting while driving and riding a motorcycle without a helmet raise the risk of crash injury and death. Six beers within 2 hours is binge drinking for a man or a woman. Shared razors can carry blood and spread hepatitis B and C. Seat belt use, 8 hours of sleep, condom use and a daily 30-minute walk are protective.",
+      refs: ["Binge drinking is 4 or more drinks for women, or 5 or more for men, in about 2 hours."],
+      sources: [BRIGHT, NIAAA],
+    }),
+    kind: "highlight",
+    passage:
+      "[[Wears a seat belt in the car]]. [[Texts while driving to class]]. [[Rides a motorcycle without a helmet]]. [[Sleeps 8 hours most nights]]. [[Has 6 beers within 2 hours at parties]]. [[Uses condoms with each partner]]. [[Walks 30 minutes daily]]. [[Shares razors with a roommate]].",
+    spans: [
+      { text: "Wears a seat belt in the car", why: "Seat belt use lowers crash injury and is protective." },
+      { text: "Texts while driving to class", why: "Texting takes attention off the road and raises crash risk." },
+      { text: "Rides a motorcycle without a helmet", why: "Riding without a helmet raises the risk of head injury and death." },
+      { text: "Sleeps 8 hours most nights", why: "Adequate sleep supports health and is protective." },
+      { text: "Has 6 beers within 2 hours at parties", why: "Six drinks within 2 hours meets the binge drinking definition." },
+      { text: "Uses condoms with each partner", why: "Condom use lowers the risk of sexually transmitted infections." },
+      { text: "Walks 30 minutes daily", why: "Regular activity is a healthy behavior." },
+      { text: "Shares razors with a roommate", why: "Razors can carry blood and spread hepatitis B and C." },
+    ],
+    correct: [1, 2, 4, 7],
+  },
+  {
+    ...meta("rn-s27-26", "HPM", {
+      topic: "Labeled duration of contraceptive methods",
+      cjmm: "recognize",
+      process: "teaching",
+      difficulty: 3,
+      stem: "A client who wants long-term protection with few clinic visits compares contraceptive methods with the nurse. Match each method to its labeled duration of use or dosing interval.",
+      rationale:
+        "The copper IUD is labeled for up to 10 years. The etonogestrel implant is now labeled for up to 5 years. The levonorgestrel 52 mg IUD is labeled for up to 8 years. Depot medroxyprogesterone is given every 13 weeks. Some methods work longer than labeled, but the labeled duration is the standard teaching.",
+      refs: ["Labeled durations: copper IUD 10 years, etonogestrel implant 5 years, levonorgestrel 52 mg IUD 8 years, depot medroxyprogesterone every 13 weeks."],
+      sources: [SPR, MIRENA, NEXPLANON, LARC_EXT],
+    }),
+    kind: "dnd",
+    scoring: "zero-one",
+    targets: ["Copper IUD", "Etonogestrel implant", "Levonorgestrel 52 mg IUD", "Depot medroxyprogesterone"],
+    tokens: [
+      { text: "Up to 5 years", why: "The etonogestrel implant is labeled for up to 5 years of use." },
+      { text: "Every 4 weeks", why: "None of these methods is labeled for dosing every 4 weeks." },
+      { text: "Up to 10 years", why: "The copper IUD is labeled for up to 10 years of use." },
+      { text: "Every 13 weeks", why: "Depot medroxyprogesterone injections are repeated every 13 weeks." },
+      { text: "Up to 8 years", why: "The levonorgestrel 52 mg IUD is labeled for up to 8 years." },
+      { text: "Up to 12 months", why: "None of these methods is labeled for only 12 months of use." },
+    ],
+    correct: [2, 0, 4, 3],
+  },
+  {
+    ...meta("rn-s27-27", "PSY", {
+      topic: "Recovery-oriented goal setting",
+      cjmm: "generate",
+      process: "caring",
+      difficulty: 3,
+      stem: "A client with schizophrenia is preparing to leave a mental health unit. The treatment team uses a recovery-oriented approach. Which goal best reflects this approach?",
+      rationale:
+        "Recovery is person-driven. The client defines life goals and the path toward them, and the team supports that choice. A work goal the client chose reflects self-direction and purpose. Recovery does not require a life free of symptoms. Goals set by staff for the client do not reflect self-determination.",
+      sources: [RECOVERY, HALTER],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Take medications exactly as the team directs", why: "Adherence matters, but a goal set only by the team does not reflect self-direction." },
+      { text: "Move to a group home that staff select", why: "Housing chosen for the client, not with the client, leaves out self-determination." },
+      { text: "Have no symptoms before leaving the unit", why: "Recovery can proceed while some symptoms continue." },
+      { text: "Reach a work goal the client has chosen", why: "A goal the client defines reflects the person-driven principle of recovery." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s27-28", "PSY", {
+      topic: "Thought process findings in mania",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "The nurse reviews the mental status note of a client admitted with acute mania. Click to highlight the findings that show a disturbance in thought process.",
+      rationale:
+        "Jumping quickly between loosely linked topics is flight of ideas. A made-up word such as 'glimtrap' is a neologism. Choosing words by sound, as in rhyming answers, is a clang association. All three show disordered thinking. Orientation and recall test cognition. The mood report describes mood. Denying voices describes perception.",
+      sources: [HALTER],
+    }),
+    kind: "highlight",
+    passage:
+      "[[Oriented to person, place and time]]. [[Jumps quickly between topics with loose links]]. [[Calls the phone a 'glimtrap']]. [[Says mood is 'fantastic']]. [[Answers questions with rhyming words]]. [[Recalls 3 of 3 words at 5 minutes]]. [[Denies hearing voices]].",
+    spans: [
+      { text: "Oriented to person, place and time", why: "Orientation reflects cognition, not the flow of thought." },
+      { text: "Jumps quickly between topics with loose links", why: "Rapid shifts between loosely linked topics are flight of ideas." },
+      { text: "Calls the phone a 'glimtrap'", why: "A made-up word with private meaning is a neologism." },
+      { text: "Says mood is 'fantastic'", why: "This describes mood, not the process of thought." },
+      { text: "Answers questions with rhyming words", why: "Words chosen for sound rather than meaning are clang associations." },
+      { text: "Recalls 3 of 3 words at 5 minutes", why: "Intact recall reflects memory, not thought process." },
+      { text: "Denies hearing voices", why: "This describes perception. No hallucinations are reported." },
+    ],
+    correct: [1, 2, 4],
+  },
+  {
+    ...meta("rn-s27-29", "PPT", {
+      topic: "High-dose amoxicillin volume for a toddler",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A 2-year-old child who weighs 14 kg has acute otitis media. The prescription is amoxicillin 90 mg/kg/day by mouth in 2 divided doses. The suspension contains 400 mg/5 mL. How many mL should the nurse give for each dose?",
+      rationale:
+        "The daily dose is 90 mg/kg for 14 kg, which is 1260 mg. Split into 2 doses, each dose is 630 mg. The suspension holds 80 mg in each mL. Dividing 630 mg by 80 mg/mL gives 7.875 mL, which rounds to 7.9 mL. High-dose amoxicillin in 2 doses is first-line for otitis media.",
+      calc: { expr: "90 * 14 / 2 / (400 / 5)", answer: 7.875, unit: "mL", round: 1, steps: ["90 * 14 = 1260", "1260 / 2 = 630", "400 / 5 = 80", "630 / 80 = 7.875"] },
+      sources: [AOM],
+    }),
+    kind: "mc",
+    options: [
+      { text: "1.6 mL", why: "This treats the suspension as 400 mg in each mL instead of in 5 mL." },
+      { text: "3.9 mL", why: "This splits the 1260 mg daily dose into 4 doses instead of 2." },
+      { text: "7.9 mL", why: "Each 630 mg dose divided by 80 mg/mL is 7.875 mL, rounded to 7.9 mL." },
+      { text: "15.8 mL", why: "This gives the whole 1260 mg daily dose at once." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s27-30", "PPT", {
+      topic: "Weight-based IV antiemetic for a child",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A 6-year-old child who weighs 22 kg is prescribed ondansetron 0.1 mg/kg IV once to prevent vomiting after surgery. The vial contains 2 mg/mL. How many mL should the nurse draw up?",
+      rationale:
+        "The dose is 0.1 mg/kg for 22 kg, which is 2.2 mg. The vial holds 2 mg in each mL. Dividing 2.2 mg by 2 mg/mL gives 1.1 mL. For children who weigh 40 kg or less, the labeled dose is 0.1 mg/kg, so the prescription is within range.",
+      refs: ["Ondansetron for postoperative nausea in children 1 month to 12 years: 0.1 mg/kg IV once if 40 kg or less."],
+      calc: { expr: "0.1 * 22 / 2", answer: 1.1, unit: "mL", round: 1, steps: ["0.1 * 22 = 2.2", "2.2 / 2 = 1.1"] },
+      sources: [ONDANSETRON],
+    }),
+    kind: "mc",
+    options: [
+      { text: "0.11 mL", why: "This misplaces the decimal and gives one tenth of the dose." },
+      { text: "1.1 mL", why: "A 2.2 mg dose divided by 2 mg/mL is 1.1 mL." },
+      { text: "2.2 mL", why: "This treats the 2.2 mg dose as a volume and ignores the concentration." },
+      { text: "4.4 mL", why: "This multiplies the 2.2 mg dose by 2 instead of dividing by 2 mg/mL." },
+    ],
+    correct: 1,
+  },
+];
