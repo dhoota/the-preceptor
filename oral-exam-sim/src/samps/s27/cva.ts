@@ -20,6 +20,11 @@ const SRC_CSBPR_ICH: Source = {
   "citation": "Shoamanesh A and colleagues. Canadian Stroke Best Practice Recommendations: management of spontaneous intracerebral hemorrhage, 7th edition update 2020. Int J Stroke. 2021.",
   "url": "https://pubmed.ncbi.nlm.nih.gov/33174815/"
 };
+const SRC_TC_BLEED_ORDERS: Source = {
+  "id": "tc-bleed-orders",
+  "citation": "Thrombosis Canada. Bleed management order set for patients on anticoagulants, including warfarin and DOAC reversal. June 2024.",
+  "url": "https://thrombosiscanada.ca/uploads/publications/Bleed%20Management%20Order%20Set%20June%202024.pdf"
+};
 const SRC_RECRUDESCENCE: Source = {
   "id": "recrudescence",
   "citation": "Topcuoglu MA and colleagues. Recrudescence of deficits after stroke: clinical and imaging phenotype, triggers, and risk factors. JAMA Neurol. 2017.",
@@ -2450,7 +2455,7 @@ export const CVA_S27_SAMPS: Samp[] = [
           "Vitamin K 10 mg IV"
         ],
         "correct": 0,
-        "explanation": "Dabigatran should be stopped and reversed with idarucizumab, 5 g given as two 2.5 g IV boluses. Prothrombin complex concentrate is a fallback only when idarucizumab and activated PCC are unavailable, and at 50 units/kg it is capped at 3 000 units, so 4 000 units exceeds the maximum. Protamine reverses heparin, vitamin K reverses warfarin, and plasma does not reliably reverse dabigatran.",
+        "explanation": "Dabigatran should be stopped and reversed with idarucizumab, 5 g given as two 2.5 g IV boluses. Prothrombin complex concentrate is a fallback only when idarucizumab is unavailable, and its single dose is capped at 3 000 units, so 4 000 units exceeds the maximum. Protamine reverses heparin, vitamin K reverses warfarin, and plasma does not reliably reverse dabigatran.",
         "keyFeature": {
           "topic": "cva",
           "n": 3
@@ -2469,12 +2474,12 @@ export const CVA_S27_SAMPS: Samp[] = [
           "Vitamin K 10 mg IV"
         ],
         "correct": 0,
-        "explanation": "When idarucizumab is unavailable, Canadian guidance recommends activated prothrombin complex concentrate at 50 units/kg to a maximum of 2 000 units. At 80 kg, 80 x 50 = 4 000 units, so the cap applies and 4 000 units would exceed it. Protamine reverses heparin, plasma does not reliably reverse dabigatran, and vitamin K reverses warfarin.",
+        "explanation": "When idarucizumab is unavailable, Canadian guidance allows activated prothrombin complex concentrate (FEIBA) at 50 units/kg to a maximum of 2 000 units. At 80 kg, 80 x 50 = 4 000 units, so the cap applies and 4 000 units would exceed it. Four-factor PCC at 25 to 50 units/kg, to a maximum of 3 000 units, is the other accepted choice. Protamine reverses heparin, plasma does not reliably reverse dabigatran, and vitamin K reverses warfarin.",
         "keyFeature": {
           "topic": "cva",
           "n": 3
         },
-        "source": "csbpr-ich"
+        "source": "tc-bleed-orders"
       },
       {
         "id": "q4",
@@ -2496,7 +2501,7 @@ export const CVA_S27_SAMPS: Samp[] = [
         "source": "csbpr-ich"
       }
     ],
-    "sources": [SRC_CSBPR_ICH],
+    "sources": [SRC_CSBPR_ICH, SRC_TC_BLEED_ORDERS],
     ...meta,
   },
   {

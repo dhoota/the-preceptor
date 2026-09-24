@@ -79,10 +79,10 @@ const SRC_EXTRIP_METHANOL: Source = {
   citation: "Roberts DM, Yates C, Megarbane B, et al. Recommendations for the role of extracorporeal treatments in the management of acute methanol poisoning. A systematic review and consensus statement. Critical Care Medicine 2015.",
   url: "https://doi.org/10.1097/CCM.0000000000000708",
 };
-const SRC_GEMNET_TCA: Source = {
-  id: "gemnet-tca",
-  citation: "Body R, Bartram T, Azam F, Mackway-Jones K. Guidelines in Emergency Medicine Network (GEMNet). Guideline for the management of tricyclic antidepressant overdose. Emergency Medicine Journal 2011.",
-  url: "https://doi.org/10.1136/emj.2010.091553",
+const SRC_ECBC_TCA: Source = {
+  id: "ecbc-tca",
+  citation: "Purssell R. Emergency Care BC. Clinical summary: tricyclic antidepressant overdose. Last reviewed 2018.",
+  url: "https://emergencycarebc.ca/clinical_resource/clinical-summary/tricyclic-antidepressant-overdose-2/",
 };
 const SRC_EXTRIP_LITHIUM: Source = {
   id: "extrip-lithium",
@@ -143,6 +143,11 @@ const SRC_BTF_TBI: Source = {
   id: "btf-tbi",
   citation: "Carney N, Totten AM, O'Reilly C, et al. Guidelines for the management of severe traumatic brain injury. Fourth edition. Brain Trauma Foundation. Neurosurgery 2017.",
   url: "https://doi.org/10.1227/NEU.0000000000001432",
+};
+const SRC_ENLS_ICP: Source = {
+  id: "enls-icp",
+  citation: "Bhalla P, Dingman JS, Aysenne A. Emergency Neurological Life Support: intracranial hypertension and herniation protocol, version 6.0. Neurocritical Care Society. 2024.",
+  url: "https://www.neurocriticalcare.org/Portals/0/ENLS%205.0/ENLS%206.0/Protocol%20V6_0_Intracranial%20Hypertension%20and%20Herniation.pdf",
 };
 const SRC_CYANIDE_SMOKE: Source = {
   id: "cyanide-smoke",
@@ -740,9 +745,9 @@ export const LOC_S32: Samp[] = [
         prompt: "Which of the following is the most appropriate first drug treatment for this patient?",
         options: ["amiodarone 150 mg IV", "flumazenil 0.2 mg IV", "physostigmine 1 mg IV", "procainamide 17 mg/kg IV", "sodium bicarbonate 100 mmol IV"],
         correct: 4,
-        explanation: "Her QRS of 148 ms and hypotension show sodium channel blockade from tricyclic poisoning, which is treated with hypertonic sodium bicarbonate at 1 to 2 mmol/kg. For 62 kg, 100 mmol is about 1.6 mmol/kg. Physostigmine can cause bradycardia and asystole in tricyclic poisoning. Flumazenil can provoke seizures. Procainamide is a sodium channel blocker that widens the QRS further, and amiodarone also prolongs conduction.",
+        explanation: "Her QRS of 148 ms and hypotension show sodium channel blockade from tricyclic poisoning. A QRS over 100 ms is treated with hypertonic sodium bicarbonate boluses of 1 to 2 mmol/kg. For 62 kg, 100 mmol is about 1.6 mmol/kg. Boluses are repeated every 3 to 5 minutes until the QRS narrows or the serum pH reaches 7.55. Physostigmine can cause bradycardia and asystole in tricyclic poisoning. Flumazenil can provoke seizures. Procainamide is a sodium channel blocker that widens the QRS further, and amiodarone also prolongs conduction.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "gemnet-tca",
+        source: "ecbc-tca",
       },
       {
         id: "q2",
@@ -777,7 +782,7 @@ export const LOC_S32: Samp[] = [
         source: "goldfrank",
       },
     ],
-    sources: [SRC_GEMNET_TCA, SRC_GOLDFRANK],
+    sources: [SRC_ECBC_TCA, SRC_GOLDFRANK],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1275,9 +1280,9 @@ export const LOC_S32: Samp[] = [
         prompt: "Which of the following is the most appropriate treatment for his signs of raised intracranial pressure while awaiting surgery?",
         options: ["dexamethasone 10 mg IV", "furosemide 40 mg IV", "labetalol 20 mg IV", "mannitol 80 g IV", "nimodipine 60 mg PO"],
         correct: 3,
-        explanation: "A falling GCS, a new fixed dilated pupil, bradycardia and hypertension are signs of herniation, and mannitol at 0.25 to 1 g/kg lowers intracranial pressure. For 80 kg, 1 g/kg is 80 g. Steroids increase mortality after traumatic brain injury and are not recommended. Lowering his BP with labetalol reduces cerebral perfusion. Furosemide is not an effective first treatment, and nimodipine has no role here.",
+        explanation: "A falling GCS, a new fixed dilated pupil, bradycardia and hypertension are signs of herniation. Mannitol at 0.5 to 1 g/kg IV lowers intracranial pressure, and for 80 kg, 1 g/kg is 80 g. A bolus of hypertonic saline is an equally effective alternative. Corticosteroids are kept for vasogenic edema from tumour, abscess or meningitis and are avoided after trauma. Lowering his BP with labetalol reduces cerebral perfusion. Furosemide is not an effective first treatment, and nimodipine has no role here.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "btf-tbi",
+        source: "enls-icp",
       },
       {
         id: "q4",
@@ -1291,7 +1296,7 @@ export const LOC_S32: Samp[] = [
         source: "btf-tbi",
       },
     ],
-    sources: [SRC_GCS_40, SRC_BTF_TBI],
+    sources: [SRC_GCS_40, SRC_BTF_TBI, SRC_ENLS_ICP],
     reviewed: false,
     author: AUTHOR,
     version: 1,

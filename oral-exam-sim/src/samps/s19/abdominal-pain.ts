@@ -49,7 +49,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
     alsoTopics: ["chest-pain"],
     title: "Older man with abrupt epigastric and back pain",
     stem:
-      "A 67-year-old man is brought to the emergency department by ambulance with severe epigastric pain that began abruptly 50 minutes ago while he was lifting a box. Within minutes the pain moved into his back between the shoulder blades. He now reports numbness of the left leg. He has hypertension and smokes. He takes amlodipine.\n\nHe is diaphoretic. The systolic pressure in the left arm is 20 mmHg lower than in the right arm. The abdomen is soft with mild epigastric tenderness. The left femoral pulse is weak and the left foot is cool. The ECG shows left ventricular hypertrophy without ST elevation.",
+      "A 67-year-old man is brought to the emergency department by ambulance with severe epigastric pain that began abruptly 50 minutes ago while he was lifting a box. Within minutes the pain moved into his back between the shoulder blades. He now reports numbness of the left leg. He has hypertension and smokes. He takes amlodipine.\n\nHe is diaphoretic. The systolic pressure in the left arm is 30 mmHg lower than in the right arm. The abdomen is soft with mild epigastric tenderness. The left femoral pulse is weak and the left foot is cool. The ECG shows left ventricular hypertrophy without ST elevation.",
     vitals: { temperature: "36.8°C oral", pulse: "104/minute", resp: "22/minute", bp: "178/96 mmHg", o2sat: "97% on room air" },
     questions: [
       {
@@ -59,7 +59,7 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["Acute aortic dissection", "Acute pancreatitis", "Perforated peptic ulcer", "Saddle aortic embolus", "Superior mesenteric artery embolus"],
         correct: 0,
         explanation:
-          "Abrupt maximal pain that moves from the epigastrium to the back, a 20 mmHg difference between the arms and a new left leg pulse deficit point to aortic dissection with branch involvement. Pancreatitis builds over hours and does not cause pulse deficits. A perforated ulcer causes peritoneal signs, and this abdomen is soft. A saddle embolus causes ischemia of both legs and no difference between the arms. A mesenteric embolus needs an embolic source such as atrial fibrillation and does not explain the limb findings.",
+          "Abrupt maximal pain that moves from the epigastrium to the back, a 30 mmHg difference between the arms, above the 20 mmHg that counts as significant, and a new left leg pulse deficit point to aortic dissection with branch involvement. Pancreatitis builds over hours and does not cause pulse deficits. A perforated ulcer causes peritoneal signs, and this abdomen is soft. A saddle embolus causes ischemia of both legs and no difference between the arms. A mesenteric embolus needs an embolic source such as atrial fibrillation and does not explain the limb findings.",
         keyFeature: { topic: "abdominal-pain", n: 1 },
         source: "aha-aorta",
       },

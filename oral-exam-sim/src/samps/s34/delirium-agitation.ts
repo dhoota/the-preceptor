@@ -42,6 +42,11 @@ const SRC_ATA: Source = {
   citation: "Ross DS, Burch HB, Cooper DS, et al. 2016 American Thyroid Association guidelines for diagnosis and management of hyperthyroidism and other causes of thyrotoxicosis. Thyroid 2016.",
   url: "https://doi.org/10.1089/thy.2016.0229",
 };
+const SRC_ETJ_STORM: Source = {
+  id: "etj-storm-2026",
+  citation: "Taylor P, Okosieme O, Effraimidis G, et al. Management of thyroid emergencies: joint consensus statement on management of thyroid storm. European Thyroid Journal 2026.",
+  url: "https://doi.org/10.1530/ETJ-26-0043",
+};
 const SRC_GRAUS: Source = {
   id: "graus-2016",
   citation: "Graus F, Titulaer MJ, Balu R, et al. A clinical approach to diagnosis of autoimmune encephalitis. Lancet Neurology 2016.",
@@ -357,11 +362,11 @@ export const DELIRIUM_AGITATION_S34: Samp[] = [
         id: "q3",
         kind: "single",
         prompt: "Which of the following treatments should be given only after the thionamide has been started?",
-        options: ["acetaminophen 650 mg PR", "hydrocortisone 100 mg IV", "normal saline 1 L IV", "potassium iodide 5 drops PO", "propranolol 60 mg PO"],
-        correct: 3,
-        explanation: "Iodine blocks release of stored thyroid hormone, but given first it can supply substrate for new hormone synthesis. The 2016 American Thyroid Association guideline advises giving it at least 1 hour after propylthiouracil or methimazole. Propranolol, glucocorticoid, fluids and acetaminophen do not depend on the thionamide and are started at once. Acetaminophen is preferred over salicylates, which can free thyroid hormone from its binding proteins.",
+        options: ["acetaminophen 650 mg PR", "hydrocortisone 100 mg IV", "Lugol's iodine 8 drops PO", "normal saline 1 L IV", "propranolol 60 mg PO"],
+        correct: 2,
+        explanation: "Iodine, here Lugol's solution 8 drops four times a day, blocks release of stored thyroid hormone, but given first it can supply substrate for new hormone synthesis. Current thyroid storm guidance advises giving it at least 1 hour after propylthiouracil or methimazole. Propranolol, glucocorticoid, fluids and acetaminophen do not depend on the thionamide and are started at once. Acetaminophen is preferred over salicylates, which can free thyroid hormone from its binding proteins.",
         keyFeature: kf(2),
-        source: "ata-2016",
+        source: "etj-storm-2026",
       },
       {
         id: "q4",
@@ -374,7 +379,7 @@ export const DELIRIUM_AGITATION_S34: Samp[] = [
         source: "ata-2016",
       },
     ],
-    sources: [SRC_ATA],
+    sources: [SRC_ATA, SRC_ETJ_STORM],
     reviewed: false,
     author: AUTHOR,
     version: 1,

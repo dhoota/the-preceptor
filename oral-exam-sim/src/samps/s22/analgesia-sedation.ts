@@ -11,6 +11,12 @@ const RH: Source = {
   id: "roberts-hedges",
   citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019.",
 };
+const ESMO_PAIN: Source = {
+  id: "esmo-cancer-pain",
+  citation:
+    "Fallon M, Giusti R, Aielli F, et al. Management of cancer pain in adult patients. ESMO Clinical Practice Guidelines. Ann Oncol. 2018.",
+  url: "https://doi.org/10.1093/annonc/mdy152",
+};
 const SCHWENK: Source = {
   id: "schwenk-ketamine",
   citation:
@@ -207,7 +213,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "He is opioid tolerant. He takes 24 mg of long-acting hydromorphone and about 6 mg of breakthrough hydromorphone a day, about 30 mg of oral hydromorphone in total. That daily total sets how large a dose must be to have any effect, since a dose sized for an opioid-naive patient will do little for him. His score of 9 out of 10 confirms severe pain but does not tell you what dose he needs. His metastatic sites, the mechanism and the time since the fracture do not change the dose calculation.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "tintinalli",
+        source: "esmo-cancer-pain",
       },
       {
         id: "q2",
@@ -228,9 +234,9 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         options: ["Add lorazepam 1 mg sublingual", "Give acetaminophen 1 g PO and wait", "Give hydromorphone 2 mg IV now", "Reassess him again in 60 minutes", "Wait for the orthopedic consultation"],
         correct: 2,
         explanation:
-          "Two 1 mg doses are close to an opioid-naive regimen, and his pain is still 8 out of 10 while he is alert with a normal respiratory rate. In opioid tolerance the right response is a larger dose, then continued titration every 15 minutes until relief. Waiting 60 minutes or waiting for the consultant leaves severe pain untreated. Acetaminophen is a reasonable adjunct but will not control this pain on its own. Lorazepam adds sedation and respiratory risk without analgesia.",
+          "Two 1 mg doses are close to an opioid-naive regimen, and his pain is still 8 out of 10 while he is alert with a normal respiratory rate. A rescue dose in opioid tolerance is about 10 to 15% of the daily opioid total. For his 30 mg of oral hydromorphone a day that is 3 to 4.5 mg oral, or roughly 1 to 2 mg IV, so 2 mg IV now is the right step, then titration every 15 minutes until relief. Waiting 60 minutes or waiting for the consultant leaves severe pain untreated. Acetaminophen is a reasonable adjunct but will not control this pain on its own. Lorazepam adds sedation and respiratory risk without analgesia.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "tintinalli",
+        source: "esmo-cancer-pain",
       },
       {
         id: "q4",
@@ -245,7 +251,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "schwenk-ketamine",
       },
     ],
-    sources: [TINT, SCHWENK],
+    sources: [TINT, ESMO_PAIN, SCHWENK],
     reviewed: false,
     author: AUTHOR,
     version: 1,
