@@ -144,7 +144,7 @@ async function captureApp(size) {
   await wait();
   await click("Go to station 1");
   await wait();
-  await click("I have read the stem");
+  await click("I have read it out loud");
   await wait(2300);
   for (let i = 0; i < 6 && !(await page.getByRole("button", { name: "Done answering" }).count()) && !(await page.locator(".choice").count()); i++) {
     await click("Continue");
