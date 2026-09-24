@@ -9,10 +9,10 @@ const S = {
   ssc: { id: "ssc", citation: "Evans L, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021." },
   sscPeds: { id: "ssc-peds", citation: "Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of septic shock and sepsis-associated organ dysfunction in children. Pediatr Crit Care Med. 2020." },
   smart: { id: "smart", citation: "Semler MW, et al. Balanced crystalloids versus saline in critically ill adults. N Engl J Med. 2018." },
-  trekkGe: { id: "trekk-ge", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Acute gastroenteritis." },
+  trekkGe: { id: "trekk-ge", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Gastroenteritis. Version 5.0. 2025.", url: "https://trekk.ca/resources/bottom-line-recommendations-gastroenteritis" },
   cds: { id: "cds", citation: "Friedman JN, et al. Development of a clinical dehydration scale for use in children between 1 and 36 months of age. J Pediatr. 2004." },
   ondan: { id: "ondan", citation: "Freedman SB, et al. Oral ondansetron for gastroenteritis in a pediatric emergency department. N Engl J Med. 2006." },
-  cpsOrt: { id: "cps-ort", citation: "Canadian Paediatric Society, Nutrition and Gastroenterology Committee. Position statement. Oral rehydration therapy and early refeeding in the management of childhood gastroenteritis." },
+  cpsOrt: { id: "cps-ort", citation: "Leung A, Prince T. Canadian Paediatric Society, Nutrition and Gastroenterology Committee. Oral rehydration therapy and early refeeding in the management of childhood gastroenteritis. Paediatr Child Health. 2006." },
   atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018." },
   crash2: { id: "crash2", citation: "CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage (CRASH-2). Lancet. 2010." },
   proppr: { id: "proppr", citation: "Holcomb JB, et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio and mortality in patients with severe trauma. The PROPPR randomized clinical trial. JAMA. 2015." },
@@ -28,9 +28,9 @@ const S = {
   ccb: { id: "ccb", citation: "St-Onge M, et al. Experts consensus recommendations for the management of calcium channel blocker poisoning in adults. Crit Care Med. 2017." },
   barkun: { id: "barkun", citation: "Barkun AN, et al. Management of nonvariceal upper gastrointestinal bleeding. Guideline recommendations from the International Consensus Group. Ann Intern Med. 2019." },
   villanueva: { id: "villanueva", citation: "Villanueva C, et al. Transfusion strategies for acute upper gastrointestinal bleeding. N Engl J Med. 2013." },
-  tcDoac: { id: "tc-doac", citation: "Thrombosis Canada. Clinical guide. DOACs. Management of bleeding.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/MANAGEMENTOFBLEEDINGINPATIENTS_75.pdf" },
+  tcDoac: { id: "tc-doac", citation: "Thrombosis Canada. Clinical guide. DOACs. Management of bleeding. 2024.", url: "https://thrombosiscanada.ca/clinical_guides/pdfs/MANAGEMENTOFBLEEDINGINPATIENTS_75.pdf" },
   hyperNa: { id: "hyper-na", citation: "Adrogue HJ, Madias NE. Hypernatremia. N Engl J Med. 2000." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapter on shock." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter on shock." },
 } satisfies Record<string, Source>;
 
 /** Oral rehydration plan: a volume and a 4 hour time frame are both required. */
@@ -43,13 +43,14 @@ export const SHOCK_SAMPS: Samp[] = [
     topic: "shock",
     title: "Toddler with vomiting and diarrhea",
     stem:
-      "A 14 month old boy has had vomiting and watery diarrhea for 2 days. He vomited 6 times today and has had fewer wet diapers. He was 10.6 kg at a clinic visit last week. Today he weighs 10.0 kg. He is fussy but consolable. His eyes are slightly sunken, mucous membranes are sticky and tears are decreased. HR 140, RR 30, BP 94/58, temperature 37.9 C. Capillary refill is 2 seconds. Glucose 4.2 mmol/L.",
+      "A 14-month-old boy has had vomiting and watery diarrhea for 2 days. He vomited 6 times today and has had fewer wet diapers. He was 10.6 kg at a clinic visit last week. He is fussy but consolable. His eyes are slightly sunken, mucous membranes are sticky and tears are decreased. Capillary refill is 2 seconds. Glucose 4.2 mmol/L.",
+    vitals: { temperature: "37.9°C", pulse: "140/minute", resp: "30/minute", bp: "94/58 mmHg", weight: "10.0 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE of the four items of the Clinical Dehydration Scale for young children.",
+        prompt: "What are the items of the Clinical Dehydration Scale for young children?",
         accept: [
           { id: "appear", text: "General appearance", match: ["appearance", "general appearance", "behaviour", "behavior"] },
           { id: "eyes", text: "Eyes, whether sunken", match: ["eye", "sunken"] },
@@ -68,8 +69,14 @@ export const SHOCK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the best estimate of his fluid deficit? Select one.",
-        options: ["60 mL", "300 mL", "600 mL", "1200 mL", "1500 mL"],
+        prompt: "Which of the following is the best estimate of his fluid deficit?",
+        options: [
+          "60 mL",
+          "300 mL",
+          "600 mL",
+          "1 200 mL",
+          "1 500 mL",
+        ],
         correct: 2,
         explanation:
           "A recent weight is the most accurate measure. He lost 0.6 kg, which is about 600 mL and 6 percent of body weight. This fits some dehydration on the scale. Clinical signs alone often over or under estimate the deficit.",
@@ -80,7 +87,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Name ONE medication to help oral rehydration succeed. Include the dose and route.",
+        prompt: "What medication, with its dose and route, would help oral rehydration succeed?",
         accept: [
           { id: "ond", text: "Ondansetron 0.15 mg/kg orally as a single dose, so 2 mg (oral dissolving tablet)", match: ["ondansetron 2 mg", "ondansetron 2mg", "ondansetron 0.15", "zofran 2 mg", "zofran 2mg", "ondansetron 1.5"] },
         ],
@@ -97,7 +104,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 1,
-        prompt: "Give the oral rehydration plan for his deficit. Include the volume and time frame.",
+        prompt: "What is the oral rehydration plan for his deficit, including the volume and time frame?",
         accept: [
           { id: "ort", text: "Oral rehydration solution 50 to 100 mL/kg over 4 hours, so 500 to 1000 mL, given in small frequent amounts", match: MATCH_ORT },
         ],
@@ -114,7 +121,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 3,
-        prompt: "List THREE signs that would tell you he is progressing to shock.",
+        prompt: "What signs would tell you he is progressing to shock?",
         accept: [
           { id: "hr", text: "Rising tachycardia", match: ["tachycardia", "heart rate", "tachycardic"] },
           { id: "crt", text: "Capillary refill over 3 seconds", match: ["capillary refill", "crt", "cap refill"] },
@@ -141,13 +148,14 @@ export const SHOCK_SAMPS: Samp[] = [
     topic: "shock",
     title: "Sleepy baby with diarrhea",
     stem:
-      "A 4 month old girl has had profuse watery diarrhea for 3 days and has refused feeds today. She has had one wet diaper in 18 hours. She is lethargic and barely responds to an IV attempt. HR 196, RR 52, BP 72/40, SpO2 98%, temperature 37.2 C. Her hands and feet are cool and mottled. Capillary refill is 5 seconds. The anterior fontanelle is sunken. Weight 6.0 kg.",
+      "A 4-month-old girl has had profuse watery diarrhea for 3 days and has refused feeds today. She has had one wet diaper in 18 hours. She is lethargic and barely responds to an IV attempt. Her O2 sat is 98%. Her hands and feet are cool and mottled. Capillary refill is 5 seconds. The anterior fontanelle is sunken.",
+    vitals: { temperature: "37.2°C", pulse: "196/minute", resp: "52/minute", bp: "72/40 mmHg", weight: "6.0 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that show she is in shock despite a measurable blood pressure.",
+        prompt: "What findings show she is in shock despite a measurable blood pressure?",
         accept: [
           { id: "hr", text: "Marked tachycardia of 196", match: ["tachycardia", "heart rate", "196", "hr"] },
           { id: "crt", text: "Capillary refill of 5 seconds", match: ["capillary refill", "cap refill", "crt"] },
@@ -181,15 +189,15 @@ export const SHOCK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate initial fluid? Select one.",
+        prompt: "Which of the following is the most appropriate initial fluid for this infant?",
         options: [
-          "Normal saline or Ringer's lactate 120 mL as a rapid bolus",
-          "Normal saline 600 mL over 1 hour",
-          "D5W 120 mL as a rapid bolus",
+          "5% albumin 30 mL as a rapid bolus",
+          "Dextrose 5% in water 120 mL as a rapid bolus",
+          "Normal saline 600 mL infused over 1 hour",
+          "Normal saline or Ringer's lactate 120 mL rapid bolus",
           "Two thirds dextrose one third saline at maintenance",
-          "5% albumin 30 mL",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Give 20 mL/kg of isotonic crystalloid as a rapid bolus, then reassess. For 6 kg this is 120 mL. Repeat if perfusion does not improve. Hypotonic or dextrose only fluids stay poorly in the intravascular space and risk hyponatremia. Colloid offers no advantage.",
         keyFeature: { topic: "shock", n: 3 },
@@ -200,7 +208,7 @@ export const SHOCK_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "After two boluses her HR is 162 and capillary refill is 3 seconds. Point of care glucose is 2.4 mmol/L.",
-        prompt: "Name the treatment for her glucose. Include the dose.",
+        prompt: "What is the treatment for her glucose, including the dose?",
         accept: [
           { id: "d10", text: "D10W 5 mL/kg IV or IO, so 30 mL", match: ["d10 30", "d10w 30", "d10 5 ml/kg", "d10w 5 ml/kg", "d10 5ml/kg", "d10w 5ml/kg", "d10w 2 ml/kg", "d10w 12", "d10w 20", "d10 2 ml/kg", "dextrose 10% 30", "dextrose 10% 5 ml/kg", "d10 12", "d10 20", "d10 3 ml/kg", "dextrose 0.5 g/kg"] },
         ],
@@ -214,7 +222,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 1,
-        prompt: "Estimate her percentage dehydration and her total fluid deficit in mL.",
+        prompt: "What are her estimated percentage dehydration and total fluid deficit in mL?",
         accept: [
           { id: "deficit", text: "About 10 to 15 percent, so 600 to 900 mL", match: ["600", "900", "750", "15%", "10%", "700", "800"] },
         ],
@@ -236,13 +244,14 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Nursing home resident who is not herself",
     stem:
-      "An 84 year old woman is sent from her long term care home because she is less talkative and ate nothing today. She has hypertension and dementia and takes metoprolol 50 mg twice daily. HR 82, BP 102/58 (usual 150/80), RR 24, SpO2 94% on room air, temperature 36.1 C. She is drowsy but rousable. Her skin is cool. Urine is cloudy. Weight 60 kg. Lactate 4.8 mmol/L. WBC 17.2 x 10^9/L. Creatinine 168 umol/L (baseline 80).",
+      "An 84-year-old woman is sent from her long term care home because she is less talkative and ate nothing today. She has hypertension and dementia and takes metoprolol 50 mg twice daily. Her usual BP is 150/80 mmHg. She is drowsy but rousable. Her skin is cool. Urine is cloudy. Lactate 4.8 mmol/L. WBC 17.2 x 10^9/L. Creatinine 168 umol/L (baseline 80).",
+    vitals: { temperature: "36.1°C", pulse: "82/minute", resp: "24/minute", bp: "102/58 mmHg", o2sat: "94% on room air", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that suggest she is in shock despite her vital signs.",
+        prompt: "What findings suggest she is in shock despite her vital signs?",
         accept: [
           { id: "lactate", text: "Lactate of 4.8 mmol/L", match: ["lactate"] },
           { id: "bp", text: "Blood pressure about 50 mmHg below her baseline", match: ["baseline", "relative hypotension", "blood pressure", "bp", "usual"] },
@@ -262,7 +271,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE actions to complete within the first hour.",
+        prompt: "What actions should be completed within the first hour?",
         accept: [
           { id: "cultures", text: "Blood cultures before antibiotics", match: ["blood culture", "culture"] },
           { id: "abx", text: "Broad spectrum IV antibiotics within 1 hour", match: ["antibiotic", "piperacillin", "ceftriaxone", "pip tazo", "meropenem", "tazocin"] },
@@ -279,16 +288,15 @@ export const SHOCK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which fluid is most appropriate for her resuscitation? Select one.",
+        prompt: "Which of the following fluids is most appropriate for her resuscitation?",
         options: [
-          "Ringer's lactate",
-          "Hydroxyethyl starch",
           "25% albumin",
-          "D5W",
-          "0.45% saline",
+          "Hydroxyethyl starch",
           "Packed red blood cells",
+          "Ringer's lactate",
+          "0.45% saline",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Balanced crystalloids such as Ringer's lactate are suggested over saline in sepsis. They cause less hyperchloremic acidosis and in some trials fewer kidney events. Starches increase kidney injury and death and must not be used. Albumin is only considered after large crystalloid volumes.",
         keyFeature: { topic: "shock", n: 3 },
@@ -299,17 +307,17 @@ export const SHOCK_SAMPS: Samp[] = [
         kind: "menu",
         select: 1,
         update: "After 1.8 L of fluid her MAP is 58 mmHg. Crackles are now heard at both bases. She only has two peripheral IVs.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in her management?",
         options: [
-          "Norepinephrine by peripheral IV, titrated to a MAP of 65 mmHg",
-          "Dopamine by peripheral IV",
           "Another 2 L of crystalloid",
-          "Phenylephrine as first line",
-          "Vasopressin as first line",
           "Delay any vasopressor until a central line is placed",
+          "Dopamine by peripheral IV, titrated to MAP 65 mmHg",
           "Hydrocortisone as the sole next step",
+          "Norepinephrine by peripheral IV, titrated to MAP 65 mmHg",
+          "Phenylephrine by peripheral IV, titrated to MAP 65 mmHg",
+          "Vasopressin by peripheral IV, titrated to MAP 65 mmHg",
         ],
-        correct: [0],
+        correct: [4],
         explanation:
           "Norepinephrine is the first line vasopressor in septic shock. It can start through a good peripheral IV in a proximal vein while central access is arranged. Signs of fluid overload mean more volume will cause harm. Dopamine causes more arrhythmias.",
         keyFeature: { topic: "shock", n: 7 },
@@ -319,7 +327,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 3,
-        prompt: "List THREE clinical or bedside measures you would reassess to guide further resuscitation.",
+        prompt: "What clinical or bedside measures would you reassess to guide further resuscitation?",
         accept: [
           { id: "map", text: "MAP", match: ["map", "mean arterial", "blood pressure"] },
           { id: "lactate", text: "Lactate clearance", match: ["lactate"] },
@@ -348,13 +356,14 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Pregnant driver after a collision",
     stem:
-      "A 31 year old woman at 32 weeks gestation was the belted driver in a highway collision at 80 km/h. She is on a spine board. She complains of abdominal pain. HR 108, BP 104/64, RR 22, SpO2 97%, temperature 36.4 C. Her abdomen is tender with a firm uterus. Fetal heart rate by Doppler is 100 bpm. Her blood group from prenatal records is O RhD negative.",
+      "A 31-year-old woman at 32 weeks gestation was the belted driver in a highway collision at 80 km/h. She is on a spine board. She complains of abdominal pain. Her O2 sat is 97%. Her abdomen is tender with a firm uterus. Fetal heart rate by Doppler is 100/minute. Her blood group from prenatal records is O RhD negative.",
+    vitals: { temperature: "36.4°C", pulse: "108/minute", resp: "22/minute", bp: "104/64 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO reasons her vital signs may underestimate her blood loss.",
+        prompt: "Why may her vital signs underestimate her blood loss?",
         accept: [
           { id: "volume", text: "Blood volume rises about 40 to 50 percent in pregnancy, so she can lose a third before hypotension", match: ["blood volume", "volume expanded", "hypervolemia", "plasma volume", "30%", "35%"] },
           { id: "hr", text: "Resting heart rate is normally higher, so tachycardia is dismissed", match: ["heart rate", "tachycardia"] },
@@ -371,7 +380,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate interventions.",
+        prompt: "What are the immediate interventions?",
         accept: [
           { id: "tilt", text: "Manual left uterine displacement or tilt the board 15 to 30 degrees left", match: ["left lateral", "uterine displacement", "tilt", "wedge", "displace uterus"] },
           { id: "iv", text: "Two large bore IVs", match: ["large bore", "two iv", "2 iv", "access"] },
@@ -389,15 +398,15 @@ export const SHOCK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which product is most appropriate for her initial resuscitation? Select one.",
+        prompt: "Which of the following products is most appropriate for her initial resuscitation?",
         options: [
+          "5% albumin before any blood",
+          "2 L normal saline before any blood",
+          "Type specific blood after the crossmatch is complete",
           "Uncrossmatched O RhD negative red cells",
           "Uncrossmatched O RhD positive red cells",
-          "2 L normal saline before any blood",
-          "5% albumin",
-          "Type specific blood after the crossmatch is complete",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Hemorrhagic shock needs blood early rather than large crystalloid volumes. Women of childbearing potential should get O RhD negative red cells to avoid alloimmunization and later hemolytic disease of the fetus. Waiting for crossmatched blood delays care.",
         keyFeature: { topic: "shock", n: 3 },
@@ -407,7 +416,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO pregnancy specific tests or treatments related to her Rh status.",
+        prompt: "What pregnancy specific tests or treatments relate to her Rh status?",
         accept: [
           { id: "rhig", text: "Rh immune globulin 300 mcg IM or IV within 72 hours", match: ["rh immune globulin", "rhig", "winrho", "anti d", "rhogam", "immune globulin"] },
           { id: "kb", text: "Kleihauer Betke or flow cytometry to quantify fetomaternal hemorrhage", match: ["kleihauer", "kb", "fetomaternal", "flow cytometry"] },
@@ -430,13 +439,14 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Motorcyclist after a crash",
     stem:
-      "A 38 year old man was thrown from his motorcycle 40 minutes ago. He is pale and anxious. HR 136, BP 78/50, RR 28, SpO2 95%, temperature 35.6 C. GCS 14. Paramedics gave 1.5 L of normal saline. He has pain over his pelvis and a leg length discrepancy. Chest is clear with equal air entry. Weight 90 kg.",
+      "A 38-year-old man was thrown from his motorcycle 40 minutes ago. He is pale and anxious. His O2 sat is 95%. GCS 14. Paramedics gave 1.5 L of normal saline. He has pain over his pelvis and a leg length discrepancy. Chest is clear with equal air entry.",
+    vitals: { temperature: "35.6°C", pulse: "136/minute", resp: "28/minute", bp: "78/50 mmHg", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE bedside imaging studies or tests to find the source of bleeding.",
+        prompt: "What bedside imaging studies or tests would find the source of bleeding?",
         accept: [
           { id: "efast", text: "eFAST", match: ["fast", "efast", "ultrasound", "pocus"] },
           { id: "pelvis", text: "AP pelvis X-ray", match: ["pelvis x ray", "pelvic x ray", "pelvis xray", "pelvic xray", "pelvic film", "xray pelvis", "x ray pelvis", "pelvis"] },
@@ -455,7 +465,7 @@ export const SHOCK_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "The pelvis X-ray shows an open book fracture. The eFAST shows no free fluid.",
-        prompt: "List THREE principles for his fluid and blood resuscitation.",
+        prompt: "What are the principles for his fluid and blood resuscitation?",
         accept: [
           { id: "mtp", text: "Activate the massive hemorrhage protocol", match: ["massive transfusion", "mtp", "massive hemorrhage", "massive haemorrhage"] },
           { id: "ratio", text: "Balanced products, red cells to plasma to platelets close to 1:1:1", match: ["1:1:1", "1 1 1", "plasma", "platelet", "ratio"] },
@@ -475,7 +485,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Name ONE medication that reduces death from bleeding in this patient. Include the dose and timing.",
+        prompt: "What medication reduces death from bleeding in this patient, including the dose and timing?",
         accept: [
           { id: "txa", text: "Tranexamic acid 1 g IV over 10 minutes, then 1 g over 8 hours, started within 3 hours of injury", match: ["tranexamic 1 g", "tranexamic 1g", "txa 1 g", "txa 1g", "tranexamic acid 1", "txa 2 g", "txa 2g"] },
         ],
@@ -489,7 +499,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO interventions to control the pelvic bleeding.",
+        prompt: "What interventions would control the pelvic bleeding?",
         accept: [
           { id: "binder", text: "Pelvic binder centred over the greater trochanters", match: ["binder", "sheet", "pelvic wrap"] },
           { id: "angio", text: "Angiography with embolization", match: ["angio", "angiography", "embolization", "embolisation", "ir", "interventional radiology"] },
@@ -515,13 +525,14 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Diver pulled from the lake",
     stem:
-      "A 19 year old man dove into shallow water from a dock and was pulled out by friends. He cannot move his arms or legs. He is awake and anxious. HR 48, BP 76/40, RR 22 with abdominal breathing, SpO2 94% on oxygen, temperature 35.9 C. His skin is warm and pink below the nipple line. He has no obvious external bleeding. Weight 75 kg.",
+      "A 19-year-old man dove into shallow water from a dock and was pulled out by friends. He cannot move his arms or legs. He is awake and anxious. He has abdominal breathing. His skin is warm and pink below the nipple line. He has no obvious external bleeding.",
+    vitals: { temperature: "35.9°C", pulse: "48/minute", resp: "22/minute", bp: "76/40 mmHg", o2sat: "94% on oxygen", weight: "75 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings that point to neurogenic rather than hemorrhagic shock.",
+        prompt: "What findings point to neurogenic rather than hemorrhagic shock?",
         accept: [
           { id: "brady", text: "Bradycardia despite hypotension", match: ["bradycardia", "bradycardic", "heart rate", "hr 48", "slow"] },
           { id: "warm", text: "Warm, pink, dry skin", match: ["warm", "pink", "vasodilated", "vasodilation", "dry"] },
@@ -538,7 +549,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "Neurogenic shock is a diagnosis of exclusion. List TWO bedside tests to exclude hemorrhage.",
+        prompt: "Neurogenic shock is a diagnosis of exclusion. What bedside tests would exclude hemorrhage?",
         accept: [
           { id: "efast", text: "eFAST", match: ["fast", "efast", "ultrasound", "pocus"] },
           { id: "cxr", text: "Chest X-ray", match: ["chest x ray", "cxr", "chest xray"] },
@@ -553,10 +564,16 @@ export const SHOCK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The eFAST is negative. After 1 L of crystalloid, HR is 46 and BP 80/44.",
-        prompt: "Which vasopressor is most appropriate? Select one.",
-        options: ["Norepinephrine", "Phenylephrine", "Dobutamine", "Vasopressin", "Milrinone"],
-        correct: 0,
+        update: "The eFAST is negative. After 1 L of crystalloid, HR is 46 and BP 80/44 mmHg.",
+        prompt: "Which of the following vasopressors is most appropriate for this patient?",
+        options: [
+          "Dobutamine",
+          "Milrinone",
+          "Norepinephrine",
+          "Phenylephrine",
+          "Vasopressin",
+        ],
+        correct: 2,
         explanation:
           "Norepinephrine gives alpha mediated vasoconstriction with some beta 1 support for heart rate and contractility. Pure alpha agonists such as phenylephrine can worsen reflex bradycardia in cervical cord injury. Dobutamine and milrinone vasodilate.",
         keyFeature: { topic: "shock", n: 7 },
@@ -588,21 +605,21 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["anaphylaxis"],
     title: "Collapse at a barbecue",
     stem:
-      "A 62 year old man was stung by a wasp at a backyard barbecue. Within 10 minutes he felt faint and itchy. He takes metoprolol 50 mg twice daily and ramipril. On arrival he has hives across his trunk and a hoarse voice. HR 64, BP 70/36, RR 26, SpO2 91% on room air with wheeze. Weight 85 kg.",
+      "A 62-year-old man was stung by a wasp at a backyard barbecue. Within 10 minutes he felt faint and itchy. He takes metoprolol 50 mg twice daily and ramipril. On arrival he has hives across his trunk and a hoarse voice. He has wheeze.",
+    vitals: { pulse: "64/minute", resp: "26/minute", bp: "70/36 mmHg", o2sat: "91% on room air", weight: "85 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate first medication? Select one.",
+        prompt: "Which of the following is the most appropriate first medication for this patient?",
         options: [
+          "Diphenhydramine 50 mg IV push",
           "Epinephrine 0.5 mg IM in the anterolateral thigh",
           "Epinephrine 1 mg IV push",
-          "Epinephrine 0.5 mg subcutaneous",
-          "Diphenhydramine 50 mg IV",
-          "Methylprednisolone 125 mg IV",
-          "Salbutamol 5 mg nebulized",
+          "Epinephrine 0.5 mg subcutaneous in the upper arm",
+          "Methylprednisolone 125 mg IV push",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "IM epinephrine 0.01 mg/kg of 1 mg/mL, maximum 0.5 mg, into the lateral thigh is first line. Repeat every 5 minutes as needed. A 1 mg IV bolus is a cardiac arrest dose and can cause arrhythmia and infarction. Antihistamines and steroids do not treat shock.",
         keyFeature: { topic: "anaphylaxis", n: 3 },
@@ -612,8 +629,8 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        update: "He has received two doses of IM epinephrine and 2 L of Ringer's lactate. BP is 76/40. HR is 68.",
-        prompt: "List TWO next treatments for his persistent shock. Include the dose for any drug.",
+        update: "He has received two doses of IM epinephrine and 2 L of Ringer's lactate. BP is 76/40 mmHg. HR is 68.",
+        prompt: "What are the next treatments for his persistent shock, with the dose for any drug?",
         accept: [
           { id: "epiinf", text: "Epinephrine infusion starting at 0.05 to 0.1 mcg/kg/min, or 1 to 10 mcg/min, titrated", match: ["epinephrine infusion", "epi infusion", "epinephrine drip", "epi drip", "adrenaline infusion"] },
           { id: "glucagon", text: "Glucagon 1 to 5 mg IV over 5 minutes, then an infusion", match: ["glucagon 1", "glucagon 2", "glucagon 5", "glucagon 3"] },
@@ -630,7 +647,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO reasons his medication list makes this anaphylaxis more dangerous.",
+        prompt: "Why does his medication list make this anaphylaxis more dangerous?",
         accept: [
           { id: "bb", text: "Beta blocker blunts the compensatory tachycardia and the response to epinephrine", match: ["beta blocker", "metoprolol", "beta"] },
           { id: "ace", text: "ACE inhibitor impairs bradykinin breakdown and angiotensin compensation", match: ["ace inhibitor", "ramipril", "acei", "bradykinin", "angiotensin"] },
@@ -646,7 +663,7 @@ export const SHOCK_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "He stabilizes and is weaned off all infusions after 8 hours.",
-        prompt: "List THREE parts of his discharge plan.",
+        prompt: "What are the parts of his discharge plan?",
         accept: [
           { id: "autoinj", text: "Prescribe two epinephrine autoinjectors, 0.3 mg, and teach their use", match: ["autoinjector", "auto injector", "epipen", "epinephrine", "allerject"] },
           { id: "allergy", text: "Refer to an allergist for venom testing and immunotherapy", match: ["allergist", "allergy", "immunotherapy", "venom"] },
@@ -673,13 +690,14 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Grey and sweaty man with chest pain",
     stem:
-      "A 66 year old man has had crushing chest pain for 3 hours. He is grey, cool and sweaty. HR 118, BP 82/56, RR 30, SpO2 88% on room air, temperature 36.2 C. He has crackles to the mid lung fields. Weight 95 kg. Your hospital has a cardiac catheterization laboratory.",
+      "A 66-year-old man has had crushing chest pain for 3 hours. He is grey, cool and sweaty. He has crackles to the mid lung fields. Your hospital has a cardiac catheterization laboratory.",
+    vitals: { temperature: "36.2°C", pulse: "118/minute", resp: "30/minute", bp: "82/56 mmHg", o2sat: "88% on room air", weight: "95 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings on ECG, chest X-ray or bedside ultrasound that would support cardiogenic shock.",
+        prompt: "What findings on ECG, chest X-ray or bedside ultrasound would support cardiogenic shock?",
         accept: [
           { id: "ste", text: "ST elevation or new ischemic changes on ECG", match: ["st elevation", "stemi", "ischemia", "ischemic", "st depression", "q wave"] },
           { id: "lvef", text: "Poor global or regional LV contraction on ultrasound", match: ["lv function", "ejection fraction", "wall motion", "contractility", "lvef", "poor lv", "reduced ef", "hypokinesis", "hypokinetic", "akinesis"] },
@@ -697,9 +715,15 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "The ECG shows an anterior STEMI. He is on BiPAP. MAP is 60 mmHg.",
-        prompt: "Which vasoactive drug is most appropriate first? Select one.",
-        options: ["Norepinephrine", "Dopamine", "Phenylephrine", "Nitroglycerin infusion", "Milrinone", "Isoproterenol"],
-        correct: 0,
+        prompt: "Which of the following vasoactive drugs is most appropriate first for this patient?",
+        options: [
+          "Dopamine",
+          "Isoproterenol",
+          "Milrinone",
+          "Nitroglycerin",
+          "Norepinephrine",
+        ],
+        correct: 4,
         explanation:
           "Norepinephrine is the preferred first vasopressor in cardiogenic shock with hypotension. In SOAP II dopamine caused more arrhythmias and higher mortality in the cardiogenic subgroup. An inotrope such as dobutamine may be added once MAP is adequate. Nitrates and milrinone lower blood pressure further.",
         keyFeature: { topic: "shock", n: 7 },
@@ -709,7 +733,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO definitive or supportive treatments for the cause of his shock.",
+        prompt: "What definitive or supportive treatments address the cause of his shock?",
         accept: [
           { id: "pci", text: "Emergency coronary angiography with PCI", match: ["pci", "cath", "catheterization", "angiography", "angioplasty", "revascularization"] },
           { id: "asa", text: "ASA and antiplatelet loading", match: ["asa", "aspirin", "ticagrelor", "clopidogrel", "antiplatelet"] },
@@ -727,7 +751,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 1,
-        prompt: "A colleague suggests a 2 L saline bolus for his hypotension. Give ONE reason this is inappropriate.",
+        prompt: "A colleague suggests a 2 L saline bolus for his hypotension. Why is this inappropriate?",
         accept: [
           { id: "overload", text: "He is already volume overloaded with pulmonary edema, and fluid will worsen oxygenation", match: ["pulmonary edema", "overload", "overloaded", "crackle", "b line", "worsen oxygenation", "worsen hypoxia", "congestion", "edema"] },
           { id: "pump", text: "The problem is pump failure, not low volume", match: ["pump", "cardiogenic", "not hypovolemic", "not volume"] },
@@ -749,13 +773,14 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["dvt-pe"],
     title: "Collapse after knee surgery",
     stem:
-      "A 58 year old woman collapsed at home 9 days after a total knee replacement. She was not given anticoagulation at discharge. She is short of breath and anxious. HR 128, BP 78/48, RR 32, SpO2 84% on a non rebreather mask, temperature 37.4 C. JVP is elevated. Her lungs are clear. Her ECG shows sinus tachycardia with an S1Q3T3 pattern and T wave inversion in V1 to V4. Weight 82 kg.",
+      "A 58-year-old woman collapsed at home 9 days after a total knee replacement. She was not given anticoagulation at discharge. She is short of breath and anxious. JVP is elevated. Her lungs are clear. Her ECG shows sinus tachycardia with an S1Q3T3 pattern and T wave inversion in V1 to V4.",
+    vitals: { temperature: "37.4°C", pulse: "128/minute", resp: "32/minute", bp: "78/48 mmHg", o2sat: "84% on a non rebreather mask", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE bedside ultrasound findings that would support your suspected diagnosis.",
+        prompt: "What bedside ultrasound findings would support your suspected diagnosis?",
         accept: [
           { id: "rv", text: "Dilated right ventricle, larger than the left", match: ["rv dilation", "rv dilated", "dilated rv", "right ventricle", "rv enlargement", "rv:lv", "rv lv ratio", "rv larger"] },
           { id: "dsign", text: "Septal flattening, a D shaped left ventricle", match: ["d sign", "d shaped", "septal flattening", "septum", "septal"] },
@@ -773,15 +798,15 @@ export const SHOCK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate fluid strategy? Select one.",
+        prompt: "Which of the following is the most appropriate fluid strategy for this patient?",
         options: [
+          "Albumin 25% 100 mL bolus, then a vasopressor",
           "Cautious bolus of no more than 500 mL, then vasopressor",
-          "30 mL/kg crystalloid",
-          "2 units of red cells",
-          "No fluid at all because of right heart strain",
-          "Albumin 25% 100 mL",
+          "Crystalloid 30 mL/kg as a rapid bolus, then reassess",
+          "Transfuse 2 units of red cells, then start a vasopressor",
+          "No fluid bolus at all",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "The failing RV is very sensitive to preload. Aggressive fluids distend it and compress the LV through the septum, which worsens output. A small cautious bolus is reasonable if the CVP is not high. Vasopressors are then the mainstay.",
         keyFeature: { topic: "shock", n: 3 },
@@ -791,7 +816,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Name ONE vasoactive drug suitable for her. Explain your choice briefly.",
+        prompt: "What vasoactive drug is suitable for her, and why?",
         accept: [
           { id: "ne", text: "Norepinephrine, to raise systemic pressure and RV coronary perfusion", match: ["norepinephrine", "levophed", "noradrenaline"] },
           { id: "epi", text: "Epinephrine for combined pressor and inotrope effect", match: ["epinephrine", "adrenaline"] },
@@ -807,7 +832,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 1,
-        prompt: "Name the definitive treatment. Include the drug, dose and duration.",
+        prompt: "What is the definitive treatment, including the drug, dose and duration?",
         accept: [
           { id: "tpa", text: "Alteplase 100 mg IV over 2 hours", match: ["alteplase 100 2 hour", "alteplase 100 2h", "alteplase 100 2 hr", "alteplase 100 120 min", "alteplase 100 two hour", "tpa 100 2 hour", "tpa 100 2h", "tpa 100 2 hr", "tpa 100 120 min", "tpa 100 two hour", "rtpa 100 2 hour", "rtpa 100 2h", "rtpa 100 2 hr", "rtpa 100 120 min", "rtpa 100 two hour", "activase 100 2 hour", "activase 100 2h", "activase 100 2 hr", "activase 100 120 min", "activase 100 two hour"] },
           { id: "tnk", text: "Tenecteplase by weight, 45 mg for 82 kg, where used off label", match: ["tenecteplase 45", "tnk 45", "tenecteplase 40", "tnk 40", "tenecteplase 50", "tnk 50"] },
@@ -829,13 +854,14 @@ export const SHOCK_SAMPS: Samp[] = [
     topic: "shock",
     title: "Vomiting woman with low pressure",
     stem:
-      "A 41 year old woman has had vomiting and abdominal pain for 2 days. She has felt weak for months and lost 6 kg. She says she has been craving salt. She has hypothyroidism treated with levothyroxine. HR 122, BP 74/42, RR 22, SpO2 98%, temperature 38.0 C. Her skin creases and gums are darkly pigmented. Weight 58 kg. Sodium 124 mmol/L, potassium 6.1 mmol/L, glucose 3.1 mmol/L, creatinine 142 umol/L. She received 1 L of saline and her BP is 78/44.",
+      "A 41-year-old woman has had vomiting and abdominal pain for 2 days. She has felt weak for months and lost 6 kg. She says she has been craving salt. She has hypothyroidism treated with levothyroxine. Her O2 sat is 98%. Her skin creases and gums are darkly pigmented. Sodium 124 mmol/L, potassium 6.1 mmol/L, glucose 3.1 mmol/L, creatinine 142 umol/L. She received 1 L of saline and her BP is 78/44 mmHg.",
+    vitals: { temperature: "38.0°C", pulse: "122/minute", resp: "22/minute", bp: "74/42 mmHg", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that suggest a cause of shock beyond simple volume loss.",
+        prompt: "What findings suggest a cause of shock beyond simple volume loss?",
         accept: [
           { id: "na", text: "Hyponatremia", match: ["hyponatremia", "sodium", "na"] },
           { id: "k", text: "Hyperkalemia", match: ["hyperkalemia", "potassium"] },
@@ -855,7 +881,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "Name the key drug treatment. Include the dose and route.",
+        prompt: "What is the key drug treatment, including the dose and route?",
         accept: [
           { id: "hc", text: "Hydrocortisone 100 mg IV bolus, then 200 mg per 24 hours", match: ["hydrocortisone 100", "solu cortef 100", "hydrocortisone 100mg", "solucortef 100"] },
         ],
@@ -872,7 +898,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO other parts of her immediate treatment.",
+        prompt: "What are the other parts of her immediate treatment?",
         accept: [
           { id: "saline", text: "Further isotonic saline, 1 L in the first hour and more as needed", match: ["saline", "normal saline", "crystalloid", "fluid", "ns"] },
           { id: "dextrose", text: "Dextrose, such as 25 g IV and a dextrose containing infusion", match: ["dextrose", "d50", "d5", "glucose"] },
@@ -891,7 +917,7 @@ export const SHOCK_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "She improves and is later diagnosed with Addison disease. She is ready for discharge on hydrocortisone and fludrocortisone.",
-        prompt: "List TWO key pieces of steroid education to prevent another crisis.",
+        prompt: "What steroid education would prevent another crisis?",
         accept: [
           { id: "sick", text: "Sick day rules. Double or triple the glucocorticoid dose during fever or illness", match: ["sick day", "double", "triple", "stress dose", "increase dose"] },
           { id: "im", text: "Emergency hydrocortisone injection kit for vomiting", match: ["injection", "emergency kit", "im hydrocortisone", "injectable"] },
@@ -917,13 +943,14 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Man found with empty pill bottles",
     stem:
-      "A 52 year old man was found by his wife 3 hours after he told her he was taking all his pills. She brings empty bottles of amlodipine 10 mg (about 60 tablets) and extended release metformin. He is drowsy but answers questions. HR 58, BP 72/34, RR 18, SpO2 96%, temperature 36.5 C. Weight 100 kg. Glucose 16.8 mmol/L. Potassium 3.6 mmol/L. Lactate 5.2 mmol/L. ECG shows sinus bradycardia with a normal QRS. He has received 2 L of crystalloid.",
+      "A 52-year-old man was found by his wife 3 hours after he told her he was taking all his pills. She brings empty bottles of amlodipine 10 mg (about 60 tablets) and extended release metformin. He is drowsy but answers questions. His O2 sat is 96%. Glucose 16.8 mmol/L. Potassium 3.6 mmol/L. Lactate 5.2 mmol/L. ECG shows sinus bradycardia with a normal QRS. He has received 2 L of crystalloid.",
+    vitals: { temperature: "36.5°C", pulse: "58/minute", resp: "18/minute", bp: "72/34 mmHg", weight: "100 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that point to a toxic cause of his shock.",
+        prompt: "What features point to a toxic cause of his shock?",
         accept: [
           { id: "collateral", text: "Empty pill bottles and a statement of intent", match: ["bottle", "pill", "intent", "collateral", "amlodipine"] },
           { id: "hyperglycemia", text: "Hyperglycemia, reflecting impaired insulin release", match: ["hyperglycemia", "glucose", "sugar"] },
@@ -940,7 +967,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "Name ONE first line drug for this poisoning. Include the dose and route.",
+        prompt: "What first line drug, with its dose and route, would you give for this poisoning?",
         accept: [
           { id: "cagluc", text: "Calcium gluconate 10%, 30 to 60 mL IV (3 to 6 g)", match: ["calcium gluconate 30", "calcium gluconate 60", "calcium gluconate 3 g", "calcium gluconate 3g", "calcium gluconate 6 g", "calcium gluconate 6g", "calcium gluconate 3"] },
           { id: "cacl", text: "Calcium chloride 10%, 10 to 20 mL IV (1 to 2 g), by central line if possible", match: ["calcium chloride 10", "calcium chloride 20", "calcium chloride 1 g", "calcium chloride 1g", "calcium chloride 2 g", "calcium chloride 2g", "calcium chloride 1"] },
@@ -956,7 +983,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "You start high dose insulin euglycemic therapy. List THREE elements of the protocol.",
+        prompt: "You start high dose insulin euglycemic therapy. What are the elements of the protocol?",
         accept: [
           { id: "bolus", text: "Insulin bolus 1 unit/kg IV", match: ["bolus", "1 unit/kg", "1 u/kg"] },
           { id: "inf", text: "Insulin infusion 1 unit/kg/h, titrated up to 10 unit/kg/h", match: ["infusion", "unit/kg/h", "unit/kg/hr", "u/kg/h", "u/kg/hr", "titrate"] },
@@ -975,18 +1002,18 @@ export const SHOCK_SAMPS: Samp[] = [
         kind: "menu",
         select: 2,
         update: "Despite calcium, insulin at 10 units/kg/h and norepinephrine at 0.8 mcg/kg/min, his MAP is 52 mmHg. Bedside echo shows a poorly contracting heart.",
-        prompt: "Which TWO rescue therapies are most appropriate? Select two.",
+        prompt: "Which of the following rescue therapies are most appropriate for this patient?",
         options: [
-          "Referral for VA ECMO",
-          "Intravenous lipid emulsion",
+          "Activated charcoal 50 g by mouth",
           "Hemodialysis to remove amlodipine",
-          "Activated charcoal 50 g by mouth in a drowsy patient",
-          "Whole bowel irrigation",
+          "Intravenous lipid emulsion",
           "Methylene blue",
-          "Transcutaneous pacing as the only intervention",
           "Physostigmine",
+          "Referral for VA ECMO",
+          "Transcutaneous pacing alone",
+          "Whole bowel irrigation",
         ],
-        correct: [0, 1],
+        correct: [5, 2],
         explanation:
           "The 2017 expert consensus suggests VA ECMO for refractory cardiogenic shock where available, and lipid emulsion in refractory shock. His echo shows pump failure, so ECMO fits. Methylene blue was not graded by the consensus and targets vasoplegia rather than a failing heart. Amlodipine is highly protein bound and not dialyzable. Charcoal is unsafe without a protected airway.",
         keyFeature: { topic: "tox", n: 4 },
@@ -1004,13 +1031,14 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["pediatric-fever"],
     title: "Feverish child with spots",
     stem:
-      "A 3 year old girl has had fever for 12 hours. She is now sleepy and has a spreading non blanching rash on her legs. HR 172, RR 40, BP 88/56, SpO2 95% on room air, temperature 39.8 C. Capillary refill is 4 seconds. Her hands and feet are cold. Weight 14 kg. She has one IV.",
+      "A 3-year-old girl has had fever for 12 hours. She is now sleepy and has a spreading non blanching rash on her legs. Capillary refill is 4 seconds. Her hands and feet are cold. She has one IV.",
+    vitals: { temperature: "39.8°C", pulse: "172/minute", resp: "40/minute", bp: "88/56 mmHg", o2sat: "95% on room air", weight: "14 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that show she is in septic shock.",
+        prompt: "What findings show she is in septic shock?",
         accept: [
           { id: "hr", text: "Tachycardia", match: ["tachycardia", "heart rate", "172"] },
           { id: "crt", text: "Capillary refill 4 seconds", match: ["capillary refill", "cap refill", "crt"] },
@@ -1028,7 +1056,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "Describe your initial fluid resuscitation. Include the fluid, volume and how you guide it.",
+        prompt: "What is your initial fluid resuscitation, including the fluid, volume and how you guide it?",
         accept: [
           { id: "bolus", text: "Balanced or isotonic crystalloid 10 to 20 mL/kg (140 to 280 mL) rapidly by push pull or pressure bag", match: ["10 ml/kg", "20 ml/kg", "140 ml", "280 ml", "200 ml", "ringer", "normal saline", "crystalloid", "plasma lyte"] },
           { id: "reassess", text: "Reassess after each bolus for perfusion, liver edge and crackles", match: ["reassess", "liver", "crackle", "after each bolus", "hepatomegaly"] },
@@ -1045,7 +1073,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Name the antibiotic you give within the first hour. Include the dose.",
+        prompt: "What antibiotic, with its dose, would you give within the first hour?",
         accept: [
           { id: "ctx", text: "Ceftriaxone 100 mg/kg IV, so 1.4 g (maximum 2 g per dose)", match: ["ceftriaxone 100 mg/kg", "ceftriaxone 100mg/kg", "ceftriaxone 1.4", "ceftriaxone 1400", "ceftriaxone 80 mg/kg", "cefotaxime 50 mg/kg", "cefotaxime 700", "cefotaxime 75 mg/kg"] },
         ],
@@ -1058,10 +1086,16 @@ export const SHOCK_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "After 60 mL/kg she has HR 168, capillary refill 4 seconds, cold extremities and BP 76/40. Her liver edge is now 3 cm below the costal margin.",
-        prompt: "Which vasoactive agent is most appropriate first? Select one.",
-        options: ["Epinephrine", "Dopamine", "Phenylephrine", "Vasopressin", "Milrinone", "Dobutamine alone"],
-        correct: 0,
+        update: "After 60 mL/kg she has HR 168, capillary refill 4 seconds, cold extremities and BP 76/40 mmHg. Her liver edge is now 3 cm below the costal margin.",
+        prompt: "Which of the following vasoactive agents is most appropriate first for this child?",
+        options: [
+          "Dobutamine alone",
+          "Dopamine",
+          "Epinephrine",
+          "Milrinone",
+          "Phenylephrine",
+        ],
+        correct: 2,
         explanation:
           "Pediatric Surviving Sepsis suggests epinephrine or norepinephrine over dopamine. Epinephrine fits cold shock with poor cardiac output because it adds inotropy. It can run through a peripheral IV or IO while central access is arranged. Stop fluid now that the liver is enlarging.",
         keyFeature: { topic: "shock", n: 7 },
@@ -1071,7 +1105,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "She stays hypotensive on epinephrine. List TWO further non fluid therapies to consider.",
+        prompt: "She stays hypotensive on epinephrine. What further non fluid therapies would you consider?",
         accept: [
           { id: "hc", text: "Stress dose hydrocortisone, such as 2 mg/kg IV (maximum 100 mg)", match: ["hydrocortisone", "steroid", "corticosteroid"] },
           { id: "ne", text: "Add norepinephrine", match: ["norepinephrine", "noradrenaline"] },
@@ -1098,13 +1132,14 @@ export const SHOCK_SAMPS: Samp[] = [
     alsoTopics: ["gi-bleed"],
     title: "Older man who fainted in the bathroom",
     stem:
-      "A 78 year old man fainted while getting up from the toilet this morning. He has felt tired for 2 days. He has atrial fibrillation on apixaban 5 mg twice daily and hypertension on bisoprolol. His last dose of apixaban was 3 hours ago. HR 88, BP 98/60 (usual 145/85), RR 20, SpO2 96%, temperature 36.4 C. He is pale. Rectal exam shows black tarry stool. Hemoglobin 72 g/L (baseline 138). Creatinine 110 umol/L. BUN is high.",
+      "A 78-year-old man fainted while getting up from the toilet this morning. He has felt tired for 2 days. He has atrial fibrillation on apixaban 5 mg twice daily and hypertension on bisoprolol. His last dose of apixaban was 3 hours ago. His usual BP is 145/85 mmHg. His O2 sat is 96%. He is pale. Rectal exam shows black tarry stool. Hemoglobin 72 g/L (baseline 138). Creatinine 110 umol/L. BUN is high.",
+    vitals: { temperature: "36.4°C", pulse: "88/minute", resp: "20/minute", bp: "98/60 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO reasons his vital signs underestimate how unwell he is.",
+        prompt: "Why do his vital signs underestimate how unwell he is?",
         accept: [
           { id: "bb", text: "Bisoprolol blunts tachycardia", match: ["beta blocker", "bisoprolol", "blunt"] },
           { id: "baseline", text: "BP is well below his usual, so this is relative hypotension", match: ["baseline", "usual", "relative hypotension"] },
@@ -1121,15 +1156,15 @@ export const SHOCK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate transfusion approach? Select one.",
+        prompt: "Which of the following is the most appropriate immediate transfusion approach for this patient?",
         options: [
-          "Transfuse red cells now, targeting a hemoglobin of 70 to 90 g/L, and more if bleeding continues",
-          "Transfuse only if hemoglobin falls below 60 g/L",
           "Give 3 L of crystalloid and recheck hemoglobin",
-          "Transfuse to a target hemoglobin of 120 g/L",
           "Give 4 units of plasma first to correct the anticoagulant",
+          "Red cells to 70 to 90 g/L, more if bleeding",
+          "Transfuse only if hemoglobin falls below 60 g/L",
+          "Transfuse to a target hemoglobin of 120 g/L",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "A restrictive strategy with a threshold of 70 g/L and target of 70 to 90 improves survival in upper GI bleeding. A threshold of 80 is reasonable with cardiovascular disease. Active bleeding with hypoperfusion needs blood now regardless of the number. Plasma does not reverse apixaban.",
         keyFeature: { topic: "gi-bleed", n: 5 },
@@ -1139,7 +1174,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Name ONE agent to reverse his anticoagulant. Include the dose.",
+        prompt: "What agent, with its dose, would reverse his anticoagulant?",
         accept: [
           { id: "pcc", text: "Four factor prothrombin complex concentrate, a fixed 2000 units or 25 to 50 units/kg IV to a maximum of 3000 units", match: ["pcc 2000", "pcc 50", "octaplex 2000", "beriplex 2000", "prothrombin complex 2000", "prothrombin complex 50", "octaplex 50", "beriplex 50", "pcc 25", "pcc 1500"] },
           { id: "andexanet", text: "Andexanet alfa where available, dosed by drug and timing", match: ["andexanet"] },
@@ -1150,7 +1185,7 @@ export const SHOCK_SAMPS: Samp[] = [
           { text: "Idarucizumab", match: ["idarucizumab", "praxbind"] },
         ],
         explanation:
-          "Thrombosis Canada suggests andexanet where available, or 4 factor PCC as a fixed 2000 units or 25 to 50 units/kg to a maximum of 3000 units. Vitamin K and protamine have no effect on apixaban. Idarucizumab reverses only dabigatran.",
+          "Thrombosis Canada suggests andexanet where available, or 4 factor PCC as a fixed 2 000 units or 25 to 50 units/kg to a maximum of 3 000 units. Vitamin K and protamine have no effect on apixaban. Idarucizumab reverses only dabigatran.",
         keyFeature: { topic: "shock", n: 8 },
         source: "tc-doac",
       },
@@ -1158,7 +1193,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO other treatments or consults for his bleeding source.",
+        prompt: "What other treatments or consults are needed for his bleeding source?",
         accept: [
           { id: "ppi", text: "IV proton pump inhibitor, pantoprazole 80 mg bolus", match: ["ppi", "pantoprazole", "proton pump", "esomeprazole"] },
           { id: "scope", text: "Endoscopy within 24 hours after resuscitation", match: ["endoscopy", "scope", "gastroenterology", "egd", "gastroscopy"] },
@@ -1182,20 +1217,21 @@ export const SHOCK_SAMPS: Samp[] = [
     topic: "shock",
     title: "Dry and drowsy after a heat wave",
     stem:
-      "An 86 year old woman is brought from home by her son after a week long heat wave. She lives alone and has advanced dementia. She has barely eaten or drunk for several days. HR 112, BP 88/50, RR 20, SpO2 95%, temperature 37.8 C. Her mucous membranes are dry. She is drowsy but rousable. Weight 50 kg. Sodium 168 mmol/L, potassium 4.2 mmol/L, glucose 7.0 mmol/L, creatinine 210 umol/L, urea 32 mmol/L.",
+      "An 86-year-old woman is brought from home by her son after a week long heat wave. She lives alone and has advanced dementia. She has barely eaten or drunk for several days. Her O2 sat is 95%. Her mucous membranes are dry. She is drowsy but rousable. Sodium 168 mmol/L, potassium 4.2 mmol/L, glucose 7.0 mmol/L, creatinine 210 umol/L, urea 32 mmol/L.",
+    vitals: { temperature: "37.8°C", pulse: "112/minute", resp: "20/minute", bp: "88/50 mmHg", weight: "50 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate first fluid? Select one.",
+        prompt: "Which of the following is the most appropriate first fluid for this patient?",
         options: [
-          "Normal saline or Ringer's lactate 500 mL bolus, then reassess",
-          "D5W 500 mL bolus",
-          "0.45% saline at 250 mL/h",
-          "Free water 500 mL by nasogastric tube",
-          "5% albumin 500 mL",
+          "5% albumin 500 mL bolus then reassess",
+          "Dextrose 5% in water 500 mL bolus then reassess",
+          "Free water 500 mL by nasogastric tube then reassess",
+          "Half normal saline at 250 mL/hour then reassess",
+          "Normal saline or Ringer's lactate 500 mL bolus then reassess",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "She has hypovolemic shock as well as a free water deficit. Restore perfusion first with isotonic crystalloid in 250 to 500 mL boluses. Isotonic saline is still hypotonic relative to her serum. Then correct the free water deficit slowly with hypotonic fluid.",
         keyFeature: { topic: "shock", n: 3 },
@@ -1205,7 +1241,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "Estimate her free water deficit in litres. Show the formula you used.",
+        prompt: "What is her estimated free water deficit in litres, and what formula did you use?",
         accept: [
           { id: "fwd", text: "About 4.5 L, using 0.45 x 50 kg x (168/140 minus 1)", match: ["4.5", "4.5 l", "4.5l", "4500", "4.4", "4.6"] },
           { id: "fwd5", text: "About 5 L if 0.5 is used for total body water", match: ["5 l", "5l", "5000", "5.0"] },
@@ -1234,7 +1270,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "Besides water loss, list TWO other conditions that could be causing or worsening her shock.",
+        prompt: "Besides water loss, what other conditions could be causing or worsening her shock?",
         accept: [
           { id: "infection", text: "Sepsis from pneumonia, UTI or another source", match: ["infection", "sepsis", "septic", "uti", "pneumonia", "urinary"] },
           { id: "heat", text: "Heat stroke", match: ["heat", "hyperthermia"] },
@@ -1260,13 +1296,14 @@ export const SHOCK_SAMPS: Samp[] = [
     topic: "shock",
     title: "Breathless woman with cancer",
     stem:
-      "A 57 year old woman with metastatic lung cancer has had increasing breathlessness for a week. Today she nearly fainted. HR 124, BP 84/66, RR 28, SpO2 93% on room air, temperature 36.8 C. Her neck veins are distended. Heart sounds are quiet. Lungs are clear. Weight 54 kg. The ECG shows sinus tachycardia with low voltage and beat to beat variation in QRS height.",
+      "A 57-year-old woman with metastatic lung cancer has had increasing breathlessness for a week. Today she nearly fainted. Her neck veins are distended. Heart sounds are quiet. Lungs are clear. The ECG shows sinus tachycardia with low voltage and beat to beat variation in QRS height.",
+    vitals: { temperature: "36.8°C", pulse: "124/minute", resp: "28/minute", bp: "84/66 mmHg", o2sat: "93% on room air", weight: "54 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO clinical findings that suggest obstructive rather than hypovolemic shock.",
+        prompt: "What clinical findings suggest obstructive rather than hypovolemic shock?",
         accept: [
           { id: "jvp", text: "Distended neck veins", match: ["jvp", "neck vein", "jugular", "jvd"] },
           { id: "muffled", text: "Quiet heart sounds", match: ["quiet", "muffled", "distant", "heart sound"] },
@@ -1284,7 +1321,7 @@ export const SHOCK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO bedside ultrasound findings that confirm tamponade physiology.",
+        prompt: "What bedside ultrasound findings confirm tamponade physiology?",
         accept: [
           { id: "effusion", text: "Pericardial effusion", match: ["effusion", "pericardial fluid"] },
           { id: "ra", text: "Right atrial systolic collapse", match: ["right atrial", "ra collapse", "atrial collapse"] },
@@ -1301,15 +1338,15 @@ export const SHOCK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate definitive treatment in the ED? Select one.",
+        prompt: "Which of the following is the most appropriate definitive treatment in the emergency department?",
         options: [
-          "Ultrasound guided pericardiocentesis",
-          "Norepinephrine infusion alone",
-          "Furosemide 40 mg IV",
+          "Chest tube thoracostomy",
+          "Furosemide 40 mg IV push",
           "Intubation and positive pressure ventilation",
-          "Chest tube",
+          "Norepinephrine infusion alone",
+          "Ultrasound guided pericardiocentesis",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "Tamponade with shock needs drainage. Ultrasound guided pericardiocentesis is safe and effective, often with a catheter left in place. Diuretics and positive pressure ventilation reduce preload and can cause arrest. Vasopressors only buy time.",
         keyFeature: { topic: "shock", n: 5 },

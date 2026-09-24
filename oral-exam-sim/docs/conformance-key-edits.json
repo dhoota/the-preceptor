@@ -2396,6 +2396,73 @@
     "Norepinephrine or phenylephrine infusion",
     "Furosemide 20 mg IV with close BP monitoring"
    ]
+  },
+  "seizures-09#q1": {
+   "batch": "s16",
+   "before": [
+    "Capillary glucose",
+    "Serum sodium",
+    "Neuroimaging, CT in the ED or early outpatient MRI"
+   ],
+   "after": [
+    "Capillary glucose",
+    "Serum sodium",
+    "Neuroimaging, CT or early MRI"
+   ]
+  },
+  "seizures-09#q3": {
+   "batch": "s16",
+   "before": [
+    "It is not routinely needed after a single unprovoked seizure with a normal exam"
+   ],
+   "after": [
+    "Not routinely needed after a single unprovoked seizure"
+   ]
+  },
+  "seizures-13#q2": {
+   "batch": "s16",
+   "before": [
+    "CT head because this is his first seizure and he has a head abrasion"
+   ],
+   "after": [
+    "CT head in the emergency department"
+   ]
+  },
+  "shock-02#q3": {
+   "batch": "s16",
+   "before": [
+    "Normal saline or Ringer's lactate 120 mL as a rapid bolus"
+   ],
+   "after": [
+    "Normal saline or Ringer's lactate 120 mL rapid bolus"
+   ]
+  },
+  "shock-03#q4": {
+   "batch": "s16",
+   "before": [
+    "Norepinephrine by peripheral IV, titrated to a MAP of 65 mmHg"
+   ],
+   "after": [
+    "Norepinephrine by peripheral IV, titrated to MAP 65 mmHg"
+   ]
+  },
+  "shock-13#q2": {
+   "batch": "s16",
+   "before": [
+    "Transfuse red cells now, targeting a hemoglobin of 70 to 90 g/L, and more if bleeding continues"
+   ],
+   "after": [
+    "Red cells to 70 to 90 g/L, more if bleeding"
+   ]
+  },
+  "shock-14#q1": {
+   "batch": "s16",
+   "before": [
+    "Normal saline or Ringer's lactate 500 mL bolus, then reassess"
+   ],
+   "after": [
+    "Normal saline or Ringer's lactate 500 mL bolus then reassess"
+   ]
   }
  }
 }

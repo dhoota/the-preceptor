@@ -11,23 +11,23 @@ const S = {
   ncs: { id: "ncs", citation: "Brophy GM, et al. Guidelines for the evaluation and management of status epilepticus. Neurocritical Care Society. Neurocrit Care. 2012." },
   cpsSe: { id: "cps-se", citation: "McKenzie KC, Hahn CD, Friedman JN. Canadian Paediatric Society, Acute Care Committee. Emergency management of the paediatric patient with convulsive status epilepticus. Paediatr Child Health. 2021.", url: "https://cps.ca/en/documents/position/emergency-management-of-the-paediatric-patient-with-convulsive-status-epilepticus" },
   trekkSe: { id: "trekk-se", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Status epilepticus. Version 1.1. 2025.", url: "https://trekk.ca/resources/bottom-line-recommendations-status-epilepticus/" },
-  trekkFs: { id: "trekk-fs", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Febrile seizures." },
+  aapFsLong: { id: "aap-fs-long", citation: "American Academy of Pediatrics, Steering Committee on Quality Improvement and Management, Subcommittee on Febrile Seizures. Febrile seizures. Clinical practice guideline for the long-term management of the child with simple febrile seizures. Pediatrics. 2008.", url: "https://pubmed.ncbi.nlm.nih.gov/18519501/" },
   aapFs: { id: "aap-fs", citation: "American Academy of Pediatrics, Subcommittee on Febrile Seizures. Clinical practice guideline. Neurodiagnostic evaluation of the child with a simple febrile seizure. Pediatrics. 2011." },
   acep: { id: "acep", citation: "American College of Emergency Physicians. Clinical policy. Critical issues in the evaluation and management of adult patients presenting to the emergency department with seizures. Ann Emerg Med. 2014." },
   aanFirst: { id: "aan-first", citation: "Krumholz A, et al. Evidence-based guideline. Management of an unprovoked first seizure in adults. American Academy of Neurology and American Epilepsy Society. Neurology. 2015." },
-  cmaDriver: { id: "cma-driver", citation: "Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles. 10th edition. Nervous system section.", url: "https://driversguide.ca/sections/nervous-system" },
+  cmaDriver: { id: "cma-driver", citation: "Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles. 10th edition. 2023. Nervous system section.", url: "https://driversguide.ca/sections/nervous-system" },
   hta: { id: "hta", citation: "Highway Traffic Act, R.S.O. 1990, c. H.8, section 203 (Ontario). Mandatory reporting of medical conditions by physicians." },
   sogc: { id: "sogc", citation: "Magee LA, et al. Guideline No. 426. Hypertensive disorders of pregnancy. Diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022." },
-  goldfrank: { id: "goldfrank", citation: "Nelson LS, et al, editors. Goldfrank's Toxicologic Emergencies. McGraw Hill. Chapter on isoniazid and pyridoxine." },
-  dcHypo: { id: "dc-hypo", citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee. Hypoglycemia in adults with diabetes." },
+  goldfrank: { id: "goldfrank", citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter on isoniazid and pyridoxine." },
+  dcHypo: { id: "dc-hypo", citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee, Yale JF, Paty B, Senior PA. Hypoglycemia. Can J Diabetes. 2018." },
   hypoNa: { id: "hypo-na", citation: "Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014." },
   escVa: { id: "esc-va", citation: "Zeppenfeld K, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J. 2022." },
   idsaEnc: { id: "idsa-enc", citation: "Tunkel AR, et al. The management of encephalitis. Clinical practice guidelines by the Infectious Diseases Society of America. Clin Infect Dis. 2008." },
   spasms: { id: "spasms", citation: "Pellock JM, et al. Infantile spasms. A U.S. consensus report. Epilepsia. 2010." },
-  cpsHsv: { id: "cps-hsv", citation: "Canadian Paediatric Society, Infectious Diseases and Immunization Committee. Position statement. Prevention and management of neonatal herpes simplex virus infections." },
+  cpsHsv: { id: "cps-hsv", citation: "Allen UD, Robinson JL. Canadian Paediatric Society, Infectious Diseases and Immunization Committee. Prevention and management of neonatal herpes simplex virus infections. Paediatr Child Health. 2014." },
   whoNeo: { id: "who-neo", citation: "World Health Organization. Guidelines on neonatal seizures. 2011." },
   crism: { id: "crism", citation: "Canadian Research Initiative in Substance Misuse. Canadian guideline for the clinical management of high-risk drinking and alcohol use disorder. 2023." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapter on seizures." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter on seizures." },
 } satisfies Record<string, Source>;
 
 export const SEIZURES_SAMPS: Samp[] = [
@@ -38,13 +38,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     alsoTopics: ["airway"],
     title: "Man seizing on arrival by ambulance",
     stem:
-      "A 44 year old man arrives by ambulance with a generalized tonic clonic seizure. His partner says he seized at home, stopped briefly, then started again without waking up. Total time since the first seizure is 14 minutes. Paramedics gave midazolam 10 mg IM 7 minutes ago. He is still seizing. HR 132, BP 172/96, RR 8 and shallow, SpO2 87% on a non rebreather mask, temperature 37.9 C. Capillary glucose 6.8 mmol/L. Estimated weight 80 kg. He has no IV yet.",
+      "A 44-year-old man arrives by ambulance with a generalized tonic clonic seizure. His partner says he seized at home, stopped briefly, then started again without waking up. Total time since the first seizure is 14 minutes. Paramedics gave midazolam 10 mg IM 7 minutes ago. He is still seizing. His respirations are shallow. Capillary glucose 6.8 mmol/L. His weight is an estimate. He has no IV yet.",
+    vitals: { temperature: "37.9°C", pulse: "132/minute", resp: "8/minute", bp: "172/96 mmHg", o2sat: "87% on a non rebreather mask", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "His breathing is snoring and shallow. List THREE interventions, other than anticonvulsant medication, to improve his oxygenation and ventilation now.",
+        prompt: "His breathing is snoring and shallow. What interventions, other than anticonvulsant medication, would improve his oxygenation and ventilation now?",
         accept: [
           { id: "position", text: "Place in the lateral or recovery position", match: ["lateral", "recovery position", "on his side", "left lateral"] },
           { id: "suction", text: "Suction the oropharynx", match: ["suction"] },
@@ -66,17 +67,17 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "An IV is placed. He is still seizing 9 minutes after the IM midazolam.",
-        prompt: "Which of the following is the most appropriate next medication? Select one.",
+        prompt: "Which of the following is the most appropriate next medication for this patient?",
         options: [
+          "Levetiracetam 1 000 mg IV",
           "Lorazepam 4 mg IV",
           "Lorazepam 10 mg IV",
-          "Levetiracetam 1000 mg IV",
-          "Phenytoin 1000 mg IV push over 2 minutes",
-          "Propofol infusion without intubation",
+          "Phenytoin 1 000 mg rapid IV push",
+          "Propofol without intubation",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
-          "This is convulsive status epilepticus. The paramedic dose counts as the first benzodiazepine, so one more dose is appropriate. Lorazepam is 0.1 mg/kg IV to a maximum of 4 mg per dose. Moving straight to a fully dosed second line agent is also defensible, but levetiracetam 1000 mg is an underdose for status. Phenytoin must never be pushed rapidly because of hypotension and arrhythmia.",
+          "This is convulsive status epilepticus. The paramedic dose counts as the first benzodiazepine, so one more dose is appropriate. Lorazepam is 0.1 mg/kg IV to a maximum of 4 mg per dose. Moving straight to a fully dosed second line agent is also defensible, but levetiracetam 1 000 mg is an underdose for status. Phenytoin must never be pushed rapidly because of hypotension and arrhythmia.",
         keyFeature: { topic: "seizures", n: 3 },
         source: "aes",
       },
@@ -85,7 +86,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "He is still seizing 5 minutes after the lorazepam.",
-        prompt: "Name ONE second line anticonvulsant for this 80 kg man. Include the dose.",
+        prompt: "What second line anticonvulsant, with its dose, would you give this 80 kg man?",
         accept: [
           { id: "lev", text: "Levetiracetam 60 mg/kg IV, maximum 4500 mg, so 4500 mg", match: ["levetiracetam 4500", "levetiracetam 4.5 g", "levetiracetam 60 mg/kg", "levetiracetam 60mg/kg", "keppra 4500", "keppra 60 mg/kg"] },
           { id: "fos", text: "Fosphenytoin 20 mg PE/kg IV, maximum 1500 mg PE, so 1500 mg PE", match: ["fosphenytoin 1500", "fosphenytoin 20 mg", "fosphenytoin 20mg"] },
@@ -105,8 +106,8 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        update: "Clinical seizure activity stops. Forty minutes later he has not woken. GCS is 6. Pupils are equal and reactive. Temperature is 38.1 C.",
-        prompt: "List THREE next steps in his management.",
+        update: "Clinical seizure activity stops. Forty minutes later he has not woken. GCS is 6. Pupils are equal and reactive. Temperature is 38.1°C.",
+        prompt: "What are the next steps in his management?",
         accept: [
           { id: "airway", text: "Intubate to protect the airway", match: ["intubate", "intubation", "secure airway", "rsi", "protect airway"] },
           { id: "eeg", text: "Urgent or continuous EEG to exclude nonconvulsive status epilepticus", match: ["eeg", "electroencephalogram"] },
@@ -133,21 +134,21 @@ export const SEIZURES_SAMPS: Samp[] = [
     topic: "seizures",
     title: "Toddler with ongoing jerking",
     stem:
-      "A 3 year old boy is carried in by his father. He started shaking all four limbs at home 10 minutes ago and has not stopped. He has a known seizure disorder and takes levetiracetam. He has no rescue medication at home. HR 164, RR 30, SpO2 93% with oxygen by mask, temperature 37.4 C. Weight 15 kg. Two IV attempts have failed.",
+      "A 3-year-old boy is carried in by his father. He started shaking all four limbs at home 10 minutes ago and has not stopped. He has a known seizure disorder and takes levetiracetam. He has no rescue medication at home. Two IV attempts have failed.",
+    vitals: { temperature: "37.4°C", pulse: "164/minute", resp: "30/minute", o2sat: "93% on oxygen by mask", weight: "15 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first medication? Select one.",
+        prompt: "Which of the following is the most appropriate first medication for this child?",
         options: [
-          "Midazolam 3 mg intranasal",
-          "Midazolam 7.5 mg intranasal",
-          "Lorazepam 4 mg IM",
           "Diazepam 3 mg rectal",
-          "Phenobarbital 300 mg IM",
-          "Wait for IO access to give lorazepam",
+          "Lorazepam 4 mg IM",
+          "Midazolam 7.5 mg intranasal",
+          "Midazolam 3 mg intranasal",
+          "Wait for IO access, then lorazepam",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Without IV access, intranasal or IM midazolam 0.2 mg/kg (maximum 10 mg) works as fast as IV lorazepam. For 15 kg that is 3 mg. TREKK also allows a standard 5 mg dose from 13 to 40 kg. 7.5 mg is a buccal dose, not an intranasal one. Lorazepam IM is poorly absorbed and 4 mg is over 0.1 mg/kg. Rectal diazepam is 0.5 mg/kg, so 3 mg is an underdose. Do not delay treatment waiting for access.",
         keyFeature: { topic: "seizures", n: 4 },
@@ -157,7 +158,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO bedside or rapid tests to look for a reversible cause.",
+        prompt: "What bedside or rapid tests would look for a reversible cause?",
         accept: [
           { id: "glucose", text: "Point of care glucose", match: ["glucose", "sugar", "glucometer", "bg"] },
           { id: "na", text: "Sodium, by blood gas or electrolytes", match: ["sodium", "na", "electrolyte", "lyte"] },
@@ -176,7 +177,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "An IO is placed. He received a second benzodiazepine dose 5 minutes ago and is still seizing. Glucose is 5.9 mmol/L.",
-        prompt: "Name ONE second line medication for this 15 kg child. Include the dose.",
+        prompt: "What second line medication, with its dose, would you give this 15 kg child?",
         accept: [
           { id: "lev", text: "Levetiracetam 40 to 60 mg/kg, so 600 to 900 mg IV or IO", match: ["levetiracetam 900", "levetiracetam 60 mg/kg", "levetiracetam 60mg/kg", "keppra 900", "keppra 60 mg/kg", "levetiracetam 40 mg/kg", "levetiracetam 40mg/kg", "levetiracetam 600", "keppra 40 mg/kg", "keppra 600"] },
           { id: "fos", text: "Fosphenytoin 20 mg PE/kg, so 300 mg PE", match: ["fosphenytoin 300", "fosphenytoin 20 mg", "fosphenytoin 20mg"] },
@@ -188,7 +189,7 @@ export const SEIZURES_SAMPS: Samp[] = [
           { text: "A third benzodiazepine dose", match: ["midazolam", "lorazepam", "diazepam"] },
         ],
         explanation:
-          "After two benzodiazepine doses give a second line agent. TREKK prefers levetiracetam 60 mg/kg, maximum 3000 mg, because it is fast and well tolerated. Some protocols use 40 mg/kg. He already takes levetiracetam. Many clinicians still give a full load, while others choose fosphenytoin. Valproate is avoided under 2 years and when a metabolic, mitochondrial or liver disorder is possible.",
+          "After two benzodiazepine doses give a second line agent. TREKK prefers levetiracetam 60 mg/kg, maximum 3 000 mg, because it is fast and well tolerated. Some protocols use 40 mg/kg. He already takes levetiracetam. Many clinicians still give a full load, while others choose fosphenytoin. Valproate is avoided under 2 years and when a metabolic, mitochondrial or liver disorder is possible.",
         keyFeature: { topic: "seizures", n: 4 },
         source: "cps-se",
       },
@@ -197,7 +198,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "The seizure continues 10 minutes after the second line agent finished.",
-        prompt: "List TWO next steps.",
+        prompt: "What are the next steps?",
         accept: [
           { id: "second", text: "Give a different second line agent", match: ["another second line", "different second line", "fosphenytoin", "phenobarbital", "phenytoin", "levetiracetam"] },
           { id: "rsi", text: "Intubate with an induction agent that is anticonvulsant", match: ["intubate", "intubation", "rsi", "rapid sequence"] },
@@ -223,13 +224,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     alsoTopics: ["pre-eclampsia"],
     title: "Seizure in the third trimester",
     stem:
-      "A 27 year old woman, G1P0 at 35 weeks, has a generalized seizure in the waiting room. It lasts 90 seconds and stops on its own. She had a headache and blurred vision since yesterday. She has no history of epilepsy. BP 174/112, HR 108, RR 22, SpO2 95% on room air. Weight 78 kg. She is drowsy but rousable.",
+      "A 27-year-old woman, G1P0 at 35 weeks, has a generalized seizure in the waiting room. It lasts 90 seconds and stops on its own. She had a headache and blurred vision since yesterday. She has no history of epilepsy. She is drowsy but rousable.",
+    vitals: { pulse: "108/minute", resp: "22/minute", bp: "174/112 mmHg", o2sat: "95% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 1,
-        prompt: "Name the most important medication to give now. Include the dose and route.",
+        prompt: "What is the most important medication to give now, including the dose and route?",
         accept: [
           { id: "mg", text: "Magnesium sulfate 4 g IV over 15 to 20 minutes, then 1 g per hour", match: ["magnesium 4 g", "magnesium 4g", "mgso4 4 g", "mgso4 4g", "magnesium sulfate 4", "magnesium sulphate 4"] },
         ],
@@ -246,7 +248,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "Name ONE medication to lower her blood pressure. Include the dose and route.",
+        prompt: "What medication, with its dose and route, would lower her blood pressure?",
         accept: [
           { id: "lab", text: "Labetalol 20 mg IV, repeat with escalating doses", match: ["labetalol 20", "labetalol 10", "labetalol 200 mg po", "labetalol 200 mg oral"] },
           { id: "nif", text: "Nifedipine immediate release 10 mg orally", match: ["nifedipine 10", "nifedipine 5", "nifedipine 20"] },
@@ -266,7 +268,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Twenty minutes later she has a second generalized seizure. The magnesium infusion is running.",
-        prompt: "List TWO steps to manage this seizure.",
+        prompt: "What are the steps to manage this seizure?",
         accept: [
           { id: "bolus", text: "Additional magnesium sulfate 2 g IV", match: ["magnesium 2 g", "magnesium 2g", "mgso4 2", "magnesium sulfate 2", "magnesium sulphate 2", "another magnesium", "repeat magnesium", "further magnesium"] },
           { id: "lateral", text: "Left lateral position or left uterine displacement", match: ["left lateral", "lateral", "uterine displacement", "tilt"] },
@@ -284,7 +286,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Two hours later her RR is 8 and her patellar reflexes are absent. Urine output was 15 mL in the last hour.",
-        prompt: "List TWO immediate actions.",
+        prompt: "What are the immediate actions?",
         accept: [
           { id: "stop", text: "Stop the magnesium infusion", match: ["stop magnesium", "hold magnesium", "stop infusion", "discontinue magnesium", "stop mgso4", "hold mgso4"] },
           { id: "ca", text: "Calcium gluconate 1 g IV (10 mL of 10%)", match: ["calcium gluconate", "calcium chloride", "calcium"] },
@@ -309,13 +311,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Seizures that do not stop",
     stem:
-      "A 22 year old woman is brought in by her roommate after a seizure. She has had two more generalized seizures in the ED over 15 minutes without waking in between. She received lorazepam 4 mg IV twice. Her roommate brings a bag of her medications. It contains an empty bottle of isoniazid 300 mg tablets, originally 60 tablets, filled 1 week ago. HR 126, BP 104/60, RR 26, SpO2 94% on oxygen. Weight 60 kg. VBG pH 6.94, bicarbonate 7 mmol/L, lactate 14 mmol/L. Glucose 7.2 mmol/L.",
+      "A 22-year-old woman is brought in by her roommate after a seizure. She has had two more generalized seizures in the emergency department over 15 minutes without waking in between. She received lorazepam 4 mg IV twice. Her roommate brings a bag of her medications. It contains an empty bottle of isoniazid 300 mg tablets, originally 60 tablets, filled 1 week ago. VBG pH 6.94, bicarbonate 7 mmol/L, lactate 14 mmol/L. Glucose 7.2 mmol/L.",
+    vitals: { pulse: "126/minute", resp: "26/minute", bp: "104/60 mmHg", o2sat: "94% on oxygen", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 1,
-        prompt: "Name the specific treatment she needs. Include the dose.",
+        prompt: "What specific treatment does she need, including the dose?",
         accept: [
           { id: "b6", text: "Pyridoxine IV, 1 g per gram of isoniazid ingested, usually 5 g as the first dose, repeated if seizures continue", match: ["pyridoxine 5 g", "pyridoxine 5g", "pyridoxine 5000", "b6 5 g", "b6 5g", "pyridoxine 1 g per g", "pyridoxine gram", "pyridoxine 5 gram", "vitamin b6 5 g", "pyridoxine 70 mg/kg"] },
         ],
@@ -329,7 +332,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "The pharmacy stocks only 1 g of pyridoxine. Name ONE class of anticonvulsant that works with pyridoxine while more is obtained.",
+        prompt: "The pharmacy stocks only 1 g of pyridoxine. What class of anticonvulsant works with pyridoxine while more is obtained?",
         accept: [
           { id: "benzo", text: "Benzodiazepines", match: ["benzodiazepine", "benzo", "lorazepam", "midazolam", "diazepam"] },
           { id: "barb", text: "Barbiturates such as phenobarbital", match: ["barbiturate", "phenobarbital", "phenobarb"] },
@@ -345,7 +348,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO other ingestions that commonly cause seizures and need specific treatment beyond standard anticonvulsants.",
+        prompt: "What other ingestions commonly cause seizures and need specific treatment beyond standard anticonvulsants?",
         accept: [
           { id: "tca", text: "Tricyclic antidepressants, needing sodium bicarbonate", match: ["tricyclic", "tca", "amitriptyline"] },
           { id: "bupropion", text: "Bupropion", match: ["bupropion", "wellbutrin"] },
@@ -375,13 +378,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     topic: "seizures",
     title: "Seizure in a man found at work",
     stem:
-      "A 58 year old man had a generalized seizure at his warehouse job and is brought in by ambulance. The seizure has stopped. He is confused and sweaty. He has type 2 diabetes treated with metformin and gliclazide. His family doctor increased the gliclazide last week. He is not on insulin. HR 104, BP 152/88, RR 18, SpO2 97%. Capillary glucose 1.8 mmol/L. Weight 90 kg. He has IV access.",
+      "A 58-year-old man had a generalized seizure at his warehouse job and is brought in by ambulance. The seizure has stopped. He is confused and sweaty. He has type 2 diabetes treated with metformin and gliclazide. His family doctor increased the gliclazide last week. He is not on insulin. His O2 sat is 97%. Capillary glucose 1.8 mmol/L. He has IV access.",
+    vitals: { pulse: "104/minute", resp: "18/minute", bp: "152/88 mmHg", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 1,
-        prompt: "Name the immediate treatment. Include the dose and route.",
+        prompt: "What is the immediate treatment, including the dose and route?",
         accept: [
           { id: "d50", text: "Dextrose 25 g IV, for example 50 mL of D50W", match: ["d50", "d50w", "dextrose 50%", "amp dextrose", "dextrose 25 g", "dextrose 25g", "glucose 25 g", "glucose 25g", "50 ml 50%", "d10 250", "dextrose 10% 250"] },
         ],
@@ -399,7 +403,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "He wakes fully. His glucose is 8.4 mmol/L at 15 minutes. He wants to go back to work.",
-        prompt: "List TWO reasons he needs further observation or admission.",
+        prompt: "Why does he need further observation or admission?",
         accept: [
           { id: "su", text: "Sulfonylurea hypoglycemia is prolonged and recurs", match: ["sulfonylurea", "gliclazide", "long acting", "recur", "recurrent", "rebound"] },
           { id: "renal", text: "Possible renal impairment reducing clearance", match: ["renal", "kidney", "creatinine"] },
@@ -417,7 +421,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "Four hours later his glucose drops to 2.6 mmol/L despite a D10W infusion.",
-        prompt: "Name ONE medication to prevent recurrence. Include the dose.",
+        prompt: "What medication, with its dose, would prevent recurrence?",
         accept: [
           { id: "oct", text: "Octreotide 50 to 100 mcg SC or IV, repeated every 6 to 8 hours", match: ["octreotide 50", "octreotide 100", "octreotide 75"] },
         ],
@@ -431,7 +435,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "He drives a forklift and a car. List TWO pieces of advice about driving or safety at discharge.",
+        prompt: "He drives a forklift and a car. What advice about driving or safety would you give at discharge?",
         accept: [
           { id: "nodrive", text: "Do not drive until the hypoglycemia cause is fixed and he is cleared by his physician", match: ["not drive", "no driving", "stop driving", "avoid driving"] },
           { id: "report", text: "Report to the provincial licensing authority where required, and tell him a report may be made", match: ["report", "licensing", "ministry", "mto"] },
@@ -455,13 +459,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     topic: "seizures",
     title: "Seizure after a long run",
     stem:
-      "A 34 year old woman collapsed and had a generalized seizure at the finish line of a marathon. She drank water at every station. The seizure stopped after lorazepam 2 mg IV given by paramedics. She is now drowsy, vomiting, and confused. HR 96, BP 126/78, RR 20, SpO2 96%, temperature 37.6 C. Weight 58 kg. Glucose 6.1 mmol/L. VBG sodium 117 mmol/L.",
+      "A 34-year-old woman collapsed and had a generalized seizure at the finish line of a marathon. She drank water at every station. The seizure stopped after lorazepam 2 mg IV given by paramedics. She is now drowsy, vomiting, and confused. Her O2 sat is 96%. Glucose 6.1 mmol/L. VBG sodium 117 mmol/L.",
+    vitals: { temperature: "37.6°C", pulse: "96/minute", resp: "20/minute", bp: "126/78 mmHg", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 1,
-        prompt: "Name the specific treatment she needs now. Include the dose.",
+        prompt: "What specific treatment does she need now, including the dose?",
         accept: [
           { id: "hts", text: "3% hypertonic saline 100 to 150 mL IV over 10 to 20 minutes, repeated up to 3 times as needed (2 mL/kg in a child)", match: ["3% 100", "3% saline 100", "hypertonic 100", "3% 150", "hypertonic 150", "3% 2 ml/kg", "hypertonic 2 ml/kg"] },
         ],
@@ -492,7 +497,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO other causes of hyponatremic seizures you would consider in other ED patients.",
+        prompt: "What other causes of hyponatremic seizures would you consider in other emergency department patients?",
         accept: [
           { id: "mdma", text: "MDMA or ecstasy use", match: ["mdma", "ecstasy", "molly"] },
           { id: "formula", text: "Infant fed diluted formula or free water", match: ["formula", "free water", "diluted"] },
@@ -520,13 +525,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     alsoTopics: ["arrhythmia"],
     title: "Collapse at the pool",
     stem:
-      "A 15 year old girl collapsed while climbing out of the pool at swim practice. Her coach saw her fall and jerk her arms for about 15 seconds. She was pale and woke within a minute. She was not confused afterward. Two months ago she fainted when her alarm clock went off. Her uncle drowned at age 30. HR 58, BP 112/68, RR 16, SpO2 99%. Glucose 5.4 mmol/L. Her exam is normal.",
+      "A 15-year-old girl collapsed while climbing out of the pool at swim practice. Her coach saw her fall and jerk her arms for about 15 seconds. She was pale and woke within a minute. She was not confused afterward. Two months ago she fainted when her alarm clock went off. Her uncle drowned at age 30. Her O2 sat is 99%. Glucose 5.4 mmol/L. Her exam is normal.",
+    vitals: { pulse: "58/minute", resp: "16/minute", bp: "112/68 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that suggest this was not an epileptic seizure.",
+        prompt: "What features suggest this was not an epileptic seizure?",
         accept: [
           { id: "brief", text: "Brief jerking of about 15 seconds", match: ["brief", "short", "15 second"] },
           { id: "noconfusion", text: "Rapid recovery without postictal confusion", match: ["postictal", "no confusion", "rapid recovery", "quick recovery", "not confused"] },
@@ -543,8 +549,14 @@ export const SEIZURES_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which single investigation is most important in the ED? Select one.",
-        options: ["12 lead ECG", "CT head", "EEG", "Urine drug screen", "Serum prolactin"],
+        prompt: "Which of the following investigations is most important in the emergency department?",
+        options: [
+          "12 lead ECG",
+          "Noncontrast CT head",
+          "Serum prolactin",
+          "Sleep deprived EEG",
+          "Urine drug screen",
+        ],
         correct: 0,
         explanation:
           "Every patient with a first seizure or collapse needs an ECG. It is cheap and finds long QT, Brugada pattern, pre excitation and hypertrophic cardiomyopathy. Missing a channelopathy can be fatal. CT and EEG would not identify this cause.",
@@ -570,7 +582,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE management steps before she leaves the ED.",
+        prompt: "What management steps are needed before she leaves the emergency department?",
         accept: [
           { id: "bb", text: "Start a beta blocker such as nadolol or propranolol", match: ["beta blocker", "nadolol", "propranolol", "bb"] },
           { id: "monitor", text: "Cardiac monitoring and cardiology consultation or admission", match: ["cardiology", "cardiologist", "electrophysiology", "admit", "monitor", "telemetry"] },
@@ -596,13 +608,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     topic: "seizures",
     title: "Found on the kitchen floor",
     stem:
-      "A 71 year old man was found on his kitchen floor by his daughter this morning. He does not remember what happened. He was well last night. He takes apixaban for atrial fibrillation and metoprolol. You work in Ontario. He is now alert and oriented but tired. HR 84 irregular, BP 148/84, RR 16, SpO2 96%, temperature 36.9 C. He has a bite mark on the lateral tongue, wet trousers, and holds his right arm internally rotated. He cannot externally rotate the shoulder.",
+      "A 71-year-old man was found on his kitchen floor by his daughter this morning. He does not remember what happened. He was well last night. He takes apixaban for atrial fibrillation and metoprolol. You work in Ontario. He is now alert and oriented but tired. His O2 sat is 96%. He has a bite mark on the lateral tongue, wet trousers, and holds his right arm internally rotated. He cannot externally rotate the shoulder.",
+    vitals: { temperature: "36.9°C", pulse: "84/minute irregular", resp: "16/minute", bp: "148/84 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings in this case that suggest the event was a seizure.",
+        prompt: "What findings in this case suggest the event was a seizure?",
         accept: [
           { id: "tongue", text: "Lateral tongue bite", match: ["tongue"] },
           { id: "incont", text: "Urinary incontinence", match: ["incontinence", "incontinent", "wet", "urinary", "urine"] },
@@ -632,7 +645,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations to find the cause of this likely first seizure.",
+        prompt: "What investigations would find the cause of this likely first seizure?",
         accept: [
           { id: "ct", text: "Urgent non contrast CT head, given anticoagulation and age", match: ["ct head", "ct brain", "head ct", "ct scan", "ct"] },
           { id: "glucose", text: "Glucose", match: ["glucose", "sugar"] },
@@ -653,7 +666,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "His CT shows an old left frontal infarct and no acute findings. Labs are normal. He is back to baseline. He drives daily.",
-        prompt: "List TWO things you must tell him or do about driving.",
+        prompt: "What must you tell him or do about driving?",
         accept: [
           { id: "nodrive", text: "He must not drive until cleared. That is at least 3 months for a single unprovoked seizure, and longer if epilepsy is diagnosed", match: ["not drive", "no driving", "stop driving", "avoid driving", "3 month", "three month", "6 month", "six month"] },
           { id: "report", text: "Report to the Ministry of Transportation as required under the Highway Traffic Act", match: ["report", "ministry", "mto", "highway traffic act"] },
@@ -676,26 +689,27 @@ export const SEIZURES_SAMPS: Samp[] = [
     topic: "seizures",
     title: "Young adult after an event at a party",
     stem:
-      "A 24 year old man had a witnessed generalized tonic clonic seizure lasting 2 minutes at a friend's apartment at 01:00. He had been awake for 26 hours and had 4 beers. He denies drug use. He has no past history. He is now fully alert, 3 hours later, with a normal neurological exam. HR 88, BP 128/76, RR 14, SpO2 99%, temperature 36.8 C. He is a commercial truck driver. He also enjoys rock climbing and lake swimming.",
+      "A 24-year-old man had a witnessed generalized tonic clonic seizure lasting 2 minutes at a friend's apartment at 01:00. He had been awake for 26 hours and had 4 beers. He denies drug use. He has no past history. He is now fully alert, 3 hours later, with a normal neurological exam. His O2 sat is 99%. He is a commercial truck driver. He also enjoys rock climbing and lake swimming.",
+    vitals: { temperature: "36.8°C", pulse: "88/minute", resp: "14/minute", bp: "128/76 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "menu",
         select: 3,
-        prompt: "Which THREE investigations are most appropriate in the ED? Select three.",
+        prompt: "Which of the following investigations are most appropriate in the emergency department?",
         options: [
-          "Capillary glucose",
-          "Serum sodium",
-          "Lumbar puncture",
-          "Serum prolactin",
-          "Urine drug screen",
-          "CBC",
-          "Neuroimaging, CT in the ED or early outpatient MRI",
-          "Chest X-ray",
           "Antiseizure drug levels",
           "Blood cultures",
+          "Capillary glucose",
+          "Chest radiograph",
+          "Complete blood count",
+          "Lumbar puncture",
+          "Neuroimaging, CT or early MRI",
+          "Serum prolactin",
+          "Serum sodium",
+          "Urine drug screen",
         ],
-        correct: [0, 1, 6],
+        correct: [2, 8, 6],
         explanation:
           "Glucose and sodium are the highest yield labs after a first seizure. Neuroimaging is recommended. CT in the ED is reasonable, or early MRI if follow up is reliable. LP is only for fever, meningism or immunosuppression. Routine drug screens and prolactin rarely change ED management.",
         keyFeature: { topic: "seizures", n: 6 },
@@ -705,7 +719,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO outpatient investigations to arrange.",
+        prompt: "What outpatient investigations would you arrange?",
         accept: [
           { id: "eeg", text: "EEG", match: ["eeg", "electroencephalogram"] },
           { id: "mri", text: "MRI brain", match: ["mri"] },
@@ -719,15 +733,15 @@ export const SEIZURES_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which statement about starting an antiseizure medication today is most accurate? Select one.",
+        prompt: "Given his normal examination, which of the following best describes starting an antiseizure medication today?",
         options: [
-          "It is not routinely needed after a single unprovoked seizure with a normal exam",
-          "Levetiracetam should be started because he drives commercially",
-          "Phenytoin should be started to prevent status epilepticus",
-          "Treatment reduces long term remission rates if delayed",
-          "Valproate is the drug of choice for a man of his age",
+          "Delaying treatment lowers long term remission",
+          "Not routinely needed after a single unprovoked seizure",
+          "Start levetiracetam because he drives a commercial truck",
+          "Start phenytoin to prevent status epilepticus",
+          "Start valproate as the drug of choice at his age",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Immediate treatment reduces early recurrence but does not change long term remission. For most patients with a single unprovoked seizure the decision can wait for neurology. Occupation affects the discussion but is not an ED indication by itself.",
         keyFeature: { topic: "seizures", n: 6 },
@@ -737,7 +751,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE pieces of advice about high risk activities.",
+        prompt: "What advice would you give about high risk activities?",
         accept: [
           { id: "drive", text: "No driving until cleared by neurology and the licensing authority", match: ["drive", "driving", "licence", "license", "no driving", "not drive", "no drive", "avoid driving", "stop driving"] },
           { id: "commercial", text: "Commercial licence restricted for longer, often 12 months", match: ["commercial", "truck", "12 month", "twelve month"] },
@@ -777,24 +791,25 @@ export const SEIZURES_SAMPS: Samp[] = [
     topic: "seizures",
     title: "Woman with a seizure at the mall",
     stem:
-      "A 36 year old woman with longstanding generalized epilepsy had a typical tonic clonic seizure at a shopping mall. It lasted 1 minute. She takes phenytoin 300 mg daily. She has been seizure free for 2 years. She ran out of pills 4 days ago while waiting for a refill. She is now back to baseline. HR 84, BP 118/72, SpO2 99%, temperature 36.7 C. Neurological exam is normal. There is no head injury. She is not pregnant by history and has an IUD.",
+      "A 36-year-old woman with longstanding generalized epilepsy had a typical tonic clonic seizure at a shopping mall. It lasted 1 minute. She takes phenytoin 300 mg daily. She has been seizure free for 2 years. She ran out of pills 4 days ago while waiting for a refill. She is now back to baseline. Her O2 sat is 99%. Neurological exam is normal. There is no head injury. She is not pregnant by history and has an IUD.",
+    vitals: { temperature: "36.7°C", pulse: "84/minute", bp: "118/72 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO investigations are most appropriate? Select two.",
+        prompt: "Which of the following investigations are most appropriate for this patient?",
         options: [
-          "Serum phenytoin level",
-          "Capillary glucose",
-          "CT head",
-          "Lumbar puncture",
-          "EEG in the ED",
-          "MRI brain",
-          "Serum prolactin",
           "Blood cultures",
+          "Capillary glucose",
+          "EEG in the ED",
+          "Head CT scan",
+          "Lumbar puncture",
+          "MRI brain",
+          "Serum phenytoin level",
+          "Serum prolactin",
         ],
-        correct: [0, 1],
+        correct: [6, 1],
         explanation:
           "A typical breakthrough seizure with a clear cause and full recovery needs little testing. A phenytoin level confirms the likely low level and guides reloading. Glucose is quick and cheap. CT is only for new focal findings, head injury, a change in seizure pattern or prolonged recovery.",
         keyFeature: { topic: "seizures", n: 7 },
@@ -819,7 +834,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO other precipitants of breakthrough seizures to ask about.",
+        prompt: "What other precipitants of breakthrough seizures would you ask about?",
         accept: [
           { id: "sleep", text: "Sleep deprivation", match: ["sleep"] },
           { id: "etoh", text: "Alcohol use or withdrawal", match: ["alcohol", "etoh", "drinking"] },
@@ -839,7 +854,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO practical steps at discharge to prevent recurrence.",
+        prompt: "What practical steps at discharge would prevent recurrence?",
         accept: [
           { id: "rx", text: "Provide a prescription or bridging supply", match: ["prescription", "bridging", "supply", "refill", "rx"] },
           { id: "pharm", text: "Arrange automatic refills or pharmacy reminders", match: ["pharmacy", "pharmacist", "blister", "reminder"] },
@@ -864,13 +879,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     alsoTopics: ["pediatric-fever"],
     title: "Toddler after shaking at daycare",
     stem:
-      "A 20 month old girl is brought from daycare after she stiffened and shook all four limbs for about 2 minutes. She was sleepy for 10 minutes and is now playing and smiling. She has had a runny nose and fever since last night. She is fully immunized and has no past history. Temperature 39.6 C rectal, HR 142, RR 30, SpO2 98%. Weight 11 kg. She has clear rhinorrhea and red tympanic membranes without bulging. Her neck is supple. She has no rash. The neurological exam is normal.",
+      "A 20-month-old girl is brought from daycare after she stiffened and shook all four limbs for about 2 minutes. She was sleepy for 10 minutes and is now playing and smiling. She has had a runny nose and fever since last night. She is fully immunized and has no past history. Her O2 sat is 98%. She has clear rhinorrhea and red tympanic membranes without bulging. Her neck is supple. She has no rash. The neurological exam is normal.",
+    vitals: { temperature: "39.6°C rectal", pulse: "142/minute", resp: "30/minute", weight: "11 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of her history or exam that make this a simple febrile seizure.",
+        prompt: "What features of her history or exam make this a simple febrile seizure?",
         accept: [
           { id: "gen", text: "Generalized from the start, with no focal features", match: ["generalized", "generalised", "all four limb", "no focal", "not focal"] },
           { id: "short", text: "Lasted under 15 minutes", match: ["15 minute", "fifteen minute", "2 minute", "two minute", "short", "brief"] },
@@ -882,13 +898,13 @@ export const SEIZURES_SAMPS: Samp[] = [
         explanation:
           "A simple febrile seizure is generalized, lasts under 15 minutes, does not recur within 24 hours and occurs from 6 months to 5 years of age. She has recovered fully and her exam is normal. No blood tests, LP, EEG or imaging are needed. Evaluate the fever source as for any febrile child of her age.",
         keyFeature: { topic: "seizures", n: 8 },
-        source: "trekk-fs",
+        source: "aap-fs-long",
       },
       {
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that would make you consider a lumbar puncture in a child with a febrile seizure.",
+        prompt: "What features would make you consider a lumbar puncture in a child with a febrile seizure?",
         accept: [
           { id: "mening", text: "Meningeal signs such as neck stiffness", match: ["meningeal", "neck stiff", "nuchal", "kernig", "brudzinski", "meningism"] },
           { id: "notback", text: "Not returning to baseline or persistent drowsiness", match: ["baseline", "drowsy", "drowsiness", "lethargic", "lethargy", "altered", "not recover", "not returning", "not back"] },
@@ -908,7 +924,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Her parents ask for medicine for the fever. Name ONE antipyretic with a weight based dose for her.",
+        prompt: "Her parents ask for medicine for the fever. What antipyretic, with a weight based dose, would you give her?",
         accept: [
           { id: "acet", text: "Acetaminophen 15 mg/kg, so 165 mg orally", match: ["acetaminophen 15 mg/kg", "acetaminophen 15mg/kg", "acetaminophen 160", "acetaminophen 165", "tylenol 160", "tylenol 15 mg/kg"] },
           { id: "ibu", text: "Ibuprofen 10 mg/kg, so 110 mg orally", match: ["ibuprofen 10 mg/kg", "ibuprofen 10mg/kg", "ibuprofen 100", "ibuprofen 110", "advil 10 mg/kg"] },
@@ -917,13 +933,13 @@ export const SEIZURES_SAMPS: Samp[] = [
         explanation:
           "Dose antipyretics by weight. Acetaminophen is 15 mg/kg every 4 to 6 hours. Ibuprofen is 10 mg/kg every 6 to 8 hours. ASA is avoided in children because of Reye syndrome. Antipyretics improve comfort but do not prevent febrile seizures.",
         keyFeature: { topic: "pediatric-fever", n: 8 },
-        source: "trekk-fs",
+        source: "aap-fs-long",
       },
       {
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE key points to tell her parents at discharge.",
+        prompt: "What key points would you tell her parents at discharge?",
         accept: [
           { id: "benign", text: "Febrile seizures are common and do not cause brain damage", match: ["brain damage", "benign", "common", "harmless", "no lasting", "no brain damage", "not harmful", "not cause brain damage"] },
           { id: "recur", text: "About 1 in 3 children will have another febrile seizure", match: ["recur", "another seizure", "30%", "1 in 3", "third", "again"] },
@@ -937,10 +953,10 @@ export const SEIZURES_SAMPS: Samp[] = [
         explanation:
           "Education is the main treatment. Recurrence is about 30 percent and is higher if the first seizure occurs before 18 months. Daily or intermittent anticonvulsants are not recommended. Parents need first aid and when to call 911.",
         keyFeature: { topic: "seizures", n: 8 },
-        source: "trekk-fs",
+        source: "aap-fs-long",
       },
     ],
-    sources: [S.trekkFs, S.aapFs],
+    sources: [S.aapFsLong, S.aapFs],
     ...META,
   },
 
@@ -950,7 +966,8 @@ export const SEIZURES_SAMPS: Samp[] = [
     topic: "seizures",
     title: "Infant with episodes of crying and jerks",
     stem:
-      "A 6 month old boy is brought in by his parents for colic. For 2 weeks he has had clusters of sudden head drops with his arms flung up, about 10 at a time, mostly on waking. He cries afterward. He no longer smiles or reaches for toys as he did at 4 months. Two hypopigmented patches are seen on his back. HR 128, RR 32, temperature 36.9 C. Weight 7.6 kg. He is well between clusters.",
+      "A 6-month-old boy is brought in by his parents for colic. For 2 weeks he has had clusters of sudden head drops with his arms flung up, about 10 at a time, mostly on waking. He cries afterward. He no longer smiles or reaches for toys as he did at 4 months. Two hypopigmented patches are seen on his back. He is well between clusters.",
+    vitals: { temperature: "36.9°C", pulse: "128/minute", resp: "32/minute", weight: "7.6 kg" },
     questions: [
       {
         id: "q1",
@@ -973,7 +990,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO investigations or referrals you arrange urgently.",
+        prompt: "What investigations or referrals would you arrange urgently?",
         accept: [
           { id: "eeg", text: "EEG within days, looking for hypsarrhythmia", match: ["eeg", "hypsarrhythmia"] },
           { id: "neuro", text: "Urgent paediatric neurology referral", match: ["neurology", "neurologist"] },
@@ -989,9 +1006,15 @@ export const SEIZURES_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which investigation is most likely to show the underlying cause of his spasms? Select one.",
-        options: ["MRI brain", "EEG", "CT head", "Lumbar puncture", "Serum ammonia and lactate", "Skull X-ray"],
-        correct: 0,
+        prompt: "Which of the following investigations is most likely to show the underlying cause of his spasms?",
+        options: [
+          "CT of the head",
+          "EEG in the ED",
+          "Lumbar puncture",
+          "Metabolic screen",
+          "MRI brain",
+        ],
+        correct: 4,
         explanation:
           "The EEG confirms the syndrome by showing hypsarrhythmia, but it does not show the cause. MRI shows the cortical tubers and subependymal nodules of tuberous sclerosis and most other structural causes. CT misses many of these lesions and adds radiation. Metabolic tests and LP are reserved for infants with no structural cause. Vigabatrin is first line when tuberous sclerosis is the cause.",
         keyFeature: { topic: "seizures", n: 6 },
@@ -1009,13 +1032,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Seizure in a man who stopped drinking",
     stem:
-      "A 49 year old man had a witnessed generalized seizure lasting 1 minute at a shelter. He usually drinks 20 standard drinks a day. He had his last drink 30 hours ago because he ran out of money. This is his first seizure. He is now alert and tremulous. HR 118, BP 164/98, RR 20, SpO2 97%, temperature 37.8 C. He is sweating, and a CIWA-Ar score is 18. Glucose 4.6 mmol/L. There is a small abrasion over his left temple.",
+      "A 49-year-old man had a witnessed generalized seizure lasting 1 minute at a shelter. He usually drinks 20 standard drinks a day. He had his last drink 30 hours ago because he ran out of money. This is his first seizure. He is now alert and tremulous. His O2 sat is 97%. He is sweating, and a CIWA-Ar score is 18. Glucose 4.6 mmol/L. There is a small abrasion over his left temple.",
+    vitals: { temperature: "37.8°C", pulse: "118/minute", resp: "20/minute", bp: "164/98 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO immediate medications. Include the dose and route for each.",
+        prompt: "What immediate medications would you give, with the dose and route for each?",
         accept: [
           { id: "diaz", text: "Diazepam 10 to 20 mg IV or PO, repeated to CIWA-Ar under 10", match: ["diazepam 10", "diazepam 20", "valium 10", "valium 20"] },
           { id: "lzp", text: "Lorazepam 2 to 4 mg IV or SL", match: ["lorazepam 2", "lorazepam 4", "ativan 2", "ativan 4"] },
@@ -1030,17 +1054,17 @@ export const SEIZURES_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate imaging decision? Select one.",
+        prompt: "Which of the following is the most appropriate imaging decision for this patient?",
         options: [
-          "CT head because this is his first seizure and he has a head abrasion",
-          "No imaging because alcohol withdrawal explains the seizure",
+          "CT head in the emergency department",
+          "CT head only if a second seizure occurs",
           "MRI brain as an outpatient only",
-          "Skull X-ray",
-          "CT head only if he has a second seizure",
+          "Skull X-ray series in the emergency department",
+          "No imaging for a presumed withdrawal seizure",
         ],
         correct: 0,
         explanation:
-          "A first alcohol related seizure should not be assumed to be withdrawal. People who drink heavily fall often and have high rates of subdural hematoma. A first seizure, head trauma or focal findings each justify CT.",
+          "A first alcohol related seizure should not be assumed to be withdrawal. People who drink heavily fall often and have high rates of subdural hematoma. A first seizure, head trauma or focal findings each justify CT. He has both a first seizure and a head abrasion.",
         keyFeature: { topic: "seizures", n: 6 },
         source: "acep",
       },
@@ -1048,7 +1072,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO other conditions to look for as the cause of his seizure or fever.",
+        prompt: "What other conditions would you look for as the cause of his seizure or fever?",
         accept: [
           { id: "sdh", text: "Intracranial hemorrhage such as subdural hematoma", match: ["subdural", "hemorrhage", "haemorrhage", "bleed", "sdh", "hematoma"] },
           { id: "hypoNa", text: "Hyponatremia", match: ["sodium", "hyponatremia"] },
@@ -1065,7 +1089,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "He wants to leave after his CT is normal. List TWO factors that make him high risk for complicated withdrawal.",
+        prompt: "He wants to leave after his CT is normal. What factors make him high risk for complicated withdrawal?",
         accept: [
           { id: "seizure", text: "Withdrawal seizure", match: ["seizure"] },
           { id: "ciwa", text: "High CIWA-Ar score despite treatment", match: ["ciwa", "high score"] },
@@ -1091,7 +1115,8 @@ export const SEIZURES_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Confusion and a strange smell",
     stem:
-      "A 52 year old woman is brought in by her husband. For 3 days she has had fever and headache. Today she said she smelled burning rubber, then stared and smacked her lips for 1 minute, then had a generalized seizure. She is now drowsy and confused, and cannot name objects. HR 110, BP 136/82, RR 18, SpO2 97%, temperature 38.7 C. Weight 70 kg. Glucose 6.5 mmol/L. Sodium 136 mmol/L. There is no rash. Neck is mildly stiff.",
+      "A 52-year-old woman is brought in by her husband. For 3 days she has had fever and headache. Today she said she smelled burning rubber, then stared and smacked her lips for 1 minute, then had a generalized seizure. She is now drowsy and confused, and cannot name objects. Her O2 sat is 97%. Glucose 6.5 mmol/L. Sodium 136 mmol/L. There is no rash. Neck is mildly stiff.",
+    vitals: { temperature: "38.7°C", pulse: "110/minute", resp: "18/minute", bp: "136/82 mmHg", weight: "70 kg" },
     questions: [
       {
         id: "q1",
@@ -1110,7 +1135,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "Name the key medication to start now. Include the dose.",
+        prompt: "What key medication would you start now, including the dose?",
         accept: [
           { id: "acv", text: "Acyclovir 10 mg/kg IV every 8 hours, so 700 mg", match: ["acyclovir 10 mg/kg", "acyclovir 10mg/kg", "acyclovir 700", "aciclovir 10 mg/kg", "aciclovir 700"] },
         ],
@@ -1127,7 +1152,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations to confirm the cause of her seizure.",
+        prompt: "What investigations would confirm the cause of her seizure?",
         accept: [
           { id: "ct", text: "CT head before LP given reduced consciousness and focal signs", match: ["ct"] },
           { id: "lp", text: "Lumbar puncture with cell count, protein, glucose, culture", match: ["lumbar puncture", "lp", "csf"] },
@@ -1147,7 +1172,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "In the CT scanner she has another focal seizure that becomes generalized and lasts 4 minutes. She stops seizing after lorazepam 4 mg IV but has not recovered 20 minutes later.",
-        prompt: "Name ONE medication to prevent further seizures. Include the dose.",
+        prompt: "What medication, with its dose, would prevent further seizures?",
         accept: [
           { id: "lev", text: "Levetiracetam 60 mg/kg IV, so 4200 mg", match: ["levetiracetam 4200", "levetiracetam 60 mg/kg", "levetiracetam 60mg/kg", "keppra 60 mg/kg", "levetiracetam 4000", "levetiracetam 4 g"] },
           { id: "fos", text: "Fosphenytoin 20 mg PE/kg IV, so 1400 mg PE", match: ["fosphenytoin 1400", "fosphenytoin 20 mg", "fosphenytoin 20mg"] },
@@ -1171,13 +1196,14 @@ export const SEIZURES_SAMPS: Samp[] = [
     alsoTopics: ["pediatric-fever"],
     title: "Newborn with odd movements",
     stem:
-      "A 9 day old girl is brought in because she keeps smacking her lips and her right arm jerks rhythmically for about a minute at a time. She has had three episodes today. She is breastfed and was born at term by vaginal delivery. Her mother had a genital lesion at delivery that was not tested. She is feeding less and seems sleepy. HR 176, RR 58, SpO2 95%, temperature 38.2 C rectal. Weight 3.2 kg. The jerking does not stop when you hold her arm.",
+      "A 9-day-old girl is brought in because she keeps smacking her lips and her right arm jerks rhythmically for about a minute at a time. She has had three episodes today. She is breastfed and was born at term by vaginal delivery. Her mother had a genital lesion at delivery that was not tested. She is feeding less and seems sleepy. Her O2 sat is 95%. The jerking does not stop when you hold her arm.",
+    vitals: { temperature: "38.2°C rectal", pulse: "176/minute", resp: "58/minute", weight: "3.2 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that suggest these are seizures rather than jitteriness.",
+        prompt: "What features suggest these are seizures rather than jitteriness?",
         accept: [
           { id: "restraint", text: "Jerking does not stop with gentle restraint", match: ["restrain", "restraint", "restrained", "hold", "holding", "not stop", "not suppress", "not suppressible"] },
           { id: "oral", text: "Associated lip smacking or oral automatisms", match: ["lip", "automatism", "oral"] },
@@ -1195,7 +1221,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO bedside or rapid tests for reversible causes that you check first.",
+        prompt: "What bedside or rapid tests for reversible causes would you check first?",
         accept: [
           { id: "glucose", text: "Glucose", match: ["glucose", "sugar"] },
           { id: "ca", text: "Ionized calcium", match: ["calcium"] },
@@ -1213,7 +1239,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Glucose, calcium and sodium are normal. She has another seizure lasting 4 minutes.",
-        prompt: "List THREE antimicrobials or antiseizure medications you give now. Include the dose for each.",
+        prompt: "What antimicrobials or antiseizure medications would you give now, with the dose for each?",
         accept: [
           { id: "pb", text: "Phenobarbital 20 mg/kg IV, so 64 mg", match: ["phenobarbital 20 mg/kg", "phenobarbital 20mg/kg", "phenobarbital 64", "phenobarb 20 mg/kg", "phenobarbital 60"] },
           { id: "acv", text: "Acyclovir 20 mg/kg IV every 8 hours, so 64 mg", match: ["acyclovir 20 mg/kg", "acyclovir 20mg/kg", "acyclovir 64", "acyclovir 60"] },
@@ -1231,7 +1257,7 @@ export const SEIZURES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations to find the underlying cause.",
+        prompt: "What investigations would find the underlying cause?",
         accept: [
           { id: "lp", text: "Lumbar puncture with CSF HSV PCR", match: ["lumbar puncture", "lp", "csf"] },
           { id: "bc", text: "Blood culture", match: ["blood culture"] },
