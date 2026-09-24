@@ -44,6 +44,13 @@ Hard rules: original content only, never copy or paraphrase NCSBN items, test pl
 Work in chunks of about 10 items per file. Run: cd ${APP} && BATCH=${b} npx vitest run tests/bank.test.ts   until every test passes. Also check npx tsc --noEmit -p . 2>&1 | grep bank/${b} prints nothing.
 Return batch, the number of items written, whether BATCH=${b} tests pass, and short notes on anything uncertain.`
 
+const reworkPrompt = (b, what) => `You are reworking batch ${b} of the Preceptor: NCLEX-RN Prep item bank, in ${APP}. The batch is written and passes its gates, but part of it must be replaced: ${what}
+Follow ${APP}/docs/WRITER_BRIEF.md and docs/ITEM_SPEC.md for everything you write. Read docs/topic-plan.json entry "${b}" and docs/bank-plan.json entry "${b}". Keep the batch Client Needs totals exactly as planned, keep ids in place (a replaced case keeps its case id and item ids), and keep every other item unchanged. Delete any extra.ts in the folder.
+Write only inside ${APP}/src/bank/${b}/ and update ${APP}/docs/reviews/${b}-writer.md with a section "Rework" in house style (no em or en dashes, no semicolons). Do not run git. Never create files in tests/.
+Original content only. Real citations only, verified with WebFetch on PubMed, publisher or agency pages (WebSearch may be exhausted).
+Run: cd ${APP} && BATCH=${b} npx vitest run tests/bank.test.ts   until every test passes, and npx tsc --noEmit -p . 2>&1 | grep bank/${b} prints nothing.
+Return batch, the number of items you replaced, whether tests pass, and notes.`
+
 const plantPrompt = (b, i) => {
   const a = TW[i % 4], c = TW[(i + 1) % 4]
   const ids = b.startsWith('c') ? [`rn-${b}-9`, `rn-${b}-8`] : [`rn-${b}-91`, `rn-${b}-92`]
@@ -71,7 +78,7 @@ Return batch, the number of notes written, the number left empty, and whether te
 
 const results = await pipeline(
   BATCHES,
-  (b) => ((args.written || []).includes(b) ? { batch: b, items: 0, testsPass: true, notes: 'written in an earlier run' } : agent(writerPrompt(b), { label: `write:${b}`, phase: 'Write', schema: WRITER })),
+  (b) => (args.rework && args.rework[b]) ? agent(reworkPrompt(b, args.rework[b]), { label: `rework:${b}`, phase: 'Write', schema: WRITER }) : ((args.written || []).includes(b) ? { batch: b, items: 0, testsPass: true, notes: 'written in an earlier run' } : agent(writerPrompt(b), { label: `write:${b}`, phase: 'Write', schema: WRITER })),
   (w, b, i) => (w ? agent(plantPrompt(b, i), { label: `plant:${b}`, phase: 'Plant', effort: 'low' }).then((ids) => ({ w, ids })) : null),
   async (prev, b, i) => {
     if (!prev) return null
