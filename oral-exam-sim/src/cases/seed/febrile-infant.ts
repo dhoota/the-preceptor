@@ -30,8 +30,8 @@ export const febrileInfant: OralCase = {
       o2sat: "94% on room air",
       weight: "3.6 kg (7.9 lb)",
     },
-    medications: "None",
-    allergies: "None known",
+    medications: "Not recorded",
+    allergies: "Not recorded",
   },
   findings: [
     { id: "glucose", label: "Point of care glucose", result: "Capillary glucose 2.1 mmol/L." },

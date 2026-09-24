@@ -31,7 +31,7 @@ export const overdose: OralCase = {
       weight: "60 kg (132 lb), estimated",
     },
     medications: "Amitriptyline 50 mg",
-    allergies: "None known",
+    allergies: "Not recorded",
   },
   findings: [
     {
