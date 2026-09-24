@@ -77,9 +77,30 @@ const S = {
     id: "rosen",
     citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter on ophthalmology.",
   },
-  tintinalli: {
-    id: "tintinalli",
-    citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on eye emergencies and ocular trauma.",
+  zhou: {
+    id: "open-globe",
+    citation: "Zhou Y, DiSclafani M, Jeang L, Shah AA. Open globe injuries: review of evaluation, management, and surgical pearls. Clin Ophthalmol. 2022.",
+    url: "https://doi.org/10.2147/OPTH.S372011",
+  },
+  cochraneTon: {
+    id: "cochrane-ton",
+    citation: "Yu-Wai-Man P, Griffiths PG. Steroids for traumatic optic neuropathy. Cochrane Database Syst Rev. 2013.",
+    url: "https://doi.org/10.1002/14651858.CD006032.pub4",
+  },
+  cochraneTonSurgery: {
+    id: "cochrane-ton-surgery",
+    citation: "Yu-Wai-Man P, Griffiths PG. Surgery for traumatic optic neuropathy. Cochrane Database Syst Rev. 2013.",
+    url: "https://doi.org/10.1002/14651858.CD005024.pub3",
+  },
+  auHenkind: {
+    id: "consensual-photophobia",
+    citation: "Au YK, Henkind P. Pain elicited by consensual pupillary reflex: a diagnostic test for acute iritis. Lancet. 1981.",
+    url: "https://doi.org/10.1016/s0140-6736(81)91492-6",
+  },
+  ggcGlue: {
+    id: "ggc-tissue-adhesive",
+    citation: "NHS Greater Glasgow and Clyde Paediatric Emergency Medicine. Tissue adhesives: management of accidental injury. Clinical guideline. 2015.",
+    url: "https://www.clinicalguidelines.scot.nhs.uk/ggc-paediatric-guidelines/ggc-paediatric-guidelines/emergency-medicine/tissue-adhesives-management-of-accidental-injury/",
   },
 } satisfies Record<string, Source>;
 
@@ -184,9 +205,9 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Visual acuity is recorded first for every eye complaint, and she cannot open her eyes because of pain and spasm. A drop of topical anesthetic in each eye lets her cooperate with acuity testing and the rest of the examination. Pupils, lid eversion, pressure and fluorescein staining all follow. Starting with them leaves no baseline acuity if the course later changes.",
+          "Visual acuity is recorded first for every eye complaint, and she cannot open her eyes because of pain and spasm. A drop of topical anesthetic in each eye lets her cooperate with acuity testing and the rest of the examination. Pupils, lid eversion, pressure and fluorescein staining all follow. Starting with them leaves no baseline acuity if the course later changes. A topical anesthetic is suitable here because nothing suggests a penetrating injury, but it is never sent home with her.",
         keyFeature: { topic: "eye", n: 3 },
-        source: "tintinalli",
+        source: "corneal-abrasion",
       },
       {
         id: "q2",
@@ -242,7 +263,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         source: "corneal-abrasion",
       },
     ],
-    sources: [S.tintinalli, S.rosen, S.aaoKeratitis, S.wipperman],
+    sources: [S.rosen, S.aaoKeratitis, S.wipperman],
     ...META,
   },
   {
@@ -577,68 +598,67 @@ export const EYE_S37_SAMPS: Samp[] = [
   {
     id: "eye-23",
     topic: "eye",
-    title: "Strap snapped into the eye",
+    title: "Strap hook to the brow",
     stem:
-      "A 38-year-old man presents to the emergency department 1 hour after a bungee cord holding a load in his truck snapped and struck his left eye. He has left eye pain and blurred vision. He took ibuprofen 400 mg at home. He has no medical conditions and takes no other medications. The left upper lid is swollen. There is a 4 mm subconjunctival hemorrhage on the temporal side of the left eye. The triage note reads subconjunctival hemorrhage, low acuity.",
+      "A 38-year-old man presents to the emergency department 1 hour after the metal hook of a bungee cord snapped back and struck his left eyebrow while he was loading his truck. He did not lose consciousness. He noticed at once that the vision in his left eye was dim and that colours looked washed out. He has no medical conditions and takes no medications. There is a 1 cm abrasion with swelling over the lateral left brow. The left lids are mildly swollen. The globe is white and there is no proptosis.",
     vitals: { temperature: "36.6°C oral", pulse: "88/minute", resp: "16/minute", bp: "138/86 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        update:
-          "Visual acuity is 20/40 on the left and 20/20 on the right. Pupils are equal and reactive. Extraocular movements are full. With a penlight, no blood level is seen in the anterior chamber.",
-        prompt: "Which of the following is the most appropriate next step in the assessment of his left eye?",
+        update: "Visual acuity is 20/200 on the left and 20/20 on the right. Eye movements are full and painless.",
+        prompt: "Which of the following is the most important next part of the examination of his left eye?",
         options: [
-          "CT of the orbits",
           "Dilated fundus examination",
-          "Discharge with cool compresses",
-          "Ocular ultrasound at the bedside",
-          "Slit lamp examination",
+          "Fluorescein staining of the cornea",
+          "Swinging flashlight pupil test",
+          "Tonometry of both eyes",
+          "Upper lid eversion",
         ],
-        correct: 4,
+        correct: 2,
         explanation:
-          "A blunt blow with reduced acuity needs a slit lamp examination. A microhyphema, with red cells circulating in the chamber, is often invisible to a penlight. A subconjunctival hemorrhage after trauma is a marker of injury to the globe, not a diagnosis. Discharge without the slit lamp would miss hyphema, traumatic iritis and corneal injury. CT, ultrasound and a dilated view may follow, but dilation before assessing the chamber is premature.",
-        keyFeature: { topic: "eye", n: 5 },
-        source: "hyphema-review",
+          "Dim vision with washed out colours after a blow to the brow points to the optic nerve, and a relative afferent pupillary defect on the swinging flashlight test is the sign that shows it. It must be tested before any dilating drops, which abolish the pupil response. After serious eye trauma, the presence or absence of this defect is also one of the strongest predictors of final vision. A dilated fundus examination comes after the pupils are recorded. Fluorescein, lid eversion and tonometry look for surface injury or raised pressure, and a white eye without proptosis makes those less likely causes of his loss of vision.",
+        keyFeature: { topic: "eye", n: 3 },
+        source: "open-globe",
       },
       {
         id: "q2",
-        kind: "menu",
-        select: 3,
+        kind: "single",
         update:
-          "Slit lamp shows circulating red cells in the anterior chamber without a layered clot. The globe is intact. Intraocular pressure is 24 mmHg on the left and 15 mmHg on the right. The fundus is normal.",
-        prompt: "Which of the following are most appropriate in his discharge plan for this injury?",
+          "There is a left relative afferent pupillary defect. Slit lamp shows a clear cornea and a deep, quiet chamber. Pressures are 16 mmHg on the left and 15 mmHg on the right. The retina and optic disc look normal. CT of the orbits shows no fracture, foreign body or orbital hematoma.",
+        prompt: "Which of the following is the most likely cause of the loss of vision in his left eye?",
         options: [
-          "Acetaminophen for pain",
-          "Ibuprofen for pain",
-          "Ophthalmology review within 24 hours",
-          "Pressure patch over the left eye",
-          "Return to heavy lifting tomorrow",
-          "Rigid shield over the left eye",
-          "Tetracaine drops for home use",
-          "Warm compresses to the eye",
+          "Central retinal artery occlusion",
+          "Commotio retinae",
+          "Retinal detachment",
+          "Traumatic optic neuropathy",
+          "Vitreous hemorrhage",
         ],
-        correct: [0, 2, 5],
+        correct: 3,
         explanation:
-          "A microhyphema can rebleed, most often in the first 5 days. Acetaminophen avoids the antiplatelet effect of ibuprofen and other NSAIDs. A rigid shield protects the eye without pressing on it, unlike a pressure patch. Ophthalmology rechecks the pressure and chamber the next day and adds a cycloplegic or steroid as needed. Heavy lifting and strain are avoided early. Home tetracaine delays corneal healing and hides worsening. Warm compresses do nothing for blood in the chamber.",
-        keyFeature: { topic: "eye", n: 5 },
-        source: "hyphema-review",
+          "Reduced acuity and colour vision with a relative afferent pupillary defect, a normal retina and a normal optic disc after a blow to the brow is traumatic optic neuropathy. The force is carried to the optic nerve in its bony canal, where swelling injures it, and the disc looks normal at first. A central retinal artery occlusion makes the retina pale. Commotio retinae whitens the injured retina. A retinal detachment and a vitreous hemorrhage are seen on the fundus examination, and his is normal.",
+        keyFeature: { topic: "eye", n: 3 },
+        source: "cochrane-ton-surgery",
       },
       {
         id: "q3",
         kind: "single",
-        update:
-          "On day 3 he returns with sudden worse pain and vision in the left eye. There is now a 4 mm layered clot in the anterior chamber. Left intraocular pressure is 38 mmHg.",
-        prompt: "Which of the following complications has most likely occurred in this patient?",
-        options: ["Angle recession glaucoma", "Corneal blood staining", "Rebleeding into the chamber", "Retinal detachment", "Traumatic cataract"],
-        correct: 2,
+        prompt: "Which of the following is the most appropriate management of his optic nerve injury?",
+        options: [
+          "acetazolamide 500 mg IV",
+          "Lateral canthotomy at the bedside",
+          "methylprednisolone 30 mg/kg IV",
+          "Observation and ophthalmology review",
+          "Urgent optic canal decompression",
+        ],
+        correct: 3,
         explanation:
-          "A sudden rise in blood and pressure on day 3 is a secondary hemorrhage, which tends to occur between days 2 and 5 as the first clot retracts. Rebleeds are often larger and raise the pressure more than the first bleed. Angle recession glaucoma appears months to years later. Corneal blood staining follows a large hyphema with high pressure over days. Retinal detachment and cataract do not add blood to the chamber.",
-        keyFeature: { topic: "eye", n: 5 },
-        source: "cochrane-hyphema",
+          "Vision often recovers on its own after traumatic optic neuropathy. A Cochrane review found no convincing evidence that steroids add any benefit over observation, and some evidence of harm, so high dose methylprednisolone is not routine. A second Cochrane review found no evidence that surgical decompression of the optic canal helps, and surgery carries risks such as a cerebrospinal fluid leak. Lateral canthotomy treats a retrobulbar hemorrhage with a tense orbit and high pressure, which he does not have. Acetazolamide lowers eye pressure, and his is normal. He needs ophthalmology review and follow-up of his vision.",
+        keyFeature: { topic: "eye", n: 3 },
+        source: "cochrane-ton",
       },
     ],
-    sources: [S.walton, S.cochraneHyphema],
+    sources: [S.zhou, S.cochraneTonSurgery, S.cochraneTon],
     ...META,
   },
   {
@@ -710,10 +730,10 @@ export const EYE_S37_SAMPS: Samp[] = [
   {
     id: "eye-25",
     topic: "eye",
-    title: "Fall against a coffee table",
+    title: "Celebration that ended early",
     stem:
-      "An 81-year-old woman is brought to the emergency department by ambulance 90 minutes after she tripped and struck her right eye on the corner of a coffee table. She had cataract surgery in the right eye 2 years ago. She takes apixaban for atrial fibrillation. She has severe right eye pain and can only see hand motion with that eye. The right lids are swollen. There is a bulging subconjunctival hemorrhage around the whole cornea. The right pupil is teardrop shaped and points toward the 8 o'clock position.",
-    vitals: { temperature: "36.5°C oral", pulse: "94/minute irregular", resp: "18/minute", bp: "158/82 mmHg", o2sat: "96% on room air" },
+      "A 72-year-old man presents to the emergency department 90 minutes after the cork from a bottle of sparkling wine struck his right eye at a family dinner. He had cataract surgery in the right eye 2 years ago. He takes low-dose ASA and ramipril. He has severe right eye pain and can only see hand motion with that eye. The right lids are swollen. There is a bulging subconjunctival hemorrhage around the whole cornea. The right pupil is teardrop shaped and points toward the 8 o'clock position.",
+    vitals: { temperature: "36.6°C oral", pulse: "92/minute", resp: "18/minute", bp: "152/84 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
@@ -728,9 +748,9 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "A 360 degree bulging subconjunctival hemorrhage and a peaked pupil after blunt trauma to an eye with a surgical wound mean an open globe until proven otherwise. A rigid shield resting on the orbital bones protects the eye without any pressure on it. A pressure patch, gauze or taping can press on the globe and push contents out through the wound. Ointment should not go into an open globe.",
+          "A dense bulging subconjunctival hemorrhage around the whole cornea and a peaked pupil after blunt trauma to an eye with a surgical wound mean an open globe until proven otherwise. A rigid shield resting on the orbital bones protects the eye without any pressure on it. A pressure patch, gauze or taping can press on the globe and push contents out through the wound. Ointment should not go into an open globe.",
         keyFeature: { topic: "eye", n: 5 },
-        source: "tintinalli",
+        source: "open-globe",
       },
       {
         id: "q2",
@@ -748,13 +768,13 @@ export const EYE_S37_SAMPS: Samp[] = [
         explanation:
           "Tonometry presses on the cornea and can push intraocular contents through a rupture, so it is deferred when an open globe is suspected. Acuity, pupils, fields and gentle inspection need no pressure on the eye and give baseline and prognostic information. A relative afferent defect in an injured eye predicts a poor outcome and should be recorded.",
         keyFeature: { topic: "eye", n: 3 },
-        source: "tintinalli",
+        source: "open-globe",
       },
       {
         id: "q3",
         kind: "menu",
         select: 4,
-        prompt: "Which of the following are appropriate in her emergency department management while ophthalmology is on the way?",
+        prompt: "Which of the following are appropriate in his emergency department management while ophthalmology is on the way?",
         options: [
           "Antiemetic such as ondansetron",
           "B-scan ultrasound of the globe",
@@ -767,29 +787,29 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: [0, 2, 3, 6],
         explanation:
-          "Vomiting raises pressure in the eye and can push contents out, so an antiemetic is given early. CT of the orbits looks for a rupture site and foreign body. Broad IV antibiotics such as vancomycin and ceftazidime lower the risk of endophthalmitis, and tetanus status is updated. Ultrasound presses on the globe and is avoided. MRI is not a first test and is unsafe with metal. Patches and topical drops are avoided in an open globe.",
+          "Vomiting raises pressure in the eye and can push contents out, so an antiemetic is given early. CT of the orbits looks for a rupture site and foreign body. Broad IV antibiotics such as vancomycin and ceftazidime lower the risk of endophthalmitis, and tetanus status is updated. Ultrasound presses on the globe and is avoided. MRI is not a first test and is slower than CT. Patches and topical drops are avoided in an open globe.",
         keyFeature: { topic: "eye", n: 5 },
-        source: "rosen",
+        source: "open-globe",
       },
       {
         id: "q4",
         kind: "single",
         prompt: "Which of the following history details most increases the risk that this injury has ruptured the globe?",
         options: [
-          "Age of 81 years",
-          "Apixaban anticoagulation",
-          "Blunt impact on a table corner",
+          "Age of 72 years",
           "Cataract surgery 2 years ago",
-          "Fall from standing height",
+          "Daily low-dose ASA",
+          "Impact from a flying cork",
+          "Ramipril for hypertension",
         ],
-        correct: 3,
+        correct: 1,
         explanation:
-          "Old surgical incisions are weak points, and blunt force often ruptures the globe at a prior cataract wound. Apixaban raises the risk of bleeding but not of rupture. The table corner is the mechanism in any case, and a fall from standing is a common low energy event. Age alone is a weaker factor than a surgical wound in that eye.",
+          "Incisions from earlier eye surgery, such as cataract surgery, are weak points that are more likely to open when the eye is struck. Low-dose ASA raises the risk of bleeding but not of rupture. Ramipril has no effect on the wall of the globe. The cork is the mechanism in any case, and the question is what made this eye vulnerable to it. Age alone is a weaker factor than a surgical wound in that eye.",
         keyFeature: { topic: "eye", n: 2 },
-        source: "rosen",
+        source: "open-globe",
       },
     ],
-    sources: [S.tintinalli, S.rosen],
+    sources: [S.zhou],
     ...META,
   },
   {
@@ -1418,9 +1438,9 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Cyanoacrylate bonds to lashes and skin, and warm moist compresses with ointment loosen it over hours to days while the lids are opened gently. Trimming lashes helps. Forcible separation tears the lid margin and can strip corneal epithelium. Acetone and ethanol are toxic to the cornea. Surgery is rarely needed because the lids usually open on their own within 1 to 4 days.",
+          "Cyanoacrylate bonds to lashes and skin, and washing with warm water and warm moist compresses loosen it while the lids are left to open gently. The eye usually opens without further action within 1 to 4 days. Trimming lashes can help. Forcible separation tears the lid margin and can strip corneal epithelium, so the lids are not pried open. Solvents such as acetone and ethanol are not used near the eye because they injure the cornea. Surgery is rarely needed.",
         keyFeature: { topic: "eye", n: 3 },
-        source: "tintinalli",
+        source: "ggc-tissue-adhesive",
       },
       {
         id: "q2",
@@ -1459,7 +1479,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         source: "corneal-abrasion",
       },
     ],
-    sources: [S.reddy, S.wipperman, S.tintinalli],
+    sources: [S.reddy, S.wipperman, S.ggcGlue],
     ...META,
   },
   {
@@ -1474,19 +1494,19 @@ export const EYE_S37_SAMPS: Samp[] = [
         id: "q1",
         kind: "single",
         update: "Visual acuity is 20/40 on the left and 20/20 on the right.",
-        prompt: "Which of the following slit lamp findings in the left eye would most change her management?",
+        prompt: "Which of the following bedside findings most suggests inflammation inside her left eye rather than a surface injury?",
         options: [
-          "Circulating red blood cells",
-          "Faint punctate epithelial staining",
-          "Mild pupil sphincter tears",
-          "Pigment on the lens capsule",
-          "White cells in the anterior chamber",
+          "Left eye pain with light in the right eye",
+          "Pain relieved by tetracaine drops",
+          "Redness of the bulbar conjunctiva",
+          "Tearing from the left eye",
+          "Watery discharge on the lashes",
         ],
         correct: 0,
         explanation:
-          "Red cells circulating in the chamber are a microhyphema, which can rebleed and raise pressure. Finding them adds rebleed precautions, a shield, avoidance of NSAIDs and close ophthalmology follow-up. A subconjunctival hemorrhage after a blow is the cue to look. White cells, sphincter tears and pigment on the lens are expected after blunt injury and fit traumatic iritis. Punctate staining is a minor surface finding.",
-        keyFeature: { topic: "eye", n: 5 },
-        source: "hyphema-review",
+          "Pain in the injured eye when light is shone only into the other eye is consensual photophobia. Light makes both pupils constrict, and moving an inflamed iris hurts, so this points to iritis rather than a corneal problem. Pain that settles with tetracaine drops points the other way, to a surface injury such as an abrasion. Conjunctival redness, tearing and watery discharge occur with both surface and intraocular problems and do not separate them.",
+        keyFeature: { topic: "eye", n: 1 },
+        source: "consensual-photophobia",
       },
       {
         id: "q2",
@@ -1530,7 +1550,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         source: "hyphema-review",
       },
     ],
-    sources: [S.walton, S.rosen],
+    sources: [S.auHenkind, S.rosen, S.walton],
     ...META,
   },
   {
@@ -1569,7 +1589,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         explanation:
           "After trauma, a subconjunctival hemorrhage is a marker of force to the globe, and hyphema, iritis, open globe and orbital fracture must be looked for. A bulging hemorrhage around the whole cornea raises concern for rupture. Coughing is a common spontaneous cause. One eye involvement, sharp borders and normal acuity fit a benign spontaneous bleed.",
         keyFeature: { topic: "eye", n: 5 },
-        source: "tintinalli",
+        source: "open-globe",
       },
       {
         id: "q3",
@@ -1590,7 +1610,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         source: "sch",
       },
     ],
-    sources: [S.tarlan, S.tintinalli],
+    sources: [S.tarlan, S.zhou],
     ...META,
   },
   {
@@ -1623,18 +1643,18 @@ export const EYE_S37_SAMPS: Samp[] = [
         kind: "single",
         update:
           "Visual acuity is 20/200 on the left and 20/40 on the right. The left pupil is 6 mm and nonreactive. The left cornea is hazy and the chamber shallow. Intraocular pressure is 56 mmHg on the left and 18 mmHg on the right.",
-        prompt: "Which of the following best explains the timing of her eye findings?",
+        prompt: "Which of the following antiemetics is most appropriate for her nausea while her eye is treated?",
         options: [
-          "Dehydration from vomiting",
-          "High dose prednisone",
-          "Hypoxia during the exacerbation",
-          "Nebulized ipratropium by mask",
-          "Salbutamol induced tachycardia",
+          "dimenhydrinate 50 mg IV",
+          "diphenhydramine 25 mg IV",
+          "ondansetron 4 mg IV",
+          "promethazine 12.5 mg IV",
+          "scopolamine 1.5 mg transdermal",
         ],
-        correct: 3,
+        correct: 2,
         explanation:
-          "Ipratropium from a face mask can settle on the eye and dilate the pupil, which triggers pupil block in a narrow angle. Her farsightedness points to a short eye with a crowded angle. Salbutamol may add by increasing aqueous production, but tachycardia is not the mechanism. Prednisone raises pressure only over weeks. Dehydration and hypoxia do not close the angle.",
-        keyFeature: { topic: "eye", n: 2 },
+          "Her acute angle closure followed nebulized ipratropium, an anticholinergic that dilated the pupil and closed a narrow angle. Drugs with anticholinergic effects can worsen or trigger pupil block, so the antiemetic must have none. Ondansetron has no anticholinergic action and settles the nausea and vomiting, which also strain the eye. Dimenhydrinate, diphenhydramine and promethazine are antihistamines with anticholinergic effects, and scopolamine is a pure anticholinergic, so each risks deepening the attack.",
+        keyFeature: { topic: "eye", n: 1 },
         source: "drug-acg",
       },
       {
