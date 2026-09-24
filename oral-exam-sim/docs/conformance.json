@@ -1,1 +1,6 @@
-{"note":"Batches that passed the format conformance pass. The single and menu question gates in tests/samp-quality.test.ts apply to these.","batches":[]}
+{
+ "note": "Batches that passed the format conformance pass. The single and menu question gates in tests/samp-quality.test.ts apply to these.",
+ "batches": [
+  "s02"
+ ]
+}

@@ -1,1 +1,158 @@
-{"note":"Keyed option text reworded during the format conformance pass, for option length parity only. The meaning must not change. Each entry is for physician review.","edits":{}}
+{
+ "note": "Keyed option text reworded during the format conformance pass, for option length parity only. The meaning must not change. Each entry is for physician review.",
+ "edits": {
+  "airway-02#q2": {
+   "batch": "s02",
+   "before": [
+    "Intubate now in the emergency department with a front of neck access kit open"
+   ],
+   "after": [
+    "Intubate now with a front of neck access kit open"
+   ]
+  },
+  "airway-03#q3": {
+   "batch": "s02",
+   "before": [
+    "Awake flexible bronchoscopic nasotracheal intubation with topical anesthesia and a prepared neck"
+   ],
+   "after": [
+    "Awake flexible bronchoscopic nasotracheal intubation"
+   ]
+  },
+  "airway-06#q3": {
+   "batch": "s02",
+   "before": [
+    "Identify and mark the cricothyroid membrane with ultrasound while she is positioned"
+   ],
+   "after": [
+    "Mark the cricothyroid membrane with ultrasound"
+   ]
+  },
+  "airway-08#q2": {
+   "batch": "s02",
+   "before": [
+    "Open the wound at the bedside by cutting the sutures and opening the skin and deep layers to evacuate the hematoma"
+   ],
+   "after": [
+    "Open the wound at the bedside to evacuate the hematoma"
+   ]
+  },
+  "airway-11#q2": {
+   "batch": "s02",
+   "before": [
+    "Ketamine may be used because it maintains blood pressure and has not been shown to worsen outcome in brain injury"
+   ],
+   "after": [
+    "Ketamine may be used for induction"
+   ]
+  },
+  "airway-13#q1": {
+   "batch": "s02",
+   "before": [
+    "A sustained waveform on continuous capnography over several breaths"
+   ],
+   "after": [
+    "Continuous capnography with a sustained waveform"
+   ]
+  },
+  "airway-14#q1": {
+   "batch": "s02",
+   "before": [
+    "Persistent GCS 7 with airway obstruction and recent vomiting"
+   ],
+   "after": [
+    "Persistent GCS 7, airway obstruction and recent vomiting"
+   ]
+  },
+  "airway-14#q3": {
+   "batch": "s02",
+   "before": [
+    "Magnesium potentiates nondepolarizing blockers, so rocuronium may last longer"
+   ],
+   "after": [
+    "Magnesium may prolong rocuronium blockade"
+   ]
+  },
+  "analgesia-sedation-01#q2": {
+   "batch": "s02",
+   "before": [
+    "Hydromorphone 1 mg IV, reassessed and repeated every 10 to 15 minutes until pain is controlled"
+   ],
+   "after": [
+    "Hydromorphone 1 mg IV, repeated every 10 to 15 minutes"
+   ]
+  },
+  "analgesia-sedation-03#q2": {
+   "batch": "s02",
+   "before": [
+    "Fascia iliaca compartment block with bupivacaine 0.25%, 30 mL"
+   ],
+   "after": [
+    "Fascia iliaca block with 30 mL bupivacaine 0.25%"
+   ]
+  },
+  "analgesia-sedation-04#q3": {
+   "batch": "s02",
+   "before": [
+    "20% lipid emulsion 1.5 mL/kg IV over 2 to 3 minutes, then an infusion of about 0.25 mL/kg/min"
+   ],
+   "after": [
+    "20% lipid 1.5 mL/kg IV bolus, then 0.25 mL/kg/min"
+   ]
+  },
+  "analgesia-sedation-06#q4": {
+   "batch": "s02",
+   "before": [
+    "Upper airway obstruction. Reposition with jaw thrust and consider an airway adjunct."
+   ],
+   "after": [
+    "Upper airway obstruction, jaw thrust, consider adjunct"
+   ]
+  },
+  "analgesia-sedation-07#q2": {
+   "batch": "s02",
+   "before": [
+    "Regional anesthesia without systemic sedation, such as a Bier block"
+   ],
+   "after": [
+    "Regional anesthesia without systemic sedation"
+   ]
+  },
+  "analgesia-sedation-08#q1": {
+   "batch": "s02",
+   "before": [
+    "Recent intake does not require a delay, and the mild runny nose slightly increases the risk of laryngospasm"
+   ],
+   "after": [
+    "Proceed now, noting a slightly higher laryngospasm risk"
+   ]
+  },
+  "analgesia-sedation-10#q2": {
+   "batch": "s02",
+   "before": [
+    "Continue buprenorphine, add non-opioid analgesia, and titrate a potent full agonist such as hydromorphone at higher than usual doses"
+   ],
+   "after": [
+    "Continue buprenorphine, add nonopioids, titrate full agonist"
+   ]
+  },
+  "analgesia-sedation-12#q2": {
+   "batch": "s02",
+   "before": [
+    "Naloxone 0.04 to 0.1 mg IV, repeated every 2 to 3 minutes until breathing improves"
+   ],
+   "after": [
+    "Naloxone 0.04 to 0.1 mg IV repeated to effect"
+   ]
+  },
+  "analgesia-sedation-13#q2": {
+   "batch": "s02",
+   "before": [
+    "Recent food intake is not by itself a reason to delay ED sedation, but it can be weighed with his other risk factors when choosing timing and depth"
+   ],
+   "after": [
+    "Not alone a reason to delay, weigh with other risks"
+   ]
+  }
+ }
+}

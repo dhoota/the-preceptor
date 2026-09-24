@@ -20,7 +20,7 @@ const DAS2015: Source = {
 };
 const WALLS: Source = {
   id: "walls",
-  citation: "Brown CA, Sakles JC, Mick NW, eds. The Walls Manual of Emergency Airway Management. Wolters Kluwer.",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023.",
 };
 const ATLS: Source = {
   id: "atls",
@@ -28,7 +28,7 @@ const ATLS: Source = {
 };
 const ABLS: Source = {
   id: "abls",
-  citation: "American Burn Association. Advanced Burn Life Support provider manual.",
+  citation: "American Burn Association. Advanced Burn Life Support course provider manual. 2018 update.",
 };
 const MOSIER: Source = {
   id: "mosier",
@@ -40,7 +40,7 @@ const WEINGART: Source = {
 };
 const PALS: Source = {
   id: "pals",
-  citation: "Heart and Stroke Foundation of Canada. Pediatric Advanced Life Support provider manual.",
+  citation: "Heart and Stroke Foundation of Canada. Pediatric Advanced Life Support provider manual. 2020.",
 };
 const DASTHYROID: Source = {
   id: "das-thyroid",
@@ -54,7 +54,7 @@ const EXTRIP: Source = {
 };
 const GINA: Source = {
   id: "gina",
-  citation: "Global Initiative for Asthma. Global strategy for asthma management and prevention.",
+  citation: "Global Initiative for Asthma. Global strategy for asthma management and prevention. 2026 update.",
 };
 const BTF: Source = {
   id: "btf",
@@ -79,13 +79,14 @@ export const AIRWAY_SAMPS: Samp[] = [
     topic: "airway",
     title: "Unresponsive man after a night of drinking",
     stem:
-      "A 52-year-old man is brought in by paramedics after being found unresponsive beside an empty bottle of vodka and a bottle of hydromorphone tablets. He vomited en route. He did not wake after naloxone 0.4 mg IV twice. Vitals: HR 104, BP 132/80, RR 8, SpO2 89% on a nonrebreather mask, temperature 36.1°C, capillary glucose 6.2 mmol/L. GCS is 6. He weighs about 110 kg. After suction and bag-mask ventilation with a PEEP valve his SpO2 reaches 97%. You perform rapid sequence intubation with ketamine and rocuronium. On the first attempt with a Macintosh 4 blade you see only the tip of the epiglottis. The attempt is stopped when SpO2 reaches 92%.",
+      "A 52-year-old man is brought in by paramedics after being found unresponsive beside an empty bottle of vodka and a bottle of hydromorphone tablets. He vomited en route. He did not wake after naloxone 0.4 mg IV twice. Capillary glucose is 6.2 mmol/L. GCS is 6. He weighs about 110 kg. After suction and bag-mask ventilation with a PEEP valve his SpO2 reaches 97%. You perform rapid sequence intubation with ketamine and rocuronium. On the first attempt with a Macintosh 4 blade you see only the tip of the epiglottis. The attempt is stopped when SpO2 reaches 92%.",
+    vitals: { temperature: "36.1°C", pulse: "104/minute", resp: "8/minute", bp: "132/80 mmHg", o2sat: "89% on a nonrebreather mask" },
     questions: [
       {
         id: "q1",
         kind: "short",
         update: "He is reoxygenated with the bag-valve mask to 96%.",
-        prompt: "List THREE changes you would make to improve your chance of success on the second attempt.",
+        prompt: "What changes would you make to improve your chance of success on the second attempt?",
         required: 3,
         accept: [
           { id: "vl", text: "Switch to a video laryngoscope", match: ["video"], },
@@ -108,15 +109,15 @@ export const AIRWAY_SAMPS: Samp[] = [
         kind: "single",
         update:
           "The second attempt with a video laryngoscope and bougie fails because of ongoing vomitus. A third attempt by your most experienced colleague also fails. SpO2 is 86% and falling.",
-        prompt: "Which of the following is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
           "A fourth attempt at direct laryngoscopy",
-          "Insert a second generation supraglottic airway",
-          "Needle cricothyroidotomy with jet ventilation",
           "Blind nasotracheal intubation",
           "Give sugammadex and wait for spontaneous breathing",
+          "Insert a second generation supraglottic airway",
+          "Needle cricothyroidotomy with jet ventilation",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "After three failed attempts, declare failed intubation and move to a supraglottic airway to restore oxygenation. A second generation device has a gastric drain port, which helps in a patient who is vomiting. Waiting for spontaneous breathing does not help an unconscious, hypoxemic overdose patient.",
         keyFeature: { topic: "airway", n: 1 },
@@ -127,7 +128,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         kind: "short",
         update:
           "Two-person ventilation through the supraglottic airway gives no chest rise and no capnography trace. Two-person face mask ventilation with an oral airway also fails. SpO2 is 72% and HR is 58.",
-        prompt: "This is a cannot intubate, cannot oxygenate situation. List THREE key steps of the rescue technique you would perform now.",
+        prompt: "In this cannot intubate, cannot oxygenate situation, what are the key steps of the rescue technique you would perform now?",
         required: 3,
         accept: [
           { id: "declare", text: "Declare the emergency and call for help", match: ["declare", "help"], },
@@ -161,12 +162,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     alsoTopics: ["burns"],
     title: "Rescued from a bedroom fire",
     stem:
-      "A 34-year-old woman was carried out of a burning house by firefighters after being trapped in a smoke-filled bedroom for about 10 minutes. She arrives 40 minutes after rescue. Vitals: HR 118, BP 128/76, RR 24, SpO2 96% on a nonrebreather mask, temperature 36.8°C. She weighs 65 kg. Her voice is hoarse. She has partial and full thickness burns to the face, anterior neck and both arms. There is soot in her nares and on her tongue. Her lungs are clear.",
+      "A 34-year-old woman was carried out of a burning house by firefighters after being trapped in a smoke-filled bedroom for about 10 minutes. She arrives 40 minutes after rescue. Her voice is hoarse. She has partial and full thickness burns to the face, anterior neck and both arms. There is soot in her nares and on her tongue. Her lungs are clear.",
+    vitals: { temperature: "36.8°C", pulse: "118/minute", resp: "24/minute", bp: "128/76 mmHg", o2sat: "96% on a nonrebreather mask", weight: "65 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings in this patient that support early intubation.",
+        prompt: "What findings in this patient support early intubation?",
         required: 3,
         accept: [
           { id: "hoarse", text: "Hoarse voice", match: ["hoarse", "voice change"], },
@@ -186,24 +188,24 @@ export const AIRWAY_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "Her SpO2 remains 96% and she is speaking in full sentences.",
-        prompt: "Which is the most appropriate airway plan? Select one.",
+        prompt: "Which of the following is the most appropriate airway plan for her?",
         options: [
-          "Observe in the emergency department with airway checks every hour",
+          "Intubate now with a front of neck access kit open",
           "Nebulized epinephrine and reassess in 30 minutes",
-          "Intubate now in the emergency department with a front of neck access kit open",
-          "Transfer by ground to the burn centre without a secure airway",
           "Noninvasive positive pressure ventilation",
+          "Observe with airway checks every hour",
+          "Transfer to the burn centre without a secure airway",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "Early intubation while the anatomy is still recognizable is far safer than a crash intubation through a swollen airway. Transferring an at-risk airway unsecured risks loss of the airway en route. Nebulized epinephrine does not treat thermal edema.",
+          "Intubate now in the emergency department with a front of neck access kit open. Early intubation while the anatomy is still recognizable is far safer than a crash intubation through a swollen airway. Transferring an at-risk airway unsecured risks loss of the airway en route. Nebulized epinephrine does not treat thermal edema.",
         keyFeature: { topic: "airway", n: 2 },
         source: "abls",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO specific considerations about the endotracheal tube in this patient.",
+        prompt: "What specific considerations apply to the endotracheal tube in this patient?",
         required: 2,
         accept: [
           { id: "large", text: "Use a large tube, 7.5 or 8.0 mm, to allow bronchoscopy and clearance of secretions", match: ["large", "7.5", "8.0", "8 mm"], },
@@ -220,7 +222,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO toxic exposures you would assess for in this patient.",
+        prompt: "What toxic exposures would you assess for in this patient?",
         required: 2,
         accept: [
           { id: "co", text: "Carbon monoxide (carboxyhemoglobin level)", match: ["carbon monoxide", "carboxyhemoglobin", "cohb", "co level", "co poisoning", "co"], },
@@ -242,12 +244,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     topic: "airway",
     title: "Swollen lips and tongue",
     stem:
-      "A 68-year-old man presents with 3 hours of progressive swelling of his lips and tongue. He takes ramipril, metformin and atorvastatin. He has no hives or itch. Vitals: HR 92, BP 154/88, RR 20, SpO2 95% on room air, temperature 36.9°C. He weighs 92 kg. He is sitting upright and drooling. His voice is muffled and his tongue protrudes past his teeth. He has a full beard.",
+      "A 68-year-old man presents with 3 hours of progressive swelling of his lips and tongue. He takes ramipril, metformin and atorvastatin. He has no hives or itch. He is sitting upright and drooling. His voice is muffled and his tongue protrudes past his teeth. He has a full beard.",
+    vitals: { temperature: "36.9°C", pulse: "92/minute", resp: "20/minute", bp: "154/88 mmHg", o2sat: "95% on room air", weight: "92 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features in this patient that indicate a threatened airway.",
+        prompt: "What features in this patient indicate a threatened airway?",
         required: 3,
         accept: [
           { id: "drool", text: "Drooling or inability to handle secretions", match: ["drooling", "drool", "secretion"], },
@@ -264,7 +267,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE predictors of difficulty with airway management in this patient.",
+        prompt: "What predictors of difficulty with airway management does this patient have?",
         required: 3,
         accept: [
           { id: "tongue", text: "Large swollen tongue obstructing the view", match: ["tongue"], },
@@ -283,24 +286,24 @@ export const AIRWAY_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Over 20 minutes his voice becomes more muffled. SpO2 is 94%. Anesthesia is 20 minutes away.",
-        prompt: "Which is the most appropriate airway approach? Select one.",
+        prompt: "Which of the following is the most appropriate airway approach for him?",
         options: [
-          "Rapid sequence intubation with direct laryngoscopy",
-          "Awake flexible bronchoscopic nasotracheal intubation with topical anesthesia and a prepared neck",
+          "Awake flexible bronchoscopic nasotracheal intubation",
           "Blind nasotracheal intubation",
           "Ketamine sedation and insertion of a supraglottic airway",
-          "Continued observation while waiting for a response to icatibant",
+          "Observation while awaiting a response to icatibant",
+          "Rapid sequence intubation with direct laryngoscopy",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "When difficulty is predicted and the patient is still oxygenating, an awake technique keeps spontaneous breathing and airway tone. The nasal route avoids the swollen tongue. Paralysis first risks a cannot intubate, cannot oxygenate crisis. Supraglottic airways sit poorly over a swollen tongue and pharynx.",
+          "Awake flexible bronchoscopic nasotracheal intubation is done with topical anesthesia and a prepared neck. When difficulty is predicted and the patient is still oxygenating, an awake technique keeps spontaneous breathing and airway tone. The nasal route avoids the swollen tongue. Paralysis first risks a cannot intubate, cannot oxygenate crisis. Supraglottic airways sit poorly over a swollen tongue and pharynx.",
         keyFeature: { topic: "airway", n: 3 },
         source: "cafg2",
       },
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE preparations you would make before starting the awake intubation.",
+        prompt: "What preparations would you make before starting the awake intubation?",
         required: 3,
         accept: [
           { id: "ctm", text: "Mark the cricothyroid membrane by palpation or ultrasound", match: ["cricothyroid", "mark"], },
@@ -333,12 +336,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Highway rollover",
     stem:
-      "A 24-year-old man is brought in after a highway rollover in which he was ejected. Vitals: HR 128, BP 86/54, RR 28, SpO2 91% on a nonrebreather mask, temperature 35.6°C. He weighs about 80 kg. GCS is 7 (E1 V2 M4). He has a scalp laceration, blood in the oropharynx and a cervical collar in place. Breath sounds are equal. FAST shows free fluid in the right upper quadrant.",
+      "A 24-year-old man is brought in after a highway rollover in which he was ejected. He weighs about 80 kg. GCS is 7 (E1 V2 M4). He has a scalp laceration, blood in the oropharynx and a cervical collar in place. Breath sounds are equal. FAST shows free fluid in the right upper quadrant.",
+    vitals: { temperature: "35.6°C", pulse: "128/minute", resp: "28/minute", bp: "86/54 mmHg", o2sat: "91% on a nonrebreather mask" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE modifications to your intubation technique because of possible cervical spine injury.",
+        prompt: "What modifications would you make to your intubation technique because of possible cervical spine injury?",
         required: 3,
         accept: [
           { id: "milS", text: "Manual in-line stabilization by an assistant", match: ["in line", "inline", "mils", "manual stabilization"], },
@@ -357,7 +361,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO actions to improve his hemodynamics before induction.",
+        prompt: "What actions would improve his hemodynamics before induction?",
         required: 2,
         accept: [
           { id: "blood", text: "Transfuse blood products and activate the massive transfusion protocol", match: ["blood", "transfusion", "transfuse", "massive transfusion", "prbc"], },
@@ -375,19 +379,19 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "menu",
-        prompt: "Which TWO medications and doses are most appropriate for his rapid sequence intubation? Select TWO.",
+        prompt: "Which of the following medications and doses are most appropriate for his rapid sequence intubation?",
         options: [
-          "Ketamine 0.5 to 1 mg/kg IV",
-          "Ketamine 2 mg/kg IV",
-          "Propofol 2 mg/kg IV",
-          "Midazolam 0.3 mg/kg IV",
           "Fentanyl 3 mcg/kg IV",
-          "Rocuronium 0.3 mg/kg IV",
+          "Ketamine 2 mg/kg IV",
+          "Ketamine 0.5 to 1 mg/kg IV",
+          "Midazolam 0.3 mg/kg IV",
+          "Propofol 2 mg/kg IV",
           "Rocuronium 1.2 mg/kg IV",
+          "Rocuronium 0.3 mg/kg IV",
           "Succinylcholine 0.5 mg/kg IV",
         ],
         select: 2,
-        correct: [0, 6],
+        correct: [2, 5],
         explanation:
           "In hemorrhagic shock, ketamine at a reduced dose preserves sympathetic tone better than propofol or midazolam. Rocuronium at 1.2 mg/kg gives reliable intubating conditions even with slow circulation. Rocuronium 0.3 mg/kg and succinylcholine 0.5 mg/kg are underdoses that leave the patient partly paralyzed.",
         keyFeature: { topic: "airway", n: 5 },
@@ -398,7 +402,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         kind: "short",
         update:
           "He is intubated with a 7.5 tube at 23 cm at the teeth. Ten minutes later his SpO2 falls from 97% to 84% and the ventilator alarms for high peak pressure. A capnography waveform is present.",
-        prompt: "List THREE causes you would assess for immediately.",
+        prompt: "What causes would you assess for immediately?",
         required: 3,
         accept: [
           { id: "displace", text: "Tube displacement, such as mainstem intubation", match: ["displaced", "displacement", "dislodged", "migrated", "mainstem", "dislodge", "migration"], },
@@ -426,12 +430,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     alsoTopics: ["seizures"],
     title: "Toddler who will not stop seizing",
     stem:
-      "A 2-year-old boy is brought in with a generalized seizure that started 35 minutes ago. He received buccal midazolam at home, then two doses of IV lorazepam and a loading dose of IV levetiracetam in the emergency department. He is still seizing. Vitals: HR 168, BP 102/64, RR 12 and shallow, SpO2 90% with bag-mask support, temperature 38.9°C. He weighs 12 kg. You decide to intubate.",
+      "A 2-year-old boy is brought in with a generalized seizure that started 35 minutes ago. He received buccal midazolam at home, then two doses of IV lorazepam and a loading dose of IV levetiracetam in the emergency department. He is still seizing. His breathing is shallow. You decide to intubate.",
+    vitals: { temperature: "38.9°C", pulse: "168/minute", resp: "12/minute", bp: "102/64 mmHg", o2sat: "90% on bag-mask support", weight: "12 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "State the endotracheal tube you would choose and its depth at the lips. Give TWO answers: size and depth.",
+        prompt: "What endotracheal tube size and depth at the lips would you choose?",
         required: 2,
         accept: [
           { id: "size", text: "Cuffed tube, internal diameter 4.0 mm (or uncuffed 4.5 mm)", match: ["4.0", "4 mm", "4.5 uncuffed", "uncuffed 4.5"], },
@@ -446,7 +451,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE ways you would adapt your intubation technique for a child of this age.",
+        prompt: "How would you adapt your intubation technique for a child of this age?",
         required: 3,
         accept: [
           { id: "roll", text: "Shoulder roll to offset the large occiput", match: ["shoulder roll", "occiput"], },
@@ -465,7 +470,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which neuromuscular blocker and dose is most appropriate for this child? Select one.",
+        prompt: "Which of the following neuromuscular blockers and doses is most appropriate for this child?",
         options: [
           "Rocuronium 14 mg IV",
           "Rocuronium 4 mg IV",
@@ -484,7 +489,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         kind: "short",
         update:
           "After intubation the capnography trace is normal but SpO2 drifts to 88%. Breath sounds are quiet on the left. The tube is at 16 cm at the lips.",
-        prompt: "What is the most likely problem and what is your immediate action? Give ONE answer.",
+        prompt: "What is the most likely problem and what is your immediate action?",
         required: 1,
         accept: [
           { id: "withdraw", text: "Right mainstem intubation, so withdraw the tube to about 12 cm and reassess", match: ["withdraw", "pull back", "right mainstem", "mainstem"], },
@@ -506,12 +511,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     topic: "airway",
     title: "Drowsy with a fever and heavy breathing",
     stem:
-      "A 46-year-old woman with obesity (weight 148 kg, height 163 cm, BMI 56) and obstructive sleep apnea presents with 4 days of cough and fever. Vitals: HR 116, BP 142/84, RR 32, SpO2 84% on a nonrebreather mask, temperature 38.7°C. VBG shows pH 7.21 and pCO2 78 mmHg. She is drowsy and tiring despite 45 minutes of BiPAP. She has a short, thick neck and a Mallampati class IV view.",
+      "A 46-year-old woman with obesity (height 163 cm, BMI 56) and obstructive sleep apnea presents with 4 days of cough and fever. VBG shows pH 7.21 and pCO2 78 mmHg. She is drowsy and tiring despite 45 minutes of BiPAP. She has a short, thick neck and a Mallampati class IV view.",
+    vitals: { temperature: "38.7°C", pulse: "116/minute", resp: "32/minute", bp: "142/84 mmHg", o2sat: "84% on a nonrebreather mask", weight: "148 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features in this patient that predict difficult bag-mask ventilation.",
+        prompt: "What features in this patient predict difficult bag-mask ventilation?",
         required: 3,
         accept: [
           { id: "obese", text: "Obesity", match: ["obesity", "obese", "bmi"], },
@@ -528,7 +534,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE steps to optimize preoxygenation and extend her safe apnea time.",
+        prompt: "What steps would optimize preoxygenation and extend her safe apnea time?",
         required: 3,
         accept: [
           { id: "ramp", text: "Ramped, head up 25 to 30 degrees with ear level to sternal notch", match: ["ramp", "ramped", "head up", "ear to sternal", "sitting"], },
@@ -545,17 +551,17 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Before induction, which step best prepares for a possible cannot intubate, cannot oxygenate event? Select one.",
+        prompt: "Which of the following steps before induction best prepares for a possible cannot intubate, cannot oxygenate event?",
         options: [
-          "Identify and mark the cricothyroid membrane with ultrasound while she is positioned",
-          "Have a 14 gauge cannula ready for needle cricothyroidotomy",
-          "Place a nasogastric tube",
+          "Load a 5.0 endotracheal tube on a stylet",
+          "Mark the cricothyroid membrane with ultrasound",
+          "Place a nasogastric tube before induction",
           "Prepare a transtracheal jet ventilator",
-          "Load a 5.0 tube on a stylet",
+          "Ready a 14 gauge cannula for needle cricothyroidotomy",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
-          "In obese patients the membrane is often impalpable. Ultrasound identifies it before induction so an emergency scalpel technique can start without delay. Needle and jet techniques have high failure and barotrauma rates and are not the recommended adult rescue.",
+          "Identify and mark the cricothyroid membrane with ultrasound while she is positioned. In obese patients the membrane is often impalpable. Ultrasound identifies it before induction so an emergency scalpel technique can start without delay. Needle and jet techniques have high failure and barotrauma rates and are not the recommended adult rescue.",
         keyFeature: { topic: "airway", n: 3 },
         source: "cafg2",
       },
@@ -571,12 +577,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Fever, confusion and low blood pressure",
     stem:
-      "A 71-year-old woman with COPD presents with 2 days of fever and confusion. Vitals: HR 128, BP 76/42, RR 34, SpO2 86% on a nonrebreather mask, temperature 39.2°C. She weighs 58 kg. Lactate is 6.1 mmol/L. Chest X-ray shows right lower lobe consolidation. She has received 1 L of Ringer's lactate. She is increasingly drowsy and you plan to intubate.",
+      "A 71-year-old woman with COPD presents with 2 days of fever and confusion. Lactate is 6.1 mmol/L. Chest X-ray shows right lower lobe consolidation. She has received 1 L of Ringer's lactate. She is increasingly drowsy and you plan to intubate.",
+    vitals: { temperature: "39.2°C", pulse: "128/minute", resp: "34/minute", bp: "76/42 mmHg", o2sat: "86% on a nonrebreather mask", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE steps you would take before induction to reduce the risk of peri-intubation cardiac arrest.",
+        prompt: "What steps would you take before induction to reduce the risk of peri-intubation cardiac arrest?",
         required: 3,
         accept: [
           { id: "fluid", text: "Further fluid bolus if fluid responsive", match: ["fluid", "bolus"], },
@@ -596,7 +603,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE ways her shock should change your choice or dosing of rapid sequence intubation drugs.",
+        prompt: "How should her shock change your choice or dosing of rapid sequence intubation drugs?",
         required: 3,
         accept: [
           { id: "reduce", text: "Reduce the induction dose, for example ketamine 0.5 to 1 mg/kg", match: ["reduce", "reduced", "half", "lower", "0.5 mg/kg"], },
@@ -617,7 +624,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "After intubation her BP is 64/38 and HR 134. The capnography trace is present. SpO2 is 93%.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are your immediate management steps?",
         required: 3,
         accept: [
           { id: "norepi", text: "Start or increase norepinephrine", match: ["norepinephrine", "levophed", "vasopressor", "pressor"], },
@@ -644,12 +651,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     topic: "airway",
     title: "Neck swelling after day surgery",
     stem:
-      "A 49-year-old woman had a hemithyroidectomy this morning and was discharged home from day surgery 3 hours ago. She returns with neck tightness, difficulty swallowing and shortness of breath. Vitals: HR 112, BP 168/92, RR 26, SpO2 94% on room air, temperature 36.8°C. She weighs 70 kg. The neck around the incision is tense and swollen. The wound is closed with subcuticular sutures and skin glue. She has soft inspiratory stridor.",
+      "A 49-year-old woman had a hemithyroidectomy this morning and was discharged home from day surgery 3 hours ago. She returns with neck tightness, difficulty swallowing and shortness of breath. The neck around the incision is tense and swollen. The wound is closed with subcuticular sutures and skin glue. She has soft inspiratory stridor.",
+    vitals: { temperature: "36.8°C", pulse: "112/minute", resp: "26/minute", bp: "168/92 mmHg", o2sat: "94% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings in this patient that suggest impending airway obstruction.",
+        prompt: "What findings in this patient suggest impending airway obstruction?",
         required: 3,
         accept: [
           { id: "stridor", text: "Stridor", match: ["stridor"], },
@@ -668,17 +676,17 @@ export const AIRWAY_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "The surgeon is 30 minutes away. Her stridor becomes louder and she cannot lie flat.",
-        prompt: "What is the most appropriate immediate step? Select one.",
+        prompt: "Which of the following is the most appropriate immediate step?",
         options: [
-          "Rapid sequence intubation in the emergency department",
-          "Open the wound at the bedside by cutting the sutures and opening the skin and deep layers to evacuate the hematoma",
-          "Needle aspiration of the hematoma",
+          "CT of the neck before any intervention",
           "Nebulized epinephrine and IV dexamethasone",
-          "CT of the neck",
+          "Needle aspiration of the hematoma",
+          "Open the wound at the bedside to evacuate the hematoma",
+          "Rapid sequence intubation in the emergency department",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Bedside wound opening decompresses the airway and often relieves obstruction at once. Consensus guidance teaches skin exposure, cutting sutures, opening skin, opening muscle and packing the wound. Intubating through a compressed, edematous airway before decompression is very difficult. Needle aspiration does not remove clot.",
+          "Open the wound at the bedside by cutting the sutures and opening the skin and deep layers to evacuate the hematoma. Bedside wound opening decompresses the airway and often relieves obstruction at once. Consensus guidance teaches skin exposure, cutting sutures, opening skin, opening muscle and packing the wound. Intubating through a compressed, edematous airway before decompression is very difficult. Needle aspiration does not remove clot.",
         keyFeature: { topic: "airway", n: 4 },
         source: "das-thyroid",
       },
@@ -686,7 +694,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "After decompression she improves, but the surgeon asks that she be intubated before transfer to the operating room.",
-        prompt: "List THREE elements of your airway plan.",
+        prompt: "What are the elements of your airway plan?",
         required: 3,
         accept: [
           { id: "expert", text: "Most experienced airway operator, with anesthesia involved", match: ["experienced", "anesthesia"], },
@@ -715,12 +723,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Rapid breathing after an overdose",
     stem:
-      "A 38-year-old man took about 100 tablets of 325 mg acetylsalicylic acid 8 hours ago. He weighs 80 kg. He is confused and agitated. Vitals: HR 124, BP 138/76, RR 38 and deep, SpO2 96% on room air, temperature 38.4°C. ABG: pH 7.31, pCO2 18 mmHg, HCO3 9 mmol/L. Salicylate level is 6.2 mmol/L. Over the next hour he becomes drowsier.",
+      "A 38-year-old man took about 100 tablets of 325 mg acetylsalicylic acid 8 hours ago. He is confused and agitated. His breathing is deep. ABG: pH 7.31, pCO2 18 mmHg, HCO3 9 mmol/L. Salicylate level is 6.2 mmol/L. Over the next hour he becomes drowsier.",
+    vitals: { temperature: "38.4°C", pulse: "124/minute", resp: "38/minute", bp: "138/76 mmHg", o2sat: "96% on room air", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO reasons that intubation is especially dangerous in this patient.",
+        prompt: "Why is intubation especially dangerous in this patient?",
         required: 2,
         accept: [
           { id: "comp", text: "Loses his respiratory compensation, so acidemia worsens quickly", match: ["compensation", "acidemia", "acidosis"], },
@@ -737,7 +746,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "He becomes obtunded and intubation is now unavoidable.",
-        prompt: "List THREE measures to reduce harm around his intubation.",
+        prompt: "What measures would reduce harm around his intubation?",
         required: 3,
         accept: [
           { id: "bicarb", text: "Sodium bicarbonate bolus 1 to 2 mmol/kg IV before induction, then an infusion", match: ["bicarbonate", "bicarb", "nahco3"], },
@@ -755,13 +764,13 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "After intubation, which is the best way to confirm that his ventilation matches his needs? Select one.",
+        prompt: "Which of the following is the best way to confirm that his ventilation matches his needs after intubation?",
         options: [
           "Blood gas 15 to 30 minutes after intubation",
-          "Pulse oximetry above 94%",
-          "Chest X-ray",
-          "End tidal CO2 alone",
-          "Visible chest rise",
+          "Chest X-ray after intubation",
+          "End tidal CO2 monitoring alone",
+          "Pulse oximetry reading above 94%",
+          "Visible chest rise with each breath",
         ],
         correct: 0,
         explanation:
@@ -772,7 +781,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Name the definitive treatment this patient requires.",
+        prompt: "What is the definitive treatment this patient requires?",
         required: 1,
         accept: [{ id: "hd", text: "Hemodialysis", match: ["dialysis", "hemodialysis", "hd", "extracorporeal"], }],
         explanation:
@@ -792,20 +801,21 @@ export const AIRWAY_SAMPS: Samp[] = [
     alsoTopics: ["asthma-copd"],
     title: "Quiet chest in a young woman with wheeze",
     stem:
-      "A 19-year-old woman with asthma has had 2 days of worsening wheeze. She has had two prior ICU admissions. She has received continuous salbutamol, ipratropium, methylprednisolone 125 mg IV and magnesium sulfate 2 g IV. Vitals: HR 142, BP 108/62, RR 36, SpO2 88% on a nonrebreather mask, temperature 37.1°C. She weighs 60 kg. She is now drowsy with a quiet chest. VBG pCO2 is 68 mmHg. You decide to intubate.",
+      "A 19-year-old woman with asthma has had 2 days of worsening wheeze. She has had two prior ICU admissions. She has received continuous salbutamol, ipratropium, methylprednisolone 125 mg IV and magnesium sulfate 2 g IV. She is now drowsy with a quiet chest. VBG pCO2 is 68 mmHg. You decide to intubate.",
+    vitals: { temperature: "37.1°C", pulse: "142/minute", resp: "36/minute", bp: "108/62 mmHg", o2sat: "88% on a nonrebreather mask", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which induction agent and dose is the best choice? Select one.",
+        prompt: "Which of the following induction agents and doses is the best choice for her?",
         options: [
-          "Ketamine 1.5 mg/kg IV",
-          "Propofol 2 mg/kg IV",
-          "Midazolam 0.1 mg/kg IV",
           "Fentanyl 3 mcg/kg IV",
+          "Ketamine 1.5 mg/kg IV",
           "Ketamine 0.2 mg/kg IV",
+          "Midazolam 0.1 mg/kg IV",
+          "Propofol 2 mg/kg IV",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Ketamine at 1 to 2 mg/kg is a bronchodilator and keeps blood pressure up. Propofol also relaxes bronchi but causes hypotension in a dehydrated patient with high intrathoracic pressure. Ketamine 0.2 mg/kg is an analgesic dose, not an induction dose.",
         keyFeature: { topic: "airway", n: 5 },
@@ -814,7 +824,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE initial ventilator settings or strategies for this patient.",
+        prompt: "What initial ventilator settings or strategies would you use for this patient?",
         required: 3,
         accept: [
           { id: "rate", text: "Low respiratory rate, about 8 to 12 per minute", match: ["low rate", "low respiratory rate", "slow rate", "rate 8", "rate 10", "rr 8", "rr 10", "rr 12", "low rr"], },
@@ -835,7 +845,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Ten minutes later her BP falls to 62/30 with HR 150 and SpO2 85%. The ventilator alarms for high peak pressure.",
-        prompt: "List TWO immediate actions.",
+        prompt: "What are your immediate actions?",
         required: 2,
         accept: [
           { id: "disc", text: "Disconnect from the ventilator to allow full exhalation, with gentle chest compression", match: ["disconnect", "exhale", "exhalation"], },
@@ -865,12 +875,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Fall down the stairs",
     stem:
-      "A 58-year-old man fell down 12 stairs while intoxicated. GCS is 6 (E1 V1 M4). His left pupil is 6 mm and sluggish. Vitals: HR 58, BP 188/102, RR 10 and irregular, SpO2 92% on a nonrebreather mask, temperature 36.4°C. He weighs 85 kg. A cervical collar is in place. There are no other injuries on primary survey. You are in a community hospital without neurosurgery.",
+      "A 58-year-old man fell down 12 stairs while intoxicated. GCS is 6 (E1 V1 M4). His left pupil is 6 mm and sluggish. His breathing is irregular. A cervical collar is in place. There are no other injuries on primary survey. You are in a community hospital without neurosurgery.",
+    vitals: { temperature: "36.4°C", pulse: "58/minute", resp: "10/minute", bp: "188/102 mmHg", o2sat: "92% on a nonrebreather mask", weight: "85 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE physiologic targets you will maintain through intubation and afterward.",
+        prompt: "What physiologic targets will you maintain through intubation and afterward?",
         required: 3,
         accept: [
           { id: "o2", text: "Avoid hypoxia, keep SpO2 above 90% and ideally 94% or higher", match: ["hypoxia", "spo2", "saturation", "oxygen", "avoid hypoxia", "no hypoxia", "avoid hypoxemia"], },
@@ -889,24 +900,24 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which statement about induction agents is most accurate for this patient? Select one.",
+        prompt: "Which of the following statements about induction agents is most accurate for this patient?",
         options: [
-          "Ketamine is contraindicated because it raises intracranial pressure",
-          "Ketamine may be used because it maintains blood pressure and has not been shown to worsen outcome in brain injury",
-          "Full dose propofol is preferred because it lowers intracranial pressure",
+          "Full dose propofol is the preferred agent",
           "IV lidocaine pretreatment is required",
+          "Ketamine is contraindicated in head injury",
+          "Ketamine may be used for induction",
           "Succinylcholine is contraindicated in head injury",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "The old concern that ketamine raises intracranial pressure has not held up, and it protects cerebral perfusion by maintaining blood pressure. Propofol lowers pressure, which can drop cerebral perfusion. Lidocaine pretreatment has no proven benefit. Succinylcholine is acceptable in acute head injury.",
+          "Ketamine may be used because it maintains blood pressure and has not been shown to worsen outcome in brain injury. The old concern that ketamine raises intracranial pressure has not held up, and it protects cerebral perfusion by maintaining blood pressure. Propofol lowers pressure, which can drop cerebral perfusion. Lidocaine pretreatment has no proven benefit. Succinylcholine is acceptable in acute head injury.",
         keyFeature: { topic: "airway", n: 5 },
         source: "walls",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "After intubation, list TWO methods to confirm both tube position and adequate ventilation.",
+        prompt: "After intubation, what methods confirm both tube position and adequate ventilation?",
         required: 2,
         accept: [
           { id: "abg", text: "Arterial blood gas to correlate PaCO2 with end tidal CO2", match: ["blood gas", "abg"], },
@@ -922,7 +933,8 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "He needs transfer to a neurosurgical centre 2 hours away. List THREE airway related steps before he leaves.",
+        update: "He needs transfer to a neurosurgical centre 2 hours away.",
+        prompt: "What airway related steps would you take before he leaves?",
         required: 3,
         accept: [
           { id: "secure", text: "Secure the tube and document its depth", match: ["secure", "depth"], },
@@ -950,20 +962,21 @@ export const AIRWAY_SAMPS: Samp[] = [
     alsoTopics: ["arrhythmia"],
     title: "Missed dialysis and short of breath",
     stem:
-      "A 72-year-old man on hemodialysis missed his last two sessions. He presents with confusion and shortness of breath. Vitals: HR 48, BP 148/70, RR 30, SpO2 84% on a nonrebreather mask, temperature 38.1°C. He weighs 70 kg. ECG shows peaked T waves and a QRS of 150 ms. Potassium is 7.6 mmol/L. Chest X-ray shows bilateral pulmonary edema. Calcium, insulin with dextrose and salbutamol have been given. BiPAP fails and he needs intubation.",
+      "A 72-year-old man on hemodialysis missed his last two sessions. He presents with confusion and shortness of breath. ECG shows peaked T waves and a QRS of 150 ms. Potassium is 7.6 mmol/L. Chest X-ray shows bilateral pulmonary edema. Calcium, insulin with dextrose and salbutamol have been given. BiPAP fails and he needs intubation.",
+    vitals: { temperature: "38.1°C", pulse: "48/minute", resp: "30/minute", bp: "148/70 mmHg", o2sat: "84% on a nonrebreather mask", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which neuromuscular blocker is most appropriate? Select one.",
+        prompt: "Which of the following neuromuscular blockers is most appropriate for this patient?",
         options: [
-          "Succinylcholine 1.5 mg/kg IV",
           "Rocuronium 1.2 mg/kg IV",
+          "Rocuronium 0.3 mg/kg IV",
+          "Succinylcholine 1.5 mg/kg IV",
           "Succinylcholine 0.6 mg/kg IV",
           "No paralytic, deep sedation with propofol",
-          "Rocuronium 0.3 mg/kg IV",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Succinylcholine raises serum potassium by about 0.5 mmol/L and can trigger arrest in a patient who is already at 7.6 mmol/L with a wide QRS. Rocuronium 1.2 mg/kg gives rapid intubating conditions without that risk. A low dose of rocuronium gives poor conditions.",
         keyFeature: { topic: "airway", n: 5 },
@@ -972,7 +985,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE other conditions in which succinylcholine should be avoided.",
+        prompt: "In what other conditions should succinylcholine be avoided?",
         required: 3,
         accept: [
           { id: "mh", text: "Personal or family history of malignant hyperthermia", match: ["malignant hyperthermia", "mh"], },
@@ -994,7 +1007,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Just after intubation his HR falls to 34 and the QRS widens to 190 ms. BP is 70/40.",
-        prompt: "List TWO immediate treatments.",
+        prompt: "What are your immediate treatments?",
         required: 2,
         accept: [
           { id: "ca", text: "Repeat IV calcium, such as calcium chloride 1 g or calcium gluconate 3 g", match: ["calcium"], },
@@ -1026,17 +1039,17 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most reliable immediate test to confirm tracheal placement? Select one.",
+        prompt: "Which of the following is the most reliable immediate test to confirm tracheal placement?",
         options: [
           "Auscultation over both lungs and the epigastrium",
-          "A sustained waveform on continuous capnography over several breaths",
-          "Chest X-ray",
-          "Condensation in the tube",
-          "Stable oxygen saturation",
+          "Chest X-ray after intubation",
+          "Condensation visible in the tube",
+          "Continuous capnography with a sustained waveform",
+          "Stable pulse oximetry saturation",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Sustained waveform capnography is the standard for confirming tracheal placement. Oxygen saturation can stay normal for minutes after an esophageal intubation in a well preoxygenated patient. Auscultation and misting are unreliable. A chest X-ray shows depth, not whether the tube is in the trachea.",
+          "A sustained waveform on continuous capnography over several breaths is the standard for confirming tracheal placement. Oxygen saturation can stay normal for minutes after an esophageal intubation in a well preoxygenated patient. Auscultation and misting are unreliable. A chest X-ray shows depth, not whether the tube is in the trachea.",
         keyFeature: { topic: "airway", n: 6 },
         source: "nap4",
       },
@@ -1056,7 +1069,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO immediate actions.",
+        prompt: "What are your immediate actions?",
         required: 2,
         accept: [
           { id: "remove", text: "Remove the tube", match: ["remove", "pull", "take out"], },
@@ -1077,7 +1090,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         kind: "short",
         update:
           "He is reintubated and capnography confirms placement. Twenty minutes later in the CT scanner, the respiratory therapist reports that the capnography trace has disappeared and SpO2 is 88% and falling.",
-        prompt: "List THREE immediate actions.",
+        prompt: "What are your immediate actions?",
         required: 3,
         accept: [
           { id: "remove", text: "If in doubt, remove the tube and bag-mask ventilate", match: ["remove", "pull"], },
@@ -1104,20 +1117,21 @@ export const AIRWAY_SAMPS: Samp[] = [
     alsoTopics: ["pre-eclampsia"],
     title: "Seizure late in pregnancy",
     stem:
-      "A 29-year-old woman at 34 weeks gestation presents after a generalized seizure at home. On arrival she has a second seizure lasting 3 minutes. She receives magnesium sulfate 4 g IV. She remains obtunded with GCS 7 and snoring respirations and she has vomited once. Vitals: HR 118, BP 178/112, RR 22, SpO2 91% on a nonrebreather mask, temperature 37.0°C. She weighs 82 kg.",
+      "A 29-year-old woman at 34 weeks gestation presents after a generalized seizure at home. On arrival she has a second seizure lasting 3 minutes. She receives magnesium sulfate 4 g IV. She remains obtunded with GCS 7 and snoring respirations and she has vomited once.",
+    vitals: { temperature: "37.0°C", pulse: "118/minute", resp: "22/minute", bp: "178/112 mmHg", o2sat: "91% on a nonrebreather mask", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which feature most strongly supports intubating her now? Select one.",
+        prompt: "Which of the following features most strongly supports intubating her now?",
         options: [
-          "Persistent GCS 7 with airway obstruction and recent vomiting",
-          "Blood pressure of 178/112",
-          "Heart rate of 118",
-          "Second seizure lasting 3 minutes",
-          "Gestational age of 34 weeks",
+          "Hypertension with a blood pressure of 178/112 mmHg",
+          "Persistent GCS 7, airway obstruction and recent vomiting",
+          "Pregnancy at a gestational age of 34 weeks",
+          "Second generalized seizure lasting 3 minutes",
+          "Tachycardia with a heart rate of 118/minute",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "A persistently low GCS with obstruction and vomiting means she cannot protect her airway. Aspiration is common in pregnancy and the airway will get harder with time. Hypertension and seizures are treated with antihypertensives and magnesium, not intubation alone.",
         keyFeature: { topic: "airway", n: 2 },
@@ -1126,7 +1140,7 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE adjustments to your airway plan because she is pregnant.",
+        prompt: "What adjustments would you make to your airway plan because she is pregnant?",
         required: 3,
         accept: [
           { id: "small", text: "Smaller tube, 6.0 to 7.0 mm, because of airway edema", match: ["smaller", "6.0", "6.5", "small tube"], },
@@ -1147,17 +1161,17 @@ export const AIRWAY_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which statement about her rapid sequence intubation drugs is correct? Select one.",
+        prompt: "Which of the following statements about her rapid sequence intubation drugs is correct?",
         options: [
-          "Magnesium potentiates nondepolarizing blockers, so rocuronium may last longer",
-          "Magnesium is a contraindication to rocuronium",
-          "The succinylcholine dose must be tripled in pregnancy",
           "Ketamine is contraindicated in pregnancy",
-          "Neuromuscular blockers should be avoided because they paralyze the fetus",
+          "Magnesium is a contraindication to rocuronium",
+          "Magnesium may prolong rocuronium blockade",
+          "Neuromuscular blockers would paralyze the fetus",
+          "Succinylcholine dose must be tripled in pregnancy",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
-          "Magnesium prolongs and deepens nondepolarizing blockade, so expect a longer duration and monitor it. Standard doses are still used for intubation. Neuromuscular blockers are highly ionized and cross the placenta very little. Ketamine is not contraindicated, though it can raise blood pressure.",
+          "Magnesium potentiates nondepolarizing blockers, so rocuronium may last longer. Magnesium prolongs and deepens nondepolarizing blockade, so expect a longer duration and monitor it. Standard doses are still used for intubation. Neuromuscular blockers are highly ionized and cross the placenta very little. Ketamine is not contraindicated, though it can raise blood pressure.",
         keyFeature: { topic: "airway", n: 5 },
         source: "walls",
       },
@@ -1172,12 +1186,13 @@ export const AIRWAY_SAMPS: Samp[] = [
     topic: "airway",
     title: "Vomiting blood",
     stem:
-      "A 57-year-old man with cirrhosis presents with repeated large volume hematemesis. Vitals: HR 124, BP 88/50, RR 24, SpO2 93% on 4 L nasal cannula, temperature 36.2°C. He weighs 95 kg. He is agitated and continues to vomit blood. The gastroenterologist asks you to intubate him before emergency endoscopy.",
+      "A 57-year-old man with cirrhosis presents with repeated large volume hematemesis. He is agitated and continues to vomit blood. The gastroenterologist asks you to intubate him before emergency endoscopy.",
+    vitals: { temperature: "36.2°C", pulse: "124/minute", resp: "24/minute", bp: "88/50 mmHg", o2sat: "93% on 4 L/minute by nasal cannula", weight: "95 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE preparations specific to intubating a patient with massive upper gastrointestinal bleeding.",
+        prompt: "What preparations are specific to intubating a patient with massive upper gastrointestinal bleeding?",
         required: 3,
         accept: [
           { id: "suction", text: "Two large bore rigid suction devices ready", match: ["suction"], },
@@ -1199,7 +1214,7 @@ export const AIRWAY_SAMPS: Samp[] = [
         kind: "short",
         update:
           "Three attempts fail because of blood in the airway. A second generation supraglottic airway is inserted. SpO2 recovers to 95% and there is a good capnography trace.",
-        prompt: "List THREE reasonable options for the next step now that oxygenation is restored.",
+        prompt: "What are reasonable options for the next step now that oxygenation is restored?",
         required: 3,
         accept: [
           { id: "cont", text: "Continue ventilating through the supraglottic airway until expert help arrives", match: ["continue ventilating", "continue ventilation", "continue ventilate", "continue sga", "continue supraglottic", "continue oxygenation", "continue oxygenating", "keep the sga", "leave the sga"], },
@@ -1220,15 +1235,15 @@ export const AIRWAY_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Ventilation through the supraglottic airway suddenly fails and SpO2 falls to 75% despite two-person face mask ventilation.",
-        prompt: "Which technique is recommended for emergency front of neck access in an adult? Select one.",
+        prompt: "Which of the following techniques is recommended for emergency front of neck access in an adult?",
         options: [
-          "Scalpel-bougie-tube cricothyrotomy",
           "Needle cricothyroidotomy with jet ventilation",
+          "Open surgical tracheostomy",
           "Percutaneous Seldinger tracheostomy",
-          "Open tracheostomy",
           "Retrograde wire intubation",
+          "Scalpel-bougie-tube cricothyrotomy",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "Current Canadian and UK guidance favours the scalpel-bougie-tube technique for adults. It is quick, uses few steps and places a cuffed tube. Needle techniques fail often and risk barotrauma. Tracheostomy and retrograde techniques take too long in a crisis.",
         keyFeature: { topic: "airway", n: 1 },

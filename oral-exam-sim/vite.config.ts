@@ -15,5 +15,6 @@ export default defineConfig(({ command }) => ({
   },
   // Strip console and debugger from shipped builds.
   esbuild: command === "build" ? { drop: ["console", "debugger"] } : {},
-  test: { include: ["tests/**/*.test.ts"], environment: "node" },
+  // TOOL=1 runs the orchestrator tools in tools/ instead of the suite.
+  test: { include: process.env.TOOL ? ["tools/**/*.test.ts"] : ["tests/**/*.test.ts"], environment: "node" },
 }));

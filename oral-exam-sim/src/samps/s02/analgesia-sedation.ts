@@ -44,7 +44,7 @@ const PAINAD: Source = {
 };
 const GUAY: Source = {
   id: "guay",
-  citation: "Guay J, Parker MJ, Griffiths R, Kopp S. Peripheral nerve blocks for hip fractures. Cochrane Database Syst Rev.",
+  citation: "Guay J, Parker MJ, Griffiths R, Kopp S. Peripheral nerve blocks for hip fractures. Cochrane Database Syst Rev. 2017.",
 };
 const PATHAN: Source = {
   id: "pathan",
@@ -91,11 +91,11 @@ const EAST: Source = {
 };
 const ABLS: Source = {
   id: "abls",
-  citation: "American Burn Association. Advanced Burn Life Support provider manual.",
+  citation: "American Burn Association. Advanced Burn Life Support course provider manual. 2018 update.",
 };
 const TINT: Source = {
   id: "tintinalli",
-  citation: "Tintinalli JE, et al, eds. Tintinalli's Emergency Medicine. A Comprehensive Study Guide. McGraw Hill.",
+  citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine. A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020.",
 };
 const CDC: Source = {
   id: "cdc-opioids",
@@ -115,12 +115,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["msk"],
     title: "Slipped on the ice",
     stem:
-      "A 42-year-old man slipped on an icy sidewalk and twisted his right ankle. X-ray shows a displaced bimalleolar fracture. The ankle is aligned and the foot is neurovascularly intact. He rates his pain 9 out of 10. Vitals: HR 112, BP 152/90, RR 20, SpO2 99% on room air, temperature 36.8°C. He is sweating and guarding the leg. He weighs 90 kg. He tells you that morphine made him vomit and itch after a previous surgery, but hydromorphone worked well. He takes no medications and has no other medical history.",
+      "A 42-year-old man slipped on an icy sidewalk and twisted his right ankle. X-ray shows a displaced bimalleolar fracture. The ankle is aligned and the foot is neurovascularly intact. He rates his pain 9 out of 10. He is sweating and guarding the leg. He tells you that morphine made him vomit and itch after a previous surgery, but hydromorphone worked well. He takes no medications and has no other medical history.",
+    vitals: { temperature: "36.8°C", pulse: "112/minute", resp: "20/minute", bp: "152/90 mmHg", o2sat: "99% on room air", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE elements of a structured pain assessment for this patient.",
+        prompt: "What are the elements of a structured pain assessment for this patient?",
         required: 3,
         accept: [
           { id: "scale", text: "Pain score on a numeric rating scale", match: ["numeric", "pain scale", "pain score", "nrs", "vas", "visual analogue", "rating scale", "0 to 10"] },
@@ -142,17 +143,17 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which initial analgesic plan is most appropriate? Select one.",
+        prompt: "Which of the following initial analgesic plans is most appropriate for him?",
         options: [
-          "Hydromorphone 1 mg IV, reassessed and repeated every 10 to 15 minutes until pain is controlled",
-          "Morphine 5 mg IM once",
-          "Acetaminophen 1 g PO alone",
-          "Codeine 60 mg PO",
+          "Acetaminophen 1 g PO as the sole analgesic",
+          "Codeine 60 mg PO as a single dose",
           "Hydromorphone 4 mg IV as a single dose",
+          "Hydromorphone 1 mg IV, repeated every 10 to 15 minutes",
+          "Morphine 5 mg IM as a single dose",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
-          "Severe fracture pain needs an IV opioid titrated to effect, and his prior good response favours hydromorphone. A 4 mg single bolus risks respiratory depression. IM dosing is painful and absorbs unpredictably. Codeine is weak and variably metabolized.",
+          "Give hydromorphone 1 mg IV, reassess, and repeat every 10 to 15 minutes until pain is controlled. Severe fracture pain needs an IV opioid titrated to effect, and his prior good response favours hydromorphone. A 4 mg single bolus risks respiratory depression. IM dosing is painful and absorbs unpredictably. Codeine is weak and variably metabolized.",
         keyFeature: { topic: "msk", n: 8 },
         source: "tintinalli",
       },
@@ -160,7 +161,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "He is placed in a well padded posterior slab with stirrups. Orthopedics will see him in fracture clinic in 5 days.",
-        prompt: "List THREE elements of a safe discharge analgesia plan.",
+        prompt: "What are the elements of a safe discharge analgesia plan?",
         required: 3,
         accept: [
           { id: "acet", text: "Scheduled acetaminophen", match: ["acetaminophen", "tylenol", "paracetamol"] },
@@ -189,14 +190,21 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     topic: "analgesia-sedation",
     title: "Writhing with flank pain",
     stem:
-      "A 36-year-old man has sudden severe left flank pain radiating to the groin. He is writhing on the stretcher and has vomited twice. Vitals: HR 104, BP 146/88, RR 20, SpO2 99% on room air, temperature 36.9°C. He weighs 80 kg. Urinalysis shows blood. Creatinine is 88 µmol/L. Point of care ultrasound shows mild left hydronephrosis. He has no history of ulcers, kidney disease or bleeding.",
+      "A 36-year-old man has sudden severe left flank pain radiating to the groin. He is writhing on the stretcher and has vomited twice. Urinalysis shows blood. Creatinine is 88 umol/L. Point of care ultrasound shows mild left hydronephrosis. He has no history of ulcers, kidney disease or bleeding.",
+    vitals: { temperature: "36.9°C", pulse: "104/minute", resp: "20/minute", bp: "146/88 mmHg", o2sat: "99% on room air", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate first line analgesic? Select one.",
-        options: ["Ketorolac 15 mg IV", "Morphine 10 mg IM", "Hyoscine butylbromide 20 mg IV", "Tamsulosin 0.4 mg PO", "Acetaminophen 325 mg PO"],
-        correct: 0,
+        prompt: "Which of the following is the most appropriate first line analgesic for him?",
+        options: [
+          "Acetaminophen 325 mg PO",
+          "Hyoscine butylbromide 20 mg IV",
+          "Ketorolac 15 mg IV",
+          "Morphine 10 mg IM",
+          "Tamsulosin 0.4 mg PO",
+        ],
+        correct: 2,
         explanation:
           "NSAIDs reduce ureteric spasm and inflammation and work at least as well as opioids for renal colic, with less vomiting. Ketorolac has an analgesic ceiling around 10 to 15 mg IV, so larger doses add risk without benefit. Antispasmodics add nothing, and tamsulosin is for stone passage, not acute pain.",
         keyFeature: { topic: "analgesia-sedation", n: 2 },
@@ -205,7 +213,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE contraindications or cautions that would make you avoid an NSAID in a patient with renal colic.",
+        prompt: "What contraindications or cautions would make you avoid an NSAID in a patient with renal colic?",
         required: 3,
         accept: [
           { id: "kidney", text: "Acute kidney injury, chronic kidney disease or a solitary kidney", match: ["kidney", "renal", "aki", "ckd", "creatinine", "solitary"] },
@@ -227,7 +235,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Thirty minutes after ketorolac, his pain is still 8 out of 10.",
-        prompt: "List TWO next analgesic options. Include the drug and route.",
+        prompt: "What are the next analgesic options, including the drug and route?",
         required: 2,
         accept: [
           { id: "morphine", text: "Morphine 0.05 to 0.1 mg/kg IV, titrated", match: ["morphine iv", "morphine intravenous"] },
@@ -258,12 +266,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["msk", "delirium-agitation"],
     title: "Fall at the care home",
     stem:
-      "An 86-year-old woman from a long term care home fell while walking to the bathroom. She has advanced dementia and is nonverbal at baseline. Her right leg is shortened and externally rotated. She is moaning, grimacing and pulls away when the leg is touched. Vitals: HR 98, BP 164/88, RR 20, SpO2 95% on room air, temperature 36.5°C. She weighs 52 kg. Creatinine is 132 µmol/L with an eGFR of 34. X-ray shows a displaced right femoral neck fracture.",
+      "An 86-year-old woman from a long term care home fell while walking to the bathroom. She has advanced dementia and is nonverbal at baseline. Her right leg is shortened and externally rotated. She is moaning, grimacing and pulls away when the leg is touched. Creatinine is 132 umol/L with an eGFR of 34. X-ray shows a displaced right femoral neck fracture.",
+    vitals: { temperature: "36.5°C", pulse: "98/minute", resp: "20/minute", bp: "164/88 mmHg", o2sat: "95% on room air", weight: "52 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "She cannot rate her pain. List THREE observable indicators you would use to assess it.",
+        prompt: "Because she cannot rate her pain, what observable indicators would you use to assess it?",
         required: 3,
         accept: [
           { id: "face", text: "Facial expression such as grimacing or frowning", match: ["facial", "face", "grimace", "grimacing", "frown"] },
@@ -283,12 +292,12 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate analgesic intervention? Select one.",
+        prompt: "Which of the following is the most appropriate analgesic intervention for her?",
         options: [
-          "Fascia iliaca compartment block with bupivacaine 0.25%, 30 mL",
-          "Morphine 10 mg IM",
-          "Ketorolac 30 mg IV",
-          "Hydromorphone 2 mg IV",
+          "Fascia iliaca block with 30 mL bupivacaine 0.25%",
+          "Hydromorphone 2 mg IV as a single dose",
+          "Ketorolac 30 mg IV as a single dose",
+          "Morphine 10 mg IM as a single dose",
           "No analgesia until the orthopedic assessment",
         ],
         correct: 0,
@@ -301,7 +310,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "The block gives partial relief. Her PAINAD score falls from 8 to 4.",
-        prompt: "List TWO appropriate additional analgesics for her. Include a dose.",
+        prompt: "What additional analgesics are appropriate for her, including a dose?",
         required: 2,
         accept: [
           { id: "acet", text: "Acetaminophen 650 mg to 1 g PO or IV every 6 hours", match: ["acetaminophen", "tylenol", "paracetamol"] },
@@ -323,7 +332,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         kind: "short",
         update:
           "Eight hours later, while waiting for a ward bed, she is agitated, pulling at her IV and calling out. The block has worn off. The overnight resident suggests haloperidol 5 mg IM.",
-        prompt: "List TWO more appropriate first steps.",
+        prompt: "What are more appropriate first steps?",
         required: 2,
         accept: [
           { id: "pain", text: "Reassess and treat pain, for example a further analgesic dose or a repeat block", match: ["pain", "analgesic", "analgesia", "block", "opioid", "hydromorphone", "fentanyl"] },
@@ -349,12 +358,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["lacerations", "tox"],
     title: "Two long lacerations",
     stem:
-      "A 30-year-old man fell from a ladder onto a glass table. He has a 14 cm forearm laceration and a 9 cm scalp laceration. He is otherwise well, with no allergies. Vitals: HR 88, BP 128/76, RR 16, SpO2 99% on room air, temperature 36.7°C. He weighs 70 kg. A junior resident plans to repair both wounds using lidocaine 1%.",
+      "A 30-year-old man fell from a ladder onto a glass table. He has a 14 cm forearm laceration and a 9 cm scalp laceration. He is otherwise well, with no allergies. A junior resident plans to repair both wounds using lidocaine 1%.",
+    vitals: { temperature: "36.7°C", pulse: "88/minute", resp: "16/minute", bp: "128/76 mmHg", o2sat: "99% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "State the maximum safe dose of lidocaine for him, first plain and then with epinephrine. Give TWO answers.",
+        prompt: "What is the maximum safe dose of lidocaine for him, first plain and then with epinephrine?",
         required: 2,
         accept: [
           { id: "plain", text: "Plain lidocaine 4.5 mg/kg, maximum about 300 mg (30 mL of 1%)", match: ["4.5 mg/kg", "5 mg/kg", "300 mg", "300mg", "30 ml"] },
@@ -371,7 +381,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         kind: "short",
         update:
           "The resident injected 35 mL of 2% lidocaine, a total of 700 mg. Five minutes later the patient reports tingling around his mouth and ringing in his ears, then has a generalized seizure. HR is 48 and BP 82/40.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are your immediate management steps?",
         required: 3,
         accept: [
           { id: "airway", text: "Manage the airway with 100% oxygen and ventilation to avoid hypoxia and acidosis", match: ["airway", "oxygen", "ventilate", "ventilation", "bag", "intubate", "intubation"] },
@@ -393,15 +403,15 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which lipid emulsion regimen is correct? Select one.",
+        prompt: "Which of the following is the correct lipid emulsion regimen for this patient?",
         options: [
-          "20% lipid emulsion 1.5 mL/kg IV over 2 to 3 minutes, then an infusion of about 0.25 mL/kg/min",
-          "20% lipid emulsion 20 mL IV over 30 minutes",
-          "10% lipid emulsion 10 mL/kg IV push",
-          "Sodium bicarbonate 1 mmol/kg IV",
-          "Naloxone 2 mg IV",
+          "20% lipid 20 mL IV infused over 30 minutes",
+          "10% lipid 10 mL/kg IV as a rapid push",
+          "20% lipid 1.5 mL/kg IV bolus, then 0.25 mL/kg/min",
+          "Naloxone 2 mg IV as a single bolus",
+          "Sodium bicarbonate 1 mmol/kg IV bolus",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "The ASRA 2020 checklist recommends a 20% lipid bolus of 1.5 mL/kg of ideal body weight over 2 to 3 minutes, or 100 mL in adults over 70 kg, followed by an infusion of about 0.25 mL/kg/min. Repeat the bolus and increase the infusion if instability persists. A small slow dose will not reach an effective concentration.",
         keyFeature: { topic: "tox", n: 2 },
@@ -419,12 +429,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["msk"],
     title: "Fall from the monkey bars",
     stem:
-      "A 6-year-old girl fell from the monkey bars at school. Her left forearm is visibly deformed. She is crying and holding her arm. Vitals: HR 132, BP 104/66, RR 24, SpO2 99% on room air, temperature 37.0°C. She weighs 20 kg. The distal neurovascular exam is normal. She has no IV. Her parents are at the bedside.",
+      "A 6-year-old girl fell from the monkey bars at school. Her left forearm is visibly deformed. She is crying and holding her arm. The distal neurovascular exam is normal. She has no IV. Her parents are at the bedside.",
+    vitals: { temperature: "37.0°C", pulse: "132/minute", resp: "24/minute", bp: "104/66 mmHg", o2sat: "99% on room air", weight: "20 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Name ONE pain scale suitable for her age.",
+        prompt: "Which pain scale is suitable for her age?",
         required: 1,
         accept: [
           { id: "faces", text: "Faces Pain Scale Revised", match: ["faces", "fps r", "fpsr", "wong baker"] },
@@ -439,9 +450,15 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate initial analgesic? Select one.",
-        options: ["Intranasal fentanyl 30 mcg", "Oral codeine 20 mg", "Intramuscular morphine 2 mg", "Intranasal fentanyl 100 mcg", "Oral acetaminophen 300 mg alone"],
-        correct: 0,
+        prompt: "Which of the following is the most appropriate initial analgesic for her?",
+        options: [
+          "Intramuscular morphine 2 mg",
+          "Intranasal fentanyl 100 mcg",
+          "Intranasal fentanyl 30 mcg",
+          "Oral acetaminophen 300 mg alone",
+          "Oral codeine 20 mg",
+        ],
+        correct: 2,
         explanation:
           "Intranasal fentanyl 1.5 mcg/kg works within minutes and needs no IV. For 20 kg that is 30 mcg. 100 mcg is 5 mcg/kg and dangerous. Codeine is contraindicated in children under 12 in Canada, and IM injections are painful.",
         keyFeature: { topic: "analgesia-sedation", n: 3 },
@@ -450,7 +467,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE non-drug measures to reduce her pain and distress.",
+        prompt: "What non-drug measures would reduce her pain and distress?",
         required: 3,
         accept: [
           { id: "splint", text: "Splint the arm", match: ["splint", "immobilize", "immobilization", "sling"] },
@@ -470,7 +487,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "The fracture needs no reduction. She is going home in a cast.",
-        prompt: "List TWO analgesics, with doses, for home.",
+        prompt: "What analgesics, with doses, would you recommend for home?",
         required: 2,
         accept: [
           { id: "ibu", text: "Ibuprofen 10 mg/kg (200 mg) PO every 6 to 8 hours", match: ["ibuprofen", "advil", "motrin", "nsaid"] },
@@ -496,12 +513,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     topic: "analgesia-sedation",
     title: "Snowboarder with a shoulder injury",
     stem:
-      "A 34-year-old man fell while snowboarding 2 hours ago. X-ray shows an anterior shoulder dislocation without fracture. Attempts at reduction using the Cunningham technique and then external rotation have failed. He has no medical history and takes no medications. He ate a sandwich 3 hours ago. Vitals: HR 96, BP 138/84, RR 16, SpO2 98% on room air, temperature 36.7°C. He weighs 85 kg. You plan procedural sedation with propofol.",
+      "A 34-year-old man fell while snowboarding 2 hours ago. X-ray shows an anterior shoulder dislocation without fracture. Attempts at reduction using the Cunningham technique and then external rotation have failed. He has no medical history and takes no medications. He ate a sandwich 3 hours ago. You plan procedural sedation with propofol.",
+    vitals: { temperature: "36.7°C", pulse: "96/minute", resp: "16/minute", bp: "138/84 mmHg", o2sat: "98% on room air", weight: "85 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE elements of your pre-sedation risk assessment.",
+        prompt: "What are the elements of your pre-sedation risk assessment?",
         required: 3,
         accept: [
           { id: "asa", text: "ASA physical status class", match: ["asa"] },
@@ -524,28 +542,28 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Propofol has no analgesic effect. Which TWO additions best provide analgesia for this reduction? Select TWO.",
+        prompt: "Which of the following additions to propofol best provide analgesia for this shoulder reduction?",
         options: [
-          "Fentanyl 1 mcg/kg IV",
-          "Midazolam 0.05 mg/kg IV",
-          "Ondansetron 4 mg IV",
           "Diphenhydramine 50 mg IV",
-          "Increase the propofol dose to 3 mg/kg",
-          "Ketamine 0.5 mg/kg IV",
+          "Fentanyl 1 mcg/kg IV",
           "Glycopyrrolate 0.2 mg IV",
           "Haloperidol 5 mg IV",
+          "Increase the propofol dose to 3 mg/kg",
+          "Ketamine 0.5 mg/kg IV",
+          "Midazolam 0.05 mg/kg IV",
+          "Ondansetron 4 mg IV",
         ],
         select: 2,
-        correct: [0, 5],
+        correct: [1, 5],
         explanation:
-          "Sedation without analgesia leaves the patient in pain even if he does not remember it. A small dose of fentanyl or ketamine with propofol provides analgesia. Midazolam, diphenhydramine and haloperidol sedate but do not relieve pain. More propofol only deepens sedation and apnea risk.",
+          "Propofol has no analgesic effect. Sedation without analgesia leaves the patient in pain even if he does not remember it. A small dose of fentanyl or ketamine with propofol provides analgesia. Midazolam, diphenhydramine and haloperidol sedate but do not relieve pain. More propofol only deepens sedation and apnea risk.",
         keyFeature: { topic: "analgesia-sedation", n: 4 },
         source: "acep-psa",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE monitoring elements you require during the sedation.",
+        prompt: "What monitoring elements do you require during the sedation?",
         required: 3,
         accept: [
           { id: "spo2", text: "Continuous pulse oximetry", match: ["oximetry", "spo2", "saturation"] },
@@ -566,17 +584,17 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Ninety seconds after propofol 60 mg IV, the capnography waveform goes flat. His chest and abdomen are still moving. SpO2 is 98%.",
-        prompt: "What is the most likely problem and the best next step? Select one.",
+        prompt: "Which of the following is the most likely problem and the best next step?",
         options: [
-          "Upper airway obstruction. Reposition with jaw thrust and consider an airway adjunct.",
-          "Apnea. Intubate immediately.",
-          "Equipment problem. Ignore it because SpO2 is normal.",
-          "Bronchospasm. Give salbutamol.",
-          "Oversedation. Give flumazenil.",
+          "Apnea, intubate the trachea immediately",
+          "Bronchospasm, give inhaled salbutamol",
+          "Equipment problem, ignore the capnography",
+          "Oversedation, reverse with IV flumazenil",
+          "Upper airway obstruction, jaw thrust, consider adjunct",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "Chest movement with no exhaled CO2 means air is not moving through the upper airway. Jaw thrust or an airway adjunct usually fixes it. Oxygen saturation lags behind by a minute or more, so a normal value is false reassurance. Flumazenil does not reverse propofol.",
+          "This is upper airway obstruction. Reposition with jaw thrust and consider an airway adjunct. Chest movement with no exhaled CO2 means air is not moving through the upper airway. Jaw thrust or an airway adjunct usually fixes it. Oxygen saturation lags behind by a minute or more, so a normal value is false reassurance. Flumazenil does not reverse propofol.",
         keyFeature: { topic: "analgesia-sedation", n: 6 },
         source: "acep-psa",
       },
@@ -592,12 +610,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["msk"],
     title: "Wrist fracture in a frail patient",
     stem:
-      "A 78-year-old woman fell on her outstretched hand. X-ray shows a dorsally displaced distal radius fracture that needs closed reduction. She has severe COPD on home oxygen at 2 L/min, obstructive sleep apnea on CPAP and heart failure with an ejection fraction of 30%. Vitals: HR 88, BP 118/66, RR 22, SpO2 91% on 2 L/min, temperature 36.6°C. She weighs 62 kg. She wants to go home tonight with her husband.",
+      "A 78-year-old woman fell on her outstretched hand. X-ray shows a dorsally displaced distal radius fracture that needs closed reduction. She has severe COPD on home oxygen at 2 L/min, obstructive sleep apnea on CPAP and heart failure with an ejection fraction of 30%. She wants to go home tonight with her husband.",
+    vitals: { temperature: "36.6°C", pulse: "88/minute", resp: "22/minute", bp: "118/66 mmHg", o2sat: "91% on 2 L/minute", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that increase her risk of complications from procedural sedation.",
+        prompt: "What features increase her risk of complications from procedural sedation?",
         required: 3,
         accept: [
           { id: "age", text: "Older age", match: ["age", "elderly", "older", "78"] },
@@ -615,24 +634,25 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which anesthetic approach is most appropriate for the reduction? Select one.",
+        prompt: "Which of the following anesthetic approaches is most appropriate for the reduction?",
         options: [
-          "Regional anesthesia without systemic sedation, such as a Bier block",
-          "Propofol 1 mg/kg IV",
-          "Ketamine 1.5 mg/kg IV",
-          "Midazolam 5 mg IV with fentanyl 100 mcg IV",
           "Discharge in a splint without reduction",
+          "Ketamine 1.5 mg/kg IV sedation",
+          "Midazolam 5 mg IV with fentanyl 100 mcg IV",
+          "Propofol 1 mg/kg IV sedation",
+          "Regional anesthesia without systemic sedation",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "A Bier block or hematoma block gives good analgesia for distal radius reduction without affecting breathing or blood pressure. That makes it the safer choice in a high risk patient. Leaving a displaced fracture unreduced risks worse function and skin problems.",
+          "Regional anesthesia without systemic sedation, such as a Bier block, is the best approach. A Bier block or hematoma block gives good analgesia for distal radius reduction without affecting breathing or blood pressure. That makes it the safer choice in a high risk patient. Leaving a displaced fracture unreduced risks worse function and skin problems.",
         keyFeature: { topic: "analgesia-sedation", n: 5 },
         source: "tintinalli",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "You choose a Bier block. List THREE key safety steps.",
+        update: "You choose a Bier block.",
+        prompt: "What are the key safety steps?",
         required: 3,
         accept: [
           { id: "drug", text: "Plain lidocaine 0.5%, 1.5 to 3 mg/kg", match: ["lidocaine", "0.5%", "3 mg/kg", "1.5 mg/kg"] },
@@ -653,7 +673,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "The reduction is completed and she is placed in a sugar tong splint.",
-        prompt: "List TWO things you would document after the reduction.",
+        prompt: "What would you document after the reduction?",
         required: 2,
         accept: [
           { id: "nerve", text: "Median nerve sensation and function", match: ["median", "nerve", "sensation", "sensory", "motor"] },
@@ -678,29 +698,30 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["lacerations"],
     title: "Toddler with a gaping chin wound",
     stem:
-      "A 4-year-old boy fell against a coffee table and has a 3 cm deep, gaping chin laceration that needs layered closure. LET gel was applied 30 minutes ago. He remains terrified and combative despite a child life specialist and his mother at the bedside. He has had a mild runny nose for 2 days with no fever, cough or wheeze. He ate crackers and apple juice 90 minutes ago. He is healthy and fully immunized. Vitals: HR 118, RR 24, SpO2 99% on room air, temperature 37.2°C. He weighs 18 kg. You plan ketamine sedation.",
+      "A 4-year-old boy fell against a coffee table and has a 3 cm deep, gaping chin laceration that needs layered closure. LET gel was applied 30 minutes ago. He remains terrified and combative despite a child life specialist and his mother at the bedside. He has had a mild runny nose for 2 days with no fever, cough or wheeze. He ate crackers and apple juice 90 minutes ago. He is healthy and fully immunized. You plan ketamine sedation.",
+    vitals: { temperature: "37.2°C", pulse: "118/minute", resp: "24/minute", o2sat: "99% on room air", weight: "18 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which statement about proceeding with ketamine sedation now is most accurate? Select one.",
+        prompt: "Which of the following statements about proceeding with ketamine sedation now is most accurate?",
         options: [
-          "He must fast for 6 hours after solids before ketamine can be given",
-          "Recent intake does not require a delay, and the mild runny nose slightly increases the risk of laryngospasm",
-          "Ketamine is contraindicated under 5 years of age",
-          "Any upper respiratory infection is an absolute contraindication",
+          "Any upper respiratory infection contraindicates ketamine",
           "Atropine must be given with ketamine in every child",
+          "Delay until 6 hours after his last solid food",
+          "Ketamine is contraindicated under 5 years of age",
+          "Proceed now, noting a slightly higher laryngospasm risk",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "The ketamine guideline states that timing of recent intake need not delay ED ketamine sedation. A mild upper respiratory infection is a relative risk factor for laryngospasm, not a contraindication. Routine atropine is no longer recommended.",
+          "Recent intake does not require a delay, and the mild runny nose slightly increases the risk of laryngospasm. The ketamine guideline states that timing of recent intake need not delay ED ketamine sedation. A mild upper respiratory infection is a relative risk factor for laryngospasm, not a contraindication. Routine atropine is no longer recommended.",
         keyFeature: { topic: "analgesia-sedation", n: 5 },
         source: "green-ketamine",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "List the TWO absolute contraindications to ketamine sedation in the 2011 ED ketamine guideline.",
+        prompt: "What are the absolute contraindications to ketamine sedation in the 2011 emergency department ketamine guideline?",
         required: 2,
         accept: [
           { id: "age", text: "Age younger than 3 months", match: ["3 month", "three month"] },
@@ -715,7 +736,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO reasons ketamine is a good choice for this procedure compared with propofol.",
+        prompt: "Why is ketamine a good choice for this procedure compared with propofol?",
         required: 2,
         accept: [
           { id: "analgesia", text: "Provides analgesia as well as sedation", match: ["analgesia", "analgesic", "pain"] },
@@ -734,7 +755,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         kind: "short",
         update:
           "He receives ketamine 27 mg IV. During suturing he develops a high pitched inspiratory noise, then silence. His chest wall moves but the capnography trace is flat. SpO2 falls from 99% to 85%.",
-        prompt: "List THREE steps to manage this complication.",
+        prompt: "What steps would you take to manage this complication?",
         required: 3,
         accept: [
           { id: "stop", text: "Stop the procedure and suction the pharynx", match: ["suction", "stop"] },
@@ -753,7 +774,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         update: "He recovers quickly and the repair is completed without further problems.",
-        prompt: "List THREE discharge criteria or instructions for him and his mother.",
+        prompt: "What discharge criteria or instructions apply to him and his mother?",
         required: 3,
         accept: [
           { id: "baseline", text: "Back to baseline mental status, talking and interacting normally", match: ["baseline", "talking", "alert", "awake"] },
@@ -781,12 +802,14 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     topic: "analgesia-sedation",
     title: "Back and thigh pain in a young woman",
     stem:
-      "A 22-year-old woman with sickle cell disease (HbSS) presents with 6 hours of pain in her lower back and both thighs that she says is typical of her crises. Oral hydromorphone 4 mg at home did not help. Her individualized care plan from the hematology clinic is in the chart and recommends hydromorphone 1.5 mg IV for crisis pain. Vitals: HR 88, BP 118/72, RR 16, SpO2 97% on room air, temperature 37.4°C. She weighs 55 kg. She is lying still and rates her pain 9 out of 10.",
+      "A 22-year-old woman with sickle cell disease (HbSS) presents with 6 hours of pain in her lower back and both thighs that she says is typical of her crises. Oral hydromorphone 4 mg at home did not help. Her individualized care plan from the hematology clinic is in the chart and recommends hydromorphone 1.5 mg IV for crisis pain. She is lying still and rates her pain 9 out of 10.",
+    vitals: { temperature: "37.4°C", pulse: "88/minute", resp: "16/minute", bp: "118/72 mmHg", o2sat: "97% on room air", weight: "55 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "A nurse comments that she does not look like she is in pain because her vital signs are normal. List TWO reasons this reasoning is flawed.",
+        update: "A nurse comments that she does not look like she is in pain because her vital signs are normal.",
+        prompt: "Why is this reasoning flawed?",
         required: 2,
         accept: [
           { id: "vitals", text: "Vital signs are unreliable markers of pain, especially in recurrent pain", match: ["vital", "heart rate", "blood pressure", "unreliable"] },
@@ -803,7 +826,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE elements of timely, adequate analgesia for her.",
+        prompt: "What are the elements of timely, adequate analgesia for her?",
         required: 3,
         accept: [
           { id: "time", text: "Give a parenteral opioid within 60 minutes of arrival", match: ["60 minute", "1 hour", "one hour", "within", "rapid", "prompt", "timely", "quickly"] },
@@ -827,7 +850,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "After two doses of hydromorphone her pain is 8 out of 10. She is alert with RR 16 and SpO2 97%.",
-        prompt: "List TWO next analgesic options.",
+        prompt: "What are the next analgesic options?",
         required: 2,
         accept: [
           { id: "more", text: "Further opioid dose, increased by about 25%", match: ["opioid", "hydromorphone", "morphine", "increase", "repeat", "redose", "higher dose"] },
@@ -854,12 +877,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     topic: "analgesia-sedation",
     title: "Motorcycle crash in a patient on treatment",
     stem:
-      "A 31-year-old man crashed his motorcycle and has a closed midshaft tibial fracture. The leg is neurovascularly intact and the compartments are soft. He has taken buprenorphine-naloxone 16 mg SL daily for 2 years for opioid use disorder. His last dose was 6 hours ago. He rates his pain 10 out of 10. Vitals: HR 120, BP 150/90, RR 20, SpO2 98% on room air, temperature 36.9°C. He weighs 78 kg. He asks you not to stop his buprenorphine and is worried about relapse. Orthopedics plans intramedullary nailing tomorrow.",
+      "A 31-year-old man crashed his motorcycle and has a closed midshaft tibial fracture. The leg is neurovascularly intact and the compartments are soft. He has taken buprenorphine-naloxone 16 mg SL daily for 2 years for opioid use disorder. His last dose was 6 hours ago. He rates his pain 10 out of 10. He asks you not to stop his buprenorphine and is worried about relapse. Orthopedics plans intramedullary nailing tomorrow.",
+    vitals: { temperature: "36.9°C", pulse: "120/minute", resp: "20/minute", bp: "150/90 mmHg", o2sat: "98% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE pieces of history you would clarify before choosing his analgesia.",
+        prompt: "What history would you clarify before choosing his analgesia?",
         required: 3,
         accept: [
           { id: "confirm", text: "Confirm the dose with his prescriber or pharmacy", match: ["prescriber", "pharmacy", "pharmacist", "confirm"] },
@@ -879,24 +903,24 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which analgesic strategy is most appropriate? Select one.",
+        prompt: "Which of the following analgesic strategies is most appropriate for him?",
         options: [
-          "Stop buprenorphine and start IV morphine",
-          "Continue buprenorphine, add non-opioid analgesia, and titrate a potent full agonist such as hydromorphone at higher than usual doses",
-          "Give naloxone to displace buprenorphine, then IV morphine",
           "Avoid all opioids and give acetaminophen alone",
+          "Continue buprenorphine, add nonopioids, titrate full agonist",
+          "Give naloxone to displace buprenorphine, then IV morphine",
+          "Stop buprenorphine and start IV morphine",
           "Switch to methadone 30 mg PO now",
         ],
         correct: 1,
         explanation:
-          "Continuing buprenorphine protects against relapse and withdrawal. Its high receptor affinity means full agonists need higher doses to work, so titrate to effect and add multimodal agents. Stopping it risks relapse and makes later re-induction difficult.",
+          "Continue buprenorphine, add non-opioid analgesia, and titrate a potent full agonist such as hydromorphone at higher than usual doses. Continuing buprenorphine protects against relapse and withdrawal. Its high receptor affinity means full agonists need higher doses to work, so titrate to effect and add multimodal agents. Stopping it risks relapse and makes later re-induction difficult.",
         keyFeature: { topic: "analgesia-sedation", n: 3 },
         source: "crism",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE non-opioid options for his fracture pain.",
+        prompt: "What non-opioid options are there for his fracture pain?",
         required: 3,
         accept: [
           { id: "splint", text: "Splint the leg", match: ["splint", "immobilize", "immobilization"] },
@@ -923,12 +947,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["burns"],
     title: "Kitchen accident with hot oil",
     stem:
-      "A 28-year-old man spilled a pot of hot cooking oil 30 minutes ago. He has partial thickness burns to both legs and his right forearm, about 18% of total body surface area. He ran the burns under cool tap water for 5 minutes. Vitals: HR 124, BP 146/86, RR 22, SpO2 99% on room air, temperature 36.9°C. He weighs 75 kg. He is screaming and rates his pain 10 out of 10. Two IVs are in place. He has no other injuries.",
+      "A 28-year-old man spilled a pot of hot cooking oil 30 minutes ago. He has partial thickness burns to both legs and his right forearm, about 18% of total body surface area. He ran the burns under cool tap water for 5 minutes. He is screaming and rates his pain 10 out of 10. Two IVs are in place. He has no other injuries.",
+    vitals: { temperature: "36.9°C", pulse: "124/minute", resp: "22/minute", bp: "146/86 mmHg", o2sat: "99% on room air", weight: "75 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE measures to control his pain in the first 30 minutes. Include doses for any drugs.",
+        prompt: "What measures would control his pain in the first 30 minutes, including doses for any drugs?",
         required: 3,
         accept: [
           { id: "opioid", text: "IV opioid titrated to effect, such as fentanyl 1 mcg/kg (75 mcg) every 5 minutes or morphine 0.1 mg/kg", match: ["fentanyl", "morphine", "hydromorphone", "opioid", "dilaudid"] },
@@ -950,7 +975,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "After fentanyl 250 mcg over 30 minutes, his pain is 8 out of 10. He is alert with RR 18 and SpO2 98%.",
-        prompt: "List TWO next steps for his pain.",
+        prompt: "What are the next steps for his pain?",
         required: 2,
         accept: [
           { id: "more", text: "Keep titrating the opioid, as there is no fixed ceiling while he is monitored", match: ["titrate", "titrating", "more fentanyl", "further", "continue", "additional"] },
@@ -970,9 +995,15 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "His wounds need cleaning and debridement of large blisters in the ED before transfer to the burn centre.",
-        prompt: "Which is the most appropriate agent for procedural sedation during the debridement? Select one.",
-        options: ["Ketamine 1 mg/kg IV", "Propofol 1 mg/kg IV alone", "Midazolam 2 mg IV alone", "Haloperidol 5 mg IV", "Lorazepam 2 mg PO"],
-        correct: 0,
+        prompt: "Which of the following is the most appropriate agent for procedural sedation during the debridement?",
+        options: [
+          "Haloperidol 5 mg IV",
+          "Ketamine 1 mg/kg IV",
+          "Lorazepam 2 mg PO",
+          "Midazolam 2 mg IV alone",
+          "Propofol 1 mg/kg IV alone",
+        ],
+        correct: 1,
         explanation:
           "Ketamine provides both analgesia and sedation while keeping airway reflexes and blood pressure. Propofol and midazolam sedate without relieving pain. Sedation without analgesia for a painful procedure is inadequate care.",
         keyFeature: { topic: "analgesia-sedation", n: 4 },
@@ -989,12 +1020,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     topic: "analgesia-sedation",
     title: "Hard to wake after a busy shift change",
     stem:
-      "A 76-year-old man with chronic kidney disease (eGFR 28) and COPD arrived 2 hours ago with three left rib fractures after a fall. The previous physician ordered morphine 10 mg IV given over 20 minutes and lorazepam 1 mg IV for anxiety. His nurse now calls you. He is difficult to rouse. Vitals: HR 64, BP 104/60, RR 6, SpO2 82% on 2 L/min nasal cannula, temperature 36.5°C. His pupils are 2 mm. GCS is 9. He weighs 68 kg.",
+      "A 76-year-old man with chronic kidney disease (eGFR 28) and COPD arrived 2 hours ago with three left rib fractures after a fall. The previous physician ordered morphine 10 mg IV given over 20 minutes and lorazepam 1 mg IV for anxiety. His nurse now calls you. He is difficult to rouse. His pupils are 2 mm. GCS is 9.",
+    vitals: { temperature: "36.5°C", pulse: "64/minute", resp: "6/minute", bp: "104/60 mmHg", o2sat: "82% on 2 L/minute by nasal cannula", weight: "68 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE immediate actions.",
+        prompt: "What are your immediate actions?",
         required: 3,
         accept: [
           { id: "stim", text: "Stimulate him and call for help", match: ["stimulate", "stimulation", "rouse", "sternal rub", "help"] },
@@ -1013,17 +1045,17 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which naloxone regimen is most appropriate? Select one.",
+        prompt: "Which of the following naloxone regimens is most appropriate for him?",
         options: [
-          "Naloxone 0.04 to 0.1 mg IV, repeated every 2 to 3 minutes until breathing improves",
-          "Naloxone 2 mg IV",
-          "Naloxone 0.4 mg IM once, then discharge when awake",
           "Flumazenil 1 mg IV rapid push",
-          "Naloxone 10 mg IV",
+          "Naloxone 0.4 mg IM once, then discharge when awake",
+          "Naloxone 2 mg IV as a single bolus",
+          "Naloxone 10 mg IV as a single bolus",
+          "Naloxone 0.04 to 0.1 mg IV repeated to effect",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "The goal is adequate breathing, not full wakefulness. Small repeated doses achieve that while preserving analgesia. Large doses cause abrupt pain and sympathetic surge in an older patient. Flumazenil can provoke seizures and is not first line.",
+          "Give naloxone 0.04 to 0.1 mg IV, repeated every 2 to 3 minutes until breathing improves. The goal is adequate breathing, not full wakefulness. Small repeated doses achieve that while preserving analgesia. Large doses cause abrupt pain and sympathetic surge in an older patient. Flumazenil can provoke seizures and is not first line.",
         keyFeature: { topic: "analgesia-sedation", n: 6 },
         source: "boyer",
       },
@@ -1031,7 +1063,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "After naloxone 0.2 mg in total, his RR is 14 and SpO2 94%. He is awake and talking.",
-        prompt: "List TWO reasons he needs prolonged monitoring.",
+        prompt: "Why does he need prolonged monitoring?",
         required: 2,
         accept: [
           { id: "duration", text: "Naloxone wears off in 30 to 90 minutes, before morphine does", match: ["wear off", "wears off", "duration", "shorter", "half life", "resedation", "renarcotization"] },
@@ -1048,7 +1080,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO changes you would make to his analgesic plan based on how he responded.",
+        prompt: "What changes would you make to his analgesic plan based on how he responded?",
         required: 2,
         accept: [
           { id: "switch", text: "Avoid morphine and use a small dose of hydromorphone or fentanyl", match: ["hydromorphone", "fentanyl", "avoid morphine", "switch"] },
@@ -1079,12 +1111,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["msk"],
     title: "Hip out after bending over",
     stem:
-      "A 72-year-old man felt his hip give way while bending to tie his shoes. X-ray shows a posterior dislocation of his total hip replacement. He has hypertension and type 2 diabetes. He snores loudly but has never been tested for sleep apnea. He has a full beard and wears full dentures, which have been removed. He ate breakfast 1 hour ago. Vitals: HR 88, BP 158/90, RR 18, SpO2 95% on room air, temperature 36.8°C. He weighs 104 kg. He has had no analgesia since arrival. You plan procedural sedation with propofol.",
+      "A 72-year-old man felt his hip give way while bending to tie his shoes. X-ray shows a posterior dislocation of his total hip replacement. He has hypertension and type 2 diabetes. He snores loudly but has never been tested for sleep apnea. He has a full beard and wears full dentures, which have been removed. He ate breakfast 1 hour ago. He has had no analgesia since arrival. You plan procedural sedation with propofol.",
+    vitals: { temperature: "36.8°C", pulse: "88/minute", resp: "18/minute", bp: "158/90 mmHg", o2sat: "95% on room air", weight: "104 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features in this patient that predict difficult rescue bag-mask ventilation.",
+        prompt: "What features in this patient predict difficult rescue bag-mask ventilation?",
         required: 3,
         accept: [
           { id: "beard", text: "Beard", match: ["beard", "mask seal"] },
@@ -1101,24 +1134,24 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which statement about his recent meal is most accurate? Select one.",
+        prompt: "Which of the following statements about his recent meal is most accurate?",
         options: [
-          "Sedation must be delayed until 6 hours after his meal",
-          "Recent food intake is not by itself a reason to delay ED sedation, but it can be weighed with his other risk factors when choosing timing and depth",
+          "Give metoclopramide and wait 30 minutes",
           "He must have a nasogastric tube placed first",
           "He needs rapid sequence intubation instead of sedation",
-          "Give metoclopramide and wait 30 minutes",
+          "Not alone a reason to delay, weigh with other risks",
+          "Sedation must be delayed until 6 hours after his meal",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Evidence does not show that fasting times reduce aspiration during ED sedation, which is rare. ACEP advises against delaying sedation on fasting time alone. In a patient with several airway risk factors, it is reasonable to consider the timing and target a lighter depth.",
+          "Recent food intake is not by itself a reason to delay ED sedation, but it can be weighed with his other risk factors when choosing timing and depth. Evidence does not show that fasting times reduce aspiration during ED sedation, which is rare. ACEP advises against delaying sedation on fasting time alone. In a patient with several airway risk factors, it is reasonable to consider the timing and target a lighter depth.",
         keyFeature: { topic: "analgesia-sedation", n: 5 },
         source: "acep-psa",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "He has had no analgesia. List TWO ways to provide analgesia along with the propofol.",
+        prompt: "Since he has had no analgesia, how would you provide it along with the propofol?",
         required: 2,
         accept: [
           { id: "fent", text: "Fentanyl 0.5 to 1 mcg/kg IV before sedation", match: ["fentanyl"] },
@@ -1136,7 +1169,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "After propofol 80 mg IV in divided doses his BP falls to 76/40 with HR 70. SpO2 is 94%.",
-        prompt: "List TWO immediate interventions.",
+        prompt: "What are your immediate interventions?",
         required: 2,
         accept: [
           { id: "stop", text: "Stop further propofol", match: ["stop", "hold"] },
@@ -1162,20 +1195,21 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["abdominal-pain"],
     title: "Right sided abdominal pain",
     stem:
-      "A 24-year-old woman presents with 14 hours of periumbilical pain that has moved to the right lower quadrant. She has vomited twice. She is lying still and guarding, and rates her pain 8 out of 10. Vitals: HR 104, BP 118/70, RR 18, SpO2 99% on room air, temperature 38.0°C. She weighs 58 kg. Urine beta hCG is negative. The surgical resident asks that no analgesia be given until the staff surgeon examines her in 2 hours.",
+      "A 24-year-old woman presents with 14 hours of periumbilical pain that has moved to the right lower quadrant. She has vomited twice. She is lying still and guarding, and rates her pain 8 out of 10. Urine beta hCG is negative. The surgical resident asks that no analgesia be given until the staff surgeon examines her in 2 hours.",
+    vitals: { temperature: "38.0°C", pulse: "104/minute", resp: "18/minute", bp: "118/70 mmHg", o2sat: "99% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is the most appropriate approach to her pain? Select one.",
+        prompt: "Which of the following is the most appropriate approach to her pain?",
         options: [
-          "Give an IV opioid now, titrated to effect",
-          "Withhold all analgesia until the surgeon examines her",
           "Give acetaminophen 325 mg PO only",
-          "Give lorazepam to help her relax",
+          "Give an IV opioid now, titrated to effect",
           "Give analgesia only after the CT scan",
+          "Give lorazepam to help her relax",
+          "Withhold all analgesia until the surgeon examines her",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Systematic reviews show that opioid analgesia in acute abdominal pain does not reduce diagnostic accuracy or delay treatment. Withholding it causes needless suffering. Explain the evidence to the resident and treat her now.",
         keyFeature: { topic: "analgesia-sedation", n: 3 },
@@ -1184,7 +1218,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO appropriate IV analgesic options for her. Include the dose.",
+        prompt: "What IV analgesic options are appropriate for her, including the dose?",
         required: 2,
         accept: [
           { id: "morphine", text: "Morphine 0.1 mg/kg IV (about 5 to 6 mg), titrated", match: ["morphine"] },
@@ -1202,7 +1236,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO ways you would reassess her response to analgesia.",
+        prompt: "How would you reassess her response to analgesia?",
         required: 2,
         accept: [
           { id: "score", text: "Repeat pain score 15 to 30 minutes after each dose", match: ["pain score", "pain scale", "repeat", "numeric", "rating"] },
@@ -1228,12 +1262,13 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Chest wall pain after a fall",
     stem:
-      "An 81-year-old man fell down four stairs at home. CT shows fractures of the left 5th to 8th ribs with no pneumothorax or hemothorax. He takes apixaban for atrial fibrillation and took his last dose this morning. His eGFR is 55. He rates his pain 3 out of 10 at rest but 9 out of 10 with deep breathing and coughing. He is splinting and his cough is weak. Vitals: HR 96, BP 146/80, RR 24, SpO2 93% on room air, temperature 36.7°C. He weighs 74 kg. Incentive spirometry is 700 mL.",
+      "An 81-year-old man fell down four stairs at home. CT shows fractures of the left 5th to 8th ribs with no pneumothorax or hemothorax. He takes apixaban for atrial fibrillation and took his last dose this morning. His eGFR is 55. He rates his pain 3 out of 10 at rest but 9 out of 10 with deep breathing and coughing. He is splinting and his cough is weak. Incentive spirometry is 700 mL.",
+    vitals: { temperature: "36.7°C", pulse: "96/minute", resp: "24/minute", bp: "146/80 mmHg", o2sat: "93% on room air", weight: "74 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO measures you would use to assess his pain in a way that guides treatment.",
+        prompt: "What measures would you use to assess his pain in a way that guides treatment?",
         required: 2,
         accept: [
           { id: "dynamic", text: "Pain score with deep breathing and coughing, not just at rest", match: ["cough", "deep breath", "dynamic", "movement", "breathing"] },
@@ -1249,7 +1284,7 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE analgesic interventions appropriate for him.",
+        prompt: "What analgesic interventions are appropriate for him?",
         required: 3,
         accept: [
           { id: "block", text: "Serratus anterior plane or erector spinae plane block", match: ["serratus", "erector", "plane block", "esp", "espb", "sapb"] },
@@ -1271,15 +1306,15 @@ export const ANALGESIA_SEDATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which local anesthetic volume for his serratus anterior plane block is within safe limits? Select one.",
+        prompt: "Which of the following local anesthetic doses for his serratus anterior plane block is within safe limits?",
         options: [
-          "Bupivacaine 0.25%, 30 mL (75 mg)",
           "Bupivacaine 0.5%, 60 mL (300 mg)",
-          "Lidocaine 2%, 40 mL (800 mg)",
           "Bupivacaine 0.5%, 50 mL (250 mg)",
+          "Bupivacaine 0.25%, 30 mL (75 mg)",
+          "Lidocaine 2%, 40 mL (800 mg)",
           "Ropivacaine 1%, 50 mL (500 mg)",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "The usual maximum for plain bupivacaine is about 2.5 mg/kg, which is 185 mg for him, and many use a ceiling of 175 mg. Older patients warrant a lower dose. Seventy-five mg leaves a wide margin. Every other choice exceeds the maximum dose for its drug and risks local anesthetic systemic toxicity.",
         keyFeature: { topic: "analgesia-sedation", n: 2 },
