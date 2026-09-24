@@ -1,4 +1,5 @@
 // Expansion batch s40: Headache. 32 new SAMPs, ids headache-16 onward.
 import type { Samp } from "@/engine/samp";
+import { HEADACHE_S40_SAMPS } from "./headache";
 
-export const SAMPS_S40: Samp[] = [];
+export const SAMPS_S40: Samp[] = [...HEADACHE_S40_SAMPS];
