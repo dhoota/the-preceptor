@@ -1,0 +1,451 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const suddenUnexpectedInfantDeath: OralCase = {
+  id: "sudden-unexpected-infant-death",
+  title: "An infant brought in at dawn",
+  blueprint: "comm",
+  alsoCovers: ["peds"],
+  summary: "Paramedics bring in a 3 month old with CPR in progress. The parents are on their way.",
+  durationMinutes: 15,
+  stem:
+    "You are working in a community emergency department in Ontario on a weekday morning. A social worker and a spiritual care provider are on call. There is no pediatrician in house. " +
+    "Paramedics bring in Aria Mensah, a 3 month old girl. Her mother found her unresponsive in the parents' bed at 06:10 after a 03:00 feed. " +
+    "Paramedics arrived at 06:19 and found her apneic and pulseless. They have done CPR for 29 minutes with an i-gel airway and a tibial IO. She has had three doses of epinephrine. The rhythm has been asystole throughout. " +
+    "On arrival at 06:48: no pulse, asystole on the monitor, pupils fixed and dilated, rectal temperature 35.0 degrees C. Estimated weight 5.8 kg. CTAS 1. " +
+    "The paramedic says: 'She was cool when we got there, but no rigor and no lividity, so we worked her. Mom and dad are about ten minutes behind us with the grandmother. A police officer is driving them.'",
+  findings: [
+    {
+      id: "rhythm",
+      label: "Rhythm and cardiac POCUS",
+      result: "Asystole on the monitor in two leads. Subxiphoid view during a pulse check shows no cardiac motion. No pericardial effusion.",
+    },
+    { id: "glucose", label: "Point of care glucose", result: "Capillary glucose 2.8 mmol/L." },
+    {
+      id: "vbg",
+      label: "Venous blood gas from the IO",
+      result: "pH 6.72. pCO2 98 mmHg. Potassium 7.8 mmol/L. Lactate 17 mmol/L.",
+    },
+    {
+      id: "exam",
+      label: "External exam",
+      result:
+        "Well nourished and clean. No bruising, petechiae or bleeding from the nose or mouth. Frenulum intact. Anterior fontanelle flat. " +
+        "Small amount of frothy secretions in the i-gel. Early faint lividity over the back now visible.",
+    },
+    {
+      id: "history",
+      label: "History from the parents",
+      result:
+        "Healthy term baby. Two month vaccines given 3 weeks ago. Mild runny nose for 2 days. Mother breastfed her at 03:00 in bed and fell asleep with Aria beside her on a soft adult mattress with a duvet. " +
+        "Father was also in the bed. Neither parent drank alcohol or used drugs last night. Father smokes outside.",
+    },
+    {
+      id: "family",
+      label: "Family",
+      result: "Parents Kwame and Efua Mensah. A 4 year old son is at home with a neighbour. The paternal grandmother is with them. The family is Christian and asks for a pastor.",
+    },
+    {
+      id: "paramedic",
+      label: "Paramedic scene report",
+      result: "Found supine in the middle of the adult bed between two pillows. Face partly covered by the duvet. The home was tidy and warm. No other concerns noted.",
+    },
+    {
+      id: "breastfeeding",
+      label: "Mother",
+      result: "Efua is breastfeeding and her breasts are becoming full. She is 3 months postpartum and otherwise well.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the resuscitation bay",
+      text: "The team moves Aria to the resus bed. The paramedics continue compressions. The monitor shows asystole. The nurse asks what you want to do.",
+      next: "q-resus",
+    },
+    {
+      kind: "question",
+      id: "q-resus",
+      phase: "Resuscitation",
+      prompt: "How do you run the next few minutes, and how do you decide when to stop?",
+      seconds: 90,
+      modelAnswer: [
+        "Take over with high quality CPR and confirm airway placement and ventilation.",
+        "Epinephrine 0.01 mg/kg IO, so about 0.06 mg, every 3 to 5 minutes.",
+        "Look for reversible causes. Treat glucose of 2.8 with D10W 5 mL/kg, so about 30 mL. Check temperature.",
+        "POCUS during pulse checks for cardiac motion.",
+        "Unwitnessed arrest, asystole throughout, over 30 minutes of CPR and early lividity all predict no survival.",
+        "Stop after a brief period of ALS in the ED with no reversible cause, as a team decision. Offer the parents the chance to be present.",
+      ],
+      rubric: ["sd-r1", "sd-l1"],
+      choices: [
+        {
+          id: "c-brief-als",
+          label: "I ran a short period of full ALS, treated the glucose, checked for reversible causes and cardiac motion, and then stopped as a team when asystole persisted.",
+          next: "s-parents-arrive",
+          quality: "strong",
+          feedback:
+            "Correct. A short, complete resuscitation in the ED is reasonable and lets you say honestly that everything was done. The decision to stop should be clear and shared with the team.",
+        },
+        {
+          id: "c-long",
+          label: "I continued CPR for another 45 minutes because she is an infant.",
+          next: "s-long",
+          quality: "partial",
+          feedback:
+            "The wish to keep going is understandable. But an unwitnessed arrest with asystole throughout and early lividity has no realistic chance of survival. Prolonged CPR can delay the family's time with her.",
+        },
+        {
+          id: "c-stop-now",
+          label: "I declared death on arrival without any further assessment.",
+          next: "s-long",
+          quality: "partial",
+          feedback:
+            "Stopping may be the right outcome, but a brief assessment is needed first. Check rhythm, cardiac motion and glucose and confirm the airway. You also want to be able to tell the parents what was done.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-long",
+      phase: "A few minutes later",
+      text: "The charge nurse asks you to reassess. Lividity is now clearer on the back. You confirm asystole and no cardiac motion on POCUS. You stop the resuscitation with the team's agreement.",
+      next: "s-parents-arrive",
+    },
+    {
+      kind: "say",
+      id: "s-parents-arrive",
+      phase: "06:58",
+      text: "Time of death is 06:58. The parents and grandmother have just arrived. The social worker has taken them to the family room. The nurse asks if you are ready to speak with them.",
+      next: "q-tell",
+    },
+    {
+      kind: "question",
+      id: "q-tell",
+      phase: "Telling the parents",
+      prompt: "Show me how you tell the parents. What are your first words?",
+      seconds: 90,
+      modelAnswer: [
+        "Prepare. Know the baby's name and the parents' names. Bring the social worker or nurse. Turn off your pager if possible.",
+        "Sit down in a private room. Introduce yourself and check who is present.",
+        "Find out what they know. Give a warning shot: 'I am afraid I have very bad news.'",
+        "Use the words dead or died. 'Aria died. We were not able to restart her heart.'",
+        "Pause. Allow silence and emotion. Do not rush to details.",
+        "Do not speculate about the cause. Say that you do not yet know why she died.",
+      ],
+      rubric: ["sd-c1", "sd-c2"],
+      choices: [
+        {
+          id: "c-clear",
+          label: "I sat with them, used Aria's name, gave a warning shot, said clearly that she had died despite everything we did, and then stayed quiet and let them respond.",
+          next: "q-coroner",
+          quality: "strong",
+          feedback:
+            "This is what the examiner wanted. Clear words prevent false hope. Silence after the news gives the family space. Using her name shows respect.",
+        },
+        {
+          id: "c-euphemism",
+          label: "I told them we had lost her and that she had passed on peacefully.",
+          next: "s-euphemism",
+          quality: "partial",
+          feedback:
+            "Euphemisms like lost or passed can be misunderstood in a moment of shock. Saying she was peaceful is speculation. Use the words died or dead.",
+        },
+        {
+          id: "c-blame",
+          label: "I asked first whether she had been sleeping in their bed and whether anyone had been drinking.",
+          next: "s-euphemism",
+          quality: "unsafe",
+          feedback:
+            "Opening with questions about the sleep setting sounds like blame before they even know she has died. Give the news first. The history comes later, gently and without judgment.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-euphemism",
+      phase: "In the family room",
+      text: "The father asks, 'So is she in the ICU? Can we see her?' The social worker looks at you. You say clearly that Aria has died. The mother collapses into the grandmother's arms.",
+      next: "q-coroner",
+    },
+    {
+      kind: "question",
+      id: "q-coroner",
+      phase: "After the death",
+      prompt: "The nurse asks if she can take out the i-gel and the IO so the parents can hold her. Who must you notify, and what happens to the body and the equipment?",
+      seconds: 75,
+      modelAnswer: [
+        "Notify the coroner. A sudden and unexpected death must be reported under the Ontario Coroners Act.",
+        "In Ontario, police usually attend sudden infant deaths alongside the coroner. This is routine.",
+        "Leave all medical equipment in place: airway, IO and any lines. Do not wash the baby.",
+        "Do not complete a death certificate. The coroner will determine cause and manner of death.",
+        "Document the resuscitation, times and findings, including a full external exam.",
+        "Ask the coroner about the parents holding her and about memory making such as hand and foot prints.",
+      ],
+      rubric: ["sd-p1", "sd-p2"],
+      choices: [
+        {
+          id: "c-coroner",
+          label: "I left the i-gel and IO in place, called the coroner, and asked the coroner about the parents holding her and about memory making.",
+          next: "q-hold",
+          quality: "strong",
+          feedback:
+            "Correct. Equipment stays in so the pathologist can tell resuscitation findings from injury. In most cases the coroner will allow supervised holding. You protect the investigation and the family's time with her.",
+        },
+        {
+          id: "c-remove",
+          label: "I asked the nurse to remove the i-gel and IO and clean her up so the parents would not see the equipment.",
+          next: "s-remove",
+          quality: "partial",
+          feedback:
+            "It is a kind instinct, but removing equipment can compromise the coroner's examination. Tubes and lines stay in. You can cover them and prepare the parents for what they will see.",
+        },
+        {
+          id: "c-certificate",
+          label: "I completed the death certificate with sudden infant death syndrome as the cause.",
+          next: "s-remove",
+          quality: "unsafe",
+          feedback:
+            "A sudden unexpected infant death is a coroner's case. SIDS is a diagnosis of exclusion made only after autopsy, scene investigation and review. The ED physician must not certify this death.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-remove",
+      phase: "Ten minutes later",
+      text: "The coroner calls back. She asks that any equipment still in place stay in place, that anything removed be kept and documented, and that no death certificate be completed. The nurse replaces the blanket over Aria. You document what was done and when.",
+      next: "q-hold",
+    },
+    {
+      kind: "question",
+      id: "q-hold",
+      phase: "Time with Aria",
+      prompt: "The coroner agrees the parents can hold her with a nurse present. How do you prepare them and support them?",
+      seconds: 60,
+      modelAnswer: [
+        "Tell them what they will see: the tube in her mouth, the needle in her leg and changes in colour.",
+        "Wrap her in a blanket. Let them hold her and take as long as the coroner allows.",
+        "A staff member stays in the room, quietly.",
+        "Offer spiritual care and call the pastor they asked for.",
+        "Offer memory making such as a lock of hair, hand and foot prints and photographs, as the coroner permits.",
+        "Ask about their 4 year old and who can support him.",
+      ],
+      rubric: ["sd-c3"],
+      next: "s-police",
+    },
+    {
+      kind: "say",
+      id: "s-police",
+      phase: "07:40",
+      text:
+        "Two police officers arrive and ask to speak with the parents right away in the family room. The father overhears. He shouts, 'Are you saying we killed our baby?' The mother is still holding Aria.",
+      next: "q-police",
+    },
+    {
+      kind: "question",
+      id: "q-police",
+      phase: "Conflict",
+      prompt: "What do you say to the father, and how do you work with the police?",
+      seconds: 75,
+      modelAnswer: [
+        "Stay calm. Acknowledge his anger and grief.",
+        "Explain that every sudden infant death in Ontario is investigated by the coroner, usually with police. It is routine and it is not an accusation.",
+        "The purpose is to understand why Aria died, which may help them and other families.",
+        "Ask the officers to give the family a few more minutes with Aria if the investigation allows.",
+        "Share your documented history and exam findings with the investigators.",
+        "Take the medical history yourself without judgment: sleep position and surface, bed sharing, recent illness, feeding and substances.",
+      ],
+      rubric: ["sd-c4", "sd-a1"],
+      choices: [
+        {
+          id: "c-explain",
+          label: "I acknowledged his anger, explained that all sudden infant deaths are investigated as routine and are not an accusation, and asked the officers to give the family more time with Aria.",
+          next: "q-aftercare",
+          quality: "strong",
+          feedback:
+            "Good. The explanation reduces fear of blame. Advocating for time with their baby keeps the family at the centre while respecting the investigation.",
+        },
+        {
+          id: "c-leave-police",
+          label: "I told him that the police were in charge now and left the room.",
+          next: "s-leave-police",
+          quality: "unsafe",
+          feedback:
+            "Leaving abandons the family at their worst moment. You remain their physician. Explain the process, stay present and coordinate with the officers.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-leave-police",
+      phase: "A few minutes later",
+      text: "The social worker finds you. The father has left the building and the mother is alone and distraught. You return to the family room, apologize and explain the routine process.",
+      next: "q-aftercare",
+    },
+    {
+      kind: "question",
+      id: "q-aftercare",
+      phase: "Before they leave",
+      prompt: "The family is getting ready to leave. What do you cover before they go?",
+      seconds: 75,
+      modelAnswer: [
+        "Explain that the coroner will likely order an autopsy and will contact them. Families can share religious or cultural concerns with the coroner.",
+        "Lactation: breast engorgement will occur. Offer advice on comfort and suppression, and a follow up contact.",
+        "Notify their family physician with consent.",
+        "Give written information on bereavement supports and how to reach the coroner's office.",
+        "Make sure someone can drive them home and be with them.",
+        "Safe sleep advice is important for future children but is best given later, gently, not in this moment.",
+      ],
+      rubric: ["sd-d1", "sd-c5"],
+      next: "q-team",
+    },
+    {
+      kind: "question",
+      id: "q-team",
+      phase: "The team",
+      prompt: "The young nurse who did compressions is crying in the med room. What do you do for your team?",
+      seconds: 60,
+      modelAnswer: [
+        "Check on her directly and privately.",
+        "Hold a brief team debrief when the department allows.",
+        "Acknowledge that infant deaths are among the hardest events in emergency medicine.",
+        "Offer the employee assistance program and peer support.",
+        "Arrange cover so staff can take a short break.",
+      ],
+      rubric: ["sd-l2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "The family leaves with the grandmother. The coroner takes jurisdiction and arranges an autopsy. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "sd-r1",
+      competency: "resuscitation",
+      text: "Runs a brief complete ALS resuscitation with weight based epinephrine, glucose correction and POCUS for cardiac motion.",
+      points: 2,
+      teaching: "A short, complete ED resuscitation confirms the situation and lets you tell the family honestly that everything was done.",
+      source: "aha-pals",
+    },
+    {
+      id: "sd-l1",
+      competency: "leadership",
+      text: "Makes a clear team decision to stop based on an unwitnessed arrest, persistent asystole, duration and signs of death.",
+      points: 2,
+      teaching: "No single factor decides when to stop in children. Persistent asystole after prolonged CPR with lividity predicts no survival.",
+      source: "aha-pals",
+    },
+    {
+      id: "sd-c1",
+      competency: "communication",
+      text: "Prepares the setting, sits down, uses the baby's name, gives a warning shot and says died clearly.",
+      points: 3,
+      critical: true,
+      teaching: "Clear words prevent misunderstanding and false hope. The first sentence after the warning shot should contain the word died.",
+      source: "spikes",
+    },
+    {
+      id: "sd-c2",
+      competency: "communication",
+      text: "Allows silence and does not speculate about the cause or ask blaming questions at the time of disclosure.",
+      points: 2,
+      teaching: "Families remember the first words for years. Questions about the sleep setting can wait until after the news has been received.",
+      source: "aap-death",
+    },
+    {
+      id: "sd-p1",
+      competency: "professionalism",
+      text: "Notifies the coroner of a sudden and unexpected death and does not complete a death certificate.",
+      points: 3,
+      critical: true,
+      teaching: "Section 10 of the Ontario Coroners Act requires anyone with reason to believe a death was sudden and unexpected to notify a coroner or police immediately. SIDS is a diagnosis of exclusion made after full investigation.",
+      source: "coroners-act",
+    },
+    {
+      id: "sd-p2",
+      competency: "professionalism",
+      text: "Leaves airway devices, IO and lines in place and documents the resuscitation and external exam.",
+      points: 2,
+      teaching: "Leaving equipment in place lets the pathologist separate resuscitation marks from injury. Cover it rather than remove it.",
+      source: "aap-death",
+    },
+    {
+      id: "sd-c3",
+      competency: "communication",
+      text: "Prepares the parents to hold their baby, offers spiritual care and memory making, and asks about the sibling.",
+      points: 2,
+      teaching: "Holding the baby and keeping mementos help families grieve. Ask the coroner what is permitted before offering.",
+      source: "aap-death",
+    },
+    {
+      id: "sd-c4",
+      competency: "communication",
+      text: "Explains that police and coroner involvement is routine and not an accusation, and advocates for the family's time with the baby.",
+      points: 2,
+      teaching: "Parents often hear the investigation as blame. A clear explanation lowers conflict and supports cooperation.",
+      source: "coroners-act",
+    },
+    {
+      id: "sd-a1",
+      competency: "assessment",
+      text: "Takes a non judgmental history of sleep position, surface, bed sharing, recent illness, feeding and substances.",
+      points: 2,
+      teaching: "The history helps the coroner separate unsafe sleep, infection, metabolic disease and injury. Record the parents' words.",
+      source: "phac-sleep",
+    },
+    {
+      id: "sd-d1",
+      competency: "disposition",
+      text: "Explains the autopsy and coroner process and ensures safe travel home and support for the family.",
+      points: 2,
+      teaching: "Families should leave knowing who will contact them and when. Nobody should drive home alone after this news.",
+      source: "aap-death",
+    },
+    {
+      id: "sd-c5",
+      competency: "communication",
+      text: "Addresses lactation, informs the family physician with consent, provides bereavement resources and defers safe sleep teaching to a later time.",
+      points: 1,
+      teaching: "A breastfeeding mother needs practical advice. Safe sleep information matters for future children but should be offered later and gently.",
+      source: "phac-sleep",
+    },
+    {
+      id: "sd-l2",
+      competency: "leadership",
+      text: "Checks on distressed staff, leads a debrief and offers support resources.",
+      points: 2,
+      teaching: "Pediatric deaths affect staff deeply. Leaders should notice distress and make time for a debrief.",
+      source: "aap-death",
+    },
+  ],
+  sources: [
+    {
+      id: "coroners-act",
+      citation: "Ontario. Coroners Act, R.S.O. 1990, c. C.37. Section 10, duty to give information.",
+      url: "https://www.ontario.ca/laws/statute/90c37",
+    },
+    {
+      id: "aap-death",
+      citation: "American Academy of Pediatrics, American College of Emergency Physicians and Emergency Nurses Association. Death of a child in the emergency department. Joint policy statement. Pediatrics. 2014.",
+    },
+    {
+      id: "spikes",
+      citation: "Baile WF, et al. SPIKES. A six step protocol for delivering bad news. Oncologist. 2000.",
+    },
+    { id: "phac-sleep", citation: "Public Health Agency of Canada. Joint statement on safe sleep. Preventing sudden infant deaths in Canada." },
+    {
+      id: "aha-pals",
+      citation: "American Heart Association. 2025 Guidelines for CPR and ECC. Part 8. Pediatric advanced life support.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

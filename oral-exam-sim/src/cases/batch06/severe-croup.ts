@@ -1,0 +1,482 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const severeCroup: OralCase = {
+  id: "severe-croup",
+  title: "Noisy breathing at 3 a.m.",
+  blueprint: "peds",
+  summary: "A 2 year old wakes in the night with a cough and noisy breathing and arrives working hard.",
+  durationMinutes: 14,
+  stem:
+    "You are working overnight in a regional emergency department in southern Ontario. Anesthesia and ENT are on call from home and can be in within 30 minutes. There is no pediatric ICU. The nearest one is 2 hours away. " +
+    "Mila Kowalczyk is 2 years and 4 months old. She had a runny nose for a day and woke at 02:00 with a harsh cough and noisy breathing. " +
+    "Triage vitals: heart rate 168, respiratory rate 44, SpO2 93 percent on room air, temperature 38.1 degrees C, alert. Weight 13 kg. CTAS 2. " +
+    "The triage nurse says: 'She has a seal bark cough and loud stridor even when she is sitting still on dad's lap. She is pulling in at her neck and ribs. Dad tried the steamy bathroom at home and it did not help.'",
+  findings: [
+    {
+      id: "appearance",
+      label: "General appearance",
+      result:
+        "Anxious and clinging to her father. Crying intermittently. She is not drooling and is swallowing her saliva. She is sitting up but not tripoding. Voice hoarse.",
+    },
+    {
+      id: "resp",
+      label: "Respiratory exam",
+      result:
+        "Loud inspiratory stridor at rest. Marked suprasternal and intercostal retractions. Air entry mildly decreased at both bases. No wheeze. No cyanosis.",
+    },
+    {
+      id: "westley",
+      label: "Croup severity score",
+      result: "Westley score 6, which falls in the moderate band of 3 to 7. Stridor at rest 2, severe retractions 3, decreased air entry 1, no cyanosis, normal level of consciousness.",
+    },
+    {
+      id: "history",
+      label: "History",
+      result:
+        "Coryza for 1 day. Sudden onset of barky cough at night. No choking episode. No known foreign body. Eating and drinking yesterday. No rash. No new foods or stings.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "One episode of mild croup at 14 months treated at home. Otherwise well. Immunizations up to date, including Hib. No allergies. No airway surgery or prolonged intubation.",
+    },
+    {
+      id: "neck",
+      label: "Neck and oropharynx from a distance",
+      result: "No neck swelling or stiffness. No trismus. Oropharynx not examined with a tongue depressor. She can open her mouth and is not drooling.",
+    },
+    {
+      id: "hydration",
+      label: "Hydration",
+      result: "Moist mucous membranes. Capillary refill 2 seconds. Wet diaper at triage.",
+    },
+    {
+      id: "xray",
+      label: "Neck X ray",
+      result: "Not routinely needed. If done, the AP view shows subglottic narrowing, the steeple sign. Normal epiglottis and prevertebral soft tissue on the lateral view. No radio opaque foreign body.",
+    },
+    {
+      id: "vbg",
+      label: "Blood gas",
+      result: "Not obtained at first. Drawing blood would agitate her. If done later during fatigue, venous pH 7.24, pCO2 61 mmHg.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the resuscitation bay",
+      text: "Mila is on her father's lap with loud stridor. The nurse is holding a tongue depressor and an IV start kit and asks what you want.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First ten minutes",
+      prompt: "How severe is this, and what do you do right now? Give me drugs and doses.",
+      seconds: 90,
+      modelAnswer: [
+        "Severe croup by the CPS clinical descriptors: prominent stridor at rest, marked retractions and distress. Her Westley score of 6 sits in the moderate band, so do not let the number delay treatment.",
+        "Keep her calm on her father's lap. No tongue depressor, no IV and no X ray for now.",
+        "Nebulized L epinephrine 1 mg/mL, 5 mL. CPS uses a fixed 5 mL dose. Weight based protocols of 0.5 mL/kg to a maximum of 5 mL give the same 5 mL for her.",
+        "Dexamethasone 0.6 mg/kg orally, which is 7.8 mg. TREKK lists a maximum of 12 mg. IM or IV if she cannot take it by mouth.",
+        "Blow by oxygen if SpO2 stays under 92 percent, held by dad.",
+        "Monitor and reassess every 15 to 30 minutes.",
+      ],
+      rubric: ["cr-a1", "cr-r1", "cr-m1", "cr-m2"],
+      choices: [
+        {
+          id: "c-epi-dex",
+          label: "I kept her on dad's lap, avoided the tongue depressor and IV, and gave nebulized epinephrine 5 mL of 1 mg/mL with oral dexamethasone 0.6 mg/kg.",
+          next: "q-ddx",
+          quality: "strong",
+          feedback:
+            "Exactly right. Severe croup needs both drugs. Epinephrine works within 10 to 30 minutes and dexamethasone within a few hours. Keeping her calm is treatment, because crying worsens dynamic airway obstruction.",
+        },
+        {
+          id: "c-dex-only",
+          label: "I gave oral dexamethasone 0.6 mg/kg and planned to reassess in an hour.",
+          next: "s-dex-only",
+          quality: "partial",
+          feedback:
+            "Dexamethasone is correct but takes hours to act. With stridor at rest and marked retractions she needs nebulized epinephrine now. The examiner wanted both drugs.",
+        },
+        {
+          id: "c-exam-iv",
+          label: "I looked in her throat with a tongue depressor and started an IV for fluids and bloods.",
+          next: "s-exam-iv",
+          quality: "unsafe",
+          feedback:
+            "Agitating a child with severe upper airway obstruction can precipitate complete obstruction. A throat exam adds little here and an IV is not needed yet. Treat first and keep her calm.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-dex-only",
+      phase: "Thirty minutes later",
+      text: "Her stridor is louder and her SpO2 is 90 percent. She is more restless. The nurse asks if you want the epinephrine nebulizer now. You order it.",
+      next: "q-ddx",
+    },
+    {
+      kind: "say",
+      id: "s-exam-iv",
+      phase: "A few minutes later",
+      text:
+        "She screams and fights. Her stridor becomes high pitched and her SpO2 drops to 85 percent. Dad settles her with blow by oxygen. You give nebulized epinephrine and oral dexamethasone and she slowly calms.",
+      next: "q-ddx",
+    },
+    {
+      kind: "question",
+      id: "q-ddx",
+      phase: "Differential",
+      prompt: "What features would make you doubt this is croup? What else is on your differential?",
+      seconds: 60,
+      modelAnswer: [
+        "Toxic appearance, high fever, drooling or tripoding suggests epiglottitis or bacterial tracheitis.",
+        "Poor response to epinephrine or a toxic child with thick secretions suggests bacterial tracheitis.",
+        "Sudden onset with choking and no viral prodrome suggests a foreign body.",
+        "Neck stiffness, trismus or torticollis suggests a retropharyngeal abscess.",
+        "Urticaria, swelling or exposure suggests anaphylaxis.",
+        "Recurrent or atypical croup under 6 months suggests subglottic stenosis or hemangioma.",
+      ],
+      rubric: ["cr-a2"],
+      next: "s-better",
+    },
+    {
+      kind: "say",
+      id: "s-better",
+      phase: "Forty minutes after epinephrine",
+      text: "Mila is much better. She has soft stridor only when she cries and mild retractions. SpO2 is 97 percent on room air. Dad asks if they can go home now since she is sleepy and it is late.",
+      next: "q-observe",
+    },
+    {
+      kind: "question",
+      id: "q-observe",
+      phase: "Observation",
+      prompt: "Can she go home now? What are your criteria?",
+      seconds: 60,
+      modelAnswer: [
+        "Not yet. Observe 2 to 4 hours after the last dose of epinephrine because the effect wears off.",
+        "Discharge only if there is no stridor at rest, minimal retractions, normal SpO2 and she is drinking.",
+        "Caregivers must be able to return quickly.",
+        "Needing more than one dose of epinephrine is a common reason to admit.",
+      ],
+      rubric: ["cr-d1"],
+      choices: [
+        {
+          id: "c-two-hours",
+          label: "I explained that we need to watch her for at least 2 hours after the epinephrine because it can wear off.",
+          next: "s-rebound",
+          quality: "strong",
+          feedback:
+            "Correct. The effect of epinephrine fades by about 2 hours. CPS advises 2 to 4 hours of observation. The dexamethasone should be working by then and observation catches the child who rebounds.",
+        },
+        {
+          id: "c-discharge",
+          label: "I discharged her because she looked so much better, with advice to come back if the stridor returned.",
+          next: "s-early-dc",
+          quality: "unsafe",
+          feedback:
+            "Discharge less than 2 hours after epinephrine risks rebound at home. This child had severe croup on arrival. The examiner wanted an observation period and clear discharge criteria.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-early-dc",
+      phase: "Seventy minutes later",
+      text: "Dad carries Mila back through the doors. In the car her stridor came back and she is pulling in hard. She is taken straight to resus.",
+      next: "s-rebound",
+    },
+    {
+      kind: "say",
+      id: "s-rebound",
+      phase: "Three hours after arrival",
+      text:
+        "Her stridor at rest returns. She gets a second dose of nebulized epinephrine with brief improvement. An hour later she is worse again. " +
+        "Now she is quiet and lying against her father. Her stridor is softer but her air entry is poor. Retractions are severe. SpO2 88 percent on blow by oxygen. Heart rate 184. Temperature 38.4.",
+      next: "q-failure",
+    },
+    {
+      kind: "question",
+      id: "q-failure",
+      phase: "Deterioration",
+      prompt: "What is happening, and what do you do?",
+      seconds: 90,
+      modelAnswer: [
+        "Impending respiratory failure. Softer stridor with poor air entry and lethargy is a warning, not improvement.",
+        "Give another nebulized epinephrine dose and high flow oxygen by face mask.",
+        "Call anesthesia and ENT in now for a controlled airway.",
+        "Heliox is not routinely recommended by CPS. Some centres use it as a short bridge while the airway team arrives.",
+        "Do not sedate her. Keep her with her father.",
+        "Prepare tubes 0.5 to 1 size smaller than predicted and a front of neck airway kit.",
+        "Call CritiCall for PICU transfer.",
+      ],
+      rubric: ["cr-a3", "cr-l1", "cr-m3"],
+      choices: [
+        {
+          id: "c-escalate",
+          label: "I recognized impending respiratory failure, gave more epinephrine and oxygen, called anesthesia and ENT in and prepared for a controlled airway with smaller tubes.",
+          next: "q-airway",
+          quality: "strong",
+          feedback:
+            "Good. A quiet, tired child with poor air entry is tiring, not improving. Early call for the most skilled airway help is the key action.",
+        },
+        {
+          id: "c-more-dex",
+          label: "I gave a second dose of dexamethasone and another epinephrine nebulizer and planned to reassess in 30 minutes.",
+          next: "s-waited",
+          quality: "partial",
+          feedback:
+            "Repeat epinephrine is reasonable. A second steroid dose adds nothing now. She is showing signs of fatigue and the airway team needs to be called at the same time as you treat.",
+        },
+        {
+          id: "c-sedate",
+          label: "I gave intranasal midazolam to settle her agitation so the nebulizer would work better.",
+          next: "s-sedated",
+          quality: "unsafe",
+          feedback:
+            "Sedation in severe upper airway obstruction can remove the respiratory drive and airway tone she depends on. It can cause complete obstruction. Calm her with her parent, not with drugs.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-waited",
+      phase: "Twenty minutes later",
+      text: "SpO2 falls to 84 percent. She is hard to rouse. The nurse calls you back urgently. You call the anesthetist and the ENT surgeon in and ask for the difficult airway cart.",
+      next: "q-airway",
+    },
+    {
+      kind: "say",
+      id: "s-sedated",
+      phase: "Five minutes later",
+      text:
+        "Her respiratory effort weakens. SpO2 falls to 76 percent and heart rate to 80. You give two person bag mask ventilation with PEEP and she recovers partially. You call the anesthetist and ENT in urgently.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway plan",
+      prompt: "The anesthetist is 10 minutes away. Walk me through your airway plan, including where, who, tube size and backups.",
+      seconds: 120,
+      modelAnswer: [
+        "Ideally in the OR or resus with anesthesia and ENT present and the child breathing spontaneously.",
+        "Predicted cuffed tube for age 2 is 4.0 mm. Choose 3.5 mm cuffed and have 3.0 mm ready.",
+        "Set depth by age, not by the smaller tube. Age divided by 2 plus 12 gives about 13 cm at the lip. Three times a downsized 3.5 mm tube would give 10.5 cm, which is too shallow. Confirm with end tidal CO2 and a chest X ray.",
+        "If induction must happen in the ED, ketamine 1 to 2 mg/kg IV, so 13 to 26 mg. Paralysis only when the team is confident of the airway.",
+        "Stylet, bougie, video laryngoscope and suction ready. Continuous end tidal CO2.",
+        "Backup: a smaller tube, bag mask with PEEP and a supraglottic airway to oxygenate. The swelling is at the cricoid ring, below the cricothyroid membrane, so a needle cricothyroidotomy may not bypass it. ENT for rigid bronchoscopy or tracheostomy is the real rescue.",
+      ],
+      rubric: ["cr-r2", "cr-r3"],
+      next: "q-family",
+    },
+    {
+      kind: "question",
+      id: "q-family",
+      phase: "Family",
+      prompt: "Her father is frightened. He says she had croup before and steam fixed it. He asks why she needs a breathing tube. What do you say?",
+      seconds: 60,
+      modelAnswer: [
+        "Acknowledge his fear and use plain language.",
+        "Explain that the swelling below her voice box has narrowed her airway and she is getting tired.",
+        "The tube is a support until the swelling settles, usually over a few days.",
+        "Explain that he did the right thing and nothing he did caused this.",
+        "Tell him she will be transferred to a PICU and how he can go with her.",
+      ],
+      rubric: ["cr-c1"],
+      next: "q-handover",
+    },
+    {
+      kind: "question",
+      id: "q-handover",
+      phase: "Disposition",
+      prompt: "She is intubated with a 3.5 mm cuffed tube. What is your disposition and what goes in the handover?",
+      seconds: 60,
+      modelAnswer: [
+        "PICU transfer through CritiCall with the pediatric critical care transport team.",
+        "Handover the tube size, depth, grade of view, leak and any difficulty.",
+        "Drugs and doses with times, including all epinephrine doses and dexamethasone.",
+        "Secure the tube well and sedate adequately to prevent unplanned extubation.",
+        "Consider bacterial tracheitis given fever and poor response. Send tracheal aspirate and consider antibiotics.",
+      ],
+      rubric: ["cr-d2", "cr-c2", "cr-a4"],
+      choices: [
+        {
+          id: "c-picu",
+          label: "I arranged PICU transfer through CritiCall, secured the tube and sedated her, and gave a structured handover including tube details and every drug dose with times.",
+          next: "end",
+          quality: "strong",
+          feedback:
+            "Good. An unplanned extubation in a narrowed subglottis can be fatal. Tube security and sedation are part of safe transfer.",
+        },
+        {
+          id: "c-ward",
+          label: "I admitted her to our adult ICU until morning and planned transfer if she did not improve.",
+          next: "s-ward",
+          quality: "partial",
+          feedback:
+            "An intubated 2 year old with a difficult airway needs a pediatric ICU. Adult units often lack pediatric equipment and nursing experience. Start the transfer now.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ward",
+      phase: "In the ICU",
+      text: "The ICU nurse says they have no pediatric ventilator circuits and no pediatric intensivist. The intensivist on call asks you to arrange transfer through CritiCall. You make the call.",
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "The transport team takes Mila to the PICU. Her tracheal aspirate grows no bacteria and she is extubated two days later. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "cr-a1",
+      competency: "assessment",
+      text: "Classifies the croup as severe based on stridor at rest, marked retractions and distress.",
+      points: 2,
+      teaching: "Stridor at rest with marked retractions defines severe croup. Severity drives the choice of epinephrine and the level of monitoring.",
+      source: "cps-croup",
+    },
+    {
+      id: "cr-r1",
+      competency: "resuscitation",
+      text: "Keeps the child calm with a parent and avoids tongue depressors, IV starts and other upsetting procedures.",
+      points: 2,
+      critical: true,
+      teaching: "Agitation increases turbulent flow and dynamic collapse. Distressing procedures can turn partial obstruction into complete obstruction.",
+      source: "cps-croup",
+    },
+    {
+      id: "cr-m1",
+      competency: "management",
+      text: "Gives nebulized L epinephrine 1 mg/mL, 5 mL, which is the CPS dose and the weight based maximum.",
+      points: 3,
+      critical: true,
+      teaching: "Nebulized epinephrine reduces subglottic edema within 10 to 30 minutes. Its effect fades by about 2 hours.",
+      source: "cps-croup",
+    },
+    {
+      id: "cr-m2",
+      competency: "management",
+      text: "Gives dexamethasone 0.6 mg/kg orally, or IM or IV if oral is not possible.",
+      points: 2,
+      teaching: "Dexamethasone reduces return visits and admissions. Oral is as effective as parenteral. TREKK lists a maximum of 12 mg and other protocols differ, so check your local one.",
+      source: "trekk-croup",
+    },
+    {
+      id: "cr-a2",
+      competency: "assessment",
+      text: "Lists red flags and alternative diagnoses: epiglottitis, bacterial tracheitis, foreign body, retropharyngeal abscess and anaphylaxis.",
+      points: 2,
+      teaching: "Toxic appearance, drooling and poor response to epinephrine should prompt a search for another cause of stridor.",
+      source: "cmaj-croup",
+    },
+    {
+      id: "cr-d1",
+      competency: "disposition",
+      text: "Observes for 2 to 4 hours after the last epinephrine dose before considering discharge.",
+      points: 2,
+      teaching: "Symptoms can rebound as epinephrine wears off. Two hours of observation also lets dexamethasone start working.",
+      source: "cps-croup",
+    },
+    {
+      id: "cr-a3",
+      competency: "assessment",
+      text: "Recognizes softer stridor with poor air entry, lethargy and hypoxia as impending respiratory failure.",
+      points: 3,
+      critical: true,
+      teaching: "A quiet chest in severe croup means little air is moving. Fatigue and falling level of consciousness are late and ominous.",
+      source: "cmaj-croup",
+    },
+    {
+      id: "cr-l1",
+      competency: "leadership",
+      text: "Calls anesthesia and ENT early and prepares for a controlled airway.",
+      points: 2,
+      teaching: "The most skilled airway operator should manage a narrowed pediatric airway. Call before the child arrests, not after.",
+      source: "cmaj-croup",
+    },
+    {
+      id: "cr-m3",
+      competency: "management",
+      text: "Avoids sedation and knows heliox is at most a short bridge.",
+      points: 1,
+      teaching: "Sedation can remove the airway tone the child depends on. CPS does not recommend heliox routinely. Some centres use it briefly while definitive help arrives.",
+      source: "cps-croup",
+    },
+    {
+      id: "cr-r2",
+      competency: "resuscitation",
+      text: "Selects a tube 0.5 to 1 size smaller than predicted, for example 3.5 mm cuffed with 3.0 mm ready, and sets depth by age at about 13 cm.",
+      points: 2,
+      teaching: "The subglottis is the narrowest part of the airway in croup. A smaller tube passes the swelling and limits further injury.",
+      source: "aha-pals",
+    },
+    {
+      id: "cr-r3",
+      competency: "resuscitation",
+      text: "States a backup plan including a smaller tube, bag mask with PEEP, a supraglottic airway and ENT for a surgical airway.",
+      points: 1,
+      teaching: "Croup narrows the airway at the cricoid ring, below the cricothyroid membrane. A needle cricothyroidotomy may not bypass it, so ENT at the bedside for bronchoscopy or tracheostomy is the best backup.",
+      source: "aha-pals",
+    },
+    {
+      id: "cr-c1",
+      competency: "communication",
+      text: "Explains the need for intubation to the parent in plain language and addresses his fear.",
+      points: 1,
+      teaching: "Parents often feel they failed at home. Explain the reason, the expected course and how they can stay with their child.",
+      source: "trekk-croup",
+    },
+    {
+      id: "cr-d2",
+      competency: "disposition",
+      text: "Arranges PICU transfer with a pediatric critical care transport team.",
+      points: 2,
+      teaching: "An intubated child with a narrowed airway needs a pediatric ICU. CritiCall coordinates the bed and team in Ontario.",
+      source: "trekk-croup",
+    },
+    {
+      id: "cr-c2",
+      competency: "communication",
+      text: "Gives a structured handover including tube size, depth, grade of view and all drug doses with times.",
+      points: 1,
+      teaching: "Tube details matter most in a difficult airway. The receiving team must know what worked and what to avoid.",
+      source: "aha-pals",
+    },
+    {
+      id: "cr-a4",
+      competency: "assessment",
+      text: "Considers bacterial tracheitis given fever and poor response, and sends a tracheal aspirate.",
+      points: 1,
+      teaching: "Bacterial tracheitis can follow viral croup. Thick secretions at intubation and a toxic course suggest it and need antibiotics.",
+      source: "cmaj-croup",
+    },
+  ],
+  sources: [
+    {
+      id: "cps-croup",
+      citation: "Canadian Paediatric Society. Acute management of croup in the emergency department. Position statement. 2017, updated 2026.",
+      url: "https://cps.ca/en/documents/position/acute-management-of-croup",
+    },
+    { id: "trekk-croup", citation: "TREKK. Bottom line recommendations. Croup.", url: "https://trekk.ca/resources/bottom-line-recommendations-croup" },
+    { id: "cmaj-croup", citation: "Bjornson CL, Johnson DW. Croup in children. CMAJ. 2013." },
+    {
+      id: "aha-pals",
+      citation: "American Heart Association. 2025 Guidelines for CPR and ECC. Part 8. Pediatric advanced life support.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

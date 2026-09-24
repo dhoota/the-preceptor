@@ -1,0 +1,486 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const pediatricStatusEpilepticus: OralCase = {
+  id: "pediatric-status-epilepticus",
+  title: "A baby who will not stop shaking",
+  blueprint: "peds",
+  summary: "A 9 month old arrives by ambulance still seizing after a dose of midazolam from paramedics.",
+  durationMinutes: 15,
+  stem:
+    "You are working in a mid sized emergency department in Ontario in July. There is a pediatrician in house and a CT scanner. The nearest PICU is 60 minutes away. " +
+    "Jayden Morrison is 9 months old. His mother found him stiff and jerking in his crib at 09:40. Paramedics gave intranasal midazolam 1.7 mg at 09:52. He is still seizing on arrival at 10:00. " +
+    "Triage vitals: heart rate 172, respiratory rate 40 and shallow, SpO2 90 percent on a non rebreather mask, blood pressure 98/60, temperature 37.3 degrees C. Weight 8.5 kg. CTAS 1. " +
+    "The paramedic says: 'Rhythmic jerking of all four limbs the whole way in. Eyes deviated to the right. No fever. Mom says he has been fine except a bit fussy the last couple of days.'",
+  findings: [
+    {
+      id: "exam",
+      label: "Examination during seizure",
+      result:
+        "Generalized clonic movements of all four limbs. Eyes deviated to the right. Pooled secretions in the mouth. Anterior fontanelle soft and flat. " +
+        "No rash. No bruising seen on a quick skin check. Capillary refill 2 seconds.",
+    },
+    { id: "glucose", label: "Point of care glucose", result: "Capillary glucose 5.2 mmol/L." },
+    {
+      id: "vbg",
+      label: "Venous blood gas",
+      result: "pH 7.21. pCO2 58 mmHg. Bicarbonate 22 mmol/L. Lactate 4.1 mmol/L. Ionized calcium 1.18 mmol/L.",
+    },
+    {
+      id: "lytes",
+      label: "Electrolytes",
+      result: "Sodium 118 mmol/L. Potassium 3.9 mmol/L. Chloride 86 mmol/L. Bicarbonate 20 mmol/L. Urea 1.4 mmol/L. Creatinine 18 µmol/L. Magnesium 0.82 mmol/L.",
+    },
+    { id: "osm", label: "Serum osmolality and urine", result: "Serum osmolality 244 mOsm/kg. Urine osmolality 92 mOsm/kg. Urine sodium under 20 mmol/L." },
+    { id: "cbc", label: "CBC", result: "WBC 9.4 x 10^9/L. Hemoglobin 104 g/L. Platelets 310 x 10^9/L." },
+    {
+      id: "feeding",
+      label: "Feeding history from mother",
+      result:
+        "He takes formula from a bottle. Money has been very tight this month. She has been adding extra water to each bottle to make the tin last. " +
+        "During the heat wave she has also given him plain water. He has had about eight bottles a day and many wet diapers.",
+    },
+    {
+      id: "pmh",
+      label: "Past and developmental history",
+      result: "Term birth. No prior seizures. Sitting without support and babbling. Immunizations up to date. No medications. No family history of epilepsy.",
+    },
+    {
+      id: "ct",
+      label: "CT head after the seizure stops",
+      result: "No hemorrhage. No mass. No skull fracture. Grey white differentiation preserved.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Single parent living with her own mother. She recently lost her job. No prior involvement with child protection services. She is calm, engaged and asking good questions.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the resuscitation bay",
+      text: "It is 10:00. Jayden has been seizing for about 20 minutes. There is no IV. The nurse has two attempts behind her and asks for direction.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First five minutes",
+      prompt: "What do you do now? Give me drugs, doses and routes.",
+      seconds: 90,
+      modelAnswer: [
+        "Airway positioning, suction, oxygen, and bag mask ready. Monitor.",
+        "Point of care glucose. It is 5.2 mmol/L.",
+        "IO access now after two failed IV attempts.",
+        "Second benzodiazepine dose now: lorazepam 0.1 mg/kg IV or IO, so 0.85 mg, maximum 4 mg.",
+        "Limit benzodiazepines to two doses including the prehospital dose.",
+        "Draw up second line therapy now so it is ready in 5 minutes.",
+      ],
+      rubric: ["se-r1", "se-m1"],
+      choices: [
+        {
+          id: "c-second-benzo",
+          label: "I suctioned and positioned him, placed an IO, gave lorazepam 0.85 mg IO and had levetiracetam drawn up.",
+          next: "q-ddx",
+          quality: "strong",
+          feedback:
+            "Correct. He has had one prehospital dose, so one more benzodiazepine is appropriate. IO access avoids delay. Preparing the second line drug now keeps the timeline tight.",
+        },
+        {
+          id: "c-wait-iv",
+          label: "I asked the nurse to keep trying for an IV and waited to give anything until it was in.",
+          next: "s-wait-iv",
+          quality: "partial",
+          feedback:
+            "Every minute of seizure makes it harder to stop. After two failed attempts, go to IO or give IM or intranasal midazolam. The examiner wanted a second benzodiazepine without delay.",
+        },
+        {
+          id: "c-many-benzo",
+          label: "I gave two more doses of midazolam 5 minutes apart because the first was only intranasal.",
+          next: "s-many-benzo",
+          quality: "unsafe",
+          feedback:
+            "More than two benzodiazepine doses adds respiratory depression without much added seizure control. The prehospital dose counts. After two doses, move to a second line agent.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-wait-iv",
+      phase: "Ten minutes later",
+      text: "There is still no IV. His SpO2 is 86 percent. The pediatrician arrives and places an IO. Lorazepam 0.85 mg is given at 10:12.",
+      next: "q-ddx",
+    },
+    {
+      kind: "say",
+      id: "s-many-benzo",
+      phase: "Ten minutes later",
+      text: "He is still twitching. His respirations are now 8 per minute and SpO2 is 82 percent. The respiratory therapist starts bag mask ventilation. The seizure continues.",
+      next: "q-ddx",
+    },
+    {
+      kind: "question",
+      id: "q-ddx",
+      phase: "Cause",
+      prompt: "He is afebrile. What causes are you considering in a 9 month old, and what do you send?",
+      seconds: 75,
+      modelAnswer: [
+        "Metabolic: hypoglycemia, hyponatremia, hypocalcemia and hypomagnesemia.",
+        "Abusive head trauma. Examine the skin, fontanelle and ears and plan imaging.",
+        "CNS infection even without fever. Meningitis or encephalitis.",
+        "Toxic ingestion in a mobile infant.",
+        "First presentation of epilepsy or a structural lesion.",
+        "Send gas, electrolytes, calcium, magnesium, CBC, and consider toxicology and blood culture.",
+      ],
+      rubric: ["se-a1", "se-a2"],
+      next: "q-second",
+    },
+    {
+      kind: "question",
+      id: "q-second",
+      phase: "Second line",
+      prompt: "Five minutes after the second benzodiazepine he is still seizing. What is your second line drug and dose?",
+      seconds: 75,
+      modelAnswer: [
+        "Levetiracetam 60 mg/kg IV or IO over 5 to 15 minutes, so 510 mg. The CPS maximum is 3000 mg. ESETT used 4500 mg.",
+        "Or fosphenytoin 20 mg PE/kg, so 170 mg PE, maximum 1000 mg PE, over 5 to 10 minutes with cardiac monitoring.",
+        "Phenobarbital 20 mg/kg is an alternative, with more respiratory depression. CPS notes it may be the best choice under 6 months.",
+        "Avoid valproate under 2 years because of the risk of liver failure in undiagnosed metabolic or mitochondrial disease. IV valproate is also only available in Canada through Special Access.",
+        "ConSEPT, EcLiPSE and ESETT found levetiracetam and phenytoin similarly effective. If he keeps seizing, CPS suggests pyridoxine 100 mg IV under 18 months.",
+      ],
+      rubric: ["se-m2", "se-m3"],
+      choices: [
+        {
+          id: "c-lev",
+          label: "I gave levetiracetam 60 mg/kg, which is 510 mg, IO over 5 to 15 minutes.",
+          next: "s-sodium",
+          quality: "strong",
+          feedback:
+            "Correct. Levetiracetam is well tolerated and quick to give. It performed as well as phenytoin in pediatric trials. Fosphenytoin 20 mg PE/kg would also be acceptable.",
+        },
+        {
+          id: "c-valproate",
+          label: "I gave valproate 40 mg/kg IV.",
+          next: "s-valproate",
+          quality: "unsafe",
+          feedback:
+            "Valproate is avoided under 2 years because of the risk of fatal hepatotoxicity, especially with an undiagnosed metabolic or mitochondrial disorder. CPS lists it only as a Special Access option. Choose levetiracetam, fosphenytoin or phenobarbital in an infant.",
+        },
+        {
+          id: "c-third-benzo",
+          label: "I gave a third dose of lorazepam and waited another 5 minutes.",
+          next: "s-valproate",
+          quality: "partial",
+          feedback:
+            "A third benzodiazepine rarely stops the seizure and increases apnea risk. The protocol moves to a second line agent after two doses. That costs time.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-valproate",
+      phase: "A few minutes later",
+      text: "The pediatrician questions the choice and suggests levetiracetam. You give levetiracetam 510 mg IO over 5 minutes. He is still seizing.",
+      next: "s-sodium",
+    },
+    {
+      kind: "say",
+      id: "s-sodium",
+      phase: "10:20",
+      text:
+        "The levetiracetam has finished. He is still having rhythmic jerking. His SpO2 is 89 percent with bag mask support. " +
+        "The lab calls: sodium 118 mmol/L. His mother tells the nurse she has been watering down his formula.",
+      next: "q-sodium",
+    },
+    {
+      kind: "question",
+      id: "q-sodium",
+      phase: "The lab calls",
+      prompt: "How does this change your management? Give me the drug, dose, rate and your correction target.",
+      seconds: 90,
+      modelAnswer: [
+        "Hyponatremic seizure from free water intoxication. Antiseizure drugs will not work well until sodium rises.",
+        "Give 3 percent saline 3 to 5 mL/kg, so about 25 to 42 mL, over 10 to 20 minutes. Maximum 100 mL per dose. Some pediatric protocols use 2 mL/kg boluses instead.",
+        "Repeat once if still seizing.",
+        "Aim for a rise of about 4 to 6 mmol/L to stop symptoms. About 1 mL/kg of 3 percent saline raises sodium about 1 mmol/L.",
+        "Then limit the total rise to about 8 mmol/L in 24 hours to avoid osmotic demyelination.",
+        "Recheck sodium 20 to 30 minutes after each dose. If seizures persist, prepare for intubation.",
+      ],
+      rubric: ["se-a3", "se-r2", "se-m4"],
+      choices: [
+        {
+          id: "c-hypertonic",
+          label: "I gave 3 percent saline 4 mL/kg, about 34 mL, over 10 minutes, rechecked sodium and planned to limit the rise to about 8 mmol/L in 24 hours.",
+          next: "s-stops",
+          quality: "strong",
+          feedback:
+            "This is the key action in the case. Hypertonic saline stops hyponatremic seizures when antiseizure drugs fail. A small rise is enough. Limiting the 24 hour rise protects the brain.",
+        },
+        {
+          id: "c-normal-saline",
+          label: "I gave a 20 mL/kg bolus of 0.9 percent saline.",
+          next: "s-ns",
+          quality: "partial",
+          feedback:
+            "Normal saline raises sodium too slowly to stop a seizure and adds free water load if the kidneys dilute it. Active seizures from hyponatremia need 3 percent saline.",
+        },
+        {
+          id: "c-fast-fix",
+          label: "I ran 3 percent saline as an infusion to bring his sodium up to 135 mmol/L over two hours.",
+          next: "s-ns",
+          quality: "unsafe",
+          feedback:
+            "Correcting 17 mmol/L in two hours risks osmotic demyelination. The goal is a small rise to stop the seizure, then slow correction. Give a measured bolus and recheck.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ns",
+      phase: "A few minutes later",
+      text: "The pediatrician asks you to stop and discuss the plan. You change to a 3 percent saline bolus of 4 mL/kg over 10 minutes with a sodium check afterward.",
+      next: "s-stops",
+    },
+    {
+      kind: "say",
+      id: "s-stops",
+      phase: "10:32",
+      text:
+        "The jerking stops. His eyes return to midline. Repeat sodium is 123 mmol/L. " +
+        "Two minutes later he has snoring respirations at 10 per minute and SpO2 of 87 percent.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "After the seizure",
+      prompt: "What do you do about his breathing? When would you intubate, and with what?",
+      seconds: 75,
+      modelAnswer: [
+        "Jaw thrust, shoulder roll, suction and assisted bag mask ventilation.",
+        "Consider an oral or nasal airway. Most post ictal hypoventilation resolves in minutes.",
+        "Intubate if he cannot protect his airway, hypoventilation persists or seizures recur despite treatment.",
+        "Ketamine 1 to 2 mg/kg IV, so 8.5 to 17 mg, with rocuronium 1 mg/kg, so 8.5 mg. Cuffed 3.0 or 3.5 mm tube with the other size ready.",
+        "After paralysis, seizures can be invisible. Arrange EEG if paralyzed.",
+      ],
+      rubric: ["se-r3"],
+      next: "q-social",
+    },
+    {
+      kind: "question",
+      id: "q-social",
+      phase: "Social",
+      prompt: "His mother tells you she diluted the formula because she could not afford more. The resident asks if you must call the Children's Aid Society. What do you do?",
+      seconds: 90,
+      modelAnswer: [
+        "Speak with her privately and without judgment. Thank her for telling you.",
+        "Explain why diluted formula and extra water are dangerous for infants.",
+        "Involve social work today. Connect her with food banks, formula programs and income supports.",
+        "Assess for other injuries or signs of neglect. CT head is normal and the skin exam is clear.",
+        "Under section 125 of the Child, Youth and Family Services Act, you must report yourself if you have reasonable grounds to suspect physical harm resulting from a caregiver's failure to adequately provide for a child. That wording covers this seizure even though the cause is poverty.",
+        "Poverty is not the same as neglect, and a report is a request for help, not an accusation. Tell her you are calling and why. CAS can connect the family with voluntary supports.",
+      ],
+      rubric: ["se-c1", "se-p1"],
+      choices: [
+        {
+          id: "c-balanced",
+          label: "I spoke with her without judgment, involved social work for food and income supports, and called the Children's Aid Society myself to report, after telling her I was calling to get the family help.",
+          next: "q-dispo",
+          quality: "strong",
+          feedback:
+            "Good. You addressed the real cause, which is food insecurity. Serious physical harm from inadequate feeding meets the section 125 threshold, so you reported yourself. Being open with the mother keeps her trust.",
+        },
+        {
+          id: "c-police",
+          label: "I told her this was neglect and called the police.",
+          next: "s-police",
+          quality: "unsafe",
+          feedback:
+            "This is punitive and damages trust with a parent who told you the truth. Police are not the reporting route. Report to the Children's Aid Society yourself, and address the poverty that caused this.",
+        },
+        {
+          id: "c-handout",
+          label: "I gave her a handout on mixing formula and did not involve anyone else.",
+          next: "s-police",
+          quality: "partial",
+          feedback:
+            "Education is needed, but the cause is financial. Without supports she may dilute formula again. The examiner wanted social work, community resources and a report to the Children's Aid Society, since serious harm has already occurred.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-police",
+      phase: "Later that morning",
+      text: "The social worker comes to see you. She says the mother has run out of money for food. She arranges formula through a community program. You call the Children's Aid Society yourself and make the report, with her support.",
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition",
+      prompt: "Where does Jayden go and what is the plan for his sodium over the next 24 hours?",
+      seconds: 60,
+      modelAnswer: [
+        "Admit to a monitored bed or PICU depending on airway status and local capacity.",
+        "Sodium every 2 hours at first. Target a total rise of no more than about 8 mmol/L in 24 hours.",
+        "Stop free water. Use full strength formula or isotonic fluid at a restricted rate.",
+        "Watch for a large dilute urine output. It can cause overcorrection. Consider D5W or desmopressin with nephrology or PICU advice if sodium rises too fast.",
+        "Seizure precautions. Follow up with social work and the pediatrician.",
+      ],
+      rubric: ["se-d1", "se-c2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "Jayden is admitted to the pediatric monitored unit. His sodium reaches 126 mmol/L at 24 hours and he has no more seizures. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "se-r1",
+      competency: "resuscitation",
+      text: "Manages the airway, checks glucose and places IO access after failed IV attempts.",
+      points: 2,
+      teaching: "Glucose is the fastest reversible cause to exclude. IO access should follow two failed IV attempts or about 90 seconds.",
+      source: "cps-se",
+    },
+    {
+      id: "se-m1",
+      competency: "management",
+      text: "Gives a second benzodiazepine dose, counting the prehospital dose, for example lorazepam 0.1 mg/kg IV or IO, maximum 4 mg.",
+      points: 3,
+      critical: true,
+      teaching: "Two benzodiazepine doses is the standard first line. More doses add respiratory depression without much benefit.",
+      source: "cps-se",
+    },
+    {
+      id: "se-a1",
+      competency: "assessment",
+      text: "Lists metabolic, infectious, toxic, traumatic and structural causes of afebrile status in an infant.",
+      points: 2,
+      teaching: "An afebrile infant in status needs a broad search. Hyponatremia and abusive head trauma are both easy to miss.",
+      source: "trekk-se",
+    },
+    {
+      id: "se-a2",
+      competency: "assessment",
+      text: "Sends electrolytes, calcium and magnesium early.",
+      points: 1,
+      teaching: "Electrolyte causes of seizure respond poorly to antiseizure drugs. Early results change treatment.",
+      source: "trekk-se",
+    },
+    {
+      id: "se-m2",
+      competency: "management",
+      text: "Gives a second line agent: levetiracetam 60 mg/kg, CPS maximum 3000 mg, or fosphenytoin 20 mg PE/kg, maximum 1000 mg PE.",
+      points: 3,
+      critical: true,
+      teaching: "Levetiracetam and phenytoin were similar in ConSEPT, EcLiPSE and ESETT. Give one promptly once benzodiazepines fail.",
+      source: "second-line-trials",
+    },
+    {
+      id: "se-m3",
+      competency: "management",
+      text: "Avoids valproate in a child under 2 years.",
+      points: 1,
+      teaching: "Valproate carries a risk of fatal liver failure in young children, especially with an undiagnosed metabolic disorder.",
+      source: "cps-se",
+    },
+    {
+      id: "se-a3",
+      competency: "assessment",
+      text: "Recognizes hyponatremic seizure from free water intoxication and links it to diluted formula.",
+      points: 2,
+      teaching: "Infants have limited ability to excrete free water. Diluted formula and extra water can drop sodium quickly.",
+      source: "eu-hypona",
+    },
+    {
+      id: "se-r2",
+      competency: "resuscitation",
+      text: "Gives 3 percent saline 3 to 5 mL/kg over 10 to 20 minutes and repeats if seizures continue.",
+      points: 3,
+      critical: true,
+      teaching: "A rise of 4 to 6 mmol/L is usually enough to stop a hyponatremic seizure. Roughly 1 mL/kg of 3 percent saline raises sodium about 1 mmol/L.",
+      source: "eu-hypona",
+    },
+    {
+      id: "se-m4",
+      competency: "management",
+      text: "Limits the total sodium rise to about 8 mmol/L in 24 hours with frequent checks.",
+      points: 2,
+      teaching: "Overcorrection risks osmotic demyelination. Once the free water intake stops, the kidneys can correct sodium fast on their own.",
+      source: "eu-hypona",
+    },
+    {
+      id: "se-r3",
+      competency: "resuscitation",
+      text: "Supports post ictal hypoventilation with airway manoeuvres and bag mask, and states indications and weight based drugs for intubation.",
+      points: 2,
+      teaching: "Most post ictal hypoventilation settles with basic airway support. If you paralyze, seizures become invisible, so arrange EEG.",
+      source: "trekk-se",
+    },
+    {
+      id: "se-c1",
+      competency: "communication",
+      text: "Speaks with the parent without judgment and explains the danger of diluted formula.",
+      points: 2,
+      teaching: "Parents dilute formula to stretch it when money is short. A respectful conversation keeps them engaged in their child's care.",
+      source: "cyfsa",
+    },
+    {
+      id: "se-p1",
+      competency: "professionalism",
+      text: "Involves social work for food and income supports and reports to the Children's Aid Society personally, telling the parent openly.",
+      points: 2,
+      teaching: "The CYFSA duty applies on reasonable grounds to suspect physical harm from a failure to adequately provide, whatever the cause. It cannot be delegated. Poverty is not neglect, and the report should lead to support, not blame.",
+      source: "cyfsa",
+    },
+    {
+      id: "se-d1",
+      competency: "disposition",
+      text: "Admits to a monitored setting with sodium checks every 2 hours and a plan to prevent overcorrection.",
+      points: 2,
+      teaching: "A brisk water diuresis can raise sodium too fast once intake stops. Close monitoring lets the team intervene early.",
+      source: "eu-hypona",
+    },
+    {
+      id: "se-c2",
+      competency: "communication",
+      text: "Coordinates with the pediatrician and social work on a follow up plan.",
+      points: 1,
+      teaching: "The medical and social problems need the same follow up. Clear ownership prevents a repeat presentation.",
+      source: "trekk-se",
+    },
+  ],
+  sources: [
+    {
+      id: "cps-se",
+      citation: "McKenzie KC, Hahn CD, Friedman JN. Canadian Paediatric Society. Emergency management of the paediatric patient with convulsive status epilepticus. Position statement. 2021.",
+      url: "https://cps.ca/en/documents/position/emergency-management-of-the-paediatric-patient-with-convulsive-status-epilepticus",
+    },
+    { id: "trekk-se", citation: "TREKK. Bottom line recommendations. Status epilepticus." },
+    {
+      id: "second-line-trials",
+      citation:
+        "Dalziel SR, et al. Levetiracetam versus phenytoin for second line treatment of convulsive status epilepticus in children (ConSEPT). Lancet. 2019. Also Lyttle MD, et al. EcLiPSE. Lancet. 2019. Kapur J, et al. ESETT. N Engl J Med. 2019.",
+    },
+    {
+      id: "eu-hypona",
+      citation: "Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014. Adult guideline. Principles applied here with weight based dosing.",
+    },
+    {
+      id: "cyfsa",
+      citation: "Ontario. Child, Youth and Family Services Act, 2017. Section 125, duty to report.",
+      url: "https://www.ontario.ca/laws/statute/17c14",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

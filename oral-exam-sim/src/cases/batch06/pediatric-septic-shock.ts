@@ -1,0 +1,485 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const pediatricSepticShock: OralCase = {
+  id: "pediatric-septic-shock",
+  title: "A limp toddler with a fever",
+  blueprint: "peds",
+  summary: "A 3 year old with a fever since breakfast is now drowsy, cold and has spots on her legs.",
+  durationMinutes: 15,
+  stem:
+    "You are working in a 40 bed community hospital emergency department in northern Ontario. There is a general internist and an anesthetist on call. There is no pediatrician on site. The nearest PICU is a 70 minute flight away. " +
+    "Sofia Rahimi is 3 years old. She had a fever at breakfast and complained that her legs hurt. By mid afternoon she was hard to wake. " +
+    "Triage vitals: heart rate 176, blood pressure 78/40, respiratory rate 38, SpO2 95 percent on room air, temperature 39.8 degrees C, GCS 13. Weight 14 kg. CTAS 1. " +
+    "The triage nurse says: 'Her hands and feet are ice cold and her cap refill is 5 seconds. There are purple spots on her legs that do not blanch and they are spreading. We have not been able to get an IV.'",
+  findings: [
+    {
+      id: "skin",
+      label: "Skin",
+      result:
+        "Non blanching petechiae over the trunk and legs. Several purpuric patches up to 2 cm on both thighs. " +
+        "The nurse marked the edges at triage and the purpura has spread beyond the marks in 20 minutes.",
+    },
+    {
+      id: "perfusion",
+      label: "Perfusion",
+      result: "Cool and mottled to the knees and elbows. Capillary refill 5 seconds centrally. Weak peripheral pulses. Core to toe temperature gap wide.",
+    },
+    {
+      id: "neuro",
+      label: "Neurological exam",
+      result: "GCS 13. Opens eyes to voice. Moves all limbs. No clear neck stiffness. Pupils equal and reactive. Fontanelle closed.",
+    },
+    {
+      id: "resp",
+      label: "Chest and abdomen",
+      result: "Tachypneic. Chest clear on arrival. Liver edge 1 cm below the costal margin. Abdomen soft.",
+    },
+    { id: "glucose", label: "Point of care glucose", result: "Capillary glucose 3.1 mmol/L." },
+    {
+      id: "vbg",
+      label: "Venous blood gas from the IO",
+      result: "pH 7.18. pCO2 30 mmHg. Bicarbonate 11 mmol/L. Lactate 6.2 mmol/L. Ionized calcium 0.98 mmol/L. Potassium 3.4 mmol/L.",
+    },
+    {
+      id: "cbc",
+      label: "CBC",
+      result: "WBC 3.1 x 10^9/L with 22 percent bands. Hemoglobin 108 g/L. Platelets 64 x 10^9/L.",
+    },
+    {
+      id: "coags",
+      label: "Coagulation",
+      result: "INR 2.1. PTT 58 seconds. Fibrinogen 1.1 g/L.",
+    },
+    {
+      id: "chem",
+      label: "Chemistry",
+      result: "Sodium 134 mmol/L. Creatinine 88 µmol/L. Urea 8.2 mmol/L. CRP 142 mg/L.",
+    },
+    {
+      id: "immunization",
+      label: "Immunization and exposure history",
+      result:
+        "Routine Ontario schedule, including meningococcal C conjugate at 12 months. No meningococcal B vaccine. Attends a home daycare with five other children. " +
+        "Lives with her parents and a 7 year old brother.",
+    },
+    {
+      id: "culture",
+      label: "Blood culture Gram stain",
+      result: "Reported 10 hours later. Gram negative diplococci.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the resuscitation bay",
+      text: "Sofia is drowsy and mottled. Two IV attempts have failed. Her father is in the corner of the room. The nurse asks where you want to start.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First five minutes",
+      prompt: "What do you do in the first five minutes? Be specific about access, fluid and glucose.",
+      seconds: 90,
+      modelAnswer: [
+        "Recognize septic shock with purpura. This is a time critical emergency.",
+        "High flow oxygen and full monitoring. Call for help.",
+        "IO access now. Two sites if possible.",
+        "Balanced crystalloid 10 to 20 mL/kg, so 140 to 280 mL, pushed over 5 to 10 minutes.",
+        "Reassess perfusion, liver edge and lungs after each bolus. Up to 40 to 60 mL/kg in the first hour if no fluid overload.",
+        "Treat glucose of 3.1 mmol/L with D10W 2 to 5 mL/kg, so 28 to 70 mL.",
+        "Blood culture and bloods from the IO, but do not delay antibiotics.",
+      ],
+      rubric: ["ss-a1", "ss-r1", "ss-r2"],
+      choices: [
+        {
+          id: "c-io-bolus",
+          label: "I placed an IO, pushed 20 mL/kg of Ringer's lactate over 5 to 10 minutes, reassessed after it, and gave D10W 5 mL/kg for the low glucose.",
+          next: "q-abx",
+          quality: "strong",
+          feedback:
+            "Correct. IO access is the right call in a shocked child with failed IVs. Push boluses with reassessment after each. Hypoglycemia is common in sick young children and must be treated.",
+        },
+        {
+          id: "c-maintenance",
+          label: "I started maintenance fluids at 1.5 times the usual rate once the IV was in.",
+          next: "s-maintenance",
+          quality: "partial",
+          feedback:
+            "Maintenance rates do not resuscitate a child in shock. She needs 10 to 20 mL/kg boluses given quickly and reassessed. Access should be IO now, not after more IV attempts.",
+        },
+        {
+          id: "c-keep-trying",
+          label: "I asked the nurses to keep trying for an IV and to call me when it was in.",
+          next: "s-maintenance",
+          quality: "unsafe",
+          feedback:
+            "A child in shock with two failed IV attempts needs IO access immediately. Delay in access delays both fluid and antibiotics. Each hour of delay in shock reversal increases mortality.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-maintenance",
+      phase: "Fifteen minutes later",
+      text: "Her blood pressure is 70/34 and she responds only to pain. The anesthetist arrives and places an IO in the right tibia. You push 20 mL/kg of Ringer's lactate and give D10W for her glucose.",
+      next: "q-abx",
+    },
+    {
+      kind: "question",
+      id: "q-abx",
+      phase: "Antibiotics",
+      prompt: "Which antibiotics, what doses, and when? Will you do a lumbar puncture first?",
+      seconds: 75,
+      modelAnswer: [
+        "Antibiotics within the first hour of recognition, ideally within minutes.",
+        "Ceftriaxone at a meningitic dose. CPS gives 100 mg/kg/day divided every 12 hours, so 50 mg/kg or 700 mg now, maximum 4 g per day. Many centres give a first dose of 100 mg/kg, so 1.4 g. Either is acceptable.",
+        "Vancomycin 15 mg/kg IV every 6 hours, so 210 mg, for possible resistant pneumococcus while meningitis is not excluded.",
+        "No lumbar puncture now. She is in shock, has a low platelet count and a coagulopathy.",
+        "Blood culture before antibiotics if it causes no delay. PCR can confirm the organism later.",
+      ],
+      rubric: ["ss-m1", "ss-m2"],
+      choices: [
+        {
+          id: "c-ceftri",
+          label: "I gave ceftriaxone 100 mg/kg and vancomycin 15 mg/kg through the IO right away after drawing a blood culture, and deferred the LP.",
+          next: "q-ddx",
+          quality: "strong",
+          feedback:
+            "This is what the examiner wanted. Early antibiotics are the most important treatment. An LP in shock with coagulopathy is dangerous and adds nothing now.",
+        },
+        {
+          id: "c-lp-first",
+          label: "I did a lumbar puncture first so the CSF culture would not be sterilized.",
+          next: "s-lp-first",
+          quality: "unsafe",
+          feedback:
+            "Positioning for an LP can cause collapse in a shocked child. Platelets of 64 and an INR of 2.1 raise the bleeding risk. Antibiotics must never wait for an LP in septic shock.",
+        },
+        {
+          id: "c-low-dose",
+          label: "I gave ceftriaxone 50 mg/kg alone.",
+          next: "s-low-dose",
+          quality: "partial",
+          feedback:
+            "Ceftriaxone and the timing are right. 50 mg/kg every 12 hours is the CPS meningitic regimen, so the dose is acceptable. The gap is vancomycin, which is needed until pneumococcal meningitis is excluded.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-lp-first",
+      phase: "Ten minutes later",
+      text: "While she is curled for the LP her heart rate falls to 90 and her SpO2 to 84 percent. The tap is bloody. You lay her flat and give ceftriaxone 1.4 g and vancomycin 210 mg through the IO. Antibiotics went in 55 minutes after arrival.",
+      next: "q-ddx",
+    },
+    {
+      kind: "say",
+      id: "s-low-dose",
+      phase: "Twenty minutes later",
+      text: "The internist on the phone asks whether resistant pneumococcal meningitis has been covered. You add vancomycin 210 mg and write for the next ceftriaxone dose in 12 hours.",
+      next: "q-ddx",
+    },
+    {
+      kind: "question",
+      id: "q-ddx",
+      phase: "Diagnosis",
+      prompt: "What is the most likely diagnosis, and what do the rash and blood work tell you?",
+      seconds: 60,
+      modelAnswer: [
+        "Invasive meningococcal disease with septic shock until proven otherwise.",
+        "Spreading purpura is purpura fulminans from disseminated intravascular coagulation.",
+        "Low WBC, low platelets, high lactate and low fibrinogen are markers of severe disease.",
+        "Other causes: invasive group A strep, pneumococcus, Hib in unimmunized children, and less likely leukemia or HSP.",
+        "She may also have meningitis. Treat as both.",
+      ],
+      rubric: ["ss-a2"],
+      next: "s-refractory",
+    },
+    {
+      kind: "say",
+      id: "s-refractory",
+      phase: "Forty minutes after arrival",
+      text:
+        "She has had three boluses of 20 mL/kg, a total of 60 mL/kg. Heart rate is 172. Blood pressure is 70/32. Capillary refill is still 5 seconds. " +
+        "You now hear fine crackles at both bases and her liver edge is 4 cm below the costal margin. SpO2 is 91 percent on a non rebreather.",
+      next: "q-pressor",
+    },
+    {
+      kind: "question",
+      id: "q-pressor",
+      phase: "Fluid refractory shock",
+      prompt: "What is happening and what do you do now? Give me the drug, dose and route.",
+      seconds: 90,
+      modelAnswer: [
+        "Fluid refractory shock with signs of fluid overload. Stop boluses.",
+        "Start epinephrine infusion at 0.05 to 0.3 mcg/kg/min through the IO or a peripheral line. Titrate to perfusion and blood pressure.",
+        "Norepinephrine is an alternative. Avoid dopamine.",
+        "Do not wait for central access.",
+        "Consider correcting ionized calcium of 0.98 with calcium gluconate 10 percent 0.5 mL/kg, so 7 mL, slowly. Flush the IO line well between calcium and ceftriaxone.",
+        "Consider hydrocortisone 2 mg/kg, maximum 100 mg, if shock persists despite epinephrine.",
+      ],
+      rubric: ["ss-a3", "ss-r3", "ss-m3"],
+      choices: [
+        {
+          id: "c-epi",
+          label: "I stopped the boluses and started an epinephrine infusion at 0.1 mcg/kg/min through the IO, and gave calcium gluconate 0.5 mL/kg.",
+          next: "q-airway",
+          quality: "strong",
+          feedback:
+            "Correct. Crackles and a growing liver mean more fluid will harm her. Epinephrine through the IO or a peripheral line is safe to start while you arrange central access.",
+        },
+        {
+          id: "c-more-fluid",
+          label: "I gave another 20 mL/kg bolus because her blood pressure was still low.",
+          next: "s-more-fluid",
+          quality: "unsafe",
+          feedback:
+            "She now has crackles and hepatomegaly. More fluid will worsen pulmonary edema and oxygenation. After 40 to 60 mL/kg with overload signs, start a vasoactive infusion.",
+        },
+        {
+          id: "c-dopamine",
+          label: "I started dopamine at 10 mcg/kg/min once I could get a central line.",
+          next: "s-more-fluid",
+          quality: "partial",
+          feedback:
+            "Pediatric Surviving Sepsis guidance has favoured epinephrine or norepinephrine over dopamine since 2020. Waiting for central access delays treatment. Start through the IO now.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-more-fluid",
+      phase: "Ten minutes later",
+      text: "Her SpO2 falls to 84 percent and she is grunting. Blood pressure is 66/30. You start an epinephrine infusion at 0.1 mcg/kg/min through the IO and give calcium gluconate.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway",
+      prompt: "On epinephrine her blood pressure is 88/46 but she is tiring and her SpO2 is 88 percent. Will you intubate? How do you do it safely?",
+      seconds: 90,
+      modelAnswer: [
+        "Yes. Rising work of breathing, hypoxemia and depressed consciousness.",
+        "Optimize before induction: epinephrine running, push dose epinephrine ready, blood pressure as good as you can get it.",
+        "Ketamine 1 mg/kg, so 14 mg, a reduced dose. Rocuronium 1 mg/kg, so 14 mg.",
+        "Avoid propofol. Avoid high dose midazolam.",
+        "Cuffed 4.0 to 4.5 mm tube. PEEP 6 to 8 cmH2O. Expect post intubation hypotension.",
+        "Most experienced operator. Call the anesthetist to lead or assist.",
+      ],
+      rubric: ["ss-r4"],
+      next: "q-public",
+    },
+    {
+      kind: "question",
+      id: "q-public",
+      phase: "Public health",
+      prompt: "The nurse asks whether the staff and family need antibiotics. What do you do?",
+      seconds: 75,
+      modelAnswer: [
+        "Droplet precautions until 24 hours of effective antibiotics.",
+        "Notify the local Medical Officer of Health by phone now on clinical suspicion. Do not wait for culture.",
+        "Chemoprophylaxis for household and close contacts, including daycare contacts, as directed by public health.",
+        "Ontario options: rifampin 10 mg/kg PO every 12 hours for 2 days, maximum 600 mg per dose, or ceftriaxone 125 mg IM once under 15 years and 250 mg IM once for 15 and over. Ciprofloxacin 500 mg PO once for adults.",
+        "Health care workers only if unprotected exposure to oral secretions, such as intubation or suctioning without a mask.",
+      ],
+      rubric: ["ss-l1", "ss-p1"],
+      choices: [
+        {
+          id: "c-mooh",
+          label: "I called the Medical Officer of Health now, used droplet precautions, and arranged prophylaxis for household and daycare contacts and any staff with unprotected airway exposure.",
+          next: "q-family",
+          quality: "strong",
+          feedback:
+            "Correct. Invasive meningococcal disease is reportable on suspicion. Public health leads contact tracing. Staff need prophylaxis only after unprotected exposure to respiratory secretions.",
+        },
+        {
+          id: "c-all-staff",
+          label: "I gave ciprofloxacin to everyone who had been in the resuscitation room.",
+          next: "s-all-staff",
+          quality: "partial",
+          feedback:
+            "Blanket prophylaxis exposes staff to drug side effects and drives resistance. Only staff with unprotected exposure to oral secretions need it. The key missing step was notifying public health.",
+        },
+        {
+          id: "c-leave-it",
+          label: "I left notification to the admitting team at the receiving hospital.",
+          next: "s-all-staff",
+          quality: "unsafe",
+          feedback:
+            "Delay puts close contacts at risk. Secondary cases usually occur within days. The physician who suspects the diagnosis should notify public health immediately.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-all-staff",
+      phase: "Later that evening",
+      text: "The Medical Officer of Health calls the department after hearing from the lab. She asks why she was not notified earlier. She starts contact tracing for the family and the daycare.",
+      next: "q-family",
+    },
+    {
+      kind: "question",
+      id: "q-family",
+      phase: "Family and disposition",
+      prompt: "Her father asks if she is going to die. The transport team is 40 minutes out. What do you tell him, and what goes in your handover?",
+      seconds: 90,
+      modelAnswer: [
+        "Sit with him. Be honest. She is critically ill with a serious blood infection and could die.",
+        "Explain what has been done and what the PICU will do.",
+        "Tell him that he and his son need antibiotics today and that public health will call.",
+        "Handover: weight, timeline, total fluid, antibiotics with times, epinephrine rate, airway details, labs including platelets, INR and fibrinogen.",
+        "Transfer through CritiCall with a critical care transport team.",
+      ],
+      rubric: ["ss-c1", "ss-d1"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "The transport team takes over. Sofia goes to the PICU on epinephrine and the ventilator. Blood culture grows Neisseria meningitidis. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "ss-a1",
+      competency: "assessment",
+      text: "Recognizes septic shock from tachycardia, hypotension, poor perfusion and altered mental status with a purpuric rash.",
+      points: 2,
+      teaching: "Hypotension is a late sign in children. Cold peripheries, delayed capillary refill and drowsiness mean shock is already established.",
+      source: "ssc-peds",
+    },
+    {
+      id: "ss-r1",
+      competency: "resuscitation",
+      text: "Places IO access without delay after failed IV attempts.",
+      points: 2,
+      critical: true,
+      teaching: "Every minute without access delays fluid and antibiotics. IO access works in seconds in children.",
+      source: "ssc-peds",
+    },
+    {
+      id: "ss-r2",
+      competency: "resuscitation",
+      text: "Gives 10 to 20 mL/kg boluses of balanced crystalloid quickly with reassessment after each, and treats hypoglycemia.",
+      points: 2,
+      teaching: "Up to 40 to 60 mL/kg may be needed in the first hour where ICU care is available. Stop when perfusion improves or overload appears.",
+      source: "ssc-peds",
+    },
+    {
+      id: "ss-m1",
+      competency: "management",
+      text: "Gives meningitic dose ceftriaxone, 100 mg/kg/day, plus vancomycin 15 mg/kg within the first hour.",
+      points: 3,
+      critical: true,
+      teaching: "In septic shock, antibiotics within an hour of recognition save lives. Cover meningitis until it is excluded.",
+      source: "cps-mening",
+    },
+    {
+      id: "ss-m2",
+      competency: "management",
+      text: "Defers lumbar puncture because of shock and coagulopathy.",
+      points: 2,
+      teaching: "LP in unstable or coagulopathic children is dangerous. Blood culture and PCR can still confirm the organism.",
+      source: "cps-mening",
+    },
+    {
+      id: "ss-a2",
+      competency: "assessment",
+      text: "Identifies probable invasive meningococcal disease with purpura fulminans and DIC.",
+      points: 2,
+      teaching: "Low WBC, low platelets and a spreading purpuric rash predict a severe course. Consider other invasive bacteria too.",
+      source: "ont-idp",
+    },
+    {
+      id: "ss-a3",
+      competency: "assessment",
+      text: "Recognizes fluid refractory shock with crackles and hepatomegaly and stops further boluses.",
+      points: 2,
+      teaching: "A growing liver and new crackles are signs of fluid overload. More fluid will worsen oxygenation without fixing shock.",
+      source: "ssc-peds",
+    },
+    {
+      id: "ss-r3",
+      competency: "resuscitation",
+      text: "Starts epinephrine 0.05 to 0.3 mcg/kg/min or norepinephrine through IO or peripheral access without waiting for a central line.",
+      points: 3,
+      critical: true,
+      teaching: "Pediatric sepsis guidelines prefer epinephrine or norepinephrine over dopamine. Starting through peripheral or IO access is better than waiting for a central line.",
+      source: "ssc-peds",
+    },
+    {
+      id: "ss-m3",
+      competency: "management",
+      text: "Considers correcting low ionized calcium and considers hydrocortisone 2 mg/kg, maximum 100 mg, for catecholamine refractory shock.",
+      points: 1,
+      teaching: "Hypocalcemia can worsen myocardial function, though sepsis guidelines found too little evidence to set a calcium target. Stress dose steroids are reasonable only if shock persists despite fluid and vasoactive drugs.",
+      source: "ssc-peds",
+    },
+    {
+      id: "ss-r4",
+      competency: "resuscitation",
+      text: "Intubates after hemodynamic optimization with reduced dose ketamine and rocuronium, with push dose epinephrine ready.",
+      points: 2,
+      teaching: "Induction can cause arrest in a shocked child. Resuscitate before you intubate and choose drugs that preserve vascular tone.",
+      source: "ssc-peds",
+    },
+    {
+      id: "ss-l1",
+      competency: "leadership",
+      text: "Notifies the Medical Officer of Health on clinical suspicion and uses droplet precautions.",
+      points: 2,
+      teaching: "Invasive meningococcal disease is reportable in Ontario. Public health leads contact tracing and prophylaxis.",
+      source: "ont-idp",
+    },
+    {
+      id: "ss-p1",
+      competency: "professionalism",
+      text: "Arranges chemoprophylaxis for close contacts and limits staff prophylaxis to unprotected exposure to oral secretions.",
+      points: 2,
+      teaching: "Rifampin, ceftriaxone or, for adults, ciprofloxacin are the Ontario options. Staff need prophylaxis only after intensive unprotected exposure such as intubation without a mask.",
+      source: "ont-idp",
+    },
+    {
+      id: "ss-c1",
+      competency: "communication",
+      text: "Speaks honestly with the parent about how critically ill she is and explains next steps.",
+      points: 2,
+      teaching: "Honest, plain language builds trust. Give the family something concrete to do, such as their own prophylaxis.",
+      source: "ssc-peds",
+    },
+    {
+      id: "ss-d1",
+      competency: "disposition",
+      text: "Arranges PICU transfer through CritiCall with a structured handover including times, fluid totals, drugs and coagulation results.",
+      points: 2,
+      teaching: "Early transfer requests save time. A precise timeline helps the receiving team judge response to treatment.",
+      source: "ssc-peds",
+    },
+  ],
+  sources: [
+    {
+      id: "ssc-peds",
+      citation:
+        "Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Pediatr Crit Care Med. 2026.",
+    },
+    {
+      id: "cps-mening",
+      citation: "Le Saux N. Canadian Paediatric Society. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. Position statement. 2020, reaffirmed 2026.",
+      url: "https://cps.ca/en/documents/position/management-of-bacterial-meningitis",
+    },
+    {
+      id: "ont-idp",
+      citation: "Ontario Ministry of Health. Infectious Disease Protocol, Appendix 1. Meningococcal disease, invasive. 2022.",
+      url: "https://files.ontario.ca/moh-ophs-meningococcal-en-2022.pdf",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};
