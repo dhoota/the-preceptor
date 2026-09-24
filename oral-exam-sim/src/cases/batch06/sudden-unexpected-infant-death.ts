@@ -10,14 +10,31 @@ export const suddenUnexpectedInfantDeath: OralCase = {
   priorityTopic: "abuse-domestic",
   keyFeatures: [{ topic: "abuse-domestic", n: 3 }, { topic: "abuse-domestic", n: 4 }],
   summary: "Paramedics bring in a 3 month old with CPR in progress. The parents are on their way.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in a community emergency department in Ontario on a weekday morning. A social worker and a spiritual care provider are on call. There is no pediatrician in house. " +
-    "Paramedics bring in Aria Mensah, a 3 month old girl. Her mother found her unresponsive in the parents' bed at 06:10 after a 03:00 feed. " +
-    "Paramedics arrived at 06:19 and found her apneic and pulseless. They have done CPR for 29 minutes with an i-gel airway and a tibial IO. She has had three doses of epinephrine. The rhythm has been asystole throughout. " +
-    "On arrival at 06:48: no pulse, asystole on the monitor, pupils fixed and dilated, rectal temperature 35.0 degrees C. Estimated weight 5.8 kg. CTAS 1. " +
-    "The paramedic says: 'She was cool when we got there, but no rigor and no lividity, so we worked her. Mom and dad are about ten minutes behind us with the grandmother. A police officer is driving them.'",
+    "You are working in the emergency department of a community hospital in Ontario on a weekday morning when the following patient arrives. There is no pediatrician in house. " +
+    "Paramedics bring in a 3 month old girl at 06:48 with CPR in progress. She was found unresponsive in her parents' bed.",
+  card: {
+    vitals: {
+      temperature: "35.0°C rectal",
+      pulse: "No pulse. Asystole on the monitor",
+      resp: "Apneic. i-gel airway in place",
+      bp: "Not recorded",
+      o2sat: "Not recorded",
+      weight: "About 5.8 kg (12.8 lb)",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "Paramedic handover",
+      result:
+        "Her mother found her unresponsive in the parents' bed at 06:10 after a 03:00 feed. Paramedics arrived at 06:19 and found her apneic and pulseless. " +
+        "She was cool, but there was no rigor and no lividity, so they started resuscitation. CPR for 29 minutes with an i-gel airway and a tibial IO. " +
+        "Three doses of epinephrine. The rhythm has been asystole throughout. On arrival pupils are fixed and dilated.",
+    },
     {
       id: "rhythm",
       label: "Rhythm and cardiac POCUS",
@@ -38,15 +55,20 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     },
     {
       id: "history",
-      label: "History from the parents",
+      label: "Past history from the parents",
+      result: "Healthy term baby. Two month vaccines given 3 weeks ago. Mild runny nose for 2 days.",
+    },
+    {
+      id: "sleep",
+      label: "Sleep and social history from the parents",
       result:
-        "Healthy term baby. Two month vaccines given 3 weeks ago. Mild runny nose for 2 days. Mother breastfed her at 03:00 in bed and fell asleep with Aria beside her on a soft adult mattress with a duvet. " +
+        "Mother breastfed her at 03:00 in bed and fell asleep with the baby beside her on a soft adult mattress with a duvet. " +
         "Father was also in the bed. Neither parent drank alcohol or used drugs last night. Father smokes outside.",
     },
     {
       id: "family",
       label: "Family",
-      result: "Parents Kwame and Efua Mensah. A 4 year old son is at home with a neighbour. The paternal grandmother is with them. The family is Christian and asks for a pastor.",
+      result: "Both parents are here. A 4 year old son is at home with a neighbour. The paternal grandmother is with them. The family is Christian and asks for a pastor.",
     },
     {
       id: "paramedic",
@@ -56,7 +78,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "breastfeeding",
       label: "Mother",
-      result: "Efua is breastfeeding and her breasts are becoming full. She is 3 months postpartum and otherwise well.",
+      result: "The mother is breastfeeding and her breasts are becoming full. She is 3 months postpartum and otherwise well.",
     },
   ],
   start: "s-open",
@@ -65,7 +87,9 @@ export const suddenUnexpectedInfantDeath: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "In the resuscitation bay",
-      text: "The team moves Aria to the resus bed. The paramedics continue compressions. The monitor shows asystole. The nurse asks what you want to do.",
+      text:
+        "She is CTAS 1. A social worker and a spiritual care provider are on call. The paramedic says the parents are about ten minutes behind with the grandmother, driven by a police officer. " +
+        "The team moves her to the resus bed. The paramedics continue compressions. The monitor shows asystole. The nurse asks what you want to do.",
       next: "q-resus",
     },
     {
@@ -81,8 +105,9 @@ export const suddenUnexpectedInfantDeath: OralCase = {
         "POCUS during pulse checks for cardiac motion.",
         "Unwitnessed arrest, asystole throughout, over 30 minutes of CPR and early lividity all predict no survival.",
         "Stop after a brief period of ALS in the ED with no reversible cause, as a team decision. Offer the parents the chance to be present.",
+        "Get the paramedic timeline: last seen well, time found, first CPR, rhythm, drugs and signs of death at the scene.",
       ],
-      rubric: ["sd-r1", "sd-l1"],
+      rubric: ["sd-r1", "sd-l1", "sd-h1"],
       choices: [
         {
           id: "c-brief-als",
@@ -134,7 +159,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
         "Prepare. Know the baby's name and the parents' names. Bring the social worker or nurse. Turn off your pager if possible.",
         "Sit down in a private room. Introduce yourself and check who is present.",
         "Find out what they know. Give a warning shot: 'I am afraid I have very bad news.'",
-        "Use the words dead or died. 'Aria died. We were not able to restart her heart.'",
+        "Use the words dead or died, and use her name. 'Your daughter died. We were not able to restart her heart.'",
         "Pause. Allow silence and emotion. Do not rush to details.",
         "Do not speculate about the cause. Say that you do not yet know why she died.",
       ],
@@ -142,7 +167,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
       choices: [
         {
           id: "c-clear",
-          label: "I sat with them, used Aria's name, gave a warning shot, said clearly that she had died despite everything we did, and then stayed quiet and let them respond.",
+          label: "I sat with them, used her name, gave a warning shot, said clearly that she had died despite everything we did, and then stayed quiet and let them respond.",
           next: "q-coroner",
           quality: "strong",
           feedback:
@@ -170,7 +195,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
       kind: "say",
       id: "s-euphemism",
       phase: "In the family room",
-      text: "The father asks, 'So is she in the ICU? Can we see her?' The social worker looks at you. You say clearly that Aria has died. The mother collapses into the grandmother's arms.",
+      text: "The father asks, 'So is she in the ICU? Can we see her?' The social worker looks at you. You say clearly that their daughter has died. The mother collapses into the grandmother's arms.",
       next: "q-coroner",
     },
     {
@@ -187,7 +212,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
         "Document the resuscitation, times and findings, including a full external exam.",
         "Ask the coroner about the parents holding her and about memory making such as hand and foot prints.",
       ],
-      rubric: ["sd-p1", "sd-p2"],
+      rubric: ["sd-p1", "sd-p2", "sd-x1"],
       choices: [
         {
           id: "c-coroner",
@@ -219,13 +244,13 @@ export const suddenUnexpectedInfantDeath: OralCase = {
       kind: "say",
       id: "s-remove",
       phase: "Ten minutes later",
-      text: "The coroner calls back. She asks that any equipment still in place stay in place, that anything removed be kept and documented, and that no death certificate be completed. The nurse replaces the blanket over Aria. You document what was done and when.",
+      text: "The coroner calls back. She asks that any equipment still in place stay in place, that anything removed be kept and documented, and that no death certificate be completed. The nurse replaces the blanket over the baby. You document what was done and when.",
       next: "q-hold",
     },
     {
       kind: "question",
       id: "q-hold",
-      phase: "Time with Aria",
+      phase: "Time with the baby",
       prompt: "The coroner agrees the parents can hold her with a nurse present. How do you prepare them and support them?",
       seconds: 60,
       modelAnswer: [
@@ -244,7 +269,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
       id: "s-police",
       phase: "07:40",
       text:
-        "Two police officers arrive and ask to speak with the parents right away in the family room. The father overhears. He shouts, 'Are you saying we killed our baby?' The mother is still holding Aria.",
+        "Two police officers arrive and ask to speak with the parents right away in the family room. The father overhears. He shouts, 'Are you saying we killed our baby?' The mother is still holding the baby.",
       next: "q-police",
     },
     {
@@ -256,16 +281,17 @@ export const suddenUnexpectedInfantDeath: OralCase = {
       modelAnswer: [
         "Stay calm. Acknowledge his anger and grief.",
         "Explain that every sudden infant death in Ontario is investigated by the coroner, usually with police. It is routine and it is not an accusation.",
-        "The purpose is to understand why Aria died, which may help them and other families.",
-        "Ask the officers to give the family a few more minutes with Aria if the investigation allows.",
+        "The purpose is to understand why she died, which may help them and other families.",
+        "Ask the officers to give the family a few more minutes with her if the investigation allows.",
         "Share your documented history and exam findings with the investigators.",
         "Take the medical history yourself without judgment: sleep position and surface, bed sharing, recent illness, feeding and substances.",
+        "Ask about her birth, past health, vaccines and any earlier events such as pauses in breathing.",
       ],
-      rubric: ["sd-c4", "sd-a1"],
+      rubric: ["sd-c4", "sd-a1", "sd-h2"],
       choices: [
         {
           id: "c-explain",
-          label: "I acknowledged his anger, explained that all sudden infant deaths are investigated as routine and are not an accusation, and asked the officers to give the family more time with Aria.",
+          label: "I acknowledged his anger, explained that all sudden infant deaths are investigated as routine and are not an accusation, and asked the officers to give the family more time with the baby.",
           next: "q-aftercare",
           quality: "strong",
           feedback:
@@ -331,7 +357,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Runs a brief complete ALS resuscitation with weight based epinephrine, glucose correction and POCUS for cardiac motion.",
       points: 2,
       teaching: "A short, complete ED resuscitation confirms the situation and lets you tell the family honestly that everything was done.",
@@ -340,7 +366,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-l1",
       competency: "leadership",
-      criterion: "data",
+      criterion: "physical",
       text: "Makes a clear team decision to stop based on an unwitnessed arrest, persistent asystole, duration and signs of death.",
       points: 2,
       teaching: "No single factor decides when to stop in children. Persistent asystole after prolonged CPR with lividity predicts no survival.",
@@ -349,7 +375,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Prepares the setting, sits down, uses the baby's name, gives a warning shot and says died clearly.",
       points: 3,
       critical: true,
@@ -359,7 +385,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Allows silence and does not speculate about the cause or ask blaming questions at the time of disclosure.",
       points: 2,
       teaching: "Families remember the first words for years. Questions about the sleep setting can wait until after the news has been received.",
@@ -368,7 +394,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Notifies the coroner of a sudden and unexpected death and does not complete a death certificate.",
       points: 3,
       critical: true,
@@ -378,7 +404,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Leaves airway devices, IO and lines in place and documents the resuscitation and external exam.",
       points: 2,
       teaching: "Leaving equipment in place lets the pathologist separate resuscitation marks from injury. Cover it rather than remove it.",
@@ -387,7 +413,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Prepares the parents to hold their baby, offers spiritual care and memory making, and asks about the sibling.",
       points: 2,
       teaching: "Holding the baby and keeping mementos help families grieve. Ask the coroner what is permitted before offering.",
@@ -396,7 +422,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains that police and coroner involvement is routine and not an accusation, and advocates for the family's time with the baby.",
       points: 2,
       teaching: "Parents often hear the investigation as blame. A clear explanation lowers conflict and supports cooperation.",
@@ -405,7 +431,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Takes a non judgmental history of sleep position, surface, bed sharing, recent illness, feeding and substances.",
       points: 2,
       teaching: "The history helps the coroner separate unsafe sleep, infection, metabolic disease and injury. Record the parents' words.",
@@ -414,7 +440,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Explains the autopsy and coroner process and ensures safe travel home and support for the family.",
       points: 2,
       teaching: "Families should leave knowing who will contact them and when. Nobody should drive home alone after this news.",
@@ -423,7 +449,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c5",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Addresses lactation, informs the family physician with consent, provides bereavement resources and defers safe sleep teaching to a later time.",
       points: 1,
       teaching: "A breastfeeding mother needs practical advice. Safe sleep information matters for future children but should be offered later and gently.",
@@ -432,10 +458,37 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Checks on distressed staff, leads a debrief and offers support resources.",
       points: 2,
       teaching: "Pediatric deaths affect staff deeply. Leaders should notice distress and make time for a debrief.",
+      source: "aap-death",
+    },
+    {
+      id: "sd-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Gets the paramedic timeline: when she was last seen well, when she was found, when CPR started, the rhythm, drugs given and signs of death at the scene.",
+      points: 2,
+      teaching: "Time since last seen well, an unwitnessed arrest and asystole throughout are the facts that justify stopping. They also belong in the coroner's report.",
+      source: "aha-pals",
+    },
+    {
+      id: "sd-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about her birth and past health, recent vaccines and any earlier events such as pauses in breathing or recent visits.",
+      points: 1,
+      teaching: "A full medical history is part of every sudden infant death review. Gather it gently and record it for the coroner.",
+      source: "aap-death",
+    },
+    {
+      id: "sd-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Performs and documents a full external exam for injury, including skin, frenulum, fontanelle and signs of death such as lividity.",
+      points: 2,
+      teaching: "A careful external exam in the ED records findings before they change. Note both signs of injury and their absence.",
       source: "aap-death",
     },
   ],
@@ -447,19 +500,28 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     },
     {
       id: "aap-death",
-      citation: "American Academy of Pediatrics, American College of Emergency Physicians and Emergency Nurses Association. Death of a child in the emergency department. Joint policy statement. Pediatrics. 2014.",
+      citation:
+        "O'Malley PJ, Barata IA, Snow SK. American Academy of Pediatrics, American College of Emergency Physicians and Emergency Nurses Association. Death of a child in the emergency department. Joint policy statement. Pediatrics. 2014.",
+      url: "https://publications.aap.org/pediatrics/article/134/1/e313/62357/Death-of-a-Child-in-the-Emergency-Department",
     },
     {
       id: "spikes",
-      citation: "Baile WF, et al. SPIKES. A six step protocol for delivering bad news. Oncologist. 2000.",
+      citation: "Baile WF, Buckman R, Lenzi R, et al. SPIKES. A six step protocol for delivering bad news. Application to the patient with cancer. Oncologist. 2000.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/10964998/",
     },
-    { id: "phac-sleep", citation: "Public Health Agency of Canada. Joint statement on safe sleep. Preventing sudden infant deaths in Canada." },
+    {
+      id: "phac-sleep",
+      citation: "Public Health Agency of Canada. Joint statement on safe sleep. Preventing sudden infant deaths in Canada. Updated 2021.",
+      url: "https://www.canada.ca/en/public-health/services/health-promotion/childhood-adolescence/stages-childhood/infancy-birth-two-years/safe-sleep/joint-statement-on-safe-sleep-preventing-sudden-infant-deaths-canada.html",
+    },
     {
       id: "aha-pals",
-      citation: "American Heart Association. 2025 Guidelines for CPR and ECC. Part 8. Pediatric advanced life support.",
+      citation:
+        "American Heart Association and American Academy of Pediatrics. Part 8. Pediatric advanced life support. 2025 Guidelines for CPR and ECC. Circulation. 2025.",
+      url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001368",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

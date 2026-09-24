@@ -14,13 +14,30 @@ export const pediatricDka: OralCase = {
     { topic: "loc", n: 5 },
   ],
   summary: "A previously well 9 year old with vomiting, belly pain and fast breathing after weeks of feeling unwell.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in a community emergency department in Ontario. There is a pediatrician on call but no pediatric ICU. The nearest PICU is 75 minutes away. " +
-    "Harper Nakamura is 9 years old. She has vomited six times since yesterday and has belly pain. Her mother says she has been drinking and peeing a lot for three weeks and her clothes are loose. " +
-    "Triage vitals: heart rate 132, blood pressure 104/68, respiratory rate 32 and deep, SpO2 99 percent on room air, temperature 37.2 degrees C, GCS 15. Weight 27 kg. CTAS 2. " +
-    "The triage nurse says: 'Her glucose meter just reads HI. Her breath smells fruity. She says her head is fine but she is very tired.'",
+    "You are working in the emergency department of a community hospital in Ontario when the following patient arrives. There is no pediatric ICU. The nearest PICU is 75 minutes away. " +
+    "A 9 year old girl is brought in by her mother with vomiting and belly pain.",
+  card: {
+    vitals: {
+      temperature: "37.2°C",
+      pulse: "132/minute",
+      resp: "32/minute and deep",
+      bp: "104/68 mmHg",
+      o2sat: "99% on room air",
+      weight: "27 kg (59.5 lb)",
+    },
+    medications: "None",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "She has vomited six times since yesterday and has belly pain. Her mother says she has been drinking and peeing a lot for three weeks and her clothes are loose. " +
+        "She says her head is fine but she is very tired.",
+    },
     {
       id: "exam",
       label: "Examination",
@@ -51,8 +68,9 @@ export const pediatricDka: OralCase = {
     {
       id: "history",
       label: "Past and family history",
-      result: "No past medical history. No medications. Father has hypothyroidism. Maternal aunt has type 1 diabetes. No recent infection symptoms.",
+      result: "No past medical history. Father has hypothyroidism. Maternal aunt has type 1 diabetes. No recent infection symptoms.",
     },
+    { id: "meds", label: "Medications", result: "No medications." },
     {
       id: "neuro-checks",
       label: "Neurological observations",
@@ -65,7 +83,9 @@ export const pediatricDka: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "In the resuscitation bay",
-      text: "Harper is lying still with deep breaths. Her mother is holding her hand. The nurse has one IV in and asks what fluid you want and how fast.",
+      text:
+        "The triage nurse has made her CTAS 2. GCS 15. The nurse says her glucose meter just reads HI and her breath smells fruity. A pediatrician is on call. " +
+        "She is lying still with deep breaths. Her mother is holding her hand. The nurse has one IV in and asks what fluid you want and how fast.",
       next: "q-assess",
     },
     {
@@ -80,8 +100,9 @@ export const pediatricDka: OralCase = {
         "Assume a deficit of about 7 to 10 percent in severe DKA. She is dry but not in shock. Her 3 kg loss over 2 months is mostly fat and muscle, so it overstates the fluid deficit.",
         "Corrected sodium is about 137 to 139 mmol/L, depending on the formula. It should rise as glucose falls.",
         "Cerebral edema risk factors she has: new onset, severe acidosis, low pCO2 and high urea. Age under 5 is another, but she is 9.",
+        "History: duration of thirst, urination and weight loss, vomiting, headache or drowsiness, voiding, medications and family history.",
       ],
-      rubric: ["dk-a1", "dk-a2"],
+      rubric: ["dk-a1", "dk-a2", "dk-h1", "dk-h2", "dk-h3", "dk-h4"],
       next: "q-fluids",
     },
     {
@@ -207,7 +228,7 @@ export const pediatricDka: OralCase = {
         "Hourly glucose, vital signs, fluid balance and neurological checks.",
         "Gas, electrolytes and corrected sodium every 2 hours at first.",
       ],
-      rubric: ["dk-m5", "dk-a3"],
+      rubric: ["dk-m5", "dk-a3", "dk-p1"],
       next: "s-edema",
     },
     {
@@ -215,7 +236,7 @@ export const pediatricDka: OralCase = {
       id: "s-edema",
       phase: "Four hours after arrival",
       text:
-        "The nurse calls you urgently. Harper says her head hurts badly and she has vomited again. She is irritable and opens her eyes only to voice. GCS 12. " +
+        "The nurse calls you urgently. She says her head hurts badly and she has vomited again. She is irritable and opens her eyes only to voice. GCS 12. " +
         "Heart rate 64, blood pressure 138/86. Glucose 13.1 mmol/L. Sodium 132 mmol/L. Her mother is scared.",
       next: "q-edema",
     },
@@ -279,7 +300,7 @@ export const pediatricDka: OralCase = {
       kind: "question",
       id: "q-family",
       phase: "Family",
-      prompt: "Harper's mother asks what is happening and whether this is because she did not bring her in sooner. What do you say?",
+      prompt: "Her mother asks what is happening and whether this is because she did not bring her in sooner. What do you say?",
       seconds: 60,
       modelAnswer: [
         "Speak honestly and simply. Swelling of the brain is a known and serious complication of DKA.",
@@ -309,14 +330,14 @@ export const pediatricDka: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "The transport team arrives and takes Harper to the PICU. Her neurological exam is normal by the next morning. That is the end of the case.",
+      text: "The transport team arrives and takes her to the PICU. Her neurological exam is normal by the next morning. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "dk-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Diagnoses severe DKA with pH under 7.1 or bicarbonate under 5 mmol/L and estimates dehydration.",
       points: 2,
       teaching: "Severity guides monitoring and disposition. Severe DKA carries the highest risk of cerebral edema.",
@@ -325,7 +346,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies cerebral edema risk factors: new onset, severe acidosis, low pCO2 and high urea, with young age as a further factor.",
       points: 2,
       teaching: "Knowing the risk factors sets the frequency of neurological checks. This child has several.",
@@ -334,7 +355,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives a 10 mL/kg bolus of 0.9 percent saline over 30 to 60 minutes, reserving 20 mL/kg for shock.",
       points: 2,
       teaching: "Most children in DKA are dehydrated but not in shock. A measured bolus restores perfusion before insulin.",
@@ -343,7 +364,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces the deficit evenly over 24 to 48 hours with 0.45 to 0.9 percent saline and does not replace urine output.",
       points: 2,
       teaching: "The PECARN FLUID trial showed that rate and sodium content within this range did not change brain injury. Consistent calculated fluids are the goal.",
@@ -352,7 +373,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts regular insulin infusion at 0.05 to 0.1 units/kg/h without a bolus, about 1 hour after fluids begin.",
       points: 3,
       critical: true,
@@ -362,7 +383,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Adds potassium 40 mmol/L to fluids once potassium is under 5.5 mmol/L and the child is voiding.",
       points: 2,
       teaching: "Insulin drives potassium into cells. Total body potassium is low even when the serum level looks normal.",
@@ -371,7 +392,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Does not give sodium bicarbonate.",
       points: 2,
       critical: true,
@@ -381,7 +402,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Adds dextrose when glucose falls to about 14 to 17 mmol/L while continuing the insulin infusion.",
       points: 2,
       teaching: "Insulin is needed to clear ketones, not only to lower glucose. Add dextrose rather than turning insulin down too early.",
@@ -390,7 +411,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders hourly glucose and neurological checks and gas and electrolytes every 1 to 2 hours, following corrected sodium.",
       points: 1,
       teaching: "Corrected sodium should rise as glucose falls. A falling corrected sodium is a warning sign for cerebral edema.",
@@ -399,7 +420,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-a4",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes headache, falling GCS, relative bradycardia and hypertension as cerebral edema.",
       points: 2,
       teaching: "Cerebral edema usually appears 4 to 12 hours into treatment. The diagnosis is clinical.",
@@ -408,7 +429,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives mannitol 0.5 to 1 g/kg or 3 percent saline 2.5 to 5 mL/kg over 10 to 15 minutes before any CT.",
       points: 3,
       critical: true,
@@ -418,7 +439,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Elevates the head, reduces fluid rate, avoids intubation if possible and calls PICU through CritiCall.",
       points: 2,
       teaching: "Intubation removes her compensatory hyperventilation and can worsen acidosis. The PICU call runs in parallel with treatment.",
@@ -427,7 +448,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains cerebral edema honestly to the parent without assigning blame.",
       points: 1,
       teaching: "Many children present with DKA at diagnosis. Parents often blame themselves and need a clear, kind explanation.",
@@ -436,7 +457,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges PICU transfer with repeat hyperosmolar therapy available and continued hourly monitoring while waiting.",
       points: 2,
       teaching: "Cerebral edema can recur. The child needs a unit that can manage raised intracranial pressure.",
@@ -445,30 +466,82 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a handover with fluid totals, insulin start time and rate, potassium, and timing of edema signs and treatment.",
       points: 1,
       teaching: "Accurate fluid and insulin timelines help the PICU team adjust therapy safely.",
+      source: "trekk-dka",
+    },
+    {
+      id: "dk-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks how long she has had thirst, frequent urination and weight loss, and about the vomiting and abdominal pain.",
+      points: 2,
+      teaching: "Weeks of polyuria, polydipsia and weight loss point to new onset type 1 diabetes. Vomiting in a child with these symptoms is DKA until proven otherwise.",
+      source: "dc-t1d",
+    },
+    {
+      id: "dk-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about headache, drowsiness and change in behaviour at the start, to set a baseline for cerebral edema.",
+      points: 2,
+      teaching: "Cerebral edema often starts with headache and a change in behaviour. A clear baseline makes the first change easier to spot.",
+      source: "ispad-dka",
+    },
+    {
+      id: "dk-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past history, medications including any insulin, family history of diabetes and recent infection.",
+      points: 1,
+      teaching: "A family history of autoimmune disease supports type 1 diabetes. Infection can trigger DKA and changes the workup.",
+      source: "dc-t1d",
+    },
+    {
+      id: "dk-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks when she last passed urine before planning potassium replacement.",
+      points: 1,
+      teaching: "Potassium goes into the fluids once the level is known and the child is voiding. Anuria changes the plan.",
+      source: "ispad-dka",
+    },
+    {
+      id: "dk-p1",
+      competency: "leadership",
+      criterion: "process",
+      text: "Keeps a bedside flow sheet of fluids, insulin, glucose, potassium and neurological checks and reviews it at set times.",
+      points: 1,
+      teaching: "A flow sheet makes trends visible to the whole team. Most DKA errors come from missed trends, not wrong formulas.",
       source: "trekk-dka",
     },
   ],
   sources: [
     {
       id: "ispad-dka",
-      citation: "Glaser N, et al. ISPAD Clinical Practice Consensus Guidelines 2022. Diabetic ketoacidosis and hyperglycemic hyperosmolar state. Pediatr Diabetes. 2022.",
+      citation:
+        "Glaser N, Fritsch M, Priyambada L, et al. ISPAD Clinical Practice Consensus Guidelines 2022. Diabetic ketoacidosis and hyperglycemic hyperosmolar state. Pediatr Diabetes. 2022.",
+      url: "https://onlinelibrary.wiley.com/doi/10.1111/pedi.13406",
     },
     {
       id: "dc-t1d",
-      citation: "Wherrett DK, et al. Diabetes Canada 2018 Clinical Practice Guidelines. Type 1 diabetes in children and adolescents. Can J Diabetes. 2018.",
+      citation: "Wherrett DK, Ho J, Huot C, et al. Diabetes Canada 2018 Clinical Practice Guidelines. Type 1 diabetes in children and adolescents. Can J Diabetes. 2018.",
       url: "https://www.diabetes.ca/for-professionals/full-guidelines/chapter-34",
     },
-    { id: "trekk-dka", citation: "TREKK. Bottom line recommendations. Diabetic ketoacidosis." },
+    {
+      id: "trekk-dka",
+      citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Diabetic ketoacidosis. Version 4.0. 2023.",
+      url: "https://trekk.ca/resources/bottom-line-recommendations-diabetic-ketoacidosis",
+    },
     {
       id: "pecarn-fluid",
-      citation: "Kuppermann N, et al. Clinical trial of fluid infusion rates for pediatric diabetic ketoacidosis. N Engl J Med. 2018.",
+      citation: "Kuppermann N, Ghetti S, Schunk JE, et al. Clinical trial of fluid infusion rates for pediatric diabetic ketoacidosis. N Engl J Med. 2018.",
+      url: "https://www.nejm.org/doi/full/10.1056/NEJMoa1716816",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

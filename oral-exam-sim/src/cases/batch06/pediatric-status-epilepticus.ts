@@ -14,13 +14,30 @@ export const pediatricStatusEpilepticus: OralCase = {
     { topic: "seizures", n: 6 },
   ],
   summary: "A 9 month old arrives by ambulance still seizing after a dose of midazolam from paramedics.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in a mid sized emergency department in Ontario in July. There is a pediatrician in house and a CT scanner. The nearest PICU is 60 minutes away. " +
-    "Jayden Morrison is 9 months old. His mother found him stiff and jerking in his crib at 09:40. Paramedics gave intranasal midazolam 1.7 mg at 09:52. He is still seizing on arrival at 10:00. " +
-    "Triage vitals: heart rate 172, respiratory rate 40 and shallow, SpO2 90 percent on a non rebreather mask, blood pressure 98/60, temperature 37.3 degrees C. Weight 8.5 kg. CTAS 1. " +
-    "The paramedic says: 'Rhythmic jerking of all four limbs the whole way in. Eyes deviated to the right. No fever. Mom says he has been fine except a bit fussy the last couple of days.'",
+    "You are working in the emergency department of a community hospital in Ontario in July when the following patient arrives. There is a pediatrician in house. The nearest PICU is 60 minutes away. " +
+    "A 9 month old boy arrives by ambulance at 10:00. He is still seizing after a dose of intranasal midazolam from the paramedics.",
+  card: {
+    vitals: {
+      temperature: "37.3°C",
+      pulse: "172/minute",
+      resp: "40/minute and shallow",
+      bp: "98/60 mmHg",
+      o2sat: "90% on a non rebreather mask",
+      weight: "8.5 kg (18.7 lb)",
+    },
+    medications: "None",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness from the paramedic and mother",
+      result:
+        "His mother found him stiff and jerking in his crib at 09:40. Paramedics gave intranasal midazolam 1.7 mg at 09:52. " +
+        "Rhythmic jerking of all four limbs the whole way in. Eyes deviated to the right. No fever. His mother says he has been fine except a bit fussy the last couple of days.",
+    },
     {
       id: "exam",
       label: "Examination during seizure",
@@ -51,8 +68,9 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "pmh",
       label: "Past and developmental history",
-      result: "Term birth. No prior seizures. Sitting without support and babbling. Immunizations up to date. No medications. No family history of epilepsy.",
+      result: "Term birth. No prior seizures. Sitting without support and babbling. Immunizations up to date. No family history of epilepsy.",
     },
+    { id: "meds", label: "Medications", result: "No medications before today. Intranasal midazolam 1.7 mg from paramedics at 09:52." },
     {
       id: "ct",
       label: "CT head after the seizure stops",
@@ -70,7 +88,7 @@ export const pediatricStatusEpilepticus: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "In the resuscitation bay",
-      text: "It is 10:00. Jayden has been seizing for about 20 minutes. There is no IV. The nurse has two attempts behind her and asks for direction.",
+      text: "The paramedics called ahead and he is CTAS 1. There is a CT scanner on site. It is 10:00. He has been seizing for about 20 minutes. There is no IV. The nurse has two attempts behind her and asks for direction.",
       next: "q-first",
     },
     {
@@ -86,8 +104,9 @@ export const pediatricStatusEpilepticus: OralCase = {
         "Second benzodiazepine dose now: lorazepam 0.1 mg/kg IV or IO, so 0.85 mg, maximum 4 mg.",
         "Limit benzodiazepines to two doses including the prehospital dose.",
         "Draw up second line therapy now so it is ready in 5 minutes.",
+        "Confirm the seizure onset time and the prehospital drug, dose and time with the paramedics.",
       ],
-      rubric: ["se-r1", "se-m1"],
+      rubric: ["se-r1", "se-m1", "se-h1"],
       choices: [
         {
           id: "c-second-benzo",
@@ -142,8 +161,9 @@ export const pediatricStatusEpilepticus: OralCase = {
         "Toxic ingestion in a mobile infant.",
         "First presentation of epilepsy or a structural lesion.",
         "Send gas, electrolytes, calcium, magnesium, CBC, and consider toxicology and blood culture.",
+        "Ask how the formula is mixed and how much water he gets, and about fever, trauma, ingestion and development.",
       ],
-      rubric: ["se-a1", "se-a2"],
+      rubric: ["se-a1", "se-a2", "se-h2", "se-h3"],
       next: "q-second",
     },
     {
@@ -159,7 +179,7 @@ export const pediatricStatusEpilepticus: OralCase = {
         "Avoid valproate under 2 years because of the risk of liver failure in undiagnosed metabolic or mitochondrial disease. IV valproate is also only available in Canada through Special Access.",
         "ConSEPT, EcLiPSE and ESETT found levetiracetam and phenytoin similarly effective. If he keeps seizing, CPS suggests pyridoxine 100 mg IV under 18 months.",
       ],
-      rubric: ["se-m2", "se-m3"],
+      rubric: ["se-m2", "se-m3", "se-p2"],
       choices: [
         {
           id: "c-lev",
@@ -330,7 +350,7 @@ export const pediatricStatusEpilepticus: OralCase = {
       kind: "question",
       id: "q-dispo",
       phase: "Disposition",
-      prompt: "Where does Jayden go and what is the plan for his sodium over the next 24 hours?",
+      prompt: "Where does he go and what is the plan for his sodium over the next 24 hours?",
       seconds: 60,
       modelAnswer: [
         "Admit to a monitored bed or PICU depending on airway status and local capacity.",
@@ -345,14 +365,14 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "Jayden is admitted to the pediatric monitored unit. His sodium reaches 126 mmol/L at 24 hours and he has no more seizures. That is the end of the case.",
+      text: "He is admitted to the pediatric monitored unit. His sodium reaches 126 mmol/L at 24 hours and he has no more seizures. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "se-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Manages the airway, checks glucose and places IO access after failed IV attempts.",
       points: 2,
       teaching: "Glucose is the fastest reversible cause to exclude. IO access should follow two failed IV attempts or about 90 seconds.",
@@ -361,7 +381,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives a second benzodiazepine dose, counting the prehospital dose, for example lorazepam 0.1 mg/kg IV or IO, maximum 4 mg.",
       points: 3,
       critical: true,
@@ -371,7 +391,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Lists metabolic, infectious, toxic, traumatic and structural causes of afebrile status in an infant.",
       points: 2,
       teaching: "An afebrile infant in status needs a broad search. Hyponatremia and abusive head trauma are both easy to miss.",
@@ -380,7 +400,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Sends electrolytes, calcium and magnesium early.",
       points: 1,
       teaching: "Electrolyte causes of seizure respond poorly to antiseizure drugs. Early results change treatment.",
@@ -389,7 +409,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives a second line agent: levetiracetam 60 mg/kg, CPS maximum 3000 mg, or fosphenytoin 20 mg PE/kg, maximum 1000 mg PE.",
       points: 3,
       critical: true,
@@ -399,7 +419,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids valproate in a child under 2 years.",
       points: 1,
       teaching: "Valproate carries a risk of fatal liver failure in young children, especially with an undiagnosed metabolic disorder.",
@@ -408,7 +428,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes hyponatremic seizure from free water intoxication and links it to diluted formula.",
       points: 2,
       teaching: "Infants have limited ability to excrete free water. Diluted formula and extra water can drop sodium quickly.",
@@ -417,7 +437,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives 3 percent saline 3 to 5 mL/kg over 10 to 20 minutes and repeats if seizures continue.",
       points: 3,
       critical: true,
@@ -427,7 +447,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Limits the total sodium rise to about 8 mmol/L in 24 hours with frequent checks.",
       points: 2,
       teaching: "Overcorrection risks osmotic demyelination. Once the free water intake stops, the kidneys can correct sodium fast on their own.",
@@ -436,7 +456,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Supports post ictal hypoventilation with airway manoeuvres and bag mask, and states indications and weight based drugs for intubation.",
       points: 2,
       teaching: "Most post ictal hypoventilation settles with basic airway support. If you paralyze, seizures become invisible, so arrange EEG.",
@@ -445,7 +465,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks with the parent without judgment and explains the danger of diluted formula.",
       points: 2,
       teaching: "Parents dilute formula to stretch it when money is short. A respectful conversation keeps them engaged in their child's care.",
@@ -454,7 +474,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Involves social work for food and income supports and reports to the Children's Aid Society personally, telling the parent openly.",
       points: 2,
       teaching: "The CYFSA duty applies on reasonable grounds to suspect physical harm from a failure to adequately provide, whatever the cause. It cannot be delegated. Poverty is not neglect, and the report should lead to support, not blame.",
@@ -463,7 +483,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to a monitored setting with sodium checks every 2 hours and a plan to prevent overcorrection.",
       points: 2,
       teaching: "A brisk water diuresis can raise sodium too fast once intake stops. Close monitoring lets the team intervene early.",
@@ -472,11 +492,47 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Coordinates with the pediatrician and social work on a follow up plan.",
       points: 1,
       teaching: "The medical and social problems need the same follow up. Clear ownership prevents a repeat presentation.",
       source: "trekk-se",
+    },
+    {
+      id: "se-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks when the seizure started, what it looked like, and which prehospital drugs were given with doses and times.",
+      points: 2,
+      teaching: "Seizure duration and the doses already given decide the next step. The prehospital benzodiazepine counts as one of the two doses.",
+      source: "cps-se",
+    },
+    {
+      id: "se-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes a feeding history: type of formula, how it is mixed, bottles per day and any extra water.",
+      points: 2,
+      teaching: "Diluted formula and extra water are the classic cause of hyponatremic seizures in infants. Ask how the tin is mixed, not only what brand.",
+      source: "cps-se",
+    },
+    {
+      id: "se-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about fever, recent illness, trauma, possible ingestion, development, and past or family history of seizures.",
+      points: 2,
+      teaching: "An afebrile infant in status needs a history that screens for infection, abusive head trauma, toxins and a first presentation of epilepsy.",
+      source: "trekk-se",
+    },
+    {
+      id: "se-p2",
+      competency: "leadership",
+      criterion: "process",
+      text: "Keeps time from seizure onset and moves to the next drug at set intervals instead of waiting.",
+      points: 1,
+      teaching: "Status protocols run on the clock. Naming a timekeeper keeps second line therapy on time.",
+      source: "cps-se",
     },
   ],
   sources: [
@@ -485,15 +541,22 @@ export const pediatricStatusEpilepticus: OralCase = {
       citation: "McKenzie KC, Hahn CD, Friedman JN. Canadian Paediatric Society. Emergency management of the paediatric patient with convulsive status epilepticus. Position statement. 2021.",
       url: "https://cps.ca/en/documents/position/emergency-management-of-the-paediatric-patient-with-convulsive-status-epilepticus",
     },
-    { id: "trekk-se", citation: "TREKK. Bottom line recommendations. Status epilepticus." },
+    {
+      id: "trekk-se",
+      citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Status epilepticus. Version 1.2. 2025.",
+      url: "https://trekk.ca/resources/bottom-line-recommendations-status-epilepticus",
+    },
     {
       id: "second-line-trials",
       citation:
         "Dalziel SR, et al. Levetiracetam versus phenytoin for second line treatment of convulsive status epilepticus in children (ConSEPT). Lancet. 2019. Also Lyttle MD, et al. EcLiPSE. Lancet. 2019. Kapur J, et al. ESETT. N Engl J Med. 2019.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/31005386/",
     },
     {
       id: "eu-hypona",
-      citation: "Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014. Adult guideline. Principles applied here with weight based dosing.",
+      citation:
+        "Spasovski G, Vanholder R, Allolio B, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014. Adult guideline. Principles applied here with weight based dosing.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/24569125/",
     },
     {
       id: "cyfsa",
@@ -501,7 +564,7 @@ export const pediatricStatusEpilepticus: OralCase = {
       url: "https://www.ontario.ca/laws/statute/17c14",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -15,12 +15,22 @@ export const severeCroup: OralCase = {
     { topic: "airway", n: 4 },
   ],
   summary: "A 2 year old wakes in the night with a cough and noisy breathing and arrives working hard.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working overnight in a regional emergency department in southern Ontario. Anesthesia and ENT are on call from home and can be in within 30 minutes. There is no pediatric ICU. The nearest one is 2 hours away. " +
-    "Mila Kowalczyk is 2 years and 4 months old. She had a runny nose for a day and woke at 02:00 with a harsh cough and noisy breathing. " +
-    "Triage vitals: heart rate 168, respiratory rate 44, SpO2 93 percent on room air, temperature 38.1 degrees C, alert. Weight 13 kg. CTAS 2. " +
-    "The triage nurse says: 'She has a seal bark cough and loud stridor even when she is sitting still on dad's lap. She is pulling in at her neck and ribs. Dad tried the steamy bathroom at home and it did not help.'",
+    "You are working in the emergency department of a community hospital in southern Ontario overnight when the following patient arrives. There is no pediatric ICU. The nearest one is 2 hours away. " +
+    "A 2 year old girl is carried in by her father with a harsh cough and noisy breathing.",
+  card: {
+    vitals: {
+      temperature: "38.1°C",
+      pulse: "168/minute",
+      resp: "44/minute",
+      bp: "Not recorded",
+      o2sat: "93% on room air",
+      weight: "13 kg (28.7 lb)",
+    },
+    medications: "Not recorded",
+    allergies: "None",
+  },
   findings: [
     {
       id: "appearance",
@@ -41,14 +51,20 @@ export const severeCroup: OralCase = {
     },
     {
       id: "history",
-      label: "History",
+      label: "History of presenting illness",
       result:
-        "Coryza for 1 day. Sudden onset of barky cough at night. No choking episode. No known foreign body. Eating and drinking yesterday. No rash. No new foods or stings.",
+        "She is 2 years and 4 months old. Coryza for 1 day. She woke at 02:00 with a sudden barky cough and noisy breathing. No choking episode. No known foreign body. " +
+        "Eating and drinking yesterday. No rash. No new foods or stings. Her father tried the steamy bathroom at home and it did not help.",
     },
     {
       id: "pmh",
       label: "Past history",
-      result: "One episode of mild croup at 14 months treated at home. Otherwise well. Immunizations up to date, including Hib. No allergies. No airway surgery or prolonged intubation.",
+      result: "One episode of mild croup at 14 months treated at home. Otherwise well. No airway surgery or prolonged intubation.",
+    },
+    {
+      id: "immunizations",
+      label: "Immunizations and allergies",
+      result: "Immunizations up to date, including Hib. No allergies.",
     },
     {
       id: "neck",
@@ -77,7 +93,9 @@ export const severeCroup: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "In the resuscitation bay",
-      text: "Mila is on her father's lap with loud stridor. The nurse is holding a tongue depressor and an IV start kit and asks what you want.",
+      text:
+        "The triage nurse has made her CTAS 2. She is alert. The nurse says she has a seal bark cough and loud stridor even sitting still on her father's lap, and she is pulling in at her neck and ribs. " +
+        "Anesthesia and ENT are on call from home and can be in within 30 minutes. She is on her father's lap with loud stridor. The nurse is holding a tongue depressor and an IV start kit and asks what you want.",
       next: "q-first",
     },
     {
@@ -93,8 +111,9 @@ export const severeCroup: OralCase = {
         "Dexamethasone 0.6 mg/kg orally, which is 7.8 mg. TREKK lists a maximum of 12 mg. IM or IV if she cannot take it by mouth.",
         "Blow by oxygen if SpO2 stays under 92 percent, held by dad.",
         "Monitor and reassess every 15 to 30 minutes.",
+        "Ask about onset, choking, fever, intake, past croup, airway history and Hib immunization.",
       ],
-      rubric: ["cr-a1", "cr-r1", "cr-m1", "cr-m2"],
+      rubric: ["cr-a1", "cr-h1", "cr-h2", "cr-h3", "cr-r1", "cr-m1", "cr-m2", "cr-p1"],
       choices: [
         {
           id: "c-epi-dex",
@@ -158,7 +177,7 @@ export const severeCroup: OralCase = {
       kind: "say",
       id: "s-better",
       phase: "Forty minutes after epinephrine",
-      text: "Mila is much better. She has soft stridor only when she cries and mild retractions. SpO2 is 97 percent on room air. Dad asks if they can go home now since she is sleepy and it is late.",
+      text: "She is much better. She has soft stridor only when she cries and mild retractions. SpO2 is 97 percent on room air. Dad asks if they can go home now since she is sleepy and it is late.",
       next: "q-observe",
     },
     {
@@ -173,7 +192,7 @@ export const severeCroup: OralCase = {
         "Caregivers must be able to return quickly.",
         "Needing more than one dose of epinephrine is a common reason to admit.",
       ],
-      rubric: ["cr-d1"],
+      rubric: ["cr-d1", "cr-h4"],
       choices: [
         {
           id: "c-two-hours",
@@ -197,7 +216,7 @@ export const severeCroup: OralCase = {
       kind: "say",
       id: "s-early-dc",
       phase: "Seventy minutes later",
-      text: "Dad carries Mila back through the doors. In the car her stridor came back and she is pulling in hard. She is taken straight to resus.",
+      text: "Dad carries her back through the doors. In the car her stridor came back and she is pulling in hard. She is taken straight to resus.",
       next: "s-rebound",
     },
     {
@@ -343,14 +362,14 @@ export const severeCroup: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "The transport team takes Mila to the PICU. Her tracheal aspirate grows no bacteria and she is extubated two days later. That is the end of the case.",
+      text: "The transport team takes her to the PICU. Her tracheal aspirate grows no bacteria and she is extubated two days later. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "cr-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Classifies the croup as severe based on stridor at rest, marked retractions and distress.",
       points: 2,
       teaching: "Stridor at rest with marked retractions defines severe croup. Severity drives the choice of epinephrine and the level of monitoring.",
@@ -359,7 +378,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Keeps the child calm with a parent and avoids tongue depressors, IV starts and other upsetting procedures.",
       points: 2,
       critical: true,
@@ -369,7 +388,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives nebulized L epinephrine 1 mg/mL, 5 mL, which is the CPS dose and the weight based maximum.",
       points: 3,
       critical: true,
@@ -379,7 +398,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives dexamethasone 0.6 mg/kg orally, or IM or IV if oral is not possible.",
       points: 2,
       teaching: "Dexamethasone reduces return visits and admissions. Oral is as effective as parenteral. TREKK lists a maximum of 12 mg and other protocols differ, so check your local one.",
@@ -388,7 +407,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Lists red flags and alternative diagnoses: epiglottitis, bacterial tracheitis, foreign body, retropharyngeal abscess and anaphylaxis.",
       points: 2,
       teaching: "Toxic appearance, drooling and poor response to epinephrine should prompt a search for another cause of stridor.",
@@ -397,7 +416,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Observes for 2 to 4 hours after the last epinephrine dose before considering discharge.",
       points: 2,
       teaching: "Symptoms can rebound as epinephrine wears off. Two hours of observation also lets dexamethasone start working.",
@@ -406,7 +425,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes softer stridor with poor air entry, lethargy and hypoxia as impending respiratory failure.",
       points: 3,
       critical: true,
@@ -416,7 +435,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls anesthesia and ENT early and prepares for a controlled airway.",
       points: 2,
       teaching: "The most skilled airway operator should manage a narrowed pediatric airway. Call before the child arrests, not after.",
@@ -425,7 +444,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids sedation and knows heliox is at most a short bridge.",
       points: 1,
       teaching: "Sedation can remove the airway tone the child depends on. CPS does not recommend heliox routinely. Some centres use it briefly while definitive help arrives.",
@@ -434,7 +453,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Selects a tube 0.5 to 1 size smaller than predicted, for example 3.5 mm cuffed with 3.0 mm ready, and sets depth by age at about 13 cm.",
       points: 2,
       teaching: "The subglottis is the narrowest part of the airway in croup. A smaller tube passes the swelling and limits further injury.",
@@ -443,7 +462,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "States a backup plan including a smaller tube, bag mask with PEEP, a supraglottic airway and ENT for a surgical airway.",
       points: 1,
       teaching: "Croup narrows the airway at the cricoid ring, below the cricothyroid membrane. A needle cricothyroidotomy may not bypass it, so ENT at the bedside for bronchoscopy or tracheostomy is the best backup.",
@@ -452,7 +471,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the need for intubation to the parent in plain language and addresses his fear.",
       points: 1,
       teaching: "Parents often feel they failed at home. Explain the reason, the expected course and how they can stay with their child.",
@@ -461,7 +480,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges PICU transfer with a pediatric critical care transport team.",
       points: 2,
       teaching: "An intubated child with a narrowed airway needs a pediatric ICU. CritiCall coordinates the bed and team in Ontario.",
@@ -470,7 +489,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover including tube size, depth, grade of view and all drug doses with times.",
       points: 1,
       teaching: "Tube details matter most in a difficult airway. The receiving team must know what worked and what to avoid.",
@@ -479,27 +498,78 @@ export const severeCroup: OralCase = {
     {
       id: "cr-a4",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Considers bacterial tracheitis given fever and poor response, and sends a tracheal aspirate.",
       points: 1,
       teaching: "Bacterial tracheitis can follow viral croup. Thick secretions at intubation and a toxic course suggest it and need antibiotics.",
       source: "cmaj-croup",
     },
+    {
+      id: "cr-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the onset and prodrome: coryza, sudden barky cough at night, and any choking episode or possible foreign body.",
+      points: 2,
+      teaching: "A viral prodrome and a barky cough at night fit croup. Sudden onset after choking with no prodrome points to a foreign body.",
+      source: "cmaj-croup",
+    },
+    {
+      id: "cr-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about fever, eating and drinking, rash and exposure to new foods or stings.",
+      points: 1,
+      teaching: "High fever and refusal to swallow suggest epiglottitis or tracheitis. Rash or an exposure suggests anaphylaxis.",
+      source: "cmaj-croup",
+    },
+    {
+      id: "cr-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past croup, airway surgery or prolonged intubation, and Hib immunization.",
+      points: 2,
+      teaching: "Recurrent or atypical croup and a history of intubation raise concern for subglottic stenosis. Hib immunization makes epiglottitis less likely.",
+      source: "cmaj-croup",
+    },
+    {
+      id: "cr-h4",
+      competency: "disposition",
+      criterion: "history",
+      text: "Asks what was tried at home and how quickly the family could return to hospital before discussing discharge.",
+      points: 1,
+      teaching: "Distance, transport and caregiver confidence are part of the discharge decision after epinephrine.",
+      source: "cps-croup",
+    },
+    {
+      id: "cr-p1",
+      competency: "leadership",
+      criterion: "process",
+      text: "Reassesses every 15 to 30 minutes after each treatment and acts on the trend.",
+      points: 1,
+      teaching: "Croup can change quickly. Scheduled reassessment catches rebound after epinephrine and early fatigue.",
+      source: "cps-croup",
+    },
   ],
   sources: [
     {
       id: "cps-croup",
-      citation: "Canadian Paediatric Society. Acute management of croup in the emergency department. Position statement. 2017, updated 2026.",
+      citation: "Ortiz-Alvarez O. Canadian Paediatric Society. Acute management of croup in the emergency department. Position statement. 2017, updated 2026.",
       url: "https://cps.ca/en/documents/position/acute-management-of-croup",
     },
-    { id: "trekk-croup", citation: "TREKK. Bottom line recommendations. Croup.", url: "https://trekk.ca/resources/bottom-line-recommendations-croup" },
-    { id: "cmaj-croup", citation: "Bjornson CL, Johnson DW. Croup in children. CMAJ. 2013." },
+    {
+      id: "trekk-croup",
+      citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Croup. Version 5.0. 2026.",
+      url: "https://trekk.ca/resources/bottom-line-recommendations-croup",
+    },
+    { id: "cmaj-croup", citation: "Bjornson CL, Johnson DW. Croup in children. CMAJ. 2013.", url: "https://pubmed.ncbi.nlm.nih.gov/23939212/" },
     {
       id: "aha-pals",
-      citation: "American Heart Association. 2025 Guidelines for CPR and ECC. Part 8. Pediatric advanced life support.",
+      citation:
+        "American Heart Association and American Academy of Pediatrics. Part 8. Pediatric advanced life support. 2025 Guidelines for CPR and ECC. Circulation. 2025.",
+      url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001368",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -15,17 +15,29 @@ export const neonateBiliousVomiting: OralCase = {
     { topic: "ems", n: 3 },
   ],
   summary: "A 6 day old baby has vomited several times tonight and is not interested in feeding.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working overnight in a community emergency department in central Ontario. There is a general surgeon on call and ultrasound is available only by call back. There is no pediatric surgeon. The regional children's hospital is 2 hours away by road. " +
-    "Baby Chloe Ansah is 6 days old. She was born at term and went home on day 2. Since 22:00 she has vomited three times and is feeding poorly. " +
-    "Triage vitals at 01:15: heart rate 176, respiratory rate 48, blood pressure 68/40, SpO2 98 percent on room air, temperature 36.9 degrees C, capillary refill 3 seconds. Weight 3.3 kg. Birth weight 3.4 kg. CTAS 2. " +
-    "The triage nurse says: 'Mom showed me a photo of the last vomit on her phone. It is bright green, like spinach. The baby is a bit sleepy but wakes when handled.'",
+    "You are working in the emergency department of a community hospital in central Ontario overnight when the following patient arrives. There is no pediatric surgeon. The regional children's hospital is 2 hours away by road. " +
+    "A 6 day old girl is brought in by her parents because she has vomited several times tonight and is feeding poorly.",
+  card: {
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "176/minute",
+      resp: "48/minute",
+      bp: "68/40 mmHg",
+      o2sat: "98% on room air",
+      weight: "3.3 kg (7.3 lb)",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "vomit",
-      label: "Vomit description",
-      result: "Three vomits since 22:00. The first was milky. The last two were dark green. Not projectile. No blood.",
+      label: "History of presenting illness and vomit description",
+      result:
+        "Three vomits since 22:00 and feeding poorly. The first was milky. The last two were dark green. Not projectile. No blood. " +
+        "Her mother has a photo of the last vomit on her phone. It is bright green, like spinach. She has been a bit sleepy but wakes when handled.",
     },
     {
       id: "abdo",
@@ -39,9 +51,13 @@ export const neonateBiliousVomiting: OralCase = {
     },
     {
       id: "birth",
-      label: "Birth and feeding history",
-      result:
-        "Born at 39 weeks by vaginal delivery. Apgars 8 and 9. Mother GBS negative. Meconium passed in the first 24 hours. Breastfeeding well until tonight. Yellow stools until yesterday. No stool since.",
+      label: "Birth history",
+      result: "Born at 39 weeks by vaginal delivery. Birth weight 3.4 kg. Apgars 8 and 9. Mother GBS negative. Went home on day 2.",
+    },
+    {
+      id: "feeding",
+      label: "Feeding and stool history",
+      result: "Meconium passed in the first 24 hours. Breastfeeding well until tonight. Yellow stools until yesterday. No stool since.",
     },
     { id: "glucose", label: "Point of care glucose", result: "Capillary glucose 3.0 mmol/L." },
     {
@@ -72,7 +88,9 @@ export const neonateBiliousVomiting: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "In the assessment room",
-      text: "Chloe is wrapped in a blanket in her mother's arms. Her father asks if it is just reflux, because his sister's baby had that.",
+      text:
+        "She was triaged at 01:15 as CTAS 2. Capillary refill is 3 seconds. A general surgeon is on call and ultrasound is available only by call back. " +
+        "She is wrapped in a blanket in her mother's arms. Her father asks if it is just reflux, because his sister's baby had that.",
       next: "q-first",
     },
     {
@@ -88,8 +106,9 @@ export const neonateBiliousVomiting: OralCase = {
         "IV access. Treat glucose of 3.0 mmol/L with D10W 2 mL/kg, so 6.6 mL.",
         "Give 0.9 percent saline 10 mL/kg, so 33 mL, for poor perfusion and reassess.",
         "Call the pediatric surgeon at the children's hospital now, before imaging.",
+        "Ask the colour and pattern of the vomit, stools, feeding, wet diapers and the birth history.",
       ],
-      rubric: ["bv-a1", "bv-r1", "bv-l1"],
+      rubric: ["bv-a1", "bv-r1", "bv-l1", "bv-h1", "bv-h2", "bv-h3"],
       choices: [
         {
           id: "c-surgical",
@@ -121,7 +140,7 @@ export const neonateBiliousVomiting: OralCase = {
       kind: "say",
       id: "s-xray-first",
       phase: "Forty minutes later",
-      text: "Chloe vomits green again and becomes more sleepy. The X ray shows a dilated stomach and duodenum with little distal gas. The nurse pages you. You pass an OG tube, give dextrose and a bolus, and call the pediatric surgeon.",
+      text: "She vomits green again and becomes more sleepy. The X ray shows a dilated stomach and duodenum with little distal gas. The nurse pages you. You pass an OG tube, give dextrose and a bolus, and call the pediatric surgeon.",
       next: "q-ddx",
     },
     {
@@ -186,7 +205,7 @@ export const neonateBiliousVomiting: OralCase = {
       kind: "say",
       id: "s-wait-us",
       phase: "An hour later",
-      text: "The pediatric surgeon calls back after seeing the X ray on the shared system. She asks you to send Chloe now and not wait for any more imaging. You call CritiCall.",
+      text: "The pediatric surgeon calls back after seeing the X ray on the shared system. She asks you to send the baby now and not wait for any more imaging. You call CritiCall.",
       next: "q-fluids",
     },
     {
@@ -210,7 +229,7 @@ export const neonateBiliousVomiting: OralCase = {
       id: "s-worse",
       phase: "03:30. Transport is 50 minutes away",
       text:
-        "Chloe's abdomen is now distended and firm. She cries when it is touched. There is dark red blood in her diaper. " +
+        "Her abdomen is now distended and firm. She cries when it is touched. There is dark red blood in her diaper. " +
         "Heart rate 204. Blood pressure 56/30. Capillary refill 5 seconds. Lactate 6.1 mmol/L. The OG tube has drained 40 mL of green fluid.",
       next: "q-worse",
     },
@@ -300,14 +319,14 @@ export const neonateBiliousVomiting: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "Chloe is flown to the children's hospital and goes straight to the operating room. The surgeon untwists a 360 degree midgut volvulus. Most of the bowel recovers. That is the end of the case.",
+      text: "She is flown to the children's hospital and goes straight to the operating room. The surgeon untwists a 360 degree midgut volvulus. Most of the bowel recovers. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "bv-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "States that bilious vomiting in a neonate is malrotation with midgut volvulus until proven otherwise.",
       points: 3,
       critical: true,
@@ -317,7 +336,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Makes the baby NPO, decompresses with an OG or NG tube, corrects glucose and gives a 10 mL/kg bolus for poor perfusion.",
       points: 2,
       teaching: "Decompression reduces aspiration risk and discomfort. Neonates have small glucose reserves and need early dextrose.",
@@ -326,7 +345,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls the pediatric surgeon immediately, before imaging results.",
       points: 3,
       critical: true,
@@ -336,7 +355,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Gives a differential including atresias, annular pancreas, NEC, Hirschsprung disease, meconium ileus and sepsis.",
       points: 1,
       teaching: "Many causes of neonatal bilious vomiting need surgery. Pyloric stenosis is not one of them because it causes non bilious vomiting.",
@@ -345,7 +364,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Knows that a normal or nonspecific X ray does not exclude volvulus and that the upper GI contrast study is the test of choice.",
       points: 2,
       teaching: "Partial volvulus lets some gas pass. The upper GI series shows the position of the duodenojejunal junction and the corkscrew of volvulus.",
@@ -354,7 +373,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Respectfully challenges the plan to wait for morning imaging and speaks directly with the pediatric surgeon.",
       points: 2,
       teaching: "Advocate with facts. Share the images and the time course. The receiving surgeon can settle the disagreement quickly.",
@@ -363,7 +382,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Orders maintenance dextrose containing fluid, replaces gastric losses and monitors glucose, perfusion and urine output.",
       points: 1,
       teaching: "Neonates need dextrose in maintenance fluid. Gastric losses can cause hypovolemia and hypochloremia if not replaced.",
@@ -372,7 +391,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-a4",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes bloody stool, distension, tenderness, shock and rising lactate as bowel ischemia.",
       points: 2,
       teaching: "Blood per rectum and peritonism are late signs. Survival and bowel length depend on detorsion before necrosis.",
@@ -381,7 +400,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Resuscitates shock with 10 to 20 mL/kg boluses, reassessing after each, and prepares for airway and inotropic support.",
       points: 2,
       teaching: "Third space loss into ischemic bowel is large. Reassess after each bolus for response and overload.",
@@ -390,7 +409,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives broad spectrum antibiotics such as ampicillin, gentamicin and metronidazole at neonatal doses.",
       points: 2,
       teaching: "Ischemic bowel allows bacterial translocation. Check neonatal doses and intervals with pharmacy because they change with postnatal age.",
@@ -399,7 +418,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Escalates the transfer through CritiCall and raises the option of local surgical detorsion if the baby will not survive transport.",
       points: 3,
       critical: true,
@@ -409,7 +428,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the diagnosis honestly to the parents and attends to the postpartum mother's needs and safe travel.",
       points: 1,
       teaching: "A mother 6 days postpartum is also a patient. Families need a plan for how they will get to the receiving hospital safely.",
@@ -418,7 +437,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover with the timeline, fluids, glucose, antibiotics, imaging and OG output.",
       points: 1,
       teaching: "Timing of the first bilious vomit and of the surgical call helps the surgeon judge how long the bowel has been at risk.",
@@ -427,23 +446,59 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Transfers to a pediatric surgical centre without delaying for local imaging.",
       points: 2,
       teaching: "The upper GI study and the operation happen at the same place. Local imaging should never hold up transfer.",
       source: "acr-vomit",
     },
+    {
+      id: "bv-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the colour of the vomit, when it started, whether it is projectile and whether there is blood.",
+      points: 2,
+      teaching: "Green vomit in a neonate is bilious until proven otherwise. Parents often call it yellow, so ask them to show or describe it.",
+      source: "acr-vomit",
+    },
+    {
+      id: "bv-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about meconium passage, the last stool, feeding and wet diapers.",
+      points: 2,
+      teaching: "Delayed meconium suggests Hirschsprung disease or meconium ileus. A recent change in stools and feeding points to a new obstruction.",
+      source: "acr-vomit",
+    },
+    {
+      id: "bv-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about gestation, birth weight, delivery, maternal GBS status and the postnatal course.",
+      points: 2,
+      teaching: "Birth history sets the baseline for weight loss and sepsis risk, which sit alongside surgical causes on the differential.",
+      source: "ssc-peds",
+    },
   ],
   sources: [
-    { id: "langer", citation: "Langer JC. Intestinal rotation abnormalities and midgut volvulus. Surg Clin North Am. 2017." },
-    { id: "acr-vomit", citation: "American College of Radiology. ACR Appropriateness Criteria. Vomiting in infants." },
+    {
+      id: "langer",
+      citation: "Langer JC. Intestinal rotation abnormalities and midgut volvulus. Surg Clin North Am. 2017.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/27894424/",
+    },
+    {
+      id: "acr-vomit",
+      citation: "Expert Panel on Pediatric Imaging, Alazraki AL, Rigsby CK, et al. ACR Appropriateness Criteria. Vomiting in infants. J Am Coll Radiol. 2020.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/33153561/",
+    },
     {
       id: "ssc-peds",
       citation:
-        "Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Pediatr Crit Care Med. 2026.",
+        "Weiss SL, Peters MJ, Oczkowski SJ, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Pediatr Crit Care Med. 2026.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/41869844/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -15,13 +15,30 @@ export const bronchiolitisApnea: OralCase = {
     { topic: "airway", n: 4 },
   ],
   summary: "A 6 week old former preterm infant with a cold and a spell in the car on the way in.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working in a community emergency department in eastern Ontario in January. There is high flow nasal cannula in the department and an anesthetist on call from home. The nearest pediatric ICU is 90 minutes away by road. " +
-    "Noor Haddad is 6 weeks old. She was born at 34 weeks and 5 days. She has had a runny nose and cough for 3 days. " +
-    "Triage vitals: heart rate 184, respiratory rate 68, SpO2 86 percent on room air, rectal temperature 37.9 degrees C, capillary refill 2 seconds. Weight 3.9 kg. CTAS 1. " +
-    "The triage nurse says: 'Mom says she stopped breathing and went blue in her car seat for about 20 seconds on the way here. She pinked up when mom rubbed her chest. Her big brother goes to daycare and has a cold. She is working hard.'",
+    "You are working in the emergency department of a community hospital in eastern Ontario in January when the following patient arrives. The nearest pediatric ICU is 90 minutes away by road. " +
+    "A 6 week old girl is carried in by her parents with a runny nose and cough. Her mother says she went blue in the car on the way.",
+  card: {
+    vitals: {
+      temperature: "37.9°C rectal",
+      pulse: "184/minute",
+      resp: "68/minute",
+      bp: "Not recorded",
+      o2sat: "86% on room air",
+      weight: "3.9 kg (8.6 lb)",
+    },
+    medications: "None",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "Runny nose and cough for 3 days. On the way here she stopped breathing and went blue in her car seat for about 20 seconds. " +
+        "She pinked up when her mother rubbed her chest. Her mother says she is working hard to breathe.",
+    },
     {
       id: "exam",
       label: "Respiratory exam",
@@ -50,8 +67,12 @@ export const bronchiolitisApnea: OralCase = {
       id: "birth",
       label: "Birth and past history",
       result:
-        "Born at 34 weeks and 5 days by spontaneous vaginal delivery. Eight days in the NICU for feeding and jaundice. Never ventilated. " +
-        "No RSV monoclonal antibody given. Immunizations not yet due. No medications.",
+        "Born at 34 weeks and 5 days by spontaneous vaginal delivery. Eight days in the NICU for feeding and jaundice. Never ventilated.",
+    },
+    {
+      id: "meds",
+      label: "Medications and immunizations",
+      result: "No medications. No RSV monoclonal antibody given. Immunizations not yet due.",
     },
     {
       id: "cough",
@@ -82,7 +103,9 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "social",
       label: "Family and social",
-      result: "Parents are both present. They live 25 minutes away. Mom is tearful and says she should have kept her brother home from daycare.",
+      result:
+        "Parents are both present. They live 25 minutes away. Her big brother goes to daycare and has a cold. " +
+        "Mom is tearful and says she should have kept her brother home from daycare.",
     },
   ],
   start: "s-open",
@@ -91,7 +114,9 @@ export const bronchiolitisApnea: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "In the resuscitation bay",
-      text: "Noor is on her mother's lap. She is grunting softly and her nose is full of secretions. The nurse asks what you want first.",
+      text:
+        "The triage nurse has made her CTAS 1. Capillary refill is 2 seconds. High flow nasal cannula is available in the department and the anesthetist is on call from home. " +
+        "She is on her mother's lap. She is grunting softly and her nose is full of secretions. The nurse asks what you want first.",
       next: "q-first",
     },
     {
@@ -107,8 +132,9 @@ export const bronchiolitisApnea: OralCase = {
         "Check glucose and a capillary gas.",
         "Recognize high risk features: age under 2 months, prematurity and a witnessed apnea.",
         "Have high flow, bag mask and airway equipment at the bedside.",
+        "Ask about the spell, birth history, RSV antibody, feeding, wet diapers and pertussis contacts.",
       ],
-      rubric: ["br-a1", "br-r1", "br-r2"],
+      rubric: ["br-a1", "br-h1", "br-h2", "br-h3", "br-r1", "br-r2"],
       choices: [
         {
           id: "c-support",
@@ -236,7 +262,7 @@ export const bronchiolitisApnea: OralCase = {
         "Call the anesthetist in early and prepare airway equipment and drugs.",
         "Stop oral feeds. Start NG feeds or isotonic IV fluid.",
       ],
-      rubric: ["br-r3", "br-l1", "br-m3"],
+      rubric: ["br-r3", "br-l1", "br-m3", "br-p1"],
       choices: [
         {
           id: "c-hfnc",
@@ -302,7 +328,7 @@ export const bronchiolitisApnea: OralCase = {
       kind: "question",
       id: "q-parents",
       phase: "Family",
-      prompt: "Noor's mother is crying. She asks if this is her fault for sending her son to daycare. What do you say?",
+      prompt: "Her mother is crying. She asks if this is her fault for sending her son to daycare. What do you say?",
       seconds: 60,
       modelAnswer: [
         "Sit down, use her daughter's name and speak plainly.",
@@ -357,14 +383,14 @@ export const bronchiolitisApnea: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "Noor leaves with the transport team on the ventilator. Her parents follow by car. That is the end of the case.",
+      text: "She leaves with the transport team on the ventilator. Her parents follow by car. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "br-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Identifies high risk features for apnea: age under 2 months, prematurity and a witnessed apnea.",
       points: 2,
       teaching: "Young age and prematurity are the strongest risk factors for apnea in RSV bronchiolitis. A witnessed spell raises the level of monitoring needed.",
@@ -373,7 +399,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Places the infant on continuous cardiorespiratory monitoring with apnea alarms in a resuscitation area.",
       points: 3,
       critical: true,
@@ -383,7 +409,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Suctions the nares and gives oxygen for SpO2 persistently under 90 percent.",
       points: 2,
       teaching: "Infants are obligate nasal breathers. Gentle nasal suction often improves work of breathing. CPS suggests supplemental oxygen when SpO2 stays under 90 percent.",
@@ -392,7 +418,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Explains that central apnea is an early feature of RSV in young infants and considers pertussis, sepsis, hypoglycemia, seizure and abusive head trauma.",
       points: 2,
       teaching: "Apnea can precede severe distress in RSV. A broad differential protects against missing a treatable cause.",
@@ -401,7 +427,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Checks glucose and a blood gas, and sends pertussis PCR in an infant with apnea.",
       points: 1,
       teaching: "Glucose and a gas are quick and change management. Pertussis can present with apnea in young infants and needs treatment and public health follow up.",
@@ -410,7 +436,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Does not give salbutamol, corticosteroids or routine nebulized epinephrine.",
       points: 2,
       teaching: "None of these improve important outcomes in bronchiolitis. Each adds side effects and cost.",
@@ -419,7 +445,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Does not give antibiotics or hypertonic saline in the ED without a specific indication.",
       points: 1,
       teaching: "Bacterial coinfection of the lung is uncommon in bronchiolitis. Hypertonic saline has no proven ED benefit.",
@@ -428,7 +454,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts high flow nasal cannula at about 2 L/kg/min when standard oxygen fails.",
       points: 2,
       teaching: "High flow reduces escalation of care in infants who fail standard oxygen. It is a bridge, not a treatment for recurrent central apnea.",
@@ -437,7 +463,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls the pediatric transport service and anesthesia early when apnea recurs.",
       points: 3,
       critical: true,
@@ -447,7 +473,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Stops oral feeds in severe distress and uses NG feeds or isotonic IV fluid.",
       points: 1,
       teaching: "Oral feeding with high respiratory rates risks aspiration. CPS supports NG or isotonic IV hydration when oral intake fails.",
@@ -456,7 +482,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates with weight based drugs, for example ketamine 1 to 2 mg/kg and rocuronium 1 mg/kg, with atropine and epinephrine ready.",
       points: 2,
       critical: true,
@@ -466,7 +492,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r5",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses a cuffed 3.0 mm tube with correct depth and sets lung protective ventilation.",
       points: 1,
       teaching: "Cuffed tubes are reasonable in infants when cuff pressure is monitored. Use 6 to 8 mL/kg tidal volume and accept moderate hypercapnia.",
@@ -475,7 +501,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Reassures the parent that she is not at fault and explains intubation and transfer in plain language.",
       points: 2,
       teaching: "Parental guilt is common. A direct statement that it is not their fault, and a clear plan, helps families cope with transfer.",
@@ -484,7 +510,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover including airway, ventilator settings, drugs, times and pending tests.",
       points: 2,
       teaching: "Structured handover reduces omissions at transfer. Name who will follow each pending result.",
@@ -493,7 +519,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges PICU transfer with a critical care transport team rather than ward admission.",
       points: 2,
       teaching: "An infant with recurrent apnea and rising pCO2 needs a unit that can provide ventilation. Ward admission is unsafe.",
@@ -502,36 +528,80 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Plans empiric azithromycin 10 mg/kg once daily for 5 days if pertussis is confirmed or strongly suspected.",
       points: 1,
       teaching: "Azithromycin is the preferred macrolide in young infants. Watch for pyloric stenosis after any macrolide in the first weeks of life. Close contacts may need prophylaxis through public health.",
-      source: "phac-pertussis",
+      source: "cdc-pertussis",
+    },
+    {
+      id: "br-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks how long the spell lasted, whether she changed colour, what ended it and whether it happened during feeding or sleep.",
+      points: 2,
+      teaching: "The details of the spell set the level of monitoring. A spell that needed stimulation to end, in a preterm infant under 2 months, is a high risk apnea.",
+      source: "cps-bronch",
+    },
+    {
+      id: "br-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about gestational age at birth, the NICU course, RSV monoclonal antibody and immunizations.",
+      points: 2,
+      teaching: "Prematurity and young corrected age raise the risk of apnea and severe disease. Missing RSV prophylaxis is a risk factor and a follow up item.",
+      source: "cps-bronch",
+    },
+    {
+      id: "br-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about feeding volume and wet diapers, and about paroxysmal cough, whoop, post cough vomiting and pertussis contacts.",
+      points: 1,
+      teaching: "Intake under half of usual volume signals the need for NG or IV hydration. Pertussis can cause apnea in young infants and changes treatment and public health follow up.",
+      source: "cdc-pertussis",
+    },
+    {
+      id: "br-p1",
+      competency: "leadership",
+      criterion: "process",
+      text: "Reassesses work of breathing, apnea count and the gas after each step of support, and escalates on a set trigger rather than waiting.",
+      points: 1,
+      teaching: "Infants who fail standard oxygen need a planned reassessment within about an hour. Deciding the next step before it is needed keeps escalation timely.",
+      source: "paris",
     },
   ],
   sources: [
     {
       id: "cps-bronch",
       citation:
-        "Canadian Paediatric Society. Bronchiolitis. Recommendations for diagnosis, monitoring and management of children one to 24 months of age. Position statement. 2014, updated 2021.",
+        "Friedman JN, Rieder MJ, Walton JM. Canadian Paediatric Society. Bronchiolitis. Recommendations for diagnosis, monitoring and management of children one to 24 months of age. Position statement. 2014, updated 2021.",
       url: "https://cps.ca/en/documents/position/bronchiolitis",
     },
-    { id: "trekk-bronch", citation: "TREKK. Bottom line recommendations. Bronchiolitis." },
+    {
+      id: "trekk-bronch",
+      citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Bronchiolitis. Updated July 2023.",
+      url: "https://trekk.ca/resources/bottom-line-recommendations-bronchiolitis",
+    },
     {
       id: "paris",
-      citation: "Franklin D, et al. A randomized trial of high flow oxygen therapy in infants with bronchiolitis. N Engl J Med. 2018.",
+      citation: "Franklin D, Babl FE, Schlapbach LJ, et al. A randomized trial of high flow oxygen therapy in infants with bronchiolitis. N Engl J Med. 2018.",
+      url: "https://www.nejm.org/doi/full/10.1056/NEJMoa1714855",
     },
     {
       id: "aha-pals",
-      citation: "American Heart Association. 2025 Guidelines for CPR and ECC. Part 8. Pediatric advanced life support.",
+      citation:
+        "American Heart Association and American Academy of Pediatrics. Part 8. Pediatric advanced life support. 2025 Guidelines for CPR and ECC. Circulation. 2025.",
+      url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001368",
     },
     {
-      id: "phac-pertussis",
-      citation: "Public Health Agency of Canada. Whooping cough (pertussis). For health professionals.",
-      url: "https://www.canada.ca/en/public-health/services/diseases/whooping-cough-pertussis/health-professionals.html",
+      id: "cdc-pertussis",
+      citation:
+        "Tiwari T, Murphy TV, Moran J. Recommended antimicrobial agents for the treatment and postexposure prophylaxis of pertussis. 2005 CDC guidelines. MMWR Recomm Rep. 2005.",
+      url: "https://www.cdc.gov/mmwr/preview/mmwrhtml/rr5414a1.htm",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

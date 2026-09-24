@@ -15,12 +15,22 @@ export const toddlerAirwayForeignBody: OralCase = {
     { topic: "asthma-copd", n: 1 },
   ],
   summary: "A 22 month old is carried in by her mother after a sudden coughing fit at a family party.",
-  durationMinutes: 13,
+  durationMinutes: 12,
   stem:
-    "You are working in a suburban community emergency department in Ontario on a Saturday afternoon. The anesthetist is in the hospital. ENT is on call from home but there is no pediatric ENT surgeon on site. The regional children's hospital is 40 minutes away. " +
-    "Amelia Santos is 22 months old. Her mother carries her through the ambulance doors. Ten minutes ago at a birthday party she was eating from a fruit tray, started coughing hard and could not settle. " +
-    "Triage vitals: heart rate 172, respiratory rate 40, SpO2 92 percent on room air, temperature 36.8 degrees C. Weight 11.5 kg. CTAS 1. " +
-    "The triage nurse says: 'She is coughing and crying and has noisy breathing when she breathes in. Mom did some back slaps in the car. There were whole grapes on the tray.'",
+    "You are working in the emergency department of a suburban community hospital in Ontario on a Saturday afternoon when the following patient arrives. There is no pediatric ENT surgeon on site. " +
+    "A 22 month old girl is carried in by her mother because she started coughing hard at a birthday party and cannot settle.",
+  card: {
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "172/minute",
+      resp: "40/minute",
+      bp: "Not recorded",
+      o2sat: "92% on room air",
+      weight: "11.5 kg (25.4 lb)",
+    },
+    medications: "Not recorded",
+    allergies: "None",
+  },
   findings: [
     {
       id: "appearance",
@@ -33,10 +43,16 @@ export const toddlerAirwayForeignBody: OralCase = {
       result: "Inspiratory stridor. Moderate suprasternal retractions. Air entry present on both sides. No wheeze.",
     },
     {
-      id: "history",
-      label: "History",
+      id: "hpi",
+      label: "History of presenting illness",
       result:
-        "Witnessed sudden choking while eating whole grapes and cheese cubes at 14:20. No fever or cold symptoms before. No allergies. Healthy. Immunizations up to date.",
+        "Witnessed sudden choking while eating whole grapes and cheese cubes from a fruit tray at a birthday party at 14:20, ten minutes before arrival. She started coughing hard and could not settle. " +
+        "Her mother did some back slaps in the car. No fever or cold symptoms before.",
+    },
+    {
+      id: "history",
+      label: "Past history",
+      result: "No allergies. Healthy. Immunizations up to date.",
     },
     {
       id: "mouth",
@@ -71,7 +87,9 @@ export const toddlerAirwayForeignBody: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "In the resuscitation bay",
-      text: "Amelia is coughing hard on her mother's lap. She has stridor and is crying. A nurse is reaching for a tongue depressor.",
+      text:
+        "The triage nurse has made her CTAS 1. She says the child is coughing and crying with noisy breathing when she breathes in, and there were whole grapes on the tray. " +
+        "The anesthetist is in the hospital. ENT is on call from home. The regional children's hospital is 40 minutes away. She is coughing hard on her mother's lap. She has stridor and is crying. A nurse is reaching for a tongue depressor.",
       next: "q-first",
     },
     {
@@ -86,8 +104,9 @@ export const toddlerAirwayForeignBody: OralCase = {
         "No tongue depressor, no blind finger sweeps and do not lay her flat.",
         "Oxygen held near her face.",
         "Call the anesthetist and ENT now. Set up suction, a laryngoscope, Magill forceps, small tubes and a needle cricothyroidotomy kit.",
+        "Ask what she was eating, when, what was done in the car, and about fever, allergies and past airway problems.",
       ],
-      rubric: ["fb-a1", "fb-r1", "fb-l1"],
+      rubric: ["fb-a1", "fb-r1", "fb-l1", "fb-h1", "fb-h2", "fb-h3"],
       choices: [
         {
           id: "c-comfort",
@@ -126,7 +145,7 @@ export const toddlerAirwayForeignBody: OralCase = {
       kind: "say",
       id: "s-complete",
       phase: "Three minutes after arrival",
-      text: "Amelia suddenly goes silent. She is clutching at her throat with her mouth open. She cannot cough or cry. Her lips are blue. SpO2 78 percent and falling. She is still conscious.",
+      text: "She suddenly goes silent. She is clutching at her throat with her mouth open. She cannot cough or cry. Her lips are blue. SpO2 78 percent and falling. She is still conscious.",
       next: "q-complete",
     },
     {
@@ -181,7 +200,7 @@ export const toddlerAirwayForeignBody: OralCase = {
       kind: "say",
       id: "s-unresponsive",
       phase: "Collapse",
-      text: "Amelia becomes unresponsive. Heart rate 58. SpO2 is unreadable. The object has not come out.",
+      text: "She becomes unresponsive. Heart rate 58. SpO2 is unreadable. The object has not come out.",
       next: "q-unresponsive",
     },
     {
@@ -260,7 +279,7 @@ export const toddlerAirwayForeignBody: OralCase = {
       id: "s-residual",
       phase: "Thirty minutes later",
       text:
-        "Amelia is sitting up and alert. But now her SpO2 is 93 percent on room air. There is reduced air entry on the right with a fixed wheeze. " +
+        "She is sitting up and alert. But now her SpO2 is 93 percent on room air. There is reduced air entry on the right with a fixed wheeze. " +
         "The decubitus films show air trapping in the right lung. The grape was whole. Her mother remembers she had also been eating peanuts from a bowl on the coffee table.",
       next: "q-residual",
     },
@@ -348,14 +367,14 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "Amelia is transferred. At bronchoscopy half a peanut is removed from the right bronchus intermedius. She goes home two days later. That is the end of the case.",
+      text: "She is transferred. At bronchoscopy half a peanut is removed from the right bronchus intermedius. She goes home two days later. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "fb-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Recognizes partial upper airway obstruction with an effective cough.",
       points: 2,
       teaching: "A child who can cough, cry or speak is moving air. The cough is the best tool for clearing the object.",
@@ -364,7 +383,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Keeps the child upright with the parent and avoids thrusts, finger sweeps and tongue depressors while the cough is effective.",
       points: 3,
       critical: true,
@@ -374,7 +393,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls anesthesia and ENT early and prepares laryngoscope, Magill forceps, suction, small tubes and a needle cricothyroidotomy kit.",
       points: 2,
       teaching: "Partial obstruction can become complete at any moment. Have the rescue equipment in the room before it is needed.",
@@ -383,7 +402,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives back blows and abdominal thrusts for a conscious child over 1 year with an ineffective cough.",
       points: 2,
       teaching: "An ineffective cough, silence or cyanosis means severe obstruction. Alternate 5 back blows with 5 abdominal thrusts. Infants under 1 year get chest thrusts instead of abdominal thrusts.",
@@ -392,7 +411,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts CPR when the child becomes unresponsive and performs immediate laryngoscopy with Magill forceps removal.",
       points: 3,
       critical: true,
@@ -402,7 +421,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "States the backup plans: push a subglottic object into the right mainstem, and use needle rather than scalpel cricothyroidotomy in a young child.",
       points: 2,
       teaching: "Pushing the object into one bronchus lets you ventilate the other lung. The cricothyroid membrane is too small for a scalpel technique in toddlers, and needle oxygenation with a blocked upper airway risks barotrauma.",
@@ -411,7 +430,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "process",
       text: "Reassesses after removal and looks for residual objects, air trapping, aspiration and negative pressure pulmonary edema.",
       points: 2,
       teaching: "Children often aspirate more than one piece. A careful chest exam and imaging after removal can find a second object.",
@@ -420,7 +439,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits the child for monitoring after an obstruction that caused an arrest.",
       points: 1,
       teaching: "A brief hypoxic arrest needs observation for neurological, respiratory and cardiac complications.",
@@ -429,7 +448,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Suspects a bronchial foreign body from unilateral wheeze, reduced air entry and air trapping despite a nearly normal inspiratory film.",
       points: 3,
       critical: true,
@@ -439,7 +458,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges rigid bronchoscopy under general anesthesia, transferring through CritiCall if pediatric ENT is not available.",
       points: 2,
       teaching: "Rigid bronchoscopy is diagnostic and therapeutic. Organic material like peanuts swells and inflames the airway over hours.",
@@ -448,7 +467,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Supports the parent without blame and acknowledges her quick action.",
       points: 1,
       teaching: "Parents often feel guilt after a choking event. Recognizing what they did well helps them absorb safety advice.",
@@ -457,7 +476,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives specific prevention advice: quarter grapes lengthwise, no whole nuts, popcorn or hard candy under 4 years, and supervised seated eating.",
       points: 2,
       teaching: "Round, firm foods are the most common fatal choking hazards in young children. Specific advice is more useful than general warnings.",
@@ -466,26 +485,65 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a brief team debrief and checks on staff wellbeing after a pediatric arrest.",
       points: 1,
       teaching: "Pediatric arrests are distressing for staff. A short debrief supports the team and captures system lessons.",
       source: "aha-pals",
     },
+    {
+      id: "fb-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks whether the choking was witnessed, when it happened and exactly what she was eating, including any nuts or other small foods within reach.",
+      points: 2,
+      teaching: "A witnessed choking episode is the strongest predictor of an airway foreign body. Small round foods and nuts are the usual culprits, and more than one may be involved.",
+      source: "apls",
+    },
+    {
+      id: "fb-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks what was done before arrival, such as back blows, and whether there was fever or a cold before the event.",
+      points: 2,
+      teaching: "Sudden onset with no prodrome favours a foreign body over croup or infection. Knowing what was tried shapes the next step.",
+      source: "ilcor-fb",
+    },
+    {
+      id: "fb-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about allergies, past airway problems and immunizations.",
+      points: 1,
+      teaching: "An allergy history helps exclude anaphylaxis as the cause of sudden stridor. Past airway problems change the airway plan.",
+      source: "apls",
+    },
   ],
   sources: [
     {
       id: "ilcor-fb",
-      citation: "American Heart Association. 2025 Guidelines for CPR and ECC. Part 6. Pediatric basic life support. Foreign body airway obstruction.",
+      citation:
+        "American Heart Association and American Academy of Pediatrics. Part 6. Pediatric basic life support. 2025 Guidelines for CPR and ECC. Circulation. 2025. Foreign body airway obstruction.",
+      url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001370",
     },
     {
       id: "aha-pals",
-      citation: "American Heart Association. 2025 Guidelines for CPR and ECC. Part 8. Pediatric advanced life support.",
+      citation:
+        "American Heart Association and American Academy of Pediatrics. Part 8. Pediatric advanced life support. 2025 Guidelines for CPR and ECC. Circulation. 2025.",
+      url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001368",
     },
-    { id: "apls", citation: "Advanced Life Support Group. Advanced Paediatric Life Support. A practical approach to emergencies." },
-    { id: "cps-choking", citation: "Canadian Paediatric Society. Preventing choking and suffocation in children. Position statement. 2012." },
+    {
+      id: "apls",
+      citation: "Advanced Life Support Group. Advanced Paediatric Life Support. A practical approach to emergencies. 7th edition. Wiley Blackwell. 2023.",
+      url: "https://www.wiley.com/en-us/advanced-paediatric-life-support-a-practical-approach-to-emergencies-7th-edition-p-9781119716136",
+    },
+    {
+      id: "cps-choking",
+      citation: "Cyr C. Canadian Paediatric Society, Injury Prevention Committee. Preventing choking and suffocation in children. Position statement. Paediatr Child Health. 2012.",
+      url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3299355/",
+    },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
