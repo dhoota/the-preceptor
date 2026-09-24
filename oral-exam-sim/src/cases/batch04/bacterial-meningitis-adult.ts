@@ -16,14 +16,46 @@ export const bacterialMeningitisAdult: OralCase = {
     { topic: "loc", n: 1 },
   ],
   summary: "A 57 year old man with several days of ear pain is now febrile and confused.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in the emergency department of a 300 bed hospital in Ottawa with CT around the clock, an ICU, and infectious diseases and ENT on call. " +
-    "Raymond Tremblay is 57 years old. He has had right ear pain for 4 days and a severe headache since yesterday. This morning his wife found him confused and hot. " +
-    "He has type 2 diabetes and drinks 3 to 4 beers a day. No known drug allergies. " +
-    "Triage vitals: heart rate 118, blood pressure 104/62, respiratory rate 24, SpO2 94 percent on room air, temperature 39.6, capillary glucose 14.2 mmol/L. GCS 13. Weight 90 kg. " +
-    "The triage nurse says: 'He is moaning and does not like the lights. He keeps asking where he is. His wife says their grandchildren stayed over on the weekend.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is CT around the clock, an ICU, and infectious diseases and ENT on call. " +
+    "A 57 year old man arrives with his wife. He has fever and confusion after 4 days of right ear pain.",
+  card: {
+    vitals: {
+      temperature: "39.6°C",
+      pulse: "118/minute",
+      resp: "24/minute",
+      bp: "104/62 mmHg",
+      o2sat: "94% on room air",
+      weight: "90 kg (198 lb)",
+    },
+    medications: "Not known",
+    allergies: "No known drug allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "Right ear pain for 4 days and a severe headache since yesterday. He saw nobody for the ear. This morning his wife found him confused and hot. " +
+        "At triage he was moaning, did not like the lights and kept asking where he was. GCS 13. Capillary glucose 14.2 mmol/L.",
+    },
+    {
+      id: "pmh",
+      label: "Past history and immunizations",
+      result: "Type 2 diabetes. Pneumonia 2 years ago. No vaccines since childhood as far as his wife knows.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "His wife does not know the names of his medications. No known drug allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history and contacts",
+      result: "He drinks 3 to 4 beers a day. Their two grandchildren, aged 4 and 7, slept at the house on Saturday and Sunday.",
+    },
     {
       id: "neuro",
       label: "Neurological exam",
@@ -65,13 +97,6 @@ export const bacterialMeningitisAdult: OralCase = {
       label: "Chest X ray",
       result: "No consolidation. No effusion.",
     },
-    {
-      id: "wife",
-      label: "Collateral from his wife",
-      result:
-        "He saw nobody for the ear. He had pneumonia 2 years ago. He has had no vaccines since childhood as far as she knows. " +
-        "Their two grandchildren, aged 4 and 7, slept at the house on Saturday and Sunday.",
-    },
   ],
   start: "s-open",
   nodes: [
@@ -95,8 +120,9 @@ export const bacterialMeningitisAdult: OralCase = {
         "CT before LP is indicated because of altered level of consciousness. Do not delay antibiotics for CT.",
         "Droplet precautions until meningococcus is excluded or 24 hours of effective therapy.",
         "Fluid resuscitation for hypotension and lactate 3.8.",
+        "Get the story from his wife: ear pain, headache, onset of confusion, seizure, rash and drug allergies. Examine for neck stiffness, focal signs, the ear and mastoid, and a petechial rash.",
       ],
-      rubric: ["men-a1", "men-m1", "men-r1"],
+      rubric: ["men-h1", "men-h4", "men-x1", "men-a1", "men-m1", "men-r1"],
       choices: [
         {
           id: "c-abx-first",
@@ -151,7 +177,7 @@ export const bacterialMeningitisAdult: OralCase = {
         "Ampicillin 2 g IV every 4 hours to cover Listeria because he is over 50 and drinks daily.",
         "Adjust once the organism and sensitivities are known.",
       ],
-      rubric: ["men-m2", "men-m3"],
+      rubric: ["men-m2", "men-m3", "men-h2"],
       choices: [
         {
           id: "c-triple",
@@ -294,7 +320,7 @@ export const bacterialMeningitisAdult: OralCase = {
         "Invasive pneumococcal disease is reportable to public health in Ontario.",
         "Encourage age appropriate pneumococcal vaccination for family members as routine care.",
       ],
-      rubric: ["men-c1", "men-p1"],
+      rubric: ["men-c1", "men-p1", "men-h3"],
       choices: [
         {
           id: "c-no-prophylaxis",
@@ -350,7 +376,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Identifies altered consciousness as an indication for CT before LP.",
       points: 1,
       teaching: "IDSA indications include immunocompromise, known CNS disease, new seizure, papilledema, altered consciousness and focal deficits. ESCMID uses a GCS under 10 rather than any confusion. Neither rule should delay antibiotics.",
@@ -359,7 +385,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Interprets the CSF as bacterial meningitis and the Gram stain as pneumococcus, with otomastoiditis as the source.",
       points: 2,
       teaching: "A CSF to serum glucose ratio under 0.4 with neutrophils in the thousands is bacterial until proven otherwise. Otitis and sinusitis are classic pneumococcal sources.",
@@ -368,7 +394,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes sepsis and begins fluid resuscitation with droplet precautions.",
       points: 1,
       teaching: "Hypotension and lactate over 2 mmol/L mean sepsis with hypoperfusion. Droplet precautions protect staff until meningococcus is excluded.",
@@ -377,7 +403,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts norepinephrine early to a MAP of 65 or more rather than giving large fluid volumes alone.",
       points: 2,
       teaching: "Norepinephrine is first line in septic shock. Starting it early avoids fluid overload, which can worsen cerebral edema.",
@@ -386,7 +412,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Loads a second line antiseizure drug and intubates for GCS 8 with a hemodynamically stable approach.",
       points: 2,
       teaching: "Seizures occur in about 1 in 5 adults with bacterial meningitis. Induction in shock needs pressure support first and a reduced dose agent.",
@@ -395,7 +421,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives antibiotics and dexamethasone without waiting for CT or LP.",
       points: 3,
       critical: true,
@@ -405,7 +431,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives dexamethasone 10 mg IV every 6 hours for 4 days, first dose before or with the first antibiotic dose.",
       points: 3,
       critical: true,
@@ -415,7 +441,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives ceftriaxone 2 g IV every 12 hours, a vancomycin loading dose of about 20 to 35 mg/kg IV and ampicillin 2 g IV every 4 hours.",
       points: 3,
       critical: true,
@@ -425,7 +451,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges ENT for source control of otomastoiditis.",
       points: 1,
       teaching: "A persistent parameningeal focus can seed ongoing infection. Surgical drainage may be needed.",
@@ -434,7 +460,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains that pneumococcal contacts do not need prophylaxis and why.",
       points: 1,
       teaching: "Chemoprophylaxis is for close contacts of meningococcal and Hib disease only.",
@@ -443,7 +469,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives the wife an honest update on severity, uncertainty and next steps.",
       points: 1,
       teaching: "Pneumococcal meningitis carries significant mortality and risk of hearing loss and cognitive deficits. Families need honest expectations.",
@@ -452,7 +478,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Reports invasive pneumococcal disease to public health.",
       points: 1,
       teaching: "Reporting is a legal duty for notifiable diseases. Public health tracks serotypes and vaccine failures.",
@@ -461,10 +487,55 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU with infectious diseases, ENT and a plan to narrow therapy and assess hearing.",
       points: 1,
       teaching: "Sensorineural hearing loss is common after pneumococcal meningitis. Early audiology allows cochlear implant referral before ossification.",
+      source: "escmid",
+    },
+    {
+      id: "men-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks his wife about the course of the ear pain and headache, when the confusion began, any seizure or rash, and whether the ear was treated.",
+      points: 2,
+      teaching: "An untreated ear infection followed by headache and confusion points to pneumococcal meningitis from an otogenic source. A rash raises meningococcus.",
+      source: "escmid",
+    },
+    {
+      id: "men-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about risk factors that change the empiric regimen and prevention: age, diabetes, alcohol use, immunocompromise, prior pneumonia and vaccination status.",
+      points: 2,
+      teaching: "Age over 50, alcohol use and immunocompromise call for Listeria cover. Diabetes and alcohol use are also indications for pneumococcal vaccine.",
+      source: "tunkel",
+    },
+    {
+      id: "men-h3",
+      competency: "communication",
+      criterion: "history",
+      text: "Asks about close contacts, including the grandchildren who stayed over, so public health follow up can be planned.",
+      points: 1,
+      teaching: "Knowing who had close contact matters if the organism turns out to be meningococcus. It also lets you reassure the family with facts.",
+      source: "phac-men",
+    },
+    {
+      id: "men-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about drug allergies before choosing the beta lactam regimen.",
+      points: 1,
+      teaching: "A true severe beta lactam allergy changes the regimen. Asking takes seconds and must not delay the first dose.",
+      source: "tunkel",
+    },
+    {
+      id: "men-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines for neck stiffness, level of consciousness, focal deficits, the ear and mastoid, and a petechial rash.",
+      points: 2,
+      teaching: "Neck stiffness with fever and confusion is the classic triad, though all three are present in under half of adults. The ear exam finds the source and a petechial rash points to meningococcus.",
       source: "escmid",
     },
   ],
@@ -488,7 +559,8 @@ export const bacterialMeningitisAdult: OralCase = {
     },
     {
       id: "phac-men",
-      citation: "Public Health Agency of Canada. Guidelines for the prevention and control of meningococcal disease.",
+      citation: "Public Health Agency of Canada. Guidelines for the prevention and control of meningococcal disease. Canada Communicable Disease Report. 2005.",
+      url: "https://www.phac-aspc.gc.ca/publicat/ccdr-rmtc/05pdf/31s1_e.pdf",
     },
     {
       id: "hppa",
@@ -496,7 +568,7 @@ export const bacterialMeningitisAdult: OralCase = {
       url: "https://www.canlii.org/en/on/laws/regu/o-reg-135-18/latest/o-reg-135-18.html",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

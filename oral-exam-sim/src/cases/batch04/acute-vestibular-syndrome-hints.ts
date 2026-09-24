@@ -13,21 +13,41 @@ export const acuteVestibularSyndromeHints: OralCase = {
     { topic: "cva", n: 3 },
   ],
   summary: "A 63 year old man with continuous vertigo and vomiting since he woke in the night wants to go home.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working at a regional hospital in Nova Scotia. CT and CT angiography are available around the clock. MRI runs on weekdays only. " +
-    "Neurology is on call from home. Neurosurgery is at the tertiary centre 2 hours away. " +
-    "It is 14:00 on a Saturday. Wendell MacIsaac is 63 years old. He went to bed well at 23:00 and woke at 02:00 with the room spinning. He has vomited six times and cannot walk without holding the wall. " +
-    "He has hypertension, type 2 diabetes and smokes. " +
-    "Triage vitals: heart rate 84, blood pressure 176/94, respiratory rate 16, SpO2 97 percent on room air, temperature 36.6, capillary glucose 9.8 mmol/L. CTAS 3. " +
-    "The nurse says: 'I gave him dimenhydrinate 50 mg IV. He is a bit better and wants to go home. Probably an inner ear thing?'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It is 14:00 on a Saturday. MRI runs on weekdays only and neurosurgery is 2 hours away. " +
+    "A 63 year old man arrives with constant vertigo and vomiting since he woke at 02:00.",
+  card: {
+    vitals: {
+      temperature: "36.6°C",
+      pulse: "84/minute",
+      resp: "16/minute",
+      bp: "176/94 mmHg",
+      o2sat: "97% on room air",
+    },
+    medications: "Not known",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "hx",
-      label: "Vertigo history",
+      label: "History of presenting illness",
       result:
+        "He went to bed well at 23:00 and woke at 02:00 with the room spinning. He has vomited six times and cannot walk without holding the wall. " +
+        "The nurse gave dimenhydrinate 50 mg IV. He feels a bit better and wants to go home. Capillary glucose 9.8 mmol/L at triage. " +
         "Constant spinning for 12 hours, worse with head movement but present at rest. No hearing loss, tinnitus or ear fullness. " +
         "Mild right sided neck and occipital ache since yesterday. No diplopia, dysarthria, dysphagia or limb weakness. No prior episodes. No recent viral illness.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "Hypertension and type 2 diabetes.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "He smokes.",
     },
     {
       id: "nystagmus",
@@ -81,7 +101,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "daughter",
       label: "Daughter's questions",
-      result: "His daughter Colleen arrives at 16:00. She asks why the first CT looked normal and whether he should have gone to the city.",
+      result: "His daughter arrives at 16:00. She asks why the first CT looked normal and whether he should have gone to the city.",
     },
   ],
   start: "s-open",
@@ -106,8 +126,9 @@ export const acuteVestibularSyndromeHints: OralCase = {
         "Assess gait and truncal ataxia. Inability to walk is a red flag.",
         "Dix Hallpike is for brief positional episodes, not continuous vertigo.",
         "Vascular risk factors and neck pain raise concern for stroke or dissection.",
+        "Ask about neurological symptoms, neck pain, hearing and ear symptoms, prior episodes and vascular risk factors.",
       ],
-      rubric: ["av-a1", "av-a2"],
+      rubric: ["av-a1", "av-h1", "av-h2", "av-h3", "av-a2"],
       choices: [
         {
           id: "c-hints",
@@ -228,14 +249,14 @@ export const acuteVestibularSyndromeHints: OralCase = {
       prompt: "It is now 15:30. Last known well was 23:00. What treatment do you give?",
       seconds: 75,
       modelAnswer: [
-        "He is outside the thrombolysis window. Last known well was over 16 hours ago.",
+        "He is outside the thrombolysis window. Last known well is 23:00, when he went to bed, not 02:00 when he woke. That is over 16 hours ago.",
         "No endovascular target. The basilar is open.",
         "Minor stroke with NIHSS 1. Dual antiplatelet therapy after a swallow screen.",
         "ASA 160 mg load and clopidogrel 300 to 600 mg load, then ASA 81 mg and clopidogrel 75 mg daily for 21 days.",
         "Permissive hypertension. Do not lower pressure unless over 220/120.",
         "If he fails the swallow screen, give ASA 325 mg rectally.",
       ],
-      rubric: ["av-m2", "av-m3"],
+      rubric: ["av-h4", "av-m2", "av-m3"],
       choices: [
         {
           id: "c-dapt",
@@ -299,7 +320,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
       id: "s-decline",
       phase: "20:15",
       text:
-        "The nurse calls you. Mr MacIsaac is hard to rouse. GCS 12. He is vomiting again. Pressure 198/102. Heart rate 58. Repeat CT shows a 3.5 cm right cerebellar infarct with fourth ventricle effacement and early hydrocephalus.",
+        "The nurse calls you. The patient is hard to rouse. GCS 12. He is vomiting again. Pressure 198/102. Heart rate 58. Repeat CT shows a 3.5 cm right cerebellar infarct with fourth ventricle effacement and early hydrocephalus.",
       next: "q-swelling",
     },
     {
@@ -384,7 +405,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Classifies the presentation as acute vestibular syndrome using timing and triggers, not symptom quality.",
       points: 2,
       teaching: "Continuous vertigo with nystagmus, nausea and unsteadiness is acute vestibular syndrome. The main question is neuritis versus stroke.",
@@ -393,7 +414,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Performs HINTS with a hearing check and a gait assessment, and avoids Dix Hallpike in continuous vertigo.",
       points: 2,
       teaching: "HINTS is designed for acute vestibular syndrome with spontaneous nystagmus. Dix Hallpike is for brief positional episodes.",
@@ -402,7 +423,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Interprets normal head impulse, direction changing nystagmus, skew and severe truncal ataxia as central.",
       points: 3,
       critical: true,
@@ -412,7 +433,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-a4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "States that non contrast CT and early MRI can miss posterior circulation stroke.",
       points: 2,
       teaching: "CT sensitivity for early posterior fossa ischemia is poor. Even DWI MRI misses roughly 10 to 20 percent of posterior circulation strokes in the first 48 hours, more often when the infarct is small.",
@@ -421,7 +442,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-m1",
       competency: "management",
-      criterion: "data",
+      criterion: "management",
       text: "Orders CT angiogram of the head and neck and involves neurology.",
       points: 2,
       teaching: "Vascular imaging identifies basilar occlusion, which needs urgent reperfusion, and vertebral dissection.",
@@ -430,7 +451,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts ASA 160 mg and clopidogrel 300 to 600 mg loading then 21 days of dual antiplatelet therapy after a swallow screen.",
       points: 2,
       teaching: "In minor stroke or high risk TIA, a short course of dual antiplatelet therapy reduces early recurrent stroke.",
@@ -439,7 +460,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes he is outside the thrombolysis window, allows permissive hypertension and does not use routine heparin.",
       points: 1,
       teaching: "Without thrombolysis, pressure is usually not lowered unless above 220/120 in the first 24 hours.",
@@ -448,7 +469,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes the Cushing response, avoids lowering pressure, uses hyperosmolar therapy as a bridge and protects the airway.",
       points: 2,
       teaching: "Hypertension with bradycardia and falling GCS in cerebellar stroke means brainstem compression. Protect perfusion and buy time for surgery.",
@@ -457,7 +478,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to a stroke unit and writes orders to monitor for cerebellar swelling.",
       points: 1,
       teaching: "Cerebellar infarcts can swell over 2 to 4 days. Neuro checks catch deterioration early.",
@@ -466,7 +487,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges emergent neurosurgery for suboccipital decompression and transfer.",
       points: 3,
       critical: true,
@@ -476,7 +497,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains to the daughter why CT was normal and what happens next, with honesty about uncertainty.",
       points: 1,
       teaching: "Families often read a normal first CT as a missed diagnosis. A clear explanation builds trust.",
@@ -485,11 +506,47 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Alerts neurosurgery early about a cerebellar infarct at risk while the patient boards.",
       points: 1,
       teaching: "A heads up call before deterioration shortens time to surgery. Boarding patients need a named team responsible for them.",
       source: "wijdicks",
+    },
+    {
+      id: "av-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about associated neurological symptoms such as diplopia, dysarthria, dysphagia and limb weakness, and about neck pain or headache.",
+      points: 2,
+      teaching: "Brainstem symptoms point to stroke, but many cerebellar strokes have none. New neck pain or occipital headache raises vertebral dissection.",
+      source: "grace3",
+    },
+    {
+      id: "av-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about hearing loss, tinnitus, ear fullness, prior episodes and recent viral illness.",
+      points: 1,
+      teaching: "These features shape the peripheral differential. New hearing loss with vertigo can also be a sign of anterior inferior cerebellar artery stroke.",
+      source: "grace3",
+    },
+    {
+      id: "av-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about vascular risk factors: hypertension, diabetes and smoking.",
+      points: 1,
+      teaching: "Vascular risk factors raise the pretest probability of stroke in acute vestibular syndrome, but their absence does not exclude it.",
+      source: "hsf-acute",
+    },
+    {
+      id: "av-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Establishes last known well as 23:00, when he went to bed, rather than 02:00, when he woke with symptoms.",
+      points: 1,
+      teaching: "For symptoms found on waking, the clock starts when the patient was last seen well. That time decides eligibility for reperfusion.",
+      source: "hsf-acute",
     },
   ],
   sources: [
@@ -509,7 +566,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     },
     {
       id: "hsf-acute",
-      citation: "Heran M et al. Canadian Stroke Best Practice Recommendations. Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Canadian Journal of Neurological Sciences.",
+      citation: "Heran M et al. Canadian Stroke Best Practice Recommendations. Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Canadian Journal of Neurological Sciences. 2024.",
       url: "https://www.strokebestpractices.ca/recommendations/acute-stroke-management",
     },
     {
@@ -518,7 +575,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
         "Wijdicks EF et al. Recommendations for the management of cerebral and cerebellar infarction with swelling. A statement for healthcare professionals from the American Heart Association and American Stroke Association. Stroke. 2014.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

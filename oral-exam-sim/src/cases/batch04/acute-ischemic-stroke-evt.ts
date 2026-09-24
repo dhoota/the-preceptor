@@ -15,21 +15,52 @@ export const acuteIschemicStrokeEvt: OralCase = {
     { topic: "ems", n: 3 },
   ],
   summary: "A 71 year old woman with sudden speech and arm problems arrives at a hospital without endovascular capability.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a 180 bed community hospital in eastern Ontario. It is a designated stroke centre with CT and CT angiography around the clock and tenecteplase in the department. " +
-    "There is no endovascular therapy on site. The comprehensive stroke centre is 70 km away, about 55 minutes by land ambulance. " +
-    "Marguerite Poirier is 71 years old. Her husband heard her making breakfast at 07:40. At 07:55 he found her slumped at the kitchen table, unable to talk, with a limp right arm. " +
-    "Paramedics pre notified you and she arrives at 08:30. " +
-    "Triage vitals: heart rate 96 and irregular, blood pressure 198/104, respiratory rate 18, SpO2 95 percent on room air, temperature 36.8, capillary glucose 6.4 mmol/L. CTAS 1. " +
-    "The paramedic says: 'Code stroke. She is on ramipril and metformin. Her husband says she was told she had an irregular heartbeat last year but she refused a blood thinner.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It has CT angiography and tenecteplase but no endovascular therapy. The comprehensive stroke centre is 55 minutes away by land. " +
+    "A 71 year old woman arrives by ambulance as a pre notified code stroke. She cannot speak and her right arm is limp.",
+  card: {
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "96/minute, irregular",
+      resp: "18/minute",
+      bp: "198/104 mmHg",
+      o2sat: "95% on room air",
+      weight: "72 kg (159 lb)",
+    },
+    medications: "Ramipril, metformin",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "timeline",
-      label: "Timeline and collateral",
+      label: "History of presenting illness",
       result:
-        "Her husband is certain she was normal at 07:40 because she answered him from the kitchen. He found her at 07:55. " +
-        "No head strike, no seizure activity, no vomiting. She weighs about 72 kg. She lives independently and still drives. Modified Rankin 0 before today.",
+        "Her husband heard her making breakfast at 07:40. He is certain she was normal then because she answered him from the kitchen. " +
+        "At 07:55 he found her slumped at the kitchen table, unable to talk, with a limp right arm. Paramedics pre notified the department and she arrived at 08:30. " +
+        "No head strike, no seizure activity, no vomiting.",
+    },
+    {
+      id: "glucose",
+      label: "Triage bedside glucose",
+      result: "Capillary glucose 6.4 mmol/L at triage. CTAS 1.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result:
+        "Her husband says she was told she had an irregular heartbeat last year. She was advised to take a blood thinner and refused. No prior stroke.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "Ramipril and metformin. No anticoagulant and no antiplatelet. Her husband knows of no drug allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history and baseline function",
+      result: "She lives with her husband, manages independently and still drives. Modified Rankin 0 before today. She weighs about 72 kg.",
     },
     {
       id: "contraindications",
@@ -101,13 +132,13 @@ export const acuteIschemicStrokeEvt: OralCase = {
       seconds: 90,
       modelAnswer: [
         "Airway, breathing and circulation. Oxygen only if SpO2 falls below 92 percent.",
-        "Confirm last known well at 07:40 from the husband, not the time she was found.",
-        "Capillary glucose already 6.4 mmol/L, so hypoglycemia is excluded as a mimic.",
+        "Take a focused history from the husband. Last known well is 07:40, not the time she was found. Ask about seizure, head strike, anticoagulants, recent bleeding or surgery and baseline function.",
+        "Check capillary glucose. It is 6.4 mmol/L, so hypoglycemia is excluded as a mimic.",
         "Rapid NIHSS and thrombolysis screen, weight estimate, IV access and bloods drawn on the way.",
         "Straight to non contrast CT and CT angiogram arch to vertex without waiting for labs.",
         "Aim for a door to needle time of 30 minutes or less.",
       ],
-      rubric: ["st-a1", "st-a2", "st-r1", "st-m1", "st-l1"],
+      rubric: ["st-a1", "st-h1", "st-h2", "st-h3", "st-a2", "st-r1", "st-m1", "st-l1"],
       choices: [
         {
           id: "c-direct-ct",
@@ -321,7 +352,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
       id: "s-angioedema",
       phase: "Twenty five minutes after thrombolysis",
       text:
-        "The ambulance is ten minutes away. The nurse calls you back. The right side of Mrs Poirier's tongue and upper lip are swollen. Her voice is not assessable because of aphasia. SpO2 96 percent. No stridor. No rash. Pressure 164/90.",
+        "The ambulance is ten minutes away. The nurse calls you back. The right side of the patient's tongue and upper lip are swollen. Her voice is not assessable because of aphasia. SpO2 96 percent. No stridor. No rash. Pressure 164/90.",
       next: "q-angioedema",
     },
     {
@@ -429,7 +460,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Establishes last known well as 07:40 from the husband rather than the time she was found.",
       points: 2,
       teaching: "Treatment windows start at last known well. The time a patient is found is often later and can wrongly exclude them.",
@@ -438,7 +469,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Confirms capillary glucose before imaging and thrombolysis.",
       points: 1,
       teaching: "Hypoglycemia is the classic stroke mimic. Glucose is the only lab required before thrombolysis in most patients.",
@@ -447,7 +478,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes cortical signs such as aphasia, gaze deviation and hemianopia as markers of a likely large vessel occlusion.",
       points: 1,
       teaching: "Gaze deviation plus aphasia or neglect with a high NIHSS predicts a large vessel occlusion. It should trigger CT angiography with the first scan.",
@@ -456,7 +487,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Interprets the CT as no hemorrhage with ASPECTS 9 and the CTA as a proximal M1 occlusion eligible for both thrombolysis and EVT.",
       points: 2,
       teaching: "ASPECTS 6 or more with a proximal anterior occlusion was the population in the original EVT trials such as ESCAPE. Trials since 2023 show benefit with larger cores, often ASPECTS 3 to 5, in selected patients, and the 2025 Canadian EVT update addresses them.",
@@ -465,7 +496,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a5",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies untreated atrial fibrillation as the likely cardioembolic source.",
       points: 1,
       teaching: "Atrial fibrillation is a leading cause of large vessel stroke. Anticoagulation timing after stroke is decided by the stroke team based on infarct size.",
@@ -474,7 +505,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Assesses airway and breathing and gives oxygen only if SpO2 is below 92 percent.",
       points: 1,
       teaching: "Routine oxygen does not help non hypoxic stroke patients. Check the airway because aphasia and gaze deviation can hide a falling level of consciousness.",
@@ -483,7 +514,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Examines the airway for progression of angioedema and prepares for an awake difficult airway with surgical backup.",
       points: 2,
       teaching: "Post thrombolysis angioedema is usually mild but can progress. Awake fibreoptic intubation is safer than rapid sequence induction in a swollen airway.",
@@ -492,7 +523,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "process",
       text: "Takes the patient directly to non contrast CT and CT angiogram without waiting for bloods, targeting door to needle of 30 minutes or less.",
       points: 2,
       teaching: "Canadian recommendations set a median door to needle target of 30 minutes. CTA with the first scan identifies EVT candidates without extra delay.",
@@ -501,7 +532,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Lowers blood pressure below 185/110 before thrombolysis with labetalol 10 to 20 mg IV, without overshooting.",
       points: 2,
       critical: true,
@@ -511,7 +542,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives tenecteplase 0.25 mg/kg IV bolus to a maximum of 25 mg, or alteplase 0.9 mg/kg to a maximum of 90 mg, within 4.5 hours of last known well.",
       points: 3,
       critical: true,
@@ -521,7 +552,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Does not withhold thrombolysis from an eligible patient because EVT is planned.",
       points: 1,
       teaching: "For patients who must be transferred for EVT, thrombolysis is recommended in Canada. It can reperfuse before the angio suite and does not delay the procedure.",
@@ -530,7 +561,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats orolingual angioedema with methylprednisolone 125 mg IV, diphenhydramine 50 mg IV and famotidine 20 mg IV, holds the ACE inhibitor, and escalates to epinephrine if it progresses.",
       points: 2,
       teaching: "Angioedema occurs in up to 5 percent of patients after thrombolysis, more often with ACE inhibitors. Icatibant or C1 esterase inhibitor can be considered if refractory.",
@@ -539,7 +570,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges emergent transfer to the comprehensive stroke centre for EVT as soon as the CTA shows the occlusion, without waiting to see if thrombolysis works.",
       points: 3,
       critical: true,
@@ -549,7 +580,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Writes post thrombolysis orders: neuro vitals every 15 minutes, pressure below 180/105, nothing by mouth until swallow screen, no antithrombotics for 24 hours.",
       points: 1,
       teaching: "Any new headache, vomiting or neuro decline after thrombolysis needs an urgent CT to look for hemorrhage.",
@@ -558,7 +589,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Recognizes the patient cannot consent because of aphasia, seeks rapid consent from her husband as substitute decision maker, and uses the emergency provision only if seeking consent would cause harmful delay.",
       points: 1,
       teaching: "In Ontario the substitute decision maker gives consent when one is available. If obtaining consent would delay treatment and risk serious harm, the Health Care Consent Act allows emergency treatment. Document the reason.",
@@ -567,7 +598,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the diagnosis and plan to the husband in plain words and reassures him without blame about the declined anticoagulant.",
       points: 1,
       teaching: "Families often feel guilt after a preventable stroke. A calm, honest and blame free explanation supports them through a frightening event.",
@@ -576,7 +607,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover including last known well, NIHSS, imaging, lytic dose and time, pressure targets and the angioedema.",
       points: 1,
       teaching: "A clear handover with exact times lets the receiving team decide quickly and avoid repeating imaging.",
@@ -585,17 +616,44 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Runs parallel processes by assigning roles for IV access, bloods, weight, lytic preparation and imaging.",
       points: 1,
       teaching: "Door to needle times fall when tasks happen at the same time. The team leader should state the plan and assign each role out loud.",
+      source: "hsf-acute",
+    },
+    {
+      id: "st-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulant and antiplatelet use and screens for thrombolysis contraindications: recent surgery, trauma or bleeding, prior intracranial hemorrhage and stroke in the last 3 months.",
+      points: 2,
+      teaching: "A focused contraindication history takes under a minute and is the main thing that can stop thrombolysis. When no anticoagulant is taken, the INR does not need to be back before treatment.",
+      source: "hsf-acute",
+    },
+    {
+      id: "st-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the husband about seizure at onset, head strike and vomiting to screen for mimics and hemorrhage.",
+      points: 1,
+      teaching: "Seizure with a postictal deficit, trauma and hemorrhage all mimic ischemic stroke. The witness is the best source for these facts.",
+      source: "hsf-acute",
+    },
+    {
+      id: "st-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past history, including the known irregular heartbeat and the declined anticoagulant, and about baseline function before today.",
+      points: 1,
+      teaching: "Known atrial fibrillation points to a cardioembolic large vessel occlusion. Premorbid function, here modified Rankin 0, supports aggressive reperfusion.",
       source: "hsf-acute",
     },
   ],
   sources: [
     {
       id: "hsf-acute",
-      citation: "Heran M et al. Canadian Stroke Best Practice Recommendations. Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Canadian Journal of Neurological Sciences.",
+      citation: "Heran M et al. Canadian Stroke Best Practice Recommendations. Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Canadian Journal of Neurological Sciences. 2024.",
       url: "https://www.strokebestpractices.ca/recommendations/acute-stroke-management",
     },
     {
@@ -617,7 +675,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
       citation: "Ontario. Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

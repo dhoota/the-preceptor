@@ -16,16 +16,42 @@ export const myasthenicCrisisAirway: OralCase = {
     { topic: "shock", n: 8 },
   ],
   summary: "A 58 year old woman with a known neuromuscular condition is breathless and struggling to swallow after a chest infection.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a 160 bed regional hospital in Saskatchewan. There is an ICU, anesthesia on call from home and a respiratory therapist in house. " +
-    "Neurology is available by phone from the tertiary centre 2.5 hours away. " +
-    "Sandra Novak is 58 years old. She has generalized acetylcholine receptor antibody positive myasthenia gravis diagnosed 6 years ago. " +
-    "She takes pyridostigmine 60 mg four times a day and prednisone 10 mg daily. " +
-    "She had a cough for 5 days and a walk in clinic prescribed levofloxacin 3 days ago. " +
-    "Triage vitals: heart rate 108, blood pressure 138/82, respiratory rate 28 and shallow, SpO2 95 percent on room air, temperature 37.8. Weight 68 kg. " +
-    "The triage nurse says: 'Her sats are fine, but she sounds nasal and keeps spitting into a basin. She says she cannot lie flat.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "Anesthesia is on call from home. Neurology is available only by phone from a tertiary centre 2.5 hours away. " +
+    "A 58 year old woman arrives with a cough for 5 days, shortness of breath and trouble swallowing.",
+  card: {
+    vitals: {
+      temperature: "37.8°C",
+      pulse: "108/minute",
+      resp: "28/minute, shallow",
+      bp: "138/82 mmHg",
+      o2sat: "95% on room air",
+      weight: "68 kg (150 lb)",
+    },
+    medications: "Pyridostigmine 60 mg PO four times a day, prednisone 10 mg PO daily, levofloxacin PO started 3 days ago",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "She has had a cough for 5 days. A walk in clinic prescribed levofloxacin 3 days ago. " +
+        "The triage nurse notes she sounds nasal and keeps spitting saliva into a basin. She says she cannot lie flat.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "Generalized acetylcholine receptor antibody positive myasthenia gravis diagnosed 6 years ago.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result:
+        "Pyridostigmine 60 mg four times a day and prednisone 10 mg daily. Levofloxacin from the walk in clinic, started 3 days ago.",
+    },
     {
       id: "bulbar",
       label: "Bulbar and ocular exam",
@@ -99,8 +125,9 @@ export const myasthenicCrisisAirway: OralCase = {
         "Look for bulbar weakness, pooled secretions, weak cough, neck flexion weakness and paradoxical breathing.",
         "The 20 30 40 rule. FVC under 20 mL/kg, NIF weaker than minus 30 cmH2O, or expiratory pressure under 40 cmH2O predicts need for ventilation.",
         "Trend repeated measurements every 1 to 2 hours if she is not intubated.",
+        "Ask about triggers such as infection and new drugs, the tempo of bulbar symptoms and her usual myasthenia treatment.",
       ],
-      rubric: ["mg-a1", "mg-a2"],
+      rubric: ["mg-a1", "mg-a2", "mg-h1", "mg-h2", "mg-h3", "mg-l1"],
       choices: [
         {
           id: "c-pft",
@@ -139,7 +166,7 @@ export const myasthenicCrisisAirway: OralCase = {
       kind: "say",
       id: "s-sats-fine",
       phase: "Forty minutes later",
-      text: "The nurse calls you urgently. Mrs Novak is drowsy. SpO2 is 97 percent on 3 L. Her respiratory rate is 34. A VBG shows pCO2 68. The RT measures FVC 0.8 L.",
+      text: "The nurse calls you urgently. The patient is drowsy. SpO2 is 97 percent on 3 L. Her respiratory rate is 34. A VBG shows pCO2 68. The RT measures FVC 0.8 L.",
       next: "q-cholinergic",
     },
     {
@@ -155,7 +182,7 @@ export const myasthenicCrisisAirway: OralCase = {
         "Stop pyridostigmine once intubated. It increases secretions and is not needed while ventilated.",
         "Edrophonium testing is no longer used.",
       ],
-      rubric: ["mg-a3"],
+      rubric: ["mg-a3", "mg-h3"],
       next: "q-airway",
     },
     {
@@ -360,7 +387,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses bedside FVC and NIF, not SpO2, to judge respiratory muscle failure.",
       points: 3,
       critical: true,
@@ -370,7 +397,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Examines bulbar function, neck flexion and paradoxical breathing as markers of imminent failure.",
       points: 1,
       teaching: "Neck flexor weakness parallels diaphragm weakness. Pooled secretions and a weak cough predict aspiration and BiPAP failure.",
@@ -379,7 +406,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Distinguishes myasthenic from cholinergic crisis by clinical features.",
       points: 1,
       teaching: "Cholinergic crisis is rare at usual doses. Miosis, fasciculations, diarrhea, bradycardia and bronchorrhea suggest it.",
@@ -388,7 +415,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses early controlled intubation over BiPAP because of bulbar weakness, secretions and pneumonia.",
       points: 3,
       critical: true,
@@ -398,7 +425,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses rocuronium rather than succinylcholine, anticipates prolonged block and has sugammadex available.",
       points: 2,
       teaching: "Myasthenic patients resist succinylcholine and are sensitive to non depolarizing agents. Rocuronium with sugammadex backup is predictable.",
@@ -407,7 +434,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Manages post intubation hypotension with a structured approach and considers stress dose hydrocortisone on chronic prednisone.",
       points: 1,
       teaching: "Check the tube, pneumothorax and breath stacking. Chronic steroid users may need hydrocortisone 100 mg IV when shocked.",
@@ -416,7 +443,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Stops the fluoroquinolone and avoids macrolides, aminoglycosides and magnesium when treating pneumonia.",
       points: 3,
       critical: true,
@@ -426,7 +453,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Discusses IVIG 2 g/kg over 2 to 5 days or plasma exchange with neurology and holds pyridostigmine while ventilated.",
       points: 2,
       teaching: "IVIG and plasma exchange are both effective in crisis. Pyridostigmine adds secretions without benefit while the patient is ventilated.",
@@ -435,7 +462,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats community acquired pneumonia with cultures, ceftriaxone and a safe atypical agent.",
       points: 1,
       teaching: "Infection is the most common trigger of crisis. Ceftriaxone with doxycycline covers typical and atypical organisms. Tetracyclines have only rare reports of worsening myasthenia, far fewer than macrolides and fluoroquinolones.",
@@ -444,7 +471,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the trigger to the husband factually without blaming the prescriber.",
       points: 1,
       teaching: "Explain what happened without speculation or blame. The trigger is usually multifactorial.",
@@ -453,7 +480,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU and arranges transfer if plasma exchange or neurology care is not available locally.",
       points: 1,
       teaching: "Myasthenic crisis needs ICU care and neurology input. Plasma exchange is only available at some centres.",
@@ -462,11 +489,47 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Flags high risk drugs in her record and gives collegial feedback to the prescribing clinic.",
       points: 1,
       teaching: "A drug alert protects her at every future visit. Feedback to colleagues improves care without blame.",
       source: "narayanaswami-2021",
+    },
+    {
+      id: "mg-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about recent triggers: infection, new medications such as the recently prescribed fluoroquinolone, surgery and changes to her steroid dose.",
+      points: 2,
+      teaching: "Infection and drugs that impair neuromuscular transmission are the common triggers of crisis. Finding the drug lets you stop it.",
+      source: "narayanaswami-2021",
+    },
+    {
+      id: "mg-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about bulbar and respiratory symptoms: trouble swallowing, choking, nasal speech, orthopnea and how fast they are getting worse.",
+      points: 2,
+      teaching: "Bulbar weakness and orthopnea signal a failing airway and diaphragm. Rapid progression calls for early airway planning.",
+      source: "sanders-2016",
+    },
+    {
+      id: "mg-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about her myasthenia history: antibody status, usual pyridostigmine and prednisone doses, doses taken today and any past crisis.",
+      points: 1,
+      teaching: "The doses taken today help separate myasthenic from cholinergic crisis. Chronic prednisone raises the question of adrenal suppression.",
+      source: "sanders-2016",
+    },
+    {
+      id: "mg-l1",
+      competency: "leadership",
+      criterion: "process",
+      text: "Calls anesthesia and the respiratory therapist early and reassesses FVC and NIF every 1 to 2 hours until the airway is secured.",
+      points: 1,
+      teaching: "Neuromuscular failure can progress quickly. Early help and scheduled bedside measurements catch decline before a crash intubation is needed.",
+      source: "lawn",
     },
   ],
   sources: [
@@ -488,7 +551,7 @@ export const myasthenicCrisisAirway: OralCase = {
         "Metlay JP et al. Diagnosis and treatment of adults with community acquired pneumonia. An official clinical practice guideline of the American Thoracic Society and Infectious Diseases Society of America. American Journal of Respiratory and Critical Care Medicine. 2019.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

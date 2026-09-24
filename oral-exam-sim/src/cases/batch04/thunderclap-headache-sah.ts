@@ -15,28 +15,46 @@ export const thunderclapHeadacheSah: OralCase = {
     { topic: "airway", n: 5 },
   ],
   summary: "A 46 year old woman with a history of migraine has a sudden severe headache while lifting weights.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a 220 bed community hospital in central Ontario. CT and CT angiography are available around the clock with remote radiology reads. " +
-    "There is an ICU and anesthesia on call. There is no neurosurgery. The nearest neurosurgical centre is 90 minutes away by land. Transfers go through CritiCall Ontario. " +
-    "Priya Raman is 46 years old. At 10:15 she felt a sudden severe headache while deadlifting at her gym. She arrived by car at 11:40. " +
-    "Triage vitals: heart rate 88, blood pressure 164/92, respiratory rate 16, SpO2 99 percent on room air, temperature 36.9, GCS 15. " +
-    "She was triaged CTAS 3 as a migraine. You see her at 12:20. " +
-    "The nurse says: 'She gets migraines. She vomited twice in the waiting room. She is asking for the migraine cocktail she usually gets.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is CT angiography but no neurosurgery. The nearest neurosurgical centre is 90 minutes away by land. " +
+    "A 46 year old woman arrives by car with a sudden severe headache that began at her gym.",
+  card: {
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "88/minute",
+      resp: "16/minute",
+      bp: "164/92 mmHg",
+      o2sat: "99% on room air",
+    },
+    medications: "Sumatriptan as needed",
+    allergies: "None",
+  },
   findings: [
     {
       id: "hx",
-      label: "Headache history",
+      label: "History of presenting illness",
       result:
+        "At 10:15 she felt a sudden severe headache while deadlifting at her gym. She arrived by car at 11:40. " +
+        "She was triaged CTAS 3 as a migraine with a GCS of 15, and you see her at 12:20. She vomited twice in the waiting room and is asking for the migraine cocktail she usually gets. " +
         "The pain reached 10 out of 10 within seconds of lifting the bar. It is occipital and spreading to her neck. It is different from her usual migraines, which build over an hour with an aura. " +
         "No loss of consciousness. She had a milder sudden headache 8 days ago that lasted a day. She did not seek care.",
     },
     {
       id: "pmh",
-      label: "Past history and medications",
-      result:
-        "Migraine with aura since her twenties. Smokes 10 cigarettes a day. No hypertension diagnosis. Her mother died of a brain bleed at 52. " +
-        "Takes sumatriptan as needed. No anticoagulants or antiplatelets. No allergies.",
+      label: "Past and family history",
+      result: "Migraine with aura since her twenties. No hypertension diagnosis. Her mother died of a brain bleed at 52.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "Takes sumatriptan as needed. No anticoagulants or antiplatelets. No allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Smokes 10 cigarettes a day.",
     },
     {
       id: "exam",
@@ -83,7 +101,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "husband",
       label: "Husband",
-      result: "Her husband Arun arrives at 13:30. He asks whether this is related to her mother's bleed and whether their two teenage children are at risk.",
+      result: "Her husband arrives at 13:30. He asks whether this is related to her mother's bleed and whether their two teenage children are at risk.",
     },
   ],
   start: "s-open",
@@ -108,8 +126,9 @@ export const thunderclapHeadacheSah: OralCase = {
         "Non contrast CT head now. Within 6 hours of onset on a modern scanner, read by a qualified radiologist, a normal CT effectively rules out SAH.",
         "Hold ketorolac until the CT is read. Treat pain with an opioid and nausea with an antiemetic.",
         "A prior sudden headache 8 days ago may have been a sentinel bleed.",
+        "Ask about family history of a brain bleed, smoking, hypertension and blood thinners.",
       ],
-      rubric: ["sah-a1", "sah-a2", "sah-m1"],
+      rubric: ["sah-a1", "sah-h1", "sah-h2", "sah-h3", "sah-a2", "sah-m1"],
       choices: [
         {
           id: "c-ct-now",
@@ -277,7 +296,7 @@ export const thunderclapHeadacheSah: OralCase = {
       id: "s-decline",
       phase: "14:10",
       text:
-        "While the transfer is being arranged the nurse calls you urgently. Mrs Raman is drowsy. She opens her eyes to voice, makes only moaning sounds and localizes pain. GCS 10. " +
+        "While the transfer is being arranged the nurse calls you urgently. The patient is drowsy. She opens her eyes to voice, makes only moaning sounds and localizes pain. GCS 10. " +
         "Pupils 3 mm and equal. Pressure 196/108. Heart rate 58. She vomited once more.",
       next: "q-decline",
     },
@@ -400,7 +419,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Identifies thunderclap onset and a change from her usual migraine pattern as red flags.",
       points: 1,
       teaching: "A migraine history does not protect against SAH. A headache that peaks within about a minute is thunderclap until proven otherwise.",
@@ -409,7 +428,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Applies the Ottawa SAH Rule correctly and recognizes that SAH cannot be ruled out without imaging.",
       points: 3,
       critical: true,
@@ -419,7 +438,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes a falling GCS with hypertension and bradycardia as raised intracranial pressure from hydrocephalus or rebleed.",
       points: 2,
       teaching: "Acute hydrocephalus occurs in about 20 to 30 percent of aneurysmal SAH. Early temporal horn dilation on the first CT is a warning sign.",
@@ -428,7 +447,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-m1",
       competency: "management",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders non contrast CT within 6 hours of onset and knows a normal scan in that window, read by a qualified radiologist, rules out SAH without LP.",
       points: 2,
       teaching: "In a large Canadian cohort, CT within 6 hours had a sensitivity near 100 percent. Beyond 6 hours, LP or CTA is still needed after a normal CT.",
@@ -437,7 +456,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats pain and nausea first and keeps systolic below 160 with titrated labetalol or nicardipine while avoiding hypotension.",
       points: 2,
       teaching: "Rebleeding risk is highest early. Controlled pressure reduces it, but hypotension can cause ischemia in a brain with raised pressure.",
@@ -446,7 +465,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts nimodipine 60 mg orally every 4 hours and avoids antiplatelets, anticoagulants and NSAIDs.",
       points: 2,
       teaching: "Nimodipine improves outcome after aneurysmal SAH. It is a neuroprotective drug, not an antihypertensive. Hold doses for hypotension.",
@@ -455,7 +474,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Secures the airway when GCS falls and arranges repeat CT, without performing a lumbar puncture.",
       points: 2,
       teaching: "A falling level of consciousness needs a protected airway. LP is contraindicated with possible obstructive hydrocephalus.",
@@ -464,7 +483,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Plans a hemodynamically neutral intubation with pretreatment, reduced dose induction, pressor ready and normocapnia afterward.",
       points: 2,
       teaching: "The pressor response to laryngoscopy can rupture the aneurysm again. Induction hypotension can cause ischemia. Aim for a smooth pressure throughout.",
@@ -473,7 +492,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Advocates for emergent transfer to neurosurgery for EVD and early aneurysm treatment, escalating to the staff surgeon and CritiCall.",
       points: 3,
       critical: true,
@@ -483,7 +502,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Communicates respectfully but firmly with the consultant, using the CT findings and clinical risk.",
       points: 1,
       teaching: "Advocate with data. State the specific risk, the specific need and the specific request.",
@@ -492,7 +511,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the diagnosis and uncertainty to the husband in plain words and addresses his question about family risk.",
       points: 1,
       teaching: "Families need honesty about severity. Screening is considered when two or more first degree relatives have had an aneurysm or aneurysmal SAH, usually from early adulthood.",
@@ -501,10 +520,37 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover with pressure targets, infusions, nimodipine timing and a plan for deterioration in transit.",
       points: 1,
       teaching: "The transport team needs explicit targets and a plan for pupil changes. Ambiguity in transit leads to delayed treatment.",
+      source: "aha-sah",
+    },
+    {
+      id: "sah-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks how fast the pain peaked, what she was doing at onset, whether she lost consciousness, whether she has neck pain and how it differs from her usual migraine.",
+      points: 2,
+      teaching: "These answers are the Ottawa SAH Rule. Exertional onset, instant peak and neck pain each call for investigation.",
+      source: "ottawa-jama",
+    },
+    {
+      id: "sah-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about any recent sudden headache that could have been a sentinel bleed.",
+      points: 1,
+      teaching: "A sudden headache in the days or weeks before a major bleed is common in aneurysmal SAH. Asking for it changes the level of suspicion.",
+      source: "aha-sah",
+    },
+    {
+      id: "sah-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about family history of aneurysm or brain bleed, smoking, hypertension and antithrombotic use.",
+      points: 1,
+      teaching: "A first degree relative with aneurysmal SAH, smoking and hypertension raise aneurysm risk. Antithrombotics change how a bleed is managed.",
       source: "aha-sah",
     },
   ],
@@ -528,7 +574,7 @@ export const thunderclapHeadacheSah: OralCase = {
         "Hoh BL et al. 2023 Guideline for the management of patients with aneurysmal subarachnoid hemorrhage. American Heart Association and American Stroke Association. Stroke. 2023.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

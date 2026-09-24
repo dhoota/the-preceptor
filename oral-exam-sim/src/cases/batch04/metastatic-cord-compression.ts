@@ -14,20 +14,40 @@ export const metastaticCordCompression: OralCase = {
     { topic: "cqi", n: 1 },
   ],
   summary: "A 72 year old man with known cancer has weeks of back pain and two falls today.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working at a 250 bed community hospital in northern Ontario. CT runs around the clock. MRI runs from 07:00 to 20:00 with no after hours technologist. " +
-    "The regional cancer centre, radiation oncology and spine surgery are at a tertiary hospital 110 km away. Transfers go through CritiCall Ontario. " +
-    "It is 21:30. Hector Almeida is 72 years old. He has prostate cancer with bone metastases diagnosed 14 months ago and is on androgen deprivation therapy. " +
-    "He has had mid back pain for 4 weeks. For 2 days his legs have felt heavy and today he fell twice at home. " +
-    "Triage vitals: heart rate 92, blood pressure 148/84, respiratory rate 18, SpO2 96 percent on room air, temperature 36.7. CTAS 3. " +
-    "His wife says: 'His family doctor said it was a pulled muscle. He has not passed water since this morning.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It is 21:30. MRI is closed until 07:00, and spine surgery and radiation oncology are at a tertiary centre 110 km away. " +
+    "A 72 year old man arrives with back pain and weak legs after two falls at home today.",
+  card: {
+    vitals: {
+      temperature: "36.7°C",
+      pulse: "92/minute",
+      resp: "18/minute",
+      bp: "148/84 mmHg",
+      o2sat: "96% on room air",
+    },
+    medications: "Androgen deprivation therapy, hydromorphone 2 mg PO as needed",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "pain",
-      label: "Pain history",
+      label: "History of presenting illness",
       result:
-        "Mid thoracic pain for 4 weeks, worse lying flat and at night, now a band around the lower chest. Worse with coughing. Needed 4 doses of hydromorphone 2 mg orally today.",
+        "He has had mid back pain for 4 weeks. His family doctor said it was a pulled muscle. For 2 days his legs have felt heavy and today he fell twice at home. " +
+        "His wife says he has not passed water since this morning. " +
+        "The pain is mid thoracic, worse lying flat and at night, now a band around the lower chest. Worse with coughing. Needed 4 doses of hydromorphone 2 mg orally today.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "Prostate cancer with bone metastases diagnosed 14 months ago. On androgen deprivation therapy. His oncologist last saw him 6 weeks ago.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "Androgen deprivation therapy. Hydromorphone 2 mg orally as needed, 4 doses today.",
     },
     {
       id: "neuro",
@@ -48,9 +68,9 @@ export const metastaticCordCompression: OralCase = {
     },
     {
       id: "baseline",
-      label: "Baseline function and wishes",
+      label: "Social history, baseline function and wishes",
       result:
-        "Until 2 weeks ago he walked 3 km a day and did his own groceries. ECOG 1. He and his wife want active treatment. He has no advance directive. Oncologist last saw him 6 weeks ago.",
+        "Until 2 weeks ago he walked 3 km a day and did his own groceries. ECOG 1. He and his wife want active treatment. He has no advance directive.",
     },
     {
       id: "labs",
@@ -96,8 +116,9 @@ export const metastaticCordCompression: OralCase = {
         "Analgesia. Hydromorphone 0.5 to 1 mg IV titrated.",
         "Differential: pathological fracture alone, cauda equina, epidural abscess, hypercalcemia contributing to weakness.",
         "Flat bed rest with log roll until stability is known if pain suggests mechanical instability.",
+        "Ask about the cancer and its treatment, the tempo of weakness and falls, bladder and bowel function, saddle numbness and baseline function.",
       ],
-      rubric: ["cc-a1", "cc-a2", "cc-a3", "cc-m1"],
+      rubric: ["cc-a1", "cc-h1", "cc-h2", "cc-h3", "cc-a2", "cc-a3", "cc-m1"],
       next: "q-steroid",
     },
     {
@@ -210,7 +231,7 @@ export const metastaticCordCompression: OralCase = {
       id: "s-progress",
       phase: "23:15",
       text:
-        "The nurse calls you back. Mr Almeida can no longer lift either leg off the bed. Hip flexion is 2 out of 5. The sensory level is now T8. He is frightened.",
+        "The nurse calls you back. The patient can no longer lift either leg off the bed. Hip flexion is 2 out of 5. The sensory level is now T8. He is frightened.",
       next: "q-consult",
     },
     {
@@ -313,7 +334,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Recognizes red flags for metastatic cord compression: known bone metastases, thoracic pain, pain lying flat, band like pain.",
       points: 2,
       teaching: "Pain often precedes deficits by weeks. Thoracic location and night pain in a patient with cancer should trigger urgent imaging.",
@@ -322,7 +343,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Performs a full neurological exam with a sensory level, reflexes, plantars, perianal sensation and bladder scan.",
       points: 2,
       teaching: "A documented baseline exam lets you detect progression. Retention with a sensory level means the cord or conus is involved.",
@@ -331,7 +352,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Catheterizes for retention and gives titrated IV opioid analgesia.",
       points: 1,
       teaching: "Unrecognized retention causes pain, delirium and kidney injury. Good analgesia is needed to lie still for MRI.",
@@ -340,7 +361,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives dexamethasone 10 mg IV now then 16 mg per day in divided doses, without waiting for MRI, with PPI and glucose monitoring.",
       points: 3,
       critical: true,
@@ -350,7 +371,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-m3",
       competency: "management",
-      criterion: "data",
+      criterion: "physical",
       text: "Obtains urgent whole spine MRI, within 24 hours and sooner with progressive deficits, and does not rely on X rays or CT alone.",
       points: 3,
       critical: true,
@@ -360,7 +381,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Keeps flat with log roll until stability is assessed and prevents pressure injury and constipation.",
       points: 1,
       teaching: "The SINS score helps the surgeon judge instability. Until then, pain on movement suggests the spine may be unstable.",
@@ -369,7 +390,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges transfer the same night to a centre with MRI, spine surgery and radiation oncology.",
       points: 3,
       critical: true,
@@ -379,7 +400,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Presents progression, prognosis and CT stability features to the spine surgeon and requests a joint decision with radiation oncology.",
       points: 2,
       teaching: "Decompressive surgery plus radiation improved walking compared with radiation alone in selected patients with a single level of compression.",
@@ -388,7 +409,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Answers his question about walking honestly, including uncertainty and why speed matters.",
       points: 1,
       teaching: "Patients handle honest uncertainty better than false reassurance. Link the urgency to the outcome they care about.",
@@ -397,7 +418,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Confirms goals of care and his wish for active treatment and involves his wife with his permission.",
       points: 1,
       teaching: "Treatment of cord compression ranges from surgery to palliation. Goals guide the choice and should be confirmed early.",
@@ -406,7 +427,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Identifies the missed early warning signs as a system issue and proposes collegial feedback and a local urgent imaging pathway.",
       points: 1,
       teaching: "Delays in diagnosis are common. Patient education and a clear pathway for urgent MRI shorten the time to treatment.",
@@ -415,11 +436,38 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Considers the differential including epidural abscess, pathological fracture, cauda equina and hypercalcemia.",
       points: 1,
       teaching: "Fever or injection drug use points to abscess. A low conus lesion gives mixed upper and lower motor signs. Calcium is easy to check.",
       source: "nice-ng234",
+    },
+    {
+      id: "cc-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the cancer history: primary site, known bone metastases, current treatment and the last oncology review.",
+      points: 2,
+      teaching: "Known bone metastases make new spinal pain cord compression until proven otherwise. Prostate, breast and lung cancer and myeloma cause most cases.",
+      source: "nice-ng234",
+    },
+    {
+      id: "cc-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the onset and progression of leg weakness and falls, bladder and bowel function and saddle numbness.",
+      points: 2,
+      teaching: "A deficit that is getting worse over hours to days is an emergency. Retention and saddle symptoms mean the cord or cauda equina is failing.",
+      source: "nice-ng234",
+    },
+    {
+      id: "cc-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about baseline mobility and performance status before this illness.",
+      points: 1,
+      teaching: "Walking status and performance status before treatment predict outcome and shape the choice between surgery and radiation.",
+      source: "patchell",
     },
   ],
   sources: [
@@ -444,7 +492,7 @@ export const metastaticCordCompression: OralCase = {
         "Fisher CG et al. A novel classification system for spinal instability in neoplastic disease. An evidence based approach and expert consensus from the Spine Oncology Study Group. Spine. 2010.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

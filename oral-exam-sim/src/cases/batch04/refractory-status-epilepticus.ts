@@ -15,14 +15,23 @@ export const refractoryStatusEpilepticus: OralCase = {
     { topic: "seizures", n: 7 },
   ],
   summary: "A 34 year old man with a known seizure disorder arrives by ambulance still convulsing after one prehospital dose.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working in a tertiary emergency department in London, Ontario. There is an ICU, neurology on call and a pharmacist in the department until 23:00. " +
-    "EEG runs on weekdays from 08:00 to 17:00. After hours a technologist can be called in from home, which takes about an hour. " +
-    "It is 21:10 on a Saturday. Marcus Leblanc is 34 years old. His roommate found him convulsing on the kitchen floor at 20:40. " +
-    "Paramedics reached him at 20:52. He was still seizing and they gave midazolam 10 mg IM at 20:55. He had a brief pause, then started convulsing again without waking. " +
-    "Vitals on arrival: heart rate 134, blood pressure 176/98, respiratory rate 30 and irregular, SpO2 88 percent on a non rebreather mask, temperature 37.8, capillary glucose 8.4 mmol/L. " +
-    "The paramedic says: 'Roommate says he has epilepsy and ran out of his pills. His sister is on her way in.'",
+    "You are working in the emergency department of a tertiary care centre when the following patient arrives. " +
+    "It is 21:10 on a Saturday. After hours an EEG technologist must be called in from home, which takes about an hour. " +
+    "A 34 year old man arrives by ambulance still convulsing after a dose of midazolam.",
+  card: {
+    vitals: {
+      temperature: "37.8°C",
+      pulse: "134/minute",
+      resp: "30/minute, irregular",
+      bp: "176/98 mmHg",
+      o2sat: "88% on a non rebreather mask",
+      weight: "80 kg (176 lb)",
+    },
+    medications: "Phenytoin 300 mg PO at bedtime, clobazam 10 mg PO at bedtime",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "seizure-exam",
@@ -31,18 +40,32 @@ export const refractoryStatusEpilepticus: OralCase = {
         "Generalized rhythmic jerking of all four limbs. Head and eyes turned to the left. Frothy secretions. No response to voice or pain. Bitten tongue. Incontinent of urine.",
     },
     {
-      id: "weight",
-      label: "Weight",
-      result: "Roommate says he weighs about 80 kg. The paramedic estimate agrees.",
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "His roommate found him convulsing on the kitchen floor at 20:40. Paramedics reached him at 20:52 and he was still seizing. " +
+        "They gave midazolam 10 mg IM at 20:55. He had a brief pause, then started convulsing again without waking. " +
+        "The roommate told the paramedics he has epilepsy and ran out of his pills. Capillary glucose 8.4 mmol/L on arrival. His sister is on her way in.",
     },
     {
-      id: "collateral",
-      label: "Sister's history",
+      id: "pmh",
+      label: "Past history (from his sister)",
       result:
-        "Focal epilepsy with bilateral tonic clonic seizures since a bicycle crash with a head injury at 17. " +
-        "He takes phenytoin 300 mg at bedtime and clobazam 10 mg at bedtime. His last seizure was 14 months ago. " +
-        "He lost his job and his drug plan 2 months ago. He ran out of both pills 5 days ago and could not afford the refill. " +
-        "He slept badly this week. He had 3 beers last night. No other drugs that she knows of. He drives to job interviews.",
+        "Focal epilepsy with bilateral tonic clonic seizures since a bicycle crash with a head injury at 17. His last seizure was 14 months ago.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies (from his sister)",
+      result:
+        "Phenytoin 300 mg at bedtime and clobazam 10 mg at bedtime. He lost his drug plan 2 months ago. " +
+        "He ran out of both pills 5 days ago and could not afford the refill.",
+    },
+    {
+      id: "social",
+      label: "Social history (from his sister)",
+      result:
+        "He lost his job 2 months ago. He slept badly this week. He had 3 beers last night. No other drugs that she knows of. " +
+        "He drives to job interviews. His roommate says he weighs about 80 kg.",
     },
     {
       id: "head-exam",
@@ -105,13 +128,13 @@ export const refractoryStatusEpilepticus: OralCase = {
       modelAnswer: [
         "This is established status epilepticus. One benzodiazepine dose has failed.",
         "Recovery position, suction, jaw thrust, oxygen and a bag valve mask ready. Monitor and a second IV.",
-        "Glucose is 8.4 mmol/L, so hypoglycemia is excluded.",
+        "Check capillary glucose. It is 8.4 mmol/L, so hypoglycemia is excluded.",
         "Give one more full benzodiazepine dose now. Lorazepam 0.1 mg/kg IV to a maximum of 4 mg, so 4 mg for him.",
         "Have the second line drug drawn up at the same time so it follows immediately.",
         "Draw a VBG, electrolytes and an antiseizure drug level before any load is given.",
-        "Say the time since onset out loud.",
+        "Confirm onset at 20:40 and the prehospital midazolam dose with the paramedics, and say the time since onset out loud.",
       ],
-      rubric: ["se-r1", "se-m1", "se-l1"],
+      rubric: ["se-h1", "se-h2", "se-r1", "se-m1", "se-l1"],
       choices: [
         {
           id: "c-lorazepam",
@@ -379,8 +402,9 @@ export const refractoryStatusEpilepticus: OralCase = {
         "Fever and a raised WBC are common after status. Look for aspiration and consider meningitis. LP if he stays febrile without a source.",
         "Alcohol withdrawal is unlikely with 3 beers but ask. Toxicology screen.",
         "CK for rhabdomyolysis. Fluids and renal monitoring.",
+        "Ask his sister about alcohol, other drugs, sleep loss, recent illness and any fall.",
       ],
-      rubric: ["se-a1", "se-a3"],
+      rubric: ["se-a1", "se-a3", "se-h2", "se-h3"],
       next: "q-family",
     },
     {
@@ -428,7 +452,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Positions, suctions and supports the airway with oxygen, jaw thrust and bag support during the convulsion.",
       points: 1,
       teaching: "Basic airway support buys time while the drugs work. Hypoxia makes seizures harder to stop.",
@@ -437,7 +461,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls out the time since onset and prepares the next drug while the current one is given.",
       points: 1,
       teaching: "Status care runs on a clock. A leader who names the time and has the next drug ready stops the escalation from stalling.",
@@ -446,7 +470,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives one full second benzodiazepine dose, lorazepam 0.1 mg/kg IV to a maximum of 4 mg, without delay.",
       points: 3,
       critical: true,
@@ -456,7 +480,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives a correctly dosed second line drug: levetiracetam 60 mg/kg to 4,500 mg, fosphenytoin 20 mg PE/kg to 1,500 mg PE at up to 150 mg PE per minute, or valproate 40 mg/kg to 3,000 mg.",
       points: 3,
       critical: true,
@@ -466,7 +490,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "States the key contraindications: conduction block, bradycardia or hypotension for fosphenytoin, and liver disease, pregnancy, mitochondrial disease or low platelets for valproate.",
       points: 2,
       teaching: "Fosphenytoin can cause hypotension and arrhythmia, so check the ECG and monitor. Valproate is avoided in liver disease and in anyone who is or may be pregnant.",
@@ -475,7 +499,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Identifies missed doses as the likely trigger, draws a drug level before loading and still searches for other causes.",
       points: 2,
       teaching: "A low level explains the seizures but does not exclude a second cause such as head injury, infection or a metabolic problem. Draw the level before any load so it can be interpreted.",
@@ -484,7 +508,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-r2",
       competency: "resuscitation",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes refractory status after a benzodiazepine and a second line drug fail, and moves straight to intubation and an anesthetic infusion.",
       points: 3,
       critical: true,
@@ -494,7 +518,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Doses the infusion correctly: midazolam 0.2 mg/kg bolus then 0.05 to 2 mg/kg/h, or propofol 1 to 2 mg/kg then 30 to 200 mcg/kg/min.",
       points: 2,
       teaching: "Start with a bolus, then titrate the infusion to stop seizures on EEG. Hypotension is expected and is treated with vasopressors.",
@@ -503,7 +527,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses a single dose of paralytic for intubation and never uses a paralytic infusion to control movements.",
       points: 2,
       teaching: "Paralysis hides convulsions but not seizures. After rocuronium the only way to know if seizures continue is EEG.",
@@ -512,7 +536,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Suspects nonconvulsive seizures after convulsions stop or are masked, and arranges urgent continuous EEG the same night.",
       points: 3,
       critical: true,
@@ -522,7 +546,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats nonconvulsive status by increasing or adding anesthetic drugs to EEG goals and supports the pressure with norepinephrine rather than lowering the infusion.",
       points: 2,
       teaching: "Hypotension from the infusion is common. Treat it with a vasopressor. Turning the sedation down lets the seizures return.",
@@ -531,7 +555,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m6",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Writes a maintenance plan: phenytoin or levetiracetam maintenance with levels as needed, and restarts clobazam.",
       points: 1,
       teaching: "The loading dose wears off. Maintenance doses and his usual drugs must start in the first day.",
@@ -540,7 +564,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders CT head for the scalp injury and evaluates fever for aspiration or central nervous system infection.",
       points: 1,
       teaching: "Fever and leukocytosis are common after status but do not assume. Aspiration is frequent. Consider LP if no source is found.",
@@ -549,7 +573,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the events, the plan and the uncertainty to his sister in plain words without blame for the missed pills.",
       points: 1,
       teaching: "Families need to hear what happened, what is being done and what is not known yet. Cost barriers are common and fixable.",
@@ -558,7 +582,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Reports to the Ministry of Transportation under Ontario's mandatory reporting rules and plans to tell the patient directly.",
       points: 2,
       teaching: "Since 2018 Ontario physicians must report patients with conditions that cause sudden incapacitation, such as seizures likely to recur. The duty overrides confidentiality for that report only.",
@@ -567,7 +591,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover with times, doses, the paralytic time, EEG findings, infusion goals and pending issues.",
       points: 1,
       teaching: "The ICU needs the exact paralytic time and drug history to judge the EEG and the next step.",
@@ -576,10 +600,37 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU with neurology, continuous EEG and a social work referral for drug coverage.",
       points: 1,
       teaching: "Refractory status needs ICU care and EEG. Fixing the reason he ran out of medicine prevents the next admission.",
+      source: "ncs",
+    },
+    {
+      id: "se-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the paramedics and roommate for the time of onset, the prehospital drug, dose and time, and whether he woke between seizures.",
+      points: 2,
+      teaching: "The clock starts at onset, not at arrival. Knowing that one benzodiazepine dose has already failed sets the next step.",
+      source: "aes-2016",
+    },
+    {
+      id: "se-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about his epilepsy, his usual drugs and doses, and when he last took them.",
+      points: 2,
+      teaching: "Missed doses are the most common trigger of status in known epilepsy. The usual drug and the time since the last dose decide whether a full load is needed.",
+      source: "ncs",
+    },
+    {
+      id: "se-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about other triggers: alcohol and other drugs, sleep loss, recent illness and a head strike in the fall.",
+      points: 1,
+      teaching: "A low drug level may not be the only cause. Alcohol, sleep loss, infection and trauma can all lower the threshold and change the workup.",
       source: "ncs",
     },
   ],
@@ -612,7 +663,7 @@ export const refractoryStatusEpilepticus: OralCase = {
       url: "https://www.ontario.ca/page/reporting-driver-medical-review",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

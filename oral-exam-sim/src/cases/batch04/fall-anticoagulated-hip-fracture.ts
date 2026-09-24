@@ -16,21 +16,48 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     { topic: "shock", n: 1 },
   ],
   summary: "An 89 year old man who lives alone is found on the floor by his home care worker after a night fall.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a community hospital in southwestern Ontario with orthopaedic surgery, internal medicine, an ICU and CT around the clock. There is no neurosurgery on site. " +
-    "It is 07:15. Stanley Kaminski is 89 years old and lives alone. His home care worker found him on the floor beside his bed at 06:30. " +
-    "He says he got up to urinate around 23:00, felt light headed and fell. He hit the back of his head on the night table and could not get up. " +
-    "He takes apixaban 5 mg twice daily for atrial fibrillation. His last dose was at 20:00 last night. " +
-    "Vitals: heart rate 88 and irregular, blood pressure 118/64, respiratory rate 18, SpO2 95 percent on room air, temperature 35.4, capillary glucose 6.1 mmol/L. GCS 15. Weight 58 kg. " +
-    "The paramedic says: 'His right leg is short and turned out. He says his usual pressure runs in the 140s.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is orthopaedic surgery but no neurosurgery. It is 07:15. " +
+    "An 89 year old man arrives by ambulance after his home care worker found him on his bedroom floor. His right hip hurts.",
+  card: {
+    vitals: {
+      temperature: "35.4°C",
+      pulse: "88/minute, irregular",
+      resp: "18/minute",
+      bp: "118/64 mmHg",
+      o2sat: "95% on room air",
+      weight: "58 kg (128 lb)",
+    },
+    medications: "Apixaban 5 mg PO twice daily, metoprolol 50 mg PO twice daily, furosemide 20 mg PO daily, tamsulosin 0.4 mg PO daily",
+    allergies: "No known allergies",
+  },
   findings: [
     {
-      id: "meds",
-      label: "Medications and history",
+      id: "hpi",
+      label: "History of presenting illness",
       result:
-        "Apixaban 5 mg twice daily. Metoprolol 50 mg twice daily. Furosemide 20 mg daily. Tamsulosin 0.4 mg daily, started 2 weeks ago for urinary hesitancy. " +
-        "Atrial fibrillation, heart failure with preserved ejection fraction, hypertension. Baseline creatinine 110 µmol/L six months ago. No known allergies.",
+        "He says he got up to urinate around 23:00, felt light headed and fell. He hit the back of his head on the night table and could not get up. " +
+        "His home care worker found him on the floor beside his bed at 06:30. The paramedic says his right leg is short and turned out, and that he says his usual pressure runs in the 140s. " +
+        "GCS 15. Capillary glucose 6.1 mmol/L.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result:
+        "Apixaban 5 mg twice daily for atrial fibrillation. His last dose was at 20:00 last night. Metoprolol 50 mg twice daily. Furosemide 20 mg daily. " +
+        "Tamsulosin 0.4 mg daily, started 2 weeks ago for urinary hesitancy. No known allergies.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "Atrial fibrillation, heart failure with preserved ejection fraction, hypertension. Baseline creatinine 110 µmol/L six months ago.",
+    },
+    {
+      id: "social",
+      label: "Social history and baseline function",
+      result: "He lives alone with a home care worker who visits. He walks with a cane and does his own cooking.",
     },
     {
       id: "head-neck",
@@ -74,7 +101,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
       id: "collateral",
       label: "Collateral from his daughter",
       result:
-        "His daughter Maria says he has been dizzy on standing since starting the new prostate pill. He walks with a cane and does his own cooking. " +
+        "His daughter says he has been dizzy on standing since starting the new prostate pill. " +
         "He has said many times he wants treatment if it keeps him independent. He has no advance directive. She is his only child.",
     },
     {
@@ -104,8 +131,9 @@ export const fallAnticoagulatedHipFracture: OralCase = {
         "CT cervical spine. Age 65 or over is a high risk factor in the Canadian C Spine Rule.",
         "Hip and pelvis X ray and chest X ray.",
         "Consider a repeat CT or observation if his neuro status changes. Delayed bleeds are uncommon but possible.",
+        "Confirm the last apixaban dose at 20:00, the head strike, any light headedness or syncope, and the length of the lie.",
       ],
-      rubric: ["hip-a1", "hip-a2"],
+      rubric: ["hip-h1", "hip-h2", "hip-a1", "hip-a2"],
       choices: [
         {
           id: "c-ct-both",
@@ -160,8 +188,9 @@ export const fallAnticoagulatedHipFracture: OralCase = {
         "Pressure injury over the sacrum and hip. Pressure relieving mattress.",
         "Dehydration. Isotonic fluid with care given his heart failure.",
         "Screen for delirium and aspiration.",
+        "Ask about the new tamsulosin and dizziness on standing.",
       ],
-      rubric: ["hip-a3", "hip-m4"],
+      rubric: ["hip-h3", "hip-a3", "hip-m4"],
       next: "q-analgesia",
     },
     {
@@ -353,7 +382,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
         "His stated values favour treatment that keeps him independent.",
         "Discuss code status and goals now, with him while he has capacity.",
       ],
-      rubric: ["hip-c2", "hip-p1"],
+      rubric: ["hip-h4", "hip-c2", "hip-p1"],
       next: "q-dispo",
     },
     {
@@ -384,7 +413,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders CT head because the Canadian CT Head Rule excludes anticoagulated patients and age 65 or over is high risk.",
       points: 3,
       critical: true,
@@ -394,7 +423,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Images the cervical spine because age 65 or over is a high risk factor in the Canadian C Spine Rule.",
       points: 1,
       teaching: "Older adults can fracture the upper cervical spine in a fall from standing. The rule does not allow clinical clearance at age 65 or over.",
@@ -403,7 +432,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies orthostatic hypotension from tamsulosin, furosemide and metoprolol as the likely cause of the fall and looks for arrhythmia.",
       points: 2,
       teaching: "A fall is a symptom. New alpha blockers commonly cause orthostatic hypotension in older adults. A medication review is part of falls prevention after a fragility fracture.",
@@ -412,7 +441,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Provides a fascia iliaca block, scheduled acetaminophen and low dose opioid for breakthrough, and avoids NSAIDs.",
       points: 2,
       teaching: "Peripheral nerve blocks reduce pain on movement, opioid needs and delirium in hip fracture.",
@@ -421,7 +450,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Holds apixaban without bridging or routine reversal and plans surgery timing with orthopaedics and anesthesia.",
       points: 3,
       critical: true,
@@ -431,7 +460,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes a major bleed and gives PCC, usually 2,000 units IV, if the bleed becomes life threatening or is not controlled.",
       points: 2,
       teaching: "A hemoglobin drop of 20 g/L or more or hemodynamic instability defines a major bleed. PCC supports hemostasis but does not reverse the drug. Thrombosis Canada reserves it for life threatening or uncontrolled bleeding.",
@@ -440,7 +469,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Manages long lie complications: rhabdomyolysis, kidney injury, hypothermia, pressure injury and dehydration.",
       points: 2,
       teaching: "A long lie adds rhabdomyolysis, pressure injury and hypothermia to the fracture. Each worsens outcomes.",
@@ -449,7 +478,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Transfuses red cells for symptomatic anemia with hypotension, looks for other sources and avoids rate control of compensatory tachycardia.",
       points: 3,
       critical: true,
@@ -459,7 +488,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives orthopaedics and anesthesia the last dose time and creatinine clearance to plan surgery.",
       points: 1,
       teaching: "Timing depends on the drug, the last dose and renal function. Clear information prevents cancelled OR slots.",
@@ -468,7 +497,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Discusses benefits and risks of surgery honestly with the patient and daughter, including mortality and delirium.",
       points: 1,
       teaching: "Surgery is usually the best pain control even in frail patients. One year mortality after hip fracture is about 20 to 30 percent.",
@@ -477,7 +506,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Involves the patient in decisions while he has capacity and confirms code status.",
       points: 1,
       teaching: "Ask the patient first. Goals of care talks are best held before a crisis.",
@@ -486,7 +515,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits with co management, surgery within 48 hours, delirium and pressure injury prevention.",
       points: 2,
       teaching: "Surgery within 48 hours of arrival is an Ontario quality standard for hip fracture.",
@@ -495,11 +524,47 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Flags the apixaban dose error and the medications behind the fall for medication review, and recommends falls and bone health follow up.",
       points: 1,
       teaching: "Apixaban 2.5 mg twice daily is used when two of three criteria are met: age 80 or over, weight 60 kg or less, creatinine 133 µmol/L or more.",
       source: "thrombosis-canada",
+    },
+    {
+      id: "hip-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the fall: what he was doing, any light headedness, palpitations or loss of consciousness, the head strike and how long he was on the floor.",
+      points: 2,
+      teaching: "A fall is a symptom that needs a cause. The prodrome points to syncope or orthostasis, and the length of the lie predicts rhabdomyolysis, hypothermia and pressure injury.",
+      source: "hqo",
+    },
+    {
+      id: "hip-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulant use, the dose and the exact time of the last dose.",
+      points: 2,
+      teaching: "The drug, dose, last dose time and renal function decide head imaging, bleeding management and the timing of surgery.",
+      source: "thrombosis-canada",
+    },
+    {
+      id: "hip-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about recent medication changes, such as the new tamsulosin, and dizziness on standing.",
+      points: 1,
+      teaching: "New alpha blockers are a common cause of orthostatic hypotension and falls in older men.",
+      source: "hqo",
+    },
+    {
+      id: "hip-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about baseline mobility, living situation and his own wishes for treatment.",
+      points: 1,
+      teaching: "Premorbid function and his stated values guide the surgical decision, rehabilitation goals and discharge planning.",
+      source: "hqo",
     },
   ],
   sources: [
@@ -513,7 +578,8 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     },
     {
       id: "thrombosis-canada",
-      citation: "Thrombosis Canada. Clinical guides on perioperative management and bleeding management of direct oral anticoagulants.",
+      citation: "Thrombosis Canada. Clinical guides. DOACs: management of bleeding, version of 5 February 2024. DOACs: perioperative management, version of 2 February 2023.",
+      url: "https://thrombosiscanada.ca/clinical_guides/pdfs/MANAGEMENTOFBLEEDINGINPATIENTS_75.pdf",
     },
     {
       id: "guay",
@@ -529,7 +595,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
       url: "https://ontariohealth.ca/evidence-to-improve-care/quality-standards/view-all-quality-standards/hip-fracture",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

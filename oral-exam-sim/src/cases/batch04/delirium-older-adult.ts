@@ -15,14 +15,30 @@ export const deliriumOlderAdult: OralCase = {
     { topic: "delirium-agitation", n: 5 },
   ],
   summary: "An 86 year old woman is brought in by her daughter because she has been sleepy and muddled for three days.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working in the emergency department of a teaching hospital in Toronto. A geriatric emergency management nurse is on shift until 20:00 and geriatric medicine consults on weekdays. " +
-    "It is Monday at 16:00. Eleanor Fitzgerald is 86 years old and lives at home with her husband, who is 88. " +
-    "Her daughter says that since Saturday her mother has been sleepy in the day, confused at night, picking at the air and calling her husband by her late brother's name. She has barely eaten. " +
-    "Triage vitals: heart rate 96, blood pressure 142/76, respiratory rate 18, SpO2 95 percent on room air, temperature 37.2, capillary glucose 6.8 mmol/L. Weight 55 kg. CTAS 3. " +
-    "The triage note says: 'Urine dip positive for leukocytes and nitrites. Likely UTI. Family wants her home tonight.'",
+    "You are working in the emergency department of a tertiary care centre when the following patient arrives. " +
+    "It is Monday at 16:00. An 86 year old woman is brought in by her daughter because she has been sleepy and muddled since Saturday.",
+  card: {
+    vitals: {
+      temperature: "37.2°C",
+      pulse: "96/minute",
+      resp: "18/minute",
+      bp: "142/76 mmHg",
+      o2sat: "95% on room air",
+      weight: "55 kg (121 lb)",
+    },
+    medications: "Oxybutynin 5 mg PO twice daily, zopiclone 7.5 mg PO nightly, hydrochlorothiazide 12.5 mg PO daily, amlodipine 5 mg PO daily",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness (from her daughter)",
+      result:
+        "Since Saturday her mother has been sleepy in the day, confused at night, picking at the air and calling her husband by her late brother's name. She has barely eaten. " +
+        "Capillary glucose 6.8 mmol/L at triage. The triage note says: 'Urine dip positive for leukocytes and nitrites. Likely UTI. Family wants her home tonight.'",
+    },
     {
       id: "cognition",
       label: "Cognitive screen",
@@ -32,9 +48,9 @@ export const deliriumOlderAdult: OralCase = {
     },
     {
       id: "baseline",
-      label: "Baseline function",
+      label: "Social history and baseline function",
       result:
-        "Independent in dressing, bathing and toileting. Her daughter manages her banking. MoCA 23 out of 30 a year ago with mild memory complaints. She uses reading glasses and a hearing aid in the left ear. The hearing aid was left at home.",
+        "She lives at home with her husband, who is 88. Independent in dressing, bathing and toileting. Her daughter manages her banking. MoCA 23 out of 30 a year ago with mild memory complaints. She uses reading glasses and a hearing aid in the left ear. The hearing aid was left at home.",
     },
     {
       id: "meds",
@@ -89,7 +105,7 @@ export const deliriumOlderAdult: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "First look",
-      text: "Mrs Fitzgerald is dozing on the stretcher. She wakes when you speak but drifts off mid sentence. Her daughter says: 'Can you just give her antibiotics so we can go home?'",
+      text: "The patient is dozing on the stretcher. She wakes when you speak but drifts off mid sentence. Her daughter says: 'Can you just give her antibiotics so we can go home?'",
       next: "q-recognize",
     },
     {
@@ -105,7 +121,7 @@ export const deliriumOlderAdult: OralCase = {
         "Collateral on baseline cognition and function is essential.",
         "Delirium is a medical emergency with high mortality. It needs a cause search, not a label.",
       ],
-      rubric: ["del-a1"],
+      rubric: ["del-a1", "del-h1"],
       choices: [
         {
           id: "c-cam",
@@ -160,8 +176,9 @@ export const deliriumOlderAdult: OralCase = {
         "Fecal impaction on rectal exam.",
         "Sodium 127 from the thiazide and poor intake. Creatinine up from dehydration and retention.",
         "Usually multifactorial. Check ECG, CBC, calcium and glucose. CT head only if there is a fall, anticoagulation, focal deficit or no other cause.",
+        "Ask about new and over the counter drugs, sleep aids, alcohol, bowels, bladder, intake, falls and urinary symptoms.",
       ],
-      rubric: ["del-a2", "del-a3"],
+      rubric: ["del-a2", "del-a3", "del-x1", "del-h2", "del-h3"],
       next: "q-urine",
     },
     {
@@ -240,7 +257,7 @@ export const deliriumOlderAdult: OralCase = {
       id: "s-agitation",
       phase: "22:00",
       text:
-        "You are called to her bed. Mrs Fitzgerald is now agitated. She has pulled out her IV, is trying to climb over the rails and is shouting that she is late for work. Her husband has gone home to sleep. " +
+        "You are called to her bed. The patient is now agitated. She has pulled out her IV, is trying to climb over the rails and is shouting that she is late for work. Her husband has gone home to sleep. " +
         "The nurse says: 'Can I give her lorazepam 1 mg IV, or haloperidol 5 mg IM, and put her in wrist restraints?'",
       next: "q-agitation",
     },
@@ -369,7 +386,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes hypoactive delirium and confirms it with a validated tool such as the 4AT or CAM.",
       points: 3,
       critical: true,
@@ -379,7 +396,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Performs a structured search for causes including medications, retention, constipation, electrolytes, infection and hypoxia.",
       points: 2,
       teaching: "Delirium in older adults is usually multifactorial. Fixing only one cause often leaves the delirium in place.",
@@ -388,16 +405,16 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-a3",
       competency: "assessment",
-      criterion: "approach",
-      text: "Identifies oxybutynin and over the counter diphenhydramine as anticholinergic contributors and finds urinary retention and fecal impaction.",
-      points: 2,
+      criterion: "history",
+      text: "Identifies oxybutynin and over the counter diphenhydramine as anticholinergic contributors.",
+      points: 1,
       teaching: "Anticholinergic drugs cause delirium directly and through retention and constipation. Always ask about over the counter sleep aids.",
       source: "beers",
     },
     {
       id: "del-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Stops the anticholinergic drugs, avoids abrupt withdrawal of long term zopiclone and holds the thiazide.",
       points: 3,
       critical: true,
@@ -407,7 +424,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-m2",
       competency: "management",
-      criterion: "data",
+      criterion: "management",
       text: "Does not treat asymptomatic bacteriuria in the absence of fever or localizing symptoms.",
       points: 2,
       teaching: "Positive urine tests are common in older women without infection. Antibiotics do not improve delirium from other causes and cause harm.",
@@ -416,7 +433,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses non pharmacological measures first, reserves low dose haloperidol 0.25 to 0.5 mg for danger or severe distress and avoids benzodiazepines.",
       points: 3,
       critical: true,
@@ -426,7 +443,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Relieves retention with a catheter, treats impaction and corrects sodium slowly.",
       points: 1,
       teaching: "Retention and constipation are easily fixed causes. Sodium should rise no more than 8 mmol/L in 24 hours in a chronic case.",
@@ -435,7 +452,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Assesses capacity, clarifies the type of power of attorney and obtains consent from the correct substitute decision maker.",
       points: 2,
       teaching: "In Ontario a power of attorney for property does not give authority over health care. The Health Care Consent Act lists the order of substitute decision makers.",
@@ -444,7 +461,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses physical restraint only as a last resort, with consent and monitoring.",
       points: 1,
       teaching: "Restraints increase agitation, injury and death in delirium. Ontario hospitals must follow the Patient Restraints Minimization Act.",
@@ -453,7 +470,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the decision maker role respectfully to the daughter and includes her in planning.",
       points: 1,
       teaching: "Families often misunderstand power of attorney. A calm explanation prevents conflict and keeps everyone involved.",
@@ -462,7 +479,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains delirium, its likely course and how family can help, in plain words.",
       points: 1,
       teaching: "Family presence, glasses, hearing aids and familiar voices help recovery. Families need to know recovery can take weeks.",
@@ -471,18 +488,55 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits for treatment and delirium care rather than discharging home to an exhausted spouse, with geriatric follow up.",
       points: 3,
       critical: true,
       teaching: "Delirium carries a high risk of death, falls and institutional placement. Discharge needs a resolved cause and a safe caregiver.",
       source: "ccsmh",
     },
+    {
+      id: "del-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Finds urinary retention with a bladder scan and fecal impaction on rectal exam.",
+      points: 1,
+      teaching: "Retention and constipation are common, easily missed and quickly fixed causes of delirium. Anticholinergic drugs make both worse.",
+      source: "ccsmh",
+    },
+    {
+      id: "del-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the daughter and husband about the time course and fluctuation, and about her cognition and function before this illness.",
+      points: 2,
+      teaching: "Delirium is defined by acute change from baseline. Only collateral can tell you what her baseline was.",
+      source: "ccsmh",
+    },
+    {
+      id: "del-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks specifically about new medications, over the counter products and sleep aids, alcohol and sedative use.",
+      points: 2,
+      teaching: "Families often do not think of over the counter sleep aids as medications. Diphenhydramine is strongly anticholinergic and on the Beers list.",
+      source: "beers",
+    },
+    {
+      id: "del-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about bowel and bladder function, food and fluid intake, falls and urinary symptoms such as dysuria.",
+      points: 1,
+      teaching: "Constipation, retention, dehydration and falls are common precipitants. Real urinary symptoms separate infection from bacteriuria.",
+      source: "ccsmh",
+    },
   ],
   sources: [
     {
       id: "ccsmh",
-      citation: "Canadian Coalition for Seniors' Mental Health. Guideline on the assessment and treatment of delirium.",
+      citation: "Canadian Coalition for Seniors' Mental Health. 2014 guideline update. The assessment and treatment of delirium. 2014.",
+      url: "https://ccsmh.ca/wp-content/uploads/2016/03/2014-ccsmh-Guideline-Update-Delirium.pdf",
     },
     {
       id: "cam",
@@ -495,14 +549,15 @@ export const deliriumOlderAdult: OralCase = {
     },
     {
       id: "cw-ammi",
-      citation: "Choosing Wisely Canada. Recommendations from the Association of Medical Microbiology and Infectious Disease Canada.",
+      citation: "Choosing Wisely Canada. Medical microbiology. Recommendations from the Association of Medical Microbiology and Infectious Disease Canada. Updated 2021.",
+      url: "https://choosingwiselycanada.org/recommendation/medical-microbiology/",
     },
     {
       id: "hcca",
       citation: "Ontario. Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

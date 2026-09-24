@@ -15,16 +15,32 @@ export const highVoltageElectricalInjury: OralCase = {
     { topic: "msk", n: 7 },
   ],
   summary: "A 31 year old utility worker arrives after contact with an overhead line with small visible wounds and a sore arm.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a regional hospital in central Ontario with general surgery, orthopaedics, an ICU and CT around the clock. There is no plastic surgery and no burn unit. " +
-    "The nearest adult burn centre is 90 minutes away by ground. Transfers are arranged through CritiCall Ontario. " +
-    "Tyler Bouchard is 31 years old. He is a power lineworker. At 09:20 his right hand touched a 25 kV distribution line while he was working from a bucket truck. " +
-    "His coworker says he was stuck for about 2 seconds, then slumped in the harness and was unresponsive for under a minute. He did not fall. " +
-    "He arrives by ground ambulance at 10:05. " +
-    "Vitals: heart rate 112, blood pressure 138/84, respiratory rate 20, SpO2 97 percent on room air, temperature 36.9, GCS 15. Weight 85 kg. " +
-    "The paramedic says: 'The burns look small. His main complaint is his right forearm. His ECG in the truck was sinus tach.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is general surgery but no plastic surgery or burn unit. The nearest burn centre is 90 minutes away by ground. " +
+    "A 31 year old power lineworker arrives by ambulance after contact with an overhead line. His right forearm hurts.",
+  card: {
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "112/minute",
+      resp: "20/minute",
+      bp: "138/84 mmHg",
+      o2sat: "97% on room air",
+      weight: "85 kg (187 lb)",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "At 09:20 his right hand touched a 25 kV distribution line while he was working from a bucket truck. " +
+        "His coworker says he was stuck for about 2 seconds, then slumped in the harness and was unresponsive for under a minute. He did not fall. " +
+        "He arrived by ground ambulance at 10:05 with a GCS of 15. The paramedic says the burns look small, his main complaint is his right forearm, and the ECG in the truck was sinus tachycardia.",
+    },
     {
       id: "wounds",
       label: "Skin wounds",
@@ -75,7 +91,7 @@ export const highVoltageElectricalInjury: OralCase = {
     },
     {
       id: "tetanus",
-      label: "Tetanus history",
+      label: "Immunizations",
       result: "Last tetanus booster 12 years ago.",
     },
   ],
@@ -101,8 +117,9 @@ export const highVoltageElectricalInjury: OralCase = {
         "Identify contact points. Right hand to left heel means current crossed the torso.",
         "Two large bore IVs away from the injured limb. Bloods including CK, troponin and electrolytes.",
         "Consider spine injury if there was a fall or violent muscle contraction.",
+        "Take the mechanism from the paramedic and coworker: voltage, contact points, contact time, loss of consciousness, any fall and limb symptoms.",
       ],
-      rubric: ["el-a1", "el-r1"],
+      rubric: ["el-h1", "el-h2", "el-h4", "el-a1", "el-r1"],
       next: "q-fluids",
     },
     {
@@ -295,7 +312,7 @@ export const highVoltageElectricalInjury: OralCase = {
         "Neurological sequelae may be delayed.",
         "Tetanus booster, Tdap 0.5 mL IM.",
       ],
-      rubric: ["el-a4", "el-m4"],
+      rubric: ["el-h3", "el-a4", "el-m4"],
       next: "q-supervisor",
     },
     {
@@ -306,7 +323,7 @@ export const highVoltageElectricalInjury: OralCase = {
       seconds: 60,
       modelAnswer: [
         "Health information is confidential. Do not share without the patient's consent.",
-        "Ask Tyler what he wants shared and with whom.",
+        "Ask the patient what he wants shared and with whom.",
         "The employer can be told he is being treated, if he agrees.",
         "Complete the WSIB Health Professional's Report, Form 8, as Ontario requires.",
         "Occupational health and safety investigations go through the proper channels, not a bedside conversation.",
@@ -315,7 +332,7 @@ export const highVoltageElectricalInjury: OralCase = {
       choices: [
         {
           id: "c-consent",
-          label: "I asked Tyler what he wanted shared, gave the supervisor only that, and completed the WSIB Form 8.",
+          label: "I asked the patient what he wanted shared, gave the supervisor only that, and completed the WSIB Form 8.",
           next: "q-dispo",
           quality: "strong",
           feedback:
@@ -335,7 +352,7 @@ export const highVoltageElectricalInjury: OralCase = {
       kind: "say",
       id: "s-share",
       phase: "Later",
-      text: "Tyler is upset that his supervisor knew details before his wife did. The charge nurse suggests you apologize and speak with the privacy office.",
+      text: "The patient is upset that his supervisor knew details before his wife did. The charge nurse suggests you apologize and speak with the privacy office.",
       next: "q-dispo",
     },
     {
@@ -364,7 +381,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Recognizes that surface burns underestimate deep tissue injury in high voltage exposure.",
       points: 2,
       teaching: "Current follows nerves, vessels and muscle. A small skin wound can hide massive muscle necrosis.",
@@ -373,7 +390,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Identifies myoglobinuria from tea coloured urine with dipstick blood and few RBCs.",
       points: 1,
       teaching: "A positive dipstick for blood with few red cells on microscopy suggests myoglobin. It is a warning of kidney injury.",
@@ -382,7 +399,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Diagnoses compartment syndrome clinically, supported by a delta pressure under 30 mmHg, and knows a pulse does not exclude it.",
       points: 2,
       teaching: "Pain with passive stretch is the earliest sign. Pulses disappear late. Delta pressure is diastolic minus compartment pressure.",
@@ -391,7 +408,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-a4",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Looks for associated injuries including cardiac injury, cataracts, tympanic rupture and spinal fractures.",
       points: 1,
       teaching: "Cataracts can appear months later. Baseline acuity protects the patient and the record.",
@@ -400,7 +417,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Places him on continuous cardiac monitoring and obtains an ECG and IV access away from the injured limb.",
       points: 1,
       teaching: "Arrhythmias usually appear early. The injured limb may soon need surgery and swell.",
@@ -409,7 +426,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Titrates Ringer's lactate to a urine output of 75 to 100 mL per hour while pigment persists, rather than using a TBSA formula alone.",
       points: 3,
       critical: true,
@@ -419,7 +436,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges emergency fasciotomy with carpal tunnel release without delaying for transfer, and keeps the limb at heart level.",
       points: 3,
       critical: true,
@@ -429,7 +446,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats hyperkalemia with calcium, insulin 10 units with 25 g of dextrose and salbutamol, and monitors glucose.",
       points: 3,
       critical: true,
@@ -439,7 +456,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives tetanus prophylaxis and orders cardiac monitoring for at least 24 hours with serial troponin.",
       points: 1,
       teaching: "Full thickness burns are tetanus prone. His last booster was over 5 years ago. High voltage with loss of consciousness or ECG changes warrants monitored admission.",
@@ -448,7 +465,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Transfers to a burn centre, since electrical injury is a burn centre referral criterion.",
       points: 2,
       teaching: "Burn centres manage serial debridement, reconstruction and rehabilitation for electrical injury.",
@@ -457,7 +474,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Involves nephrology early for rising creatinine, hyperkalemia and possible dialysis.",
       points: 1,
       teaching: "Ongoing rhabdomyolysis can overwhelm medical therapy. Dialysis may be needed for potassium, acidosis or oliguria.",
@@ -466,7 +483,7 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover with voltage, contact points, fasciotomy findings, lab trends, treatments and pending issues.",
       points: 1,
       teaching: "The receiving team needs the mechanism and trends, not only the current numbers.",
@@ -475,17 +492,53 @@ export const highVoltageElectricalInjury: OralCase = {
     {
       id: "el-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Protects confidentiality with the employer, obtains consent before sharing and completes the WSIB Form 8.",
       points: 2,
       teaching: "Under Ontario's PHIPA, employers have no right to clinical details without consent. The WSIB report is a separate legal duty that goes directly to the WSIB.",
       source: "phipa",
     },
+    {
+      id: "el-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the mechanism: voltage, contact points, duration of contact, and whether he fell or was thrown.",
+      points: 2,
+      teaching: "Voltage over 1,000 volts and a hand to foot path predict deep muscle and cardiac injury. A fall or violent contraction adds blunt trauma and spine injury.",
+      source: "abls",
+    },
+    {
+      id: "el-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about loss of consciousness, palpitations, chest pain and the prehospital rhythm.",
+      points: 2,
+      teaching: "Loss of consciousness or an arrhythmia after high voltage exposure calls for ECG monitoring and admission.",
+      source: "abls",
+    },
+    {
+      id: "el-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about tetanus immunization, regular medications and allergies.",
+      points: 1,
+      teaching: "Full thickness electrical burns are tetanus prone. A booster is due if the last one was more than 5 years ago.",
+      source: "abls",
+    },
+    {
+      id: "el-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about pain, numbness and weakness in the injured limb and when they started.",
+      points: 1,
+      teaching: "Pain out of proportion and new numbness are early symptoms of compartment syndrome. Their timing sets the urgency of decompression.",
+      source: "atls",
+    },
   ],
   sources: [
     {
       id: "abls",
-      citation: "American Burn Association. Advanced Burn Life Support course provider manual.",
+      citation: "American Burn Association. Advanced Burn Life Support course provider manual. 2018 update.",
     },
     {
       id: "atls",
@@ -493,7 +546,8 @@ export const highVoltageElectricalInjury: OralCase = {
     },
     {
       id: "ukka",
-      citation: "UK Kidney Association. Clinical practice guideline. Treatment of acute hyperkalaemia in adults.",
+      citation: "UK Kidney Association. Clinical practice guideline. Treatment of acute hyperkalaemia in adults. 2023.",
+      url: "https://www.ukkidney.org/health-professionals/guidelines/treatment-acute-hyperkalaemia-adults-0",
     },
     {
       id: "bosch",
@@ -504,7 +558,7 @@ export const highVoltageElectricalInjury: OralCase = {
       citation: "Ontario. Personal Health Information Protection Act, 2004, S.O. 2004, c. 3, Sched. A.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
