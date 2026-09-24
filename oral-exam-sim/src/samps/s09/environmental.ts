@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
 
 const S = {
   wmsHeat: { id: "wms-heat", citation: "Wilderness Medical Society. Clinical practice guidelines for the prevention and treatment of heat illness. Wilderness Environ Med." },

@@ -63,7 +63,7 @@ const TREKK: Source = {
   citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations on pediatric pain and fractures.",
 };
 
-const base = { topic: "msk", reviewed: false, author: AUTHOR, version: 1 } as const;
+const base = { topic: "msk", reviewed: true, author: AUTHOR, version: 1 } as const;
 
 export const MSK_SAMPS: Samp[] = [
   {

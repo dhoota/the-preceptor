@@ -502,7 +502,7 @@ export const pediatricSepticShock: OralCase = {
       url: "https://files.ontario.ca/moh-ophs-meningococcal-en-2022.pdf",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

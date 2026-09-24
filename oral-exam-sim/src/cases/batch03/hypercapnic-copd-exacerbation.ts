@@ -532,7 +532,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
         "Leuppi JD, Schuetz P, Bingisser R, et al. Short term vs conventional glucocorticoid therapy in acute exacerbations of COPD. The REDUCE randomized clinical trial. JAMA. 2013.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

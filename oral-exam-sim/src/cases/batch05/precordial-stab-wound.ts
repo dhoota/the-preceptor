@@ -501,7 +501,7 @@ export const precordialStabWound: OralCase = {
       citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

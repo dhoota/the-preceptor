@@ -558,7 +558,7 @@ export const feverReturningTraveller: OralCase = {
       citation: "Ontario. Health Protection and Promotion Act and Ontario Regulation 135/18 on designation of diseases.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

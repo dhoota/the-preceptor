@@ -486,7 +486,7 @@ export const febrileNeutropenia: OralCase = {
       citation: "Shenoy ES, et al. Evaluation and management of penicillin allergy: a review. JAMA. 2019.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

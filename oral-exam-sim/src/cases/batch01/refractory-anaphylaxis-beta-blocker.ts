@@ -498,7 +498,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
       citation: "Shaker MS, Wallace DV, Golden DBK, et al. Anaphylaxis. A 2020 practice parameter update, systematic review, and GRADE analysis. J Allergy Clin Immunol. 2020.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

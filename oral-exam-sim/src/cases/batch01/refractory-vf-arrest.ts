@@ -667,7 +667,7 @@ export const refractoryVfArrest: OralCase = {
       citation: "Yannopoulos D, Bartos J, Raveendran G, et al. Advanced reperfusion strategies for patients with out of hospital cardiac arrest and refractory ventricular fibrillation (ARREST). Lancet. 2020.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

@@ -475,7 +475,7 @@ export const olderWomanBroughtBySon: OralCase = {
       citation: "Ontario. Fixing Long-Term Care Act, 2021, section 28, and Retirement Homes Act, 2010, section 75.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

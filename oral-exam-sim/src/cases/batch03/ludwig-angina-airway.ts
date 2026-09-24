@@ -465,7 +465,7 @@ export const ludwigAnginaAirway: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/33383265/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

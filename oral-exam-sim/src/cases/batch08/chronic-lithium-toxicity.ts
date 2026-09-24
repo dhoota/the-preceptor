@@ -586,7 +586,7 @@ export const chronicLithiumToxicity: OralCase = {
       citation: "Ontario Poison Centre. Toxicology consultation for health care providers.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

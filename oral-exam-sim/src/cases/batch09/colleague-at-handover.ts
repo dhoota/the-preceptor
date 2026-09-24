@@ -488,7 +488,7 @@ export const colleagueAtHandover: OralCase = {
       citation: "Canadian Medical Protective Association. Advice to members on concerns about a colleague.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

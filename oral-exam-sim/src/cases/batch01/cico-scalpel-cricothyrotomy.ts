@@ -504,7 +504,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
       citation: "Chrimes N. The Vortex. A universal high acuity implementation tool for emergency airway management. Br J Anaesth. 2016.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

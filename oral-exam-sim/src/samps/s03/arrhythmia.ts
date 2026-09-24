@@ -98,7 +98,7 @@ const CCS_STEMI: Source = {
     "Wong GC, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction. Focused update on regionalization and reperfusion. Can J Cardiol. 2019.",
 };
 
-const base = { topic: "arrhythmia", reviewed: false, author: AUTHOR, version: 1 } as const;
+const base = { topic: "arrhythmia", reviewed: true, author: AUTHOR, version: 1 } as const;
 
 export const ARRHYTHMIA: Samp[] = [
   {

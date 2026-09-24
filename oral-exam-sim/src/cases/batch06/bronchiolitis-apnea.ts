@@ -531,7 +531,7 @@ export const bronchiolitisApnea: OralCase = {
       url: "https://www.canada.ca/en/public-health/services/diseases/whooping-cough-pertussis/health-professionals.html",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

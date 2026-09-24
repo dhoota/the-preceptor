@@ -494,7 +494,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
       citation: "Ramipril. Canadian product monograph. Warnings on angioedema.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

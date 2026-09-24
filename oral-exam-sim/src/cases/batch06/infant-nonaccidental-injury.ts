@@ -452,7 +452,7 @@ export const infantNonaccidentalInjury: OralCase = {
     },
     { id: "acr-abuse", citation: "American College of Radiology. ACR Appropriateness Criteria. Suspected physical abuse, child." },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

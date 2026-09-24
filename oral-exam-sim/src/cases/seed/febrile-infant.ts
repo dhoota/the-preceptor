@@ -571,7 +571,7 @@ export const febrileInfant: OralCase = {
       url: "https://cpr.heartandstroke.ca/s/article/2025-Guidelines?language=en_US",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

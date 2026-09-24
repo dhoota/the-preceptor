@@ -482,7 +482,7 @@ export const divingInjuryCottage: OralCase = {
       citation: "Ontario. Health Care Consent Act, 1996.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

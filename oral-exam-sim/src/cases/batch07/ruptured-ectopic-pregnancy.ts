@@ -560,7 +560,7 @@ export const rupturedEctopicPregnancy: OralCase = {
       citation: "American College of Emergency Physicians. Ultrasound guidelines: emergency, point of care and clinical ultrasound guidelines in medicine.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

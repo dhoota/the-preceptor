@@ -573,7 +573,7 @@ export const postpartumHemorrhage: OralCase = {
       citation: "Canadian Blood Services. Clinical Guide to Transfusion.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

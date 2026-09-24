@@ -538,7 +538,7 @@ export const newsInTheFamilyRoom: OralCase = {
         "Gollob MH, et al. Recommendations for the use of genetic testing in the clinical evaluation of inherited cardiac arrhythmias associated with sudden cardiac death. Canadian Cardiovascular Society and Canadian Heart Rhythm Society joint position paper. Canadian Journal of Cardiology. 2011.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

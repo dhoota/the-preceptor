@@ -612,7 +612,7 @@ export const refractoryStatusEpilepticus: OralCase = {
       url: "https://www.ontario.ca/page/reporting-driver-medical-review",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

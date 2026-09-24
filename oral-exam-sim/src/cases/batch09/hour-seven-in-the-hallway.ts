@@ -537,7 +537,7 @@ export const hourSevenInTheHallway: OralCase = {
       citation: "Canadian Coalition for Seniors' Mental Health. National guidelines for seniors' mental health. The assessment and treatment of delirium.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

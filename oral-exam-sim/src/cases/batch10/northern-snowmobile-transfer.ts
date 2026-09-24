@@ -569,7 +569,7 @@ export const northernSnowmobileTransfer: OralCase = {
       url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

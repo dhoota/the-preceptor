@@ -553,7 +553,7 @@ export const intermediateRiskPe: OralCase = {
       url: "https://thrombosiscanada.ca/",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

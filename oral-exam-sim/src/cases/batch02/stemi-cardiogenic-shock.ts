@@ -472,7 +472,7 @@ export const stemiCardiogenicShock: OralCase = {
       url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

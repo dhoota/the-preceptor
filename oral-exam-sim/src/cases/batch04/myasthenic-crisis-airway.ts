@@ -488,7 +488,7 @@ export const myasthenicCrisisAirway: OralCase = {
         "Metlay JP et al. Diagnosis and treatment of adults with community acquired pneumonia. An official clinical practice guideline of the American Thoracic Society and Infectious Diseases Society of America. American Journal of Respiratory and Critical Care Medicine. 2019.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

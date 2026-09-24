@@ -483,7 +483,7 @@ export const drowningCottageLake: OralCase = {
       citation: "Heart and Stroke Foundation of Canada. Guidelines for CPR and emergency cardiovascular care. Post cardiac arrest care.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

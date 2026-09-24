@@ -485,7 +485,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     { id: "apls", citation: "Advanced Life Support Group. Advanced Paediatric Life Support. A practical approach to emergencies." },
     { id: "cps-choking", citation: "Canadian Paediatric Society. Preventing choking and suffocation in children. Position statement. 2012." },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

@@ -544,7 +544,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
       citation: "Ontario. Personal Health Information Protection Act, 2004.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

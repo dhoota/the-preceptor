@@ -445,7 +445,7 @@ export const carbonMonoxideFamily: OralCase = {
       citation: "Ontario. Hawkins Gignac Act (Carbon Monoxide Safety), 2013.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

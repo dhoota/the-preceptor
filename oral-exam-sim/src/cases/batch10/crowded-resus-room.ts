@@ -572,7 +572,7 @@ export const crowdedResusRoom: OralCase = {
       url: "https://www.cpso.on.ca/Physicians/Policies-Guidance/Policies/Physician-Behaviour-in-the-Professional-Environmen",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

@@ -651,7 +651,7 @@ export const feverBackPainInjectionUse: OralCase = {
       url: "https://www.cmaj.ca/content/196/38/E1280",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

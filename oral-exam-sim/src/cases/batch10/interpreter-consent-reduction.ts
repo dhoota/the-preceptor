@@ -557,7 +557,7 @@ export const interpreterConsentReduction: OralCase = {
       citation: "Green SM, et al. Unscheduled procedural sedation. A multidisciplinary consensus practice guideline. Annals of Emergency Medicine. 2019.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

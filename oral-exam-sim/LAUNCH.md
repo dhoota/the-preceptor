@@ -6,12 +6,12 @@ The app covers both components of the CFPC Examination of Added Competence in Em
 
 ## 0. Before anything else
 
-1. Review the content. Everything ships with `reviewed: false`.
+1. Review the content. New content ships with `reviewed: false`. The first 525 SAMPs and 100 oral cases were signed off by Arjan Dhoot, MD on 24 September 2026. Their ids are listed in `docs/signoff-2026-09.json`, and the tests require `reviewed: true` exactly for those ids.
    - Oral: 100 cases in `src/cases/seed/` and `src/cases/batch01/` to `batch10/`. Blueprint in `docs/BLUEPRINT.md`.
    - Written: 525 SAMPs in `src/samps/s01/` to `s18/`, 15 per priority topic. Blueprint in `docs/SAMP_BLUEPRINT.md`.
 2. Start with the adversarial review reports in `docs/reviews/`. Each batch had a separate clinical review against current Canadian guidance. The reports list what was corrected, the sources checked and what still needs a physician's eye.
 3. For SAMPs, read each answer key as an examiner would. Check the acceptable answers, the required count, the unacceptable answers and anything flagged dangerous. Check that the match phrases would catch the ways a candidate might write a correct answer.
-4. When an item is signed off, change `reviewed: false` to `reviewed: true`. Bump `version` if you edit it. The Draft tag disappears once reviewed.
+4. When an item is signed off, change `reviewed: false` to `reviewed: true` and add its id to a sign-off file in `docs/`. Bump `version` if you edit it. If a signed-off item changes later, remove its id and set it back to `reviewed: false`. The Draft tag disappears once reviewed.
 5. Run `npm test`. Release builds also run the launch gate: at least 100 oral cases with at least 5 per area, at least 500 SAMPs, and every CFPC key feature tested by at least one written question.
 
 ## 1. Give the app its own repo
@@ -79,6 +79,8 @@ A candidate who already owns one component sees only the other one offered. Comp
 
 ## 7. Price proposal
 
+Confirmed by Arjan on 24 September 2026: Complete CA$199.99, Written CA$149.99, Oral CA$99.99.
+
 The bank is now far larger: 525 SAMPs and 100 oral cases. Running cost is still zero. The store fee is 15 percent.
 
 | Product | Price | Nets about |
@@ -98,7 +100,7 @@ Reasoning:
 
 ## 7a. Exam format decisions
 
-- Written mocks: a full mock is 40 SAMPs in 4 hours and a half mock is 20 in 2 hours. The CFPC states the SAMP exam is designed to last four hours but we did not find a published case count, so 40 is our estimate. Change `MOCK_WRITTEN` in `src/engine/exam.ts` if you know better.
+- Written mocks: a full mock is 40 SAMPs in 4 hours and a half mock is 20 in 2 hours. The CFPC states the SAMP exam is designed to last four hours but we did not find a published case count, so 40 was our estimate. Arjan confirmed 40 SAMPs in 4 hours on 24 September 2026. The setting is `MOCK_WRITTEN` in `src/engine/exam.ts`.
 - Written scoring: each question is worth one point, split evenly across the answers it asks for. Only the first N answers count. A dangerous answer zeroes the question. Candidates may override the automatic match on their own answers. The CFPC does not publish a pass mark, so the app shows scores without a pass band for the written component.
 - Oral: 12 minute stations, timed from the moment the candidate has read the stem, four stations on four different priority topics, marked on four criteria: diagnostic approach, use and interpretation of data, diagnosis, and a timely treatment plan.
 - Blueprint: the 35 CFPC EM priority topics and 215 key features, from the CFPC key features document linked on the Preparing page. Key feature text in the app is our own paraphrase. The official wording is linked, not copied, because CFPC material may only be reproduced for non-commercial use.
@@ -123,7 +125,8 @@ To regenerate the screenshots after content changes, build a seeded static copy 
 
 ## 10. Legal and disclaimer checklist
 
-- [ ] Every case reviewed and `reviewed: true` set by a physician.
+- [x] First 525 SAMPs and 100 oral cases signed off by a physician (24 September 2026).
+- [ ] Every SAMP added after that signed off and set to `reviewed: true`.
 - [ ] No CFPC logos or trademarks in the app, icon, screenshots or listing. "CCFP-EM" names the certificate the exam leads to. Say clearly that the app is independent and not affiliated. Consider asking the CFPC whether it objects to the name.
 - [ ] No CFPC sample question or recalled exam content in the app. The Official CFPC resources screen only links out.
 - [ ] In-app disclaimer shown on first launch. It is in `src/screens/Disclaimer.tsx`.
@@ -167,7 +170,9 @@ In the browser dev server the unlock is simulated so you can click through the p
 
 ## Physician review: items the reviewers flagged
 
-Each batch review in `docs/reviews/` ends with open questions. These change keyed answers and need a decision first.
+Each batch review in `docs/reviews/` ends with open questions. These changed keyed answers.
+
+Status: confirmed by Arjan Dhoot, MD on 24 September 2026. That covers every item below, the Ontario law framing, the pricing and the 40 SAMP four hour mock.
 
 - Rh immune globulin in early pregnancy loss and ectopic pregnancy now follows SOGC No. 448 (2024). It is not routinely given before 8 weeks and is optional from 8 to 12 weeks. The CFPC key feature still says to offer prophylaxis. Affects s01 and s10.
 - Beta blockers in cocaine toxicity are unacceptable, not dangerous, following the 2023 AHA update. Affects s12 and s18.

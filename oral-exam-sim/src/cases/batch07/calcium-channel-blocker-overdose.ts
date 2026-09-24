@@ -500,7 +500,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
       citation: "Nelson LS, et al, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw Hill. 2019.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

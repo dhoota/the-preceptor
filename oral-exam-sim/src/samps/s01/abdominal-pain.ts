@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const meta = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 };
+const meta = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 };
 
 const SRC: Record<string, Source> = {
   svsAaa: { id: "svs-aaa", citation: "Society for Vascular Surgery. Practice guidelines on the care of patients with an abdominal aortic aneurysm. 2018." },

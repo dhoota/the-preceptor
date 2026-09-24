@@ -494,7 +494,7 @@ export const adultSepticShock: OralCase = {
       citation: "PRISM Investigators. Early, goal directed therapy for septic shock: a patient level meta analysis. N Engl J Med. 2017.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

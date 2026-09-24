@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import signoff from "../docs/signoff-2026-09.json";
 import { BATCHES, CASES } from "@/cases";
 import { BLUEPRINT, ORAL_CRITERIA, questionRange, validateCase } from "@/engine";
 import { topicById } from "@/blueprint/priorityTopics";
@@ -8,6 +9,9 @@ import { topicById } from "@/blueprint/priorityTopics";
  * CASE_BATCH=batch03 limits the run to one batch while it is being written.
  * LAUNCH_GATE=1 also enforces the pre-launch blueprint minimums.
  */
+
+/** Signed-off ids. Anything new or changed stays reviewed: false. */
+const SIGNED_OFF = new Set<string>(signoff.cases);
 
 const only = process.env.CASE_BATCH;
 const target = only ? BATCHES[only] ?? [] : CASES;
@@ -69,8 +73,8 @@ for (const c of target) {
     it("uses a kebab case id", () => {
       expect(c.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
     });
-    it("awaits physician review", () => {
-      expect(c.reviewed).toBe(false);
+    it("is marked reviewed only if a physician signed it off", () => {
+      expect(c.reviewed).toBe(SIGNED_OFF.has(c.id));
     });
     it("has 6 to 12 questions on every path and real branching", () => {
       const r = questionRange(c);

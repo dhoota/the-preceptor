@@ -579,7 +579,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
       citation: "Succinylcholine chloride injection. Canadian product monograph. Warnings on hyperkalemia.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

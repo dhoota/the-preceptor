@@ -496,7 +496,7 @@ export const bacterialMeningitisAdult: OralCase = {
       url: "https://www.canlii.org/en/on/laws/regu/o-reg-135-18/latest/o-reg-135-18.html",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

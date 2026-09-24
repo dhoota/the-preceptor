@@ -589,7 +589,7 @@ export const opioidOverdoseBuprenorphineStart: OralCase = {
       url: "https://doi.org/10.1001/jamanetworkopen.2021.17128",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

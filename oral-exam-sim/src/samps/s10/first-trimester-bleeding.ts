@@ -3,7 +3,7 @@
 import type { KeyItem, Samp, UnacceptableItem } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
 
 const k = (id: string, text: string, ...match: string[]): KeyItem => ({ id, text, match });
 const no = (text: string, ...match: string[]): UnacceptableItem => ({ text, match });

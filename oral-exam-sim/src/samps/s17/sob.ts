@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
 
 const S = {
   cafg: { id: "cafg", citation: "Law JA, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Can J Anesth. 2021." },

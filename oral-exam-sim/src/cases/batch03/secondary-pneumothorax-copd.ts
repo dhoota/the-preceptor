@@ -545,7 +545,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
       citation: "Canadian Patient Safety Institute. Canadian Disclosure Guidelines. Being open with patients and families. 2011.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

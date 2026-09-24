@@ -3,7 +3,7 @@
 import type { Samp } from "@/engine/samp";
 import type { Source } from "@/engine/types";
 
-const meta = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 };
+const meta = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 };
 
 const CCS_STEMI: Source = {
   id: "ccs-stemi",

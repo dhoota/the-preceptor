@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import signoff from "../docs/signoff-2026-09.json";
 import { PRIORITY_TOPICS, topicById } from "@/blueprint/priorityTopics";
 import { validateSamp } from "@/engine/samp";
 import { SAMPS, SAMP_BATCHES } from "@/samps";
@@ -8,6 +9,9 @@ import { SAMPS, SAMP_BATCHES } from "@/samps";
  * SAMP_BATCH=s03 limits the run to one batch. LAUNCH_GATE=1 enforces 500+
  * SAMPs and full key feature coverage for every priority topic.
  */
+
+/** Signed-off ids. Anything new or changed stays reviewed: false. */
+const SIGNED_OFF = new Set<string>(signoff.samps);
 
 const only = process.env.SAMP_BATCH;
 const target = only ? SAMP_BATCHES[only] ?? [] : SAMPS;
@@ -73,8 +77,8 @@ for (const s of target) {
     it("is structurally valid", () => {
       expect(validateSamp(s, kfCount)).toEqual([]);
     });
-    it("awaits physician review", () => {
-      expect(s.reviewed).toBe(false);
+    it("is marked reviewed only if a physician signed it off", () => {
+      expect(s.reviewed).toBe(SIGNED_OFF.has(s.id));
     });
     it("follows house style", () => {
       for (const x of strings(s)) {

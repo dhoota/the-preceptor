@@ -444,7 +444,7 @@ export const metastaticCordCompression: OralCase = {
         "Fisher CG et al. A novel classification system for spinal instability in neoplastic disease. An evidence based approach and expert consensus from the Spine Oncology Study Group. Spine. 2010.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

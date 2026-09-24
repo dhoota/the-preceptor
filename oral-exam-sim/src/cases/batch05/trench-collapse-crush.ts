@@ -462,7 +462,7 @@ export const trenchCollapseCrush: OralCase = {
       citation: "Workplace Safety and Insurance Board of Ontario. Health professional's report (Form 8).",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

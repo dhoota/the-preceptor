@@ -87,7 +87,7 @@ const ALS_PCS: Source = {
   citation: "Ontario Ministry of Health. Advanced Life Support Patient Care Standards.",
 };
 
-const base = { topic: "anaphylaxis", reviewed: false, author: AUTHOR, version: 1 } as const;
+const base = { topic: "anaphylaxis", reviewed: true, author: AUTHOR, version: 1 } as const;
 
 export const ANAPHYLAXIS: Samp[] = [
   {

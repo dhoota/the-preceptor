@@ -508,7 +508,7 @@ export const wideComplexTachycardia: OralCase = {
       citation: "Guerra PG, et al. Canadian Cardiovascular Society 2023 Guidelines on the Fitness to Drive. Canadian Journal of Cardiology. 2024.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

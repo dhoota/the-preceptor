@@ -85,7 +85,7 @@ const ECFAA: Source = {
   citation: "Ontario. Excellent Care for All Act, 2010.",
 };
 
-const base = { topic: "cqi", reviewed: false, author: AUTHOR, version: 1 } as const;
+const base = { topic: "cqi", reviewed: true, author: AUTHOR, version: 1 } as const;
 
 const DISCIPLINE = { text: "Discipline or remove the staff member", match: ["discipline", "suspend", "fire the", "terminate"] };
 const EDUCATION_ONLY = { text: "Staff education or reminders alone", match: ["education alone", "education only", "educate staff", "staff education", "remind", "reminder", "retrain", "in service", "memo"] };

@@ -469,7 +469,7 @@ export const kneeDislocationVascularInjury: OralCase = {
       citation: "Godwin SA, et al. Clinical policy. Procedural sedation and analgesia in the emergency department. Annals of Emergency Medicine. 2014.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

@@ -585,7 +585,7 @@ export const trauma: OralCase = {
     { id: "btf", citation: "Brain Trauma Foundation. Guidelines for the management of severe traumatic brain injury. Fourth edition. 2016." },
     { id: "criticall", citation: "CritiCall Ontario. Provincial emergency referral and transfer service.", url: "https://www.criticall.org" },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

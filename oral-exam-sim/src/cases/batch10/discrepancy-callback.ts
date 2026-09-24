@@ -661,7 +661,7 @@ export const discrepancyCallback: OralCase = {
       citation: "Health Quality Ontario, now Ontario Health. Quality standard. Hip fracture. Care for people with fragility fractures. Updated 2024.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

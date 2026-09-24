@@ -468,7 +468,7 @@ export const pediatricDka: OralCase = {
       citation: "Kuppermann N, et al. Clinical trial of fluid infusion rates for pediatric diabetic ketoacidosis. N Engl J Med. 2018.",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };

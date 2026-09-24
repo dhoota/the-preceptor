@@ -558,7 +558,7 @@ export const chronicDigoxinToxicity: OralCase = {
       url: "https://pdf.hres.ca/dpd_pm/00046345.PDF",
     },
   ],
-  reviewed: false,
+  reviewed: true,
   author: "Draft for review by Arjan Dhoot, MD",
   version: 1,
 };
