@@ -79,9 +79,10 @@ Return batch, the number of notes written, the number left empty, and whether te
 const results = await pipeline(
   BATCHES,
   (b) => (args.rework && args.rework[b]) ? agent(reworkPrompt(b, args.rework[b]), { label: `rework:${b}`, phase: 'Write', schema: WRITER }) : ((args.written || []).includes(b) ? { batch: b, items: 0, testsPass: true, notes: 'written in an earlier run' } : agent(writerPrompt(b), { label: `write:${b}`, phase: 'Write', schema: WRITER })),
-  (w, b, i) => (w ? agent(plantPrompt(b, i), { label: `plant:${b}`, phase: 'Plant', effort: 'low' }).then((ids) => ({ w, ids })) : null),
+  (w, b, i) => ((args.reviewed || []).includes(b) ? { w, ids: null, reviewed: true } : w ? agent(plantPrompt(b, i), { label: `plant:${b}`, phase: 'Plant', effort: 'low' }).then((ids) => ({ w, ids })) : null),
   async (prev, b, i) => {
     if (!prev) return null
+    if (prev.reviewed) return { ...prev, review: { skipped: 'reviewed in an earlier run' }, caught: 2, passes: 0 }
     const planted = b.startsWith('c') ? [`rn-${b}-9`, `rn-${b}-8`] : [`rn-${b}-91`, `rn-${b}-92`]
     let r = await agent(reviewPrompt(b, 1), { label: `review:${b}`, phase: 'Review', schema: REVIEW })
     let caught = r ? planted.filter((id) => r.defectIds.includes(id)).length : 0
