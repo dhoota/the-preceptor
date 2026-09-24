@@ -208,7 +208,10 @@ describe("signed-off answer keys", () => {
   type Snap = { id: string; kind: string; keyed?: string[]; select?: number; required?: number; accept?: unknown; unacceptable?: unknown };
   const snap = signoffKeys as Record<string, Snap[]>;
   const edits = keyEdits.edits as Record<string, { before: string[]; after: string[] }>;
-  for (const s of SAMPS.filter((x) => x.reviewed && (!only || SAMP_BATCHES[only]?.includes(x)))) {
+  const signed = SAMPS.filter((x) => x.reviewed && (!only || SAMP_BATCHES[only]?.includes(x)));
+  // New batches ship reviewed: false, so there may be nothing to check here.
+  if (!signed.length) it("has no signed-off SAMPs in this run", () => expect(signed).toEqual([]));
+  for (const s of signed) {
     it(`${s.id} keeps its keys`, () => {
       const before = snap[s.id];
       expect(before, "in the key snapshot").toBeDefined();
