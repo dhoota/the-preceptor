@@ -11,7 +11,12 @@ const S = {
   bcHeat: { id: "bc-heat", citation: "BC Coroners Service. Extreme heat and human mortality: a review of heat-related deaths in B.C. in summer 2021. Report to the Chief Coroner of British Columbia. 2022.", url: "https://www2.gov.bc.ca/assets/gov/birth-adoption-death-marriage-and-divorce/deaths/coroners-service/death-review-panel/extreme_heat_death_review_panel_report.pdf" },
   ssc: { id: "ssc-2021", citation: "Evans L, Rhodes A, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/34599691/" },
   tunkel: { id: "idsa-meningitis", citation: "Tunkel AR, Hartman BJ, Kaplan SL, and colleagues. Practice guidelines for the management of bacterial meningitis. Infectious Diseases Society of America. Clin Infect Dis. 2004.", url: "https://pubmed.ncbi.nlm.nih.gov/15494903/" },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on heat illness, accidental hypothermia, dysbarism and electrical injury." },
+  rosenCh54: { id: "rosen-ch54", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 54, Thermal Injuries.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh38: { id: "rosen-ch38", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 38, Abdominal Trauma.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh140: { id: "rosen-ch140", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 140, Anticholinergics.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh144: { id: "rosen-ch144", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 144, Cocaine and Other Sympathomimetics.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  sccmRsi: { id: "sccm-rsi", citation: "Acquisto NM, Mosier JM, Bittner EA, and colleagues. Society of Critical Care Medicine clinical practice guidelines for rapid sequence intubation in the critically ill adult patient. Crit Care Med. 2023. doi:10.1097/CCM.0000000000006000", url: "https://pubmed.ncbi.nlm.nih.gov/37707379/" },
+  acrSpine: { id: "acr-spine-trauma", citation: "Beckmann NM, West OC, Nunez D Jr, and colleagues. ACR Appropriateness Criteria suspected spine trauma. American College of Radiology. J Am Coll Radiol. 2019. doi:10.1016/j.jacr.2019.02.002", url: "https://pubmed.ncbi.nlm.nih.gov/31054754/" },
   paal: { id: "paal-hypothermia", citation: "Paal P, Pasquier M, Darocha T, and colleagues. Accidental hypothermia: 2021 update. Int J Environ Res Public Health. 2022.", url: "https://pubmed.ncbi.nlm.nih.gov/35010760/" },
   icar: { id: "icar-avalanche", citation: "Pasquier M, Strapazzon G, Kottmann A, and colleagues. On-site treatment of avalanche victims: scoping review and 2023 recommendations of the International Commission for Mountain Emergency Medicine (ICAR MedCom). Resuscitation. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/36709825/" },
   wmsFrost: { id: "wms-frostbite", citation: "McIntosh SE, Freer L, Grissom CK, and colleagues. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of frostbite. 2024 update. Wilderness Environ Med. 2024.", url: "https://pubmed.ncbi.nlm.nih.gov/38577729/" },
@@ -107,7 +112,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         correct: 2,
         explanation: "Dilated pupils and urinary retention are peripheral antimuscarinic signs, and with anticholinergic drugs on her medication list they would point to anticholinergic toxicity adding to the heat. Hot, dry skin occurs in classic heat stroke in older adults as well as in anticholinergic toxicity, so it does not separate them. Brisk reflexes with clonus point to serotonin toxicity. Lead pipe rigidity points to neuroleptic malignant syndrome rather than anticholinergic toxicity. Right basal crackles point to a pneumonia. Cooling proceeds while these causes are sorted out.",
         keyFeature: { topic: "environmental", n: 2 },
-        source: "rosen",
+        source: "rosen-ch140",
       },
       {
         id: "q2",
@@ -146,7 +151,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         source: "bc-heat",
       },
     ],
-    sources: [S.wmsHeat, S.ssc, S.bcHeat, S.rosen],
+    sources: [S.wmsHeat, S.ssc, S.bcHeat, S.rosenCh140],
     ...META,
   },
 
@@ -215,9 +220,9 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         options: ["Cisatracurium 0.15 mg/kg IV", "Pancuronium 0.1 mg/kg IV", "Rocuronium 1.2 mg/kg IV", "Succinylcholine 1.5 mg/kg IV", "Vecuronium 0.1 mg/kg IV"],
         correct: 2,
         explanation:
-          "Succinylcholine raises serum potassium by about 0.5 mmol/L, which is dangerous at 6.3 mmol/L with ECG changes and likely rhabdomyolysis from exertional heat stroke. Rocuronium 1.2 mg/kg, about 100 mg at 85 kg, gives intubating conditions in about 60 seconds without raising potassium. Cisatracurium, pancuronium and vecuronium at these doses take several minutes to work, which is too slow for rapid sequence intubation.",
+          "Succinylcholine raises serum potassium, which is dangerous at 6.3 mmol/L with ECG changes and likely rhabdomyolysis from exertional heat stroke. The Society of Critical Care Medicine suggests either rocuronium or succinylcholine for rapid sequence intubation when succinylcholine has no known contraindication. Rocuronium 1.2 mg/kg, about 100 mg at 85 kg, gives rapid intubating conditions without raising potassium. Cisatracurium, pancuronium and vecuronium at these doses take several minutes to work, which is too slow for rapid sequence intubation.",
         keyFeature: { topic: "environmental", n: 1 },
-        source: "rosen",
+        source: "sccm-rsi",
       },
       {
         id: "q2",
@@ -243,7 +248,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         source: "acsm-ehi",
       },
     ],
-    sources: [S.rosen, S.acsm],
+    sources: [S.sccmRsi, S.acsm],
     ...META,
   },
 
@@ -923,7 +928,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         explanation:
           "A temperature of 40.4°C with agitation and tachycardia after methamphetamine is sympathomimetic hyperthermia, which can progress to rhabdomyolysis, coagulopathy and arrest. A benzodiazepine calms him and reduces heat production, and active cooling brings his temperature down. Prone restraint raises the risk of sudden death and struggling adds heat. Haloperidol alone does not control sympathetic drive. Acetaminophen does not treat drug induced hyperthermia.",
         keyFeature: { topic: "environmental", n: 2 },
-        source: "rosen",
+        source: "rosen-ch144",
       },
       {
         id: "q2",
@@ -948,7 +953,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         source: "vilke-cew",
       },
     ],
-    sources: [S.rosen, S.vilke],
+    sources: [S.rosenCh144, S.vilke],
     ...META,
   },
 
@@ -1068,7 +1073,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         explanation:
           "A systolic BP of 88 mmHg with a pulse of 136/minute soon after a 4 m fall, with left upper quadrant tenderness and guarding, points to hemorrhage, most likely from the spleen. Burn shock develops over hours, so early hypotension in a burned patient means another cause must be found. Third spacing from rhabdomyolysis is also a later process. Neurogenic shock causes bradycardia, not tachycardia. Myocardial injury is possible but less likely than bleeding in this picture.",
         keyFeature: { topic: "environmental", n: 5 },
-        source: "rosen",
+        source: "rosen-ch54",
       },
       {
         id: "q2",
@@ -1079,7 +1084,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         explanation:
           "A bedside FAST examination quickly looks for intraperitoneal blood in a hypotensive trauma patient and guides the decision for surgery. Dressing the burns can wait until life threats are addressed. His burns are on the front of the chest only, not circumferential, and his saturation is 97% on room air, so escharotomy is not needed. Burn formula fluids treat burn shock, not hemorrhage. Echocardiography does not address the more likely source of his shock.",
         keyFeature: { topic: "environmental", n: 5 },
-        source: "rosen",
+        source: "rosen-ch38",
       },
       {
         id: "q3",
@@ -1105,7 +1110,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         source: "waldmann-electrical",
       },
     ],
-    sources: [S.rosen, S.abaRef, S.waldmann],
+    sources: [S.rosenCh54, S.rosenCh38, S.abaRef, S.waldmann],
     ...META,
   },
 
@@ -1139,7 +1144,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         explanation:
           "Lightning can cause myocardial injury, repolarization changes and QT prolongation, and her loss of consciousness, abnormal ECG and raised troponin call for admission with telemetry and an echocardiogram to assess function. The injury is from current, not coronary occlusion, so a young woman without risk factors does not need anticoagulation, urgent catheterization or coronary CT. Discharge ignores the risk of arrhythmia while the QT is prolonged.",
         keyFeature: { topic: "environmental", n: 5 },
-        source: "rosen",
+        source: "wms-lightning",
       },
       {
         id: "q3",
@@ -1150,10 +1155,10 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         explanation:
           "She was thrown 3 m and has midline tenderness at T7 and T8, so a thoracic spine fracture must be excluded, and CT is the most sensitive rapid test. Lightning victims are often thrown or fall, and their blunt injuries are easy to miss among the more striking electrical findings. A chest radiograph does not show the spine well. Delayed radiographs or discharge risk missing an unstable fracture. Brain MRI does not address the back.",
         keyFeature: { topic: "environmental", n: 5 },
-        source: "rosen",
+        source: "acr-spine-trauma",
       },
     ],
-    sources: [S.wmsLightning, S.rosen],
+    sources: [S.wmsLightning, S.acrSpine],
     ...META,
   },
 
