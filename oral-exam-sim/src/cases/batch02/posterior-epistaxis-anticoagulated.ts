@@ -1,0 +1,478 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const posteriorEpistaxisAnticoagulated: OralCase = {
+  id: "posterior-epistaxis-anticoagulated",
+  title: "A nosebleed that will not stop",
+  blueprint: "procedures",
+  alsoCovers: ["geri", "resus"],
+  summary: "A 78 year old man with two hours of heavy nose bleeding that runs down his throat despite pressure.",
+  durationMinutes: 14,
+  stem:
+    "You are working evenings at a community hospital in central Ontario. ENT is on call from home, about an hour away. There is no interventional radiology on site. " +
+    "The regional centre with ENT surgery and interventional radiology is 2 hours by land. " +
+    "Bernard Lafleur is 78 years old and weighs 72 kg. His nose started bleeding 2 hours ago while watching television. " +
+    "Triage vitals: heart rate 116 and irregular, blood pressure 174/94, respiratory rate 22, SpO2 95 percent on room air, temperature 36.5. CTAS 2. " +
+    "The nurse says: 'He has soaked two towels and he keeps spitting out clots. It is coming down his throat even when he pinches. He takes warfarin.'",
+  findings: [
+    {
+      id: "history",
+      label: "History",
+      result:
+        "Sudden onset from both nostrils, worse on the left. Blood running down the back of the throat. Vomited blood once. Lightheaded when he stood. No trauma. No prior nosebleeds this bad.",
+    },
+    {
+      id: "meds",
+      label: "Past history and medications",
+      result:
+        "Atrial fibrillation with a TIA 3 years ago. Hypertension. Warfarin 5 mg daily, last INR 2.8 a month ago. He started clarithromycin 5 days ago for a chest infection. " +
+        "Metoprolol 50 mg twice daily. Ramipril 10 mg. No antiplatelets. No allergies.",
+    },
+    {
+      id: "exam",
+      label: "Examination after suction and vasoconstrictor",
+      result:
+        "Anterior septum on both sides has no visible bleeding point. Brisk bleeding from high and far back on the left, not visible with a speculum. " +
+        "Steady trickle of blood down the posterior pharynx. Airway patent. Speaks in full sentences. Alert.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Hemoglobin 101 g/L (baseline 134 g/L). Platelets 214 x 10^9/L. INR 4.6. aPTT 44 s. Creatinine 108 µmol/L. Type and screen sent. Group A positive.",
+    },
+    {
+      id: "ecg",
+      label: "12 lead ECG",
+      result: "Atrial fibrillation at 112. No acute ST changes.",
+    },
+    {
+      id: "vitals-2",
+      label: "Vitals after 30 minutes",
+      result: "Heart rate 118. Blood pressure 138/78. SpO2 95 percent. He looks pale.",
+    },
+    {
+      id: "risk",
+      label: "Stroke risk",
+      result: "CHADS-65 positive. CHA2DS2-VASc score 5 for age, hypertension and prior TIA.",
+    },
+    {
+      id: "daughter",
+      label: "Collateral from his daughter",
+      result:
+        "His daughter says he has mild memory problems but manages his own pills. She asks why the doctors would stop his blood thinner when he had a mini stroke before.",
+    },
+    {
+      id: "post-pack",
+      label: "Vitals after posterior packing",
+      result: "Heart rate 44 in slow AF. Blood pressure 102/60. SpO2 87 percent. He is drowsy. He had fentanyl 75 mcg total for the procedure.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the procedure room",
+      text:
+        "He is sitting up, spitting clots into a basin. There is blood on the floor. The nurse has one IV in. You have a headlamp, suction, a nasal speculum and the epistaxis cart.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First minutes",
+      prompt: "What do you do first?",
+      seconds: 75,
+      modelAnswer: [
+        "Personal protective equipment including eye protection.",
+        "Sit him upright and leaning forward. Suction ready.",
+        "Airway and hemodynamic check. He is tachycardic with a large hemoglobin drop.",
+        "Two large bore IVs. CBC, INR, type and crossmatch.",
+        "Clear clots by blowing or suction. Firm pressure on the soft nose for 10 to 15 minutes.",
+        "Topical vasoconstrictor and anaesthetic on pledgets, such as xylometazoline or oxymetazoline with lidocaine.",
+      ],
+      rubric: ["epi-r1", "epi-a1"],
+      choices: [
+        {
+          id: "c-abc",
+          label: "I put on eye protection, sat him forward with suction, placed two large bore IVs, sent INR and crossmatch, and packed the nose with vasoconstrictor and lidocaine pledgets.",
+          next: "q-anterior",
+          quality: "strong",
+          feedback:
+            "Good. Airway and perfusion first, then local control. Vasoconstrictor pledgets slow the bleeding and let you see the source.",
+        },
+        {
+          id: "c-labetalol",
+          label: "I gave labetalol 20 mg IV first to bring his blood pressure down so the bleeding would slow.",
+          next: "s-labetalol",
+          quality: "partial",
+          feedback:
+            "There is little evidence that lowering blood pressure acutely stops epistaxis. He has lost a third of his hemoglobin and his pressure may drop fast. Local control and reversal come first.",
+        },
+        {
+          id: "c-flat",
+          label: "I laid him flat and gave morphine 5 mg IV for comfort while waiting for ENT.",
+          next: "s-flat",
+          quality: "unsafe",
+          feedback:
+            "Lying flat sends blood into his airway. Opioids blunt airway protection. The examiner wanted him upright and forward with suction and local control started.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-labetalol",
+      phase: "Ten minutes later",
+      text: "His pressure is 104/62 and his heart rate is 122. He is still bleeding. The nurse asks whether you want fluid. You give a bolus and turn to local control.",
+      next: "q-anterior",
+    },
+    {
+      kind: "say",
+      id: "s-flat",
+      phase: "Five minutes later",
+      text:
+        "He coughs, gags and vomits a large clot. His SpO2 drops to 88 percent. The respiratory therapist sits him up and suctions his mouth. You start local control.",
+      next: "q-anterior",
+    },
+    {
+      kind: "question",
+      id: "q-anterior",
+      phase: "Anterior control",
+      prompt: "After suction and pledgets you cannot see an anterior bleeding point. What anterior measures do you try, and how do you know when anterior control has failed?",
+      seconds: 75,
+      modelAnswer: [
+        "Look for an anterior source with a headlamp and speculum. Cauterize with silver nitrate only a visible point, one side of the septum only.",
+        "Topical tranexamic acid 500 mg in 5 mL on a pledget is reasonable. Evidence is mixed.",
+        "Anterior pack with a lubricated or wetted nasal tampon or inflatable device, 7.5 cm or longer.",
+        "Pack both sides if needed to tamponade the septum.",
+        "Failure is ongoing bleeding down the pharynx despite a well placed anterior pack. That suggests a posterior source.",
+      ],
+      rubric: ["epi-m1", "epi-a2"],
+      next: "s-still",
+    },
+    {
+      kind: "say",
+      id: "s-still",
+      phase: "Twenty minutes later",
+      text:
+        "Bilateral anterior packs are in. Blood is still running down his throat. His INR is back at 4.6 and his hemoglobin is 101 g/L. Heart rate 118. Pressure 138/78. ENT is 45 minutes away.",
+      next: "q-reversal",
+    },
+    {
+      kind: "question",
+      id: "q-reversal",
+      phase: "Anticoagulation",
+      prompt: "What do you do about his warfarin?",
+      seconds: 75,
+      modelAnswer: [
+        "This is a major bleed. Hemoglobin down over 30 g/L, tachycardic, ongoing bleeding at a non compressible site.",
+        "Hold warfarin.",
+        "Vitamin K 10 mg IV by slow infusion.",
+        "4 factor PCC, Octaplex or Beriplex, per local protocol. For an INR of 4.6 the NAC sample regimens give 2000 IU, or 35 IU/kg, about 2500 IU for 72 kg. Recheck the INR and aim for 1.5 or less.",
+        "Plasma is second line. It is slower and needs large volumes.",
+        "Note the likely cause of the high INR. Clarithromycin interacts with warfarin.",
+      ],
+      rubric: ["epi-m2", "epi-a3", "epi-l1"],
+      choices: [
+        {
+          id: "c-pcc",
+          label: "I held warfarin and gave vitamin K 10 mg IV and 4 factor PCC per our protocol, then rechecked the INR.",
+          next: "q-posterior",
+          quality: "strong",
+          feedback:
+            "Correct. PCC corrects the INR in minutes. Vitamin K sustains the correction. This is a major bleed and reversal is appropriate despite his stroke risk.",
+        },
+        {
+          id: "c-ffp",
+          label: "I gave vitamin K 10 mg IV and 4 units of frozen plasma.",
+          next: "s-ffp",
+          quality: "partial",
+          feedback:
+            "Plasma works but takes time to thaw and infuse, and a litre of volume in an older man with AF risks overload. Canadian guidance prefers PCC for urgent warfarin reversal.",
+        },
+        {
+          id: "c-none",
+          label: "I did not reverse because of his high stroke risk and planned to hold warfarin only.",
+          next: "s-none",
+          quality: "unsafe",
+          feedback:
+            "Holding warfarin alone takes days to lower the INR. He has a major bleed with a large hemoglobin drop. Short term reversal carries a small stroke risk, which is outweighed here.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ffp",
+      phase: "Forty minutes later",
+      text: "The plasma is still thawing. The first unit goes up. His INR is still 4.1. The nurse hears crackles at his bases. You call the blood bank and give PCC instead.",
+      next: "q-posterior",
+    },
+    {
+      kind: "say",
+      id: "s-none",
+      phase: "Thirty minutes later",
+      text: "He is still bleeding. His repeat hemoglobin is 88 g/L. The ENT resident on the phone asks why the INR has not been reversed. You give vitamin K 10 mg IV and PCC.",
+      next: "q-posterior",
+    },
+    {
+      kind: "question",
+      id: "q-posterior",
+      phase: "Posterior packing",
+      prompt: "He is still bleeding posteriorly. ENT is 40 minutes away. Walk me through a posterior pack.",
+      seconds: 120,
+      modelAnswer: [
+        "Explain the procedure. Small doses of analgesia. Keep him upright. Suction ready.",
+        "Remove the anterior pack on the bleeding side. Topical anaesthetic and vasoconstrictor.",
+        "Dual balloon posterior epistaxis device, or a 12 to 14 French Foley catheter.",
+        "Advance along the floor of the nose until seen behind the soft palate. Inflate the posterior balloon with sterile water or saline, not air, about 10 to 15 mL for a Foley.",
+        "Pull forward gently to seat it in the posterior choana. Then place an anterior pack.",
+        "Secure with a padded clamp so it does not press on the nostril. Check the pharynx for ongoing bleeding and that the balloon is not visible below the palate.",
+      ],
+      rubric: ["epi-m3", "epi-m4"],
+      choices: [
+        {
+          id: "c-balloon",
+          label: "I placed a dual balloon posterior device, inflated the posterior balloon with saline first, pulled it back into the choana, then inflated the anterior balloon and padded the nostril.",
+          next: "s-post-pack",
+          quality: "strong",
+          feedback:
+            "Well done. The posterior balloon seals the choana and the anterior balloon tamponades the nasal cavity. Saline keeps the volume stable. Padding prevents alar pressure necrosis.",
+        },
+        {
+          id: "c-air",
+          label: "I placed a Foley, inflated it with 30 mL of air and clamped it tight against the nostril.",
+          next: "s-air",
+          quality: "partial",
+          feedback:
+            "A Foley is an acceptable posterior pack. But air leaks out and the balloon loses volume. 30 mL can push the soft palate down. A clamp against bare skin causes alar necrosis. Use 10 to 15 mL of saline and pad the clamp.",
+        },
+        {
+          id: "c-wait",
+          label: "I kept replacing anterior packs and waited for ENT to do the posterior pack.",
+          next: "s-wait",
+          quality: "partial",
+          feedback:
+            "Repeated anterior packs will not control a posterior bleed. He is actively bleeding with a falling hemoglobin. A temporary posterior pack is an emergency physician skill.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-air",
+      phase: "Thirty minutes later",
+      text: "Bleeding starts again down his throat. The balloon has lost volume. The nostril under the clamp is blanched. You deflate, refill with 12 mL of saline, reseat it and pad the clamp.",
+      next: "s-post-pack",
+    },
+    {
+      kind: "say",
+      id: "s-wait",
+      phase: "Thirty minutes later",
+      text: "He vomits 300 mL of blood. His pressure is 96/58 and his hemoglobin is 84 g/L. You start 1 unit of red cells and place a posterior balloon device.",
+      next: "s-post-pack",
+    },
+    {
+      kind: "say",
+      id: "s-post-pack",
+      phase: "After the posterior pack",
+      text:
+        "The bleeding stops. Ten minutes later the nurse calls you back. His heart rate is 44 in slow AF. Pressure 102/60. SpO2 87 percent. He is drowsy. He had fentanyl 75 mcg total during the procedure.",
+      next: "q-brady",
+    },
+    {
+      kind: "question",
+      id: "q-brady",
+      phase: "New problem",
+      prompt: "What is going on and what do you do?",
+      seconds: 75,
+      modelAnswer: [
+        "Consider a vagal response to the posterior pack, sometimes called the nasopulmonary reflex.",
+        "Look in the mouth. Is the balloon or pack sitting in the oropharynx and obstructing the airway?",
+        "Consider opioid induced hypoventilation. Stimulate him. Naloxone in small doses if needed.",
+        "Oxygen. Sit him up. Suction.",
+        "Atropine 1 mg IV for symptomatic bradycardia if it persists.",
+        "Ongoing continuous oximetry and cardiac monitoring are needed for as long as the pack is in.",
+      ],
+      rubric: ["epi-r2", "epi-d1"],
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition",
+      prompt: "He is settled. Where does he go and what is the plan?",
+      seconds: 60,
+      modelAnswer: [
+        "Admit to a monitored bed with continuous oximetry. Many centres use step down or ICU for posterior packs.",
+        "ENT to assess. The pack usually stays in for 48 to 72 hours.",
+        "If he rebleeds through the pack, transfer for sphenopalatine artery ligation or embolization.",
+        "Transfuse to his cardiac and clinical status, usually for hemoglobin under 70 to 80 g/L.",
+        "Stop clarithromycin or choose another antibiotic. Plan anticoagulation restart with the team.",
+      ],
+      rubric: ["epi-d2", "epi-c1"],
+      next: "q-daughter",
+    },
+    {
+      kind: "question",
+      id: "q-daughter",
+      phase: "His daughter",
+      prompt: "His daughter asks why you reversed his blood thinner when he had a mini stroke. How do you answer?",
+      seconds: 60,
+      modelAnswer: [
+        "Acknowledge her worry. It is a fair question.",
+        "The bleeding was dangerous. He lost a lot of blood and it would not stop while his blood was so thin.",
+        "The short term stroke risk from reversal is real but small.",
+        "The plan is to restart anticoagulation once the bleeding is controlled, usually within days to a couple of weeks, with the team.",
+        "The high INR was likely from an antibiotic interaction. His family doctor should know.",
+      ],
+      rubric: ["epi-c2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "He is admitted to the step down unit with ENT following. His INR is 1.4 and the bleeding has stopped. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "epi-r1",
+      competency: "resuscitation",
+      text: "Keeps the patient upright and leaning forward with suction, and places two large bore IVs with crossmatch.",
+      points: 2,
+      teaching: "Heavy epistaxis is an airway and hemorrhage problem first. Blood running down the throat can be aspirated or swallowed and hide the true loss.",
+      source: "aao-epistaxis",
+    },
+    {
+      id: "epi-a1",
+      competency: "assessment",
+      text: "Recognizes hemodynamic significance from tachycardia and a hemoglobin drop over 30 g/L.",
+      points: 1,
+      teaching: "Older patients on beta blockers may not mount a big tachycardia. A falling hemoglobin tells you the size of the bleed.",
+      source: "aao-epistaxis",
+    },
+    {
+      id: "epi-m1",
+      competency: "management",
+      text: "Uses a stepwise anterior approach with vasoconstrictor, targeted cautery of a visible point and anterior packing.",
+      points: 2,
+      teaching: "Cauterize only a visible point and only one side of the septum. Topical tranexamic acid is an option but did not reduce packing in the NoPAC trial.",
+      source: "nopac",
+    },
+    {
+      id: "epi-a2",
+      competency: "assessment",
+      text: "Identifies a posterior source when bleeding continues down the pharynx despite well placed anterior packs.",
+      points: 2,
+      teaching: "Posterior bleeds are more common in older, anticoagulated and hypertensive patients. They often need posterior packing and admission.",
+      source: "aao-epistaxis",
+    },
+    {
+      id: "epi-m2",
+      competency: "management",
+      text: "Reverses warfarin for a major bleed with vitamin K 10 mg IV and 4 factor PCC, and holds warfarin.",
+      points: 3,
+      critical: true,
+      teaching: "PCC corrects the INR within minutes. Vitamin K sustains it. Plasma is slower and adds volume.",
+      source: "tc-warfarin",
+    },
+    {
+      id: "epi-a3",
+      competency: "assessment",
+      text: "Identifies the clarithromycin interaction as the likely cause of the raised INR.",
+      points: 1,
+      teaching: "Macrolides and many other antibiotics raise the INR on warfarin. Check every new drug.",
+      source: "tc-warfarin",
+    },
+    {
+      id: "epi-m3",
+      competency: "management",
+      text: "Places a posterior pack correctly with a dual balloon device or Foley inflated with saline and seated in the choana.",
+      points: 3,
+      critical: true,
+      teaching: "Inflate the posterior balloon first and pull it forward. Use water or saline, not air. Then pack anteriorly.",
+      source: "aao-epistaxis",
+    },
+    {
+      id: "epi-m4",
+      competency: "management",
+      text: "Protects the nostril from pressure necrosis with padding and avoids overinflation.",
+      points: 1,
+      teaching: "Alar and columellar necrosis are avoidable complications. Pad the clamp and check the skin.",
+      source: "aao-epistaxis",
+    },
+    {
+      id: "epi-r2",
+      competency: "resuscitation",
+      text: "Manages bradycardia and hypoxia after posterior packing by checking pack position, reversing opioid effect and giving atropine if needed.",
+      points: 2,
+      teaching: "Posterior packs can cause vagal bradycardia, airway obstruction and hypoventilation, especially with sedation.",
+      source: "aao-epistaxis",
+    },
+    {
+      id: "epi-d1",
+      competency: "disposition",
+      text: "Requires continuous oximetry and cardiac monitoring for as long as the posterior pack is in.",
+      points: 3,
+      critical: true,
+      teaching: "Hypoxia and arrhythmia have caused deaths in patients with posterior packs on unmonitored wards.",
+      source: "aao-epistaxis",
+    },
+    {
+      id: "epi-d2",
+      competency: "disposition",
+      text: "Admits with ENT involvement and a plan for transfer for arterial ligation or embolization if bleeding recurs.",
+      points: 2,
+      teaching: "Bleeding through a posterior pack needs definitive treatment. Know where your nearest centre is before you need it.",
+      source: "aao-epistaxis",
+    },
+    {
+      id: "epi-c1",
+      competency: "communication",
+      text: "Coordinates with ENT and gives a clear handover including INR, reversal given and pack details.",
+      points: 1,
+      teaching: "The admitting team needs to know when and what was packed and what was reversed.",
+      source: "tc-warfarin",
+    },
+    {
+      id: "epi-c2",
+      competency: "communication",
+      text: "Explains the balance of bleeding and stroke risk to the family and the plan to restart anticoagulation.",
+      points: 1,
+      teaching: "Families worry about stroke. Explain that reversal is short term and restarting is planned.",
+      source: "tc-warfarin",
+    },
+    {
+      id: "epi-l1",
+      competency: "leadership",
+      text: "Uses the local PCC protocol and blood bank early rather than waiting for plasma.",
+      points: 1,
+      teaching: "Canadian blood product guidance recommends PCC over plasma for urgent warfarin reversal. Knowing your protocol saves time.",
+      source: "nac-pcc",
+    },
+  ],
+  sources: [
+    {
+      id: "aao-epistaxis",
+      citation: "Tunkel DE, et al. Clinical Practice Guideline. Nosebleed (Epistaxis). Otolaryngology Head and Neck Surgery. 2020.",
+    },
+    {
+      id: "nopac",
+      citation: "Reuben A, et al. The use of tranexamic acid to reduce the need for nasal packing in epistaxis (NoPAC). Randomized controlled trial. Annals of Emergency Medicine. 2021.",
+    },
+    {
+      id: "tc-warfarin",
+      citation: "Thrombosis Canada. Clinical guide. Warfarin: Management of Out-of-Range INRs.",
+      url: "https://thrombosiscanada.ca/hcp/practice/clinical_guides?language=en-ca&guideID=45",
+    },
+    {
+      id: "nac-pcc",
+      citation: "National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. Revised 2022.",
+      url: "https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

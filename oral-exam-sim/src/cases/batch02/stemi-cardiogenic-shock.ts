@@ -1,0 +1,457 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const stemiCardiogenicShock: OralCase = {
+  id: "stemi-cardiogenic-shock",
+  title: "Grey and sweaty in the waiting room",
+  blueprint: "cardio",
+  alsoCovers: ["resus"],
+  summary: "A 58 year old man walks into a PCI centre ED with chest pain and is found to be pale, cold and hypotensive.",
+  durationMinutes: 15,
+  stem:
+    "You are working days in the ED of a tertiary hospital in Hamilton that is a 24 hour PCI centre with cardiac surgery and a cardiac ICU. " +
+    "Samuel Osei is 58 years old and weighs 95 kg. His wife drove him in after 2 hours of crushing chest pain that started while he was mowing the lawn. " +
+    "Triage vitals: heart rate 112, blood pressure 84/56, respiratory rate 28, SpO2 89 percent on room air, temperature 36.2, capillary glucose 13.4 mmol/L. CTAS 1. " +
+    "The triage nurse says: 'He looked grey in the waiting room. His ECG is in your hand. I have one IV in and he is on the monitor.'",
+  findings: [
+    {
+      id: "history",
+      label: "History",
+      result:
+        "Crushing central chest pain since 10:30, now 9 out of 10, radiating to the jaw. Vomited twice. Short of breath. No tearing quality. No back pain. No syncope.",
+    },
+    {
+      id: "pmh",
+      label: "Past history and medications",
+      result:
+        "Type 2 diabetes, hypertension, smoker. Metformin, ramipril, atorvastatin. No anticoagulants. No prior bleeding, stroke or surgery. No allergies. Weight 95 kg.",
+    },
+    {
+      id: "exam",
+      label: "Physical exam",
+      result:
+        "Pale, cold and mottled knees. Capillary refill 5 seconds. Crackles over the lower half of both lungs. JVP 6 cm. Soft S3. No new murmur. " +
+        "Both radial pulses equal and weak. Blood pressure 86/58 right arm and 84/56 left arm. Alert but anxious.",
+    },
+    {
+      id: "ecg",
+      label: "12 lead ECG",
+      result:
+        "Sinus tachycardia at 114. ST elevation of 3 to 5 mm in V1 to V5, I and aVL. Reciprocal ST depression in II, III and aVF. New right bundle branch block. QRS 128 ms.",
+    },
+    {
+      id: "pocus",
+      label: "Bedside echo",
+      result:
+        "Anterior wall, septum and apex akinetic. Estimated LV ejection fraction 20 to 25 percent. No pericardial effusion. Right ventricle normal size. " +
+        "No obvious ventricular septal defect or flail mitral leaflet on limited views. B lines in both lower lung zones. Aortic root 3.2 cm with no flap.",
+    },
+    {
+      id: "cxr",
+      label: "Portable chest X ray",
+      result: "Bilateral perihilar and basal pulmonary edema. Normal mediastinum. No pneumothorax.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "High sensitivity troponin T 1840 ng/L. Potassium 3.6 mmol/L. Creatinine 128 µmol/L. Hemoglobin 146 g/L. Platelets 232 x 10^9/L. INR 1.0. Lactate 5.2 mmol/L.",
+    },
+    {
+      id: "vbg",
+      label: "Venous blood gas",
+      result: "pH 7.24. pCO2 34 mmHg. Bicarbonate 15 mmol/L.",
+    },
+    {
+      id: "wife",
+      label: "Collateral from his wife",
+      result:
+        "His wife Grace says he has had 'heartburn' when walking uphill for a month. He has never talked about end of life wishes. She says he would want everything done.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the resuscitation room",
+      text:
+        "He is on the stretcher, grey and sweating. Pressure 82/54. SpO2 88 percent. The ECG shows anterior ST elevation. Two nurses and a respiratory therapist are with you.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First ten minutes",
+      prompt: "What is your diagnosis and what do you do in the first ten minutes?",
+      seconds: 90,
+      modelAnswer: [
+        "Anterior STEMI with cardiogenic shock. SCAI stage C at least.",
+        "Activate the cath lab now with one call. Do not wait for troponin.",
+        "ASA 160 to 325 mg chewed. Unfractionated heparin 70 to 100 units/kg IV bolus or per the cath lab protocol.",
+        "Discuss P2Y12 inhibitor timing with the interventional cardiologist. Oral absorption is poor in shock and after intubation, and he may need urgent surgery. Crushed tablets or an IV agent in the lab are options.",
+        "Oxygen to SpO2 of 90 percent or more. Consider NIV with caution.",
+        "No nitrates or morphine. Avoid large fluid boluses. Screen for dissection with both arm pressures and aortic root on echo.",
+      ],
+      rubric: ["stemi-a1", "stemi-r1", "stemi-m1"],
+      choices: [
+        {
+          id: "c-activate",
+          label: "I activated the cath lab from the bedside, gave ASA 325 mg chewed and heparin 70 units/kg, and held nitrates.",
+          next: "q-shock",
+          quality: "strong",
+          feedback:
+            "Correct. Early revascularization is the core therapy shown to improve survival in STEMI with shock. One call activation and early antithrombotics keep door to device short.",
+        },
+        {
+          id: "c-nitro",
+          label: "I activated the lab and gave nitroglycerin spray and morphine 4 mg IV for his pain.",
+          next: "s-nitro",
+          quality: "partial",
+          feedback:
+            "Activation was right. But nitrates are contraindicated with systolic pressure under 90, and morphine can drop his pressure and slow oral antiplatelet absorption. Use small doses of fentanyl if needed.",
+        },
+        {
+          id: "c-fluids",
+          label: "I gave 2 L of saline for his low blood pressure and waited for the troponin before calling cardiology.",
+          next: "s-fluids",
+          quality: "unsafe",
+          feedback:
+            "The ECG is diagnostic. Waiting for troponin wastes muscle. He has pulmonary edema, so 2 L of fluid will worsen his oxygenation. The examiner wanted immediate cath lab activation.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-nitro",
+      phase: "Five minutes later",
+      text: "His pressure falls to 68/42. He is drowsy. The nurse asks what you want to do. You lay him flat, give a 250 mL bolus and start a vasopressor.",
+      next: "q-shock",
+    },
+    {
+      kind: "say",
+      id: "s-fluids",
+      phase: "Twenty minutes later",
+      text:
+        "After a litre his SpO2 is 82 percent and he is breathing at 36. The charge nurse has called the cardiology fellow herself. The fellow asks why the lab was not activated. You stop the fluid and activate the lab.",
+      next: "q-shock",
+    },
+    {
+      kind: "question",
+      id: "q-shock",
+      phase: "Supporting the pressure",
+      prompt: "The lab team is 15 minutes away. His MAP is 58. What do you start and how do you titrate it?",
+      seconds: 75,
+      modelAnswer: [
+        "Norepinephrine is first line. Start at 0.05 mcg/kg/min and titrate to MAP of 65 or more.",
+        "Add dobutamine 2.5 to 5 mcg/kg/min if signs of low output persist once MAP is adequate.",
+        "Avoid dopamine. It caused more arrhythmias and higher mortality in the cardiogenic shock subgroup of SOAP II.",
+        "Arterial line when possible. Do not delay the lab for it.",
+        "Pads on. Correct potassium to over 4.0 mmol/L.",
+        "Small fluid challenge only if the RV is involved or he is dry.",
+      ],
+      rubric: ["stemi-r2", "stemi-m2"],
+      choices: [
+        {
+          id: "c-norepi",
+          label: "I started norepinephrine at 0.05 mcg/kg/min and titrated to a MAP of 65, with dobutamine ready if his output stayed low.",
+          next: "s-vf",
+          quality: "strong",
+          feedback:
+            "Correct. Norepinephrine is the preferred first vasopressor in cardiogenic shock. An inotrope is added once perfusion pressure is restored.",
+        },
+        {
+          id: "c-dopamine",
+          label: "I started dopamine at 10 mcg/kg/min.",
+          next: "s-dopamine",
+          quality: "partial",
+          feedback:
+            "Dopamine raises pressure but causes more tachyarrhythmias. In SOAP II, dopamine was linked to higher mortality in cardiogenic shock. Norepinephrine is preferred.",
+        },
+        {
+          id: "c-dobutamine",
+          label: "I started dobutamine alone at 5 mcg/kg/min to help his pump.",
+          next: "s-dobutamine",
+          quality: "unsafe",
+          feedback:
+            "Dobutamine causes vasodilation. With a MAP of 58 it can drop coronary perfusion further. Restore MAP with norepinephrine first, then add an inotrope.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-dopamine",
+      phase: "Five minutes later",
+      text: "His heart rate climbs to 138 with runs of ventricular ectopy. MAP 62. You switch to norepinephrine.",
+      next: "s-vf",
+    },
+    {
+      kind: "say",
+      id: "s-dobutamine",
+      phase: "Five minutes later",
+      text: "His MAP falls to 50. He is confused. The nurse asks if you want norepinephrine. You start it at 0.1 mcg/kg/min.",
+      next: "s-vf",
+    },
+    {
+      kind: "say",
+      id: "s-vf",
+      phase: "The lab is almost ready",
+      text:
+        "As the team moves him to the transport stretcher he says he feels strange. His eyes roll back. The monitor shows coarse ventricular fibrillation. No pulse.",
+      next: "q-arrest",
+    },
+    {
+      kind: "question",
+      id: "q-arrest",
+      phase: "Arrest",
+      prompt: "Run this arrest. What do you do in the first two minutes?",
+      seconds: 60,
+      modelAnswer: [
+        "Call it. Start compressions. Defibrillate immediately at 200 J biphasic or the device maximum.",
+        "Resume compressions right after the shock. Check rhythm every 2 minutes.",
+        "Epinephrine 1 mg IV after the second shock and every 3 to 5 minutes.",
+        "Amiodarone 300 mg IV after the third shock, then 150 mg.",
+        "Consider double sequential or vector change defibrillation if VF persists after 3 or more shocks.",
+        "The cause is ongoing ischemia. Keep the cath lab informed. Refractory VF may go to the lab on mechanical CPR or ECMO if available.",
+      ],
+      rubric: ["stemi-r3"],
+      choices: [
+        {
+          id: "c-shock",
+          label: "I called VF, shocked at 200 J straight away and restarted compressions.",
+          next: "s-rosc",
+          quality: "strong",
+          feedback:
+            "Correct. A witnessed VF arrest on a monitor needs a shock within seconds. Survival falls with each minute of delay.",
+        },
+        {
+          id: "c-epi-first",
+          label: "I started CPR and gave epinephrine 1 mg, then shocked after two minutes of compressions.",
+          next: "s-delay",
+          quality: "unsafe",
+          feedback:
+            "Monitored witnessed VF needs immediate defibrillation. Epinephrine is given after the second shock in VF. Two minutes without a shock lowers the chance of ROSC.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-delay",
+      phase: "Four minutes later",
+      text: "He needs three shocks and amiodarone 300 mg before he has ROSC. He is more acidotic and his lactate is now 7.4 mmol/L.",
+      next: "s-rosc",
+    },
+    {
+      kind: "say",
+      id: "s-rosc",
+      phase: "After ROSC",
+      text:
+        "He has ROSC with a pulse. MAP 60 on norepinephrine 0.2 mcg/kg/min. SpO2 84 percent on 15 L. He is moaning and pulling at his lines. GCS 9. The cath lab is ready.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway",
+      prompt: "He needs to be intubated before the lab. How do you do this safely?",
+      seconds: 90,
+      modelAnswer: [
+        "Resuscitate before you intubate. MAP of 65 or more on norepinephrine before induction.",
+        "Push dose epinephrine 10 to 20 mcg drawn up.",
+        "Preoxygenate with NIV or bag valve mask with PEEP.",
+        "Reduced dose induction. Ketamine 0.5 to 1 mg/kg or etomidate 0.1 to 0.15 mg/kg.",
+        "Full dose paralytic. Rocuronium 1.2 to 1.6 mg/kg.",
+        "Most experienced operator with video laryngoscope. Avoid high PEEP and hyperventilation after the tube.",
+      ],
+      rubric: ["stemi-r4"],
+      next: "q-cath",
+    },
+    {
+      kind: "question",
+      id: "q-cath",
+      phase: "Handover to the lab",
+      prompt: "The interventional cardiologist asks if you think he should go for a CT head first because of the arrest. What do you tell her and what do you hand over?",
+      seconds: 75,
+      modelAnswer: [
+        "No. A brief witnessed VF arrest with quick ROSC and a clear anterior STEMI needs the lab now.",
+        "Head CT would delay reperfusion without changing the plan.",
+        "Hand over time of onset, ECG, doses of ASA and heparin, pressor doses, arrest details and airway drugs.",
+        "Culprit lesion only PCI is the standard in shock after CULPRIT-SHOCK.",
+        "Early discussion of mechanical support with the shock team. A microaxial flow pump improved survival in selected STEMI shock in DanGer Shock. Comatose arrest survivors were excluded, so it may not apply to him.",
+        "Temperature control and fever prevention after the arrest.",
+      ],
+      rubric: ["stemi-c1", "stemi-m3", "stemi-m4"],
+      next: "q-wife",
+    },
+    {
+      kind: "question",
+      id: "q-wife",
+      phase: "His wife",
+      prompt: "His wife Grace arrives in the family room. What do you tell her?",
+      seconds: 60,
+      modelAnswer: [
+        "Find a quiet room. Introduce yourself. Sit down.",
+        "He has had a large heart attack with a blocked artery. His heart went into a dangerous rhythm and stopped briefly.",
+        "It was restarted quickly. He is on a breathing machine and heart support medicine.",
+        "He is going now to have the artery opened.",
+        "Be honest that he is critically ill and the next hours matter. Offer support and next steps.",
+      ],
+      rubric: ["stemi-c2"],
+      next: "q-systems",
+    },
+    {
+      kind: "question",
+      id: "q-systems",
+      phase: "Systems",
+      prompt: "He sat in the waiting room for 25 minutes before his ECG. What do you do about that?",
+      seconds: 60,
+      modelAnswer: [
+        "The target is an ECG within 10 minutes of arrival for chest pain.",
+        "Report through the quality and safety process without blame.",
+        "Look at triage flow. ECG at triage for chest pain, and a standing order to hand ECGs directly to a physician.",
+        "Audit door to ECG and door to device times.",
+        "Share the learning with the team.",
+      ],
+      rubric: ["stemi-l1"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "He leaves for the cath lab 38 minutes after arrival, intubated and on norepinephrine. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "stemi-a1",
+      competency: "assessment",
+      text: "Diagnoses anterior STEMI with cardiogenic shock from ECG, perfusion signs and echo.",
+      points: 2,
+      teaching: "Hypotension with cold, mottled skin, high lactate and a low ejection fraction define cardiogenic shock. Name it early.",
+      source: "esc-acs",
+    },
+    {
+      id: "stemi-r1",
+      competency: "resuscitation",
+      text: "Activates the cath lab immediately without waiting for troponin.",
+      points: 3,
+      critical: true,
+      teaching: "Emergency revascularization improves survival in STEMI with shock. The ECG is enough. Door to device should be as short as possible.",
+      source: "ccs-stemi",
+    },
+    {
+      id: "stemi-m1",
+      competency: "management",
+      text: "Gives ASA 160 to 325 mg and heparin, discusses P2Y12 timing with the lab and avoids nitrates and morphine.",
+      points: 2,
+      teaching: "Nitrates are contraindicated with systolic pressure under 90. P2Y12 timing in shock is best decided with the interventionalist.",
+      source: "ccs-stemi",
+    },
+    {
+      id: "stemi-r2",
+      competency: "resuscitation",
+      text: "Starts norepinephrine at 0.05 mcg/kg/min titrated to MAP 65 and avoids large fluid boluses.",
+      points: 3,
+      critical: true,
+      teaching: "Norepinephrine restores coronary perfusion pressure with fewer arrhythmias than dopamine. The lungs are already wet.",
+      source: "soap2",
+    },
+    {
+      id: "stemi-m2",
+      competency: "management",
+      text: "Adds dobutamine 2.5 to 5 mcg/kg/min only after MAP is restored, and avoids dopamine.",
+      points: 1,
+      teaching: "Inotropes help output but cause vasodilation. Pressure first, then flow.",
+      source: "esc-acs",
+    },
+    {
+      id: "stemi-r3",
+      competency: "resuscitation",
+      text: "Defibrillates witnessed VF immediately at 200 J biphasic and follows ACLS drug timing.",
+      points: 3,
+      critical: true,
+      teaching: "Immediate shocks for monitored VF give the best chance of ROSC. Epinephrine after the second shock and amiodarone 300 mg after the third.",
+      source: "aha-acls",
+    },
+    {
+      id: "stemi-r4",
+      competency: "resuscitation",
+      text: "Intubates with a resuscitate first approach, reduced dose induction, full dose paralytic and push dose pressor ready.",
+      points: 2,
+      teaching: "Peri-intubation arrest is common in cardiogenic shock. Optimize MAP, preoxygenate and cut the induction dose.",
+      source: "aha-acls",
+    },
+    {
+      id: "stemi-c1",
+      competency: "communication",
+      text: "Advocates for going directly to the cath lab and gives a structured handover.",
+      points: 2,
+      teaching: "A brief witnessed arrest is not a reason to delay PCI for head CT. A clear handover prevents dosing errors.",
+      source: "ccs-stemi",
+    },
+    {
+      id: "stemi-m3",
+      competency: "management",
+      text: "Knows that culprit lesion only PCI is standard in cardiogenic shock.",
+      points: 1,
+      teaching: "In CULPRIT-SHOCK, culprit only PCI lowered 30 day death or renal replacement therapy compared with immediate multivessel PCI.",
+      source: "culprit-shock",
+    },
+    {
+      id: "stemi-m4",
+      competency: "management",
+      text: "Raises early discussion of mechanical circulatory support with the shock team.",
+      points: 1,
+      teaching: "A microaxial flow pump lowered 180 day mortality in selected STEMI shock in DanGer Shock, with more complications. Comatose arrest survivors were excluded. It is a team decision.",
+      source: "danger-shock",
+    },
+    {
+      id: "stemi-c2",
+      competency: "communication",
+      text: "Updates the family honestly and compassionately in a private space.",
+      points: 1,
+      teaching: "Use plain words. Say what happened, what is being done and that he is critically ill.",
+      source: "esc-acs",
+    },
+    {
+      id: "stemi-l1",
+      competency: "leadership",
+      text: "Addresses the delayed ECG through the quality process and proposes triage fixes.",
+      points: 1,
+      teaching: "An ECG within 10 minutes of arrival for chest pain is the standard. System fixes beat individual blame.",
+      source: "ccs-stemi",
+    },
+  ],
+  sources: [
+    {
+      id: "ccs-stemi",
+      citation: "Wong GC, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology Guidelines on the Acute Management of ST-Elevation Myocardial Infarction. Focused Update on Regionalization and Reperfusion. Canadian Journal of Cardiology. 2019.",
+    },
+    {
+      id: "esc-acs",
+      citation: "Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. European Heart Journal. 2023.",
+    },
+    {
+      id: "soap2",
+      citation: "De Backer D, et al. Comparison of dopamine and norepinephrine in the treatment of shock. New England Journal of Medicine. 2010.",
+    },
+    {
+      id: "culprit-shock",
+      citation: "Thiele H, et al. PCI strategies in patients with acute myocardial infarction and cardiogenic shock. New England Journal of Medicine. 2017.",
+    },
+    {
+      id: "danger-shock",
+      citation: "Møller JE, et al. Microaxial flow pump or standard care in infarct-related cardiogenic shock. New England Journal of Medicine. 2024.",
+      url: "https://www.nejm.org/doi/full/10.1056/NEJMoa2312572",
+    },
+    {
+      id: "aha-acls",
+      citation: "American Heart Association. Part 9. Adult Advanced Life Support. 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025.",
+      url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};
