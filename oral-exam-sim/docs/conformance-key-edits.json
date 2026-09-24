@@ -2074,6 +2074,225 @@
    "after": [
     "Positive pressure ventilation by bag and mask in 21% oxygen"
    ]
+  },
+  "multiple-trauma-01#q2": {
+   "batch": "s14",
+   "before": [
+    "Continue balanced transfusion and arrange urgent angioembolization or preperitoneal pelvic packing"
+   ],
+   "after": [
+    "Transfusion and angioembolization or preperitoneal packing"
+   ]
+  },
+  "multiple-trauma-02#q3": {
+   "batch": "s14",
+   "before": [
+    "Warmed blood to support preload",
+    "Immediate transfer to the operating room for surgical decompression and repair"
+   ],
+   "after": [
+    "Immediate operating room decompression and repair",
+    "Warmed blood transfusion"
+   ]
+  },
+  "multiple-trauma-03#q2": {
+   "batch": "s14",
+   "before": [
+    "Blood volume expansion means she may lose 30% or more of her volume before she becomes hypotensive, so treat this as possible hemorrhage"
+   ],
+   "after": [
+    "Possible hemorrhage, as 30% loss may precede hypotension"
+   ]
+  },
+  "multiple-trauma-03#q4": {
+   "batch": "s14",
+   "before": [
+    "Resuscitative hysterotomy started so delivery occurs within about 5 minutes of arrest"
+   ],
+   "after": [
+    "Resuscitative hysterotomy, delivery within about 5 minutes"
+   ]
+  },
+  "multiple-trauma-05#q1": {
+   "batch": "s14",
+   "before": [
+    "Factor VIII concentrate 50 IU/kg (3000 IU) IV now, before imaging"
+   ],
+   "after": [
+    "Factor VIII 50 IU/kg (3000 IU) IV before imaging"
+   ]
+  },
+  "multiple-trauma-06#q2": {
+   "batch": "s14",
+   "before": [
+    "Trapped gas expands as cabin pressure falls",
+    "The partial pressure of oxygen falls, so oxygen requirements may rise"
+   ],
+   "after": [
+    "Partial pressure of oxygen falls, so oxygen needs may rise",
+    "Trapped gas expands as cabin pressure falls"
+   ]
+  },
+  "multiple-trauma-07#q3": {
+   "batch": "s14",
+   "before": [
+    "Continue to withhold blood because her prior capable wish applies to this situation"
+   ],
+   "after": [
+    "Continue to withhold blood"
+   ]
+  },
+  "multiple-trauma-08#q1": {
+   "batch": "s14",
+   "before": [
+    "Finger thoracostomy in the left fifth intercostal space at the midaxillary line"
+   ],
+   "after": [
+    "Finger thoracostomy, left fifth space, midaxillary line"
+   ]
+  },
+  "multiple-trauma-09#q4": {
+   "batch": "s14",
+   "before": [
+    "Nonoperative management at a paediatric trauma centre with monitoring and serial examinations"
+   ],
+   "after": [
+    "Nonoperative management at a paediatric trauma centre"
+   ]
+  },
+  "multiple-trauma-12#q2": {
+   "batch": "s14",
+   "before": [
+    "Laparotomy for haemorrhage control now, with hyperosmolar therapy and neurosurgery aware"
+   ],
+   "after": [
+    "Laparotomy now, hyperosmolar therapy, neurosurgery aware"
+   ]
+  },
+  "multiple-trauma-13#q2": {
+   "batch": "s14",
+   "before": [
+    "A nurse holds firm direct pressure on the thigh wound or applies a tourniquet",
+    "The second physician prepares to perform a left finger thoracostomy if he deteriorates with ventilation",
+    "A nurse runs uncrossmatched blood through the rapid infuser"
+   ],
+   "after": [
+    "A nurse applies direct thigh pressure or a tourniquet",
+    "A nurse runs uncrossmatched blood through the rapid infuser",
+    "The second physician prepares a left finger thoracostomy"
+   ]
+  },
+  "multiple-trauma-14#q3": {
+   "batch": "s14",
+   "before": [
+    "Long leg posterior splint with the knee in slight flexion and neurovascular status recorded"
+   ],
+   "after": [
+    "Long leg posterior splint, knee in slight flexion"
+   ]
+  },
+  "multiple-trauma-15#q4": {
+   "batch": "s14",
+   "before": [
+    "Return her to the resuscitation room, start blood, repeat eFAST and call the trauma surgeon"
+   ],
+   "after": [
+    "Resuscitation room, blood, repeat eFAST, call trauma surgeon"
+   ]
+  },
+  "pediatric-fever-01#q4": {
+   "batch": "s14",
+   "before": [
+    "Admit and observe until all cultures are negative at 36 hours, with or without continuing antibiotics"
+   ],
+   "after": [
+    "Admit and observe until cultures negative at 36 hours"
+   ]
+  },
+  "pediatric-fever-02#q2": {
+   "batch": "s14",
+   "before": [
+    "Discharge home without antibiotics, with reassessment in 24 to 48 hours and follow up of the blood culture"
+   ],
+   "after": [
+    "Discharge without antibiotics, reassess in 24 to 48 hours"
+   ]
+  },
+  "pediatric-fever-03#q4": {
+   "batch": "s14",
+   "before": [
+    "Epinephrine infusion 0.05 to 0.3 mcg/kg/min through the IO or a peripheral line"
+   ],
+   "after": [
+    "Epinephrine 0.05 to 0.3 mcg/kg/min by IO or peripheral line"
+   ]
+  },
+  "pediatric-fever-04#q4": {
+   "batch": "s14",
+   "before": [
+    "Rifampin 10 mg/kg (200 mg) PO every 12 hours for 2 days"
+   ],
+   "after": [
+    "Rifampin 10 mg/kg (200 mg) PO twice daily, 2 days"
+   ]
+  },
+  "pediatric-fever-05#q3": {
+   "batch": "s14",
+   "before": [
+    "Intramuscular immune globulin 0.5 mL/kg for the 4 month old",
+    "Intravenous immune globulin 400 mg/kg for the pregnant mother"
+   ],
+   "after": [
+    "Intramuscular immune globulin 0.5 mL/kg for the 4 month old",
+    "IV immune globulin 400 mg/kg for the pregnant mother"
+   ]
+  },
+  "pediatric-fever-06#q2": {
+   "batch": "s14",
+   "before": [
+    "IV immune globulin 2 g/kg (32 g) as a single infusion over 10 to 12 hours",
+    "ASA at moderate to high dose (30 to 100 mg/kg/day) divided four times daily"
+   ],
+   "after": [
+    "ASA 30 to 100 mg/kg/day divided four times daily",
+    "IV immune globulin 2 g/kg over 10 to 12 hours"
+   ]
+  },
+  "pediatric-fever-07#q3": {
+   "batch": "s14",
+   "before": [
+    "IV artesunate 2.4 mg/kg at 0, 12 and 24 hours, then daily"
+   ],
+   "after": [
+    "IV artesunate 2.4 mg/kg at 0/12/24 hours, then daily"
+   ]
+  },
+  "pediatric-fever-08#q1": {
+   "batch": "s14",
+   "before": [
+    "Analgesia and watchful waiting for 48 hours, with reassessment or a delayed prescription"
+   ],
+   "after": [
+    "Analgesia and watchful waiting for 48 hours"
+   ]
+  },
+  "pediatric-fever-11#q1": {
+   "batch": "s14",
+   "before": [
+    "Immediate whole body cold water immersion with continuous monitoring"
+   ],
+   "after": [
+    "Immediate whole body cold water immersion, monitored"
+   ]
+  },
+  "pediatric-fever-13#q3": {
+   "batch": "s14",
+   "before": [
+    "IV hyperhydration without potassium, tumour lysis monitoring, a uric acid lowering drug and urgent oncology consultation"
+   ],
+   "after": [
+    "Hyperhydration without potassium, urate lowering, oncology"
+   ]
   }
  }
 }

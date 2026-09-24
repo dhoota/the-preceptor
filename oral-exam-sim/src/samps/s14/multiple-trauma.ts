@@ -13,15 +13,15 @@ const S = {
   east: { id: "east-edt", citation: "Seamon MJ, et al. An evidence-based approach to patient selection for emergency department thoracotomy: a practice management guideline from the Eastern Association for the Surgery of Trauma. J Trauma Acute Care Surg. 2015." },
   sogc: { id: "sogc-trauma", citation: "Jain V, Chari R, Maslovitz S, et al. Guidelines for the management of a pregnant trauma patient. SOGC Clinical Practice Guideline No. 325. J Obstet Gynaecol Can. 2015." },
   ahaPreg: { id: "aha-pregnancy", citation: "Jeejeebhoy FM, et al. Cardiac arrest in pregnancy: a scientific statement from the American Heart Association. Circulation. 2015." },
-  thrombosisCanada: { id: "thrombosis-canada", citation: "Thrombosis Canada. Clinical guides on the management of bleeding in patients taking direct oral anticoagulants." },
+  thrombosisCanada: { id: "thrombosis-canada", citation: "Thrombosis Canada. Clinical guide: NOACs/DOACs: management of bleeding. 2020.", url: "https://thrombosiscanada.ca/hcp/practice/clinical_guides?language=en-ca&guideID=MANAGEMENTOFBLEEDINGINPATIENTS" },
   ccr: { id: "ccr", citation: "Stiell IG, et al. The Canadian C-spine rule for radiography in alert and stable trauma patients. JAMA. 2001." },
   ccthr: { id: "ccthr", citation: "Stiell IG, et al. The Canadian CT Head Rule for patients with minor head injury. Lancet. 2001." },
   wfh: { id: "wfh", citation: "Srivastava A, et al. WFH Guidelines for the Management of Hemophilia, 3rd edition. Haemophilia. 2020." },
   hcca: { id: "hcca", citation: "Health Care Consent Act, 1996, S.O. 1996, c. 2 (Ontario)." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on multiple trauma, orthopaedic injuries and air medical transport." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on multiple trauma, orthopaedic injuries and air medical transport." },
   cafg: { id: "cafg", citation: "Law JA, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 1. Can J Anaesth. 2021." },
   rcpch: { id: "rcpch-txa", citation: "Royal College of Paediatrics and Child Health. Major trauma and the use of tranexamic acid in children. Evidence statement. 2012." },
-  apsa: { id: "apsa", citation: "American Pediatric Surgical Association. Guidance on nonoperative management of blunt liver and spleen injury in children." },
+  apsa: { id: "apsa", citation: "Gates RL, Price M, Cameron DB, et al. Non-operative management of solid organ injuries in children: an American Pediatric Surgical Association Outcomes and Evidence Based Practice Committee systematic review. J Pediatr Surg. 2019." },
   btf: { id: "btf", citation: "Carney N, et al. Guidelines for the management of severe traumatic brain injury, fourth edition. Neurosurgery. 2017." },
   hicks: { id: "hicks", citation: "Hicks C, Petrosoniak A. The human factor: optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018." },
   hypothermia: { id: "hypothermia", citation: "Brown DJA, Brugger H, Boyd J, Paal P. Accidental hypothermia. N Engl J Med. 2012." },
@@ -36,13 +36,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     topic: "multiple-trauma",
     title: "Motorcyclist after a highway collision",
     stem:
-      "A 34 year old man is brought in by paramedics 25 minutes after his motorcycle struck a car at highway speed. He is in a cervical collar. He is anxious and says he cannot breathe. GCS 15. HR 132, BP 78/50, RR 34, SpO2 84% on a non-rebreather mask, temperature 35.4°C. Estimated weight 85 kg. Breath sounds are absent on the right and the trachea is deviated to the left. There is bruising over the perineum and the right leg is shortened and externally rotated. Your team is two nurses and a respiratory therapist.",
+      "A 34-year-old man is brought in by paramedics 25 minutes after his motorcycle struck a car at highway speed. He is in a cervical collar. He is anxious and says he cannot breathe. GCS 15. His weight is estimated. Breath sounds are absent on the right and the trachea is deviated to the left. There is bruising over the perineum and the right leg is shortened and externally rotated. Your team is two nurses and a respiratory therapist.",
+    vitals: { temperature: "35.4°C", pulse: "132/minute", resp: "34/minute", bp: "78/50 mmHg", o2sat: "84% on a non-rebreather mask", weight: "85 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE critical interventions you perform during the primary survey.",
+        prompt: "What critical interventions do you perform during the primary survey?",
         accept: [
           { id: "decompress", text: "Decompress the right chest by finger or needle thoracostomy, then a chest tube", match: ["decompress", "decompression", "thoracostomy", "chest tube", "chest drain"] },
           { id: "binder", text: "Apply a pelvic binder centred over the greater trochanters", match: ["binder", "pelvic sheet", "bind pelvis", "binding"] },
@@ -66,15 +67,15 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "single",
         update:
           "After finger thoracostomy there is a rush of air. SpO2 rises to 94%. A pelvic binder is on. He has received 2 units of red cells. HR 128, BP 84/52. eFAST shows no free fluid in the abdomen and no pericardial effusion. The portable pelvis film shows an open book fracture with sacroiliac widening.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
-          "Transfer to CT for a whole body trauma scan",
           "Laparotomy for presumed intra-abdominal bleeding",
-          "Continue balanced transfusion and arrange urgent angioembolization or preperitoneal pelvic packing",
-          "Apply a traction splint to the right leg before any other step",
-          "Remove the binder briefly to confirm pelvic instability",
+          "Removal of the binder briefly to confirm pelvic instability",
+          "Traction splint to the right leg before other steps",
+          "Transfer to CT for a whole body trauma scan",
+          "Transfusion and angioembolization or preperitoneal packing",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "He remains in shock with a negative eFAST and an unstable pelvic fracture, so the pelvis is the likely source. Definitive haemorrhage control by angioembolization or preperitoneal packing takes priority. CT in a patient who is not responding to transfusion is unsafe. A negative eFAST argues against a laparotomy as the first move.",
         keyFeature: { topic: "multiple-trauma", n: 2 },
@@ -84,7 +85,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE targets or end points you use to guide ongoing blood product resuscitation.",
+        prompt: "What targets or end points do you use to guide ongoing blood product resuscitation?",
         accept: [
           { id: "sbp", text: "Permissive hypotension with systolic BP about 80 to 90 mmHg until bleeding is controlled", match: ["permissive", "sbp 80", "sbp 90", "systolic 80", "systolic 90", "map 50", "map 60", "map 65"] },
           { id: "ratio", text: "Balanced ratio of plasma, platelets and red cells", match: ["ratio", "balanced", "plasma"] },
@@ -107,7 +108,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "While you perform the finger thoracostomy, list TWO tasks you delegate to run in parallel.",
+        prompt: "What tasks do you delegate to run in parallel while you perform the finger thoracostomy?",
         accept: [
           { id: "binder", text: "A nurse applies the pelvic binder", match: ["binder", "pelvic sheet", "bind pelvis"] },
           { id: "blood", text: "A nurse hangs blood on a rapid infuser and activates the massive transfusion protocol", match: ["blood", "mtp", "massive transfusion", "rapid infuser", "transfuse"] },
@@ -133,22 +134,23 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     topic: "multiple-trauma",
     title: "Stab wound to the anterior chest",
     stem:
-      "A 24 year old man walks into triage holding a towel against a single stab wound at the left fourth intercostal space just lateral to the sternum. He is pale and sweaty. GCS 15. HR 118, BP 104/88, RR 26, SpO2 97% on room air. Breath sounds are equal. Weight about 70 kg. You are at a Level 1 trauma centre and cardiac surgery is in house.",
+      "A 24-year-old man walks into triage holding a towel against a single stab wound at the left fourth intercostal space just lateral to the sternum. He is pale and sweaty. GCS 15. His weight is estimated. Breath sounds are equal. You are at a Level 1 trauma centre and cardiac surgery is in house.",
+    vitals: { pulse: "118/minute", resp: "26/minute", bp: "104/88 mmHg", o2sat: "97% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
         update:
           "Ten minutes later he becomes restless and tries to climb off the stretcher. HR 134, BP 90/80. His neck veins are now distended. Breath sounds remain equal and the trachea is midline.",
-        prompt: "Which is the most likely cause of this change? Select one.",
+        prompt: "Which of the following is the most likely cause of this change?",
         options: [
-          "Tension pneumothorax",
-          "Pericardial tamponade",
-          "Intercostal artery bleeding into the chest wall",
           "Acute anxiety reaction",
+          "Intercostal artery bleeding",
           "Massive hemothorax",
+          "Pericardial tamponade",
+          "Tension pneumothorax",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "A precordial wound with a narrowing pulse pressure, rising heart rate, distended neck veins and new agitation points to tamponade. Equal breath sounds and a midline trachea argue against tension pneumothorax and massive hemothorax. Agitation here is a sign of falling cerebral perfusion, not anxiety.",
         keyFeature: { topic: "multiple-trauma", n: 5 },
@@ -158,7 +160,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO further bedside findings that would support your diagnosis.",
+        prompt: "What further bedside findings would support your diagnosis?",
         accept: [
           { id: "fast", text: "Pericardial fluid on the cardiac view of eFAST", match: ["pericardial fluid", "pericardial effusion", "efast", "fast positive", "fast pericardial", "ultrasound", "pocus", "echo"] },
           { id: "rv", text: "Right ventricular diastolic collapse on ultrasound", match: ["collapse", "rv"] },
@@ -178,20 +180,20 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "menu",
         select: 2,
         update: "eFAST shows a pericardial effusion with right ventricular collapse. BP is 76/60. The cardiac surgeon is on the way and the operating room can be ready in 10 minutes.",
-        prompt: "Which TWO actions are most appropriate now? Select TWO.",
+        prompt: "Which of the following actions are most appropriate for him now?",
         options: [
-          "Rapid sequence intubation in the emergency department before moving",
-          "Warmed blood to support preload",
-          "Immediate transfer to the operating room for surgical decompression and repair",
-          "CT chest to define the wound tract",
+          "CT of the chest before surgery",
+          "Furosemide 40 mg IV",
+          "Immediate operating room decompression and repair",
           "Needle decompression of the left chest",
           "Norepinephrine infusion to a MAP of 65 mmHg",
-          "Furosemide 40 mg IV for the distended neck veins",
           "Observe with serial eFAST every 15 minutes",
+          "Rapid sequence intubation before transfer",
+          "Warmed blood transfusion",
         ],
-        correct: [1, 2],
+        correct: [2, 7],
         explanation:
-          "Traumatic tamponade needs surgical decompression and repair. Volume supports preload while the team moves. Induction and positive pressure ventilation can precipitate arrest in tamponade, so intubate in the operating room with the surgeon ready if possible. Pericardiocentesis is only a bridge and often fails with clotted blood.",
+          "Traumatic tamponade needs immediate surgical decompression and repair in the operating room. Warmed blood supports preload while the team moves. Induction and positive pressure ventilation can precipitate arrest in tamponade, so intubate in the operating room with the surgeon ready if possible. Pericardiocentesis is only a bridge and often fails with clotted blood.",
         keyFeature: { topic: "multiple-trauma", n: 2 },
         source: "atls",
       },
@@ -200,7 +202,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Before he reaches the operating room he loses his pulse. CPR is started. It has been under two minutes.",
-        prompt: "You will perform a resuscitative thoracotomy. List THREE tasks you delegate to others at the same time.",
+        prompt: "What tasks do you delegate to others while you perform a resuscitative thoracotomy?",
         accept: [
           { id: "cpr", text: "Chest compressions until the chest is opened", match: ["compression", "cpr"] },
           { id: "airway", text: "Intubate and ventilate", match: ["intubate", "intubation", "airway", "ventilate", "bag"] },
@@ -227,13 +229,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Restrained driver in the third trimester",
     stem:
-      "A 29 year old woman, G2P1 at 31 weeks, was the restrained driver in a T-bone collision at 60 km/h. She has abdominal pain. GCS 15. HR 108, BP 100/62, RR 22, SpO2 98% on room air. Weight 78 kg. There is a seatbelt mark across the lower abdomen. The uterine fundus is above the umbilicus and tender.",
+      "A 29-year-old woman, G2P1 at 31 weeks, was the restrained driver in a T-bone collision at 60 km/h. She has abdominal pain. GCS 15. There is a seatbelt mark across the lower abdomen. The uterine fundus is above the umbilicus and tender.",
+    vitals: { pulse: "108/minute", resp: "22/minute", bp: "100/62 mmHg", o2sat: "98% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE ways pregnancy changes your primary survey and early resuscitation.",
+        prompt: "In what ways does pregnancy change your primary survey and early resuscitation?",
         accept: [
           { id: "lud", text: "Manual left uterine displacement or left lateral tilt", match: ["uterine displacement", "left lateral", "tilt", "displace uterus", "wedge"] },
           { id: "o2", text: "Supplemental oxygen to keep SpO2 above 95%", match: ["oxygen", "spo2", "saturation"] },
@@ -253,17 +256,17 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which statement about her vital signs is most accurate? Select one.",
+        prompt: "Which of the following statements about her vital signs is most accurate?",
         options: [
-          "They are normal for 31 weeks and need no further action",
-          "Blood volume expansion means she may lose 30% or more of her volume before she becomes hypotensive, so treat this as possible hemorrhage",
+          "Fetal heart rate change is a late sign of hypovolemia",
           "Hypotension at this stage is due to supine positioning alone",
-          "Fetal heart rate changes are a late marker of maternal hypovolemia",
-          "Vasopressors are the first line treatment for hypotension to protect uterine blood flow",
+          "Possible hemorrhage, as 30% loss may precede hypotension",
+          "They are normal for 31 weeks, no action needed",
+          "Vasopressors are first line for hypotension in pregnancy",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "A resting heart rate of 108 is higher than expected in pregnancy and may be early shock. The uterine circulation is shunted early, so fetal distress can be the first sign of maternal hypovolemia. Vasopressors reduce uterine perfusion and are not a substitute for volume and blood.",
+          "Blood volume expansion in pregnancy means she may lose 30% or more of her volume before she becomes hypotensive, so treat these vital signs as possible hemorrhage. A resting heart rate of 108 is higher than expected in pregnancy and may be early shock. The uterine circulation is shunted early, so fetal distress can be the first sign of maternal hypovolemia. Vasopressors reduce uterine perfusion and are not a substitute for volume and blood.",
         keyFeature: { topic: "shock", n: 1 },
         source: "sogc-trauma",
       },
@@ -273,7 +276,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         required: 3,
         update:
           "She stabilizes after 1 L of crystalloid. eFAST is negative. Her blood type is O negative. Fetal heart rate is 150. She has a contraction every 5 minutes.",
-        prompt: "List THREE pregnancy specific elements of her ongoing management.",
+        prompt: "What are the pregnancy specific elements of her ongoing management?",
         accept: [
           { id: "ctg", text: "Continuous fetal heart and uterine monitoring for at least 4 hours", match: ["fetal monitoring", "ctg", "cardiotocography", "tocometry", "electronic fetal", "fetal heart", "uterine monitoring", "4 hour"] },
           { id: "rhig", text: "Rh immune globulin 300 mcg IM", match: ["rh immune globulin", "rhig", "winrho", "anti d", "rhogam", "rh immunoglobulin"] },
@@ -294,17 +297,17 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Thirty minutes later she suddenly becomes pulseless. CPR is under way with manual uterine displacement.",
-        prompt: "Which is the most appropriate additional action? Select one.",
+        prompt: "Which of the following is the most appropriate additional action?",
         options: [
-          "Wait for the obstetrician before any operative step",
-          "Resuscitative hysterotomy started so delivery occurs within about 5 minutes of arrest",
           "Continue CPR for 20 minutes before considering delivery",
+          "Magnesium sulfate 4 g IV loading dose",
+          "Resuscitative hysterotomy, delivery within about 5 minutes",
           "Transfer to the operating room with CPR in progress",
-          "Magnesium sulfate 4 g IV",
+          "Wait for the obstetrician before starting any operative step",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "With the fundus at or above the umbilicus, emptying the uterus relieves aortocaval compression and improves maternal resuscitation. Start by 4 minutes and aim for delivery by 5. Do it where the arrest occurs. Moving the patient delays the procedure and degrades CPR.",
+          "With the fundus at or above the umbilicus, emptying the uterus relieves aortocaval compression and improves maternal resuscitation. Start the resuscitative hysterotomy by 4 minutes after arrest and aim for delivery by about 5 minutes. Do it where the arrest occurs. Moving the patient delays the procedure and degrades CPR.",
         keyFeature: { topic: "multiple-trauma", n: 1 },
         source: "aha-pregnancy",
       },
@@ -319,13 +322,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     topic: "multiple-trauma",
     title: "Older woman after a fall down stairs",
     stem:
-      "An 81 year old woman fell down six stairs at home. She takes apixaban 5 mg twice daily for atrial fibrillation and metoprolol. GCS 14 (confused). HR 78, BP 146/80, RR 22, SpO2 92% on room air. Weight 58 kg. She has a bleeding scalp laceration and left lateral chest wall tenderness. Her daughter says she lives alone and was independent.",
+      "An 81-year-old woman fell down six stairs at home. She takes apixaban 5 mg twice daily for atrial fibrillation and metoprolol. GCS 14 (confused). She has a bleeding scalp laceration and left lateral chest wall tenderness. Her daughter says she lives alone and was independent.",
+    vitals: { pulse: "78/minute", resp: "22/minute", bp: "146/80 mmHg", o2sat: "92% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of her history that change your assessment or management.",
+        prompt: "What features of her history change your assessment or management?",
         accept: [
           { id: "doac", text: "Apixaban raises the risk of intracranial and other bleeding", match: ["apixaban", "anticoagulant", "anticoagulation", "doac", "eliquis", "blood thinner"] },
           { id: "bb", text: "Metoprolol can mask tachycardia in shock", match: ["beta blocker", "metoprolol", "mask"] },
@@ -345,17 +349,17 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO imaging studies are indicated now? Select TWO.",
+        prompt: "Which of the following imaging studies are indicated for her at this time?",
         options: [
-          "CT head without contrast",
-          "CT cervical spine",
-          "Three view plain cervical spine films",
-          "MRI brain",
-          "Skull X-ray series",
           "CT angiogram of the neck",
-          "No imaging if she meets the Canadian CT Head Rule low risk criteria",
+          "CT cervical spine",
+          "CT head without contrast",
+          "MRI of the brain",
+          "Skull X-ray series",
+          "Three view plain cervical spine films",
+          "No imaging if Canadian CT Head Rule low risk",
         ],
-        correct: [0, 1],
+        correct: [1, 2],
         explanation:
           "Patients on anticoagulants were excluded from the Canadian CT Head Rule and need CT head after any head injury. Age 65 or older is a high risk factor in the Canadian C-spine Rule, so CT of the cervical spine is indicated. Plain films miss too many injuries in older adults.",
         keyFeature: { topic: "multiple-trauma", n: 3 },
@@ -366,7 +370,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "CT shows an 8 mm acute subdural hematoma without midline shift and three left rib fractures with a small pneumothorax. Her last apixaban dose was 3 hours ago.",
-        prompt: "List TWO treatments to address her anticoagulation.",
+        prompt: "What treatments do you give to address her anticoagulation?",
         accept: [
           { id: "pcc", text: "Four factor prothrombin complex concentrate (Octaplex or Beriplex)", match: ["pcc", "prothrombin complex", "octaplex", "beriplex"] },
           { id: "andexanet", text: "Andexanet alfa where available", match: ["andexanet", "andexxa", "ondexxya"] },
@@ -389,7 +393,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Two hours later, after IV hydromorphone for rib pain, she is harder to rouse. RR 30 and shallow, SpO2 88% on 4 L/min. HR 84, BP 128/70.",
-        prompt: "List THREE possible causes of her deterioration.",
+        prompt: "What are the possible causes of her deterioration?",
         accept: [
           { id: "sdh", text: "Expanding subdural hematoma", match: ["subdural", "intracranial", "head bleed", "ich", "expanding hematoma"] },
           { id: "ptx", text: "Enlarging or tension pneumothorax", match: ["pneumothorax", "tension"] },
@@ -418,20 +422,21 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     topic: "multiple-trauma",
     title: "Teen off a dirt bike",
     stem:
-      "A 17 year old boy with severe hemophilia A was thrown from a dirt bike at a trail park. He was helmeted. He had a brief loss of consciousness and walked to the ambulance. GCS 15. He has a headache and has vomited once. HR 96, BP 128/72, RR 18, SpO2 99%. Weight 60 kg. He has neck pain but no midline tenderness. He carries a factor first card.",
+      "A 17-year-old boy with severe hemophilia A was thrown from a dirt bike at a trail park. He was helmeted. He had a brief loss of consciousness and walked to the ambulance. GCS 15. He has a headache and has vomited once. SpO2 is 99%. He has neck pain but no midline tenderness. He carries a factor first card.",
+    vitals: { pulse: "96/minute", resp: "18/minute", bp: "128/72 mmHg", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
-          "CT head first, then factor replacement if a bleed is seen",
-          "Factor VIII concentrate 50 IU/kg (3000 IU) IV now, before imaging",
-          "Frozen plasma 15 mL/kg IV",
-          "Desmopressin 0.3 mcg/kg IV",
+          "CT head first, then factor replacement if bleeding is seen",
+          "Desmopressin 0.3 mcg/kg IV before imaging",
+          "Factor VIII 50 IU/kg (3000 IU) IV before imaging",
+          "Frozen plasma 15 mL/kg IV before imaging",
           "Observe for 4 hours and image if symptoms worsen",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "In severe hemophilia any significant head injury is treated as a bleed. Raise the factor level toward 100% before imaging. Each IU/kg of factor VIII raises the level by about 2%, so 50 IU/kg is the usual dose. Desmopressin only helps mild hemophilia A, and plasma is a poor substitute for concentrate.",
         keyFeature: { topic: "multiple-trauma", n: 4 },
@@ -441,7 +446,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO other pieces of history you need because of his hemophilia.",
+        prompt: "What other history do you need because of his hemophilia?",
         accept: [
           { id: "inhibitor", text: "Whether he has an inhibitor", match: ["inhibitor"] },
           { id: "product", text: "His usual factor product, dose and time of last prophylaxis", match: ["product", "last dose", "prophylaxis", "usual dose", "last infusion"] },
@@ -457,15 +462,15 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate approach to his cervical spine? Select one.",
+        prompt: "Which of the following is the most appropriate approach to his cervical spine?",
         options: [
-          "Clear clinically because he was ambulatory at the scene",
-          "Assess active rotation 45 degrees left and right and clear if able",
           "CT cervical spine",
-          "Three view plain films",
           "MRI cervical spine",
+          "Rotation testing to 45 degrees",
+          "Three view plain films",
+          "No imaging and clinical clearance",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
           "Under the Canadian C-spine Rule a crash on a motorized recreational vehicle is a dangerous mechanism and a high risk factor. High risk patients go straight to imaging without range of motion testing. Being ambulatory is a low risk factor only when no high risk factor is present. CT is the preferred study.",
         keyFeature: { topic: "multiple-trauma", n: 1 },
@@ -476,7 +481,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "CT head and cervical spine are normal. He has received factor VIII.",
-        prompt: "List THREE hemophilia related injuries or complications you look for on the secondary survey.",
+        prompt: "What hemophilia related injuries or complications do you look for on the secondary survey?",
         accept: [
           { id: "joint", text: "Hemarthrosis", match: ["hemarthrosis", "haemarthrosis", "joint bleed", "joint"] },
           { id: "psoas", text: "Iliopsoas hematoma", match: ["iliopsoas", "psoas"] },
@@ -502,13 +507,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     topic: "multiple-trauma",
     title: "Logger awaiting a fixed wing transfer",
     stem:
-      "You work in a rural hospital in northern Ontario. A 45 year old logger was struck by a falling tree. You intubated him for a GCS of 7. He has bilateral periorbital bruising and clear fluid from the right ear. Chest X-ray shows a 2 cm left apical pneumothorax. He has a closed mid-shaft right femur fracture. HR 104, BP 128/76, SpO2 96% on FiO2 0.5. Weight 95 kg. A fixed wing air ambulance will fly him 90 minutes to the trauma centre.",
+      "You work in a rural hospital in northern Ontario. A 45-year-old logger was struck by a falling tree. You intubated him for a GCS of 7. He has bilateral periorbital bruising and clear fluid from the right ear. Chest X-ray shows a 2 cm left apical pneumothorax. He has a closed mid-shaft right femur fracture. A fixed wing air ambulance will fly him 90 minutes to the trauma centre.",
+    vitals: { pulse: "104/minute", bp: "128/76 mmHg", o2sat: "96% on FiO2 0.5", weight: "95 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR steps to prepare him for a safe flight.",
+        prompt: "What steps do you take to prepare him for a safe flight?",
         accept: [
           { id: "tube", text: "Place a chest tube for the pneumothorax before departure", match: ["chest tube", "thoracostomy", "chest drain"] },
           { id: "og", text: "Orogastric tube to decompress the stomach", match: ["orogastric", "og tube", "gastric tube", "og"] },
@@ -533,16 +539,16 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO physiologic effects of altitude are most relevant to this patient? Select TWO.",
+        prompt: "Which of the following physiologic effects of altitude are most relevant to this patient?",
         options: [
-          "Trapped gas expands as cabin pressure falls",
-          "The partial pressure of oxygen falls, so oxygen requirements may rise",
-          "Gas volumes shrink at altitude, so pneumothoraces become less important",
           "A pressurized cabin removes all altitude effects",
           "Cabin pressure rises above sea level pressure during flight",
+          "Gas volumes shrink, so pneumothoraces matter less",
           "Oxygen saturation is unaffected in ventilated patients",
+          "Partial pressure of oxygen falls, so oxygen needs may rise",
+          "Trapped gas expands as cabin pressure falls",
         ],
-        correct: [0, 1],
+        correct: [4, 5],
         explanation:
           "Boyle law means gas in a pneumothorax, the stomach, an endotracheal tube cuff and air splints expands as ambient pressure falls. Pressurized cabins are usually held near 1500 to 2500 m, not sea level. The lower partial pressure of oxygen means a ventilated patient may need a higher FiO2 or PEEP.",
         keyFeature: { topic: "multiple-trauma", n: 8 },
@@ -553,7 +559,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "While the chest tube is being set up, his SpO2 falls to 85%. The ventilator alarms for high peak pressure. BP is 86/50.",
-        prompt: "List THREE causes you check for right away.",
+        prompt: "What causes do you check for right away?",
         accept: [
           { id: "disp", text: "Tube displacement into the esophagus or a mainstem bronchus", match: ["displace", "displacement", "dislodge", "esophageal", "oesophageal", "mainstem", "migrated", "migration"] },
           { id: "obs", text: "Tube obstruction by secretions, blood or kinking", match: ["obstruct", "obstruction", "plug", "kink", "secretion"] },
@@ -578,13 +584,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     topic: "multiple-trauma",
     title: "Bleeding patient who declines blood",
     stem:
-      "A 38 year old woman was the passenger in a rollover. She is alert and oriented. GCS 15. HR 124, BP 86/54, RR 24, SpO2 97%. Weight 62 kg. eFAST shows free fluid in the left upper quadrant. She tells you she is a Jehovah's Witness and will not accept blood. She shows you a signed advance directive card that refuses whole blood, red cells, plasma and platelets.",
+      "A 38-year-old woman was the passenger in a rollover. She is alert and oriented. GCS 15. SpO2 is 97%. eFAST shows free fluid in the left upper quadrant. She tells you she is a Jehovah's Witness and will not accept blood. She shows you a signed advance directive card that refuses whole blood, red cells, plasma and platelets.",
+    vitals: { pulse: "124/minute", resp: "24/minute", bp: "86/54 mmHg", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE steps in assessing and documenting her refusal.",
+        prompt: "What steps do you take in assessing and documenting her refusal?",
         accept: [
           { id: "capacity", text: "Assess her capacity to refuse", match: ["capacity", "capable"] },
           { id: "informed", text: "Explain the risk of death and confirm she understands", match: ["risk", "death", "informed", "understand"] },
@@ -602,7 +609,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE blood sparing measures you use.",
+        prompt: "What blood sparing measures do you use?",
         accept: [
           { id: "txa", text: "Tranexamic acid 1 g IV over 10 minutes then 1 g over 8 hours", match: ["txa", "tranexamic"] },
           { id: "surgery", text: "Urgent surgical or angiographic control of the spleen", match: ["surgical", "angiographic", "splenectomy", "surgery", "operating room", "embolization", "angioembolization", "interventional radiology", "laparotomy", "surgeon"] },
@@ -622,17 +629,17 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "On the way to the operating room she becomes unresponsive. Her husband, who is not a Witness, begs you to transfuse her.",
-        prompt: "Which is the most appropriate action in Ontario? Select one.",
+        prompt: "Which of the following is the most appropriate action in Ontario?",
         options: [
-          "Transfuse under the emergency treatment exception because she is now incapable",
-          "Transfuse because her husband is her substitute decision maker and consents",
-          "Continue to withhold blood because her prior capable wish applies to this situation",
-          "Obtain an urgent court order before any further treatment",
-          "Stop all resuscitation because she refused treatment",
+          "Continue to withhold blood",
+          "Seek an urgent court order first",
+          "Stop all resuscitation",
+          "Transfuse under the emergency exception",
+          "Transfuse with consent from her husband",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "Under the Health Care Consent Act a known prior capable wish that applies to the circumstances must be followed, and the emergency exception does not override it. Her refusal was informed, recent and specific to this situation. She still receives every other treatment she has not refused.",
+          "Continue to withhold blood because her prior capable wish applies to this situation. Under the Health Care Consent Act a known prior capable wish that applies to the circumstances must be followed, and the emergency exception does not override it. Her husband cannot consent to a treatment she refused while capable. Her refusal was informed, recent and specific to this situation. She still receives every other treatment she has not refused.",
         keyFeature: { topic: "multiple-trauma", n: 4 },
         source: "hcca",
       },
@@ -648,22 +655,25 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     alsoTopics: ["airway"],
     title: "Ejected driver after intubation",
     stem:
-      "A 28 year old man was ejected in a rollover. On arrival GCS is 6. HR 118, BP 112/70, RR 10, SpO2 91% with a bag valve mask. Weight 90 kg. You perform rapid sequence intubation. The tube is at 23 cm at the teeth and waveform capnography is present. Five minutes later SpO2 is 82%, HR 138, BP 74/40. Peak airway pressure is 42 cm H2O. Breath sounds are absent on the left.",
+      "A 28-year-old man was ejected in a rollover. On arrival GCS is 6. His vital signs on arrival are listed below. You perform rapid sequence intubation. The tube is at 23 cm at the teeth and waveform capnography is present.",
+    vitals: { pulse: "118/minute", resp: "10/minute", bp: "112/70 mmHg", o2sat: "91% on a bag valve mask", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        update:
+          "Five minutes later SpO2 is 82%, HR 138, BP 74/40. Peak airway pressure is 42 cm H2O. Breath sounds are absent on the left.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
-          "Withdraw the tube 3 cm and reassess",
-          "Finger thoracostomy in the left fifth intercostal space at the midaxillary line",
-          "Obtain a portable chest X-ray before intervening",
+          "Finger thoracostomy, left fifth space, midaxillary line",
           "Increase PEEP to improve oxygenation",
+          "Obtain a portable chest X-ray before needle decompression",
           "Start a norepinephrine infusion",
+          "Withdraw the tube 3 cm and reassess",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "Positive pressure ventilation can turn a simple pneumothorax into tension within minutes. Hypotension, high airway pressure and absent breath sounds need immediate decompression. The tube depth is appropriate and capnography confirms tracheal placement. Increasing PEEP would make the tension worse.",
+          "Positive pressure ventilation can turn a simple pneumothorax into tension within minutes. Hypotension, high airway pressure and absent breath sounds need immediate decompression by finger thoracostomy in the left fifth intercostal space at the midaxillary line. The tube depth is appropriate and capnography confirms tracheal placement. Increasing PEEP would make the tension worse.",
         keyFeature: { topic: "multiple-trauma", n: 5 },
         source: "atls",
       },
@@ -672,7 +682,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "After decompression and a chest tube he improves. SpO2 97%, BP 112/68.",
-        prompt: "List THREE ways you confirm and monitor correct tube position.",
+        prompt: "How do you confirm and monitor correct tube position?",
         accept: [
           { id: "etco2", text: "Continuous waveform capnography", match: ["capnography", "etco2", "end tidal", "capnograph"] },
           { id: "cxr", text: "Chest X-ray with the tip 2 to 4 cm above the carina", match: ["chest x ray", "cxr", "xray", "carina"] },
@@ -692,7 +702,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "He has now received 6 units of red cells and 4 of plasma. His CT is complete.",
-        prompt: "List THREE iatrogenic complications you check for.",
+        prompt: "What iatrogenic complications do you check for?",
         accept: [
           { id: "hypothermia", text: "Hypothermia", match: ["hypothermia", "temperature"] },
           { id: "ca", text: "Hypocalcemia from citrate in blood products", match: ["calcium", "hypocalcemia", "hypocalcaemia", "citrate"] },
@@ -714,7 +724,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE easily missed injuries that the secondary survey must target in this unconscious patient.",
+        prompt: "What easily missed injuries must the secondary survey target in this unconscious patient?",
         accept: [
           { id: "tl", text: "Thoracolumbar spine fracture", match: ["thoracolumbar", "thoracic spine", "lumbar spine", "back"] },
           { id: "bcvi", text: "Blunt carotid or vertebral artery injury", match: ["carotid", "vertebral artery", "cerebrovascular", "bcvi"] },
@@ -744,13 +754,16 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Child struck by a car",
     stem:
-      "A 6 year old boy was struck by a car at about 40 km/h while crossing the street. Weight 22 kg. He is crying and says his tummy hurts. GCS 14. HR 148, BP 88/56, RR 32, SpO2 98% on oxygen. Capillary refill is 4 seconds and his hands and feet are cool. There is bruising over the left upper quadrant. You work in a community hospital.",
+      "A 6-year-old boy was struck by a car at about 40 km/h while crossing the street. He is crying and says his tummy hurts. GCS 14. Capillary refill is 4 seconds and his hands and feet are cool. There is bruising over the left upper quadrant. You work in a community hospital.",
+    vitals: { pulse: "148/minute", resp: "32/minute", bp: "88/56 mmHg", o2sat: "98% on oxygen", weight: "22 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "His systolic pressure is normal for age. List TWO findings that show he is in shock.",
+        update:
+          "His systolic pressure is normal for age.",
+        prompt: "What findings show that he is in shock?",
         accept: [
           { id: "hr", text: "Tachycardia of 148", match: ["tachycardia", "heart rate", "hr 148", "148"] },
           { id: "crt", text: "Capillary refill of 4 seconds", match: ["capillary refill", "cap refill", "crt"] },
@@ -768,18 +781,18 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO initial resuscitation orders are most appropriate? Select TWO.",
+        prompt: "Which of the following initial resuscitation orders are most appropriate for this child?",
         options: [
-          "Normal saline 60 mL/kg over 15 minutes",
-          "Warmed packed red cells 10 mL/kg (220 mL)",
-          "Tranexamic acid 15 mg/kg (330 mg) IV over 10 minutes",
-          "Tranexamic acid 1 g IV over 10 minutes",
-          "Albumin 5% 20 mL/kg",
+          "Albumin 5% 20 mL/kg IV",
+          "Dextrose 10% 5 mL/kg IV",
           "Norepinephrine 0.1 mcg/kg/min",
+          "Normal saline 60 mL/kg over 15 minutes",
           "Normal saline 20 mL/kg repeated until the BP is normal",
-          "Dextrose 10% 5 mL/kg",
+          "Tranexamic acid 1 g IV over 10 minutes",
+          "Tranexamic acid 15 mg/kg (330 mg) IV over 10 minutes",
+          "Warmed packed red cells 10 mL/kg (220 mL)",
         ],
-        correct: [1, 2],
+        correct: [6, 7],
         explanation:
           "A child in hemorrhagic shock needs blood early, given in 10 mL/kg aliquots and warmed. Paediatric tranexamic acid is 15 mg/kg to a maximum of 1 g, followed by 2 mg/kg/h over 8 hours. A fixed 1 g dose is 45 mg/kg here. Repeated crystalloid dilutes clotting factors and vasopressors do not treat hypovolemia.",
         keyFeature: { topic: "multiple-trauma", n: 6 },
@@ -789,7 +802,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO measures to prevent iatrogenic hypothermia in this child.",
+        prompt: "What measures do you take to prevent iatrogenic hypothermia in this child?",
         accept: [
           { id: "fluids", text: "Warm all fluids and blood through a fluid warmer", match: ["warmer", "warm fluid", "warmed", "fluid warmer", "warm blood", "warm product"] },
           { id: "room", text: "Warm the resuscitation room", match: ["room temperature", "warm room", "ambient", "thermostat", "warm the room"] },
@@ -807,17 +820,17 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "After 20 mL/kg of red cells his HR is 118 and BP 100/62. He is warm and alert. CT shows a grade IV splenic laceration without active contrast extravasation.",
-        prompt: "Which is the most appropriate plan? Select one.",
+        prompt: "Which of the following is the most appropriate management plan for him?",
         options: [
-          "Immediate splenectomy",
-          "Nonoperative management at a paediatric trauma centre with monitoring and serial examinations",
+          "Diagnostic laparoscopy before transfer",
           "Discharge home with return instructions",
-          "Routine angioembolization",
-          "Diagnostic laparoscopy",
+          "Immediate splenectomy by a general surgeon at this hospital",
+          "Nonoperative management at a paediatric trauma centre",
+          "Routine angioembolization of the splenic injury",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Most children with blunt splenic injury are managed without surgery, and the decision is driven by physiology rather than CT grade. He has responded to transfusion, so arrange transfer to a paediatric trauma centre with a surgeon aware. Failure of nonoperative management usually shows as ongoing transfusion need.",
+          "Most children with blunt splenic injury are managed without surgery, and the decision is driven by physiology rather than CT grade. He has responded to transfusion, so arrange transfer to a paediatric trauma centre with a surgeon aware, for monitoring and serial examinations. Failure of nonoperative management usually shows as ongoing transfusion need.",
         keyFeature: { topic: "multiple-trauma", n: 2 },
         source: "apsa",
       },
@@ -833,13 +846,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     alsoTopics: ["msk"],
     title: "Roofer after a fall",
     stem:
-      "A 42 year old roofer fell about 5 m and landed on his feet. He complains of severe pain in both heels and in his lower back. GCS 15. HR 102, BP 132/84, RR 20, SpO2 98%. Weight 88 kg. His airway, breathing and circulation are intact and the primary survey is otherwise unremarkable.",
+      "A 42-year-old roofer fell about 5 m and landed on his feet. He complains of severe pain in both heels and in his lower back. GCS 15. SpO2 is 98%. His airway, breathing and circulation are intact and the primary survey is otherwise unremarkable.",
+    vitals: { pulse: "102/minute", resp: "20/minute", bp: "132/84 mmHg", weight: "88 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE injuries you specifically look for given this mechanism.",
+        prompt: "What injuries do you specifically look for given this mechanism?",
         accept: [
           { id: "spine", text: "Thoracolumbar burst fracture", match: ["lumbar", "thoracolumbar", "spine", "burst", "vertebral"] },
           { id: "calc", text: "Bilateral calcaneal fractures", match: ["calcaneal", "calcaneus", "calcaneum", "heel"] },
@@ -858,7 +872,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO parts of the secondary survey that you must include to find these injuries.",
+        prompt: "What parts of the secondary survey must you include to find these injuries?",
         accept: [
           { id: "logroll", text: "Log roll and palpate the entire spine", match: ["log roll", "palpate spine", "spine palpation", "back", "logroll"] },
           { id: "neuro", text: "Full neurologic exam including perianal sensation and rectal tone", match: ["neuro", "neurologic", "neurological", "rectal", "perianal", "saddle"] },
@@ -876,7 +890,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "X-rays show a comminuted right calcaneal fracture and an L1 burst fracture without neurologic deficit. Six hours later his right foot pain is severe despite IV opioids. The foot is tense and passive toe dorsiflexion is very painful.",
-        prompt: "List TWO management steps now.",
+        prompt: "What are your management steps now?",
         accept: [
           { id: "ortho", text: "Urgent orthopaedic consultation for possible fasciotomy", match: ["fasciotomy", "orthopedic", "orthopaedic", "ortho", "surgery", "surgeon"] },
           { id: "pressure", text: "Measure compartment pressures", match: ["compartment pressure", "pressure measurement", "stryker", "measure pressure"] },
@@ -894,7 +908,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO questions about the circumstances of the fall that could change your management.",
+        prompt: "What questions about the circumstances of the fall could change your management?",
         accept: [
           { id: "syncope", text: "Did he feel faint, have chest pain or palpitations before falling", match: ["syncope", "faint", "lightheaded", "dizzy", "prodrome", "chest pain", "palpitation", "passed out"] },
           { id: "etoh", text: "Alcohol or drug use", match: ["alcohol", "drug", "intoxication", "substance"] },
@@ -919,13 +933,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     topic: "multiple-trauma",
     title: "Gunshot wound to the abdomen",
     stem:
-      "A 22 year old man arrives by private car with a single gunshot wound to the left upper quadrant. There is no exit wound. He is confused. GCS 14. HR 134, BP 76/48, RR 28, SpO2 96%. Weight 75 kg. There are no signs of head injury. You are at a Level 1 trauma centre.",
+      "A 22-year-old man arrives by private car with a single gunshot wound to the left upper quadrant. There is no exit wound. He is confused. GCS 14. SpO2 is 96%. There are no signs of head injury. You are at a Level 1 trauma centre.",
+    vitals: { pulse: "134/minute", resp: "28/minute", bp: "76/48 mmHg", weight: "75 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE components of your initial hemorrhagic shock resuscitation. Include specific products or drugs.",
+        prompt: "What are the components of your initial hemorrhagic shock resuscitation, including specific products or drugs?",
         accept: [
           { id: "mtp", text: "Activate the massive transfusion protocol", match: ["massive transfusion", "mtp"] },
           { id: "rbc", text: "Uncrossmatched O red cells", match: ["o negative", "o positive", "uncrossmatched", "prbc", "packed red", "red cell"] },
@@ -948,15 +963,15 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
+          "Bedside local wound exploration",
           "CT abdomen and pelvis with contrast",
           "Diagnostic peritoneal lavage",
           "Immediate laparotomy in the operating room",
-          "Local wound exploration",
           "Serial abdominal exams in the emergency department",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
           "A hypotensive patient with a gunshot wound to the abdomen needs surgical haemorrhage control now. Imaging and further tests delay the one intervention that will save him. Resuscitation continues on the way to and in the operating room.",
         keyFeature: { topic: "multiple-trauma", n: 2 },
@@ -967,7 +982,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Forty minutes into the protocol he has received 10 units of red cells, 10 of plasma and 2 doses of platelets. Ionized calcium 0.88 mmol/L, fibrinogen 1.1 g/L, INR 1.8, temperature 34.8°C, pH 7.14.",
-        prompt: "List TWO targeted corrections. Include the product or drug.",
+        prompt: "What targeted corrections do you make, including the product or drug?",
         accept: [
           { id: "ca", text: "Calcium chloride 1 g IV or calcium gluconate 3 g IV", match: ["calcium"] },
           { id: "fib", text: "Cryoprecipitate or fibrinogen concentrate", match: ["cryo", "cryoprecipitate", "fibrinogen"] },
@@ -983,7 +998,9 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "The resuscitation room is crowded and noisy. List TWO things you do as team leader to keep the team effective.",
+        update:
+          "The resuscitation room is crowded and noisy.",
+        prompt: "What do you do as team leader to keep the team effective?",
         accept: [
           { id: "closed", text: "Use closed loop communication", match: ["closed loop"] },
           { id: "summary", text: "Give regular out loud summaries of the situation and plan", match: ["summaries", "summary", "summarize", "summarise", "update", "huddle", "share plan", "shared mental model"] },
@@ -1009,13 +1026,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     topic: "multiple-trauma",
     title: "Head-on collision with a dilating pupil",
     stem:
-      "A 55 year old man was the driver in a head-on collision. GCS 7 (E1 V2 M4). His right pupil is 6 mm and sluggish, the left is 3 mm and reactive. He has been intubated. HR 112, BP 94/60, SpO2 97%. Weight 80 kg. eFAST shows free fluid in the left upper quadrant.",
+      "A 55-year-old man was the driver in a head-on collision. GCS 7 (E1 V2 M4). His right pupil is 6 mm and sluggish, the left is 3 mm and reactive. He has been intubated. SpO2 is 97%. eFAST shows free fluid in the left upper quadrant.",
+    vitals: { pulse: "112/minute", bp: "94/60 mmHg", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO resuscitation targets that differ because of his head injury.",
+        prompt: "What resuscitation targets differ because of his head injury?",
         accept: [
           { id: "sbp", text: "Systolic BP at least 100 mmHg for his age", match: ["sbp 100", "systolic 100", "sbp 110", "systolic 110", "map 80", "map 85", "map 90"] },
           { id: "o2", text: "Avoid hypoxia with SpO2 above 94%", match: ["avoid hypoxia", "no hypoxia", "hypoxia", "spo2", "oxygen saturation", "pao2", "oxygenation"] },
@@ -1034,17 +1052,17 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "After 2 units of red cells his BP is 84/50.",
-        prompt: "Which is the most appropriate priority? Select one.",
+        prompt: "Which of the following is the most appropriate priority at this point?",
         options: [
-          "CT head first, then laparotomy",
-          "Hyperventilate to a PaCO2 of 25 mmHg and go to CT",
-          "Laparotomy for haemorrhage control now, with hyperosmolar therapy and neurosurgery aware",
           "Burr holes in the emergency department",
+          "CT head first, then laparotomy once imaged",
+          "Hyperventilate to PaCO2 25 mmHg, then straight to CT scanner",
+          "Laparotomy now, hyperosmolar therapy, neurosurgery aware",
           "Mannitol 1 g/kg before any further blood",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "Ongoing hypotension causes secondary brain injury, so haemorrhage control comes first. Neurosurgery can plan in parallel and treat raised pressure in the operating room. CT in an unstable patient is unsafe. Mannitol causes diuresis and worsens hypovolemia.",
+          "Ongoing hypotension causes secondary brain injury, so laparotomy for haemorrhage control comes first. Neurosurgery can plan in parallel and treat raised pressure in the operating room. CT in an unstable patient is unsafe. Mannitol causes diuresis and worsens hypovolemia.",
         keyFeature: { topic: "multiple-trauma", n: 2 },
         source: "atls",
       },
@@ -1052,7 +1070,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO measures to treat suspected raised intracranial pressure on the way to the operating room.",
+        prompt: "What measures do you use to treat suspected raised intracranial pressure on the way to the operating room?",
         accept: [
           { id: "hts", text: "Hypertonic saline, for example 3% 250 mL or 23.4% 30 mL", match: ["hypertonic", "3% saline", "23.4%"] },
           { id: "hob", text: "Head of bed at 30 degrees or reverse Trendelenburg", match: ["head of bed", "reverse trendelenburg", "elevate head", "30 degree", "head up"] },
@@ -1074,7 +1092,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "His wife arrives. She says he signed an advance directive last year saying he would not want life support.",
-        prompt: "List TWO steps you take before changing the plan of care.",
+        prompt: "What steps do you take before changing the plan of care?",
         accept: [
           { id: "read", text: "Read the actual document", match: ["read", "review", "see the document", "copy", "document"] },
           { id: "applies", text: "Decide whether it applies to this situation", match: ["applies", "applicable", "circumstance", "situation", "specific"] },
@@ -1098,13 +1116,13 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     topic: "multiple-trauma",
     title: "Five minute warning from paramedics",
     stem:
-      "Paramedics call ahead to your Level 2 trauma centre. They are 5 minutes away with a 30 year old cyclist struck by a truck. HR 140, BP 70 by palpation, GCS 9. There is an open right thigh wound that is bleeding heavily despite a pressure dressing, and crepitus over the left chest. You have two nurses, a respiratory therapist, a second emergency physician and a recorder.",
+      "Paramedics call ahead to your Level 2 trauma centre. They are 5 minutes away with a 30-year-old cyclist struck by a truck. HR 140, BP 70 by palpation, GCS 9. There is an open right thigh wound that is bleeding heavily despite a pressure dressing, and crepitus over the left chest. You have two nurses, a respiratory therapist, a second emergency physician and a recorder.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE things you do before the patient arrives.",
+        prompt: "What do you do before the patient arrives?",
         accept: [
           { id: "roles", text: "Assign roles to each team member", match: ["role", "assign", "allocate"] },
           { id: "ppe", text: "Everyone in personal protective equipment", match: ["ppe", "protective", "gown"] },
@@ -1125,20 +1143,22 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 3,
-        prompt: "You decide to perform rapid sequence intubation. Which THREE tasks do you delegate to happen at the same time? Select THREE.",
+        update:
+          "You decide to perform rapid sequence intubation.",
+        prompt: "Which of the following tasks do you delegate to happen at the same time as the intubation?",
         options: [
-          "A nurse holds firm direct pressure on the thigh wound or applies a tourniquet",
-          "The second physician prepares to perform a left finger thoracostomy if he deteriorates with ventilation",
-          "A nurse runs uncrossmatched blood through the rapid infuser",
-          "The respiratory therapist draws an arterial blood gas before induction",
-          "The radiology technician takes a lateral cervical spine film before intubation",
+          "A nurse applies direct thigh pressure or a tourniquet",
           "A nurse inserts a urinary catheter",
+          "A nurse runs uncrossmatched blood through the rapid infuser",
+          "The radiology technician takes a lateral C-spine film",
           "The recorder leaves to call the family",
-          "The second physician completes a secondary survey of the extremities",
+          "The respiratory therapist draws an arterial blood gas",
+          "The second physician prepares a left finger thoracostomy",
+          "The second physician surveys the extremities",
         ],
-        correct: [0, 1, 2],
+        correct: [0, 2, 6],
         explanation:
-          "Bleeding control, blood and chest decompression are the priorities that must continue during intubation. Positive pressure can convert a pneumothorax to tension, so have decompression ready. Tasks that do not change the next five minutes should wait.",
+          "Bleeding control, blood and chest decompression are the priorities that must continue during intubation. Positive pressure can convert a pneumothorax to tension, so the second physician is ready to perform a left finger thoracostomy if he deteriorates with ventilation. Tasks that do not change the next five minutes should wait.",
         keyFeature: { topic: "multiple-trauma", n: 7 },
         source: "atls",
       },
@@ -1146,7 +1166,9 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "Blood continues to pour from the thigh wound despite direct pressure. List TWO steps to control it.",
+        update:
+          "Blood continues to pour from the thigh wound despite direct pressure.",
+        prompt: "What steps do you take to control the bleeding?",
         accept: [
           { id: "tq", text: "Apply a tourniquet proximal to the wound", match: ["tourniquet", "stop bleeding tourniquet", "stop the bleeding tourniquet"] },
           { id: "pack", text: "Pack the wound with hemostatic gauze and hold pressure", match: ["packing", "pack", "hemostatic", "haemostatic", "combat gauze", "gauze"] },
@@ -1166,7 +1188,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "The patient goes to the operating room 25 minutes after arrival.",
-        prompt: "List TWO actions to support the team after the resuscitation.",
+        prompt: "What actions do you take to support the team after the resuscitation?",
         accept: [
           { id: "debrief", text: "Brief hot debrief of what went well and what to change", match: ["debrief"] },
           { id: "wellness", text: "Check on team members' wellbeing and offer peer support", match: ["wellbeing", "well being", "support", "wellness", "check in"] },
@@ -1191,13 +1213,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     alsoTopics: ["environmental"],
     title: "Snowmobiler found hours after a crash",
     stem:
-      "A 52 year old man crashed his snowmobile into a tree and was found 3 hours later in the snow. He is drowsy but answers questions. GCS 13. HR 58, BP 96/60, RR 12, SpO2 94%. Core temperature by bladder probe is 31.8°C. He is not shivering. His right knee is grossly deformed. Weight 100 kg. You work in a regional hospital and a helicopter can take him to the trauma centre.",
+      "A 52-year-old man crashed his snowmobile into a tree and was found 3 hours later in the snow. He is drowsy but answers questions. GCS 13. SpO2 is 94%. Core temperature is measured by bladder probe. He is not shivering. His right knee is grossly deformed. You work in a regional hospital and a helicopter can take him to the trauma centre.",
+    vitals: { temperature: "31.8°C core", pulse: "58/minute", resp: "12/minute", bp: "96/60 mmHg", weight: "100 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE rewarming or monitoring measures you start now.",
+        prompt: "What rewarming or monitoring measures do you start now?",
         accept: [
           { id: "wet", text: "Remove wet clothing", match: ["wet clothing", "remove wet", "dry", "wet cloth"] },
           { id: "forced", text: "Active external rewarming with forced air or warming blankets", match: ["forced air", "bair hugger", "warming blanket", "active external", "heating pad", "warm blanket"] },
@@ -1217,7 +1240,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "On secondary survey the right knee is grossly unstable in all directions. The dorsalis pedis pulse is faint. The foot is cool, as are both hands.",
-        prompt: "List TWO assessments for arterial injury.",
+        prompt: "How do you assess for arterial injury?",
         accept: [
           { id: "abi", text: "Ankle brachial index", match: ["ankle brachial", "abi", "arterial pressure index", "api"] },
           { id: "cta", text: "CT angiography", match: ["ct angiogram", "cta", "angiography", "angiogram", "ct angiography"] },
@@ -1234,17 +1257,17 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate way to immobilize his leg for the helicopter transfer? Select one.",
+        prompt: "Which of the following is the most appropriate way to immobilize his leg for the helicopter transfer?",
         options: [
+          "Air splint to the whole leg, fully inflated before takeoff",
+          "Circumferential plaster cast from thigh to ankle",
+          "Long leg posterior splint, knee in slight flexion",
           "Traction splint to the right leg",
-          "Long leg posterior splint with the knee in slight flexion and neurovascular status recorded",
-          "No splint so the pulses can be checked",
-          "Circumferential plaster cast",
-          "Air splint fully inflated before takeoff",
+          "No splint, to allow pulse checks",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "A traction splint is contraindicated with a knee injury because it distracts the unstable joint. A long leg splint in slight flexion keeps the knee reduced while allowing pulse checks. A fully inflated air splint will expand with altitude and can cause ischemia. Circumferential casts hide compartment syndrome.",
+          "A traction splint is contraindicated with a knee injury because it distracts the unstable joint. A long leg posterior splint in slight flexion keeps the knee reduced while allowing pulse checks. Record neurovascular status before and after splinting. A fully inflated air splint will expand with altitude and can cause ischemia. Circumferential casts hide compartment syndrome.",
         keyFeature: { topic: "multiple-trauma", n: 8 },
         source: "atls",
       },
@@ -1253,7 +1276,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "After 40 minutes of rewarming his temperature is 33.5°C. BP falls to 76/40 and HR is 110.",
-        prompt: "List TWO possible causes of his hypotension.",
+        prompt: "What are the possible causes of his hypotension?",
         accept: [
           { id: "rewarm", text: "Rewarming vasodilation", match: ["rewarming", "vasodilation", "afterdrop", "vasodilatation"] },
           { id: "bleed", text: "Occult hemorrhage now unmasked", match: ["hemorrhage", "haemorrhage", "bleeding", "blood loss"] },
@@ -1280,13 +1303,14 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
     alsoTopics: ["abuse-domestic"],
     title: "Young woman who fell down the stairs",
     stem:
-      "A 26 year old woman says she fell down the stairs at home last night. Her partner brought her in and answers most questions for her. GCS 15. HR 110, BP 104/70, RR 22, SpO2 97%. Weight 58 kg. She has left lower rib tenderness, left upper quadrant tenderness and bruises of several colours on her upper arms, neck and back.",
+      "A 26-year-old woman says she fell down the stairs at home last night. Her partner brought her in and answers most questions for her. GCS 15. SpO2 is 97%. She has left lower rib tenderness, left upper quadrant tenderness and bruises of several colours on her upper arms, neck and back.",
+    vitals: { pulse: "110/minute", resp: "22/minute", bp: "104/70 mmHg", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that suggest intimate partner violence.",
+        prompt: "What features suggest intimate partner violence?",
         accept: [
           { id: "ages", text: "Bruises of different ages", match: ["different age", "various age", "different stage", "old bruise", "healing", "several colour", "different colour", "different color"] },
           { id: "pattern", text: "Injury pattern not consistent with the story", match: ["inconsistent", "not consistent", "does not match", "not match", "mechanism", "story"] },
@@ -1305,7 +1329,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE steps to identify and document all of her current and past injuries.",
+        prompt: "What steps do you take to identify and document all of her current and past injuries?",
         accept: [
           { id: "fullexam", text: "Complete head to toe exam with her fully undressed", match: ["head to toe", "full exam", "undressed", "complete exam", "full body"] },
           { id: "neck", text: "Examine the neck and ask about strangulation, and image the neck vessels if present", match: ["strangulation", "neck", "choking"] },
@@ -1324,7 +1348,7 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO steps that make a safe disclosure more likely.",
+        prompt: "What steps make a safe disclosure more likely?",
         accept: [
           { id: "alone", text: "Interview her alone, away from her partner", match: ["alone", "private", "separate", "without partner", "away from partner"] },
           { id: "interp", text: "Use a professional interpreter, never the partner", match: ["interpreter"] },
@@ -1341,17 +1365,17 @@ export const MULTIPLE_TRAUMA_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "While waiting for CT she becomes pale and restless. HR 132, BP 94/80.",
-        prompt: "Which is the most appropriate action? Select one.",
+        prompt: "Which of the following is the most appropriate action at this time?",
         options: [
-          "Reassure her that this is anxiety about her partner",
-          "Return her to the resuscitation room, start blood, repeat eFAST and call the trauma surgeon",
           "Lorazepam 1 mg sublingual for agitation",
-          "Proceed with CT as planned without monitoring",
           "Metoprolol 5 mg IV for the tachycardia",
+          "Proceed with CT as planned without monitoring",
+          "Reassure her that the symptoms are anxiety about her partner",
+          "Resuscitation room, blood, repeat eFAST, call trauma surgeon",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "A narrowing pulse pressure, rising heart rate and restlessness signal hemorrhagic shock, here most likely from a delayed splenic bleed. She is no longer safe for CT. Attributing the change to anxiety is a classic and dangerous error.",
+          "A narrowing pulse pressure, rising heart rate and restlessness signal hemorrhagic shock, here most likely from a delayed splenic bleed. She is no longer safe for CT. Return her to the resuscitation room, start blood, repeat the eFAST and call the trauma surgeon. Attributing the change to anxiety is a classic and dangerous error.",
         keyFeature: { topic: "multiple-trauma", n: 5 },
         source: "atls",
       },

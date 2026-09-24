@@ -10,23 +10,23 @@ const S = {
   aap: { id: "aap-infant", citation: "Pantell RH, et al. Evaluation and management of well-appearing febrile infants 8 to 60 days old. Pediatrics. 2021." },
   pecarn: { id: "pecarn-infant", citation: "Kuppermann N, et al. A clinical prediction rule to identify febrile infants 60 days and younger at low risk for serious bacterial infections. JAMA Pediatr. 2019." },
   ssc: { id: "ssc-peds", citation: "Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of septic shock and sepsis-associated organ dysfunction in children. Pediatr Crit Care Med. 2020." },
-  trekk: { id: "trekk-sepsis", citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Paediatric sepsis." },
+  trekk: { id: "trekk-sepsis", citation: "Farrell CA, Canadian Paediatric Society Acute Care Committee. Diagnosis and management of severe sepsis in the paediatric patient. Paediatr Child Health. 2020.", url: "https://cps.ca/en/documents/position/diagnosis-and-management-of-sepsis-in-the-paediatric-patient" },
   phacMening: { id: "phac-mening", citation: "Public Health Agency of Canada. Guidelines for the prevention and control of meningococcal disease. Canada Communicable Disease Report. 2005." },
-  cigMeasles: { id: "cig-measles", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Measles vaccine, including post-exposure prophylaxis with immune globulin." },
+  cigMeasles: { id: "cig-measles", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Measles vaccine, including post-exposure prophylaxis with immune globulin. Updated 2025.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-12-measles-vaccine.html" },
   aha: { id: "aha-kawasaki", citation: "McCrindle BW, et al. Diagnosis, treatment, and long-term management of Kawasaki disease: a scientific statement for health professionals from the American Heart Association. Circulation. 2017." },
-  catmat: { id: "catmat", citation: "Committee to Advise on Tropical Medicine and Travel (CATMAT). Canadian recommendations for the prevention and treatment of malaria. Public Health Agency of Canada." },
+  catmat: { id: "catmat", citation: "Committee to Advise on Tropical Medicine and Travel (CATMAT). Canadian recommendations for the prevention and treatment of malaria. Chapter 7: treatment of malaria. Public Health Agency of Canada. Updated 2019.", url: "https://www.canada.ca/en/public-health/services/catmat/canadian-recommendations-prevention-treatment-malaria/chapter-7-treatment.html" },
   whoMalaria: { id: "who-malaria", citation: "World Health Organization. WHO guidelines for malaria." },
   cpsAom: { id: "cps-aom", citation: "Le Saux N, Robinson JL. Canadian Paediatric Society. Management of acute otitis media in children six months of age and older. Paediatr Child Health. 2016." },
-  cpsFever: { id: "cps-fever", citation: "Canadian Paediatric Society. Caring for Kids. Fever and temperature taking." },
-  cwc: { id: "cwc-caep", citation: "Choosing Wisely Canada. Emergency medicine recommendations from the Canadian Association of Emergency Physicians." },
+  cpsFever: { id: "cps-fever", citation: "Canadian Paediatric Society. Caring for Kids. Fever and temperature taking. Last updated 2022.", url: "https://caringforkids.cps.ca/handouts/health-conditions-and-treatments/fever_and_temperature_taking" },
+  cwc: { id: "cwc-caep", citation: "Allan GM, Arroll B. Prevention and treatment of the common cold: making sense of the evidence. CMAJ. 2014.", url: "https://www.cmaj.ca/content/186/3/190" },
   dart: { id: "dart", citation: "Dart RC, et al. Acetaminophen poisoning: an evidence-based consensus guideline for out-of-hospital management. Clin Toxicol. 2006." },
   dart2023: { id: "dart-2023", citation: "Dart RC, Mullins ME, Matoushek T, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open. 2023." },
   extrip: { id: "extrip-sal", citation: "Juurlink DN, et al. Extracorporeal treatment for salicylate poisoning: systematic review and recommendations from the EXTRIP workgroup. Ann Emerg Med. 2015." },
-  goldfrank: { id: "goldfrank", citation: "Nelson LS, et al, editors. Goldfrank's Toxicologic Emergencies. McGraw Hill. Chapter on salicylates." },
+  goldfrank: { id: "goldfrank", citation: "Nelson LS, Hoffman RS, Howland MA, Lewin NA, Goldfrank LR, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter on salicylates." },
   acsm: { id: "acsm-heat", citation: "Roberts WO, et al. ACSM expert consensus statement on exertional heat illness: recognition, management, and return to activity. Curr Sports Med Rep. 2021." },
   fn: { id: "fn-peds", citation: "Lehrnbecher T, et al. Guideline for the management of fever and neutropenia in pediatric patients with cancer and hematopoietic cell transplantation recipients: 2023 update. J Clin Oncol. 2023." },
   tls: { id: "tls", citation: "Coiffier B, et al. Guidelines for the management of pediatric and adult tumor lysis syndrome: an evidence-based review. J Clin Oncol. 2008." },
-  nelson: { id: "nelson", citation: "Kliegman RM, et al, editors. Nelson Textbook of Pediatrics. Elsevier. Chapters on fever without a focus and the leukemias." },
+  nelson: { id: "nelson", citation: "Kliegman RM, St Geme JW III, editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapters on fever without a focus and the leukemias." },
   cpsUti: { id: "cps-uti", citation: "Robinson JL, et al. Canadian Paediatric Society. Urinary tract infection in infants and children: Diagnosis and management. Paediatr Child Health. 2014." },
   idsa: { id: "idsa-ssti", citation: "Stevens DL, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014." },
 } satisfies Record<string, Source>;
@@ -38,13 +38,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     topic: "pediatric-fever",
     title: "Twelve day old with a warm forehead",
     stem:
-      "A 12 day old boy is brought in because his mother felt he was warm. He was born at term by vaginal delivery after an uncomplicated pregnancy. Rectal temperature 38.4°C. HR 162, RR 44, SpO2 99%. Weight 3.6 kg. He is feeding well, alert and consolable. He has mild visible jaundice. The fontanelle is flat and there is no rash.",
+      "A 12-day-old boy is brought in because his mother felt he was warm. He was born at term by vaginal delivery after an uncomplicated pregnancy. SpO2 is 99%. He is feeding well, alert and consolable. He has mild visible jaundice. The fontanelle is flat and there is no rash.",
+    vitals: { temperature: "38.4°C rectal", pulse: "162/minute", resp: "44/minute", weight: "3.6 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR investigations you order.",
+        prompt: "What investigations do you order?",
         accept: [
           { id: "bcx", text: "Blood culture", match: ["blood culture"] },
           { id: "cbc", text: "CBC with differential", match: ["cbc", "complete blood count", "neutrophil", "anc", "white count", "wbc"] },
@@ -66,17 +67,19 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "After the lumbar puncture you decide to start empiric antibiotics while results are pending. Which TWO do you order? Select TWO.",
+        update:
+          "After the lumbar puncture you decide to start empiric antibiotics while results are pending.",
+        prompt: "Which of the following empiric antibiotic orders are most appropriate for him?",
         options: [
-          "Ampicillin 75 mg/kg IV (270 mg) every 6 hours",
-          "Gentamicin 5 mg/kg IV (18 mg) every 24 hours",
-          "Ceftriaxone 50 mg/kg IV (180 mg) every 24 hours",
           "Amoxicillin 30 mg/kg PO every 8 hours",
           "Ampicillin 25 mg/kg IV (90 mg) every 12 hours",
-          "Vancomycin 15 mg/kg IV every 6 hours",
+          "Ampicillin 75 mg/kg IV (270 mg) every 6 hours",
           "Azithromycin 10 mg/kg IV daily",
+          "Ceftriaxone 50 mg/kg IV (180 mg) every 24 hours",
+          "Gentamicin 5 mg/kg IV (18 mg) every 24 hours",
+          "Vancomycin 15 mg/kg IV every 6 hours",
         ],
-        correct: [0, 1],
+        correct: [2, 5],
         explanation:
           "The CPS regimen for a term infant aged 8 to 28 days is ampicillin 75 mg/kg every 6 hours with gentamicin or tobramycin 5 mg/kg every 24 hours. Ampicillin covers Listeria and enterococcus, and the aminoglycoside covers gram negative organisms. If meningitis is suspected, add cefotaxime or use it in place of the aminoglycoside. Ceftriaxone is avoided in neonates, especially with jaundice, because it displaces bilirubin and must not be given with IV calcium.",
         keyFeature: { topic: "pediatric-fever", n: 3 },
@@ -86,7 +89,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings that would lead you to add empiric acyclovir.",
+        prompt: "What findings would lead you to add empiric acyclovir?",
         accept: [
           { id: "seizure", text: "Seizures", match: ["seizure"] },
           { id: "vesicles", text: "Skin, eye or mouth vesicles", match: ["vesicle", "vesicular", "blister"] },
@@ -105,17 +108,17 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "The urinalysis is negative. CBC, CRP and procalcitonin are normal. CSF has 3 white cells and a negative Gram stain.",
-        prompt: "Which is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for this infant?",
         options: [
-          "Discharge home with a recheck in 24 hours",
+          "Admit and observe until cultures negative at 36 hours",
           "Discharge home on oral amoxicillin",
-          "Discharge home once the blood culture is negative at 12 hours",
-          "Admit and observe until all cultures are negative at 36 hours, with or without continuing antibiotics",
+          "Discharge home with a recheck in 24 hours",
+          "Discharge once the blood culture is negative at 12 hours",
           "Give one dose of ceftriaxone and discharge",
         ],
-        correct: 3,
+        correct: 0,
         explanation:
-          "The CPS advises hospital observation for every febrile infant aged 28 days or younger, even when low risk. Observe until cultures are negative at 36 hours. With a normal CSF, continuing antibiotics is optional. Normal initial results do not make discharge from the emergency department safe.",
+          "The CPS advises hospital observation for every febrile infant aged 28 days or younger, even when low risk. Admit and observe until all cultures are negative at 36 hours. With a normal CSF, continuing antibiotics is optional. Normal initial results do not make discharge from the emergency department safe.",
         keyFeature: { topic: "pediatric-fever", n: 1 },
         source: "cps-infant",
       },
@@ -130,13 +133,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     topic: "pediatric-fever",
     title: "Six week old with fever at home",
     stem:
-      "A 6 week old boy had a rectal temperature of 38.3°C at home three hours ago. He was born at term and has been well. In the ED his rectal temperature is 38.2°C. HR 158, RR 40, SpO2 99%. Weight 4.8 kg. He is feeding well, alert and smiling, with normal perfusion. There is no focus on exam.",
+      "A 6-week-old boy had a rectal temperature of 38.3°C at home three hours ago. He was born at term and has been well. SpO2 is 99%. He is feeding well, alert and smiling, with normal perfusion. There is no focus on exam.",
+    vitals: { temperature: "38.2°C rectal", pulse: "158/minute", resp: "40/minute", weight: "4.8 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE initial investigations.",
+        prompt: "What are your initial investigations?",
         accept: [
           { id: "ua", text: "Urinalysis on a catheter specimen", match: ["urinalysis", "ua", "urine dip", "urine analysis"] },
           { id: "ucx", text: "Urine culture by catheter", match: ["urine culture", "catheter urine", "urine"] },
@@ -147,25 +151,25 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         ],
         unacceptable: [{ text: "Bag urine specimen for culture", match: ["bag"] }],
         explanation:
-          "Well-appearing febrile infants 29 to 60 days old are risk stratified with a urinalysis and inflammatory markers. Procalcitonin is the most useful marker, with ANC and CRP as alternatives. The PECARN rule uses a negative urinalysis, ANC at or below 4.09 x 10^9/L and procalcitonin at or below 1.71 µg/L. The AAP guideline uses a procalcitonin cut off of 0.5 µg/L.",
+          "Well-appearing febrile infants 29 to 60 days old are risk stratified with a urinalysis and inflammatory markers. Procalcitonin is the most useful marker, with ANC and CRP as alternatives. The PECARN rule uses a negative urinalysis, ANC at or below 4.09 x 10^9/L and procalcitonin at or below 1.71 mcg/L. The AAP guideline uses a procalcitonin cut off of 0.5 mcg/L.",
         keyFeature: { topic: "pediatric-fever", n: 1 },
         source: "pecarn-infant",
       },
       {
         id: "q2",
         kind: "single",
-        update: "The urinalysis is negative. ANC 3.1 x 10^9/L, procalcitonin 0.2 µg/L, CRP 8 mg/L. He remains well appearing and is feeding.",
-        prompt: "Which is the most appropriate disposition? Select one.",
+        update: "The urinalysis is negative. ANC 3.1 x 10^9/L, procalcitonin 0.2 mcg/L, CRP 8 mg/L. He remains well appearing and is feeding.",
+        prompt: "Which of the following is the most appropriate disposition for this infant?",
         options: [
-          "Lumbar puncture and admission for IV ceftriaxone",
-          "Discharge home without antibiotics, with reassessment in 24 to 48 hours and follow up of the blood culture",
-          "Discharge home on oral amoxicillin",
           "Admit and start IV ampicillin and gentamicin",
+          "Discharge home on oral amoxicillin",
+          "Discharge without antibiotics, reassess in 24 to 48 hours",
           "Give IM ceftriaxone and discharge without a lumbar puncture",
+          "Lumbar puncture and admission for IV ceftriaxone",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "A well-appearing infant of 29 to 60 days with a negative urinalysis and normal inflammatory markers is at low risk of invasive bacterial infection. The CPS allows discharge without a lumbar puncture or antibiotics when follow up within 24 to 48 hours is assured. Admission for observation until cultures are negative at 24 hours is an alternative. Giving antibiotics without a lumbar puncture muddies any later meningitis workup.",
+          "A well-appearing infant of 29 to 60 days with a negative urinalysis and normal inflammatory markers is at low risk of invasive bacterial infection. The CPS allows discharge without a lumbar puncture or antibiotics when follow up within 24 to 48 hours is assured, including follow up of the blood culture. Admission for observation until cultures are negative at 24 hours is an alternative. Giving antibiotics without a lumbar puncture muddies any later meningitis workup.",
         keyFeature: { topic: "pediatric-fever", n: 1 },
         source: "cps-infant",
       },
@@ -173,7 +177,9 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "His parents ask how to give acetaminophen. Write TWO parts of your instructions, including the dose.",
+        update:
+          "His parents ask how to give acetaminophen.",
+        prompt: "What are your instructions, including the dose?",
         accept: [
           { id: "dose", text: "Acetaminophen 15 mg/kg, about 72 mg (0.9 mL of the 80 mg/mL drops)", match: ["72 mg", "70 mg", "75 mg", "60 mg", "48 mg", "15 mg/kg", "15mg/kg", "10 mg/kg", "0.9 ml", "0.8 ml", "0.7 ml", "0.6 ml"] },
           { id: "interval", text: "Every 4 to 6 hours, no more than 5 doses or 75 mg/kg in 24 hours", match: ["every 4", "every 6", "q4", "q6", "q4h", "q6h", "4 to 6", "5 dose", "five dose", "75 mg/kg"] },
@@ -194,7 +200,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE signs that should make his parents bring him back right away.",
+        prompt: "What signs should make his parents bring him back right away?",
         accept: [
           { id: "feed", text: "Poor feeding", match: ["feeding", "feed", "not eating", "refuse"] },
           { id: "lethargy", text: "Lethargy or hard to wake", match: ["lethargic", "lethargy", "hard to wake", "sleepy", "drowsy", "floppy"] },
@@ -223,13 +229,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Sleepy nine month old",
     stem:
-      "A 9 month old girl has had fever for 2 days. Today she is sleepy, has taken only a few ounces and has had one wet diaper. She is fully immunized. Temperature 39.6°C. HR 196, RR 52, BP 64/32, SpO2 95% on room air. Weight 8.5 kg. Capillary refill is 4 seconds and her legs are mottled. She responds only to painful stimulus. There is no rash.",
+      "A 9-month-old girl has had fever for 2 days. Today she is sleepy, has taken only a few ounces and has had one wet diaper. She is fully immunized. Capillary refill is 4 seconds and her legs are mottled. She responds only to painful stimulus. There is no rash.",
+    vitals: { temperature: "39.6°C", pulse: "196/minute", resp: "52/minute", bp: "64/32 mmHg", o2sat: "95% on room air", weight: "8.5 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "Other than fever, list THREE findings that indicate sepsis with poor perfusion.",
+        prompt: "Other than fever, what findings indicate sepsis with poor perfusion?",
         accept: [
           { id: "hr", text: "Tachycardia of 196", match: ["tachycardia", "heart rate", "196"] },
           { id: "crt", text: "Capillary refill of 4 seconds", match: ["capillary refill", "cap refill", "crt"] },
@@ -249,18 +256,18 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO antimicrobials do you give? Select TWO.",
+        prompt: "Which of the following antimicrobial orders are most appropriate for her?",
         options: [
-          "Ceftriaxone 100 mg/kg IV (850 mg)",
-          "Ceftriaxone 10 mg/kg IV (85 mg)",
-          "Ampicillin 50 mg/kg IV",
-          "Vancomycin 15 mg/kg IV (130 mg)",
-          "Vancomycin 1 g IV",
           "Amoxicillin 400 mg PO",
+          "Ampicillin 50 mg/kg IV",
           "Azithromycin 10 mg/kg IV",
+          "Ceftriaxone 10 mg/kg IV (85 mg)",
+          "Ceftriaxone 100 mg/kg IV (850 mg)",
           "Gentamicin 7 mg/kg IV",
+          "Vancomycin 1 g IV",
+          "Vancomycin 15 mg/kg IV (130 mg)",
         ],
-        correct: [0, 3],
+        correct: [4, 7],
         explanation:
           "Septic shock without a source in an infant needs coverage of pneumococcus, meningococcus, Hib and resistant organisms, at doses that treat meningitis. Give antibiotics within the first hour and do not delay them for a lumbar puncture. Ampicillin is not needed for Listeria beyond early infancy.",
         keyFeature: { topic: "pediatric-fever", n: 3 },
@@ -270,7 +277,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE other resuscitation steps for the first hour.",
+        prompt: "What other resuscitation steps do you take in the first hour?",
         accept: [
           { id: "io", text: "IV or intraosseous access", match: ["intraosseous", "io", "iv access"] },
           { id: "bolus", text: "Crystalloid bolus 10 to 20 mL/kg (85 to 170 mL)", match: ["bolus", "10 ml/kg", "20 ml/kg", "crystalloid", "ringer", "normal saline", "fluid"] },
@@ -292,17 +299,17 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "After 40 mL/kg of crystalloid her BP is 66/34, capillary refill is 5 seconds and her liver edge is now 3 cm below the costal margin.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step?",
         options: [
+          "Dopamine infusion 10 mcg/kg/min by peripheral line",
+          "Epinephrine 0.05 to 0.3 mcg/kg/min by IO or peripheral line",
           "Further 20 mL/kg boluses to a total of 100 mL/kg",
-          "Dopamine 10 mcg/kg/min",
-          "Epinephrine infusion 0.05 to 0.3 mcg/kg/min through the IO or a peripheral line",
           "Hydrocortisone before any vasoactive drug",
-          "Wait for central access before starting a vasoactive drug",
+          "Wait for central access before starting any vasoactive drug",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "Cold shock that persists after 40 to 60 mL/kg, especially with new hepatomegaly, needs a vasoactive infusion. Epinephrine is preferred for cold shock and can start peripherally or by IO. Dopamine is no longer favoured. Hydrocortisone is for refractory shock or known adrenal risk.",
+          "Cold shock that persists after 40 to 60 mL/kg, especially with new hepatomegaly, needs a vasoactive infusion. An epinephrine infusion is preferred for cold shock and can start peripherally or by IO. Dopamine is no longer favoured. Hydrocortisone is for refractory shock or known adrenal risk.",
         keyFeature: { topic: "shock", n: 7 },
         source: "ssc-peds",
       },
@@ -318,17 +325,18 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Preschooler with fever and new spots",
     stem:
-      "A 3 year old girl has had fever for 12 hours. Her father noticed purple spots on her legs an hour ago that are spreading. She attends daycare and has a 5 year old brother. Temperature 39.8°C. HR 170, RR 34, BP 84/50, SpO2 97%. Weight 14 kg. Capillary refill is 3 seconds. She is irritable but consolable.",
+      "A 3-year-old girl has had fever for 12 hours. Her father noticed purple spots on her legs an hour ago that are spreading. She attends daycare and has a 5-year-old brother. SpO2 is 97%. Capillary refill is 3 seconds. She is irritable but consolable.",
+    vitals: { temperature: "39.8°C", pulse: "170/minute", resp: "34/minute", bp: "84/50 mmHg", weight: "14 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which rash feature most strongly suggests invasive bacterial infection? Select one.",
+        prompt: "Which of the following rash features most strongly suggests invasive bacterial infection?",
         options: [
-          "Blanching red macules on the trunk",
-          "Nonblanching petechiae and purpura spreading on the legs",
-          "A few petechiae above the nipple line after forceful coughing",
           "A lacy rash on the arms after bright red cheeks",
+          "Nonblanching petechiae and purpura spreading on the legs",
+          "Red blanching macules on the trunk",
+          "Some petechiae above the nipple line after forceful coughing",
           "Urticarial wheals that move over hours",
         ],
         correct: 1,
@@ -341,7 +349,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "Write TWO empiric antimicrobial orders. Include drug, dose and route.",
+        prompt: "What are your empiric antimicrobial orders, including drug, dose and route?",
         accept: [
           { id: "cef", text: "Ceftriaxone 100 mg/kg IV or IO (1.4 g), or IM if access is delayed", match: ["ceftriaxone 100 mg/kg", "ceftriaxone 100mg/kg", "ceftriaxone 1.4 g", "ceftriaxone 1.4g", "ceftriaxone 1400 mg", "ceftriaxone 1400mg", "cefotaxime 75 mg/kg", "cefotaxime 1 g"] },
           { id: "vanc", text: "Vancomycin 15 mg/kg IV (210 mg)", match: ["vancomycin 15 mg/kg", "vancomycin 15mg/kg", "vancomycin 210", "vanco 15 mg/kg", "vancomycin 200"] },
@@ -360,7 +368,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE infection control or public health actions.",
+        prompt: "What infection control or public health actions do you take?",
         accept: [
           { id: "droplet", text: "Droplet precautions for the first 24 hours of antibiotics", match: ["droplet", "isolation", "mask"] },
           { id: "notify", text: "Notify the local public health unit", match: ["public health", "report", "notify", "notifiable"] },
@@ -376,15 +384,17 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Her 5 year old brother weighs 20 kg and is well. Which is the most appropriate prophylaxis? Select one.",
+        update:
+          "Her 5-year-old brother weighs 20 kg and is well.",
+        prompt: "Which of the following is the most appropriate prophylaxis for her brother?",
         options: [
-          "Rifampin 10 mg/kg (200 mg) PO every 12 hours for 2 days",
-          "Rifampin 20 mg/kg PO as a single dose",
           "Amoxicillin 50 mg/kg PO daily for 10 days",
           "Azithromycin 10 mg/kg PO daily for 5 days",
-          "No prophylaxis unless he develops symptoms",
+          "Rifampin 10 mg/kg (200 mg) PO twice daily, 2 days",
+          "Rifampin 20 mg/kg PO as a single dose",
+          "No prophylaxis unless he develops fever or other symptoms",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "Rifampin 10 mg/kg (maximum 600 mg) every 12 hours for 2 days is standard for children, with a single IM dose of ceftriaxone as an alternative. Amoxicillin does not eradicate carriage. Waiting for symptoms misses the window for prevention.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
@@ -402,13 +412,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Toddler with fever, cough and red eyes",
     stem:
-      "A 20 month old boy has had fever for 4 days with cough, runny nose and red eyes. Today a red blotchy rash started behind his ears and on his face and is spreading down his trunk. His parents chose not to vaccinate him. The family returned from visiting relatives abroad 10 days ago. Temperature 39.9°C. HR 150, RR 36, SpO2 96%. Weight 11 kg. He has been sitting in the busy waiting room for an hour.",
+      "A 20-month-old boy has had fever for 4 days with cough, runny nose and red eyes. Today a red blotchy rash started behind his ears and on his face and is spreading down his trunk. His parents chose not to vaccinate him. The family returned from visiting relatives abroad 10 days ago. SpO2 is 96%. He has been sitting in the busy waiting room for an hour.",
+    vitals: { temperature: "39.9°C", pulse: "150/minute", resp: "36/minute", weight: "11 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features in the history or exam that point to a serious viral exanthem rather than a benign one.",
+        prompt: "What features in the history or exam point to a serious viral exanthem rather than a benign one?",
         accept: [
           { id: "unvax", text: "Unvaccinated", match: ["unvaccinated", "unimmunized", "unimmunised", "not vaccinated", "no mmr", "vaccine", "vaccination"] },
           { id: "travel", text: "Recent travel with possible exposure", match: ["travel", "outbreak", "exposure", "abroad"] },
@@ -426,7 +437,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO infection control actions you take right away.",
+        prompt: "What infection control actions do you take right away?",
         accept: [
           { id: "airborne", text: "Airborne isolation in a negative pressure room", match: ["airborne", "negative pressure"] },
           { id: "n95", text: "Staff wear N95 respirators and only immune staff enter", match: ["n95", "immune staff", "respirator"] },
@@ -444,17 +455,19 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         select: 2,
-        prompt: "A 4 month old infant and his mother, who is pregnant and not immune, were in the waiting room with him 3 hours ago. Select TWO correct post-exposure measures.",
+        update:
+          "A 4-month-old infant and his mother, who is pregnant and not immune, were in the waiting room with him 3 hours ago.",
+        prompt: "Which of the following post-exposure measures are correct for these two contacts?",
         options: [
-          "MMR vaccine for the 4 month old",
           "Intramuscular immune globulin 0.5 mL/kg for the 4 month old",
-          "MMR vaccine for the pregnant mother",
-          "Intravenous immune globulin 400 mg/kg for the pregnant mother",
-          "Oral acyclovir for both",
-          "Vitamin A for both",
+          "IV immune globulin 400 mg/kg for the pregnant mother",
+          "MMR vaccine for the 4 month old within 72 hours",
+          "MMR vaccine for the pregnant mother within 72 hours",
+          "Oral acyclovir for both contacts for 5 days",
+          "Vitamin A for both contacts as prophylaxis",
           "No prophylaxis unless symptoms develop",
         ],
-        correct: [1, 3],
+        correct: [0, 1],
         explanation:
           "Infants under 6 months are too young for MMR and receive IM immune globulin within 6 days. MMR is a live vaccine and is contraindicated in pregnancy, so a susceptible pregnant contact receives IV immune globulin. Acyclovir has no activity against measles.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
@@ -464,7 +477,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO complications of this illness that you assess for before disposition.",
+        prompt: "What complications of this illness do you assess for before disposition?",
         accept: [
           { id: "pna", text: "Pneumonia", match: ["pneumonia", "pneumonitis"] },
           { id: "aom", text: "Otitis media", match: ["otitis", "ear infection"] },
@@ -490,13 +503,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     topic: "pediatric-fever",
     title: "Six days of fever despite antibiotics",
     stem:
-      "A 3 year old boy has had fever for 6 days. A walk-in clinic started amoxicillin 3 days ago for a sore throat, without improvement. He is very irritable. Temperature 39.5°C. HR 150, RR 28, BP 98/58, SpO2 99%. Weight 16 kg. Both eyes are red without discharge. His lips are red and cracked and his tongue is bright red. He has a blotchy rash on his trunk. His hands and feet are red and puffy. There is a 2 cm tender node on the left side of his neck.",
+      "A 3-year-old boy has had fever for 6 days. A walk-in clinic started amoxicillin 3 days ago for a sore throat, without improvement. He is very irritable. SpO2 is 99%. Both eyes are red without discharge. His lips are red and cracked and his tongue is bright red. He has a blotchy rash on his trunk. His hands and feet are red and puffy. There is a 2 cm tender node on the left side of his neck.",
+    vitals: { temperature: "39.5°C", pulse: "150/minute", resp: "28/minute", bp: "98/58 mmHg", weight: "16 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 4,
-        prompt: "List FOUR principal clinical criteria that he meets for the diagnosis you suspect.",
+        prompt: "What principal clinical criteria does he meet for the diagnosis you suspect?",
         accept: [
           { id: "eyes", text: "Bilateral nonexudative conjunctival injection", match: ["conjunctival", "conjunctivitis", "eye", "red eye", "conjunctiva"] },
           { id: "oral", text: "Oral changes: red cracked lips and strawberry tongue", match: ["lip", "strawberry", "oral", "mouth", "tongue"] },
@@ -513,19 +527,19 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO treatments are indicated? Select TWO.",
+        prompt: "Which of the following treatments are indicated for this child now?",
         options: [
-          "IV immune globulin 2 g/kg (32 g) as a single infusion over 10 to 12 hours",
-          "IV immune globulin 400 mg/kg daily for 5 days",
-          "ASA at moderate to high dose (30 to 100 mg/kg/day) divided four times daily",
           "ASA 3 to 5 mg/kg/day alone without immune globulin",
-          "Ibuprofen 10 mg/kg every 6 hours for fever",
-          "Prednisone 2 mg/kg/day in place of immune globulin",
+          "ASA 30 to 100 mg/kg/day divided four times daily",
           "Ceftriaxone 50 mg/kg IV daily",
+          "Ibuprofen 10 mg/kg every 6 hours for fever",
+          "IV immune globulin 2 g/kg over 10 to 12 hours",
+          "IV immune globulin 400 mg/kg daily for 5 days",
+          "Prednisone 2 mg/kg/day in place of immune globulin",
         ],
-        correct: [0, 2],
+        correct: [1, 4],
         explanation:
-          "A single dose of IVIG 2 g/kg given within the first 10 days of illness reduces coronary aneurysms from about 25% to about 4%. ASA is given with it at moderate to high dose until the fever settles, then at low dose. Ibuprofen blocks the antiplatelet effect of ASA. Steroids are an adjunct for high risk patients, not a substitute.",
+          "A single dose of IVIG 2 g/kg (32 g for this 16 kg child) given within the first 10 days of illness reduces coronary aneurysms from about 25% to about 4%. ASA is given with it at moderate to high dose until the fever settles, then at low dose. Ibuprofen blocks the antiplatelet effect of ASA. Steroids are an adjunct for high risk patients, not a substitute.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
         source: "aha-kawasaki",
       },
@@ -533,7 +547,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations that support the diagnosis or guide management.",
+        prompt: "What investigations support the diagnosis or guide management?",
         accept: [
           { id: "echo", text: "Echocardiogram for coronary artery changes", match: ["echo", "echocardiogram", "echocardiography", "coronary"] },
           { id: "crp", text: "CRP and ESR", match: ["crp", "esr", "sed rate", "c reactive", "sedimentation"] },
@@ -553,7 +567,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO other conditions that can cause prolonged fever with rash and red eyes in a child.",
+        prompt: "What other conditions can cause prolonged fever with rash and red eyes in a child?",
         accept: [
           { id: "misc", text: "Multisystem inflammatory syndrome in children", match: ["mis c", "misc", "multisystem inflammatory", "pims"] },
           { id: "scarlet", text: "Scarlet fever", match: ["scarlet", "strep", "streptococcal"] },
@@ -581,13 +595,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Fever after a family visit abroad",
     stem:
-      "An 8 year old girl returned 12 days ago from a month visiting grandparents in rural Ghana. She did not take malaria prophylaxis. She has had fever for 4 days with headache and vomiting. Temperature 39.9°C. HR 142, RR 30, BP 98/60, SpO2 97%. Weight 26 kg. GCS 15. She has mild scleral icterus and a palpable spleen tip. Her family doctor diagnosed a viral illness two days ago.",
+      "An 8-year-old girl returned 12 days ago from a month visiting grandparents in rural Ghana. She did not take malaria prophylaxis. She has had fever for 4 days with headache and vomiting. SpO2 is 97%. GCS 15. She has mild scleral icterus and a palpable spleen tip. Her family doctor diagnosed a viral illness two days ago.",
+    vitals: { temperature: "39.9°C", pulse: "142/minute", resp: "30/minute", bp: "98/60 mmHg", weight: "26 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO tests to confirm the diagnosis you most suspect.",
+        prompt: "What tests confirm the diagnosis you most suspect?",
         accept: [
           { id: "smear", text: "Thick and thin blood smears", match: ["smear", "thick", "thin", "blood film"] },
           { id: "rdt", text: "Malaria rapid antigen test", match: ["rapid", "rdt", "antigen", "binaxnow"] },
@@ -603,8 +618,8 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        update: "The smear shows Plasmodium falciparum with 6% parasitemia. Glucose 2.0 mmol/L. Hemoglobin 72 g/L. Bilirubin 58 µmol/L.",
-        prompt: "List THREE features of severe malaria that she has or that you must look for.",
+        update: "The smear shows Plasmodium falciparum with 6% parasitemia. Glucose 2.0 mmol/L. Hemoglobin 72 g/L. Bilirubin 58 micromol/L.",
+        prompt: "What features of severe malaria does she have, or must you look for?",
         accept: [
           { id: "para", text: "Parasitemia above 5%", match: ["parasitemia", "parasitaemia", "5%"] },
           { id: "glucose", text: "Hypoglycemia", match: ["hypoglycemia", "hypoglycaemia", "glucose"] },
@@ -625,17 +640,17 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate antimalarial treatment? Select one.",
+        prompt: "Which of the following is the most appropriate antimalarial treatment for her?",
         options: [
-          "Oral chloroquine",
-          "Oral atovaquone and proguanil",
-          "IV artesunate 2.4 mg/kg at 0, 12 and 24 hours, then daily",
-          "Oral primaquine",
-          "Oral doxycycline alone",
+          "IV artesunate 2.4 mg/kg at 0/12/24 hours, then daily",
+          "Oral atovaquone and proguanil daily for 3 days",
+          "Oral chloroquine phosphate over 3 days",
+          "Oral doxycycline alone twice daily for 7 days",
+          "Oral primaquine daily for 14 days",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "IV artesunate is first line for severe malaria in children and adults and clears parasites faster than quinine. Obtain it urgently through the pathway set out in current CATMAT guidance. Chloroquine resistance is widespread in West Africa. Oral regimens are for uncomplicated malaria only.",
+          "IV artesunate is first line for severe malaria in children and adults and clears parasites faster than quinine. Give 2.4 mg/kg at 0, 12 and 24 hours, then daily. Obtain it urgently through the pathway set out in current CATMAT guidance. Chloroquine resistance is widespread in West Africa. Oral regimens are for uncomplicated malaria only.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
         source: "catmat",
       },
@@ -643,7 +658,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO other infections to consider in a febrile child returning from West Africa.",
+        prompt: "What other infections do you consider in a febrile child returning from West Africa?",
         accept: [
           { id: "typhoid", text: "Enteric fever", match: ["typhoid", "enteric fever", "salmonella"] },
           { id: "dengue", text: "Dengue", match: ["dengue"] },
@@ -672,22 +687,23 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Preschooler pulling at his ear",
     stem:
-      "A 3 year old boy has had ear pain since last night. Temperature 38.6°C. HR 124, RR 24, SpO2 99%. Weight 15 kg. He is playful and eating. The right tympanic membrane is red and bulging with no discharge. The left is normal. He has had no ear infections this year and no recent antibiotics. His parents can easily return.",
+      "A 3-year-old boy has had ear pain since last night. SpO2 is 99%. He is playful and eating. The right tympanic membrane is red and bulging with no discharge. The left is normal. He has had no ear infections this year and no recent antibiotics. His parents can easily return.",
+    vitals: { temperature: "38.6°C", pulse: "124/minute", resp: "24/minute", weight: "15 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management at this visit?",
         options: [
           "Amoxicillin 90 mg/kg/day for 10 days starting now",
-          "Analgesia and watchful waiting for 48 hours, with reassessment or a delayed prescription",
-          "Amoxicillin and clavulanate starting now",
-          "Ciprofloxacin ear drops",
+          "Analgesia and watchful waiting for 48 hours",
+          "Ciprofloxacin ear drops for 7 days",
+          "Oral amoxicillin and clavulanate starting now",
           "Referral for tympanostomy tubes",
         ],
         correct: 1,
         explanation:
-          "Most acute otitis media resolves on its own. For a well child 6 months or older with mild symptoms, no otorrhea and reliable follow up, watchful waiting with good analgesia is recommended. Antibiotics start if he is not better in 48 hours. This avoids side effects and resistance.",
+          "Most acute otitis media resolves on its own. For a well child 6 months or older with mild symptoms, no otorrhea and reliable follow up, watchful waiting with good analgesia is recommended. Reassess him, or give a delayed prescription, and start antibiotics if he is not better in 48 hours. This avoids side effects and resistance.",
         keyFeature: { topic: "pediatric-fever", n: 7 },
         source: "cps-aom",
       },
@@ -695,7 +711,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "Write weight based orders for TWO analgesic antipyretics. Include dose and interval.",
+        prompt: "What weight based orders do you write for analgesic antipyretics, including dose and interval?",
         accept: [
           { id: "ibu", text: "Ibuprofen 10 mg/kg (150 mg) PO every 6 to 8 hours", match: ["ibuprofen 150", "ibuprofen 10 mg/kg", "ibuprofen 10mg/kg", "advil 150", "motrin 150", "ibuprofen 7.5 ml"] },
           { id: "apap", text: "Acetaminophen 15 mg/kg (225 mg) PO every 4 to 6 hours, maximum 75 mg/kg/day", match: ["acetaminophen 225", "acetaminophen 220", "acetaminophen 240", "acetaminophen 15 mg/kg", "acetaminophen 15mg/kg", "tylenol 225", "tylenol 240", "tylenol 15 mg/kg", "acetaminophen 7 ml"] },
@@ -713,7 +729,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that would make you start antibiotics now rather than wait.",
+        prompt: "What features would make you start antibiotics now rather than wait?",
         accept: [
           { id: "age", text: "Age under 6 months", match: ["6 month", "under 6", "younger than 6", "less than 6"] },
           { id: "otorrhea", text: "Otorrhea or perforation", match: ["otorrhea", "otorrhoea", "perforation", "perforated", "discharge", "drainage"] },
@@ -733,7 +749,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "He returns 60 hours later. The fever continues and the drum is still bulging.",
-        prompt: "Write the first line antibiotic order. List TWO elements: the drug with dose, and the duration.",
+        prompt: "What is your first line antibiotic order, including the drug with dose and the duration?",
         accept: [
           { id: "amox", text: "Amoxicillin 75 to 90 mg/kg/day PO divided twice daily, or 45 to 60 mg/kg/day divided three times daily", match: ["amoxicillin 75", "amoxicillin 80", "amoxicillin 90", "amoxicillin 1350", "amoxicillin 1125", "amoxicillin 1200", "amoxicillin 600", "amoxicillin 675", "amoxicillin 45 mg/kg", "amoxicillin 40 mg/kg", "amoxicillin 60 mg/kg"] },
           { id: "dur", text: "Five days because he is 2 years or older with a non severe course", match: ["5 day", "five day"] },
@@ -760,13 +776,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Toddler with a cold and a worried grandmother",
     stem:
-      "A 22 month old boy has had fever, runny nose and cough for 3 days. Temperature 39.1°C. HR 140, RR 30, SpO2 98%. Weight 12 kg. He is alert and drinking. His throat is mildly red. His ears and chest are normal. His mother asks for antibiotics because he is not getting better. His grandmother has been caring for him.",
+      "A 22-month-old boy has had fever, runny nose and cough for 3 days. SpO2 is 98%. He is alert and drinking. His throat is mildly red. His ears and chest are normal. His mother asks for antibiotics because he is not getting better. His grandmother has been caring for him.",
+    vitals: { temperature: "39.1°C", pulse: "140/minute", resp: "30/minute", weight: "12 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO elements of your management of his respiratory illness.",
+        prompt: "What are the elements of your management of his respiratory illness?",
         accept: [
           { id: "noabx", text: "No antibiotics, explaining that the illness is viral", match: ["no antibiotic", "avoid antibiotic", "antibiotics not", "not need antibiotic", "viral", "without antibiotic"] },
           { id: "fluids", text: "Encourage fluids", match: ["fluid", "hydration", "drink"] },
@@ -786,9 +803,15 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "You ask about fever medicine. The grandmother has been giving 5 mL of the acetaminophen infant drops (80 mg/mL) every 4 hours around the clock for 2 days, thinking it was the children's syrup. He has vomited twice today.",
-        prompt: "About how much acetaminophen has he been receiving per day? Select one.",
-        options: ["About 50 mg/kg/day", "About 100 mg/kg/day", "About 150 mg/kg/day", "About 200 mg/kg/day", "About 300 mg/kg/day"],
-        correct: 3,
+        prompt: "Which of the following is closest to the daily acetaminophen dose he has been receiving?",
+        options: [
+          "About 50 mg/kg/day",
+          "About 75 mg/kg/day",
+          "About 100 mg/kg/day",
+          "About 150 mg/kg/day",
+          "About 200 mg/kg/day",
+        ],
+        correct: 4,
         explanation:
           "Five millilitres of 80 mg/mL drops is 400 mg. Six doses a day is 2400 mg, or 200 mg/kg/day for a 12 kg child. That is more than double the maximum of 75 mg/kg/day. Confusing the concentrated drops with the 160 mg per 5 mL syrup is a classic Canadian dosing error.",
         keyFeature: { topic: "pediatric-fever", n: 8 },
@@ -798,7 +821,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO investigations you order now.",
+        prompt: "What investigations do you order now?",
         accept: [
           { id: "level", text: "Serum acetaminophen level", match: ["acetaminophen level", "apap level", "tylenol level", "paracetamol level", "serum acetaminophen", "acetaminophen concentration"] },
           { id: "alt", text: "ALT or AST", match: ["alt", "ast", "liver enzyme", "transaminase", "liver function", "lft"] },
@@ -814,18 +837,18 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "The acetaminophen level is 150 µmol/L and ALT is 180 U/L.",
-        prompt: "Which is the most appropriate management? Select one.",
+        update: "The acetaminophen level is 150 micromol/L and ALT is 180 U/L.",
+        prompt: "Which of the following is the most appropriate management at this point?",
         options: [
-          "Plot the level on the nomogram and treat only if above the line",
+          "Activated charcoal 1 g/kg PO",
           "Start IV acetylcysteine",
-          "Activated charcoal 1 g/kg",
-          "Stop acetaminophen and discharge with a recheck in 24 hours",
-          "Hemodialysis",
+          "Stop acetaminophen, recheck in 24 hours",
+          "Treat only if above the nomogram line",
+          "Urgent hemodialysis referral",
         ],
         correct: 1,
         explanation:
-          "After repeated supratherapeutic ingestion, an acetaminophen level of 20 mg/L (about 132 µmol/L) or more, or a raised ALT, is an indication for acetylcysteine. The nomogram is invalid for repeated ingestions. Charcoal has no role this long after the doses. Continue acetylcysteine until the level is undetectable and the ALT is improving.",
+          "After repeated supratherapeutic ingestion, an acetaminophen level of 20 mg/L (about 132 micromol/L) or more, or a raised ALT, is an indication for acetylcysteine. The nomogram is invalid for repeated ingestions. Charcoal has no role this long after the doses. Continue acetylcysteine until the level is undetectable and the ALT is improving.",
         keyFeature: { topic: "tox", n: 4 },
         source: "dart-2023",
       },
@@ -833,7 +856,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "List TWO counselling points to prevent another dosing error.",
+        prompt: "What counselling points do you give to prevent another dosing error?",
         accept: [
           { id: "weight", text: "Dose by weight, not by age", match: ["weight"] },
           { id: "syringe", text: "Use the syringe or device that comes with the product", match: ["syringe", "measuring device", "dosing device", "device"] },
@@ -859,13 +882,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Toddler with fever and fast breathing",
     stem:
-      "A 2 year old girl has had vomiting and fast breathing for 6 hours. Her grandmother is visiting from out of province. Temperature 38.7°C. HR 160, RR 48 and deep, SpO2 99% on room air. Weight 13 kg. She is irritable. Her chest is clear and there is no rash or focus of infection. Venous gas: pH 7.31, pCO2 22 mmHg, HCO3 11 mmol/L. Sodium 140, chloride 104 mmol/L. Glucose 3.6 mmol/L.",
+      "A 2-year-old girl has had vomiting and fast breathing for 6 hours. Her grandmother is visiting from out of province. Her breathing is deep. She is irritable. Her chest is clear and there is no rash or focus of infection. Venous gas: pH 7.31, pCO2 22 mmHg, HCO3 11 mmol/L. Sodium 140, chloride 104 mmol/L. Glucose 3.6 mmol/L.",
+    vitals: { temperature: "38.7°C", pulse: "160/minute", resp: "48/minute", o2sat: "99% on room air", weight: "13 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE non-infectious causes of her fever and tachypnea to consider.",
+        prompt: "What non-infectious causes of her fever and tachypnea do you consider?",
         accept: [
           { id: "sal", text: "Salicylate poisoning", match: ["salicylate", "asa", "aspirin", "wintergreen", "acetylsalicylic"] },
           { id: "symp", text: "Sympathomimetic ingestion", match: ["sympathomimetic", "amphetamine", "cocaine", "stimulant"] },
@@ -885,7 +909,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO questions to ask the family to identify a possible exposure.",
+        prompt: "What questions do you ask the family to identify a possible exposure?",
         accept: [
           { id: "meds", text: "What medications does the grandmother have with her", match: ["medication", "medicine", "pill", "grandmother", "purse", "bag"] },
           { id: "topical", text: "Any topical products such as oil of wintergreen or muscle rubs", match: ["wintergreen", "topical", "muscle rub", "liniment", "cream", "ointment"] },
@@ -903,7 +927,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "The grandmother uses a wintergreen muscle rub and the bottle was found open. The salicylate level is 4.1 mmol/L.",
-        prompt: "List THREE management steps.",
+        prompt: "What are your management steps?",
         accept: [
           { id: "bicarb", text: "Sodium bicarbonate bolus then infusion to a urine pH of 7.5 to 8", match: ["bicarbonate", "alkalinization", "alkalinisation", "urine ph", "alkalinize"] },
           { id: "k", text: "Replace potassium to allow urinary alkalinization", match: ["potassium"] },
@@ -923,7 +947,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO indications for hemodialysis in salicylate poisoning.",
+        prompt: "What are the indications for hemodialysis in salicylate poisoning?",
         accept: [
           { id: "cns", text: "Altered mental status or seizures", match: ["mental status", "seizure", "confusion", "neurologic", "coma", "altered"] },
           { id: "level", text: "Salicylate level above 7.2 mmol/L, or above 6.5 mmol/L with impaired kidney function", match: ["7.2", "6.5", "100 mg/dl", "level above"] },
@@ -949,22 +973,23 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["environmental"],
     title: "Collapse at a soccer tournament",
     stem:
-      "An 11 year old boy collapsed during his third soccer game of the day. It is 34°C and humid. He is confused and combative. Rectal temperature 41.3°C. HR 158, BP 94/50, RR 34, SpO2 97%. GCS 12. Weight 38 kg. His skin is hot and sweaty. His coach says he had a cold last week.",
+      "An 11-year-old boy collapsed during his third soccer game of the day. It is 34°C and humid. He is confused and combative. SpO2 is 97%. GCS 12. His skin is hot and sweaty. His coach says he had a cold last week.",
+    vitals: { temperature: "41.3°C rectal", pulse: "158/minute", resp: "34/minute", bp: "94/50 mmHg", weight: "38 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most important first step? Select one.",
+        prompt: "Which of the following is the most important first step in his management?",
         options: [
-          "Acetaminophen 15 mg/kg PR",
+          "Acetaminophen 15 mg/kg PR before cooling",
           "CT head before any treatment",
-          "Immediate whole body cold water immersion with continuous monitoring",
-          "Lumbar puncture and IV ceftriaxone before cooling",
-          "Dantrolene 2.5 mg/kg IV",
+          "Dantrolene 2.5 mg/kg IV before cooling",
+          "Immediate whole body cold water immersion, monitored",
+          "Lumbar puncture and IV ceftriaxone before any cooling",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "Exertional heat stroke is diagnosed by core temperature above 40°C with central nervous system dysfunction after exertion. Survival depends on how fast the temperature falls. Cold water immersion is the fastest method. Antipyretics do not work because the hypothalamic set point is normal.",
+          "Exertional heat stroke is diagnosed by core temperature above 40°C with central nervous system dysfunction after exertion. Survival depends on how fast the temperature falls. Immediate whole body cold water immersion, with continuous monitoring, is the fastest method. Antipyretics do not work because the hypothalamic set point is normal.",
         keyFeature: { topic: "environmental", n: 1 },
         source: "acsm-heat",
       },
@@ -972,7 +997,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of your cooling plan.",
+        prompt: "What are the elements of your cooling plan?",
         accept: [
           { id: "immersion", text: "Cold or ice water immersion", match: ["immersion", "ice bath", "cold water", "ice water"] },
           { id: "evap", text: "Evaporative cooling with mist and fans if immersion is not possible", match: ["evaporative", "fan", "mist", "spray"] },
@@ -992,7 +1017,9 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "His coach suggests an infection. List THREE other causes of hyperthermia with altered mental status that you consider.",
+        update:
+          "His coach suggests an infection.",
+        prompt: "What other causes of hyperthermia with altered mental status do you consider?",
         accept: [
           { id: "stim", text: "Stimulant ingestion such as ADHD medication, energy products or amphetamine", match: ["stimulant", "amphetamine", "sympathomimetic", "methylphenidate", "adhd", "cocaine", "energy drink", "caffeine"] },
           { id: "antichol", text: "Anticholinergic toxicity", match: ["anticholinergic", "diphenhydramine"] },
@@ -1013,7 +1040,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE complications you screen for with laboratory tests.",
+        prompt: "What complications do you screen for with laboratory tests?",
         accept: [
           { id: "ck", text: "Rhabdomyolysis", match: ["ck", "rhabdomyolysis", "creatine kinase"] },
           { id: "aki", text: "Acute kidney injury", match: ["creatinine", "renal", "kidney"] },
@@ -1040,13 +1067,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     topic: "pediatric-fever",
     title: "Fever in a child receiving chemotherapy",
     stem:
-      "A 7 year old girl with acute lymphoblastic leukemia had chemotherapy 8 days ago. She has a port. Her mother measured an oral temperature of 38.4°C at home. In triage her temperature is 38.6°C. HR 128, BP 96/58, RR 24, SpO2 98%. Weight 22 kg. She looks tired but well perfused. Her last ANC a week ago was 0.8 x 10^9/L.",
+      "A 7-year-old girl with acute lymphoblastic leukemia had chemotherapy 8 days ago. She has a port. Her mother measured an oral temperature of 38.4°C at home. Her triage vital signs are listed below. SpO2 is 98%. She looks tired but well perfused. Her last ANC a week ago was 0.8 x 10^9/L.",
+    vitals: { temperature: "38.6°C", pulse: "128/minute", resp: "24/minute", bp: "96/58 mmHg", weight: "22 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features that make this fever high risk and time critical.",
+        prompt: "What features make this fever high risk and time critical?",
         accept: [
           { id: "chemo", text: "Recent chemotherapy with expected neutropenia", match: ["chemotherapy", "chemo", "neutropenia", "neutropenic", "anc", "nadir"] },
           { id: "line", text: "Indwelling central line", match: ["central line", "port", "cvc", "line"] },
@@ -1062,7 +1090,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "Write TWO elements of your antimicrobial plan. Include the drug with dose and the time target.",
+        prompt: "What is your antimicrobial plan, including the drug with dose and the time target?",
         accept: [
           { id: "drug", text: "Antipseudomonal beta lactam such as piperacillin tazobactam 100 mg/kg (piperacillin component) IV or cefepime 50 mg/kg IV", match: ["piperacillin", "pip tazo", "tazocin", "cefepime", "meropenem"] },
           { id: "time", text: "Give within 60 minutes of arrival", match: ["60 minute", "1 hour", "one hour", "within an hour", "60 min"] },
@@ -1082,7 +1110,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Her ANC is 0.1 x 10^9/L. Thirty minutes after her first dose her BP is 74/40, HR 160 and capillary refill is 4 seconds.",
-        prompt: "List TWO changes to her antimicrobial therapy.",
+        prompt: "What changes do you make to her antimicrobial therapy?",
         accept: [
           { id: "vanc", text: "Add vancomycin", match: ["vancomycin", "vanco"] },
           { id: "amino", text: "Add an aminoglycoside such as gentamicin or tobramycin", match: ["gentamicin", "tobramycin", "aminoglycoside", "amikacin"] },
@@ -1105,13 +1133,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     topic: "pediatric-fever",
     title: "Three weeks of on and off fever",
     stem:
-      "A 4 year old boy has had intermittent fever for 3 weeks. He is tired, has lost weight and wakes at night with leg pain. This week he refuses to walk. He has been seen twice for a viral illness. Temperature 38.4°C. HR 132, RR 24, BP 100/60, SpO2 98%. Weight 17 kg. He is pale. There are bruises on his shins and back, scattered petechiae, cervical lymph nodes, and the liver and spleen are palpable.",
+      "A 4-year-old boy has had intermittent fever for 3 weeks. He is tired, has lost weight and wakes at night with leg pain. This week he refuses to walk. He has been seen twice for a viral illness. SpO2 is 98%. He is pale. There are bruises on his shins and back, scattered petechiae, cervical lymph nodes, and the liver and spleen are palpable.",
+    vitals: { temperature: "38.4°C", pulse: "132/minute", resp: "24/minute", bp: "100/60 mmHg", weight: "17 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE diagnoses to consider.",
+        prompt: "What diagnoses do you consider?",
         accept: [
           { id: "leuk", text: "Acute leukemia or other malignancy such as lymphoma or neuroblastoma", match: ["leukemia", "leukaemia", "malignancy", "cancer", "lymphoma", "neuroblastoma", "oncologic"] },
           { id: "jia", text: "Systemic juvenile idiopathic arthritis", match: ["juvenile", "jia", "still"] },
@@ -1132,7 +1161,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE initial investigations.",
+        prompt: "What are your initial investigations?",
         accept: [
           { id: "cbc", text: "CBC with differential", match: ["cbc", "complete blood count", "differential"] },
           { id: "smear", text: "Peripheral blood smear", match: ["smear", "blood film", "peripheral film"] },
@@ -1152,18 +1181,18 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "WBC 86 x 10^9/L with blasts on the smear. Hemoglobin 68 g/L, platelets 22 x 10^9/L. Potassium 5.6 mmol/L, uric acid 620 µmol/L, phosphate 2.4 mmol/L. Chest X-ray shows a widened mediastinum.",
-        prompt: "Which is the most appropriate action now? Select one.",
+        update: "WBC 86 x 10^9/L with blasts on the smear. Hemoglobin 68 g/L, platelets 22 x 10^9/L. Potassium 5.6 mmol/L, uric acid 620 micromol/L, phosphate 2.4 mmol/L. Chest X-ray shows a widened mediastinum.",
+        prompt: "Which of the following is the most appropriate action at this time?",
         options: [
           "Dexamethasone 0.6 mg/kg IV for his bone pain",
-          "Procedural sedation for a bone marrow aspirate in the emergency department",
-          "IV hyperhydration without potassium, tumour lysis monitoring, a uric acid lowering drug and urgent oncology consultation",
-          "Supine CT chest under sedation to define the mass",
+          "Hyperhydration without potassium, urate lowering, oncology",
           "Platelet transfusion to above 100 x 10^9/L",
+          "Procedural sedation for a bone marrow aspirate",
+          "Supine CT chest under procedural sedation",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "He has hyperleukocytosis with early tumour lysis. Hyperhydration without potassium and a uric acid lowering agent protect the kidneys. Steroids before diagnosis can blur the diagnosis and trigger severe tumour lysis. Sedation or lying flat with a mediastinal mass can cause airway and cardiovascular collapse.",
+          "He has hyperleukocytosis with early tumour lysis. IV hyperhydration without potassium and a uric acid lowering drug protect the kidneys. Start tumour lysis monitoring and call oncology urgently. Steroids before diagnosis can blur the diagnosis and trigger severe tumour lysis. Sedation or lying flat with a mediastinal mass can cause airway and cardiovascular collapse.",
         keyFeature: { topic: "pediatric-fever", n: 5 },
         source: "tls",
       },
@@ -1179,13 +1208,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Four month old who is off her feeds",
     stem:
-      "A 4 month old girl has had fever for 2 days. She has vomited twice today, is taking about half her usual feeds and has been fussier than usual. There are no cough or cold symptoms. Rectal temperature 39.1°C. HR 176, RR 40, SpO2 99%. Weight 6.2 kg. Capillary refill is 2 seconds. She is alert, irritable and consolable. There is no focus on exam.",
+      "A 4-month-old girl has had fever for 2 days. She has vomited twice today, is taking about half her usual feeds and has been fussier than usual. There are no cough or cold symptoms. SpO2 is 99%. Capillary refill is 2 seconds. She is alert, irritable and consolable. There is no focus on exam.",
+    vitals: { temperature: "39.1°C rectal", pulse: "176/minute", resp: "40/minute", weight: "6.2 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features in this presentation that concern you for a serious infection.",
+        prompt: "What features in this presentation concern you for a serious infection?",
         accept: [
           { id: "feed", text: "Poor feeding", match: ["feeding", "feed", "intake"] },
           { id: "vomit", text: "Vomiting", match: ["vomit", "vomiting", "emesis"] },
@@ -1202,7 +1232,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO acceptable ways to collect urine for culture in this infant.",
+        prompt: "What are acceptable ways to collect urine for culture in this infant?",
         accept: [
           { id: "cath", text: "In and out catheterization", match: ["catheterization", "catheterisation", "catheter", "in and out", "in out", "straight cath", "cath"] },
           { id: "spa", text: "Suprapubic aspiration", match: ["suprapubic", "spa"] },
@@ -1219,7 +1249,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "The catheter urinalysis shows positive leukocyte esterase and nitrite with pyuria. After ondansetron she keeps down an oral trial.",
-        prompt: "List TWO parts of your treatment plan.",
+        prompt: "What are the parts of your treatment plan?",
         accept: [
           { id: "abx", text: "Oral cefixime 8 mg/kg once daily, adjusted to local resistance", match: ["cefixime", "cephalexin", "cefprozil", "amoxicillin clavulanate", "tmp smx", "trimethoprim", "septra", "cefuroxime"] },
           { id: "oral", text: "Oral therapy is appropriate because she is well and tolerating fluids", match: ["oral", "po"] },
@@ -1238,7 +1268,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "Write TWO parts of your antipyretic order for her. Include the dose.",
+        prompt: "What is your antipyretic order for her, including the dose?",
         accept: [
           { id: "dose", text: "Acetaminophen 15 mg/kg, about 90 mg (about 1.2 mL of 80 mg/mL drops)", match: ["90 mg", "93 mg", "95 mg", "96 mg", "80 mg", "60 mg", "15 mg/kg", "15mg/kg", "10 mg/kg", "1.2 ml", "1 ml"] },
           { id: "interval", text: "Every 4 to 6 hours, no more than 5 doses or 75 mg/kg in 24 hours", match: ["every 4", "every 6", "q4", "q6", "q4h", "q6h", "4 to 6", "5 dose", "five dose", "75 mg/kg"] },
@@ -1266,13 +1296,14 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Red skin after chickenpox",
     stem:
-      "A 6 year old girl had chickenpox 5 days ago. Today she has high fever, vomiting and diarrhea, and her skin has turned red all over. One pox lesion on her left thigh is red, swollen and very painful. Temperature 40.1°C. HR 168, RR 32, BP 74/40, SpO2 96%. Weight 20 kg. Capillary refill is 4 seconds and she is drowsy. Her eyes are red.",
+      "A 6-year-old girl had chickenpox 5 days ago. Today she has high fever, vomiting and diarrhea, and her skin has turned red all over. One pox lesion on her left thigh is red, swollen and very painful. SpO2 is 96%. Capillary refill is 4 seconds and she is drowsy. Her eyes are red.",
+    vitals: { temperature: "40.1°C", pulse: "168/minute", resp: "32/minute", bp: "74/40 mmHg", weight: "20 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features that make this rash dangerous rather than a benign viral exanthem.",
+        prompt: "What features make this rash dangerous rather than a benign viral exanthem?",
         accept: [
           { id: "shock", text: "Hypotension and poor perfusion", match: ["hypotension", "shock", "blood pressure", "perfusion", "capillary refill"] },
           { id: "erythro", text: "Diffuse sunburn like erythroderma", match: ["erythroderma", "sunburn", "diffuse", "all over"] },
@@ -1292,17 +1323,17 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO antibiotics do you give now? Select TWO.",
+        prompt: "Which of the following antibiotics do you give to her now?",
         options: [
-          "Clindamycin 13 mg/kg IV (260 mg)",
-          "Ceftriaxone 100 mg/kg IV (2 g)",
-          "Clindamycin 5 mg/kg PO",
           "Acyclovir 20 mg/kg IV",
           "Amoxicillin 50 mg/kg PO",
           "Azithromycin 10 mg/kg IV",
+          "Ceftriaxone 100 mg/kg IV (2 g)",
+          "Clindamycin 13 mg/kg IV (260 mg)",
+          "Clindamycin 5 mg/kg PO",
           "Gentamicin 7 mg/kg IV",
         ],
-        correct: [0, 1],
+        correct: [3, 4],
         explanation:
           "A beta lactam kills the organism and clindamycin suppresses toxin production, which is why the combination is used in toxic shock. With shock and a possible necrotizing infection, add vancomycin if MRSA cannot be excluded. Acyclovir is not needed for uncomplicated varicella at this stage and does not treat the bacterial infection.",
         keyFeature: { topic: "pediatric-fever", n: 3 },
@@ -1312,7 +1343,7 @@ export const PEDIATRIC_FEVER_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO other interventions directed at the infection.",
+        prompt: "What other interventions directed at the infection do you order?",
         accept: [
           { id: "surg", text: "Urgent surgical assessment for necrotizing fasciitis and debridement", match: ["surgery", "surgical", "surgeon", "debridement", "necrotizing", "necrotising", "fasciitis"] },
           { id: "ivig", text: "IV immune globulin for streptococcal toxic shock", match: ["ivig", "immune globulin", "immunoglobulin"] },
