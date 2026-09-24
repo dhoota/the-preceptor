@@ -3,6 +3,9 @@ import { VITAL_LABELS, sampFormat, type Samp, type SampQuestion } from "@/engine
 import { SAMPS, SAMP_BATCHES } from "@/samps";
 import { stripInstruction } from "../src/screens/SampParts";
 import expansion from "../docs/samp-expansion.json";
+import conformance from "../docs/conformance.json";
+import signoffKeys from "../docs/signoff-keys-2026-09.json";
+import keyEdits from "../docs/conformance-key-edits.json";
 
 /**
  * Quality gates from docs/SAMP_SPEC.md. They record defects found in the
@@ -17,7 +20,9 @@ import expansion from "../docs/samp-expansion.json";
 
 const PLAN = expansion.batches as Record<string, { topic: string; count: number }>;
 const only = process.env.SAMP_BATCH;
-const batches = Object.keys(PLAN).filter((b) => (only ? b === only : true));
+/** Legacy batches (s01 to s18) that passed the format conformance pass. They keep write-in questions. */
+const CONFORMED = new Set<string>([...conformance.batches, ...(process.env.CONFORM ? [process.env.CONFORM] : [])]);
+const batches = [...Object.keys(PLAN), ...CONFORMED].filter((b) => (only ? b === only : true));
 
 const ABSOLUTE = /\b(always|never|completely|entirely|absolutely|invariably|guaranteed)\b/i;
 const LAST_OK = /^(none|no)\b/i;
@@ -52,7 +57,19 @@ function parityOk(q: SampQuestion): boolean {
   const distract = q.options.filter((_, i) => !k.has(i)).map((o) => o.length);
   const key = q.options.filter((_, i) => k.has(i) && !LAST_OK.test(q.options[i])).map((o) => o.length);
   if (!key.length || !distract.length) return true;
-  return mean(key) <= 1.6 * mean(distract);
+  return mean(key) <= 1.5 * mean(distract);
+}
+
+/**
+ * Similar length for all options, as in the CFPC sample: the longest option
+ * is at most 2.1 times the shortest in a single question, and 2.6 times in a
+ * menu. None and "No ..." options are left out.
+ */
+export function spreadOk(q: SampQuestion): boolean {
+  if (q.kind === "short") return true;
+  const L = q.options.filter((o) => !LAST_OK.test(o)).map((o) => o.length);
+  if (L.length < 2) return true;
+  return Math.max(...L) / Math.min(...L) <= (q.kind === "single" ? 2.1 : 2.6);
 }
 
 /** An explanation must never call its own keyed option wrong. */
@@ -99,22 +116,25 @@ function citationProblems(s: Samp): string[] {
 for (const b of batches) {
   const list = SAMP_BATCHES[b] ?? [];
   if (!list.length) continue;
+  // Expansion batches get every gate. Conformed legacy batches keep their write-in
+  // questions and their stems, so they get the question and option gates only.
+  const full = b in PLAN;
   describe(`quality ${b}`, () => {
     for (const s of list) {
       describe(s.id, () => {
-        it("uses the 2027 MCQ format with 3 to 5 questions", () => {
+        if (full) it("uses the 2027 MCQ format with 3 to 5 questions", () => {
           expect(sampFormat(s)).toBe("mcq");
           expect(s.questions.length).toBeGreaterThanOrEqual(3);
           expect(s.questions.length).toBeLessThanOrEqual(5);
         });
-        it("follows the CFPC stem conventions", () => {
+        if (full) it("follows the CFPC stem conventions", () => {
           expect(s.stem, "vitals belong in the vitals field").not.toMatch(/\b\d{2,3}\/\d{2,3}\s*(mm ?hg)?\b/i);
           expect(s.stem, "hyphenate ages").not.toMatch(/\b\d+ (year|month|week|day)s? old\b/i);
           expect(words(s.stem)).toBeGreaterThanOrEqual(40);
           expect(words(s.stem)).toBeLessThanOrEqual(170);
           expect(s.stem).not.toContain("µ");
         });
-        it("formats vitals as the CFPC does", () => {
+        if (full || s.vitals) it("formats vitals as the CFPC does", () => {
           expect(s.vitals, "vitals field").toBeDefined();
           for (const [k] of VITAL_LABELS) {
             const v = s.vitals?.[k];
@@ -127,9 +147,13 @@ for (const b of batches) {
         for (const q of s.questions) {
           describe(q.id, () => {
             it("words the question as the CFPC does", () => {
-              expect(q.prompt).toMatch(/^(.*\s)?which of the following\b/i);
               expect(q.prompt.trim().endsWith("?"), q.prompt).toBe(true);
               expect(stripInstruction(q.prompt), "no instruction in the prompt").toBe(q.prompt.trim());
+              if (q.kind === "short") return;
+              expect(q.prompt).toMatch(/^(.*\s)?which of the following\b/i);
+              const w = words(q.prompt);
+              expect(w, "question sentence 10 to 30 words, as in the CFPC sample").toBeGreaterThanOrEqual(10);
+              expect(w).toBeLessThanOrEqual(30);
             });
             if (q.kind === "single") it("has exactly 5 options", () => expect(q.options).toHaveLength(5));
             if (q.kind === "menu")
@@ -147,10 +171,12 @@ for (const b of batches) {
                   expect(words(o), o).toBeLessThanOrEqual(10);
                   expect(o, "no absolute words").not.toMatch(ABSOLUTE);
                 }
-                expect(parityOk(q), "key no longer than 1.6 times the mean distractor").toBe(true);
+                expect(parityOk(q), "key no longer than 1.5 times the mean distractor").toBe(true);
+                expect(spreadOk(q), `similar option lengths: ${q.options.map((o) => o.length).join(",")}`).toBe(true);
+                for (const o of q.options) expect(o.length, o).toBeLessThanOrEqual(60);
               });
             it("explains without contradicting the key", () => {
-              expect(q.explanation.length).toBeGreaterThanOrEqual(150);
+              if (full) expect(q.explanation.length).toBeGreaterThanOrEqual(150);
               expect(contradictsKey(q)).toBe(false);
             });
           });
@@ -169,10 +195,40 @@ for (const b of batches) {
         if (q.options.every((o, i) => i === q.correct || o.length < len)) longest++;
       }
       expect(Math.max(...pos) / singles.length, `positions ${pos.join(",")}`).toBeLessThanOrEqual(0.3);
+      expect(pos.every((n) => n > 0), `every position holds a key: ${pos.join(",")}`).toBe(true);
       expect(longest / singles.length, "key is the single longest option").toBeLessThanOrEqual(0.35);
     });
   });
 }
+
+describe("signed-off answer keys", () => {
+  // Keys a physician signed off never change silently. Write-in keys must match
+  // the snapshot. A keyed option may be reworded for length parity only when the
+  // edit is logged in docs/conformance-key-edits.json for physician review.
+  type Snap = { id: string; kind: string; keyed?: string[]; select?: number; required?: number; accept?: unknown; unacceptable?: unknown };
+  const snap = signoffKeys as Record<string, Snap[]>;
+  const edits = keyEdits.edits as Record<string, { before: string[]; after: string[] }>;
+  for (const s of SAMPS.filter((x) => x.reviewed && (!only || SAMP_BATCHES[only]?.includes(x)))) {
+    it(`${s.id} keeps its keys`, () => {
+      const before = snap[s.id];
+      expect(before, "in the key snapshot").toBeDefined();
+      expect(s.questions.map((q) => q.id)).toEqual(before.map((q) => q.id));
+      s.questions.forEach((q, i) => {
+        const b = before[i];
+        if (q.kind === "short") {
+          expect({ required: q.required, accept: q.accept, unacceptable: q.unacceptable ?? [] }).toEqual({ required: b.required, accept: b.accept, unacceptable: b.unacceptable });
+          return;
+        }
+        const keyed = (q.kind === "single" ? [q.correct] : q.correct).map((k) => q.options[k]);
+        expect(q.kind).toBe(b.kind);
+        expect(q.kind === "menu" ? q.select : 1).toBe(b.select);
+        const logged = edits[`${s.id}#${q.id}`];
+        expect(keyed, "keyed options changed without a logged edit").toEqual(logged ? logged.after : b.keyed);
+        if (logged) expect(logged.before).toEqual(b.keyed);
+      });
+    });
+  }
+});
 
 describe("bank wide", () => {
   it("has no near duplicate stems", () => {
@@ -198,6 +254,8 @@ describe("gate self test", () => {
     expect(ABSOLUTE.test("Never give fluids")).toBe(true);
     const q = { kind: "single", id: "q", prompt: "Which of the following?", options: ["a", "b", "c", "d", "a very long and detailed keyed answer"], correct: 4, explanation: "", keyFeature: { topic: "x", n: 1 }, source: "s" } as SampQuestion;
     expect(parityOk(q)).toBe(false);
+    expect(spreadOk(q)).toBe(false);
+    expect(spreadOk({ ...q, options: ["aspirin 160 mg PO", "heparin 5000 units IV", "clopidogrel 300 mg PO", "None"] } as SampQuestion)).toBe(true);
     expect(contradictsKey({ ...q, explanation: "The option a very long and detailed keyed answer is incorrect here." } as SampQuestion)).toBe(true);
     expect(citationProblems({ id: "t", sources: [{ id: "s1", citation: "Standard emergency medicine references" }] } as Samp)).toHaveLength(1);
     expect(citationProblems({ id: "t", sources: [{ id: "s1", citation: "Thrombosis Canada. DVT treatment guide. 2024." }, { id: "s2", citation: "Rosen's Emergency Medicine" }] } as Samp)).toHaveLength(1);

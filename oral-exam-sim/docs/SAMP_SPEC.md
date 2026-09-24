@@ -57,20 +57,21 @@ From 2027 every case on the CFPC SAMP exam is multiple choice (MCQ) or short men
 - Do not write the instruction in `prompt`. The app adds "Select one." or "Select two." from the question kind and count, in CFPC style. [CFPC]
 - `single`: the prompt starts "Which of the following" and ends with "?". Exactly 5 options. One correct. [CFPC]
 - `menu`: the prompt starts "Which of the following" and ends with "?". 6 to 12 options. `select` is 1 to 4. `correct` holds `select` indexes. For a "None" answer, add "None" as the last option and key only that index. The app then shows "Select one, or None if none are required." [CFPC]
-- One short sentence. No compound clauses. No negative lead-ins such as "Which is NOT". [QA]
+- One sentence of 10 to 30 words, as in the CFPC sample (12 to 28 words, median 16). No compound clauses. No negative lead-ins such as "Which is NOT". [CFPC] [QA]
 - The lead-in must not hint at the answer through grammar or wording. [QA]
 
 ## 7. Options
 
 - Order options alphabetically. Put "None" or a "No [action]" option last. When every option is a number or a range, order them from low to high. Doses of the same drug sit together. [CFPC]
-- Short parallel phrases, 1 to 10 words, no final period. [CFPC]
+- Short parallel phrases, 1 to 8 words and at most 60 characters, no final period. [CFPC]
+- Similar length for all options. In the CFPC sample the longest option is about twice the shortest at most. The rule: the longest option is at most 2.1 times the shortest in a `single` question, and 2.6 times in a `menu`. "None" and "No ..." options are left out of this count. [CFPC]
 - A dose option gives drug, dose, unit and route: "epinephrine 0.5 mg IM". [CFPC]
 - Every distractor is a plausible peer action or finding that a partly prepared candidate might choose. No strawmen. Wrong doses are plausibly wrong, not absurd. [QA]
 - No distractor is also correct. If two options could both be defended, rewrite one. [QA]
 - The option states the action or finding only. The reason why lives in `explanation`, never in the option. [QA]
-- Length parity. The keyed option must not stand out. It is at most 1.6 times the mean distractor length. Across a batch it is the longest option in no more than 35 percent of `single` questions. [QA]
+- Length parity. The keyed option must not stand out. In the CFPC sample it averages 1.1 times the mean distractor length. The rule: at most 1.5 times. Across a batch it is the longest option in no more than 35 percent of `single` questions. [CFPC] [QA]
 - No absolute words in options: always, never, completely, entirely, absolutely, invariably, guaranteed. Test-takers learn that absolutes mark wrong answers. [QA]
-- Position balance. Alphabetical order decides position, so choose distractors that place the key in different positions. Across a batch no position holds the key in more than 30 percent of `single` questions. [QA]
+- Position balance. The key must not always sit in the first few positions. In the CFPC sample it appears in every position, often the last. Alphabetical order decides position, so choose and word distractors so the key lands in different positions. Across a batch no position holds more than 30 percent of `single` keys, and every position from first to fifth holds at least one. [CFPC] [QA]
 
 ## 8. Explanations
 
@@ -155,9 +156,10 @@ For expansion batches the tests enforce:
 - MCQ format only, 3 to 5 questions.
 - `single` has 5 options. `menu` has 6 to 12 options and `select` 1 to 4.
 - Prompts start "Which of the following", end with "?" and hold no instruction.
-- Options in alphabetical or numeric order, None or "No ..." last, 1 to 10 words, no final period, no absolute words.
-- The key at most 1.6 times the mean distractor length.
-- Per batch: no key position above 30 percent, and the key longest in no more than 35 percent of `single` questions.
+- Prompts of 10 to 30 words.
+- Options in alphabetical or numeric order, None or "No ..." last, at most 60 characters, no final period, no absolute words.
+- Similar option lengths: longest at most 2.1 times the shortest (2.6 in a menu). The key at most 1.5 times the mean distractor length.
+- Per batch: no key position above 30 percent, every position used, and the key longest in no more than 35 percent of `single` questions.
 - Vitals in the `vitals` field in the right formats. No blood pressure in the stem text. Hyphenated ages.
 - Explanations of at least 150 characters that never call the keyed answer wrong.
 - Every citation names a year and is not a category.
