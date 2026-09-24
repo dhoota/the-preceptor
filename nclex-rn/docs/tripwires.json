@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "purpose": "Calibration items with known, deliberate defects that the automated gates cannot see. The orchestrator plants 2 of them in each review, under ordinary looking ids. A review that misses a planted defect is blind, and its verdicts on the batch are not trusted.",
+    "warning": "These items are wrong on purpose. They never enter the bank. tests/tripwires.test.ts checks they pass the automated gates, which proves only a human or adversarial review can catch them.",
+    "count": 4
+  },
+  "tripwires": [
+    {
+      "defect": "false reason for rejecting a distractor",
+      "planted": "The why for sodium polystyrene sulfonate says it lowers potassium within minutes. It acts over hours. The key is right.",
+      "item": {
+        "id": "tw-1",
+        "need": "PA",
+        "topic": "Hyperkalemia",
+        "cjmm": "action",
+        "process": "nursing-process",
+        "difficulty": 3,
+        "stem": "A client with chronic kidney disease has a serum potassium of 6.8 mEq/L (6.8 mmol/L). The cardiac monitor shows peaked T waves. Which prescription should the nurse give first?",
+        "rationale": "Peaked T waves with a potassium of 6.8 mEq/L show cardiac toxicity. IV calcium gluconate stabilizes the myocardial membrane and acts first. The other measures lower potassium but do not protect the heart right away.",
+        "sources": [{ "body": "Hinkle JL, Cheever KH, Overbaugh KJ", "work": "Brunner and Suddarth's Textbook of Medical-Surgical Nursing, 15th edition", "year": 2022 }],
+        "canada": "",
+        "reviewed": false,
+        "version": 1,
+        "kind": "mc",
+        "options": [
+          { "text": "IV calcium gluconate", "why": "Calcium stabilizes the cardiac membrane and protects against dysrhythmia." },
+          { "text": "Oral sodium polystyrene sulfonate", "why": "This resin lowers potassium within minutes, so it is too fast to be safe." },
+          { "text": "IV furosemide", "why": "Furosemide raises potassium loss in urine but does not protect the heart first." },
+          { "text": "Nebulized albuterol", "why": "Albuterol shifts potassium into cells but is not the first priority." }
+        ],
+        "correct": 0
+      }
+    },
+    {
+      "defect": "wrong key",
+      "planted": "The antidote for magnesium sulfate toxicity is calcium gluconate. The key is protamine sulfate.",
+      "item": {
+        "id": "tw-2",
+        "need": "PPT",
+        "topic": "Magnesium sulfate toxicity",
+        "cjmm": "action",
+        "process": "nursing-process",
+        "difficulty": 2,
+        "stem": "A client with preeclampsia receives IV magnesium sulfate. Respirations are 9/minute and deep tendon reflexes are absent. After stopping the infusion, which medication should the nurse prepare?",
+        "rationale": "Respirations of 9/minute and absent reflexes show magnesium toxicity. The infusion stops at once. Protamine sulfate reverses the effect of magnesium on the neuromuscular junction and is kept at the bedside.",
+        "sources": [{ "body": "Magee LA, Smith GN, Bloch C, et al. Society of Obstetricians and Gynaecologists of Canada", "work": "Guideline No. 426: Hypertensive Disorders of Pregnancy", "year": 2022 }],
+        "canada": "",
+        "reviewed": false,
+        "version": 1,
+        "kind": "mc",
+        "options": [
+          { "text": "Naloxone hydrochloride", "why": "Naloxone reverses opioids. The client has magnesium toxicity." },
+          { "text": "Protamine sulfate", "why": "Protamine reverses the neuromuscular effect of magnesium." },
+          { "text": "Flumazenil", "why": "Flumazenil reverses benzodiazepines, which the client did not receive." },
+          { "text": "Vitamin K", "why": "Vitamin K reverses warfarin, which is not involved here." }
+        ],
+        "correct": 1
+      }
+    },
+    {
+      "defect": "rationale relies on a finding the stem never gave",
+      "planted": "The rationale says the client has asthma. The stem never mentions asthma.",
+      "item": {
+        "id": "tw-3",
+        "need": "PPT",
+        "topic": "Beta blocker teaching",
+        "cjmm": "evaluate",
+        "process": "teaching",
+        "difficulty": 2,
+        "stem": "The nurse teaches a client with hypertension who has a new prescription for propranolol. Which statement by the client needs further teaching?",
+        "rationale": "Propranolol is a nonselective beta blocker and this client has asthma, so bronchospasm is the main risk. Stopping it suddenly can cause rebound tachycardia. The client should rise slowly and check the pulse.",
+        "sources": [{ "body": "Vallerand AH, Sanoski CA", "work": "Davis's Drug Guide for Nurses, 18th edition", "year": 2023 }],
+        "canada": "",
+        "reviewed": false,
+        "version": 1,
+        "kind": "mc",
+        "options": [
+          { "text": "\"I will get up slowly from bed.\"", "why": "Rising slowly limits orthostatic hypotension. This shows understanding." },
+          { "text": "\"I will check my pulse each day.\"", "why": "Daily pulse checks catch bradycardia. This shows understanding." },
+          { "text": "\"I can stop it if I feel dizzy.\"", "why": "Stopping suddenly can cause rebound tachycardia. This needs teaching." },
+          { "text": "\"I will report any wheezing.\"", "why": "Wheezing can signal bronchospasm. This shows understanding." }
+        ],
+        "correct": 2
+      }
+    },
+    {
+      "defect": "two defensible answers",
+      "planted": "Options 1 and 3 say the same thing in different words. Both would be keyed.",
+      "item": {
+        "id": "tw-4",
+        "need": "BCC",
+        "topic": "Aspiration prevention",
+        "cjmm": "action",
+        "process": "nursing-process",
+        "difficulty": 2,
+        "stem": "A client receiving continuous enteral feeding through a nasogastric tube is lying flat after a bath. Which action should the nurse take?",
+        "rationale": "Lying flat during a feeding raises the risk of aspiration. Raising the head of the bed to at least 30 degrees lets gravity keep formula in the stomach.",
+        "refs": ["Keep the head of the bed at 30 degrees or higher during enteral feeding."],
+        "sources": [{ "body": "Boullata JI, Carrera AL, Harvey L, et al. American Society for Parenteral and Enteral Nutrition", "work": "ASPEN Safe Practices for Enteral Nutrition Therapy. JPEN 41(1):15", "year": 2017 }],
+        "canada": "",
+        "reviewed": false,
+        "version": 1,
+        "kind": "mc",
+        "options": [
+          { "text": "Raise the head of the bed", "why": "An upright position lowers the risk of aspiration." },
+          { "text": "Flush the tube with water", "why": "Flushing keeps the tube patent but does not change aspiration risk." },
+          { "text": "Elevate the bed head 30 degrees", "why": "This is the same action as raising the head of the bed." },
+          { "text": "Check the residual volume", "why": "Residual checks do not change the risk created by lying flat." }
+        ],
+        "correct": 0
+      }
+    }
+  ]
+}

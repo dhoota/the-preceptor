@@ -1,0 +1,470 @@
+{
+ "note": "Bank plan. 28 stand-alone batches of 50 items and 20 case batches of 5 case studies. Client Needs counts per batch are exact. Totals follow the 2026 test plan midpoints of 2,000 items.",
+ "standaloneMix": {
+  "mc": 26,
+  "sata": 10,
+  "msn": 3,
+  "dnd": 3,
+  "cloze": 2,
+  "highlight": 2,
+  "bowtie": 2,
+  "trend": 2
+ },
+ "batches": {
+  "s01": {
+   "type": "standalone",
+   "needs": {
+    "MOC": 50
+   }
+  },
+  "s02": {
+   "type": "standalone",
+   "needs": {
+    "MOC": 50
+   }
+  },
+  "s03": {
+   "type": "standalone",
+   "needs": {
+    "MOC": 50
+   }
+  },
+  "s04": {
+   "type": "standalone",
+   "needs": {
+    "MOC": 50
+   }
+  },
+  "s05": {
+   "type": "standalone",
+   "needs": {
+    "MOC": 50
+   }
+  },
+  "s06": {
+   "type": "standalone",
+   "needs": {
+    "SIPC": 50
+   }
+  },
+  "s07": {
+   "type": "standalone",
+   "needs": {
+    "SIPC": 50
+   }
+  },
+  "s08": {
+   "type": "standalone",
+   "needs": {
+    "SIPC": 50
+   }
+  },
+  "s09": {
+   "type": "standalone",
+   "needs": {
+    "HPM": 50
+   }
+  },
+  "s10": {
+   "type": "standalone",
+   "needs": {
+    "HPM": 50
+   }
+  },
+  "s11": {
+   "type": "standalone",
+   "needs": {
+    "PSY": 50
+   }
+  },
+  "s12": {
+   "type": "standalone",
+   "needs": {
+    "PSY": 50
+   }
+  },
+  "s13": {
+   "type": "standalone",
+   "needs": {
+    "BCC": 50
+   }
+  },
+  "s14": {
+   "type": "standalone",
+   "needs": {
+    "BCC": 50
+   }
+  },
+  "s15": {
+   "type": "standalone",
+   "needs": {
+    "PPT": 50
+   }
+  },
+  "s16": {
+   "type": "standalone",
+   "needs": {
+    "PPT": 50
+   }
+  },
+  "s17": {
+   "type": "standalone",
+   "needs": {
+    "PPT": 50
+   }
+  },
+  "s18": {
+   "type": "standalone",
+   "needs": {
+    "PPT": 50
+   }
+  },
+  "s19": {
+   "type": "standalone",
+   "needs": {
+    "RRP": 50
+   }
+  },
+  "s20": {
+   "type": "standalone",
+   "needs": {
+    "RRP": 50
+   }
+  },
+  "s21": {
+   "type": "standalone",
+   "needs": {
+    "RRP": 50
+   }
+  },
+  "s22": {
+   "type": "standalone",
+   "needs": {
+    "PA": 50
+   }
+  },
+  "s23": {
+   "type": "standalone",
+   "needs": {
+    "PA": 50
+   }
+  },
+  "s24": {
+   "type": "standalone",
+   "needs": {
+    "PA": 50
+   }
+  },
+  "s25": {
+   "type": "standalone",
+   "needs": {
+    "PA": 46,
+    "MOC": 2,
+    "SIPC": 2
+   }
+  },
+  "s26": {
+   "type": "standalone",
+   "needs": {
+    "SIPC": 30,
+    "RRP": 18,
+    "PPT": 2
+   }
+  },
+  "s27": {
+   "type": "standalone",
+   "needs": {
+    "HPM": 26,
+    "PPT": 22,
+    "PSY": 2
+   }
+  },
+  "s28": {
+   "type": "standalone",
+   "needs": {
+    "PSY": 24,
+    "BCC": 26
+   }
+  },
+  "c01": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 3,
+    "PA": 4
+   }
+  },
+  "c02": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 6,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 2,
+    "BCC": 2,
+    "PPT": 5,
+    "RRP": 4,
+    "PA": 4
+   }
+  },
+  "c03": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 2,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 4,
+    "RRP": 4,
+    "PA": 5
+   }
+  },
+  "c04": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 6,
+    "SIPC": 3,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 3,
+    "PA": 4
+   }
+  },
+  "c05": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 5,
+    "HPM": 3,
+    "PSY": 2,
+    "BCC": 2,
+    "PPT": 5,
+    "RRP": 4,
+    "PA": 4
+   }
+  },
+  "c06": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 6,
+    "SIPC": 3,
+    "HPM": 2,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 4,
+    "PA": 4
+   }
+  },
+  "c07": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 3,
+    "PA": 4
+   }
+  },
+  "c08": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 4,
+    "RRP": 4,
+    "PA": 4
+   }
+  },
+  "c09": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 6,
+    "SIPC": 4,
+    "HPM": 2,
+    "PSY": 2,
+    "BCC": 2,
+    "PPT": 5,
+    "RRP": 4,
+    "PA": 5
+   }
+  },
+  "c10": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 3,
+    "PA": 4
+   }
+  },
+  "c11": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 3,
+    "PA": 4
+   }
+  },
+  "c12": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 6,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 2,
+    "BCC": 2,
+    "PPT": 5,
+    "RRP": 4,
+    "PA": 4
+   }
+  },
+  "c13": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 2,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 4,
+    "RRP": 4,
+    "PA": 5
+   }
+  },
+  "c14": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 3,
+    "PA": 4
+   }
+  },
+  "c15": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 6,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 2,
+    "BCC": 2,
+    "PPT": 5,
+    "RRP": 4,
+    "PA": 4
+   }
+  },
+  "c16": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 6,
+    "SIPC": 3,
+    "HPM": 2,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 4,
+    "PA": 4
+   }
+  },
+  "c17": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 3,
+    "PA": 4
+   }
+  },
+  "c18": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 4,
+    "RRP": 4,
+    "PA": 4
+   }
+  },
+  "c19": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 6,
+    "SIPC": 4,
+    "HPM": 2,
+    "PSY": 2,
+    "BCC": 2,
+    "PPT": 5,
+    "RRP": 4,
+    "PA": 5
+   }
+  },
+  "c20": {
+   "type": "cases",
+   "cases": 5,
+   "needs": {
+    "MOC": 5,
+    "SIPC": 4,
+    "HPM": 3,
+    "PSY": 3,
+    "BCC": 3,
+    "PPT": 5,
+    "RRP": 3,
+    "PA": 4
+   }
+  }
+ }
+}

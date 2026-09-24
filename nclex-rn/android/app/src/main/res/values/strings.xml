@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Preceptor: NCLEX-RN Prep</string>
+    <string name="title_activity_main">Preceptor: NCLEX-RN Prep</string>
+    <string name="package_name">com.preceptor.nclex</string>
+    <string name="custom_url_scheme">com.preceptor.nclex</string>
+</resources>
