@@ -1,6 +1,6 @@
 # SAMP writer brief (expansion batches s19 to s53)
 
-For the writer of one expansion batch in Preceptor: CCFP-EM. One batch is one priority topic. Only create or edit files in your batch folder `src/samps/sNN/`. Write a short report to `docs/reviews/writer-sNN.md`. Do not run git. Keep temporary files in your own scratch subfolder, never the scratchpad root, because other agents share it.
+For the writer of one expansion batch in Preceptor: CCFP-EM. One batch is one priority topic. Only create or edit files in your batch folder `src/samps/sNN/`, plus your report at `docs/reviews/writer-sNN.md`. Do not run git. Keep temporary files in your own scratch subfolder, never the scratchpad root, because other agents share it.
 
 ## Read first
 
@@ -16,6 +16,10 @@ For the writer of one expansion batch in Preceptor: CCFP-EM. One batch is one pr
 - Only `single` and `menu` questions. 3 to 5 per SAMP, usually 4 or 5. Mix: mostly `single`, with a `menu` question in about one SAMP in three.
 - Spread the topic's key features. Test every one of them, and give each at least 3 questions across your batch. Where a key feature needs history, examination or a decision, test that step.
 - Vary age, sex, setting (tertiary, community, rural), acuity and presentation. Include children and older adults where the topic allows.
+
+## Work in chunks
+
+Write the topic file 4 to 6 SAMPs at a time: create it with the first few, then append in separate edits. Never write the whole batch in one response, because a very long response can be cut off. Run the tests every few chunks.
 
 ## How to write each SAMP
 
