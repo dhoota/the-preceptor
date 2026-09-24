@@ -16,6 +16,7 @@ const S = {
   caepDisaster: { id: "caep-disaster", citation: "Kollek D, Bezanson J, Carby S, et al. CAEP position statement. Hospital disaster preparedness. CJEM. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/32425150/" },
   aufderheide: { id: "auf-der-heide", citation: "Auf der Heide E. The importance of evidence-based disaster planning. Ann Emerg Med. 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/16387217/" },
   frykberg: { id: "frykberg", citation: "Frykberg ER. Medical management of disasters and mass casualties from terrorist bombings. How can we cope? J Trauma. 2002.", url: "https://pubmed.ncbi.nlm.nih.gov/12169923/" },
+  atsdrUnknown: { id: "atsdr-unknown", citation: "Agency for Toxic Substances and Disease Registry. Medical management guidelines for unidentified chemical exposure. 2017.", url: "https://wwwn.cdc.gov/TSP/MMG/MMGDetails.aspx?mmgid=1138&toxid=243" },
   okumura: { id: "okumura", citation: "Okumura T, Suzuki K, Fukuda A, et al. The Tokyo subway sarin attack. Disaster management, part 2. Hospital response. Acad Emerg Med. 1998.", url: "https://pubmed.ncbi.nlm.nih.gov/9660290/" },
   kelen: { id: "kelen", citation: "Kelen GD, Kraus CK, McCarthy ML, et al. Inpatient disposition classification for the creation of hospital surge capacity. A multiphase study. Lancet. 2006.", url: "https://pubmed.ncbi.nlm.nih.gov/17141705/" },
   hick: { id: "hick", citation: "Hick JL, Einav S, Hanfling D, et al. Surge capacity principles. Care of the critically ill and injured during pandemics and disasters. CHEST consensus statement. Chest. 2014.", url: "https://pubmed.ncbi.nlm.nih.gov/25144334/" },
@@ -535,20 +536,13 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "The coworkers arrive. One is unresponsive with gasping respirations and a palpable pulse. Staff in protective equipment are at the outdoor decontamination area.",
-        prompt: "Which of the following is the most appropriate order of care for the unresponsive worker?",
-        options: [
-          "Bring him inside to intubate, then decontaminate",
-          "Decontaminate fully before any airway care",
-          "Open his airway in PPE during decontamination",
-          "Tag him expectant and treat the others",
-          "Wait for the agent to be identified",
-        ],
+        update: "The coworkers arrive and are decontaminated outside. One is unresponsive with gasping respirations and goes to the resuscitation bay. The other four walk in with a cough or sore eyes and saturations of 96% to 98%. The agent is still unknown.",
+        prompt: "Which of the following is the most appropriate plan for the four coworkers who walked in?",
+        options: ["Admit all four to the intensive care unit", "Discharge each once decontaminated", "Observe together with repeated reassessment", "Refer to occupational health tomorrow", "Treat only after the agent is named"],
         correct: 2,
-        explanation:
-          "Lifesaving care and decontamination happen together. Staff in protective equipment open his airway by positioning, give oxygen and remove his clothing while the decontamination proceeds. Waiting until decontamination is complete lets hypoxia worsen. Bringing a contaminated patient inside to intubate exposes the resuscitation team and the whole department. He is gasping with a pulse, which is a reason to act, not to tag him expectant. Waiting for the agent to be named delays both airway care and decontamination.",
+        explanation: "The agent is unknown and some industrial chemicals cause delayed lung injury, so an unidentified exposure calls for an extended period of observation or admission, and discharge is considered only for people without symptoms after 6 to 8 hours. While the resuscitation goes on, the four can be observed together by a nurse with scheduled reassessment of their breathing and saturation, so everyone is managed in parallel. Discharge after decontamination misses delayed toxicity. Intensive care for walking patients with normal saturations uses beds the unresponsive worker may need. A referral tomorrow comes too late for effects that appear within hours. Symptom care cannot wait until the agent is named.",
         keyFeature: { topic: "multiple-patients", n: 2 },
-        source: "okumura",
+        source: "atsdr-unknown",
       },
       {
         id: "q4",
@@ -569,7 +563,7 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
         source: "okumura",
       },
     ],
-    sources: [S.okumura],
+    sources: [S.okumura, S.atsdrUnknown],
     ...META,
   },
   {

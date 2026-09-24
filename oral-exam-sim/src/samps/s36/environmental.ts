@@ -102,13 +102,12 @@ export const ENVIRONMENTAL_S36: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate way to lower her temperature once her airway is assessed?",
-        options: ["Acetaminophen 1 g PR", "Cold water immersion in a tarp", "Cooling blanket under her back", "Dantrolene 2.5 mg/kg IV", "Tepid sponging every 30 minutes"],
-        correct: 1,
-        explanation:
-          "A rectal temperature of 41.3°C with coma needs the fastest cooling available, started before the cause is settled. Cold water immersion is the most effective method, and a tarp or body bag makes it possible on an ED stretcher with the head supported and monitored. Acetaminophen does not act when the hypothalamic set point is normal, as in heat stroke. Dantrolene has no proven benefit. A cooling blanket under the back and intermittent tepid sponging cool far too slowly.",
+        prompt: "Which of the following findings would most suggest that her medications are contributing through anticholinergic toxicity?",
+        options: ["Brisk reflexes with clonus", "Crackles at the right lung base", "Dilated pupils and a full bladder", "Hot, dry skin on the trunk", "Lead pipe rigidity in all limbs"],
+        correct: 2,
+        explanation: "Dilated pupils and urinary retention are peripheral antimuscarinic signs, and with anticholinergic drugs on her medication list they would point to anticholinergic toxicity adding to the heat. Hot, dry skin occurs in classic heat stroke in older adults as well as in anticholinergic toxicity, so it does not separate them. Brisk reflexes with clonus point to serotonin toxicity. Lead pipe rigidity points to neuroleptic malignant syndrome rather than anticholinergic toxicity. Right basal crackles point to a pneumonia. Cooling proceeds while these causes are sorted out.",
         keyFeature: { topic: "environmental", n: 2 },
-        source: "wms-heat",
+        source: "rosen",
       },
       {
         id: "q2",
@@ -147,7 +146,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         source: "bc-heat",
       },
     ],
-    sources: [S.wmsHeat, S.ssc, S.bcHeat],
+    sources: [S.wmsHeat, S.ssc, S.bcHeat, S.rosen],
     ...META,
   },
 
@@ -235,11 +234,11 @@ export const ENVIRONMENTAL_S36: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate way to decide when to stop active cooling?",
-        options: ["Continuous rectal or esophageal probe", "Infrared tympanic reading every 10 minutes", "Oral thermometer after extubation", "Skin temperature on the forehead", "Temporal artery scan every 5 minutes"],
-        correct: 0,
-        explanation:
-          "Only a core measurement shows when he nears the end point of cooling, and an indwelling rectal or esophageal probe gives a continuous reading without interrupting treatment. Tympanic, temporal artery and forehead readings are strongly affected by the ice water and the skin, and they do not track core temperature in heat stroke. An oral reading is not possible while he is intubated and would come far too late.",
+        update: "Tarp immersion lowers his rectal temperature to 38.9°C in 22 minutes, and cooling is stopped. His ALT, INR and platelet count on arrival were normal.",
+        prompt: "Which of the following is the most appropriate plan for his liver and clotting tests?",
+        options: ["No repeat after normal arrival values", "Repeat once at 6 hours", "Repeat only if bleeding or jaundice", "Serial testing over the next few days", "Single check at a 1 week clinic visit"],
+        correct: 3,
+        explanation: "Organ injury after exertional heat stroke may not show on arrival. The ACSM consensus lists liver failure and disseminated intravascular coagulation among the common sequelae and calls for serial testing to measure the damage, and in a large series liver markers peaked within 4 days of the injury. Normal values at arrival therefore do not end the monitoring. A single repeat at 6 hours can come before the peak. Waiting for bleeding or jaundice detects liver failure or coagulopathy late. A clinic check at 1 week misses the period of highest risk.",
         keyFeature: { topic: "environmental", n: 1 },
         source: "acsm-ehi",
       },
@@ -331,11 +330,10 @@ export const ENVIRONMENTAL_S36: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following precautions is most important while the woman is moved to the aircraft?",
-        options: ["Defer intubation until she is rewarmed", "Gentle horizontal handling at all times", "Monitor leads rather than defibrillator pads", "Rub her limbs to improve circulation", "Sit her up to reduce aspiration risk"],
+        prompt: "Which of the following is the most appropriate airway plan for the woman before the flight?",
+        options: ["Defer intubation until rewarmed", "Intubate before departure", "Nasal high flow oxygen", "Oxygen by face mask only", "Supraglottic airway in flight"],
         correct: 1,
-        explanation:
-          "Rough or sudden movement can trigger ventricular fibrillation in a cold heart, so a severely hypothermic patient is moved gently and kept horizontal to prevent rescue collapse. Rubbing the limbs returns cold blood to the core. Sitting her up risks hypotension. Pads are preferred over monitor leads because they reduce shivering artifact and allow immediate defibrillation. Intubation should not be deferred in a patient with a respiratory rate of 6/minute, because the risk of causing an arrhythmia is small.",
+        explanation: "She responds only to pain and breathes 6/minute, so she can neither protect her airway nor ventilate adequately for a 2 hour flight, and her airway is secured in the warm department before departure. The risk that intubation triggers a malignant arrhythmia in a hypothermic patient is minimal compared with the benefit of oxygenation and airway protection, so it is not deferred until she is warm. High flow nasal oxygen and a face mask give oxygen but do not treat hypoventilation or protect the airway. A supraglottic airway placed in flight is a rescue device, not a planned airway for a long transfer in a cramped cabin.",
         keyFeature: { topic: "environmental", n: 3 },
         source: "paal-hypothermia",
       },
@@ -426,12 +424,12 @@ export const ENVIRONMENTAL_S36: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate way to rewarm him now?",
-        options: ["Bladder irrigation with warmed saline", "ECLS rewarming on arrival", "Passive rewarming with blankets", "Warm bath immersion at 40°C", "Warm forced air and IV fluids at 40°C"],
-        correct: 4,
-        explanation:
-          "He has moderate hypothermia at 30.2°C with a stable circulation, a systolic BP above 90 mmHg and no ventricular arrhythmia, so active external rewarming with forced air is appropriate. IV fluids warmed to about 40°C prevent further cooling but do not rewarm on their own. Passive rewarming is too slow without shivering. ECLS is for arrest or instability. Bladder irrigation adds little heat. A warm bath risks vasodilation and collapse.",
-        keyFeature: { topic: "environmental", n: 3 },
+        update: "His GCS is 11 (E3 V3 M5). Warm forced air and warmed IV fluids are started.",
+        prompt: "Which of the following is the most appropriate imaging plan for his decreased level of consciousness?",
+        options: ["CT head now as rewarming continues", "CT head once rewarmed to 35°C", "CT head only if a focal deficit appears", "MRI of the brain once he is warm", "No imaging if GCS rises with warming"],
+        correct: 0,
+        explanation: "A boggy occipital hematoma in a man found down means an intracranial bleed must be excluded now, so CT of the head is done while forced air warming continues. Moderate hypothermia and alcohol can each lower consciousness, but staging hypothermia by level of consciousness is unreliable when a head injury is present, because the injury itself can lower it. Waiting until he is warm delays the diagnosis of a bleed by hours. A focal deficit is a late sign, and its absence does not exclude a hematoma in a man whose examination is clouded by cold and alcohol. MRI takes longer, keeps a cold patient at risk of arrhythmia away from the resuscitation bay and adds nothing to CT for acute bleeding. A rise in GCS with warming does not exclude a hematoma that is still expanding.",
+        keyFeature: { topic: "loc", n: 4 },
         source: "paal-hypothermia",
       },
       {

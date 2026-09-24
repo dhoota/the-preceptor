@@ -29,6 +29,7 @@ const S = {
   warren: { id: "warren-transport", citation: "Warren J, Fromm RE Jr, Orr RA, Rotello LC, Horst HM. Guidelines for the inter- and intrahospital transport of critically ill patients. Crit Care Med. 2004.", url: "https://pubmed.ncbi.nlm.nih.gov/14707589/" },
   ssc: { id: "ssc-2021", citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/34605781/" },
   cpsHie: { id: "cps-hie", citation: "Lemyre B, Chau V. Canadian Paediatric Society, Fetus and Newborn Committee. Hypothermia for newborns with hypoxic-ischemic encephalopathy. Paediatr Child Health. 2018.", url: "https://cps.ca/en/documents/position/hypothermia-for-newborns" },
+  aha25: { id: "aha-als-2025", citation: "Wigginton JG, Agarwal S, Bartos JA, et al. Part 9: adult advanced life support. 2025 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.", url: "https://doi.org/10.1161/CIR.0000000000001376" },
   aorta: { id: "acc-aha-aorta", citation: "Isselbacher EM, Preventza O, Hamilton Black J, et al. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.", url: "https://pubmed.ncbi.nlm.nih.gov/36322642/" },
   pals: { id: "aha-pals-2025", citation: "Lasa JJ, Dhillon GS, Duff JP, et al. Part 8: pediatric advanced life support. 2025 American Heart Association and American Academy of Pediatrics guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.", url: "https://pubmed.ncbi.nlm.nih.gov/41122885/" },
 } satisfies Record<string, Source>;
@@ -81,17 +82,16 @@ export const EMS_S35: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "A resident asks which other findings would also have excluded a patient from the paramedic medical termination directive.",
-        prompt: "Which of the following findings, had it been present, would also have excluded her from the directive?",
-        options: ["Arrest witnessed by her roommate", "Asystole as the only rhythm seen", "Found outdoors on a winter night", "Opioid overdose as the likely cause", "Seventeen years of age"],
+        update: "Your team takes over CPR through the supraglottic airway. Two boluses of sodium bicarbonate have been given. The monitor still shows a wide complex rhythm at about 30/minute with no pulse, and no other drug has been given.",
+        prompt: "Which of the following drugs should be given next during her resuscitation?",
+        options: ["amiodarone 300 mg IV", "atropine 1 mg IV", "epinephrine 1 mg IV", "magnesium sulfate 2 g IV", "vasopressin 40 units IV"],
         correct: 2,
-        explanation:
-          "Suspected hypothermia is a listed contraindication, because a cold patient can survive a long arrest and needs rewarming before death is declared. The other listed contraindications are pregnancy presumed at 20 weeks or more, airway obstruction and a non-opioid overdose. An opioid overdose is not listed, so on its own it does not exclude termination. A bystander witnessed arrest does not exclude it either, since the directive excludes only arrests witnessed by paramedics, although the physician may weigh it. Asystole fits the directive, and it applies from age 16.",
-        keyFeature: { topic: "ems", n: 1 },
-        source: "als-pcs",
+        explanation: "Standard advanced life support continues in a poisoned arrest alongside the antidote. Her rhythm is pulseless electrical activity, which is not shockable, and the 2025 AHA guideline gives epinephrine 1 mg IV as soon as feasible in a nonshockable arrest, repeated every 3 to 5 minutes. Amiodarone is for shock-refractory ventricular fibrillation or pulseless ventricular tachycardia, not PEA, and it has sodium channel blocking effects of its own. Atropine is not part of the PEA algorithm. Vasopressin, alone or added to epinephrine, offers no advantage and is not a substitute for epinephrine. Magnesium is not given routinely in arrest and is kept for torsades de pointes.",
+        keyFeature: { topic: "tox", n: 4 },
+        source: "aha-als-2025",
       },
     ],
-    sources: [S.alsPcs, S.iedema],
+    sources: [S.alsPcs, S.iedema, S.aha25],
     ...META,
   },
 
@@ -754,13 +754,12 @@ export const EMS_S35: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate plan for her norepinephrine during the transfer?",
-        options: ["Change to dopamine for the paramedics", "Delay transfer to insert a central line", "Stop it and give fluid boluses en route", "Switch to push-dose phenylephrine only", "Unchanged via the secure peripheral IV"],
-        correct: 4,
-        explanation:
-          "Surviving Sepsis 2021 supports giving norepinephrine peripherally rather than delaying it for central access, provided the site is secure and watched. Her infusion runs through a secure 18 gauge IV, and the escort can check the site for extravasation during a 2 hour trip. Delaying the transfer for a central line postpones ICU care. Stopping the infusion for fluid boluses after 30 mL/kg invites hypotension and pulmonary edema. Dopamine carries more arrhythmia risk, and push-dose phenylephrine cannot replace a steady infusion for 2 hours.",
+        prompt: "Which of the following is the most appropriate preparation of her infusions for the 2 hour trip?",
+        options: ["Battery pumps with spare infusions", "Change sedation to boluses", "Gravity drip for norepinephrine", "Mix new drugs on arrival at the ICU", "Pause infusions during the move"],
+        correct: 0,
+        explanation: "A 2 hour road trip can run long, so her norepinephrine, propofol and fentanyl should run on transport pumps with charged batteries, with spare prepared infusions to cover delays, because mixing new infusions in a moving ambulance is difficult and prone to error. A gravity drip cannot deliver a vasopressor dose reliably. Pausing the infusions during the move drops her pressure and lightens sedation when the tube is most at risk. Changing sedation to boluses swings her between awareness and hypotension. Waiting to mix new drugs at the ICU leaves her without them if the bags run out en route.",
         keyFeature: { topic: "ems", n: 3 },
-        source: "ssc-2021",
+        source: "warren-transport",
       },
       {
         id: "q4",
@@ -774,7 +773,7 @@ export const EMS_S35: Samp[] = [
         source: "bls-pcs",
       },
     ],
-    sources: [S.blsPcs, S.warren, S.ssc],
+    sources: [S.blsPcs, S.warren],
     ...META,
   },
 
@@ -844,17 +843,17 @@ export const EMS_S35: Samp[] = [
     alsoTopics: ["chest-pain"],
     title: "Tearing pain far from a surgeon",
     stem:
-      "You are working in a community hospital emergency department 90 minutes by land from the nearest cardiac surgery centre. A 64-year-old man had sudden tearing chest pain radiating to his back 2 hours ago. CT angiography shows a Stanford type A dissection from the aortic root to the arch. Bedside ultrasound shows no pericardial effusion. He takes amlodipine for hypertension. The cardiac surgeon has accepted him, and a critical care land transport crew can leave in 30 minutes. He still rates his pain 8 out of 10.",
+      "You are working in a community hospital emergency department 90 minutes by land from the nearest cardiac surgery centre. A 64-year-old man had sudden tearing chest pain radiating to his back 2 hours ago. CT angiography shows a Stanford type A dissection from the aortic root to the arch. Bedside ultrasound shows no pericardial effusion. He takes amlodipine for hypertension. The cardiac surgeon has accepted him and asks that his heart rate and BP be managed to the 2022 ACC/AHA aortic disease guideline targets. A critical care land transport crew can leave in 30 minutes. He still rates his pain 8 out of 10.",
     vitals: { temperature: "36.8°C oral", pulse: "104/minute", resp: "20/minute", bp: "182/98 mmHg", o2sat: "97% on room air", weight: "88 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following medications should be started first to prepare him for transfer?",
-        options: ["esmolol 500 mcg/kg IV", "furosemide 40 mg IV", "hydralazine 10 mg IV", "nitroglycerin 0.4 mg SL", "nitroprusside 0.5 mcg/kg/minute IV"],
-        correct: 0,
-        explanation:
-          "Lowering heart rate first reduces the force of each ejection on the torn aorta, so an IV beta-blocker such as esmolol comes before any vasodilator. Short acting esmolol can be titrated and stopped quickly if he becomes hypotensive. Nitroprusside or hydralazine alone causes reflex tachycardia that increases shear stress on the aortic wall. Sublingual nitroglycerin has the same problem and is hard to titrate. Furosemide lowers pressure slowly and does nothing for the rate.",
+        update: "An esmolol infusion is started. Twenty minutes later his pulse is 72/minute and his BP is 164/92 mmHg.",
+        prompt: "Which of the following medications should be added before he departs for surgery?",
+        options: ["enalaprilat 1.25 mg IV over 5 minutes", "hydralazine 10 mg IV", "nitroprusside 0.3 mcg/kg/minute IV", "phentolamine 5 mg IV", "verapamil 5 mg IV over 2 minutes"],
+        correct: 2,
+        explanation: "Esmolol has brought his pulse into the ACC/AHA range of 60 to 80/minute, but his systolic pressure of 164 mmHg is still above the target below 120 mmHg, so a titratable IV vasodilator is added now that the heart rate is controlled. Nitroprusside acts within minutes and can be turned down at once if his pressure falls in the ambulance. Hydralazine and enalaprilat act for hours and cannot be titrated. Phentolamine is a bolus alpha blocker for catecholamine excess and gives an abrupt, unsteady fall in pressure. Verapamil added to esmolol risks bradycardia and heart block.",
         keyFeature: { topic: "ems", n: 3 },
         source: "acc-aha-aorta",
       },
@@ -865,7 +864,7 @@ export const EMS_S35: Samp[] = [
         options: ["Pulse below 50, systolic below 90 mmHg", "Pulse 60 to 80, systolic below 120 mmHg", "Pulse 80 to 100, systolic below 140 mmHg", "Pulse 60 to 80, systolic 140 to 160 mmHg", "Pulse under 100, MAP above 65 mmHg"],
         correct: 1,
         explanation:
-          "The 2022 ACC/AHA guideline advises lowering systolic pressure below 120 mmHg, or to the lowest level that keeps end organs perfused, with a heart rate of 60 to 80/minute. A systolic of 140 to 160 mmHg or below 140 mmHg leaves too much wall stress. A pulse below 50 with a systolic below 90 mmHg risks cerebral, renal and spinal hypoperfusion. A mean pressure above 65 mmHg is a septic shock goal and would accept pressures that extend the dissection.",
+          "The 2022 ACC/AHA guideline advises lowering systolic pressure below 120 mmHg, or to the lowest level that keeps end organs perfused, with a heart rate of 60 to 80/minute. A systolic of 140 to 160 mmHg or below 140 mmHg leaves too much wall stress, and a pulse of 80 to 100/minute is faster than the guideline range. A pulse below 50 with a systolic below 90 mmHg risks cerebral, renal and spinal hypoperfusion. A mean pressure above 65 mmHg is a septic shock goal and would accept pressures that extend the dissection.",
         keyFeature: { topic: "ems", n: 3 },
         source: "acc-aha-aorta",
       },
