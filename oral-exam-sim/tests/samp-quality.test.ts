@@ -219,12 +219,13 @@ describe("signed-off answer keys", () => {
           expect({ required: q.required, accept: q.accept, unacceptable: q.unacceptable ?? [] }).toEqual({ required: b.required, accept: b.accept, unacceptable: b.unacceptable });
           return;
         }
-        const keyed = (q.kind === "single" ? [q.correct] : q.correct).map((k) => q.options[k]);
+        // Compared as sets: reordering options must not look like a key change.
+        const keyed = (q.kind === "single" ? [q.correct] : q.correct).map((k) => q.options[k]).sort();
         expect(q.kind).toBe(b.kind);
         expect(q.kind === "menu" ? q.select : 1).toBe(b.select);
         const logged = edits[`${s.id}#${q.id}`];
-        expect(keyed, "keyed options changed without a logged edit").toEqual(logged ? logged.after : b.keyed);
-        if (logged) expect(logged.before).toEqual(b.keyed);
+        expect(keyed, "keyed options changed without a logged edit").toEqual([...(logged ? logged.after : b.keyed!)].sort());
+        if (logged) expect([...logged.before].sort()).toEqual([...b.keyed!].sort());
       });
     });
   }

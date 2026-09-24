@@ -7,7 +7,7 @@ const AUTHOR = "Draft for review by Arjan Dhoot, MD";
 
 const ROSEN: Source = {
   id: "rosen",
-  citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Orthopedic lesions chapters.",
+  citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023.",
 };
 const OAR: Source = {
   id: "ottawa-ankle",
@@ -56,11 +56,13 @@ const CYFSA: Source = {
 };
 const AAOS_SCH: Source = {
   id: "aaos-supracondylar",
-  citation: "American Academy of Orthopaedic Surgeons. Management of pediatric supracondylar humerus fractures. Clinical practice guideline.",
+  citation: "Mulpuri K, Hosalkar H, Howard A. AAOS clinical practice guideline: the treatment of pediatric supracondylar humerus fractures. J Am Acad Orthop Surg. 2012.",
+  url: "https://pubmed.ncbi.nlm.nih.gov/22553105/",
 };
 const TREKK: Source = {
   id: "trekk-pain",
-  citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations on pediatric pain and fractures.",
+  citation: "TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric fractures. Version 4.0. 2025.",
+  url: "https://cms.trekk.ca/wp-content/uploads/2023/11/2025_04_22-Fractures-BLR-v4.0-Final.pdf",
 };
 
 const base = { topic: "msk", reviewed: true, author: AUTHOR, version: 1 } as const;
@@ -71,12 +73,13 @@ export const MSK_SAMPS: Samp[] = [
     id: "msk-01",
     title: "Fall from a ladder",
     stem:
-      "A 44-year-old roofer fell about 4 metres from a ladder and landed on his feet. He has severe right heel pain and cannot bear weight. He did not hit his head. GCS is 15. HR 96, BP 138/84, RR 18, SpO2 98% on room air. The right hindfoot is swollen and bruised. Radiographs show a comminuted intra-articular calcaneal fracture.",
+      "A 44-year-old roofer fell about 4 metres from a ladder and landed on his feet. He has severe right heel pain and cannot bear weight. He did not hit his head. GCS is 15. The right hindfoot is swollen and bruised. Radiographs show a comminuted intra-articular calcaneal fracture.",
+    vitals: { pulse: "96/minute", resp: "18/minute", bp: "138/84 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE other injuries you would specifically look for given this mechanism and fracture.",
+        prompt: "What other injuries would you specifically look for given this mechanism and fracture?",
         required: 3,
         accept: [
           { id: "spine", text: "Thoracolumbar spine fracture", match: ["lumbar", "l spine", "thoracolumbar", "spine fracture", "spinal fracture", "vertebra", "vertebral", "burst fracture", "compression fracture", "t spine"] },
@@ -95,15 +98,15 @@ export const MSK_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "He has midline tenderness at the thoracolumbar junction. Leg strength, sensation and perianal sensation are normal.",
-        prompt: "Which of the following is the most appropriate imaging of his spine? Select one.",
+        prompt: "Which of the following is the most appropriate imaging of his spine?",
         options: [
-          "No spine imaging because the neurological exam is normal",
-          "Lumbar spine radiographs only",
           "CT of the thoracic and lumbar spine",
+          "Lumbar spine radiographs only",
           "MRI of the lumbar spine before any other imaging",
-          "Bone scan in 48 hours",
+          "Nuclear bone scan in 48 hours",
+          "No spine imaging",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
           "A high energy fall with a calcaneal fracture and midline tenderness warrants CT of the thoracolumbar spine. CT is more sensitive than plain films for fractures and defines canal compromise. A normal neurological exam does not exclude an unstable fracture.",
         keyFeature: { topic: "msk", n: 1 },
@@ -113,7 +116,7 @@ export const MSK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "CT shows a stable L1 compression fracture. Spine surgery will see him as an outpatient. Orthopedics plans delayed fixation of the calcaneus once the swelling settles.",
-        prompt: "List THREE elements of the ED management of his calcaneal fracture.",
+        prompt: "What are the elements of the ED management of his calcaneal fracture?",
         required: 3,
         accept: [
           { id: "splint", text: "Bulky compressive dressing or well padded posterior splint", match: ["splint", "backslab", "jones dressing", "bulky dressing", "robert jones", "compressive dressing"] },
@@ -145,18 +148,18 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "menu",
-        prompt: "Which of the following imaging studies are indicated now? Select TWO.",
+        prompt: "Which of the following imaging studies are indicated for her now?",
         options: [
           "Ankle radiograph series",
+          "Bone scan of the right ankle",
+          "CT of the right ankle",
           "Foot radiograph series",
           "Knee and full length tibia and fibula radiographs",
-          "CT of the ankle",
-          "MRI of the ankle",
+          "MRI of the right ankle",
           "Point of care ultrasound of the Achilles tendon",
-          "Bone scan",
         ],
         select: 2,
-        correct: [0, 2],
+        correct: [0, 4],
         explanation:
           "Medial malleolar tenderness and inability to bear weight meet the Ottawa ankle rules for an ankle series. The foot rule is negative. Proximal fibular tenderness with an external rotation mechanism raises concern for a Maisonneuve injury, so image the whole fibula.",
         keyFeature: { topic: "msk", n: 1 },
@@ -166,7 +169,7 @@ export const MSK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "The radiologist reports no ankle fracture. The medial clear space looks borderline wide. The tibia and fibula films have not yet been done.",
-        prompt: "The ankle films may be hiding an unstable injury. List TWO steps to uncover it.",
+        prompt: "What steps would uncover an unstable injury that the ankle films may be hiding?",
         required: 2,
         accept: [
           { id: "fibula", text: "Proximal fibular fracture outside the ankle films, so obtain full length fibula views", match: ["proximal fibula", "fibular head", "fibula", "fibular", "maisonneuve", "tib fib"] },
@@ -184,7 +187,7 @@ export const MSK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Films show a proximal fibular fracture and a medial clear space of 6 mm. Orthopedics agrees this is an unstable injury and will plan fixation.",
-        prompt: "List THREE elements of her ED disposition.",
+        prompt: "What are the elements of her ED disposition?",
         required: 3,
         accept: [
           { id: "splint", text: "Posterior slab with stirrup splint", match: ["splint", "backslab", "posterior slab", "stirrup", "sugar tong"] },
@@ -216,7 +219,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most likely diagnosis? List ONE.",
+        prompt: "What is the most likely diagnosis?",
         required: 1,
         accept: [{ id: "posterior", text: "Posterior glenohumeral dislocation", match: ["posterior dislocation", "posterior shoulder", "posterior glenohumeral", "dislocated posteriorly", "posteriorly dislocated"] }],
         unacceptable: [
@@ -231,19 +234,19 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Apart from seizure, which of the following mechanisms classically cause this injury? Select TWO.",
+        prompt: "Which of the following mechanisms, other than seizure, classically cause this injury?",
         options: [
-          "Electrical injury or electroconvulsive therapy without paralysis",
-          "Fall on an outstretched arm held in abduction and external rotation",
           "Axial load on a flexed, adducted and internally rotated arm",
-          "Direct blow to the lateral shoulder",
-          "Overhead throwing",
-          "Hanging by the arm from a height",
+          "Direct blow to the lateral aspect of the shoulder",
+          "Electrical injury or ECT without muscle paralysis",
+          "Fall on an abducted, externally rotated arm",
+          "Hanging by one arm from a height",
+          "Repetitive overhead throwing in athletes",
         ],
         select: 2,
         correct: [0, 2],
         explanation:
-          "Posterior dislocation follows violent muscle contraction from seizure or electrical injury, or an axial load on a flexed, adducted and internally rotated arm. Abduction with external rotation dislocates anteriorly. A direct lateral blow classically injures the acromioclavicular joint.",
+          "Posterior dislocation follows violent muscle contraction from seizure, electrical injury or electroconvulsive therapy (ECT) given without muscle paralysis, or an axial load on a flexed, adducted and internally rotated arm. Abduction with external rotation dislocates anteriorly. A direct lateral blow classically injures the acromioclavicular joint.",
         keyFeature: { topic: "msk", n: 2 },
         source: "rosen",
       },
@@ -251,7 +254,7 @@ export const MSK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "A scapular Y view confirms the diagnosis. You plan closed reduction under procedural sedation.",
-        prompt: "List THREE neurovascular findings you would document before and after reduction.",
+        prompt: "What neurovascular findings would you document before and after reduction?",
         required: 3,
         accept: [
           { id: "axillary", text: "Axillary nerve sensation over the lateral deltoid and deltoid contraction", match: ["axillary nerve", "regimental badge", "lateral deltoid", "deltoid sensation", "deltoid"] },
@@ -270,7 +273,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO associated injuries you would specifically look for on his imaging or examination.",
+        prompt: "What associated injuries would you specifically look for on his imaging or examination?",
         required: 2,
         accept: [
           { id: "reversehs", text: "Reverse Hill-Sachs lesion (anteromedial humeral head impaction)", match: ["reverse hill sachs", "hill sachs", "humeral head impaction", "trough", "impaction fracture"] },
@@ -299,7 +302,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "What mechanism does this fracture pattern most suggest? List ONE.",
+        prompt: "What mechanism does this fracture pattern most suggest?",
         required: 1,
         accept: [
           { id: "defence", text: "A direct blow to the raised forearm while defending against an assault", match: ["direct blow", "defensive", "defending", "defence", "defense", "nightstick", "assault", "struck", "hit with", "intimate partner violence", "ipv", "domestic violence", "abuse"] },
@@ -313,7 +316,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE steps you would take in the ED to address this concern.",
+        prompt: "What steps would you take in the ED to address this concern?",
         required: 3,
         accept: [
           { id: "alone", text: "Interview her alone, away from the partner", match: ["alone", "privately", "private", "without the partner", "separate", "without partner"] },
@@ -337,7 +340,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "Before accepting this as an isolated ulnar fracture, what associated injury must you exclude, and how? List ONE.",
+        prompt: "What associated injury must you exclude before accepting this as an isolated ulnar fracture, and how?",
         required: 1,
         accept: [
           { id: "monteggia", text: "Radial head dislocation (Monteggia injury) on dedicated elbow films", match: ["monteggia", "radial head", "radiocapitellar", "elbow film", "elbow xray", "elbow x ray", "elbow radiograph", "elbow view", "image the elbow", "elbow"] },
@@ -351,17 +354,17 @@ export const MSK_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Elbow and wrist films are normal. She discloses that her partner struck her with a broom handle. She wishes to go to her sister's home tonight.",
-        prompt: "Which of the following is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
-          "Sling only, follow up with her family physician in six weeks",
-          "Long arm or functional forearm splint, analgesia, fracture clinic review in about one week, and a safety plan before discharge",
-          "Admit for open reduction and internal fixation tonight",
+          "Admit for open reduction and internal fixation",
+          "Discharge home with her partner once her pain is controlled",
+          "Sling and family physician follow up in six weeks",
+          "Splint, analgesia, fracture clinic in one week, safety plan",
           "Tensor bandage and return to work tomorrow",
-          "Discharge with the partner once pain is controlled",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "A minimally displaced isolated ulnar shaft fracture is usually treated closed with a splint or functional brace and early fracture clinic review. Displacement beyond half the shaft width or marked angulation may need fixation. Her safe destination and supports are part of the disposition.",
+          "A minimally displaced isolated ulnar shaft fracture is usually treated closed with a long arm or functional forearm splint, analgesia and fracture clinic review in about one week. Displacement beyond half the shaft width or marked angulation may need fixation. Her safe destination, supports and a safety plan before discharge are part of the disposition.",
         keyFeature: { topic: "msk", n: 8 },
         source: "rosen",
       },
@@ -373,12 +376,14 @@ export const MSK_SAMPS: Samp[] = [
     id: "msk-05",
     title: "Adolescent with knee pain and a limp",
     stem:
-      "A 13-year-old boy has three weeks of intermittent left knee pain and a limp. It worsened today after he tripped. Weight is 82 kg. He is afebrile. The knee has full range of motion, no effusion and no tenderness. His mother asks for a knee X-ray.",
+      "A 13-year-old boy has three weeks of intermittent left knee pain and a limp. It worsened today after he tripped. He is afebrile. The knee has full range of motion, no effusion and no tenderness. His mother asks for a knee X-ray.",
+    vitals: { weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "The knee examination is normal. List TWO further steps in his evaluation.",
+        update: "The knee examination is normal.",
+        prompt: "What further steps would you take in his evaluation?",
         required: 2,
         accept: [
           { id: "hipexam", text: "Examine the hip, including internal rotation and rotation with flexion", match: ["hip exam", "examine hip", "examine the hip", "hip range", "hip rom", "internal rotation", "hip rotation", "assess hip", "assess the hip", "drehmann"] },
@@ -394,18 +399,24 @@ export const MSK_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "Internal rotation of the left hip is markedly reduced and the hip externally rotates as it is flexed. On the AP pelvis, a line along the superior femoral neck does not intersect the left epiphysis.",
-        prompt: "Which of the following is the most likely diagnosis? Select one.",
-        options: ["Legg-Calve-Perthes disease", "Slipped capital femoral epiphysis", "Transient synovitis", "Septic arthritis of the hip", "Osgood-Schlatter disease"],
-        correct: 1,
+        prompt: "Which of the following is the most likely diagnosis in this adolescent?",
+        options: [
+          "Legg-Calve-Perthes disease",
+          "Septic arthritis of the left hip",
+          "Slipped capital femoral epiphysis",
+          "Tibial tubercle apophysitis",
+          "Transient synovitis of the left hip",
+        ],
+        correct: 2,
         explanation:
-          "An overweight adolescent with referred knee pain, obligate external rotation on hip flexion and an abnormal Klein line has a slipped capital femoral epiphysis. Perthes disease usually affects younger children. Transient synovitis and septic arthritis do not displace the epiphysis on radiographs, and septic arthritis usually causes fever.",
+          "An overweight adolescent with referred knee pain, obligate external rotation on hip flexion and an abnormal Klein line has a slipped capital femoral epiphysis. Perthes disease usually affects younger children. Transient synovitis and septic arthritis do not displace the epiphysis on radiographs, and septic arthritis usually causes fever. Tibial tubercle apophysitis (Osgood-Schlatter disease) causes tenderness at the tubercle, and his knee is not tender.",
         keyFeature: { topic: "msk", n: 3 },
         source: "rosen",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE elements of his management in the ED.",
+        prompt: "What are the elements of his management in the ED?",
         required: 3,
         accept: [
           { id: "nwb", text: "Strict non weight bearing on stretcher or wheelchair", match: ["non weight bearing", "nonweight bearing", "nwb", "no weight bearing", "wheelchair", "bed rest", "stretcher"] },
@@ -428,17 +439,17 @@ export const MSK_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "He cannot bear weight at all, even with crutches.",
-        prompt: "Which of the following best describes the urgency of orthopedic care? Select one.",
+        prompt: "Which of the following best describes the urgency of orthopedic care?",
         options: [
-          "Outpatient clinic within two weeks",
-          "Physiotherapy referral and reassessment in one month",
-          "Urgent orthopedic consultation for fixation as soon as possible, because this is an unstable slip",
-          "Hip spica cast in the ED and follow up in clinic",
+          "Hip spica cast in the ED and clinic follow up",
           "MRI as an outpatient before any referral",
+          "Outpatient orthopedic clinic within two weeks",
+          "Physiotherapy referral and reassessment in one month",
+          "Urgent orthopedic consultation for fixation",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
-          "Inability to bear weight even with crutches defines an unstable slip. Avascular necrosis rates are high and treatment is urgent. Delays for imaging or clinic visits are not appropriate.",
+          "Inability to bear weight even with crutches defines an unstable slip. Avascular necrosis rates are high, so orthopedic consultation for fixation is needed as soon as possible. Delays for imaging or clinic visits are not appropriate.",
         keyFeature: { topic: "msk", n: 7 },
         source: "rosen",
       },
@@ -455,7 +466,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "What injury must you presume despite the normal films? List ONE.",
+        prompt: "What injury must you presume despite the normal films?",
         required: 1,
         accept: [{ id: "scaphoid", text: "Occult scaphoid fracture", match: ["scaphoid", "navicular"] }],
         unacceptable: [{ text: "Simple wrist sprain", match: ["sprain", "strain", "soft tissue"] }],
@@ -467,7 +478,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE elements of his management before he leaves the ED.",
+        prompt: "What are the elements of his management before he leaves the ED?",
         required: 3,
         accept: [
           { id: "spica", text: "Thumb spica splint", match: ["thumb spica", "spica", "thumb splint", "scaphoid splint", "scaphoid cast"] },
@@ -488,9 +499,16 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "He is a professional snowboard instructor and needs an answer soon. Which test best confirms or excludes an occult scaphoid fracture in the next few days? Select one.",
-        options: ["Repeat four view radiographs tomorrow", "Point of care ultrasound", "MRI of the wrist", "Bone scan within 24 hours", "Plain film stress views"],
-        correct: 2,
+        update: "He is a professional snowboard instructor and needs an answer soon.",
+        prompt: "Which of the following tests best confirms or excludes an occult scaphoid fracture in the next few days?",
+        options: [
+          "Bone scan within 24 hours",
+          "MRI of the wrist",
+          "Plain film stress views",
+          "Point of care ultrasound",
+          "Repeat radiographs tomorrow",
+        ],
+        correct: 1,
         explanation:
           "MRI has the best sensitivity and specificity for occult scaphoid fracture and also shows bone bruising and ligament injury. CT is a reasonable alternative if MRI is unavailable. Repeating plain films too early adds little.",
         keyFeature: { topic: "msk", n: 4 },
@@ -505,12 +523,14 @@ export const MSK_SAMPS: Samp[] = [
     title: "Knee pain after a fall at a care home",
     alsoTopics: ["analgesia-sedation"],
     stem:
-      "An 84-year-old woman from a long term care home was found on the floor beside her bed this morning. She complains of right knee pain and cannot stand. She has mild dementia and takes amlodipine, zopiclone at bedtime and furosemide. HR 88 regular, BP 132/70, temperature 36.9°C. The knee has mild tenderness and no effusion. A knee radiograph is normal.",
+      "An 84-year-old woman from a long term care home was found on the floor beside her bed this morning. She complains of right knee pain and cannot stand. She has mild dementia and takes amlodipine, zopiclone at bedtime and furosemide. The knee has mild tenderness and no effusion. A knee radiograph is normal.",
+    vitals: { temperature: "36.9°C", pulse: "88/minute regular", bp: "132/70 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "The knee film is normal. List TWO further steps in her evaluation.",
+        update: "The knee film is normal.",
+        prompt: "What further steps would you take in her evaluation?",
         required: 2,
         accept: [
           { id: "hipexam", text: "Examine the hip for leg shortening, rotation, log roll pain and range of motion", match: ["hip exam", "examine hip", "examine the hip", "log roll", "leg shortening", "shortening", "external rotation", "hip range", "assess hip", "assess the hip", "hip tenderness"] },
@@ -526,15 +546,15 @@ export const MSK_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "She has pain with log roll of the right hip. AP pelvis and lateral hip radiographs show no fracture. She still cannot bear weight.",
-        prompt: "Which of the following is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step for her?",
         options: [
           "Discharge back to the care home with a walker",
+          "MRI of the hip, or CT if MRI unavailable",
+          "Physiotherapy review and discharge if she can transfer",
           "Repeat hip radiographs in 10 days",
-          "MRI of the hip, or CT if MRI is not available",
-          "Ultrasound of the hip",
-          "Physiotherapy assessment and discharge if she can transfer",
+          "Ultrasound of the right hip",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
           "A small but important share of hip fractures are occult on radiographs. An older patient who cannot bear weight after a fall with normal films needs MRI, or CT when MRI is not available promptly. Discharge risks displacement of an impacted femoral neck fracture.",
         keyFeature: { topic: "msk", n: 4 },
@@ -544,7 +564,7 @@ export const MSK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "MRI shows a nondisplaced right femoral neck fracture. Orthopedics accepts her for surgery.",
-        prompt: "List THREE elements of her ED management.",
+        prompt: "What are the elements of her ED management?",
         required: 3,
         accept: [
           { id: "block", text: "Fascia iliaca or femoral nerve block", match: ["fascia iliaca", "femoral nerve block", "femoral block", "nerve block", "regional anesthesia", "regional anaesthesia", "peng block", "fnb"] },
@@ -564,7 +584,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE causes of her fall you would look for.",
+        prompt: "What causes of her fall would you look for?",
         required: 3,
         accept: [
           { id: "syncope", text: "Syncope or arrhythmia", match: ["syncope", "arrhythmia", "dysrhythmia", "heart block", "ecg", "cardiac"] },
@@ -590,29 +610,30 @@ export const MSK_SAMPS: Samp[] = [
     id: "msk-08",
     title: "Deformed ankle after a slip on ice",
     stem:
-      "A 58-year-old man slipped on ice and has an obviously deformed right ankle. The foot is displaced laterally. The skin over the medial malleolus is tented and blanched. The foot is cool and dusky. The dorsalis pedis pulse is not palpable and is faint on Doppler. HR 102, BP 150/90.",
+      "A 58-year-old man slipped on ice and has an obviously deformed right ankle. The foot is displaced laterally. The skin over the medial malleolus is tented and blanched. The foot is cool and dusky. The dorsalis pedis pulse is not palpable and is faint on Doppler.",
+    vitals: { pulse: "102/minute", bp: "150/90 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step for his ankle?",
         options: [
           "Ankle radiographs before any manipulation",
-          "CT angiography of the leg",
-          "Immediate closed reduction with analgesia or sedation, then radiographs",
-          "Urgent vascular surgery consultation before touching the ankle",
+          "CT angiography of the right leg",
+          "Immediate reduction with analgesia or sedation, then films",
           "Splint in the position found and wait for orthopedics",
+          "Vascular surgery consultation before any reduction",
         ],
         correct: 2,
         explanation:
-          "A fracture dislocation with a threatened foot or tented skin should be reduced immediately, before films. Reduction restores perfusion and prevents skin necrosis. Delaying for imaging or consultants risks both.",
+          "A fracture dislocation with a threatened foot or tented skin should be reduced immediately with analgesia or sedation, then imaged. Reduction restores perfusion and prevents skin necrosis. Delaying for imaging or consultants risks both.",
         keyFeature: { topic: "msk", n: 5 },
         source: "rosen",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE findings you would document before and after the reduction.",
+        prompt: "What findings would you document before and after the reduction?",
         required: 3,
         accept: [
           { id: "dp", text: "Dorsalis pedis pulse", match: ["dorsalis pedi", "dp pulse", "dorsal pedal", "pedal pulse", "pulse"] },
@@ -632,15 +653,15 @@ export const MSK_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "After reduction the foot pinks up and pulses return. Films show a reduced trimalleolar fracture. You now notice a 3 mm puncture over the medial malleolus oozing blood with fat droplets.",
-        prompt: "Which of the following best describes this injury? Select one.",
+        prompt: "Which of the following best describes this injury at the medial malleolus?",
         options: [
-          "A closed fracture with a superficial abrasion",
-          "An open fracture requiring antibiotics and surgical debridement",
-          "A closed fracture with an impending skin breakdown only",
-          "A contaminated laceration to be sutured in the ED",
-          "A fracture blister",
+          "Closed fracture with a superficial abrasion",
+          "Closed fracture with impending skin breakdown",
+          "Contaminated laceration for suturing in the ED",
+          "Fracture blister over the medial malleolus",
+          "Open fracture needing antibiotics and surgical debridement",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "Any wound near a fracture that communicates with it is an open fracture, however small. Blood with fat droplets strongly suggests communication. Open fractures need early antibiotics, tetanus prophylaxis and operative debridement.",
         keyFeature: { topic: "msk", n: 6 },
@@ -649,7 +670,8 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "He weighs 90 kg. His last tetanus booster was 15 years ago. List FOUR elements of your management now. Include drug doses where relevant.",
+        update: "He weighs 90 kg. His last tetanus booster was 15 years ago.",
+        prompt: "What are the elements of your management now, including drug doses where relevant?",
         required: 4,
         accept: [
           { id: "cefazolin", text: "Cefazolin 2 g IV as soon as possible", match: ["cefazolin 2 g", "cefazolin 2g", "cefazolin 2000 mg", "cefazolin 2 gram", "ancef 2 g", "ancef 2g"] },
@@ -681,7 +703,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "What mechanism must you assume until proven otherwise? List ONE.",
+        prompt: "What mechanism must you assume until proven otherwise?",
         required: 1,
         accept: [
           { id: "fightbite", text: "Closed fist injury against teeth (fight bite)", match: ["fight bite", "closed fist", "punch", "tooth", "teeth", "human bite", "clenched fist"] },
@@ -694,7 +716,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE elements of your evaluation and wound care.",
+        prompt: "What are the elements of your evaluation and wound care?",
         required: 3,
         accept: [
           { id: "explore", text: "Explore the wound through full range of motion including with the fist clenched", match: ["clenched", "range of motion", "fist position", "explore", "exploration"] },
@@ -715,24 +737,25 @@ export const MSK_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "He admits punching someone in the mouth. Radiographs show a small intra-articular fracture of the fifth metacarpal head. Exploration shows a breach in the joint capsule.",
-        prompt: "Which of the following is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for him?",
         options: [
-          "Ulnar gutter splint, oral antibiotics and fracture clinic in one week",
           "Buddy taping and follow up with his family physician",
-          "Urgent hand surgery consultation for operative irrigation and debridement with IV antibiotics",
-          "Primary closure of the capsule in the ED and discharge",
-          "Discharge with antibiotics and wound check in 48 hours",
+          "Primary joint capsule closure in the ED, then discharge home",
+          "Ulnar gutter splint, oral antibiotics, clinic in one week",
+          "Urgent hand surgery for operative washout and IV antibiotics",
+          "Wound check in 48 hours after discharge on antibiotics",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "A fight bite that enters the joint and fractures the metacarpal head is an open intra-articular fracture with a contaminated wound. It needs formal operative washout and IV antibiotics. Outpatient care risks septic arthritis and permanent loss of hand function.",
+          "A fight bite that enters the joint and fractures the metacarpal head is an open intra-articular fracture with a contaminated wound. It needs urgent hand surgery consultation for operative irrigation and debridement, with IV antibiotics. Outpatient care risks septic arthritis and permanent loss of hand function.",
         keyFeature: { topic: "msk", n: 7 },
         source: "rosen",
       },
       {
         id: "q4",
         kind: "short",
-        prompt: "Name ONE appropriate empiric IV antibiotic regimen for him. He has no allergies.",
+        update: "He has no allergies.",
+        prompt: "What is an appropriate empiric IV antibiotic regimen for him?",
         required: 1,
         accept: [
           { id: "ivamoxclav", text: "IV amoxicillin clavulanate", match: ["iv amoxicillin clavulanate", "intravenous amoxicillin clavulanate", "iv amox clav", "iv clavulin", "iv augmentin"] },
@@ -765,7 +788,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings you would document on his initial examination of the injured leg.",
+        prompt: "What findings would you document on his initial examination of the injured leg?",
         required: 3,
         accept: [
           { id: "pulses", text: "Dorsalis pedis and posterior tibial pulses", match: ["pulse", "dorsalis pedi", "posterior tibial", "doppler"] },
@@ -785,7 +808,7 @@ export const MSK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "He is placed in a long leg backslab and admitted for fixation tomorrow. Four hours later his pain is escalating despite repeated hydromorphone. Passive toe flexion causes severe pain. The anterior compartment is tense. Dorsalis pedis pulse is present.",
-        prompt: "List THREE immediate steps in his management.",
+        prompt: "What are the immediate steps in his management?",
         required: 3,
         accept: [
           { id: "release", text: "Remove or split the backslab and dressings down to skin", match: ["remove", "split", "loosen", "release the", "bivalve", "take down"] },
@@ -807,18 +830,18 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Orthopedics measures an anterior compartment pressure of 48 mmHg. His blood pressure is 124/70.",
-        prompt: "Which of the following is the most appropriate interpretation? Select one.",
+        update: "Orthopedics measures an anterior compartment pressure of 48 mmHg. His BP is 124/70 mmHg.",
+        prompt: "Which of the following is the most appropriate interpretation of this measurement?",
         options: [
-          "The pressure is below 50 mmHg, so observe with hourly checks",
-          "The perfusion pressure (diastolic minus compartment) is 22 mmHg, which supports emergency fasciotomy",
-          "The pressure is only meaningful if the pulse is absent",
-          "Repeat the measurement in six hours",
-          "Elevate the leg and give more opioid",
+          "Elevate the leg and give more opioid analgesia",
+          "Perfusion pressure of 22 mmHg, so emergency fasciotomy",
+          "Pressure below 50 mmHg, so observe with hourly leg checks",
+          "Pressure only meaningful if the pulse is absent",
+          "Repeat the pressure measurement in six hours",
         ],
         correct: 1,
         explanation:
-          "A difference between diastolic pressure and compartment pressure below 30 mmHg is the commonly used threshold for fasciotomy. Here it is 70 minus 48, or 22 mmHg. Absolute thresholds miss patients with lower blood pressure.",
+          "A difference between diastolic pressure and compartment pressure below 30 mmHg is the commonly used threshold for fasciotomy. Here the perfusion pressure is 70 minus 48, or 22 mmHg, which supports emergency fasciotomy. Absolute thresholds miss patients with lower blood pressure.",
         keyFeature: { topic: "msk", n: 7 },
         source: "mcqueen",
       },
@@ -831,22 +854,23 @@ export const MSK_SAMPS: Samp[] = [
     title: "Motorcycle crash with a dressed leg",
     alsoTopics: ["multiple-trauma"],
     stem:
-      "A 35-year-old man crashed his motorcycle at moderate speed. Paramedics applied a gauze dressing and a vacuum splint to his left lower leg. The primary survey is normal. HR 104, BP 128/76. He weighs 125 kg. Radiographs show displaced fractures of the left tibial and fibular shafts. The dressing is soaked with blood.",
+      "A 35-year-old man crashed his motorcycle at moderate speed. Paramedics applied a gauze dressing and a vacuum splint to his left lower leg. The primary survey is normal. Radiographs show displaced fractures of the left tibial and fibular shafts. The dressing is soaked with blood.",
+    vitals: { pulse: "104/minute", bp: "128/76 mmHg", weight: "125 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step regarding the leg? Select one.",
+        prompt: "Which of the following is the most appropriate next step regarding the leg?",
         options: [
-          "Leave the dressing on until orthopedics arrives to reduce infection risk",
-          "Remove the dressing and inspect the skin around the entire leg",
-          "Reinforce the dressing and obtain CT angiography",
-          "Apply a tourniquet",
+          "Apply a tourniquet to the left thigh",
+          "Leave the dressing on until orthopedics arrives",
+          "Reinforce the dressing and obtain CT angiography of the leg",
+          "Remove the dressing and inspect skin around the entire leg",
           "Remove the splint only if the pulses are absent",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Dressings and splints applied in the field can hide an open fracture. The skin over every fracture must be inspected circumferentially. The wound can then be photographed and covered again to limit repeated exposure.",
+          "Dressings and splints applied in the field can hide an open fracture. The skin over every fracture must be inspected circumferentially. The wound can then be photographed and covered again to limit repeated exposure. Leaving the dressing on to reduce infection risk delays recognition of an open fracture.",
         keyFeature: { topic: "msk", n: 6 },
         source: "rosen",
       },
@@ -854,15 +878,15 @@ export const MSK_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         update: "There is a 1.5 cm wound over the anteromedial tibia overlying the fracture.",
-        prompt: "Which of the following is the most appropriate antibiotic prophylaxis? Select one.",
+        prompt: "Which of the following is the most appropriate antibiotic prophylaxis for his open fracture?",
         options: [
-          "Cefazolin 1 g IV",
-          "Cefazolin 2 g IV",
-          "Cefazolin 3 g IV",
-          "Cephalexin 500 mg PO",
-          "Ciprofloxacin 500 mg PO",
-          "Vancomycin 1 g IV",
-          "Ceftriaxone 1 g IV",
+          "cefazolin 1 g IV",
+          "cefazolin 2 g IV",
+          "cefazolin 3 g IV",
+          "ceftriaxone 1 g IV",
+          "cephalexin 500 mg PO",
+          "ciprofloxacin 500 mg PO",
+          "vancomycin 1 g IV",
           "None",
         ],
         select: 1,
@@ -875,7 +899,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE other elements of the management of his leg in the ED.",
+        prompt: "What are the other elements of the management of his leg in the ED?",
         required: 3,
         accept: [
           { id: "tetanus", text: "Tetanus prophylaxis as indicated", match: ["tetanus", "tdap"] },
@@ -894,7 +918,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO other presentations in which a fracture should be presumed open until proven otherwise.",
+        prompt: "In what other presentations should a fracture be presumed open until proven otherwise?",
         required: 2,
         accept: [
           { id: "puncture", text: "A small puncture wound near a fracture", match: ["puncture", "small wound", "pinhole", "poke hole"] },
@@ -919,12 +943,13 @@ export const MSK_SAMPS: Samp[] = [
     title: "Child with a swollen elbow",
     alsoTopics: ["analgesia-sedation"],
     stem:
-      "A 6-year-old girl fell from monkey bars onto her outstretched left arm. She weighs 20 kg. The elbow is swollen with an S shaped deformity and anterior bruising. Radiographs show a completely displaced extension type supracondylar humerus fracture.",
+      "A 6-year-old girl fell from monkey bars onto her outstretched left arm. The elbow is swollen with an S shaped deformity and anterior bruising. Radiographs show a completely displaced extension type supracondylar humerus fracture.",
+    vitals: { weight: "20 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE neurovascular findings you would document.",
+        prompt: "What neurovascular findings would you document?",
         required: 3,
         accept: [
           { id: "radial", text: "Radial pulse", match: ["radial pulse", "pulse", "brachial"] },
@@ -943,7 +968,7 @@ export const MSK_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "The radial pulse is absent. The hand is warm and pink with capillary refill of 2 seconds. She cannot flex the tip of her thumb or index finger.",
-        prompt: "Which nerve is injured? List ONE.",
+        prompt: "Which nerve is injured?",
         required: 1,
         accept: [{ id: "ain", text: "Anterior interosseous branch of the median nerve", match: ["anterior interosseous", "ain", "median"] }],
         unacceptable: [
@@ -958,24 +983,25 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step for the pulseless but well perfused hand? Select one.",
+        prompt: "Which of the following is the most appropriate next step for the pulseless but well perfused hand?",
         options: [
-          "Splint in more than 90 degrees of elbow flexion and discharge with clinic follow up",
-          "Urgent orthopedic consultation for closed reduction and pinning within hours",
+          "Admit and reassess the hand in the morning",
+          "Arterial bypass by vascular surgery",
           "CT angiography before contacting orthopedics",
-          "Vascular surgery consultation for arterial bypass",
-          "Admit and reassess in the morning if the hand stays pink",
+          "Splint in over 90 degrees of flexion and discharge home",
+          "Urgent closed reduction and pinning by orthopedics",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "A pulseless, well perfused hand after a displaced supracondylar fracture needs urgent reduction and pinning. Most pulses return once the fracture is reduced. Splint in about 20 to 40 degrees of flexion while waiting, since hyperflexion worsens swelling and flow.",
+          "A pulseless, well perfused hand after a displaced supracondylar fracture needs urgent orthopedic consultation for closed reduction and pinning within hours. Most pulses return once the fracture is reduced. Splint in about 20 to 40 degrees of flexion while waiting, since hyperflexion worsens swelling and flow.",
         keyFeature: { topic: "msk", n: 7 },
         source: "aaos-supracondylar",
       },
       {
         id: "q4",
         kind: "short",
-        prompt: "She is crying and has no IV. Name ONE appropriate analgesic for her now. Include the drug, dose and route.",
+        update: "She is crying and has no IV.",
+        prompt: "What is an appropriate analgesic for her now, including the drug, dose and route?",
         required: 1,
         accept: [
           {
@@ -1015,7 +1041,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of this presentation that raise concern for inflicted injury.",
+        prompt: "What features of this presentation raise concern for inflicted injury?",
         required: 3,
         accept: [
           { id: "mech", text: "Mechanism inconsistent with a spiral fracture", match: ["mechanism", "inconsistent", "implausible", "does not fit", "not explain", "crib"] },
@@ -1032,7 +1058,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE investigations you would order to look for associated injuries or alternative explanations.",
+        prompt: "What investigations would you order to look for associated injuries or alternative explanations?",
         required: 3,
         accept: [
           { id: "survey", text: "Skeletal survey", match: ["skeletal survey", "bone survey"] },
@@ -1051,7 +1077,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO steps you must take to protect this child.",
+        prompt: "What steps must you take to protect this child?",
         required: 2,
         accept: [
           { id: "report", text: "Report directly to child protection services", match: ["child protection", "children aid", "cas", "report", "child welfare", "cps"] },
@@ -1082,7 +1108,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "What injury must you presume? List ONE.",
+        prompt: "What injury must you presume?",
         required: 1,
         accept: [{ id: "radialhead", text: "Occult radial head fracture", match: ["radial head", "radial neck", "occult fracture", "occult elbow fracture", "intra articular fracture"] }],
         unacceptable: [{ text: "Elbow sprain or contusion only", match: ["sprain", "contusion", "soft tissue"] }],
@@ -1094,7 +1120,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO associated injuries you would look for on examination.",
+        prompt: "What associated injuries would you look for on examination?",
         required: 2,
         accept: [
           { id: "druj", text: "Distal radioulnar joint and interosseous membrane injury (Essex-Lopresti)", match: ["druj", "distal radioulnar", "essex lopresti", "interosseous membrane", "forearm tenderness", "distal radius"] },
@@ -1114,7 +1140,7 @@ export const MSK_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "The wrist and forearm are not tender. She can fully pronate and supinate after the pain settles.",
-        prompt: "List THREE elements of her disposition.",
+        prompt: "What are the elements of her disposition?",
         required: 3,
         accept: [
           { id: "sling", text: "Sling for comfort for a few days only", match: ["sling", "collar and cuff"] },
@@ -1142,7 +1168,7 @@ export const MSK_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO associated injuries you must actively exclude.",
+        prompt: "What associated injuries must you actively exclude?",
         required: 2,
         accept: [
           { id: "popliteal", text: "Popliteal artery injury", match: ["popliteal", "arterial", "artery", "vascular"] },
@@ -1160,24 +1186,24 @@ export const MSK_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "The ankle brachial index on the right is 0.8.",
-        prompt: "Which of the following is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step for him?",
         options: [
-          "Reassure because the pulse is palpable, and discharge in a knee immobilizer",
-          "Repeat the ankle brachial index at a clinic visit in one week",
           "CT angiography and urgent vascular surgery consultation",
-          "MRI of the knee",
-          "Venous duplex ultrasound",
+          "Discharge home in a knee immobilizer",
+          "Repeat ankle brachial index in clinic in one week",
+          "Urgent MRI of the knee for ligament injury",
+          "Venous duplex ultrasound of the leg",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "An ankle brachial index below 0.9 after knee dislocation predicts arterial injury requiring imaging. CT angiography and vascular surgery consultation are needed urgently. Unrecognized popliteal injury carries a high amputation rate if repair is delayed past about six to eight hours.",
+          "An ankle brachial index below 0.9 after knee dislocation predicts arterial injury requiring imaging, and a palpable pulse does not exclude it. CT angiography and vascular surgery consultation are needed urgently. Unrecognized popliteal injury carries a high amputation rate if repair is delayed past about six to eight hours.",
         keyFeature: { topic: "msk", n: 7 },
         source: "mills-abi",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO examination findings that test the common peroneal nerve.",
+        prompt: "What examination findings test the common peroneal nerve?",
         required: 2,
         accept: [
           { id: "dorsiflex", text: "Ankle and toe dorsiflexion", match: ["dorsiflexion", "dorsiflex", "toe extension", "foot drop", "ehl", "extensor hallucis"] },
@@ -1195,7 +1221,7 @@ export const MSK_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CT angiography is normal. Vascular surgery signs off.",
-        prompt: "List THREE elements of his disposition.",
+        prompt: "What are the elements of his disposition?",
         required: 3,
         accept: [
           { id: "observe", text: "Admit or observe with serial vascular examinations for about 24 hours", match: ["serial", "observe", "observation", "admit", "admission", "24 hour", "repeat abi", "repeat ankle brachial"] },

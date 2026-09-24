@@ -22,7 +22,7 @@ test("log key edits", () => {
       const keyed = (q.kind === "single" ? [q.correct] : q.correct).map((k) => q.options[k]);
       const was: string[] = before[i].keyed;
       const key = `${s.id}#${q.id}`;
-      if (JSON.stringify(keyed) !== JSON.stringify(was)) {
+      if (JSON.stringify([...keyed].sort()) !== JSON.stringify([...was].sort())) {
         log.edits[key] = { batch: b, before: was, after: keyed };
         n++;
       } else delete log.edits[key];

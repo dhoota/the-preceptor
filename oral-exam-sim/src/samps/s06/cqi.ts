@@ -16,11 +16,13 @@ const CDG: Source = {
 };
 const CMPA_DISCLOSURE: Source = {
   id: "cmpa-disclosure",
-  citation: "Canadian Medical Protective Association. Disclosing harm from healthcare delivery. Open and honest communication with patients.",
+  citation: "Canadian Medical Protective Association. Disclosing harm from healthcare delivery: open and honest communication with patients. Version 3. 2017.",
+  url: "https://www.cmpa-acpm.ca/en/advice-publications/browse-articles/2015/disclosing-harm-from-healthcare-delivery-open-and-honest-communication-with-patients",
 };
 const CMPA_RESULTS: Source = {
   id: "cmpa-results",
-  citation: "Canadian Medical Protective Association. Guidance on managing test results and follow up.",
+  citation: "Canadian Medical Protective Association. Closing the loop on effective follow-up in clinical practice. 2019.",
+  url: "https://www.cmpa-acpm.ca/en/advice-publications/browse-articles/2019/closing-the-loop-on-effective-follow-up-in-clinical-practice",
 };
 const IHI: Source = {
   id: "improvement-guide",
@@ -41,15 +43,17 @@ const ISMP_DNU: Source = {
 };
 const ISMP_HYDRO: Source = {
   id: "ismp-hydromorphone",
-  citation: "ISMP Canada. Safety bulletins on hydromorphone and morphine mix-ups.",
+  citation: "ISMP Canada. Safeguards for HYDROmorphone: results of a targeted demonstration project. ISMP Canada Safety Bulletin. Volume 13, issue 10. 2013.",
+  url: "https://ismpcanada.ca/wp-content/uploads/ISMPCSB2013-10_HYDROmorphone.pdf",
 };
 const ACCRED: Source = {
   id: "accreditation-rop",
-  citation: "Accreditation Canada. Required Organizational Practices. Client identification, medication reconciliation and information transfer at care transitions.",
+  citation: "Accreditation Canada. Required Organizational Practices: 2021 handbook. Client identification, medication reconciliation and information transfer at care transitions. 2021.",
 };
 const PHAC_IPC: Source = {
   id: "phac-ipc",
-  citation: "Public Health Agency of Canada. Routine practices and additional precautions for preventing the transmission of infection in healthcare settings.",
+  citation: "Public Health Agency of Canada. Routine practices and additional precautions for preventing the transmission of infection in healthcare settings. 2016.",
+  url: "https://www.canada.ca/content/dam/phac-aspc/documents/services/publications/diseases-conditions/routine-practices-precautions-healthcare-associated-infections/routine-practices-precautions-healthcare-associated-infections-2016-FINAL-eng.pdf",
 };
 const SSC: Source = {
   id: "ssc-2021",
@@ -65,7 +69,8 @@ const MARX: Source = {
 };
 const TEAMSTEPPS: Source = {
   id: "teamstepps",
-  citation: "Agency for Healthcare Research and Quality. TeamSTEPPS. Team strategies and tools to enhance performance and patient safety.",
+  citation: "Agency for Healthcare Research and Quality. TeamSTEPPS 3.0 pocket guide: team strategies and tools to enhance performance and patient safety. 2023.",
+  url: "https://www.ahrq.gov/teamstepps-program/resources/pocket-guide/index.html",
 };
 const CCS_STEMI: Source = {
   id: "ccs-stemi",
@@ -101,7 +106,8 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "This is a near miss. List THREE contributing factors you would explore in the incident analysis.",
+        update: "This is a near miss.",
+        prompt: "What contributing factors would you explore in the incident analysis?",
         required: 3,
         accept: [
           { id: "away", text: "Labels printed in advance and tubes labelled away from the bedside", match: ["away from bedside", "away from the bedside", "not at bedside", "not at the bedside", "at the desk", "pre printed", "preprinted", "printed in advance", "batch", "labelling"] },
@@ -119,7 +125,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO acceptable patient identifiers for specimen collection.",
+        prompt: "What are acceptable patient identifiers for specimen collection?",
         required: 2,
         accept: [
           { id: "name", text: "Full name", match: ["name"] },
@@ -139,7 +145,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO system level corrective actions that would be stronger than staff education.",
+        prompt: "What system level corrective actions would be stronger than staff education?",
         required: 2,
         accept: [
           { id: "barcode", text: "Barcode positive patient identification linking wristband and label at the bedside", match: ["barcode", "bar code", "scan", "positive patient identification", "electronic identification"] },
@@ -168,7 +174,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE contributing factors to this event.",
+        prompt: "What are the contributing factors to this event?",
         required: 3,
         accept: [
           { id: "unstructured", text: "Unstructured verbal handover with no standard tool", match: ["unstructured", "no structured", "no standard", "verbal handover", "no handover tool", "no tool", "informal"] },
@@ -187,7 +193,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE elements of a structured handover that would reduce this risk.",
+        prompt: "What elements of a structured handover would reduce this risk?",
         required: 3,
         accept: [
           { id: "severity", text: "Illness severity stated explicitly (stable, watcher, unstable)", match: ["illness severity", "severity", "watcher", "unstable"] },
@@ -206,17 +212,17 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate response to his wife now? Select one.",
+        prompt: "Which of the following is the most appropriate response to his wife now?",
         options: [
-          "His pneumonia is severe and sometimes patients get worse despite good care.",
-          "The previous doctor missed a blood test. That was his mistake, not mine.",
-          "A blood test that showed his infection was more serious came back at shift change. It was not acted on for about three hours. I am sorry. We are treating him in the ICU. The hospital will review how this happened, and I will keep you updated.",
-          "We cannot discuss this until the hospital review and legal advice are complete.",
-          "I will explain once we know whether the delay changed his outcome.",
+          "Attribute the error to the previous physician",
+          "Defer discussion until the review and legal advice",
+          "Disclose the delay, apologize and explain next steps",
+          "Explain that patients sometimes worsen despite good care",
+          "Wait to explain until the effect on outcome is known",
         ],
         correct: 2,
         explanation:
-          "Initial disclosure should happen as soon as reasonably possible. Share the known facts, express regret, describe the care plan and next steps, and offer ongoing contact. Do not speculate about whether the delay changed his outcome or blame colleagues. Waiting for the review or for proof of harm is not appropriate.",
+          "Initial disclosure should happen as soon as reasonably possible. Tell her that a blood test showing a more serious infection came back at shift change and was not acted on for about three hours. Share the known facts, express regret, describe the care plan and next steps, and offer ongoing contact. Do not speculate about whether the delay changed his outcome or blame colleagues. Waiting for the review or for proof of harm is not appropriate.",
         keyFeature: { topic: "cqi", n: 2 },
         source: "cpsi-disclosure",
       },
@@ -228,12 +234,12 @@ export const CQI_SAMPS: Samp[] = [
     id: "cqi-03",
     title: "Patients who come back",
     stem:
-      "You are the quality lead for a community ED with 55,000 visits a year. The chief asks you to set up a review of patients who return within 72 hours of discharge and are then admitted.",
+      "You are the quality lead for a community ED with 55 000 visits a year. The chief asks you to set up a review of patients who return within 72 hours of discharge and are then admitted.",
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE steps in planning this review.",
+        prompt: "What are the steps in planning this review?",
         required: 3,
         accept: [
           { id: "define", text: "Define the indicator with numerator, denominator and time window", match: ["define", "definition", "numerator", "denominator", "time window", "operational"] },
@@ -253,18 +259,18 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Which of the following are outcome measures? Select TWO.",
+        prompt: "Which of the following are outcome measures of emergency department care?",
         options: [
-          "Proportion of discharged patients who return within 72 hours and are admitted",
-          "Seven day mortality after ED discharge",
-          "Median time to physician initial assessment",
-          "Percentage of charts with documented discharge instructions",
-          "Number of emergency physicians per shift",
           "Availability of CT overnight",
+          "Median time to physician initial assessment",
+          "Number of emergency physicians per shift",
+          "Percentage of charts with documented discharge instructions",
           "Percentage of patients with a documented pain score",
+          "Return with admission within 72 hours of discharge",
+          "Seven day mortality after ED discharge",
         ],
         select: 2,
-        correct: [0, 1],
+        correct: [5, 6],
         explanation:
           "Donabedian divides quality measures into structure, process and outcome. Returns with admission and mortality are outcomes. Time to assessment and documentation rates are processes. Staffing and equipment are structures.",
         keyFeature: { topic: "cqi", n: 3 },
@@ -274,7 +280,7 @@ export const CQI_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "The review finds that 30% of preventable returns were older adults discharged after a fall without any assessment of walking ability.",
-        prompt: "List THREE elements of a simple improvement project to address this.",
+        prompt: "What are the elements of a simple improvement project to address this?",
         required: 3,
         accept: [
           { id: "aim", text: "A specific, measurable, time bound aim statement", match: ["aim", "smart", "goal", "target"] },
@@ -294,17 +300,17 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following is a balancing measure for this project? Select one.",
+        prompt: "Which of the following is a balancing measure for this project?",
         options: [
-          "Percentage of older fall patients with a documented mobility assessment",
-          "72 hour return with admission among older fall patients",
-          "ED length of stay for older adults discharged after a fall",
+          "ED length of stay for discharged older fall patients",
+          "Number of falls among older adults in the community",
           "Number of nurses trained in the mobility test",
-          "Number of falls in the community",
+          "Proportion of older fall patients with a mobility assessment",
+          "Return with admission within 72 hours in older fall patients",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "A balancing measure checks whether the change causes a problem elsewhere in the system. Adding an assessment could lengthen ED stays. The documentation rate is a process measure and the return rate is the outcome.",
+          "A balancing measure checks whether the change causes a problem elsewhere in the system. Adding an assessment could lengthen ED stays. The proportion with a mobility assessment is a process measure and the return rate is the outcome.",
         keyFeature: { topic: "cqi", n: 4 },
         source: "improvement-guide",
       },
@@ -321,7 +327,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE components of the Model for Improvement.",
+        prompt: "What are the components of the Model for Improvement?",
         required: 3,
         accept: [
           { id: "aim", text: "What are we trying to accomplish (aim)", match: ["aim", "accomplish"] },
@@ -337,7 +343,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE change ideas that could shorten the time to antibiotics.",
+        prompt: "What change ideas could shorten the time to antibiotics?",
         required: 3,
         accept: [
           { id: "screen", text: "Sepsis screening tool at triage", match: ["screening tool", "screen at triage", "triage screen", "sepsis screen", "early warning", "news2", "national early warning"] },
@@ -358,17 +364,17 @@ export const CQI_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "You plot weekly median time to antibiotics on a run chart with the baseline median as the centre line. After the change, 7 consecutive weekly points fall below the baseline median.",
-        prompt: "Which of the following best describes this pattern? Select one.",
+        prompt: "Which of the following best describes this pattern on the run chart?",
         options: [
           "A shift, which signals non random change",
-          "A trend, which requires 5 points in a row going in the same direction",
-          "No signal, because only a statistical test can show improvement",
-          "An astronomical data point",
-          "Too few runs, so the data are invalid",
+          "A trend of five points in the same direction",
+          "An astronomical point after the change",
+          "Too few runs to interpret the chart",
+          "No signal without a formal statistical test",
         ],
         correct: 0,
         explanation:
-          "On a run chart, six or more consecutive points on the same side of the median form a shift. It signals non random change. A trend is five or more consecutive points all rising or all falling.",
+          "On a run chart, six or more consecutive points on the same side of the median form a shift. It signals non random change. A trend is five or more consecutive points all rising or all falling. Run chart rules detect this signal without a formal statistical test.",
         keyFeature: { topic: "cqi", n: 4 },
         source: "perla-run-chart",
       },
@@ -380,12 +386,12 @@ export const CQI_SAMPS: Samp[] = [
     id: "cqi-05",
     title: "A drowsy patient after analgesia",
     stem:
-      "A 78-year-old woman with a painful wrist fracture was ordered morphine 2 mg IV. The nurse removed hydromorphone 2 mg from the automated cabinet using an override and gave it. The two products sit in neighbouring drawers and have similar labels. Thirty minutes later her respiratory rate was 7 and SpO2 84%. She improved with naloxone and was observed overnight without further problems. Her daughter arrives.",
+      "A 78-year-old woman with a painful wrist fracture was ordered morphine 2 mg IV. The nurse removed hydromorphone 2 mg from the automated cabinet using an override and gave it. The two products sit in neighbouring drawers and have similar labels. Thirty minutes later her respiratory rate was 7/minute and O2 saturation 84%. She improved with naloxone and was observed overnight without further problems. Her daughter arrives.",
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE elements to include in your disclosure conversation.",
+        prompt: "What elements would you include in your disclosure conversation?",
         required: 3,
         accept: [
           { id: "facts", text: "The facts of what happened, in plain language", match: ["fact", "what happened", "wrong medication", "wrong drug", "error", "explain"] },
@@ -405,7 +411,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE contributing factors to this event.",
+        prompt: "What are the contributing factors to this event?",
         required: 3,
         accept: [
           { id: "lasa", text: "Look alike, sound alike drug names and packaging", match: ["look alike", "sound alike", "lasa", "similar label", "similar packaging", "similar name"] },
@@ -424,7 +430,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO safe medication practice changes to prevent recurrence.",
+        prompt: "What safe medication practice changes would prevent recurrence?",
         required: 2,
         accept: [
           { id: "separate", text: "Separate storage of hydromorphone and morphine", match: ["separate", "segregate", "different drawer", "separate storage", "store apart"] },
@@ -453,19 +459,19 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "menu",
-        prompt: "Which of the following appear on the ISMP Canada Do Not Use list? Select THREE.",
+        prompt: "Which of the following appear on the ISMP Canada Do Not Use list?",
         options: [
-          "U for units",
-          "A trailing zero, as in 5.0 mg",
-          "µg for microgram",
-          "mcg for microgram",
-          "A leading zero, as in 0.5 mg",
-          "units written out in full",
-          "mL for millilitre",
           "daily written out in full",
+          "Leading zero, as in 0.5 mg",
+          "mcg for microgram",
+          "mL for millilitre",
+          "Trailing zero, as in 5.0 mg",
+          "U for units",
+          "units written out in full",
+          "µg for microgram",
         ],
         select: 3,
-        correct: [0, 1, 2],
+        correct: [4, 5, 7],
         explanation:
           "U can be read as 0 or 4, creating tenfold errors. A trailing zero can be missed so 5.0 becomes 50. µg can be read as mg. Write units in full, omit trailing zeros, always use a leading zero and write mcg.",
         keyFeature: { topic: "cqi", n: 5 },
@@ -474,7 +480,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO other contributing factors to this event.",
+        prompt: "What other factors contributed to this event?",
         required: 2,
         accept: [
           { id: "handwritten", text: "Handwritten order without computerized order entry", match: ["handwritten", "handwriting", "illegible", "cpoe", "computerized", "computerised", "electronic order"] },
@@ -494,17 +500,18 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "A colleague says disclosure is unnecessary because the patient recovered fully. Which of the following is the most appropriate approach? Select one.",
+        update: "A colleague says disclosure is unnecessary because the patient recovered fully.",
+        prompt: "Which of the following is the most appropriate approach to disclosure?",
         options: [
-          "Do not disclose, because there was no lasting harm",
-          "Disclose only if the patient asks why he received dextrose",
-          "Disclose the event, its effects and the plan, with an apology, as soon as reasonably possible",
-          "Wait until the incident review is complete in several weeks",
-          "Ask the nurse who gave the dose to disclose alone",
+          "Delegate disclosure to the nurse who gave the insulin dose",
+          "Disclose the event, effects, plan and apology promptly",
+          "Wait for the incident review to be complete",
+          "Wait until the patient asks about the dextrose",
+          "No disclosure to the patient",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "The event reached the patient and caused temporary harm, so it must be disclosed whatever the final outcome. Initial disclosure should not wait for the review. The most responsible physician normally leads disclosure, with involved staff supported.",
+          "The event reached the patient and caused temporary harm, so it must be disclosed whatever the final outcome. Disclose the event, its effects and the plan, with an apology, as soon as reasonably possible. Initial disclosure should not wait for the review. The most responsible physician normally leads disclosure, with involved staff supported.",
         keyFeature: { topic: "cqi", n: 2 },
         source: "cpsi-disclosure",
       },
@@ -521,7 +528,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of a reliable system for following up results after ED discharge.",
+        prompt: "What are the features of a reliable system for following up results after ED discharge?",
         required: 3,
         accept: [
           { id: "owner", text: "A designated person or role responsible every day", match: ["designated", "responsible", "assigned", "owner", "accountable", "role"] },
@@ -541,7 +548,8 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "You reach him by phone. List THREE things you would do or say.",
+        update: "You reach him by phone.",
+        prompt: "What would you do or say?",
         required: 3,
         accept: [
           { id: "facts", text: "Explain that the final report shows a fracture that was not identified at his visit", match: ["missed", "not identified", "final report", "what happened", "radiologist found", "report showed", "report show", "explain the fracture", "tell him about the fracture", "inform him of the fracture", "disclose the fracture", "disclose"] },
@@ -560,7 +568,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO ways to build learning from radiology discrepancies into routine departmental practice.",
+        prompt: "How could you build learning from radiology discrepancies into routine departmental practice?",
         required: 2,
         accept: [
           { id: "individual", text: "Confidential individual feedback to the treating physician", match: ["individual feedback", "feedback", "notify the physician"] },
@@ -587,7 +595,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "When caring for a patient with C. difficile, which hand hygiene method is preferred after glove removal? List ONE.",
+        prompt: "When caring for a patient with C. difficile, which hand hygiene method is preferred after glove removal?",
         required: 1,
         accept: [{ id: "soap", text: "Soap and water hand washing", match: ["soap", "hand washing", "handwashing", "wash hand"] }],
         unacceptable: [{ text: "Alcohol based hand rub alone", match: ["alcohol rub alone", "alcohol based hand rub alone", "alcohol hand rub alone", "alcohol only", "hand sanitizer"] }],
@@ -599,7 +607,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE additional precautions for patients with C. difficile infection.",
+        prompt: "What additional precautions apply to patients with C. difficile infection?",
         required: 3,
         accept: [
           { id: "gowngloves", text: "Contact precautions with gown and gloves", match: ["gown", "glove", "contact precaution"] },
@@ -616,7 +624,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO quality indicators you would track to monitor this problem.",
+        prompt: "What quality indicators would you track to monitor this problem?",
         required: 2,
         accept: [
           { id: "cdi", text: "Hospital onset C. difficile rate per 10,000 patient days", match: ["difficile rate", "cdi rate", "c diff rate", "infection rate", "hospital onset", "per 10000", "per 10,000", "patient day", "case"] },
@@ -644,13 +652,13 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Under a just culture framework, how should the nurse's action be handled? Select one.",
+        prompt: "Which of the following is the most appropriate way to handle the nurse's action under a just culture framework?",
         options: [
-          "Reckless behaviour, so discipline is appropriate",
           "At risk behaviour, so coaching is appropriate",
-          "Human error, so console the nurse and fix the system that allowed it",
           "Criminal negligence, so report to police",
-          "No response is needed because the patient was not harmed",
+          "Human error, so console the nurse and fix the system",
+          "Reckless behaviour, so formal discipline is appropriate",
+          "No response, as the patient was not harmed",
         ],
         correct: 2,
         explanation:
@@ -661,7 +669,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO features of a departmental safety culture that encourage staff to report errors like this one.",
+        prompt: "What features of a departmental safety culture encourage staff to report errors like this one?",
         required: 2,
         accept: [
           { id: "nonpunitive", text: "Non punitive just culture response to honest errors", match: ["non punitive", "nonpunitive", "just culture", "no blame", "blame free", "not punish", "no punishment", "not blame"] },
@@ -681,17 +689,17 @@ export const CQI_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "A second nurse says she routinely bypasses the pump drug library because loading it is slow, and most colleagues do the same.",
-        prompt: "Which of the following is the most appropriate response to this practice? Select one.",
+        prompt: "Which of the following is the most appropriate response to this practice?",
         options: [
-          "Treat it as human error and console her",
-          "Treat it as at risk behaviour, coach staff, and fix the reasons the workaround is common",
-          "Treat it as reckless and discipline all staff who bypass the library",
-          "Take no action because the practice is widespread",
-          "Report her to the College of Nurses",
+          "At risk behaviour, so coach staff and fix the causes",
+          "Human error, so console the nurse",
+          "Reckless behaviour, so discipline every staff member",
+          "Report the nurse to the College of Nurses",
+          "No action, as the practice is widespread",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "A workaround where the risk is not recognized or is believed justified is at risk behaviour. The response is coaching and removing the incentives, such as a slow library. Widespread drift signals a system problem rather than individual recklessness.",
+          "A workaround where the risk is not recognized or is believed justified is at risk behaviour. The response is coaching staff and fixing the reasons the workaround is common, such as a slow library. Widespread drift signals a system problem rather than individual recklessness.",
         keyFeature: { topic: "cqi", n: 6 },
         source: "just-culture",
       },
@@ -708,17 +716,17 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first statement? Select one.",
+        prompt: "Which of the following is the most appropriate first response to the surgeon?",
         options: [
-          "\"Um, are you sure about that?\"",
-          "\"I am concerned. The X-ray shows the pneumothorax on the left and you are prepping the right. I need us to stop and confirm the side.\"",
-          "Say nothing now and document the concern afterward",
+          "Accuse the surgeon of a serious mistake",
+          "Ask vaguely whether the surgeon is sure",
           "Leave the room to call the chief of surgery",
-          "\"You are about to make a serious mistake.\"",
+          "Say nothing now and document the concern afterward",
+          "State concern, cite the X-ray, ask to stop and confirm",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "Graded assertiveness tools such as CUS (concerned, uncomfortable, safety issue) state the concern, the specific problem and a clear request to stop. Vague hints are easily ignored. Silence or leaving the room abandons the patient.",
+          "Graded assertiveness tools such as CUS (concerned, uncomfortable, safety issue) state the concern, the specific problem and a clear request to stop. For example: \"I am concerned. The X-ray shows the pneumothorax on the left and you are prepping the right. I need us to stop and confirm the side.\" Vague hints are easily ignored. Silence or leaving the room abandons the patient.",
         keyFeature: { topic: "cqi", n: 5 },
         source: "teamstepps",
       },
@@ -726,7 +734,7 @@ export const CQI_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "The procedure is stopped, the side is confirmed and a left chest tube is placed without complication.",
-        prompt: "List TWO contributing factors you would explore in reviewing this close call.",
+        prompt: "What contributing factors would you explore in reviewing this close call?",
         required: 2,
         accept: [
           { id: "image", text: "Image not displayed or reviewed by the proceduralist", match: ["image", "xray", "x ray", "film", "display", "radiograph", "reversed", "not review", "not displayed", "not check the", "no image"] },
@@ -745,15 +753,15 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate way to handle this close call? Select one.",
+        prompt: "Which of the following is the most appropriate way to handle this close call?",
         options: [
-          "No report is needed because the patient was not harmed",
-          "Report it to the hospital incident system so it can be analyzed and shared",
+          "Discuss it informally with the surgeon only",
           "Report it only if the family asks",
+          "Report it to the hospital incident system",
           "Report the surgeon to the College",
-          "Discuss it informally with the surgeon and take no further action",
+          "No report, as the patient was not harmed",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Close calls reveal the same system weaknesses as harmful events without the harm. Reporting them lets the department analyze patterns and fix hazards early. Routine reporting of near misses is a core habit of a learning organization.",
         keyFeature: { topic: "cqi", n: 6 },
@@ -772,7 +780,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE sources you would use to obtain a best possible medication history.",
+        prompt: "What sources would you use to obtain a best possible medication history?",
         required: 3,
         accept: [
           { id: "fp", text: "Family physician or specialist records", match: ["family physician", "family doctor", "gp", "specialist", "primary care"] },
@@ -792,7 +800,8 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "You plan a quality review of medication reconciliation for admitted ED patients. List TWO measures you would track.",
+        update: "You plan a quality review of medication reconciliation for admitted ED patients.",
+        prompt: "What measures would you track?",
         required: 2,
         accept: [
           { id: "bpmh", text: "Percentage of admitted patients with a documented BPMH within 24 hours", match: ["bpmh", "best possible medication history", "percentage with", "proportion with", "completion rate", "within 24"] },
@@ -810,7 +819,7 @@ export const CQI_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "The audit shows only 35% of admitted ED patients have a BPMH within 24 hours.",
-        prompt: "List THREE change ideas you could test to improve this.",
+        prompt: "What change ideas could you test to improve this?",
         required: 3,
         accept: [
           { id: "tech", text: "Pharmacy technician or pharmacist in the ED to complete BPMH", match: ["pharmacy technician", "pharmacist", "pharmacy tech"] },
@@ -840,7 +849,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE quality indicators you would include.",
+        prompt: "What quality indicators would you include?",
         required: 3,
         accept: [
           { id: "lwbs", text: "Left without being seen rate", match: ["left without being seen", "lwbs", "left without", "lwbs rate"] },
@@ -864,9 +873,15 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "The proportion of patients with suspected stroke who have CT within 25 minutes of arrival is which type of measure? Select one.",
-        options: ["Structure", "Process", "Outcome", "Balancing", "Patient reported experience"],
-        correct: 1,
+        prompt: "Which of the following types of measure is the proportion of patients with suspected stroke who have CT within 25 minutes of arrival?",
+        options: [
+          "Balancing",
+          "Experience",
+          "Outcome",
+          "Process",
+          "Structure",
+        ],
+        correct: 3,
         explanation:
           "Time to CT describes something done for the patient, so it is a process measure. Stroke outcomes such as disability at 90 days are outcomes. Staffing and CT availability are structures.",
         keyFeature: { topic: "cqi", n: 3 },
@@ -876,7 +891,7 @@ export const CQI_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Your LWBS rate is 8%, compared with 3% at peer sites. Most patients who leave are low acuity and arrive between 18:00 and 02:00.",
-        prompt: "List THREE change ideas to reduce the LWBS rate.",
+        prompt: "What change ideas would reduce the LWBS rate?",
         required: 3,
         accept: [
           { id: "pit", text: "Physician or nurse practitioner in triage or a rapid assessment zone", match: ["physician in triage", "provider in triage", "rapid assessment", "triage physician", "pit", "nurse practitioner", "front end"] },
@@ -895,17 +910,17 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which is the best way to judge whether your changes reduced the LWBS rate? Select one.",
+        prompt: "Which of the following is the best way to judge whether your changes reduced the LWBS rate?",
         options: [
-          "Compare the average for the month before with the month after",
-          "Plot weekly LWBS rates on a run chart with a baseline median, annotate the changes, and apply run chart rules",
-          "Survey staff about whether they think flow improved",
-          "Wait for the annual provincial report",
-          "Use a single day audit after the change",
+          "Annual provincial report on ED LWBS rates",
+          "Before and after comparison of monthly average LWBS rates",
+          "Single day audit of LWBS after the change",
+          "Staff survey on whether patient flow improved",
+          "Weekly annotated run chart with baseline median and rules",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "A run chart shows performance over time and separates signal from random variation using simple rules. Two point before and after comparisons are misleading because of natural variation and seasonal effects.",
+          "Plot weekly LWBS rates on a run chart with a baseline median, annotate the changes and apply run chart rules. A run chart shows performance over time and separates signal from random variation using simple rules. Two point before and after comparisons are misleading because of natural variation and seasonal effects.",
         keyFeature: { topic: "cqi", n: 4 },
         source: "perla-run-chart",
       },
@@ -922,7 +937,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE contributing factors you would explore.",
+        prompt: "What contributing factors would you explore?",
         required: 3,
         accept: [
           { id: "restock", text: "No reliable process for restocking after use", match: ["restock", "restocking", "replace", "replenish", "not restocked", "not replaced", "no restocking", "no restock"] },
@@ -941,7 +956,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE elements of a structured team debrief after this resuscitation.",
+        prompt: "What are the elements of a structured team debrief after this resuscitation?",
         required: 3,
         accept: [
           { id: "prompt", text: "Held promptly, in a psychologically safe setting", match: ["prompt", "immediate", "hot debrief", "soon after", "psychological safety", "psychologically safe", "safe environment", "non judgmental", "nonjudgmental"] },
@@ -960,7 +975,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO ways to build ongoing safety practices like this into daily department routines.",
+        prompt: "How could you build ongoing safety practices like this into daily department routines?",
         required: 2,
         accept: [
           { id: "cartcheck", text: "Documented daily crash cart and defibrillator checks with a named owner", match: ["daily check", "cart check", "defibrillator check", "checklist", "check log"] },
@@ -989,7 +1004,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE things to share or do at this follow up disclosure meeting.",
+        prompt: "What would you share or do at this follow up disclosure meeting?",
         required: 3,
         accept: [
           { id: "findings", text: "Share the facts learned from the review about what happened and why", match: ["finding", "what happened", "fact", "what we learned", "why it happened", "result of the review", "review found"] },
@@ -1008,7 +1023,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO quality indicators you would monitor for chest pain care in your ED.",
+        prompt: "What quality indicators would you monitor for chest pain care in your ED?",
         required: 2,
         accept: [
           { id: "ecg10", text: "Proportion of chest pain patients with an ECG within 10 minutes of arrival", match: ["door to ecg", "ecg within 10", "time to ecg", "ecg time", "10 minute"] },
@@ -1027,18 +1042,18 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "menu",
-        prompt: "To measure door to ECG time routinely and reliably, which data sources are most appropriate? Select TWO.",
+        prompt: "Which of the following data sources are most appropriate for measuring door to ECG time routinely and reliably?",
         options: [
-          "Triage registration timestamps from the ED information system",
-          "Acquisition timestamps from the ECG machines or ECG management system",
-          "Patient satisfaction surveys",
-          "Incident reports",
+          "ECG acquisition timestamps from the ECG machine or system",
+          "Free text times recorded in physician notes",
+          "Incident reports filed for delayed ECGs",
+          "Patient satisfaction surveys about ECG timing",
           "Physician recollection at monthly rounds",
-          "Free text times in physician notes",
-          "Staff estimates collected by survey",
+          "Staff estimates of ECG times collected by survey",
+          "Triage registration timestamps in the ED information system",
         ],
         select: 2,
-        correct: [0, 1],
+        correct: [0, 6],
         explanation:
           "Automated timestamps for arrival and ECG acquisition are objective and available for every patient. Incident reports capture only a biased fraction of cases. Recollection and free text times are unreliable.",
         keyFeature: { topic: "cqi", n: 3 },
@@ -1057,7 +1072,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE ongoing quality activities you would establish in the department.",
+        prompt: "What ongoing quality activities would you establish in the department?",
         required: 3,
         accept: [
           { id: "mm", text: "Regular morbidity and mortality rounds with a systems focus", match: ["m and m", "m&m", "morbidity", "rounds", "case review"] },
@@ -1078,13 +1093,14 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "A physician worries that apologizing to the family will be used against her in court. Under the Ontario Apology Act, which statement is correct? Select one.",
+        update: "A physician worries that apologizing to the family will be used against her in court.",
+        prompt: "Which of the following statements about an apology is correct under the Ontario Apology Act?",
         options: [
-          "An apology is an admission of liability",
-          "An apology does not constitute an admission of fault or liability and is generally not admissible in civil proceedings to prove liability",
-          "An apology voids professional liability protection",
-          "An apology may only be given after legal review",
-          "An apology must include an admission of fault to be valid",
+          "Counts as an admission of liability",
+          "Not an admission of liability and generally inadmissible",
+          "Requires legal review before it is given",
+          "Valid only with an admission of fault",
+          "Voids professional liability protection",
         ],
         correct: 1,
         explanation:
@@ -1095,7 +1111,7 @@ export const CQI_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE items to document in the chart after a disclosure conversation.",
+        prompt: "What items would you document in the chart after a disclosure conversation?",
         required: 3,
         accept: [
           { id: "when", text: "Date, time and place of the discussion", match: ["date", "time", "place", "when"] },
