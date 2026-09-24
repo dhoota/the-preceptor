@@ -29,6 +29,8 @@ const ABSOLUTE = /\b(always|never|completely|entirely|absolutely|invariably|guar
 const CROSS_REF = /\b(all|none) of the above\b|\bboth [a-e] and [a-e]\b|\b(option|answer) [a-e]\b|\b[a-e] and [a-e] only\b/i;
 /** Formulaic openers that read as machine written (MCCQE bank lesson). */
 const AI_OPENER = /\b(the clinical picture (indicates|suggests)|this is the classic presentation of|classic presentation of|it is important to note|in conclusion)\b/i;
+/** A blood pressure written into text. Snellen acuity such as 20/40 is not one. */
+export const BP_IN_TEXT = /\b(?!20\/(?:10|12|15|16|20|25|30|32|40|50|60|63|70|80|100|125|160|200|400)\b)\d{2,3}\/\d{2,3}\s*(mm ?hg)?\b/i;
 const LAST_OK = /^(none|no)\b/i;
 const CATEGORY_CITATION = /\b(standard|general|usual|common)\b.*\breferences?\b|^(canadian )?guidelines?\.?$|reference text/i;
 
@@ -132,7 +134,7 @@ for (const b of batches) {
           expect(s.questions.length).toBeLessThanOrEqual(5);
         });
         if (full) it("follows the CFPC stem conventions", () => {
-          expect(s.stem, "vitals belong in the vitals field").not.toMatch(/\b\d{2,3}\/\d{2,3}\s*(mm ?hg)?\b/i);
+          expect(s.stem, "vitals belong in the vitals field").not.toMatch(BP_IN_TEXT);
           expect(s.stem, "hyphenate ages").not.toMatch(/\b\d+ (year|month|week|day)s? old\b/i);
           expect(words(s.stem)).toBeGreaterThanOrEqual(40);
           expect(words(s.stem)).toBeLessThanOrEqual(170);
@@ -262,6 +264,9 @@ describe("gate self test", () => {
     expect(optionsOrdered(["None", "amoxicillin", "ceftriaxone"])).toBe(false);
     expect(optionsOrdered(["10 to 20%", "21 to 40%", "41 to 60%"])).toBe(true);
     expect(optionsOrdered(["-3", "-2", "-1", "0", "1"])).toBe(true);
+    expect("BP 142/88 on arrival").toMatch(BP_IN_TEXT);
+    expect("visual acuity is 20/40 in the right eye and 20/200 in the left").not.toMatch(BP_IN_TEXT);
+    expect("pressure of 120/80 mmHg").toMatch(BP_IN_TEXT);
     expect(optionsOrdered(["0", "1", "-3", "-2", "-1"])).toBe(false);
     expect(optionsOrdered(["epinephrine 0.5 mg IM", "epinephrine 0.3 mg IM", "glucagon 1 mg IV"])).toBe(true);
     expect(ABSOLUTE.test("Never give fluids")).toBe(true);
