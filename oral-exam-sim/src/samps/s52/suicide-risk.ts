@@ -40,6 +40,8 @@ const S = {
   john: { id: "john-cyberbullying", citation: "John A, Glendenning AC, Marchant A, and colleagues. Self-harm, suicidal behaviours, and cyberbullying in children and young people: systematic review. J Med Internet Res. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/29674305/" },
   cybertip: { id: "cybertip", citation: "Canadian Centre for Child Protection. Cybertip.ca: sextortion guidance for youth and parents. 2026.", url: "https://www.cybertip.ca/en/online-harms/sextortion/" },
   fralick: { id: "fralick-concussion", citation: "Fralick M, Sy E, Hassan A, and colleagues. Association of concussion with the risk of suicide: a systematic review and meta-analysis. JAMA Neurol. 2019.", url: "https://pubmed.ncbi.nlm.nih.gov/30419085/" },
+  gournellis: { id: "gournellis-psychotic-depression", citation: "Gournellis R, Tournikioti K, Touloumi G, and colleagues. Psychotic (delusional) depression and completed suicide: a systematic review and meta-analysis. Ann Gen Psychiatry. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/30258483/" },
+  borges: { id: "borges-acute-alcohol", citation: "Borges G, Bagge CL, Cherpitel CJ, and colleagues. A meta-analysis of acute use of alcohol and the risk of suicide attempt. Psychol Med. 2017.", url: "https://pubmed.ncbi.nlm.nih.gov/27928972/" },
   line988: { id: "988", citation: "Public Health Agency of Canada. 9-8-8 Suicide Crisis Helpline: call or text, 24 hours a day. 2026.", url: "https://988.ca" },
 } satisfies Record<string, Source>;
 
@@ -50,7 +52,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
     topic: "suicide-risk",
     title: "Rolled ankle at basketball practice",
     stem:
-      "You are working in a community hospital emergency department. A 14-year-old girl presents with her father after rolling her right ankle at basketball practice 2 hours ago. She can bear weight with a limp. The department screens every patient aged 10 and over with a 4-question suicide screen at triage. She answered yes to wishing she were dead in the past few weeks. She answered no to feeling her family would be better off without her, to thoughts of killing herself in the past week and to any past attempt. She has no medical history and takes no medications. There is mild swelling below the lateral malleolus with no bony tenderness.",
+      "You are working in a community hospital emergency department. A 14-year-old girl presents with her father after rolling her right ankle at basketball practice 2 hours ago. She can bear weight with a limp. The department screens every patient aged 10 and over with a 4-question suicide screen at triage. She answered yes to wishing she were dead in the past few weeks. She answered no to feeling her family would be better off without her, to thoughts of killing herself in the past week and to any past attempt. She answered no when asked if she is thinking of killing herself right now. She has no medical history and takes no medications. There is mild swelling below the lateral malleolus with no bony tenderness.",
     vitals: { temperature: "36.8°C oral", pulse: "88/minute", resp: "16/minute", bp: "108/66 mmHg", o2sat: "99% on room air", weight: "48 kg" },
     questions: [
       {
@@ -60,7 +62,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         options: ["Brief suicide safety assessment today", "Discharge with a crisis line number", "Referral to her family doctor next week", "Repeat the screen at her follow-up visit", "Search of belongings and constant observation"],
         correct: 0,
         explanation:
-          "A yes to any of the four questions is a positive screen, so she needs a brief suicide safety assessment by a clinician before she leaves. That assessment decides whether a full mental health evaluation is needed. She denies thoughts of killing herself in the past week, so this is not an acute positive that calls for immediate constant observation and a search. A crisis number alone, a deferred referral or a repeat screen later all leave a positive screen unassessed at the one visit where it was found.",
+          "A yes to any of the four questions is a positive screen, so she needs a brief suicide safety assessment by a clinician before she leaves. That assessment decides whether a full mental health evaluation is needed. She answered no to the acuity question about thoughts of killing herself right now, so this is a non-acute positive that does not call for immediate constant observation and a search. A crisis number alone, a deferred referral or a repeat screen later all leave a positive screen unassessed at the one visit where it was found.",
         keyFeature: { topic: "suicide-risk", n: 2 },
         source: "horowitz-asq",
       },
@@ -72,7 +74,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         options: ["Looking up ways to die online", "Lower grades this term", "Poor sleep for 3 weeks", "Recent breakup with a boyfriend", "Weekend arguments with her father"],
         correct: 0,
         explanation:
-          "Searching for ways to die is a preparatory behaviour, and it marks a move from passive wishes toward planning. Structured inquiry such as the Columbia protocol asks about preparatory acts because they place a patient in a higher risk band than ideation alone. Falling grades, poor sleep, a breakup and family conflict are real stressors that deserve attention in her plan. None of them shows movement toward acting on the thoughts in the way method searching does.",
+          "Searching for ways to die shows that she is thinking about a method, which marks a move from passive wishes toward active ideation and planning. Structured inquiry such as the Columbia scale grades ideation by method, intent and plan because each step places a patient in a higher risk band than a passive wish. Falling grades, poor sleep, a breakup and family conflict are real stressors that deserve attention in her plan. None of them shows movement toward acting on the thoughts in the way method searching does.",
         keyFeature: { topic: "suicide-risk", n: 1 },
         source: "posner-cssrs",
       },
@@ -99,10 +101,10 @@ export const SUICIDE_RISK_S52: Samp[] = [
         explanation:
           "Adolescent overdoses usually use medications found at home, so parents should dispose of what is not needed and lock up the rest. Reducing access to lethal means lowers deaths because many crises are brief and the method at hand matters. Hidden medications are easily found by a teenager who lives in the house. A no-harm contract offers no proven protection. Nightly phone checks, a removed door lock and a week off school strain trust and add isolation without reducing access to means.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "cps-youth",
+        source: "yip-means",
       },
     ],
-    sources: [S.horowitz, S.posner, S.cpsYouth],
+    sources: [S.horowitz, S.posner, S.cpsYouth, S.yip],
     ...META,
   },
   /* 17 Found in a running car ---------------------------------------------- */
@@ -149,10 +151,10 @@ export const SUICIDE_RISK_S52: Samp[] = [
         explanation:
           "A family history of suicide, a recent financial loss and heavy daily drinking each add to his risk, on top of male sex, separation and depressive symptoms. Alcohol also increases impulsivity and the lethality of an attempt. Religious involvement, stable housing and regular contact with his children act as protective factors. They should be named in his formulation and used in his plan, but they do not outweigh an interrupted attempt with a note.",
         keyFeature: { topic: "suicide-risk", n: 1 },
-        source: "bolton-bmj",
+        source: "safe-t",
       },
     ],
-    sources: [S.beck, S.onMha, S.bolton],
+    sources: [S.beck, S.onMha, S.safet],
     ...META,
   },
   /* 18 Refusing dialysis --------------------------------------------------- */
@@ -210,7 +212,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
     topic: "suicide-risk",
     title: "Nine days after leaving the ward",
     stem:
-      "A 31-year-old man is brought to a British Columbia emergency department by his sister. He has schizophrenia and was discharged from the psychiatric unit 9 days ago after an admission for suicidal thoughts. He stopped his olanzapine 5 days ago. He has not slept for 2 nights and believes his food is being poisoned. Yesterday he told his sister it would be easier to be dead. He uses cannabis on weekends. He is guarded and pacing, and says he will leave if he is kept waiting. There are no signs of intoxication or withdrawal.",
+      "A 31-year-old man is brought to a British Columbia emergency department by his sister. He has schizophrenia and was discharged from the psychiatric unit 9 days ago after an admission for suicidal thoughts. He stopped his olanzapine 5 days ago. He has not slept for 2 nights and believes his food is being poisoned. Yesterday he told his sister it would be easier to be dead. He uses cannabis on weekends. He has been unemployed for 2 years, has gained weight on olanzapine and has a mother with schizophrenia. He is guarded and pacing, and says he will leave if he is kept waiting. There are no signs of intoxication or withdrawal.",
     vitals: { temperature: "36.9°C oral", pulse: "108/minute", resp: "18/minute", bp: "132/78 mmHg", o2sat: "98% on room air" },
     questions: [
       {
@@ -265,7 +267,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of this attempt most indicates high suicidal intent?",
+        prompt: "Which of the following features, if present, would most indicate high suicidal intent in this attempt?",
         options: ["Called her husband soon afterward", "Cut herself after drinking wine", "Has cut her forearm once before", "Timed for when she expected to be alone", "Used a knife from the kitchen"],
         correct: 3,
         explanation:
@@ -373,6 +375,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
       {
         id: "q1",
         kind: "single",
+        update: "You work through a written safety plan with her, and she can describe each step in her own words.",
         prompt: "Which of the following findings best supports discharging her with an outpatient plan tonight?",
         options: ["Denial of ideation at triage", "Low score on a risk scale", "Promise not to harm herself", "Shared plan she helped write", "Stated wish to go home"],
         correct: 3,
@@ -425,7 +428,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         options: ["Add lorazepam for sleep", "Change to sertraline 50 mg daily", "Continue amitriptyline at 50 mg", "Increase amitriptyline to 100 mg", "Switch amitriptyline to zopiclone"],
         correct: 1,
         explanation:
-          "Tricyclic antidepressants are among the most lethal drugs in overdose, and he has suicidal thoughts and 90 tablets at home. An SSRI such as sertraline is a first line antidepressant with far lower toxicity in overdose. Continuing or increasing amitriptyline keeps a highly lethal supply in his hands. Lorazepam and zopiclone treat sleep, not depression, and both add sedation and overdose risk with his nightly wine.",
+          "Tricyclic antidepressants are among the most lethal drugs in overdose, and he has suicidal thoughts and most of the 90 tablets dispensed still at home. An SSRI such as sertraline is a first line antidepressant with far lower toxicity in overdose. The change is made with the psychiatry consultant, and his family physician is told the same day. Continuing or increasing amitriptyline keeps a highly lethal supply in his hands. Lorazepam and zopiclone treat sleep, not depression, and both add sedation and overdose risk with his nightly wine.",
         keyFeature: { topic: "suicide-risk", n: 5 },
         source: "canmat-2023",
       },
@@ -484,7 +487,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         options: ["Breastfeeding protects against suicide", "Most had recent mental health care", "Rates are highest in large cities", "Risk ends after the sixth week postpartum", "Violent methods are used more often"],
         correct: 4,
         explanation:
-          "In an Ontario population study, women who died by suicide in pregnancy or the first postpartum year used violent methods more often than other women who died by suicide. That lethality is a reason to treat her ideation seriously. Most of these deaths came late in the first year, so risk does not end at 6 weeks. Only about 4 in 10 had mental health contact in the month before death. Rates were highest in rural and remote regions. Breastfeeding is not a protective factor.",
+          "In an Ontario population study, women who died by suicide in pregnancy or the first postpartum year used violent methods more often than other women who died by suicide. That lethality is a reason to treat her ideation seriously. Most of these deaths came late in the first year, so risk does not end at 6 weeks. Only about 4 in 10 had mental health contact in the month before death. Rates were highest in rural and remote regions. The study offers no evidence that breastfeeding protects against suicide.",
         keyFeature: { topic: "suicide-risk", n: 1 },
         source: "grigoriadis-perinatal",
       },
@@ -726,7 +729,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         select: 2,
         update: "Through the interpreter, he describes nightmares and flashbacks of the war and says his family would be better off without him. He attends his mosque weekly, lives with his wife and children, takes English classes and has worked in a warehouse since spring.",
         prompt: "Which of the following findings in his history raise his risk of suicide?",
-        options: ["Attends his mosque weekly", "Belief his family is better off without him", "English classes 3 days a week", "Headaches worst on waking", "Lives with his wife and children", "Nightmares and flashbacks of the war", "Warehouse job since spring"],
+        options: ["Attends his mosque weekly", "Belief his family is better off without him", "English language classes", "Headaches worst on waking", "Lives with his wife and children", "Nightmares and flashbacks of the war", "Warehouse job since spring"],
         correct: [1, 5],
         explanation:
           "Feeling that his family would be better off without him is a statement of perceived burden and hopelessness, and it needs direct questions about plan and intent. Nightmares and flashbacks suggest posttraumatic stress disorder, which is common in refugees and raises suicide risk. His faith community, his family at home, language classes and work are protective factors to build into his plan. Morning headaches are a symptom to follow up, not a suicide risk factor.",
@@ -768,7 +771,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         explanation:
           "New criminal charges with public exposure, a separation and sleeplessness are acute stressors that raise suicide risk, and physical symptoms may be how his distress presents. With a myocardial infarction ruled out, he must be asked directly about suicidal thoughts before any plan is made. A panic handout, a benzodiazepine supply, a stress test and a cardiology referral all treat the symptom and miss the risk. A benzodiazepine also adds a means.",
         keyFeature: { topic: "suicide-risk", n: 2 },
-        source: "bolton-bmj",
+        source: "safe-t",
       },
       {
         id: "q2",
@@ -789,12 +792,12 @@ export const SUICIDE_RISK_S52: Samp[] = [
         options: ["Crisis team call within 24 hours", "Family doctor visit in 1 month", "Letter to his lawyer about stress", "Mail-out mental health pamphlets", "Psychiatry referral with no date"],
         correct: 0,
         explanation:
-          "Early, active contact after discharge reduces suicidal behaviour. In a multicentre emergency department trial, a safety plan with a series of follow-up phone calls lowered later suicide attempts. A call within a day reaches him in the first high risk days after his arrest. A family doctor visit in a month and an undated referral leave a gap. Pamphlets are passive. A letter to his lawyer does not provide care.",
+          "Early, active contact after discharge reduces suicidal behaviour. In a multicentre emergency department study, secondary screening, a safety plan and a series of follow-up phone calls lowered later suicide attempts. A call within a day reaches him in the first high risk days after his arrest. A family doctor visit in a month and an undated referral leave a gap. Pamphlets are passive. A letter to his lawyer does not provide care.",
         keyFeature: { topic: "suicide-risk", n: 5 },
         source: "ed-safe",
       },
     ],
-    sources: [S.bolton, S.safet, S.miller],
+    sources: [S.safet, S.miller],
     ...META,
   },
   /* 31 Wrist wound in an older man ----------------------------------------- */
@@ -919,7 +922,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         id: "q1",
         kind: "single",
         prompt: "Which of the following best describes his current level of suicide risk?",
-        options: ["High acute risk", "Low acute risk", "Moderate acute risk", "Very high acute risk", "No risk as the thought was passing"],
+        options: ["High acute risk", "Low acute risk", "Moderate acute risk", "Very high acute risk", "No suicide risk"],
         correct: 1,
         explanation:
           "A single passive remark made while drinking, now retracted when sober, with no plan, intent, past attempts or psychiatric history and strong protective factors, fits low acute risk. His job loss is a modifiable stressor. Moderate or high risk would need features such as a plan, intent, recent attempts or several major risk factors with weak protection. No one is at no risk, and a job loss in a man who has been drinking still calls for a plan and follow-up.",
@@ -978,7 +981,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         id: "q2",
         kind: "single",
         prompt: "Which of the following post-discharge measures has been shown to reduce suicide deaths in patients who do not engage with care?",
-        options: ["Discharge summary sent to her doctor", "Information leaflet on depression", "Periodic caring letters for 5 years", "Referral letter for her to book", "No-suicide contract at discharge"],
+        options: ["Discharge summary sent to her doctor", "Information leaflet on depression", "Periodic caring letters for 5 years", "Referral letter for her to book", "Signed no-suicide contract"],
         correct: 2,
         explanation:
           "In a randomized trial of people who had been admitted for depression or a suicidal state and then declined ongoing care, short caring letters sent at intervals over 5 years lowered suicide rates, most clearly in the first 2 years. She is exactly the kind of patient who drops out of care. A discharge summary and a leaflet are passive. A referral she must book herself already failed once. A no-suicide contract has no protective effect.",
@@ -993,7 +996,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         correct: 2,
         explanation:
           "Structured follow-up phone calls after an emergency visit, combined with a safety plan, roughly doubled the odds of attending outpatient mental health care. She missed her last referral, so a plan that depends on her making the first move is likely to fail again. Advice, a phone number, a leaflet and a faxed referral all leave the next step to her during a period of low mood and raised risk.",
-        keyFeature: { topic: "suicide-risk", n: 4 },
+        keyFeature: { topic: "suicide-risk", n: 5 },
         source: "stanley-2018",
       },
     ],
@@ -1016,9 +1019,9 @@ export const SUICIDE_RISK_S52: Samp[] = [
         options: ["Hypertension on a diuretic", "Low sodium of 131 mmol/L", "Psychotic guilt about the family", "Recent weight loss of 6 kg", "Slow answers to questions"],
         correct: 2,
         explanation:
-          "A delusional belief that he deserves to die for ruining his family is psychotic depression, which carries a much higher suicide risk than depression without psychosis. It needs urgent psychiatric care. Weight loss and slowed answers show how severe his depression is, but they point less directly to suicide. A mild low sodium and his treated hypertension are medical issues to correct, not suicide risk factors.",
+          "A delusional belief that he deserves to die for ruining his family is psychotic depression, which carries a higher suicide risk than depression without psychosis. It needs urgent psychiatric care. Weight loss and slowed answers show how severe his depression is, but they point less directly to suicide. A mild low sodium and his treated hypertension are medical issues to correct, not suicide risk factors.",
         keyFeature: { topic: "suicide-risk", n: 1 },
-        source: "bolton-bmj",
+        source: "gournellis-psychotic-depression",
       },
       {
         id: "q2",
@@ -1044,7 +1047,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         source: "appelbaum-capacity",
       },
     ],
-    sources: [S.bolton, S.ccsmh, S.appelbaum],
+    sources: [S.gournellis, S.ccsmh, S.appelbaum],
     ...META,
   },
   /* 36 Sober at three in the morning --------------------------------------- */
@@ -1074,9 +1077,9 @@ export const SUICIDE_RISK_S52: Samp[] = [
         options: ["Acute use raises attempt risk", "It lowers risk by sedating him", "It makes his text meaningless", "Only chronic use affects risk", "Risk ends once he is sober"],
         correct: 0,
         explanation:
-          "Acute intoxication lowers inhibition and increases impulsive, more lethal acts, so drinking during a crisis raises the risk of an attempt. That is why the assessment is repeated once he is sober. Sedation does not protect him. A text sent while drunk still signals distress and must be assessed. Chronic heavy use adds long term risk as well, but it is not the only way alcohol matters. His risk returns if he drinks in the next crisis.",
+          "Acute alcohol use lowers inhibition and raises the odds of a suicide attempt several fold, most of all at heavy doses, so drinking during a crisis raises his risk. That is why the assessment is repeated once he is sober. Sedation does not protect him. A text sent while drunk still signals distress and must be assessed. Chronic heavy use adds long term risk as well, but it is not the only way alcohol matters. His risk returns if he drinks in the next crisis.",
         keyFeature: { topic: "suicide-risk", n: 1 },
-        source: "bolton-bmj",
+        source: "borges-acute-alcohol",
       },
       {
         id: "q3",
@@ -1085,12 +1088,12 @@ export const SUICIDE_RISK_S52: Samp[] = [
         options: ["2-1-1", "3-1-1", "8-1-1", "9-1-1", "9-8-8"],
         correct: 4,
         explanation:
-          "9-8-8 is Canada's national suicide crisis helpline, reached by call or text at any hour. It belongs in every safety plan alongside personal contacts. 9-1-1 is for an emergency in progress, such as an attempt. 8-1-1 is a provincial health advice line. 2-1-1 connects people to community and social services. 3-1-1 is a municipal services line. None of these is designed for suicide crisis support.",
+          "9-8-8 is Canada's national suicide crisis helpline, reached by call or text at any hour. It belongs in every safety plan alongside personal contacts. 9-1-1 is for an emergency in progress, such as an attempt. 8-1-1 is a provincial health advice line, and although Quebec adds a psychosocial line to it, it is not the national suicide crisis line. 2-1-1 connects people to community and social services. 3-1-1 is a municipal services line.",
         keyFeature: { topic: "suicide-risk", n: 5 },
         source: "988",
       },
     ],
-    sources: [S.stanley12, S.bolton, S.line988],
+    sources: [S.stanley12, S.borges, S.line988],
     ...META,
   },
   /* 37 Headaches after a hockey concussion --------------------------------- */
@@ -1155,7 +1158,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following scene findings would most suggest that her fall was intentional?",
+        prompt: "Which of the following findings would most suggest that her fall was intentional?",
         options: ["A railing at chest height", "Bilateral heel fractures", "Blood alcohol of 25 mmol/L", "Laundry basket on the ground", "Wet balcony floor after rain"],
         correct: 0,
         explanation:
@@ -1172,7 +1175,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         explanation:
           "Suicidal intent should be asked about as soon as she is alert and can talk privately, in the emergency department and alongside her trauma care. Her answer shapes supervision on the ward, what she has access to and who is told. Waiting for surgery, for psychiatry next week or for discharge leaves an unrecognized attempt unmanaged. Waiting for her to raise low mood relies on disclosure she has already avoided once.",
         keyFeature: { topic: "suicide-risk", n: 2 },
-        source: "bolton-bmj",
+        source: "safe-t",
       },
       {
         id: "q3",
@@ -1184,10 +1187,10 @@ export const SUICIDE_RISK_S52: Samp[] = [
         explanation:
           "A high lethality attempt needs a psychiatric assessment before discharge, whichever service admits her for the fractures. Suicide risk after a serious attempt does not fall because the physical injuries heal. Physiotherapy clearance and pain control address mobility, not safety. An opioid supply at discharge is also a means that needs planning. A housing referral may help her later. A no-harm contract has no protective value.",
         keyFeature: { topic: "suicide-risk", n: 4 },
-        source: "bolton-bmj",
+        source: "safe-t",
       },
     ],
-    sources: [S.bolton],
+    sources: [S.bolton, S.safet],
     ...META,
   },
 ];
