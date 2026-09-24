@@ -70,7 +70,7 @@ export const MSK_S29: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "He is tender over the proximal fibula, just below the fibular head. The knee has no effusion and flexes to 90 degrees.",
+        update: "He is tender over the fibular head and the proximal fibular shaft below it. The knee has no effusion and flexes to 90 degrees.",
         prompt: "Which of the following imaging studies is most appropriate for him now?",
         options: ["Ankle and full length leg X-rays", "Ankle X-rays alone", "Ankle X-rays and stress views", "CT of the ankle and hindfoot", "MRI of the ankle ligaments"],
         correct: 0,
@@ -349,7 +349,7 @@ export const MSK_S29: Samp[] = [
         options: ["Clavicle shaft fracture", "Distal radius buckle fracture", "Lateral condyle fracture", "Olecranon fracture", "Radial head subluxation"],
         correct: 4,
         explanation:
-          "A sudden pull on the extended, pronated arm of a 2-year-old, followed at once by refusal to use the arm held pronated at his side, is the typical story of radial head subluxation. The annular ligament slips over the radial head. There is no swelling, bruising or bony tenderness, which argues against every fracture listed. A clavicle or distal radius fracture would be tender at that site. Lateral condyle and olecranon fractures follow falls and cause elbow swelling.",
+          "A sudden pull on the hand of a 2-year-old, followed at once by refusal to use the arm held pronated at his side, is the typical story of radial head subluxation. The annular ligament slips over the radial head. There is no swelling, bruising or bony tenderness, which argues against every fracture listed. A clavicle or distal radius fracture would be tender at that site. Lateral condyle and olecranon fractures follow falls and cause elbow swelling.",
         keyFeature: { topic: "msk", n: 2 },
         source: "rosen",
       },
@@ -707,12 +707,12 @@ export const MSK_S29: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "CT shows a depressed fracture of the lateral tibial plateau. The wound lies directly over the fracture. Her tetanus immunization is up to date.",
+        update: "CT shows a depressed fracture of the lateral tibial plateau. The wound lies directly over the fracture and has no visible dirt or debris. Her tetanus immunization is up to date.",
         prompt: "Which of the following is the most appropriate antibiotic for her now?",
         options: ["Amoxicillin-clavulanate 875 mg PO", "Cefazolin 2 g IV", "Cephalexin 500 mg PO", "Piperacillin-tazobactam 4.5 g IV", "Vancomycin 1 g IV"],
         correct: 1,
         explanation:
-          "A small wound over a fracture makes it an open fracture. A low energy wound of 4 mm with little contamination is a low grade injury, and first generation cephalosporin coverage of gram positive organisms is recommended as soon as possible. Cefazolin 2 g IV suits her weight of 70 kg. Oral agents are not adequate prophylaxis for an open fracture. Piperacillin-tazobactam gives gram negative coverage meant for heavily contaminated wounds. Vancomycin is for known MRSA or a severe beta-lactam allergy.",
+          "A small wound over a fracture makes it an open fracture. A low energy wound of 4 mm with no visible contamination is a low grade injury, and first generation cephalosporin coverage of gram positive organisms is recommended as soon as possible. Cefazolin 2 g IV suits her weight of 70 kg. Oral agents are not adequate prophylaxis for an open fracture. Piperacillin-tazobactam gives gram negative coverage meant for heavily contaminated wounds. Vancomycin is for known MRSA or a severe beta-lactam allergy.",
         keyFeature: { topic: "msk", n: 6 },
         source: "east-open-fracture",
       },
@@ -778,7 +778,7 @@ export const MSK_S29: Samp[] = [
         options: ["Better calf strength at 1 year", "Fewer wound complications", "Lower rerupture rate", "More sural nerve injuries", "Poorer patient-reported function"],
         correct: 1,
         explanation:
-          "Avoiding an incision avoids wound problems. In a Canadian trial of 144 patients who all had accelerated functional rehabilitation, complications were 13 after surgery against 6 without, mostly soft tissue problems. Rerupture is not lower without surgery. It was 3 against 2 in that trial, and 6.2% against 0.6% in a larger Norwegian trial. Nerve injuries were more common after surgery in the Norwegian trial. Strength and patient-reported function did not differ in a clinically important way in either trial.",
+          "Avoiding an incision avoids wound problems. In a Canadian trial of 144 patients who all had accelerated functional rehabilitation, complications were 13 after surgery against 6 without, mostly soft tissue problems. Rerupture is not lower without surgery. It was 3 without surgery against 2 after it in that trial, and 6.2% against 0.6% in a larger Norwegian trial. Nerve injuries were more common after surgery in the Norwegian trial, 5.2% and 2.8% against 0.6%. Strength and patient-reported function did not differ in a clinically important way in either trial.",
         keyFeature: { topic: "msk", n: 8 },
         source: "myhrvold-achilles",
       },
@@ -870,7 +870,7 @@ export const MSK_S29: Samp[] = [
         correct: 3,
         explanation:
           "Forced dorsiflexion with a twist of the hindfoot while snowboarding is the typical cause of a fracture of the lateral process of the talus. It is often called an ankle sprain because it is hard to see on plain films. Tenderness just in front of and below the lateral malleolus fits it. A ligament tear is common but is not the injury at risk of being missed with serious results. She is not tender at the fifth metatarsal base. An anterior calcaneal process fracture lies further forward in the foot. Peroneal tendon subluxation causes pain and snapping behind the lateral malleolus, not below its tip.",
-        keyFeature: { topic: "msk", n: 2 },
+        keyFeature: { topic: "msk", n: 4 },
         source: "vonknoch-talus",
       },
       {
@@ -1151,11 +1151,11 @@ export const MSK_S29: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the earliest reliable warning sign of this complication in a young child?",
+        prompt: "Which of the following is the earliest reliable warning sign of this complication in a child?",
         options: ["Absent radial pulse", "Cool pale fingers", "Increasing analgesic need", "Loss of finger movement", "Numb fingertips"],
         correct: 2,
         explanation:
-          "Young children often cannot describe pain or paresthesia, so rising analgesic need with anxiety and agitation are the early warning signs, as in this boy who needed analgesia every 3 hours. A pulseless, cool or pale hand is a late finding. Compartment pressure can destroy muscle while the radial pulse is still present. Loss of movement and numbness also appear late, after nerve and muscle ischemia is under way. His sensation was still normal.",
+          "Children often describe pain and paresthesia poorly, so rising analgesic need with anxiety and agitation are the early warning signs, as in this boy who needed analgesia every 3 hours. A pulseless, cool or pale hand is a late finding. Compartment pressure can destroy muscle while the radial pulse is still present. Loss of movement and numbness also appear late, after nerve and muscle ischemia is under way. His sensation was still normal.",
         keyFeature: { topic: "msk", n: 5 },
         source: "vonkeudell-acs",
       },
@@ -1179,7 +1179,7 @@ export const MSK_S29: Samp[] = [
     id: "msk-36",
     title: "Foot pain after a pivot on the court",
     stem:
-      "A 35-year-old man presents to the emergency department 2 hours after he pivoted sharply on his left forefoot during a recreational basketball game. He felt a sharp pain on the outside of the foot. He is healthy and takes no medications.\n\nThere is swelling over the lateral midfoot. He is tender over the proximal fifth metatarsal, about 2 cm from the tip of its tuberosity. He had no foot pain before today. The malleoli and the navicular are not tender. He takes four steps with a limp. The foot is warm with normal pulses and sensation.",
+      "A 35-year-old man presents to the emergency department 2 hours after he pivoted sharply on his left forefoot during a recreational basketball game. He felt a sharp pain on the outside of the foot. He had no foot pain before today. He is healthy and takes no medications.\n\nThere is swelling over the lateral midfoot. He is tender over the proximal fifth metatarsal, about 2 cm from the tip of its tuberosity. The malleoli and the navicular are not tender. He takes four steps with a limp. The foot is warm with normal pulses and sensation.",
     vitals: { temperature: "36.7°C oral", pulse: "84/minute", resp: "16/minute", bp: "128/78 mmHg", o2sat: "99% on room air" },
     questions: [
       {
