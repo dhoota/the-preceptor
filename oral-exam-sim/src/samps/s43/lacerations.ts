@@ -9,7 +9,16 @@ const TOPIC = "lacerations";
 const S = {
   cigTet: { id: "cig-tetanus", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Tetanus toxoid. Tetanus prophylaxis in wound management. Updated 2026.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html" },
   idsa: { id: "idsa-ssti", citation: "Stevens DL, Bisno AL, Chambers HF, and colleagues. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.", url: "https://academic.oup.com/cid/article/59/2/e10/2895845" },
-  rh: { id: "roberts-hedges", citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapters on wound preparation, laceration repair, foreign body removal and local anesthesia." },
+  rhCh34: { id: "rh-ch34", citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapter 34, Principles of Wound Management.", url: "https://shop.elsevier.com/books/roberts-and-hedges-clinical-procedures-in-emergency-medicine-and-acute-care/roberts/978-0-323-35478-3" },
+  rhCh35: { id: "rh-ch35", citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapter 35, Methods of Wound Closure.", url: "https://shop.elsevier.com/books/roberts-and-hedges-clinical-procedures-in-emergency-medicine-and-acute-care/roberts/978-0-323-35478-3" },
+  rhCh36: { id: "rh-ch36", citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapter 36, Foreign Body Removal.", url: "https://shop.elsevier.com/books/roberts-and-hedges-clinical-procedures-in-emergency-medicine-and-acute-care/roberts/978-0-323-35478-3" },
+  rhCh48: { id: "rh-ch48", citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapter 48, Extensor and Flexor Tendon Injuries in the Hand, Wrist, and Foot.", url: "https://shop.elsevier.com/books/roberts-and-hedges-clinical-procedures-in-emergency-medicine-and-acute-care/roberts/978-0-323-35478-3" },
+  rosenCh42: { id: "rosen-ch42", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 42, Hand Injuries.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh49: { id: "rosen-ch49", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 49, Ankle and Foot Injuries.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh52: { id: "rosen-ch52", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 52, Mammalian Bites.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  maffulli: { id: "maffulli-achilles", citation: "Maffulli N. The clinical diagnosis of subcutaneous tear of the Achilles tendon. A prospective study in 174 patients. Am J Sports Med. 1998.", url: "https://doi.org/10.1177/03635465980260021801" },
+  benbadis: { id: "benbadis-tongue", citation: "Benbadis SR, Wolgamuth BR, Goren H, Brener S, Fouad-Tarazi F. Value of tongue biting in the diagnosis of seizures. Arch Intern Med. 1995.", url: "https://pubmed.ncbi.nlm.nih.gov/7487261/" },
+  rubin: { id: "rubin-fingertip", citation: "Rubin G, Orbach H, Rinott M, Wolovelsky A, Rozen N. The use of prophylactic antibiotics in treatment of fingertip amputation: a randomized prospective trial. Am J Emerg Med. 2015.", url: "https://doi.org/10.1016/j.ajem.2015.02.002" },
   rupert: { id: "rupert-fb", citation: "Rupert J, Honeycutt JD, Odom MR. Foreign bodies in the skin: evaluation and management. Am Fam Physician. 2020.", url: "https://www.aafp.org/pubs/afp/issues/2020/0615/p740.html" },
   clark: { id: "clark-hand-infections", citation: "Clark DC. Common acute hand infections. Am Fam Physician. 2003.", url: "https://www.aafp.org/pubs/afp/issues/2003/1201/p2167.html" },
   bottini: { id: "bottini-condyle", citation: "Bottini GB, Roccia F, Sobrero F. Management of pediatric mandibular condyle fractures: a literature review. J Clin Med. 2024.", url: "https://doi.org/10.3390/jcm13226921" },
@@ -25,7 +34,6 @@ const S = {
   pierpont: { id: "nail-gun", citation: "Pierpont YN, Pappas-Politis E, Naidu DK, Salas RE, Johnson EL, Payne WG. Nail-gun injuries to the hand. Eplasty. 2008.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2586285/" },
   micieli: { id: "nhl-visors", citation: "Micieli JA, Zurakowski D, Ahmed IIK. Impact of visors on eye and orbital injuries in the National Hockey League. Can J Ophthalmol. 2014.", url: "https://doi.org/10.1016/j.jcjo.2014.03.008" },
   cdcCapno: { id: "cdc-capnocytophaga", citation: "Centers for Disease Control and Prevention. Clinical overview of Capnocytophaga. 2025.", url: "https://www.cdc.gov/capnocytophaga/hcp/clinical-overview/index.html" },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on wound management, hand injuries and mammalian bites." },
   quinnRisk: { id: "quinn-golden-period", citation: "Quinn JV, Polevoi SK, Kohn MA. Traumatic lacerations: what are the risks for infection and has the 'golden period' of laceration care disappeared? Emerg Med J. 2014.", url: "https://pubmed.ncbi.nlm.nih.gov/23314208/" },
   cps: { id: "cps-suicidal-ideation", citation: "Korczak DJ, Canadian Paediatric Society Mental Health and Developmental Disabilities Committee. Suicidal ideation and behaviour. Paediatr Child Health. 2015. Reaffirmed 2024.", url: "https://cps.ca/en/documents/position/suicidal-ideation-and-behaviour" },
   sandhu: { id: "ccs-syncope", citation: "Sandhu RK, Raj SR, Thiruganasambandamoorthy V, and colleagues. Canadian Cardiovascular Society clinical practice update on the assessment and management of syncope. Can J Cardiol. 2020.", url: "https://doi.org/10.1016/j.cjca.2019.12.023" },
@@ -71,7 +79,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Firm direct pressure over the wound controls most bleeding from an extremity laceration and is the first step. A tourniquet is kept for bleeding that pressure cannot control, and this ooze is not life threatening. Blind clamping or suture ligation in a bloody field can crush or tie the ulnar nerve, which lies beside the ulnar artery at this level, and can ruin a vessel that needs repair. Elevation helps but does not stop bleeding on its own.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "rh-ch34",
       },
       {
         id: "q3",
@@ -92,7 +100,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "nerve-repair",
       },
     ],
-    sources: [S.dy, S.rh, S.griffinNerve],
+    sources: [S.dy, S.griffinNerve, S.rhCh34],
     ...META,
   },
   {
@@ -146,7 +154,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Mud and manure carry a heavy bacterial load and tetanus spores, so the wound needs pressure irrigation, for example with a 30 to 60 mL syringe and a splash shield, and removal of visible debris. Swabbing moves debris around without reaching the depth of a ragged wound. Hydrogen peroxide, full strength chlorhexidine and a povidone iodine soak injure tissue inside the wound and do not replace mechanical cleaning.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "rh-ch34",
       },
       {
         id: "q4",
@@ -164,10 +172,10 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "A ragged wound contaminated with manure is infection prone, so a recheck in about 2 days catches early infection while it is easy to treat. Parents should also learn the signs of infection, such as spreading redness, pus, fever or increasing pain. Review at 2 weeks or only at suture removal misses that window. Thigh sutures usually stay in for 7 to 14 days, so removal at 3 days risks dehiscence. A plastic surgery clinic adds nothing for a closed thigh wound.",
         keyFeature: { topic: TOPIC, n: 4 },
-        source: "roberts-hedges",
+        source: "rh-ch34",
       },
     ],
-    sources: [S.cigTet, S.rh],
+    sources: [S.cigTet, S.rhCh34],
     ...META,
   },
   {
@@ -254,7 +262,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "The hook entered deeply and its point and barb lie just under the skin, which suits the advance and cut technique: push the point out through the skin, cut off the barb, then back the shank out. Retrograde removal works only for barbless or very superficial hooks, because the barb catches tissue on the way out. The string yank technique suits superficially embedded hooks. A radiograph adds nothing when the whole hook is visible or palpable. With normal sensation, movement and perfusion, a hand surgeon is not needed.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "rh-ch36",
       },
       {
         id: "q2",
@@ -293,7 +301,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "clark-hand-infections",
       },
     ],
-    sources: [S.rh, S.idsa, S.clark],
+    sources: [S.idsa, S.clark, S.rhCh36],
     ...META,
   },
   {
@@ -343,10 +351,10 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Tissue adhesive tolerates brief wetting, such as a quick rinse or shower, but soaking in a bath or swimming loosens it early. Ointments and petroleum jelly dissolve the adhesive and should not be applied over it. The wound does not need to stay fully dry. The adhesive sloughs off on its own in about 5 to 10 days, so it should not be peeled, and no visit is needed to remove it.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "rh-ch35",
       },
     ],
-    sources: [S.bottini, S.rh],
+    sources: [S.bottini, S.rhCh35],
     ...META,
   },
   {
@@ -425,7 +433,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Opposing curved wounds on the front and back of the ear, with a crescent through the helix, match the arches of human teeth. Bites are often hidden at first, out of embarrassment or because they happened during a fight. A door frame or a curb gives a single linear or crushing wound, not two opposing arcs. A punch causes swelling and hematoma rather than a crescent through cartilage. A torn earring splits the lobe, not the helix.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "rosen",
+        source: "rosen-ch52",
       },
       {
         id: "q2",
@@ -460,7 +468,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Ear cartilage depends on the overlying skin and perichondrium for its blood supply and dies or becomes infected if left bare, so after irrigation and minimal debridement the skin is closed over it. The ear is part of the face, where bite wounds may be closed after irrigation and with preemptive antibiotics. Leaving it open or packing it dries the cartilage and invites chondritis. Only ragged, devitalized cartilage is trimmed, to keep the shape of the ear. A review in 2 weeks leaves the cartilage uncovered.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "idsa-ssti",
       },
       {
         id: "q4",
@@ -483,7 +491,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "idsa-ssti",
       },
     ],
-    sources: [S.rosen, S.idsa, S.rh],
+    sources: [S.idsa, S.rosenCh52],
     ...META,
   },
   {
@@ -571,7 +579,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Squeezing the calf with the patient prone normally plantar flexes the foot, and loss of that movement, a positive Thompson test, indicates a complete Achilles tendon tear. Walking and active plantar flexion are preserved in many complete tears, because tibialis posterior, the peroneal muscles and the long toe flexors still flex the ankle. Range of motion is often normal. Tenderness is expected with any wound at this level and does not separate a cut tendon from an intact one.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "rosen",
+        source: "maffulli-achilles",
       },
       {
         id: "q2",
@@ -606,10 +614,10 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "A complete open Achilles laceration is usually repaired surgically. The emergency physician irrigates and closes the skin, splints the ankle in plantar flexion to bring the tendon ends together, keeps her non-weight bearing and arranges prompt surgical review. Repair of a major weight bearing tendon is not an emergency department procedure. Weight bearing or a boot in neutral pulls the ends apart. A 3 week delay lets the proximal end retract and leaves an open wound over the tendon.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "rosen",
+        source: "rosen-ch49",
       },
     ],
-    sources: [S.rosen, S.courter],
+    sources: [S.courter, S.maffulli, S.rosenCh49],
     ...META,
   },
   {
@@ -636,7 +644,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "The length of the blade sets how deep the wound may reach, and a 2 cm skin wound on the anteromedial thigh says little about depth over the femoral vessels. Knowing the blade length helps judge whether the artery, vein or femur could have been reached. The assailant's name and handedness are matters for police. Alcohol affects his examination and capacity but not the depth of the wound. Whether police hold the knife matters less than its length, which he or the bystanders can usually describe.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "roberts-hedges",
+        source: "rh-ch34",
       },
       {
         id: "q2",
@@ -689,10 +697,10 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "With no vascular injury on CT angiography, a clean 2 cm knife wound seen within hours can be irrigated and closed at the skin. Probing a tract that runs obliquely into muscle does not show its full course, can restart bleeding and adds nothing after imaging. Excision of the tract and layered muscle repair are operative steps that a simple stab wound does not need. Packing suits a drained abscess cavity, not a clean, fresh wound.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "rh-ch35",
       },
     ],
-    sources: [S.east, S.rh],
+    sources: [S.east, S.rhCh34, S.rhCh35],
     ...META,
   },
   {
@@ -833,9 +841,9 @@ export const LACERATIONS_S43: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "An unwitnessed event, a bite on the lateral border of the tongue and 20 minutes of drowsiness before a return to normal suggest a seizure rather than a simple fall, so ask about stiffening, jerking, incontinence and any earlier events. A fall usually injures the tip of the tongue, while seizures typically cause lateral tongue bites. A bruising history matters for bleeding but does not explain the drowsiness. His last meal matters only if sedation is planned. Climbing would support a simple fall, but it does not account for a lateral tongue bite. Asking whether siblings were present may find a witness, but it is less direct than asking about the features of a seizure.",
+          "An unwitnessed event, a bite on the lateral border of the tongue and 20 minutes of drowsiness before a return to normal suggest a seizure rather than a simple fall, so ask about stiffening, jerking, incontinence and any earlier events. Lateral tongue biting is highly specific for a generalized seizure, and a bite after a faint is more often at the tip. A bruising history matters for bleeding but does not explain the drowsiness. His last meal matters only if sedation is planned. Climbing would support a simple fall, but it does not account for a lateral tongue bite. Asking whether siblings were present may find a witness, but it is less direct than asking about the features of a seizure.",
         keyFeature: { topic: TOPIC, n: 1 },
-        source: "rosen",
+        source: "benbadis-tongue",
       },
       {
         id: "q2",
@@ -852,7 +860,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Many small tongue lacerations heal well without repair, but a full thickness wound, a gaping wound longer than about 1 to 2 cm, a flap or persistent bleeding is repaired, usually with absorbable sutures that do not need removal. This wound is full thickness and gapes. Nylon sutures would need removal from a small child's tongue. Tissue adhesive does not hold on a wet, mobile surface. Silver nitrate treats small bleeding points, not a gaping full thickness wound.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "rh-ch35",
       },
       {
         id: "q3",
@@ -873,7 +881,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "gonsalves-tongue",
       },
     ],
-    sources: [S.rosen, S.rh, S.gonsalves],
+    sources: [S.gonsalves, S.benbadis, S.rhCh35],
     ...META,
   },
   {
@@ -937,10 +945,10 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Soil ground into the skin edges is not removed by irrigation alone, so the contaminated, devitalized margin is trimmed conservatively after anesthesia, keeping as much palm skin as possible. Retained soil raises the risk of infection and leaves a tattooed scar. Hydrogen peroxide and iodine soaks damage tissue and do not lift embedded particles. Wide excision to fascia removes healthy palm skin that is hard to replace.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "rh-ch34",
       },
     ],
-    sources: [S.quinnRisk, S.cigTet, S.rh],
+    sources: [S.quinnRisk, S.cigTet, S.rhCh34],
     ...META,
   },
   {
@@ -1002,10 +1010,10 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "A clean soft tissue fingertip amputation without fracture or exposed bone does not need prophylactic antibiotics, and infection is uncommon with good wound care. The right measures for his work are a waterproof dressing, time off raw meat handling until the wound has epithelialized, and advice to return for redness, swelling or pus. Oral amoxicillin-clavulanate, cephalexin, IV cefazolin and topical mupirocin all add adverse effects or cost without clear benefit.",
         keyFeature: { topic: TOPIC, n: 4 },
-        source: "roberts-hedges",
+        source: "rubin-fingertip",
       },
     ],
-    sources: [S.lemmon, S.rh],
+    sources: [S.lemmon, S.rubin],
     ...META,
   },
   {
@@ -1133,7 +1141,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "The tendon slides under the skin as the fingers move, so a tendon cut made with the fingers flexed can lie away from the skin wound when the hand is flat. Moving the fingers through full flexion and extension during exploration brings every part of the tendon under the wound. A flat hand, full extension only, a clenched fist or a flexed wrist each show only one segment of the tendon and can miss a partial cut.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "rh-ch48",
       },
       {
         id: "q3",
@@ -1151,10 +1159,10 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "A laceration through more than about half the width of an extensor tendon is repaired, and the hand is then splinted in extension so the repair is not stressed, with hand follow-up. Over the metacarpals the tendon is easy to reach, and repair may be done by a hand surgeon or an experienced emergency physician. Skin closure with early motion or buddy taping risks rupture of a tendon that is 60% cut. Debriding the tendon removes tissue needed for repair. Leaving the wound open exposes the tendon.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "rh-ch48",
       },
     ],
-    sources: [S.griffinExt, S.rh],
+    sources: [S.griffinExt, S.rhCh48],
     ...META,
   },
   {
@@ -1260,7 +1268,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Passive extension of the wrist normally makes the fingers curl into flexion, the tenodesis effect, and a finger that stays straight suggests a cut flexor tendon. Together with the normal resting cascade, this needs no cooperation from a crying toddler. Isolated FDP testing, squeezing on request and dynamometry all depend on following instructions. A radiograph shows bone and radiopaque glass but not whether a tendon is intact.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "rosen",
+        source: "rosen-ch42",
       },
       {
         id: "q3",
@@ -1281,7 +1289,7 @@ export const LACERATIONS_S43: Samp[] = [
         source: "neon-trial",
       },
     ],
-    sources: [S.tindall, S.rosen, S.neon],
+    sources: [S.tindall, S.neon, S.rosenCh42],
     ...META,
   },
   {
@@ -1516,7 +1524,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Eyebrow hair is left intact because it marks the brow line needed for exact alignment, and a shaved brow can regrow slowly or unevenly. Shaving the whole brow or just the wound edges removes the landmarks the repair depends on. Waxing and depilatory cream irritate the wound and remove the same landmarks. The first skin suture realigns the upper or lower border of the brow.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "rh-ch34",
       },
       {
         id: "q3",
@@ -1533,7 +1541,7 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "A gaping wound down to frontalis needs deep absorbable dermal sutures to close the dead space and take tension off the skin, then fine skin sutures aligned with the brow border. Tissue adhesive and adhesive strips suit small, low tension wounds whose edges come together easily, not a gaping one. Staples leave marks and align facial skin poorly. Healing by secondary intention leaves a wide scar across the brow.",
         keyFeature: { topic: TOPIC, n: 3 },
-        source: "roberts-hedges",
+        source: "rh-ch35",
       },
       {
         id: "q4",
@@ -1544,10 +1552,10 @@ export const LACERATIONS_S43: Samp[] = [
         explanation:
           "Facial skin heals quickly because of its rich blood supply, so facial sutures are removed at about 3 to 5 days, before they leave cross-hatched track marks. The deep absorbable sutures keep supporting the wound after that, and adhesive strips can be added. Removal at 2 days risks the wound opening. Removal at 10 to 14 days suits the limbs and trunk, not the face, and 21 days is not a standard interval.",
         keyFeature: { topic: TOPIC, n: 4 },
-        source: "roberts-hedges",
+        source: "rh-ch35",
       },
     ],
-    sources: [S.micieli, S.rh],
+    sources: [S.micieli, S.rhCh34, S.rhCh35],
     ...META,
   },
 ];

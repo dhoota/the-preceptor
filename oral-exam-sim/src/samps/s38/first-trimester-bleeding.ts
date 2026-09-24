@@ -27,7 +27,11 @@ const S = {
   csapo: { id: "csapo-luteectomy", citation: "Csapo AI, Pulkkinen MO, Wiest WG. Effects of luteectomy and progesterone replacement therapy in early pregnant patients. Am J Obstet Gynecol. 1973.", url: "https://pubmed.ncbi.nlm.nih.gov/4688578/" },
   sogcGtd: { id: "sogc-gtd", citation: "Eiriksson L, Dean E, Sebastianelli A, and colleagues. Guideline No. 408: management of gestational trophoblastic diseases. J Obstet Gynaecol Can. 2021.", url: "https://rmtq.ca/en/guidelines/driving-lines/recommendations/" },
   morgentaler: { id: "scc-morgentaler", citation: "Supreme Court of Canada. R v Morgentaler, [1988] 1 SCR 30. 1988." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter on acute complications of pregnancy." },
+  rosenCh30: { id: "rosen-ch30", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 30, Vaginal Bleeding.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh173: { id: "rosen-ch173", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 173, Complications of Pregnancy.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  nice126: { id: "nice-ng126", citation: "National Institute for Health and Care Excellence. Ectopic pregnancy and miscarriage: diagnosis and initial management. NICE guideline NG126. 2019, updated 2026.", url: "https://www.nice.org.uk/guidance/ng126" },
+  cbsMh: { id: "cbs-massive-hemorrhage", citation: "Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical Guide to Transfusion. Canadian Blood Services. 2021.", url: "https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion" },
+  fouks: { id: "fouks-septic-abortion", citation: "Fouks Y, Samueloff O, Levin I, Many A, Amit S, Cohen A. Assessing the effectiveness of empiric antimicrobial regimens in cases of septic/infected abortions. Am J Emerg Med. 2020.", url: "https://doi.org/10.1016/j.ajem.2019.158389" },
   sogcIuc: { id: "sogc-iuc", citation: "Black A, Guilbert E, Costescu D, and colleagues. Canadian contraception consensus (part 3 of 4): chapter 7. Intrauterine contraception. J Obstet Gynaecol Can. 2016.", url: "https://doi.org/10.1016/j.jogc.2015.12.002" },
   cdcSpr: { id: "cdc-usspr", citation: "Centers for Disease Control and Prevention. U.S. selected practice recommendations for contraceptive use, 2024. Intrauterine contraception. 2024.", url: "https://www.cdc.gov/contraception/hcp/usspr/intrauterine-contraception.html" },
 } satisfies Record<string, Source>;
@@ -96,10 +100,10 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "Sudden pain, pallor, a pulse of 128/minute and a BP of 92/58 mmHg mean the interstitial pregnancy has likely ruptured, and bleeding from this site can be brisk because the uterine wall is highly vascular. She needs large bore access, blood ready and an operating room. CT or a formal scan moves an unstable patient away from resuscitation. A repeat hCG and methotrexate do not stop bleeding. A vasopressor treats a number while the volume loss continues.",
         keyFeature: { topic: "first-trimester-bleeding", n: 1 },
-        source: "rosen",
+        source: "rosen-ch173",
       },
     ],
-    sources: [S.sogcEctopic, S.rosen],
+    sources: [S.sogcEctopic, S.rosenCh173],
     ...META,
   },
   {
@@ -190,7 +194,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "A smooth, red mass protruding from a closed os that bleeds on contact is an endocervical polyp, and it explains postcoital bleeding. Ectropion is a flat red area around the os, not a mass. Carcinoma looks irregular and friable rather than smooth. The ultrasound shows no subchorionic collection. A visible cervical source means this is not uterine bleeding from a threatened miscarriage.",
         keyFeature: { topic: "first-trimester-bleeding", n: 3 },
-        source: "rosen",
+        source: "rosen-ch30",
       },
       {
         id: "q2",
@@ -224,10 +228,10 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "Bleeding from a polyp with a live pregnancy has a good outlook, and she should return if bleeding becomes heavy or cramping begins, since those suggest a uterine cause. Bed rest does not prevent pregnancy loss. Vaginal progesterone is considered for uterine bleeding in a patient with a prior miscarriage, and her bleeding is cervical with no prior loss. Removing a polyp in pregnancy is left to her obstetric provider, as it can bleed. Weekly scans do not change outcomes.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
-        source: "rosen",
+        source: "nice-ng126",
       },
     ],
-    sources: [S.rosen, S.sogcRh],
+    sources: [S.sogcRh, S.rosenCh30, S.nice126],
     ...META,
   },
   {
@@ -446,7 +450,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "An open os with tissue in it, a tender, boggy uterus and foul discharge after an abortion attempt point to infected retained products, a septic incomplete abortion. Pelvic inflammatory disease and tubo-ovarian abscess are rare in pregnancy after the first weeks and do not explain the tissue in the os. Pyelonephritis does not cause foul vaginal discharge. The uterine findings place the pregnancy in the uterus, not in a tube.",
         keyFeature: { topic: "first-trimester-bleeding", n: 3 },
-        source: "rosen",
+        source: "rosen-ch173",
       },
       {
         id: "q2",
@@ -484,7 +488,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "Infection after an incomplete abortion is polymicrobial, with streptococci, gram negative bacilli and anaerobes including clostridia, so she needs broad IV coverage such as piperacillin tazobactam. Ceftriaxone with oral doxycycline is a pelvic inflammatory disease regimen and is too narrow for septic shock. Azithromycin, ciprofloxacin and oral metronidazole each miss major pathogens, and oral drugs are unreliable in shock.",
         keyFeature: { topic: "shock", n: 4 },
-        source: "rosen",
+        source: "fouks-septic-abortion",
       },
       {
         id: "q4",
@@ -505,7 +509,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         source: "scc-morgentaler",
       },
     ],
-    sources: [S.rosen, S.ssc, S.morgentaler],
+    sources: [S.ssc, S.morgentaler, S.rosenCh173, S.fouks],
     ...META,
   },
   {
@@ -919,7 +923,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "A pulse of 132/minute, BP of 80/50 mmHg and hepatorenal free fluid with a positive pregnancy test mean a ruptured ectopic pregnancy, and she needs surgery that your site cannot provide. Calling the receiving surgeon at once starts the clock on definitive care while you gain access. Waiting for a normal BP delays the only treatment that stops bleeding. Culdocentesis and hCG add nothing to the ultrasound. Vasopressors and methotrexate do not treat hemorrhage.",
         keyFeature: { topic: "first-trimester-bleeding", n: 1 },
-        source: "rosen",
+        source: "nice-ng126",
       },
       {
         id: "q2",
@@ -936,7 +940,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "She is bleeding, so she needs red cells, not more crystalloid or colloid, which carry no oxygen and dilute clotting factors. Her blood group is unknown, and in a patient who could become pregnant again O Rh D negative cells avoid sensitization that could cause hemolytic disease in a future fetus. O Rh D positive cells are reserved for when negative stock runs short. Your site holds 4 units of O Rh D negative cells.",
         keyFeature: { topic: "shock", n: 3 },
-        source: "rosen",
+        source: "cbs-massive-hemorrhage",
       },
       {
         id: "q3",
@@ -953,10 +957,10 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "She needs continued transfusion and monitoring on the way, so a critical care paramedic team that can give blood is the safest choice. A basic crew cannot run blood, and a private vehicle offers no care if she arrests. Waiting for a normal BP or a crossmatch delays surgery, and O Rh D negative cells can be given without a crossmatch.",
         keyFeature: { topic: "first-trimester-bleeding", n: 1 },
-        source: "rosen",
+        source: "rosen-ch173",
       },
     ],
-    sources: [S.rosen],
+    sources: [S.nice126, S.cbsMh, S.rosenCh173],
     ...META,
   },
   {
@@ -1046,7 +1050,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "A threatened miscarriage has bleeding with a closed os, and an open internal os means the loss is inevitable, which is why the speculum and bimanual examination matter even when ultrasound shows a heartbeat. Clots and brown discharge show the amount and age of the bleeding but not the state of the cervix. Mild tenderness is common with cramps. A uterus larger than dates suggests a multiple or molar pregnancy.",
         keyFeature: { topic: "first-trimester-bleeding", n: 3 },
-        source: "rosen",
+        source: "rosen-ch173",
       },
       {
         id: "q2",
@@ -1084,7 +1088,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         source: "tuuli-sch",
       },
     ],
-    sources: [S.rosen, S.sogcRh, S.tuuli],
+    sources: [S.sogcRh, S.tuuli, S.rosenCh173],
     ...META,
   },
   {
@@ -1110,7 +1114,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "After the pregnancy passes, the os closes and the uterus shrinks and firms, so a small firm uterus with a closed os fits a complete miscarriage with her empty uterus and a previously documented intrauterine pregnancy. An open os with tissue means an incomplete miscarriage. A soft uterus larger than dates suggests retained tissue or a molar pregnancy. Cervical motion or adnexal tenderness points to infection or another pelvic cause.",
         keyFeature: { topic: "first-trimester-bleeding", n: 3 },
-        source: "rosen",
+        source: "rosen-ch173",
       },
       {
         id: "q2",
@@ -1148,7 +1152,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         source: "acog-200",
       },
     ],
-    sources: [S.rosen, S.acog200, S.cmpa],
+    sources: [S.acog200, S.cmpa, S.rosenCh173],
     ...META,
   },
   {
@@ -1242,7 +1246,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "A tender adnexal mass beside the uterus in a pregnant patient with bleeding suggests an ectopic pregnancy until ultrasound shows otherwise. A bluish, soft cervix and a uterus enlarged to 6 week size are normal changes of early pregnancy and do not locate it. Mild midline uterine tenderness is common with miscarriage. An absent mass does not exclude an ectopic, but a present one changes urgency.",
         keyFeature: { topic: "first-trimester-bleeding", n: 3 },
-        source: "rosen",
+        source: "nice-ng126",
       },
       {
         id: "q2",
@@ -1278,10 +1282,10 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "Sudden pelvic pain, shoulder tip pain from blood under the diaphragm and a pulse of 118/minute mean a probable ruptured ectopic pregnancy in early shock. Her BP of 98/60 mmHg is still maintained, which is typical of a young patient before collapse. She needs urgent air transfer to a surgical centre, with IV access and fluids started by the nurse. Waiting to recheck vitals or repeat hCG wastes time she does not have.",
         keyFeature: { topic: "first-trimester-bleeding", n: 1 },
-        source: "rosen",
+        source: "nice-ng126",
       },
     ],
-    sources: [S.rosen, S.acep],
+    sources: [S.acep, S.nice126],
     ...META,
   },
   {
@@ -1308,7 +1312,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "Sudden one-sided pain during intercourse with hemoperitoneum and a known intrauterine pregnancy points to a ruptured corpus luteum cyst, which supports early pregnancy from the ovary. A heterotopic pregnancy is very rare after natural conception, though surgery would find it. Torsion causes pain without much free blood. Appendicitis builds over hours. A threatened miscarriage bleeds into the uterus, not the abdomen.",
         keyFeature: { topic: "first-trimester-bleeding", n: 2 },
-        source: "rosen",
+        source: "rosen-ch173",
       },
       {
         id: "q2",
@@ -1325,7 +1329,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "Fluid in the hepatorenal space with a pulse of 108/minute and pallor means significant bleeding, and an intrauterine pregnancy does not make that safe. She needs urgent gynecology assessment for possible surgery. Discharge after analgesia or serial hemoglobin ignores active hemorrhage. CT adds radiation and delay. Her hCG says nothing about where the blood is coming from.",
         keyFeature: { topic: "first-trimester-bleeding", n: 1 },
-        source: "rosen",
+        source: "rosen-ch173",
       },
       {
         id: "q3",
@@ -1346,7 +1350,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         source: "csapo-luteectomy",
       },
     ],
-    sources: [S.rosen, S.csapo],
+    sources: [S.csapo, S.rosenCh173],
     ...META,
   },
   {
@@ -1373,7 +1377,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "The speculum shows the source directly: a bleeding laceration in the posterior fornix with a closed os and no blood coming from it. Only a speculum examination can find a vaginal injury, which ultrasound cannot see. With no blood from the os, the bleeding is not uterine, so a threatened miscarriage or subchorionic bleed is unlikely. No ectropion or polyp was seen. The laceration may need pressure or suturing.",
         keyFeature: { topic: "first-trimester-bleeding", n: 3 },
-        source: "rosen",
+        source: "rosen-ch30",
       },
       {
         id: "q2",
@@ -1410,7 +1414,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         source: "sogc-rh",
       },
     ],
-    sources: [S.rosen, S.cbs, S.sogcRh],
+    sources: [S.cbs, S.sogcRh, S.rosenCh30],
     ...META,
   },
   {
@@ -1436,7 +1440,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         explanation:
           "Ovulation can return before the first period after a birth, especially once a baby starts solids and feeds less often, so her first bleeding may be from a pregnancy rather than a returning cycle. A pregnancy test is needed in anyone of reproductive age with vaginal bleeding. A CBC, coagulation studies and thyroid tests do not locate a pregnancy. A biopsy referral for abnormal bleeding comes only after pregnancy is excluded.",
         keyFeature: { topic: "first-trimester-bleeding", n: 2 },
-        source: "rosen",
+        source: "nice-ng126",
       },
       {
         id: "q2",
@@ -1493,7 +1497,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
         source: "sogc-epl",
       },
     ],
-    sources: [S.rosen, S.doubilet, S.sogcRh, S.sogcEpl],
+    sources: [S.doubilet, S.sogcRh, S.sogcEpl, S.nice126],
     ...META,
   },
   {

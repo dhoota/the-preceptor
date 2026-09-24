@@ -26,7 +26,9 @@ const S: Record<string, Source> = {
   who: { id: "who-ipv", citation: "World Health Organization. Responding to intimate partner violence and sexual violence against women: WHO clinical and policy guidelines. 2013." },
   screenRct: { id: "screen-rct", citation: "MacMillan HL, Wathen CN, Jamieson E, and colleagues. Screening for intimate partner violence in health care settings: a randomized trial. JAMA. 2009.", url: "https://pubmed.ncbi.nlm.nih.gov/19654384/" },
   femicide: { id: "femicide", citation: "Campbell JC, Webster D, Koziol-McLain J, and colleagues. Risk factors for femicide in abusive relationships: results from a multisite case control study. Am J Public Health. 2003.", url: "https://pubmed.ncbi.nlm.nih.gov/12835191/" },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Intimate partner violence and abuse chapter." },
+  rosenCh192: { id: "rosen-ch192", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 192, Intimate Partner Violence and Abuse.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  wuIpv: { id: "wu-ipv-injury", citation: "Wu V, Huff H, Bhandari M. Pattern of physical injury associated with intimate partner violence in women presenting to the emergency department: a systematic review and meta-analysis. Trauma Violence Abuse. 2010.", url: "https://doi.org/10.1177/1524838010367503" },
+  cmpaDoc: { id: "cmpa-documentation", citation: "Canadian Medical Protective Association. Good practices: documentation and record keeping. 2021.", url: "https://www.cmpa-acpm.ca/en/education-events/good-practices/physician-patient/documentation-and-record-keeping" },
   danger: { id: "danger", citation: "Campbell JC, Webster DW, Glass N. The Danger Assessment: validation of a lethality risk assessment instrument for intimate partner femicide. J Interpers Violence. 2009.", url: "https://pubmed.ncbi.nlm.nih.gov/18667689/" },
   bcCfcsa: { id: "bc-cfcsa", citation: "British Columbia. Child, Family and Community Service Act. R.S.B.C. 1996, c. 46, sections 13 and 14: child in need of protection and duty to report.", url: "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/96046_01" },
   bcGsw: { id: "bc-gsw", citation: "British Columbia. Gunshot and Stab Wound Disclosure Act. S.B.C. 2010, c. 7.", url: "https://www.bclaws.gov.bc.ca/civix/document/id/complete/statreg/10007_01" },
@@ -1026,7 +1028,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         explanation:
           "A cut across the palm comes from grabbing a blade, and bruises on the back of the forearm come from raising the arm to block blows. Together they are defensive injuries. A kitchen cut usually involves the fingers of the hand holding the food and does not explain forearm bruises. Self-inflicted cuts are usually parallel and superficial on the front of the wrist or forearm. A fall onto glass leaves several irregular wounds, often with debris. She gave no history of a work injury.",
         keyFeature: { topic: "abuse-domestic", n: 2 },
-        source: "rosen",
+        source: "rosen-ch192",
       },
       {
         id: "q2",
@@ -1064,7 +1066,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         source: "danger",
       },
     ],
-    sources: [S.rosen, S.femicide, S.danger],
+    sources: [S.femicide, S.danger, S.rosenCh192],
     ...META,
   },
   {
@@ -1193,7 +1195,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         explanation:
           "Oval, fingertip-sized bruises grouped on the inner upper arm match the grip of a hand squeezing the arm, and a trip does not produce them. A palm abrasion, distal forearm swelling and radial tenderness fit a fall onto an outstretched hand, which is the story given, so they cannot separate the two causes. A shin bruise is common after everyday bumps.",
         keyFeature: { topic: "abuse-domestic", n: 2 },
-        source: "rosen",
+        source: "rosen-ch192",
       },
       {
         id: "q3",
@@ -1214,7 +1216,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         source: "who-ipv",
       },
     ],
-    sources: [S.who, S.rosen],
+    sources: [S.who, S.rosenCh192],
     ...META,
   },
   {
@@ -1239,9 +1241,9 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Injuries to the head, face and trunk are typical of assault by a partner, and a record of fractures and lacerations put down to intoxication can hide that pattern. A high blood alcohol, a night arrival by ambulance and being found outdoors reflect her drinking, not how she was hurt. Frequent visits for intoxication raise her risk profile but do not themselves point to violence.",
+          "Injuries to the head, neck and face are strong markers of partner violence in women seen in emergency departments, and a record of fractures and lacerations put down to intoxication can hide that pattern. A high blood alcohol, a night arrival by ambulance and being found outdoors reflect her drinking, not how she was hurt. Frequent visits for intoxication raise her risk profile but do not themselves point to violence.",
         keyFeature: { topic: "abuse-domestic", n: 2 },
-        source: "rosen",
+        source: "wu-ipv-injury",
       },
       {
         id: "q2",
@@ -1279,7 +1281,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         source: "who-ipv",
       },
     ],
-    sources: [S.rosen, S.who],
+    sources: [S.who, S.wuIpv],
     ...META,
   },
   {
@@ -1504,7 +1506,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         explanation:
           "A bottle that is still full 6 weeks after baclofen was prescribed three times daily shows that no doses were given, and she depends on her partner to give them. Worse spasticity fits missed baclofen but also occurs as multiple sclerosis progresses. A pressure injury, soaked bedding and a sodium of 149 mmol/L point to neglect of turning, hygiene and fluids rather than to withheld medications specifically.",
         keyFeature: { topic: "abuse-domestic", n: 1 },
-        source: "rosen",
+        source: "rosen-ch192",
       },
       {
         id: "q2",
@@ -1543,7 +1545,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         source: "who-ipv",
       },
     ],
-    sources: [S.rosen, S.who],
+    sources: [S.who, S.rosenCh192],
     ...META,
   },
   {
@@ -1734,10 +1736,10 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
         explanation:
           "An accurate record in her own words, with the injury described objectively, may support her later if she seeks protection or charges, and charting a false mechanism is not acceptable. Her fear is real, so the next step is to discuss who can see her portal and how access can be limited. Leaving the injury out is also inaccurate. Printing the note or sending it to her portal creates a copy her partner may find.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
-        source: "rosen",
+        source: "cmpa-documentation",
       },
     ],
-    sources: [S.who, S.femicide, S.rosen],
+    sources: [S.who, S.femicide, S.cmpaDoc],
     ...META,
   },
 ];
