@@ -47,8 +47,8 @@ const PERC: Source = {
 };
 const THROMBOSIS_CANADA: Source = {
   id: "thrombosis-canada",
-  citation: "Thrombosis Canada. Clinical guides on pulmonary embolism treatment and on venous thromboembolism in pregnancy and the postpartum period.",
-  url: "https://thrombosiscanada.ca",
+  citation: "Thrombosis Canada. Clinical guide: pregnancy: venous thromboembolism treatment. 2025.",
+  url: "https://thrombosiscanada.ca/hcp/practice/clinical_guides?language=en-ca&guideID=TREATMENTOFDEEPVEINTHROMBOSISP",
 };
 const BTS: Source = {
   id: "bts-pleural",
@@ -94,12 +94,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     topic: "chest-pain",
     title: "Sudden pain watching television",
     stem:
-      "A 64-year-old man presents at 02:10 with chest pain that began suddenly at 01:30 while he was watching television. It was maximal at onset, rated 10 out of 10, and now goes through to his back between the shoulder blades. He has hypertension and was once told he has a leaky aortic valve. HR 108, BP right arm 196/104 mmHg, left arm 158/90 mmHg, RR 22, SpO2 96% on room air, temperature 36.7°C. Weight 90 kg. He is diaphoretic. There is a soft early diastolic murmur. ECG: sinus tachycardia, left ventricular hypertrophy, no ST elevation. A portable chest X-ray is read as a normal mediastinum.",
+      "A 64-year-old man presents at 02:10 with chest pain that began suddenly at 01:30 while he was watching television. It was maximal at onset, rated 10 out of 10, and now goes through to his back between the shoulder blades. He has hypertension and was once told he has a leaky aortic valve. BP is 196/104 mmHg in the right arm and 158/90 mmHg in the left arm. He is diaphoretic. There is a soft early diastolic murmur. ECG: sinus tachycardia, left ventricular hypertrophy, no ST elevation. A portable chest X-ray is read as a normal mediastinum.",
+    vitals: { temperature: "36.7°C", pulse: "108/minute", resp: "22/minute", o2sat: "96% on room air", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that raise your concern for acute aortic syndrome.",
+        prompt: "What features raise your concern for acute aortic syndrome?",
         required: 3,
         accept: [
           { id: "abrupt", text: "Abrupt onset, maximal at onset", match: ["abrupt", "sudden", "maximal at onset", "maximum at onset", "instant"] },
@@ -116,15 +117,15 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which investigation is most appropriate next? Select one.",
+        prompt: "Which of the following investigations is most appropriate next for this patient?",
         options: [
-          "D-dimer, then CT angiogram only if positive",
           "CT angiogram of the chest, abdomen and pelvis",
-          "Transesophageal echocardiogram in the morning",
+          "D-dimer, then CT angiogram only if positive",
           "Repeat PA and lateral chest X-ray",
           "Serial troponins over 3 hours",
+          "Transesophageal echocardiogram in the morning",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "With two or more high-risk categories, go straight to CT angiography. D-dimer is only used to help rule out dissection in low-risk patients. A normal chest X-ray does not lower the probability enough.",
         keyFeature: { topic: "chest-pain", n: 1 },
@@ -133,7 +134,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO findings or test results that should NOT be used to rule out aortic dissection in a patient like this.",
+        prompt: "What findings or test results should NOT be used to rule out aortic dissection in a patient like this?",
         required: 2,
         accept: [
           { id: "cxr", text: "Normal chest X-ray or mediastinum", match: ["chest x ray", "cxr", "chest xray", "mediastinum", "x ray"] },
@@ -153,7 +154,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CT confirms a Stanford type A dissection from the aortic root to the arch.",
-        prompt: "List THREE immediate treatments or targets. Name any drug.",
+        prompt: "What are the immediate treatments or targets, naming any drug used?",
         required: 3,
         accept: [
           { id: "bb", text: "IV beta blocker first, such as esmolol or labetalol", match: ["esmolol", "labetalol", "beta blocker", "beta blockade", "metoprolol"] },
@@ -190,7 +191,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO actions that should happen within 10 minutes, before the history is complete.",
+        prompt: "What actions should happen within 10 minutes, before the history is complete?",
         required: 2,
         accept: [
           { id: "ecg", text: "12-lead ECG within 10 minutes", match: ["ecg", "ekg", "electrocardiogram"] },
@@ -208,8 +209,8 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update:
-          "ECG shows 2 mm ST elevation in II, III and aVF with ST depression in I and aVL. HR 54, BP 88/56 mmHg. Lungs are clear. The JVP is elevated.",
-        prompt: "List TWO next steps in assessment or management.",
+          "ECG shows 2 mm ST elevation in II, III and aVF with ST depression in I and aVL. Pulse 54/minute, BP 88/56 mmHg. Lungs are clear. The JVP is elevated.",
+        prompt: "What are the next steps in assessment or management?",
         required: 2,
         accept: [
           { id: "v4r", text: "Right-sided leads such as V4R", match: ["right sided", "v4r", "right side lead", "right precordial"] },
@@ -231,22 +232,22 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         update:
-          "V4R shows 1.5 mm ST elevation. After 1 L of normal saline, HR is 68 and BP is 112/70 mmHg. The nearest PCI centre is 150 minutes away by road. There are no contraindications to fibrinolysis. Weight 82 kg. He received ASA at triage.",
-        prompt: "Which THREE medications should he receive now? Select THREE.",
+          "V4R shows 1.5 mm ST elevation. After 1 L of normal saline, the pulse is 68/minute and BP is 112/70 mmHg. The nearest PCI centre is 150 minutes away by road. There are no contraindications to fibrinolysis. Weight 82 kg. He received ASA at triage.",
+        prompt: "Which of the following medications should he receive now in this emergency department?",
         options: [
+          "Clopidogrel 300 mg PO",
+          "Clopidogrel 75 mg PO",
+          "Enoxaparin 30 mg IV, then 1 mg/kg SC twice daily",
+          "Enoxaparin 0.75 mg/kg SC every 12 hours, no IV bolus",
+          "Metoprolol 5 mg IV bolus",
+          "Prasugrel 60 mg PO loading dose",
           "Tenecteplase 40 mg IV bolus",
           "Tenecteplase 45 mg IV bolus",
           "Tenecteplase 50 mg IV bolus",
-          "Clopidogrel 300 mg PO",
-          "Clopidogrel 75 mg PO",
           "Ticagrelor 180 mg PO",
-          "Enoxaparin 30 mg IV bolus, then 1 mg/kg SC every 12 hours",
-          "Enoxaparin 0.75 mg/kg SC every 12 hours with no IV bolus",
-          "Metoprolol 5 mg IV",
-          "Prasugrel 60 mg PO",
         ],
         select: 3,
-        correct: [1, 3, 6],
+        correct: [0, 2, 7],
         explanation:
           "When PCI cannot happen within 120 minutes of first medical contact, give fibrinolysis within 30 minutes. Tenecteplase for 80 to 89 kg is 45 mg. Clopidogrel 300 mg is the P2Y12 inhibitor studied with fibrinolysis in patients 75 or younger. Enoxaparin with an IV bolus is used under 75. Had he stayed in shock, transfer for primary PCI would be preferred whatever the delay.",
         keyFeature: { topic: "ischemic-heart-disease", n: 6 },
@@ -255,7 +256,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO findings at 60 to 90 minutes after tenecteplase that indicate failed reperfusion and a need for rescue PCI.",
+        prompt: "What findings at 60 to 90 minutes after tenecteplase indicate failed reperfusion and a need for rescue PCI?",
         required: 2,
         accept: [
           { id: "st", text: "Less than 50% ST resolution in the lead with the greatest elevation", match: ["st resolution", "st segment resolution", "persistent st", "ongoing st", "50%", "st elevation persist"] },
@@ -281,12 +282,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Pressure she cannot localize",
     stem:
-      "A 66-year-old woman presents at 14:20 with 90 minutes of chest discomfort and shortness of breath. She describes a pressure she cannot localize, with nausea. She has hypertension and dyslipidemia and is a former smoker. HR 92, BP 142/84 mmHg, RR 20, SpO2 95% on room air, temperature 36.6°C. Weight 68 kg. ECG: sinus rhythm, 2 mm horizontal ST depression in V1 to V3 with tall R waves and upright T waves in V2 and V3. There is no ST elevation in the standard 12 leads.",
+      "A 66-year-old woman presents at 14:20 with 90 minutes of chest discomfort and shortness of breath. She describes a pressure she cannot localize, with nausea. She has hypertension and dyslipidemia and is a former smoker. ECG: sinus rhythm, 2 mm horizontal ST depression in V1 to V3 with tall R waves and upright T waves in V2 and V3. There is no ST elevation in the standard 12 leads.",
+    vitals: { temperature: "36.6°C", pulse: "92/minute", resp: "20/minute", bp: "142/84 mmHg", o2sat: "95% on room air", weight: "68 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most concerning ECG diagnosis? List ONE.",
+        prompt: "What is the most concerning ECG diagnosis?",
         required: 1,
         accept: [
           { id: "post", text: "Posterior STEMI (posterior occlusion MI)", match: ["posterior mi", "posterior stemi", "posterior infarct", "posterior wall", "posterior myocardial", "occlusion mi", "posterior"] },
@@ -300,7 +302,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "What additional ECG step would you take to confirm it? Name the leads.",
+        prompt: "What additional ECG step, naming the leads, would you take to confirm it?",
         required: 1,
         accept: [
           { id: "v7", text: "Posterior leads V7 to V9", match: ["v7", "v8", "v9", "posterior lead"] },
@@ -314,15 +316,15 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Leads V7 to V9 show 1 mm ST elevation. The hospital has a cath lab on site.",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management now?",
         options: [
-          "Serial troponins and admission to medicine as NSTEMI",
           "Activate the cath lab for primary PCI",
           "CT pulmonary angiogram",
+          "Exercise stress test before discharge",
           "Heparin and angiography within 72 hours",
-          "Exercise stress test",
+          "Serial troponins and NSTEMI admission",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Posterior STEMI is managed as STEMI with emergency reperfusion. Treating it as NSTEMI delays opening an occluded circumflex or right coronary artery.",
         keyFeature: { topic: "ischemic-heart-disease", n: 6 },
@@ -331,7 +333,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO medications to give before she goes to the cath lab. Include doses.",
+        prompt: "What medications, with doses, would you give before she goes to the cath lab?",
         required: 2,
         accept: [
           ASA_ITEM,
@@ -351,7 +353,8 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q5",
         kind: "short",
-        prompt: "Her first high-sensitivity troponin is below the 99th percentile. Give ONE reason this does not change your plan.",
+        update: "Her first high-sensitivity troponin is below the 99th percentile.",
+        prompt: "Why does this not change your plan?",
         required: 1,
         accept: [
           { id: "early", text: "Drawn too early for troponin to have risen", match: ["too early", "early", "not had time", "not yet risen", "takes time", "time to rise", "delayed rise", "within 3 hour"] },
@@ -373,12 +376,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     topic: "chest-pain",
     title: "Pleuritic pain three weeks after delivery",
     stem:
-      "A 31-year-old woman presents with 2 days of right-sided chest pain that is worse with deep breaths and shortness of breath on exertion. She had a caesarean delivery 3 weeks ago and is breastfeeding. She has no leg symptoms. HR 112, BP 118/72 mmHg, RR 24, SpO2 93% on room air, temperature 37.6°C. Weight 78 kg. Her lungs are clear. ECG: sinus tachycardia with T wave inversion in V1 to V3. Chest X-ray is normal.",
+      "A 31-year-old woman presents with 2 days of right-sided chest pain that is worse with deep breaths and shortness of breath on exertion. She had a caesarean delivery 3 weeks ago and is breastfeeding. She has no leg symptoms. Her lungs are clear. ECG: sinus tachycardia with T wave inversion in V1 to V3. Chest X-ray is normal.",
+    vitals: { temperature: "37.6°C", pulse: "112/minute", resp: "24/minute", bp: "118/72 mmHg", o2sat: "93% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that increase her pretest probability of pulmonary embolism.",
+        prompt: "What features increase her pretest probability of pulmonary embolism?",
         required: 3,
         accept: [
           { id: "pp", text: "Postpartum state", match: ["postpartum", "post partum", "recent delivery", "recent pregnancy", "puerperium", "pregnancy"] },
@@ -396,11 +400,11 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate next test? Select one.",
+        prompt: "Which of the following is the most appropriate next test for this patient?",
         options: [
-          "D-dimer",
-          "CT pulmonary angiogram",
           "Bilateral leg compression ultrasound only",
+          "CT pulmonary angiogram",
+          "D-dimer before any imaging",
           "Transthoracic echocardiogram",
           "V/Q scan once she stops breastfeeding",
         ],
@@ -413,7 +417,8 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "The resident thinks pleurisy is more likely. List TWO findings in this case that should NOT be used to exclude PE.",
+        update: "The resident thinks pleurisy is more likely.",
+        prompt: "What findings in this case should NOT be used to exclude PE?",
         required: 2,
         accept: [
           { id: "cxr", text: "Normal chest X-ray", match: ["chest x ray", "cxr", "chest xray", "x ray"] },
@@ -432,8 +437,8 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        update: "CTPA shows a right lower lobe segmental PE. RV to LV ratio is normal and troponin is normal. Creatinine is 62 µmol/L.",
-        prompt: "She will be treated at home and plans to keep breastfeeding. Write her first anticoagulant prescription. Include the drug, dose and frequency.",
+        update: "CTPA shows a right lower lobe segmental PE. RV to LV ratio is normal and troponin is normal. Creatinine is 62 umol/L. She will be treated at home and plans to keep breastfeeding.",
+        prompt: "What is her first anticoagulant prescription, including the drug, dose and frequency?",
         required: 1,
         accept: [
           { id: "enox", text: "Enoxaparin 1 mg/kg SC every 12 hours or 1.5 mg/kg SC daily", match: ["enoxaparin 1 mg/kg", "enoxaparin 1mg/kg", "enoxaparin 1.5 mg/kg", "enoxaparin 1.5mg/kg", "enoxaparin 80", "enoxaparin 120", "enoxaparin 1 mg per kg", "enoxaparin 1.5 mg per kg"] },
@@ -460,12 +465,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     topic: "chest-pain",
     title: "Sharp pain after helping a friend move",
     stem:
-      "A 27-year-old man presents with 1 day of sharp left-sided chest pain that is worse with deep breaths. It began the morning after he helped a friend move furniture. He has no medical history and takes no medications. HR 84, BP 128/76 mmHg, RR 16, SpO2 98% on room air, temperature 36.8°C. Heart and lung examination are normal. ECG is normal.",
+      "A 27-year-old man presents with 1 day of sharp left-sided chest pain that is worse with deep breaths. It began the morning after he helped a friend move furniture. He has no medical history and takes no medications. Heart and lung examination are normal. ECG is normal.",
+    vitals: { temperature: "36.8°C", pulse: "84/minute", resp: "16/minute", bp: "128/76 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE life-threatening causes of pleuritic chest pain that you must consider.",
+        prompt: "What life-threatening causes of pleuritic chest pain must you consider?",
         required: 3,
         accept: [
           { id: "pe", text: "Pulmonary embolism", match: ["pulmonary embol", "pulmonary embolism", "pe"] },
@@ -484,7 +490,8 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Your gestalt probability of PE is low. List THREE criteria of the PERC rule he must meet.",
+        update: "Your gestalt probability of PE is low.",
+        prompt: "Which criteria of the PERC rule must he meet?",
         required: 3,
         accept: [
           { id: "age", text: "Age under 50", match: ["age", "under 50", "younger than 50"] },
@@ -505,15 +512,15 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "He meets all PERC criteria. Pressing on the left fifth costochondral junction reproduces some of his pain.",
-        prompt: "Which statement is most accurate? Select one.",
+        prompt: "Which of the following statements about this patient is most accurate?",
         options: [
-          "Chest wall tenderness confirms a musculoskeletal cause and excludes PE",
-          "PE is ruled out by PERC with low gestalt probability. No D-dimer is needed",
-          "PERC cannot be used because the pain is pleuritic",
-          "A D-dimer is still required in all patients with pleuritic pain",
+          "Chest wall tenderness excludes PE",
           "CT pulmonary angiogram is indicated",
+          "D-dimer is still required for pleuritic pain",
+          "PERC and low gestalt rule out PE, no D-dimer needed",
+          "PERC is invalid when the pain is pleuritic",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "PERC applied to a low gestalt probability rules out PE without testing. Chest wall tenderness does not by itself exclude PE or ACS, so it is not the reason to stop here. Pleuritic pain is not an exclusion for PERC.",
         keyFeature: { topic: "chest-pain", n: 5 },
@@ -523,14 +530,14 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update:
-          "Later that shift, a 44-year-old woman presents with similar pleuritic pain. She is 10 days after arthroscopic knee surgery under general anesthesia with intubation. HR 88 and SpO2 97%. She has no leg swelling. Her Wells score is 1.5.",
-        prompt: "Which is the most appropriate next step? Select one.",
+          "Later that shift, a 44-year-old woman presents with similar pleuritic pain. She is 10 days after arthroscopic knee surgery under general anesthesia with intubation. Pulse 88/minute and O2 sat 97%. She has no leg swelling. Her Wells score is 1.5.",
+        prompt: "Which of the following is the most appropriate next step for this second patient?",
         options: [
-          "Discharge without testing because PERC is negative",
+          "CT angiogram",
           "D-dimer",
-          "CT pulmonary angiogram without D-dimer",
+          "Discharge home",
+          "Leg ultrasound",
           "V/Q scan",
-          "Leg compression ultrasound only",
         ],
         correct: 1,
         explanation:
@@ -549,12 +556,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     topic: "chest-pain",
     title: "Sudden breathlessness while coughing",
     stem:
-      "A 46-year-old man with severe COPD arrives by ambulance with sudden right-sided chest pain and severe shortness of breath that began 30 minutes ago during a coughing fit. HR 132, BP 78/44 mmHg, RR 36, SpO2 82% on a non-rebreather mask, temperature 36.9°C. He is agitated. His trachea is deviated to the left. Breath sounds are absent on the right, the right chest is hyperresonant and his neck veins are distended.",
+      "A 46-year-old man with severe COPD arrives by ambulance with sudden right-sided chest pain and severe shortness of breath that began 30 minutes ago during a coughing fit. He is agitated. His trachea is deviated to the left. Breath sounds are absent on the right, the right chest is hyperresonant and his neck veins are distended.",
+    vitals: { temperature: "36.9°C", pulse: "132/minute", resp: "36/minute", bp: "78/44 mmHg", o2sat: "82% on a non-rebreather mask" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most likely diagnosis? List ONE.",
+        prompt: "What is the most likely diagnosis?",
         required: 1,
         accept: [
           { id: "tension", text: "Right tension pneumothorax", match: ["tension pneumothorax", "tension ptx", "tension"] },
@@ -568,16 +576,15 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate immediate action? Select one.",
+        prompt: "Which of the following is the most appropriate immediate action for this patient?",
         options: [
-          "Portable chest X-ray",
-          "Needle or finger decompression of the right chest",
-          "Needle decompression of the left chest",
-          "Rapid sequence intubation",
-          "CT chest",
           "Nebulized salbutamol and ipratropium",
+          "Needle decompression of the left chest",
+          "Needle or finger decompression of the right chest",
+          "Portable chest X-ray before any procedure",
+          "Rapid sequence intubation",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Decompress without waiting for imaging. Intubating first and ventilating with positive pressure can precipitate arrest.",
         keyFeature: { topic: "chest-pain", n: 2 },
@@ -586,7 +593,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO acceptable sites for needle decompression in an adult.",
+        prompt: "What are the acceptable sites for needle decompression in an adult?",
         required: 2,
         accept: [
           { id: "lat", text: "4th or 5th intercostal space just anterior to the midaxillary line", match: ["4th intercostal", "5th intercostal", "fourth intercostal", "fifth intercostal", "anterior axillary", "midaxillary", "mid axillary", "4th ic", "5th ic", "4th ics", "5th ics"] },
@@ -600,8 +607,8 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        update: "After decompression, HR 108, BP 112/70 mmHg and SpO2 91%.",
-        prompt: "List TWO next steps.",
+        update: "After decompression, the pulse is 108/minute, BP is 112/70 mmHg and O2 sat is 91%.",
+        prompt: "What are the next steps?",
         required: 2,
         accept: [
           { id: "tube", text: "Chest tube on the right", match: ["chest tube", "tube thoracostomy", "chest drain", "intercostal drain", "pigtail", "thoracostomy"] },
@@ -626,12 +633,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     topic: "chest-pain",
     title: "Burning after a large dinner",
     stem:
-      "A 61-year-old man presents at 23:10 with 1 hour of burning discomfort in his epigastrium and lower chest that began after a large dinner. He has reflux disease, hypertension and a 30 pack-year smoking history. HR 88, BP 156/92 mmHg, RR 18, SpO2 97% on room air, temperature 36.7°C. Weight 84 kg. The triage ECG is normal. Under a triage standing order, he is given an antacid with viscous lidocaine and says he feels much better.",
+      "A 61-year-old man presents at 23:10 with 1 hour of burning discomfort in his epigastrium and lower chest that began after a large dinner. He has reflux disease, hypertension and a 30 pack-year smoking history. The triage ECG is normal. Under a triage standing order, he is given an antacid with viscous lidocaine and says he feels much better.",
+    vitals: { temperature: "36.7°C", pulse: "88/minute", resp: "18/minute", bp: "156/92 mmHg", o2sat: "97% on room air", weight: "84 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of the history you would ask about to help distinguish ACS from a gastrointestinal cause.",
+        prompt: "What features of the history would you ask about to help distinguish ACS from a gastrointestinal cause?",
         required: 3,
         accept: [
           { id: "exertion", text: "Relation to exertion and relief with rest", match: ["exertion", "exertional", "exercise", "activity", "rest"] },
@@ -652,7 +660,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "What is the diagnostic value of his response to the antacid and viscous lidocaine? Answer in ONE line.",
+        prompt: "What is the diagnostic value of his response to the antacid and viscous lidocaine?",
         required: 1,
         accept: [
           { id: "none", text: "It does not exclude ACS and has no diagnostic value", match: ["not diagnostic", "does not exclude", "does not rule out", "unreliable", "not reliable", "no diagnostic value", "cannot exclude", "cannot rule out", "no value", "not useful", "doesn t rule out", "doesn t exclude", "not helpful", "should not be used", "not reassuring", "no role"] },
@@ -670,7 +678,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         kind: "short",
         update:
           "Twenty minutes later his pain returns. A repeat ECG shows 2 mm ST elevation in V2 to V4 with reciprocal ST depression in III and aVF. The hospital has a cath lab on site.",
-        prompt: "List THREE immediate management steps. Include doses for any drugs.",
+        prompt: "What are the immediate management steps, including doses for any drugs?",
         required: 3,
         accept: [
           ASA_ITEM,
@@ -699,12 +707,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Not feeling right",
     stem:
-      "A 74-year-old woman is brought in by her son with 6 hours of fatigue, nausea and not feeling right. She was short of breath climbing the stairs to her apartment. She denies chest pain. She has had type 2 diabetes for 20 years, chronic kidney disease with an eGFR of 38 mL/min/1.73 m2 and hypertension. HR 98, BP 148/78 mmHg, RR 22, SpO2 94% on room air, temperature 36.6°C, glucose 14.2 mmol/L. ECG: sinus rhythm with 1 mm horizontal ST depression in I, aVL and V4 to V6. There is no prior ECG.",
+      "A 74-year-old woman is brought in by her son with 6 hours of fatigue, nausea and not feeling right. She was short of breath climbing the stairs to her apartment. She denies chest pain. She has had type 2 diabetes for 20 years, chronic kidney disease with an eGFR of 38 mL/min/1.73 m2 and hypertension. Glucose is 14.2 mmol/L. ECG: sinus rhythm with 1 mm horizontal ST depression in I, aVL and V4 to V6. There is no prior ECG.",
+    vitals: { temperature: "36.6°C", pulse: "98/minute", resp: "22/minute", bp: "148/78 mmHg", o2sat: "94% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that increase her pretest probability of ACS despite the absence of chest pain.",
+        prompt: "What features increase her pretest probability of ACS despite the absence of chest pain?",
         required: 3,
         accept: [
           { id: "dm", text: "Longstanding diabetes", match: ["diabetes", "diabetic", "dm"] },
@@ -722,7 +731,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE symptoms that older adults, women and people with diabetes may report with ACS instead of chest pain.",
+        prompt: "What symptoms may older adults, women and people with diabetes report with ACS instead of chest pain?",
         required: 3,
         accept: [
           { id: "dyspnea", text: "Shortness of breath", match: ["dyspnea", "shortness of breath", "sob", "breathless"] },
@@ -744,15 +753,15 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "High-sensitivity troponin I is 34 ng/L at 0 hours and 88 ng/L at 2 hours. The female 99th percentile is 16 ng/L.",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management for her now?",
         options: [
-          "Discharge with an outpatient stress test",
-          "Treat as NSTEMI with ASA, anticoagulation and cardiology consultation for an invasive strategy",
           "Activate the cath lab for primary PCI",
-          "Fibrinolysis",
           "CT coronary angiogram before admission",
+          "Discharge with an outpatient stress test",
+          "Fibrinolysis with weight-based tenecteplase",
+          "Treat as NSTEMI: ASA, anticoagulation, invasive strategy",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "A rising troponin with ischemic ST depression is NSTEMI. She needs antiplatelet therapy, anticoagulation dosed for her renal function and early angiography. Fibrinolysis has no role without ST elevation.",
         keyFeature: { topic: "ischemic-heart-disease", n: 3 },
@@ -770,12 +779,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Ache while clearing the driveway",
     stem:
-      "A 52-year-old man presents at 16:00 with left chest pain that started at 13:30 while shovelling snow. It is a dull ache that eased when he rested but came back twice in the next hour. He has hypertension and dyslipidemia and smokes. His father had an MI at 50. HR 78, BP 146/88 mmHg, RR 16, SpO2 98% on room air, temperature 36.6°C. Pressing on the left parasternal chest wall reproduces some of his pain. ECG shows sinus rhythm with no ischemic changes.",
+      "A 52-year-old man presents at 16:00 with left chest pain that started at 13:30 while shovelling snow. It is a dull ache that eased when he rested but came back twice in the next hour. He has hypertension and dyslipidemia and smokes. His father had an MI at 50. Pressing on the left parasternal chest wall reproduces some of his pain. ECG shows sinus rhythm with no ischemic changes.",
+    vitals: { temperature: "36.6°C", pulse: "78/minute", resp: "16/minute", bp: "146/88 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of his history that are concerning for ACS.",
+        prompt: "What features of his history are concerning for ACS?",
         required: 3,
         accept: [
           { id: "exertion", text: "Onset with exertion (shovelling)", match: ["exertion", "exertional", "shovelling", "shoveling", "shovel", "exercise", "activity"] },
@@ -794,7 +804,8 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "A colleague suggests costochondritis because the pain is reproducible. Give ONE reason this reasoning is flawed.",
+        update: "A colleague suggests costochondritis because the pain is reproducible.",
+        prompt: "Why is this reasoning flawed?",
         required: 1,
         accept: [
           { id: "unreliable", text: "Chest wall tenderness is found in some patients with ACS and does not exclude it", match: ["does not exclude", "does not rule out", "not reliable", "unreliable", "occur in acs", "occurs in acs", "can occur", "cannot exclude", "cannot rule out", "doesn t rule out", "doesn t exclude", "present in acs", "seen in acs"] },
@@ -807,7 +818,8 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "His 0 hour high-sensitivity troponin is below the 99th percentile. List TWO further steps before any disposition decision.",
+        update: "His 0 hour high-sensitivity troponin is below the 99th percentile.",
+        prompt: "What further steps are needed before any disposition decision?",
         required: 2,
         accept: [
           { id: "repeat", text: "Repeat troponin at the interval set by the local hs troponin protocol", match: ["repeat troponin", "serial troponin", "second troponin", "delta troponin", "troponin at 1", "troponin at 2", "troponin at 3", "repeat trop", "serial trop"] },
@@ -824,15 +836,15 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "His 2 hour troponin is unchanged and below the 99th percentile. The repeat ECG is unchanged. His HEART score is 5.",
-        prompt: "Which disposition is most appropriate? Select one.",
+        prompt: "Which of the following dispositions is most appropriate for him?",
         options: [
-          "Discharge with no follow-up",
-          "Discharge with family physician follow-up in 6 weeks",
-          "Further cardiac evaluation, by observation or admission or by expedited cardiology assessment with testing within days",
-          "Primary PCI",
+          "Activate the cath lab for primary PCI",
           "Discharge with a proton pump inhibitor",
+          "Discharge with family physician follow-up in 6 weeks",
+          "Discharge with no follow-up arranged",
+          "Observation, admission or expedited cardiology testing",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "A HEART score of 4 to 6 is intermediate risk even with negative troponins. These patients need further evaluation, which may be observation with testing or rapid access cardiology follow-up. A score of 3 or less with negative serial troponins supports discharge without further testing.",
         keyFeature: { topic: "ischemic-heart-disease", n: 3 },
@@ -850,12 +862,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Fleeting sharp chest pains",
     stem:
-      "A 38-year-old woman presents at 10:30 with 2 days of intermittent sharp left chest pains. Each lasts a few seconds. They are not related to exertion and come on when she twists or reaches. She has no medical history, does not smoke, has no family history of heart disease and uses a copper IUD. HR 72, BP 118/74 mmHg, RR 14, SpO2 99% on room air, temperature 36.6°C. Examination is normal. ECG is normal.",
+      "A 38-year-old woman presents at 10:30 with 2 days of intermittent sharp left chest pains. Each lasts a few seconds. They are not related to exertion and come on when she twists or reaches. She has no medical history, does not smoke, has no family history of heart disease and uses a copper IUD. Examination is normal. ECG is normal.",
+    vitals: { temperature: "36.6°C", pulse: "72/minute", resp: "14/minute", bp: "118/74 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of her pain history that make ACS less likely.",
+        prompt: "What features of her pain history make ACS less likely?",
         required: 3,
         accept: [
           { id: "sharp", text: "Sharp or stabbing quality", match: ["sharp", "stabbing"] },
@@ -872,19 +885,19 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Which TWO of the following are components of the HEART score? Select TWO.",
+        prompt: "Which of the following are components of the HEART score?",
         options: [
-          "Heart rate",
-          "Hemoptysis",
-          "ECG findings",
-          "Age",
-          "Estrogen use",
-          "Hemoglobin",
-          "Respiratory rate",
           "D-dimer",
+          "ECG findings",
+          "Estrogen use",
+          "Heart rate",
+          "Hemoglobin",
+          "Hemoptysis",
+          "Patient age",
+          "Respiratory rate",
         ],
         select: 2,
-        correct: [2, 3],
+        correct: [1, 6],
         explanation:
           "HEART stands for History, ECG, Age, Risk factors and Troponin. Each scores 0 to 2. Heart rate and estrogen are PERC and Wells items, not HEART items.",
         keyFeature: { topic: "chest-pain", n: 4 },
@@ -894,8 +907,14 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Her pain began 50 hours ago. A high-sensitivity troponin is below the limit of detection.",
-        prompt: "What is her HEART score? Select one.",
-        options: ["0", "1", "2", "3", "4"],
+        prompt: "Which of the following is her HEART score based on the available findings?",
+        options: [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+        ],
         correct: 0,
         explanation:
           "Slightly suspicious history scores 0. Normal ECG scores 0. Age under 45 scores 0. No risk factors scores 0. A normal troponin scores 0. Her score is 0.",
@@ -905,7 +924,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO elements of a safe discharge plan for her.",
+        prompt: "What are the elements of a safe discharge plan for her?",
         required: 2,
         accept: [
           { id: "return", text: "Clear return instructions for new or worsening symptoms", match: ["return", "come back", "worsen", "worsening", "red flag"] },
@@ -930,12 +949,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     topic: "chest-pain",
     title: "Chest pressure after a party",
     stem:
-      "A 29-year-old man presents at 03:15 with central chest pressure and palpitations. They began 1 hour after he snorted cocaine at a party. HR 128, BP 178/104 mmHg, RR 22, SpO2 98% on room air, temperature 37.9°C. Weight 80 kg. He is agitated and diaphoretic. His pupils are 6 mm. ECG shows sinus tachycardia without ST elevation.",
+      "A 29-year-old man presents at 03:15 with central chest pressure and palpitations. They began 1 hour after he snorted cocaine at a party. He is agitated and diaphoretic. His pupils are 6 mm. ECG shows sinus tachycardia without ST elevation.",
+    vitals: { temperature: "37.9°C", pulse: "128/minute", resp: "22/minute", bp: "178/104 mmHg", o2sat: "98% on room air", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE serious causes of chest pain linked to cocaine use.",
+        prompt: "What serious causes of chest pain are linked to cocaine use?",
         required: 3,
         accept: [
           { id: "acs", text: "Coronary vasospasm, ACS or MI", match: ["acs", "acute coronary", "myocardial infarction", "mi", "vasospasm", "ischemia", "ischaemia", "stemi"] },
@@ -954,7 +974,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Name the first-line drug for his agitation, tachycardia and hypertension. Include the dose and route.",
+        prompt: "What is the first-line drug, with dose and route, for his agitation, tachycardia and hypertension?",
         required: 1,
         accept: [
           { id: "lorazepam", text: "Lorazepam 1 to 2 mg IV, repeated as needed", match: ["lorazepam 1", "lorazepam 2", "lorazepam 1mg", "lorazepam 2mg", "ativan 1", "ativan 2"] },
@@ -973,8 +993,8 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        update: "He is calmer after two doses. HR 104, BP 164/96 mmHg. He still has chest pressure.",
-        prompt: "List TWO other treatments for suspected cocaine-associated chest pain.",
+        update: "He is calmer after two doses. Pulse 104/minute, BP 164/96 mmHg. He still has chest pressure.",
+        prompt: "What other treatments would you give for suspected cocaine-associated chest pain?",
         required: 2,
         accept: [
           ASA_ITEM,
@@ -996,7 +1016,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "Two high-sensitivity troponins 3 hours apart are normal. ECGs are unchanged. His pain has resolved.",
-        prompt: "List TWO elements of his discharge plan.",
+        prompt: "What are the elements of his discharge plan?",
         required: 2,
         accept: [
           { id: "cessation", text: "Counselling on stopping cocaine and referral to addiction services", match: ["cessation", "stop cocaine", "abstain", "abstinence", "addiction", "substance use", "harm reduction", "counsel", "counselling"] },
@@ -1020,12 +1040,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     topic: "chest-pain",
     title: "Chest pain after vomiting",
     stem:
-      "A 48-year-old man presents at 01:20 with severe retrosternal and upper abdominal pain. It began after repeated forceful vomiting following a night of heavy drinking. He is short of breath. HR 124, BP 102/64 mmHg, RR 28, SpO2 93% on room air, temperature 38.2°C. Weight 86 kg. You feel crepitus at the base of his neck. He has epigastric tenderness. ECG shows sinus tachycardia without ST changes.",
+      "A 48-year-old man presents at 01:20 with severe retrosternal and upper abdominal pain. It began after repeated forceful vomiting following a night of heavy drinking. He is short of breath. You feel crepitus at the base of his neck. He has epigastric tenderness. ECG shows sinus tachycardia without ST changes.",
+    vitals: { temperature: "38.2°C", pulse: "124/minute", resp: "28/minute", bp: "102/64 mmHg", o2sat: "93% on room air", weight: "86 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most likely diagnosis? List ONE.",
+        prompt: "What is the most likely diagnosis?",
         required: 1,
         accept: [
           { id: "boerhaave", text: "Spontaneous esophageal rupture (Boerhaave syndrome)", match: ["boerhaave", "esophageal rupture", "oesophageal rupture", "esophageal perforation", "oesophageal perforation", "ruptured esophagus", "perforated esophagus"] },
@@ -1039,7 +1060,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO findings in the history or examination that support this diagnosis.",
+        prompt: "What findings in the history or examination support this diagnosis?",
         required: 2,
         accept: [
           { id: "vomit", text: "Pain after forceful vomiting", match: ["vomit", "vomiting", "retching", "emesis"] },
@@ -1056,15 +1077,15 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate confirmatory imaging? Select one.",
+        prompt: "Which of the following is the most appropriate imaging to confirm the diagnosis?",
         options: [
-          "Upper endoscopy",
+          "Barium swallow under fluoroscopy",
+          "Bedside abdominal ultrasound",
           "CT chest with oral water-soluble contrast",
-          "Barium swallow",
-          "Abdominal ultrasound",
-          "Chest X-ray alone",
+          "Flexible upper endoscopy under deep sedation",
+          "Upright chest X-ray alone",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "CT with oral water-soluble contrast shows the leak, mediastinal air and collections. Barium causes mediastinitis if it leaks. Chest X-ray may show pneumomediastinum or effusion but can be normal early.",
         keyFeature: { topic: "chest-pain", n: 1 },
@@ -1074,7 +1095,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CT shows a distal esophageal leak with pneumomediastinum and a left pleural effusion.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 3,
         accept: [
           { id: "npo", text: "NPO", match: ["npo", "nothing by mouth", "nil by mouth"] },
@@ -1102,12 +1123,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     topic: "chest-pain",
     title: "Pain worse lying down",
     stem:
-      "A 34-year-old man presents with 2 days of sharp central chest pain that is worse lying flat and better sitting forward. He had a cold 1 week ago. HR 102, BP 124/78 mmHg, RR 18, SpO2 98% on room air, temperature 37.9°C. Weight 82 kg. A scratchy three-component sound is heard at the left sternal border. ECG: diffuse concave ST elevation in I, II, aVL, aVF and V2 to V6 with PR depression, PR elevation in aVR and no reciprocal ST depression.",
+      "A 34-year-old man presents with 2 days of sharp central chest pain that is worse lying flat and better sitting forward. He had a cold 1 week ago. A scratchy three-component sound is heard at the left sternal border. ECG: diffuse concave ST elevation in I, II, aVL, aVF and V2 to V6 with PR depression, PR elevation in aVR and no reciprocal ST depression.",
+    vitals: { temperature: "37.9°C", pulse: "102/minute", resp: "18/minute", bp: "124/78 mmHg", o2sat: "98% on room air", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that favour acute pericarditis over STEMI.",
+        prompt: "What features favour acute pericarditis over STEMI?",
         required: 3,
         accept: [
           { id: "position", text: "Pain worse lying flat and better sitting forward", match: ["position", "positional", "lying", "sitting forward", "leaning forward", "sit forward"] },
@@ -1128,7 +1150,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO investigations to look for complications of pericarditis.",
+        prompt: "What investigations would look for complications of pericarditis?",
         required: 2,
         accept: [
           { id: "echo", text: "Bedside ultrasound or echocardiogram for effusion and tamponade", match: ["echo", "echocardiogram", "pocus", "ultrasound", "tte"] },
@@ -1146,19 +1168,19 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         update: "Bedside ultrasound shows a small effusion without tamponade. Troponin is normal.",
-        prompt: "Which TWO medications would you prescribe? Select TWO.",
+        prompt: "Which of the following medications would you prescribe for this patient now?",
         options: [
-          "Ibuprofen 600 mg PO three times daily with gastric protection",
-          "Ibuprofen 200 mg PO once daily",
-          "Colchicine 0.5 mg PO twice daily for at least 3 months",
+          "Acetaminophen 1 g PO four times daily",
           "Colchicine 1.2 mg PO, then 0.6 mg one hour later",
-          "Prednisone 50 mg PO daily as first line",
-          "Warfarin",
-          "Metoprolol 25 mg PO twice daily",
-          "Acetaminophen alone",
+          "Colchicine 0.5 mg PO twice daily, at least 3 months",
+          "Ibuprofen 200 mg PO once daily with food",
+          "Ibuprofen 600 mg PO three times daily with gastroprotection",
+          "Metoprolol 25 mg PO twice daily for 3 months",
+          "Prednisone 50 mg PO daily for 2 weeks",
+          "Warfarin with a target INR of 2 to 3",
         ],
         select: 2,
-        correct: [0, 2],
+        correct: [2, 4],
         explanation:
           "First-line therapy is a high-dose NSAID or ASA plus colchicine. Colchicine 0.5 mg twice daily, or once daily under 70 kg, for at least 3 months roughly halves recurrence. Steroids as first line increase recurrence. The gout loading regimen is not used.",
         keyFeature: { topic: "chest-pain", n: 2 },
@@ -1167,7 +1189,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE features in a patient with pericarditis that would lead you to admit rather than discharge.",
+        prompt: "What features in a patient with pericarditis would lead you to admit rather than discharge?",
         required: 3,
         accept: [
           { id: "fever", text: "Fever above 38°C", match: ["fever", "temperature", "febrile"] },
@@ -1196,12 +1218,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     topic: "chest-pain",
     title: "Pain-free after two episodes",
     stem:
-      "A 57-year-old woman presents at 09:00 after two episodes of central chest pressure in the last 24 hours. Each lasted about 15 minutes. The last was at 06:30 while she walked her dog. She is pain free now. She has hypertension and smokes. HR 70, BP 138/82 mmHg, RR 14, SpO2 98% on room air, temperature 36.5°C. ECG: biphasic T waves in V2 and V3, first positive then negative, with preserved R wave progression, no Q waves and isoelectric ST segments. High-sensitivity troponin I at 0 hours is 9 ng/L. The female 99th percentile is 16 ng/L.",
+      "A 57-year-old woman presents at 09:00 after two episodes of central chest pressure in the last 24 hours. Each lasted about 15 minutes. The last was at 06:30 while she walked her dog. She is pain free now. She has hypertension and smokes. ECG: biphasic T waves in V2 and V3, first positive then negative, with preserved R wave progression, no Q waves and isoelectric ST segments. High-sensitivity troponin I at 0 hours is 9 ng/L. The female 99th percentile is 16 ng/L.",
+    vitals: { temperature: "36.5°C", pulse: "70/minute", resp: "14/minute", bp: "138/82 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Name the ECG pattern and the coronary lesion it predicts.",
+        prompt: "What is the ECG pattern, and which coronary lesion does it predict?",
         required: 2,
         accept: [
           { id: "wellens", text: "Wellens pattern (type A)", match: ["wellen", "wellens", "wellen s"] },
@@ -1215,15 +1238,15 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step for her?",
         options: [
-          "Exercise stress test before discharge",
-          "Discharge with outpatient cardiology referral because the troponin is normal",
-          "Admit, start ASA and anticoagulation, and arrange early coronary angiography",
           "Activate the cath lab for primary PCI",
-          "CT pulmonary angiogram",
+          "Admit, ASA, anticoagulation and early angiography",
+          "CT pulmonary angiogram before discharge",
+          "Discharge with outpatient cardiology clinic referral",
+          "Exercise stress test before discharge",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
           "Wellens pattern with recent angina is high-risk unstable angina whatever the troponin. Stress testing can provoke infarction. She needs admission, antithrombotic therapy and early angiography. Primary PCI is for ongoing occlusion.",
         keyFeature: { topic: "chest-pain", n: 5 },
@@ -1232,7 +1255,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO findings in this case that should NOT reassure you.",
+        prompt: "What findings in this case should NOT reassure you?",
         required: 2,
         accept: [
           { id: "trop", text: "Normal troponin", match: ["troponin", "trop"] },
@@ -1249,7 +1272,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE other risk factors for coronary disease you would ask her about.",
+        prompt: "What other risk factors for coronary disease would you ask her about?",
         required: 3,
         accept: [
           { id: "preg", text: "Preeclampsia or gestational diabetes in past pregnancies", match: ["preeclampsia", "pre eclampsia", "gestational", "pregnancy"] },
@@ -1281,12 +1304,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Crushing pain in a snowstorm",
     stem:
-      "A 79-year-old man presents at 20:05 to a rural hospital with 90 minutes of crushing chest pain. The nearest PCI centre is 3 hours away by road, and air transport is grounded by a snowstorm. He has hypertension. Weight 74 kg. HR 96, BP 152/90 mmHg, RR 20, SpO2 95% on room air, temperature 36.6°C. ECG at 20:09: 3 mm ST elevation in V1 to V5 with reciprocal inferior ST depression. He has chewed ASA 160 mg.",
+      "A 79-year-old man presents at 20:05 to a rural hospital with 90 minutes of crushing chest pain. The nearest PCI centre is 3 hours away by road, and air transport is grounded by a snowstorm. He has hypertension. ECG at 20:09: 3 mm ST elevation in V1 to V5 with reciprocal inferior ST depression. He has chewed ASA 160 mg.",
+    vitals: { temperature: "36.6°C", pulse: "96/minute", resp: "20/minute", bp: "152/90 mmHg", o2sat: "95% on room air", weight: "74 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE absolute contraindications to fibrinolysis that you would ask him about.",
+        prompt: "What absolute contraindications to fibrinolysis would you ask him about?",
         required: 3,
         accept: [
           { id: "ich", text: "Any prior intracranial hemorrhage", match: ["intracranial hemorrhage", "intracranial haemorrhage", "ich", "brain bleed", "hemorrhagic stroke"] },
@@ -1306,13 +1330,13 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which reperfusion strategy is most appropriate? Select one.",
+        prompt: "Which of the following reperfusion strategies is most appropriate for this patient?",
         options: [
-          "Transfer by road for primary PCI",
-          "Fibrinolysis within 30 minutes of arrival, then transfer to the PCI centre",
-          "Heparin now and transfer once the weather clears",
           "Fibrinolysis only if pain persists at 12 hours",
-          "Medical therapy without reperfusion because of his age",
+          "Fibrinolysis within 30 minutes, then transfer to PCI centre",
+          "Heparin now and transfer once the weather clears",
+          "Medical therapy without reperfusion",
+          "Transfer by road for primary PCI",
         ],
         correct: 1,
         explanation:
@@ -1324,20 +1348,20 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         update: "He has no contraindications.",
-        prompt: "Which THREE medications and doses are correct for him? Select THREE.",
+        prompt: "Which of the following medications and doses are correct for this patient?",
         options: [
-          "Tenecteplase 40 mg IV bolus",
-          "Tenecteplase 20 mg IV bolus",
-          "Tenecteplase 50 mg IV bolus",
-          "Clopidogrel 300 mg PO",
           "Clopidogrel 75 mg PO",
+          "Clopidogrel 300 mg PO",
+          "Enoxaparin 30 mg IV, then 1 mg/kg SC twice daily",
+          "Enoxaparin 0.75 mg/kg SC every 12 hours, no IV bolus",
+          "Prasugrel 60 mg PO loading dose",
+          "Tenecteplase 20 mg IV bolus",
+          "Tenecteplase 40 mg IV bolus",
+          "Tenecteplase 50 mg IV bolus",
           "Ticagrelor 180 mg PO",
-          "Enoxaparin 30 mg IV bolus, then 1 mg/kg SC every 12 hours",
-          "Enoxaparin 0.75 mg/kg SC every 12 hours with no IV bolus",
-          "Prasugrel 60 mg PO",
         ],
         select: 3,
-        correct: [1, 4, 7],
+        correct: [0, 3, 5],
         explanation:
           "At 75 or older, half-dose tenecteplase removed the excess intracranial hemorrhage seen in STREAM. The ESC recommends it and many Canadian protocols use it. Full dose for 74 kg would be 40 mg, so he gets 20 mg. Give clopidogrel 75 mg without a load. Give enoxaparin 0.75 mg/kg every 12 hours with no IV bolus, which is about 55 mg.",
         keyFeature: { topic: "ischemic-heart-disease", n: 7 },
@@ -1346,7 +1370,7 @@ export const CHEST_PAIN_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO complications you would monitor for after fibrinolysis.",
+        prompt: "What complications would you monitor for after fibrinolysis?",
         required: 2,
         accept: [
           { id: "ich", text: "Intracranial hemorrhage", match: ["intracranial", "ich", "brain bleed", "neuro change", "decreased loc"] },

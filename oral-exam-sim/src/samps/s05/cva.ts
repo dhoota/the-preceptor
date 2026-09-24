@@ -54,12 +54,18 @@ const BRAIN_METS: Source = {
 };
 const SOGC_CONTRA: Source = {
   id: "sogc-contraception",
-  citation: "Society of Obstetricians and Gynaecologists of Canada. Canadian Contraception Consensus.",
+  citation: "Black A, Guilbert E and colleagues. No. 329. Canadian Contraception Consensus Part 4 of 4 Chapter 9: combined hormonal contraception. Society of Obstetricians and Gynaecologists of Canada. J Obstet Gynaecol Can. 2017.",
+  url: "https://pubmed.ncbi.nlm.nih.gov/28413042/",
 };
 const THROMBOSIS_CANADA: Source = {
   id: "thrombosis-canada",
-  citation: "Thrombosis Canada. Clinical guides on anticoagulant management and reversal.",
-  url: "https://thrombosiscanada.ca",
+  citation: "Thrombosis Canada. Clinical guide: rivaroxaban. 2025.",
+  url: "https://thrombosiscanada.ca/hcp/practice/clinical_guides?language=en-ca&guideID=RIVAROXABAN",
+};
+const NAC_PCC: Source = {
+  id: "nac-pcc",
+  citation: "National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. 2022.",
+  url: "https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada",
 };
 
 export const CVA_SAMPS: Samp[] = [
@@ -69,20 +75,21 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Found unable to speak at breakfast",
     stem:
-      "A 67-year-old man is brought by paramedics from a seniors' residence at 07:40. Staff found him at breakfast unable to speak and not moving his right arm. He was last seen well at 23:00. He has type 2 diabetes treated with insulin glargine and gliclazide, hypertension and chronic kidney disease. Vital signs: HR 104, BP 168/92 mmHg, RR 18, SpO2 97% on room air, temperature 36.4°C. Weight 92 kg. He is pale and diaphoretic. He has a dense right hemiparesis and expressive aphasia. No glucose was checked before arrival.",
+      "A 67-year-old man is brought by paramedics from a seniors' residence at 07:40. Staff found him at breakfast unable to speak and not moving his right arm. He was last seen well at 23:00. He has type 2 diabetes treated with insulin glargine and gliclazide, hypertension and chronic kidney disease. He is pale and diaphoretic. He has a dense right hemiparesis and expressive aphasia. No glucose was checked before arrival.",
+    vitals: { temperature: "36.4°C", pulse: "104/minute", resp: "18/minute", bp: "168/92 mmHg", o2sat: "97% on room air", weight: "92 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first action? Select one.",
+        prompt: "Which of the following is the most appropriate first action for this patient on arrival?",
         options: [
-          "Non-contrast CT head",
-          "Point of care capillary glucose",
-          "Page the stroke team for thrombolysis",
-          "12-lead ECG",
+          "ECG and cardiac monitoring",
           "Labetalol 10 mg IV",
+          "Non-contrast CT head",
+          "Page the stroke team for thrombolysis",
+          "Point of care capillary glucose",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "Hypoglycemia is a common and reversible stroke mimic. A capillary glucose takes seconds and must precede imaging and any thrombolysis decision. Insulin plus a sulfonylurea with renal impairment puts him at high risk.",
         keyFeature: { topic: "cva", n: 1 },
@@ -92,7 +99,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "Capillary glucose is 1.8 mmol/L.",
-        prompt: "List TWO measures to correct his low glucose and prevent it from recurring over the next several hours.",
+        prompt: "What measures would correct his low glucose and prevent it from recurring over the next several hours?",
         required: 2,
         accept: [
           { id: "d50", text: "Dextrose 25 g IV (50 mL of D50W)", match: ["d50", "d50w", "dextrose 50", "dextrose 25 g", "dextrose 25g", "dextrose bolus", "iv dextrose", "dextrose iv"] },
@@ -113,7 +120,7 @@ export const CVA_SAMPS: Samp[] = [
         kind: "short",
         update:
           "Thirty minutes later his glucose is 6.4 mmol/L. His speech has recovered but a right arm drift and right facial droop persist unchanged. NIHSS is 3.",
-        prompt: "List TWO investigations you would order now.",
+        prompt: "What investigations would you order now?",
         required: 2,
         accept: [
           { id: "cta", text: "CT angiogram of the head and neck", match: ["cta", "ct angiogram", "ct angiography"] },
@@ -137,12 +144,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Weakness after a witnessed event",
     stem:
-      "A 54-year-old woman is brought in at 14:10. Her husband saw her stiffen and shake all four limbs for about two minutes at 13:30 while gardening. She was drowsy afterward. She now has left arm and leg weakness. A right frontal meningioma was resected four years ago. She stopped her levetiracetam last month. HR 96, BP 152/88 mmHg, RR 16, SpO2 98%, temperature 37.1°C, glucose 6.8 mmol/L. GCS 14. Left arm power 2/5, left leg 3/5, left facial droop.",
+      "A 54-year-old woman is brought in at 14:10. Her husband saw her stiffen and shake all four limbs for about two minutes at 13:30 while gardening. She was drowsy afterward. She now has left arm and leg weakness. A right frontal meningioma was resected four years ago. She stopped her levetiracetam last month. Glucose is 6.8 mmol/L. GCS is 14. Left arm power 2/5, left leg 3/5, left facial droop.",
+    vitals: { temperature: "37.1°C", pulse: "96/minute", resp: "16/minute", bp: "152/88 mmHg", o2sat: "98% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE diagnoses in your differential for her left-sided weakness.",
+        prompt: "What diagnoses are in your differential for her left-sided weakness?",
         required: 3,
         accept: [
           { id: "todd", text: "Postictal (Todd) paralysis", match: ["todd", "postictal", "post ictal"] },
@@ -160,15 +168,15 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate imaging now? Select one.",
+        prompt: "Which of the following is the most appropriate imaging for this patient now?",
         options: [
-          "Non-contrast CT head alone",
-          "Non-contrast CT head and CT angiogram from the aortic arch to the vertex",
-          "MRI brain with gadolinium in the morning",
-          "EEG before any imaging",
-          "No imaging. Observe for resolution of Todd paralysis",
+          "EEG before any brain imaging",
+          "MRI brain with diffusion and gadolinium in the morning",
+          "Non-contrast CT head and CTA, aortic arch to vertex",
+          "Non-contrast CT head without angiography",
+          "No imaging, observe for Todd paralysis to resolve",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "She is within the window for reperfusion, so she needs CT and CTA now. A large vessel occlusion on CTA makes the deficit a stroke, not Todd paralysis. Waiting for the deficit to resolve risks missing a treatable occlusion.",
         keyFeature: { topic: "cva", n: 3 },
@@ -179,7 +187,7 @@ export const CVA_SAMPS: Samp[] = [
         kind: "short",
         update:
           "CT shows old right frontal encephalomalacia and no hemorrhage. CTA shows an occlusion of the proximal right M1 segment.",
-        prompt: "List TWO reperfusion treatments you would arrange.",
+        prompt: "What reperfusion treatments would you arrange?",
         required: 2,
         accept: [
           { id: "evt", text: "Endovascular thrombectomy", match: ["evt", "thrombectomy", "endovascular"] },
@@ -196,7 +204,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Before thrombolysis, list TWO items of history you must confirm with her husband.",
+        prompt: "What items of history must you confirm with her husband before thrombolysis?",
         required: 2,
         accept: [
           { id: "lkw", text: "Time last known well", match: ["last known well", "last seen well", "last seen normal", "onset", "time of onset", "symptom onset"] },
@@ -221,12 +229,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Sudden constant dizziness",
     stem:
-      "A 63-year-old man presents at 10:00 with dizziness that began suddenly at 06:30 while shaving. The room has been spinning constantly since. He has vomited four times. He has hypertension and dyslipidemia and smokes a pack a day. HR 88 regular, BP 184/98 mmHg, RR 16, SpO2 97%, temperature 36.8°C, glucose 7.2 mmol/L. He has left-beating nystagmus on left gaze that becomes right-beating on right gaze. He cannot sit upright on the stretcher without support. Limb power and speech are normal.",
+      "A 63-year-old man presents at 10:00 with dizziness that began suddenly at 06:30 while shaving. The room has been spinning constantly since. He has vomited four times. He has hypertension and dyslipidemia and smokes a pack a day. Glucose is 7.2 mmol/L. He has left-beating nystagmus on left gaze that becomes right-beating on right gaze. He cannot sit upright on the stretcher without support. Limb power and speech are normal.",
+    vitals: { temperature: "36.8°C", pulse: "88/minute regular", resp: "16/minute", bp: "184/98 mmHg", o2sat: "97% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that suggest a central cause rather than vestibular neuritis.",
+        prompt: "What features suggest a central cause rather than vestibular neuritis?",
         required: 3,
         accept: [
           { id: "dcn", text: "Direction-changing gaze-evoked nystagmus", match: ["direction changing", "direction change", "gaze evoked", "changes direction", "bidirectional"] },
@@ -242,15 +251,15 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which head impulse test result would most strongly suggest stroke in this patient? Select one.",
+        prompt: "Which of the following head impulse test results would most strongly suggest stroke in this patient?",
         options: [
           "Corrective saccade on head turn to the left",
           "Corrective saccade on head turn to the right",
-          "No corrective saccade in either direction",
           "Nystagmus that fatigues with repeated testing",
           "Vertigo reproduced by the Dix-Hallpike manoeuvre",
+          "No corrective saccade in either direction",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "In acute continuous vertigo with nystagmus, a normal head impulse test is reassuring for the ear but worrying for the brain. A corrective saccade suggests a peripheral lesion. Dix-Hallpike testing is for brief positional vertigo and is not part of HINTS.",
         keyFeature: { topic: "cva", n: 2 },
@@ -260,7 +269,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Non-contrast CT head is reported as normal.",
-        prompt: "List TWO imaging studies that best evaluate for posterior circulation stroke now.",
+        prompt: "What imaging studies best evaluate for posterior circulation stroke now?",
         required: 2,
         accept: [
           { id: "mri", text: "MRI brain with diffusion-weighted imaging", match: ["mri", "diffusion", "dwi"] },
@@ -280,7 +289,7 @@ export const CVA_SAMPS: Samp[] = [
         kind: "short",
         update:
           "MRI shows an acute 3 cm left cerebellar infarct. Four hours later on the ward he is drowsy and his GCS has fallen to 12.",
-        prompt: "List TWO urgent steps in management.",
+        prompt: "What are the urgent steps in management?",
         required: 2,
         accept: [
           { id: "ct", text: "Urgent repeat CT head for edema, hemorrhage or hydrocephalus", match: ["repeat ct", "urgent ct", "ct head", "stat ct"] },
@@ -305,12 +314,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Double vision and drowsiness",
     stem:
-      "A 71-year-old woman is brought in at 21:15. At 19:00 she told her daughter she was seeing double and her speech was slurred. Since then she has become increasingly sleepy. She has atrial fibrillation and stopped her apixaban two weeks ago because of nosebleeds. HR 112 irregular, BP 176/94 mmHg, RR 14, SpO2 95%, temperature 36.9°C, glucose 8.4 mmol/L. Weight 64 kg. GCS 10 (E2 V3 M5). She has dysconjugate gaze, dysarthria and weakness of all four limbs, worse on the right.",
+      "A 71-year-old woman is brought in at 21:15. At 19:00 she told her daughter she was seeing double and her speech was slurred. Since then she has become increasingly sleepy. She has atrial fibrillation and stopped her apixaban two weeks ago because of nosebleeds. Glucose is 8.4 mmol/L. GCS is 10 (E2 V3 M5). She has dysconjugate gaze, dysarthria and weakness of all four limbs, worse on the right.",
+    vitals: { temperature: "36.9°C", pulse: "112/minute irregular", resp: "14/minute", bp: "176/94 mmHg", o2sat: "95% on arrival", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of this presentation that point to posterior circulation ischemia.",
+        prompt: "What features of this presentation point to posterior circulation ischemia?",
         required: 3,
         accept: [
           { id: "diplopia", text: "Diplopia or dysconjugate gaze", match: ["diplopia", "double vision", "dysconjugate", "gaze", "eye movement"] },
@@ -326,15 +336,15 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which imaging is most appropriate now? Select one.",
+        prompt: "Which of the following imaging strategies is most appropriate for this patient now?",
         options: [
-          "Non-contrast CT head, then MRI in the morning",
-          "Non-contrast CT head and CT angiogram from the aortic arch to the vertex",
-          "MRI brain with gadolinium",
-          "Carotid Doppler ultrasound",
-          "Lumbar puncture after CT",
+          "Carotid and vertebral Doppler ultrasound",
+          "Lumbar puncture after CT head",
+          "MRI brain with diffusion and gadolinium",
+          "Non-contrast CT head and CTA, aortic arch to vertex",
+          "Non-contrast CT head, then MRI brain in the morning",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "CTA identifies a basilar occlusion, which is a thrombectomy target. It should be done at the same visit as the non-contrast CT. MRI adds delay in an unstable patient.",
         keyFeature: { topic: "cva", n: 3 },
@@ -344,7 +354,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "CT shows no hemorrhage. CTA shows occlusion of the mid basilar artery.",
-        prompt: "List TWO reperfusion treatments she should receive.",
+        prompt: "What reperfusion treatments should she receive?",
         required: 2,
         accept: [
           { id: "lysis", text: "IV tenecteplase 0.25 mg/kg or alteplase 0.9 mg/kg", match: ["tenecteplase", "tnk", "alteplase", "tpa", "thrombolysis", "thrombolytic"] },
@@ -358,7 +368,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "What is the most likely cause of her stroke? List ONE.",
+        prompt: "What is the most likely cause of her stroke?",
         required: 1,
         accept: [
           { id: "af", text: "Cardioembolism from atrial fibrillation off anticoagulation", match: ["atrial fibrillation", "af", "afib", "cardioembolic", "cardioembolism", "cardiac embolus", "embolic"] },
@@ -379,12 +389,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Confused since lunch",
     stem:
-      "A 79-year-old man is brought by his wife at 16:20 because he has been confused since lunch at 12:30. He speaks in full sentences that make little sense and uses the wrong words. He cannot follow commands. He has hypertension and paroxysmal atrial fibrillation treated with ASA only. HR 84 irregular, BP 172/90 mmHg, RR 16, SpO2 96%, temperature 36.7°C, glucose 6.9 mmol/L. Weight 76 kg. Triage has labelled him as delirium. He is alert. He has no limb weakness. He has a right homonymous hemianopia on confrontation.",
+      "A 79-year-old man is brought by his wife at 16:20 because he has been confused since lunch at 12:30. He speaks in full sentences that make little sense and uses the wrong words. He cannot follow commands. He has hypertension and paroxysmal atrial fibrillation treated with ASA only. Glucose is 6.9 mmol/L. Triage has labelled him as delirium. He is alert. He has no limb weakness. He has a right homonymous hemianopia on confrontation.",
+    vitals: { temperature: "36.7°C", pulse: "84/minute irregular", resp: "16/minute", bp: "172/90 mmHg", o2sat: "96% on arrival", weight: "76 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most likely diagnosis? Be specific. List ONE.",
+        prompt: "What is the most likely diagnosis, stated as specifically as you can?",
         required: 1,
         accept: [
           { id: "lmca", text: "Left MCA territory stroke with fluent (Wernicke) aphasia", match: ["wernicke", "receptive aphasia", "fluent aphasia", "left mca", "left middle cerebral", "stroke", "infarct", "cva"] },
@@ -398,7 +409,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE features that help distinguish this from delirium.",
+        prompt: "What features help distinguish this from delirium?",
         required: 3,
         accept: [
           { id: "onset", text: "Sudden onset at a clear time", match: ["sudden", "abrupt", "clear onset", "sudden onset", "known onset time"] },
@@ -416,16 +427,15 @@ export const CVA_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "It is 16:35. CT head shows no hemorrhage and no early ischemic change. His aphasia is disabling.",
-        prompt: "Which of the following is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management for him at this time?",
         options: [
-          "Admit to medicine for delirium workup",
-          "Tenecteplase 19 mg IV bolus now, with CTA head and neck",
-          "Tenecteplase 25 mg IV bolus now, with CTA head and neck",
           "Alteplase 90 mg IV over 60 minutes",
           "ASA 160 mg and referral to a stroke prevention clinic",
           "MRI to confirm the diagnosis before any treatment",
+          "Tenecteplase 19 mg IV now, with CTA head and neck",
+          "Tenecteplase 25 mg IV now, with CTA head and neck",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "He is about 4 hours from last known well with a disabling deficit, so he should get thrombolysis without delay. Tenecteplase 0.25 mg/kg for 76 kg is 19 mg. The alteplase dose would be 0.9 mg/kg, which is 68 mg, not 90 mg.",
         keyFeature: { topic: "cva", n: 3 },
@@ -434,7 +444,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO investigations to identify the cause of his stroke in the first 24 hours.",
+        prompt: "What investigations would identify the cause of his stroke in the first 24 hours?",
         required: 2,
         accept: [
           { id: "ecg", text: "ECG and cardiac monitoring", match: ["ecg", "ekg", "telemetry", "cardiac monitor", "holter"] },
@@ -458,12 +468,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Collapse at a coffee shop",
     stem:
-      "A 72-year-old man is brought by EMS with a code stroke prenotification at 09:05. He collapsed at a coffee shop at 08:10 with left-sided weakness. He has hypertension and type 2 diabetes. Medications: metformin, ramipril, atorvastatin. HR 78 regular, BP 204/112 mmHg, RR 16, SpO2 96%, temperature 36.6°C, glucose 9.1 mmol/L. Weight 88 kg. He has right gaze deviation, left hemineglect, dense left hemiplegia and dysarthria. NIHSS is 17.",
+      "A 72-year-old man is brought by EMS with a code stroke prenotification at 09:05. He collapsed at a coffee shop at 08:10 with left-sided weakness. He has hypertension and type 2 diabetes. Medications: metformin, ramipril, atorvastatin. Glucose is 9.1 mmol/L. He has right gaze deviation, left hemineglect, dense left hemiplegia and dysarthria. NIHSS is 17.",
+    vitals: { temperature: "36.6°C", pulse: "78/minute regular", resp: "16/minute", bp: "204/112 mmHg", o2sat: "96% on arrival", weight: "88 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Which arterial territory is most likely affected? List ONE.",
+        prompt: "Which arterial territory is most likely affected?",
         required: 1,
         accept: [
           { id: "rmca", text: "Right middle cerebral artery", match: ["right mca", "right middle cerebral", "r mca", "right m1", "right ica"] },
@@ -477,19 +488,19 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Which TWO results must be available before a thrombolysis decision in this patient? Select TWO.",
+        prompt: "Which of the following results must be available before a thrombolysis decision in this patient?",
         options: [
-          "Non-contrast CT head",
           "Capillary glucose",
-          "INR",
+          "Electrocardiogram",
+          "INR and aPTT",
+          "Non-contrast CT head",
           "Platelet count",
-          "Troponin",
-          "Chest X-ray",
-          "12-lead ECG",
-          "Creatinine",
+          "Portable chest X-ray",
+          "Serum creatinine",
+          "Serum troponin",
         ],
         select: 2,
-        correct: [0, 1],
+        correct: [0, 3],
         explanation:
           "Only a CT to exclude hemorrhage and a glucose to exclude a mimic are required before thrombolysis in a patient not on anticoagulants. Waiting for INR, platelets or other results delays treatment unless there is a specific reason to suspect an abnormality.",
         keyFeature: { topic: "cva", n: 3 },
@@ -499,7 +510,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "CT shows no hemorrhage. BP is 198/108 mmHg on repeat.",
-        prompt: "Name ONE drug to lower his blood pressure before thrombolysis. Include the dose and route.",
+        prompt: "Which drug, with dose and route, would you give to lower his blood pressure before thrombolysis?",
         required: 1,
         accept: [
           { id: "labetalol", text: "Labetalol 10 to 20 mg IV over 1 to 2 minutes, may repeat", match: ["labetalol 10", "labetalol 20", "labetalol 10mg", "labetalol 20mg"] },
@@ -518,15 +529,15 @@ export const CVA_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "BP is now 176/98 mmHg.",
-        prompt: "Which is the correct thrombolytic regimen? Select one.",
+        prompt: "Which of the following is the correct thrombolytic regimen for this patient?",
         options: [
+          "Alteplase 90 mg IV bolus",
+          "Tenecteplase 11 mg IV single bolus",
           "Tenecteplase 22 mg IV single bolus",
           "Tenecteplase 44 mg IV single bolus",
           "Tenecteplase 50 mg IV single bolus",
-          "Alteplase 90 mg IV bolus",
-          "Tenecteplase 11 mg IV single bolus",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "The stroke dose of tenecteplase is 0.25 mg/kg to a maximum of 25 mg, so 22 mg for 88 kg. Higher weight-based doses are for STEMI and increase bleeding in stroke. Alteplase is never given as a single full bolus.",
         keyFeature: { topic: "cva", n: 3 },
@@ -536,7 +547,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         update: "CTA shows occlusion of the right ICA terminus and proximal M1 with good collaterals on multiphase CTA.",
-        prompt: "List TWO next steps in management.",
+        prompt: "What are the next steps in management?",
         required: 2,
         accept: [
           { id: "evt", text: "Proceed to endovascular thrombectomy without waiting for a response to thrombolysis", match: ["evt", "thrombectomy", "endovascular", "neurointervention", "angio suite"] },
@@ -566,12 +577,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Woke up unable to speak",
     stem:
-      "A 58-year-old woman woke at 06:30 with right-sided weakness and difficulty speaking. She went to bed well at 23:00. She arrives by EMS at 07:20 at a comprehensive stroke centre. She has hypertension and migraine. Medication: amlodipine. HR 82, BP 172/94 mmHg, RR 16, SpO2 98%, glucose 6.1 mmol/L. Weight 70 kg. She has global aphasia and right hemiplegia. NIHSS is 19.",
+      "A 58-year-old woman woke at 06:30 with right-sided weakness and difficulty speaking. She went to bed well at 23:00. She arrives by EMS at 07:20 at a comprehensive stroke centre. She has hypertension and migraine. Medication: amlodipine. Glucose is 6.1 mmol/L. She has global aphasia and right hemiplegia. NIHSS is 19.",
+    vitals: { pulse: "82/minute", resp: "16/minute", bp: "172/94 mmHg", o2sat: "98% on arrival", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What time do you use as her stroke onset for treatment decisions? List ONE.",
+        prompt: "What time do you use as her stroke onset for treatment decisions?",
         required: 1,
         accept: [
           { id: "lkw", text: "23:00, when she was last known well", match: ["23:00", "2300", "11 pm", "11pm", "last known well", "last seen well", "last seen normal", "went to bed"] },
@@ -585,7 +597,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO imaging approaches that can identify patients like her who may still benefit from reperfusion.",
+        prompt: "What imaging approaches can identify patients like her who may still benefit from reperfusion?",
         required: 2,
         accept: [
           { id: "mcta", text: "Multiphase CTA to assess collaterals", match: ["multiphase", "mcta", "collateral"] },
@@ -602,13 +614,13 @@ export const CVA_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Non-contrast CT shows ASPECTS 8. CTA shows a left M1 occlusion with good collaterals on multiphase CTA.",
-        prompt: "Which is the most appropriate treatment? Select one.",
+        prompt: "Which of the following is the most appropriate treatment for her now?",
         options: [
-          "IV tenecteplase alone",
-          "Endovascular thrombectomy",
           "ASA 160 mg and admission to the stroke unit",
-          "Heparin infusion",
-          "MRI first to confirm a DWI and FLAIR mismatch",
+          "Endovascular thrombectomy",
+          "IV tenecteplase alone",
+          "MRI first to confirm DWI and FLAIR mismatch",
+          "Unfractionated heparin infusion",
         ],
         correct: 1,
         explanation:
@@ -619,7 +631,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO orders for the first 24 hours after thrombectomy.",
+        prompt: "What orders would you write for the first 24 hours after thrombectomy?",
         required: 2,
         accept: [
           { id: "neuro", text: "Frequent neurological checks", match: ["neuro check", "neurological check", "neuro vital", "neurologic check", "nihss", "neuro ob"] },
@@ -649,12 +661,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Weakness while watching curling",
     stem:
-      "A 76-year-old man arrives at 16:30. At 15:10 he suddenly developed left face and arm weakness and slurred speech while watching curling on television. He has atrial fibrillation, hypertension and heart failure. Medications: rivaroxaban 20 mg daily, bisoprolol and furosemide. HR 96 irregular, BP 164/88 mmHg, RR 18, SpO2 95%, glucose 7.0 mmol/L. Weight 81 kg. Creatinine last month was 110 µmol/L. NIHSS is 9.",
+      "A 76-year-old man arrives at 16:30. At 15:10 he suddenly developed left face and arm weakness and slurred speech while watching curling on television. He has atrial fibrillation, hypertension and heart failure. Medications: rivaroxaban 20 mg daily, bisoprolol and furosemide. Glucose is 7.0 mmol/L. Creatinine last month was 110 umol/L. NIHSS is 9.",
+    vitals: { pulse: "96/minute irregular", resp: "18/minute", bp: "164/88 mmHg", o2sat: "95% on arrival", weight: "81 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO pieces of information about his anticoagulant that you need now.",
+        prompt: "What information about his anticoagulant do you need now?",
         required: 2,
         accept: [
           { id: "time", text: "Time of the last dose", match: ["last dose", "time of dose", "when taken", "time taken", "last taken", "timing"] },
@@ -672,17 +685,17 @@ export const CVA_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "CT shows no hemorrhage. He took rivaroxaban 8.5 hours ago. An anti-Xa level is not available.",
-        prompt: "Which is the most appropriate statement? Select one.",
+        prompt: "Which of the following statements about reperfusion for this patient is most appropriate?",
         options: [
-          "Give tenecteplase because more than 6 hours have passed since the last dose",
           "Give andexanet alfa, then tenecteplase",
-          "Thrombolysis is contraindicated. Proceed with CTA to assess for thrombectomy",
-          "Give idarucizumab, then thrombolysis",
-          "Give half-dose tenecteplase",
+          "Give full-dose tenecteplase now, then CTA",
+          "Give half-dose tenecteplase now, then CTA",
+          "Give idarucizumab, then tenecteplase",
+          "Thrombolysis contraindicated, CTA for thrombectomy",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
-          "Canadian guidance advises against routine thrombolysis in patients taking a DOAC. Most protocols require more than 48 hours since the last dose or a normal drug-specific level. Idarucizumab reverses dabigatran only, and andexanet is not used to enable thrombolysis. Anticoagulation is not a contraindication to thrombectomy.",
+          "Canadian guidance advises against routine thrombolysis in patients taking a DOAC. Most protocols require more than 48 hours since the last dose or a normal drug-specific level, so 8.5 hours is not enough for full-dose or half-dose tenecteplase. Idarucizumab reverses dabigatran only, and andexanet is not used to enable thrombolysis. Anticoagulation is not a contraindication to thrombectomy.",
         keyFeature: { topic: "cva", n: 3 },
         source: "csbpr-acute",
       },
@@ -690,7 +703,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "CTA shows a right M1 occlusion.",
-        prompt: "What is the most appropriate reperfusion strategy? List ONE.",
+        prompt: "What is the most appropriate reperfusion strategy?",
         required: 1,
         accept: [
           { id: "evt", text: "Endovascular thrombectomy alone", match: ["evt", "thrombectomy", "endovascular"] },
@@ -706,7 +719,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO reasons, other than breakthrough cardioembolism despite correct therapy, that a patient on a DOAC may have an ischemic stroke.",
+        prompt: "Other than breakthrough cardioembolism despite correct therapy, why may a patient on a DOAC have an ischemic stroke?",
         required: 2,
         accept: [
           { id: "adherence", text: "Missed doses or poor adherence", match: ["missed", "adherence", "nonadherence", "compliance", "not taking"] },
@@ -733,12 +746,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Collapse while lifting boxes",
     stem:
-      "A 61-year-old man is brought in at 13:45. At 13:00 he felt a sudden severe pain between his shoulder blades while lifting boxes, then collapsed. His wife found him unable to move his left side. He has untreated hypertension. HR 102, BP right arm 108/64 mmHg, left arm 162/94 mmHg, RR 22, SpO2 95%, temperature 36.5°C, glucose 7.8 mmol/L. He has left face, arm and leg weakness. A soft early diastolic murmur is heard at the left sternal border. The neurology resident is preparing tenecteplase.",
+      "A 61-year-old man is brought in at 13:45. At 13:00 he felt a sudden severe pain between his shoulder blades while lifting boxes, then collapsed. His wife found him unable to move his left side. He has untreated hypertension. BP is 108/64 mmHg in the right arm and 162/94 mmHg in the left arm. Glucose is 7.8 mmol/L. He has left face, arm and leg weakness. A soft early diastolic murmur is heard at the left sternal border. The neurology resident is preparing tenecteplase.",
+    vitals: { temperature: "36.5°C", pulse: "102/minute", resp: "22/minute", o2sat: "95% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What diagnosis must be excluded before any reperfusion therapy? List ONE.",
+        prompt: "What diagnosis must be excluded before any reperfusion therapy?",
         required: 1,
         accept: [
           { id: "ad", text: "Acute aortic dissection", match: ["aortic dissection", "aortic syndrome", "type a", "dissecting aneurysm", "dissection of the aorta"] },
@@ -751,7 +765,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE findings that support this diagnosis.",
+        prompt: "What findings support this diagnosis?",
         required: 3,
         accept: [
           { id: "pain", text: "Sudden severe interscapular pain", match: ["interscapular", "back pain", "between shoulder", "shoulder blade", "tearing", "severe pain", "sudden pain"] },
@@ -769,13 +783,13 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which imaging is most appropriate? Select one.",
+        prompt: "Which of the following imaging strategies is most appropriate for this patient?",
         options: [
-          "Non-contrast CT head only, then tenecteplase if no hemorrhage",
-          "Non-contrast CT head and CT angiogram of the neck, chest, abdomen and pelvis",
-          "MRI brain with diffusion",
+          "MRI brain with diffusion-weighted imaging",
+          "Non-contrast CT head and CTA neck, chest, abdomen, pelvis",
+          "Non-contrast CT head only, then tenecteplase if no bleed",
+          "Portable chest X-ray before any CT",
           "Transthoracic echocardiogram only",
-          "Portable chest X-ray only",
         ],
         correct: 1,
         explanation:
@@ -787,7 +801,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CT confirms a Stanford type A dissection extending into the right common carotid artery. CT head shows no hemorrhage.",
-        prompt: "List THREE management steps now.",
+        prompt: "What are the management steps now?",
         required: 3,
         accept: [
           { id: "surgery", text: "Emergency cardiac surgery consultation", match: ["cardiac surgery", "cardiac surgeon", "cardiovascular surgery", "cardiothoracic", "thoracic surgery", "surgery"] },
@@ -817,13 +831,20 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Brief episode of arm weakness",
     stem:
-      "A 66-year-old man presents at 11:30. At 08:15 his right arm became weak and he had trouble finding words. It resolved completely by 09:00. He has type 2 diabetes and dyslipidemia. Medications: metformin, rosuvastatin 10 mg. HR 74 regular, BP 158/88 mmHg, RR 14, SpO2 98%, glucose 8.2 mmol/L. His neurologic examination is now normal. ECG shows sinus rhythm.",
+      "A 66-year-old man presents at 11:30. At 08:15 his right arm became weak and he had trouble finding words. It resolved completely by 09:00. He has type 2 diabetes and dyslipidemia. Medications: metformin, rosuvastatin 10 mg. Glucose is 8.2 mmol/L. His neurologic examination is now normal. ECG shows sinus rhythm.",
+    vitals: { pulse: "74/minute regular", resp: "14/minute", bp: "158/88 mmHg", o2sat: "98% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is his ABCD2 score? Select one.",
-        options: ["3", "4", "5", "6", "7"],
+        prompt: "Which of the following is his ABCD2 score based on the history and findings?",
+        options: [
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+        ],
         correct: 3,
         explanation:
           "Age 60 or older scores 1. Systolic 140 or higher, or diastolic 90 or higher, scores 1. Unilateral weakness scores 2. Duration 10 to 59 minutes scores 1. Diabetes scores 1. The total is 6, which is high risk.",
@@ -833,7 +854,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE investigations you would complete in the ED today.",
+        prompt: "What investigations would you complete in the emergency department today?",
         required: 3,
         accept: [
           { id: "cta", text: "CT angiogram of the head and neck", match: ["cta", "ct angiogram", "ct angiography"] },
@@ -851,7 +872,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "CT head is normal. CTA shows an 80% stenosis of the proximal left internal carotid artery.",
-        prompt: "List TWO elements of management.",
+        prompt: "What are the elements of management?",
         required: 2,
         accept: [
           { id: "cea", text: "Urgent vascular surgery referral for carotid endarterectomy within 14 days", match: ["endarterectomy", "vascular surgery", "vascular surgeon", "cea", "carotid stent", "revascularization", "revascularisation"] },
@@ -868,19 +889,19 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "menu",
-        prompt: "Which THREE best describe the antiplatelet regimen for him? Select THREE.",
+        prompt: "Which of the following best describe the antiplatelet regimen for him?",
         options: [
-          "ASA 160 mg loading dose, then 81 mg daily",
+          "Apixaban 5 mg twice daily",
           "ASA 81 mg daily with no loading dose",
-          "Clopidogrel 300 to 600 mg loading dose, then 75 mg daily",
+          "ASA 160 mg loading dose, then 81 mg daily",
           "Clopidogrel 75 mg daily with no loading dose",
+          "Clopidogrel 300 to 600 mg load, then 75 mg daily",
           "Dual therapy for 21 days, then a single agent",
           "Dual therapy indefinitely",
           "Warfarin with a target INR of 2 to 3",
-          "Apixaban 5 mg twice daily",
         ],
         select: 3,
-        correct: [0, 2, 4],
+        correct: [2, 4, 5],
         explanation:
           "For high-risk TIA or minor stroke, start ASA plus clopidogrel within 24 hours. Canadian guidance loads clopidogrel 300 or 600 mg and ASA 160 to 325 mg, then gives 75 mg and 81 mg daily for 21 days. Beyond 21 days the bleeding risk outweighs benefit. Anticoagulation is for a cardioembolic source.",
         keyFeature: { topic: "cva", n: 4 },
@@ -897,12 +918,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Vision went dark in one eye",
     stem:
-      "A 74-year-old woman presents at 10:00. At 07:30 the vision in her left eye went dark like a curtain coming down. It fully returned after about 5 minutes. She has no headache, jaw pain or scalp tenderness. She has hypertension and hypothyroidism. HR 118 irregularly irregular, BP 162/84 mmHg, RR 16, SpO2 97%, temperature 36.8°C. Weight 58 kg. Creatinine 96 µmol/L. Visual acuity is 20/25 in each eye. Fundoscopy and neurologic examination are normal. ECG shows new atrial fibrillation with rapid ventricular response.",
+      "A 74-year-old woman presents at 10:00. At 07:30 the vision in her left eye went dark like a curtain coming down. It fully returned after about 5 minutes. She has no headache, jaw pain or scalp tenderness. She has hypertension and hypothyroidism. The pulse is irregularly irregular. Creatinine is 96 umol/L. Visual acuity is 20/25 in each eye. Fundoscopy and neurologic examination are normal. ECG shows new atrial fibrillation with rapid ventricular response.",
+    vitals: { temperature: "36.8°C", pulse: "118/minute irregular", resp: "16/minute", bp: "162/84 mmHg", o2sat: "97% on arrival", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most likely diagnosis? List ONE.",
+        prompt: "What is the most likely diagnosis?",
         required: 1,
         accept: [
           { id: "af", text: "Amaurosis fugax (retinal TIA)", match: ["amaurosis", "retinal tia", "transient monocular", "retinal ischemia", "retinal ischaemia", "tia", "transient ischemic attack"] },
@@ -915,7 +937,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO other diagnoses to consider for transient monocular vision loss in a woman her age.",
+        prompt: "What other diagnoses should you consider for transient monocular vision loss in a woman her age?",
         required: 2,
         accept: [
           { id: "gca", text: "Giant cell arteritis", match: ["giant cell", "temporal arteritis", "gca"] },
@@ -933,7 +955,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE investigations you would arrange in the ED or within 24 hours.",
+        prompt: "What investigations would you arrange in the emergency department or within 24 hours?",
         required: 3,
         accept: [
           { id: "esr", text: "ESR and CRP", match: ["esr", "crp", "sed rate", "sedimentation", "c reactive"] },
@@ -953,18 +975,17 @@ export const CVA_SAMPS: Samp[] = [
         kind: "single",
         update:
           "ESR and CRP are normal. CT and CTA show no hemorrhage and no carotid stenosis. Her heart rate is controlled with metoprolol.",
-        prompt: "Which is the most appropriate antithrombotic plan? Select one.",
+        prompt: "Which of the following is the most appropriate antithrombotic plan for her?",
         options: [
-          "ASA 81 mg daily",
-          "ASA and clopidogrel for 21 days",
           "Apixaban 5 mg twice daily, started now",
           "Apixaban 2.5 mg twice daily, started now",
-          "Warfarin with an enoxaparin bridge",
+          "ASA and clopidogrel for 21 days",
           "Delay any anticoagulant for 14 days",
+          "Warfarin with an enoxaparin bridge",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "A TIA with atrial fibrillation calls for an oral anticoagulant, preferably a DOAC. After a brief TIA with no infarct on imaging, it can start within 24 hours. Apixaban is reduced to 2.5 mg only with two of age 80 or older, weight 60 kg or less, or creatinine 133 µmol/L or higher. She meets only one.",
+          "A TIA with atrial fibrillation calls for an oral anticoagulant, preferably a DOAC. After a brief TIA with no infarct on imaging, it can start within 24 hours. Apixaban is reduced to 2.5 mg only with two of age 80 or older, weight 60 kg or less, or creatinine 133 umol/L or higher. She meets only one.",
         keyFeature: { topic: "cva", n: 4 },
         source: "ccs-af",
       },
@@ -980,12 +1001,13 @@ export const CVA_SAMPS: Samp[] = [
     alsoTopics: ["headache"],
     title: "Flashing lights then tingling",
     stem:
-      "A 34-year-old woman presents with an episode that began 2 hours ago. Flickering zigzag lights appeared in her right visual field and slowly spread over 20 minutes. As they faded, tingling moved from her right fingers up her arm to her face over 15 minutes. A throbbing left-sided headache with nausea followed. She has had two similar episodes in the last 5 years. She takes a combined oral contraceptive and smokes. HR 76, BP 122/74 mmHg, RR 14, SpO2 99%, temperature 36.7°C. Neurologic examination is now normal.",
+      "A 34-year-old woman presents with an episode that began 2 hours ago. Flickering zigzag lights appeared in her right visual field and slowly spread over 20 minutes. As they faded, tingling moved from her right fingers up her arm to her face over 15 minutes. A throbbing left-sided headache with nausea followed. She has had two similar episodes in the last 5 years. She takes a combined oral contraceptive and smokes. Neurologic examination is now normal.",
+    vitals: { temperature: "36.7°C", pulse: "76/minute", resp: "14/minute", bp: "122/74 mmHg", o2sat: "99% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that favour migraine with aura over TIA.",
+        prompt: "What features favour migraine with aura over TIA?",
         required: 3,
         accept: [
           { id: "positive", text: "Positive symptoms such as flickering lights and tingling", match: ["positive", "flicker", "flickering", "zigzag", "scintillat", "scintillating", "tingling", "paresthesia"] },
@@ -1003,7 +1025,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO features of a transient episode that would make you manage it as a TIA instead.",
+        prompt: "What features of a transient episode would make you manage it as a TIA instead?",
         required: 2,
         accept: [
           { id: "negative", text: "Negative symptoms such as weakness, numbness or vision loss", match: ["negative", "weakness", "loss of vision", "vision loss", "numbness", "loss of sensation"] },
@@ -1020,7 +1042,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO changes you would advise to lower her future stroke risk.",
+        prompt: "What changes would you advise to lower her future stroke risk?",
         required: 2,
         accept: [
           { id: "coc", text: "Stop the combined estrogen contraceptive and switch to a non-estrogen method", match: ["stop combined", "stop estrogen", "stop the pill", "stop ocp", "stop coc", "stop oral contraceptive", "stop birth control", "discontinue oral contraceptive", "discontinue ocp", "discontinue coc", "discontinue combined", "switch contraception", "switch contraceptive", "progestin", "iud", "copper", "non estrogen", "estrogen free", "no estrogen", "avoid estrogen"] },
@@ -1042,12 +1064,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Neck pain after a hockey game",
     stem:
-      "A 42-year-old man presents at 20:00. Three days ago he was checked hard into the boards in a recreational hockey game. Since then he has had right-sided neck pain and headache. Today at 17:30 he had 20 minutes of left hand weakness and slurred speech, now resolved. His wife noticed his right eyelid droops. HR 70, BP 136/82 mmHg, RR 14, SpO2 99%, glucose 5.4 mmol/L. He has a mild right ptosis and a small right pupil. There are no other deficits.",
+      "A 42-year-old man presents at 20:00. Three days ago he was checked hard into the boards in a recreational hockey game. Since then he has had right-sided neck pain and headache. Today at 17:30 he had 20 minutes of left hand weakness and slurred speech, now resolved. His wife noticed his right eyelid droops. Glucose is 5.4 mmol/L. He has a mild right ptosis and a small right pupil. There are no other deficits.",
+    vitals: { pulse: "70/minute", resp: "14/minute", bp: "136/82 mmHg", o2sat: "99% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most likely diagnosis? List ONE.",
+        prompt: "What is the most likely diagnosis?",
         required: 1,
         accept: [
           { id: "dissection", text: "Right internal carotid artery dissection", match: ["carotid dissection", "cervical artery dissection", "ica dissection", "internal carotid", "dissection"] },
@@ -1060,7 +1083,8 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "His ABCD2 score is 3. List TWO reasons he still needs urgent assessment and imaging tonight.",
+        update: "His ABCD2 score is 3.",
+        prompt: "Why does he still need urgent assessment and imaging tonight?",
         required: 2,
         accept: [
           { id: "motor", text: "Motor weakness or speech disturbance", match: ["weakness", "motor", "speech", "dysarthria", "slurred"] },
@@ -1076,15 +1100,15 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which imaging is most appropriate now? Select one.",
+        prompt: "Which of the following imaging studies is most appropriate for him tonight?",
         options: [
-          "Non-contrast CT head alone",
+          "Carotid Doppler ultrasound within the next week",
+          "Cervical spine X-ray series",
           "CT head and CT angiogram of the head and neck",
-          "Carotid Doppler within one week",
-          "Outpatient MRI brain",
-          "Cervical spine X-rays",
+          "Non-contrast CT head without angiography",
+          "Outpatient MRI brain within one week",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "CTA shows the dissection, the degree of narrowing and any intracranial occlusion. Doppler can miss distal dissections. Outpatient imaging is too slow for a high-risk TIA.",
         keyFeature: { topic: "cva", n: 4 },
@@ -1094,7 +1118,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CTA confirms a right ICA dissection with 60% narrowing and no intracranial occlusion. CT head is normal.",
-        prompt: "List TWO elements of management.",
+        prompt: "What are the elements of management?",
         required: 2,
         accept: [
           { id: "antithrombotic", text: "Antithrombotic therapy with an antiplatelet or anticoagulant", match: ["antiplatelet", "asa", "aspirin", "clopidogrel", "anticoagula", "anticoagulation", "heparin", "antithrombotic"] },
@@ -1119,12 +1143,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Headache and weakness on warfarin",
     stem:
-      "A 69-year-old woman is brought in at 18:30 with sudden headache, vomiting and right-sided weakness that began at 17:50. She has a mechanical mitral valve and takes warfarin. HR 64, BP 212/118 mmHg, RR 18, SpO2 96%, temperature 36.8°C, glucose 7.4 mmol/L. Weight 70 kg. GCS 13 (E3 V4 M6). She has a right hemiparesis. A code stroke is called.",
+      "A 69-year-old woman is brought in at 18:30 with sudden headache, vomiting and right-sided weakness that began at 17:50. She has a mechanical mitral valve and takes warfarin. Glucose is 7.4 mmol/L. GCS is 13 (E3 V4 M6). She has a right hemiparesis. A code stroke is called.",
+    vitals: { temperature: "36.8°C", pulse: "64/minute", resp: "18/minute", bp: "212/118 mmHg", o2sat: "96% on arrival", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO features that make intracerebral hemorrhage more likely than ischemic stroke.",
+        prompt: "What features make intracerebral hemorrhage more likely than ischemic stroke?",
         required: 2,
         accept: [
           { id: "headache", text: "Sudden headache", match: ["headache"] },
@@ -1142,7 +1167,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "CT shows a 25 mL left basal ganglia hemorrhage without intraventricular extension. INR is 3.4.",
-        prompt: "List TWO treatments to reverse her anticoagulation. Include the dose of any vitamin.",
+        prompt: "What treatments would reverse her anticoagulation, including the dose of any vitamin?",
         required: 2,
         accept: [
           { id: "pcc", text: "Four-factor prothrombin complex concentrate", match: ["pcc", "prothrombin complex", "octaplex", "beriplex"] },
@@ -1156,20 +1181,20 @@ export const CVA_SAMPS: Samp[] = [
         explanation:
           "PCC corrects the INR within minutes and is preferred over plasma, which is slow and needs large volumes. IV vitamin K 10 mg sustains the correction. Recheck the INR soon after PCC to confirm correction. The mechanical valve does not change the need for immediate reversal in a life-threatening bleed.",
         keyFeature: { topic: "cva", n: 3 },
-        source: "thrombosis-canada",
+        source: "nac-pcc",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which blood pressure target is most appropriate in the first hours? Select one.",
+        prompt: "Which of the following blood pressure targets is most appropriate in the first hours?",
         options: [
-          "Systolic below 185 mmHg",
           "Systolic about 140 mmHg, avoiding drops below 130 mmHg",
-          "Systolic below 110 mmHg",
+          "Systolic below 185 mmHg over the first 24 hours",
+          "Systolic below 110 mmHg within the first hour",
+          "Target mean arterial pressure above 130 mmHg",
           "No treatment unless systolic is above 220 mmHg",
-          "Mean arterial pressure above 130 mmHg",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "In spontaneous ICH with systolic 150 to 220 mmHg, lowering to about 140 mmHg is safe and may limit hematoma growth. Dropping below 130 mmHg is linked to harm. A smooth, sustained reduction matters more than speed.",
         keyFeature: { topic: "cva", n: 3 },
@@ -1178,7 +1203,7 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO findings that would prompt urgent neurosurgical consultation in intracerebral hemorrhage.",
+        prompt: "What findings would prompt urgent neurosurgical consultation in intracerebral hemorrhage?",
         required: 2,
         accept: [
           { id: "cerebellar", text: "Cerebellar hemorrhage with brainstem compression or hydrocephalus", match: ["cerebellar", "posterior fossa", "brainstem compression"] },
@@ -1193,7 +1218,7 @@ export const CVA_SAMPS: Samp[] = [
         source: "aha-ich",
       },
     ],
-    sources: [AHA_ICH, THROMBOSIS_CANADA],
+    sources: [AHA_ICH, NAC_PCC],
     ...meta,
   },
 
@@ -1203,12 +1228,13 @@ export const CVA_SAMPS: Samp[] = [
     topic: "cva",
     title: "Weakness over three weeks",
     stem:
-      "A 57-year-old man is sent in by his family physician with 3 weeks of slowly worsening right arm weakness and word-finding difficulty. He has had morning headaches for 2 weeks that are worse when he coughs. He was treated for non-small cell lung cancer 18 months ago. HR 80, BP 142/84 mmHg, RR 16, SpO2 97%, temperature 36.8°C, glucose 6.4 mmol/L. He has mild expressive aphasia, a right pronator drift and right arm power 4/5. The optic disc margins are blurred.",
+      "A 57-year-old man is sent in by his family physician with 3 weeks of slowly worsening right arm weakness and word-finding difficulty. He has had morning headaches for 2 weeks that are worse when he coughs. He was treated for non-small cell lung cancer 18 months ago. Glucose is 6.4 mmol/L. He has mild expressive aphasia, a right pronator drift and right arm power 4/5. The optic disc margins are blurred.",
+    vitals: { temperature: "36.8°C", pulse: "80/minute", resp: "16/minute", bp: "142/84 mmHg", o2sat: "97% on arrival" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that point away from an acute stroke.",
+        prompt: "What features point away from an acute stroke?",
         required: 3,
         accept: [
           { id: "gradual", text: "Gradual progression over weeks", match: ["gradual", "progressive", "weeks", "subacute", "slowly", "worsening"] },
@@ -1224,15 +1250,15 @@ export const CVA_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which initial imaging is most appropriate in the ED? Select one.",
+        prompt: "Which of the following initial imaging studies is most appropriate in the emergency department?",
         options: [
-          "CT perfusion",
-          "Non-contrast CT head, followed by contrast CT or MRI if a lesion is seen",
-          "Carotid Doppler ultrasound",
-          "EEG",
-          "Lumbar puncture",
+          "Carotid and vertebral Doppler ultrasound",
+          "CT perfusion and CT angiogram of the head",
+          "Electroencephalogram before any imaging",
+          "Lumbar puncture with opening pressure",
+          "Non-contrast CT head, contrast CT or MRI if lesion seen",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "Non-contrast CT is quick and shows mass effect and edema. Contrast CT or MRI characterizes the lesion. Lumbar puncture is dangerous with papilledema until a mass is excluded.",
         keyFeature: { topic: "cva", n: 1 },
@@ -1242,7 +1268,7 @@ export const CVA_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "CT shows a 3 cm ring-enhancing left frontal lesion with extensive vasogenic edema and 5 mm of midline shift.",
-        prompt: "List TWO initial treatments or consultations. Include the dose of any drug.",
+        prompt: "What initial treatments or consultations would you arrange, including the dose of any drug?",
         required: 2,
         accept: [
           { id: "dex", text: "Dexamethasone 10 mg IV load, then 4 mg every 6 hours", match: ["dexamethasone 10", "dexamethasone 10mg", "dexamethasone 8", "dexamethasone 8mg", "dexamethasone 4", "dexamethasone 4mg", "dexamethasone 6", "dexamethasone 6mg", "decadron 10", "decadron 4"] },

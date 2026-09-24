@@ -1041,6 +1041,166 @@
    "after": [
     "Limit cooling of large burns and prevent hypothermia"
    ]
+  },
+  "cva-02#q2": {
+   "batch": "s05",
+   "before": [
+    "Non-contrast CT head and CT angiogram from the aortic arch to the vertex"
+   ],
+   "after": [
+    "Non-contrast CT head and CTA, aortic arch to vertex"
+   ]
+  },
+  "cva-04#q2": {
+   "batch": "s05",
+   "before": [
+    "Non-contrast CT head and CT angiogram from the aortic arch to the vertex"
+   ],
+   "after": [
+    "Non-contrast CT head and CTA, aortic arch to vertex"
+   ]
+  },
+  "cva-05#q3": {
+   "batch": "s05",
+   "before": [
+    "Tenecteplase 19 mg IV bolus now, with CTA head and neck"
+   ],
+   "after": [
+    "Tenecteplase 19 mg IV now, with CTA head and neck"
+   ]
+  },
+  "cva-08#q2": {
+   "batch": "s05",
+   "before": [
+    "Thrombolysis is contraindicated. Proceed with CTA to assess for thrombectomy"
+   ],
+   "after": [
+    "Thrombolysis contraindicated, CTA for thrombectomy"
+   ]
+  },
+  "cva-09#q3": {
+   "batch": "s05",
+   "before": [
+    "Non-contrast CT head and CT angiogram of the neck, chest, abdomen and pelvis"
+   ],
+   "after": [
+    "Non-contrast CT head and CTA neck, chest, abdomen, pelvis"
+   ]
+  },
+  "cva-10#q4": {
+   "batch": "s05",
+   "before": [
+    "ASA 160 mg loading dose, then 81 mg daily",
+    "Clopidogrel 300 to 600 mg loading dose, then 75 mg daily",
+    "Dual therapy for 21 days, then a single agent"
+   ],
+   "after": [
+    "ASA 160 mg loading dose, then 81 mg daily",
+    "Clopidogrel 300 to 600 mg load, then 75 mg daily",
+    "Dual therapy for 21 days, then a single agent"
+   ]
+  },
+  "cva-15#q2": {
+   "batch": "s05",
+   "before": [
+    "Non-contrast CT head, followed by contrast CT or MRI if a lesion is seen"
+   ],
+   "after": [
+    "Non-contrast CT head, contrast CT or MRI if lesion seen"
+   ]
+  },
+  "chest-pain-02#q3": {
+   "batch": "s05",
+   "before": [
+    "Tenecteplase 45 mg IV bolus",
+    "Clopidogrel 300 mg PO",
+    "Enoxaparin 30 mg IV bolus, then 1 mg/kg SC every 12 hours"
+   ],
+   "after": [
+    "Clopidogrel 300 mg PO",
+    "Enoxaparin 30 mg IV, then 1 mg/kg SC twice daily",
+    "Tenecteplase 45 mg IV bolus"
+   ]
+  },
+  "chest-pain-05#q3": {
+   "batch": "s05",
+   "before": [
+    "PE is ruled out by PERC with low gestalt probability. No D-dimer is needed"
+   ],
+   "after": [
+    "PERC and low gestalt rule out PE, no D-dimer needed"
+   ]
+  },
+  "chest-pain-08#q3": {
+   "batch": "s05",
+   "before": [
+    "Treat as NSTEMI with ASA, anticoagulation and cardiology consultation for an invasive strategy"
+   ],
+   "after": [
+    "Treat as NSTEMI: ASA, anticoagulation, invasive strategy"
+   ]
+  },
+  "chest-pain-09#q4": {
+   "batch": "s05",
+   "before": [
+    "Further cardiac evaluation, by observation or admission or by expedited cardiology assessment with testing within days"
+   ],
+   "after": [
+    "Observation, admission or expedited cardiology testing"
+   ]
+  },
+  "chest-pain-10#q2": {
+   "batch": "s05",
+   "before": [
+    "ECG findings",
+    "Age"
+   ],
+   "after": [
+    "ECG findings",
+    "Patient age"
+   ]
+  },
+  "chest-pain-13#q3": {
+   "batch": "s05",
+   "before": [
+    "Ibuprofen 600 mg PO three times daily with gastric protection",
+    "Colchicine 0.5 mg PO twice daily for at least 3 months"
+   ],
+   "after": [
+    "Colchicine 0.5 mg PO twice daily, at least 3 months",
+    "Ibuprofen 600 mg PO three times daily with gastroprotection"
+   ]
+  },
+  "chest-pain-14#q2": {
+   "batch": "s05",
+   "before": [
+    "Admit, start ASA and anticoagulation, and arrange early coronary angiography"
+   ],
+   "after": [
+    "Admit, ASA, anticoagulation and early angiography"
+   ]
+  },
+  "chest-pain-15#q2": {
+   "batch": "s05",
+   "before": [
+    "Fibrinolysis within 30 minutes of arrival, then transfer to the PCI centre"
+   ],
+   "after": [
+    "Fibrinolysis within 30 minutes, then transfer to PCI centre"
+   ]
+  },
+  "chest-pain-15#q3": {
+   "batch": "s05",
+   "before": [
+    "Tenecteplase 20 mg IV bolus",
+    "Clopidogrel 75 mg PO",
+    "Enoxaparin 0.75 mg/kg SC every 12 hours with no IV bolus"
+   ],
+   "after": [
+    "Clopidogrel 75 mg PO",
+    "Enoxaparin 0.75 mg/kg SC every 12 hours, no IV bolus",
+    "Tenecteplase 20 mg IV bolus"
+   ]
   }
  }
 }
