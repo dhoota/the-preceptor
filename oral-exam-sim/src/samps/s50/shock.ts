@@ -125,69 +125,70 @@ export const SHOCK_SAMPS_S50: Samp[] = [
   {
     id: "shock-17",
     topic: "shock",
-    title: "Young woman who fainted at work",
-    stem: "A 24-year-old woman is brought to the emergency department by ambulance after fainting at work. She has had lower abdominal pain for 6 hours and now has pain at the tip of her right shoulder. Her last menstrual period was 7 weeks ago. She had chlamydia treated 2 years ago. She takes no medications. She is pale and sweaty. Her abdomen is distended and diffusely tender with guarding. A urine pregnancy test is positive.",
+    title: "Young woman who collapsed on the stairs",
+    stem: "A 20-year-old woman is brought to the emergency department by ambulance after she became light-headed and collapsed while climbing the stairs to her apartment. She has had 2 hours of left upper abdominal pain. Twelve days ago a walk-in clinic diagnosed infectious mononucleosis. She recalls no injury. She is a competitive rower, and her usual resting pulse is 52/minute. She takes no medications. Her last menstrual period ended 1 week ago, and a urine pregnancy test is negative. She is pale and anxious. The left upper quadrant is tender with guarding.",
     vitals: {
-      temperature: "36.8°C oral",
-      pulse: "92/minute",
-      resp: "20/minute",
-      bp: "94/62 mmHg",
-      o2sat: "98% on room air",
-      weight: "58 kg"
+      temperature: "37.4°C oral",
+      pulse: "96/minute",
+      resp: "22/minute",
+      bp: "104/66 mmHg",
+      o2sat: "99% on room air",
+      weight: "62 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following findings in her history most strongly suggests blood in the peritoneal cavity?",
+        prompt: "Which of the following findings most strongly suggests early hemorrhagic shock in her?",
         options: [
-          "Chlamydia treated 2 years ago",
-          "Last period 7 weeks ago",
-          "Lower abdominal pain for 6 hours",
-          "Pain at the tip of the right shoulder",
-          "Positive urine pregnancy test"
+          "BP of 104/66 mmHg",
+          "Oxygen saturation of 99%",
+          "Pulse of 96/minute",
+          "Respiratory rate of 22/minute",
+          "Temperature of 37.4°C"
         ],
-        correct: 3,
-        explanation: "Shoulder tip pain is referred pain from blood irritating the diaphragm, and with syncope it marks a large hemoperitoneum. Her pulse of 92/minute and systolic pressure of 94 mmHg can look reassuring in a fit young woman, which is why this history matters. Prior chlamydia, a missed period and a positive pregnancy test raise the chance of ectopic pregnancy but say nothing about rupture. Lower abdominal pain occurs in unruptured ectopic pregnancy and in many other conditions.",
+        correct: 2,
+        explanation: "Her pulse of 96/minute looks close to normal, but it is almost double her usual resting rate of 52/minute. Trained athletes start from a slow baseline and compensate well, so a modest rise in pulse can mark substantial blood loss. Her systolic pressure of 104 mmHg is still in the normal range, as expected early in bleeding while vasoconstriction holds the pressure up. A respiratory rate of 22/minute fits pain and anxiety as well as blood loss, so it is less specific. A saturation of 99% says nothing about perfusion. A temperature of 37.4°C fits her viral illness.",
         keyFeature: {
           topic: "shock",
           n: 1
         },
-        source: "rosen"
+        source: "atls"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following investigations should be done first, at the bedside, to guide her management?",
+        update: "Bedside ultrasound shows free fluid around the spleen and in the pelvis. The uterus and ovaries look normal.",
+        prompt: "Which of the following is the most likely cause of her shock?",
         options: [
-          "CT abdomen with IV contrast",
-          "Formal pelvic ultrasound in radiology",
-          "POCUS for free peritoneal fluid",
-          "Quantitative serum beta-hCG",
-          "Speculum and bimanual examination"
+          "Atraumatic splenic rupture",
+          "Hemorrhagic ovarian cyst",
+          "Perforated peptic ulcer",
+          "Ruptured ectopic pregnancy",
+          "Splenic infarction"
         ],
-        correct: 2,
-        explanation: "Bedside ultrasound can show free fluid in the hepatorenal space within minutes and, with a positive pregnancy test and no intrauterine pregnancy, sends an unstable patient straight to the operating room. CT and a formal ultrasound take a patient who fainted and has peritonitis out of the resuscitation area. A quantitative beta-hCG does not change management, because ectopic pregnancy can rupture at any level. A pelvic examination adds little and delays the key decision.",
+        correct: 0,
+        explanation: "Free fluid around the spleen, left upper quadrant pain and collapse 12 days after a diagnosis of infectious mononucleosis point to splenic rupture. In published cases it happened on average 14 days into the illness, and only 14% of patients recalled any trauma, so the lack of an injury does not exclude it. A negative urine pregnancy test argues strongly against a ruptured ectopic pregnancy. A bleeding ovarian cyst usually arises from a corpus luteum in the second half of the cycle, her period ended a week ago, and the fluid centres on the spleen. A perforated ulcer usually causes sudden epigastric pain, and she takes no NSAID. Splenic infarction causes pain but not bleeding into the abdomen.",
         keyFeature: {
           topic: "shock",
           n: 6
         },
-        source: "rosen"
+        source: "bartlett-mono-spleen"
       },
       {
         id: "q3",
         kind: "single",
-        update: "POCUS shows a large volume of free fluid in the hepatorenal space and no intrauterine pregnancy. Her first hemoglobin is 118 g/L.",
+        update: "Her first hemoglobin is 121 g/L.",
         prompt: "Which of the following best explains her hemoglobin level at this point in her illness?",
         options: [
           "Blood loss has been minor so far",
           "Hemoconcentration from vomiting",
           "Hemodilution has not yet occurred",
-          "Normal dilutional anemia of pregnancy",
+          "Hemolysis from her viral illness",
           "Sample drawn from a hemolyzed tube"
         ],
         correct: 2,
-        explanation: "Early in acute bleeding, whole blood is lost, so the concentration of hemoglobin changes little until fluid shifts in or crystalloid is given. A near normal hemoglobin therefore does not measure acute loss. Syncope, shoulder tip pain and a large volume of free fluid show that her loss is not minor. The stem gives no vomiting to suggest hemoconcentration. The anemia of pregnancy would lower her hemoglobin, not keep it normal, and hemolysis alters potassium rather than hemoglobin.",
+        explanation: "Early in acute bleeding, whole blood is lost, so the hemoglobin concentration changes little until fluid shifts into the vessels or crystalloid is given. A near normal hemoglobin therefore does not measure acute loss. Collapse, a pulse almost double her baseline and free fluid around the spleen show that her loss is not minor. The case gives no vomiting to suggest hemoconcentration. Hemolysis from the virus would lower the hemoglobin, not keep it near normal. Hemolysis in the tube does not change the hemoglobin a CBC reports, because the analyzer breaks open the red cells anyway, so it cannot explain the value.",
         keyFeature: {
           topic: "shock",
           n: 1
@@ -197,37 +198,33 @@ export const SHOCK_SAMPS_S50: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "While gynecology is on the way, her pulse rises to 128/minute and BP falls to 78/50 mmHg. She has had 1 L of crystalloid.",
+        update: "After 1 L of crystalloid her pulse is 128/minute and her BP is 82/50 mmHg. The surgeon is on the way.",
         prompt: "Which of the following is the most appropriate treatment while she waits for the operating room?",
         options: [
           "albumin 5% 500 mL IV",
           "Crystalloid 2 L IV bolus",
-          "methotrexate 50 mg/m2 IM",
           "norepinephrine infusion IV",
+          "Platelet transfusion",
           "Red blood cell transfusion"
         ],
         correct: 4,
-        explanation: "She is in hemorrhagic shock from a ruptured ectopic pregnancy, so she needs red cells and urgent surgery. Methotrexate is only for a stable patient with an unruptured tubal pregnancy, and it cannot stop active bleeding. Another 2 L of crystalloid dilutes clotting factors and carries no oxygen, and albumin also carries no oxygen. A vasopressor raises the pressure without replacing the lost volume.",
+        explanation: "She is in hemorrhagic shock from a ruptured spleen, so she needs red cells now while the surgeon prepares to control the bleeding. Another 2 L of crystalloid dilutes clotting factors and carries no oxygen, and albumin also carries no oxygen. A vasopressor raises the pressure without replacing the lost volume. Nothing in the case shows a low platelet count to justify a platelet transfusion.",
         keyFeature: {
           topic: "shock",
           n: 3
         },
-        source: "sogc-ectopic"
+        source: "atls"
       }
     ],
     sources: [
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023."
-      },
-      {
-        id: "sogc-ectopic",
-        citation: "Po L, et al. Guideline No. 414. Management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. J Obstet Gynaecol Can. 2021.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/33453378/"
-      },
-      {
         id: "atls",
         citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018."
+      },
+      {
+        id: "bartlett-mono-spleen",
+        citation: "Bartlett A, Williams R, Hilton M. Splenic rupture in infectious mononucleosis: a systematic review of published case reports. Injury. 2016.",
+        url: "https://pubmed.ncbi.nlm.nih.gov/26563483/"
       }
     ],
     ...META,
@@ -1708,21 +1705,21 @@ export const SHOCK_SAMPS_S50: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best explains why her pulse is only 84/minute despite major bleeding?",
+        prompt: "Which of the following findings is the best measure of tissue hypoperfusion in her?",
         options: [
-          "Beta-blockade from her metoprolol",
-          "Blood loss below 15% of her volume",
-          "Core temperature of 36.0°C",
-          "Pain-related vagal slowing",
-          "Warfarin effect on the sinus node"
+          "Hemoglobin of 78 g/L",
+          "INR of 4.8",
+          "Lactate of 3.6 mmol/L",
+          "Pulse of 84/minute",
+          "Temperature of 36.0°C"
         ],
-        correct: 0,
-        explanation: "Metoprolol blunts the tachycardia that usually signals blood loss, and older adults mount a smaller heart rate response even without it. Her loss is large: hemoglobin has fallen from 124 to 78 g/L, lactate is 3.6 mmol/L, she is confused, and her systolic pressure of 104 mmHg is well below her usual 150 mmHg. A temperature of 36.0°C is too mild to slow the heart. Warfarin has no effect on heart rate. Nothing in the case suggests a vagal reaction.",
+        correct: 2,
+        explanation: "A lactate of 3.6 mmol/L shows that her tissues are not getting enough oxygen, and the European bleeding guideline recommends lactate to estimate and monitor the extent of bleeding and hypoperfusion. Her confusion and a systolic pressure of 104 mmHg, well below her usual 150 mmHg, point the same way. The fall in hemoglobin from 124 to 78 g/L measures the blood she has lost, not whether her tissues are still perfused. The INR of 4.8 explains why she is bleeding. Her pulse of 84/minute is held down by metoprolol and age, so it understates her shock. A temperature of 36.0°C does not measure perfusion.",
         keyFeature: {
           topic: "shock",
           n: 1
         },
-        source: "rosen"
+        source: "euro-bleed"
       },
       {
         id: "q2",
@@ -1764,10 +1761,6 @@ export const SHOCK_SAMPS_S50: Samp[] = [
       }
     ],
     sources: [
-      {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023."
-      },
       {
         id: "nac-pcc",
         citation: "National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. Revised 2022.",
