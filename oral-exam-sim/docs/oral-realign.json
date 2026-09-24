@@ -1,6 +1,7 @@
 {
  "note": "Oral case batches remapped to the CFPC oral card (stem read aloud plus labelled block) and the four row score sheet. Tests apply the new rules to these.",
  "batches": [
+  "batch01",
   "seed"
  ]
 }

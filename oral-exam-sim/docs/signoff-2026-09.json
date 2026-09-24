@@ -530,16 +530,6 @@
   "tox-15"
  ],
  "cases": [
-  "refractory-vf-arrest",
-  "dialysis-hyperkalemia-arrest",
-  "refractory-anaphylaxis-beta-blocker",
-  "obstructive-shock-pe-lysis",
-  "post-arrest-care-after-rosc",
-  "ace-inhibitor-angioedema-airway",
-  "variceal-hemorrhage-rural",
-  "sedation-shoulder-reduction",
-  "cico-scalpel-cricothyrotomy",
-  "lateral-canthotomy-orbital-hematoma",
   "complete-heart-block-pacing",
   "pre-excited-atrial-fibrillation",
   "sympathetic-crashing-pulmonary-edema",
@@ -628,11 +618,21 @@
  ],
  "withdrawn": {
   "cases": [
+   "ace-inhibitor-angioedema-airway",
    "chest-pain-rural",
+   "cico-scalpel-cricothyrotomy",
+   "dialysis-hyperkalemia-arrest",
    "ethics-goals-of-care",
    "febrile-infant",
+   "lateral-canthotomy-orbital-hematoma",
+   "obstructive-shock-pe-lysis",
    "overdose-mixed",
-   "trauma-motorcycle"
+   "post-arrest-care-after-rosc",
+   "refractory-anaphylaxis-beta-blocker",
+   "refractory-vf-arrest",
+   "sedation-shoulder-reduction",
+   "trauma-motorcycle",
+   "variceal-hemorrhage-rural"
   ]
  },
  "withdrawnNote": "Oral cases realigned to the CFPC card and score sheet after sign-off. Arjan approved sending them back to physician review."

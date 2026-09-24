@@ -15,16 +15,37 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     { topic: "multiple-trauma", n: 4 },
   ],
   summary: "A 74 year old woman on an anticoagulant has a painful eye after a fall at home.",
-  durationMinutes: 13,
+  durationMinutes: 12,
   stem:
-    "You work in a community emergency department in Ontario. It is 22:00. CT is on site. " +
-    "Ophthalmology is on call at the regional centre, 2 hours away by road. There is a lateral canthotomy tray in the department. " +
-    "Eleanor Fraser is 74 years old and weighs 64 kg. She takes warfarin for atrial fibrillation. " +
-    "At 21:10 she missed a step on her basement stairs and struck the left side of her face on the railing. She did not lose consciousness. " +
-    "Her left eye became very painful and swollen within minutes, and she has vomited twice. " +
-    "Triage vitals: heart rate 94 and irregular, blood pressure 172/90, respiratory rate 18, SpO2 97 percent on room air, temperature 36.6, glucose 6.8 mmol/L. GCS 15. CTAS 2. " +
-    "The nurse says: 'Her left eye is bulging and rock hard. She says everything on that side is blurry.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It is 22:00. A 74 year old woman has a painful, swollen left eye after she fell on her stairs and struck her face. " +
+    "CT is on site. Ophthalmology is on call at the regional centre, 2 hours away by road.",
+  card: {
+    vitals: {
+      temperature: "36.6°C",
+      pulse: "94/minute, irregular",
+      resp: "18/minute",
+      bp: "172/90 mmHg",
+      o2sat: "97% on room air",
+      weight: "64 kg (141 lb)",
+    },
+    medications: "Warfarin, metoprolol, ramipril",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "At 21:10 she missed a step on her basement stairs and struck the left side of her face on the railing. She did not lose consciousness. " +
+        "Her left eye became very painful and swollen within minutes, and she has vomited twice. At triage her glucose was 6.8 mmol/L and GCS 15. She was triaged CTAS 2. " +
+        "The nurse says: 'Her left eye is bulging and rock hard. She says everything on that side is blurry.'",
+    },
+    {
+      id: "equipment",
+      label: "Equipment in the department",
+      result: "There is a lateral canthotomy tray in the department.",
+    },
     {
       id: "globe",
       label: "Signs of globe rupture",
@@ -103,7 +124,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
         "Proptosis, tense lids and restricted movement.",
         "Working diagnosis: orbital compartment syndrome from retrobulbar hematoma. It is a clinical diagnosis.",
       ],
-      rubric: ["oc-a1", "oc-a2", "oc-a3", "oc-m3"],
+      rubric: ["oc-a1", "oc-a2", "oc-a3", "oc-m3", "oc-h3", "oc-h4"],
       choices: [
         {
           id: "c-exam",
@@ -161,8 +182,9 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
         "Perform lateral canthotomy and cantholysis now.",
         "Ask the ophthalmologist for support by phone.",
         "Medical adjuncts such as acetazolamide, timolol drops and mannitol do not replace decompression.",
+        "The injury was at 21:10 and symptoms began within minutes, so the clock is already running.",
       ],
-      rubric: ["oc-m1", "oc-c1"],
+      rubric: ["oc-m1", "oc-c1", "oc-h1"],
       choices: [
         {
           id: "c-do-it",
@@ -294,8 +316,9 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
         "Four factor prothrombin complex concentrate now. For INR 3 to 5 the Canadian NAC dose is 2000 IU, which is 80 mL.",
         "Recheck the INR right after the PCC is in.",
         "Stroke risk from stopping anticoagulation is short term and small compared with vision loss.",
+        "Ask about the warfarin indication, the last dose and any prior stroke.",
       ],
-      rubric: ["oc-m2"],
+      rubric: ["oc-m2", "oc-h2"],
       choices: [
         {
           id: "c-pcc",
@@ -350,7 +373,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Excludes globe rupture before tonometry or procedures.",
       points: 2,
       teaching: "Tonometry or canthotomy on a ruptured globe can extrude eye contents. Check for rupture signs first.",
@@ -359,7 +382,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Diagnoses orbital compartment syndrome clinically from reduced acuity, an afferent pupillary defect, proptosis and raised intraocular pressure.",
       points: 3,
       critical: true,
@@ -369,7 +392,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Obtains CT head as well as orbits because she is anticoagulated after a fall with a facial strike.",
       points: 1,
       teaching: "Patients on warfarin were excluded from the Canadian CT Head Rule. Anticoagulated older adults with head trauma need a low threshold for CT.",
@@ -378,7 +401,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids any pressure on the eye, and gives an antiemetic and analgesia with the head of the bed raised.",
       points: 1,
       teaching: "Vomiting and pain raise orbital venous pressure. A pressure patch worsens ischemia and is contraindicated.",
@@ -387,7 +410,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs decompression in the department rather than delaying for transfer or medical therapy.",
       points: 3,
       critical: true,
@@ -397,7 +420,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Communicates the findings and time pressure to ophthalmology and asks for support.",
       points: 1,
       teaching: "Lead with acuity, pupils and the pressure number. Consultants act on objective findings.",
@@ -406,7 +429,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Obtains informed consent, and knows the emergency treatment provisions of the Health Care Consent Act if capacity is lacking.",
       points: 1,
       teaching: "In Ontario, treatment can proceed without consent in an emergency when the person lacks capacity and a delay would cause serious harm.",
@@ -415,7 +438,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Describes the procedure: local anesthetic with epinephrine, hemostat crush, lateral canthotomy, then inferior cantholysis.",
       points: 2,
       teaching: "Crushing the canthus reduces bleeding. The inferior crus is found by strumming and cut with the scissor tips pointed away from the globe.",
@@ -424,7 +447,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-r2",
       competency: "resuscitation",
-      criterion: "data",
+      criterion: "process",
       text: "Recognizes incomplete release when the pressure stays over 40 mmHg and completes the inferior cantholysis.",
       points: 3,
       critical: true,
@@ -434,7 +457,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Reverses warfarin with four factor PCC, 2000 IU for an INR of 3 to 5, and vitamin K 10 mg IV, and rechecks the INR.",
       points: 2,
       teaching: "PCC corrects the INR within minutes. Vitamin K sustains the effect. Plasma is slower and less effective. Canadian INR based dosing is 1000 IU under 3, 2000 IU for 3 to 5 and 3000 IU over 5.",
@@ -443,7 +466,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the urgency and outcome to the daughter with empathy and without defensiveness.",
       points: 1,
       teaching: "Families are reassured by a clear explanation of why a procedure could not wait and what it achieved.",
@@ -452,11 +475,47 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges transfer to ophthalmology with serial pressure and acuity checks and a plan for anticoagulation.",
       points: 2,
       teaching: "Rebleeding can raise the pressure again. Serial checks until handover catch it early.",
       source: "atls",
+    },
+    {
+      id: "oc-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the time and mechanism of the fall, and when the eye pain, swelling and blurred vision began.",
+      points: 2,
+      teaching: "Retinal ischemia can become permanent after about 90 to 120 minutes. The time of onset tells you how much time is left for decompression.",
+      source: "roberts",
+    },
+    {
+      id: "oc-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulant use, the indication, the last dose and any prior stroke.",
+      points: 2,
+      teaching: "Warfarin for atrial fibrillation means reversal is needed for an expanding orbital hematoma. The indication and stroke history guide when to restart.",
+      source: "nac-pcc",
+    },
+    {
+      id: "oc-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about loss of consciousness, headache, vomiting and confusion to screen for intracranial injury.",
+      points: 1,
+      teaching: "Two or more episodes of vomiting is a high risk feature in the Canadian CT Head Rule. Anticoagulated patients were excluded from the rule and need CT regardless.",
+      source: "cthr",
+    },
+    {
+      id: "oc-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about her vision before the fall, glasses and any previous eye surgery.",
+      points: 1,
+      teaching: "A baseline tells you how much vision has been lost. Previous eye surgery raises the risk of a hidden globe injury.",
+      source: "roberts",
     },
   ],
   sources: [
@@ -483,7 +542,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
       url: "https://www.ontario.ca/laws/statute/96h02",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -17,15 +17,38 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     { topic: "multiple-trauma", n: 1 },
   ],
   summary: "A 31 year old man with severe facial injuries and a falling level of consciousness needs airway control.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You work in a community emergency department in Ontario, 90 minutes by road from the regional trauma centre. It is 01:30. " +
-    "Anesthesia is on call from home, 30 minutes away. A respiratory therapist is in the department. " +
-    "You have video and direct laryngoscopes, bougies, second generation supraglottic airways, two suction units and a scalpel cricothyrotomy kit with a size 10 blade, a bougie and a 6.0 cuffed tube. " +
-    "Tyler Bouchard is 31 years old and weighs about 95 kg. He was struck repeatedly in the face with a baseball bat. " +
-    "Paramedic vitals: heart rate 118, blood pressure 144/88, respiratory rate 28, SpO2 89 percent on a non rebreather. GCS 8. He is in a cervical collar. CTAS 1. " +
-    "The paramedic says: 'He's got blood pouring from his mouth and his face moves when I touch it. His sats keep dropping.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It is 01:30. Paramedics bring in a 31 year old man with severe facial injuries after an assault. " +
+    "The regional trauma centre is 90 minutes by road. Anesthesia is on call from home, 30 minutes away.",
+  card: {
+    vitals: {
+      temperature: "Not recorded",
+      pulse: "118/minute",
+      resp: "28/minute",
+      bp: "144/88 mmHg",
+      o2sat: "89% on a non rebreather mask",
+      weight: "About 95 kg (209 lb)",
+    },
+    medications: "Unknown",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "Paramedic report",
+      result:
+        "He was struck repeatedly in the face with a baseball bat. GCS 8 on paramedic assessment. He is in a cervical collar. He was triaged CTAS 1. " +
+        "The paramedic says: 'He's got blood pouring from his mouth and his face moves when I touch it. His sats keep dropping.'",
+    },
+    {
+      id: "equipment",
+      label: "Airway equipment and staff",
+      result:
+        "A respiratory therapist is in the department. You have video and direct laryngoscopes, bougies, second generation supraglottic airways, two suction units " +
+        "and a scalpel cricothyrotomy kit with a size 10 blade, a bougie and a 6.0 cuffed tube.",
+    },
     {
       id: "face",
       label: "Face and mouth",
@@ -102,7 +125,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
         "Brief the team. Plan A video laryngoscopy with bougie, plan B supraglottic airway, plan C bag mask, plan D scalpel cricothyrotomy.",
         "Name the trigger for plan D out loud.",
       ],
-      rubric: ["cc-l1", "cc-r1", "cc-a1"],
+      rubric: ["cc-l1", "cc-r1", "cc-a1", "cc-h1", "cc-h3"],
       choices: [
         {
           id: "c-brief",
@@ -149,8 +172,9 @@ export const cicoScalpelCricothyrotomy: OralCase = {
         "Rocuronium 1.2 to 1.6 mg/kg, about 120 to 150 mg, or succinylcholine 1.5 mg/kg.",
         "Full dose paralysis gives the best first pass conditions.",
         "Suction running before and during laryngoscopy.",
+        "Ask about allergies, medications, last meal and alcohol before choosing drugs.",
       ],
-      rubric: ["cc-m1"],
+      rubric: ["cc-m1", "cc-h2"],
       next: "s-fail",
     },
     {
@@ -310,8 +334,9 @@ export const cicoScalpelCricothyrotomy: OralCase = {
         "Trauma team referral through CritiCall to the regional trauma centre.",
         "Tell the receiving team about the surgical airway. It will need formal revision, often to a tracheostomy.",
         "Tetanus. Antibiotics for open facial fractures per local protocol.",
+        "Confirm the mechanism, any loss of consciousness and the GCS trend to guide imaging.",
       ],
-      rubric: ["cc-d1", "cc-c1"],
+      rubric: ["cc-d1", "cc-c1", "cc-h1"],
       next: "q-debrief",
     },
     {
@@ -367,7 +392,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Briefs the team with a plan A to D and a named trigger for the surgical airway before induction.",
       points: 2,
       teaching: "A pre stated plan removes hesitation. The team knows what happens next and who does it.",
@@ -376,7 +401,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Prepares two suction units, preoxygenates sitting up with in line stabilization and avoids nasal adjuncts with a midface fracture.",
       points: 2,
       teaching: "Positioning upright helps drainage and oxygenation. Nasal devices can enter the cranial vault through a skull base fracture.",
@@ -385,7 +410,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies predictors of a difficult airway and marks the cricothyroid membrane by palpation and ultrasound before induction.",
       points: 2,
       teaching: "Blood, facial instability and limited mouth opening predict failure. Ultrasound finds the membrane more reliably than palpation.",
@@ -394,7 +419,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses full dose paralysis with a hemodynamically stable induction agent.",
       points: 1,
       teaching: "Full paralysis improves first pass success. Rocuronium 1.2 mg/kg or more gives good conditions within about 60 seconds.",
@@ -403,7 +428,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-r2",
       competency: "resuscitation",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes can't intubate, can't oxygenate after failed intubation, supraglottic airway and mask ventilation, and moves to a scalpel cricothyrotomy without further attempts.",
       points: 3,
       critical: true,
@@ -413,7 +438,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Declares the can't intubate, can't oxygenate situation out loud to the team.",
       points: 1,
       teaching: "Saying it aloud breaks fixation and gives everyone permission to move to the next step.",
@@ -422,7 +447,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Describes the scalpel, bougie, tube technique: laryngeal handshake, transverse stab, rotate blade, bougie, 6.0 cuffed tube, capnography.",
       points: 3,
       critical: true,
@@ -432,7 +457,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses a systematic DOPES approach to post airway deterioration and trusts the capnography trace.",
       points: 2,
       teaching: "A capnography waveform confirms tracheal placement. Look for pneumothorax, obstruction and equipment failure before touching the tube.",
@@ -441,7 +466,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Decompresses tension pneumothorax with finger thoracostomy at the 4th or 5th space anterior to the mid axillary line, then places a chest tube.",
       points: 3,
       critical: true,
@@ -451,7 +476,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Completes the trauma assessment and arranges transfer to the trauma centre through CritiCall with a plan to revise the surgical airway.",
       points: 2,
       teaching: "A cricothyrotomy is a temporary airway. The receiving team should plan formal revision, usually to a tracheostomy.",
@@ -460,7 +485,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives the receiving team a clear handover of the failed airway, the surgical airway and the chest tube.",
       points: 1,
       teaching: "A known difficult airway must be flagged in every handover. Include what failed and why.",
@@ -469,7 +494,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Responds to criticism from a colleague calmly with facts and moves the discussion away from the bedside.",
       points: 2,
       teaching: "Conflict at the bedside harms team function. Use facts and a formal review to settle disagreement.",
@@ -478,11 +503,38 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a team debrief and documents the airway timeline clearly.",
       points: 1,
       teaching: "Debriefing supports staff after a stressful event and finds system lessons. Documentation of times and saturations supports review.",
       source: "das-2015",
+    },
+    {
+      id: "cc-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the paramedics about the mechanism and timing: repeated blows to the face with a bat, loss of consciousness and the GCS trend on the way in.",
+      points: 2,
+      teaching: "High energy facial trauma with a low GCS raises the risk of brain and cervical spine injury. A falling GCS on the way in makes the airway time critical.",
+      source: "atls",
+    },
+    {
+      id: "cc-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes an AMPLE history from the paramedics and his friend: allergies, medications, past illness, last meal, alcohol and the events.",
+      points: 2,
+      teaching: "Alcohol can lower the GCS but must never be assumed to explain it. A full stomach and blood in the airway both raise aspiration risk at induction.",
+      source: "atls",
+    },
+    {
+      id: "cc-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the airway on the way in: bleeding volume, vomiting and the trend in oxygen saturation.",
+      points: 2,
+      teaching: "Falling saturation on a non rebreather with blood pouring from the mouth means there is little time. It argues for early preparation of the surgical airway.",
+      source: "atls",
     },
   ],
   sources: [
@@ -504,7 +556,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
       citation: "Chrimes N. The Vortex. A universal high acuity implementation tool for emergency airway management. Br J Anaesth. 2016.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

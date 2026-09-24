@@ -15,14 +15,36 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     { topic: "sob", n: 1 },
   ],
   summary: "A 62 year old woman wakes with facial swelling and a muffled voice that is getting worse.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You work in a regional emergency department in Ontario. It is 06:20. Anesthesia is on call from home, 25 minutes away. ENT is at a tertiary centre 90 minutes away. " +
-    "You have video laryngoscopes, a flexible bronchoscope with a screen, a nasopharyngoscope, high flow nasal oxygen and a surgical airway kit. " +
-    "Gloria Asante is 62 years old and weighs 84 kg. She woke at 04:30 with a swollen lower lip. Since then her tongue has become swollen and her voice is muffled. " +
-    "Triage vitals: heart rate 96, blood pressure 162/94, respiratory rate 22, SpO2 96 percent on room air, temperature 36.9. CTAS 2. " +
-    "The nurse says: 'She is sitting forward spitting into a basin. She can talk but it is hard to understand her. No hives.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It is 06:20. A 62 year old woman arrives with a swollen lip and tongue and a muffled voice. " +
+    "Anesthesia is on call from home, 25 minutes away. ENT is at a tertiary centre 90 minutes away.",
+  card: {
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "96/minute",
+      resp: "22/minute",
+      bp: "162/94 mmHg",
+      o2sat: "96% on room air",
+      weight: "84 kg (185 lb)",
+    },
+    medications: "Ramipril, amlodipine, metformin",
+    allergies: "No known allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "She woke at 04:30 with a swollen lower lip. Since then her tongue has become swollen and her voice is muffled. She was triaged CTAS 2. " +
+        "The nurse says: 'She is sitting forward spitting into a basin. She can talk but it is hard to understand her. No hives.'",
+    },
+    {
+      id: "equipment",
+      label: "Airway equipment available",
+      result: "Video laryngoscopes, a flexible bronchoscope with a screen, a nasopharyngoscope, high flow nasal oxygen and a surgical airway kit.",
+    },
     {
       id: "airway-exam",
       label: "Airway exam",
@@ -94,8 +116,9 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
         "Assess the larynx with nasopharyngoscopy.",
         "Mark the cricothyroid membrane by palpation and ultrasound. Open the surgical airway kit.",
         "Hold ramipril for good.",
+        "Ask when the swelling started and how fast it has spread.",
       ],
-      rubric: ["ae-a1", "ae-l1", "ae-r1"],
+      rubric: ["ae-a1", "ae-l1", "ae-r1", "ae-h1"],
       choices: [
         {
           id: "c-prepare",
@@ -151,8 +174,9 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
         "No hives, no itch and a normal tryptase point away from histamine.",
         "Epinephrine, antihistamines and steroids usually do not help, but IM epinephrine 0.5 mg is reasonable if anaphylaxis cannot be excluded.",
         "Hereditary angioedema is unlikely with no prior episodes or family history.",
+        "Ask about ACE inhibitor use and its duration, allergic triggers, prior episodes and family history.",
       ],
-      rubric: ["ae-a2"],
+      rubric: ["ae-a2", "ae-h2", "ae-h3"],
       next: "q-meds",
     },
     {
@@ -348,7 +372,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Recognizes a threatened airway from tongue and floor of mouth swelling, drooling and voice change.",
       points: 2,
       teaching: "Tongue, floor of mouth and laryngeal involvement predict the need for airway intervention. Lip swelling alone is lower risk.",
@@ -357,7 +381,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls anesthesia and ENT early and moves the patient to resus.",
       points: 2,
       teaching: "Help should be called while there is still time. The most experienced operator should manage an anticipated difficult airway.",
@@ -366,7 +390,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-r1",
       competency: "resuscitation",
-      criterion: "approach",
+      criterion: "physical",
       text: "Keeps the patient upright, assesses the larynx by nasopharyngoscopy, and marks the cricothyroid membrane before any intervention.",
       points: 3,
       critical: true,
@@ -376,7 +400,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies bradykinin mediated ACE inhibitor angioedema and distinguishes it from histamine mediated swelling and hereditary angioedema.",
       points: 2,
       teaching: "No urticaria, no itch and ACE inhibitor use point to bradykinin. Onset can occur years after starting the drug.",
@@ -385,7 +409,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "States that evidence for icatibant, C1 inhibitor and plasma is weak and does not let drug therapy delay airway management.",
       points: 2,
       teaching: "A randomized trial found icatibant no better than placebo for ACE inhibitor angioedema. The airway plan is the treatment.",
@@ -394,7 +418,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses awake nasal flexible bronchoscopic intubation with the patient upright and spontaneous breathing kept.",
       points: 3,
       critical: true,
@@ -404,7 +428,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses topical lidocaine within 9 mg/kg lean body weight, a nasal vasoconstrictor, minimal sedation and high flow nasal oxygen.",
       points: 2,
       teaching: "Good topical anesthesia matters more than sedation. Over sedation can cause obstruction and apnea.",
@@ -413,7 +437,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Prepares a double setup with a scalpel, bougie and 6.0 tube open and a named trigger for a surgical airway.",
       points: 3,
       critical: true,
@@ -423,7 +447,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Briefs the team on plan A and the surgical backup and assigns a second operator to the neck.",
       points: 1,
       teaching: "A shared mental model reduces hesitation. The person at the neck should know exactly when to cut.",
@@ -432,7 +456,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU and plans extubation only after swelling resolves with a cuff leak and scope check.",
       points: 1,
       teaching: "ACE inhibitor angioedema usually settles over 24 to 72 hours. Early extubation risks a harder second airway.",
@@ -441,7 +465,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Stops the ACE inhibitor permanently, records it as an allergy and advises caution with ARBs.",
       points: 1,
       teaching: "Recurrence is common if the drug is continued. ARBs carry a small risk of angioedema and should be chosen carefully.",
@@ -450,7 +474,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Responds to the daughter with empathy and an accurate explanation without blaming the prescriber.",
       points: 2,
       teaching: "Explain that the reaction is rare and unpredictable. Blame without facts damages trust in ongoing care.",
@@ -459,11 +483,38 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Reports the serious adverse drug reaction to Health Canada and informs the family physician.",
       points: 1,
       teaching: "Since December 2019, Canadian hospitals must report serious adverse drug reactions to Health Canada in writing within 30 days of first documenting them. The duty sits with the hospital, so use its reporting process.",
       source: "hc-adr",
+    },
+    {
+      id: "ae-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks when the swelling started, where it began and how fast it has spread, and learns it went from lip to tongue and voice in under two hours.",
+      points: 2,
+      teaching: "Swelling that spreads from lip to tongue with a voice change in under two hours is progressing. Progression over time is part of airway risk assessment and calls for a plan now.",
+      source: "cafg-2",
+    },
+    {
+      id: "ae-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about medications and identifies ramipril, and asks how long she has taken it.",
+      points: 2,
+      teaching: "Angioedema of the face, tongue, glottis and larynx is a known, life threatening ACE inhibitor reaction. The monograph says to stop the drug at once when it occurs.",
+      source: "ramipril-pm",
+    },
+    {
+      id: "ae-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about hives, itch, new foods or stings, previous episodes and family history of swelling.",
+      points: 2,
+      teaching: "No hives, itch or trigger points away from allergy. No prior episodes and no family history make hereditary angioedema unlikely.",
+      source: "hae-canada",
     },
   ],
   sources: [
@@ -486,15 +537,16 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     },
     {
       id: "hc-adr",
-      citation: "Health Canada. Mandatory reporting of serious adverse drug reactions and medical device incidents by hospitals. Guidance and education modules.",
-      url: "https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting/mandatory-hospital-reporting/education/module-1.html",
+      citation: "Health Canada. Mandatory reporting of serious adverse drug reactions and medical device incidents by hospitals. Guidance document. 2019.",
+      url: "https://www.canada.ca/en/health-canada/services/drugs-health-products/medeffect-canada/adverse-reaction-reporting/mandatory-hospital-reporting/drugs-devices/guidance.html",
     },
     {
       id: "ramipril-pm",
-      citation: "Ramipril. Canadian product monograph. Warnings on angioedema.",
+      citation: "Bausch Health, Canada Inc. Altace (ramipril) product monograph. Warnings and precautions, angioedema. Date of revision January 8, 2021.",
+      url: "https://pdf.hres.ca/dpd_pm/00059606.PDF",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

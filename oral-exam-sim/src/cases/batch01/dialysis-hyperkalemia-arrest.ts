@@ -15,15 +15,38 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     { topic: "ems", n: 3 },
   ],
   summary: "A 67 year old woman on hemodialysis arrives weak and short of breath after a winter storm closed the roads.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You work in a 60 bed community hospital in northwestern Ontario. The hospital has a 6 bed ICU and an in centre hemodialysis unit that runs from 07:00 to 17:00. " +
-    "Nephrology is available by phone from the regional centre, 4 hours away by road. It is 19:30 on a Wednesday. " +
-    "Doris Lachance is 67 years old and weighs 72 kg. She has diabetes and end stage kidney disease. She dialyzes Tuesday, Thursday and Saturday through a left arm fistula. " +
-    "A storm closed the highway and she missed yesterday's run. Her daughter drove her in when she became too weak to stand. " +
-    "Triage vitals: heart rate 42, blood pressure 94/56, respiratory rate 24, SpO2 90 percent on room air, temperature 36.2, capillary glucose 5.6 mmol/L. CTAS 1. " +
-    "The nurse says: 'Her rhythm looks wide and slow. I did an ECG and put her on the monitor.'",
+    "You are working in the emergency department of a community hospital in northwestern Ontario when the following patient arrives. " +
+    "At 19:30 on a Wednesday, a 67 year old woman on hemodialysis is brought in by her daughter because she is too weak to stand. " +
+    "Your dialysis unit runs 07:00 to 17:00. Nephrology is by phone, 4 hours away by road.",
+  card: {
+    vitals: {
+      temperature: "36.2°C",
+      pulse: "42/minute",
+      resp: "24/minute",
+      bp: "94/56 mmHg",
+      o2sat: "90% on room air",
+      weight: "72 kg (159 lb)",
+    },
+    medications: "Insulin glargine, insulin lispro, metoprolol, sevelamer, calcitriol, darbepoetin",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "A storm closed the highway and she missed yesterday's dialysis run. She became weaker through the day and could not stand this evening, so her daughter drove her in. " +
+        "At triage she was CTAS 1 with a capillary glucose of 5.6 mmol/L. The nurse says her rhythm looks wide and slow, and has done an ECG and put her on the monitor.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result:
+        "Diabetes. End stage kidney disease on hemodialysis Tuesday, Thursday and Saturday through a left arm fistula. " +
+        "Your hospital has a 6 bed ICU and an in centre hemodialysis unit.",
+    },
     {
       id: "ecg",
       label: "12 lead ECG",
@@ -108,8 +131,9 @@ export const dialysisHyperkalemiaArrest: OralCase = {
         "Repeat calcium if the QRS does not narrow within 5 to 10 minutes.",
         "Regular insulin 10 units IV with 25 g dextrose (50 mL of D50W). Her glucose is under 7 mmol/L, so follow with D10W at 50 mL/h for 5 hours.",
         "Salbutamol 10 to 20 mg nebulized. Call nephrology early for dialysis.",
+        "Ask when she last dialyzed and why she missed a run, her diet and salt substitute use, her medications and her insulin and intake today.",
       ],
-      rubric: ["hk-a1", "hk-r1", "hk-m1"],
+      rubric: ["hk-a1", "hk-r1", "hk-m1", "hk-h1", "hk-h2", "hk-h3", "hk-h4"],
       choices: [
         {
           id: "c-calcium",
@@ -400,7 +424,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
         "Ask the dialysis team for a dietitian review and a storm plan for missed runs.",
         "Social work for travel and weather barriers.",
       ],
-      rubric: ["hk-c3", "hk-p1"],
+      rubric: ["hk-c3", "hk-p1", "hk-h2"],
       next: "end",
     },
     {
@@ -413,7 +437,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Recognizes severe hyperkalemia from the ECG and treats before the lab result.",
       points: 2,
       teaching: "A missed dialysis run with a wide slow rhythm and peaked T waves is hyperkalemia until proven otherwise. The ECG, not the number, drives urgency.",
@@ -422,7 +446,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives IV calcium immediately, calcium chloride 10 percent 10 mL or calcium gluconate 10 percent 30 mL (both 6.8 mmol), and repeats if the ECG does not improve.",
       points: 3,
       critical: true,
@@ -432,7 +456,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives regular insulin 10 units IV with 25 g dextrose, and adds D10W at 50 mL/h for 5 hours when pre treatment glucose is under 7 mmol/L.",
       points: 2,
       teaching: "Insulin shifts potassium into cells within 15 to 30 minutes. Some centres use 5 units in dialysis patients to lower hypoglycemia risk. UKKA keeps 10 units and adds a glucose infusion when glucose starts under 7 mmol/L.",
@@ -441,7 +465,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "In hyperkalemic arrest gives repeated calcium early alongside ACLS, and sodium bicarbonate 50 mEq for arrest with acidosis.",
       points: 3,
       critical: true,
@@ -451,7 +475,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Flushes the line or uses separate access between calcium and bicarbonate.",
       points: 1,
       teaching: "Calcium and bicarbonate precipitate as calcium carbonate. A blocked line during an arrest costs time.",
@@ -460,7 +484,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Directs the team to prepare calcium, insulin, dextrose and bicarbonate at once and calls nephrology during the arrest.",
       points: 1,
       teaching: "Parallel tasks save minutes. Ask pharmacy to draw up the full hyperkalemia kit while CPR continues.",
@@ -469,7 +493,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids succinylcholine and uses rocuronium 1.2 mg/kg with a reduced induction dose and pressor ready.",
       points: 2,
       critical: true,
@@ -479,7 +503,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Adds nebulized salbutamol 10 to 20 mg and avoids fluid boluses in an overloaded dialysis patient.",
       points: 2,
       teaching: "Salbutamol adds about 0.5 to 1 mmol/L of lowering to insulin. Dialysis patients with pulmonary edema need pressors, not saline.",
@@ -488,7 +512,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Monitors glucose at 15 and 30 minutes and then at least hourly for 6 hours, and treats hypoglycemia with dextrose 25 g then D10W.",
       points: 2,
       teaching: "Insulin clearance is slow in kidney failure. Hypoglycemia after insulin is common and often occurs 1 to 3 hours later.",
@@ -497,7 +521,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Anticipates rebound hyperkalemia and repeats the ECG and potassium within about an hour, then again at 2 to 4 hours.",
       points: 2,
       teaching: "Shifting agents last 2 to 4 hours. In an anuric patient the potassium will come back.",
@@ -506,7 +530,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Escalates clearly to nephrology, stating the arrest and the rebound, and asks for dialysis tonight.",
       points: 2,
       teaching: "Lead with the facts that change risk. A patient who arrested from potassium does not wait until morning.",
@@ -515,7 +539,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Secures definitive potassium removal by dialysis or CRRT, locally or by transfer through CritiCall Ontario.",
       points: 3,
       critical: true,
@@ -525,7 +549,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges a critical care transport with calcium, insulin, dextrose, pads and glucose monitoring.",
       points: 1,
       teaching: "Rebound and hypoglycemia can both happen in the air. The crew needs drugs and a plan for each.",
@@ -534,7 +558,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover with times, doses, arrest duration, airway details and the latest potassium and glucose.",
       points: 1,
       teaching: "A clear handover prevents repeated or missed doses. Include what worked, not only what was given.",
@@ -543,7 +567,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the cause to the daughter without blame and names salt substitutes as a potassium source.",
       points: 1,
       teaching: "Most salt substitutes are potassium chloride. Families need simple, specific advice, not guilt.",
@@ -552,11 +576,47 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Identifies the system barrier of weather and distance and arranges dialysis team and social work follow up.",
       points: 1,
       teaching: "Rural dialysis patients need a plan for missed runs. Naming the barrier helps the unit fix it.",
       source: "kdigo",
+    },
+    {
+      id: "hk-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks when she last dialyzed and why she missed a run, and learns that her last run was Saturday and Tuesday was cancelled.",
+      points: 2,
+      teaching: "A missed run is the most common cause of severe hyperkalemia in dialysis patients. Four days since the last run is enough for a dangerous potassium.",
+      source: "kdigo",
+    },
+    {
+      id: "hk-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about potassium intake, including salt substitutes, soups and fruit.",
+      points: 2,
+      teaching: "Salt substitutes are mostly potassium chloride. Tomato and potato bases are also rich in potassium.",
+      source: "kdigo",
+    },
+    {
+      id: "hk-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Reviews her medications for drugs that raise potassium or slow the heart, and notes metoprolol and no home potassium binder.",
+      points: 1,
+      teaching: "Beta blockers blunt the shift of potassium into cells and add to bradycardia. ACE inhibitors, ARBs, spironolactone and NSAIDs also raise potassium.",
+      source: "kdigo",
+    },
+    {
+      id: "hk-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about her diabetes, insulin doses and intake today before giving insulin.",
+      points: 1,
+      teaching: "Insulin clears slowly in kidney failure and intake is often poor when unwell. A low pre treatment glucose predicts hypoglycemia after insulin.",
+      source: "ukka",
     },
   ],
   sources: [
@@ -576,10 +636,11 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     },
     {
       id: "sux-pm",
-      citation: "Succinylcholine chloride injection. Canadian product monograph. Warnings on hyperkalemia.",
+      citation: "Pfizer Canada ULC. Quelicin (succinylcholine chloride injection USP) prescribing information. Warnings on hyperkalemia. Date of revision February 26, 2024.",
+      url: "https://pdf.hres.ca/dpd_pm/00074795.PDF",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

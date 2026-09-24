@@ -16,15 +16,37 @@ export const sedationShoulderReduction: OralCase = {
     { topic: "msk", n: 8 },
   ],
   summary: "A 46 year old man with a painful shoulder after a fall needs a procedure in a busy department.",
-  durationMinutes: 13,
+  durationMinutes: 12,
   stem:
-    "You work in a busy community emergency department in Ontario. Every monitor has waveform capnography. A respiratory therapist is available. " +
-    "It is 14:20 on a Saturday. Anand Mehta is 46 years old. He weighs 118 kg and is 178 cm tall. " +
-    "He slipped on the ice at his curling club an hour ago and landed on his outstretched right arm. He has severe right shoulder pain. " +
-    "He had a similar injury at age 22 that was reduced under sedation. He has obstructive sleep apnea and uses CPAP at night. He ate a large lunch at 13:00. " +
-    "Triage vitals: heart rate 98, blood pressure 152/94, respiratory rate 18, SpO2 95 percent on room air, temperature 36.7. Pain 9 out of 10. CTAS 3. " +
-    "The nurse says: 'He is holding his arm out from his side and won't let anyone touch it. He hasn't had anything for pain.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It is 14:20 on a Saturday. A 46 year old man has severe right shoulder pain after he slipped on the ice an hour ago. " +
+    "Every monitor has waveform capnography. A respiratory therapist is available.",
+  card: {
+    vitals: {
+      temperature: "36.7°C",
+      pulse: "98/minute",
+      resp: "18/minute",
+      bp: "152/94 mmHg",
+      o2sat: "95% on room air",
+      weight: "118 kg (260 lb)",
+    },
+    medications: "Amlodipine",
+    allergies: "None",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "He slipped on the ice at his curling club an hour ago and landed on his outstretched right arm. He has severe right shoulder pain, 9 out of 10. " +
+        "He had a similar injury at age 22 that was reduced under sedation. He was triaged CTAS 3. " +
+        "The nurse says: 'He is holding his arm out from his side and won't let anyone touch it. He hasn't had anything for pain.'",
+    },
+    {
+      id: "intake",
+      label: "Last oral intake",
+      result: "He ate a large lunch at 13:00.",
+    },
     {
       id: "shoulder",
       label: "Shoulder exam",
@@ -58,7 +80,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "weights",
       label: "Dosing weights",
-      result: "Actual body weight 118 kg. Ideal body weight about 73 kg. Adjusted body weight about 91 kg.",
+      result: "Height 178 cm. Actual body weight 118 kg. Ideal body weight about 73 kg. Adjusted body weight about 91 kg.",
     },
     {
       id: "post-xray",
@@ -98,8 +120,9 @@ export const sedationShoulderReduction: OralCase = {
         "Consider an intra articular lidocaine injection.",
         "Try a technique that needs no sedation first, such as external rotation, Cunningham or FARES.",
         "Sedation is the backup if those fail.",
+        "Ask how he fell, when, and whether this shoulder has dislocated before.",
       ],
-      rubric: ["sd-a1", "sd-m1"],
+      rubric: ["sd-a1", "sd-m1", "sd-h1"],
       choices: [
         {
           id: "c-no-sed",
@@ -158,7 +181,7 @@ export const sedationShoulderReduction: OralCase = {
         "Monitor, capnography, oxygen, suction, bag mask with PEEP valve, airway adjuncts and a supraglottic airway at the bedside.",
         "Preoxygenate. Consider nasal cannula oxygen during the procedure.",
       ],
-      rubric: ["sd-a2", "sd-p1", "sd-l1"],
+      rubric: ["sd-a2", "sd-p1", "sd-l1", "sd-h2", "sd-h3"],
       choices: [
         {
           id: "c-prepared",
@@ -331,8 +354,9 @@ export const sedationShoulderReduction: OralCase = {
         "Discharge only when back to baseline mental status and vitals.",
         "Longer observation is reasonable given sleep apnea and the apnea event. Use CPAP tonight.",
         "Written instructions and return precautions.",
+        "Ask early how he got here and who can take him home.",
       ],
-      rubric: ["sd-d1"],
+      rubric: ["sd-d1", "sd-h4"],
       choices: [
         {
           id: "c-no-drive",
@@ -394,7 +418,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Documents axillary nerve sensation and distal neurovascular status before any reduction attempt.",
       points: 2,
       teaching: "Axillary nerve injury is common with anterior dislocation. A pre reduction exam shows whether a deficit was caused by the injury or the reduction.",
@@ -403,7 +427,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives early analgesia and tries a technique without sedation, such as external rotation, Cunningham or FARES.",
       points: 2,
       teaching: "Many anterior dislocations reduce without sedation. This avoids most sedation risk in a patient with sleep apnea.",
@@ -412,7 +436,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies sedation risk factors: sleep apnea, obesity, Mallampati 3 and a beard.",
       points: 2,
       teaching: "These predict airway obstruction and difficult mask ventilation. Plan the rescue before giving the drug.",
@@ -421,7 +445,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Obtains informed consent and does not delay sedation for fasting time alone.",
       points: 1,
       teaching: "ACEP advises that emergency sedation should not be delayed based on fasting time. Consent should cover the airway risks and the alternatives.",
@@ -430,7 +454,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Assigns a dedicated clinician to monitor, with capnography, oxygen, suction and rescue airway equipment at the bedside.",
       points: 3,
       critical: true,
@@ -440,7 +464,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Doses propofol on lean or adjusted weight and titrates small boluses, or uses a ketamine and propofol combination.",
       points: 2,
       teaching: "Propofol dosed on total weight in obesity causes overdose. Titration reduces apnea and hypotension.",
@@ -449,7 +473,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Responds to apnea at once with a stop, jaw thrust, adjuncts and bag mask ventilation, and does not wait for desaturation or rely on naloxone.",
       points: 3,
       critical: true,
@@ -459,7 +483,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Repeats the neurovascular exam and obtains a post reduction X ray.",
       points: 1,
       teaching: "Confirm reduction and rule out a fracture caused by the manoeuvre. Document nerve function again.",
@@ -468,7 +492,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Provides a sling and arranges orthopedic or sports medicine follow up for a recurrent dislocation over age 40.",
       points: 1,
       teaching: "Rotator cuff tears are more common after dislocation over 40. Recurrence may need surgical assessment.",
@@ -477,7 +501,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Discharges only when at baseline, with a responsible adult, no driving until the next day, and CPAP tonight.",
       points: 3,
       critical: true,
@@ -487,7 +511,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Tells the patient about the apnea event, what was done and what it means for future sedation.",
       points: 2,
       teaching: "Patients should hear about events during their care. This one matters for future anesthesia.",
@@ -496,11 +520,47 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents drugs, doses, the event and the response, and reports it through the hospital safety system.",
       points: 1,
       teaching: "Reporting sedation events improves systems. Clear records protect the patient and the team.",
       source: "cmpa",
+    },
+    {
+      id: "sd-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the mechanism and time of injury and any previous dislocation of that shoulder.",
+      points: 2,
+      teaching: "A fall on the outstretched arm with a prior dislocation fits a recurrent anterior dislocation. Recurrence shapes follow up and future instability risk.",
+      source: "roberts",
+    },
+    {
+      id: "sd-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about sleep apnea and CPAP use, other medical history, medications, allergies and any past problems with sedation.",
+      points: 2,
+      teaching: "Sleep apnea and obesity raise the risk of airway obstruction and apnea during sedation. An uneventful sedation at age 22 is reassuring but does not remove this risk.",
+      source: "green-2019",
+    },
+    {
+      id: "sd-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the time and size of his last meal and weighs it with his other risk factors.",
+      points: 2,
+      teaching: "Fasting time alone should not delay emergency sedation. Green 2019 advises weighing a recent large meal with other risk factors to choose the timing and depth of sedation.",
+      source: "green-2019",
+    },
+    {
+      id: "sd-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks how he got to the club and who can take him home, before choosing sedation.",
+      points: 1,
+      teaching: "He drove himself and his wife is at work until 18:00. Planning the ride home early prevents an unsafe discharge after sedation.",
+      source: "caep-psa",
     },
   ],
   sources: [
@@ -522,11 +582,11 @@ export const sedationShoulderReduction: OralCase = {
     },
     {
       id: "cmpa",
-      citation: "Canadian Medical Protective Association. Disclosing harm from healthcare delivery. Open and honest communication with patients.",
+      citation: "Canadian Medical Protective Association. Disclosing harm from healthcare delivery. Open and honest communication with patients. Version 3. 2017.",
       url: "https://www.cmpa-acpm.ca/en/advice-publications/handbooks/disclosing-harm-from-healthcare-delivery-open-and-honest-communication-with-patients",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

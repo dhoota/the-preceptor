@@ -15,15 +15,32 @@ export const refractoryVfArrest: OralCase = {
     { topic: "shock", n: 7 },
   ],
   summary: "A 51 year old man collapses outside the emergency department and arrives in resus with CPR in progress.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the attending physician in a tertiary emergency department in southern Ontario. " +
-    "Your hospital has a 24 hour cath lab and cardiac surgery. There is no ECPR program. " +
-    "Marc Tremblay is 51 years old and about 90 kg. He collapsed at 14:05 in the ambulance bay after driving his father to the department. " +
-    "A security guard started CPR within a minute. The triage nurse applied an AED, which delivered two shocks. " +
-    "He reaches resus at 14:09 with compressions ongoing and no pulse. " +
-    "The charge nurse says: 'Pads are on from the AED. The monitor shows VF. Respiratory therapy and pharmacy are on the way.'",
+    "You are working in the emergency department of a tertiary care centre when the following patient arrives. " +
+    "A 51 year old man collapsed in your ambulance bay and reaches resus with CPR in progress after two AED shocks. " +
+    "Your centre has a 24 hour cath lab and cardiac surgery but no ECPR program.",
+  card: {
+    vitals: {
+      temperature: "Not yet measured",
+      pulse: "No pulse. Monitor shows ventricular fibrillation",
+      resp: "Apneic. Bag valve mask ventilation",
+      bp: "Not obtainable. CPR in progress",
+      o2sat: "No reliable reading during CPR",
+      weight: "About 90 kg (198 lb)",
+    },
+    medications: "Blood pressure and cholesterol pills, stopped last year",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "prehospital",
+      label: "Collapse and care before resus",
+      result:
+        "He collapsed at 14:05 in the ambulance bay after driving his father to the department. The collapse was witnessed. " +
+        "A security guard started CPR within a minute. The triage nurse applied an AED, which delivered two shocks. " +
+        "He reached resus at 14:09 with compressions ongoing and no pulse. The charge nurse says the pads are on from the AED, and respiratory therapy and pharmacy are on the way.",
+    },
     {
       id: "rhythm",
       label: "Monitor rhythm",
@@ -108,8 +125,9 @@ export const refractoryVfArrest: OralCase = {
         "Resume compressions right after the shock without a pulse check.",
         "Bag valve mask with an airway adjunct at 10 breaths per minute. Do not stop CPR to intubate.",
         "Waveform capnography to track CPR quality.",
+        "Ask the triage nurse for the collapse time, bystander CPR and the AED shocks so far.",
       ],
-      rubric: ["vf-l1", "vf-r1", "vf-r2", "vf-r3", "vf-a3"],
+      rubric: ["vf-l1", "vf-r1", "vf-r2", "vf-r3", "vf-a3", "vf-h1"],
       choices: [
         {
           id: "c-lead",
@@ -289,8 +307,9 @@ export const refractoryVfArrest: OralCase = {
         "Beta blockers such as esmolol are of uncertain benefit in refractory VF. They must never delay shocks.",
         "Magnesium 2 g IV only for torsades or known low magnesium.",
         "ECPR to the cath lab if a program exists. It does not exist here.",
+        "Ask his father about chest pain before the collapse, risk factors, medications, drug use and family history.",
       ],
-      rubric: ["vf-a2", "vf-a4", "vf-m3", "vf-d2"],
+      rubric: ["vf-a2", "vf-a4", "vf-m3", "vf-d2", "vf-h2", "vf-h3", "vf-h4"],
       next: "s-rosc",
     },
     {
@@ -453,7 +472,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Takes the leader role, assigns compressors, airway, defibrillator, drugs and a recorder, and uses closed loop communication.",
       points: 2,
       teaching: "A hands off leader keeps track of shocks, drug timing and causes. Named roles prevent gaps and duplicated tasks.",
@@ -462,7 +481,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Defibrillates immediately at 200 J or the device maximum without waiting for access, drugs or an airway.",
       points: 3,
       critical: true,
@@ -472,7 +491,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Maintains high quality CPR at 100 to 120 per minute and 5 to 6 cm depth, charges during compressions and keeps pauses under 10 seconds.",
       points: 2,
       teaching: "Coronary perfusion falls within seconds of stopping compressions. Short pre shock pauses raise the chance of a successful shock.",
@@ -481,7 +500,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses bag valve mask or supraglottic ventilation at 10 breaths per minute and does not interrupt CPR to intubate.",
       points: 1,
       teaching: "An advanced airway has not been shown to improve survival in early VF. It should never cost compression time.",
@@ -490,7 +509,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses waveform capnography to judge CPR quality and detect ROSC.",
       points: 1,
       teaching: "An end tidal CO2 below 10 mmHg suggests poor CPR. A sudden rise, often above 35 to 40 mmHg, suggests ROSC.",
@@ -499,7 +518,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives epinephrine 1 mg IV or IO after the second shock and then every 3 to 5 minutes.",
       points: 2,
       teaching: "Epinephrine improves ROSC in shockable arrest. More frequent dosing adds myocardial oxygen demand without proven benefit.",
@@ -508,7 +527,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives amiodarone 300 mg IV or IO after the third shock then 150 mg, or lidocaine 1 to 1.5 mg/kg then 0.5 to 0.75 mg/kg.",
       points: 2,
       teaching: "In the ALPS trial both drugs improved survival to admission in shock refractory VF. Neither clearly improved neurologic survival.",
@@ -517,7 +536,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Changes defibrillation strategy after three failed shocks with a vector change to anterior posterior pads, then double sequential defibrillation.",
       points: 3,
       critical: true,
@@ -527,7 +546,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Checks pad position, skin contact and defibrillator function when shocks fail.",
       points: 1,
       teaching: "A high apical pad sends current away from the ventricle. Correct placement is a cheap fix before any drug.",
@@ -536,7 +555,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies acute coronary occlusion as the likely cause and screens the Hs and Ts with the gas and history.",
       points: 2,
       teaching: "Coronary disease is found in most adults with refractory VF, and many have an acute occlusion. Reversible metabolic causes are ruled out quickly with a blood gas.",
@@ -545,7 +564,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-a4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Limits POCUS to the 10 second pulse check window.",
       points: 1,
       teaching: "Ultrasound during arrest often lengthens pauses. Record a clip and review it while compressions continue.",
@@ -554,7 +573,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Knows that beta blockers such as esmolol are of uncertain benefit in refractory VF, that magnesium is only for torsades or low magnesium, and does not let either delay shocks.",
       points: 1,
       teaching: "AHA 2025 calls beta blockers of uncertain benefit in refractory VF. The data are small observational studies. Magnesium helps only in torsades or low magnesium.",
@@ -563,7 +582,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Considers ECPR candidacy and knows it needs an established program with early activation.",
       points: 1,
       teaching: "ECPR for refractory VF improved survival in the ARREST trial. It only works when the team is activated early, often by 10 to 20 minutes of arrest.",
@@ -572,7 +591,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-r5",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "After ROSC titrates oxygen to SpO2 of about 94 to 98 percent and ventilates to PaCO2 35 to 45 mmHg.",
       points: 2,
       teaching: "Hypoxia, hyperoxia and hypocapnia can all worsen brain injury after arrest. AHA 2025 accepts SpO2 90 to 98 percent and ERC uses 94 to 98 percent. Titrate down from FiO2 1.0 once saturation is reliable.",
@@ -581,7 +600,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-r6",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats post ROSC hypotension with norepinephrine to a MAP of at least 65 mmHg and avoids 1 mg epinephrine boluses.",
       points: 2,
       teaching: "The arrest dose of epinephrine in a patient with a pulse can trigger VF. Use an infusion, or push dose epinephrine of 10 to 20 mcg as a bridge.",
@@ -590,7 +609,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Activates the cath lab emergently for STEMI after ROSC and keeps the plan despite recurrent VF.",
       points: 3,
       critical: true,
@@ -600,7 +619,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Shocks recurrent VF immediately and adds a further antiarrhythmic dose, such as amiodarone 150 mg or lidocaine about 100 mg.",
       points: 1,
       teaching: "Recurrent VF after ROSC is common in ischemia. Keep pads on and drugs drawn up for transport.",
@@ -609,7 +628,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Advocates for emergent angiography using favourable arrest features and stays respectful with the consultant.",
       points: 2,
       teaching: "Witnessed arrest, early CPR, a shockable rhythm and good end tidal CO2 predict a good outcome. Disagree with data, not with the person.",
@@ -618,7 +637,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Does not stop resuscitation or withhold treatment on the basis of shock count or early prognostic guesses.",
       points: 2,
       critical: true,
@@ -628,7 +647,7 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks with his wife in a private space in plain words and is honest about uncertain brain recovery.",
       points: 1,
       teaching: "Say the words heart stopped and heart attack. Avoid false hope and avoid early bad news that is not yet known.",
@@ -637,10 +656,46 @@ export const refractoryVfArrest: OralCase = {
     {
       id: "vf-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Runs a short team debrief and checks on the bystander and staff.",
       points: 1,
       teaching: "A brief hot debrief captures lessons and supports the team. Bystanders who did CPR may need follow up too.",
+      source: "aha-2025",
+    },
+    {
+      id: "vf-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the triage nurse or security guard for the collapse time, whether it was witnessed, when bystander CPR started and how many AED shocks were given.",
+      points: 2,
+      teaching: "A witnessed collapse, bystander CPR within a minute and an initial shockable rhythm are the strongest predictors of survival. The timeline also tells you when epinephrine and the antiarrhythmic are due.",
+      source: "aha-2025",
+    },
+    {
+      id: "vf-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks his father about symptoms before the collapse, such as exertional chest pain, and hears two days of chest heaviness on the stairs.",
+      points: 2,
+      teaching: "Prodromal exertional chest pain points to acute coronary occlusion as the cause of VF. It moves angiography up the list of priorities.",
+      source: "aha-2025",
+    },
+    {
+      id: "vf-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past heart disease, risk factors, medications and adherence, allergies and family history of sudden death.",
+      points: 2,
+      teaching: "Untreated hypertension, high cholesterol and smoking make coronary disease likely. A family history of sudden death would raise inherited arrhythmia instead.",
+      source: "aha-2025",
+    },
+    {
+      id: "vf-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about drug and alcohol use today, including stimulants.",
+      points: 1,
+      teaching: "Stimulants such as cocaine can cause coronary spasm and VF. A negative answer keeps the focus on atherosclerotic occlusion.",
       source: "aha-2025",
     },
   ],
@@ -667,7 +722,7 @@ export const refractoryVfArrest: OralCase = {
       citation: "Yannopoulos D, Bartos J, Raveendran G, et al. Advanced reperfusion strategies for patients with out of hospital cardiac arrest and refractory ventricular fibrillation (ARREST). Lancet. 2020.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

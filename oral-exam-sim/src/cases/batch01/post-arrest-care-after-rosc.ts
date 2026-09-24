@@ -16,15 +16,32 @@ export const postArrestCareAfterRosc: OralCase = {
     { topic: "shock", n: 7 },
   ],
   summary: "A 68 year old woman arrives with a pulse after paramedics resuscitated her at home.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You work in a large community emergency department in Ontario with a 24 hour cath lab, CT and a 20 bed ICU. The ICU is full and she may board in your department for several hours. " +
-    "Margaret Sinclair is 68 years old and weighs about 70 kg. She collapsed in her kitchen at 06:50. Her husband started CPR with help from the 911 dispatcher. " +
-    "Paramedics arrived 8 minutes later and found VF. She received three shocks, two doses of epinephrine and amiodarone 300 mg. A pulse returned 22 minutes after the collapse. " +
-    "A supraglottic airway was placed. She arrives at 07:40. " +
-    "Vitals: heart rate 104, blood pressure 82/48, SpO2 100 percent on FiO2 1.0 by bag at about 28 breaths per minute, end tidal CO2 26 mmHg, temperature 35.9, glucose 14.8 mmol/L. GCS 3 with no sedation. " +
-    "The paramedic says: 'She had a pulse the whole ride. We've been bagging hard to keep her sats up.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "At 07:40 paramedics bring in a 68 year old woman who has a pulse after a cardiac arrest at home. " +
+    "You have a 24 hour cath lab, CT and an ICU. The ICU is full and she may board with you for hours.",
+  card: {
+    vitals: {
+      temperature: "35.9°C",
+      pulse: "104/minute",
+      resp: "Bagged at about 28/minute through a supraglottic airway",
+      bp: "82/48 mmHg",
+      o2sat: "100% on FiO2 1.0 by bag",
+      weight: "About 70 kg (154 lb)",
+    },
+    medications: "Unknown",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "arrest",
+      label: "Arrest details from the paramedics",
+      result:
+        "She collapsed in her kitchen at 06:50. Her husband started CPR with help from the 911 dispatcher. Paramedics arrived 8 minutes later and found VF. " +
+        "She received three shocks, two doses of epinephrine and amiodarone 300 mg. A pulse returned 22 minutes after the collapse. A supraglottic airway was placed. " +
+        "On arrival her end tidal CO2 is 26 mmHg, glucose 14.8 mmol/L and GCS 3 with no sedation given. The paramedic says: 'She had a pulse the whole ride. We've been bagging hard to keep her sats up.'",
+    },
     {
       id: "exam",
       label: "Physical exam",
@@ -105,8 +122,9 @@ export const postArrestCareAfterRosc: OralCase = {
         "Tidal volume 6 to 8 mL/kg of ideal body weight. PEEP 5 to 8.",
         "SpO2 94 to 98 percent. Wean FiO2 from 1.0.",
         "PaCO2 35 to 45 mmHg.",
+        "Get the arrest timeline from the paramedics and confirm whether any sedation was given.",
       ],
-      rubric: ["pr-r1", "pr-r2"],
+      rubric: ["pr-r1", "pr-r2", "pr-h1", "pr-h3"],
       choices: [
         {
           id: "c-controlled",
@@ -213,8 +231,9 @@ export const postArrestCareAfterRosc: OralCase = {
         "Get CT head and CT chest to look for other causes such as bleeding, PE or dissection.",
         "Re evaluate for the lab if the ECG evolves, she has recurrent VF or shock worsens despite support.",
         "Cardiology to follow in the ICU.",
+        "Ask her husband about symptoms before the arrest and her cardiac risk factors.",
       ],
-      rubric: ["pr-a1", "pr-a2", "pr-c1"],
+      rubric: ["pr-a1", "pr-a2", "pr-c1", "pr-h2"],
       choices: [
         {
           id: "c-delay-cath",
@@ -404,7 +423,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Sets SpO2 of about 94 to 98 percent and PaCO2 35 to 45 mmHg and weans FiO2 from 1.0.",
       points: 3,
       critical: true,
@@ -414,7 +433,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Secures the airway with a reduced dose induction agent and pressor ready, and uses lung protective ventilation.",
       points: 2,
       teaching: "Post arrest patients are sensitive to sedatives. Tidal volume of 6 to 8 mL/kg ideal body weight protects injured lungs.",
@@ -423,7 +442,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Targets a MAP of at least 65 mmHg with norepinephrine, modest fluid and an arterial line.",
       points: 3,
       critical: true,
@@ -433,7 +452,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces potassium and magnesium, and targets glucose of about 7.8 to 10 mmol/L while avoiding hypoglycemia.",
       points: 1,
       teaching: "Low potassium and magnesium with a long QTc raise the risk of recurrent VF. Tight glucose control adds risk without benefit.",
@@ -442,7 +461,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Reads the ECG as no ST elevation and does not send her for immediate angiography by reflex.",
       points: 2,
       teaching: "Without ST elevation or refractory ischemic instability, immediate angiography did not improve survival in COACT or TOMAHAWK.",
@@ -451,7 +470,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Obtains CT head and CT chest to look for non cardiac causes and injuries.",
       points: 1,
       teaching: "Bleeds, PE, dissection and CPR injuries all change management. CT is reasonable before or instead of early angiography when the cause is unclear.",
@@ -460,7 +479,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Discusses angiography timing with cardiology and agrees on triggers to reconsider.",
       points: 1,
       teaching: "Name the triggers: evolving ST elevation, recurrent VF or shock that is not explained by other causes.",
@@ -469,7 +488,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Actively prevents fever, keeping temperature at or below 37.5 degrees for at least 36 hours and ideally up to 72 hours, and treats shivering.",
       points: 3,
       critical: true,
@@ -479,7 +498,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Considers aspiration pneumonia as a cause of fever and sends cultures before antibiotics.",
       points: 1,
       teaching: "Early pneumonia is common after arrest. Fever should be investigated even when temperature control is running.",
@@ -488,7 +507,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats clinical seizures with a benzodiazepine or propofol plus levetiracetam or valproate, avoids prophylaxis, and arranges EEG.",
       points: 2,
       teaching: "Seizures after arrest increase brain oxygen demand. EEG helps separate seizure from myoclonus.",
@@ -497,7 +516,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Avoids early prognostication and explains that multimodal assessment happens after at least 72 hours.",
       points: 3,
       critical: true,
@@ -507,7 +526,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks with the husband honestly, shares uncertainty and encouraging features, and uses plain language.",
       points: 2,
       teaching: "Families cope better with honest uncertainty and a clear timeline than with false hope or false doom.",
@@ -516,7 +535,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-p2",
       competency: "professionalism",
-      criterion: "approach",
+      criterion: "history",
       text: "Confirms the husband as substitute decision maker and asks about her previously expressed wishes.",
       points: 1,
       teaching: "Under the Ontario Health Care Consent Act the spouse is high on the hierarchy. Decisions should follow her known wishes and values.",
@@ -525,7 +544,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Writes clear targets and a care plan for boarding and arranges ICU outreach and handover.",
       points: 2,
       teaching: "Boarding critically ill patients is a known risk. Written targets make care consistent across nurses and shifts.",
@@ -534,17 +553,45 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Coordinates ICU, cardiology and nursing and assigns one to one nursing while she boards.",
       points: 1,
       teaching: "When the ICU is full, the emergency physician still leads the plan. Clear ownership prevents drift in targets.",
       source: "aha-2025",
     },
+    {
+      id: "pr-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the paramedics for the arrest details: witnessed collapse, bystander CPR, time to paramedic arrival, first rhythm, shocks, drugs and time to ROSC.",
+      points: 2,
+      teaching: "A witnessed VF arrest with bystander CPR and ROSC at 22 minutes shapes both prognosis and the cath lab discussion. Get the timeline before the paramedics leave.",
+      source: "erc-2025",
+    },
+    {
+      id: "pr-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks her husband about symptoms before the arrest and her cardiac risk factors, and learns of a month of breathlessness walking the dog.",
+      points: 2,
+      teaching: "Exertional breathlessness in a woman with diabetes and hypertension may be an anginal equivalent. It raises the chance of coronary disease even without ST elevation.",
+      source: "erc-2025",
+    },
+    {
+      id: "pr-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks whether any sedation or other drugs were given since ROSC before judging her GCS of 3.",
+      points: 1,
+      teaching: "Sedatives, residual drugs and low temperature confound the neurologic exam. Record what was given so the early exam is not over read.",
+      source: "erc-2025",
+    },
   ],
   sources: [
     {
       id: "erc-2025",
-      citation: "European Resuscitation Council and European Society of Intensive Care Medicine. Guidelines 2025. Post resuscitation care. Resuscitation. 2025.",
+      citation: "Nolan JP, Sandroni C, Cariou A, et al. European Resuscitation Council and European Society of Intensive Care Medicine Guidelines 2025. Post resuscitation care. Resuscitation. 2025.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/41117575/",
     },
     {
       id: "ttm2",
@@ -569,7 +616,7 @@ export const postArrestCareAfterRosc: OralCase = {
       url: "https://www.ontario.ca/laws/statute/96h02",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

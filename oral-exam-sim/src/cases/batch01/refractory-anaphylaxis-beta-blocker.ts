@@ -17,14 +17,38 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     { topic: "airway", n: 2 },
   ],
   summary: "A 64 year old man with heart disease arrives hypotensive and wheezing after an incident in his backyard.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You work in a 300 bed community hospital in Ontario with an ICU and in house anesthesia. " +
-    "Walter Kowalczyk is 64 years old and weighs 88 kg. At 10:15 he was clearing out his shed and was stung three times on the neck and forearm. " +
-    "Within ten minutes he had hives, throat tightness and felt faint. Paramedics gave epinephrine 0.5 mg IM at 10:32 and again at 10:41, salbutamol 5 mg nebulized and 1 L of normal saline. " +
-    "He arrives at 10:55. Triage vitals: heart rate 58, blood pressure 74/40, respiratory rate 26, SpO2 92 percent on a non rebreather, temperature 36.8, glucose 8.1 mmol/L. CTAS 1. " +
-    "The paramedic says: 'He perked up a bit after the second epi but his pressure never came up. His heart rate has stayed in the fifties the whole time.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 64 year old man arrives by ambulance at 10:55, faint and wheezing with hives, after he was stung while clearing out his shed. " +
+    "Your hospital has an ICU and in house anesthesia.",
+  card: {
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "58/minute",
+      resp: "26/minute",
+      bp: "74/40 mmHg",
+      o2sat: "92% on a non rebreather mask",
+      weight: "88 kg (194 lb)",
+    },
+    medications: "Metoprolol, ramipril, ASA, atorvastatin",
+    allergies: "No known allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "At 10:15 he was clearing out his shed and was stung three times on the neck and forearm. Within ten minutes he had hives, throat tightness and felt faint. " +
+        "At triage he was CTAS 1 with a glucose of 8.1 mmol/L.",
+    },
+    {
+      id: "prehospital",
+      label: "Paramedic treatment and response",
+      result:
+        "Paramedics gave epinephrine 0.5 mg IM at 10:32 and again at 10:41, salbutamol 5 mg nebulized and 1 L of normal saline. " +
+        "The paramedic says: 'He perked up a bit after the second epi but his pressure never came up. His heart rate has stayed in the fifties the whole time.'",
+    },
     {
       id: "meds",
       label: "Medications and history",
@@ -99,8 +123,9 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
         "Second large bore IV. Rapid crystalloid 20 mL/kg, about 1 to 2 L.",
         "Prepare an epinephrine infusion. Repeat salbutamol.",
         "Call for help early. ICU and anesthesia.",
+        "Ask when and how often he was stung, what paramedics gave and when, and about past sting reactions.",
       ],
-      rubric: ["an-a1", "an-r1", "an-r2", "an-l1"],
+      rubric: ["an-a1", "an-r1", "an-r2", "an-l1", "an-h1", "an-h2", "an-h3"],
       choices: [
         {
           id: "c-im",
@@ -356,7 +381,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes anaphylaxis with shock and bronchospasm that is refractory to two IM doses of epinephrine.",
       points: 2,
       teaching: "Refractory anaphylaxis means ongoing shock or respiratory compromise after two appropriate IM doses. It needs an escalation plan, not more watching.",
@@ -365,7 +390,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives a further IM epinephrine 0.5 mg (0.01 mg/kg) into the anterolateral thigh without delay.",
       points: 3,
       critical: true,
@@ -375,7 +400,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Positions the patient flat with legs raised and gives rapid crystalloid of 20 mL/kg through two large bore lines.",
       points: 2,
       teaching: "Sitting or standing a shocked anaphylaxis patient can cause empty ventricle arrest. Capillary leak can shift a large part of the circulating volume.",
@@ -384,7 +409,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls ICU and anesthesia early and assigns pharmacy to prepare infusions.",
       points: 1,
       teaching: "Refractory anaphylaxis can progress to airway loss or arrest. Early help and prepared infusions save minutes.",
@@ -393,7 +418,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts an epinephrine infusion at about 0.1 mcg/kg/min, in the range 0.05 to 0.2, and titrates to response.",
       points: 3,
       critical: true,
@@ -403,7 +428,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids 1 mg IV epinephrine boluses in a patient with a pulse and uses epinephrine as first vasopressor rather than norepinephrine.",
       points: 2,
       teaching: "IV boluses at the arrest dose cause arrhythmia and ischemia. Epinephrine also treats bronchospasm and mast cell release.",
@@ -412,7 +437,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Identifies beta blocker therapy as a cause of poor response and notes the ACE inhibitor as a possible contributor.",
       points: 2,
       teaching: "Beta blockers blunt the effect of epinephrine and may make reactions more severe. ACE inhibitors may impair compensation.",
@@ -421,7 +446,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives glucagon 1 to 5 mg IV over 5 minutes then 5 to 15 mcg/min, with an antiemetic and airway protection against vomiting.",
       points: 3,
       critical: true,
@@ -431,7 +456,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-a3",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Recognizes voice change as a sign of laryngeal edema and plans airway assessment and management with anesthesia.",
       points: 2,
       teaching: "Hoarseness or stridor means the airway is at risk. Plan early with the most experienced operator and a surgical backup.",
@@ -440,7 +465,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-a4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Interprets the troponin rise as likely demand injury or Kounis syndrome and arranges serial ECGs, troponins and cardiology input.",
       points: 1,
       teaching: "Coronary disease is not a reason to withhold epinephrine in anaphylaxis. Shock itself threatens the heart more than the drug.",
@@ -449,7 +474,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to a monitored setting for at least 24 hours after refractory anaphylaxis.",
       points: 2,
       teaching: "Severe reactions and those needing more than one epinephrine dose carry a higher risk of biphasic reaction. Observation length should match severity.",
@@ -458,7 +483,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Prescribes two epinephrine auto injectors with teaching and a written action plan.",
       points: 1,
       teaching: "Every patient with anaphylaxis leaves with auto injectors and knows when and how to use them.",
@@ -467,7 +492,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Refers to an allergist for venom testing and immunotherapy, and asks cardiology and allergy to review the beta blocker and ACE inhibitor together.",
       points: 2,
       teaching: "Venom immunotherapy greatly reduces the risk of future systemic reactions. Cardiac drugs are reviewed by the specialists, not stopped abruptly in the department.",
@@ -476,11 +501,38 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges a repeat tryptase for a baseline and documents the reaction as a venom allergy.",
       points: 1,
       teaching: "A raised acute tryptase supports the diagnosis. A high baseline suggests a mast cell disorder that raises future risk.",
       source: "wao",
+    },
+    {
+      id: "an-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the exposure and the timeline: what stung him, when, how many stings and how fast symptoms began.",
+      points: 2,
+      teaching: "Skin, airway and circulatory features within minutes of a sting meet the criteria for anaphylaxis. Rapid onset after exposure predicts a severe reaction.",
+      source: "rcuk",
+    },
+    {
+      id: "an-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks what the paramedics gave and how he responded, including the epinephrine doses and times, salbutamol and fluid.",
+      points: 2,
+      teaching: "Two IM doses without recovery of blood pressure defines refractory anaphylaxis. The dose times tell you when the next dose is due.",
+      source: "rcuk",
+    },
+    {
+      id: "an-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about previous sting reactions and known allergies, and learns of a large local reaction last summer.",
+      points: 1,
+      teaching: "A large local reaction shows venom sensitization. It supports referral to an allergist for venom testing and immunotherapy.",
+      source: "shaker",
     },
   ],
   sources: [
@@ -498,7 +550,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
       citation: "Shaker MS, Wallace DV, Golden DBK, et al. Anaphylaxis. A 2020 practice parameter update, systematic review, and GRADE analysis. J Allergy Clin Immunol. 2020.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

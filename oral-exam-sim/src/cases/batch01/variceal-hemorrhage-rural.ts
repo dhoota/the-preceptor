@@ -16,15 +16,38 @@ export const varicealHemorrhageRural: OralCase = {
     { topic: "ems", n: 3 },
   ],
   summary: "A 49 year old man with liver disease is vomiting large amounts of blood at a small hospital with no overnight endoscopy.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the only emergency physician at a 40 bed hospital in rural Ontario. It is 22:10. " +
-    "A general surgeon is on call from home. There is no endoscopy after hours. The regional centre with endoscopy and interventional radiology is 2 hours by road. " +
-    "The blood bank holds 8 units of group O red cells, 4 O negative and 4 O positive, 6 units of plasma, 1 adult dose of platelets and fibrinogen concentrate. " +
-    "Kevin Lachapelle is 49 years old and weighs 78 kg. He has alcohol related cirrhosis. He has vomited bright red blood three times since 21:00. " +
-    "Triage vitals: heart rate 126, blood pressure 86/52, respiratory rate 24, SpO2 95 percent on room air, temperature 36.3, glucose 6.4 mmol/L. GCS 14. CTAS 1. " +
-    "The nurse says: 'He just filled another basin. I have one 20 gauge in his hand.'",
+    "You are working in the emergency department of a rural hospital when the following patient arrives. " +
+    "It is 22:10. A 49 year old man has vomited bright red blood three times since 21:00. " +
+    "You are the only physician in the hospital. There is no endoscopy after hours. The regional centre is 2 hours away by road.",
+  card: {
+    vitals: {
+      temperature: "36.3°C",
+      pulse: "126/minute",
+      resp: "24/minute",
+      bp: "86/52 mmHg",
+      o2sat: "95% on room air",
+      weight: "78 kg (172 lb)",
+    },
+    medications: "Spironolactone, furosemide, lactulose, thiamine. Propranolol stopped last year",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "He has vomited bright red blood three times since 21:00. At triage his GCS was 14 and his glucose 6.4 mmol/L. He was triaged CTAS 1. " +
+        "The nurse says: 'He just filled another basin. I have one 20 gauge in his hand.'",
+    },
+    {
+      id: "resources",
+      label: "Hospital and blood bank resources",
+      result:
+        "A 40 bed hospital. A general surgeon is on call from home. The regional centre with endoscopy and interventional radiology is 2 hours by road. " +
+        "The blood bank holds 8 units of group O red cells, 4 O negative and 4 O positive, 6 units of plasma, 1 adult dose of platelets and fibrinogen concentrate.",
+    },
     {
       id: "exam",
       label: "Physical exam",
@@ -36,7 +59,7 @@ export const varicealHemorrhageRural: OralCase = {
       id: "history",
       label: "History",
       result:
-        "Cirrhosis diagnosed three years ago. Varices banded two years ago. He stopped propranolol last year. He drank 12 beers a day until two weeks ago and has not had a drink since. " +
+        "Alcohol related cirrhosis diagnosed three years ago. Varices banded two years ago. He stopped propranolol last year. He drank 12 beers a day until two weeks ago and has not had a drink since. " +
         "No NSAIDs. No anticoagulants. His sister says he has been more confused for two days.",
     },
     {
@@ -101,8 +124,9 @@ export const varicealHemorrhageRural: OralCase = {
         "Octreotide 50 mcg IV bolus, then 50 mcg/h infusion.",
         "Ceftriaxone 1 g IV every 24 hours.",
         "Call the regional centre early for endoscopy.",
+        "Ask about the bleed, his liver disease and varices, beta blocker, anticoagulant and NSAID use, and his last drink.",
       ],
-      rubric: ["vb-r1", "vb-m1", "vb-m2"],
+      rubric: ["vb-r1", "vb-m1", "vb-m2", "vb-h1", "vb-h2", "vb-h3", "vb-h4", "vb-a2", "vb-l1"],
       choices: [
         {
           id: "c-bundle",
@@ -158,8 +182,9 @@ export const varicealHemorrhageRural: OralCase = {
         "Head up. Two large bore suction units. Consider a SALAD approach.",
         "Reduced dose ketamine, about 0.5 to 1 mg/kg. Rocuronium 1.2 mg/kg.",
         "Push dose pressor ready. Most experienced operator.",
+        "Note the shock and encephalopathy on exam: cool hands, confusion and asterixis.",
       ],
-      rubric: ["vb-r2"],
+      rubric: ["vb-r2", "vb-a1"],
       choices: [
         {
           id: "c-intubate",
@@ -371,7 +396,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Establishes large bore access, gives uncrossmatched red cells, activates the massive hemorrhage protocol and avoids large crystalloid volumes.",
       points: 2,
       teaching: "Blood is the resuscitation fluid in hemorrhage. Crystalloid dilutes clotting factors and worsens ascites.",
@@ -380,7 +405,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts octreotide 50 mcg IV bolus then 50 mcg/h as soon as a variceal bleed is suspected.",
       points: 3,
       critical: true,
@@ -390,7 +415,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives ceftriaxone 1 g IV every 24 hours.",
       points: 3,
       critical: true,
@@ -400,7 +425,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates for massive hematemesis with falling GCS after resuscitation, using a reduced dose induction, suction ready and pressor at hand.",
       points: 2,
       teaching: "Protect the airway before transfer or balloon tamponade. Resuscitate first to avoid peri intubation collapse.",
@@ -409,7 +434,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses a restrictive transfusion threshold of 70 g/L with a target of 70 to 80 g/L once bleeding is controlled.",
       points: 2,
       teaching: "Restrictive transfusion improved survival and lowered rebleeding in upper GI bleeding, most clearly in Child Pugh A and B cirrhosis. Baveno VII sets the target at 70 to 80 g/L.",
@@ -418,7 +443,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Does not correct INR with plasma, replaces fibrinogen under 1.5 g/L and calcium in massive transfusion, and does not give tranexamic acid.",
       points: 2,
       teaching: "INR does not predict bleeding in cirrhosis. HALT IT found tranexamic acid did not reduce death in GI bleeding and raised venous clot risk.",
@@ -427,7 +452,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives erythromycin 250 mg IV before endoscopy, lactulose for encephalopathy and IV thiamine.",
       points: 1,
       teaching: "Erythromycin clears the stomach and improves the endoscopic view. Thiamine protects against Wernicke encephalopathy.",
@@ -436,7 +461,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses balloon tamponade as a bridge for uncontrolled variceal bleeding when endoscopy is not available.",
       points: 3,
       critical: true,
@@ -446,7 +471,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m6",
       competency: "management",
-      criterion: "data",
+      criterion: "physical",
       text: "Confirms gastric balloon position by X ray after a small test volume before full inflation, and inflates the esophageal balloon only if needed.",
       points: 2,
       teaching: "Inflating the gastric balloon in the esophagus can cause rupture. The gastric balloon with traction is usually enough.",
@@ -455,7 +480,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges transfer through CritiCall to a centre with endoscopy and interventional radiology for TIPS, with a critical care crew and blood.",
       points: 2,
       teaching: "Patients with uncontrolled or high risk variceal bleeding may need rescue TIPS. Send them where it is available.",
@@ -464,7 +489,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover and secures the tamponade tube with scissors at the bedside.",
       points: 1,
       teaching: "A migrated balloon can obstruct the airway. The crew must know how to cut and remove the tube.",
@@ -473,7 +498,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks to the sister honestly about the risk of death and reassures her that the delay is not her fault.",
       points: 1,
       teaching: "Honesty about prognosis and relief of misplaced guilt are both part of good family communication.",
@@ -482,11 +507,74 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-p1",
       competency: "professionalism",
-      criterion: "approach",
+      criterion: "process",
       text: "Discusses his alcohol use without stigma and acknowledges his recent sobriety.",
       points: 1,
       teaching: "Stigma discourages patients and families from seeking care. Addiction is a treatable illness and deserves the same respect.",
       source: "baveno",
+    },
+    {
+      id: "vb-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the bleed: when it started, how many episodes and how much, melena, and faintness.",
+      points: 2,
+      teaching: "Repeated large hematemesis within an hour with shock marks a severe bleed. The history sets the urgency of resuscitation and of transfer.",
+      source: "baveno",
+    },
+    {
+      id: "vb-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about his liver disease: the cause, known varices, prior banding and whether he still takes his beta blocker.",
+      points: 2,
+      teaching: "Known varices and a stopped nonselective beta blocker make a variceal source very likely. That justifies vasoactive drugs and antibiotics before endoscopy.",
+      source: "baveno",
+    },
+    {
+      id: "vb-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulants, antiplatelets and NSAIDs.",
+      points: 2,
+      teaching: "These drugs worsen bleeding and change reversal. He takes none, so his raised INR reflects liver disease and does not measure his bleeding risk.",
+      source: "baveno",
+    },
+    {
+      id: "vb-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about alcohol intake and the time of his last drink, and about recent confusion from his sister.",
+      points: 2,
+      teaching: "His last drink was two weeks ago, so acute withdrawal is unlikely. Two days of confusion suggests hepatic encephalopathy, which a bleed will worsen.",
+      source: "baveno",
+    },
+    {
+      id: "vb-a1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Recognizes hemorrhagic shock with decompensated cirrhosis on exam: cool hands, slow capillary refill, confusion with asterixis, ascites, melena and a collapsing IVC.",
+      points: 2,
+      teaching: "Shock plus encephalopathy predicts a high risk of death and of aspiration. These findings drive early blood, airway planning and lactulose.",
+      source: "baveno",
+    },
+    {
+      id: "vb-a2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Treats the bleed as variceal from the history and exam before any endoscopy.",
+      points: 1,
+      teaching: "In a patient with cirrhosis, an upper GI bleed is presumed variceal until endoscopy. Vasoactive drugs and antibiotics start on suspicion.",
+      source: "baveno",
+    },
+    {
+      id: "vb-l1",
+      competency: "leadership",
+      criterion: "process",
+      text: "As the only physician, prioritizes and delegates: assigns nurses to access, blood and drugs, and calls the surgeon and the regional centre early.",
+      points: 1,
+      teaching: "A massive hemorrhage protocol works through named roles. Early calls for help and transfer save time when you are alone.",
+      source: "orbcon-mhp",
     },
   ],
   sources: [
@@ -511,7 +599,7 @@ export const varicealHemorrhageRural: OralCase = {
       citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th edition. 2019.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
