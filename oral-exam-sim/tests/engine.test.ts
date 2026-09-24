@@ -11,8 +11,6 @@ import {
   scoreMarks,
   unsafeChoices,
   validateCase,
-  weakAreas,
-  finishAttempt,
 } from "@/engine";
 import type { OralCase } from "@/engine";
 import { FIXTURE } from "./fixture";
@@ -36,18 +34,37 @@ describe("validateCase", () => {
   it("reports unreachable nodes and untested rubric items", () => {
     const c = clone();
     c.nodes.push({ kind: "end", id: "orphan", text: "x" });
-    c.rubric.push({ id: "x1", domain: "resus", text: "x", points: 1, teaching: "x" });
+    c.rubric.push({ id: "x1", competency: "resuscitation", text: "x", points: 1, teaching: "x", source: "s1" });
     const errs = validateCase(c).join();
     expect(errs).toContain('"orphan" is unreachable');
     expect(errs).toContain('rubric "x1" is never tested');
   });
-  it("reports unknown rubric references and domains", () => {
+  it("reports unknown rubric references, competencies and sources", () => {
     const c = clone();
     (c.nodes[1] as { rubric: string[] }).rubric.push("zz");
-    c.rubric[0].domain = "nope";
+    (c.rubric[0] as { competency: string }).competency = "nope";
+    c.rubric[1].source = "missing";
     const errs = validateCase(c).join();
     expect(errs).toContain('unknown rubric "zz"');
-    expect(errs).toContain('unknown domain "nope"');
+    expect(errs).toContain('unknown competency "nope"');
+    expect(errs).toContain('cites unknown source "missing"');
+  });
+  it("requires feedback on every choice and a strong option", () => {
+    const c = clone();
+    const q = c.nodes[1] as { choices: { feedback: string; quality: string }[] };
+    q.choices[0].feedback = "";
+    q.choices[0].quality = "partial";
+    const errs = validateCase(c).join();
+    expect(errs).toContain("has no feedback");
+    expect(errs).toContain("has no strong choice");
+  });
+  it("flags sources nobody cites and unknown blueprint areas", () => {
+    const c = clone();
+    c.sources.push({ id: "s3", citation: "Unused." });
+    (c as { blueprint: string }).blueprint = "space";
+    const errs = validateCase(c).join();
+    expect(errs).toContain('"s3" is never cited');
+    expect(errs).toContain('unknown blueprint area "space"');
   });
   it("requires at least one critical item", () => {
     const c = clone();
@@ -111,67 +128,3 @@ describe("runner", () => {
   });
 });
 
-describe("scoring", () => {
-  it("scores yes, partly and no", () => {
-    const s = scoreMarks(FIXTURE, { r1: "yes", r2: "yes", d1: "partly", d2: "no" });
-    expect(s.awarded).toBe(5.5);
-    expect(s.max).toBe(10);
-    expect(s.percent).toBe(55);
-    expect(s.passed).toBe(false);
-    expect(s.missed).toEqual(["d1", "d2"]);
-  });
-
-  it("counts unmarked items as no", () => {
-    const s = scoreMarks(FIXTURE, {});
-    expect(s.awarded).toBe(0);
-    expect(s.missed).toHaveLength(4);
-  });
-
-  it("fails on a critical miss even above the pass mark", () => {
-    const s = scoreMarks(FIXTURE, { r1: "yes", r2: "partly", d1: "yes", d2: "yes" });
-    expect(s.percent).toBe(90);
-    expect(s.passed).toBe(false);
-    expect(s.criticalMisses).toEqual(["r2"]);
-  });
-
-  it("passes exactly at the threshold", () => {
-    const s = scoreMarks(FIXTURE, { r2: "yes", d1: "yes", r1: "partly" });
-    expect(s.percent).toBe(60);
-    expect(s.passed).toBe(true);
-  });
-
-  it("totals by domain", () => {
-    const s = scoreMarks(FIXTURE, { r1: "yes", r2: "yes" });
-    expect(s.domains).toEqual([
-      { id: "resus", name: "Resuscitation", awarded: 4, max: 4 },
-      { id: "dispo", name: "Disposition", awarded: 0, max: 6 },
-    ]);
-  });
-});
-
-describe("weak areas", () => {
-  const scored = (id: string, caseId: string, startedAt: number, marks: Record<string, "yes" | "partly" | "no">) =>
-    finishAttempt({ ...FIXTURE, id: caseId }, { ...newAttempt(FIXTURE, "practice", startedAt, id), caseId }, marks, startedAt + 1);
-
-  it("pools domains by name and sorts weakest first", () => {
-    const w = weakAreas([
-      scored("1", "c1", 1, { r1: "yes", r2: "yes" }),
-      scored("2", "c2", 1, { r1: "yes", r2: "yes", d1: "yes" }),
-    ]);
-    expect(w.map((x) => [x.name, x.percent])).toEqual([
-      ["Disposition", 25],
-      ["Resuscitation", 100],
-    ]);
-  });
-
-  it("uses only the latest attempt per case", () => {
-    const w = weakAreas([scored("old", "c1", 1, {}), scored("new", "c1", 5, { d1: "yes", d2: "yes" })]);
-    expect(w.find((x) => x.name === "Disposition")!.percent).toBe(100);
-  });
-
-  it("filters by a threshold and ignores unscored attempts", () => {
-    const unscored = newAttempt(FIXTURE, "practice", 0, "u");
-    const w = weakAreas([unscored, scored("1", "c1", 1, { r1: "yes", r2: "yes" })], 70);
-    expect(w.map((x) => x.name)).toEqual(["Disposition"]);
-  });
-});

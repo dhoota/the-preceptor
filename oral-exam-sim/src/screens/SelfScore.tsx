@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getCase } from "@/cases";
-import { questionsOnPath, rubricOrder, type SelfMark } from "@/engine";
+import { competencyLabel, questionsOnPath, rubricOrder, type SelfMark } from "@/engine";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -57,7 +57,7 @@ export function SelfScore({ attemptId, go }: { attemptId: string; go: Go }) {
         <span className="label">Rubric</span>
         {order.map((id) => {
           const r = byId.get(id)!;
-          const domain = c.domains.find((d) => d.id === r.domain)?.name;
+          const domain = competencyLabel(r.competency);
           return (
             <div key={id} className="item">
               <div className="txt">

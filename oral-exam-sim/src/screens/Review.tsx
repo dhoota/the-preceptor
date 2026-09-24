@@ -65,6 +65,9 @@ export function Review({ go }: { go: Go }) {
                 <p className="muted" style={{ marginTop: 8, marginBottom: 0 }}>
                   {item.teaching}
                 </p>
+                {c.sources.find((s) => s.id === item.source) && (
+                  <div className="cite">Source: {c.sources.find((s) => s.id === item.source)!.citation}</div>
+                )}
               </div>
             )}
           </div>

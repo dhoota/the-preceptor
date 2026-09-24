@@ -16,6 +16,8 @@ import { useApp } from "../state";
 
 type Phase = "stem" | "node" | "choose" | "reveal";
 
+export const QUALITY_LABEL = { strong: "What the examiner wanted", partial: "Partly there", unsafe: "The examiner would stop you here" } as const;
+
 function useNow(active: boolean) {
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
@@ -218,6 +220,16 @@ export function Runner({ id, mode, go }: { id: string; mode: "practice" | "exam"
           </p>
         </>
       )}
+
+      {phase === "reveal" && node.kind === "question" && (() => {
+        const picked = node.choices?.find((ch) => ch.id === attempt.path[attempt.path.length - 1].choiceId);
+        return picked && choicesFor(node).length ? (
+          <div className={`verdict ${picked.quality}`}>
+            <div className="label">{QUALITY_LABEL[picked.quality]}</div>
+            <p className="serif" style={{ margin: "6px 0 0" }}>{picked.feedback}</p>
+          </div>
+        ) : null;
+      })()}
 
       {phase === "reveal" && node.kind === "question" && (
         <div className="model selectable">

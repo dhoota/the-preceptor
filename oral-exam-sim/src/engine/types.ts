@@ -3,67 +3,101 @@
  * branching examiner flow that ships as static data.
  *
  * Flow: the examiner reads the stem, then walks a graph of nodes. At each
- * question the candidate answers aloud (or in notes) against a timer, then
- * picks the option that best matches what they said. The option decides the
- * next node: a follow-up probe, an escalation or the next phase. At the end
- * the candidate sees model answers and self-scores a rubric checklist.
+ * question the candidate answers aloud against a timer, then picks the
+ * option that best matches what they said. The option decides the next
+ * node and carries scripted examiner feedback. At the end the candidate
+ * self-scores a rubric and gets a rule-built report.
  *
  * Pure TypeScript. The Preceptor apps can import this folder as is.
  */
 
+/** Exam blueprint. Every case belongs to exactly one primary area. */
+export const BLUEPRINT = [
+  { id: "resus", label: "Resuscitation" },
+  { id: "cardio", label: "Cardiovascular" },
+  { id: "resp", label: "Respiratory" },
+  { id: "neuro", label: "Neurology" },
+  { id: "trauma", label: "Trauma" },
+  { id: "peds", label: "Pediatrics" },
+  { id: "obgyn", label: "Obstetrics and gynecology" },
+  { id: "tox", label: "Toxicology" },
+  { id: "enviro", label: "Environmental" },
+  { id: "psych", label: "Mental health" },
+  { id: "id", label: "Infection and sepsis" },
+  { id: "geri", label: "Geriatrics" },
+  { id: "procedures", label: "Procedures" },
+  { id: "ethics", label: "Ethics and law" },
+  { id: "comm", label: "Communication" },
+  { id: "systems", label: "Systems and leadership" },
+] as const;
+
+export type BlueprintId = (typeof BLUEPRINT)[number]["id"];
+
+/** Fixed competency domains. Every rubric item belongs to one. */
+export const COMPETENCIES = [
+  { id: "assessment", label: "Assessment and diagnosis" },
+  { id: "resuscitation", label: "Resuscitation and stabilization" },
+  { id: "management", label: "Management" },
+  { id: "communication", label: "Communication and collaboration" },
+  { id: "disposition", label: "Disposition and safety" },
+  { id: "professionalism", label: "Ethics and professionalism" },
+  { id: "leadership", label: "Leadership and systems" },
+] as const;
+
+export type CompetencyId = (typeof COMPETENCIES)[number]["id"];
+
+export const blueprintLabel = (id: string) => BLUEPRINT.find((b) => b.id === id)?.label ?? id;
+export const competencyLabel = (id: string) => COMPETENCIES.find((c) => c.id === id)?.label ?? id;
+
+/** A guideline or reference the case content rests on. */
+export interface Source {
+  id: string;
+  /** Human readable citation. "CAEP. Position statement on ... 2023." */
+  citation: string;
+  url?: string;
+}
+
 /** A result the candidate can ask for at any question. */
 export interface Finding {
   id: string;
-  /** Button label, e.g. "ECG", "Venous gas", "Bedside echo". */
   label: string;
-  /** What the examiner says when asked. */
   result: string;
 }
 
 export interface Choice {
   id: string;
-  /** What the candidate says they did, in their own voice. "I gave bicarbonate first." */
+  /** What the candidate says they did, first person. "I gave bicarbonate first." */
   label: string;
-  /** Node to go to next. */
   next: string;
+  quality: "strong" | "partial" | "unsafe";
   /**
-   * How the examiner script treats this path. Used only for review hints.
-   * Scoring comes from the rubric self-score, not from choices.
+   * Scripted examiner feedback. Why this is right, partial or unsafe, and
+   * what the examiner wanted to hear. Two to four short sentences.
    */
-  quality?: "strong" | "partial" | "unsafe";
+  feedback: string;
 }
 
-/** The examiner reads a line. Stem continuation, escalation or new result. */
 export interface SayNode {
   kind: "say";
   id: string;
-  /** Short heading shown above the line, e.g. "Ten minutes later". */
   phase?: string;
   text: string;
   next: string;
 }
 
-/** The examiner asks a timed question. */
 export interface QuestionNode {
   kind: "question";
   id: string;
   phase?: string;
   prompt: string;
-  /** Answer time in seconds. */
   seconds: number;
-  /** Key points of a strong answer. Revealed after answering or at the end. */
   modelAnswer: string[];
-  /** Rubric item IDs this question tests. Links the reveal to the checklist. */
+  /** Rubric item IDs this question tests. */
   rubric: string[];
-  /**
-   * Self-select branch. With one choice or none, the flow continues to
-   * `next`. With several, the candidate picks the closest match.
-   */
   choices?: Choice[];
   next?: string;
 }
 
-/** The examiner closes the case. */
 export interface EndNode {
   kind: "end";
   id: string;
@@ -72,51 +106,44 @@ export interface EndNode {
 
 export type CaseNode = SayNode | QuestionNode | EndNode;
 
-export interface RubricDomain {
-  id: string;
-  name: string;
-}
-
 export interface RubricItem {
   id: string;
-  domain: string;
-  /** Observable behaviour. "Gives sodium bicarbonate 1 to 2 mEq/kg IV for QRS over 100 ms." */
+  competency: CompetencyId;
+  /** Observable behaviour. */
   text: string;
   points: number;
-  /** Missing a critical item fails the attempt whatever the total. */
   critical?: boolean;
-  /** One or two lines shown in spaced review when this item was missed. */
+  /** One or two sentence teaching point. Shown in the report and spaced review. */
   teaching: string;
+  /** ID of an entry in the case's `sources`. */
+  source: string;
 }
 
 export interface OralCase {
   id: string;
   title: string;
-  domain: string;
+  blueprint: BlueprintId;
+  /** Secondary areas the case also exercises. */
+  alsoCovers?: BlueprintId[];
   summary: string;
   durationMinutes: number;
-  /** Read aloud first. */
   stem: string;
   findings: Finding[];
   start: string;
   nodes: CaseNode[];
-  domains: RubricDomain[];
   rubric: RubricItem[];
-  /** Pass mark as a fraction of total points. */
-  passThreshold: number;
+  sources: Source[];
   /** Physician sign off. Every seed case ships as false until Arjan reviews it. */
   reviewed: boolean;
   author: string;
   version: number;
 }
 
-/** How the candidate rated themselves on one rubric item. */
 export type SelfMark = "yes" | "partly" | "no";
 
 export interface AttemptStep {
   nodeId: string;
   choiceId?: string;
-  /** Seconds the candidate used on a question. */
   usedSeconds?: number;
   at: number;
 }
@@ -134,20 +161,23 @@ export interface Attempt {
   score: Score | null;
 }
 
-export interface DomainScore {
-  id: string;
+export interface CompetencyScore {
+  id: CompetencyId;
   name: string;
   awarded: number;
   max: number;
 }
 
+export type Band = "pass" | "borderline" | "fail";
+
 export interface Score {
   awarded: number;
   max: number;
   percent: number;
-  passed: boolean;
+  band: Band;
+  /** Rubric IDs of critical items not marked "yes". */
   criticalMisses: string[];
-  domains: DomainScore[];
+  competencies: CompetencyScore[];
   /** Rubric items marked "no" or "partly". Feed spaced review. */
   missed: string[];
 }

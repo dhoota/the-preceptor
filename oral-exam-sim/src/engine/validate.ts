@@ -1,4 +1,4 @@
-import type { CaseNode, OralCase } from "./types";
+import { BLUEPRINT, COMPETENCIES, type CaseNode, type OralCase } from "./types";
 
 /**
  * Structural checks for a case. Run in tests over every shipped case so a
@@ -15,15 +15,28 @@ export function validateCase(c: OralCase): string[] {
   }
   if (!byId.has(c.start)) err(`start node "${c.start}" does not exist`);
 
-  const domainIds = new Set(c.domains.map((d) => d.id));
+  if (!BLUEPRINT.some((b) => b.id === c.blueprint)) err(`unknown blueprint area "${c.blueprint}"`);
+  for (const b of c.alsoCovers ?? []) if (!BLUEPRINT.some((x) => x.id === b)) err(`unknown alsoCovers area "${b}"`);
+  const competencyIds = new Set<string>(COMPETENCIES.map((d) => d.id));
+  const sourceIds = new Set<string>();
+  if (!c.sources?.length) err("no sources");
+  for (const s of c.sources ?? []) {
+    if (sourceIds.has(s.id)) err(`duplicate source id "${s.id}"`);
+    sourceIds.add(s.id);
+    if (!s.citation?.trim()) err(`source "${s.id}" has no citation`);
+  }
+  const usedSources = new Set<string>();
   const rubricIds = new Set<string>();
   for (const r of c.rubric) {
     if (rubricIds.has(r.id)) err(`duplicate rubric id "${r.id}"`);
     rubricIds.add(r.id);
-    if (!domainIds.has(r.domain)) err(`rubric "${r.id}" has unknown domain "${r.domain}"`);
-    if (!(r.points > 0)) err(`rubric "${r.id}" has no points`);
+    if (!competencyIds.has(r.competency)) err(`rubric "${r.id}" has unknown competency "${r.competency}"`);
+    if (!(r.points >= 1 && r.points <= 3)) err(`rubric "${r.id}" points must be 1 to 3`);
     if (!r.teaching?.trim()) err(`rubric "${r.id}" has no teaching line`);
+    if (!sourceIds.has(r.source)) err(`rubric "${r.id}" cites unknown source "${r.source}"`);
+    usedSources.add(r.source);
   }
+  for (const s of sourceIds) if (!usedSources.has(s)) err(`source "${s}" is never cited by a rubric item`);
   if (!c.rubric.some((r) => r.critical)) err("no critical rubric items");
 
   const findingIds = new Set<string>();
@@ -47,6 +60,11 @@ export function validateCase(c: OralCase): string[] {
       for (const ch of n.choices ?? []) {
         if (choiceIds.has(ch.id)) err(`question "${n.id}" has duplicate choice "${ch.id}"`);
         choiceIds.add(ch.id);
+        if (!["strong", "partial", "unsafe"].includes(ch.quality)) err(`choice "${n.id}.${ch.id}" has no quality`);
+        if (!ch.feedback?.trim()) err(`choice "${n.id}.${ch.id}" has no feedback`);
+      }
+      if (n.choices && n.choices.length > 1 && !n.choices.some((ch) => ch.quality === "strong")) {
+        err(`question "${n.id}" has no strong choice`);
       }
     }
     if (n.kind !== "end" && targets.length === 0) err(`node "${n.id}" has no next node`);

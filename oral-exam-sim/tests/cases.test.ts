@@ -1,42 +1,84 @@
 import { describe, expect, it } from "vitest";
-import { CASES } from "@/cases";
-import { questionRange, validateCase } from "@/engine";
+import { BATCHES, CASES } from "@/cases";
+import { BLUEPRINT, questionRange, validateCase } from "@/engine";
 
-/** Every string a candidate can see in a case. */
-function strings(value: unknown, out: string[] = []): string[] {
-  if (typeof value === "string") out.push(value);
-  else if (Array.isArray(value)) value.forEach((v) => strings(v, out));
-  else if (value && typeof value === "object") Object.values(value).forEach((v) => strings(v, out));
+/**
+ * Structure and house style for every shipped case.
+ * CASE_BATCH=batch03 limits the run to one batch while it is being written.
+ * LAUNCH_GATE=1 also enforces the pre-launch blueprint minimums.
+ */
+
+const only = process.env.CASE_BATCH;
+const target = only ? BATCHES[only] ?? [] : CASES;
+
+/** Every string a candidate can see. URLs are exempt from style rules. */
+function strings(value: unknown, out: string[] = [], key = ""): string[] {
+  if (typeof value === "string") {
+    if (key !== "url") out.push(value);
+  } else if (Array.isArray(value)) value.forEach((v) => strings(v, out, key));
+  else if (value && typeof value === "object") Object.entries(value).forEach(([k, v]) => strings(v, out, k));
   return out;
 }
 
-describe("seed cases", () => {
-  it("ships five cases with unique ids", () => {
-    expect(CASES).toHaveLength(5);
-    expect(new Set(CASES.map((c) => c.id)).size).toBe(5);
+describe("case bank", () => {
+  it("has unique case ids across every batch", () => {
+    const ids = CASES.map((c) => c.id);
+    expect(ids.filter((id, i) => ids.indexOf(id) !== i)).toEqual([]);
   });
 
-  for (const c of CASES) {
-    describe(c.id, () => {
-      it("is structurally valid", () => {
-        expect(validateCase(c)).toEqual([]);
-      });
-      it("awaits physician review", () => {
-        expect(c.reviewed).toBe(false);
-      });
-      it("has 6 to 12 questions on every path and real branching", () => {
-        const r = questionRange(c);
-        expect(r.min).toBeGreaterThanOrEqual(6);
-        expect(r.max).toBeLessThanOrEqual(12);
-        const branching = c.nodes.filter((n) => n.kind === "question" && (n.choices?.length ?? 0) > 1);
-        expect(branching.length).toBeGreaterThanOrEqual(3);
-      });
-      it("follows house style", () => {
-        for (const s of strings(c)) {
-          expect(s, s).not.toMatch(/[–—]/);
-          expect(s, s).not.toContain(";");
-        }
-      });
+  it("keeps the two free sample cases first", () => {
+    expect(CASES.slice(0, 2).map((c) => c.id)).toEqual(["chest-pain-rural", "febrile-infant"]);
+  });
+
+  if (only) {
+    it(`batch ${only} exists and is not empty`, () => {
+      expect(target.length).toBeGreaterThan(0);
+    });
+  }
+
+  if (process.env.LAUNCH_GATE) {
+    it("meets the launch minimum of 100 cases", () => {
+      expect(CASES.length).toBeGreaterThanOrEqual(100);
+    });
+    it("covers every blueprint area with at least 5 cases", () => {
+      const thin = BLUEPRINT.filter((b) => CASES.filter((c) => c.blueprint === b.id).length < 5).map((b) => b.id);
+      expect(thin).toEqual([]);
     });
   }
 });
+
+for (const c of target) {
+  describe(c.id, () => {
+    it("is structurally valid", () => {
+      expect(validateCase(c)).toEqual([]);
+    });
+    it("uses a kebab case id", () => {
+      expect(c.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
+    });
+    it("awaits physician review", () => {
+      expect(c.reviewed).toBe(false);
+    });
+    it("has 6 to 12 questions on every path and real branching", () => {
+      const r = questionRange(c);
+      expect(r.min).toBeGreaterThanOrEqual(6);
+      expect(r.max).toBeLessThanOrEqual(12);
+      const branching = c.nodes.filter((n) => n.kind === "question" && (n.choices?.length ?? 0) > 1);
+      expect(branching.length).toBeGreaterThanOrEqual(3);
+    });
+    it("has between 8 and 14 findings and 12 to 26 rubric items with 2 to 4 critical", () => {
+      expect(c.findings.length).toBeGreaterThanOrEqual(8);
+      expect(c.findings.length).toBeLessThanOrEqual(14);
+      expect(c.rubric.length).toBeGreaterThanOrEqual(12);
+      expect(c.rubric.length).toBeLessThanOrEqual(26);
+      const crit = c.rubric.filter((r) => r.critical).length;
+      expect(crit).toBeGreaterThanOrEqual(2);
+      expect(crit).toBeLessThanOrEqual(4);
+    });
+    it("follows house style", () => {
+      for (const s of strings(c)) {
+        expect(s, s).not.toMatch(/[–—]/);
+        expect(s, s).not.toContain(";");
+      }
+    });
+  });
+}

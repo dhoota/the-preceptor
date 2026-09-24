@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getCase } from "@/cases";
-import { questionRange } from "@/engine";
+import { blueprintLabel, questionRange } from "@/engine";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -27,7 +27,7 @@ export function CaseIntro({ id, go }: { id: string; go: Go }) {
 
   return (
     <>
-      <div className="label">{c.domain}</div>
+      <div className="label">{blueprintLabel(c.blueprint)}</div>
       <h1 style={{ marginTop: 6 }}>{c.title}</h1>
       <p className="muted" style={{ marginTop: 8 }}>
         {c.durationMinutes} minutes. {q.min === q.max ? q.min : `${q.min} to ${q.max}`} examiner questions.{" "}
