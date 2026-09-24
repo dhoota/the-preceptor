@@ -1,4 +1,4 @@
-import { BLUEPRINT, COMPETENCIES, ORAL_CRITERIA, type CaseNode, type OralCase } from "./types";
+import { BLUEPRINT, COMPETENCIES, toCriterion, type CaseNode, type OralCase } from "./types";
 
 /**
  * Structural checks for a case. Run in tests over every shipped case so a
@@ -31,7 +31,7 @@ export function validateCase(c: OralCase): string[] {
     if (rubricIds.has(r.id)) err(`duplicate rubric id "${r.id}"`);
     rubricIds.add(r.id);
     if (!competencyIds.has(r.competency)) err(`rubric "${r.id}" has unknown competency "${r.competency}"`);
-    if (!ORAL_CRITERIA.some((k) => k.id === r.criterion)) err(`rubric "${r.id}" has unknown criterion "${r.criterion}"`);
+    if (!toCriterion(r.criterion)) err(`rubric "${r.id}" has unknown criterion "${r.criterion}"`);
     if (!(r.points >= 1 && r.points <= 3)) err(`rubric "${r.id}" points must be 1 to 3`);
     if (!r.teaching?.trim()) err(`rubric "${r.id}" has no teaching line`);
     if (!sourceIds.has(r.source)) err(`rubric "${r.id}" cites unknown source "${r.source}"`);
@@ -114,6 +114,24 @@ export function questionRange(c: OralCase): { min: number; max: number } {
     const r = kids.length
       ? { min: own + Math.min(...kids.map((k) => k.min)), max: own + Math.max(...kids.map((k) => k.max)) }
       : { min: own, max: own };
+    memo.set(id, r);
+    return r;
+  };
+  return walk(c.start);
+}
+
+/** Longest total of question seconds on any path. A CFPC station runs 12 minutes. */
+export function maxQuestionSeconds(c: OralCase): number {
+  const byId = new Map(c.nodes.map((n) => [n.id, n]));
+  const memo = new Map<string, number>();
+  const walk = (id: string): number => {
+    const hit = memo.get(id);
+    if (hit !== undefined) return hit;
+    const n = byId.get(id);
+    if (!n) return 0;
+    const own = n.kind === "question" ? n.seconds : 0;
+    const kids = nextIds(n).map(walk);
+    const r = own + (kids.length ? Math.max(...kids) : 0);
     memo.set(id, r);
     return r;
   };

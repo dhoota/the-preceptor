@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import signoff from "../docs/signoff-2026-09.json";
+import realign from "../docs/oral-realign.json";
 import { BATCHES, CASES } from "@/cases";
-import { BLUEPRINT, ORAL_CRITERIA, questionRange, validateCase } from "@/engine";
+import { BLUEPRINT, ORAL_CRITERIA, maxQuestionSeconds, questionRange, toCriterion, validateCase } from "@/engine";
+import { VITAL_LABELS } from "@/engine/samp";
 import { topicById } from "@/blueprint/priorityTopics";
 
 /**
@@ -12,6 +14,10 @@ import { topicById } from "@/blueprint/priorityTopics";
 
 /** Signed-off ids. Anything new or changed stays reviewed: false. */
 const SIGNED_OFF = new Set<string>(signoff.cases);
+
+/** Batches remapped to the CFPC oral card and score sheet. REALIGN=batch03 previews one. */
+const REALIGNED = new Set<string>([...realign.batches, ...(process.env.REALIGN ? [process.env.REALIGN] : [])]);
+const realignedIds = new Set([...REALIGNED].flatMap((b) => (BATCHES[b] ?? []).map((c) => c.id)));
 
 const only = process.env.CASE_BATCH;
 const target = only ? BATCHES[only] ?? [] : CASES;
@@ -66,10 +72,32 @@ for (const c of target) {
         expect(t!.keyFeatures.some((x) => x.n === k.n), `${k.topic}#${k.n}`).toBe(true);
       }
     });
-    it("tags every rubric item with an examiner criterion", () => {
-      for (const r of c.rubric) expect(ORAL_CRITERIA.some((k) => k.id === r.criterion), r.id).toBe(true);
-      expect(new Set(c.rubric.map((r) => r.criterion)).size).toBeGreaterThanOrEqual(2);
+    it("tags every rubric item with a score sheet row", () => {
+      for (const r of c.rubric) expect(toCriterion(r.criterion), r.id).toBeDefined();
+      expect(new Set(c.rubric.map((r) => toCriterion(r.criterion))).size).toBeGreaterThanOrEqual(2);
     });
+    if (realignedIds.has(c.id)) {
+      it("follows the CFPC oral card and score sheet", () => {
+        // Score sheet: History, Physical exam and differential, Management, Overall process of care.
+        for (const r of c.rubric) expect(ORAL_CRITERIA.some((k) => k.id === r.criterion), `${r.id} uses a current row`).toBe(true);
+        for (const k of ORAL_CRITERIA) expect(c.rubric.filter((r) => r.criterion === k.id).length, `${k.id} items`).toBeGreaterThanOrEqual(2);
+        const pts = (id: string) => c.rubric.filter((r) => r.criterion === id).reduce((a, r) => a + r.points, 0);
+        const total = c.rubric.reduce((a, r) => a + r.points, 0);
+        expect(pts("management") / total, "management at most half the points").toBeLessThanOrEqual(0.5);
+        expect(pts("history") / total, "history carries real weight").toBeGreaterThanOrEqual(0.15);
+        // Card: short stem read aloud, then the labelled block. No patient name.
+        expect(c.stem).toMatch(/^You are working in the emergency department of /);
+        expect(c.stem.split(/\s+/).length, "stem words").toBeLessThanOrEqual(60);
+        expect(c.card, "card").toBeDefined();
+        for (const k of ["temperature", "pulse", "resp", "bp", "o2sat"] as const) expect(c.card!.vitals[k], k).toBeTruthy();
+        expect(VITAL_LABELS.length).toBe(6);
+        expect(c.card!.medications.trim().length).toBeGreaterThan(0);
+        expect(c.card!.allergies.trim().length).toBeGreaterThan(0);
+        // Timing: fits the 12 minute station.
+        expect(c.durationMinutes).toBe(12);
+        expect(maxQuestionSeconds(c), "question time on the longest path").toBeLessThanOrEqual(12 * 60);
+      });
+    }
     it("uses a kebab case id", () => {
       expect(c.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
     });

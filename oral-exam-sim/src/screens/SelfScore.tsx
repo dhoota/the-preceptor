@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getCase } from "@/cases";
-import { ORAL_CRITERIA, competencyLabel, questionsOnPath, rubricOrder, type SelfMark } from "@/engine";
+import { ORAL_CRITERIA, competencyLabel, toCriterion, questionsOnPath, rubricOrder, type SelfMark } from "@/engine";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -58,7 +58,7 @@ export function SelfScore({ attemptId, mockOralId, go }: { attemptId: string; mo
       </section>
 
       {ORAL_CRITERIA.map((k) => {
-        const ids = order.filter((id) => byId.get(id)!.criterion === k.id);
+        const ids = order.filter((id) => toCriterion(byId.get(id)!.criterion) === k.id);
         if (!ids.length) return null;
         return (
           <section key={k.id} className="section">

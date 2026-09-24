@@ -1,4 +1,4 @@
-import { COMPETENCIES, ORAL_CRITERIA, type Attempt, type Band, type OralCase, type Score, type SelfMark } from "./types";
+import { COMPETENCIES, ORAL_CRITERIA, toCriterion, type Attempt, type Band, type OralCase, type Score, type SelfMark } from "./types";
 
 /**
  * Fixed standard, the same for every case:
@@ -37,7 +37,7 @@ export function scoreMarks(c: OralCase, marks: Record<string, SelfMark>): Score 
       d.awarded += item.points * VALUE[mark];
       d.max += item.points;
     }
-    const k = byCriterion.get(item.criterion);
+    const k = byCriterion.get(toCriterion(item.criterion)!);
     if (k) {
       k.awarded += item.points * VALUE[mark];
       k.max += item.points;
@@ -59,7 +59,9 @@ export function scoreMarks(c: OralCase, marks: Record<string, SelfMark>): Score 
     band: bandFor(ratio, criticalMisses.length),
     criticalMisses,
     competencies,
-    criteria: [...byCriterion.values()].filter((d) => d.max > 0),
+    criteria: [...byCriterion.values()]
+      .filter((d) => d.max > 0)
+      .map((d) => ({ ...d, outOf10: Math.round((d.awarded / d.max) * 100) / 10 })),
     missed,
   };
 }

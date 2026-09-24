@@ -378,3 +378,9 @@ input[type="range"] { accent-color: var(--navy); width: 140px; }
 .kfbar { display: flex; gap: 2px; }
 .kfbar i { display: block; flex: 1; height: 8px; background: var(--line-2); border-radius: 1px; }
 .kfbar i.seen { background: var(--navy); }
+
+/* CFPC oral card: labelled block under the stem */
+.oralcard { margin: 10px 0 0; padding: 10px 14px; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); display: grid; gap: 4px; }
+.oralcard div { display: flex; gap: 10px; }
+.oralcard dt { min-width: 150px; color: var(--mut); font-size: 14px; }
+.oralcard dd { margin: 0; font-size: 15px; color: var(--ink); }

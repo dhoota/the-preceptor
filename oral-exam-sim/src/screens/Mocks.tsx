@@ -259,7 +259,7 @@ export function MockOralScreen({ id, go }: { id: string; go: Go }) {
         x += d.max;
       }
     }
-    return { ...k, pct: x ? Math.round((a / x) * 100) : null };
+    return { ...k, pct: x ? Math.round((a / x) * 100) : null, outOf10: x ? Math.round((a / x) * 100) / 10 : null };
   });
 
   return (
@@ -281,12 +281,12 @@ export function MockOralScreen({ id, go }: { id: string; go: Go }) {
         );
       })}
       <section className="section">
-        <span className="label">By examiner criterion, all stations</span>
+        <span className="label">Score sheet, all stations (0 to 10)</span>
         {totals.map((k) => (
           <div key={k.id} className="domrow">
             <div className="h">
               <span>{k.label}</span>
-              <span className="mono">{k.pct === null ? "" : `${k.pct}%`}</span>
+              <span className="mono">{k.outOf10 === null ? "" : `${k.outOf10.toFixed(1)} / 10`}</span>
             </div>
             <div className={`bar ${(k.pct ?? 0) < 60 ? "low" : ""}`}>
               <div style={{ width: `${k.pct ?? 0}%` }} />

@@ -176,7 +176,7 @@ async function captureApp(size) {
     const rows = document.querySelectorAll("button.row");
     rows[Math.min(6, rows.length - 1)]?.click();
   });
-  await scrollTo("Examiner criteria", 70);
+  await scrollTo("Score sheet", 70);
   await snap("06-criteria");
   await page.locator(".top .back").click();
   await wait();

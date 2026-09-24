@@ -1,3 +1,4 @@
+import type { Vitals } from "./samp";
 /**
  * Oral exam engine types. No AI, no network. Every case is a scripted,
  * branching examiner flow that ships as static data.
@@ -47,17 +48,32 @@ export const COMPETENCIES = [
 export type CompetencyId = (typeof COMPETENCIES)[number]["id"];
 
 /**
- * The structured oral is marked on four examiner criteria. Every rubric item
- * belongs to one. The station score is reported per criterion.
+ * The structured oral is marked on the four rows of the CFPC sample score
+ * sheet, each on a 0 to 10 scale. Every rubric item belongs to one row.
  */
 export const ORAL_CRITERIA = [
-  { id: "approach", label: "Diagnostic approach" },
-  { id: "data", label: "Use and interpretation of data" },
-  { id: "diagnosis", label: "Diagnosis" },
-  { id: "plan", label: "Timely treatment plan" },
+  { id: "history", label: "History" },
+  { id: "physical", label: "Physical exam and differential diagnosis" },
+  { id: "management", label: "Management" },
+  { id: "process", label: "Overall process of care" },
 ] as const;
 
 export type OralCriterionId = (typeof ORAL_CRITERIA)[number]["id"];
+
+/**
+ * TEMPORARY while the case batches are remapped to the CFPC score sheet rows.
+ * Old criterion ids count toward the nearest row. Remove once every case uses
+ * the new ids.
+ */
+export const LEGACY_CRITERION: Record<string, OralCriterionId> = {
+  approach: "history",
+  data: "physical",
+  diagnosis: "physical",
+  plan: "management",
+};
+export const toCriterion = (id: string): OralCriterionId | undefined =>
+  ORAL_CRITERIA.find((c) => c.id === id)?.id ?? LEGACY_CRITERION[id];
+
 export const criterionLabel = (id: string) => ORAL_CRITERIA.find((c) => c.id === id)?.label ?? id;
 
 /** A CFPC EM priority topic key feature. See src/blueprint/priorityTopics.ts. */
@@ -137,8 +153,14 @@ export interface RubricItem {
   teaching: string;
   /** ID of an entry in the case's `sources`. */
   source: string;
-  /** Examiner criterion this item counts toward. */
-  criterion: OralCriterionId;
+  /** Score sheet row this item counts toward. */
+  criterion: OralCriterionId | keyof typeof LEGACY_CRITERION;
+}
+
+export interface OralCard {
+  vitals: Vitals;
+  medications: string;
+  allergies: string;
 }
 
 export interface OralCase {
@@ -153,7 +175,14 @@ export interface OralCase {
   keyFeatures: TopicKeyFeature[];
   summary: string;
   durationMinutes: number;
+  /**
+   * What the candidate reads aloud, as on a CFPC oral card. It opens "You are
+   * working in the emergency department of ..." and gives age, sex, arrival
+   * and complaint in one or two sentences. No patient name.
+   */
   stem: string;
+  /** The labelled block under the stem on a CFPC oral card. */
+  card?: OralCard;
   findings: Finding[];
   start: string;
   nodes: CaseNode[];
@@ -192,6 +221,8 @@ export interface CriterionScore {
   name: string;
   awarded: number;
   max: number;
+  /** The row on the CFPC 0 to 10 scale, to one decimal. */
+  outOf10: number;
 }
 
 export interface CompetencyScore {

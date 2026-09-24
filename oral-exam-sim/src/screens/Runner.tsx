@@ -11,7 +11,16 @@ import {
   type Attempt,
 } from "@/engine";
 import { speak, stopSpeaking } from "@/lib/speech";
-import { ORAL_STATION_MINUTES } from "@/engine/exam";
+import { ORAL_READING_MINUTES, ORAL_STATION_MINUTES } from "@/engine/exam";
+import { VITAL_LABELS } from "@/engine/samp";
+import type { OralCard } from "@/engine/types";
+
+/** The labelled block of a CFPC oral card, in order. */
+function cardLines(card: OralCard): [string, string][] {
+  const label: Record<string, string> = { resp: "Respiration", bp: "Blood pressure" };
+  const vitals = VITAL_LABELS.filter(([k]) => card.vitals[k]).map(([k, l]) => [label[k] ?? l, card.vitals[k]!] as [string, string]);
+  return [...vitals, ["Prescribed medication", card.medications], ["Allergies", card.allergies]];
+}
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -61,6 +70,8 @@ export function Runner({
   const station = mode === "station";
   const exam = mode === "exam" || station;
   const [stationStart, setStationStart] = useState<number | null>(null);
+  // CFPC stations give 2 minutes to read the scenario out loud before the 12 minutes start.
+  const [readStart] = useState(() => Date.now());
   const [attempt, setAttempt] = useState<Attempt>(() =>
     newAttempt(c, mode, Date.now(), `${c.id}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`),
   );
@@ -79,13 +90,17 @@ export function Runner({
   const overCase = station ? (stationLeft ?? 1) <= 60 : caseSecs > c.durationMinutes * 60;
   const lastSpoken = useRef("");
 
-  const spoken = phase === "stem" ? c.stem : node.kind === "question" ? node.prompt : node.text;
+  const readLeft = station && phase === "stem" ? ORAL_READING_MINUTES * 60 - (now - readStart) / 1000 : null;
+  const cardText = c.card ? cardLines(c.card).map(([k, v]) => `${k}: ${v}.`).join(" ") : "";
+  const spoken = phase === "stem" ? `${c.stem} ${cardText}`.trim() : node.kind === "question" ? node.prompt : node.text;
   const speakNow = (t: string) => speak(t, app.settings.rate);
 
   // Read each examiner line once when it appears.
   useEffect(() => {
     if (!app.settings.speak) return;
     if (phase === "choose" || phase === "reveal") return;
+    // In a station the candidate reads the scenario aloud. Speech stays one tap away.
+    if (station && phase === "stem") return;
     const key = `${phase}:${node.id}`;
     if (lastSpoken.current === key) return;
     lastSpoken.current = key;
@@ -139,6 +154,16 @@ export function Runner({
     go({ name: "score", attemptId: done.id, mockOralId });
   }
 
+  // Reading time over: the 12 minutes start.
+  useEffect(() => {
+    if (readLeft !== null && readLeft <= 0 && phase === "stem") startCase();
+  }, [readLeft !== null && readLeft <= 0]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function startCase() {
+    if (station) setStationStart(Date.now());
+    setPhase("node");
+  }
+
   // The station ends at 12 minutes wherever the candidate is in the case.
   useEffect(() => {
     if (stationLeft !== null && stationLeft <= 0) {
@@ -166,7 +191,13 @@ export function Runner({
           {station ? "Station" : exam ? "Exam day" : "Practice"} · {c.title}
         </span>
         <span className={`clock ${overCase ? "over" : ""}`}>
-          {station ? (stationLeft === null ? `${ORAL_STATION_MINUTES}:00` : mmss(Math.max(0, stationLeft))) : `${mmss(caseSecs)} / ${c.durationMinutes}:00`}
+          {station
+            ? readLeft !== null
+              ? `Read ${mmss(Math.max(0, readLeft))}`
+              : stationLeft === null
+                ? `${ORAL_STATION_MINUTES}:00`
+                : mmss(Math.max(0, stationLeft))
+            : `${mmss(caseSecs)} / ${c.durationMinutes}:00`}
         </span>
       </div>
       <div className="progress" aria-hidden="true">
@@ -174,7 +205,23 @@ export function Runner({
       </div>
 
       {phase === "stem" ? (
-        <Examiner text={c.stem} phaseLabel="The stem" onSpeak={() => speakNow(c.stem)} />
+        <>
+          <Examiner
+            text={c.stem}
+            phaseLabel={station ? "Read the scenario out loud" : "The stem"}
+            onSpeak={() => speakNow(spoken)}
+          />
+          {c.card && (
+            <dl className="oralcard selectable">
+              {cardLines(c.card).map(([k, v]) => (
+                <div key={k}>
+                  <dt>{k}</dt>
+                  <dd>{v}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+        </>
       ) : (
         <Examiner
           text={node.kind === "question" ? node.prompt : node.text}
@@ -288,14 +335,8 @@ export function Runner({
       <div className="dock">
         <div className="inner">
           {phase === "stem" && (
-            <button
-              className="btn"
-              onClick={() => {
-                if (station) setStationStart(Date.now());
-                setPhase("node");
-              }}
-            >
-              {station ? "I have read the stem. Start 12:00" : "Begin"}
+            <button className="btn" onClick={startCase}>
+              {station ? "I have read it out loud. Start 12:00" : "Begin"}
             </button>
           )}
           {phase === "node" && node.kind === "say" && (

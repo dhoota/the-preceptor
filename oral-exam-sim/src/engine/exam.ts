@@ -14,6 +14,8 @@ export const MOCK_WRITTEN = {
 
 /** Structured oral: four stations of 12 minutes, four different topics. */
 export const ORAL_STATION_MINUTES = 12;
+/** Reading time before each station, when the candidate reads the scenario out loud. */
+export const ORAL_READING_MINUTES = 2;
 export const MOCK_ORAL_STATIONS = 4;
 
 /** Small seeded generator so a composed exam is reproducible in tests. */
