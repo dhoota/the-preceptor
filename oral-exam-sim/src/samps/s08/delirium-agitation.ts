@@ -13,7 +13,8 @@ const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", ve
 
 const CCSMH: Source = {
   id: "ccsmh",
-  citation: "Canadian Coalition for Seniors' Mental Health. National guidelines for seniors' mental health: the assessment and treatment of delirium.",
+  citation: "Canadian Coalition for Seniors' Mental Health. National guidelines for seniors' mental health: the assessment and treatment of delirium. 2006, updated 2014.",
+  url: "https://ccsmh.ca/wp-content/uploads/2016/03/2014-ccsmh-Guideline-Update-Delirium.pdf",
 };
 const HCCA: Source = { id: "hcca", citation: "Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A. Ontario." };
 const MHA: Source = { id: "mha", citation: "Mental Health Act, R.S.O. 1990, c. M.7. Ontario." };
@@ -46,7 +47,10 @@ const CRISM: Source = {
   citation: "Canadian Research Initiative in Substance Matters. Canadian guideline for the clinical management of high-risk drinking and alcohol use disorder. 2023.",
   url: "https://crism.ca/alcohol-use-disorder/",
 };
-const GOLDFRANK: Source = { id: "goldfrank", citation: "Nelson LS, et al. Goldfrank's Toxicologic Emergencies. McGraw Hill." };
+const GOLDFRANK: Source = {
+  id: "goldfrank",
+  citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. 2019.",
+};
 const HUNTER: Source = {
   id: "hunter",
   citation:
@@ -71,7 +75,7 @@ const HYPONA: Source = {
   citation: "Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014.",
 };
 const DC_HYPO: Source = { id: "dc-hypo", citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee. Hypoglycemia in adults. Can J Diabetes. 2018." };
-const TC_BLEED: Source = { id: "tc-bleed", citation: "Thrombosis Canada. Clinical guide on the management of bleeding in patients taking DOACs." };
+const TC_BLEED: Source = { id: "tc-bleed", citation: "Thrombosis Canada. Clinical guide: DOACs, management of bleeding. 2025." };
 const DLB: Source = {
   id: "dlb",
   citation: "McKeith IG, et al. Diagnosis and management of dementia with Lewy bodies: fourth consensus report of the DLB Consortium. Neurology. 2017.",
@@ -85,7 +89,11 @@ const NICE_HI: Source = {
   citation: "National Institute for Health and Care Excellence. Head injury: assessment and early management (NG232). 2023.",
   url: "https://www.nice.org.uk/guidance/ng232",
 };
-const HIP_BLOCK: Source = { id: "hip-block", citation: "Guay J, et al. Peripheral nerve blocks for hip fractures in adults. Cochrane Database Syst Rev." };
+const HIP_BLOCK: Source = {
+  id: "hip-block",
+  citation: "Guay J, Kopp S. Peripheral nerve blocks for hip fractures in adults. Cochrane Database Syst Rev. 2020.",
+  url: "https://pubmed.ncbi.nlm.nih.gov/33238043/",
+};
 
 /* Shared key items -------------------------------------------------------- */
 
@@ -120,12 +128,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     topic: "delirium-agitation",
     title: "Confusion in an older woman",
     stem:
-      "An 84-year-old woman is brought by her daughter for two days of increasing confusion. She is drowsy in the day and restless at night, pulling at her clothes. She has mild Alzheimer disease and scored 22 of 30 on a MoCA last year. At baseline she dresses herself and chats normally.\n\nMedications: donepezil, hydrochlorothiazide, zopiclone at night, and oxybutynin started one week ago.\n\nVital signs: T 37.9°C, HR 98/min, BP 146/80 mmHg, RR 20/min, SpO2 94% on room air. Glucose 7.2 mmol/L. Weight 52 kg.",
+      "An 84-year-old woman is brought to the emergency department by her daughter for two days of increasing confusion. She is drowsy in the day and restless at night, pulling at her clothes. She has mild Alzheimer disease and scored 22 of 30 on a MoCA last year. At baseline she dresses herself and chats normally.\n\nMedications: donepezil, hydrochlorothiazide, zopiclone at night, and oxybutynin started one week ago.\n\nGlucose 7.2 mmol/L.",
+    vitals: { temperature: "37.9°C", pulse: "98/minute", resp: "20/minute", bp: "146/80 mmHg", o2sat: "94% on room air", weight: "52 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that help distinguish delirium from her baseline dementia.",
+        prompt: "What features help distinguish delirium from her baseline dementia?",
         required: 3,
         accept: [ACUTE, FLUCT, INATTN, LOC, DISORG, k("visual", "Visual hallucinations or misperceptions", "visual hallucination", "misperception", "illusion"), k("sleep", "Reversal of the sleep wake cycle", "sleep wake", "day night", "sleep cycle", "sundown")],
         explanation:
@@ -136,7 +145,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List FOUR likely contributors to her delirium that you would look for and address.",
+        prompt: "What likely contributors to her delirium would you look for and address?",
         required: 4,
         accept: [
           k("oxy", "Anticholinergic effect of oxybutynin", "oxybutynin", "anticholinergic"),
@@ -157,7 +166,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "Her daughter asks how staff can keep her safe and settled without sedation. List THREE nonpharmacological measures.",
+        update: "Her daughter asks how staff can keep her safe and settled without sedation.",
+        prompt: "What nonpharmacological measures would you use?",
         required: 3,
         accept: [
           REORIENT,
@@ -187,12 +197,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     topic: "delirium-agitation",
     title: "Shouting in the waiting room",
     stem:
-      "Police bring a 24-year-old man to the emergency department after he shouted at strangers on a bus. His parents say he has become withdrawn over three months and has been hearing voices. He is pacing and shouting in the waiting room.\n\nVital signs: T 36.8°C, HR 96/min, BP 132/84 mmHg, RR 16/min, SpO2 99% on room air. Glucose 5.8 mmol/L.\n\nHe is alert and oriented to person, place and date. He follows the conversation. He says voices tell him he is being watched.",
+      "Police bring a 24-year-old man to the emergency department after he shouted at strangers on a bus. His parents say he has become withdrawn over three months and has been hearing voices. He is pacing and shouting in the waiting room.\n\nGlucose 5.8 mmol/L. He is alert and oriented to person, place and date. He follows the conversation. He says voices tell him he is being watched.",
+    vitals: { temperature: "36.8°C", pulse: "96/minute", resp: "16/minute", bp: "132/84 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features in this presentation that favour a primary psychotic disorder over delirium.",
+        prompt: "What features in this presentation favour a primary psychotic disorder over delirium?",
         required: 3,
         accept: [
           k("oriented", "Oriented to person, place and time", "oriented", "orientation"),
@@ -213,7 +224,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "He becomes more agitated, clenches his fists and threatens a nurse.",
-        prompt: "List THREE immediate actions to keep everyone safe.",
+        prompt: "What immediate actions would you take to keep everyone safe?",
         required: 3,
         accept: [
           k("security", "Call security or a Code White", "security", "code white", "show of force", "police"),
@@ -232,7 +243,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "He agrees to take medication by mouth. Write ONE appropriate oral regimen. Include the drug and dose.",
+        update: "He agrees to take medication by mouth.",
+        prompt: "What oral regimen would you give, with the drug and dose?",
         required: 1,
         accept: [
           k("olanz", "Olanzapine 5 to 10 mg PO or orally disintegrating", "olanzapine 5", "olanzapine 10", "olanzapine 5mg", "olanzapine 10mg", "zyprexa 10"),
@@ -249,7 +261,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "After settling, he demands to leave. You believe he meets criteria for a Form 1 under Box A of the Ontario Mental Health Act.",
-        prompt: "List TWO elements that must be present for a Box A Form 1.",
+        prompt: "What elements must be present for a Box A Form 1?",
         required: 2,
         accept: [
           k("self", "He has threatened or attempted to cause bodily harm to himself", "harm himself", "harm to himself", "self harm", "suicide", "suicidal"),
@@ -276,12 +288,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["tox", "environmental"],
     title: "Running through traffic",
     stem:
-      "Paramedics and four police officers bring a 31-year-old man who was running through traffic. A friend says he has used methamphetamine for three days. He is screaming, incoherent and fighting the officers holding him. There is no IV access.\n\nVital signs: T 39.2°C, HR 148/min, BP 172/100 mmHg, RR 28/min, SpO2 96% on room air. Glucose 6.1 mmol/L. Estimated weight 90 kg.",
+      "Paramedics and four police officers bring a 31-year-old man to the emergency department. He was running through traffic. A friend says he has used methamphetamine for three days. He is screaming, incoherent and fighting the officers holding him. There is no IV access.\n\nGlucose 6.1 mmol/L. His weight is an estimate.",
+    vitals: { temperature: "39.2°C", pulse: "148/minute", resp: "28/minute", bp: "172/100 mmHg", o2sat: "96% on room air", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Write the most appropriate initial chemical sedation. Include the drug, dose and route.",
+        prompt: "What is the most appropriate initial chemical sedation, with the drug, dose and route?",
         required: 1,
         accept: [
           k(
@@ -301,7 +314,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE life threatening complications you must anticipate in this patient.",
+        prompt: "What life threatening complications must you anticipate in this patient?",
         required: 3,
         accept: [
           k("hyperthermia", "Severe hyperthermia", "hyperthermia", "temperature", "heat"),
@@ -325,7 +338,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "He is sedated. Four point restraints remain on while you complete the workup.",
-        prompt: "List FOUR components of monitoring required while he stays in restraints.",
+        prompt: "What components of monitoring are required while he stays in restraints?",
         required: 4,
         accept: [
           k("obs", "Continuous direct observation", "constant observation", "continuous observation", "direct observation", "observation", "one to one", "1:1", "sitter", "line of sight"),
@@ -348,7 +361,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "Twenty minutes later his core temperature is 40.1°C.",
-        prompt: "List TWO immediate treatments for his temperature.",
+        prompt: "What immediate treatments would you give for his temperature?",
         required: 2,
         accept: [
           k("evap", "Evaporative cooling with mist and fans", "evaporative", "mist", "fan", "spray"),
@@ -376,12 +389,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["tox", "loc"],
     title: "Seeing insects on the walls",
     stem:
-      "A 52-year-old man is brought by his brother. He usually drinks 20 beers a day and stopped three days ago when he ran out of money. He is sweating and tremulous, sees insects on the walls and does not know where he is. He has a healing bruise on his left forehead.\n\nVital signs: T 38.3°C, HR 132/min, BP 178/104 mmHg, RR 24/min, SpO2 95% on room air. Glucose 3.6 mmol/L. Weight 68 kg.",
+      "A 52-year-old man is brought to the emergency department by his brother. He usually drinks 20 beers a day and stopped three days ago when he ran out of money. He is sweating and tremulous, sees insects on the walls and does not know where he is. He has a healing bruise on his left forehead.\n\nGlucose 3.6 mmol/L.",
+    vitals: { temperature: "38.3°C", pulse: "132/minute", resp: "24/minute", bp: "178/104 mmHg", o2sat: "95% on room air", weight: "68 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Besides alcohol withdrawal, list THREE other causes of his delirium that you must consider.",
+        prompt: "Besides alcohol withdrawal, what other causes of his delirium must you consider?",
         required: 3,
         accept: [
           k("ich", "Intracranial hemorrhage such as subdural hematoma", "subdural", "intracranial", "head injury", "ich", "bleed", "hematoma"),
@@ -404,7 +418,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "He is striking at staff and pulling out his IV. Write the initial pharmacological treatment. Include the drug, dose, route and frequency.",
+        update: "He is striking at staff and pulling out his IV.",
+        prompt: "What is the initial pharmacological treatment, with the drug, dose, route and frequency?",
         required: 1,
         accept: [
           k("diazepam", "Diazepam 10 to 20 mg IV every 5 to 10 minutes until calm", "diazepam 10", "diazepam 20", "diazepam 10mg", "diazepam 20mg", "valium 10"),
@@ -420,7 +435,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO other treatments he needs now.",
+        prompt: "What other treatments does he need now?",
         required: 2,
         accept: [
           k("thiamine", "IV thiamine, at least 100 mg and up to 500 mg if Wernicke is suspected", "thiamine", "vitamin b1", "b1"),
@@ -437,7 +452,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE objective signs you would track to judge the severity of his withdrawal and his response to treatment.",
+        prompt: "What objective signs would you track to judge the severity of his withdrawal and his response to treatment?",
         required: 3,
         accept: [
           k("hr", "Heart rate", "heart rate", "hr", "tachycardia", "pulse"),
@@ -466,12 +481,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["analgesia-sedation"],
     title: "Agitation after a fall in long term care",
     stem:
-      "An 88-year-old man with vascular dementia fell at his long term care home. At baseline he is pleasant, knows staff by name and walks with a walker. Now he is yelling, swinging at staff and pulling at his IV. His left leg is shortened and externally rotated. He has a small occipital hematoma. He has not had any analgesia.\n\nVital signs: T 36.9°C, HR 104/min, BP 158/88 mmHg, RR 20/min, SpO2 95% on room air. Glucose 6.8 mmol/L. Weight 60 kg.\n\nHip X-ray shows a displaced left femoral neck fracture.",
+      "An 88-year-old man with vascular dementia presents to the emergency department after a fall at his long term care home. At baseline he is pleasant, knows staff by name and walks with a walker. Now he is yelling, swinging at staff and pulling at his IV. His left leg is shortened and externally rotated. He has a small occipital hematoma. He has not had any analgesia.\n\nGlucose 6.8 mmol/L. Hip X-ray shows a displaced left femoral neck fracture.",
+    vitals: { temperature: "36.9°C", pulse: "104/minute", resp: "20/minute", bp: "158/88 mmHg", o2sat: "95% on room air", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE reversible contributors to his agitation.",
+        prompt: "What are the reversible contributors to his agitation?",
         required: 3,
         accept: [
           k("pain", "Untreated pain", "pain", "analgesia"),
@@ -493,7 +509,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO components of the best analgesic approach for him.",
+        prompt: "What are the components of the best analgesic approach for him?",
         required: 2,
         accept: [
           k("block", "Fascia iliaca or femoral nerve block", "fascia iliaca", "femoral nerve", "nerve block", "peng", "regional"),
@@ -509,7 +525,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "After a nerve block he is calmer but still pulls at lines and tries to strike staff. Nonpharmacological measures are in place.",
-        prompt: "Write an appropriate medication for his agitation. Include the drug, dose and route.",
+        prompt: "What medication would you give for his agitation, with the drug, dose and route?",
         required: 1,
         accept: [
           k(
@@ -533,7 +549,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "His nurse requests wrist restraints to protect his IV. List TWO alternatives you would try first.",
+        update: "His nurse requests wrist restraints to protect his IV.",
+        prompt: "What alternatives would you try first?",
         required: 2,
         accept: [
           SITTER,
@@ -561,12 +578,14 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Picking at the air",
     stem:
-      "A 22-year-old woman is brought by her roommate, who found her confused beside an empty bottle of diphenhydramine 50 mg tablets. She is picking at the air and mumbling. She does not follow commands. She has no psychiatric history.\n\nVital signs: T 38.4°C, HR 136/min, BP 142/88 mmHg, RR 20/min, SpO2 98% on room air. Glucose 6.0 mmol/L. Weight 58 kg.\n\nPupils are 7 mm and sluggish. Her skin is dry and flushed. Bowel sounds are absent and her bladder is palpable.",
+      "A 22-year-old woman is brought to the emergency department by her roommate, who found her confused beside an empty bottle of diphenhydramine 50 mg tablets. She is picking at the air and mumbling. She does not follow commands. She has no psychiatric history.\n\nGlucose 6.0 mmol/L. Pupils are 7 mm and sluggish. Her skin is dry and flushed. Bowel sounds are absent and her bladder is palpable.",
+    vitals: { temperature: "38.4°C", pulse: "136/minute", resp: "20/minute", bp: "142/88 mmHg", o2sat: "98% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Her roommate wonders if she is having a psychotic break. List THREE features that favour delirium over a primary psychotic disorder.",
+        update: "Her roommate wonders if she is having a psychotic break.",
+        prompt: "What features favour delirium over a primary psychotic disorder?",
         required: 3,
         accept: [
           ACUTE,
@@ -588,7 +607,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO investigations that will change her management.",
+        prompt: "What investigations will change her management?",
         required: 2,
         accept: [
           k("ecg", "ECG for QRS and QTc", "ecg", "ekg", "electrocardiogram", "qrs", "qtc"),
@@ -608,8 +627,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update:
-          "ECG shows sinus tachycardia at 134/min, QRS 88 ms and QTc 460 ms. She has had no seizures. After discussion with the poison centre you decide to give an antidote.",
-        prompt: "Write the antidote. Include the drug, dose, route and rate.",
+          "ECG shows sinus tachycardia at 134/minute, QRS 88 ms and QTc 460 ms. She has had no seizures. After discussion with the poison centre you decide to give an antidote.",
+        prompt: "What antidote would you give, with the drug, dose, route and rate?",
         required: 1,
         accept: [
           k(
@@ -639,12 +658,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["loc", "tox"],
     title: "Combative and sweaty at home",
     stem:
-      "A 76-year-old man was found by his wife in the bathroom, sweaty and swinging at her. He has type 2 diabetes treated with gliclazide MR 120 mg daily and chronic kidney disease with an eGFR of 28 mL/min. Paramedics could not start an IV. In the department a nurse has placed an IV. He remains combative.\n\nVital signs: T 36.4°C, HR 102/min, BP 150/90 mmHg, RR 18/min, SpO2 97% on room air. Capillary glucose 1.9 mmol/L. Weight 74 kg.",
+      "A 76-year-old man is brought to the emergency department by ambulance. His wife found him in the bathroom, sweaty and swinging at her. He has type 2 diabetes treated with gliclazide MR 120 mg daily and chronic kidney disease with an eGFR of 28 mL/minute. Paramedics could not start an IV. In the department a nurse has placed an IV. He remains combative.\n\nCapillary glucose 1.9 mmol/L.",
+    vitals: { temperature: "36.4°C", pulse: "102/minute", resp: "18/minute", bp: "150/90 mmHg", o2sat: "97% on room air", weight: "74 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Write the immediate treatment. Include the drug, dose and route.",
+        prompt: "What is the immediate treatment, with the drug, dose and route?",
         required: 1,
         accept: [
           k("d50", "Dextrose 50%, 20 to 50 mL IV (10 to 25 g)", "d50", "d50w", "50% dextrose", "dextrose 50%", "25 g", "25g", "50 ml"),
@@ -659,7 +679,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "He wakes and is back to baseline. List TWO pieces of collateral history from his wife that would change your management.",
+        update: "He wakes and is back to baseline.",
+        prompt: "What collateral history from his wife would change your management?",
         required: 2,
         accept: [
           k("dose", "Recent medication or dose changes, including insulin", "dose", "medication", "new medication", "gliclazide", "sulfonylurea", "insulin"),
@@ -680,7 +701,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Two hours later his glucose is 2.6 mmol/L despite a D10W infusion.",
-        prompt: "Name the specific treatment that prevents further sulfonylurea induced hypoglycemia.",
+        prompt: "What specific treatment prevents further sulfonylurea induced hypoglycemia?",
         required: 1,
         accept: [k("octreotide", "Octreotide 50 to 100 mcg SC or IV every 6 to 8 hours", "octreotide", "sandostatin")],
         unacceptable: [bad("Repeated glucagon", ["repeat glucagon", "repeated glucagon", "glucagon 1 mg", "glucagon infusion", "give glucagon"])],
@@ -701,12 +722,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["shock", "infectious-diseases"],
     title: "Wanting to go home with a fever",
     stem:
-      "An 81-year-old man with a chronic indwelling urinary catheter has a fever and confusion. He is oriented to self only and drifts in and out of the conversation. He is pulling at his IV and says the nurses are poisoning him. He refuses antibiotics and wants to go home. His son is with him. His wife of 55 years is at home. He has no guardian and no attorney for personal care. You work in Ontario.\n\nVital signs: T 38.9°C, HR 118/min, BP 92/54 mmHg, RR 24/min, SpO2 93% on room air. Lactate 3.8 mmol/L. Weight 72 kg.",
+      "You work in Ontario. An 81-year-old man with a chronic indwelling urinary catheter presents to the emergency department with fever and confusion. He is oriented to self only and drifts in and out of the conversation. He is pulling at his IV and says the nurses are poisoning him. He refuses antibiotics and wants to go home. His son is with him. His wife of 55 years is at home. He has no guardian and no attorney for personal care.\n\nLactate 3.8 mmol/L.",
+    vitals: { temperature: "38.9°C", pulse: "118/minute", resp: "24/minute", bp: "92/54 mmHg", o2sat: "93% on room air", weight: "72 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Under Ontario's Health Care Consent Act, list the TWO abilities a person needs to be capable of consenting to treatment.",
+        prompt: "Under Ontario's Health Care Consent Act, what abilities does a person need to be capable of consenting to treatment?",
         required: 2,
         accept: [
           k("understand", "Able to understand the information relevant to the treatment decision", "understand", "understanding"),
@@ -721,14 +743,14 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "He is found incapable of consenting to antibiotics. Who is the correct substitute decision maker? Select one.",
+        update: "He is found incapable of consenting to antibiotics.",
+        prompt: "Which of the following is the correct substitute decision maker for him?",
         options: [
-          "His son, because he is present",
-          "His wife",
-          "The Public Guardian and Trustee",
+          "His son, who is present",
+          "His wife, who is at home",
           "The most responsible physician",
-          "The hospital ethics committee",
-          "None. Treat him under a Form 1",
+          "The Public Guardian and Trustee",
+          "None, treat him under a Form 1",
         ],
         correct: 1,
         explanation:
@@ -739,7 +761,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "You cannot reach his wife by phone. List TWO conditions under the HCCA that allow you to treat him now without consent.",
+        update: "You cannot reach his wife by phone.",
+        prompt: "Which conditions under the HCCA allow you to treat him now without consent?",
         required: 2,
         accept: [
           k("harm", "He is experiencing severe suffering or is at risk of serious bodily harm without prompt treatment", "severe suffering", "suffering", "serious bodily harm", "bodily harm", "harm"),
@@ -755,7 +778,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE treatments you would start immediately for the cause of his delirium.",
+        prompt: "What treatments would you start immediately for the cause of his delirium?",
         required: 3,
         accept: [
           k("fluids", "IV crystalloid bolus", "crystalloid", "fluid", "saline", "ringer"),
@@ -782,12 +805,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Is it mania again",
     stem:
-      "A 58-year-old woman with bipolar I disorder has taken lithium 900 mg daily for years. Her family doctor started hydrochlorothiazide three weeks ago. She has had four days of vomiting and diarrhea. Her husband says she is manic again.\n\nVital signs: T 37.3°C, HR 96/min, BP 108/64 mmHg, RR 18/min, SpO2 97% on room air. Glucose 5.9 mmol/L. Weight 66 kg.\n\nShe does not know the date or where she is and cannot count backward from 20. She has a coarse tremor, slurred speech, an unsteady gait and occasional myoclonic jerks.",
+      "A 58-year-old woman with bipolar I disorder presents to the emergency department with four days of vomiting and diarrhea. She has taken lithium 900 mg daily for years. Her family doctor started hydrochlorothiazide three weeks ago. Her husband says she is manic again.\n\nGlucose 5.9 mmol/L. She does not know the date or where she is and cannot count backward from 20. She has a coarse tremor, slurred speech, an unsteady gait and occasional myoclonic jerks.",
+    vitals: { temperature: "37.3°C", pulse: "96/minute", resp: "18/minute", bp: "108/64 mmHg", o2sat: "97% on room air", weight: "66 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that favour delirium over a manic relapse.",
+        prompt: "What features favour delirium over a manic relapse?",
         required: 3,
         accept: [
           DISORIENT,
@@ -806,7 +830,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO investigations that will change management now.",
+        prompt: "What investigations will change management now?",
         required: 2,
         accept: [
           k("li", "Serum lithium level", "lithium level", "lithium", "serum lithium"),
@@ -824,8 +848,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        update: "Lithium level 4.3 mmol/L. Creatinine 168 µmol/L (baseline 88). Sodium 132 mmol/L.",
-        prompt: "What is the definitive treatment? List ONE.",
+        update: "Lithium level 4.3 mmol/L. Creatinine 168 micromol/L (baseline 88). Sodium 132 mmol/L.",
+        prompt: "What is the definitive treatment?",
         required: 1,
         accept: [k("hd", "Hemodialysis", "hemodialysis", "haemodialysis", "dialysis", "extracorporeal", "crrt")],
         unacceptable: [bad("Activated charcoal", ["give charcoal", "activated charcoal 50", "charcoal 50 g", "charcoal 1 g/kg"])],
@@ -837,18 +861,19 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt:
-          "You work in Ontario. She refuses dialysis, pulls at her IV and wants to go home. She cannot describe her illness or what would happen without treatment. Her husband is present. What is the most appropriate approach? Select one.",
+        update:
+          "You work in Ontario. She refuses dialysis, pulls at her IV and wants to go home. She cannot describe her illness or what would happen without treatment. Her husband is present.",
+        prompt: "Which of the following is the most appropriate approach to her refusal of dialysis?",
         options: [
-          "Complete a Form 1 under the Mental Health Act, which authorizes dialysis",
-          "Find her incapable for this treatment and seek consent from her husband as substitute decision maker",
-          "Accept her refusal because every patient may refuse treatment",
-          "Wait until she becomes capable before starting dialysis",
+          "Accept her refusal and withhold dialysis",
           "Ask her psychiatrist to complete a Form 3",
+          "Find her incapable for dialysis, seek consent from husband",
+          "Treat under a Form 1 of the Mental Health Act",
+          "Wait until she regains capacity to start dialysis",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "She cannot understand or appreciate the decision, so she is incapable for this treatment. Consent comes from her spouse under the HCCA. A Form 1 authorizes detention for psychiatric assessment, not treatment of a medical illness. Delay risks permanent neurological injury. Other provinces have different statutes.",
+          "She cannot understand or appreciate the decision, so she is incapable for this treatment. Consent comes from her husband as her substitute decision maker under the HCCA. A Form 1 authorizes detention for psychiatric assessment, not treatment of a medical illness. A capable patient may refuse treatment, but she is not capable. Delay risks permanent neurological injury. Other provinces have different statutes.",
         keyFeature: kf(5),
         source: "hcca",
       },
@@ -864,12 +889,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["loc"],
     title: "New confusion two days after a fall",
     stem:
-      "An 82-year-old woman takes apixaban 5 mg twice daily for atrial fibrillation. She fell and struck her head two days ago. Since last night she has been confused and agitated. Her daughter says she normally lives alone and manages her own finances. Her last apixaban dose was 3 hours ago.\n\nVital signs: T 36.8°C, HR 84/min irregular, BP 168/92 mmHg, RR 16/min, SpO2 96% on room air. Glucose 7.0 mmol/L. Weight 61 kg.\n\nGCS is 14 (E4 V4 M6). No obvious focal deficit.",
+      "An 82-year-old woman who takes apixaban 5 mg twice daily for atrial fibrillation presents to the emergency department. She fell and struck her head two days ago. Since last night she has been confused and agitated. Her daughter says she normally lives alone and manages her own finances. Her last apixaban dose was 3 hours ago.\n\nGlucose 7.0 mmol/L. GCS is 14 (E4 V4 M6). No obvious focal deficit.",
+    vitals: { temperature: "36.8°C", pulse: "84/minute irregular", resp: "16/minute", bp: "168/92 mmHg", o2sat: "96% on room air", weight: "61 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the single most important investigation now? List ONE.",
+        prompt: "What is the single most important investigation now?",
         required: 1,
         accept: [k("ct", "Noncontrast CT head", "ct head", "ct brain", "head ct", "ct scan of the head", "ct of the head", "ct")],
         explanation:
@@ -881,18 +907,18 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "CT shows a 14 mm acute on chronic left subdural hematoma with 6 mm of midline shift. Neurosurgery will operate.",
-        prompt: "Name the agent you would give to reverse her anticoagulation.",
+        prompt: "What agent would you give to reverse her anticoagulation?",
         required: 1,
         accept: [k("pcc", "Prothrombin complex concentrate, or andexanet alfa where available", "pcc", "prothrombin complex", "octaplex", "beriplex", "andexanet", "andexxa")],
         explanation:
-          "For life threatening bleeding on an anti-Xa drug, give PCC, often a fixed 2000 units or 25 to 50 units/kg, or andexanet alfa where it is available. Vitamin K, plasma and protamine do not reverse apixaban. Idarucizumab reverses only dabigatran.",
+          "For life threatening bleeding on an anti-Xa drug, give PCC, often a fixed 2 000 units or 25 to 50 units/kg, or andexanet alfa where it is available. Vitamin K, plasma and protamine do not reverse apixaban. Idarucizumab reverses only dabigatran.",
         keyFeature: kf(2),
         source: "tc-bleed",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO elements you will document and trend while she waits for surgery.",
+        prompt: "What elements will you document and trend while she waits for surgery?",
         required: 2,
         accept: [
           k("gcs", "GCS with each component", "gcs", "glasgow"),
@@ -909,8 +935,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt:
-          "You work in Ontario. She says she does not want surgery. She cannot say why she is in hospital or repeat back the risks you explained. Her daughter holds her power of attorney for personal care. Who should consent to surgery?",
+        update: "You work in Ontario. She says she does not want surgery. She cannot say why she is in hospital or repeat back the risks you explained. Her daughter holds her power of attorney for personal care.",
+        prompt: "Who should consent to surgery?",
         required: 1,
         accept: [k("poa", "Her daughter as attorney for personal care", "daughter", "attorney for personal care", "poa", "power of attorney", ...SDM_MATCH)],
         explanation:
@@ -930,12 +956,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["tox"],
     title: "Shaking and sweating after a new painkiller",
     stem:
-      "A 34-year-old woman takes sertraline 150 mg daily. Three days ago she started tramadol for back pain. Last night she took extra tramadol and a dextromethorphan cough syrup. For six hours she has been agitated, confused, shaking and sweating, with diarrhea.\n\nVital signs: T 39.0°C, HR 128/min, BP 164/96 mmHg, RR 22/min, SpO2 98% on room air. Glucose 6.4 mmol/L. Weight 64 kg.\n\nShe has dilated pupils and heavy sweating. There is inducible sustained ankle clonus, ocular clonus and brisk reflexes, greater in the legs than the arms.",
+      "A 34-year-old woman who takes sertraline 150 mg daily presents to the emergency department. Three days ago she started tramadol for back pain. Last night she took extra tramadol and a dextromethorphan cough syrup. For six hours she has been agitated, confused, shaking and sweating, with diarrhea.\n\nGlucose 6.4 mmol/L. She has dilated pupils and heavy sweating. There is inducible sustained ankle clonus, ocular clonus and brisk reflexes, greater in the legs than the arms.",
+    vitals: { temperature: "39.0°C", pulse: "128/minute", resp: "22/minute", bp: "164/96 mmHg", o2sat: "98% on room air", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings that support serotonin toxicity under the Hunter criteria.",
+        prompt: "What findings support serotonin toxicity under the Hunter criteria?",
         required: 3,
         accept: [
           k("ocular", "Ocular clonus", "ocular"),
@@ -955,7 +982,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO other causes of agitated delirium with fever that you must distinguish.",
+        prompt: "What other causes of agitated delirium with fever must you distinguish?",
         required: 2,
         accept: [
           k("nms", "Neuroleptic malignant syndrome", "neuroleptic malignant", "nms"),
@@ -976,7 +1003,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "She is thrashing and trying to climb off the stretcher. Write the first line medication. Include the drug, dose and route.",
+        update: "She is thrashing and trying to climb off the stretcher.",
+        prompt: "What is the first line medication, with the drug, dose and route?",
         required: 1,
         accept: [
           k("loraz", "Lorazepam 1 to 2 mg IV, repeated as needed", "lorazepam 1", "lorazepam 2", "lorazepam 1mg", "lorazepam 2mg", "ativan 1", "ativan 2"),
@@ -994,7 +1022,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Write the specific antidote. Include the drug, dose and route.",
+        prompt: "What is the specific antidote, with the drug, dose and route?",
         required: 1,
         accept: [k("cypro", "Cyproheptadine 12 mg PO or by NG tube, then 2 mg every 2 hours if symptoms persist", "cyproheptadine 12", "cyproheptadine 12mg", "periactin 12")],
         unacceptable: [
@@ -1017,12 +1045,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     topic: "delirium-agitation",
     title: "A difficult second night in the department",
     stem:
-      "A 77-year-old man with Parkinson disease dementia is boarding in the emergency department on his second night, awaiting a medical bed for pneumonia. He takes carbidopa-levodopa four times daily at home. Tonight he sees children in the room, is trying to climb out of bed and struck a nurse. His wife says he sometimes sees people at home but is usually calm.\n\nLast year haloperidol 2 mg IM at another hospital left him rigid and unable to swallow for days.\n\nVital signs: T 37.8°C, HR 98/min, BP 138/78 mmHg, RR 20/min, SpO2 92% on 2 L/min nasal prongs. Glucose 8.1 mmol/L. Weight 70 kg.\n\nThe medication record shows his 1400 and 1800 levodopa doses were not given. He received diphenhydramine 25 mg for sleep last night.",
+      "A 77-year-old man with Parkinson disease dementia is boarding in the emergency department on his second night, awaiting a medical bed for pneumonia. He takes carbidopa-levodopa four times daily at home. Tonight he sees children in the room, is trying to climb out of bed and struck a nurse. His wife says he sometimes sees people at home but is usually calm.\n\nLast year haloperidol 2 mg IM at another hospital left him rigid and unable to swallow for days.\n\nGlucose 8.1 mmol/L. The medication record shows his 1400 and 1800 levodopa doses were not given. He received diphenhydramine 25 mg for sleep last night.",
+    vitals: { temperature: "37.8°C", pulse: "98/minute", resp: "20/minute", bp: "138/78 mmHg", o2sat: "92% on 2 L/minute by nasal prongs", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE contributors to his delirium that you would address.",
+        prompt: "What contributors to his delirium would you address?",
         required: 3,
         accept: [
           k("levodopa", "Missed levodopa doses", "levodopa", "missed", "parkinson medication", "dopamine", "carbidopa"),
@@ -1042,7 +1071,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "His levodopa is given and nonpharmacological measures are in place. He remains distressed and at risk of injuring himself.",
-        prompt: "Write an appropriate medication for his agitation. Include the drug, dose and route.",
+        prompt: "What medication would you give for his agitation, with the drug, dose and route?",
         required: 1,
         accept: [
           k(
@@ -1067,7 +1096,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE nonpharmacological measures to keep him and the staff safe tonight.",
+        prompt: "What nonpharmacological measures would keep him and the staff safe tonight?",
         required: 3,
         accept: [
           SITTER,
@@ -1088,7 +1117,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "You work in Ontario. You find him incapable of consenting to treatment of his pneumonia. List TWO actions you must take.",
+        update: "You work in Ontario. You find him incapable of consenting to treatment of his pneumonia.",
+        prompt: "What actions must you take?",
         required: 2,
         accept: [
           k("sdm", "Obtain consent from his wife as substitute decision maker", "wife", "spouse", ...SDM_MATCH),
@@ -1113,12 +1143,13 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["tox", "airway"],
     title: "Quiet after the struggle",
     stem:
-      "Police bring a 36-year-old man after a cocaine binge. He fought officers and was held prone in the back of the cruiser. In the department he was placed in four point restraints and given midazolam 10 mg IM and haloperidol 5 mg IM 20 minutes ago. He is now quiet. No monitor was attached and his nurse was called away.\n\nYou find him with snoring respirations. RR 6/min, SpO2 82% on room air, HR 58/min, BP 102/60 mmHg, T 38.9°C. Weight 102 kg.",
+      "Police bring a 36-year-old man to the emergency department after a cocaine binge. He fought officers and was held prone in the back of the cruiser. In the department he was placed in four point restraints and given midazolam 10 mg IM and haloperidol 5 mg IM 20 minutes ago. He is now quiet. No monitor was attached and his nurse was called away.\n\nYou find him with snoring respirations.",
+    vitals: { temperature: "38.9°C", pulse: "58/minute", resp: "6/minute", bp: "102/60 mmHg", o2sat: "82% on room air", weight: "102 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE immediate actions.",
+        prompt: "What are your immediate actions?",
         required: 3,
         accept: [
           k("airway", "Open the airway with head tilt, jaw thrust or an adjunct", "jaw thrust", "head tilt", "chin lift", "reposition", "airway", "opa", "npa"),
@@ -1139,7 +1170,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE factors that increase the risk of sudden death in physically restrained agitated patients.",
+        prompt: "What factors increase the risk of sudden death in physically restrained agitated patients?",
         required: 3,
         accept: [
           k("prone", "Prone position", "prone"),
@@ -1160,8 +1191,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        update: "After bag mask ventilation and naloxone 0.4 mg IV his RR is 14/min and SpO2 is 97%. Restraints are removed.",
-        prompt: "List TWO laboratory tests that will guide further management.",
+        update: "After bag mask ventilation and naloxone 0.4 mg IV his RR is 14/minute and SpO2 is 97%. Restraints are removed.",
+        prompt: "What laboratory tests will guide further management?",
         required: 2,
         accept: [
           k("ck", "Creatine kinase", "ck", "creatine kinase"),
@@ -1181,7 +1212,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO actions after this event to support staff and improve safety.",
+        prompt: "What actions after this event would support staff and improve safety?",
         required: 2,
         accept: [
           k("debrief", "Team debrief", "debrief", "debriefing"),
@@ -1207,12 +1238,14 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases", "loc", "seizures"],
     title: "Strange behaviour with a headache",
     stem:
-      "A 29-year-old woman has three days of headache and strange behaviour. Her partner says she has been suspicious of him, is using wrong words and cannot find others. One hour ago she had a generalized seizure at home. She has no psychiatric history and uses no drugs.\n\nVital signs: T 38.6°C, HR 112/min, BP 128/80 mmHg, RR 20/min, SpO2 97% on room air. Glucose 6.2 mmol/L. Weight 62 kg.\n\nGCS is 13 (E3 V4 M6). There is no rash.",
+      "A 29-year-old woman presents to the emergency department with three days of headache and strange behaviour. Her partner says she has been suspicious of him, is using wrong words and cannot find others. One hour ago she had a generalized seizure at home. She has no psychiatric history and uses no drugs.\n\nGlucose 6.2 mmol/L. GCS is 13 (E3 V4 M6). There is no rash.",
+    vitals: { temperature: "38.6°C", pulse: "112/minute", resp: "20/minute", bp: "128/80 mmHg", o2sat: "97% on room air", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Her partner thinks she is having a breakdown. List THREE features that make a medical cause more likely than primary psychosis.",
+        update: "Her partner thinks she is having a breakdown.",
+        prompt: "What features make a medical cause more likely than primary psychosis?",
         required: 3,
         accept: [
           k("fever", "Fever", "fever", "febrile", "temperature"),
@@ -1232,7 +1265,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Write the empiric antiviral. Include the drug, dose, route and frequency.",
+        prompt: "What empiric antiviral would you give, with the drug, dose, route and frequency?",
         required: 1,
         accept: [
           k(
@@ -1250,7 +1283,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO investigations to establish the cause.",
+        prompt: "What investigations would establish the cause?",
         required: 2,
         accept: [
           k("lp", "Lumbar puncture with CSF HSV PCR", "lumbar puncture", "lp", "csf", "pcr"),
@@ -1270,7 +1303,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "She has another generalized seizure. It has lasted 5 minutes. She has an IV.",
-        prompt: "Write the first line drug. Include the dose and route.",
+        prompt: "What is the first line drug, with the dose and route?",
         required: 1,
         accept: [
           k("loraz", "Lorazepam 4 mg IV (0.1 mg/kg), repeat once if needed", "lorazepam 4", "lorazepam 0.1", "lorazepam 4mg", "ativan 4"),
@@ -1294,12 +1327,14 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
     alsoTopics: ["seizures"],
     title: "Just more sleepy than usual",
     stem:
-      "An 81-year-old woman takes hydrochlorothiazide and citalopram. Her son says she has eaten little for a week and has been sleepy, slow to answer and not herself for two days. She vomited once. In the department she had a one minute generalized seizure.\n\nVital signs: T 36.6°C, HR 90/min, BP 128/70 mmHg, RR 18/min, SpO2 96% on room air. Glucose 6.5 mmol/L. Weight 50 kg.\n\nShe is drowsy with GCS 13. Sodium 114 mmol/L. Potassium 2.9 mmol/L.",
+      "An 81-year-old woman who takes hydrochlorothiazide and citalopram presents to the emergency department. Her son says she has eaten little for a week and has been sleepy, slow to answer and not herself for two days. She vomited once. In the department she had a one minute generalized seizure.\n\nGlucose 6.5 mmol/L. She is drowsy with GCS 13. Sodium 114 mmol/L. Potassium 2.9 mmol/L.",
+    vitals: { temperature: "36.6°C", pulse: "90/minute", resp: "18/minute", bp: "128/70 mmHg", o2sat: "96% on room air", weight: "50 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Before the seizure her son thought she was just depressed. List TWO features that indicate hypoactive delirium rather than depression.",
+        update: "Before the seizure her son thought she was just depressed.",
+        prompt: "What features indicate hypoactive delirium rather than depression?",
         required: 2,
         accept: [
           INATTN,
@@ -1317,7 +1352,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Write the immediate treatment for her sodium. Include the solution, volume and route.",
+        prompt: "What is the immediate treatment for her sodium, with the solution, volume and route?",
         required: 1,
         accept: [
           k(
@@ -1341,7 +1376,7 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO elements of your plan to correct her sodium safely.",
+        prompt: "What elements of your plan would correct her sodium safely?",
         required: 2,
         accept: [
           k("target", "Aim for an initial rise of 4 to 6 mmol/L to stop symptoms", "4 to 6", "5 mmol", "4 6", "6 mmol", "5 mmol/l", "6 mmol/l"),
@@ -1360,8 +1395,8 @@ export const DELIRIUM_AGITATION_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt:
-          "You work in Ontario. She is incapable of consenting to treatment. Her daughter, her attorney for personal care, refuses ICU admission, saying her mother always said she never wanted to be in hospital. List TWO principles the daughter must follow under the HCCA.",
+        update: "You work in Ontario. She is incapable of consenting to treatment. Her daughter, her attorney for personal care, refuses ICU admission, saying her mother always said she never wanted to be in hospital.",
+        prompt: "What principles must the daughter follow under the HCCA?",
         required: 2,
         accept: [
           k("wish", "Follow a known wish expressed while capable that applies to this situation", "prior capable wish", "prior wish", "known wish", "wishes expressed", "expressed wish", "capable wish", "wish"),

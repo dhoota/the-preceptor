@@ -610,6 +610,69 @@
    "after": [
     "Rh immune globulin 300 mcg IM/IV within 72 hours"
    ]
+  },
+  "dvt-pe-02#q3": {
+   "batch": "s08",
+   "before": [
+    "No imaging for PE. Look for another cause and discharge with return advice"
+   ],
+   "after": [
+    "No PE imaging, seek other cause, return advice at discharge"
+   ]
+  },
+  "dvt-pe-03#q3": {
+   "batch": "s08",
+   "before": [
+    "PE is excluded by YEARS and also by the age adjusted cutoff of 740 µg/L FEU"
+   ],
+   "after": [
+    "PE excluded by YEARS and age adjusted 740 mcg/L cutoff"
+   ]
+  },
+  "dvt-pe-07#q4": {
+   "batch": "s08",
+   "before": [
+    "Admit for IV unfractionated heparin with transition to warfarin"
+   ],
+   "after": [
+    "Admit for IV unfractionated heparin, then warfarin"
+   ]
+  },
+  "dvt-pe-10#q2": {
+   "batch": "s08",
+   "before": [
+    "Intermediate high risk"
+   ],
+   "after": [
+    "Intermediate high risk pulmonary embolism"
+   ]
+  },
+  "dvt-pe-13#q3": {
+   "batch": "s08",
+   "before": [
+    "Discharge on LMWH with warfarin started, INR monitoring and early thrombosis clinic follow-up"
+   ],
+   "after": [
+    "Discharge on LMWH and warfarin, INR checks, clinic follow-up"
+   ]
+  },
+  "delirium-agitation-08#q2": {
+   "batch": "s08",
+   "before": [
+    "His wife"
+   ],
+   "after": [
+    "His wife, who is at home"
+   ]
+  },
+  "delirium-agitation-09#q4": {
+   "batch": "s08",
+   "before": [
+    "Find her incapable for this treatment and seek consent from her husband as substitute decision maker"
+   ],
+   "after": [
+    "Find her incapable for dialysis, seek consent from husband"
+   ]
   }
  }
 }

@@ -11,15 +11,15 @@ const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", ve
 
 /* Sources ---------------------------------------------------------------- */
 
-const TC_DVT_DX: Source = { id: "tc-dvt-dx", citation: "Thrombosis Canada. Clinical guide on the diagnosis of deep vein thrombosis." };
-const TC_DVT_TX: Source = { id: "tc-dvt-tx", citation: "Thrombosis Canada. Clinical guide on the treatment of deep vein thrombosis." };
-const TC_PE: Source = { id: "tc-pe", citation: "Thrombosis Canada. Clinical guide on the diagnosis and management of pulmonary embolism." };
-const TC_PREG: Source = { id: "tc-preg", citation: "Thrombosis Canada. Clinical guide on venous thromboembolism in pregnancy." };
-const TC_CANCER: Source = { id: "tc-cancer", citation: "Thrombosis Canada. Clinical guide on cancer associated venous thromboembolism." };
-const TC_SVT: Source = { id: "tc-svt", citation: "Thrombosis Canada. Clinical guide on superficial vein thrombosis." };
-const TC_APS: Source = { id: "tc-aps", citation: "Thrombosis Canada. Clinical guide on antiphospholipid syndrome." };
-const TC_DOAC: Source = { id: "tc-doac", citation: "Thrombosis Canada. Clinical guides on apixaban and rivaroxaban." };
-const TC_UFH: Source = { id: "tc-ufh", citation: "Thrombosis Canada. Clinical guide on unfractionated heparin." };
+const TC_DVT_DX: Source = { id: "tc-dvt-dx", citation: "Thrombosis Canada. Clinical guide: deep vein thrombosis diagnosis. 2025." };
+const TC_DVT_TX: Source = { id: "tc-dvt-tx", citation: "Thrombosis Canada. Clinical guide: deep vein thrombosis treatment. 2025." };
+const TC_PE: Source = { id: "tc-pe", citation: "Thrombosis Canada. Clinical guides: pulmonary embolism diagnosis (2026) and pulmonary embolism treatment (2025)." };
+const TC_PREG: Source = { id: "tc-preg", citation: "Thrombosis Canada. Clinical guide: pregnancy, diagnosis of DVT and PE. 2026." };
+const TC_CANCER: Source = { id: "tc-cancer", citation: "Thrombosis Canada. Clinical guide: cancer and thrombosis. 2024." };
+const TC_SVT: Source = { id: "tc-svt", citation: "Thrombosis Canada. Clinical guide: superficial thrombophlebitis, superficial vein thrombosis. 2026." };
+const TC_APS: Source = { id: "tc-aps", citation: "Thrombosis Canada. Clinical guide: thrombophilia, antiphospholipid syndrome. 2025." };
+const TC_DOAC: Source = { id: "tc-doac", citation: "Thrombosis Canada. Clinical guides: apixaban and rivaroxaban. 2025." };
+const TC_UFH: Source = { id: "tc-ufh", citation: "Thrombosis Canada. Clinical guide: unfractionated heparin, low molecular weight heparin and fondaparinux. 2025." };
 const ESC: Source = {
   id: "esc-pe",
   citation: "Konstantinides SV, et al. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.",
@@ -116,12 +116,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     topic: "dvt-pe",
     title: "Calf pain after a trip",
     stem:
-      "A 46-year-old man presents with three days of right calf pain and swelling. He flew from Vancouver to Halifax five days ago. He has no chest pain or shortness of breath.\n\nVital signs: T 36.9°C, HR 84/min, BP 134/82 mmHg, RR 16/min, SpO2 98% on room air. Weight 92 kg.",
+      "A 46-year-old man presents to the emergency department with three days of right calf pain and swelling. He flew from Vancouver to Halifax five days ago. He has no chest pain or shortness of breath.",
+    vitals: { temperature: "36.9°C", pulse: "84/minute", resp: "16/minute", bp: "134/82 mmHg", o2sat: "98% on room air", weight: "92 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List FOUR elements of the history you would ask about to establish his baseline risk of venous thromboembolism.",
+        prompt: "What elements of the history would you ask about to establish his baseline risk of venous thromboembolism?",
         required: 4,
         accept: [
           PRIOR_VTE,
@@ -143,7 +144,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE examination findings you would look for that support a DVT in the right leg.",
+        prompt: "What examination findings would you look for that support a DVT in the right leg?",
         required: 3,
         accept: [
           k(
@@ -167,9 +168,9 @@ export const DVT_PE_SAMPS: Samp[] = [
         kind: "single",
         update:
           "His right calf is 2 cm larger than the left. There is tenderness over the popliteal fossa and along the posterior calf. There is no pitting edema and no dilated superficial veins. He has had no surgery, cast, bed rest, cancer or previous VTE. You think DVT is more likely than any other diagnosis.",
-        prompt: "What is his two level Wells DVT score and category? Select one.",
-        options: ["0, DVT unlikely", "1, DVT unlikely", "2, DVT likely", "3, DVT likely", "1, DVT likely"],
-        correct: 1,
+        prompt: "Which of the following is his two level Wells DVT score and category?",
+        options: ["0, DVT unlikely", "1, DVT likely", "1, DVT unlikely", "2, DVT likely", "3, DVT likely"],
+        correct: 2,
         explanation:
           "Only deep vein tenderness scores one point. Calf asymmetry below 3 cm does not score. Air travel is a genuine risk factor but is not a Wells item. A score of 1 or less is DVT unlikely.",
         keyFeature: kf(3),
@@ -178,7 +179,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "What is the most appropriate next investigation? List ONE.",
+        prompt: "What is the most appropriate next investigation?",
         required: 1,
         accept: [k("ddimer", "High sensitivity D-dimer", "d dimer", "ddimer", "dimer")],
         unacceptable: [bad("Venography", ["venogram", "venography"]), bad("CT pulmonary angiogram", ["ctpa", "ct pulmonary"])],
@@ -191,8 +192,8 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         update:
-          "D-dimer is 2 400 µg/L FEU. Compression ultrasound shows a noncompressible right popliteal vein. Creatinine 78 µmol/L. CBC normal. No bleeding history. He wants to avoid injections.",
-        prompt: "Write an oral anticoagulant regimen that needs no injections. Include the drug, dose and frequency for the start of treatment.",
+          "D-dimer is 2 400 mcg/L FEU. Compression ultrasound shows a noncompressible right popliteal vein. Creatinine 78 micromol/L. CBC normal. No bleeding history. He wants to avoid injections.",
+        prompt: "What oral anticoagulant regimen that needs no injections would you start, with the drug, dose and frequency at the start of treatment?",
         required: 1,
         accept: [APIXABAN_START, RIVAROXABAN_START],
         unacceptable: [
@@ -217,12 +218,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     alsoTopics: ["chest-pain"],
     title: "Sharp chest pain in a young woman",
     stem:
-      "A 27-year-old woman has two days of left sided chest pain that is worse with deep breaths. She is mildly short of breath on stairs. She takes a combined oral contraceptive. She does not smoke. She has no leg symptoms and no hemoptysis.\n\nVital signs: T 37.1°C, HR 104/min, BP 118/74 mmHg, RR 18/min, SpO2 98% on room air. Weight 64 kg.\n\nYour overall clinical gestalt is that PE is unlikely.",
+      "A 27-year-old woman presents to the emergency department with two days of left sided chest pain that is worse with deep breaths. She is mildly short of breath on stairs. She takes a combined oral contraceptive. She does not smoke. She has no leg symptoms and no hemoptysis.\n\nYour overall clinical gestalt is that PE is unlikely.",
+    vitals: { temperature: "37.1°C", pulse: "104/minute", resp: "18/minute", bp: "118/74 mmHg", o2sat: "98% on room air", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE further elements of the history that would change your estimate of her risk of PE.",
+        prompt: "What further elements of the history would change your estimate of her risk of PE?",
         required: 3,
         accept: [PRIOR_VTE, SURGERY, IMMOB, FAMILY, PREGNANCY, CANCER, TRAVEL],
         explanation:
@@ -233,37 +235,37 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Which TWO pulmonary embolism rule out criteria (PERC) does she fail? Select TWO.",
+        prompt: "Which of the following pulmonary embolism rule out criteria (PERC) does she fail?",
         options: [
-          "Age 50 or older",
-          "Heart rate 100/min or higher",
-          "SpO2 below 95% on room air",
-          "Hemoptysis",
+          "Age 50 years or older",
           "Exogenous estrogen use",
-          "Prior DVT or PE",
+          "Heart rate 100/min or higher",
+          "History of DVT or PE",
+          "Presence of hemoptysis",
+          "SpO2 below 95% on room air",
+          "Surgery or trauma with admission in past 4 weeks",
           "Unilateral leg swelling",
-          "Surgery or trauma needing hospitalization within 4 weeks",
         ],
         select: 2,
-        correct: [1, 4],
+        correct: [1, 2],
         explanation:
-          "She fails on heart rate of 104/min and on estrogen use. PERC can only exclude PE without testing when all eight criteria are met in a patient with low gestalt probability. She now needs a D-dimer.",
+          "She fails on heart rate of 104/minute and on estrogen use. PERC can only exclude PE without testing when all eight criteria are met in a patient with low gestalt probability. She now needs a D-dimer.",
         keyFeature: kf(3),
         source: "perc",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Her Wells score is 1.5, so PE is unlikely. A high sensitivity D-dimer is 310 µg/L FEU. The laboratory cutoff is 500.",
-        prompt: "What is the most appropriate next step? Select one.",
+        update: "Her Wells score is 1.5, so PE is unlikely. A high sensitivity D-dimer is 310 mcg/L FEU. The laboratory cutoff is 500.",
+        prompt: "Which of the following is the most appropriate next step for her?",
         options: [
-          "CT pulmonary angiogram",
-          "Ventilation perfusion scan",
           "Bilateral leg compression ultrasound",
-          "No imaging for PE. Look for another cause and discharge with return advice",
+          "CT pulmonary angiogram",
           "Start apixaban and book an outpatient CT",
+          "Ventilation perfusion scan",
+          "No PE imaging, seek other cause, return advice at discharge",
         ],
-        correct: 3,
+        correct: 4,
         explanation:
           "A negative high sensitivity D-dimer in a PE unlikely patient safely excludes PE. Imaging adds radiation and false positives without benefit. Look for an alternative diagnosis and give clear return advice.",
         keyFeature: kf(4),
@@ -272,7 +274,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO examination findings that would point to a competing diagnosis.",
+        prompt: "What examination findings would point to a competing diagnosis?",
         required: 2,
         accept: [
           k(
@@ -305,12 +307,14 @@ export const DVT_PE_SAMPS: Samp[] = [
     alsoTopics: ["sob"],
     title: "Exertional breathlessness in an older man",
     stem:
-      "A 74-year-old man has three days of shortness of breath on exertion. He has hypertension and knee osteoarthritis. He has no chest pain, hemoptysis or leg symptoms. His lungs are clear and he has no peripheral edema. ECG shows sinus rhythm without acute change. Chest X-ray is normal.\n\nVital signs: T 36.8°C, HR 96/min, BP 148/86 mmHg, RR 20/min, SpO2 95% on room air. Weight 81 kg.\n\nPE is on your differential but is not your leading diagnosis.",
+      "A 74-year-old man presents to the emergency department with three days of shortness of breath on exertion. He has hypertension and knee osteoarthritis. He has no chest pain, hemoptysis or leg symptoms. His lungs are clear and he has no peripheral edema. ECG shows sinus rhythm without acute change. Chest X-ray is normal.\n\nPE is on your differential but is not your leading diagnosis.",
+    vitals: { temperature: "36.8°C", pulse: "96/minute", resp: "20/minute", bp: "148/86 mmHg", o2sat: "95% on room air", weight: "81 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Your department uses the YEARS algorithm. List the THREE YEARS items.",
+        update: "Your department uses the YEARS algorithm.",
+        prompt: "What are the YEARS items?",
         required: 3,
         accept: [
           k("dvt", "Clinical signs of DVT", "sign of dvt", "dvt sign", "clinical sign", "leg swelling", "dvt"),
@@ -325,36 +329,37 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "He has no YEARS items. What D-dimer threshold excludes PE for him under YEARS? Include units.",
+        update: "He has no YEARS items.",
+        prompt: "What D-dimer threshold excludes PE for him under YEARS, including units?",
         required: 1,
         accept: [k("1000", "Below 1000 µg/L FEU (1.0 mg/L FEU)", "1000", "1 000", "1.0 mg/l", "1 mg/l")],
         explanation:
-          "With zero YEARS items PE is excluded if the D-dimer is below 1000 µg/L FEU. With one or more items the threshold is 500. Using 500 here is safe but sends patients to CT who do not need it.",
+          "With zero YEARS items PE is excluded if the D-dimer is below 1 000 mcg/L FEU. With one or more items the threshold is 500. Using 500 here is safe but sends patients to CT who do not need it.",
         keyFeature: kf(4),
         source: "years",
       },
       {
         id: "q3",
         kind: "single",
-        update: "His D-dimer is 690 µg/L FEU.",
-        prompt: "Which statement is correct? Select one.",
+        update: "His D-dimer is 690 mcg/L FEU.",
+        prompt: "Which of the following statements about his D-dimer result is correct?",
         options: [
-          "PE is excluded by YEARS and also by the age adjusted cutoff of 740 µg/L FEU",
-          "PE is excluded by YEARS only. The age adjusted cutoff for him is 500 µg/L FEU",
-          "CT pulmonary angiogram is required because the D-dimer is above 500",
-          "A ventilation perfusion scan is required before discharge",
-          "Leg ultrasound is required before PE can be excluded",
+          "CT pulmonary angiogram needed, D-dimer above 500",
+          "Leg ultrasound needed before PE can be excluded",
+          "PE excluded by YEARS and age adjusted 740 mcg/L cutoff",
+          "PE excluded by YEARS only, age adjusted cutoff 500 mcg/L",
+          "Ventilation perfusion scan needed before discharge",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
-          "His age adjusted cutoff is age times 10, so 740 µg/L FEU for patients over 50. The YEARS cutoff with no items is 1000. Either strategy excludes PE here and he needs no imaging for PE.",
+          "His age adjusted cutoff is age times 10, so 740 mcg/L FEU for patients over 50. The YEARS cutoff with no items is 1 000. Either strategy excludes PE here and he needs no imaging for PE.",
         keyFeature: kf(4),
         source: "adjust-pe",
       },
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO alternative diagnoses you would now pursue for his breathlessness.",
+        prompt: "What alternative diagnoses would you now pursue for his breathlessness?",
         required: 2,
         accept: [
           k("hf", "Heart failure", "heart failure", "chf", "cardiomyopathy", "lv dysfunction"),
@@ -382,14 +387,15 @@ export const DVT_PE_SAMPS: Samp[] = [
     alsoTopics: ["sob"],
     title: "Breathlessness during chemotherapy",
     stem:
-      "A 58-year-old man with metastatic lung adenocarcinoma had his last chemotherapy 10 days ago. He has two days of shortness of breath, left leg swelling and blood streaked sputum.\n\nVital signs: T 37.4°C, HR 112/min, BP 128/78 mmHg, RR 22/min, SpO2 93% on room air. Weight 70 kg.\n\nHis left calf is 4 cm larger than the right with pitting edema. You think PE is the most likely diagnosis.",
+      "A 58-year-old man with metastatic lung adenocarcinoma presents to the emergency department with two days of shortness of breath, left leg swelling and blood streaked sputum. He had his last chemotherapy 10 days ago.\n\nHis left calf is 4 cm larger than the right with pitting edema. You think PE is the most likely diagnosis.",
+    vitals: { temperature: "37.4°C", pulse: "112/minute", resp: "22/minute", bp: "128/78 mmHg", o2sat: "93% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is his Wells PE score? Select one.",
-        options: ["4.5", "6", "8", "9.5", "11"],
-        correct: 3,
+        prompt: "Which of the following is his Wells score for pulmonary embolism?",
+        options: ["4.5", "6.0", "7.5", "8.0", "9.5"],
+        correct: 4,
         explanation:
           "Clinical signs of DVT score 3. PE most likely scores 3. Heart rate over 100 scores 1.5. Hemoptysis and active cancer score 1 each. The total of 9.5 places him in the high probability group.",
         keyFeature: kf(3),
@@ -398,7 +404,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "What is the most appropriate first diagnostic test for venous thromboembolism in this patient? List ONE.",
+        prompt: "What is the most appropriate first diagnostic test for venous thromboembolism in this patient?",
         required: 1,
         accept: [
           k("ctpa", "CT pulmonary angiogram", ...CTPA_MATCH),
@@ -414,8 +420,8 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update:
-          "CT shows bilateral segmental PE with a normal RV. Troponin is normal. Hb 118 g/L, platelets 180 x 10^9/L, creatinine 88 µmol/L. He has no GI or GU tumour, no bleeding and no interacting drugs.",
-        prompt: "List TWO appropriate anticoagulant options for this patient.",
+          "CT shows bilateral segmental PE with a normal RV. Troponin is normal. Hb 118 g/L, platelets 180 x 10^9/L, creatinine 88 micromol/L. He has no GI or GU tumour, no bleeding and no interacting drugs.",
+        prompt: "What are appropriate anticoagulant options for this patient?",
         required: 2,
         accept: [
           k("apixaban", "Apixaban", "apixaban", "eliquis"),
@@ -432,7 +438,8 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "The resident suggests discharge. Using the simplified PESI (sPESI), list the TWO criteria he meets.",
+        update: "The resident suggests discharge.",
+        prompt: "Which simplified PESI (sPESI) criteria does he meet?",
         required: 2,
         accept: [
           k("cancer", "Cancer", "cancer", "malignancy"),
@@ -455,12 +462,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     topic: "dvt-pe",
     title: "Breathless at 29 weeks",
     stem:
-      "A 31-year-old woman, G2P1 at 29 weeks gestation, has two days of shortness of breath and left calf pain and swelling. She has no history of VTE.\n\nVital signs: T 37.0°C, HR 104/min, BP 112/68 mmHg, RR 20/min, SpO2 96% on room air. Weight 78 kg.\n\nHer left calf is 3 cm larger than the right with pitting edema.",
+      "A 31-year-old woman, G2P1 at 29 weeks gestation, presents to the emergency department with two days of shortness of breath and left calf pain and swelling. She has no history of VTE.\n\nHer left calf is 3 cm larger than the right with pitting edema.",
+    vitals: { temperature: "37.0°C", pulse: "104/minute", resp: "20/minute", bp: "112/68 mmHg", o2sat: "96% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most appropriate first imaging test? List ONE.",
+        prompt: "What is the most appropriate first imaging test?",
         required: 1,
         accept: [k("cus", "Compression ultrasound of the legs", "ultrasound", "doppler", "compression", "cus")],
         unacceptable: [
@@ -475,8 +483,8 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        update: "Ultrasound shows a left common femoral DVT. Creatinine 52 µmol/L, platelets 210 x 10^9/L.",
-        prompt: "Write the initial anticoagulant. Include the drug, dose, route and frequency.",
+        update: "Ultrasound shows a left common femoral DVT. Creatinine 52 micromol/L, platelets 210 x 10^9/L.",
+        prompt: "What initial anticoagulant would you give, with the drug, dose, route and frequency?",
         required: 1,
         accept: [
           k(
@@ -509,8 +517,8 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt:
-          "Suppose instead she had no leg symptoms, a normal leg ultrasound and a normal chest X-ray, and PE was still suspected. Which imaging test is generally preferred next? List ONE.",
+        update: "Suppose instead she had no leg symptoms, a normal leg ultrasound and a normal chest X-ray, and PE was still suspected.",
+        prompt: "Which imaging test is generally preferred next?",
         required: 1,
         accept: [
           k(
@@ -536,12 +544,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     alsoTopics: ["sob", "asthma-copd"],
     title: "Worse breathing in a man with lung disease",
     stem:
-      "A 68-year-old man with severe COPD (FEV1 38% predicted) and known bullous emphysema has two days of worse shortness of breath. This morning he had sudden right sided pleuritic pain. His sputum has not changed and he has no fever.\n\nVital signs: T 37.0°C, HR 108/min, BP 142/86 mmHg, RR 26/min, SpO2 86% on room air (baseline 91%). Weight 66 kg.\n\nHe has scattered wheeze.",
+      "A 68-year-old man with severe COPD (FEV1 38% predicted) and known bullous emphysema presents to the emergency department with two days of worse shortness of breath. This morning he had sudden right sided pleuritic pain. His sputum has not changed and he has no fever.\n\nHe has scattered wheeze.",
+    vitals: { temperature: "37.0°C", pulse: "108/minute", resp: "26/minute", bp: "142/86 mmHg", o2sat: "86% on room air (baseline 91%)", weight: "66 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE competing diagnoses you would look for on examination and with bedside tests.",
+        prompt: "What competing diagnoses would you look for on examination and with bedside tests?",
         required: 3,
         accept: [
           k("ptx", "Pneumothorax", "pneumothorax", "ptx"),
@@ -562,14 +571,14 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update:
-          "Portable chest X-ray shows hyperinflation and apical bullae. There is no pneumothorax and no consolidation. Creatinine 84 µmol/L. No contrast allergy. You still suspect PE.",
-        prompt: "Which imaging test is most appropriate? Select one.",
+          "Portable chest X-ray shows hyperinflation and apical bullae. There is no pneumothorax and no consolidation. Creatinine 84 micromol/L. No contrast allergy. You still suspect PE.",
+        prompt: "Which of the following is the most appropriate next test to investigate PE?",
         options: [
-          "Ventilation perfusion scan",
+          "Bedside echocardiogram alone",
           "CT pulmonary angiogram",
           "D-dimer before any imaging",
           "Repeat chest X-ray in 6 hours",
-          "Bedside echocardiogram alone",
+          "Ventilation perfusion scan",
         ],
         correct: 1,
         explanation:
@@ -581,8 +590,8 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update:
-          "CT shows a right lower lobe segmental PE. RV to LV ratio 0.8. Troponin normal. On 2 L/min nasal prongs his SpO2 is 90%.",
-        prompt: "A colleague suggests discharge on apixaban. List TWO objective findings that argue against outpatient treatment.",
+          "CT shows a right lower lobe segmental PE. RV to LV ratio 0.8. Troponin normal. On 2 L/minute nasal prongs his SpO2 is 90%. A colleague suggests discharge on apixaban.",
+        prompt: "What objective findings argue against outpatient treatment?",
         required: 2,
         accept: [
           k(
@@ -610,12 +619,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     topic: "dvt-pe",
     title: "Leg swelling with poor kidney function",
     stem:
-      "A 79-year-old woman has two days of right leg swelling and mild shortness of breath. She has diabetes and stage 4 chronic kidney disease. Creatinine is 210 µmol/L and her estimated creatinine clearance is 18 mL/min. She had anaphylaxis to iodinated contrast two years ago.\n\nVital signs: T 36.9°C, HR 102/min, BP 136/70 mmHg, RR 20/min, SpO2 94% on room air. Weight 58 kg.\n\nHer right calf is 4 cm larger than the left. Chest X-ray is normal.",
+      "A 79-year-old woman presents to the emergency department with two days of right leg swelling and mild shortness of breath. She has diabetes and stage 4 chronic kidney disease. Creatinine is 210 micromol/L and her estimated creatinine clearance is 18 mL/minute. She had anaphylaxis to iodinated contrast two years ago.\n\nHer right calf is 4 cm larger than the left. Chest X-ray is normal.",
+    vitals: { temperature: "36.9°C", pulse: "102/minute", resp: "20/minute", bp: "136/70 mmHg", o2sat: "94% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most appropriate first imaging test? List ONE.",
+        prompt: "What is the most appropriate first imaging test?",
         required: 1,
         accept: [k("cus", "Compression ultrasound of the right leg", "ultrasound", "doppler", "compression", "cus")],
         explanation:
@@ -626,7 +636,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "If her leg ultrasound were normal, which test would you use to look for PE? List ONE.",
+        prompt: "If her leg ultrasound were normal, which test would you use to look for PE?",
         required: 1,
         accept: [k("vq", "Ventilation perfusion scan", "v/q", "vq", "ventilation perfusion", "perfusion scan", "perfusion scintigraphy")],
         explanation:
@@ -638,7 +648,7 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Ultrasound shows thrombus in the right femoral and popliteal veins.",
-        prompt: "Name the most appropriate initial anticoagulant for her.",
+        prompt: "What is the most appropriate initial anticoagulant for her?",
         required: 1,
         accept: [
           k(
@@ -652,24 +662,24 @@ export const DVT_PE_SAMPS: Samp[] = [
           bad("A DOAC at standard treatment doses", ["rivaroxaban 15", "rivaroxaban 20", "apixaban 10", "dabigatran 150", "edoxaban 60", "start doac"]),
         ],
         explanation:
-          "IV UFH is cleared largely independent of the kidney, is short acting and is fully reversible, so it is the safest start at a creatinine clearance of 18 mL/min. Give 80 units/kg IV bolus then 18 units/kg/h, adjusted to aPTT or anti-Xa, then overlap with warfarin. Renally adjusted enoxaparin (1 mg/kg daily) is labelled below 30 mL/min and tinzaparin has data down to about 20 mL/min, but both need anti-Xa monitoring and are second choices here. Rivaroxaban, edoxaban and dabigatran are not recommended below 30 mL/min and apixaban is not recommended below 25 mL/min in Canadian labelling, although some US guidance uses apixaban in dialysis.",
+          "IV UFH is cleared largely independent of the kidney, is short acting and is fully reversible, so it is the safest start at a creatinine clearance of 18 mL/minute. Give 80 units/kg IV bolus then 18 units/kg/h, adjusted to aPTT or anti-Xa, then overlap with warfarin. Renally adjusted enoxaparin (1 mg/kg daily) is labelled below 30 mL/minute and tinzaparin has data down to about 20 mL/minute, but both need anti-Xa monitoring and are second choices here. Rivaroxaban, edoxaban and dabigatran are not recommended below 30 mL/minute and apixaban is not recommended below 25 mL/minute in Canadian labelling, although some US guidance uses apixaban in dialysis.",
         keyFeature: kf(6),
         source: "tc-ufh",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "What is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
-          "Discharge on tinzaparin",
-          "Discharge on apixaban 5 mg twice daily",
-          "Admit for IV unfractionated heparin with transition to warfarin",
-          "Discharge without anticoagulation and refer to thrombosis clinic",
+          "Admit for IV unfractionated heparin, then warfarin",
           "Admit for IVC filter insertion",
+          "Discharge on apixaban 5 mg twice daily",
+          "Discharge on full dose tinzaparin",
+          "Discharge untreated with thrombosis clinic referral",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "Creatinine clearance below 30 mL/min is a Hestia exclusion to outpatient care. She needs an infusion with monitoring and a supervised warfarin start. An IVC filter is only for a contraindication to anticoagulation.",
+          "Creatinine clearance below 30 mL/minute is a Hestia exclusion to outpatient care. She needs an infusion with monitoring and a supervised warfarin start. An IVC filter is only for a contraindication to anticoagulation.",
         keyFeature: kf(7),
         source: "hestia",
       },
@@ -685,12 +695,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Collapse at a truck stop",
     stem:
-      "A 52-year-old long haul truck driver collapsed at a rest stop and now reports severe shortness of breath. He has no known medical history, no recent surgery and no bleeding history.\n\nVital signs: T 36.8°C, HR 128/min, BP 78/50 mmHg, RR 30/min, SpO2 88% on a non-rebreather mask. Glucose 7.4 mmol/L. Weight 110 kg.\n\nECG shows sinus tachycardia, right bundle branch block and T wave inversion in V1 to V4.",
+      "A 52-year-old long haul truck driver presents to the emergency department after he collapsed at a rest stop. He now reports severe shortness of breath. He has no known medical history, no recent surgery and no bleeding history.\n\nGlucose 7.4 mmol/L. ECG shows sinus tachycardia, right bundle branch block and T wave inversion in V1 to V4.",
+    vitals: { temperature: "36.8°C", pulse: "128/minute", resp: "30/minute", bp: "78/50 mmHg", o2sat: "88% on a non-rebreather mask", weight: "110 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE physical findings that would support PE as the cause of his shock.",
+        prompt: "What physical findings would support PE as the cause of his shock?",
         required: 3,
         accept: [
           k("jvp", "Raised jugular venous pressure", "jvp", "jugular", "neck vein", "jvd"),
@@ -708,7 +719,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO point of care ultrasound findings that would support PE as the cause of shock.",
+        prompt: "What point of care ultrasound findings would support PE as the cause of shock?",
         required: 2,
         accept: [
           k(
@@ -738,15 +749,15 @@ export const DVT_PE_SAMPS: Samp[] = [
         kind: "single",
         update:
           "Norepinephrine is running and his MAP is 60 mmHg. POCUS shows an RV larger than the LV, septal flattening and a noncompressible left femoral vein. He is too unstable to go to CT.",
-        prompt: "What is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in his management?",
         options: [
-          "Send a D-dimer",
-          "Transfer to CT for pulmonary angiography before any treatment",
           "Give systemic thrombolysis now",
-          "Start apixaban 10 mg PO",
-          "Arrange a ventilation perfusion scan",
+          "Obtain a ventilation perfusion scan",
+          "Send a D-dimer and await the result",
+          "Start apixaban 10 mg PO twice daily",
+          "Transfer to CT for pulmonary angiography first",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
           "In high risk PE, bedside evidence of RV dysfunction is enough to treat when CT is not safe. Systemic thrombolysis is the first line reperfusion therapy. D-dimer has no role at this pretest probability.",
         keyFeature: kf(4),
@@ -755,7 +766,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Write the thrombolytic regimen. Include the drug, dose, route and duration.",
+        prompt: "What thrombolytic regimen would you give, with the drug, dose, route and duration?",
         required: 1,
         accept: [
           k("alteplase", "Alteplase 100 mg IV over 2 hours", "alteplase 100", "alteplase 90", "tpa 100", "rtpa 100", "rt pa 100", "activase 100"),
@@ -771,20 +782,20 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q5",
         kind: "menu",
-        prompt: "Which TWO supportive measures are most appropriate while reperfusion is arranged? Select TWO.",
+        prompt: "Which of the following supportive measures are most appropriate while reperfusion is arranged?",
         options: [
-          "Norepinephrine infusion titrated to MAP of at least 65 mmHg",
-          "Crystalloid 30 mL/kg as a rapid bolus",
           "Cautious crystalloid bolus of no more than 500 mL",
-          "Early rapid sequence intubation to reduce work of breathing",
-          "Furosemide 40 mg IV",
-          "Nitroglycerin infusion",
+          "Crystalloid 30 mL/kg IV as a rapid bolus",
+          "Early rapid sequence intubation and ventilation",
+          "Furosemide 40 mg IV as a single bolus",
+          "Nitroglycerin IV infusion at 10 mcg/minute",
+          "Norepinephrine infusion titrated to MAP of at least 65 mmHg",
           "Phenylephrine as the first line vasopressor",
         ],
         select: 2,
-        correct: [0, 2],
+        correct: [0, 5],
         explanation:
-          "Norepinephrine restores systemic pressure and RV perfusion. Small fluid volumes may help but large volumes dilate the failing RV and worsen shock. Induction and positive pressure ventilation can precipitate arrest, so avoid intubation if possible.",
+          "Norepinephrine restores systemic pressure and RV perfusion. Small fluid volumes may help but large volumes dilate the failing RV and worsen shock. Intubation to reduce work of breathing is tempting, but induction and positive pressure ventilation can precipitate arrest, so avoid it if possible.",
         keyFeature: { topic: "shock", n: 7 },
         source: "esc-pe",
       },
@@ -799,12 +810,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     topic: "dvt-pe",
     title: "Pleuritic pain with a positive scan",
     stem:
-      "A 39-year-old woman has three days of right pleuritic chest pain. CT pulmonary angiogram shows a right lower lobe segmental PE with a normal RV to LV ratio. Her pain is controlled with oral acetaminophen. She lives with her partner 10 minutes from the hospital.\n\nVital signs: T 36.9°C, HR 88/min, BP 124/78 mmHg, RR 16/min, SpO2 97% on room air. Weight 70 kg.\n\nHb 132 g/L, platelets 250 x 10^9/L, creatinine 64 µmol/L, troponin normal.",
+      "A 39-year-old woman presents to the emergency department with three days of right pleuritic chest pain. CT pulmonary angiogram shows a right lower lobe segmental PE with a normal RV to LV ratio. Her pain is controlled with oral acetaminophen. She lives with her partner 10 minutes from the hospital.\n\nHb 132 g/L, platelets 250 x 10^9/L, creatinine 64 micromol/L, troponin normal.",
+    vitals: { temperature: "36.9°C", pulse: "88/minute", resp: "16/minute", bp: "124/78 mmHg", o2sat: "97% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE objective findings in this case that support outpatient treatment.",
+        prompt: "What objective findings in this case support outpatient treatment?",
         required: 3,
         accept: [
           k("hr", "Heart rate below 110/min", "heart rate", "hr", "pulse"),
@@ -825,7 +837,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE history features you would review to decide whether this PE was provoked.",
+        prompt: "What history features would you review to decide whether this PE was provoked?",
         required: 3,
         accept: [ESTROGEN, PREGNANCY, SURGERY, IMMOB, TRAVEL, k("cancer", "Symptoms of occult cancer such as weight loss", "weight loss", "cancer", "malignancy", "night sweat"), PRIOR_VTE, FAMILY],
         explanation:
@@ -837,7 +849,7 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Her medication list shows carbamazepine 400 mg PO twice daily for epilepsy.",
-        prompt: "Name ONE appropriate anticoagulant for her.",
+        prompt: "What is an appropriate anticoagulant for her?",
         required: 1,
         accept: [
           k("lmwh", "LMWH such as dalteparin or enoxaparin at treatment dose", "dalteparin", "enoxaparin", "tinzaparin", "lmwh", "low molecular weight"),
@@ -861,12 +873,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Near faint on the stairs",
     stem:
-      "A 66-year-old woman has two days of shortness of breath and nearly fainted climbing stairs today. CT pulmonary angiogram shows bilateral lobar PE with an RV to LV ratio of 1.3.\n\nVital signs: T 37.0°C, HR 116/min, BP 112/70 mmHg, RR 24/min, SpO2 92% on 2 L/min nasal prongs. Weight 84 kg.\n\nHigh sensitivity troponin T is 64 ng/L (normal below 14). Creatinine 80 µmol/L. She has no bleeding history.",
+      "A 66-year-old woman presents to the emergency department with two days of shortness of breath. She nearly fainted climbing stairs today. CT pulmonary angiogram shows bilateral lobar PE with an RV to LV ratio of 1.3.\n\nHigh sensitivity troponin T is 64 ng/L (normal below 14). Creatinine 80 micromol/L. She has no bleeding history.",
+    vitals: { temperature: "37.0°C", pulse: "116/minute", resp: "24/minute", bp: "112/70 mmHg", o2sat: "92% on 2 L/minute by nasal prongs", weight: "84 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE objective findings that place her at higher risk of early death or deterioration.",
+        prompt: "What objective findings place her at higher risk of early death or deterioration?",
         required: 3,
         accept: [
           k("rv", "RV dilation with RV to LV ratio above 1.0", "rv", "rv/lv", "right ventricle", "right ventricular"),
@@ -884,29 +897,35 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "What is her ESC risk category? Select one.",
-        options: ["Low risk", "Intermediate low risk", "Intermediate high risk", "High risk"],
-        correct: 2,
+        prompt: "Which of the following is her risk category under the ESC guideline?",
+        options: [
+          "High risk pulmonary embolism",
+          "Intermediate high risk pulmonary embolism",
+          "Intermediate low risk pulmonary embolism",
+          "Low risk pulmonary embolism",
+          "Massive pulmonary embolism",
+        ],
+        correct: 1,
         explanation:
-          "She is not hypotensive, so not high risk. She has both RV dysfunction on CT and a raised troponin, which defines intermediate high risk. This group needs monitored admission with a plan for rescue reperfusion.",
+          "She is not hypotensive, so not high risk. She has both RV dysfunction on CT and a raised troponin, which defines intermediate high risk. This group needs monitored admission with a plan for rescue reperfusion. Massive is an older term that the ESC replaced with high risk, and she is not hemodynamically unstable.",
         keyFeature: kf(7),
         source: "esc-pe",
       },
       {
         id: "q3",
         kind: "menu",
-        prompt: "Which TWO actions are most appropriate now? Select TWO.",
+        prompt: "Which of the following actions are most appropriate for her now?",
         options: [
           "Admit to a monitored bed or ICU",
-          "Start parenteral anticoagulation with LMWH or UFH",
-          "Give full dose alteplase now",
           "Discharge on apixaban with thrombosis clinic follow-up",
-          "Insert an IVC filter",
+          "Early intubation and ventilation",
           "Give a 2 L crystalloid bolus",
-          "Intubate to reduce work of breathing",
+          "Give full dose alteplase now",
+          "Insert an inferior vena cava filter",
+          "Start parenteral anticoagulation with LMWH or UFH",
         ],
         select: 2,
-        correct: [0, 1],
+        correct: [0, 6],
         explanation:
           "Routine thrombolysis in intermediate high risk PE prevents decompensation but causes more major and intracranial bleeding. Anticoagulate and monitor closely. UFH is a sensible choice if rescue thrombolysis looks likely.",
         keyFeature: kf(7),
@@ -915,8 +934,8 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        update: "Six hours later her BP is 84/50 mmHg, HR 130/min and her skin is cool and mottled.",
-        prompt: "What is the most appropriate treatment now? List ONE.",
+        update: "Six hours later her BP is 84/50 mmHg, HR 130/minute and her skin is cool and mottled.",
+        prompt: "What is the most appropriate treatment now?",
         required: 1,
         accept: [
           k("lysis", "Rescue systemic thrombolysis", "alteplase", "thrombolysis", "thrombolytic", "tpa", "tenecteplase", "lytic"),
@@ -938,12 +957,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     topic: "dvt-pe",
     title: "Painful cord in the thigh",
     stem:
-      "A 57-year-old woman has four days of a painful, red, firm cord on the inner thigh. She has varicose veins. She has no trauma and does not inject drugs.\n\nVital signs: T 36.9°C, HR 78/min, BP 132/80 mmHg, SpO2 99% on room air. Weight 82 kg.",
+      "A 57-year-old woman presents to the emergency department with four days of a painful, red, firm cord on the inner thigh. She has varicose veins. She has no trauma and does not inject drugs.",
+    vitals: { temperature: "36.9°C", pulse: "78/minute", bp: "132/80 mmHg", o2sat: "99% on room air", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO history features that would raise her risk of progression to deep vein thrombosis.",
+        prompt: "What history features would raise her risk of progression to deep vein thrombosis?",
         required: 2,
         accept: [PRIOR_VTE, CANCER, SURGERY, IMMOB, ESTROGEN, PREGNANCY, FAMILY],
         explanation:
@@ -954,7 +974,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO examination findings that would change your management.",
+        prompt: "What examination findings would change your management?",
         required: 2,
         accept: [
           k("junction", "Cord extending to the groin near the saphenofemoral junction", "groin", "junction", "saphenofemoral", "sfj", "proximal extension"),
@@ -970,7 +990,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "What investigation is indicated? List ONE.",
+        prompt: "What investigation is indicated?",
         required: 1,
         accept: [k("us", "Duplex ultrasound of the leg", "ultrasound", "doppler", "duplex")],
         unacceptable: [bad("D-dimer", ["d dimer", "ddimer", "dimer"])],
@@ -983,7 +1003,7 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "Ultrasound shows 12 cm of thrombus in the great saphenous vein ending 8 cm from the saphenofemoral junction. There is no DVT.",
-        prompt: "Write the recommended treatment. Include the drug, dose, route and duration.",
+        prompt: "What is the recommended treatment, with the drug, dose, route and duration?",
         required: 1,
         accept: [
           k("fonda", "Fondaparinux 2.5 mg SC daily for 45 days", "fondaparinux 2.5", "fondaparinux 2.5mg", "arixtra 2.5"),
@@ -1011,12 +1031,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     topic: "dvt-pe",
     title: "Calf pain after ankle surgery",
     stem:
-      "A 49-year-old man had open reduction and internal fixation of a right ankle fracture two weeks ago. He was in a below knee plaster cast until yesterday and is now in a walking boot. He was not given thromboprophylaxis. He has three days of right calf pain.\n\nVital signs: T 36.8°C, HR 80/min, BP 128/78 mmHg, SpO2 98% on room air. Weight 95 kg.",
+      "A 49-year-old man presents to the emergency department with three days of right calf pain. He had open reduction and internal fixation of a right ankle fracture two weeks ago. He was in a below knee plaster cast until yesterday and is now in a walking boot. He was not given thromboprophylaxis.",
+    vitals: { temperature: "36.8°C", pulse: "80/minute", bp: "128/78 mmHg", o2sat: "98% on room air", weight: "95 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE other history elements that affect his baseline risk of venous thromboembolism.",
+        prompt: "What other history elements affect his baseline risk of venous thromboembolism?",
         required: 3,
         accept: [PRIOR_VTE, CANCER, FAMILY, k("hormone", "Testosterone or other hormone use", "testosterone", "hormone", "anabolic steroid"), k("obesity", "Obesity", "obesity", "obese", "bmi"), k("ibd", "Inflammatory disease such as inflammatory bowel disease", "inflammatory bowel", "crohn", "colitis", "ibd"), TRAVEL],
         explanation:
@@ -1028,9 +1049,9 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "His right calf is 3.5 cm larger than the left, with tenderness along the deep calf veins. There is no pitting edema. There is no better alternative diagnosis.",
-        prompt: "What is his two level Wells DVT score and category? Select one.",
-        options: ["1, DVT unlikely", "2, DVT likely", "4, DVT likely", "3, DVT likely", "5, DVT likely"],
-        correct: 2,
+        prompt: "Which of the following is his two level Wells DVT score and category?",
+        options: ["1, DVT unlikely", "2, DVT likely", "3, DVT likely", "4, DVT likely", "5, DVT likely"],
+        correct: 3,
         explanation:
           "He scores for recent plaster immobilization, major surgery within 12 weeks, calf swelling over 3 cm and deep vein tenderness. The total of 4 is DVT likely.",
         keyFeature: kf(3),
@@ -1039,7 +1060,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "What is the most appropriate next investigation? List ONE.",
+        prompt: "What is the most appropriate next investigation?",
         required: 1,
         accept: [k("us", "Compression ultrasound of the leg", "ultrasound", "doppler", "duplex", "compression")],
         unacceptable: [bad("D-dimer alone", ["d dimer alone", "dimer alone", "dimer only"])],
@@ -1052,7 +1073,7 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "Ultrasound shows isolated thrombus in one peroneal vein. The popliteal and more proximal veins are clear.",
-        prompt: "What is an appropriate management strategy for this finding? List ONE.",
+        prompt: "What is an appropriate management strategy for this finding?",
         required: 1,
         accept: [
           k(
@@ -1079,12 +1100,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     topic: "dvt-pe",
     title: "Pleuritic pain in a woman with lupus",
     stem:
-      "A 34-year-old woman with systemic lupus erythematosus has one day of left pleuritic chest pain and mild shortness of breath.\n\nVital signs: T 37.2°C, HR 98/min, BP 118/72 mmHg, RR 18/min, SpO2 96% on room air. Weight 60 kg.",
+      "A 34-year-old woman with systemic lupus erythematosus presents to the emergency department with one day of left pleuritic chest pain and mild shortness of breath.",
+    vitals: { temperature: "37.2°C", pulse: "98/minute", resp: "18/minute", bp: "118/72 mmHg", o2sat: "96% on room air", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE elements of her history you would ask about to assess her baseline risk of VTE.",
+        prompt: "What elements of her history would you ask about to assess her baseline risk of VTE?",
         required: 3,
         accept: [
           PRIOR_VTE,
@@ -1106,8 +1128,8 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         update:
-          "She had an unprovoked left leg DVT at age 28. She is known to be triple positive for antiphospholipid antibodies. CT shows a segmental PE with a normal RV. Troponin normal. Creatinine 70 µmol/L, platelets 142 x 10^9/L.",
-        prompt: "Name the most appropriate long term anticoagulant.",
+          "She had an unprovoked left leg DVT at age 28. She is known to be triple positive for antiphospholipid antibodies. CT shows a segmental PE with a normal RV. Troponin normal. Creatinine 70 micromol/L, platelets 142 x 10^9/L.",
+        prompt: "What is the most appropriate long term anticoagulant?",
         required: 1,
         accept: [k("warfarin", "Warfarin with a target INR of 2 to 3, overlapped with LMWH", "warfarin", "vitamin k antagonist", "vka", "coumadin")],
         unacceptable: [bad("A DOAC", ["start doac", "start apixaban", "start rivaroxaban", "apixaban 10", "rivaroxaban 15", "rivaroxaban 20"])],
@@ -1119,17 +1141,18 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "She is well with an sPESI of 0. What is the most appropriate disposition? Select one.",
+        update: "She is well with an sPESI of 0.",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
-          "Admit until the INR is therapeutic",
-          "Discharge on LMWH with warfarin started, INR monitoring and early thrombosis clinic follow-up",
-          "Discharge on apixaban",
-          "Discharge on warfarin alone",
-          "Admit for thrombolysis",
+          "Admit for systemic thrombolysis with alteplase",
+          "Admit on LMWH until the INR is therapeutic",
+          "Discharge on apixaban with clinic follow-up",
+          "Discharge on LMWH and warfarin, INR checks, clinic follow-up",
+          "Discharge on warfarin alone with INR checks",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Normal vitals, oxygen saturation, RV and troponin support outpatient care. Warfarin must start with LMWH overlap because it is prothrombotic early. Counsel her that warfarin is teratogenic and she needs reliable nonestrogen contraception.",
+          "Normal vitals, oxygen saturation, RV and troponin support outpatient care. Warfarin must start with LMWH overlap because it is prothrombotic early. Arrange early thrombosis clinic follow-up. Counsel her that warfarin is teratogenic and she needs reliable nonestrogen contraception.",
         keyFeature: kf(7),
         source: "tc-pe",
       },
@@ -1145,12 +1168,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     alsoTopics: ["sob"],
     title: "Breathless after knee surgery",
     stem:
-      "A 71-year-old woman is 9 days after a right total knee replacement. She was discharged on ASA 81 mg daily for thromboprophylaxis. This morning she became suddenly short of breath.\n\nVital signs: T 37.6°C, HR 118/min, BP 132/76 mmHg, RR 24/min, SpO2 90% on room air. Weight 88 kg.\n\nThe right knee is swollen and bruised as expected after surgery. The calves are soft and symmetric. Creatinine 95 µmol/L. You think PE is the most likely diagnosis.",
+      "A 71-year-old woman presents to the emergency department 9 days after a right total knee replacement. She was discharged on ASA 81 mg daily for thromboprophylaxis. This morning she became suddenly short of breath.\n\nThe right knee is swollen and bruised as expected after surgery. The calves are soft and symmetric. Creatinine 95 micromol/L. You think PE is the most likely diagnosis.",
+    vitals: { temperature: "37.6°C", pulse: "118/minute", resp: "24/minute", bp: "132/76 mmHg", o2sat: "90% on room air", weight: "88 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is her Wells PE score and two level category? Select one.",
+        prompt: "Which of the following is her Wells PE score and two level category?",
         options: ["3, PE unlikely", "4.5, PE unlikely", "4.5, PE likely", "6, PE likely", "7.5, PE likely"],
         correct: 3,
         explanation:
@@ -1161,7 +1185,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "What is the most appropriate diagnostic test? List ONE.",
+        prompt: "What is the most appropriate diagnostic test?",
         required: 1,
         accept: [k("ctpa", "CT pulmonary angiogram", ...CTPA_MATCH)],
         unacceptable: [bad("D-dimer", ["d dimer", "ddimer", "dimer"])],
@@ -1173,7 +1197,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO competing post operative diagnoses you would examine for.",
+        prompt: "What competing post operative diagnoses would you examine for?",
         required: 2,
         accept: [
           k("pneumonia", "Pneumonia or aspiration", "pneumonia", "aspiration"),
@@ -1194,7 +1218,7 @@ export const DVT_PE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CT shows bilateral segmental PE. RV to LV ratio 0.9.",
-        prompt: "List TWO objective findings that show she needs admission rather than outpatient treatment.",
+        prompt: "What objective findings show she needs admission rather than outpatient treatment?",
         required: 2,
         accept: [
           k("o2", "SpO2 90% on room air or an oxygen requirement", "spo2", "saturation", "oxygen", "o2", "hypoxia", "hypoxemia"),
@@ -1218,12 +1242,13 @@ export const DVT_PE_SAMPS: Samp[] = [
     topic: "dvt-pe",
     title: "A pop behind the knee",
     stem:
-      "A 63-year-old man with left knee osteoarthritis felt a sudden pop behind his left knee while gardening yesterday. He now has left calf pain and swelling. He has no previous VTE, no cancer and no recent surgery.\n\nVital signs: T 36.8°C, HR 76/min, BP 138/84 mmHg, SpO2 98% on room air. Weight 86 kg.",
+      "A 63-year-old man with left knee osteoarthritis presents to the emergency department with left calf pain and swelling. He felt a sudden pop behind his left knee while gardening yesterday. He has no previous VTE, no cancer and no recent surgery.",
+    vitals: { temperature: "36.8°C", pulse: "76/minute", bp: "138/84 mmHg", o2sat: "98% on room air", weight: "86 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE examination findings that would favour an alternative diagnosis to DVT.",
+        prompt: "What examination findings would favour an alternative diagnosis to DVT?",
         required: 3,
         accept: [
           k("crescent", "Crescent shaped bruising below the malleolus", "crescent", "bruising", "ecchymosis", "bruise"),
@@ -1244,7 +1269,7 @@ export const DVT_PE_SAMPS: Samp[] = [
         kind: "single",
         update:
           "His left calf is 3.5 cm larger than the right. There is pitting edema to mid shin and a crescent shaped bruise below the medial malleolus. There is fullness in the popliteal fossa and no deep vein tenderness. A ruptured popliteal cyst seems at least as likely as DVT.",
-        prompt: "What is his two level Wells DVT score and category? Select one.",
+        prompt: "Which of the following is his two level Wells DVT score and category?",
         options: ["0, DVT unlikely", "1, DVT unlikely", "2, DVT likely", "3, DVT likely", "4, DVT likely"],
         correct: 0,
         explanation:
@@ -1255,7 +1280,7 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "What is the most appropriate next investigation? List ONE.",
+        prompt: "What is the most appropriate next investigation?",
         required: 1,
         accept: [k("ddimer", "High sensitivity D-dimer", "d dimer", "ddimer", "dimer")],
         unacceptable: [bad("Venography", ["venogram", "venography"])],
@@ -1267,8 +1292,8 @@ export const DVT_PE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        update: "D-dimer is 1 400 µg/L FEU (cutoff 500). You perform a bedside two point compression ultrasound.",
-        prompt: "Name the TWO sites examined in a two point compression study.",
+        update: "D-dimer is 1 400 mcg/L FEU (cutoff 500). You perform a bedside two point compression ultrasound.",
+        prompt: "Which sites are examined in a two point compression study?",
         required: 2,
         accept: [
           k("femoral", "Common femoral vein at the groin", "common femoral", "femoral", "saphenofemoral", "groin", "cfv"),
