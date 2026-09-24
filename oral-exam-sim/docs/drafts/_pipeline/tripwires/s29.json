@@ -1,0 +1,13 @@
+{
+ "batch": "s29",
+ "wrongKey": {
+  "id": "msk-39",
+  "question": "q1",
+  "keyedWas": 3,
+  "plantedAs": 0
+ },
+ "inventedFinding": {
+  "id": "msk-40",
+  "question": "q2"
+ }
+}

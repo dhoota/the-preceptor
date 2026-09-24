@@ -1,0 +1,13 @@
+{
+ "batch": "s20",
+ "wrongKey": {
+  "id": "abuse-domestic-39",
+  "question": "q1",
+  "keyedWas": 2,
+  "plantedAs": 4
+ },
+ "inventedFinding": {
+  "id": "abuse-domestic-40",
+  "question": "q2"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "batch": "s25",
+ "wrongKey": {
+  "id": "asthma-copd-48",
+  "question": "q1",
+  "keyedWas": 1,
+  "plantedAs": 3
+ },
+ "inventedFinding": {
+  "id": "asthma-copd-49",
+  "question": "q2"
+ }
+}

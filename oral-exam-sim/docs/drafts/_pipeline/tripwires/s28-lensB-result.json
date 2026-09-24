@@ -1,0 +1,13 @@
+{
+ "batch": "s28",
+ "wrongKey": {
+  "id": "chest-pain-48",
+  "question": "q1",
+  "keyedWas": 2,
+  "plantedAs": 4
+ },
+ "inventedFinding": {
+  "id": "chest-pain-49",
+  "question": "q2"
+ }
+}

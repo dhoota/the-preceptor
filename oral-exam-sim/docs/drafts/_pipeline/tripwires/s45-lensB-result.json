@@ -1,0 +1,13 @@
+{
+ "batch": "s45",
+ "wrongKey": {
+  "id": "multiple-trauma-48",
+  "question": "q1",
+  "keyedWas": 3,
+  "plantedAs": 0
+ },
+ "inventedFinding": {
+  "id": "multiple-trauma-49",
+  "question": "q2"
+ }
+}

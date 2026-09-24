@@ -1,0 +1,13 @@
+{
+ "batch": "s53",
+ "wrongKey": {
+  "id": "tox-48",
+  "question": "q1",
+  "keyedWas": 3,
+  "plantedAs": 0
+ },
+ "inventedFinding": {
+  "id": "tox-49",
+  "question": "q2"
+ }
+}

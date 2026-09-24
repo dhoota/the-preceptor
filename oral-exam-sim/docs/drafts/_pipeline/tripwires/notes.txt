@@ -1,0 +1,1 @@
+s41 lensA: calibrated on manual review (report rows 48 and 49 use short ids)

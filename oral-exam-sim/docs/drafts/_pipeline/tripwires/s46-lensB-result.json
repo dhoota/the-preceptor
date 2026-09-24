@@ -1,0 +1,13 @@
+{
+ "batch": "s46",
+ "wrongKey": {
+  "id": "pediatric-fever-48",
+  "question": "q1",
+  "keyedWas": 3,
+  "plantedAs": 0
+ },
+ "inventedFinding": {
+  "id": "pediatric-fever-49",
+  "question": "q2"
+ }
+}

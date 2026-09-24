@@ -1,0 +1,13 @@
+{
+ "batch": "s19",
+ "wrongKey": {
+  "id": "abdominal-pain-48",
+  "question": "q1",
+  "keyedWas": 3,
+  "plantedAs": 0
+ },
+ "inventedFinding": {
+  "id": "abdominal-pain-49",
+  "question": "q2"
+ }
+}

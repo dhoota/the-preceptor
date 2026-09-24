@@ -1,0 +1,13 @@
+{
+ "batch": "s31",
+ "wrongKey": {
+  "id": "critical-appraisal-37",
+  "question": "q1",
+  "keyedWas": 1,
+  "plantedAs": 3
+ },
+ "inventedFinding": {
+  "id": "critical-appraisal-38",
+  "question": "q2"
+ }
+}

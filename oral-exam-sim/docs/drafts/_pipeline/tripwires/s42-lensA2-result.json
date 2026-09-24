@@ -1,0 +1,13 @@
+{
+ "batch": "s42",
+ "wrongKey": {
+  "id": "ischemic-heart-disease-48",
+  "question": "q1",
+  "keyedWas": 2,
+  "plantedAs": 4
+ },
+ "inventedFinding": {
+  "id": "ischemic-heart-disease-49",
+  "question": "q2"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "batch": "s32",
+ "wrongKey": {
+  "id": "loc-48",
+  "question": "q1",
+  "keyedWas": 4,
+  "plantedAs": 1
+ },
+ "inventedFinding": {
+  "id": "loc-49",
+  "question": "q2"
+ }
+}

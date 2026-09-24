@@ -1,0 +1,13 @@
+{
+ "batch": "s23",
+ "wrongKey": {
+  "id": "anaphylaxis-48",
+  "question": "q1",
+  "keyedWas": 0,
+  "plantedAs": 2
+ },
+ "inventedFinding": {
+  "id": "anaphylaxis-49",
+  "question": "q2"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "batch": "s27",
+ "wrongKey": {
+  "id": "cva-48",
+  "question": "q1",
+  "keyedWas": 0,
+  "plantedAs": 2
+ },
+ "inventedFinding": {
+  "id": "cva-49",
+  "question": "q2"
+ }
+}
