@@ -6,12 +6,12 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
 
 const S = {
-  alsPcs: { id: "als-pcs", citation: "Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.5, including the PCP and ACP core and auxiliary medical directives. 2025.", url: "https://www.ontario.ca/files/2026-08/moh-advanced-life-support-als-patient-care-standards-pcs-5.5-en-2025-08-18.pdf" },
+  alsPcs: { id: "als-pcs", citation: "Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4, in force 2 June 2025, including the PCP and ACP core and auxiliary medical directives. 2025.", url: "https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf" },
   blsPcs: { id: "bls-pcs", citation: "Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Basic Life Support Patient Care Standards, version 3.4, including the paramedic prompt cards. 2023.", url: "https://files.ontario.ca/moh_2/moh-standards-basic-life-support-patient-care-standards-v3-4-en-2023-03-10.pdf" },
   hcca: { id: "hcca", citation: "Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A (Ontario).", url: "https://www.ontario.ca/laws/statute/96h02" },
-  iedema: { id: "imist-ambo", citation: "Iedema R, Ball C, Daly B, et al. Design and trial of a new ambulance-to-emergency department handover protocol: IMIST-AMBO. BMJ Qual Saf. 2012." },
+  iedema: { id: "imist-ambo", citation: "Iedema R, Ball C, Daly B, et al. Design and trial of a new ambulance-to-emergency department handover protocol: IMIST-AMBO. BMJ Qual Saf. 2012.", url: "https://pubmed.ncbi.nlm.nih.gov/22626739/" },
   east: { id: "east-edt", citation: "Seamon MJ, Haut ER, Van Arendonk K, et al. An evidence-based approach to patient selection for emergency department thoracotomy: a practice management guideline from the Eastern Association for the Surgery of Trauma. J Trauma Acute Care Surg. 2015.", url: "https://pubmed.ncbi.nlm.nih.gov/26091330/" },
-  shaker: { id: "anaphylaxis-2020", citation: "Shaker MS, Wallace DV, Golden DBK, et al. Anaphylaxis, a 2020 practice parameter update, systematic review, and GRADE analysis. J Allergy Clin Immunol. 2020." },
+  shaker: { id: "anaphylaxis-2020", citation: "Shaker MS, Wallace DV, Golden DBK, et al. Anaphylaxis, a 2020 practice parameter update, systematic review, and GRADE analysis. J Allergy Clin Immunol. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/32001253/" },
   carter: { id: "carter-palliative", citation: "Carter AJE, et al. Paramedics providing palliative care at home: a mixed-methods exploration of patient and family satisfaction and paramedic comfort and confidence. CJEM. 2019.", url: "https://pubmed.ncbi.nlm.nih.gov/30739628/" },
   bcehsDyspnea: { id: "bcehs-p04", citation: "BC Emergency Health Services. Clinical practice guideline P04: palliative care, dyspnea. BCEHS Handbook. Accessed 24 September 2026.", url: "https://handbook.bcehs.ca/clinical-practice-guidelines/p-palliative-care/p04-palliative-care-dyspnea/" },
   csbpr: { id: "csbpr", citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute Stroke Management module. 7th edition, 2022 update.", url: "https://pubmed.ncbi.nlm.nih.gov/36529857/" },
@@ -19,16 +19,18 @@ const S = {
   atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025. Content on transfer to definitive care.", url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/" },
   crash2: { id: "crash2-timing", citation: "CRASH-2 collaborators. The importance of early treatment with tranexamic acid in bleeding trauma patients: an exploratory analysis of the CRASH-2 randomised controlled trial. Lancet. 2011.", url: "https://pubmed.ncbi.nlm.nih.gov/21439633/" },
   prism: { id: "prism", citation: "Chilcott RP, Amlot R, editors. Primary Response Incident Scene Management (PRISM) guidance for chemical incidents. Volume 1: strategic guidance for mass casualty disrobe and decontamination. Biomedical Advanced Research and Development Authority, US Department of Health and Human Services. 2015.", url: "https://www.medicalcountermeasures.gov/media/36872/prism-volume-1.pdf" },
+  okumura1: { id: "okumura-tokyo-1", citation: "Okumura T, Suzuki K, Fukuda A, et al. The Tokyo subway sarin attack: disaster management, Part 1: community emergency response. Acad Emerg Med. 1998.", url: "https://pubmed.ncbi.nlm.nih.gov/9660289/" },
   okumura: { id: "okumura-tokyo", citation: "Okumura T, Suzuki K, Fukuda A, et al. The Tokyo subway sarin attack: disaster management, Part 2: hospital response. Acad Emerg Med. 1998.", url: "https://pubmed.ncbi.nlm.nih.gov/9660290/" },
   remmContam: { id: "remm-contam", citation: "US Department of Health and Human Services. Radiation Emergency Medical Management (REMM). Management modifiers for treating radiation contamination. Accessed 24 September 2026.", url: "https://remm.hhs.gov/contam_modifiers.htm" },
+  remmPpe: { id: "remm-ppe", citation: "US Department of Health and Human Services. Radiation Emergency Medical Management (REMM). Personal protective equipment in a radiation emergency. Accessed 24 September 2026.", url: "https://remm.hhs.gov/radiation_ppe.htm" },
+  crush: { id: "crush-ndt", citation: "Sever MS, Vanholder R, RDRTF of ISN Work Group. Recommendation for the management of crush victims in mass disasters. Nephrol Dial Transplant. 2012.", url: "https://pubmed.ncbi.nlm.nih.gov/22467763/" },
   remmHospital: { id: "remm-hospital", citation: "US Department of Health and Human Services. Radiation Emergency Medical Management (REMM). Hospital activities during radiation emergencies. Accessed 24 September 2026.", url: "https://remm.hhs.gov/hospitalprep.htm" },
   salt: { id: "salt", citation: "Lerner EB, Schwartz RB, Coule PL, et al. Mass casualty triage: an evaluation of the data and development of a proposed national guideline. Disaster Med Public Health Prep. 2008.", url: "https://pubmed.ncbi.nlm.nih.gov/18769263/" },
-  warren: { id: "warren-transport", citation: "Warren J, Fromm RE Jr, Orr RA, Rotello LC, Horst HM. Guidelines for the inter- and intrahospital transport of critically ill patients. Crit Care Med. 2004." },
-  ssc: { id: "ssc-2021", citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021." },
+  warren: { id: "warren-transport", citation: "Warren J, Fromm RE Jr, Orr RA, Rotello LC, Horst HM. Guidelines for the inter- and intrahospital transport of critically ill patients. Crit Care Med. 2004.", url: "https://pubmed.ncbi.nlm.nih.gov/14707589/" },
+  ssc: { id: "ssc-2021", citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/34605781/" },
   cpsHie: { id: "cps-hie", citation: "Lemyre B, Chau V. Canadian Paediatric Society, Fetus and Newborn Committee. Hypothermia for newborns with hypoxic-ischemic encephalopathy. Paediatr Child Health. 2018.", url: "https://cps.ca/en/documents/position/hypothermia-for-newborns" },
-  acorn: { id: "acorn", citation: "Aylward D, Coughlin K. Canadian Paediatric Society, ACoRN Steering Committee. Neonatal stabilization in Canada: updates to Acute Care of at-Risk Newborns (ACoRN) practices and programming. Paediatr Child Health. 2022.", url: "https://pubmed.ncbi.nlm.nih.gov/35775077/" },
-  aorta: { id: "acc-aha-aorta", citation: "Isselbacher EM, Preventza O, Hamilton Black J, et al. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022." },
-  pals: { id: "aha-pals-2020", citation: "Topjian AA, Raymond TT, Atkins D, et al. Part 4: pediatric basic and advanced life support. 2020 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2020." },
+  aorta: { id: "acc-aha-aorta", citation: "Isselbacher EM, Preventza O, Hamilton Black J, et al. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.", url: "https://pubmed.ncbi.nlm.nih.gov/36322642/" },
+  pals: { id: "aha-pals-2025", citation: "Lasa JJ, Dhillon GS, Duff JP, et al. Part 8: pediatric advanced life support. 2025 American Heart Association and American Academy of Pediatrics guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.", url: "https://pubmed.ncbi.nlm.nih.gov/41122885/" },
 } satisfies Record<string, Source>;
 
 export const EMS_S35: Samp[] = [
@@ -72,7 +74,7 @@ export const EMS_S35: Samp[] = [
         options: ["Current cardiac rhythm on the monitor", "Current end-tidal CO2 reading", "Pupil size and reactivity now", "Supraglottic airway position", "Time found and time CPR began"],
         correct: 4,
         explanation:
-          "The time she was found and the time CPR began exist only in the crew's memory and record, and together with the roommate's last contact 2 hours earlier they define her low flow time, which shapes how long your team continues. A structured handover such as IMIST-AMBO puts treatment given and timing ahead of findings the team can see for itself. The current rhythm, the end-tidal CO2, the pupils and the airway position are all visible to your team at the bedside within seconds.",
+          "The time she was found and the time CPR began exist only in the crew's memory and record, and together with the roommate's last contact 2 hours earlier they bound her no-flow and low-flow times, which shape how long your team continues. A structured handover such as IMIST-AMBO puts treatment given and timing ahead of findings the team can see for itself. The current rhythm, the end-tidal CO2, the pupils and the airway position are all visible to your team at the bedside within seconds.",
         keyFeature: { topic: "ems", n: 2 },
         source: "imist-ambo",
       },
@@ -129,7 +131,7 @@ export const EMS_S35: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "He arrives 11 minutes later with CPR in progress. The paramedic begins the handover as he is moved to the stretcher.",
+        update: "He arrives 14 minutes later with CPR in progress. The paramedic begins the handover as he is moved to the stretcher.",
         prompt: "Which of the following handover details most directly guides your decision about resuscitative thoracotomy?",
         options: ["Alcohol intake before the assault", "Blood volume seen at the scene", "Length of the knife blade", "Minutes of CPR since pulse loss", "Position he was found in"],
         correct: 3,
@@ -224,17 +226,17 @@ export const EMS_S35: Samp[] = [
     alsoTopics: ["sob"],
     title: "A call for breathlessness at home",
     stem:
-      "You are working in a British Columbia emergency department and take a consult through the BC Emergency Health Services clinical support line. An advanced care paramedic is at the home of a 78-year-old man with metastatic lung cancer. His family called 911 for 2 hours of worsening breathlessness at rest. He is alert and anxious, sitting forward in his chair. He tells the paramedic he wants to stay home. His palliative care plan, signed last week with his family physician, records a wish for comfort care at home and no CPR. He takes hydromorphone 2 mg PO every 4 hours, with good pain control. He has no chest pain or fever. Breath sounds are reduced at the right base, as on his recent imaging.",
-    vitals: { temperature: "36.8°C oral", pulse: "108/minute", resp: "28/minute", bp: "132/78 mmHg", o2sat: "94% on room air", weight: "62 kg" },
+      "You are working in a British Columbia emergency department and take a consult through the BC Emergency Health Services clinical support line. An advanced care paramedic is at the home of a 78-year-old man with metastatic lung cancer. His family called 911 for 2 hours of worsening breathlessness at rest. He is alert and anxious, sitting forward in his chair. He tells the paramedic he wants to stay home. His palliative care plan, signed last week with his family physician, records a wish for comfort care at home and no CPR. He takes hydromorphone 2 mg PO every 4 hours, with good pain control. He has no chest pain or fever. Breath sounds are reduced at the right base, as on his recent imaging, and there is no wheeze.",
+    vitals: { temperature: "36.8°C oral", pulse: "108/minute", resp: "28/minute", bp: "132/78 mmHg", o2sat: "97% on room air", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first treatment to direct for his breathlessness?",
+        prompt: "Which of the following is the most appropriate first drug treatment to direct for his breathlessness?",
         options: ["High-flow oxygen by face mask", "IV furosemide bolus", "Nebulized salbutamol", "Opioid given subcutaneously", "Subcutaneous midazolam"],
         correct: 3,
         explanation:
-          "Opioids are the first-line drug treatment for breathlessness in advanced cancer, and the subcutaneous route acts quickly without an IV. His oral hydromorphone controls pain but not this episode. Midazolam may be added for anxiety once the opioid is given, but it is not first-line. Furosemide treats fluid overload, and he has no sign of heart failure. Salbutamol helps bronchospasm, and he has no wheeze. His saturation is 94% on room air, so high-flow oxygen adds nothing for a patient who is not hypoxic.",
+          "Opioids are the first-line drug treatment for breathlessness in advanced cancer, and the subcutaneous route acts quickly without an IV. His oral hydromorphone controls pain but not this episode. Midazolam may be added for anxiety once the opioid is given, but it is not first-line. Furosemide treats fluid overload, and he has no sign of heart failure. Salbutamol helps bronchospasm, and he has no wheeze. The BCEHS guideline gives oxygen only when the saturation is 94% or lower, and his is 97% on room air, so high-flow oxygen adds nothing.",
         keyFeature: { topic: "ems", n: 1 },
         source: "bcehs-p04",
       },
@@ -245,7 +247,7 @@ export const EMS_S35: Samp[] = [
         options: ["Cool air from a fan to the face", "Lying flat with legs raised", "Nasal prong oxygen at 2 L/minute", "Non-rebreather mask oxygen", "Oral suctioning of the pharynx"],
         correct: 0,
         explanation:
-          "Moving air across the face with a fan can relieve breathlessness about as well as oxygen in a patient who is not hypoxic, and his saturation is 94% on room air. The guideline reserves oxygen for hypoxic patients, so neither nasal prongs nor a non-rebreather mask is indicated. He should sit upright without compression of the chest and abdomen, as he is already doing, rather than lie flat. He has no pooled secretions, so suctioning would only distress him.",
+          "Moving air across the face with a fan is one of the first-line comfort measures in the BCEHS guideline and can relieve breathlessness in a patient who is not hypoxic. The guideline gives oxygen only when the saturation is 94% or lower, and his is 97% on room air, so neither nasal prongs nor a non-rebreather mask is indicated. He should sit upright without compression of the chest and abdomen, as he is already doing, rather than lie flat. He has no pooled secretions, so suctioning would only distress him.",
         keyFeature: { topic: "ems", n: 1 },
         source: "bcehs-p04",
       },
@@ -374,42 +376,42 @@ export const EMS_S35: Samp[] = [
     ...META,
   },
 
-  /* 22 STEMI bypass with an inferior infarct ------------------------------ */
+  /* 22 STEMI bypass with an anterior infarct ------------------------------ */
   {
     id: "ems-22",
     topic: "ems",
     alsoTopics: ["ischemic-heart-disease"],
     title: "Patch from a highway rest stop",
     stem:
-      "You are working in an Ontario emergency department without a catheterization laboratory, and you take base hospital calls. A primary care paramedic crew patches from a highway rest stop. A 58-year-old man has had 50 minutes of heavy central chest pressure with sweating. The crew's 12-lead ECG shows 3 mm ST elevation in II, III and aVF with ST depression in I and aVL. He uses nitroglycerin spray for stable angina and has chewed ASA 160 mg from the crew. He has no IV access. The PCI centre is 40 minutes away by land and your hospital is 10 minutes away.",
+      "You are working in an Ontario emergency department without a catheterization laboratory, and you take base hospital calls. A primary care paramedic crew patches from a highway rest stop. A 58-year-old man has had 50 minutes of heavy central chest pressure with sweating. The crew's 12-lead ECG shows 3 mm ST elevation in V2 to V5 with ST depression in III and aVF. He uses nitroglycerin spray for stable angina and has chewed ASA 160 mg from the crew. He has no IV access. The PCI centre is 40 minutes away by land and your hospital is 10 minutes away.",
     vitals: { pulse: "76/minute", resp: "18/minute", bp: "118/74 mmHg", o2sat: "96% on room air", weight: "84 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate destination to direct for this patient?",
-        options: ["Air ambulance to the PCI centre", "Direct transport to the PCI centre", "Stay on scene until pain settles", "Your department for a repeat ECG", "Your department for fibrinolysis"],
-        correct: 1,
+        prompt: "Which of the following findings would have excluded him from the Ontario STEMI bypass protocol?",
+        options: ["Age of 84 years", "Pain that began 10 hours ago", "Prior stent in the same artery", "Transport time of 50 minutes", "Ventricular paced rhythm on ECG"],
+        correct: 4,
         explanation:
-          "He meets the Ontario STEMI bypass indications: he is an adult with ischemic pain under 12 hours and ST elevation of 1 mm or more in two contiguous inferior leads, and the PCI centre is under 60 minutes from patient contact. Primary PCI within 120 minutes of first medical contact is preferred to fibrinolysis, so a stop at your hospital adds delay. The crew's ECG is diagnostic and needs no repeat before bypass. An aircraft adds activation time for a 40 minute land trip. Waiting on scene delays reperfusion.",
+          "A ventricular paced rhythm is a listed contraindication to the Ontario STEMI bypass protocol, as are left bundle branch block and other STEMI imitators, because ST changes cannot be read reliably on such a tracing. The protocol sets only a lower age limit of 18 years, so an older patient still qualifies. Pain that began under 12 hours earlier qualifies, so 10 hours does not exclude him. A PCI centre is excluded only when it is 60 minutes or more from patient contact. A previous stent is not a contraindication, and stent thrombosis is itself treated with PCI.",
         keyFeature: { topic: "ems", n: 1 },
-        source: "ccs-stemi",
+        source: "bls-pcs",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate direction about nitroglycerin for his pain?",
-        options: ["Give a second ASA 160 mg dose", "Give nitroglycerin 0.4 mg SL now", "Record V4R before any nitroglycerin", "Start IV access, then give nitroglycerin", "No nitroglycerin in any inferior STEMI"],
-        correct: 2,
+        prompt: "Which of the following should the crew do now that a STEMI has been identified?",
+        options: ["Apply defibrillation pads now", "Give a second ASA 160 mg dose", "Give nitroglycerin 0.8 mg SL", "Give oxygen by non-rebreather mask", "Start a 1 L saline bolus"],
+        correct: 0,
         explanation:
-          "The directive asks paramedics to suspect right ventricular infarction in every inferior STEMI and to record at least V4R, because nitroglycerin can cause profound hypotension when the right ventricle depends on preload. ST elevation of 1 mm or more in V4R contraindicates it. Giving it now skips that check. He already has a history of nitroglycerin use, so IV access is not a condition for the dose. ASA is a single dose of 160 to 162 mg. An inferior STEMI without right ventricular involvement can receive nitroglycerin.",
+          "The Ontario cardiac ischemia directive tells the crew to apply defibrillation pads as soon as a STEMI is identified, because ventricular fibrillation is most likely early in an infarction and pads allow an immediate shock. ASA is a single dose of 160 to 162 mg, and he has already chewed it. The maximum single dose of nitroglycerin is 0.4 mg. His saturation is 96% on room air, so oxygen is not indicated. He is normotensive and has no IV access, so a fluid bolus has no indication.",
         keyFeature: { topic: "ems", n: 1 },
         source: "als-pcs",
       },
       {
         id: "q3",
         kind: "single",
-        update: "V4R shows 1.5 mm ST elevation. Fifteen minutes into transport he becomes pulseless in VF. After two shocks he remains in VF. The PCI centre is 25 minutes away and your hospital is 8 minutes away.",
+        update: "Fifteen minutes into transport he becomes pulseless in VF. After two shocks he remains in VF. The PCI centre is 25 minutes away and your hospital is 8 minutes away.",
         prompt: "Which of the following is the most appropriate direction to the crew now?",
         options: ["Continue to the PCI centre with CPR", "Divert to your emergency department", "Request an air ambulance rendezvous", "Terminate after 20 minutes of CPR", "Wait for an advanced care intercept"],
         correct: 1,
@@ -426,7 +428,7 @@ export const EMS_S35: Samp[] = [
         options: ["Current blood pressure and heart rate", "Current cardiac rhythm", "Oxygen saturation now", "Pre-arrest 12-lead ECG tracings", "Pupil size after ROSC"],
         correct: 3,
         explanation:
-          "An ECG recorded soon after ROSC can be distorted by the arrest and the shocks, while the crew's pre-arrest tracings document an inferior and right ventricular STEMI. Those tracings support immediate transfer for angiography and must travel with him. His current rhythm, blood pressure, heart rate, saturation and pupils are all visible to your team at the bedside and do not decide whether he needs reperfusion.",
+          "An ECG recorded soon after ROSC can be distorted by the arrest and the shocks, while the crew's pre-arrest tracings document an anterior STEMI. Those tracings support immediate transfer for angiography and must travel with him. His current rhythm, blood pressure, heart rate, saturation and pupils are all visible to your team at the bedside and do not decide whether he needs reperfusion.",
         keyFeature: { topic: "ems", n: 2 },
         source: "ccs-stemi",
       },
@@ -459,7 +461,7 @@ export const EMS_S35: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        update: "She arrives 40 minutes after the crash. She is alert. Your hospital stocks 4 units of O negative red cells. The aircraft will land in 15 minutes.",
+        update: "She arrives 50 minutes after the crash. She is alert. Your hospital stocks 4 units of O negative red cells. The aircraft will land in 15 minutes.",
         prompt: "Which of the following should your team do while the aircraft is on its way?",
         options: ["Crystalloid 3 L IV bolus", "eFAST at the bedside", "O negative red cells", "Rapid sequence intubation", "tranexamic acid 1 g IV", "Urinary catheter insertion"],
         select: 3,
@@ -504,7 +506,7 @@ export const EMS_S35: Samp[] = [
     alsoTopics: ["multiple-patients"],
     title: "A call from a curling rink",
     stem:
-      "You are working in an Alberta community hospital emergency department. At 1930 the EMS district supervisor calls from a curling rink 10 minutes away. An ammonia refrigeration line has ruptured. Fire crews have evacuated about 40 people to the parking lot. Twelve have cough and burning eyes, three have wheeze and one, a 61-year-old man, has stridor and a hoarse voice. Several people have already left by private car. The vital signs below are for the man with stridor. The supervisor asks for direction.",
+      "You are working in an Ontario community hospital emergency department. At 1930 the EMS district supervisor calls from a curling rink 10 minutes away. An ammonia refrigeration line has ruptured. Fire crews have evacuated about 40 people to the parking lot. Twelve have cough and burning eyes, three have wheeze and one, a 61-year-old man, has stridor and a hoarse voice. Several people have already left by private car. The vital signs below are for the man with stridor. The supervisor asks for direction.",
     vitals: { pulse: "118/minute", resp: "30/minute", bp: "152/90 mmHg", o2sat: "89% on room air", weight: "95 kg" },
     questions: [
       {
@@ -531,30 +533,29 @@ export const EMS_S35: Samp[] = [
       },
       {
         id: "q3",
-        kind: "menu",
-        prompt: "Which of the following should your emergency department prepare before exposed patients arrive?",
-        options: ["Airway equipment for a swollen airway", "Decontamination area outside the doors", "Hold all walk-ins in the waiting room", "Lock down to one monitored entrance", "Nebulized sodium bicarbonate for all", "Neutralizing solution for skin burns", "Routine ward admission for all exposed"],
-        select: 3,
-        correct: [0, 1, 3],
+        kind: "single",
+        prompt: "Which of the following is the most appropriate direction about the people who left by private car?",
+        options: ["Alert nearby hospitals to expect them", "Ask police to return them to the rink", "Send an ambulance to each home", "Track them down for decontamination", "No action unless they call 911"],
+        correct: 0,
         explanation:
-          "In the Tokyo sarin attack most victims reached hospital without an ambulance or decontamination, and many hospital staff developed symptoms from secondary exposure. A single monitored entrance and a decontamination area outside the doors keep contaminated people out of the department. The man with stridor may need a difficult airway approach. Contaminated walk-ins in the waiting room expose other patients. Nebulized bicarbonate and neutralizing solutions have no role in ammonia injury. Most exposed people improve after decontamination and do not need admission.",
-        keyFeature: { topic: "ems", n: 4 },
-        source: "okumura-tokyo",
+          "People who leave a chemical scene by private vehicle go to the nearest emergency departments without warning and still contaminated. In the Tokyo sarin attack more than 4 000 victims reached hospital on foot, by taxi or in private vehicles, far more than the 688 moved by EMS, and no guidance given to private vehicles let victims concentrate at one hospital. Warning nearby hospitals lets them set up decontamination before these people walk in. Police and ambulances cannot quickly trace people who left on their own, and chasing them takes resources from the scene. Waiting for a 911 call leaves the hospitals unprepared.",
+        keyFeature: { topic: "ems", n: 1 },
+        source: "okumura-tokyo-1",
       },
       {
         id: "q4",
         kind: "single",
-        update: "A car pulls into the ambulance bay. Two coughing adults with red eyes say they left the rink before EMS arrived.",
-        prompt: "Which of the following is the most appropriate first step for these two adults?",
-        options: ["Assess them in the car in the bay", "Bring them into resuscitation for assessment", "Register them at triage first", "Send them home with written advice", "Undress and rinse them outside first"],
-        correct: 4,
+        update: "A 24-year-old woman who wears contact lenses has burning, watering eyes after the release. She is otherwise well, and the crew is preparing to transport her.",
+        prompt: "Which of the following is the most appropriate eye care for her before and during transport?",
+        options: ["Irrigate for 2 minutes, then transport", "Patch both eyes for transport", "Remove lenses, irrigate 20 minutes or more", "Topical anesthetic drops alone", "Transport now, irrigate in hospital"],
+        correct: 2,
         explanation:
-          "They left before decontamination, so their clothing and skin still carry ammonia that can harm them and expose staff. They are coughing but talking, so there is time to remove clothing and irrigate outside before they enter. Bringing them straight into resuscitation or triage carries the chemical into the department. Assessing them in the car delays decontamination. Sending them home ignores airway symptoms that can worsen over the next hours.",
+          "Ammonia is an alkali that penetrates the eye quickly. The Ontario hazardous materials standard asks paramedics to remove contact lenses that come out easily and to irrigate a suspected alkali exposure for at least 20 minutes at the scene when the patient is stable, then to continue irrigation en route. A 2 minute rinse leaves alkali against the cornea. Patching traps the chemical in the eye. Anesthetic drops ease pain and make irrigation easier but remove no chemical. Leaving irrigation until hospital lets the burn deepen.",
         keyFeature: { topic: "ems", n: 4 },
-        source: "prism",
+        source: "bls-pcs",
       },
     ],
-    sources: [S.prism, S.okumura],
+    sources: [S.prism, S.okumura1, S.blsPcs],
     ...META,
   },
 
@@ -586,9 +587,9 @@ export const EMS_S35: Samp[] = [
         options: ["High enough to need lead aprons", "Low with gown, gloves and mask", "Moderate until staff take iodide", "Negligible, so no protective gear", "Requires treating him outdoors"],
         correct: 1,
         explanation:
-          "External contamination from such a device is mostly dust on clothing and skin, with little likelihood of it becoming airborne, so routine barrier protection of gown, gloves, mask and cap, with personal dosimeters, protects staff. Lead aprons do not stop the relevant radiation meaningfully and hamper resuscitation. Potassium iodide is not a protective measure for staff here. Some protective gear is still needed to limit spread. Treating a man in shock outdoors would delay his care without benefit to staff.",
+          "Secondary contamination of staff has rarely caused significant medical harm in past radiation events, so barrier protection of gown, gloves, mask and cap, with a personal dosimeter to track dose, lets staff resuscitate him safely. Lead aprons of the kind used in diagnostic radiology do not shield against high-energy penetrating radiation and are cumbersome. Potassium iodide protects only the thyroid against radioactive iodine and is not a staff protective measure here. Some protective gear is still needed to limit spread of contamination. Treating a man in shock outdoors would delay his care without benefit to staff.",
         keyFeature: { topic: "ems", n: 4 },
-        source: "remm-hospital",
+        source: "remm-ppe",
       },
       {
         id: "q3",
@@ -602,68 +603,57 @@ export const EMS_S35: Samp[] = [
         source: "remm-hospital",
       },
     ],
-    sources: [S.remmContam, S.remmHospital],
+    sources: [S.remmContam, S.remmPpe, S.remmHospital],
     ...META,
   },
 
-  /* 26 Derailment with SALT triage ---------------------------------------- */
+  /* 26 Derailment with a trapped passenger ------------------------------ */
   {
     id: "ems-26",
     topic: "ems",
-    alsoTopics: ["multiple-patients"],
+    alsoTopics: ["multiple-patients", "multiple-trauma"],
     title: "A call from a rural derailment",
     stem:
-      "You are working in a regional hospital emergency department in Saskatchewan. At 1015 the EMS incident commander calls from a passenger train derailment 30 minutes away. Two coaches rolled onto their sides and about 60 passengers are involved. Four ambulances are on scene and more are coming from neighbouring towns. Crews are using SALT triage. The commander asks for guidance, starting with a 42-year-old woman trapped by the legs with a near amputation of the right leg below the knee and bright red spurting bleeding. Her vital signs are below. She is pale and answers questions.",
-    vitals: { pulse: "136/minute", resp: "24/minute", bp: "88/56 mmHg", weight: "65 kg" },
+      "You are working in a regional hospital emergency department in Saskatchewan. At 1015 the EMS incident commander calls about a passenger train derailment 30 minutes away that happened at 0815. Two coaches rolled onto their sides and about 60 passengers are involved. Crews are using SALT triage. The commander asks for guidance about a 42-year-old woman whose legs have been pinned under a collapsed seat frame since the derailment. Rescuers expect to free her in 30 minutes. Both legs are swollen and she cannot move her feet. An advanced care paramedic has started an IV. She is pale and answers questions.",
+    vitals: { pulse: "118/minute", resp: "22/minute", bp: "108/70 mmHg", o2sat: "97% on room air", weight: "65 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the first step of SALT triage for the passengers at this scene?",
-        options: ["Ask walkers to move to one area", "Assess each patient's capillary refill", "Check radial pulses in the order found", "Tag every patient before any treatment", "Transport the youngest patients first"],
-        correct: 0,
+        prompt: "Which of the following is the most appropriate direction for her before she is freed?",
+        options: ["Bilateral thigh tourniquets now", "Furosemide 40 mg IV now", "Hold fluids until she is freed", "Isotonic saline infusion now", "Mannitol infusion now"],
+        correct: 3,
         explanation:
-          "SALT begins with a global sort. Those who can walk are asked to move to a designated area and are assessed last, those who can wave or move purposefully are assessed next, and those who are still or have obvious life threats are assessed first. Pulses and perfusion are checked later, during individual assessment. Tagging everyone before any treatment delays life-saving interventions. Age alone does not set transport order.",
-        keyFeature: { topic: "ems", n: 4 },
-        source: "salt",
+          "Release of limbs crushed for about 2 hours can flood the circulation with potassium, myoglobin and acid, so the international crush recommendations advise starting fluid before extrication, while she is still trapped, and avoiding potassium-containing solutions. Isotonic saline meets both aims. Holding fluid until she is free lets hypovolemia and hyperkalemia strike at the moment of release. Tourniquets are for life-threatening bleeding, which she does not have, and are not used to prevent reperfusion injury. Furosemide and mannitol are not field treatments and do nothing for the volume deficit that drives kidney injury.",
+        keyFeature: { topic: "ems", n: 1 },
+        source: "crush-ndt",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following should the crew do for this woman before assigning her a triage category?",
-        options: ["Splint the leg in a vacuum splint", "Start an IV and give fluid", "Tag her immediate and move on", "Tourniquet above the wound now", "Wrap and cool the amputated part"],
+        update: "Passengers of all ages, injured and uninjured, are spread along the embankment beside the two coaches. The commander asks how the first crews should choose whom to assess first.",
+        prompt: "Which of the following groups does SALT direct crews to assess individually first after the global sort?",
+        options: ["Adults aged 65 years or older", "Children under 8 years of age", "Those able to walk to a set area", "Those still or with a clear life threat", "Those waving or moving purposefully"],
         correct: 3,
         explanation:
-          "SALT builds a short list of life-saving interventions into the individual assessment: control of major hemorrhage, opening the airway, chest decompression and antidote autoinjectors. Each is quick, within scope and does not tie the rescuer to one patient. Her spurting arterial bleeding with a BP of 88/56 mmHg will kill her within minutes, so a tourniquet goes on before she is categorized. Splinting, IV fluid and care of the amputated part are later steps. Tagging her without stopping the bleeding loses her while she waits.",
+          "SALT begins with a global sort by voice. Passengers who can walk are asked to go to a designated area, and the rest are asked to wave or are watched for purposeful movement. Those who stay still and those with an obvious life threat, such as major bleeding, are assessed individually first, because they are the most likely to need a life-saving intervention. Those who wave come next. The walkers are assessed last, but they are still assessed, because walking does not exclude serious injury. SALT sorts every age group by the same commands, so neither older adults nor young children are taken first because of age alone.",
         keyFeature: { topic: "ems", n: 4 },
         source: "salt",
       },
       {
         id: "q3",
         kind: "single",
-        update: "A 19-year-old woman sits beside the track and cannot bear weight on a swollen left ankle. She obeys commands, has a radial pulse, breathes comfortably and has no bleeding. She has no other injury.",
-        prompt: "Which of the following SALT triage categories should she be assigned?",
-        options: ["Dead (black)", "Delayed (yellow)", "Expectant (grey)", "Immediate (red)", "Minimal (green)"],
-        correct: 4,
-        explanation:
-          "In SALT, walking is used only in the global sort. At individual assessment she obeys commands, has a peripheral pulse, has no respiratory distress and no uncontrolled hemorrhage, and an isolated ankle injury is a minor injury, so she is minimal. Delayed is for patients who pass those checks but have more than minor injuries. Immediate and expectant are for patients who fail one of the checks. She is breathing, so she is not dead. A scheme that tags every non-walker yellow would overload the delayed group.",
-        keyFeature: { topic: "ems", n: 4 },
-        source: "salt",
-      },
-      {
-        id: "q4",
-        kind: "single",
-        update: "A 70-year-old man has an open skull fracture with exposed brain, agonal breathing and no response to pain. With the patients waiting, the commander tags him expectant.",
-        prompt: "Which of the following best describes the care that patients in the expectant category should receive?",
-        options: ["Comfort care with repeated reassessment", "Moved with the dead to the morgue area", "Tag unchanged for the rest of the event", "Transported first as the most critical group", "No analgesia, to save scarce supplies"],
+        update: "She is freed and arrives at 1130 with a saline infusion running. The paramedic begins the handover.",
+        prompt: "Which of the following handover details most shapes your early management of her?",
+        options: ["Hours she was trapped", "SALT category at scene", "Seat position in the coach", "Speed of the train", "Time of her last meal"],
         correct: 0,
         explanation:
-          "Expectant patients are alive but unlikely to survive with the resources available at that moment. They receive comfort care, including analgesia, and are reassessed, because triage is dynamic and more resources may make treatment possible. They are not placed with the dead. Their tag can change as the scene evolves. Sending them first would use scarce ambulances and surgeons on patients least likely to benefit while salvageable patients wait.",
-        keyFeature: { topic: "ems", n: 4 },
-        source: "salt",
+          "Only the crew can report when she was actually freed, and so how long her legs were compressed. More than 2 hours of entrapment of both legs puts her at high risk of crush syndrome, with hyperkalemia, rhabdomyolysis and acute kidney injury after release. That time sets how closely you watch the ECG, potassium, creatine kinase and urine output, and how much fluid she needs. Her field SALT category is replaced by your own assessment at the door. The speed of the train and her seat position describe the mechanism but not her crush risk. The time of her last meal matters only for an anesthetic.",
+        keyFeature: { topic: "ems", n: 2 },
+        source: "crush-ndt",
       },
     ],
-    sources: [S.salt],
+    sources: [S.crush, S.salt],
     ...META,
   },
 
@@ -674,7 +664,7 @@ export const EMS_S35: Samp[] = [
     alsoTopics: ["tox", "multiple-patients"],
     title: "A morning call from a subway station",
     stem:
-      "You are working in a Toronto emergency department that takes base hospital calls. At 0815 a paramedic supervisor patches from a subway station 2 km away. A liquid was released on a crowded platform. Many commuters have pinpoint pupils, runny noses, vomiting and chest tightness. Fire crews in protective suits are bringing people to the street. The service's paramedics are authorized for the adult nerve agent exposure auxiliary directive. The supervisor first describes a 48-year-old man, about 80 kg, who is vomiting and wheezing with copious bronchial secretions. He is alert, oriented and moving all limbs.",
+      "You are working in a Toronto emergency department that takes base hospital calls. At 0815 a paramedic supervisor patches from a subway station 2 km away. A liquid was released on a crowded platform. Many commuters have pinpoint pupils, runny noses, vomiting and chest tightness. Fire crews in protective suits are bringing people to the street. The service's paramedics are authorized for the adult and pediatric nerve agent exposure auxiliary directives. The supervisor first describes a 48-year-old man, about 80 kg, who is vomiting and wheezing with copious bronchial secretions. He is alert, oriented and moving all limbs.",
     vitals: { pulse: "52/minute", resp: "28/minute", bp: "150/90 mmHg", o2sat: "90% on room air", weight: "80 kg" },
     questions: [
       {
@@ -702,7 +692,7 @@ export const EMS_S35: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "A 30-year-old woman, about 60 kg, is unresponsive and seizing, with secretions pouring from her mouth. The crew is preparing to manage her airway.",
+        update: "A 30-year-old woman, about 60 kg, is unresponsive and seizing, with pinpoint pupils and secretions pouring from her mouth. The crew is preparing to manage her airway.",
         prompt: "Which of the following should the crew give her before attempting to manage her airway?",
         options: ["atropine 6 mg IM", "diazepam 10 mg IM", "midazolam 10 mg IM", "naloxone 2 mg IN", "pralidoxime 1800 mg IM"],
         correct: 0,
@@ -713,18 +703,18 @@ export const EMS_S35: Samp[] = [
       },
       {
         id: "q4",
-        kind: "menu",
-        prompt: "Which of the following should your department prepare before the first patients arrive from the station?",
-        options: ["Bulk atropine from the pharmacy", "Chemical protective gear for staff", "Decontamination at one entrance", "Open every entrance for walk-ins", "Physostigmine for the miosis", "Potassium iodide tablets", "Pyridostigmine for exposed patients"],
-        select: 3,
-        correct: [0, 1, 2],
+        kind: "single",
+        update: "Crews carry out a 7-year-old boy, about 24 kg. He is alert, vomiting and wheezing, with copious secretions. He has received his first dose of atropine IM.",
+        prompt: "Which of the following pralidoxime doses should the crew give him next under the Ontario pediatric directive?",
+        options: ["pralidoxime 240 mg IM", "pralidoxime 360 mg IM", "pralidoxime 600 mg IM", "pralidoxime 1080 mg IM", "pralidoxime 1800 mg IM"],
+        correct: 1,
         explanation:
-          "Nerve agent casualties may need large cumulative doses of atropine, well beyond usual stock. In the Tokyo sarin attack most victims arrived without decontamination and many hospital staff had secondary exposure, so staff need chemical protective gear and entry through one entrance with decontamination. Opening every door lets contaminated people in. Physostigmine is a cholinesterase inhibitor and would worsen the crisis. Potassium iodide is for radioactive iodine. Pyridostigmine is a military pretreatment and has no role after exposure.",
+          "He is alert, with vomiting, bronchospasm and secretions, which makes this a moderate exposure. For a child under 40 kg the pediatric directive gives pralidoxime 15 mg/kg IM, and 24 kg x 15 mg/kg is 360 mg, below the 600 mg maximum single dose. A dose of 240 mg is 10 mg/kg and underdoses him. The 600 mg dose is the adult moderate dose, 25 mg/kg for him. A dose of 1080 mg is 45 mg/kg, the severe exposure dose, which is capped at 600 mg under 40 kg and does not apply because he has no decreased awareness, paralysis, seizure or apnea. The 1800 mg dose is for a severely exposed adult.",
         keyFeature: { topic: "ems", n: 4 },
-        source: "okumura-tokyo",
+        source: "als-pcs",
       },
     ],
-    sources: [S.alsPcs, S.okumura],
+    sources: [S.alsPcs],
     ...META,
   },
 
@@ -815,7 +805,7 @@ export const EMS_S35: Samp[] = [
         options: ["Axillary 35 to 36°C, checked hourly", "Rectal 33 to 34°C, checked every 15 minutes", "Rectal 30 to 32°C, checked every 30 minutes", "Skin 36.5°C by warmer probe", "Tympanic 34 to 35°C, checked hourly"],
         correct: 1,
         explanation:
-          "Cooling aims for a core temperature of 33 to 34°C, and during passive cooling the rectal temperature, or axillary if rectal is not possible, is checked every 15 minutes to keep it above 33°C. A target of 30 to 32°C is below the therapeutic range and risks arrhythmia and coagulopathy. Hourly checks miss overcooling. A range of 34 to 36°C gives too little cooling to protect the brain. A servo skin temperature of 36.5°C describes normothermia, and tympanic readings are not used in newborns.",
+          "Cooling aims for a core temperature of 33 to 34°C, and during passive cooling the rectal temperature, or axillary if rectal is not possible, is checked every 15 minutes to keep it above 33°C. A target of 30 to 32°C is below the therapeutic range and risks arrhythmia and coagulopathy. Hourly checks miss overcooling. Targets of 34 to 35°C and 35 to 36°C give too little cooling to protect the brain. A servo skin temperature of 36.5°C describes normothermia, and tympanic readings are not used in newborns.",
         keyFeature: { topic: "ems", n: 3 },
         source: "cps-hie",
       },
@@ -823,13 +813,13 @@ export const EMS_S35: Samp[] = [
         id: "q3",
         kind: "menu",
         prompt: "Which of the following should be in place before the neonatal transport team arrives?",
-        options: ["D10W infusion at 3 mL/kg/hour IV", "Frequent glucose monitoring", "Observation for seizures", "Oral feeds by bottle", "Prophylactic phenobarbital IV", "Sodium bicarbonate for the acidosis", "Warm blankets and a hat"],
+        options: ["D10W infusion IV", "Frequent glucose monitoring", "Observation for seizures", "Oral feeds by bottle", "Prophylactic phenobarbital IV", "Sodium bicarbonate for the acidosis", "Warm blankets and a hat"],
         select: 3,
         correct: [0, 1, 2],
         explanation:
-          "Normal glucose is an important adjunct in encephalopathy, so a D10W infusion starts at 3 mL/kg/hour, the ACoRN starting rate, with frequent glucose checks. Seizures are common after asphyxia and are treated when they occur, so he needs close observation. An encephalopathic newborn with a weak suck should not bottle feed because of aspiration risk. Prophylactic phenobarbital is not recommended. Bicarbonate does not improve outcome and adds a sodium and osmolar load. Warm blankets and a hat would undo passive cooling.",
+          "The CPS statement names normal serum glucose as an important adjunct in encephalopathy, so he needs an IV D10W infusion with frequent glucose checks. Seizures are common after asphyxia and antiepileptics are used when clinical or electrographic seizures are present, so he needs close observation. The statement cautions against antiepileptics without seizures because of their neurotoxicity, so prophylactic phenobarbital is not given. An encephalopathic newborn with a weak suck should not bottle feed because of aspiration risk. Bicarbonate is not recommended to correct acidosis after neonatal resuscitation and adds a sodium and osmolar load. Warm blankets and a hat would undo passive cooling.",
         keyFeature: { topic: "ems", n: 3 },
-        source: "acorn",
+        source: "cps-hie",
       },
       {
         id: "q4",
@@ -843,7 +833,7 @@ export const EMS_S35: Samp[] = [
         source: "cps-hie",
       },
     ],
-    sources: [S.cpsHie, S.acorn],
+    sources: [S.cpsHie],
     ...META,
   },
 
@@ -908,7 +898,7 @@ export const EMS_S35: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following hydrocortisone doses should you confirm for the crew to give now?",
+        prompt: "Which of the following hydrocortisone doses does the Ontario adrenal crisis directive allow the crew to give now?",
         options: ["hydrocortisone 40 mg IM", "hydrocortisone 60 mg IM", "hydrocortisone 80 mg IM", "hydrocortisone 100 mg IM", "No hydrocortisone before hospital"],
         correct: 0,
         explanation:
@@ -923,7 +913,7 @@ export const EMS_S35: Samp[] = [
         options: ["A base hospital patch for approval", "Blood pressure below 70 mmHg", "Confirmed fever of 38°C or more", "Glucose below 3 mmol/L", "Her own vial presented to the crew"],
         correct: 4,
         explanation:
-          "The directive applies to a patient with primary adrenal failure when the paramedics are presented with a vial of hydrocortisone for that patient, plus any one sign of crisis. Her vomiting, drowsiness, tachycardia and low blood pressure each qualify, so no single threshold of blood pressure, glucose or temperature must be met. A fever of 38°C or more is one of the qualifying signs, not a requirement. The directive has no mandatory patch point, although a patch like this one is reasonable when a crew is unsure.",
+          "The directive applies to a patient with primary adrenal failure when the paramedics are presented with a vial of hydrocortisone for that patient, plus any one sign of crisis. Her vomiting, drowsiness, tachycardia and low blood pressure each qualify, as does her glucose of 3.4 mmol/L, since the directive defines hypoglycemia from age 2 as below 4.0 mmol/L, so no single threshold of blood pressure, glucose or temperature must be met. A fever of 38°C or more is one of the qualifying signs, not a requirement. The directive has no mandatory patch point, although a patch like this one is reasonable when a crew is unsure.",
         keyFeature: { topic: "ems", n: 1 },
         source: "als-pcs",
       },
@@ -961,7 +951,7 @@ export const EMS_S35: Samp[] = [
         options: ["Methadone taken in the past 72 hours", "Number of naloxone doses given", "Past use of buprenorphine", "Route by which he used fentanyl", "Street source of his fentanyl"],
         correct: 0,
         explanation:
-          "Methadone taken in the past 72 hours is the listed contraindication to paramedic buprenorphine, because methadone is long acting and buprenorphine can displace it and cause severe, prolonged withdrawal. You should confirm the crew asked about it. Naloxone for the current episode is a condition of the directive, but the number of doses does not change safety. Earlier buprenorphine use is not required. The route of fentanyl use and where he bought it do not alter the risk of the dose he received.",
+          "Methadone taken in the past 72 hours is a listed contraindication to paramedic buprenorphine, alongside allergy, because methadone is long acting and buprenorphine can displace it and cause severe, prolonged withdrawal. You should confirm the crew asked about it. Naloxone for the current episode is a condition of the directive, but the number of doses does not change safety. Earlier buprenorphine use is not required. The route of fentanyl use and where he bought it do not alter the risk of the dose he received.",
         keyFeature: { topic: "ems", n: 2 },
         source: "als-pcs",
       },
@@ -1070,9 +1060,9 @@ export const EMS_S35: Samp[] = [
         select: 3,
         correct: [2, 3, 4],
         explanation:
-          "Asystole is treated with CPR and epinephrine 0.01 mg/kg, which is 0.09 mg for 9 kg, repeated every 3 to 5 minutes. Intraosseous access is quicker than a peripheral IV in an infant in arrest, and airway equipment sized for him must be laid out. Amiodarone 5 mg/kg is for shockable rhythms. Atropine does not treat asystole. Sodium bicarbonate is not given routinely in pediatric arrest. Transvenous pacing has no role in asystole.",
+          "Asystole is treated with CPR and epinephrine 0.01 mg/kg, which is 0.09 mg for 9 kg, repeated every 3 to 5 minutes. Intraosseous access is often the quickest route in an infant in arrest when an IV is not rapidly obtained, and airway equipment sized for him must be laid out. Amiodarone 5 mg/kg is for shockable rhythms. Atropine does not treat asystole. Sodium bicarbonate is not given routinely in pediatric arrest. Transvenous pacing has no role in asystole.",
         keyFeature: { topic: "ems", n: 1 },
-        source: "aha-pals-2020",
+        source: "aha-pals-2025",
       },
       {
         id: "q3",
@@ -1091,14 +1081,14 @@ export const EMS_S35: Samp[] = [
     ...META,
   },
 
-  /* 35 Bus rollover with a tourniquet ------------------------------------- */
+  /* 35 Crane collapse with a tourniquet ---------------------------------- */
   {
     id: "ems-35",
     topic: "ems",
     alsoTopics: ["multiple-patients", "multiple-trauma"],
-    title: "The first ambulance from a bus rollover",
+    title: "The first ambulance from a street collapse",
     stem:
-      "You are working in the emergency department of an Ontario lead trauma hospital. A tour bus rolled over on a highway 25 minutes away at 1350, and EMS has declared a multiple casualty incident. At 1500 the first ambulance arrives with a 45-year-old man with a near amputation of the left arm above the elbow. A tourniquet on the upper arm has stopped the bleeding. His triage tag is red. The primary care crew gave tranexamic acid 1 g IM at the scene under their auxiliary directive. He is pale and anxious and has no other obvious injury.",
+      "You are working in the emergency department of an Ontario lead trauma hospital. A construction crane collapsed onto a crowded downtown street 25 minutes away at 1350, and EMS has declared a multiple casualty incident. At 1500 the first ambulance arrives with a 45-year-old man with a near amputation of the left arm above the elbow. A tourniquet on the upper arm has stopped the bleeding. His triage tag is red. The primary care crew gave tranexamic acid 1 g IM at the scene under their auxiliary directive. He is pale and anxious and has no other obvious injury.",
     vitals: { pulse: "124/minute", resp: "24/minute", bp: "98/60 mmHg", o2sat: "96% on non-rebreather mask", weight: "90 kg" },
     questions: [
       {
@@ -1126,16 +1116,16 @@ export const EMS_S35: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate use of field triage tags as casualties arrive?",
-        options: ["Accept field tags without review", "Admit all red tags straight to the OR", "Remove tags and start new charts", "Treat green tags before yellow tags", "Triage each patient again on arrival"],
-        correct: 4,
+        prompt: "Which of the following is the most appropriate tranexamic acid plan now that he is in your department?",
+        options: ["tranexamic acid 1 g IM now", "tranexamic acid 1 g IV over 8 hours", "tranexamic acid 1 g IV over 10 minutes", "tranexamic acid 2 g IV over 10 minutes", "No further tranexamic acid"],
+        correct: 1,
         explanation:
-          "Triage is dynamic. Patients change after a field category is assigned, and field tags are applied quickly under poor conditions, so each casualty is triaged again at the door. Accepting tags without review misses deterioration and overtriage. Not every red patient needs the operating room first. The tag carries treatment times, such as the tourniquet time, so removing it loses information. Green patients have minor injuries and wait behind yellow.",
+          "The Ontario directive gives a single 1 g dose, IV or IM, which matches the loading dose of the CRASH-2 regimen, and that regimen continues with 1 g IV infused over 8 hours. He is 70 minutes from injury, with a pulse of 124/minute and BP of 98/60 mmHg, so completing the regimen is appropriate. Another 1 g or a 2 g bolus over 10 minutes repeats the loading dose rather than completing the regimen. A further IM dose is unnecessary once IV access is in place in hospital. Stopping after the field dose leaves the regimen incomplete while he remains in shock.",
         keyFeature: { topic: "ems", n: 4 },
-        source: "salt",
+        source: "crash2-timing",
       },
     ],
-    sources: [S.blsPcs, S.crash2, S.salt],
+    sources: [S.blsPcs, S.crash2],
     ...META,
   },
 
@@ -1156,7 +1146,7 @@ export const EMS_S35: Samp[] = [
         options: ["calcium gluconate 1 g IV", "dopamine 5 mcg/kg/minute IV", "epinephrine 0.02 mg IV", "furosemide 80 mg IV", "sodium bicarbonate 50 mmol IV"],
         correct: 0,
         explanation:
-          "She is on dialysis and has ECG changes of hyperkalemia with hypotension and bradycardia, which meets the Ontario advanced care hyperkalemia directive. Calcium gluconate 1 g IV over 2 to 3 minutes stabilizes the myocardium within minutes and may be repeated after 5 minutes. The dopamine directive covers cardiogenic shock with STEMI, not this. Push-dose epinephrine and sodium bicarbonate are not part of the directive. Furosemide does little in a patient who depends on dialysis.",
+          "She is on dialysis and has ECG changes of hyperkalemia with hypotension and bradycardia, which meets the Ontario advanced care hyperkalemia directive. Calcium gluconate 1 g IV over 2 to 3 minutes stabilizes the myocardium within minutes and may be repeated after 5 minutes. Her rate and pressure also meet the advanced care symptomatic bradycardia directive, which includes dopamine, but a bradycardia caused by hyperkalemia responds poorly to chronotropes until calcium stabilizes the myocardium, so dopamine is not the first direction. Push-dose epinephrine and sodium bicarbonate are not part of the directive. Furosemide does little in a patient who depends on dialysis.",
         keyFeature: { topic: "ems", n: 1 },
         source: "als-pcs",
       },
