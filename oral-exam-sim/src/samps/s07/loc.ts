@@ -17,7 +17,7 @@ const BTF: Source = {
 };
 const GOLDFRANK: Source = {
   id: "goldfrank",
-  citation: "Nelson LS, Howland MA, Lewin NA, et al., editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education.",
+  citation: "Nelson LS, Howland MA, Lewin NA, et al., editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019.",
 };
 const DC_HYPO: Source = {
   id: "diabetes-canada-hypoglycemia",
@@ -73,7 +73,8 @@ const CO: Source = {
 };
 const CSBPR: Source = {
   id: "csbpr-acute",
-  citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management.",
+  citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management. 7th edition. 2022.",
+  url: "https://www.strokebestpractices.ca/recommendations/acute-stroke-management",
 };
 const AHA_ICH: Source = {
   id: "aha-ich-2022",
@@ -120,12 +121,19 @@ export const LOC: Samp[] = [
     alsoTopics: ["airway"],
     title: "Found on a bench in November",
     stem:
-      "A 71-year-old man is brought in by EMS after a passer-by found him slumped on a park bench on a cold November evening. He smells strongly of alcohol. The paramedics say he is a regular at a nearby shelter and is \"just drunk again\". Vital signs: HR 58, BP 176/94, RR 14, SpO2 95% on room air, temperature 35.9°C. He opens his eyes only to trapezius pressure, makes incomprehensible sounds, and reaches toward the painful stimulus. He has a boggy occipital hematoma. His right pupil is 4 mm and sluggish. His left pupil is 3 mm and brisk. No capillary glucose has been checked.",
+      "A 71-year-old man is brought in by EMS after a passer-by found him slumped on a park bench on a cold November evening. He smells strongly of alcohol. The paramedics say he is a regular at a nearby shelter and is \"just drunk again\". He opens his eyes only to trapezius pressure, makes incomprehensible sounds, and reaches toward the painful stimulus. He has a boggy occipital hematoma. His right pupil is 4 mm and sluggish. His left pupil is 3 mm and brisk. No capillary glucose has been checked.",
+    vitals: {
+      temperature: "35.9°C",
+      pulse: "58/minute",
+      resp: "14/minute",
+      bp: "176/94 mmHg",
+      o2sat: "95% on room air",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Document his level of consciousness using the Glasgow Coma Scale. Give the total and the components.",
+        prompt: "What is his level of consciousness on the Glasgow Coma Scale, with the total and the components?",
         required: 1,
         accept: [{ id: "gcs", text: "GCS 9 (E2 V2 M5)", match: gcs(2, 2, 5) }],
         explanation:
@@ -136,7 +144,7 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE findings that argue against alcohol intoxication as the sole cause of his decreased level of consciousness.",
+        prompt: "What findings argue against alcohol intoxication as the sole cause of his decreased level of consciousness?",
         required: 3,
         accept: [
           { id: "head", text: "Occipital scalp hematoma suggesting head injury", match: ["hematoma", "head injury", "head trauma", "trauma", "occipital", "scalp"] },
@@ -157,19 +165,19 @@ export const LOC: Samp[] = [
       {
         id: "q3",
         kind: "menu",
-        prompt: "Which TWO actions are most appropriate right now? Select TWO.",
+        prompt: "Which of the following actions are most appropriate right now?",
         options: [
           "Capillary blood glucose",
-          "Urgent non-contrast CT head",
-          "Serum ethanol level before any imaging",
-          "Naloxone 2 mg IV",
           "Flumazenil 0.2 mg IV",
-          "Observe in the hallway until sober",
           "Lumbar puncture",
-          "MRI brain",
+          "MRI of the brain",
+          "Naloxone 2 mg IV",
+          "Observe in the hallway until sober",
+          "Serum ethanol level before any imaging",
+          "Urgent non-contrast CT head",
         ],
         select: 2,
-        correct: [0, 1],
+        correct: [0, 7],
         explanation:
           "A bedside glucose takes seconds and treats a reversible cause. Anisocoria after head trauma needs urgent CT. His breathing and pupils do not suggest opioid toxicity, flumazenil can cause seizures, and an ethanol level must never delay imaging.",
         keyFeature: { topic: "loc", n: 1 },
@@ -180,7 +188,7 @@ export const LOC: Samp[] = [
         kind: "short",
         update:
           "His glucose is 6.2 mmol/L. While he waits for CT, his GCS falls to 6 (E1 V1 M4). His right pupil is now 6 mm and nonreactive.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 3,
         accept: [
           { id: "airway", text: "Intubate by rapid sequence intubation to protect the airway", match: INTUBATE },
@@ -214,29 +222,36 @@ export const LOC: Samp[] = [
     alsoTopics: ["tox"],
     title: "Unresponsive in a mall washroom",
     stem:
-      "A 26-year-old woman is brought in by EMS after security found her unresponsive in a shopping centre washroom. A friend with her says she smoked something about 20 minutes earlier. Paramedics have been ventilating her with a bag-valve-mask. On arrival: HR 112, BP 104/62, RR 4, SpO2 82% on bag-valve-mask with oxygen, temperature 36.4°C. Her pupils are 1 mm. She does not open her eyes, make sounds or move to pressure.",
+      "A 26-year-old woman is brought in by EMS after security found her unresponsive in a shopping centre washroom. A friend with her says she smoked something about 20 minutes earlier. Paramedics have been ventilating her with a bag-valve-mask. Her pupils are 1 mm. She does not open her eyes, make sounds or move to pressure.",
+    vitals: {
+      temperature: "36.4°C",
+      pulse: "112/minute",
+      resp: "4/minute",
+      bp: "104/62 mmHg",
+      o2sat: "82% on bag-valve-mask with oxygen",
+    },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate immediate management? Select one.",
+        prompt: "Which of the following is the most appropriate immediate management for this patient?",
         options: [
-          "Naloxone 2 mg IV push, then remove the bag-valve-mask",
-          "Continue bag-valve-mask ventilation with 100% oxygen and give naloxone 0.04 to 0.4 mg IV, titrated to adequate breathing",
+          "Flumazenil 0.2 mg IV with ongoing ventilation",
           "Immediate rapid sequence intubation without naloxone",
-          "Flumazenil 0.2 mg IV",
+          "Naloxone 2 mg IV push, then remove the bag-valve-mask",
           "Non-rebreather mask at 15 L/min and observation",
+          "Ventilate with oxygen, titrate naloxone 0.04 to 0.4 mg IV",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "Ventilation fixes hypoxia immediately and comes first. Naloxone should then be titrated to breathing, not to full wakefulness. Small doses in opioid dependent patients reduce precipitated withdrawal, vomiting and aspiration. Flumazenil is dangerous in unknown ingestions.",
+          "Continued bag-valve-mask ventilation with 100% oxygen fixes hypoxia immediately and comes first. Naloxone should then be titrated to breathing, not to full wakefulness. Small doses in opioid dependent patients reduce precipitated withdrawal, vomiting and aspiration. Flumazenil is dangerous in unknown ingestions.",
         keyFeature: { topic: "loc", n: 2 },
         source: "goldfrank",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE pieces of collateral history you would seek from the friend or paramedics.",
+        prompt: "What pieces of collateral history would you seek from the friend or paramedics?",
         required: 3,
         accept: [
           { id: "substance", text: "What substance was used and its source", match: ["substance", "what she", "what was", "drug", "fentanyl", "source"] },
@@ -260,7 +275,7 @@ export const LOC: Samp[] = [
         kind: "short",
         update:
           "After a total of 0.4 mg IV naloxone she breathes at 16 per minute and is drowsy but rousable. Forty-five minutes later her respiratory rate is 8 again. The friend now tells you she is on methadone 120 mg daily.",
-        prompt: "State the naloxone infusion you would start. Give the dose per hour and how you calculated it.",
+        prompt: "What naloxone infusion would you start, with the dose per hour and how you calculated it?",
         required: 1,
         accept: [
           {
@@ -280,7 +295,7 @@ export const LOC: Samp[] = [
         kind: "short",
         update:
           "On the infusion her respiratory rate is 16 and SpO2 is 97%. Her glucose is 5.4 mmol/L. Two hours later she remains at GCS 9 (E2 V3 M4).",
-        prompt: "List THREE other causes of her persistently decreased level of consciousness that you must consider.",
+        prompt: "What other causes of her persistently decreased level of consciousness must you consider?",
         required: 3,
         accept: [
           { id: "hypoxic", text: "Hypoxic brain injury from the period of hypoventilation", match: ["hypoxic", "anoxic", "hypoxia", "hypoxic ischemic"] },
@@ -316,14 +331,27 @@ export const LOC: Samp[] = [
     alsoTopics: ["cva"],
     title: "Hard to wake this morning",
     stem:
-      "An 84-year-old woman is brought in by her son, who found her hard to rouse at 0700. She was well at dinner last night. She has type 2 diabetes, chronic kidney disease (eGFR 28 mL/min/1.73 m2) and hypertension. Vital signs: HR 96, BP 158/84, RR 18, SpO2 96% on room air, temperature 36.2°C. She opens her eyes to voice and mumbles. Her right arm drifts and she has a right facial droop.",
+      "An 84-year-old woman is brought in by her son, who found her hard to rouse at 0700. She was well at dinner last night. She has type 2 diabetes, chronic kidney disease (eGFR 28 mL/min/1.73 m2) and hypertension. She opens her eyes to voice and mumbles. Her right arm drifts and she has a right facial droop.",
+    vitals: {
+      temperature: "36.2°C",
+      pulse: "96/minute",
+      resp: "18/minute",
+      bp: "158/84 mmHg",
+      o2sat: "96% on room air",
+    },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which single test should be done first? Select one.",
-        options: ["Non-contrast CT head", "CT angiography head and neck", "Capillary blood glucose", "12-lead ECG", "Serum electrolytes"],
-        correct: 2,
+        prompt: "Which of the following tests should be done first for this patient?",
+        options: [
+          "Capillary blood glucose",
+          "CT angiography head and neck",
+          "ECG with rhythm strip",
+          "Non-contrast CT head",
+          "Serum electrolytes",
+        ],
+        correct: 0,
         explanation:
           "Hypoglycemia is a common stroke mimic and can cause focal deficits. A capillary glucose takes seconds and must be checked before any stroke pathway decision. Thrombolysis should never be given before glucose is known.",
         keyFeature: { topic: "loc", n: 2 },
@@ -333,7 +361,7 @@ export const LOC: Samp[] = [
         id: "q2",
         kind: "short",
         update: "Her capillary glucose is 1.8 mmol/L. Two attempts at IV access have failed.",
-        prompt: "State the drug, dose and route you would give now.",
+        prompt: "What drug, dose and route would you give now?",
         required: 1,
         accept: [
           { id: "glucagon", text: "Glucagon 1 mg IM or SC", match: ["glucagon 1 mg", "glucagon 1mg"] },
@@ -355,7 +383,7 @@ export const LOC: Samp[] = [
         id: "q3",
         kind: "short",
         update: "IV access is obtained and she receives 25 g of IV dextrose. She wakes and her weakness resolves.",
-        prompt: "List THREE items of collateral history you would now seek from her son.",
+        prompt: "What items of collateral history would you now seek from her son?",
         required: 3,
         accept: [
           {
@@ -379,7 +407,7 @@ export const LOC: Samp[] = [
         id: "q4",
         kind: "short",
         update: "Her son says her family doctor started glyburide 5 mg twice daily 2 weeks ago.",
-        prompt: "List TWO measures to prevent recurrent hypoglycemia.",
+        prompt: "What measures would prevent recurrent hypoglycemia?",
         required: 2,
         accept: [
           { id: "d10", text: "Dextrose infusion, such as D10W", match: ["d10", "d10w", "dextrose infusion", "dextrose 10%"] },
@@ -396,15 +424,15 @@ export const LOC: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        prompt: "Which is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for this patient?",
         options: [
-          "Discharge home after a meal with her son",
-          "Observe for 4 hours and discharge if glucose stays above 4 mmol/L",
           "Admit for monitored glucose checks for at least 24 hours",
-          "Discharge with a home glucometer and follow-up in 1 week",
           "Admit only if a CT head shows an abnormality",
+          "Discharge home after a meal with her son",
+          "Discharge with a home glucometer and follow-up in 1 week",
+          "Observe 4 hours, discharge if glucose stays above 4 mmol/L",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
           "Glyburide has active metabolites that are cleared by the kidneys. Hypoglycemia can recur for 24 hours or more, especially with an eGFR of 28. Short observation is unsafe.",
         keyFeature: { topic: "loc", n: 2 },
@@ -423,12 +451,19 @@ export const LOC: Samp[] = [
     alsoTopics: ["headache", "infectious-diseases"],
     title: "Fever and new confusion in a retired engineer",
     stem:
-      "A 67-year-old man is brought in by his wife. He has had headache and fever for 2 days and today is confused and not making sense. She says he is normally fully independent, still does their taxes and drove yesterday. Vital signs: HR 112, BP 138/76, RR 22, SpO2 96% on room air, temperature 39.2°C. His GCS is 12 (E3 V4 M5). His neck is stiff. There is no rash, no focal deficit and no papilledema. Capillary glucose is 7.1 mmol/L.",
+      "A 67-year-old man is brought in by his wife. He has had headache and fever for 2 days and today is confused and not making sense. She says he is normally fully independent, still does their taxes and drove yesterday. His GCS is 12 (E3 V4 M5). His neck is stiff. There is no rash, no focal deficit and no papilledema. Capillary glucose is 7.1 mmol/L.",
+    vitals: {
+      temperature: "39.2°C",
+      pulse: "112/minute",
+      resp: "22/minute",
+      bp: "138/76 mmHg",
+      o2sat: "96% on room air",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE serious causes of his presentation that you must consider.",
+        prompt: "What serious causes of his presentation must you consider?",
         required: 3,
         accept: [
           { id: "bm", text: "Bacterial meningitis", match: ["meningitis"] },
@@ -448,7 +483,7 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List FOUR medications you would give now. Include the dose for each.",
+        prompt: "What medications would you give now, with the dose for each?",
         required: 4,
         accept: [
           { id: "ceftriaxone", text: "Ceftriaxone 2 g IV", match: ["ceftriaxone 2 g", "ceftriaxone 2g", "ceftriaxone 2 gram"] },
@@ -476,15 +511,16 @@ export const LOC: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "His antibiotics have been given. Which is the most appropriate next step before lumbar puncture? Select one.",
+        update: "His antibiotics have been given.",
+        prompt: "Which of the following is the most appropriate next step before lumbar puncture?",
         options: [
-          "Lumbar puncture immediately without imaging",
-          "Non-contrast CT head, because he has altered mental status and is over 60",
-          "MRI brain with gadolinium before any lumbar puncture",
           "Defer lumbar puncture for 48 hours",
           "EEG before any other testing",
+          "Lumbar puncture now without imaging",
+          "MRI brain with gadolinium",
+          "Non-contrast CT head",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "Altered mental status and age over 60 are accepted indications for CT before LP, to look for mass effect. Antibiotics already given will not delay the diagnosis much, since CSF cell counts, PCR and Gram stain remain useful. MRI is more sensitive for encephalitis but should not delay an LP.",
         keyFeature: { topic: "headache", n: 6 },
@@ -495,7 +531,7 @@ export const LOC: Samp[] = [
         kind: "short",
         update:
           "CT head is normal. CSF shows WBC 180 x 10^6/L (85% lymphocytes), RBC 400 x 10^6/L, protein 0.9 g/L and glucose 3.8 mmol/L (serum 7.0 mmol/L). Gram stain is negative.",
-        prompt: "State the most likely diagnosis and ONE test to confirm it.",
+        prompt: "What is the most likely diagnosis, and what test would confirm it?",
         required: 2,
         accept: [
           { id: "pcr", text: "HSV PCR on CSF", match: ["pcr"] },
@@ -509,7 +545,7 @@ export const LOC: Samp[] = [
       {
         id: "q5",
         kind: "short",
-        prompt: "His wife asks how the team will know if he is getting better or worse. List TWO ways you will document and monitor his level of consciousness.",
+        prompt: "His wife asks how the team will know if he is getting better or worse. How will you document and monitor his level of consciousness?",
         required: 2,
         accept: [
           { id: "gcs", text: "Serial GCS with each component recorded", match: ["gcs", "glasgow"] },
@@ -541,12 +577,18 @@ export const LOC: Samp[] = [
     alsoTopics: ["seizures"],
     title: "Not waking up after a seizure",
     stem:
-      "A 38-year-old woman with epilepsy on levetiracetam is brought in by EMS. Her husband saw two generalized tonic-clonic seizures at home, and she did not wake between them. Paramedics gave midazolam 10 mg IM, and the convulsions stopped. Fifty minutes later in the emergency department, her eyes are closed. She opens them only to pressure, makes no sounds, and withdraws her limbs from pain. There is subtle rhythmic twitching at the left corner of her mouth and her eyes are deviated to the right. Vital signs: HR 108, BP 142/88, RR 16, SpO2 95% on room air. Capillary glucose is 5.8 mmol/L.",
+      "A 38-year-old woman with epilepsy on levetiracetam is brought in by EMS. Her husband saw two generalized tonic-clonic seizures at home, and she did not wake between them. Paramedics gave midazolam 10 mg IM, and the convulsions stopped. Fifty minutes later in the emergency department, her eyes are closed. She opens them only to pressure, makes no sounds, and withdraws her limbs from pain. There is subtle rhythmic twitching at the left corner of her mouth and her eyes are deviated to the right. Capillary glucose is 5.8 mmol/L.",
+    vitals: {
+      pulse: "108/minute",
+      resp: "16/minute",
+      bp: "142/88 mmHg",
+      o2sat: "95% on room air",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Document her level of consciousness using the Glasgow Coma Scale. Give the total and the components.",
+        prompt: "What is her level of consciousness on the Glasgow Coma Scale, with the total and the components?",
         required: 1,
         accept: [{ id: "gcs", text: "GCS 7 (E2 V1 M4)", match: gcs(2, 1, 4) }],
         explanation:
@@ -557,7 +599,7 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE possible causes of her failure to wake up.",
+        prompt: "What are the possible causes of her failure to wake up?",
         required: 3,
         accept: [
           {
@@ -580,28 +622,28 @@ export const LOC: Samp[] = [
       {
         id: "q3",
         kind: "menu",
-        prompt: "Which TWO medications are most appropriate now? Select TWO.",
+        prompt: "Which of the following medications are most appropriate for her now?",
         options: [
+          "Flumazenil 0.2 mg IV",
+          "Fosphenytoin 10 mg PE/kg IV",
+          "Haloperidol 5 mg IV",
+          "Levetiracetam 60 mg/kg IV (maximum 4 500 mg)",
+          "Levetiracetam 20 mg/kg IV (maximum 1 000 mg)",
           "Lorazepam 4 mg IV",
           "Lorazepam 10 mg IV",
-          "Levetiracetam 60 mg/kg IV (maximum 4,500 mg)",
-          "Levetiracetam 20 mg/kg IV (maximum 1,000 mg)",
-          "Fosphenytoin 10 mg PE/kg IV",
           "Valproate 10 mg/kg IV",
-          "Flumazenil 0.2 mg IV",
-          "Haloperidol 5 mg IV",
         ],
         select: 2,
-        correct: [0, 2],
+        correct: [5, 3],
         explanation:
-          "She has had one prehospital benzodiazepine dose, so one repeat dose of lorazepam 0.1 mg/kg (maximum 4 mg) is appropriate. A second line agent at full loading dose should follow, such as levetiracetam 60 mg/kg up to 4,500 mg. The other second line doses listed are too low, and flumazenil can provoke seizures.",
+          "She has had one prehospital benzodiazepine dose, so one repeat dose of lorazepam 0.1 mg/kg (maximum 4 mg) is appropriate. A second line agent at full loading dose should follow, such as levetiracetam 60 mg/kg up to 4 500 mg. The other second line doses listed are too low, and flumazenil can provoke seizures.",
         keyFeature: { topic: "seizures", n: 3 },
         source: "esett",
       },
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO investigations to confirm the diagnosis or find its cause.",
+        prompt: "What investigations would confirm the diagnosis or find its cause?",
         required: 2,
         accept: [
           { id: "eeg", text: "Urgent EEG", match: ["eeg", "electroencephalogram"] },
@@ -619,7 +661,7 @@ export const LOC: Samp[] = [
       {
         id: "q5",
         kind: "short",
-        prompt: "List TWO pieces of collateral history you would seek from her husband.",
+        prompt: "What pieces of collateral history would you seek from her husband?",
         required: 2,
         accept: [
           { id: "adherence", text: "Missed doses or recent changes to her antiseizure medication", match: ["missed", "adherence", "compliance", "dose change", "ran out"] },
@@ -652,7 +694,7 @@ export const LOC: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "State the treatment for her sodium now. Include the fluid, volume and time over which you give it.",
+        prompt: "What treatment would you give for her sodium now, including the fluid, volume and time over which you give it?",
         required: 1,
         accept: [
           {
@@ -673,7 +715,7 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "What is the maximum rise in serum sodium you would allow in the first 24 hours? State the value.",
+        prompt: "What is the maximum rise in serum sodium you would allow in the first 24 hours?",
         required: 1,
         accept: [{ id: "limit", text: "8 mmol/L (no more than 10 mmol/L) in 24 hours", match: ["8", "10", "8 mmol", "10 mmol", "no more than 8", "no more than 10", "not more than 8", "not more than 10", "not exceed 8", "not exceed 10"] }],
         unacceptable: [
@@ -688,7 +730,7 @@ export const LOC: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE details from the daughter's history that establish this is a change from baseline or point to the cause.",
+        prompt: "What details from the daughter's history establish that this is a change from baseline or point to the cause?",
         required: 3,
         accept: [
           { id: "baseline", text: "Normally independent and sharp, doing the crossword daily", match: ["baseline", "crossword", "independent", "lives alone", "usual"] },
@@ -708,17 +750,17 @@ export const LOC: Samp[] = [
         kind: "single",
         update:
           "After two 3% saline boluses her sodium is 119 mmol/L at 6 hours and she is alert. Her urine output is now 400 mL/h of dilute urine.",
-        prompt: "Which is the most appropriate management now? Select one.",
+        prompt: "Which of the following is the most appropriate management of her sodium now?",
         options: [
           "Continue a 3% saline infusion at 1 mL/kg/h",
-          "Give desmopressin 1 to 2 mcg IV and consider D5W to prevent overcorrection",
+          "Give desmopressin 1 to 2 mcg IV and consider D5W",
           "Give furosemide 40 mg IV",
           "Start tolvaptan 15 mg PO",
-          "No change. Recheck sodium in 12 hours",
+          "No change and recheck sodium in 12 hours",
         ],
         correct: 1,
         explanation:
-          "She has risen 5 mmol/L in 6 hours and now has a water diuresis. Sodium may climb quickly past the safe limit. Desmopressin, with D5W if needed, controls the rise. Sodium should be checked every 2 to 4 hours.",
+          "She has risen 5 mmol/L in 6 hours and now has a water diuresis. Sodium may climb quickly past the safe limit. Desmopressin, with D5W if needed, controls the rise and prevents overcorrection. Sodium should be checked every 2 to 4 hours.",
         keyFeature: { topic: "loc", n: 2 },
         source: "hyponatremia-us",
       },
@@ -740,7 +782,7 @@ export const LOC: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "Give TWO reasons his decreased level of consciousness should not be attributed to alcohol.",
+        prompt: "Why should his decreased level of consciousness not be attributed to alcohol?",
         required: 2,
         accept: [
           {
@@ -764,15 +806,15 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate imaging decision? Select one.",
+        prompt: "Which of the following is the most appropriate imaging decision for this patient?",
         options: [
-          "Observe until sober and reassess the need for CT",
-          "Non-contrast CT head now",
-          "Skull X-ray series",
           "CT head only if his GCS falls below 9",
-          "Discharge to police custody with a head injury sheet",
+          "Discharge to police with a head injury sheet",
+          "Non-contrast CT head now",
+          "Observe until sober, then reassess for CT",
+          "Skull X-ray series before any CT",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "He qualifies for the Canadian CT Head Rule because he had witnessed loss of consciousness and a GCS of 13 to 15. His GCS is still below 15 at 2.5 hours after injury, which is a high risk feature, so he needs CT. Intoxication makes the exam less reliable, which is a reason to image, not to wait. Skull films do not exclude intracranial bleeding.",
         keyFeature: { topic: "loc", n: 4 },
@@ -783,7 +825,7 @@ export const LOC: Samp[] = [
         kind: "short",
         update:
           "While waiting for CT, he vomits twice. He now opens his eyes only to pressure, says inappropriate words and localizes to pain. His left pupil is 5 mm and sluggish.",
-        prompt: "Document his level of consciousness using the Glasgow Coma Scale. Give the total and the components.",
+        prompt: "What is his level of consciousness on the Glasgow Coma Scale, with the total and the components?",
         required: 1,
         accept: [{ id: "gcs", text: "GCS 10 (E2 V3 M5)", match: gcs(2, 3, 5) }],
         explanation:
@@ -795,7 +837,7 @@ export const LOC: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CT shows a 2.1 cm left temporal epidural hematoma with 6 mm of midline shift.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 3,
         accept: [
           { id: "nsx", text: "Emergent neurosurgery for evacuation", match: [...NEUROSURG, "evacuation", "craniotomy"] },
@@ -824,7 +866,14 @@ export const LOC: Samp[] = [
     alsoTopics: ["tox"],
     title: "A drowsy man on a February morning",
     stem:
-      "In February, a 34-year-old man is helped in by his partner, who found him hard to rouse on the couch this morning. His partner says they have both had headaches and nausea for 2 days, and their 6-year-old daughter vomited this morning. They live in an older rented house. On examination his GCS is 13 (E3 V4 M6). Vital signs: HR 118, BP 128/80, RR 20, SpO2 99% on room air, temperature 36.8°C. Capillary glucose is 5.6 mmol/L.",
+      "In February, a 34-year-old man is helped in by his partner, who found him hard to rouse on the couch this morning. His partner says they have both had headaches and nausea for 2 days, and their 6-year-old daughter vomited this morning. They live in an older rented house. On examination his GCS is 13 (E3 V4 M6). Capillary glucose is 5.6 mmol/L.",
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "118/minute",
+      resp: "20/minute",
+      bp: "128/80 mmHg",
+      o2sat: "99% on room air",
+    },
     questions: [
       {
         id: "q1",
@@ -841,15 +890,15 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which test will confirm the diagnosis? Select one.",
+        prompt: "Which of the following tests will confirm the diagnosis in this patient?",
         options: [
-          "Standard pulse oximetry",
-          "Blood gas with co-oximetry for carboxyhemoglobin",
-          "Serum lactate",
-          "Cyanide level",
+          "Co-oximetry for carboxyhemoglobin",
           "Non-contrast CT head",
+          "Serum lactate concentration",
+          "Standard pulse oximetry",
+          "Whole blood cyanide level",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Standard pulse oximeters read carboxyhemoglobin as oxyhemoglobin, so the SpO2 is falsely normal. Co-oximetry on a venous or arterial sample measures carboxyhemoglobin directly. Levels fall with time and oxygen, so interpret them with the history.",
         keyFeature: { topic: "loc", n: 1 },
@@ -858,7 +907,7 @@ export const LOC: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "State the initial treatment, including the delivery method.",
+        prompt: "What is the initial treatment, including the delivery method?",
         required: 1,
         accept: [
           {
@@ -877,7 +926,7 @@ export const LOC: Samp[] = [
         id: "q4",
         kind: "short",
         update: "His carboxyhemoglobin is 28%. His partner says he was unresponsive for a few minutes at home. His ECG shows sinus tachycardia and his troponin is normal.",
-        prompt: "List THREE indications for discussing hyperbaric oxygen in carbon monoxide poisoning.",
+        prompt: "What are the indications for discussing hyperbaric oxygen in carbon monoxide poisoning?",
         required: 3,
         accept: [
           {
@@ -900,7 +949,7 @@ export const LOC: Samp[] = [
       {
         id: "q5",
         kind: "short",
-        prompt: "List TWO actions you would take for the rest of the household.",
+        prompt: "What actions would you take for the rest of the household?",
         required: 2,
         accept: [
           { id: "assess", text: "Assess and test the daughter and partner", match: ["daughter", "partner", "family member", "child", "household member", "test the family"] },
@@ -926,12 +975,19 @@ export const LOC: Samp[] = [
     alsoTopics: ["cva", "airway"],
     title: "Dizzy, then sleepy",
     stem:
-      "A 62-year-old man is brought in by his wife at 1545. At 1400 he said he felt dizzy and his speech was slurred. He has become steadily more sleepy since. He has hypertension and atrial fibrillation. His wife says he stopped apixaban 2 weeks ago for dental work and never restarted it. Vital signs: HR 96 irregular, BP 188/102, RR 18, SpO2 95% on room air, temperature 36.9°C. He opens his eyes to pressure, says a few inappropriate words and localizes with his left arm. His pupils are small and reactive, he has skew deviation, and his right arm is weak. Capillary glucose is 6.9 mmol/L.",
+      "A 62-year-old man is brought in by his wife at 1545. At 1400 he said he felt dizzy and his speech was slurred. He has become steadily more sleepy since. He has hypertension and atrial fibrillation. His wife says he stopped apixaban 2 weeks ago for dental work and never restarted it. He opens his eyes to pressure, says a few inappropriate words and localizes with his left arm. His pupils are small and reactive, he has skew deviation, and his right arm is weak. Capillary glucose is 6.9 mmol/L.",
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "96/minute irregular",
+      resp: "18/minute",
+      bp: "188/102 mmHg",
+      o2sat: "95% on room air",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE serious causes of his decreased level of consciousness.",
+        prompt: "What are the serious causes of his decreased level of consciousness?",
         required: 3,
         accept: [
           {
@@ -954,19 +1010,19 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Which TWO investigations should be done immediately? Select TWO.",
+        prompt: "Which of the following investigations should be done immediately for this patient?",
         options: [
-          "Non-contrast CT head",
-          "CT angiography of the head and neck",
-          "MRI brain",
-          "Lumbar puncture",
-          "EEG",
           "Carotid Doppler ultrasound",
+          "CT angiography of the head and neck",
+          "Electroencephalogram",
+          "Lumbar puncture",
+          "MRI of the brain",
+          "Non-contrast CT head",
+          "Serum ethanol level",
           "Transthoracic echocardiogram",
-          "Serum ethanol",
         ],
         select: 2,
-        correct: [0, 1],
+        correct: [5, 1],
         explanation:
           "Non-contrast CT excludes hemorrhage. CT angiography identifies a large vessel occlusion, which may be treatable with thrombectomy. MRI takes longer and should not delay a reperfusion decision.",
         keyFeature: { topic: "cva", n: 3 },
@@ -977,7 +1033,7 @@ export const LOC: Samp[] = [
         kind: "short",
         update:
           "CT shows no hemorrhage. CT angiography shows a basilar artery occlusion. It is now 1610, 2 hours and 10 minutes since he was last known well.",
-        prompt: "List TWO reperfusion treatments to offer. Include the dose where relevant.",
+        prompt: "What reperfusion treatments would you offer, with the dose where relevant?",
         required: 2,
         accept: [
           { id: "tnk", text: "Tenecteplase 0.25 mg/kg IV bolus (maximum 25 mg)", match: ["tenecteplase 0.25", "tnk 0.25"] },
@@ -992,17 +1048,18 @@ export const LOC: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "His BP is 188/102 mmHg. Which is the most appropriate step before thrombolysis? Select one.",
+        update: "His BP is 188/102 mmHg.",
+        prompt: "Which of the following is the most appropriate step before thrombolysis?",
         options: [
-          "No treatment. Proceed with thrombolysis",
-          "Labetalol 10 mg IV over 1 to 2 minutes, aiming for BP below 185/110 mmHg",
+          "Labetalol 10 mg IV over 1 to 2 minutes",
           "Lower systolic BP below 140 mmHg before thrombolysis",
           "Sublingual nifedipine 10 mg",
-          "Withhold thrombolysis because BP is too high",
+          "Withhold thrombolysis at this BP",
+          "No BP treatment before thrombolysis",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "BP must be below 185/110 mmHg before thrombolysis and kept below 180/105 mmHg for 24 hours after. Labetalol in small IV doses is a standard choice. Sublingual nifedipine causes unpredictable drops, and aggressive lowering can extend ischemia.",
+          "BP must be below 185/110 mmHg before thrombolysis and kept below 180/105 mmHg for 24 hours after. Labetalol in small IV doses is a standard choice, aiming for BP below 185/110 mmHg. A BP that can be lowered is not a reason to withhold thrombolysis. Sublingual nifedipine causes unpredictable drops, and aggressive lowering can extend ischemia.",
         keyFeature: { topic: "cva", n: 3 },
         source: "csbpr-acute",
       },
@@ -1010,7 +1067,7 @@ export const LOC: Samp[] = [
         id: "q5",
         kind: "short",
         update: "While awaiting transfer for thrombectomy, his GCS falls to 7 (E1 V2 M4) and he has snoring respirations.",
-        prompt: "List TWO immediate actions.",
+        prompt: "What immediate actions would you take?",
         required: 2,
         accept: [
           { id: "airway", text: "Intubate to protect the airway", match: INTUBATE },
@@ -1037,12 +1094,20 @@ export const LOC: Samp[] = [
     alsoTopics: ["tox"],
     title: "A sleepy toddler after a visit",
     stem:
-      "A 2-year-old girl (12 kg) is brought in by her father. She spent the afternoon at her grandmother's apartment and has become increasingly sleepy over the last hour. Her father does not know what she might have got into. Vital signs: HR 72, BP 76/40, RR 16, SpO2 95% on room air, temperature 36.2°C. Her pupils are 2 mm. She opens her eyes briefly to voice, cries weakly and pulls away from pressure.",
+      "A 2-year-old girl is brought in by her father. She spent the afternoon at her grandmother's apartment and has become increasingly sleepy over the last hour. Her father does not know what she might have got into. Her pupils are 2 mm. She opens her eyes briefly to voice, cries weakly and pulls away from pressure.",
+    vitals: {
+      temperature: "36.2°C",
+      pulse: "72/minute",
+      resp: "16/minute",
+      bp: "76/40 mmHg",
+      o2sat: "95% on room air",
+      weight: "12 kg",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE specific pieces of collateral history you would seek.",
+        prompt: "What specific pieces of collateral history would you seek?",
         required: 3,
         accept: [
           {
@@ -1069,7 +1134,7 @@ export const LOC: Samp[] = [
         id: "q2",
         kind: "short",
         update: "Her capillary glucose is 2.1 mmol/L.",
-        prompt: "State the drug, dose and route you would give now.",
+        prompt: "What drug, dose and route would you give now?",
         required: 1,
         accept: [
           {
@@ -1095,7 +1160,7 @@ export const LOC: Samp[] = [
         kind: "short",
         update:
           "The grandmother says she takes gliclazide MR 30 mg and clonidine 0.1 mg, and several tablets of each may be missing. After dextrose, the child's glucose is 6.5 mmol/L, but she remains drowsy with small pupils and a heart rate of 70.",
-        prompt: "List TWO further management steps.",
+        prompt: "What further management steps would you take?",
         required: 2,
         accept: [
           { id: "octreotide", text: "Octreotide 1 mcg/kg SC to prevent recurrent hypoglycemia", match: ["octreotide"] },
@@ -1114,7 +1179,7 @@ export const LOC: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO other causes of a decreased level of consciousness in a toddler that you would keep in mind.",
+        prompt: "What other causes of a decreased level of consciousness in a toddler would you keep in mind?",
         required: 2,
         accept: [
           { id: "nai", text: "Abusive head trauma", match: ["abusive", "abuse", "non accidental", "nai", "inflicted", "shaken"] },
@@ -1144,12 +1209,19 @@ export const LOC: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Less responsive than usual",
     stem:
-      "An 88-year-old woman arrives by ambulance from her long-term care home. The transfer note reads \"decreased LOC, ? UTI\". She has moderate dementia. Vital signs: HR 116, BP 82/44, RR 26, SpO2 91% on room air, temperature 38.4°C. She opens her eyes to voice, says a few inappropriate words and localizes to pain. Capillary glucose is 8.2 mmol/L.",
+      "An 88-year-old woman arrives by ambulance from her long-term care home. The transfer note reads \"decreased LOC, ? UTI\". She has moderate dementia. She opens her eyes to voice, says a few inappropriate words and localizes to pain. Capillary glucose is 8.2 mmol/L.",
+    vitals: {
+      temperature: "38.4°C",
+      pulse: "116/minute",
+      resp: "26/minute",
+      bp: "82/44 mmHg",
+      o2sat: "91% on room air",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE items of collateral history you would obtain from the care home staff.",
+        prompt: "What items of collateral history would you obtain from the care home staff?",
         required: 3,
         accept: [
           { id: "baseline", text: "Her usual cognition, speech and mobility", match: ["baseline", "usual", "normal", "mobility", "cognition"] },
@@ -1168,7 +1240,7 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE immediate treatments. Include doses where relevant.",
+        prompt: "What immediate treatments would you give, with doses where relevant?",
         required: 3,
         accept: [
           {
@@ -1195,17 +1267,17 @@ export const LOC: Samp[] = [
         kind: "single",
         update:
           "Urinalysis shows positive leukocyte esterase and negative nitrite. Chest X-ray shows right lower lobe consolidation.",
-        prompt: "Which conclusion is most appropriate? Select one.",
+        prompt: "Which of the following conclusions is most appropriate given these results?",
         options: [
+          "Both urine and chest need separate antibiotic courses",
+          "Pneumonia is the likely source, despite the pyuria",
+          "The chest X-ray is unreliable in this setting",
           "Urinary tract infection is confirmed as the source",
-          "Pneumonia is the likely source. Pyuria is common in long-term care residents and should not anchor the diagnosis",
-          "She has two sources of infection and needs two antibiotic courses",
-          "The chest X-ray is unreliable, so treat the urine",
-          "No infection is present, so stop antibiotics",
+          "No infection is present and antibiotics can stop",
         ],
         correct: 1,
         explanation:
-          "Asymptomatic bacteriuria and pyuria are very common in older adults in long-term care. A dipstick result is weak evidence for urinary sepsis. Anchoring on the transfer label risks missing the real source, here pneumonia.",
+          "Asymptomatic bacteriuria and pyuria are very common in older adults in long-term care and should not anchor the diagnosis. A dipstick result is weak evidence for urinary sepsis. Anchoring on the transfer label risks missing the real source, here pneumonia.",
         keyFeature: { topic: "loc", n: 1 },
         source: "ssc-2021",
       },
@@ -1214,7 +1286,7 @@ export const LOC: Samp[] = [
         kind: "short",
         update:
           "Two hours after fluids and antibiotics, she opens her eyes spontaneously, speaks in confused sentences and obeys commands.",
-        prompt: "State her GCS at arrival and now, with components. List TWO values.",
+        prompt: "What was her GCS at arrival and what is it now, with components?",
         required: 2,
         accept: [
           { id: "arrival", text: "Arrival GCS 11 (E3 V3 M5)", match: gcs(3, 3, 5) },
@@ -1237,12 +1309,19 @@ export const LOC: Samp[] = [
     topic: "loc",
     title: "A week of thirst",
     stem:
-      "A 74-year-old man is brought in by his neighbour, who found him confused at home. The neighbour says he has been very thirsty and passing a lot of urine for a week. He has type 2 diabetes treated with metformin and empagliflozin. Vital signs: HR 118, BP 96/60, RR 20, SpO2 96% on room air, temperature 37.4°C. His mucous membranes are dry. His GCS is 11 (E3 V3 M5). Laboratory results: glucose 52 mmol/L, sodium 149 mmol/L, potassium 4.8 mmol/L, chloride 112 mmol/L, bicarbonate 22 mmol/L, urea 28 mmol/L, creatinine 180 µmol/L, beta-hydroxybutyrate 0.8 mmol/L, venous pH 7.34.",
+      "A 74-year-old man is brought in by his neighbour, who found him confused at home. The neighbour says he has been very thirsty and passing a lot of urine for a week. He has type 2 diabetes treated with metformin and empagliflozin. His mucous membranes are dry. His GCS is 11 (E3 V3 M5). Laboratory results: glucose 52 mmol/L, sodium 149 mmol/L, potassium 4.8 mmol/L, chloride 112 mmol/L, bicarbonate 22 mmol/L, urea 28 mmol/L, creatinine 180 umol/L, beta-hydroxybutyrate 0.8 mmol/L, venous pH 7.34.",
+    vitals: {
+      temperature: "37.4°C",
+      pulse: "118/minute",
+      resp: "20/minute",
+      bp: "96/60 mmHg",
+      o2sat: "96% on room air",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Calculate his effective serum osmolality. State the value.",
+        prompt: "What is his effective serum osmolality?",
         required: 1,
         accept: [{ id: "osm", text: "350 mmol/kg (2 x 149 + 52)", match: ["350"] }],
         unacceptable: [{ text: "378 (this includes urea, which does not cause water shifts)", match: ["378"] }],
@@ -1254,7 +1333,7 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE initial treatment steps. Include rates where relevant.",
+        prompt: "What are the initial treatment steps, with rates where relevant?",
         required: 3,
         accept: [
           {
@@ -1277,7 +1356,7 @@ export const LOC: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "What is the main risk of lowering his osmolality too quickly? Answer in one line.",
+        prompt: "What is the main risk of lowering his osmolality too quickly?",
         required: 1,
         accept: [
           {
@@ -1294,7 +1373,7 @@ export const LOC: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO precipitants of this presentation that you would look for.",
+        prompt: "What precipitants of this presentation would you look for?",
         required: 2,
         accept: [
           { id: "infection", text: "Infection such as pneumonia or urinary infection", match: ["infection", "sepsis", "pneumonia", "urinary", "uti"] },
@@ -1321,12 +1400,19 @@ export const LOC: Samp[] = [
     topic: "loc",
     title: "Sleepy again, says his sister",
     stem:
-      "A 58-year-old man with alcohol related cirrhosis is brought in by his sister. For 2 days he has been sleepy and muddled. She says he was admitted with the same thing last year. He fell in the bathroom last week. He opens his eyes to voice, is confused and obeys commands. He has asterixis. Vital signs: HR 98, BP 108/64, RR 16, SpO2 96% on room air, temperature 37.6°C. Laboratory results: INR 2.4, platelets 58 x 10^9/L, sodium 131 mmol/L, capillary glucose 3.2 mmol/L.",
+      "A 58-year-old man with alcohol related cirrhosis is brought in by his sister. For 2 days he has been sleepy and muddled. She says he was admitted with the same thing last year. He fell in the bathroom last week. He opens his eyes to voice, is confused and obeys commands. He has asterixis. Laboratory results: INR 2.4, platelets 58 x 10^9/L, sodium 131 mmol/L, capillary glucose 3.2 mmol/L.",
+    vitals: {
+      temperature: "37.6°C",
+      pulse: "98/minute",
+      resp: "16/minute",
+      bp: "108/64 mmHg",
+      o2sat: "96% on room air",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Before attributing his state to hepatic encephalopathy, list THREE other causes you must exclude.",
+        prompt: "Before attributing his state to hepatic encephalopathy, what other causes must you exclude?",
         required: 3,
         accept: [
           { id: "gi", text: "GI bleed", match: ["gi bleed", "gastrointestinal", "variceal", "melena", "upper gi"] },
@@ -1347,7 +1433,7 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "His glucose is 3.2 mmol/L. List TWO immediate treatments.",
+        prompt: "His glucose is 3.2 mmol/L. What immediate treatments would you give?",
         required: 2,
         accept: [
           { id: "thiamine", text: "IV thiamine, such as 200 to 500 mg", match: ["thiamine"] },
@@ -1361,15 +1447,15 @@ export const LOC: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which investigation is most important now? Select one.",
+        prompt: "Which of the following investigations is most important for him now?",
         options: [
-          "Serum ammonia to confirm hepatic encephalopathy",
+          "Abdominal ultrasound",
+          "Electroencephalogram",
+          "MRI of the brain",
           "Non-contrast CT head",
-          "EEG",
-          "MRI brain",
-          "Abdominal ultrasound for liver size",
+          "Serum ammonia level",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "A fall, an INR of 2.4 and platelets of 58 put him at high risk of subdural hematoma, which can look exactly like encephalopathy. A high ammonia neither confirms hepatic encephalopathy nor excludes a bleed. Guidelines do not require ammonia to make the diagnosis, although a normal level should prompt a search for another cause.",
         keyFeature: { topic: "loc", n: 4 },
@@ -1379,7 +1465,7 @@ export const LOC: Samp[] = [
         id: "q4",
         kind: "short",
         update: "His CT head is normal.",
-        prompt: "List TWO precipitants of hepatic encephalopathy that you would look for.",
+        prompt: "What precipitants of hepatic encephalopathy would you look for?",
         required: 2,
         accept: [
           { id: "gi", text: "GI bleeding", match: ["gi bleed", "gastrointestinal", "variceal", "melena", "bleeding", "bleed"] },
@@ -1399,7 +1485,7 @@ export const LOC: Samp[] = [
       {
         id: "q5",
         kind: "short",
-        prompt: "State the first-line treatment for his hepatic encephalopathy, with the dose and goal.",
+        prompt: "What is the first-line treatment for his hepatic encephalopathy, with the dose and goal?",
         required: 1,
         accept: [
           {
@@ -1427,12 +1513,16 @@ export const LOC: Samp[] = [
     alsoTopics: ["airway"],
     title: "Collapsed in the garden",
     stem:
-      "A 66-year-old woman with poorly controlled hypertension was gardening at 0900 when she had a sudden severe headache and vomited. Her husband found her on the ground 20 minutes later. EMS recorded a GCS of 13 (E3 V4 M6). She arrives at 0955 with BP 212/118 and HR 62. At 1010, she opens her eyes only to pressure, says inappropriate words and localizes with her left arm. Her right arm is weak.",
+      "A 66-year-old woman with poorly controlled hypertension was gardening at 0900 when she had a sudden severe headache and vomited. Her husband found her on the ground 20 minutes later. EMS recorded a GCS of 13 (E3 V4 M6). She arrives at 0955. At 1010, she opens her eyes only to pressure, says inappropriate words and localizes with her left arm. Her right arm is weak.",
+    vitals: {
+      pulse: "62/minute",
+      bp: "212/118 mmHg",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Document her GCS at 1010. Give the total and the components.",
+        prompt: "What is her GCS at 1010, with the total and the components?",
         required: 1,
         accept: [{ id: "gcs", text: "GCS 10 (E2 V3 M5)", match: gcs(2, 3, 5) }],
         explanation:
@@ -1443,7 +1533,7 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO ways, other than the GCS total, to document her level of consciousness so that other clinicians can follow the trend.",
+        prompt: "Other than the GCS total, how would you document her level of consciousness so that other clinicians can follow the trend?",
         required: 2,
         accept: [
           { id: "components", text: "Record each GCS component separately", match: ["component", "e v m", "eye verbal motor", "separately", "breakdown", "subscore"] },
@@ -1461,9 +1551,15 @@ export const LOC: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate imaging now? Select one.",
-        options: ["MRI brain", "Non-contrast CT head", "Lumbar puncture before imaging", "Carotid Doppler ultrasound", "EEG"],
-        correct: 1,
+        prompt: "Which of the following is the most appropriate imaging for her now?",
+        options: [
+          "Carotid Doppler ultrasound",
+          "Electroencephalogram",
+          "Lumbar puncture before imaging",
+          "MRI of the brain",
+          "Non-contrast CT head",
+        ],
+        correct: 4,
         explanation:
           "Sudden headache, vomiting, very high BP and a falling GCS suggest intracranial hemorrhage. Non-contrast CT is fast and highly sensitive for acute blood. CT angiography is often added to look for a vascular cause.",
         keyFeature: { topic: "loc", n: 1 },
@@ -1473,8 +1569,8 @@ export const LOC: Samp[] = [
         id: "q4",
         kind: "short",
         update:
-          "CT shows a 45 mL left basal ganglia hemorrhage with intraventricular extension. She takes no anticoagulant or antiplatelet. Her BP is 208/116.",
-        prompt: "State your systolic BP target and ONE IV agent you would use. List TWO answers.",
+          "CT shows a 45 mL left basal ganglia hemorrhage with intraventricular extension. She takes no anticoagulant or antiplatelet. Her BP is 208/116 mmHg.",
+        prompt: "What is your systolic BP target, and what IV agent would you use?",
         required: 2,
         accept: [
           { id: "target", text: "Systolic BP about 140 mmHg (range 130 to 150)", match: ["140", "130 150", "150"] },
@@ -1493,7 +1589,7 @@ export const LOC: Samp[] = [
         id: "q5",
         kind: "short",
         update: "At 1030 her GCS is 7 (E1 V2 M4). She has snoring respirations.",
-        prompt: "List TWO immediate actions.",
+        prompt: "What immediate actions would you take?",
         required: 2,
         accept: [
           { id: "airway", text: "Rapid sequence intubation", match: INTUBATE },
@@ -1520,12 +1616,18 @@ export const LOC: Samp[] = [
     alsoTopics: ["environmental"],
     title: "Newspapers piling up",
     stem:
-      "In January, a neighbour calls 911 after noticing newspapers piling up outside a 76-year-old woman's door. Paramedics find her on the floor of her cold apartment. In the emergency department her core temperature is 31.4°C, HR 42, BP 84/50 and RR 8. SpO2 does not read. She is obese with puffy eyes, dry skin, delayed reflexes and an old thyroidectomy scar. She opens her eyes to pressure, makes incomprehensible sounds and withdraws to pain (GCS 8). Capillary glucose is 3.4 mmol/L. Her pharmacy tells you her levothyroxine 125 mcg has not been refilled for 4 months.",
+      "In January, a neighbour calls 911 after noticing newspapers piling up outside a 76-year-old woman's door. Paramedics find her on the floor of her cold apartment. In the emergency department her SpO2 does not read. She is obese with puffy eyes, dry skin, delayed reflexes and an old thyroidectomy scar. She opens her eyes to pressure, makes incomprehensible sounds and withdraws to pain (GCS 8). Capillary glucose is 3.4 mmol/L. Her pharmacy tells you her levothyroxine 125 mcg has not been refilled for 4 months.",
+    vitals: {
+      temperature: "31.4°C core",
+      pulse: "42/minute",
+      resp: "8/minute",
+      bp: "84/50 mmHg",
+    },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE conditions that may be contributing to her decreased level of consciousness.",
+        prompt: "What conditions may be contributing to her decreased level of consciousness?",
         required: 3,
         accept: [
           { id: "myx", text: "Myxedema coma (severe hypothyroidism)", match: ["myxedema", "hypothyroid", "hypothyroidism", "thyroid"] },
@@ -1545,7 +1647,7 @@ export const LOC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Apart from thyroid hormone and corticosteroids, list THREE immediate treatments.",
+        prompt: "Apart from thyroid hormone and corticosteroids, what immediate treatments would you give?",
         required: 3,
         accept: [
           { id: "dextrose", text: "IV dextrose", match: ["dextrose", "d50", "d10", "glucose"] },
@@ -1570,19 +1672,19 @@ export const LOC: Samp[] = [
       {
         id: "q3",
         kind: "menu",
-        prompt: "Which TWO medication orders are most appropriate now? Select TWO.",
+        prompt: "Which of the following medication orders are most appropriate for her now?",
         options: [
-          "Levothyroxine 200 to 400 mcg IV loading dose",
-          "Levothyroxine 25 mcg PO daily",
-          "Levothyroxine 2,000 mcg IV",
-          "Hydrocortisone 100 mg IV",
-          "Dexamethasone 0.5 mg PO",
           "Atropine 3 mg IV for bradycardia",
+          "Dexamethasone 0.5 mg PO",
           "Dopamine infusion at 20 mcg/kg/min",
+          "Hydrocortisone 100 mg IV",
+          "Levothyroxine 2 000 mcg IV",
+          "Levothyroxine 25 mcg PO daily",
+          "Levothyroxine 200 to 400 mcg IV loading dose",
           "None",
         ],
         select: 2,
-        correct: [0, 3],
+        correct: [6, 3],
         explanation:
           "Myxedema coma needs IV levothyroxine, commonly a 200 to 400 mcg load, with lower doses for frail patients or those with cardiac disease. Give stress dose hydrocortisone first, or at the same time, until adrenal insufficiency is excluded. Hypothermic bradycardia rarely responds to atropine.",
         keyFeature: { topic: "loc", n: 2 },
@@ -1591,7 +1693,7 @@ export const LOC: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO sources of collateral information and what each would add in a patient who cannot give a history.",
+        prompt: "What sources of collateral information would you use, and what would each add in a patient who cannot give a history?",
         required: 2,
         accept: [
           { id: "pharmacy", text: "Pharmacy dispensing record, for medications and adherence", match: ["pharmacy", "pharmacist", "dispensing", "pip"] },
@@ -1608,9 +1710,15 @@ export const LOC: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        prompt: "Which is the best way to monitor her core temperature during rewarming? Select one.",
-        options: ["Tympanic infrared thermometer", "Oral thermometer", "Esophageal probe once her airway is secured", "Axillary thermometer", "Temporal artery scanner"],
-        correct: 2,
+        prompt: "Which of the following is the best way to monitor her core temperature during rewarming?",
+        options: [
+          "Axillary digital thermometer",
+          "Esophageal probe once her airway is secured",
+          "Oral electronic thermometer",
+          "Temporal artery infrared scanner",
+          "Tympanic infrared thermometer",
+        ],
+        correct: 1,
         explanation:
           "Esophageal temperature best reflects cardiac temperature in a patient with a secured airway. A low reading rectal or bladder probe is an alternative, but lags during rewarming. Surface and tympanic readings are unreliable in the cold.",
         keyFeature: { topic: "environmental", n: 3 },

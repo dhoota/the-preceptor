@@ -9,11 +9,11 @@ import { AUTHOR, lab } from "./helpers";
 const UG: Source = {
   id: "users-guides",
   citation:
-    "Guyatt G, Rennie D, Meade MO, Cook DJ, editors. Users' Guides to the Medical Literature. A Manual for Evidence-Based Clinical Practice. 3rd edition. JAMA Evidence and McGraw-Hill Education.",
+    "Guyatt G, Rennie D, Meade MO, Cook DJ, editors. Users' Guides to the Medical Literature. A Manual for Evidence-Based Clinical Practice. 3rd edition. JAMA Evidence and McGraw-Hill Education. 2015.",
 };
 const EBM: Source = {
   id: "straus-ebm",
-  citation: "Straus SE, Glasziou P, Richardson WS, Haynes RB. Evidence-Based Medicine. How to Practice and Teach EBM. 5th edition. Elsevier.",
+  citation: "Straus SE, Glasziou P, Richardson WS, Haynes RB. Evidence-Based Medicine. How to Practice and Teach EBM. 5th edition. Elsevier. 2018.",
 };
 const STARD: Source = {
   id: "stard-2015",
@@ -69,15 +69,15 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best describes the design of this study? Select one.",
+        prompt: "Which of the following best describes the design of this study?",
         options: [
-          "Randomized controlled trial",
           "Prospective cross-sectional diagnostic accuracy study",
-          "Retrospective cohort study",
-          "Diagnostic case-control study",
-          "Systematic review",
+          "Randomized controlled trial comparing imaging strategies",
+          "Retrospective cohort study using chart review",
+          "Retrospective diagnostic case-control study",
+          "Systematic review and meta-analysis",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Consecutive or convenience patients with the suspected condition had the index test and then a reference standard. That is a prospective cross-sectional diagnostic accuracy design. A diagnostic case-control study would compare known cases with healthy controls, which inflates accuracy.",
         keyFeature: { topic: "critical-appraisal", n: 1 },
@@ -86,7 +86,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Calculate the sensitivity and specificity of POCUS in this study. List TWO values, each labelled.",
+        prompt: "What are the sensitivity and specificity of POCUS in this study?",
         required: 2,
         accept: [
           { id: "sens", text: "Sensitivity 80% (80/100)", match: lab(SENS, ["80%", "80", "0.8", "0.80"]) },
@@ -103,7 +103,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "Calculate the positive and negative likelihood ratios for POCUS. List TWO values, each labelled.",
+        prompt: "What are the positive and negative likelihood ratios for POCUS?",
         required: 2,
         accept: [
           { id: "lrpos", text: "Positive likelihood ratio 8 (0.80 / 0.10)", match: lab(LRP, ["8", "8.0"]) },
@@ -119,7 +119,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         kind: "single",
         update:
           "A 24-year-old man has 18 hours of periumbilical pain moving to the right lower quadrant, with anorexia and mild right lower quadrant tenderness. You estimate his pretest probability of appendicitis at 20%. His POCUS is negative.",
-        prompt: "Using the likelihood ratios from this study, what is his post-test probability of appendicitis? Select one.",
+        prompt: "Which of the following is closest to his post-test probability of appendicitis, using the likelihood ratios from this study?",
         options: ["1%", "5%", "10%", "15%", "18%"],
         correct: 1,
         explanation:
@@ -131,7 +131,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q5",
         kind: "short",
         prompt:
-          "List THREE features of this study that may overestimate the accuracy of POCUS or limit its applicability to your community department.",
+          "What features of this study may overestimate the accuracy of POCUS or limit its applicability to your community department?",
         required: 3,
         accept: [
           {
@@ -183,7 +183,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q1",
         kind: "short",
         prompt:
-          "Calculate the absolute risk reduction, relative risk reduction and number needed to treat for delirium. List THREE values, each labelled.",
+          "What are the absolute risk reduction, relative risk reduction and number needed to treat for delirium?",
         required: 3,
         accept: [
           { id: "arr", text: "Absolute risk reduction 8% (20% minus 12%)", match: lab(["arr", "absolute"], ["8%", "8", "0.08"]) },
@@ -201,24 +201,24 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which statement correctly interprets the number needed to treat for delirium? Select one.",
+        prompt: "Which of the following correctly interprets the number needed to treat for delirium?",
         options: [
-          "The block reduces delirium by 13%.",
-          "About 13 older adults with hip fracture need a block to prevent one episode of delirium within 72 hours.",
-          "One patient in 13 who gets a block will develop delirium anyway.",
-          "About 13 patients need a block to prevent one episode of delirium during their whole hospital stay.",
-          "About 13 patients need a block for one to have a hematoma.",
+          "About 13 blocks cause one block site hematoma",
+          "About 13 blocks prevent one delirium case per hospital stay",
+          "About 13 blocks prevent one delirium case within 72 hours",
+          "One in 13 block patients develops delirium anyway",
+          "The block lowers the risk of delirium by 13%",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "An NNT always applies to a specific outcome, population and time frame. Here that is delirium within 72 hours in adults aged 70 or older with hip fracture. The trial did not measure delirium over the whole admission, so extending the time frame is not supported.",
+          "An NNT always applies to a specific outcome, population and time frame. Here that is delirium within 72 hours in adults aged 70 or older with hip fracture. The trial did not measure delirium over the whole hospital stay, so extending the time frame is not supported. The NNH for hematoma is 50, and 13% is neither the absolute nor the relative risk reduction.",
         keyFeature: { topic: "critical-appraisal", n: 3 },
         source: "users-guides",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "Calculate the number needed to harm for block site hematoma. State the value.",
+        prompt: "What is the number needed to harm for block site hematoma?",
         required: 1,
         accept: [{ id: "nnh", text: "Number needed to harm 50 (1 / 0.02)", match: ["50"] }],
         explanation:
@@ -229,7 +229,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "The abstract concludes that the block gives clinically important pain relief. Give TWO reasons to question this conclusion.",
+        prompt: "The abstract concludes that the block gives clinically important pain relief. What are the reasons to question this conclusion?",
         required: 2,
         accept: [
           {
@@ -262,7 +262,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q5",
         kind: "short",
-        prompt: "List TWO features of this trial's design that protect the primary outcome from bias.",
+        prompt: "What features of this trial's design protect the primary outcome from bias?",
         required: 2,
         accept: [
           { id: "random", text: "Randomization", match: ["randomization", "randomized", "randomised", "randomisation", "random"] },
@@ -291,19 +291,19 @@ export const CRITICAL_APPRAISAL: Samp[] = [
     topic: "critical-appraisal",
     title: "A new rule for older adults who fall",
     stem:
-      "A fictional study proposes a decision rule for head CT in older adults after a fall. At one tertiary emergency department, investigators prospectively enrolled 1,280 adults aged 65 or older who presented after a ground level fall and were not taking an anticoagulant. Physicians recorded 14 candidate predictors before imaging. The outcome was clinically important intracranial injury on CT or at 30-day follow-up. Recursive partitioning produced a 4-item rule. Eighty patients had the outcome, and the rule was positive in 78 of them. Of the 1,200 without the outcome, the rule was negative in 420. The authors report sensitivity 97.5% (95% CI 91.3 to 99.7). At the study site, 60% of these patients currently have a head CT.",
+      "A fictional study proposes a decision rule for head CT in older adults after a fall. At one tertiary emergency department, investigators prospectively enrolled 1 280 adults aged 65 or older who presented after a ground level fall and were not taking an anticoagulant. Physicians recorded 14 candidate predictors before imaging. The outcome was clinically important intracranial injury on CT or at 30-day follow-up. Recursive partitioning produced a 4-item rule. Eighty patients had the outcome, and the rule was positive in 78 of them. Of the 1 200 without the outcome, the rule was negative in 420. The authors report sensitivity 97.5% (95% CI 91.3 to 99.7). At the study site, 60% of these patients currently have a head CT.",
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Calculate the sensitivity and specificity of the rule. List TWO values, each labelled.",
+        prompt: "What are the sensitivity and specificity of the rule?",
         required: 2,
         accept: [
           { id: "sens", text: "Sensitivity 97.5% (78/80)", match: lab(SENS, ["97.5%", "97.5", "0.975", "98%"]) },
           { id: "spec", text: "Specificity 35% (420/1,200)", match: lab(SPEC, ["35%", "35", "0.35"]) },
         ],
         explanation:
-          "Sensitivity is 78/80 = 97.5%. Specificity is rule negative patients without the outcome over all without the outcome, 420/1,200 = 35%. High sensitivity with low specificity is typical of a rule built to avoid missed injuries.",
+          "Sensitivity is 78/80 = 97.5%. Specificity is rule negative patients without the outcome over all without the outcome, 420/1 200 = 35%. High sensitivity with low specificity is typical of a rule built to avoid missed injuries.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
@@ -311,18 +311,18 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q2",
         kind: "short",
         prompt:
-          "If a positive rule were used as the indication for CT, what proportion of these 1,280 patients would have a CT? State the value.",
+          "If a positive rule were used as the indication for CT, what proportion of these 1 280 patients would have a CT?",
         required: 1,
         accept: [{ id: "ctrate", text: "About 67% (858/1,280)", match: ["67%", "67", "0.67", "858", "67.0%"] }],
         explanation:
-          "Rule positive patients are 78 true positives plus 780 false positives (1,200 minus 420), which is 858 of 1,280, or 67%. That is higher than the current CT rate of 60%. A rule that increases imaging offers no efficiency benefit, however accurate it is.",
+          "Rule positive patients are 78 true positives plus 780 false positives (1 200 minus 420), which is 858 of 1 280, or 67%. That is higher than the current CT rate of 60%. A rule that increases imaging offers no efficiency benefit, however accurate it is.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "stiell-wells-rules",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE reasons you would not yet adopt this rule in your department.",
+        prompt: "What are the reasons you would not yet adopt this rule in your department?",
         required: 3,
         accept: [
           {
@@ -352,15 +352,15 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which is the most appropriate next stage of research for this rule? Select one.",
+        prompt: "Which of the following is the most appropriate next stage of research for this rule?",
         options: [
+          "Immediate implementation with audit of missed injuries",
           "Meta-analysis of existing head CT rules",
           "Prospective validation in a new population at several sites",
           "Randomized impact trial of the rule against usual care",
           "Retrospective chart review at the same site",
-          "Immediate implementation with audit of missed injuries",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Decision rules move from derivation to prospective validation in a separate population, then to an impact analysis, often a cluster randomized trial. Skipping validation risks implementing a rule that is overfit to one site. A chart review at the same site does not test transportability.",
         keyFeature: { topic: "critical-appraisal", n: 1 },
@@ -371,17 +371,17 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         kind: "single",
         update:
           "An 81-year-old woman tripped at home and struck her head. She takes apixaban for atrial fibrillation. She has a GCS of 15, no vomiting and a small frontal bruise. A colleague notes that she is negative on the new rule.",
-        prompt: "Which is the most appropriate approach? Select one.",
+        prompt: "Which of the following is the most appropriate approach for this patient?",
         options: [
-          "Discharge her, because the rule is negative",
-          "Apply the rule anyway, since apixaban carries less bleeding risk than warfarin",
-          "Decide on CT using clinical judgment and guidance for anticoagulated patients, because the rule does not apply to her",
-          "Check an anti-Xa level and scan only if it is elevated",
-          "Observe for 2 hours and discharge if she remains GCS 15",
+          "Apply the rule as if she were not anticoagulated",
+          "Check an anti-Xa level and scan only if elevated",
+          "Decide on CT by clinical judgment and anticoagulant guidance",
+          "Discharge her on the basis of the negative rule",
+          "Observe 2 hours, then discharge her if GCS remains 15",
         ],
         correct: 2,
         explanation:
-          "A rule can only be applied to patients like those in the study. Anticoagulated patients were excluded, so the rule says nothing about her risk. Many Canadian emergency physicians have a low threshold to image older anticoagulated patients after head trauma, although practice varies.",
+          "A rule can only be applied to patients like those in the study. Anticoagulated patients were excluded, so the rule says nothing about her risk. Decide on CT using clinical judgment and guidance for anticoagulated patients. A lower bleeding risk with apixaban than with warfarin does not make the rule apply to her. Many Canadian emergency physicians have a low threshold to image older anticoagulated patients after head trauma, although practice varies.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
         source: "users-guides",
       },
@@ -397,12 +397,12 @@ export const CRITICAL_APPRAISAL: Samp[] = [
     topic: "critical-appraisal",
     title: "Pooling trials for a kidney stone medication",
     stem:
-      "You are asked whether to prescribe a medication to help distal ureteric stones pass. A fictional systematic review with meta-analysis pooled 12 randomized trials with 2,400 patients. Pooled relative risk for stone passage at 4 weeks was 1.25 (95% CI 1.10 to 1.42) favouring the drug, with an I squared of 72%. The three largest trials, which had low risk of bias and 1,600 patients in total, found a relative risk of 1.03 (95% CI 0.95 to 1.12). The funnel plot is asymmetric, with no small trials showing harm or no effect. In a subgroup analysis, the effect was larger for stones over 5 mm (relative risk 1.40) than for stones of 5 mm or less (relative risk 1.02). That analysis was not planned in the protocol.",
+      "You are asked whether to prescribe a medication to help distal ureteric stones pass. A fictional systematic review with meta-analysis pooled 12 randomized trials with 2 400 patients. Pooled relative risk for stone passage at 4 weeks was 1.25 (95% CI 1.10 to 1.42) favouring the drug, with an I squared of 72%. The three largest trials, which had low risk of bias and 1 600 patients in total, found a relative risk of 1.03 (95% CI 0.95 to 1.12). The funnel plot is asymmetric, with no small trials showing harm or no effect. In a subgroup analysis, the effect was larger for stones over 5 mm (relative risk 1.40) than for stones of 5 mm or less (relative risk 1.02). That analysis was not planned in the protocol.",
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO methodologic features you would look for to judge whether this systematic review is valid.",
+        prompt: "What methodologic features would you look for to judge whether this systematic review is valid?",
         required: 2,
         accept: [
           {
@@ -428,7 +428,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "What does an I squared of 72% indicate? Answer in one line.",
+        prompt: "What does an I squared of 72% indicate?",
         required: 1,
         accept: [
           {
@@ -446,7 +446,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "Name the bias suggested by the asymmetric funnel plot.",
+        prompt: "What bias is suggested by the asymmetric funnel plot?",
         required: 1,
         accept: [
           {
@@ -463,7 +463,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "The authors conclude that the drug works for stones over 5 mm. List TWO criteria that make a subgroup effect credible.",
+        prompt: "The authors conclude that the drug works for stones over 5 mm. What criteria make a subgroup effect credible?",
         required: 2,
         accept: [
           { id: "prespec", text: "The subgroup hypothesis was specified before the analysis, including its direction", match: ["prespecified", "pre specified", "a priori", "before", "planned"] },
@@ -482,17 +482,17 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q5",
         kind: "single",
         update: "A 40-year-old man has a 4 mm distal ureteric stone on CT. His pain is controlled, he is afebrile and his creatinine is normal.",
-        prompt: "Which is the most appropriate use of this evidence? Select one.",
+        prompt: "Which of the following is the most appropriate use of this evidence for him?",
         options: [
-          "Prescribe the drug, since the pooled relative risk shows 25% more stones pass",
-          "Do not routinely prescribe it for his 4 mm stone, since the high quality trials and the small stone subgroup show no meaningful benefit",
-          "Prescribe it, since the harms of a short course are negligible",
+          "Add it to analgesia for any distal ureteric stone",
+          "Do not routinely prescribe it for his 4 mm stone",
+          "Prescribe it based on the pooled relative risk",
           "Refer him to urology for early ureteroscopy",
-          "Repeat the CT in 1 week to measure stone progress before deciding",
+          "Repeat CT in 1 week before deciding on the drug",
         ],
         correct: 1,
         explanation:
-          "When large, low risk of bias trials disagree with a pooled result driven by small trials, trust the large trials. Both those trials and the small stone subgroup suggest little or no benefit for a 4 mm stone. Analgesia, return precautions and follow-up are the core of his plan.",
+          "When large, low risk of bias trials disagree with a pooled result driven by small trials, trust the large trials. Both those trials and the small stone subgroup suggest little or no meaningful benefit for a 4 mm stone, so the drug should not be routinely prescribed for him. The pooled relative risk overstates the benefit, and low harm alone does not justify a drug without benefit. Analgesia, return precautions and follow-up are the core of his plan.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
         source: "users-guides",
       },
@@ -508,14 +508,20 @@ export const CRITICAL_APPRAISAL: Samp[] = [
     topic: "critical-appraisal",
     title: "An antibiotic class and a rare vascular event",
     stem:
-      "A fictional study used provincial health databases. Investigators identified 300 adults hospitalized with aortic dissection or rupture (cases) and matched them by age and sex to 1,200 adults without it (controls). Exposure was a fluoroquinolone prescription dispensed in the previous 60 days. Thirty cases (10%) and 60 controls (5%) had been exposed. The authors adjusted for hypertension and smoking and conclude that fluoroquinolones cause aortic dissection.",
+      "A fictional study used provincial health databases. Investigators identified 300 adults hospitalized with aortic dissection or rupture (cases) and matched them by age and sex to 1 200 adults without it (controls). Exposure was a fluoroquinolone prescription dispensed in the previous 60 days. Thirty cases (10%) and 60 controls (5%) had been exposed. The authors adjusted for hypertension and smoking and conclude that fluoroquinolones cause aortic dissection.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best describes the design of this study? Select one.",
-        options: ["Prospective cohort study", "Case-control study", "Cross-sectional study", "Randomized controlled trial", "Case series"],
-        correct: 1,
+        prompt: "Which of the following best describes the design of this study?",
+        options: [
+          "Case-control study",
+          "Cross-sectional study",
+          "Descriptive case series",
+          "Prospective cohort study",
+          "Randomized controlled trial",
+        ],
+        correct: 0,
         explanation:
           "Participants were selected by outcome, then compared for past exposure. That is a case-control design. It is efficient for rare outcomes like aortic dissection, where a cohort or trial would need huge numbers.",
         keyFeature: { topic: "critical-appraisal", n: 1 },
@@ -524,7 +530,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO limitations inherent to this design or analysis.",
+        prompt: "What limitations are inherent to this design or analysis?",
         required: 2,
         accept: [
           { id: "confound", text: "Residual or unmeasured confounding", match: ["confounding", "confounder", "unmeasured", "residual"] },
@@ -554,12 +560,12 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "Calculate the unadjusted odds ratio for aortic dissection with fluoroquinolone exposure. State the value.",
+        prompt: "What is the unadjusted odds ratio for aortic dissection with fluoroquinolone exposure?",
         required: 1,
         accept: [{ id: "or", text: "Odds ratio 2.1 ((30 x 1,140) / (270 x 60))", match: ["2.1", "2.11"] }],
         unacceptable: [{ text: "Odds ratio 2.0 (this is the ratio of exposure proportions, not odds)", match: ["2.0"] }],
         explanation:
-          "Odds of exposure in cases are 30/270 = 0.111. Odds of exposure in controls are 60/1,140 = 0.053. The odds ratio is 0.111 / 0.053 = 2.1.",
+          "Odds of exposure in cases are 30/270 = 0.111. Odds of exposure in controls are 60/1 140 = 0.053. The odds ratio is 0.111 / 0.053 = 2.1.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
@@ -567,7 +573,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q4",
         kind: "short",
         prompt:
-          "Assume the odds ratio approximates the relative risk and that the baseline 60-day risk of aortic dissection is 1 in 10,000. Calculate the number needed to harm. State the value.",
+          "Assume the odds ratio approximates the relative risk and that the baseline 60-day risk of aortic dissection is 1 in 10 000. What is the number needed to harm?",
         required: 1,
         accept: [
           {
@@ -577,7 +583,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
           },
         ],
         explanation:
-          "Risk with exposure is about 2.1 in 10,000, so the absolute increase is 1.1 in 10,000, or 0.00011. NNH is 1 / 0.00011, about 9,100. A doubled relative risk of a rare event is still a very small absolute harm.",
+          "Risk with exposure is about 2.1 in 10 000, so the absolute increase is 1.1 in 10 000, or 0.00011. NNH is 1 / 0.00011, about 9 100. A doubled relative risk of a rare event is still a very small absolute harm.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
@@ -585,17 +591,17 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q5",
         kind: "single",
         update: "A 72-year-old woman with normal renal function has symptoms of uncomplicated cystitis. She has no drug allergies.",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate antibiotic management for her?",
         options: [
-          "Ciprofloxacin, since the absolute risk of dissection is tiny",
-          "Nitrofurantoin, a first-line agent for cystitis that also avoids the possible harm",
-          "CT of the aorta before prescribing any fluoroquinolone",
-          "No antibiotic, because all antibiotics carry vascular risk",
           "Ciprofloxacin with an echocardiogram at follow-up",
+          "Ciprofloxacin with no further testing",
+          "CT of the aorta before prescribing any fluoroquinolone",
+          "Nitrofurantoin as first-line therapy for cystitis",
+          "No antibiotic treatment",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Fluoroquinolones are not first-line for uncomplicated cystitis in any case. When an equally effective first-line option exists, even a small, uncertain harm tips the balance. Screening imaging is not justified by an NNH near 9,000.",
+          "Fluoroquinolones are not first-line for uncomplicated cystitis in any case. When an equally effective first-line option exists, even a small, uncertain harm tips the balance, and nitrofurantoin also avoids the possible harm. The study examined fluoroquinolones only, so it gives no reason to withhold all antibiotics. Screening imaging is not justified by an NNH near 9 000.",
         keyFeature: { topic: "critical-appraisal", n: 3 },
         source: "users-guides",
       },
@@ -616,7 +622,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "Calculate the positive and negative likelihood ratios for this test. List TWO values, each labelled.",
+        prompt: "What are the positive and negative likelihood ratios for this test?",
         required: 2,
         accept: [
           { id: "lrpos", text: "Positive likelihood ratio 18 (0.90 / 0.05)", match: lab(LRP, ["18", "18.0"]) },
@@ -631,7 +637,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q2",
         kind: "single",
         update: "Patient A is a 35-year-old runner with calf pain after a long run. You estimate her pretest probability of DVT at 10%.",
-        prompt: "What is her post-test probability of proximal DVT after the negative scan? Select one.",
+        prompt: "Which of the following is closest to her post-test probability of proximal DVT after the negative scan?",
         options: ["1%", "3%", "5%", "9%", "10%"],
         correct: 0,
         explanation:
@@ -644,7 +650,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         kind: "short",
         update:
           "Patient B is a 67-year-old man with metastatic pancreatic cancer and 3 days of unilateral leg swelling with pitting edema. You estimate his pretest probability at 50%.",
-        prompt: "Calculate his post-test probability of proximal DVT after the negative scan. State the value.",
+        prompt: "What is his post-test probability of proximal DVT after the negative scan?",
         required: 1,
         accept: [{ id: "post", text: "About 10% (odds 1 x 0.105 = 0.105, probability 9.5%)", match: ["9.5%", "9.5", "10%", "10", "0.095", "9%", "10 percent", "9 percent", "1 in 10"] }],
         explanation:
@@ -655,7 +661,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO appropriate next steps for Patient B.",
+        prompt: "What are the appropriate next steps for Patient B?",
         required: 2,
         accept: [
           {
@@ -677,12 +683,17 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         explanation:
           "A 10% residual risk is above the threshold for stopping. High pretest patients need a formal whole-leg or repeat ultrasound, often guided by D-dimer. Consider interim anticoagulation if imaging is delayed.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
-        source: "thrombosis-canada-dvt",
+        source: "ash-vte-diagnosis",
       },
     ],
     sources: [
       UG,
-      { id: "thrombosis-canada-dvt", citation: "Thrombosis Canada. Clinical guide. Deep vein thrombosis. Diagnosis." },
+      {
+        id: "ash-vte-diagnosis",
+        citation:
+          "Lim W, Le Gal G, Bates SM, et al. American Society of Hematology 2018 guidelines for management of venous thromboembolism. Diagnosis of venous thromboembolism. Blood Advances 2018.",
+        url: "https://doi.org/10.1182/bloodadvances.2018024828",
+      },
     ],
     reviewed: true,
     author: AUTHOR,
@@ -694,20 +705,20 @@ export const CRITICAL_APPRAISAL: Samp[] = [
     topic: "critical-appraisal",
     title: "One dose or five days",
     stem:
-      "A fictional open label randomized trial compared a single dose of oral dexamethasone 16 mg with 5 days of oral prednisone 50 mg daily in 1,500 adults discharged from the emergency department after a mild to moderate asthma exacerbation. The primary outcome was relapse, defined as an unscheduled visit for asthma within 14 days. The investigators set a non-inferiority margin of 5 percentage points. Follow-up was complete in 82% of patients. Relapse occurred in 12.0% with dexamethasone and 10.0% with prednisone, a difference of 2.0 percentage points (95% CI -1.5 to 5.5). Only an intention to treat analysis is reported. The authors conclude that single dose dexamethasone is non-inferior.",
+      "A fictional open label randomized trial compared a single dose of oral dexamethasone 16 mg with 5 days of oral prednisone 50 mg daily in 1 500 adults discharged from the emergency department after a mild to moderate asthma exacerbation. The primary outcome was relapse, defined as an unscheduled visit for asthma within 14 days. The investigators set a non-inferiority margin of 5 percentage points. Follow-up was complete in 82% of patients. Relapse occurred in 12.0% with dexamethasone and 10.0% with prednisone, a difference of 2.0 percentage points (95% CI -1.5 to 5.5). Only an intention to treat analysis is reported. The authors conclude that single dose dexamethasone is non-inferior.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is the purpose of a non-inferiority design? Select one.",
+        prompt: "Which of the following is the purpose of a non-inferiority design?",
         options: [
+          "To compare with placebo when standard care is unethical",
           "To prove the new treatment is better than standard care",
-          "To show the new treatment is not worse than standard care by more than a prespecified margin",
-          "To show the two treatments are exactly equal",
           "To reduce the sample size needed for a superiority trial",
-          "To compare a treatment with placebo when standard care is unethical",
+          "To show it is no worse beyond a prespecified margin",
+          "To show the two treatments are exactly equal",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "Non-inferiority trials test whether a new option with other advantages, such as simpler dosing, loses no more than an acceptable amount of benefit. The margin must be set in advance and justified clinically. They often need larger samples, not smaller ones.",
         keyFeature: { topic: "critical-appraisal", n: 1 },
@@ -716,7 +727,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Do the results support the authors' conclusion? Explain in one line.",
+        prompt: "Do the results support the authors' conclusion, and why or why not?",
         required: 1,
         accept: [
           {
@@ -739,7 +750,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO other features of this trial that weaken confidence in a non-inferiority conclusion.",
+        prompt: "What other features of this trial weaken confidence in a non-inferiority conclusion?",
         required: 2,
         accept: [
           { id: "loss", text: "18% loss to follow-up", match: ["loss", "lost", "attrition", "18%", "follow up", "incomplete"] },
@@ -757,22 +768,22 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         kind: "single",
         update:
           "A 28-year-old woman is ready for discharge after an asthma exacerbation. She has no inhaled corticosteroid at home and says she often forgets medications.",
-        prompt: "Which is the most appropriate approach? Select one.",
+        prompt: "Which of the following is the most appropriate approach for her?",
         options: [
-          "Prescribe prednisone 50 mg daily for 5 days only, since dexamethasone is inferior",
-          "Explain that single dose dexamethasone may be slightly less effective, share the uncertainty, and choose with her, while starting an inhaled corticosteroid",
-          "Give single dose dexamethasone, since the trial proves it is non-inferior",
-          "Withhold systemic corticosteroids because her exacerbation was mild to moderate",
-          "Prescribe both dexamethasone and prednisone to cover the uncertainty",
+          "Give both dexamethasone and prednisone",
+          "Give prednisone 50 mg PO daily for 5 days alone",
+          "Give single dose dexamethasone 16 mg PO alone",
+          "Share uncertainty, choose with her, start inhaled steroid",
+          "No systemic corticosteroid for this exacerbation",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "The trial is inconclusive, not negative. It neither proves nor rules out a small loss of benefit. Her adherence concerns are a legitimate value to weigh in a shared decision. Every patient discharged after an asthma exacerbation should also leave with an inhaled corticosteroid.",
+          "The trial is inconclusive, not negative. It neither proves nor rules out a small loss of benefit, so it does not show that dexamethasone is either inferior or non-inferior. Explain that single dose dexamethasone may be slightly less effective and share that uncertainty. Her adherence concerns are a legitimate value to weigh in a shared decision. Every patient discharged after an asthma exacerbation should also leave with an inhaled corticosteroid.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
         source: "gina",
       },
     ],
-    sources: [CONSORT_NI, { id: "gina", citation: "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention." }],
+    sources: [CONSORT_NI, { id: "gina", citation: "Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026." }],
     reviewed: true,
     author: AUTHOR,
     version: 1,
@@ -783,14 +794,20 @@ export const CRITICAL_APPRAISAL: Samp[] = [
     topic: "critical-appraisal",
     title: "Chart review of antibiotic timing",
     stem:
-      "A fictional study reviewed electronic health records at 3 hospitals. It included 4,000 adults with sepsis. Patients who got antibiotics within 1 hour of triage had a 30-day mortality of 14%, compared with 18% for those treated later. After adjusting for age, sex and lactate, the odds ratio for death with early antibiotics was 0.82 (95% CI 0.70 to 0.96). Records missing the time of antibiotic administration (12%) were excluded. Data abstractors knew each patient's outcome.",
+      "A fictional study reviewed electronic health records at 3 hospitals. It included 4 000 adults with sepsis. Patients who got antibiotics within 1 hour of triage had a 30-day mortality of 14%, compared with 18% for those treated later. After adjusting for age, sex and lactate, the odds ratio for death with early antibiotics was 0.82 (95% CI 0.70 to 0.96). Records missing the time of antibiotic administration (12%) were excluded. Data abstractors knew each patient's outcome.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best describes the design of this study? Select one.",
-        options: ["Randomized controlled trial", "Prospective cohort study", "Retrospective cohort study", "Case-control study", "Before and after study"],
-        correct: 2,
+        prompt: "Which of the following best describes the design of this study?",
+        options: [
+          "Before and after study",
+          "Case-control study",
+          "Prospective cohort study",
+          "Randomized controlled trial",
+          "Retrospective cohort study",
+        ],
+        correct: 4,
         explanation:
           "Patients were grouped by exposure (antibiotic timing) and followed to an outcome using data already recorded. That is a retrospective cohort. Its data were collected for care, not research, so quality and completeness are limited.",
         keyFeature: { topic: "critical-appraisal", n: 1 },
@@ -799,7 +816,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE limitations of this study for answering whether faster antibiotics reduce mortality.",
+        prompt: "What are the limitations of this study for answering whether faster antibiotics reduce mortality?",
         required: 3,
         accept: [
           { id: "confound", text: "Unmeasured confounding", match: ["confounding", "confounder", "unmeasured", "residual"] },
@@ -824,7 +841,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO analytic or design methods that reduce confounding in observational studies.",
+        prompt: "What analytic or design methods reduce confounding in observational studies?",
         required: 2,
         accept: [
           { id: "regression", text: "Multivariable regression adjustment", match: ["regression", "multivariable", "multivariate", "adjustment", "adjust", "adjusted"] },
@@ -842,7 +859,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Using the unadjusted mortality figures, calculate the absolute risk difference and the corresponding number needed to treat. List TWO values, each labelled.",
+        prompt: "Using the unadjusted mortality figures, what are the absolute risk difference and the corresponding number needed to treat?",
         required: 2,
         accept: [
           { id: "arr", text: "Absolute risk difference 4% (18% minus 14%)", match: lab(["arr", "absolute", "risk difference", "difference"], ["4%", "4", "0.04"]) },
@@ -856,17 +873,17 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        prompt: "Which conclusion is best supported by this study? Select one.",
+        prompt: "Which of the following conclusions is best supported by this study?",
         options: [
-          "Giving antibiotics within 1 hour prevents one death for every 25 patients",
-          "Early antibiotics are associated with lower mortality. This supports prompt antibiotics in suspected sepsis but does not prove a causal effect of the 1 hour target",
-          "Antibiotic timing does not matter, since the confidence interval is wide",
-          "All patients with fever should receive antibiotics within 1 hour of triage",
+          "Antibiotic timing has no effect on mortality",
+          "Antibiotics within 1 hour prevent 1 death per 25 treated",
+          "Association with lower mortality, not proof of causation",
+          "Every febrile patient needs antibiotics within 1 hour",
           "The study is invalid and should not inform practice",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "The finding is consistent with other evidence that delays in septic shock are harmful. It cannot prove that a strict 1 hour target saves lives. Applying the target to every febrile patient risks overtreatment.",
+          "Early antibiotics are associated with lower mortality. This supports prompt antibiotics in suspected sepsis and is consistent with other evidence that delays in septic shock are harmful. It cannot prove a causal effect of a strict 1 hour target, so an NNT of 25 overstates what the study shows. The adjusted confidence interval excludes no effect, and applying the target to every febrile patient risks overtreatment.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "users-guides",
       },
@@ -887,7 +904,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "Name the main design flaw in this study.",
+        prompt: "What is the main design flaw in this study?",
         required: 1,
         accept: [
           {
@@ -904,7 +921,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "How does this flaw affect the reported accuracy? Answer in one line.",
+        prompt: "How does this flaw affect the reported accuracy?",
         required: 1,
         accept: [
           {
@@ -924,17 +941,17 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         kind: "single",
         update:
           "A second fictional study prospectively enrols 800 febrile children having a lumbar puncture in the emergency department, of whom 20 have bacterial meningitis. At a cutoff of 0.5 ng/mL, sensitivity is 95% and specificity 70%. At a cutoff of 2.0 ng/mL, sensitivity is 75% and specificity 95%.",
-        prompt: "If marker Q were used to help rule out bacterial meningitis, which cutoff is more appropriate? Select one.",
+        prompt: "Which of the following cutoffs is more appropriate if marker Q were used to help rule out bacterial meningitis?",
         options: [
-          "0.5 ng/mL, because its higher sensitivity makes a negative result more useful for ruling out",
-          "2.0 ng/mL, because its higher specificity makes a negative result more useful for ruling out",
-          "2.0 ng/mL, because it has fewer false positives",
-          "Either cutoff, because the area under the curve is the same",
-          "Neither, because no biomarker can be used as part of a rule out strategy",
+          "Either cutoff, given the same area under the curve",
+          "Neither cutoff, as no biomarker can help rule out",
+          "The higher 2.0 ng/mL cutoff, for fewer false positives",
+          "The higher 2.0 ng/mL cutoff, for higher specificity",
+          "The lower 0.5 ng/mL cutoff, for higher sensitivity",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "A highly sensitive test has few false negatives, so a negative result helps rule out disease (SnNout). The 0.5 ng/mL cutoff gives an LR- of 0.05 / 0.70 = 0.07. The 2.0 ng/mL cutoff gives an LR- of 0.25 / 0.95 = 0.26, which is far weaker.",
+          "A highly sensitive test has few false negatives, so a negative result helps rule out disease (SnNout). Higher specificity and fewer false positives help rule in, not rule out. The 0.5 ng/mL cutoff gives an LR- of 0.05 / 0.70 = 0.07. The 2.0 ng/mL cutoff gives an LR- of 0.25 / 0.95 = 0.26, which is far weaker.",
         keyFeature: { topic: "critical-appraisal", n: 3 },
         source: "users-guides",
       },
@@ -942,7 +959,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q4",
         kind: "short",
         prompt:
-          "In this second study, at the 0.5 ng/mL cutoff, how many children with bacterial meningitis would test negative, and how many children without it would test positive? List TWO values, each labelled.",
+          "In this second study, at the 0.5 ng/mL cutoff, how many children with bacterial meningitis would test negative, and how many children without it would test positive?",
         required: 2,
         accept: [
           { id: "fn", text: "1 false negative (20 x 0.05)", match: ["1 false negative", "1 missed", "one missed", "one false negative", "missed 1", "1 child", "one child", "1 negative", "one negative", "fn 1"] },
@@ -958,7 +975,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         kind: "short",
         update:
           "A 3-year-old boy has fever, vomiting, neck stiffness and new petechiae on his trunk. His marker Q is 0.3 ng/mL.",
-        prompt: "List TWO immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 2,
         accept: [
           {
@@ -984,7 +1001,8 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "cps-meningitis",
         citation:
-          "Canadian Paediatric Society. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than one month of age.",
+          "Le Saux N. Canadian Paediatric Society, Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. Position statement. 2020, reaffirmed 2026.",
+        url: "https://cps.ca/en/documents/position/management-of-bacterial-meningitis",
       },
     ],
     reviewed: true,
@@ -997,12 +1015,12 @@ export const CRITICAL_APPRAISAL: Samp[] = [
     topic: "critical-appraisal",
     title: "A heart failure trial stopped early",
     stem:
-      "A fictional industry funded trial randomized adults admitted with acute heart failure to a new IV drug or placebo. It planned to enrol 2,000 patients but was stopped for benefit at an interim analysis of 1,000. The primary composite outcome was death, heart failure readmission, or in-hospital worsening heart failure (need for extra IV diuretic) at 60 days. It occurred in 24% with the drug and 30% with placebo (p = 0.03). Components were death 6% vs 6%, readmission 9% vs 9%, and worsening heart failure 9% vs 15%. NT-proBNP fell 30% more with the drug. The effect appeared larger in women than in men (p for interaction 0.40).",
+      "A fictional industry funded trial randomized adults admitted with acute heart failure to a new IV drug or placebo. It planned to enrol 2 000 patients but was stopped for benefit at an interim analysis of 1 000. The primary composite outcome was death, heart failure readmission, or in-hospital worsening heart failure (need for extra IV diuretic) at 60 days. It occurred in 24% with the drug and 30% with placebo (p = 0.03). Components were death 6% vs 6%, readmission 9% vs 9%, and worsening heart failure 9% vs 15%. NT-proBNP fell 30% more with the drug. The effect appeared larger in women than in men (p for interaction 0.40).",
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO concerns about the primary composite outcome.",
+        prompt: "What are the concerns about the primary composite outcome?",
         required: 2,
         accept: [
           {
@@ -1048,7 +1066,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "How does stopping a trial early for benefit tend to affect the estimated treatment effect? Answer in one line.",
+        prompt: "How does stopping a trial early for benefit tend to affect the estimated treatment effect?",
         required: 1,
         accept: [
           {
@@ -1066,24 +1084,24 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which is the best interpretation of the larger effect seen in women? Select one.",
+        prompt: "Which of the following is the best interpretation of the larger effect seen in women?",
         options: [
-          "The drug should be reserved for women",
-          "The p value for interaction of 0.40 suggests the difference between sexes is likely due to chance",
           "Men should not receive the drug",
-          "The drug works only in women, since the effect was statistically significant in that subgroup",
-          "The trial should be repeated in women only before any use",
+          "The difference between sexes is likely due to chance",
+          "The drug should be reserved for women",
+          "The drug works only in women",
+          "The trial should be repeated in women before use",
         ],
         correct: 1,
         explanation:
-          "The right test is whether the effect differs between subgroups, which is the interaction test. A p for interaction of 0.40 gives no evidence of a real difference. Apparent subgroup effects are usually chance.",
+          "The right test is whether the effect differs between subgroups, which is the interaction test. A p for interaction of 0.40 gives no evidence of a real difference, so the difference between sexes is likely due to chance. A significant result within one subgroup does not show that the drug works only in that subgroup. Apparent subgroup effects are usually chance.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "users-guides",
       },
       {
         id: "q5",
         kind: "short",
-        prompt: "Calculate the number needed to treat for the composite outcome and for death. List TWO values, each labelled.",
+        prompt: "What are the numbers needed to treat for the composite outcome and for death?",
         required: 2,
         accept: [
           { id: "nntcomp", text: "Composite outcome NNT 17 (1 / 0.06 = 16.7)", match: ["17", "16.7"] },
@@ -1110,12 +1128,12 @@ export const CRITICAL_APPRAISAL: Samp[] = [
     topic: "critical-appraisal",
     title: "An antiviral for an older man with influenza",
     stem:
-      "A fictional trial randomized 3,000 outpatients with laboratory confirmed influenza, within 48 hours of symptom onset, to a 5 day oral antiviral or placebo. Median age was 44. Pregnant and immunocompromised patients were excluded. Hospitalization within 28 days occurred in 3.0% of the antiviral group and 4.0% of the placebo group. Nausea occurred in 10% and 5%.",
+      "A fictional trial randomized 3 000 outpatients with laboratory confirmed influenza, within 48 hours of symptom onset, to a 5 day oral antiviral or placebo. Median age was 44. Pregnant and immunocompromised patients were excluded. Hospitalization within 28 days occurred in 3.0% of the antiviral group and 4.0% of the placebo group. Nausea occurred in 10% and 5%.",
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Calculate the absolute risk reduction, relative risk reduction and number needed to treat for hospitalization. List THREE values, each labelled.",
+        prompt: "What are the absolute risk reduction, relative risk reduction and number needed to treat for hospitalization?",
         required: 3,
         accept: [
           { id: "arr", text: "Absolute risk reduction 1% (4.0% minus 3.0%)", match: lab(["arr", "absolute"], ["1%", "1", "0.01"]) },
@@ -1130,7 +1148,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Calculate the number needed to harm for nausea. State the value.",
+        prompt: "What is the number needed to harm for nausea?",
         required: 1,
         accept: [{ id: "nnh", text: "Number needed to harm 20 (1 / 0.05)", match: ["20"] }],
         explanation:
@@ -1143,7 +1161,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         kind: "short",
         update:
           "An 82-year-old man with COPD and heart failure has had influenza symptoms for 30 hours. Using a validated tool, you estimate his risk of hospitalization without treatment at 16%.",
-        prompt: "Assuming the relative risk reduction applies to him, calculate his individual number needed to treat. State the value.",
+        prompt: "Assuming the relative risk reduction applies to him, what is his individual number needed to treat?",
         required: 1,
         accept: [{ id: "nnt", text: "NNT 25 (ARR = 16% x 0.25 = 4%, 1 / 0.04 = 25)", match: ["25"] }],
         explanation:
@@ -1154,7 +1172,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO reasons the trial results may not apply directly to him.",
+        prompt: "What are the reasons the trial results may not apply directly to him?",
         required: 2,
         accept: [
           { id: "age", text: "The trial population was much younger (median age 44)", match: ["age", "younger", "older", "44", "elderly"] },
@@ -1175,17 +1193,17 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        prompt: "Which is the most appropriate approach? Select one.",
+        prompt: "Which of the following is the most appropriate approach to antiviral treatment for him?",
         options: [
-          "Do not treat. An NNT of 100 is too high to justify therapy",
-          "Offer treatment, explaining that about 1 in 25 patients like him avoids hospitalization and about 1 in 20 has extra nausea, and decide together",
-          "Treat only if he has had symptoms for more than 72 hours",
           "Admit him for IV antiviral therapy",
-          "Treat, since all patients with confirmed influenza benefit equally",
+          "Do not offer antiviral treatment to him",
+          "Offer treatment as a shared decision on benefit and harm",
+          "Treat only if symptoms have lasted over 72 hours",
+          "Treat without a discussion of benefit and harm",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "Translating trial results into his own NNT and NNH lets him weigh a 1 in 25 chance of avoiding hospital against a 1 in 20 chance of nausea. Most older adults with comorbidity would choose treatment. His values guide the final decision.",
+          "Offer treatment, explaining that about 1 in 25 patients like him avoids hospitalization and about 1 in 20 has extra nausea, and decide together. Translating trial results into his own NNT and NNH lets him weigh these chances. The trial NNT of 100 applies to lower risk patients, not to him, and patients with confirmed influenza do not all benefit equally. Most older adults with comorbidity would choose treatment. His values guide the final decision.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
         source: "straus-ebm",
       },
@@ -1207,32 +1225,32 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q1",
         kind: "short",
         prompt:
-          "In your emergency department, 10% of adults with chest pain who have this test have MI. Calculate the negative and positive predictive values. List TWO values, each labelled.",
+          "In your emergency department, 10% of adults with chest pain who have this test have MI. What are the negative and positive predictive values?",
         required: 2,
         accept: [
           { id: "npv", text: "Negative predictive value 99.8% (540/541)", match: ["99.8%", "99.8", "0.998"] },
           { id: "ppv", text: "Positive predictive value 21.6% (99/459)", match: ["21.6%", "21.6", "22%", "22", "0.22", "0.216"] },
         ],
         explanation:
-          "Per 1,000 patients, 100 have MI (99 test positive, 1 negative) and 900 do not (540 negative, 360 positive). NPV is 540/541 = 99.8%. PPV is 99/459 = 21.6%, so most positive tests are false positives at this prevalence.",
+          "Per 1 000 patients, 100 have MI (99 test positive, 1 negative) and 900 do not (540 negative, 360 positive). NPV is 540/541 = 99.8%. PPV is 99/459 = 21.6%, so most positive tests are false positives at this prevalence.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "If the same test were used where 40% of patients have MI, what would the negative predictive value be? State the value.",
+        prompt: "If the same test were used where 40% of patients have MI, what would the negative predictive value be?",
         required: 1,
         accept: [{ id: "npv", text: "About 98.9% (360/364)", match: ["98.9%", "98.9", "0.989"] }],
         explanation:
-          "Per 1,000 patients, 400 have MI (4 test negative) and 600 do not (360 negative). NPV is 360/364 = 98.9%. Predictive values fall or rise with prevalence even when sensitivity and specificity stay the same.",
+          "Per 1 000 patients, 400 have MI (4 test negative) and 600 do not (360 negative). NPV is 360/364 = 98.9%. Predictive values fall or rise with prevalence even when sensitivity and specificity stay the same.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "In your department (prevalence 10%), how many patients with MI per 1,000 tested would be classified as ruled out? State the value.",
+        prompt: "In your department (prevalence 10%), how many patients with MI per 1 000 tested would be classified as ruled out?",
         required: 1,
         accept: [{ id: "missed", text: "1 per 1,000", match: ["1", "one"] }],
         unacceptable: [
@@ -1240,7 +1258,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
           { text: "10 per 1,000 (this is 1% of all patients tested, not 1% of those with MI)", match: ["10 per", "10 patient", "10 mi", "10 missed"] },
         ],
         explanation:
-          "With 99% sensitivity, 1% of the 100 patients with MI test negative, which is 1 per 1,000 tested. Among the 541 patients ruled out, that is a miss rate of about 0.2%. This is well below the risk of about 1% at 30 days that many emergency physicians say they accept, but follow-up advice still matters.",
+          "With 99% sensitivity, 1% of the 100 patients with MI test negative, which is 1 per 1 000 tested. Among the 541 patients ruled out, that is a miss rate of about 0.2%. This is well below the risk of about 1% at 30 days that many emergency physicians say they accept, but follow-up advice still matters.",
         keyFeature: { topic: "critical-appraisal", n: 3 },
         source: "users-guides",
       },
@@ -1249,24 +1267,24 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         kind: "single",
         update:
           "A 52-year-old man arrives 45 minutes after the onset of crushing central chest pain. His ECG is normal and his first troponin is below the limit of detection.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step for this patient?",
         options: [
-          "Discharge him, since his troponin is below the limit of detection",
-          "Repeat the troponin at an interval set by your local pathway, since early presenters were excluded from the study",
-          "Order CT coronary angiography before any repeat troponin",
-          "Discharge him with outpatient stress testing within 72 hours",
           "Admit him to cardiology for angiography",
+          "Discharge him on the basis of the single troponin",
+          "Discharge him with outpatient stress testing within 72 hours",
+          "Order CT coronary angiography before any repeat troponin",
+          "Repeat troponin at an interval set by your local pathway",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "Troponin may not yet be detectable 45 minutes after symptom onset. Patients presenting within 3 hours were excluded, so the single sample strategy does not apply to him. He needs serial troponin and ECG testing.",
+          "Troponin may not yet be detectable 45 minutes after symptom onset. Patients presenting within 3 hours were excluded, so the single sample strategy does not apply to him, even though his troponin is below the limit of detection. He needs serial troponin and ECG testing.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "users-guides",
       },
       {
         id: "q5",
         kind: "short",
-        prompt: "List TWO factors other than troponin that you must integrate before discharging a patient with chest pain.",
+        prompt: "What factors other than troponin must you integrate before discharging a patient with chest pain?",
         required: 2,
         accept: [
           { id: "ecg", text: "ECG for ischemia", match: ["ecg", "ekg", "electrocardiogram"] },
@@ -1301,7 +1319,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "Calculate the observed agreement and the kappa for midline tenderness. List TWO values, each labelled.",
+        prompt: "What are the observed agreement and the kappa for midline tenderness?",
         required: 2,
         accept: [
           { id: "po", text: "Observed agreement 70% (70/100)", match: lab(["observed", "agreement", "po"], ["70%", "70", "0.7", "0.70"]) },
@@ -1315,7 +1333,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Interpret this kappa and state its implication for the rule. Answer in one line.",
+        prompt: "How would you interpret this kappa, and what does it imply for the rule?",
         required: 1,
         accept: [
           {
@@ -1334,8 +1352,8 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q3",
         kind: "short",
         update:
-          "The rule is applied to 1,200 patients. Sixty have serious pathology at 30 days, and all 60 were rule positive. However, 90 rule negative patients could not be contacted for follow-up. The authors report a sensitivity of 100%.",
-        prompt: "If 6 of the patients lost to follow-up actually had serious pathology, what would the true sensitivity be? State the value.",
+          "The rule is applied to 1 200 patients. Sixty have serious pathology at 30 days, and all 60 were rule positive. However, 90 rule negative patients could not be contacted for follow-up. The authors report a sensitivity of 100%.",
+        prompt: "If 6 of the patients lost to follow-up actually had serious pathology, what would the true sensitivity be?",
         required: 1,
         accept: [{ id: "sens", text: "About 91% (60/66)", match: ["91%", "91", "90.9%", "90.9", "0.91", "0.909"] }],
         explanation:
@@ -1346,7 +1364,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO ways investigators could reduce or account for this loss to follow-up.",
+        prompt: "How could investigators reduce or account for this loss to follow-up?",
         required: 2,
         accept: [
           { id: "worst", text: "Worst case sensitivity analysis", match: ["worst case", "sensitivity analysis", "best case"] },
@@ -1380,7 +1398,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "Give TWO reasons the authors' conclusion does not follow from these results.",
+        prompt: "Why does the authors' conclusion not follow from these results?",
         required: 2,
         accept: [
           {
@@ -1413,9 +1431,15 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "If the drug truly works, which error has most likely occurred? Select one.",
-        options: ["Type I error", "Type II error", "Selection bias", "Confounding", "Regression to the mean"],
-        correct: 1,
+        prompt: "Which of the following errors has most likely occurred if the drug truly works?",
+        options: [
+          "Confounding",
+          "Regression to the mean",
+          "Selection bias",
+          "Type I error",
+          "Type II error",
+        ],
+        correct: 4,
         explanation:
           "A type II error is failing to detect a real difference. Its risk rises when a trial is small or the true effect is smaller than planned. A type I error is a false positive.",
         keyFeature: { topic: "critical-appraisal", n: 1 },
@@ -1424,7 +1448,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE factors that determine the sample size needed for a randomized trial.",
+        prompt: "What factors determine the sample size needed for a randomized trial?",
         required: 3,
         accept: [
           { id: "alpha", text: "Alpha, the accepted type I error rate", match: ["alpha", "significance level", "type 1", "type i", "p value threshold"] },
@@ -1449,7 +1473,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "Calculate the number needed to treat from the point estimate for pain freedom at 2 hours. State the value.",
+        prompt: "What is the number needed to treat from the point estimate for pain freedom at 2 hours?",
         required: 1,
         accept: [{ id: "nnt", text: "NNT 8 (1 / 0.13 = 7.7, rounded up)", match: ["8", "7.7"] }],
         explanation:
@@ -1474,7 +1498,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "Frame her question in PICO format. List the FOUR elements.",
+        prompt: "What are the elements of her question in PICO format?",
         required: 4,
         accept: [
           {
@@ -1498,13 +1522,13 @@ export const CRITICAL_APPRAISAL: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which type of evidence would best answer this therapy question? Select one.",
+        prompt: "Which of the following types of evidence would best answer this therapy question?",
         options: [
           "A case series from a fracture clinic",
-          "A case-control study",
-          "A retrospective cohort study",
+          "A case-control study of cast use",
+          "A retrospective cohort study of splinting",
           "A systematic review of randomized controlled trials",
-          "An expert consensus statement",
+          "An expert consensus statement on casting",
         ],
         correct: 3,
         explanation:
@@ -1516,7 +1540,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         id: "q3",
         kind: "short",
         prompt:
-          "Your colleague also wants to know how accurate point of care ultrasound is for diagnosing these fractures. Name the study design that best answers that question.",
+          "Your colleague also wants to know how accurate point of care ultrasound is for diagnosing these fractures. What study design best answers that question?",
         required: 1,
         accept: [
           {
@@ -1536,7 +1560,7 @@ export const CRITICAL_APPRAISAL: Samp[] = [
         kind: "short",
         update:
           "You find a real trial, FORCE (Lancet 2022). It randomized 965 children aged 4 to 15 years with distal radius torus fractures at 23 UK hospitals to the offer of a soft bandage with immediate discharge, or rigid immobilization with follow-up per local protocol. Pain at 3 days was equivalent, and there were no differences in pain or function over 6 weeks.",
-        prompt: "List TWO elements of your evidence based discharge plan for this child.",
+        prompt: "What are the elements of your evidence based discharge plan for this child?",
         required: 2,
         accept: [
           {

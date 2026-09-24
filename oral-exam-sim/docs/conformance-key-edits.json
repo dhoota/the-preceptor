@@ -1201,6 +1201,170 @@
     "Enoxaparin 0.75 mg/kg SC every 12 hours, no IV bolus",
     "Tenecteplase 20 mg IV bolus"
    ]
+  },
+  "critical-appraisal-02#q2": {
+   "batch": "s07",
+   "before": [
+    "About 13 older adults with hip fracture need a block to prevent one episode of delirium within 72 hours."
+   ],
+   "after": [
+    "About 13 blocks prevent one delirium case within 72 hours"
+   ]
+  },
+  "critical-appraisal-03#q5": {
+   "batch": "s07",
+   "before": [
+    "Decide on CT using clinical judgment and guidance for anticoagulated patients, because the rule does not apply to her"
+   ],
+   "after": [
+    "Decide on CT by clinical judgment and anticoagulant guidance"
+   ]
+  },
+  "critical-appraisal-04#q5": {
+   "batch": "s07",
+   "before": [
+    "Do not routinely prescribe it for his 4 mm stone, since the high quality trials and the small stone subgroup show no meaningful benefit"
+   ],
+   "after": [
+    "Do not routinely prescribe it for his 4 mm stone"
+   ]
+  },
+  "critical-appraisal-05#q5": {
+   "batch": "s07",
+   "before": [
+    "Nitrofurantoin, a first-line agent for cystitis that also avoids the possible harm"
+   ],
+   "after": [
+    "Nitrofurantoin as first-line therapy for cystitis"
+   ]
+  },
+  "critical-appraisal-07#q1": {
+   "batch": "s07",
+   "before": [
+    "To show the new treatment is not worse than standard care by more than a prespecified margin"
+   ],
+   "after": [
+    "To show it is no worse beyond a prespecified margin"
+   ]
+  },
+  "critical-appraisal-07#q4": {
+   "batch": "s07",
+   "before": [
+    "Explain that single dose dexamethasone may be slightly less effective, share the uncertainty, and choose with her, while starting an inhaled corticosteroid"
+   ],
+   "after": [
+    "Share uncertainty, choose with her, start inhaled steroid"
+   ]
+  },
+  "critical-appraisal-08#q5": {
+   "batch": "s07",
+   "before": [
+    "Early antibiotics are associated with lower mortality. This supports prompt antibiotics in suspected sepsis but does not prove a causal effect of the 1 hour target"
+   ],
+   "after": [
+    "Association with lower mortality, not proof of causation"
+   ]
+  },
+  "critical-appraisal-09#q3": {
+   "batch": "s07",
+   "before": [
+    "0.5 ng/mL, because its higher sensitivity makes a negative result more useful for ruling out"
+   ],
+   "after": [
+    "The lower 0.5 ng/mL cutoff, for higher sensitivity"
+   ]
+  },
+  "critical-appraisal-10#q4": {
+   "batch": "s07",
+   "before": [
+    "The p value for interaction of 0.40 suggests the difference between sexes is likely due to chance"
+   ],
+   "after": [
+    "The difference between sexes is likely due to chance"
+   ]
+  },
+  "critical-appraisal-11#q5": {
+   "batch": "s07",
+   "before": [
+    "Offer treatment, explaining that about 1 in 25 patients like him avoids hospitalization and about 1 in 20 has extra nausea, and decide together"
+   ],
+   "after": [
+    "Offer treatment as a shared decision on benefit and harm"
+   ]
+  },
+  "critical-appraisal-12#q4": {
+   "batch": "s07",
+   "before": [
+    "Repeat the troponin at an interval set by your local pathway, since early presenters were excluded from the study"
+   ],
+   "after": [
+    "Repeat troponin at an interval set by your local pathway"
+   ]
+  },
+  "loc-02#q1": {
+   "batch": "s07",
+   "before": [
+    "Continue bag-valve-mask ventilation with 100% oxygen and give naloxone 0.04 to 0.4 mg IV, titrated to adequate breathing"
+   ],
+   "after": [
+    "Ventilate with oxygen, titrate naloxone 0.04 to 0.4 mg IV"
+   ]
+  },
+  "loc-04#q3": {
+   "batch": "s07",
+   "before": [
+    "Non-contrast CT head, because he has altered mental status and is over 60"
+   ],
+   "after": [
+    "Non-contrast CT head"
+   ]
+  },
+  "loc-05#q3": {
+   "batch": "s07",
+   "before": [
+    "Lorazepam 4 mg IV",
+    "Levetiracetam 60 mg/kg IV (maximum 4,500 mg)"
+   ],
+   "after": [
+    "Lorazepam 4 mg IV",
+    "Levetiracetam 60 mg/kg IV (maximum 4 500 mg)"
+   ]
+  },
+  "loc-06#q4": {
+   "batch": "s07",
+   "before": [
+    "Give desmopressin 1 to 2 mcg IV and consider D5W to prevent overcorrection"
+   ],
+   "after": [
+    "Give desmopressin 1 to 2 mcg IV and consider D5W"
+   ]
+  },
+  "loc-08#q2": {
+   "batch": "s07",
+   "before": [
+    "Blood gas with co-oximetry for carboxyhemoglobin"
+   ],
+   "after": [
+    "Co-oximetry for carboxyhemoglobin"
+   ]
+  },
+  "loc-09#q4": {
+   "batch": "s07",
+   "before": [
+    "Labetalol 10 mg IV over 1 to 2 minutes, aiming for BP below 185/110 mmHg"
+   ],
+   "after": [
+    "Labetalol 10 mg IV over 1 to 2 minutes"
+   ]
+  },
+  "loc-11#q3": {
+   "batch": "s07",
+   "before": [
+    "Pneumonia is the likely source. Pyuria is common in long-term care residents and should not anchor the diagnosis"
+   ],
+   "after": [
+    "Pneumonia is the likely source, despite the pyuria"
+   ]
   }
  }
 }
