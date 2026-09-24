@@ -7,8 +7,10 @@ Fully offline. No AI at runtime, no account and no backend. All content is stati
 ## What it does
 
 Written component
-- 525 original SAMPs, 15 per CFPC priority topic, in the three formats the exam uses: short answer, menu and single best answer.
-- Short answers are scored against examiner style keys: acceptable answers, required count, unacceptable and dangerous answers. Only the first N answers count. The candidate can override a match.
+- 1,500 original SAMPs across the 35 CFPC priority topics, with at least 3 questions on every key feature.
+- 975 follow the 2027 exam format, multiple choice and short menu. These make up the mock exams.
+- The first 525 are write-in practice, tagged "Write-in" in the app.
+- Write-in answers are scored against examiner style keys: acceptable answers, required count, unacceptable and dangerous answers. Only the first N answers count. The candidate can override a match.
 - Practice by priority topic, and a timed 4 hour mock (or 2 hour half mock) balanced across the blueprint.
 
 Structured oral

@@ -7,8 +7,8 @@ import { SAMPS, SAMP_BATCHES } from "@/samps";
 
 /**
  * Structure, blueprint coverage and house style for the SAMP bank.
- * SAMP_BATCH=s03 limits the run to one batch. LAUNCH_GATE=1 enforces 500+
- * SAMPs and full key feature coverage for every priority topic.
+ * SAMP_BATCH=s03 limits the run to one batch. LAUNCH_GATE=1 enforces 1,500+
+ * SAMPs and at least 3 questions on every key feature of every priority topic.
  */
 
 /** Signed-off ids. Anything new or changed stays reviewed: false. */
@@ -66,13 +66,15 @@ describe("SAMP bank", () => {
   }
 
   if (process.env.LAUNCH_GATE) {
-    it("meets the launch minimum of 500 SAMPs", () => {
-      expect(SAMPS.length).toBeGreaterThanOrEqual(500);
+    it("meets the launch minimum of 1,500 SAMPs", () => {
+      expect(SAMPS.length).toBeGreaterThanOrEqual(1500);
     });
-    it("covers every key feature of every priority topic", () => {
+    it("has at least 3 questions on every key feature of every priority topic", () => {
       const cov = coverage(SAMPS);
-      const missing = PRIORITY_TOPICS.flatMap((t) => t.keyFeatures.filter((k) => !cov.get(t.id)?.get(k.n)).map((k) => `${t.id}#${k.n}`));
-      expect(missing).toEqual([]);
+      const thin = PRIORITY_TOPICS.flatMap((t) =>
+        t.keyFeatures.filter((k) => (cov.get(t.id)?.get(k.n) ?? 0) < 3).map((k) => `${t.id}#${k.n} (${cov.get(t.id)?.get(k.n) ?? 0})`),
+      );
+      expect(thin).toEqual([]);
     });
   }
 });

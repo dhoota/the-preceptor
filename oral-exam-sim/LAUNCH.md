@@ -93,7 +93,7 @@ A candidate with no subscription sees all three offered. A candidate who holds W
 
 Confirmed by Arjan on 24 September 2026: Complete CA$199.99, Written CA$149.99, Oral CA$99.99.
 
-The bank is now far larger: 525 SAMPs and 100 oral cases. Running cost is still zero. The store fee is 15 percent.
+The bank is now far larger: 1,500 SAMPs and 100 oral cases. Running cost is still zero. The store fee is 15 percent.
 
 | Product | Price | Nets about |
 |---|---|---|
