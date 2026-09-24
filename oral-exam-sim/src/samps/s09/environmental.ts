@@ -20,7 +20,7 @@ const S = {
   ataHypo: { id: "ata-hypo", citation: "Jonklaas J, et al. Guidelines for the treatment of hypothyroidism. American Thyroid Association task force on thyroid hormone replacement. Thyroid. 2014." },
   abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update. Chapter on electrical injury." },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on heat illness, dysbarism and electrical and lightning injuries." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on heat emergencies, diving disorders and electrical injuries." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 180, Antipsychotics. Chapter 210, Heat Emergencies. Chapter 219, Electrical and Lightning Injuries." },
 } satisfies Record<string, Source>;
 
 export const ENVIRONMENTAL_SAMPS: Samp[] = [

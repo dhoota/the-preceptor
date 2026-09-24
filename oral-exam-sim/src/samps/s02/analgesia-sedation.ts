@@ -95,7 +95,7 @@ const ABLS: Source = {
 };
 const TINT: Source = {
   id: "tintinalli",
-  citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine. A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020.",
+  citation: "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 35, Acute Pain Management. Chapter 36, Local and Regional Anesthesia. Chapter 37, Procedural Sedation and Analgesia in Adults. Chapter 71, Acute Abdominal Pain. Chapter 186, Opioids. Chapter 269, Wrist Injuries.",
 };
 const CDC: Source = {
   id: "cdc-opioids",

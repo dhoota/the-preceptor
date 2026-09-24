@@ -28,7 +28,7 @@ const S = {
   cadiss: { id: "cadiss", citation: "CADISS trial investigators. Antiplatelet treatment compared with anticoagulation treatment for cervical artery dissection (CADISS): a randomised trial. Lancet Neurol. 2015." },
   csbpr: { id: "csbpr", citation: "Heran M, Lindsay P, Gubitz G, et al. Canadian Stroke Best Practice Recommendations: acute stroke management, 7th edition practice guidelines update, 2022. Can J Neurol Sci. 2024." },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on headache, ophthalmology and brain tumours." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on headache, eye emergencies and herpes zoster." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 154, Serious Viral Infections. Chapter 165, Headache. Chapter 241, Eye Emergencies." },
 } satisfies Record<string, Source>;
 
 export const HEADACHE_SAMPS: Samp[] = [

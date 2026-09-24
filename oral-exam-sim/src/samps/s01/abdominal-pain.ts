@@ -8,7 +8,7 @@ const meta = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", ve
 const SRC: Record<string, Source> = {
   svsAaa: { id: "svs-aaa", citation: "Society for Vascular Surgery. Practice guidelines on the care of patients with an abdominal aortic aneurysm. 2018." },
   esvsMes: { id: "esvs-mesenteric", citation: "Bjorck M and colleagues. Management of the diseases of mesenteric arteries and veins: clinical practice guidelines of the European Society for Vascular Surgery. Eur J Vasc Endovasc Surg. 2017." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, and colleagues, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. 2020. Acute abdominal pain chapter." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 60, Aneurysmal Disease. Chapter 71, Acute Abdominal Pain. Chapter 133, Acute Abdominal Pain in Infants and Children." },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. 2023." },
   acrRlq: { id: "acr-rlq", citation: "American College of Radiology. ACR Appropriateness Criteria. Right lower quadrant pain: 2022 update. J Am Coll Radiol. 2022." },
   wsesAppy: { id: "wses-appy", citation: "Di Saverio S and colleagues. Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines. World J Emerg Surg. 2020." },

@@ -40,7 +40,7 @@ const S = {
   tintinalli: {
     id: "tintinalli",
     citation:
-      "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on maternal emergencies after 20 weeks of pregnancy and in the postpartum period.",
+      "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 100, Maternal Emergencies After 20 Weeks of Pregnancy and in the Peripartum Period.",
   },
   rosen: {
     id: "rosen",

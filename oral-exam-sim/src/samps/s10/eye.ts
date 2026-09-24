@@ -50,7 +50,7 @@ const S = {
   },
   tintinalli: {
     id: "tintinalli",
-    citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on eye emergencies and ocular trauma.",
+    citation: "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 122, Eye Emergencies in Infants and Children. Chapter 239, Thrombotics and Antithrombotics. Chapter 241, Eye Emergencies.",
   },
 } satisfies Record<string, Source>;
 

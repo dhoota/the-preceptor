@@ -22,7 +22,7 @@ const S = {
   pollack: { id: "pollack", citation: "Pollack CV Jr, et al. Idarucizumab for dabigatran reversal. N Engl J Med. 2015." },
   mint: { id: "mint", citation: "Carson JL, et al. Restrictive or liberal transfusion strategy in myocardial infarction and anemia. N Engl J Med. 2023. The MINT trial." },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on gastrointestinal bleeding, esophagus and aortic disease." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on gastrointestinal bleeding in adults and children." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 75, Upper Gastrointestinal Bleeding. Chapter 77, Esophageal Emergencies. Chapter 134, Gastrointestinal Bleeding in Infants and Children." },
 } satisfies Record<string, Source>;
 
 export const GI_BLEED_SAMPS: Samp[] = [

@@ -24,7 +24,7 @@ const S = {
   abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update." },
   criticall: { id: "criticall", citation: "CritiCall Ontario. About CritiCall Ontario. 24 hour emergency consultation and referral service for Ontario hospital physicians. Web page, accessed 2026.", url: "https://www.criticall.org/about-criticall-ontario/" },
   rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on disaster preparedness, ED crowding and airway management." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on disaster preparedness, hazardous materials, organophosphates and hyperkalemia." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 5, Disaster Preparedness. Chapter 8, Chemical Disasters. Chapter 17, Fluids and Electrolytes. Chapter 186, Opioids. Chapter 201, Pesticides." },
 } satisfies Record<string, Source>;
 
 export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [

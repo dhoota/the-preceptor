@@ -66,7 +66,7 @@ const S = {
   tintinalli: {
     id: "tintinalli",
     citation:
-      "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on acute heart failure, valvular emergencies and airway management.",
+      "Tintinalli JE, Ma OJ, Yealy DM, Meckler GD, Stapczynski JS, Cline DM, Thomas SH, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter 29A, Tracheal Intubation. Chapter 29B, Mechanical Ventilation. Chapter 49, Acute Coronary Syndromes. Chapter 50, Cardiogenic Shock. Chapter 53, Acute Heart Failure. Chapter 54, Valvular Emergencies.",
   },
   rosen: {
     id: "rosen",
