@@ -9,11 +9,11 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 | iOS bundle ID | com.preceptor.oral |
 | Android applicationId | com.preceptor.oral |
 | App name | Preceptor: CCFP-EM |
-| Products | ccfpem_complete_11mo (Complete), ccfpem_written_11mo (Written), ccfpem_oral_11mo (Oral) |
-| Product type | iOS Non-Renewing Subscription. Play one-time product, non-consumable in RevenueCat. 11 months of access from purchase |
-| RevenueCat entitlements | None. The app ends access 11 months after each purchase date. Complete opens both components |
+| Products | ccfpem_complete_1y (Complete), ccfpem_written_1y (Written), ccfpem_oral_1y (Oral) |
+| Product type | iOS Auto-Renewable Subscription, 1 year, one subscription group (Complete level 1, Written and Oral level 2). Play subscription with a 1 year auto-renewing base plan |
+| RevenueCat entitlements | written_access (Complete, Written). oral_full_access (Complete, Oral) |
 | RevenueCat offering | ccfpem, three packages |
-| Prices | Complete CA$199.99. Written CA$149.99. Oral CA$99.99 |
+| Prices | Per year. Complete CA$199.99. Written CA$149.99. Oral CA$99.99 |
 | App Store category | Medical. Secondary: Education |
 | Play category | Medical |
 | Support email | preceptor.app@gmail.com |
@@ -52,7 +52,13 @@ Every SAMP and oral case is mapped to the CFPC Emergency Medicine priority topic
 Feedback without guesswork
 Answer keys, model answers, scripted examiner feedback on every oral decision, the top three things to fix after each case, and spaced review of the points you miss. Everything runs on your device. No account. No tracking. It works with no signal.
 
-Try it free. Ten SAMPs and two oral cases are open. Then buy the written bank, the oral simulator, or both. One payment gives 11 months of access. It does not renew.
+Try it free. Ten SAMPs and two oral cases are open. Then subscribe to the written bank, the oral simulator, or both.
+
+Subscriptions
+Complete, Written and Oral are yearly subscriptions. Payment is charged to your App Store or Google Play account when you confirm the purchase. A subscription renews automatically each year at the same price unless you cancel it at least 24 hours before the end of the current year. Manage or cancel it any time in your store account settings.
+
+Terms of use: https://thepreceptor.ca/terms
+Privacy policy: https://thepreceptor.ca/privacy
 
 Every question and case is original. None is taken from CFPC sample material or any real exam. The app links to the official CFPC resources so you can study them at the source.
 
@@ -128,4 +134,4 @@ Answer the questionnaire with:
 - Expected result: Everyone or Teen depending on the questionnaire. The target audience setting keeps it to adults.
 
 ## Review notes for Apple and Google
-Ten SAMPs and two oral cases are free. Three purchases open the rest: Complete, Written or Oral. Each gives 11 months of access from the purchase date and does not renew. The app ends access after 11 months and shows the end date in Settings. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline.
+Ten SAMPs and two oral cases are free. Three yearly auto-renewable subscriptions in one group open the rest: Complete, Written or Oral. Complete opens both components. A subscriber to Written or Oral is offered the upgrade to Complete. The paywall shows the price per year and the renewal terms, and links to the Terms of Use and Privacy Policy. Settings shows the renewal or end date. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline.

@@ -3,17 +3,14 @@
  * lazy import of @revenuecat/purchases-capacitor on native only, buyer-safe
  * revocation, no server of our own.
  *
- * Three products, each giving 11 months of access from the day of purchase:
- *   complete  grants written and oral
- *   written   grants written (the SAMP bank and mock exam)
- *   oral      grants oral (the oral cases and mock oral)
- * App Store: non-renewing subscriptions. Google Play: one-time products,
- * set as non-consumable in RevenueCat so a reinstall can restore them.
- *
- * Neither store gives an expiry for these, and RevenueCat treats any product
- * attached to an entitlement as unlocked forever. So the products are not
- * attached to entitlements, and the app works out access itself from each
- * purchase date in customerInfo.nonSubscriptionTransactions.
+ * Three yearly subscriptions that renew automatically:
+ *   complete  unlocks written_access and oral_full_access
+ *   written   unlocks written_access (the SAMP bank and mock exam)
+ *   oral      unlocks oral_full_access (the oral cases and mock oral)
+ * App Store: auto-renewable subscriptions of one year in one subscription
+ * group. Google Play: subscriptions with a one year auto-renewing base plan.
+ * The store supplies each expiry date through the RevenueCat entitlements.
+ * The app caches those dates so access works offline and ends on time.
  * Owner setup is in LAUNCH.md.
  */
 
@@ -23,9 +20,6 @@
 // The iOS key arrives once the App Store in-app purchase key is uploaded.
 export const RC_KEY_IOS = "appl_REPLACE_WITH_CCFPEM_IOS_PUBLIC_KEY";
 export const RC_KEY_ANDROID = "goog_ytowRSJmXGIejpeGDKurvANZWCy";
-
-/** Length of access bought by one purchase, in calendar months. */
-export const ACCESS_MONTHS = 11;
 
 export type Component = "written" | "oral";
 
@@ -38,12 +32,18 @@ export const RC_OFFERING = "ccfpem";
 
 export type ProductKey = "complete" | "written" | "oral";
 
-/** Store product IDs, the same on the App Store and Google Play. */
+/**
+ * Store product IDs, the same on the App Store and Google Play. On Play these
+ * are subscription IDs, and RevenueCat may append the base plan after a colon.
+ */
 export const PRODUCTS: Record<ProductKey, { id: string; grants: Component[]; fallbackPrice: string }> = {
-  complete: { id: "ccfpem_complete_11mo", grants: ["written", "oral"], fallbackPrice: "CA$199.99" },
-  written: { id: "ccfpem_written_11mo", grants: ["written"], fallbackPrice: "CA$149.99" },
-  oral: { id: "ccfpem_oral_11mo", grants: ["oral"], fallbackPrice: "CA$99.99" },
+  complete: { id: "ccfpem_complete_1y", grants: ["written", "oral"], fallbackPrice: "CA$199.99" },
+  written: { id: "ccfpem_written_1y", grants: ["written"], fallbackPrice: "CA$149.99" },
+  oral: { id: "ccfpem_oral_1y", grants: ["oral"], fallbackPrice: "CA$99.99" },
 };
+
+/** RevenueCat entitlement per component. Complete is attached to both. */
+export const ENTITLEMENTS: Record<Component, string> = { written: "written_access", oral: "oral_full_access" };
 
 export interface Access {
   written: boolean;
@@ -52,7 +52,7 @@ export interface Access {
 
 export const NO_ACCESS: Access = { written: false, oral: false };
 
-/** When access to each component ends, as an ISO date, or null if never bought. */
+/** When access to each component ends or renews, as an ISO date, or null if never bought. */
 export interface Expiry {
   written: string | null;
   oral: string | null;
@@ -61,17 +61,6 @@ export interface Expiry {
 export const NO_EXPIRY: Expiry = { written: null, oral: null };
 
 const COMPONENTS: Component[] = ["written", "oral"];
-
-/** Adds calendar months. A day past the end of the target month clamps to its last day. */
-export function addMonths(from: Date, months: number): Date {
-  const d = new Date(from.getTime());
-  const day = d.getUTCDate();
-  d.setUTCDate(1);
-  d.setUTCMonth(d.getUTCMonth() + months);
-  const last = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate();
-  d.setUTCDate(Math.min(day, last));
-  return d;
-}
 
 /** A date for display, such as "12 Aug 2027". */
 export function formatDay(iso: string): string {
@@ -148,29 +137,27 @@ async function rc(): Promise<RCModule | null> {
   return mod;
 }
 
-type CustomerInfoLike = { nonSubscriptionTransactions?: { productIdentifier?: string; purchaseDate?: string }[] } | null | undefined;
+type EntitlementLike = { isActive?: boolean; expirationDate?: string | null };
+type CustomerInfoLike = { entitlements?: { all?: Record<string, EntitlementLike | undefined> } } | null | undefined;
+
+/** Stands in for an active entitlement with no end date, such as a promotional grant. */
+export const NO_END = "9999-12-31T00:00:00.000Z";
 
 /**
- * Expiry dates from the purchase history. Each purchase gives ACCESS_MONTHS.
- * A purchase made while a component is still open extends it from its
- * current end, so buying early never loses time. Entitlements are ignored
- * on purpose: RevenueCat would report these products as unlocked forever.
+ * Expiry dates from the RevenueCat entitlements. For a yearly subscription
+ * this is the current period end, and it moves forward on each renewal. An
+ * expired entitlement keeps its past date, so the app can say when it ended.
+ * Products of the other Preceptor apps unlock other entitlements and are ignored.
  */
 export function expiryFrom(ci: CustomerInfoLike): Expiry {
-  const byId = new Map(Object.values(PRODUCTS).map((p) => [p.id, p.grants]));
-  const buys = (ci?.nonSubscriptionTransactions ?? [])
-    .map((t) => ({ grants: byId.get(t.productIdentifier ?? ""), at: Date.parse(t.purchaseDate ?? "") }))
-    .filter((t): t is { grants: Component[]; at: number } => Boolean(t.grants) && Number.isFinite(t.at))
-    .sort((a, b) => a.at - b.at);
-  const until: Record<Component, number | null> = { written: null, oral: null };
-  for (const b of buys) {
-    for (const c of b.grants) {
-      const start = Math.max(b.at, until[c] ?? 0);
-      until[c] = addMonths(new Date(start), ACCESS_MONTHS).getTime();
-    }
-  }
-  const iso = (t: number | null) => (t === null ? null : new Date(t).toISOString());
-  return { written: iso(until.written), oral: iso(until.oral) };
+  const date = (c: Component): string | null => {
+    const e = ci?.entitlements?.all?.[ENTITLEMENTS[c]];
+    if (!e) return null;
+    const t = Date.parse(e.expirationDate ?? "");
+    if (e.isActive) return Number.isFinite(t) ? new Date(t).toISOString() : NO_END;
+    return Number.isFinite(t) ? new Date(t).toISOString() : null;
+  };
+  return { written: date("written"), oral: date("oral") };
 }
 
 type PackageLike = { identifier?: string; product?: { identifier?: string; priceString?: string } };
@@ -181,9 +168,26 @@ export function ccfpemPackages<P extends PackageLike>(offerings: OfferingsLike):
   return (offerings?.all?.[RC_OFFERING]?.availablePackages ?? []) as P[];
 }
 
+/** True when a store product id is this product, with or without a Play base plan suffix. */
+export function isProduct(storeId: string | undefined, key: ProductKey): boolean {
+  return storeId?.split(":")[0] === PRODUCTS[key].id;
+}
+
 /** The package for a product: by package id (complete, written, oral), else by store product id. */
 export function findPackage<P extends PackageLike>(pkgs: P[], key: ProductKey): P | undefined {
-  return pkgs.find((p) => p.identifier === key) ?? pkgs.find((p) => p.product?.identifier === PRODUCTS[key].id);
+  return pkgs.find((p) => p.identifier === key) ?? pkgs.find((p) => isProduct(p.product?.identifier, key));
+}
+
+/**
+ * The subscription a purchase replaces. Written and Oral are one level below
+ * Complete, so a candidate who owns one of them upgrades to Complete. The
+ * App Store does this itself inside the subscription group. Google Play needs
+ * the old product named, or the candidate would pay for both.
+ */
+export function replaces(product: ProductKey, activeSubscriptions: string[]): string | null {
+  if (product !== "complete") return null;
+  const old = activeSubscriptions.find((id) => isProduct(id, "written") || isProduct(id, "oral"));
+  return old ? old.split(":")[0] : null;
 }
 
 async function packages(m: RCModule) {
@@ -216,7 +220,13 @@ export const revenueCat: PurchasesAdapter = {
     try {
       const pkg = findPackage(await packages(m), product);
       if (!pkg) return "unavailable";
-      const res = await m.Purchases.purchasePackage({ aPackage: pkg });
+      let googleProductChangeInfo = null;
+      if (platform() === "android") {
+        const { customerInfo } = await m.Purchases.getCustomerInfo();
+        const old = replaces(product, customerInfo.activeSubscriptions);
+        if (old) googleProductChangeInfo = { oldProductIdentifier: old, prorationMode: m.PRORATION_MODE.IMMEDIATE_WITH_TIME_PRORATION };
+      }
+      const res = await m.Purchases.purchasePackage({ aPackage: pkg, googleProductChangeInfo });
       const got = accessAt(expiryFrom(res?.customerInfo));
       return PRODUCTS[product].grants.every((g) => got[g]) ? "purchased" : "failed";
     } catch (e) {
@@ -247,18 +257,19 @@ export const revenueCat: PurchasesAdapter = {
  * production web build never grants access.
  */
 export function webAdapter(dev: boolean, now: () => number = Date.now): PurchasesAdapter {
-  const bought: { productIdentifier: string; purchaseDate: string }[] = [];
-  const current = () => (dev ? expiryFrom({ nonSubscriptionTransactions: bought }) : { ...NO_EXPIRY });
+  let owned: Expiry = { ...NO_EXPIRY };
   return {
     async check() {
-      return current();
+      return { ...owned };
     },
     async restore() {
-      return current();
+      return { ...owned };
     },
     async purchase(product) {
       if (!dev) return "unavailable";
-      bought.push({ productIdentifier: PRODUCTS[product].id, purchaseDate: new Date(now()).toISOString() });
+      const d = new Date(now());
+      d.setUTCFullYear(d.getUTCFullYear() + 1);
+      for (const c of PRODUCTS[product].grants) owned = { ...owned, [c]: d.toISOString() };
       return "purchased";
     },
     async prices() {

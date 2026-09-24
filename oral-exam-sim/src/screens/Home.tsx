@@ -2,7 +2,6 @@ import { CASES } from "@/cases";
 import { BLUEPRINT, composeOralMock, dueCards, questionRange } from "@/engine";
 import { useState } from "react";
 import { freeCaseIds } from "@/lib/access";
-import { ACCESS_MONTHS } from "@/lib/purchases";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -139,7 +138,7 @@ export function Home({ go }: { go: Go }) {
         ))}
         {!app.access.oral && (
           <p className="muted small" style={{ marginTop: 12 }}>
-            Two cases are free. Oral access is one payment for {ACCESS_MONTHS} months. It does not renew.
+            Two cases are free. Oral access is a yearly subscription that renews until you cancel it.
           </p>
         )}
       </section>

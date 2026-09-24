@@ -4,7 +4,7 @@ import { SAMPS } from "@/samps";
 import { PRIORITY_TOPICS } from "@/blueprint/priorityTopics";
 import { FREE_CASE_COUNT, FREE_SAMP_TOPICS } from "@/lib/access";
 import { PRIVACY_URL, TERMS_URL } from "@/lib/constants";
-import { ACCESS_MONTHS, PRODUCTS, formatDay, isNative, keysConfigured, type ProductKey } from "@/lib/purchases";
+import { NO_END, PRODUCTS, formatDay, isNative, keysConfigured, type ProductKey } from "@/lib/purchases";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -26,9 +26,9 @@ export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
         <p className="muted" style={{ marginTop: 10 }}>
           Thank you for supporting independent exam prep.
         </p>
-        {app.expiry.written && app.expiry.oral && (
+        {app.expiry.written && app.expiry.oral && app.expiry.written !== NO_END && app.expiry.oral !== NO_END && (
           <p className="muted small" style={{ marginTop: 10 }}>
-            Written access until {formatDay(app.expiry.written)}. Oral access until {formatDay(app.expiry.oral)}.
+            Written renews or ends {formatDay(app.expiry.written)}. Oral renews or ends {formatDay(app.expiry.oral)}.
           </p>
         )}
         <div className="actions">
@@ -40,8 +40,10 @@ export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
     );
   }
 
-  // Offer what the candidate does not own yet. Complete only if they own neither.
-  const offers = TIERS.filter((t) => (t.key === "complete" ? !written && !oral : t.key === "written" ? !written : !oral)).sort(
+  // All three share one App Store subscription group, so a candidate holds one
+  // at a time. Owning Written or Oral, the way to add the other is Complete.
+  const upgrade = written || oral;
+  const offers = TIERS.filter((t) => !upgrade || t.key === "complete").sort(
     (a, b) => Number(b.key === focus) - Number(a.key === focus),
   );
 
@@ -64,7 +66,7 @@ export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
   return (
     <div className="pay">
       <div className="label">Preceptor: CCFP-EM</div>
-      <h1 style={{ marginTop: 6 }}>Both components. One purchase.</h1>
+      <h1 style={{ marginTop: 6 }}>Both components. One subscription.</h1>
       <p className="muted" style={{ marginTop: 10 }}>
         {SAMPS.length} original SAMPs and {CASES.length} oral cases, mapped to all {PRIORITY_TOPICS.length} CFPC priority
         topics. {FREE_CASE_COUNT} oral cases and {FREE_SAMP_TOPICS} SAMPs are free to try.
@@ -82,20 +84,21 @@ export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
         <div key={t.key} className={`tier ${t.key === "complete" ? "best" : ""}`}>
           <div className="tierhead">
             <span className="serif tiername">{t.name}</span>
-            <span className="mono price">{app.prices[t.key] ?? PRODUCTS[t.key].fallbackPrice}</span>
+            <span className="mono price">{app.prices[t.key] ?? PRODUCTS[t.key].fallbackPrice} / year</span>
           </div>
           <p className="muted small" style={{ margin: "4px 0 10px" }}>
-            {t.body}
+            {upgrade ? `Adds the ${written ? "oral simulator" : "written SAMP bank"}. Replaces your current subscription.` : t.body}
           </p>
           <button className={`btn block ${t.key === "complete" ? "" : "ghost"}`} disabled={app.busy} onClick={() => buy(t.key)}>
-            {app.busy ? "Working" : `Buy ${t.name.toLowerCase()}`}
+            {app.busy ? "Working" : upgrade ? "Upgrade to complete" : `Subscribe to ${t.name.toLowerCase()}`}
           </button>
         </div>
       ))}
 
       <p className="muted small" style={{ marginTop: 10 }}>
-        One payment for {ACCESS_MONTHS} months of access from the day you buy. It does not renew and you are not charged again.
-        Restores on any device signed in to the same store account.
+        A yearly subscription. It renews automatically each year at the price shown unless you cancel it at least 24 hours
+        before the renewal date. Cancel any time in your App Store or Google Play account settings. Restores on any device
+        signed in to the same store account.
       </p>
       <div className="actions">
         <button className="btn ghost block" disabled={app.busy} onClick={restore}>

@@ -4,11 +4,9 @@ import { SAMPS } from "@/samps";
 import { finishAttempt, updateDeckFromAttempt, review as reviewCard, type Attempt, type Deck, type SelfMark } from "@/engine";
 import { canOpenCase, canOpenSamp } from "@/lib/access";
 import {
-  ACCESS_MONTHS,
   NO_EXPIRY,
   PRODUCTS,
   accessAt,
-  addMonths,
   defaultAdapter,
   laterExpiry,
   reconcileExpiry,
@@ -166,13 +164,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
         const r = await purchases.purchase(product);
         if (r === "purchased") {
           const fromStore = await purchases.check();
-          // If the store cannot be read back right away, grant the bought term locally.
-          // The next launch replaces it with the store's dates.
+          // The purchase already confirmed the entitlements. If the store cannot be
+          // read back right away, hold one subscription year locally. The next
+          // launch replaces it with the entitlement dates.
           const local: Expiry = { ...expiry };
-          for (const c of PRODUCTS[product].grants) {
-            const from = Math.max(Date.now(), expiry[c] ? Date.parse(expiry[c]!) : 0);
-            local[c] = addMonths(new Date(from), ACCESS_MONTHS).toISOString();
-          }
+          const yearOn = new Date();
+          yearOn.setUTCFullYear(yearOn.getUTCFullYear() + 1);
+          for (const c of PRODUCTS[product].grants) local[c] = yearOn.toISOString();
           await grant(fromStore ? laterExpiry(expiry, fromStore) : local);
         }
         return r;

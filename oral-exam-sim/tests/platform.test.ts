@@ -1,22 +1,24 @@
 import { describe, expect, it } from "vitest";
 import { FREE_CASE_COUNT, FREE_SAMP_TOPICS, canOpenCase, canOpenSamp, freeCaseIds, freeSampIds } from "@/lib/access";
 import {
-  ACCESS_MONTHS,
   NO_ACCESS,
+  ENTITLEMENTS,
+  NO_END,
   NO_EXPIRY,
   PRODUCTS,
   RC_KEY_ANDROID,
   RC_KEY_IOS,
   RC_OFFERING,
   accessAt,
-  addMonths,
   allKeysConfigured,
   ccfpemPackages,
   expiryFrom,
   findPackage,
+  isProduct,
   keysConfigured,
   laterExpiry,
   reconcileExpiry,
+  replaces,
   webAdapter,
   type Access,
   type Expiry,
@@ -32,7 +34,7 @@ import { FIXTURE } from "./fixture";
 const A = (written: boolean, oral: boolean): Access => ({ written, oral });
 const E = (written: string | null, oral: string | null): Expiry => ({ written, oral });
 const NOW = Date.parse("2026-10-01T12:00:00Z");
-const buy = (id: string, purchaseDate: string) => ({ productIdentifier: id, purchaseDate });
+const ent = (isActive: boolean, expirationDate: string | null) => ({ isActive, expirationDate });
 
 function fake(check: Expiry | null, restore: Expiry | null): PurchasesAdapter & { restores: number } {
   const a = {
@@ -77,47 +79,44 @@ describe("products", () => {
     expect(PRODUCTS.written.grants).toEqual(["written"]);
     expect(PRODUCTS.oral.grants).toEqual(["oral"]);
   });
-  it("uses new 11 month product IDs, never the abandoned lifetime ones", () => {
-    expect(ACCESS_MONTHS).toBe(11);
-    expect(Object.values(PRODUCTS).map((p) => p.id)).toEqual(["ccfpem_complete_11mo", "ccfpem_written_11mo", "ccfpem_oral_11mo"]);
-    for (const p of Object.values(PRODUCTS)) expect(p.id).not.toMatch(/lifetime/);
+  it("uses the yearly subscription IDs, never the abandoned lifetime or 11 month ones", () => {
+    expect(Object.values(PRODUCTS).map((p) => p.id)).toEqual(["ccfpem_complete_1y", "ccfpem_written_1y", "ccfpem_oral_1y"]);
+    for (const p of Object.values(PRODUCTS)) expect(p.id).not.toMatch(/lifetime|11mo/);
+  });
+  it("maps components to the written_access and oral_full_access entitlements", () => {
+    expect(ENTITLEMENTS).toEqual({ written: "written_access", oral: "oral_full_access" });
   });
 });
 
-describe("11 month access", () => {
-  it("adds calendar months and clamps to the end of a short month", () => {
-    expect(addMonths(new Date("2026-10-01T12:00:00Z"), 11).toISOString()).toBe("2027-09-01T12:00:00.000Z");
-    expect(addMonths(new Date("2027-03-31T08:00:00Z"), 11).toISOString()).toBe("2028-02-29T08:00:00.000Z");
-    expect(addMonths(new Date("2026-03-31T08:00:00Z"), 11).toISOString()).toBe("2027-02-28T08:00:00.000Z");
-  });
-  it("gives each purchase 11 months from its purchase date", () => {
-    const e = expiryFrom({ nonSubscriptionTransactions: [buy("ccfpem_written_11mo", "2026-10-01T12:00:00Z")] });
-    expect(e).toEqual(E("2027-09-01T12:00:00.000Z", null));
+describe("entitlement expiry", () => {
+  const RENEW = "2027-10-01T12:00:00.000Z";
+  it("takes each date from its entitlement", () => {
+    const e = expiryFrom({ entitlements: { all: { written_access: ent(true, RENEW) } } });
+    expect(e).toEqual(E(RENEW, null));
     expect(accessAt(e, NOW)).toEqual(A(true, false));
-    expect(accessAt(e, Date.parse("2027-09-01T11:59:00Z"))).toEqual(A(true, false));
-    expect(accessAt(e, Date.parse("2027-09-01T12:00:00Z"))).toEqual(NO_ACCESS);
+    expect(accessAt(e, Date.parse("2027-10-01T12:00:01Z"))).toEqual(NO_ACCESS);
   });
-  it("complete opens both components", () => {
-    const e = expiryFrom({ nonSubscriptionTransactions: [buy("ccfpem_complete_11mo", "2026-10-01T12:00:00Z")] });
-    expect(e).toEqual(E("2027-09-01T12:00:00.000Z", "2027-09-01T12:00:00.000Z"));
+  it("opens both components when Complete unlocks both entitlements", () => {
+    const e = expiryFrom({ entitlements: { all: { written_access: ent(true, RENEW), oral_full_access: ent(true, RENEW) } } });
+    expect(accessAt(e, NOW)).toEqual(A(true, true));
   });
-  it("extends from the current end when bought again while still open", () => {
-    const e = expiryFrom({
-      nonSubscriptionTransactions: [buy("ccfpem_oral_11mo", "2026-10-01T12:00:00Z"), buy("ccfpem_oral_11mo", "2027-06-01T12:00:00Z")],
-    });
-    expect(e.oral).toBe("2028-08-01T12:00:00.000Z");
+  it("moves the date forward when the subscription renews", () => {
+    const next = "2028-10-01T12:00:00.000Z";
+    const e = expiryFrom({ entitlements: { all: { oral_full_access: ent(true, next) } } });
+    expect(accessAt(e, Date.parse("2028-01-01T00:00:00Z"))).toEqual(A(false, true));
   });
-  it("starts a new term from the purchase date after access has ended", () => {
-    const e = expiryFrom({
-      nonSubscriptionTransactions: [buy("ccfpem_oral_11mo", "2027-12-01T12:00:00Z"), buy("ccfpem_oral_11mo", "2026-10-01T12:00:00Z")],
-    });
-    expect(e.oral).toBe("2028-11-01T12:00:00.000Z");
+  it("keeps the past date of an expired entitlement so the app can say when it ended", () => {
+    const e = expiryFrom({ entitlements: { all: { oral_full_access: ent(false, "2026-09-01T12:00:00Z") } } });
+    expect(e).toEqual(E(null, "2026-09-01T12:00:00.000Z"));
+    expect(accessAt(e, NOW)).toEqual(NO_ACCESS);
   });
-  it("ignores other apps' products and entitlements", () => {
-    const ci = {
-      nonSubscriptionTransactions: [buy("preceptor_ccfp_lifetime", "2026-10-01T12:00:00Z"), buy("ccfpem_written_lifetime", "2026-10-01T12:00:00Z")],
-      entitlements: { active: { written_access: {}, oral_full_access: {} } },
-    };
+  it("treats an active entitlement with no end date as open", () => {
+    const e = expiryFrom({ entitlements: { all: { written_access: ent(true, null) } } });
+    expect(e.written).toBe(NO_END);
+    expect(accessAt(e, NOW).written).toBe(true);
+  });
+  it("ignores other apps' entitlements", () => {
+    const ci = { entitlements: { all: { ccfp_full_access: ent(true, RENEW), pro: ent(true, null) } } };
     expect(expiryFrom(ci)).toEqual(NO_EXPIRY);
     expect(expiryFrom(null)).toEqual(NO_EXPIRY);
   });
@@ -125,6 +124,20 @@ describe("11 month access", () => {
     expect(laterExpiry(E("2027-01-01T00:00:00Z", null), E("2026-12-01T00:00:00Z", "2027-02-01T00:00:00Z"))).toEqual(
       E("2027-01-01T00:00:00Z", "2027-02-01T00:00:00Z"),
     );
+  });
+});
+
+describe("upgrades", () => {
+  it("replaces Written or Oral when upgrading to Complete, with or without a Play base plan", () => {
+    expect(replaces("complete", ["ccfpem_written_1y:yearly"])).toBe("ccfpem_written_1y");
+    expect(replaces("complete", ["ccfpem_oral_1y"])).toBe("ccfpem_oral_1y");
+    expect(replaces("complete", ["preceptor_ccfp_annual"])).toBeNull();
+    expect(replaces("oral", ["ccfpem_written_1y"])).toBeNull();
+  });
+  it("matches store product IDs with a Play base plan suffix", () => {
+    expect(isProduct("ccfpem_oral_1y:yearly", "oral")).toBe(true);
+    expect(isProduct("ccfpem_oral_1y", "oral")).toBe(true);
+    expect(isProduct("ccfpem_oral_1yx", "oral")).toBe(false);
   });
 });
 
@@ -164,14 +177,14 @@ describe("web adapter", () => {
     expect(await p.purchase("complete")).toBe("unavailable");
     expect(await p.check()).toEqual(NO_EXPIRY);
   });
-  it("simulates each product for 11 months in local dev", async () => {
+  it("simulates each product for one year in local dev", async () => {
     let t = NOW;
     const p = webAdapter(true, () => t);
     expect(await p.purchase("written")).toBe("purchased");
     expect(accessAt((await p.check())!, t)).toEqual(A(true, false));
     await p.purchase("oral");
     expect(accessAt((await p.restore())!, t)).toEqual(A(true, true));
-    t = Date.parse("2027-09-02T00:00:00Z");
+    t = Date.parse("2027-10-01T12:00:01Z");
     expect(accessAt((await p.check())!, t)).toEqual(NO_ACCESS);
   });
 });
@@ -232,9 +245,9 @@ describe("RevenueCat offering", () => {
   const other = { availablePackages: [{ identifier: "$rc_annual", product: { identifier: "preceptor_ccfp_annual" } }] };
   const mine = {
     availablePackages: [
-      { identifier: "complete", product: { identifier: "ccfpem_complete_11mo" } },
-      { identifier: "written", product: { identifier: "ccfpem_written_11mo" } },
-      { identifier: "oral", product: { identifier: "ccfpem_oral_11mo" } },
+      { identifier: "complete", product: { identifier: "ccfpem_complete_1y" } },
+      { identifier: "written", product: { identifier: "ccfpem_written_1y" } },
+      { identifier: "oral", product: { identifier: "ccfpem_oral_1y" } },
     ],
   };
   it("uses the ccfpem offering by id, never offerings.current", () => {
@@ -245,7 +258,7 @@ describe("RevenueCat offering", () => {
   });
   it("finds packages complete, written and oral", () => {
     for (const k of ["complete", "written", "oral"] as const) expect(findPackage(mine.availablePackages, k)?.identifier).toBe(k);
-    const byProduct = [{ identifier: "x", product: { identifier: "ccfpem_oral_11mo" } }];
+    const byProduct = [{ identifier: "x", product: { identifier: "ccfpem_oral_1y:yearly" } }];
     expect(findPackage(byProduct, "oral")?.identifier).toBe("x");
     expect(findPackage(other.availablePackages, "complete")).toBeUndefined();
   });
