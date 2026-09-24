@@ -6,24 +6,23 @@ import type { Source } from "@/engine/types";
 const meta = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 };
 
 const SRC: Record<string, Source> = {
-  rnao: { id: "rnao-ipv", citation: "Registered Nurses' Association of Ontario. Best practice guideline. Woman abuse: screening, identification and initial response." },
+  rnao: { id: "rnao-ipv", citation: "Registered Nurses' Association of Ontario. Woman abuse: screening, identification and initial response. Nursing best practice guideline. 2005, with 2012 supplement." },
   who: { id: "who-ipv", citation: "World Health Organization. Responding to intimate partner violence and sexual violence against women. WHO clinical and policy guidelines. 2013." },
-  sogcIpv: { id: "sogc-ipv", citation: "Society of Obstetricians and Gynaecologists of Canada. Intimate partner violence consensus statement." },
-  sogcTrauma: { id: "sogc-trauma", citation: "Society of Obstetricians and Gynaecologists of Canada. Guidelines for the management of a pregnant trauma patient." },
+  sogcIpv: { id: "sogc-ipv", citation: "Cherniak D, Grant L, Mason R, and colleagues. Intimate partner violence consensus statement. SOGC Clinical Practice Guideline No. 157. J Obstet Gynaecol Can. 2005." },
+  sogcTrauma: { id: "sogc-trauma", citation: "Jain V, Chari R, and colleagues. Guidelines for the management of a pregnant trauma patient. SOGC Clinical Practice Guideline No. 325. J Obstet Gynaecol Can. 2015." },
   sogcRh: { id: "sogc-rh", citation: "Society of Obstetricians and Gynaecologists of Canada. Guideline No. 448. Prevention of Rh D alloimmunization. 2024." },
   cyfsa: { id: "cyfsa", citation: "Ontario. Child, Youth and Family Services Act, 2017. Duty to report a child in need of protection." },
   fltca: { id: "fltca", citation: "Ontario. Fixing Long-Term Care Act, 2021. Duty to report abuse of a resident to the Director." },
-  aapAbuse: { id: "aap-abuse", citation: "American Academy of Pediatrics. Clinical report. The evaluation of suspected child physical abuse." },
+  aapAbuse: { id: "aap-abuse", citation: "Christian CW, Committee on Child Abuse and Neglect, American Academy of Pediatrics. The evaluation of suspected child physical abuse. Pediatrics. 2015." },
   ten4: { id: "ten4", citation: "Pierce MC and colleagues. Validation of a clinical decision rule to predict abuse in young children based on bruising characteristics. JAMA Netw Open. 2021." },
-  strang: { id: "strangulation", citation: "Training Institute on Strangulation Prevention. Recommendations for the medical and radiographic evaluation of acute adult non-fatal strangulation." },
-  danger: { id: "danger", citation: "Campbell JC. Danger Assessment instrument for intimate partner homicide risk." },
-  easi: { id: "easi", citation: "Yaffe MJ and colleagues. Elder Abuse Suspicion Index (EASI)." },
-  phacSti: { id: "phac-sti", citation: "Public Health Agency of Canada. Canadian guidelines on sexually transmitted infections." },
+  strang: { id: "strangulation", citation: "Training Institute on Strangulation Prevention. Recommendations for the medical/radiographic evaluation of acute adult/adolescent non/near fatal strangulation. 2022." },
+  danger: { id: "danger", citation: "Campbell JC, Webster DW, Glass N. The Danger Assessment: validation of a lethality risk assessment instrument for intimate partner femicide. J Interpers Violence. 2009." },
+  easi: { id: "easi", citation: "Yaffe MJ, Wolfson C, Lithwick M, Weiss D. Development and validation of a tool to improve physician identification of elder abuse: the Elder Abuse Suspicion Index (EASI). J Elder Abuse Negl. 2008." },
   hivPep: { id: "hiv-pep", citation: "Tan DHS and colleagues. Canadian guideline on HIV pre- and postexposure prophylaxis. 2025 update. CMAJ. 2025.", url: "https://www.cmaj.ca/content/197/41/E1374" },
-  sadv: { id: "sadv", citation: "Ontario Network of Sexual Assault/Domestic Violence Treatment Centres." },
-  rnaoSuicide: { id: "rnao-suicide", citation: "Registered Nurses' Association of Ontario. Best practice guideline. Assessment and care of adults at risk for suicidal ideation and behaviour." },
-  aba: { id: "aba", citation: "American Burn Association. Burn centre referral criteria." },
-  rosen: { id: "rosen", citation: "Rosen's Emergency Medicine: Concepts and Clinical Practice. Intimate partner violence and abuse chapter." },
+  sadv: { id: "sadv", citation: "Ontario Network of Sexual Assault/Domestic Violence Treatment Centres. Standards of care. 2nd ed. 2019." },
+  rnaoSuicide: { id: "rnao-suicide", citation: "Registered Nurses' Association of Ontario. Assessment and care of adults at risk for suicidal ideation and behaviour. Nursing best practice guideline. 2009." },
+  aba: { id: "aba", citation: "American Burn Association and American College of Surgeons Committee on Trauma. Burn center referral criteria. In: Resources for Optimal Care of the Injured Patient. 2006." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. 2023. Intimate partner violence and abuse chapter." },
 };
 
 export const ABUSE_DOMESTIC: Samp[] = [
@@ -33,12 +32,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Pregnant woman with abdominal pain after a fall",
     stem:
-      "A 24-year-old woman, G2P1 at 22 weeks, presents at 23:00 with lower abdominal pain. She says she tripped on the stairs 2 days ago. This is her fourth ED visit in 3 months, previously for headache, urinary symptoms and back pain. She has missed her last two prenatal appointments.\n\nHer partner stays at the bedside, answers most questions for her and declines to step out.\n\nVital signs: HR 96/min, BP 116/70 mmHg, RR 16/min, SpO2 99% on room air, temperature 36.8°C. Fetal heart rate 148/min.\n\nThere are bruises on her left upper arm and right breast.",
+      "A 24-year-old woman, G2P1 at 22 weeks, presents at 23:00 with lower abdominal pain. She says she tripped on the stairs 2 days ago. This is her fourth ED visit in 3 months, previously for headache, urinary symptoms and back pain. She has missed her last two prenatal appointments.\n\nHer partner stays at the bedside, answers most questions for her and declines to step out.\n\nThe fetal heart rate is 148/minute.\n\nThere are bruises on her left upper arm and right breast.",
+    vitals: { temperature: "36.8°C", pulse: "96/minute", resp: "16/minute", bp: "116/70 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of this presentation that raise concern for intimate partner violence.",
+        prompt: "What features of this presentation raise concern for intimate partner violence?",
         required: 3,
         accept: [
           { id: "freq", text: "Repeated ED visits with vague complaints", match: ["repeat", "repeated", "frequent", "multiple visit", "recurrent", "fourth visit", "4 visit", "vague"] },
@@ -56,7 +56,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO steps that make disclosure safer and more likely.",
+        prompt: "What steps make disclosure safer and more likely?",
         required: 2,
         accept: [
           { id: "alone", text: "Speak with her alone, away from the partner", match: ["alone", "without partner", "without the partner", "separate", "away from partner", "partner out", "away from the partner"] },
@@ -78,15 +78,15 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Alone with you, she says her partner pushed her down the stairs and kicked her abdomen 2 days ago.",
-        prompt: "Which is the most appropriate obstetric assessment? Select one.",
+        prompt: "Which of the following is the most appropriate obstetric assessment for her now?",
         options: [
-          "Obstetric assessment with fetal monitoring, obstetric ultrasound and Rh status",
-          "Fetal Doppler only, then discharge",
-          "No fetal assessment because the injury was 2 days ago",
           "CT of the abdomen to assess the placenta",
-          "Kleihauer-Betke test only",
+          "Fetal Doppler only, then discharge",
+          "Fetal monitoring, obstetric ultrasound and Rh status",
+          "Kleihauer-Betke test as the only obstetric assessment",
+          "No fetal assessment 2 days after the injury",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "Direct abdominal trauma in pregnancy risks abruption, even when delayed. Obstetric assessment includes fetal monitoring, ultrasound and Rh status. A Kleihauer-Betke test alone does not exclude abruption.",
         keyFeature: { topic: "multiple-trauma", n: 4 },
@@ -96,7 +96,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q4",
         kind: "short",
         update: "She wants help but is not ready to leave her partner.",
-        prompt: "List THREE team members or services to involve.",
+        prompt: "What team members or services should you involve?",
         required: 3,
         accept: [
           { id: "sw", text: "Social worker", match: ["social work", "social worker", "sw"] },
@@ -120,12 +120,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     topic: "abuse-domestic",
     title: "Man with forearm pain after a fall",
     stem:
-      "A 31-year-old man has right forearm pain 3 days after falling down the stairs. He had two previous ED visits this year, for a rib contusion and a lip laceration. He lives with his male partner, who is in the waiting room.\n\nVital signs: HR 88/min, BP 132/80 mmHg, RR 16/min, SpO2 99% on room air, temperature 36.7°C.\n\nThe mid ulna is tender. There are faded yellow bruises on the back of his neck. An x-ray shows a nondisplaced mid shaft ulnar fracture.",
+      "A 31-year-old man has right forearm pain 3 days after falling down the stairs. He had two previous ED visits this year, for a rib contusion and a lip laceration. He lives with his male partner, who is in the waiting room.\n\nThe mid ulna is tender. There are faded yellow bruises on the back of his neck. An x-ray shows a nondisplaced mid shaft ulnar fracture.",
+    vitals: { temperature: "36.7°C", pulse: "88/minute", resp: "16/minute", bp: "132/80 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features suggesting this injury may have been inflicted.",
+        prompt: "What features suggest this injury may have been inflicted?",
         required: 3,
         accept: [
           { id: "delay", text: "Delayed presentation", match: ["delay", "delayed", "3 day", "three day", "late"] },
@@ -143,17 +144,17 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which approach to asking about abuse is most appropriate? Select one.",
+        prompt: "Which of the following approaches to asking him about abuse is most appropriate?",
         options: [
-          "Wait for him to raise the topic himself",
-          "Ask his partner to come in to help explain the injury",
-          "Ask privately and directly, using the same questions asked of all patients, regardless of gender or relationship",
+          "Ask his partner to come in and explain the injury",
           "Ask only if he is in a heterosexual relationship",
+          "Ask privately and directly, as with every patient",
           "Report to police first and ask afterward",
+          "Wait for him to raise the topic himself",
         ],
         correct: 2,
         explanation:
-          "Partner violence occurs in all genders and relationships. A private, direct and routine question avoids assumptions and signals that disclosure is safe. Involving the partner can place him at risk.",
+          "Partner violence occurs in all genders and relationships. Ask privately and directly, using the same questions asked of all patients, regardless of gender or relationship. A routine question avoids assumptions and signals that disclosure is safe. Involving the partner can place him at risk.",
         keyFeature: { topic: "abuse-domestic", n: 4 },
         source: "rnao-ipv",
       },
@@ -161,7 +162,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q3",
         kind: "short",
         update: "He discloses that his partner has hit him several times. He worries that staff will not take him seriously.",
-        prompt: "List TWO services or team members to involve.",
+        prompt: "What services or team members should you involve?",
         required: 2,
         accept: [
           { id: "sw", text: "Social worker", match: ["social work", "social worker", "sw"] },
@@ -179,17 +180,18 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "He declines police involvement. He is competent and has no children or dependants. What is the most appropriate action? Select one.",
+        update: "He declines police involvement. He is competent and has no children or dependants.",
+        prompt: "Which of the following is the most appropriate action at this visit?",
         options: [
-          "Respect his decision, document carefully, provide resources and a safety plan, and offer follow-up",
-          "Report to police because assault is a crime",
-          "Keep him in hospital until he agrees to report",
           "Call his partner to discuss the injuries",
-          "Report to an adult protection agency without his consent",
+          "Keep him in hospital until he agrees to report",
+          "Report him to an adult protection agency without his consent",
+          "Report the assault to police without his consent",
+          "Respect wishes, document, resources, safety plan, follow-up",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "Canadian provinces, Ontario included, do not require reporting of partner violence against a competent adult unless another reporting law applies, such as gunshot wound reporting or a child at risk. Reporting against his wishes can increase danger and break trust. Careful documentation helps him if he chooses to act later.",
+          "Respect his decision, document carefully, provide resources and a safety plan, and offer follow-up. Canadian provinces, Ontario included, do not require reporting of partner violence against a competent adult unless another reporting law applies, such as gunshot wound reporting or a child at risk. Reporting against his wishes can increase danger and break trust. Careful documentation helps him if he chooses to act later.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "rnao-ipv",
       },
@@ -203,12 +205,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Woman with a sore throat after an argument",
     stem:
-      "A 29-year-old woman arrives at 03:00. Five hours ago her former partner grabbed her by the neck during an argument. She briefly saw stars and wet herself. She now has a sore throat, a hoarse voice and pain on swallowing.\n\nVital signs: HR 102/min, BP 138/86 mmHg, RR 18/min, SpO2 98% on room air, temperature 36.9°C. GCS 15.\n\nThere is faint linear redness on the front of the neck and there are petechiae on both eyelids. The neurologic exam is normal.",
+      "A 29-year-old woman arrives at 03:00. Five hours ago her former partner grabbed her by the neck during an argument. She briefly saw stars and wet herself. She now has a sore throat, a hoarse voice and pain on swallowing.\n\nGCS is 15.\n\nThere is faint linear redness on the front of the neck and there are petechiae on both eyelids. The neurologic exam is normal.",
+    vitals: { temperature: "36.9°C", pulse: "102/minute", resp: "18/minute", bp: "138/86 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings that indicate a high risk strangulation injury.",
+        prompt: "What findings indicate a high risk strangulation injury?",
         required: 3,
         accept: [
           { id: "loc", text: "Near or complete loss of consciousness", match: ["loss of consciousness", "loc", "saw star", "syncope", "passed out", "near syncope"] },
@@ -226,15 +229,15 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which investigation is most appropriate now? Select one.",
+        prompt: "Which of the following investigations is most appropriate for her now?",
         options: [
-          "CT angiography of the head and neck",
-          "Soft tissue neck radiograph",
-          "Non-contrast CT head only",
           "Carotid Doppler ultrasound",
-          "No imaging because the neurologic exam is normal",
+          "CT angiography of the head and neck",
+          "Non-contrast CT head only",
+          "Soft tissue neck radiograph",
+          "No imaging with a normal neurologic exam",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Strangulation can cause carotid or vertebral dissection with delayed stroke, and laryngeal injury. CT angiography of the head and neck is recommended when high risk features are present. A normal neurologic exam does not exclude dissection.",
         keyFeature: { topic: "multiple-trauma", n: 3 },
@@ -243,7 +246,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO elements to include when documenting her injuries.",
+        prompt: "What elements should you include when documenting her injuries?",
         required: 2,
         accept: [
           { id: "map", text: "Body diagram marking each injury", match: ["body map", "diagram", "body chart", "drawing"] },
@@ -261,7 +264,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CT angiography is normal. She plans to stay at her sister's tonight.",
-        prompt: "List THREE factors that increase her risk of being killed by this partner.",
+        prompt: "What factors increase her risk of being killed by this partner?",
         required: 3,
         accept: [
           { id: "strang", text: "Previous strangulation", match: ["strangulation", "choking", "strangled", "choked"] },
@@ -288,12 +291,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     topic: "abuse-domestic",
     title: "Older woman brought in by her son",
     stem:
-      "An 86-year-old woman with moderate dementia is brought in by her son, who lives with her and is her caregiver. He says she is more tired than usual, bruises easily and refuses food. He manages her finances. He is impatient and wants to leave soon.\n\nVital signs: HR 104/min, BP 102/58 mmHg, RR 18/min, SpO2 96% on room air, temperature 36.2°C. Weight 44 kg. Her chart lists 52 kg six months ago.\n\nShe has dry mucous membranes, a stage 3 sacral pressure injury and bruises of different colours on both upper arms.",
+      "An 86-year-old woman with moderate dementia is brought in by her son, who lives with her and is her caregiver. He says she is more tired than usual, bruises easily and refuses food. He manages her finances. He is impatient and wants to leave soon.\n\nHer chart lists a weight of 52 kg six months ago.\n\nShe has dry mucous membranes, a stage 3 sacral pressure injury and bruises of different colours on both upper arms.",
+    vitals: { temperature: "36.2°C", pulse: "104/minute", resp: "18/minute", bp: "102/58 mmHg", o2sat: "96% on room air", weight: "44 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings that suggest elder abuse or neglect.",
+        prompt: "What findings suggest elder abuse or neglect?",
         required: 3,
         accept: [
           { id: "wt", text: "Weight loss and malnutrition", match: ["weight loss", "malnutrition", "malnourished", "8 kg"] },
@@ -312,7 +316,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE investigations to identify injuries or neglect.",
+        prompt: "What investigations would identify injuries or neglect?",
         required: 3,
         accept: [
           { id: "cbc", text: "CBC", match: ["cbc", "hemoglobin", "complete blood count"] },
@@ -334,24 +338,24 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q3",
         kind: "single",
         update: "She cannot understand her situation or the risks of going home. Her son insists on taking her home now.",
-        prompt: "What is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
-          "Admit her for safety, involve social work, and address concerns about her substitute decision maker",
-          "Discharge home with her son because he is her caregiver",
+          "Admit, involve social work, address decision maker concerns",
+          "Ask the son to sign a promise of better care",
+          "Call police to arrest the son before any further assessment",
           "Discharge home with a home care referral",
-          "Ask the son to sign a promise to improve her care",
-          "Ask police to arrest the son before any further assessment",
+          "Discharge home with her son as her caregiver",
         ],
         correct: 0,
         explanation:
-          "She is medically unwell and may be unsafe at home. When a substitute decision maker may not be acting in her best interests, the hospital can involve its legal and social work teams and the provincial public guardian or adult protection service, such as the Office of the Public Guardian and Trustee in Ontario. Discharge to the suspected source of neglect is unsafe.",
+          "She is medically unwell and may be unsafe at home, so admit her for safety, involve social work, and address concerns about her substitute decision maker. When a substitute decision maker may not be acting in her best interests, the hospital can involve its legal and social work teams and the provincial public guardian or adult protection service, such as the Office of the Public Guardian and Trustee in Ontario. Discharge to the suspected source of neglect is unsafe.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "rosen",
       },
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO team members or agencies to involve.",
+        prompt: "What team members or agencies should you involve?",
         required: 2,
         accept: [
           { id: "sw", text: "Social worker", match: ["social work", "social worker", "sw"] },
@@ -377,29 +381,30 @@ export const ABUSE_DOMESTIC: Samp[] = [
     topic: "abuse-domestic",
     title: "Long-term care resident with leg pain",
     stem:
-      "A 90-year-old woman is sent from a long-term care home in Ontario because her right leg is shortened and externally rotated. She has severe dementia and is nonverbal. Staff do not know of a fall.\n\nVital signs: HR 96/min, BP 146/80 mmHg, RR 18/min, SpO2 97% on room air, temperature 37.0°C.\n\nAn x-ray shows a right femoral neck fracture. You also find bruises on both inner thighs and a small perineal skin tear.",
+      "A 90-year-old woman is sent from a long-term care home in Ontario because her right leg is shortened and externally rotated. She has severe dementia and is nonverbal. Staff do not know of a fall.\n\nAn x-ray shows a right femoral neck fracture. You also find bruises on both inner thighs and a small perineal skin tear.",
+    vitals: { temperature: "37.0°C", pulse: "96/minute", resp: "18/minute", bp: "146/80 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which reporting obligation applies to you? Select one.",
+        prompt: "Which of the following reporting obligations applies to you in this case?",
         options: [
-          "Report immediately to the Director under the Fixing Long-Term Care Act, 2021, because you have reasonable grounds to suspect abuse that caused harm or a risk of harm",
-          "No obligation, because only the home must report",
+          "Report immediately to the long-term care Director",
+          "Report only after abuse is confirmed",
           "Report only if the family consents",
           "Report to the children's aid society",
-          "Report only after abuse is confirmed",
+          "No personal duty when the care home itself must report",
         ],
         correct: 0,
         explanation:
-          "In Ontario, anyone with reasonable grounds to suspect abuse of a long-term care resident that caused harm or a risk of harm must report it immediately to the Director. Other provinces have similar protection for persons in care laws. Certainty is not required. The duty is personal and is not met by assuming the home will report.",
+          "In Ontario, anyone with reasonable grounds to suspect abuse of a long-term care resident that caused harm or a risk of harm must report it immediately to the Director under the Fixing Long-Term Care Act, 2021. Other provinces have similar protection for persons in care laws. Certainty is not required. The duty is personal and is not met by assuming the home will report.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "fltca",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE steps to identify all of her injuries.",
+        prompt: "What steps would identify all of her injuries?",
         required: 3,
         accept: [
           { id: "skin", text: "Complete head to toe skin examination", match: ["skin", "head to toe", "full exam", "complete exam", "undress", "full body"] },
@@ -417,7 +422,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO team members or services to involve.",
+        prompt: "What team members or services should you involve?",
         required: 2,
         accept: [
           { id: "sadv", text: "Sexual assault nurse examiner or hospital sexual assault program", match: ["sexual assault", "nurse examiner", "forensic", "sane", "sadv", "domestic violence"] },
@@ -440,12 +445,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     topic: "abuse-domestic",
     title: "Irritable infant after a short fall",
     stem:
-      "A 4-month-old girl is brought in by her father for fussiness since yesterday. He says she rolled off the couch onto carpet. She was born at term and has been well.\n\nVital signs: HR 156/min, RR 40/min, SpO2 99% on room air, temperature 36.9°C. Weight 6.2 kg.\n\nShe is irritable. There is a bruise on the left ear and a small bruise on the right cheek. The anterior fontanelle is soft. No other injuries are visible.",
+      "A 4-month-old girl is brought in by her father for fussiness since yesterday. He says she rolled off the couch onto carpet. She was born at term and has been well.\n\nShe is irritable. There is a bruise on the left ear and a small bruise on the right cheek. The anterior fontanelle is soft. No other injuries are visible.",
+    vitals: { temperature: "36.9°C", pulse: "156/minute", resp: "40/minute", o2sat: "99% on room air", weight: "6.2 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that raise concern for physical abuse.",
+        prompt: "What features raise concern for physical abuse?",
         required: 3,
         accept: [
           { id: "age", text: "Any bruise in an infant under 5 months who is not yet mobile", match: ["non mobile", "nonmobile", "not mobile", "not cruising", "under 5 month", "age", "infant"] },
@@ -463,7 +469,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE investigations to find occult injuries.",
+        prompt: "What investigations would find occult injuries?",
         required: 3,
         accept: [
           { id: "ss", text: "Skeletal survey", match: ["skeletal survey", "skeletal"] },
@@ -482,15 +488,15 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q3",
         kind: "single",
         update: "The skeletal survey shows healing posterior rib fractures.",
-        prompt: "What is your reporting obligation? Select one.",
+        prompt: "Which of the following best describes your reporting obligation in this case?",
         options: [
-          "Report directly and promptly to child protection services yourself (the children's aid society in Ontario)",
           "Ask the social worker to decide whether to report",
-          "Report only once abuse is confirmed",
           "Obtain the father's consent before reporting",
-          "Report to police only",
+          "Report only once abuse is confirmed",
+          "Report promptly to child protection services yourself",
+          "Report to police only, not child protection",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Every province requires a physician with reasonable grounds to suspect a child is in need of protection to report promptly to child protection services. In Ontario the report goes directly to a children's aid society and cannot be delegated and does not require certainty or parental consent. Posterior rib fractures in an infant are highly specific for abuse.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
@@ -499,7 +505,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO team members or services to involve.",
+        prompt: "What team members or services should you involve?",
         required: 2,
         accept: [
           { id: "cpt", text: "Hospital child protection team", match: ["child protection", "scan", "suspected child abuse", "cpt", "child abuse team"] },
@@ -525,12 +531,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Young woman after a party",
     stem:
-      "A 22-year-old woman presents 20 hours after being sexually assaulted by an acquaintance at a party. There was vaginal penetration without a condom. She thinks she was drugged. Her last menstrual period was 2 weeks ago and she uses no contraception. She is unsure about involving police.\n\nVital signs: HR 92/min, BP 118/72 mmHg, RR 16/min, SpO2 99% on room air, temperature 36.8°C. Weight 62 kg.\n\nThere are small abrasions on both wrists.",
+      "A 22-year-old woman presents 20 hours after being sexually assaulted by an acquaintance at a party. There was vaginal penetration without a condom. She thinks she was drugged. Her last menstrual period was 2 weeks ago and she uses no contraception. She is unsure about involving police.\n\nThere are small abrasions on both wrists.",
+    vitals: { temperature: "36.8°C", pulse: "92/minute", resp: "16/minute", bp: "118/72 mmHg", o2sat: "99% on room air", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE time-sensitive preventive treatments to offer.",
+        prompt: "What time-sensitive preventive treatments should you offer?",
         required: 3,
         accept: [
           { id: "ec", text: "Emergency contraception such as ulipristal or levonorgestrel", match: ["emergency contraception", "levonorgestrel", "ulipristal", "plan b", "ella", "copper iud", "iud", "morning after"] },
@@ -547,7 +554,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO points you should explain so that she can make informed choices about the forensic exam and police.",
+        prompt: "What points should you explain so that she can make informed choices about the forensic exam and police?",
         required: 2,
         accept: [
           { id: "opt", text: "Evidence collection is optional and she can consent to or decline each part", match: ["optional", "each part", "each step", "decline", "choose", "stop at any time"] },
@@ -564,24 +571,24 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Who should ideally provide her forensic and medical care? Select one.",
+        prompt: "Which of the following should ideally provide her forensic and medical care?",
         options: [
-          "A hospital sexual assault and domestic violence program with trained nurse examiners",
-          "The police forensic unit",
-          "Her family physician next week",
-          "The ED physician alone, with no follow-up",
-          "A gynecology clinic in 2 weeks",
+          "An outpatient gynecology clinic in 2 weeks",
+          "Her family physician at a visit next week",
+          "Hospital sexual assault program with trained nurse examiners",
+          "The ED physician alone, with no follow-up arranged",
+          "The police forensic identification unit",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
-          "Specialized sexual assault programs provide trauma informed care, forensic collection, prophylaxis and follow-up. Delay loses evidence and the window for prophylaxis. Police do not provide medical care.",
+          "Specialized hospital sexual assault and domestic violence programs, with trained nurse examiners, provide trauma informed care, forensic collection, prophylaxis and follow-up. Delay loses evidence and the window for prophylaxis. Police do not provide medical care.",
         keyFeature: { topic: "abuse-domestic", n: 5 },
         source: "sadv",
       },
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO follow-up arrangements before she leaves.",
+        prompt: "What follow-up arrangements should be made before she leaves?",
         required: 2,
         accept: [
           { id: "couns", text: "Counselling or mental health support", match: ["counselling", "counseling", "counsellor", "counselor", "mental health", "psychological", "therapy"] },
@@ -595,10 +602,10 @@ export const ABUSE_DOMESTIC: Samp[] = [
         explanation:
           "Follow-up covers medical, laboratory and emotional needs. Survivors have high rates of post traumatic stress and benefit from early counselling. HIV PEP requires monitoring and adherence support.",
         keyFeature: { topic: "abuse-domestic", n: 5 },
-        source: "phac-sti",
+        source: "sadv",
       },
     ],
-    sources: [SRC.hivPep, SRC.sadv, SRC.phacSti],
+    sources: [SRC.hivPep, SRC.sadv],
     ...meta,
   },
   {
@@ -607,12 +614,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     alsoTopics: ["suicide-risk"],
     title: "Young woman after an intentional ingestion",
     stem:
-      "A 27-year-old woman is brought in by a friend 3 hours after taking twenty 400 mg ibuprofen tablets after a fight with her partner. She has been seen three times this year for injuries, a wrist sprain and a facial bruise after falls, and once for alcohol intoxication. She has a 3-year-old son at home.\n\nVital signs: HR 90/min, BP 122/76 mmHg, RR 16/min, SpO2 99% on room air, temperature 36.7°C. Weight 60 kg. GCS 15.\n\nThere are fingertip shaped bruises on her left upper arm.",
+      "A 27-year-old woman is brought in by a friend 3 hours after taking twenty 400 mg ibuprofen tablets after a fight with her partner. She has been seen three times this year for injuries, a wrist sprain and a facial bruise after falls, and once for alcohol intoxication. She has a 3-year-old son at home.\n\nGCS is 15.\n\nThere are fingertip shaped bruises on her left upper arm.",
+    vitals: { temperature: "36.7°C", pulse: "90/minute", resp: "16/minute", bp: "122/76 mmHg", o2sat: "99% on room air", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE suicide risk factors you should ask about specifically.",
+        prompt: "What suicide risk factors should you ask about specifically?",
         required: 3,
         accept: [
           { id: "intent", text: "Intent and plan, and whether she still wants to die", match: ["intent", "plan", "want to die", "ongoing ideation", "suicidal ideation"] },
@@ -633,7 +641,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO features of her history that suggest undisclosed intimate partner violence.",
+        prompt: "What features of her history suggest undisclosed intimate partner violence?",
         required: 2,
         accept: [
           { id: "rep", text: "Repeated visits for injuries", match: ["repeat", "repeated", "recurrent", "multiple", "three visit", "frequent", "prior injury", "previous injury"] },
@@ -651,17 +659,17 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q3",
         kind: "single",
         update: "She discloses that her partner assaults her every week, sometimes in front of her son.",
-        prompt: "Which is most appropriate regarding her son? Select one.",
+        prompt: "Which of the following is the most appropriate action regarding her son?",
         options: [
-          "Report to child protection services (the children's aid society in Ontario), and tell her you are doing so, because repeated exposure to partner violence places her son at risk of harm",
-          "No report, because only the mother was assaulted",
+          "Advise her to report it herself within a week",
           "Report only if the child has physical injuries",
           "Report only with her written consent",
-          "Advise her to report it herself within a week",
+          "Report to child protection services and inform her",
+          "No report when only the mother is assaulted",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
-          "Children exposed to partner violence are at risk of emotional and physical harm. When there are reasonable grounds to suspect a child is in need of protection, the physician must report directly. Telling her, and framing the agency as a support, preserves trust and her safety.",
+          "Children exposed to partner violence are at risk of emotional and physical harm, and repeated exposure places her son at risk of harm. When there are reasonable grounds to suspect a child is in need of protection, the physician must report directly to child protection services, the children's aid society in Ontario. Telling her you are reporting, and framing the agency as a support, preserves trust and her safety.",
         keyFeature: { topic: "abuse-domestic", n: 6 },
         source: "cyfsa",
       },
@@ -669,7 +677,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q4",
         kind: "short",
         update: "Psychiatry assesses her suicide risk as low. She will stay with her sister tonight with her son.",
-        prompt: "List THREE elements of her discharge plan.",
+        prompt: "What are the elements of her discharge plan?",
         required: 3,
         accept: [
           { id: "fu", text: "Scheduled follow-up appointment", match: ["follow up", "appointment", "family physician", "scheduled"] },
@@ -699,7 +707,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE presentations that are associated with undisclosed intimate partner violence.",
+        prompt: "What presentations are associated with undisclosed intimate partner violence?",
         required: 3,
         accept: [
           { id: "ha", text: "Chronic headache", match: ["headache", "migraine"] },
@@ -719,17 +727,17 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate way to communicate with her about safety at home? Select one.",
+        prompt: "Which of the following is the most appropriate way to communicate with her about safety at home?",
         options: [
-          "Use a professional medical interpreter by phone or video, with her husband out of the room",
-          "Ask her husband to interpret as usual",
-          "Ask her 12-year-old son to interpret",
-          "Use gestures and simple English",
-          "Leave the question for her next visit",
+          "Ask her 12-year-old son to interpret for her",
+          "Ask her husband to interpret as he usually does",
+          "Leave the safety question for her next visit",
+          "Professional interpreter, with her husband out of the room",
+          "Use gestures and simple English with her",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
-          "Family interpreters, especially a possible abuser or a child, prevent disclosure and may put her at risk. A professional interpreter preserves confidentiality and accuracy. Remote interpreting is acceptable and fast.",
+          "Family interpreters, especially a possible abuser or a child, prevent disclosure and may put her at risk. A professional medical interpreter, with her husband out of the room, preserves confidentiality and accuracy. Remote interpreting by phone or video is acceptable and fast.",
         keyFeature: { topic: "abuse-domestic", n: 4 },
         source: "rnao-ipv",
       },
@@ -737,7 +745,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Through the interpreter, she discloses years of physical abuse. She does not want police involved and wants to go home tonight. There are no children at home.",
-        prompt: "List THREE actions before she leaves.",
+        prompt: "What actions should you take before she leaves?",
         required: 3,
         accept: [
           { id: "sp", text: "Make a safety plan with her", match: ["safety plan", "safety planning"] },
@@ -762,12 +770,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     topic: "abuse-domestic",
     title: "Woman with facial injuries after walking into a door",
     stem:
-      "A 35-year-old woman says she walked into a door last night.\n\nVital signs: HR 90/min, BP 128/80 mmHg, RR 16/min, SpO2 99% on room air, temperature 36.8°C.\n\nShe has left periorbital swelling, a subconjunctival hemorrhage and a tender nasal bridge. She reports right ear pain and muffled hearing. There is a bite mark on her right forearm. Visual acuity is 20/25 in both eyes. Pupils and eye movements are normal.",
+      "A 35-year-old woman says she walked into a door last night.\n\nShe has left periorbital swelling, a subconjunctival hemorrhage and a tender nasal bridge. She reports right ear pain and muffled hearing. There is a bite mark on her right forearm. Visual acuity is 20/25 in both eyes. Pupils and eye movements are normal.",
+    vitals: { temperature: "36.8°C", pulse: "90/minute", resp: "16/minute", bp: "128/80 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings that are inconsistent with the stated mechanism.",
+        prompt: "What findings are inconsistent with the stated mechanism?",
         required: 3,
         accept: [
           { id: "multi", text: "Injuries at several separate sites", match: ["multiple", "several", "more than one", "separate site", "both side", "bilateral"] },
@@ -783,7 +792,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE examinations or investigations to identify all of her injuries.",
+        prompt: "What examinations or investigations would identify all of her injuries?",
         required: 3,
         accept: [
           { id: "oto", text: "Otoscopy for tympanic membrane perforation", match: ["otoscopy", "otoscope", "ear exam", "tympanic"] },
@@ -802,17 +811,18 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "You are alone with her. Which opening is most appropriate? Select one.",
+        update: "You are alone with her.",
+        prompt: "Which of the following is the most appropriate way to open the conversation?",
         options: [
-          "Because violence at home is common, I ask everyone about it. Has someone hurt you?",
+          "I am required to call police about injuries like these",
+          "If your partner did this, you have to leave him",
+          "Violence at home is common. Has someone hurt you?",
+          "You must tell me the truth so I can help",
           "Your injuries do not match your story. Who did this?",
-          "You need to tell me the truth so I can help you.",
-          "If your partner did this, you have to leave him.",
-          "I am required to call police about injuries like these.",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
-          "Normalizing the question and asking directly, without accusation, makes disclosure easier. Confrontation and ultimatums damage trust. Stating a false duty to report to police will stop disclosure.",
+          "Saying that violence at home is common and that you ask everyone about it normalizes the question. Asking directly, without accusation, makes disclosure easier. Confrontation and ultimatums damage trust. Stating a false duty to report to police will stop disclosure.",
         keyFeature: { topic: "abuse-domestic", n: 4 },
         source: "rnao-ipv",
       },
@@ -820,7 +830,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q4",
         kind: "short",
         update: "She discloses that her husband assaulted her.",
-        prompt: "List TWO supports to involve before discharge.",
+        prompt: "What supports should you involve before discharge?",
         required: 2,
         accept: [
           { id: "sw", text: "Social worker", match: ["social work", "social worker", "sw"] },
@@ -845,12 +855,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Pregnant woman after a fall in the kitchen",
     stem:
-      "A 32-year-old woman, G3P2 at 30 weeks, says she fell against the kitchen counter 1 hour ago. She has lower abdominal pain, cramping and light vaginal bleeding. Her partner brought her and has gone to park the car. Her chart shows two ED visits for falls earlier in this pregnancy.\n\nVital signs: HR 108/min, BP 104/66 mmHg, RR 20/min, SpO2 98% on room air, temperature 36.7°C. Fetal heart rate 158/min.\n\nThe uterus is firm and tender. Her blood group is O Rh negative. She has not yet received antenatal Rh immune globulin.",
+      "A 32-year-old woman, G3P2 at 30 weeks, says she fell against the kitchen counter 1 hour ago. She has lower abdominal pain, cramping and light vaginal bleeding. Her partner brought her and has gone to park the car. Her chart shows two ED visits for falls earlier in this pregnancy.\n\nThe fetal heart rate is 158/minute.\n\nThe uterus is firm and tender. Her blood group is O Rh negative. She has not yet received antenatal Rh immune globulin.",
+    vitals: { temperature: "36.7°C", pulse: "108/minute", resp: "20/minute", bp: "104/66 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE immediate management steps specific to her pregnancy.",
+        prompt: "What immediate management steps are specific to her pregnancy?",
         required: 3,
         accept: [
           { id: "tilt", text: "Left lateral tilt or manual uterine displacement", match: ["left lateral", "tilt", "uterine displacement", "left side", "displace the uterus"] },
@@ -870,7 +881,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q2",
         kind: "short",
         update: "While her partner is parking, she tells the nurse she is afraid to go home.",
-        prompt: "List TWO features that should have raised suspicion of partner violence even before her statement.",
+        prompt: "What features should have raised suspicion of partner violence even before her statement?",
         required: 2,
         accept: [
           { id: "preg", text: "Pregnancy", match: ["pregnancy", "pregnant"] },
@@ -886,17 +897,17 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which Rh immune globulin plan is most appropriate? Select one.",
+        prompt: "Which of the following Rh immune globulin plans is most appropriate for her?",
         options: [
-          "Rh immune globulin 300 mcg IM now, with a Kleihauer-Betke test to decide whether more is needed",
+          "Give Rh immune globulin only if the bleeding becomes heavy",
+          "Rh immune globulin 300 mcg IM now, plus Kleihauer-Betke",
           "Rh immune globulin 120 mcg IM with no further testing",
           "Wait for the Kleihauer-Betke result before giving any dose",
-          "Give Rh immune globulin only if the bleeding becomes heavy",
-          "No Rh immune globulin because the trauma was minor",
+          "No Rh immune globulin after minor trauma",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
-          "Abdominal trauma in the third trimester can cause significant fetomaternal hemorrhage. Give a standard dose within 72 hours and quantify the hemorrhage to decide on extra doses. Waiting or withholding risks alloimmunization.",
+          "Abdominal trauma in the third trimester can cause significant fetomaternal hemorrhage. Give a standard 300 mcg dose within 72 hours and use a Kleihauer-Betke test to quantify the hemorrhage and decide whether more is needed. Waiting or withholding risks alloimmunization.",
         keyFeature: { topic: "multiple-trauma", n: 4 },
         source: "sogc-rh",
       },
@@ -910,12 +921,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     alsoTopics: ["burns"],
     title: "Man with a scald to the back",
     stem:
-      "A 41-year-old man has a scald to his upper back and the back of both shoulders. He says he spilled a kettle while reaching into a cupboard last evening. He waited until this morning to come in. His wife drove him. His chart shows two recent visits for a hand laceration from broken glass and a black eye from a cupboard door.\n\nVital signs: HR 104/min, BP 142/88 mmHg, RR 18/min, SpO2 98% on room air, temperature 36.9°C. Weight 82 kg.\n\nThe burn is superficial partial thickness, covering about 6% of body surface area, with sharp margins and drip marks running down his back.",
+      "A 41-year-old man has a scald to his upper back and the back of both shoulders. He says he spilled a kettle while reaching into a cupboard last evening. He waited until this morning to come in. His wife drove him. His chart shows two recent visits for a hand laceration from broken glass and a black eye from a cupboard door.\n\nThe burn is superficial partial thickness, covering about 6% of body surface area, with sharp margins and drip marks running down his back.",
+    vitals: { temperature: "36.9°C", pulse: "104/minute", resp: "18/minute", bp: "142/88 mmHg", o2sat: "98% on room air", weight: "82 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features suggesting this burn may have been inflicted.",
+        prompt: "What features suggest this burn may have been inflicted?",
         required: 3,
         accept: [
           { id: "loc", text: "Location on the back does not fit the stated mechanism", match: ["back", "posterior", "location", "inconsistent", "mechanism"] },
@@ -932,7 +944,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO other injury patterns in adults that should raise concern for partner violence.",
+        prompt: "What other injury patterns in adults should raise concern for partner violence?",
         required: 2,
         accept: [
           { id: "head", text: "Head, face and neck injuries", match: ["head", "face", "facial", "neck"] },
@@ -953,7 +965,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO ways to find other current or past injuries.",
+        prompt: "How can you find other current or past injuries?",
         required: 2,
         accept: [
           { id: "skin", text: "Complete skin examination with the patient undressed", match: ["skin", "undress", "undressed", "head to toe", "full body", "full exam", "complete exam"] },
@@ -970,17 +982,17 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q4",
         kind: "single",
         update: "He discloses that his wife threw the kettle at him. He has nowhere else to stay tonight.",
-        prompt: "Which disposition is most appropriate? Select one.",
+        prompt: "Which of the following dispositions is most appropriate for him?",
         options: [
-          "Admit or arrange a safe alternative, because an unsafe home is itself a reason not to discharge a burn patient",
-          "Discharge home with dressings, because a 6% partial thickness burn is minor",
-          "Transfer to a burn centre for grafting",
-          "Discharge with oral antibiotics",
+          "Admit or arrange a safe alternative",
           "Discharge and ask police to remove his wife",
+          "Discharge home with dressings and clinic follow-up",
+          "Discharge home with oral antibiotics",
+          "Transfer to a burn centre for grafting",
         ],
         correct: 0,
         explanation:
-          "Burn disposition depends on home circumstances as well as size and site. Suspected abuse and an unsafe home are indications for admission or a safe placement. Prophylactic antibiotics are not indicated.",
+          "Burn disposition depends on home circumstances as well as size and site. An unsafe home is itself a reason not to discharge a burn patient. Suspected abuse and an unsafe home are indications for admission or a safe placement, even for a 6% partial thickness burn. Prophylactic antibiotics are not indicated.",
         keyFeature: { topic: "burns", n: 5 },
         source: "aba",
       },
@@ -993,12 +1005,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     topic: "abuse-domestic",
     title: "Recent newcomer with pelvic pain",
     stem:
-      "A 26-year-old woman who arrived in Canada 8 months ago as a sponsored spouse presents with vaginal discharge and pelvic pain. She speaks Arabic and limited English. A neighbour brought her. She mentions that her husband keeps her passport and health card and controls all the money. She has no friends or family in Canada.\n\nVital signs: HR 84/min, BP 112/70 mmHg, RR 14/min, SpO2 99% on room air, temperature 37.0°C.",
+      "A 26-year-old woman who arrived in Canada 8 months ago as a sponsored spouse presents with vaginal discharge and pelvic pain. She speaks Arabic and limited English. A neighbour brought her. She mentions that her husband keeps her passport and health card and controls all the money. She has no friends or family in Canada.",
+    vitals: { temperature: "37.0°C", pulse: "84/minute", resp: "14/minute", bp: "112/70 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of her situation that increase her risk of undisclosed abuse.",
+        prompt: "What features of her situation increase her risk of undisclosed abuse?",
         required: 3,
         accept: [
           { id: "imm", text: "Recent immigration and dependence on a spousal sponsor", match: ["sponsor", "sponsorship", "sponsored", "immigration", "newcomer", "immigrant"] },
@@ -1016,7 +1029,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO things you should do to help her disclose safely.",
+        prompt: "What should you do to help her disclose safely?",
         required: 2,
         accept: [
           { id: "interp", text: "Use a professional interpreter", match: ["interpreter"] },
@@ -1034,7 +1047,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
         id: "q3",
         kind: "short",
         update: "She discloses physical and sexual abuse. She is afraid that leaving her husband will get her deported.",
-        prompt: "List TWO accurate responses or referrals that address her fear and build trust.",
+        prompt: "What accurate responses or referrals would address her fear and build trust?",
         required: 2,
         accept: [
           { id: "legal", text: "Refer to legal aid or an immigration lawyer for accurate advice", match: ["legal", "lawyer", "legal aid"] },
@@ -1058,12 +1071,13 @@ export const ABUSE_DOMESTIC: Samp[] = [
     topic: "abuse-domestic",
     title: "Young man from a group home with foot burns",
     stem:
-      "A 23-year-old man with an intellectual disability and limited speech lives in a group home. Staff bring him in with burns to both feet. They say he stepped into a hot bath.\n\nVital signs: HR 112/min, BP 124/76 mmHg, RR 20/min, SpO2 98% on room air, temperature 37.0°C. Weight 70 kg.\n\nBoth feet have symmetrical partial thickness burns up to the ankles with a sharp horizontal upper margin. There are no splash marks. The soles are spared. He becomes distressed whenever one staff member approaches.",
+      "A 23-year-old man with an intellectual disability and limited speech lives in a group home. Staff bring him in with burns to both feet. They say he stepped into a hot bath.\n\nBoth feet have symmetrical partial thickness burns up to the ankles with a sharp horizontal upper margin. There are no splash marks. The soles are spared. He becomes distressed whenever one staff member approaches.",
+    vitals: { temperature: "37.0°C", pulse: "112/minute", resp: "20/minute", bp: "124/76 mmHg", o2sat: "98% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features of this burn that suggest forced immersion.",
+        prompt: "What features of this burn suggest forced immersion?",
         required: 3,
         accept: [
           { id: "sym", text: "Symmetrical burns on both feet", match: ["symmetric", "symmetrical", "bilateral", "both feet"] },
@@ -1081,7 +1095,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO steps to identify other current or old injuries.",
+        prompt: "What steps would identify other current or old injuries?",
         required: 2,
         accept: [
           { id: "skin", text: "Complete skin examination", match: ["skin", "head to toe", "full body", "undress", "full exam", "complete exam"] },
@@ -1098,7 +1112,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO ways to help him communicate safely about what happened.",
+        prompt: "How can you help him communicate safely about what happened?",
         required: 2,
         accept: [
           { id: "sep", text: "Speak with him away from the staff member", match: ["away from staff", "without staff", "away from the staff", "alone", "separate", "private"] },
@@ -1126,7 +1140,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE indicators of intimate partner abuse in her story.",
+        prompt: "What indicators of intimate partner abuse are in her story?",
         required: 3,
         accept: [
           { id: "sab", text: "Contraceptive sabotage", match: ["pill", "birth control", "contraceptive", "contraception", "sabotage"] },
@@ -1143,7 +1157,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO elements of a supportive response to her disclosure.",
+        prompt: "What are the elements of a supportive response to her disclosure?",
         required: 2,
         accept: [
           { id: "val", text: "Believe and validate her, and say it is not her fault", match: ["believe", "validate", "not your fault", "not her fault", "acknowledge"] },
@@ -1161,7 +1175,7 @@ export const ABUSE_DOMESTIC: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO other patient groups in whom you should have a higher index of suspicion for undisclosed partner abuse.",
+        prompt: "In which other patient groups should you have a higher index of suspicion for undisclosed partner abuse?",
         required: 2,
         accept: [
           { id: "preg", text: "Pregnant patients", match: ["pregnant", "pregnancy"] },

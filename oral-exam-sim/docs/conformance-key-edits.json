@@ -673,6 +673,237 @@
    "after": [
     "Find her incapable for dialysis, seek consent from husband"
    ]
+  },
+  "abdominal-pain-01#q4": {
+   "batch": "s01",
+   "before": [
+    "Transfuse uncrossmatched group O red cells",
+    "Target a systolic BP of 70 to 90 mmHg while mentation is preserved"
+   ],
+   "after": [
+    "Transfuse uncrossmatched group O red cells",
+    "Target systolic BP of 70 to 90 mmHg while alert"
+   ]
+  },
+  "abdominal-pain-04#q4": {
+   "batch": "s01",
+   "before": [
+    "No CT. Pneumonia explains his findings. CT radiation carries a higher lifetime cancer risk in children. Return if the pain localizes or worsens."
+   ],
+   "after": [
+    "No CT, with return if the pain localizes or worsens"
+   ]
+  },
+  "abdominal-pain-05#q2": {
+   "batch": "s01",
+   "before": [
+    "ASA 160 mg chewed",
+    "Activate the catheterization lab for primary PCI"
+   ],
+   "after": [
+    "ASA 160 mg chewed",
+    "Activate catheterization lab for primary PCI"
+   ]
+  },
+  "abdominal-pain-06#q3": {
+   "batch": "s01",
+   "before": [
+    "Regular insulin infusion at 0.1 units/kg/h with no bolus. Hold potassium replacement while potassium is above 5.0 mmol/L and recheck it often."
+   ],
+   "after": [
+    "Insulin 0.1 units/kg/h, no bolus, KCl held above 5.0 mmol/L"
+   ]
+  },
+  "abdominal-pain-06#q4": {
+   "batch": "s01",
+   "before": [
+    "No CT. Pain that resolves with correction of DKA supports DKA as the cause. Reassess and image only if pain persists."
+   ],
+   "after": [
+    "No CT, reassess and image only if pain persists"
+   ]
+  },
+  "abdominal-pain-08#q4": {
+   "batch": "s01",
+   "before": [
+    "Current SOGC guidance advises against routine Rh immune globulin for an ectopic pregnancy at this gestation. Document her Rh status and discuss it with her."
+   ],
+   "after": [
+    "Discuss and record Rh status, no routine Rh immune globulin"
+   ]
+  },
+  "abdominal-pain-09#q2": {
+   "batch": "s01",
+   "before": [
+    "Urgent urology consultation for surgical exploration without waiting for ultrasound"
+   ],
+   "after": [
+    "Urgent urology exploration without waiting for ultrasound"
+   ]
+  },
+  "abdominal-pain-09#q3": {
+   "batch": "s01",
+   "before": [
+    "A normal Doppler ultrasound yesterday does not exclude torsion today"
+   ],
+   "after": [
+    "A normal Doppler yesterday does not exclude torsion today"
+   ]
+  },
+  "abdominal-pain-10#q4": {
+   "batch": "s01",
+   "before": [
+    "0.9% sodium chloride 180 mL IV over 5 to 20 minutes"
+   ],
+   "after": [
+    "0.9% saline 180 mL IV over 5 to 20 minutes"
+   ]
+  },
+  "abdominal-pain-12#q1": {
+   "batch": "s01",
+   "before": [
+    "Point-of-care renal ultrasound for hydronephrosis, with no CT if the course is uncomplicated"
+   ],
+   "after": [
+    "Renal POCUS, with no CT if the course is uncomplicated"
+   ]
+  },
+  "abdominal-pain-12#q3": {
+   "batch": "s01",
+   "before": [
+    "Ketorolac 15 mg IV",
+    "Tamsulosin 0.4 mg PO daily if the stone is distal and 5 to 10 mm"
+   ],
+   "after": [
+    "Ketorolac 15 mg IV",
+    "Tamsulosin 0.4 mg PO daily, distal 5 to 10 mm"
+   ]
+  },
+  "abdominal-pain-13#q2": {
+   "batch": "s01",
+   "before": [
+    "No. Typical pain plus lipase above three times normal confirms pancreatitis. Reserve CT for diagnostic doubt or failure to improve."
+   ],
+   "after": [
+    "No CT, reserved for diagnostic doubt or failure to improve"
+   ]
+  },
+  "abdominal-pain-14#q3": {
+   "batch": "s01",
+   "before": [
+    "Ask the surgeon to assess him now, because free air with peritonitis needs operative management without further imaging"
+   ],
+   "after": [
+    "Ask the surgeon to assess him now, without further imaging"
+   ]
+  },
+  "abuse-domestic-01#q3": {
+   "batch": "s01",
+   "before": [
+    "Obstetric assessment with fetal monitoring, obstetric ultrasound and Rh status"
+   ],
+   "after": [
+    "Fetal monitoring, obstetric ultrasound and Rh status"
+   ]
+  },
+  "abuse-domestic-02#q2": {
+   "batch": "s01",
+   "before": [
+    "Ask privately and directly, using the same questions asked of all patients, regardless of gender or relationship"
+   ],
+   "after": [
+    "Ask privately and directly, as with every patient"
+   ]
+  },
+  "abuse-domestic-02#q4": {
+   "batch": "s01",
+   "before": [
+    "Respect his decision, document carefully, provide resources and a safety plan, and offer follow-up"
+   ],
+   "after": [
+    "Respect wishes, document, resources, safety plan, follow-up"
+   ]
+  },
+  "abuse-domestic-04#q3": {
+   "batch": "s01",
+   "before": [
+    "Admit her for safety, involve social work, and address concerns about her substitute decision maker"
+   ],
+   "after": [
+    "Admit, involve social work, address decision maker concerns"
+   ]
+  },
+  "abuse-domestic-05#q1": {
+   "batch": "s01",
+   "before": [
+    "Report immediately to the Director under the Fixing Long-Term Care Act, 2021, because you have reasonable grounds to suspect abuse that caused harm or a risk of harm"
+   ],
+   "after": [
+    "Report immediately to the long-term care Director"
+   ]
+  },
+  "abuse-domestic-06#q3": {
+   "batch": "s01",
+   "before": [
+    "Report directly and promptly to child protection services yourself (the children's aid society in Ontario)"
+   ],
+   "after": [
+    "Report promptly to child protection services yourself"
+   ]
+  },
+  "abuse-domestic-07#q3": {
+   "batch": "s01",
+   "before": [
+    "A hospital sexual assault and domestic violence program with trained nurse examiners"
+   ],
+   "after": [
+    "Hospital sexual assault program with trained nurse examiners"
+   ]
+  },
+  "abuse-domestic-08#q3": {
+   "batch": "s01",
+   "before": [
+    "Report to child protection services (the children's aid society in Ontario), and tell her you are doing so, because repeated exposure to partner violence places her son at risk of harm"
+   ],
+   "after": [
+    "Report to child protection services and inform her"
+   ]
+  },
+  "abuse-domestic-09#q2": {
+   "batch": "s01",
+   "before": [
+    "Use a professional medical interpreter by phone or video, with her husband out of the room"
+   ],
+   "after": [
+    "Professional interpreter, with her husband out of the room"
+   ]
+  },
+  "abuse-domestic-10#q3": {
+   "batch": "s01",
+   "before": [
+    "Because violence at home is common, I ask everyone about it. Has someone hurt you?"
+   ],
+   "after": [
+    "Violence at home is common. Has someone hurt you?"
+   ]
+  },
+  "abuse-domestic-11#q3": {
+   "batch": "s01",
+   "before": [
+    "Rh immune globulin 300 mcg IM now, with a Kleihauer-Betke test to decide whether more is needed"
+   ],
+   "after": [
+    "Rh immune globulin 300 mcg IM now, plus Kleihauer-Betke"
+   ]
+  },
+  "abuse-domestic-12#q4": {
+   "batch": "s01",
+   "before": [
+    "Admit or arrange a safe alternative, because an unsafe home is itself a reason not to discharge a burn patient"
+   ],
+   "after": [
+    "Admit or arrange a safe alternative"
+   ]
   }
  }
 }

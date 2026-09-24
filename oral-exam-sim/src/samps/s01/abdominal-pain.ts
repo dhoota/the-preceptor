@@ -7,26 +7,26 @@ const meta = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", ve
 
 const SRC: Record<string, Source> = {
   svsAaa: { id: "svs-aaa", citation: "Society for Vascular Surgery. Practice guidelines on the care of patients with an abdominal aortic aneurysm. 2018." },
-  esvsMes: { id: "esvs-mesenteric", citation: "European Society for Vascular Surgery. Clinical practice guidelines on the management of diseases of the mesenteric arteries and veins." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli's Emergency Medicine: A Comprehensive Study Guide. Acute abdominal pain chapter." },
-  rosen: { id: "rosen", citation: "Rosen's Emergency Medicine: Concepts and Clinical Practice." },
-  acrRlq: { id: "acr-rlq", citation: "American College of Radiology. ACR Appropriateness Criteria. Right lower quadrant pain." },
-  wsesAppy: { id: "wses-appy", citation: "World Society of Emergency Surgery. Jerusalem guidelines for the diagnosis and treatment of acute appendicitis." },
-  cpsCap: { id: "cps-cap", citation: "Canadian Paediatric Society. Uncomplicated pneumonia in healthy Canadian children and youth. Practice points for management." },
-  imageGently: { id: "image-gently", citation: "Image Gently Alliance. Radiation safety in paediatric imaging." },
-  ccsStemi: { id: "ccs-stemi", citation: "Canadian Cardiovascular Society and Canadian Association of Interventional Cardiology. Focused update of the guidelines for the management of ST elevation myocardial infarction." },
-  dcDka: { id: "dc-dka", citation: "Diabetes Canada Clinical Practice Guidelines. Hyperglycemic emergencies in adults." },
+  esvsMes: { id: "esvs-mesenteric", citation: "Bjorck M and colleagues. Management of the diseases of mesenteric arteries and veins: clinical practice guidelines of the European Society for Vascular Surgery. Eur J Vasc Endovasc Surg. 2017." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, Ma OJ, Yealy DM, and colleagues, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. 2020. Acute abdominal pain chapter." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. 2023." },
+  acrRlq: { id: "acr-rlq", citation: "American College of Radiology. ACR Appropriateness Criteria. Right lower quadrant pain: 2022 update. J Am Coll Radiol. 2022." },
+  wsesAppy: { id: "wses-appy", citation: "Di Saverio S and colleagues. Diagnosis and treatment of acute appendicitis: 2020 update of the WSES Jerusalem guidelines. World J Emerg Surg. 2020." },
+  cpsCap: { id: "cps-cap", citation: "Le Saux N, Robinson JL. Canadian Paediatric Society. Uncomplicated pneumonia in healthy Canadian children and youth: practice points for management. Paediatr Child Health. 2015. Updated 2024." },
+  imageGently: { id: "pearce-ct", citation: "Pearce MS and colleagues. Radiation exposure from CT scans in childhood and subsequent risk of leukaemia and brain tumours: a retrospective cohort study. Lancet. 2012." },
+  ccsStemi: { id: "ccs-stemi", citation: "Wong GC and colleagues. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction: focused update on regionalization and reperfusion. Can J Cardiol. 2019." },
+  dcDka: { id: "dc-dka", citation: "Goguen J, Gilbert J. Diabetes Canada Clinical Practice Guidelines Expert Committee. Hyperglycemic emergencies in adults. Can J Diabetes. 2018." },
   idsaAsb: { id: "idsa-asb", citation: "Infectious Diseases Society of America. Clinical practice guideline for the management of asymptomatic bacteriuria. 2019." },
-  sisIai: { id: "sis-iai", citation: "Surgical Infection Society and Infectious Diseases Society of America. Guidelines for the diagnosis and management of complicated intra-abdominal infection." },
-  sogcEctopic: { id: "sogc-ectopic", citation: "Society of Obstetricians and Gynaecologists of Canada. Clinical practice guideline on the diagnosis and management of ectopic pregnancy." },
+  sisIai: { id: "sis-iai", citation: "Solomkin JS and colleagues. Diagnosis and management of complicated intra-abdominal infection in adults and children: guidelines by the Surgical Infection Society and the Infectious Diseases Society of America. Clin Infect Dis. 2010." },
+  sogcEctopic: { id: "sogc-ectopic", citation: "Po L and colleagues. Guideline No. 414: management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. J Obstet Gynaecol Can. 2021." },
   sogcRh: { id: "sogc-rh", citation: "Society of Obstetricians and Gynaecologists of Canada. Guideline No. 448. Prevention of Rh D alloimmunization. 2024." },
   twist: { id: "twist", citation: "Barbosa JA and colleagues. Development and initial validation of a scoring system to diagnose testicular torsion in children. J Urol. 2013." },
-  acog723: { id: "acog-723", citation: "American College of Obstetricians and Gynecologists. Committee Opinion No. 723. Guidelines for diagnostic imaging during pregnancy and lactation." },
-  caepCw: { id: "caep-cw", citation: "Choosing Wisely Canada. Emergency medicine recommendations from the Canadian Association of Emergency Physicians." },
-  eauStone: { id: "eau-stone", citation: "European Association of Urology. Guidelines on urolithiasis." },
-  acgPanc: { id: "acg-panc", citation: "American College of Gastroenterology. Guideline on the management of acute pancreatitis." },
-  wsesPud: { id: "wses-pud", citation: "World Society of Emergency Surgery. Guidelines on perforated and bleeding peptic ulcer." },
-  wsesSbo: { id: "wses-sbo", citation: "World Society of Emergency Surgery. Bologna guidelines for the diagnosis and management of adhesive small bowel obstruction." },
+  acog723: { id: "acog-723", citation: "American College of Obstetricians and Gynecologists. Committee Opinion No. 723. Guidelines for diagnostic imaging during pregnancy and lactation. Obstet Gynecol. 2017." },
+  caepCw: { id: "smith-bindman", citation: "Smith-Bindman R and colleagues. Ultrasonography versus computed tomography for suspected nephrolithiasis. N Engl J Med. 2014." },
+  eauStone: { id: "eau-stone", citation: "European Association of Urology. EAU guidelines on urolithiasis. 2025 edition." },
+  acgPanc: { id: "acg-panc", citation: "Tenner S and colleagues. American College of Gastroenterology guidelines: management of acute pancreatitis. Am J Gastroenterol. 2024." },
+  wsesPud: { id: "wses-pud", citation: "Tarasconi A and colleagues. Perforated and bleeding peptic ulcer: WSES guidelines. World J Emerg Surg. 2020." },
+  wsesSbo: { id: "wses-sbo", citation: "Ten Broek RPG and colleagues. Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update of the evidence-based guidelines from the World Society of Emergency Surgery ASBO working group. World J Emerg Surg. 2018." },
 };
 
 export const ABDOMINAL_PAIN: Samp[] = [
@@ -36,12 +36,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
     alsoTopics: ["shock"],
     title: "Older man with sudden flank pain",
     stem:
-      "A 74-year-old man arrives at 02:00 with sudden severe left flank pain radiating to the left groin. It began 90 minutes ago. He vomited once. He thinks he is passing a kidney stone, although he has never had one. He has hypertension and smokes one pack per day.\n\nVital signs: HR 112/min, BP 96/58 mmHg, RR 22/min, SpO2 96% on room air, temperature 36.4°C. Weight 88 kg.\n\nHe is pale and diaphoretic. The abdomen is mildly tender in the left lower quadrant. Urinalysis shows trace blood.",
+      "A 74-year-old man arrives at 02:00 with sudden severe left flank pain radiating to the left groin. It began 90 minutes ago. He vomited once. He thinks he is passing a kidney stone, although he has never had one. He has hypertension and smokes one pack per day.\n\nHe is pale and diaphoretic. The abdomen is mildly tender in the left lower quadrant. Urinalysis shows trace blood.",
+    vitals: { temperature: "36.4°C", pulse: "112/minute", resp: "22/minute", bp: "96/58 mmHg", o2sat: "96% on room air", weight: "88 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE life-threatening diagnoses you must consider before accepting renal colic.",
+        prompt: "What life-threatening diagnoses must you consider before accepting renal colic?",
         required: 3,
         accept: [
           { id: "aaa", text: "Ruptured abdominal aortic aneurysm", match: ["aaa", "aortic aneurysm", "aneurysm", "abdominal aortic"] },
@@ -61,15 +62,15 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate next investigation? Select one.",
+        prompt: "Which of the following is the most appropriate next investigation for him?",
         options: [
-          "Point-of-care ultrasound of the abdominal aorta",
+          "Formal renal ultrasound in the morning",
           "Non-contrast CT of the kidneys, ureters and bladder",
           "Plain abdominal radiograph",
-          "Formal renal ultrasound in the morning",
-          "Urine culture",
+          "Point-of-care ultrasound of the abdominal aorta",
+          "Urinalysis with microscopy and culture",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "Bedside ultrasound identifies an aneurysm within minutes and can be done during resuscitation. A hypotensive patient should not leave the department for CT. Ultrasound does not reliably show rupture, but an aneurysm plus shock is enough to act.",
         keyFeature: { topic: "abdominal-pain", n: 5 },
@@ -79,7 +80,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Bedside ultrasound shows a 7.2 cm infrarenal aorta. BP is now 84/50 mmHg. He is alert and oriented.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 3,
         accept: [
           { id: "surg", text: "Call vascular surgery now for the operating room", match: ["vascular surgery", "vascular surgeon", "surgeon", "operating room", "surgery"] },
@@ -102,21 +103,21 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q4",
         kind: "menu",
         update: "BP is 78/46 mmHg after 500 mL of normal saline. He remains alert. The vascular surgeon is 20 minutes away.",
-        prompt: "Which TWO of the following are most appropriate now? Select TWO.",
+        prompt: "Which of the following are the most appropriate actions for him now?",
         options: [
-          "Transfuse uncrossmatched group O red cells",
-          "Target a systolic BP of 70 to 90 mmHg while mentation is preserved",
           "Give another 2 L of normal saline wide open",
-          "Start norepinephrine to a MAP of 80 mmHg",
           "Give 1 L of 5% albumin",
-          "Target a systolic BP above 120 mmHg",
-          "Insert a nasogastric tube",
           "Give tranexamic acid as the main therapy",
+          "Insert a nasogastric tube",
+          "Start norepinephrine to a MAP of 80 mmHg",
+          "Target a systolic BP above 120 mmHg",
+          "Target systolic BP of 70 to 90 mmHg while alert",
+          "Transfuse uncrossmatched group O red cells",
         ],
         select: 2,
-        correct: [0, 1],
+        correct: [7, 6],
         explanation:
-          "Blood is the resuscitation fluid for hemorrhagic shock. Uncrossmatched group O Rh positive red cells are acceptable for a man. Large crystalloid volumes cause dilutional coagulopathy and may worsen bleeding. A lower pressure target is accepted while the patient stays alert and until the aorta is controlled.",
+          "Blood is the resuscitation fluid for hemorrhagic shock. Uncrossmatched group O Rh positive red cells are acceptable for a man. Large crystalloid volumes cause dilutional coagulopathy and may worsen bleeding. A systolic target of 70 to 90 mmHg is accepted while mentation is preserved and until the aorta is controlled.",
         keyFeature: { topic: "shock", n: 3 },
         source: "svs-aaa",
       },
@@ -129,12 +130,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
     topic: "abdominal-pain",
     title: "Older woman with severe periumbilical pain",
     stem:
-      "A 79-year-old woman presents with severe periumbilical pain that started suddenly 4 hours ago. She vomited twice and had one loose stool. She has atrial fibrillation. She stopped apixaban 2 weeks ago after a nosebleed.\n\nVital signs: HR 118/min irregular, BP 142/84 mmHg, RR 22/min, SpO2 95% on room air, temperature 36.9°C. Weight 61 kg.\n\nShe is writhing and asking for help. The abdomen is soft with mild diffuse tenderness and no guarding. Lactate is 1.8 mmol/L. WBC is 16.2 x 10^9/L.",
+      "A 79-year-old woman presents with severe periumbilical pain that started suddenly 4 hours ago. She vomited twice and had one loose stool. She has atrial fibrillation. She stopped apixaban 2 weeks ago after a nosebleed.\n\nShe is writhing and asking for help. The abdomen is soft with mild diffuse tenderness and no guarding. Lactate is 1.8 mmol/L. WBC is 16.2 x 10^9/L.",
+    vitals: { temperature: "36.9°C", pulse: "118/minute irregular", resp: "22/minute", bp: "142/84 mmHg", o2sat: "95% on room air", weight: "61 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE serious diagnoses that must be excluded.",
+        prompt: "What serious diagnoses must be excluded?",
         required: 3,
         accept: [
           { id: "mes", text: "Acute mesenteric ischemia", match: ["mesenteric", "ischemic bowel", "bowel ischemia"] },
@@ -155,14 +157,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate imaging test? Select one.",
+        prompt: "Which of the following is the most appropriate imaging test for her?",
         options: [
           "CT angiography of the abdomen and pelvis",
-          "Abdominal ultrasound",
+          "MRI of the abdomen and pelvis",
+          "Non-contrast CT of the abdomen and pelvis",
+          "Ultrasound of the abdomen and pelvis",
           "Upright chest and abdominal radiographs",
-          "Non-contrast CT of the abdomen",
-          "MRI of the abdomen",
-          "Colonoscopy",
         ],
         correct: 0,
         explanation:
@@ -173,15 +174,16 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "The resident suggests ischemia is unlikely because the lactate is normal. Which statement is most accurate? Select one.",
+        update: "The resident suggests ischemia is unlikely because the lactate is normal.",
+        prompt: "Which of the following statements about her lactate is most accurate?",
         options: [
+          "A lactate under 2 mmol/L rules out acute mesenteric ischemia",
           "A normal lactate does not exclude early mesenteric ischemia",
-          "A lactate under 2 mmol/L rules out bowel ischemia",
-          "Lactate is only useful when the WBC is normal",
           "A normal lactate means CT can wait until morning",
           "An elevated lactate is specific for bowel ischemia",
+          "Lactate is only useful when the WBC is normal",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Lactate is insensitive early in mesenteric ischemia because the liver clears lactate from the portal circulation. It rises late, often after infarction. It is also nonspecific. Decisions rest on clinical suspicion and CTA.",
         keyFeature: { topic: "abdominal-pain", n: 6 },
@@ -191,7 +193,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CT angiography shows an embolus occluding the proximal superior mesenteric artery. There is no free air.",
-        prompt: "List THREE management steps now.",
+        prompt: "What are the management steps now?",
         required: 3,
         accept: [
           { id: "surg", text: "Emergent vascular and general surgery consultation for revascularization", match: ["vascular", "surgery", "surgeon", "revascularization", "embolectomy", "interventional radiology"] },
@@ -216,12 +218,14 @@ export const ABDOMINAL_PAIN: Samp[] = [
     topic: "abdominal-pain",
     title: "Young woman with right lower quadrant pain",
     stem:
-      "A 23-year-old woman has 20 hours of abdominal pain. It began around the umbilicus and has moved to the right lower quadrant. She has anorexia and nausea. Her last menstrual period was 5 weeks ago. She is sexually active and uses condoms inconsistently.\n\nVital signs: HR 96/min, BP 118/72 mmHg, RR 16/min, SpO2 99% on room air, temperature 37.2°C. Weight 60 kg.\n\nShe has right lower quadrant tenderness with voluntary guarding. There is no costovertebral angle tenderness.",
+      "A 23-year-old woman has 20 hours of abdominal pain. It began around the umbilicus and has moved to the right lower quadrant. She has anorexia and nausea. Her last menstrual period was 5 weeks ago. She is sexually active and uses condoms inconsistently.\n\nShe has right lower quadrant tenderness with voluntary guarding. There is no costovertebral angle tenderness.",
+    vitals: { temperature: "37.2°C", pulse: "96/minute", resp: "16/minute", bp: "118/72 mmHg", o2sat: "99% on room air", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Appendicitis is your leading concern. List THREE alternative diagnoses in her that would change your first investigations.",
+        update: "Appendicitis is your leading concern.",
+        prompt: "What alternative diagnoses in her would change your first investigations?",
         required: 3,
         accept: [
           { id: "ect", text: "Ectopic pregnancy", match: ["ectopic"] },
@@ -242,16 +246,16 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "Serum beta hCG is negative. WBC is 9.4 x 10^9/L.",
-        prompt: "The resident says appendicitis is unlikely because she is afebrile with a normal white count. Which statement is most accurate? Select one.",
+        update: "Serum beta hCG is negative. WBC is 9.4 x 10^9/L. The resident says appendicitis is unlikely because she is afebrile with a normal white count.",
+        prompt: "Which of the following statements about her temperature and white count is most accurate?",
         options: [
-          "A normal temperature and WBC do not rule out appendicitis",
-          "Appendicitis is excluded when both are normal",
-          "Only fever above 38.5°C is a reliable sign of appendicitis",
           "A normal CRP in 6 hours would exclude appendicitis",
+          "A normal temperature and WBC do not rule out appendicitis",
+          "Appendicitis is excluded when both values are normal",
+          "Only fever above 38.5°C is a reliable sign of appendicitis",
           "She can be discharged if the pain improves with analgesia",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Fever and leukocytosis are each absent in a large share of confirmed appendicitis, especially early. No single finding is sensitive enough to exclude it. Migration of pain and localized peritonism carry more weight. Analgesia does not mask the diagnosis.",
         keyFeature: { topic: "abdominal-pain", n: 6 },
@@ -260,7 +264,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "Name the most appropriate first imaging test for her.",
+        prompt: "What is the most appropriate first imaging test for her?",
         required: 1,
         accept: [
           { id: "us", text: "Ultrasound of the right lower quadrant and pelvis", match: ["ultrasound", "us", "sonography", "sonogram", "transvaginal"] },
@@ -275,7 +279,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q4",
         kind: "short",
         update: "Urinalysis shows 10 to 20 WBC per high power field, no nitrites and no bacteria. She has no dysuria. The resident proposes treating a urinary tract infection.",
-        prompt: "List TWO reasons this urinalysis should not change your working diagnosis.",
+        prompt: "Why should this urinalysis not change your working diagnosis?",
         required: 2,
         accept: [
           { id: "adj", text: "An inflamed appendix next to the ureter or bladder causes sterile pyuria", match: ["adjacent", "ureter", "bladder", "next to", "sterile pyuria", "inflamed appendix", "irritation"] },
@@ -299,12 +303,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Child with fever and abdominal pain",
     stem:
-      "A 7-year-old boy has 1 day of abdominal pain, fever and two episodes of vomiting. He has a mild cough. His parents are worried about his appendix.\n\nVital signs: HR 136/min, RR 34/min, BP 102/64 mmHg, SpO2 92% on room air, temperature 39.4°C. Weight 26 kg.\n\nThe abdomen is soft with mild diffuse tenderness and no guarding. He can jump without pain. Air entry is reduced at the right base with crackles.",
+      "A 7-year-old boy has 1 day of abdominal pain, fever and two episodes of vomiting. He has a mild cough. His parents are worried about his appendix.\n\nThe abdomen is soft with mild diffuse tenderness and no guarding. He can jump without pain. Air entry is reduced at the right base with crackles.",
+    vitals: { temperature: "39.4°C", pulse: "136/minute", resp: "34/minute", bp: "102/64 mmHg", o2sat: "92% on room air", weight: "26 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE causes of abdominal pain in children that originate outside the abdomen.",
+        prompt: "What are the causes of abdominal pain in children that originate outside the abdomen?",
         required: 3,
         accept: [
           { id: "pna", text: "Lower lobe pneumonia", match: ["pneumonia"] },
@@ -325,7 +330,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Name the single most useful investigation now.",
+        prompt: "What is the single most useful investigation now?",
         required: 1,
         accept: [
           { id: "cxr", text: "Chest x-ray", match: ["chest x ray", "cxr", "chest radiograph", "chest xray", "chest film"] },
@@ -344,7 +349,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q3",
         kind: "short",
         update: "The chest x-ray shows right lower lobe consolidation. After acetaminophen he looks well. SpO2 is 94% on room air and he is drinking.",
-        prompt: "Name the antibiotic and its total daily dose in mg/kg for outpatient treatment.",
+        prompt: "Which antibiotic and total daily dose in mg/kg would you prescribe for outpatient treatment?",
         required: 1,
         accept: [
           { id: "amox", text: "Amoxicillin 40 to 90 mg/kg/day orally divided three times daily, maximum 4 g/day", match: ["amoxicillin 90", "amoxicillin 80", "amoxicillin 75", "amoxicillin 60", "amoxicillin 50", "amoxicillin 45", "amoxicillin 40", "amoxicillin 2340", "amoxicillin 2.3 g", "amoxicillin 780", "amoxicillin 1040", "amoxicillin 1170", "amoxicillin 1200"] },
@@ -354,26 +359,27 @@ export const ABDOMINAL_PAIN: Samp[] = [
           { text: "Amoxicillin below the recommended range", match: ["amoxicillin 20", "amoxicillin 25", "amoxicillin 250"] },
         ],
         explanation:
-          "The CPS recommends amoxicillin 40 to 90 mg/kg/day divided three times daily, to a maximum of 4 g per day. The higher end covers Streptococcus pneumoniae with reduced penicillin susceptibility. For this 26 kg child, 90 mg/kg/day is 2340 mg per day, about 780 mg three times daily. Macrolides are not first line for typical bacterial pneumonia in school age children.",
+          "The CPS recommends amoxicillin 40 to 90 mg/kg/day divided three times daily, to a maximum of 4 g per day. The higher end covers Streptococcus pneumoniae with reduced penicillin susceptibility. For this 26 kg child, 90 mg/kg/day is 2 340 mg per day, about 780 mg three times daily. Macrolides are not first line for typical bacterial pneumonia in school age children.",
         keyFeature: { topic: "infectious-diseases", n: 8 },
         source: "cps-cap",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "The parents ask for a CT scan to be sure the appendix is normal. Which response is most appropriate? Select one.",
+        update: "The parents ask for a CT scan to be sure the appendix is normal.",
+        prompt: "Which of the following is the most appropriate response to the parents?",
         options: [
-          "No CT. Pneumonia explains his findings. CT radiation carries a higher lifetime cancer risk in children. Return if the pain localizes or worsens.",
-          "Order CT abdomen with contrast to reassure the parents",
-          "Order an abdominal x-ray to exclude appendicitis",
-          "Admit for serial CT scans",
+          "Admit him for serial CT scans of the abdomen",
           "Order a low dose CT of the chest and abdomen",
+          "Order an abdominal x-ray to exclude appendicitis",
+          "Order CT abdomen with contrast to reassure the parents",
+          "No CT, with return if the pain localizes or worsens",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "Children are more radiosensitive and have more years to express radiation induced cancer. When a clear extra-abdominal cause explains the picture, CT adds risk without benefit. Safety netting and reassessment are the right tools.",
+          "Pneumonia explains his findings, so CT is not needed. Children are more radiosensitive and have more years to express radiation induced cancer, so CT carries a higher lifetime cancer risk in children. When a clear extra-abdominal cause explains the picture, CT adds risk without benefit. Safety netting, with return if the pain localizes or worsens, and reassessment are the right tools.",
         keyFeature: { topic: "abdominal-pain", n: 7 },
-        source: "image-gently",
+        source: "pearce-ct",
       },
     ],
     sources: [SRC.tintinalli, SRC.cpsCap, SRC.imageGently],
@@ -385,12 +391,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Man with epigastric pain and nausea",
     stem:
-      "A 61-year-old man with type 2 diabetes has 90 minutes of epigastric pain and nausea. An antacid at home gave slight relief. He is sweaty.\n\nVital signs: HR 54/min, BP 104/66 mmHg, RR 20/min, SpO2 95% on room air, temperature 36.6°C. Weight 92 kg.\n\nThe abdomen is soft with mild epigastric tenderness.",
+      "A 61-year-old man with type 2 diabetes has 90 minutes of epigastric pain and nausea. An antacid at home gave slight relief. He is sweaty.\n\nThe abdomen is soft with mild epigastric tenderness.",
+    vitals: { temperature: "36.6°C", pulse: "54/minute", resp: "20/minute", bp: "104/66 mmHg", o2sat: "95% on room air", weight: "92 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO investigations to obtain within 10 minutes of arrival.",
+        prompt: "What investigations should be obtained within 10 minutes of arrival?",
         required: 2,
         accept: [
           { id: "ecg", text: "12 lead ECG", match: ["ecg", "ekg", "electrocardiogram"] },
@@ -406,20 +413,20 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q2",
         kind: "menu",
         update: "The ECG shows 3 mm ST elevation in II, III and aVF with reciprocal ST depression in aVL. A primary PCI centre is 25 minutes away.",
-        prompt: "Which TWO are the most appropriate immediate treatments? Select TWO.",
+        prompt: "Which of the following are the most appropriate immediate treatments for him?",
         options: [
+          "Activate catheterization lab for primary PCI",
           "ASA 160 mg chewed",
           "ASA 81 mg swallowed",
-          "Activate the catheterization lab for primary PCI",
-          "Tenecteplase now",
           "Metoprolol 5 mg IV",
-          "Pantoprazole 80 mg IV",
-          "Nitroglycerin 0.4 mg SL before any further assessment",
           "Morphine 10 mg IV",
+          "Nitroglycerin 0.4 mg SL immediately",
+          "Pantoprazole 80 mg IV",
+          "Tenecteplase IV bolus now",
           "Viscous lidocaine and antacid",
         ],
         select: 2,
-        correct: [0, 2],
+        correct: [1, 0],
         explanation:
           "Chewed ASA 160 to 325 mg and rapid primary PCI are the core of STEMI care when PCI is available within 120 minutes. Fibrinolysis is for when timely PCI is not possible. Beta blockers are harmful with bradycardia and borderline pressure.",
         keyFeature: { topic: "ischemic-heart-disease", n: 6 },
@@ -428,7 +435,8 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "The nurse asks about nitroglycerin for his pain. List TWO things you must check first.",
+        update: "The nurse asks about nitroglycerin for his pain.",
+        prompt: "What must you check before nitroglycerin is given?",
         required: 2,
         accept: [
           { id: "rv", text: "Right sided ECG for right ventricular infarction", match: ["right sided", "v4r", "right ventricular", "rv infarct", "rv involvement", "right ecg"] },
@@ -444,7 +452,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE other causes outside the abdomen that can present as epigastric pain in adults.",
+        prompt: "What other causes outside the abdomen can present as epigastric pain in adults?",
         required: 3,
         accept: [
           { id: "pe", text: "Pulmonary embolism", match: ["pulmonary embolism", "pe"] },
@@ -474,7 +482,8 @@ export const ABDOMINAL_PAIN: Samp[] = [
     alsoTopics: ["shock"],
     title: "Young woman with vomiting and abdominal pain",
     stem:
-      "A 19-year-old woman has 2 days of vomiting and diffuse abdominal pain. She has had thirst and frequent urination for 3 weeks and has lost 4 kg. She has no medical history.\n\nVital signs: HR 128/min, BP 98/60 mmHg, RR 32/min and deep, SpO2 99% on room air, temperature 37.1°C. Weight 58 kg.\n\nThe abdomen is diffusely tender without guarding. Venous gas: pH 7.08, bicarbonate 6 mmol/L. Glucose 31 mmol/L. Sodium 131, potassium 5.6, chloride 96 mmol/L. Creatinine 118 µmol/L. Beta hydroxybutyrate 7.2 mmol/L. Lipase is normal. Beta hCG is negative.",
+      "A 19-year-old woman has 2 days of vomiting and diffuse abdominal pain. She has had thirst and frequent urination for 3 weeks and has lost 4 kg. She has no medical history.\n\nRespirations are deep.\n\nThe abdomen is diffusely tender without guarding. Venous gas: pH 7.08, bicarbonate 6 mmol/L. Glucose 31 mmol/L. Sodium 131, potassium 5.6, chloride 96 mmol/L. Creatinine 118 umol/L. Beta hydroxybutyrate 7.2 mmol/L. Lipase is normal. Beta hCG is negative.",
+    vitals: { temperature: "37.1°C", pulse: "128/minute", resp: "32/minute", bp: "98/60 mmHg", o2sat: "99% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
@@ -491,7 +500,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE priorities in her initial management.",
+        prompt: "What are the priorities in her initial management?",
         required: 3,
         accept: [
           { id: "fluid", text: "IV 0.9% saline bolus to restore circulating volume", match: ["normal saline", "0.9%", "saline", "ns", "fluid", "crystalloid", "ringer", "bolus"] },
@@ -510,35 +519,35 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which insulin plan is most appropriate now? Select one.",
+        prompt: "Which of the following insulin and potassium plans is most appropriate now?",
         options: [
-          "Regular insulin infusion at 0.1 units/kg/h with no bolus. Hold potassium replacement while potassium is above 5.0 mmol/L and recheck it often.",
-          "Regular insulin 10 units IV bolus, then 0.1 units/kg/h",
           "Delay insulin until potassium is below 4.0 mmol/L",
-          "Rapid acting insulin 10 units subcutaneously every 2 hours",
-          "Insulin 0.1 units/kg/h plus 40 mmol/L potassium chloride in each litre now",
+          "Insulin 0.1 units/kg/h, no bolus, KCl held above 5.0 mmol/L",
+          "Insulin 0.1 units/kg/h with KCl 40 mmol/L added now",
+          "Rapid acting insulin 10 units subcutaneously every two hours",
+          "Regular insulin 10 units IV bolus, then 0.1 units/kg/h",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
-          "An insulin infusion of 0.1 units/kg/h is standard and a bolus is not needed. Insulin is withheld only for hypokalemia, below 3.3 mmol/L in Diabetes Canada guidance and below 3.5 mmol/L in the 2024 ADA consensus. Both start potassium once it falls below 5.0 mmol/L, which it will with insulin.",
+          "A regular insulin infusion of 0.1 units/kg/h is standard and a bolus is not needed. Hold potassium replacement while potassium is above 5.0 mmol/L and recheck it often. Insulin is withheld only for hypokalemia, below 3.3 mmol/L in Diabetes Canada guidance and below 3.5 mmol/L in the 2024 ADA consensus. Both start potassium once it falls below 5.0 mmol/L, which it will with insulin.",
         keyFeature: { topic: "shock", n: 8 },
         source: "dc-dka",
       },
       {
         id: "q4",
         kind: "single",
-        update: "Eight hours later the pH is 7.29 and the anion gap has closed. Her abdominal pain has resolved. The abdomen is soft and nontender.",
-        prompt: "The surgical resident asks whether CT of the abdomen is still needed. Select one.",
+        update: "Eight hours later the pH is 7.29 and the anion gap has closed. Her abdominal pain has resolved. The abdomen is soft and nontender. The surgical resident asks whether CT of the abdomen is still needed.",
+        prompt: "Which of the following is the most appropriate response about abdominal imaging?",
         options: [
-          "No CT. Pain that resolves with correction of DKA supports DKA as the cause. Reassess and image only if pain persists.",
-          "CT abdomen with contrast to exclude appendicitis before discharge",
-          "Abdominal ultrasound for all patients with DKA and abdominal pain",
-          "CT because abdominal pain in DKA always needs imaging",
-          "Diagnostic laparoscopy",
+          "Abdominal ultrasound before she is discharged",
+          "Contrast CT to exclude appendicitis before discharge",
+          "CT abdomen and pelvis because of her initial pain",
+          "Diagnostic laparoscopy by general surgery",
+          "No CT, reassess and image only if pain persists",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "Imaging should answer a real clinical question. Resolution of pain as acidosis clears is strong evidence against a surgical cause. Unnecessary CT in a 19-year-old adds lifetime cancer risk and contrast exposure.",
+          "Imaging should answer a real clinical question. Pain that resolves with correction of DKA supports DKA as the cause and is strong evidence against a surgical cause. Unnecessary CT in a 19-year-old adds lifetime cancer risk and contrast exposure.",
         keyFeature: { topic: "abdominal-pain", n: 7 },
         source: "dc-dka",
       },
@@ -551,12 +560,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
     topic: "abdominal-pain",
     title: "Confused nursing home resident",
     stem:
-      "An 83-year-old woman is sent from her long-term care home with confusion and a presumed urinary tract infection. Staff report poor intake for 2 days, one episode of vomiting, and pain when she is moved. She has dementia, hypertension and polymyalgia rheumatica. Medications include metoprolol and prednisone 10 mg daily.\n\nVital signs: HR 88/min, BP 102/60 mmHg, RR 24/min, SpO2 94% on room air, temperature 37.8°C.\n\nShe has lower abdominal tenderness, worse on the left, with voluntary guarding. Urine dipstick shows 2+ leukocytes and positive nitrites. WBC 10.1 x 10^9/L. Lactate 2.9 mmol/L.",
+      "An 83-year-old woman is sent from her long-term care home with confusion and a presumed urinary tract infection. Staff report poor intake for 2 days, one episode of vomiting, and pain when she is moved. She has dementia, hypertension and polymyalgia rheumatica. Medications include metoprolol and prednisone 10 mg daily.\n\nShe has lower abdominal tenderness, worse on the left, with voluntary guarding. Urine dipstick shows 2+ leukocytes and positive nitrites. WBC 10.1 x 10^9/L. Lactate 2.9 mmol/L.",
+    vitals: { temperature: "37.8°C", pulse: "88/minute", resp: "24/minute", bp: "102/60 mmHg", o2sat: "94% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE serious intra-abdominal diagnoses to consider before attributing her illness to a urinary tract infection.",
+        prompt: "What serious intra-abdominal diagnoses should you consider before attributing her illness to a urinary tract infection?",
         required: 3,
         accept: [
           { id: "div", text: "Complicated diverticulitis", match: ["diverticulitis", "diverticular"] },
@@ -577,7 +587,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO reasons the positive urine dipstick is unreliable in her.",
+        prompt: "Why is the positive urine dipstick unreliable in her?",
         required: 2,
         accept: [
           { id: "asb", text: "Asymptomatic bacteriuria is common in older women in long-term care", match: ["asymptomatic bacteriuria", "asymptomatic", "colonization", "colonized", "colonised", "baseline bacteriuria"] },
@@ -594,7 +604,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "Name the most appropriate imaging test.",
+        prompt: "What is the most appropriate imaging test?",
         required: 1,
         accept: [{ id: "ct", text: "CT abdomen and pelvis with IV contrast", match: ["ct", "computed tomography"] }],
         unacceptable: [
@@ -610,7 +620,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q4",
         kind: "short",
         update: "CT shows perforated sigmoid diverticulitis with free air and pelvic fluid. BP is now 88/50 mmHg.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 3,
         accept: [
           { id: "surg", text: "Urgent general surgery consultation", match: ["surgery", "surgeon", "surgical"] },
@@ -637,12 +647,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
     alsoTopics: ["first-trimester-bleeding"],
     title: "Young woman with lower abdominal pain and near syncope",
     stem:
-      "A 27-year-old woman has 2 hours of sudden lower abdominal pain and light vaginal spotting. She nearly fainted in the shower. Her last menstrual period was 7 weeks ago. She is G2P1.\n\nVital signs: HR 124/min, BP 86/52 mmHg, RR 24/min, SpO2 98% on room air, temperature 36.5°C. Weight 64 kg.\n\nShe is pale. There is diffuse lower abdominal tenderness with guarding. She complains of right shoulder tip pain.",
+      "A 27-year-old woman has 2 hours of sudden lower abdominal pain and light vaginal spotting. She nearly fainted in the shower. Her last menstrual period was 7 weeks ago. She is G2P1.\n\nShe is pale. There is diffuse lower abdominal tenderness with guarding. She complains of right shoulder tip pain.",
+    vitals: { temperature: "36.5°C", pulse: "124/minute", resp: "24/minute", bp: "86/52 mmHg", o2sat: "98% on room air", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE diagnoses to consider.",
+        prompt: "What diagnoses should you consider?",
         required: 3,
         accept: [
           { id: "ect", text: "Ruptured ectopic pregnancy", match: ["ectopic"] },
@@ -662,7 +673,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q2",
         kind: "short",
         update: "A urine pregnancy test is positive.",
-        prompt: "Name the most useful bedside test now.",
+        prompt: "What is the most useful bedside test now?",
         required: 1,
         accept: [{ id: "pocus", text: "Point-of-care ultrasound for free fluid and intrauterine pregnancy", match: ["pocus", "fast", "efast", "ultrasound", "bedside us"] }],
         unacceptable: [
@@ -678,7 +689,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Bedside ultrasound shows free fluid in the hepatorenal space and no intrauterine pregnancy. BP is 80/48 mmHg.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 3,
         accept: [
           { id: "or", text: "Call gynecology now for the operating room", match: ["gynecology", "gynaecology", "gynecologist", "gynaecologist", "obstetric", "operating room", "surgery", "laparoscopy", "laparotomy", "obgyn", "ob gyn"] },
@@ -699,17 +710,18 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Her blood group is O Rh negative and her antibody screen is negative. Which statement is most accurate? Select one.",
+        update: "Her blood group is O Rh negative and her antibody screen is negative.",
+        prompt: "Which of the following statements about Rh immune globulin for her is most accurate?",
         options: [
-          "Current SOGC guidance advises against routine Rh immune globulin for an ectopic pregnancy at this gestation. Document her Rh status and discuss it with her.",
+          "Discuss and record Rh status, no routine Rh immune globulin",
+          "Rh immune globulin 1 500 mcg IV for hemoperitoneum",
+          "Rh immune globulin only if her antibody screen is positive",
+          "Rh immune globulin only if Kleihauer-Betke test is positive",
           "Surgery should wait until Rh immune globulin has been given",
-          "Rh immune globulin is indicated only if her antibody screen is positive",
-          "Give Rh immune globulin 1500 mcg IV because of the large hemoperitoneum",
-          "Rh immune globulin is indicated only if a Kleihauer-Betke test is positive",
         ],
         correct: 0,
         explanation:
-          "The 2024 SOGC guideline recommends not giving Rh immune globulin for ectopic pregnancy before 8 weeks and suggests not giving it from 8 to 12 weeks, because fetal red cell volume is too small to sensitize. Some centres still give 120 to 300 mcg IM within 72 hours, and SOGC allows this for risk averse patients from 8 weeks. A positive antibody screen means she is already sensitized and prophylaxis no longer helps. The hemoperitoneum is maternal blood and does not change the dose.",
+          "The 2024 SOGC guideline advises against routine Rh immune globulin for an ectopic pregnancy at this gestation. It recommends not giving it before 8 weeks and suggests not giving it from 8 to 12 weeks, because fetal red cell volume is too small to sensitize. Document her Rh status and discuss it with her. Some centres still give 120 to 300 mcg IM within 72 hours, and SOGC allows this for risk averse patients from 8 weeks. A positive antibody screen means she is already sensitized and prophylaxis no longer helps. The hemoperitoneum is maternal blood and does not change the dose.",
         keyFeature: { topic: "first-trimester-bleeding", n: 5 },
         source: "sogc-rh",
       },
@@ -722,12 +734,14 @@ export const ABDOMINAL_PAIN: Samp[] = [
     topic: "abdominal-pain",
     title: "Teenager with lower abdominal pain and vomiting",
     stem:
-      "A 14-year-old boy has 3 hours of severe lower abdominal pain and vomiting. The pain woke him from sleep. He describes it as belly pain and does not mention anything else.\n\nVital signs: HR 108/min, BP 128/76 mmHg, RR 18/min, SpO2 99% on room air, temperature 37.0°C. Weight 55 kg.\n\nThe abdomen is soft with mild left lower quadrant tenderness.",
+      "A 14-year-old boy has 3 hours of severe lower abdominal pain and vomiting. The pain woke him from sleep. He describes it as belly pain and does not mention anything else.\n\nThe abdomen is soft with mild left lower quadrant tenderness.",
+    vitals: { temperature: "37.0°C", pulse: "108/minute", resp: "18/minute", bp: "128/76 mmHg", o2sat: "99% on room air", weight: "55 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "You examine the genitals. List THREE findings that would support testicular torsion.",
+        update: "You examine the genitals.",
+        prompt: "What findings would support testicular torsion?",
         required: 3,
         accept: [
           { id: "high", text: "High riding testis", match: ["high riding", "elevated", "retracted", "high testis"] },
@@ -745,17 +759,17 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q2",
         kind: "single",
         update: "The left testis is high riding, firm and tender, with a horizontal lie and absent cremasteric reflex. Ultrasound is available in 2 hours.",
-        prompt: "What is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step for him?",
         options: [
-          "Urgent urology consultation for surgical exploration without waiting for ultrasound",
-          "Doppler ultrasound first to confirm the diagnosis",
-          "Urinalysis and treatment for epididymitis",
           "Analgesia and reassessment in 2 hours",
-          "CT of the abdomen and pelvis",
+          "CT of the abdomen and pelvis with contrast",
+          "Doppler ultrasound first to confirm the diagnosis of torsion",
+          "Urgent urology exploration without waiting for ultrasound",
+          "Urinalysis and treatment for epididymitis",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
-          "With a high clinical probability of torsion, imaging only delays surgery. Testicular salvage falls steeply after about 6 hours. Ultrasound is useful when the diagnosis is genuinely uncertain.",
+          "With a high clinical probability of torsion, imaging only delays surgery. Consult urology urgently for surgical exploration. Testicular salvage falls steeply after about 6 hours. Ultrasound is useful when the diagnosis is genuinely uncertain.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
         source: "twist",
       },
@@ -763,12 +777,12 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q3",
         kind: "single",
         update: "His mother says he was seen at a walk-in clinic yesterday for similar pain that settled. A Doppler ultrasound there was reported as normal.",
-        prompt: "Which statement is most accurate? Select one.",
+        prompt: "Which of the following statements about the earlier ultrasound is most accurate?",
         options: [
-          "A normal Doppler ultrasound yesterday does not exclude torsion today",
-          "Normal flow yesterday makes torsion very unlikely today",
-          "Intermittent torsion never needs surgical follow up",
+          "A normal Doppler yesterday does not exclude torsion today",
           "Doppler ultrasound is 100% sensitive for torsion",
+          "Intermittent torsion needs no surgical follow up",
+          "Normal flow on yesterday's scan makes torsion very unlikely",
           "Torsion cannot present with abdominal pain alone",
         ],
         correct: 0,
@@ -787,12 +801,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
     alsoTopics: ["shock"],
     title: "Infant with episodes of crying",
     stem:
-      "A 10-month-old boy has 12 hours of episodes of inconsolable crying every 15 to 20 minutes. He draws his legs up during each episode. He has vomited four times, not bilious. Between episodes he is pale and sleepy. He passed one stool with dark red mucus.\n\nVital signs: HR 168/min, RR 36/min, BP 84/50 mmHg, SpO2 98% on room air, temperature 37.6°C. Capillary refill 3 seconds. Weight 9 kg.\n\nA vague mass is felt in the right upper quadrant. The abdomen is not peritonitic.",
+      "A 10-month-old boy has 12 hours of episodes of inconsolable crying every 15 to 20 minutes. He draws his legs up during each episode. He has vomited four times, not bilious. Between episodes he is pale and sleepy. He passed one stool with dark red mucus.\n\nCapillary refill is 3 seconds.\n\nA vague mass is felt in the right upper quadrant. The abdomen is not peritonitic.",
+    vitals: { temperature: "37.6°C", pulse: "168/minute", resp: "36/minute", bp: "84/50 mmHg", o2sat: "98% on room air", weight: "9 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE diagnoses to consider at this age.",
+        prompt: "What diagnoses should you consider at this age?",
         required: 3,
         accept: [
           { id: "intus", text: "Intussusception", match: ["intussusception"] },
@@ -812,7 +827,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Name the most appropriate imaging test.",
+        prompt: "What is the most appropriate imaging test?",
         required: 1,
         accept: [{ id: "us", text: "Abdominal ultrasound", match: ["ultrasound", "us", "pocus", "sonography"] }],
         unacceptable: [
@@ -822,13 +837,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
         explanation:
           "Ultrasound is highly sensitive and specific for intussusception and uses no radiation. CT adds radiation in a highly radiosensitive infant. Plain films are insensitive.",
         keyFeature: { topic: "abdominal-pain", n: 7 },
-        source: "image-gently",
+        source: "pearce-ct",
       },
       {
         id: "q3",
         kind: "short",
         update: "Ultrasound shows a target sign in the right upper quadrant. There is no free fluid.",
-        prompt: "List TWO next management steps.",
+        prompt: "What are the next management steps?",
         required: 2,
         accept: [
           { id: "enema", text: "Air or hydrostatic enema reduction by radiology", match: ["enema", "air reduction", "pneumatic", "hydrostatic", "reduction"] },
@@ -845,16 +860,15 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which initial fluid bolus is most appropriate? Select one.",
+        prompt: "Which of the following initial fluid boluses is most appropriate for him?",
         options: [
-          "0.9% sodium chloride 180 mL IV over 5 to 20 minutes",
-          "0.9% sodium chloride 90 mL IV over 1 hour",
-          "0.9% sodium chloride 900 mL IV",
-          "5% dextrose in water 180 mL IV",
-          "0.45% sodium chloride at 36 mL/h only",
-          "5% albumin 45 mL IV",
+          "0.45% saline maintenance infusion at 36 mL/h only",
+          "0.9% saline 90 mL IV over 1 hour",
+          "0.9% saline 180 mL IV over 5 to 20 minutes",
+          "0.9% saline 900 mL IV bolus",
+          "5% dextrose in water 180 mL IV bolus",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "Isotonic crystalloid at 20 mL/kg is the standard bolus for a child with poor perfusion, so 180 mL for 9 kg. Reassess after each bolus. Hypotonic or dextrose only fluids are not resuscitation fluids.",
         keyFeature: { topic: "shock", n: 3 },
@@ -869,20 +883,21 @@ export const ABDOMINAL_PAIN: Samp[] = [
     topic: "abdominal-pain",
     title: "Pregnant woman with right lower quadrant pain",
     stem:
-      "A 30-year-old woman, G1P0 at 14 weeks by dating ultrasound, has 24 hours of right lower quadrant pain, nausea and anorexia.\n\nVital signs: HR 104/min, BP 112/68 mmHg, RR 18/min, SpO2 99% on room air, temperature 37.9°C.\n\nShe has right lower quadrant tenderness with guarding. Fetal heart rate is 156/min. WBC is 15.0 x 10^9/L.",
+      "A 30-year-old woman, G1P0 at 14 weeks by dating ultrasound, has 24 hours of right lower quadrant pain, nausea and anorexia.\n\nShe has right lower quadrant tenderness with guarding. Fetal heart rate is 156/minute. WBC is 15.0 x 10^9/L.",
+    vitals: { temperature: "37.9°C", pulse: "104/minute", resp: "18/minute", bp: "112/68 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate first imaging test? Select one.",
+        prompt: "Which of the following is the most appropriate first imaging test for her?",
         options: [
+          "CT of the abdomen and pelvis with IV contrast",
           "Graded compression ultrasound of the right lower quadrant",
-          "CT abdomen and pelvis with IV contrast",
-          "MRI with gadolinium",
-          "Plain abdominal radiograph",
-          "Nuclear medicine white cell scan",
+          "MRI of the abdomen and pelvis with gadolinium",
+          "Nuclear medicine scan with indium labelled white blood cells",
+          "Supine and upright abdominal radiographs",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Ultrasound is first line in pregnancy because it uses no ionizing radiation. A visualized inflamed appendix confirms the diagnosis. A nondiagnostic scan leads to MRI.",
         keyFeature: { topic: "abdominal-pain", n: 7 },
@@ -892,7 +907,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q2",
         kind: "short",
         update: "The ultrasound does not visualize the appendix. There is no free fluid.",
-        prompt: "Name the most appropriate next imaging test.",
+        prompt: "What is the most appropriate next imaging test?",
         required: 1,
         accept: [{ id: "mri", text: "Non-contrast MRI of the abdomen and pelvis", match: ["mri", "magnetic resonance"] }],
         unacceptable: [{ text: "MRI with gadolinium", match: ["gadolinium"] }],
@@ -905,7 +920,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q3",
         kind: "short",
         update: "MRI is not available at your hospital for 24 hours.",
-        prompt: "List TWO acceptable next steps.",
+        prompt: "What are acceptable next steps?",
         required: 2,
         accept: [
           { id: "surg", text: "General surgery consultation for clinical assessment", match: ["surgery", "surgeon", "surgical"] },
@@ -925,7 +940,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE other causes of right lower quadrant pain to consider in pregnancy.",
+        prompt: "What other causes of right lower quadrant pain should you consider in pregnancy?",
         required: 3,
         accept: [
           { id: "tor", text: "Ovarian torsion", match: ["torsion"] },
@@ -954,29 +969,30 @@ export const ABDOMINAL_PAIN: Samp[] = [
     alsoTopics: ["analgesia-sedation", "infectious-diseases"],
     title: "Man with recurrent flank pain",
     stem:
-      "A 36-year-old man has 3 hours of colicky left flank pain radiating to the groin. This is his fourth episode of kidney stones. He has had three CT scans for stones in the past 5 years.\n\nVital signs: HR 96/min, BP 138/84 mmHg, RR 18/min, SpO2 99% on room air, temperature 36.8°C. Weight 80 kg.\n\nThe abdomen is soft and nontender. Urinalysis shows blood and no leukocytes or nitrites. Creatinine is 82 µmol/L.",
+      "A 36-year-old man has 3 hours of colicky left flank pain radiating to the groin. This is his fourth episode of kidney stones. He has had three CT scans for stones in the past 5 years.\n\nThe abdomen is soft and nontender. Urinalysis shows blood and no leukocytes or nitrites. Creatinine is 82 umol/L.",
+    vitals: { temperature: "36.8°C", pulse: "96/minute", resp: "18/minute", bp: "138/84 mmHg", o2sat: "99% on room air", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which imaging strategy is most appropriate? Select one.",
+        prompt: "Which of the following imaging strategies is most appropriate for him?",
         options: [
-          "Point-of-care renal ultrasound for hydronephrosis, with no CT if the course is uncomplicated",
+          "CT of the abdomen and pelvis with IV contrast",
+          "Intravenous pyelogram with delayed images",
+          "MRI urogram of the kidneys and ureters",
           "Non-contrast CT of the kidneys, ureters and bladder now",
-          "CT abdomen with IV contrast",
-          "IV pyelogram",
-          "MRI urogram",
+          "Renal POCUS, with no CT if the course is uncomplicated",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "A young patient with known stones and a typical, uncomplicated episode does not need repeat CT. Ultrasound first reduces cumulative radiation without worse outcomes. CT is kept for atypical features or complications.",
+          "A young patient with known stones and a typical, uncomplicated episode does not need repeat CT. Point-of-care renal ultrasound looks for hydronephrosis. Ultrasound first reduces cumulative radiation without worse outcomes. CT is kept for atypical features or complications.",
         keyFeature: { topic: "abdominal-pain", n: 7 },
-        source: "caep-cw",
+        source: "smith-bindman",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE features in a patient with suspected renal colic that should prompt urgent imaging or urology involvement.",
+        prompt: "What features in a patient with suspected renal colic should prompt urgent imaging or urology involvement?",
         required: 3,
         accept: [
           { id: "inf", text: "Fever or signs of infection", match: ["fever", "infection", "sepsis", "septic", "pyuria"] },
@@ -996,29 +1012,29 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q3",
         kind: "menu",
-        prompt: "Which TWO are most appropriate for his pain and stone passage? Select TWO.",
+        prompt: "Which of the following are most appropriate for his pain and stone passage?",
         options: [
+          "Hyoscine butylbromide 20 mg IV",
+          "IV normal saline 2 L bolus to flush the stone",
           "Ketorolac 15 mg IV",
           "Ketorolac 60 mg IV",
-          "Morphine 20 mg IV",
-          "Tamsulosin 0.4 mg PO daily if the stone is distal and 5 to 10 mm",
-          "2 L IV fluid bolus to flush the stone",
-          "Hyoscine butylbromide 20 mg IV",
+          "Morphine 20 mg IV push",
+          "Oxycodone 5 mg PO only",
           "Tamsulosin 4 mg PO daily",
-          "Oral oxycodone 5 mg only",
+          "Tamsulosin 0.4 mg PO daily, distal 5 to 10 mm",
         ],
         select: 2,
-        correct: [0, 3],
+        correct: [2, 7],
         explanation:
-          "NSAIDs are first line for renal colic, and ketorolac shows a ceiling effect at 10 to 15 mg IV. Tamsulosin aids passage of distal stones of 5 to 10 mm. Forced IV hydration does not help and antispasmodics add little.",
+          "NSAIDs are first line for renal colic, and ketorolac shows a ceiling effect at 10 to 15 mg IV. Tamsulosin 0.4 mg daily aids passage of distal stones of 5 to 10 mm, so it is given only if the stone is distal and 5 to 10 mm. Forced IV hydration does not help and antispasmodics add little.",
         keyFeature: { topic: "analgesia-sedation", n: 2 },
         source: "eau-stone",
       },
       {
         id: "q4",
         kind: "short",
-        update: "He returns 36 hours later with rigors. Temperature 39.2°C, HR 122/min, BP 94/58 mmHg. Bedside ultrasound shows moderate left hydronephrosis.",
-        prompt: "List THREE immediate management steps.",
+        update: "He returns 36 hours later with rigors. Temperature 39.2°C, HR 122/minute, BP 94/58 mmHg. Bedside ultrasound shows moderate left hydronephrosis.",
+        prompt: "What are the immediate management steps?",
         required: 3,
         accept: [
           { id: "cult", text: "Blood and urine cultures", match: ["culture"] },
@@ -1042,12 +1058,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
     topic: "abdominal-pain",
     title: "Man with epigastric pain radiating to the back",
     stem:
-      "A 47-year-old man who drinks 12 beers a day has 10 hours of severe epigastric pain radiating to the back, with repeated vomiting.\n\nVital signs: HR 118/min, BP 108/70 mmHg, RR 22/min, SpO2 95% on room air, temperature 37.8°C. Weight 78 kg.\n\nHe is writhing in pain. There is epigastric tenderness with mild guarding. The rest of the abdomen is soft.",
+      "A 47-year-old man who drinks 12 beers a day has 10 hours of severe epigastric pain radiating to the back, with repeated vomiting.\n\nHe is writhing in pain. There is epigastric tenderness with mild guarding. The rest of the abdomen is soft.",
+    vitals: { temperature: "37.8°C", pulse: "118/minute", resp: "22/minute", bp: "108/70 mmHg", o2sat: "95% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE serious diagnoses to exclude.",
+        prompt: "What serious diagnoses should be excluded?",
         required: 3,
         accept: [
           { id: "perf", text: "Perforated peptic ulcer", match: ["perforated", "perforation", "free air"] },
@@ -1067,25 +1084,25 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "Lipase is 1850 U/L. The upper limit of normal is 60 U/L. The ECG shows sinus tachycardia only. An upright chest radiograph shows no free air.",
-        prompt: "Is CT required in the ED to confirm the diagnosis? Select one.",
+        update: "Lipase is 1 850 U/L. The upper limit of normal is 60 U/L. The ECG shows sinus tachycardia only. An upright chest radiograph shows no free air.",
+        prompt: "Which of the following statements about CT to confirm the diagnosis in the ED is most accurate?",
         options: [
-          "No. Typical pain plus lipase above three times normal confirms pancreatitis. Reserve CT for diagnostic doubt or failure to improve.",
-          "Yes. Contrast CT is required to confirm all cases of pancreatitis.",
-          "Yes. CT best predicts necrosis in the first 12 hours.",
-          "No. Imaging is never needed in pancreatitis.",
-          "Yes. MRCP is required before admission.",
+          "Contrast CT, required to confirm every case of pancreatitis",
+          "CT now, to predict necrosis in the first 12 hours",
+          "MRCP before admission to the ward",
+          "No imaging at any stage of his illness",
+          "No CT, reserved for diagnostic doubt or failure to improve",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "Two of three criteria make the diagnosis. Early CT underestimates necrosis and rarely changes management. It adds radiation and contrast in a volume depleted patient.",
+          "Two of three criteria make the diagnosis. Typical pain plus lipase above three times normal confirms pancreatitis, so CT is reserved for diagnostic doubt or failure to improve. Early CT underestimates necrosis and rarely changes management. It adds radiation and contrast in a volume depleted patient.",
         keyFeature: { topic: "abdominal-pain", n: 7 },
         source: "acg-panc",
       },
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO investigations to look for a cause other than alcohol.",
+        prompt: "What investigations would look for a cause other than alcohol?",
         required: 2,
         accept: [
           { id: "us", text: "Right upper quadrant ultrasound for gallstones", match: ["ultrasound", "us", "gallstone"] },
@@ -1101,7 +1118,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE elements of his initial ED management.",
+        prompt: "What are the elements of his initial ED management?",
         required: 3,
         accept: [
           { id: "fluid", text: "Moderate goal directed IV fluid with Ringer's lactate", match: ["ringer", "fluid", "crystalloid", "saline"] },
@@ -1128,12 +1145,13 @@ export const ABDOMINAL_PAIN: Samp[] = [
     alsoTopics: ["analgesia-sedation"],
     title: "Man with sudden severe epigastric pain",
     stem:
-      "A 68-year-old man had sudden severe epigastric pain 3 hours ago. It is now diffuse. He takes naproxen daily for knee osteoarthritis and smokes.\n\nVital signs: HR 116/min, BP 104/66 mmHg, RR 24/min, SpO2 96% on room air, temperature 37.6°C. Weight 84 kg.\n\nHe lies still. The abdomen is rigid with rebound tenderness.",
+      "A 68-year-old man had sudden severe epigastric pain 3 hours ago. It is now diffuse. He takes naproxen daily for knee osteoarthritis and smokes.\n\nHe lies still. The abdomen is rigid with rebound tenderness.",
+    vitals: { temperature: "37.6°C", pulse: "116/minute", resp: "24/minute", bp: "104/66 mmHg", o2sat: "96% on room air", weight: "84 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "Name the fastest imaging test to support your leading diagnosis.",
+        prompt: "What is the fastest imaging test to support your leading diagnosis?",
         required: 1,
         accept: [
           { id: "cxr", text: "Upright chest x-ray for free air", match: ["upright chest", "erect chest", "chest x ray", "chest xray", "cxr", "chest radiograph"] },
@@ -1148,7 +1166,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q2",
         kind: "short",
         update: "The upright chest x-ray shows free air under the right hemidiaphragm.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 3,
         accept: [
           { id: "surg", text: "General surgery consultation now", match: ["surgery", "surgeon", "surgical", "operating room"] },
@@ -1166,32 +1184,33 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "The surgical resident asks for a CT abdomen before coming to see him. Which is the most appropriate response? Select one.",
+        update: "The surgical resident asks for a CT abdomen before coming to see him.",
+        prompt: "Which of the following is the most appropriate response to the surgical resident?",
         options: [
-          "Ask the surgeon to assess him now, because free air with peritonitis needs operative management without further imaging",
           "Agree and order CT before surgical assessment",
+          "Arrange urgent upper endoscopy by the gastroenterology team",
+          "Ask the surgeon to assess him now, without further imaging",
           "Order an abdominal ultrasound first",
-          "Repeat the chest x-ray in 6 hours",
-          "Arrange urgent endoscopy",
+          "Repeat the upright chest x-ray in 6 hours",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
-          "The diagnosis and the need for surgery are already clear. CT may help the surgeon plan, but it must not delay surgical assessment. Endoscopy is contraindicated with a perforation.",
+          "The diagnosis and the need for surgery are already clear. Free air with peritonitis needs operative management without further imaging. CT may help the surgeon plan, but it must not delay surgical assessment. Endoscopy is contraindicated with a perforation.",
         keyFeature: { topic: "abdominal-pain", n: 4 },
         source: "wses-pud",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which analgesic is most appropriate? Select one.",
+        prompt: "Which of the following analgesics is most appropriate for him now?",
         options: [
+          "Acetaminophen 1 g PO as the only agent",
           "Hydromorphone 0.5 mg IV, titrated to effect",
-          "Ketorolac 30 mg IV",
+          "Ketorolac 30 mg IV every 6 hours",
+          "Naproxen 500 mg PO twice daily",
           "Withhold analgesia until the surgeon examines him",
-          "Acetaminophen 1 g PO only",
-          "Naproxen 500 mg PO",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Titrated IV opioid is safe and does not mask surgical findings. NSAIDs worsen ulcer disease and bleeding risk. Oral drugs are inappropriate in a patient who needs surgery.",
         keyFeature: { topic: "analgesia-sedation", n: 2 },
@@ -1206,12 +1225,14 @@ export const ABDOMINAL_PAIN: Samp[] = [
     topic: "abdominal-pain",
     title: "Older man with distension and vomiting",
     stem:
-      "An 84-year-old man has 2 days of crampy abdominal pain, distension and vomiting. He has not passed flatus for 24 hours. He had an open colectomy 10 years ago. He takes metoprolol.\n\nVital signs: HR 84/min, BP 128/70 mmHg, RR 20/min, SpO2 95% on room air, temperature 37.1°C.\n\nThe abdomen is distended and tympanic with mild diffuse tenderness and no rebound. WBC is 9.8 x 10^9/L.",
+      "An 84-year-old man has 2 days of crampy abdominal pain, distension and vomiting. He has not passed flatus for 24 hours. He had an open colectomy 10 years ago. He takes metoprolol.\n\nThe abdomen is distended and tympanic with mild diffuse tenderness and no rebound. WBC is 9.8 x 10^9/L.",
+    vitals: { temperature: "37.1°C", pulse: "84/minute", resp: "20/minute", bp: "128/70 mmHg", o2sat: "95% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "A student notes the normal temperature, heart rate and WBC and suggests constipation. List THREE reasons older adults with serious abdominal disease may lack these findings.",
+        update: "A student notes the normal temperature, heart rate and WBC and suggests constipation.",
+        prompt: "Why may older adults with serious abdominal disease lack these findings?",
         required: 3,
         accept: [
           { id: "fev", text: "Blunted fever response", match: ["fever", "temperature", "thermoregulation", "afebrile"] },
@@ -1229,7 +1250,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Name the most appropriate imaging test.",
+        prompt: "What is the most appropriate imaging test?",
         required: 1,
         accept: [{ id: "ct", text: "CT abdomen and pelvis with IV contrast", match: ["ct", "computed tomography"] }],
         explanation:
@@ -1241,7 +1262,7 @@ export const ABDOMINAL_PAIN: Samp[] = [
         id: "q3",
         kind: "short",
         update: "CT shows a closed loop small bowel obstruction with reduced bowel wall enhancement and mesenteric fluid. Lactate is now 3.8 mmol/L.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 3,
         accept: [
           { id: "surg", text: "Urgent general surgery for the operating room", match: ["surgery", "surgeon", "surgical", "operating room"] },
@@ -1263,7 +1284,8 @@ export const ABDOMINAL_PAIN: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "His lactate on arrival 3 hours earlier was 1.6 mmol/L. List TWO reasons that normal value should not have been used to exclude ischemia.",
+        update: "His lactate on arrival 3 hours earlier was 1.6 mmol/L.",
+        prompt: "Why should that normal value not have been used to exclude ischemia?",
         required: 2,
         accept: [
           { id: "sens", text: "Lactate is insensitive in early ischemia", match: ["insensitive", "low sensitivity", "not sensitive", "early"] },
