@@ -455,6 +455,161 @@
    "after": [
     "No induced cooling, but prevent fever"
    ]
+  },
+  "eye-01#q4": {
+   "batch": "s10",
+   "before": [
+    "Urgent ophthalmology assessment today for laser peripheral iridotomy and assessment of the fellow eye"
+   ],
+   "after": [
+    "Urgent ophthalmology today for laser peripheral iridotomy"
+   ]
+  },
+  "eye-03#q4": {
+   "batch": "s10",
+   "before": [
+    "Acyclovir 400 mg PO five times daily for 7 to 10 days"
+   ],
+   "after": [
+    "Acyclovir 400 mg five times daily, 7 to 10 days"
+   ]
+  },
+  "eye-05#q2": {
+   "batch": "s10",
+   "before": [
+    "It shows involvement of the nasociliary branch and predicts ocular involvement"
+   ],
+   "after": [
+    "Nasociliary branch involvement predicting eye involvement"
+   ]
+  },
+  "eye-06#q3": {
+   "batch": "s10",
+   "before": [
+    "Cyclopentolate 1% one drop three times daily",
+    "Prednisolone acetate 1% drops, started after discussion with ophthalmology"
+   ],
+   "after": [
+    "Cyclopentolate 1% one drop three times daily",
+    "Prednisolone acetate 1% drops after ophthalmology input"
+   ]
+  },
+  "eye-08#q1": {
+   "batch": "s10",
+   "before": [
+    "Activate the stroke protocol for urgent stroke team assessment and vascular imaging"
+   ],
+   "after": [
+    "Urgent stroke team assessment and vascular imaging"
+   ]
+  },
+  "eye-09#q4": {
+   "batch": "s10",
+   "before": [
+    "Same day ophthalmology or retina assessment because the macula is still attached"
+   ],
+   "after": [
+    "Same day ophthalmology or retina assessment"
+   ]
+  },
+  "eye-12#q1": {
+   "batch": "s10",
+   "before": [
+    "Instil topical anaesthetic and begin copious irrigation right away"
+   ],
+   "after": [
+    "Instil topical anaesthetic and irrigate copiously now"
+   ]
+  },
+  "eye-15#q3": {
+   "batch": "s10",
+   "before": [
+    "Emergent ophthalmology assessment today for vitreous tap and intravitreal antibiotics"
+   ],
+   "after": [
+    "Emergent ophthalmology for tap and intravitreal antibiotics"
+   ]
+  },
+  "first-trimester-bleeding-03#q1": {
+   "batch": "s10",
+   "before": [
+    "Pregnancy of unknown location. An early intrauterine pregnancy, a failing pregnancy or an ectopic are all possible"
+   ],
+   "after": [
+    "Pregnancy of unknown location"
+   ]
+  },
+  "first-trimester-bleeding-04#q1": {
+   "batch": "s10",
+   "before": [
+    "These findings are concerning for ectopic pregnancy because the collection may be a pseudosac"
+   ],
+   "after": [
+    "Concerning for ectopic with a possible pseudosac"
+   ]
+  },
+  "first-trimester-bleeding-05#q3": {
+   "batch": "s10",
+   "before": [
+    "Urgent gynecology for laparoscopy aiming to preserve the intrauterine pregnancy"
+   ],
+   "after": [
+    "Urgent laparoscopy preserving the intrauterine pregnancy"
+   ]
+  },
+  "first-trimester-bleeding-07#q1": {
+   "batch": "s10",
+   "before": [
+    "Vagal response from products of conception distending the cervical os"
+   ],
+   "after": [
+    "Vagal response to tissue in the cervical os"
+   ]
+  },
+  "first-trimester-bleeding-08#q1": {
+   "batch": "s10",
+   "before": [
+    "A crown rump length of 7 mm or more without cardiac activity is diagnostic of a nonviable pregnancy"
+   ],
+   "after": [
+    "Diagnostic of a nonviable pregnancy"
+   ]
+  },
+  "first-trimester-bleeding-08#q3": {
+   "batch": "s10",
+   "before": [
+    "Mifepristone 200 mg PO, then misoprostol 800 mcg vaginally 24 hours later"
+   ],
+   "after": [
+    "Mifepristone 200 mg, misoprostol 800 mcg PV 24 hours later"
+   ]
+  },
+  "first-trimester-bleeding-09#q4": {
+   "batch": "s10",
+   "before": [
+    "Most pregnancies with these findings continue. The risk of loss is low, around 10% or less"
+   ],
+   "after": [
+    "Low risk of loss, around 10% or less"
+   ]
+  },
+  "first-trimester-bleeding-13#q3": {
+   "batch": "s10",
+   "before": [
+    "An empty uterus with an adnexal mass separate from the ovary and a positive hCG is highly suggestive of ectopic pregnancy"
+   ],
+   "after": [
+    "Highly suggestive of ectopic pregnancy"
+   ]
+  },
+  "first-trimester-bleeding-15#q4": {
+   "batch": "s10",
+   "before": [
+    "Rh immune globulin 300 mcg IM or IV within 72 hours"
+   ],
+   "after": [
+    "Rh immune globulin 300 mcg IM/IV within 72 hours"
+   ]
   }
  }
 }

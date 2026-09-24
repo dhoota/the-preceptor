@@ -15,13 +15,13 @@ const S = {
     citation:
       "Canadian Ophthalmological Society Glaucoma Clinical Practice Guideline Expert Committee. Canadian Ophthalmological Society evidence-based clinical practice guidelines for the management of glaucoma in the adult eye. Can J Ophthalmol. 2009.",
   },
-  aaoPac: { id: "aao-pac", citation: "American Academy of Ophthalmology. Preferred Practice Pattern. Primary angle closure disease." },
-  aaoConj: { id: "aao-conj", citation: "American Academy of Ophthalmology. Preferred Practice Pattern. Conjunctivitis." },
-  aaoKeratitis: { id: "aao-keratitis", citation: "American Academy of Ophthalmology. Preferred Practice Pattern. Bacterial keratitis." },
-  aaoRao: { id: "aao-rao", citation: "American Academy of Ophthalmology. Preferred Practice Pattern. Retinal and ophthalmic artery occlusions." },
+  aaoPac: { id: "aao-pac", citation: "Gedde SJ, et al. Primary angle closure disease Preferred Practice Pattern. American Academy of Ophthalmology. Ophthalmology. 2021." },
+  aaoConj: { id: "aao-conj", citation: "American Academy of Ophthalmology Cornea/External Disease Committee. Conjunctivitis Preferred Practice Pattern. Ophthalmology. 2024." },
+  aaoKeratitis: { id: "aao-keratitis", citation: "American Academy of Ophthalmology Cornea/External Disease Committee. Bacterial keratitis Preferred Practice Pattern. Ophthalmology. 2024." },
+  aaoRao: { id: "aao-rao", citation: "Flaxel CJ, et al. Retinal and ophthalmic artery occlusions Preferred Practice Pattern. American Academy of Ophthalmology. Ophthalmology. 2020." },
   aaoPvd: {
     id: "aao-pvd",
-    citation: "American Academy of Ophthalmology. Preferred Practice Pattern. Posterior vitreous detachment, retinal breaks and lattice degeneration.",
+    citation: "Flaxel CJ, et al. Posterior vitreous detachment, retinal breaks and lattice degeneration Preferred Practice Pattern. American Academy of Ophthalmology. Ophthalmology. 2020.",
   },
   hsv: {
     id: "aao-hsv",
@@ -33,7 +33,7 @@ const S = {
   },
   csbpr: {
     id: "csbpr",
-    citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management and secondary prevention of stroke.",
+    citation: "Heran M, et al. Canadian Stroke Best Practice Recommendations. Acute stroke management, 7th edition practice guidelines update. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2022.",
   },
   acrGca: {
     id: "acr-gca",
@@ -46,11 +46,11 @@ const S = {
   },
   rosen: {
     id: "rosen",
-    citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapter on ophthalmology.",
+    citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter on ophthalmology.",
   },
   tintinalli: {
     id: "tintinalli",
-    citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on eye emergencies and ocular trauma.",
+    citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on eye emergencies and ocular trauma.",
   },
 } satisfies Record<string, Source>;
 
@@ -63,13 +63,14 @@ export const EYE_SAMPS: Samp[] = [
     alsoTopics: ["headache"],
     title: "Headache and vomiting after an evening out",
     stem:
-      "A 67 year old woman arrives at 23:10 with 3 hours of severe right eye pain, right frontal headache and two episodes of vomiting. The pain began while she was watching a film in a dark theatre. She now sees coloured halos around lights. She takes hydrochlorothiazide. Yesterday she started an over the counter cold remedy that contains diphenhydramine. She has worn glasses for farsightedness since her forties. HR 96, BP 172/94, RR 18, T 36.8 C, SpO2 98% on room air. The right eye is diffusely red. The triage note reads migraine with conjunctivitis.",
+      "A 67-year-old woman arrives at 23:10 with 3 hours of severe right eye pain, right frontal headache and two episodes of vomiting. The pain began while she was watching a film in a dark theatre. She now sees coloured halos around lights. She takes hydrochlorothiazide. Yesterday she started an over the counter cold remedy that contains diphenhydramine. She has worn glasses for farsightedness since her forties. The right eye is diffusely red. The triage note reads migraine with conjunctivitis.",
+    vitals: { temperature: "36.8°C", pulse: "96/minute", resp: "18/minute", bp: "172/94 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "Before you accept the triage impression, list THREE findings you would examine for and document in the right eye.",
+        prompt: "Before you accept the triage impression, what findings would you examine for and document in the right eye?",
         accept: [
           VA,
           k("iop", "Intraocular pressure by tonometry", "intraocular pressure", "iop", "tonometry", "tonopen", "tono pen"),
@@ -93,20 +94,20 @@ export const EYE_SAMPS: Samp[] = [
         select: 3,
         update:
           "Right visual acuity is 20/200 and left is 20/30. The right pupil is 5 mm and nonreactive. The right cornea is hazy and the anterior chamber is shallow. IOP is 62 mmHg on the right and 17 mmHg on the left. She has no asthma, no heart block and no sulfonamide allergy.",
-        prompt: "Which THREE medications should she receive now? Select THREE.",
+        prompt: "Which of the following medications should she receive now for her right eye?",
         options: [
-          "Acetazolamide 500 mg IV",
           "Acetazolamide 5 g IV",
-          "Timolol 0.5% one drop to the right eye",
+          "Acetazolamide 500 mg IV",
           "Apraclonidine 1% one drop to the right eye",
           "Cyclopentolate 1% one drop to the right eye",
-          "Pilocarpine 4% one drop every 5 minutes for one hour",
-          "Tetracaine 0.5% drops to take home",
           "Moxifloxacin 0.5% one drop every hour",
-          "Prednisone 60 mg PO",
           "Phenylephrine 2.5% one drop to the right eye",
+          "Pilocarpine 4% every 5 minutes for one hour",
+          "Prednisone 60 mg PO",
+          "Tetracaine 0.5% drops to take home",
+          "Timolol 0.5% one drop to the right eye",
         ],
-        correct: [0, 2, 3],
+        correct: [1, 2, 9],
         explanation:
           "First line therapy lowers aqueous production with a topical beta blocker, an alpha agonist and a carbonic anhydrase inhibitor. Acetazolamide 500 mg IV or PO is the usual adult dose. Low strength pilocarpine is added once the pressure starts to fall. Intensive high strength pilocarpine can worsen the block, and a cycloplegic is contraindicated.",
         keyFeature: { topic: "eye", n: 1 },
@@ -116,7 +117,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of her history that predisposed her to this presentation.",
+        prompt: "What features of her history predisposed her to this presentation?",
         accept: [
           k("dark", "Dim light in the theatre causing pupil dilation", "dark", "dim light", "theatre", "theater", "low light"),
           k("anticholinergic", "Diphenhydramine, an anticholinergic antihistamine", "diphenhydramine", "anticholinergic", "antihistamine", "cold remedy"),
@@ -133,15 +134,15 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "One hour after treatment the right IOP is 34 mmHg and the pain is easing.",
-        prompt: "Which is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for this patient?",
         options: [
-          "Discharge with timolol drops and ophthalmology follow up in one week",
-          "CT head to exclude a subarachnoid hemorrhage before ophthalmology is called",
-          "Urgent ophthalmology assessment today for laser peripheral iridotomy and assessment of the fellow eye",
           "Admit to internal medicine for blood pressure control",
+          "CT head to exclude a subarachnoid hemorrhage",
+          "Discharge on timolol drops with ophthalmology in one week",
           "Lumbar puncture to exclude meningitis",
+          "Urgent ophthalmology today for laser peripheral iridotomy",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "Medical therapy only buys time. Definitive treatment is laser peripheral iridotomy, and the fellow eye usually needs prophylactic laser because it shares the same anatomy. The history and findings explain the headache, so CT and LP only delay care. The elevated BP reflects pain and vomiting.",
         keyFeature: { topic: "headache", n: 4 },
@@ -156,13 +157,13 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Student with a sore eye after a walk in clinic visit",
     stem:
-      "A 23 year old university student has 2 days of right eye pain, redness, tearing and light sensitivity. She wears soft monthly contact lenses and often sleeps in them on weekends. A walk in clinic diagnosed conjunctivitis yesterday and prescribed polymyxin B and trimethoprim drops. The pain is worse today. Vital signs are normal. Visual acuity is 20/80 in the right eye and 20/20 in the left eye with glasses.",
+      "A 23-year-old university student has 2 days of right eye pain, redness, tearing and light sensitivity. She wears soft monthly contact lenses and often sleeps in them on weekends. A walk in clinic diagnosed conjunctivitis yesterday and prescribed polymyxin B and trimethoprim drops. The pain is worse today. Vital signs are normal. Visual acuity is 20/80 in the right eye and 20/20 in the left eye with glasses.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE slit lamp findings that would indicate a diagnosis more serious than conjunctivitis.",
+        prompt: "What slit lamp findings would indicate a diagnosis more serious than conjunctivitis?",
         accept: [
           k("infiltrate", "Corneal infiltrate or white opacity", "infiltrate", "opacity", "white spot", "ulcer"),
           k("stain", "Epithelial defect staining with fluorescein", "fluorescein", "staining", "epithelial defect"),
@@ -181,9 +182,15 @@ export const EYE_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "Slit lamp shows a 2 mm white paracentral corneal infiltrate with an overlying fluorescein staining epithelial defect and 1+ anterior chamber cells. There is no hypopyon.",
-        prompt: "Which organism must your empiric therapy cover above all? Select one.",
-        options: ["Streptococcus pyogenes", "Chlamydia trachomatis", "Pseudomonas aeruginosa", "Adenovirus", "Candida albicans"],
-        correct: 2,
+        prompt: "Which of the following organisms must your empiric therapy cover above all in this patient?",
+        options: [
+          "Candida albicans",
+          "Chlamydia trachomatis",
+          "Human adenovirus",
+          "Pseudomonas aeruginosa",
+          "Streptococcus pyogenes",
+        ],
+        correct: 3,
         explanation:
           "Pseudomonas is the key pathogen in contact lens associated keratitis and can perforate the cornea within days. Topical fluoroquinolones cover it. Acanthamoeba and fungi are rarer and are considered when a lesion fails to respond.",
         keyFeature: { topic: "eye", n: 1 },
@@ -193,7 +200,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE parts of your emergency department management.",
+        prompt: "What are the parts of your emergency department management?",
         accept: [
           k("stoplens", "Stop contact lens wear", "stop contact", "no contact", "discontinue contact", "remove contact", "stop lens", "no lens"),
           k("fq", "Topical fluoroquinolone such as moxifloxacin every hour while awake", "fluoroquinolone", "moxifloxacin", "ciprofloxacin", "ofloxacin", "gatifloxacin", "besifloxacin"),
@@ -217,7 +224,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO habits or exposures you would ask about that raise the risk of this infection.",
+        prompt: "What habits or exposures would you ask about that raise the risk of this infection?",
         accept: [
           k("overnight", "Overnight or extended lens wear", "overnight", "sleeping in", "sleep in", "extended wear"),
           k("water", "Swimming, showering or hot tubs while wearing lenses", "swimming", "shower", "hot tub", "swim"),
@@ -240,13 +247,13 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Red eye worsening on prescribed drops",
     stem:
-      "A 41 year old man has had a red, watery left eye for 5 days. A walk in clinic prescribed tobramycin and dexamethasone drops 3 days ago. Since then the eye is more painful and light sensitive and his vision is blurred. He gets cold sores a few times a year. Vital signs are normal. Visual acuity is 20/60 in the left eye and 20/20 in the right.",
+      "A 41-year-old man has had a red, watery left eye for 5 days. A walk in clinic prescribed tobramycin and dexamethasone drops 3 days ago. Since then the eye is more painful and light sensitive and his vision is blurred. He gets cold sores a few times a year. Vital signs are normal. Visual acuity is 20/60 in the left eye and 20/20 in the right.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of this presentation that argue against simple conjunctivitis.",
+        prompt: "What features of this presentation argue against simple conjunctivitis?",
         accept: [
           k("vision", "Reduced visual acuity", "reduced vision", "blurred", "decreased vision", "reduced acuity", "20/60", "visual acuity"),
           k("photo", "Photophobia", "photophobia", "light sensitive", "light sensitivity"),
@@ -265,7 +272,7 @@ export const EYE_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Fluorescein shows a branching epithelial lesion with terminal bulbs in the central cornea. Corneal sensation is reduced. The anterior chamber is quiet.",
-        prompt: "List THREE steps in your management.",
+        prompt: "What are the steps in your management?",
         accept: [
           k("stopster", "Stop the tobramycin and dexamethasone drops", "stop dexamethasone", "stop steroid", "stop tobradex", "stop tobramycin", "stop the drop", "discontinue steroid", "discontinue dexamethasone", "discontinue the drop", "discontinue tobradex", "hold steroid", "hold dexamethasone", "hold tobradex"),
           k("oral", "Oral antiviral such as acyclovir 400 mg five times daily or valacyclovir", "acyclovir", "valacyclovir", "famciclovir", "oral antiviral"),
@@ -286,7 +293,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO complications that unsupervised topical steroids can cause in this patient.",
+        prompt: "What complications can unsupervised topical steroids cause in this patient?",
         accept: [
           k("geographic", "Enlarging geographic ulcer", "geographic", "enlarging ulcer", "worse ulcer", "worsening ulcer"),
           k("scar", "Stromal keratitis and corneal scarring", "scar", "scarring", "stromal"),
@@ -303,15 +310,15 @@ export const EYE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which oral regimen is most appropriate for this epithelial disease? Select one.",
+        prompt: "Which of the following oral regimens is most appropriate for this epithelial disease?",
         options: [
-          "Acyclovir 400 mg PO five times daily for 7 to 10 days",
-          "Acyclovir 200 mg PO once daily for 3 days",
-          "Valacyclovir 500 mg PO once daily for 3 days",
-          "Oseltamivir 75 mg PO twice daily for 5 days",
-          "Cephalexin 500 mg PO four times daily for 7 days",
+          "Acyclovir 200 mg daily for 3 days",
+          "Acyclovir 400 mg five times daily, 7 to 10 days",
+          "Cephalexin 500 mg four times daily for 7 days",
+          "Oseltamivir 75 mg twice daily for 5 days",
+          "Valacyclovir 500 mg once daily for 3 days",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Acyclovir 400 mg five times daily is a standard oral regimen for HSV epithelial keratitis. Valacyclovir 500 mg two or three times daily is an alternative. Once daily or short courses are suppression doses and undertreat active disease.",
         keyFeature: { topic: "eye", n: 4 },
@@ -326,13 +333,13 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Daycare worker with two red eyes",
     stem:
-      "A 29 year old daycare worker has had 3 days of redness and watery discharge, first in the right eye and now the left. Her eyes feel gritty. She had a sore throat last week. Several children at work have red eyes. She has no photophobia and thinks her vision is normal. She does not wear contact lenses. Vital signs are normal. A small tender preauricular node is felt on the right. She asks for the strong drops a friend received for the same problem.",
+      "A 29-year-old daycare worker has had 3 days of redness and watery discharge, first in the right eye and now the left. Her eyes feel gritty. She had a sore throat last week. Several children at work have red eyes. She has no photophobia and thinks her vision is normal. She does not wear contact lenses. Vital signs are normal. A small tender preauricular node is felt on the right. She asks for the strong drops a friend received for the same problem.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of the eye examination you need before diagnosing viral conjunctivitis.",
+        prompt: "What elements of the eye examination do you need before diagnosing viral conjunctivitis?",
         accept: [
           VA,
           k("fluor", "Fluorescein staining of the cornea", "fluorescein", "staining"),
@@ -353,7 +360,7 @@ export const EYE_SAMPS: Samp[] = [
         required: 2,
         update:
           "Acuity is 20/20 in both eyes. There are conjunctival follicles and injection. There is no corneal staining or infiltrate, the anterior chamber is quiet and the pupils are normal.",
-        prompt: "She again asks for a steroid and antibiotic combination drop. List TWO reasons to decline.",
+        prompt: "She again asks for a steroid and antibiotic combination drop. What are the reasons to decline?",
         accept: [
           k("hsv", "It can worsen an unrecognized herpes simplex infection", "herpes", "hsv"),
           k("shed", "It can prolong viral replication and shedding", "prolong", "shedding", "replication"),
@@ -371,7 +378,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE instructions you would give her.",
+        prompt: "What instructions would you give her?",
         accept: [
           k("cold", "Cold compresses", "cold compress", "cold compresses", "cool compresses", "compresses", "compress", "ice pack"),
           k("tears", "Artificial tears", "artificial tear", "lubricant", "lubricating"),
@@ -390,14 +397,14 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "menu",
         select: 1,
-        prompt: "Which medication should be prescribed? Select one, or None if none are required.",
+        prompt: "Which of the following medications should be prescribed for her red eyes?",
         options: [
+          "Acyclovir 400 mg PO five times daily",
+          "Erythromycin ointment",
           "Moxifloxacin 0.5% drops",
           "Polymyxin B and trimethoprim drops",
           "Prednisolone acetate 1% drops",
           "Tobramycin and dexamethasone drops",
-          "Acyclovir 400 mg PO five times daily",
-          "Erythromycin ointment",
           "None",
         ],
         correct: [6],
@@ -415,13 +422,14 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Forehead rash and a watery eye",
     stem:
-      "A 74 year old man has 4 days of burning pain over the left forehead. Yesterday a vesicular rash appeared on the left forehead, upper eyelid and tip of the nose. Today his left eye is red and watery. He takes methotrexate for rheumatoid arthritis. HR 84, BP 146/82, T 37.4 C. Visual acuity is 20/40 in the left eye and 20/25 in the right.",
+      "A 74-year-old man has 4 days of burning pain over the left forehead. Yesterday a vesicular rash appeared on the left forehead, upper eyelid and tip of the nose. Today his left eye is red and watery. He takes methotrexate for rheumatoid arthritis. Visual acuity is 20/40 in the left eye and 20/25 in the right.",
+    vitals: { temperature: "37.4°C", pulse: "84/minute", bp: "146/82 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE further history elements you would obtain.",
+        prompt: "What further history elements would you obtain?",
         accept: [
           k("onset", "Time since rash onset", "onset", "how long", "timing", "72 hour", "when the rash"),
           k("vision", "Change in vision", "vision change", "blurred", "change in vision", "visual change", "vision loss"),
@@ -439,15 +447,15 @@ export const EYE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "What is the main significance of the lesion on the tip of the nose? Select one.",
+        prompt: "Which of the following best describes the main significance of the lesion on the tip of the nose?",
         options: [
-          "It indicates bacterial superinfection",
-          "It shows involvement of the nasociliary branch and predicts ocular involvement",
-          "It suggests disseminated zoster requiring isolation",
-          "It indicates involvement of the maxillary division",
-          "It has no clinical significance",
+          "Bacterial superinfection of the vesicles",
+          "Disseminated zoster that requires isolation",
+          "Involvement of the maxillary division",
+          "Nasociliary branch involvement predicting eye involvement",
+          "No clinical significance for the eye",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "The nasociliary nerve supplies the nasal tip and the globe. A lesion there, Hutchinson sign, markedly raises the chance of eye involvement. Every patient with ophthalmic zoster still needs a slit lamp examination.",
         keyFeature: { topic: "eye", n: 2 },
@@ -458,7 +466,7 @@ export const EYE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Slit lamp shows faintly staining pseudodendrites and 1+ anterior chamber cells. IOP is 24 mmHg on the left.",
-        prompt: "List TWO parts of your treatment plan. Include the drug, dose and route for any antiviral.",
+        prompt: "What are the parts of your treatment plan, including the drug, dose and route for any antiviral?",
         accept: [
           k("vala", "Valacyclovir 1 g PO three times daily for 7 days", "valacyclovir 1 g", "valacyclovir 1000 mg", "valacyclovir 1g"),
           k("famci", "Famciclovir 500 mg PO three times daily for 7 days", "famciclovir 500 mg", "famciclovir 500mg"),
@@ -480,7 +488,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO other issues to address before discharge.",
+        prompt: "What other issues would you address before discharge?",
         accept: [
           k("mtx", "Discuss holding methotrexate with his rheumatologist", "methotrexate", "hold methotrexate", "stop methotrexate", "withhold methotrexate", "rheumatologist"),
           k("isolate", "Avoid contact with pregnant, newborn or immunocompromised people until crusted", "avoid contact", "no contact", "pregnant", "newborn", "crusted", "contact"),
@@ -503,13 +511,13 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Young man with a painful blurry eye",
     stem:
-      "A 34 year old man has 2 days of a deep ache in the right eye with redness, light sensitivity and blurred vision. He has had low back pain and morning stiffness for years that improves with activity. He had a similar episode in the left eye 2 years ago that settled on its own. He does not wear contact lenses and has had no trauma. Vital signs are normal. Visual acuity is 20/50 in the right eye and 20/20 in the left.",
+      "A 34-year-old man has 2 days of a deep ache in the right eye with redness, light sensitivity and blurred vision. He has had low back pain and morning stiffness for years that improves with activity. He had a similar episode in the left eye 2 years ago that settled on its own. He does not wear contact lenses and has had no trauma. Vital signs are normal. Visual acuity is 20/50 in the right eye and 20/20 in the left.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE examination findings that would support your leading diagnosis.",
+        prompt: "What examination findings would support your leading diagnosis?",
         accept: [
           k("flush", "Ciliary flush", "ciliary flush", "perilimbal", "limbal flush"),
           k("cells", "Anterior chamber cells", "anterior chamber cell", "ac cell", "cells"),
@@ -528,7 +536,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO systemic conditions you would ask about.",
+        prompt: "What systemic conditions would you ask about?",
         accept: [
           k("as", "Ankylosing spondylitis or axial spondyloarthritis", "ankylosing", "spondylitis", "spondyloarthritis", "spondyloarthropathy"),
           k("ibd", "Inflammatory bowel disease", "inflammatory bowel", "ibd", "crohn", "ulcerative colitis"),
@@ -550,18 +558,18 @@ export const EYE_SAMPS: Samp[] = [
         kind: "menu",
         select: 2,
         update: "Slit lamp shows 2+ cells with flare and a few fine keratic precipitates. There is no corneal staining. IOP is 14 mmHg.",
-        prompt: "Which TWO treatments are appropriate? Select TWO.",
+        prompt: "Which of the following treatments are appropriate for his right eye now?",
         options: [
-          "Cyclopentolate 1% one drop three times daily",
-          "Prednisolone acetate 1% drops, started after discussion with ophthalmology",
-          "Moxifloxacin 0.5% drops four times daily",
           "Acyclovir 800 mg PO five times daily",
-          "Pilocarpine 2% drops",
-          "Tetracaine drops for home use",
+          "Cyclopentolate 1% one drop three times daily",
+          "Moxifloxacin 0.5% drops four times daily",
+          "Pilocarpine 2% drops four times daily",
+          "Prednisolone acetate 1% drops after ophthalmology input",
           "Pressure patch for 24 hours",
+          "Tetracaine drops for home use",
           "Timolol 0.5% drops twice daily",
         ],
-        correct: [0, 1],
+        correct: [1, 4],
         explanation:
           "A cycloplegic relieves ciliary spasm and prevents synechiae. A topical steroid is the mainstay once infection is excluded, ideally started with ophthalmology input and follow up. Pilocarpine constricts the pupil and promotes synechiae. Antibiotics play no role.",
         keyFeature: { topic: "eye", n: 3 },
@@ -570,15 +578,15 @@ export const EYE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which follow up is most appropriate? Select one.",
+        prompt: "Which of the following follow up arrangements is most appropriate for this patient?",
         options: [
-          "Ophthalmology within 24 to 48 hours",
           "Family physician in 2 weeks",
+          "Ophthalmology within 24 to 48 hours",
+          "Repeat ED visit in one week",
           "Rheumatology in 3 months with no eye follow up",
           "No follow up if symptoms settle",
-          "Repeat ED visit in one week",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Anterior uveitis needs slit lamp monitoring of inflammation and IOP during steroid therapy. Misdiagnosis as conjunctivitis without follow up risks synechiae, glaucoma and cataract. Rheumatology referral is useful but does not replace eye follow up.",
         keyFeature: { topic: "eye", n: 1 },
@@ -594,13 +602,14 @@ export const EYE_SAMPS: Samp[] = [
     alsoTopics: ["headache"],
     title: "Older woman who woke unable to see",
     stem:
-      "A 77 year old woman woke today unable to see out of her left eye. There is no eye pain. She has hypertension and hypothyroidism. HR 82, BP 154/80, RR 16, T 37.6 C, SpO2 97% on room air. Visual acuity is counting fingers at 1 metre in the left eye and 20/30 in the right.",
+      "A 77-year-old woman woke today unable to see out of her left eye. There is no eye pain. She has hypertension and hypothyroidism. Visual acuity is counting fingers at 1 metre in the left eye and 20/30 in the right.",
+    vitals: { temperature: "37.6°C", pulse: "82/minute", resp: "16/minute", bp: "154/80 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE symptoms you would specifically ask about.",
+        prompt: "What symptoms would you specifically ask about?",
         accept: [
           k("ha", "New headache or temple pain", "headache", "temple", "temporal"),
           k("jaw", "Jaw claudication", "jaw", "claudication", "chewing"),
@@ -621,7 +630,7 @@ export const EYE_SAMPS: Samp[] = [
         required: 2,
         update:
           "She reports 3 weeks of left temple headache, pain when chewing, stiff shoulders and a 4 kg weight loss. Last week her left vision greyed out twice for a minute. There is a left relative afferent pupillary defect. The left optic disc is pale and swollen. The left temporal artery is tender with a weak pulse.",
-        prompt: "List TWO blood tests that support your diagnosis.",
+        prompt: "What blood tests support your diagnosis?",
         accept: [
           k("esr", "Erythrocyte sedimentation rate", "esr", "sedimentation"),
           k("crp", "C reactive protein", "crp", "c reactive"),
@@ -636,7 +645,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "What corticosteroid do you start now? Include the drug, dose and route.",
+        prompt: "What corticosteroid do you start now, including the drug, dose and route?",
         accept: [
           k("ivmp", "Methylprednisolone 500 to 1000 mg IV daily for 3 days", "methylprednisolone 1000 mg", "methylprednisolone 1 g", "methylprednisolone 500 mg", "methylprednisolone 1g", "methylprednisolone 1000mg", "methylprednisolone 500mg", "solumedrol 1 g", "solumedrol 1g", "solumedrol 1000 mg", "solumedrol 500 mg"),
           k("pred", "Prednisone 1 mg/kg PO daily up to 60 mg", "prednisone 60 mg", "prednisone 60mg", "prednisone 1 mg/kg"),
@@ -654,7 +663,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO arrangements to make before she leaves the emergency department.",
+        prompt: "What arrangements would you make before she leaves the emergency department?",
         accept: [
           k("biopsy", "Temporal artery biopsy or vascular ultrasound within 1 to 2 weeks", "biopsy", "ultrasound"),
           k("ophtho", "Urgent ophthalmology assessment", "ophthalmology", "ophthalmologist"),
@@ -679,20 +688,21 @@ export const EYE_SAMPS: Samp[] = [
     alsoTopics: ["cva"],
     title: "Sudden painless loss of vision while reading",
     stem:
-      "A 68 year old man lost the vision in his right eye suddenly 80 minutes ago while reading the newspaper. There is no pain. He has hypertension, type 2 diabetes and smokes. HR 88 irregularly irregular, BP 178/96, RR 16, T 36.7 C, SpO2 97% on room air. Visual acuity is light perception in the right eye and 20/25 in the left. There is a right relative afferent pupillary defect. The right retina looks pale with a cherry red spot at the macula.",
+      "A 68-year-old man lost the vision in his right eye suddenly 80 minutes ago while reading the newspaper. There is no pain. He has hypertension, type 2 diabetes and smokes. His pulse is irregularly irregular. Visual acuity is light perception in the right eye and 20/25 in the left. There is a right relative afferent pupillary defect. The right retina looks pale with a cherry red spot at the macula.",
+    vitals: { temperature: "36.7°C", pulse: "88/minute irregular", resp: "16/minute", bp: "178/96 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in his management?",
         options: [
-          "Ocular massage and discharge with ophthalmology review tomorrow",
           "Anterior chamber paracentesis in the emergency department",
-          "Activate the stroke protocol for urgent stroke team assessment and vascular imaging",
-          "Oral acetazolamide and discharge",
+          "Ocular massage and discharge for review tomorrow",
+          "Oral acetazolamide and discharge home",
           "Outpatient MRI of the orbits",
+          "Urgent stroke team assessment and vascular imaging",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "Central retinal artery occlusion is an ocular stroke. It carries a high early risk of cerebral stroke and shares the same causes. Current guidance treats it through the stroke pathway for rapid assessment and workup. Some centres consider thrombolysis within 4.5 hours, but randomized trials have not shown clear benefit. Ocular massage and paracentesis have no proven benefit.",
         keyFeature: { topic: "cva", n: 3 },
@@ -702,7 +712,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations that should be done promptly.",
+        prompt: "What investigations should be done promptly?",
         accept: [
           k("cta", "CT angiogram of head and neck", "ct angiogram", "cta", "carotid", "angiography"),
           k("ct", "Noncontrast CT head", "ct head", "noncontrast ct"),
@@ -722,7 +732,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO symptoms you must ask about to exclude an arteritic cause.",
+        prompt: "What symptoms must you ask about to exclude an arteritic cause?",
         accept: [
           k("ha", "New headache", "headache"),
           k("jaw", "Jaw claudication", "jaw", "claudication"),
@@ -744,13 +754,13 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Flashing lights and a shadow",
     stem:
-      "A 57 year old man has had flashing lights and many new floaters in his right eye for 2 days. Today a dark shadow is spreading up from the bottom of his vision in that eye. He has no pain. He is very nearsighted and had cataract surgery in the right eye one year ago. Vital signs are normal.",
+      "A 57-year-old man has had flashing lights and many new floaters in his right eye for 2 days. Today a dark shadow is spreading up from the bottom of his vision in that eye. He has no pain. He is very nearsighted and had cataract surgery in the right eye one year ago. Vital signs are normal.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of his history that raise the risk of his likely diagnosis.",
+        prompt: "What features of his history raise the risk of his likely diagnosis?",
         accept: [
           k("myopia", "High myopia", "myopia", "nearsighted", "myopic"),
           k("cataract", "Previous cataract surgery", "cataract"),
@@ -767,7 +777,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE parts of the eye examination you would document.",
+        prompt: "What parts of the eye examination would you document?",
         accept: [
           VA,
           k("fields", "Confrontation visual fields", "visual field", "confrontation", "field"),
@@ -785,15 +795,15 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Right acuity is 20/25. There is an inferior field defect in the right eye. Point of care ocular ultrasound shows a bright undulating membrane in the posterior globe.",
-        prompt: "Which ultrasound feature best distinguishes retinal detachment from posterior vitreous detachment? Select one.",
+        prompt: "Which of the following ultrasound features best distinguishes retinal detachment from posterior vitreous detachment?",
         options: [
-          "The membrane remains tethered to the optic disc",
-          "The membrane moves with eye movement",
           "Diffuse low level echoes fill the vitreous",
           "The membrane is thin and faint at low gain",
+          "The membrane moves with eye movement",
+          "The membrane remains tethered to the optic disc",
           "The optic nerve sheath is wider than 5 mm",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "The retina is anchored at the optic disc, so a detached retina stays tethered there. A vitreous detachment is thinner, usually does not insert at the disc and swings more freely. Diffuse low echoes suggest vitreous hemorrhage.",
         keyFeature: { topic: "eye", n: 3 },
@@ -802,15 +812,15 @@ export const EYE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which disposition is most appropriate? Select one.",
+        prompt: "Which of the following dispositions is most appropriate for this patient?",
         options: [
-          "Same day ophthalmology or retina assessment because the macula is still attached",
-          "Routine ophthalmology referral within 2 weeks",
-          "Discharge with advice to return if vision worsens",
-          "Same day assessment only if acuity falls below 20/200",
           "CT head and neurology consult",
+          "Discharge with advice to return if vision worsens",
+          "Routine ophthalmology referral within 2 weeks",
+          "Same day assessment only if acuity falls below 20/200",
+          "Same day ophthalmology or retina assessment",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "Good acuity suggests the macula is still attached. Urgent repair can preserve central vision, so this is the most time sensitive form of detachment. Once the macula detaches, the visual outcome is worse regardless of how fast surgery follows.",
         keyFeature: { topic: "eye", n: 3 },
@@ -825,13 +835,14 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Teen struck in the eye at hockey",
     stem:
-      "A 15 year old boy was hit in the left eye by a hockey puck 2 hours ago. His helmet had no visor. He has left eye pain and blurred vision. His father, who brought him, has sickle cell trait. HR 90, BP 124/72, RR 16, T 36.8 C. There is moderate left periorbital swelling and a lateral subconjunctival hemorrhage. The triage nurse has labelled this a bruised eye.",
+      "A 15-year-old boy was hit in the left eye by a hockey puck 2 hours ago. His helmet had no visor. He has left eye pain and blurred vision. His father, who brought him, has sickle cell trait. There is moderate left periorbital swelling and a lateral subconjunctival hemorrhage. The triage nurse has labelled this a bruised eye.",
+    vitals: { temperature: "36.8°C", pulse: "90/minute", resp: "16/minute", bp: "124/72 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE assessments you would perform before accepting the triage label.",
+        prompt: "What assessments would you perform before accepting the triage label?",
         accept: [
           VA,
           k("hyphema", "Slit lamp for hyphema or microhyphema", "hyphema", "microhyphema", "slit lamp", "red cell"),
@@ -852,7 +863,7 @@ export const EYE_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Left acuity is 20/40. Slit lamp shows red cells suspended in the anterior chamber without a layered clot. Seidel test is negative. IOP is 26 mmHg. Eye movements are full.",
-        prompt: "List THREE parts of your management.",
+        prompt: "What are the parts of your management?",
         accept: [
           k("hob", "Elevate the head of the bed 30 to 45 degrees", "elevate", "head of bed", "head up", "upright"),
           k("shield", "Rigid eye shield", "shield"),
@@ -876,7 +887,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "His sickle status is unknown. List TWO ways a positive sickle screen would change management.",
+        prompt: "His sickle status is unknown. How would a positive sickle screen change management?",
         accept: [
           k("iop", "Higher risk of IOP elevation and optic nerve damage at lower pressures", "optic nerve", "lower pressure", "higher iop", "pressure spike", "iop"),
           k("cai", "Avoid carbonic anhydrase inhibitors such as acetazolamide", "avoid acetazolamide", "no acetazolamide", "not acetazolamide", "acetazolamide contraindicated", "avoid carbonic anhydrase", "no carbonic anhydrase", "carbonic anhydrase contraindicated", "avoid cai", "no cai"),
@@ -893,7 +904,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO symptoms that should prompt his return to the emergency department.",
+        prompt: "What symptoms should prompt his return to the emergency department?",
         accept: [
           k("vision", "Worsening vision", "vision", "blurry", "blurred"),
           k("pain", "Increasing eye pain", "pain"),
@@ -916,20 +927,21 @@ export const EYE_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma"],
     title: "Anticoagulated woman after a fall",
     stem:
-      "An 82 year old woman fell in her kitchen one hour ago and struck her left orbit on the counter. She takes apixaban 5 mg twice daily for atrial fibrillation. Her last dose was this morning. She has severe left eye pain and nausea. HR 94 irregular, BP 158/84, RR 18, SpO2 96%, GCS 15. The left lids are tense and swollen. The left globe is proptotic with diffuse subconjunctival hemorrhage and restricted movement in all directions. Left visual acuity is hand motion. Right is 20/40. There is a left relative afferent pupillary defect. Left IOP is 54 mmHg.",
+      "An 82-year-old woman fell in her kitchen one hour ago and struck her left orbit on the counter. She takes apixaban 5 mg twice daily for atrial fibrillation. Her last dose was this morning. She has severe left eye pain and nausea. Her oxygen saturation is 96% and her GCS is 15. The left lids are tense and swollen. The left globe is proptotic with diffuse subconjunctival hemorrhage and restricted movement in all directions. Left visual acuity is hand motion. Right is 20/40. There is a left relative afferent pupillary defect. Left IOP is 54 mmHg.",
+    vitals: { pulse: "94/minute irregular", resp: "18/minute", bp: "158/84 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step for her left eye?",
         options: [
+          "Consult ophthalmology and await their arrival first",
           "CT orbits, then decide on treatment",
           "Lateral canthotomy and inferior cantholysis now",
           "Mannitol IV and reassess in one hour",
-          "Consult ophthalmology and await their arrival",
-          "Timolol drops alone",
+          "Timolol drops as the only treatment",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Orbital compartment syndrome can cause permanent vision loss within about 90 minutes. Reduced acuity, an afferent defect and very high IOP after trauma are indications to decompress at the bedside. Imaging and specialist arrival must not delay it. Medical therapy is only an adjunct.",
         keyFeature: { topic: "eye", n: 3 },
@@ -939,7 +951,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings in this patient that are indications for the procedure.",
+        prompt: "What findings in this patient are indications for the procedure?",
         accept: [
           k("va", "Decreased visual acuity", "acuity", "hand motion", "vision"),
           k("rapd", "Relative afferent pupillary defect", "rapd", "afferent"),
@@ -957,7 +969,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO steps to manage her anticoagulation.",
+        prompt: "What steps would you take to manage her anticoagulation?",
         accept: [
           k("pcc", "Prothrombin complex concentrate, for example 50 units/kg or a fixed 2000 units", "pcc", "prothrombin complex", "octaplex", "beriplex"),
           k("andexanet", "Andexanet alfa where available", "andexanet"),
@@ -976,7 +988,7 @@ export const EYE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "After decompression the left IOP is 28 mmHg and acuity is counting fingers.",
-        prompt: "Given the subconjunctival hemorrhage, list TWO other ocular injuries you would look for on slit lamp and fundus examination.",
+        prompt: "Given the subconjunctival hemorrhage, what other ocular injuries would you look for on slit lamp and fundus examination?",
         accept: [
           k("hyphema", "Hyphema", "hyphema"),
           k("globe", "Open globe injury", "open globe", "rupture", "seidel", "laceration"),
@@ -999,20 +1011,21 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Splash at work",
     stem:
-      "A 31 year old man arrives 10 minutes after a commercial drain cleaner splashed into his right eye at work. He rinsed it briefly at a sink. He is in severe pain and cannot open the eye. Vital signs are HR 104, BP 138/86, RR 20. The triage nurse wants to check his visual acuity before anything else.",
+      "A 31-year-old man arrives 10 minutes after a commercial drain cleaner splashed into his right eye at work. He rinsed it briefly at a sink. He is in severe pain and cannot open the eye. The triage nurse wants to check his visual acuity before anything else.",
+    vitals: { pulse: "104/minute", resp: "20/minute", bp: "138/86 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate first action? Select one.",
+        prompt: "Which of the following is the most appropriate first action for this patient?",
         options: [
-          "Measure visual acuity before any treatment",
-          "Instil topical anaesthetic and begin copious irrigation right away",
-          "Neutralize the eye with a dilute acid solution",
-          "Check the tear pH and wait for the result before irrigating",
+          "Check the tear pH and await the result before irrigating",
           "Complete a slit lamp examination first",
+          "Instil topical anaesthetic and irrigate copiously now",
+          "Measure visual acuity before any treatment",
+          "Neutralize the eye with a dilute acid solution",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Chemical injury is the one eye emergency where treatment comes before acuity. Alkali penetrates within minutes. Irrigate first and measure acuity afterwards. Neutralizing agents cause further heat and injury.",
         keyFeature: { topic: "eye", n: 3 },
@@ -1022,7 +1035,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE key details of how you will irrigate and when you will stop.",
+        prompt: "What are the key details of how you will irrigate and when you will stop?",
         accept: [
           k("volume", "At least 1 to 2 litres per eye", "litre", "liter", "2 l", "1 l", "volume"),
           k("fluid", "Normal saline, Ringer lactate or tap water if nothing else", "saline", "ringer", "lactate", "tap water"),
@@ -1041,7 +1054,7 @@ export const EYE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "After 4 litres the pH is stable at 7.2. Right acuity is 20/70. Slit lamp shows a large epithelial defect and white blanching of the limbus over 3 clock hours.",
-        prompt: "List TWO history details about the exposure you would now obtain.",
+        prompt: "What history details about the exposure would you now obtain?",
         accept: [
           k("agent", "The exact product and chemical, with the safety data sheet", "product", "chemical", "safety data", "sds", "msds", "agent"),
           k("conc", "Concentration of the chemical", "concentration"),
@@ -1060,7 +1073,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO further management steps.",
+        prompt: "What further management steps would you take?",
         accept: [
           k("ophtho", "Same day ophthalmology assessment because limbal ischemia predicts a poor outcome", "ophthalmology", "ophthalmologist"),
           k("abx", "Topical antibiotic such as erythromycin ointment", "antibiotic", "erythromycin", "moxifloxacin"),
@@ -1084,13 +1097,13 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Something flew into the eye in the workshop",
     stem:
-      "A 44 year old man was striking a steel chisel with a hammer in his garage 3 hours ago when he felt something hit his left eye. He has mild pain and blurry vision. He was not wearing safety glasses. His last tetanus shot was over 10 years ago. Vital signs are normal. There is a small inferotemporal subconjunctival hemorrhage in the left eye.",
+      "A 44-year-old man was striking a steel chisel with a hammer in his garage 3 hours ago when he felt something hit his left eye. He has mild pain and blurry vision. He was not wearing safety glasses. His last tetanus shot was over 10 years ago. Vital signs are normal. There is a small inferotemporal subconjunctival hemorrhage in the left eye.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE parts of the history that affect your risk assessment.",
+        prompt: "What parts of the history affect your risk assessment?",
         accept: [
           k("mech", "Metal on metal, high velocity mechanism", "metal on metal", "high velocity", "hammer", "chisel", "mechanism"),
           k("protection", "Eye protection worn or not", "protection", "safety glass", "safety glasses", "goggle", "goggles"),
@@ -1109,7 +1122,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE examination findings that would suggest an open globe.",
+        prompt: "What examination findings would suggest an open globe?",
         accept: [
           k("pupil", "Peaked or teardrop pupil", "peaked", "teardrop", "tear drop", "irregular pupil"),
           k("seidel", "Positive Seidel test", "seidel"),
@@ -1133,15 +1146,15 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Left acuity is 20/60. There is a 1 mm full thickness corneal laceration with a positive Seidel test, a teardrop pupil and a microhyphema.",
-        prompt: "Which imaging is most appropriate? Select one.",
+        prompt: "Which of the following imaging studies is most appropriate for this patient?",
         options: [
+          "MRI orbits without contrast",
           "Noncontrast CT orbits with thin cuts",
-          "MRI orbits",
           "Ocular ultrasound with firm probe pressure",
           "Plain orbital X rays alone",
           "No imaging is needed",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Thin cut CT finds and localizes metallic foreign bodies. MRI is contraindicated when a metal fragment is possible. Ultrasound with pressure on an open globe risks extrusion of contents.",
         keyFeature: { topic: "eye", n: 1 },
@@ -1151,7 +1164,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE further management steps.",
+        prompt: "What further management steps would you take?",
         accept: [
           k("shield", "Rigid shield without pressure", "shield"),
           k("abx", "IV antibiotics such as vancomycin with ceftazidime, or a fluoroquinolone", "antibiotic", "vancomycin", "ceftazidime", "moxifloxacin", "levofloxacin"),
@@ -1182,13 +1195,14 @@ export const EYE_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Child with a swollen eyelid and fever",
     stem:
-      "A 7 year old boy has had 5 days of cold symptoms and 2 days of increasing left eyelid swelling and redness. His family physician called it conjunctivitis with lid swelling and started antibiotic drops yesterday. Today he has a fever and a headache. T 39.1 C, HR 128, BP 102/64, RR 22, SpO2 98% on room air. Weight 24 kg. Both left eyelids are swollen and red, and the conjunctiva is swollen.",
+      "A 7-year-old boy has had 5 days of cold symptoms and 2 days of increasing left eyelid swelling and redness. His family physician called it conjunctivitis with lid swelling and started antibiotic drops yesterday. Today he has a fever and a headache. Both left eyelids are swollen and red, and the conjunctiva is swollen.",
+    vitals: { temperature: "39.1°C", pulse: "128/minute", resp: "22/minute", bp: "102/64 mmHg", o2sat: "98% on room air", weight: "24 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that would suggest orbital rather than preseptal infection.",
+        prompt: "What findings would suggest orbital rather than preseptal infection?",
         accept: [
           k("proptosis", "Proptosis", "proptosis", "proptotic", "bulging"),
           k("paineom", "Pain with eye movement", "pain with eye movement", "pain on eye movement", "painful eye movement", "pain with movement"),
@@ -1206,13 +1220,13 @@ export const EYE_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "He has mild proptosis and pain on upgaze. Acuity with a picture chart is 20/40 in the left eye and 20/25 in the right. There is no afferent defect.",
-        prompt: "Which imaging is most appropriate? Select one.",
+        prompt: "Which of the following imaging studies is most appropriate for this child?",
         options: [
           "CT orbits and sinuses with IV contrast",
-          "Plain sinus X rays",
-          "Noncontrast CT head",
+          "Noncontrast CT of the head",
+          "Outpatient MRI of the brain",
+          "Plain X rays of the sinuses",
           "No imaging, treat and reassess",
-          "Outpatient MRI brain",
         ],
         correct: 0,
         explanation:
@@ -1224,7 +1238,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO parts of your treatment plan.",
+        prompt: "What are the parts of your treatment plan?",
         accept: [
           k("ceftriaxone", "IV ceftriaxone", "ceftriaxone", "cefotaxime"),
           k("vanco", "IV vancomycin when severe or MRSA is a concern", "vancomycin", "mrsa"),
@@ -1244,7 +1258,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO complications you would monitor for.",
+        prompt: "What complications would you monitor for?",
         accept: [
           k("abscess", "Subperiosteal or orbital abscess", "abscess"),
           k("cst", "Cavernous sinus thrombosis", "cavernous"),
@@ -1266,13 +1280,14 @@ export const EYE_SAMPS: Samp[] = [
     topic: "eye",
     title: "Red eye a few days after a procedure",
     stem:
-      "A 79 year old woman has increasing ache and redness in her right eye since yesterday. Her vision in that eye is much worse. Her family physician suspected pink eye on the phone and suggested she come in for drops. HR 86, BP 148/78, T 37.3 C. Visual acuity is hand motion in the right eye and 20/40 in the left.",
+      "A 79-year-old woman has increasing ache and redness in her right eye since yesterday. Her vision in that eye is much worse. Her family physician suspected pink eye on the phone and suggested she come in for drops. Visual acuity is hand motion in the right eye and 20/40 in the left.",
+    vitals: { temperature: "37.3°C", pulse: "86/minute", bp: "148/78 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO history questions that could change your diagnosis.",
+        prompt: "What history questions could change your diagnosis?",
         accept: [
           k("surgery", "Recent eye surgery such as cataract surgery", "surgery", "cataract", "operation"),
           k("injection", "Recent intravitreal injection", "injection", "intravitreal"),
@@ -1291,7 +1306,7 @@ export const EYE_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "She had cataract surgery in the right eye 4 days ago. The right lid is swollen. There is diffuse injection, a hazy cornea and a 2 mm layered hypopyon.",
-        prompt: "List THREE findings in this case that exclude conjunctivitis.",
+        prompt: "What findings in this case exclude conjunctivitis?",
         accept: [
           k("hypopyon", "Hypopyon", "hypopyon"),
           k("va", "Severely reduced visual acuity", "acuity", "hand motion", "vision"),
@@ -1308,15 +1323,15 @@ export const EYE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step for this patient?",
         options: [
-          "Emergent ophthalmology assessment today for vitreous tap and intravitreal antibiotics",
-          "Hourly topical moxifloxacin with ophthalmology follow up tomorrow",
-          "Topical prednisolone acetate every hour",
           "Admit to internal medicine for IV antibiotics alone",
-          "CT orbits with contrast",
+          "CT of the orbits with IV contrast",
+          "Emergent ophthalmology for tap and intravitreal antibiotics",
+          "Hourly moxifloxacin drops with ophthalmology review tomorrow",
+          "Topical prednisolone acetate every hour",
         ],
-        correct: 0,
+        correct: 2,
         explanation:
           "Vision outcome depends on rapid intravitreal antibiotics after a vitreous sample. Topical drops do not reach therapeutic levels in the vitreous. IV antibiotics alone are inadequate for postoperative endophthalmitis.",
         keyFeature: { topic: "eye", n: 1 },
@@ -1326,7 +1341,7 @@ export const EYE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO other procedures or events that can precede this condition.",
+        prompt: "What other procedures or events can precede this condition?",
         accept: [
           k("antivegf", "Intravitreal injection such as anti VEGF therapy", "intravitreal", "anti vegf", "injection"),
           k("glaucoma", "Glaucoma surgery with a filtering bleb", "glaucoma", "bleb", "trabeculectomy"),

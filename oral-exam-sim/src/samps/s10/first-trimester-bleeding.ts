@@ -33,7 +33,7 @@ const S = {
   },
   nice: {
     id: "nice-ng126",
-    citation: "National Institute for Health and Care Excellence. NG126. Ectopic pregnancy and miscarriage. Diagnosis and initial management.",
+    citation: "National Institute for Health and Care Excellence. NG126. Ectopic pregnancy and miscarriage. Diagnosis and initial management. 2019, updated 2023.",
   },
   doubilet: {
     id: "doubilet",
@@ -41,11 +41,11 @@ const S = {
   },
   phacSti: {
     id: "phac-sti",
-    citation: "Public Health Agency of Canada. Canadian Guidelines on Sexually Transmitted Infections. Chlamydia and gonorrhea guides, including the December 2024 update to gonorrhea treatment.",
+    citation: "Public Health Agency of Canada. Canadian Guidelines on Sexually Transmitted Infections. Chlamydia guide and gonorrhea guide. Gonorrhea treatment updated December 2024.",
   },
   rosen: {
     id: "rosen",
-    citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapter on acute complications of pregnancy.",
+    citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter on acute complications of pregnancy.",
   },
 } satisfies Record<string, Source>;
 
@@ -78,13 +78,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Collapse at work",
     stem:
-      "A 27 year old woman is brought by EMS after fainting at work. Her last menstrual period was 7 weeks ago. She has had one day of spotting and lower abdominal pain that is now diffuse, with pain at the tip of her right shoulder. HR 124, BP 86/54, RR 24, T 36.4 C, SpO2 99% on room air. She is pale and diaphoretic. A urine pregnancy test is positive.",
+      "A 27-year-old woman is brought by EMS after fainting at work. Her last menstrual period was 7 weeks ago. She has had one day of spotting and lower abdominal pain that is now diffuse, with pain at the tip of her right shoulder. She is pale and diaphoretic. A urine pregnancy test is positive.",
+    vitals: { temperature: "36.4°C", pulse: "124/minute", resp: "24/minute", bp: "86/54 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE actions you would take in the first 5 minutes.",
+        prompt: "What actions would you take in the first 5 minutes?",
         accept: [
           k("iv", "Two large bore IV lines", "large bore", "two iv", "2 iv", "iv access"),
           k("blood", "Crossmatch and release of uncrossmatched O negative blood", "crossmatch", "cross match", "o negative", "o neg", "uncrossmatched", "type and screen"),
@@ -103,15 +104,15 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "Point of care ultrasound shows free fluid in the hepatorenal space and no intrauterine pregnancy.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in her management?",
         options: [
+          "CT abdomen and pelvis with contrast",
           "Emergency gynecology for immediate surgery",
           "Formal pelvic ultrasound by radiology",
-          "Quantitative beta hCG, then decide on management",
           "Methotrexate 50 mg/m2 IM",
-          "CT abdomen and pelvis with contrast",
+          "Quantitative beta hCG, then decide on management",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Hemoperitoneum reaching the hepatorenal space with shock and a positive pregnancy test needs the operating room. A formal scan, quantitative hCG or CT only delays definitive hemorrhage control. Methotrexate is contraindicated with rupture or instability.",
         keyFeature: { topic: "first-trimester-bleeding", n: 2 },
@@ -122,17 +123,17 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "menu",
         select: 2,
         update: "After 1 litre of crystalloid she has HR 130 and BP 78/40. The operating room will be ready in 15 minutes.",
-        prompt: "Which TWO are the most appropriate resuscitation choices now? Select TWO.",
+        prompt: "Which of the following are the most appropriate resuscitation choices for her now?",
         options: [
-          "Uncrossmatched O Rh D negative red cells",
           "A further 3 litres of normal saline",
-          "Norepinephrine infusion to a MAP of 65",
           "Activate the massive hemorrhage protocol",
-          "Wait for fully crossmatched blood",
-          "Albumin 25%",
+          "Albumin 25% infusion",
+          "Norepinephrine infusion to a MAP of 65",
+          "Uncrossmatched O Rh D negative red cells",
           "Vasopressin infusion",
+          "Wait for fully crossmatched blood",
         ],
-        correct: [0, 3],
+        correct: [1, 4],
         explanation:
           "Hemorrhagic shock needs blood, not more crystalloid or vasopressors. Uncrossmatched O Rh D negative red cells protect a patient of childbearing age from sensitization. A massive hemorrhage protocol provides balanced products as bleeding continues.",
         keyFeature: { topic: "shock", n: 3 },
@@ -143,7 +144,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "Her blood group returns as A Rh D negative with a negative antibody screen.",
-        prompt: "She is 7 weeks by dates. What is your plan for Rh immune globulin? If you would give it, include the dose and route.",
+        prompt: "She is 7 weeks by dates. What is your plan for Rh immune globulin, including the dose and route if you would give it?",
         accept: [RH_NOT],
         unacceptable: [...RH_EARLY_BAD, no("Not needed because the pregnancy is ectopic", "because ectopic", "because it is ectopic")],
         explanation:
@@ -160,13 +161,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Heavy period and dizziness",
     stem:
-      "A 22 year old woman comes in with what she calls the worst period of her life. It started yesterday with crampy lower abdominal pain. Her cycles are irregular and she uses no contraception. She was triaged as a low acuity menstrual complaint. Lying down she has HR 92, BP 112/70, RR 16, T 36.9 C. On standing she has HR 128, BP 98/62 and feels faint. She is pale, her hands are cool and capillary refill is 3 seconds.",
+      "A 22-year-old woman comes in with what she calls the worst period of her life. It started yesterday with crampy lower abdominal pain. Her cycles are irregular and she uses no contraception. She was triaged as a low acuity menstrual complaint. Her vital signs were taken lying down. On standing her pulse is 128/minute, her BP is 98/62 mmHg and she feels faint. She is pale, her hands are cool and capillary refill is 3 seconds.",
+    vitals: { temperature: "36.9°C", pulse: "92/minute", resp: "16/minute", bp: "112/70 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings in this presentation that suggest early shock.",
+        prompt: "What findings in this presentation suggest early shock?",
         accept: [
           k("ortho", "Orthostatic heart rate rise of more than 30", "orthostatic", "postural", "heart rate rise", "hr rise", "standing", "128"),
           k("presyncope", "Feeling faint on standing", "faint", "presyncope", "lightheaded", "dizzy", "dizziness"),
@@ -197,7 +199,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "The urine pregnancy test is positive. Bedside ultrasound shows no intrauterine pregnancy and a moderate amount of free fluid in the pouch of Douglas. There is no fluid in the hepatorenal space.",
-        prompt: "List THREE next steps.",
+        prompt: "What are your next steps?",
         accept: [
           k("gyn", "Urgent gynecology consult", "gynecology", "gynaecology", "gyne", "obstetric"),
           k("iv", "Two large bore IVs", "large bore", "iv access", "two iv", "2 iv"),
@@ -221,7 +223,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Her quantitative beta hCG is 680 IU/L. The junior resident says the level is too low to be an ectopic and suggests a miscarriage.",
-        prompt: "List TWO reasons the resident's reasoning is wrong.",
+        prompt: "Why is the resident's reasoning wrong?",
         accept: [
           k("anylevel", "Ectopic pregnancy can occur and rupture at any hCG level, including low levels", "any level", "low level", "low hcg", "any hcg", "rupture at"),
           k("single", "A single hCG value cannot locate a pregnancy", "single", "one value", "location"),
@@ -243,20 +245,21 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Spotting at six weeks",
     stem:
-      "A 31 year old woman, G2P1, is 6 weeks by a certain last menstrual period. She has had light spotting and mild crampy pain for one day. HR 78, BP 118/72, with no orthostatic change. Speculum exam shows a small amount of blood in the vault and a closed os. Bimanual exam is normal with no adnexal tenderness or mass. Transvaginal ultrasound shows no intrauterine or extrauterine pregnancy and no free fluid. Quantitative beta hCG is 1100 IU/L. Her blood group is O Rh D negative with a negative antibody screen.",
+      "A 31-year-old woman, G2P1, is 6 weeks by a certain last menstrual period. She has had light spotting and mild crampy pain for one day. There is no orthostatic change. Speculum exam shows a small amount of blood in the vault and a closed os. Bimanual exam is normal with no adnexal tenderness or mass. Transvaginal ultrasound shows no intrauterine or extrauterine pregnancy and no free fluid. Quantitative beta hCG is 1100 IU/L. Her blood group is O Rh D negative with a negative antibody screen.",
+    vitals: { pulse: "78/minute", bp: "118/72 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which interpretation is most accurate? Select one.",
+        prompt: "Which of the following is the most accurate interpretation of her findings?",
         options: [
           "Complete miscarriage",
-          "Pregnancy of unknown location. An early intrauterine pregnancy, a failing pregnancy or an ectopic are all possible",
-          "Ectopic pregnancy is excluded because the hCG is below the discriminatory zone",
+          "Confirmed ectopic pregnancy",
+          "Ectopic excluded by the low hCG",
           "Normal early intrauterine pregnancy",
-          "Ectopic pregnancy confirmed. Methotrexate is indicated",
+          "Pregnancy of unknown location",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "With no pregnancy seen on ultrasound this is a pregnancy of unknown location. At 1100 IU/L an intrauterine pregnancy may not yet be visible, but a low value does not exclude ectopic. Complete miscarriage cannot be diagnosed without a previously documented intrauterine pregnancy.",
         keyFeature: { topic: "first-trimester-bleeding", n: 4 },
@@ -266,7 +269,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE parts of her follow up plan.",
+        prompt: "What are the parts of her follow up plan?",
         accept: [
           k("repeat", "Repeat quantitative hCG in 48 hours", "48 hour", "repeat hcg", "serial hcg", "2 day", "repeat beta"),
           k("samelab", "Use the same laboratory for serial hCG", "same lab", "same laboratory"),
@@ -284,7 +287,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE symptoms that should bring her straight back.",
+        prompt: "What symptoms should bring her straight back?",
         accept: [
           k("pain", "Severe or worsening abdominal or pelvic pain", "pain"),
           k("shoulder", "Shoulder tip pain", "shoulder"),
@@ -301,7 +304,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 1,
-        prompt: "What is your plan for Rh immune globulin today? If you would give it, include the dose and route.",
+        prompt: "What is your plan for Rh immune globulin today, including the dose and route if you would give it?",
         accept: [RH_NOT],
         unacceptable: RH_EARLY_BAD,
         explanation:
@@ -318,20 +321,21 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Pain on one side at seven weeks",
     stem:
-      "A 29 year old woman is 7 weeks and 2 days by last menstrual period. She has 2 days of spotting and left lower quadrant pain. HR 84, BP 118/74, no orthostatic change. Speculum exam shows a small amount of blood and a closed os. Bimanual exam shows left adnexal tenderness without a palpable mass. Quantitative beta hCG is 4800 IU/L. The radiology ultrasound report reads: 6 mm intrauterine fluid collection without yolk sac or fetal pole. No adnexal mass seen. Trace free fluid.",
+      "A 29-year-old woman is 7 weeks and 2 days by last menstrual period. She has 2 days of spotting and left lower quadrant pain. There is no orthostatic change. Speculum exam shows a small amount of blood and a closed os. Bimanual exam shows left adnexal tenderness without a palpable mass. Quantitative beta hCG is 4800 IU/L. The radiology ultrasound report reads: 6 mm intrauterine fluid collection without yolk sac or fetal pole. No adnexal mass seen. Trace free fluid.",
+    vitals: { pulse: "84/minute", bp: "118/74 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which statement is most accurate? Select one.",
+        prompt: "Which of the following statements about her ultrasound and hCG findings is most accurate?",
         options: [
-          "The intrauterine fluid collection confirms an intrauterine pregnancy",
-          "Ectopic pregnancy is excluded because no adnexal mass is seen",
-          "These findings are concerning for ectopic pregnancy because the collection may be a pseudosac",
-          "These findings are normal for her dates",
-          "The hCG is too low for any pregnancy to be seen",
+          "Concerning for ectopic with a possible pseudosac",
+          "Confirmed intrauterine pregnancy",
+          "Ectopic pregnancy excluded as no adnexal mass is seen",
+          "hCG too low for any pregnancy to be seen",
+          "Normal findings for her dates",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
           "Above the discriminatory zone an intrauterine pregnancy should usually be visible. A fluid collection without a yolk sac does not confirm one and may be a pseudosac from an ectopic. Ultrasound often misses the ectopic itself, so a normal adnexa does not exclude it.",
         keyFeature: { topic: "first-trimester-bleeding", n: 4 },
@@ -341,7 +345,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO ultrasound findings that would confirm an intrauterine pregnancy.",
+        prompt: "What ultrasound findings would confirm an intrauterine pregnancy?",
         accept: [
           k("yolk", "Yolk sac within a gestational sac in the uterus", "yolk sac", "yolk"),
           k("pole", "Fetal pole or embryo", "fetal pole", "embryo", "foetal pole"),
@@ -357,7 +361,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO next steps in her management.",
+        prompt: "What are the next steps in her management?",
         accept: [
           k("gyn", "Same day gynecology consult", "gynecology", "gynaecology", "gyne", "obstetric"),
           k("repeat", "Repeat hCG in 48 hours", "repeat hcg", "48 hour", "serial hcg"),
@@ -378,15 +382,15 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Her blood group is B Rh D positive.",
-        prompt: "Which statement about Rh prophylaxis is correct? Select one.",
+        prompt: "Which of the following statements about Rh prophylaxis is correct for this patient?",
         options: [
-          "Rh immune globulin 300 mcg IM is still indicated",
-          "Rh immune globulin 120 mcg IM is indicated before 12 weeks",
-          "Rh immune globulin is not required",
           "A Kleihauer Betke test should guide the dose",
-          "Rh immune globulin should be given only if surgery is needed",
+          "Rh immune globulin is not required",
+          "Rh immune globulin 120 mcg IM before 12 weeks",
+          "Rh immune globulin 300 mcg IM is still indicated",
+          "Rh immune globulin only if surgery is needed",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
           "Rh immune globulin prevents sensitization only in Rh D negative patients. Checking Rh status is the key step, and an Rh D positive result ends the question.",
         keyFeature: { topic: "first-trimester-bleeding", n: 5 },
@@ -401,13 +405,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Pain after fertility treatment",
     stem:
-      "A 34 year old woman is 7 weeks pregnant after IVF with transfer of two embryos. She has 6 hours of worsening right lower quadrant pain and light spotting. HR 108, BP 104/66, RR 18, T 37.0 C. Your bedside ultrasound shows an intrauterine gestational sac with a yolk sac and a fetal pole with cardiac activity. There is a small stripe of free fluid in the hepatorenal space.",
+      "A 34-year-old woman is 7 weeks pregnant after IVF with transfer of two embryos. She has 6 hours of worsening right lower quadrant pain and light spotting. Your bedside ultrasound shows an intrauterine gestational sac with a yolk sac and a fetal pole with cardiac activity. There is a small stripe of free fluid in the hepatorenal space.",
+    vitals: { temperature: "37.0°C", pulse: "108/minute", resp: "18/minute", bp: "104/66 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "The resident says ectopic pregnancy is now excluded. List TWO reasons this is incorrect.",
+        prompt: "The resident says ectopic pregnancy is now excluded. Why is this incorrect?",
         accept: [
           k("hetero", "Heterotopic pregnancy is much more common after IVF", "heterotopic", "ivf", "assisted reproduction", "art", "fertility"),
           k("fluid", "Free fluid in the hepatorenal space suggests hemoperitoneum", "free fluid", "hepatorenal", "morison", "hemoperitoneum", "fluid"),
@@ -424,7 +429,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE other risk factors for ectopic pregnancy you would ask about in any pregnant patient with bleeding.",
+        prompt: "What other risk factors for ectopic pregnancy would you ask about in any pregnant patient with bleeding?",
         accept: [
           k("prior", "Previous ectopic pregnancy", "previous ectopic", "prior ectopic", "ectopic before"),
           k("tubal", "Tubal surgery or ligation", "tubal", "ligation", "salpingectomy"),
@@ -443,15 +448,15 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management for this patient?",
         options: [
-          "Urgent gynecology for laparoscopy aiming to preserve the intrauterine pregnancy",
-          "Methotrexate 50 mg/m2 IM",
-          "Expectant management with repeat hCG in 48 hours",
-          "Discharge with fertility clinic follow up tomorrow",
           "CT abdomen and pelvis with contrast",
+          "Discharge with fertility clinic follow up tomorrow",
+          "Expectant management, repeat quantitative hCG in 48 hours",
+          "Methotrexate 50 mg/m2 IM as a single dose",
+          "Urgent laparoscopy preserving the intrauterine pregnancy",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "A suspected heterotopic pregnancy with hemoperitoneum needs surgery. Methotrexate would end the desired intrauterine pregnancy. Serial hCG is useless because the intrauterine pregnancy drives the level.",
         keyFeature: { topic: "first-trimester-bleeding", n: 2 },
@@ -461,7 +466,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "While she waits for the operating room, list TWO early signs of worsening hemorrhage you would ask the nurse to watch for.",
+        prompt: "While she waits for the operating room, what early signs of worsening hemorrhage would you ask the nurse to watch for?",
         accept: [
           k("hr", "Rising heart rate", "heart rate", "tachycardia", "hr", "pulse"),
           k("pp", "Narrowing pulse pressure", "pulse pressure"),
@@ -486,13 +491,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Stable patient with an adnexal finding",
     stem:
-      "A 30 year old woman is 6 weeks and 5 days pregnant with mild left pelvic pain and spotting. HR 76, BP 122/78. Transvaginal ultrasound shows an empty uterus and a 2.1 cm left adnexal mass separate from the ovary with a tubal ring, no cardiac activity and no free fluid. Quantitative beta hCG was 1720 IU/L two days ago and is 1850 IU/L today. She weighs 68 kg and is 165 cm tall. Gynecology recommends medical management and asks you to start it.",
+      "A 30-year-old woman is 6 weeks and 5 days pregnant with mild left pelvic pain and spotting. Transvaginal ultrasound shows an empty uterus and a 2.1 cm left adnexal mass separate from the ovary with a tubal ring, no cardiac activity and no free fluid. Quantitative beta hCG was 1720 IU/L two days ago and is 1850 IU/L today. She is 165 cm tall. Gynecology recommends medical management and asks you to start it.",
+    vitals: { pulse: "76/minute", bp: "122/78 mmHg", weight: "68 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations required before treatment.",
+        prompt: "What investigations are required before treatment?",
         accept: [
           k("cbc", "CBC", "cbc", "complete blood count", "platelet", "hemoglobin"),
           k("renal", "Creatinine", "creatinine", "renal", "kidney"),
@@ -508,16 +514,15 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the correct single dose regimen? Select one.",
+        prompt: "Which of the following is the correct single dose regimen for this patient?",
         options: [
-          "Methotrexate 50 mg/m2 IM",
+          "Methotrexate 25 mg PO weekly",
           "Methotrexate 50 mg/kg IM",
           "Methotrexate 1 mg/kg IV daily for 3 days",
-          "Methotrexate 25 mg PO weekly",
+          "Methotrexate 50 mg/m2 IM",
           "Methotrexate 5 mg/m2 IM",
-          "Methotrexate 500 mg/m2 IV",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
           "The single dose protocol is 50 mg/m2 IM based on body surface area, about 90 mg for this patient. Doses in mg/kg would be massive overdoses. Oral weekly dosing is a rheumatology regimen.",
         keyFeature: { topic: "first-trimester-bleeding", n: 2 },
@@ -527,7 +532,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE contraindications to this treatment.",
+        prompt: "What are the contraindications to this treatment?",
         accept: [
           k("unstable", "Hemodynamic instability or signs of rupture", "unstable", "instability", "rupture", "hemoperitoneum"),
           k("iup", "Coexisting intrauterine pregnancy", "intrauterine pregnancy", "iup", "heterotopic"),
@@ -548,7 +553,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE counselling points before she goes home.",
+        prompt: "What counselling points would you cover before she goes home?",
         accept: [
           k("nsaid", "Avoid NSAIDs", "avoid nsaid", "no nsaid", "avoid ibuprofen", "no ibuprofen", "avoid naproxen", "avoid anti inflammatory"),
           k("folate", "Avoid folic acid and prenatal vitamins", "avoid folic", "no folic", "stop folic", "hold folic", "avoid folate", "no folate", "avoid prenatal", "stop prenatal", "hold prenatal", "no prenatal"),
@@ -574,20 +579,21 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Collapse in the triage line",
     stem:
-      "A 35 year old woman, G3P2, is 10 weeks pregnant. An intrauterine pregnancy with cardiac activity was seen on a dating scan two weeks ago. For 3 hours she has had heavy bleeding with clots and strong cramps. In triage she becomes pale, clammy and nearly faints. HR 46, BP 78/42, RR 18, SpO2 98% on room air.",
+      "A 35-year-old woman, G3P2, is 10 weeks pregnant. An intrauterine pregnancy with cardiac activity was seen on a dating scan two weeks ago. For 3 hours she has had heavy bleeding with clots and strong cramps. In triage she becomes pale, clammy and nearly faints.",
+    vitals: { pulse: "46/minute", resp: "18/minute", bp: "78/42 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is the most likely cause of her bradycardia and hypotension? Select one.",
+        prompt: "Which of the following is the most likely cause of her bradycardia and hypotension?",
         options: [
-          "Vagal response from products of conception distending the cervical os",
-          "Complete heart block",
-          "Anaphylaxis",
+          "Acute anaphylactic reaction",
+          "Acute pulmonary embolism",
+          "Complete atrioventricular block",
           "Late hemorrhagic shock with impending arrest",
-          "Pulmonary embolism",
+          "Vagal response to tissue in the cervical os",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "Cervical shock is a vasovagal reaction to tissue stretching the os. Bradycardia with hypotension in a miscarrying patient is the classic pattern. It resolves quickly once the tissue is removed. Hemorrhage may coexist, so volume status still needs attention.",
         keyFeature: { topic: "first-trimester-bleeding", n: 1 },
@@ -597,7 +603,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO immediate actions.",
+        prompt: "What are your immediate actions?",
         accept: [
           k("spec", "Speculum exam and removal of tissue from the os with ring forceps", "speculum", "ring forcep", "remove tissue", "remove product", "remove the product", "sponge forcep"),
           k("fluids", "IV fluid bolus", "fluid", "bolus", "crystalloid", "saline"),
@@ -616,7 +622,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Tissue is removed from the os. HR is now 88 and BP 104/66. Moderate bleeding continues. Bimanual exam shows a boggy 10 week size uterus.",
-        prompt: "List TWO measures to reduce ongoing uterine bleeding. Include the dose and route for any drug.",
+        prompt: "What measures would reduce ongoing uterine bleeding, including the dose and route for any drug?",
         accept: [
           k("miso", "Misoprostol 600 mcg PO or 400 mcg sublingual", "misoprostol 600", "misoprostol 400", "misoprostol 800", "cytotec 600", "cytotec 400", "cytotec 800"),
           k("oxy", "Oxytocin 10 units IM or an IV infusion of 20 to 40 units in 1 litre", "oxytocin 10", "oxytocin 5", "oxytocin 20", "oxytocin 30", "oxytocin 40", "pitocin 10"),
@@ -635,7 +641,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Bleeding settles after aspiration. She is Rh D positive. She is tearful and asks when she can go home.",
-        prompt: "List TWO things you will arrange before discharge.",
+        prompt: "What will you arrange before discharge?",
         accept: [
           k("fu", "Follow up with her family physician or gynecology in 1 to 2 weeks", "follow up", "followup", "family physician", "family doctor", "gynecology", "gynaecology"),
           k("support", "Emotional support, grief counselling or bereavement resources", "support", "counselling", "counseling", "grief", "bereavement"),
@@ -658,18 +664,19 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Brown spotting at nine weeks",
     stem:
-      "A 33 year old woman in her first pregnancy is 9 weeks and 3 days by a certain last menstrual period. She has 2 days of brown spotting without pain. HR 72, BP 116/70. Speculum exam shows a small amount of brown blood and a closed os. Radiology ultrasound shows an intrauterine gestational sac with an embryo measuring 8 mm crown rump length and no cardiac activity.",
+      "A 33-year-old woman in her first pregnancy is 9 weeks and 3 days by a certain last menstrual period. She has 2 days of brown spotting without pain. Speculum exam shows a small amount of brown blood and a closed os. Radiology ultrasound shows an intrauterine gestational sac with an embryo measuring 8 mm crown rump length and no cardiac activity.",
+    vitals: { pulse: "72/minute", bp: "116/70 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which statement is correct? Select one.",
+        prompt: "Which of the following statements about her ultrasound findings is correct?",
         options: [
-          "A crown rump length of 7 mm or more without cardiac activity is diagnostic of a nonviable pregnancy",
-          "Viability cannot be judged until the crown rump length reaches 15 mm",
-          "A repeat scan in 7 days is required before the diagnosis can be made",
-          "A falling hCG is required to make the diagnosis",
-          "The findings may be normal if her dates are uncertain",
+          "Diagnostic of a nonviable pregnancy",
+          "Not diagnostic until the crown rump length is 15 mm",
+          "Not diagnostic without a falling hCG",
+          "Not diagnostic without a repeat scan in 7 days",
+          "Possibly normal if her dates are uncertain",
         ],
         correct: 0,
         explanation:
@@ -681,7 +688,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE management options you would discuss with her.",
+        prompt: "What management options would you discuss with her?",
         accept: [
           k("expectant", "Expectant management", "expectant", "wait", "natural"),
           k("medical", "Medical management with mifepristone and misoprostol", "medical", "mifepristone", "misoprostol", "medication"),
@@ -695,15 +702,15 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "She chooses medical management. Which regimen is most effective? Select one.",
+        prompt: "Which of the following regimens is most effective for the medical management she has chosen?",
         options: [
-          "Mifepristone 200 mg PO, then misoprostol 800 mcg vaginally 24 hours later",
-          "Misoprostol 200 mcg PO once",
-          "Methotrexate 50 mg/m2 IM",
-          "Mifepristone 600 mg PO alone",
-          "Oxytocin 10 units IM",
+          "Methotrexate 50 mg/m2 IM as a single dose",
+          "Mifepristone 200 mg, misoprostol 800 mcg PV 24 hours later",
+          "Mifepristone 600 mg PO alone as a single dose",
+          "Misoprostol 200 mcg PO as a single dose",
+          "Oxytocin 10 units IM as a single dose",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "Pretreatment with mifepristone before misoprostol improves complete expulsion in missed miscarriage compared with misoprostol alone. Mifepristone alone and low dose misoprostol are much less effective. Methotrexate is for ectopic pregnancy.",
         keyFeature: { topic: "first-trimester-bleeding", n: 6 },
@@ -714,7 +721,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "Her blood group is O Rh D negative with a negative antibody screen.",
-        prompt: "What is your plan for Rh immune globulin? If you would give it, include the dose and route.",
+        prompt: "What is your plan for Rh immune globulin, including the dose and route if you would give it?",
         accept: [RH_OPTIONAL, RHIG300, RHIG120],
         unacceptable: RH_BAD,
         explanation:
@@ -726,7 +733,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 3,
-        prompt: "She asks what she did wrong. List THREE points you would include in your counselling.",
+        prompt: "She asks what she did wrong. What points would you include in your counselling?",
         accept: [
           k("fault", "It was not caused by anything she did", "not her fault", "nothing she did", "not caused", "not your fault", "no fault", "nothing you did", "fault"),
           k("common", "Miscarriage is common, about 1 in 5 recognized pregnancies", "common", "1 in 5", "15", "20%"),
@@ -750,13 +757,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Bleeding at eleven weeks with a known scan",
     stem:
-      "A 25 year old woman, G2P1, is 11 weeks pregnant. A dating scan at 8 weeks showed a single intrauterine pregnancy with cardiac activity. Since this morning she has had light red bleeding and mild cramps. HR 80, BP 114/68, RR 14, T 36.8 C.",
+      "A 25-year-old woman, G2P1, is 11 weeks pregnant. A dating scan at 8 weeks showed a single intrauterine pregnancy with cardiac activity. Since this morning she has had light red bleeding and mild cramps.",
+    vitals: { temperature: "36.8°C", pulse: "80/minute", resp: "14/minute", bp: "114/68 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings on speculum examination that would change your management.",
+        prompt: "What findings on speculum examination would change your management?",
         accept: [
           k("open", "Open cervical os", "open os", "os open", "open cervix", "dilated", "open"),
           k("poc", "Products of conception in the os or vault", "product", "tissue", "poc"),
@@ -775,7 +783,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings on bimanual examination you would look for.",
+        prompt: "What findings on bimanual examination would you look for?",
         accept: [
           k("size", "Uterine size compared with dates", "size", "large for date", "small for date"),
           k("adnexal", "Adnexal mass or tenderness", "adnexal", "adnexa"),
@@ -793,7 +801,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "The os is closed with a small amount of blood in the vault. The uterus is 11 week size. Bedside ultrasound shows a live intrauterine pregnancy with a heart rate of 158. Her blood group is A Rh D negative with a negative antibody screen.",
-        prompt: "What is your plan for Rh immune globulin? If you would give it, include the dose and route.",
+        prompt: "What is your plan for Rh immune globulin, including the dose and route if you would give it?",
         accept: [RH_OPTIONAL, RHIG300, RHIG120],
         unacceptable: RH_BAD,
         explanation:
@@ -804,15 +812,15 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "She asks about her outlook. Which statement is most accurate? Select one.",
+        prompt: "Which of the following statements about her outlook is most accurate?",
         options: [
-          "Most pregnancies with these findings continue. The risk of loss is low, around 10% or less",
           "Bleeding means loss is likely, at about 50%",
-          "Strict bed rest reduces her risk of miscarriage",
+          "Low risk of loss, around 10% or less",
           "Progesterone should be started to prevent miscarriage",
           "She should avoid all physical activity until 20 weeks",
+          "Strict bed rest reduces her risk of miscarriage",
         ],
-        correct: 0,
+        correct: 1,
         explanation:
           "A live intrauterine pregnancy at 11 weeks carries a low risk of loss even with bleeding. Bed rest does not help. Progesterone is considered only in selected patients with bleeding and a prior miscarriage, which she does not have.",
         keyFeature: { topic: "first-trimester-bleeding", n: 4 },
@@ -827,20 +835,21 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Passed something at home",
     stem:
-      "A 28 year old woman is 7 weeks by last menstrual period. She has not had an ultrasound in this pregnancy. Last night she had heavy bleeding with clots and passed what she describes as tissue. Today the bleeding is light and the cramps have stopped. HR 76, BP 120/74. Speculum exam shows a closed os with minimal blood. Transvaginal ultrasound shows an empty uterus with a 6 mm endometrium, no adnexal mass and no free fluid. Quantitative beta hCG is 1450 IU/L.",
+      "A 28-year-old woman is 7 weeks by last menstrual period. She has not had an ultrasound in this pregnancy. Last night she had heavy bleeding with clots and passed what she describes as tissue. Today the bleeding is light and the cramps have stopped. Speculum exam shows a closed os with minimal blood. Transvaginal ultrasound shows an empty uterus with a 6 mm endometrium, no adnexal mass and no free fluid. Quantitative beta hCG is 1450 IU/L.",
+    vitals: { pulse: "76/minute", bp: "120/74 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most accurate diagnosis? Select one.",
+        prompt: "Which of the following is the most accurate diagnosis for this patient?",
         options: [
           "Complete miscarriage",
-          "Pregnancy of unknown location",
-          "Incomplete miscarriage",
-          "Missed miscarriage",
           "Ectopic pregnancy confirmed",
+          "Missed miscarriage",
+          "Pregnancy of unknown location",
+          "Retained products of conception",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "A complete miscarriage can be diagnosed only if an intrauterine pregnancy was documented before. Without that, an empty uterus with a positive hCG is a pregnancy of unknown location. A small proportion of these women have an ectopic pregnancy, and a history of passing tissue does not exclude it.",
         keyFeature: { topic: "first-trimester-bleeding", n: 4 },
@@ -850,7 +859,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO steps to confirm the diagnosis.",
+        prompt: "What steps would confirm the diagnosis?",
         accept: [
           k("repeat", "Repeat quantitative hCG in 48 hours", "48 hour", "repeat hcg", "serial hcg", "2 day"),
           k("negative", "Follow hCG until it is negative", "negative", "undetectable", "until zero"),
@@ -868,7 +877,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Forty eight hours later she is well. Her hCG is 1390 IU/L.",
-        prompt: "List TWO next steps.",
+        prompt: "What are your next steps?",
         accept: [
           k("gyn", "Same day gynecology assessment", "gynecology", "gynaecology", "gyne", "obstetric"),
           k("us", "Repeat transvaginal ultrasound", "repeat ultrasound", "repeat us", "transvaginal", "repeat scan"),
@@ -886,7 +895,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "She is tearful and says no one has told her what is happening. List TWO supports you would arrange.",
+        prompt: "She is tearful and says no one has told her what is happening. What supports would you arrange?",
         accept: [
           k("explain", "A clear explanation of the plan and why follow up matters", "explain", "explanation", "plan"),
           k("counsel", "Referral for grief counselling or social work", "counselling", "counseling", "social work", "grief"),
@@ -911,13 +920,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     alsoTopics: ["pre-eclampsia"],
     title: "Bleeding, vomiting and palpitations",
     stem:
-      "A 38 year old woman, G4P3, is 12 weeks by last menstrual period. She has had intermittent dark vaginal bleeding for a week, with severe nausea and vomiting and palpitations. HR 118, BP 154/98, RR 18, T 37.2 C. Urine dipstick shows 2+ protein and 3+ ketones. Speculum exam shows dark blood and a closed os. Bimanual exam shows a nontender uterus the size of a 16 week pregnancy.",
+      "A 38-year-old woman, G4P3, is 12 weeks by last menstrual period. She has had intermittent dark vaginal bleeding for a week, with severe nausea and vomiting and palpitations. Urine dipstick shows 2+ protein and 3+ ketones. Speculum exam shows dark blood and a closed os. Bimanual exam shows a nontender uterus the size of a 16 week pregnancy.",
+    vitals: { temperature: "37.2°C", pulse: "118/minute", resp: "18/minute", bp: "154/98 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings in this case that suggest a diagnosis other than threatened miscarriage.",
+        prompt: "What findings in this case suggest a diagnosis other than threatened miscarriage?",
         accept: [
           k("size", "Uterus larger than dates", "large for date", "larger than date", "16 week", "uterine size", "size"),
           k("htn", "Hypertension with proteinuria before 20 weeks", "hypertension", "154", "proteinuria", "protein", "blood pressure"),
@@ -933,7 +943,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations you would order.",
+        prompt: "What investigations would you order?",
         accept: [
           k("hcg", "Quantitative beta hCG", "hcg", "quantitative"),
           k("us", "Pelvic ultrasound", "ultrasound", "us", "sonogram"),
@@ -955,7 +965,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         required: 2,
         update:
           "Quantitative hCG is 412 000 IU/L. Ultrasound shows a heterogeneous intrauterine mass with many small cystic spaces, no fetus and bilateral multiloculated ovarian cysts. TSH is suppressed and free T4 is elevated.",
-        prompt: "List TWO complications of this condition you would anticipate in the emergency department or at evacuation.",
+        prompt: "What complications of this condition would you anticipate in the emergency department or at evacuation?",
         accept: [
           k("pet", "Early onset pre-eclampsia", "pre eclampsia", "preeclampsia"),
           k("thyroid", "Hyperthyroidism or thyroid storm", "thyroid", "thyrotoxicosis", "hyperthyroid"),
@@ -975,7 +985,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO follow up arrangements that are essential after evacuation.",
+        prompt: "What follow up arrangements are essential after evacuation?",
         accept: [
           k("hcg", "Serial hCG until normal, then continued surveillance", "serial hcg", "hcg", "surveillance"),
           k("contra", "Reliable contraception during hCG surveillance", "contraception", "birth control", "avoid pregnancy"),
@@ -999,13 +1009,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Spotting after intercourse",
     stem:
-      "A 24 year old woman in her first pregnancy is 8 weeks by last menstrual period. She had spotting after intercourse last night and has no pain. She has not yet had an ultrasound. She has had a new partner for 2 months and uses condoms occasionally. HR 74, BP 116/72, T 36.9 C.",
+      "A 24-year-old woman in her first pregnancy is 8 weeks by last menstrual period. She had spotting after intercourse last night and has no pain. She has not yet had an ultrasound. She has had a new partner for 2 months and uses condoms occasionally.",
+    vitals: { temperature: "36.9°C", pulse: "74/minute", bp: "116/72 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings on speculum examination that could explain her bleeding.",
+        prompt: "What findings on speculum examination could explain her bleeding?",
         accept: [
           k("cervicitis", "Cervicitis with mucopurulent discharge or a friable cervix", "cervicitis", "mucopurulent", "friable", "discharge"),
           k("ectropion", "Cervical ectropion", "ectropion", "ectopy"),
@@ -1024,7 +1035,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "The cervix is friable with mucopurulent discharge. Contact bleeding is seen from the ectocervix. The os is closed. Bimanual exam shows no adnexal tenderness and an 8 week size uterus.",
-        prompt: "List TWO tests you would send.",
+        prompt: "What tests would you send?",
         accept: [
           k("naat", "Chlamydia and gonorrhea NAAT", "chlamydia", "gonorrhea", "gonorrhoea", "naat", "pcr"),
           k("culture", "Gonorrhea culture for susceptibility", "culture"),
@@ -1042,7 +1053,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "A cervical source has been found. List TWO reasons she still needs an ultrasound today or very soon.",
+        prompt: "A cervical source has been found. Why does she still need an ultrasound today or very soon?",
         accept: [
           k("noiup", "No intrauterine pregnancy has yet been confirmed", "no iup", "not confirmed", "no intrauterine", "unconfirmed", "location"),
           k("ectopic", "Ectopic pregnancy has not been excluded", "ectopic"),
@@ -1058,12 +1069,12 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which empiric treatment is most appropriate for her cervicitis? Select one.",
+        prompt: "Which of the following empiric treatments is most appropriate for her cervicitis?",
         options: [
           "Ceftriaxone 500 mg IM plus azithromycin 1 g PO",
-          "Ceftriaxone 500 mg IM plus doxycycline 100 mg PO twice daily for 7 days",
-          "Ciprofloxacin PO",
-          "Metronidazole PO",
+          "Ceftriaxone 500 mg IM plus doxycycline 100 mg PO BID",
+          "Ciprofloxacin PO as a single dose",
+          "Metronidazole PO for 7 days",
           "No treatment until results return",
         ],
         correct: 0,
@@ -1081,13 +1092,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Irregular bleeding in her forties",
     stem:
-      "A 41 year old woman has had heavy, irregular bleeding for 2 days and a dull left lower abdominal ache. Her period was about 10 days late. She had a tubal ligation 7 years ago and assumes she is entering menopause. HR 96, BP 122/78, RR 16, T 36.8 C. Triage has ordered a CBC only.",
+      "A 41-year-old woman has had heavy, irregular bleeding for 2 days and a dull left lower abdominal ache. Her period was about 10 days late. She had a tubal ligation 7 years ago and assumes she is entering menopause. Triage has ordered a CBC only.",
+    vitals: { temperature: "36.8°C", pulse: "96/minute", resp: "16/minute", bp: "122/78 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features in this history that should make you think of an ectopic pregnancy.",
+        prompt: "What features in this history should make you think of an ectopic pregnancy?",
         accept: [
           k("tl", "Previous tubal ligation", "tubal ligation", "ligation", "tubal"),
           k("late", "A late period", "late", "missed period", "missed menses"),
@@ -1106,7 +1118,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Quantitative beta hCG is 2600 IU/L. Transvaginal ultrasound shows an empty uterus, a 3 cm complex left adnexal mass separate from the ovary and a small amount of free fluid in the pelvis. She remains HR 96, BP 120/76.",
-        prompt: "List THREE next steps.",
+        prompt: "What are your next steps?",
         accept: [
           k("gyn", "Urgent gynecology consult", "gynecology", "gynaecology", "gyne", "obstetric"),
           k("group", "Blood group, Rh and antibody screen", "blood group", "type and screen", "rh", "crossmatch", "group and screen"),
@@ -1127,13 +1139,13 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which statement about her imaging is most accurate? Select one.",
+        prompt: "Which of the following statements about her imaging is most accurate?",
         options: [
-          "An empty uterus with an adnexal mass separate from the ovary and a positive hCG is highly suggestive of ectopic pregnancy",
-          "The mass is most likely a corpus luteum cyst, so ectopic is unlikely",
-          "An hCG of 2600 is too low to see an intrauterine pregnancy, so the scan is uninterpretable",
-          "Pelvic free fluid confirms rupture and mandates laparotomy",
-          "An ectopic pregnancy cannot be diagnosed without seeing a yolk sac in the adnexa",
+          "Highly suggestive of ectopic pregnancy",
+          "Most likely a corpus luteum cyst",
+          "Not diagnostic without an adnexal yolk sac",
+          "Rupture confirmed by the pelvic free fluid",
+          "Uninterpretable at an hCG of 2600 IU/L",
         ],
         correct: 0,
         explanation:
@@ -1146,7 +1158,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "While she waits for gynecology she says she feels lightheaded when she sits up.",
-        prompt: "List TWO bedside assessments you would do now.",
+        prompt: "What bedside assessments would you do now?",
         accept: [
           k("ortho", "Orthostatic vital signs", "orthostatic", "postural", "sitting", "standing"),
           k("vitals", "Repeat heart rate and blood pressure", "heart rate", "blood pressure", "vital"),
@@ -1169,13 +1181,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Going home after an early loss",
     stem:
-      "A 36 year old woman conceived by IVF and had an ultrasound at 6 weeks that showed an intrauterine pregnancy with cardiac activity. Now at 8 weeks she had heavy bleeding with clots this morning. The bleeding has settled. HR 82, BP 118/70. Speculum exam shows a closed os with minimal blood. Ultrasound shows an empty uterus with a thin endometrium. Her partner is with her. She is tearful and asks whether flying to Calgary last week caused this.",
+      "A 36-year-old woman conceived by IVF and had an ultrasound at 6 weeks that showed an intrauterine pregnancy with cardiac activity. Now at 8 weeks she had heavy bleeding with clots this morning. The bleeding has settled. Speculum exam shows a closed os with minimal blood. Ultrasound shows an empty uterus with a thin endometrium. Her partner is with her. She is tearful and asks whether flying to Calgary last week caused this.",
+    vitals: { pulse: "82/minute", bp: "118/70 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE key messages you would give her about the loss.",
+        prompt: "What key messages would you give her about the loss?",
         accept: [
           k("fault", "Flying and her daily activities did not cause it", "not caused", "flying", "flight", "not her fault", "not your fault", "no fault", "fault", "nothing she did", "nothing you did"),
           k("common", "Early pregnancy loss is common", "common"),
@@ -1193,7 +1206,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE reasons for her to return to the emergency department.",
+        prompt: "What are the reasons for her to return to the emergency department?",
         accept: [
           k("bleeding", "Heavy bleeding, soaking 2 pads an hour for 2 hours", "soaking", "heavy bleeding", "pad", "heavy"),
           k("fever", "Fever, chills or foul smelling discharge", "fever", "chill", "foul", "discharge"),
@@ -1211,7 +1224,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE follow up arrangements you would make.",
+        prompt: "What follow up arrangements would you make?",
         accept: [
           k("fertility", "Notify her fertility clinic", "fertility clinic", "ivf clinic", "fertility"),
           k("fp", "Family physician or gynecology visit in 1 to 2 weeks", "family physician", "family doctor", "gynecology", "gynaecology", "follow up", "followup"),
@@ -1231,7 +1244,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "Her blood group is A Rh D negative with a negative antibody screen.",
-        prompt: "What is your plan for Rh immune globulin before discharge? If you would give it, include the dose and route.",
+        prompt: "What is your plan for Rh immune globulin before discharge, including the dose and route if you would give it?",
         accept: [RH_OPTIONAL, RHIG300, RHIG120],
         unacceptable: RH_BAD,
         explanation:
@@ -1248,13 +1261,14 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
     topic: "first-trimester-bleeding",
     title: "Teen who fainted at school",
     stem:
-      "A 16 year old girl is brought in by a friend after fainting in a school washroom. She has had bleeding like a period for 2 days with crampy lower abdominal pain. She says she is not sexually active. Lying down she has HR 112, BP 108/70, RR 20, T 36.7 C. When she sits up her heart rate rises to 138 and she feels faint. She is pale.",
+      "A 16-year-old girl is brought in by a friend after fainting in a school washroom. She has had bleeding like a period for 2 days with crampy lower abdominal pain. She says she is not sexually active. Her vital signs were taken lying down. When she sits up her heart rate rises to 138/minute and she feels faint. She is pale.",
+    vitals: { temperature: "36.7°C", pulse: "112/minute", resp: "20/minute", bp: "108/70 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings that suggest significant blood loss.",
+        prompt: "What findings suggest significant blood loss?",
         accept: [
           k("syncope", "Syncope", "syncope", "faint", "fainting"),
           k("tachy", "Resting tachycardia", "tachycardia", "112", "heart rate"),
@@ -1270,9 +1284,15 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most important test to do next? Select one.",
-        options: ["Pregnancy test", "CBC", "Coagulation studies", "Pelvic CT", "Thyroid function tests"],
-        correct: 0,
+        prompt: "Which of the following is the most important test to do next for this patient?",
+        options: [
+          "Coagulation studies",
+          "Complete blood count",
+          "CT of the pelvis",
+          "Pregnancy test",
+          "Thyroid function tests",
+        ],
+        correct: 3,
         explanation:
           "A pregnancy test is mandatory in any person of reproductive age with vaginal bleeding, whatever the sexual history. Denial of sexual activity is common in adolescents, especially in front of others. Interview her alone.",
         keyFeature: { topic: "first-trimester-bleeding", n: 2 },
@@ -1283,7 +1303,7 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "The urine pregnancy test is positive. Bedside ultrasound shows no intrauterine pregnancy and free fluid in the hepatorenal space.",
-        prompt: "List THREE immediate actions.",
+        prompt: "What are your immediate actions?",
         accept: [
           k("gyn", "Stat gynecology for the operating room", "gynecology", "gynaecology", "gyne", "operating room", "surgery"),
           k("iv", "Two large bore IVs", "large bore", "iv access", "two iv", "2 iv"),
@@ -1303,16 +1323,15 @@ export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
         kind: "single",
         update:
           "Interviewed alone, she discloses sexual activity. By her last period she is 13 weeks pregnant. Her blood group is O Rh D negative with a negative antibody screen.",
-        prompt: "Which statement about Rh prophylaxis is correct? Select one.",
+        prompt: "Which of the following statements about Rh prophylaxis is correct for this patient?",
         options: [
-          "Rh immune globulin 300 mcg IM or IV within 72 hours",
-          "Not required because she is under 18",
-          "Not required because the pregnancy is ectopic",
-          "A Kleihauer Betke test is needed first to calculate the dose",
-          "Rh immune globulin 50 mcg IM",
           "Give only if the antibody screen is positive",
+          "Kleihauer Betke test first to calculate the dose",
+          "Not required because the pregnancy is ectopic",
+          "Rh immune globulin 50 mcg IM within 72 hours",
+          "Rh immune globulin 300 mcg IM/IV within 72 hours",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
           "After 12 weeks the 2024 SOGC guideline suggests 300 mcg of Rh immune globulin within 72 hours for an unsensitized Rh D negative patient with an ectopic pregnancy, regardless of age. Before 8 weeks it would not be recommended, so gestational age matters. A Kleihauer Betke test is not used for this event. A positive anti D screen means she is already sensitized and prophylaxis will not help.",
         keyFeature: { topic: "first-trimester-bleeding", n: 5 },
