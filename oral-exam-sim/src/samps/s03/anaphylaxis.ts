@@ -30,11 +30,11 @@ const RCUK: Source = {
 };
 const CPS: Source = {
   id: "cps",
-  citation: "Canadian Paediatric Society. Emergency treatment of anaphylaxis in infants and children. Position statement.",
+  citation: "Canadian Paediatric Society, Acute Care Committee. Emergency treatment of anaphylaxis in infants and children. Position statement. Paediatr Child Health. 2011. Reaffirmed 2018.",
 };
 const CSACI: Source = {
   id: "csaci",
-  citation: "Canadian Society of Allergy and Clinical Immunology. Anaphylaxis in schools and other settings. Consensus document.",
+  citation: "Canadian Society of Allergy and Clinical Immunology. Anaphylaxis in schools and other settings. 3rd ed, revised. 2016.",
 };
 const JTF: Source = {
   id: "jtf",
@@ -63,10 +63,10 @@ const ANGIO: Source = {
   citation:
     "Bernstein JA, et al. Angioedema in the emergency department. A practical guide to differential diagnosis and management. Int J Emerg Med. 2017.",
 };
-const ACR: Source = { id: "acr", citation: "American College of Radiology. ACR Manual on Contrast Media." };
+const ACR: Source = { id: "acr", citation: "American College of Radiology, Committee on Drugs and Contrast Media. ACR Manual on Contrast Media. 2025." };
 const CPS_ASTHMA: Source = {
   id: "cps-asthma",
-  citation: "Canadian Paediatric Society. Managing an acute asthma exacerbation in children. Position statement.",
+  citation: "Trottier ED, et al. Canadian Paediatric Society. Managing an acute asthma exacerbation in children. Position statement. Paediatr Child Health. 2021.",
 };
 const CIAF: Source = {
   id: "ciaf",
@@ -84,7 +84,8 @@ const AHA_SC: Source = {
 };
 const ALS_PCS: Source = {
   id: "als-pcs",
-  citation: "Ontario Ministry of Health. Advanced Life Support Patient Care Standards.",
+  citation: "Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards. Version 5.4. 2025.",
+  url: "https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf",
 };
 
 const base = { topic: "anaphylaxis", reviewed: true, author: AUTHOR, version: 1 } as const;
@@ -96,12 +97,13 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Roofer stung on the neck",
     stem:
-      "A 44 year old roofer is brought in by coworkers 15 minutes after being stung twice on the neck by yellow jackets. He is flushed and anxious and says his throat feels tight. He has no medical history and takes no medications. HR 128, BP 78/42 mmHg, RR 26, SpO2 92% on room air, temperature 36.8°C. Weight 86 kg. He has diffuse urticaria and expiratory wheeze. His voice is normal.",
+      "A 44-year-old roofer is brought in by coworkers 15 minutes after being stung twice on the neck by yellow jackets. He is flushed and anxious and says his throat feels tight. He has no medical history and takes no medications. He has diffuse urticaria and expiratory wheeze. His voice is normal.",
+    vitals: { temperature: "36.8°C", pulse: "128/minute", resp: "26/minute", bp: "78/42 mmHg", o2sat: "92% on room air", weight: "86 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most appropriate first medication? Include the drug, dose and route.",
+        prompt: "What is the most appropriate first medication, including the drug, dose and route?",
         required: 1,
         accept: [
           {
@@ -123,7 +125,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO immediate interventions other than medications.",
+        prompt: "What are the immediate interventions, other than medications?",
         required: 2,
         accept: [
           {
@@ -156,11 +158,11 @@ export const ANAPHYLAXIS: Samp[] = [
         kind: "single",
         update:
           "He has received two IM doses of epinephrine 5 minutes apart and 2 L of normal saline. BP is now 76/40 mmHg with ongoing wheeze.",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in his management?",
         options: [
-          "Epinephrine 1 mg IV push",
-          "Epinephrine infusion, starting at about 0.1 mcg/kg/min and titrated to effect",
-          "Diphenhydramine 50 mg IV",
+          "Diphenhydramine 50 mg IV, repeated if the BP stays low",
+          "Epinephrine infusion at about 0.1 mcg/kg/min, titrated",
+          "Epinephrine 1 mg IV push, repeated every 5 minutes",
           "Methylprednisolone 125 mg IV as the main therapy",
           "Wait 15 minutes for the IM doses to take effect",
         ],
@@ -174,7 +176,7 @@ export const ANAPHYLAXIS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "His symptoms resolve. After a period of observation he is ready to go home.",
-        prompt: "List THREE elements of his discharge plan.",
+        prompt: "What are the elements of his discharge plan?",
         required: 3,
         accept: [
           {
@@ -214,12 +216,13 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Collapse at a seafood restaurant",
     stem:
-      "A 57 year old woman is brought by EMS after collapsing at a seafood restaurant. Her husband says she felt faint and nauseated, then slumped in her chair. She has hypertension and stable angina and takes metoprolol 50 mg twice daily and ramipril 10 mg daily. HR 64, BP 70 mmHg by palpation, RR 28, SpO2 90% on 6 L by nasal prongs, glucose 6.8 mmol/L. She is drowsy but rouses to voice. She is still wearing a turtleneck and long sleeves.",
+      "A 57-year-old woman is brought by EMS after collapsing at a seafood restaurant. Her husband says she felt faint and nauseated, then slumped in her chair. She has hypertension and stable angina and takes metoprolol 50 mg twice daily and ramipril 10 mg daily. Her BP is 70 mmHg by palpation. Her glucose is 6.8 mmol/L. She is drowsy but rouses to voice. She is still wearing a turtleneck and long sleeves.",
+    vitals: { pulse: "64/minute", resp: "28/minute", o2sat: "90% on 6 L/minute by nasal prongs" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE diagnoses you must consider as the cause of her shock.",
+        prompt: "What diagnoses must you consider as the cause of her shock?",
         required: 3,
         accept: [
           { id: "ana", text: "Anaphylaxis", match: ["anaphylaxis", "anaphylactic", "allergic"] },
@@ -246,13 +249,12 @@ export const ANAPHYLAXIS: Samp[] = [
         kind: "single",
         update:
           "You remove her clothing. She has raised urticarial wheals over her chest and back and her lips are swollen. Her husband now recalls she complained of an itchy throat after a shrimp appetizer.",
-        prompt: "Which is the most appropriate immediate medication? Select one.",
+        prompt: "Which of the following is the most appropriate immediate medication for her?",
         options: [
           "Diphenhydramine 50 mg IV",
           "Epinephrine 0.5 mg IM into the anterolateral thigh",
-          "Epinephrine 0.5 mg subcutaneously in the deltoid",
-          "Glucagon 5 mg IV",
-          "Methylprednisolone 125 mg IV",
+          "Epinephrine 0.5 mg subcutaneously into the deltoid",
+          "Glucagon 5 mg IV over 5 minutes",
           "Norepinephrine infusion at 10 mcg/min",
         ],
         correct: 1,
@@ -265,7 +267,7 @@ export const ANAPHYLAXIS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "She has received three IM doses of epinephrine and 3 L of crystalloid. BP is 74/40 mmHg and HR 66.",
-        prompt: "Name the drug you would add that specifically addresses her medication history. Include the dose and route.",
+        prompt: "What drug would you add that specifically addresses her medication history, including the dose and route?",
         required: 1,
         accept: [
           {
@@ -283,7 +285,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO bedside investigations that would help exclude other causes of her shock.",
+        prompt: "What bedside investigations would help exclude other causes of her shock?",
         required: 2,
         accept: [
           {
@@ -309,7 +311,8 @@ export const ANAPHYLAXIS: Samp[] = [
     id: "anaphylaxis-03",
     title: "Vomiting toddler after a snack",
     stem:
-      "A 3 year old boy is brought in by his father 20 minutes after eating a cracker with peanut butter for the first time at daycare. He has vomited three times and is now pale, quiet and clingy. Daycare staff noticed a few hives around his mouth that have since faded. He has eczema. HR 162, BP 68/40 mmHg, RR 36, SpO2 95% on room air, temperature 37.1°C, capillary refill 3 seconds. Weight 17 kg. His lungs are clear.",
+      "A 3-year-old boy is brought in by his father 20 minutes after eating a cracker with peanut butter for the first time at daycare. He has vomited three times and is now pale, quiet and clingy. Daycare staff noticed a few hives around his mouth that have since faded. He has eczema. His capillary refill is 3 seconds and his lungs are clear.",
+    vitals: { temperature: "37.1°C", pulse: "162/minute", resp: "36/minute", bp: "68/40 mmHg", o2sat: "95% on room air", weight: "17 kg" },
     questions: [
       {
         id: "q1",
@@ -329,7 +332,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Give the most appropriate medication now. Include the drug, dose and route.",
+        prompt: "What is the most appropriate medication now, including the drug, dose and route?",
         required: 1,
         accept: [
           {
@@ -359,15 +362,15 @@ export const ANAPHYLAXIS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "He responds well and is observed. You are preparing his discharge.",
-        prompt: "Which epinephrine autoinjector prescription is most appropriate? Select one.",
+        prompt: "Which of the following epinephrine autoinjector prescriptions is most appropriate for him?",
         options: [
           "One 0.15 mg autoinjector",
+          "One 0.3 mg autoinjector",
           "Two 0.15 mg autoinjectors",
           "Two 0.3 mg autoinjectors",
-          "One 0.3 mg autoinjector",
-          "No autoinjector, since the main symptoms were gastrointestinal",
+          "No autoinjector prescription",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "At 17 kg he needs the 0.15 mg device. Canadian product monographs label it for 15 to 30 kg, and the CPS and CSACI advise moving to 0.3 mg at about 25 kg. Many guidelines advise carrying two devices because some reactions need a second dose before EMS arrives. Gastrointestinal symptoms with hypotension are anaphylaxis and still need self-injectable epinephrine.",
         keyFeature: { topic: "anaphylaxis", n: 4 },
@@ -382,21 +385,21 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["cqi"],
     title: "Call from the CT suite",
     stem:
-      "A 71 year old man is having a contrast enhanced CT of the abdomen to investigate weight loss. Two minutes after the iodinated contrast injection he says he feels strange and his voice becomes hoarse. The radiology nurse calls you. He is pale and sweaty. HR 126, BP 72/38 mmHg, RR 24, SpO2 93% on room air. There is no rash and no wheeze. He takes only atorvastatin.",
+      "A 71-year-old man is having a contrast enhanced CT of the abdomen to investigate weight loss. Two minutes after the iodinated contrast injection he says he feels strange and his voice becomes hoarse. The radiology nurse calls you. He is pale and sweaty. There is no rash and no wheeze. He takes only atorvastatin.",
+    vitals: { pulse: "126/minute", resp: "24/minute", bp: "72/38 mmHg", o2sat: "93% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most likely diagnosis? Select one.",
+        prompt: "Which of the following is the most likely diagnosis in this patient?",
         options: [
-          "Vasovagal reaction to the injection",
           "Anaphylaxis to iodinated contrast",
-          "Contrast induced nephropathy",
-          "Acute pulmonary embolism",
-          "Panic attack",
           "Contrast extravasation injury",
+          "Contrast induced nephropathy",
+          "Massive pulmonary embolism",
+          "Vasovagal reaction to the injection",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Sudden hypotension with laryngeal symptoms minutes after contrast is anaphylaxis until proven otherwise. Skin signs are absent in a meaningful minority of cases, especially when hypotension dominates. Nephropathy is delayed and extravasation causes local swelling only.",
         keyFeature: { topic: "anaphylaxis", n: 2 },
@@ -405,7 +408,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO features of this presentation that argue against a vasovagal reaction.",
+        prompt: "What features of this presentation argue against a vasovagal reaction?",
         required: 2,
         accept: [
           {
@@ -433,7 +436,7 @@ export const ANAPHYLAXIS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "He receives IM epinephrine and IV fluids and recovers fully. He will need more imaging to investigate his weight loss.",
-        prompt: "List TWO measures that reduce the risk of harm with his future imaging.",
+        prompt: "What measures reduce the risk of harm with his future imaging?",
         required: 2,
         accept: [
           {
@@ -473,12 +476,13 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["airway"],
     title: "Swelling after a curry",
     stem:
-      "A 36 year old woman with a known cashew allergy arrives by private car 25 minutes after eating curry at a restaurant. She used her autoinjector in the car. She has marked lip and tongue swelling, a muffled voice and is drooling. She is sitting forward. HR 118, BP 104/66 mmHg, RR 26, SpO2 94% on room air. Weight 64 kg. She received a second IM dose of epinephrine on arrival and an epinephrine infusion is being prepared.",
+      "A 36-year-old woman with a known cashew allergy arrives by private car 25 minutes after eating curry at a restaurant. She used her autoinjector in the car. She has marked lip and tongue swelling, a muffled voice and is drooling. She is sitting forward. She received a second IM dose of epinephrine on arrival and an epinephrine infusion is being prepared.",
+    vitals: { pulse: "118/minute", resp: "26/minute", bp: "104/66 mmHg", o2sat: "94% on room air", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE findings in this patient that suggest she may soon lose her airway.",
+        prompt: "What findings in this patient suggest she may soon lose her airway?",
         required: 3,
         accept: [
           { id: "tongue", text: "Tongue swelling", match: ["tongue"] },
@@ -497,7 +501,7 @@ export const ANAPHYLAXIS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "Twenty minutes later she develops inspiratory stridor and her SpO2 falls to 89% despite the infusion. You decide she needs a definitive airway.",
-        prompt: "List THREE preparations you would make before attempting intubation.",
+        prompt: "What preparations would you make before attempting intubation?",
         required: 3,
         accept: [
           {
@@ -532,17 +536,17 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate airway approach? Select one.",
+        prompt: "Which of the following is the most appropriate approach to securing her airway?",
         options: [
-          "Rapid sequence intubation with rocuronium and direct laryngoscopy, supine",
-          "Awake flexible bronchoscopic intubation, sitting up, with topical anesthesia and a scalpel cricothyrotomy setup ready",
-          "Blind nasal intubation",
+          "Awake flexible bronchoscopic intubation, sitting up",
+          "Blind nasal intubation, sitting up",
           "Insertion of a second generation supraglottic airway",
-          "Continue observation and repeat IM epinephrine every 5 minutes",
+          "Observation with repeat IM epinephrine every 5 minutes",
+          "Rapid sequence intubation with rocuronium, supine",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "When the upper airway is swelling and the patient is still oxygenating, an awake approach preserves her own breathing and tone. Paralysis risks a cannot intubate cannot oxygenate situation because swollen tissue collapses. A supraglottic device sits above the obstruction and will not bypass it.",
+          "The awake intubation is done sitting up, with topical anesthesia and a scalpel cricothyrotomy setup ready. When the upper airway is swelling and the patient is still oxygenating, an awake approach preserves her own breathing and tone. Paralysis risks a cannot intubate cannot oxygenate situation because swollen tissue collapses. A supraglottic device sits above the obstruction and will not bypass it.",
         keyFeature: { topic: "airway", n: 4 },
         source: "cafg",
       },
@@ -551,7 +555,7 @@ export const ANAPHYLAXIS: Samp[] = [
         kind: "short",
         update:
           "During the attempt she becomes agitated, the scope view is lost in swollen tissue and her SpO2 falls to 78%. Two person bag mask ventilation fails.",
-        prompt: "What is the next step? Be specific.",
+        prompt: "What is the specific next step?",
         required: 1,
         accept: [
           {
@@ -579,12 +583,13 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["airway"],
     title: "Lip swelling on waking",
     stem:
-      "A 68 year old man presents at 0500 with swelling of his lower lip and tongue that he noticed on waking. It has slowly increased over 3 hours. He has no itch, no rash, no abdominal pain and no wheeze. He has hypertension and type 2 diabetes. He has taken ramipril 10 mg daily for 4 years and metformin. HR 88, BP 158/92 mmHg, RR 18, SpO2 98% on room air. He speaks in full sentences with a slightly thick voice. There is no stridor.",
+      "A 68-year-old man presents at 0500 with swelling of his lower lip and tongue that he noticed on waking. It has slowly increased over 3 hours. He has no itch, no rash, no abdominal pain and no wheeze. He has hypertension and type 2 diabetes. He has taken ramipril 10 mg daily for 4 years and metformin. He speaks in full sentences with a slightly thick voice. There is no stridor.",
+    vitals: { pulse: "88/minute", resp: "18/minute", bp: "158/92 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What is the most likely diagnosis? Include the mechanism.",
+        prompt: "What is the most likely diagnosis, including the mechanism?",
         required: 1,
         accept: [
           {
@@ -602,7 +607,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO features that favour this diagnosis over a histamine mediated allergic reaction.",
+        prompt: "What features favour this diagnosis over a histamine mediated allergic reaction?",
         required: 2,
         accept: [
           {
@@ -624,7 +629,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO management steps.",
+        prompt: "What are the key management steps for this patient?",
         required: 2,
         accept: [
           {
@@ -664,12 +669,13 @@ export const ANAPHYLAXIS: Samp[] = [
     id: "anaphylaxis-07",
     title: "Collapse at hockey practice",
     stem:
-      "A 16 year old boy collapsed in the dressing room during hockey practice, 45 minutes after eating a large pasta dinner. Teammates saw hives and heard wheezing. The trainer gave him a teammate's autoinjector. He arrives by EMS 30 minutes later with fading hives, clear lungs, HR 98 and BP 118/70 mmHg. He has had two milder episodes during games this season, both after meals. He took ibuprofen for a sore wrist before practice.",
+      "A 16-year-old boy collapsed in the dressing room during hockey practice, 45 minutes after eating a large pasta dinner. Teammates saw hives and heard wheezing. The trainer gave him a teammate's autoinjector. He arrives by EMS 30 minutes later with fading hives and clear lungs. He has had two milder episodes during games this season, both after meals. He took ibuprofen for a sore wrist before practice.",
+    vitals: { pulse: "98/minute", bp: "118/70 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE cofactors that can lower the threshold for this kind of reaction.",
+        prompt: "What cofactors can lower the threshold for this kind of reaction?",
         required: 3,
         accept: [
           { id: "exercise", text: "Exercise", match: ["exercise", "exertion", "physical activity"] },
@@ -688,7 +694,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List FOUR elements of your discharge counselling.",
+        prompt: "What are the elements of your discharge counselling?",
         required: 4,
         accept: [
           {
@@ -728,17 +734,18 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "He asks when he should use his autoinjector. Which is the best advice? Select one.",
+        update: "He asks when he should use his autoinjector.",
+        prompt: "Which of the following is the best advice about when he should use his autoinjector?",
         options: [
-          "Only if he loses consciousness",
-          "At the first signs of a systemic reaction, such as hives with breathing trouble, throat tightness or faintness, then call 911",
-          "After taking cetirizine and waiting 20 minutes to see if it works",
-          "Only after calling 911 and receiving instructions from the dispatcher",
+          "At the first systemic symptom, then call 911",
+          "Only after calling 911 and getting dispatcher instructions",
           "Only if a salbutamol inhaler does not relieve his wheeze",
+          "Only if he loses consciousness",
+          "Take cetirizine first, then wait 20 minutes",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "Delayed epinephrine is the main modifiable risk factor for fatal anaphylaxis. Patients should inject at the first sign of a systemic reaction and then call 911. Antihistamines and inhalers must never delay epinephrine.",
+          "Delayed epinephrine is the main modifiable risk factor for fatal anaphylaxis. Patients should inject at the first sign of a systemic reaction and then call 911. Signs of a systemic reaction include hives with breathing trouble, throat tightness or faintness. Antihistamines and inhalers must never delay epinephrine.",
         keyFeature: { topic: "anaphylaxis", n: 4 },
         source: "csaci",
       },
@@ -750,24 +757,25 @@ export const ANAPHYLAXIS: Samp[] = [
     id: "anaphylaxis-08",
     title: "Ready to go home after a granola bar",
     stem:
-      "A 38 year old woman ate a granola bar containing hazelnuts and developed hives, lip swelling and wheeze. Paramedics gave epinephrine 0.5 mg IM and her symptoms resolved. She has mild asthma. She arrived in the ED 1 hour ago. HR 92, BP 124/78 mmHg, SpO2 98% on room air. Her lungs are clear. Weight 72 kg.",
+      "A 38-year-old woman ate a granola bar containing hazelnuts and developed hives, lip swelling and wheeze. Paramedics gave epinephrine 0.5 mg IM and her symptoms resolved. She has mild asthma. She arrived in the ED 1 hour ago. Her lungs are clear.",
+    vitals: { pulse: "92/minute", bp: "124/78 mmHg", o2sat: "98% on room air", weight: "72 kg" },
     questions: [
       {
         id: "q1",
         kind: "menu",
-        prompt: "Which TWO features, if present, would most support extending her observation period? Select TWO.",
+        prompt: "Which of the following features, if present, would most support extending her observation period?",
         options: [
           "A clearly identified food trigger",
-          "Need for more than one dose of epinephrine",
-          "Age over 30",
+          "A history of seasonal allergic rhinitis",
+          "A normal serum tryptase level after the reaction",
+          "Age over 30 years at the time of the reaction",
+          "Female sex of the patient",
           "Hypotension or airway compromise during the initial reaction",
-          "Having received cetirizine",
-          "A normal serum tryptase",
-          "Seasonal allergic rhinitis",
-          "Female sex",
+          "Need for more than one dose of epinephrine",
+          "Treatment with cetirizine before arrival",
         ],
         select: 2,
-        correct: [1, 3],
+        correct: [6, 5],
         explanation:
           "Severe initial reactions and the need for more than one epinephrine dose are the best established predictors of a biphasic reaction. The 2020 practice parameter suggests extended observation for these patients, often 6 hours or more. An unknown trigger is a weaker risk factor, so a clearly identified trigger does not support a longer stay. Antihistamine use does not change the risk.",
         keyFeature: { topic: "anaphylaxis", n: 4 },
@@ -778,7 +786,7 @@ export const ANAPHYLAXIS: Samp[] = [
         kind: "short",
         update:
           "Five hours after the first reaction, while awaiting discharge, she develops new hives and wheeze and a BP of 86/52 mmHg without any new exposure.",
-        prompt: "What is your immediate treatment? Include the drug, dose and route.",
+        prompt: "What is your immediate treatment, including the drug, dose and route?",
         required: 1,
         accept: [
           { id: "epi", text: "Epinephrine 0.5 mg IM into the anterolateral thigh", match: c(EPI, EPI_05, IM) },
@@ -795,7 +803,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO additional treatments for this recurrence besides epinephrine.",
+        prompt: "What additional treatments for this recurrence would you give besides epinephrine?",
         required: 2,
         accept: [
           { id: "salb", text: "Inhaled salbutamol for wheeze", match: ["salbutamol", "ventolin", "albuterol", "bronchodilator", "beta agonist"] },
@@ -819,12 +827,13 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Itching during an antibiotic infusion",
     stem:
-      "A 29 year old woman at 31 weeks gestation is receiving ceftriaxone 1 g IV for pyelonephritis. Five minutes into the infusion she reports itching and dizziness. HR 132, BP 74/40 mmHg, RR 28, SpO2 93% on room air. She is flushed with generalized urticaria. The fetal heart rate by doppler is 100 bpm. Weight 78 kg. The infusion has been stopped.",
+      "A 29-year-old woman at 31 weeks gestation is receiving ceftriaxone 1 g IV for pyelonephritis. Five minutes into the infusion she reports itching and dizziness. She is flushed with generalized urticaria. The fetal heart rate by doppler is 100 bpm. The infusion has been stopped.",
+    vitals: { pulse: "132/minute", resp: "28/minute", bp: "74/40 mmHg", o2sat: "93% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "What medication do you give first? Include the drug, dose and route.",
+        prompt: "What medication do you give first, including the drug, dose and route?",
         required: 1,
         accept: [
           { id: "epi", text: "Epinephrine 0.5 mg IM into the anterolateral thigh", match: c(EPI, EPI_05, IM) },
@@ -841,7 +850,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO interventions specific to her pregnancy.",
+        prompt: "What interventions are specific to her pregnancy?",
         required: 2,
         accept: [
           {
@@ -869,7 +878,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO causes of shock specific to late pregnancy to consider if she does not respond.",
+        prompt: "What causes of shock specific to late pregnancy would you consider if she does not respond?",
         required: 2,
         accept: [
           { id: "abruption", text: "Placental abruption", match: ["abruption", "abruptio"] },
@@ -892,21 +901,21 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["asthma-copd"],
     title: "Wheezing child from school",
     stem:
-      "A 9 year old girl weighing 31 kg is brought from school by EMS. She ate a sesame snack at lunch and developed hives, cough and wheeze. Her teacher gave her a 0.15 mg autoinjector 20 minutes ago. She has asthma treated with inhaled fluticasone. HR 138, BP 88/54 mmHg, RR 36, SpO2 90% on room air. She has diffuse wheeze with intercostal retractions and can say only a few words.",
+      "A 9-year-old girl is brought from school by EMS. She ate a sesame snack at lunch and developed hives, cough and wheeze. Her teacher gave her a 0.15 mg autoinjector 20 minutes ago. She has asthma treated with inhaled fluticasone. She has diffuse wheeze with intercostal retractions and can say only a few words.",
+    vitals: { pulse: "138/minute", resp: "36/minute", bp: "88/54 mmHg", o2sat: "90% on room air", weight: "31 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate medication to give now? Select one.",
+        prompt: "Which of the following is the most appropriate medication to give her now?",
         options: [
-          "Epinephrine 0.15 mg IM",
+          "Diphenhydramine 30 mg IV over 5 minutes",
+          "Epinephrine 0.15 mg IM into the anterolateral thigh",
           "Epinephrine 0.3 mg IM into the anterolateral thigh",
-          "Epinephrine 3 mg IM",
-          "Epinephrine 0.3 mg IV push",
-          "Diphenhydramine 30 mg IV",
-          "Dexamethasone 0.6 mg/kg PO",
+          "Epinephrine 3 mg IM into the anterolateral thigh",
+          "Epinephrine 0.3 mg IV push through a peripheral line",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "She has ongoing anaphylaxis after one dose, so a repeat IM dose is due 5 to 15 minutes after the first. At 0.01 mg/kg her dose is 0.3 mg. A 3 mg dose is a tenfold error and an IV push is dangerous.",
         keyFeature: { topic: "anaphylaxis", n: 3 },
@@ -915,7 +924,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO adjunct treatments for her respiratory symptoms.",
+        prompt: "What adjunct treatments would you give for her respiratory symptoms?",
         required: 2,
         accept: [
           {
@@ -941,7 +950,7 @@ export const ANAPHYLAXIS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "She recovers fully and will be discharged after observation.",
-        prompt: "List THREE elements of her discharge plan.",
+        prompt: "What are the elements of her discharge plan?",
         required: 3,
         accept: [
           {
@@ -977,19 +986,19 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["cqi"],
     title: "Sent from a walk-in clinic",
     stem:
-      "A 50 year old man walks in 40 minutes after eating mussels. At a walk-in clinic he was given diphenhydramine 50 mg PO and told to come to the ED if he did not improve. He now has generalized hives, throat tightness and crampy abdominal pain. HR 118, BP 88/50 mmHg, RR 22, SpO2 96% on room air. Weight 90 kg.",
+      "A 50-year-old man walks in 40 minutes after eating mussels. At a walk-in clinic he was given diphenhydramine 50 mg PO and told to come to the ED if he did not improve. He now has generalized hives, throat tightness and crampy abdominal pain.",
+    vitals: { pulse: "118/minute", resp: "22/minute", bp: "88/50 mmHg", o2sat: "96% on room air", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step in his management?",
         options: [
-          "Diphenhydramine 50 mg IV",
+          "Diphenhydramine 50 mg IV and observe for 1 hour",
           "Epinephrine 0.5 mg IM into the anterolateral thigh",
-          "Epinephrine 1 mg IV push",
-          "Famotidine 20 mg IV",
-          "Prednisone 50 mg PO and observe",
-          "Salbutamol 5 mg nebulized",
+          "Epinephrine 1 mg IV push through a peripheral line",
+          "Prednisone 50 mg PO and observe for 2 hours",
+          "Salbutamol 5 mg nebulized for throat tightness",
         ],
         correct: 1,
         explanation:
@@ -1002,7 +1011,7 @@ export const ANAPHYLAXIS: Samp[] = [
         kind: "short",
         update:
           "As you step away you see a new nurse drawing up 1 mL of the 1 mg/mL epinephrine ampoule to give as an IV push. You stop it in time and the correct dose is given IM. No harm occurs.",
-        prompt: "List TWO system measures that could reduce the risk of this error happening again.",
+        prompt: "What system measures could reduce the risk of this error happening again?",
         required: 2,
         accept: [
           {
@@ -1046,7 +1055,7 @@ export const ANAPHYLAXIS: Samp[] = [
         id: "q3",
         kind: "short",
         update: "He responds to treatment. At discharge he says next time he will just take diphenhydramine as he did today.",
-        prompt: "List TWO counselling points about antihistamines in anaphylaxis.",
+        prompt: "What counselling points about antihistamines in anaphylaxis would you give him?",
         required: 2,
         accept: [
           {
@@ -1077,7 +1086,8 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["shock", "infectious-diseases"],
     title: "Deterioration after the first antibiotic dose",
     stem:
-      "An 81 year old man from a long term care home has community acquired pneumonia. On arrival he had HR 104, BP 112/64 mmHg, RR 24, SpO2 91% on room air and temperature 38.6°C. Ten minutes after piperacillin-tazobactam is started he becomes restless. HR 134, BP 72/38 mmHg, RR 32, SpO2 84% on 4 L. There is new diffuse wheeze and blotchy redness on his neck and chest. A colleague suggests this is worsening septic shock and orders another fluid bolus.",
+      "An 81-year-old man from a long term care home has community acquired pneumonia. On arrival he had HR 104, BP 112/64 mmHg, RR 24, SpO2 91% on room air and temperature 38.6°C. Ten minutes after piperacillin-tazobactam is started he becomes restless. There is new diffuse wheeze and blotchy redness on his neck and chest. A colleague suggests this is worsening septic shock and orders another fluid bolus.",
+    vitals: { pulse: "134/minute", resp: "32/minute", bp: "72/38 mmHg", o2sat: "84% on 4 L/minute" },
     questions: [
       {
         id: "q1",
@@ -1100,7 +1110,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO immediate actions. For any drug, include the dose and route.",
+        prompt: "What are your immediate actions, including the dose and route for any drug?",
         required: 2,
         accept: [
           {
@@ -1122,7 +1132,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO features that favour anaphylaxis over progression of sepsis.",
+        prompt: "What features favour anaphylaxis over progression of sepsis?",
         required: 2,
         accept: [
           {
@@ -1143,7 +1153,7 @@ export const ANAPHYLAXIS: Samp[] = [
         id: "q4",
         kind: "short",
         update: "He improves after treatment. He still needs antibiotics for his pneumonia.",
-        prompt: "Name ONE appropriate antibiotic choice now.",
+        prompt: "What is an appropriate antibiotic choice now?",
         required: 1,
         accept: [
           {
@@ -1178,14 +1188,15 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["shock"],
     title: "Refractory shock after a church supper",
     stem:
-      "A 58 year old man developed hives and collapsed after eating dessert with pecans at a church supper. EMS gave three IM doses of epinephrine and 2 L of crystalloid. He was intubated in your department for stridor. After a further 1 L and an epinephrine infusion now at 15 mcg/min, his BP is 70/38 mmHg and HR 136. Weight 95 kg.",
+      "A 58-year-old man developed hives and collapsed after eating dessert with pecans at a church supper. EMS gave three IM doses of epinephrine and 2 L of crystalloid. He was intubated in your department for stridor. He has since received a further 1 L, and an epinephrine infusion is now running at 15 mcg/min.",
+    vitals: { pulse: "136/minute", bp: "70/38 mmHg", weight: "95 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         update:
           "Point of care ultrasound shows a small hyperdynamic left ventricle with near cavity obliteration in systole and a flat IVC that collapses fully with each breath. There is no pericardial effusion and lung sliding is present on both sides.",
-        prompt: "List TWO conclusions or actions based on these findings.",
+        prompt: "What conclusions or actions follow from these findings?",
         required: 2,
         accept: [
           {
@@ -1218,7 +1229,7 @@ export const ANAPHYLAXIS: Samp[] = [
         id: "q2",
         kind: "short",
         update: "After 2 more litres his BP is 76/40 mmHg on epinephrine 20 mcg/min.",
-        prompt: "Name a second vasopressor you would add.",
+        prompt: "What second vasopressor would you add?",
         required: 1,
         accept: [
           { id: "norepi", text: "Norepinephrine", match: ["norepinephrine", "noradrenaline", "levophed"] },
@@ -1233,7 +1244,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO other causes of refractory shock to reassess in this intubated patient.",
+        prompt: "What other causes of refractory shock would you reassess in this intubated patient?",
         required: 2,
         accept: [
           {
@@ -1272,12 +1283,14 @@ export const ANAPHYLAXIS: Samp[] = [
     id: "anaphylaxis-14",
     title: "Teen brought in from a party",
     stem:
-      "A 15 year old boy is brought in by two friends from a house party at 2300. About 30 minutes after eating a homemade cookie he developed itchy skin, vomited twice, has crampy abdominal pain and feels light-headed. He drank three beers. He has a known peanut allergy and left his autoinjector at home. HR 116, BP 98/58 mmHg, RR 22, SpO2 97% on room air. He has scattered hives on his trunk. His chest is clear. Weight 62 kg. His friends want to take him home.",
+      "A 15-year-old boy is brought in by two friends from a house party at 2300. About 30 minutes after eating a homemade cookie he developed itchy skin, vomited twice, has crampy abdominal pain and feels light-headed. He drank three beers. He has a known peanut allergy and left his autoinjector at home. He has scattered hives on his trunk. His chest is clear. His friends want to take him home.",
+    vitals: { pulse: "116/minute", resp: "22/minute", bp: "98/58 mmHg", o2sat: "97% on room air", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "He meets criteria for anaphylaxis. List TWO organ system involvements that support this.",
+        update: "He meets criteria for anaphylaxis.",
+        prompt: "What organ system involvements support this diagnosis?",
         required: 2,
         accept: [
           { id: "skin", text: "Skin, with hives and itch", match: ["skin", "cutaneous", "hive", "urticaria", "itch", "mucocutaneous"] },
@@ -1296,16 +1309,15 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate management now? Select one.",
+        prompt: "Which of the following is the most appropriate management for him now?",
         options: [
           "Cetirizine 10 mg PO and discharge with his friends",
-          "Epinephrine 0.5 mg IM into the anterolateral thigh, then observe",
-          "Epinephrine 0.3 mg subcutaneously",
-          "Observe for 1 hour and give epinephrine only if wheeze develops",
           "Diphenhydramine 50 mg IV and prednisone 50 mg PO",
-          "Ondansetron 4 mg IV",
+          "Epinephrine 0.5 mg IM anterolateral thigh, then observe",
+          "Epinephrine 0.3 mg subcutaneously, then observe",
+          "Observe 1 hour, with epinephrine only if wheeze develops",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "He has anaphylaxis and needs IM epinephrine now, followed by observation. Waiting for wheeze or hypotension delays the drug that prevents progression. Alcohol may blunt his perception of symptoms, which makes discharge with friends unsafe.",
         keyFeature: { topic: "anaphylaxis", n: 3 },
@@ -1314,7 +1326,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List THREE counselling points specific to this adolescent at discharge.",
+        prompt: "What counselling points specific to this adolescent would you give at discharge?",
         required: 3,
         accept: [
           {
@@ -1355,12 +1367,13 @@ export const ANAPHYLAXIS: Samp[] = [
     alsoTopics: ["ems", "shock"],
     title: "Patch from a highway crew",
     stem:
-      "You are the base hospital physician. A paramedic crew patches in from a rural highway 25 minutes away. A 45 year old woman was stung by a bee while gardening. She is flushed, wheezing and dizzy. They gave epinephrine 0.5 mg IM 6 minutes ago. HR 124, BP 82/50 mmHg, RR 28, SpO2 91% on oxygen. They have one IV established.",
+      "You are the base hospital physician. A paramedic crew patches in from a rural highway 25 minutes away. A 45-year-old woman was stung by a bee while gardening. She is flushed, wheezing and dizzy. They gave epinephrine 0.5 mg IM 6 minutes ago. They have one IV established.",
+    vitals: { pulse: "124/minute", resp: "28/minute", bp: "82/50 mmHg", o2sat: "91% on oxygen" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO orders you would give the crew now.",
+        prompt: "What orders would you give the crew now?",
         required: 2,
         accept: [
           {
@@ -1382,7 +1395,7 @@ export const ANAPHYLAXIS: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE ways you would prepare the department for her arrival.",
+        prompt: "How would you prepare the department for her arrival?",
         required: 3,
         accept: [
           {
@@ -1406,7 +1419,7 @@ export const ANAPHYLAXIS: Samp[] = [
         kind: "short",
         update:
           "On arrival, after a second IM dose and 1.5 L of fluid, her hives have faded and her wheeze has improved, but she remains hypotensive at 80/48 mmHg.",
-        prompt: "List THREE other causes of shock you would now consider.",
+        prompt: "What other causes of shock would you now consider?",
         required: 3,
         accept: [
           {

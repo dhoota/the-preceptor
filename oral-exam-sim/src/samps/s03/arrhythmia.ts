@@ -106,12 +106,13 @@ export const ARRHYTHMIA: Samp[] = [
     id: "arrhythmia-01",
     title: "Faint during a church service",
     stem:
-      "A 76 year old woman fainted while seated during a church service. There was no warning and she was unconscious for about 30 seconds. She recovered fully and has a bruise on her forehead. She has hypertension treated with amlodipine. HR 72, BP 142/80 mmHg, RR 16, SpO2 97% on room air, glucose 6.1 mmol/L. Her examination is otherwise normal. ECG: sinus rhythm at 72, PR 240 ms, QRS 142 ms with an rSR' pattern in V1 and a broad S wave in I and V6, and marked left axis deviation.",
+      "A 76-year-old woman fainted while seated during a church service. There was no warning and she was unconscious for about 30 seconds. She recovered fully and has a bruise on her forehead. She has hypertension treated with amlodipine. Her glucose is 6.1 mmol/L. Her examination is otherwise normal. ECG: sinus rhythm at 72, PR 240 ms, QRS 142 ms with an rSR' pattern in V1 and a broad S wave in I and V6, and marked left axis deviation.",
+    vitals: { pulse: "72/minute", resp: "16/minute", bp: "142/80 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that raise concern for an arrhythmic cause of her syncope.",
+        prompt: "What features raise concern for an arrhythmic cause of her syncope?",
         required: 3,
         accept: [
           {
@@ -136,33 +137,32 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which best describes her ECG? Select one.",
+        prompt: "Which of the following best describes the conduction abnormality on her ECG?",
         options: [
-          "Bifascicular block, RBBB with left anterior fascicular block, plus first degree AV block",
-          "Left bundle branch block",
-          "Mobitz II second degree AV block",
-          "Wolff-Parkinson-White pattern",
           "Complete heart block with a junctional escape rhythm",
-          "Normal ECG for age",
+          "Left bundle branch block with first degree AV block",
+          "Mobitz II second degree AV block",
+          "RBBB, left anterior fascicular and first degree AV block",
+          "Wolff-Parkinson-White pattern",
         ],
-        correct: 0,
+        correct: 3,
         explanation:
-          "An rSR' in V1 with a broad S in I and V6 is RBBB, and marked left axis deviation adds left anterior fascicular block. A PR of 240 ms is first degree AV block. In a patient with syncope this pattern suggests intermittent high grade AV block.",
+          "An rSR' in V1 with a broad S in I and V6 is RBBB, and marked left axis deviation adds left anterior fascicular block. A PR of 240 ms is first degree AV block. Together this is bifascicular block with first degree AV block. In a patient with syncope this pattern suggests intermittent high grade AV block.",
         keyFeature: { topic: "arrhythmia", n: 3 },
         source: "syncope",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
-          "Discharge with an outpatient Holter monitor in 4 weeks",
           "Admit to a monitored bed for cardiac evaluation",
           "Discharge after 2 hours of normal monitoring",
-          "Discharge with family physician follow-up for a loop recorder",
+          "Discharge and family physician referral for a loop recorder",
+          "Discharge with an outpatient Holter monitor in 4 weeks",
           "Outpatient tilt table testing",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Unexplained syncope with bifascicular block is high risk for intermittent complete heart block. She needs continuous monitoring and cardiology assessment for pacing. A short period of normal rhythm in the ED does not exclude an intermittent arrhythmia.",
         keyFeature: { topic: "arrhythmia", n: 1 },
@@ -173,7 +173,7 @@ export const ARRHYTHMIA: Samp[] = [
         kind: "short",
         update:
           "On the monitor she develops regular P waves at 80 and regular wide QRS complexes at 32 that bear no relation to the P waves. She is pale and confused. BP 74/40 mmHg.",
-        prompt: "List TWO immediate treatments. Include the dose for any drug.",
+        prompt: "What are the immediate treatments, including the dose for any drug?",
         required: 2,
         accept: [
           {
@@ -210,7 +210,8 @@ export const ARRHYTHMIA: Samp[] = [
     id: "arrhythmia-02",
     title: "Racing heart after a wedding",
     stem:
-      "A 22 year old man presents with 2 hours of rapid palpitations after a night of drinking at a wedding. He is alert with no chest pain. HR about 220 and irregular, BP 104/62 mmHg, SpO2 98% on room air. ECG: irregularly irregular wide complex tachycardia with rates up to 280 in places and QRS morphology that varies from beat to beat. A walk-in clinic ECG from last year showed a short PR interval and a slurred QRS upstroke.",
+      "A 22-year-old man presents with 2 hours of rapid palpitations after a night of drinking at a wedding. He is alert with no chest pain. His pulse is about 220 and irregular. ECG: irregularly irregular wide complex tachycardia with rates up to 280 in places and QRS morphology that varies from beat to beat. A walk-in clinic ECG from last year showed a short PR interval and a slurred QRS upstroke.",
+    vitals: { bp: "104/62 mmHg", o2sat: "98% on room air" },
     questions: [
       {
         id: "q1",
@@ -236,7 +237,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO drugs or drug classes that are contraindicated in this rhythm.",
+        prompt: "What drugs or drug classes are contraindicated in this rhythm?",
         required: 2,
         accept: [
           { id: "adenosine", text: "Adenosine", match: ["adenosine", "avoid adenosine", "no adenosine"] },
@@ -254,7 +255,8 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "He remains stable. What is your preferred treatment? For a drug, include the dose and route.",
+        update: "He remains stable.",
+        prompt: "What is your preferred treatment, including the dose and route for a drug?",
         required: 1,
         accept: [
           {
@@ -278,7 +280,7 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q4",
         kind: "short",
         update: "He returns to sinus rhythm.",
-        prompt: "List TWO ECG features of pre-excitation you would look for on his sinus rhythm tracing.",
+        prompt: "What ECG features of pre-excitation would you look for on his sinus rhythm tracing?",
         required: 2,
         accept: [
           { id: "pr", text: "Short PR interval under 120 ms", match: ["short pr", "pr under", "pr less", "pr interval", "pr 120"] },
@@ -299,7 +301,8 @@ export const ARRHYTHMIA: Samp[] = [
     id: "arrhythmia-03",
     title: "Weak after a missed treatment",
     stem:
-      "A 63 year old man on hemodialysis Monday, Wednesday and Friday missed his Friday session. On Sunday evening he presents with generalized weakness. HR 42, BP 96/58 mmHg, RR 18, SpO2 96% on room air, glucose 7.2 mmol/L. Weight 82 kg. He is alert and has no chest pain.",
+      "A 63-year-old man on hemodialysis Monday, Wednesday and Friday missed his Friday session. On Sunday evening he presents with generalized weakness. His glucose is 7.2 mmol/L. He is alert and has no chest pain.",
+    vitals: { pulse: "42/minute", resp: "18/minute", bp: "96/58 mmHg", o2sat: "96% on room air", weight: "82 kg" },
     questions: [
       {
         id: "q1",
@@ -315,7 +318,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List THREE ECG findings that would indicate hyperkalemia.",
+        prompt: "What ECG findings would indicate hyperkalemia?",
         required: 3,
         accept: [
           { id: "t", text: "Peaked, narrow based T waves", match: ["peaked", "tall t", "tented", "peaked t"] },
@@ -342,7 +345,7 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q3",
         kind: "short",
         update: "The ECG shows no P waves, a QRS of 168 ms and peaked T waves. The potassium result is pending.",
-        prompt: "What is the first medication you give? Include the drug, dose and route.",
+        prompt: "What is the first medication you give, including the drug, dose and route?",
         required: 1,
         accept: [
           {
@@ -366,7 +369,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO treatments that shift potassium into cells. Include the doses.",
+        prompt: "What treatments shift potassium into cells, including the doses?",
         required: 2,
         accept: [
           {
@@ -402,12 +405,13 @@ export const ARRHYTHMIA: Samp[] = [
     alsoTopics: ["tox"],
     title: "Empty pill bottle found by a roommate",
     stem:
-      "A 24 year old woman is brought in 90 minutes after telling her roommate she had taken all her pills. An empty bottle of amitriptyline 50 mg, 60 tablets dispensed last week, was found. GCS 10. HR 138, BP 84/48 mmHg, RR 14, SpO2 95% on room air, temperature 37.8°C. Pupils are 6 mm and her skin is dry and flushed. Weight 60 kg. ECG: regular wide complex tachycardia at 138, QRS 154 ms.",
+      "A 24-year-old woman is brought in 90 minutes after telling her roommate she had taken all her pills. An empty bottle of amitriptyline 50 mg, 60 tablets dispensed last week, was found. GCS 10. Pupils are 6 mm and her skin is dry and flushed. ECG: regular wide complex tachycardia at 138, QRS 154 ms.",
+    vitals: { temperature: "37.8°C", pulse: "138/minute", resp: "14/minute", bp: "84/48 mmHg", o2sat: "95% on room air", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO ECG findings, other than a wide QRS, that indicate cardiac sodium channel blockade.",
+        prompt: "What ECG findings, other than a wide QRS, indicate cardiac sodium channel blockade?",
         required: 2,
         accept: [
           { id: "avr", text: "Terminal R wave in aVR over 3 mm", match: ["avr", "terminal r"] },
@@ -423,7 +427,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "What is the first specific treatment for her wide complex rhythm? Include the drug, dose and route.",
+        prompt: "What is the first specific treatment for her wide complex rhythm, including the drug, dose and route?",
         required: 1,
         accept: [
           {
@@ -448,7 +452,7 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q3",
         kind: "short",
         update: "After two boluses her QRS is 118 ms and BP 96/60 mmHg. She then has a generalized tonic clonic seizure.",
-        prompt: "Name the most appropriate drug to treat the seizure.",
+        prompt: "What is the most appropriate drug to treat the seizure?",
         required: 1,
         accept: [
           {
@@ -466,7 +470,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO targets or limits you would use to guide ongoing bicarbonate therapy.",
+        prompt: "What targets or limits would you use to guide ongoing bicarbonate therapy?",
         required: 2,
         accept: [
           { id: "ph", text: "Serum pH about 7.45 to 7.55", match: ["ph", "7.55", "7.45"] },
@@ -489,12 +493,13 @@ export const ARRHYTHMIA: Samp[] = [
     id: "arrhythmia-05",
     title: "Repeated collapse at home",
     stem:
-      "A 67 year old woman is brought in after two brief collapses at home. She has had 5 days of diarrhea. She takes methadone 90 mg daily for opioid use disorder and hydrochlorothiazide, and a walk-in clinic started ciprofloxacin 3 days ago. HR 56, BP 112/64 mmHg, SpO2 96% on room air. ECG: sinus bradycardia, QTc 620 ms with prominent U waves. On the monitor she has runs of polymorphic wide complex tachycardia with QRS complexes twisting around the baseline, each lasting 5 to 10 seconds and ending on their own.",
+      "A 67-year-old woman is brought in after two brief collapses at home. She has had 5 days of diarrhea. She takes methadone 90 mg daily for opioid use disorder and hydrochlorothiazide, and a walk-in clinic started ciprofloxacin 3 days ago. ECG: sinus bradycardia, QTc 620 ms with prominent U waves. On the monitor she has runs of polymorphic wide complex tachycardia with QRS complexes twisting around the baseline, each lasting 5 to 10 seconds and ending on their own.",
+    vitals: { pulse: "56/minute", bp: "112/64 mmHg", o2sat: "96% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE factors contributing to her rhythm disturbance.",
+        prompt: "What factors are contributing to her rhythm disturbance?",
         required: 3,
         accept: [
           { id: "methadone", text: "Methadone", match: ["methadone", "opioid"] },
@@ -513,7 +518,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "What drug do you give first? Include the dose and route.",
+        prompt: "What drug do you give first, including the dose and route?",
         required: 1,
         accept: [
           {
@@ -534,7 +539,7 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q3",
         kind: "short",
         update: "Despite magnesium and potassium replacement, runs recur every few minutes and are preceded by pauses.",
-        prompt: "List TWO further treatments to suppress recurrence.",
+        prompt: "What further treatments would suppress recurrence?",
         required: 2,
         accept: [
           { id: "pace", text: "Overdrive pacing at about 90 to 110 bpm", match: ["pacing", "overdrive", "pace", "pacer"] },
@@ -561,21 +566,21 @@ export const ARRHYTHMIA: Samp[] = [
     alsoTopics: ["environmental"],
     title: "Found in a snowbank",
     stem:
-      "A 64 year old man is found in a snowbank outside a bar in Sudbury in January. EMS report he was shivering at first but has stopped. GCS 8. Core temperature by esophageal probe 27.2°C. HR 38, BP 82/50 mmHg, RR 8, SpO2 unreliable, glucose 5.4 mmol/L. ECG: slow atrial fibrillation at 38 with J (Osborn) waves in the inferior and lateral leads and a long QT interval.",
+      "A 64-year-old man is found in a snowbank outside a bar in Sudbury in January. EMS report he was shivering at first but has stopped. GCS 8. His core temperature is measured by esophageal probe. His SpO2 reading is unreliable. His glucose is 5.4 mmol/L. ECG: slow atrial fibrillation at 38 with J (Osborn) waves in the inferior and lateral leads and a long QT interval.",
+    vitals: { temperature: "27.2°C core", pulse: "38/minute", resp: "8/minute", bp: "82/50 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate management of his heart rhythm? Select one.",
+        prompt: "Which of the following is the most appropriate management of his heart rhythm?",
         options: [
-          "Atropine 1 mg IV",
-          "Transcutaneous pacing",
-          "Diltiazem to control the ventricular rate",
+          "Atropine 1 mg IV, repeated every 3 to 5 minutes",
+          "Diltiazem 0.25 mg/kg IV over 2 minutes",
+          "Synchronized cardioversion under procedural sedation",
+          "Transcutaneous pacing at 70/minute",
           "No specific rhythm treatment, with active rewarming",
-          "Amiodarone 150 mg IV",
-          "Synchronized cardioversion",
         ],
-        correct: 3,
+        correct: 4,
         explanation:
           "Bradycardia, slow AF and J waves are expected physiology at this temperature and resolve with rewarming. Atropine is ineffective and pacing or drugs can provoke VF in the cold, irritable myocardium. Treat the temperature, not the rhythm.",
         keyFeature: { topic: "arrhythmia", n: 6 },
@@ -584,7 +589,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO precautions when handling and monitoring this patient.",
+        prompt: "What precautions apply when handling and monitoring this patient?",
         required: 2,
         accept: [
           {
@@ -608,7 +613,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO active rewarming methods appropriate for him.",
+        prompt: "What active rewarming methods are appropriate for him?",
         required: 2,
         accept: [
           { id: "air", text: "Forced air warming blanket", match: ["forced air", "bair hugger", "warming blanket", "external rewarming"] },
@@ -627,7 +632,7 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q4",
         kind: "short",
         update: "During the move to the ED stretcher he develops ventricular fibrillation.",
-        prompt: "List TWO management priorities.",
+        prompt: "What are the management priorities?",
         required: 2,
         accept: [
           { id: "cpr", text: "Start high quality CPR", match: ["cpr", "compression"] },
@@ -669,12 +674,13 @@ export const ARRHYTHMIA: Samp[] = [
     id: "arrhythmia-07",
     title: "Palpitations while shovelling",
     stem:
-      "A 52 year old man presents with palpitations that began suddenly 4 hours ago while shovelling snow. He has no chest pain, dyspnea or syncope. He has no medical history and takes no medications. He drank 6 beers last night. HR 148 and irregularly irregular, BP 136/84 mmHg, SpO2 98% on room air. Weight 90 kg. ECG: atrial fibrillation with rapid ventricular response and no ischemic changes. He has never had AF before.",
+      "A 52-year-old man presents with palpitations that began suddenly 4 hours ago while shovelling snow. He has no chest pain, dyspnea or syncope. He has no medical history and takes no medications. He drank 6 beers last night. ECG: atrial fibrillation with rapid ventricular response and no ischemic changes. He has never had AF before.",
+    vitals: { pulse: "148/minute irregular", bp: "136/84 mmHg", o2sat: "98% on room air", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List TWO precipitating factors to consider for his AF.",
+        prompt: "What precipitating factors would you consider for his AF?",
         required: 2,
         accept: [
           { id: "alcohol", text: "Alcohol excess", match: ["alcohol", "beer", "drinking", "holiday heart"] },
@@ -695,39 +701,40 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "He is stable and wants to feel normal quickly. Which is the most appropriate approach? Select one.",
+        update: "He is stable and wants to feel normal quickly.",
+        prompt: "Which of the following is the most appropriate approach to his atrial fibrillation?",
         options: [
-          "Rate control with diltiazem and discharge on anticoagulation",
-          "Rhythm control in the ED by electrical or pharmacologic cardioversion, without prior anticoagulation",
-          "Transesophageal echocardiogram before any cardioversion",
+          "Admission for IV amiodarone loading",
           "Anticoagulate for 3 weeks, then elective cardioversion",
-          "Admit for amiodarone loading",
-          "IV digoxin",
+          "Cardioversion in the ED without prior anticoagulation",
+          "Rate control with diltiazem and discharge on anticoagulation",
+          "Transesophageal echocardiogram before any cardioversion",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "The CAEP checklist supports ED cardioversion without prior anticoagulation when onset is under 12 hours, or 12 to 48 hours with fewer than two CHADS-65 criteria, in patients with no prior stroke or TIA and no valvular disease. Most return to sinus rhythm and go home within hours. Longer onset or higher stroke risk needs 3 weeks of anticoagulation first or TEE.",
+          "The CAEP checklist supports ED cardioversion without prior anticoagulation when onset is under 12 hours, or 12 to 48 hours with fewer than two CHADS-65 criteria, in patients with no prior stroke or TIA and no valvular disease. Rhythm control may be electrical or pharmacologic. Most return to sinus rhythm and go home within hours. Longer onset or higher stroke risk needs 3 weeks of anticoagulation first or TEE.",
         keyFeature: { topic: "arrhythmia", n: 4 },
         source: "caep-af",
       },
       {
         id: "q3",
         kind: "menu",
-        prompt: "You choose electrical cardioversion. Select THREE appropriate elements.",
+        update: "You choose electrical cardioversion.",
+        prompt: "Which of the following are appropriate elements of his electrical cardioversion?",
         options: [
-          "Procedural sedation, for example propofol with or without fentanyl, with airway equipment ready",
-          "Unsynchronized shock at 360 J",
-          "Synchronized biphasic shock at 200 J",
           "Adenosine 6 mg IV before the shock",
-          "Heparin 5000 units IV before cardioversion",
           "Anteroposterior pad placement",
           "Atropine 0.5 mg IV pretreatment",
           "Delay until 3 weeks of anticoagulation",
+          "Heparin 5 000 units IV before cardioversion",
+          "Procedural sedation with airway equipment ready",
+          "Synchronized biphasic shock at 200 J",
+          "Unsynchronized shock at 360 J",
         ],
         select: 3,
-        correct: [0, 2, 5],
+        correct: [5, 6, 1],
         explanation:
-          "The CAEP checklist recommends procedural sedation and synchronized shocks starting at 150 to 200 J rather than low energy. It accepts anterolateral or anteroposterior pads and suggests switching position if the first shocks fail. Unsynchronized shocks can induce VF, and anticoagulation first is not needed for onset under 12 hours.",
+          "The CAEP checklist recommends procedural sedation, for example propofol with or without fentanyl, and synchronized shocks starting at 150 to 200 J rather than low energy. It accepts anterolateral or anteroposterior pads and suggests switching position if the first shocks fail. Unsynchronized shocks can induce VF, and anticoagulation first is not needed for onset under 12 hours.",
         keyFeature: { topic: "arrhythmia", n: 4 },
         source: "caep-af",
       },
@@ -735,7 +742,7 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q4",
         kind: "short",
         update: "He converts to sinus rhythm with one shock and recovers from sedation.",
-        prompt: "List TWO elements of his discharge plan.",
+        prompt: "What are the elements of his discharge plan?",
         required: 2,
         accept: [
           {
@@ -772,30 +779,30 @@ export const ARRHYTHMIA: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Fever, cough and a fast pulse",
     stem:
-      "An 83 year old woman is brought in from home with 2 days of cough, fever and confusion. HR 152 and irregularly irregular, BP 96/58 mmHg, RR 30, SpO2 88% on room air, temperature 39.1°C. ECG: atrial fibrillation with rapid ventricular response. She has no prior AF. Chest X-ray shows right lower lobe consolidation. Lactate 3.6 mmol/L.",
+      "An 83-year-old woman is brought in from home with 2 days of cough, fever and confusion. ECG: atrial fibrillation with rapid ventricular response. She has no prior AF. Chest X-ray shows right lower lobe consolidation. Lactate 3.6 mmol/L.",
+    vitals: { temperature: "39.1°C", pulse: "152/minute irregular", resp: "30/minute", bp: "96/58 mmHg", o2sat: "88% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate initial approach to her heart rate? Select one.",
+        prompt: "Which of the following is the most appropriate initial approach to her heart rate?",
         options: [
-          "Synchronized cardioversion now",
-          "Procainamide 15 mg/kg IV",
-          "Treat the sepsis with oxygen, IV fluids, early antibiotics and antipyretics, then reassess the rate",
+          "Digoxin 0.5 mg IV loading dose",
           "Diltiazem 0.25 mg/kg IV bolus",
-          "Metoprolol 5 mg IV every 5 minutes until HR is below 100",
-          "Digoxin 0.5 mg IV",
+          "Metoprolol 5 mg IV repeated to a HR below 100",
+          "Synchronized cardioversion now",
+          "Treat the sepsis first, then reassess the rate",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
-          "This is secondary AF driven by sepsis, fever and hypoxia. The fast rate partly supports her cardiac output, and treating the cause usually slows it. Rate control drugs can precipitate hypotension and cardioversion rarely holds while the trigger persists.",
+          "This is secondary AF driven by sepsis, fever and hypoxia. The fast rate partly supports her cardiac output, and treating the cause usually slows it. Rate control drugs can precipitate hypotension and cardioversion rarely holds while the trigger persists. Treating the sepsis means oxygen, IV fluids, early antibiotics and antipyretics, then reassessing the rate.",
         keyFeature: { topic: "infectious-diseases", n: 2 },
         source: "caep-af",
       },
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO other irregular narrow complex rhythms you would distinguish from AF on her ECG.",
+        prompt: "What other irregular narrow complex rhythms would you distinguish from AF on her ECG?",
         required: 2,
         accept: [
           { id: "mat", text: "Multifocal atrial tachycardia", match: ["multifocal", "mat"] },
@@ -814,7 +821,7 @@ export const ARRHYTHMIA: Samp[] = [
         kind: "short",
         update:
           "After 2 L of fluid, antibiotics and acetaminophen her HR is 128 and BP 104/62 mmHg. She remains in AF.",
-        prompt: "List TWO reasons electrical cardioversion is not the preferred strategy for her now.",
+        prompt: "Why is electrical cardioversion not the preferred strategy for her now?",
         required: 2,
         accept: [
           {
@@ -847,12 +854,13 @@ export const ARRHYTHMIA: Samp[] = [
     id: "arrhythmia-09",
     title: "Sudden rapid palpitations",
     stem:
-      "A 29 year old woman presents with 40 minutes of rapid palpitations that started suddenly while she was at work. She has had similar brief episodes that stopped on their own. HR 196 and regular, BP 118/76 mmHg, SpO2 99% on room air. She is alert with no chest pain. ECG: regular narrow complex tachycardia at 196 with no visible P waves. She takes no medications.",
+      "A 29-year-old woman presents with 40 minutes of rapid palpitations that started suddenly while she was at work. She has had similar brief episodes that stopped on their own. She is alert with no chest pain. ECG: regular narrow complex tachycardia at 196 with no visible P waves. She takes no medications.",
+    vitals: { pulse: "196/minute regular", bp: "118/76 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE causes of a regular narrow complex tachycardia.",
+        prompt: "What are the causes of a regular narrow complex tachycardia?",
         required: 3,
         accept: [
           {
@@ -878,7 +886,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List your first TWO interventions in order. For any drug, include the dose and route.",
+        prompt: "What are your first interventions, in order, including the dose and route for any drug?",
         required: 2,
         accept: [
           {
@@ -905,19 +913,19 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q3",
         kind: "menu",
-        prompt: "In which TWO situations should the initial adenosine dose be reduced to 3 mg? Select TWO.",
+        prompt: "Which of the following situations call for reducing the initial adenosine dose to 3 mg?",
         options: [
-          "Heart transplant recipient",
-          "Taking theophylline",
+          "Age over 65 years with no heart disease",
+          "Drinks several cups of coffee daily",
           "Drug given through a central venous line",
-          "Daily coffee drinker",
-          "Pregnancy",
-          "Mild asthma",
-          "Age over 65",
-          "Taking metoprolol",
+          "Heart transplant recipient",
+          "History of mild intermittent asthma",
+          "Pregnancy at 30 weeks of gestation",
+          "Taking metoprolol for hypertension",
+          "Taking theophylline for COPD",
         ],
         select: 2,
-        correct: [0, 2],
+        correct: [3, 2],
         explanation:
           "Denervated transplanted hearts are very sensitive to adenosine, and central line delivery gives a more concentrated bolus. Dipyridamole and carbamazepine also increase its effect. Theophylline and caffeine blunt it, and adenosine is safe in pregnancy.",
         keyFeature: { topic: "arrhythmia", n: 6 },
@@ -931,12 +939,13 @@ export const ARRHYTHMIA: Samp[] = [
     id: "arrhythmia-10",
     title: "Palpitations after an old heart attack",
     stem:
-      "A 67 year old man with a prior anterior MI and an ejection fraction of 30% presents with 1 hour of palpitations and light-headedness. HR 172 and regular, BP 116/74 mmHg, SpO2 96% on room air. He is alert and oriented. ECG: regular wide complex tachycardia, QRS 170 ms, extreme (northwest) axis, with occasional fusion beats in lead II.",
+      "A 67-year-old man with a prior anterior MI and an ejection fraction of 30% presents with 1 hour of palpitations and light-headedness. He is alert and oriented. ECG: regular wide complex tachycardia, QRS 170 ms, extreme (northwest) axis, with occasional fusion beats in lead II.",
+    vitals: { pulse: "172/minute regular", bp: "116/74 mmHg", o2sat: "96% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE features that support ventricular tachycardia over SVT with aberrancy.",
+        prompt: "What features support ventricular tachycardia over SVT with aberrancy?",
         required: 3,
         accept: [
           {
@@ -959,7 +968,8 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "He remains stable. List TWO appropriate treatment options. Include the dose for any drug.",
+        update: "He remains stable.",
+        prompt: "What are the appropriate treatment options, including the dose for any drug?",
         required: 2,
         accept: [
           {
@@ -988,16 +998,15 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q3",
         kind: "single",
         update: "While you prepare, he becomes confused and grey. BP 72/40 mmHg. He is in the same rhythm and has a pulse.",
-        prompt: "Which is the most appropriate immediate treatment? Select one.",
+        prompt: "Which of the following is the most appropriate immediate treatment for him?",
         options: [
           "Amiodarone 300 mg IV push",
+          "Lidocaine 100 mg IV",
+          "Norepinephrine infusion and reassess",
           "Synchronized cardioversion",
           "Unsynchronized defibrillation at 360 J",
-          "Lidocaine 100 mg IV",
-          "Adenosine 6 mg IV",
-          "Norepinephrine infusion and reassess",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "VT with a pulse and signs of shock needs immediate synchronized cardioversion, with brief sedation only if it does not cause delay. Unsynchronized shocks are for pulseless VT or VF. Drugs are too slow for an unstable patient.",
         keyFeature: { topic: "arrhythmia", n: 4 },
@@ -1007,7 +1016,7 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q4",
         kind: "short",
         update: "He converts to sinus rhythm.",
-        prompt: "List THREE precipitating causes you would look for.",
+        prompt: "What precipitating causes would you look for?",
         required: 3,
         accept: [
           { id: "ischemia", text: "Acute ischemia", match: ["ischemia", "acs", "infarct", "troponin", "coronary"] },
@@ -1032,7 +1041,8 @@ export const ARRHYTHMIA: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Rhythm change after thrombolysis",
     stem:
-      "A 58 year old man presents to a rural Northern Ontario hospital 90 minutes after the onset of crushing chest pain. The nearest PCI centre is 3 hours away. His ECG shows inferior ST elevation. He receives tenecteplase, ASA, clopidogrel and enoxaparin per protocol. Weight 84 kg.",
+      "A 58-year-old man presents to a rural Northern Ontario hospital 90 minutes after the onset of crushing chest pain. The nearest PCI centre is 3 hours away. His ECG shows inferior ST elevation. He receives tenecteplase, ASA, clopidogrel and enoxaparin per protocol.",
+    vitals: { weight: "84 kg" },
     questions: [
       {
         id: "q1",
@@ -1073,7 +1083,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO findings that suggest successful reperfusion.",
+        prompt: "What findings suggest successful reperfusion?",
         required: 2,
         accept: [
           {
@@ -1095,7 +1105,7 @@ export const ARRHYTHMIA: Samp[] = [
         kind: "short",
         update:
           "Thirty minutes later he becomes light-headed. Sinus bradycardia at 38, BP 78/46 mmHg. His lungs are clear and his ST segments remain improved.",
-        prompt: "What is your first treatment? Include the dose and route.",
+        prompt: "What is your first treatment, including the dose and route?",
         required: 1,
         accept: [
           {
@@ -1120,18 +1130,19 @@ export const ARRHYTHMIA: Samp[] = [
     alsoTopics: ["ischemic-heart-disease"],
     title: "Collapse at a curling rink",
     stem:
-      "A 55 year old man collapsed at a curling rink in Winnipeg. A bystander started CPR and an AED delivered two shocks. Paramedics achieved return of spontaneous circulation 18 minutes after collapse. On arrival he is intubated. HR 102 sinus, BP 88/52 mmHg, SpO2 99% on FiO2 1.0, temperature 36.1°C. GCS 3 with no sedation. Pupils are 3 mm and reactive. Glucose 11.2 mmol/L.",
+      "A 55-year-old man collapsed at a curling rink in Winnipeg. A bystander started CPR and an AED delivered two shocks. Paramedics achieved return of spontaneous circulation 18 minutes after collapse. On arrival he is intubated and in sinus rhythm. GCS 3 with no sedation. Pupils are 3 mm and reactive. Glucose 11.2 mmol/L.",
+    vitals: { temperature: "36.1°C", pulse: "102/minute", bp: "88/52 mmHg", o2sat: "99% on FiO2 1.0" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which statement about temperature control is most appropriate? Select one.",
+        prompt: "Which of the following statements about temperature control for him is most appropriate?",
         options: [
-          "Not indicated because the rhythm was shockable and ROSC was fast",
+          "Contraindicated if emergency PCI may be needed",
           "Indicated because he does not follow commands after ROSC",
           "Indicated only for in-hospital arrest",
-          "Indicated only if his temperature rises above 38.5°C",
-          "Contraindicated because he may need PCI",
+          "Indicated only if his core temperature rises above 38.5°C",
+          "Not indicated after a shockable rhythm with fast ROSC",
         ],
         correct: 1,
         explanation:
@@ -1142,7 +1153,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "State the target temperature range and ONE other key element of temperature control.",
+        prompt: "What is the target temperature range, and what is one other key element of temperature control?",
         required: 2,
         accept: [
           {
@@ -1193,7 +1204,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List THREE physiologic targets for his post-ROSC care. Include the values.",
+        prompt: "What are the physiologic targets for his post-ROSC care, including the values?",
         required: 3,
         accept: [
           {
@@ -1223,7 +1234,7 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q5",
         kind: "short",
         update: "After PCI of an occluded LAD he has frequent PVCs and runs of 4 to 6 beats of monomorphic VT. His BP is stable.",
-        prompt: "List TWO elements of your management of these rhythms.",
+        prompt: "How would you manage these rhythms?",
         required: 2,
         accept: [
           {
@@ -1257,20 +1268,21 @@ export const ARRHYTHMIA: Samp[] = [
     id: "arrhythmia-13",
     title: "Collapse in the pool",
     stem:
-      "A 19 year old woman collapsed while swimming laps at a community pool. Lifeguards pulled her out right away, found her pulseless and not breathing, and started CPR. The AED advised a shock and she had ROSC after one shock, 4 minutes after collapse. In the ED she is awake, obeys commands and asks what happened. HR 84, BP 118/70 mmHg, SpO2 98% on 2 L. Her aunt died suddenly at age 30. ECG: sinus rhythm, QTc 520 ms, broad based T waves.",
+      "A 19-year-old woman collapsed while swimming laps at a community pool. Lifeguards pulled her out right away, found her pulseless and not breathing, and started CPR. The AED advised a shock and she had ROSC after one shock, 4 minutes after collapse. In the ED she is awake, obeys commands and asks what happened. Her aunt died suddenly at age 30. ECG: sinus rhythm, QTc 520 ms, broad based T waves.",
+    vitals: { pulse: "84/minute", bp: "118/70 mmHg", o2sat: "98% on 2 L/minute" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate approach to temperature control? Select one.",
+        prompt: "Which of the following is the most appropriate approach to temperature control for her?",
         options: [
+          "Cold saline 30 mL/kg IV",
+          "Cooling only if she becomes agitated",
           "Target 33°C for 24 hours",
           "Target 36°C for 24 hours",
-          "No induced cooling since she follows commands, but prevent fever",
-          "Cooling only if she becomes agitated",
-          "Cold saline 30 mL/kg IV",
+          "No induced cooling, but prevent fever",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "Deliberate temperature control is indicated for patients who remain comatose after ROSC. She is awake and following commands, so she does not need it. Fever should still be avoided.",
         keyFeature: { topic: "arrhythmia", n: 8 },
@@ -1297,7 +1309,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO reversible contributors to QT prolongation you would check for.",
+        prompt: "What reversible contributors to QT prolongation would you check for?",
         required: 2,
         accept: [
           { id: "k", text: "Hypokalemia", match: ["hypokalemia", "potassium"] },
@@ -1320,7 +1332,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO elements of her management before she leaves the ED.",
+        prompt: "What are the elements of her management before she leaves the ED?",
         required: 2,
         accept: [
           {
@@ -1346,7 +1358,8 @@ export const ARRHYTHMIA: Samp[] = [
     id: "arrhythmia-14",
     title: "Faint during a flu illness",
     stem:
-      "A 34 year old man has had 2 days of fever and myalgias from influenza. At home he fainted without warning while sitting on the couch and was unconscious for about 20 seconds. His brother died in his sleep at age 38. Temperature 39.6°C, HR 108, BP 122/74 mmHg, SpO2 97% on room air. ECG: coved ST elevation of 3 mm in V1 and V2 with a downsloping ST segment into inverted T waves. There are no reciprocal changes.",
+      "A 34-year-old man has had 2 days of fever and myalgias from influenza. At home he fainted without warning while sitting on the couch and was unconscious for about 20 seconds. His brother died in his sleep at age 38. ECG: coved ST elevation of 3 mm in V1 and V2 with a downsloping ST segment into inverted T waves. There are no reciprocal changes.",
+    vitals: { temperature: "39.6°C", pulse: "108/minute", bp: "122/74 mmHg", o2sat: "97% on room air" },
     questions: [
       {
         id: "q1",
@@ -1365,7 +1378,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "List TWO features of his syncope that suggest an arrhythmic cause.",
+        prompt: "What features of his syncope suggest an arrhythmic cause?",
         required: 2,
         accept: [
           {
@@ -1390,7 +1403,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO immediate management steps.",
+        prompt: "What are the immediate management steps?",
         required: 2,
         accept: [
           {
@@ -1419,7 +1432,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q4",
         kind: "short",
-        prompt: "List TWO other triggers or drugs that can unmask or worsen this ECG pattern.",
+        prompt: "What other triggers or drugs can unmask or worsen this ECG pattern?",
         required: 2,
         accept: [
           {
@@ -1450,12 +1463,13 @@ export const ARRHYTHMIA: Samp[] = [
     alsoTopics: ["tox"],
     title: "Nausea and yellow halos",
     stem:
-      "An 84 year old woman with heart failure and atrial fibrillation is brought in by her daughter with 4 days of nausea, poor appetite and yellow halos around lights. She has had vomiting and diarrhea this week. Medications: digoxin 0.125 mg daily, furosemide, spironolactone, apixaban, and clarithromycin started 5 days ago for bronchitis. HR 42 and regular, BP 104/60 mmHg. ECG: regular junctional rhythm at 42 with scooped ST depression. Creatinine 210 µmol/L (baseline 95). Potassium 5.9 mmol/L. Digoxin level 4.1 nmol/L.",
+      "An 84-year-old woman with heart failure and atrial fibrillation is brought in by her daughter with 4 days of nausea, poor appetite and yellow halos around lights. She has had vomiting and diarrhea this week. Medications: digoxin 0.125 mg daily, furosemide, spironolactone, apixaban, and clarithromycin started 5 days ago for bronchitis. ECG: regular junctional rhythm at 42 with scooped ST depression. Creatinine 210 umol/L (baseline 95). Potassium 5.9 mmol/L. Digoxin level 4.1 nmol/L.",
+    vitals: { pulse: "42/minute regular", bp: "104/60 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
-        prompt: "List THREE factors that precipitated her toxicity.",
+        prompt: "What factors precipitated her toxicity?",
         required: 3,
         accept: [
           { id: "aki", text: "Acute kidney injury reducing digoxin clearance", match: ["aki", "renal", "kidney", "creatinine"] },
@@ -1481,7 +1495,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q2",
         kind: "short",
-        prompt: "Name the specific treatment for her toxicity.",
+        prompt: "What is the specific treatment for her toxicity?",
         required: 1,
         accept: [
           {
@@ -1499,7 +1513,7 @@ export const ARRHYTHMIA: Samp[] = [
       {
         id: "q3",
         kind: "short",
-        prompt: "List TWO indications for this treatment in digoxin toxicity.",
+        prompt: "What are the indications for this treatment in digoxin toxicity?",
         required: 2,
         accept: [
           {
@@ -1522,7 +1536,7 @@ export const ARRHYTHMIA: Samp[] = [
         id: "q4",
         kind: "short",
         update: "Before the antidote arrives her HR falls to 34 and her BP to 78/44 mmHg.",
-        prompt: "What is your next treatment? Include the dose and route.",
+        prompt: "What is your next treatment, including the dose and route?",
         required: 1,
         accept: [
           {

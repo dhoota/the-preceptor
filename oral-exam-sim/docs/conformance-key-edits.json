@@ -370,6 +370,91 @@
    "after": [
     "Not an admission of liability and generally inadmissible"
    ]
+  },
+  "anaphylaxis-01#q3": {
+   "batch": "s03",
+   "before": [
+    "Epinephrine infusion, starting at about 0.1 mcg/kg/min and titrated to effect"
+   ],
+   "after": [
+    "Epinephrine infusion at about 0.1 mcg/kg/min, titrated"
+   ]
+  },
+  "anaphylaxis-05#q3": {
+   "batch": "s03",
+   "before": [
+    "Awake flexible bronchoscopic intubation, sitting up, with topical anesthesia and a scalpel cricothyrotomy setup ready"
+   ],
+   "after": [
+    "Awake flexible bronchoscopic intubation, sitting up"
+   ]
+  },
+  "anaphylaxis-07#q3": {
+   "batch": "s03",
+   "before": [
+    "At the first signs of a systemic reaction, such as hives with breathing trouble, throat tightness or faintness, then call 911"
+   ],
+   "after": [
+    "At the first systemic symptom, then call 911"
+   ]
+  },
+  "anaphylaxis-14#q2": {
+   "batch": "s03",
+   "before": [
+    "Epinephrine 0.5 mg IM into the anterolateral thigh, then observe"
+   ],
+   "after": [
+    "Epinephrine 0.5 mg IM anterolateral thigh, then observe"
+   ]
+  },
+  "arrhythmia-01#q2": {
+   "batch": "s03",
+   "before": [
+    "Bifascicular block, RBBB with left anterior fascicular block, plus first degree AV block"
+   ],
+   "after": [
+    "RBBB, left anterior fascicular and first degree AV block"
+   ]
+  },
+  "arrhythmia-07#q2": {
+   "batch": "s03",
+   "before": [
+    "Rhythm control in the ED by electrical or pharmacologic cardioversion, without prior anticoagulation"
+   ],
+   "after": [
+    "Cardioversion in the ED without prior anticoagulation"
+   ]
+  },
+  "arrhythmia-07#q3": {
+   "batch": "s03",
+   "before": [
+    "Procedural sedation, for example propofol with or without fentanyl, with airway equipment ready",
+    "Synchronized biphasic shock at 200 J",
+    "Anteroposterior pad placement"
+   ],
+   "after": [
+    "Procedural sedation with airway equipment ready",
+    "Synchronized biphasic shock at 200 J",
+    "Anteroposterior pad placement"
+   ]
+  },
+  "arrhythmia-08#q1": {
+   "batch": "s03",
+   "before": [
+    "Treat the sepsis with oxygen, IV fluids, early antibiotics and antipyretics, then reassess the rate"
+   ],
+   "after": [
+    "Treat the sepsis first, then reassess the rate"
+   ]
+  },
+  "arrhythmia-13#q1": {
+   "batch": "s03",
+   "before": [
+    "No induced cooling since she follows commands, but prevent fever"
+   ],
+   "after": [
+    "No induced cooling, but prevent fever"
+   ]
   }
  }
 }
