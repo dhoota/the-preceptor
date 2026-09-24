@@ -35,15 +35,15 @@ Counts: 7 fixes in 7 items. All five main cases keep their keys.
 ## Sources verified
 
 - Fresenius Kabi, Calcium Gluconate Injection label, revised 6/2017. 100 mg/mL, adult 1000 to 2000 mg, dilute, do not exceed 200 mg/minute in adults, ECG monitoring. https://www.accessdata.fda.gov/drugsatfda_docs/label/2017/208418s000lbl.pdf
-- Orloff LA et al. ATA Statement on Postoperative Hypoparathyroidism. Thyroid 2018;28(7):830-841. PTH below 15 pg/mL signals risk. Monitor for rebound hypercalcemia. https://pubmed.ncbi.nlm.nih.gov/29848235/
-- ACOG Practice Bulletin No. 222. Obstet Gynecol 2020;135(6):e237-e260. Severe range 160/110, transaminases twice normal, headache unresponsive to acetaminophen or visual disturbance, Table 2 magnesium toxicity, calcium gluconate 10% 10 mL IV over 3 minutes. https://pubmed.ncbi.nlm.nih.gov/32443079/
-- Magee LA et al. SOGC Guideline No. 426. J Obstet Gynaecol Can 2022;44(5):547-571. https://pubmed.ncbi.nlm.nih.gov/35577426/
+- Orloff LA et al. ATA Statement on Postoperative Hypoparathyroidism. Thyroid 2018, 28(7):830-841. PTH below 15 pg/mL signals risk. Monitor for rebound hypercalcemia. https://pubmed.ncbi.nlm.nih.gov/29848235/
+- ACOG Practice Bulletin No. 222. Obstet Gynecol 2020, 135(6):e237-e260. Severe range 160/110, transaminases twice normal, headache unresponsive to acetaminophen or visual disturbance, Table 2 magnesium toxicity, calcium gluconate 10% 10 mL IV over 3 minutes. https://pubmed.ncbi.nlm.nih.gov/32443079/
+- Magee LA et al. SOGC Guideline No. 426. J Obstet Gynaecol Can 2022, 44(5):547-571. https://pubmed.ncbi.nlm.nih.gov/35577426/
 - Lithium Carbonate Tablets label, Sun Pharmaceutical, revised 10/2023. Acute range 0.8 to 1.2 mEq/L, toxicity at 1.5 mEq/L or more, NSAID interaction, keep normal salt and fluids, draw before the next dose. https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=d3284649-ed4c-4096-987b-4ac16b8278f2&type=display
 - GINA Summary Guide 2024. Severity bands, prednisolone 1 to 2 mg/kg up to 40 mg, SpO2 target 94 to 98 percent in children, follow up in 1 to 2 days for children, reliever as needed, risk factors. https://ginasthma.org/wp-content/uploads/2024/12/GINA-Summary-Guide-2024-WEB-WMS.pdf
 - ISMP List of High-Alert Medications in Acute Care Settings, 2024. https://home.ecri.org/blogs/ismp-resources/high-alert-medications-in-acute-care-settings
 - IHI SBAR Tool. https://www.ihi.org/library/tools/sbar-tool-situation-background-assessment-recommendation
 - NCSBN and ANA National Guidelines for Nursing Delegation, effective 4/29/2019. The delegating nurse keeps accountability. https://www.ncsbn.org/public-files/NGND-PosPaper_06.pdf
-- Winstein CJ et al. Guidelines for Adult Stroke Rehabilitation and Recovery. Stroke 2016;47(6):e98-e169. The abstract names speech-language pathologists, nutritionists and social workers on the team. The full text was not reachable (HTTP 403). https://pubmed.ncbi.nlm.nih.gov/27145936/
+- Winstein CJ et al. Guidelines for Adult Stroke Rehabilitation and Recovery. Stroke 2016, 47(6):e98-e169. The abstract names speech-language pathologists, nutritionists and social workers on the team. The full text was not reachable (HTTP 403). https://pubmed.ncbi.nlm.nih.gov/27145936/
 - Halter MJ, Varcarolis' Foundations of Psychiatric-Mental Health Nursing. Open Library gives 2021 for ISBN 9780323697071. https://openlibrary.org/isbn/9780323697071.json
 - Brunner and Suddarth 15th edition, Lowdermilk 13th edition and Wong's 12th edition were not re-fetched. The c01 review and the fixture already use them.
 

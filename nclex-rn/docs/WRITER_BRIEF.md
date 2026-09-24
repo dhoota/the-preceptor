@@ -8,7 +8,8 @@ For the writer of one batch in Preceptor: NCLEX-RN Prep. Only create or edit fil
 2. `src/engine/types.ts` for the shapes.
 3. `tests/fixture.ts`. Ten worked items, one per type, that pass every gate. Copy their shape and tone.
 4. `docs/bank-plan.json` for your batch: its Client Needs counts and, for stand-alone batches, the item type mix.
-5. Existing items in the bank for your Client Needs area, so you do not repeat their scenarios or teaching points. Other writers work in parallel. The near duplicate gate runs across the whole bank.
+5. `docs/topic-plan.json` for your batch. A case batch writes exactly its five assigned scenarios, in that order. A stand-alone batch covers its focus list first. Parallel writers cannot see each other, and without this plan three case batches wrote the same five cases.
+6. Existing items in the bank for your Client Needs area, so you do not repeat their scenarios or teaching points. Other writers work in parallel. The near duplicate gate runs across the whole bank.
 
 ## What to write
 
