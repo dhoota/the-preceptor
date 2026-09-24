@@ -42,6 +42,8 @@ const S = {
   riou: { id: "riou-chloroquine", citation: "Riou B, Barriot P, Rimailho A, Baud FJ. Treatment of severe chloroquine poisoning. N Engl J Med. 1988.", url: "https://pubmed.ncbi.nlm.nih.gov/3336379/" },
   paris: { id: "paris-n2o", citation: "Paris A, Lake L, Joseph A, et al. Nitrous oxide-induced subacute combined degeneration of the cord: diagnosis and treatment. Pract Neurol. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/36813556/" },
   garakani: { id: "garakani-n2o", citation: "Garakani A, Jaffe RJ, Savla D, et al. Neurologic, psychiatric, and other medical manifestations of nitrous oxide abuse: a systematic review of the case literature. Am J Addict. 2016.", url: "https://onlinelibrary.wiley.com/doi/10.1111/ajad.12372" },
+  ng: { id: "ng-h2s", citation: "Ng PC, Hendry-Hofer TB, Witeof AE, et al. Hydrogen sulfide toxicity: mechanism of action, clinical presentation, and countermeasure development. J Med Toxicol. 2019.", url: "https://doi.org/10.1007/s13181-019-00710-5" },
+  atsdrH2s: { id: "atsdr-h2s", citation: "Agency for Toxic Substances and Disease Registry. Medical management guidelines for hydrogen sulfide. Centers for Disease Control and Prevention. 2014.", url: "https://wwwn.cdc.gov/TSP/MMG/MMGDetails.aspx?mmgid=385&toxid=67" },
 } satisfies Record<string, Source>;
 
 export const TOX_S53: Samp[] = [
@@ -694,62 +696,62 @@ export const TOX_S53: Samp[] = [
     ...META,
   },
 
-  /* 27 Smoke inhalation and cyanide ---------------------------------------- */
+  /* 27 Hydrogen sulfide in a manure pit ----------------------------------- */
   {
     id: "tox-27",
     topic: "tox",
-    title: "Man pulled from a house fire",
+    alsoTopics: ["environmental"],
+    title: "Farm worker pulled from a pit",
     stem:
-      "A 52-year-old man is brought to the emergency department by paramedics after being pulled from a house fire. He was found in a smoke filled basement. He has soot around the nose and mouth, a hoarse voice and no burns to the chest or limbs. He is confused and agitated. Paramedics have given oxygen by non rebreather mask. Venous lactate is 13 mmol/L and venous pH is 7.18. Carboxyhemoglobin is 18%. Glucose 7.8 mmol/L. The chest has scattered wheezes.",
-    vitals: { temperature: "36.8°C oral", pulse: "128/minute", resp: "30/minute", bp: "88/52 mmHg", o2sat: "100% on 15 L/minute by non rebreather mask", weight: "84 kg" },
+      "You are working in a rural hospital emergency department. A 38-year-old man who works on a dairy farm is brought to the emergency department by ambulance after he collapsed inside an enclosed liquid manure pit. He had climbed down to free a blocked pump shortly after the manure was stirred. A coworker who went in after him also collapsed. Firefighters wearing breathing apparatus pulled both men out after about 10 minutes. A second coworker at the top of the pit noticed a rotten egg smell that faded within a few minutes. He was unresponsive at the scene. Now, 50 minutes after rescue, he is drowsy but opens his eyes to voice. His eyes are red and painful, and he has a cough with crackles at both lung bases. Carboxyhemoglobin is 1.2% and lactate is 4.1 mmol/L.",
+    vitals: { temperature: "36.4°C oral", pulse: "112/minute", resp: "26/minute", bp: "128/76 mmHg", o2sat: "92% on 15 L/minute by non-rebreather mask", weight: "82 kg" },
     questions: [
       {
         id: "q1",
-        kind: "menu",
-        prompt: "Which of the following treatments should be given to him in the next few minutes?",
-        options: ["amyl nitrite by inhalation", "hydroxocobalamin 5 g IV", "hyperbaric oxygen now", "methylene blue 1 mg/kg IV", "oxygen 100% by mask or tube", "sodium bicarbonate 100 mmol IV", "sodium nitrite 300 mg IV"],
-        select: 2,
-        correct: [1, 4],
+        kind: "single",
+        prompt: "Which of the following is the most likely cause of his collapse in the pit?",
+        options: ["Ammonia inhalation", "Carbon monoxide poisoning", "Chlorine gas inhalation", "Hydrogen sulfide poisoning", "Methane asphyxiation"],
+        correct: 3,
         explanation:
-          "Confusion and hypotension with a lactate of 13 mmol/L after enclosed space smoke exposure fit cyanide toxicity, and hydroxocobalamin binds cyanide without impairing oxygen carriage. Oxygen at the highest concentration shortens the half life of the carbon monoxide that gave him a carboxyhemoglobin of 18% and supports tissue oxygen delivery. Sodium nitrite and amyl nitrite work by making methemoglobin, which is hazardous when carbon monoxide already occupies his hemoglobin and his blood pressure is 88/52 mmHg. Methylene blue treats methemoglobinemia, which he does not have. Bicarbonate buffers acid without removing either toxin, and a hyperbaric chamber is not a first step in a hypotensive patient needing resuscitation.",
+          "A sudden collapse in a confined space, with a rescuer struck down as well, fits the knockdown of hydrogen sulfide, which often claims would-be rescuers. The rotten egg smell that faded is typical, because higher concentrations paralyze the sense of smell. His red, painful eyes and cough fit its irritant effects. A carboxyhemoglobin of 1.2% excludes significant carbon monoxide poisoning. Methane has no smell. Ammonia and chlorine have sharp, pungent odours rather than a smell of rotten eggs.",
         keyFeature: { topic: "tox", n: 2 },
-        source: "borron-cyanide",
+        source: "ng-h2s",
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following findings best supports cyanide toxicity in this man?",
-        options: ["Carboxyhemoglobin of 18%", "Hoarse voice with soot", "Lactate of 13 mmol/L", "Oxygen saturation of 100%", "Respiratory rate of 30/minute"],
-        correct: 2,
+        prompt: "Which of the following is the most appropriate treatment for his poisoning now?",
+        options: ["hydroxocobalamin 5 g IV", "hyperbaric oxygen", "methylene blue 1 mg/kg IV", "oxygen and supportive care", "sodium nitrite 300 mg IV"],
+        correct: 3,
         explanation:
-          "Cyanide blocks mitochondrial oxygen use, so cells switch to anaerobic metabolism and lactate climbs, and a value of 13 mmol/L in a smoke exposed patient with hypotension is the finding that best supports it. Carboxyhemoglobin of 18% confirms carbon monoxide exposure but overlaps widely with survivors who have no cyanide toxicity. Soot and hoarseness show airway exposure. A pulse oximeter reading of 100% is unreliable in carbon monoxide exposure, and tachypnea is non specific.",
-        keyFeature: { topic: "tox", n: 7 },
-        source: "borron-cyanide",
+          "There is no proven antidote for hydrogen sulfide, so treatment is oxygen with support of breathing and circulation once he is out of the exposure. Sulfide is cleared quickly after exposure ends, which fits his improvement since rescue. The ATSDR supports nitrite only if it can be started shortly after exposure, and it is now 50 minutes later. The methemoglobin it creates would also reduce oxygen carriage when his saturation is only 92% on high flow oxygen. Hydroxocobalamin and methylene blue remain under study, mainly in animals, for this poison. Hyperbaric oxygen is controversial and rests on anecdotal reports.",
+        keyFeature: { topic: "tox", n: 2 },
+        source: "atsdr-h2s",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate airway plan for him?",
-        options: ["Heliox by face mask", "Intubate early for airway injury", "Nebulized epinephrine and observe", "Non invasive ventilation trial", "Oxygen by nasal prongs only"],
-        correct: 1,
+        prompt: "Which of the following is the most appropriate disposition for him?",
+        options: ["Admit for monitoring for 24 hours", "Discharge after 4 to 6 hours if well", "Discharge once saturation is normal", "Discharge with next day follow-up", "Observe 2 hours, then discharge"],
+        correct: 0,
         explanation:
-          "Soot around the mouth with a hoarse voice after enclosed space smoke exposure signals inhalation injury, and swelling worsens over hours, so the airway is secured early while intubation is still straightforward. Nebulized epinephrine with observation risks losing the airway as edema progresses. Non invasive ventilation needs a cooperative patient and he is confused and agitated. Nasal prongs deliver less oxygen than he needs. Heliox does not treat swelling or cyanide toxicity.",
+          "He had a serious inhalation exposure, with loss of consciousness, eye irritation, cough and crackles. Pulmonary edema after hydrogen sulfide can be delayed in onset, so the ATSDR advises monitoring seriously exposed patients for 24 hours. Discharge after 4 to 6 hours is reserved for patients with no symptoms, no eye irritation and no lung or nervous system effects, and he has all of these problems. A normal saturation or a 2 hour observation does not exclude delayed pulmonary edema, and next day follow-up leaves him unmonitored overnight.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "atsdr-h2s",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following details from the scene is most useful in guiding his treatment?",
-        options: ["The colour of the smoke", "The distance from the nearest exit", "The materials burning in the house", "The number of other people rescued", "The time the fire service arrived"],
-        correct: 2,
+        prompt: "Which of the following investigations is most useful in guiding his care now?",
+        options: ["Blood sulfide level", "Chest radiograph", "Serum cyanide level", "Urine drug screen", "Urine thiosulfate level"],
+        correct: 1,
         explanation:
-          "What was burning predicts the toxins released, because burning wool, silk, polyurethane and other nitrogen containing materials generate cyanide alongside carbon monoxide, and that supports giving hydroxocobalamin to a man with a lactate of 13 mmol/L. Smoke colour is a poor guide to its contents. The number of people rescued and the time of arrival describe the response rather than the exposure. His distance from an exit does not identify the gases he breathed.",
-        keyFeature: { topic: "tox", n: 1 },
-        source: "borron-cyanide",
+          "Crackles, cough and a saturation of 92% on high flow oxygen raise concern for pulmonary edema or aspiration, and a chest radiograph can show either and guide his oxygen and ventilation. The ATSDR notes that specific tests for hydrogen sulfide in blood and urine generally are not useful to the doctor, so a blood sulfide or urine thiosulfate level will not change his care. No fire or cyanide source was involved, so a cyanide level is not indicated. A urine drug screen does not explain a collapse in a manure pit.",
+        keyFeature: { topic: "tox", n: 7 },
+        source: "atsdr-h2s",
       },
     ],
-    sources: [S.borron, S.goldfrank],
+    sources: [S.ng, S.atsdrH2s],
     ...META,
   },
 

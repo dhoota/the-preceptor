@@ -1516,7 +1516,7 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     id: "infectious-diseases-31",
     topic: "infectious-diseases",
     title: "Scrotal pain in a man with diabetes",
-    stem: "You are working in a rural hospital emergency department with a general surgeon on call from home. A 61-year-old man presents with 2 days of scrotal and perineal pain that is now severe. He has type 2 diabetes treated with metformin and empagliflozin, and obesity. He does not drink alcohol. He has had nausea and has eaten little for 2 days. He looks unwell. There is dusky red swelling of the scrotum and perineum extending toward the left groin, with a small patch of black skin. There is crepitus in the perineum, and pain on palpation extends beyond the redness. Glucose is 11.8 mmol/L, Na 136 mmol/L, chloride 100 mmol/L, bicarbonate 12 mmol/L and beta-hydroxybutyrate 5.1 mmol/L.",
+    stem: "You are working in a rural hospital emergency department with a general surgeon on call from home. A 61-year-old man presents with 2 days of scrotal and perineal pain that is now severe. He has type 2 diabetes treated with metformin and empagliflozin, and obesity. He looks unwell. There is dusky red swelling of the scrotum and perineum extending toward the left groin, with a small patch of black skin. There is crepitus in the perineum, and pain on palpation extends beyond the redness. WBC is 24.6 x 10^9/L, glucose 16.2 mmol/L, creatinine 168 umol/L and lactate 4.2 mmol/L.",
     vitals: {
       temperature: "38.6°C oral",
       pulse: "122/minute",
@@ -1557,7 +1557,7 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
           "Thiazolidinedione"
         ],
         correct: 2,
-        explanation: "He takes empagliflozin, an SGLT2 inhibitor. An FDA review found 55 cases of Fournier gangrene with SGLT2 inhibitors from 2013 to 2019, against 19 cases with all other diabetes drugs since 1984, and called it a new safety concern. The same drug explains his ketoacidosis, with an anion gap of 136 - (100 + 12) = 24 and a beta-hydroxybutyrate of 5.1 mmol/L at a glucose of only 11.8 mmol/L, so it should be stopped. Metformin, a biguanide, and sitagliptin, a DPP-4 inhibitor, appeared in only a few of those comparison cases. No comparison case involved a sulfonylurea or a thiazolidinedione.",
+        explanation: "He takes empagliflozin, an SGLT2 inhibitor. An FDA review found 55 cases of Fournier gangrene with SGLT2 inhibitors from 2013 to 2019, against 19 cases with all other diabetes drugs since 1984, and called it a new safety concern. It should be stopped while he is this unwell. Metformin, a biguanide, and sitagliptin, a DPP-4 inhibitor, appeared in only a few of those comparison cases. No comparison case involved a sulfonylurea or a thiazolidinedione.",
         keyFeature: {
           topic: "infectious-diseases",
           n: 3
@@ -1903,8 +1903,8 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
   {
     id: "infectious-diseases-35",
     topic: "infectious-diseases",
-    title: "Watery diarrhea after a dental infection",
-    stem: "A 79-year-old woman presents to the emergency department with 4 days of watery diarrhea 8 to 10 times a day and crampy lower abdominal pain. Two weeks ago she finished a 10 day course of clindamycin for a dental abscess. She takes pantoprazole, and ramipril for hypertension. She lives at home with her husband. Her mucous membranes are dry. Her abdomen is mildly distended and diffusely tender without guarding, and bowel sounds are present. WBC is 18.6 x 10^9/L and creatinine is 142 umol/L, up from a baseline of 80 umol/L. Stool testing is positive for C. difficile toxin.",
+    title: "Watery diarrhea after a kidney infection",
+    stem: "A 79-year-old woman presents to the emergency department with 4 days of watery diarrhea 8 to 10 times a day and crampy lower abdominal pain. Two weeks ago she finished a 7 day course of ciprofloxacin for pyelonephritis. She takes pantoprazole, and ramipril for hypertension. She lives at home with her husband. Her mucous membranes are dry. Her abdomen is soft and mildly tender in the lower quadrants without guarding, and bowel sounds are present. WBC is 18.6 x 10^9/L and creatinine is 142 umol/L, up from a baseline of 80 umol/L. Stool testing is positive for C. difficile toxin.",
     vitals: {
       temperature: "37.9°C oral",
       pulse: "104/minute",
@@ -1920,12 +1920,12 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
         kind: "menu",
         options: [
           "Age over 65 years",
-          "Dental infection",
           "Hypertension",
+          "Kidney infection",
           "Living with her husband",
           "Proton pump inhibitor use",
           "Ramipril use",
-          "Recent clindamycin course"
+          "Recent ciprofloxacin course"
         ],
         select: 3,
         correct: [
@@ -1933,7 +1933,7 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
           4,
           6
         ],
-        explanation: "Recent antibiotic exposure is the main risk factor for C. difficile infection, and clindamycin carries a high risk. Older age raises both the risk and the severity. Gastric acid suppression with a proton pump inhibitor is associated with infection. The dental abscess mattered only because it led to clindamycin. Hypertension, ramipril and her living arrangements are not recognized risk factors.",
+        explanation: "Recent antibiotic exposure is the main risk factor for C. difficile infection, and fluoroquinolones such as ciprofloxacin are among the classes most often implicated. Older age raises both the risk and the severity. Gastric acid suppression with a proton pump inhibitor is associated with infection. The kidney infection mattered only because it led to the antibiotic. Hypertension, ramipril and her living arrangements are not recognized risk factors.",
         keyFeature: {
           topic: "infectious-diseases",
           n: 3
@@ -1971,7 +1971,7 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
           "vancomycin 125 mg PO four times daily"
         ],
         correct: 4,
-        explanation: "For an initial episode, IDSA and SHEA recommend fidaxomicin, with oral vancomycin 125 mg four times daily for 10 days as an acceptable alternative. Metronidazole is no longer recommended for severe infection. IV vancomycin does not reach the colon. Ciprofloxacin is not active against C. difficile and adds antibiotic pressure. Antimotility drugs such as loperamide are avoided in active infection.",
+        explanation: "For an initial episode, IDSA and SHEA recommend fidaxomicin, with oral vancomycin 125 mg four times daily for 10 days as an acceptable alternative. Metronidazole is no longer recommended for severe infection. IV vancomycin does not reach the colon. Ciprofloxacin, the likely trigger of this episode, does not treat C. difficile and adds antibiotic pressure. Antimotility drugs such as loperamide are avoided in active infection.",
         keyFeature: {
           topic: "infectious-diseases",
           n: 8

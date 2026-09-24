@@ -2300,79 +2300,74 @@ export const SHOCK_SAMPS_S50: Samp[] = [
   {
     id: "shock-39",
     topic: "shock",
-    title: "Man pulled from a house fire",
-    stem: "A 46-year-old man is brought to the emergency department by ambulance after firefighters pulled him from a burning apartment. He was found unconscious in a smoke-filled bedroom after about 20 minutes. He has soot in his nose and mouth and singed nasal hairs. He has no skin burns. He responds only to pain. His airway is patent for now. Carboxyhemoglobin 18%. Lactate 11.2 mmol/L. Venous pH 7.14.",
+    title: "Light-headed after two days of vomiting",
+    stem: "A 34-year-old woman presents to the emergency department with light-headedness and a near faint when she stood up this morning. She has had vomiting and watery diarrhea for 2 days, and her partner has the same illness. She has obstructive hypertrophic cardiomyopathy and takes metoprolol 50 mg PO twice daily, but she has vomited her last three doses. A clinic letter from last year records a resting outflow gradient of 40 mmHg. She takes no other medications. Her mucous membranes are dry. A harsh grade 3/6 systolic murmur is heard at the left lower sternal border. Her lungs are clear. Her ECG shows sinus tachycardia with left ventricular hypertrophy.",
     vitals: {
-      temperature: "36.9°C oral",
+      temperature: "37.3°C oral",
       pulse: "118/minute",
-      resp: "10/minute",
-      bp: "76/42 mmHg",
-      o2sat: "100% on a non rebreather mask",
-      weight: "80 kg"
+      resp: "20/minute",
+      bp: "82/50 mmHg",
+      o2sat: "98% on room air",
+      weight: "62 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best explains his shock and very high lactate?",
+        update: "Bedside ultrasound shows a small, vigorously contracting left ventricle with systolic anterior motion of the mitral valve. The right ventricle is normal, there is no pericardial effusion and the IVC is collapsed.",
+        prompt: "Which of the following best explains the severity of her hypotension?",
         options: [
-          "Burn-related fluid loss",
-          "Carbon monoxide poisoning alone",
-          "Occult internal hemorrhage",
-          "Opioid co-ingestion",
-          "Smoke-related cyanide poisoning"
+          "Acute adrenal insufficiency",
+          "Beta blocker toxicity",
+          "Cardiac tamponade",
+          "Dynamic outflow tract obstruction",
+          "Left ventricular systolic failure"
         ],
-        correct: 4,
-        explanation: "Enclosed-space fire, a reduced level of consciousness, unexplained hypotension and a lactate above 10 mmol/L strongly suggest hydrogen cyanide poisoning from burning materials. Cyanide blocks cellular respiration, so tissues cannot use the oxygen delivered. A carboxyhemoglobin of 18% rarely explains this degree of shock and acidosis alone. He has no skin burns, so there is no burn fluid loss. Nothing in the history suggests injury or opioid use.",
-        keyFeature: {
-          topic: "shock",
-          n: 5
-        },
-        source: "cyanide"
+        correct: 3,
+        explanation: "Systolic anterior motion of the mitral valve in a small, hyperdynamic left ventricle shows dynamic outflow tract obstruction. Two days of vomiting and diarrhea have left her ventricle underfilled, and a smaller cavity narrows the outflow tract, so her known 40 mmHg gradient can rise sharply and cardiac output falls. A pulse of 118/minute shortens filling and adds to the obstruction. The vigorous contraction excludes systolic failure, and there is no effusion to cause tamponade. She has vomited her metoprolol and is tachycardic, which does not fit beta blocker toxicity. She takes no steroids, and nothing in her history points to adrenal disease.",
+        keyFeature: { topic: "shock", n: 5 },
+        source: "ommen-hcm"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate antidote and dose for this patient?",
+        update: "She receives 2 L of Ringer's lactate. Her BP is 84/52 mmHg, her pulse is 112/minute and the murmur is unchanged.",
+        prompt: "Which of the following vasopressors is most appropriate for her now?",
         options: [
-          "hydroxocobalamin 5 g IV",
-          "hydroxocobalamin 1 mg IM",
-          "methylene blue 1 mg/kg IV",
-          "naloxone 0.4 mg IV",
-          "sodium nitrite 300 mg IV"
+          "dobutamine infusion",
+          "dopamine infusion",
+          "epinephrine infusion",
+          "norepinephrine infusion",
+          "phenylephrine infusion"
         ],
-        correct: 0,
-        explanation: "Hydroxocobalamin 5 g IV over 15 minutes binds cyanide to form cyanocobalamin, and it is the preferred antidote for smoke inhalation. A second dose can be given if he does not improve. Nitrites produce methemoglobin, which further reduces oxygen carrying in a patient who already has carbon monoxide poisoning. A dose of 1 mg IM is the vitamin B12 replacement dose. Methylene blue treats methemoglobinemia, and naloxone treats opioid toxicity.",
-        keyFeature: {
-          topic: "shock",
-          n: 8
-        },
-        source: "cyanide"
+        correct: 4,
+        explanation: "In obstructive hypertrophic cardiomyopathy with hypotension that has not responded to fluid, the AHA and ACC recommend IV phenylephrine or another vasoconstrictor without inotropic activity. Raising afterload widens the outflow tract and lowers the gradient, and phenylephrine does not make the ventricle contract harder. Norepinephrine, epinephrine and dopamine all have beta-1 inotropic and chronotropic effects that can worsen the obstruction and her tachycardia. Dobutamine is an inotrope that also lowers vascular resistance, so it would deepen both the obstruction and the hypotension.",
+        keyFeature: { topic: "shock", n: 7 },
+        source: "ommen-hcm"
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following best explains his oxygen saturation reading of 100%?",
+        update: "On phenylephrine and a third litre of fluid, her BP is 104/64 mmHg and her pulse is 108/minute in sinus rhythm. Her vomiting has settled and she can swallow tablets.",
+        prompt: "Which of the following medications is most appropriate to give her now?",
         options: [
-          "Adequate tissue oxygen delivery",
-          "Carboxyhemoglobin read as oxyhemoglobin",
-          "Methemoglobin raising the reading",
-          "Normal arterial oxygen content",
-          "Oxygen displacing all carbon monoxide"
+          "amiodarone 150 mg IV",
+          "digoxin 0.25 mg IV",
+          "furosemide 20 mg IV",
+          "metoprolol 25 mg PO",
+          "verapamil 5 mg IV"
         ],
-        correct: 1,
-        explanation: "Standard pulse oximeters cannot tell carboxyhemoglobin from oxyhemoglobin, so the reading overestimates true oxygen saturation in carbon monoxide poisoning. His carboxyhemoglobin of 18% means his oxygen content is reduced despite the reading. His lactate of 11.2 mmol/L shows that tissue oxygen use is poor. Methemoglobin pulls the reading toward 85%. High flow oxygen shortens the half-life of carbon monoxide, but his carboxyhemoglobin is still 18%.",
-        keyFeature: {
-          topic: "shock",
-          n: 5
-        },
-        source: "cyanide"
+        correct: 3,
+        explanation: "Her tachycardia shortens diastolic filling and worsens the obstruction, and she has missed three doses of metoprolol. A beta blocker is first line in obstructive hypertrophic cardiomyopathy, and the AHA and ACC support one alongside phenylephrine for acute hypotension, so restarting metoprolol at a lower dose is appropriate now that she can swallow. The guideline lists verapamil as potentially harmful in obstructive disease with hypotension, because its vasodilating effect can raise the gradient. Digoxin increases contractility and furosemide reduces preload, and both can worsen obstruction. She is in sinus rhythm, so amiodarone has no arrhythmia to treat.",
+        keyFeature: { topic: "shock", n: 8 },
+        source: "ommen-hcm"
       }
     ],
     sources: [
       {
-        id: "cyanide",
-        citation: "Anseeuw K, et al. Cyanide poisoning by fire smoke inhalation. A European expert consensus. Eur J Emerg Med. 2013."
+        id: "ommen-hcm",
+        citation: "Ommen SR, Ho CY, Asif IM, et al. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR guideline for the management of hypertrophic cardiomyopathy. Circulation. 2024.",
+        url: "https://doi.org/10.1161/CIR.0000000000001250"
       }
     ],
     ...META,
