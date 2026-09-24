@@ -17,24 +17,50 @@ export const stemiCardiogenicShock: OralCase = {
     { topic: "cqi", n: 1 },
   ],
   summary: "A 58 year old man walks into a PCI centre ED with chest pain and is found to be pale, cold and hypotensive.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working days in the ED of a tertiary hospital in Hamilton that is a 24 hour PCI centre with cardiac surgery and a cardiac ICU. " +
-    "Samuel Osei is 58 years old and weighs 95 kg. His wife drove him in after 2 hours of crushing chest pain that started while he was mowing the lawn. " +
-    "Triage vitals: heart rate 112, blood pressure 84/56, respiratory rate 28, SpO2 89 percent on room air, temperature 36.2, capillary glucose 13.4 mmol/L. CTAS 1. " +
-    "The triage nurse says: 'He looked grey in the waiting room. His ECG is in your hand. I have one IV in and he is on the monitor.'",
+    "You are working in the emergency department of a tertiary care centre when the following patient arrives. " +
+    "A 58 year old man is driven in by his wife after 2 hours of crushing chest pain. " +
+    "It is daytime. Your hospital is a 24 hour PCI centre with cardiac surgery and a cardiac ICU.",
+  card: {
+    vitals: {
+      temperature: "36.2°C",
+      pulse: "112/minute",
+      resp: "28/minute",
+      bp: "84/56 mmHg",
+      o2sat: "89% on room air",
+      weight: "95 kg (209 lb)",
+    },
+    medications: "Metformin, ramipril, atorvastatin",
+    allergies: "None known",
+  },
   findings: [
     {
-      id: "history",
-      label: "History",
+      id: "triage",
+      label: "Triage and nursing report",
       result:
-        "Crushing central chest pain since 10:30, now 9 out of 10, radiating to the jaw. Vomited twice. Short of breath. No tearing quality. No back pain. No syncope.",
+        "CTAS 1. Capillary glucose 13.4 mmol/L. The triage nurse says: 'He looked grey in the waiting room. His ECG is in your hand. I have one IV in and he is on the monitor.'",
+    },
+    {
+      id: "history",
+      label: "History of presenting illness",
+      result:
+        "Crushing central chest pain since 10:30 that started while he was mowing the lawn, now 9 out of 10, radiating to the jaw. Vomited twice. Short of breath. No tearing quality. No back pain. No syncope.",
     },
     {
       id: "pmh",
-      label: "Past history and medications",
-      result:
-        "Type 2 diabetes, hypertension, smoker. Metformin, ramipril, atorvastatin. No anticoagulants. No prior bleeding, stroke or surgery. No allergies. Weight 95 kg.",
+      label: "Past history",
+      result: "Type 2 diabetes, hypertension. No prior bleeding, stroke or surgery. No allergies. Weight 95 kg.",
+    },
+    {
+      id: "meds",
+      label: "Medications",
+      result: "Metformin, ramipril, atorvastatin. No anticoagulants.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Smoker.",
     },
     {
       id: "exam",
@@ -76,7 +102,7 @@ export const stemiCardiogenicShock: OralCase = {
       id: "wife",
       label: "Collateral from his wife",
       result:
-        "His wife Grace says he has had 'heartburn' when walking uphill for a month. He has never talked about end of life wishes. She says he would want everything done.",
+        "His wife says he has had 'heartburn' when walking uphill for a month. He has never talked about end of life wishes. She says he would want everything done.",
     },
   ],
   start: "s-open",
@@ -102,8 +128,9 @@ export const stemiCardiogenicShock: OralCase = {
         "Discuss P2Y12 inhibitor timing with the interventional cardiologist. Oral absorption is poor in shock and after intubation, and he may need urgent surgery. Crushed tablets or an IV agent in the lab are options.",
         "Oxygen to SpO2 of 90 percent or more. Consider NIV with caution.",
         "No nitrates or morphine. Avoid large fluid boluses. Screen for dissection with both arm pressures and aortic root on echo.",
+        "Ask onset time, tearing or back pain, bleeding risk and anticoagulant use, and get his wife's account.",
       ],
-      rubric: ["stemi-a1", "stemi-r1", "stemi-m1"],
+      rubric: ["stemi-a1", "stemi-r1", "stemi-m1", "stemi-p1", "stemi-h1", "stemi-h2", "stemi-h3"],
       choices: [
         {
           id: "c-activate",
@@ -297,7 +324,7 @@ export const stemiCardiogenicShock: OralCase = {
       kind: "question",
       id: "q-wife",
       phase: "His wife",
-      prompt: "His wife Grace arrives in the family room. What do you tell her?",
+      prompt: "His wife arrives in the family room. What do you tell her?",
       seconds: 60,
       modelAnswer: [
         "Find a quiet room. Introduce yourself. Sit down.",
@@ -335,7 +362,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Diagnoses anterior STEMI with cardiogenic shock from ECG, perfusion signs and echo.",
       points: 2,
       teaching: "Hypotension with cold, mottled skin, high lactate and a low ejection fraction define cardiogenic shock. Name it early.",
@@ -344,7 +371,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-r1",
       competency: "resuscitation",
-      criterion: "data",
+      criterion: "process",
       text: "Activates the cath lab immediately without waiting for troponin.",
       points: 3,
       critical: true,
@@ -354,7 +381,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives ASA 160 to 325 mg and heparin, discusses P2Y12 timing with the lab and avoids nitrates and morphine.",
       points: 2,
       teaching: "Nitrates are contraindicated with systolic pressure under 90. P2Y12 timing in shock is best decided with the interventionalist.",
@@ -363,7 +390,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts norepinephrine at 0.05 mcg/kg/min titrated to MAP 65 and avoids large fluid boluses.",
       points: 3,
       critical: true,
@@ -373,7 +400,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Adds dobutamine 2.5 to 5 mcg/kg/min only after MAP is restored, and avoids dopamine.",
       points: 1,
       teaching: "Inotropes help output but cause vasodilation. Pressure first, then flow.",
@@ -382,7 +409,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Defibrillates witnessed VF immediately at 200 J biphasic and follows ACLS drug timing.",
       points: 3,
       critical: true,
@@ -392,7 +419,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates with a resuscitate first approach, reduced dose induction, full dose paralytic and push dose pressor ready.",
       points: 2,
       teaching: "Peri-intubation arrest is common in cardiogenic shock. Optimize MAP, preoxygenate and cut the induction dose.",
@@ -401,7 +428,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Advocates for going directly to the cath lab and gives a structured handover.",
       points: 2,
       teaching: "A brief witnessed arrest is not a reason to delay PCI for head CT. A clear handover prevents dosing errors.",
@@ -410,7 +437,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Knows that culprit lesion only PCI is standard in cardiogenic shock.",
       points: 1,
       teaching: "In CULPRIT-SHOCK, culprit only PCI lowered 30 day death or renal replacement therapy compared with immediate multivessel PCI.",
@@ -419,7 +446,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Raises early discussion of mechanical circulatory support with the shock team.",
       points: 1,
       teaching: "A microaxial flow pump lowered 180 day mortality in selected STEMI shock in DanGer Shock, with more complications. Comatose arrest survivors were excluded. It is a team decision.",
@@ -428,7 +455,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Updates the family honestly and compassionately in a private space.",
       points: 1,
       teaching: "Use plain words. Say what happened, what is being done and that he is critically ill.",
@@ -437,29 +464,69 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Addresses the delayed ECG through the quality process and proposes triage fixes.",
       points: 1,
       teaching: "An ECG within 10 minutes of arrival for chest pain is the standard. System fixes beat individual blame.",
       source: "ccs-stemi",
+    },
+    {
+      id: "stemi-p1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Screens for aortic dissection and mechanical complications with both arm pressures, a murmur check and the aortic root and valves on echo.",
+      points: 1,
+      teaching: "Dissection and mechanical complications change the plan and make antithrombotics dangerous. Both arm pressures and a quick echo look take a minute.",
+      source: "esc-acs",
+    },
+    {
+      id: "stemi-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the time of onset, character, radiation and associated symptoms, and screens for tearing pain, back pain or syncope.",
+      points: 2,
+      teaching: "Onset time frames reperfusion and handover. Tearing or back pain raises dissection before you give heparin.",
+      source: "ccs-stemi",
+    },
+    {
+      id: "stemi-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulant use, prior bleeding, stroke and recent surgery before antithrombotics.",
+      points: 2,
+      teaching: "Bleeding history and current anticoagulants decide which antithrombotics are safe and what the lab needs to know.",
+      source: "esc-acs",
+    },
+    {
+      id: "stemi-h3",
+      competency: "communication",
+      criterion: "history",
+      text: "Asks about cardiac risk factors and gets collateral from his wife, including a month of exertional 'heartburn' and his wishes.",
+      points: 1,
+      teaching: "A month of exertional symptoms is a missed prodrome. His wife is the best source while he is too sick to talk.",
+      source: "esc-acs",
     },
   ],
   sources: [
     {
       id: "ccs-stemi",
       citation: "Wong GC, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology Guidelines on the Acute Management of ST-Elevation Myocardial Infarction. Focused Update on Regionalization and Reperfusion. Canadian Journal of Cardiology. 2019.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/30760415/",
     },
     {
       id: "esc-acs",
       citation: "Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. European Heart Journal. 2023.",
+      url: "https://academic.oup.com/eurheartj/article/44/38/3720/7243210",
     },
     {
       id: "soap2",
       citation: "De Backer D, et al. Comparison of dopamine and norepinephrine in the treatment of shock. New England Journal of Medicine. 2010.",
+      url: "https://www.nejm.org/doi/full/10.1056/NEJMoa0907118",
     },
     {
       id: "culprit-shock",
       citation: "Thiele H, et al. PCI strategies in patients with acute myocardial infarction and cardiogenic shock. New England Journal of Medicine. 2017.",
+      url: "https://www.nejm.org/doi/full/10.1056/NEJMoa1710261",
     },
     {
       id: "danger-shock",
@@ -472,7 +539,7 @@ export const stemiCardiogenicShock: OralCase = {
       url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

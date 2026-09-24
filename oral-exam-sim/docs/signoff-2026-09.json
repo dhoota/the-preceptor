@@ -530,15 +530,6 @@
   "tox-15"
  ],
  "cases": [
-  "complete-heart-block-pacing",
-  "pre-excited-atrial-fibrillation",
-  "sympathetic-crashing-pulmonary-edema",
-  "wide-complex-tachycardia",
-  "malignant-pericardial-tamponade",
-  "athlete-exertional-syncope",
-  "stemi-cardiogenic-shock",
-  "posterior-epistaxis-anticoagulated",
-  "knee-dislocation-vascular-injury",
   "near-fatal-asthma",
   "hypercapnic-copd-exacerbation",
   "intermediate-risk-pe",
@@ -619,20 +610,29 @@
  "withdrawn": {
   "cases": [
    "ace-inhibitor-angioedema-airway",
+   "athlete-exertional-syncope",
    "chest-pain-rural",
    "cico-scalpel-cricothyrotomy",
+   "complete-heart-block-pacing",
    "dialysis-hyperkalemia-arrest",
    "ethics-goals-of-care",
    "febrile-infant",
+   "knee-dislocation-vascular-injury",
    "lateral-canthotomy-orbital-hematoma",
+   "malignant-pericardial-tamponade",
    "obstructive-shock-pe-lysis",
    "overdose-mixed",
    "post-arrest-care-after-rosc",
+   "posterior-epistaxis-anticoagulated",
+   "pre-excited-atrial-fibrillation",
    "refractory-anaphylaxis-beta-blocker",
    "refractory-vf-arrest",
    "sedation-shoulder-reduction",
+   "stemi-cardiogenic-shock",
+   "sympathetic-crashing-pulmonary-edema",
    "trauma-motorcycle",
-   "variceal-hemorrhage-rural"
+   "variceal-hemorrhage-rural",
+   "wide-complex-tachycardia"
   ]
  },
  "withdrawnNote": "Oral cases realigned to the CFPC card and score sheet after sign-off. Arjan approved sending them back to physician review."

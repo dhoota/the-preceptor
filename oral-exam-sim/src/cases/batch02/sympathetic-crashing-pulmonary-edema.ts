@@ -15,25 +15,53 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     { topic: "pulmonary-edema", n: 4 },
   ],
   summary: "A 71 year old woman arrives by ambulance in severe respiratory distress with a very high blood pressure.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are the night physician at a community hospital in the Greater Toronto Area with an ICU and an intensivist on call from home. " +
-    "BiPAP is available in the ED and respiratory therapy is in house. " +
-    "Doris Kowalczyk is 71 years old and weighs 84 kg. Her husband called 911 at 03:00 when she woke up unable to breathe. " +
-    "Triage vitals: heart rate 128 sinus, blood pressure 224/122, respiratory rate 38, SpO2 83 percent on 15 L by non-rebreather mask, temperature 36.8, capillary glucose 11.2 mmol/L. CTAS 1. " +
-    "The paramedic says: 'She has been sitting bolt upright the whole way. We gave two nitro sprays. She is getting tired and can only say two words at a time.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 71 year old woman arrives by ambulance at 03:00 after waking up unable to breathe. " +
+    "It is night. BiPAP and respiratory therapy are in house, and the intensivist is on call from home.",
+  card: {
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "128/minute, sinus",
+      resp: "38/minute",
+      bp: "224/122 mmHg",
+      o2sat: "83% on 15 L/minute by non-rebreather mask",
+      weight: "84 kg (185 lb)",
+    },
+    medications: "Amlodipine 10 mg, hydrochlorothiazide 25 mg, metformin 1000 mg twice daily",
+    allergies: "None known",
+  },
   findings: [
     {
+      id: "prehospital",
+      label: "Paramedic report and triage",
+      result:
+        "Her husband called 911 at 03:00. The paramedic says: 'She has been sitting bolt upright the whole way. We gave two nitro sprays. She is getting tired and can only say two words at a time.' " +
+        "Triage assigned CTAS 1. Capillary glucose 11.2 mmol/L.",
+    },
+    {
       id: "history",
-      label: "History",
+      label: "History of presenting illness",
       result:
         "Woke from sleep gasping at 02:40. Two nights of needing extra pillows. No chest pain before tonight. Ran out of her blood pressure pills 10 days ago. Ate a large salty meal at a family party yesterday.",
     },
     {
       id: "pmh",
-      label: "Past history and medications",
+      label: "Past history",
       result:
-        "Hypertension, type 2 diabetes, chronic kidney disease with baseline creatinine 118 µmol/L. Amlodipine 10 mg, hydrochlorothiazide 25 mg and metformin 1000 mg twice daily. No known heart failure. No allergies.",
+        "Hypertension, type 2 diabetes, chronic kidney disease with baseline creatinine 118 µmol/L. No known heart failure. No allergies.",
+    },
+    {
+      id: "meds",
+      label: "Medications",
+      result:
+        "Amlodipine 10 mg, hydrochlorothiazide 25 mg and metformin 1000 mg twice daily. She ran out of the blood pressure pills 10 days ago.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Her husband says she is independent and still volunteers at church.",
     },
     {
       id: "exam",
@@ -78,7 +106,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "husband",
       label: "Collateral from her husband",
-      result: "He says she is independent and still volunteers at church. They have never talked about life support. He wants 'whatever gives her the best chance'.",
+      result: "They have never talked about life support. He wants 'whatever gives her the best chance'.",
     },
   ],
   start: "s-open",
@@ -104,8 +132,9 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
         "Sit her upright. Monitor, second IV, ECG, blood work and a blood gas.",
         "Avoid morphine.",
         "Prepare for intubation in case NIV fails.",
+        "Quick history from her, the paramedics and her husband: onset, orthopnea, chest pain and nitro already given.",
       ],
-      rubric: ["scape-a1", "scape-r1", "scape-r2"],
+      rubric: ["scape-a1", "scape-r1", "scape-r2", "scape-h1", "scape-h4", "scape-p1"],
       choices: [
         {
           id: "c-niv-ntg",
@@ -254,8 +283,9 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
         "Furosemide 40 mg IV once blood pressure is falling. She is diuretic naive to loops.",
         "Avoid morphine. Avoid beta blockers acutely.",
         "Hold metformin given creatinine rise and lactate.",
+        "Ask about missed pills, salt, known heart failure, kidney disease and PDE5 inhibitors.",
       ],
-      rubric: ["scape-a2", "scape-m4"],
+      rubric: ["scape-a2", "scape-m4", "scape-h2", "scape-h3"],
       next: "s-hypo",
     },
     {
@@ -374,7 +404,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes hypertensive acute heart failure with flash pulmonary edema driven by afterload.",
       points: 2,
       teaching: "Sudden onset, very high pressure and warm extremities point to afterload driven fluid redistribution rather than slow volume gain.",
@@ -383,7 +413,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts non-invasive ventilation immediately with CPAP 8 to 10 or BiPAP about 12/6 cmH2O.",
       points: 3,
       critical: true,
@@ -393,7 +423,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives high dose nitroglycerin at the same time as NIV.",
       points: 3,
       critical: true,
@@ -403,7 +433,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives sublingual 0.8 mg doses and an IV infusion starting around 100 mcg/min, titrated quickly toward 400 mcg/min.",
       points: 2,
       teaching: "Rapid titration controls afterload within minutes. The short half life makes high doses safe if you watch the pressure.",
@@ -412,7 +442,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Sets a target of about a 25 percent fall in systolic pressure and screens for PDE5 inhibitors and aortic stenosis.",
       points: 1,
       teaching: "Too fast a fall causes hypoperfusion. Nitrates are dangerous with PDE5 inhibitors and with severe aortic stenosis.",
@@ -421,7 +451,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Manages NIV intolerance with coaching and mask fit first, and dexmedetomidine rather than benzodiazepine boluses if needed.",
       points: 2,
       teaching: "Agitation usually means hypoxia or fear. Sedatives that suppress drive can tip a hypercapnic patient into failure.",
@@ -430,7 +460,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Sets an intubation trigger and plans a reduced dose induction with pressors ready if NIV fails.",
       points: 1,
       teaching: "Loss of sympathetic drive and positive pressure can crash the pressure at induction. Prepare before you push drugs.",
@@ -439,7 +469,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Looks for precipitants including non-adherence, salt load, ischemia, arrhythmia and renal artery stenosis.",
       points: 2,
       teaching: "The treatment of the episode is the same, but the cause changes the admission plan. Trend troponin to separate ACS from demand.",
@@ -448,7 +478,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids morphine and uses a modest loop diuretic dose such as furosemide 40 mg IV once pressure is falling.",
       points: 2,
       teaching: "Morphine is associated with more intubation. A loop diuretic helps, but it is second to nitrates in this phenotype.",
@@ -457,7 +487,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Stops the nitroglycerin first when hypotension develops and reassesses with ECG and POCUS.",
       points: 3,
       critical: true,
@@ -467,7 +497,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Sets clear titration limits with the nurse and closes the loop on infusion changes.",
       points: 1,
       teaching: "High dose infusions need explicit targets and stop points. Write them down and check back.",
@@ -476,7 +506,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU or step down while on NIV and requests echo, troponin trend and cardiology review.",
       points: 2,
       teaching: "Patients on NIV need a unit that can escalate. A new heart failure diagnosis needs an echo and a medication plan.",
@@ -485,7 +515,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Asks the patient about her own wishes once she can engage, rather than going only through the family.",
       points: 2,
       teaching: "A capable patient decides for herself. As she improves on NIV she may be able to take part.",
@@ -494,11 +524,56 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains intubation and ICU care in plain language and documents the goals of care.",
       points: 1,
       teaching: "Families ask about life support when they are frightened. Honest, simple language builds trust.",
       source: "ccs-hf",
+    },
+    {
+      id: "scape-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the onset, orthopnea and night waking in the days before, and any chest pain.",
+      points: 2,
+      teaching: "Sudden night onset after days of orthopnea fits hypertensive acute heart failure. Chest pain before the dyspnea raises ACS as the trigger.",
+      source: "esc-hf",
+    },
+    {
+      id: "scape-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about adherence to antihypertensives and recent salt or fluid load.",
+      points: 2,
+      teaching: "Stopped blood pressure pills and a salty meal are common, fixable precipitants. Naming them shapes the discharge plan.",
+      source: "ccs-hf",
+    },
+    {
+      id: "scape-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks for known heart failure, kidney disease, diabetes, the full medication list and any PDE5 inhibitor use.",
+      points: 1,
+      teaching: "Kidney disease and metformin change drug choices. A PDE5 inhibitor in the last 24 to 48 hours makes high dose nitroglycerin dangerous.",
+      source: "ccs-hf",
+    },
+    {
+      id: "scape-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Gets the paramedic report and her husband's account: nitro already given, trajectory en route and her baseline function.",
+      points: 2,
+      teaching: "She can only speak two words. Collateral gives the history and tells you how much nitroglycerin she has had.",
+      source: "esc-hf",
+    },
+    {
+      id: "scape-p1",
+      competency: "leadership",
+      criterion: "process",
+      text: "Runs NIV, nitroglycerin and IV access in parallel by giving clear roles to the respiratory therapist and nurses.",
+      points: 1,
+      teaching: "In a crashing patient, parallel tasks with named owners save minutes. Say who does what and confirm it is done.",
+      source: "ers-ats-niv",
     },
   ],
   sources: [
@@ -510,14 +585,17 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "ers-ats-niv",
       citation: "Rochwerg B, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. European Respiratory Journal. 2017.",
+      url: "https://publications.ersnet.org/content/erj/50/2/1602426",
     },
     {
       id: "esc-hf",
       citation: "McDonagh TA, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. European Heart Journal. 2021.",
+      url: "https://academic.oup.com/eurheartj/article/42/36/3599/6358045",
     },
     {
       id: "ccs-hf",
       citation: "Ezekowitz JA, et al. 2017 Comprehensive Update of the Canadian Cardiovascular Society Guidelines for the Management of Heart Failure. Canadian Journal of Cardiology. 2017.",
+      url: "https://onlinecjc.ca/article/S0828-282X(17)30973-X/fulltext",
     },
     {
       id: "hcca",
@@ -525,7 +603,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
       url: "https://www.ontario.ca/laws/statute/96h02",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -17,25 +17,52 @@ export const preExcitedAtrialFibrillation: OralCase = {
     { topic: "cqi", n: 1 },
   ],
   summary: "A 24 year old man with sudden palpitations during basketball and a very fast, irregular rhythm.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working in the ED of an academic hospital in Ottawa. Cardiology is on call and there is an electrophysiology service. " +
-    "Jonah Whitecloud is 24 years old and weighs 78 kg. His heart started racing 2 hours ago during a pickup basketball game. " +
-    "Triage vitals: heart rate 230 and irregular, blood pressure 118/72, respiratory rate 20, SpO2 98 percent on room air, temperature 36.9. CTAS 2. " +
-    "He is anxious but talking in full sentences. " +
-    "The nurse brings you the ECG and says: 'It is fast AF with a bundle branch block I think. Rates are hitting 270. Should I draw up diltiazem?'",
+    "You are working in the emergency department of a tertiary care centre when the following patient arrives. " +
+    "A 24 year old man walks in with a racing heart that started 2 hours ago during a pickup basketball game. " +
+    "Cardiology and an electrophysiology service are on call.",
+  card: {
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "230/minute and irregular",
+      resp: "20/minute",
+      bp: "118/72 mmHg",
+      o2sat: "98% on room air",
+      weight: "78 kg (172 lb)",
+    },
+    medications: "None",
+    allergies: "None known",
+  },
   findings: [
     {
-      id: "history",
-      label: "History",
+      id: "triage",
+      label: "Triage and nursing report",
       result:
-        "Sudden onset of rapid pounding at 19:10 while sprinting. No chest pain or syncope. Mild lightheadedness. " +
-        "He had short spells of racing heart in high school that stopped on their own. Two energy drinks today. Occasional cannabis. No other drugs.",
+        "CTAS 2. He is anxious but talking in full sentences. " +
+        "The nurse brings you the ECG and says: 'It is fast AF with a bundle branch block I think. Rates are hitting 270. Should I draw up diltiazem?'",
+    },
+    {
+      id: "history",
+      label: "History of presenting illness",
+      result: "Sudden onset of rapid pounding at 19:10 while sprinting. No chest pain or syncope. Mild lightheadedness.",
     },
     {
       id: "pmh",
-      label: "Past history and medications",
-      result: "Healthy. No medications. No allergies. No family history of sudden death. He had an ECG before a school trip 6 years ago and was told it was 'a bit unusual'.",
+      label: "Past and family history",
+      result:
+        "Healthy. He had short spells of racing heart in high school that stopped on their own. " +
+        "He had an ECG before a school trip 6 years ago and was told it was 'a bit unusual'. No family history of sudden death.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "No medications. No allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Two energy drinks today. Occasional cannabis. No other drugs.",
     },
     {
       id: "exam",
@@ -84,7 +111,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
       id: "s-open",
       phase: "At the bedside",
       text:
-        "He is on the monitor. The rate jumps between 190 and 280. Some complexes are narrow and some are very wide. The nurse has the diltiazem vial in her hand.",
+        "He is on the monitor. The rate jumps between 190 and 280. Some complexes are narrow and some are very wide. The nurse has the diltiazem vial in her hand and asks if she should give it for fast AF with a bundle branch block.",
       next: "q-ecg",
     },
     {
@@ -159,8 +186,9 @@ export const preExcitedAtrialFibrillation: OralCase = {
         "Or synchronized electrical cardioversion under procedural sedation. Start at 150 to 200 J, not low energy. Anterolateral or anteroposterior pads are both acceptable.",
         "Electrical cardioversion is the most reliable option and often the first choice.",
         "Onset under 12 hours and CHADS-65 negative. No anticoagulation needed before or after.",
+        "Confirm the exact onset time and ask about stimulants, drugs and medications.",
       ],
-      rubric: ["wpw-m1", "wpw-m2", "wpw-m3"],
+      rubric: ["wpw-m1", "wpw-m2", "wpw-m3", "wpw-h1", "wpw-h3"],
       choices: [
         {
           id: "c-proc",
@@ -280,8 +308,9 @@ export const preExcitedAtrialFibrillation: OralCase = {
         "Pre-excited AF with a shortest RR of 250 ms or less marks a high risk pathway.",
         "Risk of sudden cardiac death from AF degenerating to VF.",
         "Catheter ablation is the definitive treatment.",
+        "Ask about earlier spells of palpitations, syncope, a prior ECG and family sudden death.",
       ],
-      rubric: ["wpw-a2"],
+      rubric: ["wpw-a2", "wpw-h2"],
       next: "q-dispo",
     },
     {
@@ -298,7 +327,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
         "No anticoagulation needed. Onset under 12 hours and CHADS-65 negative.",
         "Clear return advice for palpitations, syncope or chest pain.",
       ],
-      rubric: ["wpw-d1", "wpw-d2", "wpw-m4"],
+      rubric: ["wpw-d1", "wpw-d2", "wpw-m4", "wpw-h4"],
       choices: [
         {
           id: "c-ep",
@@ -384,7 +413,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies pre-excited AF from an irregular rhythm with varying QRS width and rates over 250.",
       points: 3,
       teaching: "AF with a bundle branch block has a fixed QRS shape. Beat to beat change in width at very fast rates means conduction down an accessory pathway.",
@@ -393,7 +422,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids all AV nodal blocking drugs including diltiazem, beta blockers, adenosine, digoxin and IV amiodarone.",
       points: 3,
       critical: true,
@@ -403,7 +432,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Places defibrillation pads early in a stable patient with pre-excited AF.",
       points: 1,
       teaching: "Pre-excited AF can decompensate without warning. Pads on early makes the next step immediate.",
@@ -412,7 +441,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses rhythm control with procainamide or electrical cardioversion rather than rate control.",
       points: 2,
       teaching: "The goal is to stop the AF. Rate control is dangerous when a pathway is conducting.",
@@ -421,7 +450,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Doses procainamide 15 mg/kg IV over 60 minutes, maximum 1500 mg, with stop criteria for hypotension or QRS widening.",
       points: 2,
       teaching: "Procainamide slows pathway conduction. CAEP advises avoiding it if systolic is under 100 or QTc is over 500 ms, and stopping if pressure drops or the QRS widens visibly, such as by more than 30 percent.",
@@ -430,7 +459,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes onset under 12 hours with CHADS-65 negative means no anticoagulation is needed before or after cardioversion.",
       points: 1,
       teaching: "Canadian guidance supports cardioversion without anticoagulation in low risk patients with clear onset under 12 hours.",
@@ -439,7 +468,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs immediate synchronized cardioversion at 200 J biphasic when he becomes unstable.",
       points: 3,
       critical: true,
@@ -449,7 +478,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses hemodynamically neutral sedation such as ketamine 0.5 to 1 mg/kg or etomidate 0.1 to 0.15 mg/kg.",
       points: 1,
       teaching: "Full dose propofol can deepen hypotension. Lower doses or neutral agents keep the pressure up.",
@@ -458,7 +487,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Interprets the post conversion ECG as WPW pattern and explains the high risk features.",
       points: 2,
       teaching: "A shortest pre-excited RR of 250 ms or less predicts a pathway capable of conducting VF.",
@@ -467,7 +496,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges urgent electrophysiology review for catheter ablation rather than routine follow up.",
       points: 3,
       critical: true,
@@ -477,7 +506,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents clearly that AV nodal blocking drugs must be avoided.",
       points: 1,
       teaching: "The next clinician may see 'AF' and reach for a rate control drug. A clear warning in the chart prevents harm.",
@@ -486,7 +515,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Advises no competitive sport until cleared by electrophysiology.",
       points: 1,
       teaching: "Exertion drove this episode. Sport clearance should come from the EP team after ablation.",
@@ -495,7 +524,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the diagnosis, sport and driving advice in plain language and checks understanding.",
       points: 1,
       teaching: "Young patients may downplay risk once they feel well. Be clear about why restrictions matter.",
@@ -504,7 +533,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Teaches the nurse the mechanism without blame.",
       points: 1,
       teaching: "The nurse offered a common answer to a common problem. Teaching in the moment builds a safer team.",
@@ -513,11 +542,47 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Proposes a system fix such as an ECG warning on the AF order set or a team huddle.",
       points: 1,
       teaching: "Near misses are the cheapest lessons. Build the check into the system, not into memory.",
       source: "caep-af",
+    },
+    {
+      id: "wpw-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the exact time of onset and about chest pain, syncope, lightheadedness and breathlessness.",
+      points: 2,
+      teaching: "A clear onset under 12 hours lets you cardiovert a CHADS-65 negative patient without anticoagulation. Syncope or chest pain marks a higher risk episode.",
+      source: "caep-af",
+    },
+    {
+      id: "wpw-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about earlier spells of palpitations, any prior ECG and a family history of sudden death.",
+      points: 2,
+      teaching: "Prior self limited spells and an old 'unusual' ECG point to an accessory pathway. Family sudden death raises inherited arrhythmia syndromes.",
+      source: "esc-svt",
+    },
+    {
+      id: "wpw-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about stimulants, energy drinks, recreational drugs and medications as triggers.",
+      points: 1,
+      teaching: "Caffeine, stimulants and cannabis can trigger AF. Knowing he takes no nodal blocker also matters for the plan.",
+      source: "caep-af",
+    },
+    {
+      id: "wpw-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Asks about his sport, work and driving, including from his partner, to shape disposition advice.",
+      points: 1,
+      teaching: "An upcoming tournament and driving himself in change the safety advice he needs before he leaves.",
+      source: "esc-svt",
     },
   ],
   sources: [
@@ -529,17 +594,20 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "ccs-af",
       citation: "Andrade JG, et al. The 2020 Canadian Cardiovascular Society/Canadian Heart Rhythm Society Comprehensive Guidelines for the Management of Atrial Fibrillation. Canadian Journal of Cardiology. 2020.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/33191198/",
     },
     {
       id: "esc-svt",
       citation: "Brugada J, et al. 2019 ESC Guidelines for the management of patients with supraventricular tachycardia. European Heart Journal. 2020.",
+      url: "https://academic.oup.com/eurheartj/article/41/5/655/5556821",
     },
     {
       id: "acc-af",
       citation: "Joglar JA, et al. 2023 ACC/AHA/ACCP/HRS Guideline for the Diagnosis and Management of Atrial Fibrillation. Circulation. 2024.",
+      url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001193",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

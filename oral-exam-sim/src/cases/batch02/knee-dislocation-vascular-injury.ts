@@ -16,14 +16,31 @@ export const kneeDislocationVascularInjury: OralCase = {
     { topic: "ems", n: 3 },
   ],
   summary: "A 34 year old man with a badly deformed knee after a snowmobile crash arrives at a northern community hospital.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 60 bed hospital in northern Ontario. There is a CT scanner, a general surgeon and an orthopaedic surgeon on call. There is no vascular surgery. " +
-    "The regional trauma centre is 250 km away, about an hour by air ambulance. Transfers go through CritiCall Ontario. " +
-    "Kyle Mercredi is 34 years old and weighs 92 kg. He hit a tree on his snowmobile at 18:40. It is now 20:05. " +
-    "Triage vitals: heart rate 104, blood pressure 138/82, respiratory rate 18, SpO2 98 percent on room air, temperature 35.9, GCS 15. CTAS 2. " +
-    "The paramedic says: 'His left knee is a mess. The foot was white when we got to him and I could not find a pulse. We splinted it as it lay and gave him fentanyl 100 mcg.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 34 year old man hit a tree on his snowmobile at 18:40 and arrives by ambulance at 20:05 with a deformed left knee. " +
+    "There is no vascular surgery, and the trauma centre is 250 km away, about an hour by air.",
+  card: {
+    vitals: {
+      temperature: "35.9°C",
+      pulse: "104/minute",
+      resp: "18/minute",
+      bp: "138/82 mmHg",
+      o2sat: "98% on room air",
+      weight: "92 kg (203 lb)",
+    },
+    medications: "None",
+    allergies: "None known",
+  },
   findings: [
+    {
+      id: "prehospital",
+      label: "Paramedic report, triage and local resources",
+      result:
+        "The paramedic says: 'His left knee is a mess. The foot was white when we got to him and I could not find a pulse. We splinted it as it lay and gave him fentanyl 100 mcg.' " +
+        "Triage: GCS 15. CTAS 2. Your northern Ontario hospital has a CT scanner and a general surgeon and orthopaedic surgeon on call. Transfers go through CritiCall Ontario.",
+    },
     {
       id: "primary",
       label: "Primary survey",
@@ -73,9 +90,19 @@ export const kneeDislocationVascularInjury: OralCase = {
         "Hemoglobin 142 g/L. Platelets 246 x 10^9/L. INR 1.0. Creatinine 88 µmol/L. CK 820 U/L. Lactate 2.4 mmol/L. Ethanol 9 mmol/L. Type and screen sent.",
     },
     {
+      id: "pmh",
+      label: "Past history and tetanus",
+      result: "Healthy. Tetanus up to date.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "No medications. No allergies.",
+    },
+    {
       id: "fasting",
-      label: "Last meal and history",
-      result: "Ate a sandwich at 17:30. Two beers this afternoon. Healthy. No medications. No allergies. Tetanus up to date.",
+      label: "Last meal and alcohol",
+      result: "Ate a sandwich at 17:30. Two beers this afternoon.",
     },
     {
       id: "weather",
@@ -106,8 +133,9 @@ export const kneeDislocationVascularInjury: OralCase = {
         "Document neurovascular status before and after.",
         "Note time of injury. Warm ischemia time over 6 hours sharply raises amputation risk.",
         "Call for transfer early. Vascular injury is likely.",
+        "Ask about the mechanism, other injuries and how the foot looked at the scene.",
       ],
-      rubric: ["kd-a1", "kd-r1"],
+      rubric: ["kd-a1", "kd-r1", "kd-h1", "kd-h2"],
       choices: [
         {
           id: "c-reduce",
@@ -162,8 +190,9 @@ export const kneeDislocationVascularInjury: OralCase = {
         "Longitudinal traction on the leg with countertraction on the thigh. Guide the tibia back. Avoid pressure in the popliteal fossa.",
         "Splint in about 15 to 20 degrees of flexion. Check pulses, Doppler and neurology after.",
         "Post reduction X ray to confirm.",
+        "Complete the AMPLE history: allergies, medications, past history, alcohol and tetanus.",
       ],
-      rubric: ["kd-m1", "kd-m2"],
+      rubric: ["kd-m1", "kd-m2", "kd-h3"],
       next: "s-reduced",
     },
     {
@@ -322,7 +351,7 @@ export const kneeDislocationVascularInjury: OralCase = {
       kind: "question",
       id: "q-patient",
       phase: "Talking with the patient",
-      prompt: "Kyle asks, 'Am I going to lose my leg?' What do you tell him?",
+      prompt: "He asks, 'Am I going to lose my leg?' What do you tell him?",
       seconds: 60,
       modelAnswer: [
         "Be honest and calm.",
@@ -345,7 +374,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Completes a primary survey and recognizes the pulseless foot as a limb threat.",
       points: 1,
       teaching: "A dramatic limb injury can distract from other injuries. Primary survey first, then treat the limb as an emergency.",
@@ -354,7 +383,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Reduces the dislocated knee immediately when the limb is ischemic, without waiting for imaging.",
       points: 3,
       critical: true,
@@ -364,7 +393,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Plans safe procedural sedation with monitoring including capnography and a dedicated airway provider.",
       points: 2,
       teaching: "Recent food is not a reason to delay urgent sedation. Ketamine 1 to 1.5 mg/kg IV gives analgesia and preserves airway reflexes.",
@@ -373,7 +402,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses in line traction to reduce, splints in 15 to 20 degrees of flexion and rechecks neurovascular status.",
       points: 1,
       teaching: "Avoid pressure behind the knee during reduction. Always recheck and document pulses, Doppler and nerve function after.",
@@ -382,7 +411,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Measures the ankle brachial index after reduction even when a pulse returns.",
       points: 3,
       critical: true,
@@ -392,7 +421,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders CT angiography for an ABI under 0.9 and identifies the common peroneal nerve injury.",
       points: 2,
       teaching: "CTA defines the lesion for the surgeon. Peroneal nerve injury is common with knee dislocation and should be documented.",
@@ -401,7 +430,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Pushes back respectfully when the consultant plans routine admission without vascular assessment.",
       points: 1,
       teaching: "Knee dislocation has a high rate of popliteal injury. Lead with the ABI and the ischemia clock.",
@@ -410,7 +439,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges urgent transfer for revascularization through CritiCall with a documented injury time and a 6 hour target.",
       points: 3,
       critical: true,
@@ -420,7 +449,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Discusses systemic heparin with the vascular surgeon and maintains analgesia, limb position and frequent neurovascular checks.",
       points: 1,
       teaching: "Heparin can limit clot propagation in an isolated limb injury. It is a joint decision with the surgeon once head and torso bleeding are excluded.",
@@ -429,7 +458,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Adapts quickly to the grounded aircraft by choosing land transport and updating the receiving team.",
       points: 2,
       teaching: "Waiting for weather costs muscle. Choose the fastest available option and keep the receiving team informed.",
@@ -438,7 +467,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explores local temporary options with the vascular surgeon and documents times and decisions.",
       points: 1,
       teaching: "Some centres guide a local surgeon to place a temporary shunt when transport is long. Ask the question.",
@@ -447,11 +476,38 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Answers the patient honestly about the risk of amputation and the plan, in plain language.",
       points: 1,
       teaching: "Patients cope better with honest uncertainty than with false reassurance.",
       source: "atls",
+    },
+    {
+      id: "kd-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the mechanism and speed, the exact time of injury, head strike, loss of consciousness and pain elsewhere.",
+      points: 2,
+      teaching: "A high energy crash can hide head, torso and pelvic injuries. The injury time starts the 6 hour clock for the limb.",
+      source: "atls",
+    },
+    {
+      id: "kd-h2",
+      competency: "communication",
+      criterion: "history",
+      text: "Gets the paramedic report: foot colour and pulses at the scene, how the leg was splinted and the analgesia given.",
+      points: 2,
+      teaching: "A white, pulseless foot at the scene confirms ischemia from the start. The prehospital fentanyl dose matters for sedation.",
+      source: "atls",
+    },
+    {
+      id: "kd-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes an AMPLE history before sedation, including last meal, alcohol, medications, allergies and tetanus.",
+      points: 1,
+      teaching: "Recent food does not delay an urgent reduction, but alcohol and prior opioid change the sedation plan. Tetanus status matters for any wound.",
+      source: "acep-sedation",
     },
   ],
   sources: [
@@ -463,13 +519,15 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "mills-abi",
       citation: "Mills WJ, et al. The value of the ankle-brachial index for diagnosing arterial injury after knee dislocation. A prospective study. Journal of Trauma. 2004.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/15211135/",
     },
     {
       id: "acep-sedation",
       citation: "Godwin SA, et al. Clinical policy. Procedural sedation and analgesia in the emergency department. Annals of Emergency Medicine. 2014.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/24438649/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -14,26 +14,47 @@ export const malignantPericardialTamponade: OralCase = {
     { topic: "sob", n: 2 },
   ],
   summary: "A 58 year old woman with metastatic lung cancer arrives with worsening breathlessness and low blood pressure.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working evenings at a community hospital in Ontario with an ICU and a cardiologist on call from home, about 45 minutes away. " +
-    "There is no cardiac surgery on site. You have a bedside ultrasound machine with a phased array probe. " +
-    "Linh Tran is 58 years old and weighs 61 kg. She has metastatic lung adenocarcinoma and has been more short of breath for 2 weeks. Tonight she nearly fainted getting off the toilet. " +
-    "Triage vitals: heart rate 124, blood pressure 88/68, respiratory rate 28, SpO2 92 percent on room air, temperature 37.2. CTAS 2. " +
-    "The nurse says: 'She is getting worse in the chair. Her neck veins are huge. Her daughter is here and keeps asking if her mom is dying.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 58 year old woman with metastatic lung cancer is short of breath and nearly fainted tonight. " +
+    "It is evening. There is an ICU, no cardiac surgery, a cardiologist 45 minutes away and a bedside ultrasound with a phased array probe.",
+  card: {
+    vitals: {
+      temperature: "37.2°C",
+      pulse: "124/minute",
+      resp: "28/minute",
+      bp: "88/68 mmHg",
+      o2sat: "92% on room air",
+      weight: "61 kg (134 lb)",
+    },
+    medications: "Dalteparin 150 IU/kg daily, hydromorphone as needed, immunotherapy for lung cancer",
+    allergies: "Not documented",
+  },
   findings: [
     {
-      id: "history",
-      label: "History",
+      id: "triage",
+      label: "Triage and nursing report",
       result:
-        "Two weeks of breathlessness, now at rest. Cannot lie flat. Chest heaviness. Near syncope tonight. No fever. No leg swelling. No hemoptysis.",
+        "CTAS 2. The nurse says: 'She is getting worse in the chair. Her neck veins are huge. Her daughter is here and keeps asking if her mom is dying.'",
+    },
+    {
+      id: "history",
+      label: "History of presenting illness",
+      result:
+        "Two weeks of breathlessness, now at rest. Cannot lie flat. Chest heaviness. Near syncope tonight getting off the toilet. No fever. No leg swelling. No hemoptysis.",
     },
     {
       id: "onc",
-      label: "Oncology history and medications",
+      label: "Past and oncology history",
       result:
-        "Stage IV lung adenocarcinoma diagnosed 8 months ago with bone and liver metastases. On immunotherapy, last dose 2 weeks ago. " +
-        "Dalteparin 150 IU/kg daily for a leg DVT 3 months ago, reduced from 200 IU/kg after the first month. Last dose at 08:00 today. Hydromorphone as needed for bone pain. No written advance directive.",
+        "Stage IV lung adenocarcinoma diagnosed 8 months ago with bone and liver metastases. Leg DVT 3 months ago. No written advance directive.",
+    },
+    {
+      id: "meds",
+      label: "Medications",
+      result:
+        "Immunotherapy, last dose 2 weeks ago. Dalteparin 150 IU/kg daily for the DVT, reduced from 200 IU/kg after the first month. Last dose at 08:00 today. Hydromorphone as needed for bone pain.",
     },
     {
       id: "exam",
@@ -71,8 +92,8 @@ export const malignantPericardialTamponade: OralCase = {
       id: "daughter",
       label: "Collateral from her daughter",
       result:
-        "Her daughter Mai says her mother wants to be at Mai's wedding in 6 weeks. Her oncologist talked about 'months to a year'. " +
-        "The family has not discussed resuscitation. Mai says 'Please do not let her suffer, but she is a fighter.'",
+        "Her daughter says her mother wants to be at the daughter's wedding in 6 weeks. Her oncologist talked about 'months to a year'. " +
+        "The family has not discussed resuscitation. The daughter says 'Please do not let her suffer, but she is a fighter.'",
     },
     {
       id: "fluid",
@@ -103,8 +124,9 @@ export const malignantPericardialTamponade: OralCase = {
         "Keep her upright. Oxygen. Second IV. Blood work including coagulation.",
         "Avoid diuretics, nitrates and positive pressure ventilation.",
         "Plan urgent pericardiocentesis and call cardiology now.",
+        "Focused history: tempo of breathlessness, orthopnea, chest pain, leg swelling and hemoptysis.",
       ],
-      rubric: ["tam-a1", "tam-a2", "tam-r1"],
+      rubric: ["tam-a1", "tam-a2", "tam-r1", "tam-h1"],
       choices: [
         {
           id: "c-tamponade",
@@ -159,8 +181,9 @@ export const malignantPericardialTamponade: OralCase = {
         "Avoid intubation. Positive pressure lowers venous return and can cause arrest.",
         "Hold dalteparin. Note the last dose at 08:00. It does not stop an emergency drain.",
         "Prepare the pericardiocentesis kit and drain now so you can act if she worsens.",
+        "Ask which anticoagulant, what dose and when the last dose was given.",
       ],
-      rubric: ["tam-r2", "tam-m1"],
+      rubric: ["tam-r2", "tam-m1", "tam-h3"],
       next: "q-goals",
     },
     {
@@ -177,7 +200,7 @@ export const malignantPericardialTamponade: OralCase = {
         "Invite the daughter in with her permission. Under the Health Care Consent Act a family substitute decision maker only decides if she becomes incapable.",
         "Document the conversation and the plan.",
       ],
-      rubric: ["tam-p1", "tam-c1"],
+      rubric: ["tam-p1", "tam-c1", "tam-h2"],
       choices: [
         {
           id: "c-patient",
@@ -209,7 +232,7 @@ export const malignantPericardialTamponade: OralCase = {
       kind: "say",
       id: "s-daughter",
       phase: "Back in the room",
-      text: "Mrs. Tran overhears part of the conversation and asks why you are talking about her and not to her. You apologize and speak with her directly. She wants the drain but does not want CPR or a breathing tube.",
+      text: "The patient overhears part of the conversation and asks why you are talking about her and not to her. You apologize and speak with her directly. She wants the drain but does not want CPR or a breathing tube.",
       next: "s-worse",
     },
     {
@@ -217,7 +240,7 @@ export const malignantPericardialTamponade: OralCase = {
       id: "s-futile",
       phase: "Five minutes later",
       text:
-        "Her daughter is upset and says the oncologist told them treatment was working. Mrs. Tran asks, 'Is there really nothing you can do?' You correct yourself, explain the drain and she consents. She does not want CPR or a breathing tube.",
+        "Her daughter is upset and says the oncologist told them treatment was working. The patient asks, 'Is there really nothing you can do?' You correct yourself, explain the drain and she consents. She does not want CPR or a breathing tube.",
       next: "s-worse",
     },
     {
@@ -332,7 +355,7 @@ export const malignantPericardialTamponade: OralCase = {
       kind: "question",
       id: "q-daughter",
       phase: "The family",
-      prompt: "Mai asks you in private: 'Does this mean the cancer is getting worse? Will she make it to my wedding?' What do you say?",
+      prompt: "Her daughter asks you in private: 'Does this mean the cancer is getting worse? Will she make it to my wedding?' What do you say?",
       seconds: 60,
       modelAnswer: [
         "Check first that her mother is happy for you to share information.",
@@ -354,7 +377,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Diagnoses cardiac tamponade from hypotension, raised JVP, pulsus paradoxus and echo findings.",
       points: 3,
       critical: true,
@@ -364,7 +387,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Considers PE and pleural effusion but does not delay treatment for further imaging.",
       points: 1,
       teaching: "Cancer patients get PE too. But an echo showing tamponade physiology in a hypotensive patient should drive action.",
@@ -373,7 +396,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids diuretics, nitrates and positive pressure ventilation.",
       points: 2,
       teaching: "Tamponade is preload dependent. Anything that lowers venous return can cause arrest.",
@@ -382,7 +405,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses a modest fluid bolus of 250 to 500 mL and a vasopressor only as a bridge to drainage.",
       points: 1,
       teaching: "Small boluses can help a hypovolemic patient. Large volumes raise pericardial pressure. Only drainage fixes the problem.",
@@ -391,7 +414,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Holds dalteparin and recognizes that recent LMWH does not prevent emergency drainage.",
       points: 1,
       teaching: "Bleeding risk rises with anticoagulation, but a peri-arrest tamponade needs drainage now.",
@@ -400,7 +423,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Obtains consent and goals of care from the capable patient herself.",
       points: 3,
       critical: true,
@@ -410,7 +433,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Offers pericardiocentesis as a proportionate treatment and does not assume futility because of cancer.",
       points: 2,
       teaching: "Drainage relieves symptoms fast and can give weeks to months of good life. The choice belongs to the patient.",
@@ -419,7 +442,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs emergency pericardiocentesis without waiting when she is peri-arrest.",
       points: 3,
       critical: true,
@@ -429,7 +452,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses ultrasound guidance and selects the largest pocket closest to the skin with no structure in the path.",
       points: 2,
       teaching: "Echo guided drainage has a low complication rate. The best window varies. Subxiphoid is not always best.",
@@ -438,7 +461,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Confirms needle position with agitated saline before dilating and places a pigtail catheter.",
       points: 1,
       teaching: "Agitated saline in the pericardial space confirms position. Dilating into the ventricle is a catastrophe.",
@@ -447,7 +470,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Explains how to tell pericardial blood from ventricular blood and orders a post procedure chest X ray.",
       points: 1,
       teaching: "Defibrinated pericardial blood does not clot and has a lower hematocrit. Clinical improvement is the best sign.",
@@ -456,7 +479,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-m4",
       competency: "management",
-      criterion: "data",
+      criterion: "physical",
       text: "Sends pericardial fluid for cell count, protein, LDH, glucose, culture and cytology.",
       points: 1,
       teaching: "Cytology confirms malignant effusion and guides oncology treatment. Infection is rare but important.",
@@ -465,7 +488,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU or CCU with extended drainage and involves oncology and palliative care.",
       points: 2,
       teaching: "Malignant effusions recur often. Extended catheter drainage and a plan for recurrence are standard.",
@@ -474,7 +497,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Hands over code status and the patient's goals clearly to the admitting team.",
       points: 1,
       teaching: "Goals discussed in the ED are lost if not documented and handed over.",
@@ -483,11 +506,38 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Answers the daughter honestly after confirming the patient's permission, without false reassurance.",
       points: 1,
       teaching: "Privacy first, then honesty. Leave precise prognosis to the oncologist but do not avoid the truth.",
       source: "hcca",
+    },
+    {
+      id: "tam-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the tempo of breathlessness, orthopnea, chest heaviness and the near syncope, and screens for PE with leg swelling and hemoptysis.",
+      points: 2,
+      teaching: "Two weeks of rising breathlessness then near syncope fits a slowly filling effusion that has just tipped into tamponade. PE is the main competing cause in cancer.",
+      source: "esc-pericardial",
+    },
+    {
+      id: "tam-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the cancer stage, sites of spread, current treatment and what the oncologist has said about prognosis.",
+      points: 2,
+      teaching: "Stage and expected prognosis frame a proportionate plan. A prognosis of months to a year supports drainage.",
+      source: "esc-pericardial",
+    },
+    {
+      id: "tam-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks which anticoagulant she takes, the dose and the time of the last dose.",
+      points: 2,
+      teaching: "Recent LMWH raises bleeding risk but does not stop an emergency drain. The timing guides when to restart it.",
+      source: "esc-pericardial",
     },
   ],
   sources: [
@@ -499,6 +549,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "ase-pericardial",
       citation: "Klein AL, et al. American Society of Echocardiography clinical recommendations for multimodality cardiovascular imaging of patients with pericardial disease. Journal of the American Society of Echocardiography. 2013.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/23998693/",
     },
     {
       id: "hcca",
@@ -506,7 +557,7 @@ export const malignantPericardialTamponade: OralCase = {
       url: "https://www.ontario.ca/laws/statute/96h02",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

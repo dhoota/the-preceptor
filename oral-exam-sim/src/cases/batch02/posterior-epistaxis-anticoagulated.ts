@@ -14,26 +14,47 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     { topic: "analgesia-sedation", n: 6 },
   ],
   summary: "A 78 year old man with two hours of heavy nose bleeding that runs down his throat despite pressure.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working evenings at a community hospital in central Ontario. ENT is on call from home, about an hour away. There is no interventional radiology on site. " +
-    "The regional centre with ENT surgery and interventional radiology is 2 hours by land. " +
-    "Bernard Lafleur is 78 years old and weighs 72 kg. His nose started bleeding 2 hours ago while watching television. " +
-    "Triage vitals: heart rate 116 and irregular, blood pressure 174/94, respiratory rate 22, SpO2 95 percent on room air, temperature 36.5. CTAS 2. " +
-    "The nurse says: 'He has soaked two towels and he keeps spitting out clots. It is coming down his throat even when he pinches. He takes warfarin.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 78 year old man has had a heavy nosebleed for 2 hours. " +
+    "It is evening. ENT is on call an hour away, there is no interventional radiology, and the regional centre with both is 2 hours by land.",
+  card: {
+    vitals: {
+      temperature: "36.5°C",
+      pulse: "116/minute and irregular",
+      resp: "22/minute",
+      bp: "174/94 mmHg",
+      o2sat: "95% on room air",
+      weight: "72 kg (159 lb)",
+    },
+    medications: "Warfarin 5 mg daily, metoprolol 50 mg twice daily, ramipril 10 mg, clarithromycin",
+    allergies: "None known",
+  },
   findings: [
     {
-      id: "history",
-      label: "History",
+      id: "triage",
+      label: "Triage and nursing report",
       result:
-        "Sudden onset from both nostrils, worse on the left. Blood running down the back of the throat. Vomited blood once. Lightheaded when he stood. No trauma. No prior nosebleeds this bad.",
+        "CTAS 2. The nurse says: 'He has soaked two towels and he keeps spitting out clots. It is coming down his throat even when he pinches. He takes warfarin.'",
+    },
+    {
+      id: "history",
+      label: "History of presenting illness",
+      result:
+        "It started 2 hours ago while he was watching television. Sudden onset from both nostrils, worse on the left. Blood running down the back of the throat. Vomited blood once. Lightheaded when he stood. No trauma. No prior nosebleeds this bad.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "Atrial fibrillation with a TIA 3 years ago. Hypertension. No allergies.",
     },
     {
       id: "meds",
-      label: "Past history and medications",
+      label: "Medications",
       result:
-        "Atrial fibrillation with a TIA 3 years ago. Hypertension. Warfarin 5 mg daily, last INR 2.8 a month ago. He started clarithromycin 5 days ago for a chest infection. " +
-        "Metoprolol 50 mg twice daily. Ramipril 10 mg. No antiplatelets. No allergies.",
+        "Warfarin 5 mg daily, last INR 2.8 a month ago. He started clarithromycin 5 days ago for a chest infection. " +
+        "Metoprolol 50 mg twice daily. Ramipril 10 mg. No antiplatelets.",
     },
     {
       id: "exam",
@@ -98,8 +119,9 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
         "Two large bore IVs. CBC, INR, type and crossmatch.",
         "Clear clots by blowing or suction. Firm pressure on the soft nose for 10 to 15 minutes.",
         "Topical vasoconstrictor and anaesthetic on pledgets, such as xylometazoline or oxymetazoline with lidocaine.",
+        "Quick history: side, blood down the throat, hematemesis, lightheadedness, trauma and prior bleeds.",
       ],
-      rubric: ["epi-r1", "epi-a1"],
+      rubric: ["epi-r1", "epi-a1", "epi-h1"],
       choices: [
         {
           id: "c-abc",
@@ -179,8 +201,9 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
         "4 factor PCC, Octaplex or Beriplex, per local protocol. For an INR of 4.6 the NAC sample regimens give 2000 IU, or 35 IU/kg, about 2500 IU for 72 kg. Recheck the INR and aim for 1.5 or less.",
         "Plasma is second line. It is slower and needs large volumes.",
         "Note the likely cause of the high INR. Clarithromycin interacts with warfarin.",
+        "Ask why he is on warfarin, his last INR and any new medications.",
       ],
-      rubric: ["epi-m2", "epi-a3", "epi-l1"],
+      rubric: ["epi-m2", "epi-a3", "epi-l1", "epi-h2", "epi-h3"],
       choices: [
         {
           id: "c-pcc",
@@ -332,7 +355,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
         "The plan is to restart anticoagulation once the bleeding is controlled, usually within days to a couple of weeks, with the team.",
         "The high INR was likely from an antibiotic interaction. His family doctor should know.",
       ],
-      rubric: ["epi-c2"],
+      rubric: ["epi-c2", "epi-h4"],
       next: "end",
     },
     {
@@ -345,7 +368,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Keeps the patient upright and leaning forward with suction, and places two large bore IVs with crossmatch.",
       points: 2,
       teaching: "Heavy epistaxis is an airway and hemorrhage problem first. Blood running down the throat can be aspirated or swallowed and hide the true loss.",
@@ -354,7 +377,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Recognizes hemodynamic significance from tachycardia and a hemoglobin drop over 30 g/L.",
       points: 1,
       teaching: "Older patients on beta blockers may not mount a big tachycardia. A falling hemoglobin tells you the size of the bleed.",
@@ -363,7 +386,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses a stepwise anterior approach with vasoconstrictor, targeted cautery of a visible point and anterior packing.",
       points: 2,
       teaching: "Cauterize only a visible point and only one side of the septum. Topical tranexamic acid is an option but did not reduce packing in the NoPAC trial.",
@@ -372,7 +395,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies a posterior source when bleeding continues down the pharynx despite well placed anterior packs.",
       points: 2,
       teaching: "Posterior bleeds are more common in older, anticoagulated and hypertensive patients. They often need posterior packing and admission.",
@@ -381,7 +404,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Reverses warfarin for a major bleed with vitamin K 10 mg IV and 4 factor PCC, and holds warfarin.",
       points: 3,
       critical: true,
@@ -391,7 +414,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-a3",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies the clarithromycin interaction as the likely cause of the raised INR.",
       points: 1,
       teaching: "Macrolides and many other antibiotics raise the INR on warfarin. Check every new drug.",
@@ -400,7 +423,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Places a posterior pack correctly with a dual balloon device or Foley inflated with saline and seated in the choana.",
       points: 3,
       critical: true,
@@ -410,7 +433,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Protects the nostril from pressure necrosis with padding and avoids overinflation.",
       points: 1,
       teaching: "Alar and columellar necrosis are avoidable complications. Pad the clamp and check the skin.",
@@ -419,7 +442,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Manages bradycardia and hypoxia after posterior packing by checking pack position, reversing opioid effect and giving atropine if needed.",
       points: 2,
       teaching: "Posterior packs can cause vagal bradycardia, airway obstruction and hypoventilation, especially with sedation.",
@@ -428,7 +451,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Requires continuous oximetry and cardiac monitoring for as long as the posterior pack is in.",
       points: 3,
       critical: true,
@@ -438,7 +461,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits with ENT involvement and a plan for transfer for arterial ligation or embolization if bleeding recurs.",
       points: 2,
       teaching: "Bleeding through a posterior pack needs definitive treatment. Know where your nearest centre is before you need it.",
@@ -447,7 +470,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Coordinates with ENT and gives a clear handover including INR, reversal given and pack details.",
       points: 1,
       teaching: "The admitting team needs to know when and what was packed and what was reversed.",
@@ -456,7 +479,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the balance of bleeding and stroke risk to the family and the plan to restart anticoagulation.",
       points: 1,
       teaching: "Families worry about stroke. Explain that reversal is short term and restarting is planned.",
@@ -465,26 +488,64 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Uses the local PCC protocol and blood bank early rather than waiting for plasma.",
       points: 1,
       teaching: "Canadian blood product guidance recommends PCC over plasma for urgent warfarin reversal. Knowing your protocol saves time.",
       source: "nac-pcc",
+    },
+    {
+      id: "epi-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the side and onset, blood down the throat, vomited blood, lightheadedness, trauma and prior nosebleeds.",
+      points: 2,
+      teaching: "Bleeding down the throat despite pinching suggests a posterior source. Hematemesis and lightheadedness show how much blood he has lost.",
+      source: "aao-epistaxis",
+    },
+    {
+      id: "epi-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the anticoagulant, dose, last INR and any new medications, and finds the recent clarithromycin.",
+      points: 2,
+      teaching: "Macrolides inhibit warfarin metabolism and raise the INR within days. A new antibiotic is the classic cause of an unexpected high INR.",
+      source: "tc-warfarin",
+    },
+    {
+      id: "epi-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks why he is anticoagulated, including atrial fibrillation and the prior TIA, to weigh stroke risk against bleeding.",
+      points: 1,
+      teaching: "The indication and prior events set the stroke risk that frames reversal and the restart plan.",
+      source: "tc-warfarin",
+    },
+    {
+      id: "epi-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Gets collateral from his daughter on his memory and how he manages his pills.",
+      points: 1,
+      teaching: "Mild memory problems with self managed warfarin are a safety issue for the restart plan and follow up.",
+      source: "aao-epistaxis",
     },
   ],
   sources: [
     {
       id: "aao-epistaxis",
       citation: "Tunkel DE, et al. Clinical Practice Guideline. Nosebleed (Epistaxis). Otolaryngology Head and Neck Surgery. 2020.",
+      url: "https://aao-hnsfjournals.onlinelibrary.wiley.com/doi/10.1177/0194599819890327",
     },
     {
       id: "nopac",
       citation: "Reuben A, et al. The use of tranexamic acid to reduce the need for nasal packing in epistaxis (NoPAC). Randomized controlled trial. Annals of Emergency Medicine. 2021.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/33612282/",
     },
     {
       id: "tc-warfarin",
-      citation: "Thrombosis Canada. Clinical guide. Warfarin: Management of Out-of-Range INRs.",
-      url: "https://thrombosiscanada.ca/hcp/practice/clinical_guides?language=en-ca&guideID=45",
+      citation: "Thrombosis Canada. Clinical guide. Warfarin: Management of Out-of-Range INRs. Version of 15 June 2025.",
+      url: "https://thrombosiscanada.ca/clinical_guides/pdfs/45_59.pdf",
     },
     {
       id: "nac-pcc",
@@ -492,7 +553,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
       url: "https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

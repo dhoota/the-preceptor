@@ -17,28 +17,52 @@ export const completeHeartBlockPacing: OralCase = {
     { topic: "ems", n: 3 },
   ],
   summary: "A 79 year old man with two faints at home arrives pale, slow and hypotensive at a community hospital.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 200 bed community hospital in eastern Ontario. " +
-    "There is a CCU, a general internist on call and a transcutaneous pacer on the resuscitation cart. " +
-    "Cardiology is by phone only. Permanent pacemakers are inserted at a regional centre 90 minutes away by land. " +
-    "Walter Brennan is 79 years old. He fainted twice at home this morning. " +
-    "Triage vitals: heart rate 34, blood pressure 76/42, respiratory rate 20, SpO2 94 percent on room air, temperature 36.6, capillary glucose 6.4 mmol/L. CTAS 1. " +
-    "The paramedic says: 'He was grey on the kitchen floor. We put pads on and gave 500 mL of saline. His pressure has not moved.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 79 year old man is brought in by ambulance after fainting twice at home this morning. " +
+    "Your eastern Ontario hospital has a CCU, an internist on call and a transcutaneous pacer, cardiology by phone only and a pacemaker centre 90 minutes away.",
+  card: {
+    vitals: {
+      temperature: "36.6°C",
+      pulse: "34/minute",
+      resp: "20/minute",
+      bp: "76/42 mmHg",
+      o2sat: "94% on room air",
+    },
+    medications: "Bisoprolol 2.5 mg daily, amlodipine 5 mg daily, ramipril 5 mg daily, atorvastatin 20 mg daily",
+    allergies: "None known",
+  },
   findings: [
     {
+      id: "prehospital",
+      label: "Paramedic report and triage",
+      result:
+        "The paramedic says: 'He was grey on the kitchen floor. We put pads on and gave 500 mL of saline. His pressure has not moved.' " +
+        "Triage assigned CTAS 1. Capillary glucose at triage 6.4 mmol/L.",
+    },
+    {
       id: "history",
-      label: "History",
+      label: "History of presenting illness",
       result:
         "Three days of fatigue and lightheadedness. Two brief faints today with no warning. No chest pain. Mild breathlessness walking to the bathroom. " +
         "No tick bites or rash. No vomiting. No new medications.",
     },
     {
+      id: "pmh",
+      label: "Past history",
+      result: "Hypertension and dyslipidemia. No known kidney disease. No allergies.",
+    },
+    {
       id: "meds",
-      label: "Past history and medications",
+      label: "Medications",
       result:
-        "Hypertension and dyslipidemia. Bisoprolol 2.5 mg daily for 2 years. Amlodipine 5 mg daily. Ramipril 5 mg daily. Atorvastatin 20 mg daily. " +
-        "No digoxin. No known kidney disease. No allergies.",
+        "Bisoprolol 2.5 mg daily for 2 years. Amlodipine 5 mg daily. Ramipril 5 mg daily. Atorvastatin 20 mg daily. No digoxin.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "He lives alone. He still drives and golfs.",
     },
     {
       id: "exam",
@@ -82,7 +106,7 @@ export const completeHeartBlockPacing: OralCase = {
       id: "daughter",
       label: "Collateral from his daughter",
       result:
-        "He lives alone and still drives and golfs. He has always said he wants full treatment. She holds his power of attorney for personal care but says he makes his own decisions.",
+        "He has always said he wants full treatment. She holds his power of attorney for personal care but says he makes his own decisions.",
     },
   ],
   start: "s-open",
@@ -108,8 +132,9 @@ export const completeHeartBlockPacing: OralCase = {
         "Expect atropine to fail with a wide escape. Infranodal block rarely responds.",
         "Prepare transcutaneous pacing and an epinephrine infusion at the same time. Do not wait for atropine to fail.",
         "Screen quickly for hyperkalemia, drug toxicity and ischemia.",
+        "Take a focused history as you go: the faints, chest pain, breathlessness and the paramedic report.",
       ],
-      rubric: ["chb-a1", "chb-r1", "chb-r2"],
+      rubric: ["chb-a1", "chb-r1", "chb-r2", "chb-h1", "chb-h4"],
       choices: [
         {
           id: "c-parallel",
@@ -292,7 +317,7 @@ export const completeHeartBlockPacing: OralCase = {
         "Most likely degenerative conduction disease below the AV node.",
         "Hold bisoprolol, amlodipine and ramipril. The creatinine rise is likely from low output.",
       ],
-      rubric: ["chb-a3", "chb-m3"],
+      rubric: ["chb-a3", "chb-m3", "chb-h2", "chb-h3"],
       next: "s-loss",
     },
     {
@@ -421,16 +446,16 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies third degree AV block with a wide ventricular escape and signs of hypoperfusion.",
       points: 2,
       teaching: "AV dissociation with regular P waves and a slower regular escape defines complete block. A wide escape means the block is likely below the AV node.",
-      source: "aha-brady",
+      source: "acc-brady",
     },
     {
       id: "chb-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives atropine 1 mg IV repeated every 3 to 5 minutes to a maximum of 3 mg.",
       points: 1,
       teaching: "Current adult ACLS uses 1 mg doses of atropine. It works on the AV node and often fails in infranodal block.",
@@ -439,7 +464,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Prepares pacing and a chronotropic infusion in parallel rather than waiting for atropine to fail.",
       points: 3,
       critical: true,
@@ -449,7 +474,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts transcutaneous pacing in demand mode at 60 to 80 with output set just above the capture threshold.",
       points: 2,
       teaching: "Anterior posterior pads lower the threshold. Demand mode avoids pacing on a T wave if the native rhythm returns.",
@@ -458,7 +483,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Confirms mechanical capture with a matching femoral pulse, pleth rate or cardiac motion on POCUS.",
       points: 3,
       critical: true,
@@ -468,7 +493,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives analgesia before or with pacing using small titrated doses, such as fentanyl 25 to 50 mcg IV.",
       points: 1,
       teaching: "Transcutaneous pacing is painful. Titrate opioid first and add small doses of a sedative only if needed.",
@@ -477,7 +502,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Names epinephrine 2 to 10 mcg/min or dopamine 5 to 20 mcg/kg/min as the bridge when pacing is delayed or fails.",
       points: 1,
       teaching: "Chronotropic infusions buy time. They increase myocardial oxygen demand and can cause ectopy.",
@@ -486,7 +511,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-a3",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Screens for reversible causes including hyperkalemia, AV nodal blocking drugs, digoxin, ischemia and Lyme carditis.",
       points: 2,
       teaching: "Treat the treatable. Hyperkalemia and drug toxicity can mimic structural block and respond to calcium or antidotes.",
@@ -495,7 +520,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Holds beta blocker, calcium channel blocker and ACE inhibitor while he is hypotensive.",
       points: 1,
       teaching: "Even low doses of AV nodal blockers can worsen block. Stop them until the rhythm is secured.",
@@ -504,7 +529,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Places a transvenous pacer through the right internal jugular vein under ultrasound, avoiding the left subclavian.",
       points: 3,
       critical: true,
@@ -514,7 +539,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Confirms wire position and sets output 2 to 3 times a threshold under 1 mA in demand mode.",
       points: 2,
       teaching: "A low threshold means good contact. A margin above threshold protects against loss of capture as the wire settles.",
@@ -523,7 +548,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Obtains informed consent from the patient for the transvenous pacer, explaining main risks.",
       points: 1,
       teaching: "A patient with capacity consents for himself even when a substitute decision maker is present.",
@@ -532,7 +557,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges CCU or direct transfer for a permanent pacemaker with a critical care escort and backup pads.",
       points: 2,
       teaching: "Temporary wires can dislodge in transport. Keep pads on and send staff who can troubleshoot the generator.",
@@ -541,7 +566,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover including pacer settings, threshold and wire depth.",
       points: 1,
       teaching: "The receiving team needs the numbers to detect a change in threshold or a migrating wire.",
@@ -550,7 +575,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the likely cause and plan to the family in plain language after confirming the patient's permission.",
       points: 1,
       teaching: "Ask the capable patient before sharing. Name the plan and what happens next.",
@@ -559,7 +584,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Advises no driving until cleared after pacemaker insertion and follows fitness to drive guidance.",
       points: 1,
       teaching: "Syncope from heart block is a risk of sudden incapacitation at the wheel. Driving advice belongs in the ED plan.",
@@ -568,11 +593,47 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Identifies the gap in after hours transvenous pacing coverage and proposes kit checks, simulation and a regional pathway.",
       points: 1,
       teaching: "Rare high stakes procedures need a named operator, a ready kit and practice. Fix the system after the shift.",
       source: "esc-pacing",
+    },
+    {
+      id: "chb-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the faints: warning symptoms, position or exertion, chest pain, breathlessness and the three days of fatigue before them.",
+      points: 2,
+      teaching: "Sudden faints with no warning point to an arrhythmia. Chest pain or breathlessness raises ischemia and heart failure as causes or effects of the block.",
+      source: "acc-brady",
+    },
+    {
+      id: "chb-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks for the full medication list with doses and recent changes, including beta blockers, calcium channel blockers and digoxin.",
+      points: 2,
+      teaching: "AV nodal blockers and digoxin are the commonest reversible causes of high grade block. Dose, duration and recent changes decide how much they explain.",
+      source: "acc-brady",
+    },
+    {
+      id: "chb-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about tick bites, rash, outdoor exposure and travel to screen for Lyme carditis.",
+      points: 1,
+      teaching: "Lyme carditis causes reversible AV block and eastern Ontario is endemic. A negative exposure history makes it much less likely.",
+      source: "acc-brady",
+    },
+    {
+      id: "chb-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Gets collateral from the paramedics and his daughter: how he was found, treatment so far, his baseline function and his wishes for care.",
+      points: 1,
+      teaching: "Collateral fills gaps when the patient is drowsy. His baseline and stated wishes shape how far you escalate.",
+      source: "hcca",
     },
   ],
   sources: [
@@ -582,20 +643,19 @@ export const completeHeartBlockPacing: OralCase = {
       url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376",
     },
     {
-      id: "aha-brady",
-      citation: "American Heart Association. Adult bradycardia algorithm. Advanced Cardiovascular Life Support.",
-    },
-    {
       id: "acc-brady",
       citation: "Kusumoto FM, et al. 2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay. Circulation. 2019.",
+      url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000000628",
     },
     {
       id: "esc-pacing",
       citation: "Glikson M, et al. 2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy. European Heart Journal. 2021.",
+      url: "https://academic.oup.com/eurheartj/article/42/35/3427/6358547",
     },
     {
       id: "ccs-drive",
       citation: "Guerra PG, et al. Canadian Cardiovascular Society 2023 Guidelines on the Fitness to Drive. Canadian Journal of Cardiology. 2024.",
+      url: "https://onlinecjc.ca/article/S0828-282X(23)01755-5/fulltext",
     },
     {
       id: "hcca",
@@ -603,7 +663,7 @@ export const completeHeartBlockPacing: OralCase = {
       url: "https://www.ontario.ca/laws/statute/96h02",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

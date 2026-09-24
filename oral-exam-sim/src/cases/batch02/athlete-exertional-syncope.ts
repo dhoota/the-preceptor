@@ -15,20 +15,45 @@ export const athleteExertionalSyncope: OralCase = {
     { topic: "shock", n: 7 },
   ],
   summary: "A 19 year old varsity hockey player collapsed during sprints and now feels fine and wants to leave.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working in the ED of an academic hospital in an Ontario university town. Cardiology and echo are available during the day. " +
-    "Ethan Beaulieu is 19 years old and plays varsity hockey. He collapsed during end of practice sprints 90 minutes ago. " +
-    "Triage vitals: heart rate 84, blood pressure 122/70, respiratory rate 16, SpO2 99 percent on room air, temperature 36.8, capillary glucose 5.4 mmol/L. CTAS 2. " +
-    "He has a 2 cm chin laceration. " +
-    "The team trainer says: 'He dropped mid stride and was out for maybe 20 seconds. He came around fast. Probably dehydrated. He wants to be back for Saturday's playoff game.'",
+    "You are working in the emergency department of a tertiary care centre when the following patient arrives. " +
+    "A 19 year old varsity hockey player collapsed during practice sprints 90 minutes ago and has a 2 cm chin laceration. " +
+    "Cardiology and echo are available during the day.",
+  card: {
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "84/minute",
+      resp: "16/minute",
+      bp: "122/70 mmHg",
+      o2sat: "99% on room air",
+    },
+    medications: "Caffeine based pre-workout powder. No other medications documented",
+    allergies: "Not documented",
+  },
   findings: [
     {
-      id: "history",
-      label: "History",
+      id: "trainer",
+      label: "Collateral from the team trainer and triage",
       result:
-        "He was sprinting at full effort. No warning, no nausea, no sweating beforehand. He woke on the ice with his chin bleeding. No chest pain. " +
-        "He had a similar faint during summer training 6 months ago that was put down to heat. He takes a caffeine based pre-workout powder.",
+        "The team trainer says: 'He dropped mid stride and was out for maybe 20 seconds. He came around fast. Probably dehydrated. He wants to be back for Saturday's playoff game.' " +
+        "Triage assigned CTAS 2. Capillary glucose 5.4 mmol/L.",
+    },
+    {
+      id: "history",
+      label: "History of presenting illness",
+      result:
+        "He was sprinting at full effort. No warning, no nausea, no sweating beforehand. He woke on the ice with his chin bleeding. No chest pain.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "He had a similar faint during summer training 6 months ago that was put down to heat.",
+    },
+    {
+      id: "meds",
+      label: "Medications and supplements",
+      result: "He takes a caffeine based pre-workout powder.",
     },
     {
       id: "family",
@@ -103,8 +128,9 @@ export const athleteExertionalSyncope: OralCase = {
         "Sudden unexplained death of a young relative.",
         "Murmur that changes with manoeuvres.",
         "The Canadian Syncope Risk Score helps when the cause is unclear. It does not override these red flags.",
+        "Get these facts by asking him and the trainer: activity at collapse, prodrome, prior faints and family history.",
       ],
-      rubric: ["syn-a1", "syn-a2"],
+      rubric: ["syn-a1", "syn-a2", "syn-h1", "syn-h2"],
       choices: [
         {
           id: "c-highrisk",
@@ -178,7 +204,7 @@ export const athleteExertionalSyncope: OralCase = {
         "Aortic stenosis. Echo.",
         "Stimulant use. History and drug screen.",
       ],
-      rubric: ["syn-a5"],
+      rubric: ["syn-a5", "syn-h3"],
       next: "s-nsvt",
     },
     {
@@ -298,20 +324,20 @@ export const athleteExertionalSyncope: OralCase = {
       kind: "question",
       id: "q-coach",
       phase: "A phone call",
-      prompt: "The team coach calls the ED and asks you if Ethan can play Saturday and what is wrong with him. What do you do?",
+      prompt: "The team coach calls the ED and asks you if the patient can play Saturday and what is wrong with him. What do you do?",
       seconds: 60,
       modelAnswer: [
-        "Do not share health information without Ethan's consent.",
+        "Do not share health information without the patient's consent.",
         "He is 19 and capable. The coach is not his substitute decision maker.",
         "Tell the coach you cannot discuss a patient. Offer to pass on a message.",
-        "Talk to Ethan. Encourage him to tell the team himself that he cannot play until cleared.",
+        "Talk to the patient. Encourage him to tell the team himself that he cannot play until cleared.",
         "Document the call.",
       ],
       rubric: ["syn-p1"],
       choices: [
         {
           id: "c-confidential",
-          label: "I told the coach I could not share anything without Ethan's consent, then spoke with Ethan about what he wanted the team to know.",
+          label: "I told the coach I could not share anything without his consent, then spoke with him about what he wanted the team to know.",
           next: "q-family",
           quality: "strong",
           feedback:
@@ -323,7 +349,7 @@ export const athleteExertionalSyncope: OralCase = {
           next: "s-disclose",
           quality: "unsafe",
           feedback:
-            "Well meant but a privacy breach. PHIPA allows disclosure without consent only to reduce a significant risk of serious bodily harm. That does not apply because Ethan is admitted and can be counselled directly. Get his consent first.",
+            "Well meant but a privacy breach. PHIPA allows disclosure without consent only to reduce a significant risk of serious bodily harm. That does not apply because he is admitted and can be counselled directly. Get his consent first.",
         },
       ],
     },
@@ -332,7 +358,7 @@ export const athleteExertionalSyncope: OralCase = {
       id: "s-disclose",
       phase: "An hour later",
       text:
-        "Ethan's phone lights up with messages from teammates asking about his heart. He is angry and asks who told them. You apologize, explain what happened and let him know you will report it through the privacy process.",
+        "His phone lights up with messages from teammates asking about his heart. He is angry and asks who told them. You apologize, explain what happened and let him know you will report it through the privacy process.",
       next: "q-family",
     },
     {
@@ -342,7 +368,7 @@ export const athleteExertionalSyncope: OralCase = {
       prompt: "His parents arrive. What do you tell them about the rest of the family, and what about his driving?",
       seconds: 60,
       modelAnswer: [
-        "With Ethan's consent, explain that HCM is often inherited.",
+        "With the patient's consent, explain that HCM is often inherited.",
         "First degree relatives should have ECG and echo screening. Genetic counselling and testing through cardiology.",
         "His uncle's death may have been from the same condition.",
         "No driving until cardiology assessment. Syncope from a cardiac cause is a risk of sudden incapacitation.",
@@ -354,14 +380,14 @@ export const athleteExertionalSyncope: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "Ethan is admitted to the cardiology telemetry unit. His parents book screening for themselves and his younger sister. That is the end of the case.",
+      text: "He is admitted to the cardiology telemetry unit. His parents book screening for themselves and his younger sister. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "syn-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Identifies syncope during exertion without prodrome as a high risk cardiac feature.",
       points: 3,
       critical: true,
@@ -371,7 +397,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses the Canadian Syncope Risk Score appropriately and does not let it override high risk features.",
       points: 2,
       teaching: "The CSRS predicts 30 day serious outcomes in adults when no serious cause is found during the ED evaluation. Red flags like exertional syncope and a family history of sudden death trump the score.",
@@ -380,7 +406,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Recognizes the ECG pattern of HCM and distinguishes it from athletic remodelling.",
       points: 2,
       teaching: "Deep narrow Q waves and lateral T wave inversion are not normal in athletes. Voltage alone is common in fit people.",
@@ -389,7 +415,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-a4",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Interprets a murmur that increases with standing and Valsalva as dynamic outflow obstruction.",
       points: 1,
       teaching: "Less preload means more obstruction. Squatting increases preload and softens the murmur.",
@@ -398,7 +424,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-a5",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Lists other causes of exertional syncope such as anomalous coronary, arrhythmogenic cardiomyopathy, long QT, CPVT and WPW.",
       points: 1,
       teaching: "Young athletes with exertional syncope need a structured search for inherited and structural disease.",
@@ -407,7 +433,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats hypotension in obstructive HCM with positioning, fluids and a pure vasoconstrictor such as phenylephrine.",
       points: 2,
       teaching: "A fuller ventricle with higher afterload has less obstruction. Phenylephrine 50 to 100 mcg IV raises afterload without adding inotropy.",
@@ -416,7 +442,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids nitrates, diuretics, inotropes and vasodilators in suspected obstructive HCM.",
       points: 3,
       critical: true,
@@ -426,7 +452,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to a monitored bed under cardiology for echo, MRI and sudden death risk stratification.",
       points: 3,
       critical: true,
@@ -436,7 +462,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Restricts competitive sport and intense exertion until expert assessment.",
       points: 2,
       teaching: "Return to play in HCM is now a shared decision after expert evaluation. Until then, no competitive sport.",
@@ -445,7 +471,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Protects the patient's health information and does not disclose to the coach without consent.",
       points: 2,
       teaching: "Under the Personal Health Information Protection Act disclosure needs consent unless a specific exception applies.",
@@ -454,7 +480,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Advises screening and genetic counselling for first degree relatives, with the patient's consent to involve family.",
       points: 1,
       teaching: "HCM is usually autosomal dominant. Screening relatives can prevent another sudden death.",
@@ -463,11 +489,38 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-d3",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Advises no driving until cardiology assessment and explains the Ontario duty to report.",
       points: 1,
       teaching: "Cardiac syncope that may recur is a risk of sudden incapacitation. Ontario makes this a mandatory report to the Registrar of Motor Vehicles.",
       source: "ontario-hta",
+    },
+    {
+      id: "syn-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks exactly what he was doing at the moment of collapse, about warning symptoms, chest pain or palpitations, and how quickly he recovered.",
+      points: 2,
+      teaching: "Collapse at peak effort with no prodrome and a fast recovery points to an arrhythmia or outflow obstruction. Vasovagal faints come after exercise stops.",
+      source: "esc-syncope",
+    },
+    {
+      id: "syn-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about earlier faints and a family history of sudden death under 40, inherited heart disease or epilepsy.",
+      points: 2,
+      teaching: "A second episode and an uncle who died suddenly at 34 raise the risk of an inherited cardiomyopathy. Unexplained drownings and 'epilepsy' in relatives can hide the same story.",
+      source: "aha-hcm",
+    },
+    {
+      id: "syn-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about stimulants, supplements, recreational drugs and medications.",
+      points: 1,
+      teaching: "Caffeine based pre-workout powders and stimulants can provoke arrhythmias and worsen outflow obstruction.",
+      source: "esc-syncope",
     },
   ],
   sources: [
@@ -479,14 +532,17 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "esc-syncope",
       citation: "Brignole M, et al. 2018 ESC Guidelines for the diagnosis and management of syncope. European Heart Journal. 2018.",
+      url: "https://academic.oup.com/eurheartj/article/39/21/1883/4939241",
     },
     {
       id: "aha-hcm",
       citation: "Ommen SR, et al. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR Guideline for the Management of Hypertrophic Cardiomyopathy. Circulation. 2024.",
+      url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001250",
     },
     {
       id: "phipa",
       citation: "Ontario. Personal Health Information Protection Act, 2004, S.O. 2004, c. 3, Sched. A.",
+      url: "https://www.canlii.org/en/on/laws/stat/so-2004-c-3-sch-a/latest/so-2004-c-3-sch-a.html",
     },
     {
       id: "ontario-hta",
@@ -494,7 +550,7 @@ export const athleteExertionalSyncope: OralCase = {
       url: "https://www.ontario.ca/page/reporting-driver-medical-review",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
