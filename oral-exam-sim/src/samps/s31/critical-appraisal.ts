@@ -105,13 +105,18 @@ const S: Record<string, Source> = {
   },
   cps: {
     id: "cps-bronchiolitis",
-    citation: "Friedman JN, Rieder MJ, Walton JM. Canadian Paediatric Society, Acute Care Committee and Drug Therapy and Hazardous Substances Committee. Bronchiolitis. Recommendations for diagnosis, monitoring and management of children one to 24 months of age. Paediatrics and Child Health 2014.",
+    citation: "Friedman JN, Rieder MJ, Walton JM. Canadian Paediatric Society, Acute Care Committee and Drug Therapy and Hazardous Substances Committee. Bronchiolitis. Recommendations for diagnosis, monitoring and management of children one to 24 months of age. Paediatrics and Child Health 2014, updated 2021.",
     url: "https://cps.ca/en/documents/position/bronchiolitis",
   },
   loeb: {
     id: "loeb-criteria",
     citation: "Loeb M, Bentley DW, Bradley S, et al. Development of minimum criteria for the initiation of antibiotics in residents of long-term-care facilities. Results of a consensus conference. Infection Control and Hospital Epidemiology 2001.",
     url: "https://pubmed.ncbi.nlm.nih.gov/11232875/",
+  },
+  niceVte: {
+    id: "nice-ng89",
+    citation: "National Institute for Health and Care Excellence. Venous thromboembolism in over 16s. Reducing the risk of hospital-acquired deep vein thrombosis or pulmonary embolism. NICE guideline NG89. 2018, updated 2019.",
+    url: "https://www.nice.org.uk/guidance/ng89",
   },
   cpsPain: {
     id: "cps-procedural-pain",
@@ -333,7 +338,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         options: ["1%", "3%", "5%", "10%", "15%"],
         correct: 3,
         explanation:
-          "The corrected negative likelihood ratio is 0.143 divided by 0.931, or 0.15. Pretest odds of 0.42 divided by 0.58 is 0.72. Multiplied by 0.15 this gives odds of 0.11, a probability of 10%. That matches the 10% fracture rate seen among the imaged negative children. Values of 1% to 5% come from the uncorrected sensitivity of 96%, which would falsely reassure. A value of 15% is the likelihood ratio read as a probability.",
+          "The corrected negative likelihood ratio is 0.143 divided by 0.931, or 0.15. Pretest odds of 0.42 divided by 0.58 is 0.72. Multiplied by 0.15 this gives odds of 0.11, a probability of 10%. That matches the 10% fracture rate seen among the imaged negative children. The uncorrected sensitivity of 96% gives a negative likelihood ratio of 0.05 and a probability near 4%, the source of the 3% and 5% options, which would falsely reassure, and 1% would need a far stronger test. A value of 15% is the likelihood ratio read as a probability.",
         keyFeature: { topic: "critical-appraisal", n: 3 },
         source: "users-guides",
       },
@@ -364,13 +369,13 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
     topic: "critical-appraisal",
     title: "Stepping down from IV antibiotics",
     stem:
-      "A 52-year-old man returns to the emergency department for a second dose of IV cefazolin for cellulitis of the left lower leg. Yesterday the redness had spread over 2 days. Today it has receded inside the marked border and his fever has settled. He has type 2 diabetes treated with metformin. IV access took 4 attempts yesterday. There is no fluctuance and no skin break between the toes. You review a fictional noninferiority trial of 1 000 adults with cellulitis who had improved after 24 hours of IV cefazolin. They were randomized to oral cephalexin at home or daily IV cefazolin to complete 7 days. The primary outcome was treatment failure at 14 days, with a noninferiority margin of 8 percentage points. In the IV group, 90 patients switched to oral therapy early because of IV access problems.",
+      "A 52-year-old man returns to the emergency department for a second dose of IV cefazolin for cellulitis of the left lower leg. Yesterday the redness had spread over 2 days. Today it has receded inside the marked border and his fever has settled. He has type 2 diabetes treated with metformin. IV access took 4 attempts yesterday. There is no fluctuance and no skin break between the toes. You review a fictional noninferiority trial of 1 000 adults with cellulitis who had improved after 24 hours of IV cefazolin. They were randomized to oral cephalexin at home or daily IV cefazolin to complete 7 days. The primary outcome was treatment failure at 14 days, with a noninferiority margin of 5 percentage points. In the IV group, 90 patients switched to oral therapy early because of IV access problems.",
     vitals: { temperature: "37.2°C oral", pulse: "84/minute", resp: "16/minute", bp: "138/84 mmHg", o2sat: "98% on room air", weight: "96 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        update: "By intention to treat, failure occurred in 8.0% of the oral group and 7.0% of the IV group, a difference of 1.0 percentage point (95% CI -2.4 to 4.4).",
+        update: "By intention to treat, failure occurred in 8.0% of the oral group and 7.0% of the IV group, a difference of 1.0 percentage point (95% CI -2.3 to 4.3).",
         prompt: "Which of the following best interprets the intention-to-treat result against the prespecified margin?",
         options: [
           "Inconclusive, as the interval crosses zero",
@@ -381,7 +386,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "The whole 95% interval, from 2.4 points fewer failures to 4.4 points more, lies below the 8 point margin, so noninferiority is shown by intention to treat. The interval also includes zero, so oral therapy is not shown to be better. Crossing zero is expected in a noninferiority trial and does not make it inconclusive. The question is whether the upper limit clears the margin. A higher point estimate of failure does not show inferiority when the interval excludes the margin. The confidence interval carries more information than a p value here.",
+          "The whole 95% interval, from 2.3 points fewer failures to 4.3 points more, lies below the 5 point margin, so noninferiority is shown by intention to treat. The interval also includes zero, so oral therapy is not shown to be better. Crossing zero is expected in a noninferiority trial and does not make it inconclusive. The question is whether the upper limit clears the margin. A higher point estimate of failure does not show inferiority when the interval excludes the margin. The confidence interval carries more information than a p value here.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "consort-noninferiority",
       },
@@ -405,7 +410,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Per protocol, failure occurred in 8.3% of the oral group and 4.8% of the IV group, a difference of 3.5 percentage points (95% CI -2.1 to 9.1).",
+        update: "Per protocol, failure occurred in 8.0% of the oral group and 5.1% of the IV group, a difference of 2.9 percentage points (95% CI -0.3 to 6.1).",
         prompt: "Which of the following conclusions is best supported by the two analyses taken together?",
         options: [
           "Noninferiority not robust across analyses",
@@ -416,7 +421,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Per protocol, the upper limit of 9.1 points crosses the 8 point margin, so noninferiority is not shown in that analysis, though it is shown by intention to treat. When the two disagree, the claim of noninferiority is weaker than the abstract may suggest. Inferiority is not shown either, since the interval includes zero and runs well below the margin. Equivalence needs the interval inside a margin on both sides, which fails here. Neither analysis suggests that oral therapy is better, since both point estimates favour IV therapy.",
+          "Per protocol, the upper limit of 6.1 points crosses the 5 point margin, so noninferiority is not shown in that analysis, though it is shown by intention to treat. When the two disagree, the claim of noninferiority is weaker than the abstract may suggest. Inferiority is not shown either, since the lower limit of -0.3 points sits well below the margin. Equivalence needs the interval inside a margin on both sides, which fails here. Neither analysis suggests that oral therapy is better, since both point estimates favour IV therapy.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "consort-noninferiority",
       },
@@ -433,7 +438,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "He is improving after 24 hours of IV therapy, has no abscess and has poor IV access, so oral step-down with early review suits him. Even the least favourable per-protocol limit allows up to 9 more failures per 100, and early review catches those who fail. Admission or a PICC line for daily IV therapy adds line risks for a benefit the trial could not confirm. Stopping antibiotics after one day undertreats cellulitis. He is responding to cefazolin and has no risk factor for MRSA given in the case, so vancomycin is not needed.",
+          "He is improving after 24 hours of IV therapy, has no abscess and has poor IV access, so oral step-down with early review suits him. Even the least favourable per-protocol limit allows up to 6 more failures per 100, and early review catches those who fail. Admission or a PICC line for daily IV therapy adds line risks for a benefit the trial could not confirm. Stopping antibiotics after one day undertreats cellulitis. He is responding to cefazolin and has no risk factor for MRSA given in the case, so vancomycin is not needed.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
         source: "users-guides",
       },
@@ -475,7 +480,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         options: ["4", "7", "10", "25", "40"],
         correct: 3,
         explanation:
-          "The absolute risk reduction is 14% minus 10%, or 4 percentage points. The number needed to treat is 1 divided by 0.04, which is 25. The relative risk reduction is 4 divided by 14, or 29%, and its inverse gives about 4, a common error. The values 7 and 10 are the inverses of each group's delirium rate, not of the difference between them. A number needed to treat of 40 would need an absolute reduction of only 2.5 percentage points.",
+          "The absolute risk reduction is 14% minus 10%, or 4 percentage points. The number needed to treat is 1 divided by 0.04, which is 25. The relative risk reduction is 4 divided by 14, or 29%, and its inverse gives 3.5, or about 4, a common error. The values 7 and 10 are the inverses of each group's delirium rate, not of the difference between them. A number needed to treat of 40 would need an absolute reduction of only 2.5 percentage points.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
@@ -547,7 +552,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         options: ["0.15", "2.0", "2.4", "6.7", "15"],
         correct: 1,
         explanation:
-          "The risk of a repeat fall was 60 of 200, or 30%, with a benzodiazepine and 90 of 600, or 15%, without. The relative risk is 0.30 divided by 0.15, which is 2.0. The odds ratio is 60 times 510 divided by 140 times 90, or 2.4, which overstates the relative risk when the outcome is this common. The value 0.15 is the absolute risk difference as a proportion, and 15 is the same difference in percentage points. The value 6.7 is the number needed to harm.",
+          "The risk of a repeat fall was 60 of 200, or 30%, with a benzodiazepine and 90 of 600, or 15%, without. The relative risk is 0.30 divided by 0.15, which is 2.0. The odds ratio is 60 times 510 divided by 140 times 90, or 2.4, which overstates the relative risk when the outcome is this common. The value 0.15 is the absolute risk difference as a proportion, and 15 is the same difference in percentage points. The value 6.7 is the number needed to harm before rounding up to 7.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
@@ -623,7 +628,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "The interval of 2 to 6 mm is narrow and excludes zero, so the effect is real. Even its upper limit of 6 mm is well below the 13 mm that patients notice. A very large trial can make a trivial difference statistically significant. Chance is an unlikely explanation with p below 0.001. Size makes a trial more reliable, not less. A small p value measures how surprising the result would be if the drug did nothing, not how large or useful the effect is.",
+          "The interval of 2 to 6 mm is narrow and excludes zero, so chance is an unlikely explanation. Even its upper limit of 6 mm is well below the 13 mm that patients notice. A very large trial can make a trivial difference statistically significant. Chance is an unlikely explanation with p below 0.001. Size makes a trial more reliable, not less. A small p value measures how surprising the result would be if the drug did nothing, not how large or useful the effect is.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "users-guides",
       },
@@ -762,7 +767,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
     title: "Mortality before and after an alert",
     stem:
       "A 57-year-old woman presents to the emergency department with 2 days of fever, dysuria and right flank pain. She has type 2 diabetes. She has right costovertebral angle tenderness and warm extremities. Her lactate is 3.4 mmol/L, and the electronic triage sepsis alert fires. The alert was introduced after a fictional study at your hospital. In the 12 months before the alert, 30-day mortality among 1 000 adults coded with sepsis was 18%. In the 12 months after, among 1 300 adults, it was 15%. During the second year the hospital also opened an ICU outreach team and adopted a broader sepsis definition for coding. The authors conclude that the alert saves lives.",
-    vitals: { temperature: "38.9°C oral", pulse: "118/minute", resp: "24/minute", bp: "92/58 mmHg", o2sat: "95% on room air", weight: "78 kg" },
+    vitals: { temperature: "38.9°C oral", pulse: "118/minute", resp: "24/minute", bp: "86/54 mmHg", o2sat: "95% on room air", weight: "78 kg" },
     questions: [
       {
         id: "q1",
@@ -809,7 +814,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         options: ["3%", "17%", "18%", "33%", "83%"],
         correct: 1,
         explanation:
-          "Mortality fell from 18% to 15%, an absolute reduction of 3 percentage points. The relative risk reduction is 3 divided by 18, or 16.7%, which rounds to 17%. The relative risk is 15 divided by 18, or 0.83, so 83% is the relative risk expressed as a percentage, not the reduction. The value 3% is the absolute reduction and 18% is the baseline mortality. The value 33 is the number needed to treat before rounding up to 34.",
+          "Mortality fell from 18% to 15%, an absolute reduction of 3 percentage points. The relative risk reduction is 3 divided by 18, or 16.7%, which rounds to 17%. The relative risk is 15 divided by 18, or 0.83, so 83% is the relative risk expressed as a percentage, not the reduction. The value 3% is the absolute reduction and 18% is the baseline mortality. The value 33% is the number needed to treat, 33.3 before rounding up to 34, read as a percentage.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
@@ -949,7 +954,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         ],
         correct: [0, 5],
         explanation:
-          "The rule was derived only in patients aged 16 or older, so its accuracy in a 20-month-old is unknown. Two of its predictors, amnesia and headache, depend on a verbal report that a toddler cannot give, so a score of zero may simply reflect missing information. Canadian sites, a community setting and a large sample do not limit its use here. His normal behaviour and single vomit are findings the rule scores, not reasons it fails. His GCS of 15 is within the rule's range.",
+          "The rule was derived only in patients aged 16 or older, so its accuracy in a 20-month-old is unknown. Two of its predictors, amnesia and headache, depend on a verbal report that a toddler cannot give, so a score of zero may simply reflect missing information. Canadian sites, a community setting and a large sample do not limit its use here. His normal behaviour and single vomit are findings, not reasons the rule fails. He is alert and playful, which fits the rule's GCS range of 13 to 15.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "mcginn-rules",
       },
@@ -995,7 +1000,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A prospectively derived and validated pediatric rule exists for children under 2 years, and it includes a non-frontal scalp hematoma as a predictor. It supports a choice between CT and observation, informed by his findings and his parent's preferences. The adult rule was never tested at his age and cannot assess his verbal predictors, so its low-risk result gives false reassurance. CT for every toddler with a hematoma exposes many children to radiation needlessly. MRI under sedation carries its own risks, and skull X-rays miss intracranial injury.",
+          "A prospectively derived and validated pediatric rule exists for children under 2 years. Its predictors include a non-frontal scalp hematoma and a fall of more than 0.9 m, and he has both. It supports a choice between CT and observation, informed by his findings and his parent's preferences. The adult rule was never tested at his age and cannot assess his verbal predictors, so its low-risk result gives false reassurance. CT for every toddler with a hematoma exposes many children to radiation needlessly. MRI under sedation carries its own risks, and skull X-rays miss intracranial injury.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
         source: "pecarn",
       },
@@ -1087,7 +1092,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
     title: "A low marker and a worrying thigh",
     stem:
       "A 46-year-old man presents to the emergency department with 24 hours of worsening right thigh pain. He scraped the thigh on a fence 2 days ago. He has type 2 diabetes treated with metformin. He has 10 cm of erythema over the lateral thigh with tense edema extending beyond it. The pain is severe and out of proportion to the skin findings. There is no crepitus. A fictional serum biomarker, marker N, is 0.6 ng/mL. A fictional study of marker N in 400 adults with suspected necrotizing soft tissue infection reports an area under the ROC curve of 0.80. Surgical exploration was the reference standard for all patients.",
-    vitals: { temperature: "38.6°C oral", pulse: "118/minute", resp: "22/minute", bp: "98/60 mmHg", o2sat: "97% on room air", weight: "104 kg" },
+    vitals: { temperature: "38.6°C oral", pulse: "118/minute", resp: "22/minute", bp: "88/56 mmHg", o2sat: "97% on room air", weight: "104 kg" },
     questions: [
       {
         id: "q1",
@@ -1109,7 +1114,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         options: ["5%", "6%", "11%", "21%", "34%"],
         correct: 2,
         explanation:
-          "His result is below the 1.0 ng/mL cutoff, where the negative likelihood ratio is 0.125. Pretest odds of 1.0 multiplied by 0.125 give odds of 0.125, a probability of 11% (0.125 divided by 1.125). Multiplying the 50% probability directly by 0.125 gives 6%, a common error. The value 5% is the false negative rate. The values 21% and 34% use the likelihood ratios at the higher cutoffs, which do not apply to a result of 0.6 ng/mL.",
+          "His result is below the 1.0 ng/mL cutoff, where the negative likelihood ratio is 0.125. Pretest odds of 1.0 multiplied by 0.125 give odds of 0.125, a probability of 11% (0.125 divided by 1.125). Multiplying the 50% probability directly by 0.125 gives 6%, a common error. The value 5% is the false negative rate. The values 21% and 34% use the negative likelihood ratios at the 2.5 and 5.0 ng/mL cutoffs. His result is below those cutoffs too, but they group it with values up to 2.5 or 5.0 ng/mL and discard the fact that it is below 1.0 ng/mL.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
@@ -1187,7 +1192,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         options: ["High certainty", "Indeterminate certainty", "Low certainty", "Moderate certainty", "Very low certainty"],
         correct: 4,
         explanation:
-          "Randomized trials start at high certainty in GRADE. Here serious risk of bias, inconsistency, indirectness and imprecision each lower it by at least one level, so the evidence ends at very low. That means the true effect may well differ substantially from the pooled estimate. Moderate or low certainty would fit only one or two concerns. High certainty needs randomized evidence with no serious limitation. GRADE has four levels and can rate any body of evidence, so indeterminate is not one of its categories.",
+          "Randomized trials start at high certainty in GRADE. Here serious risk of bias, inconsistency, indirectness and imprecision each lower it by at least one level, so the evidence ends at very low. That means the true effect may well differ substantially from the pooled estimate. Moderate or low certainty would fit only one or two concerns. High certainty needs randomized evidence with no serious limitation. Indeterminate is not a GRADE level. GRADE rates certainty only as high, moderate, low or very low.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "grade-2008",
       },
@@ -1271,7 +1276,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "A per-protocol analysis comparing patients who did and did not actually receive a block reports a hazard ratio of 0.62 (95% CI 0.41 to 0.93).",
+        update: "A per-protocol analysis that excludes every patient who did not receive the allocated treatment reports a hazard ratio of 0.62 (95% CI 0.41 to 0.93).",
         prompt: "Which of the following best explains why this per-protocol result is less trustworthy than the intention-to-treat result?",
         options: [
           "Intention to treat inflates the effect",
@@ -1282,7 +1287,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "Once patients are grouped by the treatment they received, the comparison is no longer randomized. Blocks were missed when no trained physician was on shift, perhaps at night or on busy days, and given by anesthesia to selected patients. So those who got blocks may differ in prognosis. Intention to treat keeps randomization intact and tends to dilute, not inflate, the effect. A per-protocol analysis handles crossover by moving or dropping patients, and fewer events affect precision, not bias. A hazard ratio does not overstate small effects.",
+          "Dropping patients who did not receive their allocated treatment breaks the groups that randomization created, so receipt of the block, not chance, now decides who is compared. Blocks were missed when no trained physician was on shift, perhaps at night or on busy days, and anesthesia chose which usual care patients to block. So the patients left in each group may differ in prognosis. Intention to treat keeps randomization intact and tends to dilute, not inflate, the effect. A per-protocol analysis does not ignore crossover. It removes the patients who crossed over. Fewer events affect precision, not bias. A hazard ratio does not overstate small effects.",
         keyFeature: { topic: "critical-appraisal", n: 1 },
         source: "consort-2025",
       },
@@ -1432,14 +1437,14 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
           "Birth at 32 weeks",
           "Crackles on examination",
           "First episode of bronchiolitis",
-          "Low-grade fever",
           "Oxygen saturation of 92%",
           "Sex of the infant",
+          "Temperature of 37.9°C",
           "Three days of symptoms",
         ],
         correct: [0, 1],
         explanation:
-          "The trial enrolled infants aged 3 to 12 months and excluded those born before 36 weeks. At 7 weeks and born at 32 weeks, he falls outside both limits. Young and premature infants are also the ones at highest risk of apnea and severe disease, so the drug's effect in them cannot be assumed. Crackles, low-grade fever, a saturation of 92% and 3 days of symptoms are typical of bronchiolitis and fit the trial population. A first episode matches its entry criteria, and sex was not an eligibility criterion.",
+          "The trial enrolled infants aged 3 to 12 months and excluded those born before 36 weeks. At 7 weeks and born at 32 weeks, he falls outside both limits. Young and premature infants are also the ones at highest risk of apnea and severe disease, so the drug's effect in them cannot be assumed. Crackles, a temperature of 37.9°C, a saturation of 92% and 3 days of symptoms are typical of bronchiolitis and fit the trial population. A first episode matches its entry criteria, and sex was not an eligibility criterion.",
         keyFeature: { topic: "critical-appraisal", n: 4 },
         source: "users-guides",
       },
@@ -1520,12 +1525,12 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "His prior VTE raises his risk enough that about 1 in 21 like him avoids a VTE with prophylaxis, against about 1 in 250 who has a major bleed. That balance favours prophylactic-dose LMWH for as long as he is casted, the regimen the trial tested. No prophylaxis ignores his much higher baseline risk. A stocking cannot be worn under a below-knee cast on the injured leg. Rivaroxaban 20 mg daily is a treatment dose, and warfarin to an INR of 2 to 3 is full anticoagulation, so both add bleeding risk and neither was tested in the trial.",
+          "His prior VTE raises his risk enough that about 1 in 21 like him avoids a VTE with prophylaxis, against about 1 in 250 who has a major bleed. That balance favours prophylactic-dose LMWH for as long as he is casted, the regimen the trial tested. It also matches NICE guidance to consider LMWH during lower limb immobilization when the risk of VTE outweighs the risk of bleeding. No prophylaxis ignores his much higher baseline risk. A stocking cannot be worn under a below-knee cast on the injured leg. Rivaroxaban 20 mg daily is a treatment dose, and warfarin to an INR of 2 to 3 is full anticoagulation, so both add bleeding risk and neither was tested in the trial.",
         keyFeature: { topic: "critical-appraisal", n: 3 },
-        source: "users-guides",
+        source: "nice-ng89",
       },
     ],
-    sources: [S.ug],
+    sources: [S.ug, S.niceVte],
     ...META,
   },
 
@@ -1573,17 +1578,17 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         prompt: "Which of the following findings, if present, would support starting antibiotics for urinary tract infection in a resident like her?",
         options: [
           "Change in urine colour",
-          "Costovertebral angle tenderness",
-          "Fever of 38.2°C",
+          "Fever of 38.2°C with flank tenderness",
+          "Fever of 38.2°C with new cough",
+          "Fever of 38.2°C with new urgency",
           "Foul-smelling urine",
           "Increased confusion alone",
           "New onset of dysuria",
           "Positive nitrite on dipstick",
-          "Reduced oral intake",
         ],
-        correct: [1, 2, 5],
+        correct: [1, 3, 6],
         explanation:
-          "Consensus minimum criteria for residents without a catheter accept acute dysuria alone, or fever with a localizing sign such as costovertebral angle tenderness or new urinary urgency or frequency. Those findings raise the probability of true infection. A change in urine colour or smell, reduced intake and confusion alone are common and nonspecific in residents with asymptomatic bacteriuria. A positive nitrite, like pyuria, reflects bacteriuria rather than symptomatic infection.",
+          "The consensus minimum criteria for a resident without a catheter accept acute dysuria alone, or fever above 37.9°C with at least one urinary sign, such as costovertebral angle (flank) tenderness or new urgency. Fever alone does not meet them. Fever with a new cough points to a respiratory source, not the urinary tract. A change in urine colour or smell and confusion alone are common and nonspecific in residents with asymptomatic bacteriuria. A positive nitrite, like pyuria, reflects bacteriuria rather than symptomatic infection.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
         source: "loeb-criteria",
       },
@@ -1721,7 +1726,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "In a paired comparison, both tests are applied to the same patients against the same reference, so differences in accuracy cannot come from differences in who was tested. That is the most valid way to compare two tests. Blinding readers to the CT result is a separate design step. Pairing does not double the sample, and it still needs CT as the reference for every patient. Consecutive enrolment is still needed to avoid spectrum bias.",
+          "In a paired comparison, both tests are applied to the same patients against the same reference, so differences in accuracy cannot come from differences in who was tested. That makes the comparison between the two tests fair. Blinding readers to the CT result is a separate design step. Pairing does not double the sample, and it still needs CT as the reference for every patient. Consecutive enrolment is still needed to avoid spectrum bias.",
         keyFeature: { topic: "critical-appraisal", n: 1 },
         source: "stard-2015",
       },
@@ -1750,7 +1755,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         options: ["20%", "48%", "72%", "90%", "92%"],
         correct: 4,
         explanation:
-          "The positive likelihood ratio of POCUS is 0.90 divided by 0.019 (6 of 320), or 48. Pretest odds are 20 divided by 80, or 0.25. Multiplied by 48 this gives odds of 12, a probability of 92% (12 divided by 13). A lung point makes this even more certain in practice. The value 90% is the sensitivity, not a post-test probability, and 48 is the likelihood ratio itself. The value 20% ignores the result.",
+          "The positive likelihood ratio of POCUS is 0.90 divided by 0.019 (6 of 320), or 48. Pretest odds are 20 divided by 80, or 0.25. Multiplied by 48 this gives odds of 12, a probability of 92% (12 divided by 13). A lung point makes this even more certain in practice. The value 90% is the sensitivity, not a post-test probability, and 48 is the likelihood ratio itself. The value 72% is the count of true positive scans read as a percentage, and 20% ignores the result.",
         keyFeature: { topic: "critical-appraisal", n: 2 },
         source: "users-guides",
       },
