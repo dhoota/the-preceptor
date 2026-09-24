@@ -1,0 +1,1325 @@
+// DRAFT. Written for exam practice only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { KeyItem, Samp, UnacceptableItem } from "@/engine/samp";
+import type { Source } from "@/engine/types";
+
+const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
+
+const k = (id: string, text: string, ...match: string[]): KeyItem => ({ id, text, match });
+const no = (text: string, ...match: string[]): UnacceptableItem => ({ text, match });
+const harm = (text: string, ...match: string[]): UnacceptableItem => ({ text, match, dangerous: true });
+
+const S = {
+  sogcEctopic: {
+    id: "sogc-ectopic",
+    citation:
+      "Po L, et al. Guideline No. 414. Management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. SOGC Clinical Practice Guideline. J Obstet Gynaecol Can. 2021.",
+  },
+  sogcRh: {
+    id: "sogc-rh",
+    citation: "Fung-Kee-Fung K, Wong K, Walsh J, Hamel C, Clarke G. Guideline No. 448. Prevention of Rh D alloimmunization. J Obstet Gynaecol Can. 2024. 46(4):102449.",
+  },
+  sogcGtd: {
+    id: "sogc-gtd",
+    citation: "Eiriksson L, Dean E, Sebastianelli A, et al. Guideline No. 408. Management of gestational trophoblastic diseases. SOGC and GOC Clinical Practice Guideline. J Obstet Gynaecol Can. 2021. 43(1):91 to 105.",
+  },
+  acogEctopic: {
+    id: "acog-ectopic",
+    citation: "American College of Obstetricians and Gynecologists. Practice Bulletin No. 193. Tubal ectopic pregnancy. Obstet Gynecol. 2018.",
+  },
+  acogEpl: {
+    id: "acog-epl",
+    citation: "American College of Obstetricians and Gynecologists. Practice Bulletin No. 200. Early pregnancy loss. Obstet Gynecol. 2018.",
+  },
+  nice: {
+    id: "nice-ng126",
+    citation: "National Institute for Health and Care Excellence. NG126. Ectopic pregnancy and miscarriage. Diagnosis and initial management.",
+  },
+  doubilet: {
+    id: "doubilet",
+    citation: "Doubilet PM, et al. Diagnostic criteria for nonviable pregnancy early in the first trimester. N Engl J Med. 2013.",
+  },
+  phacSti: {
+    id: "phac-sti",
+    citation: "Public Health Agency of Canada. Canadian Guidelines on Sexually Transmitted Infections. Chlamydia and gonorrhea guides, including the December 2024 update to gonorrhea treatment.",
+  },
+  rosen: {
+    id: "rosen",
+    citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapter on acute complications of pregnancy.",
+  },
+} satisfies Record<string, Source>;
+
+const RHIG300 = k("rhig300", "Rh immune globulin 300 mcg (1500 IU) IM or IV within 72 hours", "300 mcg", "300mcg", "300 microgram", "1500 iu", "1500 unit", "300 ug");
+const RHIG120 = k("rhig120", "Rh immune globulin 120 mcg (600 IU) IM, acceptable before 12 weeks", "120 mcg", "120mcg", "120 microgram", "600 iu", "600 unit");
+const RH_BAD = [no("Kleihauer Betke test to calculate the dose", "kleihauer", "betke"), no("Rh immune globulin 50 mcg", "50 mcg")];
+/** SOGC Guideline No. 448 (2024): before 8 weeks, recommends not giving RhIG for threatened, spontaneous or induced abortion, ectopic or molar pregnancy. */
+const RH_NOT = k(
+  "rhnot",
+  "Rh immune globulin is not routinely required at this gestation under current SOGC guidance",
+  "not required", "not needed", "not indicated", "not recommended", "not routinely", "no rhig", "no rh immune", "no winrho", "no anti d",
+  "withhold rhig", "withhold rh immune", "hold rhig", "not give", "omit rhig", "omit rh immune",
+);
+/** Between 8 and 12 weeks SOGC suggests not giving RhIG, but it may be considered for a risk averse patient. */
+const RH_OPTIONAL = k(
+  "rhoptional",
+  "Withholding Rh immune globulin is reasonable between 8 and 12 weeks, after shared decision making",
+  "not required", "not needed", "not indicated", "not recommended", "not routinely", "no rhig", "no rh immune", "no winrho", "no anti d",
+  "withhold rhig", "withhold rh immune", "hold rhig", "not give", "omit rhig", "omit rh immune", "withholding",
+);
+const RH_EARLY_BAD = [
+  ...RH_BAD,
+  no("Routine Rh immune globulin before 8 weeks", "300 mcg", "300mcg", "1500 iu", "120 mcg", "120mcg", "600 iu", "give rhig", "give winrho", "give rh immune"),
+];
+
+export const FIRST_TRIMESTER_BLEEDING_SAMPS: Samp[] = [
+  {
+    id: "first-trimester-bleeding-01",
+    topic: "first-trimester-bleeding",
+    alsoTopics: ["shock"],
+    title: "Collapse at work",
+    stem:
+      "A 27 year old woman is brought by EMS after fainting at work. Her last menstrual period was 7 weeks ago. She has had one day of spotting and lower abdominal pain that is now diffuse, with pain at the tip of her right shoulder. HR 124, BP 86/54, RR 24, T 36.4 C, SpO2 99% on room air. She is pale and diaphoretic. A urine pregnancy test is positive.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE actions you would take in the first 5 minutes.",
+        accept: [
+          k("iv", "Two large bore IV lines", "large bore", "two iv", "2 iv", "iv access"),
+          k("blood", "Crossmatch and release of uncrossmatched O negative blood", "crossmatch", "cross match", "o negative", "o neg", "uncrossmatched", "type and screen"),
+          k("mhp", "Activate the massive hemorrhage protocol", "massive hemorrhage", "massive transfusion", "mtp", "mhp"),
+          k("pocus", "Point of care ultrasound for free fluid", "pocus", "fast", "ultrasound", "bedside"),
+          k("gyn", "Stat gynecology call for the operating room", "gynecology", "gynaecology", "obstetric", "operating room"),
+          k("monitor", "Cardiac monitor, oxygen and frequent vitals", "monitor", "oxygen"),
+          k("labs", "CBC, blood group and coagulation studies", "cbc", "blood group", "coagulation", "hemoglobin"),
+        ],
+        explanation:
+          "A pregnant patient with syncope, hypotension and shoulder tip pain has a ruptured ectopic until proven otherwise. Resuscitation, blood and a surgeon are mobilized in parallel. Bedside ultrasound confirms hemoperitoneum within minutes.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
+        source: "rosen",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        update: "Point of care ultrasound shows free fluid in the hepatorenal space and no intrauterine pregnancy.",
+        prompt: "Which is the most appropriate next step? Select one.",
+        options: [
+          "Emergency gynecology for immediate surgery",
+          "Formal pelvic ultrasound by radiology",
+          "Quantitative beta hCG, then decide on management",
+          "Methotrexate 50 mg/m2 IM",
+          "CT abdomen and pelvis with contrast",
+        ],
+        correct: 0,
+        explanation:
+          "Hemoperitoneum reaching the hepatorenal space with shock and a positive pregnancy test needs the operating room. A formal scan, quantitative hCG or CT only delays definitive hemorrhage control. Methotrexate is contraindicated with rupture or instability.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q3",
+        kind: "menu",
+        select: 2,
+        update: "After 1 litre of crystalloid she has HR 130 and BP 78/40. The operating room will be ready in 15 minutes.",
+        prompt: "Which TWO are the most appropriate resuscitation choices now? Select TWO.",
+        options: [
+          "Uncrossmatched O Rh D negative red cells",
+          "A further 3 litres of normal saline",
+          "Norepinephrine infusion to a MAP of 65",
+          "Activate the massive hemorrhage protocol",
+          "Wait for fully crossmatched blood",
+          "Albumin 25%",
+          "Vasopressin infusion",
+        ],
+        correct: [0, 3],
+        explanation:
+          "Hemorrhagic shock needs blood, not more crystalloid or vasopressors. Uncrossmatched O Rh D negative red cells protect a patient of childbearing age from sensitization. A massive hemorrhage protocol provides balanced products as bleeding continues.",
+        keyFeature: { topic: "shock", n: 3 },
+        source: "rosen",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 1,
+        update: "Her blood group returns as A Rh D negative with a negative antibody screen.",
+        prompt: "She is 7 weeks by dates. What is your plan for Rh immune globulin? If you would give it, include the dose and route.",
+        accept: [RH_NOT],
+        unacceptable: [...RH_EARLY_BAD, no("Not needed because the pregnancy is ectopic", "because ectopic", "because it is ectopic")],
+        explanation:
+          "Determining Rh status is still required. The 2024 SOGC guideline recommends not giving Rh immune globulin before 8 weeks for threatened, spontaneous or induced abortion, ectopic or molar pregnancy, because fetal red cell exposure is below the sensitization threshold. From 12 weeks, 300 mcg IM or IV within 72 hours is suggested for the same events. The reason is gestational age, not the ectopic location. Local policy may differ during the transition.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-rh",
+      },
+    ],
+    sources: [S.rosen, S.sogcEctopic, S.sogcRh],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-02",
+    topic: "first-trimester-bleeding",
+    title: "Heavy period and dizziness",
+    stem:
+      "A 22 year old woman comes in with what she calls the worst period of her life. It started yesterday with crampy lower abdominal pain. Her cycles are irregular and she uses no contraception. She was triaged as a low acuity menstrual complaint. Lying down she has HR 92, BP 112/70, RR 16, T 36.9 C. On standing she has HR 128, BP 98/62 and feels faint. She is pale, her hands are cool and capillary refill is 3 seconds.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO findings in this presentation that suggest early shock.",
+        accept: [
+          k("ortho", "Orthostatic heart rate rise of more than 30", "orthostatic", "postural", "heart rate rise", "hr rise", "standing", "128"),
+          k("presyncope", "Feeling faint on standing", "faint", "presyncope", "lightheaded", "dizzy", "dizziness"),
+          k("pale", "Pallor", "pale", "pallor"),
+          k("cool", "Cool hands", "cool", "cold"),
+          k("crt", "Capillary refill of 3 seconds", "capillary refill", "cap refill"),
+          k("hr", "Resting heart rate above 90", "resting heart rate", "resting hr", "tachycardia", "92"),
+        ],
+        unacceptable: [no("Normal blood pressure excludes shock", "excludes shock", "rules out shock")],
+        explanation:
+          "Young women maintain blood pressure until late in hemorrhage. A postural heart rate rise over 30 or symptoms on standing suggest significant volume loss. Pallor, cool extremities and slow refill add to the picture. A normal supine blood pressure is falsely reassuring.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
+        source: "rosen",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 1,
+        prompt: "What is the single most important test to order now?",
+        accept: [k("hcg", "Urine or serum pregnancy test (beta hCG)", "hcg", "pregnancy test", "bhcg", "beta hcg", "b hcg")],
+        explanation:
+          "Every patient of reproductive age with vaginal bleeding needs a pregnancy test, whatever the contraception or cycle history. A positive result reframes the bleeding and puts ectopic pregnancy first.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        update: "The urine pregnancy test is positive. Bedside ultrasound shows no intrauterine pregnancy and a moderate amount of free fluid in the pouch of Douglas. There is no fluid in the hepatorenal space.",
+        prompt: "List THREE next steps.",
+        accept: [
+          k("gyn", "Urgent gynecology consult", "gynecology", "gynaecology", "gyne", "obstetric"),
+          k("iv", "Two large bore IVs", "large bore", "iv access", "two iv", "2 iv"),
+          k("blood", "Type and screen or crossmatch", "type and screen", "crossmatch", "cross match", "group and screen"),
+          k("quant", "Quantitative beta hCG", "quantitative", "serum hcg", "quant"),
+          k("cbc", "CBC", "cbc", "hemoglobin", "complete blood count"),
+          k("npo", "Keep NPO", "npo", "nil by mouth", "fasting"),
+          k("reassess", "Frequent reassessment of vitals and repeat ultrasound", "reassess", "repeat ultrasound", "repeat pocus", "frequent vital"),
+        ],
+        unacceptable: [
+          harm("Discharge with outpatient follow up", "discharge home", "send home", "discharge with follow up", "outpatient ultrasound"),
+          no("Discharge", "discharge"),
+        ],
+        explanation:
+          "A positive test, an empty uterus and pelvic free fluid in a woman with orthostatic changes is a ruptured ectopic until proven otherwise. She needs gynecology now, blood available and close monitoring. Discharge would be dangerous.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        update: "Her quantitative beta hCG is 680 IU/L. The junior resident says the level is too low to be an ectopic and suggests a miscarriage.",
+        prompt: "List TWO reasons the resident's reasoning is wrong.",
+        accept: [
+          k("anylevel", "Ectopic pregnancy can occur and rupture at any hCG level, including low levels", "any level", "low level", "low hcg", "any hcg", "rupture at"),
+          k("single", "A single hCG value cannot locate a pregnancy", "single", "one value", "location"),
+          k("dz", "Being below the discriminatory zone means only that an IUP may not yet be visible", "discriminatory"),
+          k("fluid", "Free fluid with an empty uterus and positive hCG points to ectopic", "free fluid", "empty uterus", "fluid"),
+          k("clinical", "Her orthostatic instability outweighs the hCG number", "orthostatic", "unstable", "instability", "clinical"),
+        ],
+        explanation:
+          "There is no hCG level below which ectopic pregnancy is excluded, and ruptures occur at low values. The discriminatory zone only tells you when an intrauterine pregnancy should be visible. Clinical findings and free fluid drive management here.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "acog-ectopic",
+      },
+    ],
+    sources: [S.rosen, S.sogcEctopic, S.acogEctopic],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-03",
+    topic: "first-trimester-bleeding",
+    title: "Spotting at six weeks",
+    stem:
+      "A 31 year old woman, G2P1, is 6 weeks by a certain last menstrual period. She has had light spotting and mild crampy pain for one day. HR 78, BP 118/72, with no orthostatic change. Speculum exam shows a small amount of blood in the vault and a closed os. Bimanual exam is normal with no adnexal tenderness or mass. Transvaginal ultrasound shows no intrauterine or extrauterine pregnancy and no free fluid. Quantitative beta hCG is 1100 IU/L. Her blood group is O Rh D negative with a negative antibody screen.",
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which interpretation is most accurate? Select one.",
+        options: [
+          "Complete miscarriage",
+          "Pregnancy of unknown location. An early intrauterine pregnancy, a failing pregnancy or an ectopic are all possible",
+          "Ectopic pregnancy is excluded because the hCG is below the discriminatory zone",
+          "Normal early intrauterine pregnancy",
+          "Ectopic pregnancy confirmed. Methotrexate is indicated",
+        ],
+        correct: 1,
+        explanation:
+          "With no pregnancy seen on ultrasound this is a pregnancy of unknown location. At 1100 IU/L an intrauterine pregnancy may not yet be visible, but a low value does not exclude ectopic. Complete miscarriage cannot be diagnosed without a previously documented intrauterine pregnancy.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE parts of her follow up plan.",
+        accept: [
+          k("repeat", "Repeat quantitative hCG in 48 hours", "48 hour", "repeat hcg", "serial hcg", "2 day", "repeat beta"),
+          k("samelab", "Use the same laboratory for serial hCG", "same lab", "same laboratory"),
+          k("us", "Repeat ultrasound when hCG rises or in about a week", "repeat ultrasound", "repeat us", "repeat scan", "ultrasound in"),
+          k("clinic", "Early pregnancy assessment clinic or gynecology follow up", "early pregnancy", "clinic", "gynecology", "gynaecology", "epac"),
+          k("return", "Clear return precautions", "return", "come back"),
+          k("contact", "Confirm a reliable phone number for results", "phone", "contact number"),
+        ],
+        explanation:
+          "A stable pregnancy of unknown location is followed with serial hCG 48 hours apart and repeat ultrasound. A rise of at least about 35% in 48 hours supports a viable intrauterine pregnancy. A plateau suggests an ectopic or failing pregnancy. Loss to follow up is the main danger.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE symptoms that should bring her straight back.",
+        accept: [
+          k("pain", "Severe or worsening abdominal or pelvic pain", "pain"),
+          k("shoulder", "Shoulder tip pain", "shoulder"),
+          k("faint", "Fainting or dizziness", "faint", "dizzy", "dizziness", "syncope", "lightheaded"),
+          k("bleeding", "Heavy bleeding, soaking 2 pads an hour for 2 hours", "heavy bleeding", "soaking", "pad", "heavy"),
+          k("fever", "Fever or foul discharge", "fever", "foul"),
+        ],
+        explanation:
+          "Rupture presents with new pain, shoulder tip pain from diaphragm irritation or syncope. Heavy bleeding can mean a miscarriage in progress. Written instructions help her act quickly.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
+        source: "nice-ng126",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 1,
+        prompt: "What is your plan for Rh immune globulin today? If you would give it, include the dose and route.",
+        accept: [RH_NOT],
+        unacceptable: RH_EARLY_BAD,
+        explanation:
+          "Determining Rh status is part of every first trimester bleeding assessment. At 6 weeks the 2024 SOGC guideline recommends not giving Rh immune globulin for threatened miscarriage or possible ectopic pregnancy. If her pregnancy continues, or if bleeding recurs after 12 weeks, 300 mcg is then indicated. A Kleihauer Betke test has no role in the first trimester.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-rh",
+      },
+    ],
+    sources: [S.sogcEctopic, S.nice, S.sogcRh],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-04",
+    topic: "first-trimester-bleeding",
+    title: "Pain on one side at seven weeks",
+    stem:
+      "A 29 year old woman is 7 weeks and 2 days by last menstrual period. She has 2 days of spotting and left lower quadrant pain. HR 84, BP 118/74, no orthostatic change. Speculum exam shows a small amount of blood and a closed os. Bimanual exam shows left adnexal tenderness without a palpable mass. Quantitative beta hCG is 4800 IU/L. The radiology ultrasound report reads: 6 mm intrauterine fluid collection without yolk sac or fetal pole. No adnexal mass seen. Trace free fluid.",
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which statement is most accurate? Select one.",
+        options: [
+          "The intrauterine fluid collection confirms an intrauterine pregnancy",
+          "Ectopic pregnancy is excluded because no adnexal mass is seen",
+          "These findings are concerning for ectopic pregnancy because the collection may be a pseudosac",
+          "These findings are normal for her dates",
+          "The hCG is too low for any pregnancy to be seen",
+        ],
+        correct: 2,
+        explanation:
+          "Above the discriminatory zone an intrauterine pregnancy should usually be visible. A fluid collection without a yolk sac does not confirm one and may be a pseudosac from an ectopic. Ultrasound often misses the ectopic itself, so a normal adnexa does not exclude it.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO ultrasound findings that would confirm an intrauterine pregnancy.",
+        accept: [
+          k("yolk", "Yolk sac within a gestational sac in the uterus", "yolk sac", "yolk"),
+          k("pole", "Fetal pole or embryo", "fetal pole", "embryo", "foetal pole"),
+          k("fh", "Embryonic cardiac activity", "cardiac activity", "heartbeat", "heart beat", "fetal heart", "flicker"),
+        ],
+        unacceptable: [no("Intrauterine fluid collection or gestational sac alone", "fluid collection", "sac alone", "double decidual")],
+        explanation:
+          "A yolk sac or embryo within the uterus confirms an intrauterine pregnancy. A sac like collection alone does not, and signs such as the double decidual sac are unreliable in ED hands. Point of care protocols require a yolk sac or fetal pole with a surrounding myometrial mantle.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "acog-ectopic",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO next steps in her management.",
+        accept: [
+          k("gyn", "Same day gynecology consult", "gynecology", "gynaecology", "gyne", "obstetric"),
+          k("repeat", "Repeat hCG in 48 hours", "repeat hcg", "48 hour", "serial hcg"),
+          k("us", "Repeat transvaginal ultrasound", "repeat ultrasound", "repeat us", "repeat scan", "repeat transvaginal"),
+          k("labs", "CBC, creatinine and liver enzymes in case methotrexate is chosen", "cbc", "creatinine", "liver", "ast", "alt"),
+          k("group", "Blood group and antibody screen", "blood group", "type and screen", "rh", "antibody screen"),
+        ],
+        unacceptable: [
+          harm("Discharge as a threatened miscarriage without follow up", "discharge home", "send home", "discharge as threatened", "discharge without follow"),
+          no("Threatened miscarriage", "threatened miscarriage"),
+        ],
+        explanation:
+          "This is a probable ectopic in a stable patient. Gynecology should decide between surgery, methotrexate or close observation. Baseline labs and serial hCG support that decision.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update: "Her blood group is B Rh D positive.",
+        prompt: "Which statement about Rh prophylaxis is correct? Select one.",
+        options: [
+          "Rh immune globulin 300 mcg IM is still indicated",
+          "Rh immune globulin 120 mcg IM is indicated before 12 weeks",
+          "Rh immune globulin is not required",
+          "A Kleihauer Betke test should guide the dose",
+          "Rh immune globulin should be given only if surgery is needed",
+        ],
+        correct: 2,
+        explanation:
+          "Rh immune globulin prevents sensitization only in Rh D negative patients. Checking Rh status is the key step, and an Rh D positive result ends the question.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-rh",
+      },
+    ],
+    sources: [S.sogcEctopic, S.acogEctopic, S.sogcRh],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-05",
+    topic: "first-trimester-bleeding",
+    title: "Pain after fertility treatment",
+    stem:
+      "A 34 year old woman is 7 weeks pregnant after IVF with transfer of two embryos. She has 6 hours of worsening right lower quadrant pain and light spotting. HR 108, BP 104/66, RR 18, T 37.0 C. Your bedside ultrasound shows an intrauterine gestational sac with a yolk sac and a fetal pole with cardiac activity. There is a small stripe of free fluid in the hepatorenal space.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 2,
+        prompt: "The resident says ectopic pregnancy is now excluded. List TWO reasons this is incorrect.",
+        accept: [
+          k("hetero", "Heterotopic pregnancy is much more common after IVF", "heterotopic", "ivf", "assisted reproduction", "art", "fertility"),
+          k("fluid", "Free fluid in the hepatorenal space suggests hemoperitoneum", "free fluid", "hepatorenal", "morison", "hemoperitoneum", "fluid"),
+          k("vitals", "Tachycardia and borderline blood pressure", "tachycardia", "108", "hypotension", "vital"),
+          k("pain", "Unilateral pain out of keeping with a normal pregnancy", "pain", "unilateral"),
+          k("two", "Two embryos were transferred", "two embryo", "2 embryo", "multiple embryo"),
+        ],
+        explanation:
+          "In spontaneous conception an intrauterine pregnancy almost excludes ectopic. After IVF heterotopic pregnancy occurs in up to about 1 in 100 pregnancies. Free fluid in the upper abdomen with tachycardia means bleeding that the intrauterine pregnancy does not explain.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE other risk factors for ectopic pregnancy you would ask about in any pregnant patient with bleeding.",
+        accept: [
+          k("prior", "Previous ectopic pregnancy", "previous ectopic", "prior ectopic", "ectopic before"),
+          k("tubal", "Tubal surgery or ligation", "tubal", "ligation", "salpingectomy"),
+          k("pid", "Pelvic inflammatory disease or chlamydia", "pid", "pelvic inflammatory", "chlamydia", "sti", "sexually transmitted"),
+          k("iud", "Pregnancy with an IUD in place", "iud", "intrauterine device", "coil"),
+          k("smoking", "Smoking", "smoking", "smoker"),
+          k("age", "Age over 35", "age"),
+          k("endo", "Endometriosis or previous pelvic surgery", "endometriosis", "pelvic surgery", "abdominal surgery"),
+          k("infert", "History of infertility", "infertility"),
+        ],
+        explanation:
+          "Tubal damage from infection or surgery, a prior ectopic and an IUD in situ all raise the proportion of pregnancies that are ectopic. Smoking and infertility add risk. Many women with ectopic pregnancy have no risk factor, so absence does not exclude it.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "acog-ectopic",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "Which is the most appropriate management? Select one.",
+        options: [
+          "Urgent gynecology for laparoscopy aiming to preserve the intrauterine pregnancy",
+          "Methotrexate 50 mg/m2 IM",
+          "Expectant management with repeat hCG in 48 hours",
+          "Discharge with fertility clinic follow up tomorrow",
+          "CT abdomen and pelvis with contrast",
+        ],
+        correct: 0,
+        explanation:
+          "A suspected heterotopic pregnancy with hemoperitoneum needs surgery. Methotrexate would end the desired intrauterine pregnancy. Serial hCG is useless because the intrauterine pregnancy drives the level.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        prompt: "While she waits for the operating room, list TWO early signs of worsening hemorrhage you would ask the nurse to watch for.",
+        accept: [
+          k("hr", "Rising heart rate", "heart rate", "tachycardia", "hr", "pulse"),
+          k("pp", "Narrowing pulse pressure", "pulse pressure"),
+          k("ortho", "Dizziness or orthostatic symptoms", "dizzy", "dizziness", "orthostatic", "lightheaded", "faint"),
+          k("mental", "Anxiety, restlessness or confusion", "anxiety", "restless", "confusion", "agitation", "mental status"),
+          k("skin", "Pallor, diaphoresis or cool skin", "pallor", "pale", "diaphoresis", "cool", "clammy"),
+          k("urine", "Falling urine output", "urine"),
+          k("pain", "Increasing abdominal or shoulder pain", "abdominal pain", "shoulder", "increasing pain"),
+          k("bp", "Falling blood pressure", "blood pressure", "bp", "hypotension"),
+        ],
+        explanation:
+          "Tachycardia, a narrowing pulse pressure and restlessness appear before hypotension in young patients. A falling blood pressure is a late sign. Repeat bedside ultrasound can show expanding free fluid.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
+        source: "rosen",
+      },
+    ],
+    sources: [S.sogcEctopic, S.acogEctopic, S.rosen],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-06",
+    topic: "first-trimester-bleeding",
+    title: "Stable patient with an adnexal finding",
+    stem:
+      "A 30 year old woman is 6 weeks and 5 days pregnant with mild left pelvic pain and spotting. HR 76, BP 122/78. Transvaginal ultrasound shows an empty uterus and a 2.1 cm left adnexal mass separate from the ovary with a tubal ring, no cardiac activity and no free fluid. Quantitative beta hCG was 1720 IU/L two days ago and is 1850 IU/L today. She weighs 68 kg and is 165 cm tall. Gynecology recommends medical management and asks you to start it.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE investigations required before treatment.",
+        accept: [
+          k("cbc", "CBC", "cbc", "complete blood count", "platelet", "hemoglobin"),
+          k("renal", "Creatinine", "creatinine", "renal", "kidney"),
+          k("liver", "Liver enzymes", "liver", "ast", "alt", "lft"),
+          k("rh", "Blood group, Rh status and antibody screen", "blood group", "rh", "type and screen", "antibody screen"),
+          k("hcg", "Baseline quantitative hCG on day 1", "baseline hcg", "day 1 hcg", "quantitative"),
+        ],
+        explanation:
+          "Methotrexate is cleared by the kidney and is toxic to marrow and liver, so baseline CBC, creatinine and liver enzymes are required. Rh status must be known so that the need for Rh immune globulin can be decided by gestational age. The day 1 hCG is the reference for follow up.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which is the correct single dose regimen? Select one.",
+        options: [
+          "Methotrexate 50 mg/m2 IM",
+          "Methotrexate 50 mg/kg IM",
+          "Methotrexate 1 mg/kg IV daily for 3 days",
+          "Methotrexate 25 mg PO weekly",
+          "Methotrexate 5 mg/m2 IM",
+          "Methotrexate 500 mg/m2 IV",
+        ],
+        correct: 0,
+        explanation:
+          "The single dose protocol is 50 mg/m2 IM based on body surface area, about 90 mg for this patient. Doses in mg/kg would be massive overdoses. Oral weekly dosing is a rheumatology regimen.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "acog-ectopic",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE contraindications to this treatment.",
+        accept: [
+          k("unstable", "Hemodynamic instability or signs of rupture", "unstable", "instability", "rupture", "hemoperitoneum"),
+          k("iup", "Coexisting intrauterine pregnancy", "intrauterine pregnancy", "iup", "heterotopic"),
+          k("bf", "Breastfeeding", "breastfeeding", "breast feeding", "lactation"),
+          k("labs", "Abnormal CBC, renal or liver function", "abnormal", "renal", "liver", "cytopenia", "anemia", "thrombocytopenia"),
+          k("fh", "Embryonic cardiac activity in the mass", "cardiac activity", "heartbeat", "heart beat"),
+          k("size", "Mass larger than about 3.5 cm", "3.5", "larger than", "large mass", "mass size", "size"),
+          k("hcg", "High hCG, for example above 5000 IU/L", "5000", "high hcg"),
+          k("fu", "Unable to return for follow up", "follow up", "followup", "unable to return"),
+          k("other", "Active peptic ulcer or lung disease, or methotrexate allergy", "peptic ulcer", "lung", "allergy", "hypersensitivity"),
+        ],
+        explanation:
+          "Methotrexate suits stable patients with an unruptured ectopic and reliable follow up. Cardiac activity, a larger mass and higher hCG predict failure. A plateauing hCG of 1850 with a 2 cm mass is an ideal profile. These thresholds are relative and vary between guidelines.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE counselling points before she goes home.",
+        accept: [
+          k("nsaid", "Avoid NSAIDs", "avoid nsaid", "no nsaid", "avoid ibuprofen", "no ibuprofen", "avoid naproxen", "avoid anti inflammatory"),
+          k("folate", "Avoid folic acid and prenatal vitamins", "avoid folic", "no folic", "stop folic", "hold folic", "avoid folate", "no folate", "avoid prenatal", "stop prenatal", "hold prenatal", "no prenatal"),
+          k("alcohol", "Avoid alcohol", "avoid alcohol", "no alcohol", "abstain alcohol"),
+          k("sex", "Avoid intercourse and vigorous exercise until hCG falls", "avoid intercourse", "no intercourse", "avoid sex", "no sex", "pelvic rest", "avoid exercise", "no exercise", "avoid vigorous", "no vigorous", "avoid strenuous", "abstain"),
+          k("sun", "Avoid strong sun exposure", "avoid sun", "no sun", "sunscreen", "sun protection"),
+          k("pain", "Some pain in the first days is common but severe pain needs urgent review", "pain"),
+          k("hcg", "hCG checks on day 4 and day 7, then weekly to negative", "day 4", "day 7", "hcg", "weekly"),
+          k("contra", "Avoid pregnancy for about 3 months after methotrexate", "contraception", "avoid pregnancy", "3 month"),
+          k("support", "Acknowledge the loss and offer emotional support", "support", "grief", "loss", "counselling"),
+        ],
+        explanation:
+          "NSAIDs, alcohol and folate interact with methotrexate. Separation pain in the first days is common but must be told apart from rupture. hCG should fall at least 15% between day 4 and day 7. This is still a pregnancy loss, and she needs emotional support and a clear follow up plan.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "acog-ectopic",
+      },
+    ],
+    sources: [S.sogcEctopic, S.acogEctopic],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-07",
+    topic: "first-trimester-bleeding",
+    title: "Collapse in the triage line",
+    stem:
+      "A 35 year old woman, G3P2, is 10 weeks pregnant. An intrauterine pregnancy with cardiac activity was seen on a dating scan two weeks ago. For 3 hours she has had heavy bleeding with clots and strong cramps. In triage she becomes pale, clammy and nearly faints. HR 46, BP 78/42, RR 18, SpO2 98% on room air.",
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "What is the most likely cause of her bradycardia and hypotension? Select one.",
+        options: [
+          "Vagal response from products of conception distending the cervical os",
+          "Complete heart block",
+          "Anaphylaxis",
+          "Late hemorrhagic shock with impending arrest",
+          "Pulmonary embolism",
+        ],
+        correct: 0,
+        explanation:
+          "Cervical shock is a vasovagal reaction to tissue stretching the os. Bradycardia with hypotension in a miscarrying patient is the classic pattern. It resolves quickly once the tissue is removed. Hemorrhage may coexist, so volume status still needs attention.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
+        source: "rosen",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO immediate actions.",
+        accept: [
+          k("spec", "Speculum exam and removal of tissue from the os with ring forceps", "speculum", "ring forcep", "remove tissue", "remove product", "remove the product", "sponge forcep"),
+          k("fluids", "IV fluid bolus", "fluid", "bolus", "crystalloid", "saline"),
+          k("iv", "Two large bore IVs", "large bore", "iv access"),
+          k("position", "Lie flat and raise the legs", "supine", "lie flat", "legs up", "trendelenburg", "raise the leg"),
+          k("atropine", "Atropine if bradycardia persists", "atropine"),
+          k("blood", "Type and screen and CBC", "type and screen", "crossmatch", "cbc", "group and screen"),
+        ],
+        explanation:
+          "A speculum exam is diagnostic and therapeutic. Removing tissue from the os with ring forceps often restores the heart rate within minutes. Supportive fluids and positioning buy time. Atropine is rarely needed.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 3 },
+        source: "rosen",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        update: "Tissue is removed from the os. HR is now 88 and BP 104/66. Moderate bleeding continues. Bimanual exam shows a boggy 10 week size uterus.",
+        prompt: "List TWO measures to reduce ongoing uterine bleeding. Include the dose and route for any drug.",
+        accept: [
+          k("miso", "Misoprostol 600 mcg PO or 400 mcg sublingual", "misoprostol 600", "misoprostol 400", "misoprostol 800", "cytotec 600", "cytotec 400", "cytotec 800"),
+          k("oxy", "Oxytocin 10 units IM or an IV infusion of 20 to 40 units in 1 litre", "oxytocin 10", "oxytocin 5", "oxytocin 20", "oxytocin 30", "oxytocin 40", "pitocin 10"),
+          k("ergo", "Ergonovine 0.2 mg IM if not hypertensive", "ergonovine 0.2", "methylergonovine 0.2", "ergometrine 0.2"),
+          k("txa", "Tranexamic acid 1 g IV", "tranexamic acid 1 g", "tranexamic acid 1g", "tranexamic acid 1000", "txa 1 g", "txa 1g", "txa 1000"),
+          k("massage", "Bimanual uterine compression or massage", "massage", "bimanual compression", "compression"),
+          k("da", "Urgent gynecology for uterine aspiration", "aspiration", "d&c", "d and c", "dilation", "curettage", "evacuation", "gynecology", "gynaecology"),
+        ],
+        explanation:
+          "Retained tissue keeps the uterus from contracting. Uterotonics such as misoprostol help, and uterine aspiration is definitive when bleeding is heavy or persistent. Oxytocin is less effective in early pregnancy because receptors are few, but it is reasonable while aspiration is arranged.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
+        source: "acog-epl",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        update: "Bleeding settles after aspiration. She is Rh D positive. She is tearful and asks when she can go home.",
+        prompt: "List TWO things you will arrange before discharge.",
+        accept: [
+          k("fu", "Follow up with her family physician or gynecology in 1 to 2 weeks", "follow up", "followup", "family physician", "family doctor", "gynecology", "gynaecology"),
+          k("support", "Emotional support, grief counselling or bereavement resources", "support", "counselling", "counseling", "grief", "bereavement"),
+          k("return", "Return precautions for bleeding, fever or pain", "return", "precaution"),
+          k("cbc", "Check hemoglobin and treat anemia with iron", "iron", "hemoglobin", "anemia"),
+          k("info", "Written information about pregnancy loss", "written", "information", "handout"),
+          k("work", "A note for time off work", "work", "note"),
+        ],
+        explanation:
+          "Discharge after a pregnancy loss needs a clear medical plan and attention to grief. Many patients feel dismissed in the ED. Naming the loss, offering support and arranging follow up are part of the standard of care.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "nice-ng126",
+      },
+    ],
+    sources: [S.rosen, S.acogEpl, S.nice],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-08",
+    topic: "first-trimester-bleeding",
+    title: "Brown spotting at nine weeks",
+    stem:
+      "A 33 year old woman in her first pregnancy is 9 weeks and 3 days by a certain last menstrual period. She has 2 days of brown spotting without pain. HR 72, BP 116/70. Speculum exam shows a small amount of brown blood and a closed os. Radiology ultrasound shows an intrauterine gestational sac with an embryo measuring 8 mm crown rump length and no cardiac activity.",
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which statement is correct? Select one.",
+        options: [
+          "A crown rump length of 7 mm or more without cardiac activity is diagnostic of a nonviable pregnancy",
+          "Viability cannot be judged until the crown rump length reaches 15 mm",
+          "A repeat scan in 7 days is required before the diagnosis can be made",
+          "A falling hCG is required to make the diagnosis",
+          "The findings may be normal if her dates are uncertain",
+        ],
+        correct: 0,
+        explanation:
+          "An embryo of 7 mm or more with no heartbeat meets consensus criteria for pregnancy failure. Repeat scanning is reserved for smaller embryos or empty sacs below the diagnostic thresholds. Ultrasound criteria are deliberately strict so that a wanted pregnancy is never ended in error.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "doubilet",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE management options you would discuss with her.",
+        accept: [
+          k("expectant", "Expectant management", "expectant", "wait", "natural"),
+          k("medical", "Medical management with mifepristone and misoprostol", "medical", "mifepristone", "misoprostol", "medication"),
+          k("surgical", "Surgical uterine aspiration", "surgical", "aspiration", "d&c", "d and c", "curettage", "evacuation", "mva"),
+        ],
+        explanation:
+          "All three options are safe for a stable patient and the choice is hers. Expectant care avoids intervention but may take weeks. Medical management is faster and aspiration is quickest and most predictable.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "acog-epl",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "She chooses medical management. Which regimen is most effective? Select one.",
+        options: [
+          "Mifepristone 200 mg PO, then misoprostol 800 mcg vaginally 24 hours later",
+          "Misoprostol 200 mcg PO once",
+          "Methotrexate 50 mg/m2 IM",
+          "Mifepristone 600 mg PO alone",
+          "Oxytocin 10 units IM",
+        ],
+        correct: 0,
+        explanation:
+          "Pretreatment with mifepristone before misoprostol improves complete expulsion in missed miscarriage compared with misoprostol alone. Mifepristone alone and low dose misoprostol are much less effective. Methotrexate is for ectopic pregnancy.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "acog-epl",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 1,
+        update: "Her blood group is O Rh D negative with a negative antibody screen.",
+        prompt: "What is your plan for Rh immune globulin? If you would give it, include the dose and route.",
+        accept: [RH_OPTIONAL, RHIG300, RHIG120],
+        unacceptable: RH_BAD,
+        explanation:
+          "Between 8 and 12 weeks the 2024 SOGC guideline suggests not giving Rh immune globulin after spontaneous or induced pregnancy loss, but a risk averse patient may choose it. If given, it is offered within 72 hours, and 300 mcg is the usual Canadian dose. Either choice is acceptable when discussed with her. A Kleihauer Betke test has no role in the first trimester.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-rh",
+      },
+      {
+        id: "q5",
+        kind: "short",
+        required: 3,
+        prompt: "She asks what she did wrong. List THREE points you would include in your counselling.",
+        accept: [
+          k("fault", "It was not caused by anything she did", "not her fault", "nothing she did", "not caused", "not your fault", "no fault", "nothing you did", "fault"),
+          k("common", "Miscarriage is common, about 1 in 5 recognized pregnancies", "common", "1 in 5", "15", "20%"),
+          k("chromosome", "Most are due to chromosomal problems in the embryo", "chromosomal", "chromosome", "genetic"),
+          k("future", "Her chance of a future healthy pregnancy is good", "future", "next pregnancy", "healthy pregnancy"),
+          k("grief", "Grief is normal and support is available", "grief", "grieve", "support", "sad"),
+          k("activity", "Work, exercise and sex did not cause it", "exercise", "work", "sex", "stress"),
+          k("partner", "Invite her partner or support person to be involved", "partner", "support person"),
+        ],
+        explanation:
+          "Many patients blame themselves. Stating plainly that the loss was not caused by her actions, that it is common and usually chromosomal, and that future pregnancy is likely to succeed is part of the treatment.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "nice-ng126",
+      },
+    ],
+    sources: [S.doubilet, S.acogEpl, S.sogcRh, S.nice],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-09",
+    topic: "first-trimester-bleeding",
+    title: "Bleeding at eleven weeks with a known scan",
+    stem:
+      "A 25 year old woman, G2P1, is 11 weeks pregnant. A dating scan at 8 weeks showed a single intrauterine pregnancy with cardiac activity. Since this morning she has had light red bleeding and mild cramps. HR 80, BP 114/68, RR 14, T 36.8 C.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE findings on speculum examination that would change your management.",
+        accept: [
+          k("open", "Open cervical os", "open os", "os open", "open cervix", "dilated", "open"),
+          k("poc", "Products of conception in the os or vault", "product", "tissue", "poc"),
+          k("volume", "Heavy active bleeding or large clots", "heavy", "clot", "active bleeding", "volume"),
+          k("polyp", "Cervical polyp or ectropion", "polyp", "ectropion"),
+          k("lesion", "Suspicious cervical lesion", "lesion", "cancer", "mass"),
+          k("cervicitis", "Mucopurulent discharge or friable cervix", "mucopurulent", "discharge", "friable", "cervicitis"),
+          k("lac", "Vaginal laceration or foreign body", "laceration", "foreign body", "trauma"),
+        ],
+        explanation:
+          "The speculum exam shows whether the os is open, whether tissue is present and how much blood is being lost. It also identifies cervical and vaginal sources that ultrasound cannot. Tissue in the os can be removed immediately.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 3 },
+        source: "rosen",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO findings on bimanual examination you would look for.",
+        accept: [
+          k("size", "Uterine size compared with dates", "size", "large for date", "small for date"),
+          k("adnexal", "Adnexal mass or tenderness", "adnexal", "adnexa"),
+          k("cmt", "Cervical motion tenderness", "cervical motion", "cmt"),
+          k("uterine", "Uterine tenderness suggesting infection", "uterine tenderness", "tender uterus"),
+          k("os", "Dilatation of the internal os", "internal os", "dilatation", "dilation", "os"),
+        ],
+        explanation:
+          "A uterus small for dates suggests failure. A uterus large for dates suggests molar or multiple pregnancy. Adnexal findings raise ectopic or ovarian pathology, and uterine tenderness with fever suggests septic abortion.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 3 },
+        source: "rosen",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 1,
+        update: "The os is closed with a small amount of blood in the vault. The uterus is 11 week size. Bedside ultrasound shows a live intrauterine pregnancy with a heart rate of 158. Her blood group is A Rh D negative with a negative antibody screen.",
+        prompt: "What is your plan for Rh immune globulin? If you would give it, include the dose and route.",
+        accept: [RH_OPTIONAL, RHIG300, RHIG120],
+        unacceptable: RH_BAD,
+        explanation:
+          "Checking Rh status is required in every pregnant patient with bleeding. At 11 weeks the 2024 SOGC guideline suggests not giving Rh immune globulin for threatened miscarriage, but it may be offered to a risk averse patient. If she bleeds again after 12 weeks, 300 mcg within 72 hours is suggested. Either choice is acceptable today when discussed with her.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-rh",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "She asks about her outlook. Which statement is most accurate? Select one.",
+        options: [
+          "Most pregnancies with these findings continue. The risk of loss is low, around 10% or less",
+          "Bleeding means loss is likely, at about 50%",
+          "Strict bed rest reduces her risk of miscarriage",
+          "Progesterone should be started to prevent miscarriage",
+          "She should avoid all physical activity until 20 weeks",
+        ],
+        correct: 0,
+        explanation:
+          "A live intrauterine pregnancy at 11 weeks carries a low risk of loss even with bleeding. Bed rest does not help. Progesterone is considered only in selected patients with bleeding and a prior miscarriage, which she does not have.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "nice-ng126",
+      },
+    ],
+    sources: [S.rosen, S.sogcRh, S.nice],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-10",
+    topic: "first-trimester-bleeding",
+    title: "Passed something at home",
+    stem:
+      "A 28 year old woman is 7 weeks by last menstrual period. She has not had an ultrasound in this pregnancy. Last night she had heavy bleeding with clots and passed what she describes as tissue. Today the bleeding is light and the cramps have stopped. HR 76, BP 120/74. Speculum exam shows a closed os with minimal blood. Transvaginal ultrasound shows an empty uterus with a 6 mm endometrium, no adnexal mass and no free fluid. Quantitative beta hCG is 1450 IU/L.",
+    questions: [
+      {
+        id: "q1",
+        kind: "single",
+        prompt: "Which is the most accurate diagnosis? Select one.",
+        options: [
+          "Complete miscarriage",
+          "Pregnancy of unknown location",
+          "Incomplete miscarriage",
+          "Missed miscarriage",
+          "Ectopic pregnancy confirmed",
+        ],
+        correct: 1,
+        explanation:
+          "A complete miscarriage can be diagnosed only if an intrauterine pregnancy was documented before. Without that, an empty uterus with a positive hCG is a pregnancy of unknown location. A small proportion of these women have an ectopic pregnancy, and a history of passing tissue does not exclude it.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO steps to confirm the diagnosis.",
+        accept: [
+          k("repeat", "Repeat quantitative hCG in 48 hours", "48 hour", "repeat hcg", "serial hcg", "2 day"),
+          k("negative", "Follow hCG until it is negative", "negative", "undetectable", "until zero"),
+          k("path", "Send any saved tissue for pathology", "pathology", "tissue"),
+          k("clinic", "Early pregnancy clinic or gynecology follow up", "early pregnancy", "clinic", "gynecology", "gynaecology"),
+          k("us", "Repeat ultrasound if hCG plateaus or rises", "repeat ultrasound", "repeat us", "repeat scan"),
+        ],
+        explanation:
+          "After a complete miscarriage hCG should fall steeply, often by 50% or more within 48 hours. Chorionic villi on pathology confirm an intrauterine pregnancy. A plateau or rise means ectopic or retained trophoblast until proven otherwise.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        update: "Forty eight hours later she is well. Her hCG is 1390 IU/L.",
+        prompt: "List TWO next steps.",
+        accept: [
+          k("gyn", "Same day gynecology assessment", "gynecology", "gynaecology", "gyne", "obstetric"),
+          k("us", "Repeat transvaginal ultrasound", "repeat ultrasound", "repeat us", "transvaginal", "repeat scan"),
+          k("labs", "CBC, creatinine and liver enzymes in case methotrexate is needed", "cbc", "creatinine", "liver"),
+          k("ectopic", "Manage as a possible ectopic, not a completed miscarriage", "ectopic"),
+          k("return", "Reinforce return precautions", "return", "precaution"),
+        ],
+        unacceptable: [no("Reassure that the miscarriage is complete", "complete miscarriage", "reassure and discharge", "reassure complete")],
+        explanation:
+          "After a completed miscarriage hCG should fall by at least about 20 to 35% in 48 hours. A 4% fall is a plateau and points to an ectopic pregnancy or persisting trophoblast. Gynecology should reassess the same day and may offer methotrexate.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        prompt: "She is tearful and says no one has told her what is happening. List TWO supports you would arrange.",
+        accept: [
+          k("explain", "A clear explanation of the plan and why follow up matters", "explain", "explanation", "plan"),
+          k("counsel", "Referral for grief counselling or social work", "counselling", "counseling", "social work", "grief"),
+          k("resources", "Pregnancy loss support resources", "resource", "support group", "pail", "pregnancy loss"),
+          k("fu", "A named follow up clinic with date and time", "follow up", "followup", "clinic", "appointment"),
+          k("mh", "Screening for anxiety or depression with a mental health plan", "mental health", "depression", "anxiety"),
+          k("contact", "A phone number for questions", "phone", "contact number"),
+          k("written", "Written information", "written", "handout", "information"),
+        ],
+        explanation:
+          "Uncertainty is hard for patients with a pregnancy of unknown location. A clear explanation, written information and a named follow up improve adherence and reduce distress. Grief can occur at any gestation.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "nice-ng126",
+      },
+    ],
+    sources: [S.sogcEctopic, S.nice],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-11",
+    topic: "first-trimester-bleeding",
+    alsoTopics: ["pre-eclampsia"],
+    title: "Bleeding, vomiting and palpitations",
+    stem:
+      "A 38 year old woman, G4P3, is 12 weeks by last menstrual period. She has had intermittent dark vaginal bleeding for a week, with severe nausea and vomiting and palpitations. HR 118, BP 154/98, RR 18, T 37.2 C. Urine dipstick shows 2+ protein and 3+ ketones. Speculum exam shows dark blood and a closed os. Bimanual exam shows a nontender uterus the size of a 16 week pregnancy.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO findings in this case that suggest a diagnosis other than threatened miscarriage.",
+        accept: [
+          k("size", "Uterus larger than dates", "large for date", "larger than date", "16 week", "uterine size", "size"),
+          k("htn", "Hypertension with proteinuria before 20 weeks", "hypertension", "154", "proteinuria", "protein", "blood pressure"),
+          k("nv", "Severe nausea and vomiting", "vomiting", "nausea", "hyperemesis"),
+          k("tachy", "Tachycardia and palpitations suggesting hyperthyroidism", "tachycardia", "palpitation", "thyroid", "118"),
+        ],
+        explanation:
+          "A uterus large for dates on bimanual exam, early hypertension with proteinuria, hyperemesis and thyrotoxic features point to a molar pregnancy. Pre-eclampsia before 20 weeks should always raise this possibility.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 3 },
+        source: "sogc-gtd",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE investigations you would order.",
+        accept: [
+          k("hcg", "Quantitative beta hCG", "hcg", "quantitative"),
+          k("us", "Pelvic ultrasound", "ultrasound", "us", "sonogram"),
+          k("tsh", "TSH and free T4", "tsh", "t4", "thyroid"),
+          k("cbc", "CBC", "cbc", "hemoglobin", "platelet"),
+          k("group", "Blood group and antibody screen", "blood group", "type and screen", "rh", "group and screen"),
+          k("pet", "Creatinine, liver enzymes and urine protein creatinine ratio", "creatinine", "liver", "ast", "alt", "protein creatinine", "uric"),
+          k("lytes", "Electrolytes", "electrolyte", "potassium", "lytes"),
+          k("cxr", "Chest X ray", "chest x ray", "cxr", "chest xray"),
+        ],
+        explanation:
+          "A very high hCG with a characteristic ultrasound supports molar pregnancy. Thyroid tests, pre-eclampsia labs and electrolytes identify complications. Blood group is needed for Rh prophylaxis and for evacuation.",
+        keyFeature: { topic: "pre-eclampsia", n: 2 },
+        source: "sogc-gtd",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        update:
+          "Quantitative hCG is 412 000 IU/L. Ultrasound shows a heterogeneous intrauterine mass with many small cystic spaces, no fetus and bilateral multiloculated ovarian cysts. TSH is suppressed and free T4 is elevated.",
+        prompt: "List TWO complications of this condition you would anticipate in the emergency department or at evacuation.",
+        accept: [
+          k("pet", "Early onset pre-eclampsia", "pre eclampsia", "preeclampsia"),
+          k("thyroid", "Hyperthyroidism or thyroid storm", "thyroid", "thyrotoxicosis", "hyperthyroid"),
+          k("hem", "Hemorrhage", "hemorrhage", "bleeding", "haemorrhage"),
+          k("anemia", "Anemia", "anemia", "anaemia"),
+          k("resp", "Respiratory distress from trophoblastic embolization or fluid overload", "respiratory", "embolization", "embolism", "pulmonary edema"),
+          k("gtn", "Persistent gestational trophoblastic neoplasia", "persistent", "neoplasia", "choriocarcinoma", "gtn"),
+          k("dehydration", "Dehydration and electrolyte loss from vomiting", "dehydration", "electrolyte", "hypokalemia"),
+          k("torsion", "Ovarian torsion of theca lutein cysts", "torsion"),
+        ],
+        explanation:
+          "High hCG drives thyroid stimulation, ovarian theca lutein cysts and early pre-eclampsia. Evacuation can cause brisk hemorrhage and pulmonary complications. Persistent neoplasia follows in a minority of complete moles.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-gtd",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO follow up arrangements that are essential after evacuation.",
+        accept: [
+          k("hcg", "Serial hCG until normal, then continued surveillance", "serial hcg", "hcg", "surveillance"),
+          k("contra", "Reliable contraception during hCG surveillance", "contraception", "birth control", "avoid pregnancy"),
+          k("registry", "Referral to a gestational trophoblastic disease centre or registry", "registry", "trophoblastic", "centre", "center", "gyn onc", "oncology"),
+          k("path", "Pathology of the evacuated tissue", "pathology"),
+          k("rh", "Rh immune globulin at evacuation if Rh D negative", "rh immune", "rhig", "anti d", "winrho"),
+          k("support", "Emotional support for the pregnancy loss", "support", "counselling", "counseling", "grief"),
+        ],
+        explanation:
+          "Follow up hCG detects persistent neoplasia early, when cure rates are excellent. A new pregnancy would confuse surveillance, so reliable contraception is advised. Canadian provinces refer patients to regional trophoblastic disease programs. This is still a pregnancy loss and she needs support.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "sogc-gtd",
+      },
+    ],
+    sources: [S.sogcGtd],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-12",
+    topic: "first-trimester-bleeding",
+    alsoTopics: ["infectious-diseases"],
+    title: "Spotting after intercourse",
+    stem:
+      "A 24 year old woman in her first pregnancy is 8 weeks by last menstrual period. She had spotting after intercourse last night and has no pain. She has not yet had an ultrasound. She has had a new partner for 2 months and uses condoms occasionally. HR 74, BP 116/72, T 36.9 C.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE findings on speculum examination that could explain her bleeding.",
+        accept: [
+          k("cervicitis", "Cervicitis with mucopurulent discharge or a friable cervix", "cervicitis", "mucopurulent", "friable", "discharge"),
+          k("ectropion", "Cervical ectropion", "ectropion", "ectopy"),
+          k("polyp", "Cervical polyp", "polyp"),
+          k("lesion", "Cervical lesion or cancer", "lesion", "cancer", "mass"),
+          k("lac", "Vaginal laceration", "laceration", "tear"),
+          k("os", "Blood coming through the os", "through the os", "from the os", "blood os"),
+        ],
+        explanation:
+          "Postcoital bleeding in pregnancy often comes from the cervix, which is more vascular and friable. The speculum exam separates cervical and vaginal sources from uterine bleeding and allows STI testing.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 3 },
+        source: "rosen",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 2,
+        update: "The cervix is friable with mucopurulent discharge. Contact bleeding is seen from the ectocervix. The os is closed. Bimanual exam shows no adnexal tenderness and an 8 week size uterus.",
+        prompt: "List TWO tests you would send.",
+        accept: [
+          k("naat", "Chlamydia and gonorrhea NAAT", "chlamydia", "gonorrhea", "gonorrhoea", "naat", "pcr"),
+          k("culture", "Gonorrhea culture for susceptibility", "culture"),
+          k("trich", "Trichomonas testing", "trichomonas", "trich"),
+          k("syphilis", "Syphilis serology", "syphilis", "vdrl", "rpr"),
+          k("hiv", "HIV serology", "hiv"),
+          k("hep", "Hepatitis B serology", "hepatitis"),
+        ],
+        explanation:
+          "Cervicitis in pregnancy needs chlamydia and gonorrhea testing because untreated infection harms mother and newborn. A new partner warrants broader STBBI screening including syphilis and HIV, which are part of routine prenatal care.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 3 },
+        source: "phac-sti",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 2,
+        prompt: "A cervical source has been found. List TWO reasons she still needs an ultrasound today or very soon.",
+        accept: [
+          k("noiup", "No intrauterine pregnancy has yet been confirmed", "no iup", "not confirmed", "no intrauterine", "unconfirmed", "location"),
+          k("ectopic", "Ectopic pregnancy has not been excluded", "ectopic"),
+          k("risk", "STI and possible PID raise her ectopic risk", "pid", "sti", "pelvic inflammatory", "risk"),
+          k("coexist", "A cervical source can coexist with uterine or tubal pathology", "coexist", "both", "another source", "second source"),
+          k("viability", "Viability and dating", "viability", "dating", "gestational age"),
+        ],
+        explanation:
+          "Finding a cervical cause does not locate the pregnancy. Until an intrauterine pregnancy is seen, ectopic pregnancy remains possible, and cervical infection is itself a risk factor for tubal disease.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        prompt: "Which empiric treatment is most appropriate for her cervicitis? Select one.",
+        options: [
+          "Ceftriaxone 500 mg IM plus azithromycin 1 g PO",
+          "Ceftriaxone 500 mg IM plus doxycycline 100 mg PO twice daily for 7 days",
+          "Ciprofloxacin PO",
+          "Metronidazole PO",
+          "No treatment until results return",
+        ],
+        correct: 0,
+        explanation:
+          "Empiric treatment covers gonorrhea and chlamydia. PHAC raised the ceftriaxone dose to 500 mg IM in December 2024. Doxycycline is avoided in pregnancy, so azithromycin 1 g is the chlamydia agent. Partners need notification and treatment, and a test of cure is recommended in pregnancy.",
+        keyFeature: { topic: "infectious-diseases", n: 8 },
+        source: "phac-sti",
+      },
+    ],
+    sources: [S.rosen, S.phacSti, S.sogcEctopic],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-13",
+    topic: "first-trimester-bleeding",
+    title: "Irregular bleeding in her forties",
+    stem:
+      "A 41 year old woman has had heavy, irregular bleeding for 2 days and a dull left lower abdominal ache. Her period was about 10 days late. She had a tubal ligation 7 years ago and assumes she is entering menopause. HR 96, BP 122/78, RR 16, T 36.8 C. Triage has ordered a CBC only.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO features in this history that should make you think of an ectopic pregnancy.",
+        accept: [
+          k("tl", "Previous tubal ligation", "tubal ligation", "ligation", "tubal"),
+          k("late", "A late period", "late", "missed period", "missed menses"),
+          k("pain", "Unilateral lower abdominal pain", "unilateral", "left", "pain"),
+          k("bleeding", "Abnormal bleeding in a woman of reproductive age", "reproductive", "abnormal bleeding", "irregular"),
+          k("age", "Age over 35", "age", "41"),
+        ],
+        unacceptable: [no("Tubal ligation excludes pregnancy", "exclude pregnancy", "rule out pregnancy", "cannot be pregnant")],
+        explanation:
+          "Tubal ligation makes pregnancy uncommon, but when it fails a high proportion of pregnancies are ectopic. A late period with unilateral pain in any woman who could be pregnant demands a pregnancy test. Perimenopause is a diagnosis of exclusion.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "acog-ectopic",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 3,
+        update: "Quantitative beta hCG is 2600 IU/L. Transvaginal ultrasound shows an empty uterus, a 3 cm complex left adnexal mass separate from the ovary and a small amount of free fluid in the pelvis. She remains HR 96, BP 120/76.",
+        prompt: "List THREE next steps.",
+        accept: [
+          k("gyn", "Urgent gynecology consult", "gynecology", "gynaecology", "gyne", "obstetric"),
+          k("group", "Blood group, Rh and antibody screen", "blood group", "type and screen", "rh", "crossmatch", "group and screen"),
+          k("iv", "IV access", "iv access", "large bore", "iv line"),
+          k("labs", "CBC, creatinine and liver enzymes", "cbc", "creatinine", "liver"),
+          k("npo", "Keep NPO", "npo", "nil by mouth", "fasting"),
+          k("monitor", "Serial vitals and reassessment", "serial", "reassess", "monitor", "repeat vital"),
+        ],
+        unacceptable: [
+          harm("Discharge with outpatient follow up", "discharge home", "send home", "discharge with follow up"),
+          no("Discharge", "discharge"),
+        ],
+        explanation:
+          "A complex adnexal mass separate from the ovary, an empty uterus and a positive hCG make ectopic pregnancy the working diagnosis. She needs gynecology now, blood group for Rh status and preparation for possible surgery.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q3",
+        kind: "single",
+        prompt: "Which statement about her imaging is most accurate? Select one.",
+        options: [
+          "An empty uterus with an adnexal mass separate from the ovary and a positive hCG is highly suggestive of ectopic pregnancy",
+          "The mass is most likely a corpus luteum cyst, so ectopic is unlikely",
+          "An hCG of 2600 is too low to see an intrauterine pregnancy, so the scan is uninterpretable",
+          "Pelvic free fluid confirms rupture and mandates laparotomy",
+          "An ectopic pregnancy cannot be diagnosed without seeing a yolk sac in the adnexa",
+        ],
+        correct: 0,
+        explanation:
+          "An inhomogeneous adnexal mass separate from the ovary is the most common ultrasound finding in tubal ectopic pregnancy. A yolk sac or embryo in the adnexa is seen in only a minority. A small amount of pelvic fluid can be physiologic and does not by itself mean rupture.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 4 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 2,
+        update: "While she waits for gynecology she says she feels lightheaded when she sits up.",
+        prompt: "List TWO bedside assessments you would do now.",
+        accept: [
+          k("ortho", "Orthostatic vital signs", "orthostatic", "postural", "sitting", "standing"),
+          k("vitals", "Repeat heart rate and blood pressure", "heart rate", "blood pressure", "vital"),
+          k("pocus", "Repeat bedside ultrasound for hepatorenal free fluid", "pocus", "ultrasound", "fast", "hepatorenal", "morison"),
+          k("perfusion", "Skin perfusion and capillary refill", "capillary refill", "perfusion", "skin", "pallor"),
+          k("mental", "Mental status", "mental status", "level of consciousness", "mentation"),
+          k("abdo", "Repeat abdominal exam for peritonism", "abdominal exam", "peritoneal", "peritonism", "guarding"),
+        ],
+        explanation:
+          "New lightheadedness may be the first sign of rupture. Orthostatic vitals and a repeat bedside ultrasound can detect hemorrhage before hypotension develops. Any deterioration should move her straight to the operating room.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
+        source: "rosen",
+      },
+    ],
+    sources: [S.acogEctopic, S.sogcEctopic, S.rosen],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-14",
+    topic: "first-trimester-bleeding",
+    title: "Going home after an early loss",
+    stem:
+      "A 36 year old woman conceived by IVF and had an ultrasound at 6 weeks that showed an intrauterine pregnancy with cardiac activity. Now at 8 weeks she had heavy bleeding with clots this morning. The bleeding has settled. HR 82, BP 118/70. Speculum exam shows a closed os with minimal blood. Ultrasound shows an empty uterus with a thin endometrium. Her partner is with her. She is tearful and asks whether flying to Calgary last week caused this.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE key messages you would give her about the loss.",
+        accept: [
+          k("fault", "Flying and her daily activities did not cause it", "not caused", "flying", "flight", "not her fault", "not your fault", "no fault", "fault", "nothing she did", "nothing you did"),
+          k("common", "Early pregnancy loss is common", "common"),
+          k("chromosome", "Most losses are due to chromosomal problems", "chromosomal", "chromosome", "genetic"),
+          k("future", "Her chance of a future successful pregnancy is good", "future", "next pregnancy", "successful pregnancy"),
+          k("grief", "Grief is normal, and her partner may grieve too", "grief", "grieve", "normal to feel", "sad"),
+          k("complete", "The miscarriage appears complete", "complete"),
+        ],
+        explanation:
+          "Self blame is common, especially after fertility treatment. Say clearly that travel, work, exercise and sex do not cause miscarriage. Acknowledge the loss for both partners.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "nice-ng126",
+      },
+      {
+        id: "q2",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE reasons for her to return to the emergency department.",
+        accept: [
+          k("bleeding", "Heavy bleeding, soaking 2 pads an hour for 2 hours", "soaking", "heavy bleeding", "pad", "heavy"),
+          k("fever", "Fever, chills or foul smelling discharge", "fever", "chill", "foul", "discharge"),
+          k("pain", "Severe or worsening abdominal pain", "pain"),
+          k("faint", "Fainting or dizziness", "faint", "dizzy", "dizziness", "syncope"),
+          k("prolonged", "Bleeding lasting more than 2 weeks", "2 week", "two week", "prolonged"),
+          k("mood", "Thoughts of self harm or severe low mood", "self harm", "suicidal", "suicide", "mood", "depression", "depressed"),
+        ],
+        explanation:
+          "Heavy bleeding and infection signs suggest retained tissue. Grief after pregnancy loss can progress to depression or anxiety, and she should know that help for mood is also available.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "acog-epl",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        prompt: "List THREE follow up arrangements you would make.",
+        accept: [
+          k("fertility", "Notify her fertility clinic", "fertility clinic", "ivf clinic", "fertility"),
+          k("fp", "Family physician or gynecology visit in 1 to 2 weeks", "family physician", "family doctor", "gynecology", "gynaecology", "follow up", "followup"),
+          k("upt", "Home pregnancy test in about 3 weeks to confirm completion", "pregnancy test", "hcg", "3 week"),
+          k("counsel", "Grief counselling or social work", "counselling", "counseling", "social work", "grief", "psychologist", "psychology"),
+          k("resources", "Pregnancy loss support organizations", "resource", "support group", "pail", "pregnancy loss"),
+          k("work", "A note for time off work", "work", "note"),
+          k("written", "Written information", "written", "handout", "information"),
+        ],
+        explanation:
+          "A negative pregnancy test at about 3 weeks confirms completion when there is no ultrasound follow up. Her fertility team needs to know. Structured bereavement support and a named follow up visit reduce long term psychological harm.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 6 },
+        source: "nice-ng126",
+      },
+      {
+        id: "q4",
+        kind: "short",
+        required: 1,
+        update: "Her blood group is A Rh D negative with a negative antibody screen.",
+        prompt: "What is your plan for Rh immune globulin before discharge? If you would give it, include the dose and route.",
+        accept: [RH_OPTIONAL, RHIG300, RHIG120],
+        unacceptable: RH_BAD,
+        explanation:
+          "Rh status must be known before discharge after any first trimester bleeding. At 8 weeks the 2024 SOGC guideline suggests not giving Rh immune globulin after a spontaneous loss, but a risk averse patient may choose it after discussion. If given, it is offered within 72 hours. Either choice is acceptable when explained to her.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-rh",
+      },
+    ],
+    sources: [S.nice, S.acogEpl, S.sogcRh],
+    ...META,
+  },
+  {
+    id: "first-trimester-bleeding-15",
+    topic: "first-trimester-bleeding",
+    title: "Teen who fainted at school",
+    stem:
+      "A 16 year old girl is brought in by a friend after fainting in a school washroom. She has had bleeding like a period for 2 days with crampy lower abdominal pain. She says she is not sexually active. Lying down she has HR 112, BP 108/70, RR 20, T 36.7 C. When she sits up her heart rate rises to 138 and she feels faint. She is pale.",
+    questions: [
+      {
+        id: "q1",
+        kind: "short",
+        required: 2,
+        prompt: "List TWO findings that suggest significant blood loss.",
+        accept: [
+          k("syncope", "Syncope", "syncope", "faint", "fainting"),
+          k("tachy", "Resting tachycardia", "tachycardia", "112", "heart rate"),
+          k("ortho", "Orthostatic rise in heart rate", "orthostatic", "postural", "sitting", "138"),
+          k("pale", "Pallor", "pale", "pallor"),
+        ],
+        unacceptable: [no("Normal blood pressure is reassuring", "excludes shock", "rules out shock")],
+        explanation:
+          "Adolescents and young adults compensate well and keep a normal blood pressure until late. Syncope, resting tachycardia and a large postural heart rate rise signal substantial hemorrhage.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 1 },
+        source: "rosen",
+      },
+      {
+        id: "q2",
+        kind: "single",
+        prompt: "Which is the most important test to do next? Select one.",
+        options: ["Pregnancy test", "CBC", "Coagulation studies", "Pelvic CT", "Thyroid function tests"],
+        correct: 0,
+        explanation:
+          "A pregnancy test is mandatory in any person of reproductive age with vaginal bleeding, whatever the sexual history. Denial of sexual activity is common in adolescents, especially in front of others. Interview her alone.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q3",
+        kind: "short",
+        required: 3,
+        update: "The urine pregnancy test is positive. Bedside ultrasound shows no intrauterine pregnancy and free fluid in the hepatorenal space.",
+        prompt: "List THREE immediate actions.",
+        accept: [
+          k("gyn", "Stat gynecology for the operating room", "gynecology", "gynaecology", "gyne", "operating room", "surgery"),
+          k("iv", "Two large bore IVs", "large bore", "iv access", "two iv", "2 iv"),
+          k("blood", "Crossmatch and prepare uncrossmatched blood", "crossmatch", "cross match", "type and screen", "o negative", "uncrossmatched", "blood"),
+          k("mhp", "Activate the massive hemorrhage protocol if she deteriorates", "massive hemorrhage", "massive transfusion", "mtp", "mhp"),
+          k("npo", "Keep NPO", "npo", "nil by mouth"),
+          k("monitor", "Cardiac monitoring and frequent vitals", "monitor", "vital"),
+        ],
+        unacceptable: [no("Formal ultrasound and quantitative hCG before calling gynecology", "formal ultrasound first", "wait for formal", "wait for hcg")],
+        explanation:
+          "Hepatorenal free fluid in a pregnant patient with orthostatic instability means significant hemoperitoneum. She needs surgery, and blood must be ready. Waiting for formal imaging or hCG adds nothing.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 2 },
+        source: "sogc-ectopic",
+      },
+      {
+        id: "q4",
+        kind: "single",
+        update:
+          "Interviewed alone, she discloses sexual activity. By her last period she is 13 weeks pregnant. Her blood group is O Rh D negative with a negative antibody screen.",
+        prompt: "Which statement about Rh prophylaxis is correct? Select one.",
+        options: [
+          "Rh immune globulin 300 mcg IM or IV within 72 hours",
+          "Not required because she is under 18",
+          "Not required because the pregnancy is ectopic",
+          "A Kleihauer Betke test is needed first to calculate the dose",
+          "Rh immune globulin 50 mcg IM",
+          "Give only if the antibody screen is positive",
+        ],
+        correct: 0,
+        explanation:
+          "After 12 weeks the 2024 SOGC guideline suggests 300 mcg of Rh immune globulin within 72 hours for an unsensitized Rh D negative patient with an ectopic pregnancy, regardless of age. Before 8 weeks it would not be recommended, so gestational age matters. A Kleihauer Betke test is not used for this event. A positive anti D screen means she is already sensitized and prophylaxis will not help.",
+        keyFeature: { topic: "first-trimester-bleeding", n: 5 },
+        source: "sogc-rh",
+      },
+    ],
+    sources: [S.rosen, S.sogcEctopic, S.sogcRh],
+    ...META,
+  },
+];
