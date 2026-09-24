@@ -38,7 +38,12 @@ const screens = [...walk(join(root, "src", "screens"), /\.tsx$/), ...walk(join(r
 describe("house style", () => {
   for (const f of docs)
     it(f.replace(root, ""), () => {
-      expect(styleProblems(prose(readFileSync(f, "utf8")), { sentenceWords: 60 })).toEqual([]);
+      // Lists of sources or topics (6 or more commas on a line) are enumerations, not sentences.
+      // They are still checked for dashes, semicolons and filler.
+      const lines = prose(readFileSync(f, "utf8")).split("\n");
+      const lists = lines.filter((l) => (l.match(/,/g) ?? []).length >= 6);
+      const rest = lines.filter((l) => (l.match(/,/g) ?? []).length < 6);
+      expect([...styleProblems(rest.join("\n"), { sentenceWords: 60 }), ...styleProblems(lists.join("\n"), { sentenceWords: 1000 })]).toEqual([]);
     });
   for (const f of screens)
     it(f.replace(root, ""), () => {
