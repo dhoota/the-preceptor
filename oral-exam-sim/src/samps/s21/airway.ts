@@ -15,9 +15,116 @@ const CAFG2: Source = {
     "Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021.",
   url: "https://doi.org/10.1007/s12630-021-02008-z",
 };
-const WALLS: Source = {
-  id: "walls",
-  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023.",
+const WALLS_CH1: Source = {
+  id: "walls-ch1",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 1, The Decision to Intubate.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH2: Source = {
+  id: "walls-ch2",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 2, Identification of the Anatomically Difficult Airway.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH9: Source = {
+  id: "walls-ch9",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 9, Non-Invasive Positive Pressure Ventilation and High-Flow Nasal Oxygen.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH10: Source = {
+  id: "walls-ch10",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 10, Mechanical Ventilation.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH11: Source = {
+  id: "walls-ch11",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 11, Oxygen and Carbon Dioxide Monitoring.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH21: Source = {
+  id: "walls-ch21",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 21, Sedative-Induction Agents.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH22: Source = {
+  id: "walls-ch22",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 22, Neuromuscular Blocking Agents.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH26: Source = {
+  id: "walls-ch26",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 26, Pediatric Airway Techniques.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH28: Source = {
+  id: "walls-ch28",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 28, Foreign Body in the Pediatric Airway.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH33: Source = {
+  id: "walls-ch33",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 33, The Unstable Patient: Cardiopulmonary Optimization for Emergency Airway Management.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH34: Source = {
+  id: "walls-ch34",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 34, The Trauma Airway.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH36: Source = {
+  id: "walls-ch36",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 36, Reactive Airways Disease.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH37: Source = {
+  id: "walls-ch37",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 37, Distorted Airways and Acute Upper Airway Obstruction.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const WALLS_CH39: Source = {
+  id: "walls-ch39",
+  citation: "Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 39, Cardiovascular Emergencies.",
+  url: "https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233",
+};
+const NRP_L5: Source = {
+  id: "nrp-l5",
+  citation: "Weiner GM, Zaichkin J, editors. Textbook of Neonatal Resuscitation (NRP). 8th ed. American Academy of Pediatrics and American Heart Association. 2021. Lesson 5, Alternative Airways: Endotracheal Tubes and Laryngeal Masks.",
+};
+const NRP_L6: Source = {
+  id: "nrp-l6",
+  citation: "Weiner GM, Zaichkin J, editors. Textbook of Neonatal Resuscitation (NRP). 8th ed. American Academy of Pediatrics and American Heart Association. 2021. Lesson 6, Chest Compressions.",
+};
+const BERGER: Source = {
+  id: "berger-epiglottitis",
+  citation: "Berger G, Landau T, Berger S, et al. The rising incidence of adult acute epiglottitis and epiglottic abscess. Am J Otolaryngol. 2003.",
+  url: "https://doi.org/10.1016/s0196-0709(03)00083-8",
+};
+const TRAN: Source = {
+  id: "tran-rocuronium",
+  citation: "Tran DT, Newton EK, Mount VA, Lee JS, Wells GA, Perry JJ. Rocuronium versus succinylcholine for rapid sequence induction intubation. Cochrane Database Syst Rev. 2015.",
+  url: "https://doi.org/10.1002/14651858.CD002788.pub3",
+};
+const DMD: Source = {
+  id: "dmd-care-2018",
+  citation:
+    "Birnkrant DJ, Bushby K, Bann CM, et al. Diagnosis and management of Duchenne muscular dystrophy, part 2. Respiratory, cardiac, bone health, and orthopaedic management. Lancet Neurol. 2018.",
+  url: "https://doi.org/10.1016/S1474-4422(18)30025-5",
+};
+const GOODMAN: Source = {
+  id: "goodman-ett",
+  citation: "Goodman LR, Conrardy PA, Laing F, Singer MM. Radiographic evaluation of endotracheal tube position. AJR Am J Roentgenol. 1976.",
+  url: "https://doi.org/10.2214/ajr.127.3.433",
+};
+const COHEN: Source = {
+  id: "cohen-ketamine-icp",
+  citation:
+    "Cohen L, Athaide V, Wickham ME, Doyle-Waters MM, Rose NG, Hohl CM. The effect of ketamine on intracranial and cerebral perfusion pressure and health outcomes. A systematic review. Ann Emerg Med. 2015.",
+  url: "https://doi.org/10.1016/j.annemergmed.2014.06.018",
+};
+const BTFPEDS: Source = {
+  id: "btf-peds-tbi",
+  citation:
+    "Kochanek PM, Tasker RC, Carney N, et al. Guidelines for the management of pediatric severe traumatic brain injury, third edition. Update of the Brain Trauma Foundation guidelines. Pediatr Crit Care Med. 2019.",
+  url: "https://doi.org/10.1097/PCC.0000000000001735",
 };
 const NTSP: Source = {
   id: "ntsp",
@@ -93,10 +200,6 @@ const PALS2025: Source = {
   citation:
     "American Heart Association and American Academy of Pediatrics. Part 8. Pediatric advanced life support. 2025 guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.",
   url: "https://doi.org/10.1161/CIR.0000000000001368",
-};
-const NRP: Source = {
-  id: "nrp",
-  citation: "Weiner GM, Zaichkin J, editors. Textbook of Neonatal Resuscitation (NRP). 8th ed. American Academy of Pediatrics and American Heart Association. 2021.",
 };
 const ASCOLLAR: Source = {
   id: "as-collar",
@@ -420,7 +523,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Drooling in a patient who sits forward and will not lie down means he cannot swallow his own secretions and is protecting a narrowed supraglottic airway. It is one of the strongest predictors of the need for airway intervention in adult supraglottitis. A nearly normal oropharynx and tenderness over the hyoid point toward the diagnosis but do not measure the degree of obstruction. Fever and tachycardia reflect infection and are common to many throat infections.",
         keyFeature: { topic: "airway", n: 2 },
-        source: "walls",
+        source: "berger-epiglottitis",
       },
       {
         id: "q2",
@@ -437,7 +540,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Flexible nasendoscopy with topical anesthesia, done with him sitting upright, shows the epiglottis and arytenoids directly and grades the obstruction without sedation or a change in position. Lying him flat for CT can turn a partial obstruction into a complete one. Sedation for direct laryngoscopy can remove the muscle tone that keeps his airway open. A lateral neck X-ray can show a swollen epiglottis but misses many cases and delays the look that matters. A streptococcal swab does not address the supraglottis.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "walls",
+        source: "cafg2",
       },
       {
         id: "q3",
@@ -471,7 +574,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "das-ati",
       },
     ],
-    sources: [WALLS, CAFG2, DASATI],
+    sources: [BERGER, CAFG2, DASATI],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -590,7 +693,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Repeated apnea with bradycardia that needed bag-mask ventilation, together with a pH of 7.18 and pCO2 of 78 mmHg, shows failing ventilation, not only poor oxygenation. He needs a secure airway and controlled ventilation before the next apneic spell. High-flow nasal cannula helps work of breathing but does not prevent central apnea or correct this degree of acidosis. Caffeine has limited evidence in bronchiolitis and does not treat hypercapnia. Suction and nebulized epinephrine do not address recurrent apnea.",
         keyFeature: { topic: "airway", n: 2 },
-        source: "walls",
+        source: "walls-ch1",
       },
       {
         id: "q2",
@@ -601,7 +704,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "A cuffed tube with an internal diameter of 3.0 mm suits an infant beyond the newborn period who weighs more than 3 kg, as he does at 4.2 kg. Cuffed tubes reduce tube changes and leaks and allow the higher pressures that stiff, wet lungs may need. A 2.5 mm tube is sized for very small preterm newborns and would add resistance and leak. A 3.5 mm cuffed tube is usually chosen at about 1 to 2 years of age. A 4.0 mm tube is too large for a 6-week-old airway.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "walls",
+        source: "walls-ch26",
       },
       {
         id: "q3",
@@ -614,7 +717,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "The rapid sequence dose of rocuronium is about 1.2 mg/kg, and 1.2 x 4.2 kg = 5.0 mg. That dose gives good intubating conditions within about a minute, which matters in an infant who desaturates quickly. The 2 mg dose is under 0.5 mg/kg and gives a slow, incomplete block. The 1 mg dose is lower still. The 10 mg and 20 mg doses, about 2.4 and 4.8 mg/kg, prolong paralysis without improving conditions.",
         keyFeature: { topic: "airway", n: 5 },
-        source: "walls",
+        source: "tran-rocuronium",
       },
       {
         id: "q4",
@@ -636,7 +739,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "pals2025",
       },
     ],
-    sources: [WALLS, PALS2025],
+    sources: [WALLS_CH1, WALLS_CH26, TRAN, PALS2025],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -665,7 +768,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "The Neonatal Resuscitation Program calls for an alternative airway, an endotracheal tube or a laryngeal mask, when the heart rate stays below 60/minute after 30 seconds of ventilation that moves the chest. A secure airway makes ventilation more reliable before compressions begin, and the oxygen is then raised to 100%. Compressions through a face mask make coordinated ventilation harder. Another 60 seconds of mask ventilation delays a needed step. Epinephrine comes after 60 seconds of compressions with good ventilation. Volume is for suspected blood loss, which this history does not suggest.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "nrp",
+        source: "nrp-l5",
       },
       {
         id: "q2",
@@ -676,7 +779,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "The Neonatal Resuscitation Program sizes the tube by weight or gestational age. A newborn of 1 to 2 kg at about 28 to 34 weeks takes a 3.0 mm tube, and he weighs about 1.9 kg at about 33 weeks. A 2.5 mm tube is for babies under 1 kg and would add resistance. A 3.5 mm tube is for babies over 2 kg and would be tight in this airway. The 4.0 mm and 4.5 mm tubes are too large for any preterm newborn.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "nrp",
+        source: "nrp-l5",
       },
       {
         id: "q3",
@@ -695,10 +798,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "A heart rate below 60/minute after 30 seconds of effective ventilation through a confirmed airway calls for chest compressions, coordinated 3 to 1 with ventilation, and oxygen raised to 100%. Epinephrine by either route is given only if the heart rate stays below 60/minute after 60 seconds of compressions with good ventilation. There is no history of blood loss to justify volume. The colour change and chest rise support tracheal placement, so withdrawing the tube is not the priority.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "nrp",
+        source: "nrp-l6",
       },
     ],
-    sources: [NRP],
+    sources: [NRP_L5, NRP_L6],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -726,7 +829,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "She has complete obstruction and is losing consciousness, and airway equipment is at the bedside. Direct laryngoscopy can show an object above or at the cords, and Magill forceps can remove it at once. Thrusts have already failed at home, and in a child who becomes unresponsive the lay sequence moves on to CPR, not more thrusts. A blind finger sweep can push the grape deeper. Rapid sequence intubation adds drugs and delay to a floppy child. Needle cricothyroidotomy comes only if the object cannot be seen or removed and oxygenation fails.",
         keyFeature: { topic: "airway", n: 1 },
-        source: "walls",
+        source: "walls-ch28",
       },
       {
         id: "q2",
@@ -757,7 +860,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "The obstruction lies below the cords, in the trachea. Advancing the tube pushes the grape into one main bronchus, usually the right, and the tube is then pulled back to its usual depth so the other lung can be ventilated. Cricothyroidotomy by needle or scalpel enters the airway above a tracheal obstruction and does not bypass it. A supraglottic airway sits above the cords. Back blows and thrusts have already failed and waste the time she has left.",
         keyFeature: { topic: "airway", n: 1 },
-        source: "walls",
+        source: "walls-ch28",
       },
       {
         id: "q4",
@@ -776,10 +879,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Ventilating one lung is a bridge. The grape is still lodged in the right main bronchus and must be removed by rigid bronchoscopy, which is the definitive treatment for an airway foreign body in a child. Advancing the tube into the right bronchus would ventilate the blocked lung and lose the open one. Absent right breath sounds come from the obstruction, not a pneumothorax, so a chest tube does not help. Observation or early extubation leaves the object in place.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "walls",
+        source: "walls-ch28",
       },
     ],
-    sources: [WALLS, PALS2025],
+    sources: [WALLS_CH28, PALS2025],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -808,7 +911,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "A forced vital capacity of 1.1 L in a 70 kg woman is 1100 / 70 = 15.7 mL/kg, below the 20 mL/kg threshold used for neuromuscular respiratory failure. With bulbar weakness and accessory muscle use, she is at risk of sudden decompensation. Her saturation of 95% is reassuring only on the surface, because hypoxemia is a late sign in neuromuscular failure. Double vision shows ocular involvement, not respiratory reserve. Ciprofloxacin may have triggered the crisis but does not decide the timing of intubation. Tachycardia is nonspecific.",
         keyFeature: { topic: "airway", n: 2 },
-        source: "walls",
+        source: "walls-ch1",
       },
       {
         id: "q2",
@@ -826,7 +929,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "She coughs weakly after sips of water and has a nasal voice, so she cannot protect her airway or clear secretions. A tight BiPAP mask on a patient with bulbar weakness risks aspiration and hides progression. Neck flexor weakness tracks with diaphragm weakness and signals the need for ventilatory support, but it is not by itself a reason to avoid a mask. Her age, her dose of prednisone and a pulse of 104/minute do not rule out noninvasive ventilation.",
         keyFeature: { topic: "airway", n: 2 },
-        source: "walls",
+        source: "walls-ch9",
       },
       {
         id: "q3",
@@ -847,7 +950,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "mg",
       },
     ],
-    sources: [WALLS, MG],
+    sources: [WALLS_CH1, WALLS_CH9, MG],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -910,7 +1013,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Swinging heart rate and blood pressure show autonomic dysfunction, which is common in severe Guillain-Barre syndrome. Induction and positive pressure ventilation can then cause profound hypotension or bradycardia, so a vasopressor and atropine must be drawn up before induction. Treating the high readings with labetalol risks severe hypotension when the swing reverses. A larger propofol dose adds to the hypotension. A nasogastric tube and topical lidocaine do not address the main danger.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "walls",
+        source: "walls-ch33",
       },
       {
         id: "q4",
@@ -929,10 +1032,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "A suction catheter that stops 4 cm into the tube shows that the tube itself is blocked, and a ventilated patient with neuromuscular weakness is prone to retained secretions. A rise in peak pressure with an unchanged plateau pressure is a resistance problem, which fits a blocked tube. Esophageal displacement would abolish the capnography waveform and let the catheter pass. A mainstem tube and a tension pneumothorax also let the catheter pass, and a pneumothorax raises plateau pressure. Bronchospasm raises resistance but would not stop the catheter.",
         keyFeature: { topic: "airway", n: 6 },
-        source: "walls",
+        source: "walls-ch10",
       },
     ],
-    sources: [LAWN, MARTYN, WALLS],
+    sources: [LAWN, MARTYN, WALLS_CH33, WALLS_CH10],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -961,7 +1064,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "He is drowsy, cannot clear secretions and remains acidotic with a pCO2 of 72 mmHg after an hour of BiPAP. He also wants full treatment. Noninvasive support is failing, and a drowsy patient who cannot cough is at high risk of aspiration and arrest, so he needs intubation. Another hour of higher pressures delays a needed step. Cough assist and chest physiotherapy help secretion clearance but do not correct failing ventilation in a drowsy patient. High-flow nasal oxygen gives less ventilatory support than BiPAP.",
         keyFeature: { topic: "airway", n: 2 },
-        source: "walls",
+        source: "walls-ch9",
       },
       {
         id: "q2",
@@ -995,10 +1098,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Succinylcholine can cause rhabdomyolysis and hyperkalemic cardiac arrest in boys with Duchenne muscular dystrophy, so it is avoided at any dose. Rocuronium at about 1.2 mg/kg, 1.2 x 38 = 45.6 mg rounded to 45 mg, gives rapid intubating conditions. Rocuronium 20 mg is about 0.5 mg/kg and is too low for rapid sequence intubation. Intubating without a blocker lowers first pass success and adds the risk of aspiration in a patient with secretions.",
         keyFeature: { topic: "airway", n: 5 },
-        source: "walls",
+        source: "dmd-care-2018",
       },
     ],
-    sources: [WALLS, SAM],
+    sources: [WALLS_CH9, SAM, DMD],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1095,7 +1198,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "He is drowsy and hard to rouse, with a pH of 7.16, a pCO2 of 68 mmHg and a saturation of 86% after 40 minutes of BiPAP, so noninvasive ventilation is failing and he can no longer protect his airway. He needs intubation. More furosemide or higher BiPAP pressures delay a needed step in a patient who is already obtunded. High-dose nitroglycerin can drop his pressure dangerously, because a fixed aortic valve cannot let cardiac output rise when preload and afterload fall. High-flow nasal oxygen gives less support than BiPAP.",
         keyFeature: { topic: "airway", n: 2 },
-        source: "walls",
+        source: "walls-ch9",
       },
       {
         id: "q2",
@@ -1112,7 +1215,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "With severe aortic stenosis the stroke volume is fixed, so blood pressure depends on systemic vascular resistance, and coronary perfusion of a thick left ventricle depends on diastolic pressure. Keeping vascular tone up, with a vasopressor running and a reduced induction dose, prevents the spiral of hypotension and ischemia. A vasodilator or deliberate hypotension removes that support. Tachycardia shortens diastole and worsens ischemia. Reducing preload lowers the filling that a stiff ventricle needs.",
         keyFeature: { topic: "airway", n: 5 },
-        source: "walls",
+        source: "walls-ch39",
       },
       {
         id: "q3",
@@ -1134,7 +1237,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "sam",
       },
     ],
-    sources: [WALLS, SAM],
+    sources: [WALLS_CH9, WALLS_CH39, SAM],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1279,7 +1382,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Methamphetamine toxicity with agitation and a temperature of 39.4°C puts him at risk of rhabdomyolysis and hyperkalemia, and his potassium is not yet known, so succinylcholine at any dose could raise potassium further. Rocuronium at 1.2 mg/kg, 1.2 x 75 = 90 mg, gives rapid intubating conditions without that risk. Rocuronium 40 mg is only about 0.5 mg/kg and acts slowly. Ketamine alone does not give reliable intubating conditions and leaves him able to fight the tube.",
         keyFeature: { topic: "airway", n: 5 },
-        source: "walls",
+        source: "walls-ch22",
       },
       {
         id: "q4",
@@ -1297,10 +1400,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Continuous waveform capnography shows displacement within a breath or two, because the trace disappears when the tube leaves the trachea. Pulse oximetry falls only after the oxygen reserve is used up, which may be minutes later. Auscultation is unreliable in a noisy CT suite and misses early displacement. A chest X-ray after each move is slow and shows only the moment it was taken. Cuff pressure checks do not detect a tube that has moved.",
         keyFeature: { topic: "airway", n: 6 },
-        source: "walls",
+        source: "cafg1",
       },
     ],
-    sources: [DSI, WALLS],
+    sources: [DSI, WALLS_CH22, CAFG1],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1348,7 +1451,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Stridor that worsens despite IM and IV epinephrine, a muffled voice and falling saturation show progressive upper airway swelling. Every minute of delay makes intubation harder, so the most skilled available operator should secure the airway now. Steroids act over hours and do not treat the swelling in time. Nebulized salbutamol treats wheeze, not laryngeal edema. Nebulized epinephrine can be an adjunct but does not replace a definitive airway when systemic epinephrine has failed. Needle cricothyroidotomy is a rescue for failed oxygenation, not the first plan.",
         keyFeature: { topic: "airway", n: 2 },
-        source: "walls",
+        source: "walls-ch37",
       },
       {
         id: "q3",
@@ -1369,10 +1472,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Laryngeal swelling narrows the glottis, so tubes half a size or more below the age formula should be ready, alongside the usual size. A surgeon able to perform an emergency surgical airway should be at the bedside, because a swollen airway can defeat both intubation and mask ventilation. A larger tube will not pass the swollen glottis. Propofol at 3 mg/kg would worsen his shock. Lying flat worsens obstruction and preoxygenation, and cricoid pressure can distort an already narrow view. Blind and nasal approaches traumatize swollen tissue.",
         keyFeature: { topic: "airway", n: 3 },
-        source: "walls",
+        source: "walls-ch37",
       },
     ],
-    sources: [WAO, WALLS],
+    sources: [WAO, WALLS_CH37],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1549,10 +1652,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "One advantage of awake intubation in an unstable spine is that the neurologic examination can be repeated after the tube is placed. Checking movement and sensation in his hands shows whether the cord injury has changed before sedation hides it. Removing the padding would force the fused neck toward neutral. A chest X-ray is useful but need not delay a brief examination. A cuff pressure of 40 cmH2O is too high. Deep sedation right away loses the chance to examine him.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "walls",
+        source: "walls-ch34",
       },
     ],
-    sources: [ASCOLLAR, CAFG2, DASATI, WALLS],
+    sources: [ASCOLLAR, CAFG2, DASATI, WALLS_CH34],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1581,7 +1684,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "He is agitated, with blood pooling in the pharynx and an unstable midface, so he needs a definitive airway now and cannot cooperate with an awake technique. Rapid sequence intubation with suction and video laryngoscopy, and with the neck prepared for a scalpel cricothyrotomy, is the safest plan. Blood obscures a flexible scope, and the nasal route is dangerous with midface fractures and clear fluid from the nose. Bag-mask ventilation fails with an unstable midface and pushes blood into the lungs. A supraglottic airway does not protect against aspiration of ongoing bleeding.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "walls",
+        source: "cafg2",
       },
       {
         id: "q2",
@@ -1622,7 +1725,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "cafg2",
       },
     ],
-    sources: [WALLS, ATLS, CAFG2],
+    sources: [ATLS, CAFG2],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1655,7 +1758,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "His beard breaks the mask seal, and without teeth his cheeks collapse so the mask cannot seal against them. Age over 55 years and high airway resistance from COPD also predict difficult bag-mask ventilation, and he is 84. Obesity predicts difficult mask ventilation, but low body weight does not. Fever, a short cough and his level of consciousness do not affect mask ventilation.",
         keyFeature: { topic: "airway", n: 3 },
-        source: "walls",
+        source: "walls-ch2",
       },
       {
         id: "q2",
@@ -1691,10 +1794,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "A rate of 24/minute leaves too little time to exhale through obstructed airways, so gas is trapped, as shown by expiratory flow that does not reach zero. The trapped gas raises intrathoracic pressure and drops his blood pressure. His blood gas also shows alkalemia, a pH of 7.52, because his pCO2 of 38 mmHg is far below his usual level, which his HCO3 of 30 mmol/L suggests is chronically high. A lower rate lengthens expiration and allows his pCO2 to rise toward baseline. A faster rate, a larger tidal volume or a shorter expiratory time all worsen air trapping. High PEEP adds to intrathoracic pressure.",
         keyFeature: { topic: "airway", n: 6 },
-        source: "walls",
+        source: "walls-ch36",
       },
     ],
-    sources: [WALLS, CAFG1],
+    sources: [WALLS_CH2, CAFG1, WALLS_CH36],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1828,7 +1931,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "A suspected laryngeal injury can be made worse, or completely disrupted, by a tube or bougie passed without seeing the path. He is awake and cooperative, so an awake flexible scope can show the injury and guide the tube beyond it while he keeps breathing, with a surgeon ready for a tracheostomy. Rapid sequence intubation with a bougie risks a false passage through a torn larynx. Blind nasal intubation has the same risk. A supraglottic airway sits on the injured larynx. Observation leaves an airway that may swell shut.",
         keyFeature: { topic: "airway", n: 3 },
-        source: "walls",
+        source: "cafg2",
       },
       {
         id: "q3",
@@ -1849,7 +1952,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "das-ati",
       },
     ],
-    sources: [ATLS, WALLS, DASATI],
+    sources: [ATLS, CAFG2, DASATI],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1878,7 +1981,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "A hoarse voice and stridor mean the caustic has injured the larynx and epiglottis, and that swelling can progress over hours to complete obstruction. Burns of the lips and tongue do not predict laryngeal or esophageal injury reliably. Alkali causes deep esophageal injury, which matters for endoscopy, not for the airway decision. Retrosternal pain and vomiting point to esophageal injury.",
         keyFeature: { topic: "airway", n: 2 },
-        source: "walls",
+        source: "walls-ch37",
       },
       {
         id: "q2",
@@ -1919,7 +2022,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "das-ati",
       },
     ],
-    sources: [WALLS, CAFG2, DASATI],
+    sources: [WALLS_CH37, CAFG2, DASATI],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1960,7 +2063,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "The formula for a cuffed tube is 3.5 + age in years divided by 4, which gives 3.5 + 0.5 = 4.0 mm at 2 years. Croup narrows the subglottis, so the first tube should be at least half a size smaller than the formula, a 3.5 mm cuffed tube, with a smaller one ready. A 4.0 mm tube is the size for a normal airway at his age. The 4.5 mm and larger tubes are too large even for a normal 2-year-old.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "walls",
+        source: "walls-ch37",
       },
       {
         id: "q3",
@@ -1978,10 +2081,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "The subglottis is narrower than the glottis in croup, so a tube that stops there needs to be smaller, and a 3.0 mm tube should pass. Mask ventilation is keeping him oxygenated, so there is time for one more planned attempt with the smaller tube. Forcing the tube injures the swollen subglottic mucosa and can cause stenosis. A larger tube with a stylet makes the problem worse. A supraglottic airway is not needed while mask ventilation works and does not treat subglottic narrowing. Another nebulizer delays the airway.",
         keyFeature: { topic: "airway", n: 1 },
-        source: "walls",
+        source: "walls-ch37",
       },
     ],
-    sources: [CROUP, WALLS],
+    sources: [CROUP, WALLS_CH37],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2010,7 +2113,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "A forced vital capacity of 0.9 L is 900 / 80 = 11 mL/kg, well below the 20 mL/kg level at which ventilation starts to fail. With an injury at about C4, diaphragm function is weak and will fatigue, and cord swelling can raise the level over the next days, so early controlled intubation is safer than a crash intubation. Hypotension, bradycardia and warm, dry skin are features of neurogenic shock, which needs vasopressors but does not by itself decide the airway. His temperature of 35.9°C is only slightly low, reflecting the cold water and lost vasomotor control, and does not bear on the airway.",
         keyFeature: { topic: "airway", n: 2 },
-        source: "walls",
+        source: "walls-ch34",
       },
       {
         id: "q2",
@@ -2047,7 +2150,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "atls",
       },
     ],
-    sources: [WALLS, SCI, ATLS],
+    sources: [WALLS_CH34, SCI, ATLS],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2077,7 +2180,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Her blood gas shows a respiratory acidosis, and acidemia increases sodium channel blockade from a tricyclic overdose, so ventilation must match her needs. Arterial pCO2 varies inversely with minute ventilation, so raising the rate from 12 to 20/minute should lower it to about 52 x 12 / 20 = 31 mmHg and bring her pH into the alkalemic range the treatment aims for. A smaller tidal volume would worsen the acidosis. PEEP and FiO2 changes do not address the pCO2. Leaving the settings unchanged accepts an acidosis that increases toxicity.",
         keyFeature: { topic: "airway", n: 6 },
-        source: "walls",
+        source: "walls-ch10",
       },
       {
         id: "q2",
@@ -2111,12 +2214,12 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "A tube tip 1 cm above the carina is too deep. Neck flexion during moves can push the tip down about 2 cm into a main bronchus. Withdrawing 3 cm to 22 cm at the teeth places the tip about 4 cm above the carina, within the usual target. Advancing the tube would enter a bronchus. A smaller tube or deflating the cuff does not change the depth. Leaving it risks a mainstem intubation in transit.",
+          "A tube tip 1 cm above the carina is too deep. Neck flexion during moves can push the tip further down into a main bronchus. Withdrawing 3 cm to 22 cm at the teeth places the tip about 4 cm above the carina, within the usual target. Advancing the tube would enter a bronchus. A smaller tube or deflating the cuff does not change the depth. Leaving it risks a mainstem intubation in transit.",
         keyFeature: { topic: "airway", n: 6 },
-        source: "walls",
+        source: "goodman-ett",
       },
     ],
-    sources: [WALLS, PADIS],
+    sources: [WALLS_CH10, PADIS, GOODMAN],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2179,7 +2282,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Ketamine at 1 mg/kg, 20 mg for 20 kg, keeps her blood pressure better than other agents in a child who is still hypovolemic. Rocuronium at 1.2 mg/kg, 1.2 x 20 = 24 mg, gives fast intubating conditions and shortens the time the airway is unprotected. Ketamine 80 mg is 4 mg/kg. Rocuronium 6 mg is only 0.3 mg/kg and gives a slow, incomplete block. Propofol at 3 mg/kg would drop her blood pressure. Midazolam without a paralytic gives poor conditions and risks aspiration of blood.",
         keyFeature: { topic: "airway", n: 5 },
-        source: "walls",
+        source: "walls-ch21",
       },
       {
         id: "q4",
@@ -2203,7 +2306,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "tonsil",
       },
     ],
-    sources: [TONSIL, WALLS],
+    sources: [TONSIL, WALLS_CH21],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2249,7 +2352,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Hypotension after traumatic brain injury worsens outcome, so the induction agent should keep blood pressure stable. Ketamine at about 1.5 mg/kg, 40 mg for 26 kg, does that, and with controlled ventilation it does not raise intracranial pressure in a way that harms outcome. Propofol at about 3 mg/kg can cause hypotension. Midazolam acts slowly and also lowers blood pressure. Fentanyl alone does not give reliable intubating conditions. A dexmedetomidine bolus acts slowly and can cause bradycardia.",
         keyFeature: { topic: "airway", n: 5 },
-        source: "walls",
+        source: "cohen-ketamine-icp",
       },
       {
         id: "q3",
@@ -2267,10 +2370,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "An end-tidal CO2 of 22 mmHg means he is being hyperventilated. Hypocapnia constricts cerebral vessels and can cause ischemia in an injured brain, and without signs of herniation it has no role. The rate should slow to normal for his age, aiming for a normal pCO2 checked by blood gas, because end-tidal CO2 can differ from arterial values. More volume or a faster rate lowers CO2 further. Mannitol is for signs of raised intracranial pressure, which he does not have. A larger tube does not change ventilation.",
         keyFeature: { topic: "airway", n: 6 },
-        source: "walls",
+        source: "btf-peds-tbi",
       },
     ],
-    sources: [ATLS, WALLS],
+    sources: [ATLS, COHEN, BTFPEDS],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2433,7 +2536,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Peak pressure reflects resistance plus compliance, and plateau pressure reflects compliance alone. Both have risen by a similar amount, from 24 to 48 and from 18 to 44 cmH2O, so the problem is stiffness of the lung or chest wall, such as a pneumothorax. Increased resistance from a kinked tube, secretions or bronchospasm raises peak pressure with little change in plateau pressure. A circuit leak lowers pressures. Oversedation does not raise airway pressures.",
         keyFeature: { topic: "airway", n: 6 },
-        source: "walls",
+        source: "walls-ch10",
       },
       {
         id: "q2",
@@ -2450,7 +2553,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "In a ventilated patient who desaturates suddenly, disconnecting the ventilator and bagging by hand with 100% oxygen removes the ventilator as a cause and lets you feel how stiff the lungs are while the tube, the chest and the equipment are checked. A chest X-ray takes time he does not have. Raising PEEP adds to intrathoracic pressure in a hypotensive patient. Fluid and sedation do not address the cause of the pressure rise.",
         keyFeature: { topic: "airway", n: 1 },
-        source: "walls",
+        source: "walls-ch10",
       },
       {
         id: "q3",
@@ -2472,7 +2575,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         source: "atls",
       },
     ],
-    sources: [WALLS, ATLS],
+    sources: [WALLS_CH10, ATLS],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2501,7 +2604,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "She has cardiac tamponade, and her circulation depends on high venous pressure filling a compressed heart. Positive pressure from intubation or BiPAP raises intrathoracic pressure, cuts venous return and can cause arrest, so the effusion should be drained first while she breathes on her own. She is speaking in full sentences, so her airway is not the immediate threat. Furosemide and nitroglycerin reduce the preload that keeps her heart filling and can precipitate collapse.",
         keyFeature: { topic: "airway", n: 4 },
-        source: "walls",
+        source: "walls-ch33",
       },
       {
         id: "q2",
@@ -2519,7 +2622,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Every part of the intubation should protect venous return and sympathetic tone. A reduced dose of ketamine keeps vascular tone better than other agents, and low PEEP with small tidal volumes keeps intrathoracic pressure down. Propofol at 2 mg/kg causes vasodilation and would likely precipitate arrest. High PEEP and large tidal volumes both raise intrathoracic pressure. She should stay as upright as possible until induction, because lying flat worsens her breathing and does not help her circulation.",
         keyFeature: { topic: "airway", n: 5 },
-        source: "walls",
+        source: "walls-ch33",
       },
       {
         id: "q3",
@@ -2539,7 +2642,7 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "Induction and positive pressure may cause arrest in tamponade, so a norepinephrine infusion should be running and the pericardiocentesis kit should be open and ready, with the operator scrubbed to drain the effusion at once if her pressure falls. Extra propofol adds vasodilation. Furosemide and nitroglycerin reduce the preload she depends on. A PEEP of 15 cmH2O raises intrathoracic pressure. A nasogastric tube does not address the main danger.",
         keyFeature: { topic: "airway", n: 3 },
-        source: "walls",
+        source: "walls-ch33",
       },
       {
         id: "q4",
@@ -2558,10 +2661,10 @@ export const AIRWAY_S21_SAMPS: Samp[] = [
         explanation:
           "End-tidal CO2 depends on the blood carrying CO2 to the lungs. With unchanged ventilator settings and a normal-shaped waveform, a fall from 34 to 12 mmHg alongside a BP of 60/40 mmHg means her cardiac output has collapsed, so the effusion must be drained now. An esophageal tube would lose the waveform altogether. Bronchospasm changes the shape of the waveform to a sloped upstroke. The settings have not changed, so the fall is not from hyperventilation. A cuff leak causes low volumes and alarms, not this pattern with hypotension.",
         keyFeature: { topic: "airway", n: 6 },
-        source: "walls",
+        source: "walls-ch11",
       },
     ],
-    sources: [WALLS],
+    sources: [WALLS_CH33, WALLS_CH11],
     reviewed: false,
     author: AUTHOR,
     version: 1,

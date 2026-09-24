@@ -78,9 +78,20 @@ const ALFORD: Source = {
   citation: "Alford DP, Compton P, Samet JH. Acute pain management for patients receiving maintenance methadone or buprenorphine therapy. Ann Intern Med. 2006.",
   url: "https://doi.org/10.7326/0003-4819-144-2-200601170-00010",
 };
-const RH: Source = {
-  id: "roberts-hedges",
-  citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019.",
+const RH_CH10: Source = {
+  id: "roberts-hedges-ch10",
+  citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapter 10, Tube Thoracostomy.",
+  url: "https://shop.elsevier.com/books/roberts-and-hedges-clinical-procedures-in-emergency-medicine-and-acute-care/roberts/978-0-323-35478-3",
+};
+const RH_CH30: Source = {
+  id: "roberts-hedges-ch30",
+  citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapter 30, Regional Anesthesia of the Head and Neck.",
+  url: "https://shop.elsevier.com/books/roberts-and-hedges-clinical-procedures-in-emergency-medicine-and-acute-care/roberts/978-0-323-35478-3",
+};
+const RH_CH31: Source = {
+  id: "roberts-hedges-ch31",
+  citation: "Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapter 31, Regional Anesthesia of the Thorax and Extremities.",
+  url: "https://shop.elsevier.com/books/roberts-and-hedges-clinical-procedures-in-emergency-medicine-and-acute-care/roberts/978-0-323-35478-3",
 };
 const ESMO_PAIN: Source = {
   id: "esmo-cancer-pain",
@@ -589,7 +600,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "An inferior alveolar nerve block anaesthetises the lower teeth on that side and gives rapid, complete relief of pulpitis pain. IV hydromorphone and IM ketorolac give partial, shorter relief. Antibiotics do not relieve pulpitis pain when there is no swelling or fever. Topical benzocaine does not reach the pulp.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "roberts-hedges-ch30",
       },
       {
         id: "q3",
@@ -606,7 +617,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "Bupivacaine is a long-acting amide, and in dental nerve blocks bupivacaine with epinephrine gives the longest anesthesia, often many hours, which can carry him until he sees a dentist. Lidocaine and mepivacaine give shorter blocks, and plain solutions wear off sooner than those with epinephrine. Topical tetracaine does not produce a nerve block.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "roberts-hedges-ch30",
       },
       {
         id: "q4",
@@ -626,7 +637,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "moore-dental",
       },
     ],
-    sources: [CPIC, RH, MOORE],
+    sources: [CPIC, RH_CH30, MOORE],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1047,7 +1058,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "The parietal pleura and the rib periosteum are richly innervated, so generous infiltration of both, along the upper border of the rib, reduces the pain of blunt dissection and tube insertion. Anaesthetising only the skin or the muscle leaves the most painful steps untreated. The visceral pleura and lung have no somatic pain fibres, so infiltrating them adds nothing.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "roberts-hedges-ch10",
       },
       {
         id: "q3",
@@ -1073,7 +1084,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "acs-tqip-pain",
       },
     ],
-    sources: [MOTOV, RH, TQIP],
+    sources: [MOTOV, RH_CH10, TQIP],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1506,7 +1517,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "The central palm is supplied mainly by the median nerve and its palmar cutaneous branch, so a median nerve block at the wrist, including a small subcutaneous injection over that branch, anaesthetises the wound without distorting its edges. The radial nerve supplies the back of the hand, and the ulnar nerve supplies the medial palm and little finger. A Bier block is more than this wound needs. LET gel alone gives unreliable anesthesia for a 4 cm hand wound that needs thorough irrigation.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "roberts-hedges-ch31",
       },
       {
         id: "q2",
@@ -1541,10 +1552,10 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "The ulnar side of the palm has overlapping supply from the ulnar nerve, so a small supplemental infiltration where sensation remains completes the anesthesia. Repeating the median block more proximally does not reach ulnar territory. IV fentanyl or propofol sedation is excessive for a small area of incomplete block. Proceeding while he feels the needle causes avoidable pain.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "roberts-hedges-ch31",
       },
     ],
-    sources: [RH, LALONDE],
+    sources: [RH_CH31, LALONDE],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1744,7 +1755,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "A femoral nerve block anaesthetises much of the femur and anterior thigh, and a traction splint realigns the fracture and eases muscle spasm, giving effective relief without lowering BP. Morphine 15 mg as a single bolus is large for a patient with a BP of 102/66 and a pulse of 124/minute. Oral agents are too slow and weak for 10 out of 10 pain. Midazolam sedates without analgesia. Nitrous oxide is a weak adjunct, and a backboard does not immobilize a femur fracture.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "acs-tqip-pain",
       },
       {
         id: "q3",
@@ -1758,7 +1769,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "acs-tqip-pain",
       },
     ],
-    sources: [OSULLIVAN, RH, TQIP],
+    sources: [OSULLIVAN, TQIP],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -1956,10 +1967,10 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "The mental nerve leaves the mental foramen, which lies below the primary molars at his age, and supplies the lower lip and chin, so a mental nerve block anaesthetises the lip without swelling the wound edges, keeping the vermilion border visible for alignment. The infraorbital nerve supplies the upper lip. The supraorbital, auriculotemporal and greater auricular nerves supply the forehead, temple and ear regions, not the lip.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "roberts-hedges-ch30",
       },
     ],
-    sources: [AAP, GREEN11, RH],
+    sources: [AAP, GREEN11, RH_CH30],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2083,7 +2094,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "A digital block anaesthetises the whole finger, including the nail bed, and allows nail removal and a precise repair once systemic analgesia has settled her. Deep propofol sedation adds airway risk for a procedure that a block handles well. Intranasal fentanyl alone will not permit nail removal. LET gel and vapocoolant spray act only on the surface and cannot anaesthetise the nail bed.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "roberts-hedges-ch31",
       },
       {
         id: "q4",
@@ -2103,7 +2114,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "cps-pain",
       },
     ],
-    sources: [FREY, RH, CPS22],
+    sources: [FREY, RH_CH31, CPS22],
     reviewed: false,
     author: AUTHOR,
     version: 1,
@@ -2192,7 +2203,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         explanation:
           "A digital block with lidocaine anaesthetises the whole finger, allows a painless reduction and avoids sedation risk. Methoxyflurane is authorized in Canada only for adults, and he is 17. Propofol sedation is more than a finger reduction needs. Intranasal midazolam reduces anxiety but provides no analgesia, and topical EMLA does not reach the joint.",
         keyFeature: { topic: TOPIC, n: 2 },
-        source: "roberts-hedges",
+        source: "roberts-hedges-ch31",
       },
       {
         id: "q3",
@@ -2206,7 +2217,7 @@ export const ANALGESIA_SEDATION_S22_SAMPS: Samp[] = [
         source: "cps-procedures",
       },
     ],
-    sources: [CIAVOLA, RH, CPS19],
+    sources: [CIAVOLA, RH_CH31, CPS19],
     reviewed: false,
     author: AUTHOR,
     version: 1,
