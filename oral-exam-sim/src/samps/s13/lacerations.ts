@@ -6,17 +6,17 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
 
 const S = {
-  cigTet: { id: "cig-tetanus", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Tetanus toxoid. Tetanus prophylaxis in wound management.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html" },
-  cigRab: { id: "cig-rabies", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Rabies vaccine. Post-exposure prophylaxis.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-18-rabies-vaccine.html" },
+  cigTet: { id: "cig-tetanus", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Tetanus toxoid. Tetanus prophylaxis in wound management. 2026.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html" },
+  cigRab: { id: "cig-rabies", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Rabies vaccine. Post-exposure prophylaxis. 2026.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-18-rabies-vaccine.html" },
   onRabies: { id: "on-rabies", citation: "Ontario Ministry of Health. Management of Potential Rabies Exposures Guideline. 2020.", url: "https://files.ontario.ca/moh-guidelines-management-of-potential-rabies-exposures-guideline-en-2020.pdf" },
   hppa: { id: "hppa", citation: "Health Protection and Promotion Act, R.S.O. 1990, c. H.7, and its regulation on communicable diseases (Ontario). Duty to report animal bites to the medical officer of health." },
   idsa: { id: "idsa-ssti", citation: "Stevens DL, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections. 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014." },
   singer: { id: "singer-nejm", citation: "Singer AJ, Hollander JE, Quinn JV. Evaluation and management of traumatic lacerations. N Engl J Med. 1997." },
-  water: { id: "cochrane-water", citation: "Fernandez R, Griffiths R. Water for wound cleansing. Cochrane Database Syst Rev." },
+  water: { id: "cochrane-water", citation: "Fernandez R, Green HL, Griffiths R, Atkinson RA, Ellwood LJ. Water for wound cleansing. Cochrane Database Syst Rev. 2022.", url: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD003861.pub4/full" },
   asra: { id: "asra-last", citation: "Neal JM, et al. The third American Society of Regional Anesthesia and Pain Medicine practice advisory on local anesthetic systemic toxicity. Executive summary 2017. Reg Anesth Pain Med. 2018." },
   green: { id: "green-ketamine", citation: "Green SM, Roback MG, Kennedy RM, Krauss B. Clinical practice guideline for emergency department ketamine dissociative sedation. 2011 update. Ann Emerg Med. 2011." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on wound management, hand injuries and mammalian bites." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on wound evaluation, lacerations of the face, hand and leg, and puncture wounds." },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on wound management, hand injuries and mammalian bites." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on wound evaluation, lacerations of the face, hand and leg, and puncture wounds." },
   konda: { id: "konda-ct", citation: "Konda SR, et al. Computed tomography scan to detect traumatic arthrotomies of the knee joint. J Bone Joint Surg Am. 2013." },
   cchr: { id: "cchr", citation: "Stiell IG, et al. The Canadian CT Head Rule for patients with minor head injury. Lancet. 2001." },
 } satisfies Record<string, Source>;
@@ -28,13 +28,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["msk"],
     title: "Kitchen knife injury to a finger",
     stem:
-      "A 34 year old right handed line cook presents 90 minutes after his boning knife slipped while he was deboning chicken. He has a 2 cm transverse laceration on the palmar surface of his right index finger, over the middle of the proximal phalanx. Bleeding is controlled with a gauze dressing. He is healthy and takes no medications. Vital signs are normal. At rest, his right index finger lies straighter than the other fingers.",
+      "A 34-year-old right handed line cook presents 90 minutes after his boning knife slipped while he was deboning chicken. He has a 2 cm transverse laceration on the palmar surface of his right index finger, over the middle of the proximal phalanx. Bleeding is controlled with a gauze dressing. He is healthy and takes no medications. Vital signs are normal. At rest, his right index finger lies straighter than the other fingers.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "Before giving any local anaesthetic, list THREE specific examinations you will perform on this finger.",
+        prompt: "Before giving any local anaesthetic, what specific examinations will you perform on this finger?",
         accept: [
           { id: "fdp", text: "Isolated FDP test. Hold the PIP joint extended and ask him to flex the DIP joint", match: ["fdp", "profundus", "dip flexion", "flex dip", "dip joint"] },
           { id: "fds", text: "Isolated FDS test. Hold the other fingers extended and ask him to flex the PIP joint", match: ["fds", "superficialis", "pip flexion", "flex pip", "pip joint"] },
@@ -56,15 +56,15 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "With the PIP joint held extended, he cannot flex the DIP joint. He can flex the PIP joint when the other fingers are held extended. Two point discrimination is 10 mm on the radial side of the fingertip and 4 mm on the ulnar side.",
-        prompt: "Which is the most accurate interpretation? Select one.",
+        prompt: "Which of the following is the most accurate interpretation of these examination findings?",
         options: [
-          "FDS laceration with an intact FDP and no nerve injury",
-          "FDP laceration with a radial digital nerve injury",
-          "FDP and FDS laceration with an ulnar digital nerve injury",
-          "FDP laceration with no nerve injury, because two point discrimination is normal on one side",
           "Extensor tendon injury with a radial digital nerve injury",
+          "FDP and FDS laceration with an ulnar digital nerve injury",
+          "FDP laceration with a radial digital nerve injury",
+          "FDP laceration with no digital nerve injury",
+          "FDS laceration with an intact FDP and no nerve injury",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Inability to flex the DIP joint with the PIP blocked means the FDP is cut. An intact isolated PIP flexion shows FDS works. Two point discrimination above about 6 mm on one side, compared with a normal other side, indicates a digital nerve injury on that side.",
         keyFeature: { topic: "lacerations", n: 2 },
@@ -74,7 +74,8 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "The on call plastic surgeon asks you to manage him in the emergency department today. List THREE elements of your management and disposition.",
+        update: "The on call plastic surgeon asks you to manage him in the emergency department today.",
+        prompt: "What are the elements of your management and disposition?",
         accept: [
           { id: "irrigate", text: "Irrigate the wound and close the skin only", match: ["irrigate", "irrigation", "close skin", "skin closure", "suture skin"] },
           { id: "splint", text: "Dorsal blocking splint with the wrist and MCP joints flexed and the IP joints extended", match: ["dorsal blocking splint", "dorsal splint", "dorsal block"] },
@@ -94,17 +95,18 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "He asks whether he needs antibiotics. The wound was made by a clean knife, is 90 minutes old and is not contaminated. Which is most appropriate? Select one.",
+        update: "He asks whether he needs antibiotics. The wound was made by a clean knife, is 90 minutes old and is not contaminated.",
+        prompt: "Which of the following is the most appropriate antibiotic plan for this wound?",
         options: [
-          "Cephalexin 500 mg PO four times daily for 7 days",
-          "Amoxicillin clavulanate 875 mg PO twice daily for 5 days",
+          "Amoxicillin clavulanate 875/125 mg PO twice daily for 5 days",
           "Cefazolin 2 g IV once in the emergency department",
-          "No prophylactic antibiotics, with instructions to return for signs of infection",
+          "Cephalexin 500 mg PO four times daily for 7 days",
           "Topical mupirocin under the dressing",
+          "No prophylactic antibiotics, return if signs of infection",
         ],
-        correct: 3,
+        correct: 4,
         explanation:
-          "Simple, clean hand lacerations from a sharp object seen early do not benefit from prophylactic antibiotics. Good irrigation matters more. Antibiotics add cost, adverse effects and resistance without lowering infection rates in low risk wounds.",
+          "Simple, clean hand lacerations from a sharp object seen early do not benefit from prophylactic antibiotics. Good irrigation matters more. Antibiotics add cost, adverse effects and resistance without lowering infection rates in low risk wounds. Give him instructions to return for signs of infection.",
         keyFeature: { topic: "lacerations", n: 4 },
         source: "singer-nejm",
       },
@@ -118,13 +120,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Injury from the family pet",
     stem:
-      "A 46 year old woman presents to your emergency department in Barrie, Ontario, 3 hours after her neighbour's dog bit her left hand while she was separating it from her own dog. She has two puncture wounds on the dorsum of the hand over the third and fourth metacarpals, each about 5 mm, and a 2 cm ragged laceration on the thenar eminence. She has type 2 diabetes treated with metformin. Vital signs are normal. Tendon, nerve and vascular examination are normal. Her last tetanus booster was 4 years ago.",
+      "A 46-year-old woman presents to your emergency department in Barrie, Ontario, 3 hours after her neighbour's dog bit her left hand while she was separating it from her own dog. She has two puncture wounds on the dorsum of the hand over the third and fourth metacarpals, each about 5 mm, and a 2 cm ragged laceration on the thenar eminence. She has type 2 diabetes treated with metformin. Vital signs are normal. Tendon, nerve and vascular examination are normal. Her last tetanus booster was 4 years ago.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of this injury or patient that increase the risk of wound infection.",
+        prompt: "What features of this injury or patient increase the risk of wound infection?",
         accept: [
           { id: "hand", text: "Location on the hand", match: ["hand"] },
           { id: "puncture", text: "Puncture wounds that are hard to irrigate", match: ["puncture"] },
@@ -142,7 +144,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO elements of your wound management before she leaves the department.",
+        prompt: "What are the elements of your wound management before she leaves the department?",
         accept: [
           { id: "irrigate", text: "Copious irrigation with tap water or saline", match: ["irrigate", "irrigation", "irrigated"] },
           { id: "debride", text: "Debride devitalized tissue", match: ["debride", "debridement", "debrided"] },
@@ -161,17 +163,18 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which antibiotic plan is most appropriate? She has no drug allergies. Select one.",
+        update: "She has no drug allergies.",
+        prompt: "Which of the following is the most appropriate antibiotic plan for this patient?",
         options: [
-          "No antibiotic. Return if redness develops",
+          "Amoxicillin clavulanate 875/125 mg PO BID, 3 to 5 days",
           "Cephalexin 500 mg PO four times daily for 5 days",
-          "Amoxicillin clavulanate 875/125 mg PO twice daily for 3 to 5 days, with a wound check in 24 to 48 hours",
-          "Clindamycin 300 mg PO four times daily for 10 days",
           "Ciprofloxacin 500 mg PO twice daily for 7 days",
+          "Clindamycin 300 mg PO four times daily for 10 days",
+          "No antibiotic, and return if redness develops",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
-          "Prophylaxis is recommended for dog bites to the hand, puncture wounds and patients with diabetes. Amoxicillin clavulanate covers Pasteurella, streptococci, staphylococci and oral anaerobes. Cephalexin and clindamycin alone miss Pasteurella. A short course with early review is standard.",
+          "Prophylaxis is recommended for dog bites to the hand, puncture wounds and patients with diabetes. Amoxicillin clavulanate covers Pasteurella, streptococci, staphylococci and oral anaerobes. Cephalexin and clindamycin alone miss Pasteurella. A short course, twice daily for 3 to 5 days, with a wound check in 24 to 48 hours is standard.",
         keyFeature: { topic: "lacerations", n: 4 },
         source: "idsa-ssti",
       },
@@ -180,7 +183,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "The dog is owned, lives next door and appears healthy. The owner is unsure of its rabies vaccination status.",
-        prompt: "List TWO actions regarding rabies in this case.",
+        prompt: "What actions regarding rabies are needed in this case?",
         accept: [
           { id: "report", text: "Report the bite to the local public health unit", match: ["public health", "report", "reported", "reporting", "notify"] },
           { id: "observe", text: "Arrange 10 day observation of the dog", match: ["10 day", "ten day", "observe dog", "observation"] },
@@ -204,13 +207,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["msk"],
     title: "Knuckle wound after a night out",
     stem:
-      "A 26 year old man presents at 11:00 with a 6 mm laceration over the dorsum of his right fourth metacarpophalangeal joint. He says he caught it on a chain link fence at about 01:00. He has mild swelling but full range of motion. He is otherwise well. Vital signs are normal.",
+      "A 26-year-old man presents at 11:00 with a 6 mm laceration over the dorsum of his right fourth metacarpophalangeal joint. He says he caught it on a chain link fence at about 01:00. He has mild swelling but full range of motion. He is otherwise well. Vital signs are normal.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of this presentation that should make you suspect a more serious mechanism than he describes.",
+        prompt: "What features of this presentation should make you suspect a more serious mechanism than he describes?",
         accept: [
           { id: "site", text: "Location over the dorsal MCP joint, typical of a punch to the mouth", match: ["mcp", "knuckle", "metacarpophalangeal"] },
           { id: "size", text: "Small wound of 3 to 8 mm typical of a tooth", match: ["small", "tooth"] },
@@ -228,7 +231,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "He admits he punched another man in the mouth.",
-        prompt: "List THREE steps in your assessment of this wound.",
+        prompt: "What are the steps in your assessment of this wound?",
         accept: [
           { id: "xray", text: "Hand radiographs for fracture, tooth fragment or air in the joint", match: ["x ray", "xray", "radiograph"] },
           { id: "fist", text: "Explore the wound with the fingers flexed in a fist position as at the time of injury", match: ["fist", "clenched", "flexed", "flexion"] },
@@ -245,16 +248,16 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Radiographs are normal. On exploration in a fist position the extensor tendon and joint capsule appear intact. There are no signs of infection.",
-        prompt: "Which is the most appropriate antibiotic plan? He has no allergies. Select one.",
+        update: "Radiographs are normal. On exploration in a fist position the extensor tendon and joint capsule appear intact. There are no signs of infection. He has no allergies.",
+        prompt: "Which of the following is the most appropriate antibiotic plan for this patient?",
         options: [
-          "No antibiotic because there is no infection yet",
-          "Clindamycin 300 mg PO four times daily",
-          "Cephalexin 500 mg PO four times daily",
           "Amoxicillin clavulanate 875/125 mg PO twice daily",
+          "Cephalexin 500 mg PO four times daily",
+          "Clindamycin 300 mg PO four times daily",
           "Cloxacillin 500 mg PO four times daily",
+          "No antibiotic until infection develops",
         ],
-        correct: 3,
+        correct: 0,
         explanation:
           "All clenched fist injuries deserve prophylaxis. Amoxicillin clavulanate covers Eikenella corrodens, streptococci, staphylococci and anaerobes. Eikenella is resistant to clindamycin and first generation cephalosporins cover it poorly.",
         keyFeature: { topic: "lacerations", n: 4 },
@@ -264,7 +267,8 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "The wound is irrigated and he is placed in a splint. List TWO further elements of his disposition.",
+        update: "The wound is irrigated and he is placed in a splint.",
+        prompt: "What are the further elements of his disposition?",
         accept: [
           { id: "noclose", text: "Leave the wound open without sutures", match: ["leave open", "not suture", "don suture", "dont suture", "no suture", "do not close", "not close", "don close", "dont close", "open"] },
           { id: "recheck", text: "Wound recheck in 24 to 48 hours", match: ["recheck", "24 hour", "48 hour", "reassess", "follow up", "review"] },
@@ -291,13 +295,14 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Night visitor at the cottage",
     stem:
-      "A 29 year old woman presents at 08:00 from a cottage near Parry Sound, Ontario. At 03:00 she woke to find a bat on her bare forearm. She brushed it off and it flew out an open window. She sees no mark on her skin. She weighs 60 kg, is healthy and has never had a rabies vaccine.",
+      "A 29-year-old woman presents at 08:00 from a cottage near Parry Sound, Ontario. At 03:00 she woke to find a bat on her bare forearm. She brushed it off and it flew out an open window. She sees no mark on her skin. She is healthy and has never had a rabies vaccine.",
+    vitals: { weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE questions you would ask to characterize this exposure.",
+        prompt: "What questions would you ask to characterize this exposure?",
         accept: [
           { id: "contact", text: "Was there direct physical contact with the bat", match: ["direct contact", "touch", "physical contact", "contact"] },
           { id: "bite", text: "Did she feel a bite or scratch", match: ["bite", "scratch"] },
@@ -315,15 +320,15 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate recommendation? Select one.",
+        prompt: "Which of the following is the most appropriate recommendation for this exposure?",
         options: [
-          "No prophylaxis because no wound is visible",
-          "Rabies vaccine series only",
+          "Observation, with return for fever or neurological signs",
           "Rabies immune globulin and a rabies vaccine series",
-          "Rabies immune globulin only",
-          "Watch for symptoms and return if she develops fever or neurological signs",
+          "Rabies immune globulin only, without vaccine",
+          "Rabies vaccine series only, without immune globulin",
+          "No prophylaxis",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
           "Direct skin contact with a live bat is an exposure under the Canadian Immunization Guide. Ontario guidance asks whether a bite, scratch or saliva exposure can be ruled out, and here it cannot because she was asleep. Either way she needs full post-exposure prophylaxis. The absence of a visible wound does not rule out a bite. The bat cannot be tested, so prophylaxis should not be delayed.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
@@ -333,7 +338,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE specifics of the prophylaxis you will order. Include doses, sites and schedule where relevant.",
+        prompt: "What are the specifics of the prophylaxis you will order, including doses, sites and schedule where relevant?",
         accept: [
           { id: "rigdose", text: "Rabies immune globulin 20 IU/kg, which is 1200 IU", match: ["20 iu/kg", "20 iu kg", "20 unit/kg", "20 unit kg", "1200 iu", "1200 unit"] },
           { id: "rigsite", text: "With no visible wound, give the immune globulin IM at a site distant from the vaccine, such as the other limb", match: ["infiltrate", "infiltration", "infiltrated", "distant", "different site", "separate site", "other limb", "different limb", "opposite"] },
@@ -355,7 +360,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "She mentions she started prednisone 40 mg daily 3 weeks ago for a flare of Crohn disease.",
-        prompt: "List TWO changes to her prophylaxis plan because of this.",
+        prompt: "What changes to her prophylaxis plan are needed because of this?",
         accept: [
           { id: "d28", text: "Add a fifth vaccine dose on day 28", match: ["day 28", "fifth dose", "5th dose", "five dose", "5 dose"] },
           { id: "sero", text: "Check rabies antibody titres after the series", match: ["titre", "titer", "serology", "antibody"] },
@@ -380,13 +385,14 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["analgesia-sedation"],
     title: "Preschooler who fell against a table",
     stem:
-      "A 4 year old boy is brought in after falling against a coffee table. He has a 1.5 cm vertical laceration of the lower lip that crosses the vermilion border onto the skin. He is crying and uncooperative. He weighs 18 kg and is otherwise healthy. Vital signs are normal for age.",
+      "A 4-year-old boy is brought in after falling against a coffee table. He has a 1.5 cm vertical laceration of the lower lip that crosses the vermilion border onto the skin. He is crying and uncooperative. He is otherwise healthy. Vital signs are normal for age.",
+    vitals: { weight: "18 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features you must specifically assess in this wound.",
+        prompt: "What features must you specifically assess in this wound?",
         accept: [
           { id: "through", text: "Whether it is through and through into the mouth", match: ["through and through", "through through", "full thickness", "intraoral", "inside mouth"] },
           { id: "teeth", text: "Injured or missing teeth, with possible tooth fragments in the wound", match: ["teeth", "tooth", "dental"] },
@@ -404,7 +410,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO measures that will help you achieve an accurate repair of the vermilion border.",
+        prompt: "What measures will help you achieve an accurate repair of the vermilion border?",
         accept: [
           { id: "mark", text: "Mark the vermilion border with a skin marker before injecting", match: ["mark", "marker", "marking"] },
           { id: "block", text: "Mental nerve block rather than local infiltration so the tissue is not distorted", match: ["mental nerve", "nerve block", "regional block"] },
@@ -424,7 +430,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "You plan ketamine dissociative sedation.",
-        prompt: "List THREE elements of your pre-sedation risk assessment.",
+        prompt: "What are the elements of your pre-sedation risk assessment?",
         accept: [
           { id: "airway", text: "Airway assessment for difficult bag mask ventilation or intubation", match: ["airway"] },
           { id: "uri", text: "Active upper respiratory infection or asthma", match: ["respiratory infection", "uri", "urti", "cold", "asthma", "cough"] },
@@ -442,7 +448,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which initial IV ketamine dose is most appropriate? Select one.",
+        prompt: "Which of the following is the most appropriate initial IV ketamine dose for this child?",
         options: ["9 mg", "27 mg", "54 mg", "72 mg", "180 mg"],
         correct: 1,
         explanation:
@@ -454,8 +460,8 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 3,
-        update: "Two minutes after the dose he develops high pitched inspiratory noise, then silence with chest wall retractions. SpO2 falls to 82%.",
-        prompt: "List THREE interventions in order of escalation.",
+        update: "Two minutes after the dose he develops high pitched inspiratory noise, then silence with chest wall retractions. O2 sat falls to 82%.",
+        prompt: "What interventions would you use, in order of escalation?",
         accept: [
           { id: "jaw", text: "Jaw thrust with pressure at the laryngospasm notch", match: ["jaw thrust", "laryngospasm notch", "larson"] },
           { id: "bvm", text: "Bag valve mask ventilation with 100% oxygen and positive pressure", match: ["bag", "bvm", "positive pressure", "cpap", "peep"] },
@@ -481,13 +487,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Roofer who stepped on something sharp",
     stem:
-      "A 42 year old roofer presents 3 hours after stepping on a roofing nail. It passed through the sole of his running shoe into the ball of his right foot, near the second metatarsal head. He pulled it out himself. There is a 3 mm puncture wound with minimal bleeding. He is healthy. He moved to Canada from abroad as an adult and has no record of tetanus immunization.",
+      "A 42-year-old roofer presents 3 hours after stepping on a roofing nail. It passed through the sole of his running shoe into the ball of his right foot, near the second metatarsal head. He pulled it out himself. There is a 3 mm puncture wound with minimal bleeding. He is healthy. He moved to Canada from abroad as an adult and has no record of tetanus immunization.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of the history that help you estimate the risk of complications from this wound.",
+        prompt: "What features of the history help you estimate the risk of complications from this wound?",
         accept: [
           { id: "shoe", text: "Penetration through a rubber soled shoe", match: ["shoe", "sneaker", "footwear"] },
           { id: "depth", text: "Estimated depth of penetration", match: ["depth", "deep"] },
@@ -506,7 +512,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO elements of tetanus prophylaxis for him today. Include the dose where relevant.",
+        prompt: "What are the elements of tetanus prophylaxis for him today, including the dose where relevant?",
         accept: [
           { id: "tdap", text: "Tdap or Td vaccine now", match: ["tdap", "td", "tetanus toxoid", "tetanus vaccine", "tetanus booster"] },
           { id: "tig", text: "Tetanus immune globulin 250 units IM at a separate site", match: ["immune globulin 250", "tig 250", "tetanus immunoglobulin 250", "immunoglobulin 250"] },
@@ -524,15 +530,15 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "He returns 8 days later. The pain has worsened over 3 days. The forefoot is swollen and tender over the second metatarsal head. He is afebrile.",
-        prompt: "Which organism must your empiric antibiotic choice cover? Select one.",
+        prompt: "Which of the following organisms must your empiric antibiotic choice cover?",
         options: [
+          "Clostridium perfringens",
+          "Eikenella corrodens",
           "Pasteurella multocida",
           "Pseudomonas aeruginosa",
-          "Eikenella corrodens",
           "Vibrio vulnificus",
-          "Clostridium tetani",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "Late deep infection after a nail through a rubber soled shoe is classically caused by Pseudomonas aeruginosa, which thrives in shoe foam. Early superficial cellulitis is usually staphylococcal or streptococcal. Late worsening pain near bone suggests osteomyelitis or osteochondritis.",
         keyFeature: { topic: "lacerations", n: 4 },
@@ -542,7 +548,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE further steps in his management at this visit.",
+        prompt: "What further steps are needed in his management at this visit?",
         accept: [
           { id: "xray", text: "Foot radiographs for foreign body and bone changes", match: ["x ray", "xray", "radiograph"] },
           { id: "mri", text: "MRI to look for osteomyelitis or abscess", match: ["mri"] },
@@ -566,13 +572,14 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Farmer with a leg wound",
     stem:
-      "A 70 year old dairy farmer presents 20 hours after cutting his left shin on a rusty disc harrow blade. He finished his chores before coming in. There is an 8 cm ragged laceration of the anterior shin, with soil and manure in the wound and some devitalized skin edges. He has type 2 diabetes and peripheral vascular disease. He cannot recall ever having a tetanus shot. Temperature 36.9 C. Vital signs are otherwise normal.",
+      "A 70-year-old dairy farmer presents 20 hours after cutting his left shin on a rusty disc harrow blade. He finished his chores before coming in. There is an 8 cm ragged laceration of the anterior shin, with soil and manure in the wound and some devitalized skin edges. He has type 2 diabetes and peripheral vascular disease. He cannot recall ever having a tetanus shot. Vital signs are otherwise normal.",
+    vitals: { temperature: "36.9°C" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE steps in preparing this wound before any decision on closure.",
+        prompt: "What steps would you take in preparing this wound before any decision on closure?",
         accept: [
           { id: "irr", text: "High volume pressure irrigation", match: ["irrigate", "irrigation", "irrigated"] },
           { id: "debride", text: "Sharp debridement of devitalized tissue", match: ["debride", "debridement", "debrided", "devitalized"] },
@@ -590,20 +597,21 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO are most appropriate after the wound is cleaned? Select TWO.",
+        update: "The wound is cleaned.",
+        prompt: "Which of the following are the most appropriate next steps for this wound?",
         options: [
-          "Primary closure with sutures today",
+          "Admission to hospital for IV vancomycin",
+          "Oral amoxicillin clavulanate, wound check in 48 hours",
+          "Packing, delayed primary closure in 3 to 5 days",
           "Primary closure with staples today",
-          "Tissue adhesive",
-          "Packing and dressing with delayed primary closure in 3 to 5 days",
-          "Oral amoxicillin clavulanate with a wound check in 48 hours",
-          "No antibiotics and follow up with his family physician in 10 days",
+          "Primary closure with sutures today",
+          "Tissue adhesive closure today",
           "Topical antibiotic ointment only",
-          "Admission for IV vancomycin",
+          "No antibiotics and family physician follow up in 10 days",
         ],
-        correct: [3, 4],
+        correct: [1, 2],
         explanation:
-          "A wound that is 20 hours old, contaminated with soil and manure, with devitalized edges in a patient with diabetes and vascular disease is high risk. Delayed primary closure lowers infection risk. Prophylactic antibiotics and early review are reasonable for this infection prone wound.",
+          "A wound that is 20 hours old, contaminated with soil and manure, with devitalized edges in a patient with diabetes and vascular disease is high risk. Packing and dressing the wound, with delayed primary closure in 3 to 5 days, lowers infection risk. Prophylactic oral amoxicillin clavulanate with a wound check in 48 hours is reasonable for this infection prone wound.",
         keyFeature: { topic: "lacerations", n: 4 },
         source: "rosen",
       },
@@ -611,7 +619,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO elements of his tetanus prophylaxis. Include the dose where relevant.",
+        prompt: "What are the elements of his tetanus prophylaxis, including the dose where relevant?",
         accept: [
           { id: "tdap", text: "Tdap or Td vaccine now", match: ["tdap", "td", "tetanus toxoid", "tetanus vaccine", "tetanus booster"] },
           { id: "tig", text: "Tetanus immune globulin 250 units IM at a separate site", match: ["immune globulin 250", "tig 250", "tetanus immunoglobulin 250", "immunoglobulin 250"] },
@@ -626,8 +634,8 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        update: "He returns 36 hours later with severe pain, spreading dusky erythema and a small area of crepitus above the wound. HR 124, BP 88/50, temperature 38.9 C.",
-        prompt: "List THREE urgent actions.",
+        update: "He returns 36 hours later with severe pain, spreading dusky erythema and a small area of crepitus above the wound. Pulse 124/minute, BP 88/50 mmHg, temperature 38.9°C.",
+        prompt: "What urgent actions are needed?",
         accept: [
           { id: "surg", text: "Emergent surgical consultation for debridement", match: ["surgery", "surgical", "surgeon", "debride", "debridement", "debrided", "operating room"] },
           { id: "abx", text: "Broad spectrum IV antibiotics such as piperacillin tazobactam or meropenem with vancomycin", match: ["piperacillin", "meropenem", "broad spectrum", "vancomycin"] },
@@ -654,12 +662,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["analgesia-sedation", "tox"],
     title: "Several cuts after a fall through a door",
     stem:
-      "A 23 year old woman fell through a glass patio door. She has seven lacerations on both forearms and both shins, totalling 38 cm. There is no tendon, nerve or vascular injury. She weighs 50 kg and is healthy. You have 1% lidocaine with epinephrine and 1% plain lidocaine.",
+      "A 23-year-old woman fell through a glass patio door. She has seven lacerations on both forearms and both shins, totalling 38 cm. There is no tendon, nerve or vascular injury. She is healthy. You have 1% lidocaine with epinephrine and 1% plain lidocaine.",
+    vitals: { weight: "50 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is the maximum volume of 1% lidocaine with epinephrine you should infiltrate? Select one.",
+        prompt: "Which of the following is the maximum volume of 1% lidocaine with epinephrine you should infiltrate?",
         options: ["15 mL", "22 mL", "35 mL", "50 mL", "70 mL"],
         correct: 2,
         explanation:
@@ -671,7 +680,8 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "You will reach the maximum dose before all wounds are anaesthetized. List THREE ways to complete the repair safely.",
+        update: "You will reach the maximum dose before all wounds are anaesthetized.",
+        prompt: "What are the ways to complete the repair safely?",
         accept: [
           { id: "block", text: "Regional nerve blocks, such as forearm or ankle blocks", match: ["nerve block", "regional", "hematoma block"] },
           { id: "dilute", text: "Dilute to 0.5% lidocaine to give more volume for the same dose", match: ["dilute", "diluted", "dilution", "0.5%"] },
@@ -693,8 +703,8 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "A colleague helps and infiltrates another 20 mL of 2% plain lidocaine into the shin wounds without checking the total. Ten minutes later she reports perioral tingling and ringing in her ears, then has a generalized seizure. HR 118, BP 146/88.",
-        prompt: "List THREE immediate actions.",
+        update: "A colleague helps and infiltrates another 20 mL of 2% plain lidocaine into the shin wounds without checking the total. Ten minutes later she reports perioral tingling and ringing in her ears, then has a generalized seizure. Pulse 118/minute, BP 146/88 mmHg.",
+        prompt: "What immediate actions are needed?",
         accept: [
           { id: "stop", text: "Stop injecting local anaesthetic and call for help", match: ["stop", "stopped", "call for help"] },
           { id: "airway", text: "Airway support with 100% oxygen and ventilation", match: ["airway", "oxygen", "ventilate", "ventilation", "bag"] },
@@ -716,7 +726,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "She recovers fully. The next day, before closure of a deep shin wound, she says it hurts sharply when pressed in one spot.",
-        prompt: "List TWO steps before closing this wound.",
+        prompt: "What steps are needed before closing this wound?",
         accept: [
           { id: "xray", text: "Radiograph for retained glass", match: ["x ray", "xray", "radiograph"] },
           { id: "us", text: "Point of care ultrasound for a foreign body", match: ["ultrasound", "pocus"] },
@@ -741,13 +751,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["msk"],
     title: "Painter with a tiny fingertip wound",
     stem:
-      "A 38 year old house painter presents 2 hours after his airless paint sprayer discharged into the pad of his left index finger while he was clearing the tip. The paint is oil based. There is a 2 mm puncture on the finger pad. He has mild pain and slight swelling. He is healthy. Vital signs are normal.",
+      "A 38-year-old house painter presents 2 hours after his airless paint sprayer discharged into the pad of his left index finger while he was clearing the tip. The paint is oil based. There is a 2 mm puncture on the finger pad. He has mild pain and slight swelling. He is healthy. Vital signs are normal.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of this injury that make it high risk despite its appearance.",
+        prompt: "What features of this injury make it high risk despite its appearance?",
         accept: [
           { id: "pressure", text: "High pressure injection mechanism", match: ["high pressure", "pressure injection", "injection"] },
           { id: "oil", text: "Oil based paint or solvent causes intense chemical inflammation", match: ["oil", "solvent", "paint"] },
@@ -765,7 +775,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE examinations you will document for this finger.",
+        prompt: "What examinations will you document for this finger?",
         accept: [
           { id: "cap", text: "Capillary refill and colour", match: ["capillary refill", "colour", "color", "perfusion"] },
           { id: "sens", text: "Digital nerve sensation or two point discrimination", match: ["sensation", "two point"] },
@@ -782,7 +792,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of your emergency department management while arranging definitive care.",
+        prompt: "What are the elements of your emergency department management while arranging definitive care?",
         accept: [
           { id: "xray", text: "Radiographs to show spread of radiopaque paint or air", match: ["x ray", "xray", "radiograph"] },
           { id: "abx", text: "Broad spectrum IV antibiotics", match: ["antibiotic", "cefazolin"] },
@@ -803,17 +813,17 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which disposition is most appropriate? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for this patient?",
         options: [
-          "Discharge with oral antibiotics and a wound check in 24 hours",
-          "Admit to medicine for IV antibiotics and observation of swelling",
-          "Urgent hand surgery consultation for operative decompression and debridement today",
-          "Warm soaks and follow up in hand clinic within one week",
+          "Admit to medicine for IV antibiotics and observation",
+          "Discharge on oral antibiotics, wound check in 24 hours",
           "Oral steroids and follow up with his family physician",
+          "Urgent hand surgery for decompression and debridement today",
+          "Warm soaks, elevation and hand clinic review within one week",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "High pressure injection injuries are surgical emergencies. Early operative decompression and debridement reduce amputation rates. Observation or antibiotics alone allow ongoing chemical and ischemic damage.",
+          "High pressure injection injuries are surgical emergencies that need urgent hand surgery consultation for operative decompression and debridement today. Early operative decompression and debridement reduce amputation rates. Observation or antibiotics alone allow ongoing chemical and ischemic damage.",
         keyFeature: { topic: "msk", n: 7 },
         source: "tintinalli",
       },
@@ -827,13 +837,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["msk"],
     title: "Knee wound from a glass table",
     stem:
-      "A 24 year old man fell onto a glass patio table 3 hours ago. He has a 3 cm laceration on the anterolateral knee, just lateral to the patella. The wound is not bleeding. He can walk with a limp. He is healthy. Vital signs are normal.",
+      "A 24-year-old man fell onto a glass patio table 3 hours ago. He has a 3 cm laceration on the anterolateral knee, just lateral to the patella. The wound is not bleeding. He can walk with a limp. He is healthy. Vital signs are normal.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE structures or complications you must specifically assess for in this wound.",
+        prompt: "What structures or complications must you specifically assess for in this wound?",
         accept: [
           { id: "joint", text: "Penetration of the knee joint capsule", match: ["joint", "capsule", "arthrotomy"] },
           { id: "ext", text: "Extensor mechanism, including straight leg raise", match: ["extensor", "straight leg", "quadricep", "patellar tendon"] },
@@ -851,7 +861,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO investigations that would help determine whether the joint has been penetrated.",
+        prompt: "What investigations would help determine whether the joint has been penetrated?",
         accept: [
           { id: "ct", text: "CT of the knee looking for intra-articular air", match: ["ct", "computed tomography"] },
           { id: "xray", text: "Plain radiographs for intra-articular air and glass", match: ["x ray", "xray", "radiograph"] },
@@ -871,20 +881,20 @@ export const LACERATIONS_SAMPS: Samp[] = [
         kind: "menu",
         select: 2,
         update: "CT shows intra-articular air in the knee. There is no fracture or foreign body.",
-        prompt: "Which TWO actions are most appropriate? Select TWO.",
+        prompt: "Which of the following actions are most appropriate for this patient now?",
         options: [
-          "Primary closure and discharge",
-          "Cefazolin 2 g IV",
-          "Oral cephalexin and follow up in one week",
-          "Orthopaedic consultation for operative irrigation of the joint",
-          "Knee immobilizer and physiotherapy referral",
-          "Aspirate the knee and inject a corticosteroid",
-          "MRI of the knee",
           "Admit to medicine for observation",
+          "Aspirate and inject corticosteroid",
+          "Cefazolin 2 g IV",
+          "Knee immobilizer and physiotherapy",
+          "Oral cephalexin and follow up in one week",
+          "Orthopaedic surgery for joint irrigation",
+          "Primary closure and discharge",
+          "Urgent MRI of the knee",
         ],
-        correct: [1, 3],
+        correct: [2, 5],
         explanation:
-          "A traumatic arthrotomy is an open joint injury. It needs prompt IV antibiotics, such as cefazolin, and orthopaedic irrigation and debridement. Closing the skin in the emergency department and discharging risks septic arthritis.",
+          "A traumatic arthrotomy is an open joint injury. It needs prompt IV antibiotics, such as cefazolin, and orthopaedic consultation for operative irrigation and debridement of the joint. Closing the skin in the emergency department and discharging risks septic arthritis.",
         keyFeature: { topic: "msk", n: 7 },
         source: "rosen",
       },
@@ -898,13 +908,14 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma", "abuse-domestic"],
     title: "Older woman with a scalp wound",
     stem:
-      "An 81 year old woman lives with her son. She tripped on a rug at home this morning and struck the back of her head on a door frame. She has a 6 cm oozing laceration over the occiput. She did not lose consciousness and has no headache or vomiting. GCS is 15. She takes apixaban 5 mg twice daily for atrial fibrillation. HR 84 irregular, BP 158/80.",
+      "An 81-year-old woman lives with her son. She tripped on a rug at home this morning and struck the back of her head on a door frame. She has a 6 cm oozing laceration over the occiput. She did not lose consciousness and has no headache or vomiting. GCS is 15. She takes apixaban 5 mg twice daily for atrial fibrillation.",
+    vitals: { pulse: "84/minute irregular", bp: "158/80 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings you will look for when you explore this scalp wound.",
+        prompt: "What findings will you look for when you explore this scalp wound?",
         accept: [
           { id: "galea", text: "A defect in the galea aponeurosis", match: ["galea", "aponeurosi"] },
           { id: "skull", text: "Skull fracture, felt as a step or depression", match: ["skull", "fracture", "step", "depressed", "depression"] },
@@ -920,15 +931,15 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate imaging plan? Select one.",
+        prompt: "Which of the following is the most appropriate imaging plan for this patient?",
         options: [
-          "No imaging because she meets no high risk criteria of the Canadian CT Head Rule",
-          "Skull radiographs",
+          "Brain MRI as outpatient",
           "CT head now",
-          "Observe for 4 hours and image only if symptoms develop",
-          "MRI brain as an outpatient",
+          "Observation for 4 hours",
+          "Skull radiographs",
+          "No imaging",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
           "The Canadian CT Head Rule does not apply. It excluded patients on anticoagulants and applies only after loss of consciousness, amnesia or disorientation. Even if it did apply, age 65 or more is a high risk criterion. Anticoagulated older adults with head trauma should have CT. Skull radiographs do not exclude intracranial bleeding.",
         keyFeature: { topic: "multiple-trauma", n: 4 },
@@ -938,7 +949,8 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "The CT is normal. The wound continues to ooze. List TWO measures to control bleeding and close this wound.",
+        update: "The CT is normal. The wound continues to ooze.",
+        prompt: "What measures would you use to control bleeding and close this wound?",
         accept: [
           { id: "press", text: "Firm direct pressure", match: ["pressure", "hold pressure", "hold direct pressure", "hold firm pressure"] },
           { id: "lidoepi", text: "Lidocaine with epinephrine infiltration", match: ["epinephrine", "adrenaline"] },
@@ -961,7 +973,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "While undressing her you see fingertip shaped bruises of different colours on both upper arms. She says she bruises easily.",
-        prompt: "List TWO next steps.",
+        prompt: "What are the next steps?",
         accept: [
           { id: "private", text: "Interview her alone, away from her son", match: ["alone", "private", "separate"] },
           { id: "ask", text: "Ask directly and nonjudgmentally about abuse or neglect", match: ["ask", "screen", "screening"] },
@@ -984,13 +996,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Punctures from a household pet",
     stem:
-      "A 58 year old woman presents 6 hours after her own cat bit her right index finger while she was giving it a pill. There are two deep punctures on the palmar surface over the proximal phalanx. She had a splenectomy after a car crash 20 years ago. She takes methotrexate and prednisone 10 mg daily for rheumatoid arthritis. The cat is an indoor cat with current rabies vaccination. Vital signs are normal.",
+      "A 58-year-old woman presents 6 hours after her own cat bit her right index finger while she was giving it a pill. There are two deep punctures on the palmar surface over the proximal phalanx. She had a splenectomy after a car crash 20 years ago. She takes methotrexate and prednisone 10 mg daily for rheumatoid arthritis. The cat is an indoor cat with current rabies vaccination. Vital signs are normal.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO host factors that increase her risk of serious infection from this bite.",
+        prompt: "What host factors increase her risk of serious infection from this bite?",
         accept: [
           { id: "asplenia", text: "Asplenia", match: ["splenectomy", "spleen", "asplenic", "asplenia"] },
           { id: "mtx", text: "Methotrexate", match: ["methotrexate"] },
@@ -1005,15 +1017,16 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which antibiotic is most appropriate? She has no drug allergies. Select one.",
+        update: "She has no drug allergies.",
+        prompt: "Which of the following antibiotics is most appropriate for this patient?",
         options: [
+          "Amoxicillin clavulanate 875/125 mg PO twice daily",
           "Cephalexin 500 mg PO four times daily",
           "Clindamycin 300 mg PO four times daily",
-          "Amoxicillin clavulanate 875/125 mg PO twice daily",
           "Cloxacillin 500 mg PO four times daily",
-          "No antibiotic with a wound check in 48 hours",
+          "No antibiotic, with a wound check in 48 hours",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
           "Cat bites inoculate deeply and infect often, especially on the hand. Pasteurella multocida is the key pathogen, and amoxicillin clavulanate covers it along with staphylococci, streptococci and anaerobes. Cephalexin, cloxacillin and clindamycin alone cover Pasteurella poorly.",
         keyFeature: { topic: "infectious-diseases", n: 8 },
@@ -1023,7 +1036,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "If she had a history of anaphylaxis to penicillin, name ONE appropriate oral regimen.",
+        prompt: "If she had a history of anaphylaxis to penicillin, what oral regimen would be appropriate?",
         accept: [
           { id: "doxy", text: "Doxycycline", match: ["doxycycline"] },
           { id: "moxi", text: "Moxifloxacin", match: ["moxifloxacin"] },
@@ -1044,8 +1057,8 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        update: "She returns 30 hours later. The finger is held slightly flexed and uniformly swollen. There is tenderness along the palmar finger and severe pain on passive extension. Temperature 38.2 C.",
-        prompt: "List THREE actions now.",
+        update: "She returns 30 hours later. The finger is held slightly flexed and uniformly swollen. There is tenderness along the palmar finger and severe pain on passive extension. Temperature 38.2°C.",
+        prompt: "What actions are needed now?",
         accept: [
           { id: "hand", text: "Urgent hand surgery consultation for flexor sheath irrigation", match: ["hand surgery", "hand surgeon", "plastic", "irrigation", "washout"] },
           { id: "ivabx", text: "IV antibiotics covering Pasteurella, staphylococci, streptococci and anaerobes, such as piperacillin tazobactam", match: ["iv antibiotic", "piperacillin", "intravenous antibiotic", "ceftriaxone", "ampicillin sulbactam", "unasyn"] },
@@ -1072,13 +1085,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Warehouse worker with a forearm cut",
     stem:
-      "A 30 year old warehouse worker cut his left forearm with a new box cutter 1 hour ago. There is a 4 cm linear laceration on the dorsal forearm through the dermis with clean edges. Bleeding stopped with pressure. Motor, sensory and vascular examination of the hand is normal. He is healthy. He had a Tdap booster 7 years ago.",
+      "A 30-year-old warehouse worker cut his left forearm with a new box cutter 1 hour ago. There is a 4 cm linear laceration on the dorsal forearm through the dermis with clean edges. Bleeding stopped with pressure. Motor, sensory and vascular examination of the hand is normal. He is healthy. He had a Tdap booster 7 years ago.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE questions about the injury or patient that help confirm this is a low risk wound.",
+        prompt: "What questions about the injury or patient help confirm this is a low risk wound?",
         accept: [
           { id: "object", text: "What cut him, and was the object clean", match: ["object", "clean", "what cut", "blade"] },
           { id: "time", text: "Time since injury", match: ["time", "when", "late presentation", "3 hour"] },
@@ -1096,15 +1109,16 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "He asks for antibiotics because a coworker had an infection last year. Which is most appropriate? Select one.",
+        update: "He asks for antibiotics because a coworker had an infection last year.",
+        prompt: "Which of the following is the most appropriate response to his request for antibiotics?",
         options: [
+          "Amoxicillin clavulanate 875/125 mg PO twice daily for 3 days",
           "Cephalexin 500 mg PO four times daily for 5 days",
+          "Single dose of cefazolin 2 g IV",
           "Topical antibiotic ointment three times daily",
           "No antibiotics",
-          "Single dose of cefazolin 2 g IV",
-          "Amoxicillin clavulanate 875/125 mg PO twice daily for 3 days",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "Clean, simple lacerations in healthy people do not need prophylactic antibiotics. Infection rates are low and are not reduced by antibiotics. Explain this and give clear return advice instead.",
         keyFeature: { topic: "lacerations", n: 4 },
@@ -1113,15 +1127,15 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is correct about his tetanus prophylaxis? Select one.",
+        prompt: "Which of the following is correct about his tetanus prophylaxis at this visit?",
         options: [
-          "Give Tdap now because it has been more than 5 years",
-          "Give Td and tetanus immune globulin now",
+          "Td and tetanus immune globulin now",
+          "Tdap booster dose now",
+          "Tetanus antibody level before deciding",
+          "Tetanus immune globulin alone",
           "No tetanus vaccine is needed today",
-          "Give tetanus immune globulin alone",
-          "Check tetanus antibody levels before deciding",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "For a clean minor wound in a person with a completed primary series, a booster is needed only if the last dose was 10 or more years ago. The 5 year interval applies to other wounds, such as contaminated or puncture wounds.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
@@ -1131,7 +1145,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of your repair and aftercare plan.",
+        prompt: "What are the elements of your repair and aftercare plan?",
         accept: [
           { id: "irr", text: "Irrigate with tap water or saline", match: ["irrigate", "irrigation", "irrigated", "tap water"] },
           { id: "suture", text: "Simple interrupted sutures, such as 4-0 nylon", match: ["suture", "nylon", "prolene"] },
@@ -1156,13 +1170,14 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["eye", "infectious-diseases"],
     title: "Child bitten on the face",
     stem:
-      "In your Ontario emergency department, a 5 year old girl was bitten on the face 1 hour ago by her grandparents' Labrador retriever when she hugged it. She has a 2 cm laceration through the lower eyelid starting just medial to the punctum, and a 3 cm laceration on the cheek. She is crying but consolable. She weighs 20 kg and is fully immunized. The dog is healthy and up to date with rabies vaccination.",
+      "In your Ontario emergency department, a 5-year-old girl was bitten on the face 1 hour ago by her grandparents' Labrador retriever when she hugged it. She has a 2 cm laceration through the lower eyelid starting just medial to the punctum, and a 3 cm laceration on the cheek. She is crying but consolable. She is fully immunized. The dog is healthy and up to date with rabies vaccination.",
+    vitals: { weight: "20 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of the eyelid and eye you must assess.",
+        prompt: "What features of the eyelid and eye must you assess?",
         accept: [
           { id: "canal", text: "Involvement of the lacrimal canaliculus medial to the punctum", match: ["canaliculus", "canalicular", "canaliculi", "lacrimal", "tear duct", "nasolacrimal"] },
           { id: "margin", text: "Involvement of the lid margin", match: ["lid margin", "margin"] },
@@ -1179,17 +1194,18 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Examination confirms a canalicular laceration. Which is most appropriate for the eyelid wound? Select one.",
+        update: "Examination confirms a canalicular laceration.",
+        prompt: "Which of the following is the most appropriate management of the eyelid wound?",
         options: [
-          "Primary closure in the emergency department with 6-0 absorbable sutures",
-          "Tissue adhesive and review in 48 hours",
-          "Ophthalmology or oculoplastic referral for repair with canalicular intubation",
+          "Closure by the emergency physician after an orbital CT scan",
+          "Emergency department closure with 6-0 absorbable sutures",
           "Leave open to heal by secondary intention",
-          "Closure by the emergency physician after a CT of the orbits",
+          "Ophthalmology or oculoplastic repair with canalicular stent",
+          "Tissue adhesive and review in 48 hours",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
-          "Canalicular lacerations need microsurgical repair with a stent to prevent chronic tearing. Repair is usually done within a day or two by ophthalmology or oculoplastics, often under general anaesthesia in a child.",
+          "Canalicular lacerations need ophthalmology or oculoplastic referral for microsurgical repair with canalicular intubation, a stent that prevents chronic tearing. Repair is usually done within a day or two by ophthalmology or oculoplastics, often under general anaesthesia in a child.",
         keyFeature: { topic: "lacerations", n: 3 },
         source: "tintinalli",
       },
@@ -1197,7 +1213,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO elements of your management of the cheek laceration.",
+        prompt: "What are the elements of your management of the cheek laceration?",
         accept: [
           { id: "irr", text: "Thorough irrigation", match: ["irrigate", "irrigation", "irrigated"] },
           { id: "debride", text: "Debride devitalized tissue conservatively", match: ["debride", "debridement", "debrided"] },
@@ -1213,15 +1229,16 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which antibiotic plan is most appropriate? She has no allergies. Select one.",
+        update: "She has no allergies.",
+        prompt: "Which of the following is the most appropriate antibiotic plan for this child?",
         options: [
-          "No antibiotics because facial wounds rarely become infected",
           "Amoxicillin clavulanate orally for 3 to 5 days",
-          "Cephalexin orally for 7 days",
-          "Azithromycin orally for 3 days",
-          "Topical mupirocin only",
+          "Azithromycin orally once daily for 3 days",
+          "Cephalexin orally four times daily for 7 days",
+          "Topical mupirocin ointment only",
+          "No antibiotics",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Short course prophylaxis with amoxicillin clavulanate is recommended for moderate to severe dog bites, including those on the face that are closed primarily. It covers Pasteurella, staphylococci, streptococci and anaerobes. Cephalexin and azithromycin alone are not ideal.",
         keyFeature: { topic: "lacerations", n: 4 },
@@ -1231,7 +1248,8 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "The family asks whether she needs rabies shots. List TWO elements of your answer or actions.",
+        update: "The family asks whether she needs rabies shots.",
+        prompt: "What are the elements of your answer or actions?",
         accept: [
           { id: "noPEP", text: "Rabies prophylaxis is not needed now because the dog is healthy, vaccinated and can be observed", match: ["not needed", "no rabies", "not required", "not indicated", "withhold"] },
           { id: "obs", text: "The dog should be observed for 10 days", match: ["10 day", "ten day", "observe", "observation", "observed"] },
@@ -1252,13 +1270,13 @@ export const LACERATIONS_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Wildlife rehabilitation worker",
     stem:
-      "A 32 year old wildlife rehabilitation worker in the Hamilton, Ontario, area presents 2 hours after being bitten on the left forearm by a raccoon that wandered into the centre's yard and was acting aggressively. The raccoon ran off. She has two 4 mm puncture wounds and a 1 cm laceration. She completed a documented 3 dose rabies pre-exposure vaccine series 3 years ago. She is healthy. Her last tetanus booster was 2 years ago.",
+      "A 32-year-old wildlife rehabilitation worker in the Hamilton, Ontario, area presents 2 hours after being bitten on the left forearm by a raccoon that wandered into the centre's yard and was acting aggressively. The raccoon ran off. She has two 4 mm puncture wounds and a 1 cm laceration. She completed a documented 3 dose rabies pre-exposure vaccine series 3 years ago. She is healthy. Her last tetanus booster was 2 years ago.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE pieces of information that determine her rabies risk and management.",
+        prompt: "What information determines her rabies risk and management?",
         accept: [
           { id: "species", text: "The species of animal", match: ["species", "raccoon", "type of animal"] },
           { id: "behav", text: "Unprovoked attack or abnormal behaviour", match: ["behaviour", "behavior", "unprovoked", "provoked", "aggressive"] },
@@ -1276,17 +1294,17 @@ export const LACERATIONS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which rabies prophylaxis is most appropriate? Select one.",
+        prompt: "Which of the following rabies prophylaxis regimens is most appropriate for her?",
         options: [
-          "No prophylaxis because she is previously vaccinated",
-          "Rabies vaccine 1 mL IM on days 0 and 3, with no immune globulin",
-          "Rabies immune globulin 20 IU/kg and vaccine on days 0, 3, 7 and 14",
-          "Rabies immune globulin only",
-          "Vaccine on days 0, 3, 7, 14 and 28",
+          "Rabies immune globulin 20 IU/kg and 4 vaccine doses",
+          "Rabies immune globulin only, without vaccine",
+          "Rabies vaccine IM days 0 and 3, no immune globulin",
+          "Rabies vaccine series of 5 doses, no immune globulin",
+          "No prophylaxis",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "A person with a documented 3 dose pre-exposure series needs two vaccine doses on days 0 and 3. Immune globulin is not given because it can blunt the anamnestic response. The newer 2 dose series is different. If the second dose was 3 or more years ago, the Canadian Immunization Guide advises full prophylaxis with immune globulin. Exposure to a wild terrestrial carnivore that cannot be tested still requires prophylaxis.",
+          "A person with a documented 3 dose pre-exposure series needs two vaccine doses of 1 mL IM on days 0 and 3. Immune globulin is not given because it can blunt the anamnestic response. The newer 2 dose series is different. If the second dose was 3 or more years ago, the Canadian Immunization Guide advises full prophylaxis with immune globulin. Exposure to a wild terrestrial carnivore that cannot be tested still requires prophylaxis.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
         source: "cig-rabies",
       },
@@ -1294,7 +1312,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO elements of local wound care that reduce rabies and bacterial infection risk.",
+        prompt: "What elements of local wound care reduce rabies and bacterial infection risk?",
         accept: [
           { id: "soap", text: "Immediate thorough washing with soap and water for about 15 minutes", match: ["soap", "wash"] },
           { id: "irr", text: "Copious irrigation", match: ["irrigate", "irrigation", "irrigated"] },
@@ -1314,7 +1332,7 @@ export const LACERATIONS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO further steps before she leaves.",
+        prompt: "What further steps are needed before she leaves?",
         accept: [
           { id: "report", text: "Report the exposure to the local public health unit", match: ["public health", "report", "reported", "reporting", "notify"] },
           { id: "abx", text: "Prophylactic amoxicillin clavulanate for the puncture wounds", match: ["amoxicillin clavulanate", "clavulin", "amox clav", "antibiotic"] },

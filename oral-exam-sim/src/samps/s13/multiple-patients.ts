@@ -10,21 +10,21 @@ const S = {
   start: { id: "start", citation: "Benson M, Koenig KL, Schultz CH. Disaster triage. START, then SAVE. A new method of dynamic triage for victims of a catastrophic earthquake. Prehosp Disaster Med. 1996." },
   jumpstart: { id: "jumpstart", citation: "Romig LE. Pediatric triage. A system to JumpSTART your triage of young patients at MCIs. JEMS. 2002." },
   salt: { id: "salt", citation: "Lerner EB, et al. Mass casualty triage. An evaluation of the data and development of a proposed national guideline. Disaster Med Public Health Prep. 2008." },
-  ohaCodes: { id: "oha-codes", citation: "Ontario Hospital Association. Emergency management toolkit and standardized hospital emergency codes." },
+  ohaCodes: { id: "oha-codes", citation: "Ontario Hospital Association. OHA Emergency Management Toolkit. Developing a sustainable emergency management program for hospitals, with standardized hospital emergency codes. 2008." },
   ipass: { id: "ipass", citation: "Starmer AJ, et al. Changes in medical errors after implementation of a handoff program. N Engl J Med. 2014." },
   cpsiFramework: { id: "cpsi-ciaf", citation: "Canadian Patient Safety Institute. Canadian Incident Analysis Framework. 2012." },
   cpsiDisclosure: { id: "cpsi-disclosure", citation: "Canadian Patient Safety Institute. Canadian Disclosure Guidelines. Being open with patients and families. 2011." },
   caepCrowding: { id: "caep-crowding", citation: "Affleck A, Parks P, Drummond A, Rowe BH, Ovens HJ. Emergency department overcrowding and access block. CAEP position statement. CJEM. 2013." },
-  atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. Chapters on initial assessment, teamwork and transfer to definitive care." },
-  nrp: { id: "nrp", citation: "American Academy of Pediatrics and American Heart Association. Textbook of Neonatal Resuscitation (NRP). 8th edition." },
+  atls: { id: "atls", citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th ed. 2018. Chapters on initial assessment, teamwork and transfer to definitive care." },
+  nrp: { id: "nrp", citation: "American Academy of Pediatrics and American Heart Association. Textbook of Neonatal Resuscitation (NRP). 8th ed. 2021." },
   sogcPph: { id: "sogc-pph", citation: "Robinson D, et al. Guideline No. 431. Postpartum hemorrhage and hemorrhagic shock. J Obstet Gynaecol Can. 2022.", url: "https://www.jogc.com/article/S1701-2163(22)00668-5/abstract" },
   ssc: { id: "ssc", citation: "Evans L, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021." },
-  csbpr: { id: "csbpr", citation: "Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management." },
+  csbpr: { id: "csbpr", citation: "Heart and Stroke Foundation of Canada. Heran M, Lindsay P, Gubitz G, et al. Canadian Stroke Best Practice Recommendations. Acute stroke management, 7th edition practice guidelines update, 2022. Can J Neurol Sci. 2024.", url: "https://doi.org/10.1017/cjn.2022.344" },
   eddleston: { id: "eddleston-op", citation: "Eddleston M, Buckley NA, Eyer P, Dawson AH. Management of acute organophosphorus pesticide poisoning. Lancet. 2008." },
-  abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Provider Manual." },
-  criticall: { id: "criticall", citation: "CritiCall Ontario. Emergency consultation and referral service for Ontario hospitals." },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. Elsevier. Chapters on disaster preparedness, ED crowding and airway management." },
-  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapters on disaster preparedness, hazardous materials, organophosphates and hyperkalemia." },
+  abls: { id: "abls", citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update." },
+  criticall: { id: "criticall", citation: "CritiCall Ontario. About CritiCall Ontario. 24 hour emergency consultation and referral service for Ontario hospital physicians. Web page, accessed 2026.", url: "https://www.criticall.org/about-criticall-ontario/" },
+  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapters on disaster preparedness, ED crowding and airway management." },
+  tintinalli: { id: "tintinalli", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapters on disaster preparedness, hazardous materials, organophosphates and hyperkalemia." },
 } satisfies Record<string, Source>;
 
 export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
@@ -33,16 +33,22 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     topic: "multiple-patients",
     title: "Night shift at a small rural hospital",
     stem:
-      "It is 02:30. You are the only physician in a 10 bed emergency department in rural Ontario. You have three nurses. A respiratory therapist is on site. Within 10 minutes these patients arrive.\nA. A 71 year old man with 40 minutes of crushing chest pain. HR 58, BP 98/62. The triage ECG shows inferior ST elevation. The nearest PCI centre is 2.5 hours away.\nB. A 19 year old woman brought in by friends after a party. GCS 8, snoring respirations, RR 6, SpO2 84% on room air. Pupils are pinpoint.\nC. A 3 year old with a barking cough and stridor at rest with mild retractions. SpO2 96%.\nD. A 45 year old man with an ankle injury. Normal vital signs. Pain 7/10.",
+      "It is 02:30. You are the only physician in a 10 bed emergency department in rural Ontario. You have three nurses. A respiratory therapist is on site. Within 10 minutes these patients arrive.\nA. A 71-year-old man with 40 minutes of crushing chest pain. Pulse 58/minute, BP 98/62 mmHg. The triage ECG shows inferior ST elevation. The nearest PCI centre is 2.5 hours away.\nB. A 19-year-old woman brought in by friends after a party. GCS 8, snoring respirations, respiratory rate 6/minute, O2 sat 84% on room air. Pupils are pinpoint.\nC. A 3-year-old with a barking cough and stridor at rest with mild retractions. O2 sat 96%.\nD. A 45-year-old man with an ankle injury. Normal vital signs. Pain 7/10.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which patient should you attend to first? Select one.",
-        options: ["Patient A", "Patient B", "Patient C", "Patient D"],
+        prompt: "Which of the following patients should you attend to first?",
+        options: [
+          "Patient A",
+          "Patient B",
+          "Patient C",
+          "Patient D",
+          "No patient until all four are triaged",
+        ],
         correct: 1,
         explanation:
-          "Patient B has an immediate threat to airway and breathing with hypoxia and hypoventilation. It is also quickly reversible with airway positioning, bag mask ventilation and naloxone. Patient A is next and much of his care can start by delegation. A nurse can place him on the monitor, give ASA and start an IV while you secure B's airway.",
+          "Patient B has an immediate threat to airway and breathing with hypoxia and hypoventilation. It is also quickly reversible with airway positioning, bag mask ventilation and naloxone. Patient A is next and much of his care can start by delegation. A nurse can place him on the monitor, give ASA and start an IV while you secure B's airway. Waiting to triage all four first delays care of a reversible airway threat.",
         keyFeature: { topic: "multiple-patients", n: 1 },
         source: "ctas",
       },
@@ -50,7 +56,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "While you manage patient B, list THREE specific tasks you delegate for the other patients.",
+        prompt: "While you manage patient B, what specific tasks do you delegate for the other patients?",
         accept: [
           { id: "asa", text: "Nurse gives ASA 162 to 325 mg chewed to patient A", match: ["asa", "aspirin", "acetylsalicylic"] },
           { id: "ecg", text: "Right sided ECG leads and IV access for patient A", match: ["right sided", "v4r", "iv access", "iv line"] },
@@ -74,7 +80,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Patient B wakes after naloxone. Patient A's pain continues. The PCI centre cannot accept him within 120 minutes.",
-        prompt: "List TWO calls you make now to get help.",
+        prompt: "What calls do you make now to get help?",
         accept: [
           { id: "backup", text: "Call in the on call or backup physician", match: ["backup", "back up", "on call physician", "colleague", "second physician", "another physician"] },
           { id: "cardio", text: "Cardiology at the PCI centre through CritiCall for advice and transfer after fibrinolysis", match: ["criticall", "cardiology", "cardiologist", "pci centre", "pci center"] },
@@ -91,7 +97,8 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "Patient B is now GCS 14 with RR 14. List TWO elements of your ongoing plan for her.",
+        update: "Patient B is now GCS 14 with a respiratory rate of 14/minute.",
+        prompt: "What are the elements of your ongoing plan for her?",
         accept: [
           { id: "obs", text: "Continuous monitoring with frequent reassessment for resedation", match: ["monitor", "monitoring", "reassess", "reassessment", "observe", "observation", "resedation"] },
           { id: "duration", text: "Observe for recurrent toxicity because naloxone wears off before many opioids", match: ["wear off", "short acting", "duration", "recur", "recurrent"] },
@@ -113,13 +120,13 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     topic: "multiple-patients",
     title: "Busy triage desk",
     stem:
-      "You are helping at triage in a busy urban emergency department. Six adults are waiting to be assigned a CTAS level.\n1. A 58 year old woman with 30 minutes of central chest pressure radiating to her jaw. HR 96, BP 150/90, SpO2 97%.\n2. A 24 year old man with 3 days of sore throat. T 38.1 C, HR 92. He is swallowing and looks well.\n3. A 67 year old man receiving chemotherapy for lymphoma. T 38.4 C, HR 104, BP 118/70.\n4. A 35 year old woman with 2 years of low back pain, unchanged, pain 4/10. Normal vital signs.\n5. A 42 year old man with a 3 cm forearm laceration. Bleeding controlled. Pain 3/10. Normal vital signs.\n6. A 30 year old woman with an itchy rash for 1 week. Normal vital signs.",
+      "You are helping at triage in a busy urban emergency department. Six adults are waiting to be assigned a CTAS level.\n1. A 58-year-old woman with 30 minutes of central chest pressure radiating to her jaw. Pulse 96/minute, BP 150/90 mmHg, O2 sat 97%.\n2. A 24-year-old man with 3 days of sore throat. Temperature 38.1°C, pulse 92/minute. He is swallowing and looks well.\n3. A 67-year-old man receiving chemotherapy for lymphoma. Temperature 38.4°C, pulse 104/minute, BP 118/70 mmHg.\n4. A 35-year-old woman with 2 years of low back pain, unchanged, pain 4/10. Normal vital signs.\n5. A 42-year-old man with a 3 cm forearm laceration. Bleeding controlled. Pain 3/10. Normal vital signs.\n6. A 30-year-old woman with an itchy rash for 1 week. Normal vital signs.",
     questions: [
       {
         id: "q1",
         kind: "menu",
         select: 2,
-        prompt: "Which TWO patients should be assigned CTAS level 2? Select TWO.",
+        prompt: "Which of the following patients should be assigned CTAS level 2?",
         options: ["Patient 1", "Patient 2", "Patient 3", "Patient 4", "Patient 5", "Patient 6"],
         correct: [0, 2],
         explanation:
@@ -130,7 +137,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "What CTAS level is most appropriate for patient 5? Select one.",
+        prompt: "Which of the following CTAS levels is most appropriate for patient 5?",
         options: ["Level 1", "Level 2", "Level 3", "Level 4", "Level 5"],
         correct: 3,
         explanation:
@@ -142,7 +149,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "State the CTAS target for time to physician assessment for level 2 and for level 3.",
+        prompt: "What is the CTAS target for time to physician assessment for level 2 and for level 3?",
         accept: [
           { id: "l2", text: "Level 2 within 15 minutes", match: ["15 minute", "15 min"] },
           { id: "l3", text: "Level 3 within 30 minutes", match: ["30 minute", "30 min"] },
@@ -159,8 +166,8 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        update: "Ninety minutes later, the triage nurse tells you patient 2 is now drooling, speaking in a muffled voice and sitting forward. SpO2 95%.",
-        prompt: "List THREE immediate actions.",
+        update: "Ninety minutes later, the triage nurse tells you patient 2 is now drooling, speaking in a muffled voice and sitting forward. O2 sat 95%.",
+        prompt: "What immediate actions are needed?",
         accept: [
           { id: "retriage", text: "Re-triage to a higher acuity level", match: ["retriage", "re triage", "upgrade", "ctas 1", "ctas 2", "level 1", "level 2"] },
           { id: "resus", text: "Move him now to the resuscitation room with monitoring", match: ["resuscitation room", "resus", "monitored bed", "monitored"] },
@@ -193,7 +200,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate actions to prepare your hospital.",
+        prompt: "What immediate actions would you take to prepare your hospital?",
         accept: [
           { id: "code", text: "Activate the hospital external disaster plan, Code Orange", match: ["code orange", "disaster plan", "mass casualty plan", "emergency plan"] },
           { id: "admin", text: "Notify the administrator on call and set up incident command", match: ["administrator", "incident command", "incident management"] },
@@ -212,35 +219,37 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 4,
-        prompt: "Paramedics are using START triage at the scene. Which FOUR adults should be tagged red (immediate)? Select FOUR.",
+        update: "Paramedics are using START triage at the scene. They assess these adults.\nA. Walking, with a scalp laceration.\nB. Not walking. Respiratory rate 36/minute.\nC. Not walking. Respiratory rate 20/minute, radial pulse present, follows commands, deformed thigh.\nD. Not breathing. Starts breathing after the airway is repositioned.\nE. Not breathing after the airway is repositioned.\nF. Not walking. Respiratory rate 22/minute, radial pulse absent.\nG. Not walking. Respiratory rate 18/minute, radial pulse present, cannot follow simple commands.\nH. Not walking. Respiratory rate 16/minute, capillary refill 1 second, follows commands, pelvic pain.",
+        prompt: "Which of the following adults should be tagged red (immediate) under START triage?",
         options: [
-          "Walking, with a scalp laceration",
-          "Not walking. RR 36",
-          "Not walking. RR 20, radial pulse present, follows commands, deformed thigh",
-          "Not breathing. Starts breathing after the airway is repositioned",
-          "Not breathing after the airway is repositioned",
-          "Not walking. RR 22, radial pulse absent",
-          "Not walking. RR 18, radial pulse present, cannot follow simple commands",
-          "Not walking. RR 16, capillary refill 1 second, follows commands, pelvic pain",
+          "Adult A",
+          "Adult B",
+          "Adult C",
+          "Adult D",
+          "Adult E",
+          "Adult F",
+          "Adult G",
+          "Adult H",
         ],
         correct: [1, 3, 5, 6],
         explanation:
-          "In START, respirations over 30, breathing only after airway repositioning, an absent radial pulse or delayed capillary refill, and inability to follow commands each mean red. Non ambulatory patients without these are yellow. No breathing after repositioning is expectant.",
+          "In START, respirations over 30, breathing only after airway repositioning, an absent radial pulse or delayed capillary refill, and inability to follow commands each mean red. Non ambulatory patients without these are yellow. No breathing after repositioning is expectant. So adults B, D, F and G are red.",
         keyFeature: { topic: "multiple-patients", n: 1 },
         source: "start",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "A 6 year old passenger is not breathing but has a palpable pulse. Breathing does not start after airway repositioning. Using JumpSTART, what is the next step? Select one.",
+        update: "A 6-year-old passenger is not breathing but has a palpable pulse. Breathing does not start after airway repositioning.",
+        prompt: "Which of the following is the next step for this child under JumpSTART triage?",
         options: [
-          "Tag black (expectant) and move on",
+          "Assign a black (expectant) tag and move on",
+          "Assign a yellow tag and move on",
+          "Begin CPR with compressions and breaths",
+          "Continue ventilating until an ambulance is available",
           "Give 5 rescue breaths, then tag red if breathing starts",
-          "Start CPR",
-          "Tag yellow and move on",
-          "Stay with the child and ventilate until an ambulance is available",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "Children more often have a respiratory cause of apnea. JumpSTART adds 5 rescue breaths for an apneic child with a pulse. If breathing resumes the child is red. If not, the child is expectant, and the triager moves on.",
         keyFeature: { topic: "ems", n: 4 },
@@ -250,7 +259,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE ways to create capacity in your hospital for these patients.",
+        prompt: "What are the ways to create capacity in your hospital for these patients?",
         accept: [
           { id: "admit", text: "Move admitted ED patients to inpatient units, including hallway beds", match: ["move admitted", "admitted patient", "inpatient unit", "inpatient bed", "hallway", "to ward", "to the ward"] },
           { id: "discharge", text: "Early discharge of stable inpatients, reverse triage", match: ["reverse triage", "early discharge", "discharge inpatient", "discharge stable", "discharge"] },
@@ -274,22 +283,22 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     alsoTopics: ["cqi"],
     title: "End of a long night shift",
     stem:
-      "It is 06:55. Your night shift ends at 07:00. You have 9 patients to hand over to the day physician. In the resuscitation room, a 63 year old man with an upper GI bleed has BP 78/44 despite 2 units of red cells. You are about to intubate him. Five patients have results pending. Three are waiting for consultants.",
+      "It is 06:55. Your night shift ends at 07:00. You have 9 patients to hand over to the day physician. In the resuscitation room, a 63-year-old man with an upper GI bleed has a BP of 78/44 mmHg despite 2 units of red cells. You are about to intubate him. Five patients have results pending. Three are waiting for consultants.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is the most appropriate approach to the man in the resuscitation room? Select one.",
+        prompt: "Which of the following is the most appropriate approach to the man in the resuscitation room?",
         options: [
-          "Hand him over verbally at the desk at 07:00 and leave",
+          "Ask the day physician to intubate while you hand over",
           "Hand him over to the charge nurse to pass on",
-          "Stay and complete the airway and resuscitation, then hand over at the bedside once he is stable",
-          "Leave a written note on the chart for the day physician",
-          "Ask the day physician to intubate while you hand over the others",
+          "Hand over verbally at the desk at 07:00, then leave",
+          "Leave a written note for the day physician",
+          "Stay for the airway and resuscitation, then bedside handover",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
-          "Handover in the middle of a critical intervention is dangerous. The physician running the resuscitation should finish the critical step and then hand over at the bedside. Bedside handover lets the receiver see the patient and ask questions.",
+          "Handover in the middle of a critical intervention is dangerous. The physician running the resuscitation should stay to complete the airway and resuscitation, then hand over at the bedside once he is stable. Bedside handover lets the receiver see the patient and ask questions.",
         keyFeature: { topic: "multiple-patients", n: 2 },
         source: "ipass",
       },
@@ -297,7 +306,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE elements of a structured handover for each patient.",
+        prompt: "What are the elements of a structured handover for each patient?",
         accept: [
           { id: "severity", text: "Illness severity, stable or watcher or unstable", match: ["severity", "stable", "unstable", "watcher", "acuity"] },
           { id: "summary", text: "Patient summary with working diagnosis", match: ["summary", "diagnosis", "background", "situation"] },
@@ -317,7 +326,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of the handover setting that improve its safety.",
+        prompt: "What features of the handover setting improve its safety?",
         accept: [
           { id: "f2f", text: "Face to face and verbal, with a chance to ask questions", match: ["face to face", "verbal", "in person"] },
           { id: "quiet", text: "Protected time with few interruptions", match: ["interruption", "protected", "quiet", "uninterrupted"] },
@@ -335,17 +344,17 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "At 07:25 you are leaving. The laboratory calls you with a critical potassium of 6.9 mmol/L on a patient you handed over.",
-        prompt: "What is the most appropriate response? Select one.",
+        prompt: "Which of the following is the most appropriate response to this call?",
         options: [
-          "Tell the laboratory to call the day physician and leave",
-          "Order treatment yourself without telling the day physician",
-          "Tell the day physician directly, confirm read back, and stay until they take responsibility",
-          "Write a note on the chart",
           "Ask the unit clerk to pass on the message",
+          "Order treatment yourself without telling the day physician",
+          "Tell the day physician with read back, stay until accepted",
+          "Tell the laboratory to call the day physician and leave",
+          "Write a note on the chart and leave",
         ],
         correct: 2,
         explanation:
-          "A critical result must reach the physician now responsible, with closed loop confirmation. Passing it through a third party risks loss. If the day physician cannot be reached, the physician who received the call acts.",
+          "A critical result must reach the physician now responsible, with closed loop confirmation. Tell the day physician directly, confirm read back, and stay until they take responsibility. Passing it through a third party risks loss. If the day physician cannot be reached, the physician who received the call acts.",
         keyFeature: { topic: "cqi", n: 5 },
         source: "cpsi-ciaf",
       },
@@ -359,13 +368,13 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     alsoTopics: ["airway"],
     title: "Alarm in the resuscitation room",
     stem:
-      "You are the only physician on overnight in a community emergency department. Twenty minutes ago you intubated a 66 year old woman with a severe COPD exacerbation. She is on a ventilator. A respiratory therapist and two nurses are with you. Paramedics then patch that they are 10 minutes out with a 30 year old motorcyclist. He is hypotensive with a GCS of 13. Now your ventilated patient's SpO2 falls to 80%. The ventilator is alarming for high peak pressure. BP 76/40.",
+      "You are the only physician on overnight in a community emergency department. Twenty minutes ago you intubated a 66-year-old woman with a severe COPD exacerbation. She is on a ventilator. A respiratory therapist and two nurses are with you. Paramedics then patch that they are 10 minutes out with a 30-year-old motorcyclist. He is hypotensive with a GCS of 13. Now your ventilated patient's O2 sat falls to 80%. The ventilator is alarming for high peak pressure. Her BP is 76/40 mmHg.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE causes you must check for in this ventilated patient.",
+        prompt: "What causes must you check for in this ventilated patient?",
         accept: [
           { id: "disp", text: "Displacement of the endotracheal tube", match: ["displacement", "displaced", "dislodged", "esophageal", "right mainstem", "mainstem"] },
           { id: "obs", text: "Obstruction of the tube, such as a mucus plug or kinking", match: ["obstruction", "plug", "kink", "secretion"] },
@@ -382,7 +391,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate interventions.",
+        prompt: "What immediate interventions are needed?",
         accept: [
           { id: "disconnect", text: "Disconnect from the ventilator and allow full exhalation", match: ["disconnect", "exhale", "exhalation", "chest compression to exhale"] },
           { id: "bag", text: "Bag with 100% oxygen at a slow rate", match: ["bag", "bvm", "hand ventilate"] },
@@ -401,8 +410,8 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "Disconnection and a slower ventilator rate restore her BP to 104/60 and SpO2 to 93%. The motorcyclist arrives in 6 minutes.",
-        prompt: "List THREE instructions you give now to prepare for the trauma patient.",
+        update: "Disconnection and a slower ventilator rate restore her BP to 104/60 mmHg and O2 sat to 93%. The motorcyclist arrives in 6 minutes.",
+        prompt: "What instructions do you give now to prepare for the trauma patient?",
         accept: [
           { id: "backup", text: "Call in the on call physician or anaesthetist", match: ["on call", "anaesthetist", "anesthetist", "backup", "back up", "colleague", "second physician"] },
           { id: "rt", text: "RT stays with the ventilated patient", match: ["rt stay", "rt remain", "respiratory therapist stay", "respiratory therapist remain", "stay with ventilated", "rt ventilated", "respiratory therapist ventilated", "rt copd"] },
@@ -420,15 +429,16 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "The on call anaesthetist will arrive in 20 minutes. Who should manage the ventilated patient until then? Select one.",
+        update: "The on call anaesthetist will arrive in 20 minutes.",
+        prompt: "Which of the following people should manage the ventilated patient until the anaesthetist arrives?",
         options: [
-          "No one. The ventilator alarms will warn you",
-          "The unit clerk, who can call you if the alarm sounds",
+          "An inpatient ward nurse lacking any critical care experience",
           "The respiratory therapist, with clear triggers to call you",
-          "A nurse from the inpatient ward who has not worked in critical care",
+          "The unit clerk, to call you if an alarm sounds",
           "Transfer her to the ICU now without a physician",
+          "No one, relying on the ventilator alarms",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
           "The respiratory therapist is the most skilled available person to watch a ventilated patient. Give clear triggers for calling you, such as a fall in saturation or blood pressure. You remain responsible and reassess her between trauma tasks. Leaving her unwatched, with an untrained person, or in transit without a physician all risk a missed deterioration.",
         keyFeature: { topic: "multiple-patients", n: 3 },
@@ -450,7 +460,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate actions for the worker in the waiting room.",
+        prompt: "What immediate actions are needed for the worker in the waiting room?",
         accept: [
           { id: "isolate", text: "Move him out of the waiting room to a designated decontamination area", match: ["move", "isolate", "remove from waiting", "decontamination area", "outside"] },
           { id: "ppe", text: "Staff wear chemical protective gloves and gowns", match: ["ppe", "protective", "glove", "gown", "nitrile", "butyl"] },
@@ -469,7 +479,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO instructions you give the paramedics before they arrive.",
+        prompt: "What instructions do you give the paramedics before they arrive?",
         accept: [
           { id: "decon", text: "Remove clothing and decontaminate at the scene before transport", match: ["decontaminate", "decontamination", "remove clothing", "strip", "wash"] },
           { id: "ppe", text: "Wear protective equipment", match: ["ppe", "protective", "glove"] },
@@ -485,16 +495,16 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "One worker arrives with copious bronchial secretions, wheeze and HR 44. SpO2 86%.",
-        prompt: "Which is the most appropriate initial atropine regimen for this adult? Select one.",
+        update: "One worker arrives with copious bronchial secretions, wheeze and pulse 44/minute. O2 sat 86%.",
+        prompt: "Which of the following is the most appropriate initial atropine regimen for this adult?",
         options: [
-          "Atropine 0.5 mg IV once",
-          "Atropine 1 to 2 mg IV, doubling the dose every 5 minutes until the chest is clear",
-          "Atropine 0.02 mg/kg IV once",
-          "Pralidoxime alone without atropine",
-          "Glycopyrrolate 0.2 mg IM once",
+          "Atropine 0.5 mg IV once, then reassess",
+          "Atropine 0.02 mg/kg IV once, then reassess",
+          "Atropine 1 to 2 mg IV, doubled until chest clears",
+          "Glycopyrrolate 0.2 mg IM once, then reassess",
+          "Pralidoxime infusion alone, without atropine",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Atropine is titrated to drying of bronchial secretions, not to heart rate or pupils. Start with 1 to 2 mg IV and double the dose every 5 minutes until the chest is clear, then infuse. Large total doses are often needed. Pralidoxime is an adjunct, not a substitute.",
         keyFeature: { topic: "tox", n: 2 },
@@ -504,7 +514,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO clinical findings that place a poisoned worker in the highest priority group.",
+        prompt: "What clinical findings place a poisoned worker in the highest priority group?",
         accept: [
           { id: "resp", text: "Bronchorrhea or respiratory distress", match: ["bronchorrhea", "bronchorrhoea", "secretion", "respiratory distress", "wheeze"] },
           { id: "hypox", text: "Hypoxia", match: ["hypoxia", "hypoxemia", "low oxygen", "desaturation"] },
@@ -527,13 +537,13 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases"],
     title: "Full department on a Monday evening",
     stem:
-      "It is 18:00 on a Monday in a large urban emergency department. There are 45 patients in the waiting room and 22 admitted patients occupying stretchers. Every monitored bed is full. The triage nurse tells you that an 80 year old man who has waited 4 hours with dysuria now has BP 84/50, HR 118, RR 26 and T 38.6 C. He is drowsy.",
+      "It is 18:00 on a Monday in a large urban emergency department. There are 45 patients in the waiting room and 22 admitted patients occupying stretchers. Every monitored bed is full. The triage nurse tells you that an 80-year-old man who has waited 4 hours with dysuria now has BP 84/50 mmHg, pulse 118/minute, respiratory rate 26/minute and temperature 38.6°C. He is drowsy.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate actions for this man.",
+        prompt: "What immediate actions are needed for this man?",
         accept: [
           { id: "move", text: "Bring him into a monitored space now, even if another patient must move", match: ["move", "monitored", "resuscitation", "resus", "bring in"] },
           { id: "retriage", text: "Re-triage to a higher CTAS level", match: ["retriage", "re triage", "ctas", "upgrade"] },
@@ -551,7 +561,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE system level actions to address the overcrowding tonight.",
+        prompt: "What system level actions would address the overcrowding tonight?",
         accept: [
           { id: "admin", text: "Notify the administrator on call and activate the hospital surge or overcapacity protocol", match: ["administrator", "surge", "overcapacity", "over capacity", "escalation"] },
           { id: "fcp", text: "Move admitted patients to inpatient units, including hallway beds under a full capacity protocol", match: ["full capacity", "move admitted", "inpatient unit", "hallway", "ward"] },
@@ -568,17 +578,17 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which intervention best reduces harm from boarding admitted patients in the emergency department? Select one.",
+        prompt: "Which of the following interventions best reduces harm from boarding admitted patients in the emergency department?",
         options: [
-          "Diverting all ambulances to other hospitals for the night",
-          "Adding a second triage nurse",
-          "An inpatient full capacity protocol that moves admitted patients to ward hallways",
+          "Adding a second triage nurse for the night",
+          "Asking low acuity patients to see their family physician",
           "Discharging waiting room patients without assessment",
-          "Asking low acuity patients to leave and see their family physician",
+          "Diverting all incoming ambulances to other hospitals tonight",
+          "Full capacity protocol, admitted patients to ward hallways",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
-          "Full capacity protocols share the burden of boarding across the hospital. Admitted patients get ward nursing, and ED stretchers open for new patients. Diversion simply shifts risk and sending people away unassessed is unsafe.",
+          "An inpatient full capacity protocol moves admitted patients to ward hallways and shares the burden of boarding across the hospital. Admitted patients get ward nursing, and ED stretchers open for new patients. Diversion simply shifts risk and sending people away unassessed is unsafe.",
         keyFeature: { topic: "multiple-patients", n: 4 },
         source: "caep-crowding",
       },
@@ -586,7 +596,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO strategies to detect deterioration in waiting room patients.",
+        prompt: "What strategies would detect deterioration in waiting room patients?",
         accept: [
           { id: "reassess", text: "Scheduled nurse reassessment at CTAS intervals", match: ["reassess", "reassessment", "ctas interval", "scheduled"] },
           { id: "vitals", text: "Repeat vital signs", match: ["vital", "repeat vital"] },
@@ -609,20 +619,20 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     alsoTopics: ["multiple-trauma", "ems"],
     title: "Three patients from one crash",
     stem:
-      "You are the only physician in a small hospital emergency department in Ontario. A family physician anaesthetist and a general surgeon are on call from home, 20 minutes away. The nearest trauma centre is 1 hour away by air. Three patients arrive together from one car crash.\nA. A 25 year old driver. GCS 13, RR 32, SpO2 86%. Absent breath sounds on the right. Trachea shifted to the left. HR 134, BP 82/50.\nB. A 55 year old passenger. GCS 15. HR 122, BP 90/60. Severe pelvic pain.\nC. A 17 year old passenger. GCS 15. HR 98, BP 126/78. Bone visible through a shin wound.",
+      "You are the only physician in a small hospital emergency department in Ontario. A family physician anaesthetist and a general surgeon are on call from home, 20 minutes away. The nearest trauma centre is 1 hour away by air. Three patients arrive together from one car crash.\nA. A 25-year-old driver. GCS 13, respiratory rate 32/minute, O2 sat 86%. Absent breath sounds on the right. Trachea shifted to the left. Pulse 134/minute, BP 82/50 mmHg.\nB. A 55-year-old passenger. GCS 15. Pulse 122/minute, BP 90/60 mmHg. Severe pelvic pain.\nC. A 17-year-old passenger. GCS 15. Pulse 98/minute, BP 126/78 mmHg. Bone visible through a shin wound.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is your first action? Select one.",
+        prompt: "Which of the following is your first action for these three patients?",
         options: [
-          "Intubate patient A",
-          "Needle or finger decompression of the right chest of patient A",
           "Apply a pelvic binder to patient B",
-          "Chest radiograph for patient A",
-          "Give cefazolin to patient C",
+          "IV cefazolin 2 g for patient C's open shin wound",
+          "Needle or finger decompression of patient A's right chest",
+          "Portable chest radiograph for patient A",
+          "Rapid sequence intubation of patient A",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Patient A has a clinical tension pneumothorax with shock. It is immediately life threatening and is treated on clinical grounds without imaging. Intubation with positive pressure before decompression can precipitate arrest.",
         keyFeature: { topic: "multiple-trauma", n: 2 },
@@ -632,7 +642,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE tasks you delegate to your team in parallel.",
+        prompt: "What tasks do you delegate to your team in parallel?",
         accept: [
           { id: "binder", text: "Apply a pelvic binder to patient B", match: ["binder", "pelvic binder", "sheet"] },
           { id: "iv", text: "Two large bore IVs and bloods for patients A and B", match: ["large bore", "iv access", "two iv", "2 iv"] },
@@ -652,7 +662,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE resources or people you call now.",
+        prompt: "What resources or people do you call now?",
         accept: [
           { id: "anaes", text: "The family physician anaesthetist", match: ["anaesthetist", "anesthetist", "anaesthesia", "anesthesia"] },
           { id: "surgeon", text: "The general surgeon", match: ["surgeon", "general surgery"] },
@@ -672,7 +682,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Patient A has been intubated. A chest tube is in place. Ornge will transport him to the trauma centre.",
-        prompt: "List THREE steps to prepare him for air transport.",
+        prompt: "What steps would prepare him for air transport?",
         accept: [
           { id: "ett", text: "Secure the tube and confirm with end tidal CO2", match: ["secure tube", "secure ett", "end tidal", "etco2", "capnography"] },
           { id: "ct", text: "Chest tube secured and connected to a transport drainage system", match: ["chest tube", "heimlich", "drainage"] },
@@ -702,13 +712,13 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     alsoTopics: ["infectious-diseases", "cva"],
     title: "Three calls at once",
     stem:
-      "It is 04:00. You are the only physician in a mid sized emergency department. There are five nurses and a respiratory therapist. Three things happen within 5 minutes.\nA. Paramedics arrive with a 62 year old man in cardiac arrest. CPR is in progress. The rhythm is ventricular fibrillation.\nB. A 70 year old woman has new right sided weakness and trouble speaking. She was last known well 50 minutes ago. BP 176/92.\nC. A 48 year old woman with pyelonephritis now has BP 86/50 and a lactate of 4.5 mmol/L. She has no orders yet.",
+      "It is 04:00. You are the only physician in a mid sized emergency department. There are five nurses and a respiratory therapist. Three things happen within 5 minutes.\nA. Paramedics arrive with a 62-year-old man in cardiac arrest. CPR is in progress. The rhythm is ventricular fibrillation.\nB. A 70-year-old woman has new right sided weakness and trouble speaking. She was last known well 50 minutes ago. BP 176/92 mmHg.\nC. A 48-year-old woman with pyelonephritis now has BP 86/50 mmHg and a lactate of 4.5 mmol/L. She has no orders yet.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE things you do in the first minutes to keep all three patients moving.",
+        prompt: "What do you do in the first minutes to keep all three patients moving?",
         accept: [
           { id: "lead", text: "Lead the cardiac arrest yourself, with clear roles for the team", match: ["lead the arrest", "lead arrest", "run the arrest", "code leader", "team leader", "lead the code"] },
           { id: "orders", text: "Give verbal orders for patient C, fluids, cultures and antibiotics", match: ["verbal order", "order for c", "fluid", "antibiotic", "culture"] },
@@ -725,15 +735,15 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "For patient C, which order is most important not to delay? Select one.",
+        prompt: "Which of the following orders for patient C is most important not to delay?",
         options: [
-          "CT of the abdomen",
           "Broad spectrum IV antibiotics",
-          "Urine culture",
-          "Arterial line insertion",
-          "Repeat lactate",
+          "CT of the abdomen and pelvis",
+          "Insertion of an arterial line",
+          "Repeat serum lactate",
+          "Urine culture and Gram stain",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "In septic shock, each hour of delay in antibiotics increases mortality. Cultures should be drawn when possible but must not hold up antibiotics. Imaging and invasive lines can wait until the patient is stabilized.",
         keyFeature: { topic: "infectious-diseases", n: 2 },
@@ -743,7 +753,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE steps for patient B that nurses can start before you see her.",
+        prompt: "What steps for patient B can nurses start before you see her?",
         accept: [
           { id: "glucose", text: "Point of care glucose", match: ["glucose", "sugar"] },
           { id: "ct", text: "Non contrast CT head and CT angiography", match: ["ct", "cta", "angiogram", "angiography"] },
@@ -763,7 +773,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Patient A has return of spontaneous circulation. He is intubated. His ECG shows anterior ST elevation.",
-        prompt: "List TWO people or services you call to share the load.",
+        prompt: "What people or services do you call to share the load?",
         accept: [
           { id: "icu", text: "ICU or intensivist", match: ["icu", "intensivist", "critical care"] },
           { id: "cardio", text: "Interventional cardiology for the catheterization laboratory", match: ["cardiology", "cardiologist", "cath lab", "catheterization", "pci"] },
@@ -793,7 +803,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE hospital level actions before the patients arrive.",
+        prompt: "What hospital level actions are needed before the patients arrive?",
         accept: [
           { id: "code", text: "Activate Code Orange", match: ["code orange", "disaster plan", "mass casualty plan"] },
           { id: "staff", text: "Call in extra physicians, nurses and respiratory therapists", match: ["call in", "extra staff", "additional staff", "more rt", "extra rt", "call back"] },
@@ -813,7 +823,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that suggest an inhalation injury needing early intubation.",
+        prompt: "What findings suggest an inhalation injury needing early intubation?",
         accept: [
           { id: "stridor", text: "Stridor", match: ["stridor"] },
           { id: "voice", text: "Hoarseness or voice change", match: ["hoarse", "hoarseness", "voice"] },
@@ -836,8 +846,8 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        update: "A 79 year old resident arrives with GCS 9, BP 84/50, lactate 12 mmol/L and SpO2 98% on a non rebreather mask.",
-        prompt: "List TWO treatments you give now for likely toxic exposures. Include the dose where relevant.",
+        update: "A 79-year-old resident arrives with GCS 9, BP 84/50 mmHg, lactate 12 mmol/L and O2 sat 98% on a non rebreather mask.",
+        prompt: "What treatments do you give now for likely toxic exposures, including the dose where relevant?",
         accept: [
           { id: "o2", text: "100% oxygen for carbon monoxide poisoning", match: ["100% oxygen", "high flow oxygen", "100 oxygen", "fio2 100", "non rebreather", "nrb"] },
           { id: "hydroxo", text: "Hydroxocobalamin 5 g IV for cyanide", match: ["hydroxocobalamin 5 g", "hydroxocobalamin 5g", "hydroxocobalamin 5 gram", "hydroxocobalamin 70 mg/kg", "cyanokit 5 g", "cyanokit 5g", "cyanokit 5 gram"] },
@@ -853,17 +863,18 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "You have one free ventilator and one airway team. Four residents arrive together. Which should be intubated first? Select one.",
+        update: "You have one free ventilator and one airway team. Four residents arrive together.\nA. A 91-year-old with soot in the nares, normal voice and O2 sat 96%.\nB. A 69-year-old with a mild cough and O2 sat 95%.\nC. An 84-year-old with a documented wish for no intubation, now in respiratory distress.\nD. A 76-year-old with stridor, hoarseness and oropharyngeal swelling, who wants full treatment.\nE. An 88-year-old with 5% partial thickness hand burns.",
+        prompt: "Which of the following residents should the airway team intubate first?",
         options: [
-          "A 91 year old with soot in the nares, normal voice and SpO2 96%",
-          "A 76 year old with stridor, hoarseness and oropharyngeal swelling, who wants full treatment",
-          "An 84 year old with a documented wish for no intubation, now in respiratory distress",
-          "A 69 year old with a mild cough and SpO2 95%",
-          "An 88 year old with 5% partial thickness hand burns",
+          "Resident A",
+          "Resident B",
+          "Resident C",
+          "Resident D",
+          "Resident E",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "The patient with stridor and swelling is at highest risk of losing the airway and wants full treatment. A documented wish for no intubation must be respected, with comfort focused care. Soot alone with a normal voice needs close watching but not immediate intubation.",
+          "Resident D, with stridor and swelling, is at highest risk of losing the airway and wants full treatment. A documented wish for no intubation must be respected, with comfort focused care. Soot alone with a normal voice needs close watching but not immediate intubation.",
         keyFeature: { topic: "multiple-patients", n: 1 },
         source: "abls",
       },
@@ -876,13 +887,13 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     topic: "multiple-patients",
     title: "A delivery and a second patient",
     stem:
-      "At 22:00 you are the only physician in a rural Ontario emergency department with no obstetric service. A 28 year old G2P1 at 36 weeks arrives in active labour and delivers within minutes. At the same time, a nurse tells you a 60 year old man in bed 3 has new chest pain. The newborn is limp and not breathing after drying and stimulation.",
+      "At 22:00 you are the only physician in a rural Ontario emergency department with no obstetric service. A 28-year-old G2P1 at 36 weeks arrives in active labour and delivers within minutes. At the same time, a nurse tells you a 60-year-old man in bed 3 has new chest pain. The newborn is limp and not breathing after drying and stimulation.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE calls for help you make now.",
+        prompt: "What calls for help do you make now?",
         accept: [
           { id: "physician", text: "Call in the on call family physician or another physician", match: ["on call", "another physician", "second physician", "family physician", "backup", "back up", "colleague"] },
           { id: "nurse", text: "An extra nurse with neonatal resuscitation training", match: ["nrp", "extra nurse", "another nurse", "additional nurse"] },
@@ -900,18 +911,18 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "The newborn remains apneic. HR is 80.",
-        prompt: "What is the next step? Select one.",
+        update: "The newborn remains apneic. The heart rate is 80/minute.",
+        prompt: "Which of the following is the next step in resuscitating this newborn?",
         options: [
-          "Start chest compressions",
-          "Positive pressure ventilation with a bag and mask, starting with 21% oxygen",
-          "Free flow 100% oxygen by mask",
-          "Intubate and give epinephrine",
-          "Naloxone IM",
+          "Free flow 100% oxygen by face mask and reassess",
+          "Intubate and give epinephrine through the tube",
+          "Naloxone IM, then reassess breathing",
+          "Positive pressure ventilation by bag and mask in 21% oxygen",
+          "Start chest compressions coordinated with ventilation",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "An apneic newborn with HR under 100 needs positive pressure ventilation within the first minute. For a baby of 35 weeks or more, start with 21% oxygen. Compressions are only started if HR stays under 60 despite 30 seconds of effective ventilation.",
+          "An apneic newborn with HR under 100 needs positive pressure ventilation with a bag and mask within the first minute. For a baby of 35 weeks or more, start with 21% oxygen. Compressions are only started if HR stays under 60 despite 30 seconds of effective ventilation.",
         keyFeature: { topic: "multiple-patients", n: 2 },
         source: "nrp",
       },
@@ -920,7 +931,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "The baby responds to ventilation. The mother now has brisk vaginal bleeding of about 800 mL. Her uterus is soft.",
-        prompt: "List THREE interventions for the mother.",
+        prompt: "What interventions are needed for the mother?",
         accept: [
           { id: "massage", text: "Uterine massage", match: ["massage", "fundal"] },
           { id: "oxytocin", text: "Oxytocin", match: ["oxytocin", "pitocin"] },
@@ -940,8 +951,8 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        update: "The ECG of the man in bed 3 shows anterior ST elevation.",
-        prompt: "You are still at the mother's bedside. List TWO actions to get him treated without delay.",
+        update: "The ECG of the man in bed 3 shows anterior ST elevation. You are still at the mother's bedside.",
+        prompt: "What actions would get him treated without delay?",
         accept: [
           { id: "asa", text: "Verbal order for ASA", match: ["asa", "aspirin", "acetylsalicylic"] },
           { id: "criticall", text: "Call CritiCall or the PCI centre to arrange reperfusion", match: ["criticall", "pci", "cardiology", "cardiologist", "cath lab"] },
@@ -964,13 +975,13 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     alsoTopics: ["cqi", "arrhythmia"],
     title: "A result that fell through the cracks",
     stem:
-      "You work in an Ontario emergency department. At 10:00 you assess a 76 year old man with acute kidney injury who was handed over to you at 07:00. The night physician's note says potassium pending. The result, 7.1 mmol/L, was reported at 06:40 and was not mentioned at handover. He now feels weak. His ECG shows wide QRS complexes and a heart rate of 42.",
+      "You work in an Ontario emergency department. At 10:00 you assess a 76-year-old man with acute kidney injury who was handed over to you at 07:00. The night physician's note says potassium pending. The result, 7.1 mmol/L, was reported at 06:40 and was not mentioned at handover. He now feels weak. His ECG shows wide QRS complexes and a heart rate of 42/minute.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate treatments. Include doses where relevant.",
+        prompt: "What immediate treatments are needed, including doses where relevant?",
         accept: [
           { id: "calcium", text: "Calcium gluconate 3 g IV or calcium chloride 1 g IV", match: ["calcium gluconate", "calcium chloride", "calcium"] },
           { id: "insulin", text: "Regular insulin 10 units IV with dextrose", match: ["insulin"] },
@@ -992,7 +1003,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "He responds to treatment and is admitted to the ICU for dialysis.",
-        prompt: "List THREE elements of your disclosure conversation with the patient and his daughter.",
+        prompt: "What are the elements of your disclosure conversation with the patient and his daughter?",
         accept: [
           { id: "facts", text: "Explain the facts of what happened in plain language", match: ["fact", "what happened", "explain"] },
           { id: "apology", text: "Express regret and apologize", match: ["apology", "apologize", "apologise", "sorry", "regret"] },
@@ -1014,7 +1025,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE contributing factors the incident review should explore.",
+        prompt: "What contributing factors should the incident review explore?",
         accept: [
           { id: "tool", text: "Lack of a structured handover tool that includes pending results", match: ["structured", "handover tool", "sbar", "ipass", "i pass", "no structured", "no handover tool"] },
           { id: "callback", text: "Critical result call went to a physician about to leave", match: ["critical result", "callback", "call back", "lab call", "critical value"] },
@@ -1032,7 +1043,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO system changes that would reduce the chance of this happening again.",
+        prompt: "What system changes would reduce the chance of this happening again?",
         accept: [
           { id: "tool", text: "A structured handover tool that lists pending results", match: ["structured", "handover tool", "sbar", "ipass", "i pass", "pending result"] },
           { id: "critical", text: "A critical result policy with read back to the responsible physician", match: ["critical result", "read back", "readback", "critical value"] },
@@ -1061,7 +1072,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE hospital level actions now.",
+        prompt: "What hospital level actions are needed now?",
         accept: [
           { id: "code", text: "Activate Code Orange", match: ["code orange", "disaster plan", "mass casualty plan"] },
           { id: "security", text: "Security lockdown of the department", match: ["security", "lockdown", "lock down", "police"] },
@@ -1079,12 +1090,18 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "The four patients arrive.\nA. Gunshot to the abdomen. HR 138, BP 74/40. FAST shows free fluid. Transient response to 2 units of blood.\nB. Gunshot to the thigh with a tourniquet. Bleeding controlled. HR 100, BP 122/80.\nC. Gunshot to the head. GCS 4 with fixed dilated pupils.\nD. Gunshot to the chest. Chest tube drained 400 mL, now 50 mL per hour. BP 112/70.",
-        prompt: "Which patient should go to the operating room first? Select one.",
-        options: ["Patient A", "Patient B", "Patient C", "Patient D"],
+        update: "The four patients arrive.\nA. Gunshot to the abdomen. Pulse 138/minute, BP 74/40 mmHg. FAST shows free fluid. Transient response to 2 units of blood.\nB. Gunshot to the thigh with a tourniquet. Bleeding controlled. Pulse 100/minute, BP 122/80 mmHg.\nC. Gunshot to the head. GCS 4 with fixed dilated pupils.\nD. Gunshot to the chest. Chest tube drained 400 mL, now 50 mL per hour. BP 112/70 mmHg.",
+        prompt: "Which of the following patients should go to the operating room first?",
+        options: [
+          "Patient A",
+          "Patient B",
+          "Patient C",
+          "Patient D",
+          "No patient, transfer all to the trauma centre",
+        ],
         correct: 0,
         explanation:
-          "Patient A has ongoing intra-abdominal hemorrhage with shock and needs damage control laparotomy now. Patient D's drainage is below thresholds for urgent thoracotomy. Patient B's bleeding is controlled. Patient C has a devastating, likely non survivable injury.",
+          "Patient A has ongoing intra-abdominal hemorrhage with shock and needs damage control laparotomy now. He is too unstable to delay surgery for a 40 minute transfer. Patient D's drainage is below thresholds for urgent thoracotomy. Patient B's bleeding is controlled. Patient C has a devastating, likely non survivable injury.",
         keyFeature: { topic: "multiple-patients", n: 1 },
         source: "atls",
       },
@@ -1092,7 +1109,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE principles for blood product use while resuscitating these patients.",
+        prompt: "What principles guide blood product use while resuscitating these patients?",
         accept: [
           { id: "ratio", text: "Balanced transfusion with plasma, platelets and red cells near 1 to 1 to 1", match: ["balanced", "ratio", "plasma"] },
           { id: "txa", text: "Tranexamic acid 1 g IV within 3 hours of injury", match: ["tranexamic", "txa"] },
@@ -1112,7 +1129,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "As the emergency physician leading the response, list THREE roles you assign.",
+        prompt: "As the emergency physician leading the response, what roles do you assign?",
         accept: [
           { id: "triage", text: "Triage officer at the ambulance entrance", match: ["triage officer", "triage lead", "triage"] },
           { id: "leader", text: "A team leader for each resuscitation bay", match: ["team leader", "bay leader", "leader for each"] },
@@ -1137,16 +1154,22 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
     alsoTopics: ["ems"],
     title: "Ambulances waiting at the door",
     stem:
-      "It is 16:00 in an urban emergency department. Every monitored bed is full except one resuscitation bay. Four ambulances arrive within 5 minutes.\nA. A 70 year old with COPD. RR 26, SpO2 91% on 2 L, speaking in full sentences.\nB. A 55 year old with hematemesis. HR 132, BP 74/40. Cool, clammy and confused.\nC. A 30 year old intoxicated man with a scalp laceration. GCS 14. Normal vital signs.\nD. An 84 year old with a suspected hip fracture. Normal vital signs. Pain controlled with fentanyl.",
+      "It is 16:00 in an urban emergency department. Every monitored bed is full except one resuscitation bay. Four ambulances arrive within 5 minutes.\nA. A 70-year-old with COPD. respiratory rate 26/minute, O2 sat 91% on 2 L/minute, speaking in full sentences.\nB. A 55-year-old with hematemesis. Pulse 132/minute, BP 74/40 mmHg. Cool, clammy and confused.\nC. A 30-year-old intoxicated man with a scalp laceration. GCS 14. Normal vital signs.\nD. An 84-year-old with a suspected hip fracture. Normal vital signs. Pain controlled with fentanyl.",
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which patient should go to the resuscitation bay? Select one.",
-        options: ["Patient A", "Patient B", "Patient C", "Patient D"],
+        prompt: "Which of the following patients should go to the resuscitation bay?",
+        options: [
+          "Patient A",
+          "Patient B",
+          "Patient C",
+          "Patient D",
+          "No patient, keep the bay free for a new arrival",
+        ],
         correct: 1,
         explanation:
-          "Patient B is in shock from an upper GI bleed, which is CTAS 1. Patient A has moderate distress and can start treatment in another space with close monitoring. The others are stable.",
+          "Patient B is in shock from an upper GI bleed, which is CTAS 1. Patient A has moderate distress and can start treatment in another space with close monitoring. The others are stable. Keeping the bay empty for an unknown arrival leaves a patient in shock without resuscitation.",
         keyFeature: { topic: "multiple-patients", n: 1 },
         source: "ctas",
       },
@@ -1154,7 +1177,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE pieces of information you want from patient B's paramedics that only they can give.",
+        prompt: "What information do you want from patient B's paramedics that only they can give?",
         accept: [
           { id: "scene", text: "Scene findings, such as the amount of blood and pill bottles", match: ["scene", "amount of blood", "pill bottle", "blood at home"] },
           { id: "tx", text: "Treatments given and the response", match: ["treatment", "given", "response", "fluid"] },
@@ -1173,7 +1196,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE actions to care for the other three patients safely while no beds are available.",
+        prompt: "What actions would let you care for the other three patients safely while no beds are available?",
         accept: [
           { id: "accept", text: "Accept transfer of care promptly to a nurse in an offload area", match: ["offload", "transfer of care", "accept"] },
           { id: "assess", text: "Physician assessment and orders while patients are on EMS stretchers", match: ["assess", "order", "stretcher", "hallway"] },
@@ -1204,7 +1227,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE pieces of information you want from the EMS superintendent.",
+        prompt: "What information do you want from the EMS superintendent?",
         accept: [
           { id: "number", text: "Number of patients and triage categories", match: ["number", "how many", "triage category", "red", "severity"] },
           { id: "injuries", text: "Types of injuries, such as burns or entrapment", match: ["type of injury", "injury type", "injurie", "burn", "entrapment", "trapped"] },
@@ -1223,7 +1246,8 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "The superintendent asks for advice on patient distribution. List THREE directions you give.",
+        update: "The superintendent asks for advice on patient distribution.",
+        prompt: "What directions do you give?",
         accept: [
           { id: "spread", text: "Distribute patients among all hospitals rather than sending everyone to the nearest", match: ["distribute", "spread", "share", "all hospital", "not all to", "other hospital"] },
           { id: "tc", text: "Send stable patients with major trauma to the lead trauma centre by land", match: ["trauma centre", "trauma center"] },
@@ -1241,7 +1265,7 @@ export const MULTIPLE_PATIENTS_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE steps to organize your department for the arriving patients.",
+        prompt: "What steps would organize your department for the arriving patients?",
         accept: [
           { id: "code", text: "Activate Code Orange", match: ["code orange", "disaster plan", "mass casualty plan"] },
           { id: "zones", text: "Set up red, yellow and green treatment zones", match: ["zone", "area", "red", "yellow", "green"] },

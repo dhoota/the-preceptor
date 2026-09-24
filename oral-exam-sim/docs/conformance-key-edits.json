@@ -1929,6 +1929,151 @@
    "after": [
     "Immediate transfer for primary PCI despite the delay"
    ]
+  },
+  "lacerations-01#q4": {
+   "batch": "s13",
+   "before": [
+    "No prophylactic antibiotics, with instructions to return for signs of infection"
+   ],
+   "after": [
+    "No prophylactic antibiotics, return if signs of infection"
+   ]
+  },
+  "lacerations-02#q3": {
+   "batch": "s13",
+   "before": [
+    "Amoxicillin clavulanate 875/125 mg PO twice daily for 3 to 5 days, with a wound check in 24 to 48 hours"
+   ],
+   "after": [
+    "Amoxicillin clavulanate 875/125 mg PO BID, 3 to 5 days"
+   ]
+  },
+  "lacerations-07#q2": {
+   "batch": "s13",
+   "before": [
+    "Packing and dressing with delayed primary closure in 3 to 5 days",
+    "Oral amoxicillin clavulanate with a wound check in 48 hours"
+   ],
+   "after": [
+    "Oral amoxicillin clavulanate, wound check in 48 hours",
+    "Packing, delayed primary closure in 3 to 5 days"
+   ]
+  },
+  "lacerations-09#q4": {
+   "batch": "s13",
+   "before": [
+    "Urgent hand surgery consultation for operative decompression and debridement today"
+   ],
+   "after": [
+    "Urgent hand surgery for decompression and debridement today"
+   ]
+  },
+  "lacerations-10#q3": {
+   "batch": "s13",
+   "before": [
+    "Cefazolin 2 g IV",
+    "Orthopaedic consultation for operative irrigation of the joint"
+   ],
+   "after": [
+    "Cefazolin 2 g IV",
+    "Orthopaedic surgery for joint irrigation"
+   ]
+  },
+  "lacerations-14#q2": {
+   "batch": "s13",
+   "before": [
+    "Ophthalmology or oculoplastic referral for repair with canalicular intubation"
+   ],
+   "after": [
+    "Ophthalmology or oculoplastic repair with canalicular stent"
+   ]
+  },
+  "lacerations-15#q2": {
+   "batch": "s13",
+   "before": [
+    "Rabies vaccine 1 mL IM on days 0 and 3, with no immune globulin"
+   ],
+   "after": [
+    "Rabies vaccine IM days 0 and 3, no immune globulin"
+   ]
+  },
+  "multiple-patients-03#q2": {
+   "batch": "s13",
+   "before": [
+    "Not walking. RR 36",
+    "Not breathing. Starts breathing after the airway is repositioned",
+    "Not walking. RR 22, radial pulse absent",
+    "Not walking. RR 18, radial pulse present, cannot follow simple commands"
+   ],
+   "after": [
+    "Adult B",
+    "Adult D",
+    "Adult F",
+    "Adult G"
+   ]
+  },
+  "multiple-patients-04#q1": {
+   "batch": "s13",
+   "before": [
+    "Stay and complete the airway and resuscitation, then hand over at the bedside once he is stable"
+   ],
+   "after": [
+    "Stay for the airway and resuscitation, then bedside handover"
+   ]
+  },
+  "multiple-patients-04#q4": {
+   "batch": "s13",
+   "before": [
+    "Tell the day physician directly, confirm read back, and stay until they take responsibility"
+   ],
+   "after": [
+    "Tell the day physician with read back, stay until accepted"
+   ]
+  },
+  "multiple-patients-06#q3": {
+   "batch": "s13",
+   "before": [
+    "Atropine 1 to 2 mg IV, doubling the dose every 5 minutes until the chest is clear"
+   ],
+   "after": [
+    "Atropine 1 to 2 mg IV, doubled until chest clears"
+   ]
+  },
+  "multiple-patients-07#q3": {
+   "batch": "s13",
+   "before": [
+    "An inpatient full capacity protocol that moves admitted patients to ward hallways"
+   ],
+   "after": [
+    "Full capacity protocol, admitted patients to ward hallways"
+   ]
+  },
+  "multiple-patients-08#q1": {
+   "batch": "s13",
+   "before": [
+    "Needle or finger decompression of the right chest of patient A"
+   ],
+   "after": [
+    "Needle or finger decompression of patient A's right chest"
+   ]
+  },
+  "multiple-patients-10#q4": {
+   "batch": "s13",
+   "before": [
+    "A 76 year old with stridor, hoarseness and oropharyngeal swelling, who wants full treatment"
+   ],
+   "after": [
+    "Resident D"
+   ]
+  },
+  "multiple-patients-11#q2": {
+   "batch": "s13",
+   "before": [
+    "Positive pressure ventilation with a bag and mask, starting with 21% oxygen"
+   ],
+   "after": [
+    "Positive pressure ventilation by bag and mask in 21% oxygen"
+   ]
   }
  }
 }
