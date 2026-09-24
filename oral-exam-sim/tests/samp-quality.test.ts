@@ -45,7 +45,7 @@ export function optionsOrdered(options: string[]): boolean {
   while (body.length && LAST_OK.test(body[body.length - 1])) body = body.slice(0, -1);
   if (body.some((o) => LAST_OK.test(o) && /^none\b/i.test(o))) return false;
   const nums = body.map(firstNumber);
-  if (nums.every((n) => !Number.isNaN(n)) && body.every((o) => /^[<>≤≥]?\s*\d/.test(o.trim()))) {
+  if (nums.every((n) => !Number.isNaN(n)) && body.every((o) => /^[<>≤≥]?\s*-?\d/.test(o.trim()))) {
     return nums.every((n, i) => i === 0 || n >= nums[i - 1]);
   }
   const keys = body.map(sortKey);
@@ -261,6 +261,8 @@ describe("gate self test", () => {
     expect(optionsOrdered(["amoxicillin", "ceftriaxone", "doxycycline", "None"])).toBe(true);
     expect(optionsOrdered(["None", "amoxicillin", "ceftriaxone"])).toBe(false);
     expect(optionsOrdered(["10 to 20%", "21 to 40%", "41 to 60%"])).toBe(true);
+    expect(optionsOrdered(["-3", "-2", "-1", "0", "1"])).toBe(true);
+    expect(optionsOrdered(["0", "1", "-3", "-2", "-1"])).toBe(false);
     expect(optionsOrdered(["epinephrine 0.5 mg IM", "epinephrine 0.3 mg IM", "glucagon 1 mg IV"])).toBe(true);
     expect(ABSOLUTE.test("Never give fluids")).toBe(true);
     expect(CROSS_REF.test("None of the above")).toBe(true);
