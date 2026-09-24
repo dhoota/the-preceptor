@@ -111,11 +111,11 @@ for (const c of target) {
       const branching = c.nodes.filter((n) => n.kind === "question" && (n.choices?.length ?? 0) > 1);
       expect(branching.length).toBeGreaterThanOrEqual(3);
     });
-    it("has between 8 and 14 findings and 12 to 26 rubric items with 2 to 4 critical", () => {
+    it("has between 8 and 18 findings and 12 to 30 rubric items with 2 to 4 critical", () => {
       expect(c.findings.length).toBeGreaterThanOrEqual(8);
-      expect(c.findings.length).toBeLessThanOrEqual(14);
+      expect(c.findings.length).toBeLessThanOrEqual(18);
       expect(c.rubric.length).toBeGreaterThanOrEqual(12);
-      expect(c.rubric.length).toBeLessThanOrEqual(26);
+      expect(c.rubric.length).toBeLessThanOrEqual(30);
       const crit = c.rubric.filter((r) => r.critical).length;
       expect(crit).toBeGreaterThanOrEqual(2);
       expect(crit).toBeLessThanOrEqual(4);

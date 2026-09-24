@@ -23,7 +23,7 @@ Read `src/engine/types.ts` first. The types are the contract. `src/cases/seed/ch
 - `card`: the labelled block under the stem. `vitals` in the SAMP formats (temperature with route, pulse, resp, bp, o2sat, and weight as "70 kg (154 lb)"), `medications` and `allergies`.
 - `findings`: 10 to 18. `{ id, label, result }`. The candidate drives the history and examination, so history lives here, not in the stem: history of the presenting illness, past history, medications in detail, social history and collateral history, each as its own finding. Then focused exam, bedside tests, labs with numbers and SI units, imaging and POCUS. Invent realistic values.
 - `start` and `nodes`: see the flow rules.
-- `rubric`: 12 to 26 items. `{ id, competency, text, points, critical?, teaching, source }`.
+- `rubric`: 12 to 30 items. `{ id, competency, text, points, critical?, teaching, source }`.
 - `sources`: 2 to 6. `{ id, citation, url? }`. Every source must be cited by at least one rubric item.
 - `reviewed: false`, `author: "Draft for review by Arjan Dhoot, MD"`, `version: 1`.
 
