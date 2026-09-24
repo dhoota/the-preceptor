@@ -16,14 +16,38 @@ export const nearFatalAsthma: OralCase = {
     { topic: "airway", n: 5 },
   ],
   summary: "A 27 year old woman arrives by ambulance too breathless to speak in sentences.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a busy community ED in Hamilton, Ontario. A respiratory therapist is in the department. Anesthesia and ICU are on call in house. " +
-    "Tamsin Okafor is 27 years old and weighs about 60 kg. Her friend called 911 after she woke at 02:00 unable to catch her breath. " +
-    "Paramedics gave salbutamol 5 mg and ipratropium 0.5 mg by nebulizer twice on the way in. " +
-    "Triage vitals: heart rate 134, blood pressure 108/64, respiratory rate 34, SpO2 87 percent on 8 L by nebulizer mask, temperature 37.1, capillary glucose 11.2 mmol/L. CTAS 1. " +
-    "The paramedic says: 'She could talk in phrases when we got there. Now it is one word at a time and she keeps closing her eyes.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A respiratory therapist is in the department, and anesthesia and ICU are on call in house. " +
+    "A 27 year old woman arrives by ambulance with severe shortness of breath.",
+  card: {
+    vitals: {
+      temperature: "37.1°C",
+      pulse: "134/minute",
+      resp: "34/minute",
+      bp: "108/64 mmHg",
+      o2sat: "87% on 8 L/minute by nebulizer mask",
+      weight: "60 kg (132 lb)",
+    },
+    medications: "Salbutamol inhaler as needed",
+    allergies: "None known",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "Her friend called 911 after she woke at 02:00 unable to catch her breath. She has had cold symptoms for 3 days. No new foods or medications tonight.",
+    },
+    {
+      id: "paramedic",
+      label: "Paramedic handover",
+      result:
+        "Paramedics gave salbutamol 5 mg and ipratropium 0.5 mg by nebulizer twice on the way in. " +
+        "The paramedic says: 'She could talk in phrases when we got there. Now it is one word at a time and she keeps closing her eyes.' " +
+        "Capillary glucose at triage 11.2 mmol/L. Triage made her CTAS 1.",
+    },
     {
       id: "vitals",
       label: "Repeat vitals",
@@ -38,11 +62,20 @@ export const nearFatalAsthma: OralCase = {
         "Trachea midline. No stridor. No urticaria, no lip or tongue swelling. Drowsy but opens eyes to voice. GCS 14.",
     },
     {
-      id: "history",
-      label: "Asthma history from her friend",
+      id: "pmh",
+      label: "Past asthma history, from her friend",
+      result: "Asthma since childhood. Intubated in the ICU at age 19. Three ED visits this year.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
       result:
-        "Asthma since childhood. Intubated in the ICU at age 19. Three ED visits this year. She stopped her inhaled steroid last spring because of cost. " +
-        "Uses about two salbutamol inhalers a month. Vapes cannabis. Cold symptoms for 3 days. No known allergies. No new foods or medications tonight.",
+        "She stopped her inhaled steroid last spring because of cost. Uses about two salbutamol inhalers a month. No known allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Vapes cannabis.",
     },
     {
       id: "vbg",
@@ -93,7 +126,7 @@ export const nearFatalAsthma: OralCase = {
       id: "q-first",
       phase: "First ten minutes",
       prompt: "Assess her severity and tell me your treatment in the next ten minutes, with doses.",
-      seconds: 120,
+      seconds: 115,
       modelAnswer: [
         "Life threatening asthma: single words, drowsy, quiet chest, SpO2 under 92 percent.",
         "Oxygen to a target SpO2 of 93 to 95 percent.",
@@ -101,8 +134,9 @@ export const nearFatalAsthma: OralCase = {
         "Systemic steroid within the first hour: prednisone 50 mg orally if she can swallow, or methylprednisolone 60 to 125 mg IV. Higher doses add no proven benefit.",
         "Magnesium sulfate 2 g IV over 20 minutes.",
         "Second IV, monitor, gas, potassium, chest X ray. Call anesthesia and ICU early.",
+        "Targeted history from the friend and paramedics: prior intubation, ED visits, controller use, salbutamol use, trigger and what was given on the way in.",
       ],
-      rubric: ["as-r1", "as-m1", "as-m2", "as-m3"],
+      rubric: ["as-r1", "as-m1", "as-m2", "as-m3", "as-h1", "as-h2", "as-h3"],
       choices: [
         {
           id: "c-bundle",
@@ -151,7 +185,7 @@ export const nearFatalAsthma: OralCase = {
       id: "q-gas",
       phase: "Investigations",
       prompt: "Her gas is back: pH 7.24, pCO2 58 mmHg, lactate 4.1 mmol/L, potassium 3.1 mmol/L. Interpret this for me.",
-      seconds: 60,
+      seconds: 58,
       modelAnswer: [
         "Acute respiratory acidosis with a lactic metabolic component. The bicarbonate has not risen as a pure acute respiratory acidosis would predict.",
         "A normal or rising pCO2 in acute asthma means fatigue and impending failure.",
@@ -176,7 +210,7 @@ export const nearFatalAsthma: OralCase = {
       id: "q-niv",
       phase: "Deterioration",
       prompt: "What do you do now? Do you try BiPAP?",
-      seconds: 90,
+      seconds: 86,
       modelAnswer: [
         "She has falling consciousness and a rising pCO2. This is respiratory failure and she needs intubation.",
         "Decreased level of consciousness is a contraindication to NIV.",
@@ -233,7 +267,7 @@ export const nearFatalAsthma: OralCase = {
       id: "q-rsi",
       phase: "Airway",
       prompt: "Walk me through your intubation. Drugs and doses, tube size, and what you do to prevent collapse after the tube goes in.",
-      seconds: 120,
+      seconds: 115,
       modelAnswer: [
         "Preoxygenate with the nebulizer running. Sit her up until induction.",
         "Fluid bolus 500 mL to 1 L before induction. Push dose epinephrine or phenylephrine ready.",
@@ -290,7 +324,7 @@ export const nearFatalAsthma: OralCase = {
       id: "q-vent",
       phase: "Ventilator",
       prompt: "The respiratory therapist asks for your initial ventilator settings. What do you order and what will you monitor?",
-      seconds: 90,
+      seconds: 86,
       modelAnswer: [
         "Volume control. Tidal volume 6 to 8 mL/kg predicted body weight, about 350 to 450 mL.",
         "Low rate of 10 to 12 breaths a minute.",
@@ -316,7 +350,7 @@ export const nearFatalAsthma: OralCase = {
       id: "q-crash",
       phase: "Crash on the ventilator",
       prompt: "What is happening and what do you do right now?",
-      seconds: 90,
+      seconds: 86,
       modelAnswer: [
         "Dynamic hyperinflation with auto PEEP causing obstructive shock.",
         "Disconnect from the ventilator and let her exhale fully. Gentle manual chest pressure can help.",
@@ -373,7 +407,7 @@ export const nearFatalAsthma: OralCase = {
       id: "q-ongoing",
       phase: "Stabilized",
       prompt: "She is now stable on a rate of 10. Gas shows pH 7.18 and pCO2 78 mmHg. The resident wants to turn the rate back up. What do you say, and what ongoing therapy does she need?",
-      seconds: 90,
+      seconds: 86,
       modelAnswer: [
         "Accept permissive hypercapnia while pH is above about 7.15 and plateau is under 30.",
         "Continue in line salbutamol and ipratropium. Continue IV steroids.",
@@ -389,7 +423,7 @@ export const nearFatalAsthma: OralCase = {
       id: "q-dispo",
       phase: "Disposition and debrief",
       prompt: "Her mother arrives. Then the team wants a quick debrief. What do you tell her mother, and what will you make sure happens before this patient ever goes home?",
-      seconds: 90,
+      seconds: 86,
       modelAnswer: [
         "Honest update in plain words: a life threatening asthma attack, on a breathing machine in the ICU.",
         "Admit to ICU. Hand over the airway details and ventilator issues.",
@@ -410,7 +444,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-r1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies life threatening asthma from drowsiness, single word speech, quiet chest and SpO2 under 92 percent.",
       points: 2,
       teaching: "Altered mental status and a silent chest are late signs. They mean the patient is tiring and close to arrest.",
@@ -419,7 +453,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives nebulized salbutamol 5 mg back to back or continuously with ipratropium 0.5 mg every 20 minutes for three doses.",
       points: 2,
       teaching: "Adding ipratropium to salbutamol in severe asthma reduces admissions. Continuous nebulization is reasonable when the attack is severe.",
@@ -428,7 +462,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives systemic corticosteroid within the first hour, such as prednisone 50 mg orally or methylprednisolone 60 to 125 mg IV.",
       points: 2,
       teaching: "Steroids take hours to work so they should be given early. Oral and IV routes work equally well if the patient can swallow.",
@@ -437,7 +471,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives magnesium sulfate 2 g IV over 20 minutes.",
       points: 2,
       teaching: "IV magnesium reduces admission in adults with severe exacerbations. Watch for hypotension and flushing.",
@@ -446,7 +480,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Recognizes a normal or rising pCO2 in acute asthma as a sign of respiratory fatigue.",
       points: 2,
       critical: true,
@@ -456,7 +490,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Attributes lactate, hypokalemia and hypophosphatemia at least partly to beta agonist therapy and replaces potassium.",
       points: 1,
       teaching: "High dose salbutamol shifts potassium into cells and raises lactate. Replace potassium to protect against arrhythmia.",
@@ -465,7 +499,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Obtains a chest X ray or lung ultrasound to exclude pneumothorax and other complications.",
       points: 1,
       teaching: "Pneumothorax and pneumomediastinum are complications to exclude. A chest X ray is not needed to diagnose asthma itself.",
@@ -474,7 +508,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Considers epinephrine 0.5 mg IM or a titrated IV infusion as a bridge in near arrest asthma.",
       points: 1,
       teaching: "GINA does not recommend routine epinephrine outside anaphylaxis. Many emergency physicians still use it as a rescue bridge in near arrest asthma while the airway is prepared.",
@@ -483,7 +517,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Decides to intubate for falling level of consciousness and rising pCO2 and does not start NIV in an obtunded patient.",
       points: 3,
       critical: true,
@@ -493,7 +527,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls anesthesia and ICU early and assigns the most experienced operator to the airway.",
       points: 1,
       teaching: "Intubating a severe asthmatic is one of the highest risk airways in the ED. Get help before the crash, not after.",
@@ -502,7 +536,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives a fluid bolus before induction and has a push dose vasopressor ready.",
       points: 2,
       teaching: "These patients are dry and their chests are full of trapped air. Induction plus positive pressure often drops the pressure.",
@@ -511,7 +545,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses ketamine 1.5 to 2 mg/kg IV for induction with rocuronium 1.2 mg/kg IV and the largest possible tube, 8.0 or larger.",
       points: 2,
       teaching: "Ketamine has bronchodilating properties and preserves blood pressure. A bigger tube means less resistance and allows bronchoscopy.",
@@ -520,7 +554,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-r5",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Bags slowly after intubation at 6 to 10 breaths a minute to avoid breath stacking.",
       points: 2,
       teaching: "The bag is often more dangerous than the tube. Allow full exhalation between breaths.",
@@ -529,7 +563,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Orders low rate, low tidal volume, high flow ventilator settings with a long expiratory time and low PEEP.",
       points: 2,
       teaching: "Start around 6 to 8 mL/kg, a rate of 10 to 12 and an I to E of 1 to 4. Keep plateau pressure under 30 cmH2O.",
@@ -538,7 +572,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-m6",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Accepts permissive hypercapnia with pH above about 7.15 rather than raising the rate.",
       points: 2,
       teaching: "Hypercapnia is well tolerated. Air trapping is not. Chasing a normal CO2 causes barotrauma and shock.",
@@ -547,7 +581,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-r6",
       competency: "resuscitation",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes dynamic hyperinflation as the cause of post intubation shock and disconnects the ventilator to allow exhalation.",
       points: 3,
       critical: true,
@@ -557,7 +591,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-a4",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Excludes tension pneumothorax with lung ultrasound or exam before or during treatment of hyperinflation.",
       points: 1,
       teaching: "Barotrauma is a real risk in ventilated asthmatics. Lung sliding on both sides makes tension pneumothorax unlikely.",
@@ -566,7 +600,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-m7",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Continues bronchodilators and steroids after intubation, provides deep sedation, and names rescue options for refractory cases.",
       points: 1,
       teaching: "Intubation does not treat the asthma. Refractory cases may need IV epinephrine, inhaled anesthetics or ECMO in the ICU.",
@@ -575,7 +609,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains permissive hypercapnia clearly and respectfully to the resident who wants to increase the rate.",
       points: 1,
       teaching: "Teach with the numbers: auto PEEP and plateau pressure. A shared target prevents the next crash.",
@@ -584,7 +618,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives her mother an honest plain language update on the severity and the ICU plan.",
       points: 1,
       teaching: "Say what happened, what is being done and what comes next. Avoid jargon like auto PEEP with families.",
@@ -593,7 +627,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU with a clear handover of airway, ventilator settings and the hyperinflation event.",
       points: 1,
       teaching: "The receiving team must know the rate that caused shock. Handover prevents repeat errors.",
@@ -602,7 +636,7 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Identifies near fatal asthma risk factors and ensures an inhaled corticosteroid controller, action plan, drug coverage and specialist follow up before discharge.",
       points: 2,
       critical: true,
@@ -612,10 +646,37 @@ export const nearFatalAsthma: OralCase = {
     {
       id: "as-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a brief team debrief after the ventilator crash focused on the system cause.",
       points: 1,
       teaching: "A short debrief turns a near miss into shared learning. Focus on the rate change, not on blame.",
+      source: "gina",
+    },
+    {
+      id: "as-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about prior intubation or ICU admission, ED visits and hospital admissions in the past year.",
+      points: 3,
+      teaching: "Prior intubation for asthma is the strongest marker of risk of death. Frequent ED visits in the past year add to that risk.",
+      source: "gina",
+    },
+    {
+      id: "as-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about controller use and adherence, how much salbutamol she uses, and what paramedics gave on the way in.",
+      points: 3,
+      teaching: "No inhaled corticosteroid and more than one salbutamol canister a month both predict fatal asthma. Knowing the prehospital doses guides the next dose.",
+      source: "gina",
+    },
+    {
+      id: "as-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the trigger, allergy and anaphylaxis features, and smoking or vaping.",
+      points: 3,
+      teaching: "A viral trigger is common. Ask about new foods or drugs to rule out anaphylaxis, which changes the first drug to epinephrine. Smoke and vaping worsen control.",
       source: "gina",
     },
   ],
@@ -636,7 +697,7 @@ export const nearFatalAsthma: OralCase = {
         "Kew KM, Kirtchuk L, Michell CI. Intravenous magnesium sulfate for treating adults with acute asthma in the emergency department. Cochrane Database of Systematic Reviews. 2014.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -16,15 +16,38 @@ export const drowningCottageLake: OralCase = {
     { topic: "multiple-patients", n: 2 },
   ],
   summary: "Two 19 year olds arrive together from a cottage lake, one unresponsive and one coughing.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a community hospital ED in Huntsville, Ontario, on a July long weekend. There is a respiratory therapist, CT, and a 6 bed ICU. " +
-    "Tertiary referral is through CritiCall Ontario and transport by Ornge. " +
-    "Mateo Sandoval is 19 years old, about 180 cm and 78 kg. At 16:40 he jumped feet first off a dock to swim to a raft after two beers. Friends noticed he was missing about four minutes later and found him face down in 2.5 m of water. " +
-    "A friend with lifeguard training gave rescue breaths and CPR. He had a pulse after about 6 minutes of CPR, before paramedics arrived. " +
-    "On arrival at 17:30: heart rate 124, blood pressure 102/60, SpO2 84 percent with bag valve mask on 15 L, rectal temperature 35.1 °C, capillary glucose 9.2 mmol/L. GCS 6. CTAS 1. " +
-    "His friend Noah, also 19, swam out to help him and is in the waiting room. The paramedic says: 'There is pink froth coming up every time we bag him.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is a 6 bed ICU, and transfer is through CritiCall Ontario and Ornge. " +
+    "A 19 year old man arrives by ambulance after being pulled from a lake. A friend who helped rescue him is in the waiting room.",
+  card: {
+    vitals: {
+      temperature: "35.1°C rectal",
+      pulse: "124/minute",
+      resp: "Assisted with bag valve mask",
+      bp: "102/60 mmHg",
+      o2sat: "84% with bag valve mask on 15 L/minute",
+      weight: "78 kg (172 lb). Height 180 cm",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "rescue",
+      label: "History of the submersion",
+      result:
+        "At 16:40 he jumped feet first off a dock to swim to a raft after two beers. Friends noticed he was missing about four minutes later and found him face down in 2.5 m of water. " +
+        "A friend with lifeguard training gave rescue breaths and CPR. He had a pulse after about 6 minutes of CPR, before paramedics arrived.",
+    },
+    {
+      id: "paramedic",
+      label: "Paramedic handover",
+      result:
+        "Arrived at 17:30. Capillary glucose 9.2 mmol/L. GCS 6. CTAS 1. The paramedic says: 'There is pink froth coming up every time we bag him.' " +
+        "His friend, also 19, swam out to help him and is in the waiting room.",
+    },
     {
       id: "exam",
       label: "Exam",
@@ -36,7 +59,7 @@ export const drowningCottageLake: OralCase = {
       id: "witness",
       label: "Witness account",
       result:
-        "Noah says Mateo jumped in feet first, not a dive. He did not hit the dock or the bottom. He was a weak swimmer and had two beers. He was underwater for about 4 minutes before they found him.",
+        "His friend says he jumped in feet first, not a dive. He did not hit the dock or the bottom. He was a weak swimmer and had two beers. He was underwater for about 4 minutes before they found him.",
     },
     {
       id: "gas",
@@ -67,13 +90,13 @@ export const drowningCottageLake: OralCase = {
     },
     {
       id: "noah",
-      label: "Noah's assessment",
+      label: "Assessment of the friend who helped",
       result:
         "One hour after the rescue: coughed a lot at the scene, now feels fine. Heart rate 88. Respiratory rate 16. SpO2 97 percent on room air. Temperature 36.6 °C. Chest clear. Alert and walking.",
     },
     {
       id: "parents",
-      label: "Mateo's parents",
+      label: "His parents",
       result: "His parents are driving up from Toronto and will arrive in about two hours. They are on the phone asking to speak to the doctor.",
     },
   ],
@@ -98,8 +121,9 @@ export const drowningCottageLake: OralCase = {
         "RSI with a hemodynamically neutral agent such as ketamine 1 to 1.5 mg/kg and rocuronium 1.2 mg/kg.",
         "Suction ready. Orogastric tube after intubation to decompress the stomach.",
         "PEEP from the start. Monitor, IV access, glucose and temperature.",
+        "Get the timeline from the paramedics and his friends: time under water, time to CPR and to a pulse, alcohol and past history.",
       ],
-      rubric: ["dr-r1", "dr-a1"],
+      rubric: ["dr-r1", "dr-a1", "dr-h1", "dr-h3", "dr-x1"],
       choices: [
         {
           id: "c-rsi",
@@ -153,8 +177,9 @@ export const drowningCottageLake: OralCase = {
         "Here the jump was feet first and witnessed, with no head strike.",
         "Immobilization can delay airway care and worsen ventilation.",
         "Examine the spine when possible and image if the history changes.",
+        "Ask the witnesses: jump or dive, head strike and water depth.",
       ],
-      rubric: ["dr-a2"],
+      rubric: ["dr-a2", "dr-h2"],
       choices: [
         {
           id: "c-noimmob",
@@ -178,7 +203,7 @@ export const drowningCottageLake: OralCase = {
       kind: "say",
       id: "s-immob",
       phase: "Five minutes later",
-      text: "The collar makes it harder to suction and the RT struggles to keep the tube secure. Noah confirms the jump was feet first. You remove the board and keep the collar only until you can clear him.",
+      text: "The collar makes it harder to suction and the RT struggles to keep the tube secure. His friend confirms the jump was feet first. You remove the board and keep the collar only until you can clear him.",
       next: "q-vent",
     },
     {
@@ -281,7 +306,7 @@ export const drowningCottageLake: OralCase = {
       kind: "question",
       id: "q-friend",
       phase: "The second patient",
-      prompt: "Noah wants to go back to the cottage. He coughed a lot at the scene but feels fine now. What do you do?",
+      prompt: "His friend, who swam out to help, wants to go back to the cottage. He coughed a lot at the scene but feels fine now. What do you do?",
       seconds: 60,
       modelAnswer: [
         "He had a submersion event with coughing. Symptoms can start hours later.",
@@ -289,8 +314,9 @@ export const drowningCottageLake: OralCase = {
         "Discharge if he stays well with normal SpO2 and a clear chest, with a responsible adult.",
         "Return if cough, breathlessness, chest pain, fever or drowsiness.",
         "Offer support. He just rescued his friend.",
+        "Ask the friend about his own time in the water and his symptoms. Repeat his vitals, SpO2 and chest exam.",
       ],
-      rubric: ["dr-d1", "dr-c2"],
+      rubric: ["dr-d1", "dr-c2", "dr-h4", "dr-x2"],
       choices: [
         {
           id: "c-observe",
@@ -322,14 +348,14 @@ export const drowningCottageLake: OralCase = {
       kind: "say",
       id: "s-xray",
       phase: "Three hours later",
-      text: "Noah comes back with a new cough and SpO2 of 92 percent. His chest X ray now shows faint patchy opacities. He is admitted for observation and oxygen.",
+      text: "The friend comes back with a new cough and SpO2 of 92 percent. His chest X ray now shows faint patchy opacities. He is admitted for observation and oxygen.",
       next: "q-parents",
     },
     {
       kind: "say",
       id: "s-go",
       phase: "Three hours later",
-      text: "Noah comes back by ambulance with cough and SpO2 of 91 percent. He is admitted for observation and oxygen.",
+      text: "The friend comes back by ambulance with cough and SpO2 of 91 percent. He is admitted for observation and oxygen.",
       next: "q-parents",
     },
     {
@@ -351,14 +377,14 @@ export const drowningCottageLake: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "The Ornge crew takes over and he leaves for the tertiary ICU. Noah is being watched in the department. That is the end of the case.",
+      text: "The Ornge crew takes over and he leaves for the tertiary ICU. His friend is being watched in the department. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "dr-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates promptly for GCS 6 and hypoxemia with suction ready and places an orogastric tube.",
       points: 3,
       critical: true,
@@ -368,7 +394,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes hypoxemia as the core problem in drowning and avoids manoeuvres to drain water from the lungs.",
       points: 2,
       teaching: "Abdominal thrusts and head down positioning do not remove aspirated water. They cause vomiting and delay ventilation.",
@@ -377,7 +403,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Decides on spinal motion restriction based on mechanism rather than using it routinely.",
       points: 1,
       teaching: "Cervical spine injury in drowning is uncommon without diving, a fall or obvious trauma. Routine immobilization can delay airway care.",
@@ -386,7 +412,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Sets lung protective ventilation at 6 mL/kg predicted body weight with PEEP and plateau under 30 cmH2O.",
       points: 2,
       teaching: "Drowning lungs behave like ARDS. Low tidal volumes protect them. PEEP recruits alveoli.",
@@ -395,7 +421,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Responds to worsening hypoxemia with a DOPES check, higher PEEP, paralysis and vasopressor support instead of diuretics or large tidal volumes.",
       points: 3,
       critical: true,
@@ -405,7 +431,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Contacts CritiCall early for ICU transfer and discussion of proning and ECMO.",
       points: 2,
       teaching: "ECMO centres need time to plan. Call when oxygenation is failing, not after arrest.",
@@ -414,7 +440,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids routine antibiotics and steroids after drowning.",
       points: 1,
       teaching: "Neither improves outcomes. Give antibiotics only for signs of infection or grossly contaminated water.",
@@ -423,16 +449,16 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Applies post arrest care including fever prevention and glucose and electrolyte checks.",
       points: 1,
       teaching: "After ROSC, avoid fever and do not rush to rewarm a mildly cold patient. Check glucose and look for intoxicants.",
-      source: "hsf",
+      source: "aha",
     },
     {
       id: "dr-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Observes the asymptomatic rescuer for 4 to 6 hours before discharge with clear return advice.",
       points: 2,
       critical: true,
@@ -442,7 +468,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Acknowledges the rescuer's experience and offers support.",
       points: 1,
       teaching: "Rescuers are often traumatized. A brief word of support and a follow up resource matter.",
@@ -451,7 +477,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives his parents an honest plain language update that includes prognostic uncertainty.",
       points: 1,
       teaching: "Submersion time and time to effective CPR are the main predictors. It is too early to say more in the ED.",
@@ -460,11 +486,65 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover to the transport team including submersion time, CPR duration and ventilator settings.",
       points: 1,
       teaching: "The receiving ICU needs the timeline to judge prognosis. Include drugs, gas results and temperature.",
-      source: "hsf",
+      source: "aha",
+    },
+    {
+      id: "dr-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines for head or spine injury, aspiration and hypothermia, and checks core temperature and glucose.",
+      points: 2,
+      teaching: "A drowning patient may also be injured, cold or intoxicated. A focused secondary survey and a core temperature change the plan.",
+      source: "wms",
+    },
+    {
+      id: "dr-x2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Reassesses the friend with repeat vitals, SpO2 and chest exam during observation.",
+      points: 2,
+      teaching: "Delayed deterioration shows first as a rising respiratory rate, falling SpO2 or new crackles. Serial checks catch it.",
+      source: "wms",
+    },
+    {
+      id: "dr-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks for the submersion timeline: time under water, time to rescue, time to CPR and time to return of pulse.",
+      points: 3,
+      teaching: "Submersion time is the strongest predictor of outcome. Under 5 to 10 minutes with early bystander CPR is a good sign.",
+      source: "wms",
+    },
+    {
+      id: "dr-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the mechanism: jump or dive, head strike, water depth and water temperature.",
+      points: 2,
+      teaching: "A dive into shallow water or a head strike raises the risk of spine injury. A feet first jump with no strike makes it unlikely.",
+      source: "wms",
+    },
+    {
+      id: "dr-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about alcohol or drugs, swimming ability and medical history such as seizures or heart disease.",
+      points: 2,
+      teaching: "Alcohol is a common factor in adolescent and adult drowning. A seizure or arrhythmia can be the cause of the submersion.",
+      source: "szpilman",
+    },
+    {
+      id: "dr-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the friend about his own submersion, coughing and symptoms since.",
+      points: 1,
+      teaching: "Anyone with cough, breathlessness or a period under water after a rescue needs assessment and observation.",
+      source: "wms",
     },
   ],
   sources: [
@@ -479,11 +559,13 @@ export const drowningCottageLake: OralCase = {
       citation: "Szpilman D, Bierens JJ, Handley AJ, Orlowski JP. Drowning. New England Journal of Medicine. 2012.",
     },
     {
-      id: "hsf",
-      citation: "Heart and Stroke Foundation of Canada. Guidelines for CPR and emergency cardiovascular care. Post cardiac arrest care.",
+      id: "aha",
+      citation:
+        "Hirsch KG, et al. Part 11. Post cardiac arrest care. 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/41122894/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -15,14 +15,31 @@ export const massiveHemoptysis: OralCase = {
     { topic: "ems", n: 3 },
   ],
   summary: "A 63 year old man on treatment for cancer arrives coughing and spitting blood.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a community hospital ED in Owen Sound, Ontario. There is CT, an anesthetist on call, a 6 bed ICU and a blood bank. There is no interventional radiology or thoracic surgery. " +
-    "The nearest centre with both is about 2 hours by land or 45 minutes by air. " +
-    "Bernard Kowalczyk is 63 years old and weighs 80 kg. He is having chemoradiation for a right lung cancer and takes apixaban 5 mg twice daily for atrial fibrillation. His last dose was at 07:00. It is now 13:00. " +
-    "Triage vitals: heart rate 108, blood pressure 118/72, respiratory rate 26, SpO2 90 percent on room air, temperature 37.2. CTAS 2. " +
-    "The nurse says: 'He has coughed up about two cups of bright red blood since noon. He just filled half a basin in triage.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is CT, an on call anesthetist, a 6 bed ICU and a blood bank. Interventional radiology and thoracic surgery are 2 hours away by land or 45 minutes by air. " +
+    "A 63 year old man arrives coughing up bright red blood.",
+  card: {
+    vitals: {
+      temperature: "37.2°C",
+      pulse: "108/minute",
+      resp: "26/minute",
+      bp: "118/72 mmHg",
+      o2sat: "90% on room air",
+      weight: "80 kg (176 lb)",
+    },
+    medications: "Apixaban 5 mg twice daily",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "The nurse says: 'He has coughed up about two cups of bright red blood since noon. He just filled half a basin in triage.' " +
+        "No prior hemoptysis this large. It is now 13:00. CTAS 2.",
+    },
     {
       id: "exam",
       label: "Exam",
@@ -31,11 +48,21 @@ export const massiveHemoptysis: OralCase = {
         "No blood in the nose or posterior pharynx on inspection. Abdomen soft. No melena on history.",
     },
     {
-      id: "history",
-      label: "History from patient and chart",
+      id: "pmh",
+      label: "Past history, from patient and chart",
       result:
         "Stage III squamous cell carcinoma of the right upper lobe diagnosed 4 months ago. Receiving chemoradiation with curative intent. " +
-        "Atrial fibrillation on apixaban. Creatinine clearance about 70 mL/min. Smoked for 40 years, quit at diagnosis. Wants full treatment. No prior hemoptysis this large.",
+        "Atrial fibrillation. Creatinine clearance about 70 mL/min.",
+    },
+    {
+      id: "meds",
+      label: "Medications in detail",
+      result: "Apixaban 5 mg twice daily for atrial fibrillation. His last dose was at 07:00.",
+    },
+    {
+      id: "social-goals",
+      label: "Social history and goals of care",
+      result: "Smoked for 40 years, quit at diagnosis. Wants full treatment.",
     },
     {
       id: "labs",
@@ -95,8 +122,10 @@ export const massiveHemoptysis: OralCase = {
         "Oxygen. Two large bore IVs. Crossmatch 4 units and activate the massive hemorrhage protocol if needed.",
         "Hold apixaban. Two suction set ups and an airway cart at the bedside.",
         "Confirm this is lung blood, not upper airway or GI.",
+        "Quick history: how much blood and for how long, any warning bleeds, the cancer and its treatment, and his goals.",
+        "Examine for the bleeding side, the nose and pharynx, and signs of shock.",
       ],
-      rubric: ["mh-r1", "mh-a1", "mh-l1"],
+      rubric: ["mh-r1", "mh-a1", "mh-l1", "mh-x1", "mh-x2", "mh-h2", "mh-h3"],
       choices: [
         {
           id: "c-position",
@@ -151,8 +180,9 @@ export const massiveHemoptysis: OralCase = {
         "Tranexamic acid 1 g IV over 10 minutes.",
         "Nebulized tranexamic acid 500 mg is an option in hemoptysis.",
         "Transfuse red cells for ongoing bleeding. Vitamin K and plasma do not reverse apixaban.",
+        "Ask the apixaban dose, the time of the last dose and his kidney function.",
       ],
-      rubric: ["mh-m1", "mh-m2"],
+      rubric: ["mh-m1", "mh-m2", "mh-h1"],
       choices: [
         {
           id: "c-pcc",
@@ -371,7 +401,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Positions the patient with the bleeding side down to protect the good lung.",
       points: 3,
       critical: true,
@@ -381,7 +411,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Confirms the blood comes from the lungs and not the nose, mouth or GI tract.",
       points: 1,
       teaching: "Hematemesis and nasopharyngeal bleeding can mimic hemoptysis. Bright red frothy blood with a known lung lesion points to the airway.",
@@ -390,7 +420,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls anesthesia early and prepares suction, airway equipment, access and blood before the airway is lost.",
       points: 2,
       teaching: "Patients with massive hemoptysis die from asphyxia, not blood loss. Prepare for the airway before the next big bleed.",
@@ -399,7 +429,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives PCC 2000 units, or 25 to 50 units/kg to a maximum of 3000 units, for life threatening bleeding on apixaban, and avoids agents that do not work.",
       points: 2,
       teaching: "Vitamin K, plasma and idarucizumab do not work for factor Xa inhibitors. PCC is the common Canadian option because andexanet is rarely available.",
@@ -408,7 +438,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives tranexamic acid IV 1 g and considers nebulized tranexamic acid 500 mg.",
       points: 1,
       teaching: "Nebulized tranexamic acid reduced bleeding in a randomized trial of hemoptysis. It is cheap and low risk.",
@@ -417,7 +447,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates early with an 8.0 or larger tube with two suctions and hemodynamically cautious induction.",
       points: 3,
       critical: true,
@@ -427,7 +457,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Isolates the good lung by advancing the tube into the left main bronchus or using a bronchial blocker when bleeding continues.",
       points: 2,
       teaching: "Lung isolation keeps blood out of the good lung. Mainstem intubation of the nonbleeding side is the simplest ED option. A bronchoscope makes left sided placement far more reliable.",
@@ -436,7 +466,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-m3",
       competency: "management",
-      criterion: "data",
+      criterion: "physical",
       text: "Identifies bronchial artery embolization as first line definitive therapy and uses CT angiogram to guide it when stable.",
       points: 2,
       teaching: "Most massive hemoptysis comes from bronchial arteries. Embolization controls it in most patients.",
@@ -445,7 +475,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges urgent transfer through CritiCall to a centre with IR and thoracic surgery with a critical care escort.",
       points: 3,
       critical: true,
@@ -455,7 +485,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover including tube position, drugs given, blood products and the plan.",
       points: 1,
       teaching: "The crew must know the tube is in the left main bronchus. Moving him can dislodge it.",
@@ -464,7 +494,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks with his wife in plain language, is honest about the danger and avoids guessing cancer prognosis.",
       points: 1,
       teaching: "Explain what is happening now and what will be done. Leave long term cancer prognosis to the oncology team.",
@@ -473,10 +503,55 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "history",
       text: "Confirms and respects his stated wish for full treatment.",
       points: 1,
       teaching: "His goals were set with his oncology team. Emergency care should follow them unless he or his substitute decision maker changes them.",
+      source: "chest",
+    },
+    {
+      id: "mh-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines for the bleeding side and the source: chest crackles, the nose and posterior pharynx, and signs of shock.",
+      points: 2,
+      teaching: "Crackles on the tumour side point to the bleeding lung. A clear nose and pharynx make an upper airway source unlikely.",
+      source: "chest",
+    },
+    {
+      id: "mh-x2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Estimates the volume and rate of bleeding and recognizes it as massive, life threatening hemoptysis.",
+      points: 2,
+      teaching: "The threat is the volume that floods the airway, not the total lost. A few hundred millilitres can drown a patient with poor reserve.",
+      source: "chest",
+    },
+    {
+      id: "mh-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the anticoagulant, its dose, the time of the last dose and his kidney function.",
+      points: 3,
+      teaching: "The time of the last apixaban dose and the creatinine clearance tell you how much drug effect remains and guide PCC.",
+      source: "nac",
+    },
+    {
+      id: "mh-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the volume and duration of bleeding, including smaller warning bleeds in the past week.",
+      points: 2,
+      teaching: "Small sentinel bleeds often come before a massive one. Their history supports a bronchial artery source.",
+      source: "chest",
+    },
+    {
+      id: "mh-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the cancer: type, site, current treatment and his goals of care.",
+      points: 2,
+      teaching: "A known cavitating tumour tells you the likely bleeding side. His goals decide how far to escalate.",
       source: "chest",
     },
   ],
@@ -495,7 +570,7 @@ export const massiveHemoptysis: OralCase = {
       url: "https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

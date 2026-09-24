@@ -15,14 +15,39 @@ export const hypercapnicCopdExacerbation: OralCase = {
     { topic: "asthma-copd", n: 7 },
   ],
   summary: "A 71 year old man with a chronic lung condition arrives drowsy after three days of worsening cough.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working at a regional hospital in Kamloops, British Columbia. There is a respiratory therapist, BiPAP machines, a 6 bed ICU and an internist on call. " +
-    "Walter Beaudoin is 71 years old and weighs 58 kg. He has had three days of worse cough and breathlessness. His daughter found him hard to wake this morning. " +
-    "Paramedics put him on a non rebreather mask at 15 L/min because his SpO2 was 81 percent at home. " +
-    "Triage vitals: heart rate 112, blood pressure 152/88, respiratory rate 26, SpO2 99 percent on 15 L non rebreather, temperature 37.6, capillary glucose 6.9 mmol/L. GCS 12 (E3 V4 M5). CTAS 2. " +
-    "The paramedic says: 'He was talking to us at the house. He has been getting sleepier the whole way in.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "The hospital has a respiratory therapist, BiPAP machines, a 6 bed ICU and an internist on call. " +
+    "A 71 year old man arrives by ambulance, drowsy after 3 days of worsening cough and breathlessness.",
+  card: {
+    vitals: {
+      temperature: "37.6°C",
+      pulse: "112/minute",
+      resp: "26/minute",
+      bp: "152/88 mmHg",
+      o2sat: "99% on 15 L/minute by non rebreather mask",
+      weight: "58 kg (128 lb)",
+    },
+    medications: "Tiotropium and olodaterol inhaler daily. Salbutamol inhaler as needed",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness, from his daughter",
+      result:
+        "Three days of worse cough and breathlessness. Coughing up more green sputum for 3 days. His daughter found him hard to wake this morning. " +
+        "No chest pain. No leg swelling. No recent travel or surgery.",
+    },
+    {
+      id: "paramedic",
+      label: "Paramedic handover and triage",
+      result:
+        "Paramedics put him on a non rebreather mask at 15 L/min because his SpO2 was 81 percent at home. " +
+        "The paramedic says: 'He was talking to us at the house. He has been getting sleepier the whole way in.' " +
+        "Capillary glucose 6.9 mmol/L. GCS 12 (E3 V4 M5). CTAS 2.",
+    },
     {
       id: "exam",
       label: "Chest and general exam",
@@ -31,12 +56,19 @@ export const hypercapnicCopdExacerbation: OralCase = {
         "Flapping tremor of the hands. Warm peripheries. No leg swelling. JVP not seen. Drowsy but rousable to voice.",
     },
     {
-      id: "history",
-      label: "Past history from his daughter",
-      result:
-        "COPD diagnosed 9 years ago. FEV1 was 34 percent predicted last year. Two admissions for flare ups last year. No home oxygen. " +
-        "Uses tiotropium and olodaterol daily and salbutamol as needed. Still smokes half a pack a day. Coughing up more green sputum for 3 days. " +
-        "No chest pain. No leg swelling. No recent travel or surgery. No sedatives or opioids at home.",
+      id: "pmh",
+      label: "Past history, from his daughter",
+      result: "COPD diagnosed 9 years ago. FEV1 was 34 percent predicted last year. Two admissions for flare ups last year. No home oxygen.",
+    },
+    {
+      id: "meds",
+      label: "Medications in detail",
+      result: "Uses tiotropium and olodaterol daily and salbutamol as needed. No sedatives or opioids at home.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Still smokes half a pack a day.",
     },
     {
       id: "abg",
@@ -106,8 +138,9 @@ export const hypercapnicCopdExacerbation: OralCase = {
         "Use a Venturi mask at 24 to 28 percent or low flow nasal prongs.",
         "Do not stop oxygen abruptly. Rebound hypoxemia can be severe.",
         "Arterial or venous gas now and repeat in 30 to 60 minutes.",
+        "Quick history from the paramedics and his daughter: baseline lung function, prior admissions or NIV, home oxygen, how alert he was at home and the oxygen given.",
       ],
-      rubric: ["co-a1", "co-m1"],
+      rubric: ["co-a1", "co-m1", "co-h1", "co-h4"],
       choices: [
         {
           id: "c-titrate",
@@ -178,8 +211,9 @@ export const hypercapnicCopdExacerbation: OralCase = {
         "Consider pulmonary embolism, heart failure, acute coronary syndrome and arrhythmia.",
         "Ask about sedatives and opioids that depress drive.",
         "Chest X ray, ECG, troponin, ultrasound and sputum culture.",
+        "Ask about sputum change, fever, chest pain, leg swelling, travel and surgery.",
       ],
-      rubric: ["co-a3"],
+      rubric: ["co-a3", "co-h2", "co-h3"],
       next: "q-meds",
     },
     {
@@ -278,8 +312,9 @@ export const hypercapnicCopdExacerbation: OralCase = {
         "Explain NIV, possible intubation, likely outcomes and alternatives including comfort focused care.",
         "If he lacks capacity, his substitute decision maker applies his known wishes, not her own.",
         "Document the discussion and the agreed ceiling of care.",
+        "Ask about any advance directive or earlier talk with his family doctor.",
       ],
-      rubric: ["co-c1", "co-p1", "co-c2"],
+      rubric: ["co-c1", "co-p1", "co-c2", "co-h5"],
       choices: [
         {
           id: "c-ask",
@@ -365,7 +400,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Recognizes that a high SpO2 on high flow oxygen in a drowsy COPD patient signals risk of oxygen induced hypercapnia.",
       points: 2,
       teaching: "Excess oxygen worsens CO2 retention in COPD. Drowsiness in this setting is CO2 narcosis until proven otherwise.",
@@ -374,7 +409,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Titrates oxygen to a target SpO2 of 88 to 92 percent with controlled delivery and does not stop oxygen abruptly.",
       points: 3,
       critical: true,
@@ -384,7 +419,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Interprets the gas as acute on chronic respiratory acidosis and uses the baseline pCO2 to set expectations.",
       points: 2,
       teaching: "A high bicarbonate means chronic retention. Aim to return him to his own baseline, not to normal numbers.",
@@ -393,7 +428,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-a3",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Seeks triggers and mimics including pneumonia, pneumothorax, PE, heart failure, ACS and sedating drugs.",
       points: 2,
       teaching: "Exacerbations have causes. Pneumothorax must be excluded before NIV, especially with bullae.",
@@ -402,7 +437,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives short acting bronchodilators, salbutamol with ipratropium, by air driven nebulizer or in line MDI.",
       points: 1,
       teaching: "Oxygen driven nebulizers can raise CO2 in retainers. Drive with air and give oxygen separately by prongs.",
@@ -411,7 +446,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives prednisone 40 mg daily for 5 days or an IV equivalent.",
       points: 1,
       teaching: "A 5 day course works as well as 14 days for COPD exacerbations. It shortens recovery and lowers treatment failure.",
@@ -420,7 +455,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives antibiotics for purulent sputum or need for ventilatory support, with an appropriate agent and dose.",
       points: 1,
       teaching: "Increased sputum purulence and the need for NIV are the main indications. Pick an agent that covers H. influenzae and pneumococcus.",
@@ -429,7 +464,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts NIV for pH under 7.35 with pCO2 over 45 mmHg, with appropriate starting pressures and titration.",
       points: 3,
       critical: true,
@@ -439,7 +474,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "process",
       text: "Monitors NIV closely in a resuscitation or step down area with a repeat gas at 1 to 2 hours.",
       points: 2,
       teaching: "The first two hours decide success. No improvement in pH by then predicts failure.",
@@ -448,7 +483,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-a4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Names specific signs of NIV failure and targets pCO2 near the patient's baseline.",
       points: 1,
       teaching: "Watch pH, level of consciousness, secretions and tolerance. Over ventilating a chronic retainer causes alkalosis.",
@@ -457,7 +492,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Acknowledges the daughter's concern and explores what her father has said about his wishes.",
       points: 1,
       teaching: "Families often carry real information about prior wishes. Listen before you explain.",
@@ -466,7 +501,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Assesses the patient's capacity once he improves and lets a capable patient make his own decision about NIV and intubation.",
       points: 3,
       critical: true,
@@ -476,7 +511,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents the goals of care discussion and the agreed ceiling of treatment.",
       points: 1,
       teaching: "A clear note protects the patient overnight. The next physician needs to know what he agreed to.",
@@ -485,7 +520,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU or a step down unit capable of NIV and hands over the ceiling of care.",
       points: 2,
       teaching: "A ward bed without RT support is unsafe for a patient on acute NIV.",
@@ -494,11 +529,56 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Plans smoking cessation, pulmonary rehabilitation, maintenance therapy review, home oxygen or NIV assessment and early follow up.",
       points: 1,
       teaching: "An admission for COPD is a chance to lower the next exacerbation risk. Rehab after an admission improves outcomes.",
       source: "cts-copd",
+    },
+    {
+      id: "co-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about baseline COPD severity: lung function, prior admissions, prior NIV or intubation, and home oxygen.",
+      points: 3,
+      teaching: "Baseline severity sets the oxygen target, the expected gas and the ceiling of care. Frequent admissions predict the next one.",
+      source: "gold",
+    },
+    {
+      id: "co-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the trigger: sputum volume and colour, fever, chest pain, leg swelling, travel and surgery.",
+      points: 2,
+      teaching: "More purulent sputum points to a bacterial trigger and guides antibiotics. Chest pain and leg swelling raise PE, ACS and heart failure.",
+      source: "gold",
+    },
+    {
+      id: "co-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about sedatives, opioids and other drugs that depress breathing, and about current smoking.",
+      points: 2,
+      teaching: "Sedating drugs can tip a chronic retainer into narcosis. Active smoking is the main thing to change before discharge.",
+      source: "gold",
+    },
+    {
+      id: "co-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the paramedics or his daughter how alert he was at home and how much oxygen he was given on the way in.",
+      points: 2,
+      teaching: "A patient who was talking at home and got sleepier on high flow oxygen has oxygen induced hypercapnia until proven otherwise.",
+      source: "bts-o2",
+    },
+    {
+      id: "co-h5",
+      competency: "professionalism",
+      criterion: "history",
+      text: "Asks about an advance directive and what he has said to his family or family doctor about machines and breathing tubes.",
+      points: 1,
+      teaching: "Prior expressed wishes guide the substitute decision maker if he lacks capacity. Ask early, before the decision is urgent.",
+      source: "cmpa",
     },
   ],
   sources: [
@@ -515,7 +595,8 @@ export const hypercapnicCopdExacerbation: OralCase = {
     },
     {
       id: "cmpa",
-      citation: "Canadian Medical Protective Association. Consent. A guide for Canadian physicians.",
+      citation: "Canadian Medical Protective Association. Consent. A guide for Canadian physicians. Fourth edition. 2024.",
+      url: "https://www.cmpa-acpm.ca/en/advice-publications/handbooks/consent-a-guide-for-canadian-physicians",
     },
     {
       id: "ers-ats",
@@ -532,7 +613,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
         "Leuppi JD, Schuetz P, Bingisser R, et al. Short term vs conventional glucocorticoid therapy in acute exacerbations of COPD. The REDUCE randomized clinical trial. JAMA. 2013.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

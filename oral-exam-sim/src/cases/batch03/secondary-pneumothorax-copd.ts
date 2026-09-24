@@ -16,13 +16,31 @@ export const secondaryPneumothoraxCopd: OralCase = {
     { topic: "cqi", n: 2 },
   ],
   summary: "A 66 year old man with a chronic lung condition becomes suddenly more breathless after coughing.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working at a community hospital ED in Sherbrooke, Quebec. There is CT, a respiratory therapist, a respirologist on call and thoracic surgery at the regional centre 20 minutes away. " +
-    "Gérald Tremblay is 66 years old and weighs 64 kg. He has severe COPD. Two hours ago he had a hard coughing fit and felt a sharp pain in his right chest. He has been much more breathless since. " +
-    "Triage vitals: heart rate 112, blood pressure 142/86, respiratory rate 28, SpO2 86 percent on room air, temperature 36.8, capillary glucose 7.1 mmol/L. CTAS 2. " +
-    "The triage nurse says: 'He says this is not like his usual flare ups. He cannot lie down.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is CT, a respiratory therapist and a respirologist on call. Thoracic surgery is at the regional centre 20 minutes away. " +
+    "A 66 year old man arrives with sudden worse shortness of breath after a coughing fit.",
+  card: {
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "112/minute",
+      resp: "28/minute",
+      bp: "142/86 mmHg",
+      o2sat: "86% on room air",
+      weight: "64 kg (141 lb)",
+    },
+    medications: "Inhaled triple therapy inhaler",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "Two hours ago he had a hard coughing fit and felt a sharp pain in his right chest. He has been much more breathless since. " +
+        "The triage nurse says: 'He says this is not like his usual flare ups. He cannot lie down.' Capillary glucose 7.1 mmol/L. CTAS 2.",
+    },
     {
       id: "exam",
       label: "Chest exam",
@@ -31,11 +49,20 @@ export const secondaryPneumothoraxCopd: OralCase = {
         "No subcutaneous emphysema. JVP not raised. No leg swelling.",
     },
     {
-      id: "history",
+      id: "pmh",
       label: "Past history",
       result:
-        "Severe COPD with emphysema. FEV1 38 percent predicted. Known large bulla at the left apex on a CT from last year. No prior pneumothorax. " +
-        "Still smokes a few cigarettes a day. Takes an inhaled triple therapy inhaler. Lives with his wife, who has dementia and depends on him. No anticoagulants.",
+        "Severe COPD with emphysema. FEV1 38 percent predicted. Known large bulla at the left apex on a CT from last year. No prior pneumothorax.",
+    },
+    {
+      id: "meds",
+      label: "Medications in detail",
+      result: "Takes an inhaled triple therapy inhaler. No anticoagulants.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Still smokes a few cigarettes a day. Lives with his wife, who has dementia and depends on him.",
     },
     {
       id: "pocus",
@@ -95,8 +122,9 @@ export const secondaryPneumothoraxCopd: OralCase = {
         "Oxygen to a target of 88 to 92 percent because he is a CO2 retainer.",
         "Lung ultrasound, chest X ray, blood gas and ECG.",
         "Do not start NIV until pneumothorax is excluded.",
+        "History: the onset with the coughing fit, how this differs from his usual flare ups, known bullae, prior pneumothorax and smoking.",
       ],
-      rubric: ["sp-a1", "sp-m1"],
+      rubric: ["sp-a1", "sp-m1", "sp-h1", "sp-h2", "sp-h4"],
       next: "q-imaging",
     },
     {
@@ -223,8 +251,9 @@ export const secondaryPneumothoraxCopd: OralCase = {
         "Lidocaine 1 percent, no more than 3 mg/kg without epinephrine, about 190 mg or 19 mL in this 64 kg man.",
         "Seldinger technique over the upper border of the rib. Connect to an underwater seal without suction at first.",
         "Confirm position on X ray. Check swinging and bubbling.",
+        "Ask about anticoagulants and bleeding history first.",
       ],
-      rubric: ["sp-p1", "sp-m3"],
+      rubric: ["sp-p1", "sp-m3", "sp-h3"],
       next: "s-tension",
     },
     {
@@ -321,8 +350,9 @@ export const secondaryPneumothoraxCopd: OralCase = {
         "Explain the risks in plain words: collapse of the lung again and possibly death.",
         "Call social work, family or community services to get care for his wife tonight.",
         "If he still refuses and is capable, respect it, with the safest plan possible and clear return advice. Document.",
+        "Ask early who is at home and who depends on him.",
       ],
-      rubric: ["sp-c1", "sp-p2"],
+      rubric: ["sp-c1", "sp-p2", "sp-h5"],
       choices: [
         {
           id: "c-solve",
@@ -390,7 +420,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Considers pneumothorax early in a COPD patient with sudden pleuritic pain and unilateral findings.",
       points: 2,
       teaching: "Not every breathless COPD patient has an exacerbation. Sudden change after coughing is a pneumothorax clue.",
@@ -399,7 +429,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives oxygen to a target of 88 to 92 percent in a known CO2 retainer.",
       points: 1,
       teaching: "His pCO2 is 52. Controlled oxygen avoids worsening hypercapnia while treating hypoxemia.",
@@ -408,7 +438,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses a lung point to confirm pneumothorax and recognizes that absent sliding over a bulla is not diagnostic.",
       points: 2,
       teaching: "A lung point is close to 100 percent specific. Bullae, adhesions and emphysema can all abolish sliding.",
@@ -417,7 +447,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Distinguishes a large bulla from pneumothorax and avoids placing a drain into a bulla, using CT when uncertain.",
       points: 3,
       critical: true,
@@ -427,7 +457,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Places a small bore chest drain for a symptomatic secondary pneumothorax over 2 cm.",
       points: 2,
       teaching: "Secondary pneumothorax has higher mortality and lower aspiration success than primary. Breathless patients need a drain.",
@@ -436,7 +466,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits the patient rather than discharging with outpatient follow up.",
       points: 2,
       teaching: "All secondary pneumothoraces should be admitted. Patients with severe lung disease have little reserve.",
@@ -445,7 +475,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-p1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Describes safe drain insertion: consent, safe triangle, ultrasound, correct lidocaine dose and Seldinger technique.",
       points: 1,
       teaching: "The safe triangle keeps the drain away from the internal mammary artery, breast tissue and large muscles. Staying above the nipple line protects the liver and spleen. Keep plain lidocaine at or under 3 mg/kg.",
@@ -454,7 +484,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses an underwater seal without routine suction and never clamps a bubbling drain.",
       points: 1,
       teaching: "Clamping a drain with an air leak can cause tension. Suction is only added if the lung does not re expand.",
@@ -463,7 +493,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-r1",
       competency: "resuscitation",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes tension pneumothorax clinically and decompresses without waiting for an X ray.",
       points: 3,
       critical: true,
@@ -473,7 +503,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Stops positive pressure ventilation and uses the 4th or 5th intercostal space anterior or mid axillary line for decompression.",
       points: 2,
       teaching: "Positive pressure turns a simple pneumothorax into tension. The lateral site has a thinner chest wall in most adults.",
@@ -482,7 +512,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Seeks early thoracic surgery input for a persistent air leak and gives advice on smoking, flying and recurrence prevention.",
       points: 1,
       teaching: "Persistent leaks need surgical review. Recurrence after secondary pneumothorax is common, so definitive prevention is usually offered.",
@@ -491,7 +521,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explores the reason he wants to leave and engages social work to arrange care for his wife.",
       points: 2,
       teaching: "The best way to prevent a discharge against advice is to fix the reason for it. Ask what is making him want to go.",
@@ -500,7 +530,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Assesses capacity and explains the specific risks before accepting a refusal, and documents the discussion.",
       points: 2,
       critical: true,
@@ -510,7 +540,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a blame free debrief and reports the BiPAP event through the safety system with a system fix.",
       points: 1,
       teaching: "The error came from a gap in process, not one person. A protocol check before NIV prevents repeat events.",
@@ -519,11 +549,56 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Discloses the adverse event to the patient.",
       points: 1,
       teaching: "Patients have a right to know about harm during care. Disclose what happened and what is being done.",
       source: "cpsi",
+    },
+    {
+      id: "sp-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the onset: sudden pleuritic pain with a coughing fit, and how this differs from his usual flare ups.",
+      points: 3,
+      teaching: "Sudden one sided pleuritic pain and a change from the usual pattern point away from a simple exacerbation.",
+      source: "bts",
+    },
+    {
+      id: "sp-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about baseline lung disease: severity, known bullae, prior pneumothorax and prior imaging.",
+      points: 3,
+      teaching: "A known bulla on old imaging is what stops a drain going into the wrong side. Prior pneumothorax raises recurrence risk.",
+      source: "bts",
+    },
+    {
+      id: "sp-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulants and bleeding history before placing the drain.",
+      points: 2,
+      teaching: "Anticoagulation and bleeding disorders change the risk of a chest drain. Correct them if the drain is not urgent.",
+      source: "bts",
+    },
+    {
+      id: "sp-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about current smoking.",
+      points: 1,
+      teaching: "Smoking raises the risk of recurrence. Cessation is part of every discharge plan after pneumothorax.",
+      source: "bts",
+    },
+    {
+      id: "sp-h5",
+      competency: "communication",
+      criterion: "history",
+      text: "Asks about his home situation and who depends on him.",
+      points: 1,
+      teaching: "Caregiver duties are a common reason patients leave against advice. Knowing early lets you arrange help before it becomes a crisis.",
+      source: "cmpa",
     },
   ],
   sources: [
@@ -538,14 +613,16 @@ export const secondaryPneumothoraxCopd: OralCase = {
     },
     {
       id: "cmpa",
-      citation: "Canadian Medical Protective Association. Consent. A guide for Canadian physicians.",
+      citation: "Canadian Medical Protective Association. Consent. A guide for Canadian physicians. Fourth edition. 2024.",
+      url: "https://www.cmpa-acpm.ca/en/advice-publications/handbooks/consent-a-guide-for-canadian-physicians",
     },
     {
       id: "cpsi",
-      citation: "Canadian Patient Safety Institute. Canadian Disclosure Guidelines. Being open with patients and families. 2011.",
+      citation: "Canadian Patient Safety Institute. Canadian Disclosure Guidelines. Being open and honest with patients and families. 2011.",
+      url: "https://www.healthcareexcellence.ca/resources/canadian-disclosure-guidelines/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

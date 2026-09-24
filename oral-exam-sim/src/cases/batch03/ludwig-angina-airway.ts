@@ -16,13 +16,38 @@ export const ludwigAnginaAirway: OralCase = {
     { topic: "sob", n: 1 },
   ],
   summary: "A 44 year old man with diabetes has four days of jaw pain and now struggles to swallow.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a regional hospital ED in Prince George, British Columbia. An anesthetist, an ENT surgeon and an oral surgeon are on call. There is an OR, CT and an ICU. " +
-    "Tyler Brennan is 44 years old and weighs 96 kg. He has type 2 diabetes. He has had pain in a lower left molar for 4 days. Since last night his neck has swollen and he cannot swallow his saliva. " +
-    "Triage vitals: heart rate 118, blood pressure 138/82, respiratory rate 24, SpO2 95 percent on room air, temperature 38.9, capillary glucose 21.4 mmol/L. CTAS 2. " +
-    "The triage nurse says: 'He is sitting forward, drooling into a towel. His voice sounds like he has a hot potato in his mouth. He will not lie back.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "An anesthetist, an ENT surgeon and an oral surgeon are on call. There is an OR, CT and an ICU. " +
+    "A 44 year old man arrives with a swollen neck. He cannot swallow his saliva.",
+  card: {
+    vitals: {
+      temperature: "38.9°C",
+      pulse: "118/minute",
+      resp: "24/minute",
+      bp: "138/82 mmHg",
+      o2sat: "95% on room air",
+      weight: "96 kg (212 lb)",
+    },
+    medications: "Metformin",
+    allergies: "No known drug allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "Pain in a lower left molar for 4 days. Since last night his neck has swollen and he cannot swallow his saliva. " +
+        "Saw a dentist 5 days ago who advised extraction. Took ibuprofen at home. Last ate 14 hours ago.",
+    },
+    {
+      id: "triage",
+      label: "Triage nurse's observations",
+      result:
+        "The triage nurse says: 'He is sitting forward, drooling into a towel. His voice sounds like he has a hot potato in his mouth. He will not lie back.' " +
+        "Capillary glucose 21.4 mmol/L. CTAS 2.",
+    },
     {
       id: "exam",
       label: "Head and neck exam",
@@ -38,11 +63,19 @@ export const ludwigAnginaAirway: OralCase = {
         "The cricothyroid membrane cannot be felt through the swelling. Ultrasound can identify it 2.5 cm deep.",
     },
     {
-      id: "history",
-      label: "History",
-      result:
-        "Type 2 diabetes on metformin, missed doses for a month. Last HbA1c 10.8 percent. No known drug allergies. Last ate 14 hours ago. " +
-        "Saw a dentist 5 days ago who advised extraction but he could not afford it. Took ibuprofen at home.",
+      id: "pmh",
+      label: "Past history",
+      result: "Type 2 diabetes. Last HbA1c 10.8 percent.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "Metformin, with missed doses for a month. Ibuprofen at home for the tooth. No known drug allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "He could not afford the dental extraction he was advised to have 5 days ago.",
     },
     {
       id: "labs",
@@ -96,8 +129,9 @@ export const ludwigAnginaAirway: OralCase = {
         "Call anesthesia and ENT or oral surgery now for a joint airway plan.",
         "Blood cultures, then IV antibiotics without delay.",
         "Difficult airway cart and front of neck access kit to the bedside.",
+        "Ask how fast the swelling has spread, about the tooth and dental care, and whether he can swallow, speak or lie flat. Examine mouth opening, floor of mouth, voice and stridor.",
       ],
-      rubric: ["lu-a1", "lu-r1", "lu-l1"],
+      rubric: ["lu-a1", "lu-r1", "lu-l1", "lu-h1", "lu-h2", "lu-x1"],
       choices: [
         {
           id: "c-upright",
@@ -169,8 +203,9 @@ export const ludwigAnginaAirway: OralCase = {
         "Dexamethasone 10 mg IV is often given for airway edema. Evidence is limited and it must not delay a definitive airway.",
         "Fluids for sepsis. Insulin for hyperglycemia once potassium is checked.",
         "Analgesia with small doses that do not depress breathing.",
+        "Ask about drug allergies, diabetes control and the time of his last meal.",
       ],
-      rubric: ["lu-m1", "lu-m2"],
+      rubric: ["lu-m1", "lu-m2", "lu-h3", "lu-h4"],
       next: "q-plan",
     },
     {
@@ -335,7 +370,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Diagnoses Ludwig angina from bilateral submandibular swelling, raised floor of mouth and a dental source.",
       points: 2,
       teaching: "Ludwig angina is a rapidly spreading cellulitis of the submandibular and sublingual spaces. Drooling, muffled voice and trismus signal airway threat.",
@@ -344,7 +379,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Keeps the patient upright, avoids laying him flat, and does not send him to CT unaccompanied.",
       points: 2,
       teaching: "Position is airway protection. Supine positioning and trips to CT are common settings for sudden obstruction.",
@@ -353,7 +388,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls anesthesia and ENT or oral surgery early and leads a shared airway plan.",
       points: 2,
       teaching: "An anticipated difficult airway is a team problem. Plan A, B and C should be agreed and spoken aloud before anyone starts.",
@@ -362,7 +397,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies predictors of difficult laryngoscopy, mask ventilation and front of neck access, and marks the cricothyroid membrane with ultrasound.",
       points: 2,
       teaching: "Distorted neck anatomy makes cricothyrotomy harder. Finding the membrane with ultrasound before a crisis saves time.",
@@ -371,7 +406,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives broad spectrum IV antibiotics covering oral streptococci and anaerobes after blood cultures.",
       points: 2,
       teaching: "Piperacillin tazobactam, or ceftriaxone with metronidazole, cover the usual mixed oral flora. Add vancomycin for MRSA risk.",
@@ -380,7 +415,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Considers dexamethasone and manages hyperglycemia and sepsis.",
       points: 1,
       teaching: "Steroids are commonly used to reduce edema though evidence is limited. Uncontrolled diabetes worsens deep neck infection.",
@@ -389,7 +424,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Chooses awake flexible bronchoscopic intubation or awake tracheostomy with a double setup, and rejects RSI.",
       points: 3,
       critical: true,
@@ -399,7 +434,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Responds to stridor by keeping the patient upright, giving nebulized epinephrine as a bridge, avoiding sedation and securing the airway without delay.",
       points: 3,
       critical: true,
@@ -409,7 +444,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Keeps the ENT surgeon at the bedside ready for a surgical airway during any attempt.",
       points: 1,
       teaching: "A double setup means the surgical option is scrubbed and ready, not on the way.",
@@ -418,7 +453,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-r4",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Declares can't intubate, can't oxygenate and performs or directs immediate front of neck access with a scalpel, bougie and tube technique.",
       points: 3,
       critical: true,
@@ -428,7 +463,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges CT after the airway is secure, urgent surgical drainage and source control, and ICU admission.",
       points: 2,
       teaching: "Antibiotics alone rarely resolve a gas containing collection. Source control of the tooth and drainage are needed.",
@@ -437,11 +472,56 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a team debrief after the airway crisis and updates the family.",
       points: 1,
       teaching: "A surgical airway is stressful for everyone. A short debrief supports the team and captures lessons.",
       source: "cafg",
+    },
+    {
+      id: "lu-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about airway symptoms: how fast the swelling has spread, drooling, voice change, trouble swallowing or breathing, and whether he can lie flat.",
+      points: 3,
+      teaching: "Rapid progression, drooling, a muffled voice and inability to lie flat mark an airway at risk. These answers set the urgency.",
+      source: "ajem",
+    },
+    {
+      id: "lu-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the dental source: which tooth, how long, and any recent dental visit or procedure.",
+      points: 2,
+      teaching: "Most Ludwig angina starts from a lower molar. A recent dental visit or untreated decay supports the diagnosis and guides source control.",
+      source: "ajem",
+    },
+    {
+      id: "lu-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about diabetes control, adherence to medication and recent glucose readings.",
+      points: 2,
+      teaching: "Poorly controlled diabetes is a major risk factor for deep neck infection and worsens outcome. It also guides insulin in the ED.",
+      source: "ajem",
+    },
+    {
+      id: "lu-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about drug allergies before antibiotics and the time of his last meal before airway management.",
+      points: 2,
+      teaching: "Allergies change the antibiotic choice. Fasting time informs aspiration risk during the airway plan.",
+      source: "cafg",
+    },
+    {
+      id: "lu-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines for trismus, floor of mouth elevation, tongue position, drooling, voice change and stridor.",
+      points: 2,
+      teaching: "Measure mouth opening between the incisors. A raised, firm floor of mouth and a tongue pushed against the palate predict a very difficult airway.",
+      source: "ajem",
     },
   ],
   sources: [
@@ -465,7 +545,7 @@ export const ludwigAnginaAirway: OralCase = {
       url: "https://pubmed.ncbi.nlm.nih.gov/33383265/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -14,14 +14,38 @@ export const hypothermicCardiacArrest: OralCase = {
     { topic: "ems", n: 3 },
   ],
   summary: "A 34 year old skier is brought in by rescue helicopter with CPR in progress.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a community hospital ED in Canmore, Alberta. You have a mechanical CPR device, a respiratory therapist, a general surgeon on call and a small ICU. " +
-    "There is no cardiopulmonary bypass or ECMO on site. The adult ECLS program in Calgary is about 20 minutes by air or 70 minutes by road. " +
-    "Liam Castonguay is 34 years old and weighs about 78 kg. He was reported missing after a solo ski tour yesterday. Search and rescue found him at 06:30 beside a creek with an injured ankle. He was confused, shivering had stopped, and he was not buried in snow. " +
-    "During the helicopter extraction at 07:10 he became unresponsive. The crew saw ventricular fibrillation on the monitor and started CPR. They gave one shock with no change. " +
-    "It is now 07:35. He arrives with CPR in progress and a supraglottic airway in place. The flight paramedic says: 'He talked to us at the scene. He arrested right in front of us.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "You have a mechanical CPR device and a general surgeon on call, but no bypass or ECMO. The ECLS centre in Calgary is 20 minutes by air or 70 minutes by road. " +
+    "A 34 year old man arrives by helicopter with CPR in progress.",
+  card: {
+    vitals: {
+      temperature: "26°C tympanic",
+      pulse: "No pulse. CPR in progress",
+      resp: "No spontaneous breathing. Ventilated through a supraglottic airway",
+      bp: "Not obtainable during CPR",
+      o2sat: "Not obtainable during CPR",
+      weight: "78 kg (172 lb)",
+    },
+    medications: "Not known",
+    allergies: "Not known",
+  },
   findings: [
+    {
+      id: "scene",
+      label: "History from search and rescue",
+      result:
+        "He was reported missing after a solo ski tour yesterday. Search and rescue found him at 06:30 beside a creek with an injured ankle. " +
+        "He was confused, shivering had stopped, and he was not buried in snow.",
+    },
+    {
+      id: "handover",
+      label: "Flight crew handover",
+      result:
+        "During the helicopter extraction at 07:10 he became unresponsive. The crew saw ventricular fibrillation on the monitor and started CPR. They gave one shock with no change. " +
+        "It is now 07:35. A supraglottic airway is in place. The flight paramedic says: 'He talked to us at the scene. He arrested right in front of us.'",
+    },
     {
       id: "arrival",
       label: "Arrival assessment",
@@ -93,8 +117,9 @@ export const hypothermicCardiacArrest: OralCase = {
         "Handle gently. Remove wet clothing. Insulate and start forced air warming and warmed IV fluids at 38 to 42 °C.",
         "Send potassium early. It guides prognosis.",
         "Call the ECLS centre early.",
+        "Get the timeline from the flight crew: when found, when he arrested, whether it was witnessed, time to CPR, shocks and drugs given, and any burial.",
       ],
-      rubric: ["hy-r1", "hy-a1", "hy-l1"],
+      rubric: ["hy-r1", "hy-a1", "hy-l1", "hy-h1", "hy-h3", "hy-h4"],
       next: "q-drugs",
     },
     {
@@ -167,7 +192,7 @@ export const hypothermicCardiacArrest: OralCase = {
         "HOPE score estimates survival. Under 10 percent argues against ECLS.",
         "No lethal injury. Chest is compressible.",
       ],
-      rubric: ["hy-a2", "hy-a3"],
+      rubric: ["hy-a2", "hy-a3", "hy-h2"],
       next: "q-ecls",
     },
     {
@@ -342,7 +367,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Continues high quality CPR, using a mechanical device, and secures the airway with an endotracheal tube.",
       points: 2,
       teaching: "Mechanical CPR allows long resuscitations and safe transport. Intubation is indicated and rarely triggers VF when done gently.",
@@ -351,7 +376,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Measures core temperature with an esophageal probe and sends potassium early.",
       points: 2,
       teaching: "An esophageal probe in the lower third is the best core measure in the intubated patient. Potassium is the key lab for prognosis.",
@@ -360,7 +385,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Limits shocks to at most three and withholds epinephrine and antiarrhythmics below 30 °C, then doubles the drug interval between 30 and 35 °C.",
       points: 2,
       teaching: "The cold heart resists shocks and drugs. Drugs given under 30 °C accumulate and act together on rewarming. AHA guidance is more permissive than ERC and WMS.",
@@ -369,7 +394,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses witnessed arrest, absence of asphyxia, potassium and the HOPE score to judge ECLS candidacy.",
       points: 2,
       teaching: "Potassium over 12 mmol/L or HOPE survival under 10 percent argues against ECLS. A witnessed arrest without asphyxia favours good outcomes.",
@@ -378,7 +403,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "States that hypothermic patients should not be pronounced dead until rewarmed unless clear futility criteria are present.",
       points: 3,
       critical: true,
@@ -388,7 +413,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges transfer to an ECLS centre with mechanical CPR running rather than attempting prolonged surface rewarming.",
       points: 3,
       critical: true,
@@ -398,7 +423,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses active internal rewarming such as bilateral thoracic lavage when ECLS is not available.",
       points: 3,
       critical: true,
@@ -408,7 +433,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Contacts the ECLS centre early and gives the key prognostic data.",
       points: 1,
       teaching: "The ECLS team needs time to prepare. Call as soon as you suspect hypothermic arrest.",
@@ -417,7 +442,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Adapts the plan when transfer fails and brings in local help such as the general surgeon.",
       points: 1,
       teaching: "Rural resuscitation often means using the skills in the building. Name a plan B before you need it.",
@@ -426,7 +451,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats post ROSC hypotension with warmed fluid and norepinephrine and monitors potassium and glucose during rewarming.",
       points: 2,
       teaching: "Rewarming causes vasodilation and fluid shifts. Potassium and glucose can change quickly.",
@@ -435,7 +460,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Still transfers to the ECLS centre after ROSC for ICU care and possible circulatory support.",
       points: 1,
       teaching: "Myocardial dysfunction after hypothermic arrest can need ECLS even after ROSC.",
@@ -444,11 +469,47 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives his wife an honest update with clear next steps and no false reassurance.",
       points: 1,
       teaching: "Say what happened, where he is going and what is not yet known. Offer support.",
       source: "erc",
+    },
+    {
+      id: "hy-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the rescue crew for the timeline: when he was last seen, when found, when he arrested, whether it was witnessed, and the time to CPR.",
+      points: 3,
+      teaching: "A witnessed arrest with immediate CPR has the best outcome. CPR duration feeds the HOPE score and the ECLS decision.",
+      source: "hope",
+    },
+    {
+      id: "hy-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about asphyxia: snow burial or submersion, and whether he was breathing and talking before the arrest.",
+      points: 3,
+      teaching: "Hypothermia before arrest protects the brain. Asphyxia first, as in avalanche burial, carries a far worse outlook.",
+      source: "hope",
+    },
+    {
+      id: "hy-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks what was done before arrival: shocks, drugs, airway and rewarming.",
+      points: 2,
+      teaching: "Prior shocks and drugs count toward the limits used below 30 °C. Knowing them avoids stacking doses in a cold heart.",
+      source: "erc",
+    },
+    {
+      id: "hy-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about injuries, drugs or alcohol, medications and past medical history.",
+      points: 1,
+      teaching: "Trauma, intoxicants and illness change both the cause of the collapse and the futility assessment.",
+      source: "wms",
     },
   ],
   sources: [
@@ -467,7 +528,7 @@ export const hypothermicCardiacArrest: OralCase = {
         "Pasquier M, Hugli O, Paal P, et al. Hypothermia outcome prediction after extracorporeal life support for hypothermic cardiac arrest patients. The HOPE score. Resuscitation. 2018.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

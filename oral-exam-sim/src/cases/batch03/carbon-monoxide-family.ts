@@ -15,15 +15,38 @@ export const carbonMonoxideFamily: OralCase = {
     { topic: "tox", n: 7 },
   ],
   summary: "A pregnant woman who fainted at home arrives with her husband and daughter, who all feel unwell.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working at a community hospital ED in North Bay, Ontario, on the first cold morning in October. There is an obstetrician on call, a lab that runs co oximetry, and a 6 bed ICU. " +
-    "The nearest hospital hyperbaric unit that treats emergencies around the clock is at Toronto General Hospital, about an hour by air. Transfers go through CritiCall Ontario and Ornge. " +
-    "Chloé Lefebvre is 31 years old and 26 weeks pregnant. For two days she, her husband and their 6 year old daughter have had headaches and nausea that are worse in the morning. They turned the furnace on for the first time this week. " +
-    "An hour ago she fainted in the kitchen for about 30 seconds. Paramedics put her on a non rebreather mask and brought the whole family in. " +
-    "Her triage vitals: heart rate 112, blood pressure 116/70, respiratory rate 22, SpO2 99 percent, temperature 36.9, capillary glucose 5.8 mmol/L. GCS 14. CTAS 2. " +
-    "The paramedic says: 'Her sats were 99 percent the whole way so I took the mask off at the door. The fire department is at the house now.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is an obstetrician on call and a lab that runs co oximetry. The nearest hyperbaric unit is in Toronto, an hour by air. " +
+    "A 31 year old woman, 26 weeks pregnant, arrives by ambulance after fainting at home. Her family came with her.",
+  card: {
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "112/minute",
+      resp: "22/minute",
+      bp: "116/70 mmHg",
+      o2sat: "99% (non rebreather mask removed at the door)",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "For two days she, her husband and their 6 year old daughter have had headaches and nausea that are worse in the morning. " +
+        "They turned the furnace on for the first time this week, on the first cold morning in October. An hour ago she fainted in the kitchen for about 30 seconds.",
+    },
+    {
+      id: "paramedic",
+      label: "Paramedic handover",
+      result:
+        "Paramedics put her on a non rebreather mask and brought the whole family in. " +
+        "The paramedic says: 'Her sats were 99 percent the whole way so I took the mask off at the door. The fire department is at the house now.' " +
+        "Capillary glucose 5.8 mmol/L. GCS 14. CTAS 2.",
+    },
     {
       id: "exam",
       label: "Exam",
@@ -59,12 +82,12 @@ export const carbonMonoxideFamily: OralCase = {
     },
     {
       id: "husband",
-      label: "Her husband Marc, 34",
+      label: "Her husband, 34",
       result: "Headache and nausea. Alert, normal neuro exam. Carboxyhemoglobin 18 percent. ECG normal. Smokes 10 cigarettes a day.",
     },
     {
       id: "daughter",
-      label: "Her daughter Élise, 6",
+      label: "Her daughter, 6",
       result: "Headache and vomited once. Alert and playful. Normal neuro exam. Carboxyhemoglobin 14 percent.",
     },
     {
@@ -79,7 +102,7 @@ export const carbonMonoxideFamily: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "In the acute area",
-      text: "All three are in one room. Chloé is on room air with a pulse oximeter reading 99 percent. Her daughter is crying and her husband is pacing.",
+      text: "All three are in one room. The patient is on room air with a pulse oximeter reading 99 percent. Her daughter is crying and her husband is pacing.",
       next: "q-first",
     },
     {
@@ -94,12 +117,13 @@ export const carbonMonoxideFamily: OralCase = {
         "Pulse oximetry is falsely normal because it reads carboxyhemoglobin as oxyhemoglobin.",
         "Co oximetry on blood for each person. ECG and troponin. Fetal heart rate.",
         "Ask about fire or smoke. If present, consider cyanide.",
+        "Ask about the furnace, others sick at home, pets, and symptoms that ease away from home.",
       ],
-      rubric: ["cm-a1", "cm-m1"],
+      rubric: ["cm-a1", "cm-m1", "cm-h1", "cm-h3"],
       choices: [
         {
           id: "c-o2",
-          label: "I put all three back on 100 percent oxygen by non rebreather and sent co oximetry for each, plus an ECG, troponin and fetal heart rate for Chloé.",
+          label: "I put all three back on 100 percent oxygen by non rebreather and sent co oximetry for each, plus an ECG, troponin and fetal heart rate for the patient.",
           next: "q-interpret",
           quality: "strong",
           feedback:
@@ -107,7 +131,7 @@ export const carbonMonoxideFamily: OralCase = {
         },
         {
           id: "c-titrate",
-          label: "I gave Chloé oxygen by nasal prongs to keep her saturation above 94 percent.",
+          label: "I gave the patient oxygen by nasal prongs to keep her saturation above 94 percent.",
           next: "s-titrate",
           quality: "partial",
           feedback:
@@ -167,8 +191,9 @@ export const carbonMonoxideFamily: OralCase = {
         "She has ECG changes and a raised troponin.",
         "HBO aims to reduce delayed neurological sequelae. It is considered safe in pregnancy.",
         "Continue 100 percent oxygen until and during transfer.",
+        "Confirm the faint and test her memory and gait.",
       ],
-      rubric: ["cm-m2", "cm-l1"],
+      rubric: ["cm-m2", "cm-l1", "cm-h2", "cm-x1"],
       choices: [
         {
           id: "c-hbo",
@@ -208,7 +233,7 @@ export const carbonMonoxideFamily: OralCase = {
       id: "s-home",
       phase: "At the desk",
       text:
-        "The fire captain calls. The house has 380 ppm of CO and has been sealed. The charge nurse stops the family at the door. You call CritiCall and the hyperbaric physician accepts Chloé.",
+        "The fire captain calls. The house has 380 ppm of CO and has been sealed. The charge nurse stops the family at the door. You call CritiCall and the hyperbaric physician accepts her.",
       next: "s-cardiac",
     },
     {
@@ -216,7 +241,7 @@ export const carbonMonoxideFamily: OralCase = {
       id: "s-cardiac",
       phase: "While waiting for Ornge",
       text:
-        "Chloé says her chest feels tight. Her repeat ECG shows 1.5 mm ST depression in V4 to V6. Her repeat troponin T is 68 ng/L. Fetal heart rate is 164 with reduced variability on the monitor.",
+        "The patient says her chest feels tight. Her repeat ECG shows 1.5 mm ST depression in V4 to V6. Her repeat troponin T is 68 ng/L. Fetal heart rate is 164 with reduced variability on the monitor.",
       next: "q-cardiac",
     },
     {
@@ -231,8 +256,9 @@ export const carbonMonoxideFamily: OralCase = {
         "Serial ECGs and troponins. Cardiac monitoring.",
         "Left lateral tilt. Obstetrics at the bedside with continuous fetal monitoring.",
         "Tell the hyperbaric team and the receiving obstetric team. Plan cardiology follow up.",
+        "Ask about fetal movements, vaginal bleeding and abdominal pain.",
       ],
-      rubric: ["cm-a4", "cm-c1"],
+      rubric: ["cm-a4", "cm-c1", "cm-h4"],
       next: "q-family",
     },
     {
@@ -310,14 +336,14 @@ export const carbonMonoxideFamily: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "Chloé leaves by air for the hyperbaric chamber with continuous fetal monitoring. Her family is on oxygen and has a safe place to stay. That is the end of the case.",
+      text: "The patient leaves by air for the hyperbaric chamber with continuous fetal monitoring. Her family is on oxygen and has a safe place to stay. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "cm-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Suspects carbon monoxide poisoning from clustered symptoms in one household and a new heat source.",
       points: 2,
       teaching: "Several people from one home with headache and nausea is CO until proven otherwise. Symptoms that improve away from home are a strong clue.",
@@ -326,7 +352,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives 100 percent oxygen by non rebreather to all exposed family members regardless of pulse oximetry.",
       points: 3,
       critical: true,
@@ -336,7 +362,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Explains that carboxyhemoglobin drawn after oxygen underestimates peak exposure and correlates poorly with severity.",
       points: 2,
       teaching: "Levels fall quickly on oxygen. Symptoms such as syncope and neurological signs guide severity more than the number.",
@@ -345,7 +371,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes that the fetus is at higher risk because fetal hemoglobin binds CO tightly and clears slowly.",
       points: 2,
       teaching: "Fetal carboxyhemoglobin can exceed maternal levels and lasts longer. Maternal symptoms understate fetal risk.",
@@ -354,7 +380,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Identifies HBO criteria including syncope, neurological findings, pregnancy and cardiac injury, and refers for hyperbaric oxygen.",
       points: 3,
       critical: true,
@@ -364,7 +390,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Coordinates CritiCall, the hyperbaric physician, Ornge and obstetrics for a safe transfer.",
       points: 1,
       teaching: "HBO centres are few. Early calls let the chamber, crew and receiving obstetric team prepare.",
@@ -373,7 +399,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-a4",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Recognizes ECG changes and troponin rise as CO related myocardial injury and arranges serial monitoring and follow up.",
       points: 2,
       teaching: "Myocardial injury is common in moderate to severe CO poisoning and is linked to higher long term mortality.",
@@ -382,7 +408,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Involves obstetrics early with continuous fetal monitoring and left lateral tilt.",
       points: 1,
       teaching: "Fetal tachycardia and reduced variability signal fetal hypoxia. The obstetric team must be part of the plan.",
@@ -391,7 +417,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Prevents return to the house until it is cleared and arranges a safe place for the family to stay.",
       points: 3,
       critical: true,
@@ -401,7 +427,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Addresses the husband's concerns directly and keeps him and the child on oxygen with reassessment.",
       points: 1,
       teaching: "Worried family members may leave to deal with the house. Explain the danger in plain words and help with practical problems.",
@@ -410,7 +436,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Counsels on delayed neurological sequelae and arranges follow up for mother, pregnancy and child.",
       points: 1,
       teaching: "Delayed neurological sequelae can appear days to weeks later. Families should know what to watch for.",
@@ -419,11 +445,56 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Advises on CO alarms and home safety and notifies public health where required.",
       points: 1,
       teaching: "Ontario requires CO alarms in homes with fuel burning appliances. A short prevention talk protects the next family.",
       source: "ontario",
+    },
+    {
+      id: "cm-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the exposure: fuel burning appliances and recent furnace use, others unwell at home, pets, and symptoms that ease away from home.",
+      points: 3,
+      teaching: "CO poisoning is a diagnosis made on history. A new heat source and a sick household are the strongest clues.",
+      source: "acep",
+    },
+    {
+      id: "cm-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the faint and neurological symptoms: loss of consciousness, how long, confusion and memory problems.",
+      points: 2,
+      teaching: "Loss of consciousness and neurological symptoms are key criteria for hyperbaric oxygen. Ask the patient and the witnesses.",
+      source: "uhms",
+    },
+    {
+      id: "cm-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about fire or smoke exposure to screen for cyanide.",
+      points: 2,
+      teaching: "Smoke from a fire adds cyanide to CO. That changes treatment to include hydroxocobalamin.",
+      source: "acep",
+    },
+    {
+      id: "cm-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the pregnancy: gestation, fetal movements, vaginal bleeding and abdominal pain.",
+      points: 2,
+      teaching: "The fetus is more vulnerable to CO than the mother. Reduced movements or bleeding need urgent obstetric review.",
+      source: "uhms",
+    },
+    {
+      id: "cm-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Performs a focused neurological exam including memory, cognition and gait.",
+      points: 2,
+      teaching: "Subtle deficits such as poor recall or ataxia count as neurological findings. They support referral for hyperbaric oxygen.",
+      source: "acep",
     },
   ],
   sources: [
@@ -442,10 +513,11 @@ export const carbonMonoxideFamily: OralCase = {
     },
     {
       id: "ontario",
-      citation: "Ontario. Hawkins Gignac Act (Carbon Monoxide Safety), 2013.",
+      citation: "Ontario. Hawkins Gignac Act (Carbon Monoxide Safety), 2013. S.O. 2013, c. 14.",
+      url: "https://www.ola.org/en/legislative-business/bills/parliament-40/session-2/bill-77",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
