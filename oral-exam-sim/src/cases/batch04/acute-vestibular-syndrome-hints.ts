@@ -1,0 +1,507 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const acuteVestibularSyndromeHints: OralCase = {
+  id: "acute-vestibular-syndrome-hints",
+  title: "The room has been spinning since the night",
+  blueprint: "neuro",
+  alsoCovers: ["systems"],
+  summary: "A 63 year old man with continuous vertigo and vomiting since he woke in the night wants to go home.",
+  durationMinutes: 14,
+  stem:
+    "You are working at a regional hospital in Nova Scotia. CT and CT angiography are available around the clock. MRI runs on weekdays only. " +
+    "Neurology is on call from home. Neurosurgery is at the tertiary centre 2 hours away. " +
+    "It is 14:00 on a Saturday. Wendell MacIsaac is 63 years old. He went to bed well at 23:00 and woke at 02:00 with the room spinning. He has vomited six times and cannot walk without holding the wall. " +
+    "He has hypertension, type 2 diabetes and smokes. " +
+    "Triage vitals: heart rate 84, blood pressure 176/94, respiratory rate 16, SpO2 97 percent on room air, temperature 36.6, capillary glucose 9.8 mmol/L. CTAS 3. " +
+    "The nurse says: 'I gave him dimenhydrinate 50 mg IV. He is a bit better and wants to go home. Probably an inner ear thing?'",
+  findings: [
+    {
+      id: "hx",
+      label: "Vertigo history",
+      result:
+        "Constant spinning for 12 hours, worse with head movement but present at rest. No hearing loss, tinnitus or ear fullness. " +
+        "Mild right sided neck and occipital ache since yesterday. No diplopia, dysarthria, dysphagia or limb weakness. No prior episodes. No recent viral illness.",
+    },
+    {
+      id: "nystagmus",
+      label: "Nystagmus",
+      result: "Primary gaze shows left beating horizontal nystagmus. On right gaze the nystagmus becomes right beating. On left gaze it is left beating. Visual fixation does not suppress it.",
+    },
+    {
+      id: "hit",
+      label: "Head impulse test",
+      result: "No corrective saccade with rapid head turns to either side. Normal vestibulo ocular reflex bilaterally.",
+    },
+    {
+      id: "skew",
+      label: "Test of skew",
+      result: "Alternate cover testing shows a small vertical refixation of the right eye. Skew deviation present.",
+    },
+    {
+      id: "gait",
+      label: "Gait and cerebellar exam",
+      result:
+        "Cannot sit up in bed without using his arms. Cannot stand unaided. Truncal ataxia grade 3. Mild dysmetria on right finger to nose. Speech normal. NIHSS 1 for limb ataxia.",
+    },
+    {
+      id: "hearing",
+      label: "Hearing and ear exam",
+      result: "Finger rub heard bilaterally. Weber midline. Tympanic membranes normal.",
+    },
+    {
+      id: "ecg-labs",
+      label: "ECG and blood work",
+      result:
+        "Sinus rhythm at 82. No ischemia. Hemoglobin 152 g/L. Platelets 231 x 10^9/L. INR 1.0. Creatinine 96 µmol/L. Glucose 10.1 mmol/L. Hemoglobin A1c 8.4 percent. LDL 3.6 mmol/L.",
+    },
+    {
+      id: "ct",
+      label: "Non contrast CT head",
+      result: "No hemorrhage. Posterior fossa detail limited by beam hardening artifact. No obvious infarct. No hydrocephalus.",
+    },
+    {
+      id: "cta",
+      label: "CT angiogram head and neck",
+      result:
+        "Occlusion of the distal right vertebral artery at V4. The right PICA is not seen. Basilar artery patent. Left vertebral artery dominant and patent. No dissection flap seen but the radiologist cannot exclude it at V4.",
+    },
+    {
+      id: "repeat-ct",
+      label: "Repeat CT head at 20:30",
+      result:
+        "New hypodensity in the right cerebellar hemisphere, about 3.5 cm. Mass effect with effacement of the fourth ventricle. Early enlargement of the temporal horns and third ventricle.",
+    },
+    {
+      id: "daughter",
+      label: "Daughter's questions",
+      result: "His daughter Colleen arrives at 16:00. She asks why the first CT looked normal and whether he should have gone to the city.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Bedside",
+      text: "He is lying still with his eyes closed and a basin on his chest. He says: 'I think I can manage at home if you give me more of that pill.'",
+      next: "q-approach",
+    },
+    {
+      kind: "question",
+      id: "q-approach",
+      phase: "Approach",
+      prompt: "How do you approach dizziness in this man? Which bedside exam do you do?",
+      seconds: 90,
+      modelAnswer: [
+        "Classify by timing and triggers. This is an acute vestibular syndrome: continuous vertigo for over 24 hours or ongoing, with nausea, nystagmus and unsteadiness.",
+        "The main differential is vestibular neuritis versus posterior circulation stroke.",
+        "Use HINTS: head impulse, nystagmus pattern and test of skew. Add a hearing check.",
+        "Assess gait and truncal ataxia. Inability to walk is a red flag.",
+        "Dix Hallpike is for brief positional episodes, not continuous vertigo.",
+        "Vascular risk factors and neck pain raise concern for stroke or dissection.",
+      ],
+      rubric: ["av-a1", "av-a2"],
+      choices: [
+        {
+          id: "c-hints",
+          label: "I classified it as an acute vestibular syndrome and did HINTS with a hearing check, then tested his gait.",
+          next: "s-hints",
+          quality: "strong",
+          feedback:
+            "Correct. Timing and triggers point to the right exam. HINTS plus gait in trained hands is more sensitive for stroke than early MRI. His vascular risk factors and neck pain make this essential.",
+        },
+        {
+          id: "c-hallpike",
+          label: "I did a Dix Hallpike test to look for BPPV.",
+          next: "s-hallpike",
+          quality: "partial",
+          feedback:
+            "Dix Hallpike is for brief episodic vertigo triggered by position. In continuous vertigo with spontaneous nystagmus it is the wrong test and just makes him vomit. The exam you need is HINTS.",
+        },
+        {
+          id: "c-discharge",
+          label: "I diagnosed vestibular neuritis, prescribed dimenhydrinate and discharged him with ENT follow up.",
+          next: "s-discharge",
+          quality: "unsafe",
+          feedback:
+            "You have not examined for central signs. Up to a quarter of acute vestibular syndrome presentations are strokes. Many have no other neurological deficit. A man who cannot walk should not be discharged.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-hallpike",
+      phase: "Five minutes later",
+      text: "He vomits during the manoeuvre. The nystagmus looks the same in every position. You go back and do HINTS and a gait assessment.",
+      next: "s-hints",
+    },
+    {
+      kind: "say",
+      id: "s-discharge",
+      phase: "At the door",
+      text: "The nurse tries to walk him to the bathroom. He falls to the right against her. She asks you to see him again before he leaves. You examine him properly.",
+      next: "s-hints",
+    },
+    {
+      kind: "say",
+      id: "s-hints",
+      phase: "Exam results",
+      text:
+        "Head impulse test is normal to both sides. The nystagmus is left beating on left gaze and right beating on right gaze. Cover testing shows skew deviation. Hearing is normal. He cannot stand unaided.",
+      next: "q-interpret",
+    },
+    {
+      kind: "question",
+      id: "q-interpret",
+      phase: "Interpretation",
+      prompt: "Interpret these findings.",
+      seconds: 60,
+      modelAnswer: [
+        "Every HINTS component is central.",
+        "A normal head impulse test in acute vestibular syndrome is worrying. Vestibular neuritis should give a corrective saccade.",
+        "Direction changing gaze evoked nystagmus is central.",
+        "Skew deviation is central.",
+        "Grade 3 truncal ataxia is also strongly central.",
+        "This is a posterior circulation stroke until proven otherwise.",
+      ],
+      rubric: ["av-a3"],
+      next: "q-imaging",
+    },
+    {
+      kind: "question",
+      id: "q-imaging",
+      phase: "Imaging",
+      prompt: "What imaging do you order and how do you interpret a normal non contrast CT?",
+      seconds: 75,
+      modelAnswer: [
+        "Non contrast CT excludes hemorrhage but is insensitive for posterior fossa ischemia.",
+        "CT angiogram head and neck now to look for vertebral or basilar occlusion and dissection.",
+        "MRI with diffusion weighted imaging is the best test but can miss small strokes in the first 48 hours.",
+        "A normal CT does not rule out stroke. A central HINTS exam overrides a normal CT.",
+        "Call the stroke team or neurology.",
+      ],
+      rubric: ["av-m1", "av-a4"],
+      choices: [
+        {
+          id: "c-cta",
+          label: "I ordered a non contrast CT and CT angiogram of the head and neck together and called neurology, knowing a normal CT does not exclude stroke.",
+          next: "s-cta",
+          quality: "strong",
+          feedback:
+            "Correct. CT sensitivity for posterior fossa infarction in the first day is poor. CTA can show an occlusion or dissection that changes management.",
+        },
+        {
+          id: "c-ct-only",
+          label: "I ordered a non contrast CT and planned outpatient MRI if it was normal.",
+          next: "s-ct-only",
+          quality: "partial",
+          feedback:
+            "A normal CT tells you little about cerebellar ischemia. With a central HINTS exam and inability to walk he needs vascular imaging and admission, not an outpatient scan.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ct-only",
+      phase: "The radiologist calls",
+      text: "The radiologist says the posterior fossa is not well seen because of artifact. She suggests a CT angiogram given the history of neck pain. You order it.",
+      next: "s-cta",
+    },
+    {
+      kind: "say",
+      id: "s-cta",
+      phase: "CT results",
+      text: "Non contrast CT shows no hemorrhage and no obvious infarct. CT angiogram shows occlusion of the distal right vertebral artery at V4. The basilar artery is patent.",
+      next: "q-treat",
+    },
+    {
+      kind: "question",
+      id: "q-treat",
+      phase: "Treatment",
+      prompt: "It is now 15:30. Last known well was 23:00. What treatment do you give?",
+      seconds: 75,
+      modelAnswer: [
+        "He is outside the thrombolysis window. Last known well was over 16 hours ago.",
+        "No endovascular target. The basilar is open.",
+        "Minor stroke with NIHSS 1. Dual antiplatelet therapy after a swallow screen.",
+        "ASA 160 mg load and clopidogrel 300 to 600 mg load, then ASA 81 mg and clopidogrel 75 mg daily for 21 days.",
+        "Permissive hypertension. Do not lower pressure unless over 220/120.",
+        "If he fails the swallow screen, give ASA 325 mg rectally.",
+      ],
+      rubric: ["av-m2", "av-m3"],
+      choices: [
+        {
+          id: "c-dapt",
+          label: "After a bedside swallow screen I gave ASA 160 mg and clopidogrel 300 mg, planned 21 days of dual antiplatelet therapy and left his pressure alone.",
+          next: "q-admit",
+          quality: "strong",
+          feedback:
+            "Correct. Dual antiplatelet therapy started early reduces recurrent stroke after minor stroke. The 21 day duration limits bleeding. Permissive hypertension protects posterior circulation perfusion.",
+        },
+        {
+          id: "c-asa-only",
+          label: "I gave ASA 81 mg and planned outpatient follow up for the rest.",
+          next: "s-asa-only",
+          quality: "partial",
+          feedback:
+            "ASA alone is not wrong, but in minor stroke with NIHSS 3 or less, a short course of ASA plus clopidogrel lowers early recurrence. The loading dose also matters.",
+        },
+        {
+          id: "c-heparin",
+          label: "I started a heparin infusion for the vertebral occlusion.",
+          next: "s-heparin",
+          quality: "partial",
+          feedback:
+            "Anticoagulation is not better than antiplatelets for non cardioembolic stroke, and CADISS and TREAT CAD found no clear advantage in cervical dissection. A V4 lesion may be intracranial, where dissection can bleed into the subarachnoid space. With an infarct of unknown size, a heparin infusion adds bleeding risk. Antiplatelet therapy is the usual choice.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-asa-only",
+      phase: "Neurology calls back",
+      text: "The neurologist recommends ASA plus clopidogrel with loading doses for 21 days. You give clopidogrel 300 mg and ASA 160 mg once he passes the swallow screen.",
+      next: "q-admit",
+    },
+    {
+      kind: "say",
+      id: "s-heparin",
+      phase: "Neurology calls back",
+      text: "The neurologist asks you to stop the heparin. She recommends dual antiplatelet therapy instead. You stop the infusion after 40 minutes.",
+      next: "q-admit",
+    },
+    {
+      kind: "question",
+      id: "q-admit",
+      phase: "Admission",
+      prompt: "He is boarding in your department awaiting a stroke unit bed. What are your orders and what are you watching for?",
+      seconds: 60,
+      modelAnswer: [
+        "Admit to a stroke unit. Neuro vitals every 1 to 2 hours including GCS and pupils.",
+        "Nothing by mouth until swallow screen. Antiemetic such as ondansetron 4 mg IV.",
+        "Head of bed 30 degrees. Fall precautions.",
+        "Watch for cerebellar edema. Headache, vomiting, drowsiness, new gaze palsy or falling GCS.",
+        "Tell neurosurgery early about a cerebellar infarct at risk of swelling, peaking 2 to 4 days.",
+        "MRI when available. Glucose control. Statin.",
+      ],
+      rubric: ["av-d1", "av-l1"],
+      next: "s-decline",
+    },
+    {
+      kind: "say",
+      id: "s-decline",
+      phase: "20:15",
+      text:
+        "The nurse calls you. Mr MacIsaac is hard to rouse. GCS 12. He is vomiting again. Pressure 198/102. Heart rate 58. Repeat CT shows a 3.5 cm right cerebellar infarct with fourth ventricle effacement and early hydrocephalus.",
+      next: "q-swelling",
+    },
+    {
+      kind: "question",
+      id: "q-swelling",
+      phase: "Deterioration",
+      prompt: "What is happening and what do you do?",
+      seconds: 90,
+      modelAnswer: [
+        "Space occupying cerebellar infarct compressing the brainstem and fourth ventricle.",
+        "Call neurosurgery now for suboccipital decompressive craniectomy with or without EVD.",
+        "Emergent transfer. Protect the airway if GCS falls to 8 or less or he cannot protect it.",
+        "Head of bed 30 degrees. Hyperosmolar therapy as a bridge. Mannitol 1 g/kg IV or 3 percent saline 250 mL.",
+        "Do not drive the pressure down. The hypertension may be a Cushing response. Avoid hypotension and large swings.",
+        "Tell neurosurgery about the dual antiplatelet therapy.",
+      ],
+      rubric: ["av-r1", "av-d2"],
+      choices: [
+        {
+          id: "c-neurosurg",
+          label: "I called neurosurgery for decompression, gave 3 percent saline as a bridge, planned airway protection and arranged emergent transfer with the DAPT timing in the handover.",
+          next: "q-daughter",
+          quality: "strong",
+          feedback:
+            "Correct. Suboccipital decompression can be lifesaving and good outcomes are possible. Hyperosmolar therapy buys time. The antiplatelet history matters to the surgeon.",
+        },
+        {
+          id: "c-mannitol-watch",
+          label: "I gave mannitol and planned to reassess in the morning with an MRI.",
+          next: "s-mannitol-watch",
+          quality: "partial",
+          feedback:
+            "Hyperosmolar therapy alone does not treat brainstem compression. The posterior fossa has little room. Deterioration can be rapid and fatal. He needs neurosurgery tonight.",
+        },
+        {
+          id: "c-lower-bp",
+          label: "I lowered his pressure to 120 systolic with labetalol and kept him in the department.",
+          next: "s-lower-bp",
+          quality: "unsafe",
+          feedback:
+            "The hypertension and bradycardia are a Cushing response to rising posterior fossa pressure. Dropping the pressure lowers brainstem perfusion. The problem is mass effect, which needs surgery.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-mannitol-watch",
+      phase: "21:30",
+      text: "His GCS is 8 and his breathing is irregular. You intubate and call neurosurgery, who accept him emergently.",
+      next: "q-daughter",
+    },
+    {
+      kind: "say",
+      id: "s-lower-bp",
+      phase: "Fifteen minutes later",
+      text: "His pressure is 124/70 and his GCS is 8. His breathing is irregular. You stop the labetalol, intubate and call neurosurgery, who accept him emergently.",
+      next: "q-daughter",
+    },
+    {
+      kind: "question",
+      id: "q-daughter",
+      phase: "Family",
+      prompt: "His daughter asks why the first CT looked normal and whether he should have been sent to the city sooner. How do you respond?",
+      seconds: 60,
+      modelAnswer: [
+        "Acknowledge her worry. Sit down with her.",
+        "Explain that CT often cannot show a stroke in the back of the brain in the first day. That is why the exam and the CT angiogram were done.",
+        "Explain the swelling that has developed and the surgery planned.",
+        "Be honest about seriousness and uncertainty.",
+        "If there was a delay in care, disclose it factually. Offer a follow up conversation.",
+      ],
+      rubric: ["av-c1"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "He has a suboccipital decompression that night. At 3 months he walks with a cane. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "av-a1",
+      competency: "assessment",
+      text: "Classifies the presentation as acute vestibular syndrome using timing and triggers, not symptom quality.",
+      points: 2,
+      teaching: "Continuous vertigo with nystagmus, nausea and unsteadiness is acute vestibular syndrome. The main question is neuritis versus stroke.",
+      source: "grace3",
+    },
+    {
+      id: "av-a2",
+      competency: "assessment",
+      text: "Performs HINTS with a hearing check and a gait assessment, and avoids Dix Hallpike in continuous vertigo.",
+      points: 2,
+      teaching: "HINTS is designed for acute vestibular syndrome with spontaneous nystagmus. Dix Hallpike is for brief positional episodes.",
+      source: "grace3",
+    },
+    {
+      id: "av-a3",
+      competency: "assessment",
+      text: "Interprets normal head impulse, direction changing nystagmus, skew and severe truncal ataxia as central.",
+      points: 3,
+      critical: true,
+      teaching: "Any one central HINTS feature means stroke until proven otherwise. A normal head impulse test in acute vestibular syndrome is the dangerous finding.",
+      source: "kattah",
+    },
+    {
+      id: "av-a4",
+      competency: "assessment",
+      text: "States that non contrast CT and early MRI can miss posterior circulation stroke.",
+      points: 2,
+      teaching: "CT sensitivity for early posterior fossa ischemia is poor. Even DWI MRI misses roughly 10 to 20 percent of posterior circulation strokes in the first 48 hours, more often when the infarct is small.",
+      source: "kattah",
+    },
+    {
+      id: "av-m1",
+      competency: "management",
+      text: "Orders CT angiogram of the head and neck and involves neurology.",
+      points: 2,
+      teaching: "Vascular imaging identifies basilar occlusion, which needs urgent reperfusion, and vertebral dissection.",
+      source: "grace3",
+    },
+    {
+      id: "av-m2",
+      competency: "management",
+      text: "Starts ASA 160 mg and clopidogrel 300 to 600 mg loading then 21 days of dual antiplatelet therapy after a swallow screen.",
+      points: 2,
+      teaching: "In minor stroke or high risk TIA, a short course of dual antiplatelet therapy reduces early recurrent stroke.",
+      source: "point",
+    },
+    {
+      id: "av-m3",
+      competency: "management",
+      text: "Recognizes he is outside the thrombolysis window, allows permissive hypertension and does not use routine heparin.",
+      points: 1,
+      teaching: "Without thrombolysis, pressure is usually not lowered unless above 220/120 in the first 24 hours.",
+      source: "hsf-acute",
+    },
+    {
+      id: "av-r1",
+      competency: "resuscitation",
+      text: "Recognizes the Cushing response, avoids lowering pressure, uses hyperosmolar therapy as a bridge and protects the airway.",
+      points: 2,
+      teaching: "Hypertension with bradycardia and falling GCS in cerebellar stroke means brainstem compression. Protect perfusion and buy time for surgery.",
+      source: "wijdicks",
+    },
+    {
+      id: "av-d1",
+      competency: "disposition",
+      text: "Admits to a stroke unit and writes orders to monitor for cerebellar swelling.",
+      points: 1,
+      teaching: "Cerebellar infarcts can swell over 2 to 4 days. Neuro checks catch deterioration early.",
+      source: "wijdicks",
+    },
+    {
+      id: "av-d2",
+      competency: "disposition",
+      text: "Arranges emergent neurosurgery for suboccipital decompression and transfer.",
+      points: 3,
+      critical: true,
+      teaching: "Suboccipital decompressive craniectomy for swelling cerebellar infarct is lifesaving and many survivors have a good outcome.",
+      source: "wijdicks",
+    },
+    {
+      id: "av-c1",
+      competency: "communication",
+      text: "Explains to the daughter why CT was normal and what happens next, with honesty about uncertainty.",
+      points: 1,
+      teaching: "Families often read a normal first CT as a missed diagnosis. A clear explanation builds trust.",
+      source: "grace3",
+    },
+    {
+      id: "av-l1",
+      competency: "leadership",
+      text: "Alerts neurosurgery early about a cerebellar infarct at risk while the patient boards.",
+      points: 1,
+      teaching: "A heads up call before deterioration shortens time to surgery. Boarding patients need a named team responsible for them.",
+      source: "wijdicks",
+    },
+  ],
+  sources: [
+    {
+      id: "grace3",
+      citation:
+        "Edlow JA et al. Guidelines for reasonable and appropriate care in the emergency department 3 (GRACE 3). Acute dizziness and vertigo in the emergency department. Academic Emergency Medicine. 2023.",
+    },
+    {
+      id: "kattah",
+      citation:
+        "Kattah JC et al. HINTS to diagnose stroke in the acute vestibular syndrome. Three step bedside oculomotor examination more sensitive than early MRI diffusion weighted imaging. Stroke. 2009.",
+    },
+    {
+      id: "point",
+      citation: "Johnston SC et al. Clopidogrel and aspirin in acute ischemic stroke and high risk TIA (POINT). New England Journal of Medicine. 2018.",
+    },
+    {
+      id: "hsf-acute",
+      citation: "Heran M et al. Canadian Stroke Best Practice Recommendations. Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Canadian Journal of Neurological Sciences.",
+      url: "https://www.strokebestpractices.ca/recommendations/acute-stroke-management",
+    },
+    {
+      id: "wijdicks",
+      citation:
+        "Wijdicks EF et al. Recommendations for the management of cerebral and cerebellar infarction with swelling. A statement for healthcare professionals from the American Heart Association and American Stroke Association. Stroke. 2014.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

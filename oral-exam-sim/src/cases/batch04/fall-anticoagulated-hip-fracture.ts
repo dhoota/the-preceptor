@@ -1,0 +1,514 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const fallAnticoagulatedHipFracture: OralCase = {
+  id: "fall-anticoagulated-hip-fracture",
+  title: "Found on the bedroom floor",
+  blueprint: "geri",
+  alsoCovers: ["trauma"],
+  summary: "An 89 year old man who lives alone is found on the floor by his home care worker after a night fall.",
+  durationMinutes: 15,
+  stem:
+    "You are working at a community hospital in southwestern Ontario with orthopaedic surgery, internal medicine, an ICU and CT around the clock. There is no neurosurgery on site. " +
+    "It is 07:15. Stanley Kaminski is 89 years old and lives alone. His home care worker found him on the floor beside his bed at 06:30. " +
+    "He says he got up to urinate around 23:00, felt light headed and fell. He hit the back of his head on the night table and could not get up. " +
+    "He takes apixaban 5 mg twice daily for atrial fibrillation. His last dose was at 20:00 last night. " +
+    "Vitals: heart rate 88 and irregular, blood pressure 118/64, respiratory rate 18, SpO2 95 percent on room air, temperature 35.4, capillary glucose 6.1 mmol/L. GCS 15. Weight 58 kg. " +
+    "The paramedic says: 'His right leg is short and turned out. He says his usual pressure runs in the 140s.'",
+  findings: [
+    {
+      id: "meds",
+      label: "Medications and history",
+      result:
+        "Apixaban 5 mg twice daily. Metoprolol 50 mg twice daily. Furosemide 20 mg daily. Tamsulosin 0.4 mg daily, started 2 weeks ago for urinary hesitancy. " +
+        "Atrial fibrillation, heart failure with preserved ejection fraction, hypertension. Baseline creatinine 110 µmol/L six months ago. No known allergies.",
+    },
+    {
+      id: "head-neck",
+      label: "Head and neck exam",
+      result: "A 3 cm occipital scalp laceration, not actively bleeding. No midline cervical tenderness. He can rotate his neck 45 degrees each way. No focal neurological deficit. 4AT score 2.",
+    },
+    {
+      id: "hip",
+      label: "Hip and limb exam",
+      result:
+        "Right leg shortened and externally rotated. Tender over the greater trochanter. Thigh mildly swollen. Distal pulses present. Sensation intact. No other limb injuries.",
+    },
+    {
+      id: "skin",
+      label: "Skin",
+      result: "Non blanching redness over the sacrum and right hip, about 4 cm. Skin intact. Dry mucous membranes.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Atrial fibrillation at 86. No acute ST changes. QRS 96 ms. No heart block.",
+    },
+    {
+      id: "labs",
+      label: "Initial blood work",
+      result:
+        "Hemoglobin 121 g/L. Platelets 188 x 10^9/L. INR 1.3. PTT 36 s. Sodium 136 mmol/L. Potassium 5.1 mmol/L. Creatinine 148 µmol/L. Urea 14.2 mmol/L. " +
+        "CK 3,900 U/L. High sensitivity troponin I 22 ng/L, repeat at 2 hours 24 ng/L. Lactate 1.9 mmol/L. Type and screen sent.",
+    },
+    {
+      id: "imaging-head",
+      label: "CT head and cervical spine",
+      result: "CT head: no intracranial hemorrhage, no fracture. Occipital soft tissue swelling. CT cervical spine: degenerative change, no fracture.",
+    },
+    {
+      id: "imaging-hip",
+      label: "Pelvis and hip X ray",
+      result: "Displaced intertrochanteric fracture of the right femur. No pelvic ring fracture. Chest X ray clear.",
+    },
+    {
+      id: "collateral",
+      label: "Collateral from his daughter",
+      result:
+        "His daughter Maria says he has been dizzy on standing since starting the new prostate pill. He walks with a cane and does his own cooking. " +
+        "He has said many times he wants treatment if it keeps him independent. He has no advance directive. She is his only child.",
+    },
+    {
+      id: "repeat-labs",
+      label: "Repeat blood work at 13:00",
+      result: "Hemoglobin 94 g/L. Lactate 2.8 mmol/L. Creatinine 142 µmol/L.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Arrival",
+      text: "He is cold, polite and in pain when the stretcher moves. He apologizes for the trouble. The nurse asks what you want to order first.",
+      next: "q-head",
+    },
+    {
+      kind: "question",
+      id: "q-head",
+      phase: "Head and neck",
+      prompt: "He hit his head and is on apixaban. What imaging does he need and why?",
+      seconds: 60,
+      modelAnswer: [
+        "CT head. Patients on anticoagulants were excluded from the Canadian CT Head Rule, so it cannot be used to avoid a scan.",
+        "Age 65 or over is also a high risk criterion in the Canadian CT Head Rule.",
+        "CT cervical spine. Age 65 or over is a high risk factor in the Canadian C Spine Rule.",
+        "Hip and pelvis X ray and chest X ray.",
+        "Consider a repeat CT or observation if his neuro status changes. Delayed bleeds are uncommon but possible.",
+      ],
+      rubric: ["hip-a1", "hip-a2"],
+      choices: [
+        {
+          id: "c-ct-both",
+          label: "I ordered CT head and CT cervical spine because he is anticoagulated and over 65, plus hip, pelvis and chest X rays.",
+          next: "q-lie",
+          quality: "strong",
+          feedback:
+            "Correct. The Canadian CT Head Rule does not apply to anticoagulated patients. His age alone also makes him high risk under both Canadian rules.",
+        },
+        {
+          id: "c-ct-head-only",
+          label: "I ordered a CT head because of the apixaban but cleared his neck clinically because he had no midline tenderness.",
+          next: "s-ct-head-only",
+          quality: "partial",
+          feedback:
+            "The head CT is right. Under the Canadian C Spine Rule, age 65 or over is a high risk factor that mandates imaging. Clinical clearance is not allowed. Older adults can fracture the neck in a fall from standing.",
+        },
+        {
+          id: "c-no-ct",
+          label: "His GCS is 15 with no vomiting so I did not order a CT head.",
+          next: "s-no-ct",
+          quality: "unsafe",
+          feedback:
+            "Anticoagulated patients were excluded from the Canadian CT Head Rule and have a higher risk of intracranial bleeding. He is also over 65, which is itself a high risk criterion. He needs a CT head.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ct-head-only",
+      phase: "Radiology",
+      text: "The radiologist calls to ask why the neck was not imaged in an 89 year old after a fall. You order a CT cervical spine. It shows no fracture.",
+      next: "q-lie",
+    },
+    {
+      kind: "say",
+      id: "s-no-ct",
+      phase: "The orthopaedic resident",
+      text: "The orthopaedic resident asks for a head CT before surgical consent because he is anticoagulated. You order CT head and cervical spine. Both are negative.",
+      next: "q-lie",
+    },
+    {
+      kind: "question",
+      id: "q-lie",
+      phase: "The fall and the long lie",
+      prompt: "Why did he fall, and what problems come from lying on the floor for 7 hours?",
+      seconds: 75,
+      modelAnswer: [
+        "Likely orthostatic hypotension from tamsulosin on top of furosemide and metoprolol. Check the ECG for arrhythmia or block. Trend troponin.",
+        "Long lie: rhabdomyolysis with CK 3,900 U/L. Acute kidney injury with creatinine 148 µmol/L.",
+        "Hypothermia at 35.4. Warm with blankets and warmed fluids.",
+        "Pressure injury over the sacrum and hip. Pressure relieving mattress.",
+        "Dehydration. Isotonic fluid with care given his heart failure.",
+        "Screen for delirium and aspiration.",
+      ],
+      rubric: ["hip-a3", "hip-m4"],
+      next: "q-analgesia",
+    },
+    {
+      kind: "question",
+      id: "q-analgesia",
+      phase: "Pain",
+      prompt: "His pain is 9 out of 10. How do you manage it?",
+      seconds: 75,
+      modelAnswer: [
+        "Fascia iliaca compartment block under ultrasound. Superficial and compressible, so reasonable on apixaban.",
+        "For example bupivacaine 0.25 percent 30 mL, which is 75 mg. Keep under 2.5 mg/kg, which is 145 mg for 58 kg.",
+        "Acetaminophen 1 g orally or IV every 6 hours. Maximum 3 g per day in a frail older adult.",
+        "Small doses of IV opioid for breakthrough. Hydromorphone 0.2 mg IV titrated.",
+        "Avoid NSAIDs because of the kidney injury and anticoagulation.",
+        "Good analgesia reduces delirium.",
+      ],
+      rubric: ["hip-m1"],
+      choices: [
+        {
+          id: "c-ficb",
+          label: "I did an ultrasound guided fascia iliaca block with 30 mL of bupivacaine 0.25 percent, gave acetaminophen 1 g and small doses of hydromorphone for breakthrough.",
+          next: "q-anticoag",
+          quality: "strong",
+          feedback:
+            "Correct. Nerve blocks reduce pain on movement, opioid use and delirium after hip fracture. The fascia iliaca block is a superficial plane block that is reasonable on a DOAC.",
+        },
+        {
+          id: "c-morphine",
+          label: "I gave morphine 5 mg IV every hour as needed.",
+          next: "s-morphine",
+          quality: "partial",
+          feedback:
+            "Opioids have a place, but 5 mg morphine hourly is a large dose for a frail 89 year old with kidney injury. Morphine metabolites build up in renal impairment. A regional block is first line.",
+        },
+        {
+          id: "c-ketorolac",
+          label: "I gave ketorolac 30 mg IV to spare opioids.",
+          next: "s-ketorolac",
+          quality: "unsafe",
+          feedback:
+            "NSAIDs worsen acute kidney injury and add bleeding risk on apixaban. In an 89 year old with rhabdomyolysis and a creatinine of 148 they should be avoided.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-morphine",
+      phase: "Three hours later",
+      text: "He is drowsy and picking at the sheets. His respiratory rate is 10. His 4AT is now 6. You give naloxone 0.04 mg IV and ask for a fascia iliaca block.",
+      next: "q-anticoag",
+    },
+    {
+      kind: "say",
+      id: "s-ketorolac",
+      phase: "Pharmacy review",
+      text: "The pharmacist calls about the ketorolac given his creatinine and the apixaban. You cancel it and arrange a fascia iliaca block.",
+      next: "q-anticoag",
+    },
+    {
+      kind: "question",
+      id: "q-anticoag",
+      phase: "Anticoagulation and timing",
+      prompt: "The orthopaedic surgeon asks: 'Can you reverse the apixaban so we can fix him this afternoon?' What is your plan?",
+      seconds: 90,
+      modelAnswer: [
+        "Hold apixaban. Do not bridge with heparin.",
+        "Routine reversal just to speed surgery is not recommended. Reversal is for life threatening bleeding.",
+        "His creatinine clearance is about 25 mL/min, which slows apixaban clearance.",
+        "Hip fracture surgery is urgent, not elective. Many centres operate under general anesthesia about 24 to 48 hours after the last apixaban dose, sooner if a drug specific anti Xa level is low. Timing is a joint decision with anesthesia.",
+        "Neuraxial anesthesia needs a longer interval, about 72 hours after apixaban under ASRA guidance, unless a level shows little drug.",
+        "Aim for surgery within 48 hours of arrival. Delay beyond that increases mortality.",
+      ],
+      rubric: ["hip-m2", "hip-c1"],
+      choices: [
+        {
+          id: "c-hold",
+          label: "I held apixaban without bridging or reversal, gave the last dose time and his creatinine clearance to orthopaedics and anesthesia, and agreed on surgery within about 48 hours.",
+          next: "s-bleed",
+          quality: "strong",
+          feedback:
+            "Correct. Clear information about the last dose and renal function lets anesthesia choose the technique and timing. Surgery within 48 hours is the quality target.",
+        },
+        {
+          id: "c-pcc",
+          label: "I gave prothrombin complex concentrate 2,000 units so he could go to the OR this afternoon.",
+          next: "s-pcc",
+          quality: "partial",
+          feedback:
+            "Routine reversal just to speed surgery is not recommended. PCC carries a thrombotic risk and is not a specific antidote to factor Xa inhibitors. Save it for life threatening bleeding.",
+        },
+        {
+          id: "c-bridge",
+          label: "I held apixaban and started enoxaparin 1 mg/kg twice daily to bridge until surgery.",
+          next: "s-bridge",
+          quality: "unsafe",
+          feedback:
+            "DOACs do not need bridging because they wear off quickly. Full dose enoxaparin with a creatinine clearance near 25 mL/min will accumulate and raise bleeding risk. It also delays surgery.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-pcc",
+      phase: "Anesthesia calls",
+      text: "The anesthesiologist says she will not do a spinal after a DOAC dose 17 hours ago even with PCC. The OR slot is moved to tomorrow evening. The PCC exposure stays in his chart.",
+      next: "s-bleed",
+    },
+    {
+      kind: "say",
+      id: "s-bridge",
+      phase: "Pharmacy review",
+      text: "The pharmacist calls about the enoxaparin. You cancel the order before the first dose.",
+      next: "s-bleed",
+    },
+    {
+      kind: "say",
+      id: "s-bleed",
+      phase: "13:00",
+      text:
+        "He is still in the department waiting for a bed. The nurse calls you. His pressure is 92/54 and his heart rate 112. His right thigh is much more swollen. Repeat hemoglobin is 94 g/L, down from 121. Lactate 2.8 mmol/L.",
+      next: "q-bleed",
+    },
+    {
+      kind: "question",
+      id: "q-bleed",
+      phase: "Deterioration",
+      prompt: "What is happening and what do you do?",
+      seconds: 90,
+      modelAnswer: [
+        "Hemorrhage into the thigh from the intertrochanteric fracture, worsened by apixaban.",
+        "Look for other sources. GI bleed, retroperitoneal bleed, a missed injury.",
+        "Transfuse packed red cells now because he is symptomatic and hypotensive. Reassess after each unit.",
+        "This is now a major bleed. If hypotension persists despite blood, treat it as life threatening and give PCC 2,000 units IV, about 25 to 50 units/kg. Andexanet is not routinely available in Canada.",
+        "Hold metoprolol and furosemide. Splint the leg with traction or a pillow.",
+        "Tell orthopaedics. Surgery may need to move up once resuscitated.",
+      ],
+      rubric: ["hip-r1", "hip-m3"],
+      choices: [
+        {
+          id: "c-transfuse",
+          label: "I transfused one unit of red cells and reassessed, looked for other bleeding sources, held his metoprolol, discussed PCC for a major bleed and called orthopaedics.",
+          next: "q-goals",
+          quality: "strong",
+          feedback:
+            "Correct. A drop of 27 g/L with hypotension meets criteria for major bleeding. Transfusion is guided by symptoms. PCC becomes reasonable if he stays unstable despite blood, because the bleed is then life threatening.",
+        },
+        {
+          id: "c-crystalloid",
+          label: "I gave 2 L of normal saline and repeated the hemoglobin in 4 hours.",
+          next: "s-crystalloid",
+          quality: "partial",
+          feedback:
+            "Large crystalloid volumes dilute his clotting factors and risk pulmonary edema with his heart failure. He is bleeding. He needs blood and a source assessment.",
+        },
+        {
+          id: "c-metoprolol",
+          label: "I gave his usual metoprolol 50 mg because his heart rate was 112 in atrial fibrillation.",
+          next: "s-metoprolol",
+          quality: "unsafe",
+          feedback:
+            "The tachycardia is compensation for blood loss. Rate control will remove that compensation and drop his pressure. Treat the cause.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-crystalloid",
+      phase: "Two hours later",
+      text: "He is short of breath with crackles at both bases. Hemoglobin is 82 g/L. You give furosemide cautiously and transfuse a unit of red cells.",
+      next: "q-goals",
+    },
+    {
+      kind: "say",
+      id: "s-metoprolol",
+      phase: "Forty minutes later",
+      text: "His pressure is 74/40. He is confused. You give a unit of red cells and hold further metoprolol. His pressure recovers to 104/60.",
+      next: "q-goals",
+    },
+    {
+      kind: "question",
+      id: "q-goals",
+      phase: "Family",
+      prompt: "His daughter asks whether surgery is worth it at 89. What do you tell her?",
+      seconds: 60,
+      modelAnswer: [
+        "Surgery is the best way to control pain and give him a chance to walk again, even in frail patients.",
+        "Non operative care means severe pain, immobility, pressure injuries and pneumonia.",
+        "Be honest. About 1 in 4 older adults die within a year of hip fracture. Delirium is common after surgery.",
+        "His stated values favour treatment that keeps him independent.",
+        "Discuss code status and goals now, with him while he has capacity.",
+      ],
+      rubric: ["hip-c2", "hip-p1"],
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition and prevention",
+      prompt: "What does his admission plan need to include, and what should change so this does not happen again?",
+      seconds: 60,
+      modelAnswer: [
+        "Admit to orthopaedics with medicine or geriatric co management. Surgery within 48 hours.",
+        "Delirium prevention. Pressure injury care. Renal monitoring for the rhabdomyolysis.",
+        "VTE prophylaxis after surgery and resume anticoagulation when bleeding risk allows.",
+        "His apixaban dose should be 2.5 mg twice daily. He meets two of the three criteria: age 80 or over and weight 60 kg or less. His baseline creatinine of 110 µmol/L is below 133, and today's value reflects acute kidney injury.",
+        "Review tamsulosin, furosemide and metoprolol for orthostatic hypotension.",
+        "Falls assessment, bone health treatment and a medical alert device.",
+      ],
+      rubric: ["hip-d1", "hip-l1"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text:
+        "He has an intramedullary nail 44 hours after his last apixaban dose. He has 2 days of delirium after surgery and goes to rehabilitation on day 8. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "hip-a1",
+      competency: "assessment",
+      text: "Orders CT head because the Canadian CT Head Rule excludes anticoagulated patients and age 65 or over is high risk.",
+      points: 3,
+      critical: true,
+      teaching: "Anticoagulated patients were excluded from the Canadian CT Head Rule derivation. Age 65 or over is one of its high risk criteria.",
+      source: "cchr",
+    },
+    {
+      id: "hip-a2",
+      competency: "assessment",
+      text: "Images the cervical spine because age 65 or over is a high risk factor in the Canadian C Spine Rule.",
+      points: 1,
+      teaching: "Older adults can fracture the upper cervical spine in a fall from standing. The rule does not allow clinical clearance at age 65 or over.",
+      source: "ccsr",
+    },
+    {
+      id: "hip-a3",
+      competency: "assessment",
+      text: "Identifies orthostatic hypotension from tamsulosin, furosemide and metoprolol as the likely cause of the fall and looks for arrhythmia.",
+      points: 2,
+      teaching: "A fall is a symptom. New alpha blockers commonly cause orthostatic hypotension in older adults. A medication review is part of falls prevention after a fragility fracture.",
+      source: "hqo",
+    },
+    {
+      id: "hip-m1",
+      competency: "management",
+      text: "Provides a fascia iliaca block, scheduled acetaminophen and low dose opioid for breakthrough, and avoids NSAIDs.",
+      points: 2,
+      teaching: "Peripheral nerve blocks reduce pain on movement, opioid needs and delirium in hip fracture.",
+      source: "guay",
+    },
+    {
+      id: "hip-m2",
+      competency: "management",
+      text: "Holds apixaban without bridging or routine reversal and plans surgery timing with orthopaedics and anesthesia.",
+      points: 3,
+      critical: true,
+      teaching: "DOACs do not need bridging. Reversal is for life threatening bleeding, not to speed a scheduled operation.",
+      source: "thrombosis-canada",
+    },
+    {
+      id: "hip-m3",
+      competency: "management",
+      text: "Recognizes a major bleed and gives PCC, usually 2,000 units IV, if the bleed becomes life threatening or is not controlled.",
+      points: 2,
+      teaching: "A hemoglobin drop of 20 g/L or more or hemodynamic instability defines a major bleed. PCC supports hemostasis but does not reverse the drug. Thrombosis Canada reserves it for life threatening or uncontrolled bleeding.",
+      source: "thrombosis-canada",
+    },
+    {
+      id: "hip-m4",
+      competency: "management",
+      text: "Manages long lie complications: rhabdomyolysis, kidney injury, hypothermia, pressure injury and dehydration.",
+      points: 2,
+      teaching: "A long lie adds rhabdomyolysis, pressure injury and hypothermia to the fracture. Each worsens outcomes.",
+      source: "hqo",
+    },
+    {
+      id: "hip-r1",
+      competency: "resuscitation",
+      text: "Transfuses red cells for symptomatic anemia with hypotension, looks for other sources and avoids rate control of compensatory tachycardia.",
+      points: 3,
+      critical: true,
+      teaching: "In older adults with hip fracture a threshold of 80 g/L or symptoms is appropriate. Tachycardia in bleeding is compensation, not the problem.",
+      source: "focus",
+    },
+    {
+      id: "hip-c1",
+      competency: "communication",
+      text: "Gives orthopaedics and anesthesia the last dose time and creatinine clearance to plan surgery.",
+      points: 1,
+      teaching: "Timing depends on the drug, the last dose and renal function. Clear information prevents cancelled OR slots.",
+      source: "thrombosis-canada",
+    },
+    {
+      id: "hip-c2",
+      competency: "communication",
+      text: "Discusses benefits and risks of surgery honestly with the patient and daughter, including mortality and delirium.",
+      points: 1,
+      teaching: "Surgery is usually the best pain control even in frail patients. One year mortality after hip fracture is about 20 to 30 percent.",
+      source: "hqo",
+    },
+    {
+      id: "hip-p1",
+      competency: "professionalism",
+      text: "Involves the patient in decisions while he has capacity and confirms code status.",
+      points: 1,
+      teaching: "Ask the patient first. Goals of care talks are best held before a crisis.",
+      source: "hqo",
+    },
+    {
+      id: "hip-d1",
+      competency: "disposition",
+      text: "Admits with co management, surgery within 48 hours, delirium and pressure injury prevention.",
+      points: 2,
+      teaching: "Surgery within 48 hours of arrival is an Ontario quality standard for hip fracture.",
+      source: "hqo",
+    },
+    {
+      id: "hip-l1",
+      competency: "leadership",
+      text: "Flags the apixaban dose error and the medications behind the fall for medication review, and recommends falls and bone health follow up.",
+      points: 1,
+      teaching: "Apixaban 2.5 mg twice daily is used when two of three criteria are met: age 80 or over, weight 60 kg or less, creatinine 133 µmol/L or more.",
+      source: "thrombosis-canada",
+    },
+  ],
+  sources: [
+    {
+      id: "cchr",
+      citation: "Stiell IG et al. The Canadian CT Head Rule for patients with minor head injury. Lancet. 2001.",
+    },
+    {
+      id: "ccsr",
+      citation: "Stiell IG et al. The Canadian C Spine Rule for radiography in alert and stable trauma patients. JAMA. 2001.",
+    },
+    {
+      id: "thrombosis-canada",
+      citation: "Thrombosis Canada. Clinical guides on perioperative management and bleeding management of direct oral anticoagulants.",
+    },
+    {
+      id: "guay",
+      citation: "Guay J, Kopp S. Peripheral nerve blocks for hip fractures in adults. Cochrane Database of Systematic Reviews. 2020.",
+    },
+    {
+      id: "focus",
+      citation: "Carson JL et al. Liberal or restrictive transfusion in high risk patients after hip surgery (FOCUS). New England Journal of Medicine. 2011.",
+    },
+    {
+      id: "hqo",
+      citation: "Ontario Health. Hip fracture. Care for people with fragility fractures. Quality standard. 2024.",
+      url: "https://ontariohealth.ca/evidence-to-improve-care/quality-standards/view-all-quality-standards/hip-fracture",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

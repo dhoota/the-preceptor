@@ -1,0 +1,474 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const myasthenicCrisisAirway: OralCase = {
+  id: "myasthenic-crisis-airway",
+  title: "Tired, choking and short of breath",
+  blueprint: "neuro",
+  alsoCovers: ["resp", "resus"],
+  summary: "A 58 year old woman with a known neuromuscular condition is breathless and struggling to swallow after a chest infection.",
+  durationMinutes: 15,
+  stem:
+    "You are working at a 160 bed regional hospital in Saskatchewan. There is an ICU, anesthesia on call from home and a respiratory therapist in house. " +
+    "Neurology is available by phone from the tertiary centre 2.5 hours away. " +
+    "Sandra Novak is 58 years old. She has generalized acetylcholine receptor antibody positive myasthenia gravis diagnosed 6 years ago. " +
+    "She takes pyridostigmine 60 mg four times a day and prednisone 10 mg daily. " +
+    "She had a cough for 5 days and a walk in clinic prescribed levofloxacin 3 days ago. " +
+    "Triage vitals: heart rate 108, blood pressure 138/82, respiratory rate 28 and shallow, SpO2 95 percent on room air, temperature 37.8. Weight 68 kg. " +
+    "The triage nurse says: 'Her sats are fine, but she sounds nasal and keeps spitting into a basin. She says she cannot lie flat.'",
+  findings: [
+    {
+      id: "bulbar",
+      label: "Bulbar and ocular exam",
+      result:
+        "Bilateral ptosis worse after 30 seconds of upgaze. Diplopia on lateral gaze. Nasal speech. Pooled saliva in the mouth. Weak cough. She chokes on a sip of water.",
+    },
+    {
+      id: "limbs",
+      label: "Neck and limb strength",
+      result: "Neck flexion 3 out of 5. Shoulder abduction 4 out of 5 and fatigable. Hip flexion 4 out of 5. Reflexes normal. Sensation normal.",
+    },
+    {
+      id: "resp",
+      label: "Respiratory exam",
+      result:
+        "Rapid shallow breathing. Accessory muscle use. Paradoxical inward abdominal movement on inspiration when supine. Coarse crackles at the right base. Single breath count to 11.",
+    },
+    {
+      id: "bedside-pft",
+      label: "Bedside spirometry",
+      result:
+        "Forced vital capacity 1.05 L, about 15 mL/kg. Negative inspiratory force minus 18 cmH2O. Her clinic FVC 4 months ago was 2.9 L. The mouthpiece seal is poor because of facial weakness.",
+    },
+    {
+      id: "vbg",
+      label: "Venous blood gas",
+      result: "pH 7.31. pCO2 56 mmHg. HCO3 28 mmol/L. Lactate 1.6 mmol/L.",
+    },
+    {
+      id: "cholinergic",
+      label: "Cholinergic screen",
+      result:
+        "She took an extra pyridostigmine dose this morning, 5 doses so far today. Pupils 4 mm and reactive. No fasciculations. No diarrhea or abdominal cramps. Heart rate 108. Secretions are pooled saliva, not bronchorrhea.",
+    },
+    {
+      id: "cxr",
+      label: "Chest X ray",
+      result: "Right lower lobe consolidation. Elevated right hemidiaphragm. No effusion. No thymoma visible.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "WBC 13.8 x 10^9/L. Hemoglobin 128 g/L. Sodium 138 mmol/L. Potassium 3.9 mmol/L. Magnesium 0.82 mmol/L. Phosphate 0.98 mmol/L. " +
+        "Creatinine 72 µmol/L. Glucose 9.1 mmol/L. TSH 1.9 mU/L. Procalcitonin 1.4 µg/L.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Sinus tachycardia at 108. QTc 486 ms. No ischemic changes.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the acute area",
+      text: "She is sitting bolt upright and speaks in short phrases. She wipes saliva from her chin. Her SpO2 reads 95 percent.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "Assessment",
+      prompt: "How do you assess her breathing? What tells you how close she is to failure?",
+      seconds: 75,
+      modelAnswer: [
+        "Pulse oximetry and early blood gases are late markers in neuromuscular failure.",
+        "Bedside forced vital capacity and negative inspiratory force. Single breath count.",
+        "Look for bulbar weakness, pooled secretions, weak cough, neck flexion weakness and paradoxical breathing.",
+        "The 20 30 40 rule. FVC under 20 mL/kg, NIF weaker than minus 30 cmH2O, or expiratory pressure under 40 cmH2O predicts need for ventilation.",
+        "Trend repeated measurements every 1 to 2 hours if she is not intubated.",
+      ],
+      rubric: ["mg-a1", "mg-a2"],
+      choices: [
+        {
+          id: "c-pft",
+          label: "I measured bedside FVC and NIF, counted a single breath, examined neck flexion and bulbar function, and called anesthesia and the RT.",
+          next: "q-cholinergic",
+          quality: "strong",
+          feedback:
+            "Correct. FVC of 15 mL/kg and NIF of minus 18 are both beyond the 20 30 40 thresholds. Neck flexion weakness tracks diaphragm weakness. Calling for airway help early is right.",
+        },
+        {
+          id: "c-abg",
+          label: "I sent an arterial blood gas and decided on intubation based on the pCO2.",
+          next: "s-abg",
+          quality: "partial",
+          feedback:
+            "Hypercapnia is a late sign in neuromuscular failure. By the time the pCO2 climbs the patient may be close to arrest. Bedside FVC and NIF give earlier warning.",
+        },
+        {
+          id: "c-sats-fine",
+          label: "Her sats are 95 percent so I put her on nasal prongs and planned to reassess in an hour.",
+          next: "s-sats-fine",
+          quality: "unsafe",
+          feedback:
+            "Normal oxygen saturation is falsely reassuring in neuromuscular weakness. Supplemental oxygen can hide hypoventilation. This patient has several signs of imminent failure.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-abg",
+      phase: "Twenty minutes later",
+      text: "The ABG shows pH 7.30 and pCO2 57. The RT does bedside spirometry while you wait. FVC is 1.0 L and NIF is minus 17 cmH2O.",
+      next: "q-cholinergic",
+    },
+    {
+      kind: "say",
+      id: "s-sats-fine",
+      phase: "Forty minutes later",
+      text: "The nurse calls you urgently. Mrs Novak is drowsy. SpO2 is 97 percent on 3 L. Her respiratory rate is 34. A VBG shows pCO2 68. The RT measures FVC 0.8 L.",
+      next: "q-cholinergic",
+    },
+    {
+      kind: "question",
+      id: "q-cholinergic",
+      phase: "Differential",
+      prompt: "She took an extra pyridostigmine dose today. Is this myasthenic crisis or cholinergic crisis? Why does it matter?",
+      seconds: 60,
+      modelAnswer: [
+        "Myasthenic crisis is far more common. Triggers here are infection and a fluoroquinolone.",
+        "Cholinergic excess causes miosis, fasciculations, diarrhea, bradycardia, sweating and bronchorrhea. She has none of these.",
+        "Both can cause weakness and respiratory failure. The airway plan is the same.",
+        "Stop pyridostigmine once intubated. It increases secretions and is not needed while ventilated.",
+        "Edrophonium testing is no longer used.",
+      ],
+      rubric: ["mg-a3"],
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway decision",
+      prompt: "The RT suggests a trial of BiPAP. What do you decide?",
+      seconds: 60,
+      modelAnswer: [
+        "Intubate now in a controlled setting.",
+        "BiPAP can work in myasthenic crisis without significant bulbar weakness and before severe hypercapnia.",
+        "She has pooled secretions, a weak cough, aspiration risk and pneumonia. Those predict BiPAP failure.",
+        "Crash intubation later is more dangerous than a planned one now.",
+      ],
+      rubric: ["mg-r1"],
+      choices: [
+        {
+          id: "c-intubate",
+          label: "I decided to intubate now because of bulbar weakness, pooled secretions and pneumonia, and set up for a planned intubation.",
+          next: "q-rsi",
+          quality: "strong",
+          feedback:
+            "Correct. Bulbar dysfunction with secretions is the main reason BiPAP fails in myasthenic crisis. A controlled intubation now is safer than an emergent one.",
+        },
+        {
+          id: "c-bipap",
+          label: "I started BiPAP at 12 over 6 and planned to reassess in an hour.",
+          next: "s-bipap",
+          quality: "partial",
+          feedback:
+            "BiPAP is a reasonable option in selected patients without bulbar weakness. This patient cannot clear her secretions and is aspirating. She is likely to fail, and failure will be sudden.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-bipap",
+      phase: "Thirty minutes later",
+      text: "She coughs and gags into the mask. The RT removes it and suctions a large volume of saliva. SpO2 drops to 84 percent. You set up for immediate intubation.",
+      next: "q-rsi",
+    },
+    {
+      kind: "question",
+      id: "q-rsi",
+      phase: "Intubation",
+      prompt: "Walk me through your induction and paralytic choice. What is different in myasthenia?",
+      seconds: 90,
+      modelAnswer: [
+        "Preoxygenate sitting up. Suction ready. Video laryngoscope. Most experienced operator.",
+        "Induction with ketamine 1 to 1.5 mg/kg or etomidate 0.3 mg/kg. Propofol at a reduced dose if hemodynamics allow.",
+        "Succinylcholine is unreliable. Fewer receptors mean resistance, often needing about 1.5 to 2 mg/kg. Pyridostigmine also slows its breakdown, so the block can be prolonged.",
+        "Rocuronium is preferred. Patients are very sensitive to non depolarizing agents. A standard RSI dose of 1 mg/kg gives reliable conditions but expect a long block. Anesthesia may choose a lower dose in a planned setting.",
+        "Have sugammadex available.",
+        "Do not give neostigmine or extra pyridostigmine before induction.",
+      ],
+      rubric: ["mg-r2"],
+      choices: [
+        {
+          id: "c-roc",
+          label: "I used ketamine 80 mg and rocuronium 70 mg, expecting a prolonged block, with sugammadex in the room.",
+          next: "s-post-intubation",
+          quality: "strong",
+          feedback:
+            "Correct. Rocuronium gives predictable intubating conditions. Prolonged paralysis matters little because she will be ventilated, and sugammadex can reverse it if needed.",
+        },
+        {
+          id: "c-sux",
+          label: "I used etomidate and succinylcholine 1 mg/kg as for any RSI.",
+          next: "s-sux",
+          quality: "partial",
+          feedback:
+            "Fewer acetylcholine receptors make these patients resistant to succinylcholine. A 1 mg/kg dose may not give adequate relaxation, and pyridostigmine can prolong the block unpredictably. Rocuronium is the more reliable choice.",
+        },
+        {
+          id: "c-neostigmine",
+          label: "I gave neostigmine to strengthen her before induction, then used succinylcholine.",
+          next: "s-neostigmine",
+          quality: "unsafe",
+          feedback:
+            "Neostigmine increases secretions and bradycardia and prolongs succinylcholine's action unpredictably. It also risks cholinergic weakness. It has no place before an emergency intubation.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-sux",
+      phase: "At laryngoscopy",
+      text: "Her jaw is still tight and the cords are moving. SpO2 drops to 86 percent. You bag her, give rocuronium 1 mg/kg and intubate on the second attempt.",
+      next: "s-post-intubation",
+    },
+    {
+      kind: "say",
+      id: "s-neostigmine",
+      phase: "At laryngoscopy",
+      text: "Her secretions pour out and her heart rate falls to 48. The view is poor. After suctioning and atropine you intubate on the second attempt.",
+      next: "s-post-intubation",
+    },
+    {
+      kind: "say",
+      id: "s-post-intubation",
+      phase: "Ten minutes after intubation",
+      text:
+        "Tube position is confirmed with waveform capnography. On propofol sedation her pressure is 82/50 and heart rate 124. Peak pressure 24 cmH2O. Equal breath sounds. The nurse asks what antibiotics you want for the pneumonia.",
+      next: "q-shock-abx",
+    },
+    {
+      kind: "question",
+      id: "q-shock-abx",
+      phase: "Hypotension and antibiotics",
+      prompt: "Manage her hypotension. Which antibiotics do you choose for her pneumonia?",
+      seconds: 90,
+      modelAnswer: [
+        "Look for tube problems, pneumothorax and breath stacking. Reduce propofol.",
+        "Fluid bolus 500 mL crystalloid. Start norepinephrine if MAP stays under 65.",
+        "She takes chronic prednisone. Consider hydrocortisone 100 mg IV for possible adrenal insufficiency.",
+        "Stop levofloxacin. Fluoroquinolones worsen myasthenia.",
+        "Avoid macrolides and aminoglycosides. Both worsen neuromuscular transmission.",
+        "Ceftriaxone 1 to 2 g IV plus doxycycline 100 mg IV or orally every 12 hours for atypical cover, with cultures first.",
+        "Doxycycline has rare case reports of worsening myasthenia but is usually the lowest risk atypical option. Discuss with pharmacy or infectious diseases because this is now severe pneumonia.",
+      ],
+      rubric: ["mg-m1", "mg-m3", "mg-r3"],
+      choices: [
+        {
+          id: "c-abx-safe",
+          label: "I gave fluid, reduced the propofol, gave hydrocortisone 100 mg IV, stopped the levofloxacin and started ceftriaxone 2 g IV plus doxycycline 100 mg.",
+          next: "q-specific",
+          quality: "strong",
+          feedback:
+            "Correct. Stopping the fluoroquinolone removes a trigger. Ceftriaxone with doxycycline avoids the drug classes with the strongest warnings in myasthenia. Stress dose steroid is sensible on chronic prednisone with hypotension.",
+        },
+        {
+          id: "c-abx-azithro",
+          label: "I started ceftriaxone and azithromycin as per the pneumonia order set.",
+          next: "s-abx-azithro",
+          quality: "partial",
+          feedback:
+            "The order set is written for the general population. Macrolides can worsen myasthenia and have warnings for this. Doxycycline is a safer atypical option here.",
+        },
+        {
+          id: "c-abx-gent",
+          label: "I continued the levofloxacin and added gentamicin for broader cover.",
+          next: "s-abx-gent",
+          quality: "unsafe",
+          feedback:
+            "Both drugs impair neuromuscular transmission and can worsen the crisis and prolong ventilation. The fluoroquinolone is likely one of the triggers. Stop it and choose a safer regimen.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-abx-azithro",
+      phase: "Pharmacy review",
+      text: "The pharmacist flags the azithromycin because of myasthenia. You change it to doxycycline 100 mg IV every 12 hours and stop the levofloxacin.",
+      next: "q-specific",
+    },
+    {
+      kind: "say",
+      id: "s-abx-gent",
+      phase: "Pharmacy review",
+      text: "The ICU pharmacist refuses to release the gentamicin and flags the levofloxacin. You change to ceftriaxone and doxycycline.",
+      next: "q-specific",
+    },
+    {
+      kind: "question",
+      id: "q-specific",
+      phase: "Disease specific treatment",
+      prompt: "The neurologist is on the phone. What disease specific treatment will you discuss?",
+      seconds: 60,
+      modelAnswer: [
+        "IVIG 2 g/kg total, which is 136 g, divided over 2 to 5 days. Or plasma exchange, usually 5 exchanges.",
+        "Plasma exchange may act faster. Choice depends on local access, hemodynamics and line access.",
+        "Hold pyridostigmine while ventilated.",
+        "Continue her prednisone. High dose steroid escalation is guided by neurology and can cause early worsening.",
+        "Check IgA level before IVIG if possible, but do not delay treatment.",
+      ],
+      rubric: ["mg-m2"],
+      next: "q-family",
+    },
+    {
+      kind: "question",
+      id: "q-family",
+      phase: "Family and disposition",
+      prompt: "Her husband asks if the antibiotic from the clinic caused this. Where does she go and what do you tell him?",
+      seconds: 60,
+      modelAnswer: [
+        "ICU admission. Discuss transfer to the tertiary centre for plasma exchange if not available locally.",
+        "Explain crisis triggered by the chest infection, with the antibiotic a possible contributor.",
+        "Be factual without blaming the clinic physician.",
+        "Add fluoroquinolones, macrolides and aminoglycosides to her chart as drugs to avoid.",
+        "Give the prescriber collegial feedback.",
+      ],
+      rubric: ["mg-c1", "mg-d1", "mg-p1"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "She is admitted to ICU and receives IVIG. She is extubated on day 6 after her NIF improves to minus 40 cmH2O. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "mg-a1",
+      competency: "assessment",
+      text: "Uses bedside FVC and NIF, not SpO2, to judge respiratory muscle failure.",
+      points: 3,
+      critical: true,
+      teaching: "Oxygen saturation stays normal until late in neuromuscular failure. FVC under 20 mL/kg or NIF weaker than minus 30 cmH2O signals danger. The 20 30 40 rule comes from Guillain Barré data and is widely applied to myasthenia.",
+      source: "lawn",
+    },
+    {
+      id: "mg-a2",
+      competency: "assessment",
+      text: "Examines bulbar function, neck flexion and paradoxical breathing as markers of imminent failure.",
+      points: 1,
+      teaching: "Neck flexor weakness parallels diaphragm weakness. Pooled secretions and a weak cough predict aspiration and BiPAP failure.",
+      source: "sanders-2016",
+    },
+    {
+      id: "mg-a3",
+      competency: "assessment",
+      text: "Distinguishes myasthenic from cholinergic crisis by clinical features.",
+      points: 1,
+      teaching: "Cholinergic crisis is rare at usual doses. Miosis, fasciculations, diarrhea, bradycardia and bronchorrhea suggest it.",
+      source: "sanders-2016",
+    },
+    {
+      id: "mg-r1",
+      competency: "resuscitation",
+      text: "Chooses early controlled intubation over BiPAP because of bulbar weakness, secretions and pneumonia.",
+      points: 3,
+      critical: true,
+      teaching: "BiPAP may avoid intubation in selected patients but fails in those who cannot protect their airway. Plan before the crash.",
+      source: "sanders-2016",
+    },
+    {
+      id: "mg-r2",
+      competency: "resuscitation",
+      text: "Uses rocuronium rather than succinylcholine, anticipates prolonged block and has sugammadex available.",
+      points: 2,
+      teaching: "Myasthenic patients resist succinylcholine and are sensitive to non depolarizing agents. Rocuronium with sugammadex backup is predictable.",
+      source: "sanders-2016",
+    },
+    {
+      id: "mg-r3",
+      competency: "resuscitation",
+      text: "Manages post intubation hypotension with a structured approach and considers stress dose hydrocortisone on chronic prednisone.",
+      points: 1,
+      teaching: "Check the tube, pneumothorax and breath stacking. Chronic steroid users may need hydrocortisone 100 mg IV when shocked.",
+      source: "narayanaswami-2021",
+    },
+    {
+      id: "mg-m1",
+      competency: "management",
+      text: "Stops the fluoroquinolone and avoids macrolides, aminoglycosides and magnesium when treating pneumonia.",
+      points: 3,
+      critical: true,
+      teaching: "Many drugs worsen myasthenia. Fluoroquinolones, macrolides and aminoglycosides are among the most important to avoid in crisis.",
+      source: "narayanaswami-2021",
+    },
+    {
+      id: "mg-m2",
+      competency: "management",
+      text: "Discusses IVIG 2 g/kg over 2 to 5 days or plasma exchange with neurology and holds pyridostigmine while ventilated.",
+      points: 2,
+      teaching: "IVIG and plasma exchange are both effective in crisis. Pyridostigmine adds secretions without benefit while the patient is ventilated.",
+      source: "sanders-2016",
+    },
+    {
+      id: "mg-m3",
+      competency: "management",
+      text: "Treats community acquired pneumonia with cultures, ceftriaxone and a safe atypical agent.",
+      points: 1,
+      teaching: "Infection is the most common trigger of crisis. Ceftriaxone with doxycycline covers typical and atypical organisms. Tetracyclines have only rare reports of worsening myasthenia, far fewer than macrolides and fluoroquinolones.",
+      source: "ats-cap",
+    },
+    {
+      id: "mg-c1",
+      competency: "communication",
+      text: "Explains the trigger to the husband factually without blaming the prescriber.",
+      points: 1,
+      teaching: "Explain what happened without speculation or blame. The trigger is usually multifactorial.",
+      source: "narayanaswami-2021",
+    },
+    {
+      id: "mg-d1",
+      competency: "disposition",
+      text: "Admits to ICU and arranges transfer if plasma exchange or neurology care is not available locally.",
+      points: 1,
+      teaching: "Myasthenic crisis needs ICU care and neurology input. Plasma exchange is only available at some centres.",
+      source: "sanders-2016",
+    },
+    {
+      id: "mg-p1",
+      competency: "professionalism",
+      text: "Flags high risk drugs in her record and gives collegial feedback to the prescribing clinic.",
+      points: 1,
+      teaching: "A drug alert protects her at every future visit. Feedback to colleagues improves care without blame.",
+      source: "narayanaswami-2021",
+    },
+  ],
+  sources: [
+    {
+      id: "sanders-2016",
+      citation: "Sanders DB et al. International consensus guidance for management of myasthenia gravis. Neurology. 2016.",
+    },
+    {
+      id: "narayanaswami-2021",
+      citation: "Narayanaswami P et al. International consensus guidance for management of myasthenia gravis. 2020 update. Neurology. 2021.",
+    },
+    {
+      id: "lawn",
+      citation: "Lawn ND et al. Anticipating mechanical ventilation in Guillain Barré syndrome. Archives of Neurology. 2001.",
+    },
+    {
+      id: "ats-cap",
+      citation:
+        "Metlay JP et al. Diagnosis and treatment of adults with community acquired pneumonia. An official clinical practice guideline of the American Thoracic Society and Infectious Diseases Society of America. American Journal of Respiratory and Critical Care Medicine. 2019.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

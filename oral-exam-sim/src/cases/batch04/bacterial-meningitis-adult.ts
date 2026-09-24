@@ -1,0 +1,481 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const bacterialMeningitisAdult: OralCase = {
+  id: "bacterial-meningitis-adult",
+  title: "Fever and confusion after an earache",
+  blueprint: "neuro",
+  alsoCovers: ["id", "resus"],
+  summary: "A 57 year old man with several days of ear pain is now febrile and confused.",
+  durationMinutes: 15,
+  stem:
+    "You are working in the emergency department of a 300 bed hospital in Ottawa with CT around the clock, an ICU, and infectious diseases and ENT on call. " +
+    "Raymond Tremblay is 57 years old. He has had right ear pain for 4 days and a severe headache since yesterday. This morning his wife found him confused and hot. " +
+    "He has type 2 diabetes and drinks 3 to 4 beers a day. No known drug allergies. " +
+    "Triage vitals: heart rate 118, blood pressure 104/62, respiratory rate 24, SpO2 94 percent on room air, temperature 39.6, capillary glucose 14.2 mmol/L. GCS 13. Weight 90 kg. " +
+    "The triage nurse says: 'He is moaning and does not like the lights. He keeps asking where he is. His wife says their grandchildren stayed over on the weekend.'",
+  findings: [
+    {
+      id: "neuro",
+      label: "Neurological exam",
+      result:
+        "GCS 13, eyes open to voice, confused speech, obeys commands. Marked neck stiffness. Photophobia. Pupils 4 mm equal and reactive. " +
+        "No focal weakness. Plantars flexor. Fundi poorly seen. No seizure activity.",
+    },
+    {
+      id: "ent-skin",
+      label: "Ear and skin exam",
+      result: "Right tympanic membrane bulging and opaque with purulent fluid in the canal. Tender over the right mastoid. No rash. No petechiae. Capillary refill 3 seconds.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "WBC 22.4 x 10^9/L with 88 percent neutrophils. Hemoglobin 141 g/L. Platelets 142 x 10^9/L. INR 1.2. Sodium 131 mmol/L. Potassium 4.0 mmol/L. " +
+        "Creatinine 124 µmol/L. Glucose 13.8 mmol/L. Lactate 3.8 mmol/L. Procalcitonin 18 µg/L.",
+    },
+    {
+      id: "cultures",
+      label: "Blood cultures",
+      result: "Two sets drawn at 10:12 before antibiotics. At 18 hours both grow gram positive cocci in pairs and chains.",
+    },
+    {
+      id: "ct",
+      label: "CT head",
+      result: "Done at 10:45. No mass, hemorrhage, edema or hydrocephalus. Opacification of the right middle ear and mastoid air cells. No abscess.",
+    },
+    {
+      id: "csf",
+      label: "Lumbar puncture",
+      result:
+        "Opening pressure 36 cmH2O. Cloudy fluid. WBC 2,850 x 10^6/L with 94 percent neutrophils. RBC 12 x 10^6/L. Protein 3.4 g/L. " +
+        "Glucose 0.9 mmol/L with serum glucose 13.6 mmol/L. Gram stain shows many gram positive diplococci.",
+    },
+    {
+      id: "cxr",
+      label: "Chest X ray",
+      result: "No consolidation. No effusion.",
+    },
+    {
+      id: "wife",
+      label: "Collateral from his wife",
+      result:
+        "He saw nobody for the ear. He had pneumonia 2 years ago. He has had no vaccines since childhood as far as she knows. " +
+        "Their two grandchildren, aged 4 and 7, slept at the house on Saturday and Sunday.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Arrival",
+      text: "It is 10:05. He is in a resuscitation bay. He is restless, holding his head and shielding his eyes. His wife is at the bedside.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First fifteen minutes",
+      prompt: "What do you do in the first fifteen minutes? Do you need a CT before the lumbar puncture, and does that change antibiotic timing?",
+      seconds: 90,
+      modelAnswer: [
+        "Treat as bacterial meningitis with sepsis. Monitor, oxygen, two IVs.",
+        "Two sets of blood cultures now.",
+        "Dexamethasone and empiric antibiotics immediately, as soon as possible and within 1 hour of arrival.",
+        "CT before LP is indicated because of altered level of consciousness. Do not delay antibiotics for CT.",
+        "Droplet precautions until meningococcus is excluded or 24 hours of effective therapy.",
+        "Fluid resuscitation for hypotension and lactate 3.8.",
+      ],
+      rubric: ["men-a1", "men-m1", "men-r1"],
+      choices: [
+        {
+          id: "c-abx-first",
+          label: "I drew blood cultures, gave dexamethasone and empiric antibiotics within minutes, then sent him for CT before the LP.",
+          next: "q-regimen",
+          quality: "strong",
+          feedback:
+            "Correct. Altered consciousness is an indication for CT before LP. The CT must never delay antibiotics. CSF cultures may be less sensitive after antibiotics, but blood cultures and the Gram stain usually still give the answer.",
+        },
+        {
+          id: "c-ct-first",
+          label: "I sent him for CT, then did the LP, and started antibiotics once the CSF was obtained.",
+          next: "s-ct-first",
+          quality: "partial",
+          feedback:
+            "The sequence is right for the LP but wrong for the antibiotics. Delay in antibiotic therapy increases mortality in bacterial meningitis. Cultures, dexamethasone and antibiotics come before the scanner.",
+        },
+        {
+          id: "c-lp-now",
+          label: "I did the LP right away without a CT and held antibiotics until the Gram stain was back.",
+          next: "s-lp-now",
+          quality: "unsafe",
+          feedback:
+            "Two errors. His GCS of 13 is an indication for CT before LP to look for mass effect. Holding antibiotics for a Gram stain delays treatment of a disease where every hour counts.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ct-first",
+      phase: "Ninety minutes later",
+      text: "The CT was delayed behind a trauma patient. The LP is done at 11:35 and antibiotics start at 11:45, 100 minutes after arrival. His pressure is now 92/54.",
+      next: "q-regimen",
+    },
+    {
+      kind: "say",
+      id: "s-lp-now",
+      phase: "At the bedside",
+      text: "As you set up the tray, the nurse asks whether he needs antibiotics first given his confusion. You stop, draw blood cultures and start treatment. The CT is booked.",
+      next: "q-regimen",
+    },
+    {
+      kind: "question",
+      id: "q-regimen",
+      phase: "Empiric therapy",
+      prompt: "Tell me your exact empiric regimen and doses for this man.",
+      seconds: 75,
+      modelAnswer: [
+        "Dexamethasone 10 mg IV every 6 hours for 4 days, first dose before or with the first antibiotic.",
+        "Ceftriaxone 2 g IV every 12 hours.",
+        "Vancomycin for possible ceftriaxone resistant pneumococcus. A loading dose of about 20 to 35 mg/kg IV, about 2 g for 90 kg, then 15 to 20 mg/kg every 8 to 12 hours guided by levels and pharmacy.",
+        "Ampicillin 2 g IV every 4 hours to cover Listeria because he is over 50 and drinks daily.",
+        "Adjust once the organism and sensitivities are known.",
+      ],
+      rubric: ["men-m2", "men-m3"],
+      choices: [
+        {
+          id: "c-triple",
+          label: "Dexamethasone 10 mg IV, then ceftriaxone 2 g IV, vancomycin 2 g IV and ampicillin 2 g IV.",
+          next: "s-ct-lp",
+          quality: "strong",
+          feedback:
+            "Correct and complete. Ceftriaxone at meningitic dosing, vancomycin for resistant pneumococcus and ampicillin for Listeria because he is over 50 and has alcohol use. Dexamethasone first.",
+        },
+        {
+          id: "c-no-amp",
+          label: "Dexamethasone 10 mg IV, ceftriaxone 2 g IV and vancomycin 2 g IV.",
+          next: "s-no-amp",
+          quality: "partial",
+          feedback:
+            "Good regimen for a younger adult. At 57 with daily alcohol use he needs Listeria cover. Cephalosporins do not cover Listeria. Add ampicillin 2 g IV every 4 hours.",
+        },
+        {
+          id: "c-low-dose",
+          label: "Ceftriaxone 1 g IV once daily.",
+          next: "s-low-dose",
+          quality: "unsafe",
+          feedback:
+            "This is a pneumonia or urinary dose. Meningitis needs 2 g every 12 hours to get adequate CSF levels. It also leaves out resistant pneumococcus, Listeria and dexamethasone.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-no-amp",
+      phase: "Pharmacy review",
+      text: "The ED pharmacist checks the order and asks about Listeria cover given his age. You add ampicillin 2 g IV every 4 hours.",
+      next: "s-ct-lp",
+    },
+    {
+      kind: "say",
+      id: "s-low-dose",
+      phase: "Pharmacy review",
+      text: "The pharmacist questions the dose. You change to ceftriaxone 2 g IV every 12 hours, add vancomycin and ampicillin, and give dexamethasone 10 mg IV with the next dose.",
+      next: "s-ct-lp",
+    },
+    {
+      kind: "say",
+      id: "s-ct-lp",
+      phase: "Results",
+      text:
+        "CT head shows no mass effect. It shows right middle ear and mastoid opacification. The LP is done. Opening pressure is 36 cmH2O. The CSF is cloudy with WBC 2,850, 94 percent neutrophils, protein 3.4 g/L and glucose 0.9 mmol/L. Gram stain shows gram positive diplococci.",
+      next: "q-interpret",
+    },
+    {
+      kind: "question",
+      id: "q-interpret",
+      phase: "Interpretation",
+      prompt: "Interpret the CSF and the CT. What is the likely organism and source?",
+      seconds: 60,
+      modelAnswer: [
+        "Bacterial meningitis. Neutrophilic pleocytosis, high protein, CSF to serum glucose ratio under 0.4.",
+        "Gram positive diplococci means Streptococcus pneumoniae.",
+        "Source is right otitis media with mastoiditis.",
+        "Continue dexamethasone for 4 days because it benefits pneumococcal meningitis most.",
+        "ENT consult for source control such as myringotomy or mastoid surgery.",
+      ],
+      rubric: ["men-a2", "men-m4"],
+      next: "s-seizure",
+    },
+    {
+      kind: "say",
+      id: "s-seizure",
+      phase: "Back from CT",
+      text:
+        "He has a generalized tonic clonic seizure. It lasts 3 minutes and stops after lorazepam 4 mg IV. Afterward his GCS is 8. Pressure 78/40. Heart rate 132. Repeat lactate 5.1 mmol/L. He has had 1 L of Ringer's lactate.",
+      next: "q-shock",
+    },
+    {
+      kind: "question",
+      id: "q-shock",
+      phase: "Deterioration",
+      prompt: "Manage his seizure, airway and blood pressure.",
+      seconds: 90,
+      modelAnswer: [
+        "Load a second line antiseizure drug. Levetiracetam 60 mg/kg IV to a maximum of 4,500 mg.",
+        "Intubate for GCS 8 with a hemodynamically stable approach. Ketamine induction, reduced dose.",
+        "Crystalloid boluses toward 30 mL/kg while starting norepinephrine early to a MAP of 65 or more.",
+        "Norepinephrine can run peripherally in the short term.",
+        "Avoid rapid phenytoin in shock.",
+        "Recheck glucose and sodium. Keep glucose under 10 mmol/L.",
+      ],
+      rubric: ["men-r2", "men-r3"],
+      choices: [
+        {
+          id: "c-shock-strong",
+          label: "I loaded levetiracetam 4,500 mg IV, gave more crystalloid while starting norepinephrine to a MAP of 65, and intubated with ketamine once pressure was supported.",
+          next: "q-wife",
+          quality: "strong",
+          feedback:
+            "Correct. Levetiracetam does not drop the pressure. Early norepinephrine is recommended in septic shock rather than waiting for all the fluid. Supporting pressure before induction avoids peri intubation arrest.",
+        },
+        {
+          id: "c-fluids-only",
+          label: "I gave 4 more litres of crystalloid before thinking about vasopressors, then intubated with propofol.",
+          next: "s-fluids-only",
+          quality: "partial",
+          feedback:
+            "Fluid is needed but four more litres risks overload and cerebral edema. Norepinephrine should start early when the MAP stays low. Propofol at induction in shock often causes collapse.",
+        },
+        {
+          id: "c-phenytoin-fast",
+          label: "I gave phenytoin 20 mg/kg IV over 10 minutes and intubated with propofol.",
+          next: "s-phenytoin-fast",
+          quality: "unsafe",
+          feedback:
+            "Phenytoin must not run faster than 50 mg per minute. For 1,800 mg that is at least 36 minutes. Fast infusion in septic shock causes severe hypotension and arrhythmia. Propofol adds to the collapse.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-fluids-only",
+      phase: "At induction",
+      text: "After propofol his pressure falls to 58/30. You start push dose phenylephrine and a norepinephrine infusion. His MAP recovers to 68 after 5 minutes.",
+      next: "q-wife",
+    },
+    {
+      kind: "say",
+      id: "s-phenytoin-fast",
+      phase: "Five minutes later",
+      text: "His pressure falls to 56/28 and he develops a wide complex rhythm. The nurse stops the infusion. You give push dose phenylephrine and start norepinephrine. The rhythm settles.",
+      next: "q-wife",
+    },
+    {
+      kind: "question",
+      id: "q-wife",
+      phase: "Contacts",
+      prompt: "His wife asks whether she and her grandchildren need antibiotics. What do you tell her?",
+      seconds: 60,
+      modelAnswer: [
+        "The Gram stain shows pneumococcus. Close contacts of pneumococcal meningitis do not need antibiotic prophylaxis.",
+        "Chemoprophylaxis is for close contacts of meningococcal or Haemophilus influenzae type b disease.",
+        "Droplet precautions can stop once meningococcus is excluded.",
+        "Invasive pneumococcal disease is reportable to public health in Ontario.",
+        "Encourage age appropriate pneumococcal vaccination for family members as routine care.",
+      ],
+      rubric: ["men-c1", "men-p1"],
+      choices: [
+        {
+          id: "c-no-prophylaxis",
+          label: "I explained that pneumococcal meningitis does not need prophylaxis for contacts, reported the case to public health and suggested routine vaccine checks.",
+          next: "q-dispo",
+          quality: "strong",
+          feedback:
+            "Correct. Prophylaxis is not recommended for pneumococcal contacts. Reporting invasive pneumococcal disease meets your legal duty. Reassurance with a clear reason is what the family needs.",
+        },
+        {
+          id: "c-cipro-all",
+          label: "I prescribed ciprofloxacin for her and the grandchildren to be safe.",
+          next: "s-cipro-all",
+          quality: "partial",
+          feedback:
+            "Prophylaxis is not indicated for pneumococcal disease. It exposes children to adverse effects and adds to resistance. It would be right for meningococcal disease, which the Gram stain does not suggest.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-cipro-all",
+      phase: "Public health",
+      text: "The public health nurse calls back about the report. She confirms prophylaxis is not recommended for pneumococcal contacts. You call the wife and ask her not to fill the prescriptions.",
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition",
+      prompt: "Where does he go and what does the receiving team need to know?",
+      seconds: 60,
+      modelAnswer: [
+        "ICU admission. Intubated, on norepinephrine, post seizure.",
+        "Continue ceftriaxone, vancomycin, ampicillin and dexamethasone. Narrow once sensitivities return.",
+        "Stop ampicillin once pneumococcus is confirmed and Listeria excluded. Stop vancomycin once the isolate is ceftriaxone susceptible.",
+        "Offer him pneumococcal vaccine after recovery. Diabetes and alcohol use are indications.",
+        "ENT for source control of the mastoid. Infectious diseases consult.",
+        "EEG if he does not wake. Hearing assessment before discharge.",
+        "Update his wife honestly. Pneumococcal meningitis has significant mortality and long term deficits.",
+      ],
+      rubric: ["men-d1", "men-c2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text:
+        "He is admitted to ICU. Blood and CSF grow penicillin susceptible Streptococcus pneumoniae. ENT performs a mastoidectomy on day 2. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "men-a1",
+      competency: "assessment",
+      text: "Identifies altered consciousness as an indication for CT before LP.",
+      points: 1,
+      teaching: "IDSA indications include immunocompromise, known CNS disease, new seizure, papilledema, altered consciousness and focal deficits. ESCMID uses a GCS under 10 rather than any confusion. Neither rule should delay antibiotics.",
+      source: "tunkel",
+    },
+    {
+      id: "men-a2",
+      competency: "assessment",
+      text: "Interprets the CSF as bacterial meningitis and the Gram stain as pneumococcus, with otomastoiditis as the source.",
+      points: 2,
+      teaching: "A CSF to serum glucose ratio under 0.4 with neutrophils in the thousands is bacterial until proven otherwise. Otitis and sinusitis are classic pneumococcal sources.",
+      source: "escmid",
+    },
+    {
+      id: "men-r1",
+      competency: "resuscitation",
+      text: "Recognizes sepsis and begins fluid resuscitation with droplet precautions.",
+      points: 1,
+      teaching: "Hypotension and lactate over 2 mmol/L mean sepsis with hypoperfusion. Droplet precautions protect staff until meningococcus is excluded.",
+      source: "ssc",
+    },
+    {
+      id: "men-r2",
+      competency: "resuscitation",
+      text: "Starts norepinephrine early to a MAP of 65 or more rather than giving large fluid volumes alone.",
+      points: 2,
+      teaching: "Norepinephrine is first line in septic shock. Starting it early avoids fluid overload, which can worsen cerebral edema.",
+      source: "ssc",
+    },
+    {
+      id: "men-r3",
+      competency: "resuscitation",
+      text: "Loads a second line antiseizure drug and intubates for GCS 8 with a hemodynamically stable approach.",
+      points: 2,
+      teaching: "Seizures occur in about 1 in 5 adults with bacterial meningitis. Induction in shock needs pressure support first and a reduced dose agent.",
+      source: "escmid",
+    },
+    {
+      id: "men-m1",
+      competency: "management",
+      text: "Gives antibiotics and dexamethasone without waiting for CT or LP.",
+      points: 3,
+      critical: true,
+      teaching: "Antibiotic delay increases mortality. Blood cultures first, then treat, then image.",
+      source: "tunkel",
+    },
+    {
+      id: "men-m2",
+      competency: "management",
+      text: "Gives dexamethasone 10 mg IV every 6 hours for 4 days, first dose before or with the first antibiotic dose.",
+      points: 3,
+      critical: true,
+      teaching: "Dexamethasone reduced death and poor outcome in adult pneumococcal meningitis. It works best when given before or with the first antibiotic dose.",
+      source: "degans",
+    },
+    {
+      id: "men-m3",
+      competency: "management",
+      text: "Gives ceftriaxone 2 g IV every 12 hours, a vancomycin loading dose of about 20 to 35 mg/kg IV and ampicillin 2 g IV every 4 hours.",
+      points: 3,
+      critical: true,
+      teaching: "Adults over 50, or with alcohol use or immunocompromise, need Listeria cover with ampicillin. Vancomycin covers resistant pneumococcus.",
+      source: "tunkel",
+    },
+    {
+      id: "men-m4",
+      competency: "management",
+      text: "Arranges ENT for source control of otomastoiditis.",
+      points: 1,
+      teaching: "A persistent parameningeal focus can seed ongoing infection. Surgical drainage may be needed.",
+      source: "escmid",
+    },
+    {
+      id: "men-c1",
+      competency: "communication",
+      text: "Explains that pneumococcal contacts do not need prophylaxis and why.",
+      points: 1,
+      teaching: "Chemoprophylaxis is for close contacts of meningococcal and Hib disease only.",
+      source: "phac-men",
+    },
+    {
+      id: "men-c2",
+      competency: "communication",
+      text: "Gives the wife an honest update on severity, uncertainty and next steps.",
+      points: 1,
+      teaching: "Pneumococcal meningitis carries significant mortality and risk of hearing loss and cognitive deficits. Families need honest expectations.",
+      source: "escmid",
+    },
+    {
+      id: "men-p1",
+      competency: "professionalism",
+      text: "Reports invasive pneumococcal disease to public health.",
+      points: 1,
+      teaching: "Reporting is a legal duty for notifiable diseases. Public health tracks serotypes and vaccine failures.",
+      source: "hppa",
+    },
+    {
+      id: "men-d1",
+      competency: "disposition",
+      text: "Admits to ICU with infectious diseases, ENT and a plan to narrow therapy and assess hearing.",
+      points: 1,
+      teaching: "Sensorineural hearing loss is common after pneumococcal meningitis. Early audiology allows cochlear implant referral before ossification.",
+      source: "escmid",
+    },
+  ],
+  sources: [
+    {
+      id: "tunkel",
+      citation: "Tunkel AR et al. Practice guidelines for the management of bacterial meningitis. Infectious Diseases Society of America. Clinical Infectious Diseases. 2004.",
+    },
+    {
+      id: "degans",
+      citation: "de Gans J, van de Beek D. Dexamethasone in adults with bacterial meningitis. New England Journal of Medicine. 2002.",
+    },
+    {
+      id: "escmid",
+      citation: "van de Beek D et al. ESCMID guideline. Diagnosis and treatment of acute bacterial meningitis. Clinical Microbiology and Infection. 2016.",
+    },
+    {
+      id: "ssc",
+      citation:
+        "Evans L et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Critical Care Medicine. 2021.",
+    },
+    {
+      id: "phac-men",
+      citation: "Public Health Agency of Canada. Guidelines for the prevention and control of meningococcal disease.",
+    },
+    {
+      id: "hppa",
+      citation: "Ontario. Health Protection and Promotion Act, R.S.O. 1990, c. H.7, and O. Reg. 135/18, Designation of Diseases.",
+      url: "https://www.canlii.org/en/on/laws/regu/o-reg-135-18/latest/o-reg-135-18.html",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};
