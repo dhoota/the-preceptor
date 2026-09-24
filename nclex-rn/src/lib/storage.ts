@@ -137,6 +137,11 @@ export function createRepo(kv: KV = defaultKV()) {
       await kv.set(K.mocks, JSON.stringify(next));
       return next;
     },
+    async deleteMock(id: string): Promise<Mock[]> {
+      const next = (await this.mocks()).filter((x) => x.id !== id);
+      await kv.set(K.mocks, JSON.stringify(next));
+      return next;
+    },
     /** Items the candidate flagged for review. */
     async flags(): Promise<string[]> {
       return readJson<string[]>(kv, K.flags, []);

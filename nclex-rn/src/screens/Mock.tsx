@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Exhibit } from "@/components/Exhibit";
 import { ItemCard } from "@/components/ItemPlayer";
 import { EXAM } from "@/engine/blueprint";
-import { RULE_TEXT, answer, checkTime, createMock, nextItem, type Mock, type MockBank, type Role } from "@/engine/mock";
+import { RULE_TEXT, answer, checkTime, createMock, endMock, nextItem, type Mock, type MockBank, type Role } from "@/engine/mock";
 import type { Band } from "@/engine/rasch";
 import { KIND_NAMES, emptyResponse, isComplete } from "@/engine/score";
 import type { Response } from "@/engine/types";
@@ -59,6 +59,14 @@ export function MockHome({ go }: { go: Go }) {
           </span>
           <button className="btn small" onClick={() => go({ name: "mockRun", id: unfinished.id })}>
             Resume
+          </button>
+          <button
+            className="btn small ghost"
+            onClick={() => {
+              if (confirm("Discard this unfinished mock? Its answers stay in your progress.")) app.deleteMock(unfinished.id);
+            }}
+          >
+            Discard
           </button>
         </div>
       )}
@@ -223,8 +231,14 @@ export function MockRun({ id, go }: { id: string; go: Go }) {
     return (
       <>
         <p className="muted">No unseen item is left for this mock. The bank may have changed since it started.</p>
-        <button className="btn" onClick={() => go({ name: "mock" })}>
-          Back to the mock
+        <button
+          className="btn"
+          onClick={() => {
+            const m = endMock(mock);
+            app.saveMock(m).then(() => go({ name: "mockResult", id: m.id }));
+          }}
+        >
+          End the mock and see the result
         </button>
       </>
     );

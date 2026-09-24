@@ -30,6 +30,7 @@ interface AppState {
   canOpenCase(id: string): boolean;
   addAnswers(a: Answered[]): Promise<void>;
   saveMock(m: Mock): Promise<void>;
+  deleteMock(id: string): Promise<void>;
   toggleFlag(id: string): Promise<void>;
   updateSettings(patch: Partial<Settings>): Promise<void>;
   buy(product: ProductKey): Promise<PurchaseOutcome>;
@@ -86,6 +87,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const addAnswers = useCallback(async (a: Answered[]) => {
     if (!a.length) return;
     setAnswers(await repo.addAnswers(a));
+  }, []);
+
+  const deleteMock = useCallback(async (id: string) => {
+    setMocks(await repo.deleteMock(id));
   }, []);
 
   const saveMock = useCallback(async (m: Mock) => {
@@ -166,13 +171,14 @@ export function AppProvider({ children }: { children: ReactNode }) {
       canOpenCase: (id: string) => access.full || freeCases.has(id),
       addAnswers,
       saveMock,
+      deleteMock,
       toggleFlag,
       updateSettings,
       buy,
       restore,
       resetProgress,
     }),
-    [ready, bank, byId, answers, mocks, flags, settings, access, prices, busy, freeItems, freeCases, addAnswers, saveMock, toggleFlag, updateSettings, buy, restore, resetProgress],
+    [ready, bank, byId, answers, mocks, flags, settings, access, prices, busy, freeItems, freeCases, addAnswers, saveMock, deleteMock, toggleFlag, updateSettings, buy, restore, resetProgress],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

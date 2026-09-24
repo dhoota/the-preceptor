@@ -151,6 +151,17 @@ function decide(m: Mock, rule: StopRule): MockResult {
   };
 }
 
+/**
+ * Ends a mock that cannot continue, for example when the bank changed and no
+ * unseen item is left. Below the minimum the result is below the standard,
+ * as with the run-out-of-time rule.
+ */
+export function endMock(m: Mock): Mock {
+  if (m.result) return m;
+  if (m.log.length < EXAM.minItems) return { ...m, result: { rule: "bank", decision: "below", band: band(m.estimate), estimate: m.estimate, items: m.log.length } };
+  return { ...m, result: decide(m, "bank") };
+}
+
 /** Records an answer, updates the estimate and applies the stopping rules. */
 export function answer(m: Mock, bank: MockBank, ref: NextRef, response: Response, ms: number): Mock {
   if (m.result) return m;

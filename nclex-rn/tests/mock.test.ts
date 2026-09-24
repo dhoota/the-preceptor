@@ -159,3 +159,16 @@ describe("stopping rules", () => {
     expect(nextItem(m, bank())).toBeNull();
   });
 });
+
+describe("endMock", () => {
+  it("ends below the standard before the minimum, and by the final estimate after it", async () => {
+    const { endMock } = await import("@/engine/mock");
+    const b = bank();
+    let m = createMock(b, 3, 0);
+    for (let i = 0; i < 10; i++) m = answer(m, b, nextItem(m, b)!, keyResponse(MC_CALC), 1000);
+    const early = endMock(m);
+    expect(early.result?.rule).toBe("bank");
+    expect(early.result?.decision).toBe("below");
+    expect(endMock(early)).toBe(early);
+  });
+});
