@@ -132,7 +132,6 @@ export const CLOZE_TRIAD: Item = {
     cjmm: "prioritize",
     difficulty: 3,
     stem: "A client is on day 2 after a right total hip arthroplasty. The right calf is warm and tender and measures 4 cm larger than the left. Incision pain is 3 on a 0 to 10 scale. Temperature is 37.2°C (99.0°F). Complete the following sentence by choosing from the lists of options.",
-    template: "The client is at highest risk for {0} as evidenced by {1} and {2}.",
     rationale:
       "A warm, tender calf that is 4 cm larger than the other leg after hip arthroplasty points to deep vein thrombosis. Hip surgery carries a high risk of venous thromboembolism. Incision pain of 3 is expected on day 2. A temperature of 37.2°C does not suggest infection. Nothing in the stem suggests dislocation.",
     sources: [
@@ -145,6 +144,7 @@ export const CLOZE_TRIAD: Item = {
   }),
   kind: "cloze",
   scoring: "triad",
+  template: "The client is at highest risk for {0} as evidenced by {1} and {2}.",
   blanks: [
     {
       options: [
@@ -183,8 +183,6 @@ export const HIGHLIGHT: Item = {
     cjmm: "recognize",
     difficulty: 3,
     stem: "The nurse reviews a note on a client 2 hours after cardiac catheterization through the right femoral artery. Click to highlight the findings that need follow-up.",
-    passage:
-      "[[Alert and oriented.]] [[Right groin dressing dry and intact.]] [[Right foot cool and pale.]] [[Right pedal pulse faint.]] [[Reports new back pain, 6 of 10.]] [[BP 98/60 mmHg]], down from 132/80 mmHg at 1 hour. [[Voided 300 mL of clear urine.]]",
     rationale:
       "A cool, pale foot with a faint pedal pulse on the side of the puncture points to reduced blood flow to the limb. New back pain with a fall in BP from 132/80 to 98/60 mmHg can mean retroperitoneal bleeding, which a dry groin dressing does not rule out. Alert orientation and a normal void are expected.",
     sources: [
@@ -196,6 +194,8 @@ export const HIGHLIGHT: Item = {
     ],
   }),
   kind: "highlight",
+  passage:
+    "[[Alert and oriented.]] [[Right groin dressing dry and intact.]] [[Right foot cool and pale.]] [[Right pedal pulse faint.]] [[Reports new back pain, 6 of 10.]] [[BP 98/60 mmHg]], down from 132/80 mmHg at 1 hour. [[Voided 300 mL of clear urine.]]",
   spans: [
     { text: "Alert and oriented.", why: "Normal orientation needs no follow-up." },
     { text: "Right groin dressing dry and intact.", why: "A dry dressing is expected. It does not rule out hidden bleeding." },
