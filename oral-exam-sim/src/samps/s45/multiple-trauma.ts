@@ -449,7 +449,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           topic: "multiple-trauma",
           n: 1
         },
-        source: "rosen"
+        source: "east-flail"
       },
       {
         id: "q4",
@@ -483,8 +483,9 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/"
       },
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        id: "east-flail",
+        citation: "Simon B, Ebert J, Bokhari F, et al. Management of pulmonary contusion and flail chest: an Eastern Association for the Surgery of Trauma practice management guideline. J Trauma Acute Care Surg. 2012.",
+        url: "https://doi.org/10.1097/TA.0b013e31827019fd"
       }
     ],
     reviewed: false,
@@ -918,12 +919,12 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           "Pupils becoming smaller"
         ],
         correct: 0,
-        explanation: "End-tidal CO2 reflects pulmonary blood flow, so an abrupt and sustained rise during CPR is an early and reliable sign that circulation has returned, and prompts a pulse check. Narrow complexes were already present while he was pulseless. Gasping can occur during CPR without a pulse. Colour change and pupil size are subjective and change late.",
+        explanation: "End-tidal CO2 reflects pulmonary blood flow, so an abrupt and sustained rise during CPR is the best of these signs that circulation may have returned. It is not enough on its own to stop compressions. It is combined with other signs of return of circulation before the next rhythm and pulse check. Narrow complexes were already present while he was pulseless. Gasping can occur during CPR without a pulse. Colour change and pupil size are subjective and change late.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 5
         },
-        source: "rosen"
+        source: "erc-als"
       }
     ],
     sources: [
@@ -938,8 +939,9 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/29132571/"
       },
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        id: "erc-als",
+        citation: "Soar J, Böttiger BW, Carli P, et al. European Resuscitation Council Guidelines 2025: adult advanced life support. Resuscitation. 2025.",
+        url: "https://doi.org/10.1016/j.resuscitation.2025.110769"
       }
     ],
     reviewed: false,
@@ -1240,7 +1242,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           topic: "multiple-trauma",
           n: 3
         },
-        source: "rosen"
+        source: "rosen-knee"
       },
       {
         id: "q4",
@@ -1266,7 +1268,13 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
     sources: [
       {
         id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023. Chapter 47, Femur and Hip Injuries.",
+        url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"
+      },
+      {
+        id: "rosen-knee",
+        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023. Chapter 48, Knee and Lower Leg Injuries.",
+        url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"
       }
     ],
     reviewed: false,
@@ -1370,7 +1378,8 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
     sources: [
       {
         id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023. Chapter 36, Neck Trauma.",
+        url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"
       },
       {
         id: "hicks",
@@ -1643,7 +1652,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           topic: "multiple-trauma",
           n: 5
         },
-        source: "rosen"
+        source: "miyake-fes"
       },
       {
         id: "q2",
@@ -1657,12 +1666,12 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           "Thrombolysis with alteplase"
         ],
         correct: 3,
-        explanation: "Treatment of fat embolism syndrome is supportive, starting with oxygen and escalating to ventilatory support as needed, with admission to intensive care. Corticosteroids have not been shown to improve outcome once the syndrome is established. Heparin and thrombolysis treat thrombus, not fat, and add bleeding risk in a patient awaiting surgery. His respiratory rate of 30/minute does not suggest opioid toxicity, so naloxone would only cause pain.",
+        explanation: "Treatment of fat embolism syndrome is supportive, starting with oxygen and escalating to ventilatory support as needed, with admission to intensive care. Corticosteroids have inconsistent benefit and possible harm, so they are not standard treatment. Heparin and thrombolysis treat thrombus, not fat, and add bleeding risk in a patient awaiting surgery. His respiratory rate of 30/minute does not suggest opioid toxicity, so naloxone would only cause pain.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 5
         },
-        source: "rosen"
+        source: "miyake-fes"
       },
       {
         id: "q3",
@@ -1682,13 +1691,14 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           topic: "multiple-trauma",
           n: 3
         },
-        source: "rosen"
+        source: "miyake-fes"
       }
     ],
     sources: [
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        id: "miyake-fes",
+        citation: "Miyake T, Okada H, Kanda N. Advances and uncertainties in fat embolism syndrome: a review. Trauma Surg Acute Care Open. 2026.",
+        url: "https://doi.org/10.1136/tsaco-2025-001913"
       }
     ],
     reviewed: false,
@@ -2068,7 +2078,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           topic: "multiple-trauma",
           n: 3
         },
-        source: "rosen"
+        source: "boast-ankle"
       },
       {
         id: "q2",
@@ -2083,12 +2093,12 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           "No splint to allow examination"
         ],
         correct: 1,
-        explanation: "A traction splint pulls through the ankle, so it is contraindicated when the same ankle is fractured, and a long padded splint that immobilizes the hip, knee and ankle is used instead. Air splints do not control a femoral shaft fracture and can lose pressure. A soft dressing and pillows allow the fragments to move and bleed during a 3 hour transfer. Leaving the leg unsplinted causes pain, blood loss and further soft tissue injury.",
+        explanation: "A traction splint pulls through the ankle, so it is contraindicated when the same ankle is fractured, and a long padded splint that immobilizes the hip, knee and ankle is used instead. Air splints do not control a femoral shaft fracture and can lose pressure. A soft dressing and pillows allow the fragments to move during a 3 hour transfer. Leaving the leg unsplinted causes pain and further soft tissue injury.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 8
         },
-        source: "rosen"
+        source: "naemsp-femur"
       },
       {
         id: "q3",
@@ -2119,8 +2129,14 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
     ],
     sources: [
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        id: "boast-ankle",
+        citation: "British Orthopaedic Association. BOAST: the management of ankle fractures. 2016.",
+        url: "https://www.boa.ac.uk/resource/boast-12-pdf.html"
+      },
+      {
+        id: "naemsp-femur",
+        citation: "Lyng JW, Corsa JG, Nawrocki PS, et al. Prehospital trauma compendium: management of suspected femoral shaft fractures. A position statement and resource document of NAEMSP. Prehosp Emerg Care. 2025.",
+        url: "https://doi.org/10.1080/10903127.2025.2493846"
       },
       {
         id: "paal-hypothermia",
@@ -2330,7 +2346,8 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       },
       {
         id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023. Chapter 83, Renal Failure.",
+        url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"
       },
       {
         id: "btf",
@@ -2607,7 +2624,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           topic: "multiple-trauma",
           n: 4
         },
-        source: "rosen"
+        source: "acs-chest-wall"
       }
     ],
     sources: [
@@ -2622,8 +2639,9 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/35010760/"
       },
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        id: "acs-chest-wall",
+        citation: "American College of Surgeons Committee on Trauma. ACS Trauma Programs best practices guidelines: management of chest wall injuries. 2025.",
+        url: "https://www.facs.org/media/qdgliayt/2025_tr_bestpracticesguidelines_chest-wall.pdf"
       }
     ],
     reviewed: false,
@@ -3088,12 +3106,12 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           "Hypocalcemic tetany"
         ],
         correct: 3,
-        explanation: "When crushed muscle is released after hours of compression, potassium floods into the circulation and can cause arrhythmia and cardiac arrest within minutes. Acute kidney injury and compartment syndrome are serious but develop over hours. Hypocalcemia is common but tetany is rarely the immediate threat. Fat embolism is linked to long bone fractures, and his leg X-rays show none.",
+        explanation: "When crushed muscle is released after hours of compression, potassium can enter the circulation quickly. Severe hyperkalemia is uncommon after crush injury, but when it occurs it can cause arrhythmia and cardiac arrest within minutes. Of these options it is the only one that can kill him in minutes, so it is looked for first with an ECG and a blood gas. Acute kidney injury and compartment syndrome are serious but develop over hours. Hypocalcemia is common but tetany is rarely the immediate threat. Fat embolism is linked to long bone fractures, and his leg X-rays show none.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 5
         },
-        source: "rosen"
+        source: "fphc-crush"
       },
       {
         id: "q2",
@@ -3115,12 +3133,12 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           3,
           5
         ],
-        explanation: "Peaked T waves and a wide QRS need calcium at once to stabilize the myocardium. Insulin with dextrose and nebulized salbutamol then shift potassium into cells within minutes. Furosemide is inappropriate in a patient who needs volume to protect his kidneys. An oral potassium binder acts too slowly. Amiodarone and magnesium do not treat hyperkalemia.",
+        explanation: "Peaked T waves and a wide QRS need calcium at once to stabilize the myocardium. Insulin with dextrose and nebulized salbutamol then shift potassium into cells within minutes. Furosemide is inappropriate in a patient who needs volume to protect his kidneys. Sodium polystyrene sulfonate acts too slowly to help in the next few minutes. Amiodarone and magnesium do not treat hyperkalemia.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 5
         },
-        source: "rosen"
+        source: "erc-special-2025"
       },
       {
         id: "q3",
@@ -3158,13 +3176,24 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           topic: "multiple-trauma",
           n: 3
         },
-        source: "rosen"
+        source: "boast-cs"
       }
     ],
     sources: [
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        id: "fphc-crush",
+        citation: "Wood F, Cowburn P, Smith J, et al. Early management of crush injury and crush syndrome: a Faculty of Pre-Hospital Care consensus statement. Emerg Med J. 2026.",
+        url: "https://doi.org/10.1136/emermed-2025-215431"
+      },
+      {
+        id: "erc-special-2025",
+        citation: "Lott C, Karageorgos V, Abelairas-Gomez C, et al. European Resuscitation Council Guidelines 2025: special circumstances in resuscitation. Resuscitation. 2025.",
+        url: "https://doi.org/10.1016/j.resuscitation.2025.110753"
+      },
+      {
+        id: "boast-cs",
+        citation: "British Orthopaedic Association. BOAST: diagnosis and management of compartment syndrome of the extremities. 2014, updated 2025.",
+        url: "https://www.boa.ac.uk/resource/boast-10-pdf.html"
       },
       {
         id: "crush-isn",
@@ -3252,7 +3281,8 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
     sources: [
       {
         id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023."
+        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023. Chapter 35, Spinal Trauma.",
+        url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"
       },
       {
         id: "ccr",
