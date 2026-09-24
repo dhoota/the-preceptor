@@ -7,9 +7,16 @@ The app is fully offline. It calls no AI and no server of ours. The only network
 ## 0. Before anything else
 
 1. Confirm the blueprint against https://www.nclex.com/test-plans.page. The app follows the 2026 NCLEX-RN test plan, effective 1 April 2026 to 31 March 2029. The Client Needs ranges, the 85 to 150 item length, the 5 hour limit, the 52 + 18 + 15 minimum structure and the three stopping rules were checked against the NCSBN test plan PDF on 24 September 2026. The RN passing standard of 0.00 logits comes from the brief. The test plan does not state it, so confirm it against the current NCSBN passing standard announcement. It lives in `EXAM.passingStandard` in `src/engine/blueprint.ts`.
-2. Review the content. Every item ships with `reviewed: false`. Each batch has three reports in `docs/reviews/`: the writer's notes, the adversarial review (fixes, key changes, sources checked, items needing your decision) and the Canada note pass. Start with "Key changes" and "Needs Arjan's decision" in each review.
+2. Review the content. Every item ships with `reviewed: false`. Start with `docs/SIGNOFF_QUEUE.md`: the three bank key changes and every point the reviewers left for you, batch by batch. Each batch has three reports in `docs/reviews/`: the writer's notes, the adversarial review (fixes, key changes, sources checked, items needing your decision) and the Canada note pass. Start with "Key changes" and "Needs Arjan's decision" in each review.
 3. When an item is signed off, set `reviewed: true` and add its id to `docs/signoff.json`. Bump `version` if you edit it. The tests require `reviewed: true` for exactly the ids on that list. The Draft tag disappears once reviewed.
 4. Run `npm test`. Release builds also run the launch gate (`LAUNCH_GATE=1`): the full 2,000 item bank in `tests/bank.test.ts` and real RevenueCat keys in `tests/platform.test.ts`. The gate fails while either key is a placeholder.
+
+## 0a. Bank status
+
+- 2,000 items: 1,400 stand-alone items in 28 batches and 100 case studies of 6 items in 20 batches. Client Needs totals match the 2026 test plan midpoints: 360, 260, 180, 180, 180, 320, 240, 280.
+- Every batch went through a writer, an adversarial review with verified sources, and a Canada note pass. Each review was calibrated with 2 planted defects. All 96 were caught.
+- The reviews made about 520 fixes. About 420 were in bank items and the rest in planted items. Almost all were in rationales and choice reasons, as in the other Preceptor banks. Three bank keys changed, listed in `docs/SIGNOFF_QUEUE.md`.
+- The session web search allowance ran out partway through. Later sources were checked on PubMed, publisher and agency pages instead. Each review report lists what was verified and how.
 
 ## 1. Repository and Codemagic app
 
