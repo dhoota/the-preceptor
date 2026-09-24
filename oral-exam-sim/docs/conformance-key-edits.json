@@ -2631,6 +2631,134 @@
    "after": [
     "Risk scales should not be used alone to decide disposition"
    ]
+  },
+  "tox-01#q2": {
+   "batch": "s18",
+   "before": [
+    "A full 300 mg/kg IV course over about 21 hours, as 150 mg/kg over 1 hour, 50 mg/kg over 4 hours and 100 mg/kg over 16 hours, or the equivalent 2 bag regimen, reassessed at the end"
+   ],
+   "after": [
+    "Acetylcysteine 300 mg/kg IV over about 21 hours"
+   ]
+  },
+  "tox-02#q3": {
+   "batch": "s18",
+   "before": [
+    "Give a sodium bicarbonate bolus, intubate with the most experienced operator, and set a high minute ventilation to match his pre intubation PCO2"
+   ],
+   "after": [
+    "Bicarbonate bolus, expert operator, high minute ventilation"
+   ]
+  },
+  "tox-03#q3": {
+   "batch": "s18",
+   "before": [
+    "Physostigmine is contraindicated because of the wide QRS and risk of asystole in tricyclic poisoning"
+   ],
+   "after": [
+    "Physostigmine is contraindicated here"
+   ]
+  },
+  "tox-04#q4": {
+   "batch": "s18",
+   "before": [
+    "Regular insulin 1 unit/kg IV bolus",
+    "Regular insulin infusion starting at 1 unit/kg/h, titrated upward to effect"
+   ],
+   "after": [
+    "Regular insulin 1 unit/kg IV bolus",
+    "Regular insulin 1 unit/kg/h infusion, titrated upward"
+   ]
+  },
+  "tox-05#q3": {
+   "batch": "s18",
+   "before": [
+    "1 to 2 vials IV over 30 minutes, then reassess and repeat if needed"
+   ],
+   "after": [
+    "1 to 2 vials IV over 30 minutes, then reassess"
+   ]
+  },
+  "tox-05#q4": {
+   "batch": "s18",
+   "before": [
+    "Empiric digoxin immune Fab, a larger dose given rapidly, with pads applied"
+   ],
+   "after": [
+    "Empiric Fab, larger dose given rapidly, pads applied"
+   ]
+  },
+  "tox-08#q1": {
+   "batch": "s18",
+   "before": [
+    "Bag valve mask ventilation with oxygen, and naloxone 0.04 to 0.1 mg IV repeated every 2 to 3 minutes, titrated to adequate breathing"
+   ],
+   "after": [
+    "Bag-mask ventilation, titrated naloxone 0.04 to 0.1 mg IV"
+   ]
+  },
+  "tox-08#q4": {
+   "batch": "s18",
+   "before": [
+    "Once he has objective moderate withdrawal, for example a COWS score of about 12 or more"
+   ],
+   "after": [
+    "Once in objective moderate withdrawal, COWS about 12 or more"
+   ]
+  },
+  "tox-11#q4": {
+   "batch": "s18",
+   "before": [
+    "Physostigmine 0.5 to 1 mg IV given slowly over at least 5 minutes, repeated after 10 to 15 minutes if needed, with atropine at the bedside"
+   ],
+   "after": [
+    "Physostigmine 0.5 to 1 mg IV slowly over 5 minutes"
+   ]
+  },
+  "tox-12#q3": {
+   "batch": "s18",
+   "before": [
+    "High flow oxygen by non rebreather mask and urgent discussion with a hyperbaric centre about transfer"
+   ],
+   "after": [
+    "Non-rebreather oxygen, urgent call to a hyperbaric centre"
+   ]
+  },
+  "tox-13#q3": {
+   "batch": "s18",
+   "before": [
+    "Whole bowel irrigation with polyethylene glycol at about 500 mL per hour by nasogastric tube"
+   ],
+   "after": [
+    "Whole bowel irrigation, about 500 mL/hour by NG tube"
+   ]
+  },
+  "tox-13#q5": {
+   "batch": "s18",
+   "before": [
+    "15 mg/kg/h IV infusion, starting slower and titrating up to limit hypotension, usually for no more than 24 hours"
+   ],
+   "after": [
+    "Up to 15 mg/kg/hour IV, usually 24 hours or less"
+   ]
+  },
+  "tox-14#q4": {
+   "batch": "s18",
+   "before": [
+    "Admit with frequent glucose checks, continuing observation for at least 12 to 24 hours after octreotide is stopped"
+   ],
+   "after": [
+    "Admit, observe at least 12 to 24 hours after octreotide"
+   ]
+  },
+  "tox-15#q3": {
+   "batch": "s18",
+   "before": [
+    "Diazepam 10 to 20 mg IV every 5 to 10 minutes, titrated until he is calm but rousable"
+   ],
+   "after": [
+    "Diazepam 10 to 20 mg IV, repeated until calm"
+   ]
   }
  }
 }

@@ -6,14 +6,14 @@ import type { Source } from "@/engine/types";
 const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", version: 1 } as const;
 
 const S = {
-  cag: { id: "cag", citation: "Centre antipoison du Québec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology." },
+  cag: { id: "cag", citation: "Centre antipoison du Québec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology. Online edition. Accessed 24 September 2026.", url: "https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes" },
   apap: { id: "apap-consensus", citation: "Dart RC, Mullins ME, Matoushek T, et al. Management of acetaminophen poisoning in the US and Canada: a consensus statement. JAMA Netw Open. 2023." },
   kings: { id: "kings", citation: "O'Grady JG, Alexander GJ, Hayllar KM, Williams R. Early indicators of prognosis in fulminant hepatic failure. Gastroenterology. 1989." },
   extripAsa: { id: "extrip-asa", citation: "Juurlink DN, Gosselin S, Kielstein JT, et al. Extracorporeal treatment for salicylate poisoning: systematic review and recommendations from the EXTRIP workgroup. Ann Emerg Med. 2015." },
   extripLi: { id: "extrip-li", citation: "Decker BS, Goldfarb DS, Dargan PI, et al. Extracorporeal treatment for lithium poisoning: systematic review and recommendations from the EXTRIP workgroup. Clin J Am Soc Nephrol. 2015." },
   extripEg: { id: "extrip-eg", citation: "Ghannoum M, Gosselin S, Hoffman RS, et al. Extracorporeal treatment for ethylene glycol poisoning: systematic review and recommendations from the EXTRIP workgroup. Crit Care. 2023." },
   aha: { id: "aha-2023", citation: "Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023." },
-  goldfrank: { id: "goldfrank", citation: "Nelson LS, Howland MA, Lewin NA, et al, editors. Goldfrank's Toxicologic Emergencies. McGraw Hill." },
+  goldfrank: { id: "goldfrank", citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019." },
   ccb: { id: "ccb-consensus", citation: "St-Onge M, Anseeuw K, Cantrell FL, et al. Experts consensus recommendations for the management of calcium channel blocker poisoning in adults. Crit Care Med. 2017." },
   wbi: { id: "wbi", citation: "Thanacoody R, Caravati EM, Troutman B, et al. Position paper update: whole bowel irrigation for gastrointestinal decontamination of overdose patients. Clin Toxicol. 2015." },
   fab: { id: "fab", citation: "Chan BS, Buckley NA. Digoxin-specific antibody fragments in the treatment of digoxin toxicity. Clin Toxicol. 2014." },
@@ -22,7 +22,7 @@ const S = {
   cows: { id: "cows", citation: "Wesson DR, Ling W. The Clinical Opiate Withdrawal Scale (COWS). J Psychoactive Drugs. 2003." },
   hunter: { id: "hunter", citation: "Dunkley EJ, Isbister GK, Sibbritt D, Dawson AH, Whyte IM. The Hunter Serotonin Toxicity Criteria: simple and accurate diagnostic decision rules for serotonin toxicity. QJM. 2003." },
   boyer: { id: "boyer", citation: "Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med. 2005." },
-  uhms: { id: "uhms", citation: "Undersea and Hyperbaric Medical Society. Hyperbaric oxygen therapy indications. Carbon monoxide poisoning." },
+  uhms: { id: "uhms", citation: "Huang ET, editor. UHMS Hyperbaric Medicine Indications Manual. 15th ed. Undersea and Hyperbaric Medical Society. 2023. Chapter: carbon monoxide poisoning." },
   weaver: { id: "weaver", citation: "Weaver LK, Hopkins RO, Chan KJ, et al. Hyperbaric oxygen for acute carbon monoxide poisoning. N Engl J Med. 2002." },
   iron: { id: "iron", citation: "Manoguerra AS, Erdman AR, Booze LL, et al. Iron ingestion: an evidence-based consensus guideline for out-of-hospital management. Clin Toxicol. 2005." },
   bcAud: { id: "bc-aud", citation: "British Columbia Centre on Substance Use. Provincial guideline for the clinical management of high-risk drinking and alcohol use disorder. 2019." },
@@ -36,13 +36,14 @@ export const TOX_SAMPS: Samp[] = [
     topic: "tox",
     title: "Young woman after a crisis at home",
     stem:
-      "A 19 year old woman weighing 60 kg is brought in by her roommate 3 hours after an argument. She says she took \"a bunch of Tylenol\" and now feels nauseated. She is alert and cooperative. HR 104, BP 118/72, RR 16, SpO2 99% on room air, T 36.8°C. Exam is unremarkable apart from mild epigastric tenderness.",
+      "A 19-year-old woman is brought in by her roommate 3 hours after an argument. She says she took \"a bunch of Tylenol\" and now feels nauseated. She is alert and cooperative. Exam is unremarkable apart from mild epigastric tenderness.",
+    vitals: { temperature: "36.8°C", pulse: "104/minute", resp: "16/minute", bp: "118/72 mmHg", o2sat: "99% on room air", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE specific items of history or collateral you need to judge her risk from this ingestion.",
+        prompt: "What specific items of history or collateral do you need to judge her risk from this ingestion?",
         accept: [
           { id: "time", text: "Exact time of ingestion, or whether it was staggered over hours", match: ["time"] },
           { id: "amount", text: "Number of tablets and strength, counting what is left in the bottle", match: ["number of tablet", "how many", "amount", "quantity", "dose", "pill count", "count"] },
@@ -61,17 +62,17 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update: "She took a single ingestion of 40 regular release 500 mg tablets at 1900 h and arrived at 2200 h. The 4 hour acetaminophen concentration, drawn at 2300 h, is 1450 µmol/L (about 220 mg/L). ALT is 22 U/L and INR 1.0.",
-        prompt: "Which is the most appropriate acetylcysteine regimen? Select one.",
+        prompt: "Which of the following is the most appropriate acetylcysteine regimen for this patient?",
         options: [
-          "A full 300 mg/kg IV course over about 21 hours, as 150 mg/kg over 1 hour, 50 mg/kg over 4 hours and 100 mg/kg over 16 hours, or the equivalent 2 bag regimen, reassessed at the end",
-          "150 mg/kg IV over 1 hour only, then repeat the level at 8 hours before giving more",
-          "Hold acetylcysteine until the ALT rises above 100 U/L",
-          "300 mg/kg IV over 1 hour as a single dose",
-          "Oral acetylcysteine 70 mg/kg once, then discharge with follow up",
+          "Acetylcysteine 300 mg/kg IV over about 21 hours",
+          "Acetylcysteine 300 mg/kg IV over 1 hour, single dose",
+          "Acetylcysteine 150 mg/kg IV, then repeat level at 8 hours",
+          "Acetylcysteine 70 mg/kg PO once, then discharge",
+          "Hold acetylcysteine until ALT is above 100 U/L",
         ],
         correct: 0,
         explanation:
-          "A 4 hour concentration above the treatment line of 1000 µmol/L (150 mg/L) needs a full course of acetylcysteine. The standard IV course totals 300 mg/kg over about 21 hours, as 3 bags or an equivalent 2 bag regimen. Waiting for ALT to rise loses the window where acetylcysteine nearly abolishes hepatotoxicity.",
+          "A 4 hour concentration above the treatment line of 1000 µmol/L (150 mg/L) needs a full course of acetylcysteine. The standard IV course totals 300 mg/kg over about 21 hours, as 150 mg/kg over 1 hour, 50 mg/kg over 4 hours and 100 mg/kg over 16 hours, or an equivalent 2 bag regimen, reassessed at the end. A single loading dose or a single oral dose followed by discharge is not a full course. Waiting for ALT to rise loses the window where acetylcysteine nearly abolishes hepatotoxicity.",
         keyFeature: { topic: "tox", n: 2 },
         source: "apap-consensus",
       },
@@ -80,7 +81,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "The infusion is nearly complete, about 21 hours after starting.",
-        prompt: "List THREE laboratory results you need before deciding to stop acetylcysteine.",
+        prompt: "What laboratory results do you need before deciding to stop acetylcysteine?",
         accept: [
           { id: "apap", text: "Repeat acetaminophen concentration, which should be below about 66 µmol/L (10 mg/L)", match: ["acetaminophen", "apap", "paracetamol", "tylenol level"] },
           { id: "alt", text: "ALT or AST, which should be normal or clearly falling from its peak", match: ["alt", "ast", "transaminase", "liver enzyme", "lft", "liver function"] },
@@ -99,8 +100,8 @@ export const TOX_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        update: "A different patient, a 45 year old man, presents 30 hours after an unknown acetaminophen ingestion. He is drowsy. ALT is 6400 U/L.",
-        prompt: "List THREE findings that would prompt urgent discussion with a liver transplant centre.",
+        update: "A different patient, a 45-year-old man, presents 30 hours after an unknown acetaminophen ingestion. He is drowsy. ALT is 6400 U/L.",
+        prompt: "What findings would prompt urgent discussion with a liver transplant centre?",
         accept: [
           { id: "ph", text: "Arterial pH below 7.30 after fluid resuscitation", match: ["ph", "acidosis", "acidemia"] },
           { id: "inr", text: "INR above 6.5, or a rising INR", match: ["inr", "coagulopathy", "prothrombin"] },
@@ -126,13 +127,14 @@ export const TOX_SAMPS: Samp[] = [
     topic: "tox",
     title: "Vomiting and fast breathing in a man with back pain",
     stem:
-      "A 48 year old man weighing 80 kg presents with 12 hours of vomiting and ringing in his ears. He has taken large amounts of an over the counter pain reliever for a week of back pain, and took a handful more this morning. HR 118, BP 128/74, RR 32, SpO2 97% on room air, T 38.0°C. He is anxious but oriented. VBG pH 7.47, PCO2 23 mmHg, HCO3 16 mmol/L. Na 141, Cl 101, K 3.3 mmol/L. Glucose 5.2 mmol/L. Creatinine 96 µmol/L. Salicylate 4.2 mmol/L.",
+      "A 48-year-old man presents with 12 hours of vomiting and ringing in his ears. He has taken large amounts of an over the counter pain reliever for a week of back pain, and took a handful more this morning. He is anxious but oriented. VBG pH 7.47, PCO2 23 mmHg, HCO3 16 mmol/L. Na 141, Cl 101, K 3.3 mmol/L. Glucose 5.2 mmol/L. Creatinine 96 µmol/L. Salicylate 4.2 mmol/L.",
+    vitals: { temperature: "38.0°C", pulse: "118/minute", resp: "32/minute", bp: "128/74 mmHg", o2sat: "97% on room air", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE further investigations that will change your management over the next few hours.",
+        prompt: "What further investigations will change your management over the next few hours?",
         accept: [
           { id: "serial", text: "Serial salicylate concentrations every 2 hours until clearly falling", match: ["repeat salicylate", "serial salicylate", "salicylate every", "salicylate q2h", "asa level", "salicylate level"] },
           { id: "gas", text: "Serial blood gas measurements", match: ["blood gas", "vbg", "abg"] },
@@ -153,7 +155,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE treatments you start now.",
+        prompt: "What treatments do you start now?",
         accept: [
           { id: "bicarb", text: "Sodium bicarbonate IV bolus 1 to 2 mmol/kg then infusion to target urine pH 7.5 to 8.0", match: ["bicarbonate", "bicarb", "alkalinization", "alkalinisation", "alkalinize"] },
           { id: "k", text: "Potassium replacement to allow urine alkalinization", match: ["potassium", "kcl"] },
@@ -172,17 +174,17 @@ export const TOX_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Two hours later he is confused and tiring. RR is 38. Repeat salicylate is 5.6 mmol/L. VBG pH 7.36, PCO2 30 mmHg. The team is preparing to intubate while dialysis is arranged.",
-        prompt: "Which is the most appropriate approach to intubation? Select one.",
+        prompt: "Which of the following is the most appropriate approach to intubating this patient?",
         options: [
-          "Standard rapid sequence intubation, then ventilate at a tidal volume of 6 mL/kg and a rate of 14",
-          "Give a sodium bicarbonate bolus, intubate with the most experienced operator, and set a high minute ventilation to match his pre intubation PCO2",
-          "Delay intubation and give furosemide to increase salicylate excretion",
-          "Place him on BiPAP and give lorazepam for agitation",
-          "Stop the bicarbonate infusion before induction to avoid alkalemia",
+          "Bicarbonate bolus, expert operator, high minute ventilation",
+          "BiPAP with lorazepam for agitation",
+          "Delay intubation and give furosemide",
+          "Rapid sequence intubation, 6 mL/kg at a rate of 14",
+          "Stop the bicarbonate infusion before induction",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
-          "His survival depends on a very high minute ventilation. Any apneic period or a normal ventilator rate lets the pH fall and pushes salicylate into the brain, which can cause arrest. Bolus bicarbonate before induction and match the ventilator to his own respiratory effort. Sedation without airway control is dangerous in this setting.",
+          "His survival depends on a very high minute ventilation. Any apneic period or a normal ventilator rate, such as 14 after standard rapid sequence intubation, lets the pH fall and pushes salicylate into the brain, which can cause arrest. Give a sodium bicarbonate bolus before induction, have the most experienced operator intubate, and set a high minute ventilation to match his pre intubation PCO2. Stopping the bicarbonate to avoid alkalemia removes that protection. Delaying the airway to give furosemide for salicylate excretion wastes time. Sedation without airway control is dangerous in this setting.",
         keyFeature: { topic: "airway", n: 4 },
         source: "goldfrank",
       },
@@ -190,7 +192,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE indications for hemodialysis in salicylate poisoning.",
+        prompt: "What are the indications for hemodialysis in salicylate poisoning?",
         accept: [
           { id: "lvl", text: "Salicylate above 7.2 mmol/L (100 mg/dL)", match: ["7.2", "100 mg/dl", "salicylate 7", "salicylate 100", "above 7 mmol"] },
           { id: "renal", text: "Salicylate above 6.5 mmol/L (90 mg/dL) with impaired kidney function", match: ["kidney", "renal", "creatinine", "aki"] },
@@ -216,13 +218,14 @@ export const TOX_SAMPS: Samp[] = [
     alsoTopics: ["arrhythmia"],
     title: "Found unresponsive beside empty blister packs",
     stem:
-      "A 34 year old woman weighing 65 kg is found by her partner with empty blister packs of amitriptyline 50 mg. She was last seen well 2 hours ago. GCS 9. HR 132, BP 86/50, RR 14, SpO2 95% on 4 L nasal prongs, T 37.9°C. Pupils 6 mm. Skin is warm and dry. Glucose 6.8 mmol/L. The ECG shows sinus tachycardia with a QRS of 146 ms and a terminal R wave of 5 mm in aVR.",
+      "A 34-year-old woman is found by her partner with empty blister packs of amitriptyline 50 mg. She was last seen well 2 hours ago. GCS 9. Pupils 6 mm. Skin is warm and dry. Glucose 6.8 mmol/L. The ECG shows sinus tachycardia with a QRS of 146 ms and a terminal R wave of 5 mm in aVR.",
+    vitals: { temperature: "37.9°C", pulse: "132/minute", resp: "14/minute", bp: "86/50 mmHg", o2sat: "95% on 4 L/minute by nasal prongs", weight: "65 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO ECG findings, other than sinus tachycardia, that predict seizures or dysrhythmia in this poisoning.",
+        prompt: "What ECG findings, other than sinus tachycardia, predict seizures or dysrhythmia in this poisoning?",
         accept: [
           { id: "qrs", text: "QRS above 100 ms", match: ["qrs", "wide complex", "widened complex"] },
           { id: "avr", text: "Terminal R wave in aVR above 3 mm", match: ["avr", "terminal r"] },
@@ -240,7 +243,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "What is the first specific treatment for her ECG and blood pressure? Include the drug, dose and route.",
+        prompt: "What is the first specific treatment for her ECG and blood pressure, including the drug, dose and route?",
         accept: [
           { id: "bicarb", text: "Sodium bicarbonate 1 to 2 mmol/kg IV bolus (about 65 to 130 mmol), repeated to narrow the QRS", match: ["bicarbonate 1 mmol/kg", "bicarbonate 2 mmol/kg", "bicarbonate 1.5 mmol/kg", "bicarb 1 mmol/kg", "bicarb 2 mmol/kg", "bicarbonate 100 mmol", "bicarbonate 50 mmol", "bicarbonate 150 mmol", "bicarbonate 130 mmol", "bicarbonate 65 mmol", "bicarbonate 2 amp", "bicarb 2 amp", "bicarbonate 1 meq/kg", "bicarbonate 2 meq/kg", "bicarbonate 1mmol/kg", "bicarbonate 2mmol/kg", "nahco3 1 mmol/kg", "nahco3 2 mmol/kg", "nahco3 1 meq/kg", "nahco3 2 meq/kg", "nahco3 1mmol/kg", "nahco3 2mmol/kg", "nahco3 100", "nahco3 50", "nahco3 150", "bicarbonate 100 meq", "bicarbonate 50 meq", "bicarbonate 150 meq", "bicarb 100", "bicarb 50", "bicarb 150", "bicarbonate 8.4% 1 ml/kg", "bicarbonate 8.4% 2 ml/kg"] },
         ],
@@ -257,17 +260,17 @@ export const TOX_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "The nurse notes she is warm, dry, flushed and has absent bowel sounds. She asks whether physostigmine would help.",
-        prompt: "Which is the best response? Select one.",
+        prompt: "Which of the following is the best response to the nurse's question about physostigmine?",
         options: [
-          "Give physostigmine 1 mg IV slowly to reverse the delirium",
-          "Physostigmine is contraindicated because of the wide QRS and risk of asystole in tricyclic poisoning",
-          "Give flumazenil first, then physostigmine",
+          "Give flumazenil, then physostigmine",
+          "Give neostigmine instead of physostigmine",
+          "Give physostigmine 1 mg IV slowly",
           "Give physostigmine only if she seizes",
-          "Give neostigmine because it does not cross into the brain",
+          "Physostigmine is contraindicated here",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "Anticholinergic signs are common in tricyclic poisoning, but physostigmine has been linked to bradycardia and asystole when the QRS is wide. Flumazenil is also contraindicated because it can provoke seizures when a proconvulsant is on board. The toxidrome alone does not justify the antidote.",
+          "Anticholinergic signs are common in tricyclic poisoning, but physostigmine has been linked to bradycardia and asystole when the QRS is wide. With a QRS of 146 ms it is contraindicated, even to reverse the delirium. Flumazenil is also contraindicated because it can provoke seizures when a proconvulsant is on board. Neostigmine does not cross into the brain. The toxidrome alone does not justify the antidote.",
         keyFeature: { topic: "tox", n: 2 },
         source: "goldfrank",
       },
@@ -276,7 +279,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "She has a generalized tonic clonic seizure lasting 2 minutes so far.",
-        prompt: "List TWO treatments for the seizure and its consequences.",
+        prompt: "What are the treatments for the seizure and its consequences?",
         accept: [
           { id: "benzo", text: "Benzodiazepine IV, such as lorazepam 2 to 4 mg or midazolam", match: ["benzodiazepine", "benzo", "lorazepam", "midazolam", "diazepam"] },
           { id: "bicarb", text: "Further sodium bicarbonate bolus, since seizure acidosis worsens cardiotoxicity", match: ["bicarbonate", "bicarb"] },
@@ -294,7 +297,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "She is intubated. After 3 bicarbonate boluses and a serum pH of 7.52, she develops a wide complex tachycardia at 170 with BP 68/40.",
-        prompt: "List TWO next treatments.",
+        prompt: "What are the next treatments?",
         accept: [
           { id: "lido", text: "Lidocaine 1 to 1.5 mg/kg IV", match: ["lidocaine", "lignocaine", "xylocaine"] },
           { id: "hts", text: "Hypertonic saline", match: ["hypertonic saline", "3% saline", "hypertonic"] },
@@ -324,13 +327,14 @@ export const TOX_SAMPS: Samp[] = [
     topic: "tox",
     title: "Man with hypertension after taking his pills at once",
     stem:
-      "A 58 year old man weighing 90 kg tells triage he swallowed 30 tablets of verapamil SR 240 mg 90 minutes ago after bad news. He is alert. HR 58 sinus, BP 102/64, RR 16, SpO2 97% on room air. Glucose 12.4 mmol/L. ECG shows sinus rhythm with a PR of 240 ms and a normal QRS.",
+      "A 58-year-old man tells triage he swallowed 30 tablets of verapamil SR 240 mg 90 minutes ago after bad news. He is alert. Glucose 12.4 mmol/L. ECG shows sinus rhythm with a PR of 240 ms and a normal QRS.",
+    vitals: { pulse: "58/minute", resp: "16/minute", bp: "102/64 mmHg", o2sat: "97% on room air", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO decontamination measures appropriate now.",
+        prompt: "What decontamination measures are appropriate now?",
         accept: [
           { id: "wbi", text: "Whole bowel irrigation with polyethylene glycol, 1.5 to 2 L per hour until the effluent is clear", match: ["whole bowel", "wbi", "polyethylene glycol", "peg", "golytely"] },
           { id: "ac", text: "Activated charcoal 1 g/kg orally, up to 50 g", match: ["charcoal"] },
@@ -348,7 +352,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE complications you anticipate over the next 24 hours.",
+        prompt: "What complications do you anticipate over the next 24 hours?",
         accept: [
           { id: "brady", text: "Bradycardia or high grade AV block", match: ["bradycardia", "av block", "heart block", "junctional"] },
           { id: "hypo", text: "Hypotension and shock from vasodilation and poor contractility", match: ["hypotension", "shock"] },
@@ -370,7 +374,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Four hours later HR is 38 with a junctional rhythm and BP 70/38. He has had 2 L of crystalloid and atropine 1 mg IV with no response.",
-        prompt: "List THREE therapies you start now.",
+        prompt: "What therapies do you start now?",
         accept: [
           { id: "ca", text: "IV calcium, such as calcium gluconate 3 g or calcium chloride 1 g, repeated", match: ["calcium"] },
           { id: "hiet", text: "High dose insulin with dextrose", match: ["insulin", "hiet", "hyperinsulinemia"] },
@@ -388,21 +392,22 @@ export const TOX_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "menu",
-        prompt: "High dose insulin is started. Which TWO describe the correct initial insulin dosing? Select TWO.",
+        update: "High dose insulin is started.",
+        prompt: "Which of the following describe the correct initial dosing for high dose insulin therapy?",
         options: [
-          "Regular insulin 0.1 unit/kg/h infusion, as in DKA",
-          "Regular insulin 1 unit/kg IV bolus",
-          "Regular insulin infusion starting at 1 unit/kg/h, titrated upward to effect",
-          "Insulin glargine 1 unit/kg subcutaneously",
           "Hold insulin until glucose is above 20 mmol/L",
+          "Insulin glargine 1 unit/kg subcutaneously",
           "Regular insulin 0.05 unit/kg IV bolus",
+          "Regular insulin 1 unit/kg IV bolus",
+          "Regular insulin 0.1 unit/kg/h infusion",
+          "Regular insulin 1 unit/kg/h infusion, titrated upward",
+          "Regular insulin 10 units IV with 25 g dextrose",
           "Stop insulin if potassium falls below 3.5 mmol/L",
-          "Regular insulin 10 units IV with 25 g dextrose, as for hyperkalemia",
         ],
         select: 2,
-        correct: [1, 2],
+        correct: [3, 5],
         explanation:
-          "High dose insulin improves myocardial use of glucose and contractility. The usual start is a 1 unit/kg IV bolus then 1 unit/kg/h, titrated up to 10 unit/kg/h if needed. Dextrose is given to keep glucose in range. Potassium is replaced rather than stopping insulin.",
+          "High dose insulin improves myocardial use of glucose and contractility. The usual start is a 1 unit/kg IV bolus then an infusion starting at 1 unit/kg/h, titrated upward to effect, up to 10 unit/kg/h if needed. The 0.1 unit/kg/h DKA rate and the 10 unit hyperkalemia dose are far too low. Dextrose is given to keep glucose in range. Potassium is replaced rather than stopping insulin.",
         keyFeature: { topic: "shock", n: 8 },
         source: "cag",
       },
@@ -410,7 +415,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "List TWO laboratory values you monitor closely during high dose insulin therapy.",
+        prompt: "What laboratory values do you monitor closely during high dose insulin therapy?",
         accept: [
           { id: "glu", text: "Glucose every 15 to 30 minutes at first, then hourly", match: ["glucose", "sugar"] },
           { id: "k", text: "Potassium every hour", match: ["potassium"] },
@@ -435,13 +440,14 @@ export const TOX_SAMPS: Samp[] = [
     alsoTopics: ["arrhythmia"],
     title: "Older woman with nausea and a slow pulse",
     stem:
-      "An 84 year old woman weighing 52 kg is brought from home by her daughter with 3 days of nausea, poor intake and new confusion. She has atrial fibrillation and heart failure. HR 42 and regular, BP 104/58, RR 18, SpO2 95% on room air. ECG shows atrial fibrillation with a regular slow ventricular response and scooped ST segments. K 5.9 mmol/L, creatinine 212 µmol/L (baseline 95). Digoxin concentration is 4.1 nmol/L (about 3.2 ng/mL).",
+      "An 84-year-old woman is brought from home by her daughter with 3 days of nausea, poor intake and new confusion. She has atrial fibrillation and heart failure. ECG shows atrial fibrillation with a regular slow ventricular response and scooped ST segments. K 5.9 mmol/L, creatinine 212 µmol/L (baseline 95). Digoxin concentration is 4.1 nmol/L (about 3.2 ng/mL).",
+    vitals: { pulse: "42/minute regular", resp: "18/minute", bp: "104/58 mmHg", o2sat: "95% on room air", weight: "52 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE items of history or collateral you want from the daughter or pharmacy.",
+        prompt: "What items of history or collateral do you want from the daughter or pharmacy?",
         accept: [
           { id: "dose", text: "Current digoxin dose and any recent dose change", match: ["digoxin dose", "dose change", "dose increase", "current dose"] },
           { id: "new", text: "New interacting drugs such as amiodarone, verapamil, diltiazem, clarithromycin or diuretics", match: ["amiodarone", "verapamil", "diltiazem", "clarithromycin", "macrolide", "new medication", "new drug", "interacting", "diuretic", "furosemide", "recent prescription", "pharmacy record"] },
@@ -459,7 +465,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE indications for digoxin immune Fab in digoxin poisoning.",
+        prompt: "What are the indications for digoxin immune Fab in digoxin poisoning?",
         accept: [
           { id: "dysr", text: "Life threatening dysrhythmia such as ventricular tachycardia or fibrillation", match: ["ventricular", "dysrhythmia", "arrhythmia", "vt", "vf", "life threatening"] },
           { id: "brady", text: "Symptomatic bradycardia or high grade AV block not responding to atropine", match: ["bradycardia", "av block", "heart block"] },
@@ -476,17 +482,17 @@ export const TOX_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "What is the most appropriate first dose of digoxin immune Fab? Select one.",
+        prompt: "Which of the following is the most appropriate first dose of digoxin immune Fab?",
         options: [
-          "Half a vial IV, because of her age",
-          "1 to 2 vials IV over 30 minutes, then reassess and repeat if needed",
-          "10 vials IV push",
-          "20 vials IV over 30 minutes",
-          "No Fab. Give calcium chloride 1 g IV for the hyperkalemia",
+          "0.5 vial IV over 30 minutes, then reassess",
+          "1 to 2 vials IV over 30 minutes, then reassess",
+          "10 vials by rapid IV push, then reassess",
+          "20 vials IV over 30 minutes, then reassess",
+          "No Fab, calcium chloride 1 g IV for hyperkalemia",
         ],
         correct: 1,
         explanation:
-          "A full neutralizing dose is the level in ng/mL times weight in kg divided by 100. Her level of 4.1 nmol/L is 3.2 ng/mL (divide nmol/L by 1.28), so 3.2 x 52 / 100 is about 1.7 vials. In chronic toxicity, 1 to 2 vials titrated to effect work well and avoid removing all digoxin effect in a patient who depends on it. Fab also corrects the digoxin driven hyperkalemia.",
+          "A full neutralizing dose is the level in ng/mL times weight in kg divided by 100. Her level of 4.1 nmol/L is 3.2 ng/mL (divide nmol/L by 1.28), so 3.2 x 52 / 100 is about 1.7 vials. In chronic toxicity, 1 to 2 vials over 30 minutes, then reassessed and repeated if needed, work well and avoid removing all digoxin effect in a patient who depends on it. Her age is not a reason to give only half a vial. Fab also corrects the digoxin driven hyperkalemia, so calcium alone is not the answer.",
         keyFeature: { topic: "tox", n: 4 },
         source: "fab",
       },
@@ -494,17 +500,17 @@ export const TOX_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Before the Fab arrives from pharmacy, the monitor shows a wide complex tachycardia with alternating QRS axis beat to beat. BP 72/40. She is still responsive.",
-        prompt: "Which is the most appropriate treatment? Select one.",
+        prompt: "Which of the following is the most appropriate treatment for this rhythm?",
         options: [
           "Amiodarone 150 mg IV over 10 minutes",
-          "Procainamide 20 mg/min IV",
-          "Empiric digoxin immune Fab, a larger dose given rapidly, with pads applied",
+          "Calcium gluconate 3 g IV as a bolus",
+          "Empiric Fab, larger dose given rapidly, pads applied",
+          "Procainamide 20 mg/minute IV infusion",
           "Synchronized cardioversion at 200 J as the first step",
-          "Calcium gluconate 3 g IV",
         ],
         correct: 2,
         explanation:
-          "Bidirectional ventricular tachycardia is nearly diagnostic of digoxin toxicity. Fab is the definitive treatment and works within about 30 minutes. Electricity is used if she becomes pulseless, but cardioversion of a digoxin toxic heart can provoke ventricular fibrillation. Standard antidysrhythmics are not first line.",
+          "Bidirectional ventricular tachycardia is nearly diagnostic of digoxin toxicity. Empiric digoxin immune Fab, a larger dose given rapidly with pads applied, is the definitive treatment and works within about 30 minutes. Electricity is used if she becomes pulseless, but cardioversion of a digoxin toxic heart can provoke ventricular fibrillation. Standard antidysrhythmics are not first line.",
         keyFeature: { topic: "arrhythmia", n: 6 },
         source: "aha-2023",
       },
@@ -513,7 +519,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Fab is given and her rhythm and blood pressure improve.",
-        prompt: "List TWO things you monitor over the next 24 to 72 hours.",
+        prompt: "What do you monitor over the next 24 to 72 hours?",
         accept: [
           { id: "k", text: "Potassium, which can fall quickly", match: ["potassium", "hypokalemia"] },
           { id: "rate", text: "Rapid ventricular rate from loss of rate control in atrial fibrillation", match: ["rapid ventricular", "heart rate", "rate control", "tachycardia", "rvr"] },
@@ -540,12 +546,13 @@ export const TOX_SAMPS: Samp[] = [
     topic: "tox",
     title: "Intoxicated man who is not improving",
     stem:
-      "A 40 year old man weighing 75 kg is brought from a garage by police, slurring and unsteady. He has been in the ED 4 hours and is getting drowsier. GCS 12. HR 112, BP 136/82, RR 30, SpO2 98% on room air, T 36.6°C. Na 138, Cl 98, HCO3 7 mmol/L. Glucose 6 mmol/L, urea 5 mmol/L, creatinine 164 µmol/L. Ethanol 8 mmol/L. Measured osmolality 331 mmol/kg. Lactate 2.8 mmol/L. VBG pH 7.12.",
+      "A 40-year-old man is brought from a garage by police, slurring and unsteady. He has been in the ED 4 hours and is getting drowsier. GCS 12. Na 138, Cl 98, HCO3 7 mmol/L. Glucose 6 mmol/L, urea 5 mmol/L, creatinine 164 µmol/L. Ethanol 8 mmol/L. Measured osmolality 331 mmol/kg. Lactate 2.8 mmol/L. VBG pH 7.12.",
+    vitals: { temperature: "36.6°C", pulse: "112/minute", resp: "30/minute", bp: "136/82 mmHg", o2sat: "98% on room air", weight: "75 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Using the calculated osmolality 2 Na + glucose + urea + 1.25 x ethanol, what is his osmolal gap? Select one.",
+        prompt: "Using a calculated osmolality of 2 Na + glucose + urea + 1.25 x ethanol, which of the following is his osmolal gap?",
         options: ["10", "24", "34", "44", "54"],
         correct: 2,
         explanation:
@@ -557,7 +564,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE causes of a raised anion gap acidosis with a raised osmolal gap.",
+        prompt: "What are the causes of a raised anion gap acidosis with a raised osmolal gap?",
         accept: [
           { id: "eg", text: "Ethylene glycol", match: ["ethylene glycol", "antifreeze"] },
           { id: "meoh", text: "Methanol", match: ["methanol", "windshield", "washer fluid"] },
@@ -579,7 +586,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "Urine microscopy shows calcium oxalate crystals. A jug of antifreeze was found in the garage.",
-        prompt: "What antidote do you give now? Include the drug, dose and route.",
+        prompt: "What antidote do you give now, including the drug, dose and route?",
         accept: [
           { id: "fomepizole", text: "Fomepizole 15 mg/kg IV loading dose (about 1125 mg), then 10 mg/kg every 12 hours", match: ["fomepizole 15 mg/kg", "fomepizole 1125", "fomepizole 1100", "fomepizole 1.1 g", "4mp 15 mg/kg", "4 mp 15 mg/kg", "fomepizole 15mg/kg", "fomepizole 15 mg per kg"] },
           { id: "etoh", text: "IV ethanol loading dose, then infusion targeting a serum ethanol of about 22 mmol/L, if fomepizole is unavailable", match: ["ethanol 22 mmol", "ethanol 100 mg/dl", "ethanol 800 mg/kg", "ethanol 600 mg/kg", "ethanol loading", "ethanol load", "ethanol infusion"] },
@@ -593,7 +600,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO indications for hemodialysis in this patient.",
+        prompt: "What are the indications for hemodialysis in this patient?",
         accept: [
           { id: "acid", text: "Anion gap above 27 mmol/L, or glycolate above 12 mmol/L, as markers of severe acidosis", match: ["anion gap", "glycolate", "acidosis", "acidemia", "ph", "bicarbonate"] },
           { id: "aki", text: "Acute kidney injury, a severe clinical feature", match: ["kidney", "renal", "creatinine", "aki"] },
@@ -610,7 +617,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "List TWO adjunct treatments for ethylene glycol poisoning.",
+        prompt: "What are the adjunct treatments for ethylene glycol poisoning?",
         accept: [
           { id: "thiamine", text: "Thiamine 100 mg IV", match: ["thiamine", "vitamin b1"] },
           { id: "pyridoxine", text: "Pyridoxine 50 mg IV", match: ["pyridoxine", "vitamin b6"] },
@@ -634,13 +641,14 @@ export const TOX_SAMPS: Samp[] = [
     topic: "tox",
     title: "Confusion and tremor in a woman with a mood disorder",
     stem:
-      "A 67 year old woman weighing 58 kg is brought by her husband with 2 days of confusion, unsteady gait and vomiting. She has taken lithium 900 mg daily for years. GCS 13. HR 62, BP 108/62, RR 16, SpO2 97% on room air, T 37.1°C. She has a coarse tremor, myoclonic jerks and hyperreflexia. Na 146 mmol/L. Creatinine 188 µmol/L (baseline 88). Lithium 2.9 mmol/L drawn 14 hours after her last dose.",
+      "A 67-year-old woman is brought by her husband with 2 days of confusion, unsteady gait and vomiting. She has taken lithium 900 mg daily for years. GCS 13. She has a coarse tremor, myoclonic jerks and hyperreflexia. Na 146 mmol/L. Creatinine 188 µmol/L (baseline 88). Lithium 2.9 mmol/L drawn 14 hours after her last dose.",
+    vitals: { temperature: "37.1°C", pulse: "62/minute", resp: "16/minute", bp: "108/62 mmHg", o2sat: "97% on room air", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE items of history from the husband or her medication records that may explain this presentation.",
+        prompt: "What items of history from the husband or her medication records may explain this presentation?",
         accept: [
           { id: "thiazide", text: "New thiazide diuretic", match: ["thiazide", "hydrochlorothiazide", "diuretic", "hctz"] },
           { id: "acei", text: "New ACE inhibitor or ARB", match: ["ace inhibitor", "acei", "arb", "ramipril", "angiotensin", "perindopril"] },
@@ -658,17 +666,17 @@ export const TOX_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "In addition to stopping lithium and giving isotonic IV fluid, which is the most appropriate step? Select one.",
+        prompt: "In addition to stopping lithium and giving isotonic IV fluid, which of the following is the most appropriate next step?",
         options: [
           "Activated charcoal 50 g orally",
-          "Whole bowel irrigation",
           "Consult nephrology for hemodialysis",
-          "Furosemide to increase lithium excretion",
+          "Forced diuresis with IV furosemide",
           "Repeat the lithium level in 12 hours and reassess",
+          "Whole bowel irrigation with polyethylene glycol",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "EXTRIP recommends dialysis for decreased consciousness, seizures or life threatening dysrhythmia at any level, or a level above 4.0 mmol/L with impaired kidney function. It suggests dialysis for a level above 5.0 mmol/L, significant confusion, or when clearance to below 1.0 mmol/L will take over 36 hours. Her GCS of 13, confusion and kidney injury meet criteria despite a level of 2.9 mmol/L. Charcoal does not bind lithium and whole bowel irrigation is only for acute sustained release overdose.",
+          "EXTRIP recommends dialysis for decreased consciousness, seizures or life threatening dysrhythmia at any level, or a level above 4.0 mmol/L with impaired kidney function. It suggests dialysis for a level above 5.0 mmol/L, significant confusion, or when clearance to below 1.0 mmol/L will take over 36 hours. Her GCS of 13, confusion and kidney injury meet criteria despite a level of 2.9 mmol/L. Charcoal does not bind lithium and whole bowel irrigation is only for acute sustained release overdose. Furosemide, given to increase lithium excretion, is not a substitute for dialysis.",
         keyFeature: { topic: "tox", n: 6 },
         source: "extrip-li",
       },
@@ -676,7 +684,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO complications of lithium toxicity you watch for.",
+        prompt: "What complications of lithium toxicity do you watch for?",
         accept: [
           { id: "seiz", text: "Seizures", match: ["seizure"] },
           { id: "coma", text: "Worsening level of consciousness", match: ["coma", "level of consciousness", "gcs", "obtunded"] },
@@ -696,7 +704,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations to guide ongoing care.",
+        prompt: "What investigations will guide ongoing care?",
         accept: [
           { id: "li", text: "Repeat lithium levels, including after dialysis to detect rebound", match: ["repeat lithium", "serial lithium", "lithium level", "rebound"] },
           { id: "cr", text: "Creatinine and urine output", match: ["creatinine", "urine output", "kidney function", "renal function"] },
@@ -723,22 +731,23 @@ export const TOX_SAMPS: Samp[] = [
     topic: "tox",
     title: "Young man carried in by friends",
     stem:
-      "A 26 year old man weighing 70 kg is carried into the ED by friends who say he smoked \"down\" in a car outside. He is unresponsive to pain. RR 4, SpO2 78% on room air, HR 58, BP 104/66, T 36.2°C. Pupils are 1 mm. Glucose 5.8 mmol/L.",
+      "A 26-year-old man is carried into the ED by friends who say he smoked \"down\" in a car outside. He is unresponsive to pain. Pupils are 1 mm. Glucose 5.8 mmol/L.",
+    vitals: { temperature: "36.2°C", pulse: "58/minute", resp: "4/minute", bp: "104/66 mmHg", o2sat: "78% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which is the most appropriate initial management? Select one.",
+        prompt: "Which of the following is the most appropriate initial management?",
         options: [
-          "Bag valve mask ventilation with oxygen, and naloxone 0.04 to 0.1 mg IV repeated every 2 to 3 minutes, titrated to adequate breathing",
-          "Naloxone 2 mg IV push to full wakefulness",
-          "Flumazenil 0.2 mg IV",
-          "Rapid sequence intubation without naloxone",
+          "Bag-mask ventilation, titrated naloxone 0.04 to 0.1 mg IV",
+          "Flumazenil 0.2 mg IV, then reassess",
           "Naloxone 0.4 mg IM, then discharge once awake",
+          "Naloxone 2 mg IV push to full wakefulness",
+          "Rapid sequence intubation without naloxone",
         ],
         correct: 0,
         explanation:
-          "Ventilation fixes the immediate threat. Naloxone is then titrated to breathing, not to full alertness. Large boluses in opioid dependent patients cause abrupt withdrawal, vomiting and agitation. Higher doses are used if the patient is in or near arrest.",
+          "Ventilation fixes the immediate threat, so start bag valve mask ventilation with oxygen. Naloxone 0.04 to 0.1 mg IV is then repeated every 2 to 3 minutes and titrated to adequate breathing, not to full alertness. Large boluses in opioid dependent patients cause abrupt withdrawal, vomiting and agitation. Higher doses are used if the patient is in or near arrest.",
         keyFeature: { topic: "loc", n: 2 },
         source: "aha-2023",
       },
@@ -747,7 +756,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "He wakes after a total of 0.3 mg of naloxone. 45 minutes later he asks to leave.",
-        prompt: "List THREE findings required before he can safely be discharged, at least 1 hour after naloxone.",
+        prompt: "What findings are required before he can safely be discharged, at least 1 hour after naloxone?",
         accept: [
           { id: "mob", text: "Can mobilize as usual", match: ["mobilize", "mobilise", "mobilizing", "walk", "walking", "ambulate", "ambulating", "ambulatory", "gait"] },
           { id: "sat", text: "SpO2 above 92% on room air", match: ["spo2", "saturation", "oxygen", "o2 sat"] },
@@ -766,7 +775,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "At 3 hours he is sweating, yawning and restless. He wants help to stop using and asks about treatment.",
-        prompt: "List THREE objective signs you would score to judge the severity of his opioid withdrawal.",
+        prompt: "What objective signs would you score to judge the severity of his opioid withdrawal?",
         accept: [
           { id: "pulse", text: "Resting pulse rate", match: ["pulse", "heart rate", "tachycardia"] },
           { id: "sweat", text: "Sweating", match: ["sweat", "sweating", "diaphoresis"] },
@@ -786,17 +795,17 @@ export const TOX_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "When is the most appropriate time to give his first dose of buprenorphine and naloxone? Select one.",
+        prompt: "Which of the following is the most appropriate time to give his first dose of buprenorphine and naloxone?",
         options: [
-          "Now, while he still has signs of opioid effect, to prevent withdrawal",
-          "Once he has objective moderate withdrawal, for example a COWS score of about 12 or more",
-          "Only after a urine screen is negative for fentanyl",
           "After 72 hours without any opioid",
-          "Never in the ED. Refer to an outpatient clinic",
+          "Now, while he still has signs of opioid effect",
+          "Once in objective moderate withdrawal, COWS about 12 or more",
+          "Only after a urine drug screen is negative for fentanyl",
+          "No ED dose, refer to an outpatient clinic",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "Buprenorphine is a high affinity partial agonist. Given while full agonist is still bound, it can precipitate withdrawal. Starting once withdrawal is moderate lowers that risk. ED initiation with a bridging prescription and rapid referral is recommended in Canada, and low dose starts are an alternative with fentanyl.",
+          "Buprenorphine is a high affinity partial agonist. Given while full agonist is still bound, it can precipitate withdrawal, so starting now to prevent withdrawal backfires. Starting once withdrawal is objectively moderate, for example a COWS score of about 12 or more, lowers that risk. ED initiation with a bridging prescription and rapid referral is recommended in Canada, and low dose starts are an alternative with fentanyl.",
         keyFeature: { topic: "tox", n: 8 },
         source: "crism",
       },
@@ -804,7 +813,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 3,
-        prompt: "List THREE harm reduction or follow up measures before he leaves.",
+        prompt: "What harm reduction or follow up measures do you put in place before he leaves?",
         accept: [
           { id: "kit", text: "Take home naloxone kit with training", match: ["naloxone", "narcan"] },
           { id: "rx", text: "Bridging prescription for buprenorphine and naloxone", match: ["prescription", "bridge", "bridging", "suboxone", "buprenorphine"] },
@@ -831,13 +840,14 @@ export const TOX_SAMPS: Samp[] = [
     alsoTopics: ["delirium-agitation"],
     title: "Agitated man brought by police",
     stem:
-      "A 31 year old man weighing 85 kg is brought by police after acting erratically at a downtown party. He is combative and diaphoretic. HR 152, BP 212/118, RR 26, SpO2 96% on room air, T 40.1°C. Pupils are 7 mm. Bowel sounds are active. He says he snorted \"a lot\" of powder and has chest pain. Glucose 6.2 mmol/L.",
+      "A 31-year-old man is brought by police after acting erratically at a downtown party. He is combative and diaphoretic. Pupils are 7 mm. Bowel sounds are active. He says he snorted \"a lot\" of powder and has chest pain. Glucose 6.2 mmol/L.",
+    vitals: { temperature: "40.1°C", pulse: "152/minute", resp: "26/minute", bp: "212/118 mmHg", o2sat: "96% on room air", weight: "85 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO exam findings that help separate a sympathomimetic toxidrome from an anticholinergic one.",
+        prompt: "What exam findings help separate a sympathomimetic toxidrome from an anticholinergic one?",
         accept: [
           { id: "sweat", text: "Diaphoresis, since anticholinergic skin is dry", match: ["diaphoresis", "sweating", "sweat", "moist skin", "wet skin", "not dry skin", "no dry skin"] },
           { id: "bowel", text: "Active bowel sounds, since anticholinergic bowel sounds are reduced", match: ["bowel sound", "bowel"] },
@@ -854,7 +864,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE immediate treatments.",
+        prompt: "What are the immediate treatments?",
         accept: [
           { id: "benzo", text: "IV benzodiazepines titrated to calm, such as diazepam, midazolam or lorazepam", match: ["benzodiazepine", "benzo", "diazepam", "midazolam", "lorazepam"] },
           { id: "cool", text: "Active cooling, such as ice water immersion or evaporative cooling", match: ["cooling", "cool", "ice", "evaporative", "immersion"] },
@@ -876,21 +886,21 @@ export const TOX_SAMPS: Samp[] = [
         id: "q3",
         kind: "menu",
         update: "After diazepam 30 mg IV he is calm. HR 118, BP 196/112, T 38.6°C. He still has chest pressure. The ECG shows sinus tachycardia without ST elevation.",
-        prompt: "Which TWO agents are most appropriate for his ongoing hypertension and chest pain? Select TWO.",
+        prompt: "Which of the following agents are most appropriate for his ongoing hypertension and chest pain?",
         options: [
-          "Metoprolol 5 mg IV",
-          "Nitroglycerin 0.4 mg sublingual, then IV infusion",
-          "Propranolol 1 mg IV",
-          "Phentolamine 1 to 5 mg IV",
+          "Esmolol IV bolus, then infusion",
+          "Furosemide 40 mg IV once",
           "Haloperidol 5 mg IV",
-          "Esmolol infusion",
-          "Ketorolac 15 mg IV",
-          "Furosemide 40 mg IV",
+          "Ketorolac 15 mg IV once",
+          "Metoprolol 5 mg IV every 5 minutes",
+          "Nitroglycerin 0.4 mg sublingual, then IV infusion",
+          "Phentolamine 1 to 5 mg IV",
+          "Propranolol 1 mg IV",
         ],
         select: 2,
-        correct: [1, 3],
+        correct: [5, 6],
         explanation:
-          "After benzodiazepines, the 2023 AHA update supports vasodilators such as nitroglycerin and phentolamine for cocaine related hypertension and vasospasm. The AHA calls beta blocker safety in cocaine toxicity controversial, so they are not first choice here. Haloperidol lowers the seizure threshold and impairs heat loss.",
+          "After benzodiazepines, the 2023 AHA update supports vasodilators such as nitroglycerin, given sublingually then by IV infusion, and phentolamine for cocaine related hypertension and vasospasm. The AHA calls beta blocker safety in cocaine toxicity controversial, so esmolol, metoprolol and propranolol are not first choice here. Haloperidol lowers the seizure threshold and impairs heat loss.",
         keyFeature: { topic: "tox", n: 4 },
         source: "aha-2023",
       },
@@ -898,7 +908,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE complications you actively look for.",
+        prompt: "What complications do you actively look for?",
         accept: [
           { id: "rhabdo", text: "Rhabdomyolysis", match: ["rhabdomyolysis", "rhabdo", "ck", "creatine kinase"] },
           { id: "acs", text: "Myocardial infarction", match: ["myocardial infarction", "mi", "acs", "troponin", "ischemia", "stemi"] },
@@ -928,13 +938,14 @@ export const TOX_SAMPS: Samp[] = [
     topic: "tox",
     title: "Fever and shaking after a new pain medication",
     stem:
-      "A 44 year old woman weighing 70 kg has 6 hours of agitation, sweating, diarrhea and shaking. She takes sertraline 150 mg daily. Her family physician started tramadol for back pain 2 days ago, and she took extra today. HR 126, BP 168/96, RR 22, SpO2 98% on room air, T 39.2°C. Pupils are 6 mm. She has inducible and spontaneous ankle clonus, hyperreflexia worse in the legs and ocular clonus.",
+      "A 44-year-old woman has 6 hours of agitation, sweating, diarrhea and shaking. She takes sertraline 150 mg daily. Her family physician started tramadol for back pain 2 days ago, and she took extra today. Pupils are 6 mm. She has inducible and spontaneous ankle clonus, hyperreflexia worse in the legs and ocular clonus.",
+    vitals: { temperature: "39.2°C", pulse: "126/minute", resp: "22/minute", bp: "168/96 mmHg", o2sat: "98% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE items of medication or substance history you want.",
+        prompt: "What items of medication or substance history do you want?",
         accept: [
           { id: "ser", text: "Other serotonergic drugs, such as dextromethorphan, triptans, linezolid, lithium or trazodone", match: ["serotonergic", "dextromethorphan", "triptan", "linezolid", "lithium", "trazodone", "ondansetron", "fentanyl", "methadone", "meperidine"] },
           { id: "maoi", text: "MAO inhibitor use, including moclobemide or recent selegiline", match: ["maoi", "mao inhibitor", "monoamine", "moclobemide", "phenelzine", "selegiline"] },
@@ -952,18 +963,18 @@ export const TOX_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "menu",
-        prompt: "Which THREE features favour serotonin toxicity over neuroleptic malignant syndrome? Select THREE.",
+        prompt: "Which of the following features favour serotonin toxicity over neuroleptic malignant syndrome?",
         options: [
+          "CK above 20 000 U/L on arrival",
+          "Diarrhea and hyperactive bowel sounds",
           "Inducible or ocular clonus",
           "Lead pipe rigidity with bradyreflexia",
-          "Onset within 24 hours of a drug change",
           "Onset over several days",
-          "Diarrhea and hyperactive bowel sounds",
+          "Onset within 24 hours of a drug change",
           "Recent start of haloperidol",
-          "CK above 20 000 U/L on arrival",
         ],
         select: 3,
-        correct: [0, 2, 4],
+        correct: [2, 5, 1],
         explanation:
           "Serotonin toxicity starts within hours and features clonus, hyperreflexia and gut hyperactivity. The Hunter criteria centre on clonus. NMS evolves over days after a dopamine antagonist, with lead pipe rigidity, bradyreflexia and a markedly high CK.",
         keyFeature: { topic: "environmental", n: 2 },
@@ -973,7 +984,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE treatments you start.",
+        prompt: "What treatments do you start?",
         accept: [
           { id: "stop", text: "Stop all serotonergic drugs", match: ["stop serotonergic", "discontinue serotonergic", "hold serotonergic", "stop sertraline", "hold sertraline", "discontinue sertraline", "stop tramadol", "hold tramadol", "discontinue tramadol", "stop all", "stop offending", "discontinue offending", "stop ssri", "hold ssri"] },
           { id: "benzo", text: "Benzodiazepines for agitation and muscle activity", match: ["benzodiazepine", "benzo", "lorazepam", "diazepam", "midazolam"] },
@@ -997,7 +1008,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Despite treatment her temperature rises to 41.4°C. She has truncal rigidity and HR 148.",
-        prompt: "List TWO urgent interventions.",
+        prompt: "What are the urgent interventions?",
         accept: [
           { id: "rsi", text: "Intubation with non depolarizing paralysis such as rocuronium", match: ["rocuronium", "paralysis", "paralyze", "intubate", "intubation", "neuromuscular block"] },
           { id: "cool", text: "Aggressive cooling such as ice water immersion", match: ["cooling", "ice", "immersion", "evaporative"] },
@@ -1025,13 +1036,14 @@ export const TOX_SAMPS: Samp[] = [
     alsoTopics: ["delirium-agitation"],
     title: "Teen picking at the air",
     stem:
-      "A 16 year old boy weighing 62 kg is brought by friends who say he took a large number of allergy pills from a family medicine cabinet 4 hours ago for a video challenge. He is mumbling, picking at the air and does not recognize his mother. HR 138, BP 142/84, RR 20, SpO2 98% on room air, T 38.4°C. Pupils are 8 mm and sluggish. His face is flushed and his axillae are dry. Glucose 6.0 mmol/L.",
+      "A 16-year-old boy is brought by friends who say he took a large number of allergy pills from a family medicine cabinet 4 hours ago for a video challenge. He is mumbling, picking at the air and does not recognize his mother. Pupils are 8 mm and sluggish. His face is flushed and his axillae are dry. Glucose 6.0 mmol/L.",
+    vitals: { temperature: "38.4°C", pulse: "138/minute", resp: "20/minute", bp: "142/84 mmHg", o2sat: "98% on room air", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO further exam findings that support your working diagnosis.",
+        prompt: "What further exam findings would support your working diagnosis?",
         accept: [
           { id: "bowel", text: "Absent or reduced bowel sounds", match: ["bowel sound", "bowel", "ileus"] },
           { id: "bladder", text: "Palpable bladder or urinary retention", match: ["urinary retention", "bladder", "retention"] },
@@ -1047,7 +1059,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations that will change your management.",
+        prompt: "What investigations will change your management?",
         accept: [
           { id: "ecg", text: "ECG for QRS widening and QTc prolongation", match: ["ecg"] },
           { id: "apap", text: "Acetaminophen concentration, since combination cold products are common", match: ["acetaminophen", "apap", "tylenol", "paracetamol"] },
@@ -1067,7 +1079,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO contraindications or cautions to physostigmine.",
+        prompt: "What are the contraindications or cautions to physostigmine?",
         accept: [
           { id: "qrs", text: "QRS above 100 ms or other sign of sodium channel blockade", match: ["qrs", "sodium channel", "wide complex"] },
           { id: "tca", text: "Suspected tricyclic co-ingestion", match: ["tricyclic", "tca", "amitriptyline"] },
@@ -1084,17 +1096,17 @@ export const TOX_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "His ECG shows sinus tachycardia at 136 with a QRS of 88 ms and QTc of 460 ms. You choose physostigmine.",
-        prompt: "Which is the most appropriate dosing? Select one.",
+        prompt: "Which of the following is the most appropriate dosing regimen?",
         options: [
+          "Neostigmine 2 mg IV instead of physostigmine",
+          "Physostigmine 5 mg by intramuscular injection",
           "Physostigmine 2 mg IV push over 30 seconds",
-          "Physostigmine 0.5 to 1 mg IV given slowly over at least 5 minutes, repeated after 10 to 15 minutes if needed, with atropine at the bedside",
-          "Physostigmine 5 mg IM",
-          "Neostigmine 2 mg IV",
-          "Physostigmine 0.02 mg/kg IV rapid bolus, repeated every minute",
+          "Physostigmine 0.02 mg/kg IV rapid bolus every minute",
+          "Physostigmine 0.5 to 1 mg IV slowly over 5 minutes",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
-          "Slow IV doses of 0.5 to 1 mg in adults, repeated after 10 to 15 minutes, reverse delirium with a low rate of adverse effects. Rapid injection causes bradycardia and seizures. Neostigmine does not cross into the brain and will not treat the delirium.",
+          "Slow IV doses of 0.5 to 1 mg in adults, given over at least 5 minutes and repeated after 10 to 15 minutes if needed with atropine at the bedside, reverse delirium with a low rate of adverse effects. Rapid injection causes bradycardia and seizures. Neostigmine does not cross into the brain and will not treat the delirium.",
         keyFeature: { topic: "tox", n: 2 },
         source: "cag",
       },
@@ -1102,7 +1114,8 @@ export const TOX_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "Physostigmine becomes unavailable. List TWO appropriate ways to manage his ongoing agitation.",
+        update: "Physostigmine becomes unavailable.",
+        prompt: "What are appropriate ways to manage his ongoing agitation?",
         accept: [
           { id: "benzo", text: "Benzodiazepines such as lorazepam, diazepam or midazolam", match: ["benzodiazepine", "benzo", "lorazepam", "diazepam", "midazolam"] },
           { id: "quiet", text: "Quiet room, family presence and frequent reorientation", match: ["quiet", "reorient", "reorientation", "family", "low stimulation"] },
@@ -1127,13 +1140,14 @@ export const TOX_SAMPS: Samp[] = [
     topic: "tox",
     title: "Family with headaches during a winter storm",
     stem:
-      "During an ice storm in rural Ontario, paramedics bring a family of three. The power has been out for 2 days. The mother is 32 years old and 28 weeks pregnant, with headache and nausea. Her 6 year old son weighing 21 kg is drowsy. The father fainted while carrying firewood. The mother's vitals are HR 108, BP 118/70, RR 20, SpO2 99% on room air, T 36.9°C.",
+      "During an ice storm in rural Ontario, paramedics bring a family of three. The power has been out for 2 days. The mother is 32 years old and 28 weeks pregnant, with headache and nausea. Her 6-year-old son weighing 21 kg is drowsy. The father fainted while carrying firewood. The vital signs below are the mother's.",
+    vitals: { temperature: "36.9°C", pulse: "108/minute", resp: "20/minute", bp: "118/70 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE details you want from the paramedics about the scene.",
+        prompt: "What details do you want from the paramedics about the scene?",
         accept: [
           { id: "source", text: "Fuel burning source such as a generator, propane heater or barbecue indoors or in an attached garage", match: ["generator", "heater", "propane", "barbecue", "furnace", "fuel", "wood stove", "source"] },
           { id: "alarm", text: "Whether a CO alarm sounded, or paramedic CO monitor readings", match: ["alarm", "detector", "monitor reading", "co reading", "meter"] },
@@ -1152,7 +1166,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations for the mother.",
+        prompt: "What investigations do you order for the mother?",
         accept: [
           { id: "cohb", text: "Carboxyhemoglobin by co-oximetry on a venous or arterial sample", match: ["carboxyhemoglobin", "cohb", "co oximetry", "cooximetry", "carbon monoxide level"] },
           { id: "ecg", text: "ECG", match: ["ecg"] },
@@ -1172,17 +1186,17 @@ export const TOX_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "The mother's carboxyhemoglobin is 22%. Fetal heart rate tracing is reassuring.",
-        prompt: "Which is the most appropriate management for the mother? Select one.",
+        prompt: "Which of the following is the most appropriate management for the mother?",
         options: [
-          "Oxygen by nasal prongs to keep SpO2 above 94%",
-          "High flow oxygen by non rebreather mask and urgent discussion with a hyperbaric centre about transfer",
-          "Room air and repeat carboxyhemoglobin in 4 hours",
           "Discharge home once the headache resolves",
-          "Methylene blue 1 mg/kg IV",
+          "Methylene blue 1 mg/kg IV over 5 minutes",
+          "Nasal prong oxygen to keep SpO2 above 94%",
+          "Non-rebreather oxygen, urgent call to a hyperbaric centre",
+          "Room air, then a repeat carboxyhemoglobin level in 4 hours",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "High flow oxygen shortens the half life of carboxyhemoglobin. Pregnancy lowers the threshold for hyperbaric oxygen, often to a carboxyhemoglobin above 15 to 20%, because the fetus is at higher risk. Hyperbaric centres in Canada are few, so call early.",
+          "High flow oxygen by non rebreather mask shortens the half life of carboxyhemoglobin. Pregnancy lowers the threshold for hyperbaric oxygen, often to a carboxyhemoglobin above 15 to 20%, because the fetus is at higher risk. Hyperbaric centres in Canada are few, so call early to discuss transfer.",
         keyFeature: { topic: "tox", n: 4 },
         source: "uhms",
       },
@@ -1190,7 +1204,8 @@ export const TOX_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "The father's carboxyhemoglobin is 19%. List THREE features in any patient that support hyperbaric oxygen for carbon monoxide poisoning.",
+        update: "The father's carboxyhemoglobin is 19%.",
+        prompt: "What features in any patient support hyperbaric oxygen for carbon monoxide poisoning?",
         accept: [
           { id: "loc", text: "Loss of consciousness or syncope", match: ["loss of consciousness", "syncope", "loc", "fainted", "unconscious"] },
           { id: "neuro", text: "Altered mental status, seizure or focal neurological deficit", match: ["mental status", "confusion", "seizure", "neurological", "neurologic", "coma", "gcs"] },
@@ -1209,7 +1224,8 @@ export const TOX_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "The drowsy son improves with oxygen and his family will be discharged together after treatment. List TWO key points of discharge advice.",
+        update: "The drowsy son improves with oxygen and his family will be discharged together after treatment.",
+        prompt: "What are the key points of discharge advice?",
         accept: [
           { id: "dns", text: "Watch for delayed neurological or cognitive symptoms over the coming weeks and return if they occur", match: ["delayed", "memory", "cognitive", "personality", "neuropsychiatric", "concentration"] },
           { id: "home", text: "Do not return home until the source is fixed and the house is cleared by the fire service or utility", match: ["do not return", "not return", "dont return", "don return", "no return", "cleared", "fire department", "fire service", "ventilate", "fixed", "inspect"] },
@@ -1233,13 +1249,14 @@ export const TOX_SAMPS: Samp[] = [
     topic: "tox",
     title: "Toddler vomiting after getting into a purse",
     stem:
-      "A 3 year old girl weighing 15 kg is brought in 2 hours after her father found her with an open bottle from her mother's purse. She has vomited 4 times, once with streaks of blood. HR 148, BP 92/56, RR 28, SpO2 99% on room air, T 37.2°C, capillary refill 3 seconds. She is tired but consolable.",
+      "A 3-year-old girl is brought in 2 hours after her father found her with an open bottle from her mother's purse. She has vomited 4 times, once with streaks of blood. Capillary refill is 3 seconds. She is tired but consolable.",
+    vitals: { temperature: "37.2°C", pulse: "148/minute", resp: "28/minute", bp: "92/56 mmHg", o2sat: "99% on room air", weight: "15 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE items of history you want from the parents.",
+        prompt: "What items of history do you want from the parents?",
         accept: [
           { id: "product", text: "Exact product name and salt, for example ferrous sulfate, gluconate or fumarate", match: ["product", "label", "salt", "ferrous", "brand", "name of"] },
           { id: "count", text: "Number of tablets missing from a known starting count", match: ["how many", "number", "count", "missing", "amount", "quantity"] },
@@ -1258,7 +1275,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "The bottle is ferrous sulfate 300 mg (60 mg elemental iron per tablet). Twelve tablets are missing, about 48 mg/kg of elemental iron.",
-        prompt: "List THREE investigations that will guide management.",
+        prompt: "What investigations will guide management?",
         accept: [
           { id: "fe", text: "Serum iron at 4 to 6 hours after ingestion", match: ["serum iron", "iron level", "iron concentration", "fe level"] },
           { id: "xray", text: "Abdominal radiograph for tablets", match: ["x ray", "xray", "radiograph", "kub", "abdominal film"] },
@@ -1278,17 +1295,17 @@ export const TOX_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "The abdominal radiograph shows about 8 radiopaque tablets in the stomach and small bowel.",
-        prompt: "Which is the most appropriate decontamination? Select one.",
+        prompt: "Which of the following is the most appropriate method of decontamination?",
         options: [
-          "Activated charcoal 1 g/kg orally",
-          "Whole bowel irrigation with polyethylene glycol at about 500 mL per hour by nasogastric tube",
-          "Syrup of ipecac",
+          "Activated charcoal 1 g/kg orally or by nasogastric tube",
           "Gastric lavage with a deferoxamine solution",
-          "No decontamination. Observe for 6 hours",
+          "Syrup of ipecac to induce vomiting",
+          "Whole bowel irrigation, about 500 mL/hour by NG tube",
+          "No decontamination, observe for 6 hours",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
-          "Activated charcoal does not bind iron. Whole bowel irrigation with polyethylene glycol clears tablets still in the gut, which a radiograph confirms. For children 9 months to 6 years about 500 mL per hour is typical, continued until the effluent is clear and repeat imaging shows no tablets.",
+          "Activated charcoal does not bind iron. Whole bowel irrigation with polyethylene glycol, given by nasogastric tube, clears tablets still in the gut, which a radiograph confirms. For children 9 months to 6 years about 500 mL per hour is typical, continued until the effluent is clear and repeat imaging shows no tablets.",
         keyFeature: { topic: "tox", n: 6 },
         source: "wbi",
       },
@@ -1296,7 +1313,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO indications for deferoxamine in iron poisoning.",
+        prompt: "What are the indications for deferoxamine in iron poisoning?",
         accept: [
           { id: "fe", text: "Serum iron above about 90 µmol/L (500 µg/dL)", match: ["iron 90", "iron 500", "90 µmol", "90 umol", "500 µg", "500 ug", "500 mcg", "500 microgram"] },
           { id: "acid", text: "Metabolic acidosis", match: ["acidosis", "acidemia", "ph"] },
@@ -1314,17 +1331,17 @@ export const TOX_SAMPS: Samp[] = [
         id: "q5",
         kind: "single",
         update: "Her 4 hour serum iron is 104 µmol/L. VBG pH 7.26, HCO3 14 mmol/L.",
-        prompt: "Which is the most appropriate deferoxamine regimen? Select one.",
+        prompt: "Which of the following is the most appropriate deferoxamine regimen?",
         options: [
-          "15 mg/kg/h IV infusion, starting slower and titrating up to limit hypotension, usually for no more than 24 hours",
-          "90 mg/kg IM every 8 hours",
-          "15 mg/kg/h IV infusion for at least 72 hours",
-          "1 g IV bolus over 1 minute",
-          "Oral deferoxamine to bind iron in the gut",
+          "Bolus of 1 g IV over 1 minute",
+          "Infusion at 15 mg/kg/hour IV for at least 72 hours",
+          "Intramuscular 90 mg/kg every 8 hours",
+          "Oral dosing to bind iron in the gut",
+          "Up to 15 mg/kg/hour IV, usually 24 hours or less",
         ],
-        correct: 0,
+        correct: 4,
         explanation:
-          "IV infusion at up to 15 mg/kg/h is standard, with a slower start because rapid infusion causes hypotension. Courses longer than about 24 hours are linked to acute lung injury. Oral deferoxamine may increase iron absorption.",
+          "IV infusion at up to 15 mg/kg/h is standard, starting slower and titrating up because rapid infusion causes hypotension. Courses longer than about 24 hours are linked to acute lung injury. Oral deferoxamine may increase iron absorption.",
         keyFeature: { topic: "tox", n: 6 },
         source: "cag",
       },
@@ -1340,13 +1357,14 @@ export const TOX_SAMPS: Samp[] = [
     alsoTopics: ["loc"],
     title: "Toddler found with a pill organizer",
     stem:
-      "A 2 year old boy weighing 12 kg is brought by his grandmother, who found him 1 hour ago with her weekly pill organizer open on the floor. She is not sure what is missing. He is well appearing and playful. HR 118, BP 94/58, RR 26, SpO2 99% on room air, T 36.8°C. Capillary glucose 5.4 mmol/L.",
+      "A 2-year-old boy is brought by his grandmother, who found him 1 hour ago with her weekly pill organizer open on the floor. She is not sure what is missing. He is well appearing and playful. Capillary glucose 5.4 mmol/L.",
+    vitals: { temperature: "36.8°C", pulse: "118/minute", resp: "26/minute", bp: "94/58 mmHg", o2sat: "99% on room air", weight: "12 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE steps to identify what he may have taken.",
+        prompt: "What steps do you take to identify what he may have taken?",
         accept: [
           { id: "list", text: "Get the grandmother's full medication list from her pharmacy or records", match: ["pharmacy", "medication list", "med list", "drug list", "prescription"] },
           { id: "organizer", text: "Have someone bring the organizer and all bottles, and count what is missing from each compartment", match: ["organizer", "bring", "bottle", "compartment", "count", "missing"] },
@@ -1365,7 +1383,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE drug classes where a single adult tablet can seriously harm a toddler.",
+        prompt: "Which drug classes can seriously harm a toddler with a single adult tablet?",
         accept: [
           { id: "su", text: "Sulfonylureas", match: ["sulfonylurea", "gliclazide", "glyburide", "glipizide", "glimepiride"] },
           { id: "ccb", text: "Calcium channel blockers", match: ["calcium channel", "ccb", "verapamil", "diltiazem", "nifedipine", "amlodipine"] },
@@ -1387,7 +1405,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "The pharmacy confirms gliclazide MR 60 mg is missing from two compartments. Five hours after ingestion he is sleepy and sweaty. Capillary glucose is 2.1 mmol/L.",
-        prompt: "List TWO treatments. Include the dose and route for each.",
+        prompt: "What treatments do you give, including the dose and route for each?",
         accept: [
           { id: "dex", text: "Dextrose 10% 2 to 5 mL/kg IV (24 to 60 mL), then a dextrose infusion", match: ["d10w 2 ml/kg", "d10w 5 ml/kg", "d10w 3 ml/kg", "d10w 4 ml/kg", "d10 2 ml/kg", "d10 5 ml/kg", "d10 3 ml/kg", "dextrose 10% 2 ml/kg", "dextrose 10% 5 ml/kg", "dextrose 10% 3 ml/kg", "dextrose 10% 4 ml/kg", "dextrose 0.25 g/kg", "dextrose 0.5 g/kg", "dextrose 0.2 g/kg", "d10w 24 ml", "d10w 60 ml", "d10w 50 ml", "d10w 25 ml", "d10w 2ml/kg", "d10w 5ml/kg", "d10 2ml/kg", "d10 5ml/kg", "d10w 2 ml per kg", "d10w 5 ml per kg", "d25 1 ml/kg", "d25 2 ml/kg", "d25w 2 ml/kg", "dextrose 25% 2 ml/kg"] },
           { id: "oct", text: "Octreotide 1 mcg/kg (about 12 mcg) SC or IV every 6 to 8 hours", match: ["octreotide 1 mcg/kg", "octreotide 1.5 mcg/kg", "octreotide 12 mcg", "octreotide 10 mcg", "octreotide 15 mcg", "octreotide 1 microgram/kg", "octreotide 1 µg/kg", "octreotide 1 ug/kg", "octreotide 1mcg/kg", "octreotide 1 mcg per kg", "octreotide 1 microgram per kg"] },
@@ -1402,17 +1420,17 @@ export const TOX_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for this child?",
         options: [
+          "Admit for 24 hours of dextrose infusion without octreotide",
+          "Admit, observe at least 12 to 24 hours after octreotide",
+          "Discharge home with a glucometer for checks",
           "Discharge once glucose is normal for 2 hours",
-          "Observe in the ED for 8 hours after the last dextrose bolus",
-          "Admit with frequent glucose checks, continuing observation for at least 12 to 24 hours after octreotide is stopped",
-          "Admit and give prophylactic dextrose infusion for 24 hours without octreotide",
-          "Discharge with a home glucometer",
+          "Observe in the ED for 8 hours after last dextrose",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
-          "Modified release gliclazide can cause hypoglycemia for more than 24 hours. Hypoglycemia can recur after octreotide stops, so observe well past the last dose. Prophylactic dextrose alone masks the problem and drives more insulin release.",
+          "Modified release gliclazide can cause hypoglycemia for more than 24 hours. Hypoglycemia can recur after octreotide stops, so admit with frequent glucose checks and observe for at least 12 to 24 hours after the last dose. Prophylactic dextrose alone masks the problem and drives more insulin release.",
         keyFeature: { topic: "tox", n: 5 },
         source: "cag",
       },
@@ -1428,13 +1446,14 @@ export const TOX_SAMPS: Samp[] = [
     alsoTopics: ["delirium-agitation", "seizures"],
     title: "Tremor and sweating while awaiting a bed",
     stem:
-      "A 55 year old man weighing 80 kg is in the ED awaiting a surgical bed for an ankle fracture sustained 40 hours ago. He now has tremor, sweating and says there are insects on the wall. He drinks about 20 standard drinks a day and last drank the night before the injury. He had a withdrawal seizure 2 years ago. HR 128, BP 176/104, RR 22, SpO2 96% on room air, T 38.0°C. He is oriented to person only. Glucose 5.6 mmol/L.",
+      "A 55-year-old man is in the ED awaiting a surgical bed for an ankle fracture sustained 40 hours ago. He now has tremor, sweating and says there are insects on the wall. He drinks about 20 standard drinks a day and last drank the night before the injury. He had a withdrawal seizure 2 years ago. He is oriented to person only. Glucose 5.6 mmol/L.",
+    vitals: { temperature: "38.0°C", pulse: "128/minute", resp: "22/minute", bp: "176/104 mmHg", o2sat: "96% on room air", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE objective findings you use to judge the severity of his withdrawal.",
+        prompt: "What objective findings do you use to judge the severity of his withdrawal?",
         accept: [
           { id: "tremor", text: "Tremor", match: ["tremor"] },
           { id: "sweat", text: "Sweating", match: ["sweat", "sweating", "diaphoresis"] },
@@ -1453,7 +1472,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE risk factors for severe or complicated alcohol withdrawal.",
+        prompt: "What are the risk factors for severe or complicated alcohol withdrawal?",
         accept: [
           { id: "prior", text: "Previous withdrawal seizures or delirium tremens", match: ["previous seizure", "prior seizure", "withdrawal seizure", "delirium tremens", "dt", "dts", "previous withdrawal", "prior withdrawal", "history of withdrawal", "history of seizure"] },
           { id: "illness", text: "Concurrent medical or surgical illness", match: ["concurrent", "comorbid", "illness", "surgery", "trauma", "infection", "fracture"] },
@@ -1472,17 +1491,17 @@ export const TOX_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which is the most appropriate initial treatment? Select one.",
+        prompt: "Which of the following is the most appropriate initial treatment?",
         options: [
-          "Lorazepam 1 mg orally every 8 hours",
-          "Diazepam 10 to 20 mg IV every 5 to 10 minutes, titrated until he is calm but rousable",
+          "Chlordiazepoxide 25 mg PO once, reassess in 6 hours",
+          "Diazepam 10 to 20 mg IV, repeated until calm",
           "Haloperidol 5 mg IV every 30 minutes as needed",
-          "Chlordiazepoxide 25 mg orally once, then reassess in 6 hours",
+          "Lorazepam 1 mg PO every 8 hours",
           "Oral ethanol to prevent further withdrawal",
         ],
         correct: 1,
         explanation:
-          "Severe withdrawal with early delirium needs rapid IV benzodiazepine loading. Diazepam has a fast onset and long active metabolites that smooth the course. Fixed low oral doses undertreat. Haloperidol does not treat the underlying GABA deficit and lowers the seizure threshold.",
+          "Severe withdrawal with early delirium needs rapid IV benzodiazepine loading. Diazepam 10 to 20 mg IV every 5 to 10 minutes, titrated until he is calm but rousable, has a fast onset and long active metabolites that smooth the course. Fixed low oral doses undertreat. Haloperidol does not treat the underlying GABA deficit and lowers the seizure threshold.",
         keyFeature: { topic: "tox", n: 8 },
         source: "bc-aud",
       },
@@ -1491,7 +1510,7 @@ export const TOX_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "After 200 mg of IV diazepam over 90 minutes he remains severely agitated and hallucinating. HR 134.",
-        prompt: "List TWO next steps.",
+        prompt: "What are the next steps?",
         accept: [
           { id: "pheno", text: "Phenobarbital IV", match: ["phenobarbital", "barbiturate"] },
           { id: "propofol", text: "Intubation with propofol sedation", match: ["propofol", "intubate", "intubation", "rsi"] },
@@ -1509,7 +1528,7 @@ export const TOX_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        prompt: "List TWO other treatments he needs.",
+        prompt: "What other treatments does he need?",
         accept: [
           { id: "thiamine", text: "Thiamine IV, given before or with glucose", match: ["thiamine", "vitamin b1"] },
           { id: "mg", text: "Magnesium replacement", match: ["magnesium"] },
