@@ -113,7 +113,7 @@ Everything for the store records is in `store/`:
 - `store/graphics/play-icon-512.png` and `store/graphics/play-feature-1024x500.png`.
 - The App Store icon (1024) comes from `assets/icon-only.png` through the Xcode asset catalog.
 
-To regenerate the screenshots after content changes, run `npm run dev`, then `npx -y -p playwright@1 node store/tools/make-assets.mjs`. The script loads a sample history with `?seed=1`, which only works in the dev server.
+To regenerate the screenshots after content changes, build a seeded static copy with `VITE_SEED=1 npx vite build --outDir /tmp/seeded`, serve it with `npx vite preview --outDir /tmp/seeded --port 5174`, then run `npx -y -p playwright@1 node store/tools/make-assets.mjs http://localhost:5174`. The seed and the simulated store exist only when `VITE_SEED=1` is set, so production builds never include them. Set `ONLY=play-phone` to render one size.
 
 ## 9. Website
 
@@ -164,3 +164,15 @@ npx cap open ios       # Xcode, on a Mac
 ```
 
 In the browser dev server the unlock is simulated so you can click through the paid flow. A production web build never unlocks anything.
+
+## Physician review: items the reviewers flagged
+
+Each batch review in `docs/reviews/` ends with open questions. These change keyed answers and need a decision first.
+
+- Rh immune globulin in early pregnancy loss and ectopic pregnancy now follows SOGC No. 448 (2024). It is not routinely given before 8 weeks and is optional from 8 to 12 weeks. The CFPC key feature still says to offer prophylaxis. Affects s01 and s10.
+- Beta blockers in cocaine toxicity are unacceptable, not dangerous, following the 2023 AHA update. Affects s12 and s18.
+- Pediatric levetiracetam is capped at 3000 mg, per TREKK 2025. Affects s16.
+- Febrile neonate antibiotic doses follow CPS 2024: ampicillin 75 mg/kg every 6 h and gentamicin 5 mg/kg every 24 h. Affects s14.
+- PID treatment follows the current PHAC guide: ceftriaxone 500 mg IM, doxycycline and metronidazole. Affects s12.
+- Provincial law. Stems that test Ontario statutes now say Ontario. Other stems use national wording. Confirm this suits a national exam.
+- Short answer matching ignores word order and reads only simple negation ("no", "avoid", "don't", "contraindicated" after a drug). "Rather than NG" is not read as negation. Candidates can override any line except one marked dangerous.
