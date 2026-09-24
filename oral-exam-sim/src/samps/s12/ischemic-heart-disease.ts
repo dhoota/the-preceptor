@@ -33,13 +33,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Chest pain in a snowstorm",
     stem:
-      "You work at a rural hospital without a catheterization laboratory. The nearest PCI centre is 3 hours away by road and air transport is grounded by a snowstorm. A 64 year old man presents with 70 minutes of crushing chest pain and nausea. He has hypertension and smokes. HR 58, BP 104/64, RR 18, SpO2 96%. Weight 84 kg. His ECG shows 3 mm ST elevation in II, III and aVF, with more elevation in III than in II, and ST depression in I and aVL.",
+      "You work at a rural hospital without a catheterization laboratory. The nearest PCI centre is 3 hours away by road and air transport is grounded by a snowstorm. A 64-year-old man presents with 70 minutes of crushing chest pain and nausea. He has hypertension and smokes. Oxygen saturation is 96%. His ECG shows 3 mm ST elevation in II, III and aVF, with more elevation in III than in II, and ST depression in I and aVL.",
+    vitals: { pulse: "58/minute", resp: "18/minute", bp: "104/64 mmHg", weight: "84 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO ECG findings you look for to identify right ventricular involvement.",
+        prompt: "What ECG findings do you look for to identify right ventricular involvement?",
         accept: [
           { id: "v4r", text: "ST elevation in right sided lead V4R", match: ["v4r", "right sided", "right side"] },
           { id: "iii", text: "ST elevation in III greater than in II", match: ["iii ii", "iii greater"] },
@@ -53,15 +54,15 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which reperfusion strategy is most appropriate? Select one.",
+        prompt: "Which of the following reperfusion strategies is most appropriate for this patient?",
         options: [
-          "Transfer by road for primary PCI",
-          "Tenecteplase in your department within 30 minutes of arrival, then transfer to the PCI centre",
-          "Wait for the first troponin result before deciding",
           "Anticoagulation alone and transfer when the weather clears",
           "Tenecteplase only if the pain lasts more than 3 hours",
+          "Tenecteplase within 30 minutes of arrival, then transfer",
+          "Transfer by road for primary PCI",
+          "Wait for the first troponin result before deciding",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Primary PCI is preferred only if first medical contact to device time can be kept within 120 minutes. Here it cannot. Fibrinolysis within 30 minutes of arrival, followed by transfer for angiography, is the pharmacoinvasive strategy recommended by the CCS.",
         keyFeature: { topic: TOPIC, n: 6 },
@@ -71,7 +72,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Give the tenecteplase dose for this patient.",
+        prompt: "What is the tenecteplase dose for this patient?",
         accept: [{ id: "dose", text: "Tenecteplase 45 mg IV bolus", match: ["tenecteplase 45 mg", "tenecteplase 45mg", "tnk 45 mg", "tnk 45mg", "45 mg"] }],
         unacceptable: [
           { text: "50 mg", match: ["50 mg", "50mg"] },
@@ -86,7 +87,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE absolute contraindications to fibrinolysis that you must ask about.",
+        prompt: "What absolute contraindications to fibrinolysis must you ask about?",
         accept: [
           { id: "ich", text: "Any prior intracranial hemorrhage", match: ["intracranial hemorrhage", "intracranial haemorrhage", "ich", "brain bleed", "hemorrhagic stroke"] },
           { id: "stroke", text: "Ischemic stroke within 3 months", match: ["stroke", "ischemic stroke"] },
@@ -108,8 +109,8 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q5",
         kind: "short",
         required: 2,
-        update: "Before you see him, a nurse gave nitroglycerin 0.4 mg SL for ongoing pain. Ten minutes later BP is 78/48 and HR 54. His lungs are clear.",
-        prompt: "List TWO interventions now.",
+        update: "Before you see him, a nurse gave nitroglycerin 0.4 mg SL for ongoing pain. Ten minutes later BP is 78/48 mmHg and pulse is 54/minute. His lungs are clear.",
+        prompt: "What interventions do you perform now?",
         accept: [
           { id: "stop", text: "Stop nitrates", match: ["stop nitro", "hold nitro", "no more nitro", "stop nitroglycerin", "hold nitroglycerin", "no further nitro", "avoid nitrate", "stop nitrate", "hold nitrate", "no nitrate", "no nitro", "avoid nitro", "discontinue nitro", "discontinue nitrate", "withhold nitro", "withhold nitrate"] },
           { id: "fluid", text: "IV crystalloid bolus of 250 to 500 mL, repeated as needed", match: ["bolus", "fluid", "crystalloid", "saline", "ringer"] },
@@ -133,13 +134,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Older woman who feels tired",
     stem:
-      "A 79 year old woman is brought in by her son with 2 days of fatigue, nausea and breathlessness on exertion. She denies chest pain. She has type 2 diabetes, hypertension and chronic kidney disease with a baseline eGFR of 48 mL/min. HR 96, BP 152/84, RR 20, SpO2 96% on room air. Weight 62 kg. Her lungs are clear. ECG shows sinus rhythm with 1.5 mm horizontal ST depression in V4 to V6, I and aVL. The first high sensitivity troponin T is 88 ng/L (99th percentile 14 ng/L).",
+      "A 79-year-old woman is brought in by her son with 2 days of fatigue, nausea and breathlessness on exertion. She denies chest pain. She has type 2 diabetes, hypertension and chronic kidney disease with a baseline eGFR of 48 mL/minute. Her lungs are clear. ECG shows sinus rhythm with 1.5 mm horizontal ST depression in V4 to V6, I and aVL. The first high sensitivity troponin T is 88 ng/L (99th percentile 14 ng/L).",
+    vitals: { pulse: "96/minute", resp: "20/minute", bp: "152/84 mmHg", o2sat: "96% on room air", weight: "62 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE characteristics of this patient that make an atypical presentation of ACS more likely.",
+        prompt: "What characteristics of this patient make an atypical presentation of ACS more likely?",
         accept: [
           { id: "age", text: "Older age", match: ["age", "older", "elderly", "79"] },
           { id: "sex", text: "Female sex", match: ["female", "woman", "sex"] },
@@ -155,7 +157,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO tests you repeat to complete her assessment, and when.",
+        prompt: "Which tests do you repeat to complete her assessment, and when?",
         accept: [
           { id: "trop", text: "Repeat high sensitivity troponin at 1 to 3 hours per the local algorithm", match: ["troponin", "trop"] },
           { id: "ecg", text: "Repeat ECG within 15 to 30 minutes and with any new symptoms", match: ["ecg", "electrocardiogram", "ekg"] },
@@ -170,14 +172,13 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Her repeat troponin at 1 hour is 142 ng/L. She is pain free with stable vital signs.",
-        prompt: "Which management plan is most appropriate? Select one.",
+        prompt: "Which of the following management plans is most appropriate for her?",
         options: [
-          "Immediate catheterization laboratory activation within 2 hours",
-          "Admission with antithrombotic therapy and invasive coronary angiography within 24 hours",
-          "Admission for medical therapy only because of her age",
+          "Admission for medical therapy without angiography",
+          "Admit, antithrombotics, invasive angiography within 24 hours",
+          "CT coronary angiography before discharge from the department",
+          "Immediate catheterization laboratory activation",
           "Outpatient stress test within 1 week",
-          "CT coronary angiography before discharge",
-          "Tenecteplase now",
         ],
         correct: 1,
         explanation:
@@ -194,13 +195,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Young man with sharp chest pain after a cold",
     stem:
-      "A 27 year old man presents with 3 days of sharp central chest pain that is worse lying flat and with deep breaths, and better sitting forward. He had a cold 10 days ago. T 37.9°C, HR 98, BP 124/76, RR 18, SpO2 98%. His ECG shows 1.5 to 2 mm concave ST elevation in I, II, aVL, aVF and V2 to V6, with PR depression in the same leads, PR elevation in aVR and no reciprocal ST depression except in aVR. The first high sensitivity troponin is normal.",
+      "A 27-year-old man presents with 3 days of sharp central chest pain that is worse lying flat and with deep breaths, and better sitting forward. He had a cold 10 days ago. Oxygen saturation is 98%. His ECG shows 1.5 to 2 mm concave ST elevation in I, II, aVL, aVF and V2 to V6, with PR depression in the same leads, PR elevation in aVR and no reciprocal ST depression except in aVR. The first high sensitivity troponin is normal.",
+    vitals: { temperature: "37.9°C", pulse: "98/minute", resp: "18/minute", bp: "124/76 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE ECG features that favour pericarditis over STEMI.",
+        prompt: "What ECG features favour pericarditis over STEMI?",
         accept: [
           { id: "diffuse", text: "Diffuse ST elevation not confined to one coronary territory", match: ["diffuse", "widespread", "multiple territories", "territory", "territorial"] },
           { id: "prd", text: "PR depression", match: ["pr depression"] },
@@ -219,7 +221,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO other conditions that cause ST elevation and can mimic STEMI.",
+        prompt: "What other conditions cause ST elevation and can mimic STEMI?",
         accept: [
           { id: "er", text: "Benign early repolarization", match: ["early repolarization", "early repolarisation", "j point"] },
           { id: "lvh", text: "Left ventricular hypertrophy", match: ["lvh", "left ventricular hypertrophy"] },
@@ -241,17 +243,18 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "The resident says that because the pain is pleuritic and positional, ACS is excluded and the troponin was unnecessary. Which statement is most accurate? Select one.",
+        update: "The resident says that because the pain is pleuritic and positional, ACS is excluded and the troponin was unnecessary.",
+        prompt: "Which of the following statements about the resident's reasoning is most accurate?",
         options: [
+          "A normal first troponin excludes myocardial injury",
+          "Pleuritic or positional pain lowers but does not exclude ACS",
           "Pleuritic, positional pain excludes ACS",
-          "Pleuritic or positional pain lowers the likelihood of ACS but does not exclude it, so ECG and troponin testing are still needed",
-          "Chest wall tenderness, if present, would exclude ACS",
-          "A normal first troponin excludes myocardial injury at any time after onset",
+          "Reproducible chest wall tenderness, if present, excludes ACS",
           "Response to an NSAID would confirm pericarditis",
         ],
         correct: 1,
         explanation:
-          "Pleuritic, positional and reproducible features reduce but do not remove the probability of ACS. Some patients with MI describe sharp or pleuritic pain. Objective testing is still required.",
+          "Pleuritic, positional and reproducible features reduce but do not remove the probability of ACS. Some patients with MI describe sharp or pleuritic pain. ECG and troponin testing are still required.",
         keyFeature: { topic: TOPIC, n: 4 },
         source: "aha-chest-pain",
       },
@@ -260,7 +263,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "He is started on ibuprofen and colchicine. Two hours later he has new, heavier, pressure like pain.",
-        prompt: "List TWO findings on repeat testing that would make you reconsider STEMI.",
+        prompt: "What findings on repeat testing would make you reconsider STEMI?",
         accept: [
           { id: "recip", text: "New reciprocal ST depression", match: ["reciprocal", "st depression"] },
           { id: "iii", text: "ST elevation greater in III than in II", match: ["iii ii", "iii greater"] },
@@ -284,13 +287,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Pain free after morning chest pressure",
     stem:
-      "A 52 year old man presents at 0800 after 30 minutes of pressure like chest pain at rest this morning. He had two shorter episodes yesterday. He is now pain free. He smokes and has hypertension and dyslipidemia. His father had an MI at 50. HR 74, BP 138/84, RR 16, SpO2 98%. His ECG shows sinus rhythm with deep, symmetric T wave inversion in V2 and V3, preserved R wave progression, no Q waves and less than 1 mm ST elevation in V2. The first high sensitivity troponin I is 9 ng/L (99th percentile 26 ng/L).",
+      "A 52-year-old man presents at 0800 after 30 minutes of pressure like chest pain at rest this morning. He had two shorter episodes yesterday. He is now pain free. He smokes and has hypertension and dyslipidemia. His father had an MI at 50. Oxygen saturation is 98%. His ECG shows sinus rhythm with deep, symmetric T wave inversion in V2 and V3, preserved R wave progression, no Q waves and less than 1 mm ST elevation in V2. The first high sensitivity troponin I is 9 ng/L (99th percentile 26 ng/L).",
+    vitals: { pulse: "74/minute", resp: "16/minute", bp: "138/84 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "Name the ECG pattern and the coronary lesion it suggests.",
+        prompt: "What is the ECG pattern, and which coronary lesion does it suggest?",
         accept: [
           { id: "wellens", text: "Wellens pattern", match: ["wellens", "wellen"] },
           { id: "lad", text: "Critical proximal left anterior descending stenosis", match: ["lad", "left anterior descending"] },
@@ -303,15 +307,16 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "He asks to go home because the pain has settled and the troponin is normal. What is the most appropriate plan? Select one.",
+        update: "He asks to go home because the pain has settled and the troponin is normal.",
+        prompt: "Which of the following is the most appropriate plan for him?",
         options: [
-          "Discharge with an outpatient exercise stress test within 72 hours",
-          "Exercise stress test in the ED today",
-          "Repeat troponin at 2 hours and discharge if normal",
-          "Admit under cardiology for early coronary angiography and avoid stress testing",
-          "CT coronary angiography next month",
+          "Admit to cardiology for early angiography, avoid stress test",
+          "Discharge, outpatient stress test within 72 hours",
+          "Exercise stress test in the department today",
+          "Outpatient CT coronary angiography next month",
+          "Repeat troponin at 2 hours, then discharge home if normal",
         ],
-        correct: 3,
+        correct: 0,
         explanation:
           "Pain resolution and a normal troponin do not exclude unstable angina. The Wellens pattern predicts a critical LAD stenosis, and stress testing can precipitate infarction. He needs admission and angiography.",
         keyFeature: { topic: TOPIC, n: 4 },
@@ -321,7 +326,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of his presentation that place him at high risk.",
+        prompt: "What features of his presentation place him at high risk?",
         accept: [
           { id: "rest", text: "Pain at rest", match: ["rest"] },
           { id: "recur", text: "Recurrent or crescendo episodes", match: ["recurrent", "crescendo", "multiple episodes", "two episodes", "increasing", "repeated"] },
@@ -347,13 +352,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Brief chest tightness at a desk",
     stem:
-      "A 38 year old woman presents 7 hours after a 20 minute episode of left sided chest tightness at rest while working at her desk. It resolved on its own and has not returned. She smokes half a pack a day and has no other risk factors. HR 76, BP 122/78, RR 14, SpO2 99%. Her ECG is normal. High sensitivity troponin I results at arrival and at 2 hours are both below the limit of detection.",
+      "A 38-year-old woman presents 7 hours after a 20 minute episode of left sided chest tightness at rest while working at her desk. It resolved on its own and has not returned. She smokes half a pack a day and has no other risk factors. Oxygen saturation is 99%. Her ECG is normal. High sensitivity troponin I results at arrival and at 2 hours are both below the limit of detection.",
+    vitals: { pulse: "76/minute", resp: "14/minute", bp: "122/78 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE components of the HEART score.",
+        prompt: "What are the components of the HEART score?",
         accept: [
           { id: "h", text: "History", match: ["history"] },
           { id: "e", text: "ECG", match: ["ecg", "ekg", "electrocardiogram"] },
@@ -369,9 +375,16 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Her physician scores the history as moderately suspicious. What is her HEART score? Select one.",
-        options: ["0", "1", "2", "3", "4", "5"],
-        correct: 2,
+        update: "Her physician scores the history as moderately suspicious.",
+        prompt: "Which of the following is her total HEART score based on these findings?",
+        options: [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+        ],
+        correct: 1,
         explanation:
           "History moderately suspicious scores 1. Normal ECG 0. Age under 45 scores 0. One risk factor (smoking) scores 1. Normal troponin 0. The total of 2 is low risk, which supports discharge with follow up.",
         keyFeature: { topic: TOPIC, n: 3 },
@@ -381,7 +394,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO elements of your discharge plan.",
+        prompt: "What are the elements of your discharge plan?",
         accept: [
           { id: "fu", text: "Follow up with her family physician within 1 to 2 weeks", match: ["family physician", "family doctor", "gp", "primary care", "follow up"] },
           { id: "test", text: "Outpatient testing or rapid access chest pain clinic if symptoms recur or concern remains", match: ["stress test", "rapid access", "chest pain clinic", "cardiology", "outpatient testing", "ccta", "ct coronary"] },
@@ -398,17 +411,18 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "She mentions the pain went away after she borrowed her husband's nitroglycerin spray. Which statement is most accurate? Select one.",
+        update: "She mentions the pain went away after she borrowed her husband's nitroglycerin spray.",
+        prompt: "Which of the following statements about her response to nitroglycerin is most accurate?",
         options: [
-          "Relief with nitroglycerin confirms angina and she needs admission",
-          "Relief with nitroglycerin does not reliably separate cardiac from non cardiac pain and should not change her risk assessment on its own",
           "Lack of relief would have excluded ACS",
-          "Relief with nitroglycerin proves esophageal spasm and excludes ACS",
+          "Relief confirms angina and she needs admission to hospital",
+          "Relief does not reliably separate cardiac from other pain",
+          "Relief proves esophageal spasm and excludes ACS",
           "She now needs a CT pulmonary angiogram",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "Response to nitroglycerin has poor diagnostic value in either direction. Esophageal spasm and other non cardiac pain may improve, and some ACS pain does not. Decisions rest on the history, ECG and troponin.",
+          "Response to nitroglycerin has poor diagnostic value in either direction. Esophageal spasm and other non cardiac pain may improve, and some ACS pain does not. Relief alone should not change her risk assessment. Decisions rest on the history, ECG and troponin.",
         keyFeature: { topic: TOPIC, n: 4 },
         source: "aha-chest-pain",
       },
@@ -421,13 +435,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Chest pain after a party",
     stem:
-      "A 34 year old man presents with 1 hour of chest pain that began 40 minutes after snorting cocaine at a party. He is agitated and sweaty. T 37.8°C, HR 128, BP 186/108, RR 22, SpO2 98%. Weight 80 kg. His pupils are dilated. ECG shows sinus tachycardia with 1 mm ST depression in V4 to V6. Pulses are equal in both arms. Bedside echo shows no pericardial effusion and a normal aortic root.",
+      "A 34-year-old man presents with 1 hour of chest pain that began 40 minutes after snorting cocaine at a party. He is agitated and sweaty. Oxygen saturation is 98%. His pupils are dilated. ECG shows sinus tachycardia with 1 mm ST depression in V4 to V6. Pulses are equal in both arms. Bedside echo shows no pericardial effusion and a normal aortic root.",
+    vitals: { temperature: "37.8°C", pulse: "128/minute", resp: "22/minute", bp: "186/108 mmHg", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO medications you give now.",
+        prompt: "What medications do you give now?",
         accept: [
           { id: "benzo", text: "A benzodiazepine such as lorazepam or diazepam IV", match: ["benzodiazepine", "benzo", "lorazepam", "diazepam", "midazolam", "ativan", "valium"] },
           { id: "asa", text: "ASA 160 to 325 mg chewed", match: ["asa", "aspirin", "acetylsalicylic"] },
@@ -447,7 +462,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE mechanisms by which cocaine causes myocardial ischemia.",
+        prompt: "By what mechanisms does cocaine cause myocardial ischemia?",
         accept: [
           { id: "spasm", text: "Coronary vasospasm", match: ["vasospasm", "spasm", "vasoconstriction"] },
           { id: "demand", text: "Increased oxygen demand from tachycardia and hypertension", match: ["demand", "tachycardia", "hypertension", "oxygen consumption"] },
@@ -464,7 +479,8 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "His symptoms settle after treatment. List TWO elements of ongoing ACS testing.",
+        update: "His symptoms settle after treatment.",
+        prompt: "What are the elements of ongoing ACS testing?",
         accept: [
           { id: "ecg", text: "Serial ECGs", match: ["ecg", "ekg", "electrocardiogram"] },
           { id: "trop", text: "Serial troponins", match: ["troponin", "trop"] },
@@ -480,7 +496,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Troponins at 0 and 2 hours are normal. Repeat ECGs are normal. He is pain free and calm.",
-        prompt: "List TWO elements of your discharge plan.",
+        prompt: "What are the elements of your discharge plan?",
         accept: [
           { id: "cess", text: "Cocaine cessation counselling and addiction referral", match: ["cocaine", "cessation", "addiction", "substance", "stop using"] },
           { id: "fu", text: "Follow up with a family physician", match: ["follow up", "family physician", "family doctor", "primary care"] },
@@ -502,13 +518,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Dizzy and weak at breakfast",
     stem:
-      "An 81 year old woman with type 2 diabetes is brought in by paramedics with dizziness and weakness that began 2 hours ago while she was making breakfast. She denies chest pain but says she feels unwell. HR 36, BP 82/48, RR 20, SpO2 94%. Weight 58 kg. She is pale and clammy but alert. Her ECG shows complete heart block with a narrow complex escape at 36 and 2 mm ST elevation in II, III and aVF. Your hospital has a catheterization laboratory on site.",
+      "An 81-year-old woman with type 2 diabetes is brought in by paramedics with dizziness and weakness that began 2 hours ago while she was making breakfast. She denies chest pain but says she feels unwell. Oxygen saturation is 94%. She is pale and clammy but alert. Her ECG shows complete heart block with a narrow complex escape at 36/minute and 2 mm ST elevation in II, III and aVF. Your hospital has a catheterization laboratory on site.",
+    vitals: { pulse: "36/minute", resp: "20/minute", bp: "82/48 mmHg", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of her presentation that should make you think of ACS despite the absence of chest pain.",
+        prompt: "What features of her presentation should make you think of ACS despite the absence of chest pain?",
         accept: [
           { id: "age", text: "Older age", match: ["age", "older", "elderly", "81"] },
           { id: "dm", text: "Diabetes", match: ["diabetes", "diabetic"] },
@@ -527,8 +544,8 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        update: "Atropine 1 mg IV given twice has no effect. BP is 78/44.",
-        prompt: "List TWO interventions to support her heart rate while the catheterization laboratory is prepared.",
+        update: "Atropine 1 mg IV given twice has no effect. BP is 78/44 mmHg.",
+        prompt: "What interventions support her heart rate while the catheterization laboratory is prepared?",
         accept: [
           { id: "tv", text: "Transvenous pacing", match: ["transvenous"] },
           { id: "tcp", text: "Transcutaneous pacing with analgesia and sedation", match: ["transcutaneous", "pacing", "pacer", "tcp"] },
@@ -544,15 +561,15 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which reperfusion strategy is most appropriate? Select one.",
+        prompt: "Which of the following reperfusion strategies is most appropriate for her?",
         options: [
-          "Tenecteplase now because she is unstable",
-          "Emergency primary PCI with temporary pacing support as needed",
+          "Emergency primary PCI with temporary pacing as needed",
           "Medical therapy and angiography within 24 hours",
-          "Permanent pacemaker first, then angiography tomorrow",
-          "Wait for the first troponin",
+          "Permanent pacemaker first, then angiography the next day",
+          "Tenecteplase now, then angiography tomorrow",
+          "Wait for the first troponin before deciding",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Primary PCI is the best reperfusion when a catheterization laboratory is on site. Heart block in inferior STEMI usually comes from right coronary occlusion and often resolves after reperfusion. A permanent pacemaker is premature.",
         keyFeature: { topic: TOPIC, n: 6 },
@@ -567,13 +584,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Epigastric pain labelled gastritis",
     stem:
-      "A 58 year old man presents with 90 minutes of epigastric pain, nausea and vomiting. Triage sent him to the minor treatment area with a note of gastritis. He has hypertension and dyslipidemia. HR 88, BP 146/90, RR 18, SpO2 97%. Weight 92 kg. His ECG shows 2.5 mm horizontal ST depression in V1 to V3 with upright T waves and a tall R wave in V2. There is no ST elevation in the standard 12 leads. Your hospital has a catheterization laboratory on site.",
+      "A 58-year-old man presents with 90 minutes of epigastric pain, nausea and vomiting. Triage sent him to the minor treatment area with a note of gastritis. He has hypertension and dyslipidemia. Oxygen saturation is 97%. His ECG shows 2.5 mm horizontal ST depression in V1 to V3 with upright T waves and a tall R wave in V2. There is no ST elevation in the standard 12 leads. Your hospital has a catheterization laboratory on site.",
+    vitals: { pulse: "88/minute", resp: "18/minute", bp: "146/90 mmHg", weight: "92 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of this ECG that suggest posterior STEMI.",
+        prompt: "What features of this ECG suggest posterior STEMI?",
         accept: [
           { id: "std", text: "Horizontal ST depression in V1 to V3", match: ["st depression", "horizontal"] },
           { id: "r", text: "Tall R wave in V1 or V2 with R to S ratio above 1", match: ["tall r", "r wave", "dominant r", "r/s"] },
@@ -588,7 +606,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "Name the additional ECG leads you record next.",
+        prompt: "Which additional ECG leads do you record next?",
         accept: [{ id: "post", text: "Posterior leads V7 to V9", match: ["v7", "v8", "v9", "posterior lead"] }],
         explanation:
           "Posterior leads V7 to V9 confirm posterior STEMI. ST elevation of 0.5 mm or more is diagnostic, or 1 mm or more in men under 40. Recording them takes seconds and changes management.",
@@ -599,13 +617,13 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Leads V7 to V9 show 1 mm ST elevation.",
-        prompt: "What is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management for him?",
         options: [
           "Activate the catheterization laboratory for primary PCI",
-          "Treat as NSTEMI with angiography within 24 hours",
-          "Tenecteplase now",
-          "Repeat troponin in 2 hours before deciding",
           "CT angiogram of the aorta first",
+          "Repeat troponin in 2 hours before deciding",
+          "Tenecteplase now, then routine angiography",
+          "Treat as NSTEMI with invasive angiography within 24 hours",
         ],
         correct: 0,
         explanation:
@@ -617,7 +635,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO features in his history that should have prompted an ECG at triage despite the impression of gastritis.",
+        prompt: "What features in his history should have prompted an ECG at triage despite the impression of gastritis?",
         accept: [
           { id: "age", text: "Man aged over 50", match: ["age", "male", "man", "58"] },
           { id: "htn", text: "Hypertension", match: ["hypertension", "htn"] },
@@ -640,13 +658,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Chest pain with an old bundle branch block",
     stem:
-      "You work at a community hospital. The regional PCI centre is 40 minutes away by land ambulance and accepts direct transfers to its catheterization laboratory. A 69 year old man presents with 45 minutes of crushing chest pain and diaphoresis. He has a known left bundle branch block on an ECG from last year. HR 92, BP 138/84, RR 20, SpO2 95%. Weight 86 kg. Today's ECG shows his known LBBB with 2 mm ST elevation in V5, V6 and I, in the same direction as the QRS.",
+      "You work at a community hospital. The regional PCI centre is 40 minutes away by land ambulance and accepts direct transfers to its catheterization laboratory. A 69-year-old man presents with 45 minutes of crushing chest pain and diaphoresis. He has a known left bundle branch block on an ECG from last year. Oxygen saturation is 95%. Today's ECG shows his known LBBB with 2 mm ST elevation in V5, V6 and I, in the same direction as the QRS.",
+    vitals: { pulse: "92/minute", resp: "20/minute", bp: "138/84 mmHg", weight: "86 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO ECG criteria that identify acute MI in the presence of LBBB.",
+        prompt: "What ECG criteria identify acute MI in the presence of LBBB?",
         accept: [
           { id: "ce", text: "Concordant ST elevation of 1 mm or more", match: ["concordant st elevation", "concordant elevation", "concordant ste"] },
           { id: "cd", text: "Concordant ST depression of 1 mm or more in V1 to V3", match: ["concordant st depression", "concordant depression", "st depression v1"] },
@@ -660,15 +679,15 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management for him?",
         options: [
-          "Tenecteplase in your department",
-          "Transfer directly to the PCI centre catheterization laboratory for primary PCI",
+          "CT coronary angiography in your department",
           "Serial troponins and admission to your hospital",
-          "CT coronary angiography",
+          "Tenecteplase in your department",
+          "Transfer directly to the PCI laboratory for primary PCI",
           "Wait for cardiology to compare with the old ECG tomorrow",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "He meets criteria for acute MI. With a 40 minute transfer, first medical contact to device time is well within 120 minutes, so primary PCI is preferred. Direct transfer to the catheterization laboratory avoids delay in the receiving ED.",
         keyFeature: { topic: TOPIC, n: 6 },
@@ -678,7 +697,8 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "Suppose instead his ECG showed LBBB without Sgarbossa criteria and he was pain free and stable. List TWO steps to resolve the diagnosis.",
+        update: "Suppose instead his ECG showed LBBB without Sgarbossa criteria and he was pain free and stable.",
+        prompt: "What steps would resolve the diagnosis?",
         accept: [
           { id: "ecg", text: "Serial ECGs compared with the old tracing", match: ["ecg", "ekg", "compare"] },
           { id: "trop", text: "Serial troponins", match: ["troponin", "trop"] },
@@ -694,7 +714,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO clinical features that call for immediate angiography in suspected ACS with LBBB, even without diagnostic ECG criteria.",
+        prompt: "What clinical features call for immediate angiography in suspected ACS with LBBB, even without diagnostic ECG criteria?",
         accept: [
           { id: "shock", text: "Hemodynamic instability or cardiogenic shock", match: ["shock", "hypotension", "unstable", "instability"] },
           { id: "pain", text: "Refractory or recurrent ischemic pain", match: ["refractory", "ongoing pain", "persistent pain", "recurrent pain"] },
@@ -717,13 +737,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Burning discomfort after supper",
     stem:
-      "A 61 year old woman with type 2 diabetes presents at 2100 with 90 minutes of burning lower chest and upper abdominal discomfort that began after supper. She had two similar episodes this week. HR 84, BP 148/88, RR 16, SpO2 98%. Weight 88 kg. The discomfort settled 20 minutes after an oral antacid and viscous lidocaine mixture. She is tender over the left costochondral junctions. Her ECG shows flat T waves in V5 and V6, with no old ECG for comparison. The first high sensitivity troponin I, drawn 1 hour after onset, is 11 ng/L (female 99th percentile 16 ng/L). The resident plans to discharge her with a diagnosis of reflux.",
+      "A 61-year-old woman with type 2 diabetes presents at 2100 with 90 minutes of burning lower chest and upper abdominal discomfort that began after supper. She had two similar episodes this week. Oxygen saturation is 98%. The discomfort settled 20 minutes after an oral antacid and viscous lidocaine mixture. She is tender over the left costochondral junctions. Her ECG shows flat T waves in V5 and V6, with no old ECG for comparison. The first high sensitivity troponin I, drawn 1 hour after onset, is 11 ng/L (female 99th percentile 16 ng/L). The resident plans to discharge her with a diagnosis of reflux.",
+    vitals: { pulse: "84/minute", resp: "16/minute", bp: "148/88 mmHg", weight: "88 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE reasons this plan is unsafe.",
+        prompt: "Why is this plan unsafe?",
         accept: [
           { id: "gi", text: "Relief with a GI cocktail does not exclude ACS", match: ["antacid", "gi cocktail", "pink lady", "lidocaine", "cocktail"] },
           { id: "cw", text: "Chest wall tenderness does not exclude ACS", match: ["tender", "tenderness", "chest wall"] },
@@ -742,7 +763,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO steps to complete her ACS testing.",
+        prompt: "What steps complete her ACS testing?",
         accept: [
           { id: "trop", text: "Repeat high sensitivity troponin per the local algorithm", match: ["troponin", "trop"] },
           { id: "ecg", text: "Repeat ECG, and with any recurrent symptoms", match: ["ecg", "ekg", "electrocardiogram"] },
@@ -757,7 +778,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE anginal equivalent symptoms you ask about in a patient like her.",
+        prompt: "What anginal equivalent symptoms do you ask about in a patient like her?",
         accept: [
           { id: "dysp", text: "Dyspnea", match: ["dyspnea", "shortness of breath", "breathless", "sob"] },
           { id: "fat", text: "Fatigue or weakness", match: ["fatigue", "weakness", "tired"] },
@@ -777,15 +798,15 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q4",
         kind: "single",
         update: "Her repeat troponin at 3 hours is 64 ng/L. The ECG is unchanged. She is pain free.",
-        prompt: "What is the most appropriate disposition? Select one.",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
+          "Admit, antithrombotics, invasive angiography within 24 hours",
           "Discharge with an outpatient stress test",
-          "Observation and a stress test tomorrow",
-          "Admit with antithrombotic therapy and plan invasive angiography within 24 hours",
           "Immediate catheterization laboratory activation",
+          "Observation overnight, then an exercise stress test tomorrow",
           "Repeat troponin in 6 hours and decide then",
         ],
-        correct: 2,
+        correct: 0,
         explanation:
           "A rise above the 99th percentile with a significant change in a patient with ischemic symptoms is an NSTEMI. A confirmed NSTEMI is high risk and warrants an early invasive strategy within 24 hours. Immediate angiography is for very high risk features such as instability or refractory pain.",
         keyFeature: { topic: TOPIC, n: 3 },
@@ -800,20 +821,21 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Chest pain weeks after a stroke",
     stem:
-      "You work at a rural hospital. The nearest PCI centre is 2 hours away by critical care land transport. A 67 year old man presents with 50 minutes of chest pain. Five weeks ago he had an ischemic stroke with mild residual left hand weakness. HR 96, BP 142/86, RR 20, SpO2 96%. Weight 78 kg. His ECG shows 3 mm ST elevation in V1 to V4.",
+      "You work at a rural hospital. The nearest PCI centre is 2 hours away by critical care land transport. A 67-year-old man presents with 50 minutes of chest pain. Five weeks ago he had an ischemic stroke with mild residual left hand weakness. Oxygen saturation is 96%. His ECG shows 3 mm ST elevation in V1 to V4.",
+    vitals: { pulse: "96/minute", resp: "20/minute", bp: "142/86 mmHg", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which reperfusion strategy is most appropriate? Select one.",
+        prompt: "Which of the following reperfusion strategies is most appropriate for him?",
         options: [
-          "Tenecteplase now because PCI cannot be achieved within 120 minutes",
-          "Half dose tenecteplase because of the recent stroke",
-          "Immediate transfer for primary PCI despite the expected delay",
           "Anticoagulation and transfer tomorrow",
-          "Medical management only because of the recent stroke",
+          "Full dose tenecteplase now, then transfer for angiography",
+          "Half dose tenecteplase now, then transfer",
+          "Immediate transfer for primary PCI despite the delay",
+          "Medical management only, no reperfusion",
         ],
-        correct: 2,
+        correct: 3,
         explanation:
           "Ischemic stroke within 3 months is an absolute contraindication to fibrinolysis, at any dose. Primary PCI is then the only reperfusion option and remains beneficial even with a longer delay. Arrange the fastest possible transfer.",
         keyFeature: { topic: TOPIC, n: 6 },
@@ -823,19 +845,19 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q2",
         kind: "menu",
         select: 3,
-        prompt: "Which THREE medications do you give before transfer? Select THREE.",
+        prompt: "Which of the following medications do you give before transfer for primary PCI?",
         options: [
           "ASA 160 mg chewed",
           "ASA 81 mg enteric coated, swallowed",
+          "Clopidogrel 75 mg PO",
+          "Enoxaparin 1 mg/kg SC with tenecteplase",
+          "Fondaparinux 2.5 mg SC",
+          "Metoprolol 5 mg IV",
           "Prasugrel 60 mg PO",
           "Ticagrelor 180 mg PO",
-          "Clopidogrel 75 mg PO",
           "Unfractionated heparin 70 units/kg IV bolus",
-          "Enoxaparin 1 mg/kg SC with tenecteplase",
-          "Metoprolol 5 mg IV",
-          "Fondaparinux 2.5 mg SC",
         ],
-        correct: [0, 3, 5],
+        correct: [0, 7, 8],
         explanation:
           "Give chewed ASA, a ticagrelor load and unfractionated heparin before primary PCI. Prasugrel is contraindicated after any stroke or TIA because of intracranial bleeding. Fondaparinux alone is avoided in primary PCI because of catheter thrombosis. Clopidogrel 75 mg is a maintenance dose, not a load.",
         keyFeature: { topic: TOPIC, n: 7 },
@@ -844,8 +866,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "What is the minimum ST elevation in V2 and V3 that meets STEMI criteria for a man of his age? Select one.",
-        options: ["0.5 mm", "1 mm", "1.5 mm", "2 mm", "2.5 mm"],
+        prompt: "Which of the following is the minimum ST elevation in V2 and V3 that meets STEMI criteria for a man of his age?",
+        options: [
+          "0.5 mm",
+          "1 mm",
+          "1.5 mm",
+          "2 mm",
+          "2.5 mm",
+        ],
         correct: 3,
         explanation:
           "In V2 and V3 the threshold is 2 mm for men 40 or older, 2.5 mm for men under 40 and 1.5 mm for women. In all other leads it is 1 mm in two contiguous leads.",
@@ -861,13 +889,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Chest pain with cold, mottled legs",
     stem:
-      "A 74 year old man arrives at your PCI capable hospital with 5 hours of chest pain and shortness of breath. HR 118, BP 84/56, RR 30, SpO2 89% on room air. He is cool and mottled to the knees with crackles to the mid lung fields. Lactate is 4.2 mmol/L. His ECG shows sinus tachycardia with 4 mm ST elevation in V1 to V5. The resident suggests IV metoprolol for his heart rate.",
+      "A 74-year-old man arrives at your PCI capable hospital with 5 hours of chest pain and shortness of breath. He is cool and mottled to the knees with crackles to the mid lung fields. Lactate is 4.2 mmol/L. His ECG shows sinus tachycardia with 4 mm ST elevation in V1 to V5. The resident suggests IV metoprolol for his heart rate.",
+    vitals: { pulse: "118/minute", resp: "30/minute", bp: "84/56 mmHg", o2sat: "89% on room air" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO reasons IV metoprolol is contraindicated.",
+        prompt: "Why is IV metoprolol contraindicated?",
         accept: [
           { id: "hypo", text: "Hypotension and cardiogenic shock", match: ["shock", "hypotension", "low blood pressure", "sbp", "blood pressure"] },
           { id: "hf", text: "Heart failure with pulmonary edema (Killip class III)", match: ["heart failure", "pulmonary edema", "crackles", "killip", "congestion"] },
@@ -883,13 +912,13 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which reperfusion strategy is most appropriate? Select one.",
+        prompt: "Which of the following reperfusion strategies is most appropriate for him?",
         options: [
-          "Tenecteplase now",
+          "Emergency angiography with PCI of all significant lesions",
           "Emergency angiography with PCI of the culprit artery",
           "Medical stabilization and angiography in 24 to 48 hours",
-          "Emergency angiography with PCI of all significant lesions at once",
           "Surgical referral for CABG before any angiography",
+          "Tenecteplase now and admission to the ICU",
         ],
         correct: 1,
         explanation:
@@ -901,7 +930,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List THREE features of his presentation that predict high mortality.",
+        prompt: "What features of his presentation predict high mortality?",
         accept: [
           { id: "age", text: "Older age", match: ["age", "74", "older", "elderly"] },
           { id: "bp", text: "Hypotension", match: ["hypotension", "blood pressure", "shock"] },
@@ -926,13 +955,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Ongoing pain after treatment in a rural ED",
     stem:
-      "You work at a rural hospital 3 hours by road from the nearest PCI centre. A 55 year old man with an inferolateral STEMI received tenecteplase 40 mg IV 75 minutes ago, 25 minutes after arrival. Weight 76 kg. His pain has not changed. HR 96, BP 118/74. The repeat ECG shows 4 mm ST elevation in III, compared with 5 mm before treatment.",
+      "You work at a rural hospital 3 hours by road from the nearest PCI centre. A 55-year-old man with an inferolateral STEMI received tenecteplase 40 mg IV 75 minutes ago, 25 minutes after arrival. His pain has not changed. The repeat ECG shows 4 mm ST elevation in III, compared with 5 mm before treatment.",
+    vitals: { pulse: "96/minute", bp: "118/74 mmHg", weight: "76 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings that indicate failed reperfusion.",
+        prompt: "What findings indicate failed reperfusion?",
         accept: [
           { id: "st", text: "Less than 50% resolution of ST elevation in the worst lead at 60 to 90 minutes", match: ["50%", "st resolution", "st elevation", "resolution", "no st resolution", "no resolution", "not resolved"] },
           { id: "pain", text: "Ongoing ischemic pain", match: ["pain", "no improvement", "no relief", "not relieved"] },
@@ -947,15 +977,15 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "What is the most appropriate next step? Select one.",
+        prompt: "Which of the following is the most appropriate next step for him?",
         options: [
-          "Repeat tenecteplase at full dose",
-          "Urgent transfer for rescue PCI",
           "Continue anticoagulation and repeat the ECG in 6 hours",
           "Elective transfer for angiography in 3 to 5 days",
           "IV metoprolol for ongoing pain",
+          "Repeat tenecteplase at full dose",
+          "Urgent transfer for rescue PCI",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "Failed fibrinolysis calls for urgent transfer for rescue PCI. Repeat fibrinolysis adds bleeding without clear benefit. Even after successful lysis, CCS recommends routine transfer for angiography within 2 to 24 hours.",
         keyFeature: { topic: TOPIC, n: 6 },
@@ -965,7 +995,8 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "As you prepare the transfer, you check his chart. List the THREE adjunctive antithrombotic drugs that should accompany tenecteplase in a patient his age.",
+        update: "As you prepare the transfer, you check his chart.",
+        prompt: "Which adjunctive antithrombotic drugs should accompany tenecteplase in a patient his age?",
         accept: [
           { id: "asa", text: "ASA 160 to 325 mg chewed", match: ["asa", "aspirin", "acetylsalicylic"] },
           { id: "clop", text: "Clopidogrel 300 mg PO load (75 mg if over 75)", match: ["clopidogrel", "plavix"] },
@@ -990,13 +1021,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Crushing pain with widespread ST depression",
     stem:
-      "A 66 year old man presents with 1 hour of crushing chest pain and diaphoresis. He has diabetes and hypertension. HR 98, BP 102/68, RR 22, SpO2 95%. Weight 90 kg. His ECG shows sinus rhythm with 2 mm ST elevation in aVR, 1 mm ST elevation in V1 and 2 mm horizontal ST depression in I, II, aVF and V4 to V6. The first high sensitivity troponin T is 54 ng/L.",
+      "A 66-year-old man presents with 1 hour of crushing chest pain and diaphoresis. He has diabetes and hypertension. Oxygen saturation is 95%. His ECG shows sinus rhythm with 2 mm ST elevation in aVR, 1 mm ST elevation in V1 and 2 mm horizontal ST depression in I, II, aVF and V4 to V6. The first high sensitivity troponin T is 54 ng/L.",
+    vitals: { pulse: "98/minute", resp: "22/minute", bp: "102/68 mmHg", weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO coronary lesions or processes this ECG pattern suggests.",
+        prompt: "What coronary lesions or processes does this ECG pattern suggest?",
         accept: [
           { id: "lm", text: "Left main coronary artery occlusion or stenosis", match: ["left main", "lmca"] },
           { id: "lad", text: "Proximal LAD occlusion", match: ["lad", "left anterior descending"] },
@@ -1013,7 +1045,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "After sublingual nitroglycerin his pain resolves and the ST changes largely normalize. A colleague suggests an outpatient angiogram.",
-        prompt: "List TWO reasons this plan is unsafe.",
+        prompt: "Why is this plan unsafe?",
         accept: [
           { id: "res", text: "Pain relief with nitroglycerin does not exclude ACS", match: ["resolution", "resolved", "pain free", "nitro", "nitroglycerin"] },
           { id: "dyn", text: "Dynamic ST changes mark him as high risk", match: ["dynamic", "transient", "st change", "ecg change"] },
@@ -1030,16 +1062,16 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Twenty minutes later the pain returns with the same ECG changes. BP 92/60.",
-        prompt: "What is the most appropriate management? Select one.",
+        update: "Twenty minutes later the pain returns with the same ECG changes. BP 92/60 mmHg.",
+        prompt: "Which of the following is the most appropriate management for him now?",
         options: [
-          "Tenecteplase now",
           "Immediate invasive angiography, within 2 hours",
           "Invasive angiography within 24 hours",
           "Invasive angiography within 72 hours",
           "Stress test once the pain settles",
+          "Tenecteplase now, then transfer for angiography",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Recurrent refractory pain with hemodynamic compromise and ST elevation in aVR is very high risk NSTE-ACS. Immediate angiography is recommended. Fibrinolysis is not indicated without STEMI criteria.",
         keyFeature: { topic: TOPIC, n: 3 },
@@ -1049,7 +1081,8 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 1,
-        prompt: "The interventional cardiologist asks you to hold the P2Y12 inhibitor load until the coronary anatomy is known. Give the main reason.",
+        update: "The interventional cardiologist asks you to hold the P2Y12 inhibitor load until the coronary anatomy is known.",
+        prompt: "What is the main reason for this request?",
         accept: [{ id: "cabg", text: "He may need urgent CABG, which a P2Y12 inhibitor would delay or complicate with bleeding", match: ["cabg", "bypass", "surgery", "surgical", "bleeding"] }],
         explanation:
           "Left main or three vessel disease is often treated with CABG. Ticagrelor and clopidogrel raise surgical bleeding and usually require a washout period. In NSTE-ACS with early angiography planned, the 2023 ESC guideline advises against routine P2Y12 pretreatment, so the load is given once the anatomy is known.",
@@ -1065,13 +1098,14 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
     topic: TOPIC,
     title: "Chest tightness while shovelling snow",
     stem:
-      "A 47 year old man presents at 1500 with chest tightness that began 1 hour ago while shovelling snow and eased after 5 minutes of rest. Over the past 3 weeks he has had similar brief episodes when walking up a steep hill, each relieved by rest. He has never had pain at rest. He has hypertension and dyslipidemia. HR 72, BP 136/84, RR 14, SpO2 98%. Weight 94 kg. He is pain free.",
+      "A 47-year-old man presents at 1500 with chest tightness that began 1 hour ago while shovelling snow and eased after 5 minutes of rest. Over the past 3 weeks he has had similar brief episodes when walking up a steep hill, each relieved by rest. He has never had pain at rest. He has hypertension and dyslipidemia. Oxygen saturation is 98%. He is pain free.",
+    vitals: { pulse: "72/minute", resp: "14/minute", bp: "136/84 mmHg", weight: "94 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO tests you order immediately.",
+        prompt: "What tests do you order immediately?",
         accept: [
           { id: "ecg", text: "12 lead ECG within 10 minutes of arrival", match: ["ecg", "ekg", "electrocardiogram"] },
           { id: "trop", text: "High sensitivity troponin", match: ["troponin", "trop"] },
@@ -1089,7 +1123,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "His ECG is normal. A high sensitivity troponin I drawn 70 minutes after symptom onset is 4 ng/L (99th percentile 26 ng/L). He wants to leave.",
-        prompt: "List TWO reasons this single result does not yet rule out ACS.",
+        prompt: "Why does this single result not yet rule out ACS?",
         accept: [
           { id: "early", text: "It was drawn too soon after symptom onset", match: ["too early", "early", "70 minute", "onset", "3 hour", "too soon"] },
           { id: "serial", text: "A second sample is needed to look for a change", match: ["repeat", "serial", "delta", "second"] },
@@ -1106,7 +1140,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Repeat troponin at 2 hours is unchanged and his repeat ECG is normal. He remains pain free.",
-        prompt: "List THREE elements of your discharge plan.",
+        prompt: "What are the elements of your discharge plan?",
         accept: [
           { id: "test", text: "Expedited outpatient testing such as stress testing or CT coronary angiography", match: ["stress", "ccta", "ct coronary", "ct angiogram", "myocardial perfusion", "functional testing", "outpatient testing"] },
           { id: "ref", text: "Referral to cardiology or a rapid access chest pain clinic", match: ["cardiology", "cardiologist", "rapid access", "chest pain clinic"] },
@@ -1126,7 +1160,7 @@ export const ISCHEMIC_HEART_DISEASE_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of recurrent symptoms that should prompt him to call 911 rather than wait for his appointment.",
+        prompt: "What features of recurrent symptoms should prompt him to call 911 rather than wait for his appointment?",
         accept: [
           { id: "rest", text: "Pain at rest", match: ["rest"] },
           { id: "long", text: "Pain lasting more than 15 to 20 minutes", match: ["20 minute", "15 minute", "prolonged", "longer", "persistent", "lasting"] },

@@ -7,7 +7,7 @@ const META = { reviewed: true, author: "Draft for review by Arjan Dhoot, MD", ve
 
 const S = {
   ssc: { id: "ssc", citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021." },
-  eauStone: { id: "eau-stone", citation: "European Association of Urology. EAU Guidelines on Urolithiasis. Section on the obstructed and infected kidney." },
+  eauStone: { id: "eau-stone", citation: "Skolarikos A, et al. EAU Guidelines on Urolithiasis. European Association of Urology. 2025 edition. Section on the obstructed and infected kidney.", url: "https://uroweb.org/guidelines/urolithiasis" },
   idsaMening: { id: "idsa-mening", citation: "Tunkel AR, Hartman BJ, Kaplan SL, et al. Practice guidelines for the management of bacterial meningitis. Clin Infect Dis. 2004." },
   escmidMening: { id: "escmid-mening", citation: "van de Beek D, Cabellos C, Dzupova O, et al. ESCMID guideline: diagnosis and treatment of acute bacterial meningitis. Clin Microbiol Infect. 2016." },
   phacMening: { id: "phac-mening", citation: "Public Health Agency of Canada. Guidelines for the prevention and control of meningococcal disease. Can Commun Dis Rep. 2005 (volume 31, supplement 1)." },
@@ -15,20 +15,20 @@ const S = {
   ascoFn: { id: "asco-fn", citation: "Taplitz RA, Kennedy EB, Bow EJ, et al. Outpatient management of fever and neutropenia in adults treated for malignancy: American Society of Clinical Oncology and Infectious Diseases Society of America clinical practice guideline update. J Clin Oncol. 2018." },
   idsaSsti: { id: "idsa-ssti", citation: "Stevens DL, Bisno AL, Chambers HF, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014." },
   lrinec: { id: "lrinec", citation: "Wong CH, Khin LW, Heng KS, et al. The LRINEC (Laboratory Risk Indicator for Necrotizing Fasciitis) score: a tool for distinguishing necrotizing fasciitis from other soft tissue infections. Crit Care Med. 2004." },
-  cigTetanus: { id: "cig-tetanus", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Tetanus toxoid chapter, including tetanus prophylaxis in wound management." },
+  cigTetanus: { id: "cig-tetanus", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Tetanus toxoid chapter, including tetanus prophylaxis in wound management. Updated 2026.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html" },
   galioto: { id: "galioto", citation: "Galioto NJ. Peritonsillar abscess. Am Fam Physician. 2017.", url: "https://www.aafp.org/afp/2017/0415/p501" },
-  tintinalliNeck: { id: "tintinalli-neck", citation: "Tintinalli JE, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. McGraw Hill. Chapter on neck and upper airway disorders." },
-  catmat: { id: "catmat", citation: "Committee to Advise on Tropical Medicine and Travel (CATMAT). Canadian recommendations for the prevention and treatment of malaria. Public Health Agency of Canada.", url: "https://www.canada.ca/en/public-health/services/catmat/canadian-recommendations-prevention-treatment-malaria.html" },
-  whoMalaria: { id: "who-malaria", citation: "World Health Organization. WHO guidelines for malaria." },
-  cdcTss: { id: "cdc-tss", citation: "Centers for Disease Control and Prevention. Toxic shock syndrome (other than streptococcal) case definition. National Notifiable Diseases Surveillance System." },
+  tintinalliNeck: { id: "tintinalli-neck", citation: "Tintinalli JE, Ma OJ, Yealy DM, et al, editors. Tintinalli's Emergency Medicine: A Comprehensive Study Guide. 9th ed. McGraw Hill. 2020. Chapter on neck and upper airway disorders." },
+  catmat: { id: "catmat", citation: "Committee to Advise on Tropical Medicine and Travel (CATMAT). Canadian recommendations for the prevention and treatment of malaria. Public Health Agency of Canada. 2014, treatment chapter updated 2019.", url: "https://www.canada.ca/en/public-health/services/catmat/canadian-recommendations-prevention-treatment-malaria.html" },
+  whoMalaria: { id: "who-malaria", citation: "World Health Organization. WHO guidelines for malaria. 13 August 2025.", url: "https://www.who.int/publications/i/item/guidelines-for-malaria" },
+  cdcTss: { id: "cdc-tss", citation: "Centers for Disease Control and Prevention. Toxic shock syndrome (other than streptococcal): 2011 case definition. National Notifiable Diseases Surveillance System. 2011." },
   usphs: { id: "usphs", citation: "Kofman AD, Struble KA, Heneine W, et al. 2025 US Public Health Service guidelines for the management of occupational exposures to human immunodeficiency virus and recommendations for post-exposure prophylaxis in healthcare settings. Infect Control Hosp Epidemiol. 2025." },
   canPep: { id: "can-pep", citation: "Tan DHS, Hull MW, Onyegbule SO, et al. Canadian guideline on HIV pre- and postexposure prophylaxis: 2025 update. CMAJ. 2025.", url: "https://www.cmaj.ca/content/197/41/E1374" },
-  cigHbv: { id: "cig-hbv", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Hepatitis B vaccines chapter, including management of percutaneous exposures." },
-  cigRabies: { id: "cig-rabies", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Rabies vaccines chapter, including post exposure prophylaxis and bat exposures.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-18-rabies-vaccine.html" },
+  cigHbv: { id: "cig-hbv", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Hepatitis B vaccine chapter, including management of percutaneous exposures. 2017, updated 2022.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-7-hepatitis-b-vaccine.html" },
+  cigRabies: { id: "cig-rabies", citation: "Public Health Agency of Canada. Canadian Immunization Guide. Rabies vaccine chapter, including post exposure prophylaxis and bat exposures. 2015, updated 2026.", url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-18-rabies-vaccine.html" },
   ammiFlu: { id: "ammi-flu", citation: "Aoki FY, Allen UD, Mubareka S, et al. Use of antiviral drugs for seasonal influenza: foundation document for practitioners. Update 2019. J Assoc Med Microbiol Infect Dis Can. 2019." },
-  cwc: { id: "cwc", citation: "Choosing Wisely Canada. Using Antibiotics Wisely campaign." },
+  cwc: { id: "cwc", citation: "Choosing Wisely Canada. Using Antibiotics Wisely: reducing unnecessary antibiotics for acute upper respiratory tract infections in primary care. 2018.", url: "https://choosingwiselycanada.org/using-antibiotics-wisely-across-canada-2018/" },
   tbStandards: { id: "tb-standards", citation: "Canadian Thoracic Society and Public Health Agency of Canada. Canadian Tuberculosis Standards, 8th edition. Can J Respir Crit Care Sleep Med. 2022." },
-  phacIpac: { id: "phac-ipac", citation: "Public Health Agency of Canada. Routine practices and additional precautions for preventing the transmission of infection in healthcare settings." },
+  phacIpac: { id: "phac-ipac", citation: "Public Health Agency of Canada. Routine practices and additional precautions for preventing the transmission of infection in healthcare settings. 2016.", url: "https://www.canada.ca/content/dam/phac-aspc/documents/services/publications/diseases-conditions/routine-practices-precautions-healthcare-associated-infections/routine-practices-precautions-healthcare-associated-infections-2016-FINAL-eng.pdf" },
   idsaLtc: { id: "idsa-ltc", citation: "High KP, Bradley SF, Gravenstein S, et al. Clinical practice guideline for the evaluation of fever and infection in older adult residents of long-term care facilities: 2008 update by the Infectious Diseases Society of America. Clin Infect Dis. 2009." },
   idsaAsb: { id: "idsa-asb", citation: "Nicolle LE, Gupta K, Bradley SF, et al. Clinical practice guideline for the management of asymptomatic bacteriuria: 2019 update by the Infectious Diseases Society of America. Clin Infect Dis. 2019." },
   aheIe: { id: "aha-ie", citation: "Baddour LM, Wilson WR, Bayer AS, et al. Infective endocarditis in adults: diagnosis, antimicrobial therapy, and management of complications. A scientific statement from the American Heart Association. Circulation. 2015." },
@@ -36,7 +36,7 @@ const S = {
   darouiche: { id: "darouiche", citation: "Darouiche RO. Spinal epidural abscess. N Engl J Med. 2006." },
   lymeIdsa: { id: "lyme-idsa", citation: "Lantos PM, Rumbaugh J, Bockenstedt LK, et al. Clinical practice guidelines by the IDSA, AAN and ACR: 2020 guidelines for the prevention, diagnosis and treatment of Lyme disease. Clin Infect Dis. 2021." },
   phacLyme: { id: "phac-lyme", citation: "Hatchette TF, Davis I, Johnston BL. Lyme disease: clinical diagnosis and treatment. Can Commun Dis Rep. 2014." },
-  phacPid: { id: "phac-pid", citation: "Public Health Agency of Canada. STI associated syndromes guide: pelvic inflammatory disease.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/sti-associated-syndromes/pelvic-inflammatory-disease.html" },
+  phacPid: { id: "phac-pid", citation: "Public Health Agency of Canada. STI associated syndromes guide: pelvic inflammatory disease. Updated 2026.", url: "https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/sti-associated-syndromes/pelvic-inflammatory-disease.html" },
   cdcSti: { id: "cdc-sti", citation: "Workowski KA, Bachmann LH, Chan PA, et al. Sexually transmitted infections treatment guidelines, 2021. MMWR Recomm Rep. 2021." },
 } satisfies Record<string, Source>;
 
@@ -46,13 +46,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Older woman with flank pain and confusion",
     stem:
-      "A 74 year old woman is brought in by her daughter with 2 days of left flank pain, rigors and new confusion. She has hypertension and type 2 diabetes. T 39.4°C, HR 126, BP 82/46 (MAP 58), RR 28, SpO2 93% on room air. Weight 60 kg. She is drowsy but opens her eyes to voice. There is left costovertebral angle tenderness. Point of care lactate is 5.2 mmol/L. Capillary glucose is 14.8 mmol/L.",
+      "A 74-year-old woman is brought in by her daughter with 2 days of left flank pain, rigors and new confusion. She has hypertension and type 2 diabetes. Her mean arterial pressure is 58 mmHg. She is drowsy but opens her eyes to voice. There is left costovertebral angle tenderness. Point of care lactate is 5.2 mmol/L. Capillary glucose is 14.8 mmol/L.",
+    vitals: { temperature: "39.4°C", pulse: "126/minute", resp: "28/minute", bp: "82/46 mmHg", o2sat: "93% on room air", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE interventions you begin within the first hour, before imaging or other results are back.",
+        prompt: "What interventions do you begin within the first hour, before imaging or other results are back?",
         accept: [
           { id: "abx", text: "Broad spectrum IV antibiotics", match: ["antibiotic", "ceftriaxone", "piperacillin", "pip tazo", "tazocin", "meropenem", "ertapenem", "cefotaxime", "gentamicin"] },
           { id: "urine", text: "Urinalysis and urine culture", match: ["urine culture", "urinalysis"] },
@@ -71,16 +72,15 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which initial fluid resuscitation is most appropriate? Select one.",
+        prompt: "Which of the following is the most appropriate initial fluid resuscitation for her?",
         options: [
-          "0.9% saline 250 mL IV over 1 hour",
-          "Ringer's lactate 1.8 L IV over the first 1 to 3 hours with frequent reassessment",
           "5% albumin 500 mL IV as the first fluid",
           "Ringer's lactate 4 L IV as fast as possible",
-          "Maintenance fluid at 100 mL/h",
-          "No fluid and norepinephrine alone",
+          "Ringer's lactate 1.8 L IV over 1 to 3 hours",
+          "0.9% saline 250 mL IV over 1 hour, then reassess",
+          "No IV fluid, start norepinephrine alone",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
           "Surviving Sepsis suggests at least 30 mL/kg of crystalloid in the first 3 hours for sepsis induced hypoperfusion. For 60 kg that is 1.8 L. Balanced crystalloid is preferred over saline. Reassess often to avoid fluid overload.",
         keyFeature: { topic: "infectious-diseases", n: 2 },
@@ -90,7 +90,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 1,
-        prompt: "Name an appropriate empiric antibiotic for her. Include the route.",
+        prompt: "What is an appropriate empiric antibiotic for her, including the route?",
         accept: [
           { id: "ctx", text: "Ceftriaxone 2 g IV", match: ["ceftriaxone", "cefotaxime"] },
           { id: "tzp", text: "Piperacillin tazobactam 4.5 g IV", match: ["piperacillin", "pip tazo", "tazocin"] },
@@ -110,8 +110,8 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        update: "After 1.8 L of Ringer's lactate she remains drowsy. BP 84/48 (MAP 60). Repeat lactate is 4.6 mmol/L.",
-        prompt: "Name the vasopressor of first choice and the blood pressure target.",
+        update: "After 1.8 L of Ringer's lactate she remains drowsy. BP 84/48 mmHg (MAP 60 mmHg). Repeat lactate is 4.6 mmol/L.",
+        prompt: "What is the vasopressor of first choice, and what is the blood pressure target?",
         accept: [
           { id: "ne", text: "Norepinephrine", match: ["norepinephrine", "noradrenaline", "levophed"] },
           { id: "map", text: "MAP of at least 65 mmHg", match: ["65"] },
@@ -131,7 +131,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Bedside ultrasound shows moderate left hydronephrosis. CT shows a 7 mm obstructing stone at the left ureterovesical junction with perinephric stranding.",
-        prompt: "List TWO next management steps.",
+        prompt: "What are the next management steps?",
         accept: [
           { id: "decomp", text: "Urgent urology consult for decompression by ureteral stent or nephrostomy", match: ["urology", "urologist", "decompression", "decompress", "nephrostomy", "stent"] },
           { id: "icu", text: "ICU consult", match: ["icu", "intensive care", "critical care"] },
@@ -156,13 +156,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Man with fever, headache and confusion",
     stem:
-      "A 62 year old man is brought in by his wife with 18 hours of fever, severe headache and vomiting. Over the last 2 hours he has become confused. He has no past history and takes no medications. T 39.6°C, HR 118, BP 132/78, RR 22, SpO2 97%. Weight 80 kg. GCS 13 (E3 V4 M6). He has marked neck stiffness. Pupils are equal and reactive. There are no focal limb findings and no rash.",
+      "A 62-year-old man is brought in by his wife with 18 hours of fever, severe headache and vomiting. Over the last 2 hours he has become confused. He has no past history and takes no medications. Oxygen saturation is 97%. GCS 13 (E3 V4 M6). He has marked neck stiffness. Pupils are equal and reactive. There are no focal limb findings and no rash.",
+    vitals: { temperature: "39.6°C", pulse: "118/minute", resp: "22/minute", bp: "132/78 mmHg", weight: "80 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE medications you give before any imaging. Include the drug and dose.",
+        prompt: "What medications, with the drug and dose, do you give before any imaging?",
         accept: [
           { id: "dex", text: "Dexamethasone 10 mg IV (0.15 mg/kg), before or with the first antibiotic", match: ["dexamethasone 10 mg", "dexamethasone 10mg", "dexamethasone 0.15 mg/kg", "decadron 10 mg"] },
           { id: "ctx", text: "Ceftriaxone 2 g IV", match: ["ceftriaxone 2 g", "ceftriaxone 2g", "ceftriaxone 2 gram"] },
@@ -179,15 +180,15 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which sequence is most appropriate? Select one.",
+        prompt: "Which of the following sequences of care is most appropriate for this patient?",
         options: [
-          "CT head, then lumbar puncture, then antibiotics based on the CSF Gram stain",
-          "Lumbar puncture now, then antibiotics once CSF is obtained",
-          "Blood cultures, then dexamethasone and antibiotics, then CT head, then lumbar puncture if safe",
-          "Antibiotics now and skip blood cultures to avoid any delay",
-          "MRI brain, then lumbar puncture, then antibiotics",
+          "Antibiotics now, skipping blood cultures to avoid any delay",
+          "Blood cultures, dexamethasone, antibiotics, CT, LP if safe",
+          "CT, LP, then antibiotics guided by the Gram stain",
+          "LP now, then antibiotics once CSF is obtained",
+          "MRI brain, LP, then antibiotics",
         ],
-        correct: 2,
+        correct: 1,
         explanation:
           "His altered level of consciousness is an indication for CT before lumbar puncture. Imaging must never delay treatment. Draw blood cultures quickly, give dexamethasone and antibiotics, then image and perform the LP if safe.",
         keyFeature: { topic: "infectious-diseases", n: 1 },
@@ -197,7 +198,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "Name the organism the ampicillin is meant to cover and the host factor in this patient that makes you add it.",
+        prompt: "Which organism is the ampicillin meant to cover, and which host factor in this patient makes you add it?",
         accept: [
           { id: "listeria", text: "Listeria monocytogenes", match: ["listeria"] },
           { id: "age", text: "Age over 50", match: ["age", "over 50", "older than 50", "62"] },
@@ -211,18 +212,18 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "menu",
         select: 3,
-        update: "CSF shows 3200 x10^6/L white cells with 90% neutrophils, glucose 1.1 mmol/L and protein 3.8 g/L. Gram stain shows Gram negative diplococci.",
-        prompt: "Which THREE people should receive chemoprophylaxis? Select THREE.",
+        update: "CSF shows 3 200 x 10^6/L white cells with 90% neutrophils, glucose 1.1 mmol/L and protein 3.8 g/L. Gram stain shows Gram negative diplococci.",
+        prompt: "Which of the following people should be offered chemoprophylaxis after this exposure?",
         options: [
-          "His wife, who lives with him",
-          "His 17 year old son, who lives at home",
-          "The triage nurse who took his history",
-          "The paramedic who suctioned his airway without a mask",
           "A coworker who shared his office until 5 days ago",
+          "His 17-year-old son, who lives at home",
+          "His wife, who lives with him",
+          "The emergency physician who examined him in a surgical mask",
           "The neighbour who drove them to hospital",
-          "The emergency physician who examined him wearing a surgical mask",
+          "The paramedic who suctioned his airway without a mask",
+          "The triage nurse who took his history",
         ],
-        correct: [0, 1, 3],
+        correct: [2, 1, 5],
         explanation:
           "Chemoprophylaxis is for household and intimate contacts and anyone with unprotected exposure to oral secretions, such as suctioning or intubation without a mask. Casual workplace contact and masked clinical care do not qualify. Options include ciprofloxacin 500 mg PO once, rifampin 600 mg PO every 12 hours for 2 days, or ceftriaxone 250 mg IM once. Notify public health.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
@@ -237,13 +238,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Fever in a woman receiving chemotherapy",
     stem:
-      "A 51 year old woman arrives at 2300 with a temperature of 38.5°C at home. She was triaged as low acuity because she 'just feels like she has the flu'. She has stage II breast cancer and received her third cycle of docetaxel and cyclophosphamide 9 days ago. She has an implanted port. She takes no prophylactic antibiotics. T 38.6°C, HR 114, BP 106/64, RR 20, SpO2 97%. Weight 68 kg. She has mild mucositis. The port site is not red. Her chest is clear.",
+      "A 51-year-old woman arrives at 2300 with a temperature of 38.5°C at home. She was triaged as low acuity because she 'just feels like she has the flu'. She has stage II breast cancer and received her third cycle of docetaxel and cyclophosphamide 9 days ago. She has an implanted port. She takes no prophylactic antibiotics. Oxygen saturation is 97%. She has mild mucositis. The port site is not red. Her chest is clear.",
+    vitals: { temperature: "38.6°C", pulse: "114/minute", resp: "20/minute", bp: "106/64 mmHg", weight: "68 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO features of her history that place her at high risk of serious infection.",
+        prompt: "What features of her history place her at high risk of serious infection?",
         accept: [
           { id: "chemo", text: "Chemotherapy 9 days ago, at the expected neutrophil nadir", match: ["chemotherapy", "chemo", "neutropenia", "neutropenic", "nadir"] },
           { id: "port", text: "Indwelling central venous port", match: ["port", "central line", "indwelling", "catheter"] },
@@ -259,7 +261,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 1,
-        prompt: "Name an appropriate empiric antibiotic. Include the drug, dose and route.",
+        prompt: "What is an appropriate empiric antibiotic, including the drug, dose and route?",
         accept: [
           { id: "tzp", text: "Piperacillin tazobactam 4.5 g IV", match: ["piperacillin 4.5", "pip tazo 4.5", "piptazo 4.5", "tazocin 4.5"] },
           { id: "fep", text: "Cefepime 2 g IV", match: ["cefepime 2 g", "cefepime 2g"] },
@@ -278,15 +280,16 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Her CBC will take 90 minutes. When should the first antibiotic dose be given? Select one.",
+        update: "Her CBC will take 90 minutes.",
+        prompt: "Which of the following is the appropriate timing of her first antibiotic dose?",
         options: [
-          "After the absolute neutrophil count confirms neutropenia",
-          "Within 60 minutes of triage, without waiting for the CBC",
-          "After blood cultures grow an organism",
-          "Within 6 hours if she remains stable",
           "After a chest X-ray excludes pneumonia",
+          "After blood cultures grow an organism",
+          "After the absolute neutrophil count confirms neutropenia",
+          "Within 6 hours if she remains stable",
+          "Within 60 minutes of triage, without waiting for the CBC",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "The first dose of empiric antibiotics should be given within 1 hour of triage. Do not wait for the neutrophil count in a febrile patient who had chemotherapy in the last few weeks. Cultures are drawn first but must not delay treatment.",
         keyFeature: { topic: "infectious-diseases", n: 1 },
@@ -296,7 +299,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO clinical situations in which you would add vancomycin to her empiric regimen.",
+        prompt: "In which clinical situations would you add vancomycin to her empiric regimen?",
         accept: [
           { id: "unstable", text: "Hemodynamic instability or septic shock", match: ["hypotension", "shock", "unstable", "instability"] },
           { id: "line", text: "Suspected catheter or port infection", match: ["catheter", "port", "line infection", "tunnel"] },
@@ -321,13 +324,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Thigh redness after a minor scrape",
     stem:
-      "A 57 year old man with type 2 diabetes and alcohol use disorder presents with 36 hours of left thigh pain after a minor scrape on a rusty steel edge at a scrapyard. A walk in clinic started cephalexin for cellulitis yesterday. T 38.8°C, HR 122, BP 98/56, RR 24, SpO2 96%. There is a 15 cm area of dusky erythema with poorly defined margins and tense, woody swelling. He winces when you touch skin well beyond the erythema. There is no crepitus. Na 128 mmol/L, glucose 21 mmol/L, creatinine 162 µmol/L, WBC 23 x10^9/L, CRP 280 mg/L, Hb 128 g/L.",
+      "A 57-year-old man with type 2 diabetes and alcohol use disorder presents with 36 hours of left thigh pain after a minor scrape on a rusty steel edge at a scrapyard. A walk in clinic started cephalexin for cellulitis yesterday. Oxygen saturation is 96%. There is a 15 cm area of dusky erythema with poorly defined margins and tense, woody swelling. He winces when you touch skin well beyond the erythema. There is no crepitus. Na 128 mmol/L, glucose 21 mmol/L, creatinine 162 umol/L, WBC 23 x 10^9/L, CRP 280 mg/L, Hb 128 g/L.",
+    vitals: { temperature: "38.8°C", pulse: "122/minute", resp: "24/minute", bp: "98/56 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that suggest this is more than simple cellulitis.",
+        prompt: "What findings suggest this is more than simple cellulitis?",
         accept: [
           { id: "pain", text: "Pain and tenderness beyond the visible erythema", match: ["pain out of proportion", "pain beyond", "disproportionate", "tenderness beyond", "pain outside", "beyond the erythema", "beyond erythema"] },
           { id: "tox", text: "Systemic toxicity with tachycardia and hypotension", match: ["hypotension", "tachycardia", "systemic toxicity", "shock", "sepsis", "toxic"] },
@@ -344,16 +348,15 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "What is the most important next step? Select one.",
+        prompt: "Which of the following is the most important next step in his management?",
         options: [
-          "MRI of the thigh to confirm fascial involvement before consulting",
-          "Urgent surgical consultation for operative exploration",
           "Calculate the LRINEC score and repeat it in 12 hours",
-          "Switch to IV cefazolin and reassess in 24 hours",
+          "CT of the thigh and await the report before consulting",
           "Mark the margins of erythema and observe",
-          "CT of the thigh and wait for the report before consulting",
+          "Switch to IV cefazolin and reassess in 24 hours",
+          "Urgent surgical consultation for operative exploration",
         ],
-        correct: 1,
+        correct: 4,
         explanation:
           "Necrotizing fasciitis is a surgical diagnosis and a surgical emergency. Mortality rises with every hour of delay to debridement. Imaging may help in unclear cases but must not delay surgical consultation when clinical suspicion is high.",
         keyFeature: { topic: "infectious-diseases", n: 4 },
@@ -363,7 +366,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List the THREE components of an appropriate empiric antimicrobial regimen.",
+        prompt: "What are the components of an appropriate empiric antimicrobial regimen?",
         accept: [
           { id: "gn", text: "Gram negative and anaerobic cover: piperacillin tazobactam, a carbapenem, or ceftriaxone plus metronidazole", match: ["piperacillin", "pip tazo", "tazocin", "meropenem", "imipenem", "ertapenem", "ceftriaxone", "metronidazole", "flagyl"] },
           { id: "mrsa", text: "MRSA cover: vancomycin, linezolid or daptomycin", match: ["vancomycin", "linezolid", "daptomycin"] },
@@ -382,7 +385,8 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "He cannot recall any tetanus vaccine since childhood and is unsure he completed the primary series. List TWO tetanus interventions.",
+        update: "He cannot recall any tetanus vaccine since childhood and is unsure he completed the primary series.",
+        prompt: "What tetanus interventions do you provide?",
         accept: [
           { id: "tox", text: "Tetanus toxoid now, as Tdap or Td", match: ["tdap", "td", "tetanus toxoid", "tetanus vaccine", "tetanus booster"] },
           { id: "tig", text: "Tetanus immune globulin 250 units IM at a separate site", match: ["tig", "tetanus immune globulin", "tetanus immunoglobulin", "hypertet"] },
@@ -402,13 +406,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Worsening sore throat on antibiotics",
     stem:
-      "A 20 year old university student presents with 5 days of worsening sore throat. A walk in clinic started amoxicillin 3 days ago after a positive rapid strep test. Today she cannot open her mouth fully, her voice is muffled and swallowing is so painful that she spits out her saliva. T 38.6°C, HR 108, BP 118/74, RR 18, SpO2 99%. Mouth opening is limited to 2 finger breadths. The left tonsillar pillar is bulging and the uvula is deviated to the right.",
+      "A 20-year-old university student presents with 5 days of worsening sore throat. A walk in clinic started amoxicillin 3 days ago after a positive rapid strep test. Today she cannot open her mouth fully, her voice is muffled and swallowing is so painful that she spits out her saliva. Oxygen saturation is 99%. Mouth opening is limited to 2 finger breadths. The left tonsillar pillar is bulging and the uvula is deviated to the right.",
+    vitals: { temperature: "38.6°C", pulse: "108/minute", resp: "18/minute", bp: "118/74 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE findings that point to a complication rather than uncomplicated pharyngitis.",
+        prompt: "What findings point to a complication rather than uncomplicated pharyngitis?",
         accept: [
           { id: "trismus", text: "Trismus", match: ["trismus", "mouth opening", "cannot open"] },
           { id: "voice", text: "Muffled or hot potato voice", match: ["muffled", "hot potato", "voice"] },
@@ -426,7 +431,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO findings on examination of the neck or airway that would suggest a deeper neck space infection and need for CT and urgent airway planning.",
+        prompt: "What findings on examination of the neck or airway would suggest a deeper neck space infection and the need for CT and urgent airway planning?",
         accept: [
           { id: "swell", text: "Neck swelling or mass", match: ["neck swelling", "neck mass", "swelling of the neck", "swollen neck"] },
           { id: "stiff", text: "Neck stiffness, torticollis or pain on neck extension", match: ["torticollis", "neck stiffness", "stiff neck", "neck extension", "limited neck"] },
@@ -446,18 +451,17 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "single",
         update: "Her neck is supple without swelling. There is no stridor.",
-        prompt: "Which is the most appropriate management? Select one.",
+        prompt: "Which of the following is the most appropriate management of her condition?",
         options: [
-          "Admit for IV antibiotics alone and reassess tomorrow",
-          "Needle aspiration or incision and drainage, then oral antibiotics and outpatient follow up if she can drink",
-          "Urgent tonsillectomy under general anaesthesia",
+          "Admit for IV antibiotics alone and reassess in the morning",
+          "CT of the neck before any drainage attempt",
+          "Drain, oral antibiotics, outpatient follow up if drinking",
           "Increase the amoxicillin dose and discharge",
-          "CT neck before any drainage",
-          "Oral prednisone and discharge",
+          "Urgent tonsillectomy under general anaesthesia",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "Drainage plus antibiotics is the treatment of peritonsillar abscess. Most patients who can then drink go home with early follow up. CT is reserved for suspected deep space extension or unclear diagnosis. Antibiotics alone often fail when pus is present.",
+          "Drainage plus antibiotics is the treatment of peritonsillar abscess. Needle aspiration or incision and drainage are both options. Most patients who can then drink go home with early follow up. CT is reserved for suspected deep space extension or unclear diagnosis. Antibiotics alone often fail when pus is present.",
         keyFeature: { topic: "infectious-diseases", n: 4 },
         source: "galioto",
       },
@@ -465,7 +469,8 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 1,
-        prompt: "After drainage she can swallow fluids. Name an appropriate oral antibiotic regimen for discharge.",
+        update: "After drainage she can swallow fluids.",
+        prompt: "What is an appropriate oral antibiotic regimen for discharge?",
         accept: [
           { id: "amc", text: "Amoxicillin clavulanate", match: ["amoxicillin clavulanate", "amoxicillin clavulanic", "clavulin", "augmentin", "amox clav"] },
           { id: "penmet", text: "Penicillin V plus metronidazole", match: ["penicillin metronidazole", "pen v metronidazole"] },
@@ -483,16 +488,16 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q5",
         kind: "single",
-        update: "Her roommate, also 20, came with her. He has 2 days of a scratchy throat, runny nose, hoarseness and cough. T 37.6°C. His tonsils are not swollen and have no exudate. He has no neck nodes. He asks for the same antibiotic.",
-        prompt: "What is the most appropriate management for the roommate? Select one.",
+        update: "Her roommate, also 20, came with her. He has 2 days of a scratchy throat, runny nose, hoarseness and cough. Temperature 37.6°C. His tonsils are not swollen and have no exudate. He has no neck nodes. He asks for the same antibiotic.",
+        prompt: "Which of the following is the most appropriate management for the roommate?",
         options: [
           "Amoxicillin 500 mg PO twice daily for 10 days",
-          "Rapid strep test, and amoxicillin if it is positive",
-          "No strep testing and no antibiotic. Symptomatic care and return advice",
-          "Penicillin V 300 mg PO three times daily for 10 days, because his roommate has proven strep",
           "Azithromycin 500 mg PO once daily for 3 days",
+          "Penicillin V 300 mg PO three times daily, 10 days",
+          "Rapid strep test, then amoxicillin for 10 days if positive",
+          "No strep test or antibiotic, symptomatic care, return advice",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "Cough, rhinorrhea and hoarseness with no fever, exudate or nodes point to a viral cause. His modified Centor (McIsaac) score is 0, so neither testing nor antibiotics are needed. Exposure to a strep case does not outweigh clearly viral features. A positive swab here would likely reflect carriage and lead to needless antibiotics.",
         keyFeature: { topic: "infectious-diseases", n: 9 },
@@ -507,13 +512,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Confusion after a trip abroad",
     stem:
-      "A 44 year old man is brought in by his sister with 4 days of fever, headache and myalgias. Today he is confused. He returned 11 days ago from a 3 week trip to visit family in Ghana. He did not take malaria prophylaxis or visit a travel clinic. He has no past history. T 39.7°C, HR 124, BP 104/62, RR 26, SpO2 95%. Weight 78 kg. GCS 13. He has mild scleral icterus. There is no neck stiffness and no rash.",
+      "A 44-year-old man is brought in by his sister with 4 days of fever, headache and myalgias. Today he is confused. He returned 11 days ago from a 3 week trip to visit family in Ghana. He did not take malaria prophylaxis or visit a travel clinic. He has no past history. Oxygen saturation is 95%. GCS 13. He has mild scleral icterus. There is no neck stiffness and no rash.",
+    vitals: { temperature: "39.7°C", pulse: "124/minute", resp: "26/minute", bp: "104/62 mmHg", weight: "78 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE infections you must include in your differential diagnosis.",
+        prompt: "What infections must you include in your differential diagnosis?",
         accept: [
           { id: "malaria", text: "Falciparum malaria", match: ["malaria", "falciparum", "plasmodium"] },
           { id: "mening", text: "Bacterial meningitis", match: ["meningitis"] },
@@ -536,7 +542,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO investigations specific to his travel history that you order now.",
+        prompt: "What investigations specific to his travel history do you order now?",
         accept: [
           { id: "smear", text: "Thick and thin blood smears", match: ["smear", "thick", "thin", "blood film"] },
           { id: "rdt", text: "Malaria rapid diagnostic antigen test", match: ["rapid diagnostic", "rdt", "antigen", "rapid malaria"] },
@@ -554,8 +560,8 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        update: "He is now less responsive, with GCS 10. The thin smear shows Plasmodium falciparum with 12% parasitemia. Glucose 2.0 mmol/L, creatinine 298 µmol/L, total bilirubin 64 µmol/L, platelets 41 x10^9/L, Hb 104 g/L, lactate 6.1 mmol/L.",
-        prompt: "List THREE findings that meet criteria for severe malaria.",
+        update: "He is now less responsive, with GCS 10. The thin smear shows Plasmodium falciparum with 12% parasitemia. Glucose 2.0 mmol/L, creatinine 298 umol/L, total bilirubin 64 umol/L, platelets 41 x 10^9/L, Hb 104 g/L, lactate 6.1 mmol/L.",
+        prompt: "Which findings meet criteria for severe malaria?",
         accept: [
           { id: "cns", text: "Impaired consciousness", match: ["consciousness", "gcs", "confusion", "confused", "cerebral", "coma"] },
           { id: "para", text: "Parasitemia of 12%", match: ["parasitemia", "parasite", "12%"] },
@@ -566,23 +572,22 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         ],
         unacceptable: [{ text: "Thrombocytopenia", match: ["platelet", "thrombocytopenia"] }],
         explanation:
-          "Severe falciparum malaria is defined by organ dysfunction or high parasitemia. He meets several WHO criteria: GCS below 11, glucose below 2.2 mmol/L, creatinine above 265 µmol/L, lactate of 5 mmol/L or more, bilirubin above 50 µmol/L and parasitemia above 10%. Thrombocytopenia is common in malaria but is not a severity criterion.",
+          "Severe falciparum malaria is defined by organ dysfunction or high parasitemia. He meets several WHO criteria: GCS below 11, glucose below 2.2 mmol/L, creatinine above 265 umol/L, lactate of 5 mmol/L or more, bilirubin above 50 umol/L and parasitemia above 10%. Thrombocytopenia is common in malaria but is not a severity criterion.",
         keyFeature: { topic: "infectious-diseases", n: 3 },
         source: "who-malaria",
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which is the most appropriate antimalarial treatment? Select one.",
+        prompt: "Which of the following is the most appropriate antimalarial treatment for him?",
         options: [
-          "Oral atovaquone proguanil",
-          "Oral chloroquine",
-          "IV artesunate 2.4 mg/kg at 0, 12 and 24 hours, then daily",
-          "Oral doxycycline alone",
-          "Oral primaquine",
-          "IV artesunate 1 mg/kg once",
+          "Atovaquone proguanil PO daily for 3 days",
+          "Chloroquine PO as a standard 3 day course",
+          "Doxycycline 100 mg PO twice daily alone",
+          "IV artesunate 1 mg/kg as a single dose",
+          "IV artesunate 2.4 mg/kg at 0/12/24 hours, then daily",
         ],
-        correct: 2,
+        correct: 4,
         explanation:
           "IV artesunate 2.4 mg/kg at 0, 12, 24 and 48 hours is the treatment of choice for severe malaria. In Canada it is available 24 hours a day through the Canadian Malaria Network. Chloroquine resistance is widespread in P. falciparum. Oral therapy is for uncomplicated disease only.",
         keyFeature: { topic: "infectious-diseases", n: 8 },
@@ -597,13 +602,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Young woman with vomiting, diarrhea and rash",
     stem:
-      "A 19 year old woman is brought in by her roommate with 1 day of high fever, vomiting, watery diarrhea and dizziness on standing. She was triaged as gastroenteritis. She is on day 5 of her menstrual period. T 39.8°C, HR 136, BP 78/40, RR 26, SpO2 97%. Weight 58 kg. She is drowsy but oriented. She has diffuse blanching erythema like a sunburn, including her palms. Her conjunctivae are injected. A quick look at her arms and legs shows no wounds.",
+      "A 19-year-old woman is brought in by her roommate with 1 day of high fever, vomiting, watery diarrhea and dizziness on standing. She was triaged as gastroenteritis. She is on day 5 of her menstrual period. Oxygen saturation is 97%. She is drowsy but oriented. She has diffuse blanching erythema like a sunburn, including her palms. Her conjunctivae are injected. A quick look at her arms and legs shows no wounds.",
+    vitals: { temperature: "39.8°C", pulse: "136/minute", resp: "26/minute", bp: "78/40 mmHg", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO specific areas you must examine to find the source.",
+        prompt: "What specific areas must you examine to find the source?",
         accept: [
           { id: "pelvic", text: "Speculum and pelvic examination for a retained tampon or other foreign body", match: ["pelvic", "speculum", "vaginal", "tampon"] },
           { id: "skin", text: "Full skin examination for wounds, burns, surgical sites or piercings", match: ["skin", "wound", "piercing", "surgical site", "tattoo", "burn"] },
@@ -621,7 +627,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         kind: "short",
         required: 3,
         update: "Speculum examination finds a retained, foul smelling tampon.",
-        prompt: "List THREE immediate management steps.",
+        prompt: "What are the immediate management steps?",
         accept: [
           { id: "remove", text: "Remove the tampon", match: ["remove", "removal"] },
           { id: "fluid", text: "Crystalloid bolus of about 30 mL/kg", match: ["crystalloid", "fluid", "bolus", "ringer", "saline"] },
@@ -639,7 +645,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "Name the TWO components of your antibiotic regimen.",
+        prompt: "What are the components of your antibiotic regimen?",
         accept: [
           { id: "staph", text: "An antistaphylococcal agent such as vancomycin, cloxacillin or cefazolin", match: ["vancomycin", "cloxacillin", "cefazolin", "oxacillin", "nafcillin"] },
           { id: "clinda", text: "Clindamycin to suppress toxin production", match: ["clindamycin", "linezolid"] },
@@ -658,13 +664,13 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Nurse with a needle injury",
     stem:
-      "A 29 year old emergency nurse presents 40 minutes after a deep injury from a hollow bore needle used to draw blood from a patient in the resuscitation room. The source patient has known HIV and has not taken treatment for over a year. The source also has chronic hepatitis C. The source's hepatitis B status is unknown. The nurse has already washed the wound with soap and water. She completed a hepatitis B vaccine series in nursing school but never had her antibody level checked. She is healthy, takes no medications and her last menstrual period was 2 weeks ago.",
+      "A 29-year-old emergency nurse presents 40 minutes after a deep injury from a hollow bore needle used to draw blood from a patient in the resuscitation room. The source patient has known HIV and has not taken treatment for over a year. The source also has chronic hepatitis C. The source's hepatitis B status is unknown. The nurse has already washed the wound with soap and water. She completed a hepatitis B vaccine series in nursing school but never had her antibody level checked. She is healthy, takes no medications and her last menstrual period was 2 weeks ago.",
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE baseline blood tests for the nurse.",
+        prompt: "What baseline blood tests do you order for the nurse?",
         accept: [
           { id: "hiv", text: "HIV antigen and antibody test", match: ["hiv"] },
           { id: "hbsag", text: "Hepatitis B surface antigen", match: ["hbsag", "surface antigen"] },
@@ -684,16 +690,15 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "Which HIV post exposure prophylaxis is most appropriate? Select one.",
+        prompt: "Which of the following HIV post exposure prophylaxis plans is most appropriate for her?",
         options: [
-          "No PEP until the source's viral load is known",
-          "Tenofovir DF and emtricitabine plus dolutegravir for 28 days, first dose now",
+          "Start PEP only after her baseline HIV test returns negative",
           "Tenofovir DF and emtricitabine alone for 28 days",
-          "Tenofovir DF and emtricitabine plus dolutegravir for 7 days",
-          "Zidovudine alone for 28 days",
-          "Start PEP only if her baseline HIV test is negative in 1 week",
+          "Tenofovir DF, emtricitabine, dolutegravir for 7 days",
+          "Tenofovir DF, emtricitabine, dolutegravir now for 28 days",
+          "No PEP until the source's viral load is known",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "A deep hollow bore injury from an untreated HIV positive source is a high risk exposure. Start a three drug regimen as soon as possible, within hours and no later than 72 hours. Continue for 28 days. Dolutegravir plus TDF and emtricitabine, or bictegravir, emtricitabine and TAF, are the preferred regimens. Do not wait for source viral load.",
         keyFeature: { topic: "infectious-diseases", n: 10 },
@@ -704,7 +709,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "Her anti HBs returns at 3 IU/L. The source is HBsAg positive.",
-        prompt: "List TWO interventions for hepatitis B.",
+        prompt: "What interventions for hepatitis B do you provide?",
         accept: [
           { id: "hbig", text: "Hepatitis B immune globulin 0.06 mL/kg IM as soon as possible, ideally within 48 hours", match: ["hbig", "hepatitis b immune globulin", "hepatitis b immunoglobulin", "immune globulin", "immunoglobulin"] },
           { id: "vax", text: "A dose of hepatitis B vaccine now, with revaccination as needed", match: ["vaccine", "booster", "vaccination", "revaccination", "revaccinate", "engerix", "recombivax"] },
@@ -725,18 +730,19 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Unexpected visitor in the bedroom",
     stem:
-      "A 41 year old man presents at 0700. Last night he found a bat on his bedroom floor and picked it up with his bare hand to put it outside. It squirmed in his hand. He sees no mark on his skin. The bat flew away and cannot be tested. His wife slept in the same room and did not touch the bat. He lives in rural Ontario. He is healthy. Weight 90 kg.",
+      "A 41-year-old man presents at 0700. Last night he found a bat on his bedroom floor and picked it up with his bare hand to put it outside. It squirmed in his hand. He sees no mark on his skin. The bat flew away and cannot be tested. His wife slept in the same room and did not touch the bat. He lives in rural Ontario. He is healthy.",
+    vitals: { weight: "90 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "What is the most appropriate management of his rabies risk? Select one.",
+        prompt: "Which of the following is the most appropriate management of his rabies risk?",
         options: [
-          "No post exposure prophylaxis because there is no visible bite",
-          "Rabies post exposure prophylaxis with immune globulin and vaccine now",
-          "Rabies vaccine alone without immune globulin",
           "Observe for 10 days and treat only if symptoms develop",
+          "Rabies immune globulin and vaccine now",
+          "Rabies vaccine alone without immune globulin",
           "Wound care and oral antibiotics only",
+          "No post exposure prophylaxis",
         ],
         correct: 1,
         explanation:
@@ -748,7 +754,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List the TWO components of his prophylaxis. Include the dose or schedule and the site for each.",
+        prompt: "What are the components of his prophylaxis, with the dose or schedule and the site for each?",
         accept: [
           { id: "rig", text: "Rabies immune globulin 20 IU/kg (1800 IU), infiltrated around any wound, and the rest IM at a site distant from the vaccine", match: ["20 iu/kg", "rig 20", "rabig 20", "hrig 20", "immune globulin 20", "immunoglobulin 20", "1800 iu", "rig 1800", "rabig 1800"] },
           { id: "vax", text: "Rabies vaccine 1 mL IM in the deltoid on days 0, 3, 7 and 14", match: ["vaccine deltoid", "vaccine 1 ml", "vaccine 0 3 7 14", "vaccine day 0", "day 0 3 7 14"] },
@@ -763,7 +769,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "If he were taking high dose immunosuppressive therapy, list TWO changes you would make to the plan.",
+        prompt: "If he were taking high dose immunosuppressive therapy, what changes would you make to the plan?",
         accept: [
           { id: "fifth", text: "Give a fifth vaccine dose on day 28", match: ["fifth", "5th", "day 28", "five dose", "5 dose"] },
           { id: "titre", text: "Check rabies antibody titres after the series", match: ["titre", "titer", "antibody level", "serology"] },
@@ -784,21 +790,22 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Student with cough and aches in January",
     stem:
-      "In January, a 26 year old graduate student presents on day 4 of fever, cough, sore throat, runny nose and muscle aches. Several classmates have been ill. He has no medical history and takes no medications. T 38.3°C, HR 98, BP 122/76, RR 16, SpO2 98% on room air. Weight 72 kg. He looks tired but well. His pharynx is mildly red without exudate. His chest is clear. He asks for antibiotics so he can write an exam in 3 days.",
+      "In January, a 26-year-old graduate student presents on day 4 of fever, cough, sore throat, runny nose and muscle aches. Several classmates have been ill. He has no medical history and takes no medications. He looks tired but well. His pharynx is mildly red without exudate. His chest is clear. He asks for antibiotics so he can write an exam in 3 days.",
+    vitals: { temperature: "38.3°C", pulse: "98/minute", resp: "16/minute", bp: "122/76 mmHg", o2sat: "98% on room air", weight: "72 kg" },
     questions: [
       {
         id: "q1",
         kind: "menu",
         select: 1,
-        prompt: "Which ONE investigation is required before discharge? Select one, or None if none are required.",
+        prompt: "Which of the following investigations is required before he is discharged home?",
         options: [
-          "CBC with differential",
           "Blood cultures",
-          "Chest X-ray",
-          "Procalcitonin",
-          "Throat swab for group A streptococcus",
+          "CBC with differential",
+          "Chest X-ray, PA and lateral",
           "Influenza NAAT swab",
-          "Urinalysis",
+          "Procalcitonin",
+          "Throat swab for group A strep",
+          "Urinalysis with microscopy",
           "None",
         ],
         correct: [7],
@@ -810,15 +817,15 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "What is the most appropriate treatment? Select one.",
+        prompt: "Which of the following is the most appropriate treatment for him?",
         options: [
+          "Acetaminophen or ibuprofen, fluids and return precautions",
           "Amoxicillin 1 g PO three times daily for 5 days",
-          "Azithromycin 500 mg PO on day 1, then 250 mg daily for 4 days",
+          "Azithromycin 500 mg PO, then 250 mg daily, 4 days",
+          "Delayed amoxicillin prescription if not better in 2 days",
           "Oseltamivir 75 mg PO twice daily for 5 days",
-          "Symptomatic care with acetaminophen or ibuprofen, fluids and return precautions",
-          "A delayed prescription for amoxicillin if he is not better in 2 days",
         ],
-        correct: 3,
+        correct: 0,
         explanation:
           "This is a viral illness. Antibiotics give no benefit and cause adverse effects and resistance. He is healthy, not at high risk and beyond 48 hours of symptoms, so oseltamivir adds little.",
         keyFeature: { topic: "infectious-diseases", n: 9 },
@@ -828,7 +835,8 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "He is disappointed. List THREE key points you cover in your discharge counselling.",
+        update: "He is disappointed.",
+        prompt: "What key points do you cover in your discharge counselling?",
         accept: [
           { id: "viral", text: "The illness is viral and antibiotics will not help", match: ["viral", "virus", "not help", "no benefit", "won't help", "not work", "don't work", "not needed", "no role"] },
           { id: "harm", text: "Antibiotics cause side effects such as diarrhea and promote resistance", match: ["side effect", "resistance", "c difficile", "diarrhea", "harm", "adverse"] },
@@ -848,7 +856,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 3,
-        prompt: "List THREE patient groups with influenza like illness in whom you would offer antiviral treatment regardless of symptom duration.",
+        prompt: "In which patient groups with influenza like illness would you offer antiviral treatment regardless of symptom duration?",
         accept: [
           { id: "age", text: "Adults aged 65 or older", match: ["65", "elderly", "older adult"] },
           { id: "preg", text: "Pregnant or up to 4 weeks postpartum", match: ["pregnant", "pregnancy", "postpartum"] },
@@ -878,13 +886,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Cough and weight loss in a shelter resident",
     stem:
-      "A 52 year old man who lives in a downtown shelter presents with 2 months of cough, night sweats and 9 kg weight loss. Yesterday he coughed up streaks of blood. He drinks about 12 beers a day and smokes. He moved to Canada from the Philippines 20 years ago. T 38.0°C, HR 104, BP 128/80, RR 20, SpO2 95%. Weight 58 kg. He is thin, with coarse crackles over the right upper chest. Chest X-ray shows a right upper lobe cavitary opacity.",
+      "A 52-year-old man who lives in a downtown shelter presents with 2 months of cough, night sweats and 9 kg weight loss. Yesterday he coughed up streaks of blood. He drinks about 12 beers a day and smokes. He moved to Canada from the Philippines 20 years ago. Oxygen saturation is 95%. He is thin, with coarse crackles over the right upper chest. Chest X-ray shows a right upper lobe cavitary opacity.",
+    vitals: { temperature: "38.0°C", pulse: "104/minute", resp: "20/minute", bp: "128/80 mmHg", weight: "58 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO infectious diagnoses, other than typical community acquired pneumonia, that you must consider.",
+        prompt: "What infectious diagnoses, other than typical community acquired pneumonia, must you consider?",
         accept: [
           { id: "tb", text: "Pulmonary tuberculosis", match: ["tuberculosis", "tb", "mycobacterium", "mycobacterial"] },
           { id: "abscess", text: "Lung abscess, for example from aspiration", match: ["abscess", "aspiration"] },
@@ -905,7 +914,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations you send from the ED to confirm the leading diagnosis or guide its treatment.",
+        prompt: "What investigations do you send from the emergency department to confirm the leading diagnosis or guide its treatment?",
         accept: [
           { id: "cx", text: "Sputum mycobacterial culture", match: ["culture"] },
           { id: "naat", text: "Sputum NAAT for M. tuberculosis", match: ["naat", "genexpert", "pcr", "nucleic acid"] },
@@ -924,7 +933,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 2,
-        prompt: "List TWO infection control measures you put in place now.",
+        prompt: "What infection control measures do you put in place now?",
         accept: [
           { id: "air", text: "Airborne isolation in a negative pressure room", match: ["airborne", "negative pressure", "isolation", "aiir"] },
           { id: "n95", text: "Fit tested N95 respirators for staff", match: ["n95", "fit tested", "respirator"] },
@@ -940,9 +949,15 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        prompt: "Which condition carries the highest risk of progression from latent TB infection to active disease? Select one.",
-        options: ["HIV infection", "Type 2 diabetes", "Heavy alcohol use", "Cigarette smoking", "Age over 50"],
-        correct: 0,
+        prompt: "Which of the following conditions carries the highest risk of progression from latent TB infection to active disease?",
+        options: [
+          "Age over 50",
+          "Cigarette smoking",
+          "Heavy alcohol use",
+          "HIV infection",
+          "Type 2 diabetes",
+        ],
+        correct: 3,
         explanation:
           "HIV infection is among the strongest risk factors for progression to active TB. Diabetes, heavy alcohol use and smoking also raise risk but to a lesser degree. This is why every patient with TB is offered HIV testing.",
         keyFeature: { topic: "infectious-diseases", n: 3 },
@@ -957,13 +972,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Long term care resident with poor intake",
     stem:
-      "An 88 year old woman is sent from her long term care home with 2 days of poor oral intake and increased confusion. She has advanced dementia, is bedbound after a stroke and has type 2 diabetes. The transfer note says 'urine dipstick positive for leukocytes and nitrites, please treat UTI'. T 37.8°C, HR 108, BP 104/58, RR 22, SpO2 94% on room air. Weight 49 kg. She moans but does not follow commands. Her chest and abdomen are unremarkable on a quick exam.",
+      "An 88-year-old woman is sent from her long term care home with 2 days of poor oral intake and increased confusion. She has advanced dementia, is bedbound after a stroke and has type 2 diabetes. The transfer note says 'urine dipstick positive for leukocytes and nitrites, please treat UTI'. She moans but does not follow commands. Her chest and abdomen are unremarkable on a quick exam.",
+    vitals: { temperature: "37.8°C", pulse: "108/minute", resp: "22/minute", bp: "104/58 mmHg", o2sat: "94% on room air", weight: "49 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE areas that are often neglected on examination and that you now examine specifically for a source.",
+        prompt: "What areas, often neglected on examination, do you now examine specifically for a source?",
         accept: [
           { id: "skin", text: "Skin over pressure areas such as sacrum, hips and heels", match: ["sacrum", "sacral", "pressure", "heel", "skin", "buttock", "decubitus", "bedsore", "back"] },
           { id: "peri", text: "Perineum and genitals", match: ["perineum", "perineal", "genital", "groin"] },
@@ -982,15 +998,15 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        prompt: "How should you interpret the positive urine dipstick? Select one.",
+        prompt: "Which of the following is the best interpretation of the positive urine dipstick?",
         options: [
-          "It confirms urinary tract infection as the source",
-          "It is common in this population, often reflects asymptomatic bacteriuria and does not establish the source",
-          "It rules out other sources of infection",
-          "It means no further urine testing is needed",
-          "It means she needs a suprapubic aspirate before antibiotics",
+          "Confirms urinary tract infection as the source",
+          "Means no further urine testing is needed",
+          "Means she needs a suprapubic aspirate before any antibiotics",
+          "Often reflects asymptomatic bacteriuria, not proof of source",
+          "Rules out other sources of infection",
         ],
-        correct: 1,
+        correct: 3,
         explanation:
           "Asymptomatic bacteriuria is very common in long term care residents. A positive dipstick in a delirious patient does not prove a urinary source. Anchoring on it leads to missed diagnoses and unnecessary antibiotics.",
         keyFeature: { topic: "infectious-diseases", n: 7 },
@@ -1001,7 +1017,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "You roll her and find a 5 cm deep sacral ulcer with foul, purulent drainage and 8 cm of surrounding warm erythema. A probe reaches bone.",
-        prompt: "List TWO investigations to guide management of this wound.",
+        prompt: "What investigations guide management of this wound?",
         accept: [
           { id: "bc", text: "Blood cultures", match: ["blood culture"] },
           { id: "img", text: "Imaging for osteomyelitis, ideally MRI, or X-ray or CT", match: ["mri", "x ray", "xray", "ct", "imaging", "radiograph"] },
@@ -1019,7 +1035,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 1,
-        prompt: "Name an appropriate empiric IV antibiotic regimen.",
+        prompt: "What is an appropriate empiric IV antibiotic regimen?",
         accept: [
           { id: "tzp", text: "Piperacillin tazobactam, with vancomycin if MRSA risk", match: ["piperacillin", "pip tazo", "tazocin"] },
           { id: "ctxm", text: "Ceftriaxone plus metronidazole", match: ["ceftriaxone metronidazole", "ceftriaxone flagyl"] },
@@ -1043,13 +1059,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Man requesting pain medication for back pain",
     stem:
-      "A 33 year old man who injects hydromorphone presents with 10 days of fevers, fatigue and mid back pain. He asks for pain medication. The triage note reads 'drug seeking'. T 38.9°C, HR 112, BP 116/64, RR 20, SpO2 96%. Weight 64 kg. He has track marks on both forearms.",
+      "A 33-year-old man who injects hydromorphone presents with 10 days of fevers, fatigue and mid back pain. He asks for pain medication. The triage note reads 'drug seeking'. Oxygen saturation is 96%. He has track marks on both forearms.",
+    vitals: { temperature: "38.9°C", pulse: "112/minute", resp: "20/minute", bp: "116/64 mmHg", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 3,
-        prompt: "List THREE examination findings you specifically look for that would support infective endocarditis.",
+        prompt: "What examination findings do you specifically look for that would support infective endocarditis?",
         accept: [
           { id: "murmur", text: "New regurgitant murmur, often tricuspid", match: ["murmur", "regurgitation"] },
           { id: "splinter", text: "Splinter hemorrhages", match: ["splinter"] },
@@ -1069,7 +1086,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO investigations that are essential to confirm the diagnosis.",
+        prompt: "What investigations are essential to confirm the diagnosis?",
         accept: [
           { id: "bc", text: "At least three sets of blood cultures from separate sites before antibiotics", match: ["blood culture", "culture"] },
           { id: "echo", text: "Echocardiography, transthoracic first and transesophageal if needed", match: ["echo", "echocardiogram", "echocardiography", "tte", "tee", "transthoracic", "transesophageal"] },
@@ -1085,7 +1102,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         kind: "short",
         required: 2,
         update: "On re-examination there is point tenderness over T9. He now reports numbness in both legs and trouble passing urine. A bladder scan shows 700 mL.",
-        prompt: "List TWO urgent next steps.",
+        prompt: "What are the urgent next steps?",
         accept: [
           { id: "mri", text: "Emergency MRI of the whole spine with gadolinium", match: ["mri"] },
           { id: "surg", text: "Urgent spine surgery consult", match: ["neurosurgery", "neurosurgeon", "spine surgeon", "spine surgery", "spinal surgery", "surgical consult", "spine consult"] },
@@ -1105,7 +1122,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 1,
-        prompt: "Name the empiric antibiotic that must be part of his regimen.",
+        prompt: "Which empiric antibiotic must be part of his regimen?",
         accept: [
           { id: "vanc", text: "Vancomycin", match: ["vancomycin"] },
           { id: "dapto", text: "Daptomycin", match: ["daptomycin"] },
@@ -1125,13 +1142,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Gardener with fatigue and near fainting",
     stem:
-      "A 46 year old woman from the south shore of Nova Scotia presents with 2 weeks of fatigue and 2 days of lightheadedness with near fainting when she stands. She has no chest pain. She gardens and walks her dog in wooded areas. About 6 weeks ago she had a large red ring shaped rash on her thigh that faded on its own. T 37.4°C, HR 44, BP 104/66, RR 16, SpO2 98%. ECG shows sinus rhythm with a PR interval of 360 ms and intermittent non conducted P waves after progressive PR prolongation.",
+      "A 46-year-old woman from the south shore of Nova Scotia presents with 2 weeks of fatigue and 2 days of lightheadedness with near fainting when she stands. She has no chest pain. She gardens and walks her dog in wooded areas. About 6 weeks ago she had a large red ring shaped rash on her thigh that faded on its own. Oxygen saturation is 98%. ECG shows sinus rhythm with a PR interval of 360 ms and intermittent non conducted P waves after progressive PR prolongation.",
+    vitals: { temperature: "37.4°C", pulse: "44/minute", resp: "16/minute", bp: "104/66 mmHg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO infectious causes of her conduction disease.",
+        prompt: "What infectious causes of her conduction disease do you consider?",
         accept: [
           { id: "lyme", text: "Lyme carditis", match: ["lyme", "borrelia"] },
           { id: "ie", text: "Endocarditis with perivalvular abscess", match: ["endocarditis", "abscess"] },
@@ -1150,7 +1168,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 2,
-        prompt: "List TWO investigations that will guide your management.",
+        prompt: "What investigations will guide your management?",
         accept: [
           { id: "sero", text: "Two tier Lyme serology", match: ["serology", "lyme antibody", "elisa", "eia", "western blot", "immunoblot"] },
           { id: "tele", text: "Continuous cardiac monitoring", match: ["telemetry", "cardiac monitor", "monitoring"] },
@@ -1168,16 +1186,15 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "What is the most appropriate treatment? Select one.",
+        prompt: "Which of the following is the most appropriate treatment for her?",
         options: [
-          "Doxycycline 100 mg PO twice daily as an outpatient",
-          "Admission with cardiac monitoring and ceftriaxone 2 g IV daily",
-          "Permanent pacemaker insertion now",
+          "Admit for cardiac monitoring and ceftriaxone 2 g IV daily",
           "Amoxicillin 500 mg PO three times daily as an outpatient",
-          "Azithromycin 500 mg PO daily",
+          "Doxycycline 100 mg PO twice daily as an outpatient",
+          "Permanent pacemaker insertion now",
           "No antibiotics until serology is back",
         ],
-        correct: 1,
+        correct: 0,
         explanation:
           "Symptomatic Lyme carditis or a PR interval of 300 ms or more needs admission, monitoring and IV ceftriaxone. Treatment can switch to oral therapy once the block improves. Heart block usually resolves, so temporary pacing is preferred over a permanent device.",
         keyFeature: { topic: "infectious-diseases", n: 8 },
@@ -1188,7 +1205,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         kind: "short",
         required: 1,
         update: "Her husband pulled an engorged tick off his back this morning. He thinks it was attached for about 2 days. He is well. Local public health reports that blacklegged ticks are established in your area.",
-        prompt: "What prophylaxis do you offer him? Include the drug, dose and route.",
+        prompt: "What prophylaxis do you offer him, including the drug, dose and route?",
         accept: [{ id: "doxy", text: "Doxycycline 200 mg PO once, within 72 hours of tick removal", match: ["doxycycline 200 mg", "doxycycline 200mg", "doxycycline 4.4 mg/kg"] }],
         unacceptable: [
           { text: "Lyme serology now", match: ["serology"] },
@@ -1209,13 +1226,14 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
     topic: "infectious-diseases",
     title: "Vaginal discharge not settling with antifungal",
     stem:
-      "A 22 year old woman presents with 4 days of lower abdominal pain and increased vaginal discharge. She thought it was a yeast infection and used an over the counter antifungal cream without relief. She has pain with intercourse. She has had two new partners in the past 3 months and uses condoms inconsistently. T 38.3°C, HR 102, BP 116/70, RR 16. Weight 60 kg. Her abdomen is soft with bilateral lower quadrant tenderness and no peritonism. Urine beta hCG is negative.",
+      "A 22-year-old woman presents with 4 days of lower abdominal pain and increased vaginal discharge. She thought it was a yeast infection and used an over the counter antifungal cream without relief. She has pain with intercourse. She has had two new partners in the past 3 months and uses condoms inconsistently. Her abdomen is soft with bilateral lower quadrant tenderness and no peritonism. Urine beta hCG is negative.",
+    vitals: { temperature: "38.3°C", pulse: "102/minute", resp: "16/minute", bp: "116/70 mmHg", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "short",
         required: 2,
-        prompt: "List TWO specific findings you look for on pelvic examination.",
+        prompt: "What specific findings do you look for on pelvic examination?",
         accept: [
           { id: "cmt", text: "Cervical motion tenderness", match: ["cervical motion", "cmt", "chandelier"] },
           { id: "uterine", text: "Uterine tenderness", match: ["uterine"] },
@@ -1233,7 +1251,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q2",
         kind: "short",
         required: 3,
-        prompt: "List THREE investigations you order today.",
+        prompt: "What investigations do you order today?",
         accept: [
           { id: "gccx", text: "Gonorrhea culture for antimicrobial susceptibility", match: ["gonorrhea culture", "gonococcal culture", "cervical culture"] },
           { id: "naat", text: "NAAT for gonorrhea and chlamydia", match: ["naat", "gonorrhea", "gonorrhoea", "chlamydia"] },
@@ -1253,7 +1271,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q3",
         kind: "short",
         required: 3,
-        prompt: "List the THREE antibiotics of the recommended Canadian outpatient regimen.",
+        prompt: "What antibiotics make up the recommended Canadian outpatient regimen?",
         accept: [
           { id: "ctx", text: "Ceftriaxone 500 mg IM, single dose", match: ["ceftriaxone"] },
           { id: "doxy", text: "Doxycycline 100 mg PO twice daily for 14 days", match: ["doxycycline"] },
@@ -1269,7 +1287,7 @@ export const INFECTIOUS_DISEASES_SAMPS: Samp[] = [
         id: "q4",
         kind: "short",
         required: 2,
-        prompt: "List TWO indications for admitting a patient with PID.",
+        prompt: "What are the indications for admitting a patient with PID?",
         accept: [
           { id: "preg", text: "Pregnancy", match: ["pregnant", "pregnancy"] },
           { id: "toa", text: "Tubo ovarian abscess", match: ["tubo ovarian", "tuboovarian", "toa", "abscess"] },

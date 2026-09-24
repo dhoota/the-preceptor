@@ -1745,6 +1745,190 @@
    "after": [
     "Antithrombotic such as ASA, prompt stroke prevention review"
    ]
+  },
+  "infectious-diseases-01#q2": {
+   "batch": "s12",
+   "before": [
+    "Ringer's lactate 1.8 L IV over the first 1 to 3 hours with frequent reassessment"
+   ],
+   "after": [
+    "Ringer's lactate 1.8 L IV over 1 to 3 hours"
+   ]
+  },
+  "infectious-diseases-02#q2": {
+   "batch": "s12",
+   "before": [
+    "Blood cultures, then dexamethasone and antibiotics, then CT head, then lumbar puncture if safe"
+   ],
+   "after": [
+    "Blood cultures, dexamethasone, antibiotics, CT, LP if safe"
+   ]
+  },
+  "infectious-diseases-02#q4": {
+   "batch": "s12",
+   "before": [
+    "His wife, who lives with him",
+    "His 17 year old son, who lives at home",
+    "The paramedic who suctioned his airway without a mask"
+   ],
+   "after": [
+    "His wife, who lives with him",
+    "His 17-year-old son, who lives at home",
+    "The paramedic who suctioned his airway without a mask"
+   ]
+  },
+  "infectious-diseases-05#q3": {
+   "batch": "s12",
+   "before": [
+    "Needle aspiration or incision and drainage, then oral antibiotics and outpatient follow up if she can drink"
+   ],
+   "after": [
+    "Drain, oral antibiotics, outpatient follow up if drinking"
+   ]
+  },
+  "infectious-diseases-05#q5": {
+   "batch": "s12",
+   "before": [
+    "No strep testing and no antibiotic. Symptomatic care and return advice"
+   ],
+   "after": [
+    "No strep test or antibiotic, symptomatic care, return advice"
+   ]
+  },
+  "infectious-diseases-06#q4": {
+   "batch": "s12",
+   "before": [
+    "IV artesunate 2.4 mg/kg at 0, 12 and 24 hours, then daily"
+   ],
+   "after": [
+    "IV artesunate 2.4 mg/kg at 0/12/24 hours, then daily"
+   ]
+  },
+  "infectious-diseases-08#q2": {
+   "batch": "s12",
+   "before": [
+    "Tenofovir DF and emtricitabine plus dolutegravir for 28 days, first dose now"
+   ],
+   "after": [
+    "Tenofovir DF, emtricitabine, dolutegravir now for 28 days"
+   ]
+  },
+  "infectious-diseases-09#q1": {
+   "batch": "s12",
+   "before": [
+    "Rabies post exposure prophylaxis with immune globulin and vaccine now"
+   ],
+   "after": [
+    "Rabies immune globulin and vaccine now"
+   ]
+  },
+  "infectious-diseases-10#q2": {
+   "batch": "s12",
+   "before": [
+    "Symptomatic care with acetaminophen or ibuprofen, fluids and return precautions"
+   ],
+   "after": [
+    "Acetaminophen or ibuprofen, fluids and return precautions"
+   ]
+  },
+  "infectious-diseases-12#q2": {
+   "batch": "s12",
+   "before": [
+    "It is common in this population, often reflects asymptomatic bacteriuria and does not establish the source"
+   ],
+   "after": [
+    "Often reflects asymptomatic bacteriuria, not proof of source"
+   ]
+  },
+  "infectious-diseases-14#q3": {
+   "batch": "s12",
+   "before": [
+    "Admission with cardiac monitoring and ceftriaxone 2 g IV daily"
+   ],
+   "after": [
+    "Admit for cardiac monitoring and ceftriaxone 2 g IV daily"
+   ]
+  },
+  "ischemic-heart-disease-01#q2": {
+   "batch": "s12",
+   "before": [
+    "Tenecteplase in your department within 30 minutes of arrival, then transfer to the PCI centre"
+   ],
+   "after": [
+    "Tenecteplase within 30 minutes of arrival, then transfer"
+   ]
+  },
+  "ischemic-heart-disease-02#q3": {
+   "batch": "s12",
+   "before": [
+    "Admission with antithrombotic therapy and invasive coronary angiography within 24 hours"
+   ],
+   "after": [
+    "Admit, antithrombotics, invasive angiography within 24 hours"
+   ]
+  },
+  "ischemic-heart-disease-03#q3": {
+   "batch": "s12",
+   "before": [
+    "Pleuritic or positional pain lowers the likelihood of ACS but does not exclude it, so ECG and troponin testing are still needed"
+   ],
+   "after": [
+    "Pleuritic or positional pain lowers but does not exclude ACS"
+   ]
+  },
+  "ischemic-heart-disease-04#q2": {
+   "batch": "s12",
+   "before": [
+    "Admit under cardiology for early coronary angiography and avoid stress testing"
+   ],
+   "after": [
+    "Admit to cardiology for early angiography, avoid stress test"
+   ]
+  },
+  "ischemic-heart-disease-05#q4": {
+   "batch": "s12",
+   "before": [
+    "Relief with nitroglycerin does not reliably separate cardiac from non cardiac pain and should not change her risk assessment on its own"
+   ],
+   "after": [
+    "Relief does not reliably separate cardiac from other pain"
+   ]
+  },
+  "ischemic-heart-disease-07#q3": {
+   "batch": "s12",
+   "before": [
+    "Emergency primary PCI with temporary pacing support as needed"
+   ],
+   "after": [
+    "Emergency primary PCI with temporary pacing as needed"
+   ]
+  },
+  "ischemic-heart-disease-09#q2": {
+   "batch": "s12",
+   "before": [
+    "Transfer directly to the PCI centre catheterization laboratory for primary PCI"
+   ],
+   "after": [
+    "Transfer directly to the PCI laboratory for primary PCI"
+   ]
+  },
+  "ischemic-heart-disease-10#q4": {
+   "batch": "s12",
+   "before": [
+    "Admit with antithrombotic therapy and plan invasive angiography within 24 hours"
+   ],
+   "after": [
+    "Admit, antithrombotics, invasive angiography within 24 hours"
+   ]
+  },
+  "ischemic-heart-disease-11#q1": {
+   "batch": "s12",
+   "before": [
+    "Immediate transfer for primary PCI despite the expected delay"
+   ],
+   "after": [
+    "Immediate transfer for primary PCI despite the delay"
+   ]
   }
  }
 }
