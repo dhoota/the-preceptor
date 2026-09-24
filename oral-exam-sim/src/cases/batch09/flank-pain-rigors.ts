@@ -10,28 +10,42 @@ export const flankPainRigors: OralCase = {
   priorityTopic: "infectious-diseases",
   keyFeatures: [{ topic: "infectious-diseases", n: 2 }, { topic: "infectious-diseases", n: 8 }, { topic: "shock", n: 6 }, { topic: "shock", n: 7 }, { topic: "abdominal-pain", n: 4 }],
   summary: "A 58 year old woman with diabetes arrives hypotensive with left flank pain, fever and rigors.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working a Saturday evening shift at a 250 bed community hospital in eastern Ontario. " +
-    "There is CT, an ICU and a urologist on call from home. Interventional radiology is available only on weekdays until 17:00. " +
-    "The nearest tertiary centre is 90 minutes away and is reached through CritiCall Ontario. " +
-    "Linda Barkhouse is 58 years old. She has had left flank pain since yesterday and shaking chills since this afternoon. " +
-    "Triage vitals at 21:00: heart rate 122, blood pressure 84/48, respiratory rate 24, SpO2 96 percent on room air, temperature 39.2, capillary glucose 14.8 mmol/L. CTAS 2. " +
-    "The nurse says: 'She has vomited four times and looks grey. Her husband says she had a bad kidney infection last year.'",
+    "You are working in the emergency department of a community hospital in eastern Ontario on a Saturday evening when the following patient arrives. " +
+    "Interventional radiology works weekdays until 17:00. Urology is on call from home. The tertiary centre is 90 minutes away. " +
+    "A 58 year old woman has left flank pain since yesterday and shaking chills since this afternoon.",
+  card: {
+    vitals: {
+      temperature: "39.2°C",
+      pulse: "122/minute",
+      resp: "24/minute",
+      bp: "84/48 mmHg",
+      o2sat: "96% on room air",
+      weight: "80 kg (176 lb)",
+    },
+    medications: "Metformin 1000 mg twice daily, empagliflozin 10 mg daily, candesartan",
+    allergies: "None",
+  },
   findings: [
     {
       id: "history",
-      label: "History",
+      label: "History of presenting illness",
       result:
-        "Sudden left flank pain radiating to the groin yesterday. Rigors and vomiting today. Burning with urination for two days. " +
-        "Two small stones passed on their own in her forties. None since.",
+        "Sudden left flank pain radiating to the groin yesterday. Rigors and vomiting today. She has vomited four times. Burning with urination for two days. " +
+        "The nurse says she looks grey. Triage at 21:00: capillary glucose 14.8 mmol/L. CTAS 2.",
     },
     {
       id: "pmh",
-      label: "Past history and medications",
+      label: "Past history",
       result:
-        "Type 2 diabetes on metformin 1000 mg twice daily and empagliflozin 10 mg daily. Hypertension on candesartan. " +
-        "Urine culture 14 months ago grew ESBL producing E. coli, treated as an outpatient. No allergies. Weight 80 kg.",
+        "Type 2 diabetes. Hypertension. Two small stones passed on their own in her forties. None since. " +
+        "Urine culture 14 months ago grew ESBL producing E. coli, treated as an outpatient.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "Metformin 1000 mg twice daily. Empagliflozin 10 mg daily. Candesartan. No allergies. Weight 80 kg.",
     },
     {
       id: "exam",
@@ -78,7 +92,7 @@ export const flankPainRigors: OralCase = {
       id: "husband",
       label: "Collateral from her husband",
       result:
-        "He says she hates hospitals and waited a day too long. He wants to know if this is just another bladder infection and whether she can go home once the pain is controlled.",
+        "He says she had a bad kidney infection last year. She hates hospitals and waited a day too long. He wants to know if this is just another bladder infection and whether she can go home once the pain is controlled.",
     },
   ],
   start: "s-open",
@@ -103,8 +117,9 @@ export const flankPainRigors: OralCase = {
         "Balanced crystalloid in 500 mL boluses toward 30 mL/kg with reassessment.",
         "Norepinephrine for MAP under 65 after initial fluid, peripherally if needed.",
         "Bedside ultrasound of the kidneys early to look for obstruction.",
+        "Ask about onset, radiation, urinary symptoms, past stones and prior kidney infections.",
       ],
-      rubric: ["ks-r1", "ks-r2"],
+      rubric: ["ks-r1", "ks-r2", "ks-h2"],
       next: "q-abx",
     },
     {
@@ -119,8 +134,9 @@ export const flankPainRigors: OralCase = {
         "Give it within one hour of recognition.",
         "Ceftriaxone or piperacillin tazobactam alone is unreliable for ESBL organisms.",
         "Narrow when susceptibilities return.",
+        "Ask about prior cultures, resistant organisms and recent antibiotics.",
       ],
-      rubric: ["ks-m1"],
+      rubric: ["ks-m1", "ks-h1"],
       choices: [
         {
           id: "c-meropenem",
@@ -334,8 +350,9 @@ export const flankPainRigors: OralCase = {
         "Opioid analgesia such as hydromorphone 0.5 mg IV titrated.",
         "Titrate norepinephrine to MAP 65 or more. Add vasopressin if norepinephrine climbs toward 0.25 to 0.5 mcg/kg/min.",
         "Arterial line and ICU consult. Glucose checks every one to two hours.",
+        "Confirm her diabetes and blood pressure medications and when she last took them.",
       ],
-      rubric: ["ks-m3", "ks-r3"],
+      rubric: ["ks-m3", "ks-r3", "ks-h3"],
       next: "q-dispo",
     },
     {
@@ -364,7 +381,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes septic shock and draws blood and urine cultures before antibiotics given within one hour.",
       points: 2,
       teaching: "Cultures guide narrowing later. They should not delay antibiotics beyond the first hour in shock.",
@@ -373,7 +390,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives balanced crystalloid in boluses toward 30 mL/kg with reassessment and starts norepinephrine for MAP under 65.",
       points: 2,
       teaching: "Start norepinephrine early rather than giving unlimited fluid. It can run peripherally while central access is arranged.",
@@ -382,7 +399,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-m1",
       competency: "management",
-      criterion: "data",
+      criterion: "management",
       text: "Reviews prior cultures and gives meropenem 1 g IV for prior ESBL E. coli.",
       points: 2,
       teaching: "Prior resistant organisms in the past year predict the current one. Check old micro results before you choose.",
@@ -391,7 +408,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-a1",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Uses bedside ultrasound early to look for hydronephrosis.",
       points: 1,
       teaching: "Hydronephrosis in a septic patient changes the plan from antibiotics to source control.",
@@ -400,7 +417,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Obtains non contrast CT tonight to define the stone and exclude gas or abscess.",
       points: 1,
       teaching: "CT shows stone size and position and rules out emphysematous pyelonephritis, which may need different surgery.",
@@ -409,7 +426,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-m2",
       competency: "management",
-      criterion: "diagnosis",
+      criterion: "management",
       text: "Identifies an obstructed infected kidney and arranges emergency decompression by stent or nephrostomy.",
       points: 3,
       critical: true,
@@ -419,7 +436,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Advocates to the consultant for decompression tonight with specific clinical data and a clear request.",
       points: 3,
       critical: true,
@@ -429,7 +446,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Names an escalation route such as the chief of surgery or transfer through CritiCall and documents the discussion.",
       points: 2,
       teaching: "Know your escalation path before you need it. Document times and content of consultant calls.",
@@ -438,7 +455,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Holds metformin, empagliflozin and candesartan and avoids NSAIDs in acute kidney injury.",
       points: 1,
       teaching: "Metformin in shock with AKI raises lactic acidosis risk. SGLT2 inhibitors are held in acute illness because of euglycemic ketoacidosis. NSAIDs can worsen renal injury.",
@@ -447,7 +464,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Titrates norepinephrine to MAP 65 or more and adds vasopressin as norepinephrine requirements rise.",
       points: 1,
       teaching: "Adding vasopressin is suggested when norepinephrine reaches about 0.25 to 0.5 mcg/kg/min.",
@@ -456,7 +473,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the blocked infected kidney and the need for drainage to her husband in plain words.",
       points: 1,
       teaching: "Families often think a urinary infection is minor. A clear picture of a blocked drain explains the urgency.",
@@ -465,7 +482,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to the ICU after decompression.",
       points: 2,
       teaching: "Bacteremic urosepsis can worsen for hours after drainage. Vasopressor need means ICU.",
@@ -474,11 +491,38 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "States that stent and nephrostomy are equivalent and that definitive stone treatment follows once the infection clears.",
       points: 1,
       teaching: "A randomized trial found no difference between stent and nephrostomy for obstruction with infection. Use the fastest available option.",
       source: "pearle",
+    },
+    {
+      id: "ks-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about prior urine cultures, resistant organisms and recent antibiotics or hospital stays.",
+      points: 2,
+      teaching: "A resistant organism in the past year is the strongest predictor of resistance now. The answer changes the empiric antibiotic in shock.",
+      source: "ssc",
+    },
+    {
+      id: "ks-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the onset and radiation of the pain, urinary symptoms and any past kidney stones.",
+      points: 2,
+      teaching: "Sudden flank pain radiating to the groin with fever suggests an infected obstructing stone. A stone history raises that suspicion.",
+      source: "eau",
+    },
+    {
+      id: "ks-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Confirms her diabetes and blood pressure medications, including metformin and an SGLT2 inhibitor, and when she last took them.",
+      points: 1,
+      teaching: "Metformin, SGLT2 inhibitors and angiotensin receptor blockers all need a decision in shock with acute kidney injury. You can only hold what you know she takes.",
+      source: "eau",
     },
   ],
   sources: [
@@ -488,7 +532,8 @@ export const flankPainRigors: OralCase = {
     },
     {
       id: "eau",
-      citation: "European Association of Urology. EAU guidelines on urolithiasis.",
+      citation: "Skolarikos A, et al. European Association of Urology guidelines on the diagnosis and treatment of urolithiasis. European Urology. 2025.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/40268592/",
     },
     {
       id: "aua",
@@ -500,7 +545,7 @@ export const flankPainRigors: OralCase = {
         "Pearle MS, et al. Optimal method of urgent decompression of the collecting system for obstruction and infection due to ureteral calculi. Journal of Urology. 1998.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

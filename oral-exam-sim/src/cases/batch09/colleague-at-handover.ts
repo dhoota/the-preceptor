@@ -10,18 +10,41 @@ export const colleagueAtHandover: OralCase = {
   priorityTopic: "cqi",
   keyFeatures: [{ topic: "cqi", n: 1 }, { topic: "cqi", n: 5 }, { topic: "multiple-patients", n: 3 }, { topic: "suicide-risk", n: 1 }],
   summary: "At evening handover, a nurse takes you aside with a concern about the physician you are relieving.",
-  durationMinutes: 13,
+  durationMinutes: 12,
   stem:
-    "You are starting a 19:00 shift at a 180 bed community hospital in Ontario. The ED has 28 stretchers. " +
-    "Two physicians overlap from 19:00 to 23:00, then you are alone until 07:00. The department has a physician call in list for surge. " +
-    "Dr. Paul Whitford has worked here for 20 years and is respected by everyone. He is scheduled to stay until 23:00 as the second physician. " +
-    "As you arrive, the charge nurse, Anika, takes you into the medication room and closes the door. " +
-    "She says: 'I do not know what to do. Dr. Whitford ordered 10 mg of IV hydromorphone for an 84 year old. I caught it. " +
-    "He smells of alcohol and he nearly fell at the nursing station. I am scared of what else he has ordered.'",
+    "You are working in the emergency department of a community hospital in Ontario when the charge nurse takes you aside at the start of your 19:00 shift. " +
+    "She says the senior physician you are relieving smells of alcohol, nearly fell, and ordered 10 mg of IV hydromorphone for an 84 year old.",
+  card: {
+    vitals: {
+      temperature: "Not recorded",
+      pulse: "Not recorded",
+      resp: "Not recorded",
+      bp: "Not recorded",
+      o2sat: "Not recorded",
+      weight: "Not recorded",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
     {
+      id: "nurse-report",
+      label: "The charge nurse's report",
+      result:
+        "As you arrive, the charge nurse takes you into the medication room and closes the door. " +
+        "She says: 'I do not know what to do. He ordered 10 mg of IV hydromorphone for an 84 year old. I caught it. " +
+        "He smells of alcohol and he nearly fell at the nursing station. I am scared of what else he has ordered.'",
+    },
+    {
+      id: "background",
+      label: "The physician and the department",
+      result:
+        "He has worked here for 20 years and is respected by everyone. He is scheduled to stay until 23:00 as the second physician. " +
+        "The hospital has 180 beds and the ED has 28 stretchers. Two physicians overlap from 19:00 to 23:00, then you are alone until 07:00. The department has a physician call in list for surge.",
+    },
+    {
       id: "observations",
-      label: "Your own observations of Dr. Whitford",
+      label: "Your own observations of the physician",
       result:
         "At handover he smells strongly of alcohol. His speech is slightly slurred. He loses his place in the list twice. He steadies himself on the counter when he stands.",
     },
@@ -75,7 +98,7 @@ export const colleagueAtHandover: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "The medication room",
-      text: "Anika is upset. She asks you not to tell him she was the one who spoke up. Through the window you can see Dr. Whitford at the computer.",
+      text: "The charge nurse is upset. She asks you not to tell him she was the one who spoke up. Through the window you can see him at the computer.",
       next: "q-first",
     },
     {
@@ -90,9 +113,10 @@ export const colleagueAtHandover: OralCase = {
         "Describe what you have observed, not a diagnosis. Express concern for him.",
         "Tell him you are taking over his patients immediately.",
         "Do not argue about how much he drank. Do not demand a test.",
-        "Thank Anika. Do not reveal her name unnecessarily.",
+        "Thank the charge nurse. Do not reveal her name unnecessarily.",
+        "Ask the charge nurse exactly what she saw, then check it yourself: speech, gait, attention and the smell of alcohol.",
       ],
-      rubric: ["ic-p1", "ic-c1"],
+      rubric: ["ic-p1", "ic-c1", "ic-h1", "ic-x1"],
       choices: [
         {
           id: "c-private",
@@ -128,7 +152,7 @@ export const colleagueAtHandover: OralCase = {
       id: "s-public",
       phase: "At the nursing station",
       text:
-        "He becomes angry and says loudly that you have no right to accuse him. Two patients in the hallway watch. Anika leads you both into the office. You start again privately.",
+        "He becomes angry and says loudly that you have no right to accuse him. Two patients in the hallway watch. The charge nurse leads you both into the office. You start again privately.",
       next: "q-patients",
     },
     {
@@ -136,7 +160,7 @@ export const colleagueAtHandover: OralCase = {
       id: "s-ignore",
       phase: "Twenty minutes later",
       text:
-        "Anika comes back. He has just ordered a dose of IV potassium that is ten times the usual rate. She held it. She says she will call the chief of staff herself if you do not act. You go to speak with him privately.",
+        "The charge nurse comes back. He has just ordered a dose of IV potassium that is ten times the usual rate. She held it. She says she will call the chief of staff herself if you do not act. You go to speak with him privately.",
       next: "q-patients",
     },
     {
@@ -188,7 +212,7 @@ export const colleagueAtHandover: OralCase = {
       id: "s-denial",
       phase: "In the office",
       text:
-        "Dr. Whitford says: 'I had one glass of wine at lunch. I have been doing this for twenty years. I am fine to finish my shift. Please do not turn this into something. You know what it would do to me.'",
+        "He says: 'I had one glass of wine at lunch. I have been doing this for twenty years. I am fine to finish my shift. Please do not turn this into something. You know what it would do to me.'",
       next: "q-denial",
     },
     {
@@ -204,8 +228,9 @@ export const colleagueAtHandover: OralCase = {
         "Tell him you will call the deputy chief or chief of staff now.",
         "Frame it as concern for his health as well as patient safety.",
         "Offer to help him reach support.",
+        "Ask whether he is unwell. Low glucose, a stroke or another illness can look like intoxication.",
       ],
-      rubric: ["ic-p2", "ic-c2"],
+      rubric: ["ic-p2", "ic-c2", "ic-x2"],
       choices: [
         {
           id: "c-firm-kind",
@@ -240,7 +265,7 @@ export const colleagueAtHandover: OralCase = {
       kind: "say",
       id: "s-finish-low",
       phase: "Thirty minutes later",
-      text: "Anika reports he tried to discharge the chest pain patient before the second troponin. She has called the chief of staff herself. The chief of staff asks you to call her back.",
+      text: "The charge nurse reports he tried to discharge the chest pain patient before the second troponin. She has called the chief of staff herself. The chief of staff asks you to call her back.",
       next: "q-escalate",
     },
     {
@@ -248,7 +273,7 @@ export const colleagueAtHandover: OralCase = {
       id: "s-secret",
       phase: "Later in the shift",
       text:
-        "Anika asks what you have done. She says she is obliged to report the near miss and her concern through the hospital system. You realize a private deal leaves the patients and the nurse exposed. You call the chief of staff.",
+        "The charge nurse asks what you have done. She says she is obliged to report the near miss and her concern through the hospital system. You realize a private deal leaves the patients and the nurse exposed. You call the chief of staff.",
       next: "q-escalate",
     },
     {
@@ -273,7 +298,7 @@ export const colleagueAtHandover: OralCase = {
       kind: "say",
       id: "s-keys",
       phase: "The staff exit",
-      text: "Security calls you. Dr. Whitford has his car keys in his hand and is walking toward the staff lot.",
+      text: "Security calls you. The physician has his car keys in his hand and is walking toward the staff lot.",
       next: "q-driving",
     },
     {
@@ -287,8 +312,9 @@ export const colleagueAtHandover: OralCase = {
         "Offer a taxi, a family member or a colleague to take him home.",
         "If he insists on driving while impaired, call police. He is not your patient, and the risk to the public justifies the call.",
         "Do not physically take the keys yourself.",
+        "Ask how he got to work and how he plans to get home.",
       ],
-      rubric: ["ic-d1"],
+      rubric: ["ic-d1", "ic-h3"],
       choices: [
         {
           id: "c-taxi",
@@ -337,29 +363,30 @@ export const colleagueAtHandover: OralCase = {
       kind: "question",
       id: "q-team",
       phase: "The team",
-      prompt: "What do you say to Anika and the team?",
+      prompt: "What do you say to the charge nurse and the team?",
       seconds: 60,
       modelAnswer: [
-        "Thank Anika. Speaking up about a senior physician took courage.",
+        "Thank the charge nurse. Speaking up about a senior physician took courage.",
         "Tell her it was the right thing to do and that it will be handled through proper channels.",
         "Protect her from retaliation. Tell leadership she raised it in good faith.",
         "Keep details confidential from the wider team.",
         "Offer a debrief and support.",
+        "Ask the team what they have noticed before, such as missed shifts or recent stress.",
       ],
-      rubric: ["ic-l3"],
+      rubric: ["ic-l3", "ic-h2"],
       next: "end",
     },
     {
       kind: "end",
       id: "end",
-      text: "The backup physician arrives at 20:10. The chief of staff meets Dr. Whitford the next morning. That is the end of the case.",
+      text: "The backup physician arrives at 20:10. The chief of staff meets the physician the next morning. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "ic-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Removes the colleague from clinical duties immediately.",
       points: 3,
       critical: true,
@@ -369,7 +396,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks privately using specific observations rather than accusations.",
       points: 2,
       teaching: "Describe what you saw and heard. Facts are harder to deny and preserve dignity.",
@@ -378,7 +405,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-m1",
       competency: "management",
-      criterion: "data",
+      criterion: "management",
       text: "Reviews all active orders and recent discharges and corrects the dangerous ones.",
       points: 3,
       critical: true,
@@ -388,7 +415,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Activates the backup physician and tells the charge nurse the plan.",
       points: 2,
       teaching: "Losing a physician mid shift is a capacity problem. Fix staffing early and make the leadership line clear.",
@@ -397,7 +424,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Refuses to keep the concern secret or let him continue working.",
       points: 2,
       teaching: "A private deal protects no one. Future patients and the colleague both need the system to know.",
@@ -406,7 +433,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Stays calm and compassionate while holding a firm line.",
       points: 1,
       teaching: "Kindness and firmness together are more effective than either alone.",
@@ -415,7 +442,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "management",
       text: "Notifies the deputy chief or chief of staff the same night.",
       points: 3,
       critical: true,
@@ -425,7 +452,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents factually, files a patient safety report and seeks CMPA advice on personal obligations.",
       points: 1,
       teaching: "Keep notes objective and free of speculation. The CMPA can advise on your own reporting options.",
@@ -434,7 +461,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Prevents him from driving and calls police if he will not accept an alternative.",
       points: 2,
       teaching: "An impaired colleague about to drive is a public safety emergency. Offer a safe option first, then call police.",
@@ -443,7 +470,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-c3",
       competency: "communication",
-      criterion: "approach",
+      criterion: "history",
       text: "Asks directly about his safety and suicidal thoughts.",
       points: 1,
       teaching: "Physicians facing a professional crisis are at higher risk of suicide. Ask directly.",
@@ -452,7 +479,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Directs him to the OMA Physician Health Program, his family doctor or the employee assistance program.",
       points: 1,
       teaching: "The Physician Health Program offers confidential assessment, treatment and monitoring. Many physicians return to practice.",
@@ -461,11 +488,56 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-l3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Thanks the nurse, protects her from retaliation and offers a debrief.",
       points: 1,
       teaching: "Staff who speak up about senior physicians need visible support. That is how a safety culture is built.",
       source: "cpso",
+    },
+    {
+      id: "ic-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the charge nurse exactly what she saw, when it happened, and which orders and patients were involved.",
+      points: 2,
+      teaching: "Specific, dated facts are the basis for every later step. They also let you check the concern yourself.",
+      source: "cpso",
+    },
+    {
+      id: "ic-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the team whether there is a pattern, such as missed shifts, recent stressors or earlier concerns.",
+      points: 1,
+      teaching: "A pattern of absences and stress suggests an ongoing illness, not a single lapse. It shapes the support he needs and what leadership must hear.",
+      source: "php",
+    },
+    {
+      id: "ic-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks how he got to work and how he plans to get home.",
+      points: 1,
+      teaching: "An impaired colleague who drove in may drive out. Asking early lets you plan a safe ride before the keys come out.",
+      source: "cma",
+    },
+    {
+      id: "ic-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Confirms the concern by direct observation of speech, gait, attention and the smell of alcohol, and records the specific findings.",
+      points: 2,
+      teaching: "Your own observations turn a report into reasonable grounds. Record what you saw and heard, not a conclusion.",
+      source: "cpso",
+    },
+    {
+      id: "ic-x2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Keeps a differential open, such as hypoglycemia, a stroke or another acute illness, and checks that he is not medically unwell.",
+      points: 1,
+      teaching: "Slurred speech and unsteadiness have medical causes as well as alcohol. A colleague can also be a patient who needs assessment.",
+      source: "php",
     },
   ],
   sources: [
@@ -476,19 +548,20 @@ export const colleagueAtHandover: OralCase = {
     },
     {
       id: "cpso",
-      citation: "College of Physicians and Surgeons of Ontario. Reporting Requirements. Policy.",
+      citation: "College of Physicians and Surgeons of Ontario. Reporting Requirements. Policy. Updated 2024.",
       url: "https://www.cpso.on.ca/physicians/policies-guidance/policies/reporting-requirements",
     },
     {
       id: "php",
-      citation: "Ontario Medical Association. Physician Health Program.",
+      citation: "Canadian Medical Association. CMA Policy. Physician health. 2017.",
     },
     {
       id: "cmpa",
-      citation: "Canadian Medical Protective Association. Advice to members on concerns about a colleague.",
+      citation: "Canadian Medical Protective Association. Do you need to report another health professional? 2010, revised 2023.",
+      url: "https://www.cmpa-acpm.ca/en/advice-publications/browse-articles/2010/do-you-need-to-report-another-health-professional",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

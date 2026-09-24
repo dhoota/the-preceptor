@@ -10,14 +10,31 @@ export const hourSevenInTheHallway: OralCase = {
   priorityTopic: "delirium-agitation",
   keyFeatures: [{ topic: "delirium-agitation", n: 1 }, { topic: "delirium-agitation", n: 3 }, { topic: "analgesia-sedation", n: 2 }, { topic: "cqi", n: 1 }],
   summary: "A daughter is shouting at the nursing station about her elderly mother, who has been on a hallway stretcher for seven hours.",
-  durationMinutes: 13,
+  durationMinutes: 12,
   stem:
-    "You are the night physician at a 300 bed community hospital in Ontario. It is 23:00. There are 22 admitted patients boarding in the ED and 11 patients on hallway stretchers. " +
-    "Security is on site. The manager and the administrator are on call by phone. Patient relations opens at 08:00. " +
-    "Margaret Olsen is 86 years old. She fell at home and arrived at 16:05 with right hip pain. Her X ray shows a displaced femoral neck fracture. " +
-    "She is admitted to orthopedics and booked for surgery tomorrow. There is no ward bed. " +
-    "The nurse says: 'Her daughter is yelling at the desk and filming us on her phone. She called Leah useless. Mrs. Olsen has not had anything for pain since 16:30. We have been slammed.'",
+    "You are working in the emergency department of a community hospital in Ontario at 23:00 when the nurse asks for help. " +
+    "Twenty two admitted patients are boarding and 11 are on hallway stretchers. " +
+    "An 86 year old woman with a hip fracture has waited in the hallway since 16:05. Her daughter is yelling at the desk and filming staff.",
+  card: {
+    vitals: {
+      temperature: "Not recorded",
+      pulse: "Not recorded",
+      resp: "Not recorded",
+      bp: "Not recorded",
+      o2sat: "Not recorded",
+      weight: "52 kg (115 lb)",
+    },
+    medications: "Not on anticoagulants. Others not recorded.",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "She fell at home and arrived at 16:05 with right hip pain. Her X ray shows a displaced femoral neck fracture. " +
+        "She is admitted to orthopedics and booked for surgery tomorrow. There is no ward bed.",
+    },
     {
       id: "chart",
       label: "ED chart",
@@ -27,7 +44,7 @@ export const hourSevenInTheHallway: OralCase = {
     },
     {
       id: "mother",
-      label: "Assessment of Mrs. Olsen",
+      label: "Assessment of the patient",
       result:
         "Grimacing and calling out. Oriented to person and place, not to time. Inattentive when asked to count backward. " +
         "Her brief is soaked with urine. She has no glasses or hearing aids with her. Sacrum intact but red. Weight 52 kg.",
@@ -39,33 +56,35 @@ export const hourSevenInTheHallway: OralCase = {
     },
     {
       id: "wishes",
-      label: "What Mrs. Olsen says",
-      result: "When asked, she says: 'Karen does everything for me. You can tell her anything.' She says her hip hurts terribly.",
+      label: "What the patient says",
+      result: "When asked, she says: 'My daughter does everything for me. You can tell her anything.' She says her hip hurts terribly.",
     },
     {
       id: "daughter",
       label: "The daughter's story",
       result:
-        "Karen is 58. She is her mother's main caregiver and has been at the bedside since 16:00 without eating. " +
+        "The daughter is 58. She is her mother's main caregiver and has been at the bedside since 16:00 without eating. " +
         "Last year her mother became very confused after a hospital stay and never fully recovered. She is terrified it will happen again.",
     },
     {
       id: "nurse",
       label: "The nurse's account",
       result:
-        "Leah has five hallway patients and two admitted patients on insulin infusions. She has not had a break since 19:00. " +
-        "She is shaken. She says Karen stood close, pointed at her face and made a remark about her accent.",
+        "The nurse says: 'Her daughter is yelling at the desk and filming us on her phone. She called me useless. Her mother has not had anything for pain since 16:30. We have been slammed.' " +
+        "The nurse has five hallway patients and two admitted patients on insulin infusions. She has not had a break since 19:00. " +
+        "She is shaken. She says the daughter stood close, pointed at her face and made a remark about her accent.",
     },
     {
       id: "census",
       label: "Department status",
       result:
-        "Twenty two admitted patients boarding. Three ambulances waiting to offload. The hospital is in its surge protocol but no overcapacity call has been made to the administrator tonight.",
+        "Twenty two admitted patients boarding. Three ambulances waiting to offload. The hospital is in its surge protocol but no overcapacity call has been made to the administrator tonight. " +
+        "Security is on site. The manager and the administrator are on call by phone. Patient relations opens at 08:00.",
     },
     {
       id: "video",
       label: "What she is filming",
-      result: "She is filming the nursing station. The screen shows Leah's face and the patient in the next hallway stretcher.",
+      result: "She is filming the nursing station. The screen shows the nurse's face and the patient in the next hallway stretcher.",
     },
   ],
   start: "s-open",
@@ -75,7 +94,7 @@ export const hourSevenInTheHallway: OralCase = {
       id: "s-open",
       phase: "The nursing station",
       text:
-        "Karen is holding her phone up. 'My mother has been lying in her own urine for seven hours with no pain medicine. This place is a disgrace. Everyone is going to see this.' Two security guards are watching from a distance.",
+        "The daughter is holding her phone up. 'My mother has been lying in her own urine for seven hours with no pain medicine. This place is a disgrace. Everyone is going to see this.' Two security guards are watching from a distance.",
       next: "q-approach",
     },
     {
@@ -127,7 +146,7 @@ export const hourSevenInTheHallway: OralCase = {
       kind: "say",
       id: "s-explain",
       phase: "At the desk",
-      text: "Karen says: 'I do not care how busy you are. She is 86 and in agony.' She raises her voice. You stop, apologize for interrupting and ask her to show you her mother.",
+      text: "The daughter says: 'I do not care how busy you are. She is 86 and in agony.' She raises her voice. You stop, apologize for interrupting and ask her to show you her mother.",
       next: "q-clinical",
     },
     {
@@ -142,7 +161,7 @@ export const hourSevenInTheHallway: OralCase = {
       kind: "question",
       id: "q-clinical",
       phase: "The patient",
-      prompt: "You see Mrs. Olsen. She is in pain, inattentive and soaked with urine. What do you do for her right now?",
+      prompt: "You see the patient. She is in pain, inattentive and soaked with urine. What do you do for her right now?",
       seconds: 90,
       modelAnswer: [
         "Ask her if you can speak freely with her daughter. She agrees.",
@@ -151,8 +170,9 @@ export const hourSevenInTheHallway: OralCase = {
         "Scheduled acetaminophen, for example 1 g every 8 hours, keeping to 3 g per day in a frail older adult. Avoid NSAIDs with eGFR 45.",
         "She has early delirium. Clean and change her, get glasses and hearing aids, keep her daughter at the bedside, avoid benzodiazepines and restraints.",
         "Pressure injury prevention with a pressure relieving mattress.",
+        "Check the chart and ask what analgesia she has had and when, her baseline cognition, prior delirium, weight, kidney function and anticoagulants. Look for other causes of delirium such as retention or infection.",
       ],
-      rubric: ["hw-m1", "hw-m2", "hw-a1"],
+      rubric: ["hw-m1", "hw-m2", "hw-a1", "hw-h1", "hw-h2", "hw-h3", "hw-x1"],
       choices: [
         {
           id: "c-block",
@@ -188,7 +208,7 @@ export const hourSevenInTheHallway: OralCase = {
       id: "s-big-opioid",
       phase: "Forty minutes later",
       text:
-        "Mrs. Olsen is hard to rouse with a respiratory rate of 8 and SpO2 of 87 percent. You give naloxone 0.04 mg IV and she wakes. Karen is frightened. You do a fascia iliaca block and switch to small titrated doses.",
+        "The patient is hard to rouse with a respiratory rate of 8 and SpO2 of 87 percent. You give naloxone 0.04 mg IV and she wakes. The daughter is frightened. You do a fascia iliaca block and switch to small titrated doses.",
       next: "q-apology",
     },
     {
@@ -196,14 +216,14 @@ export const hourSevenInTheHallway: OralCase = {
       id: "s-haloperidol",
       phase: "Thirty minutes later",
       text:
-        "She is drowsy but still grimaces when moved. Karen says: 'She is not agitated. She is in pain.' You give small IV doses of hydromorphone and perform a fascia iliaca block.",
+        "She is drowsy but still grimaces when moved. The daughter says: 'She is not agitated. She is in pain.' You give small IV doses of hydromorphone and perform a fascia iliaca block.",
       next: "q-apology",
     },
     {
       kind: "question",
       id: "q-apology",
       phase: "Apology",
-      prompt: "Karen says: 'So you admit this was wrong. I am going to sue.' How do you respond?",
+      prompt: "The daughter says: 'So you admit this was wrong. I am going to sue.' How do you respond?",
       seconds: 75,
       modelAnswer: [
         "Apologize sincerely. 'I am sorry your mother waited so long for pain relief. She should not have.'",
@@ -247,14 +267,14 @@ export const hourSevenInTheHallway: OralCase = {
       kind: "say",
       id: "s-no-apology",
       phase: "At the bedside",
-      text: "Karen says: 'You cannot even say sorry?' She turns her phone back on. You pause and tell her you are sorry her mother waited in pain.",
+      text: "The daughter says: 'You cannot even say sorry?' She turns her phone back on. You pause and tell her you are sorry her mother waited in pain.",
       next: "s-escalate",
     },
     {
       kind: "say",
       id: "s-blame",
       phase: "Minutes later",
-      text: "Karen repeats what you said to Leah at the desk. Leah is in tears. The charge nurse asks to speak with you. You go back and correct what you said to Karen.",
+      text: "The daughter repeats what you said to the nurse at the desk. The nurse is in tears. The charge nurse asks to speak with you. You go back and correct what you said to the daughter.",
       next: "s-escalate",
     },
     {
@@ -262,8 +282,8 @@ export const hourSevenInTheHallway: OralCase = {
       id: "s-escalate",
       phase: "Twenty minutes later",
       text:
-        "Karen goes to the desk to ask for a blanket. Leah says she will bring one when she can. Karen moves close, points at her face and says: 'Can you even understand English?' " +
-        "She is filming Leah and the patient on the next stretcher.",
+        "The daughter goes to the desk to ask for a blanket. The nurse says she will bring one when she can. The daughter moves close, points at her face and says: 'Can you even understand English?' " +
+        "She is filming the nurse and the patient on the next stretcher.",
       next: "q-limits",
     },
     {
@@ -273,18 +293,18 @@ export const hourSevenInTheHallway: OralCase = {
       prompt: "What do you do?",
       seconds: 75,
       modelAnswer: [
-        "Step in calmly. Stand beside Leah, not between them in a confrontational way.",
+        "Step in calmly. Stand beside the nurse, not between them in a confrontational way.",
         "Name the behaviour and set a clear limit. Personal remarks and abuse of staff are not acceptable.",
         "Ask her to stop filming other patients and staff. Their privacy must be protected. Do not grab the phone.",
         "Offer a choice: continue with respectful conversation at her mother's bedside, or security will be involved.",
         "If she becomes threatening or violent, call security or a Code White.",
-        "Get Leah away from the situation.",
+        "Get the nurse away from the situation.",
       ],
       rubric: ["hw-l1", "hw-p2"],
       choices: [
         {
           id: "c-limit",
-          label: "I stood with Leah, told Karen calmly that remarks about Leah's accent are not acceptable, asked her to stop filming other patients, and offered her the choice to continue at her mother's bedside.",
+          label: "I stood with the nurse, told the daughter calmly that remarks about the nurse's accent are not acceptable, asked her to stop filming other patients, and offered her the choice to continue at her mother's bedside.",
           next: "q-staff",
           quality: "strong",
           feedback:
@@ -297,7 +317,7 @@ export const hourSevenInTheHallway: OralCase = {
           next: "s-ignore",
           quality: "partial",
           feedback:
-            "Avoiding conflict leaves Leah unsupported and other patients filmed without consent. " +
+            "Avoiding conflict leaves the nurse unsupported and other patients filmed without consent. " +
             "The examiner wanted a calm, clear limit set immediately.",
         },
         {
@@ -315,7 +335,7 @@ export const hourSevenInTheHallway: OralCase = {
       kind: "say",
       id: "s-ignore",
       phase: "Minutes later",
-      text: "The patient on the next stretcher asks why he is being filmed. Leah leaves the area upset. You go back and speak with Karen about the filming and the remark.",
+      text: "The patient on the next stretcher asks why he is being filmed. The nurse leaves the area upset. You go back and speak with the daughter about the filming and the remark.",
       next: "q-staff",
     },
     {
@@ -323,18 +343,18 @@ export const hourSevenInTheHallway: OralCase = {
       id: "s-grab",
       phase: "At the desk",
       text:
-        "Karen screams and pushes you away. Security steps in. It takes ten minutes to calm the situation. Mrs. Olsen becomes more confused without her daughter. Karen returns to the bedside with a security guard nearby.",
+        "The daughter screams and pushes you away. Security steps in. It takes ten minutes to calm the situation. The patient becomes more confused without her daughter. The daughter returns to the bedside with a security guard nearby.",
       next: "q-staff",
     },
     {
       kind: "question",
       id: "q-staff",
-      phase: "Leah",
-      prompt: "How do you support Leah?",
+      phase: "The nurse",
+      prompt: "How do you support the nurse?",
       seconds: 60,
       modelAnswer: [
         "Check on her privately. Acknowledge what happened was wrong.",
-        "Reassign Mrs. Olsen to another nurse if Leah wishes.",
+        "Offer to reassign the patient to another nurse if she wishes.",
         "Arrange a break with the charge nurse.",
         "Support her in filing a workplace violence and harassment report.",
         "Offer the employee assistance program.",
@@ -351,7 +371,7 @@ export const hourSevenInTheHallway: OralCase = {
       modelAnswer: [
         "Call the administrator on call about boarding and trigger the overcapacity escalation.",
         "File a patient safety report on the delayed analgesia, focused on the system.",
-        "Advocate for a bed for Mrs. Olsen or a quieter space in the ED.",
+        "Advocate for a bed for the patient or a quieter space in the ED.",
         "Suggest a nurse initiated analgesia or hip fracture block protocol for the department.",
       ],
       rubric: ["hw-l3", "hw-d1"],
@@ -361,7 +381,7 @@ export const hourSevenInTheHallway: OralCase = {
       kind: "question",
       id: "q-close",
       phase: "Closing the loop",
-      prompt: "Before you go back to your other patients, what do you say to Karen and what do you document?",
+      prompt: "Before you go back to your other patients, what do you say to the daughter and what do you document?",
       seconds: 60,
       modelAnswer: [
         "Summarize what has been done for her mother and the plan for surgery.",
@@ -376,14 +396,14 @@ export const hourSevenInTheHallway: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "Mrs. Olsen's pain score is 3 out of 10 after the block. Karen sits with her and thanks the night nurse. That is the end of the case.",
+      text: "Her pain score is 3 out of 10 after the block. Her daughter sits with her and thanks the night nurse. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "hw-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Introduces self, moves the conversation to a private space and listens without interrupting.",
       points: 2,
       critical: true,
@@ -393,7 +413,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Names the emotion and agrees with what is legitimate in the complaint.",
       points: 2,
       teaching: "Agreeing with the truth is disarming. Arguing about details escalates.",
@@ -402,7 +422,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes early delirium, untreated pain and continence needs, and confirms consent to share information with the daughter.",
       points: 2,
       teaching: "Inattention is the core feature of delirium. Pain and a wet brief are common triggers in older adults.",
@@ -411,7 +431,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats pain promptly with a fascia iliaca block within the local anesthetic maximum, small titrated opioid doses and scheduled acetaminophen.",
       points: 3,
       critical: true,
@@ -421,7 +441,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts non drug delirium prevention and avoids NSAIDs, benzodiazepines and restraints.",
       points: 1,
       teaching: "Glasses, hearing aids, family presence and reorientation help. Sedatives treat the symptom and worsen the cause.",
@@ -430,7 +450,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Apologizes sincerely for the delay without blaming staff.",
       points: 2,
       teaching: "A genuine apology is often what families want most. It should never shift blame to a colleague.",
@@ -439,7 +459,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Knows the Ontario Apology Act protects an apology from use as an admission of liability and offers the patient relations route.",
       points: 1,
       teaching: "An apology is not an admission of fault in Ontario law. Offering the formal route shows transparency.",
@@ -448,7 +468,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "management",
       text: "Sets a calm, clear limit on abuse and filming of others and offers a respectful choice.",
       points: 3,
       critical: true,
@@ -458,7 +478,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Protects other patients' privacy and does not physically take the phone.",
       points: 1,
       teaching: "Ask her to stop filming others. Physical intervention risks injury and escalation.",
@@ -467,7 +487,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Supports the nurse, offers reassignment and a break, and supports a workplace violence report.",
       points: 2,
       teaching: "Ontario employers must have workplace violence and harassment programs. Staff should be supported to report.",
@@ -476,7 +496,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-l3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Escalates the overcapacity situation to the administrator on call.",
       points: 1,
       teaching: "Boarding is a hospital problem, not an ED problem. Use the escalation pathway every time.",
@@ -485,7 +505,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Files a system focused safety report and advocates for a bed or quieter space for the patient.",
       points: 1,
       teaching: "Delayed analgesia in boarded patients is a system signal. Reports drive fixes such as nurse initiated protocols.",
@@ -494,7 +514,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Closes the loop with a plan, a check back time and a role for the daughter in delirium care.",
       points: 1,
       teaching: "A promised check back time lowers anxiety. Families are effective partners in delirium prevention.",
@@ -503,11 +523,47 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents care, the conversation and the limit setting factually.",
       points: 1,
       teaching: "Objective notes help patient relations and protect everyone if a complaint follows.",
       source: "apology",
+    },
+    {
+      id: "hw-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Reviews the chart and asks the nurse what analgesia was ordered, what was given and when.",
+      points: 2,
+      teaching: "The gap between an order and a dose is the problem to fix. Knowing what she has had sets a safe starting dose.",
+      source: "cochrane",
+    },
+    {
+      id: "hw-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the daughter about her mother's baseline cognition, prior delirium, and her glasses and hearing aids.",
+      points: 2,
+      teaching: "Delirium is a change from baseline, so family is the best source. A past episode after a hospital stay raises the risk now.",
+      source: "ccsmh",
+    },
+    {
+      id: "hw-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Checks her weight, kidney function and anticoagulant use before choosing drugs, doses and a block.",
+      points: 1,
+      teaching: "Weight sets the local anesthetic maximum. Kidney function and anticoagulants decide which analgesics and blocks are safe.",
+      source: "cochrane",
+    },
+    {
+      id: "hw-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Looks for other causes of delirium, such as urinary retention, infection, hypoxia and medications.",
+      points: 1,
+      teaching: "Pain is a common trigger but rarely the only one. A brief search for other causes prevents a missed retention or infection.",
+      source: "ccsmh",
     },
   ],
   sources: [
@@ -534,10 +590,11 @@ export const hourSevenInTheHallway: OralCase = {
     },
     {
       id: "ccsmh",
-      citation: "Canadian Coalition for Seniors' Mental Health. National guidelines for seniors' mental health. The assessment and treatment of delirium.",
+      citation: "Canadian Coalition for Seniors' Mental Health. 2014 guideline update. The assessment and treatment of delirium. 2014.",
+      url: "https://ccsmh.ca/wp-content/uploads/2016/03/2014-ccsmh-Guideline-Update-Delirium.pdf",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

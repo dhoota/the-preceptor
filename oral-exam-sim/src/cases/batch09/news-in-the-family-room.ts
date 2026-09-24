@@ -10,21 +10,37 @@ export const newsInTheFamilyRoom: OralCase = {
   priorityTopic: "arrhythmia",
   keyFeatures: [{ topic: "arrhythmia", n: 2 }, { topic: "arrhythmia", n: 5 }, { topic: "cqi", n: 1 }],
   summary: "After a failed resuscitation you must speak with a husband and his 12 year old son who have just arrived.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working a morning shift at a 260 bed community hospital in Ontario. A social worker and a spiritual care provider are on site. " +
-    "Jennifer Moreau was 44 years old. She collapsed while running at 07:10. A passerby started CPR after about four minutes. " +
-    "Paramedics found ventricular fibrillation and shocked her four times. She never had a return of circulation. " +
-    "After 40 minutes of resuscitation in your department, you stopped at 08:22. " +
-    "The nurse says: 'Her husband Daniel and their son Owen just arrived. Owen is 12. They are in the family room. " +
-    "Nobody has told them anything except that she is here. The coroner has not been called yet.'",
+    "You are working in the emergency department of a community hospital in Ontario when the family of a patient arrives. " +
+    "A 44 year old woman collapsed while running and could not be resuscitated. You stopped at 08:22. " +
+    "Her husband and their 12 year old son have just arrived. Nobody has told them anything except that she is here.",
+  card: {
+    vitals: {
+      temperature: "Not recorded",
+      pulse: "No pulse. No return of circulation. Resuscitation stopped at 08:22.",
+      resp: "Not recorded",
+      bp: "Not recorded",
+      o2sat: "Not recorded",
+      weight: "Not recorded",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "nurse",
+      label: "The nurse's report",
+      result:
+        "'Her husband and their son just arrived. The son is 12. They are in the family room. " +
+        "Nobody has told them anything except that she is here. The coroner has not been called yet.' A social worker and a spiritual care provider are on site.",
+    },
     {
       id: "timeline",
       label: "Resuscitation timeline",
       result:
         "Collapse 07:10. Bystander CPR from about 07:14. Paramedics on scene 07:19. First shock 07:21. Four shocks before arrival. " +
-        "In the ED: three more shocks, epinephrine every 4 minutes, amiodarone 300 mg then 150 mg, intubated. Persistent VF then asystole. Stopped at 08:22.",
+        "In the ED: three more shocks, epinephrine every 4 minutes, amiodarone 300 mg then 150 mg, intubated. Persistent VF then asystole. She never had a return of circulation. Stopped at 08:22 after about 40 minutes of resuscitation in the ED.",
     },
     {
       id: "pocus",
@@ -41,13 +57,13 @@ export const newsInTheFamilyRoom: OralCase = {
       id: "family-history",
       label: "Family history from the husband",
       result:
-        "Her younger brother died in his sleep at 30. No cause was ever found. Her mother has had fainting spells. Owen has never had an ECG.",
+        "Her younger brother died in his sleep at 30. No cause was ever found. Her mother has had fainting spells. Their son has never had an ECG.",
     },
     {
       id: "family",
       label: "Who is in the room",
       result:
-        "Daniel, her husband, 46. Owen, their son, 12. Daniel's sister is driving in and will arrive in about an hour. They are Catholic.",
+        "Her husband, 46. Their son, 12. The husband's sister is driving in and will arrive in about an hour. They are Catholic.",
     },
     {
       id: "body",
@@ -73,7 +89,7 @@ export const newsInTheFamilyRoom: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Outside the family room",
-      text: "You can see Daniel pacing through the window. Owen is sitting on the couch in his school uniform, looking at his phone.",
+      text: "You can see her husband pacing through the window. Their son is sitting on the couch in his school uniform, looking at his phone.",
       next: "q-prepare",
     },
     {
@@ -88,8 +104,9 @@ export const newsInTheFamilyRoom: OralCase = {
         "Bring the nurse and the social worker. Call spiritual care.",
         "Hand off your pager or phone so you are not interrupted.",
         "Take a moment to compose yourself.",
+        "Plan to ask them who they are and what they already know.",
       ],
-      rubric: ["dn-l1"],
+      rubric: ["dn-l1", "dn-h1"],
       next: "q-deliver",
     },
     {
@@ -103,14 +120,14 @@ export const newsInTheFamilyRoom: OralCase = {
         "Ask what they already know.",
         "Give a warning shot: 'I am afraid I have very bad news.'",
         "Give a brief summary: she collapsed while running, her heart stopped, CPR and shocks were given.",
-        "Say the word 'died'. 'Despite everything we did, Jennifer died.'",
+        "Say the word 'died'. 'Despite everything we did, she died.'",
         "Then stop and allow silence.",
       ],
       rubric: ["dn-c1", "dn-c2"],
       choices: [
         {
           id: "c-clear",
-          label: "I sat down, introduced myself, asked what they knew, gave a warning shot and a short summary, then said 'Jennifer died' and stopped talking.",
+          label: "I sat down, introduced myself, asked what they knew, gave a warning shot and a short summary, then said 'she died' and stopped talking.",
           next: "q-reaction",
           quality: "strong",
           feedback:
@@ -141,14 +158,14 @@ export const newsInTheFamilyRoom: OralCase = {
       kind: "say",
       id: "s-long",
       phase: "In the room",
-      text: "Daniel interrupts you halfway through. 'Is she alive? Just tell me if she is alive.' You stop and say: 'No. I am so sorry. Jennifer died.'",
+      text: "Her husband interrupts you halfway through. 'Is she alive? Just tell me if she is alive.' You stop and say: 'No. I am so sorry. She died.'",
       next: "q-reaction",
     },
     {
       kind: "say",
       id: "s-euphemism",
       phase: "In the room",
-      text: "Owen asks: 'Lost her where? Is she in surgery?' Daniel looks at you. You sit down and say: 'I am so sorry. Jennifer died.'",
+      text: "The son asks: 'Lost her where? Is she in surgery?' His father looks at you. You sit down and say: 'I am so sorry. She died.'",
       next: "q-reaction",
     },
     {
@@ -156,7 +173,7 @@ export const newsInTheFamilyRoom: OralCase = {
       id: "q-reaction",
       phase: "The reaction",
       prompt:
-        "Daniel shouts: 'Why did you stop? Why didn't you keep going?' Owen starts to sob. How do you respond?",
+        "Her husband shouts: 'Why did you stop? Why didn't you keep going?' Their son starts to sob. How do you respond?",
       seconds: 90,
       modelAnswer: [
         "Allow the emotion. Do not argue or rush to fill the silence.",
@@ -171,17 +188,18 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       kind: "question",
       id: "q-son",
-      phase: "Owen",
-      prompt: "How do you include Owen?",
+      phase: "The son",
+      prompt: "How do you include the son?",
       seconds: 60,
       modelAnswer: [
         "Speak to him directly as well as to his father.",
         "Use concrete words at his level: 'Her heart stopped and could not be started again. She died.'",
         "Avoid phrases like 'went to sleep' or 'passed on' that confuse children.",
-        "Ask his father about letting Owen see her, and prepare him for what he will see.",
+        "Ask his father about letting him see her, and prepare him for what he will see.",
         "Offer the social worker or a child life specialist.",
+        "Ask him what he understands and what he wants to know.",
       ],
-      rubric: ["dn-c5"],
+      rubric: ["dn-c5", "dn-h4"],
       next: "s-interrupt",
     },
     {
@@ -207,7 +225,7 @@ export const newsInTheFamilyRoom: OralCase = {
       choices: [
         {
           id: "c-explain-return",
-          label: "I told Daniel I had to leave for an emergency, left the social worker with them and promised to return in about 30 minutes. I did.",
+          label: "I told her husband I had to leave for an emergency, left the social worker with them and promised to return in about 30 minutes. I did.",
           next: "s-viewing",
           quality: "strong",
           feedback:
@@ -239,7 +257,7 @@ export const newsInTheFamilyRoom: OralCase = {
       id: "s-leave-silent",
       phase: "Later",
       text:
-        "When you return 40 minutes later, Daniel says: 'You just left. I thought something else had gone wrong.' You apologize and sit down again.",
+        "When you return 40 minutes later, her husband says: 'You just left. I thought something else had gone wrong.' You apologize and sit down again.",
       next: "s-viewing",
     },
     {
@@ -247,14 +265,14 @@ export const newsInTheFamilyRoom: OralCase = {
       id: "s-stay",
       phase: "Minutes later",
       text:
-        "The charge nurse comes back. The trauma patient is hypotensive and they need you now. You tell Daniel you must go, leave the social worker with them and return when you can.",
+        "The charge nurse comes back. The trauma patient is hypotensive and they need you now. You tell her husband you must go, leave the social worker with them and return when you can.",
       next: "s-viewing",
     },
     {
       kind: "say",
       id: "s-viewing",
       phase: "Back in the family room",
-      text: "Daniel asks: 'Can we see her? Can you take that tube out of her mouth first? I don't want Owen to see her like that.'",
+      text: "Her husband asks: 'Can we see her? Can you take that tube out of her mouth first? I don't want our son to see her like that.'",
       next: "q-viewing",
     },
     {
@@ -314,7 +332,7 @@ export const newsInTheFamilyRoom: OralCase = {
       id: "s-no-viewing",
       phase: "The nurse",
       text:
-        "The nurse tells you the coroner has already agreed to a viewing with the devices in place. You go back and bring Daniel and Owen to see her, after preparing them.",
+        "The nurse tells you the coroner has already agreed to a viewing with the devices in place. You go back and bring her husband and son to see her, after preparing them.",
       next: "s-question",
     },
     {
@@ -322,7 +340,7 @@ export const newsInTheFamilyRoom: OralCase = {
       id: "s-question",
       phase: "At her bedside",
       text:
-        "Daniel holds her hand. Then he says: 'She fainted last month and came here. And her brother died in his sleep at 30. Is this something Owen could have?' " +
+        "Her husband holds her hand. Then he says: 'She fainted last month and came here. And her brother died in his sleep at 30. Is this something our son could have?' " +
         "You check the chart. Five weeks ago her ECG showed a QTc of 498 ms.",
       next: "q-genetic",
     },
@@ -335,15 +353,17 @@ export const newsInTheFamilyRoom: OralCase = {
       modelAnswer: [
         "Answer honestly. Sudden death at a young age with a family history can be caused by an inherited heart rhythm condition.",
         "The post mortem, including genetic testing, may help find the cause.",
-        "Owen and other first degree relatives should be screened with an ECG and referred to an inherited heart rhythm clinic.",
+        "The son and other first degree relatives should be screened with an ECG and referred to an inherited heart rhythm clinic.",
         "Tell the coroner about the family history and the prior QTc.",
         "Do not speculate about the earlier visit in front of the family. Review it through your hospital quality process.",
+        "Her prior QTc of 498 ms is prolonged. Consider long QT or another inherited arrhythmia, a cardiomyopathy or a coronary anomaly.",
+        "Ask about her fainting, sudden deaths in the family and whether relatives have had ECGs.",
       ],
-      rubric: ["dn-d1", "dn-p3"],
+      rubric: ["dn-d1", "dn-p3", "dn-h2", "dn-x1", "dn-x2"],
       choices: [
         {
           id: "c-screen",
-          label: "I told him honestly that an inherited rhythm condition is possible, that Owen needs an ECG and a referral to an inherited heart rhythm clinic, and I told the coroner about the family history.",
+          label: "I told him honestly that an inherited rhythm condition is possible, that their son needs an ECG and a referral to an inherited heart rhythm clinic, and I told the coroner about the family history.",
           next: "q-close",
           quality: "strong",
           feedback:
@@ -352,12 +372,12 @@ export const newsInTheFamilyRoom: OralCase = {
         },
         {
           id: "c-reassure",
-          label: "I reassured him that this was very rare and Owen would be fine.",
+          label: "I reassured him that this was very rare and their son would be fine.",
           next: "s-reassure",
           quality: "unsafe",
           feedback:
             "False reassurance could cost a second life. A prolonged QTc, a sibling's sudden death and her collapse strongly suggest an inherited condition. " +
-            "The examiner wanted screening for Owen and a heads up to the coroner.",
+            "The examiner wanted screening for the son and a heads up to the coroner.",
         },
       ],
     },
@@ -366,7 +386,7 @@ export const newsInTheFamilyRoom: OralCase = {
       id: "s-reassure",
       phase: "The coroner",
       text:
-        "The coroner calls back with questions. She asks about family history and whether any relatives have been referred for screening. You call Daniel and arrange an ECG for Owen and a referral to an inherited heart rhythm clinic.",
+        "The coroner calls back with questions. She asks about family history and whether any relatives have been referred for screening. You call her husband and arrange an ECG for their son and a referral to an inherited heart rhythm clinic.",
       next: "q-close",
     },
     {
@@ -378,24 +398,25 @@ export const newsInTheFamilyRoom: OralCase = {
       modelAnswer: [
         "Explain next steps: the coroner, the funeral home, her belongings.",
         "Give a name and number for follow up questions.",
-        "Offer grief resources for Daniel and Owen.",
+        "Offer grief resources for her husband and son.",
         "Ask if they want to call anyone and wait with them until family arrives.",
         "Brief team debrief. Check on yourself before the next patient.",
+        "Ask about religious or cultural needs and who else they want called.",
       ],
-      rubric: ["dn-d2", "dn-l3"],
+      rubric: ["dn-d2", "dn-l3", "dn-h3"],
       next: "end",
     },
     {
       kind: "end",
       id: "end",
-      text: "Daniel's sister arrives. The social worker stays with them. That is the end of the case.",
+      text: "Her husband's sister arrives. The social worker stays with them. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "dn-l1",
       competency: "leadership",
-      criterion: "approach",
+      criterion: "process",
       text: "Prepares by gathering facts, bringing support staff and handing off the pager.",
       points: 1,
       teaching: "The GRIEV_ING approach starts with gathering the family and resources before you speak.",
@@ -404,7 +425,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Sits down, introduces self, asks what they know and gives a warning shot.",
       points: 2,
       teaching: "Asking what they know first tells you where to start. A warning shot prepares them for what comes next.",
@@ -413,7 +434,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses the word 'died' early and then allows silence.",
       points: 3,
       critical: true,
@@ -423,7 +444,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Responds to anger and grief with empathy rather than defensiveness.",
       points: 2,
       teaching: "Anger is a normal grief response. Name the emotion and stay present.",
@@ -432,7 +453,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains simply and honestly why resuscitation was stopped.",
       points: 1,
       teaching: "Families often ask why you stopped. A short honest answer about time and response to treatment helps.",
@@ -441,7 +462,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c5",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Speaks to the child directly in concrete language and offers support for him.",
       points: 2,
       teaching: "Children understand concrete words. 'Went to sleep' can create fear of sleeping.",
@@ -450,7 +471,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Handles an interruption honestly, leaves support with the family and returns as promised.",
       points: 2,
       teaching: "Being called away is common in emergency medicine. Say so, leave someone with them and come back.",
@@ -459,7 +480,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Reports the death to the coroner and keeps devices in place until release.",
       points: 3,
       critical: true,
@@ -469,7 +490,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Offers a prepared viewing and notifies Ontario Health (Trillium Gift of Life Network).",
       points: 1,
       teaching: "Designated Ontario hospitals must notify Ontario Health as soon as possible after a death or when death is imminent. A trained coordinator discusses donation with the family.",
@@ -478,7 +499,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-d1",
       competency: "disposition",
-      criterion: "diagnosis",
+      criterion: "management",
       text: "Recommends ECG screening and inherited heart rhythm clinic referral for the son and first degree relatives.",
       points: 3,
       critical: true,
@@ -488,7 +509,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Shares the family history with the coroner and routes the prior visit to the quality process without speculating.",
       points: 1,
       teaching: "The coroner uses history to guide testing. Concerns about earlier care go through quality review, and the family is owed disclosure if that review finds a gap.",
@@ -497,7 +518,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains next steps, gives a contact for questions and offers grief resources.",
       points: 1,
       teaching: "Families remember practical guidance. Tell them who will call and what happens next.",
@@ -506,11 +527,65 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-l3",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a brief team debrief and checks on own wellbeing.",
       points: 1,
       teaching: "A short pause after a death helps the team and the physician before the next patient.",
       source: "spikes",
+    },
+    {
+      id: "dn-h1",
+      competency: "communication",
+      criterion: "history",
+      text: "Confirms who is in the room, how they are related to her and what they already know before giving the news.",
+      points: 2,
+      teaching: "Speaking to the wrong family is a serious error. Asking what they know tells you where to begin.",
+      source: "grieving",
+    },
+    {
+      id: "dn-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the husband about her past fainting, sudden deaths in the family and whether relatives have had cardiac testing.",
+      points: 2,
+      teaching: "Unexplained sudden death in a young relative and prior syncope point to an inherited arrhythmia. The family history guides the post mortem and screening.",
+      source: "ccs-genetic",
+    },
+    {
+      id: "dn-h3",
+      competency: "communication",
+      criterion: "history",
+      text: "Asks about religious or cultural needs and who else they would like called.",
+      points: 1,
+      teaching: "Spiritual care and the arrival of other family change what the next hour needs. Ask rather than assume.",
+      source: "grieving",
+    },
+    {
+      id: "dn-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Asks the son what he understands and what he wants to know.",
+      points: 1,
+      teaching: "Children fill gaps with fears. Checking his understanding lets you correct it in words he can use.",
+      source: "grieving",
+    },
+    {
+      id: "dn-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Reviews her prior visit and recognizes the QTc of 498 ms as prolonged.",
+      points: 2,
+      teaching: "A QTc near 500 ms after exertional syncope is a red flag for long QT syndrome. It changes the post mortem and the family plan.",
+      source: "ccs-genetic",
+    },
+    {
+      id: "dn-x2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Names the differential for sudden death in a young adult: an inherited arrhythmia such as long QT syndrome, a cardiomyopathy and a coronary anomaly.",
+      points: 2,
+      teaching: "Most sudden cardiac deaths under 45 have an inherited or structural cause. A named differential guides the molecular autopsy.",
+      source: "ccs-genetic",
     },
   ],
   sources: [
@@ -538,7 +613,7 @@ export const newsInTheFamilyRoom: OralCase = {
         "Gollob MH, et al. Recommendations for the use of genetic testing in the clinical evaluation of inherited cardiac arrhythmias associated with sudden cardiac death. Canadian Cardiovascular Society and Canadian Heart Rhythm Society joint position paper. Canadian Journal of Cardiology. 2011.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

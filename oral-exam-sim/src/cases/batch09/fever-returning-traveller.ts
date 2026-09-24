@@ -10,27 +10,48 @@ export const feverReturningTraveller: OralCase = {
   priorityTopic: "infectious-diseases",
   keyFeatures: [{ topic: "infectious-diseases", n: 3 }, { topic: "infectious-diseases", n: 5 }, { topic: "loc", n: 2 }, { topic: "seizures", n: 2 }],
   summary: "A 31 year old woman back from a month abroad has four days of fever and is now confused.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working a day shift at a large community hospital in the Greater Toronto Area with an ICU and an infectious diseases service by phone. " +
-    "The lab runs a malaria rapid test and smears around the clock. " +
-    "IV artesunate is not stocked here. The nearest Canadian Malaria Network pharmacy is at a hospital 30 minutes away. " +
-    "Adaeze Okafor is 31 years old. She returned nine days ago from four weeks visiting family in Lagos, Nigeria. " +
-    "Triage vitals: heart rate 118, blood pressure 104/62, respiratory rate 24, SpO2 95 percent on room air, temperature 39.8, capillary glucose 4.1 mmol/L. CTAS 2. " +
-    "The nurse says: 'Her sister brought her in. Fever for four days. Since this morning she keeps asking the same questions.'",
+    "You are working in the emergency department of a large community hospital in the Greater Toronto Area when the following patient arrives. " +
+    "IV artesunate is not stocked. The nearest Canadian Malaria Network pharmacy is 30 minutes away. " +
+    "A 31 year old woman is brought in by her sister with four days of fever and new confusion.",
+  card: {
+    vitals: {
+      temperature: "39.8°C",
+      pulse: "118/minute",
+      resp: "24/minute",
+      bp: "104/62 mmHg",
+      o2sat: "95% on room air",
+      weight: "64 kg (141 lb)",
+    },
+    medications: "None",
+    allergies: "None",
+  },
   findings: [
     {
       id: "history",
-      label: "History from patient and sister",
+      label: "History of presenting illness",
       result:
-        "Fever, chills, headache and muscle aches for four days. Vomited twice today. Sister says she has been muddled since waking. " +
+        "Fever, chills, headache and muscle aches for four days. Vomited twice today. Her sister says she has been muddled since waking and keeps asking the same questions. " +
+        "At triage: capillary glucose 4.1 mmol/L. CTAS 2.",
+    },
+    {
+      id: "travel",
+      label: "Travel and exposure history",
+      result:
+        "She returned nine days ago from four weeks visiting family in Lagos, Nigeria. " +
         "She grew up in Lagos and moved to Canada eight years ago. She did not take malaria prevention because she felt she was immune. " +
         "Many mosquito bites. No sick contacts, no funerals, no hospital visits, no contact with rodents and no freshwater swimming.",
     },
     {
       id: "pmh",
-      label: "Past history and medications",
-      result: "Healthy. No medications. No allergies. Last menstrual period two weeks ago. Weight 64 kg.",
+      label: "Past and gynecological history",
+      result: "Healthy. Last menstrual period two weeks ago.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "No medications. No malaria prophylaxis on this trip. No allergies. Weight 64 kg.",
     },
     {
       id: "exam",
@@ -42,7 +63,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "rdt",
       label: "Malaria rapid diagnostic test",
-      result: "Positive for the P. falciparum HRP2 antigen.",
+      result: "Positive for the P. falciparum HRP2 antigen. The lab runs the rapid test and smears around the clock.",
     },
     {
       id: "smear",
@@ -105,8 +126,10 @@ export const feverReturningTraveller: OralCase = {
         "Malaria rapid test plus thick and thin smears stat, repeated every 12 to 24 hours for three sets if negative.",
         "Blood cultures, CBC, electrolytes, creatinine, glucose, liver tests, lactate, blood gas, pregnancy test.",
         "Also consider bacterial sepsis, meningitis, typhoid, dengue and HIV seroconversion.",
+        "Ask travel dates, destination, reason for travel, prophylaxis and mosquito exposure.",
+        "Ask about pregnancy, and get collateral from her sister about the confusion and vomiting.",
       ],
-      rubric: ["ma-a1", "ma-a2"],
+      rubric: ["ma-a1", "ma-a2", "ma-h1", "ma-h3", "ma-h4"],
       choices: [
         {
           id: "c-stat-smear",
@@ -410,7 +433,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Considers falciparum malaria first in a febrile traveller from sub Saharan Africa and sends a stat rapid test and smears.",
       points: 3,
       critical: true,
@@ -420,7 +443,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Screens for viral hemorrhagic fever exposure risk within 21 days of return.",
       points: 1,
       teaching: "A short exposure screen covers sick contacts, funerals, health facilities and rodents. It guides precautions without delaying malaria testing.",
@@ -429,7 +452,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies severe malaria using impaired consciousness and parasitemia of 5 percent or more.",
       points: 2,
       teaching: "One severe criterion is enough. The Canadian parasitemia threshold is 5 percent in non immune adults and 10 percent in semi immune adults. Others include seizures, shock, hypoglycemia, acidosis, severe anemia, renal failure and pulmonary edema.",
@@ -438,7 +461,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives IV artesunate 2.4 mg/kg at 0, 12 and 24 hours, then daily if still needed.",
       points: 3,
       critical: true,
@@ -448,7 +471,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Obtains artesunate urgently through the Canadian Malaria Network and bridges with an oral agent if the delay is more than about an hour.",
       points: 2,
       teaching: "Know where your nearest supply is before you need it. Start an oral agent while the drug travels if she can swallow safely.",
@@ -457,7 +480,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats the seizure with lorazepam 4 mg IV and the hypoglycemia with dextrose 25 g IV, with airway support.",
       points: 3,
       critical: true,
@@ -467,7 +490,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids corticosteroids and mannitol and covers bacterial meningitis until excluded.",
       points: 1,
       teaching: "Steroids worsen cerebral malaria outcomes. Bacterial co infection can mimic cerebral malaria, so cover it until excluded.",
@@ -476,7 +499,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives fluid cautiously in small boluses with reassessment.",
       points: 2,
       teaching: "Adults with severe malaria are prone to pulmonary edema. Use small boluses and early norepinephrine for persistent shock.",
@@ -485,7 +508,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-m4",
       competency: "management",
-      criterion: "data",
+      criterion: "management",
       text: "States that exchange transfusion is not indicated here and monitors parasitemia every 12 to 24 hours.",
       points: 1,
       teaching: "Artesunate clears parasites fast. CDC no longer recommends exchange transfusion. The Canadian guidance still lists it as an option above 10 percent parasitemia, so involve ID.",
@@ -494,7 +517,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to the ICU with infectious diseases involvement.",
       points: 2,
       teaching: "Severe malaria can deteriorate over hours with seizures, hypoglycemia, acidosis and ARDS. It needs ICU level monitoring.",
@@ -503,7 +526,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Reports the case to the local public health unit.",
       points: 1,
       teaching: "Malaria is a designated reportable disease in Ontario. Public health tracks imported cases.",
@@ -512,7 +535,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Counsels the sister that malaria is not spread person to person and that fever within a year of travel needs urgent testing.",
       points: 1,
       teaching: "Travellers should tell every clinician about travel for a year after return. Prophylaxis lowers but does not remove risk.",
@@ -521,7 +544,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Addresses the belief of lasting immunity and recommends a pre travel clinic for future trips.",
       points: 1,
       teaching: "Partial immunity fades within a few years away from endemic areas. Visiting friends and relatives travellers are the highest risk group.",
@@ -530,35 +553,63 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Plans weekly hemoglobin checks for four weeks after artesunate.",
       points: 1,
       teaching: "Delayed hemolysis usually appears two to three weeks after artesunate. CDC advises weekly checks for four weeks.",
       source: "cdc",
     },
+    {
+      id: "ma-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes a travel history: destination, dates of travel and return, reason for travel, prophylaxis taken and mosquito exposure.",
+      points: 2,
+      teaching: "Travellers visiting friends and relatives who skip prophylaxis carry the highest malaria risk. The date of return frames the incubation window for each diagnosis.",
+      source: "catmat",
+    },
+    {
+      id: "ma-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about pregnancy and the last menstrual period before choosing antimalarial treatment.",
+      points: 1,
+      teaching: "Pregnancy raises the risk of severe malaria and changes the choice of oral agents. Ask early and confirm with a test.",
+      source: "catmat",
+    },
+    {
+      id: "ma-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Gets collateral from the sister on when the confusion began, vomiting and whether the patient can swallow tablets.",
+      points: 1,
+      teaching: "A confused patient cannot give a full history. Collateral dates the change in mental state and tells you whether an oral bridge is realistic.",
+      source: "catmat",
+    },
   ],
   sources: [
     {
       id: "catmat",
-      citation:
-        "Public Health Agency of Canada. Committee to Advise on Tropical Medicine and Travel. Canadian recommendations for the prevention and treatment of malaria.",
+      citation: "Public Health Agency of Canada. Committee to Advise on Tropical Medicine and Travel (CATMAT). Canadian recommendations for the prevention and treatment of malaria. Updated 2024.",
       url: "https://www.canada.ca/en/public-health/services/catmat/canadian-recommendations-prevention-treatment-malaria.html",
     },
     {
       id: "who",
-      citation: "World Health Organization. WHO guidelines for malaria.",
+      citation: "World Health Organization. WHO guidelines for malaria. 13 August 2025.",
+      url: "https://www.who.int/publications/i/item/guidelines-for-malaria",
     },
     {
       id: "cdc",
-      citation: "Centers for Disease Control and Prevention. Clinical guidance on the treatment of severe malaria.",
+      citation: "Centers for Disease Control and Prevention. Clinical guidance. Treatment of severe malaria. Updated 2026.",
       url: "https://www.cdc.gov/malaria/hcp/clinical-guidance/treatment-of-severe-malaria-1.html",
     },
     {
       id: "ontario-dd",
-      citation: "Ontario. Health Protection and Promotion Act and Ontario Regulation 135/18 on designation of diseases.",
+      citation: "Ontario. Health Protection and Promotion Act, RSO 1990, c H.7, and Ontario Regulation 135/18, Designation of Diseases. 2018.",
+      url: "https://www.ontario.ca/laws/regulation/180135",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

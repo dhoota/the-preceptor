@@ -10,21 +10,38 @@ export const teenWantsToLeave: OralCase = {
   priorityTopic: "suicide-risk",
   keyFeatures: [{ topic: "suicide-risk", n: 3 }, { topic: "tox", n: 4 }, { topic: "abuse-domestic", n: 6 }],
   summary: "A 15 year old brought in by her mother at dawn refuses treatment and asks to leave.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working an overnight shift at a 200 bed community hospital in Ontario. There is a pediatric inpatient unit, social work on call and the provincial poison centre by phone. " +
-    "There is no child and adolescent psychiatrist on site. The nearest one is at a children's hospital reached through CritiCall Ontario. " +
-    "Chloe Barrett is 15 years old. Her mother found an empty bottle of extra strength acetaminophen in her room at 04:00. " +
-    "Chloe says she took the whole bottle at about 02:00. " +
-    "Triage vitals at 05:00: heart rate 96, blood pressure 112/68, respiratory rate 16, SpO2 99 percent on room air, temperature 36.7, capillary glucose 5.4 mmol/L. CTAS 2. " +
-    "The nurse says: 'She will not let me put in an IV. She says it is her body and she wants to go home. Mom is beside herself.'",
+    "You are working in the emergency department of a community hospital in Ontario when the following patient arrives at 05:00. " +
+    "There is a pediatric unit but no child psychiatrist. The nearest is at a children's hospital through CritiCall Ontario. " +
+    "A 15 year old girl is brought in by her mother, who found an empty acetaminophen bottle in her room.",
+  card: {
+    vitals: {
+      temperature: "36.7°C",
+      pulse: "96/minute",
+      resp: "16/minute",
+      bp: "112/68 mmHg",
+      o2sat: "99% on room air",
+      weight: "55 kg (121 lb)",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "ingestion",
       label: "Ingestion history",
       result:
+        "Her mother found an empty bottle of extra strength acetaminophen in her room at 04:00. She says she took the whole bottle at about 02:00. " +
         "The bottle held 100 tablets of 500 mg, and her mother thinks about 60 were left last week. That is up to 30 g. Weight 55 kg, so up to about 545 mg/kg. " +
         "She denies other pills or alcohol. She has vomited once.",
+    },
+    {
+      id: "nurse",
+      label: "Triage and the nurse's report",
+      result:
+        "Triage at 05:00: capillary glucose 5.4 mmol/L. CTAS 2. " +
+        "The nurse says: 'She will not let me put in an IV. She says it is her body and she wants to go home. Mom is beside herself.'",
     },
     {
       id: "apap",
@@ -50,7 +67,7 @@ export const teenWantsToLeave: OralCase = {
     },
     {
       id: "patient-words",
-      label: "What Chloe says about treatment",
+      label: "What she says about treatment",
       result:
         "She can repeat that the medicine protects the liver and that without it the liver can fail. " +
         "Then she says: 'It does not matter. I want to be dead anyway. And nothing will happen to my liver, I feel fine.'",
@@ -74,7 +91,7 @@ export const teenWantsToLeave: OralCase = {
       label: "Collateral from her mother",
       result:
         "Her mother has sole custody. The father lives in another province and has little contact. " +
-        "She wants Chloe treated and says she will consent to anything. She says her boyfriend is on his way to pick them up.",
+        "She wants her daughter treated and says she will consent to anything. She says her boyfriend is on his way to pick them up.",
     },
     {
       id: "poison-centre",
@@ -89,17 +106,17 @@ export const teenWantsToLeave: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "At the bedside",
-      text: "Chloe is sitting on the stretcher in her coat with her arms crossed. Her mother is pleading with her. The nurse is waiting with an IV tray.",
+      text: "She is sitting on the stretcher in her coat with her arms crossed. Her mother is pleading with her. The nurse is waiting with an IV tray.",
       next: "q-first",
     },
     {
       kind: "question",
       id: "q-first",
       phase: "Medical assessment",
-      prompt: "Before we get to the refusal, what is your medical assessment and treatment plan?",
+      prompt: "The nurse tells you she is refusing an IV. Before we get to the refusal, what is your medical assessment and treatment plan?",
       seconds: 75,
       modelAnswer: [
-        "Potentially hepatotoxic acetaminophen overdose of up to about 545 mg/kg.",
+        "Confirm the product, tablet strength, number taken, time of ingestion and weight. Up to about 545 mg/kg is a potentially hepatotoxic overdose.",
         "Four hour level of 1650 µmol/L is well above the treatment line but below double the line, so standard dosing applies.",
         "The reported dose is massive, over 500 mg/kg. Ask the poison centre about higher dose acetylcysteine if repeat levels stay high.",
         "Acetylcysteine now, by a two bag regimen such as 200 mg/kg over 4 hours then 100 mg/kg over 16 hours.",
@@ -107,14 +124,14 @@ export const teenWantsToLeave: OralCase = {
         "Call the poison centre.",
         "Treatment within 8 hours of ingestion almost eliminates liver injury. The clock is running.",
       ],
-      rubric: ["tn-m1"],
+      rubric: ["tn-m1", "tn-h1"],
       next: "q-refuses",
     },
     {
       kind: "question",
       id: "q-refuses",
       phase: "The refusal",
-      prompt: "Chloe stands up and says: 'I am 15. You cannot make me. I am leaving.' What do you do?",
+      prompt: "She stands up and says: 'I am 15. You cannot make me. I am leaving.' What do you do?",
       seconds: 90,
       modelAnswer: [
         "Stay calm and stay with her. Assign constant observation.",
@@ -122,8 +139,10 @@ export const teenWantsToLeave: OralCase = {
         "Tell her you want to understand her and explain what the treatment is and why the timing matters.",
         "She is at high risk of self harm and may not leave. If she tries, you can hold her under the Mental Health Act.",
         "Assess her capacity for this specific decision.",
+        "Ask about intent, low mood, prior self harm and whether she would try again.",
+        "See her alone for a psychosocial history: home, school, relationships, substances and safety.",
       ],
-      rubric: ["tn-d1", "tn-a1"],
+      rubric: ["tn-d1", "tn-a1", "tn-h2", "tn-h3"],
       choices: [
         {
           id: "c-calm-assess",
@@ -158,7 +177,7 @@ export const teenWantsToLeave: OralCase = {
       kind: "say",
       id: "s-age",
       phase: "At the bedside",
-      text: "Chloe shouts that nobody listens to her and heads for the door. Security stops her at the exit. You sit with her and start again.",
+      text: "She shouts that nobody listens to her and heads for the door. Security stops her at the exit. You sit with her and start again.",
       next: "q-capacity",
     },
     {
@@ -181,13 +200,14 @@ export const teenWantsToLeave: OralCase = {
         "Her depression and suicidal intent are driving the refusal.",
         "She is incapable for this treatment decision.",
         "Her mother, who has custody, becomes the substitute decision maker. The abuse allegation is against her partner, not her.",
-        "Tell Chloe of the finding, that her mother will decide, and that she can apply to the Consent and Capacity Board.",
+        "Tell her of the finding, that her mother will decide, and that she can apply to the Consent and Capacity Board.",
+        "Confirm with her mother who has custody and who else lives in the home.",
       ],
-      rubric: ["tn-a2", "tn-p1"],
+      rubric: ["tn-a2", "tn-p1", "tn-h4"],
       choices: [
         {
           id: "c-incapable",
-          label: "I found her incapable because depression stops her appreciating the risk to her own liver. Her mother consented as substitute decision maker and I told Chloe of the finding and her right to challenge it.",
+          label: "I found her incapable because depression stops her appreciating the risk to her own liver. Her mother consented as substitute decision maker and I told her of the finding and her right to challenge it.",
           next: "q-form1",
           quality: "strong",
           feedback:
@@ -269,7 +289,7 @@ export const teenWantsToLeave: OralCase = {
       kind: "say",
       id: "s-form1-treat",
       phase: "The nurse",
-      text: "The nurse asks who consented to the acetylcysteine. You clarify that her mother consented as substitute decision maker and document it. You also give Chloe a Form 42.",
+      text: "The nurse asks who consented to the acetylcysteine. You clarify that her mother consented as substitute decision maker and document it. You also give her a Form 42.",
       next: "s-disclosure",
     },
     {
@@ -277,7 +297,7 @@ export const teenWantsToLeave: OralCase = {
       id: "s-disclosure",
       phase: "Seven in the morning",
       text:
-        "The acetylcysteine is running. You speak with Chloe alone. She tells you her mother's boyfriend slapped her and grabbed her arm last week. " +
+        "The acetylcysteine is running. You speak with her alone. She tells you her mother's boyfriend slapped her and grabbed her arm last week. " +
         "You see two fingertip bruises on her upper arm. She says: 'Please do not tell anyone. He is on his way here right now.'",
       next: "q-report",
     },
@@ -345,7 +365,7 @@ export const teenWantsToLeave: OralCase = {
       id: "s-boyfriend",
       phase: "At the nursing station",
       text:
-        "The mother's boyfriend arrives. He is loud and says: 'I am her stepfather. I am taking her home. She is fine.' He asks the clerk what Chloe has told the doctor.",
+        "The mother's boyfriend arrives. He is loud and says: 'I am her stepfather. I am taking her home. She is fine.' He asks the clerk what she has told the doctor.",
       next: "q-safety",
     },
     {
@@ -359,7 +379,7 @@ export const teenWantsToLeave: OralCase = {
         "Share no health information with him.",
         "She is held under a Form 1 and cannot leave.",
         "Stay calm, set limits, and involve security.",
-        "Tell the children's aid society worker he is on site. Keep him away from Chloe.",
+        "Tell the children's aid society worker he is on site. Keep him away from her.",
       ],
       rubric: ["tn-d2", "tn-l1"],
       next: "q-dispo",
@@ -383,14 +403,14 @@ export const teenWantsToLeave: OralCase = {
     {
       kind: "end",
       id: "end",
-      text: "Chloe is admitted to pediatrics with a sitter. A children's aid society worker meets her that afternoon. That is the end of the case.",
+      text: "She is admitted to pediatrics with a sitter. A children's aid society worker meets her that afternoon. That is the end of the case.",
     },
   ],
   rubric: [
     {
       id: "tn-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts acetylcysteine promptly by a two bag regimen such as 200 mg/kg over 4 hours then 100 mg/kg over 16 hours.",
       points: 2,
       teaching: "Acetylcysteine started within 8 hours of ingestion almost eliminates liver injury. Delay is the main cause of harm.",
@@ -399,7 +419,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Keeps her safe with constant observation and does not let her leave.",
       points: 3,
       critical: true,
@@ -409,7 +429,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "States that Ontario has no fixed age of consent and that capacity decides.",
       points: 2,
       teaching: "The Health Care Consent Act sets no minimum age. A capable minor gives or refuses consent for herself.",
@@ -418,7 +438,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Applies the understanding and appreciation test and finds her incapable because she cannot appreciate the consequences.",
       points: 3,
       critical: true,
@@ -428,16 +448,16 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-p1",
       competency: "professionalism",
-      criterion: "plan",
-      text: "Obtains consent from her mother as substitute decision maker and tells Chloe of the finding and her right to apply to the Consent and Capacity Board.",
+      criterion: "process",
+      text: "Obtains consent from her mother as substitute decision maker and tells her of the finding and her right to apply to the Consent and Capacity Board.",
       points: 2,
-      teaching: "The CPSO policy requires you to tell a patient found incapable that a substitute decision maker will decide and that she can apply to the Board for a review. The mother stays the substitute unless the society takes Chloe into care, but check that she is acting in Chloe's best interests.",
+      teaching: "The CPSO policy requires you to tell a patient found incapable that a substitute decision maker will decide and that she can apply to the Board for a review. The mother stays the substitute unless the society takes the patient into care, but check that the mother is acting in her daughter's best interests.",
       source: "cpso",
     },
     {
       id: "tn-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Completes a Form 1 on the correct grounds and gives her a Form 42.",
       points: 2,
       teaching: "Form 1 allows up to 72 hours for psychiatric assessment. Form 42 tells her why and that she can speak to a lawyer.",
@@ -446,7 +466,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Knows that a Form 1 does not authorize medical treatment and uses the least restraint needed.",
       points: 1,
       teaching: "Detention and treatment need separate authority. Overdose treatment rests on consent from the patient or her substitute decision maker.",
@@ -455,7 +475,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Reports suspected abuse of a child under 16 directly and promptly to the children's aid society.",
       points: 3,
       critical: true,
@@ -465,7 +485,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Tells her honestly that the disclosure must be reported and why, without detailed interviewing.",
       points: 2,
       teaching: "Never promise secrecy you cannot keep. Leave the investigative interview to child protection workers.",
@@ -474,7 +494,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Shares no information with the boyfriend and keeps him away from her with security support.",
       points: 1,
       teaching: "He is not her legal parent or her substitute decision maker. He has no right to her information and no authority to take her.",
@@ -483,7 +503,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Informs the children's aid society worker that the alleged abuser is on site and coordinates with security.",
       points: 1,
       teaching: "Child protection workers need current safety information to plan. Tell them what is happening now.",
@@ -492,7 +512,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-d3",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Admits to pediatrics with constant observation, repeat liver tests and psychiatry consult.",
       points: 2,
       teaching: "Recheck the level, ALT and INR near the end of the infusion. Continue acetylcysteine if either is abnormal.",
@@ -501,11 +521,47 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Hands over the Form 1 timing, the capacity finding, the substitute decision maker and the report.",
       points: 1,
       teaching: "Legal status gets lost at handover. State the time the Form 1 expires and who consents.",
       source: "cps",
+    },
+    {
+      id: "tn-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Establishes the ingestion: product, tablet strength, number taken, time of ingestion, co ingestants and weight.",
+      points: 2,
+      teaching: "The dose in mg/kg and the time of ingestion decide whether the nomogram applies and how urgent acetylcysteine is. A staggered or unknown time changes the approach.",
+      source: "apap",
+    },
+    {
+      id: "tn-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about suicidal intent, low mood, prior self harm and whether she would try again.",
+      points: 2,
+      teaching: "Ongoing intent after an attempt is the strongest marker of short term risk. It also supplies the grounds for a Form 1.",
+      source: "mha",
+    },
+    {
+      id: "tn-h3",
+      competency: "communication",
+      criterion: "history",
+      text: "Interviews her alone about home, school, relationships, substances and safety.",
+      points: 2,
+      teaching: "Adolescents disclose more when seen without a parent. A confidential psychosocial interview often reveals the reason for the attempt.",
+      source: "cps",
+    },
+    {
+      id: "tn-h4",
+      competency: "assessment",
+      criterion: "history",
+      text: "Gets collateral from her mother on custody, who can consent for her and who else lives in the home.",
+      points: 1,
+      teaching: "Custody decides who is the substitute decision maker. Knowing who lives in the home is part of the safety assessment.",
+      source: "hcca",
     },
   ],
   sources: [
@@ -527,7 +583,7 @@ export const teenWantsToLeave: OralCase = {
     },
     {
       id: "cpso",
-      citation: "College of Physicians and Surgeons of Ontario. Consent to Treatment. Policy.",
+      citation: "College of Physicians and Surgeons of Ontario. Consent to Treatment. Policy. Updated 2025.",
       url: "https://www.cpso.on.ca/physicians/policies-guidance/policies/consent-to-treatment",
     },
     {
@@ -535,7 +591,7 @@ export const teenWantsToLeave: OralCase = {
       citation: "Chiew AL, et al. Updated guidelines for the management of paracetamol poisoning in Australia and New Zealand. Medical Journal of Australia. 2020.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -10,20 +10,46 @@ export const melenaWalletCard: OralCase = {
   priorityTopic: "gi-bleed",
   keyFeatures: [{ topic: "gi-bleed", n: 5 }, { topic: "gi-bleed", n: 6 }, { topic: "shock", n: 3 }],
   summary: "A 47 year old man with a bleeding ulcer and a hemoglobin of 64 g/L declines a treatment the team feels he needs.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working a day shift at a 300 bed community hospital in Ontario with an ICU, a blood bank, gastroenterology on call and interventional radiology during the day. " +
-    "Marcus Lindqvist is 47 years old. He has had black stools for two days and nearly fainted this morning at work. " +
-    "Triage vitals: heart rate 116, blood pressure 98/62, respiratory rate 20, SpO2 98 percent on room air, temperature 36.8, capillary glucose 6.0 mmol/L. CTAS 2. " +
-    "The nurse says: 'His hemoglobin is 64. I went to hang blood and he said no. He is one of Jehovah's Witnesses and has a signed card in his wallet. " +
-    "His wife is on the phone. She is not a Witness and she says he has to have the blood.'",
+    "You are working in the emergency department of a community hospital in Ontario with an ICU, a blood bank, gastroenterology on call and daytime interventional radiology when the following patient arrives. " +
+    "A 47 year old man has had black stools for two days and nearly fainted at work this morning.",
+  card: {
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "116/minute",
+      resp: "20/minute",
+      bp: "98/62 mmHg",
+      o2sat: "98% on room air",
+      weight: "Not recorded",
+    },
+    medications: "Naproxen 500 mg twice daily for three weeks",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "history",
-      label: "History",
+      label: "History of presenting illness",
       result:
-        "Black tarry stools for two days. Light headed on standing. No hematemesis. Takes naproxen 500 mg twice daily for a back strain for three weeks. " +
-        "Drinks two beers a week. No liver disease. No anticoagulants.",
+        "Black tarry stools for two days. Nearly fainted at work this morning. Light headed on standing. No hematemesis. " +
+        "At triage: capillary glucose 6.0 mmol/L. CTAS 2.",
+    },
+    {
+      id: "nurse",
+      label: "The nurse's report",
+      result:
+        "'His hemoglobin is 64. I went to hang blood and he said no. He is one of Jehovah's Witnesses and has a signed card in his wallet. " +
+        "His wife is on the phone. She is not a Witness and she says he has to have the blood.'",
+    },
+    {
+      id: "pmh-meds",
+      label: "Past history and medications",
+      result: "Takes naproxen 500 mg twice daily for a back strain for three weeks. No liver disease. No anticoagulants.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "Drinks two beers a week. He is one of Jehovah's Witnesses. Married with two children.",
     },
     {
       id: "exam",
@@ -101,7 +127,7 @@ export const melenaWalletCard: OralCase = {
         "Ask exactly which products and procedures he accepts. Many Witnesses accept some fractions or cell salvage.",
         "Confirm the card reflects his current wishes.",
       ],
-      rubric: ["jw-p1", "jw-c1", "jw-c2"],
+      rubric: ["jw-p1", "jw-c1", "jw-c2", "jw-h3"],
       choices: [
         {
           id: "c-private",
@@ -222,8 +248,9 @@ export const melenaWalletCard: OralCase = {
         "Minimize blood loss from testing with small volume tubes and fewer draws.",
         "IV iron and erythropoietin, which he accepts. Supplemental oxygen.",
         "Plan early interventional radiology or surgery for rebleeding. Contact the Hospital Liaison Committee for Jehovah's Witnesses if he wishes.",
+        "Confirm the history and risk: NSAID use, alcohol, no liver disease, and a Glasgow Blatchford score of 14.",
       ],
-      rubric: ["jw-m1", "jw-m2"],
+      rubric: ["jw-m1", "jw-m2", "jw-h1", "jw-h2", "jw-x1"],
       next: "s-wife",
     },
     {
@@ -404,7 +431,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Does not transfuse a capable adult who refuses.",
       points: 3,
       critical: true,
@@ -414,7 +441,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-c1",
       competency: "communication",
-      criterion: "approach",
+      criterion: "history",
       text: "Speaks with him privately to confirm the choice is free of pressure.",
       points: 2,
       teaching: "Ask without family or members of the faith present. Do not challenge his beliefs.",
@@ -423,7 +450,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Explains the risks of refusal including death and clarifies acceptable products one by one.",
       points: 2,
       teaching: "An informed refusal needs the same information as informed consent. Acceptable fractions and cell salvage vary between individuals.",
@@ -432,7 +459,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Applies the Health Care Consent Act capacity test of understanding and appreciation.",
       points: 3,
       critical: true,
@@ -442,7 +469,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges urgent endoscopy and gives pantoprazole 80 mg IV bolus.",
       points: 2,
       teaching: "With no transfusion option, early hemostasis is the priority. High dose PPI reduces rebleeding after endoscopic therapy.",
@@ -451,7 +478,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses blood conservation measures such as small volume tubes, IV iron, erythropoietin and early IR or surgical planning.",
       points: 2,
       teaching: "Every millilitre counts. Plan the next step for rebleeding before it happens.",
@@ -460,7 +487,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Responds to the wife with empathy, shares information with his permission and explains his rights and the plan.",
       points: 2,
       teaching: "Families need to hear that refusal of one treatment is not refusal of care. Confirm what the patient allows you to share.",
@@ -469,7 +496,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Does not promise the wife that blood can be given once he is incapable.",
       points: 1,
       teaching: "A substitute decision maker must follow a known prior capable wish that applies to the circumstances.",
@@ -478,7 +505,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Honours the prior capable wish when he becomes incapable and does not use the emergency exception to transfuse.",
       points: 3,
       critical: true,
@@ -488,7 +515,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Calls GI, interventional radiology and surgery urgently for hemostasis on rebleeding.",
       points: 2,
       teaching: "Embolization or surgery is the life saving step when blood is not an option. Call early.",
@@ -497,7 +524,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-p4",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents capacity, information given, his words, accepted products and the card.",
       points: 1,
       teaching: "Good documentation protects the patient's wishes across shift changes and protects the team.",
@@ -506,7 +533,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-c4",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Hands over the refusal and accepted products to ICU, GI and IR.",
       points: 1,
       teaching: "Refusals get lost at transitions. Say it out loud and put it in the orders.",
@@ -515,7 +542,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to ICU with blood conservation orders.",
       points: 1,
       teaching: "Severe anemia without transfusion needs close monitoring for ischemia and rebleeding.",
@@ -524,11 +551,47 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Supports the nurse and leads a brief team debrief.",
       points: 1,
       teaching: "Watching a patient refuse life saving care causes moral distress. Naming it helps the team.",
       source: "cpso",
+    },
+    {
+      id: "jw-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the bleed: how long the melena has lasted, hematemesis, syncope, and prior ulcer or liver disease.",
+      points: 2,
+      teaching: "Syncope and two days of melena point to a large upper GI bleed. Liver disease would change the likely source and the plan.",
+      source: "icg",
+    },
+    {
+      id: "jw-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about NSAID, antiplatelet, anticoagulant and alcohol use.",
+      points: 2,
+      teaching: "NSAIDs are a leading cause of peptic ulcer bleeding. Stopping the culprit drug is part of hemostasis.",
+      source: "icg",
+    },
+    {
+      id: "jw-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks when the card was signed and whether it still reflects his current wishes.",
+      points: 1,
+      teaching: "A prior wish binds only if it was made while capable and applies to the situation. Confirm it now, while he can still tell you.",
+      source: "hcca",
+    },
+    {
+      id: "jw-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines for shock, melena on rectal exam and stigmata of liver disease, and uses the Glasgow Blatchford score to rate the risk.",
+      points: 2,
+      teaching: "A Glasgow Blatchford score of 14 marks a high risk bleed that needs urgent endoscopy. Without transfusion there is even less margin.",
+      source: "icg",
     },
   ],
   sources: [
@@ -539,16 +602,18 @@ export const melenaWalletCard: OralCase = {
     },
     {
       id: "cpso",
-      citation: "College of Physicians and Surgeons of Ontario. Consent to Treatment. Policy.",
+      citation: "College of Physicians and Surgeons of Ontario. Consent to Treatment. Policy. Updated 2025.",
       url: "https://www.cpso.on.ca/physicians/policies-guidance/policies/consent-to-treatment",
     },
     {
       id: "malette",
       citation: "Malette v Shulman (1990), 72 OR (2d) 417. Ontario Court of Appeal.",
+      url: "https://www.canlii.org/en/on/onca/doc/1990/1990canlii6868/1990canlii6868.html",
     },
     {
       id: "cmpa",
-      citation: "Canadian Medical Protective Association. Consent. A guide for Canadian physicians.",
+      citation: "Canadian Medical Protective Association. Consent. A guide for Canadian physicians. Fourth edition. Revised 2024.",
+      url: "https://www.cmpa-acpm.ca/en/advice-publications/handbooks/consent-a-guide-for-canadian-physicians",
     },
     {
       id: "icg",
@@ -556,7 +621,7 @@ export const melenaWalletCard: OralCase = {
         "Barkun AN, et al. Management of nonvariceal upper gastrointestinal bleeding. Guideline recommendations from the International Consensus Group. Annals of Internal Medicine. 2019.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -10,21 +10,31 @@ export const headachesAndACtResult: OralCase = {
   priorityTopic: "headache",
   keyFeatures: [{ topic: "headache", n: 2 }, { topic: "headache", n: 6 }],
   summary: "A 61 year old man with three weeks of headaches is waiting alone for his CT results when his daughter calls.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are working an evening shift at a 240 bed community hospital in Ontario with CT, internal medicine and oncology by referral. " +
-    "Neurosurgery is at the regional centre and is reached through CritiCall Ontario. " +
-    "Tomasz Nowak is 61 years old. He has had headaches for three weeks, worse in the morning, and has been dropping things with his left hand. " +
-    "Triage vitals: heart rate 82, blood pressure 146/88, respiratory rate 16, SpO2 96 percent on room air, temperature 36.6, capillary glucose 6.8 mmol/L. CTAS 3. " +
-    "He came alone by taxi. His wife is at work. " +
-    "The nurse says: 'His CT is back and the radiologist wants to speak with you. He keeps asking if it is a migraine.'",
+    "You are working in the emergency department of a community hospital in Ontario when the following patient arrives in the evening. " +
+    "Neurosurgery is at the regional centre through CritiCall Ontario. " +
+    "A 61 year old man comes alone by taxi with three weeks of headaches. His CT is back and the radiologist wants to speak with you.",
+  card: {
+    vitals: {
+      temperature: "36.6°C",
+      pulse: "82/minute",
+      resp: "16/minute",
+      bp: "146/88 mmHg",
+      o2sat: "96% on room air",
+      weight: "Not recorded",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "history",
-      label: "History",
+      label: "History of presenting illness",
       result:
-        "Headaches for three weeks, worst on waking, with nausea twice. Left hand clumsy for one week. No seizures. " +
-        "Lost 6 kg in two months without trying. Smoked a pack a day for 40 years. Cough for two months. Works as a machinist and drives to work.",
+        "Headaches for three weeks, worst on waking, with nausea twice. He has been dropping things with his left hand. Left hand clumsy for one week. No seizures. " +
+        "Lost 6 kg in two months without trying. Cough for two months. He keeps asking the nurse if it is a migraine. " +
+        "At triage: capillary glucose 6.8 mmol/L. CTAS 3.",
     },
     {
       id: "exam",
@@ -54,6 +64,7 @@ export const headachesAndACtResult: OralCase = {
       id: "social",
       label: "Social history",
       result:
+        "Smoked a pack a day for 40 years. Works as a machinist and drives to work. Came alone by taxi. His wife is at work. " +
         "Lives with his wife. Two adult children. His daughter is a pharmacist in another city. He emigrated from Poland 30 years ago and speaks fluent English. No advance directive.",
     },
     {
@@ -92,8 +103,10 @@ export const headachesAndACtResult: OralCase = {
         "No seizure prophylaxis because he has not had a seizure.",
         "Discuss with neurosurgery through CritiCall given the size, edema and shift.",
         "Complete staging and admit for expedited work up.",
+        "Differential for ring enhancing lesions: metastases, a primary brain tumour, abscess.",
+        "Confirm the history and exam: morning headache, left hand weakness, pronator drift, smoking, weight loss and cough.",
       ],
-      rubric: ["bn-m1", "bn-m2"],
+      rubric: ["bn-m1", "bn-m2", "bn-h1", "bn-h2", "bn-x1", "bn-x2"],
       choices: [
         {
           id: "c-dex",
@@ -360,8 +373,9 @@ export const headachesAndACtResult: OralCase = {
         "Advise him not to drive for now. He has a left sided weakness and brain lesions. Consider whether a Ministry of Transportation report is required.",
         "Offer social work and spiritual care.",
         "Ask him who else he wants informed, including his daughter.",
+        "Ask about his work, driving and who is at home.",
       ],
-      rubric: ["bn-d1", "bn-d2"],
+      rubric: ["bn-d1", "bn-d2", "bn-h3"],
       next: "q-close",
     },
     {
@@ -390,7 +404,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts dexamethasone for symptomatic vasogenic edema.",
       points: 2,
       critical: true,
@@ -400,7 +414,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids seizure prophylaxis without a prior seizure and consults neurosurgery.",
       points: 1,
       teaching: "Guidelines advise against prophylactic antiseizure drugs in brain metastases without seizures. A large lesion with shift needs a surgical opinion.",
@@ -409,7 +423,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Prepares a private setting, hands off the pager and asks who he wants present.",
       points: 1,
       teaching: "Setting is the first step of SPIKES. Interruptions and hallway talks damage trust.",
@@ -418,7 +432,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Does not disclose results to the daughter without his consent.",
       points: 3,
       critical: true,
@@ -428,7 +442,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Responds to the family request with empathy and asks the patient how much he wants to know.",
       points: 2,
       teaching: "Some patients prefer family to receive news. Asking the patient respects both his autonomy and cultural preferences.",
@@ -437,7 +451,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses the SPIKES structure with perception, invitation and a warning shot.",
       points: 2,
       teaching: "Asking what he thinks first tells you where to start. A warning shot prepares him.",
@@ -446,7 +460,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c4",
       competency: "communication",
-      criterion: "diagnosis",
+      criterion: "management",
       text: "Discloses the concern for cancer honestly in plain language and acknowledges uncertainty.",
       points: 3,
       critical: true,
@@ -456,7 +470,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c5",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Answers the prognosis question honestly without inventing a number and explores his concerns.",
       points: 2,
       teaching: "Prognosis depends on histology and molecular markers. It is better to say 'I do not know yet' than to guess.",
@@ -465,7 +479,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits for expedited work up with neurosurgery and oncology involvement.",
       points: 2,
       teaching: "A motor deficit with edema and shift needs inpatient steroids, MRI and a coordinated diagnostic plan.",
@@ -474,7 +488,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Advises him not to drive and offers social work and spiritual care.",
       points: 1,
       teaching: "Brain lesions with weakness make driving unsafe. Practical supports matter from the first conversation.",
@@ -483,7 +497,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c6",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Summarizes, checks understanding with teach back and hands over what he knows to the admitting team.",
       points: 1,
       teaching: "Handover of what the patient has been told prevents contradictory messages on the ward.",
@@ -492,11 +506,56 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents the disclosure, his information preferences and who may receive information.",
       points: 1,
       teaching: "A clear note of consent to share information protects the patient and guides the next team.",
       source: "phipa",
+    },
+    {
+      id: "bn-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the headache pattern, morning worsening, nausea, focal weakness and seizures.",
+      points: 2,
+      teaching: "Morning headache with nausea and a new focal deficit suggests raised pressure from a mass. A seizure history changes antiseizure drug decisions.",
+      source: "asco",
+    },
+    {
+      id: "bn-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about smoking, weight loss, cough and other symptoms of a primary cancer.",
+      points: 2,
+      teaching: "Lung cancer is the most common source of brain metastases. Heavy smoking with weight loss and cough points to it.",
+      source: "asco",
+    },
+    {
+      id: "bn-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about his work, driving and who is at home to support him.",
+      points: 1,
+      teaching: "A machinist who drives has safety issues from a left sided weakness. Knowing his supports shapes the conversation and the plan.",
+      source: "cma",
+    },
+    {
+      id: "bn-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines for pronator drift, focal weakness, reflex asymmetry and papilledema.",
+      points: 2,
+      teaching: "A documented baseline deficit guides urgency and lets the next team detect change. Papilledema suggests raised intracranial pressure.",
+      source: "asco",
+    },
+    {
+      id: "bn-x2",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Gives a differential for multiple ring enhancing lesions: metastases, a primary brain tumour and abscess.",
+      points: 2,
+      teaching: "Multiple lesions with a lung mass make metastases most likely. Tissue confirms the diagnosis.",
+      source: "asco",
     },
   ],
   sources: [
@@ -516,7 +575,8 @@ export const headachesAndACtResult: OralCase = {
     },
     {
       id: "cpso",
-      citation: "College of Physicians and Surgeons of Ontario. Consent to Treatment. Policy.",
+      citation: "College of Physicians and Surgeons of Ontario. Consent to Treatment. Policy. Updated 2025.",
+      url: "https://www.cpso.on.ca/physicians/policies-guidance/policies/consent-to-treatment",
     },
     {
       id: "cma",
@@ -527,7 +587,7 @@ export const headachesAndACtResult: OralCase = {
       citation: "Ontario. Personal Health Information Protection Act, 2004. SO 2004, c 3, Sched A.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

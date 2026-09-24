@@ -10,30 +10,51 @@ export const feverBackPainInjectionUse: OralCase = {
   priorityTopic: "infectious-diseases",
   keyFeatures: [{ topic: "infectious-diseases", n: 2 }, { topic: "infectious-diseases", n: 3 }, { topic: "infectious-diseases", n: 8 }, { topic: "tox", n: 8 }],
   summary: "A 36 year old man who injects fentanyl arrives febrile and hypotensive with low back pain and wants to leave.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are working an evening shift at a 350 bed community hospital in southern Ontario. " +
-    "There is CT, an MRI that runs until 23:00 with an on call technologist after that, an ICU and general internal medicine. " +
-    "There is no spine surgery on site. The regional neurosurgery centre is 45 minutes away by land and is reached through CritiCall Ontario. " +
-    "Kevin Tremblay is 36 years old. He walked in with ten days of fevers and five days of low back pain. " +
-    "Triage vitals: heart rate 124, blood pressure 92/54, respiratory rate 26, SpO2 91 percent on room air, temperature 39.4, capillary glucose 6.2 mmol/L. CTAS 2. " +
-    "The nurse says: 'He injects fentanyl. His last use was eight hours ago and he is starting to withdraw. He says if we do not help him soon he is going to leave.'",
+    "You are working in the emergency department of a community hospital in southern Ontario when the following patient arrives. " +
+    "MRI runs until 23:00, then needs an on call technologist. Neurosurgery is 45 minutes away through CritiCall Ontario. " +
+    "A 36 year old man walks in with ten days of fevers and five days of low back pain.",
+  card: {
+    vitals: {
+      temperature: "39.4°C",
+      pulse: "124/minute",
+      resp: "26/minute",
+      bp: "92/54 mmHg",
+      o2sat: "91% on room air",
+      weight: "72 kg (159 lb)",
+    },
+    medications: "None",
+    allergies: "No known allergies",
+  },
   findings: [
     {
       id: "history",
-      label: "History",
+      label: "History of presenting illness",
       result:
         "Fevers and sweats for ten days. Low back pain for five days, worse at night and when lying flat. " +
         "Sharp pain on the right side of his chest with deep breaths for two days. " +
+        "He denies leg weakness, numbness or trouble passing urine right now. " +
+        "At triage: capillary glucose 6.2 mmol/L. CTAS 2.",
+    },
+    {
+      id: "substance",
+      label: "Substance use history",
+      result:
         "He injects fentanyl four to five times a day and sometimes shares cookers and water. " +
-        "He denies leg weakness, numbness or trouble passing urine right now.",
+        "His last use was eight hours ago and he is starting to withdraw. He tells the nurse that if we do not help him soon he is going to leave.",
     },
     {
       id: "pmh",
-      label: "Past history and medications",
+      label: "Past history",
       result:
         "Hepatitis C antibody positive two years ago, never treated. MRSA skin abscess of the left forearm eight months ago, drained in this ED. " +
-        "Was on methadone for a year and stopped last spring. No regular medications. No known allergies. Weight 72 kg.",
+        "Was on methadone for a year and stopped last spring.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies",
+      result: "No regular medications. No known allergies. Weight 72 kg.",
     },
     {
       id: "cv-exam",
@@ -179,8 +200,9 @@ export const feverBackPainInjectionUse: OralCase = {
         "Add a beta lactam. With a possible spinal source, ceftriaxone 2 g IV every 12 hours adds gram negative and CNS cover. Cefepime 2 g IV if Pseudomonas is a concern.",
         "If MSSA grows, switch to cefazolin or cloxacillin. Ceftriaxone is not the preferred agent for MSSA bacteremia.",
         "Narrow once the organism and susceptibilities return.",
+        "Ask about prior MRSA, allergies and current medications before you choose.",
       ],
-      rubric: ["pw-m1", "pw-m2"],
+      rubric: ["pw-m1", "pw-m2", "pw-h3"],
       choices: [
         {
           id: "c-vanc-load",
@@ -240,8 +262,9 @@ export const feverBackPainInjectionUse: OralCase = {
         "MRI of the whole spine with gadolinium tonight, because skip lesions occur.",
         "CT with contrast if MRI cannot be done.",
         "Repeat neuro checks every two to four hours.",
+        "Ask about night pain, pain lying flat, leg weakness, numbness and bladder or bowel symptoms.",
       ],
-      rubric: ["pw-a2", "pw-a3"],
+      rubric: ["pw-a2", "pw-a3", "pw-h1", "pw-o1"],
       choices: [
         {
           id: "c-mri-whole",
@@ -302,8 +325,9 @@ export const feverBackPainInjectionUse: OralCase = {
         "If he declines, treat pain and withdrawal with a full agonist such as hydromorphone at an adequate dose.",
         "Involve addiction medicine early.",
         "Explain the seriousness of the infection plainly and assess capacity if he still wants to leave.",
+        "Ask what he uses, how often, whether he shares equipment and when he last used.",
       ],
-      rubric: ["pw-m3", "pw-c1", "pw-p1"],
+      rubric: ["pw-m3", "pw-c1", "pw-p1", "pw-h2"],
       choices: [
         {
           id: "c-treat-oat",
@@ -466,7 +490,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Draws two to three sets of blood cultures from separate venipunctures and gives antibiotics within one hour.",
       points: 3,
       critical: true,
@@ -477,7 +501,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives balanced crystalloid in boluses with reassessment and starts norepinephrine for MAP under 65.",
       points: 2,
       teaching: "Reassess after each bolus. Tricuspid regurgitation and septic emboli make fluid overload more likely.",
@@ -486,7 +510,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Examines for a murmur, peripheral stigmata and septic pulmonary emboli and identifies right sided involvement.",
       points: 2,
       teaching: "A murmur louder with inspiration, v waves and cavitating peripheral nodules point to tricuspid endocarditis.",
@@ -495,7 +519,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives a vancomycin loading dose of 25 to 30 mg/kg IV based on actual body weight.",
       points: 2,
       teaching: "A weight based load reaches target levels faster. A flat 1 g dose underdoses most adults in septic shock.",
@@ -504,7 +528,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Adds a beta lactam such as ceftriaxone 2 g IV every 12 hours, or cefepime if Pseudomonas is a concern, and narrows to cefazolin or cloxacillin if MSSA grows.",
       points: 1,
       teaching: "Anti staphylococcal beta lactams kill MSSA faster than vancomycin. Ceftriaxone adds gram negative and CNS cover while a spinal source is possible.",
@@ -513,7 +537,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Documents a full neurological exam including perianal sensation, rectal tone and post void residual.",
       points: 2,
       teaching: "The baseline exam is how the team detects early progression. Retention may be the first sign of cauda equina compression.",
@@ -522,7 +546,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-a3",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders urgent MRI of the whole spine with gadolinium for fever, injection drug use and spinal tenderness.",
       points: 3,
       critical: true,
@@ -532,7 +556,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats withdrawal and pain and offers buprenorphine naloxone once in objective withdrawal.",
       points: 2,
       teaching: "Buprenorphine and methadone are both first line for opioid use disorder in the 2024 Canadian update. Starting buprenorphine in the ED improves retention and lowers overdose risk.",
@@ -541,7 +565,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Uses non judgmental language and addresses the reasons he wants to leave.",
       points: 1,
       teaching: "Stigma and untreated withdrawal drive patient directed discharges. Naming and treating both keeps patients in care.",
@@ -550,7 +574,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Assesses capacity if he still wishes to leave and offers the best alternative plan rather than an empty discharge.",
       points: 1,
       teaching: "A capable patient may leave. Document the capacity assessment and still offer naloxone, a follow up path and an open door.",
@@ -559,7 +583,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges emergent neurosurgical decompression through CritiCall when a new deficit appears.",
       points: 3,
       critical: true,
@@ -569,7 +593,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Places a urinary catheter, continues antibiotics and avoids routine steroids.",
       points: 1,
       teaching: "Retention needs drainage. Steroids have no routine role in epidural abscess.",
@@ -578,7 +602,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-a4",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Applies the modified Duke criteria with S. aureus in two sets and a tricuspid vegetation as major criteria.",
       points: 2,
       teaching: "Two major criteria make definite endocarditis. Injection drug use, fever and septic emboli are minor criteria.",
@@ -587,7 +611,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges formal echo and names surgical indications for right sided endocarditis.",
       points: 1,
       teaching: "Right sided surgery is considered for vegetations over 20 mm with recurrent septic emboli, refractory right heart failure or persistent bacteremia.",
@@ -596,7 +620,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the diagnosis and urgent surgery to him in plain language.",
       points: 1,
       teaching: "Plain words build trust. He needs to understand why he must go tonight.",
@@ -605,7 +629,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover including times, doses, culture results and the change in neuro exam.",
       points: 1,
       teaching: "The time of deficit onset matters to the surgeon. So does the buprenorphine dose for perioperative pain planning.",
@@ -614,11 +638,47 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Sends HIV, hepatitis B and hepatitis C testing and plans naloxone and harm reduction supplies.",
       points: 1,
       teaching: "Each admission is a chance to test and link to care. A naloxone kit should go with every person who uses opioids.",
       source: "crism",
+    },
+    {
+      id: "pw-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the back pain and its red flags: night pain, pain lying flat, leg weakness, numbness, and bladder or bowel symptoms.",
+      points: 2,
+      teaching: "Fever with back pain in a person who injects drugs is spinal infection until proven otherwise. Neurological and bladder symptoms decide how fast imaging and surgery must happen.",
+      source: "idsa-vo",
+    },
+    {
+      id: "pw-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes an injection drug use history: the drug, how often, sharing of cookers or water, and the time of last use.",
+      points: 2,
+      teaching: "Shared equipment and frequent injection raise the risk of S. aureus bacteremia and right sided endocarditis. The time of last use predicts when withdrawal will peak.",
+      source: "aha-ie",
+    },
+    {
+      id: "pw-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about prior MRSA infection, hepatitis C, past opioid agonist treatment, medications and allergies.",
+      points: 2,
+      teaching: "Prior MRSA makes vancomycin mandatory in the empiric regimen. Past opioid agonist treatment tells you what has worked for him before.",
+      source: "vanc",
+    },
+    {
+      id: "pw-o1",
+      competency: "leadership",
+      criterion: "process",
+      text: "Organizes care in order of threat: cultures, antibiotics and resuscitation first, then imaging, with a documented neurological reassessment every 2 to 4 hours.",
+      points: 2,
+      teaching: "Sequencing keeps the one hour antibiotic target while the spine is worked up. Scheduled neuro checks catch the first sign of cord or cauda equina compression.",
+      source: "idsa-vo",
     },
   ],
   sources: [
@@ -651,7 +711,7 @@ export const feverBackPainInjectionUse: OralCase = {
       url: "https://www.cmaj.ca/content/196/38/E1280",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

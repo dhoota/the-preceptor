@@ -10,27 +10,44 @@ export const driverAsksForSilence: OralCase = {
   priorityTopic: "seizures",
   keyFeatures: [{ topic: "seizures", n: 1 }, { topic: "seizures", n: 5 }, { topic: "seizures", n: 6 }],
   summary: "A 49 year old man brought in by ambulance after an episode at home is back to normal and needs to be at work this afternoon.",
-  durationMinutes: 13,
+  durationMinutes: 12,
   stem:
-    "You are working a day shift at a 220 bed community hospital in Ontario. There is CT around the clock. MRI and EEG are outpatient only. " +
-    "Neurology runs a first seizure clinic with appointments within two to four weeks. " +
-    "Dennis Pereira is 49 years old. His wife called 911 at 06:30 after he stiffened and shook in bed for about two minutes. He was confused for 20 minutes afterward. " +
-    "Triage vitals at 07:20: heart rate 88, blood pressure 138/84, respiratory rate 16, SpO2 98 percent on room air, temperature 37.0, capillary glucose 6.4 mmol/L. CTAS 3. " +
-    "The nurse says: 'He is back to himself. He drives a school bus and has a route at 14:30. He is asking when he can go.'",
+    "You are working in the emergency department of a community hospital in Ontario when the following patient arrives. " +
+    "CT is available. MRI and EEG are outpatient only. The first seizure clinic books within two to four weeks. " +
+    "A 49 year old man arrives by ambulance after his wife saw him stiffen and shake in bed for about two minutes.",
+  card: {
+    vitals: {
+      temperature: "37.0°C",
+      pulse: "88/minute",
+      resp: "16/minute",
+      bp: "138/84 mmHg",
+      o2sat: "98% on room air",
+      weight: "Not recorded",
+    },
+    medications: "Amlodipine",
+    allergies: "Not recorded",
+  },
   findings: [
     {
       id: "history",
-      label: "History",
+      label: "History of presenting illness",
       result:
+        "His wife called 911 at 06:30 after he stiffened and shook in bed for about two minutes. He was confused for 20 minutes afterward. " +
         "He remembers going to bed and then waking up with paramedics. Sore tongue and aching muscles. " +
-        "No head injury, fever or headache before the event. Slept six hours. Two beers a week, none in the past week. No drugs. No new medications.",
+        "No head injury, fever or headache before the event. Slept six hours. " +
+        "Triage at 07:20: capillary glucose 6.4 mmol/L. CTAS 3. The nurse says he is back to himself and asking when he can go.",
     },
     {
       id: "pmh",
       label: "Past history and licence",
       result:
-        "Hypertension on amlodipine. No prior known seizures. No family history of epilepsy. " +
+        "Hypertension. No prior known seizures. No family history of epilepsy. " +
         "He holds a Class B licence for the school bus and drives his own car daily.",
+    },
+    {
+      id: "meds",
+      label: "Medications",
+      result: "Amlodipine for hypertension. No new medications.",
     },
     {
       id: "exam",
@@ -62,9 +79,9 @@ export const driverAsksForSilence: OralCase = {
     },
     {
       id: "work",
-      label: "Work and family",
+      label: "Social history, work and family",
       result:
-        "He has driven a school bus for 11 years. Two children in university. His wife works part time. He says losing his licence would mean losing his job.",
+        "Two beers a week, none in the past week. No drugs. He has driven a school bus for 11 years and has a route at 14:30 today. Two children in university. His wife works part time. He says losing his licence would mean losing his job.",
     },
   ],
   start: "s-open",
@@ -88,8 +105,10 @@ export const driverAsksForSilence: OralCase = {
         "ECG to exclude a cardiac cause.",
         "CT head in the ED is reasonable, with MRI and EEG as an outpatient.",
         "Ask about earlier unrecognized events. Collateral history is essential.",
+        "Ask the witness about duration, confusion afterward, tongue biting and incontinence. Ask about sleep, alcohol, drugs and medications.",
+        "Examine for a tongue bite, focal signs and injury.",
       ],
-      rubric: ["dr-a1"],
+      rubric: ["dr-a1", "dr-h1", "dr-h2", "dr-x1"],
       next: "s-wife",
     },
     {
@@ -155,8 +174,9 @@ export const driverAsksForSilence: OralCase = {
         "Commercial licence standards are stricter and seizure free intervals are longer than for private drivers.",
         "The Ministry of Transportation decides on his licence, not you. It uses standards such as the CMA Driver's Guide.",
         "Tell him directly that you are required to report.",
+        "Ask what licence he holds, whether he drives for work and when he last drove.",
       ],
-      rubric: ["dr-c1", "dr-p1"],
+      rubric: ["dr-c1", "dr-p1", "dr-h3"],
       choices: [
         {
           id: "c-no-driving",
@@ -364,7 +384,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Distinguishes seizure from mimics, looks for provoking causes and obtains an ECG and collateral history.",
       points: 2,
       teaching: "Collateral history is the key test in seizure. It often reveals earlier events the patient cannot recall.",
@@ -373,7 +393,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes the staring spells as likely focal seizures and names probable epilepsy.",
       points: 2,
       teaching: "Brief unresponsiveness with automatisms and amnesia suggests focal impaired awareness seizures. Two unprovoked seizures more than 24 hours apart define epilepsy.",
@@ -382,7 +402,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Arranges expedited neurology follow up and discusses antiseizure treatment with neurology.",
       points: 1,
       teaching: "Recurrent unprovoked seizures usually warrant treatment. Starting it is best coordinated with neurology.",
@@ -391,7 +411,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "management",
       text: "Advises him clearly not to drive any vehicle until cleared.",
       points: 2,
       teaching: "Advice must cover every vehicle. Seizure risk does not depend on the licence class.",
@@ -400,7 +420,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Tells him directly that a report is required before making it.",
       points: 1,
       teaching: "Honest notice preserves trust. Patients who find out later feel betrayed.",
@@ -409,7 +429,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Reports to the Ministry of Transportation despite his objection and without delay.",
       points: 3,
       critical: true,
@@ -419,7 +439,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Responds with empathy to the impact on his job and family and offers practical support.",
       points: 2,
       teaching: "Losing a licence is a major loss. Acknowledge it and offer social work, while staying clear about the duty.",
@@ -428,7 +448,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Uses the Ministry medical condition report form, documents the report and knows good faith reporting is protected.",
       points: 1,
       teaching: "The report goes to the Ministry, which decides the licence. The Highway Traffic Act protects physicians who report in good faith.",
@@ -437,7 +457,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Stays calm when threatened with a complaint and does not bargain over the report.",
       points: 2,
       teaching: "A patient may complain. A mandatory duty cannot be traded away. Call the CMPA if you are worried.",
@@ -446,7 +466,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Prevents him from driving home and knows that disclosure to prevent serious harm may be justified if he intends to drive the bus.",
       points: 3,
       critical: true,
@@ -456,7 +476,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives written seizure safety advice, return precautions and follow up for MRI, EEG and neurology.",
       points: 1,
       teaching: "Seizure safety covers water, heights and machinery as well as driving. Give it in writing to the patient and family.",
@@ -465,11 +485,47 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Does not contact his employer without consent.",
       points: 1,
       teaching: "The legal route is the Ministry report. Telling an employer without consent breaches privacy.",
       source: "phipa",
+    },
+    {
+      id: "dr-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the witness what happened before, during and after the event, including how long it lasted, confusion afterward, tongue biting and incontinence.",
+      points: 2,
+      teaching: "The eyewitness account separates seizure from syncope. Post ictal confusion and a lateral tongue bite favour seizure.",
+      source: "acep",
+    },
+    {
+      id: "dr-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about earlier spells, sleep deprivation, alcohol, drugs and new medications.",
+      points: 1,
+      teaching: "Provoking factors change recurrence risk and advice. Earlier unrecognized spells change the diagnosis to epilepsy.",
+      source: "acep",
+    },
+    {
+      id: "dr-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks what licence he holds, whether he drives for work and when he last drove.",
+      points: 2,
+      teaching: "Commercial drivers face stricter standards. Ask about driving in every patient with a possible seizure.",
+      source: "cma-driver",
+    },
+    {
+      id: "dr-x1",
+      competency: "assessment",
+      criterion: "physical",
+      text: "Examines for a tongue bite, focal neurological signs and injury, and names the differential of seizure, convulsive syncope and a cardiac arrhythmia.",
+      points: 2,
+      teaching: "A focal deficit points to a structural cause. An ECG and a cardiac exam look for an arrhythmia that can mimic a seizure.",
+      source: "acep",
     },
   ],
   sources: [
@@ -479,12 +535,13 @@ export const driverAsksForSilence: OralCase = {
     },
     {
       id: "mto",
-      citation: "Ontario Ministry of Transportation. Medical reporting guidance for physicians and the medical condition report form.",
+      citation: "Government of Ontario, Ministry of Transportation. Reporting a driver for medical review. Updated 2026.",
       url: "https://www.ontario.ca/page/reporting-driver-medical-review",
     },
     {
       id: "cma-driver",
-      citation: "Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles.",
+      citation: "Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles. 10th edition. 2023.",
+      url: "https://driversguide.ca/",
     },
     {
       id: "phipa",
@@ -496,7 +553,7 @@ export const driverAsksForSilence: OralCase = {
         "Huff JS, et al. Clinical policy. Critical issues in the evaluation and management of adult patients presenting to the emergency department with seizures. Annals of Emergency Medicine. 2014.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
