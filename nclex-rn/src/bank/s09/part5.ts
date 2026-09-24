@@ -1,0 +1,240 @@
+import type { Item } from "@/engine/types";
+import { AAD_SKIN, BILI, BREASTFEEDING, JARVIS, ORTHO, PAG, STEADI, TOUHY, VAX_PREG, WONG, ZOSTER, meta } from "./common";
+
+export const PART5: Item[] = [
+  {
+    ...meta("rn-s09-41", {
+      topic: "Zoster vaccine after prior shingles",
+      cjmm: "generate",
+      process: "teaching",
+      difficulty: 2,
+      stem: "A 62-year-old client with a healthy immune system had shingles 3 years ago. The client asks whether a shingles vaccine is still needed. Which response by the nurse is accurate?",
+      rationale:
+        "Adults 50 and older with a healthy immune system get 2 doses of recombinant zoster vaccine, 2 to 6 months apart. A past episode of shingles does not protect against another one. The vaccine is advised whether or not the client has had shingles. There is no need to wait until 65.",
+      refs: ["Recombinant zoster vaccine is given as 2 doses 2 to 6 months apart to immunocompetent adults 50 years and older, including those with prior shingles."],
+      sources: [ZOSTER, { body: "Public Health Agency of Canada, NACI", work: "Canadian Immunization Guide: Herpes Zoster (Shingles) Vaccine", year: 2025, url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-8-herpes-zoster-(shingles)-vaccine.html" }],
+      canada: "The Canadian Immunization Guide gives the same 2 dose recombinant series from age 50 and suggests waiting at least 1 year after a shingles episode. Public funding and eligible ages vary by province.",
+    }),
+    kind: "mc",
+    options: [
+      { text: "\"You need 2 doses, 2 to 6 months apart.\"", why: "Two doses of recombinant vaccine are advised from age 50, even after shingles." },
+      { text: "\"Having had shingles protects you now.\"", why: "Shingles can recur. A past episode does not replace the vaccine." },
+      { text: "\"A single dose now is all you will need.\"", why: "The recombinant vaccine series is 2 doses, not 1." },
+      { text: "\"You should wait until you turn 65.\"", why: "The vaccine is advised from age 50. The client is 62." },
+    ],
+    correct: 0,
+  },
+  {
+    ...meta("rn-s09-42", {
+      topic: "Vaccines during pregnancy",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 4,
+      stem: "A client at 30 weeks of gestation comes to a prenatal visit in October. She has had no vaccines during this pregnancy. Her rubella titer shows she is not immune. Which vaccines should the nurse expect to give at this visit? Select all that apply.",
+      rationale:
+        "Tdap is given in every pregnancy between 27 and 36 weeks, so it is due at 30 weeks. The inactivated flu shot is given in any trimester during flu season, and it is October. Live vaccines such as MMR, varicella and the nasal flu spray are not given in pregnancy. Her rubella dose is given after birth. The maternal RSV vaccine is given at 32 through 36 weeks. HPV vaccine waits until after pregnancy.",
+      refs: ["Tdap is given in each pregnancy between 27 and 36 weeks. Inactivated influenza vaccine is given in any trimester during flu season. Maternal RSV vaccine is given at 32 through 36 weeks from September through January. Live vaccines and HPV vaccine are not given in pregnancy."],
+      sources: [VAX_PREG, { body: "Public Health Agency of Canada, NACI", work: "Canadian Immunization Guide: Immunization in Pregnancy and Breastfeeding", year: 2026, url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-3-vaccination-specific-populations/page-4-immunization-pregnancy-breastfeeding.html" }, { body: "National Advisory Committee on Immunization", work: "Updated Guidance to Protect Infants and Children from Respiratory Syncytial Virus Disease: Use of Monoclonal Antibodies and the RSVpreF Vaccine", year: 2026, url: "https://www.canada.ca/en/public-health/services/publications/vaccines-immunization/national-advisory-committee-immunization-summary-updated-guidance-infants-children-respiratory-syncytial-virus-use-monoclonal-antibodies-nirsevimab-clesrovimab-rsvpref-vaccine.html" }],
+      canada: "NACI advises Tdap ideally at 27 to 32 weeks. It allows maternal RSV vaccine from 28 to 36 weeks, though Health Canada authorizes 32 to 36 weeks. Whether it is offered in pregnancy varies by province, and the key follows the US window.",
+    }),
+    kind: "sata",
+    options: [
+      { text: "Measles, mumps and rubella vaccine", why: "MMR is a live vaccine and is not given in pregnancy. It is given after birth." },
+      { text: "Tdap vaccine", why: "Tdap is due in every pregnancy between 27 and 36 weeks. She is at 30 weeks." },
+      { text: "Live nasal flu vaccine", why: "The nasal flu vaccine is live and is not given in pregnancy." },
+      { text: "Inactivated flu shot", why: "The flu shot is safe in any trimester and it is flu season." },
+      { text: "Varicella vaccine", why: "Varicella vaccine is live and is not given in pregnancy." },
+      { text: "Maternal RSV vaccine", why: "It is given at 32 through 36 weeks. At 30 weeks it is too early." },
+      { text: "HPV vaccine", why: "HPV vaccine is delayed until after pregnancy." },
+    ],
+    correct: [1, 3],
+  },
+  {
+    ...meta("rn-s09-43", {
+      topic: "Expected changes of aging",
+      cjmm: "recognize",
+      process: "nursing-process",
+      difficulty: 2,
+      stem: "A 76-year-old client at an annual visit reports several changes over the past few years. Which change is an expected part of aging?",
+      rationale:
+        "The lens stiffens with age, so near vision declines and more light is needed. Holding print farther away and using brighter light fit presbyopia. Urine leakage is common in older adults but is not a normal part of aging and can be treated. Breathlessness walking across a room and new trouble following a story point to disease, not aging.",
+      sources: [TOUHY, JARVIS],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Leaks urine when coughing or laughing", why: "Incontinence is common but not a normal part of aging. It needs assessment." },
+      { text: "Gets short of breath walking across a room", why: "Breathlessness with light activity points to heart or lung disease." },
+      { text: "Has new trouble following a TV story", why: "A new decline in attention or memory needs a cognitive assessment." },
+      { text: "Holds print farther away and needs brighter light", why: "Loss of lens flexibility with age causes presbyopia. It is expected." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s09-44", {
+      topic: "Jaundice with poor feeding",
+      cjmm: "generate",
+      process: "clinical-judgment",
+      difficulty: 4,
+      stem: "A 3-day-old term newborn is exclusively breastfed. The parent reports 5 breastfeeds in the past 24 hours because the baby is sleepy. The newborn has had 2 wet diapers and 1 dark stool today. Weight is 8% below birth weight. The skin is yellow down to the chest. Complete the diagram by choosing the condition the newborn is most likely experiencing, 2 actions to take and 2 parameters to monitor.",
+      rationale:
+        "Jaundice on day 3 with only 5 feeds, few wet diapers, dark stools and an 8% weight loss points to low milk intake. Low intake slows stool passage, so more bilirubin is reabsorbed. The newborn needs at least 8 feeds in 24 hours and a bilirubin level. Diaper counts show intake. Serial bilirubin values show whether the level is rising. Glucose water does not lower bilirubin.",
+      refs: ["Breastfed newborns feed at least 8 times in 24 hours. Jaundice in the first 24 hours after birth needs evaluation."],
+      sources: [BILI, BREASTFEEDING],
+    }),
+    kind: "bowtie",
+    conditions: [
+      { text: "Breast milk jaundice", why: "Breast milk jaundice appears after the first week in a newborn who feeds and gains well." },
+      { text: "Hemolytic disease of the newborn", why: "Hemolytic jaundice usually appears in the first 24 hours. This is day 3." },
+      { text: "Suboptimal intake jaundice", why: "Few feeds, few wet diapers, dark stools and weight loss fit low milk intake." },
+      { text: "Biliary atresia", why: "Biliary atresia brings pale stools and dark urine after the first weeks. The stool here is dark." },
+    ],
+    actions: [
+      { text: "Give glucose water between feeds", why: "Water or glucose water does not lower bilirubin and can reduce milk intake." },
+      { text: "Breastfeed at least 8 times in 24 hours", why: "More frequent feeds raise intake and help pass bilirubin in stool." },
+      { text: "Place the newborn in direct sunlight", why: "Sunlight is not a safe or reliable treatment and risks burns and chilling." },
+      { text: "Obtain a bilirubin level as prescribed", why: "A measured level guides the need for phototherapy." },
+      { text: "Let the newborn sleep until waking to feed", why: "A sleepy newborn is woken to feed. Waiting keeps intake low." },
+    ],
+    parameters: [
+      { text: "Head circumference each week", why: "Head growth does not track intake or bilirubin over days." },
+      { text: "Wet and soiled diapers per day", why: "Diaper counts show whether milk intake is improving." },
+      { text: "Blood pressure in all four limbs", why: "Four-limb BP screens for heart defects. It does not track jaundice." },
+      { text: "Serum bilirubin over time", why: "Serial levels show whether bilirubin is rising toward a treatment threshold." },
+      { text: "Range of hip abduction on exam", why: "Hip exams screen for hip dysplasia. They do not track jaundice." },
+    ],
+    correct: { condition: 2, actions: [1, 3], parameters: [1, 3] },
+  },
+  {
+    ...meta("rn-s09-45", {
+      topic: "Orthostatic vital signs",
+      cjmm: "analyze",
+      process: "nursing-process",
+      difficulty: 3,
+      stem: "A 72-year-old client at a wellness visit reports light-headedness when getting out of bed. The nurse measures vital signs lying down and after 3 minutes of standing. Lying BP is 138/80 mmHg with heart rate 72/minute. Standing BP is 114/74 mmHg with heart rate 84/minute. How should the nurse interpret the findings?",
+      rationale:
+        "The systolic BP fell from 138 to 114 mmHg within 3 minutes of standing, a drop of 24 mmHg. A systolic fall of at least 20 mmHg meets the definition of orthostatic hypotension on its own. The diastolic fall of 6 mmHg does not need to meet its own limit. This drop is not an expected change of aging and it raises fall risk.",
+      calc: { expr: "138 - 114", answer: 24, unit: "mmHg", round: 0, steps: ["138 - 114 = 24"] },
+      refs: ["Orthostatic hypotension is a sustained fall of at least 20 mmHg systolic or 10 mmHg diastolic within 3 minutes of standing."],
+      sources: [ORTHO, TOUHY],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Expected change with age, systolic fell 24 mmHg", why: "A systolic fall of 24 mmHg meets the definition of orthostatic hypotension. It is not expected with aging." },
+      { text: "Normal response, heart rate rose 12/minute", why: "The rise in heart rate does not cancel the 24 mmHg systolic fall." },
+      { text: "Orthostatic hypotension, systolic fell 24 mmHg", why: "A systolic fall of at least 20 mmHg within 3 minutes of standing meets the definition." },
+      { text: "No orthostatic change, diastolic fell 6 mmHg", why: "Either criterion is enough. The systolic fall of 24 mmHg meets it." },
+    ],
+    correct: 2,
+  },
+  {
+    ...meta("rn-s09-46", {
+      topic: "Home fall prevention",
+      cjmm: "generate",
+      process: "teaching",
+      difficulty: 2,
+      stem: "The nurse makes a home visit to a 79-year-old client who lives alone, uses a cane and has a handrail on one side of the stairs. Which recommendations should the nurse make to lower the risk of falls? Select all that apply.",
+      rationale:
+        "Throw rugs are removed or fixed with tape or non-slip backing. A night light lights the path from bed to bathroom. Grab bars go in next to the tub and toilet. Handrails belong on both sides of the stairs. Often-used items belong on lower shelves near waist height. A chair is not used as a step stool. Loose slippers raise the risk of tripping.",
+      sources: [STEADI, TOUHY],
+    }),
+    kind: "sata",
+    options: [
+      { text: "Remove throw rugs or tape them down", why: "Loose rugs are a trip hazard. Removing or securing them lowers risk." },
+      { text: "Stand on a sturdy chair to reach shelves", why: "A chair is not a safe step stool. A step stool with a bar is used if one is needed." },
+      { text: "Add a night light from bed to bathroom", why: "Lighting the path at night lowers the risk of falls on the way to the toilet." },
+      { text: "Keep often-used items on high shelves", why: "Often-used items go on lower shelves, about waist high, to avoid reaching and climbing." },
+      { text: "Install grab bars by the tub and toilet", why: "Grab bars give support when getting in and out of the tub and up from the toilet." },
+      { text: "Add a handrail to the other side of the stairs", why: "Handrails on both sides of the stairs give support in both directions." },
+      { text: "Wear soft, loose slippers around the house", why: "Loose slippers can slip off or catch. Well-fitting shoes with non-slip soles are safer." },
+    ],
+    correct: [0, 2, 4, 5],
+  },
+  {
+    ...meta("rn-s09-47", {
+      topic: "Otoscope use in a toddler",
+      cjmm: "action",
+      process: "nursing-process",
+      difficulty: 1,
+      stem: "The nurse prepares to examine the ear canal of a 2-year-old with an otoscope. How should the nurse position the pinna?",
+      rationale:
+        "In children younger than about 3 years the ear canal slopes upward. Pulling the pinna down and back straightens it and gives a view of the eardrum. Up and back is the technique for adults and older children. Pulling forward or leaving the pinna in place does not straighten the canal.",
+      refs: ["In children younger than 3 years the pinna is pulled down and back. In older children and adults it is pulled up and back."],
+      sources: [JARVIS, WONG],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Pull it up and back", why: "Up and back straightens the canal in adults and older children, not toddlers." },
+      { text: "Pull it forward", why: "Pulling forward does not straighten the canal at any age." },
+      { text: "Leave it in place", why: "The curved canal hides the eardrum unless the pinna is moved." },
+      { text: "Pull it down and back", why: "The toddler's canal slopes upward. Down and back straightens it." },
+    ],
+    correct: 3,
+  },
+  {
+    ...meta("rn-s09-48", {
+      topic: "Warning signs of melanoma",
+      cjmm: "recognize",
+      process: "teaching",
+      difficulty: 1,
+      stem: "The nurse teaches a client how to do a skin self-exam. The client points out several spots on the skin. Which spots should the nurse advise the client to have evaluated? Select all that apply.",
+      rationale:
+        "Warning signs of melanoma are asymmetry, an irregular border, more than one color, a diameter over 6 mm and change over time. A mole with unlike halves, a notched edge, several colors or growth from 4 mm to 7 mm meets one or more of these signs. A small, round, even mole that has not changed, freckles and a soft skin tag do not.",
+      refs: ["Warning signs of melanoma are asymmetry, an irregular border, varied color, a diameter over 6 mm and evolving size, shape or color."],
+      sources: [AAD_SKIN],
+    }),
+    kind: "sata",
+    options: [
+      { text: "A mole with one half unlike the other", why: "Asymmetry is a warning sign of melanoma." },
+      { text: "A round tan mole 3 mm across that has not changed", why: "A small, round, even, unchanged mole shows no warning sign." },
+      { text: "A mole with a ragged, notched edge", why: "An irregular border is a warning sign of melanoma." },
+      { text: "Light freckles across both cheeks", why: "Even, light freckles are not a warning sign." },
+      { text: "A mole with brown, black and red areas", why: "More than one color is a warning sign of melanoma." },
+      { text: "A mole that grew from 4 mm to 7 mm", why: "Growth and a diameter over 6 mm are warning signs." },
+      { text: "A soft, skin-colored tag on the neck", why: "A skin tag is a benign growth and not a melanoma sign." },
+    ],
+    correct: [0, 2, 4, 5],
+  },
+  {
+    ...meta("rn-s09-49", {
+      topic: "Physical activity for adults",
+      cjmm: "evaluate",
+      process: "teaching",
+      difficulty: 2,
+      stem: "The nurse teaches a healthy 58-year-old client about physical activity. Which statements by the client show understanding? Select all that apply.",
+      rationale:
+        "Adults need at least 150 minutes of moderate activity each week, such as brisk walking. Muscle strengthening is added on 2 or more days a week. Sitting less has benefits of its own. Activity of any length counts toward the weekly total. Stretching alone does not meet the aerobic goal. Hard daily exercise is not needed to gain benefit.",
+      refs: ["Adults need 150 to 300 minutes of moderate aerobic activity a week and muscle strengthening on 2 or more days a week. Activity of any length counts."],
+      sources: [PAG],
+    }),
+    kind: "sata",
+    options: [
+      { text: "\"I will aim for 150 minutes of brisk walking a week.\"", why: "At least 150 minutes of moderate activity a week is the adult target." },
+      { text: "\"I will add muscle strengthening 2 days a week.\"", why: "Muscle strengthening on 2 or more days a week is advised." },
+      { text: "\"Activity only counts in blocks of 30 minutes.\"", why: "Activity of any length counts toward the weekly total." },
+      { text: "\"I will get up often to break long periods of sitting.\"", why: "Moving more and sitting less has health benefits." },
+      { text: "\"Stretching each day meets my weekly activity goal.\"", why: "Stretching improves flexibility but does not meet the aerobic target." },
+      { text: "\"I have to exercise hard every day to see a benefit.\"", why: "Moderate activity most days gives benefit. Hard daily exercise is not needed." },
+    ],
+    correct: [0, 1, 3],
+  },
+  {
+    ...meta("rn-s09-50", {
+      topic: "Cognitive change in an older adult",
+      cjmm: "prioritize",
+      process: "clinical-judgment",
+      difficulty: 3,
+      stem: "A 74-year-old client at an annual visit mentions several changes over the past year. Which change should the nurse follow up on first?",
+      rationale:
+        "Getting lost on a familiar route is a loss of function, not a normal memory lapse. It can be an early sign of dementia and it raises safety concerns with driving. Slower recall of names, waking earlier and using a list are common with normal aging. They do not affect daily function.",
+      sources: [TOUHY],
+    }),
+    kind: "mc",
+    options: [
+      { text: "Got lost driving to a familiar store", why: "Getting lost on a familiar route suggests a loss of function and needs cognitive assessment." },
+      { text: "Takes longer to recall names of new people", why: "Slower recall of names is common with normal aging." },
+      { text: "Wakes up earlier in the morning than before", why: "An earlier wake time is a common sleep change with aging." },
+      { text: "Uses a written list to remember groceries", why: "Using a list is a normal memory aid and shows intact planning." },
+    ],
+    correct: 0,
+  },
+];
