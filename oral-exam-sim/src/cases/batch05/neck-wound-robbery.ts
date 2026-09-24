@@ -1,0 +1,462 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const neckWoundRobbery: OralCase = {
+  id: "neck-wound-robbery",
+  title: "Wound to the neck after a robbery",
+  blueprint: "trauma",
+  alsoCovers: ["procedures", "resus"],
+  summary: "A 31 year old man is brought in after being stabbed once in the side of the neck during a robbery.",
+  durationMinutes: 14,
+  stem:
+    "You are the emergency physician at a lead trauma hospital in Ontario. Trauma surgery, vascular surgery, otolaryngology and anesthesia are in house. The operating room is one floor up. " +
+    "A massive hemorrhage protocol is available. " +
+    "Andre Lalonde is 31 years old and about 80 kg. He was stabbed once in the left side of the neck with a folding knife about 25 minutes ago. " +
+    "A paramedic is holding gauze on the wound. They placed a cervical collar and an IV in the left arm. " +
+    "Arrival vitals: heart rate 122, blood pressure 96/60, respiratory rate 24, SpO2 94 percent on a non rebreather, GCS 15. CTAS 1. " +
+    "The paramedic says: 'It was spurting at the scene. The swelling has been getting bigger and his voice sounds different.'",
+  findings: [
+    {
+      id: "wound",
+      label: "Neck wound",
+      result:
+        "A 2 cm wound through the platysma at the anterior border of the left sternocleidomastoid, midway between the angle of the mandible and the cricoid. " +
+        "Blood oozes around the gauze. The hematoma is about 6 by 5 cm and grows over 10 minutes.",
+    },
+    {
+      id: "airway",
+      label: "Airway",
+      result: "Hoarse voice. Trachea deviated slightly to the right. Crepitus in the left neck. No stridor yet. Swallowing saliva with difficulty. Small streaks of blood in his spit.",
+    },
+    {
+      id: "breathing",
+      label: "Breathing",
+      result: "Equal air entry. No subcutaneous emphysema in the chest wall. Lung sliding on both sides on ultrasound.",
+    },
+    {
+      id: "neuro",
+      label: "Neuro exam",
+      result: "GCS 15. Moves all four limbs with equal power. No facial droop. Speech hoarse but not dysarthric. Pupils equal.",
+    },
+    {
+      id: "bruit",
+      label: "Auscultation of the neck",
+      result: "A soft bruit over the hematoma.",
+    },
+    {
+      id: "cxr",
+      label: "Chest X ray",
+      result: "No pneumothorax or hemothorax. Soft tissue air in the left neck. Mediastinum normal.",
+    },
+    {
+      id: "labs",
+      label: "Blood gas and labs",
+      result: "pH 7.29. Lactate 4.4 mmol/L. Hemoglobin 118 g/L. Platelets 210 x 10^9/L. INR 1.2. Fibrinogen 2.2 g/L. Ionized calcium 1.12 mmol/L.",
+    },
+    {
+      id: "post-tube",
+      label: "Vitals after intubation",
+      result: "Heart rate 138. Blood pressure 74/42. Blood welling around the gauze and through the wound with each beat.",
+    },
+    {
+      id: "history",
+      label: "AMPLE history",
+      result: "No allergies. No medications. Healthy. Last meal 3 hours ago. Tetanus status unknown.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Resus",
+      text: "He is sitting up, spitting into a basin and trying to talk. The trauma team is assembling. You are the trauma team leader.",
+      next: "q-primary",
+    },
+    {
+      kind: "question",
+      id: "q-primary",
+      phase: "Primary survey",
+      prompt: "Take me through your primary survey. What do you do with the wound, the collar and his IV access?",
+      seconds: 90,
+      modelAnswer: [
+        "Assign roles. Closed loop communication.",
+        "Hard signs of vascular injury: expanding hematoma, history of pulsatile bleeding, bruit and shock. Hoarseness and crepitus suggest airway or esophageal injury.",
+        "Keep firm direct pressure on the wound. Do not probe it or explore below the platysma in the ED.",
+        "Remove the collar. It hides the hematoma and is not needed for an isolated stab wound without neuro deficit.",
+        "IV access on the right side and in a leg or IO. Avoid the injured side.",
+        "Activate the massive hemorrhage protocol. Call the operating room now.",
+        "No nasogastric tube. It can cause gagging and dislodge clot.",
+      ],
+      rubric: ["pn-a1", "pn-m1"],
+      choices: [
+        {
+          id: "c-pressure",
+          label: "I kept direct pressure on the wound, removed the collar, got access on the right side and in the leg and called the operating room.",
+          next: "q-airway",
+          quality: "strong",
+          feedback:
+            "Strong. He has hard signs and needs the operating room. Spinal injury is very rare after a stab to the neck without neuro deficit, and the collar hides the hematoma. Access away from the injured veins.",
+        },
+        {
+          id: "c-probe",
+          label: "I kept the collar on and explored the wound with a gloved finger to see if it went deep.",
+          next: "s-probe",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Probing can dislodge clot and cause massive bleeding or air embolism. The collar hides an expanding hematoma and a shifting trachea. Wounds through the platysma are explored in the operating room.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-probe",
+      phase: "Seconds later",
+      text: "Bright red blood pours from the wound. The nurse presses hard with gauze. The trauma surgeon removes the collar and tells the team to hold pressure until the operating room is ready.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway",
+      prompt: "His voice is getting weaker and the hematoma keeps growing. How will you manage his airway?",
+      seconds: 90,
+      modelAnswer: [
+        "Anticipate a difficult airway. Intubate early while he can still maintain it.",
+        "Best location is the operating room with anesthesia and a surgeon scrubbed with the neck prepped for a surgical airway.",
+        "Double set up: video laryngoscope, bougie, small tubes 6.0 to 7.0, and a scalpel bougie tube kit.",
+        "Keep him sitting up until induction. Avoid heavy bag mask ventilation that pushes air into the tissues.",
+        "Hemodynamically cautious RSI: ketamine 1 mg/kg IV and rocuronium 1.2 to 1.6 mg/kg IV, with blood running.",
+        "An awake approach is an option if he is cooperative and the hematoma allows it.",
+        "If the airway is opened by the wound, a tube can be passed through the defect.",
+      ],
+      rubric: ["pn-r1", "pn-l1"],
+      choices: [
+        {
+          id: "c-double",
+          label: "I moved him to the operating room for a double set up intubation with the surgeon scrubbed and the neck prepped.",
+          next: "s-bleed",
+          quality: "strong",
+          feedback:
+            "Strong. The hematoma distorts the larynx and can make both laryngoscopy and cricothyrotomy hard. Having the surgeon ready turns a failed attempt into a controlled surgical airway.",
+        },
+        {
+          id: "c-ed-rsi",
+          label: "I did a rapid sequence intubation in the ED with direct laryngoscopy and a standard 8.0 tube.",
+          next: "s-ed-rsi",
+          quality: "partial",
+          feedback:
+            "Partial. Early intubation is right. But a distorted larynx is a predicted difficult airway. Plan for video laryngoscopy, a bougie, a smaller tube and a surgical backup that is open and ready.",
+        },
+        {
+          id: "c-sedate",
+          label: "I gave midazolam 2 mg IV to settle him so he could lie flat for a CT angiogram.",
+          next: "s-sedate",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Sedation in a threatened airway can cause sudden obstruction. Lying flat worsens it. A patient with hard signs goes to the operating room, not to CT.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ed-rsi",
+      phase: "Airway",
+      text: "On direct laryngoscopy you see only the epiglottis pushed to the right. Your second attempt with a video laryngoscope, a bougie and a 6.5 tube succeeds. SpO2 dropped to 80 percent.",
+      next: "s-bleed",
+    },
+    {
+      kind: "say",
+      id: "s-sedate",
+      phase: "Two minutes later",
+      text:
+        "He slumps and starts to snore, then stops moving air. SpO2 falls to 76 percent. Anesthesia and the trauma surgeon arrive. You intubate with a video laryngoscope and a 6.5 tube while the surgeon stands ready with a scalpel.",
+      next: "s-bleed",
+    },
+    {
+      kind: "say",
+      id: "s-bleed",
+      phase: "Deterioration",
+      text: "The tube is in. After induction his pressure falls to 74/42. Blood is now welling through the wound with each heartbeat despite gauze.",
+      next: "q-hemorrhage",
+    },
+    {
+      kind: "question",
+      id: "q-hemorrhage",
+      phase: "Hemorrhage control",
+      prompt: "Pressure alone is not stopping the bleeding. What do you do while the surgeon prepares?",
+      seconds: 75,
+      modelAnswer: [
+        "Firm digital pressure directly on the bleeding point.",
+        "Foley catheter balloon tamponade: pass the catheter into the wound track, inflate the balloon with sterile water until bleeding stops, clamp the catheter.",
+        "Suture the skin around it if needed to add tamponade.",
+        "Head down slightly if there is concern for venous air embolism.",
+        "Never clamp blindly in the wound. Never wrap a pressure dressing around the neck.",
+        "Massive hemorrhage protocol and straight to the operating room.",
+      ],
+      rubric: ["pn-m2", "pn-r2"],
+      choices: [
+        {
+          id: "c-foley",
+          label: "I placed a Foley catheter into the wound, inflated the balloon until the bleeding stopped and clamped it, then went to the operating room.",
+          next: "q-blood",
+          quality: "strong",
+          feedback:
+            "Strong. Balloon tamponade is a simple bridge for bleeding from neck wounds that cannot be compressed well. It buys time to reach the operating room.",
+        },
+        {
+          id: "c-wrap",
+          label: "I wrapped a tight pressure dressing around his neck.",
+          next: "s-wrap",
+          quality: "partial",
+          feedback:
+            "Partial. You tried to compress the wound. But circumferential dressings do not compress a deep vessel well, they compress the airway and venous return, and they hide what is happening. Use targeted pressure or a Foley balloon.",
+        },
+        {
+          id: "c-clamp",
+          label: "I reached into the wound with a hemostat and clamped the bleeding vessel.",
+          next: "s-clamp",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Blind clamping in the neck can injure the vagus and hypoglossal nerves or the carotid wall. It rarely controls the bleeding. Use pressure or balloon tamponade and let the surgeon repair it with exposure.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-wrap",
+      phase: "One minute later",
+      text: "The dressing soaks through and his face turns dusky. The surgeon cuts it off and places a Foley balloon into the wound, which slows the bleeding.",
+      next: "q-blood",
+    },
+    {
+      kind: "say",
+      id: "s-clamp",
+      phase: "One minute later",
+      text: "The clamp tears the vessel wall and the bleeding worsens. His pressure is 60/30. The surgeon takes over with digital pressure and a Foley balloon.",
+      next: "q-blood",
+    },
+    {
+      kind: "question",
+      id: "q-blood",
+      phase: "Resuscitation",
+      prompt: "Tell me your blood product and drug plan and your blood pressure target.",
+      seconds: 60,
+      modelAnswer: [
+        "Uncrossmatched O red cells, then red cells to plasma to platelets close to 1 to 1 to 1.",
+        "Tranexamic acid 1 g IV over 10 minutes, then 1 g over 8 hours.",
+        "Calcium chloride 1 g IV. Keep ionized calcium above 1.1 mmol/L.",
+        "Permissive hypotension with systolic about 80 to 90 mmHg until control, as there is no head injury.",
+        "Warm all products. Avoid crystalloid.",
+      ],
+      rubric: ["pn-r3"],
+      next: "s-ct-ask",
+    },
+    {
+      kind: "say",
+      id: "s-ct-ask",
+      phase: "Pressure from a colleague",
+      text: "The bleeding is controlled with the balloon. A junior surgical resident says, 'Before we go up, can we get a CT angiogram of the neck so we know what we are dealing with?'",
+      next: "q-imaging",
+    },
+    {
+      kind: "question",
+      id: "q-imaging",
+      phase: "Imaging decision",
+      prompt: "What do you say to the resident?",
+      seconds: 60,
+      modelAnswer: [
+        "Hard signs of vascular injury and shock mean the operating room, not CT.",
+        "CT angiogram is for stable patients with soft signs or no signs.",
+        "The balloon is a temporary fix. It can fail at any time.",
+        "Be respectful but firm. Escalate to the attending trauma surgeon if needed.",
+      ],
+      rubric: ["pn-d1", "pn-c1"],
+      choices: [
+        {
+          id: "c-or",
+          label: "I said no, he has hard signs and shock and goes straight to the operating room, and I confirmed this with the trauma surgeon.",
+          next: "q-soft",
+          quality: "strong",
+          feedback:
+            "Strong. Hard signs mean operative exploration. Imaging an unstable patient delays control and risks arrest in the scanner.",
+        },
+        {
+          id: "c-ct",
+          label: "I agreed to a quick CT angiogram on the way up since the bleeding was controlled.",
+          next: "s-ct-arrest",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Temporary control is not definitive control. The CT will not change the need for surgery in a patient with hard signs.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-ct-arrest",
+      phase: "On the way to CT",
+      text: "While he is being moved, the balloon slips and bleeding resumes. His pressure falls to 58/30. He goes to the operating room without the scan, 15 minutes later than planned.",
+      next: "q-soft",
+    },
+    {
+      kind: "question",
+      id: "q-soft",
+      phase: "Teaching point",
+      prompt: "Suppose he had arrived stable with a small non expanding hematoma and a normal voice. How would your approach differ?",
+      seconds: 75,
+      modelAnswer: [
+        "Assess for hard and soft signs. Soft signs include a small stable hematoma, minor bleeding, dysphagia, voice change, subcutaneous air and small hemoptysis.",
+        "Stable patients with a wound through the platysma get CT angiography of the neck, whatever the zone.",
+        "Add esophageal assessment with contrast study or endoscopy if the CT or symptoms suggest it.",
+        "Airway evaluation with laryngoscopy if voice change.",
+        "Admit under trauma for observation if imaging is equivocal.",
+        "Wounds not through the platysma can be closed and discharged.",
+      ],
+      rubric: ["pn-a2"],
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Handover",
+      prompt: "He is going to the operating room with the trauma surgeon and vascular surgery. Give the handover and tell me what else he needs.",
+      seconds: 60,
+      modelAnswer: [
+        "Mechanism and time. Single stab wound to the left mid neck through platysma.",
+        "Hard signs: expanding hematoma, bruit, shock. Voice change and crepitus suggesting aerodigestive injury.",
+        "Airway: tube size, grade of view, attempts.",
+        "Balloon tamponade in place with volume in the balloon.",
+        "Products, tranexamic acid and calcium with times.",
+        "Tetanus prophylaxis and antibiotics for a possible aerodigestive injury.",
+      ],
+      rubric: ["pn-c2", "pn-m3"],
+      next: "end",
+    },
+    { kind: "end", id: "end", text: "In the operating room the surgeons repair an internal jugular vein injury and a partial laceration of the external carotid. That is the end of the case." },
+  ],
+  rubric: [
+    {
+      id: "pn-a1",
+      competency: "assessment",
+      text: "Identifies hard signs of vascular injury and signs of aerodigestive injury.",
+      points: 2,
+      teaching: "Hard signs include active or pulsatile bleeding, expanding hematoma, bruit or thrill, shock and neuro deficit. Hoarseness, crepitus and hemoptysis suggest airway or esophageal injury.",
+      source: "wta",
+    },
+    {
+      id: "pn-m1",
+      competency: "management",
+      text: "Does not probe the wound, removes the collar, holds direct pressure and places access away from the injured side.",
+      points: 2,
+      teaching: "Probing risks rebleeding and air embolism. Collars are not needed in isolated penetrating neck injury without neuro deficit.",
+      source: "atls",
+    },
+    {
+      id: "pn-r1",
+      competency: "resuscitation",
+      text: "Secures the airway early with a double set up plan and a surgical airway ready.",
+      points: 3,
+      critical: true,
+      teaching: "An expanding neck hematoma is a predicted difficult airway. Plan for failure before you start.",
+      source: "cafg",
+    },
+    {
+      id: "pn-l1",
+      competency: "leadership",
+      text: "Mobilizes anesthesia and the trauma surgeon and chooses the best location for the airway.",
+      points: 1,
+      teaching: "The operating room with a scrubbed surgeon is the safest place when time allows.",
+      source: "cafg",
+    },
+    {
+      id: "pn-m2",
+      competency: "management",
+      text: "Uses digital pressure or Foley catheter balloon tamponade and avoids blind clamping.",
+      points: 3,
+      critical: true,
+      teaching: "A Foley balloon inflated in the wound track can control bleeding from neck vessels until surgery.",
+      source: "navsaria",
+    },
+    {
+      id: "pn-r2",
+      competency: "resuscitation",
+      text: "Avoids circumferential neck dressings and considers venous air embolism.",
+      points: 1,
+      teaching: "Tight neck wraps compress the airway. Open neck veins can entrain air, so keep the head slightly down.",
+      source: "atls",
+    },
+    {
+      id: "pn-r3",
+      competency: "resuscitation",
+      text: "Gives balanced blood products, tranexamic acid 1 g IV and calcium, with a permissive systolic target of 80 to 90 mmHg.",
+      points: 2,
+      teaching: "Damage control resuscitation limits coagulopathy. Permissive hypotension applies only without brain injury.",
+      source: "atls",
+    },
+    {
+      id: "pn-d1",
+      competency: "disposition",
+      text: "Sends the unstable patient with hard signs directly to the operating room without CT.",
+      points: 3,
+      critical: true,
+      teaching: "Hard signs plus instability equal operative exploration. CT angiography is for stable patients.",
+      source: "wta",
+    },
+    {
+      id: "pn-c1",
+      competency: "communication",
+      text: "Respectfully declines an unsafe request and confirms the plan with the attending surgeon.",
+      points: 1,
+      teaching: "Speak up clearly with the reason. Escalate to the responsible attending when there is disagreement.",
+      source: "wta",
+    },
+    {
+      id: "pn-a2",
+      competency: "assessment",
+      text: "Describes CT angiography for stable patients regardless of zone, with esophageal and airway assessment as needed.",
+      points: 2,
+      teaching: "The no zone approach uses signs and CT angiography rather than anatomic zones to decide on surgery in stable patients.",
+      source: "wta",
+    },
+    {
+      id: "pn-c2",
+      competency: "communication",
+      text: "Gives a structured handover including airway details, balloon volume and products with times.",
+      points: 1,
+      teaching: "The receiving team needs to know exactly what is in the wound and what was given.",
+      source: "atls",
+    },
+    {
+      id: "pn-m3",
+      competency: "management",
+      text: "Gives tetanus prophylaxis and antibiotics when aerodigestive injury is possible.",
+      points: 1,
+      teaching: "Esophageal injury leads to mediastinitis if missed. Cover oral flora early.",
+      source: "wta",
+    },
+  ],
+  sources: [
+    {
+      id: "wta",
+      citation: "Sperry JL, et al. Western Trauma Association critical decisions in trauma: penetrating neck trauma. J Trauma Acute Care Surg. 2013.",
+      url: "https://www.westerntrauma.org/wp-content/uploads/2020/07/WTACriticalDecisionsPenetratingNeckTrauma.pdf",
+    },
+    {
+      id: "navsaria",
+      citation: "Navsaria P, Thoma M, Nicol A. Foley catheter balloon tamponade for life threatening hemorrhage in penetrating neck trauma. World J Surg. 2006.",
+    },
+    {
+      id: "cafg",
+      citation: "Law JA, et al. Canadian Airway Focus Group updated consensus based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/34105065/",
+    },
+    {
+      id: "atls",
+      citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

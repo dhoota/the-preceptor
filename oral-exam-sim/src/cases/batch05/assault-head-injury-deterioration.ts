@@ -1,0 +1,528 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const assaultHeadInjuryDeterioration: OralCase = {
+  id: "assault-head-injury-deterioration",
+  title: "Intoxicated man after a fight",
+  blueprint: "trauma",
+  alsoCovers: ["neuro", "ethics"],
+  summary: "A 44 year old man is brought in after an assault outside a bar. He smells of alcohol and the nurse wants to let him sleep.",
+  durationMinutes: 15,
+  stem:
+    "You are the emergency physician at a lead trauma hospital in Ontario. Neurosurgery, CT, an ICU and a massive hemorrhage protocol are all available on site. " +
+    "It is 01:40 on a Saturday. Tomasz Wielgosz is 44 years old and about 85 kg. " +
+    "Witnesses told paramedics he was punched, fell backwards and struck the back of his head on a curb about 50 minutes ago. He was briefly unresponsive. " +
+    "Triage vitals: heart rate 92, blood pressure 148/86, respiratory rate 18, SpO2 96 percent on room air, temperature 36.5, capillary glucose 6.8 mmol/L. GCS 12. CTAS 2. " +
+    "He has vomited twice. Paramedics placed a cervical collar. " +
+    "The nurse says: 'He reeks of alcohol and keeps swearing at us. Can I put him in the hallway to sleep it off and you see him when he is sober?'",
+  findings: [
+    {
+      id: "gcs",
+      label: "GCS and pupils",
+      result: "GCS 12 (E3 V3 M6). Speaks inappropriate words. Obeys commands with prompting. Pupils 4 mm and reactive on the left, 4 mm and sluggish on the right.",
+    },
+    {
+      id: "head",
+      label: "Head and face",
+      result:
+        "Boggy 5 cm hematoma over the right occiput with a 3 cm laceration. Bruising over the left cheek. No CSF from the nose or ears. No Battle sign. Midface stable.",
+    },
+    {
+      id: "spine",
+      label: "Neck and spine",
+      result: "He grabs at the collar and cannot reliably report neck pain. Moves all four limbs. No obvious step off on log roll.",
+    },
+    {
+      id: "primary",
+      label: "Chest, abdomen and pelvis",
+      result: "Chest clear with equal air entry. Abdomen soft. Pelvis stable. No long bone deformity. eFAST negative.",
+    },
+    {
+      id: "history",
+      label: "Collateral from his wife by phone",
+      result:
+        "He is healthy. He takes no medications and no blood thinners. He drinks on weekends. No seizures before. No allergies.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Ethanol 24 mmol/L. Hemoglobin 146 g/L. Platelets 231 x 10^9/L. INR 1.1. Fibrinogen 2.8 g/L. Sodium 140 mmol/L. Glucose 7.9 mmol/L. Lactate 1.9 mmol/L.",
+    },
+    {
+      id: "ct-head",
+      label: "CT head",
+      result:
+        "Right frontotemporal acute subdural hematoma 14 mm thick. Midline shift of 10 mm to the left. Effacement of the right lateral ventricle and the basal cisterns. " +
+        "Small left frontal contrecoup contusion. Nondisplaced right occipital skull fracture.",
+    },
+    {
+      id: "ct-spine",
+      label: "CT cervical spine",
+      result: "No fracture or malalignment.",
+    },
+    {
+      id: "abg",
+      label: "Blood gas after intubation",
+      result: "pH 7.30. PaCO2 51 mmHg. PaO2 92 mmHg on FiO2 0.6. Bicarbonate 24 mmol/L. Ionized calcium 1.18 mmol/L.",
+    },
+    {
+      id: "vitals-late",
+      label: "Vitals after the deterioration",
+      result: "Heart rate 52. Blood pressure 188/84. Respiratory rate 8 and irregular. SpO2 90 percent. GCS 7 (E1 V2 M4). Right pupil 6 mm and fixed.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Triage",
+      text: "He is on a stretcher near the nursing station, swearing and pulling at his collar. The nurse is waiting for your answer.",
+      next: "q-initial",
+    },
+    {
+      kind: "question",
+      id: "q-initial",
+      phase: "First assessment",
+      prompt: "What do you tell the nurse? How do you assess him and what imaging do you order?",
+      seconds: 90,
+      modelAnswer: [
+        "No. A GCS of 12 after head trauma is a moderate head injury until proven otherwise.",
+        "Do not attribute a low GCS to alcohol. An ethanol of 24 mmol/L rarely explains this.",
+        "Resus bay, monitor, neuro checks every 15 minutes including pupils.",
+        "Primary survey with spine precautions. Check glucose.",
+        "CT head and CT cervical spine now. With a GCS of 12 the Canadian CT Head Rule and Canadian C-Spine Rule do not apply to him.",
+      ],
+      rubric: ["tb-a1", "tb-a2"],
+      choices: [
+        {
+          id: "c-ct-now",
+          label: "I moved him to resus with neuro checks every 15 minutes and sent him for CT head and CT cervical spine right away.",
+          next: "s-decline",
+          quality: "strong",
+          feedback:
+            "Strong. GCS 12 with vomiting and a scalp hematoma is a moderate head injury. The Canadian CT Head Rule is for GCS 13 to 15, so it does not apply. The Canadian C-Spine Rule needs a GCS of 15, so his neck cannot be cleared clinically either.",
+        },
+        {
+          id: "c-ct-head-only",
+          label: "I ordered a CT head and took the collar off because he was moving his neck freely.",
+          next: "s-collar",
+          quality: "partial",
+          feedback:
+            "Partial. CT head is right. But a patient with a GCS of 12 is not alert. The Canadian C-Spine Rule needs a GCS of 15 and cannot be used, so the neck needs CT imaging and the collar stays on.",
+        },
+        {
+          id: "c-sleep",
+          label: "I agreed to observe him in the hallway and reassess when he was sober.",
+          next: "s-hallway",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Alcohol is a diagnosis of exclusion in head injury. A GCS of 12 with two episodes of vomiting and an unequal pupil response needs CT now. Hallway observation hides a deteriorating patient.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-collar",
+      phase: "Radiology",
+      text: "The trauma team leader replaces the collar and adds a CT cervical spine. She reminds you that a GCS of 12 makes clinical clearance invalid.",
+      next: "s-decline",
+    },
+    {
+      kind: "say",
+      id: "s-hallway",
+      phase: "Forty minutes later",
+      text: "A nurse finds him snoring and unrousable in the hallway. His right pupil is 6 mm. You move him to resus and call for CT.",
+      next: "s-decline",
+    },
+    {
+      kind: "say",
+      id: "s-decline",
+      phase: "Deterioration",
+      text:
+        "Back in resus he stops speaking. GCS is now 7. His right pupil is 6 mm and fixed. Heart rate 52, blood pressure 188/84, respiratory rate 8 and irregular, SpO2 90 percent. The CT head is on the screen.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway",
+      prompt: "How will you secure his airway? Give me your drugs, doses and the physiologic targets around induction.",
+      seconds: 90,
+      modelAnswer: [
+        "Rapid sequence intubation with manual in line stabilization. Video laryngoscope. Suction ready.",
+        "Preoxygenate with bag valve mask and PEEP. Avoid any SpO2 under 90 percent.",
+        "Keep systolic at or above 110 mmHg for his age. Push dose vasopressor drawn up.",
+        "Ketamine 1 to 2 mg/kg IV (about 85 to 170 mg) or etomidate 0.3 mg/kg (about 25 mg).",
+        "Rocuronium 1.2 mg/kg IV (about 100 mg).",
+        "Confirm with waveform capnography. Start sedation and analgesia right after the tube.",
+      ],
+      rubric: ["tb-r1", "tb-r2"],
+      choices: [
+        {
+          id: "c-rsi",
+          label: "I preoxygenated with PEEP, kept the collar open with in line stabilization and intubated with ketamine 1.5 mg/kg and rocuronium 1.2 mg/kg.",
+          next: "q-vent",
+          quality: "strong",
+          feedback:
+            "Strong. Hypoxia and hypotension are the two secondary insults that double mortality in severe brain injury. Ketamine is safe in head injury and keeps the pressure up. Rocuronium 1.2 mg/kg gives reliable conditions.",
+        },
+        {
+          id: "c-propofol",
+          label: "I induced with propofol 2 mg/kg and fentanyl 3 mcg/kg to blunt the pressor response.",
+          next: "s-propofol",
+          quality: "partial",
+          feedback:
+            "Partial. Blunting the pressor response is reasonable in theory. But full dose propofol with fentanyl often drops the pressure. One systolic under 90 mmHg worsens outcome. Use a hemodynamically neutral agent and have a vasopressor ready.",
+        },
+        {
+          id: "c-wait",
+          label: "I placed a nasal airway and waited for neurosurgery to decide whether he needed a tube.",
+          next: "s-aspirate",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. GCS 8 or less with irregular breathing and SpO2 90 percent needs a definitive airway now. Hypercarbia raises intracranial pressure. The decision is yours, not the consultant's.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-propofol",
+      phase: "After induction",
+      text: "His pressure falls to 84/46. The nurse gives phenylephrine 100 mcg IV twice and a 500 mL bolus before it recovers. That hypotensive episode is now part of his injury.",
+      next: "q-vent",
+    },
+    {
+      kind: "say",
+      id: "s-aspirate",
+      phase: "Three minutes later",
+      text: "He vomits and aspirates. SpO2 falls to 78 percent. The respiratory therapist suctions and you intubate him under pressure.",
+      next: "q-vent",
+    },
+    {
+      kind: "question",
+      id: "q-vent",
+      phase: "After intubation",
+      prompt: "The tube is in. His first gas shows a PaCO2 of 51. What ventilation, oxygenation and blood pressure targets do you set, and what else do you do at the bedside?",
+      seconds: 75,
+      modelAnswer: [
+        "PaCO2 35 to 40 mmHg. Normoventilation for now. Adjust rate and follow end tidal CO2.",
+        "SpO2 at least 94 percent. PaO2 at least 80 mmHg.",
+        "Systolic at least 110 mmHg for age 15 to 49. Treat hypotension with fluids and vasopressors.",
+        "Head of bed 30 degrees with the spine aligned. Loosen or open the collar so it does not compress the jugular veins.",
+        "Sedation with propofol and fentanyl, titrated to avoid hypotension.",
+        "Normothermia and a glucose of about 6 to 10 mmol/L.",
+      ],
+      rubric: ["tb-r3", "tb-m1"],
+      next: "q-herniation",
+    },
+    {
+      kind: "question",
+      id: "q-herniation",
+      phase: "Herniation",
+      prompt: "His heart rate is 50, pressure 192/86, and the right pupil is still fixed. Neurosurgery is 10 minutes away. What do you do right now?",
+      seconds: 75,
+      modelAnswer: [
+        "This is the Cushing response with uncal herniation. Treat as a neurosurgical emergency.",
+        "Hyperosmolar therapy: 3 percent saline 250 mL IV or mannitol 1 g/kg IV (about 85 g).",
+        "Brief hyperventilation to PaCO2 30 to 35 mmHg as a bridge to surgery only.",
+        "Head up 30 degrees, collar loosened, adequate sedation.",
+        "Do not lower the blood pressure. It is maintaining cerebral perfusion.",
+        "Book the operating room now.",
+      ],
+      rubric: ["tb-m2", "tb-m3"],
+      choices: [
+        {
+          id: "c-osmo",
+          label: "I gave 250 mL of 3 percent saline, hyperventilated briefly to a PaCO2 of about 32 and called for the operating room.",
+          next: "s-neurosurg",
+          quality: "strong",
+          feedback:
+            "Strong. Hyperosmolar therapy buys time. Brief hyperventilation to 30 to 35 mmHg is acceptable only as a bridge to evacuation. The definitive treatment is surgery.",
+        },
+        {
+          id: "c-hypervent",
+          label: "I set the rate to 30 and targeted a PaCO2 of 25 until the surgeon arrived.",
+          next: "s-overvent",
+          quality: "partial",
+          feedback:
+            "Partial. You recognized herniation. But a PaCO2 of 25 or less causes cerebral vasoconstriction and ischemia. The Brain Trauma Foundation recommends against it. Pair a brief, modest hyperventilation with hyperosmolar therapy.",
+        },
+        {
+          id: "c-labetalol",
+          label: "I gave labetalol 20 mg IV to bring his systolic under 160.",
+          next: "s-labetalol",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. The hypertension is a reflex to keep cerebral perfusion pressure up against a rising intracranial pressure. Lowering it drops perfusion to an already ischemic brain. Treat the pressure inside the skull, not the number on the monitor.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-overvent",
+      phase: "Neurosurgery arrives",
+      text: "The neurosurgery resident sees a PaCO2 of 24 on the gas and asks you to bring it back to about 32. You give 3 percent saline 250 mL.",
+      next: "s-neurosurg",
+    },
+    {
+      kind: "say",
+      id: "s-labetalol",
+      phase: "Five minutes later",
+      text: "His pressure falls to 118/60. His left pupil now dilates as well. You stop the labetalol, start norepinephrine and give 3 percent saline 250 mL.",
+      next: "s-neurosurg",
+    },
+    {
+      kind: "say",
+      id: "s-neurosurg",
+      phase: "Consult",
+      text: "The staff neurosurgeon calls from home. 'I am driving in. What have you got?'",
+      next: "q-handover",
+    },
+    {
+      kind: "question",
+      id: "q-handover",
+      phase: "Neurosurgery",
+      prompt: "Give the neurosurgeon your handover in under a minute.",
+      seconds: 60,
+      modelAnswer: [
+        "Structured handover such as SBAR.",
+        "44 year old, assault with occipital impact 90 minutes ago. Initial GCS 12, now 7 with a fixed right pupil.",
+        "CT: 14 mm right acute subdural with 10 mm shift and effaced cisterns.",
+        "Intubated. Treatments given with times: hyperosmolar dose, PaCO2 target.",
+        "No anticoagulants. INR and platelets normal. CT spine clear.",
+        "Ask for the operating room now and what else the team should prepare.",
+      ],
+      rubric: ["tb-c1"],
+      next: "q-adjuncts",
+    },
+    {
+      kind: "question",
+      id: "q-adjuncts",
+      phase: "Adjuncts",
+      prompt: "While the operating room is prepared, what other medications or measures will you give or avoid?",
+      seconds: 75,
+      modelAnswer: [
+        "Tranexamic acid 1 g IV over 10 minutes within 3 hours of injury, then 1 g over 8 hours, per local trauma protocol. CRASH-3 showed benefit mainly in mild to moderate injury.",
+        "Seizure prophylaxis for 7 days: levetiracetam 20 mg/kg IV or phenytoin 20 mg/kg IV at no more than 50 mg/min.",
+        "No corticosteroids. They increase mortality in head injury.",
+        "Check sodium often during hyperosmolar therapy. Many units aim for 145 to 155 mmol/L. Keep glucose about 6 to 10 mmol/L and temperature normal.",
+        "Tetanus prophylaxis and closure of the scalp laceration to stop bleeding.",
+      ],
+      rubric: ["tb-m4", "tb-m5"],
+      choices: [
+        {
+          id: "c-txa-lev",
+          label: "I gave tranexamic acid 1 g over 10 minutes and levetiracetam 20 mg/kg, and stapled the scalp laceration.",
+          next: "q-police",
+          quality: "strong",
+          feedback:
+            "Strong. He is within 3 hours of injury, so tranexamic acid is reasonable under many trauma protocols. CRASH-3 showed no clear benefit in severe injury like his, but no excess harm. Early seizure prophylaxis reduces early post traumatic seizures. Scalp wounds can bleed a lot and should be closed.",
+        },
+        {
+          id: "c-dex",
+          label: "I gave dexamethasone 10 mg IV for the cerebral edema.",
+          next: "s-dex",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Steroids increased mortality in the CRASH trial of head injury. The Brain Trauma Foundation recommends against them. Steroids treat vasogenic edema around tumours, not traumatic brain injury.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-dex",
+      phase: "Pharmacy",
+      text: "The ICU pharmacist phones to question the dexamethasone order. You cancel it and give levetiracetam 20 mg/kg and tranexamic acid 1 g.",
+      next: "q-police",
+    },
+    {
+      kind: "question",
+      id: "q-police",
+      phase: "Family and police",
+      prompt:
+        "His wife has arrived. A police officer is also at the desk. He wants the blood alcohol level and a copy of the CT report for his assault investigation. How do you handle both?",
+      seconds: 90,
+      modelAnswer: [
+        "Wife first. Private room with a nurse or social worker. He has a serious brain bleed and is going for emergency surgery. He may die or be left with disability.",
+        "Ask about his wishes and give her a way to stay in touch.",
+        "Police: personal health information is confidential under PHIPA.",
+        "Share only with consent from his substitute decision maker, a warrant or court order, or where the law requires it.",
+        "A hospital may confirm he is a patient and give his general health status unless he has objected. The blood alcohol and CT need consent or a warrant.",
+        "Document the request and what was released.",
+      ],
+      rubric: ["tb-c2", "tb-p1"],
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition",
+      prompt: "What are the targets you hand over to the operating room and the ICU team?",
+      seconds: 60,
+      modelAnswer: [
+        "Systolic at least 110 mmHg. Cerebral perfusion pressure 60 to 70 mmHg once an ICP monitor is in.",
+        "Treat intracranial pressure above 22 mmHg.",
+        "PaCO2 35 to 40 mmHg. SpO2 at least 94 percent.",
+        "Head up 30 degrees. Normothermia. Glucose 6 to 10 mmol/L.",
+        "Sodium checked every 4 to 6 hours on hypertonic saline.",
+      ],
+      rubric: ["tb-d1", "tb-l1"],
+      next: "end",
+    },
+    { kind: "end", id: "end", text: "He goes to the operating room for a craniotomy. That is the end of the case." },
+  ],
+  rubric: [
+    {
+      id: "tb-a1",
+      competency: "assessment",
+      text: "Refuses to attribute a GCS of 12 to alcohol and moves him to a monitored bed with frequent neuro checks.",
+      points: 3,
+      critical: true,
+      teaching: "Alcohol is a diagnosis of exclusion in head injury. An ethanol level rarely explains a GCS under 13.",
+      source: "atls",
+    },
+    {
+      id: "tb-a2",
+      competency: "assessment",
+      text: "Orders CT head and CT cervical spine now and states why the Canadian CT Head Rule and C-Spine Rule do not apply.",
+      points: 2,
+      teaching: "The Canadian CT Head Rule applies to GCS 13 to 15 minor head injury. The C-Spine Rule needs an alert patient with a GCS of 15 and stable vitals. His GCS of 12 excludes both. Intoxication by itself does not.",
+      source: "cchr",
+    },
+    {
+      id: "tb-r1",
+      competency: "resuscitation",
+      text: "Intubates with preoxygenation, in line stabilization, video laryngoscopy and a hemodynamically neutral induction agent with rocuronium 1.2 mg/kg.",
+      points: 2,
+      teaching: "Ketamine or etomidate with rocuronium preserves pressure. Plan the airway around the brain.",
+      source: "btf",
+    },
+    {
+      id: "tb-r2",
+      competency: "resuscitation",
+      text: "Avoids any SpO2 under 90 percent and any systolic under 110 mmHg around induction.",
+      points: 3,
+      critical: true,
+      teaching: "A single episode of hypoxia or hypotension is associated with much higher mortality after severe brain injury.",
+      source: "btf",
+    },
+    {
+      id: "tb-r3",
+      competency: "resuscitation",
+      text: "Sets post intubation targets: PaCO2 35 to 40 mmHg, SpO2 at least 94 percent, head up 30 degrees, collar loosened.",
+      points: 2,
+      teaching: "Normocapnia protects cerebral blood flow. A tight collar can obstruct venous outflow and raise intracranial pressure.",
+      source: "btf",
+    },
+    {
+      id: "tb-m1",
+      competency: "management",
+      text: "Provides sedation and analgesia while avoiding hypotension, and maintains normothermia and glucose control.",
+      points: 1,
+      teaching: "Agitation, pain, fever and hyperglycemia all raise cerebral metabolic demand.",
+      source: "btf",
+    },
+    {
+      id: "tb-m2",
+      competency: "management",
+      text: "Recognizes the Cushing response and treats herniation with 3 percent saline 250 mL or mannitol 1 g/kg.",
+      points: 3,
+      critical: true,
+      teaching: "Bradycardia, hypertension and irregular breathing with a fixed pupil mean herniation. Hyperosmolar therapy is a bridge to surgery.",
+      source: "btf",
+    },
+    {
+      id: "tb-m3",
+      competency: "management",
+      text: "Uses only brief hyperventilation to PaCO2 30 to 35 mmHg as a bridge and does not lower the blood pressure.",
+      points: 2,
+      teaching: "PaCO2 of 25 or less causes cerebral ischemia. Reflex hypertension maintains perfusion and should not be treated.",
+      source: "btf",
+    },
+    {
+      id: "tb-m4",
+      competency: "management",
+      text: "Gives seizure prophylaxis with levetiracetam 20 mg/kg IV or phenytoin 20 mg/kg IV.",
+      points: 1,
+      teaching: "Prophylaxis for 7 days reduces early post traumatic seizures. It does not prevent late epilepsy. The Brain Trauma Foundation supports phenytoin. Levetiracetam is widely used with similar results, but the evidence is weaker.",
+      source: "btf",
+    },
+    {
+      id: "tb-m5",
+      competency: "management",
+      text: "Considers tranexamic acid 1 g IV within 3 hours of injury and avoids corticosteroids.",
+      points: 1,
+      teaching: "CRASH-3 found tranexamic acid reduced head injury death mainly in mild to moderate injury when given early. Steroids cause harm.",
+      source: "crash3",
+    },
+    {
+      id: "tb-c1",
+      competency: "communication",
+      text: "Gives the neurosurgeon a concise structured handover with the GCS trend, pupil change, CT findings and treatments with times.",
+      points: 2,
+      teaching: "The trend and the time of each intervention matter more than a list of findings.",
+      source: "atls",
+    },
+    {
+      id: "tb-c2",
+      competency: "communication",
+      text: "Tells his wife in a private room that he has a life threatening brain bleed and is going for surgery, and checks her understanding.",
+      points: 1,
+      teaching: "Be honest about the seriousness early. Families remember whether they were prepared.",
+      source: "atls",
+    },
+    {
+      id: "tb-p1",
+      competency: "professionalism",
+      text: "Declines to release the blood alcohol or CT to police without consent from the substitute decision maker, a warrant or another legal requirement, and documents the request.",
+      points: 2,
+      teaching: "Under Ontario privacy law, health information goes to police only with consent or when a law or court order requires it.",
+      source: "phipa",
+    },
+    {
+      id: "tb-d1",
+      competency: "disposition",
+      text: "Hands over ICU targets: cerebral perfusion pressure 60 to 70 mmHg and treatment of intracranial pressure above 22 mmHg.",
+      points: 1,
+      teaching: "These thresholds come from the Brain Trauma Foundation fourth edition guideline.",
+      source: "btf",
+    },
+    {
+      id: "tb-l1",
+      competency: "leadership",
+      text: "Coordinates the operating room, ICU and neurosurgery early so there is no delay to evacuation.",
+      points: 1,
+      teaching: "Time to decompression of an acute subdural with herniation drives outcome. Book the room as soon as you see the scan.",
+      source: "atls",
+    },
+  ],
+  sources: [
+    {
+      id: "btf",
+      citation: "Brain Trauma Foundation. Guidelines for the Management of Severe Traumatic Brain Injury. 4th edition. 2016.",
+    },
+    {
+      id: "crash3",
+      citation:
+        "CRASH-3 trial collaborators. Effects of tranexamic acid on death, disability, vascular occlusive events and other morbidities in patients with acute traumatic brain injury (CRASH-3). Lancet. 2019.",
+    },
+    {
+      id: "cchr",
+      citation: "Stiell IG, et al. The Canadian CT Head Rule for patients with minor head injury. Lancet. 2001.",
+    },
+    {
+      id: "atls",
+      citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
+    },
+    {
+      id: "phipa",
+      citation: "Ontario. Personal Health Information Protection Act, 2004.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

@@ -1,0 +1,449 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const trenchCollapseCrush: OralCase = {
+  id: "trench-collapse-crush",
+  title: "Trapped in a trench",
+  blueprint: "trauma",
+  alsoCovers: ["resus"],
+  summary: "A 48 year old construction worker arrives after being trapped for hours when a trench wall collapsed on him.",
+  durationMinutes: 15,
+  stem:
+    "You are the emergency physician at a 200 bed regional hospital in Ontario. There is an ICU, orthopedic surgery on call and a hemodialysis unit with nephrology on call. " +
+    "Ravi Sandhu is 48 years old and about 95 kg. A trench wall collapsed on him at a construction site. His legs and pelvis were buried under wet soil for about 4 hours before firefighters freed him 40 minutes ago. " +
+    "Paramedics gave 1 L of normal saline and fentanyl 100 mcg IV. " +
+    "Arrival vitals: heart rate 118, blood pressure 104/68, respiratory rate 22, SpO2 97 percent on room air, temperature 35.8, GCS 15, capillary glucose 7.4 mmol/L. CTAS 2. " +
+    "The nurse says: 'His left leg is huge and he says the pain is unbearable. The monitor has a funny look to it.'",
+  findings: [
+    {
+      id: "primary",
+      label: "Primary survey",
+      result: "Airway clear. Chest clear with equal air entry. Abdomen soft. Pelvis stable. eFAST negative. GCS 15.",
+    },
+    {
+      id: "left-leg",
+      label: "Left lower leg",
+      result:
+        "Swollen and woody hard from knee to ankle. Severe pain out of proportion, worse with passive flexion and extension of the toes. Reduced sensation in the first web space. Dorsalis pedis pulse present by Doppler. Foot warm.",
+    },
+    {
+      id: "other-limbs",
+      label: "Right leg and thighs",
+      result: "Bruising over both thighs and the right calf. Compartments soft. Normal sensation and pulses.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Sinus tachycardia at 116. Tall peaked T waves. PR 210 ms. QRS 128 ms. No prior ECG.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Potassium 7.1 mmol/L. Sodium 138 mmol/L. Bicarbonate 16 mmol/L. Creatinine 168 µmol/L. Urea 11 mmol/L. CK 38,000 U/L. Ionized calcium 0.98 mmol/L. Phosphate 2.4 mmol/L. " +
+        "Hemoglobin 158 g/L. Lactate 4.1 mmol/L. Glucose 7.6 mmol/L.",
+    },
+    {
+      id: "urine",
+      label: "Urine",
+      result: "Dark brown urine. Dipstick 3 plus blood. Microscopy 0 to 2 red cells per high power field.",
+    },
+    {
+      id: "xray",
+      label: "X rays",
+      result: "Nondisplaced fracture of the left proximal fibula. Pelvis intact. No other fractures.",
+    },
+    {
+      id: "compartment",
+      label: "Compartment pressure",
+      result: "Anterior compartment of the left leg 52 mmHg. Deep posterior 44 mmHg. Diastolic blood pressure 62 mmHg at the time.",
+    },
+    {
+      id: "later",
+      label: "Four hours later",
+      result:
+        "Urine output 20 mL/h for the last 2 hours despite 7 L of fluid. Potassium 6.6 mmol/L. Creatinine 312 µmol/L. Crackles at both bases. SpO2 91 percent on 4 L. Weight up 6 kg.",
+    },
+    {
+      id: "history",
+      label: "History",
+      result: "Healthy. Takes ramipril for hypertension. No allergies. Last tetanus booster unknown. He was working for a subcontractor.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Resus",
+      text: "He is grey and sweating, gripping the rails with pain. The nurse hands you the ECG and the first blood gas.",
+      next: "q-primary",
+    },
+    {
+      kind: "question",
+      id: "q-primary",
+      phase: "Initial assessment",
+      prompt: "What is your assessment of this man and your priorities in the first minutes?",
+      seconds: 75,
+      modelAnswer: [
+        "Structured primary survey. Look for occult bleeding and other injuries.",
+        "Prolonged crush means crush syndrome: rhabdomyolysis, hyperkalemia, acidosis and acute kidney injury.",
+        "ECG shows life threatening hyperkalemia. Treat it now.",
+        "Two large bore IVs. Continuous cardiac monitor. Pacing pads available.",
+        "Aggressive IV fluids. Foley to measure urine output.",
+        "Assess the left leg for compartment syndrome. Analgesia.",
+        "Warm him. Stop ramipril.",
+      ],
+      rubric: ["cr-a1", "cr-l1"],
+      next: "q-hyperk",
+    },
+    {
+      kind: "question",
+      id: "q-hyperk",
+      phase: "Potassium",
+      prompt: "Potassium is 7.1 with a QRS of 128 ms. Give me your treatment with doses.",
+      seconds: 75,
+      modelAnswer: [
+        "Calcium first to stabilize the membrane: calcium chloride 1 g IV through a good line or calcium gluconate 3 g IV. Repeat if the ECG does not improve.",
+        "Shift potassium: regular insulin 10 units IV with 25 g of dextrose (50 mL of D50). He has kidney injury, so many give 5 units or add a dextrose infusion. Check glucose hourly for at least 4 to 6 hours.",
+        "Salbutamol 10 to 20 mg nebulized.",
+        "Sodium bicarbonate 50 to 100 mmol IV is reasonable with a bicarbonate of 16.",
+        "Remove potassium: fluids and urine output. Plan for dialysis if refractory.",
+        "Repeat potassium in 1 hour.",
+      ],
+      rubric: ["cr-r1", "cr-m1"],
+      choices: [
+        {
+          id: "c-calcium",
+          label: "I gave calcium chloride 1 g IV first, then insulin 10 units with 25 g of dextrose and nebulized salbutamol, and repeated the ECG.",
+          next: "q-fluids",
+          quality: "strong",
+          feedback:
+            "Strong. A wide QRS means the heart is close to arrest. Calcium works in minutes but does not lower potassium. Insulin and salbutamol shift it into cells while you address the source.",
+        },
+        {
+          id: "c-no-calcium",
+          label: "I gave insulin and dextrose but held calcium because his calcium was low and I worried about it depositing in muscle.",
+          next: "s-no-calcium",
+          quality: "partial",
+          feedback:
+            "Partial. It is true that you should not treat asymptomatic hypocalcemia in rhabdomyolysis. But ECG changes from hyperkalemia are an exception. Calcium protects the heart now.",
+        },
+        {
+          id: "c-binder",
+          label: "I gave sodium polystyrene sulfonate 30 g by mouth and planned to recheck potassium in 4 hours.",
+          next: "s-binder",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Oral binders act over hours and do nothing for an unstable ECG. A QRS of 128 ms with potassium 7.1 needs calcium and shifting agents now.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-no-calcium",
+      phase: "Five minutes later",
+      text: "His QRS widens to 160 ms and his heart rate falls to 48. You give calcium chloride 1 g IV and the complexes narrow.",
+      next: "q-fluids",
+    },
+    {
+      kind: "say",
+      id: "s-binder",
+      phase: "Ten minutes later",
+      text: "The monitor shows a slow sine wave rhythm. His pressure is 70/40. You give calcium chloride 2 g IV, insulin and dextrose, and bicarbonate. The rhythm narrows.",
+      next: "q-fluids",
+    },
+    {
+      kind: "question",
+      id: "q-fluids",
+      phase: "Kidney protection",
+      prompt: "His CK is 38,000 and his urine is brown. How will you protect his kidneys? Give rates and targets.",
+      seconds: 75,
+      modelAnswer: [
+        "Early high volume isotonic crystalloid. About 1 to 1.5 L/h at first, adjusted to response.",
+        "Target urine output of about 200 to 300 mL/h, roughly 3 mL/kg/h.",
+        "Foley catheter with hourly measurement.",
+        "Watch closely for fluid overload. Reassess lungs and oxygen.",
+        "Bicarbonate and mannitol have no proven benefit on kidney outcome. Use only for specific reasons.",
+        "Stop nephrotoxins such as ramipril, NSAIDs and IV contrast where possible.",
+      ],
+      rubric: ["cr-m2"],
+      choices: [
+        {
+          id: "c-high",
+          label: "I ran isotonic crystalloid at about 1.5 L/h, targeted a urine output of 200 to 300 mL/h and reassessed his lungs hourly.",
+          next: "q-compartment",
+          quality: "strong",
+          feedback:
+            "Strong. Early aggressive fluid dilutes myoglobin and keeps tubules flushed. The target is urine output, not a set volume. Hourly checks catch overload.",
+        },
+        {
+          id: "c-maintenance",
+          label: "I ran normal saline at 150 mL/h and planned to recheck CK in the morning.",
+          next: "s-maintenance",
+          quality: "partial",
+          feedback:
+            "Partial. You gave fluid, but maintenance rates will not prevent myoglobin injury. The target should be 200 to 300 mL/h of urine with frequent checks.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-maintenance",
+      phase: "Two hours later",
+      text: "His urine output is 25 mL/h and his creatinine has risen to 214. The ICU resident asks you to increase the fluid rate. You do.",
+      next: "q-compartment",
+    },
+    {
+      kind: "question",
+      id: "q-compartment",
+      phase: "Left leg",
+      prompt: "Tell me about his left leg. What is going on, how do you confirm it, and what do you do?",
+      seconds: 75,
+      modelAnswer: [
+        "Acute compartment syndrome of the lower leg. Pain on passive stretch and a tense compartment are the early signs.",
+        "A pulse does not exclude it. Loss of pulse is a late sign.",
+        "Diagnosis is clinical. Measure compartment pressure if the exam is unclear.",
+        "A difference between diastolic pressure and compartment pressure under 30 mmHg supports the diagnosis. Here it is about 10.",
+        "Call orthopedics now for fasciotomy.",
+        "Remove tight dressings. Keep the leg at heart level, not elevated. No ice.",
+        "Treat pain. Tetanus prophylaxis.",
+      ],
+      rubric: ["cr-a2", "cr-m3"],
+      choices: [
+        {
+          id: "c-ortho",
+          label: "I diagnosed compartment syndrome, confirmed a delta pressure of about 10 mmHg, kept the leg at heart level and called orthopedics for fasciotomy now.",
+          next: "q-calcium",
+          quality: "strong",
+          feedback:
+            "Strong. A delta pressure under 30 mmHg with these signs is diagnostic. Every hour of delay increases muscle necrosis and potassium release.",
+        },
+        {
+          id: "c-elevate",
+          label: "I elevated the leg on pillows with ice and planned to reassess in 2 hours.",
+          next: "s-elevate",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Elevation lowers arterial inflow and worsens compartment perfusion. Ice adds injury. Compartment syndrome is a surgical emergency.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-elevate",
+      phase: "Two hours later",
+      text: "His foot is numb and the toes will not move. The orthopedic surgeon says much of the anterior compartment may already be dead. He takes him to the operating room.",
+      next: "q-calcium",
+    },
+    {
+      kind: "question",
+      id: "q-calcium",
+      phase: "Electrolytes",
+      prompt: "After treatment his ionized calcium is 0.94 and phosphate 2.6. The nurse asks if she should give more calcium. What do you say, and what will you monitor?",
+      seconds: 60,
+      modelAnswer: [
+        "Do not treat asymptomatic hypocalcemia in rhabdomyolysis. Calcium deposits in damaged muscle and can cause rebound hypercalcemia later.",
+        "Give calcium only for ECG changes from hyperkalemia, tetany, seizures or arrhythmia.",
+        "Potassium, calcium, phosphate and glucose every 2 hours at first.",
+        "CK, creatinine and urine output trends.",
+        "Continuous cardiac monitoring.",
+      ],
+      rubric: ["cr-m4"],
+      next: "s-oliguria",
+    },
+    {
+      kind: "say",
+      id: "s-oliguria",
+      phase: "Four hours later",
+      text:
+        "He is back from the operating room after a four compartment fasciotomy. He has had 7 L of fluid. Urine output is 20 mL/h for 2 hours. Potassium is 6.6 and creatinine 312. He has crackles at both bases and SpO2 is 91 percent on 4 L.",
+      next: "q-dialysis",
+    },
+    {
+      kind: "question",
+      id: "q-dialysis",
+      phase: "Deterioration",
+      prompt: "What is happening now and what is your plan?",
+      seconds: 75,
+      modelAnswer: [
+        "Oliguric acute kidney injury from rhabdomyolysis with fluid overload and recurrent hyperkalemia.",
+        "Stop the high rate fluids. More fluid now only worsens pulmonary edema.",
+        "Temporize the potassium again with insulin, dextrose and salbutamol.",
+        "Urgent nephrology consult for hemodialysis: refractory hyperkalemia, volume overload and oliguria are indications.",
+        "Oxygen and noninvasive ventilation if needed while dialysis is arranged.",
+        "Admit to ICU.",
+      ],
+      rubric: ["cr-r2", "cr-d1"],
+      choices: [
+        {
+          id: "c-dialysis",
+          label: "I stopped the fluids, temporized the potassium, called nephrology for urgent dialysis and admitted him to ICU.",
+          next: "q-dispo",
+          quality: "strong",
+          feedback:
+            "Strong. Once the kidneys stop responding, fluid becomes harmful. Refractory hyperkalemia with overload and oliguria is an indication for urgent dialysis.",
+        },
+        {
+          id: "c-more-fluid",
+          label: "I gave another 2 L bolus to push his urine output up, with furosemide 80 mg IV.",
+          next: "s-more-fluid",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. He is already overloaded with an established kidney injury. More fluid will not restore urine output. Diuretics do not change the course of myoglobin induced kidney injury.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-more-fluid",
+      phase: "One hour later",
+      text: "SpO2 falls to 84 percent and he is working hard to breathe. You start BiPAP and call nephrology, who arrange urgent dialysis in the ICU.",
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Wrap up",
+      prompt: "What else do you need to complete before you hand him over to the ICU?",
+      seconds: 60,
+      modelAnswer: [
+        "Structured handover: mechanism, crush duration, potassium treatments with times, fluids in and out, fasciotomy findings.",
+        "Tetanus toxoid if not up to date.",
+        "Hold ramipril and other nephrotoxins. Renally dose all drugs.",
+        "This is a workplace injury in Ontario. Complete the WSIB health professional report.",
+        "Talk with his family about the kidney injury, dialysis and possible loss of leg function.",
+      ],
+      rubric: ["cr-c1", "cr-p1"],
+      next: "end",
+    },
+    { kind: "end", id: "end", text: "He starts dialysis in the ICU. That is the end of the case." },
+  ],
+  rubric: [
+    {
+      id: "cr-a1",
+      competency: "assessment",
+      text: "Anticipates crush syndrome from prolonged entrapment: rhabdomyolysis, hyperkalemia, acidosis and kidney injury.",
+      points: 2,
+      teaching: "Release of a crushed limb floods the circulation with potassium, myoglobin and acid. The danger often starts after rescue.",
+      source: "sever",
+    },
+    {
+      id: "cr-l1",
+      competency: "leadership",
+      text: "Prioritizes the hyperkalemic ECG while delegating the primary survey, access and monitoring.",
+      points: 1,
+      teaching: "Assign tasks in parallel. The ECG is the most urgent finding.",
+      source: "atls",
+    },
+    {
+      id: "cr-r1",
+      competency: "resuscitation",
+      text: "Gives calcium chloride 1 g IV or calcium gluconate 3 g IV first for hyperkalemia with a wide QRS.",
+      points: 3,
+      critical: true,
+      teaching: "Calcium stabilizes the myocardium within minutes. It must come first when the QRS is wide.",
+      source: "sever",
+    },
+    {
+      id: "cr-m1",
+      competency: "management",
+      text: "Shifts potassium with insulin 10 units IV and 25 g dextrose plus nebulized salbutamol 10 to 20 mg, and monitors glucose.",
+      points: 2,
+      teaching: "Insulin and beta agonists act within 15 to 30 minutes. Hypoglycemia is common in kidney injury, so consider 5 units of insulin or a follow on dextrose infusion and check glucose hourly.",
+      source: "sever",
+    },
+    {
+      id: "cr-m2",
+      competency: "management",
+      text: "Gives early high volume crystalloid targeting urine output of 200 to 300 mL/h.",
+      points: 3,
+      critical: true,
+      teaching: "Early fluid is the only proven step to prevent myoglobin kidney injury. Titrate to urine output.",
+      source: "bosch",
+    },
+    {
+      id: "cr-a2",
+      competency: "assessment",
+      text: "Diagnoses compartment syndrome clinically and uses a delta pressure under 30 mmHg to confirm when needed.",
+      points: 2,
+      teaching: "Pain with passive stretch is early. Pulses are usually present. Delta pressure is diastolic pressure minus compartment pressure.",
+      source: "mcqueen",
+    },
+    {
+      id: "cr-m3",
+      competency: "management",
+      text: "Calls orthopedics for urgent fasciotomy and keeps the limb at heart level.",
+      points: 3,
+      critical: true,
+      teaching: "Fasciotomy is the only treatment. Elevation reduces perfusion pressure in the compartment.",
+      source: "mcqueen",
+    },
+    {
+      id: "cr-m4",
+      competency: "management",
+      text: "Avoids treating asymptomatic hypocalcemia and monitors electrolytes every 2 hours.",
+      points: 1,
+      teaching: "Calcium given in rhabdomyolysis can deposit in muscle and cause rebound hypercalcemia in recovery.",
+      source: "bosch",
+    },
+    {
+      id: "cr-r2",
+      competency: "resuscitation",
+      text: "Recognizes oliguric kidney injury with fluid overload and stops aggressive fluids.",
+      points: 2,
+      teaching: "Fluid helps before the kidney fails. After that it causes pulmonary edema.",
+      source: "bosch",
+    },
+    {
+      id: "cr-d1",
+      competency: "disposition",
+      text: "Arranges urgent dialysis with nephrology and admits to ICU.",
+      points: 2,
+      teaching: "Refractory hyperkalemia, volume overload, severe acidosis and oliguria are indications for dialysis.",
+      source: "sever",
+    },
+    {
+      id: "cr-c1",
+      competency: "communication",
+      text: "Gives a structured handover with crush time, treatments with times and fluid balance.",
+      points: 1,
+      teaching: "Fluid in and out and the potassium trend guide the ICU plan.",
+      source: "atls",
+    },
+    {
+      id: "cr-p1",
+      competency: "professionalism",
+      text: "Completes the WSIB report for a workplace injury and gives tetanus prophylaxis.",
+      points: 1,
+      teaching: "In Ontario, treating health professionals report workplace injuries to the WSIB.",
+      source: "wsib",
+    },
+  ],
+  sources: [
+    {
+      id: "bosch",
+      citation: "Bosch X, Poch E, Grau JM. Rhabdomyolysis and acute kidney injury. N Engl J Med. 2009.",
+    },
+    {
+      id: "sever",
+      citation: "Sever MS, Vanholder R, et al. Recommendations for the management of crush victims in mass disasters. Nephrol Dial Transplant. 2012.",
+    },
+    {
+      id: "mcqueen",
+      citation: "McQueen MM, Court-Brown CM. Compartment monitoring in tibial fractures. The pressure threshold for decompression. J Bone Joint Surg Br. 1996.",
+    },
+    {
+      id: "atls",
+      citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
+    },
+    {
+      id: "wsib",
+      citation: "Workplace Safety and Insurance Board of Ontario. Health professional's report (Form 8).",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

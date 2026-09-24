@@ -1,0 +1,459 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const olderWomanBroughtBySon: OralCase = {
+  id: "older-woman-brought-by-son",
+  title: "Brought in by her son after a fall",
+  blueprint: "geri",
+  alsoCovers: ["ethics", "trauma"],
+  summary: "An 82 year old woman is brought in by her son with a sore arm after what he describes as a fall at home.",
+  durationMinutes: 15,
+  stem:
+    "You are the emergency physician at a 180 bed community hospital in Ontario. A social worker and a geriatric emergency management nurse are on site until 20:00. Security is available. " +
+    "It is 16:30 on a weekday. Margaret Doyle is 82 years old. She lives in her own house with her 54 year old son Kevin, who says he is her caregiver. " +
+    "Kevin says she fell in the kitchen two days ago and hurt her left arm. He brought her in because the swelling is not going away. " +
+    "Triage vitals: heart rate 98, blood pressure 108/64, respiratory rate 18, SpO2 96 percent on room air, temperature 36.9, capillary glucose 5.9 mmol/L. CTAS 3. " +
+    "The triage nurse says: 'Something is off. He answers every question for her and she will not look at me. She smells like she has not been washed in a while.'",
+  findings: [
+    {
+      id: "general",
+      label: "General appearance",
+      result: "Thin and quiet. Dry mouth. Hair matted. Clothes soiled with urine. She glances at Kevin before answering. Weight 44 kg. Her family doctor's record from 8 months ago says 53 kg.",
+    },
+    {
+      id: "arm",
+      label: "Left arm",
+      result: "Swelling and tenderness over the mid ulnar shaft. No wound. Neurovascularly intact. No elbow or wrist tenderness.",
+    },
+    {
+      id: "skin",
+      label: "Skin survey",
+      result:
+        "Oval bruises on the inner aspect of both upper arms, some purple and some yellow green. A linear bruise across the left thigh. " +
+        "Stage 2 pressure injury over the sacrum. No bruises on the elbows, knees or face.",
+    },
+    {
+      id: "head",
+      label: "Head and neuro exam",
+      result: "Small healing bruise behind the right ear. GCS 15. No focal deficit. Oriented to person and place, not date.",
+    },
+    {
+      id: "cognition",
+      label: "Cognitive screen",
+      result: "Montreal Cognitive Assessment 21 out of 30. Loses points on delayed recall and clock drawing. Attention intact. No sign of delirium on the 4AT.",
+    },
+    {
+      id: "xray",
+      label: "Forearm X ray",
+      result: "Transverse nondisplaced fracture of the mid shaft of the left ulna. Radius intact. No elbow or wrist injury. Early callus is not seen.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Sodium 151 mmol/L. Potassium 3.6 mmol/L. Creatinine 142 µmol/L. Her baseline from 8 months ago was 78. Urea 18.4 mmol/L. Albumin 28 g/L. Hemoglobin 108 g/L. CK 410 U/L. Glucose 5.8 mmol/L.",
+    },
+    {
+      id: "ct-head",
+      label: "CT head",
+      result: "No intracranial hemorrhage. Moderate generalized atrophy.",
+    },
+    {
+      id: "meds",
+      label: "Medications",
+      result: "Pharmacy records show donepezil 10 mg, amlodipine 5 mg and vitamin D. The donepezil has not been refilled in 4 months.",
+    },
+    {
+      id: "private",
+      label: "History from Margaret alone",
+      result:
+        "With Kevin out of the room she says quietly: 'He gets angry when he drinks. He grabs me hard. He pushed me into the counter. He has my bank card. Please do not get him in trouble. He is all I have.' " +
+        "She says she is scared to go home tonight, but she does not want the police.",
+    },
+    {
+      id: "son",
+      label: "Kevin",
+      result: "He smells of alcohol. He says he has been off work for a year. He says, 'I have power of attorney. I decide where she goes. We are leaving once the cast is on.'",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "The room",
+      text: "Margaret sits on the stretcher with her arm in her lap. Kevin stands between you and her, arms crossed.",
+      next: "q-assess",
+    },
+    {
+      kind: "question",
+      id: "q-assess",
+      phase: "First impressions",
+      prompt: "What features in this presentation raise your concern, and how do you begin?",
+      seconds: 75,
+      modelAnswer: [
+        "Delay in presentation. A history given only by the caregiver. A patient who looks to him before answering.",
+        "Poor hygiene, weight loss and a pressure injury suggest neglect.",
+        "Grip shaped bruises on the inner arms and bruises that look to be of different ages suggest physical abuse.",
+        "A mid shaft ulnar fracture fits a defensive injury better than a fall.",
+        "Begin with a full medical assessment. Plan to interview her alone.",
+        "Consider cognitive impairment and dependence as risk factors.",
+      ],
+      rubric: ["ea-a1"],
+      next: "q-alone",
+    },
+    {
+      kind: "question",
+      id: "q-alone",
+      phase: "Private interview",
+      prompt: "Kevin says he needs to stay because she gets confused. How do you get time alone with her, and what do you ask?",
+      seconds: 75,
+      modelAnswer: [
+        "Make it routine and neutral: 'We see every patient on their own for part of the visit.'",
+        "Ask Kevin to wait in the family room. Involve the nurse or social worker.",
+        "Use direct simple questions, such as those in the Elder Abuse Suspicion Index.",
+        "Ask if anyone has hurt her, made her afraid, taken her money or kept her from food, medicine or care.",
+        "Ask what she wants and whether she feels safe going home.",
+        "Use a professional interpreter if needed. Never the family member.",
+      ],
+      rubric: ["ea-c1", "ea-a2"],
+      choices: [
+        {
+          id: "c-routine",
+          label: "I told Kevin we see every patient alone for part of the visit, asked him to wait outside, and asked her directly and gently about safety.",
+          next: "q-medical",
+          quality: "strong",
+          feedback:
+            "Strong. Framing it as routine avoids confrontation. Direct, specific questions are more likely to get a disclosure than vague ones. She told you what is happening.",
+        },
+        {
+          id: "c-together",
+          label: "I took the history with Kevin in the room so he could help with her memory.",
+          next: "s-together",
+          quality: "partial",
+          feedback:
+            "Partial. Collateral from a caregiver can help. But when abuse is possible, the suspected person must not be present. She will not disclose in front of him.",
+        },
+        {
+          id: "c-confront",
+          label: "I told Kevin that her injuries looked like abuse and asked him to explain them.",
+          next: "s-confront",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Confronting the suspected abuser before you have a safety plan can escalate risk to the patient. It may lead him to remove her. First make her safe and hear her story.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-together",
+      phase: "The history",
+      text: "Margaret says only, 'I fell. I am clumsy.' Later the nurse walks Kevin to the cafeteria and you speak to Margaret alone. She tells you what has been happening.",
+      next: "q-medical",
+    },
+    {
+      kind: "say",
+      id: "s-confront",
+      phase: "Reaction",
+      text: "Kevin shouts that you are accusing him and starts to help Margaret off the stretcher. Security arrives and he agrees to wait outside. Margaret is crying. Later, alone, she tells you what has been happening.",
+      next: "q-medical",
+    },
+    {
+      kind: "question",
+      id: "q-medical",
+      phase: "Medical assessment",
+      prompt: "What medical assessment and treatment does she need today?",
+      seconds: 75,
+      modelAnswer: [
+        "CT head. She is over 65 with a possible head injury and a bruise behind the ear.",
+        "Forearm X ray. Consider targeted films for other painful areas.",
+        "Hypernatremia and acute kidney injury from poor intake. Correct sodium slowly, no more than about 10 mmol/L in 24 hours.",
+        "Weight loss, anemia and low albumin suggest neglect and malnutrition.",
+        "Splint the ulnar fracture. Analgesia with acetaminophen and a low dose opioid if needed.",
+        "Wound care for the pressure injury. Screen for delirium and assess cognition.",
+        "Document injuries with a body map, measurements and photographs with her consent.",
+      ],
+      rubric: ["ea-m1", "ea-m2"],
+      next: "q-decision",
+    },
+    {
+      kind: "question",
+      id: "q-decision",
+      phase: "Her decision",
+      prompt: "Margaret says she is afraid to go home but does not want the police called. You believe this is abuse. Do you have to report it? What do you do?",
+      seconds: 90,
+      modelAnswer: [
+        "Assess her capacity for this decision. A MoCA of 21 does not by itself mean she is incapable.",
+        "In Ontario there is no general duty to report abuse of a capable adult living in the community.",
+        "If she is capable, respect her choice about police. Keep the door open.",
+        "Privacy law allows disclosure without consent when needed to reduce a significant risk of serious bodily harm.",
+        "Offer admission. She has medical reasons to stay and it gives a safe place tonight.",
+        "Involve social work and the geriatric emergency management nurse. Start a safety plan.",
+      ],
+      rubric: ["ea-p1", "ea-p2", "ea-d1"],
+      choices: [
+        {
+          id: "c-respect",
+          label: "I assessed her capacity, found her capable for this decision, respected her wish not to call police and admitted her for her medical problems with social work involved.",
+          next: "s-son",
+          quality: "strong",
+          feedback:
+            "Strong. Reporting abuse of a capable community dwelling adult in Ontario is by consent. Admission is justified by hypernatremia, kidney injury and the fracture. It also gives her safety and time.",
+        },
+        {
+          id: "c-report",
+          label: "I told her I am required by law to report elder abuse and called the police.",
+          next: "s-report",
+          quality: "partial",
+          feedback:
+            "Partial. Your wish to protect her is right. But Ontario has no mandatory reporting for capable older adults in the community. Mandatory reporting applies in long term care and retirement homes. Disclosure without consent needs a significant risk of serious bodily harm, and admission already reduces that risk. Overriding a capable person damages trust.",
+        },
+        {
+          id: "c-home",
+          label: "I felt she was capable, so I splinted her arm and discharged her home with Kevin and a follow up with her family doctor.",
+          next: "s-home",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. She told you she is afraid to go home. She also has hypernatremia, kidney injury and a pressure injury. Discharging her with the suspected abuser ignores both medical and safety risks.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-report",
+      phase: "An hour later",
+      text: "Margaret is upset and says she will deny everything. The social worker helps rebuild the conversation. Margaret agrees to stay in hospital overnight.",
+      next: "s-son",
+    },
+    {
+      kind: "say",
+      id: "s-home",
+      phase: "At the door",
+      text: "The nurse stops you. Margaret whispered to her that she does not want to leave with Kevin. Her sodium and creatinine have also come back. You bring her back to a stretcher and plan admission.",
+      next: "s-son",
+    },
+    {
+      kind: "say",
+      id: "s-son",
+      phase: "Escalation",
+      text:
+        "Kevin comes back to the bedside. He smells of alcohol and is loud. He waves a paper and says, 'I have power of attorney. I decide where she goes. We are leaving now.'",
+      next: "q-son",
+    },
+    {
+      kind: "question",
+      id: "q-son",
+      phase: "Conflict",
+      prompt: "How do you respond to Kevin?",
+      seconds: 75,
+      modelAnswer: [
+        "Stay calm. Keep a safe distance. Ask security to stand by.",
+        "Read the document. A power of attorney for personal care acts only when she is incapable of the decision.",
+        "Margaret is capable. She decides where she goes.",
+        "A power of attorney for property does not give authority over her health care.",
+        "Do not share her disclosure with him.",
+        "If she becomes incapable and is at risk of serious harm from the attorney, the Office of the Public Guardian and Trustee can investigate.",
+      ],
+      rubric: ["ea-c2", "ea-p3"],
+      choices: [
+        {
+          id: "c-calm",
+          label: "I stayed calm with security nearby, read the document, explained that Margaret is capable and makes her own decisions, and did not share what she told me.",
+          next: "q-law",
+          quality: "strong",
+          feedback:
+            "Strong. A power of attorney for personal care only takes effect when the person is incapable. Protecting her disclosure keeps her safe.",
+        },
+        {
+          id: "c-defer",
+          label: "I agreed that as her power of attorney he could decide, and prepared her discharge.",
+          next: "s-defer",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. A capable adult makes her own decisions. The attorney has no authority while she is capable. Sending her home with him puts her at risk.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-defer",
+      phase: "The charge nurse",
+      text: "The charge nurse questions the plan and reminds you that Margaret said she is afraid. You speak to Margaret again. She confirms she wants to stay. Kevin leaves with security.",
+      next: "q-law",
+    },
+    {
+      kind: "question",
+      id: "q-law",
+      phase: "Legal framework",
+      prompt: "The resident asks you when reporting elder abuse is mandatory in Ontario, and what options exist if Margaret becomes incapable. What do you teach?",
+      seconds: 75,
+      modelAnswer: [
+        "Mandatory: anyone except a resident, including physicians, must report suspected abuse or neglect of a long term care resident to the Director at the Ministry of Long-Term Care under the Fixing Long-Term Care Act. The duty applies even if the information is confidential.",
+        "The Retirement Homes Act sets a similar duty to report harm, abuse, neglect or misuse of a resident's money to the Registrar of the Retirement Homes Regulatory Authority.",
+        "Community dwelling capable adults: disclosure with consent, or without consent only to reduce a significant risk of serious bodily harm.",
+        "Incapable adults at risk of serious adverse effects: the Office of the Public Guardian and Trustee can investigate under the Substitute Decisions Act.",
+        "The Public Guardian and Trustee also investigates when a person is incapable of managing property and serious adverse effects, such as financial abuse, are occurring or may occur. While Margaret is capable, she can revoke a power of attorney herself.",
+        "Document carefully and objectively.",
+      ],
+      rubric: ["ea-p4"],
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition",
+      prompt: "She is being admitted. What does your plan and handover include?",
+      seconds: 60,
+      modelAnswer: [
+        "Admit to medicine or geriatrics for hypernatremia, kidney injury, fracture and malnutrition.",
+        "Handover of the disclosure, her wishes, her capacity assessment and the safety concerns.",
+        "Social work for a safety plan, housing options, finances and community elder abuse resources.",
+        "Restrict visitors if she wishes.",
+        "Orthopedic follow up for the ulna. Wound care for the pressure injury.",
+        "Inform her family doctor with her consent.",
+      ],
+      rubric: ["ea-d2", "ea-l1"],
+      next: "end",
+    },
+    { kind: "end", id: "end", text: "Margaret is admitted to the geriatric unit. That is the end of the case." },
+  ],
+  rubric: [
+    {
+      id: "ea-a1",
+      competency: "assessment",
+      text: "Identifies red flags for physical abuse and neglect: delay, inconsistent history, bruises of different ages, grip marks, weight loss and poor hygiene.",
+      points: 2,
+      teaching: "Bruises on the inner arms, the trunk and in patterns are more concerning than bruises on bony prominences from falls. Bruise colour is a poor guide to age, so document without dating.",
+      source: "lachs",
+    },
+    {
+      id: "ea-c1",
+      competency: "communication",
+      text: "Interviews the patient alone using a routine, non accusing approach.",
+      points: 3,
+      critical: true,
+      teaching: "Victims rarely disclose in front of the person harming them. Make private time a routine part of care.",
+      source: "easi",
+    },
+    {
+      id: "ea-a2",
+      competency: "assessment",
+      text: "Asks direct questions about harm, fear, money and neglect.",
+      points: 1,
+      teaching: "The Elder Abuse Suspicion Index uses short direct questions validated in primary care.",
+      source: "easi",
+    },
+    {
+      id: "ea-m1",
+      competency: "management",
+      text: "Completes a full medical assessment including CT head, fracture care, sodium and kidney function.",
+      points: 2,
+      teaching: "Abuse and neglect cause real medical illness. Treat it and document it.",
+      source: "lachs",
+    },
+    {
+      id: "ea-m2",
+      competency: "management",
+      text: "Documents injuries with a body map, measurements and photographs with consent.",
+      points: 1,
+      teaching: "Objective documentation supports later decisions and any legal process.",
+      source: "lachs",
+    },
+    {
+      id: "ea-p1",
+      competency: "professionalism",
+      text: "Assesses her capacity for the specific decision rather than assuming incapacity from cognitive screening.",
+      points: 3,
+      critical: true,
+      teaching: "Capacity is decision specific. She must understand the information and appreciate the consequences.",
+      source: "hcca",
+    },
+    {
+      id: "ea-p2",
+      competency: "professionalism",
+      text: "States that Ontario has no general mandatory reporting for capable community dwelling adults and respects her choice, while knowing the serious harm exception.",
+      points: 2,
+      teaching: "Privacy law permits disclosure without consent only to reduce a significant risk of serious bodily harm.",
+      source: "phipa",
+    },
+    {
+      id: "ea-d1",
+      competency: "disposition",
+      text: "Admits her for medical reasons and safety rather than discharging her with the suspected abuser.",
+      points: 3,
+      critical: true,
+      teaching: "Admission is a safe disposition that treats her illness and buys time for planning.",
+      source: "lachs",
+    },
+    {
+      id: "ea-c2",
+      competency: "communication",
+      text: "De-escalates the son with security support and does not share her disclosure.",
+      points: 1,
+      teaching: "Keep yourself and the patient safe. Disclosure to the suspected abuser raises risk.",
+      source: "lachs",
+    },
+    {
+      id: "ea-p3",
+      competency: "professionalism",
+      text: "Explains that a power of attorney for personal care acts only when the person is incapable.",
+      points: 2,
+      teaching: "A capable adult makes her own decisions, whatever documents a relative carries.",
+      source: "sda",
+    },
+    {
+      id: "ea-p4",
+      competency: "professionalism",
+      text: "Describes mandatory reporting in long term care and retirement homes and the role of the Public Guardian and Trustee for incapable adults.",
+      points: 2,
+      teaching: "Reports go to the Director for long term care and to the Registrar for retirement homes. The Public Guardian and Trustee investigates serious adverse effects for adults who are incapable.",
+      source: "fltca",
+    },
+    {
+      id: "ea-d2",
+      competency: "disposition",
+      text: "Hands over the disclosure, her wishes, capacity and safety plan to the admitting team and social work.",
+      points: 1,
+      teaching: "Safety plans fail when the next team does not know the story.",
+      source: "lachs",
+    },
+    {
+      id: "ea-l1",
+      competency: "leadership",
+      text: "Engages social work and the geriatric emergency management nurse early.",
+      points: 1,
+      teaching: "Elder abuse care is a team task. Specialist nurses and social work know local resources.",
+      source: "lachs",
+    },
+  ],
+  sources: [
+    {
+      id: "lachs",
+      citation: "Lachs MS, Pillemer KA. Elder abuse. N Engl J Med. 2015.",
+    },
+    {
+      id: "easi",
+      citation: "Yaffe MJ, et al. Development and validation of a tool to improve physician identification of elder abuse: the Elder Abuse Suspicion Index. J Elder Abuse Negl. 2008.",
+    },
+    {
+      id: "hcca",
+      citation: "Ontario. Health Care Consent Act, 1996.",
+    },
+    {
+      id: "phipa",
+      citation: "Ontario. Personal Health Information Protection Act, 2004.",
+    },
+    {
+      id: "sda",
+      citation: "Ontario. Substitute Decisions Act, 1992.",
+    },
+    {
+      id: "fltca",
+      citation: "Ontario. Fixing Long-Term Care Act, 2021, section 28, and Retirement Homes Act, 2010, section 75.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

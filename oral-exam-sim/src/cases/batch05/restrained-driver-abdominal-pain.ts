@@ -1,0 +1,441 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const restrainedDriverAbdominalPain: OralCase = {
+  id: "restrained-driver-abdominal-pain",
+  title: "Restrained driver with a sore belly",
+  blueprint: "trauma",
+  alsoCovers: ["obgyn"],
+  summary: "A 29 year old woman walks into the ED after a frontal highway collision with lower abdominal and back pain.",
+  durationMinutes: 15,
+  stem:
+    "You are the emergency physician at a 250 bed community hospital in Ontario. CT, a general surgeon, an obstetrician and an operating room are available 24 hours. " +
+    "The lead trauma hospital is 45 minutes away by land. " +
+    "Priya Raman is 29 years old and about 62 kg. She was the belted driver in a frontal collision at about 80 km/h on the highway 90 minutes ago. The airbag deployed. " +
+    "She self extricated and was brought in by ambulance. " +
+    "Triage vitals: heart rate 104, blood pressure 118/74, respiratory rate 20, SpO2 98 percent on room air, temperature 36.8, GCS 15. CTAS 2. " +
+    "The nurse says: 'She has a bruise across her belly from the belt and her lower back is sore. She is worried because her period is late.'",
+  findings: [
+    {
+      id: "abdomen",
+      label: "Abdominal exam",
+      result:
+        "Transverse band of bruising across the lower abdomen below the umbilicus, from one iliac crest to the other. Tender in the lower abdomen and periumbilical area with mild voluntary guarding. No rebound. Bowel sounds reduced.",
+    },
+    {
+      id: "back",
+      label: "Spine and neuro exam",
+      result: "Midline tenderness at the thoracolumbar junction around L1 to L2. No step off. Normal power, sensation and reflexes in both legs. No saddle anesthesia.",
+    },
+    {
+      id: "efast",
+      label: "eFAST",
+      result: "Small anechoic stripe in the pelvis behind the uterus. Morison pouch and splenorenal views negative. No pericardial effusion. Lung sliding on both sides.",
+    },
+    {
+      id: "hcg",
+      label: "Pregnancy test",
+      result: "Urine hCG positive. Serum quantitative hCG 61,000 IU/L. Last menstrual period about 9 weeks ago.",
+    },
+    {
+      id: "pelvic-us",
+      label: "Bedside pelvic ultrasound",
+      result: "Single intrauterine pregnancy. Crown rump length consistent with 9 weeks. Fetal heart rate 166.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Hemoglobin 129 g/L, then 121 g/L at 2 hours. White cells 13.8 x 10^9/L. Platelets 240 x 10^9/L. INR 1.0. Lipase 42 U/L. Lactate 2.2 mmol/L. Creatinine 64 µmol/L. Blood group O negative. Antibody screen negative.",
+    },
+    {
+      id: "urine",
+      label: "Urinalysis",
+      result: "Microscopic hematuria, 10 to 20 red cells per high power field.",
+    },
+    {
+      id: "ct",
+      label: "CT abdomen and pelvis with IV contrast",
+      result:
+        "Small to moderate free fluid in the pelvis and between bowel loops. No liver, spleen, kidney or pancreatic injury. Stranding of the small bowel mesentery with thickening of a segment of distal ileum. No free air. " +
+        "Horizontal fracture through the L2 vertebral body and posterior elements with widening of the interspinous space. Consistent with a flexion distraction injury.",
+    },
+    {
+      id: "reassess",
+      label: "Reassessment at 5 hours",
+      result: "Heart rate 124. Blood pressure 108/66. Temperature 38.4. Diffuse abdominal tenderness with rigidity and rebound. White cells 18.2 x 10^9/L. Lactate 3.6 mmol/L.",
+    },
+    {
+      id: "history",
+      label: "AMPLE history",
+      result: "No allergies. Takes no medications. Healthy. No prior pregnancies. Last meal 4 hours before the crash. She did not know she was pregnant.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Resus",
+      text: "She is on a stretcher, holding her lower abdomen. She asks if the baby is okay. You have a nurse and a resident.",
+      next: "q-primary",
+    },
+    {
+      kind: "question",
+      id: "q-primary",
+      phase: "Primary survey",
+      prompt: "Take me through your initial assessment. What concerns you about the bruise on her belly?",
+      seconds: 90,
+      modelAnswer: [
+        "Structured primary survey. Two IVs. Monitor. Type and screen.",
+        "A seatbelt sign raises the risk of hollow viscus and mesenteric injury several fold.",
+        "It is also linked to lumbar flexion distraction fractures. Spinal precautions and log roll.",
+        "eFAST now. Pregnancy test in every woman of childbearing age.",
+        "Tachycardia at 104 may be early hemorrhage or peritonitis. Repeat vitals and exam often.",
+        "Analgesia: fentanyl 50 mcg IV titrated.",
+      ],
+      rubric: ["sb-a1", "sb-a2"],
+      next: "q-imaging",
+    },
+    {
+      kind: "question",
+      id: "q-imaging",
+      phase: "Imaging",
+      prompt: "Her hCG is positive and a 9 week pregnancy is seen on ultrasound. She asks you not to do a CT because of the baby. What do you recommend?",
+      seconds: 90,
+      modelAnswer: [
+        "The best care for the fetus is the best care for the mother.",
+        "CT abdomen and pelvis with IV contrast is indicated. Do not withhold it.",
+        "Fetal dose from one abdominal pelvic CT is usually well under 50 mGy, below the level linked to fetal harm.",
+        "Explain the small risk honestly and the larger risk of a missed bowel or spine injury.",
+        "Iodinated contrast is safe in pregnancy.",
+        "Document her informed decision.",
+      ],
+      rubric: ["sb-m1", "sb-c1", "sb-p1"],
+      choices: [
+        {
+          id: "c-ct",
+          label: "I explained that the fetal dose is well below the harm threshold and did the CT with IV contrast after she agreed.",
+          next: "q-ct",
+          quality: "strong",
+          feedback:
+            "Strong. Fetal harm is not expected below about 50 mGy, and one abdominal CT is usually much less. A missed injury is a far bigger risk to both. Informed consent in plain language was the key skill here.",
+        },
+        {
+          id: "c-mri",
+          label: "I booked an MRI instead to avoid radiation.",
+          next: "s-mri",
+          quality: "partial",
+          feedback:
+            "Partial. MRI has no radiation. But it is slow, not available on demand in most EDs, and poor for bowel injury in trauma. CT is the standard for the injured pregnant patient.",
+        },
+        {
+          id: "c-observe",
+          label: "I avoided CT and admitted her for observation with serial ultrasound.",
+          next: "s-no-ct",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Ultrasound does not rule out bowel, mesenteric or spinal injury. Avoiding needed imaging in pregnancy harms both patients. The examiner wanted a clear explanation of fetal dose.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-mri",
+      phase: "Radiology",
+      text: "The MRI is booked for tomorrow morning. The radiologist phones and recommends a CT now. You explain the risks to Priya again and she agrees.",
+      next: "q-ct",
+    },
+    {
+      kind: "say",
+      id: "s-no-ct",
+      phase: "Two hours later",
+      text: "The surgeon reviews her and asks why there is no CT with a seatbelt sign and back pain. You talk to Priya again about the fetal dose and she agrees to the scan.",
+      next: "q-ct",
+    },
+    {
+      kind: "question",
+      id: "q-ct",
+      phase: "CT result",
+      prompt: "Here is her CT. What do you think it shows, and what is your plan?",
+      seconds: 75,
+      modelAnswer: [
+        "Free fluid without a solid organ injury is a red flag for bowel or mesenteric injury.",
+        "Mesenteric stranding and bowel wall thickening support that.",
+        "L2 flexion distraction fracture. Keep spinal precautions. Consult spine.",
+        "Admit under general surgery for serial exams, or diagnostic laparoscopy.",
+        "Nothing by mouth. Repeat hemoglobin and lactate.",
+        "Do not discharge.",
+      ],
+      rubric: ["sb-a3", "sb-d1"],
+      choices: [
+        {
+          id: "c-surgery",
+          label: "I called general surgery for admission and serial exams or laparoscopy, kept spinal precautions and consulted spine for the L2 fracture.",
+          next: "q-rh",
+          quality: "strong",
+          feedback:
+            "Strong. Unexplained free fluid, mesenteric stranding and a seatbelt sign together suggest bowel injury. CT can miss early perforation. The flexion distraction fracture needs a spine surgeon.",
+        },
+        {
+          id: "c-obs-unit",
+          label: "I admitted her to the observation unit with a repeat CT in the morning.",
+          next: "s-obs",
+          quality: "partial",
+          feedback:
+            "Partial. Observation is right, but it must be under a surgeon who can examine her serially and operate. A repeat CT is not a substitute for repeated exams.",
+        },
+        {
+          id: "c-discharge",
+          label: "I thought the fluid was physiologic, gave her a lumbar brace and discharged her with follow up.",
+          next: "s-discharge",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Free fluid without solid organ injury after blunt trauma is not normal until proven otherwise. A flexion distraction fracture is often unstable. She needs admission under surgery.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-obs",
+      phase: "Night",
+      text: "The hospitalist admitting her asks why a surgeon is not following her. You call general surgery, who agree to take her.",
+      next: "q-rh",
+    },
+    {
+      kind: "say",
+      id: "s-discharge",
+      phase: "Before she leaves",
+      text: "The radiologist calls with the final report and recommends surgical review. You bring her back to a stretcher and call general surgery.",
+      next: "q-rh",
+    },
+    {
+      kind: "question",
+      id: "q-rh",
+      phase: "Pregnancy",
+      prompt: "She is O negative. What does the pregnancy change in your management?",
+      seconds: 60,
+      modelAnswer: [
+        "Rh immune globulin for every Rh negative, unsensitized pregnant trauma patient, within 72 hours.",
+        "Before 12 weeks SOGC accepts a minimum of 120 mcg. Many Canadian EDs stock and give 300 mcg, which is also correct.",
+        "Kleihauer Betke testing is for pregnancies beyond about 20 weeks to guide extra doses.",
+        "No fetal monitoring before viability. Document fetal heart activity.",
+        "Consult obstetrics.",
+        "Choose drugs that are safe in pregnancy.",
+      ],
+      rubric: ["sb-m2"],
+      next: "s-worse",
+    },
+    {
+      kind: "say",
+      id: "s-worse",
+      phase: "Five hours after arrival",
+      text:
+        "She is still in your department waiting for a bed. The nurse calls you. Her heart rate is 124 and temperature 38.4. Her abdomen is now rigid with rebound. White cells are 18.2. Lactate 3.6.",
+      next: "q-peritonitis",
+    },
+    {
+      kind: "question",
+      id: "q-peritonitis",
+      phase: "Deterioration",
+      prompt: "What has happened and what do you do?",
+      seconds: 75,
+      modelAnswer: [
+        "Peritonitis from a small bowel perforation.",
+        "Crystalloid bolus, analgesia, nothing by mouth.",
+        "Antibiotics now: ceftriaxone 2 g IV and metronidazole 500 mg IV. Safe in pregnancy.",
+        "Call the surgeon for laparotomy now. Peritonitis is a clinical diagnosis.",
+        "Do not delay for repeat CT.",
+      ],
+      rubric: ["sb-r1", "sb-l1"],
+      choices: [
+        {
+          id: "c-or",
+          label: "I gave fluids and ceftriaxone with metronidazole and called the surgeon for the operating room now.",
+          next: "q-counsel",
+          quality: "strong",
+          feedback:
+            "Strong. Peritonitis after a seatbelt injury means perforation until proven otherwise. The treatment is source control. Early antibiotics reduce infection and sepsis.",
+        },
+        {
+          id: "c-repeat-ct",
+          label: "I ordered a repeat CT to look for free air before calling the surgeon.",
+          next: "s-repeat-ct",
+          quality: "partial",
+          feedback:
+            "Partial. Free air on CT may be absent even with perforation. Peritonitis on exam is enough for the operating room. The repeat scan also adds fetal radiation for no gain.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-repeat-ct",
+      phase: "One hour later",
+      text: "The CT shows a small amount of free air. Her pressure is now 94/58. The surgeon asks why he was not called an hour ago. She goes to the operating room.",
+      next: "q-counsel",
+    },
+    {
+      kind: "question",
+      id: "q-counsel",
+      phase: "Communication",
+      prompt: "Before she goes to the operating room she asks you: 'Did the CT hurt my baby? Will the surgery cause a miscarriage?' What do you tell her?",
+      seconds: 75,
+      modelAnswer: [
+        "Sit down. Ask what she already understands.",
+        "The CT dose was well below the level linked to birth defects or pregnancy loss.",
+        "Surgery and anesthesia in the first trimester carry a small added risk of miscarriage.",
+        "The biggest risk to the pregnancy is untreated infection in her abdomen.",
+        "Obstetrics will follow her during and after surgery.",
+        "Check her understanding and offer to call her partner.",
+      ],
+      rubric: ["sb-c2"],
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Handover",
+      prompt: "Who needs to be involved in her ongoing care, and what do you hand over?",
+      seconds: 60,
+      modelAnswer: [
+        "General surgery for laparotomy and bowel repair.",
+        "Spine surgery for the L2 flexion distraction fracture. Spinal precautions until cleared.",
+        "Obstetrics for the pregnancy.",
+        "Rh immune globulin given, with the time.",
+        "Timeline: arrival, CT, antibiotics, change in exam.",
+        "Consider transfer to the lead trauma hospital if spine or surgical care exceeds local capacity.",
+      ],
+      rubric: ["sb-d2"],
+      next: "end",
+    },
+    { kind: "end", id: "end", text: "At laparotomy there is a perforation of the distal ileum, which is repaired. That is the end of the case." },
+  ],
+  rubric: [
+    {
+      id: "sb-a1",
+      competency: "assessment",
+      text: "Identifies the seatbelt sign as a marker of hollow viscus, mesenteric and lumbar spine injury.",
+      points: 2,
+      teaching: "A lap belt bruise increases the risk of bowel injury several fold. Look for a Chance type fracture at the same time.",
+      source: "east",
+    },
+    {
+      id: "sb-a2",
+      competency: "assessment",
+      text: "Tests for pregnancy early in a woman of childbearing age.",
+      points: 1,
+      teaching: "Pregnancy changes imaging counselling, drug choice and the need for Rh immune globulin.",
+      source: "sogc",
+    },
+    {
+      id: "sb-m1",
+      competency: "management",
+      text: "Proceeds with CT abdomen and pelvis with IV contrast despite pregnancy.",
+      points: 3,
+      critical: true,
+      teaching: "Maternal stabilization comes first. Fetal effects are not expected below about 50 mGy.",
+      source: "acog",
+    },
+    {
+      id: "sb-c1",
+      competency: "communication",
+      text: "Explains fetal radiation risk in plain language and obtains informed consent for CT.",
+      points: 2,
+      teaching: "Say the risk as a comparison: a small radiation dose against a missed injury that could harm both of them.",
+      source: "acog",
+    },
+    {
+      id: "sb-a3",
+      competency: "assessment",
+      text: "Interprets free fluid without solid organ injury plus mesenteric stranding as probable bowel or mesenteric injury.",
+      points: 3,
+      critical: true,
+      teaching: "CT is less sensitive for bowel injury. Unexplained free fluid needs a surgeon and serial exams.",
+      source: "east",
+    },
+    {
+      id: "sb-d1",
+      competency: "disposition",
+      text: "Admits under general surgery with spinal precautions and spine consultation rather than discharging.",
+      points: 2,
+      teaching: "Serial exams by the operating surgeon catch evolving peritonitis. A flexion distraction fracture is usually unstable.",
+      source: "atls",
+    },
+    {
+      id: "sb-m2",
+      competency: "management",
+      text: "Gives Rh immune globulin to the Rh negative pregnant trauma patient within 72 hours.",
+      points: 2,
+      teaching: "Abdominal trauma in an Rh negative pregnant patient warrants Rh immune globulin. Before 12 weeks a minimum of 120 mcg is enough and 300 mcg is also acceptable.",
+      source: "sogcrh",
+    },
+    {
+      id: "sb-r1",
+      competency: "resuscitation",
+      text: "Recognizes peritonitis and gives fluids, analgesia and pregnancy safe antibiotics without delay.",
+      points: 2,
+      teaching: "Ceftriaxone with metronidazole covers bowel flora and is acceptable in pregnancy.",
+      source: "atls",
+    },
+    {
+      id: "sb-l1",
+      competency: "leadership",
+      text: "Calls the surgeon for laparotomy based on the exam without waiting for repeat imaging.",
+      points: 3,
+      critical: true,
+      teaching: "Peritonitis after blunt trauma is an indication for laparotomy. Imaging should not delay source control.",
+      source: "atls",
+    },
+    {
+      id: "sb-c2",
+      competency: "communication",
+      text: "Addresses her fears about the CT and surgery honestly and checks her understanding.",
+      points: 1,
+      teaching: "Name the real risks and the bigger risk of not treating. Offer support people.",
+      source: "sogc",
+    },
+    {
+      id: "sb-d2",
+      competency: "disposition",
+      text: "Coordinates general surgery, spine and obstetrics and gives a timed handover.",
+      points: 1,
+      teaching: "Multi system injuries need one clear plan. The ED physician links the services.",
+      source: "atls",
+    },
+    {
+      id: "sb-p1",
+      competency: "professionalism",
+      text: "Documents the consent discussion about imaging in pregnancy.",
+      points: 1,
+      teaching: "A clear note of the risks discussed and her decision protects the patient and the physician.",
+      source: "acog",
+    },
+  ],
+  sources: [
+    {
+      id: "east",
+      citation: "Hoff WS, et al. Practice management guidelines for the evaluation of blunt abdominal trauma. Eastern Association for the Surgery of Trauma. J Trauma. 2002.",
+    },
+    {
+      id: "sogc",
+      citation: "Jain V, et al. Guidelines for the management of a pregnant trauma patient. SOGC Clinical Practice Guideline. J Obstet Gynaecol Can. 2015.",
+    },
+    {
+      id: "sogcrh",
+      citation: "Fung-Kee-Fung K, et al. Guideline No. 448: Prevention of Rh D alloimmunization. SOGC Clinical Practice Guideline. J Obstet Gynaecol Can. 2024.",
+      url: "https://www.jogc.com/article/S1701-2163(24)00260-3/abstract",
+    },
+    {
+      id: "acog",
+      citation: "American College of Obstetricians and Gynecologists. Committee Opinion 723. Guidelines for diagnostic imaging during pregnancy and lactation. 2017.",
+    },
+    {
+      id: "atls",
+      citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

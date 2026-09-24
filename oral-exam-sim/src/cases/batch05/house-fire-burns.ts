@@ -1,0 +1,489 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const houseFireBurns: OralCase = {
+  id: "house-fire-burns",
+  title: "Pulled from a basement fire",
+  blueprint: "trauma",
+  alsoCovers: ["enviro", "tox"],
+  summary: "A 46 year old man is carried out of a burning house by firefighters and brought to a regional hospital.",
+  durationMinutes: 15,
+  stem:
+    "You are the emergency physician at a 120 bed regional hospital in northern Ontario. There is an ICU, a general surgeon on call and CT. " +
+    "There is no burn unit. The regional burn centre is in Toronto, about 90 minutes away by Ornge fixed wing or helicopter. " +
+    "Hydroxocobalamin is stocked in the ED. " +
+    "Luc Thibodeau is 46 years old and about 80 kg. Firefighters pulled him from a basement fire about 50 minutes ago. He was found near a furnace room. " +
+    "Paramedics started a 16 gauge IV and gave 500 mL of Ringer lactate and 100 percent oxygen. " +
+    "Arrival vitals: heart rate 118, blood pressure 134/80, respiratory rate 30, SpO2 98 percent on a non rebreather, temperature 36.0, GCS 13, capillary glucose 9.1 mmol/L. CTAS 1. " +
+    "The nurse says: 'His voice is getting hoarse and he keeps coughing up black stuff.'",
+  findings: [
+    {
+      id: "airway",
+      label: "Airway",
+      result:
+        "Hoarse voice. Soot in the mouth and nares. Singed nasal hair and eyebrows. Swelling of the lips. Soft inspiratory stridor at rest. Carbonaceous sputum.",
+    },
+    {
+      id: "burns",
+      label: "Burn map",
+      result:
+        "Face and front of the neck: partial thickness, blistered, about 4 percent. Front of the chest and abdomen: full thickness, white and leathery, extending around both flanks, about 18 percent. " +
+        "Right arm: circumferential mixed partial and full thickness, about 9 percent. Left forearm and hand: partial thickness, about 4 percent. " +
+        "Upper back: red without blisters. Total partial and full thickness about 35 percent.",
+    },
+    {
+      id: "breathing",
+      label: "Breathing",
+      result: "Scattered wheeze. Equal air entry. Chest wall movement is shallow.",
+    },
+    {
+      id: "limbs",
+      label: "Right arm perfusion",
+      result: "Tense forearm. Capillary refill in the right fingers 4 seconds. Radial pulse faint by Doppler.",
+    },
+    {
+      id: "coox",
+      label: "Blood gas with co-oximetry",
+      result: "pH 7.16. PaCO2 38 mmHg. PaO2 310 mmHg on the non rebreather. Bicarbonate 13 mmol/L. Carboxyhemoglobin 24 percent. Methemoglobin 0.8 percent. Lactate 9.6 mmol/L.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result: "Hemoglobin 171 g/L. Sodium 141 mmol/L. Potassium 4.4 mmol/L. Creatinine 102 µmol/L. CK 640 U/L. Ethanol negative. Troponin normal.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Sinus tachycardia at 120. No ischemic changes. QTc 450 ms.",
+    },
+    {
+      id: "cxr",
+      label: "Chest X ray",
+      result: "No pneumothorax. Clear lung fields. Endotracheal tube, if placed, sits 4 cm above the carina.",
+    },
+    {
+      id: "secondary",
+      label: "Secondary survey",
+      result: "No signs of blunt trauma. Firefighters say he was lying on the floor, not trapped. No fall. Tetanus status unknown.",
+    },
+    {
+      id: "history",
+      label: "Collateral from his wife",
+      result: "Healthy. Smokes a pack a day. No medications. No allergies. He went down to the basement to check the furnace.",
+    },
+    {
+      id: "vent",
+      label: "Ventilator after intubation",
+      result: "Volume control 480 mL. Peak pressure 44 cm H2O. Plateau 38 cm H2O. SpO2 falling to 88 percent. End tidal CO2 rising to 58 mmHg.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Resus",
+      text: "He is sitting up, coughing and anxious. You have two nurses and a respiratory therapist. The burn is still smoking in places.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway",
+      prompt: "What is your priority, and what exactly will you do with his airway?",
+      seconds: 90,
+      modelAnswer: [
+        "Stop the burning process. Remove clothing and jewellery. Keep him warm.",
+        "Hoarseness, stridor, soot and facial burns mean inhalation injury with a closing airway.",
+        "Intubate early, before swelling makes it impossible. Most experienced operator.",
+        "Large tube, 8.0 or bigger, for bronchoscopy and secretions. Video laryngoscope.",
+        "Double set up with a cricothyrotomy kit and the neck marked.",
+        "Ketamine 1 to 2 mg/kg IV and rocuronium 1.2 mg/kg IV. Succinylcholine is safe in the first 24 hours.",
+        "Secure the tube with ties, not tape on burned skin.",
+      ],
+      rubric: ["bu-r1", "bu-a1"],
+      choices: [
+        {
+          id: "c-early",
+          label: "I intubated him now with an 8.0 tube by video laryngoscopy, with a cricothyrotomy kit open and the neck marked.",
+          next: "q-tox",
+          quality: "strong",
+          feedback:
+            "Strong. Stridor and hoarseness after smoke exposure mean the airway will swell more over the next hours, especially with fluid resuscitation. A large tube allows bronchoscopy and clearance of casts.",
+        },
+        {
+          id: "c-observe",
+          label: "I kept him on the non rebreather, gave nebulized epinephrine and planned to reassess in an hour.",
+          next: "s-late-airway",
+          quality: "partial",
+          feedback:
+            "Partial. Nebulized epinephrine may buy minutes but does not change the course. Airway edema peaks over 12 to 24 hours and fluid makes it worse. A long transfer with a threatened airway is a trap.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-late-airway",
+      phase: "Forty minutes later",
+      text:
+        "His stridor is louder and his lips are swollen shut. The glottis is a slit on video laryngoscopy. You pass a 6.5 tube on the second attempt. The burn centre asks why it is so small.",
+      next: "q-tox",
+    },
+    {
+      kind: "question",
+      id: "q-tox",
+      phase: "Smoke",
+      prompt: "His gas shows carboxyhemoglobin 24 percent and lactate 9.6 mmol/L. What does this mean and what do you give?",
+      seconds: 75,
+      modelAnswer: [
+        "Carbon monoxide poisoning. SpO2 is falsely normal.",
+        "A lactate this high after an enclosed space fire suggests cyanide poisoning as well. A lactate of 10 or more is a classic marker, and many treat from about 8 with acidosis or altered mental status.",
+        "100 percent oxygen through the tube.",
+        "Hydroxocobalamin 5 g IV over 15 minutes. A second 5 g dose can be given.",
+        "Draw labs first. It turns plasma and urine red and interferes with colorimetric tests and co-oximetry.",
+        "Hyperbaric oxygen is not practical for a burned, unstable patient needing burn centre care.",
+      ],
+      rubric: ["bu-a2", "bu-m1"],
+      choices: [
+        {
+          id: "c-hydroxo",
+          label: "I gave 100 percent oxygen and hydroxocobalamin 5 g IV over 15 minutes after drawing labs.",
+          next: "q-fluids",
+          quality: "strong",
+          feedback:
+            "Strong. Enclosed space smoke contains hydrogen cyanide from burning plastics. In fire victims a lactate of 10 mmol/L or more tracked with toxic cyanide levels. With a lactate of 9.6, a pH of 7.16 and a GCS of 13, empiric treatment is right. Hydroxocobalamin binds cyanide to form cyanocobalamin and is safe with carbon monoxide.",
+        },
+        {
+          id: "c-oxygen-only",
+          label: "I gave 100 percent oxygen and planned to recheck the lactate in two hours.",
+          next: "s-lactate",
+          quality: "partial",
+          feedback:
+            "Partial. Oxygen treats the carbon monoxide. But a lactate of 9.6 mmol/L with this exposure points to cyanide. Waiting lets the acidosis and shock progress.",
+        },
+        {
+          id: "c-nitrite",
+          label: "I gave sodium nitrite and sodium thiosulfate from the cyanide kit.",
+          next: "s-nitrite",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Nitrites create methemoglobin. In a patient who already has 24 percent carboxyhemoglobin that further cuts oxygen delivery. Hydroxocobalamin is the antidote of choice in smoke inhalation.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-lactate",
+      phase: "One hour later",
+      text: "His pressure falls to 88/50 and lactate is now 12.1 mmol/L. You give hydroxocobalamin 5 g IV.",
+      next: "q-fluids",
+    },
+    {
+      kind: "say",
+      id: "s-nitrite",
+      phase: "Twenty minutes later",
+      text: "His methemoglobin is 11 percent and his pressure is 82/46. You give hydroxocobalamin 5 g IV and support his blood pressure.",
+      next: "q-fluids",
+    },
+    {
+      kind: "question",
+      id: "q-fluids",
+      phase: "Fluids",
+      prompt: "Estimate his burn size and give me his fluid plan for the next 8 hours. What will you use to titrate?",
+      seconds: 90,
+      modelAnswer: [
+        "Count only partial and full thickness burns. Skip simple redness. About 35 percent.",
+        "Ringer lactate 2 to 4 mL/kg per percent burn in 24 hours. The current adult starting point is 2 mL/kg per percent.",
+        "2 x 80 x 35 = 5,600 mL in 24 hours. Half, 2,800 mL, in the first 8 hours from the time of the burn.",
+        "Subtract what was already given. About 2,300 mL over the next 7 hours, roughly 330 mL/h.",
+        "Foley catheter. Titrate to urine output 0.5 mL/kg/h, about 30 to 50 mL/h.",
+        "Avoid boluses for tachycardia. Over resuscitation causes compartment syndromes and lung injury.",
+      ],
+      rubric: ["bu-m2", "bu-m3"],
+      choices: [
+        {
+          id: "c-formula",
+          label: "I estimated 35 percent, started Ringer lactate at about 330 mL/h from 2 mL/kg per percent and titrated to a urine output of 40 mL/h.",
+          next: "s-vent",
+          quality: "strong",
+          feedback:
+            "Strong. The formula is only a starting rate. Urine output drives adjustments every hour. Timing runs from the burn, not from arrival.",
+        },
+        {
+          id: "c-parkland",
+          label: "I used 4 mL/kg per percent and started 700 mL/h without planning to titrate.",
+          next: "s-parkland",
+          quality: "partial",
+          feedback:
+            "Partial. The Parkland formula is still used by some centres. But fixed high rates without titration cause fluid creep. The rate must fall when urine output exceeds 0.5 to 1 mL/kg/h.",
+        },
+        {
+          id: "c-bolus",
+          label: "I counted the red back as burn, called it 45 percent and gave 2 L boluses until his heart rate was under 100.",
+          next: "s-bolus",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Simple erythema is not counted. Heart rate is a poor target in burns because of pain and catecholamines. Bolus driven resuscitation leads to abdominal and limb compartment syndromes.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-parkland",
+      phase: "Three hours later",
+      text: "His urine output is 180 mL/h. His face and neck are more swollen. The burn centre advises you to drop the rate by a third and titrate hourly.",
+      next: "s-vent",
+    },
+    {
+      kind: "say",
+      id: "s-bolus",
+      phase: "Three hours later",
+      text: "He has received 6 L. His bladder pressure is 24 mmHg and his urine output has fallen. The burn centre asks you to stop boluses and titrate to urine output.",
+      next: "s-vent",
+    },
+    {
+      kind: "say",
+      id: "s-vent",
+      phase: "Ventilation problem",
+      text:
+        "The respiratory therapist calls you over. Peak pressure is 44 cm H2O and plateau 38. SpO2 is falling to 88 percent and end tidal CO2 is 58 mmHg. The chest barely moves. His right hand is pale.",
+      next: "q-escharotomy",
+    },
+    {
+      kind: "question",
+      id: "q-escharotomy",
+      phase: "Complication",
+      prompt: "What is going on, and what do you do?",
+      seconds: 75,
+      modelAnswer: [
+        "Check the tube for position, kinking or obstruction with a suction catheter. Exclude pneumothorax.",
+        "Full thickness eschar around the chest is restricting ventilation.",
+        "Chest escharotomy: incisions along both anterior axillary lines joined across the costal margin.",
+        "Cut through eschar only, into fat, until the chest expands.",
+        "Right arm escharotomy along the medial and lateral midaxial lines for a threatened limb.",
+        "Discuss with the burn centre when time allows, but do not delay a chest escharotomy for failing ventilation.",
+      ],
+      rubric: ["bu-r2", "bu-a3"],
+      choices: [
+        {
+          id: "c-escharotomy",
+          label: "I checked the tube and lungs, then did bilateral chest escharotomies joined across the costal margin and a right arm escharotomy.",
+          next: "q-secondary",
+          quality: "strong",
+          feedback:
+            "Strong. Circumferential full thickness chest burns act like a corset. Peak and plateau pressures fall right after the release. The arm needs midaxial incisions to restore flow.",
+        },
+        {
+          id: "c-paralyze",
+          label: "I increased sedation, paralyzed him and raised the pressure limit.",
+          next: "s-paralyze",
+          quality: "partial",
+          feedback:
+            "Partial. Sedation and paralysis help if he is fighting the ventilator. But the chest wall is the problem. Higher pressures risk barotrauma without fixing the cause.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-paralyze",
+      phase: "Ten minutes later",
+      text: "Plateau is still 37 and SpO2 is 86 percent. The burn surgeon on the phone asks you to do chest escharotomies now. You do, and the pressures fall to 26.",
+      next: "q-secondary",
+    },
+    {
+      kind: "question",
+      id: "q-secondary",
+      phase: "Ongoing care",
+      prompt: "What else do you do for him before he leaves your department?",
+      seconds: 60,
+      modelAnswer: [
+        "Analgesia and sedation, for example fentanyl infusion with propofol or ketamine.",
+        "Cover burns with clean dry dressings. No ice. Keep him warm.",
+        "Tetanus toxoid and immune globulin if his history is unknown.",
+        "Nasogastric tube. Foley. Elevate the head of the bed.",
+        "No prophylactic antibiotics and no steroids.",
+        "Repeat gas, lactate and potassium. Watch glucose.",
+      ],
+      rubric: ["bu-m4"],
+      next: "q-transfer",
+    },
+    {
+      kind: "question",
+      id: "q-transfer",
+      phase: "Transfer",
+      prompt: "Does he meet burn centre criteria? How do you arrange transfer and what goes in your handover?",
+      seconds: 75,
+      modelAnswer: [
+        "Yes. Partial thickness over 10 percent, full thickness burns, face and hands, and inhalation injury all qualify.",
+        "Call the burn centre through CritiCall early. Book Ornge.",
+        "Handover: time of burn, TBSA, fluids given and current rate, urine output, airway and tube size, carboxyhemoglobin, hydroxocobalamin, escharotomies.",
+        "Send the fluid chart and a burn diagram.",
+        "Plan for a critical care transport team. Secure the tube well.",
+      ],
+      rubric: ["bu-d1", "bu-c1", "bu-l1"],
+      next: "q-family",
+    },
+    {
+      kind: "question",
+      id: "q-family",
+      phase: "Family",
+      prompt: "His wife asks you if he is going to survive. What do you tell her?",
+      seconds: 60,
+      modelAnswer: [
+        "Private room. Sit down. Nurse or social worker present.",
+        "He has large deep burns and a lung injury from smoke. He is critically ill.",
+        "There is a real chance he may not survive. The burn centre can give a clearer picture over the next days.",
+        "Explain the transfer and how she can get there.",
+        "Ask about her own smoke exposure and whether anyone else was in the house.",
+      ],
+      rubric: ["bu-c2", "bu-p1"],
+      next: "end",
+    },
+    { kind: "end", id: "end", text: "The Ornge crew takes over and flies him to the burn centre. That is the end of the case." },
+  ],
+  rubric: [
+    {
+      id: "bu-a1",
+      competency: "assessment",
+      text: "Identifies inhalation injury from hoarseness, stridor, soot and facial burns.",
+      points: 2,
+      teaching: "Hoarseness and stridor are the most worrying signs. They predict a closing airway.",
+      source: "abls",
+    },
+    {
+      id: "bu-r1",
+      competency: "resuscitation",
+      text: "Intubates early with a tube of 8.0 or larger and a surgical airway plan ready.",
+      points: 3,
+      critical: true,
+      teaching: "Airway edema worsens over 12 to 24 hours and with fluids. Early intubation with a large tube is safer than a late crash airway.",
+      source: "abls",
+    },
+    {
+      id: "bu-a2",
+      competency: "assessment",
+      text: "Recognizes that pulse oximetry is falsely normal and that high lactate after an enclosed space fire suggests cyanide.",
+      points: 2,
+      teaching: "Standard pulse oximetry reads carboxyhemoglobin as oxyhemoglobin. In smoke inhalation a lactate of 10 mmol/L or more predicted toxic cyanide levels. Treat lower values when the patient is acidotic, confused or in shock.",
+      source: "baud",
+    },
+    {
+      id: "bu-m1",
+      competency: "management",
+      text: "Gives 100 percent oxygen and hydroxocobalamin 5 g IV over 15 minutes, drawing labs first.",
+      points: 3,
+      critical: true,
+      teaching: "Hydroxocobalamin is the preferred cyanide antidote in smoke inhalation. Nitrites worsen oxygen delivery.",
+      source: "borron",
+    },
+    {
+      id: "bu-m2",
+      competency: "management",
+      text: "Estimates TBSA counting only partial and full thickness burns.",
+      points: 1,
+      teaching: "Use the rule of nines or the patient palm, about 1 percent. Simple erythema is not counted.",
+      source: "abls",
+    },
+    {
+      id: "bu-m3",
+      competency: "management",
+      text: "Starts Ringer lactate at 2 to 4 mL/kg per percent over 24 hours, half in the first 8 hours from the burn, and titrates to urine output 0.5 mL/kg/h.",
+      points: 3,
+      critical: true,
+      teaching: "The formula is a start point. Titrate hourly to urine output and avoid fluid creep.",
+      source: "abls",
+    },
+    {
+      id: "bu-a3",
+      competency: "assessment",
+      text: "Recognizes that circumferential chest eschar is causing high airway pressures after excluding tube and lung causes.",
+      points: 1,
+      teaching: "Rising peak and plateau pressures with poor chest rise in a trunk burn point to restrictive eschar.",
+      source: "abls",
+    },
+    {
+      id: "bu-r2",
+      competency: "resuscitation",
+      text: "Performs chest escharotomy along the anterior axillary lines joined across the costal margin, and a limb escharotomy for the threatened arm.",
+      points: 2,
+      teaching: "Escharotomy of the chest is a lifesaving ED procedure. Cut through eschar only.",
+      source: "abls",
+    },
+    {
+      id: "bu-m4",
+      competency: "management",
+      text: "Gives analgesia, tetanus prophylaxis, warmth and clean dry dressings, and avoids prophylactic antibiotics and steroids.",
+      points: 1,
+      teaching: "Hypothermia is common after burns. Prophylactic antibiotics do not prevent burn infection.",
+      source: "abls",
+    },
+    {
+      id: "bu-d1",
+      competency: "disposition",
+      text: "Identifies that he meets burn centre referral criteria and arranges transfer through CritiCall and Ornge.",
+      points: 2,
+      teaching: "Burn centre criteria include partial thickness over 10 percent, any full thickness, face, hands and inhalation injury.",
+      source: "referral",
+    },
+    {
+      id: "bu-c1",
+      competency: "communication",
+      text: "Gives a structured handover including time of burn, TBSA, fluid totals, urine output, tube size and antidotes.",
+      points: 1,
+      teaching: "Fluid timing runs from the time of the burn. The receiving team needs the totals to continue the plan.",
+      source: "abls",
+    },
+    {
+      id: "bu-l1",
+      competency: "leadership",
+      text: "Engages the burn centre early for advice while stabilizing, rather than after workup is complete.",
+      points: 1,
+      teaching: "Early calls let the burn centre guide fluid rates and escharotomy decisions.",
+      source: "referral",
+    },
+    {
+      id: "bu-c2",
+      competency: "communication",
+      text: "Tells his wife honestly that he is critically ill with a real risk of death, and explains the transfer.",
+      points: 1,
+      teaching: "Large burns with inhalation injury carry high mortality. Honest, early framing helps families prepare.",
+      source: "atls",
+    },
+    {
+      id: "bu-p1",
+      competency: "professionalism",
+      text: "Asks whether his wife or others were also exposed to smoke.",
+      points: 1,
+      teaching: "Other household members may need assessment for carbon monoxide or burns.",
+      source: "atls",
+    },
+  ],
+  sources: [
+    {
+      id: "abls",
+      citation: "American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update.",
+    },
+    {
+      id: "referral",
+      citation: "American Burn Association. Guidelines for burn patient referral. 2022.",
+      url: "https://ameriburn.org/resources/burnreferral/",
+    },
+    {
+      id: "borron",
+      citation: "Borron SW, et al. Prospective study of hydroxocobalamin for acute cyanide poisoning in smoke inhalation. Ann Emerg Med. 2007.",
+    },
+    {
+      id: "baud",
+      citation: "Baud FJ, et al. Elevated blood cyanide concentrations in victims of smoke inhalation. N Engl J Med. 1991.",
+      url: "https://www.nejm.org/doi/full/10.1056/NEJM199112193252502",
+    },
+    {
+      id: "atls",
+      citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

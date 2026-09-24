@@ -1,0 +1,485 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const precordialStabWound: OralCase = {
+  id: "precordial-stab-wound",
+  title: "Stabbed at a house party",
+  blueprint: "trauma",
+  alsoCovers: ["resus", "procedures"],
+  summary: "A 22 year old man with a single stab wound to the left chest arrives by ambulance to a large community hospital.",
+  durationMinutes: 15,
+  stem:
+    "You are the emergency physician at a 300 bed community hospital in southern Ontario. " +
+    "A general surgeon is in the building finishing a case in the operating room. There is no cardiac surgery on site. " +
+    "The lead trauma hospital is 25 minutes away by land. The blood bank has uncrossmatched O red cells and a massive hemorrhage protocol. A thoracotomy tray is in resus. " +
+    "Kwame Asante is 22 years old, about 75 kg. He was stabbed once in the left chest with a kitchen knife about 20 minutes ago. " +
+    "Paramedic vitals: heart rate 128, blood pressure 82/64, respiratory rate 28, SpO2 95 percent on 10 L by mask, GCS 14. " +
+    "The paramedic says: 'Single wound, left of the sternum. His neck veins looked full and his pressure has been drifting down since we got him.'",
+  findings: [
+    {
+      id: "wound",
+      label: "Wound inspection",
+      result: "A 2 cm linear wound in the left 4th intercostal space, 2 cm lateral to the sternal border. Minimal external bleeding. No other wounds on log roll, in the axillae or on the back.",
+    },
+    {
+      id: "chest",
+      label: "Chest exam",
+      result: "Trachea midline. Equal air entry on both sides. No crepitus. Heart sounds are quiet and hard to hear.",
+    },
+    {
+      id: "neck",
+      label: "Neck veins",
+      result: "External jugular veins distended while he sits at 30 degrees.",
+    },
+    {
+      id: "efast",
+      label: "eFAST",
+      result:
+        "Subxiphoid view shows a 12 mm pericardial effusion with echogenic clot and diastolic collapse of the right ventricle. " +
+        "Lung sliding on both sides. No hemothorax. No free fluid in the abdomen.",
+    },
+    {
+      id: "cxr",
+      label: "Portable chest X ray",
+      result: "Normal cardiac silhouette size. No pneumothorax or hemothorax. Mediastinum normal.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Sinus tachycardia at 132. Low voltage QRS in the limb leads. No electrical alternans.",
+    },
+    {
+      id: "gas",
+      label: "Venous gas and labs",
+      result: "pH 7.24. Lactate 5.6 mmol/L. Hemoglobin 131 g/L. Platelets 244 x 10^9/L. INR 1.1. Ionized calcium 1.10 mmol/L. Ethanol 18 mmol/L.",
+    },
+    {
+      id: "arrest",
+      label: "Rhythm at loss of pulse",
+      result: "Organized narrow complex rhythm at 110 with no palpable pulse. End tidal CO2 by bag mask 14 mmHg. Pupils reactive. He gasped just before losing his pulse.",
+    },
+    {
+      id: "thoracotomy",
+      label: "Findings at thoracotomy",
+      result:
+        "Tense pericardium. About 250 mL of clot and blood released. A 1 cm laceration of the right ventricle anterior wall bleeding with each beat. The left lung is uninjured.",
+    },
+    {
+      id: "post-rosc",
+      label: "Vitals after pericardiotomy",
+      result: "Heart rate 140. Blood pressure 76/40 by arterial line. End tidal CO2 32 mmHg. Finger occluding the ventricular wound.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "Resus",
+      text: "He is anxious, pale and asking for water. You have two nurses, a respiratory therapist and a clerk. The eFAST probe is in your hand.",
+      next: "q-primary",
+    },
+    {
+      kind: "question",
+      id: "q-primary",
+      phase: "Primary survey",
+      prompt: "Take me through your primary survey and your immediate plan. What do you think is happening?",
+      seconds: 90,
+      modelAnswer: [
+        "Assign roles out loud. Two large bore IVs. Monitor.",
+        "Hypotension, distended neck veins and quiet heart sounds after a precordial stab wound mean tamponade until proven otherwise.",
+        "Subxiphoid eFAST confirms pericardial blood with right ventricular collapse.",
+        "Activate the massive hemorrhage protocol. Give blood, not crystalloid, to support preload.",
+        "Call the surgeon out of the operating room now. He needs the operating room, not CT.",
+        "Open the thoracotomy tray and prepare in case he arrests.",
+      ],
+      rubric: ["st-a1", "st-l1"],
+      choices: [
+        {
+          id: "c-or",
+          label: "I called the surgeon for immediate transfer to the operating room, activated the massive hemorrhage protocol and set up the thoracotomy tray.",
+          next: "q-airway",
+          quality: "strong",
+          feedback:
+            "Strong. This is traumatic tamponade with shock. The definitive treatment is surgical. Blood supports preload while you get him to the operating room.",
+        },
+        {
+          id: "c-chest-tube",
+          label: "I placed a left chest tube because the wound was in the left chest.",
+          next: "s-chest-tube",
+          quality: "partial",
+          feedback:
+            "Partial. A chest tube is right for a hemothorax, but his lungs are both sliding with no fluid. The problem is in the pericardium. Chest tube placement delayed the operating room call.",
+        },
+        {
+          id: "c-ct",
+          label: "I sent him for a CT chest to define the injury before calling the surgeon.",
+          next: "s-ct",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. An unstable patient does not go to CT. eFAST has already answered the question. The scanner is the worst place to arrest.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-chest-tube",
+      phase: "Ten minutes later",
+      text: "The chest tube drains 40 mL. His pressure is now 72/56. The charge nurse asks whether you have called the surgeon yet. You do so now.",
+      next: "q-airway",
+    },
+    {
+      kind: "say",
+      id: "s-ct",
+      phase: "In the hallway",
+      text: "His pressure falls to 64/50 on the way to CT and he becomes confused. The nurse brings him straight back to resus. You call the surgeon now.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway",
+      prompt: "He is getting agitated and pulling at his mask. The respiratory therapist asks whether you want to intubate him now. What do you say?",
+      seconds: 75,
+      modelAnswer: [
+        "Avoid intubation in the ED if he is maintaining his airway.",
+        "Positive pressure ventilation cuts venous return. In tamponade it can cause immediate arrest.",
+        "If a tube is needed, induce in the operating room with the chest prepped and the surgeon scrubbed.",
+        "If forced to intubate in the ED, give blood first, use low dose ketamine about 0.5 mg/kg and low tidal volumes, and be ready to open the chest.",
+        "Oxygen by mask and reassurance for now.",
+      ],
+      rubric: ["st-r1"],
+      choices: [
+        {
+          id: "c-defer",
+          label: "I kept him breathing spontaneously on oxygen and said we would induce in the operating room with the chest prepped.",
+          next: "s-arrest",
+          quality: "strong",
+          feedback:
+            "Strong. Induction and positive pressure remove sympathetic tone and preload. In tamponade that can cause arrest on the spot. Induce with the surgeon ready to open.",
+        },
+        {
+          id: "c-rsi",
+          label: "I did a rapid sequence intubation with propofol 1.5 mg/kg and rocuronium to control him.",
+          next: "s-rsi-arrest",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Propofol and positive pressure in a preload dependent heart is a classic cause of peri intubation arrest. If a tube is unavoidable, use low dose ketamine, blood first and a plan to open the chest.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-rsi-arrest",
+      phase: "Thirty seconds after the tube",
+      text: "The monitor shows a narrow complex rhythm at 110 but there is no pulse. End tidal CO2 is 12 mmHg. The surgeon is still scrubbing out.",
+      next: "q-arrest",
+    },
+    {
+      kind: "say",
+      id: "s-arrest",
+      phase: "Deterioration",
+      text:
+        "The surgeon calls to say he needs 10 more minutes to close his case. While the team prepares for transfer to the operating room, Kwame gasps and goes limp. There is a narrow complex rhythm at 110 with no pulse. His pupils react.",
+      next: "q-arrest",
+    },
+    {
+      kind: "question",
+      id: "q-arrest",
+      phase: "Arrest",
+      prompt: "He has lost his pulse in front of you. What do you do?",
+      seconds: 75,
+      modelAnswer: [
+        "Penetrating chest trauma with loss of signs of life in the ED is the strongest indication for resuscitative thoracotomy.",
+        "Start now. Do not wait for the surgeon.",
+        "Intubate at the same time. Give blood through the rapid infuser.",
+        "Chest compressions and epinephrine will not fix tamponade or hypovolemia.",
+        "Left anterolateral thoracotomy, open the pericardium, control the wound.",
+      ],
+      rubric: ["st-r2", "st-a2"],
+      choices: [
+        {
+          id: "c-thoracotomy",
+          label: "I did a left anterolateral resuscitative thoracotomy right away while the team intubated and ran blood.",
+          next: "q-technique",
+          quality: "strong",
+          feedback:
+            "Strong. The Eastern Association for the Surgery of Trauma strongly recommends thoracotomy for penetrating thoracic injury with pulseless presentation and signs of life. Survival is best in isolated cardiac stab wounds with tamponade.",
+        },
+        {
+          id: "c-pericardiocentesis",
+          label: "I did a needle pericardiocentesis under ultrasound.",
+          next: "s-needle",
+          quality: "partial",
+          feedback:
+            "Partial. Needle drainage is a bridge only when no one can open the chest. Traumatic tamponade is mostly clot, so the needle often draws little. It also does nothing for the bleeding hole.",
+        },
+        {
+          id: "c-acls",
+          label: "I started chest compressions and gave epinephrine 1 mg every 3 to 5 minutes.",
+          next: "s-acls",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Closed chest compressions cannot fill a tamponaded heart. Epinephrine does not fix a mechanical cause. The algorithm for traumatic arrest is to fix the cause: open the pericardium.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-needle",
+      phase: "One minute later",
+      text: "You draw back 15 mL of blood, then the needle clots off. He is still pulseless. You open the chest.",
+      next: "q-technique",
+    },
+    {
+      kind: "say",
+      id: "s-acls",
+      phase: "Two cycles later",
+      text: "There is no change after two rounds of CPR and epinephrine. End tidal CO2 is 9 mmHg. A nurse asks: 'Should we open his chest?' You proceed to thoracotomy.",
+      next: "q-technique",
+    },
+    {
+      kind: "question",
+      id: "q-technique",
+      phase: "Procedure",
+      prompt: "Walk me through the thoracotomy step by step. What do you do once the pericardium is open?",
+      seconds: 90,
+      modelAnswer: [
+        "Arm up. Incision in the left 4th or 5th intercostal space, inframammary, from the sternum to the posterior axillary line.",
+        "Cut intercostal muscle along the top of the rib. Place the rib spreader with the handle toward the axilla.",
+        "Lift the pericardium and open it longitudinally, anterior and parallel to the phrenic nerve.",
+        "Evacuate clot. Put a finger on the ventricular wound.",
+        "Close the wound with skin staples or sutures. Avoid pulling on a Foley balloon.",
+        "Internal cardiac massage if no output. Cross clamp the descending aorta if still hypotensive.",
+        "Extend to a clamshell if exposure is poor.",
+      ],
+      rubric: ["st-m1", "st-m2"],
+      next: "s-rosc",
+    },
+    {
+      kind: "say",
+      id: "s-rosc",
+      phase: "Return of circulation",
+      text:
+        "You release about 250 mL of clot. There is a 1 cm right ventricular laceration. With your finger over it the heart fills and beats strongly. Arterial pressure is 76/40. " +
+        "The nurse asks what to hang next.",
+      next: "q-blood",
+    },
+    {
+      kind: "question",
+      id: "q-blood",
+      phase: "Circulation",
+      prompt: "What blood products and medications do you give now, and what do you avoid?",
+      seconds: 60,
+      modelAnswer: [
+        "Massive hemorrhage protocol. Red cells to plasma to platelets close to 1 to 1 to 1.",
+        "Tranexamic acid 1 g IV over 10 minutes within 3 hours of injury, then 1 g over 8 hours.",
+        "Calcium chloride 1 g IV to keep ionized calcium above 1.1 mmol/L.",
+        "Warm all products. Avoid crystalloid.",
+        "Epinephrine only in small titrated doses if needed after the leak is controlled.",
+      ],
+      rubric: ["st-r3", "st-m3"],
+      choices: [
+        {
+          id: "c-mhp",
+          label: "I ran warmed red cells and plasma about 1 to 1, gave tranexamic acid 1 g and calcium chloride 1 g, and held crystalloid.",
+          next: "s-surgeon",
+          quality: "strong",
+          feedback:
+            "Strong. Balanced products restore volume and clotting. Calcium falls with citrate from transfusion. Crystalloid dilutes clotting factors and worsens acidosis.",
+        },
+        {
+          id: "c-saline",
+          label: "I gave 2 L of normal saline wide open while the blood came up.",
+          next: "s-saline",
+          quality: "unsafe",
+          feedback:
+            "Unsafe. Large volume crystalloid worsens coagulopathy, acidosis and hypothermia. In hemorrhagic shock the fluid is blood. Uncrossmatched O red cells are ready in minutes.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-saline",
+      phase: "Fifteen minutes later",
+      text: "His temperature is 34.9. INR is 1.8. The staple line on the ventricle oozes. You switch to warmed blood products and give calcium and tranexamic acid.",
+      next: "s-surgeon",
+    },
+    {
+      kind: "say",
+      id: "s-surgeon",
+      phase: "Surgeon arrives",
+      text: "The general surgeon arrives. He says he can staple the ventricle but has never repaired a heart. The lead trauma hospital is on the phone through CritiCall.",
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition",
+      prompt: "Where should this patient go, and how do you manage the conversation between the surgeon and the trauma centre?",
+      seconds: 75,
+      modelAnswer: [
+        "He needs the operating room now. The local surgeon controls the injury first. Damage control, not definitive repair.",
+        "Transfer to the lead trauma hospital once the bleeding is controlled and he is stable enough to move.",
+        "Three way call with the local surgeon and the trauma team leader through CritiCall.",
+        "Share the plan clearly. Name who is doing what and when.",
+        "Keep the massive hemorrhage protocol running and send blood with the transfer team.",
+      ],
+      rubric: ["st-d1", "st-c1"],
+      next: "q-debrief",
+    },
+    {
+      kind: "question",
+      id: "q-debrief",
+      phase: "After the case",
+      prompt: "He has gone to the operating room. His mother is in the family room and your team looks shaken. What do you do?",
+      seconds: 75,
+      modelAnswer: [
+        "Meet his mother with a nurse or social worker. He was very close to death. His heart was injured and is being repaired in surgery. The outcome is uncertain.",
+        "Do not share details with police or others without consent unless the law requires it.",
+        "Run a short team debrief: what went well, what to improve, how people are feeling.",
+        "Check for sharps injuries or blood exposure. Send anyone exposed to occupational health now.",
+        "Restock the thoracotomy tray and document the procedure and times.",
+      ],
+      rubric: ["st-c2", "st-l2", "st-p1"],
+      next: "end",
+    },
+    { kind: "end", id: "end", text: "He survives surgery and is transferred to the trauma centre. That is the end of the case." },
+  ],
+  rubric: [
+    {
+      id: "st-a1",
+      competency: "assessment",
+      text: "Recognizes traumatic tamponade from hypotension, distended neck veins and a precordial wound, and confirms it with subxiphoid ultrasound.",
+      points: 2,
+      teaching: "Beck triad is often incomplete. eFAST is fast and sensitive for pericardial blood in penetrating chest trauma.",
+      source: "atls",
+    },
+    {
+      id: "st-a2",
+      competency: "assessment",
+      text: "Identifies signs of life at loss of pulse: organized electrical activity, reactive pupils and a gasp.",
+      points: 1,
+      teaching: "Signs of life and a penetrating chest mechanism define the group most likely to survive thoracotomy.",
+      source: "east",
+    },
+    {
+      id: "st-l1",
+      competency: "leadership",
+      text: "Calls the surgeon and the operating room immediately and prepares the thoracotomy tray before arrest.",
+      points: 2,
+      teaching: "Anticipate the arrest. The tray should be open and the team briefed before it is needed.",
+      source: "atls",
+    },
+    {
+      id: "st-r1",
+      competency: "resuscitation",
+      text: "Avoids induction and positive pressure ventilation in the ED unless the chest can be opened immediately.",
+      points: 2,
+      critical: true,
+      teaching: "Tamponade is preload dependent. Induction drugs and positive pressure can cause immediate cardiovascular collapse.",
+      source: "wta",
+    },
+    {
+      id: "st-r2",
+      competency: "resuscitation",
+      text: "Performs an immediate resuscitative thoracotomy for loss of pulse with signs of life after a penetrating chest wound.",
+      points: 3,
+      critical: true,
+      teaching: "Penetrating thoracic injury with signs of life has the highest survival after ED thoracotomy. Closed chest CPR does not work here.",
+      source: "east",
+    },
+    {
+      id: "st-m1",
+      competency: "management",
+      text: "Describes a left anterolateral incision in the 4th or 5th intercostal space with the rib spreader handle toward the axilla.",
+      points: 1,
+      teaching: "The inframammary fold marks the 5th space in men. Extend across the sternum to a clamshell for more exposure.",
+      source: "wta",
+    },
+    {
+      id: "st-m2",
+      competency: "management",
+      text: "Opens the pericardium longitudinally anterior to the phrenic nerve and controls the ventricular wound with a finger then staples or sutures.",
+      points: 3,
+      critical: true,
+      teaching: "Cutting across the phrenic nerve paralyzes the diaphragm. Finger control first, then close the wound.",
+      source: "wta",
+    },
+    {
+      id: "st-r3",
+      competency: "resuscitation",
+      text: "Gives warmed balanced blood products and avoids crystalloid.",
+      points: 2,
+      teaching: "Red cells, plasma and platelets close to 1 to 1 to 1 restore volume without diluting clotting factors.",
+      source: "atls",
+    },
+    {
+      id: "st-m3",
+      competency: "management",
+      text: "Gives tranexamic acid 1 g IV within 3 hours of injury and calcium chloride 1 g IV for transfusion.",
+      points: 1,
+      teaching: "Early tranexamic acid reduces bleeding death in trauma. Citrate in blood products binds calcium.",
+      source: "atls",
+    },
+    {
+      id: "st-d1",
+      competency: "disposition",
+      text: "Sends him to the local operating room for damage control first, with transfer to the lead trauma hospital once stable.",
+      points: 2,
+      teaching: "A heart that has just been restarted will not survive a 25 minute transfer. Control first, then move.",
+      source: "wta",
+    },
+    {
+      id: "st-c1",
+      competency: "communication",
+      text: "Sets up a three way call between the local surgeon and the trauma team leader through CritiCall with a clear shared plan.",
+      points: 1,
+      teaching: "Joint decisions reduce conflict and clarify who owns the next step.",
+      source: "atls",
+    },
+    {
+      id: "st-c2",
+      competency: "communication",
+      text: "Speaks to his mother honestly about how close he came to death and the uncertain outcome.",
+      points: 1,
+      teaching: "Families need the truth in plain words, with a person who can stay with them.",
+      source: "atls",
+    },
+    {
+      id: "st-l2",
+      competency: "leadership",
+      text: "Leads a brief team debrief and checks for blood or sharps exposures among staff.",
+      points: 1,
+      teaching: "Thoracotomy carries a real risk of sharps injury. Debriefs help the team and catch safety issues.",
+      source: "atls",
+    },
+    {
+      id: "st-p1",
+      competency: "professionalism",
+      text: "Documents the procedure, indication and times, and restocks the tray for the next patient.",
+      points: 1,
+      teaching: "Clear documentation protects the patient and the team. A stocked tray protects the next patient.",
+      source: "atls",
+    },
+  ],
+  sources: [
+    {
+      id: "east",
+      citation:
+        "Seamon MJ, et al. An evidence based approach to patient selection for emergency department thoracotomy: a practice management guideline from the Eastern Association for the Surgery of Trauma. J Trauma Acute Care Surg. 2015.",
+    },
+    {
+      id: "wta",
+      citation: "Burlew CC, et al. Western Trauma Association critical decisions in trauma: resuscitative thoracotomy. J Trauma Acute Care Surg. 2012.",
+    },
+    {
+      id: "atls",
+      citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};
