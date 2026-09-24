@@ -110,12 +110,18 @@ export function tokens(text: string): string[] {
 export const NEGATIONS = new Set(["no", "not", "avoid", "withhold", "hold", "never", "don", "dont", "stop", "discontinue", "contraindicated", "without"]);
 /** How many words before a phrase a negation still applies to. */
 const NEGATION_WINDOW = 3;
+/** Words that negate what comes just before them: "warfarin is contraindicated". */
+export const POST_NEGATIONS = new Set(["contraindicated", "avoided", "withheld"]);
+const LINKING = new Set(["is", "are", "was", "be", "being"]);
 
 /**
  * True when every word of any phrase appears in the line, in any order,
  * and the phrase is not negated. A phrase counts as negated when a negation
  * word sits within three words before its first word, unless the phrase
  * itself contains a negation ("avoid nitrates" matches "avoid all nitrates").
+ * It also counts as negated when "contraindicated", "avoided" or "withheld"
+ * follows its last word directly or after "is" or "are" ("nitrates are
+ * contraindicated").
  */
 export function lineMatches(line: string, phrases: string[]): boolean {
   const words = tokens(line);
@@ -123,8 +129,13 @@ export function lineMatches(line: string, phrases: string[]): boolean {
     const need = tokens(p);
     if (!need.length || !need.every((w) => words.includes(w))) return false;
     if (need.some((w) => NEGATIONS.has(w))) return true;
-    const first = Math.min(...need.map((w) => words.indexOf(w)));
-    return !words.slice(Math.max(0, first - NEGATION_WINDOW), first).some((w) => NEGATIONS.has(w));
+    if (need.some((w) => POST_NEGATIONS.has(w))) return true;
+    const at = need.map((w) => words.indexOf(w));
+    const first = Math.min(...at);
+    const last = Math.max(...at);
+    if (words.slice(Math.max(0, first - NEGATION_WINDOW), first).some((w) => NEGATIONS.has(w))) return false;
+    const after = LINKING.has(words[last + 1]) ? words[last + 2] : words[last + 1];
+    return !POST_NEGATIONS.has(after);
   });
 }
 

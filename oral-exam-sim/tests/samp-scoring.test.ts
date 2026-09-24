@@ -34,6 +34,13 @@ describe("matching", () => {
     expect(lineMatches("avoid all nitrates", ["avoid nitrate"])).toBe(true);
     expect(lineMatches("ct head", ["ct head"])).toBe(true);
   });
+  it("ignores a phrase negated after it", () => {
+    expect(lineMatches("enoxaparin, warfarin contraindicated", ["warfarin"])).toBe(false);
+    expect(lineMatches("enoxaparin, warfarin contraindicated", ["enoxaparin"])).toBe(true);
+    expect(lineMatches("nitrates are contraindicated", ["nitrate"])).toBe(false);
+    expect(lineMatches("nitrates are contraindicated", ["nitrate contraindicated"])).toBe(true);
+    expect(lineMatches("heparin withheld until CT", ["heparin"])).toBe(false);
+  });
   it("does not zero a question for a negated dangerous answer", () => {
     expect(markShort(short, ["no epinephrine IV push", "oxygen", "salbutamol"]).earned).toBe(2);
   });
