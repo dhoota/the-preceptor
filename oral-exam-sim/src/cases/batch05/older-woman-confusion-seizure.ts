@@ -14,26 +14,53 @@ export const olderWomanConfusionSeizure: OralCase = {
     { topic: "delirium-agitation", n: 2 },
   ],
   summary: "An 84 year old woman is brought in by her daughter with two days of vomiting and confusion.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 220 bed community hospital in Ontario. There is an ICU, a step down unit, CT and a lab with results in about 30 minutes. " +
-    "Evelyn Park is 84 years old and about 50 kg. She lives alone. Her daughter found her confused this morning. She has vomited several times over 2 days and has been unsteady on her feet. " +
-    "Her family doctor started hydrochlorothiazide 25 mg daily 6 weeks ago for blood pressure. She has taken sertraline for 3 months for low mood. " +
-    "Her daughter says she has been drinking lots of water and eating little besides tea and toast. " +
-    "Triage vitals: heart rate 88, blood pressure 138/74, respiratory rate 18, SpO2 96 percent on room air, temperature 36.6, capillary glucose 6.1 mmol/L. GCS 13. CTAS 2. " +
-    "The nurse says: 'She keeps asking the same questions and she just vomited again. Her daughter thinks she might have had a small stroke.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "An 84 year old woman is brought in by her daughter, who found her confused this morning.",
+  card: {
+    vitals: {
+      temperature: "36.6°C",
+      pulse: "88/minute",
+      resp: "18/minute",
+      bp: "138/74 mmHg",
+      o2sat: "96% on room air",
+      weight: "About 50 kg (110 lb)",
+    },
+    medications: "Hydrochlorothiazide, sertraline",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness (her daughter)",
+      result:
+        "Her daughter found her confused this morning. She has vomited several times over 2 days and has been unsteady on her feet. " +
+        "She keeps asking the same questions. Her daughter thinks she might have had a small stroke.",
+    },
+    {
+      id: "meds",
+      label: "Past history and medication details",
+      result:
+        "High blood pressure and low mood. Her family doctor started hydrochlorothiazide 25 mg daily 6 weeks ago for blood pressure. " +
+        "She has taken sertraline for 3 months for low mood. Her daughter has brought a bag of her pill bottles.",
+    },
+    {
+      id: "social",
+      label: "Social history and intake (her daughter)",
+      result: "She lives alone. She has been drinking lots of water and eating little besides tea and toast.",
+    },
     {
       id: "exam",
       label: "Physical exam",
       result:
-        "Drowsy but rousable. GCS 13 (E3 V4 M6). No focal weakness. Pupils equal and reactive. No neck stiffness. Mucous membranes moist. JVP 2 cm. No edema. Chest clear. Abdomen soft.",
+        "CTAS 2 at triage. Drowsy but rousable. GCS 13 (E3 V4 M6). No focal weakness. Pupils equal and reactive. No neck stiffness. Mucous membranes moist. JVP 2 cm. No edema. Chest clear. Abdomen soft.",
     },
     {
       id: "labs",
       label: "Electrolytes and renal",
       result:
-        "Sodium 112 mmol/L. Potassium 2.9 mmol/L. Chloride 78 mmol/L. Bicarbonate 27 mmol/L. Glucose 6.2 mmol/L. Urea 3.1 mmol/L. Creatinine 64 µmol/L. Calcium normal. Magnesium 0.68 mmol/L.",
+        "Capillary glucose at triage 6.1 mmol/L. Sodium 112 mmol/L. Potassium 2.9 mmol/L. Chloride 78 mmol/L. Bicarbonate 27 mmol/L. Glucose 6.2 mmol/L. Urea 3.1 mmol/L. Creatinine 64 µmol/L. Calcium normal. Magnesium 0.68 mmol/L.",
     },
     {
       id: "osm",
@@ -77,7 +104,10 @@ export const olderWomanConfusionSeizure: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Assessment",
-      text: "Evelyn is on a stretcher, drowsy and repeating herself. Her daughter holds a bag of pill bottles.",
+      text:
+        "She is on a stretcher, drowsy and repeating herself. Her daughter holds a bag of pill bottles. " +
+        "Your hospital has an ICU, a step down unit, CT and a lab with results in about 30 minutes. " +
+        "The nurse says: 'She keeps asking the same questions and she just vomited again. Her daughter thinks she might have had a small stroke.'",
       next: "q-initial",
     },
     {
@@ -93,15 +123,16 @@ export const olderWomanConfusionSeizure: OralCase = {
         "Monitor, IV access, capillary glucose, electrolytes, osmolality, ECG.",
         "CT head given her age and confusion.",
         "Review every medication with the bottles.",
+        "History from her daughter: time course, vomiting, food and fluid intake, and new medications with start dates.",
       ],
-      rubric: ["hn-a1"],
+      rubric: ["hn-a1", "hn-h1", "hn-h2", "hn-h3"],
       next: "s-seizure",
     },
     {
       kind: "say",
       id: "s-seizure",
       phase: "Deterioration",
-      text: "While you review the bottles the nurse calls out. Evelyn is having a generalized tonic clonic seizure. At the same moment the lab calls: sodium 112 mmol/L.",
+      text: "While you review the bottles the nurse calls out. The patient is having a generalized tonic clonic seizure. At the same moment the lab calls: sodium 112 mmol/L.",
       next: "q-seizure",
     },
     {
@@ -222,7 +253,7 @@ export const olderWomanConfusionSeizure: OralCase = {
       kind: "say",
       id: "s-overcorrect",
       phase: "Six hours later",
-      text: "The nurse calls you. Evelyn has passed 380 mL of urine per hour for 3 hours. Her urine osmolality is now 95. Her sodium is 122, up 10 from the start.",
+      text: "The nurse calls you. The patient has passed 380 mL of urine per hour for 3 hours. Her urine osmolality is now 95. Her sodium is 122, up 10 from the start.",
       next: "q-overcorrect",
     },
     {
@@ -314,13 +345,13 @@ export const olderWomanConfusionSeizure: OralCase = {
       rubric: ["hn-c1", "hn-p1"],
       next: "end",
     },
-    { kind: "end", id: "end", text: "Evelyn is admitted to the step down unit. That is the end of the case." },
+    { kind: "end", id: "end", text: "The patient is admitted to the step down unit. That is the end of the case." },
   ],
   rubric: [
     {
       id: "hn-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Builds a differential for delirium in an older adult and reviews every medication.",
       points: 1,
       teaching: "Drugs are among the most common reversible causes of delirium and electrolyte problems in older adults.",
@@ -329,7 +360,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats seizures from hyponatremia with 3 percent saline 100 to 150 mL IV bolus, repeated as needed.",
       points: 3,
       critical: true,
@@ -339,7 +370,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Supports airway and uses a benzodiazepine as a bridge, without relying on standard antiseizure drugs.",
       points: 1,
       teaching: "Antiseizure drugs do not treat cerebral edema. Hypertonic saline does.",
@@ -348,7 +379,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-m1",
       competency: "management",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies her high risk for osmotic demyelination and sets a limit of 8 mmol/L in 24 hours.",
       points: 3,
       critical: true,
@@ -358,7 +389,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "process",
       text: "Stops hypertonic saline once symptoms settle and monitors sodium every 2 hours.",
       points: 2,
       teaching: "Hypertonic saline is for symptoms. Once they settle, the goal is slow, safe correction.",
@@ -367,7 +398,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Interprets urine osmolality and urine sodium in light of the thiazide.",
       points: 1,
       teaching: "Urine osmolality over 100 mmol/kg means ADH is acting. Diuretics make urine sodium unreliable.",
@@ -376,7 +407,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Stops the thiazide and SSRI and anticipates a water diuresis.",
       points: 2,
       teaching: "When the cause of ADH release or the thiazide effect is removed, the sodium can rise very fast.",
@@ -385,7 +416,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Treats overcorrection with desmopressin 2 mcg IV and D5W about 3 mL/kg/h with frequent sodium checks.",
       points: 3,
       critical: true,
@@ -395,7 +426,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Involves ICU or nephrology early and sets clear nursing triggers for urine output and sodium.",
       points: 1,
       teaching: "Tell nurses to call for urine output over 100 mL/h or a sodium rise beyond the plan.",
@@ -404,7 +435,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Admits to a monitored unit with a written sodium limit for 24 and 48 hours.",
       points: 2,
       teaching: "A written limit guides every clinician who touches the orders overnight.",
@@ -413,7 +444,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Replaces potassium and magnesium and accounts for their effect on sodium.",
       points: 1,
       teaching: "Potassium replacement raises serum sodium. Include it in the correction budget.",
@@ -422,7 +453,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains the cause and the risk of delayed neurological injury to the daughter in plain language.",
       points: 1,
       teaching: "Families should know that problems from fast correction can appear days later.",
@@ -431,32 +462,63 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Communicates the drug harm to the family doctor and recommends avoiding thiazides and SSRIs without sodium monitoring.",
       points: 1,
       teaching: "The Beers criteria flag thiazides and SSRIs as causes of hyponatremia in older adults.",
       source: "beers",
+    },
+    {
+      id: "hn-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about every medication and its start date, and learns that hydrochlorothiazide was started 6 weeks ago and sertraline 3 months ago.",
+      points: 3,
+      teaching: "A new thiazide or SSRI is a leading cause of hyponatremia in older adults. The start date links the drug to the fall in sodium.",
+      source: "beers",
+    },
+    {
+      id: "hn-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about food and fluid intake and learns she drinks lots of water and eats little besides tea and toast.",
+      points: 2,
+      teaching: "Low solute intake limits how much free water the kidneys can clear. It adds to thiazide and SSRI effects.",
+      source: "sterns",
+    },
+    {
+      id: "hn-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the time course, vomiting, falls or head injury and her usual cognition.",
+      points: 1,
+      teaching: "An acute change from baseline over 2 days points to delirium. Vomiting is both a symptom of severe hyponatremia and a stimulus for ADH.",
+      source: "verbalis",
     },
   ],
   sources: [
     {
       id: "spasovski",
       citation: "Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/24562549/",
     },
     {
       id: "verbalis",
       citation: "Verbalis JG, et al. Diagnosis, evaluation, and treatment of hyponatremia: expert panel recommendations. Am J Med. 2013.",
+      url: "https://www.amjmed.com/article/S0002-9343(13)00605-0/fulltext",
     },
     {
       id: "sterns",
       citation: "Sterns RH. Disorders of plasma sodium: causes, consequences, and correction. N Engl J Med. 2015.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/25551526/",
     },
     {
       id: "beers",
       citation: "American Geriatrics Society Beers Criteria Update Expert Panel. American Geriatrics Society 2023 updated AGS Beers Criteria for potentially inappropriate medication use in older adults. J Am Geriatr Soc. 2023.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/37139824/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

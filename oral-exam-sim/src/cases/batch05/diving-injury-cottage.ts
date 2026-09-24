@@ -16,15 +16,41 @@ export const divingInjuryCottage: OralCase = {
     { topic: "airway", n: 4 },
   ],
   summary: "A 19 year old man is brought in from a lake after a dive with low blood pressure and weakness.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the only emergency physician on shift at a 40 bed hospital in cottage country in Ontario. You have CT with a technologist on site, a small ICU and a general surgeon on call. " +
-    "There is no neurosurgery or spine service. The nearest lead trauma hospital with a spine service is about 2 hours by land or 50 minutes by Ornge helicopter. " +
-    "Ethan Moreau is 19 years old and about 70 kg. He dove off a dock into about a metre of water 50 minutes ago. Friends pulled him out face down. " +
-    "Paramedics placed him in a collar on a scoop stretcher. " +
-    "Arrival vitals: heart rate 46, blood pressure 78/40, respiratory rate 28 and shallow, SpO2 93 percent on a non rebreather, temperature 35.4, GCS 15, capillary glucose 6.2 mmol/L. CTAS 1. " +
-    "The paramedic says: 'He can shrug his shoulders but he cannot move his hands or legs. His pressure has been low the whole way but his skin is warm.'",
+    "You are working in the emergency department of a rural hospital when the following patient arrives. " +
+    "There is no spine service, and the nearest lead trauma hospital is 2 hours by land or 50 minutes by helicopter. " +
+    "A 19 year old man arrives by ambulance 50 minutes after he dove off a dock into shallow water.",
+  card: {
+    vitals: {
+      temperature: "35.4°C",
+      pulse: "46/minute",
+      resp: "28/minute and shallow",
+      bp: "78/40 mmHg",
+      o2sat: "93% on a non rebreather mask",
+      weight: "About 70 kg (154 lb)",
+    },
+    medications: "Unknown",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness (friends and paramedics)",
+      result:
+        "He dove off a dock into about a metre of water 50 minutes ago. Friends pulled him out face down. He did not lose consciousness. He said right away that he could not feel his legs. " +
+        "Paramedics placed him in a collar on a scoop stretcher. CTAS 1. The paramedic says: 'He can shrug his shoulders but he cannot move his hands or legs. His pressure has been low the whole way but his skin is warm.'",
+    },
+    {
+      id: "pmh",
+      label: "Past history, medications and allergies (friends)",
+      result: "Healthy. No medications. No allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history (friends)",
+      result: "Three beers this afternoon.",
+    },
     {
       id: "airway-breathing",
       label: "Airway and breathing",
@@ -77,12 +103,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "labs",
       label: "Blood work",
-      result: "Hemoglobin 148 g/L. Platelets 256 x 10^9/L. INR 1.0. Sodium 139 mmol/L. Potassium 3.9 mmol/L. Creatinine 78 µmol/L. Ethanol 11 mmol/L.",
-    },
-    {
-      id: "history",
-      label: "History from friends",
-      result: "Healthy. No medications or allergies. Three beers this afternoon. He did not lose consciousness. He said right away that he could not feel his legs.",
+      result: "Capillary glucose on arrival 6.2 mmol/L. Hemoglobin 148 g/L. Platelets 256 x 10^9/L. INR 1.0. Sodium 139 mmol/L. Potassium 3.9 mmol/L. Creatinine 78 µmol/L. Ethanol 11 mmol/L.",
     },
   ],
   start: "s-open",
@@ -91,7 +112,9 @@ export const divingInjuryCottage: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Resus",
-      text: "He is awake, scared and asking what is wrong with his arms. You have two nurses and a respiratory therapist.",
+      text:
+        "He is awake, scared and asking what is wrong with his arms. You are the only emergency physician on shift. You have two nurses and a respiratory therapist. " +
+        "Your hospital has CT with a technologist on site, a small ICU and a general surgeon on call. There is no neurosurgery.",
       next: "q-primary",
     },
     {
@@ -109,7 +132,7 @@ export const divingInjuryCottage: OralCase = {
         "Consider aspiration and drowning from the face down period.",
         "Warm him. He cannot control his temperature below the injury.",
       ],
-      rubric: ["sc-a1", "sc-a2"],
+      rubric: ["sc-a1", "sc-a2", "sc-h1", "sc-h2", "sc-h3"],
       next: "q-shock",
     },
     {
@@ -308,7 +331,7 @@ export const divingInjuryCottage: OralCase = {
       kind: "question",
       id: "q-family",
       phase: "Family",
-      prompt: "Before he was intubated, Ethan asked you if he will walk again. He is now sedated. His parents are here and ask the same thing. What do you say?",
+      prompt: "Before he was intubated, the patient asked you if he will walk again. He is now sedated. His parents are here and ask the same thing. What do you say?",
       seconds: 75,
       modelAnswer: [
         "Private room, sit down, nurse present.",
@@ -316,7 +339,7 @@ export const divingInjuryCottage: OralCase = {
         "It is too early to know how much will come back. The exam at 72 hours predicts better than today.",
         "Complete injuries recover less often, but do not remove all hope.",
         "Explain the helicopter, the surgery and how to get there.",
-        "Ethan is 19 and it is his information. While he is sedated his parents act as his substitute decision makers. Plan to talk with Ethan himself as soon as he can take part.",
+        "He is 19 and it is his information. While he is sedated his parents act as his substitute decision makers. Plan to talk with him directly as soon as he can take part.",
       ],
       rubric: ["sc-c2", "sc-p1"],
       next: "end",
@@ -327,7 +350,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Localizes the injury to about C5 from motor and sensory findings and notes absent sacral sparing.",
       points: 2,
       teaching: "Elbow flexion is C5 and wrist extension is C6. No anal contraction or perianal sensation suggests a complete injury.",
@@ -336,7 +359,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Excludes hemorrhage with eFAST, films and lactate before attributing shock to the cord injury.",
       points: 3,
       critical: true,
@@ -346,7 +369,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses limited fluid then norepinephrine, and treats bradycardia with atropine 1 mg IV.",
       points: 2,
       teaching: "Neurogenic shock needs vasopressor and chronotropic support. More fluid only floods the lungs.",
@@ -355,7 +378,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Sets a mean arterial pressure target of about 85 to 90 mmHg to protect cord perfusion.",
       points: 2,
       critical: true,
@@ -365,7 +388,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-r2",
       competency: "resuscitation",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Identifies impending respiratory failure from vital capacity, rising PCO2 and weak cough, and intubates early.",
       points: 2,
       critical: true,
@@ -375,7 +398,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates with manual in line stabilization, video laryngoscopy and a pressor running, avoiding neck extension.",
       points: 2,
       teaching: "An unstable cervical injury must not be extended. Plan for peri intubation hypotension and bradycardia.",
@@ -384,7 +407,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes vagally mediated bradycardia with suctioning and treats and prevents it with atropine.",
       points: 1,
       teaching: "Loss of cardiac sympathetic output above T1 to T4 leaves vagal reflexes unopposed. Pretreat before suctioning.",
@@ -393,7 +416,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Does not give routine or 48 hour methylprednisolone and defers any steroid decision to the spine surgeon.",
       points: 2,
       teaching: "The AANS and CNS guideline recommends against steroids. AO Spine allows a 24 hour course within 8 hours only as a weak option.",
@@ -402,7 +425,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Consults the spine service early with a clear exam, imaging and timeline.",
       points: 1,
       teaching: "Documenting the neuro exam with times lets the spine team track change.",
@@ -411,7 +434,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges urgent transfer through CritiCall aiming for decompression within 24 hours of injury.",
       points: 2,
       teaching: "The 2024 AO Spine update recommends offering decompression within 24 hours of injury because it is linked to better neurological recovery.",
@@ -420,7 +443,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Prepares for transport with a vacuum mattress, Foley, nasogastric tube, warming and pressure point care.",
       points: 1,
       teaching: "Pressure injuries start within hours on a hard board. Poikilothermia makes hypothermia common.",
@@ -429,7 +452,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Coordinates the team so imaging, airway and transfer planning run in parallel.",
       points: 1,
       teaching: "In a small hospital, the one physician must delegate tasks to keep time to decompression short.",
@@ -438,7 +461,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives honest, hopeful uncertainty about recovery to the patient and his parents.",
       points: 1,
       teaching: "Early prognosis is unreliable. Say what is known, what is not, and when more will be known.",
@@ -447,17 +470,45 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Answers the patient honestly while he is awake, uses his parents as substitute decision makers only while he is sedated, and plans to update him directly.",
       points: 1,
       teaching: "An adult who can take part is the decision maker for his own care. Parents step in under the Health Care Consent Act only while he is incapable.",
       source: "hcca",
+    },
+    {
+      id: "sc-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the mechanism and the first symptoms: a dive into shallow water, how he was removed, and weakness or numbness from the start.",
+      points: 2,
+      teaching: "A shallow dive loads the neck in axial compression. Weakness or numbness at once points to a cord injury rather than a later complication.",
+      source: "atls",
+    },
+    {
+      id: "sc-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about loss of consciousness and how long he was face down in the water.",
+      points: 2,
+      teaching: "Time face down in the water raises the risk of aspiration and hypoxic injury. It explains the crackles at the right base.",
+      source: "atls",
+    },
+    {
+      id: "sc-h3",
+      competency: "communication",
+      criterion: "history",
+      text: "Obtains collateral from his friends on past history, medications, allergies and alcohol.",
+      points: 1,
+      teaching: "Friends at the scene are the fastest source of an AMPLE history in a young adult. Alcohol does not explain a focal cord deficit.",
+      source: "atls",
     },
   ],
   sources: [
     {
       id: "walters",
       citation: "Walters BC, et al. Guidelines for the management of acute cervical spine and spinal cord injuries: 2013 update. Neurosurgery. 2013.",
+      url: "https://journals.lww.com/neurosurgery/fulltext/2013/08001/guidelines_for_the_management_of_acute_cervical.24.aspx",
     },
     {
       id: "aospine",
@@ -471,7 +522,8 @@ export const divingInjuryCottage: OralCase = {
     },
     {
       id: "isncsci",
-      citation: "American Spinal Injury Association. International Standards for Neurological Classification of Spinal Cord Injury.",
+      citation: "Rupp R, et al. International Standards for Neurological Classification of Spinal Cord Injury: Revised 2019. Top Spinal Cord Inj Rehabil. 2021.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/34108832/",
     },
     {
       id: "atls",
@@ -480,9 +532,10 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "hcca",
       citation: "Ontario. Health Care Consent Act, 1996.",
+      url: "https://www.canlii.org/en/on/laws/stat/so-1996-c-2-sch-a/latest/so-1996-c-2-sch-a.html",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

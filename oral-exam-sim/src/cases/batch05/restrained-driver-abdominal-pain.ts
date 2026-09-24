@@ -15,15 +15,41 @@ export const restrainedDriverAbdominalPain: OralCase = {
     { topic: "abdominal-pain", n: 7 },
   ],
   summary: "A 29 year old woman walks into the ED after a frontal highway collision with lower abdominal and back pain.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 250 bed community hospital in Ontario. CT, a general surgeon, an obstetrician and an operating room are available 24 hours. " +
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
     "The lead trauma hospital is 45 minutes away by land. " +
-    "Priya Raman is 29 years old and about 62 kg. She was the belted driver in a frontal collision at about 80 km/h on the highway 90 minutes ago. The airbag deployed. " +
-    "She self extricated and was brought in by ambulance. " +
-    "Triage vitals: heart rate 104, blood pressure 118/74, respiratory rate 20, SpO2 98 percent on room air, temperature 36.8, GCS 15. CTAS 2. " +
-    "The nurse says: 'She has a bruise across her belly from the belt and her lower back is sore. She is worried because her period is late.'",
+    "A 29 year old woman arrives by ambulance 90 minutes after a highway collision in which she was the belted driver.",
+  card: {
+    vitals: {
+      temperature: "36.8°C",
+      pulse: "104/minute",
+      resp: "20/minute",
+      bp: "118/74 mmHg",
+      o2sat: "98% on room air",
+      weight: "About 62 kg (137 lb)",
+    },
+    medications: "None",
+    allergies: "No known allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "She was the belted driver in a frontal collision at about 80 km/h on the highway 90 minutes ago. The airbag deployed. She self extricated and was brought in by ambulance. " +
+        "She has pain in her lower abdomen where the belt crossed, and her lower back is sore. No leg weakness or numbness.",
+    },
+    {
+      id: "pmh",
+      label: "Past history, medications and allergies",
+      result: "Healthy. Takes no medications. No allergies. Last meal 4 hours before the crash.",
+    },
+    {
+      id: "ob-history",
+      label: "Menstrual and obstetric history",
+      result: "Her period is late and she is worried about it. She did not know she was pregnant. No prior pregnancies.",
+    },
     {
       id: "abdomen",
       label: "Abdominal exam",
@@ -33,7 +59,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "back",
       label: "Spine and neuro exam",
-      result: "Midline tenderness at the thoracolumbar junction around L1 to L2. No step off. Normal power, sensation and reflexes in both legs. No saddle anesthesia.",
+      result: "GCS 15 at triage. CTAS 2. Midline tenderness at the thoracolumbar junction around L1 to L2. No step off. Normal power, sensation and reflexes in both legs. No saddle anesthesia.",
     },
     {
       id: "efast",
@@ -73,11 +99,6 @@ export const restrainedDriverAbdominalPain: OralCase = {
       label: "Reassessment at 5 hours",
       result: "Heart rate 124. Blood pressure 108/66. Temperature 38.4. Diffuse abdominal tenderness with rigidity and rebound. White cells 18.2 x 10^9/L. Lactate 3.6 mmol/L.",
     },
-    {
-      id: "history",
-      label: "AMPLE history",
-      result: "No allergies. Takes no medications. Healthy. No prior pregnancies. Last meal 4 hours before the crash. She did not know she was pregnant.",
-    },
   ],
   start: "s-open",
   nodes: [
@@ -85,7 +106,9 @@ export const restrainedDriverAbdominalPain: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Resus",
-      text: "She is on a stretcher, holding her lower abdomen. She asks if the baby is okay. You have a nurse and a resident.",
+      text:
+        "She is on a stretcher, holding her lower abdomen. She asks if the baby is okay. You have a nurse and a resident. CT, a general surgeon, an obstetrician and an operating room are available 24 hours. " +
+        "The nurse says: 'She has a bruise across her belly from the belt and her lower back is sore. She is worried because her period is late.'",
       next: "q-primary",
     },
     {
@@ -101,8 +124,9 @@ export const restrainedDriverAbdominalPain: OralCase = {
         "eFAST now. Pregnancy test in every woman of childbearing age.",
         "Tachycardia at 104 may be early hemorrhage or peritonitis. Repeat vitals and exam often.",
         "Analgesia: fentanyl 50 mcg IV titrated.",
+        "History: speed, belt and airbag, time of the crash, back or leg symptoms, last menstrual period and last meal.",
       ],
-      rubric: ["sb-a1", "sb-a2"],
+      rubric: ["sb-a1", "sb-a2", "sb-h1", "sb-h2", "sb-h3"],
       next: "q-imaging",
     },
     {
@@ -151,14 +175,14 @@ export const restrainedDriverAbdominalPain: OralCase = {
       kind: "say",
       id: "s-mri",
       phase: "Radiology",
-      text: "The MRI is booked for tomorrow morning. The radiologist phones and recommends a CT now. You explain the risks to Priya again and she agrees.",
+      text: "The MRI is booked for tomorrow morning. The radiologist phones and recommends a CT now. You explain the risks to her again and she agrees.",
       next: "q-ct",
     },
     {
       kind: "say",
       id: "s-no-ct",
       phase: "Two hours later",
-      text: "The surgeon reviews her and asks why there is no CT with a seatbelt sign and back pain. You talk to Priya again about the fetal dose and she agrees to the scan.",
+      text: "The surgeon reviews her and asks why there is no CT with a seatbelt sign and back pain. You talk to her again about the fetal dose and she agrees to the scan.",
       next: "q-ct",
     },
     {
@@ -322,7 +346,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies the seatbelt sign as a marker of hollow viscus, mesenteric and lumbar spine injury.",
       points: 2,
       teaching: "A lap belt bruise increases the risk of bowel injury several fold. Look for a Chance type fracture at the same time.",
@@ -331,7 +355,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Tests for pregnancy early in a woman of childbearing age.",
       points: 1,
       teaching: "Pregnancy changes imaging counselling, drug choice and the need for Rh immune globulin.",
@@ -340,7 +364,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-m1",
       competency: "management",
-      criterion: "data",
+      criterion: "management",
       text: "Proceeds with CT abdomen and pelvis with IV contrast despite pregnancy.",
       points: 3,
       critical: true,
@@ -350,7 +374,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Explains fetal radiation risk in plain language and obtains informed consent for CT.",
       points: 2,
       teaching: "Say the risk as a comparison: a small radiation dose against a missed injury that could harm both of them.",
@@ -359,7 +383,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Interprets free fluid without solid organ injury plus mesenteric stranding as probable bowel or mesenteric injury.",
       points: 3,
       critical: true,
@@ -369,7 +393,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Admits under general surgery with spinal precautions and spine consultation rather than discharging.",
       points: 2,
       teaching: "Serial exams by the operating surgeon catch evolving peritonitis. A flexion distraction fracture is usually unstable.",
@@ -378,7 +402,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives Rh immune globulin to the Rh negative pregnant trauma patient within 72 hours.",
       points: 2,
       teaching: "Abdominal trauma in an Rh negative pregnant patient warrants Rh immune globulin. Before 12 weeks a minimum of 120 mcg is enough and 300 mcg is also acceptable.",
@@ -387,7 +411,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes peritonitis and gives fluids, analgesia and pregnancy safe antibiotics without delay.",
       points: 2,
       teaching: "Ceftriaxone with metronidazole covers bowel flora and is acceptable in pregnancy.",
@@ -396,7 +420,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls the surgeon for laparotomy based on the exam without waiting for repeat imaging.",
       points: 3,
       critical: true,
@@ -406,7 +430,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Addresses her fears about the CT and surgery honestly and checks her understanding.",
       points: 1,
       teaching: "Name the real risks and the bigger risk of not treating. Offer support people.",
@@ -415,7 +439,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Coordinates general surgery, spine and obstetrics and gives a timed handover.",
       points: 1,
       teaching: "Multi system injuries need one clear plan. The ED physician links the services.",
@@ -424,21 +448,50 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents the consent discussion about imaging in pregnancy.",
       points: 1,
       teaching: "A clear note of the risks discussed and her decision protects the patient and the physician.",
       source: "acog",
+    },
+    {
+      id: "sb-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the mechanism: speed, frontal impact, lap and shoulder belt, airbag, self extrication and the time of the crash.",
+      points: 2,
+      teaching: "A belted frontal crash at highway speed loads the bowel, mesentery and lumbar spine against the lap belt. The time of the crash matters because bowel injury can declare itself hours later.",
+      source: "east",
+    },
+    {
+      id: "sb-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks where the pain is, about back pain, and about leg weakness, numbness or bladder symptoms.",
+      points: 2,
+      teaching: "Back pain after a lap belt injury points to a flexion distraction fracture. Neurological symptoms change the urgency of the spine consult.",
+      source: "atls",
+    },
+    {
+      id: "sb-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes an AMPLE history including the last menstrual period and the time of the last meal.",
+      points: 1,
+      teaching: "A late period in a woman of childbearing age prompts a pregnancy test before imaging and drugs. The last meal matters if she needs the operating room.",
+      source: "sogc",
     },
   ],
   sources: [
     {
       id: "east",
       citation: "Hoff WS, et al. Practice management guidelines for the evaluation of blunt abdominal trauma. Eastern Association for the Surgery of Trauma. J Trauma. 2002.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/12352507/",
     },
     {
       id: "sogc",
       citation: "Jain V, et al. Guidelines for the management of a pregnant trauma patient. SOGC Clinical Practice Guideline. J Obstet Gynaecol Can. 2015.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/26334607/",
     },
     {
       id: "sogcrh",
@@ -448,13 +501,14 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "acog",
       citation: "American College of Obstetricians and Gynecologists. Committee Opinion 723. Guidelines for diagnostic imaging during pregnancy and lactation. 2017.",
+      url: "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2017/10/guidelines-for-diagnostic-imaging-during-pregnancy-and-lactation",
     },
     {
       id: "atls",
       citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

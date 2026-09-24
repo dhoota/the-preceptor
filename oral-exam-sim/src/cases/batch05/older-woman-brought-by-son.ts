@@ -17,18 +17,39 @@ export const olderWomanBroughtBySon: OralCase = {
     { topic: "abuse-domestic", n: 6 },
   ],
   summary: "An 82 year old woman is brought in by her son with a sore arm after what he describes as a fall at home.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 180 bed community hospital in Ontario. A social worker and a geriatric emergency management nurse are on site until 20:00. Security is available. " +
-    "It is 16:30 on a weekday. Margaret Doyle is 82 years old. She lives in her own house with her 54 year old son Kevin, who says he is her caregiver. " +
-    "Kevin says she fell in the kitchen two days ago and hurt her left arm. He brought her in because the swelling is not going away. " +
-    "Triage vitals: heart rate 98, blood pressure 108/64, respiratory rate 18, SpO2 96 percent on room air, temperature 36.9, capillary glucose 5.9 mmol/L. CTAS 3. " +
-    "The triage nurse says: 'Something is off. He answers every question for her and she will not look at me. She smells like she has not been washed in a while.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "It is 16:30 on a weekday. An 82 year old woman is brought in by her son with a swollen left arm after what he describes as a fall at home two days ago.",
+  card: {
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "98/minute",
+      resp: "18/minute",
+      bp: "108/64 mmHg",
+      o2sat: "96% on room air",
+      weight: "44 kg (97 lb)",
+    },
+    medications: "Donepezil, amlodipine, vitamin D",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness (from her son)",
+      result:
+        "Her son says she fell in the kitchen two days ago and hurt her left arm. He brought her in because the swelling is not going away. " +
+        "He answers every question for her. Capillary glucose at triage 5.9 mmol/L. CTAS 3.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "She lives in her own house with her 54 year old son, who says he is her caregiver.",
+    },
     {
       id: "general",
       label: "General appearance",
-      result: "Thin and quiet. Dry mouth. Hair matted. Clothes soiled with urine. She glances at Kevin before answering. Weight 44 kg. Her family doctor's record from 8 months ago says 53 kg.",
+      result: "Thin and quiet. Dry mouth. Hair matted. Clothes soiled with urine. She glances at her son before answering. Weight 44 kg. Her family doctor's record from 8 months ago says 53 kg.",
     },
     {
       id: "arm",
@@ -75,14 +96,14 @@ export const olderWomanBroughtBySon: OralCase = {
     },
     {
       id: "private",
-      label: "History from Margaret alone",
+      label: "History from the patient alone",
       result:
-        "With Kevin out of the room she says quietly: 'He gets angry when he drinks. He grabs me hard. He pushed me into the counter. He has my bank card. Please do not get him in trouble. He is all I have.' " +
+        "With her son out of the room she says quietly: 'He gets angry when he drinks. He grabs me hard. He pushed me into the counter. He has my bank card. Please do not get him in trouble. He is all I have.' " +
         "She says she is scared to go home tonight, but she does not want the police.",
     },
     {
       id: "son",
-      label: "Kevin",
+      label: "Her son",
       result: "He smells of alcohol. He says he has been off work for a year. He says, 'I have power of attorney. I decide where she goes. We are leaving once the cast is on.'",
     },
   ],
@@ -92,7 +113,10 @@ export const olderWomanBroughtBySon: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "The room",
-      text: "Margaret sits on the stretcher with her arm in her lap. Kevin stands between you and her, arms crossed.",
+      text:
+        "She sits on the stretcher with her arm in her lap. Her son stands between you and her, arms crossed. " +
+        "The triage nurse says: 'Something is off. He answers every question for her and she will not look at me. She smells like she has not been washed in a while.' " +
+        "A social worker and a geriatric emergency management nurse are on site until 20:00. Security is available.",
       next: "q-assess",
     },
     {
@@ -108,29 +132,30 @@ export const olderWomanBroughtBySon: OralCase = {
         "A mid shaft ulnar fracture fits a defensive injury better than a fall.",
         "Begin with a full medical assessment. Plan to interview her alone.",
         "Consider cognitive impairment and dependence as risk factors.",
+        "Ask for the story of the fall: when, how, and why two days passed before she came in.",
       ],
-      rubric: ["ea-a1"],
+      rubric: ["ea-a1", "ea-h1"],
       next: "q-alone",
     },
     {
       kind: "question",
       id: "q-alone",
       phase: "Private interview",
-      prompt: "Kevin says he needs to stay because she gets confused. How do you get time alone with her, and what do you ask?",
+      prompt: "Her son says he needs to stay because she gets confused. How do you get time alone with her, and what do you ask?",
       seconds: 75,
       modelAnswer: [
         "Make it routine and neutral: 'We see every patient on their own for part of the visit.'",
-        "Ask Kevin to wait in the family room. Involve the nurse or social worker.",
+        "Ask her son to wait in the family room. Involve the nurse or social worker.",
         "Use direct simple questions, such as those in the Elder Abuse Suspicion Index.",
         "Ask if anyone has hurt her, made her afraid, taken her money or kept her from food, medicine or care.",
         "Ask what she wants and whether she feels safe going home.",
         "Use a professional interpreter if needed. Never the family member.",
       ],
-      rubric: ["ea-c1", "ea-a2"],
+      rubric: ["ea-c1", "ea-a2", "ea-h3"],
       choices: [
         {
           id: "c-routine",
-          label: "I told Kevin we see every patient alone for part of the visit, asked him to wait outside, and asked her directly and gently about safety.",
+          label: "I told her son we see every patient alone for part of the visit, asked him to wait outside, and asked her directly and gently about safety.",
           next: "q-medical",
           quality: "strong",
           feedback:
@@ -138,7 +163,7 @@ export const olderWomanBroughtBySon: OralCase = {
         },
         {
           id: "c-together",
-          label: "I took the history with Kevin in the room so he could help with her memory.",
+          label: "I took the history with her son in the room so he could help with her memory.",
           next: "s-together",
           quality: "partial",
           feedback:
@@ -146,7 +171,7 @@ export const olderWomanBroughtBySon: OralCase = {
         },
         {
           id: "c-confront",
-          label: "I told Kevin that her injuries looked like abuse and asked him to explain them.",
+          label: "I told her son that her injuries looked like abuse and asked him to explain them.",
           next: "s-confront",
           quality: "unsafe",
           feedback:
@@ -158,14 +183,14 @@ export const olderWomanBroughtBySon: OralCase = {
       kind: "say",
       id: "s-together",
       phase: "The history",
-      text: "Margaret says only, 'I fell. I am clumsy.' Later the nurse walks Kevin to the cafeteria and you speak to Margaret alone. She tells you what has been happening.",
+      text: "She says only, 'I fell. I am clumsy.' Later the nurse walks her son to the cafeteria and you speak to her alone. She tells you what has been happening.",
       next: "q-medical",
     },
     {
       kind: "say",
       id: "s-confront",
       phase: "Reaction",
-      text: "Kevin shouts that you are accusing him and starts to help Margaret off the stretcher. Security arrives and he agrees to wait outside. Margaret is crying. Later, alone, she tells you what has been happening.",
+      text: "Her son shouts that you are accusing him and starts to help her off the stretcher. Security arrives and he agrees to wait outside. The patient is crying. Later, alone, she tells you what has been happening.",
       next: "q-medical",
     },
     {
@@ -183,14 +208,14 @@ export const olderWomanBroughtBySon: OralCase = {
         "Wound care for the pressure injury. Screen for delirium and assess cognition.",
         "Document injuries with a body map, measurements and photographs with her consent.",
       ],
-      rubric: ["ea-m1", "ea-m2"],
+      rubric: ["ea-m1", "ea-m2", "ea-h2"],
       next: "q-decision",
     },
     {
       kind: "question",
       id: "q-decision",
       phase: "Her decision",
-      prompt: "Margaret says she is afraid to go home but does not want the police called. You believe this is abuse. Do you have to report it? What do you do?",
+      prompt: "The patient says she is afraid to go home but does not want the police called. You believe this is abuse. Do you have to report it? What do you do?",
       seconds: 90,
       modelAnswer: [
         "Assess her capacity for this decision. A MoCA of 21 does not by itself mean she is incapable.",
@@ -220,7 +245,7 @@ export const olderWomanBroughtBySon: OralCase = {
         },
         {
           id: "c-home",
-          label: "I felt she was capable, so I splinted her arm and discharged her home with Kevin and a follow up with her family doctor.",
+          label: "I felt she was capable, so I splinted her arm and discharged her home with her son and a follow up with her family doctor.",
           next: "s-home",
           quality: "unsafe",
           feedback:
@@ -232,14 +257,14 @@ export const olderWomanBroughtBySon: OralCase = {
       kind: "say",
       id: "s-report",
       phase: "An hour later",
-      text: "Margaret is upset and says she will deny everything. The social worker helps rebuild the conversation. Margaret agrees to stay in hospital overnight.",
+      text: "The patient is upset and says she will deny everything. The social worker helps rebuild the conversation. She agrees to stay in hospital overnight.",
       next: "s-son",
     },
     {
       kind: "say",
       id: "s-home",
       phase: "At the door",
-      text: "The nurse stops you. Margaret whispered to her that she does not want to leave with Kevin. Her sodium and creatinine have also come back. You bring her back to a stretcher and plan admission.",
+      text: "The nurse stops you. The patient whispered to her that she does not want to leave with her son. Her sodium and creatinine have also come back. You bring her back to a stretcher and plan admission.",
       next: "s-son",
     },
     {
@@ -247,19 +272,19 @@ export const olderWomanBroughtBySon: OralCase = {
       id: "s-son",
       phase: "Escalation",
       text:
-        "Kevin comes back to the bedside. He smells of alcohol and is loud. He waves a paper and says, 'I have power of attorney. I decide where she goes. We are leaving now.'",
+        "Her son comes back to the bedside. He smells of alcohol and is loud. He waves a paper and says, 'I have power of attorney. I decide where she goes. We are leaving now.'",
       next: "q-son",
     },
     {
       kind: "question",
       id: "q-son",
       phase: "Conflict",
-      prompt: "How do you respond to Kevin?",
+      prompt: "How do you respond to her son?",
       seconds: 75,
       modelAnswer: [
         "Stay calm. Keep a safe distance. Ask security to stand by.",
         "Read the document. A power of attorney for personal care acts only when she is incapable of the decision.",
-        "Margaret is capable. She decides where she goes.",
+        "She is capable. She decides where she goes.",
         "A power of attorney for property does not give authority over her health care.",
         "Do not share her disclosure with him.",
         "If she becomes incapable and is at risk of serious harm from the attorney, the Office of the Public Guardian and Trustee can investigate.",
@@ -268,7 +293,7 @@ export const olderWomanBroughtBySon: OralCase = {
       choices: [
         {
           id: "c-calm",
-          label: "I stayed calm with security nearby, read the document, explained that Margaret is capable and makes her own decisions, and did not share what she told me.",
+          label: "I stayed calm with security nearby, read the document, explained that she is capable and makes her own decisions, and did not share what she told me.",
           next: "q-law",
           quality: "strong",
           feedback:
@@ -288,21 +313,21 @@ export const olderWomanBroughtBySon: OralCase = {
       kind: "say",
       id: "s-defer",
       phase: "The charge nurse",
-      text: "The charge nurse questions the plan and reminds you that Margaret said she is afraid. You speak to Margaret again. She confirms she wants to stay. Kevin leaves with security.",
+      text: "The charge nurse questions the plan and reminds you that the patient said she is afraid. You speak to her again. She confirms she wants to stay. Her son leaves with security.",
       next: "q-law",
     },
     {
       kind: "question",
       id: "q-law",
       phase: "Legal framework",
-      prompt: "The resident asks you when reporting elder abuse is mandatory in Ontario, and what options exist if Margaret becomes incapable. What do you teach?",
+      prompt: "The resident asks you when reporting elder abuse is mandatory in Ontario, and what options exist if the patient becomes incapable. What do you teach?",
       seconds: 75,
       modelAnswer: [
         "Mandatory: anyone except a resident, including physicians, must report suspected abuse or neglect of a long term care resident to the Director at the Ministry of Long-Term Care under the Fixing Long-Term Care Act. The duty applies even if the information is confidential.",
         "The Retirement Homes Act sets a similar duty to report harm, abuse, neglect or misuse of a resident's money to the Registrar of the Retirement Homes Regulatory Authority.",
         "Community dwelling capable adults: disclosure with consent, or without consent only to reduce a significant risk of serious bodily harm.",
         "Incapable adults at risk of serious adverse effects: the Office of the Public Guardian and Trustee can investigate under the Substitute Decisions Act.",
-        "The Public Guardian and Trustee also investigates when a person is incapable of managing property and serious adverse effects, such as financial abuse, are occurring or may occur. While Margaret is capable, she can revoke a power of attorney herself.",
+        "The Public Guardian and Trustee also investigates when a person is incapable of managing property and serious adverse effects, such as financial abuse, are occurring or may occur. While the patient is capable, she can revoke a power of attorney herself.",
         "Document carefully and objectively.",
       ],
       rubric: ["ea-p4"],
@@ -325,13 +350,13 @@ export const olderWomanBroughtBySon: OralCase = {
       rubric: ["ea-d2", "ea-l1"],
       next: "end",
     },
-    { kind: "end", id: "end", text: "Margaret is admitted to the geriatric unit. That is the end of the case." },
+    { kind: "end", id: "end", text: "The patient is admitted to the geriatric unit. That is the end of the case." },
   ],
   rubric: [
     {
       id: "ea-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies red flags for physical abuse and neglect: delay, inconsistent history, bruises of different ages, grip marks, weight loss and poor hygiene.",
       points: 2,
       teaching: "Bruises on the inner arms, the trunk and in patterns are more concerning than bruises on bony prominences from falls. Bruise colour is a poor guide to age, so document without dating.",
@@ -340,7 +365,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-c1",
       competency: "communication",
-      criterion: "approach",
+      criterion: "history",
       text: "Interviews the patient alone using a routine, non accusing approach.",
       points: 3,
       critical: true,
@@ -350,7 +375,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "history",
       text: "Asks direct questions about harm, fear, money and neglect.",
       points: 1,
       teaching: "The Elder Abuse Suspicion Index uses short direct questions validated in primary care.",
@@ -359,7 +384,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-m1",
       competency: "management",
-      criterion: "data",
+      criterion: "physical",
       text: "Completes a full medical assessment including CT head, fracture care, sodium and kidney function.",
       points: 2,
       teaching: "Abuse and neglect cause real medical illness. Treat it and document it.",
@@ -368,7 +393,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents injuries with a body map, measurements and photographs with consent.",
       points: 1,
       teaching: "Objective documentation supports later decisions and any legal process.",
@@ -377,7 +402,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "physical",
       text: "Assesses her capacity for the specific decision rather than assuming incapacity from cognitive screening.",
       points: 3,
       critical: true,
@@ -387,7 +412,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-p2",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "States that Ontario has no general mandatory reporting for capable community dwelling adults and respects her choice, while knowing the serious harm exception.",
       points: 2,
       teaching: "Privacy law permits disclosure without consent only to reduce a significant risk of serious bodily harm.",
@@ -396,7 +421,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Admits her for medical reasons and safety rather than discharging her with the suspected abuser.",
       points: 3,
       critical: true,
@@ -406,7 +431,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "De-escalates the son with security support and does not share her disclosure.",
       points: 1,
       teaching: "Keep yourself and the patient safe. Disclosure to the suspected abuser raises risk.",
@@ -415,7 +440,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-p3",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Explains that a power of attorney for personal care acts only when the person is incapable.",
       points: 2,
       teaching: "A capable adult makes her own decisions, whatever documents a relative carries.",
@@ -424,7 +449,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-p4",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Describes mandatory reporting in long term care and retirement homes and the role of the Public Guardian and Trustee for incapable adults.",
       points: 2,
       teaching: "Reports go to the Director for long term care and to the Registrar for retirement homes. The Public Guardian and Trustee investigates serious adverse effects for adults who are incapable.",
@@ -433,7 +458,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-d2",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Hands over the disclosure, her wishes, capacity and safety plan to the admitting team and social work.",
       points: 1,
       teaching: "Safety plans fail when the next team does not know the story.",
@@ -442,29 +467,60 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Engages social work and the geriatric emergency management nurse early.",
       points: 1,
       teaching: "Elder abuse care is a team task. Specialist nurses and social work know local resources.",
       source: "lachs",
+    },
+    {
+      id: "ea-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks for the details of the fall: when, where and how it happened, and why she was brought in two days later.",
+      points: 2,
+      teaching: "A vague mechanism and a delay in seeking care are red flags for abuse or neglect. Compare the story with the injury pattern.",
+      source: "lachs",
+    },
+    {
+      id: "ea-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Reviews her medications with pharmacy records and notices the missed donepezil refills.",
+      points: 2,
+      teaching: "Medications not being filled or given can be a sign of caregiver neglect. Pharmacy records give an objective check.",
+      source: "lachs",
+    },
+    {
+      id: "ea-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about her baseline function, her living situation and who manages her money.",
+      points: 1,
+      teaching: "Dependence on a single caregiver and control of her finances are risk factors for abuse and point to financial exploitation.",
+      source: "easi",
     },
   ],
   sources: [
     {
       id: "lachs",
       citation: "Lachs MS, Pillemer KA. Elder abuse. N Engl J Med. 2015.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/26559573/",
     },
     {
       id: "easi",
       citation: "Yaffe MJ, et al. Development and validation of a tool to improve physician identification of elder abuse: the Elder Abuse Suspicion Index. J Elder Abuse Negl. 2008.",
+      url: "https://www.mcgill.ca/familymed/research/resources/funding/elder",
     },
     {
       id: "hcca",
       citation: "Ontario. Health Care Consent Act, 1996.",
+      url: "https://www.canlii.org/en/on/laws/stat/so-1996-c-2-sch-a/latest/so-1996-c-2-sch-a.html",
     },
     {
       id: "phipa",
       citation: "Ontario. Personal Health Information Protection Act, 2004.",
+      url: "https://www.canlii.org/en/on/laws/stat/so-2004-c-3-sch-a/latest/so-2004-c-3-sch-a.html",
     },
     {
       id: "sda",
@@ -473,9 +529,10 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "fltca",
       citation: "Ontario. Fixing Long-Term Care Act, 2021, section 28, and Retirement Homes Act, 2010, section 75.",
+      url: "https://www.canlii.org/en/on/laws/stat/so-2021-c-39-sch-1/latest/so-2021-c-39-sch-1.html",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

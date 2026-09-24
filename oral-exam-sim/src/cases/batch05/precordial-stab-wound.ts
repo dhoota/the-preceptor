@@ -16,15 +16,41 @@ export const precordialStabWound: OralCase = {
     { topic: "shock", n: 6 },
   ],
   summary: "A 22 year old man with a single stab wound to the left chest arrives by ambulance to a large community hospital.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 300 bed community hospital in southern Ontario. " +
-    "A general surgeon is in the building finishing a case in the operating room. There is no cardiac surgery on site. " +
-    "The lead trauma hospital is 25 minutes away by land. The blood bank has uncrossmatched O red cells and a massive hemorrhage protocol. A thoracotomy tray is in resus. " +
-    "Kwame Asante is 22 years old, about 75 kg. He was stabbed once in the left chest with a kitchen knife about 20 minutes ago. " +
-    "Paramedic vitals: heart rate 128, blood pressure 82/64, respiratory rate 28, SpO2 95 percent on 10 L by mask, GCS 14. " +
-    "The paramedic says: 'Single wound, left of the sternum. His neck veins looked full and his pressure has been drifting down since we got him.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is no cardiac surgery on site and the lead trauma hospital is 25 minutes away by land. " +
+    "A 22 year old man arrives by ambulance about 20 minutes after he was stabbed once in the left chest.",
+  card: {
+    vitals: {
+      temperature: "Not recorded",
+      pulse: "128/minute",
+      resp: "28/minute",
+      bp: "82/64 mmHg",
+      o2sat: "95% on 10 L/minute by mask",
+      weight: "About 75 kg (165 lb)",
+    },
+    medications: "Not recorded",
+    allergies: "Not recorded",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness (paramedic report)",
+      result:
+        "He was stabbed once in the left chest with a kitchen knife about 20 minutes ago. GCS 14 on scene. " +
+        "The paramedic says: 'Single wound, left of the sternum. His neck veins looked full and his pressure has been drifting down since we got him.'",
+    },
+    {
+      id: "pmh",
+      label: "Past history, medications and allergies",
+      result: "He says he is healthy. He takes no medications and no blood thinners. No known allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history",
+      result: "He was drinking beer tonight. He denies other drugs.",
+    },
     {
       id: "wound",
       label: "Wound inspection",
@@ -85,7 +111,9 @@ export const precordialStabWound: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Resus",
-      text: "He is anxious, pale and asking for water. You have two nurses, a respiratory therapist and a clerk. The eFAST probe is in your hand.",
+      text:
+        "He is anxious, pale and asking for water. You have two nurses, a respiratory therapist and a clerk. The eFAST probe is in your hand. " +
+        "A general surgeon is in the building finishing a case in the operating room. The blood bank has uncrossmatched O red cells and a massive hemorrhage protocol. A thoracotomy tray is in resus.",
       next: "q-primary",
     },
     {
@@ -101,8 +129,9 @@ export const precordialStabWound: OralCase = {
         "Activate the massive hemorrhage protocol. Give blood, not crystalloid, to support preload.",
         "Call the surgeon out of the operating room now. He needs the operating room, not CT.",
         "Open the thoracotomy tray and prepare in case he arrests.",
+        "Quick history while the survey runs: weapon, time, number of wounds, vital sign trend, blood thinners, allergies, alcohol.",
       ],
-      rubric: ["st-a1", "st-l1"],
+      rubric: ["st-a1", "st-l1", "st-h1", "st-h2"],
       choices: [
         {
           id: "c-or",
@@ -189,7 +218,7 @@ export const precordialStabWound: OralCase = {
       id: "s-arrest",
       phase: "Deterioration",
       text:
-        "The surgeon calls to say he needs 10 more minutes to close his case. While the team prepares for transfer to the operating room, Kwame gasps and goes limp. There is a narrow complex rhythm at 110 with no pulse. His pupils react.",
+        "The surgeon calls to say he needs 10 more minutes to close his case. While the team prepares for transfer to the operating room, he gasps and goes limp. There is a narrow complex rhythm at 110 with no pulse. His pupils react.",
       next: "q-arrest",
     },
     {
@@ -359,7 +388,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes traumatic tamponade from hypotension, distended neck veins and a precordial wound, and confirms it with subxiphoid ultrasound.",
       points: 2,
       teaching: "Beck triad is often incomplete. eFAST is fast and sensitive for pericardial blood in penetrating chest trauma.",
@@ -368,7 +397,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-a2",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies signs of life at loss of pulse: organized electrical activity, reactive pupils and a gasp.",
       points: 1,
       teaching: "Signs of life and a penetrating chest mechanism define the group most likely to survive thoracotomy.",
@@ -377,7 +406,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Calls the surgeon and the operating room immediately and prepares the thoracotomy tray before arrest.",
       points: 2,
       teaching: "Anticipate the arrest. The tray should be open and the team briefed before it is needed.",
@@ -386,7 +415,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids induction and positive pressure ventilation in the ED unless the chest can be opened immediately.",
       points: 2,
       critical: true,
@@ -396,7 +425,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs an immediate resuscitative thoracotomy for loss of pulse with signs of life after a penetrating chest wound.",
       points: 3,
       critical: true,
@@ -406,7 +435,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Describes a left anterolateral incision in the 4th or 5th intercostal space with the rib spreader handle toward the axilla.",
       points: 1,
       teaching: "The inframammary fold marks the 5th space in men. Extend across the sternum to a clamshell for more exposure.",
@@ -415,7 +444,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Opens the pericardium longitudinally anterior to the phrenic nerve and controls the ventricular wound with a finger then staples or sutures.",
       points: 3,
       critical: true,
@@ -425,7 +454,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives warmed balanced blood products and avoids crystalloid.",
       points: 2,
       teaching: "Red cells, plasma and platelets close to 1 to 1 to 1 restore volume without diluting clotting factors.",
@@ -434,7 +463,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives tranexamic acid 1 g IV within 3 hours of injury and calcium chloride 1 g IV for transfusion.",
       points: 1,
       teaching: "Early tranexamic acid reduces bleeding death in trauma. Citrate in blood products binds calcium.",
@@ -443,7 +472,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Sends him to the local operating room for damage control first, with transfer to the lead trauma hospital once stable.",
       points: 2,
       teaching: "A heart that has just been restarted will not survive a 25 minute transfer. Control first, then move.",
@@ -452,7 +481,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Sets up a three way call between the local surgeon and the trauma team leader through CritiCall with a clear shared plan.",
       points: 1,
       teaching: "Joint decisions reduce conflict and clarify who owns the next step.",
@@ -461,7 +490,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Speaks to his mother honestly about how close he came to death and the uncertain outcome.",
       points: 1,
       teaching: "Families need the truth in plain words, with a person who can stay with them.",
@@ -470,7 +499,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-l2",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Leads a brief team debrief and checks for blood or sharps exposures among staff.",
       points: 1,
       teaching: "Thoracotomy carries a real risk of sharps injury. Debriefs help the team and catch safety issues.",
@@ -479,29 +508,48 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Documents the procedure, indication and times, and restocks the tray for the next patient.",
       points: 1,
       teaching: "Clear documentation protects the patient and the team. A stocked tray protects the next patient.",
+      source: "atls",
+    },
+    {
+      id: "st-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the paramedics about the weapon, the time of injury, the number of wounds and the trend in his vital signs.",
+      points: 3,
+      teaching: "A single precordial wound with a falling pressure and full neck veins points to cardiac injury. The time of injury also sets the tranexamic acid window.",
+      source: "atls",
+    },
+    {
+      id: "st-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes a brief AMPLE history: allergies, medications including blood thinners, past history and alcohol or drugs tonight.",
+      points: 2,
+      teaching: "A short AMPLE history fits inside the primary survey. Blood thinners and intoxication change the resuscitation and the anesthetic plan.",
       source: "atls",
     },
   ],
   sources: [
     {
       id: "east",
-      citation:
-        "Seamon MJ, et al. An evidence based approach to patient selection for emergency department thoracotomy: a practice management guideline from the Eastern Association for the Surgery of Trauma. J Trauma Acute Care Surg. 2015.",
+      citation: "Seamon MJ, et al. An evidence based approach to patient selection for emergency department thoracotomy: a practice management guideline from the Eastern Association for the Surgery of Trauma. J Trauma Acute Care Surg. 2015.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/26091330/",
     },
     {
       id: "wta",
       citation: "Burlew CC, et al. Western Trauma Association critical decisions in trauma: resuscitative thoracotomy. J Trauma Acute Care Surg. 2012.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/23188227/",
     },
     {
       id: "atls",
       citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

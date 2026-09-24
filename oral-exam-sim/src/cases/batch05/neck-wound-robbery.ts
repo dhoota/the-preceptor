@@ -16,15 +16,35 @@ export const neckWoundRobbery: OralCase = {
     { topic: "airway", n: 4 },
   ],
   summary: "A 31 year old man is brought in after being stabbed once in the side of the neck during a robbery.",
-  durationMinutes: 14,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a lead trauma hospital in Ontario. Trauma surgery, vascular surgery, otolaryngology and anesthesia are in house. The operating room is one floor up. " +
-    "A massive hemorrhage protocol is available. " +
-    "Andre Lalonde is 31 years old and about 80 kg. He was stabbed once in the left side of the neck with a folding knife about 25 minutes ago. " +
-    "A paramedic is holding gauze on the wound. They placed a cervical collar and an IV in the left arm. " +
-    "Arrival vitals: heart rate 122, blood pressure 96/60, respiratory rate 24, SpO2 94 percent on a non rebreather, GCS 15. CTAS 1. " +
-    "The paramedic says: 'It was spurting at the scene. The swelling has been getting bigger and his voice sounds different.'",
+    "You are working in the emergency department of a tertiary care centre when the following patient arrives. " +
+    "A 31 year old man arrives by ambulance about 25 minutes after he was stabbed once in the left side of the neck. A paramedic is holding gauze on the wound.",
+  card: {
+    vitals: {
+      temperature: "Not recorded",
+      pulse: "122/minute",
+      resp: "24/minute",
+      bp: "96/60 mmHg",
+      o2sat: "94% on a non rebreather mask",
+      weight: "About 80 kg (176 lb)",
+    },
+    medications: "None",
+    allergies: "No known allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness (paramedic report)",
+      result:
+        "He was stabbed once in the left side of the neck with a folding knife about 25 minutes ago. Paramedics placed a cervical collar and an IV in the left arm. CTAS 1 at triage. " +
+        "The paramedic says: 'It was spurting at the scene. The swelling has been getting bigger and his voice sounds different.'",
+    },
+    {
+      id: "pmh",
+      label: "Past history, medications and allergies",
+      result: "Healthy. No medications. No allergies. Last meal 3 hours ago. Tetanus status unknown.",
+    },
     {
       id: "wound",
       label: "Neck wound",
@@ -67,11 +87,6 @@ export const neckWoundRobbery: OralCase = {
       label: "Vitals after intubation",
       result: "Heart rate 138. Blood pressure 74/42. Blood welling around the gauze and through the wound with each beat.",
     },
-    {
-      id: "history",
-      label: "AMPLE history",
-      result: "No allergies. No medications. Healthy. Last meal 3 hours ago. Tetanus status unknown.",
-    },
   ],
   start: "s-open",
   nodes: [
@@ -79,7 +94,9 @@ export const neckWoundRobbery: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Resus",
-      text: "He is sitting up, spitting into a basin and trying to talk. The trauma team is assembling. You are the trauma team leader.",
+      text:
+        "He is sitting up, spitting into a basin and trying to talk. The trauma team is assembling. You are the trauma team leader. " +
+        "Trauma surgery, vascular surgery, otolaryngology and anesthesia are in house. The operating room is one floor up. A massive hemorrhage protocol is available.",
       next: "q-primary",
     },
     {
@@ -97,7 +114,7 @@ export const neckWoundRobbery: OralCase = {
         "Activate the massive hemorrhage protocol. Call the operating room now.",
         "No nasogastric tube. It can cause gagging and dislodge clot.",
       ],
-      rubric: ["pn-a1", "pn-m1"],
+      rubric: ["pn-a1", "pn-m1", "pn-h1", "pn-h2", "pn-h3"],
       choices: [
         {
           id: "c-pressure",
@@ -347,7 +364,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies hard signs of vascular injury and signs of aerodigestive injury.",
       points: 2,
       teaching: "Hard signs include active or pulsatile bleeding, expanding hematoma, bruit or thrill, shock and neuro deficit. Hoarseness, crepitus and hemoptysis suggest airway or esophageal injury.",
@@ -356,7 +373,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Does not probe the wound, removes the collar, holds direct pressure and places access away from the injured side.",
       points: 2,
       teaching: "Probing risks rebleeding and air embolism. Collars are not needed in isolated penetrating neck injury without neuro deficit.",
@@ -365,7 +382,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Secures the airway early with a double set up plan and a surgical airway ready.",
       points: 3,
       critical: true,
@@ -375,7 +392,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Mobilizes anesthesia and the trauma surgeon and chooses the best location for the airway.",
       points: 1,
       teaching: "The operating room with a scrubbed surgeon is the safest place when time allows.",
@@ -384,7 +401,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses digital pressure or Foley catheter balloon tamponade and avoids blind clamping.",
       points: 3,
       critical: true,
@@ -394,7 +411,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids circumferential neck dressings and considers venous air embolism.",
       points: 1,
       teaching: "Tight neck wraps compress the airway. Open neck veins can entrain air, so keep the head slightly down.",
@@ -403,7 +420,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives balanced blood products, tranexamic acid 1 g IV and calcium, with a permissive systolic target of 80 to 90 mmHg.",
       points: 2,
       teaching: "Damage control resuscitation limits coagulopathy. Permissive hypotension applies only without brain injury.",
@@ -412,7 +429,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Sends the unstable patient with hard signs directly to the operating room without CT.",
       points: 3,
       critical: true,
@@ -422,7 +439,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Respectfully declines an unsafe request and confirms the plan with the attending surgeon.",
       points: 1,
       teaching: "Speak up clearly with the reason. Escalate to the responsible attending when there is disagreement.",
@@ -431,7 +448,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Describes CT angiography for stable patients regardless of zone, with esophageal and airway assessment as needed.",
       points: 2,
       teaching: "The no zone approach uses signs and CT angiography rather than anatomic zones to decide on surgery in stable patients.",
@@ -440,7 +457,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover including airway details, balloon volume and products with times.",
       points: 1,
       teaching: "The receiving team needs to know exactly what is in the wound and what was given.",
@@ -449,11 +466,38 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives tetanus prophylaxis and antibiotics when aerodigestive injury is possible.",
       points: 1,
       teaching: "Esophageal injury leads to mediastinitis if missed. Cover oral flora early.",
       source: "wta",
+    },
+    {
+      id: "pn-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the weapon, the time of injury and whether the wound spurted or bled heavily at the scene.",
+      points: 2,
+      teaching: "A history of pulsatile bleeding at the scene is a hard sign of vascular injury even if the wound is quiet on arrival.",
+      source: "wta",
+    },
+    {
+      id: "pn-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about voice change, difficulty swallowing, coughing or spitting blood, and shortness of breath.",
+      points: 2,
+      teaching: "These symptoms point to airway or esophageal injury and warn that the airway may soon be lost.",
+      source: "wta",
+    },
+    {
+      id: "pn-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Takes an AMPLE history including blood thinners, tetanus status and the time of the last meal.",
+      points: 1,
+      teaching: "Blood thinners change the bleeding plan. Tetanus status and the last meal matter for the operating room.",
+      source: "atls",
     },
   ],
   sources: [
@@ -465,6 +509,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "navsaria",
       citation: "Navsaria P, Thoma M, Nicol A. Foley catheter balloon tamponade for life threatening hemorrhage in penetrating neck trauma. World J Surg. 2006.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/16830215/",
     },
     {
       id: "cafg",
@@ -476,7 +521,7 @@ export const neckWoundRobbery: OralCase = {
       citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

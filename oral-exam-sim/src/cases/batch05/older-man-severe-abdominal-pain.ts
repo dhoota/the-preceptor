@@ -16,20 +16,40 @@ export const olderManSevereAbdominalPain: OralCase = {
     { topic: "abdominal-pain", n: 5 },
   ],
   summary: "A 79 year old man has sudden severe abdominal pain and a soft abdomen. The nurse thinks it is constipation.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 150 bed community hospital in Ontario. There is 24 hour CT, a general surgeon on call and an ICU. " +
-    "Vascular surgery and interventional radiology are at a regional centre about 1 hour away by land, reached through CritiCall. " +
-    "Walter Kowalczyk is 79 years old and about 72 kg. He has atrial fibrillation on apixaban, hypertension and treated prostate cancer. " +
-    "He stopped his apixaban 4 days ago for a dental extraction and has not restarted it. " +
-    "About 3 hours ago he developed sudden severe pain around his belly button. He vomited twice and had one loose stool. " +
-    "Triage vitals: heart rate 112 and irregular, blood pressure 148/88, respiratory rate 22, SpO2 95 percent on room air, temperature 36.9, capillary glucose 8.2 mmol/L. CTAS 2. " +
-    "The nurse says: 'He is writhing, but his belly is soft. He has not had a good bowel movement in days. Want me to set up a Fleet enema?'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "Vascular surgery and interventional radiology are at a regional centre about 1 hour away by land. " +
+    "A 79 year old man arrives with sudden severe abdominal pain that began about 3 hours ago.",
+  card: {
+    vitals: {
+      temperature: "36.9°C",
+      pulse: "112/minute and irregular",
+      resp: "22/minute",
+      bp: "148/88 mmHg",
+      o2sat: "95% on room air",
+      weight: "About 72 kg (159 lb)",
+    },
+    medications: "Apixaban, metoprolol, amlodipine",
+    allergies: "No known allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "About 3 hours ago he developed sudden severe pain around his belly button. He vomited twice and had one loose stool. " +
+        "He has not had a good bowel movement in days.",
+    },
+    {
+      id: "pmh",
+      label: "Past history",
+      result: "Atrial fibrillation. Hypertension. Treated prostate cancer.",
+    },
     {
       id: "abdomen",
       label: "Abdominal exam",
-      result: "Soft. Mild diffuse tenderness without guarding or rebound. Bowel sounds present. He rates his pain 10 out of 10 and cannot lie still. No hernias. Rectal exam: soft brown stool, trace heme positive.",
+      result: "CTAS 2 at triage. Soft. Mild diffuse tenderness without guarding or rebound. Bowel sounds present. He rates his pain 10 out of 10 and cannot lie still. No hernias. Rectal exam: soft brown stool, trace heme positive.",
     },
     {
       id: "ecg",
@@ -40,7 +60,7 @@ export const olderManSevereAbdominalPain: OralCase = {
       id: "labs",
       label: "Blood work",
       result:
-        "White cells 17.8 x 10^9/L. Hemoglobin 152 g/L. Platelets 188 x 10^9/L. Creatinine 132 µmol/L, eGFR 46. Lipase 48 U/L. Lactate 2.6 mmol/L. " +
+        "Capillary glucose at triage 8.2 mmol/L. White cells 17.8 x 10^9/L. Hemoglobin 152 g/L. Platelets 188 x 10^9/L. Creatinine 132 µmol/L, eGFR 46. Lipase 48 U/L. Lactate 2.6 mmol/L. " +
         "Bicarbonate 19 mmol/L. INR 1.1. High sensitivity troponin 38 ng/L. Liver enzymes normal.",
     },
     {
@@ -75,7 +95,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "meds",
       label: "Medications and allergies",
-      result: "Apixaban 5 mg twice a day, held for 4 days. Metoprolol 50 mg twice a day. Amlodipine 5 mg daily. No allergies.",
+      result: "Apixaban 5 mg twice a day. He stopped it 4 days ago for a dental extraction and has not restarted it. Metoprolol 50 mg twice a day. Amlodipine 5 mg daily. No allergies.",
     },
   ],
   start: "s-open",
@@ -84,7 +104,10 @@ export const olderManSevereAbdominalPain: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Assessment",
-      text: "He is rocking on the stretcher and holding his belly. His wife says he never complains. The nurse has already given morphine 2 mg IV without much effect.",
+      text:
+        "He is rocking on the stretcher and holding his belly. His wife says he never complains. The nurse has already given morphine 2 mg IV without much effect. " +
+        "Your hospital has 24 hour CT, a general surgeon on call and an ICU. Vascular surgery is reached through CritiCall. " +
+        "The nurse says: 'He is writhing, but his belly is soft. He has not had a good bowel movement in days. Want me to set up a Fleet enema?'",
       next: "q-ddx",
     },
     {
@@ -100,8 +123,9 @@ export const olderManSevereAbdominalPain: OralCase = {
         "CT angiogram of the abdomen with arterial and venous phases now.",
         "Do not delay contrast imaging for his kidney function. The risk of a missed diagnosis is far greater.",
         "Two IVs, fluids, analgesia titrated. Nothing by mouth.",
+        "History: sudden onset, apixaban stopped 4 days ago, atrial fibrillation, vomiting and a loose stool.",
       ],
-      rubric: ["mi-a1", "mi-a2", "mi-m3"],
+      rubric: ["mi-a1", "mi-a2", "mi-m3", "mi-h1", "mi-h2", "mi-h3"],
       choices: [
         {
           id: "c-cta",
@@ -243,7 +267,7 @@ export const olderManSevereAbdominalPain: OralCase = {
       kind: "question",
       id: "q-goals",
       phase: "Goals of care",
-      prompt: "The surgeon asks you to talk with Walter and his wife about goals before he goes to the operating room. How do you approach this?",
+      prompt: "The surgeon asks you to talk with the patient and his wife about goals before he goes to the operating room. How do you approach this?",
       seconds: 90,
       modelAnswer: [
         "He is awake and capable. Speak to him directly with his wife present if he wishes.",
@@ -253,11 +277,11 @@ export const olderManSevereAbdominalPain: OralCase = {
         "Base the decision on his values and function, not his age. Clinical Frailty Scale 3 is fit.",
         "Agree on resuscitation status and limits in ICU. Document it.",
       ],
-      rubric: ["mi-c2", "mi-p1"],
+      rubric: ["mi-c2", "mi-p1", "mi-h4"],
       choices: [
         {
           id: "c-values",
-          label: "I spoke with Walter directly, explained the risks honestly, asked what mattered to him, and he chose surgery with a plan to review if things go badly.",
+          label: "I spoke with the patient directly, explained the risks honestly, asked what mattered to him, and he chose surgery with a plan to review if things go badly.",
           next: "q-handover",
           quality: "strong",
           feedback:
@@ -285,14 +309,14 @@ export const olderManSevereAbdominalPain: OralCase = {
       kind: "say",
       id: "s-wife",
       phase: "At the bedside",
-      text: "His wife says, 'Ask him. He knows his own mind.' You give more analgesia and speak with Walter. He chooses surgery.",
+      text: "His wife says, 'Ask him. He knows his own mind.' You give more analgesia and speak with him. He chooses surgery.",
       next: "q-handover",
     },
     {
       kind: "say",
       id: "s-age",
       phase: "At the bedside",
-      text: "Walter looks shocked and says he wants the operation. The surgeon disagrees with your framing. You apologize, restart the conversation and he chooses surgery.",
+      text: "The patient looks shocked and says he wants the operation. The surgeon disagrees with your framing. You apologize, restart the conversation and he chooses surgery.",
       next: "q-handover",
     },
     {
@@ -318,7 +342,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Suspects acute mesenteric ischemia from pain out of proportion to exam in a patient with atrial fibrillation off anticoagulation.",
       points: 3,
       critical: true,
@@ -328,7 +352,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders CT angiography promptly and does not withhold contrast because of moderate kidney impairment.",
       points: 3,
       critical: true,
@@ -338,7 +362,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts IV unfractionated heparin with a weight based bolus and infusion.",
       points: 2,
       teaching: "Heparin limits propagation of thrombus and can be stopped quickly for surgery.",
@@ -347,7 +371,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives broad spectrum antibiotics, fluids, analgesia and bowel rest.",
       points: 1,
       teaching: "Ischemic bowel lets bacteria cross the wall. Early antibiotics are recommended.",
@@ -356,7 +380,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges a joint discussion between the local general surgeon and vascular surgery through CritiCall.",
       points: 2,
       teaching: "Mesenteric ischemia needs both revascularization and bowel assessment. Joint planning avoids delay.",
@@ -365,7 +389,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Presents findings clearly and asks each consultant for a specific decision and timeline.",
       points: 1,
       teaching: "A clear question to each consultant speeds decisions.",
@@ -374,7 +398,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Recognizes peritonitis and shock, gives fluid boluses and norepinephrine to a mean arterial pressure of at least 65 mmHg.",
       points: 2,
       teaching: "Shock from infarcted bowel needs resuscitation and source control. Fluids alone will not fix it.",
@@ -383,7 +407,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Changes the plan to immediate local laparotomy when peritonitis develops rather than a long transfer.",
       points: 3,
       critical: true,
@@ -393,7 +417,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Discusses goals of care directly with the capable patient, using plain language and honest risk.",
       points: 2,
       teaching: "Explore values and what the patient would accept. Offer a time limited trial when outcome is uncertain.",
@@ -402,7 +426,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "management",
       text: "Bases recommendations on function and wishes rather than age.",
       points: 2,
       teaching: "The Clinical Frailty Scale helps judge fitness for surgery better than age alone.",
@@ -411,7 +435,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-c3",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover including drug times, resuscitation and agreed goals of care.",
       points: 1,
       teaching: "Goals of care must travel with the patient to the operating room and ICU.",
@@ -420,21 +444,59 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-m3",
       competency: "management",
-      criterion: "approach",
+      criterion: "physical",
       text: "Considers the differential including ruptured aneurysm, perforation and myocardial infarction.",
       points: 1,
       teaching: "Bedside ultrasound of the aorta and an ECG narrow the list quickly.",
       source: "wses",
+    },
+    {
+      id: "mi-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulant use and the time of the last dose, and learns apixaban was stopped 4 days ago for a dental extraction.",
+      points: 3,
+      teaching: "Interrupted anticoagulation in atrial fibrillation sharply raises the risk of an arterial embolus. The card lists apixaban, but only the history shows it was held.",
+      source: "esvs",
+    },
+    {
+      id: "mi-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Characterizes the pain: sudden onset, periumbilical, severe out of proportion to the exam, with vomiting and a loose stool.",
+      points: 2,
+      teaching: "Sudden severe central pain with gut emptying is the classic story of an embolic mesenteric occlusion.",
+      source: "wses",
+    },
+    {
+      id: "mi-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about past history, including atrial fibrillation, vascular disease and cancer.",
+      points: 1,
+      teaching: "Embolic sources and a prothrombotic history raise the pretest probability of mesenteric ischemia.",
+      source: "wses",
+    },
+    {
+      id: "mi-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Asks about his baseline function and any wishes he has expressed about surgery and life support.",
+      points: 1,
+      teaching: "Function and prior wishes, not age, frame the goals of care conversation.",
+      source: "rockwood",
     },
   ],
   sources: [
     {
       id: "wses",
       citation: "Bala M, et al. Acute mesenteric ischemia: updated guidelines of the World Society of Emergency Surgery. World J Emerg Surg. 2022.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/36261857/",
     },
     {
       id: "esvs",
       citation: "Björck M, et al. Management of the diseases of mesenteric arteries and veins. Clinical practice guidelines of the European Society for Vascular Surgery. Eur J Vasc Endovasc Surg. 2017.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/28359440/",
     },
     {
       id: "car",
@@ -444,9 +506,10 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "rockwood",
       citation: "Rockwood K, et al. A global clinical measure of fitness and frailty in elderly people. CMAJ. 2005.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/16129869/",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

@@ -15,19 +15,49 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     { topic: "airway", n: 4 },
   ],
   summary: "A 44 year old man is brought in after an assault outside a bar. He smells of alcohol and the nurse wants to let him sleep.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a lead trauma hospital in Ontario. Neurosurgery, CT, an ICU and a massive hemorrhage protocol are all available on site. " +
-    "It is 01:40 on a Saturday. Tomasz Wielgosz is 44 years old and about 85 kg. " +
-    "Witnesses told paramedics he was punched, fell backwards and struck the back of his head on a curb about 50 minutes ago. He was briefly unresponsive. " +
-    "Triage vitals: heart rate 92, blood pressure 148/86, respiratory rate 18, SpO2 96 percent on room air, temperature 36.5, capillary glucose 6.8 mmol/L. GCS 12. CTAS 2. " +
-    "He has vomited twice. Paramedics placed a cervical collar. " +
-    "The nurse says: 'He reeks of alcohol and keeps swearing at us. Can I put him in the hallway to sleep it off and you see him when he is sober?'",
+    "You are working in the emergency department of a tertiary care centre when the following patient arrives. " +
+    "It is 01:40 on a Saturday. A 44 year old man arrives by ambulance with a cervical collar after he was assaulted outside a bar about 50 minutes ago.",
+  card: {
+    vitals: {
+      temperature: "36.5°C",
+      pulse: "92/minute",
+      resp: "18/minute",
+      bp: "148/86 mmHg",
+      o2sat: "96% on room air",
+      weight: "About 85 kg (187 lb)",
+    },
+    medications: "Unknown",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "Witnesses told paramedics he was punched, fell backwards and struck the back of his head on a curb about 50 minutes ago. He was briefly unresponsive. " +
+        "He has vomited twice. Paramedics placed a cervical collar. He smells of alcohol.",
+    },
+    {
+      id: "pmh",
+      label: "Past history (his wife by phone)",
+      result: "He is healthy. No seizures before.",
+    },
+    {
+      id: "meds",
+      label: "Medications and allergies (his wife by phone)",
+      result: "He takes no medications and no blood thinners. No allergies.",
+    },
+    {
+      id: "social",
+      label: "Social history (his wife by phone)",
+      result: "He drinks on weekends.",
+    },
     {
       id: "gcs",
       label: "GCS and pupils",
-      result: "GCS 12 (E3 V3 M6). Speaks inappropriate words. Obeys commands with prompting. Pupils 4 mm and reactive on the left, 4 mm and sluggish on the right.",
+      result: "GCS 12 (E3 V3 M6) at triage. CTAS 2. Speaks inappropriate words. Obeys commands with prompting. Pupils 4 mm and reactive on the left, 4 mm and sluggish on the right.",
     },
     {
       id: "head",
@@ -46,16 +76,10 @@ export const assaultHeadInjuryDeterioration: OralCase = {
       result: "Chest clear with equal air entry. Abdomen soft. Pelvis stable. No long bone deformity. eFAST negative.",
     },
     {
-      id: "history",
-      label: "Collateral from his wife by phone",
-      result:
-        "He is healthy. He takes no medications and no blood thinners. He drinks on weekends. No seizures before. No allergies.",
-    },
-    {
       id: "labs",
       label: "Blood work",
       result:
-        "Ethanol 24 mmol/L. Hemoglobin 146 g/L. Platelets 231 x 10^9/L. INR 1.1. Fibrinogen 2.8 g/L. Sodium 140 mmol/L. Glucose 7.9 mmol/L. Lactate 1.9 mmol/L.",
+        "Capillary glucose at triage 6.8 mmol/L. Ethanol 24 mmol/L. Hemoglobin 146 g/L. Platelets 231 x 10^9/L. INR 1.1. Fibrinogen 2.8 g/L. Sodium 140 mmol/L. Glucose 7.9 mmol/L. Lactate 1.9 mmol/L.",
     },
     {
       id: "ct-head",
@@ -86,7 +110,9 @@ export const assaultHeadInjuryDeterioration: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Triage",
-      text: "He is on a stretcher near the nursing station, swearing and pulling at his collar. The nurse is waiting for your answer.",
+      text:
+        "He is on a stretcher near the nursing station, swearing and pulling at his collar. " +
+        "The nurse says: 'He reeks of alcohol and keeps swearing at us. Can I put him in the hallway to sleep it off and you see him when he is sober?' The nurse is waiting for your answer.",
       next: "q-initial",
     },
     {
@@ -101,8 +127,9 @@ export const assaultHeadInjuryDeterioration: OralCase = {
         "Resus bay, monitor, neuro checks every 15 minutes including pupils.",
         "Primary survey with spine precautions. Check glucose.",
         "CT head and CT cervical spine now. With a GCS of 12 the Canadian CT Head Rule and Canadian C-Spine Rule do not apply to him.",
+        "History from paramedics, witnesses and his wife: time and mechanism, loss of consciousness, vomiting, blood thinners and past history.",
       ],
-      rubric: ["tb-a1", "tb-a2"],
+      rubric: ["tb-a1", "tb-a2", "tb-h1", "tb-h2", "tb-h3"],
       choices: [
         {
           id: "c-ct-now",
@@ -385,7 +412,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Refuses to attribute a GCS of 12 to alcohol and moves him to a monitored bed with frequent neuro checks.",
       points: 3,
       critical: true,
@@ -395,7 +422,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Orders CT head and CT cervical spine now and states why the Canadian CT Head Rule and C-Spine Rule do not apply.",
       points: 2,
       teaching: "The Canadian CT Head Rule applies to GCS 13 to 15 minor head injury. The C-Spine Rule needs an alert patient with a GCS of 15 and stable vitals. His GCS of 12 excludes both. Intoxication by itself does not.",
@@ -404,7 +431,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates with preoxygenation, in line stabilization, video laryngoscopy and a hemodynamically neutral induction agent with rocuronium 1.2 mg/kg.",
       points: 2,
       teaching: "Ketamine or etomidate with rocuronium preserves pressure. Plan the airway around the brain.",
@@ -413,7 +440,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Avoids any SpO2 under 90 percent and any systolic under 110 mmHg around induction.",
       points: 3,
       critical: true,
@@ -423,7 +450,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-r3",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Sets post intubation targets: PaCO2 35 to 40 mmHg, SpO2 at least 94 percent, head up 30 degrees, collar loosened.",
       points: 2,
       teaching: "Normocapnia protects cerebral blood flow. A tight collar can obstruct venous outflow and raise intracranial pressure.",
@@ -432,7 +459,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Provides sedation and analgesia while avoiding hypotension, and maintains normothermia and glucose control.",
       points: 1,
       teaching: "Agitation, pain, fever and hyperglycemia all raise cerebral metabolic demand.",
@@ -441,7 +468,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m2",
       competency: "management",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes the Cushing response and treats herniation with 3 percent saline 250 mL or mannitol 1 g/kg.",
       points: 3,
       critical: true,
@@ -451,7 +478,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Uses only brief hyperventilation to PaCO2 30 to 35 mmHg as a bridge and does not lower the blood pressure.",
       points: 2,
       teaching: "PaCO2 of 25 or less causes cerebral ischemia. Reflex hypertension maintains perfusion and should not be treated.",
@@ -460,7 +487,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives seizure prophylaxis with levetiracetam 20 mg/kg IV or phenytoin 20 mg/kg IV.",
       points: 1,
       teaching: "Prophylaxis for 7 days reduces early post traumatic seizures. It does not prevent late epilepsy. The Brain Trauma Foundation supports phenytoin. Levetiracetam is widely used with similar results, but the evidence is weaker.",
@@ -469,7 +496,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m5",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Considers tranexamic acid 1 g IV within 3 hours of injury and avoids corticosteroids.",
       points: 1,
       teaching: "CRASH-3 found tranexamic acid reduced head injury death mainly in mild to moderate injury when given early. Steroids cause harm.",
@@ -478,7 +505,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives the neurosurgeon a concise structured handover with the GCS trend, pupil change, CT findings and treatments with times.",
       points: 2,
       teaching: "The trend and the time of each intervention matter more than a list of findings.",
@@ -487,7 +514,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Tells his wife in a private room that he has a life threatening brain bleed and is going for surgery, and checks her understanding.",
       points: 1,
       teaching: "Be honest about the seriousness early. Families remember whether they were prepared.",
@@ -496,7 +523,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Declines to release the blood alcohol or CT to police without consent from the substitute decision maker, a warrant or another legal requirement, and documents the request.",
       points: 2,
       teaching: "Under Ontario privacy law, health information goes to police only with consent or when a law or court order requires it.",
@@ -505,7 +532,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "management",
       text: "Hands over ICU targets: cerebral perfusion pressure 60 to 70 mmHg and treatment of intracranial pressure above 22 mmHg.",
       points: 1,
       teaching: "These thresholds come from the Brain Trauma Foundation fourth edition guideline.",
@@ -514,26 +541,55 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Coordinates the operating room, ICU and neurosurgery early so there is no delay to evacuation.",
       points: 1,
       teaching: "Time to decompression of an acute subdural with herniation drives outcome. Book the room as soon as you see the scan.",
+      source: "atls",
+    },
+    {
+      id: "tb-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks paramedics and witnesses about the mechanism, the time of injury, loss of consciousness and vomiting.",
+      points: 2,
+      teaching: "A dangerous mechanism, loss of consciousness and repeated vomiting all raise the risk of an intracranial bleed. The time of injury also starts the tranexamic acid clock.",
+      source: "cchr",
+    },
+    {
+      id: "tb-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about anticoagulant or antiplatelet use and bleeding disorders.",
+      points: 2,
+      teaching: "Anticoagulation raises the risk of a bleed and changes management toward early reversal. Here his wife confirms he takes no blood thinners.",
+      source: "atls",
+    },
+    {
+      id: "tb-h3",
+      competency: "communication",
+      criterion: "history",
+      text: "Seeks collateral from his wife on past history, seizures, medications, allergies and alcohol use.",
+      points: 2,
+      teaching: "When the patient cannot give a history, family collateral completes the AMPLE history and gives his baseline.",
       source: "atls",
     },
   ],
   sources: [
     {
       id: "btf",
-      citation: "Brain Trauma Foundation. Guidelines for the Management of Severe Traumatic Brain Injury. 4th edition. 2016.",
+      citation: "Carney N, et al. Brain Trauma Foundation. Guidelines for the Management of Severe Traumatic Brain Injury. 4th edition. Neurosurgery. 2017.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/27654000/",
     },
     {
       id: "crash3",
-      citation:
-        "CRASH-3 trial collaborators. Effects of tranexamic acid on death, disability, vascular occlusive events and other morbidities in patients with acute traumatic brain injury (CRASH-3). Lancet. 2019.",
+      citation: "CRASH-3 trial collaborators. Effects of tranexamic acid on death, disability, vascular occlusive events and other morbidities in patients with acute traumatic brain injury (CRASH-3). Lancet. 2019.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/31623894/",
     },
     {
       id: "cchr",
       citation: "Stiell IG, et al. The Canadian CT Head Rule for patients with minor head injury. Lancet. 2001.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/11356436/",
     },
     {
       id: "atls",
@@ -542,9 +598,10 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "phipa",
       citation: "Ontario. Personal Health Information Protection Act, 2004.",
+      url: "https://www.canlii.org/en/on/laws/stat/so-2004-c-3-sch-a/latest/so-2004-c-3-sch-a.html",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

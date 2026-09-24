@@ -16,16 +16,41 @@ export const houseFireBurns: OralCase = {
     { topic: "tox", n: 2 },
   ],
   summary: "A 46 year old man is carried out of a burning house by firefighters and brought to a regional hospital.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 120 bed regional hospital in northern Ontario. There is an ICU, a general surgeon on call and CT. " +
-    "There is no burn unit. The regional burn centre is in Toronto, about 90 minutes away by Ornge fixed wing or helicopter. " +
-    "Hydroxocobalamin is stocked in the ED. " +
-    "Luc Thibodeau is 46 years old and about 80 kg. Firefighters pulled him from a basement fire about 50 minutes ago. He was found near a furnace room. " +
-    "Paramedics started a 16 gauge IV and gave 500 mL of Ringer lactate and 100 percent oxygen. " +
-    "Arrival vitals: heart rate 118, blood pressure 134/80, respiratory rate 30, SpO2 98 percent on a non rebreather, temperature 36.0, GCS 13, capillary glucose 9.1 mmol/L. CTAS 1. " +
-    "The nurse says: 'His voice is getting hoarse and he keeps coughing up black stuff.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "There is no burn unit, and the burn centre is about 90 minutes away by air. " +
+    "A 46 year old man arrives by ambulance after firefighters pulled him from a basement fire about 50 minutes ago.",
+  card: {
+    vitals: {
+      temperature: "36.0°C",
+      pulse: "118/minute",
+      resp: "30/minute",
+      bp: "134/80 mmHg",
+      o2sat: "98% on a non rebreather mask",
+      weight: "About 80 kg (176 lb)",
+    },
+    medications: "Unknown",
+    allergies: "Unknown",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness (firefighters and paramedics)",
+      result:
+        "Firefighters pulled him from a basement fire about 50 minutes ago. He was found near a furnace room, lying on the floor, not trapped. No fall. " +
+        "Paramedics started a 16 gauge IV and gave 500 mL of Ringer lactate and 100 percent oxygen. His voice is getting hoarse and he keeps coughing up black sputum.",
+    },
+    {
+      id: "pmh",
+      label: "Past history, medications and allergies (his wife)",
+      result: "Healthy. No medications. No allergies. Tetanus status unknown.",
+    },
+    {
+      id: "social",
+      label: "Social history (his wife)",
+      result: "Smokes a pack a day. He went down to the basement to check the furnace.",
+    },
     {
       id: "airway",
       label: "Airway",
@@ -58,7 +83,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "labs",
       label: "Blood work",
-      result: "Hemoglobin 171 g/L. Sodium 141 mmol/L. Potassium 4.4 mmol/L. Creatinine 102 µmol/L. CK 640 U/L. Ethanol negative. Troponin normal.",
+      result: "Capillary glucose on arrival 9.1 mmol/L. Hemoglobin 171 g/L. Sodium 141 mmol/L. Potassium 4.4 mmol/L. Creatinine 102 µmol/L. CK 640 U/L. Ethanol negative. Troponin normal.",
     },
     {
       id: "ecg",
@@ -73,12 +98,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "secondary",
       label: "Secondary survey",
-      result: "No signs of blunt trauma. Firefighters say he was lying on the floor, not trapped. No fall. Tetanus status unknown.",
-    },
-    {
-      id: "history",
-      label: "Collateral from his wife",
-      result: "Healthy. Smokes a pack a day. No medications. No allergies. He went down to the basement to check the furnace.",
+      result: "GCS 13 on arrival. CTAS 1. No signs of blunt trauma. Firefighters say he was lying on the floor, not trapped. No fall. Tetanus status unknown.",
     },
     {
       id: "vent",
@@ -92,7 +112,10 @@ export const houseFireBurns: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Resus",
-      text: "He is sitting up, coughing and anxious. You have two nurses and a respiratory therapist. The burn is still smoking in places.",
+      text:
+        "He is sitting up, coughing and anxious. You have two nurses and a respiratory therapist. The burn is still smoking in places. " +
+        "Your hospital has an ICU, CT and a general surgeon on call. Hydroxocobalamin is stocked in the department. The regional burn centre is reached by Ornge fixed wing or helicopter. " +
+        "The nurse says: 'His voice is getting hoarse and he keeps coughing up black stuff.'",
       next: "q-airway",
     },
     {
@@ -151,8 +174,9 @@ export const houseFireBurns: OralCase = {
         "Hydroxocobalamin 5 g IV over 15 minutes. A second 5 g dose can be given.",
         "Draw labs first. It turns plasma and urine red and interferes with colorimetric tests and co-oximetry.",
         "Hyperbaric oxygen is not practical for a burned, unstable patient needing burn centre care.",
+        "Confirm the exposure: enclosed basement fire, time found and any loss of consciousness.",
       ],
-      rubric: ["bu-a2", "bu-m1"],
+      rubric: ["bu-a2", "bu-m1", "bu-h1"],
       choices: [
         {
           id: "c-hydroxo",
@@ -207,8 +231,9 @@ export const houseFireBurns: OralCase = {
         "Subtract what was already given. About 2,300 mL over the next 7 hours, roughly 330 mL/h.",
         "Foley catheter. Titrate to urine output 0.5 mL/kg/h, about 30 to 50 mL/h.",
         "Avoid boluses for tachycardia. Over resuscitation causes compartment syndromes and lung injury.",
+        "Ask the paramedics what was given before arrival: 500 mL of Ringer lactate.",
       ],
-      rubric: ["bu-m2", "bu-m3"],
+      rubric: ["bu-m2", "bu-m3", "bu-h2"],
       choices: [
         {
           id: "c-formula",
@@ -312,8 +337,9 @@ export const houseFireBurns: OralCase = {
         "Nasogastric tube. Foley. Elevate the head of the bed.",
         "No prophylactic antibiotics and no steroids.",
         "Repeat gas, lactate and potassium. Watch glucose.",
+        "Ask his wife about past history, medications, allergies and tetanus status.",
       ],
-      rubric: ["bu-m4"],
+      rubric: ["bu-m4", "bu-h3"],
       next: "q-transfer",
     },
     {
@@ -354,7 +380,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-a1",
       competency: "assessment",
-      criterion: "approach",
+      criterion: "physical",
       text: "Identifies inhalation injury from hoarseness, stridor, soot and facial burns.",
       points: 2,
       teaching: "Hoarseness and stridor are the most worrying signs. They predict a closing airway.",
@@ -363,7 +389,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Intubates early with a tube of 8.0 or larger and a surgical airway plan ready.",
       points: 3,
       critical: true,
@@ -373,7 +399,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-a2",
       competency: "assessment",
-      criterion: "data",
+      criterion: "physical",
       text: "Recognizes that pulse oximetry is falsely normal and that high lactate after an enclosed space fire suggests cyanide.",
       points: 2,
       teaching: "Standard pulse oximetry reads carboxyhemoglobin as oxyhemoglobin. In smoke inhalation a lactate of 10 mmol/L or more predicted toxic cyanide levels. Treat lower values when the patient is acidotic, confused or in shock.",
@@ -382,7 +408,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives 100 percent oxygen and hydroxocobalamin 5 g IV over 15 minutes, drawing labs first.",
       points: 3,
       critical: true,
@@ -392,7 +418,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-m2",
       competency: "management",
-      criterion: "data",
+      criterion: "physical",
       text: "Estimates TBSA counting only partial and full thickness burns.",
       points: 1,
       teaching: "Use the rule of nines or the patient palm, about 1 percent. Simple erythema is not counted.",
@@ -401,7 +427,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Starts Ringer lactate at 2 to 4 mL/kg per percent over 24 hours, half in the first 8 hours from the burn, and titrates to urine output 0.5 mL/kg/h.",
       points: 3,
       critical: true,
@@ -411,7 +437,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-a3",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Recognizes that circumferential chest eschar is causing high airway pressures after excluding tube and lung causes.",
       points: 1,
       teaching: "Rising peak and plateau pressures with poor chest rise in a trunk burn point to restrictive eschar.",
@@ -420,7 +446,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Performs chest escharotomy along the anterior axillary lines joined across the costal margin, and a limb escharotomy for the threatened arm.",
       points: 2,
       teaching: "Escharotomy of the chest is a lifesaving ED procedure. Cut through eschar only.",
@@ -429,7 +455,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-m4",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives analgesia, tetanus prophylaxis, warmth and clean dry dressings, and avoids prophylactic antibiotics and steroids.",
       points: 1,
       teaching: "Hypothermia is common after burns. Prophylactic antibiotics do not prevent burn infection.",
@@ -438,7 +464,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Identifies that he meets burn centre referral criteria and arranges transfer through CritiCall and Ornge.",
       points: 2,
       teaching: "Burn centre criteria include partial thickness over 10 percent, any full thickness, face, hands and inhalation injury.",
@@ -447,7 +473,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover including time of burn, TBSA, fluid totals, urine output, tube size and antidotes.",
       points: 1,
       teaching: "Fluid timing runs from the time of the burn. The receiving team needs the totals to continue the plan.",
@@ -456,7 +482,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Engages the burn centre early for advice while stabilizing, rather than after workup is complete.",
       points: 1,
       teaching: "Early calls let the burn centre guide fluid rates and escharotomy decisions.",
@@ -465,7 +491,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-c2",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Tells his wife honestly that he is critically ill with a real risk of death, and explains the transfer.",
       points: 1,
       teaching: "Large burns with inhalation injury carry high mortality. Honest, early framing helps families prepare.",
@@ -474,11 +500,38 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-p1",
       competency: "professionalism",
-      criterion: "approach",
+      criterion: "history",
       text: "Asks whether his wife or others were also exposed to smoke.",
       points: 1,
       teaching: "Other household members may need assessment for carbon monoxide or burns.",
       source: "atls",
+    },
+    {
+      id: "bu-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about the exposure: enclosed space, time of the burn, how long he was inside and any loss of consciousness.",
+      points: 2,
+      teaching: "Enclosed space smoke and altered consciousness raise the risk of carbon monoxide and cyanide poisoning. Fluid timing runs from the time of the burn, not from arrival.",
+      source: "abls",
+    },
+    {
+      id: "bu-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks the paramedics what fluid and treatment were given before arrival.",
+      points: 2,
+      teaching: "Prehospital fluid counts toward the first 8 hour target. Here the 500 mL of Ringer lactate is subtracted from the plan.",
+      source: "abls",
+    },
+    {
+      id: "bu-h3",
+      competency: "communication",
+      criterion: "history",
+      text: "Obtains collateral from his wife on past history, medications, allergies, smoking and tetanus status.",
+      points: 1,
+      teaching: "The AMPLE history in a burn patient includes tetanus status. His wife is the best source while he is intubated.",
+      source: "abls",
     },
   ],
   sources: [
@@ -489,11 +542,12 @@ export const houseFireBurns: OralCase = {
     {
       id: "referral",
       citation: "American Burn Association. Guidelines for burn patient referral. 2022.",
-      url: "https://ameriburn.org/resources/burnreferral/",
+      url: "https://www.ameriburn.org/burn-care-team/resources/guidelines-for-burn-patient-referral",
     },
     {
       id: "borron",
       citation: "Borron SW, et al. Prospective study of hydroxocobalamin for acute cyanide poisoning in smoke inhalation. Ann Emerg Med. 2007.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/17481777/",
     },
     {
       id: "baud",
@@ -505,7 +559,7 @@ export const houseFireBurns: OralCase = {
       citation: "American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };

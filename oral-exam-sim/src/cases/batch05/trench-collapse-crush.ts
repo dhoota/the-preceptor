@@ -15,18 +15,44 @@ export const trenchCollapseCrush: OralCase = {
     { topic: "arrhythmia", n: 2 },
   ],
   summary: "A 48 year old construction worker arrives after being trapped for hours when a trench wall collapsed on him.",
-  durationMinutes: 15,
+  durationMinutes: 12,
   stem:
-    "You are the emergency physician at a 200 bed regional hospital in Ontario. There is an ICU, orthopedic surgery on call and a hemodialysis unit with nephrology on call. " +
-    "Ravi Sandhu is 48 years old and about 95 kg. A trench wall collapsed on him at a construction site. His legs and pelvis were buried under wet soil for about 4 hours before firefighters freed him 40 minutes ago. " +
-    "Paramedics gave 1 L of normal saline and fentanyl 100 mcg IV. " +
-    "Arrival vitals: heart rate 118, blood pressure 104/68, respiratory rate 22, SpO2 97 percent on room air, temperature 35.8, GCS 15, capillary glucose 7.4 mmol/L. CTAS 2. " +
-    "The nurse says: 'His left leg is huge and he says the pain is unbearable. The monitor has a funny look to it.'",
+    "You are working in the emergency department of a community hospital when the following patient arrives. " +
+    "A 48 year old man arrives by ambulance after a trench wall collapsed on him at a construction site. Firefighters freed him 40 minutes ago.",
+  card: {
+    vitals: {
+      temperature: "35.8°C",
+      pulse: "118/minute",
+      resp: "22/minute",
+      bp: "104/68 mmHg",
+      o2sat: "97% on room air",
+      weight: "About 95 kg (209 lb)",
+    },
+    medications: "Ramipril",
+    allergies: "No known allergies",
+  },
   findings: [
+    {
+      id: "hpi",
+      label: "History of presenting illness",
+      result:
+        "A trench wall collapsed on him at a construction site. His legs and pelvis were buried under wet soil for about 4 hours before firefighters freed him 40 minutes ago. " +
+        "Paramedics gave 1 L of normal saline and fentanyl 100 mcg IV. His left leg is huge and he says the pain is unbearable.",
+    },
+    {
+      id: "pmh",
+      label: "Past history, medications and allergies",
+      result: "Hypertension, otherwise healthy. Takes ramipril. No allergies. Last tetanus booster unknown.",
+    },
+    {
+      id: "social",
+      label: "Work and social history",
+      result: "He was working for a subcontractor.",
+    },
     {
       id: "primary",
       label: "Primary survey",
-      result: "Airway clear. Chest clear with equal air entry. Abdomen soft. Pelvis stable. eFAST negative. GCS 15.",
+      result: "CTAS 2 at triage. Airway clear. Chest clear with equal air entry. Abdomen soft. Pelvis stable. eFAST negative. GCS 15.",
     },
     {
       id: "left-leg",
@@ -48,7 +74,7 @@ export const trenchCollapseCrush: OralCase = {
       id: "labs",
       label: "Blood work",
       result:
-        "Potassium 7.1 mmol/L. Sodium 138 mmol/L. Bicarbonate 16 mmol/L. Creatinine 168 µmol/L. Urea 11 mmol/L. CK 38,000 U/L. Ionized calcium 0.98 mmol/L. Phosphate 2.4 mmol/L. " +
+        "Capillary glucose on arrival 7.4 mmol/L. Potassium 7.1 mmol/L. Sodium 138 mmol/L. Bicarbonate 16 mmol/L. Creatinine 168 µmol/L. Urea 11 mmol/L. CK 38,000 U/L. Ionized calcium 0.98 mmol/L. Phosphate 2.4 mmol/L. " +
         "Hemoglobin 158 g/L. Lactate 4.1 mmol/L. Glucose 7.6 mmol/L.",
     },
     {
@@ -72,11 +98,6 @@ export const trenchCollapseCrush: OralCase = {
       result:
         "Urine output 20 mL/h for the last 2 hours despite 7 L of fluid. Potassium 6.6 mmol/L. Creatinine 312 µmol/L. Crackles at both bases. SpO2 91 percent on 4 L. Weight up 6 kg.",
     },
-    {
-      id: "history",
-      label: "History",
-      result: "Healthy. Takes ramipril for hypertension. No allergies. Last tetanus booster unknown. He was working for a subcontractor.",
-    },
   ],
   start: "s-open",
   nodes: [
@@ -84,7 +105,9 @@ export const trenchCollapseCrush: OralCase = {
       kind: "say",
       id: "s-open",
       phase: "Resus",
-      text: "He is grey and sweating, gripping the rails with pain. The nurse hands you the ECG and the first blood gas.",
+      text:
+        "He is grey and sweating, gripping the rails with pain. Your hospital has an ICU, orthopedic surgery on call and a hemodialysis unit with nephrology on call. " +
+        "The nurse says: 'His left leg is huge and he says the pain is unbearable. The monitor has a funny look to it.' She hands you the ECG and the first blood gas.",
       next: "q-primary",
     },
     {
@@ -102,7 +125,7 @@ export const trenchCollapseCrush: OralCase = {
         "Assess the left leg for compartment syndrome. Analgesia.",
         "Warm him. Stop ramipril.",
       ],
-      rubric: ["cr-a1", "cr-l1"],
+      rubric: ["cr-a1", "cr-l1", "cr-h1", "cr-h2", "cr-h3"],
       next: "q-hyperk",
     },
     {
@@ -321,8 +344,9 @@ export const trenchCollapseCrush: OralCase = {
         "Hold ramipril and other nephrotoxins. Renally dose all drugs.",
         "This is a workplace injury in Ontario. Complete the WSIB health professional report.",
         "Talk with his family about the kidney injury, dialysis and possible loss of leg function.",
+        "Confirm his employer and the work details for the report.",
       ],
-      rubric: ["cr-c1", "cr-p1"],
+      rubric: ["cr-c1", "cr-p1", "cr-h4"],
       next: "end",
     },
     { kind: "end", id: "end", text: "He starts dialysis in the ICU. That is the end of the case." },
@@ -331,7 +355,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-a1",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Anticipates crush syndrome from prolonged entrapment: rhabdomyolysis, hyperkalemia, acidosis and kidney injury.",
       points: 2,
       teaching: "Release of a crushed limb floods the circulation with potassium, myoglobin and acid. The danger often starts after rescue.",
@@ -340,7 +364,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-l1",
       competency: "leadership",
-      criterion: "plan",
+      criterion: "process",
       text: "Prioritizes the hyperkalemic ECG while delegating the primary survey, access and monitoring.",
       points: 1,
       teaching: "Assign tasks in parallel. The ECG is the most urgent finding.",
@@ -349,7 +373,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-r1",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives calcium chloride 1 g IV or calcium gluconate 3 g IV first for hyperkalemia with a wide QRS.",
       points: 3,
       critical: true,
@@ -359,7 +383,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-m1",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Shifts potassium with insulin 10 units IV and 25 g dextrose plus nebulized salbutamol 10 to 20 mg, and monitors glucose.",
       points: 2,
       teaching: "Insulin and beta agonists act within 15 to 30 minutes. Hypoglycemia is common in kidney injury, so consider 5 units of insulin or a follow on dextrose infusion and check glucose hourly.",
@@ -368,7 +392,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-m2",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Gives early high volume crystalloid targeting urine output of 200 to 300 mL/h.",
       points: 3,
       critical: true,
@@ -378,7 +402,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-a2",
       competency: "assessment",
-      criterion: "diagnosis",
+      criterion: "physical",
       text: "Diagnoses compartment syndrome clinically and uses a delta pressure under 30 mmHg to confirm when needed.",
       points: 2,
       teaching: "Pain with passive stretch is early. Pulses are usually present. Delta pressure is diastolic pressure minus compartment pressure.",
@@ -387,7 +411,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-m3",
       competency: "management",
-      criterion: "plan",
+      criterion: "management",
       text: "Calls orthopedics for urgent fasciotomy and keeps the limb at heart level.",
       points: 3,
       critical: true,
@@ -397,7 +421,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-m4",
       competency: "management",
-      criterion: "data",
+      criterion: "process",
       text: "Avoids treating asymptomatic hypocalcemia and monitors electrolytes every 2 hours.",
       points: 1,
       teaching: "Calcium given in rhabdomyolysis can deposit in muscle and cause rebound hypercalcemia in recovery.",
@@ -406,7 +430,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-r2",
       competency: "resuscitation",
-      criterion: "plan",
+      criterion: "process",
       text: "Recognizes oliguric kidney injury with fluid overload and stops aggressive fluids.",
       points: 2,
       teaching: "Fluid helps before the kidney fails. After that it causes pulmonary edema.",
@@ -415,7 +439,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-d1",
       competency: "disposition",
-      criterion: "plan",
+      criterion: "process",
       text: "Arranges urgent dialysis with nephrology and admits to ICU.",
       points: 2,
       teaching: "Refractory hyperkalemia, volume overload, severe acidosis and oliguria are indications for dialysis.",
@@ -424,7 +448,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-c1",
       competency: "communication",
-      criterion: "plan",
+      criterion: "process",
       text: "Gives a structured handover with crush time, treatments with times and fluid balance.",
       points: 1,
       teaching: "Fluid in and out and the potassium trend guide the ICU plan.",
@@ -433,10 +457,46 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-p1",
       competency: "professionalism",
-      criterion: "plan",
+      criterion: "process",
       text: "Completes the WSIB report for a workplace injury and gives tetanus prophylaxis.",
       points: 1,
       teaching: "In Ontario, treating health professionals report workplace injuries to the WSIB.",
+      source: "wsib",
+    },
+    {
+      id: "cr-h1",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks how long he was trapped, which body parts were buried and when he was freed.",
+      points: 3,
+      teaching: "Hours of entrapment of a large muscle mass predict crush syndrome. Release of the limb starts the rise in potassium and myoglobin.",
+      source: "sever",
+    },
+    {
+      id: "cr-h2",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks what fluid and analgesia he received before arrival.",
+      points: 1,
+      teaching: "Early fluid is the key to protecting the kidneys. Knowing what was given sets the starting rate and the fluid balance.",
+      source: "sever",
+    },
+    {
+      id: "cr-h3",
+      competency: "assessment",
+      criterion: "history",
+      text: "Asks about medications that affect potassium or the kidneys, such as ACE inhibitors, and about allergies and tetanus status.",
+      points: 1,
+      teaching: "Ramipril raises potassium and reduces kidney perfusion. It should be held in rhabdomyolysis.",
+      source: "bosch",
+    },
+    {
+      id: "cr-h4",
+      competency: "communication",
+      criterion: "history",
+      text: "Asks about his work and employer so the workplace injury can be reported.",
+      points: 1,
+      teaching: "A work injury in Ontario needs a report to the WSIB. The employer details belong in the history.",
       source: "wsib",
     },
   ],
@@ -444,14 +504,17 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "bosch",
       citation: "Bosch X, Poch E, Grau JM. Rhabdomyolysis and acute kidney injury. N Engl J Med. 2009.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/19571284/",
     },
     {
       id: "sever",
       citation: "Sever MS, Vanholder R, et al. Recommendations for the management of crush victims in mass disasters. Nephrol Dial Transplant. 2012.",
+      url: "https://academic.oup.com/ndt/article/27/Suppl_1/i1/1818526",
     },
     {
       id: "mcqueen",
       citation: "McQueen MM, Court-Brown CM. Compartment monitoring in tibial fractures. The pressure threshold for decompression. J Bone Joint Surg Br. 1996.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/8898137/",
     },
     {
       id: "atls",
@@ -459,10 +522,11 @@ export const trenchCollapseCrush: OralCase = {
     },
     {
       id: "wsib",
-      citation: "Workplace Safety and Insurance Board of Ontario. Health professional's report (Form 8).",
+      citation: "Ontario. Workplace Safety and Insurance Act, 1997, section 37.",
+      url: "https://www.wsib.ca/en/health-care-providers/provider-information/reporting-requirements-health-professionals",
     },
   ],
-  reviewed: true,
+  reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
-  version: 1,
+  version: 2,
 };
