@@ -1,0 +1,98 @@
+## s02 (conformance)
+- analgesia-sedation-08 q1, -13 q2, -10 q2: keyed options shortened heavily. Confirm the short forms keep the meaning. Full original text is in each explanation.
+- analgesia-sedation-04 q3 and -12 q2: keyed options lost timing detail ("over 2 to 3 minutes", "every 2 to 3 minutes"). Details remain in the explanations.
+- airway-10 q1: explanation says "in a dehydrated patient" but the stem never says so. Add the finding to the stem or remove the claim.
+- airway-13: stem kept inline preintubation vitals beside a post-intubation SpO2, to keep the timing. Decide whether to restructure.
+- Still open from the first review: analgesia-sedation-15 (ESP block and DOAC timing), airway-14 q1 (intubation in postictal eclampsia), analgesia-sedation-07 (bupivacaine dangerous flag), Innes 1999 CAEP sedation guideline is old.
+## s06 (conformance)
+- 23 keyed options reworded (logged). Most detail lost: cqi-02 q3 (disclosure statement), cqi-15 q2 (drops "fault" and "civil proceedings", kept in explanation), msk-08 q1 (drops "closed").
+- msk-09 q4: explanation says IV amoxicillin-clavulanate available in Canada since 2020. Not confirmed.
+- msk-12 q4: intranasal fentanyl 1.5 mcg/kg is not in the cited TREKK fractures document itself.
+- cqi-07: replacement CMPA source is general. It does not cover ED discharge follow-up or radiology discrepancy learning (q3).
+- cqi-06 q1 keeps the micro sign "µg" because it is the tested content (a do-not-use abbreviation).
+- cqi-05: respiratory rate and saturation stay in the stem as mid-event values.
+## s03 (conformance)
+- 9 keyed options reworded (logged). Check anaphylaxis-05 q3 (topical anesthesia and cric setup moved to explanation).
+- arrhythmia-12 q1: key keeps its reason ("because he does not follow commands"), since the reason separates it from distractors.
+- anaphylaxis-04 q3: key accepts premedication. The 2025 ACR manual moved away from routine premedication after mild reactions. Check key and explanation still match.
+- CPS anaphylaxis source (2011, reaffirmed 2018) may be too old as source of record (anaphylaxis-03, -10).
+- Ontario ALS PCS cited as v5.4. A v5.5 (August 2025) exists.
+- anaphylaxis-12: two vitals sets, the later set went to the vitals list. Confirm. q4 keys ceftriaxone minutes after piperacillin-tazobactam anaphylaxis (first dose under observation).
+## s10 (conformance)
+- 17 keyed options reworded (logged). Two dropped "PO" to meet the word cap (eye-03 q4 regimen, mifepristone).
+- eye-11: SpO2 96% with no oxygen source stated, left in stem.
+- eye-01: only Canadian source is COS 2009 glaucoma guideline.
+- NICE NG126 (UK) cited in first-trimester-bleeding-03, -07, -08, -09, -10, -14 where SOGC 414 covers the content. Swap to SOGC per spec section 9.
+- first-trimester-bleeding-12 q4: PHAC also lists amoxicillin for chlamydia in pregnancy (optional mention).
+## s08 (conformance)
+- dvt-pe-07 q3 KEY ISSUE: explanation and the unacceptable item "A DOAC at standard treatment doses" may be too strict. Current Thrombosis Canada guides (2025): apixaban and rivaroxaban "use with caution" at CrCl 15 to 29, not recommended below 15.
+- dvt-pe-11 q4: explanation leads with fondaparinux. Thrombosis Canada (July 2026) now leads with rivaroxaban 10 mg daily for 45 days. Explanation only.
+- dvt-pe-10 q2: fifth option "Massive pulmonary embolism" added. Confirm. delirium-agitation-08 q2: removed distractor "The hospital ethics committee". Confirm.
+- s11 headache-10 (signed off) may key prochlorperazine, which CPS and TREKK 2025 say is not available in Canada. Flagged by s40 writer.
+- s28 chest-pain-24 q3: steroids and rebound pain crises in sickle cell need a specific source (Lens A).
+- s28 chest-pain-19 q3: pneumothorax key rests on BTS 2023, no Canadian guideline.
+- s19 abdominal-pain-46 q3: ASA 160 mg loading dose. abdominal-pain-16: arm BP difference exactly 20 mmHg. abdominal-pain-43: cite IDSA/SHEA or AMMI rather than Rosen alone.
+- s32 loc-37 q3: mannitol 1 g/kg keyed, BTF no longer gives a dose. loc-26: bicarbonate dose from UK guideline.
+- s45 multiple-trauma-20 q3 rebuilt to abruption focus, confirm. 41 q1 no routine platelets vs Ontario MHP. 42 q1 AB plasma. 27 q2 awake scope vs awake trach.
+- s23 anaphylaxis: Health Canada approved nasal epinephrine (neffy 2 mg) April 2026. Decide whether SAMPs 21 q4 and 27 q3 should mention it. 17 q2 IM vs titrated IV in intubated patient. Observation times differ (JTF 1 h, RCUK 2 h, CPS 4 to 6 h in children).
+- s19 abdominal-pain-40 q1: distractors all say "usually", key does not.
+- s39 gi-bleed-17 q3 vitamin K IV vs SC. 39 Toronto consensus vs BSG. 41 q3 andexanet or PCC left out of menu.
+- s40 headache-25 q2 PCC key changed 3 500 to 2 000 units (Canadian 3 000 cap). 26 q3 menu key changed to drug-neutral "Start a migraine preventive".
+- s50 shock-45 q4 rebuilt (whole bowel irrigation contraindicated in shock). Baveno VIII (Aug 2026) Hb target unverified for shock-37. shock-42 q1 key rests on judgment.
+- s28 chest-pain-18 q4: 4.1 cm root called dilated. 24 q4 key longest at 1.47x.
+- s21 airway-23 q2: pulse 58 in update would call for compressions under PALS. airway-40: 2024 AO Spine MAP range. airway-30 q4 succinylcholine in methamphetamine toxicity.
+- s27 cva-40 q3: activated PCC with a 2 000 unit maximum, confirm agent and dose. cva-34 q1 AHA 2026 endocarditis wording from secondary sources. cva-39 q2 CSBPR NIHSS 0 to 3 vs INSPIRES.
+- s22 analgesia-sedation-17 q2 fascia iliaca as initial analgesia in toddler. 40 q1 Busse 2017 source fit. 28 q1 ketamine trial extrapolated to hypotensive trauma.
+- s49 seizures-30 q2 observation vs second lorazepam. NICE NG217 used for safety and EEG advice (no Canadian equivalent). s53 tox: methadone restart dose after missed doses varies by province.
+- s33 dvt-pe-18 q3 serial US keyed. 33 q2 admission for intermediate-low PE sPESI 0. 16 pediatric vs adult rules at 16. 40 q2 neuraxial timing.
+- s32 loc-17 q3 PCC 25 units/kg (1450 units) vs fixed 2000 units common in Canada.
+- s41 infectious-diseases-37: Pasteurella and first generation cephalosporin line unconfirmed. 35 AMMI Canada C. difficile unopened. 30 uses RCOG postpartum sepsis (no SOGC).
+- s51 sob-25 q4 pediatric airway source. sob-36 q3 half-dose tenecteplase rests on CCS tip. sob-40 q3 rebuilt to epinephrine. s24 AHA 2025 claims confirmed via summaries only.
+- s45 multiple-trauma-42 q1: O negative units "also Kell negative" in Canada unconfirmed.
+- s22 analgesia-sedation-16 q3 first hydromorphone dose in opioid-tolerant patient.
+- s46 pediatric-fever-18 q2 CPS 61 to 90 day vs post-immunization urine testing. 19 q2 bronchiolitis vs febrile infant statements. 31 q4 physostigmine only via Special Access Program. 17 q3 and 20 q3 cefixime vs cephalexin under new CPS UTI statement.
+- s40 headache-31 q2 PCC key has no dose (NAC would give 2000 units at INR 3.1).
+- s27 cva-25 mumbles words V3 vs V2. cva-21 transfusion 2 h timed from arrival vs onset. s49 seizures-16 q3 lorazepam 2 mg is 0.03 mg/kg. s33 Wells PE items 39 and 42 reworded to 'more likely than'.
+- s21 airway-23 pulse 58 in hypoxic 4-year-old with no compressions question.
+- s25 asthma-copd-44 rebuilt (Wells 7.0). 32 q1 exertion test source (Rosen only). 31 q2 and q4 CCS 2017 unconfirmed. 45 q3 IPAP 10 EPAP 5. 27 q3 acetaminophen 650 mg.
+- s42 rework: 8 SAMPs rewritten to remove overlap with s28 (17, 21, 25, 26, 30, 35, 37, 47).
+- s50 shock-30 burn distribution changed to reach 25% (confirm on your chart).
+- s24 arrhythmia-41 q3 PACES 2021 threshold 50 vs older 55 (rate is 55).
+- s41 infectious-diseases-31 q2 (Fournier and SGLT2) and 35 q4 (fidaxomicin for first recurrence) were rewritten by Lens B to remove overlap with s19. Each had one review only. Confirm fidaxomicin as the Canadian first choice.
+- s53 tox-27 cyanide menu omits sodium thiosulfate. tox-39 q2 GHB airway explanation left as is. Overlap notes: bupropion (s49), organophosphate (s49), HF acid (s04).
+- s25 asthma-copd-33 PaO2 62 vs severe threshold 60.
+- s42 ischemic-heart-disease-26 q1 HEART score taught again (also s28, s12, s05). 17 q1 and 35 q1 repeat the 120 min FMC-to-device rule (core KF). 35 q3 relies on ESC 2017. 25 q3 rebuilt to 5 days before permanent pacing.
+- s01 abuse-domestic-01 and 11 (signed off) cite SOGC No. 157 (2005), now retired per PubMed.
+- s53 tox-35 q1 key feature does not map. tox-45 q3 arterial vs venous pH switch.
+- s42 ischemic-heart-disease-23 q1 first hs-cTnT 66 above ESC 0 h rule-in 52. 38 q1 full-dose tenecteplase distractor in a 77-year-old.
+- s20 abuse-domestic-22 q3 sister report under CYFSA s.125 (inference). 24 q4 caregiver strain key. 33 q2 key wording.
+- s51 sob-23 q3 serial leg US after nondiagnostic V/Q at high pretest (Thrombosis Canada vs Wells 1998). sob-43 rebuilt as stopped epoprostenol infusion.
+- s20 abuse-domestic-25 q2 power of attorney and interview rests on Lachs 2015 in general terms.
+- s43 lacerations-29 rituximab treated as humoral immune deficiency for TIG. 28 no antibiotics after tongue repair.
+- s47 PROGNOSIS cutoff and NPV, ADAMTS13 <10% from memory. 27 q1 pause magnesium infusion for low urine output.
+- s29 msk-28 q4 key rebuilt (nonoperative Achilles: fewer wound complications). msk-19 q1 rebuilt. msk-34 q2 rebuilt to unknown tetanus (cefazolin, vaccine, TIG).
+- s26 burns-21 q2 q4 rebuilt, burns-22 q1 deleted. burns-20 q3 IV regional vs intra-arterial calcium. burns-38 q3 age 36 criterion for HBO. burns-36 q3 dexmedetomidine not offered.
+- s31 critical-appraisal-33 q4 LMWH in cast immobilization (NICE vs ACCP 2012). 28 q4 US IDSA only.
+- s34 delirium-agitation-21 q2 lorazepam 1 mg IV first dose at 72. 25 q3 PCI under Quebec CCQ art 13. 33 q2 CMPA emergency principle for intoxicated patient leaving.
+- s37 eye-25 q3 vanc plus ceftazidime vs fluoroquinolone. eye-21 q2 stop vs taper steroid drops. eye-27 q2 anticoagulation statement. eye-33 natamycin via SAP.
+- s26 burns-37 stem changed to reach 14% TBSA. burns-17 q1 repeat fentanyl ceiling 50 mcg (TREKK).
+- s31 critical-appraisal-19 noninferiority margin changed to 5 points and CIs recomputed.
+- s38 ftb-17 q3 same-day review. 35 q3 progesterone to 10 weeks. 36 q2 low anti-D titre. 37 q4 SOGC 460 via secondary summary.
+- s20 abuse-domestic-24 q2 mild dementia reliability unsourced. 32 q2 PHIPA exception not cited.
+- s37 eye-38 q4 outpatient follow-up for subluxated lens at 20/200.
+- s47 pre-eclampsia-25 q3 ACOG platelet threshold. 28 q1 sFlt-1/PlGF availability. 26 q2 average exactly 160.
+- s30 cqi-28 stem depends on province (shared dispensing records). cqi-28 q1 med history requirement applies to admitted patients.
+- s43 lac-18 q3 discharge approach. lac-28 q2 repair needed. lac-23 q2 closing bites (IDSA vs newer trials).
+- s52 suicide-risk-26 q3 and 27 q3 follow-up within 7 days not in CPS source. 25 q3 Winnipeg case cites BC guideline.
+- s34 delirium-agitation-19 q3 SSKI not marketed in Canada (Lugol). 28 q4 akathisia options. 33 q3 option without dose.
+- s36 environmental-23 q3 iloprost with acute subdural, SAP only. environmental-21 q4 AHA 2025 Part 10 on shocks below 30C. environmental-24 dextrose protocol.
+- s44 CTAS 2025 revision unchecked (16 q1, 29 q1 q3, 34 q1 q2). 24 q2 SOFA 3 not reachable. 20 q4 SALT rescue breaths. s30 cqi-18 q2 apixaban 'daily' distractor.
+- s35 ems-35 q3 IM field TXA as loading dose. ems-26 q1 crush statements from Sever abstract. ems-25 q2 radiation PPE risk. ems-29 q3 bicarbonate. s34 delirium-agitation-35 sepsis with hypotension wording.
+- s48 pulmonary-edema-33 q3 morphine in stage 4 CKD. pe-30 CCS home support citation unverified.
+- s35 ems-35 q3 IM field TXA and 8 h infusion. ems-27 q4 pediatric pralidoxime dose. s44 multiple-patients-24 SOFA breathing rule before ventilation.
+- s36 environmental-38 rebuilt by Lens B as intrathecal baclofen withdrawal in heat (one review only). Confirm combined cooling key and restoring the pump as ED key.
+- s48 Lens B: reject or keep pulmonary-edema-39 and 40 (near copies of 23 and 31). Repeated teaching 16 q1 (s28, s42), 21 q1 (s12, s05), 35 q2 (s51 sob-17), 38 q1 (s15 pe-03). Four questions key "NIV failing, intubate". 29 q1 bendopnea at BMI 43 may be weak.
+- Sourcing batch 1 (docs/reviews/sourcing-batch1.md): analgesia-sedation-16 oral to IV hydromorphone ratio has no guideline figure (assumed about 2.5 to 1), ESMO 10 to 15% from abstract, q2 still cites Tintinalli. delirium-agitation-19 Canadian iodine product not checked with Health Canada. cva-40 q2 CSBPR ICH module not opened. loc-37 mannitol rests on ENLS consensus, loc-26 bicarbonate on Emergency Care BC plus review. ems-29 q3 neonatal bicarbonate point needs a neonatal resuscitation source or removal.
+- Overlap pass 1 review (docs/reviews/samps-overlap-pass-review.md): s42 ischemic-heart-disease-23 q2 key rests on 3 Wells points for "PE most likely". s42 ischemic-heart-disease-46 q3 epinephrine start dose from AHA algorithm, not the cited review. s50 shock-39 rebuilt as obstructive HCM, confirm q3 restart metoprolol on phenylephrine. s42 ischemic-heart-disease-27 q3 "no fibrinolysis without ST elevation" does not allow for posterior MI (correct for this case).
+- s50 shock-45 toddler iron and whole bowel irrigation also keyed in signed-off s18. Physician to decide if shock-45 changes.
+- s20 abuse-domestic-31 q1 key names face and ribs. Wu 2010 finds trunk injuries nonspecific (OR 1.07). Key holds on the face injuries. Confirm.
