@@ -1,10 +1,10 @@
-# Codemagic CI for Preceptor: Oral (com.preceptor.oral).
+# Codemagic CI for Preceptor: CCFP-EM (com.preceptor.oral).
 # Mirrors the Preceptor CCFP pipeline. Shares its env groups and App Store
 # Connect integration, so no new secrets are needed beyond what exists.
 #
 # Codemagic only reads codemagic.yaml from a repository root. Like the other
 # Preceptor apps, this folder is meant to become its own repo
-# (suggested: dhoota/preceptor-oral). See LAUNCH.md step 1.
+# (suggested: dhoota/preceptor-ccfpem). See LAUNCH.md step 1.
 #
 # Nothing here publishes to production. iOS goes to TestFlight only. Android
 # goes to the Play internal track only, by manual trigger.
@@ -18,15 +18,15 @@ definitions:
       name: Unit tests and case validation
       script: npm test
     - &launch_gate
-      name: Launch gate. 100 cases and every blueprint area covered
-      script: LAUNCH_GATE=1 npx vitest run tests/cases.test.ts
+      name: Launch gate. 100 oral cases, 500 SAMPs, every key feature covered
+      script: LAUNCH_GATE=1 npx vitest run tests/cases.test.ts tests/samps.test.ts
     - &build_web
       name: Build web bundle (Vite)
       script: npm run build
 
 workflows:
   android-debug:
-    name: Preceptor Oral Android (debug APK)
+    name: Preceptor CCFP-EM Android (debug APK)
     max_build_duration: 30
     instance_type: mac_mini_m2
     environment:
@@ -47,7 +47,7 @@ workflows:
       - android/app/build/outputs/**/*.apk
 
   android-release:
-    name: Preceptor Oral Android (signed release)
+    name: Preceptor CCFP-EM Android (signed release)
     max_build_duration: 30
     instance_type: mac_mini_m2
     environment:
@@ -76,7 +76,7 @@ workflows:
       - android/app/build/outputs/**/*.aab
 
   android-play-internal:
-    name: Preceptor Oral Android (publish to Play internal track)
+    name: Preceptor CCFP-EM Android (publish to Play internal track)
     max_build_duration: 30
     instance_type: mac_mini_m2
     # Manual trigger only. Never fires on push.
@@ -126,7 +126,7 @@ workflows:
         track: internal
 
   ios-release:
-    name: Preceptor Oral iOS (TestFlight)
+    name: Preceptor CCFP-EM iOS (TestFlight)
     instance_type: mac_mini_m2
     max_build_duration: 60
     integrations:

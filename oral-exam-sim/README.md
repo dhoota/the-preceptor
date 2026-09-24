@@ -1,18 +1,26 @@
-# Preceptor: Oral
+# Preceptor: CCFP-EM
 
-A CCFP-EM style oral exam simulator for iOS and Android. It is part of the Preceptor family and uses the same stack as Preceptor CCFP: Vite, React, Capacitor 7, RevenueCat and Codemagic.
+Exam prep for both components of the CFPC Examination of Added Competence in Emergency Medicine, for iOS and Android. Part of the Preceptor family and built on the same stack as Preceptor CCFP: Vite, React, Capacitor 7, RevenueCat and Codemagic.
 
-It is fully offline. There is no AI at runtime, no account and no backend. Cases are scripted, branching examiner flows that ship as static data.
+Fully offline. No AI at runtime, no account and no backend. All content is static data, original, and marked `reviewed: false` until a physician signs it off.
 
 ## What it does
 
-- The examiner reads the stem and asks timed questions. The candidate answers out loud.
-- The candidate picks the option closest to what they said. The script branches to a follow-up, an escalation or a consequence.
-- Ask for findings at any time.
-- Practice mode can show the model answer after each question. Exam day mode reads every line aloud with the device voice and ends each question when time runs out.
-- At the end the candidate sees the model answers and self-scores the rubric. Critical misses fail the attempt.
-- Scores roll up into weak areas by domain. Missed rubric points go into a spaced review deck.
-- Two cases are free. One non-consumable in-app purchase unlocks the rest. Restore is in Settings and on the paywall.
+Written component
+- 525 original SAMPs, 15 per CFPC priority topic, in the three formats the exam uses: short answer, menu and single best answer.
+- Short answers are scored against examiner style keys: acceptable answers, required count, unacceptable and dangerous answers. Only the first N answers count. The candidate can override a match.
+- Practice by priority topic, and a timed 4 hour mock (or 2 hour half mock) balanced across the blueprint.
+
+Structured oral
+- 100 branching oral cases with scripted examiner feedback on every decision.
+- 12 minute stations timed from reading the stem, and a four station mock oral on four different topics.
+- Self-marked on the four examiner criteria. Rule-built report with critical misses, top three fixes and next cases.
+
+Across both
+- Every SAMP and case is mapped to the 35 CFPC EM priority topics and 215 key features. Progress shows each topic and key feature.
+- Spaced review of missed oral rubric points. Readiness estimate and trend.
+- Official CFPC resources screen that links out to the CFPC material. Nothing is copied from it.
+- Free sample: 10 SAMPs and 2 oral cases. One time purchases: Complete, Written or Oral.
 
 ## Run it
 
@@ -22,16 +30,14 @@ npm test
 npm run dev    # http://localhost:5173
 ```
 
-In the dev server the purchase is simulated so you can click through the paid flow.
+In the dev server purchases are simulated so the paid flows can be clicked through. `?seed=1` loads a sample history for screenshots.
 
 ## Layout
 
-- `src/engine/`: the reusable engine. Types, graph validation, the attempt runner, scoring, weak areas and the spaced review scheduler. No framework imports.
-- `src/cases/`: the five seed cases. All `reviewed: false`.
-- `src/lib/`: on-device storage, RevenueCat purchases, OS text to speech, free sample gating.
-- `src/screens/`: the UI.
-- `tests/`: engine, review scheduler, platform, case validation and the offline guard.
-- `android/`, `ios/`: Capacitor native projects.
-- `codemagic.yaml`: CI builds, mirroring Preceptor CCFP.
-- `LAUNCH.md`: owner steps for the stores, RevenueCat, Codemagic, pricing and legal.
-- `docs/AUTHORING.md`: how to write a case.
+- `src/engine/`: the reusable engine. Oral cases, SAMP scoring, exam composition, reports, analytics, spaced review. No framework imports.
+- `src/blueprint/`: CFPC EM priority topics and key features (key features paraphrased).
+- `src/cases/`: 100 oral cases. `src/samps/`: 525 SAMPs.
+- `src/lib/`: storage, RevenueCat, text to speech, access rules. `src/screens/`: the UI.
+- `tests/`: engine, scoring, content structure and style, blueprint coverage, offline guard, store listing.
+- `docs/`: blueprints, writing specs and the adversarial review reports.
+- `LAUNCH.md`: owner steps. `store/`: listing, screenshots, graphics.

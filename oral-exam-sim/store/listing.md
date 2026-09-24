@@ -1,4 +1,4 @@
-# Store listing
+# Store listing: Preceptor: CCFP-EM
 
 House style: no em or en dashes, no semicolons, short sentences, no filler. Character counts are checked by `tests/listing.test.ts`.
 
@@ -8,12 +8,12 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 |---|---|
 | iOS bundle ID | com.preceptor.oral |
 | Android applicationId | com.preceptor.oral |
-| App name | Preceptor: Oral |
-| In-app product ID (both stores) | oral_full_lifetime |
+| App name | Preceptor: CCFP-EM |
+| Products | ccfpem_complete_lifetime (Complete), ccfpem_written_lifetime (Written), oral_full_lifetime (Oral) |
 | Product type | iOS Non-Consumable. Play one-time in-app product |
-| RevenueCat entitlement | oral_full_access |
-| RevenueCat offering | oral_unlock, one Lifetime package |
-| Price | CA$129.99 on both stores. Base country Canada |
+| RevenueCat entitlements | written_access, oral_full_access. Complete grants both |
+| RevenueCat offering | ccfpem, three packages |
+| Prices | Complete CA$199.99. Written CA$149.99. Oral CA$99.99 |
 | App Store category | Medical. Secondary: Education |
 | Play category | Medical |
 | Support email | preceptor.app@gmail.com |
@@ -24,76 +24,73 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 ## App Store
 
 ### Name (30)
-Preceptor: Oral
+Preceptor: CCFP-EM
 
 ### Subtitle (30)
-CCFP-EM style oral practice
+EM exam SAMPs and oral cases
 
 ### Promotional text (170)
-Run a full oral case out loud. The examiner asks timed questions and follows your decisions. Then mark yourself against the rubric and see what to fix.
+Prepare for both parts of the CCFP-EM exam. Original SAMPs with examiner style answer keys, a four hour mock, and 12 minute oral stations. Fully offline.
 
 ### Keywords (100)
-emergency,oral exam,ccfp,resident,osce,simulation,cases,review,exam prep,physician,em,rubric
+ccfp,emergency,samp,oral exam,em,resident,exam prep,mock exam,priority topics,key features,case
 
 ### Description (4000)
-Practise the emergency medicine oral the way it runs on the day.
+Prepare for both components of the Examination of Added Competence in Emergency Medicine.
 
-Each case opens with a stem. The examiner asks timed questions. You answer out loud. Then you pick the option closest to what you said, and the case responds. Choose well and the case moves on. Miss something and the patient deteriorates, a consultant pushes back or a family member asks the hard question.
+The written component
+Original SAMPs in the three formats the written exam uses: short answer, menu and multiple choice. Short answers are scored against examiner style answer keys. Each key lists the acceptable answers, how many you must give and the answers it will not accept. Only your first answers count, as on exam day. A dangerous answer scores the question zero. Every question comes with an explanation and its source.
 
-Every answer option carries the examiner's feedback. You see why a choice was right or unsafe and what the examiner wanted to hear.
+Practise by priority topic, or sit a timed four hour mock exam balanced across the blueprint. Your results show where you are weakest.
 
-When the case ends you mark yourself against the rubric, point by point. The report puts critical misses first. It scores you by competency and places you in a pass, borderline or below standard band against one fixed standard. It picks the three things to fix, each with a teaching point and its source.
+The structured oral
+Four stations of 12 minutes, a different examiner and topic for each. The clock starts when you have read the stem aloud. The examiner asks timed questions and the case follows your decisions. Afterward you mark yourself on the four examiner criteria: diagnostic approach, use and interpretation of data, diagnosis, and a timely treatment plan. Run one case, or a full four station mock oral.
 
-100 original cases across 16 areas of the exam blueprint. Resuscitation. Cardiovascular. Respiratory. Neurology. Trauma. Pediatrics. Obstetrics and gynecology. Toxicology. Environmental. Mental health. Infection and sepsis. Geriatrics. Procedures. Ethics and law. Communication. Systems and leadership.
+Mapped to the blueprint
+Every SAMP and oral case is mapped to the CFPC Emergency Medicine priority topics and key features. Your progress shows each topic and each key feature you have practised.
 
-What you get
-- Branching examiner scripts that follow your decisions
-- Timed questions, and an exam day mode that reads the examiner aloud
-- Ask for vitals, exam findings and results at any point
-- Model answers and a marking rubric with sources for every case
-- A report after every case with the top three things to fix
-- A progress dashboard with a blueprint heatmap, your trend and a readiness estimate
-- Spaced review of the points you missed, until they stick
+Feedback without guesswork
+Answer keys, model answers, scripted examiner feedback on every oral decision, the top three things to fix after each case, and spaced review of the points you miss. Everything runs on your device. No account. No tracking. It works with no signal.
 
-Two cases are free. One purchase opens the full bank and every case added later. No subscription.
+Try it free. Ten SAMPs and two oral cases are open. Then buy the written bank, the oral simulator, or both, once. No subscription.
 
-Private by design. No account. No tracking. Your progress stays on your device. It works with no signal.
+Every question and case is original. None is taken from CFPC sample material or any real exam. The app links to the official CFPC resources so you can study them at the source.
 
-Preceptor: Oral is an independent study tool. It is not affiliated with or endorsed by the College of Family Physicians of Canada. It is for education only and is not medical advice. Scores are self-marked and do not predict exam results.
+Preceptor: CCFP-EM is an independent study tool. It is not affiliated with or endorsed by the College of Family Physicians of Canada. It is for education only and is not medical advice. Scores do not predict exam results.
 
 Support: preceptor.app@gmail.com
 
 ### What's New (4000)
 First release.
-- 100 original oral cases across 16 blueprint areas
-- Scripted examiner feedback on every decision
-- A report after every case with your top three fixes
-- Progress dashboard with a heatmap, trend and readiness estimate
-- Spaced review of missed points
+- Original SAMPs in all three written formats, with examiner style answer keys
+- Timed four hour mock written exam and practice by priority topic
+- Structured oral stations of 12 minutes and a four station mock oral
+- Scoring on the four oral examiner criteria
+- Progress for every CFPC priority topic and key feature
 
 ## Google Play
 
 ### App name (30)
-Preceptor: Oral
+Preceptor: CCFP-EM
 
 ### Short description (80)
-Timed, branching oral exam cases for emergency medicine. Works fully offline.
+SAMPs and 12 minute oral stations for the CCFP-EM exam. Fully offline.
 
 ### Full description (4000)
 Use the App Store description above, unchanged. It fits the Play limit.
 
 ### Release notes (500)
-First release. 100 original oral cases across 16 blueprint areas. Scripted examiner feedback on every decision. A report after every case with your top three fixes. A progress dashboard and spaced review of missed points.
+First release. Original SAMPs with examiner style answer keys, a timed four hour mock written exam, 12 minute oral stations and a four station mock oral. Progress for every CFPC priority topic and key feature.
 
 ## Screenshot captions
 
-1. Run the case out loud.
-2. Timed questions, like the real oral.
-3. Ask for results when you need them.
-4. The case follows your decisions.
-5. Feedback on every choice.
-6. A report with your top three fixes.
-7. See where you stand across the blueprint.
+1. Practise SAMPs in every exam format.
+2. Answer keys scored like an examiner.
+3. A timed four hour mock exam.
+4. 12 minute oral stations.
+5. Feedback on every oral decision.
+6. Mark yourself on the examiner criteria.
+7. Every priority topic and key feature.
 8. Review what you missed until it sticks.
 
 ## Privacy answers
@@ -131,4 +128,4 @@ Answer the questionnaire with:
 - Expected result: Everyone or Teen depending on the questionnaire. The target audience setting keeps it to adults.
 
 ## Review notes for Apple and Google
-Two cases are free. The in-app purchase opens the rest. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline.
+Ten SAMPs and two oral cases are free. Three one time purchases open the rest: Complete, Written or Oral. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline.

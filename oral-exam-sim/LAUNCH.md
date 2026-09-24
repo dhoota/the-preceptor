@@ -1,121 +1,108 @@
-# Preceptor: Oral. Launch guide
+# Preceptor: CCFP-EM. Launch guide
 
 These are the owner steps for Arjan. They take the app from this branch to TestFlight and the Play internal track. Nothing in this repo deploys or submits anything by itself.
 
-The app is fully offline. It calls no AI and no server of ours. The only network traffic comes from the native RevenueCat SDK talking to Apple and Google about the purchase.
+The app covers both components of the CFPC Examination of Added Competence in Emergency Medicine: the written SAMP exam and the structured oral. It is fully offline. It calls no AI and no server of ours. The only network traffic comes from the native RevenueCat SDK talking to Apple and Google about purchases, and from the Official CFPC resources links when the candidate taps them.
 
 ## 0. Before anything else
 
-1. Review all 100 cases. They are in `src/cases/seed/` and `src/cases/batch01/` to `batch10/`. Each one ships with `reviewed: false`. The blueprint is in `docs/BLUEPRINT.md`.
+1. Review the content. Everything ships with `reviewed: false`.
+   - Oral: 100 cases in `src/cases/seed/` and `src/cases/batch01/` to `batch10/`. Blueprint in `docs/BLUEPRINT.md`.
+   - Written: 525 SAMPs in `src/samps/s01/` to `s18/`, 15 per priority topic. Blueprint in `docs/SAMP_BLUEPRINT.md`.
 2. Start with the adversarial review reports in `docs/reviews/`. Each batch had a separate clinical review against current Canadian guidance. The reports list what was corrected, the sources checked and what still needs a physician's eye.
-3. Read every stem, question, choice feedback, model answer and rubric line. Check every dose and threshold. The seed case notes are at the end of this file.
-4. When a case is signed off, change `reviewed: false` to `reviewed: true` in that file. Bump `version` if you edit it.
-5. The "Draft" tag disappears from a case once it is reviewed. Do not ship a store build with draft cases unless you mean to.
-6. Run `npm test`. It checks every case graph, the house style and the offline rule. Release builds also run `LAUNCH_GATE=1`, which fails unless there are at least 100 cases and at least 5 in every blueprint area.
+3. For SAMPs, read each answer key as an examiner would. Check the acceptable answers, the required count, the unacceptable answers and anything flagged dangerous. Check that the match phrases would catch the ways a candidate might write a correct answer.
+4. When an item is signed off, change `reviewed: false` to `reviewed: true`. Bump `version` if you edit it. The Draft tag disappears once reviewed.
+5. Run `npm test`. Release builds also run the launch gate: at least 100 oral cases with at least 5 per area, at least 500 SAMPs, and every CFPC key feature tested by at least one written question.
 
 ## 1. Give the app its own repo
 
 Codemagic only reads `codemagic.yaml` from a repo root. The other Preceptor apps each have their own repo. Do the same here.
 
-1. Create a private repo, for example `dhoota/preceptor-oral`.
+1. Create a private repo, for example `dhoota/preceptor-ccfpem`.
 2. Copy the contents of `oral-exam-sim/` into its root.
 3. Push to `main`.
 
-## 2. Confirm the app identity
-
-The branch uses these values. Change them now if you want something else. They are hard to change after the first upload.
+## 2. App identity
 
 | Setting | Value | Where |
 |---|---|---|
-| Bundle ID and package | `com.preceptor.oral` | `capacitor.config.json`, `android/app/build.gradle`, Xcode project |
-| Display name | Preceptor: Oral | `capacitor.config.json` |
-| Entitlement | `oral_full_access` | `src/lib/purchases.ts` |
-| Offering | `oral_unlock` | `src/lib/purchases.ts` |
+| Bundle ID and package | `com.preceptor.oral` (unchanged, the store records exist) | `capacitor.config.json`, `android/app/build.gradle`, Xcode project |
+| Display name | Preceptor: CCFP-EM | `capacitor.config.json`, `android/app/src/main/res/values/strings.xml`, `ios/App/App/Info.plist` |
+| Entitlements | `written_access`, `oral_full_access` | `src/lib/purchases.ts` |
+| Offering | `ccfpem` | `src/lib/purchases.ts` |
 | Support | preceptor.app@gmail.com | `src/lib/constants.ts` |
 | Privacy | https://thepreceptor.ca/privacy | `src/lib/constants.ts` |
 | Terms | https://thepreceptor.ca/terms | `src/lib/constants.ts` |
 
-If you rename the bundle ID after `cap add`, update `android/app/build.gradle` (namespace and applicationId), the Java package folder under `android/app/src/main/java`, and the bundle identifier in Xcode.
+The iOS home screen truncates long names under the icon. "Preceptor: CCFP-EM" will likely show as "Preceptor: C..." there. If you prefer, set a shorter `CFBundleDisplayName` such as "CCFP-EM" in `Info.plist` and keep the full name in App Store Connect.
 
 ## 3. App Store Connect
 
-1. Go to Certificates, Identifiers and Profiles. Register the App ID `com.preceptor.oral`. In-App Purchase is on by default.
-2. In App Store Connect, create a new app. Platform iOS. Name "Preceptor: Oral". Bundle ID `com.preceptor.oral`. SKU `preceptor-oral`.
-3. Open Monetization > In-App Purchases. Create one Non-Consumable.
-   - Reference name: Oral full case bank
-   - Product ID: `oral_full_lifetime`
-   - Price: see section 7
-   - Display name: Full case bank
-   - Description: Unlock every oral case, now and later.
-   - Add the review screenshot of the paywall. Add review notes: "Two cases are free. The purchase unlocks the rest. Restore is in Settings."
-4. Agreements, Tax and Banking must be active. The Paid Apps agreement is needed for IAP.
-5. Enrol in the App Store Small Business Program if you have not already. Apple then takes 15 percent, not 30.
-6. App Privacy: follow RevenueCat's App Store privacy guide. The app itself collects nothing. RevenueCat processes purchase history and an anonymous app user ID for app functionality. Nothing is used for tracking.
+The app record exists under `com.preceptor.oral`. Update the name to Preceptor: CCFP-EM.
+
+1. Monetization > In-App Purchases. Three Non-Consumables:
+
+   | Reference name | Product ID | Price |
+   |---|---|---|
+   | Complete: written and oral | `ccfpem_complete_lifetime` | CA$199.99 |
+   | Written: SAMP bank | `ccfpem_written_lifetime` | CA$149.99 |
+   | Oral: oral simulator | `oral_full_lifetime` (the existing record) | CA$99.99 |
+
+   Add a paywall screenshot and this review note to each: "Ten SAMPs and two oral cases are free. Complete opens both components. Written or Oral opens one. Restore is in More and on the paywall."
+2. Agreements, Tax and Banking and the Paid Apps agreement must be active.
+3. Stay in the App Store Small Business Program (15 percent).
+4. App Privacy: see `store/listing.md`.
 
 ## 4. Google Play Console
 
-1. Create a new app. Name "Preceptor: Oral". Default language English (Canada). App. Paid or free: Free (the unlock is an in-app product).
-2. Upload a first signed AAB to the internal track. Play will not let you create products until a build with the BILLING permission exists. The RevenueCat plugin adds that permission.
-3. Monetize > Products > In-app products. Create:
-   - Product ID: `oral_full_lifetime`
-   - Name: Full case bank
-   - Description: Unlock every oral case, now and later.
-   - Price: see section 7. Let Play convert other currencies.
-   - Activate it.
-4. Enrol in the 15 percent service fee tier if you have not already.
-5. Data safety: the app collects no data itself. Declare purchase history processed by RevenueCat for app functionality, per RevenueCat's Play data safety guide. No data is shared for ads.
-6. Content rating: fill in the questionnaire. It is a reference and education app with medical content.
-7. Target audience: 18 and over.
+1. Rename the app to Preceptor: CCFP-EM.
+2. Monetize > Products > In-app products. Create the same three product IDs and prices as above. Activate them.
+3. Data safety, content rating and target audience: see `store/listing.md`.
 
 ## 5. RevenueCat
 
-You already use RevenueCat for the Preceptor apps. You can add this app to the same project or make a new project. A separate project keeps the dashboards clean. Either works.
+1. Products: import all three product IDs from both stores.
+2. Entitlements:
+   - `written_access`: attach `ccfpem_complete_lifetime` and `ccfpem_written_lifetime`.
+   - `oral_full_access`: attach `ccfpem_complete_lifetime` and `oral_full_lifetime`.
+3. Offerings: create `ccfpem` with three packages (custom identifiers `complete`, `written`, `oral`), each holding its product from both stores. Mark it Current.
+4. Paste the two public SDK keys into `src/lib/purchases.ts` in place of the `REPLACE` placeholders.
+5. Test with a sandbox Apple ID and a Play licence tester. Buy Written, then Oral, confirm both open. Delete, reinstall, Restore.
 
-1. Add two apps: App Store (`com.preceptor.oral`) and Play Store (`com.preceptor.oral`). Connect the App Store Connect API key and the Play service account the same way you did for Preceptor CCFP.
-2. Products: import `oral_full_lifetime` from both stores.
-3. Entitlements: create `oral_full_access`. Attach both `oral_full_lifetime` products.
-4. Offerings: create `oral_unlock`. Add one package of type Lifetime that holds both products. Mark it Current.
-5. Copy the two public SDK keys (they start with `appl_` and `goog_`). Paste them into `src/lib/purchases.ts` in place of the `REPLACE` placeholders. These keys are public. They are safe in the app bundle, as in Preceptor CCFP.
-6. Test with a sandbox Apple ID and a Play licence tester. Buy, delete the app, reinstall, then tap Restore in Settings.
-
-Until the keys are pasted in, the native app shows "Purchases are not set up in this build yet." and nothing can be bought.
+A candidate who already owns one component sees only the other one offered. Complete is shown only to someone who owns neither.
 
 ## 6. Codemagic
 
-The workflows mirror Preceptor CCFP and reuse its groups. Nothing new is secret.
-
-1. Add the new repo as an application in Codemagic.
-2. Environment groups already exist: `preceptor_signing` (keystore vars and `IOS_CERT_KEY`) and `preceptor_play` (Play service account). Link them to this app. Reuse the same `IOS_CERT_KEY` so no new distribution certificate is created. See `CODEMAGIC-NOTES.md` in preceptor-app.
-3. The App Store Connect integration `preceptor_appstore` is reused.
-4. Workflows in `codemagic.yaml`:
-   - `android-debug`: sideloadable APK. Start here.
-   - `android-release`: signed APK and AAB.
-   - `android-play-internal`: manual. Uploads to the Play internal track only.
-   - `ios-release`: signed IPA to TestFlight only.
-5. Every workflow runs `npm test` before building. A broken case or a network call in the source fails the build. Release workflows also run the launch gate.
-6. The Play upload key: you can reuse the Preceptor keystore as the upload key. Play App Signing holds the real app signing key.
+1. Add the new repo in Codemagic. Link the existing `preceptor_signing` and `preceptor_play` groups and the `preceptor_appstore` integration. Reuse the same `IOS_CERT_KEY`.
+2. Workflows: `android-debug`, `android-release`, `android-play-internal` (manual, internal track only), `ios-release` (TestFlight only).
+3. Every workflow runs `npm test`. Release workflows also run the launch gate.
 
 ## 7. Price proposal
 
-The web ladder of $499, $799 and $1,199 CAD was built for a SaaS that paid for AI on every turn. That cost is gone. The app now costs nothing to run per user.
+The bank is now far larger: 525 SAMPs and 100 oral cases. Running cost is still zero. The store fee is 15 percent.
 
-Recommendation: one non-consumable unlock.
-
-| When | Price | Why |
+| Product | Price | Nets about |
 |---|---|---|
-| Launch, 5 to 15 cases | CA$129.99 (about US$94.99) | Fair for a small but high quality bank. Well under one prep course. Below the CCFP app's annual price of $250. |
-| 25 or more cases | CA$179.99 to CA$199.99 | The bank is then a full study resource. Earlier buyers keep everything. |
+| Complete (written and oral) | CA$199.99 | CA$170 |
+| Written only | CA$149.99 | CA$127 |
+| Oral only | CA$99.99 | CA$85 |
 
 Reasoning:
 
-- One purchase fits the product. The oral exam is a single event. Candidates study for a few months and stop. A subscription would feel wrong and would churn at exam day anyway.
-- Non-consumable purchases restore cleanly on both stores. Time-limited tiers would need non-renewing subscriptions. Those need our own expiry tracking and restore logic. That is complexity with no benefit here.
-- Store buyers compare against other apps, not against courses. A price over about CA$200 in an app store sees sharp drop-off, even for professionals.
-- With a 15 percent store fee and no running cost, CA$129.99 nets about CA$110 per buyer.
-- The two free cases carry the conversion. Keep them strong. The chest pain and febrile infant cases are the free pair.
-- Keep the price the same on iOS and Android.
+- Candidates can pass one component and repeat the other. Selling each component on its own serves repeat candidates. It is also the honest price for someone who only wants the written bank.
+- The written bank is the bigger body of work and the part most candidates use daily, so it is priced higher than the oral.
+- Complete is 20 percent less than buying both, so it is the clear choice for a first attempt. It anchors the paywall.
+- One time purchases fit a one time exam. A subscription would churn at exam day and feels wrong to a candidate paying for a single sitting.
+- CA$199.99 sits below the Preceptor CCFP annual price of $250 while offering two exam components, and stays under the price point where app store buyers balk.
+- Non-consumables restore cleanly on both stores. Time limited tiers would need expiry tracking and add friction with no benefit.
 
-If you want tiers later, add case packs as separate non-consumables (for example Pediatrics, Toxicology, Ethics). Keep the full bank as the main offer. The code supports one entitlement today. Packs would need one entitlement per pack.
+## 7a. Exam format decisions
+
+- Written mocks: a full mock is 40 SAMPs in 4 hours and a half mock is 20 in 2 hours. The CFPC states the SAMP exam is designed to last four hours but we did not find a published case count, so 40 is our estimate. Change `MOCK_WRITTEN` in `src/engine/exam.ts` if you know better.
+- Written scoring: each question is worth one point, split evenly across the answers it asks for. Only the first N answers count. A dangerous answer zeroes the question. Candidates may override the automatic match on their own answers. The CFPC does not publish a pass mark, so the app shows scores without a pass band for the written component.
+- Oral: 12 minute stations, timed from the moment the candidate has read the stem, four stations on four different priority topics, marked on four criteria: diagnostic approach, use and interpretation of data, diagnosis, and a timely treatment plan.
+- Blueprint: the 35 CFPC EM priority topics and 215 key features, from the CFPC key features document linked on the Preparing page. Key feature text in the app is our own paraphrase. The official wording is linked, not copied, because CFPC material may only be reproduced for non-commercial use.
+- No CFPC sample question or recalled exam content appears anywhere in the app. The samples were read for format only.
 
 ## 8. Store listing
 
@@ -130,14 +117,15 @@ To regenerate the screenshots after content changes, run `npm run dev`, then `np
 
 ## 9. Website
 
-1. Add a Preceptor: Oral section to thepreceptor.ca with the store badges.
+1. Add a Preceptor: CCFP-EM section to thepreceptor.ca with the store badges.
 2. Update https://thepreceptor.ca/privacy to cover this app. Key points: no account, no data collected by the app, progress stays on the device, purchases handled by Apple or Google through RevenueCat, support at preceptor.app@gmail.com.
 3. Make sure https://thepreceptor.ca/terms covers this app too.
 
 ## 10. Legal and disclaimer checklist
 
 - [ ] Every case reviewed and `reviewed: true` set by a physician.
-- [ ] No CFPC logos or trademarks in the app, icon, screenshots or listing. Use "CCFP-EM style". Say it is independent and not affiliated.
+- [ ] No CFPC logos or trademarks in the app, icon, screenshots or listing. "CCFP-EM" names the certificate the exam leads to. Say clearly that the app is independent and not affiliated. Consider asking the CFPC whether it objects to the name.
+- [ ] No CFPC sample question or recalled exam content in the app. The Official CFPC resources screen only links out.
 - [ ] In-app disclaimer shown on first launch. It is in `src/screens/Disclaimer.tsx`.
 - [ ] Educational use only. Not medical advice. Not for patient care.
 - [ ] No real patient information in any case. All cases are invented.
