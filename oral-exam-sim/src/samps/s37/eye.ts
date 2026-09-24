@@ -16,11 +16,11 @@ const S = {
     citation: "Le Saux N, Robinson JL, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Management of acute otitis media in children six months of age and older. Paediatr Child Health. 2016, reaffirmed 2024.",
     url: "https://cps.ca/en/documents/position/acute-otitis-media",
   },
-  aaoConj: { id: "aao-conj", citation: "American Academy of Ophthalmology Cornea/External Disease Committee. Conjunctivitis Preferred Practice Pattern. Ophthalmology. 2024." },
-  aaoKeratitis: { id: "aao-keratitis", citation: "American Academy of Ophthalmology Cornea/External Disease Committee. Bacterial keratitis Preferred Practice Pattern. Ophthalmology. 2024." },
-  hsv: { id: "aao-hsv", citation: "White ML, Chodosh J. Herpes simplex virus keratitis. A treatment guideline. American Academy of Ophthalmology. 2014." },
-  aaoRvo: { id: "aao-rvo", citation: "Flaxel CJ, Adelman RA, Bailey ST, et al. Retinal vein occlusions Preferred Practice Pattern. American Academy of Ophthalmology. Ophthalmology. 2020." },
-  aaoDr: { id: "aao-dr", citation: "Flaxel CJ, Adelman RA, Bailey ST, et al. Diabetic retinopathy Preferred Practice Pattern. American Academy of Ophthalmology. Ophthalmology. 2020." },
+  aaoConj: { id: "aao-conj", citation: "Cheung AY, Choi DS, Ahmad S, et al, American Academy of Ophthalmology Preferred Practice Pattern Cornea/External Disease Panel. Conjunctivitis Preferred Practice Pattern. Ophthalmology. 2024.", url: "https://www.aao.org/education/preferred-practice-pattern/conjunctivitis-ppp-2023" },
+  aaoKeratitis: { id: "aao-keratitis", citation: "American Academy of Ophthalmology Preferred Practice Pattern Cornea/External Disease Panel. Bacterial Keratitis Preferred Practice Pattern. Ophthalmology. 2024.", url: "https://www.aao.org/education/preferred-practice-pattern/bacterial-keratitis-ppp-2023" },
+  hsv: { id: "aao-hsv", citation: "White ML, Chodosh J. Herpes simplex virus keratitis: a treatment guideline. American Academy of Ophthalmology. 2014.", url: "https://www.aao.org/education/clinical-statement/herpes-simplex-virus-keratitis-treatment-guideline" },
+  aaoRvo: { id: "aao-rvo", citation: "Kovach JL, Bailey ST, Kim SJ, et al, American Academy of Ophthalmology Preferred Practice Pattern Retina/Vitreous Committee. Retinal Vein Occlusions Preferred Practice Pattern. Ophthalmology. 2025.", url: "https://pubmed.ncbi.nlm.nih.gov/39918523/" },
+  aaoDr: { id: "aao-dr", citation: "Lim JI, Kim SJ, Bailey ST, et al, American Academy of Ophthalmology Preferred Practice Pattern Retina/Vitreous Committee. Diabetic Retinopathy Preferred Practice Pattern. Ophthalmology. 2025.", url: "https://pubmed.ncbi.nlm.nih.gov/39918521/" },
   topiramate: {
     id: "topiramate-acg",
     citation: "Fraunfelder FW, Fraunfelder FT, Keates EU. Topiramate-associated acute, bilateral, secondary angle-closure glaucoma. Ophthalmology. 2004.",
@@ -29,23 +29,25 @@ const S = {
   ontt: {
     id: "ontt",
     citation: "Beck RW, Cleary PA, Anderson MM, et al. A randomized, controlled trial of corticosteroids in the treatment of acute optic neuritis. The Optic Neuritis Study Group. N Engl J Med. 1992.",
+    url: "https://pubmed.ncbi.nlm.nih.gov/1734247/",
   },
   lahham: {
     id: "ocular-pocus",
     citation: "Lahham S, Shniter I, Thompson M, et al. Point-of-care ultrasonography in the diagnosis of retinal detachment, vitreous hemorrhage, and vitreous detachment in the emergency department. JAMA Netw Open. 2019.",
     url: "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2730478",
   },
-  okhravi: { id: "scleritis", citation: "Okhravi N, Odufuwa B, McCluskey P, Lightman S. Scleritis. Surv Ophthalmol. 2005.", url: "https://pubmed.ncbi.nlm.nih.gov/16644370/" },
+  okhravi: { id: "scleritis", citation: "Okhravi N, Odufuwa B, McCluskey P, Lightman S. Scleritis. Surv Ophthalmol. 2005.", url: "https://pubmed.ncbi.nlm.nih.gov/15967190/" },
   jonesRhee: {
     id: "steroid-iop",
     citation: "Jones R, Rhee DJ. Corticosteroid-induced ocular hypertension and glaucoma: a brief review and update of the literature. Curr Opin Ophthalmol. 2006.",
+    url: "https://pubmed.ncbi.nlm.nih.gov/16552251/",
   },
   cochraneHyphema: {
     id: "cochrane-hyphema",
     citation: "Gharaibeh A, Savage HI, Scherer RW, Goldberg MF, Lindsley K. Medical interventions for traumatic hyphema. Cochrane Database Syst Rev. 2019.",
     url: "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD005431.pub4/full",
   },
-  walton: { id: "hyphema-review", citation: "Walton W, Von Hagen S, Grigorian R, Zarbin M. Management of traumatic hyphema. Surv Ophthalmol. 2002." },
+  walton: { id: "hyphema-review", citation: "Walton W, Von Hagen S, Grigorian R, Zarbin M. Management of traumatic hyphema. Surv Ophthalmol. 2002.", url: "https://pubmed.ncbi.nlm.nih.gov/12161209/" },
   jordan: {
     id: "white-eyed-blowout",
     citation: "Jordan DR, Allen LH, White J, et al. Intervention within days for some orbital floor fractures: the white-eyed blowout. Ophthalmic Plast Reconstr Surg. 1998.",
@@ -62,7 +64,7 @@ const S = {
     citation: "Jackson TL, Paraskevopoulos T, Georgalas I. Systematic review of 342 cases of endogenous bacterial endophthalmitis. Surv Ophthalmol. 2014.",
     url: "https://doi.org/10.1016/j.survophthal.2014.06.002",
   },
-  wipperman: { id: "corneal-abrasion", citation: "Wipperman JL, Dorsch JN. Evaluation and management of corneal abrasions. Am Fam Physician. 2013." },
+  wipperman: { id: "corneal-abrasion", citation: "Wipperman JL, Dorsch JN. Evaluation and management of corneal abrasions. Am Fam Physician. 2013.", url: "https://pubmed.ncbi.nlm.nih.gov/23317075/" },
   thomas: { id: "mycotic-keratitis", citation: "Thomas PA, Kaliamurthy J. Mycotic keratitis: epidemiology, diagnosis and management. Clin Microbiol Infect. 2013.", url: "https://pubmed.ncbi.nlm.nih.gov/23398543/" },
   lachkar: { id: "drug-acg", citation: "Lachkar Y, Bouassida W. Drug-induced acute angle closure glaucoma. Curr Opin Ophthalmol. 2007.", url: "https://pubmed.ncbi.nlm.nih.gov/17301614/" },
   tarlan: {
@@ -70,7 +72,7 @@ const S = {
     citation: "Tarlan B, Kiratli H. Subconjunctival hemorrhage: risk factors and potential indicators. Clin Ophthalmol. 2013.",
     url: "https://www.tandfonline.com/doi/full/10.2147/OPTH.S35062",
   },
-  loeys: { id: "ghent", citation: "Loeys BL, Dietz HC, Braverman AC, et al. The revised Ghent nosology for the Marfan syndrome. J Med Genet. 2010." },
+  loeys: { id: "ghent", citation: "Loeys BL, Dietz HC, Braverman AC, et al. The revised Ghent nosology for the Marfan syndrome. J Med Genet. 2010.", url: "https://pubmed.ncbi.nlm.nih.gov/20591885/" },
   rosen: {
     id: "rosen",
     citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter on ophthalmology.",
@@ -132,7 +134,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Gonococcal ophthalmia needs systemic treatment. The Canadian Paediatric Society dose of ceftriaxone is 50 mg/kg to a maximum of 125 mg IV or IM as a single dose. At 2.5 kg that is 50 x 2.5 = 125 mg. A 250 mg dose is twice the maximum. Topical erythromycin or tobramycin alone does not treat gonococcal infection. Azithromycin 20 mg/kg for 3 days is a regimen for chlamydial disease. Hyperbilirubinemia or IV calcium would favour cefotaxime.",
+          "Gonococcal ophthalmia needs systemic treatment. The Canadian Paediatric Society dose of ceftriaxone is 50 mg/kg to a maximum of 125 mg IV or IM as a single dose. At 2.5 kg that is 50 x 2.5 = 125 mg. A 250 mg dose is 100 mg/kg, twice the weight based dose, and exceeds the Canadian maximum. Topical erythromycin or tobramycin alone does not treat gonococcal infection. Azithromycin 20 mg/kg for 3 days is a regimen for chlamydial disease. An infant receiving IV calcium would get cefotaxime instead, because ceftriaxone is contraindicated with it.",
         keyFeature: { topic: "eye", n: 1 },
         source: "cps-ophthalmia",
       },
@@ -284,7 +286,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "Small abrasions in a child who does not wear contact lenses are treated with a topical antibiotic ointment such as erythromycin, which also lubricates, and oral analgesia. Patching does not improve healing or pain. Take home topical anesthetic delays healing and hides complications. Steroid drops, alone or combined with tobramycin, slow epithelial healing and raise the risk of infection.",
+          "Small abrasions from a particle, with no contact lens involved, are treated with a topical antibiotic ointment such as erythromycin, which also lubricates, and oral analgesia. Patching does not improve healing or pain. Take home topical anesthetic delays healing and hides complications. Steroid drops, alone or combined with tobramycin, slow epithelial healing and raise the risk of infection.",
         keyFeature: { topic: "eye", n: 3 },
         source: "corneal-abrasion",
       },
@@ -314,7 +316,7 @@ export const EYE_S37_SAMPS: Samp[] = [
     topic: "eye",
     title: "Blurred distance vision and headache",
     stem:
-      "A 31-year-old woman presents to the emergency department with blurred vision in both eyes and a frontal headache that began on waking this morning. Distant objects look blurred. She vomited once. She has migraine with aura. Her neurologist started topiramate 25 mg daily 9 days ago and raised it to 50 mg daily 3 days ago. She takes no other medications. She has had normal distance vision all her life. Both eyes are red.",
+      "A 31-year-old woman presents to the emergency department with blurred vision in both eyes and a frontal headache that began on waking this morning. Distant objects look blurred. She vomited once. She has had migraine with aura since age 15. Her neurologist started topiramate 25 mg daily 9 days ago and raised it to 50 mg daily 3 days ago. She takes no other medications. She has had normal distance vision all her life. Both eyes are red.",
     vitals: { temperature: "36.9°C oral", pulse: "98/minute", resp: "18/minute", bp: "142/88 mmHg", o2sat: "99% on room air" },
     questions: [
       {
@@ -410,7 +412,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A relative afferent pupillary defect shows asymmetric input from the retina or optic nerve, and with a normal retina it localizes to the optic nerve. It is present in nearly every one sided optic neuritis. Flare, cells and ciliary flush point to anterior uveitis. A cherry red spot is seen in retinal artery occlusion. Raised pressure suggests glaucoma. None of these fits her white, quiet eye.",
+          "A relative afferent pupillary defect shows asymmetric input from the retina or optic nerve, and with a normal retina it localizes to the optic nerve. It is present in nearly every one sided optic neuritis. Flare, cells and ciliary flush point to anterior uveitis. A cherry red spot is seen in retinal artery occlusion. Raised pressure suggests glaucoma. None of these fits her white eye.",
         keyFeature: { topic: "eye", n: 3 },
         source: "ontt",
       },
@@ -446,7 +448,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "In the Optic Neuritis Treatment Trial, oral prednisone 1 mg/kg daily alone did not improve vision and was followed by more new episodes of optic neuritis than placebo. IV methylprednisolone followed by oral prednisone sped visual recovery without changing the final acuity. Observation is a reasonable choice because most patients recover. Plasma exchange is reserved for severe cases that fail steroids. Topical steroid drops do not reach the optic nerve.",
+          "In the Optic Neuritis Treatment Trial, oral prednisone 1 mg/kg daily alone did not improve vision and was followed by more new episodes of optic neuritis than placebo. IV methylprednisolone followed by oral prednisone sped visual recovery without changing the final acuity. Observation is a reasonable choice because most patients recover. Plasma exchange was not studied in the trial and is kept for severe attacks that fail IV steroids. Topical steroid drops do not reach the optic nerve.",
         keyFeature: { topic: "eye", n: 2 },
         source: "ontt",
       },
@@ -488,7 +490,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 3,
         explanation:
-          "The steroid is the cause of the pressure rise, and the pressure usually falls over weeks once it is stopped. Ophthalmology should see him within days to decide whether a taper or pressure lowering drops are needed and to check the optic nerves. Loteprednol still carries a steroid pressure risk. Adding latanoprost treats the number but keeps the cause. Waiting 3 months risks optic nerve damage. He has no bacterial infection that needs moxifloxacin.",
+          "The steroid is the cause of the pressure rise, and the pressure usually falls over weeks once it is stopped. Ophthalmology should see him within 1 to 2 days to check the optic nerves, decide on pressure lowering drops and follow the corneal opacities, which can flare once the steroid is withdrawn. Loteprednol still carries a steroid pressure risk. Adding latanoprost treats the number but keeps the cause. Waiting 3 months risks optic nerve damage. He has no bacterial infection that needs moxifloxacin.",
         keyFeature: { topic: "eye", n: 4 },
         source: "steroid-iop",
       },
@@ -564,7 +566,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "Herpes simplex epithelial keratitis is treated with an antiviral, either topical trifluridine or oral acyclovir. Oral treatment is often easier in a young child who resists drops. Ophthalmology follows the cornea until it heals. Antibiotic ointment and lubricants do not stop viral replication. Patching is not used for infectious keratitis. A steroid combination drop can worsen the ulcer.",
+          "Herpes simplex epithelial keratitis is treated with an antiviral, either topical trifluridine or oral acyclovir. Oral treatment is often easier in a young child who resists drops. Ophthalmology follows the cornea until it heals. Antibiotic ointment and lubricants do not stop viral replication. Epithelial debridement is an adjunct that ophthalmology may choose, but patching is not used for infectious keratitis and debridement alone is not the emergency treatment. A steroid combination drop can worsen the ulcer.",
         keyFeature: { topic: "eye", n: 1 },
         source: "aao-hsv",
       },
@@ -618,7 +620,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: [0, 2, 5],
         explanation:
-          "A microhyphema can rebleed, most often in the first 5 days. Acetaminophen avoids the antiplatelet effect of ibuprofen and other NSAIDs. A rigid shield protects the eye without pressing on it, unlike a pressure patch. Ophthalmology rechecks the pressure and chamber the next day and adds a cycloplegic or steroid as needed. Heavy lifting and strain are avoided early. Home tetracaine delays corneal healing and hides worsening.",
+          "A microhyphema can rebleed, most often in the first 5 days. Acetaminophen avoids the antiplatelet effect of ibuprofen and other NSAIDs. A rigid shield protects the eye without pressing on it, unlike a pressure patch. Ophthalmology rechecks the pressure and chamber the next day and adds a cycloplegic or steroid as needed. Heavy lifting and strain are avoided early. Home tetracaine delays corneal healing and hides worsening. Warm compresses do nothing for blood in the chamber.",
         keyFeature: { topic: "eye", n: 5 },
         source: "hyphema-review",
       },
@@ -644,7 +646,7 @@ export const EYE_S37_SAMPS: Samp[] = [
     topic: "eye",
     title: "Vomiting after a knee to the eye",
     stem:
-      "A 12-year-old boy is brought to the emergency department by his mother 3 hours after a teammate's knee struck his right eye during a soccer game. He did not lose consciousness. Since then he has vomited three times and feels nauseated and light headed. He sees double when he looks up. He is otherwise healthy. The right lids are only mildly swollen. There is a small subconjunctival hemorrhage below the right cornea.",
+      "A 12-year-old boy is brought to the emergency department by his mother 3 hours after a teammate's knee struck his right eye during a soccer game. He did not lose consciousness and is alert and oriented. Since then he has vomited three times and feels nauseated and light headed. He sees double when he looks up. He is otherwise healthy. The right lids are only mildly swollen. There is a small subconjunctival hemorrhage below the right cornea.",
     vitals: { temperature: "36.7°C oral", pulse: "48/minute", resp: "18/minute", bp: "104/62 mmHg", o2sat: "99% on room air", weight: "40 kg" },
     questions: [
       {
@@ -662,7 +664,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "A child with a white eye, severely limited upgaze, cheek numbness, nausea and a pulse of 48/minute has a trapdoor orbital floor fracture with the inferior rectus caught. Traction on the muscle triggers the oculocardiac reflex. He had no loss of consciousness and has a normal level of alertness, which argues against brain injury. Retrobulbar hemorrhage gives proptosis and high pressure, and his is 17 mmHg. A vasovagal response does not explain the gaze restriction.",
+          "A child with a nearly white eye, severely limited upgaze, cheek numbness, nausea and a pulse of 48/minute has a trapdoor orbital floor fracture with the inferior rectus caught. Traction on the muscle triggers the oculocardiac reflex. He had no loss of consciousness and has a normal level of alertness, which argues against brain injury. Retrobulbar hemorrhage gives proptosis and high pressure, and his is 17 mmHg. A vasovagal response does not explain the gaze restriction.",
         keyFeature: { topic: "eye", n: 5 },
         source: "white-eyed-blowout",
       },
@@ -841,7 +843,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "Scleritis threatens sight and, with rheumatoid arthritis, can progress to necrotizing disease with scleral thinning and perforation. It also signals active systemic vasculitis. Ophthalmology should see her within 24 hours to grade it and start systemic treatment, usually an oral NSAID or corticosteroid, and rheumatology is involved after. Topical steroids alone do not control scleritis. Artificial tears and delayed review leave it untreated.",
+          "Scleritis threatens sight and, with rheumatoid arthritis, can progress to necrotizing disease with scleral thinning and perforation. It can also signal active systemic vasculitis. Ophthalmology should see her within 24 hours to grade it and start systemic treatment, usually an oral NSAID or corticosteroid, and rheumatology is involved after. Topical steroids alone do not control scleritis. Artificial tears and delayed review leave it untreated.",
         keyFeature: { topic: "eye", n: 2 },
         source: "scleritis",
       },
@@ -942,7 +944,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: [2, 4, 5],
         explanation:
-          "In an older patient, vein occlusion is linked with hypertension, diabetes and hyperlipidemia, so glucose control and lipids are checked, and a complete blood count screens for polycythemia or other blood disorders. Thrombophilia and homocysteine testing are kept for young patients without vascular risk factors. Carotid Doppler and CT head are aimed at arterial occlusion and stroke, which his findings do not suggest. Blood cultures have no role without fever.",
+          "In an older patient, vein occlusion is linked with hypertension, diabetes and hyperlipidemia, so glucose control and lipids are checked, and a complete blood count screens for polycythemia or other blood disorders. Thrombophilia and homocysteine testing are kept for young patients without vascular risk factors. Carotid disease is a weaker association, and carotid Doppler is kept for carotid symptoms or signs of ocular ischemia. CT head looks for stroke, which his findings do not suggest. Blood cultures have no role without fever.",
         keyFeature: { topic: "eye", n: 2 },
         source: "aao-rvo",
       },
@@ -1026,7 +1028,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "Vitreous hemorrhage with an attached retina needs prompt ophthalmology, usually within 1 to 2 days, for repeat ultrasound and laser or anti-VEGF treatment once the view allows. Keeping the head up while sleeping helps blood settle. Vitrectomy is reserved for non-clearing blood or detachment. Admission for bed rest is not required. Laser cannot be done through dense blood, and 3 months is too long with proliferative disease.",
+          "Vitreous hemorrhage with an attached retina needs prompt ophthalmology, usually within 1 to 2 days, for repeat ultrasound and laser or anti-VEGF treatment once the view allows. Keeping the head up while sleeping helps blood settle. Vitrectomy is reserved for non-clearing blood or detachment. Admission for bed rest is not required. Laser cannot be done through dense blood, and 3 months is too long with likely proliferative disease.",
         keyFeature: { topic: "eye", n: 3 },
         source: "aao-dr",
       },
@@ -1122,7 +1124,7 @@ export const EYE_S37_SAMPS: Samp[] = [
     topic: "eye",
     title: "Fever and a cloudy eye",
     stem:
-      "A 36-year-old woman presents to the emergency department with 2 days of pain, redness and worsening vision in her left eye. She has noticed many new floaters. For a week she has had fevers and sweats. She injects hydromorphone and has had no recent eye surgery or eye trauma. She has no history of eye disease or back pain. There are fresh track marks on both forearms. The left eye is red and the view into it looks hazy.",
+      "A 36-year-old woman presents to the emergency department with 2 days of pain, redness and worsening vision in her left eye. She has noticed many new floaters. For a week she has had fevers and sweats. She injects hydromorphone and has had no recent eye surgery or eye trauma. She has no history of eye disease or back pain. There are fresh track marks on both forearms and no rash. The left eye is red and the view into it looks hazy.",
     vitals: { temperature: "38.6°C oral", pulse: "112/minute", resp: "20/minute", bp: "108/64 mmHg", o2sat: "96% on room air" },
     questions: [
       {
@@ -1342,7 +1344,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         id: "q2",
         kind: "single",
         update:
-          "Visual acuity is 20/200 on the left and 20/25 on the right. Slit lamp shows a 3 mm grey white stromal infiltrate with feathery margins and small satellite lesions. The overlying epithelium stains with fluorescein. There is a 1 mm hypopyon.",
+          "Visual acuity is 20/200 on the left and 20/25 on the right. Slit lamp shows a 3 mm central grey white stromal infiltrate with feathery margins and small satellite lesions. The overlying epithelium stains with fluorescein. There is a 1 mm hypopyon.",
         prompt: "Which of the following is the most likely diagnosis in this patient?",
         options: [
           "Filamentous fungal keratitis",
@@ -1387,7 +1389,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "A central infiltrate with a hypopyon and vision of 20/200 threatens the eye. Corneal scrapings for smear and culture guide antifungal treatment, which usually starts with topical natamycin for filamentous fungi, so same day transfer to ophthalmology is needed. Moxifloxacin alone misses fungi. Oral fluconazole reaches filamentous fungi poorly. Patching and steroid drops worsen infectious keratitis.",
+          "A central infiltrate with a hypopyon and vision of 20/200 threatens the eye. Corneal scrapings for smear and culture guide antifungal treatment, such as topical natamycin, obtained in Canada through Health Canada's Special Access Program, or voriconazole, so same day transfer to ophthalmology is needed. Moxifloxacin alone misses fungi. Oral fluconazole has little activity against filamentous fungi such as Fusarium. Patching and steroid drops worsen infectious keratitis.",
         keyFeature: { topic: "eye", n: 1 },
         source: "aao-keratitis",
       },
@@ -1418,7 +1420,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         explanation:
           "Cyanoacrylate bonds to lashes and skin, and warm moist compresses with ointment loosen it over hours to days while the lids are opened gently. Trimming lashes helps. Forcible separation tears the lid margin and can strip corneal epithelium. Acetone and ethanol are toxic to the cornea. Surgery is rarely needed because the lids usually open on their own within 1 to 4 days.",
         keyFeature: { topic: "eye", n: 3 },
-        source: "superglue",
+        source: "tintinalli",
       },
       {
         id: "q2",
@@ -1457,7 +1459,7 @@ export const EYE_S37_SAMPS: Samp[] = [
         source: "corneal-abrasion",
       },
     ],
-    sources: [S.reddy, S.wipperman],
+    sources: [S.reddy, S.wipperman, S.tintinalli],
     ...META,
   },
   {
@@ -1724,12 +1726,12 @@ export const EYE_S37_SAMPS: Samp[] = [
           "Iris trembling with eye movement",
           "Lens edge visible in the pupil",
           "Lens in the anterior chamber",
-          "Mild blur improving with pinhole",
+          "Partial improvement with a pinhole",
           "Small subconjunctival hemorrhage",
         ],
         correct: 2,
         explanation:
-          "A lens that moves into the anterior chamber can block aqueous flow and cause acute pressure rise and damage to the corneal endothelium, so it needs urgent ophthalmology. The trembling iris, a lens edge in the pupil, blur that improves with a pinhole and a small subconjunctival hemorrhage are already present and are managed with prompt outpatient follow-up.",
+          "A lens that moves into the anterior chamber can block aqueous flow and cause acute pressure rise and damage to the corneal endothelium, so it needs urgent ophthalmology. The trembling iris, a lens edge in the pupil, partial improvement of the blur with a pinhole and a small subconjunctival hemorrhage are already present and are managed with prompt outpatient follow-up.",
         keyFeature: { topic: "eye", n: 5 },
         source: "rosen",
       },
