@@ -1,0 +1,483 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const calciumChannelBlockerOverdose: OralCase = {
+  id: "calcium-channel-blocker-overdose",
+  title: "Slow pulse after a family argument",
+  blueprint: "tox",
+  alsoCovers: ["resus", "cardio"],
+  summary: "A 58 year old woman is brought in dizzy and hypotensive after taking tablets during an argument.",
+  durationMinutes: 15,
+  stem:
+    "You are working in a 250 bed community hospital in Ontario with a 10 bed ICU and a cardiologist on call. There is no ECMO. The nearest ECMO centre is 90 minutes away by land and 40 minutes by Ornge helicopter. " +
+    "Linda Kowalczyk is 58 years old and weighs 72 kg. Her husband found her with an empty bottle of verapamil SR 240 mg tablets about 2 hours after an argument. " +
+    "He thinks the bottle had about 25 tablets left. " +
+    "Triage vitals: heart rate 42, blood pressure 74/40, respiratory rate 18, SpO2 97 percent on room air, temperature 36.5, capillary glucose 16.8 mmol/L. GCS 15. CTAS 1. " +
+    "The nurse says: 'She is awake but pale. She says she feels like she will faint when she sits up. She is not diabetic.'",
+  findings: [
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Junctional rhythm at 40. No P waves seen. QRS 104 ms. QTc 450 ms. No ST changes.",
+    },
+    {
+      id: "exam",
+      label: "Exam",
+      result: "Pale, cool peripheries. Capillary refill 4 seconds. Chest clear. JVP not seen. Bowel sounds present. Abdomen soft. Alert and oriented.",
+    },
+    {
+      id: "pocus",
+      label: "Bedside echo on arrival",
+      result: "Left ventricular function mildly reduced. No pericardial effusion. IVC 1.2 cm and collapsing more than 50 percent with inspiration.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Potassium 3.9 mmol/L. Ionized calcium 1.14 mmol/L. Magnesium 0.84 mmol/L. Creatinine 102 µmol/L. Lactate 3.8 mmol/L. Glucose 16.8 mmol/L. Acetaminophen and salicylate undetectable. Ethanol undetectable.",
+    },
+    {
+      id: "vbg",
+      label: "Venous blood gas",
+      result: "pH 7.31. pCO2 38 mmHg. Bicarbonate 18 mmol/L.",
+    },
+    {
+      id: "meds",
+      label: "Medication list",
+      result: "Verapamil SR 240 mg daily for hypertension. Escitalopram 10 mg daily. No beta blockers or digoxin in the home.",
+    },
+    {
+      id: "husband",
+      label: "Collateral from her husband",
+      result: "They argued about money. She said she wanted to sleep and not wake up. No previous attempts. She has seen her family doctor for low mood this year.",
+    },
+    {
+      id: "pocus-2",
+      label: "Repeat bedside echo at 90 minutes",
+      result: "Severely reduced left ventricular function, estimated ejection fraction 15 to 20 percent. IVC 2.2 cm with little variation.",
+    },
+    {
+      id: "glucose-trend",
+      label: "Glucose and potassium on insulin",
+      result: "At 30 minutes: glucose 11.2 mmol/L, potassium 3.2 mmol/L. At 60 minutes: glucose 7.4 mmol/L, potassium 2.9 mmol/L.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the resuscitation room",
+      text: "She is on the monitor. Her heart rate is 40 and her blood pressure is 72/38. Her husband is holding the empty bottle.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "First ten minutes",
+      prompt: "What do you do in the first ten minutes?",
+      seconds: 90,
+      modelAnswer: [
+        "Severe sustained release verapamil overdose. About 6 g, and symptoms will worsen for hours.",
+        "Two large bore IVs, pads on, call the poison centre. Plan early for central and arterial lines.",
+        "Fluid bolus of 1 L crystalloid guided by echo.",
+        "Calcium chloride 1 g IV (10 mL of 10 percent) or calcium gluconate 3 g (30 mL of 10 percent). Repeat every 10 to 20 minutes or start an infusion.",
+        "Atropine 1 mg IV for bradycardia, though it often fails.",
+        "Start high dose insulin early and a vasopressor for ongoing shock. Avoid intubation before hemodynamic support.",
+      ],
+      rubric: ["ccb-a1", "ccb-r1", "ccb-m1"],
+      choices: [
+        {
+          id: "c-resus",
+          label: "I put pads on, gave a fluid bolus, calcium chloride 1 g and atropine, called the poison centre and started preparing high dose insulin.",
+          next: "q-decon",
+          quality: "strong",
+          feedback:
+            "Strong. Calcium, fluid and atropine are quick first steps. They rarely fix a severe overdose, so preparing high dose insulin early is key. " +
+            "The poison centre helps with dosing and escalation.",
+        },
+        {
+          id: "c-pace",
+          label: "I gave repeated atropine and set up transcutaneous pacing as my main treatment.",
+          next: "s-pace",
+          quality: "partial",
+          feedback:
+            "Atropine and pacing may raise the rate but do not fix the loss of contractility and vasodilation. Pacing often fails to capture or improve pressure. " +
+            "The examiner wanted calcium, fluids, early high dose insulin and vasopressors.",
+        },
+        {
+          id: "c-nocalcium",
+          label: "I held calcium because her ionized calcium is normal and gave 2 L of saline while I watched her.",
+          next: "s-nocalcium",
+          quality: "unsafe",
+          feedback:
+            "Calcium is given to overcome channel blockade, not to correct a low level. A normal ionized calcium is not a reason to withhold it. " +
+            "Watching a sustained release overdose in shock loses time. Start calcium, early high dose insulin and a vasopressor.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-pace",
+      phase: "Fifteen minutes later",
+      text: "Pacing captures at 70 but her pressure is still 70/36. She says the pacing hurts. You give calcium chloride 1 g and ask the nurse to mix the insulin infusion.",
+      next: "q-decon",
+    },
+    {
+      kind: "say",
+      id: "s-nocalcium",
+      phase: "Twenty minutes later",
+      text: "After 2 L of saline her pressure is 64/30 and her heart rate 36. She is nauseated and grey. The poison centre specialist recommends calcium now. You give calcium chloride 1 g IV and ask for insulin to be mixed.",
+      next: "q-decon",
+    },
+    {
+      kind: "question",
+      id: "q-decon",
+      phase: "Decontamination",
+      prompt: "She ingested sustained release tablets about 2 hours ago. What decontamination will you offer?",
+      seconds: 60,
+      modelAnswer: [
+        "Activated charcoal 50 g PO while she is awake and can protect her airway.",
+        "Consider whole bowel irrigation with polyethylene glycol at 1.5 to 2 L/h for a sustained release product.",
+        "Only if her airway is protected, there is no ileus and she is stable enough. Discuss with the poison centre.",
+        "Do not delay resuscitation for decontamination.",
+      ],
+      rubric: ["ccb-m2"],
+      next: "q-hdi",
+    },
+    {
+      kind: "question",
+      id: "q-hdi",
+      phase: "High dose insulin",
+      prompt: "Her pressure is 76/42 after 1 L of fluid and two doses of calcium. Talk me through high dose insulin, including doses and monitoring.",
+      seconds: 90,
+      modelAnswer: [
+        "Regular insulin 1 unit/kg IV bolus, which is 72 units.",
+        "Then an infusion of 1 unit/kg/h. Titrate up every 10 to 15 minutes to effect, up to 10 units/kg/h.",
+        "Her glucose is over 14 mmol/L so no dextrose bolus is needed now. Start a dextrose infusion, for example D10W or D20W at about 0.5 g/kg/h.",
+        "Check glucose every 15 to 30 minutes for the first hour, then hourly.",
+        "Keep potassium at about 2.8 to 3.2 mmol/L. Replace it below that range. Most of the fall is shift, not depletion, so avoid overcorrection.",
+        "Insulin takes 15 to 45 minutes to work. Use a vasopressor meanwhile.",
+      ],
+      rubric: ["ccb-m3", "ccb-m4"],
+      choices: [
+        {
+          id: "c-hdi",
+          label: "I gave regular insulin 72 units IV, then 1 unit/kg/h titrated up, with a dextrose infusion, glucose checks every 15 to 30 minutes and potassium monitoring.",
+          next: "q-pressors",
+          quality: "strong",
+          feedback:
+            "Correct. High dose insulin improves contractility by helping the stressed heart use glucose. " +
+            "Hyperglycemia in calcium channel blocker overdose is a marker of severity. It is not a reason to withhold insulin.",
+        },
+        {
+          id: "c-dka",
+          label: "I started insulin at 0.1 unit/kg/h like a DKA protocol.",
+          next: "s-dka",
+          quality: "partial",
+          feedback:
+            "That dose is far too low to have an inotropic effect. " +
+            "The examiner wanted a 1 unit/kg bolus and 1 unit/kg/h infusion titrated up to 10 units/kg/h with dextrose.",
+        },
+        {
+          id: "c-nodex",
+          label: "I gave the insulin bolus and infusion but no dextrose because her glucose was already high.",
+          next: "s-nodex",
+          quality: "unsafe",
+          feedback:
+            "At these doses her glucose will fall quickly once her body responds. Hypoglycemia is the main danger of high dose insulin. " +
+            "Start a dextrose infusion and check glucose every 15 to 30 minutes.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-dka",
+      phase: "Forty five minutes later",
+      text: "Her pressure is unchanged at 74/40. The poison centre specialist calls back and recommends a 1 unit/kg bolus and 1 unit/kg/h infusion. You increase the dose and start dextrose.",
+      next: "q-pressors",
+    },
+    {
+      kind: "say",
+      id: "s-nodex",
+      phase: "Seventy minutes later",
+      text: "The nurse finds her glucose is 2.9 mmol/L and she is sweaty and confused. You give 25 g of dextrose IV and start a D20W infusion through a central line.",
+      next: "q-pressors",
+    },
+    {
+      kind: "question",
+      id: "q-pressors",
+      phase: "Vasopressors",
+      prompt: "Which vasopressor or inotrope do you choose, and how does bedside echo help?",
+      seconds: 60,
+      modelAnswer: [
+        "Start norepinephrine for vasodilatory shock. Titrate to MAP 65.",
+        "Add epinephrine if echo shows poor contractility.",
+        "Repeat echo to track the ventricle and guide fluid.",
+        "Arterial line and central line.",
+        "Keep calcium going, aiming for an ionized calcium around twice normal.",
+      ],
+      rubric: ["ccb-r2", "ccb-a2"],
+      next: "s-escalate",
+    },
+    {
+      kind: "say",
+      id: "s-escalate",
+      phase: "Ninety minutes after arrival",
+      text:
+        "She is on norepinephrine 0.5 mcg/kg/min, epinephrine 0.3 mcg/kg/min and insulin at 5 units/kg/h. Her pressure is 68/34 and her heart rate 38. Lactate is 7.2 mmol/L. " +
+        "Her repeat echo shows an ejection fraction of 15 to 20 percent. She is becoming drowsy.",
+      next: "q-refractory",
+    },
+    {
+      kind: "question",
+      id: "q-refractory",
+      phase: "Refractory shock",
+      prompt: "She is failing maximal therapy. What are your options and what do you do now?",
+      seconds: 90,
+      modelAnswer: [
+        "This is refractory cardiogenic shock. Call the ECMO centre now through CritiCall for VA ECMO.",
+        "Increase insulin toward 10 units/kg/h with dextrose.",
+        "Pacing for bradycardia if it captures and improves perfusion.",
+        "Rescue options in periarrest: lipid emulsion 20 percent 1.5 mL/kg bolus, with the ECMO team aware because it can affect the circuit.",
+        "Methylene blue 1 to 2 mg/kg IV for refractory vasoplegia, with poison centre advice. She takes escitalopram. Methylene blue inhibits MAO and can cause serotonin toxicity, so weigh this first.",
+        "Avoid further large fluid boluses with a failing ventricle.",
+      ],
+      rubric: ["ccb-d1"],
+      choices: [
+        {
+          id: "c-ecmo",
+          label: "I called the ECMO centre through CritiCall, increased the insulin, added pacing and discussed rescue therapies with the poison centre.",
+          next: "q-airway",
+          quality: "strong",
+          feedback:
+            "Excellent. VA ECMO supports the circulation until the drug wears off, and outcomes are good when it is started before arrest. " +
+            "Calling early matters because transfer takes time.",
+        },
+        {
+          id: "c-lipid",
+          label: "I gave lipid emulsion and waited to see if it worked before calling anyone.",
+          next: "s-lipid",
+          quality: "partial",
+          feedback:
+            "Lipid emulsion is a rescue option for periarrest, but evidence is weak and it can interfere with lab tests and ECMO circuits. " +
+            "Waiting to call loses time. ECMO referral should happen now, in parallel.",
+        },
+        {
+          id: "c-fluids",
+          label: "I gave another 4 L of crystalloid to raise her pressure.",
+          next: "s-fluids",
+          quality: "unsafe",
+          feedback:
+            "Her IVC is full and her ventricle is failing. More fluid will cause pulmonary edema. " +
+            "The examiner wanted early ECMO referral and escalation of insulin.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-lipid",
+      phase: "Thirty minutes later",
+      text: "Her pressure rises briefly then falls to 64/30. The lab calls to say her samples are too lipemic to run. You call CritiCall for ECMO.",
+      next: "q-airway",
+    },
+    {
+      kind: "say",
+      id: "s-fluids",
+      phase: "Thirty minutes later",
+      text: "She is short of breath with crackles to both mid zones. SpO2 is 86 percent. You stop the fluids and call CritiCall for ECMO.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Before transfer",
+      prompt: "The ECMO centre accepts her. The flight crew asks that she be intubated before transport. How do you do it safely?",
+      seconds: 75,
+      modelAnswer: [
+        "Resuscitate before intubation. Pads on and pacing ready.",
+        "Push dose epinephrine drawn up. Pressors and insulin running through a central line.",
+        "Reduced dose ketamine, about 0.5 mg/kg, and full dose rocuronium, about 1.6 mg/kg.",
+        "Most experienced operator. Preoxygenate.",
+        "Low ventilator pressures to limit the fall in venous return.",
+      ],
+      rubric: ["ccb-r3"],
+      next: "q-husband",
+    },
+    {
+      kind: "question",
+      id: "q-husband",
+      phase: "Family",
+      prompt: "Her husband asks: 'Is she going to die? Is this my fault?' What do you say?",
+      seconds: 60,
+      modelAnswer: [
+        "Private space. Sit down. Speak plainly.",
+        "She is very sick. Her heart is weakened by the medicine. She is going to a centre with a heart lung machine.",
+        "Be honest about the risk of death without taking away hope.",
+        "Address guilt gently. The overdose is not his fault. Arguments happen in every family.",
+        "Offer social work and support. Ask about his own safety and supports.",
+      ],
+      rubric: ["ccb-c1", "ccb-p1"],
+      next: "q-handover",
+    },
+    {
+      kind: "question",
+      id: "q-handover",
+      phase: "Handover",
+      prompt: "The flight crew arrives. What are your key handover points, and what happens about her mental health?",
+      seconds: 60,
+      modelAnswer: [
+        "Sustained release verapamil about 6 g at a known time. Symptoms may last 24 hours or more.",
+        "Doses and rates of calcium, insulin, dextrose and vasopressors. Glucose and potassium trends.",
+        "Decontamination given. Poison centre contact.",
+        "Glucose checks every 15 to 30 minutes in transit. Dextrose must not stop.",
+        "Intentional overdose. She will need a psychiatric assessment when medically able. Hold under the Mental Health Act if needed.",
+      ],
+      rubric: ["ccb-c2", "ccb-d2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "She is placed on VA ECMO on arrival at the tertiary centre. She is decannulated on day 3 and later seen by psychiatry. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "ccb-a1",
+      competency: "assessment",
+      text: "Recognizes a severe sustained release verapamil overdose with delayed and prolonged toxicity.",
+      points: 2,
+      teaching: "Sustained release products can cause worsening shock many hours after ingestion. Plan for deterioration.",
+      source: "st-onge",
+    },
+    {
+      id: "ccb-a2",
+      competency: "assessment",
+      text: "Uses hyperglycemia and bedside echo to judge severity and the type of shock.",
+      points: 2,
+      teaching: "Hyperglycemia reflects blocked insulin release and correlates with severity. Echo separates vasodilation from pump failure.",
+      source: "st-onge",
+    },
+    {
+      id: "ccb-r1",
+      competency: "resuscitation",
+      text: "Gives calcium early, for example calcium chloride 1 g IV or calcium gluconate 3 g, repeated or as an infusion.",
+      points: 2,
+      teaching: "Calcium can partly overcome channel blockade. It is a first step, not the whole treatment.",
+      source: "st-onge",
+    },
+    {
+      id: "ccb-r2",
+      competency: "resuscitation",
+      text: "Starts norepinephrine for vasodilatory shock and adds epinephrine for poor contractility.",
+      points: 2,
+      teaching: "The consensus recommends vasopressors for shock alongside high dose insulin. Choose by echo findings.",
+      source: "st-onge",
+    },
+    {
+      id: "ccb-r3",
+      competency: "resuscitation",
+      text: "Intubates only after hemodynamic support, with reduced dose induction and push dose vasopressor ready.",
+      points: 3,
+      critical: true,
+      teaching: "Induction in profound shock can cause arrest. Resuscitate first and use hemodynamically neutral doses.",
+      source: "st-onge",
+    },
+    {
+      id: "ccb-m1",
+      competency: "management",
+      text: "Consults the poison centre early.",
+      points: 1,
+      teaching: "Poison centres help with doses, rescue therapies and escalation. Call early in a severe overdose.",
+      source: "st-onge",
+    },
+    {
+      id: "ccb-m2",
+      competency: "management",
+      text: "Gives activated charcoal 50 g and considers whole bowel irrigation for a sustained release product when safe.",
+      points: 1,
+      teaching: "Decontamination can reduce ongoing absorption from sustained release tablets. Airway protection and bowel function must be adequate.",
+      source: "goldfrank",
+    },
+    {
+      id: "ccb-m3",
+      competency: "management",
+      text: "Gives high dose insulin as a 1 unit/kg bolus and 1 unit/kg/h infusion titrated up to 10 units/kg/h with dextrose.",
+      points: 3,
+      critical: true,
+      teaching: "High dose insulin is a first line inotrope in calcium channel blocker poisoning. It works slowly, so start early.",
+      source: "hdi",
+    },
+    {
+      id: "ccb-m4",
+      competency: "management",
+      text: "Monitors glucose every 15 to 30 minutes and potassium closely during high dose insulin.",
+      points: 2,
+      teaching: "Hypoglycemia is the main complication. Potassium falls from intracellular shift and needs replacement only when low.",
+      source: "hdi",
+    },
+    {
+      id: "ccb-d1",
+      competency: "disposition",
+      text: "Refers early for VA ECMO when shock is refractory to maximal therapy.",
+      points: 3,
+      critical: true,
+      teaching: "ECMO bridges the heart until the drug clears. Refer before cardiac arrest because transfer takes time.",
+      source: "st-onge",
+    },
+    {
+      id: "ccb-d2",
+      competency: "disposition",
+      text: "Plans psychiatric assessment after medical recovery and uses the Mental Health Act if needed.",
+      points: 1,
+      teaching: "An intentional overdose needs a mental health assessment before discharge from hospital.",
+      source: "goldfrank",
+    },
+    {
+      id: "ccb-c1",
+      competency: "communication",
+      text: "Speaks honestly with the husband about the risk of death and addresses his guilt.",
+      points: 1,
+      teaching: "Family members often blame themselves. Name the feeling and reassure them without false promises.",
+      source: "goldfrank",
+    },
+    {
+      id: "ccb-c2",
+      competency: "communication",
+      text: "Gives a structured handover with doses, rates, trends and the need for ongoing dextrose and glucose checks.",
+      points: 1,
+      teaching: "Stopping dextrose during transport while insulin runs can be fatal. Make it explicit.",
+      source: "hdi",
+    },
+    {
+      id: "ccb-p1",
+      competency: "professionalism",
+      text: "Offers social work support to the husband and checks on his wellbeing.",
+      points: 1,
+      teaching: "Family members of overdose patients are under great stress. A brief check on their support is good care.",
+      source: "goldfrank",
+    },
+  ],
+  sources: [
+    {
+      id: "st-onge",
+      citation:
+        "St-Onge M, et al. Experts Consensus Recommendations for the Management of Calcium Channel Blocker Poisoning in Adults. Critical Care Medicine. 2017.",
+      url: "https://doi.org/10.1097/CCM.0000000000002087",
+    },
+    {
+      id: "hdi",
+      citation: "Engebretsen KM, et al. High-dose insulin therapy in beta-blocker and calcium channel-blocker poisoning. Clinical Toxicology. 2011.",
+      url: "https://doi.org/10.3109/15563650.2011.582471",
+    },
+    {
+      id: "goldfrank",
+      citation: "Nelson LS, et al, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw Hill. 2019.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

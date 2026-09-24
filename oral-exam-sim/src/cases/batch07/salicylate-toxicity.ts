@@ -1,0 +1,514 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const salicylateToxicity: OralCase = {
+  id: "salicylate-toxicity",
+  title: "Vomiting and breathing fast after a bad week",
+  blueprint: "tox",
+  alsoCovers: ["psych"],
+  summary: "A 36 year old man arrives vomiting and breathing quickly after taking pills from his medicine cabinet.",
+  durationMinutes: 15,
+  stem:
+    "You are working in a 200 bed community hospital in Ontario with an 8 bed ICU. Nephrology offers hemodialysis in house, but the dialysis nurse is on call from home and needs about 90 minutes to set up. " +
+    "Owen Lachance is 36 years old and weighs 70 kg. His sister brought him in. " +
+    "He told her he took 'a whole bottle' of pills about 6 hours ago after a breakup. " +
+    "Triage vitals: heart rate 118, blood pressure 128/76, respiratory rate 34, SpO2 96 percent on room air, temperature 38.1, capillary glucose 5.2 mmol/L. CTAS 2. " +
+    "The nurse says: 'He keeps vomiting and says his ears are ringing. He seems anxious. Do you want something to calm him down?'",
+  findings: [
+    {
+      id: "bottle",
+      label: "Pill bottle",
+      result: "His sister brought an empty bottle of enteric coated acetylsalicylic acid 325 mg. The label says 100 tablets. It was bought 2 weeks ago.",
+    },
+    {
+      id: "exam",
+      label: "Exam",
+      result: "Diaphoretic and restless. Deep rapid breathing. Oriented but distractible. Pupils 4 mm and reactive. Chest clear. Abdomen soft with mild epigastric tenderness. No clonus.",
+    },
+    {
+      id: "vbg",
+      label: "Venous blood gas at 6 hours",
+      result: "pH 7.46. pCO2 22 mmHg. Bicarbonate 15 mmol/L. Lactate 3.0 mmol/L.",
+    },
+    {
+      id: "lytes",
+      label: "Electrolytes and renal function",
+      result: "Sodium 141 mmol/L. Chloride 100 mmol/L. Potassium 3.3 mmol/L. Anion gap 26. Creatinine 112 µmol/L. Urea 8.4 mmol/L. Glucose 5.4 mmol/L.",
+    },
+    {
+      id: "levels",
+      label: "Salicylate levels",
+      result: "At 6 hours: 4.9 mmol/L. At 8 hours: 6.1 mmol/L. At 10 hours: 7.6 mmol/L. (1 mmol/L is about 13.8 mg/dL.)",
+    },
+    {
+      id: "co-ingestants",
+      label: "Co ingestant screen",
+      result: "Acetaminophen undetectable. Ethanol undetectable. Serum osmolality 298 mOsm/kg.",
+    },
+    {
+      id: "urine",
+      label: "Urine pH",
+      result: "Urine pH 5.5 on arrival.",
+    },
+    {
+      id: "ecg",
+      label: "ECG",
+      result: "Sinus tachycardia at 116. QRS 88 ms. QTc 460 ms. Low amplitude T waves.",
+    },
+    {
+      id: "cxr",
+      label: "Chest X ray",
+      result: "At 6 hours: clear. At 10 hours: new bilateral interstitial and alveolar opacities with a normal heart size.",
+    },
+    {
+      id: "collateral",
+      label: "Collateral from his sister",
+      result: "He has depression and stopped his sertraline 2 months ago. He told her he wanted to die. He has no prior attempts. He has a good relationship with her and his parents.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the acute area",
+      text: "He is sitting upright, breathing fast and retching into a basin. His sister hands you the empty bottle.",
+      next: "q-first",
+    },
+    {
+      kind: "question",
+      id: "q-first",
+      phase: "Initial management",
+      prompt: "The nurse wants to give lorazepam for his anxiety. What is your initial management?",
+      seconds: 90,
+      modelAnswer: [
+        "Recognize salicylate toxicity. About 32.5 g, or 464 mg/kg, is a severe ingestion close to the 500 mg/kg potentially lethal range.",
+        "Avoid sedatives. His hyperventilation is protective. Blunting it worsens acidemia and drives salicylate into the brain.",
+        "Monitor, IV access, call the poison centre.",
+        "Activated charcoal 50 g PO if he can protect his airway. Enteric coated tablets may absorb for many hours.",
+        "Sodium bicarbonate 1 to 2 mEq/kg IV bolus, then 150 mEq in 1 L of D5W at about 200 to 250 mL/h.",
+        "Replace potassium. Serial salicylate levels and gases every 2 hours. Tell nephrology early.",
+      ],
+      rubric: ["sal-a1", "sal-m1", "sal-m2", "sal-c1"],
+      choices: [
+        {
+          id: "c-bicarb",
+          label: "I held the lorazepam, gave charcoal 50 g, started a bicarbonate bolus and infusion with potassium, called the poison centre and ordered repeat levels every 2 hours.",
+          next: "q-gas",
+          quality: "strong",
+          feedback:
+            "Strong. Sedation can cause fatal acidemia in salicylate toxicity. Alkalinization traps salicylate in blood and urine. " +
+            "Enteric coated tablets make serial levels essential because the peak can be delayed.",
+        },
+        {
+          id: "c-fluids",
+          label: "I started normal saline at maintenance and waited for the 6 hour level before doing anything else.",
+          next: "s-fluids",
+          quality: "partial",
+          feedback:
+            "The history and gas already tell you this is salicylate toxicity. Waiting delays alkalinization and decontamination. " +
+            "The examiner wanted charcoal, bicarbonate, potassium and serial levels started now.",
+        },
+        {
+          id: "c-lorazepam",
+          label: "I gave lorazepam 2 mg IV to calm him so I could take a history.",
+          next: "s-lorazepam",
+          quality: "unsafe",
+          feedback:
+            "His rapid breathing is compensating for a severe acidosis. Sedation lowers his minute ventilation, drops his pH and lets salicylate enter the brain. " +
+            "Avoid sedatives and treat the poisoning.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-fluids",
+      phase: "Two hours later",
+      text: "The level is 6.1 mmol/L at 8 hours and rising. Urine pH is 5.5. The poison centre asks why bicarbonate has not been started. You start a bolus and infusion.",
+      next: "q-gas",
+    },
+    {
+      kind: "say",
+      id: "s-lorazepam",
+      phase: "Twenty minutes later",
+      text: "He is drowsy. His respiratory rate is 18. A repeat gas shows pH 7.29 and pCO2 34 mmHg. He is confused. You give a bicarbonate bolus and start an infusion, and ask for a monitored bed.",
+      next: "q-gas",
+    },
+    {
+      kind: "question",
+      id: "q-gas",
+      phase: "Interpretation",
+      prompt: "Interpret his first blood gas and electrolytes. What do the serial levels tell you?",
+      seconds: 60,
+      modelAnswer: [
+        "Mixed respiratory alkalosis and high anion gap metabolic acidosis. Anion gap 26.",
+        "Early salicylate stimulates the respiratory centre. The metabolic acidosis follows from uncoupled oxidative phosphorylation.",
+        "A rising level at 8 and 10 hours means ongoing absorption from enteric coated tablets.",
+        "Do not use a nomogram. Treat the patient and the trend.",
+        "Low potassium prevents urine alkalinization.",
+      ],
+      rubric: ["sal-a2"],
+      next: "q-alkalinize",
+    },
+    {
+      kind: "question",
+      id: "q-alkalinize",
+      phase: "Alkalinization",
+      prompt: "The infusion has run for an hour. Urine pH is 6.0, serum pH 7.48 and potassium 3.1. What are your targets and what do you change?",
+      seconds: 60,
+      modelAnswer: [
+        "Urine pH target 7.5 to 8.0. Serum pH no higher than about 7.55.",
+        "Replace potassium. The kidney keeps potassium by excreting hydrogen ions, which keeps urine acidic.",
+        "Add 20 to 40 mmol of KCl per litre and aim for potassium of at least 4 mmol/L.",
+        "Check urine pH every hour and gas every 2 hours.",
+        "Avoid acetazolamide. It worsens systemic acidosis.",
+      ],
+      rubric: ["sal-m3"],
+      choices: [
+        {
+          id: "c-potassium",
+          label: "I added potassium to the infusion, targeted urine pH 7.5 to 8.0 and serum pH no more than 7.55, and rechecked hourly.",
+          next: "s-escalate",
+          quality: "strong",
+          feedback:
+            "Correct. Hypokalemia is the most common reason alkalinization fails. " +
+            "Aim for urine pH of 7.5 to 8.0 while keeping serum pH under about 7.55.",
+        },
+        {
+          id: "c-more-bicarb",
+          label: "I doubled the bicarbonate rate without changing the potassium.",
+          next: "s-more-bicarb",
+          quality: "partial",
+          feedback:
+            "More bicarbonate without potassium drives serum pH too high while the urine stays acidic. " +
+            "Potassium replacement is the missing step.",
+        },
+        {
+          id: "c-acetazolamide",
+          label: "I gave acetazolamide to alkalinize the urine.",
+          next: "s-acetazolamide",
+          quality: "unsafe",
+          feedback:
+            "Acetazolamide alkalinizes the urine but causes systemic acidosis, which increases salicylate entry into the brain. " +
+            "Use bicarbonate and correct potassium.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-more-bicarb",
+      phase: "One hour later",
+      text: "Serum pH is 7.58 and potassium is 2.8 mmol/L. Urine pH is still 6.0. The pharmacist calls. You return to the standard rate and add potassium chloride 40 mmol/L.",
+      next: "s-escalate",
+    },
+    {
+      kind: "say",
+      id: "s-acetazolamide",
+      phase: "One hour later",
+      text: "Urine pH is 7.0 but serum pH has fallen to 7.36 and he is more restless. The poison centre advises against acetazolamide. You stop it, add potassium chloride 40 mmol/L to the infusion and give another bicarbonate bolus.",
+      next: "s-escalate",
+    },
+    {
+      kind: "say",
+      id: "s-escalate",
+      phase: "Ten hours after ingestion",
+      text:
+        "He is now confused and cannot tell you where he is. His respiratory rate is 40. SpO2 is 90 percent on room air. " +
+        "The 10 hour level is 7.6 mmol/L. The chest X ray shows new bilateral opacities. Capillary glucose is 5.0 mmol/L.",
+      next: "q-dialysis",
+    },
+    {
+      kind: "question",
+      id: "q-dialysis",
+      phase: "Deterioration",
+      prompt: "What is happening and what do you do?",
+      seconds: 75,
+      modelAnswer: [
+        "Severe salicylate toxicity with neurotoxicity and non cardiogenic pulmonary edema.",
+        "Emergency hemodialysis. He meets several EXTRIP criteria: level over 7.2 mmol/L, altered mental status and new hypoxemia.",
+        "Call nephrology now. Place a dialysis catheter. Continue bicarbonate until dialysis starts.",
+        "Give dextrose, for example 50 mL of D50W, because brain glucose can be low despite normal serum glucose.",
+        "Avoid fluid overload. Oxygen. Plan for the ICU.",
+      ],
+      rubric: ["sal-a3", "sal-m4", "sal-m5"],
+      choices: [
+        {
+          id: "c-hd",
+          label: "I called nephrology for emergency hemodialysis, gave dextrose, continued bicarbonate and arranged ICU.",
+          next: "q-airway",
+          quality: "strong",
+          feedback:
+            "Correct. Altered mental status, a level over 7.2 mmol/L and new hypoxemia each justify dialysis. " +
+            "Dialysis removes salicylate and corrects acidosis at the same time. Dextrose treats neuroglycopenia.",
+        },
+        {
+          id: "c-repeat",
+          label: "I continued bicarbonate and planned to repeat the level in 2 hours before deciding on dialysis.",
+          next: "s-repeat",
+          quality: "unsafe",
+          feedback:
+            "Confusion and pulmonary edema mean dialysis is needed now regardless of the level. " +
+            "Setting up dialysis takes time, so the call must happen immediately.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-repeat",
+      phase: "One hour later",
+      text: "He has a brief generalized seizure. SpO2 is 86 percent. You call nephrology urgently and give dextrose. The dialysis nurse is on the way.",
+      next: "q-airway",
+    },
+    {
+      kind: "question",
+      id: "q-airway",
+      phase: "Airway",
+      prompt: "He is tiring and his SpO2 is 88 percent on a non rebreather. The respiratory therapist asks if you will intubate. What is your approach?",
+      seconds: 90,
+      modelAnswer: [
+        "Avoid intubation if possible. Try high flow nasal oxygen or non invasive ventilation while dialysis is set up.",
+        "If intubation is unavoidable, have the most experienced operator and a plan to match his minute ventilation.",
+        "Give a bicarbonate bolus of 1 to 2 mEq/kg before induction.",
+        "Minimize apnea time. Use a fast sequence.",
+        "Set a high respiratory rate, about 30 to 35, to keep pCO2 near the pre intubation value. Check a gas within 15 minutes.",
+        "Start dialysis as soon as possible.",
+      ],
+      rubric: ["sal-r1"],
+      choices: [
+        {
+          id: "c-match",
+          label: "I tried high flow oxygen, then intubated with a bicarbonate bolus first and set the ventilator to match his pre intubation minute ventilation.",
+          next: "q-hd-plan",
+          quality: "strong",
+          feedback:
+            "Good. The danger at intubation is loss of compensation during apnea and on standard ventilator settings. " +
+            "Matching his minute ventilation and giving bicarbonate first protects his pH.",
+        },
+        {
+          id: "c-standard",
+          label: "I intubated with standard settings: tidal volume 6 mL/kg and rate 14.",
+          next: "s-standard",
+          quality: "unsafe",
+          feedback:
+            "A rate of 14 cannot match his compensation. pCO2 will rise quickly, pH will fall and salicylate will shift into the brain and heart. " +
+            "This is a known cause of peri intubation arrest in salicylate poisoning.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-standard",
+      phase: "Fifteen minutes after intubation",
+      text: "A gas shows pH 7.08 and pCO2 58 mmHg. He becomes bradycardic. You give bicarbonate 100 mEq IV, raise the rate to 32 and his heart rate recovers.",
+      next: "q-hd-plan",
+    },
+    {
+      kind: "question",
+      id: "q-hd-plan",
+      phase: "Dialysis",
+      prompt: "The dialysis team is ready. What mode, and when do you stop?",
+      seconds: 60,
+      modelAnswer: [
+        "Intermittent hemodialysis is preferred. Continuous therapy only if intermittent is unavailable.",
+        "Continue bicarbonate and potassium between and around dialysis.",
+        "Stop when he improves clinically and the level is under about 1.4 mmol/L.",
+        "If levels are not available, run for at least 4 to 6 hours.",
+        "Check levels after dialysis for rebound.",
+      ],
+      rubric: ["sal-m6"],
+      next: "q-psych",
+    },
+    {
+      kind: "question",
+      id: "q-psych",
+      phase: "Mental health",
+      prompt: "Earlier, before he became confused, he tried to leave. What would you have done, and what is the mental health plan now?",
+      seconds: 75,
+      modelAnswer: [
+        "He took a potentially lethal overdose with intent to die. He is at high risk.",
+        "Assess capacity. Confusion from salicylate toxicity means he likely lacks capacity to refuse treatment.",
+        "Treat under the emergency treatment provision of the Health Care Consent Act. A Form 1 allows detention for psychiatric assessment if he meets criteria. It does not authorize medical treatment.",
+        "One to one observation. Remove means of harm.",
+        "Psychiatry consult once medically stable. Involve his sister with his consent.",
+      ],
+      rubric: ["sal-p1", "sal-d1"],
+      next: "q-dispo",
+    },
+    {
+      kind: "question",
+      id: "q-dispo",
+      phase: "Disposition and team",
+      prompt: "How do you hand him over to the ICU, and what system issue would you raise?",
+      seconds: 60,
+      modelAnswer: [
+        "ICU admission with a structured handover: ingestion, levels and times, gases, treatments, ventilator settings and dialysis plan.",
+        "Poison centre case number and recommendations.",
+        "Serial levels until falling on two checks and he is clinically well.",
+        "System issue: early notification of dialysis for severe salicylate cases, and a protocol that warns against routine ventilator settings.",
+      ],
+      rubric: ["sal-c2", "sal-l1"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "After 5 hours of hemodialysis his level is 1.1 mmol/L and his gas has normalized. He is extubated the next day and seen by psychiatry. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "sal-a1",
+      competency: "assessment",
+      text: "Recognizes salicylate toxicity from the history, tinnitus, vomiting, fever and hyperpnea, and estimates the dose in mg/kg.",
+      points: 2,
+      teaching: "Tinnitus, vomiting and rapid breathing are early clues. Over 150 mg/kg is toxic and over 500 mg/kg can be lethal.",
+      source: "goldfrank",
+    },
+    {
+      id: "sal-a2",
+      competency: "assessment",
+      text: "Interprets a mixed respiratory alkalosis and high anion gap metabolic acidosis and a rising level from delayed absorption.",
+      points: 2,
+      teaching: "Enteric coated or large ingestions can peak many hours later. Serial levels every 2 hours until they fall.",
+      source: "nejm-sal",
+    },
+    {
+      id: "sal-a3",
+      competency: "assessment",
+      text: "Identifies confusion and non cardiogenic pulmonary edema as markers of severe toxicity.",
+      points: 2,
+      teaching: "Neurological signs and new hypoxemia signal severe poisoning regardless of the level.",
+      source: "extrip-sal",
+    },
+    {
+      id: "sal-r1",
+      competency: "resuscitation",
+      text: "Avoids intubation if possible and, if needed, gives bicarbonate first and matches pre intubation minute ventilation.",
+      points: 3,
+      critical: true,
+      teaching: "A fall in ventilation during or after intubation causes rapid acidemia and can be fatal. Set a high rate and check a gas early.",
+      source: "goldfrank",
+    },
+    {
+      id: "sal-m1",
+      competency: "management",
+      text: "Avoids sedatives that reduce respiratory drive.",
+      points: 2,
+      teaching: "Hyperventilation keeps the pH up. Benzodiazepines or opioids can precipitate collapse.",
+      source: "nejm-sal",
+    },
+    {
+      id: "sal-m2",
+      competency: "management",
+      text: "Gives activated charcoal 50 g and starts sodium bicarbonate 1 to 2 mEq/kg IV then an infusion of 150 mEq in 1 L of D5W.",
+      points: 3,
+      critical: true,
+      teaching: "Alkalinization traps ionized salicylate in blood and urine. Charcoal reduces ongoing absorption.",
+      source: "goldfrank",
+    },
+    {
+      id: "sal-m3",
+      competency: "management",
+      text: "Replaces potassium and targets urine pH 7.5 to 8.0 with serum pH no higher than about 7.55.",
+      points: 2,
+      teaching: "Urine will not alkalinize while the patient is hypokalemic. Keep potassium at 4 mmol/L or more.",
+      source: "nejm-sal",
+    },
+    {
+      id: "sal-m4",
+      competency: "management",
+      text: "Arranges emergency hemodialysis for altered mental status, level over 7.2 mmol/L or new hypoxemia.",
+      points: 3,
+      critical: true,
+      teaching: "EXTRIP recommends dialysis for levels over 7.2 mmol/L, altered mental status, new hypoxemia or failure of standard therapy. It suggests dialysis above 6.5 mmol/L or for pH 7.20 or less, with lower level thresholds when kidney function is impaired.",
+      source: "extrip-sal",
+    },
+    {
+      id: "sal-m5",
+      competency: "management",
+      text: "Gives dextrose to a confused patient despite normal serum glucose.",
+      points: 1,
+      teaching: "Brain glucose can be low when blood glucose is normal. Give dextrose to any salicylate poisoned patient with altered mental status.",
+      source: "goldfrank",
+    },
+    {
+      id: "sal-m6",
+      competency: "management",
+      text: "Chooses intermittent hemodialysis and states stopping criteria of clinical improvement and a level under about 1.4 mmol/L.",
+      points: 1,
+      teaching: "Intermittent hemodialysis clears salicylate fastest. Recheck for rebound after it ends.",
+      source: "extrip-sal",
+    },
+    {
+      id: "sal-c1",
+      competency: "communication",
+      text: "Consults the poison centre and nephrology early, before dialysis criteria are met.",
+      points: 1,
+      teaching: "Dialysis takes time to organize. An early heads up avoids delay when the patient worsens.",
+      source: "extrip-sal",
+    },
+    {
+      id: "sal-c2",
+      competency: "communication",
+      text: "Gives a structured ICU handover with levels, times, gases, treatments and ventilator settings.",
+      points: 1,
+      teaching: "The receiving team must know that routine ventilator settings are dangerous for this patient.",
+      source: "goldfrank",
+    },
+    {
+      id: "sal-p1",
+      competency: "professionalism",
+      text: "Assesses capacity and uses emergency treatment without consent or an Ontario Form 1 when he tries to leave.",
+      points: 2,
+      teaching: "An incapable patient can be treated in an emergency under the Health Care Consent Act. A Form 1 detains for psychiatric assessment but is not consent to medical treatment.",
+      source: "ontario-hcca",
+    },
+    {
+      id: "sal-d1",
+      competency: "disposition",
+      text: "Arranges one to one observation and psychiatry consultation once he is medically stable.",
+      points: 1,
+      teaching: "Suicide risk remains after medical recovery. Plan the psychiatric assessment before transfer to the ward.",
+      source: "ontario-mha",
+    },
+    {
+      id: "sal-l1",
+      competency: "leadership",
+      text: "Identifies a system improvement such as early dialysis notification or a ventilator warning in the protocol.",
+      points: 1,
+      teaching: "Salicylate deaths often follow predictable errors. Build safeguards into local protocols.",
+      source: "extrip-sal",
+    },
+  ],
+  sources: [
+    {
+      id: "extrip-sal",
+      citation:
+        "Juurlink DN, et al. Extracorporeal Treatment for Salicylate Poisoning: Systematic Review and Recommendations From the EXTRIP Workgroup. Annals of Emergency Medicine. 2015.",
+      url: "https://doi.org/10.1016/j.annemergmed.2015.03.031",
+    },
+    {
+      id: "nejm-sal",
+      citation: "Palmer BF, Clegg DJ. Salicylate Toxicity. New England Journal of Medicine. 2020.",
+      url: "https://doi.org/10.1056/NEJMra2010852",
+    },
+    {
+      id: "goldfrank",
+      citation: "Nelson LS, et al, editors. Goldfrank's Toxicologic Emergencies. 11th edition. 2019.",
+    },
+    {
+      id: "ontario-mha",
+      citation: "Ontario. Mental Health Act, R.S.O. 1990, c. M.7.",
+      url: "https://www.ontario.ca/laws/statute/90m07",
+    },
+    {
+      id: "ontario-hcca",
+      citation: "Ontario. Health Care Consent Act, 1996.",
+      url: "https://www.ontario.ca/laws/statute/96h02",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};

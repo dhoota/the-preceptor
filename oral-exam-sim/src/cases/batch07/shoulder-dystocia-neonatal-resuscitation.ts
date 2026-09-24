@@ -1,0 +1,623 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const shoulderDystociaNeonatalResuscitation: OralCase = {
+  id: "shoulder-dystocia-neonatal-resuscitation",
+  title: "Pushing in the ambulance bay",
+  blueprint: "obgyn",
+  alsoCovers: ["peds", "resus"],
+  summary: "A woman in active labour arrives at a small rural emergency department with no obstetric service.",
+  durationMinutes: 15,
+  stem:
+    "You are the only physician in a 12 bed rural hospital in northwestern Ontario. There is no obstetric service. The nearest birthing unit is 95 km away. " +
+    "You have two nurses, a neonatal resuscitation cart with a radiant warmer, bag and mask, laryngeal mask airway size 1, umbilical catheter kit and a pulse oximeter. A second physician is on call from home, 20 minutes away. " +
+    "Destiny Keeshig is 31 years old, G4P3, at 39 weeks. She has gestational diabetes treated with insulin. An ultrasound 2 weeks ago estimated the baby at 4.2 kg. " +
+    "Her contractions started 90 minutes ago and she was driving to the birthing unit when her waters broke. " +
+    "Vitals: heart rate 104, blood pressure 132/84, respiratory rate 22, temperature 37.1. The nurse says: 'She says she has to push. I can see the head.'",
+  findings: [
+    {
+      id: "maternal-exam",
+      label: "Maternal exam",
+      result: "Fully dilated. Vertex presenting at +3 station. Clear amniotic fluid. Contractions every 2 minutes.",
+    },
+    {
+      id: "fetal-heart",
+      label: "Fetal heart on Doppler",
+      result: "135 beats per minute between contractions with decelerations to 100 that recover after each contraction.",
+    },
+    {
+      id: "history",
+      label: "Obstetric history",
+      result: "Three previous vaginal births. Her last baby weighed 4.0 kg and had a 'tight shoulder' per her report. Group B strep negative. Blood group O positive.",
+    },
+    {
+      id: "turtle",
+      label: "After the head delivers",
+      result: "The head delivers and then retracts tightly against the perineum. The face is puffy and dusky. No restitution. The next contraction does not deliver the shoulders.",
+    },
+    {
+      id: "newborn-initial",
+      label: "Newborn at birth",
+      result: "Limp. No breathing effort. Pale and blue. Heart rate by stethoscope 70 beats per minute. Term gestation. Weight later measured at 4.3 kg.",
+    },
+    {
+      id: "newborn-ppv",
+      label: "Newborn after 30 seconds of mask ventilation",
+      result: "Heart rate 50 by ECG leads. Chest is not moving with each breath. SpO2 not reading.",
+    },
+    {
+      id: "newborn-glucose",
+      label: "Newborn glucose",
+      result: "Point of care glucose at 20 minutes of age: 1.8 mmol/L.",
+    },
+    {
+      id: "newborn-neuro",
+      label: "Newborn neurological exam at 30 minutes",
+      result: "Lethargic with weak suck. Decreased tone. Weak Moro reflex. Pupils small. No seizures seen. Right arm held limp and extended.",
+    },
+    {
+      id: "cord-gas",
+      label: "Umbilical arterial cord gas",
+      result: "pH 6.94. Base deficit 16 mmol/L.",
+    },
+    {
+      id: "maternal-after",
+      label: "Mother after delivery",
+      result: "Placenta delivers complete at 8 minutes. Uterus firm after oxytocin. Second degree perineal tear. Estimated blood loss 600 mL.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "In the ED",
+      text: "She is on a stretcher in the resuscitation room. The head is crowning with each contraction.",
+      next: "q-prepare",
+    },
+    {
+      kind: "question",
+      id: "q-prepare",
+      phase: "Preparing",
+      prompt: "Delivery is imminent. What do you set up and who do you call before the baby arrives?",
+      seconds: 75,
+      modelAnswer: [
+        "Call the second physician in. Call CritiCall Ontario to reach obstetrics and neonatal transport.",
+        "Assign one nurse to the mother and one to the baby. Brief the team on the risk of shoulder dystocia.",
+        "Radiant warmer on, warm towels, hat, bag and mask with correct size, suction, oximeter and ECG leads.",
+        "Oxytocin 10 IU IM drawn up for the third stage.",
+        "Position the mother at the end of the bed so manoeuvres are possible.",
+      ],
+      rubric: ["sd-l1", "sd-a1"],
+      next: "s-turtle",
+    },
+    {
+      kind: "say",
+      id: "s-turtle",
+      phase: "Delivery",
+      text: "The head delivers and pulls back hard against the perineum. The face is dusky. With the next contraction and gentle traction the shoulders do not deliver. The nurse notes the time.",
+      next: "q-dystocia",
+    },
+    {
+      kind: "question",
+      id: "q-dystocia",
+      phase: "Shoulder dystocia",
+      prompt: "What is happening and what are your first manoeuvres?",
+      seconds: 75,
+      modelAnswer: [
+        "Shoulder dystocia. Call for help and announce it. Note the time the head delivered.",
+        "Stop pushing briefly. No fundal pressure. Avoid strong or downward traction on the head.",
+        "McRoberts: flex both thighs sharply onto the abdomen.",
+        "Suprapubic pressure from the side of the fetal back, steady then rocking, to rotate the anterior shoulder.",
+        "Consider episiotomy only if it helps you get your hand in for internal manoeuvres.",
+      ],
+      rubric: ["sd-a2", "sd-m1", "sd-m2"],
+      choices: [
+        {
+          id: "c-mcroberts",
+          label: "I called it out, noted the time, did McRoberts with suprapubic pressure and used only routine gentle traction. No fundal pressure.",
+          next: "s-still",
+          quality: "strong",
+          feedback:
+            "This is the right first step. McRoberts with suprapubic pressure resolves a large share of shoulder dystocias. " +
+            "Fundal pressure and strong traction increase the risk of brachial plexus injury and uterine rupture.",
+        },
+        {
+          id: "c-traction",
+          label: "I pulled harder on the head while the nurse pushed on the top of the uterus.",
+          next: "s-traction",
+          quality: "unsafe",
+          feedback:
+            "Fundal pressure impacts the shoulder further behind the pubic bone. Strong traction stretches the brachial plexus. " +
+            "The examiner wanted McRoberts and suprapubic pressure with routine gentle traction only.",
+        },
+        {
+          id: "c-episiotomy",
+          label: "I cut an episiotomy first to make room for the shoulders.",
+          next: "s-episiotomy",
+          quality: "partial",
+          feedback:
+            "The obstruction is bony, at the pubic symphysis, not soft tissue. An episiotomy alone does not release it. " +
+            "McRoberts and suprapubic pressure come first. Episiotomy may help later to get a hand in.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-traction",
+      phase: "Thirty seconds later",
+      text: "The shoulders do not move. The head is now deeply blue. The nurse stops pushing on the fundus and asks if she should flex the mother's legs. You start McRoberts with suprapubic pressure.",
+      next: "s-still",
+    },
+    {
+      kind: "say",
+      id: "s-episiotomy",
+      phase: "Thirty seconds later",
+      text: "The episiotomy bleeds but the shoulders stay stuck. The nurse flexes the mother's legs and you apply suprapubic pressure.",
+      next: "s-still",
+    },
+    {
+      kind: "say",
+      id: "s-still",
+      phase: "Two minutes since the head delivered",
+      text: "McRoberts with suprapubic pressure for 30 seconds has not freed the shoulder. The second physician is still 15 minutes away.",
+      next: "q-internal",
+    },
+    {
+      kind: "question",
+      id: "q-internal",
+      phase: "Next manoeuvres",
+      prompt: "What do you do next?",
+      seconds: 75,
+      modelAnswer: [
+        "Move to internal manoeuvres. The order can be chosen by the operator's skill.",
+        "Deliver the posterior arm: hand along the sacrum, flex the elbow and sweep the forearm across the chest.",
+        "Internal rotation: pressure on the back of the anterior or posterior shoulder to rotate into an oblique diameter.",
+        "If unsuccessful, roll the mother onto all fours and try again.",
+        "Do not keep repeating McRoberts. Zavanelli and symphysiotomy are last resorts beyond this setting.",
+      ],
+      rubric: ["sd-m3"],
+      choices: [
+        {
+          id: "c-posterior",
+          label: "I went in along the sacrum and delivered the posterior arm, ready to try internal rotation or all fours if that failed.",
+          next: "s-born",
+          quality: "strong",
+          feedback:
+            "Good. Delivery of the posterior arm has a high success rate and reduces the shoulder width. " +
+            "Moving through internal manoeuvres in order while noting the time is what the examiner wanted.",
+        },
+        {
+          id: "c-repeat",
+          label: "I kept repeating McRoberts and suprapubic pressure with stronger traction.",
+          next: "s-repeat",
+          quality: "partial",
+          feedback:
+            "If McRoberts and suprapubic pressure fail, repeating them wastes minutes. More traction adds nerve injury. " +
+            "The next step is an internal manoeuvre such as posterior arm delivery.",
+        },
+        {
+          id: "c-zavanelli",
+          label: "I pushed the head back into the vagina to prepare for a cesarean section.",
+          next: "s-zavanelli",
+          quality: "unsafe",
+          feedback:
+            "Cephalic replacement is a last resort for an operating room with a surgical team. There is no one to do a cesarean here. " +
+            "The examiner wanted posterior arm delivery, internal rotation or the all fours position.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-repeat",
+      phase: "Two more minutes",
+      text: "Nothing moves. The nurse reminds you of the time. You slide a hand along the sacrum and deliver the posterior arm.",
+      next: "s-born",
+    },
+    {
+      kind: "say",
+      id: "s-zavanelli",
+      phase: "One minute later",
+      text: "The head will not go back. The nurse reads out the time since the head delivered. You deliver the posterior arm.",
+      next: "s-born",
+    },
+    {
+      kind: "say",
+      id: "s-born",
+      phase: "Birth",
+      text: "The baby is born 4 minutes after the head. He is limp, blue and not breathing. The second nurse takes over care of the mother.",
+      next: "q-initial-nrp",
+    },
+    {
+      kind: "question",
+      id: "q-initial-nrp",
+      phase: "Newborn",
+      prompt: "Talk me through the first 60 seconds of newborn care.",
+      seconds: 90,
+      modelAnswer: [
+        "Term, poor tone, not breathing. Clamp and cut the cord and move to the warmer.",
+        "Warm, dry, stimulate, hat. Position the head in the sniffing position. Suction the mouth then nose only if secretions obstruct.",
+        "If apneic, gasping or heart rate under 100, start positive pressure ventilation within the first minute.",
+        "Room air, 21 percent oxygen, for a term baby. Rate 40 to 60 breaths per minute. Inflation pressure about 20 to 25 cmH2O with PEEP 5.",
+        "Pulse oximeter on the right hand and ECG leads for heart rate.",
+      ],
+      rubric: ["sd-r1", "sd-r2"],
+      choices: [
+        {
+          id: "c-ppv",
+          label: "I dried and stimulated him on the warmer, positioned the airway and started mask ventilation in room air within the first minute.",
+          next: "s-poor-chest",
+          quality: "strong",
+          feedback:
+            "Correct. Ventilation of the lungs is the single most important step in newborn resuscitation. " +
+            "Start PPV within 60 seconds for apnea or heart rate under 100, in 21 percent oxygen for a term baby.",
+        },
+        {
+          id: "c-stimulate",
+          label: "I kept drying, stimulating and suctioning deeply for about 90 seconds hoping he would breathe.",
+          next: "s-stimulate",
+          quality: "partial",
+          feedback:
+            "Prolonged stimulation delays ventilation. Deep suction can cause bradycardia. " +
+            "A baby who is apneic after initial steps needs positive pressure ventilation within the first minute.",
+        },
+        {
+          id: "c-freeflow",
+          label: "I gave free flow 100 percent oxygen by the face.",
+          next: "s-stimulate",
+          quality: "unsafe",
+          feedback:
+            "Free flow oxygen does nothing for an apneic baby. He needs breaths. " +
+            "Also, term babies should start in 21 percent oxygen. The examiner wanted positive pressure ventilation now.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-stimulate",
+      phase: "Ninety seconds of age",
+      text: "He is still apneic. Heart rate is 60 on auscultation. The nurse hands you the bag and mask. You start ventilation in room air.",
+      next: "s-poor-chest",
+    },
+    {
+      kind: "say",
+      id: "s-poor-chest",
+      phase: "Thirty seconds of ventilation",
+      text: "After 30 seconds of mask ventilation the ECG leads show a heart rate of 50. The nurse says the chest is not moving.",
+      next: "q-mrsopa",
+    },
+    {
+      kind: "question",
+      id: "q-mrsopa",
+      phase: "Ventilation not effective",
+      prompt: "What do you do now?",
+      seconds: 60,
+      modelAnswer: [
+        "Ventilation is not effective. Fix it before anything else.",
+        "Corrective steps MR SOPA: mask adjust, reposition airway, suction mouth and nose, open mouth, pressure increase, alternative airway.",
+        "Increase pressure in steps to a maximum of about 40 cmH2O for a term baby.",
+        "Place a laryngeal mask airway size 1 if mask ventilation still fails.",
+        "Once the chest moves, give 30 seconds of effective ventilation then reassess heart rate.",
+      ],
+      rubric: ["sd-r3"],
+      choices: [
+        {
+          id: "c-mrsopa",
+          label: "I went through the MR SOPA corrective steps, placed a size 1 laryngeal mask when the chest still did not rise, then ventilated for 30 seconds with chest movement.",
+          next: "s-still-low",
+          quality: "strong",
+          feedback:
+            "Excellent. Most newborns respond to effective ventilation. Chest movement is the proof it is effective. " +
+            "A laryngeal mask is a good alternative airway for a term baby when intubation skills are limited.",
+        },
+        {
+          id: "c-compress",
+          label: "I started chest compressions because the heart rate is under 60.",
+          next: "s-compress",
+          quality: "unsafe",
+          feedback:
+            "Compressions are only indicated after 30 seconds of ventilation that moves the chest. " +
+            "Compressions make ventilation harder. Fix the airway first with the MR SOPA steps.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-compress",
+      phase: "Thirty seconds later",
+      text: "The heart rate is unchanged. The nurse points out there is still no chest rise. You stop compressions, reposition, increase pressure and place a laryngeal mask. Now the chest moves.",
+      next: "s-still-low",
+    },
+    {
+      kind: "say",
+      id: "s-still-low",
+      phase: "Three minutes of age",
+      text: "After 30 seconds of ventilation that moves the chest, the heart rate is 45.",
+      next: "q-compressions",
+    },
+    {
+      kind: "question",
+      id: "q-compressions",
+      phase: "Compressions and drugs",
+      prompt: "The baby weighs about 4.3 kg. What do you do now, and what are your drug doses?",
+      seconds: 90,
+      modelAnswer: [
+        "Increase oxygen to 100 percent. Secure an airway: laryngeal mask or endotracheal tube.",
+        "Chest compressions, two thumb technique, lower third of the sternum, one third of the chest depth.",
+        "Ratio 3 compressions to 1 breath. 90 compressions and 30 breaths per minute. Reassess after 60 seconds.",
+        "If heart rate stays under 60, epinephrine IV or IO 0.02 mg/kg, within a range of 0.01 to 0.03 mg/kg. For 4.3 kg that is about 0.09 mg, or 0.9 mL of 0.1 mg/mL. Repeat every 3 to 5 minutes.",
+        "Endotracheal epinephrine 0.1 mg/kg, about 0.43 mg or 4.3 mL of 0.1 mg/mL, only while IV access is being obtained.",
+        "Emergency umbilical venous catheter. Normal saline 10 mL/kg, about 43 mL, over 5 to 10 minutes if blood loss or poor response.",
+      ],
+      rubric: ["sd-r4", "sd-m4"],
+      next: "s-rosc",
+    },
+    {
+      kind: "say",
+      id: "s-rosc",
+      phase: "Seven minutes of age",
+      text:
+        "After one dose of epinephrine by the umbilical vein the heart rate rises to 130. He starts gasping at 12 minutes. SpO2 is 88 percent in 40 percent oxygen. " +
+        "At 20 minutes his glucose is 1.8 mmol/L. At 30 minutes he is lethargic with low tone and a weak suck. His right arm is limp.",
+      next: "q-post",
+    },
+    {
+      kind: "question",
+      id: "q-post",
+      phase: "Post resuscitation",
+      prompt: "What are your priorities for the baby now?",
+      seconds: 90,
+      modelAnswer: [
+        "Titrate oxygen to target saturations, about 85 to 95 percent by 10 minutes of age.",
+        "Treat hypoglycemia: D10W 2 mL/kg IV, about 8.6 mL, then D10W at about 80 mL/kg/day. He is an infant of a diabetic mother.",
+        "Moderate encephalopathy after a long head to body interval, cord pH 6.94 and resuscitation. He may be eligible for therapeutic hypothermia.",
+        "Call neonatal transport through CritiCall within the first hour. Cooling must start within 6 hours.",
+        "Avoid hyperthermia. Passive cooling only under direction of the neonatal team with core temperature monitoring.",
+        "Note the limp right arm as a likely brachial plexus injury. Check the clavicle and humerus.",
+      ],
+      rubric: ["sd-a3", "sd-m5", "sd-d1"],
+      choices: [
+        {
+          id: "c-cool",
+          label: "I treated the glucose, called neonatal transport for possible cooling, turned the warmer off on their advice and monitored core temperature.",
+          next: "q-mother",
+          quality: "strong",
+          feedback:
+            "Good. Early recognition of encephalopathy matters because cooling works best when started within 6 hours. " +
+            "Hypoglycemia worsens brain injury and is common in infants of diabetic mothers.",
+        },
+        {
+          id: "c-warm",
+          label: "I kept him under the radiant warmer at full heat and planned to reassess in an hour.",
+          next: "s-warm",
+          quality: "unsafe",
+          feedback:
+            "Hyperthermia worsens hypoxic brain injury. Waiting an hour cuts into the 6 hour cooling window. " +
+            "The examiner wanted glucose treated, avoidance of overheating and an early call to the neonatal team.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-warm",
+      phase: "One hour later",
+      text: "His rectal temperature is 38.2. The nurse calls CritiCall on her own. The neonatologist asks you to turn off the warmer and give D10W now.",
+      next: "q-mother",
+    },
+    {
+      kind: "question",
+      id: "q-mother",
+      phase: "The mother",
+      prompt: "While your colleague arrives to help with the baby, what do you need to do for the mother?",
+      seconds: 60,
+      modelAnswer: [
+        "Active management of the third stage. Oxytocin 10 IU IM.",
+        "She is high risk for postpartum hemorrhage after a large baby and a dystocia. Watch tone and blood loss.",
+        "Inspect the placenta. Examine for third or fourth degree tears. Repair or arrange repair.",
+        "Check her glucose. Stop her insulin after delivery.",
+        "Keep her informed about the baby.",
+      ],
+      rubric: ["sd-m6"],
+      next: "q-debrief",
+    },
+    {
+      kind: "question",
+      id: "q-debrief",
+      phase: "Documentation and family",
+      prompt: "What do you document, and how do you talk to the parents?",
+      seconds: 75,
+      modelAnswer: [
+        "Time the head delivered and the time the body delivered.",
+        "Which shoulder was anterior. Each manoeuvre, in order, who did it and when.",
+        "Cord gases from a double clamped segment. Apgar scores and resuscitation steps with times.",
+        "Tell the parents honestly: the shoulder was stuck, the baby needed help to breathe and is going to a NICU.",
+        "Mention the arm weakness and that many brachial plexus injuries recover.",
+        "Debrief the team. This was stressful for everyone.",
+      ],
+      rubric: ["sd-c1", "sd-c2", "sd-l2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text: "The neonatal transport team arrives 2 hours later and starts active cooling. The mother stays with you for observation. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "sd-a1",
+      competency: "assessment",
+      text: "Identifies risk factors for shoulder dystocia before delivery: macrosomia, gestational diabetes and a previous difficult shoulder.",
+      points: 1,
+      teaching: "Most dystocias are not predictable, but known risk factors let you brief the team and position the mother in advance.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-a2",
+      competency: "assessment",
+      text: "Recognizes shoulder dystocia from the turtle sign and failed delivery with routine traction, and notes the time.",
+      points: 2,
+      teaching: "Head retraction against the perineum is the turtle sign. The head to body interval guides urgency and documentation.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-a3",
+      competency: "assessment",
+      text: "Recognizes neonatal encephalopathy and hypoglycemia after resuscitation.",
+      points: 2,
+      teaching: "Lethargy, low tone and a weak suck after a hypoxic birth suggest moderate encephalopathy. Check glucose early in infants of diabetic mothers.",
+      source: "cps-hie",
+    },
+    {
+      id: "sd-r1",
+      competency: "resuscitation",
+      text: "Performs initial steps: warm, dry, stimulate, position the airway and suction only if needed.",
+      points: 1,
+      teaching: "Initial steps take about 30 seconds. Deep or routine suctioning can cause bradycardia.",
+      source: "nrp-2025",
+    },
+    {
+      id: "sd-r2",
+      competency: "resuscitation",
+      text: "Starts positive pressure ventilation in 21 percent oxygen within 60 seconds for apnea or heart rate under 100.",
+      points: 3,
+      critical: true,
+      teaching: "Effective ventilation is the most important step in newborn resuscitation. Term babies start in room air.",
+      source: "nrp-2025",
+    },
+    {
+      id: "sd-r3",
+      competency: "resuscitation",
+      text: "Uses the MR SOPA corrective steps and an alternative airway to achieve chest movement before starting compressions.",
+      points: 3,
+      critical: true,
+      teaching: "No chest rise means no ventilation. Fix the airway first. Compressions start only after 30 seconds of ventilation that moves the chest.",
+      source: "nrp-2025",
+    },
+    {
+      id: "sd-r4",
+      competency: "resuscitation",
+      text: "Gives compressions at 3 to 1 with 100 percent oxygen for heart rate under 60 after effective ventilation.",
+      points: 2,
+      teaching: "Use the two thumb technique on the lower third of the sternum. 90 compressions and 30 breaths make 120 events per minute.",
+      source: "nrp-2025",
+    },
+    {
+      id: "sd-m1",
+      competency: "management",
+      text: "Performs McRoberts and suprapubic pressure as first manoeuvres.",
+      points: 2,
+      teaching: "McRoberts straightens the sacrum and rotates the pubis. Suprapubic pressure from the fetal back side moves the anterior shoulder.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-m2",
+      competency: "management",
+      text: "Avoids fundal pressure and strong or downward traction.",
+      points: 3,
+      critical: true,
+      teaching: "Fundal pressure worsens impaction and risks uterine rupture. Excess traction causes brachial plexus injury.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-m3",
+      competency: "management",
+      text: "Moves on to internal manoeuvres such as posterior arm delivery or internal rotation, then the all fours position.",
+      points: 2,
+      teaching: "If first manoeuvres fail within about 30 seconds, go inside. Posterior arm delivery reduces the shoulder diameter.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-m4",
+      competency: "management",
+      text: "States correct neonatal epinephrine doses: 0.02 mg/kg IV of 0.1 mg/mL, or 0.1 mg/kg endotracheal, and volume 10 mL/kg.",
+      points: 2,
+      teaching: "IV or IO is the preferred route. For a 4.3 kg baby the IV dose is about 0.09 mg, which is 0.9 mL of 0.1 mg/mL.",
+      source: "nrp-2025",
+    },
+    {
+      id: "sd-m5",
+      competency: "management",
+      text: "Treats neonatal hypoglycemia with D10W 2 mL/kg IV followed by a glucose infusion.",
+      points: 1,
+      teaching: "Hypoglycemia adds to hypoxic brain injury. Infants of diabetic mothers are at high risk in the first hours.",
+      source: "cps-glucose",
+    },
+    {
+      id: "sd-m6",
+      competency: "management",
+      text: "Gives oxytocin 10 IU IM for the third stage and anticipates postpartum hemorrhage and perineal injury.",
+      points: 1,
+      teaching: "Macrosomia and dystocia raise the risk of atony and severe tears. Examine the perineum and watch blood loss.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-c1",
+      competency: "communication",
+      text: "Documents head delivery time, body delivery time, anterior shoulder, manoeuvres in order and cord gases.",
+      points: 2,
+      teaching: "Complete documentation supports the family, the receiving team and any later review.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-c2",
+      competency: "communication",
+      text: "Explains events and the baby's condition honestly to the parents, including possible arm weakness.",
+      points: 1,
+      teaching: "Parents need to hear what happened in plain words. Many brachial plexus injuries recover, but follow up is essential.",
+      source: "rcog-sd",
+    },
+    {
+      id: "sd-l1",
+      competency: "leadership",
+      text: "Calls for help early and assigns separate clinicians to the mother and the newborn.",
+      points: 2,
+      teaching: "Two patients need two teams. Mobilize the backup physician and transport before delivery.",
+      source: "nrp-2025",
+    },
+    {
+      id: "sd-l2",
+      competency: "leadership",
+      text: "Leads a team debrief after a stressful resuscitation.",
+      points: 1,
+      teaching: "Debriefs improve future performance and support staff after a traumatic delivery.",
+      source: "nrp-2025",
+    },
+    {
+      id: "sd-d1",
+      competency: "disposition",
+      text: "Calls neonatal transport early for possible therapeutic hypothermia and avoids hyperthermia.",
+      points: 3,
+      critical: true,
+      teaching: "Cooling for moderate or severe encephalopathy at 35 weeks or more must start within 6 hours. Overheating worsens injury.",
+      source: "cps-hie",
+    },
+  ],
+  sources: [
+    {
+      id: "rcog-sd",
+      citation: "Royal College of Obstetricians and Gynaecologists. Shoulder Dystocia. Green-top Guideline No. 42. BJOG. 2026.",
+      url: "https://doi.org/10.1111/1471-0528.70258",
+    },
+    {
+      id: "nrp-2025",
+      citation:
+        "Lee HC, et al. Part 5: Neonatal Resuscitation: 2025 American Heart Association and American Academy of Pediatrics Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025.",
+      url: "https://doi.org/10.1161/CIR.0000000000001367",
+    },
+    {
+      id: "cps-hie",
+      citation: "Lemyre B, et al. Canadian Paediatric Society position statement. Hypothermia for newborns with hypoxic ischemic encephalopathy. Paediatrics and Child Health. 2018.",
+      url: "https://doi.org/10.1093/pch/pxy028",
+    },
+    {
+      id: "cps-glucose",
+      citation: "Narvey MR, et al. Canadian Paediatric Society position statement. The screening and management of newborns at risk for low blood glucose. Paediatrics and Child Health. 2019.",
+      url: "https://doi.org/10.1093/pch/pxz134",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};
