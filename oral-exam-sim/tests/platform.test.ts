@@ -1,19 +1,25 @@
 import { describe, expect, it } from "vitest";
 import { FREE_CASE_COUNT, FREE_SAMP_TOPICS, canOpenCase, canOpenSamp, freeCaseIds, freeSampIds } from "@/lib/access";
 import {
+  ACCESS_MONTHS,
   NO_ACCESS,
+  NO_EXPIRY,
   PRODUCTS,
   RC_KEY_ANDROID,
   RC_KEY_IOS,
   RC_OFFERING,
-  accessFrom,
+  accessAt,
+  addMonths,
   allKeysConfigured,
   ccfpemPackages,
+  expiryFrom,
   findPackage,
   keysConfigured,
-  reconcileAccess,
+  laterExpiry,
+  reconcileExpiry,
   webAdapter,
   type Access,
+  type Expiry,
   type PurchasesAdapter,
 } from "@/lib/purchases";
 import { MAX_ATTEMPTS, createRepo, memoryKV } from "@/lib/storage";
@@ -24,8 +30,11 @@ import { SAMPS } from "@/samps";
 import { FIXTURE } from "./fixture";
 
 const A = (written: boolean, oral: boolean): Access => ({ written, oral });
+const E = (written: string | null, oral: string | null): Expiry => ({ written, oral });
+const NOW = Date.parse("2026-10-01T12:00:00Z");
+const buy = (id: string, purchaseDate: string) => ({ productIdentifier: id, purchaseDate });
 
-function fake(check: Access | null, restore: Access | null): PurchasesAdapter & { restores: number } {
+function fake(check: Expiry | null, restore: Expiry | null): PurchasesAdapter & { restores: number } {
   const a = {
     restores: 0,
     async check() {
@@ -62,38 +71,89 @@ describe("free sample gating", () => {
   });
 });
 
-describe("products and entitlements", () => {
+describe("products", () => {
   it("complete grants both components", () => {
     expect(PRODUCTS.complete.grants.sort()).toEqual(["oral", "written"]);
     expect(PRODUCTS.written.grants).toEqual(["written"]);
     expect(PRODUCTS.oral.grants).toEqual(["oral"]);
   });
-  it("reads entitlements from customer info", () => {
-    expect(accessFrom({ entitlements: { active: { written_access: {}, oral_full_access: {} } } })).toEqual(A(true, true));
-    expect(accessFrom({ entitlements: { active: { oral_full_access: {} } } })).toEqual(A(false, true));
-    expect(accessFrom(null)).toEqual(NO_ACCESS);
+  it("uses new 11 month product IDs, never the abandoned lifetime ones", () => {
+    expect(ACCESS_MONTHS).toBe(11);
+    expect(Object.values(PRODUCTS).map((p) => p.id)).toEqual(["ccfpem_complete_11mo", "ccfpem_written_11mo", "ccfpem_oral_11mo"]);
+    for (const p of Object.values(PRODUCTS)) expect(p.id).not.toMatch(/lifetime/);
   });
 });
 
-describe("reconcileAccess", () => {
-  it("grants what the store reports", async () => {
-    expect(await reconcileAccess(NO_ACCESS, fake(A(true, false), null))).toEqual(A(true, false));
+describe("11 month access", () => {
+  it("adds calendar months and clamps to the end of a short month", () => {
+    expect(addMonths(new Date("2026-10-01T12:00:00Z"), 11).toISOString()).toBe("2027-09-01T12:00:00.000Z");
+    expect(addMonths(new Date("2027-03-31T08:00:00Z"), 11).toISOString()).toBe("2028-02-29T08:00:00.000Z");
+    expect(addMonths(new Date("2026-03-31T08:00:00Z"), 11).toISOString()).toBe("2027-02-28T08:00:00.000Z");
   });
-  it("keeps the cache when the store cannot be reached", async () => {
-    expect(await reconcileAccess(A(true, true), fake(null, null))).toEqual(A(true, true));
+  it("gives each purchase 11 months from its purchase date", () => {
+    const e = expiryFrom({ nonSubscriptionTransactions: [buy("ccfpem_written_11mo", "2026-10-01T12:00:00Z")] });
+    expect(e).toEqual(E("2027-09-01T12:00:00.000Z", null));
+    expect(accessAt(e, NOW)).toEqual(A(true, false));
+    expect(accessAt(e, Date.parse("2027-09-01T11:59:00Z"))).toEqual(A(true, false));
+    expect(accessAt(e, Date.parse("2027-09-01T12:00:00Z"))).toEqual(NO_ACCESS);
   });
-  it("tries a silent restore before revoking a cached entitlement", async () => {
-    const p = fake(A(false, false), A(true, false));
-    expect(await reconcileAccess(A(true, false), p)).toEqual(A(true, false));
+  it("complete opens both components", () => {
+    const e = expiryFrom({ nonSubscriptionTransactions: [buy("ccfpem_complete_11mo", "2026-10-01T12:00:00Z")] });
+    expect(e).toEqual(E("2027-09-01T12:00:00.000Z", "2027-09-01T12:00:00.000Z"));
+  });
+  it("extends from the current end when bought again while still open", () => {
+    const e = expiryFrom({
+      nonSubscriptionTransactions: [buy("ccfpem_oral_11mo", "2026-10-01T12:00:00Z"), buy("ccfpem_oral_11mo", "2027-06-01T12:00:00Z")],
+    });
+    expect(e.oral).toBe("2028-08-01T12:00:00.000Z");
+  });
+  it("starts a new term from the purchase date after access has ended", () => {
+    const e = expiryFrom({
+      nonSubscriptionTransactions: [buy("ccfpem_oral_11mo", "2027-12-01T12:00:00Z"), buy("ccfpem_oral_11mo", "2026-10-01T12:00:00Z")],
+    });
+    expect(e.oral).toBe("2028-11-01T12:00:00.000Z");
+  });
+  it("ignores other apps' products and entitlements", () => {
+    const ci = {
+      nonSubscriptionTransactions: [buy("preceptor_ccfp_lifetime", "2026-10-01T12:00:00Z"), buy("ccfpem_written_lifetime", "2026-10-01T12:00:00Z")],
+      entitlements: { active: { written_access: {}, oral_full_access: {} } },
+    };
+    expect(expiryFrom(ci)).toEqual(NO_EXPIRY);
+    expect(expiryFrom(null)).toEqual(NO_EXPIRY);
+  });
+  it("keeps the later date per component", () => {
+    expect(laterExpiry(E("2027-01-01T00:00:00Z", null), E("2026-12-01T00:00:00Z", "2027-02-01T00:00:00Z"))).toEqual(
+      E("2027-01-01T00:00:00Z", "2027-02-01T00:00:00Z"),
+    );
+  });
+});
+
+describe("reconcileExpiry", () => {
+  const OPEN = "2027-09-01T12:00:00.000Z";
+  const PAST = "2026-09-01T12:00:00.000Z";
+  it("uses the store's dates", async () => {
+    expect(await reconcileExpiry(NO_EXPIRY, fake(E(OPEN, null), null), NOW)).toEqual(E(OPEN, null));
+  });
+  it("keeps the cached dates when the store cannot be reached", async () => {
+    expect(await reconcileExpiry(E(OPEN, OPEN), fake(null, null), NOW)).toEqual(E(OPEN, OPEN));
+  });
+  it("still ends cached access on time while offline", async () => {
+    const kept = await reconcileExpiry(E(PAST, OPEN), fake(null, null), NOW);
+    expect(accessAt(kept, NOW)).toEqual(A(false, true));
+  });
+  it("tries a silent restore before closing something the cache has open", async () => {
+    const p = fake(NO_EXPIRY, E(OPEN, null));
+    expect(await reconcileExpiry(E(OPEN, null), p, NOW)).toEqual(E(OPEN, null));
     expect(p.restores).toBe(1);
   });
-  it("revokes only on a clean confirmed no", async () => {
-    expect(await reconcileAccess(A(true, true), fake(NO_ACCESS, NO_ACCESS))).toEqual(NO_ACCESS);
-    expect(await reconcileAccess(A(true, true), fake(NO_ACCESS, null))).toEqual(A(true, true));
+  it("closes only on a clean confirmed answer", async () => {
+    expect(await reconcileExpiry(E(OPEN, OPEN), fake(NO_EXPIRY, NO_EXPIRY), NOW)).toEqual(NO_EXPIRY);
+    expect(await reconcileExpiry(E(OPEN, OPEN), fake(NO_EXPIRY, null), NOW)).toEqual(E(OPEN, OPEN));
   });
-  it("does not call restore for a user who never bought", async () => {
-    const p = fake(NO_ACCESS, A(true, true));
-    expect(await reconcileAccess(NO_ACCESS, p)).toEqual(NO_ACCESS);
+  it("does not call restore for a user who never bought or whose access already ended", async () => {
+    const p = fake(NO_EXPIRY, E(OPEN, OPEN));
+    expect(await reconcileExpiry(NO_EXPIRY, p, NOW)).toEqual(NO_EXPIRY);
+    expect(await reconcileExpiry(E(PAST, null), p, NOW)).toEqual(NO_EXPIRY);
     expect(p.restores).toBe(0);
   });
 });
@@ -102,14 +162,17 @@ describe("web adapter", () => {
   it("never grants access in a production web build", async () => {
     const p = webAdapter(false);
     expect(await p.purchase("complete")).toBe("unavailable");
-    expect(await p.check()).toEqual(NO_ACCESS);
+    expect(await p.check()).toEqual(NO_EXPIRY);
   });
-  it("simulates each product in local dev", async () => {
-    const p = webAdapter(true);
+  it("simulates each product for 11 months in local dev", async () => {
+    let t = NOW;
+    const p = webAdapter(true, () => t);
     expect(await p.purchase("written")).toBe("purchased");
-    expect(await p.check()).toEqual(A(true, false));
+    expect(accessAt((await p.check())!, t)).toEqual(A(true, false));
     await p.purchase("oral");
-    expect(await p.restore()).toEqual(A(true, true));
+    expect(accessAt((await p.restore())!, t)).toEqual(A(true, true));
+    t = Date.parse("2027-09-02T00:00:00Z");
+    expect(accessAt((await p.check())!, t)).toEqual(NO_ACCESS);
   });
 });
 
@@ -137,13 +200,13 @@ describe("storage", () => {
   });
   it("reset keeps purchases and clears written and oral progress", async () => {
     const repo = createRepo(memoryKV());
-    await repo.setCachedAccess(A(true, false));
+    await repo.setCachedExpiry(E("2027-09-01T12:00:00.000Z", null));
     await repo.saveAttempt(newAttempt(FIXTURE, "practice", 1, "a"));
     await repo.saveMockExam({ id: "m", sampIds: [], startedAt: 1, durationMs: 1, responses: {}, submittedAt: null });
     await repo.resetProgress();
     expect(await repo.attempts()).toEqual([]);
     expect(await repo.mockExams()).toEqual([]);
-    expect(await repo.cachedAccess()).toEqual(A(true, false));
+    expect(await repo.cachedExpiry()).toEqual(E("2027-09-01T12:00:00.000Z", null));
   });
   it("replaces SAMP attempts by id, newest first", async () => {
     const repo = createRepo(memoryKV());
@@ -169,9 +232,9 @@ describe("RevenueCat offering", () => {
   const other = { availablePackages: [{ identifier: "$rc_annual", product: { identifier: "preceptor_ccfp_annual" } }] };
   const mine = {
     availablePackages: [
-      { identifier: "complete", product: { identifier: "ccfpem_complete_lifetime" } },
-      { identifier: "written", product: { identifier: "ccfpem_written_lifetime" } },
-      { identifier: "oral", product: { identifier: "oral_full_lifetime" } },
+      { identifier: "complete", product: { identifier: "ccfpem_complete_11mo" } },
+      { identifier: "written", product: { identifier: "ccfpem_written_11mo" } },
+      { identifier: "oral", product: { identifier: "ccfpem_oral_11mo" } },
     ],
   };
   it("uses the ccfpem offering by id, never offerings.current", () => {
@@ -182,7 +245,7 @@ describe("RevenueCat offering", () => {
   });
   it("finds packages complete, written and oral", () => {
     for (const k of ["complete", "written", "oral"] as const) expect(findPackage(mine.availablePackages, k)?.identifier).toBe(k);
-    const byProduct = [{ identifier: "x", product: { identifier: "oral_full_lifetime" } }];
+    const byProduct = [{ identifier: "x", product: { identifier: "ccfpem_oral_11mo" } }];
     expect(findPackage(byProduct, "oral")?.identifier).toBe("x");
     expect(findPackage(other.availablePackages, "complete")).toBeUndefined();
   });

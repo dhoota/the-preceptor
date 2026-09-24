@@ -3,10 +3,17 @@
  * lazy import of @revenuecat/purchases-capacitor on native only, buyer-safe
  * revocation, no server of our own.
  *
- * Two entitlements, three non-consumable products:
+ * Three products, each giving 11 months of access from the day of purchase:
  *   complete  grants written and oral
  *   written   grants written (the SAMP bank and mock exam)
  *   oral      grants oral (the oral cases and mock oral)
+ * App Store: non-renewing subscriptions. Google Play: one-time products,
+ * set as non-consumable in RevenueCat so a reinstall can restore them.
+ *
+ * Neither store gives an expiry for these, and RevenueCat treats any product
+ * attached to an entitlement as unlocked forever. So the products are not
+ * attached to entitlements, and the app works out access itself from each
+ * purchase date in customerInfo.nonSubscriptionTransactions.
  * Owner setup is in LAUNCH.md.
  */
 
@@ -17,7 +24,10 @@
 export const RC_KEY_IOS = "appl_REPLACE_WITH_CCFPEM_IOS_PUBLIC_KEY";
 export const RC_KEY_ANDROID = "goog_ytowRSJmXGIejpeGDKurvANZWCy";
 
-export const ENTITLEMENTS = { written: "written_access", oral: "oral_full_access" } as const;
+/** Length of access bought by one purchase, in calendar months. */
+export const ACCESS_MONTHS = 11;
+
+export type Component = "written" | "oral";
 
 /**
  * All Preceptor apps share one RevenueCat project, and its Current offering
@@ -28,11 +38,11 @@ export const RC_OFFERING = "ccfpem";
 
 export type ProductKey = "complete" | "written" | "oral";
 
-/** Store product IDs. All three are created new in App Store Connect and Play Console. */
-export const PRODUCTS: Record<ProductKey, { id: string; grants: (keyof typeof ENTITLEMENTS)[]; fallbackPrice: string }> = {
-  complete: { id: "ccfpem_complete_lifetime", grants: ["written", "oral"], fallbackPrice: "CA$199.99" },
-  written: { id: "ccfpem_written_lifetime", grants: ["written"], fallbackPrice: "CA$149.99" },
-  oral: { id: "oral_full_lifetime", grants: ["oral"], fallbackPrice: "CA$99.99" },
+/** Store product IDs, the same on the App Store and Google Play. */
+export const PRODUCTS: Record<ProductKey, { id: string; grants: Component[]; fallbackPrice: string }> = {
+  complete: { id: "ccfpem_complete_11mo", grants: ["written", "oral"], fallbackPrice: "CA$199.99" },
+  written: { id: "ccfpem_written_11mo", grants: ["written"], fallbackPrice: "CA$149.99" },
+  oral: { id: "ccfpem_oral_11mo", grants: ["oral"], fallbackPrice: "CA$99.99" },
 };
 
 export interface Access {
@@ -42,13 +52,45 @@ export interface Access {
 
 export const NO_ACCESS: Access = { written: false, oral: false };
 
+/** When access to each component ends, as an ISO date, or null if never bought. */
+export interface Expiry {
+  written: string | null;
+  oral: string | null;
+}
+
+export const NO_EXPIRY: Expiry = { written: null, oral: null };
+
+const COMPONENTS: Component[] = ["written", "oral"];
+
+/** Adds calendar months. A day past the end of the target month clamps to its last day. */
+export function addMonths(from: Date, months: number): Date {
+  const d = new Date(from.getTime());
+  const day = d.getUTCDate();
+  d.setUTCDate(1);
+  d.setUTCMonth(d.getUTCMonth() + months);
+  const last = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 0)).getUTCDate();
+  d.setUTCDate(Math.min(day, last));
+  return d;
+}
+
+/** A date for display, such as "12 Aug 2027". */
+export function formatDay(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-CA", { day: "numeric", month: "short", year: "numeric" });
+}
+
+/** Access now, from the expiry dates. Uses the device clock, so it also works offline. */
+export function accessAt(e: Expiry, now: number = Date.now()): Access {
+  const on = (iso: string | null) => (iso ? Date.parse(iso) > now : false);
+  return { written: on(e.written), oral: on(e.oral) };
+}
+
 export type PurchaseOutcome = "purchased" | "cancelled" | "failed" | "unavailable";
 
 export interface PurchasesAdapter {
-  /** Current access, or null when the store cannot be reached. */
-  check(): Promise<Access | null>;
+  /** Current expiry dates, or null when the store cannot be reached. */
+  check(): Promise<Expiry | null>;
   /** Same, after asking the store to restore purchases. */
-  restore(): Promise<Access | null>;
+  restore(): Promise<Expiry | null>;
   purchase(product: ProductKey): Promise<PurchaseOutcome>;
   /** Localised store prices. Missing keys fall back to PRODUCTS. */
   prices(): Promise<Partial<Record<ProductKey, string>>>;
@@ -106,11 +148,29 @@ async function rc(): Promise<RCModule | null> {
   return mod;
 }
 
-type CustomerInfoLike = { entitlements?: { active?: Record<string, unknown> } } | null | undefined;
+type CustomerInfoLike = { nonSubscriptionTransactions?: { productIdentifier?: string; purchaseDate?: string }[] } | null | undefined;
 
-export function accessFrom(ci: CustomerInfoLike): Access {
-  const active = ci?.entitlements?.active ?? {};
-  return { written: Boolean(active[ENTITLEMENTS.written]), oral: Boolean(active[ENTITLEMENTS.oral]) };
+/**
+ * Expiry dates from the purchase history. Each purchase gives ACCESS_MONTHS.
+ * A purchase made while a component is still open extends it from its
+ * current end, so buying early never loses time. Entitlements are ignored
+ * on purpose: RevenueCat would report these products as unlocked forever.
+ */
+export function expiryFrom(ci: CustomerInfoLike): Expiry {
+  const byId = new Map(Object.values(PRODUCTS).map((p) => [p.id, p.grants]));
+  const buys = (ci?.nonSubscriptionTransactions ?? [])
+    .map((t) => ({ grants: byId.get(t.productIdentifier ?? ""), at: Date.parse(t.purchaseDate ?? "") }))
+    .filter((t): t is { grants: Component[]; at: number } => Boolean(t.grants) && Number.isFinite(t.at))
+    .sort((a, b) => a.at - b.at);
+  const until: Record<Component, number | null> = { written: null, oral: null };
+  for (const b of buys) {
+    for (const c of b.grants) {
+      const start = Math.max(b.at, until[c] ?? 0);
+      until[c] = addMonths(new Date(start), ACCESS_MONTHS).getTime();
+    }
+  }
+  const iso = (t: number | null) => (t === null ? null : new Date(t).toISOString());
+  return { written: iso(until.written), oral: iso(until.oral) };
 }
 
 type PackageLike = { identifier?: string; product?: { identifier?: string; priceString?: string } };
@@ -136,7 +196,7 @@ export const revenueCat: PurchasesAdapter = {
     const m = await rc();
     if (!m) return null;
     try {
-      return accessFrom((await m.Purchases.getCustomerInfo()).customerInfo);
+      return expiryFrom((await m.Purchases.getCustomerInfo()).customerInfo);
     } catch {
       return null;
     }
@@ -145,7 +205,7 @@ export const revenueCat: PurchasesAdapter = {
     const m = await rc();
     if (!m) return null;
     try {
-      return accessFrom((await m.Purchases.restorePurchases()).customerInfo);
+      return expiryFrom((await m.Purchases.restorePurchases()).customerInfo);
     } catch {
       return null;
     }
@@ -157,7 +217,7 @@ export const revenueCat: PurchasesAdapter = {
       const pkg = findPackage(await packages(m), product);
       if (!pkg) return "unavailable";
       const res = await m.Purchases.purchasePackage({ aPackage: pkg });
-      const got = accessFrom(res?.customerInfo);
+      const got = accessAt(expiryFrom(res?.customerInfo));
       return PRODUCTS[product].grants.every((g) => got[g]) ? "purchased" : "failed";
     } catch (e) {
       const err = e as { userCancelled?: boolean; code?: string | number };
@@ -186,18 +246,19 @@ export const revenueCat: PurchasesAdapter = {
  * purchase is simulated so the paid flow can be clicked through. A hosted
  * production web build never grants access.
  */
-export function webAdapter(dev: boolean): PurchasesAdapter {
-  const on: Access = { ...NO_ACCESS };
+export function webAdapter(dev: boolean, now: () => number = Date.now): PurchasesAdapter {
+  const bought: { productIdentifier: string; purchaseDate: string }[] = [];
+  const current = () => (dev ? expiryFrom({ nonSubscriptionTransactions: bought }) : { ...NO_EXPIRY });
   return {
     async check() {
-      return dev ? { ...on } : { ...NO_ACCESS };
+      return current();
     },
     async restore() {
-      return dev ? { ...on } : { ...NO_ACCESS };
+      return current();
     },
     async purchase(product) {
       if (!dev) return "unavailable";
-      for (const g of PRODUCTS[product].grants) on[g] = true;
+      bought.push({ productIdentifier: PRODUCTS[product].id, purchaseDate: new Date(now()).toISOString() });
       return "purchased";
     },
     async prices() {
@@ -211,20 +272,27 @@ export function defaultAdapter(): PurchasesAdapter {
   return isNative() ? revenueCat : webAdapter(Boolean(import.meta.env?.DEV || import.meta.env?.VITE_SEED === "1"));
 }
 
+/** The later of two expiry dates, per component. */
+export function laterExpiry(a: Expiry, b: Expiry): Expiry {
+  const pick = (x: string | null, y: string | null) => (!x ? y : !y ? x : Date.parse(x) >= Date.parse(y) ? x : y);
+  return { written: pick(a.written, b.written), oral: pick(a.oral, b.oral) };
+}
+
 /**
- * Decides access at launch without ever locking out a paying user by
- * mistake. Per entitlement:
- *   store says active          -> granted
- *   store unreachable          -> keep the cached state
- *   store says inactive        -> if cached as granted, try a silent restore
- *   restore also says inactive -> revoke
+ * Decides expiry dates at launch without ever cutting a paying user short
+ * by mistake. The dates themselves still end access on time, offline too.
+ *   store unreachable                     -> keep the cached dates
+ *   store dates keep everything now open  -> use the store dates
+ *   store dates would close something     -> try a silent restore first
+ *   restore unreachable                   -> keep the cached dates
+ *   restore answers                       -> use the restored dates
  */
-export async function reconcileAccess(cached: Access, p: PurchasesAdapter): Promise<Access> {
-  const now = await p.check();
-  if (!now) return cached;
-  const lost = (Object.keys(cached) as (keyof Access)[]).some((k) => cached[k] && !now[k]);
-  if (!lost) return { written: cached.written || now.written, oral: cached.oral || now.oral };
+export async function reconcileExpiry(cached: Expiry, p: PurchasesAdapter, now: number = Date.now()): Promise<Expiry> {
+  const fromStore = await p.check();
+  if (!fromStore) return cached;
+  const before = accessAt(cached, now);
+  const after = accessAt(fromStore, now);
+  if (!COMPONENTS.some((c) => before[c] && !after[c])) return fromStore;
   const restored = await p.restore();
-  if (!restored) return { written: cached.written || now.written, oral: cached.oral || now.oral };
-  return restored;
+  return restored ?? cached;
 }

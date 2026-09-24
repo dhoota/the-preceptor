@@ -9,9 +9,9 @@ House style: no em or en dashes, no semicolons, short sentences, no filler. Char
 | iOS bundle ID | com.preceptor.oral |
 | Android applicationId | com.preceptor.oral |
 | App name | Preceptor: CCFP-EM |
-| Products | ccfpem_complete_lifetime (Complete), ccfpem_written_lifetime (Written), oral_full_lifetime (Oral) |
-| Product type | iOS Non-Consumable. Play one-time in-app product |
-| RevenueCat entitlements | written_access, oral_full_access. Complete grants both |
+| Products | ccfpem_complete_11mo (Complete), ccfpem_written_11mo (Written), ccfpem_oral_11mo (Oral) |
+| Product type | iOS Non-Renewing Subscription. Play one-time product, non-consumable in RevenueCat. 11 months of access from purchase |
+| RevenueCat entitlements | None. The app ends access 11 months after each purchase date. Complete opens both components |
 | RevenueCat offering | ccfpem, three packages |
 | Prices | Complete CA$199.99. Written CA$149.99. Oral CA$99.99 |
 | App Store category | Medical. Secondary: Education |
@@ -52,7 +52,7 @@ Every SAMP and oral case is mapped to the CFPC Emergency Medicine priority topic
 Feedback without guesswork
 Answer keys, model answers, scripted examiner feedback on every oral decision, the top three things to fix after each case, and spaced review of the points you miss. Everything runs on your device. No account. No tracking. It works with no signal.
 
-Try it free. Ten SAMPs and two oral cases are open. Then buy the written bank, the oral simulator, or both, once. No subscription.
+Try it free. Ten SAMPs and two oral cases are open. Then buy the written bank, the oral simulator, or both. One payment gives 11 months of access. It does not renew.
 
 Every question and case is original. None is taken from CFPC sample material or any real exam. The app links to the official CFPC resources so you can study them at the source.
 
@@ -128,4 +128,4 @@ Answer the questionnaire with:
 - Expected result: Everyone or Teen depending on the questionnaire. The target audience setting keeps it to adults.
 
 ## Review notes for Apple and Google
-Ten SAMPs and two oral cases are free. Three one time purchases open the rest: Complete, Written or Oral. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline.
+Ten SAMPs and two oral cases are free. Three purchases open the rest: Complete, Written or Oral. Each gives 11 months of access from the purchase date and does not renew. The app ends access after 11 months and shows the end date in Settings. Restore Purchases is on the paywall and in Settings. No account or sign in is needed. The app works fully offline.

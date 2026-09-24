@@ -1,7 +1,7 @@
 import type { Attempt } from "@/engine/types";
 import type { Deck } from "@/engine/review";
 import type { SampMark, SampResponse } from "@/engine/samp";
-import type { Access } from "@/lib/purchases";
+import type { Expiry } from "@/lib/purchases";
 
 /**
  * On-device storage only. No accounts, no server, no sync.
@@ -135,7 +135,8 @@ const K = {
   attempts: "oral_attempts_v1",
   deck: "oral_review_deck_v1",
   settings: "oral_settings_v1",
-  access: "ccfpem_access_v1",
+  // v2 holds expiry dates. The v1 lifetime flags never shipped and are ignored.
+  access: "ccfpem_access_v2",
   sampAttempts: "samp_attempts_v1",
   mockExams: "samp_mocks_v1",
   mockOrals: "oral_mocks_v1",
@@ -181,14 +182,15 @@ export function createRepo(kv: KV = defaultKV()) {
     async saveSettings(s: Settings): Promise<void> {
       await kv.set(K.settings, JSON.stringify(s));
     },
-    /** Cached entitlements so purchases work offline. RevenueCat stays the source of truth. */
-    async cachedAccess(): Promise<Access> {
-      const a = await readJson<Partial<Access>>(kv, K.access, {});
-      return { written: Boolean(a.written), oral: Boolean(a.oral) };
+    /** Cached expiry dates so purchases work offline and still end on time. The store stays the source of truth. */
+    async cachedExpiry(): Promise<Expiry> {
+      const e = await readJson<Partial<Record<keyof Expiry, unknown>>>(kv, K.access, {});
+      const date = (v: unknown) => (typeof v === "string" && Number.isFinite(Date.parse(v)) ? v : null);
+      return { written: date(e.written), oral: date(e.oral) };
     },
-    async setCachedAccess(a: Access): Promise<void> {
-      if (!a.written && !a.oral) await kv.remove(K.access);
-      else await kv.set(K.access, JSON.stringify(a));
+    async setCachedExpiry(e: Expiry): Promise<void> {
+      if (!e.written && !e.oral) await kv.remove(K.access);
+      else await kv.set(K.access, JSON.stringify(e));
     },
     async sampAttempts(): Promise<SampAttempt[]> {
       const list = await readJson<SampAttempt[]>(kv, K.sampAttempts, []);

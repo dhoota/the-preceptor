@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { APP_VERSION, PRIVACY_URL, SUPPORT_EMAIL, TERMS_URL } from "@/lib/constants";
 import { speak } from "@/lib/speech";
+import { formatDay } from "@/lib/purchases";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -15,6 +16,13 @@ const open = (url: string) => {
     // ignore
   }
 };
+
+/** "access until 12 Aug 2027", "access ended 3 Jan 2027" or "free sample". */
+function status(open: boolean, until: string | null): string {
+  if (open && until) return `access until ${formatDay(until)}`;
+  if (until) return `access ended ${formatDay(until)}`;
+  return "free sample";
+}
 
 export function Settings({ go }: { go: Go }) {
   const app = useApp();
@@ -81,7 +89,7 @@ export function Settings({ go }: { go: Go }) {
         <span className="label">Purchase</span>
         <div className="row">
           <span>
-            Written: {app.access.written ? "full access" : "free sample"}. Oral: {app.access.oral ? "full access" : "free sample"}.
+            Written: {status(app.access.written, app.expiry.written)}. Oral: {status(app.access.oral, app.expiry.oral)}.
           </span>
           {!(app.access.written && app.access.oral) && (
             <button className="btn small" onClick={() => go({ name: "paywall" })}>

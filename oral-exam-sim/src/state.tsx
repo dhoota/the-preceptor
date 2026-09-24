@@ -3,7 +3,20 @@ import { CASES } from "@/cases";
 import { SAMPS } from "@/samps";
 import { finishAttempt, updateDeckFromAttempt, review as reviewCard, type Attempt, type Deck, type SelfMark } from "@/engine";
 import { canOpenCase, canOpenSamp } from "@/lib/access";
-import { NO_ACCESS, defaultAdapter, reconcileAccess, type Access, type ProductKey, type PurchaseOutcome } from "@/lib/purchases";
+import {
+  ACCESS_MONTHS,
+  NO_EXPIRY,
+  PRODUCTS,
+  accessAt,
+  addMonths,
+  defaultAdapter,
+  laterExpiry,
+  reconcileExpiry,
+  type Access,
+  type Expiry,
+  type ProductKey,
+  type PurchaseOutcome,
+} from "@/lib/purchases";
 import { createRepo, DEFAULT_SETTINGS, type MockExam, type MockOral, type SampAttempt, type Settings } from "@/lib/storage";
 
 const repo = createRepo();
@@ -15,6 +28,8 @@ interface AppState {
   deck: Deck;
   settings: Settings;
   access: Access;
+  /** When each component's access ends, or null if never bought. */
+  expiry: Expiry;
   prices: Partial<Record<ProductKey, string>>;
   busy: boolean;
   sampAttempts: SampAttempt[];
@@ -41,7 +56,14 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [attempts, setAttempts] = useState<Attempt[]>([]);
   const [deck, setDeck] = useState<Deck>({});
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
-  const [access, setAccess] = useState<Access>(NO_ACCESS);
+  const [expiry, setExpiry] = useState<Expiry>(NO_EXPIRY);
+  // Re-reads the clock each minute so access closes on time without a restart.
+  const [clock, setClock] = useState(() => Date.now());
+  useEffect(() => {
+    const t = setInterval(() => setClock(Date.now()), 60_000);
+    return () => clearInterval(t);
+  }, []);
+  const access = useMemo(() => accessAt(expiry, clock), [expiry, clock]);
   const [prices, setPrices] = useState<Partial<Record<ProductKey, string>>>({});
   const [busy, setBusy] = useState(false);
   const [sampAttempts, setSampAttempts] = useState<SampAttempt[]>([]);
@@ -55,7 +77,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         repo.attempts(),
         repo.deck(),
         repo.settings(),
-        repo.cachedAccess(),
+        repo.cachedExpiry(),
         repo.sampAttempts(),
         repo.mockExams(),
         repo.mockOrals(),
@@ -64,16 +86,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setAttempts(a);
       setDeck(d);
       setSettings(s);
-      setAccess(cached);
+      setExpiry(cached);
       setSampAttempts(sa);
       setMockExams(me);
       setMockOrals(mo);
       setReady(true);
-      // Store check runs after first paint. Offline keeps the cached state.
-      const now = await reconcileAccess(cached, purchases);
+      // Store check runs after first paint. Offline keeps the cached dates.
+      const next = await reconcileExpiry(cached, purchases);
       if (cancelled) return;
-      setAccess(now);
-      if (now.written !== cached.written || now.oral !== cached.oral) await repo.setCachedAccess(now);
+      setExpiry(next);
+      if (next.written !== cached.written || next.oral !== cached.oral) await repo.setCachedExpiry(next);
       setPrices(await purchases.prices());
     })();
     return () => {
@@ -131,9 +153,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
     setMockOrals(await repo.saveMockOral(m));
   }, []);
 
-  const grant = useCallback(async (a: Access) => {
-    setAccess(a);
-    await repo.setCachedAccess(a);
+  const grant = useCallback(async (e: Expiry) => {
+    setExpiry(e);
+    setClock(Date.now());
+    await repo.setCachedExpiry(e);
   }, []);
 
   const buy = useCallback(
@@ -142,30 +165,34 @@ export function AppProvider({ children }: { children: ReactNode }) {
       try {
         const r = await purchases.purchase(product);
         if (r === "purchased") {
-          const now = (await purchases.check()) ?? access;
-          await grant({
-            written: now.written || access.written || product !== "oral",
-            oral: now.oral || access.oral || product !== "written",
-          });
+          const fromStore = await purchases.check();
+          // If the store cannot be read back right away, grant the bought term locally.
+          // The next launch replaces it with the store's dates.
+          const local: Expiry = { ...expiry };
+          for (const c of PRODUCTS[product].grants) {
+            const from = Math.max(Date.now(), expiry[c] ? Date.parse(expiry[c]!) : 0);
+            local[c] = addMonths(new Date(from), ACCESS_MONTHS).toISOString();
+          }
+          await grant(fromStore ? laterExpiry(expiry, fromStore) : local);
         }
         return r;
       } finally {
         setBusy(false);
       }
     },
-    [access, grant],
+    [expiry, grant],
   );
 
   const restore = useCallback(async () => {
     setBusy(true);
     try {
       const r = await purchases.restore();
-      if (r && (r.written || r.oral)) await grant({ written: r.written || access.written, oral: r.oral || access.oral });
-      return r;
+      if (r && (r.written || r.oral)) await grant(laterExpiry(expiry, r));
+      return r ? accessAt(r) : null;
     } finally {
       setBusy(false);
     }
-  }, [access, grant]);
+  }, [expiry, grant]);
 
   const resetProgress = useCallback(async () => {
     await repo.resetProgress();
@@ -183,6 +210,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       deck,
       settings,
       access,
+      expiry,
       prices,
       busy,
       sampAttempts,
@@ -201,7 +229,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       restore,
       resetProgress,
     }),
-    [ready, attempts, deck, settings, access, prices, busy, sampAttempts, mockExams, mockOrals, saveAttempt, submitMarks, answerReview, updateSettings, saveSampAttempts, saveMockExam, saveMockOral, buy, restore, resetProgress],
+    [ready, attempts, deck, settings, access, expiry, prices, busy, sampAttempts, mockExams, mockOrals, saveAttempt, submitMarks, answerReview, updateSettings, saveSampAttempts, saveMockExam, saveMockOral, buy, restore, resetProgress],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

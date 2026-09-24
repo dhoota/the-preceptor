@@ -4,7 +4,7 @@ import { SAMPS } from "@/samps";
 import { PRIORITY_TOPICS } from "@/blueprint/priorityTopics";
 import { FREE_CASE_COUNT, FREE_SAMP_TOPICS } from "@/lib/access";
 import { PRIVACY_URL, TERMS_URL } from "@/lib/constants";
-import { PRODUCTS, isNative, keysConfigured, type ProductKey } from "@/lib/purchases";
+import { ACCESS_MONTHS, PRODUCTS, formatDay, isNative, keysConfigured, type ProductKey } from "@/lib/purchases";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -26,6 +26,11 @@ export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
         <p className="muted" style={{ marginTop: 10 }}>
           Thank you for supporting independent exam prep.
         </p>
+        {app.expiry.written && app.expiry.oral && (
+          <p className="muted small" style={{ marginTop: 10 }}>
+            Written access until {formatDay(app.expiry.written)}. Oral access until {formatDay(app.expiry.oral)}.
+          </p>
+        )}
         <div className="actions">
           <button className="btn" onClick={() => go({ name: "home" })}>
             Go to the oral cases
@@ -89,7 +94,8 @@ export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
       ))}
 
       <p className="muted small" style={{ marginTop: 10 }}>
-        One time purchase. No subscription. Restores on any device signed in to the same store account.
+        One payment for {ACCESS_MONTHS} months of access from the day you buy. It does not renew and you are not charged again.
+        Restores on any device signed in to the same store account.
       </p>
       <div className="actions">
         <button className="btn ghost block" disabled={app.busy} onClick={restore}>
