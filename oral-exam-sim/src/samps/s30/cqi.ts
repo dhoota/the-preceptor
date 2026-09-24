@@ -59,10 +59,10 @@ const S = {
     id: "perla-run-chart",
     citation: "Perla RJ, Provost LP, Murray SK. The run chart: a simple analytical tool for learning from variation in healthcare processes. BMJ Qual Saf. 2011.",
   },
-  haslam: {
-    id: "prep-stop-block",
-    citation: "Haslam N, Bedforth N, Pandit JJ. Prep, stop, block: refreshing stop before you block with new national guidance. Anaesthesia. 2022.",
-    url: "https://pubmed.ncbi.nlm.nih.gov/34904710/",
+  casBlock: {
+    id: "cas-block-pause",
+    citation: "Canadian Anesthesiologists' Society. Guidelines to the Practice of Anesthesia: revised edition 2026. Can J Anesth. 2026.",
+    url: "https://www.cas.ca/CASAssets/Documents/Practice-Resources/Guidelines/CAS_Guidelines_Anesthesia_2026.pdf",
   },
   ismpPen: {
     id: "ismp-insulin-pen",
@@ -130,10 +130,10 @@ export const CQI_S30: Samp[] = [
         kind: "single",
         update: "The infusion is stopped. She receives diphenhydramine and salbutamol and her symptoms settle. Acetylcysteine restarts at the dose for 50 kg.",
         prompt: "Which of the following terms best classifies this event when the incident is reported?",
-        options: ["Adverse drug reaction", "Harmful incident", "Near miss incident", "Recognized complication", "No harm incident"],
+        options: ["Adverse drug reaction", "Harmful incident", "Near miss incident", "No harm incident", "Recognized complication"],
         correct: 1,
         explanation:
-          "The weight error reached her and she had flushing, hives and wheeze that needed treatment while the dose ran at more than twice the intended amount, so this is a harmful incident, the term that replaces adverse event. A no harm incident reaches the patient without discernible harm, and a near miss does not reach the patient at all. Filing it as an adverse drug reaction or a recognized complication hides the dosing error. The disclosure guidelines warn against labelling harm as a complication before the incident has been examined.",
+          "The weight error reached her and she had flushing, hives and wheeze that needed treatment while the dose ran at about twice the intended amount, so this is a harmful incident, the term that replaces adverse event. A no harm incident reaches the patient without discernible harm, and a near miss does not reach the patient at all. Filing it as an adverse drug reaction or a recognized complication hides the dosing error. The disclosure guidelines warn against labelling harm as a complication before the incident has been examined.",
         keyFeature: { topic: "cqi", n: 1 },
         source: "cdg",
       },
@@ -337,7 +337,7 @@ export const CQI_S30: Samp[] = [
         options: ["Astronomical data point", "Common cause variation only", "Shift below the median", "Too few runs across median", "Trend toward improvement"],
         correct: 4,
         explanation:
-          "Five consecutive points all going down meet the run chart rule for a trend, a non-random signal that suggests the change is working. A shift needs six or more consecutive points on one side of the median. These are only five, so a shift has not yet been shown. No single week is blatantly different from the rest, so there is no astronomical point. Too few runs cannot be judged from five points. A signal like this is not common cause variation.",
+          "Five consecutive points all going down meet the run chart rule for a trend, a non-random signal that suggests the change is working. A shift needs six or more consecutive points on one side of the median. These are only five, so a shift has not yet been shown. No single week is blatantly different from the rest, so there is no astronomical point. Too few runs cannot be judged from five points. Common cause is a control chart term that the run chart authors advise against using on a run chart, and a trend is a non-random signal in any case.",
         keyFeature: { topic: "cqi", n: 4 },
         source: "perla-run-chart",
       },
@@ -361,7 +361,7 @@ export const CQI_S30: Samp[] = [
     id: "cqi-20",
     title: "Collapse in the waiting room",
     stem:
-      "A 71-year-old man presents to the emergency department with 2 hours of left flank pain. He has hypertension and smokes. He is triaged as CTAS 3 with presumed renal colic and returns to the waiting room. Department policy requires reassessment of CTAS 3 patients in the waiting room every 30 minutes. The department is at 160% occupancy with 22 admitted patients boarding, and the waiting room nurse has been moved to the hallway. No reassessment is documented. At 2 hours 40 minutes he collapses. POCUS shows a large abdominal aortic aneurysm. He dies in the operating room.",
+      "A 71-year-old man presents to the emergency department with 2 hours of left flank pain. He has hypertension and smokes. He is triaged as CTAS 3 with presumed renal colic and returns to the waiting room. Department policy requires reassessment of CTAS 3 patients in the waiting room every 30 minutes. The department is at 160% occupancy with 22 admitted patients boarding, and the waiting room nurse has been moved to the hallway. No reassessment is documented. Two hours and 40 minutes after triage he collapses. POCUS shows a large abdominal aortic aneurysm. He dies in the operating room.",
     vitals: { temperature: "36.7°C oral", pulse: "98/minute", resp: "18/minute", bp: "104/66 mmHg", o2sat: "97% on room air" },
     questions: [
       {
@@ -459,9 +459,9 @@ export const CQI_S30: Samp[] = [
         options: ["Checking allergies before the block", "Marking the site and pausing to confirm", "Performing blocks only by anesthesia", "Saving the ultrasound image to the chart", "Second physician present for each block"],
         correct: 1,
         explanation:
-          "A marked site and a stop moment immediately before the needle goes in make the operator confirm the side against the marking and the consent at the moment of greatest risk. Wrong-side blocks often follow a delay or distraction between preparation and injection, as happened with two calls to the resuscitation room. Checking allergies is good practice but does not confirm the side. Limiting blocks to anesthesia moves the task without adding a check. A saved image documents the error afterward. A second physician adds staff but not a defined verification step.",
+          "A pre-block pause with the side marked makes the operator confirm the side against the marking and the consent just before the needle goes in. The Canadian Anesthesiologists' Society strongly recommends such a pause wherever peripheral blocks are done. Here the side was lost during two calls to the resuscitation room between setup and injection. Checking allergies is good practice but does not confirm the side. Limiting blocks to anesthesia moves the task without adding a check. A saved image documents the error afterward. A second physician adds staff but not a defined verification step.",
         keyFeature: { topic: "cqi", n: 5 },
-        source: "prep-stop-block",
+        source: "cas-block-pause",
       },
       {
         id: "q4",
@@ -476,7 +476,7 @@ export const CQI_S30: Samp[] = [
         source: "cmpa-disclosure",
       },
     ],
-    sources: [S.ciaf, S.cmpaJust, S.haslam, S.cmpaDisclosure],
+    sources: [S.ciaf, S.cmpaJust, S.casBlock, S.cmpaDisclosure],
   },
   {
     ...META,
@@ -571,7 +571,7 @@ export const CQI_S30: Samp[] = [
         options: ["Adding more hallway stretchers in the ED", "Diverting low acuity patients to clinics", "Fast track for CTAS 4 and 5 patients", "Inpatient overcapacity protocol", "Physician assessment at triage"],
         correct: 3,
         explanation:
-          "The problem is output. Admitted patients wait a median of 14 hours for a bed while time to physician assessment is 1.4 hours. An inpatient overcapacity protocol moves stable admitted patients to the wards at times of peak pressure, sharing the load across the hospital, and CAEP recommends it as an output solution. More hallway stretchers make boarding easier rather than shorter. Diverting low acuity patients and a fast track address input and throughput, and most arrivals here are CTAS 3. Physician assessment at triage speeds a step that already meets target.",
+          "The problem is output. Admitted patients wait a median of 14 hours for a bed while time to physician assessment is 1.4 hours. An inpatient overcapacity protocol moves stable admitted patients to the wards at times of peak pressure, sharing the load across the hospital, and CAEP recommends it as an output solution. More hallway stretchers make boarding easier rather than shorter. Diverting low acuity patients and a fast track address input and throughput, and most arrivals here are CTAS 3. Physician assessment at triage works on the front end. Time to assessment is 1.4 hours against a CAEP median target of 1 hour, a small gap beside a 14-hour boarding median, and it does nothing for access block.",
         keyFeature: { topic: "cqi", n: 4 },
         source: "caep-2013",
       },
@@ -594,7 +594,7 @@ export const CQI_S30: Samp[] = [
     id: "cqi-24",
     title: "A headache that came back",
     stem:
-      "A 44-year-old woman is brought to the emergency department by ambulance with severe headache, vomiting and neck stiffness. CT shows subarachnoid hemorrhage. Four days earlier she was seen in the same department for a headache that peaked within 1 minute while she was lifting weights. That chart records a normal neurologic examination and a diagnosis of migraine. She had no history of migraine. No CT was done and no decision rule was documented. She was discharged. Your Ontario hospital takes part in the provincial Emergency Department Return Visit Quality Program.",
+      "A 44-year-old woman is brought to the emergency department by ambulance with severe headache, vomiting and neck stiffness. CT shows subarachnoid hemorrhage, and she is admitted. Four days earlier she was seen in the same department for a headache that peaked within 1 minute while she was lifting weights. That chart records a normal neurologic examination and a diagnosis of migraine. She had no history of migraine. No CT was done and no decision rule was documented. She was discharged. Your Ontario hospital takes part in the provincial Emergency Department Return Visit Quality Program.",
     vitals: { temperature: "37.2°C oral", pulse: "64/minute", resp: "18/minute", bp: "172/94 mmHg", o2sat: "98% on room air" },
     questions: [
       {
@@ -707,7 +707,7 @@ export const CQI_S30: Samp[] = [
     id: "cqi-26",
     title: "A runny nose and a prescription",
     stem:
-      "A 4-year-old girl is brought to the emergency department by her father with 3 days of runny nose, cough and fever. She is playful and well hydrated. Her ears, throat and chest are normal. She is discharged with a diagnosis of viral upper respiratory tract infection and a prescription for amoxicillin. You lead the department's antimicrobial stewardship work. An audit of 400 children discharged last year with a viral upper respiratory tract infection finds that 38% received an antibiotic. Rates by physician range from 9% to 61%. The group plans to give physicians feedback on their prescribing.",
+      "A 4-year-old girl is brought to the emergency department by her father with 3 days of runny nose, cough and fever. She is playful and well hydrated. Her ears, throat and chest are normal. She is discharged with a diagnosis of viral upper respiratory tract infection and a prescription for amoxicillin. You lead the department's antimicrobial stewardship work. An audit of 400 children discharged last year with a viral upper respiratory tract infection finds that 38% received an antibiotic. Rates among its 40 physicians range from 9% to 61%. The group plans to give physicians feedback on their prescribing.",
     vitals: { temperature: "38.1°C tympanic", pulse: "118/minute", resp: "24/minute", o2sat: "98% on room air", weight: "17 kg" },
     questions: [
       {
@@ -962,9 +962,9 @@ export const CQI_S30: Samp[] = [
   {
     ...META,
     id: "cqi-31",
-    title: "A slow breathing rate after analgesia",
+    title: "Drowsy after a second dose",
     stem:
-      "A 68-year-old woman with renal colic receives hydromorphone 2 mg IV in the emergency department. Forty minutes later she is found drowsy and breathing slowly, and she needs naloxone. She recovers. No incident report is filed because staff view it as a known side effect. You are reviewing opioid safety for the department. Last year staff filed 3 incident reports about opioids. Pharmacy data show that naloxone was given 61 times in the department that year, 44 of them to patients who arrived after an overdose.",
+      "A 68-year-old woman with renal colic receives morphine 5 mg IV in the emergency department and a second 5 mg dose 20 minutes later. Thirty minutes after the second dose she is found drowsy and breathing slowly, and she needs naloxone. She recovers. No incident report is filed because staff view it as a known side effect. You are reviewing opioid safety for the department. Last year staff filed 3 incident reports about opioids. Pharmacy data show that naloxone was given 61 times in the department that year, 44 of them to patients who arrived after an overdose.",
     vitals: { temperature: "36.7°C oral", pulse: "58/minute", resp: "6/minute", bp: "96/58 mmHg", o2sat: "82% on room air" },
     questions: [
       {
@@ -1139,7 +1139,7 @@ export const CQI_S30: Samp[] = [
         ],
         correct: [1, 4, 5],
         explanation:
-          "The Ottawa M&M model added four elements: training presenters in case selection and system-focused analysis, engaging interprofessional members, disseminating lessons learned, and an administrative pathway to act on the issues found. A pathway to action answers the problem that no changes have followed. Interprofessional attendance brings in triage nurses, who own part of this story. Limiting cases to deaths, grading presenters, focusing on individual error and physician-only attendance are the features that made these rounds unattractive and unproductive.",
+          "The Ottawa M&M model added four elements: training presenters in case selection and system-focused analysis, engaging interprofessional members, disseminating lessons learned, and an administrative pathway to act on the issues found. A pathway to action answers the problem that no changes have followed. Interprofessional attendance brings in triage nurses, who own part of this story. Focusing on individual error is what emptied these rounds. Limiting cases to deaths would drop this case and most learning events, grading presenters adds judgment rather than learning, and physician-only attendance shuts out the triage nurses. None is part of the model.",
         keyFeature: { topic: "cqi", n: 6 },
         source: "ottawa-mm",
       },
@@ -1150,7 +1150,7 @@ export const CQI_S30: Samp[] = [
         options: ["How and why did the defences fail", "Was the outcome a known complication", "What should the physician have done", "Who was responsible for the miss", "Would a specialist have diagnosed it"],
         correct: 0,
         explanation:
-          "Incident analysis asks how and why the defences in the system failed, looking at the whole system rather than one person's actions. That question leads to the triage tool, the discharge instructions and the return precautions. Asking who was responsible or what the physician should have done repeats the blame that emptied past rounds. Calling the outcome a known complication ends the inquiry early. Whether a specialist would have made the diagnosis says nothing about the defences that failed.",
+          "Incident analysis asks how and why the defences in the system failed, looking at the whole system rather than one person's actions. That question leads to the triage tool, which had no prompt for episodic crying in infants. Asking who was responsible or what the physician should have done repeats the blame that emptied past rounds. Calling the outcome a known complication ends the inquiry early. Whether a specialist would have made the diagnosis says nothing about the defences that failed.",
         keyFeature: { topic: "cqi", n: 1 },
         source: "ciaf",
       },
@@ -1158,8 +1158,8 @@ export const CQI_S30: Samp[] = [
         id: "q3",
         kind: "single",
         prompt: "Which of the following best expresses a statement of findings for the rounds summary?",
-        options: ["Better training is needed for all staff", "Parents gave an unclear history of crying", "The physician missed the intussusception", "Vomiting made gastroenteritis seem likely", "No triage prompt for episodic crying raised miss risk"],
-        correct: 4,
+        options: ["Better training is needed for all staff", "Parents gave an unclear history of crying", "The physician missed the intussusception", "Triage tool gap made a miss more likely", "Vomiting made gastroenteritis seem likely"],
+        correct: 3,
         explanation:
           "A statement of findings links a contributing factor to the outcome: the factor, within the context of the incident, increased the likelihood of the outcome. A triage tool with no prompt for episodic crying in an infant made a missed intussusception more likely, and it points to a fix. The need for training is a recommendation, not a finding. Saying the physician missed it describes the outcome and assigns blame. Blaming the parents' history and restating why gastroenteritis seemed likely do not identify a system factor that can be changed.",
         keyFeature: { topic: "cqi", n: 1 },
