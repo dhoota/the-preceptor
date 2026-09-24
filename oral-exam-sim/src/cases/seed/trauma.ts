@@ -146,7 +146,7 @@ export const trauma: OralCase = {
         "Uncrossmatched O red cells. O positive is fine for an adult male.",
         "No more crystalloid.",
         "Red cells to plasma about 1 to 1, with platelets per protocol.",
-        "Permissive hypotension, systolic about 80 to 90, until head injury is suspected.",
+        "Permissive hypotension, systolic about 80 to 90, until bleeding is controlled. His head injury looks mild now. Raise the target if his GCS falls.",
       ],
       rubric: ["tr-h1", "tr-h3", "tr-h6"],
       choices: [
@@ -228,6 +228,7 @@ export const trauma: OralCase = {
         "Call the lead trauma hospital now through CritiCall.",
         "Local damage control surgery versus immediate transfer is a shared decision with the trauma team leader and surgeon.",
         "Consider transfer time, surgeon skill and response to blood.",
+        "Chest tube output of 180 mL in 30 minutes is over 200 mL/h. Ongoing output like this points to thoracotomy.",
       ],
       rubric: ["tr-d1", "tr-d2", "tr-d3"],
       choices: [
@@ -252,7 +253,7 @@ export const trauma: OralCase = {
       modelAnswer: [
         "Calcium chloride 1 g IV, or calcium gluconate 3 g IV.",
         "Keep ionized calcium above 1.1 mmol/L.",
-        "Fibrinogen concentrate 4 g or cryoprecipitate 10 units for fibrinogen under 1.5 g/L.",
+        "Fibrinogen concentrate 3 to 4 g or cryoprecipitate 10 units per local protocol for fibrinogen at or under 1.5 g/L.",
         "Warm blankets, fluid warmer and a warm room.",
       ],
       rubric: ["tr-h4", "tr-h5"],
@@ -297,7 +298,7 @@ export const trauma: OralCase = {
       seconds: 90,
       modelAnswer: [
         "Signs of herniation. Head injury now changes the target.",
-        "Systolic at least 100 to 110 mmHg. Avoid any hypotension.",
+        "Systolic at least 110 mmHg at his age. Avoid any hypotension.",
         "Give blood before induction.",
         "Ketamine 0.5 to 1 mg/kg with rocuronium 1.2 to 1.6 mg/kg.",
         "Push dose vasopressor ready.",
@@ -309,7 +310,7 @@ export const trauma: OralCase = {
           id: "c-raise-target",
           label: "I raised my systolic target to 110, gave blood first, then intubated with reduced dose ketamine and rocuronium.",
           next: "q-icp",
-          quality: "strong", feedback: "Strong. Herniation signs change the target. Systolic at least 100 to 110 mmHg protects the brain. Blood first, then reduced dose ketamine about 0.5 to 1 mg/kg and rocuronium 1.2 to 1.6 mg/kg.",
+          quality: "strong", feedback: "Strong. Herniation signs change the target. Systolic at least 110 mmHg at age 27 protects the brain. Blood first, then reduced dose ketamine about 0.5 to 1 mg/kg and rocuronium 1.2 to 1.6 mg/kg.",
         },
         { id: "c-propofol", label: "I kept my systolic target at 80 and intubated with propofol.", next: "s-propofol", quality: "unsafe", feedback: "Unsafe. A single episode of systolic under 90 or SpO2 under 90 percent worsens brain injury outcome. Permissive hypotension no longer applies. Propofol in hemorrhagic shock risks arrest." },
       ],
@@ -435,7 +436,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h5",
       competency: "management",
-      text: "Replaces fibrinogen when under 1.5 g/L, e.g. fibrinogen concentrate 4 g or cryoprecipitate 10 units.",
+      text: "Replaces fibrinogen at or under 1.5 g/L, e.g. fibrinogen concentrate 3 to 4 g or cryoprecipitate 10 units per local protocol.",
       points: 1,
       teaching: "Fibrinogen falls first in trauma bleeding. Replace it early.",
       source: "eu-bleeding",
@@ -443,9 +444,9 @@ export const trauma: OralCase = {
     {
       id: "tr-h6",
       competency: "management",
-      text: "Uses permissive hypotension with systolic about 80 to 90 before head injury is suspected.",
+      text: "Uses permissive hypotension with systolic about 80 to 90 while there is no sign of severe brain injury.",
       points: 1,
-      teaching: "A lower target limits bleeding until surgical control. It does not apply with brain injury.",
+      teaching: "A lower target limits bleeding until surgical control. It does not apply with severe brain injury, where the European guideline targets a mean arterial pressure of at least 80 mmHg.",
       source: "eu-bleeding",
     },
     {
@@ -461,7 +462,7 @@ export const trauma: OralCase = {
       competency: "assessment",
       text: "Identifies chest, abdomen and pelvis as bleeding sources.",
       points: 1,
-      teaching: "Think of the five places to bleed: chest, abdomen, pelvis, long bones and the floor.",
+      teaching: "Think of the five places to bleed: chest, abdomen, pelvis, long bones and the floor. Chest tube output over 1,500 mL at once, or about 200 mL/h for 2 to 4 hours, suggests the need for thoracotomy.",
       source: "atls",
     },
     {
@@ -499,9 +500,9 @@ export const trauma: OralCase = {
     {
       id: "tr-t1",
       competency: "management",
-      text: "Recognizes herniation and raises the systolic target to at least 100 to 110 mmHg.",
+      text: "Recognizes herniation and raises the systolic target to at least 110 mmHg for his age.",
       points: 2,
-      teaching: "In brain injury, hypotension reduces cerebral perfusion. The permissive hypotension target no longer applies.",
+      teaching: "In brain injury, hypotension reduces cerebral perfusion. The Brain Trauma Foundation targets systolic at least 110 mmHg for ages 15 to 49 and over 70, and at least 100 mmHg for ages 50 to 69.",
       source: "btf",
     },
     {
@@ -538,12 +539,20 @@ export const trauma: OralCase = {
     },
   ],
   sources: [
-    { id: "atls", citation: "American College of Surgeons. Advanced Trauma Life Support." },
-    { id: "eu-bleeding", citation: "European guideline on the management of major bleeding and coagulopathy following trauma." },
-    { id: "crash2", citation: "CRASH-2 randomized trial of tranexamic acid in bleeding trauma patients. The Lancet. 2010." },
-    { id: "proppr", citation: "PROPPR randomized trial of transfusion ratios in severe trauma. JAMA. 2015." },
-    { id: "btf", citation: "Brain Trauma Foundation. Guidelines for the management of severe traumatic brain injury. Fourth edition." },
-    { id: "criticall", citation: "CritiCall Ontario. Provincial emergency referral and transfer service." },
+    {
+      id: "atls",
+      citation: "American College of Surgeons. Advanced Trauma Life Support. 11th edition. 2025.",
+      url: "https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/",
+    },
+    {
+      id: "eu-bleeding",
+      citation: "Rossaint R, et al. The European guideline on management of major bleeding and coagulopathy following trauma. Sixth edition. Critical Care. 2023.",
+      url: "https://link.springer.com/article/10.1186/s13054-023-04327-7",
+    },
+    { id: "crash2", citation: "CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage. The Lancet. 2010." },
+    { id: "proppr", citation: "Holcomb JB, et al. PROPPR randomized clinical trial of plasma, platelet and red blood cell ratios in severe trauma. JAMA. 2015." },
+    { id: "btf", citation: "Brain Trauma Foundation. Guidelines for the management of severe traumatic brain injury. Fourth edition. 2016." },
+    { id: "criticall", citation: "CritiCall Ontario. Provincial emergency referral and transfer service.", url: "https://www.criticall.org" },
   ],
   reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",

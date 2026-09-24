@@ -12,7 +12,7 @@ export const chestPain: OralCase = {
   stem:
     "You are the only physician on shift at a 30 bed rural hospital in northern Ontario. " +
     "There is a CT scanner with an on call technologist who can be in within 30 minutes. " +
-    "There is no cath lab. The nearest PCI centre is about 3.5 hours away by land or air. " +
+    "There is no cath lab. The nearest PCI centre is more than 3 hours away once transport is counted. " +
     "Gordon Akiwenzie is 61 years old. He had sudden severe chest pain at 06:40 while splitting wood. " +
     "He arrived by ambulance at 07:20. " +
     "Triage vitals: heart rate 58, blood pressure 168/92 in the right arm, respiratory rate 22, SpO2 95 percent on room air, temperature 36.4, capillary glucose 7.8 mmol/L. CTAS 1. " +
@@ -139,7 +139,7 @@ export const chestPain: OralCase = {
           id: "c-ct-only",
           label: "I held the tenecteplase and called in the CT technologist without doing any bedside checks.",
           next: "s-ct-wait",
-          quality: "partial", feedback: "Partial. Holding the lytic was right. But the bedside screen is faster than waiting 30 minutes for CT. A pulse deficit over 20 mmHg, a flap on POCUS or a mediastinum over 8 cm would have changed management at once.",
+          quality: "partial", feedback: "Partial. Holding the lytic was right. But the bedside screen is faster than waiting 30 minutes for CT. An arm pressure difference over 20 mmHg, a pulse deficit, a flap on POCUS or a mediastinum over 8 cm would have changed management at once.",
         },
         {
           id: "c-lytic",
@@ -197,31 +197,31 @@ export const chestPain: OralCase = {
       prompt: "His heart rate is now 72 and the right arm pressure is 178/96. What are your targets, which drug do you start first, and what dose?",
       seconds: 90,
       modelAnswer: [
-        "Heart rate under 60 and systolic 100 to 120.",
+        "Heart rate about 60 or lower and systolic under 120, about 100 to 120, or the lowest pressure that keeps him perfused.",
         "Use the higher arm pressure as the true pressure.",
         "Beta blocker first. Esmolol 500 mcg/kg over 1 minute then 50 to 300 mcg/kg/min.",
-        "Labetalol 20 mg IV repeated to effect is an alternative.",
-        "Add nitroglycerin or nitroprusside only after rate control to avoid reflex tachycardia.",
+        "Labetalol 20 mg IV then 20 to 80 mg every 10 minutes is an equal first choice.",
+        "Add a vasodilator such as nitroprusside or nitroglycerin only after rate control to avoid reflex tachycardia.",
       ],
       rubric: ["cp-m2", "cp-m3", "cp-m4"],
       choices: [
         {
           id: "c-esmolol",
-          label: "I started esmolol first to get his heart rate under 60, then added a vasodilator for a systolic of 100 to 120.",
+          label: "I started esmolol first to get his heart rate to about 60, then added a vasodilator for a systolic of 100 to 120.",
           next: "q-ct",
-          quality: "strong", feedback: "Strong. Beta blockade first lowers the force on the aortic wall. Targets are heart rate under 60 and systolic 100 to 120. Esmolol 500 mcg/kg then 50 to 300 mcg/kg/min is easy to stop if the pressure falls.",
+          quality: "strong", feedback: "Strong. Beta blockade first lowers the force on the aortic wall. Targets are a heart rate of about 60 and a systolic under 120, about 100 to 120. Esmolol 500 mcg/kg then 50 to 300 mcg/kg/min is easy to stop if the pressure falls.",
         },
         {
           id: "c-ntg-only",
           label: "I started a nitroglycerin infusion on its own to bring the pressure down.",
           next: "s-reflex",
-          quality: "unsafe", feedback: "Unsafe. A vasodilator on its own causes reflex tachycardia and increases shear on the flap. Rate control with a beta blocker must come first. Add nitroglycerin or nitroprusside only once the heart rate is under 60.",
+          quality: "unsafe", feedback: "Unsafe. A vasodilator on its own causes reflex tachycardia and increases shear on the flap. Rate control with a beta blocker must come first. Add a vasodilator only once the heart rate is controlled.",
         },
         {
           id: "c-left-arm",
           label: "I used the left arm pressure to guide my targets.",
           next: "s-left-arm",
-          quality: "partial", feedback: "Partial. The dissected side reads falsely low. Use the higher arm pressure as the true aortic pressure. Your target is systolic 100 to 120 on the right arm.",
+          quality: "partial", feedback: "Partial. The dissected side reads falsely low. Use the higher arm pressure as the true aortic pressure. Your target is a systolic under 120, about 100 to 120, on the right arm.",
         },
       ],
     },
@@ -500,23 +500,23 @@ export const chestPain: OralCase = {
     {
       id: "cp-m2",
       competency: "management",
-      text: "Starts IV beta blockade first, e.g. esmolol 500 mcg/kg over 1 minute then 50 to 300 mcg/kg/min, or labetalol 20 mg IV repeated to effect.",
+      text: "Starts IV beta blockade first, e.g. esmolol 500 mcg/kg over 1 minute then 50 to 300 mcg/kg/min, or labetalol 20 mg IV repeated every 10 minutes to effect.",
       points: 2,
-      teaching: "Rate control reduces the force on the aortic wall. Esmolol is short acting and easy to stop if the pressure falls.",
+      teaching: "Rate control reduces the force on the aortic wall. Esmolol is short acting and easy to stop if the pressure falls. ESC 2024 names labetalol as a first choice.",
       source: "acc-aha-aorta",
     },
     {
       id: "cp-m3",
       competency: "management",
-      text: "States targets of heart rate under 60 and systolic pressure 100 to 120 using the higher arm reading.",
+      text: "States targets of heart rate about 60 or lower and systolic under 120, about 100 to 120, using the higher arm reading.",
       points: 2,
-      teaching: "The arm with the higher pressure reflects true aortic pressure. The lower arm is reduced by the dissection.",
+      teaching: "ESC 2024 targets a heart rate of 60 or less and a systolic under 120. ACC and AHA 2022 accept a heart rate of 60 to 80. Use the higher arm, because the lower arm is reduced by the dissection.",
       source: "acc-aha-aorta",
     },
     {
       id: "cp-m4",
       competency: "management",
-      text: "Adds a vasodilator such as nitroglycerin or nitroprusside only after rate control.",
+      text: "Adds a vasodilator such as nitroprusside or nitroglycerin only after rate control.",
       points: 1,
       teaching: "A vasodilator alone causes reflex tachycardia and more shear. Beta block first, then vasodilate.",
       source: "acc-aha-aorta",
@@ -596,10 +596,22 @@ export const chestPain: OralCase = {
     },
   ],
   sources: [
-    { id: "acc-aha-aorta", citation: "American College of Cardiology and American Heart Association. Guideline for the diagnosis and management of aortic disease. 2022." },
-    { id: "esc-aorta", citation: "European Society of Cardiology. Guidelines on the diagnosis and treatment of aortic diseases." },
-    { id: "ccs-stemi", citation: "Canadian Cardiovascular Society. Guidance on the management of ST elevation myocardial infarction, including fibrinolysis." },
-    { id: "criticall", citation: "CritiCall Ontario. Provincial emergency referral and transfer service." },
+    {
+      id: "acc-aha-aorta",
+      citation: "Isselbacher EM, et al. 2022 ACC/AHA Guideline for the Diagnosis and Management of Aortic Disease. Circulation. 2022.",
+      url: "https://pubmed.ncbi.nlm.nih.gov/36322642/",
+    },
+    {
+      id: "esc-aorta",
+      citation: "European Society of Cardiology. 2024 ESC Guidelines for the management of peripheral arterial and aortic diseases. European Heart Journal. 2024.",
+      url: "https://academic.oup.com/eurheartj/article/45/36/3538/7738955",
+    },
+    {
+      id: "ccs-stemi",
+      citation: "Wong GC, et al. 2019 Canadian Cardiovascular Society and Canadian Association of Interventional Cardiology Guidelines on the Acute Management of ST Elevation Myocardial Infarction. Focused Update on Regionalization and Reperfusion. Canadian Journal of Cardiology. 2019.",
+      url: "https://onlinecjc.ca/article/S0828-282X(18)31321-7/fulltext",
+    },
+    { id: "criticall", citation: "CritiCall Ontario. Provincial emergency referral and transfer service.", url: "https://www.criticall.org" },
   ],
   reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",

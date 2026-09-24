@@ -96,13 +96,13 @@ export const overdose: OralCase = {
       modelAnswer: [
         "Sodium bicarbonate 1 to 2 mEq/kg IV push, 60 to 120 mEq.",
         "That is one to two 50 mL ampoules of 8.4 percent.",
-        "Repeat every 3 to 5 minutes until QRS is under 100 ms or pH is 7.50 to 7.55.",
+        "Repeat every 3 to 5 minutes until the QRS is under 100 ms. Do not push the pH above 7.55.",
         "Then an infusion, e.g. 150 mEq in 1 L D5W at 150 to 250 mL/h.",
         "Monitor potassium, sodium and pH.",
       ],
       rubric: ["od-r2", "od-r3"],
       choices: [
-        { id: "c-bolus", label: "I gave sodium bicarbonate 1 to 2 mEq/kg IV push and repeated it to narrow the QRS.", next: "q-workup", quality: "strong", feedback: "Strong. QRS over 100 ms in a tricyclic overdose needs sodium bicarbonate 1 to 2 mEq/kg IV push now. That is 60 to 120 mEq for her. Repeat every 3 to 5 minutes to a QRS under 100 ms or pH 7.50 to 7.55." },
+        { id: "c-bolus", label: "I gave sodium bicarbonate 1 to 2 mEq/kg IV push and repeated it to narrow the QRS.", next: "q-workup", quality: "strong", feedback: "Strong. QRS over 100 ms in a tricyclic overdose needs sodium bicarbonate 1 to 2 mEq/kg IV push now. That is 60 to 120 mEq for her. Repeat every 3 to 5 minutes to a QRS under 100 ms, keeping the pH at 7.55 or lower." },
         { id: "c-infusion-only", label: "I started a bicarbonate infusion without a bolus.", next: "s-slow-bicarb", quality: "partial", feedback: "Partial. An infusion keeps the effect going but does not reverse blockade quickly. The examiner wanted a 1 to 2 mEq/kg bolus first. Start the infusion once the QRS has narrowed." },
         { id: "c-amio", label: "I gave amiodarone for the wide complex rhythm.", next: "s-amio", quality: "unsafe", feedback: "Unsafe. Amiodarone blocks sodium and potassium channels and worsens tricyclic toxicity. Wide complex rhythms here are treated with sodium bicarbonate. Avoid class IA, IC and III antiarrhythmics." },
       ],
@@ -259,14 +259,14 @@ export const overdose: OralCase = {
       modelAnswer: [
         "The nomogram cannot be used when the time of ingestion is unknown.",
         "A detectable level with an unknown time means start acetylcysteine now.",
-        "200 mg/kg over 4 hours then 100 mg/kg over 16 hours, or the three bag regimen.",
-        "Check liver tests and INR at the end of the infusion before stopping.",
+        "200 mg/kg over 4 hours then 100 mg/kg over 16 hours, or the regimen your poison centre uses.",
+        "Repeat the acetaminophen level, liver tests and INR near the end of the infusion before stopping.",
         "Admit to ICU with a handover of bicarbonate targets and acetylcysteine timing.",
       ],
       rubric: ["od-t3", "od-t4", "od-c3"],
       choices: [
-        { id: "c-nac", label: "I started acetylcysteine now because the level is detectable and the time is unknown.", next: "s-later", quality: "strong", feedback: "Strong. The nomogram needs a known ingestion time. A detectable level with an unknown time means start acetylcysteine now. Use 200 mg/kg over 4 hours then 100 mg/kg over 16 hours, or the three bag regimen." },
-        { id: "c-repeat", label: "I planned to repeat the level in four hours and plot it on the nomogram.", next: "s-no-nac", quality: "unsafe", feedback: "Unsafe. The nomogram cannot be used when the time is unknown. She may already be more than 8 hours out, when delay raises the risk of liver injury. Start acetylcysteine now and reassess at the end of the infusion." },
+        { id: "c-nac", label: "I started acetylcysteine now because the level is detectable and the time is unknown.", next: "s-later", quality: "strong", feedback: "Strong. The nomogram needs a known ingestion time. A detectable level with an unknown time means start acetylcysteine now. Use 200 mg/kg over 4 hours then 100 mg/kg over 16 hours, or the regimen your poison centre uses." },
+        { id: "c-repeat", label: "I planned to repeat the level in four hours and plot it on the nomogram.", next: "s-no-nac", quality: "unsafe", feedback: "Unsafe. The nomogram cannot be used when the time is unknown. She may be close to or past 8 hours from ingestion, when delay raises the risk of liver injury. Start acetylcysteine now and reassess at the end of the infusion." },
       ],
     },
     {
@@ -274,7 +274,7 @@ export const overdose: OralCase = {
       id: "s-no-nac",
       phase: "Poison centre call",
       text:
-        "The poison centre specialist says the nomogram does not apply with an unknown ingestion time. She could be more than 8 hours out, when delay raises the risk of liver injury. They advise starting acetylcysteine now. You start it.",
+        "The poison centre specialist says the nomogram does not apply with an unknown ingestion time. She could be close to or past 8 hours from ingestion, when delay raises the risk of liver injury. They advise starting acetylcysteine now. You start it.",
       next: "s-later",
     },
     {
@@ -310,7 +310,7 @@ export const overdose: OralCase = {
       modelAnswer: [
         "Keep her safe now, using the least restrictive means.",
         "Form 1 under the Ontario Mental Health Act when the criteria are met.",
-        "Form 1 allows detention up to 72 hours for psychiatric assessment.",
+        "Form 1 allows detention up to 72 hours in a Schedule 1 facility for psychiatric assessment. If this hospital is not one, it authorizes transfer to one.",
         "The physician must have examined her within the past 7 days.",
         "Give her a Form 42 and explain her rights.",
         "Close observation and removal of means of self harm.",
@@ -353,7 +353,7 @@ export const overdose: OralCase = {
     {
       id: "od-r2",
       competency: "resuscitation",
-      text: "Gives sodium bicarbonate 1 to 2 mEq/kg IV bolus (60 to 120 mEq), repeated to QRS under 100 ms or pH 7.50 to 7.55.",
+      text: "Gives sodium bicarbonate 1 to 2 mEq/kg IV bolus (60 to 120 mEq), repeated to a QRS under 100 ms with the pH kept at 7.55 or lower.",
       points: 3,
       critical: true,
       teaching: "The sodium load and alkalemia overcome sodium channel blockade. Bolus first. An infusion alone is too slow.",
@@ -444,9 +444,9 @@ export const overdose: OralCase = {
     {
       id: "od-t4",
       competency: "management",
-      text: "States a correct acetylcysteine regimen, e.g. 200 mg/kg over 4 hours then 100 mg/kg over 16 hours, or the three bag regimen.",
+      text: "States a correct acetylcysteine regimen, e.g. 200 mg/kg over 4 hours then 100 mg/kg over 16 hours, or the local poison centre regimen.",
       points: 2,
-      teaching: "Know one regimen well. Recheck liver tests and INR before stopping the infusion.",
+      teaching: "Know one regimen well. Regimens differ between provincial poison centres. Recheck the acetaminophen level, liver tests and INR before stopping the infusion.",
       source: "antidote-guide",
     },
     {
@@ -524,10 +524,18 @@ export const overdose: OralCase = {
     },
   ],
   sources: [
-    { id: "opc", citation: "Ontario Poison Centre. Consultation guidance for tricyclic antidepressant poisoning." },
-    { id: "antidote-guide", citation: "Canadian Antidote Guide in Acute Care Toxicology. Monographs for sodium bicarbonate and acetylcysteine." },
-    { id: "mha", citation: "Mental Health Act. Revised Statutes of Ontario 1990, chapter M.7." },
-    { id: "cpsi-suicide", citation: "Canadian Patient Safety Institute. Suicide risk assessment guide." },
+    { id: "opc", citation: "Ontario Poison Centre. Specialist telephone consultation for poisoning management.", url: "https://www.ontariopoisoncentre.ca" },
+    {
+      id: "antidote-guide",
+      citation: "Canadian Antidote Guide in Acute Care Toxicology. CIUSSS de la Capitale Nationale. Monographs for sodium bicarbonate and acetylcysteine.",
+      url: "https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes/acetylcysteine",
+    },
+    { id: "mha", citation: "Mental Health Act, R.S.O. 1990, c. M.7. Ontario.", url: "https://www.ontario.ca/laws/statute/90m07" },
+    {
+      id: "cpsi-suicide",
+      citation: "Mental Health Commission of Canada and Canadian Patient Safety Institute. Suicide Risk Assessment Toolkit. A resource for healthcare workers. 2021.",
+      url: "https://www.mentalhealthcommission.ca/wp-content/uploads/drupal/2021-01/mhcc_cpsi_suicide_risk_assessment_toolkit_eng.pdf",
+    },
   ],
   reviewed: false,
   author: "Draft for review by Arjan Dhoot, MD",
