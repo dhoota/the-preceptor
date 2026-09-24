@@ -1,0 +1,535 @@
+// DRAFT. Clinical content written for simulation only. Requires physician review before release. Verify every dose and threshold against current guidelines.
+
+import type { OralCase } from "@/engine/types";
+
+export const waitingRoomSlump: OralCase = {
+  id: "waiting-room-slump",
+  title: "Found slumped in a waiting room chair",
+  blueprint: "systems",
+  alsoCovers: ["id", "geri", "comm"],
+  summary: "A woman who has waited more than three hours is found unwell in the waiting room. After you stabilize her, you must find out how it happened.",
+  durationMinutes: 15,
+  stem:
+    "You are the emergency physician at a 250 bed community hospital in Ontario. It is 14:10 on a Tuesday. " +
+    "The department has 30 stretchers, all full, with 11 admitted patients waiting for beds. There are 38 people in the waiting room and one triage nurse. " +
+    "The hospital has an ICU, on call urology and interventional radiology. " +
+    "A security guard runs to the charge desk. A woman in the waiting room is slumped in her chair and will not answer him. " +
+    "Her name is Margaret Oduya. She is 71 years old. The triage record shows she was triaged at 10:40 as CTAS 3 with 'urinary symptoms and weakness'. " +
+    "Current vitals: heart rate 128, blood pressure 76/42, respiratory rate 30, SpO2 90 percent on room air, temperature 39.4. She opens her eyes to voice but is confused.",
+  findings: [
+    {
+      id: "triage-note",
+      label: "Triage record from 10:40",
+      result:
+        "Burning urine for 3 days. Off her food for 2 days. Feels weak. Daughter in law says she is 'a bit slow today'. " +
+        "Heart rate 112, blood pressure 108/64, respiratory rate 24, SpO2 95 percent, temperature 38.7, glucose 9.1 mmol/L. CTAS 3. No repeat vital signs recorded since.",
+    },
+    {
+      id: "history",
+      label: "Past history and medications",
+      result:
+        "Hypertension on ramipril 10 mg daily. Type 2 diabetes on metformin 500 mg twice daily. Kidney stone 6 years ago. No allergies. Lives with her son and daughter in law. Fully independent. Wants full treatment.",
+    },
+    {
+      id: "exam",
+      label: "Exam in resus",
+      result:
+        "Confused, GCS 13. Mottled knees. Capillary refill 5 seconds. Dry mucous membranes. Chest clear. Right costovertebral angle tenderness. Abdomen soft. No rash.",
+    },
+    {
+      id: "labs",
+      label: "Blood work",
+      result:
+        "Lactate 5.8 mmol/L. White cell count 21.6 x 10^9/L. Creatinine 212 µmol/L (baseline 78). Potassium 5.1 mmol/L. Bicarbonate 15 mmol/L. " +
+        "Platelets 96 x 10^9/L. Bilirubin normal. Blood cultures drawn x 2.",
+    },
+    {
+      id: "urine",
+      label: "Urinalysis",
+      result: "Large leukocytes. Nitrites positive. Moderate blood.",
+    },
+    {
+      id: "pocus",
+      label: "Bedside ultrasound",
+      result:
+        "Hyperdynamic left ventricle. Collapsing IVC. No B lines. Moderate right hydronephrosis. Left kidney normal. No free fluid.",
+    },
+    {
+      id: "response",
+      label: "After 2 L of crystalloid",
+      result: "Blood pressure 82/44, mean arterial pressure 57. Heart rate 118. Lactate on repeat 5.1 mmol/L. Urine output 10 mL in the last hour.",
+    },
+    {
+      id: "ct",
+      label: "CT abdomen and pelvis without contrast",
+      result: "7 mm stone at the right ureteropelvic junction with moderate hydronephrosis and perinephric fat stranding. No gas in the kidney.",
+    },
+    {
+      id: "waiting-log",
+      label: "Waiting room log for today",
+      result:
+        "The reassessment nurse position was unfilled because of a sick call. The triage nurse triaged 26 patients between 07:00 and 14:00. " +
+        "No sepsis screening tool is used at triage. The electronic board shows a CTAS 3 reassessment overdue flag, but it is only visible from the charge desk.",
+    },
+    {
+      id: "triage-nurse",
+      label: "The triage nurse",
+      result: "Mei has 2 years of emergency nursing experience. She is in the staff room crying. She says, 'I meant to go back and check her. I never got a minute.'",
+    },
+    {
+      id: "son",
+      label: "Her son",
+      result: "David Oduya arrives at 15:15. His wife had to leave at 12:30 for work. He is angry and asks why nobody checked on his mother for three and a half hours.",
+    },
+  ],
+  start: "s-open",
+  nodes: [
+    {
+      kind: "say",
+      id: "s-open",
+      phase: "14:10",
+      text: "The charge nurse has found a free resus bay by moving a stable patient to the hallway. Mrs. Oduya is on a wheelchair on the way.",
+      next: "q-resus",
+    },
+    {
+      kind: "question",
+      id: "q-resus",
+      phase: "Resuscitation",
+      prompt: "What do you do in the first 30 minutes?",
+      seconds: 90,
+      modelAnswer: [
+        "Monitor, oxygen to SpO2 92 to 96 percent, two large bore IVs.",
+        "Blood cultures, lactate, blood work, urine culture.",
+        "Broad spectrum antibiotics within the hour. Piperacillin tazobactam 4.5 g IV or ceftriaxone 2 g IV per local guidance.",
+        "Crystalloid 30 mL/kg, given in boluses with reassessment.",
+        "Bedside ultrasound for a source and for fluid tolerance.",
+        "Hold metformin and ramipril. Check goals of care.",
+      ],
+      rubric: ["wr-r1", "wr-a1"],
+      choices: [
+        {
+          id: "c-bundle",
+          label: "I drew cultures and gave piperacillin tazobactam 4.5 g IV within 20 minutes, started 30 mL/kg of crystalloid in boluses and did a bedside ultrasound.",
+          next: "s-pocus",
+          quality: "strong",
+          feedback:
+            "This is septic shock and every hour of antibiotic delay raises mortality. Cultures first is right as long as it does not hold up the antibiotic. Ultrasound looks for a source and guides fluids.",
+        },
+        {
+          id: "c-fluid-first",
+          label: "I gave a 1 L bolus and waited for the urine and blood results before choosing an antibiotic.",
+          next: "s-fluid-first",
+          quality: "partial",
+          feedback:
+            "She has a fever, a urinary source and shock. You do not need results to start an empiric antibiotic. The target in septic shock is antibiotics within 1 hour of recognition.",
+        },
+        {
+          id: "c-ct-first",
+          label: "I sent her for CT first to find the source.",
+          next: "s-ct-first",
+          quality: "unsafe",
+          feedback:
+            "A hypotensive patient should not leave resus for CT before resuscitation and antibiotics. Imaging comes once she is stable enough and the treatment has started.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-fluid-first",
+      phase: "14:50",
+      text: "Forty minutes later the lab calls a lactate of 5.8. Her pressure is 74/40. The nurse asks whether you want to start an antibiotic now. You give piperacillin tazobactam and more fluid.",
+      next: "s-pocus",
+    },
+    {
+      kind: "say",
+      id: "s-ct-first",
+      phase: "14:35",
+      text:
+        "On the CT table her pressure falls to 64/36 and she stops answering. The technologist calls a code blue. She is brought back to resus. You give antibiotics and fluid.",
+      next: "s-pocus",
+    },
+    {
+      kind: "say",
+      id: "s-pocus",
+      phase: "15:00",
+      text:
+        "After 2 L of crystalloid her mean arterial pressure is 57. Lactate 5.1. Your ultrasound shows moderate right hydronephrosis. The left kidney looks normal.",
+      next: "q-source",
+    },
+    {
+      kind: "question",
+      id: "q-source",
+      phase: "Source control",
+      prompt: "What is your plan now?",
+      seconds: 75,
+      modelAnswer: [
+        "Norepinephrine to a mean arterial pressure of 65. A peripheral start is acceptable.",
+        "This is likely an infected obstructed kidney. It needs urgent drainage.",
+        "Non contrast CT once norepinephrine is running and a nurse can travel with her, to confirm the stone and plan drainage.",
+        "Call urology now for stent or interventional radiology for nephrostomy tonight.",
+        "Call ICU. She needs vasopressors and close monitoring.",
+        "Antibiotics alone are not enough.",
+      ],
+      rubric: ["wr-m1", "wr-d1"],
+      choices: [
+        {
+          id: "c-drain",
+          label: "I started norepinephrine to a mean arterial pressure of 65, sent her for a non contrast CT with a nurse, called urology for urgent decompression tonight and asked ICU to admit her.",
+          next: "s-son",
+          quality: "strong",
+          feedback:
+            "Right. An infected obstructed kidney is a urological emergency. Source control plus antibiotics is the treatment. She needs a critical care bed while she is on a vasopressor.",
+        },
+        {
+          id: "c-medicine",
+          label: "I admitted her to medicine on antibiotics with a urology consult in the morning.",
+          next: "s-medicine",
+          quality: "unsafe",
+          feedback:
+            "Antibiotics cannot sterilize an obstructed, infected collecting system. Delay to decompression is linked with death. A patient on vasopressors also needs ICU, not a ward.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-medicine",
+      phase: "17:00",
+      text: "The internist calls you back. She is on norepinephrine at 0.2 mcg/kg/min and her lactate is rising. The internist asks why urology has not been called. You call urology and the ICU.",
+      next: "s-son",
+    },
+    {
+      kind: "question",
+      id: "q-review",
+      phase: "Looking back",
+      prompt: "She is in the ICU after a ureteric stent. Look at her triage record. What went wrong between 10:40 and 14:10?",
+      seconds: 90,
+      modelAnswer: [
+        "Under triage. Fever with three SIRS criteria and a family report of confusion fits the CTAS looks septic modifier. She should have been CTAS 2.",
+        "No reassessment for 3.5 hours. CTAS 3 should be reassessed at least every 30 minutes, CTAS 2 every 15.",
+        "Confusion noted by family was not acted on.",
+        "No sepsis screen and no investigations started at triage.",
+        "Contributing system factors. Unfilled reassessment nurse role, high triage volume, access block, overdue flag not visible.",
+      ],
+      rubric: ["wr-a2", "wr-a3"],
+      next: "q-nurse",
+    },
+    {
+      kind: "say",
+      id: "s-son",
+      phase: "15:15",
+      text:
+        "While urology is on the way, her son David arrives. He says: 'My wife sat with her for two hours and nobody looked at her. " +
+        "She told the nurse Mom was confused. Why did nobody check on her? Who is responsible for this?'",
+      next: "q-son",
+    },
+    {
+      kind: "question",
+      id: "q-son",
+      phase: "Her son",
+      prompt: "What do you say to David?",
+      seconds: 90,
+      modelAnswer: [
+        "Find a private space. Sit down. Let him speak.",
+        "Tell him what is happening now. She is very sick with a kidney infection and we are treating it.",
+        "Acknowledge the facts known so far. She waited too long without being rechecked.",
+        "Apologize. 'I am sorry. She should have been checked again sooner.'",
+        "Say it will be reviewed to understand why and to prevent it happening again.",
+        "Do not blame individuals. Do not speculate. Offer to meet again when more is known.",
+      ],
+      rubric: ["wr-c1", "wr-p1"],
+      choices: [
+        {
+          id: "c-disclose",
+          label: "I sat down with him, explained her condition and treatment, said she should have been reassessed sooner and apologized, and told him it would be reviewed and he would hear what we learn.",
+          next: "q-review",
+          quality: "strong",
+          feedback:
+            "This is early disclosure done well. Share the known facts, apologize and commit to a review and follow up. You do not need all the answers to begin. Disclosure is a process.",
+        },
+        {
+          id: "c-defend",
+          label: "I told him the triage nurse followed the process and that we were extremely busy today.",
+          next: "s-defend",
+          quality: "partial",
+          feedback:
+            "Being busy is a real contributing factor, but leading with it sounds like an excuse. It also asserts something you do not yet know. Start with what happened to his mother and an apology.",
+        },
+        {
+          id: "c-blame",
+          label: "I told him the triage nurse made an error by giving her the wrong triage level.",
+          next: "s-blame",
+          quality: "unsafe",
+          feedback:
+            "Naming an individual at the bedside is premature and unfair. Patient safety incidents usually have several system causes. Blame drives staff to hide errors and does nothing to prevent the next one.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-defend",
+      phase: "In the family room",
+      text:
+        "David says, 'So it is fine that she sat there for three and a half hours?' He asks for your name and the patient relations number. You pause and start again, with an apology.",
+      next: "q-review",
+    },
+    {
+      kind: "say",
+      id: "s-blame",
+      phase: "The next day",
+      text:
+        "David asks patient relations to have the triage nurse fired. Mei hears about it from a colleague and goes home sick. The manager asks you to meet her. You return to David to correct the record and explain that the review will look at the whole system.",
+      next: "q-review",
+    },
+    {
+      kind: "question",
+      id: "q-nurse",
+      phase: "The triage nurse",
+      prompt: "Mei, the triage nurse, is crying in the staff room. What do you do?",
+      seconds: 60,
+      modelAnswer: [
+        "Check on her in private, today.",
+        "Acknowledge the workload. She triaged 26 patients with no reassessment nurse.",
+        "Make clear that the review will look at the system, not look for someone to blame.",
+        "Offer support. Peer support, employee assistance, time away from triage today if needed.",
+        "Tell the charge nurse and manager so she is supported.",
+      ],
+      rubric: ["wr-p2", "wr-l1"],
+      next: "q-report",
+    },
+    {
+      kind: "question",
+      id: "q-report",
+      phase: "Reporting",
+      prompt: "How do you report this event?",
+      seconds: 60,
+      modelAnswer: [
+        "Enter a patient safety incident report today.",
+        "Inform the charge nurse, manager and department chief.",
+        "Classify as a harmful incident. It needs a formal analysis.",
+        "Suggest a system focused review such as the Canadian Incident Analysis Framework.",
+        "Document factually in the chart. Record the disclosure conversation.",
+      ],
+      rubric: ["wr-l2", "wr-p3"],
+      choices: [
+        {
+          id: "c-report",
+          label: "I filed a safety report the same day, told the manager and chief, suggested a system focused incident analysis, and documented the facts and the disclosure.",
+          next: "q-fix",
+          quality: "strong",
+          feedback:
+            "Correct. Reporting triggers learning and is separate from blame. A structured analysis looks for contributing factors across people, tasks, equipment, environment and the organization.",
+        },
+        {
+          id: "c-informal",
+          label: "I mentioned it to the nurse manager in the hallway and left it to her.",
+          next: "s-informal",
+          quality: "partial",
+          feedback:
+            "An informal mention may not start any process. A harmful incident needs a written report so it is tracked and analysed.",
+        },
+        {
+          id: "c-chart-blame",
+          label: "I wrote in the chart that she was mistriaged by the triage nurse and not reassessed.",
+          next: "s-chart-blame",
+          quality: "unsafe",
+          feedback:
+            "The chart is a clinical record, not an incident file. Record the facts of her care and the disclosure. Assigning individual blame in the chart is inappropriate and unhelpful.",
+        },
+      ],
+    },
+    {
+      kind: "say",
+      id: "s-informal",
+      phase: "Two weeks later",
+      text: "The quality lead has no record of the event. Another CTAS 3 patient waited 4 hours without reassessment last week. You file the report.",
+      next: "q-fix",
+    },
+    {
+      kind: "say",
+      id: "s-chart-blame",
+      phase: "The next week",
+      text: "The quality lead asks you to add a factual note and move your concerns to the incident report. The family has requested a copy of the chart.",
+      next: "q-fix",
+    },
+    {
+      kind: "question",
+      id: "q-fix",
+      phase: "The system fix",
+      prompt: "You join the incident review. What changes would you recommend, and which would you expect to work best?",
+      seconds: 120,
+      modelAnswer: [
+        "Stronger fixes change the system, not just people. Forcing functions beat education and memos.",
+        "A protected waiting room reassessment role, with a backfill plan when it is unfilled.",
+        "Automatic repeat vital signs at set CTAS intervals with an overdue alert the triage nurse can see.",
+        "A sepsis screen at triage with escalation to a physician and nurse initiated cultures and lactate.",
+        "Physician or nurse practitioner rapid assessment in triage during surges.",
+        "Escalation of access block to hospital leadership. Boarding drives the waiting room risk.",
+        "Measure it. Audit reassessment compliance and time to antibiotics. Share findings with the family.",
+      ],
+      rubric: ["wr-l3", "wr-l4", "wr-c2"],
+      next: "end",
+    },
+    {
+      kind: "end",
+      id: "end",
+      text:
+        "Mrs. Oduya leaves the ICU on day 3 and goes home on day 9. The department adds a sepsis screen at triage and a visible reassessment alert. David is invited to hear the findings. That is the end of the case.",
+    },
+  ],
+  rubric: [
+    {
+      id: "wr-r1",
+      competency: "resuscitation",
+      text: "Recognizes septic shock and gives broad spectrum antibiotics within 1 hour with 30 mL/kg crystalloid.",
+      points: 3,
+      critical: true,
+      teaching: "Delay to antibiotics in septic shock raises mortality. Draw cultures first only if it does not delay the dose.",
+      source: "ssc",
+    },
+    {
+      id: "wr-a1",
+      competency: "assessment",
+      text: "Uses bedside ultrasound to look for a source and guide fluid.",
+      points: 1,
+      teaching: "Hydronephrosis on ultrasound in a septic patient points to an obstructed infected kidney.",
+      source: "ssc",
+    },
+    {
+      id: "wr-a2",
+      competency: "assessment",
+      text: "Identifies under triage using the CTAS sepsis modifier. Fever with three SIRS criteria is CTAS 2.",
+      points: 2,
+      teaching: "CTAS assigns level 2 to a febrile adult who looks septic. That means three SIRS criteria, or hemodynamic compromise, respiratory distress or altered level of consciousness.",
+      source: "ctas",
+    },
+    {
+      id: "wr-a3",
+      competency: "assessment",
+      text: "Identifies the failure to reassess and knows CTAS reassessment intervals.",
+      points: 2,
+      teaching: "CTAS reassessment is every 15 minutes for level 2 and every 30 minutes for level 3. Triage is a snapshot, not a guarantee.",
+      source: "ctas",
+    },
+    {
+      id: "wr-m1",
+      competency: "management",
+      text: "Starts norepinephrine for a mean arterial pressure under 65 after fluid and arranges urgent source control.",
+      points: 3,
+      critical: true,
+      teaching: "An infected obstructed kidney needs drainage by stent or nephrostomy. Antibiotics alone are not enough.",
+      source: "ssc",
+    },
+    {
+      id: "wr-d1",
+      competency: "disposition",
+      text: "Admits to ICU while on vasopressors.",
+      points: 1,
+      teaching: "Patients with septic shock on vasopressors need a critical care bed, not a ward.",
+      source: "ssc",
+    },
+    {
+      id: "wr-c1",
+      competency: "communication",
+      text: "Discloses early to the son. States what is known, apologizes, and commits to a review and follow up.",
+      points: 3,
+      critical: true,
+      teaching: "Initial disclosure should happen soon after the event even before the review is done. Facts, apology, next steps.",
+      source: "cpsi-disclosure",
+    },
+    {
+      id: "wr-c2",
+      competency: "communication",
+      text: "Commits to sharing the review findings with the family.",
+      points: 1,
+      teaching: "Post analysis disclosure tells the family what was learned and what changed. It closes the loop.",
+      source: "cpsi-disclosure",
+    },
+    {
+      id: "wr-p1",
+      competency: "professionalism",
+      text: "Does not blame individual staff or make excuses when speaking with the family.",
+      points: 2,
+      teaching: "Blame and excuses both damage trust. Stick to facts, apology and the plan.",
+      source: "cpso-disclosure",
+    },
+    {
+      id: "wr-p2",
+      competency: "professionalism",
+      text: "Supports the triage nurse and treats the event through a just culture lens.",
+      points: 2,
+      teaching: "Staff involved in harm are often second victims. Human error in an overloaded system calls for support and system repair, not discipline.",
+      source: "ciaf",
+    },
+    {
+      id: "wr-p3",
+      competency: "professionalism",
+      text: "Documents facts and the disclosure in the chart without assigning blame.",
+      points: 1,
+      teaching: "The chart records care. Concerns about process belong in the incident report.",
+      source: "cpso-disclosure",
+    },
+    {
+      id: "wr-l1",
+      competency: "leadership",
+      text: "Informs the charge nurse and manager so staff support is in place.",
+      points: 1,
+      teaching: "Leaders make sure no one involved in a serious incident is left alone with it.",
+      source: "ciaf",
+    },
+    {
+      id: "wr-l2",
+      competency: "leadership",
+      text: "Files a written patient safety incident report the same day and suggests a structured analysis.",
+      points: 2,
+      teaching: "The Canadian Incident Analysis Framework guides a system focused review of contributing factors.",
+      source: "ciaf",
+    },
+    {
+      id: "wr-l3",
+      competency: "leadership",
+      text: "Recommends strong system fixes such as a protected reassessment role, automatic vital sign alerts and triage sepsis screening.",
+      points: 2,
+      teaching: "Forcing functions and standardization are stronger than education or reminders alone.",
+      source: "ciaf",
+    },
+    {
+      id: "wr-l4",
+      competency: "leadership",
+      text: "Links waiting room risk to access block and escalates it to hospital leadership.",
+      points: 1,
+      teaching: "Boarded admitted patients fill stretchers and push sick patients into the waiting room. That is a hospital problem.",
+      source: "caep-crowding",
+    },
+  ],
+  sources: [
+    {
+      id: "ctas",
+      citation: "Bullard MJ, et al. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) guidelines 2016. CJEM. 2017.",
+    },
+    {
+      id: "ssc",
+      citation: "Evans L, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Critical Care Medicine. 2021.",
+    },
+    {
+      id: "ciaf",
+      citation: "Incident Analysis Collaborating Parties. Canadian Incident Analysis Framework. Canadian Patient Safety Institute. 2012.",
+    },
+    {
+      id: "cpsi-disclosure",
+      citation: "Canadian Patient Safety Institute, now Healthcare Excellence Canada. Canadian Disclosure Guidelines. Being open and honest with patients and families. 2011.",
+      url: "https://www.healthcareexcellence.ca/resources/canadian-disclosure-guidelines/",
+    },
+    {
+      id: "cpso-disclosure",
+      citation: "College of Physicians and Surgeons of Ontario. Policy. Disclosure of Harm.",
+      url: "https://www.cpso.on.ca/physicians/policies-guidance/policies/disclosure-of-harm",
+    },
+    {
+      id: "caep-crowding",
+      citation: "Affleck A, Parks P, Drummond A, Rowe BH, Ovens HJ. Emergency department overcrowding and access block. CAEP position statement. CJEM. 2013.",
+    },
+  ],
+  reviewed: false,
+  author: "Draft for review by Arjan Dhoot, MD",
+  version: 1,
+};
