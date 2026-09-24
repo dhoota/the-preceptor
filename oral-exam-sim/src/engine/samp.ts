@@ -99,17 +99,21 @@ export function tokens(text: string): string[] {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[̀-ͯ]/g, "")
+    // "don't" reads as "dont", one word, so the negation window stays short.
+    .replace(/['’]/g, "")
     .replace(/[^a-z0-9.%/ ]+/g, " ")
     // "5mg" reads as "5 mg", so doses match however they are spaced.
     .replace(/([0-9])([a-z])/g, "$1 $2")
     .replace(/(?<![0-9])\.|\.(?![0-9])/g, " ")
     .split(/\s+/)
-    .filter(Boolean)
+    // Keys written as "don t" or "children s" read the same as "dont" and "childrens".
+    .filter((w) => w && w !== "s" && w !== "t")
+    .map((w) => (w === "don" ? "dont" : w))
     .map((w) => (w.length > 3 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w));
 }
 
 /** Words that negate what follows: "no nitrates", "avoid heparin", "don't intubate". */
-export const NEGATIONS = new Set(["no", "not", "avoid", "withhold", "hold", "never", "don", "dont", "stop", "discontinue", "contraindicated", "without"]);
+export const NEGATIONS = new Set(["no", "not", "avoid", "withhold", "hold", "never", "dont", "doesnt", "shouldnt", "cant", "wont", "stop", "discontinue", "contraindicated", "without"]);
 /** How many words before a phrase a negation still applies to. */
 const NEGATION_WINDOW = 3;
 /** Words that negate what comes just before them: "warfarin is contraindicated". */
@@ -121,6 +125,8 @@ const LINKING = new Set(["is", "are", "was", "be", "being"]);
  * and the phrase is not negated. A phrase counts as negated when a negation
  * word sits within three words before its first word, unless the phrase
  * itself contains a negation ("avoid nitrates" matches "avoid all nitrates").
+ * A negation within two words before a later word of the phrase also
+ * negates it ("epinephrine IM, not IV push").
  * It also counts as negated when "contraindicated", "avoided" or "withheld"
  * follows its last word directly or after "is" or "are" ("nitrates are
  * contraindicated").
@@ -136,6 +142,8 @@ export function lineMatches(line: string, phrases: string[]): boolean {
     const first = Math.min(...at);
     const last = Math.max(...at);
     if (words.slice(Math.max(0, first - NEGATION_WINDOW), first).some((w) => NEGATIONS.has(w))) return false;
+    // A negation right before a later word also counts: "epinephrine IM, not IV push".
+    if (at.some((i) => i > first && words.slice(Math.max(first + 1, i - 2), i).some((w) => NEGATIONS.has(w)))) return false;
     const after = LINKING.has(words[last + 1]) ? words[last + 2] : words[last + 1];
     return !POST_NEGATIONS.has(after);
   });

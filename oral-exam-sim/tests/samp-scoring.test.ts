@@ -42,6 +42,9 @@ describe("matching", () => {
     expect(lineMatches("nitrates are contraindicated", ["nitrate"])).toBe(false);
     expect(lineMatches("nitrates are contraindicated", ["nitrate contraindicated"])).toBe(true);
     expect(lineMatches("heparin withheld until CT", ["heparin"])).toBe(false);
+    expect(lineMatches("epinephrine 0.5 mg IM, not IV push", ["epinephrine iv push"])).toBe(false);
+    expect(lineMatches("Don't attempt to remove the foreign body", ["remove foreign body"])).toBe(false);
+    expect(lineMatches("epinephrine 0.5 mg IM, then IV push if refractory", ["epinephrine iv push"])).toBe(true);
   });
   it("does not zero a question for a negated dangerous answer", () => {
     expect(markShort(short, ["no epinephrine IV push", "oxygen", "salbutamol"]).earned).toBe(2);
