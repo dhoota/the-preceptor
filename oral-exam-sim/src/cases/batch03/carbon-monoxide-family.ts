@@ -7,6 +7,13 @@ export const carbonMonoxideFamily: OralCase = {
   title: "A family with headaches",
   blueprint: "enviro",
   alsoCovers: ["tox", "obgyn"],
+  priorityTopic: "tox",
+  keyFeatures: [
+    { topic: "tox", n: 1 },
+    { topic: "tox", n: 2 },
+    { topic: "tox", n: 5 },
+    { topic: "tox", n: 7 },
+  ],
   summary: "A pregnant woman who fainted at home arrives with her husband and daughter, who all feel unwell.",
   durationMinutes: 15,
   stem:
@@ -310,6 +317,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Suspects carbon monoxide poisoning from clustered symptoms in one household and a new heat source.",
       points: 2,
       teaching: "Several people from one home with headache and nausea is CO until proven otherwise. Symptoms that improve away from home are a strong clue.",
@@ -318,6 +326,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives 100 percent oxygen by non rebreather to all exposed family members regardless of pulse oximetry.",
       points: 3,
       critical: true,
@@ -327,6 +336,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Explains that carboxyhemoglobin drawn after oxygen underestimates peak exposure and correlates poorly with severity.",
       points: 2,
       teaching: "Levels fall quickly on oxygen. Symptoms such as syncope and neurological signs guide severity more than the number.",
@@ -335,6 +345,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes that the fetus is at higher risk because fetal hemoglobin binds CO tightly and clears slowly.",
       points: 2,
       teaching: "Fetal carboxyhemoglobin can exceed maternal levels and lasts longer. Maternal symptoms understate fetal risk.",
@@ -343,6 +354,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-m2",
       competency: "management",
+      criterion: "plan",
       text: "Identifies HBO criteria including syncope, neurological findings, pregnancy and cardiac injury, and refers for hyperbaric oxygen.",
       points: 3,
       critical: true,
@@ -352,6 +364,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Coordinates CritiCall, the hyperbaric physician, Ornge and obstetrics for a safe transfer.",
       points: 1,
       teaching: "HBO centres are few. Early calls let the chamber, crew and receiving obstetric team prepare.",
@@ -360,6 +373,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-a4",
       competency: "assessment",
+      criterion: "data",
       text: "Recognizes ECG changes and troponin rise as CO related myocardial injury and arranges serial monitoring and follow up.",
       points: 2,
       teaching: "Myocardial injury is common in moderate to severe CO poisoning and is linked to higher long term mortality.",
@@ -368,6 +382,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Involves obstetrics early with continuous fetal monitoring and left lateral tilt.",
       points: 1,
       teaching: "Fetal tachycardia and reduced variability signal fetal hypoxia. The obstetric team must be part of the plan.",
@@ -376,6 +391,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Prevents return to the house until it is cleared and arranges a safe place for the family to stay.",
       points: 3,
       critical: true,
@@ -385,6 +401,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Addresses the husband's concerns directly and keeps him and the child on oxygen with reassessment.",
       points: 1,
       teaching: "Worried family members may leave to deal with the house. Explain the danger in plain words and help with practical problems.",
@@ -393,6 +410,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Counsels on delayed neurological sequelae and arranges follow up for mother, pregnancy and child.",
       points: 1,
       teaching: "Delayed neurological sequelae can appear days to weeks later. Families should know what to watch for.",
@@ -401,6 +419,7 @@ export const carbonMonoxideFamily: OralCase = {
     {
       id: "cm-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Advises on CO alarms and home safety and notifies public health where required.",
       points: 1,
       teaching: "Ontario requires CO alarms in homes with fuel burning appliances. A short prevention talk protects the next family.",

@@ -7,6 +7,8 @@ export const saturdayNightNoBeds: OralCase = {
   title: "Saturday night with no beds",
   blueprint: "systems",
   alsoCovers: ["cardio", "neuro", "id"],
+  priorityTopic: "multiple-patients",
+  keyFeatures: [{ topic: "multiple-patients", n: 1 }, { topic: "multiple-patients", n: 2 }, { topic: "multiple-patients", n: 3 }, { topic: "multiple-patients", n: 4 }, { topic: "ischemic-heart-disease", n: 6 }, { topic: "cva", n: 3 }],
   summary: "Three time critical patients arrive at once into a department full of admitted patients.",
   durationMinutes: 15,
   stem:
@@ -389,6 +391,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-l1",
       competency: "leadership",
+      criterion: "approach",
       text: "Takes a quick overview of the whole department with the charge nurse before acting.",
       points: 1,
       teaching: "One minute of situational awareness prevents the leader from fixating on the loudest problem.",
@@ -397,6 +400,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Delegates each time critical patient to a named clinician and pathway rather than doing everything personally.",
       points: 3,
       critical: true,
@@ -406,6 +410,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-l3",
       competency: "leadership",
+      criterion: "plan",
       text: "Escalates to hospital administration with specific requests including moving admitted patients to inpatient hallways.",
       points: 3,
       critical: true,
@@ -415,6 +420,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-l4",
       competency: "leadership",
+      criterion: "plan",
       text: "Holds a team huddle and rebalances workload under pressure.",
       points: 1,
       teaching: "A brief huddle restores a shared plan and tells staff that their concerns have been heard and escalated.",
@@ -423,6 +429,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-m1",
       competency: "management",
+      criterion: "plan",
       text: "Personally assesses and treats the shocked patient nobody else is covering.",
       points: 2,
       teaching: "The patient in the hallway on a paramedic stretcher is the one most likely to be forgotten.",
@@ -431,6 +438,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-m2",
       competency: "management",
+      criterion: "plan",
       text: "Activates the cath lab and routes the STEMI directly there, with a first medical contact to device target under 90 minutes.",
       points: 2,
       teaching: "Direct to lab pathways avoid the crowded department. Aspirin should already be in, with anticoagulation per the interventional team.",
@@ -439,6 +447,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-m3",
       competency: "management",
+      criterion: "plan",
       text: "Sends the stroke patient directly to CT and gives tenecteplase 0.25 mg/kg to a maximum of 25 mg with blood pressure under 185/110.",
       points: 2,
       teaching: "Canadian targets are a median door to needle time of 30 minutes or less and 60 minutes or less in 90 percent of patients. Direct to CT pathways keep crowding off the critical path.",
@@ -447,6 +456,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-m4",
       competency: "management",
+      criterion: "plan",
       text: "Treats septic shock promptly with cultures, antibiotics within 1 hour, 30 mL/kg crystalloid and norepinephrine for a mean arterial pressure under 65.",
       points: 3,
       critical: true,
@@ -456,6 +466,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Arranges reassessment of waiting patients at CTAS intervals and re triages on change.",
       points: 2,
       teaching: "CTAS sets reassessment at every 15 minutes for level 2 and 30 minutes for level 3. Waiting patients deteriorate unseen.",
@@ -464,6 +475,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Uses closed loop communication with the stroke and cath lab teams and the paramedics.",
       points: 1,
       teaching: "Confirm who is doing what. Parallel pathways fail when two people each think the other made the call.",
@@ -472,6 +484,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Frames the escalation calmly with numbers and names the next step in the chain if needed.",
       points: 2,
       teaching: "Concrete data and specific asks get action. Anger without a request does not.",
@@ -480,6 +493,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Accepts the ambulance handover and releases the crew.",
       points: 2,
       teaching: "Offload delay leaves communities without ambulances. Once at the hospital, the patient is the hospital's responsibility.",
@@ -488,6 +502,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Uses medical directives at triage and a vertical rapid assessment zone to keep patients moving.",
       points: 1,
       teaching: "Starting tests at triage and seeing stable patients in chairs shortens waits without new beds.",
@@ -496,6 +511,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Checks in with distressed staff and plans a debrief.",
       points: 1,
       teaching: "Moral distress from working in unsafe conditions is common. Leaders should name it and act on it.",
@@ -504,6 +520,7 @@ export const saturdayNightNoBeds: OralCase = {
     {
       id: "sn-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Files safety reports and a written summary of the risk to leadership.",
       points: 1,
       teaching: "Crowding harms patients. Written reports and data make that harm visible and support system change.",

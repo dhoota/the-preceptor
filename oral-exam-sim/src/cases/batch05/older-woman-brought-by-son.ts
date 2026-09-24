@@ -7,6 +7,15 @@ export const olderWomanBroughtBySon: OralCase = {
   title: "Brought in by her son after a fall",
   blueprint: "geri",
   alsoCovers: ["ethics", "trauma"],
+  priorityTopic: "abuse-domestic",
+  keyFeatures: [
+    { topic: "abuse-domestic", n: 1 },
+    { topic: "abuse-domestic", n: 2 },
+    { topic: "abuse-domestic", n: 3 },
+    { topic: "abuse-domestic", n: 4 },
+    { topic: "abuse-domestic", n: 5 },
+    { topic: "abuse-domestic", n: 6 },
+  ],
   summary: "An 82 year old woman is brought in by her son with a sore arm after what he describes as a fall at home.",
   durationMinutes: 15,
   stem:
@@ -322,6 +331,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies red flags for physical abuse and neglect: delay, inconsistent history, bruises of different ages, grip marks, weight loss and poor hygiene.",
       points: 2,
       teaching: "Bruises on the inner arms, the trunk and in patterns are more concerning than bruises on bony prominences from falls. Bruise colour is a poor guide to age, so document without dating.",
@@ -330,6 +340,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-c1",
       competency: "communication",
+      criterion: "approach",
       text: "Interviews the patient alone using a routine, non accusing approach.",
       points: 3,
       critical: true,
@@ -339,6 +350,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Asks direct questions about harm, fear, money and neglect.",
       points: 1,
       teaching: "The Elder Abuse Suspicion Index uses short direct questions validated in primary care.",
@@ -347,6 +359,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-m1",
       competency: "management",
+      criterion: "data",
       text: "Completes a full medical assessment including CT head, fracture care, sodium and kidney function.",
       points: 2,
       teaching: "Abuse and neglect cause real medical illness. Treat it and document it.",
@@ -355,6 +368,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-m2",
       competency: "management",
+      criterion: "plan",
       text: "Documents injuries with a body map, measurements and photographs with consent.",
       points: 1,
       teaching: "Objective documentation supports later decisions and any legal process.",
@@ -363,6 +377,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Assesses her capacity for the specific decision rather than assuming incapacity from cognitive screening.",
       points: 3,
       critical: true,
@@ -372,6 +387,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "States that Ontario has no general mandatory reporting for capable community dwelling adults and respects her choice, while knowing the serious harm exception.",
       points: 2,
       teaching: "Privacy law permits disclosure without consent only to reduce a significant risk of serious bodily harm.",
@@ -380,6 +396,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits her for medical reasons and safety rather than discharging her with the suspected abuser.",
       points: 3,
       critical: true,
@@ -389,6 +406,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-c2",
       competency: "communication",
+      criterion: "plan",
       text: "De-escalates the son with security support and does not share her disclosure.",
       points: 1,
       teaching: "Keep yourself and the patient safe. Disclosure to the suspected abuser raises risk.",
@@ -397,6 +415,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Explains that a power of attorney for personal care acts only when the person is incapable.",
       points: 2,
       teaching: "A capable adult makes her own decisions, whatever documents a relative carries.",
@@ -405,6 +424,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-p4",
       competency: "professionalism",
+      criterion: "plan",
       text: "Describes mandatory reporting in long term care and retirement homes and the role of the Public Guardian and Trustee for incapable adults.",
       points: 2,
       teaching: "Reports go to the Director for long term care and to the Registrar for retirement homes. The Public Guardian and Trustee investigates serious adverse effects for adults who are incapable.",
@@ -413,6 +433,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Hands over the disclosure, her wishes, capacity and safety plan to the admitting team and social work.",
       points: 1,
       teaching: "Safety plans fail when the next team does not know the story.",
@@ -421,6 +442,7 @@ export const olderWomanBroughtBySon: OralCase = {
     {
       id: "ea-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Engages social work and the geriatric emergency management nurse early.",
       points: 1,
       teaching: "Elder abuse care is a team task. Specialist nurses and social work know local resources.",

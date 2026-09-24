@@ -1,9 +1,10 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { CASES } from "@/cases";
+import { SAMPS } from "@/samps";
 import { finishAttempt, updateDeckFromAttempt, review as reviewCard, type Attempt, type Deck, type SelfMark } from "@/engine";
-import { canOpen } from "@/lib/access";
-import { defaultAdapter, reconcileAccess, type PurchaseOutcome } from "@/lib/purchases";
-import { createRepo, DEFAULT_SETTINGS, type Settings } from "@/lib/storage";
+import { canOpenCase, canOpenSamp } from "@/lib/access";
+import { NO_ACCESS, defaultAdapter, reconcileAccess, type Access, type ProductKey, type PurchaseOutcome } from "@/lib/purchases";
+import { createRepo, DEFAULT_SETTINGS, type MockExam, type MockOral, type SampAttempt, type Settings } from "@/lib/storage";
 
 const repo = createRepo();
 const purchases = defaultAdapter();
@@ -13,16 +14,23 @@ interface AppState {
   attempts: Attempt[];
   deck: Deck;
   settings: Settings;
-  unlocked: boolean;
-  price: string | null;
+  access: Access;
+  prices: Partial<Record<ProductKey, string>>;
   busy: boolean;
+  sampAttempts: SampAttempt[];
+  mockExams: MockExam[];
+  mockOrals: MockOral[];
   canOpen(caseId: string): boolean;
+  canOpenSamp(sampId: string): boolean;
   saveAttempt(a: Attempt): Promise<void>;
   submitMarks(a: Attempt, marks: Record<string, SelfMark>): Promise<Attempt>;
   answerReview(key: string, recalled: boolean): Promise<void>;
   updateSettings(patch: Partial<Settings>): Promise<void>;
-  buy(): Promise<PurchaseOutcome>;
-  restore(): Promise<boolean | null>;
+  saveSampAttempts(list: SampAttempt[]): Promise<void>;
+  saveMockExam(m: MockExam): Promise<void>;
+  saveMockOral(m: MockOral): Promise<void>;
+  buy(product: ProductKey): Promise<PurchaseOutcome>;
+  restore(): Promise<Access | null>;
   resetProgress(): Promise<void>;
 }
 
@@ -33,26 +41,40 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const [attempts, setAttempts] = useState<Attempt[]>([]);
   const [deck, setDeck] = useState<Deck>({});
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
-  const [unlocked, setUnlocked] = useState(false);
-  const [price, setPrice] = useState<string | null>(null);
+  const [access, setAccess] = useState<Access>(NO_ACCESS);
+  const [prices, setPrices] = useState<Partial<Record<ProductKey, string>>>({});
   const [busy, setBusy] = useState(false);
+  const [sampAttempts, setSampAttempts] = useState<SampAttempt[]>([]);
+  const [mockExams, setMockExams] = useState<MockExam[]>([]);
+  const [mockOrals, setMockOrals] = useState<MockOral[]>([]);
 
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const [a, d, s, cached] = await Promise.all([repo.attempts(), repo.deck(), repo.settings(), repo.cachedUnlock()]);
+      const [a, d, s, cached, sa, me, mo] = await Promise.all([
+        repo.attempts(),
+        repo.deck(),
+        repo.settings(),
+        repo.cachedAccess(),
+        repo.sampAttempts(),
+        repo.mockExams(),
+        repo.mockOrals(),
+      ]);
       if (cancelled) return;
       setAttempts(a);
       setDeck(d);
       setSettings(s);
-      setUnlocked(cached);
+      setAccess(cached);
+      setSampAttempts(sa);
+      setMockExams(me);
+      setMockOrals(mo);
       setReady(true);
       // Store check runs after first paint. Offline keeps the cached state.
-      const access = await reconcileAccess(cached, purchases);
+      const now = await reconcileAccess(cached, purchases);
       if (cancelled) return;
-      setUnlocked(access);
-      if (access !== cached) await repo.setCachedUnlock(access);
-      setPrice(await purchases.price());
+      setAccess(now);
+      if (now.written !== cached.written || now.oral !== cached.oral) await repo.setCachedAccess(now);
+      setPrices(await purchases.prices());
     })();
     return () => {
       cancelled = true;
@@ -97,37 +119,61 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [settings],
   );
 
-  const grant = useCallback(async () => {
-    setUnlocked(true);
-    await repo.setCachedUnlock(true);
+  const saveSampAttempts = useCallback(async (list: SampAttempt[]) => {
+    setSampAttempts(await repo.saveSampAttempts(list));
   }, []);
 
-  const buy = useCallback(async () => {
-    setBusy(true);
-    try {
-      const r = await purchases.purchase();
-      if (r === "purchased") await grant();
-      return r;
-    } finally {
-      setBusy(false);
-    }
-  }, [grant]);
+  const saveMockExam = useCallback(async (m: MockExam) => {
+    setMockExams(await repo.saveMockExam(m));
+  }, []);
+
+  const saveMockOral = useCallback(async (m: MockOral) => {
+    setMockOrals(await repo.saveMockOral(m));
+  }, []);
+
+  const grant = useCallback(async (a: Access) => {
+    setAccess(a);
+    await repo.setCachedAccess(a);
+  }, []);
+
+  const buy = useCallback(
+    async (product: ProductKey) => {
+      setBusy(true);
+      try {
+        const r = await purchases.purchase(product);
+        if (r === "purchased") {
+          const now = (await purchases.check()) ?? access;
+          await grant({
+            written: now.written || access.written || product !== "oral",
+            oral: now.oral || access.oral || product !== "written",
+          });
+        }
+        return r;
+      } finally {
+        setBusy(false);
+      }
+    },
+    [access, grant],
+  );
 
   const restore = useCallback(async () => {
     setBusy(true);
     try {
       const r = await purchases.restore();
-      if (r) await grant();
+      if (r && (r.written || r.oral)) await grant({ written: r.written || access.written, oral: r.oral || access.oral });
       return r;
     } finally {
       setBusy(false);
     }
-  }, [grant]);
+  }, [access, grant]);
 
   const resetProgress = useCallback(async () => {
     await repo.resetProgress();
     setAttempts([]);
     setDeck({});
+    setSampAttempts([]);
+    setMockExams([]);
+    setMockOrals([]);
   }, []);
 
   const value = useMemo<AppState>(
@@ -136,19 +182,26 @@ export function AppProvider({ children }: { children: ReactNode }) {
       attempts,
       deck,
       settings,
-      unlocked,
-      price,
+      access,
+      prices,
       busy,
-      canOpen: (id: string) => canOpen(id, CASES, unlocked),
+      sampAttempts,
+      mockExams,
+      mockOrals,
+      canOpen: (id: string) => canOpenCase(id, CASES, access),
+      canOpenSamp: (id: string) => canOpenSamp(id, SAMPS, access),
       saveAttempt,
       submitMarks,
       answerReview,
       updateSettings,
+      saveSampAttempts,
+      saveMockExam,
+      saveMockOral,
       buy,
       restore,
       resetProgress,
     }),
-    [ready, attempts, deck, settings, unlocked, price, busy, saveAttempt, submitMarks, answerReview, updateSettings, buy, restore, resetProgress],
+    [ready, attempts, deck, settings, access, prices, busy, sampAttempts, mockExams, mockOrals, saveAttempt, submitMarks, answerReview, updateSettings, saveSampAttempts, saveMockExam, saveMockOral, buy, restore, resetProgress],
   );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

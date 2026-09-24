@@ -7,6 +7,14 @@ export const secondaryPneumothoraxCopd: OralCase = {
   title: "Worse after a coughing fit",
   blueprint: "resp",
   alsoCovers: ["procedures"],
+  priorityTopic: "sob",
+  keyFeatures: [
+    { topic: "sob", n: 2 },
+    { topic: "sob", n: 3 },
+    { topic: "asthma-copd", n: 4 },
+    { topic: "cqi", n: 1 },
+    { topic: "cqi", n: 2 },
+  ],
   summary: "A 66 year old man with a chronic lung condition becomes suddenly more breathless after coughing.",
   durationMinutes: 14,
   stem:
@@ -382,6 +390,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Considers pneumothorax early in a COPD patient with sudden pleuritic pain and unilateral findings.",
       points: 2,
       teaching: "Not every breathless COPD patient has an exacerbation. Sudden change after coughing is a pneumothorax clue.",
@@ -390,6 +399,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives oxygen to a target of 88 to 92 percent in a known CO2 retainer.",
       points: 1,
       teaching: "His pCO2 is 52. Controlled oxygen avoids worsening hypercapnia while treating hypoxemia.",
@@ -398,6 +408,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Uses a lung point to confirm pneumothorax and recognizes that absent sliding over a bulla is not diagnostic.",
       points: 2,
       teaching: "A lung point is close to 100 percent specific. Bullae, adhesions and emphysema can all abolish sliding.",
@@ -406,6 +417,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Distinguishes a large bulla from pneumothorax and avoids placing a drain into a bulla, using CT when uncertain.",
       points: 3,
       critical: true,
@@ -415,6 +427,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-m2",
       competency: "management",
+      criterion: "plan",
       text: "Places a small bore chest drain for a symptomatic secondary pneumothorax over 2 cm.",
       points: 2,
       teaching: "Secondary pneumothorax has higher mortality and lower aspiration success than primary. Breathless patients need a drain.",
@@ -423,6 +436,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits the patient rather than discharging with outpatient follow up.",
       points: 2,
       teaching: "All secondary pneumothoraces should be admitted. Patients with severe lung disease have little reserve.",
@@ -431,6 +445,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-p1",
       competency: "management",
+      criterion: "plan",
       text: "Describes safe drain insertion: consent, safe triangle, ultrasound, correct lidocaine dose and Seldinger technique.",
       points: 1,
       teaching: "The safe triangle keeps the drain away from the internal mammary artery, breast tissue and large muscles. Staying above the nipple line protects the liver and spleen. Keep plain lidocaine at or under 3 mg/kg.",
@@ -439,6 +454,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-m3",
       competency: "management",
+      criterion: "plan",
       text: "Uses an underwater seal without routine suction and never clamps a bubbling drain.",
       points: 1,
       teaching: "Clamping a drain with an air leak can cause tension. Suction is only added if the lung does not re expand.",
@@ -447,6 +463,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-r1",
       competency: "resuscitation",
+      criterion: "diagnosis",
       text: "Recognizes tension pneumothorax clinically and decompresses without waiting for an X ray.",
       points: 3,
       critical: true,
@@ -456,6 +473,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Stops positive pressure ventilation and uses the 4th or 5th intercostal space anterior or mid axillary line for decompression.",
       points: 2,
       teaching: "Positive pressure turns a simple pneumothorax into tension. The lateral site has a thinner chest wall in most adults.",
@@ -464,6 +482,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Seeks early thoracic surgery input for a persistent air leak and gives advice on smoking, flying and recurrence prevention.",
       points: 1,
       teaching: "Persistent leaks need surgical review. Recurrence after secondary pneumothorax is common, so definitive prevention is usually offered.",
@@ -472,6 +491,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explores the reason he wants to leave and engages social work to arrange care for his wife.",
       points: 2,
       teaching: "The best way to prevent a discharge against advice is to fix the reason for it. Ask what is making him want to go.",
@@ -480,6 +500,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Assesses capacity and explains the specific risks before accepting a refusal, and documents the discussion.",
       points: 2,
       critical: true,
@@ -489,6 +510,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Leads a blame free debrief and reports the BiPAP event through the safety system with a system fix.",
       points: 1,
       teaching: "The error came from a gap in process, not one person. A protocol check before NIV prevents repeat events.",
@@ -497,6 +519,7 @@ export const secondaryPneumothoraxCopd: OralCase = {
     {
       id: "sp-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Discloses the adverse event to the patient.",
       points: 1,
       teaching: "Patients have a right to know about harm during care. Disclose what happened and what is being done.",

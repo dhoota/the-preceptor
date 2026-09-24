@@ -7,6 +7,8 @@ export const flankPainRigors: OralCase = {
   title: "Flank pain and rigors on a Saturday night",
   blueprint: "id",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "infectious-diseases",
+  keyFeatures: [{ topic: "infectious-diseases", n: 2 }, { topic: "infectious-diseases", n: 8 }, { topic: "shock", n: 6 }, { topic: "shock", n: 7 }, { topic: "abdominal-pain", n: 4 }],
   summary: "A 58 year old woman with diabetes arrives hypotensive with left flank pain, fever and rigors.",
   durationMinutes: 14,
   stem:
@@ -362,6 +364,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Recognizes septic shock and draws blood and urine cultures before antibiotics given within one hour.",
       points: 2,
       teaching: "Cultures guide narrowing later. They should not delay antibiotics beyond the first hour in shock.",
@@ -370,6 +373,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives balanced crystalloid in boluses toward 30 mL/kg with reassessment and starts norepinephrine for MAP under 65.",
       points: 2,
       teaching: "Start norepinephrine early rather than giving unlimited fluid. It can run peripherally while central access is arranged.",
@@ -378,6 +382,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-m1",
       competency: "management",
+      criterion: "data",
       text: "Reviews prior cultures and gives meropenem 1 g IV for prior ESBL E. coli.",
       points: 2,
       teaching: "Prior resistant organisms in the past year predict the current one. Check old micro results before you choose.",
@@ -386,6 +391,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Uses bedside ultrasound early to look for hydronephrosis.",
       points: 1,
       teaching: "Hydronephrosis in a septic patient changes the plan from antibiotics to source control.",
@@ -394,6 +400,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Obtains non contrast CT tonight to define the stone and exclude gas or abscess.",
       points: 1,
       teaching: "CT shows stone size and position and rules out emphysematous pyelonephritis, which may need different surgery.",
@@ -402,6 +409,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-m2",
       competency: "management",
+      criterion: "diagnosis",
       text: "Identifies an obstructed infected kidney and arranges emergency decompression by stent or nephrostomy.",
       points: 3,
       critical: true,
@@ -411,6 +419,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Advocates to the consultant for decompression tonight with specific clinical data and a clear request.",
       points: 3,
       critical: true,
@@ -420,6 +429,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Names an escalation route such as the chief of surgery or transfer through CritiCall and documents the discussion.",
       points: 2,
       teaching: "Know your escalation path before you need it. Document times and content of consultant calls.",
@@ -428,6 +438,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-m3",
       competency: "management",
+      criterion: "plan",
       text: "Holds metformin, empagliflozin and candesartan and avoids NSAIDs in acute kidney injury.",
       points: 1,
       teaching: "Metformin in shock with AKI raises lactic acidosis risk. SGLT2 inhibitors are held in acute illness because of euglycemic ketoacidosis. NSAIDs can worsen renal injury.",
@@ -436,6 +447,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Titrates norepinephrine to MAP 65 or more and adds vasopressin as norepinephrine requirements rise.",
       points: 1,
       teaching: "Adding vasopressin is suggested when norepinephrine reaches about 0.25 to 0.5 mcg/kg/min.",
@@ -444,6 +456,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the blocked infected kidney and the need for drainage to her husband in plain words.",
       points: 1,
       teaching: "Families often think a urinary infection is minor. A clear picture of a blocked drain explains the urgency.",
@@ -452,6 +465,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to the ICU after decompression.",
       points: 2,
       teaching: "Bacteremic urosepsis can worsen for hours after drainage. Vasopressor need means ICU.",
@@ -460,6 +474,7 @@ export const flankPainRigors: OralCase = {
     {
       id: "ks-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "States that stent and nephrostomy are equivalent and that definitive stone treatment follows once the infection clears.",
       points: 1,
       teaching: "A randomized trial found no difference between stent and nephrostomy for obstruction with infection. Use the fastest available option.",

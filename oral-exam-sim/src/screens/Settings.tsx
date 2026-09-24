@@ -23,7 +23,7 @@ export function Settings({ go }: { go: Go }) {
 
   async function restore() {
     const r = await app.restore();
-    setMsg(r ? "Purchase restored. Every case is open." : r === false ? "No previous purchase found." : "Could not reach the store. Try again later.");
+    setMsg(r ? (r.written || r.oral ? "Purchases restored." : "No previous purchase found.") : "Could not reach the store. Try again later.");
   }
 
   return (
@@ -80,8 +80,10 @@ export function Settings({ go }: { go: Go }) {
       <section className="section">
         <span className="label">Purchase</span>
         <div className="row">
-          <span>{app.unlocked ? "Full case bank unlocked." : "Free sample. Two cases open."}</span>
-          {!app.unlocked && (
+          <span>
+            Written: {app.access.written ? "full access" : "free sample"}. Oral: {app.access.oral ? "full access" : "free sample"}.
+          </span>
+          {!(app.access.written && app.access.oral) && (
             <button className="btn small" onClick={() => go({ name: "paywall" })}>
               Buy
             </button>
@@ -97,10 +99,20 @@ export function Settings({ go }: { go: Go }) {
       </section>
 
       <section className="section">
+        <span className="label">Exam</span>
+        <div className="row">
+          <span>Official CFPC resources</span>
+          <button className="btn small quiet" onClick={() => go({ name: "resources" })}>
+            Open
+          </button>
+        </div>
+      </section>
+
+      <section className="section">
         <span className="label">About</span>
         <div className="row">
           <span>Support</span>
-          <button className="linkbtn" onClick={() => open(`mailto:${SUPPORT_EMAIL}?subject=Preceptor%20Oral%20${APP_VERSION}`)}>
+          <button className="linkbtn" onClick={() => open(`mailto:${SUPPORT_EMAIL}?subject=Preceptor%20CCFP-EM%20${APP_VERSION}`)}>
             {SUPPORT_EMAIL}
           </button>
         </div>
@@ -117,7 +129,7 @@ export function Settings({ go }: { go: Go }) {
           </button>
         </div>
         <p className="muted small" style={{ marginTop: 14 }}>
-          Preceptor: Oral is an independent study tool. It is not affiliated with or endorsed by the College of Family
+          Preceptor: CCFP-EM is an independent study tool. It is not affiliated with or endorsed by the College of Family
           Physicians of Canada. It is for education only and is not medical advice. Cases are original and written for
           simulation. Everything stays on this device. The app collects no personal data.
         </p>

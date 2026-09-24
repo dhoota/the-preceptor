@@ -7,6 +7,14 @@ export const psychosisMedicalCause: OralCase = {
   title: "Strange behaviour for three days",
   blueprint: "psych",
   alsoCovers: ["neuro", "id", "ethics"],
+  priorityTopic: "delirium-agitation",
+  keyFeatures: [
+    { topic: "delirium-agitation", n: 1 },
+    { topic: "delirium-agitation", n: 2 },
+    { topic: "delirium-agitation", n: 5 },
+    { topic: "infectious-diseases", n: 1 },
+    { topic: "seizures", n: 4 },
+  ],
   summary: "A 46 year old man with no psychiatric history is paranoid and acting oddly, and triage has called the crisis team.",
   durationMinutes: 15,
   stem:
@@ -384,6 +392,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes delirium rather than primary psychosis from inattention, disorientation, fever and fluctuation.",
       points: 3,
       critical: true,
@@ -393,6 +402,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies olfactory hallucinations and the staring spell as temporal lobe features.",
       points: 2,
       teaching: "HSV favours the temporal lobes. Smell hallucinations and focal seizures are clues.",
@@ -401,6 +411,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Orders a broad workup including CT then LP with HSV PCR, blood cultures, metabolic tests, HIV and syphilis serology, MRI and EEG.",
       points: 2,
       teaching: "Encephalitis workup is broad. MRI is the most sensitive imaging test and EEG finds nonconvulsive seizures.",
@@ -409,6 +420,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-a4",
       competency: "assessment",
+      criterion: "data",
       text: "Interprets the CSF as viral encephalitis and knows an early negative HSV PCR does not exclude it.",
       points: 2,
       teaching: "PCR can be negative in the first 72 hours. Repeat the LP if suspicion stays high.",
@@ -417,6 +429,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-m1",
       competency: "management",
+      criterion: "plan",
       text: "Starts acyclovir 10 mg/kg IV every 8 hours without waiting for LP, PCR or MRI.",
       points: 3,
       critical: true,
@@ -426,6 +439,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-m2",
       competency: "management",
+      criterion: "plan",
       text: "Covers bacterial meningitis with ceftriaxone 2 g IV, vancomycin and dexamethasone 10 mg IV until the CSF excludes it.",
       points: 2,
       teaching: "Fever and altered mental status can be bacterial meningitis. Give dexamethasone before or with the first antibiotic dose.",
@@ -434,6 +448,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Manages the airway during the seizure with positioning, suction, oxygen and a check of glucose.",
       points: 1,
       teaching: "Protect the airway and correct hypoxia while you give drugs.",
@@ -442,6 +457,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-m3",
       competency: "management",
+      criterion: "plan",
       text: "Treats the seizure with lorazepam 4 mg IV repeated once, then a second line agent such as levetiracetam 60 mg/kg to a maximum of 4500 mg.",
       points: 3,
       critical: true,
@@ -451,6 +467,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Assesses capacity for the LP, finds him incapable, and obtains consent from his wife as substitute decision maker.",
       points: 2,
       teaching: "Capacity is specific to each decision. A spouse comes after a guardian, an attorney for personal care and a board appointed representative on the Health Care Consent Act list.",
@@ -459,6 +476,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Knows a Form 1 does not authorize treatment and explains each step to the patient even when he is incapable.",
       points: 1,
       teaching: "The Mental Health Act allows detention for assessment, not treatment. Medical care needs consent or an emergency.",
@@ -467,6 +485,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains to his wife that this is a brain infection, not a mental illness, and is honest about prognosis.",
       points: 1,
       teaching: "Families are frightened by psychosis. Naming the cause and the treatment reassures them.",
@@ -475,6 +494,7 @@ export const psychosisMedicalCause: OralCase = {
     {
       id: "ps-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU or a monitored bed with neurology input and transfers through CritiCall if EEG is not available.",
       points: 2,
       teaching: "Encephalitis with seizures needs monitoring and EEG. A psychiatric unit is not the right place.",

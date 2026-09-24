@@ -7,6 +7,14 @@ export const sedationShoulderReduction: OralCase = {
   title: "A fall on the curling ice",
   blueprint: "procedures",
   alsoCovers: ["trauma", "comm"],
+  priorityTopic: "analgesia-sedation",
+  keyFeatures: [
+    { topic: "analgesia-sedation", n: 2 },
+    { topic: "analgesia-sedation", n: 5 },
+    { topic: "analgesia-sedation", n: 6 },
+    { topic: "msk", n: 5 },
+    { topic: "msk", n: 8 },
+  ],
   summary: "A 46 year old man with a painful shoulder after a fall needs a procedure in a busy department.",
   durationMinutes: 13,
   stem:
@@ -386,6 +394,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Documents axillary nerve sensation and distal neurovascular status before any reduction attempt.",
       points: 2,
       teaching: "Axillary nerve injury is common with anterior dislocation. A pre reduction exam shows whether a deficit was caused by the injury or the reduction.",
@@ -394,6 +403,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives early analgesia and tries a technique without sedation, such as external rotation, Cunningham or FARES.",
       points: 2,
       teaching: "Many anterior dislocations reduce without sedation. This avoids most sedation risk in a patient with sleep apnea.",
@@ -402,6 +412,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies sedation risk factors: sleep apnea, obesity, Mallampati 3 and a beard.",
       points: 2,
       teaching: "These predict airway obstruction and difficult mask ventilation. Plan the rescue before giving the drug.",
@@ -410,6 +421,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Obtains informed consent and does not delay sedation for fasting time alone.",
       points: 1,
       teaching: "ACEP advises that emergency sedation should not be delayed based on fasting time. Consent should cover the airway risks and the alternatives.",
@@ -418,6 +430,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Assigns a dedicated clinician to monitor, with capnography, oxygen, suction and rescue airway equipment at the bedside.",
       points: 3,
       critical: true,
@@ -427,6 +440,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-m2",
       competency: "management",
+      criterion: "plan",
       text: "Doses propofol on lean or adjusted weight and titrates small boluses, or uses a ketamine and propofol combination.",
       points: 2,
       teaching: "Propofol dosed on total weight in obesity causes overdose. Titration reduces apnea and hypotension.",
@@ -435,6 +449,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Responds to apnea at once with a stop, jaw thrust, adjuncts and bag mask ventilation, and does not wait for desaturation or rely on naloxone.",
       points: 3,
       critical: true,
@@ -444,6 +459,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Repeats the neurovascular exam and obtains a post reduction X ray.",
       points: 1,
       teaching: "Confirm reduction and rule out a fracture caused by the manoeuvre. Document nerve function again.",
@@ -452,6 +468,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Provides a sling and arranges orthopedic or sports medicine follow up for a recurrent dislocation over age 40.",
       points: 1,
       teaching: "Rotator cuff tears are more common after dislocation over 40. Recurrence may need surgical assessment.",
@@ -460,6 +477,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Discharges only when at baseline, with a responsible adult, no driving until the next day, and CPAP tonight.",
       points: 3,
       critical: true,
@@ -469,6 +487,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Tells the patient about the apnea event, what was done and what it means for future sedation.",
       points: 2,
       teaching: "Patients should hear about events during their care. This one matters for future anesthesia.",
@@ -477,6 +496,7 @@ export const sedationShoulderReduction: OralCase = {
     {
       id: "sd-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents drugs, doses, the event and the response, and reports it through the hospital safety system.",
       points: 1,
       teaching: "Reporting sedation events improves systems. Clear records protect the patient and the team.",

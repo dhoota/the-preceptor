@@ -1,76 +1,97 @@
 import { useState } from "react";
 import { CASES } from "@/cases";
-import { FREE_CASE_COUNT } from "@/lib/access";
-import { FALLBACK_PRICE, PRIVACY_URL, TERMS_URL } from "@/lib/constants";
-import { isNative, keysConfigured } from "@/lib/purchases";
+import { SAMPS } from "@/samps";
+import { PRIORITY_TOPICS } from "@/blueprint/priorityTopics";
+import { FREE_CASE_COUNT, FREE_SAMP_TOPICS } from "@/lib/access";
+import { PRIVACY_URL, TERMS_URL } from "@/lib/constants";
+import { PRODUCTS, isNative, keysConfigured, type ProductKey } from "@/lib/purchases";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
-export function Paywall({ go }: { go: Go }) {
+const TIERS: { key: ProductKey; name: string; body: string }[] = [
+  { key: "complete", name: "Complete", body: "The written SAMP bank and the oral simulator. Best value for a first attempt." },
+  { key: "written", name: "Written only", body: "Every SAMP, practice by topic and timed mock exams." },
+  { key: "oral", name: "Oral only", body: "Every oral case, 12 minute stations and the four station mock oral." },
+];
+
+export function Paywall({ go, focus }: { go: Go; focus?: "written" | "oral" }) {
   const app = useApp();
   const [msg, setMsg] = useState<string | null>(null);
+  const { written, oral } = app.access;
 
-  if (app.unlocked) {
+  if (written && oral) {
     return (
       <div className="pay">
-        <h1>Every case is open.</h1>
+        <h1>Everything is open.</h1>
         <p className="muted" style={{ marginTop: 10 }}>
           Thank you for supporting independent exam prep.
         </p>
         <div className="actions">
           <button className="btn" onClick={() => go({ name: "home" })}>
-            Go to cases
+            Go to the oral cases
           </button>
         </div>
       </div>
     );
   }
 
-  async function buy() {
+  // Offer what the candidate does not own yet. Complete only if they own neither.
+  const offers = TIERS.filter((t) => (t.key === "complete" ? !written && !oral : t.key === "written" ? !written : !oral)).sort(
+    (a, b) => Number(b.key === focus) - Number(a.key === focus),
+  );
+
+  async function buy(key: ProductKey) {
     setMsg(null);
-    const r = await app.buy();
-    if (r === "purchased") go({ name: "home" });
+    const r = await app.buy(key);
+    if (r === "purchased") go(key === "oral" ? { name: "home" } : { name: "written" });
     else if (r === "failed") setMsg("The purchase did not go through. You have not been charged.");
     else if (r === "unavailable")
-      setMsg(
-        isNative() && !keysConfigured()
-          ? "Purchases are not set up in this build yet."
-          : "Purchases are available in the iOS and Android apps.",
-      );
+      setMsg(isNative() && !keysConfigured() ? "Purchases are not set up in this build yet." : "Purchases are available in the iOS and Android apps.");
   }
 
   async function restore() {
     setMsg(null);
     const r = await app.restore();
-    if (r) go({ name: "home" });
-    else setMsg(r === false ? "No previous purchase found for this store account." : "Could not reach the store. Try again later.");
+    if (r && (r.written || r.oral)) go({ name: "home" });
+    else setMsg(r ? "No previous purchase found for this store account." : "Could not reach the store. Try again later.");
   }
 
   return (
     <div className="pay">
-      <div className="label">Full case bank</div>
-      <h1 style={{ marginTop: 6 }}>Open every case.</h1>
+      <div className="label">Preceptor: CCFP-EM</div>
+      <h1 style={{ marginTop: 6 }}>Both components. One purchase.</h1>
       <p className="muted" style={{ marginTop: 10 }}>
-        You have {FREE_CASE_COUNT} free cases. One purchase opens all {CASES.length} and every case added later.
+        {SAMPS.length} original SAMPs and {CASES.length} oral cases, mapped to all {PRIORITY_TOPICS.length} CFPC priority
+        topics. {FREE_CASE_COUNT} oral cases and {FREE_SAMP_TOPICS} SAMPs are free to try.
       </p>
 
       <ul>
-        <li>Branching examiner scripts that respond to your decisions</li>
-        <li>Timed questions and an exam day mode with the examiner read aloud</li>
-        <li>Model answers and a marking rubric for every case</li>
-        <li>Weak area tracking and spaced review of the points you miss</li>
+        <li>SAMPs in the CFPC formats, scored against examiner style answer keys</li>
+        <li>Timed four hour mock exam, and practice by priority topic</li>
+        <li>Structured oral stations of 12 minutes, and a four station mock oral</li>
+        <li>Coverage and scores for every priority topic and key feature</li>
         <li>Works fully offline. No account. Nothing leaves your device.</li>
       </ul>
 
-      <div className="price">{app.price ?? FALLBACK_PRICE}</div>
-      <p className="muted small" style={{ marginTop: 6 }}>
+      {offers.map((t) => (
+        <div key={t.key} className={`tier ${t.key === "complete" ? "best" : ""}`}>
+          <div className="tierhead">
+            <span className="serif tiername">{t.name}</span>
+            <span className="mono price">{app.prices[t.key] ?? PRODUCTS[t.key].fallbackPrice}</span>
+          </div>
+          <p className="muted small" style={{ margin: "4px 0 10px" }}>
+            {t.body}
+          </p>
+          <button className={`btn block ${t.key === "complete" ? "" : "ghost"}`} disabled={app.busy} onClick={() => buy(t.key)}>
+            {app.busy ? "Working" : `Buy ${t.name.toLowerCase()}`}
+          </button>
+        </div>
+      ))}
+
+      <p className="muted small" style={{ marginTop: 10 }}>
         One time purchase. No subscription. Restores on any device signed in to the same store account.
       </p>
-
-      <div className="actions" style={{ flexDirection: "column" }}>
-        <button className="btn block" disabled={app.busy} onClick={buy}>
-          {app.busy ? "Working" : "Buy the full case bank"}
-        </button>
+      <div className="actions">
         <button className="btn ghost block" disabled={app.busy} onClick={restore}>
           Restore purchase
         </button>

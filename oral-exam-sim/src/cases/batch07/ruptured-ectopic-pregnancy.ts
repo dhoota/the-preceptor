@@ -7,6 +7,15 @@ export const rupturedEctopicPregnancy: OralCase = {
   title: "Found on the washroom floor at work",
   blueprint: "obgyn",
   alsoCovers: ["resus"],
+  priorityTopic: "first-trimester-bleeding",
+  keyFeatures: [
+    { topic: "first-trimester-bleeding", n: 1 },
+    { topic: "first-trimester-bleeding", n: 2 },
+    { topic: "first-trimester-bleeding", n: 4 },
+    { topic: "first-trimester-bleeding", n: 5 },
+    { topic: "abdominal-pain", n: 4 },
+    { topic: "shock", n: 3 },
+  ],
   summary: "A 27 year old woman collapses at work and arrives pale, tachycardic and hypotensive.",
   durationMinutes: 14,
   stem:
@@ -367,6 +376,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Considers ruptured ectopic pregnancy in any woman of reproductive age with syncope, abdominal pain or shock.",
       points: 2,
       teaching: "Patient report of no pregnancy does not rule it out. Every woman of reproductive age with shock or syncope needs an hCG.",
@@ -375,6 +385,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Performs a bedside urine hCG and bedside ultrasound in the resuscitation room rather than sending her to imaging.",
       points: 3,
       critical: true,
@@ -384,6 +395,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-a3",
       competency: "assessment",
+      criterion: "data",
       text: "States that free fluid in the right upper quadrant indicates a large hemoperitoneum and that no hCG level rules out rupture.",
       points: 2,
       teaching: "Fluid in Morison pouch in early pregnancy predicts the need for surgery. Ectopic pregnancies rupture at low and high hCG values.",
@@ -392,6 +404,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Obtains two large bore IVs, sends group and crossmatch and starts uncrossmatched O negative red cells early.",
       points: 2,
       teaching: "Start blood as soon as shock is recognized. O negative units protect a woman of childbearing age from Rh sensitization.",
@@ -400,6 +413,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Activates the massive hemorrhage protocol and gives red cells, plasma and platelets in a balanced ratio.",
       points: 3,
       critical: true,
@@ -409,6 +423,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Limits crystalloid and uses a permissive systolic target of about 80 to 90 mmHg until surgical control.",
       points: 2,
       teaching: "Large volume crystalloid and high pressure targets increase bleeding before the vessel is controlled.",
@@ -417,6 +432,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Replaces calcium and fibrinogen during transfusion, for example calcium chloride 1 g IV and fibrinogen above 2 g/L.",
       points: 1,
       teaching: "Citrate in blood products binds calcium. Low ionized calcium worsens clotting and cardiac contractility.",
@@ -425,6 +441,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-r5",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids induction in the ED if possible and, if required, resuscitates first and uses a reduced dose induction agent.",
       points: 2,
       teaching: "Induction and positive pressure in hemorrhagic shock can cause arrest. Intubate in the OR with the surgeon ready when you can.",
@@ -433,6 +450,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-m1",
       competency: "management",
+      criterion: "plan",
       text: "Moves the patient to the operating room for surgical control without waiting for further imaging.",
       points: 3,
       critical: true,
@@ -442,6 +460,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives Rh immune globulin, for example 300 mcg IM or IV, to an Rh D negative patient with an ectopic pregnancy.",
       points: 2,
       teaching: "Rh D negative patients with an ectopic pregnancy should receive Rh immune globulin within 72 hours to prevent alloimmunization.",
@@ -450,6 +469,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Declines the request for CT respectfully, shares objective findings and asks clearly for the operating room.",
       points: 2,
       teaching: "State the findings, the risk of travel and the specific request. The bedside physician owns the safety of the patient in the department.",
@@ -458,6 +478,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the diagnosis, loss of the pregnancy and fertility outlook to the partner honestly and with compassion.",
       points: 2,
       teaching: "Use plain words and name the loss. Many patients conceive after an ectopic pregnancy, but detail belongs to the surgeon after surgery.",
@@ -466,6 +487,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover to the OR team with products given, labs and ongoing needs.",
       points: 1,
       teaching: "A clear handover keeps the massive hemorrhage protocol running without gaps between teams.",
@@ -474,6 +496,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Respects patient confidentiality when speaking with the partner and checks what the patient wants shared.",
       points: 1,
       teaching: "Pregnancy information belongs to the patient. Share what is needed for her care and what she agrees to share.",
@@ -482,6 +505,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Mobilizes gynecology, anesthesia and the operating room early and in parallel with resuscitation.",
       points: 2,
       teaching: "Call the surgeon, anesthesia and OR together. Each call made in parallel shortens time to hemorrhage control.",
@@ -490,6 +514,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Leads a debrief and identifies system changes, such as early OR notification and a no travel rule for unstable patients.",
       points: 1,
       teaching: "Delays in hemorrhage cases are usually system delays. Debriefs turn them into fixes.",
@@ -498,6 +523,7 @@ export const rupturedEctopicPregnancy: OralCase = {
     {
       id: "ec-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges direct transfer from the resuscitation room to the operating room with the protocol and monitoring continuing.",
       points: 1,
       teaching: "The patient should go from resus to the OR with blood running and an escort, not through a ward or imaging.",

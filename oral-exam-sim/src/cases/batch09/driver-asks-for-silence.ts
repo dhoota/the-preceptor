@@ -7,6 +7,8 @@ export const driverAsksForSilence: OralCase = {
   title: "A driver who asks you to keep it quiet",
   blueprint: "ethics",
   alsoCovers: ["neuro", "comm"],
+  priorityTopic: "seizures",
+  keyFeatures: [{ topic: "seizures", n: 1 }, { topic: "seizures", n: 5 }, { topic: "seizures", n: 6 }],
   summary: "A 49 year old man brought in by ambulance after an episode at home is back to normal and needs to be at work this afternoon.",
   durationMinutes: 13,
   stem:
@@ -362,6 +364,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Distinguishes seizure from mimics, looks for provoking causes and obtains an ECG and collateral history.",
       points: 2,
       teaching: "Collateral history is the key test in seizure. It often reveals earlier events the patient cannot recall.",
@@ -370,6 +373,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes the staring spells as likely focal seizures and names probable epilepsy.",
       points: 2,
       teaching: "Brief unresponsiveness with automatisms and amnesia suggests focal impaired awareness seizures. Two unprovoked seizures more than 24 hours apart define epilepsy.",
@@ -378,6 +382,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-m1",
       competency: "management",
+      criterion: "plan",
       text: "Arranges expedited neurology follow up and discusses antiseizure treatment with neurology.",
       points: 1,
       teaching: "Recurrent unprovoked seizures usually warrant treatment. Starting it is best coordinated with neurology.",
@@ -386,6 +391,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Advises him clearly not to drive any vehicle until cleared.",
       points: 2,
       teaching: "Advice must cover every vehicle. Seizure risk does not depend on the licence class.",
@@ -394,6 +400,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Tells him directly that a report is required before making it.",
       points: 1,
       teaching: "Honest notice preserves trust. Patients who find out later feel betrayed.",
@@ -402,6 +409,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Reports to the Ministry of Transportation despite his objection and without delay.",
       points: 3,
       critical: true,
@@ -411,6 +419,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Responds with empathy to the impact on his job and family and offers practical support.",
       points: 2,
       teaching: "Losing a licence is a major loss. Acknowledge it and offer social work, while staying clear about the duty.",
@@ -419,6 +428,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Uses the Ministry medical condition report form, documents the report and knows good faith reporting is protected.",
       points: 1,
       teaching: "The report goes to the Ministry, which decides the licence. The Highway Traffic Act protects physicians who report in good faith.",
@@ -427,6 +437,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Stays calm when threatened with a complaint and does not bargain over the report.",
       points: 2,
       teaching: "A patient may complain. A mandatory duty cannot be traded away. Call the CMPA if you are worried.",
@@ -435,6 +446,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Prevents him from driving home and knows that disclosure to prevent serious harm may be justified if he intends to drive the bus.",
       points: 3,
       critical: true,
@@ -444,6 +456,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Gives written seizure safety advice, return precautions and follow up for MRI, EEG and neurology.",
       points: 1,
       teaching: "Seizure safety covers water, heights and machinery as well as driving. Give it in writing to the patient and family.",
@@ -452,6 +465,7 @@ export const driverAsksForSilence: OralCase = {
     {
       id: "dr-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Does not contact his employer without consent.",
       points: 1,
       teaching: "The legal route is the Ministry report. Telling an employer without consent breaches privacy.",

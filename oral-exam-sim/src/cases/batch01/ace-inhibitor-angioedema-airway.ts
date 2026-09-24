@@ -7,6 +7,13 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
   title: "A thick voice before breakfast",
   blueprint: "resus",
   alsoCovers: ["procedures", "resp"],
+  priorityTopic: "airway",
+  keyFeatures: [
+    { topic: "airway", n: 2 },
+    { topic: "airway", n: 3 },
+    { topic: "airway", n: 1 },
+    { topic: "sob", n: 1 },
+  ],
   summary: "A 62 year old woman wakes with facial swelling and a muffled voice that is getting worse.",
   durationMinutes: 14,
   stem:
@@ -341,6 +348,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Recognizes a threatened airway from tongue and floor of mouth swelling, drooling and voice change.",
       points: 2,
       teaching: "Tongue, floor of mouth and laryngeal involvement predict the need for airway intervention. Lip swelling alone is lower risk.",
@@ -349,6 +357,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls anesthesia and ENT early and moves the patient to resus.",
       points: 2,
       teaching: "Help should be called while there is still time. The most experienced operator should manage an anticipated difficult airway.",
@@ -357,6 +366,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-r1",
       competency: "resuscitation",
+      criterion: "approach",
       text: "Keeps the patient upright, assesses the larynx by nasopharyngoscopy, and marks the cricothyroid membrane before any intervention.",
       points: 3,
       critical: true,
@@ -366,6 +376,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies bradykinin mediated ACE inhibitor angioedema and distinguishes it from histamine mediated swelling and hereditary angioedema.",
       points: 2,
       teaching: "No urticaria, no itch and ACE inhibitor use point to bradykinin. Onset can occur years after starting the drug.",
@@ -374,6 +385,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-m1",
       competency: "management",
+      criterion: "plan",
       text: "States that evidence for icatibant, C1 inhibitor and plasma is weak and does not let drug therapy delay airway management.",
       points: 2,
       teaching: "A randomized trial found icatibant no better than placebo for ACE inhibitor angioedema. The airway plan is the treatment.",
@@ -382,6 +394,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Chooses awake nasal flexible bronchoscopic intubation with the patient upright and spontaneous breathing kept.",
       points: 3,
       critical: true,
@@ -391,6 +404,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-m2",
       competency: "management",
+      criterion: "plan",
       text: "Uses topical lidocaine within 9 mg/kg lean body weight, a nasal vasoconstrictor, minimal sedation and high flow nasal oxygen.",
       points: 2,
       teaching: "Good topical anesthesia matters more than sedation. Over sedation can cause obstruction and apnea.",
@@ -399,6 +413,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Prepares a double setup with a scalpel, bougie and 6.0 tube open and a named trigger for a surgical airway.",
       points: 3,
       critical: true,
@@ -408,6 +423,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Briefs the team on plan A and the surgical backup and assigns a second operator to the neck.",
       points: 1,
       teaching: "A shared mental model reduces hesitation. The person at the neck should know exactly when to cut.",
@@ -416,6 +432,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU and plans extubation only after swelling resolves with a cuff leak and scope check.",
       points: 1,
       teaching: "ACE inhibitor angioedema usually settles over 24 to 72 hours. Early extubation risks a harder second airway.",
@@ -424,6 +441,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-m3",
       competency: "management",
+      criterion: "plan",
       text: "Stops the ACE inhibitor permanently, records it as an allergy and advises caution with ARBs.",
       points: 1,
       teaching: "Recurrence is common if the drug is continued. ARBs carry a small risk of angioedema and should be chosen carefully.",
@@ -432,6 +450,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Responds to the daughter with empathy and an accurate explanation without blaming the prescriber.",
       points: 2,
       teaching: "Explain that the reaction is rare and unpredictable. Blame without facts damages trust in ongoing care.",
@@ -440,6 +459,7 @@ export const aceInhibitorAngioedemaAirway: OralCase = {
     {
       id: "ae-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Reports the serious adverse drug reaction to Health Canada and informs the family physician.",
       points: 1,
       teaching: "Since December 2019, Canadian hospitals must report serious adverse drug reactions to Health Canada in writing within 30 days of first documenting them. The duty sits with the hospital, so use its reporting process.",

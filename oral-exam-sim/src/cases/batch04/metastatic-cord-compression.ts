@@ -7,6 +7,12 @@ export const metastaticCordCompression: OralCase = {
   title: "Back pain and legs that give way",
   blueprint: "neuro",
   alsoCovers: ["systems"],
+  priorityTopic: "msk",
+  keyFeatures: [
+    { topic: "msk", n: 7 },
+    { topic: "analgesia-sedation", n: 3 },
+    { topic: "cqi", n: 1 },
+  ],
   summary: "A 72 year old man with known cancer has weeks of back pain and two falls today.",
   durationMinutes: 14,
   stem:
@@ -307,6 +313,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Recognizes red flags for metastatic cord compression: known bone metastases, thoracic pain, pain lying flat, band like pain.",
       points: 2,
       teaching: "Pain often precedes deficits by weeks. Thoracic location and night pain in a patient with cancer should trigger urgent imaging.",
@@ -315,6 +322,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Performs a full neurological exam with a sensory level, reflexes, plantars, perianal sensation and bladder scan.",
       points: 2,
       teaching: "A documented baseline exam lets you detect progression. Retention with a sensory level means the cord or conus is involved.",
@@ -323,6 +331,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-m1",
       competency: "management",
+      criterion: "plan",
       text: "Catheterizes for retention and gives titrated IV opioid analgesia.",
       points: 1,
       teaching: "Unrecognized retention causes pain, delirium and kidney injury. Good analgesia is needed to lie still for MRI.",
@@ -331,6 +340,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives dexamethasone 10 mg IV now then 16 mg per day in divided doses, without waiting for MRI, with PPI and glucose monitoring.",
       points: 3,
       critical: true,
@@ -340,6 +350,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-m3",
       competency: "management",
+      criterion: "data",
       text: "Obtains urgent whole spine MRI, within 24 hours and sooner with progressive deficits, and does not rely on X rays or CT alone.",
       points: 3,
       critical: true,
@@ -349,6 +360,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-m4",
       competency: "management",
+      criterion: "plan",
       text: "Keeps flat with log roll until stability is assessed and prevents pressure injury and constipation.",
       points: 1,
       teaching: "The SINS score helps the surgeon judge instability. Until then, pain on movement suggests the spine may be unstable.",
@@ -357,6 +369,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges transfer the same night to a centre with MRI, spine surgery and radiation oncology.",
       points: 3,
       critical: true,
@@ -366,6 +379,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Presents progression, prognosis and CT stability features to the spine surgeon and requests a joint decision with radiation oncology.",
       points: 2,
       teaching: "Decompressive surgery plus radiation improved walking compared with radiation alone in selected patients with a single level of compression.",
@@ -374,6 +388,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Answers his question about walking honestly, including uncertainty and why speed matters.",
       points: 1,
       teaching: "Patients handle honest uncertainty better than false reassurance. Link the urgency to the outcome they care about.",
@@ -382,6 +397,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Confirms goals of care and his wish for active treatment and involves his wife with his permission.",
       points: 1,
       teaching: "Treatment of cord compression ranges from surgery to palliation. Goals guide the choice and should be confirmed early.",
@@ -390,6 +406,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Identifies the missed early warning signs as a system issue and proposes collegial feedback and a local urgent imaging pathway.",
       points: 1,
       teaching: "Delays in diagnosis are common. Patient education and a clear pathway for urgent MRI shorten the time to treatment.",
@@ -398,6 +415,7 @@ export const metastaticCordCompression: OralCase = {
     {
       id: "cc-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Considers the differential including epidural abscess, pathological fracture, cauda equina and hypercalcemia.",
       points: 1,
       teaching: "Fever or injection drug use points to abscess. A low conus lesion gives mixed upper and lower motor signs. Calcium is easy to check.",

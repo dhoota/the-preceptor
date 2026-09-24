@@ -7,6 +7,14 @@ export const salicylateToxicity: OralCase = {
   title: "Vomiting and breathing fast after a bad week",
   blueprint: "tox",
   alsoCovers: ["psych"],
+  priorityTopic: "tox",
+  keyFeatures: [
+    { topic: "tox", n: 4 },
+    { topic: "tox", n: 5 },
+    { topic: "tox", n: 6 },
+    { topic: "tox", n: 7 },
+    { topic: "suicide-risk", n: 3 },
+  ],
   summary: "A 36 year old man arrives vomiting and breathing quickly after taking pills from his medicine cabinet.",
   durationMinutes: 15,
   stem:
@@ -360,6 +368,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes salicylate toxicity from the history, tinnitus, vomiting, fever and hyperpnea, and estimates the dose in mg/kg.",
       points: 2,
       teaching: "Tinnitus, vomiting and rapid breathing are early clues. Over 150 mg/kg is toxic and over 500 mg/kg can be lethal.",
@@ -368,6 +377,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Interprets a mixed respiratory alkalosis and high anion gap metabolic acidosis and a rising level from delayed absorption.",
       points: 2,
       teaching: "Enteric coated or large ingestions can peak many hours later. Serial levels every 2 hours until they fall.",
@@ -376,6 +386,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies confusion and non cardiogenic pulmonary edema as markers of severe toxicity.",
       points: 2,
       teaching: "Neurological signs and new hypoxemia signal severe poisoning regardless of the level.",
@@ -384,6 +395,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids intubation if possible and, if needed, gives bicarbonate first and matches pre intubation minute ventilation.",
       points: 3,
       critical: true,
@@ -393,6 +405,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m1",
       competency: "management",
+      criterion: "plan",
       text: "Avoids sedatives that reduce respiratory drive.",
       points: 2,
       teaching: "Hyperventilation keeps the pH up. Benzodiazepines or opioids can precipitate collapse.",
@@ -401,6 +414,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives activated charcoal 50 g and starts sodium bicarbonate 1 to 2 mEq/kg IV then an infusion of 150 mEq in 1 L of D5W.",
       points: 3,
       critical: true,
@@ -410,6 +424,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m3",
       competency: "management",
+      criterion: "plan",
       text: "Replaces potassium and targets urine pH 7.5 to 8.0 with serum pH no higher than about 7.55.",
       points: 2,
       teaching: "Urine will not alkalinize while the patient is hypokalemic. Keep potassium at 4 mmol/L or more.",
@@ -418,6 +433,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m4",
       competency: "management",
+      criterion: "plan",
       text: "Arranges emergency hemodialysis for altered mental status, level over 7.2 mmol/L or new hypoxemia.",
       points: 3,
       critical: true,
@@ -427,6 +443,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m5",
       competency: "management",
+      criterion: "plan",
       text: "Gives dextrose to a confused patient despite normal serum glucose.",
       points: 1,
       teaching: "Brain glucose can be low when blood glucose is normal. Give dextrose to any salicylate poisoned patient with altered mental status.",
@@ -435,6 +452,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-m6",
       competency: "management",
+      criterion: "plan",
       text: "Chooses intermittent hemodialysis and states stopping criteria of clinical improvement and a level under about 1.4 mmol/L.",
       points: 1,
       teaching: "Intermittent hemodialysis clears salicylate fastest. Recheck for rebound after it ends.",
@@ -443,6 +461,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Consults the poison centre and nephrology early, before dialysis criteria are met.",
       points: 1,
       teaching: "Dialysis takes time to organize. An early heads up avoids delay when the patient worsens.",
@@ -451,6 +470,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured ICU handover with levels, times, gases, treatments and ventilator settings.",
       points: 1,
       teaching: "The receiving team must know that routine ventilator settings are dangerous for this patient.",
@@ -459,6 +479,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Assesses capacity and uses emergency treatment without consent or an Ontario Form 1 when he tries to leave.",
       points: 2,
       teaching: "An incapable patient can be treated in an emergency under the Health Care Consent Act. A Form 1 detains for psychiatric assessment but is not consent to medical treatment.",
@@ -467,6 +488,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges one to one observation and psychiatry consultation once he is medically stable.",
       points: 1,
       teaching: "Suicide risk remains after medical recovery. Plan the psychiatric assessment before transfer to the ward.",
@@ -475,6 +497,7 @@ export const salicylateToxicity: OralCase = {
     {
       id: "sal-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Identifies a system improvement such as early dialysis notification or a ventilator warning in the protocol.",
       points: 1,
       teaching: "Salicylate deaths often follow predictable errors. Build safeguards into local protocols.",

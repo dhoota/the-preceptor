@@ -7,6 +7,11 @@ export const acuteVestibularSyndromeHints: OralCase = {
   title: "The room has been spinning since the night",
   blueprint: "neuro",
   alsoCovers: ["systems"],
+  priorityTopic: "cva",
+  keyFeatures: [
+    { topic: "cva", n: 2 },
+    { topic: "cva", n: 3 },
+  ],
   summary: "A 63 year old man with continuous vertigo and vomiting since he woke in the night wants to go home.",
   durationMinutes: 14,
   stem:
@@ -379,6 +384,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Classifies the presentation as acute vestibular syndrome using timing and triggers, not symptom quality.",
       points: 2,
       teaching: "Continuous vertigo with nystagmus, nausea and unsteadiness is acute vestibular syndrome. The main question is neuritis versus stroke.",
@@ -387,6 +393,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Performs HINTS with a hearing check and a gait assessment, and avoids Dix Hallpike in continuous vertigo.",
       points: 2,
       teaching: "HINTS is designed for acute vestibular syndrome with spontaneous nystagmus. Dix Hallpike is for brief positional episodes.",
@@ -395,6 +402,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Interprets normal head impulse, direction changing nystagmus, skew and severe truncal ataxia as central.",
       points: 3,
       critical: true,
@@ -404,6 +412,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-a4",
       competency: "assessment",
+      criterion: "data",
       text: "States that non contrast CT and early MRI can miss posterior circulation stroke.",
       points: 2,
       teaching: "CT sensitivity for early posterior fossa ischemia is poor. Even DWI MRI misses roughly 10 to 20 percent of posterior circulation strokes in the first 48 hours, more often when the infarct is small.",
@@ -412,6 +421,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-m1",
       competency: "management",
+      criterion: "data",
       text: "Orders CT angiogram of the head and neck and involves neurology.",
       points: 2,
       teaching: "Vascular imaging identifies basilar occlusion, which needs urgent reperfusion, and vertebral dissection.",
@@ -420,6 +430,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-m2",
       competency: "management",
+      criterion: "plan",
       text: "Starts ASA 160 mg and clopidogrel 300 to 600 mg loading then 21 days of dual antiplatelet therapy after a swallow screen.",
       points: 2,
       teaching: "In minor stroke or high risk TIA, a short course of dual antiplatelet therapy reduces early recurrent stroke.",
@@ -428,6 +439,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-m3",
       competency: "management",
+      criterion: "plan",
       text: "Recognizes he is outside the thrombolysis window, allows permissive hypertension and does not use routine heparin.",
       points: 1,
       teaching: "Without thrombolysis, pressure is usually not lowered unless above 220/120 in the first 24 hours.",
@@ -436,6 +448,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Recognizes the Cushing response, avoids lowering pressure, uses hyperosmolar therapy as a bridge and protects the airway.",
       points: 2,
       teaching: "Hypertension with bradycardia and falling GCS in cerebellar stroke means brainstem compression. Protect perfusion and buy time for surgery.",
@@ -444,6 +457,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to a stroke unit and writes orders to monitor for cerebellar swelling.",
       points: 1,
       teaching: "Cerebellar infarcts can swell over 2 to 4 days. Neuro checks catch deterioration early.",
@@ -452,6 +466,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges emergent neurosurgery for suboccipital decompression and transfer.",
       points: 3,
       critical: true,
@@ -461,6 +476,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains to the daughter why CT was normal and what happens next, with honesty about uncertainty.",
       points: 1,
       teaching: "Families often read a normal first CT as a missed diagnosis. A clear explanation builds trust.",
@@ -469,6 +485,7 @@ export const acuteVestibularSyndromeHints: OralCase = {
     {
       id: "av-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Alerts neurosurgery early about a cerebellar infarct at risk while the patient boards.",
       points: 1,
       teaching: "A heads up call before deterioration shortens time to surgery. Boarding patients need a named team responsible for them.",

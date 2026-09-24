@@ -7,6 +7,13 @@ export const necrotizingSoftTissueInfection: OralCase = {
   title: "Leg pain after a scrape",
   blueprint: "id",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "infectious-diseases",
+  keyFeatures: [
+    { topic: "infectious-diseases", n: 2 },
+    { topic: "infectious-diseases", n: 4 },
+    { topic: "infectious-diseases", n: 8 },
+    { topic: "infectious-diseases", n: 10 },
+  ],
   summary: "A 38 year old woman returns with worsening leg pain a day after a walk in clinic started oral antibiotics.",
   durationMinutes: 14,
   stem:
@@ -339,6 +346,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes necrotizing infection from pain out of proportion, tenderness beyond the erythema, woody induration, bullae, spread on antibiotics and shock.",
       points: 3,
       critical: true,
@@ -348,6 +356,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Marks the edge of the erythema and re-examines to document spread, and notes that NSAIDs can mask early signs.",
       points: 1,
       teaching: "Spread past a marked line within hours despite antibiotics is a strong warning sign. Anti-inflammatory drugs can blunt pain and fever.",
@@ -356,6 +365,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls general surgery immediately rather than after imaging.",
       points: 2,
       teaching: "Surgery is diagnostic and therapeutic. Delay to debridement is the main driver of death.",
@@ -364,6 +374,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives vancomycin 25 mg/kg IV load, piperacillin tazobactam 4.5 g IV and clindamycin 900 mg IV.",
       points: 3,
       critical: true,
@@ -373,6 +384,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Knows the LRINEC score cannot rule in or rule out necrotizing infection and that imaging must not delay surgery.",
       points: 2,
       teaching: "LRINEC has poor sensitivity. A low score does not exclude disease and a high score does not replace clinical judgment.",
@@ -381,6 +393,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Advocates clearly and respectfully with the surgeon for urgent exploration.",
       points: 2,
       teaching: "State the findings, the severity and the specific request. Offer to help with the logistics.",
@@ -389,6 +402,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Escalates to another surgeon, the chief of surgery or transfer through CritiCall if surgery is delayed.",
       points: 2,
       critical: true,
@@ -398,6 +412,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Resuscitates with balanced crystalloid and norepinephrine to a MAP of 65 or more.",
       points: 2,
       teaching: "Streptococcal toxic shock causes deep vasodilation and capillary leak. Start vasopressors early.",
@@ -406,6 +421,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-m2",
       competency: "management",
+      criterion: "plan",
       text: "Considers IVIG for streptococcal toxic shock in discussion with infectious diseases.",
       points: 1,
       teaching: "Evidence for IVIG is limited but some experts use it in streptococcal toxic shock. Decide with infectious diseases.",
@@ -414,6 +430,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Answers honestly about the risk of repeat surgery and amputation and confirms understanding before surgery.",
       points: 1,
       teaching: "Patients remember honest answers. Preparing her for repeat surgery reduces distress later.",
@@ -422,6 +439,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Reports invasive group A streptococcal disease to public health and addresses household contacts.",
       points: 2,
       teaching: "Household contacts of invasive group A streptococcal cases have a raised risk. Public health guides prophylaxis.",
@@ -430,6 +448,7 @@ export const necrotizingSoftTissueInfection: OralCase = {
     {
       id: "ns-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to the ICU after surgery with a planned second look within 24 hours.",
       points: 1,
       teaching: "Most patients need more than one debridement. Planned re-exploration catches ongoing necrosis.",

@@ -7,6 +7,12 @@ export const hypothermicCardiacArrest: OralCase = {
   title: "Rescued from the backcountry",
   blueprint: "enviro",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "environmental",
+  keyFeatures: [
+    { topic: "environmental", n: 3 },
+    { topic: "arrhythmia", n: 6 },
+    { topic: "ems", n: 3 },
+  ],
   summary: "A 34 year old skier is brought in by rescue helicopter with CPR in progress.",
   durationMinutes: 15,
   stem:
@@ -336,6 +342,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Continues high quality CPR, using a mechanical device, and secures the airway with an endotracheal tube.",
       points: 2,
       teaching: "Mechanical CPR allows long resuscitations and safe transport. Intubation is indicated and rarely triggers VF when done gently.",
@@ -344,6 +351,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Measures core temperature with an esophageal probe and sends potassium early.",
       points: 2,
       teaching: "An esophageal probe in the lower third is the best core measure in the intubated patient. Potassium is the key lab for prognosis.",
@@ -352,6 +360,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-m1",
       competency: "management",
+      criterion: "plan",
       text: "Limits shocks to at most three and withholds epinephrine and antiarrhythmics below 30 °C, then doubles the drug interval between 30 and 35 °C.",
       points: 2,
       teaching: "The cold heart resists shocks and drugs. Drugs given under 30 °C accumulate and act together on rewarming. AHA guidance is more permissive than ERC and WMS.",
@@ -360,6 +369,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Uses witnessed arrest, absence of asphyxia, potassium and the HOPE score to judge ECLS candidacy.",
       points: 2,
       teaching: "Potassium over 12 mmol/L or HOPE survival under 10 percent argues against ECLS. A witnessed arrest without asphyxia favours good outcomes.",
@@ -368,6 +378,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "States that hypothermic patients should not be pronounced dead until rewarmed unless clear futility criteria are present.",
       points: 3,
       critical: true,
@@ -377,6 +388,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-m2",
       competency: "management",
+      criterion: "plan",
       text: "Arranges transfer to an ECLS centre with mechanical CPR running rather than attempting prolonged surface rewarming.",
       points: 3,
       critical: true,
@@ -386,6 +398,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-m3",
       competency: "management",
+      criterion: "plan",
       text: "Uses active internal rewarming such as bilateral thoracic lavage when ECLS is not available.",
       points: 3,
       critical: true,
@@ -395,6 +408,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Contacts the ECLS centre early and gives the key prognostic data.",
       points: 1,
       teaching: "The ECLS team needs time to prepare. Call as soon as you suspect hypothermic arrest.",
@@ -403,6 +417,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Adapts the plan when transfer fails and brings in local help such as the general surgeon.",
       points: 1,
       teaching: "Rural resuscitation often means using the skills in the building. Name a plan B before you need it.",
@@ -411,6 +426,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-m4",
       competency: "management",
+      criterion: "plan",
       text: "Treats post ROSC hypotension with warmed fluid and norepinephrine and monitors potassium and glucose during rewarming.",
       points: 2,
       teaching: "Rewarming causes vasodilation and fluid shifts. Potassium and glucose can change quickly.",
@@ -419,6 +435,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Still transfers to the ECLS centre after ROSC for ICU care and possible circulatory support.",
       points: 1,
       teaching: "Myocardial dysfunction after hypothermic arrest can need ECLS even after ROSC.",
@@ -427,6 +444,7 @@ export const hypothermicCardiacArrest: OralCase = {
     {
       id: "hy-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Gives his wife an honest update with clear next steps and no false reassurance.",
       points: 1,
       teaching: "Say what happened, where he is going and what is not yet known. Offer support.",

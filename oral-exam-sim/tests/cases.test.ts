@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { BATCHES, CASES } from "@/cases";
-import { BLUEPRINT, questionRange, validateCase } from "@/engine";
+import { BLUEPRINT, ORAL_CRITERIA, questionRange, validateCase } from "@/engine";
+import { topicById } from "@/blueprint/priorityTopics";
 
 /**
  * Structure and house style for every shipped case.
@@ -51,6 +52,19 @@ for (const c of target) {
   describe(c.id, () => {
     it("is structurally valid", () => {
       expect(validateCase(c)).toEqual([]);
+    });
+    it("maps to a CFPC priority topic and real key features", () => {
+      expect(topicById(c.priorityTopic), c.priorityTopic).toBeTruthy();
+      expect(c.keyFeatures.length).toBeGreaterThanOrEqual(2);
+      for (const k of c.keyFeatures) {
+        const t = topicById(k.topic);
+        expect(t, k.topic).toBeTruthy();
+        expect(t!.keyFeatures.some((x) => x.n === k.n), `${k.topic}#${k.n}`).toBe(true);
+      }
+    });
+    it("tags every rubric item with an examiner criterion", () => {
+      for (const r of c.rubric) expect(ORAL_CRITERIA.some((k) => k.id === r.criterion), r.id).toBe(true);
+      expect(new Set(c.rubric.map((r) => r.criterion)).size).toBeGreaterThanOrEqual(2);
     });
     it("uses a kebab case id", () => {
       expect(c.id).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);

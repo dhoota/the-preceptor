@@ -7,6 +7,13 @@ export const refractoryStatusEpilepticus: OralCase = {
   title: "Still shaking on arrival",
   blueprint: "neuro",
   alsoCovers: ["resus", "ethics"],
+  priorityTopic: "seizures",
+  keyFeatures: [
+    { topic: "seizures", n: 3 },
+    { topic: "seizures", n: 4 },
+    { topic: "seizures", n: 5 },
+    { topic: "seizures", n: 7 },
+  ],
   summary: "A 34 year old man with a known seizure disorder arrives by ambulance still convulsing after one prehospital dose.",
   durationMinutes: 15,
   stem:
@@ -421,6 +428,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Positions, suctions and supports the airway with oxygen, jaw thrust and bag support during the convulsion.",
       points: 1,
       teaching: "Basic airway support buys time while the drugs work. Hypoxia makes seizures harder to stop.",
@@ -429,6 +437,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls out the time since onset and prepares the next drug while the current one is given.",
       points: 1,
       teaching: "Status care runs on a clock. A leader who names the time and has the next drug ready stops the escalation from stalling.",
@@ -437,6 +446,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives one full second benzodiazepine dose, lorazepam 0.1 mg/kg IV to a maximum of 4 mg, without delay.",
       points: 3,
       critical: true,
@@ -446,6 +456,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives a correctly dosed second line drug: levetiracetam 60 mg/kg to 4,500 mg, fosphenytoin 20 mg PE/kg to 1,500 mg PE at up to 150 mg PE per minute, or valproate 40 mg/kg to 3,000 mg.",
       points: 3,
       critical: true,
@@ -455,6 +466,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m3",
       competency: "management",
+      criterion: "plan",
       text: "States the key contraindications: conduction block, bradycardia or hypotension for fosphenytoin, and liver disease, pregnancy, mitochondrial disease or low platelets for valproate.",
       points: 2,
       teaching: "Fosphenytoin can cause hypotension and arrhythmia, so check the ECG and monitor. Valproate is avoided in liver disease and in anyone who is or may be pregnant.",
@@ -463,6 +475,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies missed doses as the likely trigger, draws a drug level before loading and still searches for other causes.",
       points: 2,
       teaching: "A low level explains the seizures but does not exclude a second cause such as head injury, infection or a metabolic problem. Draw the level before any load so it can be interpreted.",
@@ -471,6 +484,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-r2",
       competency: "resuscitation",
+      criterion: "diagnosis",
       text: "Recognizes refractory status after a benzodiazepine and a second line drug fail, and moves straight to intubation and an anesthetic infusion.",
       points: 3,
       critical: true,
@@ -480,6 +494,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m4",
       competency: "management",
+      criterion: "plan",
       text: "Doses the infusion correctly: midazolam 0.2 mg/kg bolus then 0.05 to 2 mg/kg/h, or propofol 1 to 2 mg/kg then 30 to 200 mcg/kg/min.",
       points: 2,
       teaching: "Start with a bolus, then titrate the infusion to stop seizures on EEG. Hypotension is expected and is treated with vasopressors.",
@@ -488,6 +503,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses a single dose of paralytic for intubation and never uses a paralytic infusion to control movements.",
       points: 2,
       teaching: "Paralysis hides convulsions but not seizures. After rocuronium the only way to know if seizures continue is EEG.",
@@ -496,6 +512,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Suspects nonconvulsive seizures after convulsions stop or are masked, and arranges urgent continuous EEG the same night.",
       points: 3,
       critical: true,
@@ -505,6 +522,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m5",
       competency: "management",
+      criterion: "plan",
       text: "Treats nonconvulsive status by increasing or adding anesthetic drugs to EEG goals and supports the pressure with norepinephrine rather than lowering the infusion.",
       points: 2,
       teaching: "Hypotension from the infusion is common. Treat it with a vasopressor. Turning the sedation down lets the seizures return.",
@@ -513,6 +531,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-m6",
       competency: "management",
+      criterion: "plan",
       text: "Writes a maintenance plan: phenytoin or levetiracetam maintenance with levels as needed, and restarts clobazam.",
       points: 1,
       teaching: "The loading dose wears off. Maintenance doses and his usual drugs must start in the first day.",
@@ -521,6 +540,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Orders CT head for the scalp injury and evaluates fever for aspiration or central nervous system infection.",
       points: 1,
       teaching: "Fever and leukocytosis are common after status but do not assume. Aspiration is frequent. Consider LP if no source is found.",
@@ -529,6 +549,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the events, the plan and the uncertainty to his sister in plain words without blame for the missed pills.",
       points: 1,
       teaching: "Families need to hear what happened, what is being done and what is not known yet. Cost barriers are common and fixable.",
@@ -537,6 +558,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Reports to the Ministry of Transportation under Ontario's mandatory reporting rules and plans to tell the patient directly.",
       points: 2,
       teaching: "Since 2018 Ontario physicians must report patients with conditions that cause sudden incapacitation, such as seizures likely to recur. The duty overrides confidentiality for that report only.",
@@ -545,6 +567,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover with times, doses, the paralytic time, EEG findings, infusion goals and pending issues.",
       points: 1,
       teaching: "The ICU needs the exact paralytic time and drug history to judge the EEG and the next step.",
@@ -553,6 +576,7 @@ export const refractoryStatusEpilepticus: OralCase = {
     {
       id: "se-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU with neurology, continuous EEG and a social work referral for drug coverage.",
       points: 1,
       teaching: "Refractory status needs ICU care and EEG. Fixing the reason he ran out of medicine prevents the next admission.",

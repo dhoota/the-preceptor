@@ -1,0 +1,86 @@
+import { describe, expect, it } from "vitest";
+import { PRIORITY_TOPICS, topicById } from "@/blueprint/priorityTopics";
+import { validateSamp } from "@/engine/samp";
+import { SAMPS, SAMP_BATCHES } from "@/samps";
+
+/**
+ * Structure, blueprint coverage and house style for the SAMP bank.
+ * SAMP_BATCH=s03 limits the run to one batch. LAUNCH_GATE=1 enforces 500+
+ * SAMPs and full key feature coverage for every priority topic.
+ */
+
+const only = process.env.SAMP_BATCH;
+const target = only ? SAMP_BATCHES[only] ?? [] : SAMPS;
+const kfCount = (t: string) => topicById(t)?.keyFeatures.length;
+
+function strings(value: unknown, out: string[] = [], key = ""): string[] {
+  if (typeof value === "string") {
+    if (key !== "url") out.push(value);
+  } else if (Array.isArray(value)) value.forEach((v) => strings(v, out, key));
+  else if (value && typeof value === "object") Object.entries(value).forEach(([k, v]) => strings(v, out, k));
+  return out;
+}
+
+function coverage(samps: typeof SAMPS) {
+  const byTopic = new Map<string, Map<number, number>>();
+  for (const s of samps) for (const q of s.questions) {
+    const m = byTopic.get(q.keyFeature.topic) ?? new Map<number, number>();
+    m.set(q.keyFeature.n, (m.get(q.keyFeature.n) ?? 0) + 1);
+    byTopic.set(q.keyFeature.topic, m);
+  }
+  return byTopic;
+}
+
+describe("SAMP bank", () => {
+  it("has unique SAMP ids", () => {
+    const ids = SAMPS.map((s) => s.id);
+    expect(ids.filter((id, i) => ids.indexOf(id) !== i)).toEqual([]);
+  });
+
+  if (only) {
+    const topics = [...new Set(target.map((s) => s.topic))];
+    it(`batch ${only} has 15 SAMPs per topic`, () => {
+      expect(target.length).toBeGreaterThan(0);
+      for (const t of topics) expect(target.filter((s) => s.topic === t).length, t).toBe(15);
+    });
+    it(`batch ${only} tests every key feature of its topics`, () => {
+      const cov = coverage(target);
+      for (const t of topics) {
+        const missing = topicById(t)!.keyFeatures.map((k) => k.n).filter((n) => !cov.get(t)?.get(n));
+        expect(missing, t).toEqual([]);
+      }
+    });
+    it(`batch ${only} is at least 60 percent short answer`, () => {
+      const qs = target.flatMap((s) => s.questions);
+      expect(qs.filter((q) => q.kind === "short").length / qs.length).toBeGreaterThanOrEqual(0.6);
+    });
+  }
+
+  if (process.env.LAUNCH_GATE) {
+    it("meets the launch minimum of 500 SAMPs", () => {
+      expect(SAMPS.length).toBeGreaterThanOrEqual(500);
+    });
+    it("covers every key feature of every priority topic", () => {
+      const cov = coverage(SAMPS);
+      const missing = PRIORITY_TOPICS.flatMap((t) => t.keyFeatures.filter((k) => !cov.get(t.id)?.get(k.n)).map((k) => `${t.id}#${k.n}`));
+      expect(missing).toEqual([]);
+    });
+  }
+});
+
+for (const s of target) {
+  describe(s.id, () => {
+    it("is structurally valid", () => {
+      expect(validateSamp(s, kfCount)).toEqual([]);
+    });
+    it("awaits physician review", () => {
+      expect(s.reviewed).toBe(false);
+    });
+    it("follows house style", () => {
+      for (const x of strings(s)) {
+        expect(x, x).not.toMatch(/[–—]/);
+        expect(x, x).not.toContain(";");
+      }
+    });
+  });
+}

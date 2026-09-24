@@ -7,6 +7,15 @@ export const cicoScalpelCricothyrotomy: OralCase = {
   title: "Facial injuries after an assault",
   blueprint: "procedures",
   alsoCovers: ["trauma", "resus"],
+  priorityTopic: "airway",
+  keyFeatures: [
+    { topic: "airway", n: 1 },
+    { topic: "airway", n: 2 },
+    { topic: "airway", n: 3 },
+    { topic: "airway", n: 4 },
+    { topic: "airway", n: 6 },
+    { topic: "multiple-trauma", n: 1 },
+  ],
   summary: "A 31 year old man with severe facial injuries and a falling level of consciousness needs airway control.",
   durationMinutes: 14,
   stem:
@@ -358,6 +367,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Briefs the team with a plan A to D and a named trigger for the surgical airway before induction.",
       points: 2,
       teaching: "A pre stated plan removes hesitation. The team knows what happens next and who does it.",
@@ -366,6 +376,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Prepares two suction units, preoxygenates sitting up with in line stabilization and avoids nasal adjuncts with a midface fracture.",
       points: 2,
       teaching: "Positioning upright helps drainage and oxygenation. Nasal devices can enter the cranial vault through a skull base fracture.",
@@ -374,6 +385,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies predictors of a difficult airway and marks the cricothyroid membrane by palpation and ultrasound before induction.",
       points: 2,
       teaching: "Blood, facial instability and limited mouth opening predict failure. Ultrasound finds the membrane more reliably than palpation.",
@@ -382,6 +394,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-m1",
       competency: "management",
+      criterion: "plan",
       text: "Uses full dose paralysis with a hemodynamically stable induction agent.",
       points: 1,
       teaching: "Full paralysis improves first pass success. Rocuronium 1.2 mg/kg or more gives good conditions within about 60 seconds.",
@@ -390,6 +403,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-r2",
       competency: "resuscitation",
+      criterion: "diagnosis",
       text: "Recognizes can't intubate, can't oxygenate after failed intubation, supraglottic airway and mask ventilation, and moves to a scalpel cricothyrotomy without further attempts.",
       points: 3,
       critical: true,
@@ -399,6 +413,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Declares the can't intubate, can't oxygenate situation out loud to the team.",
       points: 1,
       teaching: "Saying it aloud breaks fixation and gives everyone permission to move to the next step.",
@@ -407,6 +422,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Describes the scalpel, bougie, tube technique: laryngeal handshake, transverse stab, rotate blade, bougie, 6.0 cuffed tube, capnography.",
       points: 3,
       critical: true,
@@ -416,6 +432,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Uses a systematic DOPES approach to post airway deterioration and trusts the capnography trace.",
       points: 2,
       teaching: "A capnography waveform confirms tracheal placement. Look for pneumothorax, obstruction and equipment failure before touching the tube.",
@@ -424,6 +441,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Decompresses tension pneumothorax with finger thoracostomy at the 4th or 5th space anterior to the mid axillary line, then places a chest tube.",
       points: 3,
       critical: true,
@@ -433,6 +451,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Completes the trauma assessment and arranges transfer to the trauma centre through CritiCall with a plan to revise the surgical airway.",
       points: 2,
       teaching: "A cricothyrotomy is a temporary airway. The receiving team should plan formal revision, usually to a tracheostomy.",
@@ -441,6 +460,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Gives the receiving team a clear handover of the failed airway, the surgical airway and the chest tube.",
       points: 1,
       teaching: "A known difficult airway must be flagged in every handover. Include what failed and why.",
@@ -449,6 +469,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Responds to criticism from a colleague calmly with facts and moves the discussion away from the bedside.",
       points: 2,
       teaching: "Conflict at the bedside harms team function. Use facts and a formal review to settle disagreement.",
@@ -457,6 +478,7 @@ export const cicoScalpelCricothyrotomy: OralCase = {
     {
       id: "cc-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Leads a team debrief and documents the airway timeline clearly.",
       points: 1,
       teaching: "Debriefing supports staff after a stressful event and finds system lessons. Documentation of times and saturations supports review.",

@@ -7,6 +7,13 @@ export const assaultHeadInjuryDeterioration: OralCase = {
   title: "Intoxicated man after a fight",
   blueprint: "trauma",
   alsoCovers: ["neuro", "ethics"],
+  priorityTopic: "loc",
+  keyFeatures: [
+    { topic: "loc", n: 4 },
+    { topic: "loc", n: 5 },
+    { topic: "multiple-trauma", n: 5 },
+    { topic: "airway", n: 4 },
+  ],
   summary: "A 44 year old man is brought in after an assault outside a bar. He smells of alcohol and the nurse wants to let him sleep.",
   durationMinutes: 15,
   stem:
@@ -378,6 +385,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Refuses to attribute a GCS of 12 to alcohol and moves him to a monitored bed with frequent neuro checks.",
       points: 3,
       critical: true,
@@ -387,6 +395,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Orders CT head and CT cervical spine now and states why the Canadian CT Head Rule and C-Spine Rule do not apply.",
       points: 2,
       teaching: "The Canadian CT Head Rule applies to GCS 13 to 15 minor head injury. The C-Spine Rule needs an alert patient with a GCS of 15 and stable vitals. His GCS of 12 excludes both. Intoxication by itself does not.",
@@ -395,6 +404,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates with preoxygenation, in line stabilization, video laryngoscopy and a hemodynamically neutral induction agent with rocuronium 1.2 mg/kg.",
       points: 2,
       teaching: "Ketamine or etomidate with rocuronium preserves pressure. Plan the airway around the brain.",
@@ -403,6 +413,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids any SpO2 under 90 percent and any systolic under 110 mmHg around induction.",
       points: 3,
       critical: true,
@@ -412,6 +423,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Sets post intubation targets: PaCO2 35 to 40 mmHg, SpO2 at least 94 percent, head up 30 degrees, collar loosened.",
       points: 2,
       teaching: "Normocapnia protects cerebral blood flow. A tight collar can obstruct venous outflow and raise intracranial pressure.",
@@ -420,6 +432,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m1",
       competency: "management",
+      criterion: "plan",
       text: "Provides sedation and analgesia while avoiding hypotension, and maintains normothermia and glucose control.",
       points: 1,
       teaching: "Agitation, pain, fever and hyperglycemia all raise cerebral metabolic demand.",
@@ -428,6 +441,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m2",
       competency: "management",
+      criterion: "diagnosis",
       text: "Recognizes the Cushing response and treats herniation with 3 percent saline 250 mL or mannitol 1 g/kg.",
       points: 3,
       critical: true,
@@ -437,6 +451,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m3",
       competency: "management",
+      criterion: "plan",
       text: "Uses only brief hyperventilation to PaCO2 30 to 35 mmHg as a bridge and does not lower the blood pressure.",
       points: 2,
       teaching: "PaCO2 of 25 or less causes cerebral ischemia. Reflex hypertension maintains perfusion and should not be treated.",
@@ -445,6 +460,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m4",
       competency: "management",
+      criterion: "plan",
       text: "Gives seizure prophylaxis with levetiracetam 20 mg/kg IV or phenytoin 20 mg/kg IV.",
       points: 1,
       teaching: "Prophylaxis for 7 days reduces early post traumatic seizures. It does not prevent late epilepsy. The Brain Trauma Foundation supports phenytoin. Levetiracetam is widely used with similar results, but the evidence is weaker.",
@@ -453,6 +469,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-m5",
       competency: "management",
+      criterion: "plan",
       text: "Considers tranexamic acid 1 g IV within 3 hours of injury and avoids corticosteroids.",
       points: 1,
       teaching: "CRASH-3 found tranexamic acid reduced head injury death mainly in mild to moderate injury when given early. Steroids cause harm.",
@@ -461,6 +478,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Gives the neurosurgeon a concise structured handover with the GCS trend, pupil change, CT findings and treatments with times.",
       points: 2,
       teaching: "The trend and the time of each intervention matter more than a list of findings.",
@@ -469,6 +487,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Tells his wife in a private room that he has a life threatening brain bleed and is going for surgery, and checks her understanding.",
       points: 1,
       teaching: "Be honest about the seriousness early. Families remember whether they were prepared.",
@@ -477,6 +496,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Declines to release the blood alcohol or CT to police without consent from the substitute decision maker, a warrant or another legal requirement, and documents the request.",
       points: 2,
       teaching: "Under Ontario privacy law, health information goes to police only with consent or when a law or court order requires it.",
@@ -485,6 +505,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Hands over ICU targets: cerebral perfusion pressure 60 to 70 mmHg and treatment of intracranial pressure above 22 mmHg.",
       points: 1,
       teaching: "These thresholds come from the Brain Trauma Foundation fourth edition guideline.",
@@ -493,6 +514,7 @@ export const assaultHeadInjuryDeterioration: OralCase = {
     {
       id: "tb-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Coordinates the operating room, ICU and neurosurgery early so there is no delay to evacuation.",
       points: 1,
       teaching: "Time to decompression of an acute subdural with herniation drives outcome. Book the room as soon as you see the scan.",

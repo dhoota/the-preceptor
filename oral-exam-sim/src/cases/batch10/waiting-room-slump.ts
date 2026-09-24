@@ -7,6 +7,8 @@ export const waitingRoomSlump: OralCase = {
   title: "Found slumped in a waiting room chair",
   blueprint: "systems",
   alsoCovers: ["id", "geri", "comm"],
+  priorityTopic: "cqi",
+  keyFeatures: [{ topic: "cqi", n: 1 }, { topic: "cqi", n: 2 }, { topic: "shock", n: 4 }, { topic: "shock", n: 6 }],
   summary: "A woman who has waited more than three hours is found unwell in the waiting room. After you stabilize her, you must find out how it happened.",
   durationMinutes: 15,
   stem:
@@ -380,6 +382,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Recognizes septic shock and gives broad spectrum antibiotics within 1 hour with 30 mL/kg crystalloid.",
       points: 3,
       critical: true,
@@ -389,6 +392,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Uses bedside ultrasound to look for a source and guide fluid.",
       points: 1,
       teaching: "Hydronephrosis on ultrasound in a septic patient points to an obstructed infected kidney.",
@@ -397,6 +401,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Identifies under triage using the CTAS sepsis modifier. Fever with three SIRS criteria is CTAS 2.",
       points: 2,
       teaching: "CTAS assigns level 2 to a febrile adult who looks septic. That means three SIRS criteria, or hemodynamic compromise, respiratory distress or altered level of consciousness.",
@@ -405,6 +410,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies the failure to reassess and knows CTAS reassessment intervals.",
       points: 2,
       teaching: "CTAS reassessment is every 15 minutes for level 2 and every 30 minutes for level 3. Triage is a snapshot, not a guarantee.",
@@ -413,6 +419,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-m1",
       competency: "management",
+      criterion: "plan",
       text: "Starts norepinephrine for a mean arterial pressure under 65 after fluid and arranges urgent source control.",
       points: 3,
       critical: true,
@@ -422,6 +429,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU while on vasopressors.",
       points: 1,
       teaching: "Patients with septic shock on vasopressors need a critical care bed, not a ward.",
@@ -430,6 +438,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Discloses early to the son. States what is known, apologizes, and commits to a review and follow up.",
       points: 3,
       critical: true,
@@ -439,6 +448,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Commits to sharing the review findings with the family.",
       points: 1,
       teaching: "Post analysis disclosure tells the family what was learned and what changed. It closes the loop.",
@@ -447,6 +457,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Does not blame individual staff or make excuses when speaking with the family.",
       points: 2,
       teaching: "Blame and excuses both damage trust. Stick to facts, apology and the plan.",
@@ -455,6 +466,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Supports the triage nurse and treats the event through a just culture lens.",
       points: 2,
       teaching: "Staff involved in harm are often second victims. Human error in an overloaded system calls for support and system repair, not discipline.",
@@ -463,6 +475,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents facts and the disclosure in the chart without assigning blame.",
       points: 1,
       teaching: "The chart records care. Concerns about process belong in the incident report.",
@@ -471,6 +484,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Informs the charge nurse and manager so staff support is in place.",
       points: 1,
       teaching: "Leaders make sure no one involved in a serious incident is left alone with it.",
@@ -479,6 +493,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Files a written patient safety incident report the same day and suggests a structured analysis.",
       points: 2,
       teaching: "The Canadian Incident Analysis Framework guides a system focused review of contributing factors.",
@@ -487,6 +502,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-l3",
       competency: "leadership",
+      criterion: "plan",
       text: "Recommends strong system fixes such as a protected reassessment role, automatic vital sign alerts and triage sepsis screening.",
       points: 2,
       teaching: "Forcing functions and standardization are stronger than education or reminders alone.",
@@ -495,6 +511,7 @@ export const waitingRoomSlump: OralCase = {
     {
       id: "wr-l4",
       competency: "leadership",
+      criterion: "plan",
       text: "Links waiting room risk to access block and escalates it to hospital leadership.",
       points: 1,
       teaching: "Boarded admitted patients fill stretchers and push sick patients into the waiting room. That is a hospital problem.",

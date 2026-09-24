@@ -7,6 +7,12 @@ export const suicidalPatientLeaving: OralCase = {
   title: "A farmer who wants to go home",
   blueprint: "psych",
   alsoCovers: ["ethics", "comm"],
+  priorityTopic: "suicide-risk",
+  keyFeatures: [
+    { topic: "suicide-risk", n: 1 },
+    { topic: "suicide-risk", n: 3 },
+    { topic: "delirium-agitation", n: 3 },
+  ],
   summary: "A 49 year old man brought in late at night by his sister says he is fine and stands up to leave.",
   durationMinutes: 14,
   stem:
@@ -378,6 +384,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-r1",
       competency: "disposition",
+      criterion: "plan",
       text: "Prevents him from leaving before assessment and arranges one to one observation in a safe room.",
       points: 3,
       critical: true,
@@ -387,6 +394,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks calmly and directly, explaining his concern for the patient's safety.",
       points: 1,
       teaching: "A clear, respectful explanation often prevents a confrontation.",
@@ -395,6 +403,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Asks directly about ideation, intent, plan, means and preparatory acts.",
       points: 2,
       teaching: "Asking about suicide does not increase risk. Preparatory acts such as goodbye messages carry great weight.",
@@ -403,6 +412,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Uses collateral from his sister and weighs it above his current denial.",
       points: 2,
       teaching: "Patients at high risk often minimize. Collateral and actions are more reliable than statements.",
@@ -411,6 +421,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies risk factors including firearm access, family history, separation, financial loss, alcohol and hopelessness, and does not rely on a risk score.",
       points: 2,
       teaching: "Risk scores predict poorly for individuals. Structured clinical judgment guides the decision.",
@@ -419,6 +430,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-a4",
       competency: "assessment",
+      criterion: "data",
       text: "Assesses cognition rather than waiting for a specific alcohol level before acting.",
       points: 1,
       teaching: "Psychiatric assessment can proceed based on cognition. A falling alcohol level does not lower the risk from earlier actions.",
@@ -427,6 +439,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Completes a Form 1 because he meets criteria for likely serious bodily harm to himself.",
       points: 3,
       critical: true,
@@ -436,6 +449,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "States that a Form 1 requires a personal exam within 7 days before signing, allows detention in a Schedule 1 facility for up to 72 hours for assessment, and does not authorize treatment.",
       points: 2,
       teaching: "Know the limits of the form. Treatment still needs consent or an emergency.",
@@ -444,6 +458,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Gives him a Form 42 and explains his right to a lawyer.",
       points: 1,
       teaching: "Form 42 tells the patient why he is held and that he can speak with a lawyer.",
@@ -452,6 +467,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-c2",
       competency: "communication",
+      criterion: "plan",
       text: "De-escalates with acknowledgment, explanation and choices before using medication or restraint.",
       points: 2,
       teaching: "Offering control through choices often settles an angry patient. Restraint is a last resort.",
@@ -460,6 +476,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-m1",
       competency: "management",
+      criterion: "plan",
       text: "If medication is needed, chooses oral first and an antipsychotic such as haloperidol 5 mg IM over a large benzodiazepine dose given recent alcohol.",
       points: 1,
       teaching: "Benzodiazepines add to alcohol induced respiratory depression. Monitor after any parenteral sedation.",
@@ -468,6 +485,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges removal of firearms with police and family.",
       points: 3,
       critical: true,
@@ -477,6 +495,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Discloses only what is needed to reduce a significant risk of serious bodily harm, tells the patient, and documents it.",
       points: 2,
       teaching: "Ontario privacy law permits disclosure without consent to reduce a significant risk of serious bodily harm. Keep it limited and documented.",
@@ -485,6 +504,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Advocates with the psychiatrist using specific risk findings and requests acceptance.",
       points: 1,
       teaching: "Describe actions and collateral, not labels. A small site cannot safely hold a Form 1 patient for 72 hours.",
@@ -493,6 +513,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-d3",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges safe transfer by police or ambulance with the Form 1, notes and a phone handover.",
       points: 1,
       teaching: "A complete handover prevents the receiving team from missing the collateral that drove your decision.",
@@ -501,6 +522,7 @@ export const suicidalPatientLeaving: OralCase = {
     {
       id: "su-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Treats him with dignity and addresses practical barriers such as the farm.",
       points: 1,
       teaching: "Practical worries drive patients to leave. Solving them builds trust for the next contact with care.",

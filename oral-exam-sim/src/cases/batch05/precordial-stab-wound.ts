@@ -7,6 +7,14 @@ export const precordialStabWound: OralCase = {
   title: "Stabbed at a house party",
   blueprint: "trauma",
   alsoCovers: ["resus", "procedures"],
+  priorityTopic: "multiple-trauma",
+  keyFeatures: [
+    { topic: "multiple-trauma", n: 1 },
+    { topic: "multiple-trauma", n: 2 },
+    { topic: "multiple-trauma", n: 6 },
+    { topic: "multiple-trauma", n: 7 },
+    { topic: "shock", n: 6 },
+  ],
   summary: "A 22 year old man with a single stab wound to the left chest arrives by ambulance to a large community hospital.",
   durationMinutes: 15,
   stem:
@@ -351,6 +359,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes traumatic tamponade from hypotension, distended neck veins and a precordial wound, and confirms it with subxiphoid ultrasound.",
       points: 2,
       teaching: "Beck triad is often incomplete. eFAST is fast and sensitive for pericardial blood in penetrating chest trauma.",
@@ -359,6 +368,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies signs of life at loss of pulse: organized electrical activity, reactive pupils and a gasp.",
       points: 1,
       teaching: "Signs of life and a penetrating chest mechanism define the group most likely to survive thoracotomy.",
@@ -367,6 +377,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls the surgeon and the operating room immediately and prepares the thoracotomy tray before arrest.",
       points: 2,
       teaching: "Anticipate the arrest. The tray should be open and the team briefed before it is needed.",
@@ -375,6 +386,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids induction and positive pressure ventilation in the ED unless the chest can be opened immediately.",
       points: 2,
       critical: true,
@@ -384,6 +396,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Performs an immediate resuscitative thoracotomy for loss of pulse with signs of life after a penetrating chest wound.",
       points: 3,
       critical: true,
@@ -393,6 +406,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-m1",
       competency: "management",
+      criterion: "plan",
       text: "Describes a left anterolateral incision in the 4th or 5th intercostal space with the rib spreader handle toward the axilla.",
       points: 1,
       teaching: "The inframammary fold marks the 5th space in men. Extend across the sternum to a clamshell for more exposure.",
@@ -401,6 +415,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-m2",
       competency: "management",
+      criterion: "plan",
       text: "Opens the pericardium longitudinally anterior to the phrenic nerve and controls the ventricular wound with a finger then staples or sutures.",
       points: 3,
       critical: true,
@@ -410,6 +425,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives warmed balanced blood products and avoids crystalloid.",
       points: 2,
       teaching: "Red cells, plasma and platelets close to 1 to 1 to 1 restore volume without diluting clotting factors.",
@@ -418,6 +434,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives tranexamic acid 1 g IV within 3 hours of injury and calcium chloride 1 g IV for transfusion.",
       points: 1,
       teaching: "Early tranexamic acid reduces bleeding death in trauma. Citrate in blood products binds calcium.",
@@ -426,6 +443,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Sends him to the local operating room for damage control first, with transfer to the lead trauma hospital once stable.",
       points: 2,
       teaching: "A heart that has just been restarted will not survive a 25 minute transfer. Control first, then move.",
@@ -434,6 +452,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Sets up a three way call between the local surgeon and the trauma team leader through CritiCall with a clear shared plan.",
       points: 1,
       teaching: "Joint decisions reduce conflict and clarify who owns the next step.",
@@ -442,6 +461,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks to his mother honestly about how close he came to death and the uncertain outcome.",
       points: 1,
       teaching: "Families need the truth in plain words, with a person who can stay with them.",
@@ -450,6 +470,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Leads a brief team debrief and checks for blood or sharps exposures among staff.",
       points: 1,
       teaching: "Thoracotomy carries a real risk of sharps injury. Debriefs help the team and catch safety issues.",
@@ -458,6 +479,7 @@ export const precordialStabWound: OralCase = {
     {
       id: "st-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents the procedure, indication and times, and restocks the tray for the next patient.",
       points: 1,
       teaching: "Clear documentation protects the patient and the team. A stocked tray protects the next patient.",

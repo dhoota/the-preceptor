@@ -6,6 +6,14 @@ export const infantNonaccidentalInjury: OralCase = {
   id: "infant-nonaccidental-injury",
   title: "A fussy baby who cries when changed",
   blueprint: "peds",
+  priorityTopic: "abuse-domestic",
+  keyFeatures: [
+    { topic: "abuse-domestic", n: 2 },
+    { topic: "abuse-domestic", n: 3 },
+    { topic: "abuse-domestic", n: 5 },
+    { topic: "abuse-domestic", n: 6 },
+    { topic: "msk", n: 2 },
+  ],
   summary: "A 4 month old is brought in late at night because she has been crying and seems sore when her diaper is changed.",
   durationMinutes: 15,
   stem:
@@ -319,6 +327,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-m1",
       competency: "management",
+      criterion: "plan",
       text: "Treats pain promptly with weight based analgesia and splints the fracture.",
       points: 1,
       teaching: "Pain control comes first. In a young infant use acetaminophen and small titrated doses of IV morphine, about 0.05 mg/kg, with monitoring, and splint the limb.",
@@ -327,6 +336,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies red flags: femur fracture in a non ambulatory infant, bruising in an infant aged 4.99 months or younger, a changing history and delayed presentation.",
       points: 3,
       critical: true,
@@ -336,6 +346,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Orders a skeletal survey with a repeat in about 2 weeks.",
       points: 2,
       teaching: "Occult fractures are common in abused infants. A follow up survey finds healing fractures that were invisible at first.",
@@ -344,6 +355,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Obtains neuroimaging, a retinal exam, coagulation studies, liver enzymes, lipase, urinalysis and bone labs.",
       points: 2,
       teaching: "Head imaging is indicated in infants under 6 months with suspected abuse even when the exam is normal. Labs look for occult injury and mimics.",
@@ -352,6 +364,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-a4",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Interprets posterior rib fractures, classic metaphyseal lesions and mixed density subdurals as highly specific for abuse and excludes mimics.",
       points: 2,
       teaching: "These injuries are rarely accidental in infants. Osteogenesis imperfecta, rickets and bleeding disorders must still be considered.",
@@ -360,6 +373,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Reports to the Children's Aid Society immediately on reasonable grounds to suspect, without waiting for confirmation.",
       points: 3,
       critical: true,
@@ -369,6 +383,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "States that the duty to report is personal, ongoing and cannot be delegated.",
       points: 2,
       teaching: "Others can help make the call but the professional with the suspicion must report directly. Report again if new information emerges.",
@@ -377,6 +392,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Tells the caregivers honestly and without accusation that the injuries are unexplained and a report is required.",
       points: 2,
       teaching: "Transparency is the default. Leave questions about how the injury happened to CAS and police.",
@@ -385,6 +401,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Prevents unsafe removal of the child by de-escalating, involving security and calling CAS and police.",
       points: 3,
       critical: true,
@@ -394,6 +411,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges transfer to a pediatric centre with neurosurgery and a child protection team.",
       points: 2,
       teaching: "Abusive head trauma needs neurosurgical review and a specialized child protection assessment.",
@@ -402,6 +420,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Ensures siblings are assessed, including a skeletal survey for household children under 2 years.",
       points: 2,
       teaching: "Siblings and other young children in the home have a high rate of occult injury. CAS coordinates their assessment.",
@@ -410,6 +429,7 @@ export const infantNonaccidentalInjury: OralCase = {
     {
       id: "na-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents the history verbatim with times and speakers, plus a body map and photographs per policy.",
       points: 1,
       teaching: "Careful documentation protects the child and supports the investigation. Record what each caregiver said, in their words.",

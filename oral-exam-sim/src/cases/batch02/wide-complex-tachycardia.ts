@@ -7,6 +7,13 @@ export const wideComplexTachycardia: OralCase = {
   title: "Palpitations in a man who looks well",
   blueprint: "cardio",
   alsoCovers: ["resus"],
+  priorityTopic: "arrhythmia",
+  keyFeatures: [
+    { topic: "arrhythmia", n: 3 },
+    { topic: "arrhythmia", n: 4 },
+    { topic: "arrhythmia", n: 5 },
+    { topic: "analgesia-sedation", n: 5 },
+  ],
   summary: "A 66 year old man walks in with an hour of palpitations and a fast regular rhythm on the monitor.",
   durationMinutes: 14,
   stem:
@@ -345,6 +352,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "States that a regular wide complex tachycardia in a patient with prior MI is VT until proven otherwise.",
       points: 3,
       critical: true,
@@ -354,6 +362,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Names ECG features that favour VT such as AV dissociation, fusion beats, QRS over 160 ms, extreme axis and concordance.",
       points: 2,
       teaching: "Fusion and capture beats and AV dissociation are the most specific signs. Look in the long rhythm strip.",
@@ -362,6 +371,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Places pads early and avoids calcium channel blockers for a wide complex tachycardia.",
       points: 3,
       critical: true,
@@ -371,6 +381,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-m1",
       competency: "management",
+      criterion: "plan",
       text: "Chooses procainamide, amiodarone or elective synchronized cardioversion for stable VT.",
       points: 2,
       teaching: "All three are accepted. Procainamide terminated more tolerated wide complex tachycardias than amiodarone in a randomized trial.",
@@ -379,6 +390,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-m2",
       competency: "management",
+      criterion: "plan",
       text: "Doses procainamide at 10 mg/kg over 20 minutes or 20 to 50 mg/min to 17 mg/kg with stop criteria.",
       points: 2,
       teaching: "Stop for hypotension, QRS widening over 50 percent or termination. Use caution with severe LV dysfunction or long QT.",
@@ -387,6 +399,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-m3",
       competency: "management",
+      criterion: "plan",
       text: "Replaces potassium and magnesium early.",
       points: 1,
       teaching: "Low potassium and magnesium lower the threshold for VT. A new thiazide is a common culprit.",
@@ -395,6 +408,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Performs immediate synchronized cardioversion starting at 100 J biphasic when he becomes unstable.",
       points: 3,
       critical: true,
@@ -404,6 +418,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses hemodynamically neutral sedation such as etomidate 0.1 to 0.15 mg/kg or ketamine.",
       points: 1,
       teaching: "Full dose propofol can drop a borderline pressure to arrest. Choose agents that preserve tone.",
@@ -412,6 +427,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies scar as the substrate and electrolyte loss from a new thiazide as the likely trigger.",
       points: 1,
       teaching: "Treating the trigger reduces early recurrence. The scar is why he needs electrophysiology review.",
@@ -420,6 +436,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-m4",
       competency: "management",
+      criterion: "plan",
       text: "Starts an amiodarone load and maintenance infusion with cardiology to prevent early recurrence.",
       points: 1,
       teaching: "Amiodarone 150 mg over 10 minutes, then 1 mg/min for 6 hours and 0.5 mg/min for 18 hours is a common regimen.",
@@ -428,6 +445,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to CCU with continuous monitoring and requests echo, ischemia work up and ICD evaluation.",
       points: 2,
       teaching: "Sustained VT with instability and structural disease is a secondary prevention ICD indication once reversible causes are excluded.",
@@ -436,6 +454,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Advocates respectfully and clearly with the consultant using the key clinical facts.",
       points: 2,
       teaching: "Lead with the risk. 'Unstable sustained VT with prior MI' gets a different answer than 'he is back in sinus'.",
@@ -444,6 +463,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Advises no commercial driving and explains fitness to drive restrictions after sustained VT.",
       points: 1,
       teaching: "Commercial drivers carry passengers and face stricter standards. Driving advice is part of the ED plan.",
@@ -452,6 +472,7 @@ export const wideComplexTachycardia: OralCase = {
     {
       id: "wct-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Explains the duty to report to the Ontario Ministry of Transportation and tells the patient before reporting.",
       points: 1,
       teaching: "Ontario requires physicians to report a high risk condition such as a moderate or high risk of sudden incapacitation. Mandatory reports do not need consent, but tell the patient why.",

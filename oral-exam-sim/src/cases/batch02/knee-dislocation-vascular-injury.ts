@@ -7,6 +7,14 @@ export const kneeDislocationVascularInjury: OralCase = {
   title: "Snowmobile into a tree",
   blueprint: "procedures",
   alsoCovers: ["trauma", "systems"],
+  priorityTopic: "msk",
+  keyFeatures: [
+    { topic: "msk", n: 1 },
+    { topic: "msk", n: 5 },
+    { topic: "msk", n: 7 },
+    { topic: "analgesia-sedation", n: 5 },
+    { topic: "ems", n: 3 },
+  ],
   summary: "A 34 year old man with a badly deformed knee after a snowmobile crash arrives at a northern community hospital.",
   durationMinutes: 15,
   stem:
@@ -337,6 +345,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Completes a primary survey and recognizes the pulseless foot as a limb threat.",
       points: 1,
       teaching: "A dramatic limb injury can distract from other injuries. Primary survey first, then treat the limb as an emergency.",
@@ -345,6 +354,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Reduces the dislocated knee immediately when the limb is ischemic, without waiting for imaging.",
       points: 3,
       critical: true,
@@ -354,6 +364,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-m1",
       competency: "management",
+      criterion: "plan",
       text: "Plans safe procedural sedation with monitoring including capnography and a dedicated airway provider.",
       points: 2,
       teaching: "Recent food is not a reason to delay urgent sedation. Ketamine 1 to 1.5 mg/kg IV gives analgesia and preserves airway reflexes.",
@@ -362,6 +373,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-m2",
       competency: "management",
+      criterion: "plan",
       text: "Uses in line traction to reduce, splints in 15 to 20 degrees of flexion and rechecks neurovascular status.",
       points: 1,
       teaching: "Avoid pressure behind the knee during reduction. Always recheck and document pulses, Doppler and nerve function after.",
@@ -370,6 +382,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Measures the ankle brachial index after reduction even when a pulse returns.",
       points: 3,
       critical: true,
@@ -379,6 +392,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Orders CT angiography for an ABI under 0.9 and identifies the common peroneal nerve injury.",
       points: 2,
       teaching: "CTA defines the lesion for the surgeon. Peroneal nerve injury is common with knee dislocation and should be documented.",
@@ -387,6 +401,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Pushes back respectfully when the consultant plans routine admission without vascular assessment.",
       points: 1,
       teaching: "Knee dislocation has a high rate of popliteal injury. Lead with the ABI and the ischemia clock.",
@@ -395,6 +410,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges urgent transfer for revascularization through CritiCall with a documented injury time and a 6 hour target.",
       points: 3,
       critical: true,
@@ -404,6 +420,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-m3",
       competency: "management",
+      criterion: "plan",
       text: "Discusses systemic heparin with the vascular surgeon and maintains analgesia, limb position and frequent neurovascular checks.",
       points: 1,
       teaching: "Heparin can limit clot propagation in an isolated limb injury. It is a joint decision with the surgeon once head and torso bleeding are excluded.",
@@ -412,6 +429,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Adapts quickly to the grounded aircraft by choosing land transport and updating the receiving team.",
       points: 2,
       teaching: "Waiting for weather costs muscle. Choose the fastest available option and keep the receiving team informed.",
@@ -420,6 +438,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explores local temporary options with the vascular surgeon and documents times and decisions.",
       points: 1,
       teaching: "Some centres guide a local surgeon to place a temporary shunt when transport is long. Ask the question.",
@@ -428,6 +447,7 @@ export const kneeDislocationVascularInjury: OralCase = {
     {
       id: "kd-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Answers the patient honestly about the risk of amputation and the plan, in plain language.",
       points: 1,
       teaching: "Patients cope better with honest uncertainty than with false reassurance.",

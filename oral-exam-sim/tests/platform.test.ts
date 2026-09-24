@@ -1,13 +1,16 @@
 import { describe, expect, it } from "vitest";
-import { FREE_CASE_COUNT, canOpen, freeCaseIds } from "@/lib/access";
-import { reconcileAccess, webAdapter, type PurchasesAdapter } from "@/lib/purchases";
+import { FREE_CASE_COUNT, FREE_SAMP_TOPICS, canOpenCase, canOpenSamp, freeCaseIds, freeSampIds } from "@/lib/access";
+import { NO_ACCESS, PRODUCTS, accessFrom, reconcileAccess, webAdapter, type Access, type PurchasesAdapter } from "@/lib/purchases";
 import { MAX_ATTEMPTS, createRepo, memoryKV } from "@/lib/storage";
 import { speakable } from "@/lib/speech";
 import { newAttempt } from "@/engine";
 import { CASES } from "@/cases";
+import { SAMPS } from "@/samps";
 import { FIXTURE } from "./fixture";
 
-function fake(check: boolean | null, restore: boolean | null): PurchasesAdapter & { restores: number } {
+const A = (written: boolean, oral: boolean): Access => ({ written, oral });
+
+function fake(check: Access | null, restore: Access | null): PurchasesAdapter & { restores: number } {
   const a = {
     restores: 0,
     async check() {
@@ -20,60 +23,78 @@ function fake(check: boolean | null, restore: boolean | null): PurchasesAdapter 
     async purchase() {
       return "purchased" as const;
     },
-    async price() {
-      return null;
+    async prices() {
+      return {};
     },
   };
   return a;
 }
 
 describe("free sample gating", () => {
-  it("opens exactly the first two cases without a purchase", () => {
+  it("opens exactly the first two oral cases without oral access", () => {
     expect(FREE_CASE_COUNT).toBe(2);
-    const free = freeCaseIds(CASES);
-    expect([...free]).toEqual(CASES.slice(0, 2).map((c) => c.id));
-    for (const c of CASES.slice(2)) expect(canOpen(c.id, CASES, false)).toBe(false);
+    expect([...freeCaseIds(CASES)]).toEqual(CASES.slice(0, 2).map((c) => c.id));
+    for (const c of CASES.slice(2)) expect(canOpenCase(c.id, CASES, A(true, false))).toBe(false);
+    for (const c of CASES) expect(canOpenCase(c.id, CASES, A(false, true))).toBe(true);
   });
-  it("opens every case once unlocked", () => {
-    for (const c of CASES) expect(canOpen(c.id, CASES, true)).toBe(true);
+  it("opens one SAMP in each of the first ten topics without written access", () => {
+    const free = freeSampIds(SAMPS);
+    const topics = new Set(SAMPS.filter((s) => free.has(s.id)).map((s) => s.topic));
+    expect(free.size).toBe(Math.min(FREE_SAMP_TOPICS, new Set(SAMPS.map((s) => s.topic)).size));
+    expect(topics.size).toBe(free.size);
+    for (const s of SAMPS) expect(canOpenSamp(s.id, SAMPS, A(false, true))).toBe(free.has(s.id));
+    for (const s of SAMPS) expect(canOpenSamp(s.id, SAMPS, A(true, false))).toBe(true);
+  });
+});
+
+describe("products and entitlements", () => {
+  it("complete grants both components", () => {
+    expect(PRODUCTS.complete.grants.sort()).toEqual(["oral", "written"]);
+    expect(PRODUCTS.written.grants).toEqual(["written"]);
+    expect(PRODUCTS.oral.grants).toEqual(["oral"]);
+  });
+  it("reads entitlements from customer info", () => {
+    expect(accessFrom({ entitlements: { active: { written_access: {}, oral_full_access: {} } } })).toEqual(A(true, true));
+    expect(accessFrom({ entitlements: { active: { oral_full_access: {} } } })).toEqual(A(false, true));
+    expect(accessFrom(null)).toEqual(NO_ACCESS);
   });
 });
 
 describe("reconcileAccess", () => {
-  it("unlocks when the entitlement is active", async () => {
-    expect(await reconcileAccess(false, fake(true, null))).toBe(true);
+  it("grants what the store reports", async () => {
+    expect(await reconcileAccess(NO_ACCESS, fake(A(true, false), null))).toEqual(A(true, false));
   });
   it("keeps the cache when the store cannot be reached", async () => {
-    expect(await reconcileAccess(true, fake(null, null))).toBe(true);
-    expect(await reconcileAccess(false, fake(null, null))).toBe(false);
+    expect(await reconcileAccess(A(true, true), fake(null, null))).toEqual(A(true, true));
   });
-  it("tries a silent restore before revoking a cached unlock", async () => {
-    const p = fake(false, true);
-    expect(await reconcileAccess(true, p)).toBe(true);
+  it("tries a silent restore before revoking a cached entitlement", async () => {
+    const p = fake(A(false, false), A(true, false));
+    expect(await reconcileAccess(A(true, false), p)).toEqual(A(true, false));
     expect(p.restores).toBe(1);
   });
   it("revokes only on a clean confirmed no", async () => {
-    expect(await reconcileAccess(true, fake(false, false))).toBe(false);
-    expect(await reconcileAccess(true, fake(false, null))).toBe(true);
+    expect(await reconcileAccess(A(true, true), fake(NO_ACCESS, NO_ACCESS))).toEqual(NO_ACCESS);
+    expect(await reconcileAccess(A(true, true), fake(NO_ACCESS, null))).toEqual(A(true, true));
   });
   it("does not call restore for a user who never bought", async () => {
-    const p = fake(false, true);
-    expect(await reconcileAccess(false, p)).toBe(false);
+    const p = fake(NO_ACCESS, A(true, true));
+    expect(await reconcileAccess(NO_ACCESS, p)).toEqual(NO_ACCESS);
     expect(p.restores).toBe(0);
   });
 });
 
 describe("web adapter", () => {
-  it("never unlocks a production web build", async () => {
+  it("never grants access in a production web build", async () => {
     const p = webAdapter(false);
-    expect(await p.purchase()).toBe("unavailable");
-    expect(await p.check()).toBe(false);
+    expect(await p.purchase("complete")).toBe("unavailable");
+    expect(await p.check()).toEqual(NO_ACCESS);
   });
-  it("simulates a purchase in local dev", async () => {
+  it("simulates each product in local dev", async () => {
     const p = webAdapter(true);
-    expect(await p.check()).toBe(false);
-    expect(await p.purchase()).toBe("purchased");
-    expect(await p.restore()).toBe(true);
+    expect(await p.purchase("written")).toBe("purchased");
+    expect(await p.check()).toEqual(A(true, false));
+    await p.purchase("oral");
+    expect(await p.restore()).toEqual(A(true, true));
   });
 });
 
@@ -99,13 +120,24 @@ describe("storage", () => {
     expect(await repo.attempts()).toEqual([]);
     expect((await repo.settings()).rate).toBe(1);
   });
-  it("reset keeps the purchase cache", async () => {
+  it("reset keeps purchases and clears written and oral progress", async () => {
     const repo = createRepo(memoryKV());
-    await repo.setCachedUnlock(true);
+    await repo.setCachedAccess(A(true, false));
     await repo.saveAttempt(newAttempt(FIXTURE, "practice", 1, "a"));
+    await repo.saveMockExam({ id: "m", sampIds: [], startedAt: 1, durationMs: 1, responses: {}, submittedAt: null });
     await repo.resetProgress();
     expect(await repo.attempts()).toEqual([]);
-    expect(await repo.cachedUnlock()).toBe(true);
+    expect(await repo.mockExams()).toEqual([]);
+    expect(await repo.cachedAccess()).toEqual(A(true, false));
+  });
+  it("replaces SAMP attempts by id, newest first", async () => {
+    const repo = createRepo(memoryKV());
+    const base = { sampId: "s", topic: "t", mode: "practice" as const, responses: {}, mark: { sampId: "s", topic: "t", questions: [], score: 0 } };
+    await repo.saveSampAttempts([{ ...base, id: "a", at: 1 }]);
+    await repo.saveSampAttempts([{ ...base, id: "b", at: 2 }]);
+    const list = await repo.saveSampAttempts([{ ...base, id: "a", at: 3, mark: { ...base.mark, score: 1 } }]);
+    expect(list.map((x) => x.id)).toEqual(["a", "b"]);
+    expect(list[0].mark.score).toBe(1);
   });
 });
 

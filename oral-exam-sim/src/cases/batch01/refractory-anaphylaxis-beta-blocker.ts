@@ -7,6 +7,15 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
   title: "Clearing out the shed",
   blueprint: "resus",
   alsoCovers: ["cardio"],
+  priorityTopic: "anaphylaxis",
+  keyFeatures: [
+    { topic: "anaphylaxis", n: 2 },
+    { topic: "anaphylaxis", n: 3 },
+    { topic: "anaphylaxis", n: 4 },
+    { topic: "shock", n: 7 },
+    { topic: "shock", n: 8 },
+    { topic: "airway", n: 2 },
+  ],
   summary: "A 64 year old man with heart disease arrives hypotensive and wheezing after an incident in his backyard.",
   durationMinutes: 14,
   stem:
@@ -347,6 +356,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes anaphylaxis with shock and bronchospasm that is refractory to two IM doses of epinephrine.",
       points: 2,
       teaching: "Refractory anaphylaxis means ongoing shock or respiratory compromise after two appropriate IM doses. It needs an escalation plan, not more watching.",
@@ -355,6 +365,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives a further IM epinephrine 0.5 mg (0.01 mg/kg) into the anterolateral thigh without delay.",
       points: 3,
       critical: true,
@@ -364,6 +375,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Positions the patient flat with legs raised and gives rapid crystalloid of 20 mL/kg through two large bore lines.",
       points: 2,
       teaching: "Sitting or standing a shocked anaphylaxis patient can cause empty ventricle arrest. Capillary leak can shift a large part of the circulating volume.",
@@ -372,6 +384,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls ICU and anesthesia early and assigns pharmacy to prepare infusions.",
       points: 1,
       teaching: "Refractory anaphylaxis can progress to airway loss or arrest. Early help and prepared infusions save minutes.",
@@ -380,6 +393,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts an epinephrine infusion at about 0.1 mcg/kg/min, in the range 0.05 to 0.2, and titrates to response.",
       points: 3,
       critical: true,
@@ -389,6 +403,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-m1",
       competency: "management",
+      criterion: "plan",
       text: "Avoids 1 mg IV epinephrine boluses in a patient with a pulse and uses epinephrine as first vasopressor rather than norepinephrine.",
       points: 2,
       teaching: "IV boluses at the arrest dose cause arrhythmia and ischemia. Epinephrine also treats bronchospasm and mast cell release.",
@@ -397,6 +412,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies beta blocker therapy as a cause of poor response and notes the ACE inhibitor as a possible contributor.",
       points: 2,
       teaching: "Beta blockers blunt the effect of epinephrine and may make reactions more severe. ACE inhibitors may impair compensation.",
@@ -405,6 +421,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives glucagon 1 to 5 mg IV over 5 minutes then 5 to 15 mcg/min, with an antiemetic and airway protection against vomiting.",
       points: 3,
       critical: true,
@@ -414,6 +431,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Recognizes voice change as a sign of laryngeal edema and plans airway assessment and management with anesthesia.",
       points: 2,
       teaching: "Hoarseness or stridor means the airway is at risk. Plan early with the most experienced operator and a surgical backup.",
@@ -422,6 +440,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-a4",
       competency: "assessment",
+      criterion: "data",
       text: "Interprets the troponin rise as likely demand injury or Kounis syndrome and arranges serial ECGs, troponins and cardiology input.",
       points: 1,
       teaching: "Coronary disease is not a reason to withhold epinephrine in anaphylaxis. Shock itself threatens the heart more than the drug.",
@@ -430,6 +449,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to a monitored setting for at least 24 hours after refractory anaphylaxis.",
       points: 2,
       teaching: "Severe reactions and those needing more than one epinephrine dose carry a higher risk of biphasic reaction. Observation length should match severity.",
@@ -438,6 +458,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Prescribes two epinephrine auto injectors with teaching and a written action plan.",
       points: 1,
       teaching: "Every patient with anaphylaxis leaves with auto injectors and knows when and how to use them.",
@@ -446,6 +467,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Refers to an allergist for venom testing and immunotherapy, and asks cardiology and allergy to review the beta blocker and ACE inhibitor together.",
       points: 2,
       teaching: "Venom immunotherapy greatly reduces the risk of future systemic reactions. Cardiac drugs are reviewed by the specialists, not stopped abruptly in the department.",
@@ -454,6 +476,7 @@ export const refractoryAnaphylaxisBetaBlocker: OralCase = {
     {
       id: "an-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Arranges a repeat tryptase for a baseline and documents the reaction as a venom allergy.",
       points: 1,
       teaching: "A raised acute tryptase supports the diagnosis. A high baseline suggests a mast cell disorder that raises future risk.",

@@ -7,6 +7,14 @@ export const olderManSevereAbdominalPain: OralCase = {
   title: "Belly pain that will not settle",
   blueprint: "geri",
   alsoCovers: ["cardio", "comm"],
+  priorityTopic: "abdominal-pain",
+  keyFeatures: [
+    { topic: "abdominal-pain", n: 1 },
+    { topic: "abdominal-pain", n: 2 },
+    { topic: "abdominal-pain", n: 3 },
+    { topic: "abdominal-pain", n: 4 },
+    { topic: "abdominal-pain", n: 5 },
+  ],
   summary: "A 79 year old man has sudden severe abdominal pain and a soft abdomen. The nurse thinks it is constipation.",
   durationMinutes: 15,
   stem:
@@ -310,6 +318,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Suspects acute mesenteric ischemia from pain out of proportion to exam in a patient with atrial fibrillation off anticoagulation.",
       points: 3,
       critical: true,
@@ -319,6 +328,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Orders CT angiography promptly and does not withhold contrast because of moderate kidney impairment.",
       points: 3,
       critical: true,
@@ -328,6 +338,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-m1",
       competency: "management",
+      criterion: "plan",
       text: "Starts IV unfractionated heparin with a weight based bolus and infusion.",
       points: 2,
       teaching: "Heparin limits propagation of thrombus and can be stopped quickly for surgery.",
@@ -336,6 +347,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives broad spectrum antibiotics, fluids, analgesia and bowel rest.",
       points: 1,
       teaching: "Ischemic bowel lets bacteria cross the wall. Early antibiotics are recommended.",
@@ -344,6 +356,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Arranges a joint discussion between the local general surgeon and vascular surgery through CritiCall.",
       points: 2,
       teaching: "Mesenteric ischemia needs both revascularization and bowel assessment. Joint planning avoids delay.",
@@ -352,6 +365,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Presents findings clearly and asks each consultant for a specific decision and timeline.",
       points: 1,
       teaching: "A clear question to each consultant speeds decisions.",
@@ -360,6 +374,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Recognizes peritonitis and shock, gives fluid boluses and norepinephrine to a mean arterial pressure of at least 65 mmHg.",
       points: 2,
       teaching: "Shock from infarcted bowel needs resuscitation and source control. Fluids alone will not fix it.",
@@ -368,6 +383,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Changes the plan to immediate local laparotomy when peritonitis develops rather than a long transfer.",
       points: 3,
       critical: true,
@@ -377,6 +393,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Discusses goals of care directly with the capable patient, using plain language and honest risk.",
       points: 2,
       teaching: "Explore values and what the patient would accept. Offer a time limited trial when outcome is uncertain.",
@@ -385,6 +402,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Bases recommendations on function and wishes rather than age.",
       points: 2,
       teaching: "The Clinical Frailty Scale helps judge fitness for surgery better than age alone.",
@@ -393,6 +411,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover including drug times, resuscitation and agreed goals of care.",
       points: 1,
       teaching: "Goals of care must travel with the patient to the operating room and ICU.",
@@ -401,6 +420,7 @@ export const olderManSevereAbdominalPain: OralCase = {
     {
       id: "mi-m3",
       competency: "management",
+      criterion: "approach",
       text: "Considers the differential including ruptured aneurysm, perforation and myocardial infarction.",
       points: 1,
       teaching: "Bedside ultrasound of the aorta and an ECG narrow the list quickly.",

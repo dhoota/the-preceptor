@@ -7,6 +7,8 @@ export const colleagueAtHandover: OralCase = {
   title: "A colleague at handover",
   blueprint: "ethics",
   alsoCovers: ["systems", "comm"],
+  priorityTopic: "cqi",
+  keyFeatures: [{ topic: "cqi", n: 1 }, { topic: "cqi", n: 5 }, { topic: "multiple-patients", n: 3 }, { topic: "suicide-risk", n: 1 }],
   summary: "At evening handover, a nurse takes you aside with a concern about the physician you are relieving.",
   durationMinutes: 13,
   stem:
@@ -357,6 +359,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Removes the colleague from clinical duties immediately.",
       points: 3,
       critical: true,
@@ -366,6 +369,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks privately using specific observations rather than accusations.",
       points: 2,
       teaching: "Describe what you saw and heard. Facts are harder to deny and preserve dignity.",
@@ -374,6 +378,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-m1",
       competency: "management",
+      criterion: "data",
       text: "Reviews all active orders and recent discharges and corrects the dangerous ones.",
       points: 3,
       critical: true,
@@ -383,6 +388,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Activates the backup physician and tells the charge nurse the plan.",
       points: 2,
       teaching: "Losing a physician mid shift is a capacity problem. Fix staffing early and make the leadership line clear.",
@@ -391,6 +397,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Refuses to keep the concern secret or let him continue working.",
       points: 2,
       teaching: "A private deal protects no one. Future patients and the colleague both need the system to know.",
@@ -399,6 +406,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Stays calm and compassionate while holding a firm line.",
       points: 1,
       teaching: "Kindness and firmness together are more effective than either alone.",
@@ -407,6 +415,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Notifies the deputy chief or chief of staff the same night.",
       points: 3,
       critical: true,
@@ -416,6 +425,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents factually, files a patient safety report and seeks CMPA advice on personal obligations.",
       points: 1,
       teaching: "Keep notes objective and free of speculation. The CMPA can advise on your own reporting options.",
@@ -424,6 +434,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Prevents him from driving and calls police if he will not accept an alternative.",
       points: 2,
       teaching: "An impaired colleague about to drive is a public safety emergency. Offer a safe option first, then call police.",
@@ -432,6 +443,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-c3",
       competency: "communication",
+      criterion: "approach",
       text: "Asks directly about his safety and suicidal thoughts.",
       points: 1,
       teaching: "Physicians facing a professional crisis are at higher risk of suicide. Ask directly.",
@@ -440,6 +452,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Directs him to the OMA Physician Health Program, his family doctor or the employee assistance program.",
       points: 1,
       teaching: "The Physician Health Program offers confidential assessment, treatment and monitoring. Many physicians return to practice.",
@@ -448,6 +461,7 @@ export const colleagueAtHandover: OralCase = {
     {
       id: "ic-l3",
       competency: "leadership",
+      criterion: "plan",
       text: "Thanks the nurse, protects her from retaliation and offers a debrief.",
       points: 1,
       teaching: "Staff who speak up about senior physicians need visible support. That is how a safety culture is built.",

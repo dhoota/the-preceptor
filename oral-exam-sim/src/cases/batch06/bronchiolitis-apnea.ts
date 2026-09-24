@@ -6,6 +6,14 @@ export const bronchiolitisApnea: OralCase = {
   id: "bronchiolitis-apnea",
   title: "A baby who went blue in the car seat",
   blueprint: "peds",
+  priorityTopic: "sob",
+  keyFeatures: [
+    { topic: "sob", n: 2 },
+    { topic: "sob", n: 3 },
+    { topic: "sob", n: 4 },
+    { topic: "airway", n: 2 },
+    { topic: "airway", n: 4 },
+  ],
   summary: "A 6 week old former preterm infant with a cold and a spell in the car on the way in.",
   durationMinutes: 14,
   stem:
@@ -356,6 +364,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies high risk features for apnea: age under 2 months, prematurity and a witnessed apnea.",
       points: 2,
       teaching: "Young age and prematurity are the strongest risk factors for apnea in RSV bronchiolitis. A witnessed spell raises the level of monitoring needed.",
@@ -364,6 +373,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Places the infant on continuous cardiorespiratory monitoring with apnea alarms in a resuscitation area.",
       points: 3,
       critical: true,
@@ -373,6 +383,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Suctions the nares and gives oxygen for SpO2 persistently under 90 percent.",
       points: 2,
       teaching: "Infants are obligate nasal breathers. Gentle nasal suction often improves work of breathing. CPS suggests supplemental oxygen when SpO2 stays under 90 percent.",
@@ -381,6 +392,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Explains that central apnea is an early feature of RSV in young infants and considers pertussis, sepsis, hypoglycemia, seizure and abusive head trauma.",
       points: 2,
       teaching: "Apnea can precede severe distress in RSV. A broad differential protects against missing a treatable cause.",
@@ -389,6 +401,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Checks glucose and a blood gas, and sends pertussis PCR in an infant with apnea.",
       points: 1,
       teaching: "Glucose and a gas are quick and change management. Pertussis can present with apnea in young infants and needs treatment and public health follow up.",
@@ -397,6 +410,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-m1",
       competency: "management",
+      criterion: "plan",
       text: "Does not give salbutamol, corticosteroids or routine nebulized epinephrine.",
       points: 2,
       teaching: "None of these improve important outcomes in bronchiolitis. Each adds side effects and cost.",
@@ -405,6 +419,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-m2",
       competency: "management",
+      criterion: "plan",
       text: "Does not give antibiotics or hypertonic saline in the ED without a specific indication.",
       points: 1,
       teaching: "Bacterial coinfection of the lung is uncommon in bronchiolitis. Hypertonic saline has no proven ED benefit.",
@@ -413,6 +428,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts high flow nasal cannula at about 2 L/kg/min when standard oxygen fails.",
       points: 2,
       teaching: "High flow reduces escalation of care in infants who fail standard oxygen. It is a bridge, not a treatment for recurrent central apnea.",
@@ -421,6 +437,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls the pediatric transport service and anesthesia early when apnea recurs.",
       points: 3,
       critical: true,
@@ -430,6 +447,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-m3",
       competency: "management",
+      criterion: "plan",
       text: "Stops oral feeds in severe distress and uses NG feeds or isotonic IV fluid.",
       points: 1,
       teaching: "Oral feeding with high respiratory rates risks aspiration. CPS supports NG or isotonic IV hydration when oral intake fails.",
@@ -438,6 +456,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates with weight based drugs, for example ketamine 1 to 2 mg/kg and rocuronium 1 mg/kg, with atropine and epinephrine ready.",
       points: 2,
       critical: true,
@@ -447,6 +466,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-r5",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Chooses a cuffed 3.0 mm tube with correct depth and sets lung protective ventilation.",
       points: 1,
       teaching: "Cuffed tubes are reasonable in infants when cuff pressure is monitored. Use 6 to 8 mL/kg tidal volume and accept moderate hypercapnia.",
@@ -455,6 +475,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Reassures the parent that she is not at fault and explains intubation and transfer in plain language.",
       points: 2,
       teaching: "Parental guilt is common. A direct statement that it is not their fault, and a clear plan, helps families cope with transfer.",
@@ -463,6 +484,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover including airway, ventilator settings, drugs, times and pending tests.",
       points: 2,
       teaching: "Structured handover reduces omissions at transfer. Name who will follow each pending result.",
@@ -471,6 +493,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges PICU transfer with a critical care transport team rather than ward admission.",
       points: 2,
       teaching: "An infant with recurrent apnea and rising pCO2 needs a unit that can provide ventilation. Ward admission is unsafe.",
@@ -479,6 +502,7 @@ export const bronchiolitisApnea: OralCase = {
     {
       id: "br-m4",
       competency: "management",
+      criterion: "plan",
       text: "Plans empiric azithromycin 10 mg/kg once daily for 5 days if pertussis is confirmed or strongly suspected.",
       points: 1,
       teaching: "Azithromycin is the preferred macrolide in young infants. Watch for pyloric stenosis after any macrolide in the first weeks of life. Close contacts may need prophylaxis through public health.",

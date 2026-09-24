@@ -7,6 +7,15 @@ export const stemiCardiogenicShock: OralCase = {
   title: "Grey and sweaty in the waiting room",
   blueprint: "cardio",
   alsoCovers: ["resus"],
+  priorityTopic: "ischemic-heart-disease",
+  keyFeatures: [
+    { topic: "ischemic-heart-disease", n: 2 },
+    { topic: "ischemic-heart-disease", n: 6 },
+    { topic: "ischemic-heart-disease", n: 7 },
+    { topic: "shock", n: 5 },
+    { topic: "shock", n: 7 },
+    { topic: "cqi", n: 1 },
+  ],
   summary: "A 58 year old man walks into a PCI centre ED with chest pain and is found to be pale, cold and hypotensive.",
   durationMinutes: 15,
   stem:
@@ -326,6 +335,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Diagnoses anterior STEMI with cardiogenic shock from ECG, perfusion signs and echo.",
       points: 2,
       teaching: "Hypotension with cold, mottled skin, high lactate and a low ejection fraction define cardiogenic shock. Name it early.",
@@ -334,6 +344,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-r1",
       competency: "resuscitation",
+      criterion: "data",
       text: "Activates the cath lab immediately without waiting for troponin.",
       points: 3,
       critical: true,
@@ -343,6 +354,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives ASA 160 to 325 mg and heparin, discusses P2Y12 timing with the lab and avoids nitrates and morphine.",
       points: 2,
       teaching: "Nitrates are contraindicated with systolic pressure under 90. P2Y12 timing in shock is best decided with the interventionalist.",
@@ -351,6 +363,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts norepinephrine at 0.05 mcg/kg/min titrated to MAP 65 and avoids large fluid boluses.",
       points: 3,
       critical: true,
@@ -360,6 +373,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-m2",
       competency: "management",
+      criterion: "plan",
       text: "Adds dobutamine 2.5 to 5 mcg/kg/min only after MAP is restored, and avoids dopamine.",
       points: 1,
       teaching: "Inotropes help output but cause vasodilation. Pressure first, then flow.",
@@ -368,6 +382,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Defibrillates witnessed VF immediately at 200 J biphasic and follows ACLS drug timing.",
       points: 3,
       critical: true,
@@ -377,6 +392,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates with a resuscitate first approach, reduced dose induction, full dose paralytic and push dose pressor ready.",
       points: 2,
       teaching: "Peri-intubation arrest is common in cardiogenic shock. Optimize MAP, preoxygenate and cut the induction dose.",
@@ -385,6 +401,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Advocates for going directly to the cath lab and gives a structured handover.",
       points: 2,
       teaching: "A brief witnessed arrest is not a reason to delay PCI for head CT. A clear handover prevents dosing errors.",
@@ -393,6 +410,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-m3",
       competency: "management",
+      criterion: "plan",
       text: "Knows that culprit lesion only PCI is standard in cardiogenic shock.",
       points: 1,
       teaching: "In CULPRIT-SHOCK, culprit only PCI lowered 30 day death or renal replacement therapy compared with immediate multivessel PCI.",
@@ -401,6 +419,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-m4",
       competency: "management",
+      criterion: "plan",
       text: "Raises early discussion of mechanical circulatory support with the shock team.",
       points: 1,
       teaching: "A microaxial flow pump lowered 180 day mortality in selected STEMI shock in DanGer Shock, with more complications. Comatose arrest survivors were excluded. It is a team decision.",
@@ -409,6 +428,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Updates the family honestly and compassionately in a private space.",
       points: 1,
       teaching: "Use plain words. Say what happened, what is being done and that he is critically ill.",
@@ -417,6 +437,7 @@ export const stemiCardiogenicShock: OralCase = {
     {
       id: "stemi-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Addresses the delayed ECG through the quality process and proposes triage fixes.",
       points: 1,
       teaching: "An ECG within 10 minutes of arrival for chest pain is the standard. System fixes beat individual blame.",

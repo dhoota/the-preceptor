@@ -7,6 +7,14 @@ export const adultSepticShock: OralCase = {
   title: "Fever and confusion in a retired teacher",
   blueprint: "id",
   alsoCovers: ["resus"],
+  priorityTopic: "infectious-diseases",
+  keyFeatures: [
+    { topic: "infectious-diseases", n: 1 },
+    { topic: "infectious-diseases", n: 2 },
+    { topic: "infectious-diseases", n: 8 },
+    { topic: "shock", n: 6 },
+    { topic: "shock", n: 7 },
+  ],
   summary: "A 74 year old woman arrives with fever, abdominal pain and new confusion.",
   durationMinutes: 15,
   stem:
@@ -349,6 +357,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-r1",
       competency: "resuscitation",
+      criterion: "approach",
       text: "Recognizes septic shock with hypoperfusion from hypotension, mottling, confusion and lactate 5.2 mmol/L.",
       points: 2,
       teaching: "Septic shock means vasopressors are needed for a MAP of 65 with a lactate over 2 despite fluid. Mottling, confusion and a lactate of 4 or more show poor perfusion.",
@@ -357,6 +366,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-m1",
       competency: "management",
+      criterion: "plan",
       text: "Draws blood cultures and gives broad spectrum antibiotics within 1 hour, such as piperacillin tazobactam 4.5 g IV.",
       points: 3,
       critical: true,
@@ -366,6 +376,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives balanced crystalloid toward 30 mL/kg in boluses with reassessment after each.",
       points: 2,
       teaching: "Surviving Sepsis suggests at least 30 mL/kg in the first 3 hours for hypoperfusion. Reassess often to avoid overload.",
@@ -374,6 +385,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies acute cholangitis from an obstructing common bile duct stone.",
       points: 2,
       teaching: "Fever, jaundice and right upper quadrant pain with a dilated duct on ultrasound is cholangitis.",
@@ -382,6 +394,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Grades it as severe because of organ dysfunction and states it needs urgent biliary drainage.",
       points: 2,
       teaching: "Severe cholangitis with organ failure needs drainage as soon as the patient is stabilized.",
@@ -390,6 +403,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts norepinephrine peripherally, at about 0.05 to 0.1 mcg/kg/min, titrated to MAP 65 or more, without waiting for central access.",
       points: 3,
       critical: true,
@@ -399,6 +413,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Uses bedside ultrasound and repeat lactate to guide further fluid.",
       points: 1,
       teaching: "Early goal directed protocols did not improve outcome. Individual reassessment matters more than fixed targets.",
@@ -407,6 +422,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-m2",
       competency: "management",
+      criterion: "plan",
       text: "Pushes for source control tonight by ERCP, or percutaneous drainage if ERCP is not possible.",
       points: 3,
       critical: true,
@@ -416,6 +432,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-m3",
       competency: "management",
+      criterion: "plan",
       text: "Adds vasopressin 0.03 units/min and hydrocortisone 50 mg IV every 6 hours for rising norepinephrine needs.",
       points: 2,
       teaching: "Surviving Sepsis suggests vasopressin when norepinephrine reaches about 0.25 to 0.5 mcg/kg/min, and hydrocortisone for ongoing vasopressor need.",
@@ -424,6 +441,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Plans a safe intubation: resuscitate first, reduced dose induction, push dose pressor ready.",
       points: 2,
       teaching: "Induction removes sympathetic tone. Shock patients often arrest at intubation without preparation.",
@@ -432,6 +450,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Advocates respectfully with the consultant and gives a structured handover to the ICU.",
       points: 2,
       teaching: "State the severity, the criteria and the specific request. Offer an alternative such as IR drainage.",
@@ -440,6 +459,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Tells her husband honestly that she is critically ill and explains the plan.",
       points: 1,
       teaching: "Honest words about the risk of death prepare families. Confirm goals of care early.",
@@ -448,6 +468,7 @@ export const adultSepticShock: OralCase = {
     {
       id: "ss-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to the ICU, holds metformin and ramipril, and plans to narrow antibiotics based on cultures.",
       points: 1,
       teaching: "Metformin and ACE inhibitors worsen kidney injury and lactic acidosis in shock. Narrow therapy once the organism is known.",

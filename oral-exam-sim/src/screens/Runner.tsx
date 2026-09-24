@@ -11,6 +11,7 @@ import {
   type Attempt,
 } from "@/engine";
 import { speak, stopSpeaking } from "@/lib/speech";
+import { ORAL_STATION_MINUTES } from "@/engine/exam";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -43,10 +44,23 @@ function Paragraphs({ text }: { text: string }) {
   );
 }
 
-export function Runner({ id, mode, go }: { id: string; mode: "practice" | "exam"; go: Go }) {
+export function Runner({
+  id,
+  mode,
+  mockOralId,
+  go,
+}: {
+  id: string;
+  mode: "practice" | "exam" | "station";
+  mockOralId?: string;
+  go: Go;
+}) {
   const app = useApp();
   const c = getCase(id)!;
-  const exam = mode === "exam";
+  // Station mode is exam day rules plus the fixed 12 minute station clock.
+  const station = mode === "station";
+  const exam = mode === "exam" || station;
+  const [stationStart, setStationStart] = useState<number | null>(null);
   const [attempt, setAttempt] = useState<Attempt>(() =>
     newAttempt(c, mode, Date.now(), `${c.id}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`),
   );
@@ -60,8 +74,9 @@ export function Runner({ id, mode, go }: { id: string; mode: "practice" | "exam"
   const now = useNow(true);
   const range = useMemo(() => questionRange(c), [c]);
   const answered = questionsOnPath(c, attempt).length - (node.kind === "question" && phase === "node" ? 1 : 0);
-  const caseSecs = (now - attempt.startedAt) / 1000;
-  const overCase = caseSecs > c.durationMinutes * 60;
+  const caseSecs = (now - (stationStart ?? attempt.startedAt)) / 1000;
+  const stationLeft = station && stationStart ? ORAL_STATION_MINUTES * 60 - caseSecs : null;
+  const overCase = station ? (stationLeft ?? 1) <= 60 : caseSecs > c.durationMinutes * 60;
   const lastSpoken = useRef("");
 
   const spoken = phase === "stem" ? c.stem : node.kind === "question" ? node.prompt : node.text;
@@ -121,8 +136,16 @@ export function Runner({ id, mode, go }: { id: string; mode: "practice" | "exam"
   async function finish() {
     const done = { ...attempt, finishedAt: attempt.finishedAt ?? Date.now() };
     await app.saveAttempt(done);
-    go({ name: "score", attemptId: done.id });
+    go({ name: "score", attemptId: done.id, mockOralId });
   }
+
+  // The station ends at 12 minutes wherever the candidate is in the case.
+  useEffect(() => {
+    if (stationLeft !== null && stationLeft <= 0) {
+      stopSpeaking();
+      finish();
+    }
+  }, [stationLeft !== null && stationLeft <= 0]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function ask(fid: string) {
     const r = askFinding(c, attempt, fid);
@@ -140,10 +163,10 @@ export function Runner({ id, mode, go }: { id: string; mode: "practice" | "exam"
     <>
       <div className="runhead">
         <span className="label">
-          {exam ? "Exam day" : "Practice"} · {c.title}
+          {station ? "Station" : exam ? "Exam day" : "Practice"} · {c.title}
         </span>
         <span className={`clock ${overCase ? "over" : ""}`}>
-          {mmss(caseSecs)} / {c.durationMinutes}:00
+          {station ? (stationLeft === null ? `${ORAL_STATION_MINUTES}:00` : mmss(Math.max(0, stationLeft))) : `${mmss(caseSecs)} / ${c.durationMinutes}:00`}
         </span>
       </div>
       <div className="progress" aria-hidden="true">
@@ -265,8 +288,14 @@ export function Runner({ id, mode, go }: { id: string; mode: "practice" | "exam"
       <div className="dock">
         <div className="inner">
           {phase === "stem" && (
-            <button className="btn" onClick={() => setPhase("node")}>
-              Begin
+            <button
+              className="btn"
+              onClick={() => {
+                if (station) setStationStart(Date.now());
+                setPhase("node");
+              }}
+            >
+              {station ? "I have read the stem. Start 12:00" : "Begin"}
             </button>
           )}
           {phase === "node" && node.kind === "say" && (

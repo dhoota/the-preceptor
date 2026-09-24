@@ -7,6 +7,8 @@ export const toxicAlcoholMethanol: OralCase = {
   title: "Found in the garage and cannot see well",
   blueprint: "tox",
   alsoCovers: ["resus"],
+  priorityTopic: "tox",
+  keyFeatures: [{ topic: "tox", n: 2 }, { topic: "tox", n: 3 }, { topic: "tox", n: 6 }, { topic: "tox", n: 7 }],
   summary: "A 52 year old man is found confused in his garage and complains that his vision is blurry.",
   durationMinutes: 15,
   stem:
@@ -349,6 +351,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Calculates the anion gap and osmolar gap correctly using Canadian units.",
       points: 2,
       teaching: "Calculated osmolality is 2 times sodium plus glucose plus urea in mmol/L. A gap over about 10 suggests an unmeasured osmole.",
@@ -357,6 +360,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Diagnoses probable methanol poisoning from the gaps, visual symptoms, optic disc findings and history.",
       points: 2,
       teaching: "Blurry or snowfield vision with severe acidosis is classic for methanol. Early on the osmolar gap is high. Later the anion gap rises.",
@@ -365,6 +369,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates with bicarbonate first and ventilator settings that match high pre intubation minute ventilation.",
       points: 2,
       teaching: "Severe metabolic acidosis depends on respiratory compensation. Standard ventilator settings can cause collapse.",
@@ -373,6 +378,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives fomepizole 15 mg/kg IV promptly on clinical suspicion, without waiting for a methanol level.",
       points: 3,
       critical: true,
@@ -382,6 +388,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-m2",
       competency: "management",
+      criterion: "plan",
       text: "States maintenance fomepizole dosing, adjusts it for dialysis and arranges supply or an ethanol backup.",
       points: 2,
       teaching: "Fomepizole is 10 mg/kg every 12 hours for 4 doses then 15 mg/kg every 12 hours. Give it every 4 hours during dialysis.",
@@ -390,6 +397,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives sodium bicarbonate, folic or folinic acid and thiamine.",
       points: 2,
       teaching: "Correcting acidosis reduces formate entry into tissues. Folate speeds formate breakdown to carbon dioxide.",
@@ -398,6 +406,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-m4",
       competency: "management",
+      criterion: "plan",
       text: "Identifies EXTRIP indications for dialysis: coma, seizures, vision loss, pH 7.15 or less, anion gap over 24 or a high level.",
       points: 3,
       critical: true,
@@ -407,6 +416,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges urgent transfer through CritiCall for intermittent hemodialysis with antidote and infusions running.",
       points: 2,
       teaching: "Call early. Transfer takes time. Send the antidote with the patient.",
@@ -415,6 +425,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Contacts the poison centre and the receiving hospital about a possible second patient.",
       points: 1,
       teaching: "Shared exposures are common in toxic alcohol cases. Early calls let other teams prepare.",
@@ -423,6 +434,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains methanol poisoning and the uncertain visual prognosis honestly to the wife.",
       points: 1,
       teaching: "Visual loss from methanol may be permanent. Avoid false reassurance and explain next steps.",
@@ -431,6 +443,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover that includes antidote timing, supply, ventilator settings and the dialysis plan.",
       points: 1,
       teaching: "Transport teams may lower the ventilator rate by habit. Tell them why it must stay high.",
@@ -439,6 +452,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Explores intent without judgement and plans addiction and mental health follow up.",
       points: 1,
       teaching: "Drinking a toxic alcohol as a substitute is a sign of severe alcohol use disorder. It deserves treatment, not blame.",
@@ -447,6 +461,7 @@ export const toxicAlcoholMethanol: OralCase = {
     {
       id: "tam-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Takes action to locate and treat a possible second exposed person.",
       points: 3,
       critical: true,

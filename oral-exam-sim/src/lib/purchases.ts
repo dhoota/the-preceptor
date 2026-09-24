@@ -1,30 +1,49 @@
 /**
  * RevenueCat in-app purchases. Same pattern as the other Preceptor apps:
- * lazy import of @revenuecat/purchases-capacitor on native only, one
- * entitlement, buyer-safe revocation. No server of our own.
+ * lazy import of @revenuecat/purchases-capacitor on native only, buyer-safe
+ * revocation, no server of our own.
  *
- * Product: one non-consumable "lifetime" unlock of every case.
+ * Two entitlements, three non-consumable products:
+ *   complete  grants written and oral
+ *   written   grants written (the SAMP bank and mock exam)
+ *   oral      grants oral (the oral cases and mock oral)
  * Owner setup is in LAUNCH.md.
  */
 
-// Public SDK keys. These are safe to ship in the app (they are not secrets).
-// REPLACE with the keys from RevenueCat > Project > API keys once the
-// Preceptor: Oral apps are added. Placeholders keep purchases disabled.
-export const RC_KEY_IOS = "appl_REPLACE_WITH_ORAL_IOS_PUBLIC_KEY";
-export const RC_KEY_ANDROID = "goog_REPLACE_WITH_ORAL_ANDROID_PUBLIC_KEY";
-export const RC_ENTITLEMENT = "oral_full_access";
-export const RC_OFFERING = "oral_unlock";
+// Public SDK keys. Safe to ship in the app. REPLACE with the keys from
+// RevenueCat > Project > API keys. Placeholders keep purchases disabled.
+export const RC_KEY_IOS = "appl_REPLACE_WITH_CCFPEM_IOS_PUBLIC_KEY";
+export const RC_KEY_ANDROID = "goog_REPLACE_WITH_CCFPEM_ANDROID_PUBLIC_KEY";
+
+export const ENTITLEMENTS = { written: "written_access", oral: "oral_full_access" } as const;
+export const RC_OFFERING = "ccfpem";
+
+export type ProductKey = "complete" | "written" | "oral";
+
+/** Store product IDs. `oral_full_lifetime` keeps the record already created. */
+export const PRODUCTS: Record<ProductKey, { id: string; grants: (keyof typeof ENTITLEMENTS)[]; fallbackPrice: string }> = {
+  complete: { id: "ccfpem_complete_lifetime", grants: ["written", "oral"], fallbackPrice: "CA$199.99" },
+  written: { id: "ccfpem_written_lifetime", grants: ["written"], fallbackPrice: "CA$149.99" },
+  oral: { id: "oral_full_lifetime", grants: ["oral"], fallbackPrice: "CA$99.99" },
+};
+
+export interface Access {
+  written: boolean;
+  oral: boolean;
+}
+
+export const NO_ACCESS: Access = { written: false, oral: false };
 
 export type PurchaseOutcome = "purchased" | "cancelled" | "failed" | "unavailable";
 
 export interface PurchasesAdapter {
-  /** true = entitled, false = definitely not, null = could not tell (offline, error). */
-  check(): Promise<boolean | null>;
-  /** Same tri-state, after asking the store to restore. */
-  restore(): Promise<boolean | null>;
-  purchase(): Promise<PurchaseOutcome>;
-  /** Localised store price, e.g. "CA$129.99". Null until loaded. */
-  price(): Promise<string | null>;
+  /** Current access, or null when the store cannot be reached. */
+  check(): Promise<Access | null>;
+  /** Same, after asking the store to restore purchases. */
+  restore(): Promise<Access | null>;
+  purchase(product: ProductKey): Promise<PurchaseOutcome>;
+  /** Localised store prices. Missing keys fall back to PRODUCTS. */
+  prices(): Promise<Partial<Record<ProductKey, string>>>;
 }
 
 type RCModule = typeof import("@revenuecat/purchases-capacitor");
@@ -70,13 +89,16 @@ async function rc(): Promise<RCModule | null> {
 }
 
 type CustomerInfoLike = { entitlements?: { active?: Record<string, unknown> } } | null | undefined;
-const entitled = (ci: CustomerInfoLike) => Boolean(ci?.entitlements?.active?.[RC_ENTITLEMENT]);
 
-async function lifetimePackage(m: RCModule) {
+export function accessFrom(ci: CustomerInfoLike): Access {
+  const active = ci?.entitlements?.active ?? {};
+  return { written: Boolean(active[ENTITLEMENTS.written]), oral: Boolean(active[ENTITLEMENTS.oral]) };
+}
+
+async function packages(m: RCModule) {
   const offerings = await m.Purchases.getOfferings();
   const off = offerings?.all?.[RC_OFFERING] ?? offerings?.current ?? null;
-  const pkgs = off?.availablePackages ?? [];
-  return off?.lifetime ?? pkgs.find((p) => p.packageType === "LIFETIME") ?? pkgs[0] ?? null;
+  return off?.availablePackages ?? [];
 }
 
 export const revenueCat: PurchasesAdapter = {
@@ -84,7 +106,7 @@ export const revenueCat: PurchasesAdapter = {
     const m = await rc();
     if (!m) return null;
     try {
-      return entitled((await m.Purchases.getCustomerInfo()).customerInfo);
+      return accessFrom((await m.Purchases.getCustomerInfo()).customerInfo);
     } catch {
       return null;
     }
@@ -93,56 +115,63 @@ export const revenueCat: PurchasesAdapter = {
     const m = await rc();
     if (!m) return null;
     try {
-      return entitled((await m.Purchases.restorePurchases()).customerInfo);
+      return accessFrom((await m.Purchases.restorePurchases()).customerInfo);
     } catch {
       return null;
     }
   },
-  async purchase() {
+  async purchase(product) {
     const m = await rc();
     if (!m) return "unavailable";
     try {
-      const pkg = await lifetimePackage(m);
+      const pkg = (await packages(m)).find((p) => p.product?.identifier === PRODUCTS[product].id);
       if (!pkg) return "unavailable";
       const res = await m.Purchases.purchasePackage({ aPackage: pkg });
-      return entitled(res?.customerInfo) ? "purchased" : "failed";
+      const got = accessFrom(res?.customerInfo);
+      return PRODUCTS[product].grants.every((g) => got[g]) ? "purchased" : "failed";
     } catch (e) {
       const err = e as { userCancelled?: boolean; code?: string | number };
       return err?.userCancelled || err?.code === "1" || err?.code === 1 ? "cancelled" : "failed";
     }
   },
-  async price() {
+  async prices() {
     const m = await rc();
-    if (!m) return null;
+    if (!m) return {};
     try {
-      return (await lifetimePackage(m))?.product?.priceString ?? null;
+      const pkgs = await packages(m);
+      const out: Partial<Record<ProductKey, string>> = {};
+      for (const key of Object.keys(PRODUCTS) as ProductKey[]) {
+        const p = pkgs.find((x) => x.product?.identifier === PRODUCTS[key].id);
+        if (p?.product?.priceString) out[key] = p.product.priceString;
+      }
+      return out;
     } catch {
-      return null;
+      return {};
     }
   },
 };
 
 /**
- * Browser build. Purchases only exist in the store apps. In local dev the
- * unlock is simulated so the full flow can be clicked through. A hosted
- * production web build never hands out access.
+ * Browser build. Purchases only exist in the store apps. In local dev a
+ * purchase is simulated so the paid flow can be clicked through. A hosted
+ * production web build never grants access.
  */
 export function webAdapter(dev: boolean): PurchasesAdapter {
-  let on = false;
+  const on: Access = { ...NO_ACCESS };
   return {
     async check() {
-      return dev ? on : false;
+      return dev ? { ...on } : { ...NO_ACCESS };
     },
     async restore() {
-      return dev ? on : false;
+      return dev ? { ...on } : { ...NO_ACCESS };
     },
-    async purchase() {
+    async purchase(product) {
       if (!dev) return "unavailable";
-      on = true;
+      for (const g of PRODUCTS[product].grants) on[g] = true;
       return "purchased";
     },
-    async price() {
-      return dev ? "CA$129.99 (demo)" : null;
+    async prices() {
+      return {};
     },
   };
 }
@@ -153,19 +182,18 @@ export function defaultAdapter(): PurchasesAdapter {
 
 /**
  * Decides access at launch without ever locking out a paying user by
- * mistake. Mirrors the Preceptor CCFP logic:
- *   entitled            -> unlocked
- *   not entitled        -> try a silent restore
- *   restore says no     -> locked (a clean, confirmed "no purchase")
- *   any unknown/offline -> keep the cached state
+ * mistake. Per entitlement:
+ *   store says active          -> granted
+ *   store unreachable          -> keep the cached state
+ *   store says inactive        -> if cached as granted, try a silent restore
+ *   restore also says inactive -> revoke
  */
-export async function reconcileAccess(cached: boolean, p: PurchasesAdapter): Promise<boolean> {
+export async function reconcileAccess(cached: Access, p: PurchasesAdapter): Promise<Access> {
   const now = await p.check();
-  if (now === true) return true;
-  if (now === null) return cached;
-  if (!cached) return false;
+  if (!now) return cached;
+  const lost = (Object.keys(cached) as (keyof Access)[]).some((k) => cached[k] && !now[k]);
+  if (!lost) return { written: cached.written || now.written, oral: cached.oral || now.oral };
   const restored = await p.restore();
-  if (restored === true) return true;
-  if (restored === false) return false;
-  return cached;
+  if (!restored) return { written: cached.written || now.written, oral: cached.oral || now.oral };
+  return restored;
 }

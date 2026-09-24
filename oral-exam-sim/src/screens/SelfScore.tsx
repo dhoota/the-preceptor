@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getCase } from "@/cases";
-import { competencyLabel, questionsOnPath, rubricOrder, type SelfMark } from "@/engine";
+import { ORAL_CRITERIA, competencyLabel, questionsOnPath, rubricOrder, type SelfMark } from "@/engine";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -10,7 +10,7 @@ const OPTIONS: { v: SelfMark; label: string }[] = [
   { v: "no", label: "Missed" },
 ];
 
-export function SelfScore({ attemptId, go }: { attemptId: string; go: Go }) {
+export function SelfScore({ attemptId, mockOralId, go }: { attemptId: string; mockOralId?: string; go: Go }) {
   const app = useApp();
   const attempt = app.attempts.find((a) => a.id === attemptId);
   const c = attempt && getCase(attempt.caseId);
@@ -26,7 +26,11 @@ export function SelfScore({ attemptId, go }: { attemptId: string; go: Go }) {
   async function submit() {
     setSaving(true);
     const done = await app.submitMarks(attempt!, marks);
-    go({ name: "result", attemptId: done.id });
+    if (mockOralId) {
+      const m = app.mockOrals.find((x) => x.id === mockOralId);
+      if (m) await app.saveMockOral({ ...m, attemptIds: [...m.attemptIds, done.id] });
+      go({ name: "mockOral", id: mockOralId });
+    } else go({ name: "result", attemptId: done.id });
   }
 
   return (
@@ -53,35 +57,40 @@ export function SelfScore({ attemptId, go }: { attemptId: string; go: Go }) {
         ))}
       </section>
 
-      <section className="section">
-        <span className="label">Rubric</span>
-        {order.map((id) => {
-          const r = byId.get(id)!;
-          const domain = competencyLabel(r.competency);
-          return (
-            <div key={id} className="item">
-              <div className="txt">
-                {r.text} {r.critical && <span className="tag fail">Critical</span>}
-                <div className="muted small">
-                  {domain} · {r.points} {r.points === 1 ? "point" : "points"}
+      {ORAL_CRITERIA.map((k) => {
+        const ids = order.filter((id) => byId.get(id)!.criterion === k.id);
+        if (!ids.length) return null;
+        return (
+          <section key={k.id} className="section">
+            <span className="label">{k.label}</span>
+            {ids.map((id) => {
+              const r = byId.get(id)!;
+              return (
+                <div key={id} className="item">
+                  <div className="txt">
+                    {r.text} {r.critical && <span className="tag fail">Critical</span>}
+                    <div className="muted small">
+                      {competencyLabel(r.competency)} · {r.points} {r.points === 1 ? "point" : "points"}
+                    </div>
+                  </div>
+                  <div className="seg" role="group" aria-label={r.text}>
+                    {OPTIONS.map((o) => (
+                      <button
+                        key={o.v}
+                        className={o.v}
+                        aria-pressed={marks[id] === o.v}
+                        onClick={() => setMarks((m) => ({ ...m, [id]: o.v }))}
+                      >
+                        {o.label}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="seg" role="group" aria-label={r.text}>
-                {OPTIONS.map((o) => (
-                  <button
-                    key={o.v}
-                    className={o.v}
-                    aria-pressed={marks[id] === o.v}
-                    onClick={() => setMarks((m) => ({ ...m, [id]: o.v }))}
-                  >
-                    {o.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          );
-        })}
-      </section>
+              );
+            })}
+          </section>
+        );
+      })}
 
       <p className="muted small" style={{ marginTop: 14 }}>
         Items you leave blank count as missed.

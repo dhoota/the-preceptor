@@ -7,6 +7,13 @@ export const athleteExertionalSyncope: OralCase = {
   title: "Collapse at hockey practice",
   blueprint: "cardio",
   alsoCovers: ["ethics"],
+  priorityTopic: "arrhythmia",
+  keyFeatures: [
+    { topic: "arrhythmia", n: 1 },
+    { topic: "arrhythmia", n: 2 },
+    { topic: "arrhythmia", n: 5 },
+    { topic: "shock", n: 7 },
+  ],
   summary: "A 19 year old varsity hockey player collapsed during sprints and now feels fine and wants to leave.",
   durationMinutes: 14,
   stem:
@@ -354,6 +361,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies syncope during exertion without prodrome as a high risk cardiac feature.",
       points: 3,
       critical: true,
@@ -363,6 +371,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Uses the Canadian Syncope Risk Score appropriately and does not let it override high risk features.",
       points: 2,
       teaching: "The CSRS predicts 30 day serious outcomes in adults when no serious cause is found during the ED evaluation. Red flags like exertional syncope and a family history of sudden death trump the score.",
@@ -371,6 +380,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Recognizes the ECG pattern of HCM and distinguishes it from athletic remodelling.",
       points: 2,
       teaching: "Deep narrow Q waves and lateral T wave inversion are not normal in athletes. Voltage alone is common in fit people.",
@@ -379,6 +389,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-a4",
       competency: "assessment",
+      criterion: "approach",
       text: "Interprets a murmur that increases with standing and Valsalva as dynamic outflow obstruction.",
       points: 1,
       teaching: "Less preload means more obstruction. Squatting increases preload and softens the murmur.",
@@ -387,6 +398,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-a5",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Lists other causes of exertional syncope such as anomalous coronary, arrhythmogenic cardiomyopathy, long QT, CPVT and WPW.",
       points: 1,
       teaching: "Young athletes with exertional syncope need a structured search for inherited and structural disease.",
@@ -395,6 +407,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats hypotension in obstructive HCM with positioning, fluids and a pure vasoconstrictor such as phenylephrine.",
       points: 2,
       teaching: "A fuller ventricle with higher afterload has less obstruction. Phenylephrine 50 to 100 mcg IV raises afterload without adding inotropy.",
@@ -403,6 +416,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-m1",
       competency: "management",
+      criterion: "plan",
       text: "Avoids nitrates, diuretics, inotropes and vasodilators in suspected obstructive HCM.",
       points: 3,
       critical: true,
@@ -412,6 +426,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to a monitored bed under cardiology for echo, MRI and sudden death risk stratification.",
       points: 3,
       critical: true,
@@ -421,6 +436,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Restricts competitive sport and intense exertion until expert assessment.",
       points: 2,
       teaching: "Return to play in HCM is now a shared decision after expert evaluation. Until then, no competitive sport.",
@@ -429,6 +445,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Protects the patient's health information and does not disclose to the coach without consent.",
       points: 2,
       teaching: "Under the Personal Health Information Protection Act disclosure needs consent unless a specific exception applies.",
@@ -437,6 +454,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Advises screening and genetic counselling for first degree relatives, with the patient's consent to involve family.",
       points: 1,
       teaching: "HCM is usually autosomal dominant. Screening relatives can prevent another sudden death.",
@@ -445,6 +463,7 @@ export const athleteExertionalSyncope: OralCase = {
     {
       id: "syn-d3",
       competency: "disposition",
+      criterion: "plan",
       text: "Advises no driving until cardiology assessment and explains the Ontario duty to report.",
       points: 1,
       teaching: "Cardiac syncope that may recur is a risk of sudden incapacitation. Ontario makes this a mandatory report to the Registrar of Motor Vehicles.",

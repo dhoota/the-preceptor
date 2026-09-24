@@ -7,6 +7,14 @@ export const fallAnticoagulatedHipFracture: OralCase = {
   title: "Found on the bedroom floor",
   blueprint: "geri",
   alsoCovers: ["trauma"],
+  priorityTopic: "msk",
+  keyFeatures: [
+    { topic: "msk", n: 1 },
+    { topic: "msk", n: 8 },
+    { topic: "analgesia-sedation", n: 2 },
+    { topic: "multiple-trauma", n: 4 },
+    { topic: "shock", n: 1 },
+  ],
   summary: "An 89 year old man who lives alone is found on the floor by his home care worker after a night fall.",
   durationMinutes: 15,
   stem:
@@ -376,6 +384,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Orders CT head because the Canadian CT Head Rule excludes anticoagulated patients and age 65 or over is high risk.",
       points: 3,
       critical: true,
@@ -385,6 +394,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Images the cervical spine because age 65 or over is a high risk factor in the Canadian C Spine Rule.",
       points: 1,
       teaching: "Older adults can fracture the upper cervical spine in a fall from standing. The rule does not allow clinical clearance at age 65 or over.",
@@ -393,6 +403,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies orthostatic hypotension from tamsulosin, furosemide and metoprolol as the likely cause of the fall and looks for arrhythmia.",
       points: 2,
       teaching: "A fall is a symptom. New alpha blockers commonly cause orthostatic hypotension in older adults. A medication review is part of falls prevention after a fragility fracture.",
@@ -401,6 +412,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-m1",
       competency: "management",
+      criterion: "plan",
       text: "Provides a fascia iliaca block, scheduled acetaminophen and low dose opioid for breakthrough, and avoids NSAIDs.",
       points: 2,
       teaching: "Peripheral nerve blocks reduce pain on movement, opioid needs and delirium in hip fracture.",
@@ -409,6 +421,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-m2",
       competency: "management",
+      criterion: "plan",
       text: "Holds apixaban without bridging or routine reversal and plans surgery timing with orthopaedics and anesthesia.",
       points: 3,
       critical: true,
@@ -418,6 +431,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-m3",
       competency: "management",
+      criterion: "plan",
       text: "Recognizes a major bleed and gives PCC, usually 2,000 units IV, if the bleed becomes life threatening or is not controlled.",
       points: 2,
       teaching: "A hemoglobin drop of 20 g/L or more or hemodynamic instability defines a major bleed. PCC supports hemostasis but does not reverse the drug. Thrombosis Canada reserves it for life threatening or uncontrolled bleeding.",
@@ -426,6 +440,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-m4",
       competency: "management",
+      criterion: "plan",
       text: "Manages long lie complications: rhabdomyolysis, kidney injury, hypothermia, pressure injury and dehydration.",
       points: 2,
       teaching: "A long lie adds rhabdomyolysis, pressure injury and hypothermia to the fracture. Each worsens outcomes.",
@@ -434,6 +449,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Transfuses red cells for symptomatic anemia with hypotension, looks for other sources and avoids rate control of compensatory tachycardia.",
       points: 3,
       critical: true,
@@ -443,6 +459,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Gives orthopaedics and anesthesia the last dose time and creatinine clearance to plan surgery.",
       points: 1,
       teaching: "Timing depends on the drug, the last dose and renal function. Clear information prevents cancelled OR slots.",
@@ -451,6 +468,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Discusses benefits and risks of surgery honestly with the patient and daughter, including mortality and delirium.",
       points: 1,
       teaching: "Surgery is usually the best pain control even in frail patients. One year mortality after hip fracture is about 20 to 30 percent.",
@@ -459,6 +477,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Involves the patient in decisions while he has capacity and confirms code status.",
       points: 1,
       teaching: "Ask the patient first. Goals of care talks are best held before a crisis.",
@@ -467,6 +486,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits with co management, surgery within 48 hours, delirium and pressure injury prevention.",
       points: 2,
       teaching: "Surgery within 48 hours of arrival is an Ontario quality standard for hip fracture.",
@@ -475,6 +495,7 @@ export const fallAnticoagulatedHipFracture: OralCase = {
     {
       id: "hip-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Flags the apixaban dose error and the medications behind the fall for medication review, and recommends falls and bone health follow up.",
       points: 1,
       teaching: "Apixaban 2.5 mg twice daily is used when two of three criteria are met: age 80 or over, weight 60 kg or less, creatinine 133 µmol/L or more.",

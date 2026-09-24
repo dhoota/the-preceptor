@@ -46,6 +46,26 @@ export const COMPETENCIES = [
 
 export type CompetencyId = (typeof COMPETENCIES)[number]["id"];
 
+/**
+ * The structured oral is marked on four examiner criteria. Every rubric item
+ * belongs to one. The station score is reported per criterion.
+ */
+export const ORAL_CRITERIA = [
+  { id: "approach", label: "Diagnostic approach" },
+  { id: "data", label: "Use and interpretation of data" },
+  { id: "diagnosis", label: "Diagnosis" },
+  { id: "plan", label: "Timely treatment plan" },
+] as const;
+
+export type OralCriterionId = (typeof ORAL_CRITERIA)[number]["id"];
+export const criterionLabel = (id: string) => ORAL_CRITERIA.find((c) => c.id === id)?.label ?? id;
+
+/** A CFPC EM priority topic key feature. See src/blueprint/priorityTopics.ts. */
+export interface TopicKeyFeature {
+  topic: string;
+  n: number;
+}
+
 export const blueprintLabel = (id: string) => BLUEPRINT.find((b) => b.id === id)?.label ?? id;
 export const competencyLabel = (id: string) => COMPETENCIES.find((c) => c.id === id)?.label ?? id;
 
@@ -117,6 +137,8 @@ export interface RubricItem {
   teaching: string;
   /** ID of an entry in the case's `sources`. */
   source: string;
+  /** Examiner criterion this item counts toward. */
+  criterion: OralCriterionId;
 }
 
 export interface OralCase {
@@ -125,6 +147,10 @@ export interface OralCase {
   blueprint: BlueprintId;
   /** Secondary areas the case also exercises. */
   alsoCovers?: BlueprintId[];
+  /** Primary CFPC EM priority topic id. */
+  priorityTopic: string;
+  /** CFPC key features the case tests. At least two. */
+  keyFeatures: TopicKeyFeature[];
   summary: string;
   durationMinutes: number;
   stem: string;
@@ -152,13 +178,20 @@ export interface Attempt {
   id: string;
   caseId: string;
   caseVersion: number;
-  mode: "practice" | "exam";
+  mode: "practice" | "exam" | "station";
   startedAt: number;
   finishedAt: number | null;
   path: AttemptStep[];
   findingsAsked: string[];
   marks: Record<string, SelfMark>;
   score: Score | null;
+}
+
+export interface CriterionScore {
+  id: OralCriterionId;
+  name: string;
+  awarded: number;
+  max: number;
 }
 
 export interface CompetencyScore {
@@ -178,6 +211,8 @@ export interface Score {
   /** Rubric IDs of critical items not marked "yes". */
   criticalMisses: string[];
   competencies: CompetencyScore[];
+  /** Score per examiner criterion. */
+  criteria: CriterionScore[];
   /** Rubric items marked "no" or "partly". Feed spaced review. */
   missed: string[];
 }

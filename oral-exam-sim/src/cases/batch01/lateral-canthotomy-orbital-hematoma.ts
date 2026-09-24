@@ -7,6 +7,13 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
   title: "A fall down the basement stairs",
   blueprint: "procedures",
   alsoCovers: ["trauma", "geri"],
+  priorityTopic: "eye",
+  keyFeatures: [
+    { topic: "eye", n: 2 },
+    { topic: "eye", n: 3 },
+    { topic: "multiple-trauma", n: 3 },
+    { topic: "multiple-trauma", n: 4 },
+  ],
   summary: "A 74 year old woman on an anticoagulant has a painful eye after a fall at home.",
   durationMinutes: 13,
   stem:
@@ -343,6 +350,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Excludes globe rupture before tonometry or procedures.",
       points: 2,
       teaching: "Tonometry or canthotomy on a ruptured globe can extrude eye contents. Check for rupture signs first.",
@@ -351,6 +359,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Diagnoses orbital compartment syndrome clinically from reduced acuity, an afferent pupillary defect, proptosis and raised intraocular pressure.",
       points: 3,
       critical: true,
@@ -360,6 +369,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Obtains CT head as well as orbits because she is anticoagulated after a fall with a facial strike.",
       points: 1,
       teaching: "Patients on warfarin were excluded from the Canadian CT Head Rule. Anticoagulated older adults with head trauma need a low threshold for CT.",
@@ -368,6 +378,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-m3",
       competency: "management",
+      criterion: "plan",
       text: "Avoids any pressure on the eye, and gives an antiemetic and analgesia with the head of the bed raised.",
       points: 1,
       teaching: "Vomiting and pain raise orbital venous pressure. A pressure patch worsens ischemia and is contraindicated.",
@@ -376,6 +387,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-m1",
       competency: "management",
+      criterion: "plan",
       text: "Performs decompression in the department rather than delaying for transfer or medical therapy.",
       points: 3,
       critical: true,
@@ -385,6 +397,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Communicates the findings and time pressure to ophthalmology and asks for support.",
       points: 1,
       teaching: "Lead with acuity, pupils and the pressure number. Consultants act on objective findings.",
@@ -393,6 +406,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Obtains informed consent, and knows the emergency treatment provisions of the Health Care Consent Act if capacity is lacking.",
       points: 1,
       teaching: "In Ontario, treatment can proceed without consent in an emergency when the person lacks capacity and a delay would cause serious harm.",
@@ -401,6 +415,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Describes the procedure: local anesthetic with epinephrine, hemostat crush, lateral canthotomy, then inferior cantholysis.",
       points: 2,
       teaching: "Crushing the canthus reduces bleeding. The inferior crus is found by strumming and cut with the scissor tips pointed away from the globe.",
@@ -409,6 +424,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-r2",
       competency: "resuscitation",
+      criterion: "data",
       text: "Recognizes incomplete release when the pressure stays over 40 mmHg and completes the inferior cantholysis.",
       points: 3,
       critical: true,
@@ -418,6 +434,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-m2",
       competency: "management",
+      criterion: "plan",
       text: "Reverses warfarin with four factor PCC, 2000 IU for an INR of 3 to 5, and vitamin K 10 mg IV, and rechecks the INR.",
       points: 2,
       teaching: "PCC corrects the INR within minutes. Vitamin K sustains the effect. Plasma is slower and less effective. Canadian INR based dosing is 1000 IU under 3, 2000 IU for 3 to 5 and 3000 IU over 5.",
@@ -426,6 +443,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the urgency and outcome to the daughter with empathy and without defensiveness.",
       points: 1,
       teaching: "Families are reassured by a clear explanation of why a procedure could not wait and what it achieved.",
@@ -434,6 +452,7 @@ export const lateralCanthotomyOrbitalHematoma: OralCase = {
     {
       id: "oc-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges transfer to ophthalmology with serial pressure and acuity checks and a plan for anticoagulation.",
       points: 2,
       teaching: "Rebleeding can raise the pressure again. Serial checks until handover catch it early.",

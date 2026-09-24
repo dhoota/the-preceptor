@@ -7,6 +7,12 @@ export const exertionalHeatStroke: OralCase = {
   title: "Collapse near the finish line",
   blueprint: "enviro",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "environmental",
+  keyFeatures: [
+    { topic: "environmental", n: 1 },
+    { topic: "environmental", n: 2 },
+    { topic: "ems", n: 1 },
+  ],
   summary: "A 23 year old runner collapses late in a summer road race and arrives confused and combative.",
   durationMinutes: 14,
   stem:
@@ -333,6 +339,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Diagnoses exertional heat stroke from core temperature over 40 °C with CNS dysfunction after exertion.",
       points: 2,
       teaching: "Sweating does not exclude exertional heat stroke. Any confused, hot athlete has heat stroke until proven otherwise.",
@@ -341,6 +348,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts cold water immersion immediately, improvising with a body bag or tarp, before CT or other tests.",
       points: 3,
       critical: true,
@@ -350,6 +358,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-m1",
       competency: "management",
+      criterion: "plan",
       text: "Uses continuous rectal temperature and avoids antipyretics.",
       points: 2,
       teaching: "Oral, tympanic and axillary readings are unreliable. Antipyretics do not lower temperature in heat stroke.",
@@ -358,6 +367,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Considers hyponatremia, stimulant toxicity, serotonin syndrome, infection and hypoglycemia.",
       points: 1,
       teaching: "Exercise associated hyponatremia can look similar. Check sodium before giving large volumes of fluid.",
@@ -366,6 +376,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives cautious isotonic fluid guided by sodium and blood pressure.",
       points: 1,
       teaching: "Many patients are only mildly dry and pressure improves with cooling. Large volumes can cause edema.",
@@ -374,6 +385,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats seizures with a benzodiazepine while continuing immersion.",
       points: 2,
       teaching: "Midazolam 5 mg IV or 10 mg IM stops seizures and reduces shivering. Keep the head out of the water and keep cooling.",
@@ -382,6 +394,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-m4",
       competency: "management",
+      criterion: "plan",
       text: "Stops active cooling at about 38.5 to 39 °C and monitors for overshoot and rebound.",
       points: 2,
       teaching: "Temperature continues to fall after removal from ice water. Stop early enough to avoid hypothermia.",
@@ -390,6 +403,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Identifies rhabdomyolysis, acute kidney injury, liver injury and DIC from the labs.",
       points: 2,
       teaching: "Heat stroke injures every organ. Labs often worsen over the first 24 to 72 hours.",
@@ -398,6 +412,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-m5",
       competency: "management",
+      criterion: "plan",
       text: "Treats rhabdomyolysis with fluids to a urine output target and does not give dantrolene.",
       points: 1,
       teaching: "Dantrolene has no proven benefit in exertional heat stroke and is still under study. Fluid is the main therapy for pigment nephropathy.",
@@ -406,6 +421,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats hyperkalemia with ECG changes using IV calcium, insulin with dextrose and salbutamol, with correct doses.",
       points: 3,
       critical: true,
@@ -415,6 +431,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Involves nephrology for dialysis and admits to ICU.",
       points: 2,
       teaching: "Oliguric AKI with rising potassium needs dialysis. Early referral avoids a crisis.",
@@ -423,6 +440,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Advises the race medical team to cool on site before transport and prepares the ED for more patients.",
       points: 2,
       teaching: "Cool first, transport second. On site immersion is the most effective way to prevent death at mass participation events.",
@@ -431,6 +449,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains heat stroke and the expected course to his parents in plain words.",
       points: 1,
       teaching: "Families need to know the organ injury may worsen before it improves. Be clear about ICU and possible dialysis.",
@@ -439,6 +458,7 @@ export const exertionalHeatStroke: OralCase = {
     {
       id: "hs-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Plans a gradual, physician cleared return to activity after recovery.",
       points: 1,
       teaching: "Return to training should wait until symptoms resolve and labs normalize. A graded return reduces recurrence.",

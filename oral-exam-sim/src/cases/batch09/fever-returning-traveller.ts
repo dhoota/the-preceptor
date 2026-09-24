@@ -7,6 +7,8 @@ export const feverReturningTraveller: OralCase = {
   title: "Fever and confusion after a family visit abroad",
   blueprint: "id",
   alsoCovers: ["resus", "neuro"],
+  priorityTopic: "infectious-diseases",
+  keyFeatures: [{ topic: "infectious-diseases", n: 3 }, { topic: "infectious-diseases", n: 5 }, { topic: "loc", n: 2 }, { topic: "seizures", n: 2 }],
   summary: "A 31 year old woman back from a month abroad has four days of fever and is now confused.",
   durationMinutes: 14,
   stem:
@@ -408,6 +410,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Considers falciparum malaria first in a febrile traveller from sub Saharan Africa and sends a stat rapid test and smears.",
       points: 3,
       critical: true,
@@ -417,6 +420,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Screens for viral hemorrhagic fever exposure risk within 21 days of return.",
       points: 1,
       teaching: "A short exposure screen covers sick contacts, funerals, health facilities and rodents. It guides precautions without delaying malaria testing.",
@@ -425,6 +429,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies severe malaria using impaired consciousness and parasitemia of 5 percent or more.",
       points: 2,
       teaching: "One severe criterion is enough. The Canadian parasitemia threshold is 5 percent in non immune adults and 10 percent in semi immune adults. Others include seizures, shock, hypoglycemia, acidosis, severe anemia, renal failure and pulmonary edema.",
@@ -433,6 +438,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives IV artesunate 2.4 mg/kg at 0, 12 and 24 hours, then daily if still needed.",
       points: 3,
       critical: true,
@@ -442,6 +448,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Obtains artesunate urgently through the Canadian Malaria Network and bridges with an oral agent if the delay is more than about an hour.",
       points: 2,
       teaching: "Know where your nearest supply is before you need it. Start an oral agent while the drug travels if she can swallow safely.",
@@ -450,6 +457,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats the seizure with lorazepam 4 mg IV and the hypoglycemia with dextrose 25 g IV, with airway support.",
       points: 3,
       critical: true,
@@ -459,6 +467,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-m2",
       competency: "management",
+      criterion: "plan",
       text: "Avoids corticosteroids and mannitol and covers bacterial meningitis until excluded.",
       points: 1,
       teaching: "Steroids worsen cerebral malaria outcomes. Bacterial co infection can mimic cerebral malaria, so cover it until excluded.",
@@ -467,6 +476,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives fluid cautiously in small boluses with reassessment.",
       points: 2,
       teaching: "Adults with severe malaria are prone to pulmonary edema. Use small boluses and early norepinephrine for persistent shock.",
@@ -475,6 +485,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-m4",
       competency: "management",
+      criterion: "data",
       text: "States that exchange transfusion is not indicated here and monitors parasitemia every 12 to 24 hours.",
       points: 1,
       teaching: "Artesunate clears parasites fast. CDC no longer recommends exchange transfusion. The Canadian guidance still lists it as an option above 10 percent parasitemia, so involve ID.",
@@ -483,6 +494,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to the ICU with infectious diseases involvement.",
       points: 2,
       teaching: "Severe malaria can deteriorate over hours with seizures, hypoglycemia, acidosis and ARDS. It needs ICU level monitoring.",
@@ -491,6 +503,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Reports the case to the local public health unit.",
       points: 1,
       teaching: "Malaria is a designated reportable disease in Ontario. Public health tracks imported cases.",
@@ -499,6 +512,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Counsels the sister that malaria is not spread person to person and that fever within a year of travel needs urgent testing.",
       points: 1,
       teaching: "Travellers should tell every clinician about travel for a year after return. Prophylaxis lowers but does not remove risk.",
@@ -507,6 +521,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Addresses the belief of lasting immunity and recommends a pre travel clinic for future trips.",
       points: 1,
       teaching: "Partial immunity fades within a few years away from endemic areas. Visiting friends and relatives travellers are the highest risk group.",
@@ -515,6 +530,7 @@ export const feverReturningTraveller: OralCase = {
     {
       id: "ma-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Plans weekly hemoglobin checks for four weeks after artesunate.",
       points: 1,
       teaching: "Delayed hemolysis usually appears two to three weeks after artesunate. CDC advises weekly checks for four weeks.",

@@ -7,6 +7,12 @@ export const olderWomanConfusionSeizure: OralCase = {
   title: "Confused, then shaking",
   blueprint: "geri",
   alsoCovers: ["neuro"],
+  priorityTopic: "seizures",
+  keyFeatures: [
+    { topic: "seizures", n: 2 },
+    { topic: "seizures", n: 4 },
+    { topic: "delirium-agitation", n: 2 },
+  ],
   summary: "An 84 year old woman is brought in by her daughter with two days of vomiting and confusion.",
   durationMinutes: 14,
   stem:
@@ -314,6 +320,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Builds a differential for delirium in an older adult and reviews every medication.",
       points: 1,
       teaching: "Drugs are among the most common reversible causes of delirium and electrolyte problems in older adults.",
@@ -322,6 +329,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats seizures from hyponatremia with 3 percent saline 100 to 150 mL IV bolus, repeated as needed.",
       points: 3,
       critical: true,
@@ -331,6 +339,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Supports airway and uses a benzodiazepine as a bridge, without relying on standard antiseizure drugs.",
       points: 1,
       teaching: "Antiseizure drugs do not treat cerebral edema. Hypertonic saline does.",
@@ -339,6 +348,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-m1",
       competency: "management",
+      criterion: "diagnosis",
       text: "Identifies her high risk for osmotic demyelination and sets a limit of 8 mmol/L in 24 hours.",
       points: 3,
       critical: true,
@@ -348,6 +358,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-m2",
       competency: "management",
+      criterion: "plan",
       text: "Stops hypertonic saline once symptoms settle and monitors sodium every 2 hours.",
       points: 2,
       teaching: "Hypertonic saline is for symptoms. Once they settle, the goal is slow, safe correction.",
@@ -356,6 +367,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Interprets urine osmolality and urine sodium in light of the thiazide.",
       points: 1,
       teaching: "Urine osmolality over 100 mmol/kg means ADH is acting. Diuretics make urine sodium unreliable.",
@@ -364,6 +376,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-m3",
       competency: "management",
+      criterion: "plan",
       text: "Stops the thiazide and SSRI and anticipates a water diuresis.",
       points: 2,
       teaching: "When the cause of ADH release or the thiazide effect is removed, the sodium can rise very fast.",
@@ -372,6 +385,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats overcorrection with desmopressin 2 mcg IV and D5W about 3 mL/kg/h with frequent sodium checks.",
       points: 3,
       critical: true,
@@ -381,6 +395,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Involves ICU or nephrology early and sets clear nursing triggers for urine output and sodium.",
       points: 1,
       teaching: "Tell nurses to call for urine output over 100 mL/h or a sodium rise beyond the plan.",
@@ -389,6 +404,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to a monitored unit with a written sodium limit for 24 and 48 hours.",
       points: 2,
       teaching: "A written limit guides every clinician who touches the orders overnight.",
@@ -397,6 +413,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-m4",
       competency: "management",
+      criterion: "plan",
       text: "Replaces potassium and magnesium and accounts for their effect on sodium.",
       points: 1,
       teaching: "Potassium replacement raises serum sodium. Include it in the correction budget.",
@@ -405,6 +422,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the cause and the risk of delayed neurological injury to the daughter in plain language.",
       points: 1,
       teaching: "Families should know that problems from fast correction can appear days later.",
@@ -413,6 +431,7 @@ export const olderWomanConfusionSeizure: OralCase = {
     {
       id: "hn-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Communicates the drug harm to the family doctor and recommends avoiding thiazides and SSRIs without sodium monitoring.",
       points: 1,
       teaching: "The Beers criteria flag thiazides and SSRIs as causes of hyponatremia in older adults.",

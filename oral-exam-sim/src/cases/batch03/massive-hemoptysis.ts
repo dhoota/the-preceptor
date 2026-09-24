@@ -7,6 +7,13 @@ export const massiveHemoptysis: OralCase = {
   title: "Blood in the emesis basin",
   blueprint: "resp",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "airway",
+  keyFeatures: [
+    { topic: "airway", n: 2 },
+    { topic: "airway", n: 4 },
+    { topic: "sob", n: 3 },
+    { topic: "ems", n: 3 },
+  ],
   summary: "A 63 year old man on treatment for cancer arrives coughing and spitting blood.",
   durationMinutes: 15,
   stem:
@@ -364,6 +371,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Positions the patient with the bleeding side down to protect the good lung.",
       points: 3,
       critical: true,
@@ -373,6 +381,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Confirms the blood comes from the lungs and not the nose, mouth or GI tract.",
       points: 1,
       teaching: "Hematemesis and nasopharyngeal bleeding can mimic hemoptysis. Bright red frothy blood with a known lung lesion points to the airway.",
@@ -381,6 +390,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls anesthesia early and prepares suction, airway equipment, access and blood before the airway is lost.",
       points: 2,
       teaching: "Patients with massive hemoptysis die from asphyxia, not blood loss. Prepare for the airway before the next big bleed.",
@@ -389,6 +399,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives PCC 2000 units, or 25 to 50 units/kg to a maximum of 3000 units, for life threatening bleeding on apixaban, and avoids agents that do not work.",
       points: 2,
       teaching: "Vitamin K, plasma and idarucizumab do not work for factor Xa inhibitors. PCC is the common Canadian option because andexanet is rarely available.",
@@ -397,6 +408,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives tranexamic acid IV 1 g and considers nebulized tranexamic acid 500 mg.",
       points: 1,
       teaching: "Nebulized tranexamic acid reduced bleeding in a randomized trial of hemoptysis. It is cheap and low risk.",
@@ -405,6 +417,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates early with an 8.0 or larger tube with two suctions and hemodynamically cautious induction.",
       points: 3,
       critical: true,
@@ -414,6 +427,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Isolates the good lung by advancing the tube into the left main bronchus or using a bronchial blocker when bleeding continues.",
       points: 2,
       teaching: "Lung isolation keeps blood out of the good lung. Mainstem intubation of the nonbleeding side is the simplest ED option. A bronchoscope makes left sided placement far more reliable.",
@@ -422,6 +436,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-m3",
       competency: "management",
+      criterion: "data",
       text: "Identifies bronchial artery embolization as first line definitive therapy and uses CT angiogram to guide it when stable.",
       points: 2,
       teaching: "Most massive hemoptysis comes from bronchial arteries. Embolization controls it in most patients.",
@@ -430,6 +445,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges urgent transfer through CritiCall to a centre with IR and thoracic surgery with a critical care escort.",
       points: 3,
       critical: true,
@@ -439,6 +455,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Gives a structured handover including tube position, drugs given, blood products and the plan.",
       points: 1,
       teaching: "The crew must know the tube is in the left main bronchus. Moving him can dislodge it.",
@@ -447,6 +464,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks with his wife in plain language, is honest about the danger and avoids guessing cancer prognosis.",
       points: 1,
       teaching: "Explain what is happening now and what will be done. Leave long term cancer prognosis to the oncology team.",
@@ -455,6 +473,7 @@ export const massiveHemoptysis: OralCase = {
     {
       id: "mh-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Confirms and respects his stated wish for full treatment.",
       points: 1,
       teaching: "His goals were set with his oncology team. Emergency care should follow them unless he or his substitute decision maker changes them.",

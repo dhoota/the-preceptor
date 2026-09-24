@@ -7,6 +7,15 @@ export const trauma: OralCase = {
   title: "Motorcycle collision at a regional hospital",
   blueprint: "trauma",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "multiple-trauma",
+  keyFeatures: [
+    { topic: "multiple-trauma", n: 1 },
+    { topic: "multiple-trauma", n: 2 },
+    { topic: "multiple-trauma", n: 6 },
+    { topic: "multiple-trauma", n: 7 },
+    { topic: "multiple-trauma", n: 8 },
+    { topic: "airway", n: 4 },
+  ],
   summary: "A 27 year old motorcyclist arrives by ground ambulance to a hospital that is not a trauma centre.",
   durationMinutes: 15,
   stem:
@@ -360,6 +369,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p1",
       competency: "leadership",
+      criterion: "plan",
       text: "Runs a structured primary survey with clear team roles and closed loop communication.",
       points: 2,
       teaching: "Say roles out loud at the start. Closed loop orders prevent missed or duplicated tasks.",
@@ -368,6 +378,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Decompresses and drains the left chest with finger thoracostomy and a chest tube.",
       points: 3,
       critical: true,
@@ -377,6 +388,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Places a pelvic binder centred over the greater trochanters, not the iliac crests.",
       points: 2,
       critical: true,
@@ -386,6 +398,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Obtains two large bore IVs or IO and warms the patient and all products.",
       points: 1,
       teaching: "Hypothermia worsens coagulopathy. Warm everything from the start.",
@@ -394,6 +407,7 @@ export const trauma: OralCase = {
     {
       id: "tr-p5",
       competency: "assessment",
+      criterion: "data",
       text: "Uses eFAST, chest X ray and pelvic X ray at the bedside to find the source.",
       points: 1,
       teaching: "Bedside imaging finds the source without leaving resus.",
@@ -402,6 +416,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Activates the massive hemorrhage protocol early and stops crystalloid in favour of blood.",
       points: 3,
       critical: true,
@@ -411,6 +426,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h2",
       competency: "management",
+      criterion: "plan",
       text: "Gives tranexamic acid 1 g IV over 10 minutes within 3 hours of injury, then 1 g over 8 hours.",
       points: 3,
       critical: true,
@@ -420,6 +436,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h3",
       competency: "management",
+      criterion: "plan",
       text: "Targets a balanced ratio of red cells to plasma of about 1 to 1 with platelets per protocol.",
       points: 2,
       teaching: "Balanced transfusion treats trauma coagulopathy. Ask for plasma to be thawed as soon as you activate.",
@@ -428,6 +445,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h4",
       competency: "management",
+      criterion: "plan",
       text: "Replaces calcium, e.g. calcium chloride 1 g IV, to keep ionized calcium above 1.1 mmol/L.",
       points: 1,
       teaching: "Citrate in blood products binds calcium. Low calcium worsens clotting and contractility.",
@@ -436,6 +454,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h5",
       competency: "management",
+      criterion: "plan",
       text: "Replaces fibrinogen at or under 1.5 g/L, e.g. fibrinogen concentrate 3 to 4 g or cryoprecipitate 10 units per local protocol.",
       points: 1,
       teaching: "Fibrinogen falls first in trauma bleeding. Replace it early.",
@@ -444,6 +463,7 @@ export const trauma: OralCase = {
     {
       id: "tr-h6",
       competency: "management",
+      criterion: "plan",
       text: "Uses permissive hypotension with systolic about 80 to 90 while there is no sign of severe brain injury.",
       points: 1,
       teaching: "A lower target limits bleeding until surgical control. It does not apply with severe brain injury, where the European guideline targets a mean arterial pressure of at least 80 mmHg.",
@@ -452,6 +472,7 @@ export const trauma: OralCase = {
     {
       id: "tr-d1",
       competency: "disposition",
+      criterion: "data",
       text: "Declines CT for a hemodynamically unstable patient and explains why.",
       points: 2,
       teaching: "The CT scanner is a dangerous place for an unstable patient. The images will not change the need for transfer.",
@@ -460,6 +481,7 @@ export const trauma: OralCase = {
     {
       id: "tr-d2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies chest, abdomen and pelvis as bleeding sources.",
       points: 1,
       teaching: "Think of the five places to bleed: chest, abdomen, pelvis, long bones and the floor. Chest tube output over 1,500 mL at once, or about 200 mL/h for 2 to 4 hours, suggests the need for thoracotomy.",
@@ -468,6 +490,7 @@ export const trauma: OralCase = {
     {
       id: "tr-d3",
       competency: "leadership",
+      criterion: "plan",
       text: "Discusses local damage control surgery versus immediate transfer with the trauma team leader and surgeon.",
       points: 1,
       teaching: "When transfer is long and the patient is unstable, local damage control can save a life. Decide together.",
@@ -476,6 +499,7 @@ export const trauma: OralCase = {
     {
       id: "tr-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Calls the lead trauma hospital through CritiCall early, before imaging is complete.",
       points: 2,
       teaching: "Call as soon as you know he needs a trauma centre. Transfer time is part of resuscitation.",
@@ -484,6 +508,7 @@ export const trauma: OralCase = {
     {
       id: "tr-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a concise structured handover, e.g. MIST or SBAR, with vital sign trend, products and tranexamic acid time.",
       points: 2,
       teaching: "A short structured handover lets the receiving team prepare the right room and people.",
@@ -492,6 +517,7 @@ export const trauma: OralCase = {
     {
       id: "tr-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks to the partner honestly and compassionately in a private space.",
       points: 1,
       teaching: "Families remember the first conversation. Be honest and give a clear next step.",
@@ -500,6 +526,7 @@ export const trauma: OralCase = {
     {
       id: "tr-t1",
       competency: "management",
+      criterion: "diagnosis",
       text: "Recognizes herniation and raises the systolic target to at least 110 mmHg for his age.",
       points: 2,
       teaching: "In brain injury, hypotension reduces cerebral perfusion. The Brain Trauma Foundation targets systolic at least 110 mmHg for ages 15 to 49 and over 70, and at least 100 mmHg for ages 50 to 69.",
@@ -508,6 +535,7 @@ export const trauma: OralCase = {
     {
       id: "tr-t2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Resuscitates before intubation and uses reduced dose induction, e.g. ketamine 0.5 to 1 mg/kg with rocuronium 1.2 to 1.6 mg/kg.",
       points: 2,
       teaching: "Shocked patients arrest at induction. Resuscitate first, cut the induction dose and raise the paralytic dose.",
@@ -516,6 +544,7 @@ export const trauma: OralCase = {
     {
       id: "tr-t3",
       competency: "management",
+      criterion: "plan",
       text: "Gives hypertonic saline, e.g. 3 percent 250 mL IV, and avoids mannitol while hypotensive.",
       points: 1,
       teaching: "Mannitol causes diuresis and can worsen hypotension. Hypertonic saline supports volume.",
@@ -524,6 +553,7 @@ export const trauma: OralCase = {
     {
       id: "tr-t4",
       competency: "management",
+      criterion: "plan",
       text: "Targets SpO2 above 94 percent and pCO2 35 to 40, with brief hyperventilation only as a bridge.",
       points: 1,
       teaching: "Hyperventilation lowers pressure by causing vasoconstriction. Prolonged use causes brain ischemia.",
@@ -532,6 +562,7 @@ export const trauma: OralCase = {
     {
       id: "tr-t5",
       competency: "management",
+      criterion: "plan",
       text: "Elevates the head of the bed with spine precautions and keeps the collar from obstructing venous return.",
       points: 1,
       teaching: "Head up about 30 degrees and a loose collar help venous drainage from the brain.",

@@ -7,6 +7,14 @@ export const eatingDisorderInstability: OralCase = {
   title: "Fainting at the campus gym",
   blueprint: "psych",
   alsoCovers: ["ethics", "comm"],
+  priorityTopic: "arrhythmia",
+  keyFeatures: [
+    { topic: "arrhythmia", n: 1 },
+    { topic: "arrhythmia", n: 2 },
+    { topic: "arrhythmia", n: 5 },
+    { topic: "delirium-agitation", n: 5 },
+    { topic: "suicide-risk", n: 1 },
+  ],
   summary: "A 19 year old university student is brought in by her roommate after fainting on a treadmill.",
   durationMinutes: 14,
   stem:
@@ -342,6 +350,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Identifies high risk markers: heart rate in the low 40s, hypotension, hypothermia, hypoglycemia, orthostatic changes, low potassium and long QT.",
       points: 3,
       critical: true,
@@ -351,6 +360,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses small fluid boluses with reassessment and treats hypoglycemia with oral glucose or dextrose 10 percent.",
       points: 2,
       teaching: "Starved hearts are small and fail with large volumes. Concentrated dextrose boluses cause rebound hypoglycemia.",
@@ -359,6 +369,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Asks about purging, laxatives, exercise and suicidal thoughts.",
       points: 2,
       teaching: "Purging drives the potassium and alkalosis. Suicide is a major cause of death in eating disorders.",
@@ -367,6 +378,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Considers medical causes of weight loss such as hyperthyroidism, diabetes, celiac disease, inflammatory bowel disease and adrenal insufficiency.",
       points: 1,
       teaching: "Most young women with this picture have an eating disorder, but a brief medical screen avoids missing another cause.",
@@ -375,6 +387,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-m1",
       competency: "management",
+      criterion: "plan",
       text: "Replaces magnesium and potassium carefully on a monitor and avoids QT prolonging drugs.",
       points: 2,
       teaching: "Magnesium must be replaced for potassium to correct. Ondansetron and antipsychotics add to QT risk.",
@@ -383,6 +396,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-m2",
       competency: "management",
+      criterion: "plan",
       text: "Recognizes high refeeding risk and gives thiamine before feeding.",
       points: 2,
       teaching: "Low BMI, minimal intake and low baseline electrolytes all raise refeeding risk.",
@@ -391,6 +405,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-m3",
       competency: "management",
+      criterion: "plan",
       text: "Starts nutrition the same day with phosphate, potassium, magnesium and glucose checks every 12 hours for 3 days, then daily for the first week.",
       points: 3,
       critical: true,
@@ -400,6 +415,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Assesses capacity specific to admission and refeeding, focusing on appreciation.",
       points: 2,
       teaching: "Patients with eating disorders often understand facts but cannot apply them to themselves. That is a failure of appreciation.",
@@ -408,6 +424,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Knows a Form 1 authorizes detention for psychiatric assessment, not medical treatment, and gives a Form 42.",
       points: 2,
       teaching: "Lack of competence to care for herself with likely serious physical impairment meets Form 1 Box A. Medical treatment still needs consent from her or her substitute decision maker.",
@@ -416,6 +433,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Does not allow her to leave while medically unstable and incapable of that decision.",
       points: 3,
       critical: true,
@@ -425,6 +443,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks without judgment, avoids weight talk, and links treatment to her own goals.",
       points: 1,
       teaching: "Collaborative language improves engagement. Arguing about body image does not.",
@@ -433,6 +452,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to a monitored medical bed with the eating disorders team, psychiatry, supervised meals and daily labs.",
       points: 2,
       teaching: "Medical stabilization comes before psychiatric admission. Bathroom and meal supervision limit purging.",
@@ -441,6 +461,7 @@ export const eatingDisorderInstability: OralCase = {
     {
       id: "ed-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Coordinates medicine, the dietitian, psychiatry and the eating disorders program in the admission plan.",
       points: 1,
       teaching: "Eating disorder care fails when teams work in silos. One clear plan prevents gaps.",

@@ -7,6 +7,8 @@ export const northernSnowmobileTransfer: OralCase = {
   title: "A snowmobile, a tree and a long way to go",
   blueprint: "systems",
   alsoCovers: ["trauma", "neuro"],
+  priorityTopic: "multiple-trauma",
+  keyFeatures: [{ topic: "multiple-trauma", n: 5 }, { topic: "multiple-trauma", n: 8 }, { topic: "ems", n: 3 }, { topic: "airway", n: 2 }],
   summary: "A young man with a head injury at a small northern hospital needs care that is 380 km away, and the weather is closing in.",
   durationMinutes: 15,
   stem:
@@ -393,6 +395,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes a large epidural hematoma with mass effect as a neurosurgical emergency despite GCS 14.",
       points: 3,
       critical: true,
@@ -402,6 +405,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Checks tube position, ventilator settings and oxygen supply on the transport equipment before departure.",
       points: 1,
       teaching: "Problems found at the door are easy to fix. Problems found on the road are not.",
@@ -410,6 +414,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates promptly with a hemodynamically stable induction and a vasopressor ready.",
       points: 2,
       teaching: "A single episode of hypotension or hypoxia worsens outcome after head injury.",
@@ -418,6 +423,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Targets systolic at least 110, SpO2 above 90 and end tidal CO2 35 to 40.",
       points: 3,
       critical: true,
@@ -427,6 +433,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives tranexamic acid 1 g over 10 minutes then 1 g over 8 hours within 3 hours of injury.",
       points: 1,
       teaching: "CRASH 3 showed reduced head injury death with early tranexamic acid in mild to moderate injury. Benefit falls with time.",
@@ -435,6 +442,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives hyperosmolar therapy for herniation, such as 3 percent saline 250 mL or mannitol 1 g/kg.",
       points: 2,
       teaching: "Osmotherapy lowers ICP within minutes and buys time to decompression.",
@@ -443,6 +451,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-m3",
       competency: "management",
+      criterion: "plan",
       text: "Uses hyperventilation only briefly as a bridge and avoids a pCO2 of 25 or less.",
       points: 1,
       teaching: "Deep or prolonged hyperventilation causes cerebral vasoconstriction and ischemia.",
@@ -451,6 +460,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Calls CritiCall immediately as a life or limb request so acceptance and transport run in parallel.",
       points: 2,
       teaching: "CritiCall connects the sending physician, the accepting specialist and Ornge in one conference.",
@@ -459,6 +469,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Chooses the fastest safe transport, such as a road rendezvous with an air crew, rather than waiting for weather.",
       points: 3,
       critical: true,
@@ -468,6 +479,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-d3",
       competency: "disposition",
+      criterion: "plan",
       text: "Packages the patient fully with secured tube, continuous capnography, infusions, extra doses and records.",
       points: 2,
       teaching: "Prepare for the worst event on the road. Carry what you would need to treat it.",
@@ -476,6 +488,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Matches escort skills to the patient and arranges physician coverage for the department.",
       points: 2,
       teaching: "The sending physician decides who escorts. A rural department cannot be left without a physician.",
@@ -484,6 +497,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Documents the timeline and decisions and debriefs the team.",
       points: 1,
       teaching: "A clear timeline supports the receiving team and later review of transfer delays.",
@@ -492,6 +506,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Keeps the neurosurgeon and Ornge in a shared plan with confirmed timings.",
       points: 1,
       teaching: "Closed loop communication across three sites prevents the operating room being ready at the wrong time.",
@@ -500,6 +515,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover with targets and an if then plan for deterioration.",
       points: 2,
       teaching: "Escort teams need explicit targets and a plan for the most likely emergency.",
@@ -508,6 +524,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Tells his mother honestly how sick he is and how she can reach him.",
       points: 1,
       teaching: "Families are often separated from patients in northern transfers. Give practical details as well as the diagnosis.",
@@ -516,6 +533,7 @@ export const northernSnowmobileTransfer: OralCase = {
     {
       id: "nt-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Accepts ongoing responsibility until handover to the transport crew and stays available.",
       points: 1,
       teaching: "The sending physician remains responsible for the patient until care is formally handed over.",

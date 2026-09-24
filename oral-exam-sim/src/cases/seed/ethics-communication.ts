@@ -7,6 +7,13 @@ export const ethicsCommunication: OralCase = {
   title: "An elderly woman from a retirement home",
   blueprint: "ethics",
   alsoCovers: ["comm", "neuro", "geri"],
+  priorityTopic: "cqi",
+  keyFeatures: [
+    { topic: "cqi", n: 2 },
+    { topic: "cqi", n: 1 },
+    { topic: "loc", n: 1 },
+    { topic: "delirium-agitation", n: 5 },
+  ],
   summary: "An 86 year old woman is brought in unresponsive from her retirement home. Her family arrives.",
   durationMinutes: 15,
   stem:
@@ -360,6 +367,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-k1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Supports the airway with positioning, suction and an adjunct, and does not reflexively intubate before goals are clarified.",
       points: 2,
       teaching: "Simple airway measures often buy time. Intubation is a treatment that needs consent when there is time to get it.",
@@ -368,6 +376,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-k2",
       competency: "management",
+      criterion: "plan",
       text: "Lowers systolic pressure toward about 140 to 160 with a titratable agent, e.g. labetalol 10 to 20 mg IV, avoiding large rapid drops.",
       points: 1,
       teaching: "Canadian guidance says a systolic target under 140 to 160 for the first 24 to 48 hours may be reasonable. Avoid big swings in pressure.",
@@ -376,6 +385,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-k3",
       competency: "management",
+      criterion: "plan",
       text: "Reverses apixaban with PCC 50 units/kg IV to a maximum of 3,000 units, or per local protocol.",
       points: 2,
       teaching: "Canadian stroke guidance uses PCC 50 units/kg to a maximum of 3,000 units. Thrombosis Canada also accepts a fixed 2,000 units. Give it quickly and confirm it was given.",
@@ -384,6 +394,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-k4",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Consults neurosurgery and states the prognosis in plain terms.",
       points: 1,
       teaching: "A clear specialist opinion helps families understand prognosis. Offer the family a direct call if helpful.",
@@ -392,6 +403,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s1",
       competency: "assessment",
+      criterion: "approach",
       text: "Determines and documents that the patient is incapable of making treatment decisions.",
       points: 1,
       teaching: "Capacity is decision specific. Document why she cannot understand or appreciate the decision.",
@@ -400,6 +412,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s2",
       competency: "professionalism",
+      criterion: "approach",
       text: "Identifies the son as attorney for personal care, who ranks above other children in the HCCA hierarchy.",
       points: 3,
       critical: true,
@@ -409,6 +422,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Explains that the substitute decision maker must follow known prior capable wishes that apply, and otherwise act in her best interests.",
       points: 2,
       teaching: "The substitute decision maker speaks for the patient, not for themselves. Prior capable wishes come first.",
@@ -417,6 +431,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s4",
       competency: "professionalism",
+      criterion: "plan",
       text: "Knows emergency treatment without consent is permitted when delay would cause serious harm, unless a known prior capable wish refuses it.",
       points: 1,
       teaching: "The Health Care Consent Act emergency exception lets you treat while you reach the decision maker.",
@@ -425,6 +440,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-s5",
       competency: "professionalism",
+      criterion: "plan",
       text: "Names ethics consultation and the Consent and Capacity Board as routes for unresolved conflict.",
       points: 1,
       teaching: "Hospital ethics helps most conflicts. The Board handles disputes about whether the decision maker follows the Act.",
@@ -433,6 +449,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g1",
       competency: "communication",
+      criterion: "plan",
       text: "Meets the family together in a private room, sits down, and introduces everyone present.",
       points: 1,
       teaching: "Setting matters. Sitting down signals time and respect.",
@@ -441,6 +458,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a warning shot, then an honest and clear prognosis without jargon.",
       points: 2,
       teaching: "A warning shot prepares people for bad news. Then say it plainly and pause.",
@@ -449,6 +467,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g3",
       competency: "communication",
+      criterion: "plan",
       text: "Makes a recommendation based on her values rather than asking if they want everything done.",
       points: 2,
       teaching: "Families should not carry the medical decision alone. Recommend a plan that fits what the patient valued.",
@@ -457,6 +476,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g4",
       competency: "communication",
+      criterion: "plan",
       text: "Acknowledges the daughter's emotion with empathy and does not argue.",
       points: 1,
       teaching: "Anger is often grief. Name the emotion before giving more information.",
@@ -465,6 +485,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-g5",
       competency: "leadership",
+      criterion: "plan",
       text: "Involves social work, spiritual care and palliative care.",
       points: 1,
       teaching: "A team approach supports the family and the clinicians. Palliative care can help in the emergency department.",
@@ -473,6 +494,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-d1",
       competency: "communication",
+      criterion: "plan",
       text: "Discloses the delay promptly to the substitute decision maker and family with facts, a sincere apology, and next steps.",
       points: 3,
       critical: true,
@@ -482,6 +504,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-d2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Is honest about uncertainty and does not speculate, minimize or blame individuals.",
       points: 2,
       critical: true,
@@ -491,6 +514,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-d3",
       competency: "leadership",
+      criterion: "plan",
       text: "Reports the incident through the hospital safety reporting system and informs the charge nurse or department lead.",
       points: 1,
       teaching: "Reporting drives system fixes. Most errors come from systems, not single people.",
@@ -499,6 +523,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-d4",
       competency: "professionalism",
+      criterion: "plan",
       text: "Knows the Ontario Apology Act protects an apology from being an admission of liability, and may call the CMPA for advice.",
       points: 1,
       teaching: "You can say sorry without admitting legal fault. The CMPA can advise on disclosure.",
@@ -507,6 +532,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-p1",
       competency: "management",
+      criterion: "plan",
       text: "Writes comfort care orders, e.g. hydromorphone 0.2 to 0.5 mg subcut as needed, glycopyrrolate 0.2 to 0.4 mg subcut for secretions, and mouth care.",
       points: 1,
       teaching: "Treat dyspnea, secretions and agitation. Stop tests that do not add comfort.",
@@ -515,6 +541,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-p2",
       competency: "disposition",
+      criterion: "plan",
       text: "Documents capacity, the substitute decision maker, prior wishes, the discussion, the code status and the disclosure facts.",
       points: 2,
       teaching: "Good notes let the next team continue the plan without repeating hard conversations.",
@@ -523,6 +550,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-p3",
       competency: "disposition",
+      criterion: "plan",
       text: "Keeps the incident report separate from the medical record.",
       points: 1,
       teaching: "Chart the facts of care and disclosure. The incident report and quality review stay in the safety system.",
@@ -531,6 +559,7 @@ export const ethicsCommunication: OralCase = {
     {
       id: "ec-p4",
       competency: "disposition",
+      criterion: "plan",
       text: "Notifies Ontario Health (Trillium Gift of Life Network) as required by the Gift of Life Act.",
       points: 1,
       teaching: "Designated Ontario hospitals must notify Trillium Gift of Life when death is imminent or has occurred. Their trained staff assess donation options and usually raise them with the family.",

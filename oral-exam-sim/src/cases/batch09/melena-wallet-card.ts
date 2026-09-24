@@ -7,6 +7,8 @@ export const melenaWalletCard: OralCase = {
   title: "Black stools and a card in his wallet",
   blueprint: "ethics",
   alsoCovers: ["resus", "comm"],
+  priorityTopic: "gi-bleed",
+  keyFeatures: [{ topic: "gi-bleed", n: 5 }, { topic: "gi-bleed", n: 6 }, { topic: "shock", n: 3 }],
   summary: "A 47 year old man with a bleeding ulcer and a hemoglobin of 64 g/L declines a treatment the team feels he needs.",
   durationMinutes: 15,
   stem:
@@ -402,6 +404,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Does not transfuse a capable adult who refuses.",
       points: 3,
       critical: true,
@@ -411,6 +414,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-c1",
       competency: "communication",
+      criterion: "approach",
       text: "Speaks with him privately to confirm the choice is free of pressure.",
       points: 2,
       teaching: "Ask without family or members of the faith present. Do not challenge his beliefs.",
@@ -419,6 +423,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the risks of refusal including death and clarifies acceptable products one by one.",
       points: 2,
       teaching: "An informed refusal needs the same information as informed consent. Acceptable fractions and cell salvage vary between individuals.",
@@ -427,6 +432,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Applies the Health Care Consent Act capacity test of understanding and appreciation.",
       points: 3,
       critical: true,
@@ -436,6 +442,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-m1",
       competency: "management",
+      criterion: "plan",
       text: "Arranges urgent endoscopy and gives pantoprazole 80 mg IV bolus.",
       points: 2,
       teaching: "With no transfusion option, early hemostasis is the priority. High dose PPI reduces rebleeding after endoscopic therapy.",
@@ -444,6 +451,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-m2",
       competency: "management",
+      criterion: "plan",
       text: "Uses blood conservation measures such as small volume tubes, IV iron, erythropoietin and early IR or surgical planning.",
       points: 2,
       teaching: "Every millilitre counts. Plan the next step for rebleeding before it happens.",
@@ -452,6 +460,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Responds to the wife with empathy, shares information with his permission and explains his rights and the plan.",
       points: 2,
       teaching: "Families need to hear that refusal of one treatment is not refusal of care. Confirm what the patient allows you to share.",
@@ -460,6 +469,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Does not promise the wife that blood can be given once he is incapable.",
       points: 1,
       teaching: "A substitute decision maker must follow a known prior capable wish that applies to the circumstances.",
@@ -468,6 +478,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Honours the prior capable wish when he becomes incapable and does not use the emergency exception to transfuse.",
       points: 3,
       critical: true,
@@ -477,6 +488,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Calls GI, interventional radiology and surgery urgently for hemostasis on rebleeding.",
       points: 2,
       teaching: "Embolization or surgery is the life saving step when blood is not an option. Call early.",
@@ -485,6 +497,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-p4",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents capacity, information given, his words, accepted products and the card.",
       points: 1,
       teaching: "Good documentation protects the patient's wishes across shift changes and protects the team.",
@@ -493,6 +506,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Hands over the refusal and accepted products to ICU, GI and IR.",
       points: 1,
       teaching: "Refusals get lost at transitions. Say it out loud and put it in the orders.",
@@ -501,6 +515,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU with blood conservation orders.",
       points: 1,
       teaching: "Severe anemia without transfusion needs close monitoring for ischemia and rebleeding.",
@@ -509,6 +524,7 @@ export const melenaWalletCard: OralCase = {
     {
       id: "jw-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Supports the nurse and leads a brief team debrief.",
       points: 1,
       teaching: "Watching a patient refuse life saving care causes moral distress. Naming it helps the team.",

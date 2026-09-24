@@ -7,6 +7,14 @@ export const houseFireBurns: OralCase = {
   title: "Pulled from a basement fire",
   blueprint: "trauma",
   alsoCovers: ["enviro", "tox"],
+  priorityTopic: "burns",
+  keyFeatures: [
+    { topic: "burns", n: 1 },
+    { topic: "burns", n: 2 },
+    { topic: "burns", n: 4 },
+    { topic: "burns", n: 5 },
+    { topic: "tox", n: 2 },
+  ],
   summary: "A 46 year old man is carried out of a burning house by firefighters and brought to a regional hospital.",
   durationMinutes: 15,
   stem:
@@ -346,6 +354,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies inhalation injury from hoarseness, stridor, soot and facial burns.",
       points: 2,
       teaching: "Hoarseness and stridor are the most worrying signs. They predict a closing airway.",
@@ -354,6 +363,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates early with a tube of 8.0 or larger and a surgical airway plan ready.",
       points: 3,
       critical: true,
@@ -363,6 +373,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Recognizes that pulse oximetry is falsely normal and that high lactate after an enclosed space fire suggests cyanide.",
       points: 2,
       teaching: "Standard pulse oximetry reads carboxyhemoglobin as oxyhemoglobin. In smoke inhalation a lactate of 10 mmol/L or more predicted toxic cyanide levels. Treat lower values when the patient is acidotic, confused or in shock.",
@@ -371,6 +382,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives 100 percent oxygen and hydroxocobalamin 5 g IV over 15 minutes, drawing labs first.",
       points: 3,
       critical: true,
@@ -380,6 +392,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-m2",
       competency: "management",
+      criterion: "data",
       text: "Estimates TBSA counting only partial and full thickness burns.",
       points: 1,
       teaching: "Use the rule of nines or the patient palm, about 1 percent. Simple erythema is not counted.",
@@ -388,6 +401,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-m3",
       competency: "management",
+      criterion: "plan",
       text: "Starts Ringer lactate at 2 to 4 mL/kg per percent over 24 hours, half in the first 8 hours from the burn, and titrates to urine output 0.5 mL/kg/h.",
       points: 3,
       critical: true,
@@ -397,6 +411,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes that circumferential chest eschar is causing high airway pressures after excluding tube and lung causes.",
       points: 1,
       teaching: "Rising peak and plateau pressures with poor chest rise in a trunk burn point to restrictive eschar.",
@@ -405,6 +420,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Performs chest escharotomy along the anterior axillary lines joined across the costal margin, and a limb escharotomy for the threatened arm.",
       points: 2,
       teaching: "Escharotomy of the chest is a lifesaving ED procedure. Cut through eschar only.",
@@ -413,6 +429,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-m4",
       competency: "management",
+      criterion: "plan",
       text: "Gives analgesia, tetanus prophylaxis, warmth and clean dry dressings, and avoids prophylactic antibiotics and steroids.",
       points: 1,
       teaching: "Hypothermia is common after burns. Prophylactic antibiotics do not prevent burn infection.",
@@ -421,6 +438,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Identifies that he meets burn centre referral criteria and arranges transfer through CritiCall and Ornge.",
       points: 2,
       teaching: "Burn centre criteria include partial thickness over 10 percent, any full thickness, face, hands and inhalation injury.",
@@ -429,6 +447,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover including time of burn, TBSA, fluid totals, urine output, tube size and antidotes.",
       points: 1,
       teaching: "Fluid timing runs from the time of the burn. The receiving team needs the totals to continue the plan.",
@@ -437,6 +456,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Engages the burn centre early for advice while stabilizing, rather than after workup is complete.",
       points: 1,
       teaching: "Early calls let the burn centre guide fluid rates and escharotomy decisions.",
@@ -445,6 +465,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Tells his wife honestly that he is critically ill with a real risk of death, and explains the transfer.",
       points: 1,
       teaching: "Large burns with inhalation injury carry high mortality. Honest, early framing helps families prepare.",
@@ -453,6 +474,7 @@ export const houseFireBurns: OralCase = {
     {
       id: "bu-p1",
       competency: "professionalism",
+      criterion: "approach",
       text: "Asks whether his wife or others were also exposed to smoke.",
       points: 1,
       teaching: "Other household members may need assessment for carbon monoxide or burns.",

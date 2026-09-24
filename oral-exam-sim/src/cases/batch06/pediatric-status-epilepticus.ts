@@ -6,6 +6,13 @@ export const pediatricStatusEpilepticus: OralCase = {
   id: "pediatric-status-epilepticus",
   title: "A baby who will not stop shaking",
   blueprint: "peds",
+  priorityTopic: "seizures",
+  keyFeatures: [
+    { topic: "seizures", n: 2 },
+    { topic: "seizures", n: 3 },
+    { topic: "seizures", n: 4 },
+    { topic: "seizures", n: 6 },
+  ],
   summary: "A 9 month old arrives by ambulance still seizing after a dose of midazolam from paramedics.",
   durationMinutes: 15,
   stem:
@@ -345,6 +352,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Manages the airway, checks glucose and places IO access after failed IV attempts.",
       points: 2,
       teaching: "Glucose is the fastest reversible cause to exclude. IO access should follow two failed IV attempts or about 90 seconds.",
@@ -353,6 +361,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives a second benzodiazepine dose, counting the prehospital dose, for example lorazepam 0.1 mg/kg IV or IO, maximum 4 mg.",
       points: 3,
       critical: true,
@@ -362,6 +371,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Lists metabolic, infectious, toxic, traumatic and structural causes of afebrile status in an infant.",
       points: 2,
       teaching: "An afebrile infant in status needs a broad search. Hyponatremia and abusive head trauma are both easy to miss.",
@@ -370,6 +380,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Sends electrolytes, calcium and magnesium early.",
       points: 1,
       teaching: "Electrolyte causes of seizure respond poorly to antiseizure drugs. Early results change treatment.",
@@ -378,6 +389,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives a second line agent: levetiracetam 60 mg/kg, CPS maximum 3000 mg, or fosphenytoin 20 mg PE/kg, maximum 1000 mg PE.",
       points: 3,
       critical: true,
@@ -387,6 +399,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-m3",
       competency: "management",
+      criterion: "plan",
       text: "Avoids valproate in a child under 2 years.",
       points: 1,
       teaching: "Valproate carries a risk of fatal liver failure in young children, especially with an undiagnosed metabolic disorder.",
@@ -395,6 +408,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes hyponatremic seizure from free water intoxication and links it to diluted formula.",
       points: 2,
       teaching: "Infants have limited ability to excrete free water. Diluted formula and extra water can drop sodium quickly.",
@@ -403,6 +417,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives 3 percent saline 3 to 5 mL/kg over 10 to 20 minutes and repeats if seizures continue.",
       points: 3,
       critical: true,
@@ -412,6 +427,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-m4",
       competency: "management",
+      criterion: "plan",
       text: "Limits the total sodium rise to about 8 mmol/L in 24 hours with frequent checks.",
       points: 2,
       teaching: "Overcorrection risks osmotic demyelination. Once the free water intake stops, the kidneys can correct sodium fast on their own.",
@@ -420,6 +436,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Supports post ictal hypoventilation with airway manoeuvres and bag mask, and states indications and weight based drugs for intubation.",
       points: 2,
       teaching: "Most post ictal hypoventilation settles with basic airway support. If you paralyze, seizures become invisible, so arrange EEG.",
@@ -428,6 +445,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks with the parent without judgment and explains the danger of diluted formula.",
       points: 2,
       teaching: "Parents dilute formula to stretch it when money is short. A respectful conversation keeps them engaged in their child's care.",
@@ -436,6 +454,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Involves social work for food and income supports and reports to the Children's Aid Society personally, telling the parent openly.",
       points: 2,
       teaching: "The CYFSA duty applies on reasonable grounds to suspect physical harm from a failure to adequately provide, whatever the cause. It cannot be delegated. Poverty is not neglect, and the report should lead to support, not blame.",
@@ -444,6 +463,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to a monitored setting with sodium checks every 2 hours and a plan to prevent overcorrection.",
       points: 2,
       teaching: "A brisk water diuresis can raise sodium too fast once intake stops. Close monitoring lets the team intervene early.",
@@ -452,6 +472,7 @@ export const pediatricStatusEpilepticus: OralCase = {
     {
       id: "se-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Coordinates with the pediatrician and social work on a follow up plan.",
       points: 1,
       teaching: "The medical and social problems need the same follow up. Clear ownership prevents a repeat presentation.",

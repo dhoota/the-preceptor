@@ -7,6 +7,8 @@ export const hourSevenInTheHallway: OralCase = {
   title: "Hour seven in the hallway",
   blueprint: "comm",
   alsoCovers: ["geri", "systems"],
+  priorityTopic: "delirium-agitation",
+  keyFeatures: [{ topic: "delirium-agitation", n: 1 }, { topic: "delirium-agitation", n: 3 }, { topic: "analgesia-sedation", n: 2 }, { topic: "cqi", n: 1 }],
   summary: "A daughter is shouting at the nursing station about her elderly mother, who has been on a hallway stretcher for seven hours.",
   durationMinutes: 13,
   stem:
@@ -381,6 +383,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Introduces self, moves the conversation to a private space and listens without interrupting.",
       points: 2,
       critical: true,
@@ -390,6 +393,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Names the emotion and agrees with what is legitimate in the complaint.",
       points: 2,
       teaching: "Agreeing with the truth is disarming. Arguing about details escalates.",
@@ -398,6 +402,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes early delirium, untreated pain and continence needs, and confirms consent to share information with the daughter.",
       points: 2,
       teaching: "Inattention is the core feature of delirium. Pain and a wet brief are common triggers in older adults.",
@@ -406,6 +411,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-m1",
       competency: "management",
+      criterion: "plan",
       text: "Treats pain promptly with a fascia iliaca block within the local anesthetic maximum, small titrated opioid doses and scheduled acetaminophen.",
       points: 3,
       critical: true,
@@ -415,6 +421,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-m2",
       competency: "management",
+      criterion: "plan",
       text: "Starts non drug delirium prevention and avoids NSAIDs, benzodiazepines and restraints.",
       points: 1,
       teaching: "Glasses, hearing aids, family presence and reorientation help. Sedatives treat the symptom and worsen the cause.",
@@ -423,6 +430,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Apologizes sincerely for the delay without blaming staff.",
       points: 2,
       teaching: "A genuine apology is often what families want most. It should never shift blame to a colleague.",
@@ -431,6 +439,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Knows the Ontario Apology Act protects an apology from use as an admission of liability and offers the patient relations route.",
       points: 1,
       teaching: "An apology is not an admission of fault in Ontario law. Offering the formal route shows transparency.",
@@ -439,6 +448,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Sets a calm, clear limit on abuse and filming of others and offers a respectful choice.",
       points: 3,
       critical: true,
@@ -448,6 +458,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Protects other patients' privacy and does not physically take the phone.",
       points: 1,
       teaching: "Ask her to stop filming others. Physical intervention risks injury and escalation.",
@@ -456,6 +467,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Supports the nurse, offers reassignment and a break, and supports a workplace violence report.",
       points: 2,
       teaching: "Ontario employers must have workplace violence and harassment programs. Staff should be supported to report.",
@@ -464,6 +476,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-l3",
       competency: "leadership",
+      criterion: "plan",
       text: "Escalates the overcapacity situation to the administrator on call.",
       points: 1,
       teaching: "Boarding is a hospital problem, not an ED problem. Use the escalation pathway every time.",
@@ -472,6 +485,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Files a system focused safety report and advocates for a bed or quieter space for the patient.",
       points: 1,
       teaching: "Delayed analgesia in boarded patients is a system signal. Reports drive fixes such as nurse initiated protocols.",
@@ -480,6 +494,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Closes the loop with a plan, a check back time and a role for the daughter in delirium care.",
       points: 1,
       teaching: "A promised check back time lowers anxiety. Families are effective partners in delirium prevention.",
@@ -488,6 +503,7 @@ export const hourSevenInTheHallway: OralCase = {
     {
       id: "hw-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents care, the conversation and the limit setting factually.",
       points: 1,
       teaching: "Objective notes help patient relations and protect everyone if a complaint follows.",

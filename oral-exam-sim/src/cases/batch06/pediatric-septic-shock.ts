@@ -6,6 +6,15 @@ export const pediatricSepticShock: OralCase = {
   id: "pediatric-septic-shock",
   title: "A limp toddler with a fever",
   blueprint: "peds",
+  priorityTopic: "pediatric-fever",
+  keyFeatures: [
+    { topic: "pediatric-fever", n: 2 },
+    { topic: "pediatric-fever", n: 3 },
+    { topic: "pediatric-fever", n: 4 },
+    { topic: "shock", n: 4 },
+    { topic: "shock", n: 7 },
+    { topic: "infectious-diseases", n: 10 },
+  ],
   summary: "A 3 year old with a fever since breakfast is now drowsy, cold and has spots on her legs.",
   durationMinutes: 15,
   stem:
@@ -349,6 +358,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Recognizes septic shock from tachycardia, hypotension, poor perfusion and altered mental status with a purpuric rash.",
       points: 2,
       teaching: "Hypotension is a late sign in children. Cold peripheries, delayed capillary refill and drowsiness mean shock is already established.",
@@ -357,6 +367,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Places IO access without delay after failed IV attempts.",
       points: 2,
       critical: true,
@@ -366,6 +377,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives 10 to 20 mL/kg boluses of balanced crystalloid quickly with reassessment after each, and treats hypoglycemia.",
       points: 2,
       teaching: "Up to 40 to 60 mL/kg may be needed in the first hour where ICU care is available. Stop when perfusion improves or overload appears.",
@@ -374,6 +386,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives meningitic dose ceftriaxone, 100 mg/kg/day, plus vancomycin 15 mg/kg within the first hour.",
       points: 3,
       critical: true,
@@ -383,6 +396,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-m2",
       competency: "management",
+      criterion: "data",
       text: "Defers lumbar puncture because of shock and coagulopathy.",
       points: 2,
       teaching: "LP in unstable or coagulopathic children is dangerous. Blood culture and PCR can still confirm the organism.",
@@ -391,6 +405,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies probable invasive meningococcal disease with purpura fulminans and DIC.",
       points: 2,
       teaching: "Low WBC, low platelets and a spreading purpuric rash predict a severe course. Consider other invasive bacteria too.",
@@ -399,6 +414,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes fluid refractory shock with crackles and hepatomegaly and stops further boluses.",
       points: 2,
       teaching: "A growing liver and new crackles are signs of fluid overload. More fluid will worsen oxygenation without fixing shock.",
@@ -407,6 +423,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts epinephrine 0.05 to 0.3 mcg/kg/min or norepinephrine through IO or peripheral access without waiting for a central line.",
       points: 3,
       critical: true,
@@ -416,6 +433,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-m3",
       competency: "management",
+      criterion: "plan",
       text: "Considers correcting low ionized calcium and considers hydrocortisone 2 mg/kg, maximum 100 mg, for catecholamine refractory shock.",
       points: 1,
       teaching: "Hypocalcemia can worsen myocardial function, though sepsis guidelines found too little evidence to set a calcium target. Stress dose steroids are reasonable only if shock persists despite fluid and vasoactive drugs.",
@@ -424,6 +442,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates after hemodynamic optimization with reduced dose ketamine and rocuronium, with push dose epinephrine ready.",
       points: 2,
       teaching: "Induction can cause arrest in a shocked child. Resuscitate before you intubate and choose drugs that preserve vascular tone.",
@@ -432,6 +451,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Notifies the Medical Officer of Health on clinical suspicion and uses droplet precautions.",
       points: 2,
       teaching: "Invasive meningococcal disease is reportable in Ontario. Public health leads contact tracing and prophylaxis.",
@@ -440,6 +460,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Arranges chemoprophylaxis for close contacts and limits staff prophylaxis to unprotected exposure to oral secretions.",
       points: 2,
       teaching: "Rifampin, ceftriaxone or, for adults, ciprofloxacin are the Ontario options. Staff need prophylaxis only after intensive unprotected exposure such as intubation without a mask.",
@@ -448,6 +469,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks honestly with the parent about how critically ill she is and explains next steps.",
       points: 2,
       teaching: "Honest, plain language builds trust. Give the family something concrete to do, such as their own prophylaxis.",
@@ -456,6 +478,7 @@ export const pediatricSepticShock: OralCase = {
     {
       id: "ss-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges PICU transfer through CritiCall with a structured handover including times, fluid totals, drugs and coagulation results.",
       points: 2,
       teaching: "Early transfer requests save time. A precise timeline helps the receiving team judge response to treatment.",

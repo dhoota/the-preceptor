@@ -7,6 +7,8 @@ export const newsInTheFamilyRoom: OralCase = {
   title: "A husband and son in the family room",
   blueprint: "comm",
   alsoCovers: ["cardio", "ethics"],
+  priorityTopic: "arrhythmia",
+  keyFeatures: [{ topic: "arrhythmia", n: 2 }, { topic: "arrhythmia", n: 5 }, { topic: "cqi", n: 1 }],
   summary: "After a failed resuscitation you must speak with a husband and his 12 year old son who have just arrived.",
   durationMinutes: 14,
   stem:
@@ -393,6 +395,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-l1",
       competency: "leadership",
+      criterion: "approach",
       text: "Prepares by gathering facts, bringing support staff and handing off the pager.",
       points: 1,
       teaching: "The GRIEV_ING approach starts with gathering the family and resources before you speak.",
@@ -401,6 +404,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Sits down, introduces self, asks what they know and gives a warning shot.",
       points: 2,
       teaching: "Asking what they know first tells you where to start. A warning shot prepares them for what comes next.",
@@ -409,6 +413,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Uses the word 'died' early and then allows silence.",
       points: 3,
       critical: true,
@@ -418,6 +423,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Responds to anger and grief with empathy rather than defensiveness.",
       points: 2,
       teaching: "Anger is a normal grief response. Name the emotion and stay present.",
@@ -426,6 +432,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Explains simply and honestly why resuscitation was stopped.",
       points: 1,
       teaching: "Families often ask why you stopped. A short honest answer about time and response to treatment helps.",
@@ -434,6 +441,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-c5",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks to the child directly in concrete language and offers support for him.",
       points: 2,
       teaching: "Children understand concrete words. 'Went to sleep' can create fear of sleeping.",
@@ -442,6 +450,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Handles an interruption honestly, leaves support with the family and returns as promised.",
       points: 2,
       teaching: "Being called away is common in emergency medicine. Say so, leave someone with them and come back.",
@@ -450,6 +459,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Reports the death to the coroner and keeps devices in place until release.",
       points: 3,
       critical: true,
@@ -459,6 +469,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Offers a prepared viewing and notifies Ontario Health (Trillium Gift of Life Network).",
       points: 1,
       teaching: "Designated Ontario hospitals must notify Ontario Health as soon as possible after a death or when death is imminent. A trained coordinator discusses donation with the family.",
@@ -467,6 +478,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-d1",
       competency: "disposition",
+      criterion: "diagnosis",
       text: "Recommends ECG screening and inherited heart rhythm clinic referral for the son and first degree relatives.",
       points: 3,
       critical: true,
@@ -476,6 +488,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Shares the family history with the coroner and routes the prior visit to the quality process without speculating.",
       points: 1,
       teaching: "The coroner uses history to guide testing. Concerns about earlier care go through quality review, and the family is owed disclosure if that review finds a gap.",
@@ -484,6 +497,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Explains next steps, gives a contact for questions and offers grief resources.",
       points: 1,
       teaching: "Families remember practical guidance. Tell them who will call and what happens next.",
@@ -492,6 +506,7 @@ export const newsInTheFamilyRoom: OralCase = {
     {
       id: "dn-l3",
       competency: "leadership",
+      criterion: "plan",
       text: "Leads a brief team debrief and checks on own wellbeing.",
       points: 1,
       teaching: "A short pause after a death helps the team and the physician before the next patient.",

@@ -7,6 +7,15 @@ export const febrileInfant: OralCase = {
   title: "A sleepy newborn",
   blueprint: "peds",
   alsoCovers: ["id", "resus"],
+  priorityTopic: "pediatric-fever",
+  keyFeatures: [
+    { topic: "pediatric-fever", n: 1 },
+    { topic: "pediatric-fever", n: 2 },
+    { topic: "pediatric-fever", n: 3 },
+    { topic: "shock", n: 1 },
+    { topic: "seizures", n: 4 },
+    { topic: "airway", n: 4 },
+  ],
   summary: "A 3 week old brought in by her parents because she is not feeding and is hard to wake.",
   durationMinutes: 15,
   stem:
@@ -345,6 +354,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r1",
       competency: "leadership",
+      criterion: "diagnosis",
       text: "Recognizes septic shock and calls for help, including pediatric resources, early.",
       points: 1,
       teaching: "Tachycardia, mottling and slow capillary refill are shock in a neonate. Low blood pressure is a late sign.",
@@ -353,6 +363,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Moves to intraosseous access after failed IV attempts within about 90 seconds.",
       points: 2,
       teaching: "In a shocked infant, IO access is fast and reliable. Do not lose minutes to repeated IV attempts.",
@@ -361,6 +372,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives crystalloid 10 to 20 mL/kg (about 36 to 72 mL) with reassessment of perfusion, liver size and lungs after each bolus.",
       points: 3,
       critical: true,
@@ -370,6 +382,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats hypoglycemia with D10W 2 mL/kg IV or IO (about 7 mL) and rechecks glucose within 15 to 30 minutes.",
       points: 2,
       critical: true,
@@ -379,6 +392,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-r5",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts epinephrine 0.05 to 0.3 mcg/kg/min by peripheral IV or IO for fluid refractory shock.",
       points: 2,
       teaching: "Epinephrine can run peripherally or by IO at low dose. Do not wait for a central line.",
@@ -387,6 +401,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-d1",
       competency: "assessment",
+      criterion: "data",
       text: "Draws a blood culture before antibiotics without delaying them.",
       points: 1,
       teaching: "One culture drawn with the first line is enough. Never hold antibiotics to get more samples.",
@@ -395,6 +410,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-d2",
       competency: "assessment",
+      criterion: "data",
       text: "Obtains catheter urine, gas, lactate, CBC, electrolytes and ionized calcium.",
       points: 1,
       teaching: "These guide resuscitation and help find the source. Urine should be a catheter or suprapubic sample.",
@@ -403,6 +419,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-d3",
       competency: "assessment",
+      criterion: "data",
       text: "Defers the LP while the infant is unstable and plans it once stable.",
       points: 2,
       teaching: "Positioning for an LP can cause apnea and collapse. Treat first and tap later. CSF can still be useful after antibiotics.",
@@ -411,6 +428,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-d4",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Considers duct dependent heart disease, adrenal crisis, inborn errors, HSV and non accidental injury, and screens for them.",
       points: 2,
       teaching: "Not every shocked neonate has sepsis. Pre and post ductal saturations, femoral pulses and electrolytes are quick screens.",
@@ -419,6 +437,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-a1",
       competency: "management",
+      criterion: "plan",
       text: "Gives empiric antibiotics within one hour without waiting for the LP.",
       points: 3,
       critical: true,
@@ -428,6 +447,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-a2",
       competency: "management",
+      criterion: "plan",
       text: "Chooses ampicillin 75 mg/kg IV plus cefotaxime 50 to 75 mg/kg IV, or ceftazidime or cefepime if cefotaxime is unavailable.",
       points: 2,
       teaching: "Ampicillin covers Listeria and enterococcus. A third generation cephalosporin covers GBS and Gram negative organisms and reaches the CSF. Gentamicin does not reach the CSF well.",
@@ -436,6 +456,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-a3",
       competency: "management",
+      criterion: "plan",
       text: "Adds acyclovir 20 mg/kg IV for possible neonatal HSV.",
       points: 2,
       teaching: "Neonatal HSV can present without vesicles or maternal history. Seizures and a sick neonate should prompt acyclovir.",
@@ -444,6 +465,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-a4",
       competency: "management",
+      criterion: "plan",
       text: "Avoids ceftriaxone in an infant under 28 days and can explain why.",
       points: 1,
       teaching: "Ceftriaxone displaces bilirubin and can precipitate with IV calcium in neonates. Shocked neonates often need calcium, so cefotaxime is the safer choice.",
@@ -452,6 +474,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-s1",
       competency: "management",
+      criterion: "plan",
       text: "Rechecks glucose and gives a benzodiazepine, e.g. lorazepam or midazolam 0.1 mg/kg IV or IO (about 0.36 mg).",
       points: 2,
       teaching: "Treat reversible causes first. Low glucose, sodium and calcium can all cause neonatal seizures.",
@@ -460,6 +483,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-s2",
       competency: "management",
+      criterion: "plan",
       text: "Uses phenobarbital 20 mg/kg IV (about 72 mg) as second line, or levetiracetam 40 to 60 mg/kg.",
       points: 1,
       teaching: "The ILAE neonatal guideline makes phenobarbital the first antiseizure drug in neonates. Watch for respiratory depression and hypotension.",
@@ -468,6 +492,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-s3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Chooses a 3.0 cuffed or 3.5 uncuffed tube at about 9.5 to 10 cm at the lip.",
       points: 1,
       teaching: "For a term neonate, lip depth is roughly weight in kg plus 6 cm. Confirm with end tidal CO2 and X ray.",
@@ -476,6 +501,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-s4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Resuscitates before induction and uses a stable agent, e.g. ketamine about 1 mg/kg with rocuronium 1 mg/kg, with atropine and epinephrine ready.",
       points: 2,
       teaching: "Shocked infants arrest at induction. Fill the tank, pick a stable drug and have push dose epinephrine drawn up.",
@@ -484,6 +510,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-c1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges early transfer through the pediatric critical care transport team or CritiCall.",
       points: 2,
       teaching: "Call the transport team as soon as she is critically ill. Their travel time is part of her resuscitation.",
@@ -492,6 +519,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains to the parents in plain language, gives honest uncertainty about outcome, and checks understanding.",
       points: 1,
       teaching: "Parents remember how they were told. Be honest, avoid jargon, and give them a next step.",
@@ -500,6 +528,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Addresses the mother's guilt about GBS status with accurate reassurance.",
       points: 1,
       teaching: "Intrapartum antibiotics prevent early onset GBS but not late onset disease. She did nothing wrong.",
@@ -508,6 +537,7 @@ export const febrileInfant: OralCase = {
     {
       id: "fi-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover with antibiotic times, doses, fluids given and outstanding results.",
       points: 1,
       teaching: "The receiving team needs exact times and doses. Write them on the transfer sheet as you go.",

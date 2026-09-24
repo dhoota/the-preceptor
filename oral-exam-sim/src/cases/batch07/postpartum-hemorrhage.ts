@@ -7,6 +7,13 @@ export const postpartumHemorrhage: OralCase = {
   title: "Bleeding after a home birth",
   blueprint: "obgyn",
   alsoCovers: ["resus"],
+  priorityTopic: "shock",
+  keyFeatures: [
+    { topic: "shock", n: 1 },
+    { topic: "shock", n: 3 },
+    { topic: "shock", n: 6 },
+    { topic: "multiple-patients", n: 3 },
+  ],
   summary: "A woman arrives by ambulance with ongoing bleeding an hour after a planned home birth.",
   durationMinutes: 15,
   stem:
@@ -386,6 +393,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Systematically assesses the four Ts: tone, tissue, trauma and thrombin.",
       points: 2,
       teaching: "Most postpartum hemorrhage is atony, but retained tissue, trauma and coagulopathy often coexist. Look for all four.",
@@ -394,6 +402,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies retained placenta from the missing cotyledon and the echogenic material on bedside ultrasound.",
       points: 2,
       teaching: "Always inspect the placenta. Retained tissue stops the uterus from contracting and makes uterotonics fail.",
@@ -402,6 +411,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Recognizes severe hemorrhage with shock and activates the massive hemorrhage protocol with early red cells.",
       points: 3,
       critical: true,
@@ -411,6 +421,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Empties the bladder with a Foley catheter and performs uterine massage or bimanual compression.",
       points: 1,
       teaching: "A full bladder prevents uterine contraction. Bimanual compression is a bridge that anyone can start.",
@@ -419,6 +430,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Replaces fibrinogen to a level above 2 g/L with fibrinogen concentrate or cryoprecipitate.",
       points: 2,
       critical: true,
@@ -428,6 +440,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-r4",
       competency: "resuscitation",
+      criterion: "data",
       text: "Gives calcium chloride 1 g IV for ionized calcium below 1.1 mmol/L and uses balanced product ratios.",
       points: 1,
       teaching: "Ionized calcium is the best measure in hemorrhage. Calcium chloride has three times the elemental calcium of gluconate.",
@@ -436,6 +449,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives oxytocin, 5 IU IV slowly then an infusion of 20 to 40 IU in 1 L, and tranexamic acid 1 g IV early.",
       points: 3,
       critical: true,
@@ -445,6 +459,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m2",
       competency: "management",
+      criterion: "plan",
       text: "Chooses ergonovine 0.25 mg IM as the second line agent in a normotensive patient.",
       points: 2,
       teaching: "Ergonovine is potent but causes vasoconstriction. Avoid it in hypertension, preeclampsia and with HIV protease inhibitors.",
@@ -453,6 +468,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m3",
       competency: "management",
+      criterion: "plan",
       text: "Avoids carboprost because of asthma and uses sublingual rather than rectal misoprostol as an adjunct.",
       points: 2,
       teaching: "Carboprost is a prostaglandin F2 alpha and causes bronchospasm. Rectal misoprostol has the slowest onset and lowest levels.",
@@ -461,6 +477,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m4",
       competency: "management",
+      criterion: "plan",
       text: "Performs manual exploration of the uterine cavity with analgesia to remove retained tissue and clots.",
       points: 2,
       teaching: "When tissue is retained, clearing the cavity is often the step that stops the bleeding. Give antibiotics afterwards.",
@@ -469,6 +486,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-m5",
       competency: "management",
+      criterion: "plan",
       text: "Places a uterine tamponade balloon filled with 300 to 500 mL for ongoing bleeding.",
       points: 1,
       teaching: "Tamponade controls most atonic bleeding that does not respond to drugs and bridges to surgery or transfer.",
@@ -477,6 +495,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Communicates clearly with obstetrics about status and need for the OR, and arranges transfer through CritiCall only if stable.",
       points: 1,
       teaching: "Define the need precisely. Surgery comes first in an unstable patient. Transfer for embolization only when she is stable.",
@@ -485,6 +504,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Updates the partner honestly, including the possibility of hysterectomy, in plain language.",
       points: 1,
       teaching: "Families remember the first conversation. Prepare them for serious outcomes without taking away hope.",
@@ -493,6 +513,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Ensures the newborn is assessed and cared for while the mother is being resuscitated.",
       points: 1,
       teaching: "The newborn is a second patient. Assign a clinician to check temperature, feeding and glucose risk.",
@@ -501,6 +522,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls for help early and assigns roles to the ED team and the midwife.",
       points: 2,
       teaching: "Hemorrhage response is a team task. Give the midwife a clear role such as compression or recording blood loss.",
@@ -509,6 +531,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Leads a debrief including the midwife and reviews protocol activation and communication.",
       points: 1,
       teaching: "SOGC recommends regular multidisciplinary simulation and review of hemorrhage events.",
@@ -517,6 +540,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Moves an unstable patient to the OR for surgical control rather than transferring her.",
       points: 2,
       teaching: "If drugs and tamponade fail, prompt surgery saves lives. Do not put an unstable patient in an aircraft.",
@@ -525,6 +549,7 @@ export const postpartumHemorrhage: OralCase = {
     {
       id: "pph-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Plans postpartum follow up, including VTE prophylaxis once bleeding stops, iron and documentation of totals.",
       points: 1,
       teaching: "Postpartum hemorrhage and transfusion raise VTE risk. Anemia and lactation problems need follow up.",

@@ -7,6 +7,15 @@ export const completeHeartBlockPacing: OralCase = {
   title: "Slow pulse after two faints",
   blueprint: "cardio",
   alsoCovers: ["resus", "procedures"],
+  priorityTopic: "arrhythmia",
+  keyFeatures: [
+    { topic: "arrhythmia", n: 1 },
+    { topic: "arrhythmia", n: 3 },
+    { topic: "arrhythmia", n: 4 },
+    { topic: "arrhythmia", n: 5 },
+    { topic: "analgesia-sedation", n: 4 },
+    { topic: "ems", n: 3 },
+  ],
   summary: "A 79 year old man with two faints at home arrives pale, slow and hypotensive at a community hospital.",
   durationMinutes: 15,
   stem:
@@ -412,6 +421,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies third degree AV block with a wide ventricular escape and signs of hypoperfusion.",
       points: 2,
       teaching: "AV dissociation with regular P waves and a slower regular escape defines complete block. A wide escape means the block is likely below the AV node.",
@@ -420,6 +430,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives atropine 1 mg IV repeated every 3 to 5 minutes to a maximum of 3 mg.",
       points: 1,
       teaching: "Current adult ACLS uses 1 mg doses of atropine. It works on the AV node and often fails in infranodal block.",
@@ -428,6 +439,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Prepares pacing and a chronotropic infusion in parallel rather than waiting for atropine to fail.",
       points: 3,
       critical: true,
@@ -437,6 +449,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts transcutaneous pacing in demand mode at 60 to 80 with output set just above the capture threshold.",
       points: 2,
       teaching: "Anterior posterior pads lower the threshold. Demand mode avoids pacing on a T wave if the native rhythm returns.",
@@ -445,6 +458,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Confirms mechanical capture with a matching femoral pulse, pleth rate or cardiac motion on POCUS.",
       points: 3,
       critical: true,
@@ -454,6 +468,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives analgesia before or with pacing using small titrated doses, such as fentanyl 25 to 50 mcg IV.",
       points: 1,
       teaching: "Transcutaneous pacing is painful. Titrate opioid first and add small doses of a sedative only if needed.",
@@ -462,6 +477,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m2",
       competency: "management",
+      criterion: "plan",
       text: "Names epinephrine 2 to 10 mcg/min or dopamine 5 to 20 mcg/kg/min as the bridge when pacing is delayed or fails.",
       points: 1,
       teaching: "Chronotropic infusions buy time. They increase myocardial oxygen demand and can cause ectopy.",
@@ -470,6 +486,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Screens for reversible causes including hyperkalemia, AV nodal blocking drugs, digoxin, ischemia and Lyme carditis.",
       points: 2,
       teaching: "Treat the treatable. Hyperkalemia and drug toxicity can mimic structural block and respond to calcium or antidotes.",
@@ -478,6 +495,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m3",
       competency: "management",
+      criterion: "plan",
       text: "Holds beta blocker, calcium channel blocker and ACE inhibitor while he is hypotensive.",
       points: 1,
       teaching: "Even low doses of AV nodal blockers can worsen block. Stop them until the rhythm is secured.",
@@ -486,6 +504,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m4",
       competency: "management",
+      criterion: "plan",
       text: "Places a transvenous pacer through the right internal jugular vein under ultrasound, avoiding the left subclavian.",
       points: 3,
       critical: true,
@@ -495,6 +514,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-m5",
       competency: "management",
+      criterion: "plan",
       text: "Confirms wire position and sets output 2 to 3 times a threshold under 1 mA in demand mode.",
       points: 2,
       teaching: "A low threshold means good contact. A margin above threshold protects against loss of capture as the wire settles.",
@@ -503,6 +523,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Obtains informed consent from the patient for the transvenous pacer, explaining main risks.",
       points: 1,
       teaching: "A patient with capacity consents for himself even when a substitute decision maker is present.",
@@ -511,6 +532,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges CCU or direct transfer for a permanent pacemaker with a critical care escort and backup pads.",
       points: 2,
       teaching: "Temporary wires can dislodge in transport. Keep pads on and send staff who can troubleshoot the generator.",
@@ -519,6 +541,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover including pacer settings, threshold and wire depth.",
       points: 1,
       teaching: "The receiving team needs the numbers to detect a change in threshold or a migrating wire.",
@@ -527,6 +550,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the likely cause and plan to the family in plain language after confirming the patient's permission.",
       points: 1,
       teaching: "Ask the capable patient before sharing. Name the plan and what happens next.",
@@ -535,6 +559,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Advises no driving until cleared after pacemaker insertion and follows fitness to drive guidance.",
       points: 1,
       teaching: "Syncope from heart block is a risk of sudden incapacitation at the wheel. Driving advice belongs in the ED plan.",
@@ -543,6 +568,7 @@ export const completeHeartBlockPacing: OralCase = {
     {
       id: "chb-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Identifies the gap in after hours transvenous pacing coverage and proposes kit checks, simulation and a regional pathway.",
       points: 1,
       teaching: "Rare high stakes procedures need a named operator, a ready kit and practice. Fix the system after the shift.",

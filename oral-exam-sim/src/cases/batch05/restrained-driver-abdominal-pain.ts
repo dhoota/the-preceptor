@@ -7,6 +7,13 @@ export const restrainedDriverAbdominalPain: OralCase = {
   title: "Restrained driver with a sore belly",
   blueprint: "trauma",
   alsoCovers: ["obgyn"],
+  priorityTopic: "multiple-trauma",
+  keyFeatures: [
+    { topic: "multiple-trauma", n: 3 },
+    { topic: "multiple-trauma", n: 4 },
+    { topic: "abdominal-pain", n: 4 },
+    { topic: "abdominal-pain", n: 7 },
+  ],
   summary: "A 29 year old woman walks into the ED after a frontal highway collision with lower abdominal and back pain.",
   durationMinutes: 15,
   stem:
@@ -315,6 +322,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies the seatbelt sign as a marker of hollow viscus, mesenteric and lumbar spine injury.",
       points: 2,
       teaching: "A lap belt bruise increases the risk of bowel injury several fold. Look for a Chance type fracture at the same time.",
@@ -323,6 +331,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Tests for pregnancy early in a woman of childbearing age.",
       points: 1,
       teaching: "Pregnancy changes imaging counselling, drug choice and the need for Rh immune globulin.",
@@ -331,6 +340,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-m1",
       competency: "management",
+      criterion: "data",
       text: "Proceeds with CT abdomen and pelvis with IV contrast despite pregnancy.",
       points: 3,
       critical: true,
@@ -340,6 +350,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains fetal radiation risk in plain language and obtains informed consent for CT.",
       points: 2,
       teaching: "Say the risk as a comparison: a small radiation dose against a missed injury that could harm both of them.",
@@ -348,6 +359,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Interprets free fluid without solid organ injury plus mesenteric stranding as probable bowel or mesenteric injury.",
       points: 3,
       critical: true,
@@ -357,6 +369,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits under general surgery with spinal precautions and spine consultation rather than discharging.",
       points: 2,
       teaching: "Serial exams by the operating surgeon catch evolving peritonitis. A flexion distraction fracture is usually unstable.",
@@ -365,6 +378,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives Rh immune globulin to the Rh negative pregnant trauma patient within 72 hours.",
       points: 2,
       teaching: "Abdominal trauma in an Rh negative pregnant patient warrants Rh immune globulin. Before 12 weeks a minimum of 120 mcg is enough and 300 mcg is also acceptable.",
@@ -373,6 +387,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Recognizes peritonitis and gives fluids, analgesia and pregnancy safe antibiotics without delay.",
       points: 2,
       teaching: "Ceftriaxone with metronidazole covers bowel flora and is acceptable in pregnancy.",
@@ -381,6 +396,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls the surgeon for laparotomy based on the exam without waiting for repeat imaging.",
       points: 3,
       critical: true,
@@ -390,6 +406,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Addresses her fears about the CT and surgery honestly and checks her understanding.",
       points: 1,
       teaching: "Name the real risks and the bigger risk of not treating. Offer support people.",
@@ -398,6 +415,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Coordinates general surgery, spine and obstetrics and gives a timed handover.",
       points: 1,
       teaching: "Multi system injuries need one clear plan. The ED physician links the services.",
@@ -406,6 +424,7 @@ export const restrainedDriverAbdominalPain: OralCase = {
     {
       id: "sb-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents the consent discussion about imaging in pregnancy.",
       points: 1,
       teaching: "A clear note of the risks discussed and her decision protects the patient and the physician.",

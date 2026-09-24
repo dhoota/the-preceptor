@@ -6,6 +6,14 @@ export const neonateBiliousVomiting: OralCase = {
   id: "neonate-bilious-vomiting",
   title: "A 6 day old who will not keep feeds down",
   blueprint: "peds",
+  priorityTopic: "abdominal-pain",
+  keyFeatures: [
+    { topic: "abdominal-pain", n: 1 },
+    { topic: "abdominal-pain", n: 4 },
+    { topic: "abdominal-pain", n: 5 },
+    { topic: "shock", n: 1 },
+    { topic: "ems", n: 3 },
+  ],
   summary: "A 6 day old baby has vomited several times tonight and is not interested in feeding.",
   durationMinutes: 14,
   stem:
@@ -299,6 +307,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "States that bilious vomiting in a neonate is malrotation with midgut volvulus until proven otherwise.",
       points: 3,
       critical: true,
@@ -308,6 +317,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Makes the baby NPO, decompresses with an OG or NG tube, corrects glucose and gives a 10 mL/kg bolus for poor perfusion.",
       points: 2,
       teaching: "Decompression reduces aspiration risk and discomfort. Neonates have small glucose reserves and need early dextrose.",
@@ -316,6 +326,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls the pediatric surgeon immediately, before imaging results.",
       points: 3,
       critical: true,
@@ -325,6 +336,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Gives a differential including atresias, annular pancreas, NEC, Hirschsprung disease, meconium ileus and sepsis.",
       points: 1,
       teaching: "Many causes of neonatal bilious vomiting need surgery. Pyloric stenosis is not one of them because it causes non bilious vomiting.",
@@ -333,6 +345,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Knows that a normal or nonspecific X ray does not exclude volvulus and that the upper GI contrast study is the test of choice.",
       points: 2,
       teaching: "Partial volvulus lets some gas pass. The upper GI series shows the position of the duodenojejunal junction and the corkscrew of volvulus.",
@@ -341,6 +354,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Respectfully challenges the plan to wait for morning imaging and speaks directly with the pediatric surgeon.",
       points: 2,
       teaching: "Advocate with facts. Share the images and the time course. The receiving surgeon can settle the disagreement quickly.",
@@ -349,6 +363,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-m1",
       competency: "management",
+      criterion: "plan",
       text: "Orders maintenance dextrose containing fluid, replaces gastric losses and monitors glucose, perfusion and urine output.",
       points: 1,
       teaching: "Neonates need dextrose in maintenance fluid. Gastric losses can cause hypovolemia and hypochloremia if not replaced.",
@@ -357,6 +372,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-a4",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes bloody stool, distension, tenderness, shock and rising lactate as bowel ischemia.",
       points: 2,
       teaching: "Blood per rectum and peritonism are late signs. Survival and bowel length depend on detorsion before necrosis.",
@@ -365,6 +381,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Resuscitates shock with 10 to 20 mL/kg boluses, reassessing after each, and prepares for airway and inotropic support.",
       points: 2,
       teaching: "Third space loss into ischemic bowel is large. Reassess after each bolus for response and overload.",
@@ -373,6 +390,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives broad spectrum antibiotics such as ampicillin, gentamicin and metronidazole at neonatal doses.",
       points: 2,
       teaching: "Ischemic bowel allows bacterial translocation. Check neonatal doses and intervals with pharmacy because they change with postnatal age.",
@@ -381,6 +399,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Escalates the transfer through CritiCall and raises the option of local surgical detorsion if the baby will not survive transport.",
       points: 3,
       critical: true,
@@ -390,6 +409,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the diagnosis honestly to the parents and attends to the postpartum mother's needs and safe travel.",
       points: 1,
       teaching: "A mother 6 days postpartum is also a patient. Families need a plan for how they will get to the receiving hospital safely.",
@@ -398,6 +418,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover with the timeline, fluids, glucose, antibiotics, imaging and OG output.",
       points: 1,
       teaching: "Timing of the first bilious vomit and of the surgical call helps the surgeon judge how long the bowel has been at risk.",
@@ -406,6 +427,7 @@ export const neonateBiliousVomiting: OralCase = {
     {
       id: "bv-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Transfers to a pediatric surgical centre without delaying for local imaging.",
       points: 2,
       teaching: "The upper GI study and the operation happen at the same place. Local imaging should never hold up transfer.",

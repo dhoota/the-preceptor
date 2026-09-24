@@ -7,6 +7,14 @@ export const neckWoundRobbery: OralCase = {
   title: "Wound to the neck after a robbery",
   blueprint: "trauma",
   alsoCovers: ["procedures", "resus"],
+  priorityTopic: "multiple-trauma",
+  keyFeatures: [
+    { topic: "multiple-trauma", n: 1 },
+    { topic: "multiple-trauma", n: 2 },
+    { topic: "multiple-trauma", n: 6 },
+    { topic: "airway", n: 2 },
+    { topic: "airway", n: 4 },
+  ],
   summary: "A 31 year old man is brought in after being stabbed once in the side of the neck during a robbery.",
   durationMinutes: 14,
   stem:
@@ -339,6 +347,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies hard signs of vascular injury and signs of aerodigestive injury.",
       points: 2,
       teaching: "Hard signs include active or pulsatile bleeding, expanding hematoma, bruit or thrill, shock and neuro deficit. Hoarseness, crepitus and hemoptysis suggest airway or esophageal injury.",
@@ -347,6 +356,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-m1",
       competency: "management",
+      criterion: "plan",
       text: "Does not probe the wound, removes the collar, holds direct pressure and places access away from the injured side.",
       points: 2,
       teaching: "Probing risks rebleeding and air embolism. Collars are not needed in isolated penetrating neck injury without neuro deficit.",
@@ -355,6 +365,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Secures the airway early with a double set up plan and a surgical airway ready.",
       points: 3,
       critical: true,
@@ -364,6 +375,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Mobilizes anesthesia and the trauma surgeon and chooses the best location for the airway.",
       points: 1,
       teaching: "The operating room with a scrubbed surgeon is the safest place when time allows.",
@@ -372,6 +384,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-m2",
       competency: "management",
+      criterion: "plan",
       text: "Uses digital pressure or Foley catheter balloon tamponade and avoids blind clamping.",
       points: 3,
       critical: true,
@@ -381,6 +394,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids circumferential neck dressings and considers venous air embolism.",
       points: 1,
       teaching: "Tight neck wraps compress the airway. Open neck veins can entrain air, so keep the head slightly down.",
@@ -389,6 +403,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives balanced blood products, tranexamic acid 1 g IV and calcium, with a permissive systolic target of 80 to 90 mmHg.",
       points: 2,
       teaching: "Damage control resuscitation limits coagulopathy. Permissive hypotension applies only without brain injury.",
@@ -397,6 +412,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Sends the unstable patient with hard signs directly to the operating room without CT.",
       points: 3,
       critical: true,
@@ -406,6 +422,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Respectfully declines an unsafe request and confirms the plan with the attending surgeon.",
       points: 1,
       teaching: "Speak up clearly with the reason. Escalate to the responsible attending when there is disagreement.",
@@ -414,6 +431,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Describes CT angiography for stable patients regardless of zone, with esophageal and airway assessment as needed.",
       points: 2,
       teaching: "The no zone approach uses signs and CT angiography rather than anatomic zones to decide on surgery in stable patients.",
@@ -422,6 +440,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover including airway details, balloon volume and products with times.",
       points: 1,
       teaching: "The receiving team needs to know exactly what is in the wound and what was given.",
@@ -430,6 +449,7 @@ export const neckWoundRobbery: OralCase = {
     {
       id: "pn-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives tetanus prophylaxis and antibiotics when aerodigestive injury is possible.",
       points: 1,
       teaching: "Esophageal injury leads to mediastinitis if missed. Cover oral flora early.",

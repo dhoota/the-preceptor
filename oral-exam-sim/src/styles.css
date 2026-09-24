@@ -1,5 +1,5 @@
 /*
- * Preceptor: Oral. Clinical and quiet: warm paper, navy ink, one gold accent
+ * Preceptor: CCFP-EM. Clinical and quiet: warm paper, navy ink, one gold accent
  * from The Preceptor mark. Serif for what the examiner says, sans for the
  * interface, mono for time and numbers. Flat surfaces and hairline rules.
  */
@@ -87,7 +87,7 @@ a { color: var(--navy); }
 
 .tabs {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(5, 1fr);
   background: var(--paper); border-top: 1px solid var(--line);
   padding-bottom: var(--safe-bottom);
 }
@@ -326,3 +326,54 @@ input[type="range"] { accent-color: var(--navy); width: 140px; }
 .chip { flex: none; border: 1px solid var(--line); background: var(--card); border-radius: 14px; padding: 6px 11px; font-size: 13px; font-weight: 600; color: var(--ink-2); cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--on-navy); }
 .areahead { display: flex; justify-content: space-between; align-items: baseline; margin-top: 22px; padding-bottom: 6px; border-bottom: 1px solid var(--ink); }
+
+/* Written */
+.sampstem { padding: 4px 0 8px; border-bottom: 1px solid var(--line); }
+.sampstem p { font: 400 17px/1.55 var(--serif); margin: 0 0 8px; }
+.sampq { padding: 16px 0; border-bottom: 1px solid var(--line-2); }
+.sampupdate { font: italic 400 16px/1.5 var(--serif); color: var(--ink-2); border-left: 3px solid var(--gold); padding-left: 12px; margin: 0 0 12px; }
+.qhead { display: flex; gap: 10px; align-items: baseline; }
+.qhead .qn { color: var(--gold); font-weight: 600; flex: none; }
+.qhead b { font-weight: 700; }
+.qscore { margin-left: auto; font-weight: 600; padding: 2px 7px; border-radius: 2px; flex: none; }
+.qscore.ok { background: var(--green-soft); color: var(--green); }
+.qscore.part { background: var(--gold-soft); color: var(--ink); }
+.qscore.no { background: var(--red-soft); color: var(--red); }
+.shortlines { display: grid; gap: 8px; margin-top: 12px; }
+.shortline { display: grid; grid-template-columns: 22px 1fr; align-items: center; gap: 6px; }
+.shortline input { width: 100%; font: 16px/1.4 var(--sans); color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: var(--r); padding: 10px 11px; }
+.shortline input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.opts { display: grid; gap: 6px; margin-top: 12px; }
+.opt { display: flex; gap: 10px; align-items: flex-start; text-align: left; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); font-size: 15.5px; cursor: pointer; }
+.opt[aria-checked="true"] { border-color: var(--navy); box-shadow: inset 3px 0 0 var(--navy); }
+.opt:disabled { opacity: 0.5; }
+.opt.static { cursor: default; }
+.opt.right { border-color: var(--green); background: var(--green-soft); }
+.opt.wrong { border-color: var(--red); background: var(--red-soft); }
+.box { flex: none; width: 16px; height: 16px; margin-top: 2px; border: 1.5px solid var(--ink-2); border-radius: 2px; }
+.box.round { border-radius: 50%; }
+.opt[aria-checked="true"] .box, .box.on { background: var(--navy); border-color: var(--navy); }
+.ansline { display: grid; gap: 2px; padding: 8px 10px; margin-top: 6px; border-left: 3px solid var(--line); background: var(--card); }
+.ansline.ok { border-color: var(--green); }
+.ansline.no { border-color: var(--red); }
+.key { margin-top: 12px; padding: 10px 12px; border: 1px dashed var(--line); }
+.key ul { margin: 6px 0 0; padding-left: 18px; }
+.explain { margin-top: 12px; padding: 10px 12px; background: var(--paper-2); font-size: 15px; }
+.sampdone { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+.kfbox { margin: 16px 0; border: 1px solid var(--line); background: var(--card); padding: 10px 14px; }
+.kfbox summary { cursor: pointer; font-weight: 600; }
+.kfbox ol { margin: 10px 0 6px; padding-left: 20px; font-size: 14.5px; }
+.jump { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chip.todo { border-style: dashed; }
+.tier { border: 1px solid var(--line); background: var(--card); padding: 14px 16px; margin-top: 12px; border-radius: var(--r); }
+.tier.best { border-top: 3px solid var(--gold); }
+.tierhead { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.tiername { font-size: 20px; font-weight: 600; }
+.tier .price { font-size: 22px; }
+.ttable { width: 100%; border-collapse: collapse; font-size: 13.5px; margin-top: 10px; }
+.ttable th { text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mut); padding: 6px 4px; border-bottom: 1px solid var(--ink); }
+.ttable td { padding: 8px 4px; border-bottom: 1px solid var(--line-2); vertical-align: middle; }
+.ttable td.num { font-family: var(--mono); text-align: right; white-space: nowrap; }
+.kfbar { display: flex; gap: 2px; }
+.kfbar i { display: block; flex: 1; height: 8px; background: var(--line-2); border-radius: 1px; }
+.kfbar i.seen { background: var(--navy); }

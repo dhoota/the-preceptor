@@ -90,6 +90,28 @@ export function Result({ attemptId, go }: { attemptId: string; go: Go }) {
         )}
       </section>
 
+      {(a.score!.criteria?.length ?? 0) > 0 && (
+        <section className="section">
+          <span className="label">Examiner criteria</span>
+          {a.score!.criteria.map((d) => {
+            const pct = d.max ? (d.awarded / d.max) * 100 : 0;
+            return (
+              <div key={d.id} className="domrow">
+                <div className="h">
+                  <span>{d.name}</span>
+                  <span className="mono">
+                    {d.awarded}/{d.max}
+                  </span>
+                </div>
+                <div className={`bar ${pct < STANDARD.pass * 100 ? "low" : ""}`}>
+                  <div style={{ width: `${pct}%` }} />
+                </div>
+              </div>
+            );
+          })}
+        </section>
+      )}
+
       <section className="section">
         <span className="label">Score by competency</span>
         {report.competencies.map((d) => {

@@ -7,6 +7,14 @@ export const obstructiveShockPeLysis: OralCase = {
   title: "Grey and breathless after fainting",
   blueprint: "resus",
   alsoCovers: ["resp", "cardio"],
+  priorityTopic: "shock",
+  keyFeatures: [
+    { topic: "shock", n: 5 },
+    { topic: "shock", n: 6 },
+    { topic: "shock", n: 7 },
+    { topic: "dvt-pe", n: 6 },
+    { topic: "airway", n: 4 },
+  ],
   summary: "A 58 year old man arrives in shock after a faint at home. The cause is not obvious.",
   durationMinutes: 15,
   stem:
@@ -367,6 +375,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Places a second large bore IV, titrates oxygen and holds large fluid boluses in undifferentiated shock with a raised JVP.",
       points: 2,
       teaching: "A full neck vein in shock points to an obstructive or cardiogenic cause. Fluid can make right ventricular failure worse.",
@@ -375,6 +384,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Performs a structured shock ultrasound of heart, lungs, IVC, aorta and leg veins.",
       points: 2,
       teaching: "A protocol such as RUSH looks at the pump, the tank and the pipes. It sorts the type of shock at the bedside in minutes.",
@@ -383,6 +393,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies right ventricular dilation, septal flattening and low TAPSE with a proximal DVT as high risk PE.",
       points: 2,
       teaching: "RV to LV ratio above 1, a D shaped septum and TAPSE under 16 mm support acute RV strain. A DVT on the same scan greatly raises the likelihood of PE.",
@@ -391,6 +402,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Treats on bedside findings and does not send an unstable patient to CT.",
       points: 3,
       critical: true,
@@ -400,6 +412,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-m1",
       competency: "management",
+      criterion: "plan",
       text: "Starts unfractionated heparin 80 units/kg IV bolus without waiting for confirmation.",
       points: 1,
       teaching: "Unfractionated heparin is preferred in high risk PE because it can be stopped quickly and is used with lysis.",
@@ -408,6 +421,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses norepinephrine as first vasopressor and avoids further fluid when the IVC is full.",
       points: 2,
       teaching: "Norepinephrine raises systemic pressure and right coronary perfusion. More volume stretches an already failing RV.",
@@ -416,6 +430,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids intubation if possible and knows the risks of induction and positive pressure in RV failure.",
       points: 2,
       teaching: "Induction drops preload and tone, and positive pressure raises pulmonary vascular resistance. Peri intubation arrest is common in massive PE.",
@@ -424,6 +439,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives systemic thrombolysis with alteplase 100 mg IV over 2 hours after screening contraindications.",
       points: 3,
       critical: true,
@@ -433,6 +449,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the benefit and bleeding risk of lysis to the patient and family and documents consent.",
       points: 1,
       teaching: "Major bleeding occurs in about 1 in 10 and intracranial bleeding in about 2 in 100. A short, honest explanation is enough in an emergency.",
@@ -441,6 +458,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "In PE arrest gives the remaining alteplase or a 50 mg bolus and continues CPR for 60 to 90 minutes.",
       points: 3,
       critical: true,
@@ -450,6 +468,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Does not stop lysis or resuscitation early because of bleeding worries during CPR.",
       points: 1,
       teaching: "The risk of bleeding from CPR is small compared with the certainty of death from untreated PE arrest.",
@@ -458,6 +477,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-m3",
       competency: "management",
+      criterion: "plan",
       text: "After lysis controls oozing with pressure, checks fibrinogen and aPTT, and restarts unfractionated heparin without a bolus.",
       points: 2,
       teaching: "Restart heparin when the aPTT is under twice normal. Avoid new punctures and watch for neurologic change.",
@@ -466,6 +486,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU and contacts a centre with cardiac surgery or ECMO through CritiCall in case of failed lysis.",
       points: 2,
       teaching: "Surgical embolectomy, catheter therapy or ECMO are rescue options when lysis fails or is contraindicated. Arrange the backup early.",
@@ -474,6 +495,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the diagnosis to his wife in plain language and outlines the next 24 hours.",
       points: 1,
       teaching: "Say clot, leg and lungs. Families remember simple words and a clear plan.",
@@ -482,6 +504,7 @@ export const obstructiveShockPeLysis: OralCase = {
     {
       id: "pe-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Answers questions about prior care honestly without speculating about or blaming other clinicians.",
       points: 1,
       teaching: "Clot prevention after lower leg immobilization is individualized by risk. Stick to facts you know and offer a follow up conversation.",

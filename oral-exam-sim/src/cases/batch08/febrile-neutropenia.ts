@@ -7,6 +7,14 @@ export const febrileNeutropenia: OralCase = {
   title: "Chills at home during cancer treatment",
   blueprint: "id",
   alsoCovers: ["resus", "comm"],
+  priorityTopic: "infectious-diseases",
+  keyFeatures: [
+    { topic: "infectious-diseases", n: 1 },
+    { topic: "infectious-diseases", n: 2 },
+    { topic: "infectious-diseases", n: 3 },
+    { topic: "infectious-diseases", n: 6 },
+    { topic: "infectious-diseases", n: 8 },
+  ],
   summary: "A 57 year old woman on treatment for breast cancer calls the oncology line with fever and rigors and is sent to the emergency department.",
   durationMinutes: 14,
   stem:
@@ -339,6 +347,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Treats fever during chemotherapy as febrile neutropenia until proven otherwise, recognizing day 9 as the expected nadir.",
       points: 2,
       teaching: "Neutrophil counts usually bottom out 7 to 14 days after chemotherapy. Fever at that time is presumed neutropenic.",
@@ -347,6 +356,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives empiric antibiotics within 60 minutes of arrival without waiting for the CBC.",
       points: 3,
       critical: true,
@@ -356,6 +366,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Overrides the queue to room her immediately despite a full department.",
       points: 1,
       teaching: "Fever in a chemotherapy patient is a time critical presentation. Triage systems should flag it.",
@@ -364,6 +375,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-m2",
       competency: "management",
+      criterion: "plan",
       text: "Chooses an antipseudomonal beta lactam, cefepime 2 g IV or piperacillin tazobactam 4.5 g IV, plus vancomycin for instability and port infection.",
       points: 3,
       critical: true,
@@ -373,6 +385,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Clarifies the penicillin allergy history and recognizes a low risk reaction.",
       points: 2,
       teaching: "Most penicillin allergy labels are not true allergy. A benign delayed childhood rash is low risk and cephalosporins are usually safe.",
@@ -381,6 +394,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Does a focused source search including the port, mouth, perianal inspection and abdomen, with cultures from each lumen and a peripheral vein, and avoids rectal exams.",
       points: 2,
       teaching: "Neutropenic patients show few signs of inflammation. Paired cultures help identify a line source.",
@@ -389,6 +403,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-d1",
       competency: "disposition",
+      criterion: "data",
       text: "Uses clinical judgment over the MASCC score and admits for IV antibiotics.",
       points: 3,
       critical: true,
@@ -398,6 +413,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts norepinephrine to a MAP of 65 or more after fluid and calls the ICU.",
       points: 2,
       teaching: "Neutropenic septic shock is managed like any septic shock, with early vasopressors and ICU care.",
@@ -406,6 +422,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-m3",
       competency: "management",
+      criterion: "diagnosis",
       text: "Recognizes a port pocket infection with bacteremia and plans device removal.",
       points: 2,
       teaching: "A port pocket or tunnel infection, or septic shock from a line, generally needs the device removed.",
@@ -414,6 +431,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Involves oncology, the ICU and interventional radiology early.",
       points: 1,
       teaching: "Oncology knows her regimen and plan. Early team involvement speeds line removal and ICU care.",
@@ -422,6 +440,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains to her husband that this is an infection from chemotherapy, not a sign of cancer return, and is honest about severity.",
       points: 1,
       teaching: "Families often fear recurrence. Separate the infection from the cancer clearly.",
@@ -430,6 +449,7 @@ export const febrileNeutropenia: OralCase = {
     {
       id: "fn-m4",
       competency: "management",
+      criterion: "plan",
       text: "Knows the criteria for adding vancomycin and does not add it routinely.",
       points: 1,
       teaching: "Routine vancomycin does not improve outcome in stable patients. Add it for the specific indications.",

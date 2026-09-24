@@ -7,6 +7,13 @@ export const severeAlcoholWithdrawal: OralCase = {
   title: "Shaking and seeing bugs on the wall",
   blueprint: "psych",
   alsoCovers: ["tox", "neuro"],
+  priorityTopic: "delirium-agitation",
+  keyFeatures: [
+    { topic: "delirium-agitation", n: 2 },
+    { topic: "delirium-agitation", n: 5 },
+    { topic: "tox", n: 8 },
+    { topic: "loc", n: 2 },
+  ],
   summary: "A 54 year old man is brought in after a seizure at home and is now tremulous, sweaty and hallucinating.",
   durationMinutes: 14,
   stem:
@@ -367,6 +374,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats hypoglycemia immediately without waiting for thiamine.",
       points: 2,
       teaching: "Low glucose injures the brain now. Give thiamine as soon as possible but never delay glucose for it.",
@@ -375,6 +383,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives high dose IV thiamine, such as 500 mg, for suspected Wernicke encephalopathy.",
       points: 3,
       critical: true,
@@ -384,6 +393,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Uses CIWA-Ar to grade severity and recognizes it cannot be scored in a delirious patient.",
       points: 1,
       teaching: "CIWA-Ar needs a patient who can answer questions. In delirium use signs and sedation scales.",
@@ -392,6 +402,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-m2",
       competency: "management",
+      criterion: "plan",
       text: "Front loads diazepam 10 to 20 mg IV every 5 to 10 minutes to a calm but rousable endpoint.",
       points: 3,
       critical: true,
@@ -401,6 +412,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Looks for other causes and complications: head injury, infection, ketoacidosis, electrolyte losses and QT prolongation.",
       points: 2,
       teaching: "Withdrawal is common but not the only problem. Seizure with head injury needs CT. Fever needs a search for infection.",
@@ -409,6 +421,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-m3",
       competency: "management",
+      criterion: "plan",
       text: "Replaces magnesium, potassium and phosphate and gives dextrose containing fluid for alcoholic ketoacidosis.",
       points: 2,
       teaching: "Potassium will not correct until magnesium is replaced. Dextrose and fluid switch off ketogenesis.",
@@ -417,6 +430,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-m4",
       competency: "management",
+      criterion: "diagnosis",
       text: "Recognizes benzodiazepine resistant withdrawal and adds phenobarbital, with propofol and intubation if still refractory.",
       points: 3,
       critical: true,
@@ -426,6 +440,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls the ICU early when high benzodiazepine doses fail.",
       points: 1,
       teaching: "Delirium tremens can need airway support. Bring in help before the crisis.",
@@ -434,6 +449,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Assesses capacity when he tries to leave and keeps him under emergency treatment provisions with the least restrictive approach.",
       points: 2,
       teaching: "A delirious patient is usually incapable. Emergency treatment without consent is allowed when delay risks serious harm.",
@@ -442,6 +458,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits him to the ICU or step down unit.",
       points: 2,
       teaching: "Delirium tremens needing phenobarbital or large benzodiazepine doses is an ICU condition.",
@@ -450,6 +467,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Discusses alcohol use without judgment and supports his goal to stop.",
       points: 1,
       teaching: "A serious event is a window for change. Respectful conversation raises the chance he will engage.",
@@ -458,6 +476,7 @@ export const severeAlcoholWithdrawal: OralCase = {
     {
       id: "aw-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Offers naltrexone or acamprosate and referral to addiction medicine, and avoids a benzodiazepine prescription at discharge.",
       points: 2,
       teaching: "Naltrexone and acamprosate are first line for alcohol use disorder. Choose acamprosate when liver disease is a concern. Take home benzodiazepines add overdose risk with alcohol.",

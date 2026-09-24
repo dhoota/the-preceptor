@@ -1,5 +1,5 @@
 import { CASES } from "@/cases";
-import { BLUEPRINT, dueCards, questionRange } from "@/engine";
+import { BLUEPRINT, composeOralMock, dueCards, questionRange } from "@/engine";
 import { useState } from "react";
 import { freeCaseIds } from "@/lib/access";
 import type { Go } from "../routes";
@@ -20,6 +20,15 @@ export function Home({ go }: { go: Go }) {
   const scored = app.attempts.filter((a) => a.score);
   const avg = scored.length ? Math.round(scored.reduce((s, a) => s + a.score!.percent, 0) / scored.length) : null;
   const due = dueCards(app.deck, Date.now()).length;
+
+  async function startMockOral() {
+    if (!app.access.oral) return go({ name: "paywall", focus: "oral" });
+    const seen = new Set(app.attempts.filter((a) => a.score).map((a) => a.caseId));
+    const caseIds = composeOralMock(CASES, { seen });
+    const m = { id: `oral-${Date.now().toString(36)}`, caseIds, attemptIds: [], startedAt: Date.now(), finishedAt: null };
+    await app.saveMockOral(m);
+    go({ name: "mockOral", id: m.id });
+  }
   const [area, setArea] = useState<string>("all");
   const shown = area === "all" ? CASES : CASES.filter((c) => c.blueprint === area);
   const groups = BLUEPRINT.map((b) => ({ ...b, cases: shown.filter((c) => c.blueprint === b.id) })).filter((g) => g.cases.length);
@@ -31,11 +40,11 @@ export function Home({ go }: { go: Go }) {
   return (
     <>
       <div className="hero">
-        <div className="label">CCFP-EM style oral cases</div>
+        <div className="label">Structured oral</div>
         <h1>Run the case out loud.</h1>
         <p className="muted" style={{ marginTop: 8 }}>
-          The examiner reads the stem and asks timed questions. You answer as you would in the room. Then you mark yourself
-          against the rubric.
+          Four stations of 12 minutes on exam day, each with a different examiner and topic. Practise one case at a time, or
+          sit a full mock oral. Then mark yourself on the examiner criteria.
         </p>
       </div>
 
@@ -53,6 +62,17 @@ export function Home({ go }: { go: Go }) {
           <div className="num">{avg === null ? "None" : `${avg}%`}</div>
         </div>
       </div>
+
+      <button className="nextcase" style={{ marginTop: 16 }} onClick={startMockOral}>
+        <div className="label">Mock oral</div>
+        <div className="t">Four stations. Four topics. 12 minutes each.</div>
+        <div className="muted small">
+          {app.access.oral ? "Starts with a fresh set of cases on four different priority topics." : "Included with oral access."}
+        </div>
+      </button>
+      <button className="linkbtn small" style={{ marginTop: 10 }} onClick={() => go({ name: "resources" })}>
+        Official CFPC resources
+      </button>
 
       {due > 0 && (
         <div className="duebar">
@@ -104,7 +124,7 @@ export function Home({ go }: { go: Go }) {
                         <span className="meta">
                           <span className="tag">{c.durationMinutes} min</span>
                           <span className="tag">{q.min === q.max ? q.min : `${q.min} to ${q.max}`} questions</span>
-                          {free.has(c.id) && !app.unlocked && <span className="tag free">Free</span>}
+                          {free.has(c.id) && !app.access.oral && <span className="tag free">Free</span>}
                           {!c.reviewed && <span className="tag warn">Draft</span>}
                         </span>
                       </span>
@@ -116,9 +136,9 @@ export function Home({ go }: { go: Go }) {
             </ul>
           </div>
         ))}
-        {!app.unlocked && (
+        {!app.access.oral && (
           <p className="muted small" style={{ marginTop: 12 }}>
-            Two cases are free. Buy the full bank once. No subscription.
+            Two cases are free. Oral access is a one time purchase. No subscription.
           </p>
         )}
       </section>

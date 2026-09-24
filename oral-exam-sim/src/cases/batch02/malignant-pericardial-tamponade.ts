@@ -7,6 +7,12 @@ export const malignantPericardialTamponade: OralCase = {
   title: "Breathless woman on cancer treatment",
   blueprint: "cardio",
   alsoCovers: ["procedures", "ethics"],
+  priorityTopic: "shock",
+  keyFeatures: [
+    { topic: "shock", n: 5 },
+    { topic: "shock", n: 6 },
+    { topic: "sob", n: 2 },
+  ],
   summary: "A 58 year old woman with metastatic lung cancer arrives with worsening breathlessness and low blood pressure.",
   durationMinutes: 15,
   stem:
@@ -348,6 +354,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Diagnoses cardiac tamponade from hypotension, raised JVP, pulsus paradoxus and echo findings.",
       points: 3,
       critical: true,
@@ -357,6 +364,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Considers PE and pleural effusion but does not delay treatment for further imaging.",
       points: 1,
       teaching: "Cancer patients get PE too. But an echo showing tamponade physiology in a hypotensive patient should drive action.",
@@ -365,6 +373,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids diuretics, nitrates and positive pressure ventilation.",
       points: 2,
       teaching: "Tamponade is preload dependent. Anything that lowers venous return can cause arrest.",
@@ -373,6 +382,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses a modest fluid bolus of 250 to 500 mL and a vasopressor only as a bridge to drainage.",
       points: 1,
       teaching: "Small boluses can help a hypovolemic patient. Large volumes raise pericardial pressure. Only drainage fixes the problem.",
@@ -381,6 +391,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-m1",
       competency: "management",
+      criterion: "plan",
       text: "Holds dalteparin and recognizes that recent LMWH does not prevent emergency drainage.",
       points: 1,
       teaching: "Bleeding risk rises with anticoagulation, but a peri-arrest tamponade needs drainage now.",
@@ -389,6 +400,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Obtains consent and goals of care from the capable patient herself.",
       points: 3,
       critical: true,
@@ -398,6 +410,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Offers pericardiocentesis as a proportionate treatment and does not assume futility because of cancer.",
       points: 2,
       teaching: "Drainage relieves symptoms fast and can give weeks to months of good life. The choice belongs to the patient.",
@@ -406,6 +419,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-m2",
       competency: "management",
+      criterion: "plan",
       text: "Performs emergency pericardiocentesis without waiting when she is peri-arrest.",
       points: 3,
       critical: true,
@@ -415,6 +429,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-m3",
       competency: "management",
+      criterion: "plan",
       text: "Uses ultrasound guidance and selects the largest pocket closest to the skin with no structure in the path.",
       points: 2,
       teaching: "Echo guided drainage has a low complication rate. The best window varies. Subxiphoid is not always best.",
@@ -423,6 +438,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Confirms needle position with agitated saline before dilating and places a pigtail catheter.",
       points: 1,
       teaching: "Agitated saline in the pericardial space confirms position. Dilating into the ventricle is a catastrophe.",
@@ -431,6 +447,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Explains how to tell pericardial blood from ventricular blood and orders a post procedure chest X ray.",
       points: 1,
       teaching: "Defibrinated pericardial blood does not clot and has a lower hematocrit. Clinical improvement is the best sign.",
@@ -439,6 +456,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-m4",
       competency: "management",
+      criterion: "data",
       text: "Sends pericardial fluid for cell count, protein, LDH, glucose, culture and cytology.",
       points: 1,
       teaching: "Cytology confirms malignant effusion and guides oncology treatment. Infection is rare but important.",
@@ -447,6 +465,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU or CCU with extended drainage and involves oncology and palliative care.",
       points: 2,
       teaching: "Malignant effusions recur often. Extended catheter drainage and a plan for recurrence are standard.",
@@ -455,6 +474,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Hands over code status and the patient's goals clearly to the admitting team.",
       points: 1,
       teaching: "Goals discussed in the ED are lost if not documented and handed over.",
@@ -463,6 +483,7 @@ export const malignantPericardialTamponade: OralCase = {
     {
       id: "tam-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Answers the daughter honestly after confirming the patient's permission, without false reassurance.",
       points: 1,
       teaching: "Privacy first, then honesty. Leave precise prognosis to the oncologist but do not avoid the truth.",

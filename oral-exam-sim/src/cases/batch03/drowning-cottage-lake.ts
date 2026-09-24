@@ -7,6 +7,14 @@ export const drowningCottageLake: OralCase = {
   title: "Two friends from the dock",
   blueprint: "enviro",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "airway",
+  keyFeatures: [
+    { topic: "airway", n: 2 },
+    { topic: "airway", n: 4 },
+    { topic: "sob", n: 3 },
+    { topic: "multiple-patients", n: 1 },
+    { topic: "multiple-patients", n: 2 },
+  ],
   summary: "Two 19 year olds arrive together from a cottage lake, one unresponsive and one coughing.",
   durationMinutes: 15,
   stem:
@@ -350,6 +358,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates promptly for GCS 6 and hypoxemia with suction ready and places an orogastric tube.",
       points: 3,
       critical: true,
@@ -359,6 +368,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes hypoxemia as the core problem in drowning and avoids manoeuvres to drain water from the lungs.",
       points: 2,
       teaching: "Abdominal thrusts and head down positioning do not remove aspirated water. They cause vomiting and delay ventilation.",
@@ -367,6 +377,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Decides on spinal motion restriction based on mechanism rather than using it routinely.",
       points: 1,
       teaching: "Cervical spine injury in drowning is uncommon without diving, a fall or obvious trauma. Routine immobilization can delay airway care.",
@@ -375,6 +386,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-m1",
       competency: "management",
+      criterion: "plan",
       text: "Sets lung protective ventilation at 6 mL/kg predicted body weight with PEEP and plateau under 30 cmH2O.",
       points: 2,
       teaching: "Drowning lungs behave like ARDS. Low tidal volumes protect them. PEEP recruits alveoli.",
@@ -383,6 +395,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Responds to worsening hypoxemia with a DOPES check, higher PEEP, paralysis and vasopressor support instead of diuretics or large tidal volumes.",
       points: 3,
       critical: true,
@@ -392,6 +405,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Contacts CritiCall early for ICU transfer and discussion of proning and ECMO.",
       points: 2,
       teaching: "ECMO centres need time to plan. Call when oxygenation is failing, not after arrest.",
@@ -400,6 +414,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-m2",
       competency: "management",
+      criterion: "plan",
       text: "Avoids routine antibiotics and steroids after drowning.",
       points: 1,
       teaching: "Neither improves outcomes. Give antibiotics only for signs of infection or grossly contaminated water.",
@@ -408,6 +423,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-m3",
       competency: "management",
+      criterion: "plan",
       text: "Applies post arrest care including fever prevention and glucose and electrolyte checks.",
       points: 1,
       teaching: "After ROSC, avoid fever and do not rush to rewarm a mildly cold patient. Check glucose and look for intoxicants.",
@@ -416,6 +432,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Observes the asymptomatic rescuer for 4 to 6 hours before discharge with clear return advice.",
       points: 2,
       critical: true,
@@ -425,6 +442,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Acknowledges the rescuer's experience and offers support.",
       points: 1,
       teaching: "Rescuers are often traumatized. A brief word of support and a follow up resource matter.",
@@ -433,6 +451,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Gives his parents an honest plain language update that includes prognostic uncertainty.",
       points: 1,
       teaching: "Submersion time and time to effective CPR are the main predictors. It is too early to say more in the ED.",
@@ -441,6 +460,7 @@ export const drowningCottageLake: OralCase = {
     {
       id: "dr-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Gives a structured handover to the transport team including submersion time, CPR duration and ventilator settings.",
       points: 1,
       teaching: "The receiving ICU needs the timeline to judge prognosis. Include drugs, gas results and temperature.",

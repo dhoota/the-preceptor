@@ -7,6 +7,13 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
   title: "Pushing in the ambulance bay",
   blueprint: "obgyn",
   alsoCovers: ["peds", "resus"],
+  priorityTopic: "airway",
+  keyFeatures: [
+    { topic: "airway", n: 1 },
+    { topic: "airway", n: 4 },
+    { topic: "multiple-patients", n: 2 },
+    { topic: "multiple-patients", n: 3 },
+  ],
   summary: "A woman in active labour arrives at a small rural emergency department with no obstetric service.",
   durationMinutes: 15,
   stem:
@@ -448,6 +455,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies risk factors for shoulder dystocia before delivery: macrosomia, gestational diabetes and a previous difficult shoulder.",
       points: 1,
       teaching: "Most dystocias are not predictable, but known risk factors let you brief the team and position the mother in advance.",
@@ -456,6 +464,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes shoulder dystocia from the turtle sign and failed delivery with routine traction, and notes the time.",
       points: 2,
       teaching: "Head retraction against the perineum is the turtle sign. The head to body interval guides urgency and documentation.",
@@ -464,6 +473,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes neonatal encephalopathy and hypoglycemia after resuscitation.",
       points: 2,
       teaching: "Lethargy, low tone and a weak suck after a hypoxic birth suggest moderate encephalopathy. Check glucose early in infants of diabetic mothers.",
@@ -472,6 +482,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Performs initial steps: warm, dry, stimulate, position the airway and suction only if needed.",
       points: 1,
       teaching: "Initial steps take about 30 seconds. Deep or routine suctioning can cause bradycardia.",
@@ -480,6 +491,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts positive pressure ventilation in 21 percent oxygen within 60 seconds for apnea or heart rate under 100.",
       points: 3,
       critical: true,
@@ -489,6 +501,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses the MR SOPA corrective steps and an alternative airway to achieve chest movement before starting compressions.",
       points: 3,
       critical: true,
@@ -498,6 +511,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives compressions at 3 to 1 with 100 percent oxygen for heart rate under 60 after effective ventilation.",
       points: 2,
       teaching: "Use the two thumb technique on the lower third of the sternum. 90 compressions and 30 breaths make 120 events per minute.",
@@ -506,6 +520,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m1",
       competency: "management",
+      criterion: "plan",
       text: "Performs McRoberts and suprapubic pressure as first manoeuvres.",
       points: 2,
       teaching: "McRoberts straightens the sacrum and rotates the pubis. Suprapubic pressure from the fetal back side moves the anterior shoulder.",
@@ -514,6 +529,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m2",
       competency: "management",
+      criterion: "plan",
       text: "Avoids fundal pressure and strong or downward traction.",
       points: 3,
       critical: true,
@@ -523,6 +539,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m3",
       competency: "management",
+      criterion: "plan",
       text: "Moves on to internal manoeuvres such as posterior arm delivery or internal rotation, then the all fours position.",
       points: 2,
       teaching: "If first manoeuvres fail within about 30 seconds, go inside. Posterior arm delivery reduces the shoulder diameter.",
@@ -531,6 +548,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m4",
       competency: "management",
+      criterion: "plan",
       text: "States correct neonatal epinephrine doses: 0.02 mg/kg IV of 0.1 mg/mL, or 0.1 mg/kg endotracheal, and volume 10 mL/kg.",
       points: 2,
       teaching: "IV or IO is the preferred route. For a 4.3 kg baby the IV dose is about 0.09 mg, which is 0.9 mL of 0.1 mg/mL.",
@@ -539,6 +557,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m5",
       competency: "management",
+      criterion: "plan",
       text: "Treats neonatal hypoglycemia with D10W 2 mL/kg IV followed by a glucose infusion.",
       points: 1,
       teaching: "Hypoglycemia adds to hypoxic brain injury. Infants of diabetic mothers are at high risk in the first hours.",
@@ -547,6 +566,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-m6",
       competency: "management",
+      criterion: "plan",
       text: "Gives oxytocin 10 IU IM for the third stage and anticipates postpartum hemorrhage and perineal injury.",
       points: 1,
       teaching: "Macrosomia and dystocia raise the risk of atony and severe tears. Examine the perineum and watch blood loss.",
@@ -555,6 +575,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Documents head delivery time, body delivery time, anterior shoulder, manoeuvres in order and cord gases.",
       points: 2,
       teaching: "Complete documentation supports the family, the receiving team and any later review.",
@@ -563,6 +584,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains events and the baby's condition honestly to the parents, including possible arm weakness.",
       points: 1,
       teaching: "Parents need to hear what happened in plain words. Many brachial plexus injuries recover, but follow up is essential.",
@@ -571,6 +593,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls for help early and assigns separate clinicians to the mother and the newborn.",
       points: 2,
       teaching: "Two patients need two teams. Mobilize the backup physician and transport before delivery.",
@@ -579,6 +602,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Leads a team debrief after a stressful resuscitation.",
       points: 1,
       teaching: "Debriefs improve future performance and support staff after a traumatic delivery.",
@@ -587,6 +611,7 @@ export const shoulderDystociaNeonatalResuscitation: OralCase = {
     {
       id: "sd-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Calls neonatal transport early for possible therapeutic hypothermia and avoids hyperthermia.",
       points: 3,
       critical: true,

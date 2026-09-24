@@ -7,6 +7,13 @@ export const acuteIschemicStrokeEvt: OralCase = {
   title: "Found at the kitchen table unable to speak",
   blueprint: "neuro",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "cva",
+  keyFeatures: [
+    { topic: "cva", n: 1 },
+    { topic: "cva", n: 3 },
+    { topic: "airway", n: 2 },
+    { topic: "ems", n: 3 },
+  ],
   summary: "A 71 year old woman with sudden speech and arm problems arrives at a hospital without endovascular capability.",
   durationMinutes: 15,
   stem:
@@ -422,6 +429,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Establishes last known well as 07:40 from the husband rather than the time she was found.",
       points: 2,
       teaching: "Treatment windows start at last known well. The time a patient is found is often later and can wrongly exclude them.",
@@ -430,6 +438,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Confirms capillary glucose before imaging and thrombolysis.",
       points: 1,
       teaching: "Hypoglycemia is the classic stroke mimic. Glucose is the only lab required before thrombolysis in most patients.",
@@ -438,6 +447,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes cortical signs such as aphasia, gaze deviation and hemianopia as markers of a likely large vessel occlusion.",
       points: 1,
       teaching: "Gaze deviation plus aphasia or neglect with a high NIHSS predicts a large vessel occlusion. It should trigger CT angiography with the first scan.",
@@ -446,6 +456,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a4",
       competency: "assessment",
+      criterion: "data",
       text: "Interprets the CT as no hemorrhage with ASPECTS 9 and the CTA as a proximal M1 occlusion eligible for both thrombolysis and EVT.",
       points: 2,
       teaching: "ASPECTS 6 or more with a proximal anterior occlusion was the population in the original EVT trials such as ESCAPE. Trials since 2023 show benefit with larger cores, often ASPECTS 3 to 5, in selected patients, and the 2025 Canadian EVT update addresses them.",
@@ -454,6 +465,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-a5",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies untreated atrial fibrillation as the likely cardioembolic source.",
       points: 1,
       teaching: "Atrial fibrillation is a leading cause of large vessel stroke. Anticoagulation timing after stroke is decided by the stroke team based on infarct size.",
@@ -462,6 +474,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Assesses airway and breathing and gives oxygen only if SpO2 is below 92 percent.",
       points: 1,
       teaching: "Routine oxygen does not help non hypoxic stroke patients. Check the airway because aphasia and gaze deviation can hide a falling level of consciousness.",
@@ -470,6 +483,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Examines the airway for progression of angioedema and prepares for an awake difficult airway with surgical backup.",
       points: 2,
       teaching: "Post thrombolysis angioedema is usually mild but can progress. Awake fibreoptic intubation is safer than rapid sequence induction in a swollen airway.",
@@ -478,6 +492,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m1",
       competency: "management",
+      criterion: "plan",
       text: "Takes the patient directly to non contrast CT and CT angiogram without waiting for bloods, targeting door to needle of 30 minutes or less.",
       points: 2,
       teaching: "Canadian recommendations set a median door to needle target of 30 minutes. CTA with the first scan identifies EVT candidates without extra delay.",
@@ -486,6 +501,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m2",
       competency: "management",
+      criterion: "plan",
       text: "Lowers blood pressure below 185/110 before thrombolysis with labetalol 10 to 20 mg IV, without overshooting.",
       points: 2,
       critical: true,
@@ -495,6 +511,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives tenecteplase 0.25 mg/kg IV bolus to a maximum of 25 mg, or alteplase 0.9 mg/kg to a maximum of 90 mg, within 4.5 hours of last known well.",
       points: 3,
       critical: true,
@@ -504,6 +521,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m4",
       competency: "management",
+      criterion: "plan",
       text: "Does not withhold thrombolysis from an eligible patient because EVT is planned.",
       points: 1,
       teaching: "For patients who must be transferred for EVT, thrombolysis is recommended in Canada. It can reperfuse before the angio suite and does not delay the procedure.",
@@ -512,6 +530,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-m5",
       competency: "management",
+      criterion: "plan",
       text: "Treats orolingual angioedema with methylprednisolone 125 mg IV, diphenhydramine 50 mg IV and famotidine 20 mg IV, holds the ACE inhibitor, and escalates to epinephrine if it progresses.",
       points: 2,
       teaching: "Angioedema occurs in up to 5 percent of patients after thrombolysis, more often with ACE inhibitors. Icatibant or C1 esterase inhibitor can be considered if refractory.",
@@ -520,6 +539,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges emergent transfer to the comprehensive stroke centre for EVT as soon as the CTA shows the occlusion, without waiting to see if thrombolysis works.",
       points: 3,
       critical: true,
@@ -529,6 +549,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Writes post thrombolysis orders: neuro vitals every 15 minutes, pressure below 180/105, nothing by mouth until swallow screen, no antithrombotics for 24 hours.",
       points: 1,
       teaching: "Any new headache, vomiting or neuro decline after thrombolysis needs an urgent CT to look for hemorrhage.",
@@ -537,6 +558,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Recognizes the patient cannot consent because of aphasia, seeks rapid consent from her husband as substitute decision maker, and uses the emergency provision only if seeking consent would cause harmful delay.",
       points: 1,
       teaching: "In Ontario the substitute decision maker gives consent when one is available. If obtaining consent would delay treatment and risk serious harm, the Health Care Consent Act allows emergency treatment. Document the reason.",
@@ -545,6 +567,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the diagnosis and plan to the husband in plain words and reassures him without blame about the declined anticoagulant.",
       points: 1,
       teaching: "Families often feel guilt after a preventable stroke. A calm, honest and blame free explanation supports them through a frightening event.",
@@ -553,6 +576,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover including last known well, NIHSS, imaging, lytic dose and time, pressure targets and the angioedema.",
       points: 1,
       teaching: "A clear handover with exact times lets the receiving team decide quickly and avoid repeating imaging.",
@@ -561,6 +585,7 @@ export const acuteIschemicStrokeEvt: OralCase = {
     {
       id: "st-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Runs parallel processes by assigning roles for IV access, bloods, weight, lytic preparation and imaging.",
       points: 1,
       teaching: "Door to needle times fall when tasks happen at the same time. The team leader should state the plan and assign each role out loud.",

@@ -7,6 +7,14 @@ export const bacterialMeningitisAdult: OralCase = {
   title: "Fever and confusion after an earache",
   blueprint: "neuro",
   alsoCovers: ["id", "resus"],
+  priorityTopic: "infectious-diseases",
+  keyFeatures: [
+    { topic: "infectious-diseases", n: 1 },
+    { topic: "infectious-diseases", n: 2 },
+    { topic: "infectious-diseases", n: 8 },
+    { topic: "headache", n: 6 },
+    { topic: "loc", n: 1 },
+  ],
   summary: "A 57 year old man with several days of ear pain is now febrile and confused.",
   durationMinutes: 15,
   stem:
@@ -342,6 +350,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Identifies altered consciousness as an indication for CT before LP.",
       points: 1,
       teaching: "IDSA indications include immunocompromise, known CNS disease, new seizure, papilledema, altered consciousness and focal deficits. ESCMID uses a GCS under 10 rather than any confusion. Neither rule should delay antibiotics.",
@@ -350,6 +359,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Interprets the CSF as bacterial meningitis and the Gram stain as pneumococcus, with otomastoiditis as the source.",
       points: 2,
       teaching: "A CSF to serum glucose ratio under 0.4 with neutrophils in the thousands is bacterial until proven otherwise. Otitis and sinusitis are classic pneumococcal sources.",
@@ -358,6 +368,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Recognizes sepsis and begins fluid resuscitation with droplet precautions.",
       points: 1,
       teaching: "Hypotension and lactate over 2 mmol/L mean sepsis with hypoperfusion. Droplet precautions protect staff until meningococcus is excluded.",
@@ -366,6 +377,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts norepinephrine early to a MAP of 65 or more rather than giving large fluid volumes alone.",
       points: 2,
       teaching: "Norepinephrine is first line in septic shock. Starting it early avoids fluid overload, which can worsen cerebral edema.",
@@ -374,6 +386,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Loads a second line antiseizure drug and intubates for GCS 8 with a hemodynamically stable approach.",
       points: 2,
       teaching: "Seizures occur in about 1 in 5 adults with bacterial meningitis. Induction in shock needs pressure support first and a reduced dose agent.",
@@ -382,6 +395,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives antibiotics and dexamethasone without waiting for CT or LP.",
       points: 3,
       critical: true,
@@ -391,6 +405,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives dexamethasone 10 mg IV every 6 hours for 4 days, first dose before or with the first antibiotic dose.",
       points: 3,
       critical: true,
@@ -400,6 +415,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives ceftriaxone 2 g IV every 12 hours, a vancomycin loading dose of about 20 to 35 mg/kg IV and ampicillin 2 g IV every 4 hours.",
       points: 3,
       critical: true,
@@ -409,6 +425,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-m4",
       competency: "management",
+      criterion: "plan",
       text: "Arranges ENT for source control of otomastoiditis.",
       points: 1,
       teaching: "A persistent parameningeal focus can seed ongoing infection. Surgical drainage may be needed.",
@@ -417,6 +434,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains that pneumococcal contacts do not need prophylaxis and why.",
       points: 1,
       teaching: "Chemoprophylaxis is for close contacts of meningococcal and Hib disease only.",
@@ -425,6 +443,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives the wife an honest update on severity, uncertainty and next steps.",
       points: 1,
       teaching: "Pneumococcal meningitis carries significant mortality and risk of hearing loss and cognitive deficits. Families need honest expectations.",
@@ -433,6 +452,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Reports invasive pneumococcal disease to public health.",
       points: 1,
       teaching: "Reporting is a legal duty for notifiable diseases. Public health tracks serotypes and vaccine failures.",
@@ -441,6 +461,7 @@ export const bacterialMeningitisAdult: OralCase = {
     {
       id: "men-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU with infectious diseases, ENT and a plan to narrow therapy and assess hearing.",
       points: 1,
       teaching: "Sensorineural hearing loss is common after pneumococcal meningitis. Early audiology allows cochlear implant referral before ossification.",

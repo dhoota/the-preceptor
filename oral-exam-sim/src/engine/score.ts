@@ -1,4 +1,4 @@
-import { COMPETENCIES, type Attempt, type Band, type OralCase, type Score, type SelfMark } from "./types";
+import { COMPETENCIES, ORAL_CRITERIA, type Attempt, type Band, type OralCase, type Score, type SelfMark } from "./types";
 
 /**
  * Fixed standard, the same for every case:
@@ -26,6 +26,7 @@ export const BAND_LABEL: Record<Band, string> = {
 /** Unmarked items count as "no" so skipping the checklist never inflates a score. */
 export function scoreMarks(c: OralCase, marks: Record<string, SelfMark>): Score {
   const byId = new Map(COMPETENCIES.map((d) => [d.id, { id: d.id, name: d.label, awarded: 0, max: 0 }]));
+  const byCriterion = new Map(ORAL_CRITERIA.map((d) => [d.id, { id: d.id, name: d.label, awarded: 0, max: 0 }]));
   const criticalMisses: string[] = [];
   const missed: string[] = [];
 
@@ -35,6 +36,11 @@ export function scoreMarks(c: OralCase, marks: Record<string, SelfMark>): Score 
     if (d) {
       d.awarded += item.points * VALUE[mark];
       d.max += item.points;
+    }
+    const k = byCriterion.get(item.criterion);
+    if (k) {
+      k.awarded += item.points * VALUE[mark];
+      k.max += item.points;
     }
     if (mark !== "yes") {
       missed.push(item.id);
@@ -53,6 +59,7 @@ export function scoreMarks(c: OralCase, marks: Record<string, SelfMark>): Score 
     band: bandFor(ratio, criticalMisses.length),
     criticalMisses,
     competencies,
+    criteria: [...byCriterion.values()].filter((d) => d.max > 0),
     missed,
   };
 }

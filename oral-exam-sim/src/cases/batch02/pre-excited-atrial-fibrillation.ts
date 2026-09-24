@@ -7,6 +7,15 @@ export const preExcitedAtrialFibrillation: OralCase = {
   title: "Racing heart after a pickup game",
   blueprint: "cardio",
   alsoCovers: ["resus"],
+  priorityTopic: "arrhythmia",
+  keyFeatures: [
+    { topic: "arrhythmia", n: 2 },
+    { topic: "arrhythmia", n: 3 },
+    { topic: "arrhythmia", n: 4 },
+    { topic: "arrhythmia", n: 6 },
+    { topic: "analgesia-sedation", n: 5 },
+    { topic: "cqi", n: 1 },
+  ],
   summary: "A 24 year old man with sudden palpitations during basketball and a very fast, irregular rhythm.",
   durationMinutes: 14,
   stem:
@@ -375,6 +384,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies pre-excited AF from an irregular rhythm with varying QRS width and rates over 250.",
       points: 3,
       teaching: "AF with a bundle branch block has a fixed QRS shape. Beat to beat change in width at very fast rates means conduction down an accessory pathway.",
@@ -383,6 +393,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids all AV nodal blocking drugs including diltiazem, beta blockers, adenosine, digoxin and IV amiodarone.",
       points: 3,
       critical: true,
@@ -392,6 +403,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Places defibrillation pads early in a stable patient with pre-excited AF.",
       points: 1,
       teaching: "Pre-excited AF can decompensate without warning. Pads on early makes the next step immediate.",
@@ -400,6 +412,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-m1",
       competency: "management",
+      criterion: "plan",
       text: "Chooses rhythm control with procainamide or electrical cardioversion rather than rate control.",
       points: 2,
       teaching: "The goal is to stop the AF. Rate control is dangerous when a pathway is conducting.",
@@ -408,6 +421,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-m2",
       competency: "management",
+      criterion: "plan",
       text: "Doses procainamide 15 mg/kg IV over 60 minutes, maximum 1500 mg, with stop criteria for hypotension or QRS widening.",
       points: 2,
       teaching: "Procainamide slows pathway conduction. CAEP advises avoiding it if systolic is under 100 or QTc is over 500 ms, and stopping if pressure drops or the QRS widens visibly, such as by more than 30 percent.",
@@ -416,6 +430,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-m3",
       competency: "management",
+      criterion: "plan",
       text: "Recognizes onset under 12 hours with CHADS-65 negative means no anticoagulation is needed before or after cardioversion.",
       points: 1,
       teaching: "Canadian guidance supports cardioversion without anticoagulation in low risk patients with clear onset under 12 hours.",
@@ -424,6 +439,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Performs immediate synchronized cardioversion at 200 J biphasic when he becomes unstable.",
       points: 3,
       critical: true,
@@ -433,6 +449,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses hemodynamically neutral sedation such as ketamine 0.5 to 1 mg/kg or etomidate 0.1 to 0.15 mg/kg.",
       points: 1,
       teaching: "Full dose propofol can deepen hypotension. Lower doses or neutral agents keep the pressure up.",
@@ -441,6 +458,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Interprets the post conversion ECG as WPW pattern and explains the high risk features.",
       points: 2,
       teaching: "A shortest pre-excited RR of 250 ms or less predicts a pathway capable of conducting VF.",
@@ -449,6 +467,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges urgent electrophysiology review for catheter ablation rather than routine follow up.",
       points: 3,
       critical: true,
@@ -458,6 +477,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Documents clearly that AV nodal blocking drugs must be avoided.",
       points: 1,
       teaching: "The next clinician may see 'AF' and reach for a rate control drug. A clear warning in the chart prevents harm.",
@@ -466,6 +486,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-m4",
       competency: "management",
+      criterion: "plan",
       text: "Advises no competitive sport until cleared by electrophysiology.",
       points: 1,
       teaching: "Exertion drove this episode. Sport clearance should come from the EP team after ablation.",
@@ -474,6 +495,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the diagnosis, sport and driving advice in plain language and checks understanding.",
       points: 1,
       teaching: "Young patients may downplay risk once they feel well. Be clear about why restrictions matter.",
@@ -482,6 +504,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Teaches the nurse the mechanism without blame.",
       points: 1,
       teaching: "The nurse offered a common answer to a common problem. Teaching in the moment builds a safer team.",
@@ -490,6 +513,7 @@ export const preExcitedAtrialFibrillation: OralCase = {
     {
       id: "wpw-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Proposes a system fix such as an ECG warning on the AF order set or a team huddle.",
       points: 1,
       teaching: "Near misses are the cheapest lessons. Build the check into the system, not into memory.",

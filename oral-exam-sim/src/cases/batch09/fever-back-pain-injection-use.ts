@@ -7,6 +7,8 @@ export const feverBackPainInjectionUse: OralCase = {
   title: "Fever and back pain in a man who injects drugs",
   blueprint: "id",
   alsoCovers: ["resus", "tox", "ethics"],
+  priorityTopic: "infectious-diseases",
+  keyFeatures: [{ topic: "infectious-diseases", n: 2 }, { topic: "infectious-diseases", n: 3 }, { topic: "infectious-diseases", n: 8 }, { topic: "tox", n: 8 }],
   summary: "A 36 year old man who injects fentanyl arrives febrile and hypotensive with low back pain and wants to leave.",
   durationMinutes: 15,
   stem:
@@ -464,6 +466,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Draws two to three sets of blood cultures from separate venipunctures and gives antibiotics within one hour.",
       points: 3,
       critical: true,
@@ -474,6 +477,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives balanced crystalloid in boluses with reassessment and starts norepinephrine for MAP under 65.",
       points: 2,
       teaching: "Reassess after each bolus. Tricuspid regurgitation and septic emboli make fluid overload more likely.",
@@ -482,6 +486,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Examines for a murmur, peripheral stigmata and septic pulmonary emboli and identifies right sided involvement.",
       points: 2,
       teaching: "A murmur louder with inspiration, v waves and cavitating peripheral nodules point to tricuspid endocarditis.",
@@ -490,6 +495,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives a vancomycin loading dose of 25 to 30 mg/kg IV based on actual body weight.",
       points: 2,
       teaching: "A weight based load reaches target levels faster. A flat 1 g dose underdoses most adults in septic shock.",
@@ -498,6 +504,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m2",
       competency: "management",
+      criterion: "plan",
       text: "Adds a beta lactam such as ceftriaxone 2 g IV every 12 hours, or cefepime if Pseudomonas is a concern, and narrows to cefazolin or cloxacillin if MSSA grows.",
       points: 1,
       teaching: "Anti staphylococcal beta lactams kill MSSA faster than vancomycin. Ceftriaxone adds gram negative and CNS cover while a spinal source is possible.",
@@ -506,6 +513,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Documents a full neurological exam including perianal sensation, rectal tone and post void residual.",
       points: 2,
       teaching: "The baseline exam is how the team detects early progression. Retention may be the first sign of cauda equina compression.",
@@ -514,6 +522,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Orders urgent MRI of the whole spine with gadolinium for fever, injection drug use and spinal tenderness.",
       points: 3,
       critical: true,
@@ -523,6 +532,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m3",
       competency: "management",
+      criterion: "plan",
       text: "Treats withdrawal and pain and offers buprenorphine naloxone once in objective withdrawal.",
       points: 2,
       teaching: "Buprenorphine and methadone are both first line for opioid use disorder in the 2024 Canadian update. Starting buprenorphine in the ED improves retention and lowers overdose risk.",
@@ -531,6 +541,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Uses non judgmental language and addresses the reasons he wants to leave.",
       points: 1,
       teaching: "Stigma and untreated withdrawal drive patient directed discharges. Naming and treating both keeps patients in care.",
@@ -539,6 +550,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Assesses capacity if he still wishes to leave and offers the best alternative plan rather than an empty discharge.",
       points: 1,
       teaching: "A capable patient may leave. Document the capacity assessment and still offer naloxone, a follow up path and an open door.",
@@ -547,6 +559,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges emergent neurosurgical decompression through CritiCall when a new deficit appears.",
       points: 3,
       critical: true,
@@ -556,6 +569,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m4",
       competency: "management",
+      criterion: "plan",
       text: "Places a urinary catheter, continues antibiotics and avoids routine steroids.",
       points: 1,
       teaching: "Retention needs drainage. Steroids have no routine role in epidural abscess.",
@@ -564,6 +578,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-a4",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Applies the modified Duke criteria with S. aureus in two sets and a tricuspid vegetation as major criteria.",
       points: 2,
       teaching: "Two major criteria make definite endocarditis. Injection drug use, fever and septic emboli are minor criteria.",
@@ -572,6 +587,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-m5",
       competency: "management",
+      criterion: "plan",
       text: "Arranges formal echo and names surgical indications for right sided endocarditis.",
       points: 1,
       teaching: "Right sided surgery is considered for vegetations over 20 mm with recurrent septic emboli, refractory right heart failure or persistent bacteremia.",
@@ -580,6 +596,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the diagnosis and urgent surgery to him in plain language.",
       points: 1,
       teaching: "Plain words build trust. He needs to understand why he must go tonight.",
@@ -588,6 +605,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover including times, doses, culture results and the change in neuro exam.",
       points: 1,
       teaching: "The time of deficit onset matters to the surgeon. So does the buprenorphine dose for perioperative pain planning.",
@@ -596,6 +614,7 @@ export const feverBackPainInjectionUse: OralCase = {
     {
       id: "pw-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Sends HIV, hepatitis B and hepatitis C testing and plans naloxone and harm reduction supplies.",
       points: 1,
       teaching: "Each admission is a chance to test and link to care. A naloxone kit should go with every person who uses opioids.",

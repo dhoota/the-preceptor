@@ -6,6 +6,14 @@ export const toddlerAirwayForeignBody: OralCase = {
   id: "toddler-airway-foreign-body",
   title: "Trouble breathing at a birthday party",
   blueprint: "peds",
+  priorityTopic: "airway",
+  keyFeatures: [
+    { topic: "airway", n: 1 },
+    { topic: "airway", n: 3 },
+    { topic: "airway", n: 4 },
+    { topic: "sob", n: 1 },
+    { topic: "asthma-copd", n: 1 },
+  ],
   summary: "A 22 month old is carried in by her mother after a sudden coughing fit at a family party.",
   durationMinutes: 13,
   stem:
@@ -347,6 +355,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Recognizes partial upper airway obstruction with an effective cough.",
       points: 2,
       teaching: "A child who can cough, cry or speak is moving air. The cough is the best tool for clearing the object.",
@@ -355,6 +364,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Keeps the child upright with the parent and avoids thrusts, finger sweeps and tongue depressors while the cough is effective.",
       points: 3,
       critical: true,
@@ -364,6 +374,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls anesthesia and ENT early and prepares laryngoscope, Magill forceps, suction, small tubes and a needle cricothyroidotomy kit.",
       points: 2,
       teaching: "Partial obstruction can become complete at any moment. Have the rescue equipment in the room before it is needed.",
@@ -372,6 +383,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives back blows and abdominal thrusts for a conscious child over 1 year with an ineffective cough.",
       points: 2,
       teaching: "An ineffective cough, silence or cyanosis means severe obstruction. Alternate 5 back blows with 5 abdominal thrusts. Infants under 1 year get chest thrusts instead of abdominal thrusts.",
@@ -380,6 +392,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts CPR when the child becomes unresponsive and performs immediate laryngoscopy with Magill forceps removal.",
       points: 3,
       critical: true,
@@ -389,6 +402,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "States the backup plans: push a subglottic object into the right mainstem, and use needle rather than scalpel cricothyroidotomy in a young child.",
       points: 2,
       teaching: "Pushing the object into one bronchus lets you ventilate the other lung. The cricothyroid membrane is too small for a scalpel technique in toddlers, and needle oxygenation with a blocked upper airway risks barotrauma.",
@@ -397,6 +411,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Reassesses after removal and looks for residual objects, air trapping, aspiration and negative pressure pulmonary edema.",
       points: 2,
       teaching: "Children often aspirate more than one piece. A careful chest exam and imaging after removal can find a second object.",
@@ -405,6 +420,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits the child for monitoring after an obstruction that caused an arrest.",
       points: 1,
       teaching: "A brief hypoxic arrest needs observation for neurological, respiratory and cardiac complications.",
@@ -413,6 +429,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Suspects a bronchial foreign body from unilateral wheeze, reduced air entry and air trapping despite a nearly normal inspiratory film.",
       points: 3,
       critical: true,
@@ -422,6 +439,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges rigid bronchoscopy under general anesthesia, transferring through CritiCall if pediatric ENT is not available.",
       points: 2,
       teaching: "Rigid bronchoscopy is diagnostic and therapeutic. Organic material like peanuts swells and inflames the airway over hours.",
@@ -430,6 +448,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Supports the parent without blame and acknowledges her quick action.",
       points: 1,
       teaching: "Parents often feel guilt after a choking event. Recognizing what they did well helps them absorb safety advice.",
@@ -438,6 +457,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives specific prevention advice: quarter grapes lengthwise, no whole nuts, popcorn or hard candy under 4 years, and supervised seated eating.",
       points: 2,
       teaching: "Round, firm foods are the most common fatal choking hazards in young children. Specific advice is more useful than general warnings.",
@@ -446,6 +466,7 @@ export const toddlerAirwayForeignBody: OralCase = {
     {
       id: "fb-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Leads a brief team debrief and checks on staff wellbeing after a pediatric arrest.",
       points: 1,
       teaching: "Pediatric arrests are distressing for staff. A short debrief supports the team and captures system lessons.",

@@ -7,6 +7,14 @@ export const chronicDigoxinToxicity: OralCase = {
   title: "Nausea and a slow pulse in an older man",
   blueprint: "tox",
   alsoCovers: ["cardio", "geri"],
+  priorityTopic: "tox",
+  keyFeatures: [
+    { topic: "tox", n: 1 },
+    { topic: "tox", n: 2 },
+    { topic: "tox", n: 5 },
+    { topic: "tox", n: 7 },
+    { topic: "arrhythmia", n: 6 },
+  ],
   summary: "An 82 year old man with atrial fibrillation has several days of nausea, poor intake and confusion.",
   durationMinutes: 14,
   stem:
@@ -393,6 +401,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Places pacing pads, monitor and IV access before further workup.",
       points: 1,
       teaching: "Complete heart block with hypotension can deteriorate fast. Pads on early allow rescue if he arrests.",
@@ -401,6 +410,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes chronic digoxin toxicity from regularized slow AF, visual halos, GI symptoms and confusion.",
       points: 3,
       critical: true,
@@ -410,6 +420,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies clarithromycin and acute kidney injury as precipitants.",
       points: 2,
       teaching: "Macrolides, amiodarone, verapamil and other P glycoprotein inhibitors raise digoxin levels. Kidney injury cuts clearance.",
@@ -418,6 +429,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a3",
       competency: "assessment",
+      criterion: "data",
       text: "States indications for fab: dangerous dysrhythmia, instability, altered mental status, potassium over 5.0 mmol/L, end organ injury.",
       points: 2,
       teaching: "Treat the patient, not just the level. Chronic toxicity can be severe with levels only mildly raised.",
@@ -426,6 +438,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a4",
       competency: "assessment",
+      criterion: "data",
       text: "Recognizes bidirectional ventricular tachycardia as a sign of digoxin toxicity.",
       points: 1,
       teaching: "Bidirectional VT has few causes. Digoxin toxicity is the classic one.",
@@ -434,6 +447,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-a5",
       competency: "assessment",
+      criterion: "data",
       text: "Knows total digoxin levels are not interpretable after fab and follows the patient clinically.",
       points: 1,
       teaching: "The assay measures fab bound digoxin. The total level rises after treatment even as toxicity resolves.",
@@ -442,6 +456,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives digoxin immune fab promptly for life threatening chronic toxicity.",
       points: 3,
       critical: true,
@@ -451,6 +466,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-m2",
       competency: "management",
+      criterion: "plan",
       text: "Calculates the chronic dose correctly: level in ng/mL times weight in kg divided by 100, about 3 vials, or gives 1 to 2 vials and repeats.",
       points: 2,
       teaching: "Convert nmol/L to ng/mL by dividing by 1.28. Titrated small doses work well in chronic toxicity and conserve stock.",
@@ -459,6 +475,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-m3",
       competency: "management",
+      criterion: "plan",
       text: "Treats bidirectional VT with more fab, magnesium 2 g IV and lidocaine 1 to 1.5 mg/kg, and avoids amiodarone.",
       points: 2,
       critical: true,
@@ -468,6 +485,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-m4",
       competency: "management",
+      criterion: "plan",
       text: "Anticipates hypokalemia after fab and replaces potassium and magnesium.",
       points: 1,
       teaching: "When the sodium potassium pump recovers, potassium moves back into cells. Check it hourly at first.",
@@ -476,6 +494,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Calls the poison centre and involves pharmacy in dosing and restocking.",
       points: 1,
       teaching: "Poison centres advise on dosing, repeat doses and rebound. Pharmacy knows the local stock.",
@@ -484,6 +503,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the cause to his wife without blame and gives sick day guidance.",
       points: 1,
       teaching: "Families often feel responsible. Clear sick day rules prevent recurrence.",
@@ -492,6 +512,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to a monitored bed for at least 24 hours because of rebound risk with kidney injury.",
       points: 2,
       teaching: "In kidney injury the fab digoxin complex clears slowly. Free digoxin can rebound over 24 to 72 hours.",
@@ -500,6 +521,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Stops digoxin and arranges review of rate control and the interacting drug with the family doctor.",
       points: 1,
       teaching: "Digoxin is a second line rate control agent in AF. Reconsider whether he needs it at all.",
@@ -508,6 +530,7 @@ export const chronicDigoxinToxicity: OralCase = {
     {
       id: "dg-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Arranges resupply of antidote from the regional centre and considers transfer if more is needed.",
       points: 1,
       teaching: "Small sites stock limited antidote. Replacing it quickly protects this patient and the next one.",

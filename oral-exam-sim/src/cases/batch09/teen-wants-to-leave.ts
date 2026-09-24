@@ -7,6 +7,8 @@ export const teenWantsToLeave: OralCase = {
   title: "A fifteen year old who wants to go home",
   blueprint: "ethics",
   alsoCovers: ["peds", "tox", "psych"],
+  priorityTopic: "suicide-risk",
+  keyFeatures: [{ topic: "suicide-risk", n: 3 }, { topic: "tox", n: 4 }, { topic: "abuse-domestic", n: 6 }],
   summary: "A 15 year old brought in by her mother at dawn refuses treatment and asks to leave.",
   durationMinutes: 15,
   stem:
@@ -388,6 +390,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-m1",
       competency: "management",
+      criterion: "plan",
       text: "Starts acetylcysteine promptly by a two bag regimen such as 200 mg/kg over 4 hours then 100 mg/kg over 16 hours.",
       points: 2,
       teaching: "Acetylcysteine started within 8 hours of ingestion almost eliminates liver injury. Delay is the main cause of harm.",
@@ -396,6 +399,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Keeps her safe with constant observation and does not let her leave.",
       points: 3,
       critical: true,
@@ -405,6 +409,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "States that Ontario has no fixed age of consent and that capacity decides.",
       points: 2,
       teaching: "The Health Care Consent Act sets no minimum age. A capable minor gives or refuses consent for herself.",
@@ -413,6 +418,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Applies the understanding and appreciation test and finds her incapable because she cannot appreciate the consequences.",
       points: 3,
       critical: true,
@@ -422,6 +428,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Obtains consent from her mother as substitute decision maker and tells Chloe of the finding and her right to apply to the Consent and Capacity Board.",
       points: 2,
       teaching: "The CPSO policy requires you to tell a patient found incapable that a substitute decision maker will decide and that she can apply to the Board for a review. The mother stays the substitute unless the society takes Chloe into care, but check that she is acting in Chloe's best interests.",
@@ -430,6 +437,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Completes a Form 1 on the correct grounds and gives her a Form 42.",
       points: 2,
       teaching: "Form 1 allows up to 72 hours for psychiatric assessment. Form 42 tells her why and that she can speak to a lawyer.",
@@ -438,6 +446,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-m2",
       competency: "management",
+      criterion: "plan",
       text: "Knows that a Form 1 does not authorize medical treatment and uses the least restraint needed.",
       points: 1,
       teaching: "Detention and treatment need separate authority. Overdose treatment rests on consent from the patient or her substitute decision maker.",
@@ -446,6 +455,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Reports suspected abuse of a child under 16 directly and promptly to the children's aid society.",
       points: 3,
       critical: true,
@@ -455,6 +465,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Tells her honestly that the disclosure must be reported and why, without detailed interviewing.",
       points: 2,
       teaching: "Never promise secrecy you cannot keep. Leave the investigative interview to child protection workers.",
@@ -463,6 +474,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Shares no information with the boyfriend and keeps him away from her with security support.",
       points: 1,
       teaching: "He is not her legal parent or her substitute decision maker. He has no right to her information and no authority to take her.",
@@ -471,6 +483,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Informs the children's aid society worker that the alleged abuser is on site and coordinates with security.",
       points: 1,
       teaching: "Child protection workers need current safety information to plan. Tell them what is happening now.",
@@ -479,6 +492,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-d3",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to pediatrics with constant observation, repeat liver tests and psychiatry consult.",
       points: 2,
       teaching: "Recheck the level, ALT and INR near the end of the infusion. Continue acetylcysteine if either is abnormal.",
@@ -487,6 +501,7 @@ export const teenWantsToLeave: OralCase = {
     {
       id: "tn-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Hands over the Form 1 timing, the capacity finding, the substitute decision maker and the report.",
       points: 1,
       teaching: "Legal status gets lost at handover. State the time the Form 1 expires and who consents.",

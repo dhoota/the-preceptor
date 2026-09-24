@@ -7,6 +7,12 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
   title: "A nosebleed that will not stop",
   blueprint: "procedures",
   alsoCovers: ["geri", "resus"],
+  priorityTopic: "shock",
+  keyFeatures: [
+    { topic: "shock", n: 1 },
+    { topic: "shock", n: 3 },
+    { topic: "analgesia-sedation", n: 6 },
+  ],
   summary: "A 78 year old man with two hours of heavy nose bleeding that runs down his throat despite pressure.",
   durationMinutes: 14,
   stem:
@@ -339,6 +345,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Keeps the patient upright and leaning forward with suction, and places two large bore IVs with crossmatch.",
       points: 2,
       teaching: "Heavy epistaxis is an airway and hemorrhage problem first. Blood running down the throat can be aspirated or swallowed and hide the true loss.",
@@ -347,6 +354,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Recognizes hemodynamic significance from tachycardia and a hemoglobin drop over 30 g/L.",
       points: 1,
       teaching: "Older patients on beta blockers may not mount a big tachycardia. A falling hemoglobin tells you the size of the bleed.",
@@ -355,6 +363,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-m1",
       competency: "management",
+      criterion: "plan",
       text: "Uses a stepwise anterior approach with vasoconstrictor, targeted cautery of a visible point and anterior packing.",
       points: 2,
       teaching: "Cauterize only a visible point and only one side of the septum. Topical tranexamic acid is an option but did not reduce packing in the NoPAC trial.",
@@ -363,6 +372,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies a posterior source when bleeding continues down the pharynx despite well placed anterior packs.",
       points: 2,
       teaching: "Posterior bleeds are more common in older, anticoagulated and hypertensive patients. They often need posterior packing and admission.",
@@ -371,6 +381,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-m2",
       competency: "management",
+      criterion: "plan",
       text: "Reverses warfarin for a major bleed with vitamin K 10 mg IV and 4 factor PCC, and holds warfarin.",
       points: 3,
       critical: true,
@@ -380,6 +391,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies the clarithromycin interaction as the likely cause of the raised INR.",
       points: 1,
       teaching: "Macrolides and many other antibiotics raise the INR on warfarin. Check every new drug.",
@@ -388,6 +400,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-m3",
       competency: "management",
+      criterion: "plan",
       text: "Places a posterior pack correctly with a dual balloon device or Foley inflated with saline and seated in the choana.",
       points: 3,
       critical: true,
@@ -397,6 +410,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-m4",
       competency: "management",
+      criterion: "plan",
       text: "Protects the nostril from pressure necrosis with padding and avoids overinflation.",
       points: 1,
       teaching: "Alar and columellar necrosis are avoidable complications. Pad the clamp and check the skin.",
@@ -405,6 +419,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Manages bradycardia and hypoxia after posterior packing by checking pack position, reversing opioid effect and giving atropine if needed.",
       points: 2,
       teaching: "Posterior packs can cause vagal bradycardia, airway obstruction and hypoventilation, especially with sedation.",
@@ -413,6 +428,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Requires continuous oximetry and cardiac monitoring for as long as the posterior pack is in.",
       points: 3,
       critical: true,
@@ -422,6 +438,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits with ENT involvement and a plan for transfer for arterial ligation or embolization if bleeding recurs.",
       points: 2,
       teaching: "Bleeding through a posterior pack needs definitive treatment. Know where your nearest centre is before you need it.",
@@ -430,6 +447,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Coordinates with ENT and gives a clear handover including INR, reversal given and pack details.",
       points: 1,
       teaching: "The admitting team needs to know when and what was packed and what was reversed.",
@@ -438,6 +456,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the balance of bleeding and stroke risk to the family and the plan to restart anticoagulation.",
       points: 1,
       teaching: "Families worry about stroke. Explain that reversal is short term and restarting is planned.",
@@ -446,6 +465,7 @@ export const posteriorEpistaxisAnticoagulated: OralCase = {
     {
       id: "epi-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Uses the local PCC protocol and blood bank early rather than waiting for plasma.",
       points: 1,
       teaching: "Canadian blood product guidance recommends PCC over plasma for urgent warfarin reversal. Knowing your protocol saves time.",

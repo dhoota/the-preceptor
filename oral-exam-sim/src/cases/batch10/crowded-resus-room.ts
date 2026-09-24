@@ -7,6 +7,8 @@ export const crowdedResusRoom: OralCase = {
   title: "Too many voices in bay one",
   blueprint: "systems",
   alsoCovers: ["resus", "cardio"],
+  priorityTopic: "arrhythmia",
+  keyFeatures: [{ topic: "arrhythmia", n: 4 }, { topic: "arrhythmia", n: 8 }, { topic: "ischemic-heart-disease", n: 6 }, { topic: "multiple-patients", n: 3 }, { topic: "cqi", n: 5 }],
   summary: "You lead a resuscitation that goes off course as more people arrive and start giving orders.",
   durationMinutes: 15,
   stem:
@@ -389,6 +391,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Runs a pre brief with named roles, a shared plan and permission to speak up.",
       points: 2,
       teaching: "Roles and a plan set before the patient arrives reduce confusion and freezing under stress.",
@@ -397,6 +400,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Keeps a single team leader and gives the arriving expert a defined role, or hands over leadership explicitly.",
       points: 3,
       critical: true,
@@ -406,6 +410,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-l3",
       competency: "leadership",
+      criterion: "plan",
       text: "Stays hands off at the foot of the bed and re sets the room with a brief summary.",
       points: 2,
       teaching: "A ten seconds for ten minutes pause during compressions rebuilds the shared mental model.",
@@ -414,6 +419,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-l4",
       competency: "leadership",
+      criterion: "plan",
       text: "Runs a short hot debrief focused on learning and team wellbeing.",
       points: 1,
       teaching: "Hot debriefs are brief and structured. They surface safety issues while memory is fresh.",
@@ -422,6 +428,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m1",
       competency: "management",
+      criterion: "approach",
       text: "Plans for refractory VF before arrival with a second defibrillator and anterior posterior pads ready.",
       points: 1,
       teaching: "Anticipating the next step turns a scramble into a planned change.",
@@ -430,6 +437,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m2",
       competency: "management",
+      criterion: "plan",
       text: "Changes defibrillation strategy after three failed shocks, using vector change or double sequential defibrillation.",
       points: 2,
       teaching: "In DOSE VF, both strategies improved survival to discharge compared with standard defibrillation. Guidelines rate them as may be considered after 3 or more failed shocks.",
@@ -438,6 +446,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives amiodarone 150 mg as the second dose and tracks the cumulative dose.",
       points: 1,
       teaching: "Amiodarone is 300 mg then 150 mg in shock refractory VF. Lidocaine is an alternative.",
@@ -446,6 +455,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m4",
       competency: "management",
+      criterion: "plan",
       text: "Stops the long compression pause immediately and keeps pauses under 10 seconds.",
       points: 3,
       critical: true,
@@ -455,6 +465,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-m5",
       competency: "management",
+      criterion: "plan",
       text: "Sets post arrest targets. SpO2 90 to 98 percent, mean arterial pressure at least 65 and deliberate temperature control.",
       points: 2,
       teaching: "Avoid hypoxia, hyperoxia and hypotension after return of circulation. They all worsen brain injury.",
@@ -463,6 +474,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks up directly, by name, with a clear instruction.",
       points: 2,
       teaching: "In a crisis, specific named instructions work. Vague comments to the room are ignored.",
@@ -471,6 +483,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Uses closed loop communication to challenge an unsafe drug order by stating the cumulative dose.",
       points: 2,
       teaching: "Saying the dose already given out loud lets the team catch the error without a confrontation.",
@@ -479,6 +492,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Invites concerns from the team during the summary.",
       points: 1,
       teaching: "Asking 'what am I missing?' lowers the hierarchy and uncovers errors.",
@@ -487,6 +501,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Offers family presence with a support person and gives an honest update.",
       points: 1,
       teaching: "Families often value being present. A dedicated staff member explains what is happening.",
@@ -495,6 +510,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-d1",
       competency: "disposition",
+      criterion: "data",
       text: "Sends the patient for emergent coronary angiography for STEMI after arrest.",
       points: 2,
       critical: true,
@@ -504,6 +520,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Stays calm and respectful with the consultant while holding the line on patient safety.",
       points: 2,
       teaching: "Firm and calm beats loud. Disagree about the plan, not about the person.",
@@ -512,6 +529,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Addresses the consultant's behaviour privately and escalates only if it recurs or is serious.",
       points: 1,
       teaching: "Most conflict resolves with an early private conversation that focuses on behaviour and its effect on care.",
@@ -520,6 +538,7 @@ export const crowdedResusRoom: OralCase = {
     {
       id: "cr-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Gives the resident supportive private feedback and thanks the nurse who spoke up.",
       points: 1,
       teaching: "Feedback should build skill without shame. Recognizing speaking up makes it more likely next time.",

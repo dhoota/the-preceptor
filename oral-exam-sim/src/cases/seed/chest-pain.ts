@@ -7,6 +7,14 @@ export const chestPain: OralCase = {
   title: "Chest pain at a rural site",
   blueprint: "cardio",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "chest-pain",
+  keyFeatures: [
+    { topic: "chest-pain", n: 1 },
+    { topic: "chest-pain", n: 3 },
+    { topic: "chest-pain", n: 5 },
+    { topic: "ischemic-heart-disease", n: 7 },
+    { topic: "ems", n: 3 },
+  ],
   summary: "A 61 year old man with sudden chest pain at a small hospital with no cath lab.",
   durationMinutes: 15,
   stem:
@@ -418,6 +426,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Places patient on monitor, obtains two large bore IVs, and sends type and screen early.",
       points: 1,
       teaching: "A patient with possible aortic catastrophe needs blood ready early. Two large bore lines let you run infusions and products together.",
@@ -426,6 +435,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r2",
       competency: "assessment",
+      criterion: "approach",
       text: "Pauses before fibrinolysis and screens for aortic dissection with a focused history of pain character and radiation.",
       points: 3,
       critical: true,
@@ -435,6 +445,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r3",
       competency: "assessment",
+      criterion: "approach",
       text: "Checks both arm blood pressures and pulses.",
       points: 2,
       teaching: "A difference of more than 20 mmHg between arms or a pulse deficit strongly suggests dissection. It takes one minute to check.",
@@ -443,6 +454,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r4",
       competency: "management",
+      criterion: "plan",
       text: "Gives IV opioid analgesia, e.g. fentanyl 25 to 50 mcg IV titrated.",
       points: 1,
       teaching: "Pain drives catecholamines and shear stress. Opioids help control heart rate and pressure.",
@@ -451,6 +463,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-r5",
       competency: "management",
+      criterion: "plan",
       text: "Avoids further nitrates given inferior and right ventricular involvement until the diagnosis is clear.",
       points: 1,
       teaching: "ST elevation in V4R suggests right ventricular involvement. Nitrates can cause profound hypotension in this setting.",
@@ -459,6 +472,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-d1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes that dissection into the right coronary ostium can cause inferior ST elevation.",
       points: 2,
       teaching: "The right coronary ostium is the one most often involved by a type A flap. Inferior STEMI plus back pain should raise the question.",
@@ -467,6 +481,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-d2",
       competency: "assessment",
+      criterion: "data",
       text: "Performs a bedside echo looking for aortic root dilation, intimal flap, effusion and aortic regurgitation.",
       points: 2,
       teaching: "A root over 4 cm, a flap or a new effusion on POCUS supports dissection. A normal POCUS does not rule it out.",
@@ -475,6 +490,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-d3",
       competency: "assessment",
+      criterion: "data",
       text: "Interprets the widened mediastinum on chest X ray.",
       points: 1,
       teaching: "A mediastinum over 8 cm on an AP film is a clue to dissection. A normal chest X ray does not exclude it.",
@@ -483,6 +499,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-d4",
       competency: "assessment",
+      criterion: "data",
       text: "Obtains CT angiography of the aorta while stable, with monitoring and an escort.",
       points: 2,
       teaching: "CT angiography is the test of choice in a stable patient. An unstable patient should not leave resus for imaging.",
@@ -491,6 +508,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m1",
       competency: "management",
+      criterion: "plan",
       text: "Withholds tenecteplase and heparin, and gives no further antiplatelet agents.",
       points: 3,
       critical: true,
@@ -500,6 +518,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m2",
       competency: "management",
+      criterion: "plan",
       text: "Starts IV beta blockade first, e.g. esmolol 500 mcg/kg over 1 minute then 50 to 300 mcg/kg/min, or labetalol 20 mg IV repeated every 10 minutes to effect.",
       points: 2,
       teaching: "Rate control reduces the force on the aortic wall. Esmolol is short acting and easy to stop if the pressure falls. ESC 2024 names labetalol as a first choice.",
@@ -508,6 +527,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m3",
       competency: "management",
+      criterion: "plan",
       text: "States targets of heart rate about 60 or lower and systolic under 120, about 100 to 120, using the higher arm reading.",
       points: 2,
       teaching: "ESC 2024 targets a heart rate of 60 or less and a systolic under 120. ACC and AHA 2022 accept a heart rate of 60 to 80. Use the higher arm, because the lower arm is reduced by the dissection.",
@@ -516,6 +536,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m4",
       competency: "management",
+      criterion: "plan",
       text: "Adds a vasodilator such as nitroprusside or nitroglycerin only after rate control.",
       points: 1,
       teaching: "A vasodilator alone causes reflex tachycardia and more shear. Beta block first, then vasodilate.",
@@ -524,6 +545,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-m5",
       competency: "resuscitation",
+      criterion: "diagnosis",
       text: "Recognizes tamponade, stops antihypertensives, gives cautious fluid and blood, and avoids large volume pericardiocentesis.",
       points: 2,
       teaching: "Tamponade in type A dissection needs surgery. Draining a large volume raises pressure and can restart bleeding from the aorta.",
@@ -532,6 +554,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Declines the cardiologist's request respectfully and shares the objective findings that support dissection.",
       points: 2,
       teaching: "Disagree with data, not with the person. The physician at the bedside holds responsibility for the order.",
@@ -540,6 +563,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Contacts cardiac surgery at a tertiary centre early through CritiCall Ontario or the local equivalent.",
       points: 2,
       teaching: "CritiCall finds the accepting surgeon and bed. Call as soon as dissection is likely, not after every test.",
@@ -548,6 +572,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a clear structured handover to the receiving team and transport crew.",
       points: 1,
       teaching: "Include times, drugs and doses, targets, images and the reason fibrinolysis was withheld.",
@@ -556,6 +581,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the diagnosis and plan honestly to the patient and his wife.",
       points: 1,
       teaching: "Use plain words. A tear in the main artery that needs urgent surgery is clearer than a technical term.",
@@ -564,6 +590,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-s1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges emergent transfer to a centre with cardiac surgery, not only a PCI centre.",
       points: 3,
       critical: true,
@@ -573,6 +600,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-s2",
       competency: "disposition",
+      criterion: "plan",
       text: "Requests a critical care escort with blood products and infusions running.",
       points: 1,
       teaching: "He may deteriorate in transit. The escort must be able to titrate infusions and give blood.",
@@ -581,6 +609,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-s3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents the reasoning for withholding fibrinolysis and the consultant discussion.",
       points: 1,
       teaching: "Clear documentation protects the patient and you. Record the findings, the contraindication and who you spoke with.",
@@ -589,6 +618,7 @@ export const chestPain: OralCase = {
     {
       id: "cp-s4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Anticipates collapse with positive pressure ventilation and avoids intubation unless necessary.",
       points: 1,
       teaching: "Positive pressure reduces venous return. In tamponade that can cause arrest at induction.",

@@ -7,6 +7,14 @@ export const postArrestCareAfterRosc: OralCase = {
   title: "Arrival after a kitchen collapse",
   blueprint: "resus",
   alsoCovers: ["cardio", "ethics"],
+  priorityTopic: "arrhythmia",
+  keyFeatures: [
+    { topic: "arrhythmia", n: 8 },
+    { topic: "arrhythmia", n: 5 },
+    { topic: "ischemic-heart-disease", n: 2 },
+    { topic: "airway", n: 5 },
+    { topic: "shock", n: 7 },
+  ],
   summary: "A 68 year old woman arrives with a pulse after paramedics resuscitated her at home.",
   durationMinutes: 15,
   stem:
@@ -396,6 +404,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Sets SpO2 of about 94 to 98 percent and PaCO2 35 to 45 mmHg and weans FiO2 from 1.0.",
       points: 3,
       critical: true,
@@ -405,6 +414,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Secures the airway with a reduced dose induction agent and pressor ready, and uses lung protective ventilation.",
       points: 2,
       teaching: "Post arrest patients are sensitive to sedatives. Tidal volume of 6 to 8 mL/kg ideal body weight protects injured lungs.",
@@ -413,6 +423,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Targets a MAP of at least 65 mmHg with norepinephrine, modest fluid and an arterial line.",
       points: 3,
       critical: true,
@@ -422,6 +433,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-m1",
       competency: "management",
+      criterion: "plan",
       text: "Replaces potassium and magnesium, and targets glucose of about 7.8 to 10 mmol/L while avoiding hypoglycemia.",
       points: 1,
       teaching: "Low potassium and magnesium with a long QTc raise the risk of recurrent VF. Tight glucose control adds risk without benefit.",
@@ -430,6 +442,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Reads the ECG as no ST elevation and does not send her for immediate angiography by reflex.",
       points: 2,
       teaching: "Without ST elevation or refractory ischemic instability, immediate angiography did not improve survival in COACT or TOMAHAWK.",
@@ -438,6 +451,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Obtains CT head and CT chest to look for non cardiac causes and injuries.",
       points: 1,
       teaching: "Bleeds, PE, dissection and CPR injuries all change management. CT is reasonable before or instead of early angiography when the cause is unclear.",
@@ -446,6 +460,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Discusses angiography timing with cardiology and agrees on triggers to reconsider.",
       points: 1,
       teaching: "Name the triggers: evolving ST elevation, recurrent VF or shock that is not explained by other causes.",
@@ -454,6 +469,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-m2",
       competency: "management",
+      criterion: "plan",
       text: "Actively prevents fever, keeping temperature at or below 37.5 degrees for at least 36 hours and ideally up to 72 hours, and treats shivering.",
       points: 3,
       critical: true,
@@ -463,6 +479,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Considers aspiration pneumonia as a cause of fever and sends cultures before antibiotics.",
       points: 1,
       teaching: "Early pneumonia is common after arrest. Fever should be investigated even when temperature control is running.",
@@ -471,6 +488,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-m3",
       competency: "management",
+      criterion: "plan",
       text: "Treats clinical seizures with a benzodiazepine or propofol plus levetiracetam or valproate, avoids prophylaxis, and arranges EEG.",
       points: 2,
       teaching: "Seizures after arrest increase brain oxygen demand. EEG helps separate seizure from myoclonus.",
@@ -479,6 +497,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Avoids early prognostication and explains that multimodal assessment happens after at least 72 hours.",
       points: 3,
       critical: true,
@@ -488,6 +507,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks with the husband honestly, shares uncertainty and encouraging features, and uses plain language.",
       points: 2,
       teaching: "Families cope better with honest uncertainty and a clear timeline than with false hope or false doom.",
@@ -496,6 +516,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-p2",
       competency: "professionalism",
+      criterion: "approach",
       text: "Confirms the husband as substitute decision maker and asks about her previously expressed wishes.",
       points: 1,
       teaching: "Under the Ontario Health Care Consent Act the spouse is high on the hierarchy. Decisions should follow her known wishes and values.",
@@ -504,6 +525,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Writes clear targets and a care plan for boarding and arranges ICU outreach and handover.",
       points: 2,
       teaching: "Boarding critically ill patients is a known risk. Written targets make care consistent across nurses and shifts.",
@@ -512,6 +534,7 @@ export const postArrestCareAfterRosc: OralCase = {
     {
       id: "pr-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Coordinates ICU, cardiology and nursing and assigns one to one nursing while she boards.",
       points: 1,
       teaching: "When the ICU is full, the emergency physician still leads the plan. Clear ownership prevents drift in targets.",

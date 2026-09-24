@@ -7,6 +7,13 @@ export const thunderclapHeadacheSah: OralCase = {
   title: "Headache in the middle of a workout",
   blueprint: "neuro",
   alsoCovers: ["resus", "systems"],
+  priorityTopic: "headache",
+  keyFeatures: [
+    { topic: "headache", n: 1 },
+    { topic: "headache", n: 2 },
+    { topic: "headache", n: 6 },
+    { topic: "airway", n: 5 },
+  ],
   summary: "A 46 year old woman with a history of migraine has a sudden severe headache while lifting weights.",
   durationMinutes: 15,
   stem:
@@ -393,6 +400,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies thunderclap onset and a change from her usual migraine pattern as red flags.",
       points: 1,
       teaching: "A migraine history does not protect against SAH. A headache that peaks within about a minute is thunderclap until proven otherwise.",
@@ -401,6 +409,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Applies the Ottawa SAH Rule correctly and recognizes that SAH cannot be ruled out without imaging.",
       points: 3,
       critical: true,
@@ -410,6 +419,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes a falling GCS with hypertension and bradycardia as raised intracranial pressure from hydrocephalus or rebleed.",
       points: 2,
       teaching: "Acute hydrocephalus occurs in about 20 to 30 percent of aneurysmal SAH. Early temporal horn dilation on the first CT is a warning sign.",
@@ -418,6 +428,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-m1",
       competency: "management",
+      criterion: "data",
       text: "Orders non contrast CT within 6 hours of onset and knows a normal scan in that window, read by a qualified radiologist, rules out SAH without LP.",
       points: 2,
       teaching: "In a large Canadian cohort, CT within 6 hours had a sensitivity near 100 percent. Beyond 6 hours, LP or CTA is still needed after a normal CT.",
@@ -426,6 +437,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-m2",
       competency: "management",
+      criterion: "plan",
       text: "Treats pain and nausea first and keeps systolic below 160 with titrated labetalol or nicardipine while avoiding hypotension.",
       points: 2,
       teaching: "Rebleeding risk is highest early. Controlled pressure reduces it, but hypotension can cause ischemia in a brain with raised pressure.",
@@ -434,6 +446,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-m3",
       competency: "management",
+      criterion: "plan",
       text: "Starts nimodipine 60 mg orally every 4 hours and avoids antiplatelets, anticoagulants and NSAIDs.",
       points: 2,
       teaching: "Nimodipine improves outcome after aneurysmal SAH. It is a neuroprotective drug, not an antihypertensive. Hold doses for hypotension.",
@@ -442,6 +455,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Secures the airway when GCS falls and arranges repeat CT, without performing a lumbar puncture.",
       points: 2,
       teaching: "A falling level of consciousness needs a protected airway. LP is contraindicated with possible obstructive hydrocephalus.",
@@ -450,6 +464,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Plans a hemodynamically neutral intubation with pretreatment, reduced dose induction, pressor ready and normocapnia afterward.",
       points: 2,
       teaching: "The pressor response to laryngoscopy can rupture the aneurysm again. Induction hypotension can cause ischemia. Aim for a smooth pressure throughout.",
@@ -458,6 +473,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Advocates for emergent transfer to neurosurgery for EVD and early aneurysm treatment, escalating to the staff surgeon and CritiCall.",
       points: 3,
       critical: true,
@@ -467,6 +483,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Communicates respectfully but firmly with the consultant, using the CT findings and clinical risk.",
       points: 1,
       teaching: "Advocate with data. State the specific risk, the specific need and the specific request.",
@@ -475,6 +492,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the diagnosis and uncertainty to the husband in plain words and addresses his question about family risk.",
       points: 1,
       teaching: "Families need honesty about severity. Screening is considered when two or more first degree relatives have had an aneurysm or aneurysmal SAH, usually from early adulthood.",
@@ -483,6 +501,7 @@ export const thunderclapHeadacheSah: OralCase = {
     {
       id: "sah-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Gives a structured handover with pressure targets, infusions, nimodipine timing and a plan for deterioration in transit.",
       points: 1,
       teaching: "The transport team needs explicit targets and a plan for pupil changes. Ambiguity in transit leads to delayed treatment.",

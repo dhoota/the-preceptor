@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { CASES, getCase } from "@/cases";
-import { BAND_LABEL, STANDARD, heatmap, readiness, suggestNext, trend, type TrendPoint } from "@/engine";
+import { BAND_LABEL, STANDARD, heatmap, readiness, suggestNext, topicStats, trend, type TrendPoint } from "@/engine";
+import { PRIORITY_TOPICS } from "@/blueprint/priorityTopics";
+import { SAMPS } from "@/samps";
 import type { Go } from "../routes";
 import { useApp } from "../state";
 
@@ -92,6 +94,12 @@ export function Progress({ go }: { go: Go }) {
   const heat = useMemo(() => heatmap(CASES, app.attempts), [app.attempts]);
   const points = useMemo(() => trend(app.attempts), [app.attempts]);
   const next = useMemo(() => suggestNext(CASES, app.attempts, { canOpen: app.canOpen }), [app.attempts, app.canOpen]);
+  const topics = useMemo(
+    () => topicStats(PRIORITY_TOPICS, SAMPS, app.sampAttempts, CASES, app.attempts),
+    [app.sampAttempts, app.attempts],
+  );
+  const [sortBy, setSortBy] = useState<"blueprint" | "weakest">("blueprint");
+  const shownTopics = sortBy === "blueprint" ? topics : [...topics].sort((a, b) => (a.written ?? 101) - (b.written ?? 101));
 
   return (
     <>
@@ -127,7 +135,61 @@ export function Progress({ go }: { go: Go }) {
       )}
 
       <section className="section">
-        <span className="label">Blueprint by competency</span>
+        <span className="label">CFPC priority topics</span>
+        <div className="chips" role="group" aria-label="Sort" style={{ marginTop: 10 }}>
+          <button className="chip" aria-pressed={sortBy === "blueprint"} onClick={() => setSortBy("blueprint")}>
+            Blueprint order
+          </button>
+          <button className="chip" aria-pressed={sortBy === "weakest"} onClick={() => setSortBy("weakest")}>
+            Weakest written first
+          </button>
+        </div>
+        <table className="ttable">
+          <thead>
+            <tr>
+              <th>Topic and key features</th>
+              <th style={{ textAlign: "right" }}>Written</th>
+              <th style={{ textAlign: "right" }}>Oral</th>
+            </tr>
+          </thead>
+          <tbody>
+            {shownTopics.map((t) => {
+              const meta = PRIORITY_TOPICS.find((x) => x.id === t.topic)!;
+              return (
+                <tr key={t.topic} onClick={() => go({ name: "topic", id: t.topic })} style={{ cursor: "pointer" }}>
+                  <td>
+                    <div>{meta.name}</div>
+                    <div className="kfbar" title={`${t.keyFeaturesSeen} of ${t.keyFeaturesTotal} key features practised`}>
+                      {meta.keyFeatures.map((k) => (
+                        <i key={k.n} className={t.byKeyFeature[k.n] !== undefined ? "seen" : ""} />
+                      ))}
+                    </div>
+                  </td>
+                  <td className="num">
+                    {t.written === null ? "" : `${t.written}%`}
+                    <div className="muted small">
+                      {t.sampsDone}/{t.sampsTotal}
+                    </div>
+                  </td>
+                  <td className="num">
+                    {t.oral === null ? "" : `${t.oral}%`}
+                    <div className="muted small">
+                      {t.oralDone}/{t.oralTotal}
+                    </div>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <p className="muted small" style={{ marginTop: 8 }}>
+          Each bar segment is one CFPC key feature. Filled means you have answered a written question on it. Tap a topic to
+          practise it.
+        </p>
+      </section>
+
+      <section className="section">
+        <span className="label">Oral cases by area and competency</span>
         <table className="heat" style={{ marginTop: 10 }}>
           <thead>
             <tr>

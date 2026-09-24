@@ -7,6 +7,14 @@ export const chronicLithiumToxicity: OralCase = {
   title: "Confused and shaky after a stomach bug",
   blueprint: "tox",
   alsoCovers: ["geri", "psych"],
+  priorityTopic: "tox",
+  keyFeatures: [
+    { topic: "tox", n: 1 },
+    { topic: "tox", n: 5 },
+    { topic: "tox", n: 6 },
+    { topic: "tox", n: 7 },
+    { topic: "delirium-agitation", n: 2 },
+  ],
   summary: "A 71 year old woman with a mood disorder is confused and unsteady after several days of vomiting.",
   durationMinutes: 14,
   stem:
@@ -403,6 +411,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Places her on a monitor, secures IV access and assesses airway protection given a GCS of 13.",
       points: 1,
       teaching: "A drowsy patient with myoclonus can seize or aspirate. Monitor and reassess the airway before anything else.",
@@ -411,6 +420,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes chronic lithium toxicity from tremor, myoclonus, hyperreflexia and confusion, and names the precipitants.",
       points: 3,
       critical: true,
@@ -420,6 +430,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Sends a serum lithium level in a plain tube, not a lithium heparin tube.",
       points: 1,
       teaching: "A green top lithium heparin tube can falsely raise the lithium result. Use a plain serum tube.",
@@ -428,6 +439,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Considers a differential including serotonin toxicity, NMS, sepsis, stroke and nonconvulsive status.",
       points: 1,
       teaching: "Lithium toxicity overlaps with serotonin toxicity and NMS. Look for clonus, rigidity and fever to separate them.",
@@ -436,6 +448,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-a4",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies nephrogenic diabetes insipidus from hypernatremia with dilute urine, and interprets the ECG changes.",
       points: 2,
       teaching: "Lithium blocks the kidney's response to ADH. A dry patient with dilute urine and a high sodium is losing free water.",
@@ -444,6 +457,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-m1",
       competency: "management",
+      criterion: "plan",
       text: "Holds lithium and the interacting lisinopril and ibuprofen immediately.",
       points: 2,
       critical: true,
@@ -453,6 +467,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-m2",
       competency: "management",
+      criterion: "plan",
       text: "Restores volume with isotonic crystalloid in boluses and checks sodium every 4 to 6 hours.",
       points: 2,
       teaching: "Euvolemia improves lithium clearance. Watch sodium closely because saline can worsen hypernatremia when the kidney cannot concentrate urine.",
@@ -461,6 +476,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-m3",
       competency: "management",
+      criterion: "plan",
       text: "Avoids activated charcoal and diuretics.",
       points: 1,
       teaching: "Charcoal does not bind lithium. Diuretics worsen volume depletion and increase lithium reabsorption.",
@@ -469,6 +485,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-m4",
       competency: "management",
+      criterion: "plan",
       text: "Requests urgent hemodialysis for decreased level of consciousness or seizure regardless of the lithium level, citing EXTRIP criteria.",
       points: 3,
       critical: true,
@@ -478,6 +495,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-m5",
       competency: "management",
+      criterion: "plan",
       text: "Treats the seizure with lorazepam 4 mg IV, repeated once if needed, and protects the airway.",
       points: 2,
       teaching: "Benzodiazepines are first line for toxic seizures. A seizure also upgrades the urgency of dialysis.",
@@ -486,6 +504,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-m6",
       competency: "management",
+      criterion: "plan",
       text: "States intermittent hemodialysis is preferred and continues until clinical improvement or a level under 1.0 mmol/L.",
       points: 2,
       teaching: "Intermittent hemodialysis clears lithium fastest. If no level is available, EXTRIP suggests running for at least 6 hours.",
@@ -494,6 +513,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Advocates respectfully with the nephrologist using specific findings and criteria.",
       points: 2,
       teaching: "Bring the consultant the neurological exam, the creatinine trend and the criteria. Data moves a disagreement forward.",
@@ -502,6 +522,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains to the daughter honestly that the new medications and dehydration caused lithium to build up, without assigning blame.",
       points: 1,
       teaching: "Families often ask direct questions about cause. A clear, non judgmental answer maintains trust.",
@@ -510,6 +531,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Calls the provincial poison centre for advice.",
       points: 1,
       teaching: "The poison centre helps with thresholds, dialysis timing and follow up levels, and tracks outcomes.",
@@ -518,6 +540,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits her to the ICU for dialysis, airway and neurological monitoring.",
       points: 2,
       teaching: "Severe chronic toxicity can progress to coma and seizures. She needs a monitored bed with dialysis access.",
@@ -526,6 +549,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Orders serial lithium levels after dialysis to detect rebound.",
       points: 1,
       teaching: "Lithium redistributes from tissue after dialysis. Rebound can need a second session.",
@@ -534,6 +558,7 @@ export const chronicLithiumToxicity: OralCase = {
     {
       id: "li-d3",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges psychiatry review of the mood stabilizer and informs the family doctor about the interaction.",
       points: 1,
       teaching: "Restarting lithium is a psychiatric decision that needs a new monitoring plan. The prescriber needs to know what happened.",

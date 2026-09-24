@@ -7,6 +7,14 @@ export const intermediateRiskPe: OralCase = {
   title: "Fainted on the stairs",
   blueprint: "resp",
   alsoCovers: ["cardio", "resus"],
+  priorityTopic: "dvt-pe",
+  keyFeatures: [
+    { topic: "dvt-pe", n: 2 },
+    { topic: "dvt-pe", n: 4 },
+    { topic: "dvt-pe", n: 6 },
+    { topic: "dvt-pe", n: 7 },
+    { topic: "shock", n: 6 },
+  ],
   summary: "A 54 year old man is brought in after fainting at home and is short of breath.",
   durationMinutes: 15,
   stem:
@@ -374,6 +382,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Identifies pulmonary embolism as the leading diagnosis and names key alternatives including ACS, tamponade and dissection.",
       points: 1,
       teaching: "Syncope with hypoxia and tachycardia after immobility is PE until proven otherwise. A broad differential still matters.",
@@ -382,6 +391,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Uses bedside echo and leg ultrasound to look for RV strain and DVT.",
       points: 2,
       teaching: "A dilated RV, septal flattening and a DVT support PE at the bedside. They also help if he becomes too unstable for CT.",
@@ -390,6 +400,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-m1",
       competency: "management",
+      criterion: "plan",
       text: "Starts anticoagulation before imaging when pretest probability is high and bleeding risk is low.",
       points: 2,
       teaching: "Do not wait for CT to anticoagulate a high probability patient. Delay adds risk of clot extension.",
@@ -398,6 +409,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Limits fluid to 500 mL or less in RV failure and uses norepinephrine for hypotension.",
       points: 2,
       teaching: "Large fluid boluses worsen RV dilation and can drop cardiac output. Norepinephrine restores RV coronary perfusion.",
@@ -406,6 +418,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Classifies him as intermediate high risk using blood pressure, sPESI, RV dysfunction and troponin.",
       points: 3,
       critical: true,
@@ -415,6 +428,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-a4",
       competency: "assessment",
+      criterion: "data",
       text: "States that sPESI of 1 or more excludes early discharge.",
       points: 1,
       teaching: "Only low risk patients with sPESI 0 and no RV dysfunction should be considered for outpatient treatment.",
@@ -423,6 +437,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-m2",
       competency: "management",
+      criterion: "plan",
       text: "Starts parenteral anticoagulation at a correct dose, such as enoxaparin 1 mg/kg every 12 hours or UFH 80 units/kg then 18 units/kg/h, and names the tradeoff if reperfusion is likely.",
       points: 2,
       teaching: "LMWH is preferred for most PE. UFH can be stopped quickly, which matters if lysis, catheter therapy or surgery is likely.",
@@ -431,6 +446,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-m3",
       competency: "management",
+      criterion: "plan",
       text: "Does not give routine systemic thrombolysis to a normotensive intermediate high risk patient.",
       points: 3,
       critical: true,
@@ -440,6 +456,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the reasoning to the cardiology resident and involves the PE response team early.",
       points: 1,
       teaching: "A shared plan with clear triggers stops repeated debates at the bedside. PE response teams exist for this decision.",
@@ -448,6 +465,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-r2",
       competency: "resuscitation",
+      criterion: "diagnosis",
       text: "Recognizes sustained hypotension as conversion to high risk PE.",
       points: 2,
       teaching: "Systolic under 90 mmHg for 15 minutes, or needing vasopressors, defines high risk. Reperfusion is then indicated.",
@@ -456,6 +474,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives systemic alteplase 100 mg IV over 2 hours for high risk PE without contraindication, or 50 mg bolus in arrest.",
       points: 3,
       critical: true,
@@ -465,6 +484,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids intubation where possible in massive PE and plans for collapse if it is needed.",
       points: 2,
       teaching: "Induction drugs and positive pressure can tip a failing RV into arrest. Oxygenate with high flow and reperfuse first.",
@@ -473,6 +493,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-a5",
       competency: "assessment",
+      criterion: "approach",
       text: "Lists absolute and relative contraindications to thrombolysis and checks them quickly.",
       points: 1,
       teaching: "Prior hemorrhagic stroke, recent stroke, CNS tumour, recent major trauma or surgery, and active bleeding are absolute. Check in under two minutes.",
@@ -481,6 +502,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the benefits and bleeding risk of thrombolysis to his wife in plain words and documents the discussion.",
       points: 1,
       teaching: "State the danger, the treatment and the key risk. Emergency treatment can proceed if the patient cannot consent.",
@@ -489,6 +511,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU with neuro and bleeding checks and a plan for heparin after lysis.",
       points: 1,
       teaching: "The first 24 hours after lysis carry the highest bleeding risk. Avoid arterial punctures and IM injections.",
@@ -497,6 +520,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Plans anticoagulation for at least 3 months, considers extended therapy, and arranges follow up for chronic symptoms.",
       points: 1,
       teaching: "Unprovoked or weakly provoked PE often warrants extended anticoagulation. Ongoing breathlessness at 3 months needs assessment for CTEPH.",
@@ -505,6 +529,7 @@ export const intermediateRiskPe: OralCase = {
     {
       id: "pe-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Coordinates ICU, the PE response team and IR, and gives a structured handover.",
       points: 1,
       teaching: "Several teams touch a high risk PE. One physician must hold the plan and hand it over clearly.",

@@ -7,6 +7,14 @@ export const myasthenicCrisisAirway: OralCase = {
   title: "Tired, choking and short of breath",
   blueprint: "neuro",
   alsoCovers: ["resp", "resus"],
+  priorityTopic: "airway",
+  keyFeatures: [
+    { topic: "airway", n: 2 },
+    { topic: "airway", n: 5 },
+    { topic: "sob", n: 3 },
+    { topic: "sob", n: 4 },
+    { topic: "shock", n: 8 },
+  ],
   summary: "A 58 year old woman with a known neuromuscular condition is breathless and struggling to swallow after a chest infection.",
   durationMinutes: 15,
   stem:
@@ -352,6 +360,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Uses bedside FVC and NIF, not SpO2, to judge respiratory muscle failure.",
       points: 3,
       critical: true,
@@ -361,6 +370,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Examines bulbar function, neck flexion and paradoxical breathing as markers of imminent failure.",
       points: 1,
       teaching: "Neck flexor weakness parallels diaphragm weakness. Pooled secretions and a weak cough predict aspiration and BiPAP failure.",
@@ -369,6 +379,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Distinguishes myasthenic from cholinergic crisis by clinical features.",
       points: 1,
       teaching: "Cholinergic crisis is rare at usual doses. Miosis, fasciculations, diarrhea, bradycardia and bronchorrhea suggest it.",
@@ -377,6 +388,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Chooses early controlled intubation over BiPAP because of bulbar weakness, secretions and pneumonia.",
       points: 3,
       critical: true,
@@ -386,6 +398,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses rocuronium rather than succinylcholine, anticipates prolonged block and has sugammadex available.",
       points: 2,
       teaching: "Myasthenic patients resist succinylcholine and are sensitive to non depolarizing agents. Rocuronium with sugammadex backup is predictable.",
@@ -394,6 +407,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Manages post intubation hypotension with a structured approach and considers stress dose hydrocortisone on chronic prednisone.",
       points: 1,
       teaching: "Check the tube, pneumothorax and breath stacking. Chronic steroid users may need hydrocortisone 100 mg IV when shocked.",
@@ -402,6 +416,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-m1",
       competency: "management",
+      criterion: "plan",
       text: "Stops the fluoroquinolone and avoids macrolides, aminoglycosides and magnesium when treating pneumonia.",
       points: 3,
       critical: true,
@@ -411,6 +426,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-m2",
       competency: "management",
+      criterion: "plan",
       text: "Discusses IVIG 2 g/kg over 2 to 5 days or plasma exchange with neurology and holds pyridostigmine while ventilated.",
       points: 2,
       teaching: "IVIG and plasma exchange are both effective in crisis. Pyridostigmine adds secretions without benefit while the patient is ventilated.",
@@ -419,6 +435,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-m3",
       competency: "management",
+      criterion: "plan",
       text: "Treats community acquired pneumonia with cultures, ceftriaxone and a safe atypical agent.",
       points: 1,
       teaching: "Infection is the most common trigger of crisis. Ceftriaxone with doxycycline covers typical and atypical organisms. Tetracyclines have only rare reports of worsening myasthenia, far fewer than macrolides and fluoroquinolones.",
@@ -427,6 +444,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the trigger to the husband factually without blaming the prescriber.",
       points: 1,
       teaching: "Explain what happened without speculation or blame. The trigger is usually multifactorial.",
@@ -435,6 +453,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU and arranges transfer if plasma exchange or neurology care is not available locally.",
       points: 1,
       teaching: "Myasthenic crisis needs ICU care and neurology input. Plasma exchange is only available at some centres.",
@@ -443,6 +462,7 @@ export const myasthenicCrisisAirway: OralCase = {
     {
       id: "mg-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Flags high risk drugs in her record and gives collegial feedback to the prescribing clinic.",
       points: 1,
       teaching: "A drug alert protects her at every future visit. Feedback to colleagues improves care without blame.",

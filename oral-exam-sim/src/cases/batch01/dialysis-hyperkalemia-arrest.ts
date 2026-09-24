@@ -7,6 +7,13 @@ export const dialysisHyperkalemiaArrest: OralCase = {
   title: "Weakness after the storm",
   blueprint: "resus",
   alsoCovers: ["cardio"],
+  priorityTopic: "arrhythmia",
+  keyFeatures: [
+    { topic: "arrhythmia", n: 2 },
+    { topic: "arrhythmia", n: 5 },
+    { topic: "airway", n: 5 },
+    { topic: "ems", n: 3 },
+  ],
   summary: "A 67 year old woman on hemodialysis arrives weak and short of breath after a winter storm closed the roads.",
   durationMinutes: 15,
   stem:
@@ -406,6 +413,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Recognizes severe hyperkalemia from the ECG and treats before the lab result.",
       points: 2,
       teaching: "A missed dialysis run with a wide slow rhythm and peaked T waves is hyperkalemia until proven otherwise. The ECG, not the number, drives urgency.",
@@ -414,6 +422,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives IV calcium immediately, calcium chloride 10 percent 10 mL or calcium gluconate 10 percent 30 mL (both 6.8 mmol), and repeats if the ECG does not improve.",
       points: 3,
       critical: true,
@@ -423,6 +432,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives regular insulin 10 units IV with 25 g dextrose, and adds D10W at 50 mL/h for 5 hours when pre treatment glucose is under 7 mmol/L.",
       points: 2,
       teaching: "Insulin shifts potassium into cells within 15 to 30 minutes. Some centres use 5 units in dialysis patients to lower hypoglycemia risk. UKKA keeps 10 units and adds a glucose infusion when glucose starts under 7 mmol/L.",
@@ -431,6 +441,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "In hyperkalemic arrest gives repeated calcium early alongside ACLS, and sodium bicarbonate 50 mEq for arrest with acidosis.",
       points: 3,
       critical: true,
@@ -440,6 +451,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-m2",
       competency: "management",
+      criterion: "plan",
       text: "Flushes the line or uses separate access between calcium and bicarbonate.",
       points: 1,
       teaching: "Calcium and bicarbonate precipitate as calcium carbonate. A blocked line during an arrest costs time.",
@@ -448,6 +460,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Directs the team to prepare calcium, insulin, dextrose and bicarbonate at once and calls nephrology during the arrest.",
       points: 1,
       teaching: "Parallel tasks save minutes. Ask pharmacy to draw up the full hyperkalemia kit while CPR continues.",
@@ -456,6 +469,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Avoids succinylcholine and uses rocuronium 1.2 mg/kg with a reduced induction dose and pressor ready.",
       points: 2,
       critical: true,
@@ -465,6 +479,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-m3",
       competency: "management",
+      criterion: "plan",
       text: "Adds nebulized salbutamol 10 to 20 mg and avoids fluid boluses in an overloaded dialysis patient.",
       points: 2,
       teaching: "Salbutamol adds about 0.5 to 1 mmol/L of lowering to insulin. Dialysis patients with pulmonary edema need pressors, not saline.",
@@ -473,6 +488,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-m4",
       competency: "management",
+      criterion: "plan",
       text: "Monitors glucose at 15 and 30 minutes and then at least hourly for 6 hours, and treats hypoglycemia with dextrose 25 g then D10W.",
       points: 2,
       teaching: "Insulin clearance is slow in kidney failure. Hypoglycemia after insulin is common and often occurs 1 to 3 hours later.",
@@ -481,6 +497,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Anticipates rebound hyperkalemia and repeats the ECG and potassium within about an hour, then again at 2 to 4 hours.",
       points: 2,
       teaching: "Shifting agents last 2 to 4 hours. In an anuric patient the potassium will come back.",
@@ -489,6 +506,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Escalates clearly to nephrology, stating the arrest and the rebound, and asks for dialysis tonight.",
       points: 2,
       teaching: "Lead with the facts that change risk. A patient who arrested from potassium does not wait until morning.",
@@ -497,6 +515,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Secures definitive potassium removal by dialysis or CRRT, locally or by transfer through CritiCall Ontario.",
       points: 3,
       critical: true,
@@ -506,6 +525,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges a critical care transport with calcium, insulin, dextrose, pads and glucose monitoring.",
       points: 1,
       teaching: "Rebound and hypoglycemia can both happen in the air. The crew needs drugs and a plan for each.",
@@ -514,6 +534,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover with times, doses, arrest duration, airway details and the latest potassium and glucose.",
       points: 1,
       teaching: "A clear handover prevents repeated or missed doses. Include what worked, not only what was given.",
@@ -522,6 +543,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the cause to the daughter without blame and names salt substitutes as a potassium source.",
       points: 1,
       teaching: "Most salt substitutes are potassium chloride. Families need simple, specific advice, not guilt.",
@@ -530,6 +552,7 @@ export const dialysisHyperkalemiaArrest: OralCase = {
     {
       id: "hk-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Identifies the system barrier of weather and distance and arranges dialysis team and social work follow up.",
       points: 1,
       teaching: "Rural dialysis patients need a plan for missed runs. Naming the barrier helps the unit fix it.",

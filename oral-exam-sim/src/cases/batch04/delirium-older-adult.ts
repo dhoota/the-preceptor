@@ -7,6 +7,13 @@ export const deliriumOlderAdult: OralCase = {
   title: "Not herself since the weekend",
   blueprint: "geri",
   alsoCovers: ["ethics", "psych"],
+  priorityTopic: "delirium-agitation",
+  keyFeatures: [
+    { topic: "delirium-agitation", n: 1 },
+    { topic: "delirium-agitation", n: 2 },
+    { topic: "delirium-agitation", n: 4 },
+    { topic: "delirium-agitation", n: 5 },
+  ],
   summary: "An 86 year old woman is brought in by her daughter because she has been sleepy and muddled for three days.",
   durationMinutes: 14,
   stem:
@@ -362,6 +369,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes hypoactive delirium and confirms it with a validated tool such as the 4AT or CAM.",
       points: 3,
       critical: true,
@@ -371,6 +379,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Performs a structured search for causes including medications, retention, constipation, electrolytes, infection and hypoxia.",
       points: 2,
       teaching: "Delirium in older adults is usually multifactorial. Fixing only one cause often leaves the delirium in place.",
@@ -379,6 +388,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies oxybutynin and over the counter diphenhydramine as anticholinergic contributors and finds urinary retention and fecal impaction.",
       points: 2,
       teaching: "Anticholinergic drugs cause delirium directly and through retention and constipation. Always ask about over the counter sleep aids.",
@@ -387,6 +397,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-m1",
       competency: "management",
+      criterion: "plan",
       text: "Stops the anticholinergic drugs, avoids abrupt withdrawal of long term zopiclone and holds the thiazide.",
       points: 3,
       critical: true,
@@ -396,6 +407,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-m2",
       competency: "management",
+      criterion: "data",
       text: "Does not treat asymptomatic bacteriuria in the absence of fever or localizing symptoms.",
       points: 2,
       teaching: "Positive urine tests are common in older women without infection. Antibiotics do not improve delirium from other causes and cause harm.",
@@ -404,6 +416,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-m3",
       competency: "management",
+      criterion: "plan",
       text: "Uses non pharmacological measures first, reserves low dose haloperidol 0.25 to 0.5 mg for danger or severe distress and avoids benzodiazepines.",
       points: 3,
       critical: true,
@@ -413,6 +426,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-m4",
       competency: "management",
+      criterion: "plan",
       text: "Relieves retention with a catheter, treats impaction and corrects sodium slowly.",
       points: 1,
       teaching: "Retention and constipation are easily fixed causes. Sodium should rise no more than 8 mmol/L in 24 hours in a chronic case.",
@@ -421,6 +435,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Assesses capacity, clarifies the type of power of attorney and obtains consent from the correct substitute decision maker.",
       points: 2,
       teaching: "In Ontario a power of attorney for property does not give authority over health care. The Health Care Consent Act lists the order of substitute decision makers.",
@@ -429,6 +444,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Uses physical restraint only as a last resort, with consent and monitoring.",
       points: 1,
       teaching: "Restraints increase agitation, injury and death in delirium. Ontario hospitals must follow the Patient Restraints Minimization Act.",
@@ -437,6 +453,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the decision maker role respectfully to the daughter and includes her in planning.",
       points: 1,
       teaching: "Families often misunderstand power of attorney. A calm explanation prevents conflict and keeps everyone involved.",
@@ -445,6 +462,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains delirium, its likely course and how family can help, in plain words.",
       points: 1,
       teaching: "Family presence, glasses, hearing aids and familiar voices help recovery. Families need to know recovery can take weeks.",
@@ -453,6 +471,7 @@ export const deliriumOlderAdult: OralCase = {
     {
       id: "del-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits for treatment and delirium care rather than discharging home to an exhausted spouse, with geriatric follow up.",
       points: 3,
       critical: true,

@@ -7,6 +7,13 @@ export const eclampsia: OralCase = {
   title: "Seizure in a pharmacy line",
   blueprint: "obgyn",
   alsoCovers: ["neuro"],
+  priorityTopic: "pre-eclampsia",
+  keyFeatures: [
+    { topic: "pre-eclampsia", n: 2 },
+    { topic: "pre-eclampsia", n: 3 },
+    { topic: "pre-eclampsia", n: 4 },
+    { topic: "seizures", n: 4 },
+  ],
   summary: "A pregnant woman is brought in after a witnessed seizure at a pharmacy.",
   durationMinutes: 15,
   stem:
@@ -379,6 +386,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Diagnoses eclampsia with HELLP syndrome from the seizure, hypertension, proteinuria, low platelets, raised liver enzymes and LDH.",
       points: 2,
       teaching: "A seizure after 20 weeks with hypertension is eclampsia until proven otherwise. Look for HELLP in every case.",
@@ -387,6 +395,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-a2",
       competency: "assessment",
+      criterion: "data",
       text: "States indications for head imaging: focal deficits, prolonged decreased consciousness, atypical timing or seizures despite magnesium.",
       points: 2,
       teaching: "Imaging does not delay magnesium. Atypical features raise concern for hemorrhage, venous thrombosis or PRES.",
@@ -395,6 +404,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Places the fetus on continuous monitoring and recognizes post seizure fetal bradycardia as usually transient.",
       points: 1,
       teaching: "Fetal heart rate usually recovers within minutes of the seizure. Maternal stabilization is the best fetal resuscitation.",
@@ -403,6 +413,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Protects the airway in left lateral position with suction and oxygen during the seizure.",
       points: 1,
       teaching: "Lateral positioning reduces aspiration risk and aortocaval compression.",
@@ -411,6 +422,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives magnesium sulfate 4 g IV over 5 to 15 minutes followed by 1 g/h infusion.",
       points: 3,
       critical: true,
@@ -420,6 +432,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-m2",
       competency: "management",
+      criterion: "plan",
       text: "Treats severe hypertension within the hour with labetalol, oral nifedipine or hydralazine and targets under 160/110.",
       points: 3,
       critical: true,
@@ -429,6 +442,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives betamethasone 12 mg IM, repeated in 24 hours, for a pregnancy under 35 weeks with delivery likely within 7 days.",
       points: 1,
       teaching: "Antenatal corticosteroids reduce neonatal respiratory morbidity when given before 35 weeks.",
@@ -437,6 +451,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-m4",
       competency: "management",
+      criterion: "plan",
       text: "Gives a further 2 g magnesium sulfate IV over 5 minutes for a recurrent seizure.",
       points: 2,
       teaching: "A recurrent seizure on magnesium calls for an extra 2 g bolus, a level and consideration of imaging.",
@@ -445,6 +460,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-m5",
       competency: "management",
+      criterion: "plan",
       text: "Recognizes magnesium toxicity, stops the infusion and gives calcium gluconate 1 g IV.",
       points: 3,
       critical: true,
@@ -454,6 +470,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Contacts the tertiary obstetric and NICU teams early through CritiCall Ontario.",
       points: 1,
       teaching: "Early contact lets the receiving team plan delivery and a NICU bed before the patient arrives.",
@@ -462,6 +479,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains eclampsia to the partner in plain language and addresses fetal wellbeing honestly.",
       points: 1,
       teaching: "Families often fear epilepsy or death. A clear explanation that this is a pregnancy condition helps.",
@@ -470,6 +488,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Considers the patient's consent and privacy before sharing information with her boyfriend.",
       points: 1,
       teaching: "When the patient cannot yet consent, share what is needed for her care and revisit consent when she is alert.",
@@ -478,6 +497,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Transfers to a tertiary centre only after seizures and pressure are controlled, with magnesium running and a skilled escort.",
       points: 2,
       teaching: "Stabilize before transfer. Delivery is definitive but should happen where the mother and preterm baby can both be cared for.",
@@ -486,6 +506,7 @@ export const eclampsia: OralCase = {
     {
       id: "ecl-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Proposes system supports such as an eclampsia kit, order set and regular simulation.",
       points: 1,
       teaching: "Rare events need prepared kits and practised teams. Simulation improves time to magnesium and antihypertensives.",

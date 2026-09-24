@@ -7,6 +7,14 @@ export const varicealHemorrhageRural: OralCase = {
   title: "A basin full of blood at night",
   blueprint: "resus",
   alsoCovers: ["procedures"],
+  priorityTopic: "gi-bleed",
+  keyFeatures: [
+    { topic: "gi-bleed", n: 1 },
+    { topic: "gi-bleed", n: 5 },
+    { topic: "gi-bleed", n: 6 },
+    { topic: "airway", n: 2 },
+    { topic: "ems", n: 3 },
+  ],
   summary: "A 49 year old man with liver disease is vomiting large amounts of blood at a small hospital with no overnight endoscopy.",
   durationMinutes: 15,
   stem:
@@ -363,6 +371,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Establishes large bore access, gives uncrossmatched red cells, activates the massive hemorrhage protocol and avoids large crystalloid volumes.",
       points: 2,
       teaching: "Blood is the resuscitation fluid in hemorrhage. Crystalloid dilutes clotting factors and worsens ascites.",
@@ -371,6 +380,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m1",
       competency: "management",
+      criterion: "plan",
       text: "Starts octreotide 50 mcg IV bolus then 50 mcg/h as soon as a variceal bleed is suspected.",
       points: 3,
       critical: true,
@@ -380,6 +390,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives ceftriaxone 1 g IV every 24 hours.",
       points: 3,
       critical: true,
@@ -389,6 +400,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates for massive hematemesis with falling GCS after resuscitation, using a reduced dose induction, suction ready and pressor at hand.",
       points: 2,
       teaching: "Protect the airway before transfer or balloon tamponade. Resuscitate first to avoid peri intubation collapse.",
@@ -397,6 +409,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m3",
       competency: "management",
+      criterion: "plan",
       text: "Uses a restrictive transfusion threshold of 70 g/L with a target of 70 to 80 g/L once bleeding is controlled.",
       points: 2,
       teaching: "Restrictive transfusion improved survival and lowered rebleeding in upper GI bleeding, most clearly in Child Pugh A and B cirrhosis. Baveno VII sets the target at 70 to 80 g/L.",
@@ -405,6 +418,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m4",
       competency: "management",
+      criterion: "plan",
       text: "Does not correct INR with plasma, replaces fibrinogen under 1.5 g/L and calcium in massive transfusion, and does not give tranexamic acid.",
       points: 2,
       teaching: "INR does not predict bleeding in cirrhosis. HALT IT found tranexamic acid did not reduce death in GI bleeding and raised venous clot risk.",
@@ -413,6 +427,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m5",
       competency: "management",
+      criterion: "plan",
       text: "Gives erythromycin 250 mg IV before endoscopy, lactulose for encephalopathy and IV thiamine.",
       points: 1,
       teaching: "Erythromycin clears the stomach and improves the endoscopic view. Thiamine protects against Wernicke encephalopathy.",
@@ -421,6 +436,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses balloon tamponade as a bridge for uncontrolled variceal bleeding when endoscopy is not available.",
       points: 3,
       critical: true,
@@ -430,6 +446,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-m6",
       competency: "management",
+      criterion: "data",
       text: "Confirms gastric balloon position by X ray after a small test volume before full inflation, and inflates the esophageal balloon only if needed.",
       points: 2,
       teaching: "Inflating the gastric balloon in the esophagus can cause rupture. The gastric balloon with traction is usually enough.",
@@ -438,6 +455,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges transfer through CritiCall to a centre with endoscopy and interventional radiology for TIPS, with a critical care crew and blood.",
       points: 2,
       teaching: "Patients with uncontrolled or high risk variceal bleeding may need rescue TIPS. Send them where it is available.",
@@ -446,6 +464,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover and secures the tamponade tube with scissors at the bedside.",
       points: 1,
       teaching: "A migrated balloon can obstruct the airway. The crew must know how to cut and remove the tube.",
@@ -454,6 +473,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks to the sister honestly about the risk of death and reassures her that the delay is not her fault.",
       points: 1,
       teaching: "Honesty about prognosis and relief of misplaced guilt are both part of good family communication.",
@@ -462,6 +482,7 @@ export const varicealHemorrhageRural: OralCase = {
     {
       id: "vb-p1",
       competency: "professionalism",
+      criterion: "approach",
       text: "Discusses his alcohol use without stigma and acknowledges his recent sobriety.",
       points: 1,
       teaching: "Stigma discourages patients and families from seeking care. Addiction is a treatable illness and deserves the same respect.",

@@ -7,6 +7,8 @@ export const headachesAndACtResult: OralCase = {
   title: "Headaches and a CT result",
   blueprint: "comm",
   alsoCovers: ["neuro", "ethics"],
+  priorityTopic: "headache",
+  keyFeatures: [{ topic: "headache", n: 2 }, { topic: "headache", n: 6 }],
   summary: "A 61 year old man with three weeks of headaches is waiting alone for his CT results when his daughter calls.",
   durationMinutes: 14,
   stem:
@@ -388,6 +390,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-m1",
       competency: "management",
+      criterion: "plan",
       text: "Starts dexamethasone for symptomatic vasogenic edema.",
       points: 2,
       critical: true,
@@ -397,6 +400,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-m2",
       competency: "management",
+      criterion: "plan",
       text: "Avoids seizure prophylaxis without a prior seizure and consults neurosurgery.",
       points: 1,
       teaching: "Guidelines advise against prophylactic antiseizure drugs in brain metastases without seizures. A large lesion with shift needs a surgical opinion.",
@@ -405,6 +409,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Prepares a private setting, hands off the pager and asks who he wants present.",
       points: 1,
       teaching: "Setting is the first step of SPIKES. Interruptions and hallway talks damage trust.",
@@ -413,6 +418,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Does not disclose results to the daughter without his consent.",
       points: 3,
       critical: true,
@@ -422,6 +428,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Responds to the family request with empathy and asks the patient how much he wants to know.",
       points: 2,
       teaching: "Some patients prefer family to receive news. Asking the patient respects both his autonomy and cultural preferences.",
@@ -430,6 +437,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Uses the SPIKES structure with perception, invitation and a warning shot.",
       points: 2,
       teaching: "Asking what he thinks first tells you where to start. A warning shot prepares him.",
@@ -438,6 +446,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c4",
       competency: "communication",
+      criterion: "diagnosis",
       text: "Discloses the concern for cancer honestly in plain language and acknowledges uncertainty.",
       points: 3,
       critical: true,
@@ -447,6 +456,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c5",
       competency: "communication",
+      criterion: "plan",
       text: "Answers the prognosis question honestly without inventing a number and explores his concerns.",
       points: 2,
       teaching: "Prognosis depends on histology and molecular markers. It is better to say 'I do not know yet' than to guess.",
@@ -455,6 +465,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits for expedited work up with neurosurgery and oncology involvement.",
       points: 2,
       teaching: "A motor deficit with edema and shift needs inpatient steroids, MRI and a coordinated diagnostic plan.",
@@ -463,6 +474,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Advises him not to drive and offers social work and spiritual care.",
       points: 1,
       teaching: "Brain lesions with weakness make driving unsafe. Practical supports matter from the first conversation.",
@@ -471,6 +483,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-c6",
       competency: "communication",
+      criterion: "plan",
       text: "Summarizes, checks understanding with teach back and hands over what he knows to the admitting team.",
       points: 1,
       teaching: "Handover of what the patient has been told prevents contradictory messages on the ward.",
@@ -479,6 +492,7 @@ export const headachesAndACtResult: OralCase = {
     {
       id: "bn-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents the disclosure, his information preferences and who may receive information.",
       points: 1,
       teaching: "A clear note of consent to share information protects the patient and guides the next team.",

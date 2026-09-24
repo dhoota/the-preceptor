@@ -7,6 +7,14 @@ export const divingInjuryCottage: OralCase = {
   title: "Dock at the cottage",
   blueprint: "trauma",
   alsoCovers: ["neuro", "resus"],
+  priorityTopic: "multiple-trauma",
+  keyFeatures: [
+    { topic: "multiple-trauma", n: 1 },
+    { topic: "multiple-trauma", n: 8 },
+    { topic: "shock", n: 5 },
+    { topic: "shock", n: 7 },
+    { topic: "airway", n: 4 },
+  ],
   summary: "A 19 year old man is brought in from a lake after a dive with low blood pressure and weakness.",
   durationMinutes: 15,
   stem:
@@ -319,6 +327,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Localizes the injury to about C5 from motor and sensory findings and notes absent sacral sparing.",
       points: 2,
       teaching: "Elbow flexion is C5 and wrist extension is C6. No anal contraction or perianal sensation suggests a complete injury.",
@@ -327,6 +336,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Excludes hemorrhage with eFAST, films and lactate before attributing shock to the cord injury.",
       points: 3,
       critical: true,
@@ -336,6 +346,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses limited fluid then norepinephrine, and treats bradycardia with atropine 1 mg IV.",
       points: 2,
       teaching: "Neurogenic shock needs vasopressor and chronotropic support. More fluid only floods the lungs.",
@@ -344,6 +355,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-m1",
       competency: "management",
+      criterion: "plan",
       text: "Sets a mean arterial pressure target of about 85 to 90 mmHg to protect cord perfusion.",
       points: 2,
       critical: true,
@@ -353,6 +365,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-r2",
       competency: "resuscitation",
+      criterion: "diagnosis",
       text: "Identifies impending respiratory failure from vital capacity, rising PCO2 and weak cough, and intubates early.",
       points: 2,
       critical: true,
@@ -362,6 +375,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates with manual in line stabilization, video laryngoscopy and a pressor running, avoiding neck extension.",
       points: 2,
       teaching: "An unstable cervical injury must not be extended. Plan for peri intubation hypotension and bradycardia.",
@@ -370,6 +384,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-m2",
       competency: "management",
+      criterion: "plan",
       text: "Recognizes vagally mediated bradycardia with suctioning and treats and prevents it with atropine.",
       points: 1,
       teaching: "Loss of cardiac sympathetic output above T1 to T4 leaves vagal reflexes unopposed. Pretreat before suctioning.",
@@ -378,6 +393,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-m3",
       competency: "management",
+      criterion: "plan",
       text: "Does not give routine or 48 hour methylprednisolone and defers any steroid decision to the spine surgeon.",
       points: 2,
       teaching: "The AANS and CNS guideline recommends against steroids. AO Spine allows a 24 hour course within 8 hours only as a weak option.",
@@ -386,6 +402,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Consults the spine service early with a clear exam, imaging and timeline.",
       points: 1,
       teaching: "Documenting the neuro exam with times lets the spine team track change.",
@@ -394,6 +411,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges urgent transfer through CritiCall aiming for decompression within 24 hours of injury.",
       points: 2,
       teaching: "The 2024 AO Spine update recommends offering decompression within 24 hours of injury because it is linked to better neurological recovery.",
@@ -402,6 +420,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-m4",
       competency: "management",
+      criterion: "plan",
       text: "Prepares for transport with a vacuum mattress, Foley, nasogastric tube, warming and pressure point care.",
       points: 1,
       teaching: "Pressure injuries start within hours on a hard board. Poikilothermia makes hypothermia common.",
@@ -410,6 +429,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Coordinates the team so imaging, airway and transfer planning run in parallel.",
       points: 1,
       teaching: "In a small hospital, the one physician must delegate tasks to keep time to decompression short.",
@@ -418,6 +438,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives honest, hopeful uncertainty about recovery to the patient and his parents.",
       points: 1,
       teaching: "Early prognosis is unreliable. Say what is known, what is not, and when more will be known.",
@@ -426,6 +447,7 @@ export const divingInjuryCottage: OralCase = {
     {
       id: "sc-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Answers the patient honestly while he is awake, uses his parents as substitute decision makers only while he is sedated, and plans to update him directly.",
       points: 1,
       teaching: "An adult who can take part is the decision maker for his own care. Parents step in under the Health Care Consent Act only while he is incapable.",

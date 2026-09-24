@@ -7,6 +7,8 @@ export const interpreterConsentReduction: OralCase = {
   title: "A fall on the stairs and a grandson",
   blueprint: "comm",
   alsoCovers: ["ethics", "procedures"],
+  priorityTopic: "msk",
+  keyFeatures: [{ topic: "msk", n: 5 }, { topic: "msk", n: 7 }, { topic: "analgesia-sedation", n: 3 }, { topic: "analgesia-sedation", n: 5 }],
   summary: "A 63 year old woman who speaks only Tamil needs an urgent procedure. Her teenage grandson is the only one who speaks English.",
   durationMinutes: 15,
   stem:
@@ -377,6 +379,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes a limb threatening fracture dislocation with vascular compromise and skin at risk.",
       points: 2,
       teaching: "A dusky foot with tented skin needs reduction within minutes to hours. Urgency shapes the consent approach.",
@@ -385,6 +388,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Assesses capacity through the interpreter. Understands the information and appreciates the consequences.",
       points: 2,
       teaching: "Capacity in Ontario means able to understand the relevant information and appreciate the foreseeable consequences of a decision. A language barrier is not incapacity.",
@@ -393,6 +397,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Repeats the neurovascular exam and imaging after reduction.",
       points: 1,
       teaching: "Confirm the pulse, capillary refill and joint position after every reduction. Document them.",
@@ -401,6 +406,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives IV analgesia promptly while arranging an interpreter.",
       points: 1,
       teaching: "A language barrier should never delay pain relief. Fentanyl about 1 mcg/kg IV is a reasonable start.",
@@ -409,6 +415,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-m2",
       competency: "management",
+      criterion: "plan",
       text: "Offers realistic alternatives such as reduction under analgesia or a block, or operative reduction.",
       points: 1,
       teaching: "Alternatives are a required part of informed consent. Name them even when one option is clearly best.",
@@ -417,6 +424,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-m3",
       competency: "management",
+      criterion: "plan",
       text: "Plans safe sedation and does not delay a limb threatening reduction for fasting time.",
       points: 2,
       teaching: "Recent food intake is not a reason to delay urgent procedural sedation. Choose the lightest effective depth and be ready to manage the airway.",
@@ -425,6 +433,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Requests a professional interpreter immediately and limits the grandson to simple immediate facts.",
       points: 3,
       critical: true,
@@ -434,6 +443,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Briefs the interpreter and speaks directly to the patient in short first person sentences.",
       points: 2,
       teaching: "A short pre brief sets the purpose and asks for verbatim interpretation. Talk to the patient, not about her.",
@@ -442,6 +452,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Uses teach back to confirm understanding.",
       points: 1,
       teaching: "Ask the patient to explain the plan in her own words. Nodding is not understanding.",
@@ -450,6 +461,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Keeps the professional interpreter for consent rather than switching to a family member.",
       points: 2,
       teaching: "Family members filter information, most of all when they hold a view on the decision.",
@@ -458,6 +470,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Does not accept consent from a relative for a capable patient and asks the patient how she wants information shared.",
       points: 3,
       critical: true,
@@ -467,6 +480,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Covers the Health Care Consent Act elements. Nature, benefits, material risks, side effects, alternatives and consequences of no treatment, with answers to her questions.",
       points: 3,
       critical: true,
@@ -476,6 +490,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "States the emergency treatment provision for a language barrier and its conditions.",
       points: 2,
       teaching: "Section 25 allows emergency treatment of an apparently capable person when a language barrier blocks consent, reasonable steps have failed and delay risks serious harm.",
@@ -484,6 +499,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Documents the emergency, the attempts to find an interpreter and the reasons for proceeding when the emergency provision is used.",
       points: 1,
       teaching: "The chart must show why treatment could not wait and what was tried. Continue efforts to communicate.",
@@ -492,6 +508,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Documents the interpreter's name or ID and flags the chart for interpreter needs in future encounters.",
       points: 1,
       teaching: "Recording the interpreter supports the validity of consent. A chart flag protects the next team.",
@@ -500,6 +517,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges orthopedic follow up or admission for fixation of the unstable fracture.",
       points: 1,
       teaching: "A trimalleolar fracture dislocation is unstable and usually needs operative fixation.",
@@ -508,6 +526,7 @@ export const interpreterConsentReduction: OralCase = {
     {
       id: "ic-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Gives discharge or admission information through the interpreter with written instructions in her language where available.",
       points: 1,
       teaching: "Understanding at the end of the visit matters as much as at consent. Return precautions must be understood.",

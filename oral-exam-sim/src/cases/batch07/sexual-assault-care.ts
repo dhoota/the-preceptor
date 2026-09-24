@@ -7,6 +7,15 @@ export const sexualAssaultCare: OralCase = {
   title: "A request for the morning after pill",
   blueprint: "obgyn",
   alsoCovers: ["ethics", "comm"],
+  priorityTopic: "abuse-domestic",
+  keyFeatures: [
+    { topic: "abuse-domestic", n: 3 },
+    { topic: "abuse-domestic", n: 4 },
+    { topic: "abuse-domestic", n: 5 },
+    { topic: "abuse-domestic", n: 6 },
+    { topic: "infectious-diseases", n: 10 },
+    { topic: "suicide-risk", n: 1 },
+  ],
   summary: "A young woman asks for emergency contraception and says she does not want to talk about what happened.",
   durationMinutes: 14,
   stem:
@@ -375,6 +384,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Screens for injuries first, including strangulation, head injury and intoxication.",
       points: 2,
       teaching: "Medical stability comes before forensic care. Ask directly about strangulation because patients may not volunteer it.",
@@ -383,6 +393,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes non fatal strangulation with loss of consciousness, petechiae and voice change as high risk.",
       points: 2,
       teaching: "Strangulation can cause arterial dissection and delayed airway swelling even with minimal external marks.",
@@ -391,6 +402,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Screens for suicidal thoughts and ongoing safety before discharge.",
       points: 1,
       teaching: "Sexual assault raises the risk of depression, PTSD and suicide. Ask directly and plan where she will stay.",
@@ -399,6 +411,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-m1",
       competency: "management",
+      criterion: "data",
       text: "Orders CT angiography of the head and neck after strangulation with loss of consciousness.",
       points: 3,
       critical: true,
@@ -408,6 +421,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-m2",
       competency: "management",
+      criterion: "plan",
       text: "Offers a copper IUD and ulipristal 30 mg PO as emergency contraception within 120 hours.",
       points: 3,
       critical: true,
@@ -417,6 +431,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-m3",
       competency: "management",
+      criterion: "plan",
       text: "Offers gonorrhea, chlamydia and trichomonas prophylaxis, for example ceftriaxone 500 mg IM and doxycycline 100 mg twice daily for 7 days.",
       points: 2,
       teaching: "Canadian guidance now recommends ceftriaxone 500 mg IM for gonorrhea. Add chlamydia coverage if it has not been excluded.",
@@ -425,6 +440,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-m4",
       competency: "management",
+      criterion: "plan",
       text: "Offers HIV post exposure prophylaxis within 72 hours with a three drug regimen for 28 days and baseline testing.",
       points: 2,
       teaching: "PEP works best when started early and no later than 72 hours. Give a starter pack and arrange follow up.",
@@ -433,6 +449,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Uses a trauma informed approach: privacy, explanation, permission and control over each step.",
       points: 2,
       teaching: "Giving the patient choices at every step counters the loss of control that defines an assault.",
@@ -441,6 +458,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the evidence kit clearly, including the time window of about 12 days and the option of storage without a police report.",
       points: 2,
       teaching: "Patients can have evidence collected and stored while they decide. Care does not depend on reporting.",
@@ -449,6 +467,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Responds to the police officer politely, offers to pass on a message and documents the request.",
       points: 1,
       teaching: "You can be helpful without disclosing. Ask the patient if she wants to meet the officer.",
@@ -457,6 +476,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Documents objectively with her words in quotes, a body diagram and no legal conclusions.",
       points: 1,
       teaching: "Clinical notes may be used in court. Describe what you saw and heard. Do not state whether an assault occurred.",
@@ -465,6 +485,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Offers the sexual assault nurse examiner and treatment centre services without pressure.",
       points: 1,
       teaching: "Specialized centres provide medical, forensic and counselling care. Offer them as options.",
@@ -473,6 +494,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "States that there is no mandatory reporting of sexual assault of a capable adult in Ontario.",
       points: 2,
       teaching: "Reporting duties exist for a child in need of protection, not for a capable adult. The decision to report is hers.",
@@ -481,6 +503,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Refuses to disclose health information to police without consent, a warrant or a court order.",
       points: 3,
       critical: true,
@@ -490,6 +513,7 @@ export const sexualAssaultCare: OralCase = {
     {
       id: "sa-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges follow up at the treatment centre with repeat testing, PEP review, return precautions and crisis resources.",
       points: 2,
       teaching: "Follow up covers PEP adherence, repeat HIV and syphilis testing, pregnancy testing and mental health support.",

@@ -7,6 +7,14 @@ export const severeAgitationSedation: OralCase = {
   title: "A man held down by police",
   blueprint: "psych",
   alsoCovers: ["tox", "ethics"],
+  priorityTopic: "delirium-agitation",
+  keyFeatures: [
+    { topic: "delirium-agitation", n: 2 },
+    { topic: "delirium-agitation", n: 3 },
+    { topic: "delirium-agitation", n: 4 },
+    { topic: "environmental", n: 2 },
+    { topic: "airway", n: 5 },
+  ],
   summary: "Police bring a young man who is shouting and fighting to the emergency department after he ran through traffic.",
   durationMinutes: 14,
   stem:
@@ -382,6 +390,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Ends prone restraint immediately and positions him supine or lateral.",
       points: 3,
       critical: true,
@@ -391,6 +400,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates with rocuronium rather than succinylcholine and sets a high minute ventilation.",
       points: 2,
       teaching: "Succinylcholine raises potassium and is dangerous in rhabdomyolysis. Match his own minute ventilation to avoid worsening acidosis.",
@@ -399,6 +409,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Takes charge, assigns roles and uses a coordinated team for restraint and sedation.",
       points: 2,
       teaching: "A clear leader, one person per limb and one voice make restraint faster and safer for everyone.",
@@ -407,6 +418,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Attempts brief verbal de-escalation with one calm voice while preparing sedation.",
       points: 1,
       teaching: "De-escalation is always the first step. When a patient cannot engage, it runs alongside, not instead of, sedation.",
@@ -415,6 +427,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-m1",
       competency: "management",
+      criterion: "plan",
       text: "Chooses a fast IM agent at the right dose: ketamine 4 to 5 mg/kg IM or midazolam 5 to 10 mg IM.",
       points: 3,
       critical: true,
@@ -424,6 +437,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-m2",
       competency: "management",
+      criterion: "plan",
       text: "Keeps continuous SpO2 and capnography monitoring with a nurse at the bedside after sedation.",
       points: 2,
       critical: true,
@@ -433,6 +447,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Measures glucose and core temperature once the patient is safe.",
       points: 1,
       teaching: "Hypoglycemia and hyperthermia are fast killers. Tympanic readings underestimate core temperature.",
@@ -441,6 +456,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Considers medical causes including head injury, CNS infection, serotonin toxicity, NMS, thyroid storm and withdrawal.",
       points: 2,
       teaching: "Agitation is a symptom. Look for a medical cause before calling it psychiatric or drug related.",
@@ -449,6 +465,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-m3",
       competency: "management",
+      criterion: "plan",
       text: "Starts active evaporative or ice cooling to about 38.5 to 39 and gives more benzodiazepine, not antipyretics.",
       points: 3,
       teaching: "Toxic hyperthermia comes from muscle activity, not a raised set point. Acetaminophen does not help.",
@@ -457,6 +474,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-m4",
       competency: "management",
+      criterion: "plan",
       text: "Treats rhabdomyolysis with isotonic fluid aiming for a urine output of about 200 to 300 mL/h and watches potassium.",
       points: 2,
       teaching: "Early fluid protects the kidneys from myoglobin. Check potassium often since it can rise quickly.",
@@ -465,6 +483,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Explains that emergency treatment without consent is allowed when an incapable patient faces serious harm.",
       points: 2,
       teaching: "The Health Care Consent Act allows emergency treatment without consent and preserves the common law duty to restrain. A police apprehension alone does not authorize treatment.",
@@ -473,6 +492,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Uses the least restrictive restraint, removes it as soon as safe, and documents the reasons and monitoring.",
       points: 1,
       teaching: "Restraint is a last resort. Good documentation shows why less restrictive options were not enough.",
@@ -481,6 +501,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits him to the ICU and plans psychiatric assessment and a Form 1 decision once medically stable.",
       points: 1,
       teaching: "Medical stabilization comes first. The Mental Health Act assessment follows once he can be examined.",
@@ -489,6 +510,7 @@ export const severeAgitationSedation: OralCase = {
     {
       id: "ag-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Arranges care for the injured staff member and a brief team debrief.",
       points: 1,
       teaching: "Violent events hurt staff physically and emotionally. A short debrief improves safety and learning.",

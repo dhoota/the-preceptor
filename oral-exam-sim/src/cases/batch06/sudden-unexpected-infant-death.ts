@@ -7,6 +7,8 @@ export const suddenUnexpectedInfantDeath: OralCase = {
   title: "An infant brought in at dawn",
   blueprint: "comm",
   alsoCovers: ["peds"],
+  priorityTopic: "abuse-domestic",
+  keyFeatures: [{ topic: "abuse-domestic", n: 3 }, { topic: "abuse-domestic", n: 4 }],
   summary: "Paramedics bring in a 3 month old with CPR in progress. The parents are on their way.",
   durationMinutes: 15,
   stem:
@@ -329,6 +331,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Runs a brief complete ALS resuscitation with weight based epinephrine, glucose correction and POCUS for cardiac motion.",
       points: 2,
       teaching: "A short, complete ED resuscitation confirms the situation and lets you tell the family honestly that everything was done.",
@@ -337,6 +340,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-l1",
       competency: "leadership",
+      criterion: "data",
       text: "Makes a clear team decision to stop based on an unwitnessed arrest, persistent asystole, duration and signs of death.",
       points: 2,
       teaching: "No single factor decides when to stop in children. Persistent asystole after prolonged CPR with lividity predicts no survival.",
@@ -345,6 +349,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Prepares the setting, sits down, uses the baby's name, gives a warning shot and says died clearly.",
       points: 3,
       critical: true,
@@ -354,6 +359,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Allows silence and does not speculate about the cause or ask blaming questions at the time of disclosure.",
       points: 2,
       teaching: "Families remember the first words for years. Questions about the sleep setting can wait until after the news has been received.",
@@ -362,6 +368,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Notifies the coroner of a sudden and unexpected death and does not complete a death certificate.",
       points: 3,
       critical: true,
@@ -371,6 +378,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Leaves airway devices, IO and lines in place and documents the resuscitation and external exam.",
       points: 2,
       teaching: "Leaving equipment in place lets the pathologist separate resuscitation marks from injury. Cover it rather than remove it.",
@@ -379,6 +387,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Prepares the parents to hold their baby, offers spiritual care and memory making, and asks about the sibling.",
       points: 2,
       teaching: "Holding the baby and keeping mementos help families grieve. Ask the coroner what is permitted before offering.",
@@ -387,6 +396,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Explains that police and coroner involvement is routine and not an accusation, and advocates for the family's time with the baby.",
       points: 2,
       teaching: "Parents often hear the investigation as blame. A clear explanation lowers conflict and supports cooperation.",
@@ -395,6 +405,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Takes a non judgmental history of sleep position, surface, bed sharing, recent illness, feeding and substances.",
       points: 2,
       teaching: "The history helps the coroner separate unsafe sleep, infection, metabolic disease and injury. Record the parents' words.",
@@ -403,6 +414,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Explains the autopsy and coroner process and ensures safe travel home and support for the family.",
       points: 2,
       teaching: "Families should leave knowing who will contact them and when. Nobody should drive home alone after this news.",
@@ -411,6 +423,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-c5",
       competency: "communication",
+      criterion: "plan",
       text: "Addresses lactation, informs the family physician with consent, provides bereavement resources and defers safe sleep teaching to a later time.",
       points: 1,
       teaching: "A breastfeeding mother needs practical advice. Safe sleep information matters for future children but should be offered later and gently.",
@@ -419,6 +432,7 @@ export const suddenUnexpectedInfantDeath: OralCase = {
     {
       id: "sd-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Checks on distressed staff, leads a debrief and offers support resources.",
       points: 2,
       teaching: "Pediatric deaths affect staff deeply. Leaders should notice distress and make time for a debrief.",

@@ -7,6 +7,13 @@ export const trenchCollapseCrush: OralCase = {
   title: "Trapped in a trench",
   blueprint: "trauma",
   alsoCovers: ["resus"],
+  priorityTopic: "multiple-trauma",
+  keyFeatures: [
+    { topic: "multiple-trauma", n: 2 },
+    { topic: "multiple-trauma", n: 7 },
+    { topic: "msk", n: 7 },
+    { topic: "arrhythmia", n: 2 },
+  ],
   summary: "A 48 year old construction worker arrives after being trapped for hours when a trench wall collapsed on him.",
   durationMinutes: 15,
   stem:
@@ -324,6 +331,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Anticipates crush syndrome from prolonged entrapment: rhabdomyolysis, hyperkalemia, acidosis and kidney injury.",
       points: 2,
       teaching: "Release of a crushed limb floods the circulation with potassium, myoglobin and acid. The danger often starts after rescue.",
@@ -332,6 +340,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Prioritizes the hyperkalemic ECG while delegating the primary survey, access and monitoring.",
       points: 1,
       teaching: "Assign tasks in parallel. The ECG is the most urgent finding.",
@@ -340,6 +349,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives calcium chloride 1 g IV or calcium gluconate 3 g IV first for hyperkalemia with a wide QRS.",
       points: 3,
       critical: true,
@@ -349,6 +359,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-m1",
       competency: "management",
+      criterion: "plan",
       text: "Shifts potassium with insulin 10 units IV and 25 g dextrose plus nebulized salbutamol 10 to 20 mg, and monitors glucose.",
       points: 2,
       teaching: "Insulin and beta agonists act within 15 to 30 minutes. Hypoglycemia is common in kidney injury, so consider 5 units of insulin or a follow on dextrose infusion and check glucose hourly.",
@@ -357,6 +368,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives early high volume crystalloid targeting urine output of 200 to 300 mL/h.",
       points: 3,
       critical: true,
@@ -366,6 +378,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-a2",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Diagnoses compartment syndrome clinically and uses a delta pressure under 30 mmHg to confirm when needed.",
       points: 2,
       teaching: "Pain with passive stretch is early. Pulses are usually present. Delta pressure is diastolic pressure minus compartment pressure.",
@@ -374,6 +387,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-m3",
       competency: "management",
+      criterion: "plan",
       text: "Calls orthopedics for urgent fasciotomy and keeps the limb at heart level.",
       points: 3,
       critical: true,
@@ -383,6 +397,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-m4",
       competency: "management",
+      criterion: "data",
       text: "Avoids treating asymptomatic hypocalcemia and monitors electrolytes every 2 hours.",
       points: 1,
       teaching: "Calcium given in rhabdomyolysis can deposit in muscle and cause rebound hypercalcemia in recovery.",
@@ -391,6 +406,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Recognizes oliguric kidney injury with fluid overload and stops aggressive fluids.",
       points: 2,
       teaching: "Fluid helps before the kidney fails. After that it causes pulmonary edema.",
@@ -399,6 +415,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges urgent dialysis with nephrology and admits to ICU.",
       points: 2,
       teaching: "Refractory hyperkalemia, volume overload, severe acidosis and oliguria are indications for dialysis.",
@@ -407,6 +424,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover with crush time, treatments with times and fluid balance.",
       points: 1,
       teaching: "Fluid in and out and the potassium trend guide the ICU plan.",
@@ -415,6 +433,7 @@ export const trenchCollapseCrush: OralCase = {
     {
       id: "cr-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Completes the WSIB report for a workplace injury and gives tetanus prophylaxis.",
       points: 1,
       teaching: "In Ontario, treating health professionals report workplace injuries to the WSIB.",

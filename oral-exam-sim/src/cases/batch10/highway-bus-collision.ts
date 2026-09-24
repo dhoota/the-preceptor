@@ -7,6 +7,8 @@ export const highwayBusCollision: OralCase = {
   title: "A call from the highway on a winter afternoon",
   blueprint: "systems",
   alsoCovers: ["trauma", "peds"],
+  priorityTopic: "multiple-patients",
+  keyFeatures: [{ topic: "multiple-patients", n: 1 }, { topic: "multiple-patients", n: 3 }, { topic: "multiple-patients", n: 4 }, { topic: "multiple-trauma", n: 1 }, { topic: "multiple-trauma", n: 2 }],
   summary: "Paramedics warn of many injured adults and children heading to a regional hospital that is not a trauma centre.",
   durationMinutes: 15,
   stem:
@@ -417,6 +419,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Activates the hospital external disaster plan early and stays in the department as medical lead.",
       points: 3,
       critical: true,
@@ -426,6 +429,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Creates capacity by discharging, moving admitted patients and holding the operating rooms.",
       points: 2,
       teaching: "Surge capacity comes from clearing current patients as much as from calling in staff.",
@@ -434,6 +438,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-l3",
       competency: "leadership",
+      criterion: "plan",
       text: "Sets up a single triage entry point, treatment zones with named leads and incident management roles.",
       points: 2,
       teaching: "A clear structure with defined roles prevents freelancing. Incident management uses a single chain of command.",
@@ -442,6 +447,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-l4",
       competency: "leadership",
+      criterion: "plan",
       text: "Stands down deliberately, restores the department and contributes to an after action review.",
       points: 1,
       teaching: "Recovery is a planned phase. The after action review is how the plan gets better.",
@@ -450,6 +456,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Applies START correctly to adults, including the respiratory rate over 30 and apnea after repositioning rules.",
       points: 2,
       teaching: "START sorts by walking, breathing, perfusion and mental status. It takes under a minute per patient.",
@@ -458,6 +465,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Applies JumpSTART to children, including respiratory rate under 15 or over 45 and 5 rescue breaths for an apneic child with a pulse.",
       points: 3,
       critical: true,
@@ -467,6 +475,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Re triages self presenting and walking patients and recognizes the shocked child with a seat belt sign.",
       points: 2,
       teaching: "Triage is dynamic. Walking wounded after a high energy crash can hide serious abdominal injury.",
@@ -475,6 +484,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-m1",
       competency: "management",
+      criterion: "plan",
       text: "Sends the unstable bleeding patient to the operating room rather than to CT or a long transfer.",
       points: 3,
       critical: true,
@@ -484,6 +494,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-m2",
       competency: "management",
+      criterion: "plan",
       text: "Decompresses the chest of the patient with tension physiology before imaging.",
       points: 1,
       teaching: "Tension pneumothorax is a clinical diagnosis. Decompress first, image later.",
@@ -492,6 +503,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-m3",
       competency: "management",
+      criterion: "plan",
       text: "Conserves O negative blood for children and females of childbearing potential and asks for resupply early.",
       points: 2,
       teaching: "O positive is safe for adult males and older women in an emergency. O negative is the scarcest resource in a mass casualty incident.",
@@ -500,6 +512,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Contacts CritiCall early to arrange trauma and pediatric trauma centre capacity.",
       points: 1,
       teaching: "Early notice lets receiving centres prepare and lets transport be matched to the sickest patients.",
@@ -508,6 +521,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Uses the single available aircraft for the patient who needs a service only the trauma centre can provide.",
       points: 2,
       teaching: "Match scarce transport to the need that cannot be met locally. Here that is pediatric neurosurgery.",
@@ -516,6 +530,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Opens a staffed family reception and reunification area away from treatment zones.",
       points: 1,
       teaching: "Parents arriving in numbers need a place, a person and accurate information. It keeps treatment areas clear.",
@@ -524,6 +539,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Refers media to hospital communications and gives no patient information.",
       points: 1,
       teaching: "Only the designated spokesperson speaks to media. Patient privacy still applies in a disaster.",
@@ -532,6 +548,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Does not start CPR on an adult who stays apneic after airway repositioning during a mass casualty incident.",
       points: 2,
       teaching: "Mass casualty triage aims for the greatest good for the greatest number. Resources go to salvageable patients first.",
@@ -540,6 +557,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Matches families to children using the registration system and gives updates in private.",
       points: 1,
       teaching: "Misidentification of children is a known disaster risk. MCI numbers link each child to the right family.",
@@ -548,6 +566,7 @@ export const highwayBusCollision: OralCase = {
     {
       id: "mc-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Runs a hot debrief and arranges psychological support for staff.",
       points: 1,
       teaching: "Pediatric mass casualty events are hard on staff. Early support and follow up reduce lasting distress.",

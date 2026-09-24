@@ -7,6 +7,15 @@ export const overdose: OralCase = {
   title: "A drowsy woman found at home",
   blueprint: "tox",
   alsoCovers: ["psych", "resus"],
+  priorityTopic: "tox",
+  keyFeatures: [
+    { topic: "tox", n: 1 },
+    { topic: "tox", n: 3 },
+    { topic: "tox", n: 4 },
+    { topic: "tox", n: 5 },
+    { topic: "tox", n: 7 },
+    { topic: "suicide-risk", n: 3 },
+  ],
   summary: "A 34 year old woman brought in by ambulance after her partner found her drowsy with empty pill packages.",
   durationMinutes: 15,
   stem:
@@ -345,6 +354,7 @@ export const overdose: OralCase = {
     {
       id: "od-r1",
       competency: "assessment",
+      criterion: "data",
       text: "Identifies QRS over 100 ms and terminal R in aVR over 3 mm as signs of sodium channel blockade.",
       points: 2,
       teaching: "In tricyclic toxicity, QRS width predicts seizures and dysrhythmias better than the drug level does.",
@@ -353,6 +363,7 @@ export const overdose: OralCase = {
     {
       id: "od-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives sodium bicarbonate 1 to 2 mEq/kg IV bolus (60 to 120 mEq), repeated to a QRS under 100 ms with the pH kept at 7.55 or lower.",
       points: 3,
       critical: true,
@@ -362,6 +373,7 @@ export const overdose: OralCase = {
     {
       id: "od-r3",
       competency: "management",
+      criterion: "plan",
       text: "Starts a bicarbonate infusion, e.g. 150 mEq in 1 L D5W at 150 to 250 mL/h, and monitors potassium, sodium and pH.",
       points: 1,
       teaching: "Alkalinization drives potassium into cells. Check electrolytes and gas often and replace potassium.",
@@ -370,6 +382,7 @@ export const overdose: OralCase = {
     {
       id: "od-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats hypotension with fluid, more bicarbonate and norepinephrine, and knows lipid emulsion and ECMO are rescue options.",
       points: 2,
       teaching: "Refractory tricyclic shock may respond to lipid emulsion or need ECMO. Involve the poison centre early.",
@@ -378,6 +391,7 @@ export const overdose: OralCase = {
     {
       id: "od-s1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Treats the seizure with a benzodiazepine, e.g. lorazepam 2 to 4 mg IV or midazolam 5 mg IV, and avoids phenytoin.",
       points: 3,
       critical: true,
@@ -387,6 +401,7 @@ export const overdose: OralCase = {
     {
       id: "od-s2",
       competency: "management",
+      criterion: "plan",
       text: "Gives additional bicarbonate after the seizure because acidosis worsens toxicity.",
       points: 1,
       teaching: "Seizures cause lactic acidosis. A lower pH increases free tricyclic and widens the QRS.",
@@ -395,6 +410,7 @@ export const overdose: OralCase = {
     {
       id: "od-s3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives a bicarbonate bolus before induction and minimizes apnea time.",
       points: 2,
       teaching: "During apnea the pCO2 rises and pH falls. A pre induction bolus buys protection.",
@@ -403,6 +419,7 @@ export const overdose: OralCase = {
     {
       id: "od-s4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Uses reduced dose induction in hypotension, e.g. ketamine 0.5 to 1 mg/kg, with rocuronium 1.2 to 1.5 mg/kg.",
       points: 1,
       teaching: "A hypotensive patient needs less induction agent. Full dose paralysis gives the best first pass conditions.",
@@ -411,6 +428,7 @@ export const overdose: OralCase = {
     {
       id: "od-s5",
       competency: "management",
+      criterion: "plan",
       text: "Sets a high respiratory rate after intubation to avoid respiratory acidosis and targets pH 7.50 to 7.55.",
       points: 2,
       teaching: "The ventilator must match the patient's own high minute ventilation. Check a gas soon after.",
@@ -419,6 +437,7 @@ export const overdose: OralCase = {
     {
       id: "od-t1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Estimates the amitriptyline dose per kg and recognizes it as severe.",
       points: 1,
       teaching: "Tricyclic ingestions over about 10 mg/kg can be life threatening.",
@@ -427,6 +446,7 @@ export const overdose: OralCase = {
     {
       id: "od-t2",
       competency: "assessment",
+      criterion: "data",
       text: "Sends acetaminophen, salicylate, ethanol, pregnancy test and electrolytes.",
       points: 1,
       teaching: "Every intentional overdose needs an acetaminophen level. Co ingestions are common and often silent early.",
@@ -435,6 +455,7 @@ export const overdose: OralCase = {
     {
       id: "od-t3",
       competency: "management",
+      criterion: "plan",
       text: "Starts acetylcysteine for a detectable acetaminophen level with an unknown time of ingestion.",
       points: 3,
       critical: true,
@@ -444,6 +465,7 @@ export const overdose: OralCase = {
     {
       id: "od-t4",
       competency: "management",
+      criterion: "plan",
       text: "States a correct acetylcysteine regimen, e.g. 200 mg/kg over 4 hours then 100 mg/kg over 16 hours, or the local poison centre regimen.",
       points: 2,
       teaching: "Know one regimen well. Regimens differ between provincial poison centres. Recheck the acetaminophen level, liver tests and INR before stopping the infusion.",
@@ -452,6 +474,7 @@ export const overdose: OralCase = {
     {
       id: "od-t5",
       competency: "management",
+      criterion: "plan",
       text: "Gives activated charcoal only if the airway is protected and after discussion with the poison centre.",
       points: 1,
       teaching: "Charcoal in a drowsy patient who is about to seize risks aspiration. Protect the airway first.",
@@ -460,6 +483,7 @@ export const overdose: OralCase = {
     {
       id: "od-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Calls the Ontario Poison Centre early.",
       points: 1,
       teaching: "The poison centre gives real time advice on targets, rescue therapies and co ingestions.",
@@ -468,6 +492,7 @@ export const overdose: OralCase = {
     {
       id: "od-c2",
       competency: "communication",
+      criterion: "approach",
       text: "Obtains collateral from the partner including the note and prior attempt.",
       points: 1,
       teaching: "Collateral shapes both the medical plan and the later suicide risk assessment.",
@@ -476,6 +501,7 @@ export const overdose: OralCase = {
     {
       id: "od-c3",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU with a clear handover of bicarbonate targets and acetylcysteine timing.",
       points: 1,
       teaching: "State the QRS and pH targets and the start time of each acetylcysteine bag.",
@@ -484,6 +510,7 @@ export const overdose: OralCase = {
     {
       id: "od-m1",
       competency: "assessment",
+      criterion: "approach",
       text: "Performs a structured suicide risk assessment including intent, plan, note, prior attempt and supports.",
       points: 2,
       teaching: "A calm patient after a serious attempt can still be at high risk. Ask directly about intent.",
@@ -492,6 +519,7 @@ export const overdose: OralCase = {
     {
       id: "od-m2",
       competency: "disposition",
+      criterion: "plan",
       text: "Does not let her leave and uses a Form 1 under the Ontario Mental Health Act when criteria are met.",
       points: 3,
       critical: true,
@@ -501,6 +529,7 @@ export const overdose: OralCase = {
     {
       id: "od-m3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Knows a Form 1 allows detention up to 72 hours for psychiatric assessment and requires an exam within the past 7 days.",
       points: 1,
       teaching: "The form must be completed by a physician who personally examined the patient in the past 7 days.",
@@ -509,6 +538,7 @@ export const overdose: OralCase = {
     {
       id: "od-m4",
       competency: "professionalism",
+      criterion: "plan",
       text: "Gives her a Form 42 and explains her rights.",
       points: 1,
       teaching: "Form 42 tells the patient why she is held and that she can speak to a lawyer.",
@@ -517,6 +547,7 @@ export const overdose: OralCase = {
     {
       id: "od-m5",
       competency: "disposition",
+      criterion: "plan",
       text: "Uses the least restrictive measures, arranges close observation, and removes means of self harm.",
       points: 1,
       teaching: "Start with talking and observation. Use restraint only when needed for safety.",

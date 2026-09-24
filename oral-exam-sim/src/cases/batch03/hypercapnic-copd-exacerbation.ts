@@ -7,6 +7,13 @@ export const hypercapnicCopdExacerbation: OralCase = {
   title: "Drowsy man on a non rebreather",
   blueprint: "resp",
   alsoCovers: ["ethics"],
+  priorityTopic: "asthma-copd",
+  keyFeatures: [
+    { topic: "asthma-copd", n: 3 },
+    { topic: "asthma-copd", n: 4 },
+    { topic: "asthma-copd", n: 6 },
+    { topic: "asthma-copd", n: 7 },
+  ],
   summary: "A 71 year old man with a chronic lung condition arrives drowsy after three days of worsening cough.",
   durationMinutes: 14,
   stem:
@@ -358,6 +365,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-a1",
       competency: "assessment",
+      criterion: "approach",
       text: "Recognizes that a high SpO2 on high flow oxygen in a drowsy COPD patient signals risk of oxygen induced hypercapnia.",
       points: 2,
       teaching: "Excess oxygen worsens CO2 retention in COPD. Drowsiness in this setting is CO2 narcosis until proven otherwise.",
@@ -366,6 +374,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-m1",
       competency: "management",
+      criterion: "plan",
       text: "Titrates oxygen to a target SpO2 of 88 to 92 percent with controlled delivery and does not stop oxygen abruptly.",
       points: 3,
       critical: true,
@@ -375,6 +384,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Interprets the gas as acute on chronic respiratory acidosis and uses the baseline pCO2 to set expectations.",
       points: 2,
       teaching: "A high bicarbonate means chronic retention. Aim to return him to his own baseline, not to normal numbers.",
@@ -383,6 +393,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-a3",
       competency: "assessment",
+      criterion: "approach",
       text: "Seeks triggers and mimics including pneumonia, pneumothorax, PE, heart failure, ACS and sedating drugs.",
       points: 2,
       teaching: "Exacerbations have causes. Pneumothorax must be excluded before NIV, especially with bullae.",
@@ -391,6 +402,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives short acting bronchodilators, salbutamol with ipratropium, by air driven nebulizer or in line MDI.",
       points: 1,
       teaching: "Oxygen driven nebulizers can raise CO2 in retainers. Drive with air and give oxygen separately by prongs.",
@@ -399,6 +411,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives prednisone 40 mg daily for 5 days or an IV equivalent.",
       points: 1,
       teaching: "A 5 day course works as well as 14 days for COPD exacerbations. It shortens recovery and lowers treatment failure.",
@@ -407,6 +420,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-m4",
       competency: "management",
+      criterion: "plan",
       text: "Gives antibiotics for purulent sputum or need for ventilatory support, with an appropriate agent and dose.",
       points: 1,
       teaching: "Increased sputum purulence and the need for NIV are the main indications. Pick an agent that covers H. influenzae and pneumococcus.",
@@ -415,6 +429,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts NIV for pH under 7.35 with pCO2 over 45 mmHg, with appropriate starting pressures and titration.",
       points: 3,
       critical: true,
@@ -424,6 +439,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Monitors NIV closely in a resuscitation or step down area with a repeat gas at 1 to 2 hours.",
       points: 2,
       teaching: "The first two hours decide success. No improvement in pH by then predicts failure.",
@@ -432,6 +448,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-a4",
       competency: "assessment",
+      criterion: "data",
       text: "Names specific signs of NIV failure and targets pCO2 near the patient's baseline.",
       points: 1,
       teaching: "Watch pH, level of consciousness, secretions and tolerance. Over ventilating a chronic retainer causes alkalosis.",
@@ -440,6 +457,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Acknowledges the daughter's concern and explores what her father has said about his wishes.",
       points: 1,
       teaching: "Families often carry real information about prior wishes. Listen before you explain.",
@@ -448,6 +466,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Assesses the patient's capacity once he improves and lets a capable patient make his own decision about NIV and intubation.",
       points: 3,
       critical: true,
@@ -457,6 +476,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Documents the goals of care discussion and the agreed ceiling of treatment.",
       points: 1,
       teaching: "A clear note protects the patient overnight. The next physician needs to know what he agreed to.",
@@ -465,6 +485,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU or a step down unit capable of NIV and hands over the ceiling of care.",
       points: 2,
       teaching: "A ward bed without RT support is unsafe for a patient on acute NIV.",
@@ -473,6 +494,7 @@ export const hypercapnicCopdExacerbation: OralCase = {
     {
       id: "co-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Plans smoking cessation, pulmonary rehabilitation, maintenance therapy review, home oxygen or NIV assessment and early follow up.",
       points: 1,
       teaching: "An admission for COPD is a chance to lower the next exacerbation risk. Rehab after an admission improves outcomes.",

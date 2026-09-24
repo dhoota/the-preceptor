@@ -6,6 +6,13 @@ export const pediatricDka: OralCase = {
   id: "pediatric-dka",
   title: "A tired 9 year old who keeps vomiting",
   blueprint: "peds",
+  priorityTopic: "shock",
+  keyFeatures: [
+    { topic: "shock", n: 2 },
+    { topic: "shock", n: 3 },
+    { topic: "abdominal-pain", n: 3 },
+    { topic: "loc", n: 5 },
+  ],
   summary: "A previously well 9 year old with vomiting, belly pain and fast breathing after weeks of feeling unwell.",
   durationMinutes: 15,
   stem:
@@ -309,6 +316,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Diagnoses severe DKA with pH under 7.1 or bicarbonate under 5 mmol/L and estimates dehydration.",
       points: 2,
       teaching: "Severity guides monitoring and disposition. Severe DKA carries the highest risk of cerebral edema.",
@@ -317,6 +325,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies cerebral edema risk factors: new onset, severe acidosis, low pCO2 and high urea, with young age as a further factor.",
       points: 2,
       teaching: "Knowing the risk factors sets the frequency of neurological checks. This child has several.",
@@ -325,6 +334,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives a 10 mL/kg bolus of 0.9 percent saline over 30 to 60 minutes, reserving 20 mL/kg for shock.",
       points: 2,
       teaching: "Most children in DKA are dehydrated but not in shock. A measured bolus restores perfusion before insulin.",
@@ -333,6 +343,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m1",
       competency: "management",
+      criterion: "plan",
       text: "Replaces the deficit evenly over 24 to 48 hours with 0.45 to 0.9 percent saline and does not replace urine output.",
       points: 2,
       teaching: "The PECARN FLUID trial showed that rate and sodium content within this range did not change brain injury. Consistent calculated fluids are the goal.",
@@ -341,6 +352,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m2",
       competency: "management",
+      criterion: "plan",
       text: "Starts regular insulin infusion at 0.05 to 0.1 units/kg/h without a bolus, about 1 hour after fluids begin.",
       points: 3,
       critical: true,
@@ -350,6 +362,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m3",
       competency: "management",
+      criterion: "plan",
       text: "Adds potassium 40 mmol/L to fluids once potassium is under 5.5 mmol/L and the child is voiding.",
       points: 2,
       teaching: "Insulin drives potassium into cells. Total body potassium is low even when the serum level looks normal.",
@@ -358,6 +371,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m4",
       competency: "management",
+      criterion: "plan",
       text: "Does not give sodium bicarbonate.",
       points: 2,
       critical: true,
@@ -367,6 +381,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-m5",
       competency: "management",
+      criterion: "plan",
       text: "Adds dextrose when glucose falls to about 14 to 17 mmol/L while continuing the insulin infusion.",
       points: 2,
       teaching: "Insulin is needed to clear ketones, not only to lower glucose. Add dextrose rather than turning insulin down too early.",
@@ -375,6 +390,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-a3",
       competency: "assessment",
+      criterion: "data",
       text: "Orders hourly glucose and neurological checks and gas and electrolytes every 1 to 2 hours, following corrected sodium.",
       points: 1,
       teaching: "Corrected sodium should rise as glucose falls. A falling corrected sodium is a warning sign for cerebral edema.",
@@ -383,6 +399,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-a4",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes headache, falling GCS, relative bradycardia and hypertension as cerebral edema.",
       points: 2,
       teaching: "Cerebral edema usually appears 4 to 12 hours into treatment. The diagnosis is clinical.",
@@ -391,6 +408,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives mannitol 0.5 to 1 g/kg or 3 percent saline 2.5 to 5 mL/kg over 10 to 15 minutes before any CT.",
       points: 3,
       critical: true,
@@ -400,6 +418,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Elevates the head, reduces fluid rate, avoids intubation if possible and calls PICU through CritiCall.",
       points: 2,
       teaching: "Intubation removes her compensatory hyperventilation and can worsen acidosis. The PICU call runs in parallel with treatment.",
@@ -408,6 +427,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains cerebral edema honestly to the parent without assigning blame.",
       points: 1,
       teaching: "Many children present with DKA at diagnosis. Parents often blame themselves and need a clear, kind explanation.",
@@ -416,6 +436,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges PICU transfer with repeat hyperosmolar therapy available and continued hourly monitoring while waiting.",
       points: 2,
       teaching: "Cerebral edema can recur. The child needs a unit that can manage raised intracranial pressure.",
@@ -424,6 +445,7 @@ export const pediatricDka: OralCase = {
     {
       id: "dk-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a handover with fluid totals, insulin start time and rate, potassium, and timing of edema signs and treatment.",
       points: 1,
       teaching: "Accurate fluid and insulin timelines help the PICU team adjust therapy safely.",

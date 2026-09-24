@@ -6,6 +6,14 @@ export const severeCroup: OralCase = {
   id: "severe-croup",
   title: "Noisy breathing at 3 a.m.",
   blueprint: "peds",
+  priorityTopic: "sob",
+  keyFeatures: [
+    { topic: "sob", n: 1 },
+    { topic: "sob", n: 3 },
+    { topic: "sob", n: 4 },
+    { topic: "airway", n: 3 },
+    { topic: "airway", n: 4 },
+  ],
   summary: "A 2 year old wakes in the night with a cough and noisy breathing and arrives working hard.",
   durationMinutes: 14,
   stem:
@@ -342,6 +350,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-a1",
       competency: "assessment",
+      criterion: "data",
       text: "Classifies the croup as severe based on stridor at rest, marked retractions and distress.",
       points: 2,
       teaching: "Stridor at rest with marked retractions defines severe croup. Severity drives the choice of epinephrine and the level of monitoring.",
@@ -350,6 +359,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Keeps the child calm with a parent and avoids tongue depressors, IV starts and other upsetting procedures.",
       points: 2,
       critical: true,
@@ -359,6 +369,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives nebulized L epinephrine 1 mg/mL, 5 mL, which is the CPS dose and the weight based maximum.",
       points: 3,
       critical: true,
@@ -368,6 +379,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives dexamethasone 0.6 mg/kg orally, or IM or IV if oral is not possible.",
       points: 2,
       teaching: "Dexamethasone reduces return visits and admissions. Oral is as effective as parenteral. TREKK lists a maximum of 12 mg and other protocols differ, so check your local one.",
@@ -376,6 +388,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Lists red flags and alternative diagnoses: epiglottitis, bacterial tracheitis, foreign body, retropharyngeal abscess and anaphylaxis.",
       points: 2,
       teaching: "Toxic appearance, drooling and poor response to epinephrine should prompt a search for another cause of stridor.",
@@ -384,6 +397,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Observes for 2 to 4 hours after the last epinephrine dose before considering discharge.",
       points: 2,
       teaching: "Symptoms can rebound as epinephrine wears off. Two hours of observation also lets dexamethasone start working.",
@@ -392,6 +406,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-a3",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes softer stridor with poor air entry, lethargy and hypoxia as impending respiratory failure.",
       points: 3,
       critical: true,
@@ -401,6 +416,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls anesthesia and ENT early and prepares for a controlled airway.",
       points: 2,
       teaching: "The most skilled airway operator should manage a narrowed pediatric airway. Call before the child arrests, not after.",
@@ -409,6 +425,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-m3",
       competency: "management",
+      criterion: "plan",
       text: "Avoids sedation and knows heliox is at most a short bridge.",
       points: 1,
       teaching: "Sedation can remove the airway tone the child depends on. CPS does not recommend heliox routinely. Some centres use it briefly while definitive help arrives.",
@@ -417,6 +434,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Selects a tube 0.5 to 1 size smaller than predicted, for example 3.5 mm cuffed with 3.0 mm ready, and sets depth by age at about 13 cm.",
       points: 2,
       teaching: "The subglottis is the narrowest part of the airway in croup. A smaller tube passes the swelling and limits further injury.",
@@ -425,6 +443,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "States a backup plan including a smaller tube, bag mask with PEEP, a supraglottic airway and ENT for a surgical airway.",
       points: 1,
       teaching: "Croup narrows the airway at the cricoid ring, below the cricothyroid membrane. A needle cricothyroidotomy may not bypass it, so ENT at the bedside for bronchoscopy or tracheostomy is the best backup.",
@@ -433,6 +452,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Explains the need for intubation to the parent in plain language and addresses his fear.",
       points: 1,
       teaching: "Parents often feel they failed at home. Explain the reason, the expected course and how they can stay with their child.",
@@ -441,6 +461,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges PICU transfer with a pediatric critical care transport team.",
       points: 2,
       teaching: "An intubated child with a narrowed airway needs a pediatric ICU. CritiCall coordinates the bed and team in Ontario.",
@@ -449,6 +470,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover including tube size, depth, grade of view and all drug doses with times.",
       points: 1,
       teaching: "Tube details matter most in a difficult airway. The receiving team must know what worked and what to avoid.",
@@ -457,6 +479,7 @@ export const severeCroup: OralCase = {
     {
       id: "cr-a4",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Considers bacterial tracheitis given fever and poor response, and sends a tracheal aspirate.",
       points: 1,
       teaching: "Bacterial tracheitis can follow viral croup. Thick secretions at intubation and a toxic course suggest it and need antibiotics.",

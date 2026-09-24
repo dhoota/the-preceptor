@@ -1,4 +1,4 @@
-import { BLUEPRINT, COMPETENCIES, type CaseNode, type OralCase } from "./types";
+import { BLUEPRINT, COMPETENCIES, ORAL_CRITERIA, type CaseNode, type OralCase } from "./types";
 
 /**
  * Structural checks for a case. Run in tests over every shipped case so a
@@ -31,6 +31,7 @@ export function validateCase(c: OralCase): string[] {
     if (rubricIds.has(r.id)) err(`duplicate rubric id "${r.id}"`);
     rubricIds.add(r.id);
     if (!competencyIds.has(r.competency)) err(`rubric "${r.id}" has unknown competency "${r.competency}"`);
+    if (!ORAL_CRITERIA.some((k) => k.id === r.criterion)) err(`rubric "${r.id}" has unknown criterion "${r.criterion}"`);
     if (!(r.points >= 1 && r.points <= 3)) err(`rubric "${r.id}" points must be 1 to 3`);
     if (!r.teaching?.trim()) err(`rubric "${r.id}" has no teaching line`);
     if (!sourceIds.has(r.source)) err(`rubric "${r.id}" cites unknown source "${r.source}"`);

@@ -7,6 +7,8 @@ export const discrepancyCallback: OralCase = {
   title: "A name on the discrepancy list",
   blueprint: "comm",
   alsoCovers: ["ethics", "geri"],
+  priorityTopic: "cqi",
+  keyFeatures: [{ topic: "cqi", n: 1 }, { topic: "cqi", n: 2 }, { topic: "msk", n: 4 }, { topic: "analgesia-sedation", n: 2 }],
   summary: "A radiology report flags a patient you discharged two nights ago. You must call her back and talk with her and her daughter.",
   durationMinutes: 15,
   stem:
@@ -447,6 +449,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Reviews the original images personally and accepts the discrepancy as a significant missed injury.",
       points: 1,
       teaching: "Look at the films yourself before calling. You need to understand the finding to explain it honestly.",
@@ -455,6 +458,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Knows that subtle femoral neck fractures can be occult and that CT or MRI is used when pain persists with normal films.",
       points: 1,
       teaching: "Plain films miss a small share of hip fractures. Inability to bear weight or persistent groin pain with normal films calls for further imaging.",
@@ -463,6 +467,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-m1",
       competency: "management",
+      criterion: "plan",
       text: "Tells the patient to stop weight bearing and arranges ambulance return.",
       points: 3,
       critical: true,
@@ -472,6 +477,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives prompt analgesia, preferably a fascia iliaca or femoral nerve block plus titrated opioid.",
       points: 2,
       teaching: "Regional blocks reduce opioid needs and delirium in older adults with hip fracture. Do them in the ED.",
@@ -480,6 +486,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-m3",
       competency: "management",
+      criterion: "plan",
       text: "Arranges urgent orthopedic care with surgery as soon as possible and manages the apixaban.",
       points: 2,
       teaching: "The Ontario quality standard asks for surgery within 48 hours of first arrival at hospital, and a missed first visit counts against that clock. Hold the DOAC and give the surgical team the last dose time and renal function.",
@@ -488,6 +495,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Makes the callback personally and promptly rather than delegating it.",
       points: 2,
       teaching: "The physician involved is usually best placed to make first contact. Delay adds harm and erodes trust.",
@@ -496,6 +504,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Confirms identity and consent to speak in front of the daughter before sharing results.",
       points: 1,
       teaching: "Speaker phone calls need a privacy check. Ask the patient who can hear and whether that is all right.",
@@ -504,6 +513,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c3",
       competency: "communication",
+      criterion: "plan",
       text: "Discloses the facts of what happened in plain language, including that the fracture was on the first X ray.",
       points: 3,
       critical: true,
@@ -513,6 +523,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c4",
       competency: "communication",
+      criterion: "plan",
       text: "Sets up the meeting well. Private space, seated, patient chooses who attends, checks their understanding first.",
       points: 1,
       teaching: "The setting shapes how the message lands. Sitting down and asking what they know first lowers the temperature.",
@@ -521,6 +532,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c5",
       competency: "communication",
+      criterion: "plan",
       text: "Answers the question about fault and outcome honestly without speculating or blaming others.",
       points: 2,
       teaching: "Say what is known. She would still have needed surgery, possibly a smaller one. Avoid firm predictions the surgeon has not made and guesses about causes still under review.",
@@ -529,6 +541,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-c6",
       competency: "communication",
+      criterion: "plan",
       text: "Offers a named contact and a follow up conversation to share the results of the review.",
       points: 1,
       teaching: "Disclosure continues over time. Families want to know what was learned and what changed.",
@@ -537,6 +550,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Makes a clear apology that expresses regret for the harm.",
       points: 2,
       teaching: "An apology such as 'I am sorry I missed the break' is expected. In Ontario it cannot be used as an admission of liability.",
@@ -545,6 +559,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-p2",
       competency: "professionalism",
+      criterion: "plan",
       text: "Does not mislead the family, minimize the event or blame colleagues.",
       points: 3,
       critical: true,
@@ -554,6 +569,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-p3",
       competency: "professionalism",
+      criterion: "plan",
       text: "Documents in a new timed entry and never alters the original record.",
       points: 2,
       teaching: "Records must not be changed after the fact to alter meaning. Additions are made as new dated entries.",
@@ -562,6 +578,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-p4",
       competency: "professionalism",
+      criterion: "plan",
       text: "Seeks advice from the CMPA and support for their own wellbeing.",
       points: 1,
       teaching: "Calling the CMPA is prudent and does not delay disclosure. Physicians involved in harm often need support themselves.",
@@ -570,6 +587,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Files a patient safety incident report and informs the department chief or quality lead.",
       points: 2,
       teaching: "Reporting starts the learning process. It is separate from disclosure and does not assign blame.",
@@ -578,6 +596,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Identifies the unactioned discrepancy list as a system failure in its own right.",
       points: 1,
       teaching: "A result that sits for a day is a second, separate failure. It is often the easier one to fix.",
@@ -586,6 +605,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-l3",
       competency: "leadership",
+      criterion: "plan",
       text: "Proposes reliable fixes such as an electronic discrepancy worklist with clear ownership and escalation.",
       points: 2,
       teaching: "Design out reliance on memory. Forcing functions and clear owners beat reminders and education alone.",
@@ -594,6 +614,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-d1",
       competency: "disposition",
+      criterion: "approach",
       text: "Asks about the last anticoagulant dose and tells her to fast before she comes in.",
       points: 1,
       teaching: "Small practical steps on the phone save hours before surgery.",
@@ -602,6 +623,7 @@ export const discrepancyCallback: OralCase = {
     {
       id: "dc-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Confirms admission under orthopedics with a clear handover of the disclosure to the inpatient team.",
       points: 1,
       teaching: "The inpatient team needs to know what the family has been told so the message stays consistent.",

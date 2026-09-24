@@ -7,6 +7,13 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
   title: "Woken up gasping at 3 a.m.",
   blueprint: "cardio",
   alsoCovers: ["resp", "resus"],
+  priorityTopic: "pulmonary-edema",
+  keyFeatures: [
+    { topic: "pulmonary-edema", n: 1 },
+    { topic: "pulmonary-edema", n: 2 },
+    { topic: "pulmonary-edema", n: 3 },
+    { topic: "pulmonary-edema", n: 4 },
+  ],
   summary: "A 71 year old woman arrives by ambulance in severe respiratory distress with a very high blood pressure.",
   durationMinutes: 14,
   stem:
@@ -367,6 +374,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes hypertensive acute heart failure with flash pulmonary edema driven by afterload.",
       points: 2,
       teaching: "Sudden onset, very high pressure and warm extremities point to afterload driven fluid redistribution rather than slow volume gain.",
@@ -375,6 +383,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts non-invasive ventilation immediately with CPAP 8 to 10 or BiPAP about 12/6 cmH2O.",
       points: 3,
       critical: true,
@@ -384,6 +393,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives high dose nitroglycerin at the same time as NIV.",
       points: 3,
       critical: true,
@@ -393,6 +403,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives sublingual 0.8 mg doses and an IV infusion starting around 100 mcg/min, titrated quickly toward 400 mcg/min.",
       points: 2,
       teaching: "Rapid titration controls afterload within minutes. The short half life makes high doses safe if you watch the pressure.",
@@ -401,6 +412,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m2",
       competency: "management",
+      criterion: "plan",
       text: "Sets a target of about a 25 percent fall in systolic pressure and screens for PDE5 inhibitors and aortic stenosis.",
       points: 1,
       teaching: "Too fast a fall causes hypoperfusion. Nitrates are dangerous with PDE5 inhibitors and with severe aortic stenosis.",
@@ -409,6 +421,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m3",
       competency: "management",
+      criterion: "plan",
       text: "Manages NIV intolerance with coaching and mask fit first, and dexmedetomidine rather than benzodiazepine boluses if needed.",
       points: 2,
       teaching: "Agitation usually means hypoxia or fear. Sedatives that suppress drive can tip a hypercapnic patient into failure.",
@@ -417,6 +430,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Sets an intubation trigger and plans a reduced dose induction with pressors ready if NIV fails.",
       points: 1,
       teaching: "Loss of sympathetic drive and positive pressure can crash the pressure at induction. Prepare before you push drugs.",
@@ -425,6 +439,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Looks for precipitants including non-adherence, salt load, ischemia, arrhythmia and renal artery stenosis.",
       points: 2,
       teaching: "The treatment of the episode is the same, but the cause changes the admission plan. Trend troponin to separate ACS from demand.",
@@ -433,6 +448,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m4",
       competency: "management",
+      criterion: "plan",
       text: "Avoids morphine and uses a modest loop diuretic dose such as furosemide 40 mg IV once pressure is falling.",
       points: 2,
       teaching: "Morphine is associated with more intubation. A loop diuretic helps, but it is second to nitrates in this phenotype.",
@@ -441,6 +457,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-m5",
       competency: "management",
+      criterion: "plan",
       text: "Stops the nitroglycerin first when hypotension develops and reassesses with ECG and POCUS.",
       points: 3,
       critical: true,
@@ -450,6 +467,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Sets clear titration limits with the nurse and closes the loop on infusion changes.",
       points: 1,
       teaching: "High dose infusions need explicit targets and stop points. Write them down and check back.",
@@ -458,6 +476,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Admits to ICU or step down while on NIV and requests echo, troponin trend and cardiology review.",
       points: 2,
       teaching: "Patients on NIV need a unit that can escalate. A new heart failure diagnosis needs an echo and a medication plan.",
@@ -466,6 +485,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Asks the patient about her own wishes once she can engage, rather than going only through the family.",
       points: 2,
       teaching: "A capable patient decides for herself. As she improves on NIV she may be able to take part.",
@@ -474,6 +494,7 @@ export const sympatheticCrashingPulmonaryEdema: OralCase = {
     {
       id: "scape-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Explains intubation and ICU care in plain language and documents the goals of care.",
       points: 1,
       teaching: "Families ask about life support when they are frightened. Honest, simple language builds trust.",

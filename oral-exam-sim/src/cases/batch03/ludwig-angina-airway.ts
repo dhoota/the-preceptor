@@ -7,6 +7,14 @@ export const ludwigAnginaAirway: OralCase = {
   title: "Toothache and a muffled voice",
   blueprint: "resp",
   alsoCovers: ["id", "procedures"],
+  priorityTopic: "airway",
+  keyFeatures: [
+    { topic: "airway", n: 1 },
+    { topic: "airway", n: 2 },
+    { topic: "airway", n: 3 },
+    { topic: "infectious-diseases", n: 4 },
+    { topic: "sob", n: 1 },
+  ],
   summary: "A 44 year old man with diabetes has four days of jaw pain and now struggles to swallow.",
   durationMinutes: 15,
   stem:
@@ -327,6 +335,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Diagnoses Ludwig angina from bilateral submandibular swelling, raised floor of mouth and a dental source.",
       points: 2,
       teaching: "Ludwig angina is a rapidly spreading cellulitis of the submandibular and sublingual spaces. Drooling, muffled voice and trismus signal airway threat.",
@@ -335,6 +344,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Keeps the patient upright, avoids laying him flat, and does not send him to CT unaccompanied.",
       points: 2,
       teaching: "Position is airway protection. Supine positioning and trips to CT are common settings for sudden obstruction.",
@@ -343,6 +353,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-l1",
       competency: "leadership",
+      criterion: "plan",
       text: "Calls anesthesia and ENT or oral surgery early and leads a shared airway plan.",
       points: 2,
       teaching: "An anticipated difficult airway is a team problem. Plan A, B and C should be agreed and spoken aloud before anyone starts.",
@@ -351,6 +362,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-a2",
       competency: "assessment",
+      criterion: "approach",
       text: "Identifies predictors of difficult laryngoscopy, mask ventilation and front of neck access, and marks the cricothyroid membrane with ultrasound.",
       points: 2,
       teaching: "Distorted neck anatomy makes cricothyrotomy harder. Finding the membrane with ultrasound before a crisis saves time.",
@@ -359,6 +371,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-m1",
       competency: "management",
+      criterion: "plan",
       text: "Gives broad spectrum IV antibiotics covering oral streptococci and anaerobes after blood cultures.",
       points: 2,
       teaching: "Piperacillin tazobactam, or ceftriaxone with metronidazole, cover the usual mixed oral flora. Add vancomycin for MRSA risk.",
@@ -367,6 +380,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-m2",
       competency: "management",
+      criterion: "plan",
       text: "Considers dexamethasone and manages hyperglycemia and sepsis.",
       points: 1,
       teaching: "Steroids are commonly used to reduce edema though evidence is limited. Uncontrolled diabetes worsens deep neck infection.",
@@ -375,6 +389,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Chooses awake flexible bronchoscopic intubation or awake tracheostomy with a double setup, and rejects RSI.",
       points: 3,
       critical: true,
@@ -384,6 +399,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Responds to stridor by keeping the patient upright, giving nebulized epinephrine as a bridge, avoiding sedation and securing the airway without delay.",
       points: 3,
       critical: true,
@@ -393,6 +409,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-l2",
       competency: "leadership",
+      criterion: "plan",
       text: "Keeps the ENT surgeon at the bedside ready for a surgical airway during any attempt.",
       points: 1,
       teaching: "A double setup means the surgical option is scrubbed and ready, not on the way.",
@@ -401,6 +418,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-r4",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Declares can't intubate, can't oxygenate and performs or directs immediate front of neck access with a scalpel, bougie and tube technique.",
       points: 3,
       critical: true,
@@ -410,6 +428,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Arranges CT after the airway is secure, urgent surgical drainage and source control, and ICU admission.",
       points: 2,
       teaching: "Antibiotics alone rarely resolve a gas containing collection. Source control of the tooth and drainage are needed.",
@@ -418,6 +437,7 @@ export const ludwigAnginaAirway: OralCase = {
     {
       id: "lu-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Leads a team debrief after the airway crisis and updates the family.",
       points: 1,
       teaching: "A surgical airway is stressful for everyone. A short debrief supports the team and captures lessons.",

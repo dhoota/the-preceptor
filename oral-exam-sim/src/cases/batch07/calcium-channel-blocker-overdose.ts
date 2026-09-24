@@ -7,6 +7,15 @@ export const calciumChannelBlockerOverdose: OralCase = {
   title: "Slow pulse after a family argument",
   blueprint: "tox",
   alsoCovers: ["resus", "cardio"],
+  priorityTopic: "tox",
+  keyFeatures: [
+    { topic: "tox", n: 2 },
+    { topic: "tox", n: 4 },
+    { topic: "tox", n: 5 },
+    { topic: "tox", n: 6 },
+    { topic: "shock", n: 5 },
+    { topic: "shock", n: 8 },
+  ],
   summary: "A 58 year old woman is brought in dizzy and hypotensive after taking tablets during an argument.",
   durationMinutes: 15,
   stem:
@@ -347,6 +356,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-a1",
       competency: "assessment",
+      criterion: "diagnosis",
       text: "Recognizes a severe sustained release verapamil overdose with delayed and prolonged toxicity.",
       points: 2,
       teaching: "Sustained release products can cause worsening shock many hours after ingestion. Plan for deterioration.",
@@ -355,6 +365,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-a2",
       competency: "assessment",
+      criterion: "data",
       text: "Uses hyperglycemia and bedside echo to judge severity and the type of shock.",
       points: 2,
       teaching: "Hyperglycemia reflects blocked insulin release and correlates with severity. Echo separates vasodilation from pump failure.",
@@ -363,6 +374,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-r1",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Gives calcium early, for example calcium chloride 1 g IV or calcium gluconate 3 g, repeated or as an infusion.",
       points: 2,
       teaching: "Calcium can partly overcome channel blockade. It is a first step, not the whole treatment.",
@@ -371,6 +383,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-r2",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Starts norepinephrine for vasodilatory shock and adds epinephrine for poor contractility.",
       points: 2,
       teaching: "The consensus recommends vasopressors for shock alongside high dose insulin. Choose by echo findings.",
@@ -379,6 +392,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-r3",
       competency: "resuscitation",
+      criterion: "plan",
       text: "Intubates only after hemodynamic support, with reduced dose induction and push dose vasopressor ready.",
       points: 3,
       critical: true,
@@ -388,6 +402,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-m1",
       competency: "management",
+      criterion: "plan",
       text: "Consults the poison centre early.",
       points: 1,
       teaching: "Poison centres help with doses, rescue therapies and escalation. Call early in a severe overdose.",
@@ -396,6 +411,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-m2",
       competency: "management",
+      criterion: "plan",
       text: "Gives activated charcoal 50 g and considers whole bowel irrigation for a sustained release product when safe.",
       points: 1,
       teaching: "Decontamination can reduce ongoing absorption from sustained release tablets. Airway protection and bowel function must be adequate.",
@@ -404,6 +420,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-m3",
       competency: "management",
+      criterion: "plan",
       text: "Gives high dose insulin as a 1 unit/kg bolus and 1 unit/kg/h infusion titrated up to 10 units/kg/h with dextrose.",
       points: 3,
       critical: true,
@@ -413,6 +430,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-m4",
       competency: "management",
+      criterion: "plan",
       text: "Monitors glucose every 15 to 30 minutes and potassium closely during high dose insulin.",
       points: 2,
       teaching: "Hypoglycemia is the main complication. Potassium falls from intracellular shift and needs replacement only when low.",
@@ -421,6 +439,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-d1",
       competency: "disposition",
+      criterion: "plan",
       text: "Refers early for VA ECMO when shock is refractory to maximal therapy.",
       points: 3,
       critical: true,
@@ -430,6 +449,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-d2",
       competency: "disposition",
+      criterion: "plan",
       text: "Plans psychiatric assessment after medical recovery and uses the Mental Health Act if needed.",
       points: 1,
       teaching: "An intentional overdose needs a mental health assessment before discharge from hospital.",
@@ -438,6 +458,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-c1",
       competency: "communication",
+      criterion: "plan",
       text: "Speaks honestly with the husband about the risk of death and addresses his guilt.",
       points: 1,
       teaching: "Family members often blame themselves. Name the feeling and reassure them without false promises.",
@@ -446,6 +467,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-c2",
       competency: "communication",
+      criterion: "plan",
       text: "Gives a structured handover with doses, rates, trends and the need for ongoing dextrose and glucose checks.",
       points: 1,
       teaching: "Stopping dextrose during transport while insulin runs can be fatal. Make it explicit.",
@@ -454,6 +476,7 @@ export const calciumChannelBlockerOverdose: OralCase = {
     {
       id: "ccb-p1",
       competency: "professionalism",
+      criterion: "plan",
       text: "Offers social work support to the husband and checks on his wellbeing.",
       points: 1,
       teaching: "Family members of overdose patients are under great stress. A brief check on their support is good care.",
