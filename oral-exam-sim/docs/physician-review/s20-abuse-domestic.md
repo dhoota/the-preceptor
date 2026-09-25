@@ -22,6 +22,12 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - abuse-domestic-25 and abuse-domestic-34 open with "You are working in an emergency department in [province]" although the setting is not unusual. The bank uses this form 10 times, so it was left. *(samps-s20-lensB.md)*
 - abuse-domestic-39 and abuse-domestic-40 copy abuse-domestic-23 and abuse-domestic-31. They should not be added to the bank. Their defects were fixed so the file is consistent. *(samps-s20-lensB.md)*
 - The writer's report says 10 SAMPs have 4 questions and 13 have 3. The file has 11 and 12. *(samps-s20-lensB.md)*
+- abuse-domestic-18 q4 still rejects calling police first. The earlier flag stands. *(samps-sweep2-final-check.md)*
+- abuse-domestic-18 q4: calling police is rejected because the guide keeps police for when the society cannot be reached. Some physicians might call both when a baby is at home overnight with the suspected person. Please confirm. *(samps-sweep2-review-sw2-d.md)*
+- abuse-domestic-18 q1 now comes before imaging. Its explanation says the signs suggest an injury "such as" a duodenal hematoma. That is inference, and the Sowrey figures apply to duodenal injury. *(samps-sweep2-review-sw2-d.md)*
+- abuse-domestic-18 q2: the key "Abdominal injury remains possible" is hedged. Two distractors are also probabilistic ("unlikely", "likely"), so it is not the only hedged option. It was left as is. *(samps-sweep2-review-sw2-d.md)*
+- abuse-domestic-18 q2 cites the 2025 ACR ratings: CT with IV contrast "usually appropriate", abdominal ultrasound "usually not appropriate" and radiography "may be appropriate" with panel disagreement. The ACR web page showed the ratings but not the discussion text. *(samps-sweep2-sw2-d.md)*
+- abuse-domestic-18 q4 relies on the Ontario guide's advice that societies answer 24 hours a day and that police are called when the society cannot be reached. Please confirm this fits a sibling who is at home with the suspected person overnight. *(samps-sweep2-sw2-d.md)*
 - abuse-domestic-38 q3: CMPA supports an accurate record, marked corrections and a harm exception to patient access. The claim that the record may later support protection or charges is standard teaching and is not in CMPA. *(samps-textbooks-s20-s38-s43.md)*
 - Textbook chapters were chosen by title. Chapter content could not be opened. The questions left on R&H chapters 34 and 35 are split between wound preparation and closure by topic. Please confirm the split if exact chapter support matters. *(samps-textbooks-s20-s38-s43.md)*
 - The Elsevier shop page lists R&H 7th edition as published in February 2018. The citation keeps 2019, the copyright year used in library records. An 8th edition (Birnbaumer, editor) now exists and was not used. *(samps-textbooks-s20-s38-s43.md)*
@@ -192,84 +198,82 @@ Select 3.
 
 *Source:* Lindberg DM, Shapiro RA, Laskey AL, and colleagues. Prevalence of abusive injuries in siblings and household contacts of physically abused children. Pediatrics. 2012. https://pubmed.ncbi.nlm.nih.gov/22778300/
 
-### abuse-domestic-18: Preschool child with vomiting after a fall
+### abuse-domestic-18: Toddler with green vomiting at night
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 3-year-old boy is brought to the emergency department by his mother with abdominal pain and two episodes of vomiting since last night. She says he fell off a kitchen chair yesterday afternoon. She was at work at the time. He has no past illnesses and takes no medications.
+A 20-month-old boy is brought to the emergency department in Ontario by his mother at 23:00 with vomiting that began at 18:00. The last three vomits were green. Her partner cared for him this afternoon and told her that the boy tripped over a toy and fell onto his tummy on the carpet. He has had no fever or diarrhea. He walked at 12 months and has been well. He lives with his mother, her partner and her 5-month-old daughter.
 
-He is quiet and watches staff closely. There is a 3 cm bruise on the left flank and a bruise on the back of the left ear. The upper abdomen is tender without guarding. Bowel sounds are present. The rest of the examination is normal.
+He is pale and quiet. His upper abdomen is mildly distended, and he cries when it is pressed. There are no bruises on his abdomen or elsewhere. The chest is clear and the neurological examination is normal. AST is 64 U/L and ALT is 52 U/L.
 
-- Temperature: 37.2°C oral
-- Pulse: 118/minute
-- Resp.: 24/minute
-- BP: 96/60 mmHg
+- Temperature: 37.2°C rectal
+- Pulse: 146/minute
+- Resp.: 30/minute
+- BP: 96/58 mmHg
 - O2 sat: 99% on room air
-- Weight: 14 kg
+- Weight: 11.5 kg
 
 #### Q1
-**Which of the following bruise locations in a child of this age most strongly suggests inflicted injury?**
+**Which of the following features of his case most strongly suggests that he may have been abused?**
 
-- A. Back of the left ear  **(key)**
-- B. Centre of the forehead
-- C. Front of both shins
-- D. Point of the chin
-- E. Tips of both elbows
+- A. Absence of bruises on his abdomen
+- B. Arrival late in the evening
+- C. Mechanism too minor for his signs  **(key)**
+- D. Normal neurological examination
+- E. Pale and quiet appearance
 
-*Explanation:* Bruises on the ear, neck or torso of a child under 4 years are flagged by the TEN-4-FACESp rule, which was 96% sensitive and 87% specific for abuse in its validation study. The ear sits in a protected spot that a fall rarely strikes, and this boy also has a flank bruise. Bruises on the forehead, chin, shins and elbows lie over bony surfaces that hit the ground in ordinary falls and play, so they are common in active preschoolers who have not been harmed.
+*Explanation:* Green vomiting with a distended, tender upper abdomen points to a serious injury inside the abdomen, such as a hematoma of the duodenum. A trip from standing onto carpet is far too minor to explain that. In a multicentre series of duodenal injuries in children aged 5 years or younger, abuse caused 20 of 32, including all 6 in children younger than 2 years. He is 20 months old. The absence of abdominal bruising does not make an injury accidental. He arrived 5 hours after the first vomit, which is not a delay in seeking care. His pallor and quietness show how unwell he is, not how he was hurt. A normal neurological examination points neither way.
 
 *Key feature:* Abuse (domestic) 2. In injured patients, notice injury patterns, delayed presentation, or repeat visits that hint at undisclosed abuse.
 
-*Source:* Pierce MC and colleagues. Validation of a clinical decision rule to predict abuse in young children based on bruising characteristics. JAMA Netw Open. 2021. https://pubmed.ncbi.nlm.nih.gov/33852003/
+*Source:* Sowrey L, Lawson KA, Garcia-Filion P, and colleagues. Duodenal injuries in the very young: child abuse? J Trauma Acute Care Surg. 2013. https://doi.org/10.1097/TA.0b013e3182788cb2
 
 #### Q2
-*Update:* AST is 310 U/L and ALT is 245 U/L. Lipase is normal. Urinalysis shows no blood.
+**Which of the following best describes what his AST and ALT results mean for his assessment?**
 
-**Which of the following is the most appropriate next investigation for his abdomen?**
+- A. Abdominal injury remains possible  **(key)**
+- B. Abuse is an unlikely cause
+- C. Liver and bowel injury are excluded
+- D. Pancreatic injury is confirmed
+- E. Viral gastroenteritis is likely
 
-- A. Abdominal x-ray, two views
-- B. CT abdomen with IV contrast  **(key)**
-- C. Hepatitis A, B and C serology
-- D. Repeat liver enzymes in 6 hours
-- E. Upper GI contrast study
-
-*Explanation:* In children evaluated for physical abuse, a transaminase above 80 U/L detected occult abdominal injury with 84% sensitivity and 83% specificity, and it should lead to definitive imaging. His AST of 310 U/L and ALT of 245 U/L, with upper abdominal tenderness, call for CT with IV contrast. Plain x-rays do not show solid organ injury. Hepatitis serology looks for an infection that the history does not suggest and delays the diagnosis. Repeating enzymes defers imaging in a child who already meets the threshold. An upper GI study looks for a duodenal hematoma but misses liver and pancreatic injury.
+*Explanation:* Both enzymes are below the 80 U/L cutoff used to screen for abdominal injury in young children assessed for abuse. In a large multicentre study that cutoff had a sensitivity of only 77%, so about 1 in 4 children with an abdominal injury had lower values. His green vomiting, distension and upper abdominal tenderness are signs of injury in their own right. Enzymes below that cutoff therefore cannot exclude injury to the liver or bowel. Transaminases come from the liver and say nothing specific about the pancreas. Enzyme levels do not show how an injury happened. He has no fever or diarrhea, which argues against gastroenteritis.
 
 *Key feature:* Abuse (domestic) 3. When abuse is suspected, find all current and prior injuries using old charts, skeletal survey, or fundoscopy as needed.
 
-*Source:* Lindberg DM, Shapiro RA, Blood EA, and colleagues. Utility of hepatic transaminases in children with concern for abuse. Pediatrics. 2013. https://pubmed.ncbi.nlm.nih.gov/23319537/
+*Source:* Lindberg D, Makoroff K, Harper N, and colleagues, ULTRA Investigators. Utility of hepatic transaminases to recognize abuse in children. Pediatrics. 2009. https://doi.org/10.1542/peds.2008-2348
 
 #### Q3
-**Which of the following additional steps would best identify injuries from earlier episodes?**
+**Which of the following is the most appropriate next investigation for him?**
 
-- A. Bone mineral density scan
-- B. MRI of the whole body
-- C. Photographs of the bruises
-- D. Review of prior records  **(key)**
-- E. Serum vitamin D level
+- A. Abdominal ultrasound
+- B. Abdominal x-ray series
+- C. Admission for serial examinations
+- D. CT abdomen with IV contrast  **(key)**
+- E. Repeat AST and ALT in 6 hours
 
-*Explanation:* Earlier visits to this and other sites may record injuries, fractures or explanations that did not fit, and a review of prior records can show a pattern that one visit cannot. Photographs document the injuries he has now but reveal nothing about past ones. A bone density scan and a vitamin D level look for bone fragility, which the case does not suggest. Whole body MRI is not a screening test for abuse in a child of this age and needs sedation.
+*Explanation:* For a child aged 24 months or younger with clinical findings suspicious for visceral injury from physical abuse, the American College of Radiology rates CT of the abdomen and pelvis with IV contrast as usually appropriate. He is 20 months old, with green vomiting, distension and upper abdominal tenderness. The same criteria rate abdominal ultrasound as usually not appropriate. Plain radiographs received a lower rating, with panel disagreement. Repeating the enzymes or admitting him for serial examinations delays the diagnosis in a child who already has signs of injury.
 
 *Key feature:* Abuse (domestic) 3. When abuse is suspected, find all current and prior injuries using old charts, skeletal survey, or fundoscopy as needed.
 
-*Source:* Ward MG, Ornstein A, Niec A, Murray CL. Canadian Paediatric Society, Child and Youth Maltreatment Section. The medical assessment of bruising in suspected child maltreatment cases: a clinical perspective. Paediatr Child Health. 2013. https://pubmed.ncbi.nlm.nih.gov/24426797/
+*Source:* American College of Radiology Expert Panel on Pediatric Imaging, Mirsky DM, chair. ACR Appropriateness Criteria: suspected physical abuse, child. Revised 2025. https://acsearch.acr.org/docs/69443/Narrative/
 
 #### Q4
-*Update:* CT shows a grade 2 liver laceration with no active bleeding. He is admitted under pediatric surgery. His mother says her boyfriend was caring for him yesterday.
+*Update:* It is now 01:30. You have reasonable grounds to suspect that he was abused. His mother says that her partner is at home alone with her 5-month-old daughter.
 
-**Which of the following is the most appropriate next step regarding child protection?**
+**Which of the following is the most appropriate way to act on your concern for both children tonight?**
 
-- A. Ask the mother to keep the boyfriend away
-- B. Report after the surgical team confirms abuse
-- C. Report if the mother agrees to a referral
-- D. Report to child welfare services today  **(key)**
-- E. Wait for the boyfriend to give his account
+- A. Ask the mother to call the society
+- B. Ask the surgical team to report
+- C. Call police to check on the baby
+- D. Email the society's intake office
+- E. Phone the society's after-hours line  **(key)**
 
-*Explanation:* A liver laceration after a fall from a chair, with bruises on the ear and flank, gives reasonable grounds to suspect abuse, and every province requires a prompt report to child welfare on suspicion alone. The duty is the physician's own and does not depend on the mother's agreement or on another team confirming abuse. Asking the mother to keep the boyfriend away is not a safety plan, since no one has assessed whether she can protect him. Waiting for the boyfriend's account delays protection, and the child welfare investigation will gather it.
+*Explanation:* Ontario law requires anyone with reasonable grounds to suspect that a child is in need of protection to report immediately and directly to a children's aid society. The physician may not rely on anyone else to report, so asking the mother or the surgical team to call does not meet the duty. Every society provides emergency service 24 hours a day, so a phone call now lets the society act tonight for the baby at home as well as for him. An email waits for office hours. The provincial guide advises calling police when a matter is urgent and the society cannot be reached, which is not the case here.
 
 *Key feature:* Abuse (domestic) 6. Obtain the patient's consent to the plan, report to authorities when required, and secure safety for them and dependants.
 
-*Source:* Ward MG, Ornstein A, Niec A, Murray CL. Canadian Paediatric Society, Child and Youth Maltreatment Section. The medical assessment of bruising in suspected child maltreatment cases: a clinical perspective. Paediatr Child Health. 2013. https://pubmed.ncbi.nlm.nih.gov/24426797/
+*Source:* Ontario Ministry of Children, Community and Social Services. Reporting child abuse and neglect: it's your duty. Your responsibilities under the Child, Youth and Family Services Act, 2017. 2022. https://files.ontario.ca/pdf-3/mccss-report-child-abuse-and-neglect-en-2022-03-31.pdf
 
 ### abuse-domestic-19: Toddler with sores on her feet
 
@@ -298,7 +302,7 @@ She is playful and afebrile. On the soles of both feet there are four round, pun
 
 *Key feature:* Abuse (domestic) 2. In injured patients, notice injury patterns, delayed presentation, or repeat visits that hint at undisclosed abuse.
 
-*Source:* Ward MG, Ornstein A, Niec A, Murray CL. Canadian Paediatric Society, Child and Youth Maltreatment Section. The medical assessment of bruising in suspected child maltreatment cases: a clinical perspective. Paediatr Child Health. 2013. https://pubmed.ncbi.nlm.nih.gov/24426797/
+*Source:* Kemp AM, Maguire SA, Lumb RC, Harris SM, Mann MK. Contact, cigarette and flame burns in physical abuse: a systematic review. Child Abuse Rev. 2014. https://onlinelibrary.wiley.com/doi/abs/10.1002/car.2278
 
 #### Q2
 **Which of the following investigations is most appropriate to look for other injuries in her?**
@@ -1174,7 +1178,7 @@ GCS is 14, with confused speech. Blood alcohol is 52 mmol/L. There is a 2 cm lac
 - A. Arrival by ambulance at 03:00
 - B. Blood alcohol of 52 mmol/L
 - C. Found at a bus shelter
-- D. Repeat injuries to face and ribs  **(key)**
+- D. Repeat injuries to head and face  **(key)**
 - E. Visits mainly for intoxication
 
 *Explanation:* Injuries to the head, neck and face are strong markers of partner violence in women seen in emergency departments, and a record of fractures and lacerations put down to intoxication can hide that pattern. A high blood alcohol, a night arrival by ambulance and being found outdoors reflect her drinking, not how she was hurt. Frequent visits for intoxication raise her risk profile but do not themselves point to violence.
@@ -1259,7 +1263,7 @@ GCS is 15. There is a tender bruise on the back of the head and bruises on both 
 
 *Key feature:* Abuse (domestic) 6. Obtain the patient's consent to the plan, report to authorities when required, and secure safety for them and dependants.
 
-*Source:* Ontario. Child, Youth and Family Services Act, 2017. S.O. 2017, c. 14, Sched. 1, sections 77 and 125: services for 16 and 17 year olds and the duty to report. 2017.
+*Source:* Ontario. Child, Youth and Family Services Act, 2017. S.O. 2017, c. 14, Sched. 1, sections 77 and 125: services for 16 and 17 year olds and the duty to report. Personal Health Information Protection Act, 2004. S.O. 2004, c. 3, Sched. A, section 40(1): disclosure to eliminate or reduce a significant risk of serious bodily harm. 2004. https://www.ontario.ca/laws/statute/04p03
 
 #### Q3
 **Which of the following is the most appropriate way to help her stay safe after discharge?**

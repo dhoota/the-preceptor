@@ -8,6 +8,20 @@ Quoted from the pipeline notes and the review reports, each with its report name
 
 - s45 multiple-trauma-20 q3 rebuilt to abruption focus, confirm. 41 q1 no routine platelets vs Ontario MHP. 42 q1 AB plasma. 27 q2 awake scope vs awake trach.
 - s45 multiple-trauma-42 q1: O negative units "also Kell negative" in Canada unconfirmed.
+- multiple-trauma-46 q2: ATLS 10th and 11th editions changed the hemorrhage class table. As I recall it, respiratory rate is unchanged in class II and pulse pressure falls. I could not open the 11th edition table. The rebuilt question keys the transient-responder concept instead. Please confirm the ATLS 11 wording for transient responders. *(samps-final-check-2.md)*
+- Mock mode cues left in place because the stem alone decides the earlier key: loc-24 q2 update ("CT shows ...", after the q1 CT question), multiple-trauma-40 q4 update ("complete tear", after the q3 urethrogram question), and tox-35 q3 and q4 naming naloxone after q2 (pinpoint pupils, a missing buprenorphine tablet and a respiratory rate of 10 decide q2). *(samps-final-check-2.md)*
+- multiple-trauma-46 q2 was rebuilt in this final check. It has had one review. Please read it before sign-off. *(samps-final-check-2.md)*
+- Other batches: s40 headache-41 and s45 multiple-trauma-45 are uncommitted rebuilds from this round. They were the other halves of the loc-31 and loc-29 collisions and are now free of those collisions. *(samps-replace-s32-s28.md)*
+- Sources not opened in full. The ISTH 2021 obesity guidance (dvt-pe-18) and the CAG, AHA and ATLS texts are paywalled or print. The ISTH bariatric statement was checked through the abstract and a secondary summary. Every ATLS-based question (multiple-trauma-21, 25, 27, 28, 31, 35, 40) rests on the 11th edition course manual, which the batch already cites but which could not be opened. Please check those keys against the manual. *(samps-replace-s33-s44-s45-s46.md)*
+- multiple-trauma-28 names the European guideline in the stem, because its MAP of 80 mmHg or more for severe TBI differs from Brain Trauma Foundation systolic targets. *(samps-replace-s33-s44-s45-s46.md)*
+- multiple-trauma-46 uses the 2013 AANS/CNS MAP target of 85 to 90 mmHg. It is a cervical cord injury, like airway-40 and shock-06, but none of its decisions repeat theirs. Please judge whether the setting is too close. *(samps-replace-s33-s44-s45-s46.md)*
+- multiple-trauma-44 uses the TRALI consensus redefinition, which cites the ISBT overload criteria of raised BP and tachycardia. Fever is not used as a discriminator. *(samps-replace-s33-s44-s45-s46.md)*
+- Some keys are standard steps that already appear elsewhere in the bank, such as ultrasound first for a likely DVT or apixaban 10 mg twice daily. In each case the scenario and the deciding feature are new. *(samps-replace-s33-s44-s45-s46.md)*
+- Treatment options that follow a diagnosis question can still hint at the diagnosis (pediatric-fever-30 q3, multiple-trauma-45 q2, multiple-trauma-44 q4). The options were widened to cover each diagnostic choice, but the physician may want to review these in mock mode. *(samps-replace-s33-s44-s45-s46.md)*
+- multiple-trauma-35: q2 asks for the manoeuvre to open the boy's airway, and q3 keys a nurse for the mother. In mock mode both point to the q1 key (the boy's airway first). The stem already makes this clear with snoring and a saturation of 91%, and any airway question on this case carries the same hint. The case was left as is. *(samps-replace-s33-s44-s45-s46.md)*
+- multiple-trauma-40 q4 (new) keys a suprapubic catheter for a complete urethral tear in a patient in shock heading to angiography. The AUA guideline limits primary realignment to stable patients. Some centres would defer the suprapubic tube if preperitoneal packing is likely. Please confirm. *(samps-replace-s33-s44-s45-s46.md)*
+- multiple-trauma-46 (new) q1 rests on PHTLS 10th edition (print) for moist sterile dressings over eviscerated bowel. q3 rests on the European guideline recommendations on lactate and base deficit and against a single hemoglobin. *(samps-replace-s33-s44-s45-s46.md)*
+- multiple-trauma-28 q3 keys the European guideline MAP of 80 mmHg or more for severe TBI, as named in the stem. It could differ from Brain Trauma Foundation systolic targets. *(samps-replace-s33-s44-s45-s46.md)*
 - multiple-trauma-48 and 49 (review-extra.ts) are near verbatim copies of multiple-trauma-26 and 37. Only the id differs, plus the planted defects now fixed. They add no new content and would fail the near duplicate stem test if loaded. Recommend not adding them to the batch. *(samps-s45-lensA.md)*
 - multiple-trauma-20 q3 was rebuilt around placental abruption. Please confirm this is the teaching point you want for this case. *(samps-s45-lensA.md)*
 - multiple-trauma-41 q1 keys "No routine platelet transfusion" for a stable 6 mm subdural on dual antiplatelets, following Rossaint Rec 36. The Ontario MHP checklist transfuses one pool of platelets for patients on an antiplatelet drug during an MHP. He is not on an MHP, so the key holds, but confirm the local stance. *(samps-s45-lensA.md)*
@@ -443,79 +457,78 @@ A 30-year-old woman, G1P0 at 26 weeks of gestation, is brought to the emergency 
 
 *Source:* Jain V, Chari R, Maslovitz S, et al. Guidelines for the management of a pregnant trauma patient. SOGC Clinical Practice Guideline No. 325. J Obstet Gynaecol Can. 2015. https://pubmed.ncbi.nlm.nih.gov/26334607/
 
-### multiple-trauma-21: Ventilated driver after a rollover
+### multiple-trauma-21: Worker fallen onto steel bar
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 41-year-old man is brought to the emergency department by ambulance after a rollover collision. He was intubated in the department 10 minutes ago for a GCS of 7. The tube is at 23 cm at the teeth, and waveform capnography was present after intubation. He has crepitus over the left lateral chest wall. He is on volume control ventilation. His peak airway pressure has risen from 22 to 40 cmH2O over 3 minutes, and end-tidal CO2 has fallen from 38 to 24 mmHg.
+A 36-year-old man is brought to the emergency department by ambulance 40 minutes after he fell about 3 m at a construction site onto a vertical steel reinforcing bar. The bar entered the right lower abdomen and exits through the right flank. Firefighters cut it at the scene, leaving about 25 cm protruding in front and 15 cm behind. He is healthy and takes no medications. GCS 15. His airway is clear and breath sounds are equal. The bar is fixed and not bleeding externally. The abdomen is tender around the entry site. Pulses are present in both legs.
 
-- Pulse: 136/minute
-- Resp.: 16/minute
-- BP: 72/40 mmHg
-- O2 sat: 84% on FiO2 1.0 by ventilator
-- Weight: 95 kg
+- Temperature: 36.3°C tympanic
+- Pulse: 102/minute
+- Resp.: 22/minute
+- BP: 128/84 mmHg
+- O2 sat: 98% on room air
+- Weight: 84 kg
 
 #### Q1
-*Update:* Breath sounds are absent on the left. A suction catheter passes easily down the tube. The tube is still at 23 cm at the teeth.
+*Update:* Fifteen minutes later he is anxious and his hands are cool. His pulse is 118/minute and his BP is 116/98 mmHg.
 
-**Which of the following is the most likely cause of his deterioration?**
+**Which of the following findings best signals that he is losing blood?**
 
-- A. Left tension pneumothorax  **(key)**
-- B. Mucus plugging of the tube
-- C. Progression of pulmonary contusion
-- D. Right mainstem intubation
-- E. Sedation induced vasodilation
+- A. Anxiety about the steel bar
+- B. O2 saturation of 98%
+- C. Pulse pressure narrowed to 18 mmHg  **(key)**
+- D. Respiratory rate of 22/minute
+- E. Systolic BP still above 110 mmHg
 
-*Explanation:* Rising airway pressure, hypoxemia, hypotension and a drop in end-tidal CO2 after the start of positive pressure ventilation, with absent left breath sounds and left chest crepitus, point to a left tension pneumothorax. In ventilated patients tension develops quickly and presents with hypoxemia and hypotension. The unchanged tube depth argues against mainstem intubation. The suction catheter passes easily, which argues against a plug. A pulmonary contusion worsens over hours, and neither it nor sedation causes one-sided absent breath sounds with a sudden rise in airway pressure.
+*Explanation:* His pulse pressure has narrowed from 44 mmHg to 18 mmHg while his pulse has risen. ATLS describes a narrowing pulse pressure with tachycardia and anxiety as signs of early hemorrhage, before the systolic BP falls. A systolic BP above 110 mmHg is falsely reassuring, because compensation holds it up until a large volume is lost. Anxiety alone could be fear, but here it travels with cool hands and tachycardia. His O2 saturation and respiratory rate are unchanged and do not track blood loss.
 
 *Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
 
-*Source:* Roberts DJ, Leigh-Smith S, Faris PD, et al. Clinical presentation of patients with tension pneumothorax: a systematic review. Ann Surg. 2015. https://pubmed.ncbi.nlm.nih.gov/25563887/
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q2
-**Which of the following is the most appropriate immediate intervention for his chest?**
+**Which of the following is the most appropriate management of the steel bar in the emergency department?**
 
-- A. Chest X-ray to confirm the diagnosis
-- B. Increase PEEP to 10 cmH2O and reassess
-- C. Needle in the second space, midclavicular
-- D. Simple thoracostomy at the left fifth space  **(key)**
-- E. Withdraw the tube 2 cm and reassess
+- A. Cut the bar flush with the skin
+- B. Pull the bar out along its track
+- C. Remove it under ultrasound guidance
+- D. Rotate the bar to test if it is loose
+- E. Stabilize it in place with bulky dressings  **(key)**
 
-*Explanation:* He is ventilated and peri-arrest, so the chest is opened at the fourth or fifth intercostal space just anterior to the midaxillary line with a simple (finger) thoracostomy, and a chest tube follows. The lateral site has a thinner chest wall than the second space in the midclavicular line, where needles fail more often. Waiting for an X-ray delays treatment of a clinical diagnosis. More PEEP raises intrathoracic pressure further. The tube depth is unchanged, so withdrawing it treats a problem he does not have.
+*Explanation:* An impaled object may be compressing injured vessels, so ATLS teaches that it is left in place and removed only in the operating room, where bleeding can be controlled under direct vision. Bulky dressings stop it moving and tearing tissue during transfer and imaging. Pulling it out, with or without ultrasound, can release uncontrolled hemorrhage. Rotating it to test mobility causes further injury. Cutting it flush in the department adds heat and vibration and leaves nothing to grasp in surgery.
 
 *Key feature:* Multiple trauma 1. Perform critical interventions during the primary survey, such as spine protection, chest decompression, hemorrhage control, and pelvic binding.
 
-*Source:* Laan DV, Vu TD, Thiels CA, et al. Chest wall thickness and decompression failure: a systematic review and meta-analysis comparing anatomic locations in needle thoracostomy. Injury. 2016. https://pubmed.ncbi.nlm.nih.gov/26724173/
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q3
-*Update:* There is a rush of air and his SpO2 rises to 95%. A chest tube is placed. His BP is 80/48 mmHg after 2 units of red cells. eFAST shows free fluid in the right upper quadrant.
+*Update:* After 2 units of red cells his BP is 84/50 mmHg and his pulse is 128/minute. eFAST shows free fluid in the right upper quadrant.
 
-**Which of the following is the most appropriate next step for his ongoing shock?**
+**Which of the following is the most appropriate next step for him?**
 
-- A. Angiography and embolization
-- B. CT of the abdomen before deciding
-- C. Diagnostic peritoneal lavage
-- D. Laparotomy in the operating room  **(key)**
-- E. Repeat eFAST in 15 minutes
+- A. Angioembolization of the right kidney
+- B. CT of the abdomen to map the bar's path
+- C. Immediate laparotomy  **(key)**
+- D. Observation while blood is transfused
+- E. Removal of the bar, then reassessment
 
-*Explanation:* He remains in shock after his chest was decompressed and blood was given, and eFAST shows free fluid, so the abdomen is the likely source and he needs an immediate bleeding control procedure. Taking an unstable patient to CT or angiography risks arrest away from the resuscitation area. Diagnostic peritoneal lavage only repeats what the positive eFAST already shows. Repeating the eFAST delays surgery.
+*Explanation:* He has penetrating abdominal injury with hypotension despite blood and free intraperitoneal fluid, so he needs laparotomy now, with the bar removed in the operating room under direct vision. ATLS lists hemodynamic instability after penetrating abdominal trauma as an indication for immediate laparotomy. CT would take an unstable patient away from the resuscitation room and delay control of bleeding. Angioembolization treats selected solid organ bleeding in patients who are responding. Continued transfusion alone does not stop surgical bleeding, and removing the bar in the department risks exsanguination.
 
 *Key feature:* Multiple trauma 2. Prioritize injuries as they are found so the most lethal problems are treated first.
 
-*Source:* Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023. https://pubmed.ncbi.nlm.nih.gov/36859355/
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q4
-*Update:* The trauma surgeon agrees to operate. The team prepares to move him to the operating room in 10 minutes.
+**Which of the following injuries along this path is eFAST least able to detect?**
 
-**Which of the following checks is most important to complete before he leaves the trauma bay?**
+- A. Blood in the hepatorenal space
+- B. Blood in the pericardium
+- C. Blood in the right pleural space
+- D. Retroperitoneal colon or ureter injury  **(key)**
+- E. Right-sided pneumothorax
 
-- A. Chest X-ray for tube and drain position  **(key)**
-- B. CT of the cervical spine
-- C. Formal tertiary survey of the limbs
-- D. Retrograde urethrogram
-- E. Skeletal survey of the long bones
-
-*Explanation:* He has had an endotracheal tube and a chest tube placed during an emergency, so a portable chest X-ray confirms both positions and shows residual pneumothorax or hemothorax before he is moved and ventilated in the operating room. It takes minutes at the bedside. CT of the cervical spine can follow surgery if his spine is protected. A tertiary survey is done within 24 hours, after life-threatening problems are treated. A urethrogram and a skeletal survey are not indicated by anything in the case and would delay laparotomy.
+*Explanation:* The bar passed from the right lower abdomen to the flank, through the retroperitoneum where the ascending colon, right ureter and kidney lie. ATLS notes that FAST is insensitive for retroperitoneal and hollow viscus injuries, so they are easily missed unless the surgeon explores them. eFAST is designed to show blood in the hepatorenal space, the pericardium and the pleural spaces, and to detect a pneumothorax, so those views are its strengths.
 
 *Key feature:* Multiple trauma 3. After the primary survey, search for easily missed injuries and iatrogenic problems like hypothermia or vascular compromise.
 
@@ -758,82 +771,82 @@ A 16-year-old girl is brought to the emergency department by ambulance after a h
 
 *Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
-### multiple-trauma-25: Motorcyclist and a busy trauma bay
+### multiple-trauma-25: Rider thrown onto a fence
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 52-year-old man is brought to the emergency department by ambulance after his motorcycle collided with a truck. The trauma team is a senior resident, two nurses, a respiratory therapist and a recorder. He is pale and cool. GCS 15. His airway is clear and breath sounds are equal. There is an open fracture of the right tibia with slow oozing. His pelvis is tender, and there is bruising over the perineum. He has no neurological deficit. eFAST is negative, and a portable chest X-ray is normal.
+A 31-year-old man is brought to the emergency department by ambulance after he was thrown from an all-terrain vehicle onto a broken wooden fence. He is anxious and short of breath. GCS 15. His airway is clear. There is a 4 cm hole in the left lateral chest wall at the level of the nipple, and air bubbles in and out of it with each breath. Breath sounds are reduced on the left, and the trachea is midline. A scalp laceration oozes slowly. His right ankle is swollen and deformed, with a normal foot pulse. The pelvis is stable.
 
-- Temperature: 35.9°C oral
-- Pulse: 128/minute
-- Resp.: 26/minute
-- BP: 86/50 mmHg
-- O2 sat: 96% on room air
-- Weight: 84 kg
+- Temperature: 36.5°C tympanic
+- Pulse: 116/minute
+- Resp.: 30/minute
+- BP: 124/78 mmHg
+- O2 sat: 88% on 15 L/minute by non-rebreather mask
+- Weight: 80 kg
 
 #### Q1
-**Which of the following is the most likely source of his shock?**
+**Which of the following injuries should be treated first in this patient?**
 
-- A. Bleeding from the open tibial fracture
-- B. Cardiac contusion with pump failure
-- C. Neurogenic shock from spinal injury
-- D. Pelvic ring fracture hemorrhage  **(key)**
-- E. Tension pneumothorax on the left
+- A. Deformed right ankle
+- B. Left chest wall wound  **(key)**
+- C. Possible cervical spine injury
+- D. Possible head injury
+- E. Slowly oozing scalp laceration
 
-*Explanation:* He is in shock with a tender pelvis and perineal bruising, and the negative eFAST and normal chest X-ray make the pelvis the most likely source. Slow oozing from a tibial fracture cannot account for this degree of shock. Neurogenic shock causes warm skin and bradycardia with a neurological deficit, and he has none. Equal breath sounds and a normal chest X-ray exclude tension pneumothorax. Cardiac contusion rarely causes shock and would not explain the pelvic signs.
+*Explanation:* Air moving through the chest wall hole is an open pneumothorax, a breathing problem that is already causing hypoxemia with an O2 saturation of 88% on high flow oxygen. In the primary survey it comes before circulation and disability problems. The scalp wound oozes slowly and can be controlled with pressure. The ankle has a pulse and waits for the secondary survey. His GCS is 15, so a head injury is not the immediate threat, and spinal motion restriction continues while the chest is treated.
 
 *Key feature:* Multiple trauma 2. Prioritize injuries as they are found so the most lethal problems are treated first.
 
-*Source:* Coccolini F, Stahel PF, Montori G, et al. Pelvic trauma: WSES classification and guidelines. World J Emerg Surg. 2017. https://pubmed.ncbi.nlm.nih.gov/28115984/
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q2
-*Update:* Three team members are cleaning and dressing the tibial wound. The recorder has stopped writing to help them. Nobody has applied the pelvic binder.
+*Update:* Eleven people are now in the trauma bay. Two nurses and a student are talking over each other, and you cannot hear the respiratory therapist.
 
-**Which of the following is the most appropriate way to redirect your team?**
+**Which of the following is the most appropriate action for you as team leader now?**
 
-- A. Announce that the pelvis needs a binder
-- B. Apply the binder yourself without delay
-- C. Ask the team what should happen next
-- D. Let them finish the wound, then bind
-- E. Name one nurse to apply the binder now  **(key)**
+- A. Ask people without a role to leave the bay  **(key)**
+- B. Keep everyone in case extra hands are needed
+- C. Move the patient to a larger room
+- D. Raise your voice over the others
+- E. Wait until the noise settles
 
-*Explanation:* The team has fixated on a visible but minor injury, so the leader reassigns a named person to the life-saving task and returns the recorder to documentation. Directed requests to a named person get done, while a general announcement to the room is often not acted on. A leader who applies the binder personally loses sight of the whole resuscitation. Asking the team to decide wastes time when the priority is clear. Finishing the wound first delays control of the likely source of bleeding.
+*Explanation:* Crowding and noise break communication and add errors, and Hicks and Petrosoniak describe managing the environment as part of team performance. Sending away people without a role quiets the room so that orders and responses can be heard. Keeping everyone adds noise without adding useful work. Shouting over others adds to the noise. Moving a hypoxemic patient delays care. Waiting lets the confusion continue while he deteriorates.
 
 *Key feature:* Multiple trauma 7. Lead the trauma team and assign tasks so interventions happen in parallel.
 
-*Source:* Hicks C, Petrosoniak A. The human factor: optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018. https://pubmed.ncbi.nlm.nih.gov/29132571/
+*Source:* Hicks C, Petrosoniak A. The human factor. Optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018. https://pubmed.ncbi.nlm.nih.gov/29132571/
 
 #### Q3
-**Which of the following is the correct position for the pelvic binder?**
+**Which of the following is the most appropriate immediate treatment for his chest wound?**
 
-- A. Centred at the level of the umbilicus
-- B. Centred over the anterior superior iliac spines
-- C. Centred over the greater trochanters  **(key)**
-- D. Centred over the iliac crests
-- E. Centred over the upper thighs
+- A. Close the wound with sutures
+- B. Needle through the wound into the chest
+- C. Occlusive dressing sealed on all sides
+- D. Pack the wound with gauze
+- E. Vented chest seal over the wound  **(key)**
 
-*Explanation:* A binder centred over the greater trochanters closes the pelvic ring and reduces the pelvic volume most effectively. Binders are often placed too high, over the iliac crests or the anterior superior iliac spines, where they reduce the fracture poorly and may widen it. A binder at the level of the umbilicus compresses the abdomen instead of the pelvis. A binder on the upper thighs sits below the joint it needs to close.
+*Explanation:* ATLS treats an open pneumothorax with a dressing that lets air out but not in, followed promptly by a chest tube placed away from the wound. A dressing sealed on all sides, sutures or packing can trap air and convert the wound into a tension pneumothorax. A needle through the wound does not seal the defect and adds injury. The chest tube re-expands the lung and allows later closure of the wound.
 
 *Key feature:* Multiple trauma 1. Perform critical interventions during the primary survey, such as spine protection, chest decompression, hemorrhage control, and pelvic binding.
 
-*Source:* Bonner TJ, Eardley WG, Newell N, et al. Accurate placement of a pelvic binder improves reduction of unstable fractures of the pelvic ring. J Bone Joint Surg Br. 2011. https://pubmed.ncbi.nlm.nih.gov/22058306/
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q4
-*Update:* You ask a nurse to give tranexamic acid 1 g IV over 10 minutes.
+*Update:* The senior resident is skilled in chest tube insertion. A nurse is ready to take blood and give analgesia.
 
-**Which of the following responses by the nurse best completes closed loop communication?**
+**Which of the following is the most appropriate plan for the chest tube?**
 
-- A. Draw up the drug and give it quietly
-- B. Nod and start preparing the drug
-- C. Repeat the order, then report it given  **(key)**
-- D. Tell the recorder once the drug is in
-- E. Write the order down on the chart
+- A. Delay it until you finish the full survey
+- B. Insert it yourself and pause other tasks
+- C. Insert it yourself while the resident leads
+- D. Resident inserts it while you keep oversight  **(key)**
+- E. Wait for the surgeon to insert it
 
-*Explanation:* Closed loop communication has three steps: a clear order to a named person, a spoken read-back of the order, and a report once the task is done. This catches errors of drug, dose and route and keeps the leader's picture current. A nod or silent preparation gives the leader no confirmation that the order was heard correctly. Telling only the recorder or writing it down leaves the leader unaware that the task is complete.
+*Explanation:* A team leader who steps back from procedures keeps the overall picture, watches the vital signs and directs parallel tasks. Hicks and Petrosoniak describe this hands-off role as central to trauma team performance. The skilled resident can place the tube while you keep oversight and the nurse draws blood and gives analgesia. Doing it yourself stops the leadership of the resuscitation. Waiting for the surgeon or for the full survey delays treatment of his hypoxemia.
 
 *Key feature:* Multiple trauma 7. Lead the trauma team and assign tasks so interventions happen in parallel.
 
-*Source:* Hicks C, Petrosoniak A. The human factor: optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018. https://pubmed.ncbi.nlm.nih.gov/29132571/
+*Source:* Hicks C, Petrosoniak A. The human factor. Optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018. https://pubmed.ncbi.nlm.nih.gov/29132571/
 
 ### multiple-trauma-26: Front seat passenger with hip pain
 
@@ -914,155 +927,153 @@ A 34-year-old woman is brought to the emergency department by ambulance after a 
 
 *Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023. Chapter 47, Femur and Hip Injuries. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
 
-### multiple-trauma-27: All-terrain vehicle rider and a wire fence
+### multiple-trauma-27: Fall from a hayloft
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 19-year-old man is brought to the emergency department by ambulance after he rode an all-terrain vehicle into a wire fence that caught him across the front of the neck. He has neck pain and a hoarse voice. He is healthy and takes no medications. GCS 15. He is sitting up and speaking in short sentences. There is a linear abrasion across the anterior neck with tenderness over the larynx and crepitus in the soft tissues of the neck. There is no stridor. His breath sounds are equal.
+A 61-year-old woman is brought to the emergency department by ambulance after she fell about 4 m from a hayloft onto a wooden gate, landing on her left chest. She has hypertension treated with amlodipine. GCS 15. She is in severe pain and takes shallow breaths. A segment of the left lateral chest wall moves inward when she breathes in, with crepitus over it. Breath sounds are present on both sides. The abdomen is soft. She has received acetaminophen and ketamine 20 mg IV. The chest X-ray shows fractures of left ribs 4 to 8, each in two places, and patchy opacity in the left lung without pneumothorax. A blood gas shows a PaCO2 of 40 mmHg.
 
-- Temperature: 36.6°C oral
-- Pulse: 104/minute
-- Resp.: 22/minute
-- BP: 132/80 mmHg
-- O2 sat: 96% on room air
-- Weight: 76 kg
+- Temperature: 36.4°C tympanic
+- Pulse: 108/minute
+- Resp.: 30/minute
+- BP: 142/84 mmHg
+- O2 sat: 92% on 15 L/minute by non-rebreather mask
+- Weight: 78 kg
 
 #### Q1
-*Update:* Over 20 minutes his voice becomes weaker and the crepitus spreads to the upper chest wall. His SpO2 is 94% on room air.
+*Update:* Over the next hour she becomes drowsy but rousable. Her respiratory rate is 36/minute. A repeat blood gas shows a PaCO2 of 62 mmHg.
 
-**Which of the following is the most likely explanation for this change?**
+**Which of the following findings best shows that she is developing respiratory failure?**
 
-- A. Anxiety related vocal fatigue
-- B. Carotid artery dissection
-- C. Laryngotracheal disruption  **(key)**
-- D. Recurrent laryngeal nerve stretch
-- E. Simple pneumothorax
+- A. Crepitus over the left chest wall
+- B. Opacity in the left lung on X-ray
+- C. PaCO2 risen from 40 to 62 mmHg  **(key)**
+- D. Pain on deep breathing
+- E. Pulse of 108/minute
 
-*Explanation:* A direct blow to the anterior neck with hoarseness, laryngeal tenderness and spreading subcutaneous emphysema indicates disruption of the larynx or trachea with an ongoing air leak. A weakening voice and spreading air warn that the airway may soon be lost. Anxiety does not produce subcutaneous emphysema. A carotid dissection causes neurological signs rather than air in the tissues. A stretched recurrent laryngeal nerve can cause hoarseness but not spreading air. His breath sounds are equal and the air started in the neck.
+*Explanation:* A rising PaCO2 with new drowsiness shows that her ventilation is failing, as pain, the flail segment and the lung contusion tire her. The EAST guideline reserves mechanical ventilation for respiratory failure, so recognizing it early matters. Crepitus and the lung opacity were present on arrival and describe the injury, not a change. Pain on breathing and a pulse of 108/minute are expected with her injuries and do not by themselves show that ventilation is failing.
 
 *Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023. Chapter 36, Neck Trauma. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Simon B, et al. Management of pulmonary contusion and flail chest. An Eastern Association for the Surgery of Trauma practice management guideline. J Trauma Acute Care Surg. 2012. https://pubmed.ncbi.nlm.nih.gov/23114493/
 
 #### Q2
-**Which of the following is the most appropriate approach to securing his airway?**
+**Which of the following is the most appropriate intervention for her breathing now?**
 
-- A. Awake flexible scope intubation, surgeon ready  **(key)**
-- B. Blind nasotracheal intubation
-- C. Rapid sequence intubation by laryngoscopy
-- D. Supraglottic airway insertion
-- E. Surgical cricothyroidotomy now
+- A. Epidural catheter for analgesia
+- B. Rapid sequence intubation  **(key)**
+- C. Strapping of the flail segment
+- D. Surgical fixation of the ribs today
+- E. Trial of CPAP by face mask
 
-*Explanation:* With a suspected laryngotracheal injury, the tube should pass the injury under direct vision while he breathes on his own, so awake flexible scope intubation is used with a surgeon ready to perform a tracheostomy. Paralysis for rapid sequence intubation can turn a partial disruption into a complete loss of the airway, and a tube passed blindly can create a false passage. A supraglottic airway pushes air through the disrupted larynx. A cricothyroidotomy at the site of injury may enter the damaged segment or miss a distal tear.
+*Explanation:* She is drowsy with hypercapnia, so she has respiratory failure and needs intubation and ventilation with PEEP. The EAST guideline suggests a trial of mask CPAP only in alert patients with marginal respiratory status, and she is no longer alert. An epidural is the preferred analgesia for severe flail chest, but it will not rescue failing ventilation now. Strapping the chest restricts breathing further. Surgical fixation may be considered later for those who cannot be weaned from the ventilator.
 
 *Key feature:* Multiple trauma 1. Perform critical interventions during the primary survey, such as spine protection, chest decompression, hemorrhage control, and pelvic binding.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023. Chapter 36, Neck Trauma. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Simon B, et al. Management of pulmonary contusion and flail chest. An Eastern Association for the Surgery of Trauma practice management guideline. J Trauma Acute Care Surg. 2012. https://pubmed.ncbi.nlm.nih.gov/23114493/
 
 #### Q3
-*Update:* An anesthesiologist, an otolaryngologist, a respiratory therapist and two nurses gather in the operating room for his airway.
+**Which of the following tasks is most important to assign to a team member at this point?**
 
-**Which of the following is the most important step before the first airway attempt begins?**
+- A. Nurse to call her family to the bedside
+- B. Nurse to draw a repeat blood gas first
+- C. Physician ready to decompress the left chest  **(key)**
+- D. Recorder to phone radiology for a CT slot
+- E. RT to set up for a trial of CPAP
 
-- A. Brief the team on each backup plan  **(key)**
-- B. Discuss the plan once the tube is in
-- C. Leave planning to the anesthetist alone
-- D. Sedate him deeply first, then decide
-- E. Start without a surgeon in the room
-
-*Explanation:* A short briefing before a high-risk airway gives the whole team a shared mental model of the primary plan, the backup plans and the trigger to move to a surgical airway, and assigns each person a role. Planning after the attempt or leaving it to one person means others cannot anticipate or speak up. Deep sedation before a plan can abolish his own breathing through a disrupted airway. Starting without the surgeon present removes the surgical backup he may need within seconds.
+*Explanation:* Positive pressure ventilation can turn a small pneumothorax from her rib fractures into a tension pneumothorax, so a named team member should stand ready with equipment to decompress the left chest if her airway pressures or BP change after intubation. Assigning this task now lets it run in parallel with airway management. Another blood gas adds nothing to the one that already shows failure. Calling family and booking CT can wait. A CPAP trial is not appropriate for a drowsy patient.
 
 *Key feature:* Multiple trauma 7. Lead the trauma team and assign tasks so interventions happen in parallel.
 
-*Source:* Hicks C, Petrosoniak A. The human factor: optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018. https://pubmed.ncbi.nlm.nih.gov/29132571/
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q4
-*Update:* His airway is secured in the operating room. He has a GCS of 15 before sedation and no focal deficit.
+**Which of the following fluid strategies is most appropriate for her lung injury?**
 
-**Which of the following investigations is most appropriate to look for an associated vascular injury?**
+- A. Crystalloid 2 L bolus for every patient
+- B. Furosemide to keep the lungs dry
+- C. Methylprednisolone for the contusion
+- D. Restrict all IV fluids
+- E. Target perfusion, avoiding excess crystalloid  **(key)**
 
-- A. Carotid duplex ultrasound
-- B. CT angiography of the neck  **(key)**
-- C. Four vessel catheter angiography
-- D. MR angiography of the neck
-- E. Noncontrast CT of the neck
-
-*Explanation:* A clothesline mechanism with an anterior neck abrasion is a risk factor for blunt cerebrovascular injury, which is often silent until a stroke occurs. CT angiography is the recommended screening test because it is fast, widely available and accurate. Duplex ultrasound misses injuries near the skull base. Catheter angiography is invasive and is kept for unclear CT results or treatment. MR angiography is slower and less available. A noncontrast CT cannot show the vessel wall.
+*Explanation:* The EAST guideline advises that patients with pulmonary contusion and flail chest should not be excessively fluid restricted, but should be resuscitated to signs of adequate tissue perfusion. Excess crystalloid worsens the contusion, which is an iatrogenic harm to avoid. Routine large boluses ignore her perfusion. Restricting all fluid risks hypoperfusion. Diuretics are only for hydrostatic fluid overload, which she does not have. The guideline advises against steroids for pulmonary contusion.
 
 *Key feature:* Multiple trauma 3. After the primary survey, search for easily missed injuries and iatrogenic problems like hypothermia or vascular compromise.
 
-*Source:* Kim DY, Biffl W, Bokhari F, et al. Evaluation and management of blunt cerebrovascular injury: a practice management guideline from the Eastern Association for the Surgery of Trauma. J Trauma Acute Care Surg. 2020. https://pubmed.ncbi.nlm.nih.gov/32176167/
+*Source:* Simon B, et al. Management of pulmonary contusion and flail chest. An Eastern Association for the Surgery of Trauma practice management guideline. J Trauma Acute Care Surg. 2012. https://pubmed.ncbi.nlm.nih.gov/23114493/
 
-### multiple-trauma-28: Man who jumped from a burning house
+### multiple-trauma-28: Motorcyclist still in his helmet
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a regional hospital emergency department without a burn unit. A 35-year-old man is brought to the emergency department by ambulance 30 minutes after he jumped from a third floor window to escape a house fire. He has pain in his chest, abdomen and left hip. He is healthy and has received no analgesia. GCS 14. He moves all four limbs normally. His voice is hoarse, his nasal hairs are singed and he coughs up black sputum. He has partial thickness burns to the front of both arms and the front of the chest, about 18% of his body surface area, without circumferential full thickness areas. His left upper quadrant is tender. eFAST shows free fluid in the left upper quadrant.
+You are working in a rural hospital emergency department. The trauma centre is 1 hour away by air. A 27-year-old man is brought in by ambulance after his motorcycle left the highway at speed. Paramedics kept his full face helmet on because he was combative, and they held his head in line. He now makes gurgling sounds, and vomit is visible inside the visor. GCS 7 (E1 V2 M4). His left thigh is swollen and angulated, with a normal foot pulse and no wound. The pelvis is stable, and eFAST is negative. The department follows the European guideline on management of major bleeding after trauma.
 
-- Temperature: 36.1°C oral
-- Pulse: 128/minute
-- Resp.: 28/minute
-- BP: 88/52 mmHg
-- O2 sat: 93% on a non-rebreather mask
+- Temperature: 36.1°C tympanic
+- Pulse: 118/minute
+- Resp.: 26/minute
+- BP: 98/60 mmHg
+- O2 sat: 88% on 15 L/minute by non-rebreather mask
 - Weight: 82 kg
 
 #### Q1
-**Which of the following is the most likely cause of his hypotension?**
+**Which of the following should be done first for this patient?**
 
-- A. Burn shock from capillary leak
-- B. Carbon monoxide poisoning
-- C. Hemorrhage from blunt injuries  **(key)**
-- D. Neurogenic shock from spinal injury
-- E. Vasodilation from opioid analgesia
+- A. Analgesia for his femur fracture
+- B. Blood products for his thigh bleeding
+- C. Chest X-ray before any procedure
+- D. Clear and secure his airway  **(key)**
+- E. CT of the head and cervical spine
 
-*Explanation:* He fell from a third floor window and has free fluid in the left upper quadrant, so hemorrhage is the most likely cause of shock within the first hour. Burn shock develops over hours and is uncommon this early, so early hypotension in a burned patient points to another injury. Carbon monoxide causes hypoxia and neurological symptoms more than early hypotension. He is tachycardic and moves all four limbs normally, which argues against neurogenic shock. He has received no analgesia, so opioid vasodilation is not the cause.
+*Explanation:* Gurgling with vomit in the visor and a saturation of 88% mean his airway is obstructed, and airway comes first in the primary survey. The helmet must come off so that the airway can be suctioned and secured. Blood for the femur fracture and analgesia follow once the airway is controlled, and other staff can start them in parallel. A chest X-ray can wait until his airway is clear, and CT needs a secured airway first.
 
 *Key feature:* Multiple trauma 2. Prioritize injuries as they are found so the most lethal problems are treated first.
 
 *Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q2
-**Which of the following is the most appropriate decision about his airway?**
+**Which of the following is the most appropriate way to manage his helmet?**
 
-- A. Early intubation with a large tube  **(key)**
-- B. High-flow nasal oxygen and reassess
-- C. Intubate only if stridor develops
-- D. Nebulized epinephrine and observation
-- E. Observe and reassess in 4 hours
+- A. Leave it on and suction through the visor
+- B. One person pulls it straight off
+- C. Tilt the head back to slide it off
+- D. Two people, one holding the neck in line  **(key)**
+- E. Wait until CT of the cervical spine
 
-*Explanation:* Hoarseness, singed nasal hair and carbonaceous sputum indicate inhalation injury, and airway swelling will worsen over the next hours with fluid resuscitation and transfer. Early intubation with a large tube, before swelling develops, is the safest course and allows later bronchoscopy. Waiting for stridor means intubating a narrowed, swollen airway. Nebulized epinephrine, high-flow oxygen and observation do not prevent progressive edema.
+*Explanation:* ATLS teaches helmet removal by two people. One holds the head and neck in line from below while the other expands the helmet sideways and eases it off, tilting it to clear the nose, then in-line stabilization continues. One person pulling it off, or tilting the head back, moves the cervical spine. Suction through the visor cannot clear an airway filled with vomit. Delaying removal until CT leaves him hypoxic.
 
 *Key feature:* Multiple trauma 1. Perform critical interventions during the primary survey, such as spine protection, chest decompression, hemorrhage control, and pelvic binding.
 
 *Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q3
-**Which of the following should guide his fluid and blood therapy in the first hour?**
+*Update:* His pupils are equal. After initial resuscitation his BP is 94/56 mmHg.
 
-- A. Blood products for hemorrhagic shock  **(key)**
-- B. Burn formula based on 18% of body area
-- C. Colloid infusion to expand plasma volume
-- D. Crystalloid titrated to urine output
-- E. Hypertonic saline to limit burn edema
+**Which of the following blood pressure targets is most appropriate for him under this guideline?**
 
-*Explanation:* His shock is from bleeding, so it is treated with blood products and early hemorrhage control, as in any bleeding trauma patient. Burn formulas estimate the fluid lost by capillary leak over 24 hours and do not replace blood lost to injury. Large volumes of crystalloid or colloid dilute clotting factors and worsen edema. Hypertonic saline has no proven benefit in bleeding trauma.
+- A. MAP of 65 mmHg or more
+- B. MAP of 80 mmHg or more  **(key)**
+- C. MAP of 50 to 60 mmHg
+- D. Systolic BP of 70 mmHg
+- E. Systolic BP of 80 to 90 mmHg
+
+*Explanation:* The European guideline recommends a restricted strategy with a systolic BP of 80 to 90 mmHg, a MAP of 50 to 60 mmHg, only for bleeding patients without brain injury. With severe TBI, a GCS of 8 or less, it recommends a MAP of 80 mmHg or more, because low cerebral perfusion worsens brain injury. His GCS of 7 puts him in that group, and his MAP now is about 69 mmHg. A MAP of 65 mmHg or more is a common target in septic shock but is below the level the guideline sets for severe TBI. A systolic of 70 mmHg would leave his injured brain underperfused.
 
 *Key feature:* Multiple trauma 6. Guide fluid and blood replacement in major trauma with defined targets such as MAP and a massive transfusion protocol.
 
 *Source:* Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023. https://pubmed.ncbi.nlm.nih.gov/36859355/
 
 #### Q4
-*Update:* He is intubated and has received 4 units of red cells. The burn and trauma centre accepts him for transfer by air.
+*Update:* An X-ray shows a closed midshaft fracture of the left femur. The knee, ankle and pelvis are normal. The flight crew arrives in 20 minutes.
 
-**Which of the following is the most appropriate care of his burns before transfer?**
+**Which of the following is the most appropriate splint for his thigh during the flight?**
 
-- A. Apply silver sulfadiazine to the burns
-- B. Cool wet soaks for the transfer
-- C. Cover the burns with clean dry dressings  **(key)**
-- D. Deroof all blisters before departure
-- E. Escharotomy of both arms before leaving
+- A. Inflatable air splint on the thigh
+- B. No splint until the trauma centre
+- C. Pillow under the knee
+- D. Plaster cast from hip to ankle
+- E. Traction splint on the left leg  **(key)**
 
-*Explanation:* Clean dry dressings protect the burns and limit heat loss during transport, and the receiving centre will assess and dress the wounds. Wet soaks over 18% of his body promote hypothermia, which worsens coagulopathy in a bleeding patient. Topical agents such as silver sulfadiazine obscure the wound for the burn team. Deroofing blisters is not an emergency step. His burns are partial thickness and not circumferential, so escharotomy is not indicated.
+*Explanation:* A traction splint suits an isolated midshaft femur fracture with no pelvic, knee or ankle injury. It reduces pain and bleeding into the thigh and protects the vessels during transport. An air splint can change pressure as the aircraft climbs and descends. A pillow does not immobilize the fracture. A plaster cast hides the thigh from examination and cannot be adjusted for swelling. Leaving the fracture unsplinted adds pain and blood loss.
 
 *Key feature:* Multiple trauma 8. Prepare trauma patients for transport by splinting, securing the airway, placing tubes, and planning for altitude effects.
 
@@ -1072,7 +1083,7 @@ You are working in a regional hospital emergency department without a burn unit.
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 49-year-old man was brought to the emergency department by ambulance 6 hours ago after he fell 8 m from scaffolding. He was intubated on arrival. He had a grade IV liver laceration treated with angioembolization. He has received 14 units of red cells, 10 units of plasma and 6 L of crystalloid. He remains intubated in the emergency department while he waits for an intensive care bed. Over the last hour his peak airway pressure has risen from 26 to 38 cmH2O. His urine output has fallen to 5 mL/hour. His abdomen is distended and tense.
+A 49-year-old man was brought to the emergency department by ambulance 6 hours ago after he fell 8 m from scaffolding. He was intubated on arrival. He had a grade IV liver laceration treated with angioembolization. He has received 14 units of red cells, 10 units of plasma and 6 L of crystalloid. He received tranexamic acid and is ventilated with PEEP of 5 cmH2O. He remains intubated in the emergency department while he waits for an intensive care bed. Over the last hour his peak airway pressure has risen from 26 to 38 cmH2O. His urine output has fallen to 5 mL/hour. His abdomen is distended and tense.
 
 - Temperature: 35.8°C core
 - Pulse: 122/minute
@@ -1208,84 +1219,84 @@ A 22-year-old man was brought to the emergency department by ambulance 30 hours 
 
 *Source:* Miyake T, Okada H, Kanda N. Advances and uncertainties in fat embolism syndrome: a review. Trauma Surg Acute Care Open. 2026. https://doi.org/10.1136/tsaco-2025-001913
 
-### multiple-trauma-31: Driver with chest pain after a crash
+### multiple-trauma-31: Hockey player boarding in the department
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 58-year-old woman is brought to the emergency department by ambulance after a frontal collision at about 60 km/h. The steering wheel struck her chest. She has anterior chest pain. She has hypertension treated with amlodipine. GCS 15. She has tenderness and bruising over the sternum. Breath sounds are equal and the abdomen is soft. A chest X-ray shows a nondisplaced sternal fracture. The primary survey is otherwise normal.
+A 23-year-old man was brought to the emergency department 3 hours ago after he was checked hard into the boards during a hockey game. He has left lower chest and upper abdominal pain. He is healthy. GCS 15. CT with contrast showed a fracture of the left 10th rib, a grade III splenic laceration without contrast extravasation, and a small amount of free fluid around the spleen. There was no other injury seen. The trauma surgeon admitted him for nonoperative management, and he is waiting in the department for a monitored bed. His initial vital signs are listed.
 
-- Temperature: 36.7°C oral
-- Pulse: 108/minute
-- Resp.: 20/minute
-- BP: 128/74 mmHg
-- O2 sat: 97% on room air
-- Weight: 70 kg
+- Temperature: 36.8°C oral
+- Pulse: 96/minute
+- Resp.: 18/minute
+- BP: 124/76 mmHg
+- O2 sat: 98% on room air
+- Weight: 86 kg
 
 #### Q1
-**Which of the following initial tests is most appropriate to screen for blunt cardiac injury?**
+**Which of the following injuries is most easily missed on his initial CT and needs serial abdominal examination?**
 
-- A. Cardiac MRI within 24 hours
-- B. CK-MB and a chest X-ray
-- C. ECG and troponin I  **(key)**
-- D. Echocardiogram for every patient
-- E. Sternal view X-ray alone
+- A. Left hemothorax
+- B. Left kidney laceration
+- C. Left pneumothorax
+- D. Liver laceration
+- E. Small bowel injury  **(key)**
 
-*Explanation:* An ECG is recommended for every patient with suspected blunt cardiac injury, and adding troponin I improves the screen, because blunt cardiac injury is effectively excluded when both are normal. CK-MB does not help in diagnosis. Echocardiography is for patients who are unstable or have abnormal screening results, not for everyone. Cardiac MRI is not a screening test. A sternal fracture alone does not predict cardiac injury, so a sternal view adds nothing.
+*Explanation:* CT is excellent for solid organ injury but less sensitive for hollow viscus injury, which may show only subtle signs early. ATLS teaches that repeated abdominal examination is needed to detect it, and nonoperative management of his spleen depends on those examinations. Hemothorax, pneumothorax and kidney or liver lacerations are well seen on CT with contrast, and none was reported.
 
 *Key feature:* Multiple trauma 3. After the primary survey, search for easily missed injuries and iatrogenic problems like hypothermia or vascular compromise.
 
-*Source:* Clancy K, Velopulos C, Bilaniuk JW, et al. Screening for blunt cardiac injury: an Eastern Association for the Surgery of Trauma practice management guideline. J Trauma Acute Care Surg. 2012. https://pubmed.ncbi.nlm.nih.gov/23114485/
-
-#### Q2
-*Update:* Her ECG shows a new right bundle branch block and frequent premature ventricular complexes. Troponin I is elevated.
-
-**Which of the following is the most appropriate disposition for her?**
-
-- A. Admission with continuous monitoring  **(key)**
-- B. Cardiac catheterization now
-- C. Discharge with a repeat troponin
-- D. Observe 6 hours, then discharge
-- E. Pericardial window tonight
-
-*Explanation:* A new conduction abnormality and ectopy on the ECG, with an elevated troponin, indicate blunt cardiac injury, and she needs admission with continuous cardiac monitoring for arrhythmias and pump failure. Discharge after a short observation is unsafe with an abnormal ECG. Catheterization is not a routine step unless coronary injury is suspected. A pericardial window is for tamponade, which she does not have.
-
-*Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
-
-*Source:* Clancy K, Velopulos C, Bilaniuk JW, et al. Screening for blunt cardiac injury: an Eastern Association for the Surgery of Trauma practice management guideline. J Trauma Acute Care Surg. 2012. https://pubmed.ncbi.nlm.nih.gov/23114485/
-
-#### Q3
-*Update:* Three hours later her pulse is 124/minute and her BP is 92/78 mmHg. Her neck veins are distended. Breath sounds remain equal.
-
-**Which of the following bedside tests will most quickly confirm the likely cause of this change?**
-
-- A. Chest X-ray for heart size
-- B. CT of the chest with contrast
-- C. Focused cardiac ultrasound  **(key)**
-- D. Formal echo by cardiology
-- E. Repeat troponin I level
-
-*Explanation:* Her pulse pressure has narrowed to 14 mmHg, her pulse has risen and her neck veins are distended, which suggests pericardial tamponade. Equal breath sounds make tension pneumothorax unlikely. Focused cardiac ultrasound at the bedside shows an effusion and chamber collapse within minutes. A chest X-ray is insensitive for acute tamponade. CT moves an unstable patient away from the resuscitation area. A formal echo takes longer to arrange, and a repeat troponin does not identify tamponade.
-
-*Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
-
 *Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
+#### Q2
+*Update:* Two hours later he is restless. His pulse is 118/minute and his BP is 112/80 mmHg. He reports pain at the tip of his left shoulder, pain with deep breaths and point tenderness over the 10th rib. His respiratory rate is 20/minute and his temperature is 37.4°C.
+
+**Which of the following new findings most suggests bleeding inside the abdomen rather than rib pain?**
+
+- A. Left shoulder tip pain  **(key)**
+- B. Pain with deep breaths
+- C. Point tenderness over the 10th rib
+- D. Respiratory rate of 20/minute
+- E. Temperature of 37.4°C
+
+*Explanation:* Pain at the tip of the left shoulder is referred pain from blood irritating the diaphragm, and with his rising pulse and narrowing pulse pressure it points to ongoing bleeding from the spleen. The WSES guideline makes serial clinical and laboratory checks part of nonoperative management so that this change is caught early. Pain with breathing and point tenderness over the rib are expected from the fracture. A respiratory rate of 20/minute and a temperature of 37.4°C do not separate bleeding from rib pain.
+
+*Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
+
+*Source:* Coccolini F, et al. Splenic trauma. WSES classification and guidelines for adult and pediatric patients. World J Emerg Surg. 2017. https://pubmed.ncbi.nlm.nih.gov/28828034/
+
+#### Q3
+*Update:* After 1 unit of red cells his pulse is 98/minute and his BP is 122/78 mmHg. A repeat CT shows a new contrast blush in the spleen.
+
+**Which of the following is the most appropriate management now?**
+
+- A. Continued observation alone
+- B. Discharge with a follow-up CT
+- C. Immediate splenectomy
+- D. Splenic angioembolization  **(key)**
+- E. Tranexamic acid alone
+
+*Explanation:* He responded to transfusion, so he is hemodynamically stable, and the WSES guideline suggests angiography with embolization for stable patients with an arterial blush on CT, whatever the injury grade. Observation alone ignores active arterial bleeding. Immediate splenectomy is for patients who are unstable or who fail embolization. Tranexamic acid does not stop arterial bleeding by itself. Discharge is unsafe with active bleeding.
+
+*Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
+
+*Source:* Coccolini F, et al. Splenic trauma. WSES classification and guidelines for adult and pediatric patients. World J Emerg Surg. 2017. https://pubmed.ncbi.nlm.nih.gov/28828034/
+
 #### Q4
-*Update:* Ultrasound shows a large pericardial effusion with right ventricular collapse. A cardiac surgeon is in the hospital and the operating room is ready.
+*Update:* Twenty minutes later, before any procedure has started, his BP falls to 82/50 mmHg despite a second unit of red cells.
 
-**Which of the following is the most appropriate management at this point?**
+**Which of the following is the most appropriate next step?**
 
-- A. Fluid bolus and observation in the ICU
-- B. Norepinephrine infusion and repeat echo
-- C. Pericardiocentesis alone, then observe
-- D. Sternotomy or window in the operating room  **(key)**
-- E. Thoracotomy in the emergency department
+- A. Continue the current plan unchanged
+- B. Operating room for splenectomy  **(key)**
+- C. Repeat CT to measure the bleeding
+- D. Start a norepinephrine infusion
+- E. Transfer to the intensive care unit
 
-*Explanation:* Traumatic tamponade is treated surgically, and with a cardiac surgeon and operating room ready, she goes directly for pericardial decompression and repair. Pericardiocentesis is a temporizing step when surgery is not immediately available and often fails with clotted blood. A fluid bolus may buy minutes but is not definitive. Vasopressors do not relieve tamponade. She still has a pulse and a blood pressure, so thoracotomy in the emergency department is not indicated.
+*Explanation:* He is now unstable despite transfusion, so nonoperative management has failed. The WSES guideline recommends operative management for hemodynamically unstable patients, and splenectomy when nonoperative management fails and instability persists. Keeping to the earlier plan or repeating CT delays hemorrhage control, and embolization is for stable patients. A vasopressor masks hypovolemia and does not stop bleeding. Moving him to the intensive care unit without surgery leaves the source untreated.
 
 *Key feature:* Multiple trauma 2. Prioritize injuries as they are found so the most lethal problems are treated first.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
+*Source:* Coccolini F, et al. Splenic trauma. WSES classification and guidelines for adult and pediatric patients. World J Emerg Surg. 2017. https://pubmed.ncbi.nlm.nih.gov/28828034/
 
 ### multiple-trauma-32: Pedestrian during a large transfusion
 
@@ -1512,62 +1523,63 @@ Select 3.
 
 *Source:* Paal P, Pasquier M, Darocha T, et al. Accidental hypothermia: 2021 update. Int J Environ Res Public Health. 2022. https://pubmed.ncbi.nlm.nih.gov/35010760/
 
-### multiple-trauma-35: Three patients from one rollover
+### multiple-trauma-35: A mother and child from one car
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department as the only physician on duty, with three nurses and a respiratory therapist. Paramedics arrive at the same time with three patients from one van rollover. A 30-year-old man is talking and has an open fracture of the left forearm with minimal bleeding. A 70-year-old man is alert with right hip pain and a systolic BP of 146 mmHg. A 45-year-old woman is anxious and short of breath. Her breath sounds are absent on the right, and her neck veins are distended. Her vital signs are listed below.
+You are the only physician in a community hospital emergency department, with three nurses and a respiratory therapist. Paramedics arrive with a mother and her son from a car that was struck on the passenger side. The 34-year-old mother is screaming in pain and asking for her son. She has an open fracture of the left lower leg with slow bleeding controlled by a dressing, a pulse of 112/minute and a systolic BP of 132 mmHg. Her 3-year-old son was in a forward facing car seat. He is quiet, with snoring respirations. He opens his eyes to pain, moans and localizes pain. He has a bruise above the right ear. His vital signs are listed.
 
-- Pulse: 134/minute
-- Resp.: 34/minute
-- BP: 86/58 mmHg
-- O2 sat: 84% on a non-rebreather mask
-- Weight: 70 kg
+- Temperature: 36.2°C tympanic
+- Pulse: 150/minute
+- Resp.: 28/minute
+- BP: 92/56 mmHg
+- O2 sat: 91% on 15 L/minute by non-rebreather mask
+- Weight: 15 kg
 
 #### Q1
-**Which of the following patients should you assess and treat first?**
+**Which of the following patients and problems should you attend to first?**
 
-- A. All three together in one bay
-- B. The man with the forearm fracture
-- C. The older man with hip pain
-- D. The woman who is short of breath  **(key)**
-- E. Whoever arrived first by ambulance
+- A. The boy's airway  **(key)**
+- B. The boy's scalp bruise
+- C. The mother's fracture bleeding
+- D. The mother's pain
+- E. The mother's questions
 
-*Explanation:* The woman has hypoxia, hypotension, absent breath sounds on the right and distended neck veins, which is a tension pneumothorax and the most immediately lethal problem. The man with an open forearm fracture is talking and barely bleeding, so his airway and circulation are intact for now. The older man is alert with a normal systolic pressure. Treating all three together splits a small team, and arrival order ignores severity.
+*Explanation:* The quiet child is the sicker patient. Snoring respirations with an O2 saturation of 91% on high flow oxygen mean a partly obstructed airway, and his GCS of 9 (E2 V2 M5) from a head injury puts it at further risk. Airway threats come first in the primary survey. The mother is loud, which shows that her airway and breathing are intact, and her bleeding is controlled. Her pain and her questions matter, but a nurse can address them while you manage the boy. The bruise is noted in the secondary survey.
 
 *Key feature:* Multiple trauma 2. Prioritize injuries as they are found so the most lethal problems are treated first.
 
 *Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q2
-**Which of the following is the most appropriate immediate intervention for the woman?**
+**Which of the following is the most appropriate first manoeuvre to open the boy's airway?**
 
-- A. Chest tube after a CT of the chest
-- B. Chest X-ray before any procedure
-- C. Intubation and positive pressure first
-- D. Needle at the fourth space, anterior axillary line  **(key)**
-- E. Needle at the second space, midclavicular line
+- A. Head tilt and chin lift
+- B. Jaw thrust with in-line stabilization  **(key)**
+- C. Nasopharyngeal airway
+- D. Recovery position on his side
+- E. Suction only, no repositioning
 
-*Explanation:* Her clinical tension pneumothorax needs immediate decompression without imaging. In adults the fourth or fifth intercostal space at the anterior axillary line has a thinner chest wall than the second space in the midclavicular line, and decompression fails less often there. A chest tube follows decompression. Waiting for an X-ray or CT delays treatment of a clinical diagnosis. Positive pressure ventilation before decompression enlarges the pneumothorax and can cause arrest.
+*Explanation:* After a side impact with a head injury, his cervical spine must be protected, and ATLS teaches the jaw thrust with manual in-line stabilization to open the airway without moving the neck. Head tilt and chin lift extends the neck. A nasopharyngeal airway is an adjunct placed once the airway has been opened, not the first manoeuvre, and it is used with caution after head trauma when a basal skull fracture has not been excluded. Suction alone does not relieve obstruction from the tongue. Rolling him to his side moves the spine and makes assessment harder.
 
 *Key feature:* Multiple trauma 1. Perform critical interventions during the primary survey, such as spine protection, chest decompression, hemorrhage control, and pelvic binding.
 
-*Source:* Laan DV, Vu TD, Thiels CA, et al. Chest wall thickness and decompression failure: a systematic review and meta-analysis comparing anatomic locations in needle thoracostomy. Injury. 2016. https://pubmed.ncbi.nlm.nih.gov/26724173/
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q3
 **Which of the following is the most appropriate way to deploy your staff at this moment?**
 
-- A. All staff stay with the woman first
-- B. Assign a nurse to watch each other patient  **(key)**
-- C. Call for extra staff once she is stable
-- D. Leave the others in the waiting room
-- E. Treat all three in strict arrival order
+- A. All staff with the boy until he is stable
+- B. Nurse to the mother, then call in help  **(key)**
+- C. RT to the mother while you manage the boy
+- D. Send the mother to the waiting room
+- E. Treat the mother first, then the boy
 
-*Explanation:* With one physician and three patients, the leader works on the sickest patient while a named nurse monitors each of the other two and reports any change. This keeps everyone observed and lets you move when priorities change. Help from off-duty staff and nearby physicians should be called at once, not after she stabilizes. Leaving injured patients in a waiting room removes monitoring. Arrival order ignores severity.
+*Explanation:* You and the respiratory therapist, with one nurse, stay on the boy's airway and circulation, while a named nurse assesses the mother, gives analgesia and watches her dressing and vital signs. Calling in another physician early brings help before both patients need you. Hicks and Petrosoniak describe early calls for help and clear role assignment as ways to keep a team effective. Sending every staff member to the boy leaves an injured adult unwatched. The RT is needed at the boy's airway. The waiting room is unsafe for an open fracture.
 
 *Key feature:* Multiple trauma 7. Lead the trauma team and assign tasks so interventions happen in parallel.
 
-*Source:* Hicks C, Petrosoniak A. The human factor: optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018. https://pubmed.ncbi.nlm.nih.gov/29132571/
+*Source:* Hicks C, Petrosoniak A. The human factor. Optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018. https://pubmed.ncbi.nlm.nih.gov/29132571/
 
 ### multiple-trauma-36: Man on dialysis after a fall
 
@@ -1847,86 +1859,86 @@ A 74-year-old woman is brought to the emergency department by ambulance after he
 
 *Source:* American College of Surgeons Committee on Trauma. ACS Trauma Programs best practices guidelines: management of chest wall injuries. 2025. https://www.facs.org/media/qdgliayt/2025_tr_bestpracticesguidelines_chest-wall.pdf
 
-### multiple-trauma-40: Woman who cannot move after a rollover
+### multiple-trauma-40: Worker crushed at a loading dock
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 30-year-old woman is brought to the emergency department by ambulance in spinal motion restriction after a highway rollover. She cannot move her arms or legs. She has no medical history. GCS 15. She can shrug her shoulders but has no other movement in her arms or legs, and sensation is absent below the clavicles. Her skin is warm and dry below the clavicles. Her breathing is mainly abdominal. eFAST shows free fluid in the left upper quadrant.
+A 41-year-old man is brought to the emergency department by ambulance 30 minutes after a reversing truck pinned him against a loading dock at the level of his hips. He has severe pelvic and groin pain. He is healthy. GCS 14. His airway is clear, and breath sounds are equal. He is pale and cool. There is blood at the urethral meatus, and the scrotum and perineum are swollen and bruised. He has not passed urine since the injury. The legs are not shortened, and foot pulses are present. eFAST shows no free fluid. No pelvic binder was applied at the scene.
 
-- Temperature: 36.0°C oral
-- Pulse: 62/minute
-- Resp.: 26/minute
-- BP: 80/44 mmHg
-- O2 sat: 94% on a non-rebreather mask
-- Weight: 64 kg
+- Temperature: 36.0°C tympanic
+- Pulse: 124/minute
+- Resp.: 24/minute
+- BP: 86/52 mmHg
+- O2 sat: 97% on room air
+- Weight: 92 kg
 
 #### Q1
-**Which of the following is the most appropriate interpretation of her hypotension?**
+**Which of the following should be done first for this patient?**
 
-- A. Cardiogenic shock from contusion
-- B. Hemorrhage until proven otherwise  **(key)**
-- C. Isolated neurogenic shock
-- D. Spinal shock from cord injury
-- E. Vasovagal response to pain
+- A. Apply a pelvic binder now  **(key)**
+- B. CT of the abdomen and pelvis
+- C. Pelvic X-ray before any intervention
+- D. Retrograde urethrogram
+- E. Urinary catheter to measure urine output
 
-*Explanation:* She has a high cervical cord injury, but eFAST shows free fluid in the left upper quadrant, and sensory loss below the clavicles removes the abdominal pain and tenderness that would otherwise point to it. Hypotension in a trauma patient is treated as hemorrhage until proven otherwise, and neurogenic shock is a diagnosis of exclusion. Spinal shock describes the loss of reflexes and tone below the injury, not low blood pressure. Nothing suggests a cardiac contusion. A vasovagal response does not explain free intraperitoneal fluid.
+*Explanation:* He is in shock after a crush to the pelvis, with a negative eFAST, so pelvic hemorrhage is the likely source and a binder is a primary survey intervention. It is applied on clinical suspicion without waiting for an X-ray, which can be done after. A retrograde urethrogram and CT belong after the circulation is addressed. A urinary catheter should not be passed blindly in a man with blood at the meatus.
 
 *Key feature:* Multiple trauma 2. Prioritize injuries as they are found so the most lethal problems are treated first.
 
 *Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q2
-**Which of the following findings favour a neurogenic component to her shock?**
+**Which of the following findings in his case suggest an injury to the urethra?**
 
 Select 2.
 
-- A. Anxiety and agitation
-- B. Delayed capillary refill in the hands
-- C. Free fluid on eFAST
-- D. Narrow pulse pressure
-- E. Pulse above 120/minute
-- F. Relative bradycardia with hypotension  **(key)**
-- G. Warm, dry skin below the injury  **(key)**
+- A. Blood at the urethral meatus  **(key)**
+- B. Foot pulses present on both sides
+- C. GCS of 14 on arrival
+- D. Legs not shortened or rotated
+- E. Pulse of 124/minute and cool skin
+- F. Severe pelvic and groin pain
+- G. Swollen bruised scrotum and perineum  **(key)**
 
-*Explanation:* Loss of sympathetic outflow below a cervical cord injury causes vasodilation with warm, dry skin and leaves vagal tone unopposed, so the pulse stays slow despite hypotension. Her pulse of 62/minute with a BP of 80/44 mmHg fits this. Tachycardia, a narrow pulse pressure, delayed capillary refill and agitation are signs of hypovolemia. Free fluid on eFAST points to hemorrhage, which can coexist with neurogenic shock.
+*Explanation:* Blood at the meatus after pelvic trauma is the classic sign of urethral injury, and the AUA guideline calls for a retrograde urethrogram in that setting. Perineal and scrotal swelling and bruising from extravasated blood and urine also point to it, as does his inability to void. Groin pain is expected with any crush to the pelvis. Tachycardia reflects bleeding. Foot pulses, leg length and his GCS say nothing about the urethra.
 
-*Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
+*Key feature:* Multiple trauma 3. After the primary survey, search for easily missed injuries and iatrogenic problems like hypothermia or vascular compromise.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
+*Source:* Morey AF, et al. Urotrauma guideline 2020. AUA guideline. J Urol. 2021. https://pubmed.ncbi.nlm.nih.gov/33053308/
 
 #### Q3
-*Update:* Over the next 30 minutes her respiratory rate rises to 36/minute and her voice becomes quieter. SpO2 is 95% on a non-rebreather mask.
+*Update:* A nurse is about to insert a urinary catheter so that his urine output can be measured.
 
-**Which of the following bedside measures best tracks her ventilatory reserve?**
+**Which of the following is the most appropriate instruction to the nurse?**
 
-- A. Chest X-ray every 4 hours
-- B. Peak flow measurement hourly
-- C. Serial forced vital capacity  **(key)**
-- D. SpO2 trend on high-flow oxygen
-- E. Venous lactate every hour
+- A. Insert a smaller catheter with gel
+- B. Insert the catheter with firm pressure
+- C. Proceed, stopping if resistance is met
+- D. Use a coude tip catheter
+- E. Wait for a retrograde urethrogram first  **(key)**
 
-*Explanation:* A cervical cord injury weakens the intercostal muscles and can progress to involve the diaphragm as the cord swells. A falling forced vital capacity shows failing respiratory muscles before hypoxemia appears and helps decide on early intubation. SpO2 on high-flow oxygen stays normal until late. Peak flow reflects airway obstruction and effort rather than muscle reserve. A chest X-ray and lactate do not measure respiratory muscle strength.
+*Explanation:* Passing a catheter blindly through a partly torn urethra can complete the tear or create a false passage. The AUA guideline recommends a retrograde urethrogram when there is blood at the meatus after pelvic trauma, and prompt drainage, often by a suprapubic tube, if the urethra is injured. A smaller or coude catheter, gentle technique or firm pressure all still pass blindly through the injury. Urine output can be tracked by other means until the urethra is imaged.
+
+*Key feature:* Multiple trauma 3. After the primary survey, search for easily missed injuries and iatrogenic problems like hypothermia or vascular compromise.
+
+*Source:* Morey AF, et al. Urotrauma guideline 2020. AUA guideline. J Urol. 2021. https://pubmed.ncbi.nlm.nih.gov/33053308/
+
+#### Q4
+*Update:* After 2 units of red cells his BP is 80/48 mmHg, and he is going to angiography. Urology confirms a complete tear of the membranous urethra. His bladder is now palpable above the pubis.
+
+**Which of the following is the most appropriate way to drain his bladder now?**
+
+- A. Bladder scan, then observation
+- B. Delayed drainage after pelvic repair
+- C. Primary endoscopic realignment now
+- D. Suprapubic catheter placement  **(key)**
+- E. Urethral catheter over a guidewire
+
+*Explanation:* A complete urethral tear with a distended bladder needs drainage, and the AUA guideline recommends prompt urinary drainage after a pelvic fracture urethral injury. It names percutaneous or open suprapubic tube placement as the preferred initial management for most of these injuries, because the tube drains the bladder without passing through the torn urethra. The guideline limits primary realignment to patients who are hemodynamically stable, and he remains in shock. A catheter passed over a guidewire still crosses the injury blindly. Observation or delayed drainage leaves a distended bladder that can leak or rupture.
 
 *Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
-
-#### Q4
-*Update:* Her forced vital capacity has fallen to 11 mL/kg, and the team decides to intubate her.
-
-**Which of the following is the most appropriate technique to protect her cervical spine during intubation?**
-
-- A. Awake cricothyroidotomy
-- B. Blind nasotracheal intubation
-- C. Full neck extension for the best view
-- D. Keep the collar fully closed throughout
-- E. Manual in-line stabilization, collar front open  **(key)**
-
-*Explanation:* Manual in-line stabilization by an assistant holds the head and neck while the front of the collar is opened, which allows mouth opening and laryngoscopy with limited neck movement. A closed collar restricts mouth opening and makes laryngoscopy harder. Full neck extension risks further cord injury. Blind nasal intubation is unreliable in an apneic or tiring patient and has a high failure rate. Cricothyroidotomy is a rescue for failed intubation, not a first choice.
-
-*Key feature:* Multiple trauma 1. Perform critical interventions during the primary survey, such as spine protection, chest decompression, hemorrhage control, and pelvic binding.
-
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
+*Source:* Morey AF, et al. Urotrauma guideline 2020. AUA guideline. J Urol. 2021. https://pubmed.ncbi.nlm.nih.gov/33053308/
 
 ### multiple-trauma-41: Older man after a ladder fall
 
@@ -2152,206 +2164,208 @@ Select 4.
 
 *Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
-### multiple-trauma-44: Worker trapped under a fallen wall
+### multiple-trauma-44: Breathless after a pelvic resuscitation
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 38-year-old man is brought to the emergency department by ambulance after a concrete wall collapsed on both of his legs at a construction site. He was trapped for 4 hours, and firefighters freed him 30 minutes ago. He has no medical history. GCS 15. Both thighs and calves are swollen and tense. His urinary catheter drains dark brown urine. X-rays of both legs show no fracture. He has no other injuries.
+A 38-year-old woman was brought to the emergency department 4 hours ago after a car struck her as she crossed a road. She had an unstable pelvic fracture without chest injury. Her chest X-ray on arrival was clear. Under the massive hemorrhage protocol she received 6 units of red cells, 6 units of plasma and 1 adult dose of platelets over 2 hours, and pelvic bleeding was controlled by angioembolization. She is back in the department waiting for an intensive care bed. One hour after her last unit of plasma she became short of breath. She has crackles in both lungs. Her neck veins are not visible. Bedside ultrasound shows normal left ventricular function, a small collapsing IVC and B-lines in both lungs. A chest X-ray shows new bilateral infiltrates. Before the transfusions her systolic BP was 118 mmHg.
 
-- Temperature: 36.2°C oral
+- Temperature: 37.9°C tympanic
 - Pulse: 118/minute
-- Resp.: 24/minute
-- BP: 102/64 mmHg
-- O2 sat: 96% on room air
-- Weight: 90 kg
+- Resp.: 32/minute
+- BP: 94/56 mmHg
+- O2 sat: 85% on 6 L/minute by nasal prongs
+- Weight: 64 kg
 
 #### Q1
-**Which of the following complications poses the most immediate threat to his life now?**
+**Which of the following is the most likely cause of her new respiratory distress?**
 
-- A. Acute kidney injury
-- B. Compartment syndrome
+- A. Aspiration pneumonitis
+- B. Delayed pulmonary contusion
 - C. Fat embolism syndrome
-- D. Hyperkalemic arrhythmia  **(key)**
-- E. Hypocalcemic tetany
+- D. Transfusion-associated circulatory overload
+- E. Transfusion-related acute lung injury  **(key)**
 
-*Explanation:* When crushed muscle is released after hours of compression, potassium can enter the circulation quickly. Severe hyperkalemia is uncommon after crush injury, but when it occurs it can cause arrhythmia and cardiac arrest within minutes. Of these options it is the only one that can kill him in minutes, so it is looked for first with an ECG and a blood gas. Acute kidney injury and compartment syndrome are serious but develop over hours. Hypocalcemia is common but tetany is rarely the immediate threat. Fat embolism is linked to long bone fractures, and his leg X-rays show none.
+*Explanation:* New hypoxemia with bilateral infiltrates within 6 hours of transfusion, without evidence of left atrial hypertension, meets the consensus definition of transfusion-related acute lung injury. Her normal left ventricle and small collapsing IVC argue against circulatory overload. She had no chest injury and a clear X-ray on arrival, so contusion does not explain new infiltrates. Fat embolism usually appears a day or more after injury and would not explain the close timing with the plasma. Nothing suggests she vomited or aspirated.
 
 *Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
 
-*Source:* Wood F, Cowburn P, Smith J, et al. Early management of crush injury and crush syndrome: a Faculty of Pre-Hospital Care consensus statement. Emerg Med J. 2026. https://doi.org/10.1136/emermed-2025-215431
+*Source:* Vlaar APJ, Toy P, Fung M, et al. A consensus redefinition of transfusion-related acute lung injury. Transfusion. 2019. https://pubmed.ncbi.nlm.nih.gov/30993745/
 
 #### Q2
-*Update:* A blood gas shows potassium 6.8 mmol/L. The ECG shows peaked T waves and a widened QRS.
+**Which of the following findings, if present, would favour transfusion-associated circulatory overload?**
 
-**Which of the following treatments are appropriate for his potassium at this point?**
+Select 2.
 
-Select 3.
+- A. Bilateral crackles
+- B. Bilateral infiltrates on X-ray
+- C. Distended neck veins  **(key)**
+- D. Hypoxemia on oxygen
+- E. Low grade fever
+- F. Onset within 6 hours of plasma
+- G. Rising blood pressure  **(key)**
 
-- A. amiodarone 150 mg IV
-- B. calcium chloride 1 g IV  **(key)**
-- C. furosemide 80 mg IV
-- D. insulin 10 units IV with dextrose 25 g  **(key)**
-- E. magnesium sulfate 2 g IV
-- F. salbutamol 10 mg nebulized  **(key)**
-- G. sodium polystyrene sulfonate 30 g PO
-
-*Explanation:* Peaked T waves and a wide QRS need calcium at once to stabilize the myocardium. Insulin with dextrose and nebulized salbutamol then shift potassium into cells within minutes. Furosemide is inappropriate in a patient who needs volume to protect his kidneys. Sodium polystyrene sulfonate acts too slowly to help in the next few minutes. Amiodarone and magnesium do not treat hyperkalemia.
+*Explanation:* Circulatory overload is hydrostatic edema from too much volume, so signs of raised filling pressure such as distended neck veins point to it, and the ISBT criteria for overload include increased blood pressure. The consensus panel on TRALI also suggests an objective measure such as echocardiography to look for left atrial hypertension. Crackles, bilateral infiltrates, hypoxemia and onset within 6 hours of transfusion occur in both conditions. A low grade fever does not separate them. In her case the neck veins are not visible, the IVC is small and her BP has fallen.
 
 *Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
 
-*Source:* Lott C, Karageorgos V, Abelairas-Gomez C, et al. European Resuscitation Council Guidelines 2025: special circumstances in resuscitation. Resuscitation. 2025. https://doi.org/10.1016/j.resuscitation.2025.110753
+*Source:* Vlaar APJ, Toy P, Fung M, et al. A consensus redefinition of transfusion-related acute lung injury. Transfusion. 2019. https://pubmed.ncbi.nlm.nih.gov/30993745/
 
 #### Q3
-**Which of the following fluid strategies is most appropriate for him?**
+*Update:* Her bleeding remains controlled. Her hemoglobin is 84 g/L, and her fibrinogen and platelet count are normal.
 
-- A. Dextrose 5% in water at 100 mL/hour
-- B. Furosemide before any fluid
-- C. Generous isotonic saline, high urine output  **(key)**
-- D. Permissive hypotension, minimal fluid
-- E. Wait for the CK before starting fluid
+**Which of the following hemoglobin targets should guide any further red cell transfusion for her?**
 
-*Explanation:* Myoglobin released from crushed muscle can cause acute kidney injury, so early generous isotonic saline, about 1 to 1.5 L/hour in an adult at first, is given to maintain a high urine output. His dark brown urine suggests myoglobinuria is already present. He is not bleeding, so permissive hypotension does not apply. Hypotonic dextrose does not expand the circulation. Furosemide before volume worsens hypovolemia. Waiting for the CK result delays treatment that is clearly indicated.
+- A. 50 to 60 g/L
+- B. 70 to 90 g/L  **(key)**
+- C. 100 to 110 g/L
+- D. 120 to 140 g/L
+- E. 140 g/L or higher
+
+*Explanation:* The European guideline on major bleeding after trauma recommends a target hemoglobin of 70 to 90 g/L when red cells are needed. Her level of 84 g/L is within that range, so she needs no more red cells now, which also avoids further exposure to blood products. Targets of 100 g/L or higher add transfusions without benefit. A target of 50 to 60 g/L is below the recommended range for a patient who has just bled.
 
 *Key feature:* Multiple trauma 6. Guide fluid and blood replacement in major trauma with defined targets such as MAP and a massive transfusion protocol.
 
-*Source:* Sever MS, Vanholder R. Recommendation for the management of crush victims in mass disasters. Renal Disaster Relief Task Force of the International Society of Nephrology. Nephrol Dial Transplant. 2012. https://pubmed.ncbi.nlm.nih.gov/22467763/
+*Source:* Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023. https://pubmed.ncbi.nlm.nih.gov/36859355/
 
 #### Q4
-**Which of the following findings is the earliest reliable sign of compartment syndrome in his legs?**
+**Which of the following actions is required now for this complication of her resuscitation?**
 
-- A. Absent dorsalis pedis pulses
-- B. Numbness only after 6 hours
-- C. Pain on passive stretch of the toes  **(key)**
-- D. Pale and cool feet
-- E. Paralysis of the toes
+- A. Diphenhydramine before any future unit
+- B. Furosemide 40 mg IV
+- C. Methylprednisolone 125 mg IV
+- D. Report it to the transfusion service  **(key)**
+- E. Restart plasma at a slower rate
 
-*Explanation:* Pain out of proportion to the injury and pain on passive stretch of the muscles in the compartment are the earliest reliable signs of compartment syndrome in an awake patient. Compartment pressure rarely exceeds arterial pressure, so pulses and colour are usually preserved until very late. Paralysis is a late sign of established muscle and nerve damage. Numbness can occur early and has no fixed 6 hour delay.
+*Explanation:* The consensus panel asks clinicians to report every case of pulmonary edema within 6 hours of transfusion to the transfusion service, which investigates the donors and the units and may prevent harm to other recipients. Furosemide treats hydrostatic overload and can worsen her low BP. Steroids and antihistamines do not treat this injury, and restarting plasma adds more of the product that may have caused it. Her care is supportive, with oxygen and ventilatory support as needed.
 
 *Key feature:* Multiple trauma 3. After the primary survey, search for easily missed injuries and iatrogenic problems like hypothermia or vascular compromise.
 
-*Source:* British Orthopaedic Association. BOAST: diagnosis and management of compartment syndrome of the extremities. 2014, updated 2025. https://www.boa.ac.uk/resource/boast-10-pdf.html
+*Source:* Vlaar APJ, Toy P, Fung M, et al. A consensus redefinition of transfusion-related acute lung injury. Transfusion. 2019. https://pubmed.ncbi.nlm.nih.gov/30993745/
 
-### multiple-trauma-45: Older man with a stiff spine after a fall
+### multiple-trauma-45: Low blood pressure after a fall down stairs
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 71-year-old man is brought to the emergency department by ambulance after he slipped on ice and fell backward, striking the back of his head. He has neck pain. He has long-standing ankylosing spondylitis with a fixed forward curve of his neck and takes naproxen. GCS 15. Paramedics could not fit a collar because of his posture, and he is supported on pillows. He has midline tenderness at the base of his neck. Motor and sensory examination of his arms and legs is normal.
+A 72-year-old woman is brought to the emergency department by ambulance after she fell down eight stairs at home. She has taken prednisone 10 mg daily for 3 years for rheumatoid arthritis. She has missed no doses. She also takes ramipril and calcium with vitamin D. GCS 15. CT shows fractures of right ribs 5 to 7 and both left pubic rami, with no solid organ injury, no contrast extravasation and no intracranial injury. She has received 2 L of crystalloid and 1 unit of red cells, but she remains hypotensive. Her hemoglobin is 108 g/L, unchanged from arrival. Sodium 131 mmol/L, potassium 5.0 mmol/L, glucose 3.9 mmol/L. Her vital signs are listed.
 
-- Temperature: 36.6°C oral
-- Pulse: 82/minute
-- Resp.: 16/minute
-- BP: 148/84 mmHg
-- O2 sat: 96% on room air
-- Weight: 72 kg
+- Temperature: 36.2°C tympanic
+- Pulse: 104/minute
+- Resp.: 22/minute
+- BP: 82/48 mmHg
+- O2 sat: 95% on 2 L/minute by nasal prongs
+- Weight: 58 kg
 
 #### Q1
-**Which of the following is the most appropriate way to restrict motion of his cervical spine?**
+**Which of the following is the most appropriate treatment for her persistent hypotension now?**
 
-- A. Rigid collar in neutral alignment
-- B. Sandbags and tape with neck extended
-- C. Soft collar for comfort only
-- D. Support in his usual flexed position  **(key)**
-- E. No immobilization, as he is intact
+- A. fludrocortisone 0.1 mg PO
+- B. hydrocortisone 25 mg IV
+- C. hydrocortisone 100 mg IV  **(key)**
+- D. norepinephrine infusion alone
+- E. Red cells 4 units IV
 
-*Explanation:* His neck is fused in flexion by ankylosing spondylitis, so forcing it into neutral alignment with a rigid collar or flat board can displace a fracture through the fused spine and injure the cord. His spine is supported in his usual position with pillows or blanket rolls. Extending the neck with sandbags is dangerous for the same reason. A soft collar does not restrict motion. An intact neurological examination does not exclude an unstable fracture, so he still needs motion restriction.
+*Explanation:* Three years of prednisone 10 mg daily puts her at risk of glucocorticoid-induced adrenal insufficiency, and trauma is a stress that can trigger adrenal crisis. Hypotension despite fluid with no ongoing bleeding, a low sodium and a low glucose fit that picture. The 2024 European Society of Endocrinology and Endocrine Society guideline advises hydrocortisone 100 mg IV at once, followed by fluid, without waiting for tests. Hydrocortisone 25 mg is close to a daily replacement dose and too little for a crisis. Fludrocortisone does not replace glucocorticoid. A vasopressor alone, or more red cells with a stable hemoglobin, leaves the cause untreated.
 
 *Key feature:* Multiple trauma 4. Identify modifying factors in trauma patients such as pregnancy, bleeding disorders, medications, or advance directives.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th edition. Elsevier. 2023. Chapter 35, Spinal Trauma. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Beuschlein F, et al. European Society of Endocrinology and Endocrine Society joint clinical guideline. Diagnosis and therapy of glucocorticoid-induced adrenal insufficiency. J Clin Endocrinol Metab. 2024. https://pubmed.ncbi.nlm.nih.gov/38724043/
 
 #### Q2
-**Which of the following imaging studies is most appropriate for his neck?**
+*Update:* Her BP rises to 112/66 mmHg and her pulse falls to 84/minute within the hour. She is admitted to the trauma service for her fractures and will be in hospital for several days.
 
-- A. CT of the whole spine  **(key)**
-- B. Flexion and extension X-rays
-- C. MRI in 2 weeks if still sore
-- D. Plain X-rays of the neck only
-- E. No imaging, as the rule is negative
+**Which of the following is the most appropriate treatment plan for her first day in hospital?**
 
-*Explanation:* Patients with known vertebral disease such as ankylosing spondylitis were excluded from the Canadian C-spine rule, and he is also over 65, which is a high-risk factor, so imaging is required. The fused spine fractures easily and often at more than one level, so CT of the whole spine is used. Plain X-rays miss fractures in osteopenic, fused bone. Flexion and extension views are dangerous in a possibly unstable spine. Waiting 2 weeks for MRI misses an acute unstable injury.
+- A. hydrocortisone 200 mg IV per 24 hours  **(key)**
+- B. No further treatment for her BP
+- C. norepinephrine to a MAP of 65 mmHg
+- D. prednisone 5 mg PO daily
+- E. prednisone 10 mg PO daily
+
+*Explanation:* Her long term prednisone makes her unable to mount a normal cortisol response to the stress of her injuries. The joint guideline advises hydrocortisone 200 mg over 24 hours by continuous infusion, or 50 mg IV every 6 hours, for patients at risk who face major stress such as trauma needing admission, then tapering as she recovers. Her usual prednisone, or half of it, is below her need during this stress. A vasopressor does not replace cortisol, and giving nothing more risks a second crisis.
 
 *Key feature:* Multiple trauma 4. Identify modifying factors in trauma patients such as pregnancy, bleeding disorders, medications, or advance directives.
 
-*Source:* Stiell IG, Wells GA, Vandemheen KL, et al. The Canadian C-spine rule for radiography in alert and stable trauma patients. JAMA. 2001. https://pubmed.ncbi.nlm.nih.gov/11597285/
+*Source:* Beuschlein F, et al. European Society of Endocrinology and Endocrine Society joint clinical guideline. Diagnosis and therapy of glucocorticoid-induced adrenal insufficiency. J Clin Endocrinol Metab. 2024. https://pubmed.ncbi.nlm.nih.gov/38724043/
 
 #### Q3
-*Update:* CT shows a fracture through the fused C6 to C7 segment without displacement. Three hours later he reports new weakness and tingling in both hands.
+*Update:* Four hours later her pulse has risen from 84 to 112/minute. Her hemoglobin has fallen from 108 to 86 g/L, and her left groin and thigh are swollen and bruised.
 
 **Which of the following is the most appropriate next step?**
 
-- A. Discharge with a soft collar
-- B. Nerve conduction studies
-- C. Physiotherapy assessment
-- D. Repeat CT of the neck in 24 hours
-- E. Urgent MRI of the cervical spine  **(key)**
+- A. Albumin 25% infusion
+- B. CT angiography of the pelvis  **(key)**
+- C. Furosemide for the thigh swelling
+- D. Recheck her hemoglobin in 6 hours
+- E. Surgical fixation of the pubic rami
 
-*Explanation:* New bilateral hand weakness after a fracture through a fused spine suggests cord compression, most often from an epidural hematoma or displacement, which is common in ankylosing spondylitis. Urgent MRI shows the hematoma and the cord, and spine surgery is contacted at once. A repeat CT in 24 hours delays decompression. Nerve conduction studies and physiotherapy do not assess the cord. Discharge would be dangerous.
+*Explanation:* A rising pulse, a fall in hemoglobin of 22 g/L and new groin swelling point to delayed bleeding from her pelvic fractures, a separate problem from adrenal insufficiency. Low energy pubic rami fractures in older adults can still bleed from pelvic arteries. CT angiography can locate an arterial blush for embolization. Albumin does not treat hemorrhage. Waiting 6 hours lets the bleeding continue. A diuretic worsens hypovolemia, and fixation of pubic rami is not an emergency hemorrhage control step.
 
 *Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
+*Source:* Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023. https://pubmed.ncbi.nlm.nih.gov/36859355/
 
-### multiple-trauma-46: Scooter rider who becomes drowsy
+### multiple-trauma-46: Farmer hurt while moving cattle
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department without neurosurgery. A 24-year-old man was brought to the emergency department by ambulance 1 hour ago after a car knocked him off an electric scooter and he struck the left side of his head. He was briefly unconscious at the scene, then alert with a GCS of 15 at triage. He has no medical history. He now has a severe headache, has vomited three times and is drowsy. GCS 11 (E3 V3 M5). His left pupil is 5 mm and sluggish, and the right is 3 mm and reactive. Capillary glucose is 5.9 mmol/L.
+You are working in a rural hospital emergency department with no surgeon on site. The trauma centre is 2 hours away by road, and a helicopter has been requested. A 52-year-old man is brought in by his son 30 minutes after a bull pinned him against a gate and gored him in the left lower abdomen. He is healthy and takes no medications. GCS 15. His airway is clear, and breath sounds are equal. There is a 5 cm wound in the left lower quadrant, and a loop of small bowel protrudes through it. The bowel is pink and not bleeding. The abdomen is tender around the wound. The pelvis is stable, and eFAST shows no free fluid. He has received 500 mL of crystalloid. His vital signs are listed.
 
-- Temperature: 36.8°C oral
-- Pulse: 64/minute
-- Resp.: 14/minute
-- BP: 158/88 mmHg
+- Temperature: 36.4°C tympanic
+- Pulse: 104/minute
+- Resp.: 16/minute
+- BP: 128/82 mmHg
 - O2 sat: 97% on room air
-- Weight: 80 kg
+- Weight: 90 kg
 
 #### Q1
-**Which of the following is the most likely cause of his deterioration?**
+**Which of the following is the most appropriate care of the exposed bowel before his transfer?**
 
-- A. Diffuse axonal injury
-- B. Epidural hematoma  **(key)**
-- C. Hypoglycemia from missed meals
-- D. Post-concussive drowsiness
-- E. Traumatic subarachnoid hemorrhage
+- A. Close the skin over it with sutures
+- B. Cover it with dry gauze and tape
+- C. Cover it with moist sterile dressings  **(key)**
+- D. Leave it uncovered for the surgeon
+- E. Replace it gently into the abdomen
 
-*Explanation:* A brief loss of consciousness followed by a lucid interval and then a falling GCS with a dilating pupil on the side of the impact is the classic course of an epidural hematoma from a torn middle meningeal artery. Diffuse axonal injury causes coma from the time of injury, without a lucid interval. His glucose is 5.9 mmol/L, which excludes hypoglycemia. Post-concussive drowsiness does not cause a unilateral dilated pupil. Traumatic subarachnoid hemorrhage rarely causes this rapid focal decline.
-
-*Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
-
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
-
-#### Q2
-*Update:* CT shows a 2 cm left temporal epidural hematoma with midline shift. The neurosurgical centre accepts him, and a helicopter will arrive in 20 minutes.
-
-**Which of the following is the most appropriate step before his transfer?**
-
-- A. Admit to the local ICU overnight
-- B. Complete facial bone imaging first
-- C. Intubate with end-tidal CO2 monitoring  **(key)**
-- D. Repeat CT before he leaves
-- E. Wait for GCS to improve before transfer
-
-*Explanation:* His GCS is falling with a dilating pupil, so his airway is secured before a helicopter transfer, with end-tidal CO2 monitoring to keep ventilation normal. Intubating in flight is far harder than in the department. Local admission and waiting for improvement delay the surgery he needs. A repeat CT or facial imaging adds nothing that changes the plan and delays transfer.
+*Explanation:* Eviscerated bowel is not pushed back into the abdomen outside the operating room. PHTLS teaches that it is covered with moist sterile dressings so that it does not dry out, and the surgeon inspects and returns it under direct vision. Replacing it can carry contamination and an unseen bowel injury into the peritoneum. Dry gauze sticks to the bowel wall and lets it dry. Suturing the skin over it can strangle the loop and hides it from view. Leaving it uncovered for a 2 hour transfer exposes it to drying, cooling and contamination.
 
 *Key feature:* Multiple trauma 8. Prepare trauma patients for transport by splinting, securing the airway, placing tubes, and planning for altitude effects.
+
+*Source:* National Association of Emergency Medical Technicians. PHTLS: Prehospital Trauma Life Support. 10th edition. Burlington, MA: Jones and Bartlett Learning. 2023.
+
+#### Q2
+*Update:* A second 500 mL of crystalloid brings his pulse down to 92/minute. Twenty minutes later, while he waits for the helicopter, he is anxious. His pulse is 114/minute, his BP is 118/90 mmHg and his SpO2 is 97%.
+
+**Which of the following is the most appropriate response to these changes?**
+
+- A. lorazepam 1 mg IV
+- B. norepinephrine infusion IV
+- C. Normal saline 1 L IV bolus
+- D. Red cell transfusion now  **(key)**
+- E. Repeat vital signs in 30 minutes
+
+*Explanation:* His pulse fell after the fluid and then rose again within 20 minutes, with new anxiety and a pulse pressure that has narrowed from 46 to 28 mmHg. ATLS calls this a transient response, which points to ongoing bleeding and a need for blood and an operation. He has now had 1 L of crystalloid, the ATLS initial bolus for an adult, so red cells are given now and the receiving trauma centre is told that he is bleeding. More saline dilutes his clotting factors and red cells. Norepinephrine does not replace lost volume, and his BP does not call for it. Lorazepam treats the anxiety that signals poor perfusion and can blunt his compensation. Waiting 30 minutes to repeat his vital signs loses time he may not have.
+
+*Key feature:* Multiple trauma 5. Watch for subtle changes like narrowing pulse pressure or agitation that signal an evolving complication, and act on them.
 
 *Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025. https://www.facs.org/quality-programs/trauma/education/advanced-trauma-life-support/atls-11/
 
 #### Q3
-*Update:* After intubation his BP falls to 102/60 mmHg and his pulse is 58/minute.
+*Update:* A venous blood gas shows a lactate of 4.8 mmol/L and a base deficit of 7 mmol/L. His hemoglobin is 138 g/L.
 
-**Which of the following is the lowest systolic BP that should be maintained for him during transfer?**
+**Which of the following measures best tracks his tissue perfusion during resuscitation?**
 
-- A. 80 mmHg
-- B. 90 mmHg
-- C. 100 mmHg
-- D. 110 mmHg  **(key)**
-- E. No target until surgery
+- A. Central venous pressure
+- B. Hemoglobin on a single sample
+- C. Serial lactate and base deficit  **(key)**
+- D. Skin temperature of the hands
+- E. Systolic BP alone
 
-*Explanation:* The Brain Trauma Foundation recommends keeping systolic BP at or above 110 mmHg for patients aged 15 to 49 years with severe traumatic brain injury, and he is 24. Hypotension after brain injury reduces cerebral perfusion and worsens outcome, so his current 102 mmHg needs treatment. The threshold of 100 mmHg applies to patients aged 50 to 69 years. Thresholds of 80 or 90 mmHg allow harmful hypotension. Leaving blood pressure without a target during transfer risks secondary brain injury.
+*Explanation:* The European guideline recommends serum lactate and base deficit as sensitive tests to estimate and monitor the extent of bleeding and shock, and repeated values show whether his resuscitation is working. His lactate of 4.8 mmol/L and base deficit of 7 mmol/L show hypoperfusion while his hemoglobin is still 138 g/L. The guideline advises against a single hemoglobin or hematocrit as an isolated marker of bleeding, because it falls only after dilution. The systolic BP is held up by compensation until late. Central venous pressure does not measure tissue perfusion, and skin temperature also changes with a cold room.
 
 *Key feature:* Multiple trauma 6. Guide fluid and blood replacement in major trauma with defined targets such as MAP and a massive transfusion protocol.
 
-*Source:* Carney N, Totten AM, O'Reilly C, et al. Guidelines for the management of severe traumatic brain injury, fourth edition. Neurosurgery. 2017. https://pubmed.ncbi.nlm.nih.gov/27654000/
+*Source:* Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023. https://pubmed.ncbi.nlm.nih.gov/36859355/
 
 ### multiple-trauma-47: Driver in a high-speed frontal crash
 

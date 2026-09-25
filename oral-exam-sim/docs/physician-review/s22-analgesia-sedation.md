@@ -8,6 +8,8 @@ Quoted from the pipeline notes and the review reports, each with its report name
 
 - s22 analgesia-sedation-17 q2 fascia iliaca as initial analgesia in toddler. 40 q1 Busse 2017 source fit. 28 q1 ketamine trial extrapolated to hypotensive trauma.
 - s22 analgesia-sedation-16 q3 first hydromorphone dose in opioid-tolerant patient.
+- analgesia-sedation-33 keys flumazenil in a 4-year-old. The Canadian product monograph says safety in children under 18 is not established. The pediatric dose comes from the Atlantic Canada Poison Centre and the AAP and AAPD sedation guideline. Please confirm this is acceptable teaching. *(samps-replace-s19-s24.md)*
+- analgesia-sedation-33 q4 and analgesia-sedation-12 q3 both teach longer monitoring after a short-acting reversal agent. *(samps-replace-s19-s24.md)*
 - 27 q1: No aortic stenosis sedation guideline could be opened in full text. ASA 2018 supports cardiovascular disease as a risk factor for sedation hypotension. The fixed-output physiology in severe aortic stenosis is stated from standard physiology. *(samps-resource-s22.md)*
 - 32 q2: ASA OSA 2014 supports capnography and nonsupine positioning. It does not name preoxygenation. ASA 2018 recommends supplemental oxygen. The claim that a large total-weight propofol bolus is unsafe is pharmacology and has no specific citation. *(samps-resource-s22.md)*
 - 32 q4: A jaw thrust with a nasal airway as the first step is standard airway practice. The cited OSA guideline does not spell it out. *(samps-resource-s22.md)*
@@ -176,7 +178,7 @@ A 3-year-old boy is brought to the emergency department by his parents after fal
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 29-year-old woman who is 31 weeks pregnant presents to the emergency department after slipping on a wet floor at work 2 hours ago. She has severe right ankle pain and cannot bear weight. Her pregnancy has been uncomplicated. She takes a prenatal vitamin and has no allergies. She rates her pain 8 out of 10. The fetal heart rate is 144/minute. The lateral ankle is swollen and tender, and the foot is neurovascularly intact. X-ray with abdominal shielding shows an isolated distal fibula fracture with no talar shift.
+A 29-year-old woman who is 31 weeks pregnant presents to the emergency department after slipping on a wet floor at work 2 hours ago. She has severe right ankle pain and cannot bear weight. Her pregnancy has been uncomplicated. She takes a prenatal vitamin and has no allergies. She rates her pain 8 out of 10. The fetal heart rate is 144/minute. The lateral ankle is swollen and tender, and the foot is neurovascularly intact. X-ray shows an isolated distal fibula fracture with no talar shift.
 
 - Temperature: 37.0°C oral
 - Pulse: 96/minute
@@ -1266,82 +1268,84 @@ Select 3.
 
 *Source:* American Society of Anesthesiologists Task Force on Perioperative Management of Patients with Obstructive Sleep Apnea. Practice guidelines for the perioperative management of patients with obstructive sleep apnea. An updated report. Anesthesiology. 2014. https://doi.org/10.1097/ALN.0000000000000053
 
-### analgesia-sedation-33: Hard to rouse after a hand repair
+### analgesia-sedation-33: Preschooler who will not wake after a dose
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 58-year-old woman had a complex dog bite laceration of her right hand irrigated and repaired 20 minutes ago under procedural sedation. She received midazolam 4 mg IV and fentanyl 150 mcg IV in divided doses. She has generalized anxiety disorder and has taken clonazepam 1 mg PO twice daily for 10 years. She also has hypothyroidism treated with levothyroxine. The nurse calls you because she is hard to rouse and responds only to a firm sternal rub. Her pupils are 2 mm.
+A 4-year-old boy is in the emergency department for repair of a 3 cm forehead laceration after a fall from a couch. He weighs 16 kg and is otherwise well. The plan was intranasal midazolam 5 mg for anxiolysis, but the dose was given IV in error 15 minutes ago. No opioid or other drug has been given. He has no medical history and takes no medications.
 
-- Temperature: 36.4°C oral
-- Pulse: 64/minute
-- Resp.: 6/minute
-- BP: 104/62 mmHg
-- O2 sat: 86% on 2 L/minute by nasal prongs
-- Weight: 62 kg
+He is now unresponsive to voice and to a firm touch. His breathing is shallow with snoring, and his pupils are midsized. He is on a monitor.
+
+- Temperature: 36.8°C tympanic
+- Pulse: 88/minute
+- Resp.: 8/minute
+- BP: 90/54 mmHg
+- O2 sat: 85% on room air
+- Weight: 16 kg
 
 #### Q1
-**Which of the following is the most appropriate first action for her at this moment?**
+**Which of the following is the most appropriate first action for him?**
 
-- A. flumazenil 0.5 mg IV
-- B. naloxone 2 mg IV push
-- C. Obtain an arterial blood gas first
-- D. Open the airway and bag-mask  **(key)**
-- E. Rapid sequence intubation
+- A. flumazenil 0.16 mg IV
+- B. Jaw thrust, bag-mask  **(key)**
+- C. naloxone 0.16 mg IV
+- D. Sternal rub and observe
+- E. Urgent intubation
 
-*Explanation:* With a respiratory rate of 6/minute and an O2 sat of 86%, the first priority is to open her airway and give positive pressure ventilation with a bag-mask device, because her own breathing is inadequate. Reversal agents are for when airway support and ventilation are not enough, and they take time to act. A 2 mg push of naloxone is a large dose, and abrupt opioid reversal can cause pain, hypertension and tachycardia. A blood gas delays treatment, and intubation is not needed if bag-mask ventilation works.
+*Explanation:* Snoring and an SpO2 of 85% show an obstructed airway with hypoventilation, so the first step is to open the airway with a jaw thrust and support breathing with bag-mask ventilation and oxygen while help and reversal are prepared. A reversal drug takes time to prepare and act and does not replace oxygenation. Naloxone does nothing here because no opioid was given. Stimulation and observation leave him hypoxic. Intubation is rarely needed when mask ventilation works and a reversal agent is available.
 
 *Key feature:* Analgesia/sedation 6. During and after sedation, monitor effect and adverse events, be ready for oversedation, and give safe discharge advice.
 
-*Source:* American Society of Anesthesiologists Task Force on Moderate Procedural Sedation and Analgesia, et al. Practice guidelines for moderate procedural sedation and analgesia 2018. Anesthesiology. 2018. https://pubmed.ncbi.nlm.nih.gov/29334501/
+*Source:* Coté CJ, Wilson S, American Academy of Pediatrics, American Academy of Pediatric Dentistry. Guidelines for monitoring and management of pediatric patients before, during, and after sedation for diagnostic and therapeutic procedures. Pediatrics. 2019. https://doi.org/10.1542/peds.2019-1000
 
 #### Q2
-*Update:* She is ventilated with a bag-mask device and her O2 sat rises to 95%. She remains hard to rouse.
+**Which of the following findings, had it been in his history, would most increase the risk of reversing his benzodiazepine?**
 
-**Which of the following reversal plans is most appropriate for her given her medication history?**
+- A. Eczema treated with creams
+- B. Egg allergy with hives
+- C. Epilepsy treated with clobazam  **(key)**
+- D. Recent cold with a cough
+- E. Snoring without pauses
 
-- A. Flumazenil and naloxone together
-- B. Flumazenil 0.2 mg IV, repeated
-- C. Naloxone 2 mg IM once
-- D. Naloxone 0.04 mg IV, titrated  **(key)**
-- E. No reversal, ventilate until awake
-
-*Explanation:* Flumazenil should be avoided because she has taken clonazepam daily for 10 years, and in long-term benzodiazepine users it can trigger withdrawal with seizures. Fentanyl is a likely contributor to her hypoventilation and small pupils, so small naloxone doses starting at 0.04 mg IV, titrated to breathing, restore ventilation while limiting abrupt reversal. A single 2 mg IM dose is less controllable and slower to act. Prolonged bag-mask ventilation without reversal is possible, but titrated naloxone restores her own breathing sooner.
-
-*Key feature:* Analgesia/sedation 6. During and after sedation, monitor effect and adverse events, be ready for oversedation, and give safe discharge advice.
-
-*Source:* Fresenius Kabi Canada. Flumazenil Injection, USP. Canadian product monograph. Revised 2025. https://www.fresenius-kabi.com/content/dam/fresenius-kabi/ca/products/product-documents/iv-drugs/flumazenil-injection_/Flumazenil-EN-PM-081525.pdf.coredownload.inline.pdf
-
-#### Q3
-*Update:* After naloxone 0.08 mg IV in total, her resp. is 14/minute and O2 sat 96% on 2 L/minute. She is drowsy but rousable to voice.
-
-**Which of the following is the most appropriate monitoring plan for her after the naloxone?**
-
-- A. Admit to the ICU for 24 hours
-- B. Discharge once she is talking
-- C. Monitor continuously until stable  **(key)**
-- D. Naloxone infusion for 12 hours
-- E. Spot checks of vital signs every 2 hours
-
-*Explanation:* Naloxone may wear off before the combined effects of midazolam and fentanyl, so she needs continuous monitoring until she is back to baseline. After reversal, enough time, up to 2 hours, must pass after the last dose to be sure sedation and hypoventilation do not recur. Discharge once she is talking ignores the risk of resedation, and spot checks every 2 hours could miss it. A 12-hour naloxone infusion is for long-acting opioid toxicity, not procedural fentanyl. ICU admission is not needed now that she breathes adequately.
-
-*Key feature:* Analgesia/sedation 6. During and after sedation, monitor effect and adverse events, be ready for oversedation, and give safe discharge advice.
-
-*Source:* American Society of Anesthesiologists Task Force on Moderate Procedural Sedation and Analgesia, et al. Practice guidelines for moderate procedural sedation and analgesia 2018. Anesthesiology. 2018. https://pubmed.ncbi.nlm.nih.gov/29334501/
-
-#### Q4
-**Which of the following features of her sedation most increased her risk of respiratory depression?**
-
-- A. Body weight of 62 kg
-- B. Female sex and age of 58
-- C. Hand wound near the tendons
-- D. Opioid plus benzodiazepine  **(key)**
-- E. Treated hypothyroidism
-
-*Explanation:* Combining a benzodiazepine with an opioid increases the risk of respiratory depression and airway obstruction, so each drug should be given in smaller doses, titrated slowly, with time to reach peak effect between doses. Her treated hypothyroidism, her weight of 62 kg, her age and her sex are not strong sedation risk factors. The hand wound affects the procedure, not the sedation risk.
+*Explanation:* Flumazenil can precipitate seizures in a patient with epilepsy who takes a benzodiazepine long term, because it removes the drug that is controlling the seizures, and the product monograph contraindicates it in that setting. A seizure history is therefore part of every pre-sedation assessment. Egg allergy and eczema do not affect flumazenil. A recent cold raises the risk of laryngospasm and snoring raises the risk of obstruction during sedation, but neither makes flumazenil more dangerous.
 
 *Key feature:* Analgesia/sedation 5. Before procedural sedation, formally evaluate the airway and hemodynamic risk of complications.
 
-*Source:* American Society of Anesthesiologists Task Force on Moderate Procedural Sedation and Analgesia, et al. Practice guidelines for moderate procedural sedation and analgesia 2018. Anesthesiology. 2018. https://pubmed.ncbi.nlm.nih.gov/29334501/
+*Source:* Fresenius Kabi Canada. Product monograph: flumazenil injection USP 0.1 mg/mL. 2015. https://pdf.hres.ca/dpd_pm/00030329.PDF
+
+#### Q3
+*Update:* With airway support his SpO2 rises to 97%. He remains unresponsive, with shallow breaths at 8/minute when ventilation pauses.
+
+**Which of the following is the most appropriate reversal treatment for him?**
+
+- A. flumazenil 0.16 mg IV  **(key)**
+- B. flumazenil 1 mg IV push
+- C. naloxone 0.16 mg IV
+- D. naloxone 2 mg IV
+- E. No reversal agent
+
+*Explanation:* He had a benzodiazepine alone and has never taken one before, so flumazenil is appropriate. The pediatric dose is 0.01 mg/kg, which is 0.16 mg for 16 kg, given over 15 seconds and repeated each minute if needed, up to a total of 0.05 mg/kg or 1 mg, whichever is lower, which is 0.8 mg for him. A 1 mg push is more than his whole maximum dose. Naloxone at any dose reverses opioids, which he did not receive. Giving no reversal agent leaves him dependent on assisted ventilation for longer than necessary.
+
+*Key feature:* Analgesia/sedation 6. During and after sedation, monitor effect and adverse events, be ready for oversedation, and give safe discharge advice.
+
+*Source:* Atlantic Canada Poison Centre. Antidote information: flumazenil, pediatric. Updated 2016. https://atlanticcanadapoisoncentre.ca/flumazenil-pediatric.html
+
+#### Q4
+*Update:* Two minutes after treatment he opens his eyes and cries. His breathing is regular at 22/minute and his SpO2 is 98% on room air.
+
+**Which of the following is the most appropriate monitoring plan for him?**
+
+- A. Discharge 30 minutes after waking
+- B. Discharge when he can drink
+- C. Monitor at least 3 to 4 hours  **(key)**
+- D. Oximetry spot checks hourly
+- E. Recheck by telephone tomorrow
+
+*Explanation:* Flumazenil has a half-life of about 1 hour, shorter than midazolam, so sedation can return as it wears off, especially in young children. He needs continuous cardiorespiratory monitoring for 3 to 4 hours, and patients given a reversal agent need a longer observation than usual before discharge. Discharge at 30 minutes or once he drinks ignores the risk of resedation. Hourly spot checks can miss apnea between readings. A telephone check the next day is no substitute for monitoring now.
+
+*Key feature:* Analgesia/sedation 6. During and after sedation, monitor effect and adverse events, be ready for oversedation, and give safe discharge advice.
+
+*Source:* Atlantic Canada Poison Centre. Antidote information: flumazenil, pediatric. Updated 2016. https://atlanticcanadapoisoncentre.ca/flumazenil-pediatric.html
 
 ### analgesia-sedation-34: Snowmobile breakdown overnight
 
@@ -1850,63 +1854,65 @@ Select 2.
 
 *Source:* American Society of Anesthesiologists Task Force on Moderate Procedural Sedation and Analgesia, et al. Practice guidelines for moderate procedural sedation and analgesia 2018. Anesthesiology. 2018. https://pubmed.ncbi.nlm.nih.gov/29334501/
 
-### analgesia-sedation-42: Lip wound in a boy who snores
+### analgesia-sedation-42: Forearm fracture in a boy with Down syndrome
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 5-year-old boy is brought to the emergency department by his mother after falling against a metal bed frame 1 hour ago. He has a 4 cm deep laceration of the lower lip that crosses the vermilion border. He is crying and will not let anyone near his face. His mother says he snores loudly every night, stops breathing for a few seconds during sleep, and is on a waiting list for tonsillectomy. He has no other medical history. His tonsils are enlarged and nearly touch in the midline. His mother asks about sedation for the repair.
+A 10-year-old boy with Down syndrome is brought to the emergency department by his mother after falling from a swing 2 hours ago. X-ray shows displaced fractures of the distal radius and ulna that need closed reduction. His atrioventricular canal defect was repaired in infancy, and his last echocardiogram was normal. He has hypothyroidism treated with levothyroxine. His mother says he snores loudly every night and she often sees him stop breathing for several seconds. He is waiting for a sleep study.
 
-- Temperature: 37.0°C tympanic
-- Pulse: 118/minute
-- Resp.: 24/minute
-- BP: 100/62 mmHg
+He has large tonsils and a relatively large tongue. The hand is warm and neurovascularly intact. He has been given intranasal fentanyl and a splint.
+
+- Temperature: 36.7°C tympanic
+- Pulse: 92/minute
+- Resp.: 20/minute
+- BP: 104/62 mmHg
 - O2 sat: 98% on room air
-- Weight: 20 kg
+- Weight: 34 kg
 
 #### Q1
-**Which of the following findings most increases his risk of an airway complication during sedation?**
+**Which of the following should you ask about before sedation because of his Down syndrome?**
 
-- A. Being 5 years of age
-- B. Body weight of 20 kg
-- C. Crying and refusing examination
-- D. Enlarged tonsils with apneas  **(key)**
-- E. Laceration crossing the vermilion
+- A. Age he first walked
+- B. Hearing aid use
+- C. New neck pain or gait change  **(key)**
+- D. School grade level
+- E. Thyroid medication brand
 
-*Explanation:* Loud nightly snoring with witnessed pauses in breathing and tonsils that nearly touch suggest obstructive sleep apnea from tonsillar enlargement, which raises the risk of airway obstruction and desaturation under sedation. His crying does not raise sedation risk. The vermilion laceration changes the repair, not the sedation risk. His age and weight are not risk factors in themselves.
+*Explanation:* Children with Down syndrome can have atlantoaxial instability, and new neck pain, a head tilt, a change in gait or new weakness can signal cord compression. These symptoms should be asked about before any sedation or procedure because airway manoeuvres such as neck extension and jaw thrust move the upper cervical spine, and cervical positioning precautions apply. His developmental milestones, school level, hearing aids and thyroid brand do not change the sedation risk.
 
 *Key feature:* Analgesia/sedation 5. Before procedural sedation, formally evaluate the airway and hemodynamic risk of complications.
 
-*Source:* Coté CJ, Wilson S, American Academy of Pediatrics, American Academy of Pediatric Dentistry. Guidelines for monitoring and management of pediatric patients before, during, and after sedation for diagnostic and therapeutic procedures. Pediatrics. 2019.
+*Source:* Bull MJ, Trotter T, Santoro SL, and colleagues. American Academy of Pediatrics Council on Genetics. Health supervision for children and adolescents with Down syndrome. Pediatrics. 2022. https://doi.org/10.1542/peds.2022-057010
 
 #### Q2
-**Which of the following sedative agents best preserves his airway tone and breathing for this repair?**
+**Which of the following features most increases his risk of an airway complication during procedural sedation?**
 
-- A. chloral hydrate 50 mg/kg PO
-- B. ketamine 1.5 mg/kg IV  **(key)**
-- C. midazolam with fentanyl IV
-- D. pentobarbital 2 mg/kg IV
-- E. propofol 1 mg/kg IV
+- A. Fentanyl given for pain
+- B. Nightly snoring with pauses  **(key)**
+- C. Repaired heart defect
+- D. Thyroid replacement therapy
+- E. Weight of 34 kg
 
-*Explanation:* Ketamine largely preserves pharyngeal muscle tone, protective airway reflexes and spontaneous breathing, which makes it the preferred agent when airway obstruction is a concern, and it also gives analgesia for the repair. Propofol, pentobarbital and midazolam with fentanyl reduce upper airway tone and respiratory drive, which his large tonsils make dangerous. Chloral hydrate has a slow, unpredictable onset with prolonged sedation, and it gives no analgesia.
+*Explanation:* Loud nightly snoring with witnessed pauses, large tonsils and a relatively large tongue point to obstructive sleep apnea, which makes airway obstruction and desaturation during sedation much more likely and calls for extra care or an alternative to sedation. His repaired heart defect has a normal recent echocardiogram. Treated hypothyroidism does not raise airway risk. His weight is normal for his age. A single intranasal dose of fentanyl adds some risk but less than his untreated sleep apnea.
 
 *Key feature:* Analgesia/sedation 5. Before procedural sedation, formally evaluate the airway and hemodynamic risk of complications.
 
-*Source:* Green SM, Roback MG, Kennedy RM, Krauss B. Clinical practice guideline for emergency department ketamine dissociative sedation. 2011 update. Ann Emerg Med. 2011. https://pubmed.ncbi.nlm.nih.gov/21256625/
+*Source:* Coté CJ, Wilson S, American Academy of Pediatrics, American Academy of Pediatric Dentistry. Guidelines for monitoring and management of pediatric patients before, during, and after sedation for diagnostic and therapeutic procedures. Pediatrics. 2019. https://doi.org/10.1542/peds.2019-1000
 
 #### Q3
-**Which of the following nerve blocks best anaesthetises his lower lip without distorting the vermilion border?**
+**Which of the following approaches is most appropriate for anesthesia during his fracture reduction?**
 
-- A. Auriculotemporal nerve block
-- B. Greater auricular nerve block
-- C. Infraorbital nerve block
-- D. Mental nerve block  **(key)**
-- E. Supraorbital nerve block
+- A. Deep sedation with propofol
+- B. Intramuscular ketamine sedation
+- C. Intranasal fentanyl alone
+- D. Intravenous regional block  **(key)**
+- E. Nitrous oxide alone
 
-*Explanation:* The mental nerve leaves the mental foramen, which lies below the primary molars at his age, and supplies the lower lip and chin, so a mental nerve block anaesthetises the lip without swelling the wound edges, keeping the vermilion border visible for alignment. The infraorbital nerve supplies the upper lip. The supraorbital, auriculotemporal and greater auricular nerves supply the forehead, temple and ear regions, not the lip.
+*Explanation:* An intravenous regional (Bier) block gives complete anesthesia of the forearm for reduction without systemic sedation, avoiding the airway risks of his sleep apnea and possible neck instability. In a large pediatric series, regional anesthesia had far fewer adverse events than procedural sedation, mostly because hypoxia was avoided. Propofol and ketamine sedation carry airway risks that are higher in him. Intranasal fentanyl or nitrous oxide alone do not give enough anesthesia to reduce a displaced both-bone fracture.
 
 *Key feature:* Analgesia/sedation 2. Pick the safest effective pain control for the condition, including drugs, splints, local infiltration, and nerve blocks.
 
-*Source:* Roberts JR, Custalow CB, Thomsen TW, editors. Roberts and Hedges' Clinical Procedures in Emergency Medicine and Acute Care. 7th ed. Elsevier. 2019. Chapter 30, Regional Anesthesia of the Head and Neck. https://shop.elsevier.com/books/roberts-and-hedges-clinical-procedures-in-emergency-medicine-and-acute-care/roberts/978-0-323-35478-3
+*Source:* Sulton CD, Fletcher N, Murphy J, and colleagues. Regional anesthesia as an alternative to procedural sedation for forearm fracture reductions in the pediatric emergency department. Pediatr Emerg Care. 2024. https://doi.org/10.1097/PEC.0000000000002993
 
 ### analgesia-sedation-43: Gravel in the wounds after a bicycle fall
 

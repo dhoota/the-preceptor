@@ -7,6 +7,10 @@
 Quoted from the pipeline notes and the review reports, each with its report name. A later review may have fixed an earlier flag. The SAMP text below is always the current version.
 
 - s23 anaphylaxis: Health Canada approved nasal epinephrine (neffy 2 mg) April 2026. Decide whether SAMPs 21 q4 and 27 q3 should mention it. 17 q2 IM vs titrated IV in intubated patient. Observation times differ (JTF 1 h, RCUK 2 h, CPS 4 to 6 h in children).
+- anaphylaxis-17 follows the Canadian Blood Services chapter that the link between IgA deficiency and anaphylaxis is weak, so washed red cells, not IgA-deficient products, are keyed. *(samps-replace-s19-s24.md)*
+- anaphylaxis-25 q1 keys a manually drawn 0.5 mg dose with a longer needle after an autoinjector failed in a woman with a BMI of 46. RCUK says some adults need a 38 mm needle. *(samps-replace-s19-s24.md)*
+- These writer notes no longer apply because of the changes above: abdominal-pain-36 (SOGC 426), airway-25 q2, anaphylaxis-25 q1 (BMI 46) and arrhythmia-32 (methadone). *(samps-replace-s19-s24.md)*
+- anaphylaxis-25 q3 uses the same fluid-choice pattern as abdominal-pain-20 and -44. *(samps-replace-s19-s24.md)*
 - anaphylaxis-17 q2. The patient is intubated and monitored in the ED with BP 68/36 mmHg, and IM epinephrine is keyed. Perioperative guidance often favours titrated IV boluses of about 50 mcg in this setting. RCUK keeps IM as first-line outside specialist hands. No small IV bolus option is offered, so the key holds as written. *(samps-s23-lensA.md)*
 - Nasal epinephrine. Health Canada approved neffy 2 mg (for 30 kg or more) on 15 April 2026, with pharmacy supply expected from summer 2026. *(samps-s23-lensA.md)*
 - The autoinjector statements in 21 q4 and 27 q3 are still true, because EpiPen remains the only autoinjector and there is no 0.5 mg device. *(samps-s23-lensA.md)*
@@ -19,249 +23,252 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - anaphylaxis-22 q3 (clonal mast cell disorder features) and anaphylaxis-21 q2 (repeat ECG and troponin) are mapped to key features 2 and 3. Both fit loosely. I left them unchanged. *(samps-s23-lensB.md)*
 - anaphylaxis-27 q1 and anaphylaxis-38 q3 rely on JTF 2020 "up to 6 hours or longer". RCUK 2021 sets at least 6 hours after two doses. The keys hold under both, but a physician may prefer one cited threshold. *(samps-s23-lensB.md)*
 - anaphylaxis-48 and anaphylaxis-49: decide whether to discard them. They duplicate 26 and 37. *(samps-s23-lensB.md)*
+- anaphylaxis-42 q1 keys 0.1 mg, the TREKK minimum IM dose. Strict 0.01 mg/kg would be 0.08 mg. That figure is not offered as an option, so the key holds under both references. *(samps-sweep2-sw2-d.md)*
 
 Review reports: docs/reviews/writer-s23.md, samps-s23-lensA.md, samps-s23-lensB.md
 
 ## SAMPs
 
-### anaphylaxis-16: Driver after a single-vehicle crash
+### anaphylaxis-16: Collapse while a wound is cleaned
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old man is brought to the emergency department by ambulance after his pickup truck left the road at low speed and came to rest in a ditch. He told paramedics that a wasp flew into the cab and stung his right hand about 20 minutes before the crash. He was wearing a seat belt. He has no medical history and takes no medications. He is anxious and says he feels itchy and light-headed. His airway is patent and breath sounds are equal. His abdomen is soft and his pelvis is stable. FAST shows no free fluid. He moves all four limbs. On log roll, confluent hives cover his back.
+A 38-year-old man presents to the emergency department with a 4 cm laceration of the palm from a broken glass. A nurse cleaned the wound and surrounding skin with a chlorhexidine 2% antiseptic solution. No local anesthetic or other drug has been given. Ten minutes later he says he feels hot and dizzy, then slumps on the stretcher. Two years ago a planned knee arthroscopy was cancelled after he had an unexplained drop in BP and a rash in the operating room. After a dental cleaning last year his lips swelled. He takes no medications.
 
-- Temperature: 36.9°C
+He is flushed and pale around the lips, with faint hives on his chest. His lungs are clear. The wound is oozing slightly.
+
+- Temperature: 36.8°C oral
 - Pulse: 128/minute
 - Resp.: 24/minute
-- BP: 78/44 mmHg
-- O2 sat: 94% on room air
-- Weight: 82 kg
+- BP: 72/40 mmHg
+- O2 sat: 96% on room air
+- Weight: 80 kg
 
 #### Q1
 **Which of the following is the most likely cause of his hypotension?**
 
-- A. Anaphylaxis to the wasp sting  **(key)**
-- B. Blunt cardiac injury with pump failure
-- C. Hemorrhage from a solid organ injury
-- D. Neurogenic shock from a cord injury
-- E. Tension pneumothorax from rib fractures
+- A. Anaphylaxis to chlorhexidine  **(key)**
+- B. Blood loss from the laceration
+- C. Local anesthetic toxicity
+- D. Septic shock from the wound
+- E. Vasovagal syncope
 
-*Explanation:* Itch, light-headedness and back hives after a wasp sting, with a BP of 78/44 mmHg, meet criteria for anaphylaxis with skin and cardiovascular involvement. A crash does not rule out a second cause of shock, so anaphylaxis stays on the list for every hypotensive patient. Solid organ hemorrhage is less likely with a soft abdomen and no free fluid on FAST, although he still needs reassessment. Neurogenic shock causes bradycardia with a motor deficit, but he is tachycardic and moves all limbs. Equal breath sounds argue against tension pneumothorax, and neither it nor blunt cardiac injury explains urticaria.
+*Explanation:* Flushing, hives, tachycardia and hypotension within minutes of skin and wound exposure to chlorhexidine point to anaphylaxis, and his past unexplained reaction during surgery and lip swelling after dental care fit repeated exposure to this antiseptic, which is used widely in health care. A vasovagal faint causes bradycardia and pallor without hives. A slowly oozing palm wound cannot explain this degree of shock. No local anesthetic was given. Septic shock does not develop within minutes of a clean injury.
 
 *Key feature:* Anaphylaxis 1. Keep anaphylaxis on the differential for every patient who presents in shock.
 
-*Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
+*Source:* Rose MA, Garcez T, Savic S, Garvey LH. Chlorhexidine allergy in the perioperative setting: a narrative review. Br J Anaesth. 2019. https://doi.org/10.1016/j.bja.2019.01.033
 
 #### Q2
 **Which of the following is the most appropriate first medication for him?**
 
 - A. diphenhydramine 50 mg IV
-- B. epinephrine 0.8 mg IM
+- B. epinephrine 0.15 mg IM
 - C. epinephrine 0.5 mg IM  **(key)**
 - D. epinephrine 1 mg IV
-- E. norepinephrine 8 mcg/minute IV
+- E. hydrocortisone 200 mg IV
 
-*Explanation:* IM epinephrine into the anterolateral thigh is the first drug for anaphylaxis. The dose is 0.01 mg/kg to a maximum of 0.5 mg, so 82 kg x 0.01 mg/kg = 0.82 mg is capped at 0.5 mg. A 0.8 mg IM dose exceeds that maximum. A 1 mg IV bolus is a cardiac arrest dose and risks arrhythmia and severe hypertension in a patient with a pulse. Diphenhydramine does not treat hypotension or airway swelling and delays epinephrine. Norepinephrine lacks the beta-2 bronchodilating and mediator-suppressing effects of epinephrine and is not first-line.
+*Explanation:* IM epinephrine into the anterolateral thigh is first-line for anaphylaxis, at 0.01 mg/kg to a maximum of 0.5 mg, so 0.5 mg for his 80 kg. A dose of 0.15 mg is meant for young children and would underdose him. A 1 mg IV bolus is the cardiac arrest dose and can cause fatal arrhythmias in a patient with a pulse. Diphenhydramine and hydrocortisone do not reverse hypotension or airway swelling and should not delay epinephrine.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
 *Source:* Cardona V, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/
 
 #### Q3
-*Update:* Ten minutes after the first dose he is still light-headed and flushed. BP is 84/50 mmHg. He is supine with his legs raised and has not yet received any fluid.
-
 **Which of the following are the most appropriate next steps in his management?**
 
 Select 2.
 
-- A. Cetirizine 10 mg PO
-- B. Crystalloid 1 L IV bolus  **(key)**
-- C. Glucagon 1 mg IV
-- D. Massive transfusion protocol
-- E. Methylprednisolone 125 mg IV
-- F. Repeat epinephrine 0.5 mg IM  **(key)**
-- G. Sit him upright on the stretcher
-- H. Tranexamic acid 1 g IV
+- A. Crystalloid 1 L IV  **(key)**
+- B. Glucagon 1 mg IV
+- C. Irrigate the chlorhexidine off  **(key)**
+- D. Oral cetirizine alone
+- E. Prednisone 50 mg PO
+- F. Sit him upright
 
-*Explanation:* Hypotension that persists after one IM dose calls for a repeat dose, which may be given every 5 minutes, and a rapid crystalloid bolus of 500 to 1000 mL in an adult for the vasodilation and capillary leak of anaphylaxis. Glucagon is for a poor response to epinephrine in a patient taking a beta blocker, and he takes no medications. Methylprednisolone and cetirizine are adjuncts that do not raise BP. Tranexamic acid and a massive transfusion protocol treat hemorrhage, which his soft abdomen, stable pelvis and negative FAST make less likely. Sitting a hypotensive patient upright can cause sudden cardiovascular collapse.
+*Explanation:* A rapid crystalloid bolus treats the vasodilation and fluid shift of anaphylactic shock, and washing the remaining chlorhexidine from the skin and wound removes the trigger, as stopping an infusion would for a drug. He should lie flat with his legs raised, because sitting or standing can cause sudden collapse. Glucagon is used when a beta blocker blunts the response to epinephrine, and he takes none. Oral cetirizine and prednisone do not treat shock.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
-*Source:* Resuscitation Council UK. Emergency treatment of anaphylaxis. Guidelines for healthcare providers. 2021. https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf
+*Source:* Cardona V, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/
 
 #### Q4
-*Update:* His symptoms resolve after the second dose and 1 L of crystalloid. CT of the head, spine and abdomen is normal. He has never reacted to a sting before.
+*Update:* He recovers fully with treatment and is observed until the next morning.
 
-**Which of the following is the most appropriate follow-up plan for his sting allergy?**
+**Which of the following is the most appropriate plan to prevent another reaction?**
 
-- A. Cetirizine daily through wasp season
-- B. Prednisone taper over five days
-- C. Referral to an allergist for venom testing  **(key)**
-- D. Skin testing in the ED before discharge
-- E. No follow-up after a first reaction
+- A. Allergist testing for chlorhexidine  **(key)**
+- B. Avoid all local anesthetics
+- C. Prednisone before future procedures
+- D. Skin prick test in the ED today
+- E. No follow-up once he recovers
 
-*Explanation:* An adult with a systemic reaction to a sting, here hypotension and confluent hives on his back, should see an allergist for venom testing, because venom immunotherapy greatly lowers the risk of future sting anaphylaxis. He also needs epinephrine autoinjectors and teaching before he leaves. Daily cetirizine and a prednisone taper do not prevent a future systemic reaction. Venom skin testing is done by an allergist some weeks after the reaction, not in the emergency department. A first systemic reaction is itself the reason to refer, so no follow-up is not appropriate.
+*Explanation:* His three reactions in health care settings suggest chlorhexidine allergy, which is often missed because it is hidden in skin preparations, gels, catheters and dental products. Allergist testing confirms the cause so it can be recorded and avoided at every future procedure. Local anesthetics were not involved. Premedication with steroids does not reliably prevent anaphylaxis. Testing is done several weeks after a reaction by an allergist, not in the emergency department on the same day. Without follow-up, the trigger will be missed again.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Golden DBK, et al. Stinging insect hypersensitivity. A practice parameter update 2016. Ann Allergy Asthma Immunol. 2017. https://www.annallergy.org/article/S1081-1206(16)31270-4/fulltext
+*Source:* Rose MA, Garcez T, Savic S, Garvey LH. Chlorhexidine allergy in the perioperative setting: a narrative review. Br J Anaesth. 2019. https://doi.org/10.1016/j.bja.2019.01.033
 
-### anaphylaxis-17: Hypotension minutes after intubation
+### anaphylaxis-17: Breathless minutes into a red cell unit
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 66-year-old woman is brought to the emergency department by ambulance with respiratory failure from community acquired pneumonia. She has COPD and hypertension and takes tiotropium and amlodipine. She has no known drug allergies. Ceftriaxone 1 g IV was started just before she was intubated 6 minutes ago after induction with ketamine 100 mg IV and rocuronium 90 mg IV. Her systolic BP was 136 mmHg before induction. She is now hypotensive and the ventilator shows high peak airway pressures. There is diffuse wheeze and a blotchy red rash on her chest and neck. Breath sounds are present on both sides. Disconnecting her from the ventilator for 30 seconds does not raise her BP.
+A 46-year-old woman is in the emergency department receiving her first unit of red blood cells for a hemoglobin of 62 g/L from heavy menstrual bleeding. She has no other medical history and takes no medications. Ten minutes after the unit was started she reports throat tightness and dizziness, then coughs and becomes short of breath.
 
-- Pulse: 138/minute
-- BP: 68/36 mmHg
-- O2 sat: 86% on 100% oxygen by ventilator
-- Weight: 72 kg
+She is pale and anxious with an audible wheeze. There is no rash or swelling of the lips. Her jugular venous pressure is not raised, and there are no crackles. She has no back pain, and her urine is clear.
+
+- Temperature: 36.9°C oral
+- Pulse: 128/minute
+- Resp.: 30/minute
+- BP: 78/40 mmHg
+- O2 sat: 89% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following is the most likely cause of her hypotension after intubation?**
+**Which of the following is the most likely cause of her hypotension?**
 
-- A. Anaphylaxis to a recently given drug  **(key)**
-- B. Dynamic hyperinflation from auto-PEEP
-- C. Tension pneumothorax from ventilation
-- D. Vasodilation from the induction agent
-- E. Worsening septic shock from pneumonia
+- A. Acute hemolytic reaction
+- B. Anaphylactic transfusion reaction  **(key)**
+- C. Bacterial contamination of the unit
+- D. Circulatory overload
+- E. Transfusion lung injury
 
-*Explanation:* A new blotchy rash, bronchospasm with high airway pressures and a fall in systolic BP from 136 mmHg to 68 mmHg within minutes of rocuronium and ceftriaxone point to perioperative anaphylaxis. Dynamic hyperinflation is unlikely because disconnecting her from the ventilator did not raise her BP. Tension pneumothorax is less likely with breath sounds on both sides. Ketamine tends to support BP and would not cause a rash or wheeze. Septic shock does not produce sudden flushing and bronchospasm within minutes of a drug.
+*Explanation:* Throat tightness, wheeze and hypotension starting within minutes of a transfusion, without fever, fit an anaphylactic transfusion reaction, even with no rash. An acute hemolytic reaction usually brings fever, back pain and dark urine. Bacterial contamination causes fever and rigors. Circulatory overload raises the BP and jugular venous pressure and causes crackles. Transfusion-related lung injury causes hypoxemia with bilateral infiltrates, often with fever, but not throat tightness and wheeze.
 
 *Key feature:* Anaphylaxis 1. Keep anaphylaxis on the differential for every patient who presents in shock.
 
-*Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
+*Source:* Laureano M, Khandelwal A, Yan M. Canadian Blood Services. Clinical guide to transfusion. Chapter 10, Transfusion reactions. 2022. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/transfusion-reactions
 
 #### Q2
-**Which of the following are the most appropriate immediate actions for her suspected reaction?**
+**Which of the following are the most appropriate immediate actions for her?**
 
-Select 2.
+Select 3.
 
-- A. Bilateral needle decompression
-- B. Diphenhydramine 50 mg IV
-- C. Epinephrine 0.5 mg IM  **(key)**
-- D. Epinephrine 1 mg IV push
-- E. Increase PEEP to 12 cm H2O
-- F. Methylprednisolone 125 mg IV
-- G. Phenylephrine 100 mcg IV
-- H. Stop the ceftriaxone infusion  **(key)**
+- A. acetaminophen 650 mg PO
+- B. Crystalloid 1 L IV bolus  **(key)**
+- C. diphenhydramine 50 mg IV alone
+- D. epinephrine 0.5 mg IM  **(key)**
+- E. furosemide 40 mg IV
+- F. Restart after diphenhydramine
+- G. Slow the transfusion rate
+- H. Stop the transfusion  **(key)**
 
-*Explanation:* Removing the suspected trigger and giving IM epinephrine are the first steps. A 72 kg adult gets 0.5 mg, the maximum of 0.01 mg/kg. A 1 mg IV push is a cardiac arrest dose and can cause arrhythmia and severe hypertension in a patient with a pulse. Phenylephrine may raise BP briefly but does not treat bronchospasm or mediator release. Diphenhydramine and methylprednisolone are adjuncts with no effect on shock. Needle decompression is not indicated with bilateral breath sounds, and more PEEP would further reduce venous return in a hypotensive patient.
+*Explanation:* The transfusion must be stopped at once, and she needs IM epinephrine, 0.5 mg for her 70 kg, with a crystalloid bolus through new tubing for her hypotension. Slowing the rate or restarting after an antihistamine is acceptable only for a mild skin reaction, not anaphylaxis. Diphenhydramine alone does not treat shock or bronchospasm. Acetaminophen treats a febrile reaction, and she has no fever. Furosemide treats circulatory overload and would worsen her hypotension.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
-*Source:* Resuscitation Council UK. Emergency treatment of anaphylaxis. Guidelines for healthcare providers. 2021. https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf
+*Source:* Laureano M, Khandelwal A, Yan M. Canadian Blood Services. Clinical guide to transfusion. Chapter 10, Transfusion reactions. 2022. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/transfusion-reactions
 
 #### Q3
-*Update:* After treatment her BP rises to 104/62 mmHg and the wheeze settles. The attending asks which blood test will best support the diagnosis at her allergy follow-up.
+**Which of the following statements about the absence of hives in her is most accurate?**
 
-**Which of the following investigations should be sent now to best support a diagnosis of anaphylaxis?**
+- A. Hives would appear before low BP
+- B. Hypotension with wheeze is enough  **(key)**
+- C. It makes anaphylaxis unlikely
+- D. It points to hemolysis
+- E. It suggests a febrile reaction
 
-- A. Complement C4 level
-- B. Eosinophil count on the CBC
-- C. Serum total IgE level
-- D. Serum tryptase within 2 hours  **(key)**
-- E. Urine metanephrines
-
-*Explanation:* An acute serum tryptase drawn as early as possible, ideally within 2 hours of onset, supports mast cell activation, and a baseline level at least 24 hours after recovery allows comparison. A normal acute value does not rule out anaphylaxis. Total IgE does not show that a reaction occurred. Complement C4 screens for hereditary angioedema, which does not cause this picture. The eosinophil count and urine metanephrines do not confirm anaphylaxis.
+*Explanation:* Acute hypotension, bronchospasm or upper airway obstruction after exposure to a likely trigger is enough to diagnose anaphylaxis even when typical skin features are absent. Her throat tightness, wheeze and hypotension minutes after the transfusion started meet this. Skin signs are usually present but are missing in a minority of cases, may appear late and can be missed in a pale, hypotensive patient, so their absence does not make anaphylaxis unlikely, and hives do not have to come before the fall in BP. The absence of hives does not point to hemolysis or a febrile reaction, which have their own features.
 
 *Key feature:* Anaphylaxis 2. Diagnose anaphylaxis even when only some features, such as rash, hypotension, vomiting, or wheeze, are present.
 
-*Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
+*Source:* Cardona V, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/
 
 #### Q4
-*Update:* She is extubated 3 days later. Her family asks how to make any future surgery safe.
+*Update:* She recovers with treatment. The transfusion service is informed and the unit is returned for investigation. She still needs red cells.
 
-**Which of the following is the most appropriate plan for her future anesthesia and antibiotic use?**
+**Which of the following is the most appropriate plan for her future transfusions?**
 
-- A. Allergist testing of every drug she received  **(key)**
-- B. Avoid all neuromuscular blockers
-- C. Label a rocuronium allergy only
-- D. Premedicate before every future surgery
-- E. Use succinylcholine for future induction
+- A. Avoid all future transfusions
+- B. Diphenhydramine premedication only
+- C. IgA-deficient products only
+- D. Irradiated red cells
+- E. Washed red cells in future  **(key)**
 
-*Explanation:* After perioperative anaphylaxis, every drug and agent given around the event should be tested by an allergist, usually 4 to 6 weeks later, because she received both rocuronium and ceftriaxone. Labelling only rocuronium ignores the antibiotic as a possible cause. Avoiding all neuromuscular blockers is broader than needed once testing identifies safe alternatives. Succinylcholine shares the quaternary ammonium structure that can cross-react with rocuronium. Premedication has no proven role once culprits have been tested.
+*Explanation:* After an anaphylactic transfusion reaction, washed red cells, which remove most of the donor plasma, are advised for future transfusions, and the transfusion service may test for haptoglobin deficiency. The link with IgA deficiency is weaker than once thought, so IgA-deficient products are not the routine answer. Avoiding transfusion is not realistic when she needs red cells. Premedication does not prevent anaphylaxis. Irradiation prevents graft-versus-host disease and does not remove plasma proteins.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
+*Source:* Laureano M, Khandelwal A, Yan M. Canadian Blood Services. Clinical guide to transfusion. Chapter 10, Transfusion reactions. 2022. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/transfusion-reactions
 
-### anaphylaxis-18: Floppy infant after breakfast
+### anaphylaxis-18: Coughing after cross-country practice
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department. A 10-month-old girl is brought in by her parents 25 minutes after eating scrambled egg for the second time. Within 10 minutes she vomited twice, became unusually sleepy and floppy, and developed hives on her face and trunk. The first time she ate egg, 2 weeks ago, she had a few hives around her mouth. She has eczema and is otherwise well. She is pale and difficult to rouse fully. Her cry is hoarse. Her chest is clear and capillary refill is 3 seconds.
+An 11-year-old boy is brought to the emergency department by his coach 40 minutes after collapsing at cross-country practice. He is on peanut oral immunotherapy with an allergist and has taken his daily maintenance dose for 6 months without problems. Today he took his dose after breakfast and started running 20 minutes later. He began to cough, said his throat felt tight, vomited twice and became pale and dizzy. He has no asthma. His autoinjector was at home.
 
-- Temperature: 37.0°C rectal
-- Pulse: 176/minute
-- Resp.: 44/minute
-- BP: 62/38 mmHg
-- O2 sat: 95% on room air
-- Weight: 9 kg
+He is pale and lying still. There is no rash. He has expiratory wheeze and a hoarse voice.
+
+- Temperature: 36.9°C oral
+- Pulse: 136/minute
+- Resp.: 30/minute
+- BP: 82/46 mmHg
+- O2 sat: 93% on room air
+- Weight: 45 kg
 
 #### Q1
-**Which of the following findings most strongly suggests anaphylaxis rather than a mild allergic reaction in this infant?**
+**Which of the following best describes his condition at this point?**
 
-- A. Eczema since early infancy
-- B. Hives after egg two weeks ago
-- C. Hives on the face and trunk
-- D. Second known exposure to egg
-- E. Sudden sleepiness and floppiness  **(key)**
+- A. Anaphylaxis to his dose  **(key)**
+- B. Exercise-induced asthma
+- C. Gastroenteritis with dehydration
+- D. Mild oral allergy reaction
+- E. Vasovagal faint after running
 
-*Explanation:* In infants, sudden lethargy and floppiness are age-specific signs of cardiovascular compromise, the equivalent of collapse in an older child. Her systolic BP of 62 mmHg is also below 70 mmHg, the lower limit for her age. Hives on the face and trunk show skin involvement only. Eczema and hives with an earlier exposure are risk markers for food allergy, not signs of a severe reaction. A second exposure does not by itself indicate severity.
+*Explanation:* Airway symptoms with vomiting and hypotension soon after exposure to his allergen meet criteria for anaphylaxis, even without hives. Reactions to a tolerated maintenance dose often happen when a cofactor such as exercise lowers the threshold. Exercise-induced asthma does not cause throat tightness, vomiting or hypotension. Gastroenteritis does not start this abruptly with wheeze. An oral allergy reaction stays in the mouth. A vasovagal faint causes bradycardia rather than a pulse of 136/minute with wheeze.
 
 *Key feature:* Anaphylaxis 2. Diagnose anaphylaxis even when only some features, such as rash, hypotension, vomiting, or wheeze, are present.
 
-*Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
+*Source:* Cardona V, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/
 
 #### Q2
-**Which of the following is the most appropriate dose of epinephrine for her now?**
+**Which of the following is the most appropriate first treatment for him?**
 
-- A. epinephrine 0.09 mg IM  **(key)**
-- B. epinephrine 0.01 mg IM
-- C. epinephrine 0.5 mg IM
-- D. epinephrine 0.9 mg IM
-- E. epinephrine 0.09 mg IV
+- A. epinephrine 0.15 mg IM
+- B. epinephrine 0.45 mg IM  **(key)**
+- C. epinephrine 1 mg IM
+- D. epinephrine 0.5 mg IV
+- E. epinephrine 0.3 mg SC
 
-*Explanation:* The dose is 0.01 mg/kg IM into the anterolateral thigh, so 9 kg x 0.01 mg/kg = 0.09 mg, which is 0.09 mL of the 1 mg/mL solution. A 0.9 mg dose is a tenfold error. A 0.01 mg dose is a ninefold underdose. A 0.5 mg dose is the adult maximum and far too much for 9 kg. An IV bolus is not recommended for a child with a pulse because of the risk of arrhythmia and severe hypertension.
+*Explanation:* The IM epinephrine dose is 0.01 mg/kg to a maximum of 0.5 mg, so 0.45 mg for his 45 kg, given into the anterolateral thigh. A dose of 0.15 mg is for small children and would underdose him. A 1 mg dose exceeds the maximum. An IV bolus of 0.5 mg risks severe hypertension and arrhythmias. Subcutaneous injection is absorbed more slowly than IM injection.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
-*Source:* Canadian Paediatric Society, Acute Care Committee. Emergency treatment of anaphylaxis in infants and children. Position statement. Paediatr Child Health. 2011. Reaffirmed 2018.
+*Source:* Cardona V, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/
 
 #### Q3
-*Update:* Five minutes after epinephrine she is more alert but still pale. Capillary refill is 3 seconds and BP is 66/40 mmHg. An IV line is in place.
+*Update:* Five minutes after epinephrine his wheeze is less, but his BP is 86/50 mmHg. An IV is in place.
 
-**Which of the following is the most appropriate fluid bolus for her at this point?**
+**Which of the following is the most appropriate crystalloid bolus for him now?**
 
-- A. 18 mL crystalloid IV bolus
-- B. 45 mL crystalloid IV bolus
-- C. 180 mL crystalloid IV bolus  **(key)**
-- D. 450 mL crystalloid IV bolus
-- E. 900 mL crystalloid IV bolus
+- A. 225 mL
+- B. 450 mL
+- C. 900 mL  **(key)**
+- D. 1 800 mL
+- E. 2 250 mL
 
-*Explanation:* Hypotension in pediatric anaphylaxis is treated with a rapid isotonic crystalloid bolus of 20 mL/kg, so 9 kg x 20 mL/kg = 180 mL, repeated as needed while epinephrine is repeated. A bolus of 18 mL or 45 mL is only 2 or 5 mL/kg and too small to correct shock. A bolus of 450 mL or 900 mL is 50 or 100 mL/kg, which risks fluid overload in an infant.
+*Explanation:* For hypotension in anaphylaxis, a crystalloid bolus of 20 mL/kg is given and repeated as needed, so 20 x 45 is 900 mL. A bolus of 225 or 450 mL is too small to restore the volume lost from leaky vessels. Volumes of 1 800 and 2 250 mL are 40 and 50 mL/kg given at once, more than a single bolus, and should be reached only by reassessing after each 20 mL/kg.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
-*Source:* Canadian Paediatric Society, Acute Care Committee. Emergency treatment of anaphylaxis in infants and children. Position statement. Paediatr Child Health. 2011. Reaffirmed 2018.
+*Source:* Cardona V, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/
 
 #### Q4
-*Update:* She needs a second dose of epinephrine and recovers fully. She is discharged the next morning.
+*Update:* He recovers after one dose of epinephrine and fluid. His parents ask whether to give tomorrow's dose.
 
-**Which of the following is the most appropriate epinephrine autoinjector prescription for her at discharge?**
+**Which of the following is the most appropriate advice about his oral immunotherapy?**
 
-- A. Epinephrine ampoules with syringes
-- B. One 0.15 mg autoinjector
-- C. Two 0.15 mg autoinjectors  **(key)**
-- D. Two 0.3 mg autoinjectors
-- E. No autoinjector until allergy review
+- A. Call his allergist before next dose  **(key)**
+- B. Double tomorrow's dose
+- C. Stop immunotherapy permanently
+- D. Take cetirizine and continue
+- E. Take the dose before sports
 
-*Explanation:* Canadian allergists advise the 0.15 mg autoinjector for children under 15 kg, and it is the lowest premeasured dose sold in Canada. More than one device is advised when a reaction needed more than one dose, as hers did. A 0.3 mg device gives more than three times her calculated dose of 0.09 mg. Ampoules and syringes are slow and error prone for parents in an emergency. Waiting for allergy review would leave her without treatment in the meantime.
+*Explanation:* A systemic reaction during oral immunotherapy needs review by his allergist before the next dose, who may adjust the dose and will reinforce avoiding cofactors such as exercise, illness and fever around dosing. Doubling the dose would raise the risk further. Stopping for good is a decision for the family and allergist, not an emergency default. Cetirizine hides early skin symptoms but does not prevent anaphylaxis. Dosing just before sports repeats today's trigger.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Halbrich M, et al. CSACI position statement. Epinephrine auto-injectors and children under 15 kg. Allergy Asthma Clin Immunol. 2015. https://pmc.ncbi.nlm.nih.gov/articles/PMC4485331/
+*Source:* Bégin P, Chan ES, Kim H, and colleagues. CSACI guidelines for the ethical, evidence-based and patient-oriented clinical practice of oral immunotherapy in IgE-mediated food allergy. Allergy Asthma Clin Immunol. 2020. https://doi.org/10.1186/s13223-020-0413-7
 
 ### anaphylaxis-19: Hoarse voice after a pharmacy visit
 
@@ -732,77 +739,78 @@ Select 2.
 
 *Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
 
-### anaphylaxis-25: Shock after shrimp at a wedding
+### anaphylaxis-25: No response to her own pen
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department. The nearest ICU is a 90-minute flight away. A 23-year-old woman presents 40 minutes after eating shrimp at a wedding. She has generalized hives, lip swelling, wheeze and light-headedness. She has asthma and uses salbutamol as needed. She has received three doses of epinephrine 0.5 mg IM, 5 minutes apart, and 2 L of crystalloid. She is supine with her legs raised. She has diffuse wheeze and no stridor.
+A 44-year-old woman presents to the emergency department 30 minutes after drinking a smoothie that contained kiwi. She has had itching of the mouth with kiwi before. Ten minutes after the smoothie she developed hives, lip swelling, wheeze and light-headedness. She used her 0.3 mg epinephrine autoinjector in the outer thigh 15 minutes ago, with no improvement. She has hypertension and takes amlodipine.
 
-- Pulse: 132/minute
-- Resp.: 28/minute
-- BP: 76/40 mmHg
-- O2 sat: 92% on 6 L/minute by nasal prongs
-- Weight: 60 kg
+She has diffuse hives, lip swelling and expiratory wheeze. She is sitting up and talking in sentences.
+
+- Temperature: 36.8°C oral
+- Pulse: 124/minute
+- Resp.: 26/minute
+- BP: 84/50 mmHg
+- O2 sat: 92% on room air
+- Weight: 68 kg
 
 #### Q1
-**Which of the following is the most appropriate next treatment for her?**
+**Which of the following is the most appropriate way to give her next dose of epinephrine?**
 
-- A. epinephrine infusion IV  **(key)**
-- B. glucagon 1 mg IV bolus
-- C. methylprednisolone 125 mg IV
-- D. norepinephrine infusion IV
-- E. vasopressin infusion IV
+- A. epinephrine 0.3 mg by new autoinjector
+- B. epinephrine 0.5 mg IM from an ampoule  **(key)**
+- C. epinephrine 1 mg IV push
+- D. epinephrine 0.5 mg nebulized
+- E. epinephrine 0.3 mg SC in the arm
 
-*Explanation:* She has refractory anaphylaxis, with shock that persists after three IM doses and 2 L of fluid, so a low-dose IV epinephrine infusion is the next step. It can run through a peripheral line while repeat IM doses continue until it starts. Glucagon is for patients taking beta blockers, and she takes none. Methylprednisolone acts too slowly to treat shock. Norepinephrine and vasopressin are added only if shock persists despite an epinephrine infusion.
+*Explanation:* Her airway, breathing and circulation problems persist after one dose, so she needs another IM dose now. In a health care setting, further doses are drawn up from an ampoule and given by syringe and needle into the anterolateral thigh rather than by autoinjector, and the adult dose is 0.5 mg. Another 0.3 mg autoinjector gives a lower dose than she needs. A 1 mg IV push is the cardiac arrest dose and can cause dangerous arrhythmias and hypertension in a patient with a pulse. Epinephrine is not given by the subcutaneous or inhaled route to treat anaphylaxis.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
-*Source:* Pouessel G, et al. Management of refractory anaphylaxis. An overview of current guidelines. Clin Exp Allergy. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC11439156/
+*Source:* Resuscitation Council UK. Emergency treatment of anaphylaxis. Guidelines for healthcare providers. 2021. https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf
 
 #### Q2
-*Update:* The nurse mixes epinephrine 1 mg in 100 mL of normal saline, which gives 10 mcg/mL.
+**Which of the following is the most appropriate interval before repeating IM epinephrine if she does not improve?**
 
-**Which of the following is the most appropriate starting rate for her infusion?**
+- A. 1 minute
+- B. 5 minutes  **(key)**
+- C. 20 minutes
+- D. 30 minutes
+- E. 60 minutes
 
-- A. 0.5 mcg/minute
-- B. 10 mcg/minute  **(key)**
-- C. 50 mcg/minute
-- D. 100 mcg/minute
-- E. 500 mcg/minute
-
-*Explanation:* For a hypotensive adult, a common protocol starts this dilution at 1 mL/kg/hour. For 60 kg that is 60 mL/hour x 10 mcg/mL = 600 mcg/hour, or 10 mcg/minute, about 0.17 mcg/kg/minute, then titrated to response. A rate of 0.5 mcg/minute is too low to treat shock. Rates of 50 to 500 mcg/minute are 5 to 50 times too high and risk arrhythmia, severe hypertension and myocardial ischemia.
+*Explanation:* IM epinephrine should be repeated after 5 minutes if airway, breathing or circulation problems persist. One minute does not allow the first dose to be absorbed and act. Waiting 20 minutes or longer leaves her hypotensive when a further dose would help, and after two doses without improvement she meets the definition of refractory anaphylaxis, which needs expert help and an infusion.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
 *Source:* Resuscitation Council UK. Emergency treatment of anaphylaxis. Guidelines for healthcare providers. 2021. https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf
 
 #### Q3
-**Which of the following is the most appropriate way to give the infusion in this hospital?**
+*Update:* After a second IM dose her BP is still 84/50 mmHg. IV access is in place.
 
-- A. Central line before starting
-- B. Dedicated peripheral line on a pump  **(key)**
-- C. Gravity drip through the fluid line
-- D. Intraosseous line on a gravity drip
-- E. Shared line with the fluid bolus
+**Which of the following IV fluids is most appropriate for her hypotension?**
 
-*Explanation:* Dilute epinephrine can be given safely through a peripheral cannula on a dedicated line with an infusion pump, with close monitoring of the site, until central access is available. Waiting for a central line delays treatment of refractory shock. A gravity drip gives an uncontrolled dose. Sharing the line with a fluid bolus means the epinephrine dose rises each time the fluid is squeezed in.
+- A. Albumin 5% 500 mL IV
+- B. Dextrose 5% water 1 L IV
+- C. Half-normal saline 1 L IV
+- D. Hydroxyethyl starch 500 mL IV
+- E. Ringer's lactate 1 L IV  **(key)**
+
+*Explanation:* Hypotension that persists after epinephrine needs a rapid IV bolus of 500 to 1 000 mL in an adult, repeated as needed, using a glucose-free crystalloid with a sodium of 130 to 154 mmol/L, such as Ringer's lactate. Large volumes may be needed in severe anaphylactic shock. Colloids such as albumin and hydroxyethyl starch are not recommended in anaphylaxis, and colloids are themselves a recognized cause of it. Dextrose 5% water and half-normal saline contain too little sodium and expand the circulation poorly.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
 *Source:* Resuscitation Council UK. Emergency treatment of anaphylaxis. Guidelines for healthcare providers. 2021. https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf
 
 #### Q4
-*Update:* On the infusion her BP rises to 98/60 mmHg. She still has diffuse wheeze and her oxygen saturation is 93%.
+**Which of the following is the most appropriate oxygen therapy for her now?**
 
-**Which of the following is the most appropriate additional treatment for her wheeze?**
+- A. BiPAP at 10/5 cmH2O
+- B. High-flow oxygen by mask  **(key)**
+- C. Nasal prongs at 2 L/minute
+- D. No oxygen above an SpO2 of 90%
+- E. Venturi mask at 28%
 
-- A. diphenhydramine 50 mg IV
-- B. furosemide 40 mg IV
-- C. ketamine 1 mg/kg IV
-- D. montelukast 10 mg PO
-- E. salbutamol 5 mg nebulized  **(key)**
-
-*Explanation:* Bronchospasm that persists once epinephrine has been given is treated with an inhaled beta-2 agonist such as salbutamol, especially in a patient with asthma. Diphenhydramine does not relieve bronchospasm. Montelukast acts too slowly for acute wheeze. Furosemide treats pulmonary edema, which this is not. Ketamine is an induction agent for intubation, which she does not need now.
+*Explanation:* Patients with anaphylaxis who have respiratory distress, or who need repeated doses of epinephrine, should receive high-flow oxygen, preferably 100% by a nonrebreather mask. Nasal prongs at 2 L/minute and a 28% Venturi mask deliver too little for a patient in shock with wheeze. Withholding oxygen until the saturation falls below 90% risks hypoxemia during a reaction that can worsen quickly. BiPAP does not treat the cause and a mask interferes with managing lip swelling and vomiting.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
@@ -865,82 +873,84 @@ A 19-year-old man is brought to the emergency department by ambulance in cardiac
 
 *Source:* Resuscitation Council UK. Emergency treatment of anaphylaxis. Guidelines for healthcare providers. 2021. https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf
 
-### anaphylaxis-27: Wanting to leave after a pastry
+### anaphylaxis-27: Going home after salmon at a restaurant
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 61-year-old man presents to the emergency department 50 minutes after eating a pastry that contained pistachio. He developed hives, facial swelling, wheeze and light-headedness. His partner gave his epinephrine autoinjector in the car, and he received a second dose of epinephrine 0.5 mg IM and 1 L of crystalloid on arrival. His symptoms fully resolved 1 hour ago. He has hypertension treated with amlodipine. He lives alone in a rural cottage 90 minutes by road from the hospital. He wants to go home now.
+A 38-year-old man is ready for discharge from the emergency department 6 hours after anaphylaxis to salmon eaten at a restaurant. He had hives, throat tightness and vomiting, and he recovered after one dose of epinephrine 0.5 mg IM. He has eaten fish before without problems. He has no other allergies and no asthma. He drives a snowplow for the city in northern Ontario and spends most winter nights in his truck. He is symptom-free with normal vital signs and asks what he needs to know before he leaves.
 
-- Pulse: 88/minute
+- Temperature: 36.7°C oral
+- Pulse: 78/minute
 - Resp.: 16/minute
-- BP: 138/82 mmHg
+- BP: 128/78 mmHg
 - O2 sat: 98% on room air
-- Weight: 84 kg
+- Weight: 92 kg
 
 #### Q1
-**Which of the following is the most appropriate disposition for him now?**
+**Which of the following is the most appropriate dietary advice until he sees an allergist?**
 
-- A. Admission to the ICU for monitoring
-- B. Discharge after 1 more hour
-- C. Discharge now with a steroid course
-- D. Discharge now with one autoinjector
-- E. Extended observation after resolution  **(key)**
+- A. Avoid all finned fish  **(key)**
+- B. Avoid all seafood and iodine
+- C. Avoid salmon and trout only
+- D. Avoid salmon only
+- E. No change to his diet
 
-*Explanation:* He needed more than one dose of epinephrine, the strongest risk factor for a biphasic reaction, and he lives alone far from care. Both support extended observation after resolution, up to 6 hours or longer, including admission if needed. Discharge after a short period suits a non-severe reaction that settled with one dose in a patient with good access to care. A steroid course does not prevent a biphasic reaction. ICU admission is not needed while he is well.
+*Explanation:* The main fish allergen, parvalbumin, is shared across many fish species, so many patients react to several fish, and he should avoid all finned fish until an allergist has tested which species, if any, he tolerates. Some people tolerate certain fish, but that must be proven by testing, not assumed. Fish allergens do not cross-react with shellfish, and iodine is not the allergen. Avoiding salmon alone, or salmon and trout, leaves him exposed to closely related species.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Shaker MS, et al. Anaphylaxis. A 2020 practice parameter update, systematic review, and GRADE analysis. J Allergy Clin Immunol. 2020. https://www.jacionline.org/article/S0091-6749(20)30105-6/fulltext
+*Source:* Kuehn A, Swoboda I, Arumugam K, Hilger C, Hentges F. Fish allergens at a glance: variable allergenicity of parvalbumins, the major fish allergens. Front Immunol. 2014. https://doi.org/10.3389/fimmu.2014.00179
 
 #### Q2
-**Which of the following is the most accurate advice about a return of his symptoms?**
+*Update:* He is given a prescription for an EpiPen 0.3 mg autoinjector and asks how to use it.
 
-- A. A return is prevented by prednisone
-- B. A second reaction is milder than the first
-- C. Symptoms may return up to 48 hours later  **(key)**
-- D. Symptoms return only with new exposure
-- E. Two doses of epinephrine prevent a return
+**Which of the following is the correct length of time to hold his autoinjector in place once it clicks?**
 
-*Explanation:* A biphasic reaction is a return of anaphylaxis within 1 to 48 hours after full resolution without new exposure, with a median of about 10 hours. He should be taught to use his autoinjector and seek care if symptoms return. Prednisone does not reliably prevent it. A second phase can be as severe as the first or worse. Needing two doses raises, rather than lowers, the risk of recurrence.
+- A. 1 second
+- B. 3 seconds  **(key)**
+- C. 10 seconds
+- D. 30 seconds
+- E. 60 seconds
+
+*Explanation:* The EpiPen monograph instructs the user to push the autoinjector firmly against the outer thigh until it clicks and then hold it in place for 3 seconds. It can be given through clothing so no time is lost, and the buttock, hands and feet should be avoided. Pulling it away after 1 second is shorter than instructed, and holds of 10 seconds or more are not what the current monograph describes.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
+*Source:* Mylan Specialty LP. EpiPen and EpiPen Jr prescribing information. Health Canada product monograph. 2017. https://pdf.hres.ca/dpd_pm/00039519.PDF
 
 #### Q3
 **Which of the following are the most appropriate elements of his discharge plan?**
 
-Select 3.
+Select 2.
 
 - A. Allergist referral  **(key)**
-- B. Cetirizine daily for 3 months
-- C. Nut skin testing in 3 days
-- D. One 0.5 mg epinephrine autoinjector
-- E. Pistachio avoidance and label reading  **(key)**
-- F. Prednisone 50 mg daily for 3 days
-- G. Stop his amlodipine
-- H. Two 0.3 mg epinephrine autoinjectors  **(key)**
+- B. Avoid all shellfish
+- C. Daily cetirizine for a month
+- D. Epinephrine 0.15 mg autoinjector
+- E. Prednisone for 5 days
+- F. Skin prick test in the ED today
+- G. Written anaphylaxis action plan  **(key)**
 
-*Explanation:* He needs allergen avoidance with careful label reading, two 0.3 mg autoinjectors because he needed two doses, and allergist referral to confirm the trigger and check related tree nuts. A 0.5 mg autoinjector is not sold in Canada, and one device may not be enough. Daily cetirizine and a prednisone course do not prevent anaphylaxis. Skin testing is usually delayed for some weeks after anaphylaxis. Amlodipine is neither a beta blocker nor an ACE inhibitor and does not need to change.
+*Explanation:* After anaphylaxis he needs an allergist referral to confirm the trigger and a written action plan that tells him when to use his autoinjector and to call 911. Shellfish is unrelated to fish allergy and need not be avoided. Daily antihistamines and a course of prednisone do not prevent anaphylaxis. Skin testing is done weeks after a reaction, not on the same day. A 0.15 mg autoinjector is a child's dose and too low for his 92 kg.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Waserman S, Cruickshank H. Updates in epinephrine guidelines. Canadian Allergy and Immunology Today. 2025. https://canadianallergyandimmunologytoday.com/en/article/view/5-1-Waserman_et_al
+*Source:* Cardona V, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7607509/
 
 #### Q4
-**Which of the following is the most appropriate teaching about when to use his autoinjector?**
+**Which of the following temperature ranges does the product monograph allow for storing his autoinjector?**
 
-- A. After a dose of cetirizine fails
-- B. At the first signs of a reaction  **(key)**
-- C. Only if he becomes faint
-- D. Only once 911 has been called
-- E. Preemptively after any nut contact
+- A. -5 to 5°C
+- B. 2 to 8°C
+- C. 8 to 15°C
+- D. 15 to 30°C  **(key)**
+- E. 30 to 40°C
 
-*Explanation:* Epinephrine should be injected at the first sign of suspected anaphylaxis, because delay is linked to more severe and biphasic reactions and to deaths. Waiting for faintness or for a trial of cetirizine loses time. Calling 911 should not delay the injection. Routine injection after contact with no symptoms is not advised, because it has not been shown to prevent anaphylaxis.
+*Explanation:* The EpiPen is stored at 25°C, with excursions permitted from 15 to 30°C, and it must not be refrigerated or frozen. The monograph also advises against keeping it in a vehicle during extremely hot or cold weather, so on winter nights he should keep it on his body rather than in the cab of his truck. Refrigerator temperatures of 2 to 8°C, freezing temperatures and anything between 8 and 15°C fall below the allowed range, and 30 to 40°C is above it.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
+*Source:* Mylan Specialty LP. EpiPen and EpiPen Jr prescribing information. Health Canada product monograph. 2017. https://pdf.hres.ca/dpd_pm/00039519.PDF
 
 ### anaphylaxis-28: Flushing during an antibiotic infusion
 
@@ -1728,67 +1738,69 @@ A 33-year-old woman presents to the emergency department 45 minutes after eating
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* American College of Radiology, Committee on Drugs and Contrast Media. ACR Manual on Contrast Media. 2025.
+*Source:* American College of Radiology, Committee on Drugs and Contrast Media. ACR Manual on Contrast Media. 2025. Sampson HA, Aceves S, Bock SA, and colleagues. Food allergy: a practice parameter update. J Allergy Clin Immunol. 2014. https://doi.org/10.1016/j.jaci.2014.05.013
 
-### anaphylaxis-40: Pesto pasta at a family dinner
+### anaphylaxis-40: Reaction to a sandwich from a deli counter
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 6-year-old boy is brought to the emergency department in Ontario by ambulance from a restaurant. Twenty minutes after eating pesto pasta he developed hives, lip swelling, cough and wheeze. He has never had an allergic reaction and has no autoinjector. Paramedics gave epinephrine 0.15 mg IM 15 minutes ago. He has asthma treated with inhaled budesonide. His hives are fading and his lips are less swollen. He has mild expiratory wheeze and speaks in full sentences.
+A 52-year-old woman presents to the emergency department 25 minutes after eating a sandwich made to order at a deli counter. She has had hives twice after foods containing mustard and has avoided it since, but she did not ask about the dressing. Within 10 minutes she developed hives, throat tightness and vomiting. Her autoinjector expired last year and she did not replace it. She has hypothyroidism treated with levothyroxine.
 
-- Temperature: 37.0°C
-- Pulse: 128/minute
-- Resp.: 28/minute
-- BP: 100/62 mmHg
-- O2 sat: 95% on room air
-- Weight: 21 kg
+She has diffuse hives and a hoarse voice. Her lungs are clear.
+
+- Temperature: 36.8°C oral
+- Pulse: 118/minute
+- Resp.: 22/minute
+- BP: 88/52 mmHg
+- O2 sat: 96% on room air
+- Weight: 68 kg
 
 #### Q1
-**Which of the following is the most appropriate additional treatment for his wheeze now?**
+**Which of the following is the most appropriate site for her first dose of IM epinephrine?**
 
-- A. diphenhydramine 20 mg IV
-- B. epinephrine 0.5 mg IM
-- C. magnesium sulfate 800 mg IV
-- D. montelukast 5 mg PO
-- E. salbutamol 10 puffs by MDI  **(key)**
+- A. Anterolateral mid-thigh  **(key)**
+- B. Deltoid of the upper arm
+- C. Forearm flexor muscles
+- D. Gluteal muscle of the buttock
+- E. Subcutaneous abdominal skin
 
-*Explanation:* After epinephrine, remaining mild wheeze in a child with asthma is treated with inhaled salbutamol, 10 puffs by MDI and spacer for a child of 20 kg or more. IV magnesium is kept for severe asthma that has not responded to first-line therapy, and he is speaking in full sentences. A repeat epinephrine dose for a 21 kg child would be about 0.21 mg, so 0.5 mg is more than twice the correct dose. Diphenhydramine does not relieve bronchospasm. Montelukast acts too slowly.
+*Explanation:* IM epinephrine is given into the anterolateral aspect of the middle third of the thigh, where the large vastus lateralis muscle absorbs it quickly and reliably, at 0.01 mg/kg to a maximum of 0.5 mg. The deltoid is smaller and gives lower peak levels. An injection into the buttock often ends up in fat rather than muscle. Forearm muscles are too small. Subcutaneous injection is absorbed more slowly than IM.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
-*Source:* Trottier ED, et al. Canadian Paediatric Society. Managing an acute asthma exacerbation in children. Position statement. Paediatr Child Health. 2021.
+*Source:* Resuscitation Council UK. Emergency treatment of anaphylaxis. Guidelines for healthcare providers. 2021. https://www.resus.org.uk/sites/default/files/2021-05/Emergency%20Treatment%20of%20Anaphylaxis%20May%202021_0.pdf
 
 #### Q2
-*Update:* He recovers. Pine nut is the suspected trigger. His parents ask what his Ontario school must do.
+*Update:* She recovers after one dose of epinephrine and fluid. Before discharge she asks how to avoid mustard in packaged foods.
 
-**Which of the following is required of his school board under Ontario law?**
+**Which of the following is the most accurate statement about mustard on Canadian food labels?**
 
-- A. A ban on nuts in his classroom
-- B. An individual plan for him at school  **(key)**
-- C. Autoinjector kept at the board office
-- D. Parental consent before each dose
-- E. Weekly allergist letters on file
+- A. Labels need not name mustard
+- B. May contain warnings are mandatory
+- C. Mustard must be named on packaged foods  **(key)**
+- D. Only mustard seed must be listed
+- E. Spices can hide mustard legally
 
-*Explanation:* Sabrina's Law requires every Ontario school board to have an anaphylaxis policy, including an individual plan for each pupil at risk, staff training and ways to reduce exposure. It lets staff give epinephrine without prior consent when they believe a pupil is having anaphylaxis, so consent before each dose is not required. The law does not require food bans. Keeping the autoinjector at the board office would put it out of reach. Allergist letters are not required each week.
+*Explanation:* Mustard is a priority food allergen in Canada, so whenever mustard protein is present in a prepackaged food, the word mustard must appear in the list of ingredients or in a Contains statement, whichever ingredient it comes from. Precautionary may contain statements are voluntary and cannot be used when mustard is an intended ingredient. The rule covers all mustard-derived proteins, not only the seed.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Government of Ontario. Sabrina's Law, 2005. S.O. 2005, c. 7. https://www.ontario.ca/laws/statute/05s07
+*Source:* Canadian Food Inspection Agency. Before you shop: food allergies and allergen labelling. Modified 2026. https://inspection.canada.ca/en/food-labels/labelling/consumers/food-allergies
 
 #### Q3
-**Which of the following is the most appropriate epinephrine autoinjector prescription for him?**
+**Which of the following is the most appropriate advice about packaged foods she has eaten safely before?**
 
-- A. One 0.3 mg autoinjector
-- B. Two 0.3 mg autoinjectors
-- C. Two 0.5 mg autoinjectors
-- D. Two 0.15 mg autoinjectors  **(key)**
-- E. No autoinjector until allergy review
+- A. Avoid any food with a Contains list
+- B. Check the label every time she buys it  **(key)**
+- C. Look only at the May contain line
+- D. Read labels only on new products
+- E. Rely on claims on the front of the package
 
-*Explanation:* He weighs 21 kg, and Canadian allergists advise the 0.15 mg autoinjector for children under 25 kg. Carrying two lets a second dose be given if the first is not enough or a device fails. The 0.3 mg device is advised from 25 kg, and there is no 0.5 mg autoinjector for children. Waiting for allergy review would leave him without treatment.
+*Explanation:* Companies sometimes change their ingredients, so the Canadian Food Inspection Agency advises checking the label for allergens every time a product is bought, even a food she has eaten safely before. Reading labels only on new products misses a recipe change. Mustard added as an ingredient must appear in the ingredient list or a Contains statement, while a May contain line covers only possible cross-contamination and cannot be used for an intended ingredient, so reading that line alone misses the ingredient itself. A Contains list that does not name mustard is not a reason to avoid the food. Front-of-package claims are not where allergens are declared.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Li LDX, et al. CSACI position statement. Transition recommendations on existing epinephrine autoinjectors. Allergy Asthma Clin Immunol. 2021. https://pmc.ncbi.nlm.nih.gov/articles/PMC8670273/
+*Source:* Canadian Food Inspection Agency. Before you shop: food allergies and allergen labelling. Modified 2026. https://inspection.canada.ca/en/food-labels/labelling/consumers/food-allergies
 
 ### anaphylaxis-41: Pounding heart at the dentist
 
@@ -1864,70 +1876,72 @@ A 29-year-old woman is brought to the emergency department by ambulance from a d
 
 *Source:* Jiang S, Tang M. Allergy to local anesthetics is a rarity. Review of diagnostics and strategies for clinical management. Clin Rev Allergy Immunol. 2023. https://doi.org/10.1007/s12016-022-08937-x
 
-### anaphylaxis-42: Parents afraid to use the pen
+### anaphylaxis-42: Infant who went quiet after a new food
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 13-year-old girl with a peanut allergy is brought to the emergency department by her parents 45 minutes after eating a granola square at a friend's home. She developed hives, repeated coughing and throat tightness, then vomited twice. Her parents had her 0.3 mg autoinjector but were afraid it would harm her heart, so they gave cetirizine and drove her in. She has mild asthma. She has diffuse hives, a hoarse voice and wheeze and is using accessory muscles.
+A 7-month-old girl is brought to the emergency department by her parents 25 minutes after her first taste of scrambled egg at home. Within 10 minutes she developed hives on her face and trunk, and she has vomited four times. For the past 5 minutes she has been pale and unusually quiet. She was born at term, has mild eczema and takes no medications. For a month she has eaten peanut butter thinned into cereal three times a week with no reaction.
 
-- Temperature: 36.9°C
-- Pulse: 134/minute
-- Resp.: 30/minute
-- BP: 96/58 mmHg
-- O2 sat: 91% on room air
-- Weight: 44 kg
+She lies limply in her mother's arms and responds weakly to her voice. There are hives on her face, trunk and legs. There is no stridor and the chest is clear. Capillary refill is 3 seconds.
+
+- Temperature: 36.9°C rectal
+- Pulse: 178/minute
+- Resp.: 42/minute
+- BP: 66/38 mmHg
+- O2 sat: 97% on room air
+- Weight: 8 kg
 
 #### Q1
 **Which of the following is the most appropriate first medication for her?**
 
-- A. epinephrine 0.44 mg IM  **(key)**
-- B. epinephrine 0.044 mg IM
-- C. epinephrine 4.4 mg IM
-- D. methylprednisolone 44 mg IV
-- E. salbutamol 10 puffs by MDI
+- A. diphenhydramine 8 mg IV
+- B. epinephrine 0.01 mg IM
+- C. epinephrine 0.1 mg IM  **(key)**
+- D. epinephrine 0.5 mg IM
+- E. epinephrine 0.1 mg IV
 
-*Explanation:* IM epinephrine at 0.01 mg/kg, to a maximum of 0.5 mg, is first-line, so 44 kg x 0.01 mg/kg = 0.44 mg. Doses of 4.4 mg and 0.044 mg are tenfold errors in each direction. Salbutamol may help the wheeze once epinephrine is given but does not treat laryngeal edema or the systemic reaction. Methylprednisolone acts too slowly.
+*Explanation:* Hives, repeated vomiting, limpness and pallor soon after a first taste of egg are anaphylaxis, with skin, gastrointestinal and cardiovascular signs. IM epinephrine into the outer mid-thigh comes first. The dose is 0.01 mg/kg, which is 0.08 mg for her 8 kg, but TREKK sets a minimum of 0.1 mg per dose, drawn from the 1 mg/mL preparation. A dose of 0.01 mg is a tenth of that. A dose of 0.5 mg is the maximum for a large child or adult, five times hers. TREKK warns against giving epinephrine as an IV bolus for anaphylaxis because of serious cardiac adverse events. Diphenhydramine is a first-generation antihistamine that TREKK advises against, and no adjunct replaces epinephrine.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
-*Source:* Canadian Paediatric Society, Acute Care Committee. Emergency treatment of anaphylaxis in infants and children. Position statement. Paediatr Child Health. 2011. Reaffirmed 2018.
+*Source:* Alqurashi W, Ellis A, TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: anaphylaxis. Version 2.3. 2026. https://trekk.ca/resources/bottom-line-recommendations-anaphylaxis/
 
 #### Q2
-*Update:* She improves after two doses. Her parents say they were afraid the injection would damage her heart.
+*Update:* She recovers with treatment and is admitted overnight for monitoring. The next morning she is well, and her parents ask about the plan for home.
 
-**Which of the following is the most accurate response to her parents' concern?**
-
-- A. Cetirizine is a safe first step instead
-- B. Children need half the labelled dose
-- C. Epinephrine may cause lasting heart damage
-- D. Inject only once breathing is difficult
-- E. Serious harm from IM epinephrine is very rare  **(key)**
-
-*Explanation:* Serious adverse effects of IM epinephrine are very rare, while delay in giving it is linked to severe reactions and deaths. Common effects such as pallor, tremor and a racing heart settle quickly. Cetirizine does not treat anaphylaxis and caused a delay here. The 0.3 mg device is the right dose for her weight, so halving it would underdose her. Waiting for breathing difficulty loses valuable time.
-
-*Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
-
-*Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
-
-#### Q3
-**Which of the following are the most appropriate points for her written anaphylaxis action plan?**
+**Which of the following are the most appropriate parts of her discharge plan?**
 
 Select 2.
 
-- A. Carry the autoinjector at all times  **(key)**
-- B. Give cetirizine first and wait
-- C. Give salbutamol before epinephrine
-- D. Inject at the first signs of anaphylaxis  **(key)**
-- E. Inject into the upper arm
-- F. Inject only if she cannot breathe
-- G. Keep the autoinjector at home
-- H. Use half a dose if she seems well
+- A. Allergist referral after age 1
+- B. Cetirizine daily for 2 weeks
+- C. Diphenhydramine at bedtime
+- D. Epinephrine autoinjector 0.15 mg  **(key)**
+- E. Epinephrine autoinjector 0.3 mg
+- F. Prednisolone for 3 days
+- G. Urgent allergist referral  **(key)**
+- H. No autoinjector until 15 kg
 
-*Explanation:* Her plan should say that she carries her autoinjector at all times and that it is used at the first signs of anaphylaxis. Cetirizine or salbutamol first delays the drug that treats the reaction. The injection goes into the outer thigh, not the upper arm. Waiting until she cannot breathe is too late. An autoinjector left at home is not there when needed, and an autoinjector cannot give a partial dose.
+*Explanation:* TREKK advises an epinephrine autoinjector for any child with, or at risk of, anaphylaxis. For children under 15 kg it recommends the 0.15 mg autoinjector because no suitable smaller device is sold in Canada, so waiting until she reaches 15 kg would leave her without epinephrine. The 0.3 mg device is meant for larger children. Infants younger than 1 year with a possible food allergy should be referred to an allergist urgently, not after their first birthday. Cetirizine is rarely needed after discharge and never replaces an autoinjector. TREKK advises against first-generation antihistamines such as diphenhydramine. Systemic corticosteroids are not used routinely and may raise the risk of a biphasic reaction in children.
 
 *Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
 
-*Source:* Golden DBK, et al. Anaphylaxis. A 2023 practice parameter update. Ann Allergy Asthma Immunol. 2024. https://www.annallergy.org/article/S1081-1206(23)01382-0/fulltext
+*Source:* Alqurashi W, Ellis A, TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: anaphylaxis. Version 2.3. 2026. https://trekk.ca/resources/bottom-line-recommendations-anaphylaxis/
+
+#### Q3
+**Which of the following is the most appropriate advice about her diet until she sees the allergist?**
+
+- A. Avoid all common food allergens
+- B. Avoid egg and stop peanut
+- C. Give egg in small daily amounts
+- D. Keep peanut and avoid egg  **(key)**
+- E. Retry scrambled egg in 2 weeks
+
+*Explanation:* She has had anaphylaxis to egg, so egg should be avoided until the allergist assesses her. Giving small daily amounts or retrying scrambled egg at home risks another reaction like this one. She has eaten peanut three times a week for a month with no reaction. The Canadian Paediatric Society advises that once an allergenic food has been introduced, regular ingestion, such as a few times a week, should be kept up. Stopping peanut, or all common allergens, would give up that regular exposure without protecting her from egg.
+
+*Key feature:* Anaphylaxis 4. At discharge, prescribe an epinephrine autoinjector, teach avoidance and rebound risk, and arrange allergy follow-up.
+
+*Source:* Abrams EM, Orkin J, Cummings C, Blair B, Chan ES, Canadian Paediatric Society. Dietary exposures and allergy prevention in high-risk infants. Paediatr Child Health. 2021. https://cps.ca/en/documents/position/dietary-exposures-and-allergy-prevention
 
 ### anaphylaxis-43: Reaction after an allergy shot
 

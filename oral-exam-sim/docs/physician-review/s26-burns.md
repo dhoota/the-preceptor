@@ -13,6 +13,18 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - burns-31 q2: the source is now Levis and Ali 2006, a Canadian review. It gives decompression at more than 30 mmHg with overt syndrome. The case has 28 mmHg, and the key is the escharotomy that comes first. *(samps-overlap-pass2a-review.md)*
 - burns-20: a high-pressure paint injection is a chemical injury of the hand. It is mapped to burns key features 6, 1 and 5. Please confirm it belongs under burns rather than lacerations or MSK. q4 rests on Hogan 2006: lower amputation risk with debridement within 6 hours for organic solvents. That comes from pooled case reports, not a trial. *(samps-overlap-pass2a.md)*
 - burns-31 q2: escharotomy of the abdominal wall as the first step for abdominal compartment syndrome under a full thickness trunk eschar rests on a narrative review (Malbrain 2015). The WSACS 2013 guideline does not address escharotomy. *(samps-overlap-pass2a.md)*
+- Ids from the added list, not the original triage: shock-39, shock-40, shock-43, asthma-copd-26, 28, 35, 36, 38, 41, 42, 43, 45, and burns-16, 19, 21, 24, 27, 28, 31, 32, 33. The triage had shock-40 as HOLD and shock-39 and shock-43 as READY. They were rebuilt because the brief says the added list wins. *(samps-replace-s50-s25-s26.md)*
+- The Alaska burn resuscitation guideline (2021) has no stable public URL in the citation. The text was read from a downloaded copy. Please confirm the link before release. Its advice on urine output, avoiding boluses and not catching up on fluid is used in several burns items. *(samps-replace-s50-s25-s26.md)*
+- burns-31 q4 uses the Alaska point that early hypotension in a burn suggests another cause, then keys eFAST. The eFAST step is standard trauma practice and is not quoted from the burn guideline. *(samps-replace-s50-s25-s26.md)*
+- burns-31 q2 relies on the Canadian C-spine rule to show he needs imaging. The choice of CT over plain films is usual practice, not from the rule itself. *(samps-replace-s50-s25-s26.md)*
+- burns-27 keys no tetanus prophylaxis after a booster 2 years ago. Please confirm against the Canadian Immunization Guide. *(samps-replace-s50-s25-s26.md)*
+- Several asthma-copd rebuilds key NIV decisions. The set now tests when to start NIV, when not to, and when to move to intubation, so review them together for balance. *(samps-replace-s50-s25-s26.md)*
+- Rome versus GOLD. GOLD 2026 Figure 4.2 lists PaO2 60 mmHg or less under severe. The Rome proposal it cites does not. Items now key only what both agree on. Please decide which version the bank should teach from now on. *(samps-replace-s50-s25-s26.md)*
+- Burn fluid titration conflicts across the bank. burns-16 q3 keys a 10% rate increase (Alaska 2021). Signed-off burns-02 keys an increase of 20 to 30%, and burns-13 keys a decrease of 20 to 30%. Please choose one standard. *(samps-replace-s50-s25-s26.md)*
+- burns-27 q2 (tetanus) is mapped to burns KF1, which is about linked trauma and toxic exposures. The mapping is weak, and I kept it because the rebuild rules keep each question's key feature. *(samps-replace-s50-s25-s26.md)*
+- Inherent "decide, then do" cues remain where the next update must describe the step: asthma-copd-19 q3 (drain placed), asthma-copd-41 q3 (intubated), burns-25 q2 (intubated). This matches house pattern in signed-off items such as asthma-copd-09 and airway-10. *(samps-replace-s50-s25-s26.md)*
+- The asthma and COPD KF5 to KF8 space is saturated across about 50 SAMPs. Core keys such as salbutamol by spacer, prednisone 50 mg and a 2 to 7 day follow-up recur in written-in form in s04. I fixed exact duplicates and copied teaching points, not every recurrence of a core decision. *(samps-replace-s50-s25-s26.md)*
+- burns-19 and the replaced questions in asthma-copd-43 need the planned second check. They contain new scenarios and new keys. *(samps-replace-s50-s25-s26.md)*
 - burns-20: the whole SAMP repeats s04 burns-03 (reviewed: true) and overlaps s53. Key feature 6 is still covered by burns-29. Recommend replacing it with a new chemical scenario, or dropping it. *(samps-s26-lensA.md)*
 - burns-31 q2: keep or replace, given the s45 abdominal compartment syndrome item. *(samps-s26-lensA.md)*
 - burns-21 q2 and q4 and the deletion of burns-22 q1 are reviewer rebuilds and need a clinician read. *(samps-s26-lensA.md)*
@@ -22,6 +34,9 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - burns-39 and burns-40: reject as duplicates of burns-23 and burns-31. *(samps-s26-lensB.md)*
 - burns-37: confirm the new stem wording (front of both arms and hands) gives the intended 14%, since the TREKK 15% formula threshold and the 10% transfer threshold both hinge on it. *(samps-s26-lensB.md)*
 - burns-17 q1: the explanation says 50 mcg is "the ceiling for a repeat dose". This comes from TREKK and was not checked by this lens. *(samps-s26-lensB.md)*
+- burns-32: the fluid numbers now rest on a Canadian provincial statement (Trauma NB 2025). Its age bands differ slightly from Alaska (over 13 years vs 14 and older). Both give 500 mL/hour for her. No Canadian source covers early hypotension, so q2 still cites Alaska. Please confirm the q2 key over immediate obstetric assessment. Pregnancy may raise fluid needs. It is no longer a q3 option, but you may want to teach it. *(samps-sweep2-review-sw2-c.md)*
+- airway-31 q2 keys the same words as burns-25 q1 and environmental-21 q3. The reasons differ, and airway KF2 names edema as a trigger. Consider whether the bank needs three "intubate before the flight" keys. For a rural physician without anesthesia on site, the key assumes the skills to intubate a swollen airway. *(samps-sweep2-review-sw2-f.md)*
+- burns-32: the fluid decisions follow the Alaska 2021 guideline, which the bank already cites. It has no Canadian adult equivalent. The guideline does not address pregnancy. The stem says she lies tilted to her left, so that aortocaval compression is excluded as the cause of her hypotension. Please confirm that a bolus with a search for another cause is the key you want over immediate obstetric assessment. *(samps-sweep2-sw2-c.md)*
 - burns-34 q2. The Alyahya 2025 study is single centre and retrospective, in patients with intentional overdose rather than self-burning. It supports screening but is not a guideline. No Canadian guideline on routine acetaminophen screening after self-harm was found. *(samps-textbooks-s26-s29-s50-s53.md)*
 - Goldfrank's chapter numbers. Eight chapters are cited by title and author only. See How the chapters were checked. *(samps-textbooks-s26-s29-s50-s53.md)*
 
@@ -29,95 +44,91 @@ Review reports: docs/reviews/writer-s26.md, samps-s26-lensA.md, samps-s26-lensB.
 
 ## SAMPs
 
-### burns-16: A pot of oil in the kitchen
+### burns-16: The pressure cooker lid
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department. A 46-year-old woman is brought to the emergency department by ambulance after a pot of cooking oil caught fire at 18:00. Her blouse ignited as she carried the pot outside. She arrives at 20:00 with no IV fluid given. She has hypertension and takes ramipril.
-
-She is alert and speaks in full sentences. There are deep partial thickness burns over the entire anterior trunk and the anterior surface of both arms. There is blanching erythema without blisters over the front of her neck. Her face and mouth are spared.
+A 52-year-old woman is brought to the emergency department by ambulance at 17:45. At 17:00 the lid of a pressure cooker blew off while she stood over it, and boiling stew and steam struck her. She has blistered, moist, pink partial thickness burns to her lower face, the front of her abdomen, the fronts of both thighs and her right forearm, measured at 24% TBSA on a Lund and Browder chart. There is no soot in her mouth, her voice is normal and she has no stridor. She has hypertension treated with amlodipine. She rates her pain as 9 out of 10. Paramedics placed an IV but gave no fluid.
 
 - Temperature: 36.6°C oral
-- Pulse: 116/minute
-- Resp.: 22/minute
-- BP: 128/80 mmHg
-- O2 sat: 97% on room air
-- Weight: 70 kg
+- Pulse: 112/minute
+- Resp.: 20/minute
+- BP: 142/86 mmHg
+- O2 sat: 98% on room air
+- Weight: 64 kg
 
 #### Q1
-**Which of the following is the burn size, by the rule of nines, that should be used to calculate her fluids?**
+**Which of the following is her estimated Ringer's lactate volume for the first 24 hours after the burn?**
 
-- A. 18%
-- B. 27%  **(key)**
-- C. 31.5%
-- D. 36%
-- E. 45%
+- A. 1 536 mL
+- B. 2 304 mL
+- C. 3 072 mL  **(key)**
+- D. 4 608 mL
+- E. 6 144 mL
 
-*Explanation:* Deep partial thickness burns of the anterior trunk count 18% and the anterior surface of each arm counts 4.5%, so 18 + 4.5 + 4.5 = 27%. The erythema on her neck has no blisters and blanches, so it is superficial and is left out of the TBSA. 31.5% adds 4.5% for the front of the head and neck, but her face is spared and the neck erythema is superficial, so it overstates the burn and the fluid. 36% would count both arms in full. 18% counts the trunk and forgets the arms.
-
-*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
-
-*Source:* American Burn Association. Guidelines for burn patient referral. 2025. https://ameriburn.org/resources/burnreferral/
-
-#### Q2
-*Update:* IV access is placed at 20:00. You use 2 mL/kg per %TBSA of Ringer's lactate for the first 24 hours, as the American Burn Association recommends for adults.
-
-**Which of the following Ringer's lactate infusion rates should be started now?**
-
-- A. 158 mL/hour
-- B. 236 mL/hour
-- C. 315 mL/hour  **(key)**
-- D. 473 mL/hour
-- E. 630 mL/hour
-
-*Explanation:* The 24 hour estimate is 2 x 70 kg x 27 = 3780 mL, and half of it, 1890 mL, is due in the first 8 hours after the burn, which ends at 02:00. She arrives 2 hours after injury, so 1890 mL must run over 6 hours, or 315 mL/hour. 236 mL/hour spreads the first half over 8 hours from arrival and ignores the time already lost. 158 mL/hour is 3780 mL over 24 hours. 473 mL/hour uses 3 mL/kg per %TBSA, the paediatric figure. 630 mL/hour gives the whole day's volume in 6 hours.
+*Explanation:* The American Burn Association guideline recommends starting adult resuscitation at 2 mL/kg per %TBSA to reduce resuscitation volumes. For her that is 2 x 64 kg x 24% = 3 072 mL over the first 24 hours after the burn. The figure of 6 144 mL uses the older 4 mL/kg Parkland formula, and 4 608 mL uses 3 mL/kg, the pediatric rate. The figures of 1 536 and 2 304 mL use 1 and 1.5 mL/kg and would under-resuscitate her. The estimate is only a starting point and is titrated to her response.
 
 *Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
 
 *Source:* Cartotto R, Johnson LS, Savetamal A, and colleagues. American Burn Association clinical practice guidelines on burn shock resuscitation. J Burn Care Res. 2024. https://pubmed.ncbi.nlm.nih.gov/38051821/
 
-#### Q3
-*Update:* At 23:00 her urine output over the past hour is 20 mL. Pulse 118/minute, BP 106/70 mmHg. She remains alert.
+#### Q2
+**Which of the following hourly urine outputs should be the target for titrating her fluids?**
 
-**Which of the following is the most appropriate change to her fluid management?**
+- A. 13 mL/hour
+- B. 32 mL/hour  **(key)**
+- C. 64 mL/hour
+- D. 128 mL/hour
+- E. 192 mL/hour
 
-- A. Continue the current rate
-- B. Furosemide 20 mg IV
-- C. Increase the Ringer's lactate rate  **(key)**
-- D. Normal saline 1 L IV bolus
-- E. Start a norepinephrine infusion
-
-*Explanation:* Her target urine output is 0.5 mL/kg/hour, about 35 mL/hour at 70 kg, so 20 mL is too low and the infusion rate should be raised and then reassessed hourly. Continuing the same rate accepts under-resuscitation. Furosemide raises urine output without fixing the volume deficit, so urine output no longer tracks perfusion. Large boluses add to total volume and edema without lasting benefit and are avoided while she is not hypotensive. A vasopressor is not a substitute for volume at this stage of burn shock.
+*Explanation:* For adults with thermal burns, fluid is adjusted to a urine output of about 0.5 mL/kg/hour. At 64 kg that is 32 mL an hour. A target of 64 mL/hour is 1 mL/kg/hour, the goal for small children, and chasing it drives fluid creep. Targets of 128 and 192 mL/hour are the 2 and 3 mL/kg/hour range and would mean large excess volumes. A target of 13 mL/hour, 0.2 mL/kg/hour, accepts under-perfusion of her kidneys.
 
 *Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
 
-*Source:* American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update.
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
+
+#### Q3
+*Update:* A urinary catheter is placed. Over the next 2 hours her urine output is 18 mL/hour. Her BP is 128/78 mmHg, a mean arterial pressure of about 95 mmHg, and she is alert.
+
+**Which of the following is the most appropriate change to her fluid resuscitation?**
+
+- A. furosemide 20 mg IV
+- B. norepinephrine infusion IV
+- C. Raise the rate by about 10%  **(key)**
+- D. Ringer's lactate 1 L bolus
+- E. Switch to 0.9% saline
+
+*Explanation:* Her urine output of 18 mL/hour is below 30 mL/hour, and she is not hypotensive. The Alaska burn guideline advises increasing the crystalloid rate by about 10% each hour while output stays below 30 mL/hour, and avoiding boluses unless the patient is hypotensive, because boluses add to total body edema. Vasopressors are rarely used in burn shock and only with burn specialist advice. Furosemide would raise urine output without correcting her volume deficit, making output useless as a guide. Large volumes of 0.9% saline cause hyperchloremic acidosis, and a balanced solution is preferred.
+
+*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
+
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q4
-**Which of the following is the most appropriate analgesic to give her now?**
+**Which of the following is the most appropriate analgesia for her now?**
 
-- A. fentanyl 70 mcg IV  **(key)**
-- B. hydromorphone 2 mg SC
-- C. ketorolac 30 mg IV
+- A. acetaminophen 1 g PO alone
+- B. fentanyl 50 mcg IV titrated  **(key)**
+- C. ibuprofen 400 mg PO alone
 - D. morphine 10 mg IM
 - E. oxycodone 10 mg PO
 
-*Explanation:* A 27% deep partial thickness burn needs a fast IV opioid titrated to effect, and fentanyl 1 mcg/kg is 70 mcg at her weight. Subcutaneous and IM doses are absorbed unpredictably while burn shock shunts blood away from the skin and muscle, so relief is delayed and doses may later absorb all at once. An NSAID such as ketorolac adds renal risk during burn resuscitation, and she takes ramipril. Oral oxycodone is too slow for pain of this severity and she may need to fast for procedures.
+*Explanation:* She has severe pain from a 24% burn. The Alaska guideline advises analgesia in repeated small IV doses titrated to effect, with monitoring for respiratory depression, and giving all medications by the IV route for burns over 20% TBSA. Intramuscular morphine and oral oxycodone are absorbed unpredictably as fluid shifts during burn resuscitation. Acetaminophen or ibuprofen alone will not control pain rated 9 out of 10, although they are useful additions later.
 
 *Key feature:* Burns 3. Give prompt, effective IV analgesia to patients with severe burns.
 
-*Source:* Romanowski KS, Carson J, Pape K, and colleagues. American Burn Association guidelines on the management of acute pain in the adult burn patient. J Burn Care Res. 2020. https://pubmed.ncbi.nlm.nih.gov/32885244/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q5
-**Which of the following is the most appropriate disposition once she is stabilized?**
+**Which of the following is the most appropriate disposition for her?**
 
-- A. Admit to the local ICU
-- B. Admit to the surgical ward
-- C. Discharge with burn clinic review
-- D. Observe in the department overnight
-- E. Transfer to a regional burn centre  **(key)**
+- A. Admit to general surgery at this hospital
+- B. Burn centre consultation and transfer  **(key)**
+- C. Discharge with dressing clinic follow-up
+- D. Observe 6 hours, then discharge
+- E. Outpatient plastic surgery referral
 
-*Explanation:* A deep partial thickness burn of 27% TBSA meets the American Burn Association criteria for immediate burn centre consultation with consideration of transfer, which include partial thickness burns of 10% TBSA or more. A burn centre offers excision, grafting, burn critical care and rehabilitation that a community hospital cannot. Admission to a local ICU or surgical ward keeps her from that care. Discharge or overnight observation ignores ongoing burn shock and the need for surgery.
+*Explanation:* The American Burn Association referral guideline calls for immediate consultation with a burn centre, with consideration of transfer, for partial thickness burns of 10% TBSA or more. Her burns cover 24%, and she also needs a monitored fluid resuscitation. Discharge, observation followed by discharge, or outpatient referral would leave a major burn without specialist care. Admission to a general surgical service here does not provide burn centre care.
 
 *Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
 
@@ -294,85 +305,86 @@ She is drowsy but answers questions. GCS 14. There is a bruise over the left tem
 
 *Source:* American Burn Association. Guidelines for burn patient referral. 2025. https://ameriburn.org/resources/burnreferral/
 
-### burns-19: An extension cord in the mouth
+### burns-19: A slip in the restaurant kitchen
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 3-year-old girl is brought to the emergency department by her mother 30 minutes after she put the plugged-in end of a household extension cord in her mouth. She cried at once. There was no loss of consciousness. She is healthy and fully immunized.
+A 44-year-old restaurant cook presents to the emergency department 40 minutes after he slipped on a greasy kitchen floor. His left hand went into a deep fryer as he fell, and he landed on his outstretched left hand. A coworker held the hand under cool running water for 20 minutes. He has pink, moist, blistered burns that blanch briskly and are very painful over the back of the left hand, fingers and wrist, about 2% TBSA. The burns do not encircle the wrist. He wears a wedding ring on the left ring finger, and the finger is swelling around it. His left wrist is swollen and tender over the distal radius. He is right-handed and otherwise healthy. He rates his pain as 8 out of 10 after IV fentanyl.
 
-She is alert and playing. There is a grey-white, depressed, painless burn about 1 cm across at the left corner of the mouth, involving the upper and lower lip. There is no bleeding. There are no other wounds on the hands, feet or body. The examination is otherwise normal. Her ECG shows normal sinus rhythm with normal intervals.
-
-- Temperature: 36.9°C tympanic
-- Pulse: 108/minute
-- Resp.: 24/minute
-- BP: 96/60 mmHg
+- Temperature: 36.8°C oral
+- Pulse: 102/minute
+- Resp.: 18/minute
+- BP: 138/84 mmHg
 - O2 sat: 99% on room air
-- Weight: 14 kg
+- Weight: 82 kg
 
 #### Q1
-**Which of the following is the most appropriate cardiac assessment for her?**
+**Which of the following is the most urgent step for his left hand now?**
 
-- A. Echocardiogram before discharge
-- B. Holter monitor for 24 hours
-- C. Serial troponin measurements
-- D. Telemetry admission overnight
-- E. No further cardiac testing  **(key)**
+- A. Apply silver sulfadiazine cream
+- B. Debride all blisters now
+- C. Elevate the hand on pillows
+- D. Remove his wedding ring  **(key)**
+- E. Start oral cephalexin
 
-*Explanation:* A household low voltage injury with no loss of consciousness and a normal first ECG carries a very low risk of later arrhythmia, so no further cardiac testing or monitoring is needed. Telemetry is kept for loss of consciousness, an abnormal ECG, an arrhythmia or high voltage exposure. Troponin, echocardiography and Holter monitoring add cost and delay and do not change care for this child.
+*Explanation:* His finger is already swelling around his ring, and burn edema increases over the next hours. The Alaska burn guideline advises removing all clothing and jewellery in the area of the burn and distal to it, before swelling turns a ring into a tourniquet that threatens the finger. Elevating the hand helps limit swelling, but it does not remove the constriction. The guideline advises debriding only blisters larger than 2 cm or over a joint, not every blister. It states that antibiotics are unnecessary for burns. It keeps silver sulfadiazine for full thickness wounds, and dressings come after the ring is off.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* Arnoldo B, Klein M, Gibran NS. Practice guidelines for the management of electrical injuries. J Burn Care Res. 2006. https://pubmed.ncbi.nlm.nih.gov/16819345/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q2
-**Which of the following complications should her mother be warned about over the next 2 weeks?**
+*Update:* An X-ray of the left wrist shows a displaced distal radius fracture, which is reduced under procedural sedation. The burn covers the back of the hand and wrist over the fracture.
 
-- A. Cataract formation
-- B. Delayed cardiac arrhythmia
-- C. Facial nerve palsy
-- D. Labial artery bleeding  **(key)**
-- E. Upper airway swelling
+**Which of the following is the most appropriate way to immobilize his wrist?**
 
-*Explanation:* When the eschar at the oral commissure separates, most often 1 to 2 weeks after the injury, the labial artery can bleed briskly. Parents are taught to apply firm direct pressure to the lip and return at once. Cataracts follow electrical injury months later and mainly after high voltage or head contact. Delayed arrhythmia does not follow a low voltage injury with a normal ECG. The facial nerve lies far from the commissure. Airway swelling fits thermal or inhalation injury, not this small contact burn.
+- A. Circumferential cast over the dressings
+- B. Compression wrap around the wrist
+- C. Padded volar splint, not encircling  **(key)**
+- D. Removable brace strapped over the burn
+- E. No immobilization until the burn heals
+
+*Explanation:* The Alaska guideline warns that burned limbs swell, that splints must be reassessed so the swelling does not make them constrictive, and that injuries should not be wrapped circumferentially. A padded volar slab holds the reduction, leaves room for swelling and keeps the dorsal burn open for dressing care. A full cast or a circumferential compression wrap can act as a tourniquet as edema rises. A brace strapped over the burn presses on the wound. Leaving a reduced displaced fracture unsupported risks losing the reduction.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* Hoffman KA, Trigger CC. Pediatric oral commissure burn. Clin Pract Cases Emerg Med. 2017. https://pmc.ncbi.nlm.nih.gov/articles/PMC5965444/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q3
-**Which of the following is the most appropriate disposition for her?**
+*Update:* His pain is controlled. The orthopaedic surgeon is satisfied with the reduction and offers fracture clinic in 1 week. The burn centre is 90 minutes away by road.
 
-- A. Admit for cardiac monitoring
-- B. Discharge with dentist follow-up
-- C. Discharge with family physician review
-- D. Paediatric burn centre referral  **(key)**
-- E. Primary closure of the wound today
+**Which of the following is the most appropriate next step in his disposition?**
 
-*Explanation:* A deep burn of the face, including the lip and oral commissure, meets TREKK criteria for referral to a paediatric burn centre, where plastic surgeons follow scarring and plan splinting or reconstruction. Admission for monitoring is not needed after a low voltage injury with a normal ECG. A dentist or family physician cannot manage commissure contracture. The wound is not closed early because the full depth only becomes clear over days.
+- A. Admit to orthopaedics for elevation
+- B. Burn centre consultation by phone now  **(key)**
+- C. Discharge with fracture clinic in 1 week
+- D. Family physician dressing checks only
+- E. Fax a routine burn clinic referral
+
+*Explanation:* His burn is superficial partial thickness and covers about 2% TBSA. On its own, a partial thickness burn under 10% TBSA sits in the American Burn Association column for a consultation recommendation, which a routine burn clinic referral can meet. The same guideline lists patients with concomitant traumatic injuries for immediate consultation with consideration of transfer. His reduced fracture lies under the burn, which limits casting and affects any later surgery through burned skin. So the burn centre should be called now. A faxed routine referral fits the small burn but misses the fracture. Admission to orthopaedics, a fracture clinic in 1 week or family physician dressing checks each leave the burn and the fracture to be managed apart, without burn centre input.
 
 *Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
 
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
+*Source:* American Burn Association. Guidelines for burn patient referral. 2025. https://ameriburn.org/resources/burnreferral/
 
 #### Q4
-**Which of the following findings, had they been present, would call for cardiac monitoring after her injury?**
+**Which of the following should be part of the care of his left arm over the next hours?**
 
 Select 3.
 
-- A. Abnormal initial ECG  **(key)**
-- B. Age under 5 years
-- C. Burn at the mouth corner
-- D. Crying right after the shock
-- E. High voltage source  **(key)**
-- F. Household 120 volt source
-- G. Loss of consciousness  **(key)**
-- H. Painless grey burn
+- A. Elevate the arm above heart level  **(key)**
+- B. Hang the arm down in a sling
+- C. Ice packs over the splint
+- D. Oral antibiotics to prevent infection
+- E. Recheck the splint as swelling rises  **(key)**
+- F. Repeat checks of circulation and sensation  **(key)**
+- G. Tight elastic wrap over the splint
 
-*Explanation:* Cardiac monitoring after an electrical injury is advised for an abnormal first ECG, a documented arrhythmia, loss of consciousness or a high voltage exposure. Her ECG is normal, she did not lose consciousness and the source was household current, so she needs none. Young age, a burn at the oral commissure, a painless grey eschar and crying at once do not predict arrhythmia. Household current in Canada is 120 volts, which is low voltage.
+*Explanation:* The Alaska guideline advises elevating burned limbs above the heart to limit swelling, checking circulation, motor function and sensation, and reassessing splints so swelling does not make them constrictive. Rising pain, numbness or a cool hand would suggest compression that needs the splint loosened and urgent review. A dependent sling increases swelling. Ice can deepen the tissue injury. A tight elastic wrap adds constriction. The guideline states that antibiotics are unnecessary for burns.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* Arnoldo B, Klein M, Gibran NS. Practice guidelines for the management of electrical injuries. J Burn Care Res. 2006. https://pubmed.ncbi.nlm.nih.gov/16819345/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 ### burns-20: A spill in the research lab
 
@@ -451,82 +463,80 @@ The left forearm and the back of the hand have patches of white, wrinkled skin c
 
 *Source:* Agency for Toxic Substances and Disease Registry. Medical management guidelines for phenol. Centers for Disease Control and Prevention. Last reviewed 2014. https://wwwn.cdc.gov/TSp/MMG/MMGDetails.aspx?mmgid=144&toxid=27
 
-### burns-21: A sofa and a foam mattress
+### burns-21: Asleep on the couch at the cabin
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 52-year-old man is brought to the emergency department by ambulance from a townhouse fire in which a sofa and a foam mattress were alight. Firefighters found him unresponsive after about 15 minutes inside. He has no known medical history.
+A 46-year-old man is brought to the emergency department by ambulance from a cabin fire that started when he fell asleep smoking on the couch after an evening of drinking. He woke to thick smoke and escaped down an outside staircase, falling down the last six steps. He now has midline neck pain. He opens his eyes spontaneously, is slightly confused and obeys commands. He smells of alcohol. There is soot in his nostrils and his nasal hairs are singed. His voice is normal and he has no stridor. He has blistered partial thickness burns to both forearms, about 6% TBSA. Carboxyhemoglobin is 22% and lactate is 1.8 mmol/L.
 
-GCS is 9 (eyes 2, verbal 2, motor 5). There is soot in both nostrils and in the mouth, and he coughs up black sputum. Partial thickness burns cover both forearms, about 6% TBSA. The chest is clear. Venous lactate is 11 mmol/L.
-
-- Temperature: 36.4°C tympanic
-- Pulse: 124/minute
-- Resp.: 28/minute
-- BP: 84/50 mmHg
-- O2 sat: 100% on 15 L/minute by nonrebreather mask
+- Temperature: 36.8°C oral
+- Pulse: 104/minute
+- Resp.: 20/minute
+- BP: 136/82 mmHg
+- O2 sat: 97% on room air
 - Weight: 90 kg
 
 #### Q1
-**Which of the following is the most appropriate airway management for him now?**
+**Which of the following findings, if it developed, would most strongly indicate that he needs intubation?**
 
-- A. Awake fibreoptic intubation
-- B. BiPAP with 100% oxygen
-- C. High flow nasal oxygen
-- D. Nonrebreather mask and observation
-- E. Rapid sequence intubation  **(key)**
+- A. Carbon flecks in his sputum
+- B. More soot in his nostrils
+- C. New inspiratory stridor  **(key)**
+- D. Rising carboxyhemoglobin
+- E. Singed eyebrows
 
-*Explanation:* A GCS of 9 with soot in the mouth, carbonaceous sputum and an enclosed space fire means he cannot protect his airway and is at high risk of airway swelling, so he needs rapid sequence intubation now. Awake fibreoptic intubation needs a cooperative patient, and he is obtunded and hypotensive. BiPAP and high flow oxygen do not protect an airway with a depressed level of consciousness. Observation on a mask risks losing the airway as edema builds.
+*Explanation:* The Alaska burn guideline notes that singed facial hair, soot around the nose or mouth and carbonaceous sputum raise suspicion of inhalation injury but are less predictive of the need for intubation, and they call for frequent reassessment. More concerning findings are stridor, respiratory distress, hypoxia, altered mentation and full thickness facial or neck burns. New stridor signals upper airway narrowing that can progress quickly. A rising carboxyhemoglobin is treated with oxygen and is not by itself a reason to intubate.
 
 *Key feature:* Burns 2. Look for signs of inhalation injury in burn patients and secure the airway early if needed.
 
-*Source:* Walker PF, Buehner MF, Wood LA, and colleagues. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015. https://pubmed.ncbi.nlm.nih.gov/26507130/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q2
-*Update:* He is intubated. After 1 L of Ringer's lactate his BP is 82/48 mmHg. Carboxyhemoglobin is 18%. Lactate is 12 mmol/L. Hydroxocobalamin is stocked in the department.
+*Update:* He is started on 100% oxygen by non-rebreather mask. One hour later, about 2 hours after his fall, his carboxyhemoglobin is 12%, but he is still confused and his GCS remains 14. There is a boggy swelling over the back of his head.
 
-**Which of the following is the most appropriate approach to his suspected cyanide poisoning?**
+**Which of the following is the most appropriate next step for his confusion?**
 
-- A. Await a whole blood cyanide level
-- B. Give hydroxocobalamin IV now  **(key)**
-- C. Hyperbaric oxygen before any antidote
-- D. Repeat the lactate after 1 L more fluid
-- E. Start norepinephrine and reassess
+- A. Hyperbaric oxygen transfer first
+- B. Noncontrast CT of the head  **(key)**
+- C. Observe until he is sober
+- D. Repeat carboxyhemoglobin in 4 hours
+- E. thiamine 100 mg IV and observe
 
-*Explanation:* An enclosed space fire with burning foam, coma, hypotension that persists after fluid and a lactate of 12 mmol/L point to cyanide, so hydroxocobalamin 5 g IV over 15 minutes is given now on clinical grounds. A blood cyanide level takes hours to return and cannot guide emergency treatment. Hyperbaric oxygen is aimed at carbon monoxide, and moving an unstable patient to a chamber delays the antidote. Repeating the lactate after more fluid lets cyanide keep blocking cellular respiration. A vasopressor may be needed later, but it does not reverse the cause of his shock.
+*Explanation:* He fell down six steps and has a scalp hematoma, and his GCS is still 14 two hours after the fall. The Canadian CT head rule treats a GCS below 15 at 2 hours after injury as a high-risk finding that calls for CT. Alcohol and carbon monoxide can both cause confusion, but blaming either one before a head injury is excluded is unsafe, so observing until he is sober or repeating the carboxyhemoglobin delays the diagnosis. Thiamine is reasonable in a heavy drinker, but it does not answer whether he is bleeding. Transfer for hyperbaric oxygen before imaging would move an unassessed head injury away from care.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* Anseeuw K, Delvau N, Burillo-Putze G, and colleagues. Cyanide poisoning by fire smoke inhalation: a European expert consensus. Eur J Emerg Med. 2013. https://pubmed.ncbi.nlm.nih.gov/22828651/
+*Source:* Stiell IG, Wells GA, Vandemheen K, and colleagues. The Canadian CT Head Rule for patients with minor head injury. Lancet. 2001. https://pubmed.ncbi.nlm.nih.gov/11356436/
 
 #### Q3
-**Which of the following should the team expect after the antidote is given?**
+**Which of the following is the most appropriate approach to possible cyanide poisoning in him?**
 
-- A. Blue skin from methemoglobinemia
-- B. Hypotension from vasodilation
-- C. Prolonged QT interval
-- D. Red colour of skin and urine  **(key)**
-- E. Wheeze from bronchospasm
+- A. hydroxocobalamin 5 g IV now
+- B. hydroxocobalamin 70 mg/kg IV now
+- C. sodium nitrite 300 mg IV now
+- D. sodium thiosulfate 12.5 g IV now
+- E. No cyanide antidote at present  **(key)**
 
-*Explanation:* Hydroxocobalamin is a deep red compound, and red skin and red urine are its most common effects. The urine colour can last for days and should not be mistaken for myoglobin or blood. The colour can also disturb colorimetric laboratory tests, so blood is best drawn before the dose. Methemoglobinemia follows nitrites, not hydroxocobalamin. Hydroxocobalamin tends to raise BP rather than lower it. QT prolongation and bronchospasm are not typical effects.
+*Explanation:* The Alaska burn guideline lists the features that should prompt a cyanide antidote after smoke exposure: cardiac arrest, seizures, unexplained hypotension, a GCS below 10 or an elevated lactate. He has none of these. His GCS is 14, his BP is normal and his lactate is 1.8 mmol/L. Giving hydroxocobalamin now, at the adult 5 g dose or the weight-based dose used in children, interferes with laboratory tests without a clear indication. Nitrite induces methemoglobin, which lowers oxygen-carrying capacity further in a patient who already has carbon monoxide poisoning. Thiosulfate alone is not indicated when there are no features of cyanide toxicity.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* Borron SW, Baud FJ, Megarbane B, Bismuth C. Hydroxocobalamin for severe acute cyanide poisoning by ingestion or inhalation. Am J Emerg Med. 2007. https://pubmed.ncbi.nlm.nih.gov/17543660/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q4
-**Which of the following ventilator oxygen settings is most appropriate for him over the first hours?**
+**Which of the following is the most appropriate management of his neck pain?**
 
-- A. FiO2 0.21 after the lactate falls
-- B. FiO2 0.4 aiming for SpO2 above 94%
-- C. FiO2 0.6 plus PEEP of 15 cmH2O
-- D. FiO2 1.0 until carboxyhemoglobin clears  **(key)**
-- E. FiO2 weaned to SpO2 of 88 to 92%
+- A. Clear his neck clinically now
+- B. Delay neck assessment until burns are dressed
+- C. Remove the collar to reduce neck swelling
+- D. Soft collar and review in the morning
+- E. Spinal motion restriction and cervical imaging  **(key)**
 
-*Explanation:* With a carboxyhemoglobin of 18%, an FiO2 of 1.0 shortens the half life of carbon monoxide and is kept until the level is normal, while hydroxocobalamin treats the cyanide. A standard pulse oximeter reads carboxyhemoglobin as oxyhemoglobin, so his SpO2 overstates his oxygen content, and weaning the FiO2 to any SpO2 target, above 94% or 88 to 92%, undertreats the carbon monoxide. Dropping to room air after the lactate falls ignores carbon monoxide still bound to hemoglobin. High PEEP does not speed carbon monoxide elimination and can lower his BP further.
+*Explanation:* He fell down six steps and has midline neck pain, and the Alaska burn guideline advises spinal motion restriction when spine injury is suspected. His alcohol intoxication and mild confusion mean his neck cannot be cleared on examination, so he needs imaging. Delaying assessment until his burns are dressed ignores a possible spinal injury. His burns are on his forearms, not his neck, so neck swelling is not a reason to remove the collar. A soft collar does not restrict movement.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* Hampson NB, Piantadosi CA, Thom SR, Weaver LK. Practice recommendations in the diagnosis, management, and prevention of carbon monoxide poisoning. Am J Respir Crit Care Med. 2012. https://pubmed.ncbi.nlm.nih.gov/23087025/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 ### burns-22: A jump from the balcony
 
@@ -670,159 +680,157 @@ The entire right arm has a dry, leathery, white, insensate burn that encircles t
 
 *Source:* American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update.
 
-### burns-24: Trapped in a bedroom
+### burns-24: A tent fire at the campground
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 6-year-old girl is brought to the emergency department by ambulance after firefighters carried her from a house fire. She had been trapped in a smoke filled bedroom for about 10 minutes. She has no medical history.
+A 5-year-old boy is brought to the emergency department by ambulance 1 hour after a propane heater set fire to his family's tent at a campground. His father pulled him out within a minute. Paramedics covered his burns with wet towels, which are still on him. He has partial thickness burns to his face, neck, chest and both arms, about 18% TBSA. His voice is hoarse, there is soot around his mouth and he has soft inspiratory stridor at rest. He is alert and frightened. His skin under the towels is cold and he is shivering.
 
-She is awake and frightened. Her eyebrows are singed, there is soot in her mouth and she coughs up black sputum. Her voice is hoarse and there is inspiratory stridor at rest. Partial thickness burns cover the face and front of the neck, about 6% TBSA.
-
-- Temperature: 36.9°C tympanic
+- Temperature: 34.6°C rectal
 - Pulse: 142/minute
-- Resp.: 36/minute
-- BP: 94/60 mmHg
-- O2 sat: 94% on 15 L/minute by nonrebreather mask
-- Weight: 20 kg
+- Resp.: 32/minute
+- BP: 102/64 mmHg
+- O2 sat: 95% on 10 L/minute by non-rebreather mask
+- Weight: 19 kg
 
 #### Q1
-**Which of the following is the most appropriate airway management for her now?**
+**Which of the following features of young children makes his airway more likely to obstruct early?**
 
-- A. Dexamethasone 12 mg PO
-- B. Early endotracheal intubation  **(key)**
-- C. Heliox by face mask
-- D. Nebulized racemic epinephrine
-- E. Observe on high flow oxygen
+- A. A higher metabolic rate
+- B. A larger skin area for his weight
+- C. A smaller and shorter airway  **(key)**
+- D. Thinner skin that burns more deeply
+- E. Weaker cough reflexes than adults
 
-*Explanation:* Stridor at rest, a hoarse voice, soot in the mouth and carbonaceous sputum after a closed space fire mean upper airway edema that will worsen over hours. A child's small airway obstructs early, so she needs intubation now by the most experienced operator with smaller tubes ready. Dexamethasone and racemic epinephrine treat croup and do not stop burn edema. Heliox buys little time. Observation risks losing an airway that will be much harder to secure later.
+*Explanation:* The TREKK burns guidance notes that a child's smaller and shorter airway leads to earlier upper airway obstruction from burn-related edema. With hoarseness, soot and stridor already present, he needs airway equipment ready and a low threshold for early intubation. A higher metabolic rate raises oxygen and glucose needs, and a larger surface area for his weight raises fluid and heat loss. Thinner skin makes burns deeper. Cough strength is not the mechanism the guidance describes. None of these explains early airway obstruction.
 
 *Key feature:* Burns 2. Look for signs of inhalation injury in burn patients and secure the airway early if needed.
 
 *Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
 
 #### Q2
-*Update:* She is intubated. The BP is 76/44 mmHg after a 20 mL/kg bolus of Ringer's lactate. Venous lactate is 9 mmol/L.
+**Which of the following is the most appropriate management of his temperature of 34.6°C?**
 
-**Which of the following is the most appropriate treatment to give her now?**
+- A. Continue wet towels to cool the burns
+- B. Ice packs to the burned areas
+- C. Keep him uncovered for burn assessment
+- D. Remove wet towels, cover and warm him  **(key)**
+- E. Warm bath immersion
 
-- A. hydroxocobalamin 1400 mg IV  **(key)**
-- B. hydroxocobalamin 5000 mg IV
-- C. methylene blue 20 mg IV
-- D. sodium bicarbonate 20 mmol IV
-- E. sodium nitrite 200 mg IV
-
-*Explanation:* Hypotension despite fluid and a lactate of 9 mmol/L after a closed space fire suggest cyanide toxicity. The paediatric hydroxocobalamin dose is 70 mg/kg, which is 1400 mg at 20 kg. 5000 mg is the adult dose, 250 mg/kg for her. Methylene blue treats methemoglobinemia, not cyanide. Bicarbonate treats a number, not the cause. Sodium nitrite creates methemoglobin, which further cuts oxygen delivery when carbon monoxide may also be bound to hemoglobin.
+*Explanation:* He is hypothermic, and the wet towels are making it worse. Cooling is useful soon after a burn, but wet coverings left too long cause hypothermia, which the TREKK guidance warns about. It advises keeping the room warm, covering the child with blankets and avoiding repeated exposure of the wounds. It warns never to use ice, which can cause more tissue injury. Leaving him uncovered adds heat loss. Immersion is impractical with a threatened airway and would wet large burns again.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* Mintegi S, Clerigue N, Tipo V, and colleagues. Pediatric cyanide poisoning by fire smoke inhalation: a European expert consensus. Pediatr Emerg Care. 2013. https://pubmed.ncbi.nlm.nih.gov/24196100/
+*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
 
 #### Q3
-**Which of the following is the most appropriate way to secure her endotracheal tube?**
+*Update:* He is intubated uneventfully with a cuffed tube and placed on a ventilator.
 
-- A. Adhesive tape across both cheeks
-- B. Cut the tube short, then tape it
-- C. Suture the tube to the upper lip
-- D. Tape the tube to the forehead
-- E. Uncut tube secured with cloth ties  **(key)**
+**Which of the following positions is most appropriate for him while he waits for transfer?**
 
-*Explanation:* Facial and airway swelling will increase over the next day, so the tube is left uncut and tied with cloth tape or ties around the head that can be loosened as the face swells. A tube trimmed short can slip back out of the trachea as the lips and cheeks swell. Adhesive tape will not stick to moist burned skin and injures it on removal. Suturing to a burned lip damages tissue. Taping to the forehead does not hold an oral tube securely.
+- A. Flat supine with the neck extended
+- B. Head of the bed elevated  **(key)**
+- C. Left lateral with the head down
+- D. Prone with the face supported
+- E. Trendelenburg to support pressure
+
+*Explanation:* He has significant burns to the face and neck. The TREKK guidance advises elevating the head of the bed to help reduce edema in head and neck burns. Lying flat or head down increases facial and airway swelling. Prone positioning presses on facial burns and makes the airway harder to monitor. His blood pressure is normal, so a head-down position has no purpose.
 
 *Key feature:* Burns 2. Look for signs of inhalation injury in burn patients and secure the airway early if needed.
 
 *Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
 
 #### Q4
-**Which of the following is the most appropriate disposition for her once stabilized?**
+**Which of the following is the most appropriate disposition for him?**
 
-- A. Admit to the adult ICU here
-- B. Admit to the paediatric ward
-- C. Hyperbaric oxygen at the nearest chamber
-- D. Observe in the emergency department
+- A. Admit to the local paediatric ward
+- B. Discharge with burn clinic follow-up
+- C. Observe for 12 hours in this department
+- D. Outpatient plastic surgery referral
 - E. Transfer to a paediatric burn centre  **(key)**
 
-*Explanation:* Inhalation injury with partial or full thickness burns of 5% TBSA or more meets TREKK criteria for transfer to a paediatric burn centre, which can give paediatric critical care, bronchoscopy and facial burn care. An adult ICU lacks paediatric expertise. A ward or the emergency department cannot care for an intubated child. Hyperbaric oxygen is not a disposition and her main threats are airway injury and cyanide, which the burn centre is better placed to manage.
+*Explanation:* The TREKK guidance lists transfer to a paediatric burn centre for partial thickness burns of 10% TBSA or more and for inhalation injury with burns of 5% TBSA or more. He meets both, and he is intubated. A local ward, observation in the department or outpatient care cannot provide burn centre care for an intubated child with an 18% burn and inhalation injury.
 
 *Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
 
 *Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
 
-### burns-25: A barbecue flare-up far from the city
+### burns-25: A heater flare at the hunting camp
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department. A 31-year-old man presents at 20:00 after a propane barbecue flared into his face and chest at 19:00. His wife says his voice sounds a little rough. He has no medical history. The nearest burn centre is 500 km away and the fixed wing transfer will take about 4 hours from now.
+You are working in a rural hospital emergency department in northern Manitoba. A 34-year-old man arrives 4 hours after a kerosene heater flared at a hunting camp and set his clothing alight. He has deep partial and full thickness burns to his trunk and both legs, measured at 45% TBSA. His face and neck are not burned, his voice is normal, there is no soot in his mouth and he has no stridor. He is alert. He has received no IV fluid. The air ambulance is committed to another call, and the flight to the burn centre will take about 5 hours once it arrives. He is 178 cm tall.
 
-He is alert. His nasal hairs are singed and his lips are swollen. There is no stridor. There are partial and full thickness burns to the face, neck, anterior chest and both arms, about 30% TBSA.
-
-- Temperature: 36.8°C oral
-- Pulse: 118/minute
+- Temperature: 36.4°C oral
+- Pulse: 124/minute
 - Resp.: 22/minute
-- BP: 134/82 mmHg
-- O2 sat: 96% on room air
-- Weight: 85 kg
+- BP: 128/76 mmHg
+- O2 sat: 97% on room air
+- Weight: 90 kg
 
 #### Q1
-**Which of the following is the most appropriate airway plan before his transfer?**
+**Which of the following is the most appropriate airway plan before his long transfer?**
 
-- A. Dexamethasone and transfer awake
-- B. Intubate before the transfer  **(key)**
-- C. Nasal airway and transfer awake
-- D. Nebulized epinephrine and transfer
-- E. Transfer awake with a paramedic
+- A. Intubate before the flight  **(key)**
+- B. Intubate only if stridor develops
+- C. Nebulized epinephrine for the flight
+- D. Transfer awake with oxygen
+- E. Transfer with a nasal airway in place
 
-*Explanation:* A deep facial and neck burn of this size, singed nasal hair, swollen lips and a change in voice predict airway swelling that will worsen during a 4 hour flight, and large volume resuscitation will add to it. Intubating now, in a controlled setting, is safer than attempting it in the aircraft. Dexamethasone and nebulized epinephrine do not prevent burn edema. A nasal airway does not protect the larynx. A paramedic escort cannot solve a failed airway at altitude.
+*Explanation:* He has no signs of inhalation injury, but his burn covers 45% TBSA. The Alaska burn guideline notes that long transport times and burns larger than 40% that need high-volume resuscitation may require intubation, because generalized edema develops as fluid is given. He faces a long delay and a 5-hour flight in which airway control is difficult. Waiting for stridor risks losing the airway in the aircraft. A nasal airway and nebulized epinephrine do not protect against progressive edema.
 
 *Key feature:* Burns 2. Look for signs of inhalation injury in burn patients and secure the airway early if needed.
 
-*Source:* Walker PF, Buehner MF, Wood LA, and colleagues. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015. https://pubmed.ncbi.nlm.nih.gov/26507130/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q2
-**Which of the following best describes the use of succinylcholine for his intubation?**
+*Update:* He is intubated. His predicted body weight, based on his height of 178 cm, is about 73 kg.
 
-- A. Contraindicated in any acute burn
-- B. Hyperkalemia risk peaks in the first hour
-- C. Needs a defasciculating dose first
-- D. Safe in the first 24 hours after injury  **(key)**
-- E. Use half the usual dose in burns
+**Which of the following initial tidal volumes is most appropriate for his ventilator?**
 
-*Explanation:* The dangerous hyperkalemic response to succinylcholine comes from extra acetylcholine receptors that spread over the muscle membrane in the days after a burn, so it is safe in the first 24 hours and he is 1 hour from injury. A burn does not make it unsafe from the outset. Risk rises from about 1 to 2 days after the burn, not in the first hour. A defasciculating dose does not prevent the potassium release. Lowering the dose does not make it safe once receptors have spread.
+- A. 300 mL
+- B. 440 mL  **(key)**
+- C. 540 mL
+- D. 720 mL
+- E. 900 mL
+
+*Explanation:* Burn injury and resuscitation predispose to lung injury, and the Alaska guideline advises a lung-protective strategy with a tidal volume of 6 mL/kg of ideal body weight. At about 73 kg that is 6 x 73 = 438 mL, about 440 mL. A volume of 540 mL is 6 mL/kg of his actual weight of 90 kg, and 720 and 900 mL are 8 and 10 mL/kg of actual weight, which are all too large. A volume of 300 mL is about 4 mL/kg and risks hypoventilation.
 
 *Key feature:* Burns 2. Look for signs of inhalation injury in burn patients and secure the airway early if needed.
 
-*Source:* Martyn JA, Richtsfeld M. Succinylcholine-induced hyperkalemia in acquired pathologic states. Anesthesiology. 2006. https://pubmed.ncbi.nlm.nih.gov/16394702/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q3
-*Update:* He is intubated at 20:00 and IV access is in place. You use 2 mL/kg per %TBSA of Ringer's lactate.
+**Which of the following is the preferred fluid for his burn resuscitation?**
 
-**Which of the following Ringer's lactate infusion rates should be set for the transfer?**
+- A. dextrose 5% in water
+- B. hydroxyethyl starch
+- C. Ringer's lactate  **(key)**
+- D. sodium chloride 0.45%
+- E. sodium chloride 0.9%
 
-- A. 213 mL/hour
-- B. 319 mL/hour
-- C. 364 mL/hour  **(key)**
-- D. 546 mL/hour
-- E. 729 mL/hour
+*Explanation:* The Alaska guideline states that a balanced salt solution such as Ringer's lactate is preferred for burn resuscitation, and that large amounts of 0.9% saline, generally more than 3 L in an adult, cause hyperchloremic acidosis. He will need several litres, so saline is a poor choice. Dextrose 5% in water and half-normal saline are hypotonic and leave the circulation. Colloids are reserved for burns refractory to initial resuscitation, with specialist advice, so starch is not a first fluid.
 
-*Explanation:* The 24 hour estimate is 2 x 85 x 30 = 5100 mL. Half, 2550 mL, is due by 03:00, 8 hours after the burn at 19:00. Seven hours remain, so 2550 / 7 is about 364 mL/hour. 319 mL/hour spreads the first half over 8 hours from arrival. 213 mL/hour is the whole volume over 24 hours. 546 mL/hour uses 3 mL/kg per %TBSA. 729 mL/hour gives the whole 24 hour volume in 7 hours.
+*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
+
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
+
+#### Q4
+*Update:* Twelve hours after the burn he is still waiting for the flight. He has received 11 L of Ringer's lactate, and despite repeated rate increases his urine output is 25 mL/hour. His abdomen is becoming tense.
+
+**Which of the following is the most appropriate change to his resuscitation now?**
+
+- A. Add 5% albumin to the resuscitation  **(key)**
+- B. Double the Ringer's lactate rate
+- C. furosemide 40 mg IV
+- D. norepinephrine infusion IV
+- E. Ringer's lactate 2 L bolus
+
+*Explanation:* He has already received 11 L in 12 hours, well ahead of the 2 mL/kg per %TBSA starting estimate of 8 100 mL for the first 24 hours, and his abdomen is tightening, a warning of fluid creep. The American Burn Association guideline recommends considering human albumin, especially in larger burns, to lower resuscitation volumes and improve urine output. Doubling the rate or bolusing adds more crystalloid and more edema. The guideline makes no recommendation for vasopressors as adjuncts. Furosemide raises urine output without improving perfusion and removes the guide to resuscitation.
 
 *Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
 
 *Source:* Cartotto R, Johnson LS, Savetamal A, and colleagues. American Burn Association clinical practice guidelines on burn shock resuscitation. J Burn Care Res. 2024. https://pubmed.ncbi.nlm.nih.gov/38051821/
-
-#### Q4
-**Which of the following should be done before he leaves your department?**
-
-- A. Apply silver sulfadiazine cream
-- B. Begin prophylactic cefazolin IV
-- C. Debride the blisters
-- D. Insert a urinary catheter  **(key)**
-- E. Wrap burns in wet dressings
-
-*Explanation:* Hourly urine output is the main guide to his resuscitation during a long flight, so a urinary catheter is placed before he leaves. Burn centres ask for clean, dry coverage so they can assess the wound, and creams hide the depth. Prophylactic antibiotics do not prevent burn wound infection and are not advised. Debridement can wait for the burn centre. Wet dressings cause hypothermia during transport.
-
-*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
-
-*Source:* American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018 update.
 
 ### burns-26: Pasta water on the forearm
 
@@ -884,146 +892,143 @@ There are pink, moist, blistered burns that blanch and are very painful on the v
 
 *Source:* Romanowski KS, Carson J, Pape K, and colleagues. American Burn Association guidelines on the management of acute pain in the adult burn patient. J Burn Care Res. 2020. https://pubmed.ncbi.nlm.nih.gov/32885244/
 
-### burns-27: Warming his feet
+### burns-27: Pinned under a dirt bike
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 66-year-old man presents to the emergency department with painless blisters on both feet. Two days ago he soaked his feet in a basin of hot water to warm them after shovelling snow. He did not notice the water was too hot. He has type 2 diabetes with peripheral neuropathy and takes metformin and insulin glargine. He lives alone on a farm. His last tetanus booster was 12 years ago after a full primary series.
-
-There are burns over the soles and the backs of both feet up to the ankles, about 7% TBSA. Most areas are blistered and pink, and two areas on the left sole are white, dry and do not blanch. Monofilament sensation is absent in both feet. Capillary glucose is 16.8 mmol/L.
+A 17-year-old girl presents to the emergency department 2 hours after her dirt bike tipped over on a trail and pinned her right leg for about a minute. The hot exhaust pipe lay across the front of her right knee. She has a 1.5% TBSA burn over the knee that is white and leathery in the centre with a mottled red rim, and it blanches poorly. She has abrasions on her right forearm. Her right mid-shin is not deformed and she can bear weight. She is healthy. Her immunization record shows a complete childhood series and a tetanus booster 2 years ago. She rates her pain as 7 out of 10.
 
 - Temperature: 36.9°C oral
-- Pulse: 88/minute
-- Resp.: 16/minute
-- BP: 142/84 mmHg
-- O2 sat: 97% on room air
-- Weight: 94 kg
+- Pulse: 96/minute
+- Resp.: 18/minute
+- BP: 118/72 mmHg
+- O2 sat: 99% on room air
+- Weight: 58 kg
 
 #### Q1
-**Which of the following features of his case support referral to a burn centre?**
+**Which of the following features of her burn are most important in planning her disposition?**
 
-Select 3.
+Select 2.
 
-- A. Age of 66 years
-- B. Burn size under 10% TBSA
-- C. Burns on both feet  **(key)**
-- D. Diabetes with neuropathy  **(key)**
-- E. Full thickness areas  **(key)**
-- F. Heart rate of 88/minute
-- G. Immersion as the mechanism
-- H. Normal temperature
+- A. Burn size of 1.5% TBSA
+- B. Contact mechanism from an exhaust pipe
+- C. Deep partial or full thickness depth  **(key)**
+- D. Location over the knee joint  **(key)**
+- E. Nearby abrasions on her forearm
+- F. Patient age of 17 years
 
-*Explanation:* Deep partial or full thickness burns of the feet, any full thickness burn and burns in patients with comorbidities that complicate healing all meet American Burn Association criteria for burn centre consultation. Diabetes with neuropathy slows healing, raises infection risk and made him unaware of the injury. A burn size under 10% does not by itself call for referral. His heart rate and temperature are normal. Age of 66 is not itself a referral criterion. An immersion mechanism matters for suspected abuse in children, not for referral here.
+*Explanation:* The American Burn Association referral guideline calls for immediate consultation, with consideration of transfer, for any deep partial or full thickness burn over a joint. Her white, leathery, poorly blanching burn is at least deep partial thickness, and it lies over the knee, where scarring can limit movement. A partial thickness burn under 10% TBSA elsewhere would only need a routine consultation. The contact mechanism, her age and the abrasions do not by themselves meet referral criteria.
 
 *Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
 
 *Source:* American Burn Association. Guidelines for burn patient referral. 2025. https://ameriburn.org/resources/burnreferral/
 
 #### Q2
-**Which of the following is the most appropriate tetanus prophylaxis for him?**
+**Which of the following is the most appropriate tetanus prophylaxis for her?**
 
-- A. Tdap and tetanus immune globulin
-- B. Tdap vaccine alone  **(key)**
+- A. Td booster and tetanus immune globulin
+- B. Tdap booster dose today
 - C. Tetanus immune globulin alone
-- D. Tetanus serology before deciding
-- E. No tetanus prophylaxis now
+- D. Two-dose catch-up series
+- E. No tetanus prophylaxis now  **(key)**
 
-*Explanation:* Burns with full thickness necrotic areas are not clean minor wounds. With a complete primary series and a last booster more than 10 years ago, the Canadian Immunization Guide advises a tetanus toxoid containing vaccine, such as Tdap for an adult, for any wound and without immune globulin. Immune globulin is added for a wound that is not clean and minor when the primary series is incomplete or unknown, or in humoral immune deficiency. Serology delays care and does not guide wound prophylaxis. Doing nothing leaves him without a recent booster.
+*Explanation:* The Canadian Immunization Guide advises no tetanus vaccine and no tetanus immune globulin for any wound, clean or not, when a person has had 3 or more doses and the last dose was less than 5 years ago. She completed her childhood series and had a booster 2 years ago, so she needs nothing today. A Tdap booster adds nothing. Tetanus immune globulin is for contaminated or major wounds in people with fewer than 3 doses or an unknown history. A catch-up series is for people who never completed a primary series.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
 *Source:* Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Tetanus toxoid. Updated 2026. https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html
 
 #### Q3
-**Which of the following is the most appropriate disposition for him?**
+*Update:* Her pain is controlled with oral analgesics and the burn is cooled and dressed. The burn centre is 2 hours away.
 
-- A. Admission to the burn centre  **(key)**
-- B. Admit to internal medicine
-- C. Discharge with family physician review
-- D. Discharge with home care dressings
-- E. Podiatry clinic in 1 week
+**Which of the following is the most appropriate next step in her disposition?**
 
-*Explanation:* Full thickness areas on the feet need excision and grafting, and he cannot keep weight off both feet while living alone on a farm, so admission under a burn centre is needed. Admission to internal medicine could control his glucose but cannot provide burn surgery. Discharge with family physician or home care follow-up leaves a deep foot burn in a man who cannot feel it and has no one at home. A podiatry visit in a week is too late for a burn that needs surgical care.
+- A. Admit to the orthopaedic service here
+- B. Consult the burn centre today  **(key)**
+- C. Discharge with family physician follow-up
+- D. Dressing check in 2 weeks
+- E. No follow-up if pain settles
+
+*Explanation:* Her deep burn over the knee meets the American Burn Association criteria for immediate consultation with a burn centre, which will decide whether she needs transfer or early outpatient review for possible grafting. Discharge to family physician follow-up, a 2-week dressing check or no follow-up risks a contracture across the knee. She has no fracture or orthopaedic injury that needs admission.
 
 *Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
 
 *Source:* American Burn Association. Guidelines for burn patient referral. 2025. https://ameriburn.org/resources/burnreferral/
 
-### burns-28: A mark on the back of the hand
+### burns-28: A spilled mug of hot chocolate
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 14-month-old girl is brought to the emergency department by her father, who says she touched a hot iron yesterday while he was ironing. He did not seek care until her daycare asked about the wound this morning. She is cruising along furniture but not yet walking alone. Her immunizations are up to date.
+A 5-year-old girl is brought to the emergency department by her mother 40 minutes after she knocked a mug of hot chocolate off the kitchen table onto her left forearm. Her mother held the arm under cool running water for 20 minutes before coming in. There is a pink, moist, blistered burn with irregular splash-shaped edges on the forearm, about 2% TBSA, that blanches briskly. It does not encircle the arm. Her immunizations are up to date. She is crying and rates her pain as 6 out of 10 on the faces scale. The history is consistent each time it is told.
 
-She is quiet and watchful. On the back of the right hand there is a sharply outlined, triangular, partial thickness burn with the shape of an iron's sole plate. The palm is not burned. On the left buttock there is a round, crusted burn about 8 mm across that is partly healed. There is no bruising elsewhere. The examination is otherwise normal.
-
-- Temperature: 36.8°C axillary
-- Pulse: 124/minute
-- Resp.: 28/minute
-- BP: 92/58 mmHg
+- Temperature: 36.8°C tympanic
+- Pulse: 118/minute
+- Resp.: 22/minute
+- BP: 102/64 mmHg
 - O2 sat: 99% on room air
-- Weight: 10 kg
+- Weight: 20 kg
 
 #### Q1
-**Which of the following features of her presentation raise concern for an inflicted burn?**
+**Which of the following should be in place before she is discharged home?**
 
 Select 3.
 
-- A. Age of 14 months
-- B. Blisters within the burn
-- C. Brought by her father
-- D. Burn on the back of the hand  **(key)**
-- E. Delay of a day before care  **(key)**
-- F. Healing round burn on the buttock  **(key)**
-- G. Partial thickness depth
-- H. Up to date immunizations
+- A. Burn dressing applied after cleaning  **(key)**
+- B. Complete healing of the burn
+- C. Follow-up plan explained to her mother  **(key)**
+- D. Oral antibiotic prescription
+- E. Pain controlled on oral analgesics  **(key)**
+- F. Silver sulfadiazine cream applied
+- G. Skeletal survey completed
 
-*Explanation:* A toddler who reaches for a hot object burns the palm, so a sharply outlined iron shaped burn on the back of the hand points to the object being pressed on. A delay before care and a second, older, round burn on the buttock that fits a cigarette add to the concern. Toddlers are the peak age for both accidental and inflicted burns, so her age alone does not separate them. Blistering and partial thickness depth describe how deep the burn is, not how it happened. Who brings the child and her immunization status do not change the pattern.
+*Explanation:* The TREKK burns guidance supports discharge when no burn centre referral criteria are met, there is no concern for maltreatment, a dressing has been applied, pain is well controlled, and instructions on pain, dressing care and follow-up have been explained. Healing takes days to weeks and is not a discharge requirement. The guidance advises avoiding silver sulfadiazine because it impairs re-epithelialization and is linked to more infection. Antibiotics are not needed for a clean small burn. A skeletal survey is for suspected abuse, which her history and burn pattern do not suggest.
 
 *Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
 
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: suspected physical child abuse. Version 2.0. 2023. https://trekk.ca/resources/bottom-line-recommendations-suspected-physical-child-abuse/
+*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
 
 #### Q2
-**Which of the following investigations is most appropriate for her?**
+**Which of the following burn patterns in a child of her age would most raise concern for an inflicted injury?**
 
-- A. Serum vitamin D level
-- B. Skeletal survey  **(key)**
-- C. Ultrasound of the abdomen
-- D. Urine toxicology screen
-- E. Whole body MRI
+- A. Irregular splash marks on one forearm
+- B. Scald on the chest from a pulled-down cup
+- C. Small blister on one fingertip from a candle
+- D. Symmetric glove-pattern scalds of both hands  **(key)**
+- E. Uneven scald on the thigh from a spilled bowl
 
-*Explanation:* A skeletal survey is indicated for every child under 2 years with concern for physical abuse, because occult fractures are common and change the child protection plan. Vitamin D testing belongs to a later bone fragility workup, not the first screen. Abdominal imaging is guided by liver enzymes and examination, and her abdomen is normal. Urine toxicology is for a child with altered consciousness. Whole body MRI is not a standard screening test.
+*Explanation:* The TREKK guidance lists immersion-pattern scalds in a stocking or glove distribution, symmetric burns of the buttocks or genitals, and sharply patterned contact burns that mirror a hot object as patterns that raise concern for inflicted burns. Symmetric glove-pattern scalds of both hands suggest forced immersion. Irregular splash marks, uneven spill scalds and pulled-down cup injuries fit accidental spills, like her own burn. A small fingertip blister from touching a candle fits exploratory contact.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: suspected physical child abuse. Version 2.0. 2023. https://trekk.ca/resources/bottom-line-recommendations-suspected-physical-child-abuse/
+*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
 
 #### Q3
-**Which of the following is the most appropriate next step regarding child protection?**
+*Update:* The blisters are debrided and petroleum-based non-stick gauze is applied, because no long-term dressing is available in your department.
 
-- A. Burn clinic review before reporting
-- B. Child protection report before discharge  **(key)**
-- C. Discharge and review in 1 week
-- D. Report only if the survey is abnormal
-- E. Seek her father's consent to report
+**Which of the following follow-up plans is most appropriate for her?**
 
-*Explanation:* Physicians in every Canadian province and territory must report a reasonable suspicion that a child has been or is at risk of being abused, and the report is made before the child leaves the department. The duty rests on suspicion, so waiting for a burn clinic review or a positive skeletal survey delays protection. Consent from the father is not needed and asking for it may put the child at risk. Discharge without a safety plan leaves her in a possibly unsafe home.
+- A. Burn centre transfer tonight
+- B. Dressing change in 2 to 3 days  **(key)**
+- C. Dressing change in 2 weeks
+- D. Follow-up only if a fever develops
+- E. No follow-up needed
+
+*Explanation:* The TREKK guidance notes that petroleum-based non-stick gauze needs a dressing change every 2 to 3 days. Leaving it for 2 weeks allows the dressing to stick and the wound to go unreviewed. Waiting for a fever, or planning no follow-up, misses early signs of infection or deepening. Her burn is small and superficial partial thickness, not circumferential and not on a special area, so it does not meet the criteria for transfer.
 
 *Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
 
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: suspected physical child abuse. Version 2.0. 2023. https://trekk.ca/resources/bottom-line-recommendations-suspected-physical-child-abuse/
+*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
 
 #### Q4
-**Which of the following is the most appropriate analgesic for her burn now?**
+**Which of the following is the most appropriate first analgesic order for her pain?**
 
-- A. ibuprofen 50 mg PO
-- B. ibuprofen 100 mg PO  **(key)**
-- C. ibuprofen 200 mg PO
-- D. ibuprofen 400 mg PO
-- E. ibuprofen 600 mg PO
+- A. ibuprofen 100 mg PO
+- B. ibuprofen 200 mg PO  **(key)**
+- C. ibuprofen 400 mg PO
+- D. ibuprofen 600 mg PO
+- E. morphine 2 mg IM
 
-*Explanation:* A small, day old partial thickness burn in a quiet toddler causes mild to moderate pain, and ibuprofen at 10 mg/kg is the first choice, which is 100 mg at 10 kg. 50 mg is only 5 mg/kg and underdoses her. 200 mg is 20 mg/kg, twice the dose. 400 mg is an adult dose. 600 mg is a large adult dose and is 60 mg/kg for her.
+*Explanation:* The TREKK pain guidance gives ibuprofen 10 mg/kg per dose by mouth, to a maximum of 600 mg. At 20 kg that is 200 mg. A dose of 100 mg is only 5 mg/kg. Doses of 400 mg and 600 mg are 20 and 30 mg/kg, above the recommended dose. The guidance advises avoiding intramuscular injections in children because intranasal and IV routes are less painful and absorbed more predictably, and her moderate pain does not need an opioid first.
 
 *Key feature:* Burns 3. Give prompt, effective IV analgesia to patients with severe burns.
 
@@ -1168,228 +1173,233 @@ He is writhing and rates his pain 9 out of 10. Hardened black tar sticks to the 
 
 *Source:* American Burn Association. Guidelines for burn patient referral. 2025. https://ameriburn.org/resources/burnreferral/
 
-### burns-31: Hour twelve in the resuscitation bay
+### burns-31: A flash fire at the grain dryer
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old man is boarding in the emergency department while he waits for a burn ICU bed. Twelve hours ago he sustained 45% TBSA partial and full thickness flame burns, including the face, trunk and both legs. He was intubated for inhalation injury. His resuscitation was started at 2 mL/kg per %TBSA of Ringer's lactate, and the rate has been raised four times for low urine output. He has received 7400 mL since the burn.
+You are working in a regional hospital emergency department in rural Saskatchewan. A 52-year-old farmer arrives by ambulance at 18:00. At 13:00 a leaking propane line on his grain dryer ignited in a flash fire while he stood on a ladder, and he fell about 2 m onto concrete. He was seen first at a small health centre, which charted his burn as 40% TBSA and gave 2.5 L of Ringer's lactate, including two 1 L boluses. On your assessment he has partial thickness burns of the front of his trunk and both arms, which you measure at 27% TBSA. The red, unblistered, blanching skin on his neck and lower abdomen had been counted as burned. His face is spared, his voice is normal and there is no soot in his mouth. He is alert and complains of neck pain.
 
-His face and eyelids are now tensely swollen. The abdomen is firm and distended. Peak airway pressures have risen from 24 to 38 cmH2O over 3 hours. Urine output over the last 3 hours was 15, 20 and 18 mL.
-
-- Temperature: 37.4°C core
-- Pulse: 128/minute
-- Resp.: 18/minute
-- BP: 98/60 mmHg
-- O2 sat: 92% on FiO2 0.6
+- Temperature: 36.6°C oral
+- Pulse: 112/minute
+- Resp.: 20/minute
+- BP: 134/80 mmHg
+- O2 sat: 97% on room air
 - Weight: 80 kg
 
 #### Q1
-**Which of the following is his projected 24 hour resuscitation volume if the current pace continues?**
+**Which of the following best explains the difference between the health centre TBSA and your own estimate?**
 
-- A. 2.0 mL/kg per %TBSA
-- B. 2.6 mL/kg per %TBSA
-- C. 3.3 mL/kg per %TBSA
-- D. 4.1 mL/kg per %TBSA  **(key)**
-- E. 5.0 mL/kg per %TBSA
+- A. Burns deepen and spread after 5 hours
+- B. Erythema was counted in the TBSA  **(key)**
+- C. Lund and Browder underestimates adult burns
+- D. Swelling hides the burn edges
+- E. The rule of nines ignores the neck
 
-*Explanation:* 7400 mL in 12 hours projects to 14 800 mL over 24 hours. Dividing by 80 kg x 45% = 3600 gives about 4.1 mL/kg per %TBSA, roughly twice the 2 mL/kg starting estimate. This is fluid creep, a known cause of compartment syndromes. 2.0 is the starting formula, not what he is receiving. 2.6 and 3.3 underestimate the pace. 5.0 overestimates it.
+*Explanation:* The Alaska burn guideline states that superficial burn area should not be included in the TBSA. Only partial and full thickness burns count. Counting his red, unblistered, blanching skin inflated the estimate from 27% to 40%. The guideline names wrong burn size estimates, fluid boluses and care at several sites as causes of fluid creep, and all three apply to him. Burns can deepen over time, but that does not turn unburned red skin into burn area. Swelling and the charting method do not explain an overestimate of this size.
 
 *Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
 
-*Source:* Cartotto R, Johnson LS, Savetamal A, and colleagues. American Burn Association clinical practice guidelines on burn shock resuscitation. J Burn Care Res. 2024. https://pubmed.ncbi.nlm.nih.gov/38051821/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q2
-*Update:* Bladder pressure measured through the urinary catheter is 28 mmHg. The whole abdominal wall is covered by stiff, leathery, full thickness eschar.
+*Update:* He has tenderness over the midline of his lower cervical spine. His arms and legs have normal strength and sensation.
 
-**Which of the following is the most appropriate first intervention to lower his abdominal pressure?**
+**Which of the following is the most appropriate management of his cervical spine?**
 
-- A. CT of the abdomen
-- B. Decompressive laparotomy
-- C. Escharotomy of the abdominal wall  **(key)**
-- D. Faster Ringer's lactate rate
-- E. Repeat bladder pressure in 4 hours
+- A. CT of the cervical spine  **(key)**
+- B. Flexion and extension radiographs
+- C. MRI of the spine as an outpatient
+- D. Remove the collar and test rotation
+- E. Soft collar for comfort only
 
-*Explanation:* A bladder pressure of 28 mmHg with falling urine output and rising airway pressure after very large volume resuscitation is abdominal compartment syndrome. His abdominal wall is encased in stiff full thickness eschar that cannot expand, so escharotomy of the abdominal wall comes first and can lower the pressure quickly at the bedside. Decompressive laparotomy is kept for pressure that stays high after less invasive measures. A faster Ringer's lactate rate adds to the fluid creep that caused this. CT adds a risky transfer and treats nothing. Waiting 4 hours leaves organ dysfunction untreated.
+*Explanation:* Burns often come with other injuries, and the Alaska guideline advises spinal motion restriction when spine injury is suspected. Under the Canadian C-spine rule, a fall from 3 feet, about 1 m, or more is a dangerous mechanism. That is a high-risk factor, so he needs imaging, and his midline tenderness adds to the concern. CT is the usual first test for an adult after trauma. Testing rotation is only allowed after the rule shows he is low risk, and he is not. Flexion views, a soft collar or delayed MRI leave a possible fracture unassessed.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* Levis C, Ali F. Significance of early diagnosis of abdominal compartment syndrome in major burns. Can J Plast Surg. 2006. https://pmc.ncbi.nlm.nih.gov/articles/PMC2539035/
+*Source:* Stiell IG, Wells GA, Vandemheen KL, and colleagues. The Canadian C-spine rule for radiography in alert and stable trauma patients. JAMA. 2001. https://doi.org/10.1001/jama.286.15.1841
 
 #### Q3
-**Which of the following is most likely to limit his further crystalloid volume?**
+*Update:* Imaging shows no cervical fracture. You plan his burn resuscitation with 2 mL/kg per %TBSA of Ringer's lactate, using your estimate of 27%.
 
-- A. Add a furosemide infusion
-- B. Double the crystalloid rate
-- C. Give 5% albumin  **(key)**
-- D. Start high dose vitamin C
-- E. Switch to normal saline
+**Which of the following Ringer's lactate rates is most appropriate to start now?**
 
-*Explanation:* The American Burn Association recommends considering albumin, especially in larger burns, because it lowers total resuscitation volume and improves urine output. Furosemide raises urine output without restoring perfusion and makes urine output useless as a guide. Doubling the crystalloid rate adds to the fluid creep that caused this. The guideline makes no recommendation for high dose vitamin C. Normal saline adds hyperchloremic acidosis and does not reduce volume.
+- A. 180 mL/hour
+- B. 270 mL/hour  **(key)**
+- C. 400 mL/hour
+- D. 540 mL/hour
+- E. 720 mL/hour
+
+*Explanation:* The 24-hour estimate is 2 x 80 kg x 27% = 4 320 mL, and half, 2 160 mL, is planned for the first 8 hours after the burn, which is 270 mL/hour. The Alaska guideline advises starting at the calculated hourly rate regardless of earlier fluid, without catching up or subtracting what was given before. Giving 2 160 mL over the 3 hours left in that window, 720 mL/hour, is a catch-up. The rate of 400 mL/hour uses the inflated 40%. The rate of 540 mL/hour uses 4 mL/kg. The rate of 180 mL/hour spreads the volume evenly over 24 hours.
 
 *Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
 
-*Source:* Cartotto R, Johnson LS, Savetamal A, and colleagues. American Burn Association clinical practice guidelines on burn shock resuscitation. J Burn Care Res. 2024. https://pubmed.ncbi.nlm.nih.gov/38051821/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q4
-**Which of the following additional pressures should be monitored during his ongoing resuscitation?**
+*Update:* An hour later he is pale and sweaty. His pulse is 134/minute and his BP is 84/52 mmHg.
 
-- A. Central venous pressure
-- B. Intracranial pressure
-- C. Intraocular pressure  **(key)**
-- D. Pulmonary artery wedge pressure
-- E. Transpulmonary thermodilution indices
+**Which of the following is the most appropriate immediate step while the cause is sought?**
 
-*Explanation:* Large volume resuscitation with tense swelling of the face and eyelids can cause orbital compartment syndrome, and the American Burn Association recommends selective monitoring of intraocular pressure, with lateral canthotomy if it is high. Central venous and wedge pressures do not reliably guide burn resuscitation. The guideline advises against using transpulmonary thermodilution to guide fluids. Nothing in the case suggests raised intracranial pressure.
+- A. hydroxocobalamin 5 g IV
+- B. norepinephrine infusion IV
+- C. Ringer's lactate 2 L bolus
+- D. Ringer's lactate 500 mL bolus  **(key)**
+- E. Ringer's lactate rate doubled
+
+*Explanation:* The Alaska burn guideline notes that a systolic BP below 90 mmHg is rare early after a burn. It advises a single 250 to 500 mL crystalloid bolus while other causes are considered, such as trauma, and a call to the burn or trauma centre. After his fall onto concrete, occult bleeding is the first concern. A 2 L bolus or a doubled rate adds edema without treating the cause, and he has already had boluses that raise his risk of fluid creep. The guideline advises vasopressors only on specialist advice. His exposure was a brief outdoor flash, so a cyanide antidote is not indicated.
 
 *Key feature:* Burns 1. In burned patients, look for linked trauma, smoke, cyanide or CO exposure, and complications like compartment syndrome or rhabdomyolysis.
 
-*Source:* Cartotto R, Johnson LS, Savetamal A, and colleagues. American Burn Association clinical practice guidelines on burn shock resuscitation. J Burn Care Res. 2024. https://pubmed.ncbi.nlm.nih.gov/38051821/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
-### burns-32: A pot of soup from the stove
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-An 11-month-old boy is brought to the emergency department by his mother after he pulled a pot of hot soup off the stove at 11:00 while cruising along the counter. She put him under a cool shower right away. He is healthy and his immunizations are up to date.
-
-He is crying but consolable. There are moist, pink, blistered burns with irregular edges and splash marks over the entire front of the trunk, the front of the neck and the front of the right upper arm. Using the Lund and Browder chart the burn is 16% TBSA. IV access is obtained at 12:00.
-
-- Temperature: 37.2°C rectal
-- Pulse: 162/minute
-- Resp.: 36/minute
-- BP: 88/54 mmHg
-- O2 sat: 99% on room air
-- Weight: 9 kg
-
-#### Q1
-**Using the TREKK formula of 3 mL/kg per %TBSA, which of the following Ringer's lactate rates should start at 12:00?**
-
-- A. 18 mL/hour
-- B. 27 mL/hour
-- C. 31 mL/hour  **(key)**
-- D. 36 mL/hour
-- E. 62 mL/hour
-
-*Explanation:* The 24 hour estimate is 3 x 9 kg x 16 = 432 mL. Half, 216 mL, is due in the first 8 hours after the 11:00 burn. Seven hours remain at 12:00, so 216 / 7 is about 31 mL/hour. 27 mL/hour spreads the first half over 8 hours from IV access. 18 mL/hour is 432 mL over 24 hours. 36 mL/hour spreads the first half over only 6 hours. 62 mL/hour gives the whole 24 hour volume in 7 hours.
-
-*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
-
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
-
-#### Q2
-**Which of the following maintenance infusions should run alongside his resuscitation fluid?**
-
-- A. D5 Ringer's lactate 18 mL/hour
-- B. D5 Ringer's lactate 27 mL/hour
-- C. D5 Ringer's lactate 36 mL/hour  **(key)**
-- D. D5 Ringer's lactate 45 mL/hour
-- E. D5 Ringer's lactate 72 mL/hour
-
-*Explanation:* Children aged 12 years and under need dextrose maintenance on top of the burn formula because their glycogen stores are small. By the 4 2 1 rule, 4 mL/kg/hour for the first 10 kg gives 36 mL/hour at 9 kg. 18 mL/hour is half maintenance and risks hypoglycemia. 27 mL/hour uses 3 mL/kg/hour. 45 mL/hour and 72 mL/hour exceed maintenance and add to edema.
-
-*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
-
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
-
-#### Q3
-**Which of the following hourly urine outputs is the target for titrating his fluids?**
-
-- A. 3 mL/hour
-- B. 4.5 mL/hour
-- C. 6 mL/hour
-- D. 9 mL/hour  **(key)**
-- E. 18 mL/hour
-
-*Explanation:* A child who weighs 30 kg or less should make 1 mL/kg/hour of urine, which is 9 mL/hour at 9 kg. 4.5 mL/hour is the adult target of 0.5 mL/kg/hour and would accept under-resuscitation in an infant. 3 and 6 mL/hour are also below target. 18 mL/hour is 2 mL/kg/hour and would drive excess fluid and edema.
-
-*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
-
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pediatric thermal burns. Version 2.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-pediatric-thermal-burns/
-
-#### Q4
-**Which of the following burn features best fits the unintentional mechanism his mother describes?**
-
-- A. Glove pattern on both hands
-- B. Irregular splash marks on the front  **(key)**
-- C. Sharp tide line on both legs
-- D. Sparing of the flexural creases
-- E. Symmetric burns of both buttocks
-
-*Explanation:* A pot pulled down from above spills over the head, neck and front of the body and leaves irregular edges, uneven depth and splash marks, which is what he has. Pull-down scalds of this kind are among the most common burns in infants who have started to cruise. Glove patterns, a sharp tide line, symmetric buttock burns and sparing of the flexural creases are features of forced immersion.
-
-*Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
-
-*Source:* Kemp AM, Jones S, Lawson Z, Maguire SA. Patterns of burns and scalds in children. Arch Dis Child. 2014. https://pubmed.ncbi.nlm.nih.gov/24492796/
-
-### burns-33: Her nightgown at the stove
+### burns-32: A flare from the table burner
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 79-year-old woman is brought to the emergency department by ambulance 1 hour after her nightgown caught fire at her gas stove. She put out the flames herself. She has heart failure with an ejection fraction of 30% and chronic kidney disease with an eGFR of 38 mL/minute. She takes furosemide, bisoprolol and sacubitril-valsartan. She lives independently and tells you she wants all appropriate treatment.
+You are working in a community hospital emergency department with a labour and delivery unit but no burn unit or neonatal intensive care unit. A 34-year-old woman, G3P2 at 26 weeks, arrives by private car 3 hours after a tabletop gel fuel burner flared at a lakeside cottage and set her dress alight. Her partner smothered the flames and drove her in. She has had no IV fluid. She has blistered, moist, pink partial thickness burns to the front of both legs and most of her right arm, and her burns have not yet been mapped. There is no soot in her mouth, her voice is normal and she has no stridor. Her pregnancy has been uncomplicated. She lies tilted to her left side on the stretcher and has received IV morphine.
 
-She is alert, with a normal voice and no soot in the mouth. There are deep partial and full thickness burns over the entire front of the trunk and the front of both arms, 27% TBSA. The chest is clear.
-
-- Temperature: 36.5°C oral
-- Pulse: 96/minute
+- Temperature: 36.8°C oral
+- Pulse: 114/minute
 - Resp.: 20/minute
-- BP: 112/68 mmHg
-- O2 sat: 95% on room air
-- Weight: 55 kg
+- BP: 106/62 mmHg
+- O2 sat: 98% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following is her Baux score based on her age and burn size?**
+**Which of the following Ringer's lactate rates is most appropriate until her burn size is measured?**
 
-- A. 79
-- B. 97
-- C. 106  **(key)**
-- D. 123
-- E. 133
+- A. 125 mL/hour
+- B. 250 mL/hour
+- C. 500 mL/hour  **(key)**
+- D. 1 000 mL/hour
+- E. 2 000 mL/hour
 
-*Explanation:* The Baux score is age plus percent TBSA burned, 79 + 27 = 106, which predicts a high risk of death and should inform an early goals of care conversation. 123 adds 17 points for inhalation injury, as in the revised Baux score, but she has no signs of inhalation injury. 79 uses age alone. 97 adds only the 18% of the anterior trunk and leaves out the arms. 133 adds the burn size twice.
-
-*Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
-
-*Source:* Osler T, Glance LG, Hosmer DW. Simplified estimates of the probability of death after burn injuries: extending and updating the Baux score. J Trauma. 2010. https://pubmed.ncbi.nlm.nih.gov/20038856/
-
-#### Q2
-**Which of the following is the most appropriate initial fluid plan for her burn?**
-
-- A. Hold IV fluid for heart failure
-- B. Maintenance fluid only
-- C. Normal saline 4 mL/kg per %TBSA
-- D. Oral rehydration solution only
-- E. Ringer's lactate 2 mL/kg per %TBSA  **(key)**
-
-*Explanation:* A 27% deep burn causes burn shock whatever her heart function, so she starts on Ringer's lactate at 2 mL/kg per %TBSA and the rate is titrated hourly to urine output and perfusion, with closer watch for overload. Holding IV fluid or giving only maintenance fluid or oral rehydration solution leaves her under-resuscitated and risks kidney failure on top of her CKD. Normal saline at 4 mL/kg per %TBSA gives far more volume and adds hyperchloremic acidosis.
+*Explanation:* The Trauma New Brunswick burn statement gives a starting rate of 500 mL/hour of Ringer's lactate for patients older than 13 years with a major burn, before the exact TBSA is calculated. It defines a major burn in an adult as more than 20% TBSA. The front of both legs and most of one arm already exceed that, so fluid should start now at 500 mL/hour and change to the calculated rate once her burns are mapped. The rates of 125 and 250 mL/hour are its starting rates for children aged 5 years or younger and 6 to 12 years. Rates of 1 000 and 2 000 mL/hour risk the over-resuscitation that the statement says must be avoided.
 
 *Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
 
-*Source:* Cartotto R, Johnson LS, Savetamal A, and colleagues. American Burn Association clinical practice guidelines on burn shock resuscitation. J Burn Care Res. 2024. https://pubmed.ncbi.nlm.nih.gov/38051821/
+*Source:* Trauma New Brunswick. Consensus statement. Emergency burn care. Version 2. 2025. https://nbtrauma.ca/wp-content/uploads/2025/10/Consensus-Statement-Emergency-Burn-Care-AUGUST-2025-FINAL.pdf
+
+#### Q2
+*Update:* Her burns are mapped at 24% TBSA and the calculated rate is started. Twenty minutes later, still tilted to her left, her blood pressure is 84/50 mmHg.
+
+**Which of the following is the most appropriate response to her blood pressure?**
+
+- A. Accept it as early burn shock
+- B. Double the Ringer's lactate rate
+- C. Give 2 L Ringer's lactate rapidly
+- D. Give 500 mL and seek another cause  **(key)**
+- E. Start a norepinephrine infusion
+
+*Explanation:* The Alaska burn guideline states that a systolic pressure below 90 mmHg is rare in the initial burn period. When it occurs, the guideline advises a single bolus of 250 to 500 mL of crystalloid while alternative causes of hypotension, such as a medical, toxic or traumatic condition, are considered. It also advises consulting the burn centre for a systolic pressure below 90 mmHg. Accepting the pressure as burn shock misses that warning. Giving 2 L rapidly is the large bolus the guideline advises against. Doubling the rate goes far beyond its hourly changes of 10%, which are guided by urine output, and it adds to fluid creep. Starting a norepinephrine infusion skips both the limited bolus and the search for a cause.
+
+*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
+
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q3
-**Which of the following is the most appropriate analgesic for her now?**
+**Which of the following features of her case is most likely to raise her fluid needs above the formula estimate?**
 
-- A. codeine 30 mg PO
-- B. fentanyl 25 mcg IV  **(key)**
-- C. ketorolac 15 mg IV
-- D. meperidine 25 mg IV
-- E. morphine 10 mg IM
+- A. Burns on both legs
+- B. Clear voice without stridor
+- C. Partial thickness depth
+- D. Three hours without fluid  **(key)**
+- E. Weight of 70 kg
 
-*Explanation:* A small IV dose of fentanyl, about 0.5 mcg/kg in an older adult, titrated to effect, gives fast relief without active metabolites that build up in kidney failure. Meperidine has a neurotoxic metabolite that accumulates at an eGFR of 38 mL/minute. Ketorolac adds further kidney injury and she takes furosemide and sacubitril-valsartan. IM morphine absorbs unpredictably in burn shock and its metabolites also accumulate. Codeine is weak and unreliable for a burn of this size.
+*Explanation:* The Alaska burn guideline lists resuscitation delay among the factors known to increase fluid needs, with inhalation injury, electrical burns, associated trauma, intoxication and very deep burns. She reached hospital 3 hours after the burn with no IV fluid, so she may need more than the formula predicts and her response needs extra attention. Her clear voice, with no soot or stridor, argues against the inhalation injury that would raise her needs. Her partial thickness burns are not the very deep burns on that list. The site of her burns and her weight are already built into the formula through TBSA and kilograms.
 
-*Key feature:* Burns 3. Give prompt, effective IV analgesia to patients with severe burns.
+*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
 
-*Source:* Romanowski KS, Carson J, Pape K, and colleagues. American Burn Association guidelines on the management of acute pain in the adult burn patient. J Burn Care Res. 2020. https://pubmed.ncbi.nlm.nih.gov/32885244/
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
 
 #### Q4
 **Which of the following is the most appropriate disposition for her?**
 
-- A. Admit to cardiology
-- B. Admit to the medicine ward
-- C. Comfort care in the department
-- D. Discharge with home care
-- E. Transfer to a burn centre  **(key)**
+- A. Admit to labour and delivery here
+- B. Admit under general surgery here
+- C. Burn centre with obstetric care  **(key)**
+- D. Discharge with burn clinic review
+- E. Transfer to a tertiary obstetric unit
 
-*Explanation:* A deep partial and full thickness burn of 27% in an older adult with heart failure and kidney disease meets several burn centre criteria, and she has asked for full treatment, so she is transferred to a burn centre, where goals of care will continue to be revisited. Cardiology or a medicine ward cannot provide excision, grafting and burn critical care. Comfort care would override her stated wishes. Discharge ignores a life threatening burn.
+*Explanation:* The Trauma New Brunswick burn statement recommends immediate consultation, with transfer considered, for partial thickness burns over 10% TBSA and for pre-existing conditions that could complicate management. She has a 24% burn and is 26 weeks pregnant. Her hospital has no burn unit and no neonatal intensive care unit, so she needs a burn centre in a hospital that can also care for her pregnancy and a preterm baby. Admission to labour and delivery or general surgery here lacks burn care, and so does a tertiary obstetric unit without a burn service. Discharge is unsafe while she needs IV resuscitation.
+
+*Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
+
+*Source:* Trauma New Brunswick. Consensus statement. Emergency burn care. Version 2. 2025. https://nbtrauma.ca/wp-content/uploads/2025/10/Consensus-Statement-Emergency-Burn-Care-AUGUST-2025-FINAL.pdf
+
+### burns-33: A flare-up on the balcony grill
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 68-year-old man presents to the emergency department 1 hour after grease on his balcony barbecue flared up. His sleeves caught fire and he beat out the flames with his hands. He has Parkinson disease with a tremor and slow movements, takes carbidopa-levodopa and lives alone in an apartment. There are burns on the backs of both hands and fingers and the front of both forearms, about 5% TBSA. They are pale and fairly dry, blanch slowly and are less painful to pinprick than the surrounding skin. The burns do not encircle any limb. His face is spared and his voice is normal. He rates his pain as 8 out of 10.
+
+- Temperature: 36.7°C oral
+- Pulse: 98/minute
+- Resp.: 18/minute
+- BP: 146/84 mmHg
+- O2 sat: 98% on room air
+- Weight: 70 kg
+
+#### Q1
+**Which of the following features are most important in deciding where he is treated?**
+
+Select 2.
+
+- A. Age of 68 years
+- B. Burn size of about 5% TBSA
+- C. Comorbid Parkinson disease  **(key)**
+- D. Deep partial burns of both hands  **(key)**
+- E. Grease fire as the mechanism
+- F. Living in an apartment
+
+*Explanation:* The American Burn Association referral guideline calls for immediate consultation, with consideration of transfer, for any deep partial or full thickness burn of the hands, and for patients with burns and other comorbidities. His pale, dry, slowly blanching burns are deep partial thickness, and Parkinson disease is a comorbidity that will slow his recovery. A partial thickness burn under 10% TBSA alone would call for a routine consultation. Age, the grease mechanism and his type of housing are not referral criteria by themselves.
+
+*Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
+
+*Source:* American Burn Association. Guidelines for burn patient referral. 2025. https://ameriburn.org/resources/burnreferral/
+
+#### Q2
+**Which of the following is the most appropriate fluid plan for his burn?**
+
+- A. albumin 5% 1 mL/kg per %TBSA
+- B. Encourage oral fluids  **(key)**
+- C. Ringer's lactate 500 mL/hour
+- D. Ringer's lactate 2 mL/kg per %TBSA
+- E. Ringer's lactate 4 mL/kg per %TBSA
+
+*Explanation:* The Alaska burn guideline states that burns under 20% TBSA do not need IV fluid resuscitation and that oral fluids are feasible and favoured for small to moderate burns. Formula-based IV resuscitation is for adults with partial and full thickness burns over 20% TBSA. His burn is about 5%, and he is drinking. A rate of 500 mL/hour is the guideline's starting rate for large burns before TBSA is known. Albumin is reserved for large burns that respond poorly to crystalloid. Extra fluid would add swelling to his burned hands.
+
+*Key feature:* Burns 4. Calculate burn fluids from the time of injury, not ED arrival, and track the response.
+
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
+
+#### Q3
+**Which of the following is the most appropriate first analgesic order for his pain?**
+
+- A. codeine 30 mg PO
+- B. hydromorphone 2 mg IM
+- C. hydromorphone 0.25 mg IV  **(key)**
+- D. ketorolac 30 mg IV
+- E. morphine 10 mg IV once
+
+*Explanation:* He has severe pain from deep burns. The Alaska guideline advises repeated small IV doses of analgesia titrated to effect, while watching for respiratory depression. A small IV dose of hydromorphone suits his age and can be repeated until his pain is controlled. A single 10 mg dose of morphine is large for a 68-year-old. Intramuscular dosing is painful and absorbed unpredictably. Codeine is weak and unreliable. Ketorolac alone will not control severe burn pain.
+
+*Key feature:* Burns 3. Give prompt, effective IV analgesia to patients with severe burns.
+
+*Source:* Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021. https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf
+
+#### Q4
+*Update:* His pain is now controlled. His hands are dressed and elevated. He cannot grip his cup or open a pill bottle with the dressings on.
+
+**Which of the following is the most appropriate disposition for him?**
+
+- A. Burn centre consultation for transfer  **(key)**
+- B. Discharge home with home care nursing
+- C. Discharge with family physician follow-up
+- D. Observation overnight then discharge
+- E. Plastic surgery clinic next week
+
+*Explanation:* His deep partial thickness burns of both hands meet the American Burn Association criteria for immediate consultation with consideration of transfer, and his comorbidity adds to that need. Hand burns of this depth may need grafting and early hand therapy to prevent contractures. He lives alone and cannot manage his own care with both hands dressed. Discharge with home nursing, family physician follow-up, overnight observation or a clinic visit next week delays specialist care and leaves him unable to look after himself.
 
 *Key feature:* Burns 5. After stabilization, base burn disposition on burn site and size, age, comorbidity, and home circumstances.
 

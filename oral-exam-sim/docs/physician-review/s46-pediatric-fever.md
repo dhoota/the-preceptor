@@ -7,6 +7,15 @@
 Quoted from the pipeline notes and the review reports, each with its report name. A later review may have fixed an earlier flag. The SAMP text below is always the current version.
 
 - s46 pediatric-fever-18 q2 CPS 61 to 90 day vs post-immunization urine testing. 19 q2 bronchiolitis vs febrile infant statements. 31 q4 physostigmine only via Special Access Program. 17 q3 and 20 q3 cefixime vs cephalexin under new CPS UTI statement.
+- pediatric-fever-43: CPS also allows observation in hospital at 61 to 90 days. No option offers that, so the key is the single best among those given. *(samps-final-check-2.md)*
+- pediatric-fever-17 keys admission for a low risk preterm-born infant, based on the CPS advice of individualized, conservative care for infants excluded from the rule studies. Some physicians would discharge with 24 hour review. *(samps-replace-s33-s44-s45-s46.md)*
+- pediatric-fever-28 cites the CDC Yellow Book, because the PHAC typhoid page has no clinical detail. *(samps-replace-s33-s44-s45-s46.md)*
+- pediatric-fever-44 keys doxycycline for a 7-year-old, as the CPS Lyme practice point (2020, reaffirmed 2026) allows. *(samps-replace-s33-s44-s45-s46.md)*
+- Some keys are standard steps that already appear elsewhere in the bank, such as ultrasound first for a likely DVT or apixaban 10 mg twice daily. In each case the scenario and the deciding feature are new. *(samps-replace-s33-s44-s45-s46.md)*
+- Treatment options that follow a diagnosis question can still hint at the diagnosis (pediatric-fever-30 q3, multiple-trauma-45 q2, multiple-trauma-44 q4). The options were widened to cover each diagnostic choice, but the physician may want to review these in mock mode. *(samps-replace-s33-s44-s45-s46.md)*
+- pediatric-fever-30 q3 and pediatric-fever-32 q4: a treatment or comparison question after a diagnosis question still hints at the diagnosis. Each q3 distractor in pediatric-fever-30 maps to one of the q2 diagnoses. Left as is. *(samps-replace-s33-s44-s45-s46.md)*
+- pediatric-fever-43 (new) q1 keys home on an oral antibiotic with review in 24 hours for a well 61 to 90-day-old with a positive urinalysis and normal markers. CPS 2024 says these infants do not need hospitalization. Local practice may give a first parenteral dose. *(samps-replace-s33-s44-s45-s46.md)*
+- pediatric-fever-19 (new) q1 uses RIVUR placebo-arm recurrence (about 1 in 4 within 2 years). The CPS UTI 2026 statement does not discuss prophylaxis, so no prophylaxis option is keyed or offered. *(samps-replace-s33-s44-s45-s46.md)*
 - **18 q2.** The CPS 61 to 90 day section says testing "should include at least a urinalysis and urine culture". Its post-immunization section says urine testing is for fever lasting more than 24 hours. The key follows the post-immunization text, and no option offers urine testing now. Decide whether to keep the key or add a stem line such as "fever began within hours of immunization and she is well", which the stem already implies. *(samps-s46-lensA.md)*
 - **19 q2.** The CPS bronchiolitis statement (2021) says routine SBI screening is not indicated in bronchiolitis. It does not address neonates. The CPS febrile infant statement (2026) says to do the full age-based workup despite a virus. The prompt now names the febrile infant statement. Confirm this is the intended teaching point. *(samps-s46-lensA.md)*
 - **17 q3, 20 q3.** Oral cefixime for an infant aged 29 to 60 days with a UTI follows the CPS febrile infant table. The new CPS UTI statement (2026) discourages cefixime and prefers cephalexin where local resistance is low. No option offers cephalexin, so the keys hold, but the two CPS documents now differ. *(samps-s46-lensA.md)*
@@ -30,153 +39,151 @@ Review reports: docs/reviews/writer-s46.md, samps-s46-lensA.md, samps-s46-lensB.
 
 ## SAMPs
 
-### pediatric-fever-16: Five day old who is feeding poorly
+### pediatric-fever-16: Four day old who is not waking for feeds
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 5-day-old girl is brought to the emergency department by her parents because she felt hot and has fed poorly since this morning. She was born at 39 weeks by vaginal delivery and went home at 36 hours of age. Two days before delivery her mother had painful genital blisters for the first time, and these were not treated. The infant is sleepy but rouses when handled. The anterior fontanelle is flat. There are no skin, eye or mouth lesions. Capillary refill is 2 seconds.
+A 4-day-old boy is brought to the emergency department because he has been sleepy since this morning and has not woken for two feeds. His mother measured a rectal temperature of 38.6°C at home. He was born at 39 weeks by vaginal delivery. His mother's vaginal and rectal swab at 36 weeks grew group B streptococcus. Her labour was fast, and she delivered 40 minutes after reaching the hospital, before any antibiotics were given. He went home at 24 hours of age and has been breastfeeding. He is sleepy and mottled, with a capillary refill of 3 seconds. His fontanelle is soft.
 
-- Temperature: 38.3°C rectal
-- Pulse: 172/minute
-- Resp.: 52/minute
-- O2 sat: 98% on room air
-- Weight: 3.2 kg
+- Temperature: 38.5°C rectal
+- Pulse: 178/minute
+- Resp.: 58/minute
+- O2 sat: 97% on room air
+- Weight: 3.4 kg
 
 #### Q1
-**Which of the following is the most appropriate initial evaluation for this infant?**
+**Which of the following features of his history most increases his risk of early onset bacterial sepsis?**
 
-- A. Blood, urine and CSF studies with HSV testing  **(key)**
-- B. Catheter urine culture with review tomorrow
-- C. CBC, CRP and urinalysis, discharge if normal
-- D. Observe after blood and urine cultures
-- E. Step by step rule before deciding on an LP
+- A. Birth at 39 weeks gestation
+- B. Discharge at 24 hours of age
+- C. Exclusive breastfeeding at home
+- D. Uncomplicated vaginal delivery
+- E. Untreated maternal GBS carriage  **(key)**
 
-*Explanation:* At 5 days of age every febrile infant needs a CBC, CRP or procalcitonin, blood culture, urinalysis and urine culture. Her mother's first episode of genital blisters just before delivery puts her at risk of neonatal HSV, so she also needs a lumbar puncture with CSF HSV testing and empiric IV acyclovir. Observation after blood and urine cultures alone omits the CSF studies her HSV risk requires. The Step by Step approach applies only to well-appearing infants aged 22 to 90 days, and no febrile infant this young is discharged on normal screening results. Outpatient review after a urine culture alone would miss bacteremia, meningitis and HSV.
+*Explanation:* His mother carried group B streptococcus and received no antibiotics in labour, which the Canadian Paediatric Society lists as a risk factor for early onset sepsis in term infants. Intrapartum prophylaxis is what lowers that risk, and she had none. Birth at 39 weeks is term, which carries less risk than prematurity. Vaginal delivery, breastfeeding and discharge at 24 hours do not raise his risk of invasive bacterial infection.
 
 *Key feature:* Pediatric fever 1. Stratify sepsis risk in febrile neonates, infants, and children by age and other factors to guide the septic workup.
 
-*Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
+*Source:* Jefferies AL, Canadian Paediatric Society Fetus and Newborn Committee. Management of term infants at increased risk for early-onset bacterial sepsis. Paediatr Child Health. 2017. https://pubmed.ncbi.nlm.nih.gov/29480905/
 
 #### Q2
-*Update:* Samples are sent. The CSF shows 48 white cells/mm3, 20 red cells/mm3 and no organisms on Gram stain.
+**Which of the following ampicillin orders is most appropriate for him now?**
 
-**Which of the following empiric antimicrobial regimens is most appropriate for her while results are pending?**
+- A. ampicillin 85 mg IV every 6 hours
+- B. ampicillin 170 mg IV every 6 hours
+- C. ampicillin 255 mg IV every 6 hours  **(key)**
+- D. ampicillin 340 mg IV every 12 hours
+- E. ampicillin 510 mg IV every 24 hours
 
-- A. Ampicillin and gentamicin without an antiviral
-- B. Ampicillin, cefotaxime and vancomycin
-- C. Ampicillin, gentamicin, cefotaxime, acyclovir  **(key)**
-- D. Cefotaxime and acyclovir without ampicillin
-- E. Ceftriaxone, vancomycin and acyclovir
-
-*Explanation:* A CSF count of 48 white cells/mm3 is above the CPS pleocytosis threshold of more than 15 cells/mm3 for infants 28 days or younger, so meningitis is suspected and cefotaxime is added to ampicillin and gentamicin. Her mother's untreated genital lesions at delivery are a clear HSV risk, so IV acyclovir 20 mg/kg every 8 hours is added as well. Ampicillin and gentamicin alone leave meningitis and HSV undertreated. Regimens without ampicillin miss Listeria and enterococcus. The CPS neonatal regimens use cefotaxime rather than ceftriaxone, which displaces bilirubin and can precipitate with IV calcium in neonates.
+*Explanation:* The Canadian Paediatric Society gives ampicillin 75 mg/kg IV every 6 hours for febrile infants in the first 7 days of life, and 75 x 3.4 kg is 255 mg. He should get it now, without waiting for results, because he is sleepy and mottled. 85 mg is 25 mg/kg and 170 mg is 50 mg/kg, both below the recommended dose. Giving the drug every 12 or 24 hours leaves long gaps in coverage.
 
 *Key feature:* Pediatric fever 3. Give early broad spectrum antibiotics to children with suspected sepsis.
 
 *Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
 
 #### Q3
-**Which of the following gentamicin orders is most appropriate for this infant?**
+**Which of the following gentamicin orders is most appropriate for him at 4 days of age?**
 
-- A. gentamicin 24 mg IV every 24 hours
-- B. gentamicin 19.2 mg IV every 24 hours
-- C. gentamicin 16 mg IV every 24 hours
-- D. gentamicin 12.8 mg IV every 24 hours  **(key)**
-- E. gentamicin 8 mg IV every 12 hours
+- A. gentamicin 6.8 mg IV every 24 hours
+- B. gentamicin 13.6 mg IV every 24 hours  **(key)**
+- C. gentamicin 17 mg IV every 24 hours
+- D. gentamicin 20.4 mg IV every 24 hours
+- E. gentamicin 27.2 mg IV every 24 hours
 
-*Explanation:* For a term infant aged 0 to 7 days the CPS dose is gentamicin 4 mg/kg IV every 24 hours. At 3.2 kg that is 4 x 3.2 = 12.8 mg every 24 hours. The 16 mg dose is 5 mg/kg, the CPS dose for infants aged 8 to 28 days, so it is too high at 5 days of age. The 19.2 mg and 24 mg doses are 6 and 7.5 mg/kg. Giving 8 mg every 12 hours is an older divided schedule of 5 mg/kg/day rather than the once daily dose the CPS recommends.
+*Explanation:* For infants aged 0 to 7 days the Canadian Paediatric Society gives gentamicin 4 mg/kg IV every 24 hours, so 4 x 3.4 kg is 13.6 mg. The dose of 5 mg/kg, 17 mg for him, is for infants aged 8 to 28 days, whose kidneys clear the drug faster. 6.8 mg is 2 mg/kg, which is too low. 20.4 mg and 27.2 mg are 6 and 8 mg/kg, which raise the risk of kidney and ear toxicity.
 
 *Key feature:* Pediatric fever 3. Give early broad spectrum antibiotics to children with suspected sepsis.
 
 *Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
 
 #### Q4
-*Update:* At 36 hours the blood and urine cultures show no growth. The CSF HSV PCR is positive.
+*Update:* His lumbar puncture shows 860 white cells/mm3, protein 2.4 g/L, glucose 1.1 mmol/L and gram positive cocci in chains on Gram stain. He has no vesicles and has not had a seizure.
 
-**Which of the following is the most appropriate plan for her antiviral treatment?**
+**Which of the following changes to his antimicrobial treatment is most appropriate now?**
 
-- A. Change to oral acyclovir for 14 days
-- B. Continue IV acyclovir for 7 days
-- C. Continue IV acyclovir for 10 days
-- D. Continue IV acyclovir for 21 days  **(key)**
-- E. Stop acyclovir once she is afebrile
+- A. Add acyclovir 68 mg IV every 8 hours
+- B. Add cefotaxime 170 mg IV every 8 hours  **(key)**
+- C. Add vancomycin 51 mg IV every 6 hours
+- D. No change to the current regimen
+- E. Switch to amoxicillin by mouth
 
-*Explanation:* Neonatal HSV with central nervous system involvement, shown here by a positive CSF PCR, is treated with IV acyclovir 20 mg/kg every 8 hours for a minimum of 21 days, with CSF HSV PCR repeated near the end of the course. Courses of 7 or 10 days are too short for CNS disease, and 14 days is the course for disease limited to the skin, eyes and mouth. Oral acyclovir gives drug levels too low for acute treatment and is used only for suppression afterwards. Defervescence does not mean the virus has been cleared.
+*Explanation:* His CSF shows bacterial meningitis, and the Canadian Paediatric Society adds cefotaxime 50 mg/kg IV every 8 hours in the first week of life when meningitis is suspected, which is 170 mg for him. Cocci in chains fit group B streptococcus. Acyclovir is added for herpes risk factors, which he lacks. Vancomycin is added for meningitis in infants over 28 days. Oral treatment is not adequate for neonatal meningitis, and leaving the regimen unchanged does not follow the recommended meningitis coverage.
 
 *Key feature:* Pediatric fever 3. Give early broad spectrum antibiotics to children with suspected sepsis.
 
-*Source:* Allen UD, Robinson JL, Bitnun A, McDonald J, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Prevention and management of neonatal herpes simplex virus infections. Canadian Paediatric Society position statement. 2020. Updated 2025. https://cps.ca/en/documents/position/prevention-management-neonatal-herpes-simplex-virus-infections
+*Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
 
-### pediatric-fever-17: Seven week old with a fever at home
+### pediatric-fever-17: Eight week old born early
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 7-week-old boy is brought to the emergency department after his mother measured a rectal temperature of 38.6°C this evening. He was born at term and has no medical problems. He has fed well and has had his usual number of wet diapers. There is no cough, rhinorrhea, vomiting or diarrhea. He is alert, smiles and is well perfused. The anterior fontanelle is flat. He is uncircumcised. The examination shows no source of fever.
+An 8-week-old boy is brought to the emergency department because his mother measured a rectal temperature of 38.2°C at home 2 hours ago. He was born at 32 weeks gestation and spent 4 weeks in the neonatal intensive care unit, where he received 7 days of IV antibiotics for suspected sepsis. He has been home for 4 weeks and has been well. He is feeding normally and has had his usual wet diapers. He has no cough, rash or vomiting. He is alert, pink and well perfused, and the examination shows no source of fever. He has received no antipyretic.
 
-- Temperature: 38.4°C rectal
-- Pulse: 164/minute
-- Resp.: 42/minute
+- Temperature: 37.6°C rectal
+- Pulse: 156/minute
+- Resp.: 40/minute
 - O2 sat: 99% on room air
-- Weight: 4.9 kg
+- Weight: 3.9 kg
 
 #### Q1
-**Which of the following sets of investigations is most appropriate for this infant?**
+**Which of the following statements about his temperature is most accurate?**
 
-- A. Blood culture, CBC, urine culture and LP
-- B. Catheter urinalysis and urine culture only
-- C. CBC and CRP with a bag urine specimen
-- D. CBC, procalcitonin, blood culture, urine tests  **(key)**
-- E. Chest radiograph, CBC and viral swab
+- A. An axillary reading should confirm fever
+- B. Fever needs a reading of 38.5°C or more
+- C. Only the reading in the department counts
+- D. The home rectal reading counts as fever  **(key)**
+- E. Two readings above 38.0°C are needed
 
-*Explanation:* At 7 weeks he is in the CPS group aged 29 to 60 days, for whom the recommended tests are a CBC with differential, CRP or procalcitonin, blood culture, urinalysis and urine culture. The inflammatory markers decide whether he is low or high risk and whether a lumbar puncture is needed, so a routine LP without markers skips that step. Urine tests alone are the minimum only for infants aged 61 to 90 days. A bag specimen is too often contaminated to use for culture. He has no respiratory symptoms, so a chest radiograph adds nothing.
+*Explanation:* The Canadian Paediatric Society defines fever in young infants as any rectal temperature of 38.0°C or more, and notes that infants with a history of fever only are not necessarily at lower risk than those febrile in the department. His mother's rectal reading of 38.2°C therefore counts, even though he measures 37.6°C now. Axillary readings are inaccurate for core temperature in infants. The threshold is 38.0°C, not 38.5°C, and one reading is enough.
 
 *Key feature:* Pediatric fever 1. Stratify sepsis risk in febrile neonates, infants, and children by age and other factors to guide the septic workup.
 
 *Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
 
 #### Q2
-*Update:* Catheter urinalysis shows leukocyte esterase 2+, positive nitrite and 25 white cells/hpf. ANC is 3.1 x 10^9/L, CRP 8 mg/L and procalcitonin 0.2 mcg/L.
+**Which of the following features of his history most affects how his risk of bacterial infection is stratified?**
 
-**Which of the following is the most appropriate next step for this infant?**
+- A. Age of 56 days at presentation
+- B. Birth at 32 weeks with a NICU stay  **(key)**
+- C. Exclusive breastfeeding at home
+- D. Fever measured only at home
+- E. Normal feeding and wet diapers today
 
-- A. Admit for IV ampicillin and gentamicin
-- B. Lumbar puncture before any antibiotic
-- C. Repeat the urinalysis on a bag specimen
-- D. Treat the UTI without a lumbar puncture  **(key)**
-- E. Withhold antibiotics until culture results
-
-*Explanation:* His ANC of 3.1 x 10^9/L, CRP of 8 mg/L and procalcitonin of 0.2 mcg/L, below the 0.5 mcg/L (0.5 ng/mL) cut-off, are normal. The CPS considers infants aged 29 to 60 days with normal inflammatory markers to be at low risk of bacteremia and meningitis even with a positive urinalysis, and the decision about lumbar puncture follows the markers rather than the urine. His urine shows a probable UTI that needs antibiotics now, not after culture results. A bag specimen adds nothing to a catheter sample, and ampicillin with gentamicin is the CPS regimen for infants 28 days or younger.
+*Explanation:* The Canadian Paediatric Society lists prematurity, a prior hospitalization or prolonged nursery course and recent antibiotic exposure as accepted risk factors. Studies of low risk rules such as PECARN generally excluded infants with them. He was born preterm and had a prolonged NICU stay, so the rules may not apply to him, and conservative, individualized care is advised. His age of 8 weeks places him in the 29 to 60 day group, but that alone does not change how rules apply. A home reading counts as fever. Normal feeding and breastfeeding are reassuring.
 
 *Key feature:* Pediatric fever 1. Stratify sepsis risk in febrile neonates, infants, and children by age and other factors to guide the septic workup.
 
 *Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
 
 #### Q3
-**Which of the following is the most appropriate disposition if his parents can return easily?**
+*Update:* His urinalysis is negative, the absolute neutrophil count is 3.2 x 10^9/L and procalcitonin is 0.1 ng/mL. Blood and urine cultures are sent.
 
-- A. Admit for a 7 day course of IV antibiotics
-- B. Admit until cultures negative at 36 hours
-- C. Home on oral cefixime, review in 7 days
-- D. Home on oral cefixime, review in 24 to 48 hours  **(key)**
-- E. Home without antibiotics, return if fever persists
+**Which of the following is the most appropriate plan for him now?**
 
-*Explanation:* A well-appearing infant aged 29 to 60 days with normal inflammatory markers and an isolated UTI may be treated with oral antibiotics, such as cefixime 8 mg/kg every 24 hours, and discharged with review by a health care provider within 24 to 48 hours. Review after 7 days is too late for an infant this young. His positive urinalysis needs treatment, so discharge without antibiotics is not appropriate. Admission until cultures are negative at 36 hours is the plan for high-risk infants, and a full IV course is not needed for a well infant who is feeding normally.
+- A. Admit and observe while cultures are pending  **(key)**
+- B. Discharge, recheck in 24 to 48 hours
+- C. Discharge with no follow-up needed
+- D. IM ceftriaxone, then discharge home
+- E. Oral cefixime at home
+
+*Explanation:* His results would meet the PECARN low risk criteria in a term infant, which allow discharge with follow-up. The Canadian Paediatric Society notes that infants with prematurity, prior hospitalization or recent antibiotics were excluded from the studies behind these rules, and advises individualized care with a conservative approach. Observation in hospital while cultures incubate is the safer choice for him. Discharge, with or without follow-up, relies on a rule not validated for him. Antibiotics without a source, including IM ceftriaxone, can partly treat and mask an infection.
 
 *Key feature:* Pediatric fever 1. Stratify sepsis risk in febrile neonates, infants, and children by age and other factors to guide the septic workup.
 
 *Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
 
 #### Q4
-*Update:* His mother asks what she can give at home if he seems uncomfortable with fever.
+*Update:* His mother asks what she can give him if he becomes uncomfortable with fever. She has acetaminophen drops at home.
 
 **Which of the following antipyretic orders is most appropriate for him?**
 
-- A. acetaminophen 40 mg PO every 4 to 6 hours
-- B. acetaminophen 73 mg PO every 4 to 6 hours  **(key)**
-- C. acetaminophen 160 mg PO every 4 to 6 hours
-- D. ASA 49 mg PO every 6 hours
-- E. ibuprofen 49 mg PO every 6 to 8 hours
+- A. acetaminophen 20 mg PO every 4 to 6 hours
+- B. acetaminophen 30 mg PO every 4 to 6 hours
+- C. acetaminophen 58 mg PO every 4 to 6 hours  **(key)**
+- D. acetaminophen 120 mg PO every 4 to 6 hours
+- E. ibuprofen 40 mg PO every 6 to 8 hours
 
-*Explanation:* Antipyretics are dosed by weight. At 4.9 kg, acetaminophen 15 mg/kg is about 73 mg (4.9 x 15 = 73.5 mg) every 4 to 6 hours. The 40 mg dose is about 8 mg/kg, below the usual 10 to 15 mg/kg, and 160 mg is about 33 mg/kg, more than twice the maximum single dose. Ibuprofen is not recommended for infants younger than 6 months. ASA is not used for fever in children because of the risk of Reye syndrome.
+*Explanation:* The American Academy of Pediatrics doses acetaminophen at 10 to 15 mg/kg every 4 to 6 hours, and at 15 mg/kg his 3.9 kg gives about 58 mg. Dosing by weight matters most in small infants, whose weight lags behind their age after preterm birth. 20 mg and 30 mg are about 5 and 8 mg/kg, below the recommended range. 120 mg is about 31 mg/kg, an overdose. Ibuprofen is not recommended under 6 months of age.
 
 *Key feature:* Pediatric fever 8. Dose antipyretics for children by weight rather than by age.
 
@@ -258,66 +265,64 @@ A 10-week-old girl is brought to the emergency department with a rectal temperat
 
 *Source:* Sullivan JE, Farrar HC, American Academy of Pediatrics Section on Clinical Pharmacology and Therapeutics, Committee on Drugs. Fever and antipyretic use in children. Pediatrics. 2011. https://pubmed.ncbi.nlm.nih.gov/21357332/
 
-### pediatric-fever-19: Six week old with a cough and fever
+### pediatric-fever-19: Toddler with a cold and a urology history
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 6-week-old girl is brought to the emergency department with 2 days of cough and nasal congestion and a rectal temperature of 38.4°C at home. Her 3-year-old brother has a cold. She was born at 38 weeks and has no medical problems. She is feeding about two thirds of her usual volume and has had five wet diapers today. She is alert and well perfused. There is mild subcostal indrawing, with scattered crackles and wheeze in both lungs.
+A 22-month-old girl is brought to the emergency department with 1 day of fever up to 39.4°C, a runny nose and a mild cough. Her 4-year-old sister has had a cold this week. At 5 months she had a febrile urinary tract infection, and a voiding cystourethrogram showed grade IV vesicoureteral reflux on the left. She is followed by a paediatric urologist and takes no daily medication. Her immunizations are up to date. She is drinking well and has had her usual wet diapers. She is alert and playful, with clear nasal discharge. Her ears, throat, chest and abdomen are normal. There is no rash, and her capillary refill is under 2 seconds.
 
-- Temperature: 38.3°C rectal
-- Pulse: 168/minute
-- Resp.: 56/minute
-- O2 sat: 94% on room air
-- Weight: 4.3 kg
+- Temperature: 39.1°C rectal
+- Pulse: 138/minute
+- Resp.: 30/minute
+- O2 sat: 98% on room air
+- Weight: 11.5 kg
 
 #### Q1
-*Update:* A nasopharyngeal swab sent at triage is positive for respiratory syncytial virus.
+**Which of the following features of her history most raises her risk of a serious bacterial infection?**
 
-**Which of the following best describes her risk of invasive bacterial infection?**
+- A. Clear nasal discharge with a cough
+- B. Fever of 39.4°C at home
+- C. Grade IV reflux after a febrile UTI  **(key)**
+- D. Sister at home with a cold
+- E. Up to date immunizations
 
-- A. Equal to that of infants with no virus found
-- B. Higher than with a rhinovirus infection
-- C. Limited to a secondary bacterial pneumonia
-- D. Lower than without a virus, but not negligible  **(key)**
-- E. Negligible, so no bacterial testing is needed
-
-*Explanation:* Infants with a laboratory-confirmed virus have lower rates of serious bacterial infection than those in whom no virus is found. The CPS notes a remaining risk of bacteremia of about 0.8% and of bacterial meningitis of about 0.4% even with a confirmed virus, so her RSV result does not make the risk negligible. Rhinovirus is the exception, with a higher risk than other viruses, not a lower one. Her risk is not limited to pneumonia, and bacteremia and meningitis remain possible.
+*Explanation:* Vesicoureteral reflux after a febrile urinary tract infection puts her at high risk of another one. In the RIVUR trial, about 1 in 4 children with reflux after a first UTI who received placebo had a recurrent UTI within 2 years. A cold does not protect her from a urinary infection, so her reflux still shapes the workup. A fever of 39.4°C is common in both viral and bacterial illness. Nasal discharge and a sister with a cold point to a viral source. Up to date immunizations lower, rather than raise, her risk of invasive bacterial infection.
 
 *Key feature:* Pediatric fever 1. Stratify sepsis risk in febrile neonates, infants, and children by age and other factors to guide the septic workup.
 
-*Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
+*Source:* RIVUR Trial Investigators, Hoberman A, Greenfield SP, et al. Antimicrobial prophylaxis for children with vesicoureteral reflux. N Engl J Med. 2014. https://pubmed.ncbi.nlm.nih.gov/24795142/
 
 #### Q2
-**Which of the following investigations does the CPS febrile young infant statement recommend for her in the emergency department?**
+**Which of the following investigations is most appropriate for her in the emergency department?**
 
-- A. Blood culture, CBC, procalcitonin, urine tests  **(key)**
-- B. Chest radiograph and viral panel only
-- C. Lumbar puncture and blood culture only
-- D. Urinalysis and culture from a bag
-- E. No tests, as the virus explains the fever
+- A. Bag urine specimen for culture
+- B. Blood culture, CBC and CRP
+- C. Catheter urine sample for urinalysis  **(key)**
+- D. Nasopharyngeal viral swab only
+- E. Renal ultrasound today
 
-*Explanation:* At 42 days she falls in the CPS group aged 29 to 60 days, for whom a CBC, CRP or procalcitonin, blood culture, urinalysis and urine culture are recommended. The CPS febrile infant statement advises that the initial evaluation follow these age-based recommendations even when respiratory symptoms or a documented virus are present, and uses a non-rhinovirus result only to guide later decisions such as early discharge. A chest radiograph is not routinely needed in bronchiolitis. A bag specimen is not acceptable for culture, and a lumbar puncture with blood culture alone omits the urine testing that every febrile infant this age needs.
+*Explanation:* Her past febrile UTI and high grade reflux mean her urine must be checked even with cold symptoms. The Canadian Paediatric Society prefers a catheter sample in children who are not toilet trained, because it has a low contamination rate, screens it for pyuria and nitrite first, and sends a culture only when these are present. Bag samples are unreliable for culture. A viral swab would not exclude a urinary infection. Blood tests add little in a well, fully immunized child, and a renal ultrasound does not diagnose an acute infection.
 
 *Key feature:* Pediatric fever 1. Stratify sepsis risk in febrile neonates, infants, and children by age and other factors to guide the septic workup.
 
-*Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
+*Source:* Barton M, Viel-Theriault I, Purewal R, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Optimizing management of urinary tract infections in children: a need for improved stewardship. Canadian Paediatric Society position statement. 2026. https://cps.ca/en/documents/position/management-urinary-tract-infections
 
 #### Q3
-*Update:* The CBC, procalcitonin and catheter urinalysis are normal. Her parents ask whether the crackles mean she needs antibiotics.
+*Update:* The tests you ordered are normal. She is still playful and drinking. Her mother asks whether she should start an antibiotic to be safe.
 
-**Which of the following is the most appropriate management of her respiratory illness?**
+**Which of the following is the most appropriate management plan for her fever?**
 
-- A. Azithromycin for atypical pneumonia
-- B. Chest radiograph to look for consolidation
-- C. High dose oral amoxicillin
-- D. Nebulized salbutamol every 4 hours
-- E. Supportive care without antibiotics  **(key)**
+- A. amoxicillin by mouth for 7 days
+- B. azithromycin by mouth for 3 days
+- C. Ceftriaxone IM once, then review
+- D. cephalexin by mouth for 10 days
+- E. No antibiotic, with clear return advice  **(key)**
 
-*Explanation:* Scattered crackles and wheeze with coryza in an infant with proven RSV infection are typical of bronchiolitis. The CPS notes that bacterial infection in otherwise healthy children with bronchiolitis is exceedingly rare, so antibiotics are not recommended without a documented secondary infection. Crackles are part of bronchiolitis and do not justify amoxicillin, azithromycin or a routine chest radiograph. Bronchodilators do not improve oxygen saturation or shorten hospital stay in bronchiolitis.
+*Explanation:* Her fever comes with a runny nose, a cough and a sister with a cold, and her testing shows no urinary infection, so a viral respiratory illness is the likely source. NICE advises against prescribing oral antibiotics to children with fever without an apparent bacterial source. Because of her reflux, her parents should bring her back early for a new fever without cold symptoms, foul smelling urine or poor feeding, so that her urine can be tested again. Amoxicillin, azithromycin and cephalexin treat no identified infection and add side effects and resistance. A dose of ceftriaxone can partly treat and hide an evolving infection.
 
 *Key feature:* Pediatric fever 7. Do not give antibiotics to children whose fever likely has a viral source, such as URTI or otitis media.
 
-*Source:* Friedman JN, Rieder MJ, Walton JM, Canadian Paediatric Society Acute Care Committee, Drug Therapy and Hazardous Substances Committee. Bronchiolitis: recommendations for diagnosis, monitoring and management of children one to 24 months of age. Paediatr Child Health. 2014. Updated 2021. https://pubmed.ncbi.nlm.nih.gov/25414585/
+*Source:* National Institute for Health and Care Excellence. Fever in under 5s: assessment and initial management. NICE guideline NG143. 2019, updated 2021. https://www.nice.org.uk/guidance/ng143
 
 ### pediatric-fever-20: Five week old with abnormal screening tests
 
@@ -556,69 +561,71 @@ Select 2.
 
 *Source:* Farrell CA, Canadian Paediatric Society Acute Care Committee. Diagnosis and management of severe sepsis in the paediatric patient. Paediatr Child Health. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/diagnosis-and-management-of-sepsis-in-the-paediatric-patient
 
-### pediatric-fever-23: Confused teenager far from a pediatric centre
+### pediatric-fever-23: Toddler with fever, vomiting and fast breathing
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department with no CT scanner. The nearest pediatric centre is 3 hours away by air. A 13-year-old boy is brought in by his parents with fever, headache and vomiting that began 8 hours ago. For the past hour he has been confused and does not recognize his sister. He has no medical problems and his immunizations are up to date. He opens his eyes to voice and is disoriented. His neck is stiff. There is no rash. His pupils are equal and reactive and he moves all limbs.
+A 20-month-old girl is brought to the emergency department with 2 days of fever up to 40.1°C and vomiting since this morning. She has had only two wet diapers today. She has no cough, runny nose or diarrhea. She had a urinary tract infection at 9 months of age. She is irritable and pale. Her hands and feet are cool, and capillary refill is 3 seconds. Her abdomen is soft. There is no rash and no neck stiffness. Her immunizations are up to date. She has no allergies.
 
-- Temperature: 39.7°C
-- Pulse: 132/minute
-- Resp.: 24/minute
-- BP: 112/64 mmHg
-- O2 sat: 97% on room air
-- Weight: 40 kg
+- Temperature: 39.8°C rectal
+- Pulse: 176/minute
+- Resp.: 38/minute
+- BP: 96/58 mmHg
+- O2 sat: 98% on room air
+- Weight: 11 kg
 
 #### Q1
-**Which of the following is the most appropriate next step in his management?**
+**Which of the following is the most appropriate timing for her first antibiotic dose?**
 
-- A. IV antibiotics now, after a blood culture  **(key)**
-- B. IV antibiotics once the transfer team arrives
-- C. Lumbar puncture, then IV antibiotics
-- D. Throat swab, then oral antibiotics
-- E. Transfer first for CT at the receiving centre
+- A. After a renal ultrasound
+- B. After the urinalysis result
+- C. After the urine culture grows
+- D. Only if the blood culture is positive
+- E. Right after urine and blood samples  **(key)**
 
-*Explanation:* Fever, headache, neck stiffness and a decreased level of consciousness make bacterial meningitis likely. The CPS advises deferring lumbar puncture when consciousness is decreased and warns that antibiotics must not be delayed when imaging is not immediately available. A blood culture is drawn and IV antibiotics are given at once, hours before he could reach a CT scanner. Waiting for the transfer team delays treatment, and oral antibiotics have no role in suspected meningitis.
+*Explanation:* She is irritable, pale and tachycardic with cool extremities, so she may have sepsis from a urinary source. A catheter urine sample and a blood culture should be taken first, because they take minutes and guide later treatment, and then IV antibiotics should follow at once. The Canadian Paediatric Society notes that febrile UTI with sepsis needs parenteral treatment. Waiting for a urinalysis, a culture, an ultrasound or a positive blood culture delays treatment of a possibly septic child.
 
 *Key feature:* Pediatric fever 3. Give early broad spectrum antibiotics to children with suspected sepsis.
 
-*Source:* Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. Paediatr Child Health. 2014. Updated 2020, reaffirmed 2026. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
+*Source:* Barton M, Viel-Theriault I, Purewal R, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Optimizing management of urinary tract infections in children: a need for improved stewardship. Canadian Paediatric Society position statement. 2026. https://cps.ca/en/documents/position/management-urinary-tract-infections
 
 #### Q2
-**Which of the following antimicrobial orders are most appropriate before he is transferred?**
+*Update:* Her catheter urinalysis shows leukocyte esterase 3+, positive nitrite and many white cells. Her creatinine is normal.
+
+**Which of the following are appropriate empiric parenteral antibiotics for her?**
 
 Select 2.
 
-- A. ampicillin 2 g IV
-- B. ceftriaxone 2 g IV  **(key)**
-- C. ceftriaxone 500 mg IV
-- D. gentamicin 280 mg IV
-- E. penicillin G 4 million units IV
-- F. vancomycin 2 g IV
-- G. vancomycin 600 mg IV  **(key)**
+- A. azithromycin IV
+- B. cefixime by mouth
+- C. ceftriaxone IV  **(key)**
+- D. cephalexin by mouth
+- E. gentamicin IV  **(key)**
+- F. nitrofurantoin by mouth
+- G. vancomycin IV alone
 
-*Explanation:* The CPS empiric regimen for suspected bacterial meningitis is ceftriaxone 100 mg/kg/day divided every 12 hours, to a maximum of 4 g/day, with vancomycin 60 mg/kg/day divided every 6 hours. At 40 kg that is ceftriaxone 2 g and vancomycin 600 mg per dose. Ceftriaxone 500 mg is too low, and vancomycin 2 g is more than three times the dose. Penicillin G is a definitive choice only once a susceptible meningococcus or pneumococcus is identified, and it does not cover resistant pneumococci empirically. Ampicillin is added only for immunocompromised children to cover Listeria, and gentamicin is not part of the regimen. The CPS leaves adjuvant dexamethasone as an option to consider when CSF findings suggest Haemophilus influenzae or pneumococcal meningitis.
+*Explanation:* The Canadian Paediatric Society lists ceftriaxone and aminoglycosides such as gentamicin as common empiric parenteral options for febrile UTI, with aminoglycosides less likely to select for resistance when there is no concern for meningitis. Cephalexin and cefixime are oral options for well children who can take fluids, which she cannot. Nitrofurantoin does not reach the kidney well enough to treat pyelonephritis. Vancomycin alone misses gram negative organisms such as E. coli. Azithromycin is not a UTI drug.
 
 *Key feature:* Pediatric fever 3. Give early broad spectrum antibiotics to children with suspected sepsis.
 
-*Source:* Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. Paediatr Child Health. 2014. Updated 2020, reaffirmed 2026. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
+*Source:* Barton M, Viel-Theriault I, Purewal R, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Optimizing management of urinary tract infections in children: a need for improved stewardship. Canadian Paediatric Society position statement. 2026. https://cps.ca/en/documents/position/management-urinary-tract-infections
 
 #### Q3
-*Update:* After antibiotics he becomes drowsier. His pulse rises to 150/minute and capillary refill is 4 seconds. His blood pressure is 104/60 mmHg.
+*Update:* One hour later, after acetaminophen, her temperature is 37.8°C, but her pulse is still 172/minute and she is harder to rouse.
 
-**Which of the following best describes his circulatory status at this point?**
+**Which of the following best describes her condition at this point?**
 
-- A. Cushing response to raised pressure
-- B. Early shock needing a fluid bolus  **(key)**
-- C. Fluid overload from IV antibiotics
-- D. Hypotensive shock needing vasopressors
-- E. Normal circulation, as BP is normal
+- A. Dehydration that needs oral fluids only
+- B. Expected response to a falling temperature
+- C. Febrile illness that is resolving
+- D. Side effect of acetaminophen
+- E. Worsening sepsis despite less fever  **(key)**
 
-*Explanation:* A rising pulse of 150/minute, a capillary refill of 4 seconds and increasing drowsiness with a blood pressure of 104/60 mmHg indicate early, compensated shock, which needs a crystalloid bolus with reassessment. A normal blood pressure does not mean normal circulation in a child, because hypotension is a late sign. He is not hypotensive, so vasopressors are not the first step. A Cushing response to raised intracranial pressure causes hypertension with bradycardia, not tachycardia. The small volume of IV antibiotics does not cause fluid overload.
+*Explanation:* A heart rate that stays high after the fever falls, with a declining level of consciousness, points to worsening sepsis. NICE advises not relying on a fall in temperature after antipyretics to separate serious from minor illness, and lists reduced responsiveness as a red feature. Tachycardia from fever alone should settle as the temperature falls. Acetaminophen does not cause tachycardia or drowsiness at usual doses. Oral fluids alone are inadequate for a child who is harder to rouse.
 
 *Key feature:* Pediatric fever 2. Recognize subtle sepsis signs in febrile children, such as lethargy, poor feeding, or abnormal vital signs.
 
-*Source:* Farrell CA, Canadian Paediatric Society Acute Care Committee. Diagnosis and management of severe sepsis in the paediatric patient. Paediatr Child Health. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/diagnosis-and-management-of-sepsis-in-the-paediatric-patient
+*Source:* National Institute for Health and Care Excellence. Fever in under 5s: assessment and initial management. NICE guideline NG143. 2019, updated 2021. https://www.nice.org.uk/guidance/ng143
 
 ### pediatric-fever-24: Boy from a group home who is not himself
 
@@ -761,82 +768,78 @@ Select 3.
 
 *Source:* National Institute for Health and Care Excellence. Fever in under 5s: assessment and initial management. NICE guideline NG143. 2019, updated 2021. https://www.nice.org.uk/guidance/ng143
 
-### pediatric-fever-26: Shivering with the evening infusion
+### pediatric-fever-26: Fever and double vision on a biologic drug
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 4-year-old girl with short bowel syndrome is brought to the emergency department with fever and shivering that began 30 minutes after her parenteral nutrition was connected at home. She has a tunnelled central venous catheter in her right chest and receives parenteral nutrition 14 hours a day. She had a Staphylococcus epidermidis line infection 8 months ago. She is tired but interactive. The catheter exit site is clean and dry. Her abdomen is soft. The examination is otherwise normal.
+A 15-year-old girl is brought to the emergency department with 1 day of fever, headache and vomiting. Since this morning she has seen double and feels unsteady when she walks. She has Crohn disease in remission, treated with infliximab infusions every 8 weeks and daily azathioprine. Her last infusion was 3 weeks ago. She is drowsy but opens her eyes to voice and answers questions. Her neck is stiff. She has a left sixth nerve palsy and an unsteady gait. There is no rash, and her fundi are normal. Her capillary refill is 2 seconds.
 
-- Temperature: 39.2°C
-- Pulse: 154/minute
-- Resp.: 30/minute
-- BP: 92/54 mmHg
+- Temperature: 38.9°C oral
+- Pulse: 112/minute
+- Resp.: 20/minute
+- BP: 118/70 mmHg
 - O2 sat: 98% on room air
-- Weight: 16 kg
+- Weight: 54 kg
 
 #### Q1
-**Which of the following features most increases this child's risk of a serious bacterial infection?**
+**Which of the following features of her history most changes the organisms that must be covered?**
 
-- A. Age older than 3 years
-- B. Clean and dry catheter exit site
-- C. Fatigue at the end of the day
-- D. Fever with a central venous catheter  **(key)**
-- E. Soft, nontender abdomen
+- A. Age of 15 years at onset
+- B. Crohn disease in remission
+- C. Infliximab and azathioprine  **(key)**
+- D. Temperature of 38.9°C
+- E. Vomiting since yesterday
 
-*Explanation:* Fever and shivering that begin soon after her central line is used point to a catheter-related bloodstream infection, and she has had one before. A child with a central venous catheter and fever is at high risk of bacteremia and needs cultures and empiric antibiotics. A clean, dry exit site does not exclude infection inside the catheter. Her age, a soft abdomen and tiredness in the evening do not raise her risk.
+*Explanation:* Infliximab and azathioprine suppress her immunity, and the Canadian Paediatric Society advises considering Listeria monocytogenes when there is immunosuppression or a brain stem presentation. Her double vision and unsteadiness suggest brain stem involvement. Crohn disease in remission does not by itself change the likely organisms. Her age, fever and vomiting are common to most causes of meningitis and do not point to a particular organism.
 
 *Key feature:* Pediatric fever 1. Stratify sepsis risk in febrile neonates, infants, and children by age and other factors to guide the septic workup.
 
-*Source:* Mermel LA, Allon M, Bouza E, et al. Clinical practice guidelines for the diagnosis and management of intravascular catheter-related infection: 2009 update by the Infectious Diseases Society of America. Clin Infect Dis. 2009. https://pubmed.ncbi.nlm.nih.gov/19489710/
+*Source:* Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. Paediatr Child Health. 2014. Updated 2020, reaffirmed 2026. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
 
 #### Q2
-**Which of the following blood culture strategies is most appropriate before antibiotics are given?**
+**Which of the following is the most appropriate diagnostic plan for her suspected meningitis?**
 
-- A. Catheter tip culture after line removal
-- B. Cultures only if fever persists
-- C. One culture drawn from the catheter only
-- D. One peripheral culture only
-- E. Paired catheter and peripheral cultures  **(key)**
+- A. Blood cultures and lumbar puncture now
+- B. Blood cultures only, no lumbar puncture
+- C. Blood cultures, then CT before lumbar puncture  **(key)**
+- D. Lumbar puncture now, blood cultures later
+- E. MRI of the brain within 24 hours
 
-*Explanation:* The IDSA recommends paired blood cultures, one drawn through the catheter and one from a peripheral vein, before antibiotics start. Comparing growth and time to positivity between the two samples helps show whether the catheter is the source. A single sample from either site gives less information. Removing the line to culture its tip sacrifices the access she depends on for nutrition, and delaying cultures until fever persists delays treatment of a possible bacteremia.
+*Explanation:* She has a new focal deficit, a sixth nerve palsy with ataxia, and a reduced level of consciousness. The Canadian Paediatric Society advises deferring the lumbar puncture until imaging has excluded a risk of herniation in that situation. Blood cultures come first, before antibiotics. A lumbar puncture now ignores her focal signs. Skipping it altogether gives up the diagnosis. Delaying blood cultures or waiting a day for MRI holds up the workup of a critically ill patient.
 
 *Key feature:* Pediatric fever 1. Stratify sepsis risk in febrile neonates, infants, and children by age and other factors to guide the septic workup.
 
-*Source:* Mermel LA, Allon M, Bouza E, et al. Clinical practice guidelines for the diagnosis and management of intravascular catheter-related infection: 2009 update by the Infectious Diseases Society of America. Clin Infect Dis. 2009. https://pubmed.ncbi.nlm.nih.gov/19489710/
+*Source:* Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. Paediatr Child Health. 2014. Updated 2020, reaffirmed 2026. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
 
 #### Q3
-*Update:* Paired blood cultures are drawn. Her pulse remains 150/minute and capillary refill is 3 seconds.
+**Which of the following empiric antimicrobial regimens is most appropriate for her?**
 
-**Which of the following empiric antibiotic regimens is most appropriate now?**
+- A. acyclovir as the only drug
+- B. ceftriaxone and vancomycin
+- C. ceftriaxone as the only drug
+- D. ceftriaxone, vancomycin and ampicillin  **(key)**
+- E. meropenem as the only drug
 
-- A. Cefazolin IV while awaiting cultures
-- B. Oral amoxicillin-clavulanate at home
-- C. Vancomycin IV alone while awaiting cultures
-- D. Vancomycin with gram negative coverage  **(key)**
-- E. No antibiotics until cultures grow
-
-*Explanation:* Persistent tachycardia of 150/minute and a capillary refill of 3 seconds show that she is unwell, so suspected catheter-related bloodstream infection is treated at once with vancomycin plus gram-negative coverage. The IDSA advises vancomycin for coagulase-negative staphylococci and Staphylococcus aureus, with gram-negative coverage guided by severity of illness and local susceptibility. Vancomycin alone leaves gram-negative organisms uncovered in an ill child, and cefazolin misses methicillin-resistant staphylococci. Oral therapy at home and waiting for cultures both delay treatment of a possible bloodstream infection.
+*Explanation:* The Canadian Paediatric Society recommends ceftriaxone or cefotaxime with vancomycin for suspected bacterial meningitis beyond 2 months of age, and adding ampicillin to cover Listeria in immunocompromised patients, because cephalosporins do not treat Listeria. Ceftriaxone with vancomycin alone leaves that gap. Ceftriaxone alone also misses resistant pneumococcus. Meropenem alone is not the recommended empiric choice. Acyclovir may be added if herpes encephalitis is suspected, but alone it treats no bacteria.
 
 *Key feature:* Pediatric fever 3. Give early broad spectrum antibiotics to children with suspected sepsis.
 
-*Source:* Mermel LA, Allon M, Bouza E, et al. Clinical practice guidelines for the diagnosis and management of intravascular catheter-related infection: 2009 update by the Infectious Diseases Society of America. Clin Infect Dis. 2009. https://pubmed.ncbi.nlm.nih.gov/19489710/
+*Source:* Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. Paediatr Child Health. 2014. Updated 2020, reaffirmed 2026. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
 
 #### Q4
-*Update:* Twelve hours later she remains febrile and is now hypotensive. Blood cultures have not yet turned positive.
+**Which of the following is the most appropriate timing of her first antimicrobial doses?**
 
-**Which of the following factors in her history most supports adding empiric antifungal coverage?**
+- A. After CSF results are available
+- B. After review by neurology
+- C. After the lumbar puncture is done
+- D. Immediately after blood cultures  **(key)**
+- E. Only if her level of consciousness falls
 
-- A. A previous bacterial line infection
-- B. Clean catheter exit site
-- C. Fever with shivering after infusion
-- D. Parenteral nutrition via the catheter  **(key)**
-- E. Tunnelled catheter in the chest
-
-*Explanation:* She receives parenteral nutrition 14 hours a day through the catheter, and the IDSA lists total parenteral nutrition among the risk factors that justify empiric coverage for candidemia in a septic patient. The other listed risks are prolonged broad-spectrum antibiotics, hematologic malignancy, transplant, a femoral catheter and Candida colonization at several sites. Her previous infection was bacterial and does not by itself point to Candida. Shivering with an infusion suggests line infection of any cause, and a chest catheter with a clean exit site adds no antifungal risk.
+*Explanation:* The Canadian Paediatric Society states that antimicrobials should be given without delay when meningitis is suspected, and should not be delayed when imaging or a lumbar puncture cannot be done at once. Blood cultures are drawn first because they take minutes. Waiting for the lumbar puncture, its results, a consultation or further deterioration delays treatment of a life-threatening infection.
 
 *Key feature:* Pediatric fever 3. Give early broad spectrum antibiotics to children with suspected sepsis.
 
-*Source:* Mermel LA, Allon M, Bouza E, et al. Clinical practice guidelines for the diagnosis and management of intravascular catheter-related infection: 2009 update by the Infectious Diseases Society of America. Clin Infect Dis. 2009. https://pubmed.ncbi.nlm.nih.gov/19489710/
+*Source:* Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. Paediatr Child Health. 2014. Updated 2020, reaffirmed 2026. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
 
 ### pediatric-fever-27: Five month old with a week of fever
 
@@ -912,63 +915,61 @@ A 5-month-old boy is brought to the emergency department with fever for 7 days. 
 
 *Source:* Chen A, Rozenblyum E, Dahdah N, et al., Canadian Paediatric Society Community Paediatrics Committee. Kawasaki disease: practical guidance on diagnosis and management. Paediatr Child Health. 2026. https://cps.ca/en/documents/position/kawasaki-disease
 
-### pediatric-fever-28: Fever five weeks after a trip to Nigeria
+### pediatric-fever-28: Eight days of fever after a family visit
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 6-year-old girl is brought to the emergency department with fever, chills and headache for 3 days. Five weeks ago she returned from a 4-week visit to relatives in Nigeria. She took atovaquone-proguanil during the trip but stopped it on the flight home. She has had no cough, diarrhea or urinary symptoms. She is alert and tired. She has no rash, meningismus or lymphadenopathy. The spleen tip is palpable. The rest of the examination is normal.
+A 7-year-old girl is brought to the emergency department with 8 days of fever that rises each evening, now to 39.8°C. She has a headache, crampy abdominal pain and no bowel movement for 4 days. Twelve days ago she returned from 6 weeks with family in Lahore, Pakistan, where she ate street food. She had no pretravel vaccines. A malaria film and rapid test at a clinic 2 days ago were negative. She is tired but alert and drinking. Her tongue is coated. The abdomen is mildly tender, and the spleen tip is palpable. There are three faint pink macules on her upper abdomen.
 
-- Temperature: 39.6°C
-- Pulse: 136/minute
-- Resp.: 24/minute
-- BP: 100/62 mmHg
+- Temperature: 39.6°C oral
+- Pulse: 98/minute
+- Resp.: 22/minute
+- BP: 104/64 mmHg
 - O2 sat: 98% on room air
-- Weight: 21 kg
+- Weight: 22 kg
 
 #### Q1
-**Which of the following statements about malaria in this child is most accurate?**
+**Which of the following is the most likely cause of her prolonged fever?**
 
-- A. A course of prophylaxis excludes malaria
-- B. Malaria is unlikely 5 weeks after return
-- C. Malaria needs a rash or jaundice to be likely
-- D. Testing can wait for a hematology clinic
-- E. Urgent testing is needed to exclude it  **(key)**
+- A. Dengue fever
+- B. Enteric fever  **(key)**
+- C. Kawasaki disease
+- D. Tuberculosis
+- E. Viral gastroenteritis
 
-*Explanation:* Fever, chills and a palpable spleen 5 weeks after a visit to Nigeria make malaria likely, and CATMAT advises that results be available within 2 hours of blood being drawn. More than 90% of falciparum malaria appears within 3 months of travel, so 5 weeks after return is typical, and any unexplained fever within a year of return needs assessment. Chemoprophylaxis lowers but does not remove the risk, especially when it is stopped early. Rash and jaundice are not required for the diagnosis, and waiting for a clinic delays testing.
+*Explanation:* A stepwise fever that peaks in the evening, headache, abdominal pain, constipation, splenomegaly and faint rose spots on the trunk after travel to South Asia fit enteric fever. The CDC notes an incubation period of 6 to 30 days, which fits her timeline. Her pulse of 98/minute at 39.6°C is also lower than expected. Dengue causes abrupt high fever with muscle and joint pain rather than 8 days of stepwise fever with constipation. Kawasaki disease needs conjunctivitis, mucosal and extremity changes. Viral gastroenteritis causes diarrhea, not constipation. Tuberculosis rarely presents this acutely.
 
 *Key feature:* Pediatric fever 5. For persistent fever without a source, consider less common causes such as Kawasaki disease, malaria, inflammatory disease, or cancer.
 
-*Source:* Committee to Advise on Tropical Medicine and Travel (CATMAT). Canadian recommendations for the prevention and treatment of malaria. Chapter 6: malaria diagnosis. Public Health Agency of Canada. Updated 2023. https://www.canada.ca/en/public-health/services/catmat/canadian-recommendations-prevention-treatment-malaria/chapter-6-malaria-diagnosis.html
+*Source:* Francois Watkins LK, Shih DC, Dorough L. Typhoid and paratyphoid fever. CDC Yellow Book: Health Information for International Travel. Centers for Disease Control and Prevention. 2025. https://www.cdc.gov/yellow-book/hcp/travel-associated-infections-diseases/typhoid-and-paratyphoid-fever.html
 
 #### Q2
-*Update:* A rapid diagnostic test and thick and thin blood films are negative.
+**Which of the following investigations is most likely to identify the cause of her fever?**
 
-**Which of the following is the most appropriate next step in her malaria testing?**
+- A. Abdominal ultrasound
+- B. Chest X-ray, two views
+- C. Stool for ova and parasites
+- D. Two sets of blood cultures  **(key)**
+- E. Urinalysis and urine culture
 
-- A. Repeat films at 12 to 24 hour intervals, twice  **(key)**
-- B. Repeat films only if fever returns
-- C. Repeat the rapid test in 1 week
-- D. Send malaria serology instead of films
-- E. No further testing, as malaria is excluded
-
-*Explanation:* CATMAT advises that when the first smears are negative and no other diagnosis is established, two more smears are examined at 12 or 24 hour intervals. One negative film and rapid test do not exclude malaria, and her fever, recent travel to Nigeria and palpable spleen keep it likely. Waiting for fever to return or repeating only the rapid test in a week risks missing falciparum malaria, which can progress within hours. Serology reflects past exposure and does not diagnose acute malaria.
+*Explanation:* The CDC names blood culture as the preferred test for enteric fever, positive in about half of cases on a single culture, so it should be drawn before any antibiotic. Stool culture can also grow the organism, but ova and parasite testing looks for other pathogens. Ultrasound may show splenomegaly but does not identify a cause. A chest X-ray and urinalysis do not confirm her likely diagnosis and are only useful if a lung or urinary source is suspected.
 
 *Key feature:* Pediatric fever 5. For persistent fever without a source, consider less common causes such as Kawasaki disease, malaria, inflammatory disease, or cancer.
 
-*Source:* Committee to Advise on Tropical Medicine and Travel (CATMAT). Canadian recommendations for the prevention and treatment of malaria. Chapter 6: malaria diagnosis. Public Health Agency of Canada. Updated 2023. https://www.canada.ca/en/public-health/services/catmat/canadian-recommendations-prevention-treatment-malaria/chapter-6-malaria-diagnosis.html
+*Source:* Francois Watkins LK, Shih DC, Dorough L. Typhoid and paratyphoid fever. CDC Yellow Book: Health Information for International Travel. Centers for Disease Control and Prevention. 2025. https://www.cdc.gov/yellow-book/hcp/travel-associated-infections-diseases/typhoid-and-paratyphoid-fever.html
 
 #### Q3
-*Update:* Her mother asks how much acetaminophen to give while the tests are repeated.
+*Update:* While results are pending, her mother asks what to give her for fever and headache. She has children's ibuprofen at home.
 
-**Which of the following acetaminophen orders is most appropriate for her?**
+**Which of the following ibuprofen orders is most appropriate for her?**
 
-- A. acetaminophen 1 g PO every 4 to 6 hours
-- B. acetaminophen 105 mg PO every 4 to 6 hours
-- C. acetaminophen 160 mg PO every 4 to 6 hours
-- D. acetaminophen 315 mg PO every 4 to 6 hours  **(key)**
-- E. acetaminophen 650 mg PO every 4 to 6 hours
+- A. ibuprofen 50 mg PO every 6 to 8 hours
+- B. ibuprofen 80 mg PO every 6 to 8 hours
+- C. ibuprofen 220 mg PO every 6 to 8 hours  **(key)**
+- D. ibuprofen 400 mg PO every 6 to 8 hours
+- E. ibuprofen 600 mg PO every 6 to 8 hours
 
-*Explanation:* At 21 kg, acetaminophen 15 mg/kg is 315 mg every 4 to 6 hours. The 105 mg and 160 mg doses are 5 and about 7.6 mg/kg, below the usual 10 to 15 mg/kg range. The 650 mg dose is about 31 mg/kg, twice the single dose, and 1 g is an adult dose of about 48 mg/kg that would pass her daily maximum of 75 mg/kg, or 1575 mg, with the second dose.
+*Explanation:* Ibuprofen is dosed at 10 mg/kg every 6 to 8 hours, and 10 x 22 kg is 220 mg. Dosing by weight rather than by age avoids under or overdosing. 50 mg and 80 mg are about 2 and 4 mg/kg, below the usual range of 5 to 10 mg/kg. 400 mg is about 18 mg/kg and 600 mg is an adult dose, both above the recommended amount for her weight.
 
 *Key feature:* Pediatric fever 8. Dose antipyretics for children by weight rather than by age.
 
@@ -1049,223 +1050,215 @@ A 7-year-old boy is brought to the emergency department with daily fever for 3 w
 
 *Source:* Arkachaisri T, Teh KL, Vilaiyuk S, et al. The Asia-Pacific League of Associations for Rheumatology consensus recommendations on the management of systemic juvenile idiopathic arthritis (juvenile Still's disease). Int J Rheum Dis. 2026. https://doi.org/10.1111/1756-185x.70810
 
-### pediatric-fever-30: Teenager with night sweats and weight loss
+### pediatric-fever-30: Fever that keeps coming back every month
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 15-year-old girl presents to the emergency department with fever on and off for 5 weeks. She wakes drenched in sweat most nights and has lost 6 kg, from 58 kg to 52 kg. For 2 weeks she has had a dry cough and feels breathless when lying flat. Two courses of antibiotics for presumed pneumonia did not help. She has no known tuberculosis exposure and has not travelled. She has a firm, painless 3 cm node above her left clavicle. Her chest is clear. There is no hepatosplenomegaly.
+A 4-year-old boy is brought to the emergency department with fever to 40.0°C since yesterday, a sore throat and sore mouth. His mother says this is his sixth episode in 7 months. Each lasts 4 to 5 days and starts about 4 weeks after the last, and between episodes he is completely well and playing. He received amoxicillin for three of the episodes, with no change in their course, and two rapid strep tests were negative. He has no cough or runny nose. His growth follows the 50th percentile, and his development is normal. He has small shallow ulcers on the inside of his cheeks, red tonsils and tender enlarged anterior neck nodes. His last CBC, done during an episode, showed a normal neutrophil count.
 
-- Temperature: 38.4°C
-- Pulse: 112/minute
-- Resp.: 22/minute
-- BP: 118/70 mmHg
-- O2 sat: 97% on room air
-- Weight: 52 kg
-
-#### Q1
-**Which of the following is the most likely cause of her prolonged fever?**
-
-- A. Hodgkin lymphoma  **(key)**
-- B. Infectious mononucleosis
-- C. Mycoplasma pneumonia
-- D. Pulmonary tuberculosis
-- E. Reactive lymphadenopathy
-
-*Explanation:* Weeks of fever, drenching night sweats and loss of more than 10% of body weight (6 of 58 kg, about 10.3%) are B symptoms of lymphoma. A firm, painless supraclavicular node with cough and breathlessness lying flat suggests a mediastinal mass, typical of Hodgkin lymphoma in adolescents. Mycoplasma pneumonia should have responded to antibiotics and does not cause B symptoms for 5 weeks. She has no tuberculosis exposure or travel. Mononucleosis causes a shorter illness without weight loss of this degree, and a reactive node is usually tender and does not explain the night sweats and orthopnea.
-
-*Key feature:* Pediatric fever 5. For persistent fever without a source, consider less common causes such as Kawasaki disease, malaria, inflammatory disease, or cancer.
-
-*Source:* Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 545, Lymphoma. https://www.inspectioncopy.elsevier.com/book/details/9780323883054
-
-#### Q2
-**Which of the following investigations should be obtained first in the emergency department?**
-
-- A. Chest radiograph  **(key)**
-- B. Excisional node biopsy
-- C. Marrow aspirate and biopsy
-- D. Monospot test
-- E. Pulmonary function tests
-
-*Explanation:* Breathlessness lying flat and a dry cough raise concern for an anterior mediastinal mass, so a chest radiograph comes first to look for a mass and airway compression. It guides the safety of later procedures, because sedation or general anesthesia with a large mass can cause airway or cardiovascular collapse. A node biopsy and a marrow aspirate and biopsy follow once the mass has been assessed. A Monospot test and pulmonary function tests do not address the immediate airway risk.
-
-*Key feature:* Pediatric fever 5. For persistent fever without a source, consider less common causes such as Kawasaki disease, malaria, inflammatory disease, or cancer.
-
-*Source:* Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 545, Lymphoma. https://www.inspectioncopy.elsevier.com/book/details/9780323883054
-
-#### Q3
-*Update:* The chest radiograph shows a large anterior mediastinal mass narrowing the trachea. The CBC shows no blasts.
-
-**Which of the following is the most appropriate precaution while she awaits oncology assessment?**
-
-- A. Give IV dexamethasone before a biopsy
-- B. Intubate electively to protect the airway
-- C. Keep her upright and avoid sedation  **(key)**
-- D. Lie her flat for a CT with sedation
-- E. Perform node biopsy under general anesthesia
-
-*Explanation:* A large anterior mediastinal mass narrowing the trachea can cause sudden airway obstruction or cardiovascular collapse when the patient lies flat or is sedated, so she is kept upright and sedation is avoided. Imaging is done without sedation, in a position she tolerates. Elective intubation and general anesthesia carry a high risk of collapse and need planning by experienced teams. Corticosteroids given before tissue is obtained can obscure the diagnosis of lymphoma, so the decision to give them before a biopsy rests with oncology unless she develops respiratory distress.
-
-*Key feature:* Pediatric fever 5. For persistent fever without a source, consider less common causes such as Kawasaki disease, malaria, inflammatory disease, or cancer.
-
-*Source:* Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 545, Lymphoma. https://www.inspectioncopy.elsevier.com/book/details/9780323883054
-
-### pediatric-fever-31: Hot, confused toddler after a visit from grandma
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 3-year-old boy is brought to the emergency department by his parents because he has been agitated and hot for 2 hours. He is picking at the air and does not recognize his mother. He was well this morning. His grandmother, who is visiting, takes diphenhydramine for sleep, and her pill bottle was found open on the floor. His skin is flushed, hot and dry. His pupils are 7 mm and sluggish. Bowel sounds are reduced and his bladder is palpable. There is no rash or neck stiffness.
-
-- Temperature: 39.1°C rectal
-- Pulse: 174/minute
-- Resp.: 28/minute
-- BP: 118/72 mmHg
+- Temperature: 39.8°C oral
+- Pulse: 130/minute
+- Resp.: 24/minute
+- BP: 98/60 mmHg
 - O2 sat: 99% on room air
-- Weight: 15 kg
+- Weight: 17 kg
 
 #### Q1
-**Which of the following is the most likely cause of his fever?**
+**Which of the following features of his history most suggests a noninfectious cause for his fevers?**
 
-- A. Anticholinergic toxicity  **(key)**
-- B. Bacterial meningitis
-- C. Febrile delirium with influenza
-- D. Serotonin toxicity
-- E. Sympathomimetic toxicity
+- A. Fever as high as 40.0°C
+- B. Negative rapid strep tests
+- C. Red tonsils with tender neck nodes
+- D. Regular episodes, well in between  **(key)**
+- E. Sore throat with each episode
 
-*Explanation:* Hot, flushed, dry skin with delirium, picking at the air, 7 mm pupils, reduced bowel sounds and a palpable bladder form the anticholinergic toxidrome, and an open bottle of diphenhydramine was within reach. Heat builds up because he cannot sweat. Sympathomimetic and serotonin toxicity both cause sweating, and serotonin toxicity also causes clonus and hyperreflexia. He has no neck stiffness or rash, and meningitis or influenza would not explain the dry skin, dilated pupils and urinary retention.
+*Explanation:* Fevers that recur at a regular interval, with a child who is completely well and growing normally between them, point to a periodic fever syndrome rather than repeated infections, which occur at random intervals. The Vanoni review lists regularly recurring fevers, an asymptomatic interval and normal growth among the diagnostic criteria for PFAPA. High fever, sore throat and red tonsils with tender nodes occur in both infection and PFAPA. Negative rapid tests do not by themselves separate the two.
 
-*Key feature:* Pediatric fever 6. Consider noninfectious causes like poisoning or heat illness in a febrile child with no clear source.
+*Key feature:* Pediatric fever 5. For persistent fever without a source, consider less common causes such as Kawasaki disease, malaria, inflammatory disease, or cancer.
 
-*Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter 3, Initial Evaluation of the Patient: Vital Signs and Toxic Syndromes. https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html
+*Source:* Vanoni F, Theodoropoulou K, Hofer M. PFAPA syndrome: a review on treatment and outcome. Pediatr Rheumatol Online J. 2016. https://pubmed.ncbi.nlm.nih.gov/27349388/
 
 #### Q2
-*Update:* His ECG shows sinus tachycardia with a QRS duration of 128 ms.
+**Which of the following is the most likely diagnosis for his fevers?**
 
-**Which of the following is the most appropriate treatment for this ECG finding?**
+- A. Cyclic neutropenia
+- B. Epstein-Barr virus infection
+- C. Kawasaki disease
+- D. PFAPA syndrome  **(key)**
+- E. Recurrent tonsillopharyngitis
 
-- A. Amiodarone 75 mg IV
-- B. Magnesium sulfate 750 mg IV
-- C. Physostigmine 0.3 mg IV
-- D. Procainamide 225 mg IV
-- E. Sodium bicarbonate 15 mmol IV  **(key)**
+*Explanation:* Regular fevers starting before age 5, with aphthous ulcers, pharyngitis and cervical adenitis, no respiratory symptoms, well intervals and normal growth meet the criteria for periodic fever, aphthous stomatitis, pharyngitis and adenitis (PFAPA). Cyclic neutropenia can mimic it, but his neutrophil count was normal during an episode. Recurrent strep pharyngitis does not recur on a schedule, and his tests were negative. Epstein-Barr virus does not cause six separate episodes. Kawasaki disease is a single illness with conjunctivitis and extremity changes.
 
-*Explanation:* A QRS of 128 ms reflects sodium channel blockade, a known effect of diphenhydramine. Life-threatening cardiotoxicity from a sodium channel blocker is treated with IV sodium bicarbonate 1 to 2 mmol/kg, here 15 mmol for 15 kg, repeated to narrow the QRS. Procainamide and amiodarone also block sodium channels and can worsen conduction. Physostigmine is usually avoided while the QRS is wide, because of concern for bradycardia and asystole. Magnesium treats torsades de pointes, which he does not have.
+*Key feature:* Pediatric fever 5. For persistent fever without a source, consider less common causes such as Kawasaki disease, malaria, inflammatory disease, or cancer.
 
-*Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
-
-*Source:* Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023. https://doi.org/10.1161/CIR.0000000000001161
+*Source:* Vanoni F, Theodoropoulou K, Hofer M. PFAPA syndrome: a review on treatment and outcome. Pediatr Rheumatol Online J. 2016. https://pubmed.ncbi.nlm.nih.gov/27349388/
 
 #### Q3
-**Which of the following is the most appropriate treatment for his temperature?**
+**Which of the following is the most appropriate treatment for this episode?**
 
-- A. Acetaminophen 225 mg PR and observation
-- B. Dantrolene 15 mg IV and ice packs
-- C. Haloperidol 1.5 mg IM and cooling
-- D. Ibuprofen 150 mg PO and observation
-- E. Sedation with a benzodiazepine and cooling  **(key)**
+- A. amoxicillin by mouth for 10 days
+- B. filgrastim injections daily
+- C. IV immune globulin 2 g/kg
+- D. prednisone 1 mg/kg by mouth once  **(key)**
+- E. Referral for tonsillectomy this week
 
-*Explanation:* His temperature rises from agitation and loss of sweating, not from a raised hypothalamic set point, so acetaminophen and ibuprofen do not lower it. Treatment is sedation with a benzodiazepine to control agitation, with active external cooling. Antipsychotics such as haloperidol can prolong the QRS and QT intervals, lower the seizure threshold and impair heat loss, so they are avoided. Dantrolene has no established role in drug-induced hyperthermia of this kind.
+*Explanation:* The Vanoni review describes a single dose of prednisone, 1 to 2 mg/kg, at the start of an episode as able to abort the fever within hours, which is 17 mg for him. Parents should know that the interval between episodes may shorten in 25 to 50% of children. Amoxicillin has not changed any earlier episode. Filgrastim treats cyclic neutropenia, which his normal neutrophil count during an episode argues against. Tonsillectomy is an option for selected patients but not an emergency. Immune globulin is a treatment for Kawasaki disease.
 
-*Key feature:* Environmental 2. Cool severe hyperthermia rapidly with several methods before confirming the cause, while considering NMS, overdose, endocrine, or infection.
+*Key feature:* Pediatric fever 5. For persistent fever without a source, consider less common causes such as Kawasaki disease, malaria, inflammatory disease, or cancer.
 
-*Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter 3, Initial Evaluation of the Patient: Vital Signs and Toxic Syndromes. https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html
+*Source:* Vanoni F, Theodoropoulou K, Hofer M. PFAPA syndrome: a review on treatment and outcome. Pediatr Rheumatol Online J. 2016. https://pubmed.ncbi.nlm.nih.gov/27349388/
 
-#### Q4
-*Update:* After bicarbonate the QRS narrows to 84 ms. He remains agitated and delirious despite two doses of midazolam.
-
-**Which of the following is the most appropriate next treatment for his delirium?**
-
-- A. Diphenhydramine 15 mg IV
-- B. Haloperidol 1 mg IM
-- C. Physostigmine 0.3 mg IV slowly  **(key)**
-- D. Promethazine 7.5 mg IV
-- E. Restraint without further sedation
-
-*Explanation:* Once the QRS has narrowed to 84 ms, a cholinesterase inhibitor can be considered for anticholinergic delirium that has not responded to other measures. Physostigmine crosses into the brain and reverses the central anticholinergic effect, and it is given slowly in small titrated doses, about 0.02 mg/kg, with monitoring for bradycardia and seizures. Its supply is variable, so poison centre advice guides its use. Diphenhydramine and promethazine are anticholinergic and would worsen his toxicity. Haloperidol can prolong conduction intervals and lower the seizure threshold, and restraint without sedation increases heat production.
-
-*Key feature:* Toxicology 2. Recognize toxidromes from clinical patterns and use antidotes selectively, weighing indications and contraindications.
-
-*Source:* Dawson AH, Buckley NA. Pharmacological management of anticholinergic delirium: theory, evidence and practice. Br J Clin Pharmacol. 2016. https://pubmed.ncbi.nlm.nih.gov/26589572/
-
-### pediatric-fever-32: Shaky, sweaty teenager with a cold
+### pediatric-fever-31: Rash and swollen face on a new medication
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 15-year-old girl is brought to the emergency department by her father because she has been shaky, sweaty and restless for 4 hours. She takes sertraline for anxiety. Yesterday she started an over-the-counter cough syrup containing dextromethorphan for a cold, and today she took several extra doses. She is agitated and diaphoretic. Her pupils are 6 mm. She has a coarse tremor, brisk reflexes and sustained ankle clonus, more marked in the legs than the arms. Bowel sounds are hyperactive.
+A 12-year-old girl is brought to the emergency department with 3 days of fever up to 39.4°C and a spreading red rash. Four weeks ago her neurologist started carbamazepine for focal seizures. She takes no other medication. The rash began on her face and trunk and now covers more than half her body. Her face is swollen, and she has tender lymph nodes in her neck and both armpits. Her lips, mouth and eyes are normal. The rash is a confluent red eruption without blisters or skin peeling. White cells are 14.2 x 10^9/L with eosinophils of 2.1 x 10^9/L and atypical lymphocytes, and ALT is 310 U/L. Her capillary refill is 2 seconds.
 
-- Temperature: 38.9°C oral
-- Pulse: 136/minute
-- Resp.: 22/minute
-- BP: 148/88 mmHg
+- Temperature: 39.2°C oral
+- Pulse: 118/minute
+- Resp.: 20/minute
+- BP: 108/64 mmHg
 - O2 sat: 98% on room air
-- Weight: 54 kg
+- Weight: 42 kg
 
 #### Q1
-**Which of the following best explains her fever and neuromuscular findings?**
+**Which of the following is the most likely cause of her fever and rash?**
 
-- A. Anticholinergic toxicity
-- B. Neuroleptic malignant syndrome
-- C. Serotonin toxicity  **(key)**
-- D. Sympathomimetic toxicity
-- E. Viral encephalitis
+- A. Acute viral hepatitis A
+- B. Drug reaction to carbamazepine  **(key)**
+- C. Incomplete Kawasaki disease
+- D. Measles infection
+- E. Streptococcal scarlet fever
 
-*Explanation:* After adding dextromethorphan to sertraline, two serotonergic drugs, she has inducible ankle clonus with agitation and diaphoresis, and tremor with hyperreflexia. Each pair meets the Hunter criteria for serotonin toxicity. Anticholinergic toxicity causes dry skin and reduced bowel sounds rather than sweating and hyperactive bowel sounds. Neuroleptic malignant syndrome follows a dopamine antagonist and develops over days with rigidity rather than clonus. Sympathomimetic toxicity does not cause clonus, and encephalitis does not explain the timing with a new serotonergic drug.
+*Explanation:* Fever, a widespread rash, facial swelling, lymph nodes at several sites, eosinophilia, atypical lymphocytes and a raised ALT beginning 4 weeks after starting an aromatic anticonvulsant fit drug reaction with eosinophilia and systemic symptoms (DRESS). The EAACI position paper names anticonvulsants, particularly carbamazepine, among the main culprits in children, with a mean latency of 3 to 4 weeks. Measles and scarlet fever do not cause eosinophilia and liver injury in this pattern. Kawasaki disease needs conjunctivitis and mucosal changes, which she lacks. Viral hepatitis does not explain the rash and eosinophilia.
 
 *Key feature:* Pediatric fever 6. Consider noninfectious causes like poisoning or heat illness in a febrile child with no clear source.
 
-*Source:* Dunkley EJ, Isbister GK, Sibbritt D, Dawson AH, Whyte IM. The Hunter Serotonin Toxicity Criteria: simple and accurate diagnostic decision rules for serotonin toxicity. QJM. 2003. https://pubmed.ncbi.nlm.nih.gov/12925718/
+*Source:* Kuyucu S, Blanca-Lopez N, Caubet JC, et al. Clinical diagnosis and management of drug reaction with eosinophilia and systemic symptoms (DRESS) in children. An EAACI position paper. Pediatr Allergy Immunol. 2025. https://pubmed.ncbi.nlm.nih.gov/40589376/
 
 #### Q2
-*Update:* The sertraline and cough syrup are stopped. She is placed on a cardiac monitor.
+**Which of the following features most separates her rash from a benign viral exanthem?**
 
-**Which of the following treatments are most appropriate for her now?**
+- A. Confluent redness on the trunk
+- B. Facial swelling with eosinophilia  **(key)**
+- C. Fever above 39°C
+- D. Rash that began on the face
+- E. Tachycardia of 118/minute
 
-Select 2.
+*Explanation:* Facial edema is one of the most common skin signs of DRESS, and with eosinophilia and liver involvement it marks a systemic drug reaction that needs admission and removal of the culprit drug. The EAACI position paper lists fever, liver involvement, lymphadenopathy and eosinophilia as its most common systemic features. Confluent redness, a rash that starts on the face, high fever and tachycardia are all seen with ordinary viral exanthems and do not separate them.
 
-- A. Acetaminophen 650 mg PO
-- B. Bromocriptine 2.5 mg PO
-- C. Cyproheptadine 12 mg PO  **(key)**
-- D. Dantrolene 50 mg IV
-- E. Lorazepam 1 mg IV  **(key)**
-- F. Physical restraints
-- G. Propranolol 1 mg IV
+*Key feature:* Pediatric fever 4. In a febrile child with rash, separate dangerous rashes like meningococcemia or measles from benign viral exanthems.
 
-*Explanation:* Once the serotonergic drugs are stopped, moderate serotonin toxicity is treated with a benzodiazepine for agitation and the serotonin antagonist cyproheptadine, 12 mg by mouth as the first dose. Physical restraint worsens hyperthermia and lactic acidosis as patients struggle against it. Acetaminophen does not work because the heat comes from muscle activity. Propranolol can cause hypotension and mask tachycardia. Bromocriptine and dantrolene are not recommended, and bromocriptine can worsen serotonin toxicity.
-
-*Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
-
-*Source:* Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med. 2005. https://pubmed.ncbi.nlm.nih.gov/15784664/
+*Source:* Kuyucu S, Blanca-Lopez N, Caubet JC, et al. Clinical diagnosis and management of drug reaction with eosinophilia and systemic symptoms (DRESS) in children. An EAACI position paper. Pediatr Allergy Immunol. 2025. https://pubmed.ncbi.nlm.nih.gov/40589376/
 
 #### Q3
-*Update:* Two hours later her temperature is 41.2°C. She is rigid, and further benzodiazepine doses have not controlled her muscle activity.
+**Which of the following new findings would most suggest that she has developed sepsis?**
 
-**Which of the following is the most appropriate next step in managing her hyperthermia?**
+- A. ALT rising to 420 U/L
+- B. Cool mottled limbs, slow refill  **(key)**
+- C. Eosinophil count rising to 3.0 x 10^9/L
+- D. Fever that persists for another 2 days
+- E. More facial swelling
 
-- A. Acetaminophen 1 g PR and ice packs
-- B. Dantrolene 2.5 mg/kg IV and ice packs
-- C. Intubation after succinylcholine
-- D. Paralysis with rocuronium and intubation  **(key)**
-- E. Propranolol infusion to slow the heart
+*Explanation:* The Canadian Paediatric Society describes perfusion signs such as prolonged capillary refill, cool or mottled skin and a narrow pulse pressure, together with mental status and vital signs, as the features that identify sepsis in children. Cool mottled limbs would signal circulatory failure. A rising ALT or eosinophil count, persistent fever and more facial swelling are expected in active DRESS and do not by themselves indicate sepsis.
 
-*Explanation:* A temperature of 41.2°C with rigidity marks life-threatening serotonin toxicity, and the heat comes from muscle activity. Treatment is sedation, paralysis with a nondepolarizing agent such as rocuronium, and intubation, together with active cooling. Succinylcholine is avoided because of the risk of hyperkalemia from rhabdomyolysis. Antipyretics are ineffective, dantrolene is not recommended, and propranolol can cause hypotension and mask tachycardia.
+*Key feature:* Pediatric fever 2. Recognize subtle sepsis signs in febrile children, such as lethargy, poor feeding, or abnormal vital signs.
 
-*Key feature:* Environmental 2. Cool severe hyperthermia rapidly with several methods before confirming the cause, while considering NMS, overdose, endocrine, or infection.
-
-*Source:* Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med. 2005. https://pubmed.ncbi.nlm.nih.gov/15784664/
+*Source:* Farrell CA, Canadian Paediatric Society Acute Care Committee. Diagnosis and management of severe sepsis in the paediatric patient. Paediatr Child Health. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/diagnosis-and-management-of-sepsis-in-the-paediatric-patient
 
 #### Q4
-**Which of the following features best distinguishes her condition from neuroleptic malignant syndrome?**
+*Update:* She is admitted. The next morning her temperature is 38.9°C, her pulse is 150/minute and her BP is 92/56 mmHg. She is newly confused. Her skin over a scratched area on her thigh is warm and tender.
 
-- A. Altered mental status
-- B. Diaphoresis with high blood pressure
-- C. Fever above 38°C with tachycardia
-- D. Muscle rigidity with a raised CK
-- E. Rapid onset with clonus and hyperreflexia  **(key)**
+**Which of the following is the most appropriate interpretation of this change?**
 
-*Explanation:* Her symptoms began within hours of extra dextromethorphan doses, and she has clonus and brisk reflexes. Serotonin toxicity starts rapidly, usually within 24 hours of a drug change, with neuromuscular hyperactivity. Neuroleptic malignant syndrome develops over days with slow movements, lead pipe rigidity and reduced reflexes. Fever, tachycardia, altered mental status, diaphoresis, hypertension, rigidity and a raised CK can occur in both, so they do not separate them.
+- A. Anxiety about her admission
+- B. Dehydration from poor intake
+- C. Expected course of her illness
+- D. Postictal state after an unseen seizure
+- E. Sepsis until proven otherwise  **(key)**
+
+*Explanation:* New confusion with a rising pulse and a falling BP are signs of sepsis in the Canadian Paediatric Society statement, and her damaged skin gives bacteria an entry point. The EAACI position paper also notes that herpesvirus reactivation in DRESS can lead to severe infection. She needs blood cultures, fluids and prompt antibiotics. Attributing the change to the course of her illness, to anxiety or to dehydration risks missing a treatable infection. An unwitnessed seizure would not explain the hypotension.
+
+*Key feature:* Pediatric fever 2. Recognize subtle sepsis signs in febrile children, such as lethargy, poor feeding, or abnormal vital signs.
+
+*Source:* Farrell CA, Canadian Paediatric Society Acute Care Committee. Diagnosis and management of severe sepsis in the paediatric patient. Paediatr Child Health. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/diagnosis-and-management-of-sepsis-in-the-paediatric-patient
+
+### pediatric-fever-32: Fever, belly pain and red eyes in a school age boy
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 9-year-old boy is brought to the emergency department with 5 days of fever to 39.5°C, abdominal pain, vomiting and loose stools. Since yesterday his eyes are red and he has a rash. Five weeks ago his parents and sister had COVID-19, and he had a mild cold at the same time. He is lethargic but answers questions. Both conjunctivae are injected without discharge, and his lips are red and cracked. There is a blanching red rash on his trunk. His hands are cool, and capillary refill is 3 seconds. The abdomen is diffusely tender without guarding. CRP is 248 mg/L, lymphocytes 0.6 x 10^9/L, platelets 118 x 10^9/L, troponin and NT-proBNP are raised, and a blood culture is pending.
+
+- Temperature: 39.3°C oral
+- Pulse: 142/minute
+- Resp.: 28/minute
+- BP: 80/44 mmHg
+- O2 sat: 96% on room air
+- Weight: 30 kg
+
+#### Q1
+**Which of the following is the most likely cause of his illness?**
+
+- A. Acute appendicitis with peritonitis
+- B. Classic Kawasaki disease
+- C. Measles with conjunctivitis
+- D. Post-COVID inflammatory syndrome  **(key)**
+- E. Viral gastroenteritis
+
+*Explanation:* Fever with prominent abdominal pain, vomiting and diarrhea, conjunctivitis, mucosal and skin changes, shock, cardiac injury, a very high CRP, lymphopenia and low platelets, 5 weeks after household COVID-19, fit paediatric inflammatory multisystem syndrome (PIMS/MIS-C). The Canadian Paediatric Society notes that it follows infection by 2 to 6 weeks and is a post-infectious inflammatory state. Classic Kawasaki disease shares the mucocutaneous features but less often causes shock and cardiac dysfunction. Appendicitis does not cause conjunctivitis and cracked lips. Measles has a cough, coryza and a rash spreading from the face, and gastroenteritis does not explain the cardiac findings.
 
 *Key feature:* Pediatric fever 6. Consider noninfectious causes like poisoning or heat illness in a febrile child with no clear source.
 
-*Source:* Boyer EW, Shannon M. The serotonin syndrome. N Engl J Med. 2005. https://pubmed.ncbi.nlm.nih.gov/15784664/
+*Source:* Berard RA, Tam H, Scuccimarri R, et al. Canadian Paediatric Society practice point. Paediatric inflammatory multisystem syndrome temporally associated with COVID-19 (spring 2021 update). 2021. https://cps.ca/en/documents/position/pims
+
+#### Q2
+**Which of the following findings show that his fever and rash have a dangerous cause rather than a benign viral exanthem?**
+
+Select 3.
+
+- A. Blanching rash on the trunk
+- B. BP of 80/44 mmHg with cool hands  **(key)**
+- C. Lethargy with slow responses  **(key)**
+- D. Mild abdominal cramps early on
+- E. Raised troponin level  **(key)**
+- F. Rash appearing after the fever began
+- G. Temperature of 39.3°C
+
+*Explanation:* Hypotension with cool hands, lethargy and a raised troponin show shock, altered consciousness and heart involvement, which separate a dangerous illness from a benign viral rash. The Canadian Paediatric Society lists shock and cardiac dysfunction as prominent features of PIMS/MIS-C. A blanching rash on the trunk, a rash that follows fever, early mild cramps and a temperature near 39°C are common in viral exanthems and do not by themselves show danger.
+
+*Key feature:* Pediatric fever 4. In a febrile child with rash, separate dangerous rashes like meningococcemia or measles from benign viral exanthems.
+
+*Source:* Berard RA, Tam H, Scuccimarri R, et al. Canadian Paediatric Society practice point. Paediatric inflammatory multisystem syndrome temporally associated with COVID-19 (spring 2021 update). 2021. https://cps.ca/en/documents/position/pims
+
+#### Q3
+**Which of the following best describes his circulatory status now?**
+
+- A. Compensated shock
+- B. Decompensated shock  **(key)**
+- C. Dehydration without shock
+- D. Normal circulation for his fever
+- E. Vasovagal hypotension
+
+*Explanation:* He has tachycardia, cool hands, a capillary refill of 3 seconds, lethargy and a BP of 80/44 mmHg, below the lower limit of 70 + (2 x 9) = 88 mmHg for a 9-year-old. The Canadian Paediatric Society sepsis statement describes perfusion signs and mental status as the markers of shock, and once hypotension appears the shock is no longer compensated. Compensated shock keeps a normal BP. Fever and dehydration alone do not explain hypotension with lethargy. Vasovagal hypotension comes with a slow pulse.
+
+*Key feature:* Pediatric fever 2. Recognize subtle sepsis signs in febrile children, such as lethargy, poor feeding, or abnormal vital signs.
+
+*Source:* Farrell CA, Canadian Paediatric Society Acute Care Committee. Diagnosis and management of severe sepsis in the paediatric patient. Paediatr Child Health. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/diagnosis-and-management-of-sepsis-in-the-paediatric-patient
+
+#### Q4
+**Which of the following features of his illness is less typical of classic Kawasaki disease?**
+
+- A. Conjunctival injection without discharge
+- B. Fever lasting 5 days so far
+- C. Polymorphous rash on the trunk
+- D. Prominent vomiting and abdominal pain  **(key)**
+- E. Red, cracked and dry lips
+
+*Explanation:* The Canadian Paediatric Society compares the two conditions and notes that gastrointestinal symptoms, including abdominal pain and vomiting, are much more prominent in PIMS/MIS-C than in classic Kawasaki disease, along with shock, cardiac dysfunction and a higher CRP. Fever of 5 days, nonexudative conjunctivitis, a polymorphous rash and red cracked lips are all principal features of classic Kawasaki disease, so they do not separate the two.
+
+*Key feature:* Pediatric fever 6. Consider noninfectious causes like poisoning or heat illness in a febrile child with no clear source.
+
+*Source:* Berard RA, Tam H, Scuccimarri R, et al. Canadian Paediatric Society practice point. Paediatric inflammatory multisystem syndrome temporally associated with COVID-19 (spring 2021 update). 2021. https://cps.ca/en/documents/position/pims
 
 ### pediatric-fever-33: Two year old who cannot settle
 
@@ -1559,63 +1552,63 @@ A 2-year-old girl is brought to the emergency department with a runny nose, coug
 
 *Source:* Sullivan JE, Farrar HC, American Academy of Pediatrics Section on Clinical Pharmacology and Therapeutics, Committee on Drugs. Fever and antipyretic use in children. Pediatrics. 2011. https://pubmed.ncbi.nlm.nih.gov/21357332/
 
-### pediatric-fever-37: Teenager with a sore throat and a new rash
+### pediatric-fever-37: Red cheeks after a mild fever
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 16-year-old boy presents to the emergency department with a new rash. He has had fever, sore throat and fatigue for 6 days. Three days ago a walk-in clinic prescribed amoxicillin for tonsillitis without a throat swab. Yesterday an itchy red rash appeared on his trunk and arms. He has no lip or eye swelling, wheeze or mouth ulcers. His tonsils are enlarged with grey exudate. He has tender posterior cervical lymph nodes. The spleen tip is palpable. The rash is symmetric and maculopapular, with no blisters or skin peeling. He plays hockey.
+A 6-year-old girl is brought to the emergency department with a rash for 2 days. Last week she had 2 days of low grade fever, a headache and a runny nose, which settled. Now both cheeks are bright red, and a lacy, net-like pink rash has appeared on her arms and thighs. It is mildly itchy and brighter after her bath. Several children in her grade 1 class have had a similar rash. She is playful and eating well. Her mouth, lips and eyes are normal, she has no joint swelling, and the rash blanches. Her mother is 16 weeks pregnant.
 
-- Temperature: 38.4°C oral
-- Pulse: 104/minute
-- Resp.: 18/minute
-- BP: 122/74 mmHg
+- Temperature: 37.2°C oral
+- Pulse: 96/minute
+- Resp.: 20/minute
+- BP: 100/62 mmHg
 - O2 sat: 99% on room air
-- Weight: 68 kg
+- Weight: 21 kg
 
 #### Q1
-**Which of the following best explains his rash and associated findings?**
+**Which of the following is the most likely cause of her rash?**
 
-- A. Anaphylaxis to amoxicillin
-- B. Early Stevens-Johnson syndrome
-- C. Measles with secondary tonsillitis
-- D. Mononucleosis with an amoxicillin rash  **(key)**
-- E. Scarlet fever from group A streptococcus
+- A. Erythema infectiosum  **(key)**
+- B. Kawasaki disease
+- C. Measles infection
+- D. Streptococcal scarlet fever
+- E. Systemic lupus erythematosus
 
-*Explanation:* Exudative tonsillitis, posterior cervical lymphadenopathy, fatigue and a palpable spleen in an adolescent suggest Epstein-Barr virus infection, and many patients with mononucleosis who take amoxicillin develop a maculopapular rash that does not usually mean a lasting penicillin allergy. He has no mucosal ulcers, blisters or peeling to suggest Stevens-Johnson syndrome, and no swelling or wheeze to suggest anaphylaxis. Measles and scarlet fever do not explain the splenomegaly, and the scarlet fever rash is a fine sandpaper rash rather than one that follows amoxicillin.
+*Explanation:* Bright red cheeks followed by a lacy rash on the limbs that brightens with warmth, after a mild febrile illness, in a well child during a school cluster, is erythema infectiosum from parvovirus B19, a benign viral exanthem. The SOGC guideline describes erythema infectiosum as its typical presentation. Measles brings high fever, cough, conjunctivitis and a rash spreading down from the face. Scarlet fever has a sandpaper rash with sore throat. Kawasaki disease needs 5 days of fever with mucosal and eye changes. Lupus does not appear as a school cluster after a cold.
 
 *Key feature:* Pediatric fever 4. In a febrile child with rash, separate dangerous rashes like meningococcemia or measles from benign viral exanthems.
 
-*Source:* Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 301, Epstein-Barr Virus. https://www.inspectioncopy.elsevier.com/book/details/9780323883054
+*Source:* Crane J, Mundle W, Boucoiran I, SOGC Maternal Fetal Medicine Committee. Parvovirus B19 infection in pregnancy. J Obstet Gynaecol Can. 2014. https://pubmed.ncbi.nlm.nih.gov/25668048/
 
 #### Q2
-**Which of the following is the most appropriate treatment plan for his illness?**
+**Which of the following is the most appropriate treatment for her rash?**
 
-- A. Change to azithromycin for 5 days
-- B. Change to cephalexin for 10 days
-- C. Continue amoxicillin with an antihistamine
-- D. Oral prednisone for 5 days
-- E. Stop amoxicillin, give supportive care  **(key)**
+- A. amoxicillin by mouth for 10 days
+- B. azithromycin by mouth for 5 days
+- C. cephalexin by mouth for 7 days
+- D. mupirocin cream to the cheeks
+- E. No antibiotic, with supportive care  **(key)**
 
-*Explanation:* Infectious mononucleosis is a viral illness, so the amoxicillin is stopped and he receives fluids, rest and analgesia. Switching to azithromycin or cephalexin treats a bacterial infection he is unlikely to have, and continuing amoxicillin gives no benefit while the rash persists. Corticosteroids are reserved for complications such as impending airway obstruction, which he does not have.
+*Explanation:* Her rash comes from a viral infection that resolves without treatment, and she is well, so she needs no antibiotic. Antibiotics do not act on viruses and add side effects, including drug rashes that can confuse the picture. Amoxicillin, azithromycin and cephalexin treat bacterial infections she does not have. Mupirocin treats impetigo, and her cheeks are red without crusts or blisters. Supportive care includes an antihistamine for itch if needed.
 
 *Key feature:* Pediatric fever 7. Do not give antibiotics to children whose fever likely has a viral source, such as URTI or otitis media.
 
-*Source:* Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 301, Epstein-Barr Virus. https://www.inspectioncopy.elsevier.com/book/details/9780323883054
+*Source:* Crane J, Mundle W, Boucoiran I, SOGC Maternal Fetal Medicine Committee. Parvovirus B19 infection in pregnancy. J Obstet Gynaecol Can. 2014. https://pubmed.ncbi.nlm.nih.gov/25668048/
 
 #### Q3
-**Which of the following findings would most suggest a dangerous drug reaction rather than this rash?**
+**Which of the following is the most appropriate advice for her pregnant mother?**
 
-- A. Itch that is worse at night
-- B. Maculopapular appearance
-- C. Onset 3 days after starting a drug
-- D. Painful skin with mucosal erosions  **(key)**
-- E. Rash on the trunk and arms
+- A. Blood tests for immunity and recent infection  **(key)**
+- B. Immune globulin injection today
+- C. No action, as the rash is benign
+- D. Routine care at her next visit
+- E. Stay away from her daughter for 2 weeks
 
-*Explanation:* Skin pain, mucosal erosions, blisters and skin detachment are warning signs of Stevens-Johnson syndrome or toxic epidermal necrolysis, which need urgent assessment and withdrawal of the drug. An itchy, symmetric maculopapular rash on the trunk and arms without mucosal involvement fits the benign amoxicillin rash of mononucleosis. Onset a few days after starting a drug is common to both benign and severe reactions, so timing alone does not separate them.
+*Explanation:* The SOGC recommends that pregnant women exposed to parvovirus B19 have IgG and IgM testing to find out whether they are immune, susceptible or recently infected. A positive IgG with a negative IgM means she is immune and can be reassured, while a recent infection calls for referral and serial ultrasounds for fetal anemia and hydrops. Saying no action is needed, or waiting until her next routine visit, misses a treatable fetal risk. Separating her from her daughter now comes too late, because the child was most infectious before the rash appeared.
 
 *Key feature:* Pediatric fever 4. In a febrile child with rash, separate dangerous rashes like meningococcemia or measles from benign viral exanthems.
 
-*Source:* Creighton R, Gupta S, Langille C, Sutherland A. Diagnosis and management of Stevens-Johnson syndrome and toxic epidermal necrolysis in pediatric patients: a systematic review of clinical guidelines and consensus statements. Pediatr Dermatol. 2026. https://doi.org/10.1111/pde.70149
+*Source:* Crane J, Mundle W, Boucoiran I, SOGC Maternal Fetal Medicine Committee. Parvovirus B19 infection in pregnancy. J Obstet Gynaecol Can. 2014. https://pubmed.ncbi.nlm.nih.gov/25668048/
 
 ### pediatric-fever-38: Rash after three days of high fever
 
@@ -1963,129 +1956,126 @@ A 3-year-old girl is brought to the emergency department with fever and cough fo
 
 *Source:* Sauve L, Forrester AM, Top KA, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Group A streptococcal (GAS) pharyngitis: a practical guide to diagnosis and treatment. Paediatr Child Health. 2021. https://cps.ca/en/documents/position/group-a-streptococcal
 
-### pediatric-fever-43: Toddler brought in after a seizure
+### pediatric-fever-43: Eleven week old seen after a fever at home
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 18-month-old boy is brought to the emergency department by ambulance after a seizure at home. He has had a runny nose and cough since yesterday, and a fever of 39.4°C started this afternoon. His parents saw him stiffen and then shake all four limbs for about 2 minutes. He was sleepy for 20 minutes afterwards. He has had no previous seizures and is developing normally. He is fully immunized. He is now alert and playing. He has no neck stiffness and his neurological examination is normal. He has clear nasal discharge, and his ears and chest are normal.
+An 11-week-old girl is brought to the emergency department by her parents after a rectal temperature of 38.7°C at home this afternoon. She was born at 39 weeks and has had no illnesses. Her parents say she is feeding normally and settles when held. She is smiling and alert, with pink skin and a capillary refill under 2 seconds. Her fontanelle is soft. There is no rash, and her ears, chest and abdomen are normal. A catheter urinalysis shows leukocyte esterase 2+, positive nitrite and pyuria, and a urine culture is sent. ANC 3.6 x 10^9/L, CRP 8 mg/L and procalcitonin 0.12 mcg/L, and a blood culture is sent. The family has a children's acetaminophen suspension of 160 mg per 5 mL at home.
 
-- Temperature: 39.1°C
-- Pulse: 146/minute
-- Resp.: 30/minute
-- O2 sat: 98% on room air
-- Weight: 11.5 kg
+- Temperature: 38.3°C rectal
+- Pulse: 156/minute
+- Resp.: 38/minute
+- O2 sat: 99% on room air
+- Weight: 5.4 kg
 
 #### Q1
-**Which of the following is the most appropriate investigation plan for him?**
+**Which of the following is the most appropriate plan for her now?**
 
-- A. CT head before discharge
-- B. EEG within 48 hours
-- C. Electrolytes, glucose and CBC
-- D. Lumbar puncture and blood culture
-- E. No routine investigations  **(key)**
+- A. Admit for a 7 day IV antibiotic course
+- B. Home on an oral antibiotic, review in 24 hours  **(key)**
+- C. Home without antibiotics until the culture grows
+- D. IM ceftriaxone once, then no further antibiotic
+- E. Lumbar puncture, then admit for IV antibiotics
 
-*Explanation:* A single generalized seizure of 2 minutes in a febrile, developmentally normal 18-month-old is a simple febrile seizure. He is fully immunized, back to normal, has no meningeal signs and has a clear viral source, so a lumbar puncture is not required. The AAP advises against routine blood tests, neuroimaging and an EEG after a simple febrile seizure, and evaluation focuses on finding the source of the fever.
+*Explanation:* She is 77 days old and well appearing, with a positive urinalysis, an ANC of 3.6 x 10^9/L, a CRP of 8 mg/L and a procalcitonin of 0.12 mcg/L. The Canadian Paediatric Society no longer treats a positive urinalysis alone as high risk. It advises oral or IV antibiotics for such infants, with oral cefixime an option, and allows discharge with follow-up within 24 to 48 hours at 61 to 90 days. She can go home on an oral antibiotic with review in 24 hours while cultures incubate. The CPS bases the decision on a lumbar puncture on the inflammatory markers, and hers are normal. A fixed 7 day IV course keeps a well infant in hospital when oral treatment is enough. Leaving a probable urinary infection untreated until the culture grows risks spread to the kidneys and blood. A single dose of ceftriaxone does not complete treatment.
 
 *Key feature:* Pediatric fever 1. Stratify sepsis risk in febrile neonates, infants, and children by age and other factors to guide the septic workup.
 
-*Source:* American Academy of Pediatrics Subcommittee on Febrile Seizures. Neurodiagnostic evaluation of the child with a simple febrile seizure. Pediatrics. 2011. https://pubmed.ncbi.nlm.nih.gov/21285335/
+*Source:* Burstein B, Lirette MP, Beck C, Chauvin-Kimoff L, Chan K. Canadian Paediatric Society position statement. Management of well-appearing febrile young infants aged 90 days or younger. Paediatr Child Health. 2024. Updated 2026. https://cps.ca/en/documents/position/management-of-well-appearing-febrile-young-infants-aged-90-days
 
 #### Q2
-*Update:* His parents ask whether giving medicine regularly for fever will stop another seizure.
+**Which of the following volumes of the 160 mg per 5 mL suspension is the correct acetaminophen dose for her?**
 
-**Which of the following is the most accurate advice about antipyretics and febrile seizures?**
+- A. 1 mL every 4 to 6 hours
+- B. 2.5 mL every 4 to 6 hours  **(key)**
+- C. 4 mL every 4 to 6 hours
+- D. 5 mL every 4 to 6 hours
+- E. 7.5 mL every 4 to 6 hours
 
-- A. Alternate two drugs to keep him afebrile
-- B. Give doses every 4 hours around the clock
-- C. They help comfort, not seizure prevention  **(key)**
-- D. They prevent seizures only if given early
-- E. Use rectal doses at the first sign of fever
-
-*Explanation:* Antipyretics such as acetaminophen and ibuprofen can improve his comfort, but they do not reduce the risk of another febrile seizure. Around-the-clock dosing, alternating drugs or early rectal doses add the risk of dosing errors without preventing a recurrence. The AAP does not recommend continuous or intermittent medication to prevent simple febrile seizures.
+*Explanation:* At 15 mg/kg, her 5.4 kg gives 81 mg. The suspension has 32 mg per mL, so 81 divided by 32 is about 2.5 mL. The American Academy of Pediatrics advises dosing by weight and measuring with a proper syringe. 1 mL would be the right volume of the stronger 80 mg per mL infant drops, and here gives only 32 mg, or about 6 mg/kg. 4 mL gives 128 mg, about 24 mg/kg. 5 mL and 7.5 mL give 160 mg and 240 mg, doses for older children.
 
 *Key feature:* Pediatric fever 8. Dose antipyretics for children by weight rather than by age.
 
-*Source:* American Academy of Pediatrics Subcommittee on Febrile Seizures. Febrile seizures: clinical practice guideline for the long-term management of the child with simple febrile seizures. Pediatrics. 2008. https://pubmed.ncbi.nlm.nih.gov/18519501/
+*Source:* Sullivan JE, Farrar HC, American Academy of Pediatrics Section on Clinical Pharmacology and Therapeutics, Committee on Drugs. Fever and antipyretic use in children. Pediatrics. 2011. https://pubmed.ncbi.nlm.nih.gov/21357332/
 
 #### Q3
-**Which of the following features should prompt his parents to bring him back immediately?**
+*Update:* The next day her urine culture is growing gram negative rods. She had acetaminophen 3 hours ago, and her temperature is 37.4°C rectal. Her pulse is 188/minute, and her hands are cool. She cries during the examination and hiccups after a feed.
 
-- A. Clear nasal discharge
-- B. Cough that is worse at night
-- C. Drowsiness that does not improve  **(key)**
-- D. Fever lasting another day
-- E. Temperature of 39°C
+**Which of the following findings at this point most suggests that she is becoming septic?**
 
-*Explanation:* After the brief sleepiness that follows a febrile seizure, a child should return to normal, as he has. NICE advises parents to seek help if the child has another fit, develops a rash that does not blanch or seems less well. Drowsiness that does not improve shows a child who is less well and needs immediate reassessment for meningitis or another serious illness. Clear nasal discharge, night cough and another day of fever are expected with a viral infection, and a temperature of 39°C is common with viral illness.
+- A. Crying during the examination
+- B. Culture growing gram negative rods
+- C. Hiccups after a feed
+- D. Pulse of 188/minute with cool hands  **(key)**
+- E. Temperature of 37.4°C after acetaminophen
+
+*Explanation:* A pulse of 188/minute while her temperature is almost normal, with cool hands, is tachycardia out of proportion to fever and a sign of poor perfusion. NICE lists a heart rate above 160/minute in infants under 12 months among the warning features of serious illness. In a young infant with a urinary infection this change suggests bacteremia and needs reassessment for IV antibiotics and admission. A culture growing gram negative rods confirms the expected urinary infection but does not by itself show sepsis. A fall in temperature after acetaminophen does not separate serious from minor illness. Crying during examination and hiccups after feeds are normal at this age.
 
 *Key feature:* Pediatric fever 2. Recognize subtle sepsis signs in febrile children, such as lethargy, poor feeding, or abnormal vital signs.
 
 *Source:* National Institute for Health and Care Excellence. Fever in under 5s: assessment and initial management. NICE guideline NG143. 2019, updated 2021. https://www.nice.org.uk/guidance/ng143
 
-### pediatric-fever-44: Purple spots on the legs after a cold
+### pediatric-fever-44: Red patch on the thigh after a camping trip
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 5-year-old boy is brought to the emergency department with a rash on his legs for 1 day. He had a sore throat and runny nose last week. Since yesterday he has had a low-grade fever, pain in both ankles and crampy abdominal pain. He is playful between bouts of pain. He has raised, purple spots that do not blanch, concentrated on the backs of his legs and buttocks. Both ankles are swollen and tender. His abdomen is soft with mild periumbilical tenderness. The rest of the examination is normal.
+A 7-year-old boy is brought to the emergency department with 2 days of fever up to 38.4°C, headache and aching muscles. Ten days ago he returned from a week of camping in southeastern Manitoba, where he played in long grass and woods. No tick was seen. Yesterday his mother noticed a red patch on the back of his right thigh. It is an oval, flat, pink to red area 12 cm across with a paler centre. It is not itchy, swollen or painful to touch. He is alert and playful. He has no neck stiffness, facial weakness or joint swelling. His heart sounds are normal and regular.
 
-- Temperature: 37.9°C
-- Pulse: 108/minute
-- Resp.: 22/minute
-- BP: 102/60 mmHg
+- Temperature: 38.1°C oral
+- Pulse: 104/minute
+- Resp.: 20/minute
+- BP: 104/64 mmHg
 - O2 sat: 99% on room air
-- Weight: 19 kg
+- Weight: 24 kg
 
 #### Q1
 **Which of the following is the most likely cause of his rash?**
 
-- A. Acute leukemia
-- B. Hemolytic uremic syndrome
-- C. IgA vasculitis  **(key)**
-- D. Immune thrombocytopenia
-- E. Meningococcemia
+- A. Cellulitis of the thigh
+- B. Erythema migrans  **(key)**
+- C. Fungal tinea corporis
+- D. Hives from a viral illness
+- E. Local reaction to an insect bite
 
-*Explanation:* Palpable, nonblanching purpura on the buttocks and backs of the legs, with ankle arthritis, crampy abdominal pain and a recent upper respiratory infection in a well child, is typical of IgA vasculitis, also called Henoch-Schonlein purpura. Meningococcemia causes a rapidly spreading petechial or purpuric rash in an ill child with poor perfusion, which he does not have. Immune thrombocytopenia and leukemia cause flat petechiae and bruising from low platelets rather than palpable purpura with arthritis. Hemolytic uremic syndrome usually follows bloody diarrhea and causes pallor and kidney injury.
+*Explanation:* A flat, painless red patch more than 5 cm across, appearing about 1 to 2 weeks after time in a Lyme risk area of southeastern Manitoba, with fever, headache and myalgia, is erythema migrans of early Lyme disease. Cellulitis is warm, swollen and tender. A local bite reaction is smaller, swollen and itchy. Tinea has a scaly advancing edge and no fever. Urticarial wheals are itchy and come and go within hours.
 
 *Key feature:* Pediatric fever 4. In a febrile child with rash, separate dangerous rashes like meningococcemia or measles from benign viral exanthems.
 
-*Source:* Ozen S, Pistorio A, Iusan SM, et al. EULAR/PRINTO/PRES criteria for Henoch-Schonlein purpura, childhood polyarteritis nodosa, childhood Wegener granulomatosis and childhood Takayasu arteritis. Ankara 2008. Part II: final classification criteria. Ann Rheum Dis. 2010. https://doi.org/10.1136/ard.2009.116657
+*Source:* Onyett H, updated by McDonald J, Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Lyme disease in Canada: focus on children. Canadian Paediatric Society practice point. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/lyme-disease-children
 
 #### Q2
-**Which of the following investigations are most important to obtain at this visit?**
+**Which of the following features of his rash are most typical of the most likely diagnosis?**
 
 Select 2.
 
-- A. Antinuclear antibody
-- B. CBC and blood film  **(key)**
-- C. CT of the abdomen
-- D. Lumbar puncture
-- E. Serum IgA level
-- F. Skin biopsy
-- G. Throat culture
-- H. Urinalysis  **(key)**
+- A. Appeared within hours of being outdoors
+- B. Flat and larger than 5 cm  **(key)**
+- C. Intense itch with swelling
+- D. Not painful to touch  **(key)**
+- E. Pustule at the centre
+- F. Smaller than 2 cm
+- G. Warm and tender to touch
 
-*Explanation:* A CBC with blood film shows a normal platelet count in IgA vasculitis, which separates it from thrombocytopenic causes of purpura such as immune thrombocytopenia and leukemia. A urinalysis looks for hematuria and proteinuria from kidney involvement, the main source of long-term harm. Serum IgA, antinuclear antibody and a skin biopsy do not change emergency management. A lumbar puncture and throat culture are not indicated, and ultrasound rather than CT is used if intussusception is suspected.
+*Explanation:* The Canadian Paediatric Society describes erythema migrans as usually larger than 5 cm and mainly flat, appearing 7 to 14 days after a bite, and usually painless, unlike cellulitis. A classic bull's eye is uncommon. A small, swollen and itchy lesion suggests a local hypersensitivity reaction to a bite. Warmth and tenderness suggest cellulitis. A central pustule points to a bacterial skin infection. A rash within hours of exposure is too early for erythema migrans.
 
 *Key feature:* Pediatric fever 4. In a febrile child with rash, separate dangerous rashes like meningococcemia or measles from benign viral exanthems.
 
-*Source:* Kliegman RM, St Geme JW III, Blum NJ, et al., editors. Nelson Textbook of Pediatrics. 22nd ed. Elsevier. 2024. Chapter 210, Vasculitis Syndromes. https://www.inspectioncopy.elsevier.com/book/details/9780323883054
+*Source:* Onyett H, updated by McDonald J, Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Lyme disease in Canada: focus on children. Canadian Paediatric Society practice point. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/lyme-disease-children
 
 #### Q3
-*Update:* His platelet count is 310 x 10^9/L and his urinalysis shows trace blood with no protein. His blood pressure remains normal.
+**Which of the following is the most appropriate management for him?**
 
-**Which of the following is the most appropriate follow-up plan for him?**
+- A. cephalexin by mouth for 7 days
+- B. clotrimazole cream for 2 weeks
+- C. doxycycline by mouth for 10 days  **(key)**
+- D. No treatment, reassess in 1 week
+- E. Serology first, treat only if positive
 
-- A. Admit for IV methylprednisolone
-- B. Serial urinalysis and BP checks for months  **(key)**
-- C. Start oral ASA for joint pain
-- D. Start oral prednisone for 4 weeks
-- E. No follow-up needed as he is well
-
-*Explanation:* Kidney involvement in IgA vasculitis can appear weeks after the rash. In a systematic review, 97% of urine abnormalities appeared within 6 months, and no long-term kidney impairment followed a normal urinalysis. He needs repeated urinalysis and blood pressure checks for 6 months even though the first urinalysis is nearly normal. Corticosteroids are not needed for his mild skin and joint disease and do not replace monitoring. ASA is avoided in children because of the risk of Reye syndrome, and acetaminophen or an NSAID with normal kidney function treats the joint pain. Discharge without follow-up would miss late nephritis.
+*Explanation:* The Canadian Paediatric Society advises diagnosing and treating erythema migrans without laboratory confirmation, because antibodies are often not detectable in the first 4 weeks, and lists doxycycline for 10 days as a treatment for early localized disease, noting data on the safety of short courses in children. Waiting for serology or reassessing in a week delays treatment and risks spread of infection. Cephalexin treats cellulitis and clotrimazole treats tinea, neither of which he has.
 
 *Key feature:* Pediatric fever 4. In a febrile child with rash, separate dangerous rashes like meningococcemia or measles from benign viral exanthems.
 
-*Source:* Narchi H. Risk of long term renal impairment and duration of follow up recommended for Henoch-Schonlein purpura with normal or minimal urinary findings: a systematic review. Arch Dis Child. 2005. https://doi.org/10.1136/adc.2005.074641
+*Source:* Onyett H, updated by McDonald J, Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Lyme disease in Canada: focus on children. Canadian Paediatric Society practice point. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/lyme-disease-children
 
 ### pediatric-fever-45: Six month old with a full fontanelle
 
@@ -2148,65 +2138,65 @@ Select 2.
 
 *Source:* Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. Paediatr Child Health. 2014. Updated 2020, reaffirmed 2026. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
 
-### pediatric-fever-46: Infant with pneumonia and cold hands
+### pediatric-fever-46: Worse again after the flu
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 11-month-old girl is brought to the emergency department with fever, cough and fast breathing for 2 days. Today she is lethargic and has had one wet diaper. She was born at term and is healthy. She is pale and mottled, with cool hands and feet and a capillary refill of 5 seconds. She has crackles at the right base. The liver edge is 1 cm below the right costal margin.
+A 6-year-old girl is brought to the emergency department with fast breathing and right sided chest pain since this morning. Five days ago she and her 9-year-old brother tested positive for influenza A. She was improving, but last night her fever returned to 40.0°C and her cough worsened. She is healthy and immunized but did not receive influenza vaccine this year. She is tired and breathing fast with intercostal indrawing. There are bronchial breath sounds over the right chest. Her hands are cool, and capillary refill is 4 seconds. The chest X-ray shows consolidation in two right lobes with thin walled air cysts and a small effusion.
 
-- Temperature: 39.3°C rectal
-- Pulse: 188/minute
-- Resp.: 54/minute
-- BP: 78/40 mmHg
-- O2 sat: 92% on room air
-- Weight: 9 kg
+- Temperature: 39.6°C oral
+- Pulse: 152/minute
+- Resp.: 44/minute
+- BP: 98/58 mmHg
+- O2 sat: 88% on room air
+- Weight: 20 kg
 
 #### Q1
-**Which of the following is the most appropriate initial fluid resuscitation for her?**
+**Which of the following empiric antibiotic regimens is most appropriate for her?**
 
-- A. Albumin 25% 45 mL IV bolus
-- B. Crystalloid 45 mL IV bolus
-- C. Crystalloid 180 mL IV bolus  **(key)**
-- D. Crystalloid 540 mL IV bolus
-- E. Maintenance fluid at 36 mL/hour
+- A. amoxicillin by mouth
+- B. ampicillin IV alone
+- C. azithromycin by mouth
+- D. ceftriaxone IV alone
+- E. ceftriaxone with vancomycin IV  **(key)**
 
-*Explanation:* Lethargy, mottling, cool extremities, a capillary refill of 5 seconds and low urine output show septic shock with poor perfusion, so resuscitation starts with a crystalloid bolus of 10 to 20 mL/kg, here 180 mL for 9 kg, preferably a balanced crystalloid, given rapidly and followed by reassessment. The 2026 Surviving Sepsis Campaign guideline allows up to 40 to 60 mL/kg in the first hour only as repeated 10 to 20 mL/kg boluses. A 45 mL bolus is only 5 mL/kg and too small. Giving 540 mL, or 60 mL/kg, at once removes the chance to detect fluid overload between boluses. Maintenance fluid at 36 mL/hour does not treat shock, and the guideline recommends crystalloids rather than albumin.
+*Explanation:* Secondary bacterial pneumonia after influenza with rapidly progressing multilobar disease and air cysts, or pneumatoceles, raises concern for Staphylococcus aureus, including MRSA. The Canadian Paediatric Society advises a third generation cephalosporin for severe pneumonia and suggests adding vancomycin when there is rapidly progressing multilobar disease or pneumatoceles. Ampicillin alone suits a child admitted without life-threatening illness. Oral amoxicillin and azithromycin are for outpatients, and pneumococcal resistance to azithromycin is increasingly common. The statement also advises strong consideration of oseltamivir for a hospitalized child with influenza.
 
-*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
+*Key feature:* Pediatric fever 3. Give early broad spectrum antibiotics to children with suspected sepsis.
 
-*Source:* Weiss SL, Peters MJ, Oczkowski SJW, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Pediatr Crit Care Med. 2026. https://pubmed.ncbi.nlm.nih.gov/41869844/
+*Source:* Le Saux N, Robinson JL, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Uncomplicated pneumonia in healthy Canadian children and youth: practice points for management. Paediatr Child Health. 2015. Updated 2024. https://cps.ca/en/documents/position/pneumonia-management-children-youth
 
 #### Q2
-*Update:* After a second 180 mL bolus her pulse is 176/minute and capillary refill 4 seconds. New crackles are heard in both lungs, the liver edge is 4 cm below the costal margin and her saturation is 88% on room air.
+**Which of the following findings in her case best shows reduced perfusion?**
 
-**Which of the following best explains the new findings after her second fluid bolus?**
+- A. Capillary refill of 4 seconds  **(key)**
+- B. O2 saturation of 88%
+- C. Respiratory rate of 44/minute
+- D. Right sided chest pain
+- E. Temperature of 39.6°C
 
-- A. Anaphylaxis to the fluid
-- B. Aspiration of feeds
-- C. Fluid overload after boluses  **(key)**
-- D. Progression of her pneumonia
-- E. Tension pneumothorax
-
-*Explanation:* New crackles in both lungs, a falling saturation and a liver edge that has moved from 1 cm to 4 cm below the costal margin after 40 mL/kg of fluid indicate fluid overload. Each bolus is followed by reassessment for these signs, and further boluses stop when they appear. Pneumonia progression would not enlarge the liver within minutes. Tension pneumothorax causes unilateral loss of breath sounds, anaphylaxis to crystalloid is not expected, and aspiration would not enlarge the liver.
+*Explanation:* The Canadian Paediatric Society lists perfusion indicators such as capillary refill, pulse pressure, skin colour and temperature, along with heart rate and mental status, as the signs used to recognize sepsis. Her capillary refill of 4 seconds with cool hands shows poor perfusion even though her BP is normal. Low saturation and fast breathing reflect the lung disease. Chest pain comes from pleural inflammation, and fever alone does not show poor perfusion.
 
 *Key feature:* Pediatric fever 2. Recognize subtle sepsis signs in febrile children, such as lethargy, poor feeding, or abnormal vital signs.
 
 *Source:* Farrell CA, Canadian Paediatric Society Acute Care Committee. Diagnosis and management of severe sepsis in the paediatric patient. Paediatr Child Health. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/diagnosis-and-management-of-sepsis-in-the-paediatric-patient
 
 #### Q3
-**Which of the following is the most appropriate next step for her persistent shock?**
+*Update:* Her 9-year-old brother is also examined. He has a fever of 38.7°C, a dry cough and muscle aches for 5 days, with steady improvement. He is drinking well, his chest is clear, his breathing is comfortable and his O2 saturation is 98% on room air.
 
-- A. Dopamine infusion
-- B. Epinephrine infusion  **(key)**
-- C. Furosemide 9 mg IV
-- D. Phenylephrine infusion
-- E. Third crystalloid bolus
+**Which of the following is the most appropriate management for her brother?**
 
-*Explanation:* Shock that persists after fluid, now with fluid overload, needs a vasoactive infusion rather than more fluid. The CPS recommends epinephrine or norepinephrine as the first vasoactive drug and no longer recommends dopamine. Her cool, mottled extremities and delayed capillary refill fit cold shock, in which epinephrine is usually chosen. A third bolus would worsen her pulmonary edema, furosemide lowers preload while she is still in shock, and phenylephrine raises afterload without improving cardiac output.
+- A. amoxicillin to prevent pneumonia
+- B. azithromycin by mouth for 5 days
+- C. Blood culture and chest X-ray
+- D. Ceftriaxone IM once
+- E. Supportive care without antibiotics  **(key)**
 
-*Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
+*Explanation:* He has uncomplicated influenza that is improving, with a clear chest and normal saturation, so antibiotics are not indicated. Antibiotics do not treat influenza, and they add side effects and resistance. His family should return if he worsens again, as his sister did, since influenza can be followed by bacterial pneumonia. Tests and a dose of ceftriaxone are not needed in a child who is improving.
 
-*Source:* Farrell CA, Canadian Paediatric Society Acute Care Committee. Diagnosis and management of severe sepsis in the paediatric patient. Paediatr Child Health. 2020. Reaffirmed 2026. https://cps.ca/en/documents/position/diagnosis-and-management-of-sepsis-in-the-paediatric-patient
+*Key feature:* Pediatric fever 7. Do not give antibiotics to children whose fever likely has a viral source, such as URTI or otitis media.
+
+*Source:* Le Saux N, Robinson JL, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Uncomplicated pneumonia in healthy Canadian children and youth: practice points for management. Paediatr Child Health. 2015. Updated 2024. https://cps.ca/en/documents/position/pneumonia-management-children-youth
 
 ### pediatric-fever-47: Toddler with mouth sores who will not drink
 

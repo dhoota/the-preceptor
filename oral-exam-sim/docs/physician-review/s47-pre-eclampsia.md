@@ -15,6 +15,15 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - pre-eclampsia-23 q2: the 12 hour lab interval is carried over from the earlier ACOG PB 222 wording, now applied after birth. Please confirm. *(samps-pass2-mixed.md)*
 - pre-eclampsia-34 q2: the key is 60 minutes, the upper end of ACOG's 30 to 60 minute window. *(samps-pass2-mixed.md)*
 - pre-eclampsia-18 q1: Ramoska 1989 is old but is primary ED literature and is still cited. *(samps-pass2-mixed.md)*
+- pre-eclampsia-16 q3 keys conservative care for an unruptured, contained hematoma in a stable patient, based on Haram 2009. *(samps-replace-s49-s53-s47-s48.md)*
+- pre-eclampsia-34 q2 and q3 cite SOGC 426 (2022). The full 2022 text was paywalled. I checked the statements against the SOGC 2014 executive summary: nifedipine and magnesium can be used together, magnesium is not an antihypertensive, and magnesium for fetal neuroprotection applies at 31 weeks and 6 days or earlier. Please confirm them against the 2022 guideline. *(samps-replace-s49-s53-s47-s48.md)*
+- pre-eclampsia-34 q2 keys birth once she is stable after pulmonary edema at 33 weeks and 2 days, without waiting 48 hours for betamethasone. Some obstetric teams would wait for steroids when the mother is stable. Please confirm. *(samps-replace-s49-s53-s47-s48.md)*
+- pre-eclampsia-34 q3 cites SOGC 426 for the 33 weeks and 6 days neuroprotection threshold. That threshold is confirmed in SOGC No. 376 (2019). *(samps-replace-s49-s53-s47-s48.md)*
+- pre-eclampsia-16 overlaps signed-off pre-eclampsia-07 in story (right shoulder pain from the liver in HELLP) but not in keyed decisions. It could be recast if the physician prefers. *(samps-replace-s49-s53-s47-s48.md)*
+- pre-eclampsia-16 q4 rejects dexamethasone 10 mg IV. At 34 weeks and 1 day, antenatal corticosteroids for the fetus are still within SOGC 364. The option's dose is the HELLP regimen, and caesarean is today, so the key holds. *(samps-replace-s49-s53-s47-s48.md)*
+- pre-eclampsia-34 q2 now keys echocardiography. Please confirm that TTE before birth is expected practice in your centre for antenatal pulmonary edema in pre-eclampsia. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-35 q4 (weaning the naloxone infusion) and pre-eclampsia-34 q2 (echocardiography for antenatal pulmonary edema) were rekeyed during the second check. Each new key has had one review. Please read both before sign-off. *(samps-replace-s49-s53-s47-s48.md)*
+- van Mook 2005 and Sheldon 2002 full texts remain unread (403). Please confirm the treatment paragraph in van Mook directly. *(samps-replace-s49-s53-s47-s48.md)*
 - Drop both extras (pre-eclampsia-39 and pre-eclampsia-40). Each is an exact copy of a batch SAMP, and each carried a planted defect, now fixed. They would fail the near-duplicate stem rule if exported. *(samps-s47-lensA.md)*
 - Overlap rewrites. Decide whether to rebuild pre-eclampsia-23, 34 (q1 and q2), 37 and 38 q3, or accept the repetition of s15's write-in cases in MCQ form. *(samps-s47-lensA.md)*
 - pre-eclampsia-25 q3 tests the ACOG platelet threshold for a severe feature (below 100 x 10^9/L) in a Canadian bank. The stem names ACOG, so the key is correct. I could not confirm SOGC 2022's own platelet threshold, and the brief prefers a Canadian standard. Consider recasting it to SOGC once the full text is checked. Low. *(samps-s47-lensA.md)*
@@ -23,85 +32,95 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - Overlap rewrites: pre-eclampsia-23 q1 (s15 pre-eclampsia-12 q1), pre-eclampsia-34 q2 (s15 pre-eclampsia-14 q1) and pre-eclampsia-37 q3 (s15 pre-eclampsia-02 q3). Decide whether to rebuild them or accept each as an MCQ restatement of an s15 write-in point. The batch now has four questions that teach "atypical symptoms, so do HELLP labs" (16 q1, 23 q1, 31 q1, 37 q1). One or two of these could be retargeted. *(samps-s47-lensB.md)*
 - pre-eclampsia-34 q2 rests on ACOG's caution about labetalol in bradycardia. ISSHP does not list it, and a pulse of 46/minute from athletic training with a normal ECG is not a strict contraindication. The key holds because nifedipine is equally first-line. A physician should confirm that labetalol is not also defensible as "most appropriate". *(samps-s47-lensB.md)*
 - Both extras (pre-eclampsia-39 and pre-eclampsia-40) are still exact copies of batch SAMPs. Each carried a planted defect again after the rework. They should not be exported. *(samps-s47-lensB.md)*
+- pre-eclampsia-16 q4 keys labetalol 200 mg PO twice daily. The dose is inside the SOGC daily range. The SOGC 2022 table could not be opened to confirm the frequency. Please check it against your copy of Guideline No. 426. *(samps-sweep2-review-sw2-b.md)*
+- pre-eclampsia-16 q3 and pre-eclampsia-31 q2 both teach raised liver enzymes below the HELLP cut-offs, with LDH 410 U/L in both. The stories and options differ. Keep both or change one. *(samps-sweep2-review-sw2-b.md)*
+- pre-eclampsia-16 q2: in mock mode, the q3 lab results imply the q2 key. Left in place because q3 needs them. *(samps-sweep2-review-sw2-b.md)*
+- pre-eclampsia-16 q4 keys labetalol 200 mg PO twice daily. ISSHP supports oral labetalol for non-severe hypertension to a diastolic target of 85 mmHg, but its dose table did not extract as text. The dose follows the ACOG 2020 starting regimen and sits within the usual SOGC range. I could not open the full SOGC 2022 guideline to check its table. *(samps-sweep2-sw2-b.md)*
+- pre-eclampsia-16 q1 relies on one Canadian case series (29% of women with Bell palsy developed a hypertensive disorder) and on ISSHP listing Bell palsy as an organ problem of pre-eclampsia. The key is a test for proteinuria, not a diagnosis. *(samps-sweep2-sw2-b.md)*
 
 Review reports: docs/reviews/writer-s47.md, samps-s47-lensA.md, samps-s47-lensB.md
 
 ## SAMPs
 
-### pre-eclampsia-16: Heartburn that antacids did not settle
+### pre-eclampsia-16: Facial droop late in pregnancy
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 38-year-old woman, G3P2 at 31 weeks and 2 days, presents to the emergency department with 10 hours of epigastric pain and nausea. She has vomited twice. She thinks it is reflux, which she had in her last pregnancy, but antacids have not helped. This pregnancy has been uncomplicated. At her 28-week visit her BP was 118 mmHg systolic and 72 mmHg diastolic. She takes a prenatal vitamin. She has no headache or visual change. The abdomen is soft with epigastric and right upper quadrant tenderness. The uterus is nontender and the fundal height is 31 cm. Reflexes are normal. There is no edema.
+A 31-year-old woman, G2P1 at 35 weeks and 4 days, presents to the emergency department because the left side of her face has drooped since she woke this morning. Water dribbles from the left corner of her mouth when she drinks. She has no headache, limb weakness or trouble speaking. It is February in Winnipeg, and she has not travelled or had a tick bite. Her first pregnancy was uncomplicated. At 20 weeks her BP was 106 mmHg systolic and 64 mmHg diastolic. She takes a prenatal vitamin.
 
-- Temperature: 36.9°C oral
-- Pulse: 94/minute
-- Resp.: 18/minute
-- BP: 134/86 mmHg
-- O2 sat: 98% on room air
-- Weight: 72 kg
+She cannot wrinkle the left side of her forehead or fully close her left eye, and the left corner of her mouth droops. There are no vesicles in the ear or mouth. Speech, limb strength, sensation and coordination are normal. The uterus is soft and nontender, and the fetal heart rate is 142/minute.
+
+- Temperature: 36.7°C oral
+- Pulse: 86/minute
+- Resp.: 16/minute
+- BP: 138/88 mmHg
+- O2 sat: 99% on room air
 
 #### Q1
-**Which of the following is the most appropriate next step in her evaluation?**
+**Which of the following investigations is most important to add to her assessment now?**
 
-- A. Discharge with pantoprazole and follow-up
-- B. Gastrointestinal cocktail and reassessment
-- C. Lipase to exclude pancreatitis
-- D. Platelets, AST, ALT, creatinine and LDH  **(key)**
-- E. Urine dipstick for protein
+- A. CT head without contrast
+- B. Lyme disease serology
+- C. MRI of the brain
+- D. Nerve conduction studies
+- E. Urine protein-creatinine ratio  **(key)**
 
-*Explanation:* Epigastric and right upper quadrant pain after 20 weeks must be treated as possible HELLP syndrome until blood work shows otherwise, even with a BP of 134/86 mmHg. HELLP can appear before hypertension or proteinuria. Platelets, AST, ALT, creatinine and LDH answer the question within an hour. A gastrointestinal cocktail or pantoprazole with discharge risks missing HELLP, because pain relief does not exclude it. A lipase or a dipstick alone cannot detect hemolysis, low platelets or raised liver enzymes.
+*Explanation:* Facial palsy in late pregnancy is linked to pre-eclampsia. In a Canadian series of pregnant women with Bell palsy, 29% developed pre-eclampsia or gestational hypertension, and ISSHP lists Bell palsy among the rarer organ problems of pre-eclampsia. Her BP of 138/88 mmHg is below 140/90 mmHg but well above her baseline of 106/64 mmHg, so a test for proteinuria belongs in her assessment now, with a repeat BP. Weakness of the whole left face, including the forehead, with an otherwise normal neurological examination is a peripheral facial palsy, so CT and MRI of the brain are not needed. Lyme disease is unlikely in February with no travel or tick bite. Nerve conduction studies do not change her care today.
 
 *Key feature:* Pre-eclampsia 1. Consider pre-eclampsia in pregnant patients with unexplained headache, abdominal pain, or confusion, even with normal blood pressure.
 
-*Source:* Sibai BM. Diagnosis, controversies, and management of the syndrome of hemolysis, elevated liver enzymes, and low platelet count. Obstet Gynecol. 2004.
+*Source:* Shmorgun D, Chan WS, Ray JG. Association between Bell's palsy in pregnancy and pre-eclampsia. QJM. 2002. https://doi.org/10.1093/qjmed/95.6.359
 
 #### Q2
-*Update:* Hemoglobin 104 g/L, platelets 88 x 10^9/L, AST 236 U/L, ALT 198 U/L, LDH 812 U/L, creatinine 64 umol/L, glucose 5.2 mmol/L and INR 1.0. The film shows schistocytes. At 1540 her BP is 138/88 mmHg.
+*Update:* Her BP 15 minutes later is 144/94 mmHg. She now mentions 2 days of nausea and one episode of vomiting, which she blames on a new prenatal vitamin she started last week.
 
-**Which of the following is the most likely diagnosis in this patient?**
+**Which of the following is the most appropriate next step for her nausea?**
 
-- A. Acute cholangitis
-- B. Fatty liver of pregnancy
-- C. HELLP syndrome  **(key)**
-- D. Immune thrombocytopenia
-- E. Viral hepatitis
+- A. Ondansetron and discharge home
+- B. Outpatient review in 2 days
+- C. Platelets, liver enzymes and LDH  **(key)**
+- D. Switch back to her old vitamin
+- E. Upper abdominal ultrasound
 
-*Explanation:* Schistocytes with an LDH of 812 U/L, an AST of 236 U/L and platelets of 88 x 10^9/L complete the triad of hemolysis, raised liver enzymes and low platelets. HELLP can occur with a BP below 140/90 mmHg, as here. Fatty liver of pregnancy usually brings hypoglycemia, coagulopathy or renal failure, and her glucose, INR and creatinine are normal. Immune thrombocytopenia does not raise liver enzymes or fragment red cells. Viral hepatitis and cholangitis do not explain microangiopathic hemolysis, and she has no fever.
+*Explanation:* New hypertension of 144/94 mmHg after 20 weeks with a facial palsy, and now nausea and vomiting, means HELLP syndrome must be excluded before her nausea is blamed on anything else. Upper abdominal pain, nausea and vomiting are the typical symptoms of HELLP. Platelets, AST and ALT, and LDH are the core tests, with a blood film. Ondansetron with discharge, a review in 2 days or a change of vitamin would treat a presumed cause and leave HELLP undetected. An upper abdominal ultrasound looks for gallbladder disease and cannot measure platelets, hemolysis or liver injury.
 
 *Key feature:* Pre-eclampsia 3. Exclude HELLP syndrome in pregnant patients with vague symptoms like nausea, vomiting, or abdominal pain before other diagnoses.
 
-*Source:* Sibai BM. Diagnosis, controversies, and management of the syndrome of hemolysis, elevated liver enzymes, and low platelet count. Obstet Gynecol. 2004.
+*Source:* Haram K, Svendsen E, Abildgaard U. The HELLP syndrome: clinical issues and management. A review. BMC Pregnancy Childbirth. 2009. https://doi.org/10.1186/1471-2393-9-8
 
 #### Q3
-**Which of the following results is the most specific evidence of hemolysis in her?**
+*Update:* Hemoglobin 121 g/L, platelets 168 x 10^9/L, AST 52 U/L, ALT 64 U/L, LDH 410 U/L, bilirubin 9 umol/L, glucose 5.0 mmol/L, creatinine 61 umol/L and INR 1.0. The blood film shows no schistocytes.
 
-- A. ALT 198 U/L
-- B. AST 236 U/L
-- C. Hemoglobin 104 g/L
-- D. Platelets 88 x 10^9/L
-- E. Schistocytes on film  **(key)**
+**Which of the following best describes her blood results using the ISSHP and Tennessee criteria?**
 
-*Explanation:* Schistocytes are red cell fragments sheared in damaged small vessels, so they show microangiopathic hemolysis directly. LDH also rises with hemolysis, but liver injury raises it too. A hemoglobin of 104 g/L is common in the third trimester from dilution and iron deficiency, so it does not prove hemolysis. The AST and ALT show liver injury, and platelets of 88 x 10^9/L show consumption rather than red cell destruction.
+- A. Acute fatty liver of pregnancy
+- B. Complete HELLP syndrome
+- C. Liver involvement without HELLP  **(key)**
+- D. Normal results for late pregnancy
+- E. Partial HELLP syndrome
+
+*Explanation:* An AST of 52 U/L and an ALT of 64 U/L are above 40 U/L, which ISSHP counts as liver involvement of pre-eclampsia, so these results are not normal for late pregnancy. None of the Tennessee thresholds for HELLP is reached. Her platelets of 168 x 10^9/L are not below 100 x 10^9/L, her AST is below 70 U/L, her LDH of 410 U/L is not above 600 U/L, and the film shows no hemolysis. Complete HELLP needs all three parts of the triad, and partial HELLP needs one or two, so neither is present. Acute fatty liver of pregnancy brings jaundice, low glucose and abnormal clotting, and her bilirubin, glucose and INR are normal.
 
 *Key feature:* Pre-eclampsia 3. Exclude HELLP syndrome in pregnant patients with vague symptoms like nausea, vomiting, or abdominal pain before other diagnoses.
 
-*Source:* Sibai BM. Diagnosis, controversies, and management of the syndrome of hemolysis, elevated liver enzymes, and low platelet count. Obstet Gynecol. 2004.
+*Source:* Magee LA, Brown MA, Hall DR, et al. The 2021 International Society for the Study of Hypertension in Pregnancy classification, diagnosis and management recommendations for international practice. Pregnancy Hypertens. 2022. https://doi.org/10.1016/j.preghy.2021.09.008
 
 #### Q4
-**Which of the following corticosteroid regimens is most appropriate for her now?**
+*Update:* Her BP is 146/94 mmHg on repeat. The obstetric team admits her for maternal and fetal monitoring.
 
-- A. betamethasone 12 mg IM, repeat in 24 hours  **(key)**
-- B. dexamethasone 10 mg IV every 12 hours
-- C. hydrocortisone 100 mg IV every 8 hours
-- D. methylprednisolone 1 g IV daily
-- E. prednisone 50 mg PO daily
+**Which of the following is the most appropriate BP treatment for her now?**
 
-*Explanation:* HELLP at 31 weeks and 2 days makes birth within 7 days likely, and SOGC recommends antenatal corticosteroids between 24 and 34 weeks and 6 days in that situation. Betamethasone 12 mg IM, repeated after 24 hours, reduces neonatal death, respiratory distress and intraventricular hemorrhage. Dexamethasone 10 mg IV every 12 hours is not the antenatal regimen, and high doses given to raise the platelet count in HELLP have not improved outcomes. Hydrocortisone and prednisone are largely inactivated by the placenta. Methylprednisolone 1 g is an immunosuppressive pulse.
+- A. enalapril 10 mg PO daily
+- B. hydralazine 5 mg IV now
+- C. labetalol 20 mg IV now
+- D. labetalol 200 mg PO twice daily  **(key)**
+- E. No antihypertensive yet
+
+*Explanation:* Her BP of 146/94 mmHg is non-severe hypertension, and ISSHP recommends treating it with a first-line oral drug, such as labetalol, nifedipine or methyldopa, to a diastolic target of 85 mmHg. Oral labetalol 200 mg twice daily is a common starting dose, raised as needed. IV labetalol and IV hydralazine are for severe hypertension of 160 mmHg systolic or 110 mmHg diastolic or more, which she does not have. ACE inhibitors such as enalapril are not used once a woman is pregnant because they harm the fetal kidneys. Waiting until her BP becomes severe gives up the benefit of treating to target.
 
 *Key feature:* Pre-eclampsia 4. Begin BP control and seizure prophylaxis, monitor mother and fetus, and arrange urgent obstetric planning for delivery.
 
-*Source:* Skoll A, Boutin A, Bujold E, et al. No. 364: Antenatal corticosteroid therapy for improving neonatal outcomes. J Obstet Gynaecol Can. 2018.
+*Source:* Magee LA, Brown MA, Hall DR, et al. The 2021 International Society for the Study of Hypertension in Pregnancy classification, diagnosis and management recommendations for international practice. Pregnancy Hypertens. 2022. https://doi.org/10.1016/j.preghy.2021.09.008
 
 ### pre-eclampsia-17: Sparkles in her vision far from a perinatal centre
 
@@ -772,7 +791,7 @@ A 34-year-old woman presents to the emergency department 4 days after a caesarea
 - Temperature: 36.9°C oral
 - Pulse: 90/minute
 - Resp.: 16/minute
-- BP: 158/102 mmHg
+- BP: 164/104 mmHg
 - O2 sat: 98% on room air
 - Weight: 76 kg
 
@@ -804,7 +823,7 @@ A 34-year-old woman presents to the emergency department 4 days after a caesarea
 - D. labetalol 20 mg IV  **(key)**
 - E. methyldopa 500 mg PO
 
-*Explanation:* Her two readings average 160/103 mmHg, so she has severe hypertension, which after birth carries the same stroke risk as before and needs treatment within 30 to 60 minutes with IV labetalol, oral immediate-release nifedipine or IV hydralazine. Enalapril is compatible with breastfeeding but acts too slowly for severe hypertension and is best avoided while her kidney injury evolves. Methyldopa is slow and usually avoided after birth because of concern about depression. Diuretics do not control severe hypertension quickly and would worsen her kidney injury.
+*Explanation:* Her two readings average 163/104 mmHg, so she has severe hypertension, which after birth carries the same stroke risk as before and needs treatment within 30 to 60 minutes with IV labetalol, oral immediate-release nifedipine or IV hydralazine. Enalapril is compatible with breastfeeding but acts too slowly for severe hypertension and is best avoided while her kidney injury evolves. Methyldopa is slow and usually avoided after birth because of concern about depression. Diuretics do not control severe hypertension quickly and would worsen her kidney injury.
 
 *Key feature:* Pre-eclampsia 4. Begin BP control and seizure prophylaxis, monitor mother and fetus, and arrange urgent obstetric planning for delivery.
 
@@ -1273,72 +1292,70 @@ A 37-year-old woman, G3P2 at 32 weeks and 3 days, presented to the emergency dep
 
 *Source:* Magee LA, Brown MA, Hall DR, et al. The 2021 International Society for the Study of Hypertension in Pregnancy classification, diagnosis and management recommendations for international practice. Pregnancy Hypertens. 2022.
 
-### pre-eclampsia-34: Headache in a distance runner
+### pre-eclampsia-34: Breathless lying flat at 33 weeks
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 30-year-old woman, G1P0 at 31 weeks and 4 days, presents to the emergency department with a frontal headache for 5 hours. She is a competitive marathon runner. Her resting pulse is usually in the high 40s, and an ECG at 20 weeks showed only sinus bradycardia. At 28 weeks her BP was 108 mmHg systolic and 68 mmHg diastolic. She has no visual symptoms, chest pain or shortness of breath. She takes a prenatal vitamin. Her neurological examination is normal apart from 3+ reflexes with 2 beats of clonus. The fetal heart rate is 145/minute.
+A 32-year-old woman, G1P0 at 33 weeks and 2 days, presents to the emergency department with 6 hours of chest tightness and shortness of breath that is worse lying flat. At 20 weeks her BP was 116 mmHg systolic and 70 mmHg diastolic. Her hands and face have been swelling for a week. She has no headache, visual change or abdominal pain. There are crackles at both lung bases, and reflexes are brisk without clonus. Platelets 212 x 10^9/L, creatinine 71 umol/L, AST 30 U/L and urine PCR 540 mg/mmol. The fetal heart rate is 145/minute.
 
-- Temperature: 36.7°C oral
-- Pulse: 48/minute
-- Resp.: 16/minute
-- BP: 172/112 mmHg
-- O2 sat: 99% on room air
-- Weight: 60 kg
+- Temperature: 36.8°C oral
+- Pulse: 112/minute
+- Resp.: 28/minute
+- BP: 166/108 mmHg
+- O2 sat: 91% on room air
+- Weight: 78 kg
 
 #### Q1
-**Which of the following investigations are the most important to evaluate her for pre-eclampsia and its complications?**
+**Which of the following findings most increase her risk of a severe maternal complication in the next 48 hours?**
 
-Select 4.
+Select 2.
 
-- A. AST and ALT  **(key)**
-- B. Blood alcohol level
-- C. CBC with platelets  **(key)**
-- D. Serum ammonia
-- E. Serum cortisol
-- F. Serum creatinine  **(key)**
-- G. Serum lipase
-- H. Urine PCR  **(key)**
+- A. Age of 32 years
+- B. Chest tightness and dyspnea  **(key)**
+- C. First pregnancy
+- D. Oxygen saturation of 91%  **(key)**
+- E. Swelling of hands and face
+- F. Urine PCR of 540 mg/mmol
 
-*Explanation:* She has had no testing for pre-eclampsia, so a urine PCR is needed to look for proteinuria, and a CBC with platelets, AST, ALT and creatinine detect HELLP and kidney injury, which change her management. SOGC defines pre-eclampsia as hypertension after 20 weeks with proteinuria or adverse conditions such as these. Blood alcohol, ammonia, cortisol and lipase look for causes her presentation does not suggest.
+*Explanation:* The fullPIERS model predicts fatal or life-threatening complications within 48 hours from gestational age, chest pain or dyspnea, oxygen saturation, platelet count, creatinine and AST. Her chest tightness with dyspnea and a saturation of 91% are the abnormal predictors, while her platelets, creatinine and AST are normal. Proteinuria is not part of the model, so a PCR of 540 mg/mmol does not add to her short-term risk. Being 32, in a first pregnancy and swollen are not predictors in the model.
 
 *Key feature:* Pre-eclampsia 2. Evaluate suspected pre-eclampsia systematically, including risk factors, symptoms, BP change from baseline, and labs, to decide quickly.
 
-*Source:* Magee LA, Smith GN, Bloch C, et al. Guideline No. 426: Hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022.
+*Source:* von Dadelszen P, Payne B, Li J, et al. Prediction of adverse maternal outcomes in pre-eclampsia. Development and validation of the fullPIERS model. Lancet. 2011. https://doi.org/10.1016/S0140-6736(10)61351-7
 
 #### Q2
-*Update:* A repeat BP at 1320 in the same arm is 170/110 mmHg. Her pulse is 46/minute.
+*Update:* A chest radiograph confirms pulmonary edema. With furosemide, nitroglycerin and noninvasive ventilation her saturation is 95% and her BP is 150/96 mmHg. Magnesium sulfate is running and betamethasone 12 mg IM has been given.
 
-**Which of the following is the longest acceptable delay from confirmation of her severe hypertension to the first antihypertensive dose?**
+**Which of the following investigations is most appropriate now to assess the cause of her pulmonary edema?**
 
-- A. 15 minutes
-- B. 60 minutes  **(key)**
-- C. 90 minutes
-- D. 120 minutes
-- E. 240 minutes
+- A. CT pulmonary angiography
+- B. Echocardiography  **(key)**
+- C. NT-proBNP level
+- D. Repeat chest radiograph
+- E. Serum uric acid
 
-*Explanation:* A systolic BP of 160 mmHg or more or a diastolic of 110 mmHg or more, confirmed on repeat, is severe hypertension, and her readings of 172/112 and 170/110 mmHg meet it. ACOG advises that first-line treatment start as soon as possible, within 30 to 60 minutes of confirmation, to lower the risk of maternal stroke. A first dose at 15 minutes is good care but is not the limit. Delays of 90, 120 or 240 minutes fall outside that window and leave her exposed to severe hypertension for no benefit. Her slow resting pulse from training does not change this urgency, although it favours immediate-release nifedipine or hydralazine over labetalol as the first drug.
+*Explanation:* Pre-eclampsia is the likely cause of her pulmonary edema, but peripartum cardiomyopathy and undiagnosed structural heart disease such as mitral stenosis can look the same, and each changes her fluid, drug and delivery plans. The ESC pregnancy guideline recommends transthoracic echocardiography as the first imaging test for any pregnant woman with new or unexplained cardiovascular signs or symptoms. NT-proBNP can be raised by pre-eclampsia itself and shows neither ventricular function nor valve disease. A repeat radiograph only confirms the edema already seen. Pulmonary embolism does not explain crackles with orthopnea, severe hypertension and proteinuria, so CT angiography adds radiation without answering the question. Uric acid says nothing about the heart and does not guide her care.
 
-*Key feature:* Pre-eclampsia 4. Begin BP control and seizure prophylaxis, monitor mother and fetus, and arrange urgent obstetric planning for delivery.
+*Key feature:* Pre-eclampsia 2. Evaluate suspected pre-eclampsia systematically, including risk factors, symptoms, BP change from baseline, and labs, to decide quickly.
 
-*Source:* American College of Obstetricians and Gynecologists. Committee Opinion No. 767: Emergent therapy for acute-onset, severe hypertension during pregnancy and the postpartum period. Obstet Gynecol. 2019.
+*Source:* De Backer J, Haugaa KH, Hasselberg NE, et al. 2025 ESC Guidelines for the management of cardiovascular disease and pregnancy. Eur Heart J. 2025. https://doi.org/10.1093/eurheartj/ehaf193
 
 #### Q3
-*Update:* Her BP settles to 150/100 mmHg, but the headache and clonus persist. Obstetrics plans a caesarean today. Magnesium sulfate 4 g IV, then 1 g/hour, is running.
+*Update:* Her breathing is settling on noninvasive ventilation. Obstetrics plans her birth today once she is stable.
 
-**Which of the following neonatal outcomes is her magnesium sulfate infusion also expected to reduce?**
+**Which of the following is the main purpose of her magnesium sulfate infusion?**
 
-- A. Bronchopulmonary dysplasia
-- B. Cerebral palsy  **(key)**
-- C. Intraventricular hemorrhage
-- D. Necrotizing enterocolitis
-- E. Respiratory distress syndrome
+- A. Lowering her BP
+- B. Preventing eclampsia  **(key)**
+- C. Reducing her proteinuria
+- D. Stopping preterm labour
+- E. Treating pulmonary edema
 
-*Explanation:* Given at 33 weeks and 6 days or earlier when birth is imminent or planned, magnesium sulfate reduces cerebral palsy in surviving preterm infants, with a relative risk of 0.71 for any cerebral palsy in the SOGC meta-analysis. She is 31 weeks and 4 days with a birth planned today, so the infusion given to prevent eclampsia also protects the baby's brain. Respiratory distress syndrome and intraventricular hemorrhage are reduced by antenatal corticosteroids, not magnesium. Magnesium has not been shown to prevent necrotizing enterocolitis or bronchopulmonary dysplasia.
+*Explanation:* SOGC recommends magnesium sulfate as prophylaxis against eclampsia in severe pre-eclampsia, and pulmonary edema is a severe complication. With birth planned at 33 weeks and 2 days, magnesium also gives fetal neuroprotection, which SOGC advises up to 33 weeks and 6 days, but eclampsia prevention is the reason it is started here. SOGC advises that magnesium is not used as an antihypertensive. It does not reduce proteinuria. She is not in labour, and magnesium does not treat pulmonary edema.
 
 *Key feature:* Pre-eclampsia 4. Begin BP control and seizure prophylaxis, monitor mother and fetus, and arrange urgent obstetric planning for delivery.
 
-*Source:* Magee LA, De Silva DA, Sawchuck D, Synnes A, von Dadelszen P. No. 376: Magnesium sulphate for fetal neuroprotection. J Obstet Gynaecol Can. 2019.
+*Source:* Magee LA, Smith GN, Bloch C, et al. Guideline No. 426: Hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022. https://pubmed.ncbi.nlm.nih.gov/35577426/
 
 ### pre-eclampsia-35: Headache and swelling at 21 weeks
 
@@ -1402,65 +1419,65 @@ A 29-year-old woman, G2P0 at 21 weeks and 4 days by first-trimester ultrasound, 
 
 *Source:* Sibai BM. Diagnosis, controversies, and management of the syndrome of hemolysis, elevated liver enzymes, and low platelet count. Obstet Gynecol. 2004.
 
-### pre-eclampsia-36: A migraine that feels different
+### pre-eclampsia-36: Nosebleeds and bruises at 34 weeks
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 28-year-old woman, G1P0 at 35 weeks and 2 days, presents to the emergency department at 1255 with a left-sided throbbing headache for 8 hours, with nausea and light sensitivity. She has had migraine without aura since her teens. She says this headache feels different, more constant, and it has not eased with acetaminophen. It is her first headache of the pregnancy. She asks for sumatriptan, which helped before pregnancy. At 32 weeks her BP was 110 mmHg systolic and 70 mmHg diastolic. She has no visual symptoms. Her neurological examination is normal. Reflexes are 3+ without clonus.
+A 27-year-old woman, G2P1 at 34 weeks and 3 days, presents to the emergency department with 2 days of nosebleeds and new bruises on her arms and legs. She has mild nausea but no headache, visual change or abdominal pain. Her first pregnancy was uncomplicated. At 11 weeks her BP was 102 mmHg systolic and 64 mmHg diastolic, and her platelets were 236 x 10^9/L. She takes a prenatal vitamin and no other medication, and she is eating normally. There are scattered bruises on her forearms and shins. The abdomen is soft and nontender, and reflexes are normal. The fetal heart rate is 150/minute.
 
-- Temperature: 36.8°C oral
-- Pulse: 86/minute
+- Temperature: 36.9°C oral
+- Pulse: 90/minute
 - Resp.: 16/minute
-- BP: 142/94 mmHg
+- BP: 134/88 mmHg
 - O2 sat: 99% on room air
 - Weight: 70 kg
 
 #### Q1
-**Which of the following features of her headache most strongly suggests a secondary cause?**
+**Which of the following is the most important diagnosis to exclude first in her?**
 
-- A. Change from her usual migraines  **(key)**
-- B. History of migraine since her teens
-- C. Left-sided location
-- D. Nausea and light sensitivity
-- E. Throbbing, pulsating quality
+- A. Gestational thrombocytopenia
+- B. Hereditary bleeding disorder
+- C. Immune thrombocytopenia
+- D. Pre-eclampsia with HELLP  **(key)**
+- E. Vitamin K deficiency
 
-*Explanation:* A headache that differs from a patient's usual pattern is a red flag for a secondary cause, and late in pregnancy that means considering pre-eclampsia first. One-sided location, throbbing quality, nausea and light sensitivity are typical of migraine and do not separate the two. A long migraine history does not protect her, and a first headache of the pregnancy at 35 weeks with a BP of 142/94 mmHg needs assessment for pre-eclampsia before it is called migraine.
+*Explanation:* New bleeding and bruising late in the third trimester can mean a falling platelet count from HELLP syndrome, which threatens mother and fetus and must be excluded first. Haram and colleagues note that hypertension and proteinuria are absent in 10 to 20% of women with HELLP. Gestational and immune thrombocytopenia are more benign causes considered after HELLP is excluded. A hereditary bleeding disorder would have shown before, including in her first pregnancy. Vitamin K deficiency is unlikely in a woman eating normally.
 
 *Key feature:* Pre-eclampsia 1. Consider pre-eclampsia in pregnant patients with unexplained headache, abdominal pain, or confusion, even with normal blood pressure.
 
-*Source:* American College of Obstetricians and Gynecologists. Clinical Practice Guideline No. 3: Headaches in pregnancy and postpartum. Obstet Gynecol. 2022.
+*Source:* Haram K, Svendsen E, Abildgaard U. The HELLP syndrome: clinical issues and management. A review. BMC Pregnancy Childbirth. 2009. https://doi.org/10.1186/1471-2393-9-8
 
 #### Q2
-**Which of the following is the most appropriate next step in her care?**
+**Which of the following findings is most important when interpreting her BP of 134/88 mmHg?**
 
-- A. CT head before any treatment
-- B. Discharge with sumatriptan 100 mg PO
-- C. Migraine cocktail, then discharge
-- D. Opioid analgesia and observation
-- E. Pre-eclampsia workup with repeat BP  **(key)**
+- A. Bruising on the shins
+- B. Fetal heart rate of 150/minute
+- C. Normal reflexes
+- D. Second pregnancy
+- E. Systolic rise of 32 mmHg  **(key)**
 
-*Explanation:* Her BP of 142/94 mmHg, against a baseline of 110/70 mmHg at 32 weeks, 3+ reflexes and an unusual headache need a repeat BP, platelets, liver enzymes, creatinine and a PCR before any label of migraine. SOGC counts headache as an adverse condition that turns gestational hypertension into pre-eclampsia. Discharge with sumatriptan or a migraine cocktail risks missing it. Opioids are not first-line for headache and mask symptoms. CT is not the first step with a normal neurological examination and no sudden onset.
+*Explanation:* Her BP of 134/88 mmHg is below 140/90 mmHg, but her systolic pressure has risen by 134 - 102 = 32 mmHg from early pregnancy, which suggests pre-eclampsia is developing. Haram and colleagues note that HELLP can occur without the usual hypertension. Bruising shows a bleeding problem but not its cause. A fetal heart rate of 150/minute is normal. Normal reflexes do not exclude pre-eclampsia. A second pregnancy carries less risk than a first.
 
 *Key feature:* Pre-eclampsia 1. Consider pre-eclampsia in pregnant patients with unexplained headache, abdominal pain, or confusion, even with normal blood pressure.
 
-*Source:* Magee LA, Smith GN, Bloch C, et al. Guideline No. 426: Hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022.
+*Source:* Haram K, Svendsen E, Abildgaard U. The HELLP syndrome: clinical issues and management. A review. BMC Pregnancy Childbirth. 2009. https://doi.org/10.1186/1471-2393-9-8
 
 #### Q3
-*Update:* At 1310 her BP is 144/96 mmHg in the same arm. PCR 18 mg/mmol. Platelets 190 x 10^9/L, ALT 21 U/L, creatinine 55 umol/L. The fetal heart tracing is normal. The headache persists.
+*Update:* Platelets 64 x 10^9/L, AST 188 U/L, ALT 162 U/L, LDH 720 U/L, bilirubin 26 umol/L, glucose 5.0 mmol/L, INR 1.0 and urine PCR 22 mg/mmol. The film shows schistocytes.
 
-**Which of the following best classifies her condition using SOGC 2022 definitions?**
+**Which of the following best interprets these results using the Tennessee criteria?**
 
-- A. Chronic hypertension
-- B. Gestational hypertension
-- C. Pre-eclampsia  **(key)**
-- D. Transient hypertension
-- E. White coat hypertension
+- A. Complete HELLP syndrome  **(key)**
+- B. Gestational thrombocytopenia
+- C. Not HELLP as BP is under 140/90
+- D. Not HELLP as PCR is under 30
+- E. Partial HELLP syndrome
 
-*Explanation:* Her readings 15 minutes apart average 143/95 mmHg, new after 20 weeks. The PCR of 18 mg/mmol is below 30 mg/mmol, but SOGC also diagnoses pre-eclampsia when gestational hypertension comes with an adverse condition, and her persistent new headache is one. Without the headache this would be gestational hypertension. Chronic hypertension predates 20 weeks, and her 32-week BP was normal. Transient and white coat hypertension settle on repeat readings, and hers did not.
+*Explanation:* The Tennessee criteria for HELLP are platelets below 100 x 10^9/L, AST of 70 U/L or more, LDH above 600 U/L and hemolysis shown on the film with a bilirubin of 1.2 mg/dL or more. Her platelets of 64 x 10^9/L, AST of 188 U/L, LDH of 720 U/L, schistocytes and bilirubin of 26 umol/L, about 1.5 mg/dL, meet all of them, so this is complete rather than partial HELLP. A low PCR or a BP under 140/90 mmHg does not exclude HELLP. Gestational thrombocytopenia does not raise liver enzymes or fragment red cells.
 
 *Key feature:* Pre-eclampsia 2. Evaluate suspected pre-eclampsia systematically, including risk factors, symptoms, BP change from baseline, and labs, to decide quickly.
 
-*Source:* Magee LA, Smith GN, Bloch C, et al. Guideline No. 426: Hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022.
+*Source:* Haram K, Svendsen E, Abildgaard U. The HELLP syndrome: clinical issues and management. A review. BMC Pregnancy Childbirth. 2009. https://doi.org/10.1186/1471-2393-9-8
 
 ### pre-eclampsia-37: Back pain and tightening at 29 weeks
 

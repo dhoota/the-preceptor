@@ -7,6 +7,17 @@
 Quoted from the pipeline notes and the review reports, each with its report name. A later review may have fixed an earlier flag. The SAMP text below is always the current version.
 
 - s39 gi-bleed-17 q3 vitamin K IV vs SC. 39 Toronto consensus vs BSG. 41 q3 andexanet or PCC left out of menu.
+- gi-bleed-41 q3 keys red cell transfusion without stating a hemoglobin value. The value was removed so it would not reveal the q1 key. The case gives melena, pallor and a BP that stays low after crystalloid. Please confirm this is enough to justify transfusion. *(samps-final-check-1.md)*
+- loc-24 q2 keys platelets with IVIG and IV steroid for ITP with an intracranial bleed. gi-bleed-16 in s39 teaches the same treatment across its q2 and q3 for ITP with melena in an adult. The patient, the bleed site and the topic differ, so it was kept. Drop one if you want no shared teaching. *(samps-final-check-2.md)*
+- gi-bleed-41: in mock mode the q2 update (melena) and the q3 option (red cell transfusion) show that he is bleeding, which points to the q1 key (CBC). The stem already points strongly to bleeding. Removing the cue would take the basis away from q3. q2 ("No anticoagulation") is also an easy item, because every distractor is an anticoagulant in a patient with melena. *(samps-last-check.md)*
+- **Paywalled guidelines.** ESC, AHA/ACC and some OUP guideline texts could not be opened in full. Where that happened, an open source was used instead, such as the Widimsky registry for new RBBB, the Brady HEART review and the SSC 2021 full text. The IDSA SSTI 2014 and IDSA Lyme 2020 recommendations were read on the publisher page. *(samps-replace-s39-s42.md)*
+- **Non-Canadian sources.** Canadian guidance was used where it exists. Some questions rely on US or international sources because no Canadian one covers the point: ACOG for listeriosis in pregnancy, the IDSA 2026 AMR guidance for Enterobacter cloacae, the IDSA Lyme guideline and STREAM-2 for half-dose tenecteplase at 75 years and older. *(samps-replace-s39-s42.md)*
+- **The SSC 2026 guidelines supersede 2021 and 2020.** Adult and pediatric SSC guidelines were both updated in March 2026. The s41 rebuilds now cite 2026. Other batches may still cite 2020 or 2021. *(samps-replace-s39-s42.md)*
+- Two re-rebuilds need a second check: gi-bleed-41 (rapid AF from a hidden GI bleed, keyed on red cells rather than rate control) and headache-25 (cough headache and Chiari malformation). *(samps-replace-s39-s42.md)*
+- gi-bleed-23 and gi-bleed-19 both key inspection of the throat for blood that looks like hematemesis. The diagnoses and management differ. *(samps-replace-s39-s42.md)*
+- gi-bleed-29 q2 and gi-bleed-37 both key "Red cells 1 unit, then recheck Hb". Neither is a rebuild. *(samps-replace-s39-s42.md)*
+- gi-bleed-38 q4 (threshold 80 g/L with stable angina) is close to signed-off gi-bleed-14 q3 (target 80 g/L with active ischemia). Kept, because the setting and question differ. *(samps-replace-s39-s42.md)*
+- Claims outside the cited source: gi-bleed-38 q1 (slow transfusion and waiting for crossmatch are reasoned, not quoted), headache-25 q3 (MRI shows the posterior fossa better than CT, lumbar puncture unsafe with low tonsils). *(samps-replace-s39-s42.md)*
 - gi-bleed-22 q3. The only Canadian source for the 20 mL/kg bolus is the TREKK gastroenteritis bottom line, which is written for dehydration. The key is the same, but this child's picture is intussusception with shock. *(samps-resource-s19-s39-s40.md)*
 - gi-bleed-32 q3. The paediatric evidence for octreotide is very low certainty (Kozak 2026 systematic review, 3 observational studies). The key follows adult practice and the Italian society paper. Please confirm. *(samps-resource-s19-s39-s40.md)*
 - gi-bleed-42 q2. The older Romano 2017 paper says a maternal milk-free diet is "not necessarily indicated" in a thriving breastfed infant. The newer 2025 SIGENP and SIAIP position paper suggests a 2 to 4 week maternal elimination trial. The key follows the newer paper. *(samps-resource-s19-s39-s40.md)*
@@ -26,80 +37,85 @@ Review reports: docs/reviews/writer-s39.md, samps-s39-lensA.md, samps-s39-lensB.
 
 ## SAMPs
 
-### gi-bleed-16: Black stools after joint surgery
+### gi-bleed-16: Black stools and bleeding gums
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 71-year-old man presents to the emergency department with two days of black stools and light-headedness when he stands. Twelve days ago he had a left total knee replacement. He was discharged on rivaroxaban 10 mg daily for thromboprophylaxis and naproxen 500 mg twice daily for pain. He also takes ramipril for hypertension. He has no history of coronary disease, liver disease, heart failure or previous bleeding. He has not vomited or fainted. He is pale. The abdomen is soft and non-tender. Rectal examination shows black tarry stool.
+A 24-year-old woman presents to the emergency department with 2 days of black stools and light-headedness when she stands. For 5 days her gums have bled when she brushes her teeth, and her period, which began 6 days ago, is heavier than usual. She took ibuprofen 400 mg three times daily for 3 days for cramps. She had a cold 3 weeks ago. She takes no other medications, drinks alcohol rarely and has no liver disease. She is pale. There are blood blisters inside both cheeks and petechiae on both legs. There is no lymphadenopathy or splenomegaly. Rectal examination shows black tarry stool. Hemoglobin 88 g/L, WBC 6.8 x 10^9/L with a normal differential, platelets 5 x 10^9/L, INR 1.0, fibrinogen 3.1 g/L. The blood film shows few, large platelets with no blasts and no fragmented red cells.
 
-- Temperature: 36.8°C oral
-- Pulse: 108/minute
+- Temperature: 36.9°C oral
+- Pulse: 112/minute
 - Resp.: 18/minute
-- BP: 104/66 mmHg
-- O2 sat: 97% on room air
-- Weight: 84 kg
+- BP: 102/64 mmHg
+- O2 sat: 99% on room air
+- Weight: 61 kg
 
 #### Q1
-**Which of the following is the most likely source of his bleeding?**
+**Which of the following best explains why she is bleeding from several sites at once?**
 
-- A. Angiodysplasia of the colon
-- B. Esophageal varices
-- C. Mallory Weiss tear
-- D. Peptic ulcer disease  **(key)**
-- E. Reflux esophagitis
+- A. Acute myeloid leukemia
+- B. Immune thrombocytopenia  **(key)**
+- C. NSAID-induced peptic ulcer
+- D. Thrombotic microangiopathy
+- E. Von Willebrand disease
 
-*Explanation:* Melena with a new NSAID, naproxen 500 mg twice daily, points to a peptic ulcer, and rivaroxaban adds to the bleeding risk. Colonic angiodysplasia usually causes maroon or red blood rather than black tarry stool. He has no liver disease, so varices are unlikely. A Mallory Weiss tear follows retching or vomiting, which he did not have. Reflux esophagitis rarely causes enough bleeding to produce melena with postural symptoms.
+*Explanation:* An isolated platelet count of 5 x 10^9/L with large platelets on the film, a normal white count and a normal INR after a recent viral illness fits immune thrombocytopenia. It explains the gum bleeding, oral blood blisters, petechiae, heavy period and melena together. Leukemia is unlikely with a normal differential and no blasts. A thrombotic microangiopathy would show fragmented red cells. An NSAID ulcer could explain the melena but not the mucosal and skin bleeding. Von Willebrand disease does not cause a platelet count this low.
 
 *Key feature:* Gastrointestinal (GI) bleed 1. In GI bleeding, look for clues to the source such as medications, alcohol, weight loss, liver disease, or coagulopathy.
 
-*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
+*Source:* Provan D, Arnold DM, Bussel JB, et al. Updated international consensus report on the investigation and management of primary immune thrombocytopenia. Blood Adv. 2019. https://doi.org/10.1182/bloodadvances.2019000812
 
 #### Q2
-*Update:* Hemoglobin 96 g/L (142 g/L before surgery), urea 12.4 mmol/L, creatinine 96 umol/L, INR 1.2, platelets 310 x 10^9/L.
+**Which of the following treatments should she receive now to raise her platelet count quickly?**
 
-**Which of the following is his Glasgow Blatchford score based on these findings?**
+Select 2.
 
-- A. 9
-- B. 11
-- C. 13  **(key)**
-- D. 15
-- E. 17
+- A. desmopressin 0.3 mcg/kg IV
+- B. immune globulin 1 g/kg IV  **(key)**
+- C. methylprednisolone 1 g IV  **(key)**
+- D. Plasma exchange
+- E. rituximab 375 mg/m2 IV
+- F. vitamin K 10 mg IV
 
-*Explanation:* Urea 12.4 mmol/L scores 4 (10 to 25 mmol/L). Hemoglobin 96 g/L in a man scores 6 (below 100 g/L). Systolic BP 104 mmHg scores 1 (100 to 109). Pulse 108/minute scores 1 and melena scores 1. He has no syncope, liver disease or heart failure. The total is 4 + 6 + 1 + 1 + 1 = 13, which marks a high risk of needing intervention. A total of 11 misses the pulse and melena points, and 15 places urea in the band above 25 mmol/L.
+*Explanation:* Melena with a hemoglobin of 88 g/L and a platelet count of 5 x 10^9/L is a life-threatening ITP bleed. The consensus report advises an IV corticosteroid combined with IV immune globulin when the count must rise within 24 hours. Rituximab takes 3 to 4 weeks to work, so it does not help now. Plasma exchange is listed as not indicated in ITP. Her INR is 1.0, so vitamin K adds nothing. Desmopressin is suggested only when reduced kidney function adds to bleeding, and her problem is platelet destruction.
 
 *Key feature:* Gastrointestinal (GI) bleed 6. Arrange targeted therapy like octreotide, IV PPI, endoscopy, or surgery promptly while resuscitation continues.
 
-*Source:* Blatchford O, Murray WR, Blatchford M. A risk score to predict need for treatment for upper gastrointestinal haemorrhage. Lancet. 2000.
+*Source:* Provan D, Arnold DM, Bussel JB, et al. Updated international consensus report on the investigation and management of primary immune thrombocytopenia. Blood Adv. 2019. https://doi.org/10.1182/bloodadvances.2019000812
 
 #### Q3
-**Which of the following is the most appropriate transfusion plan for him now?**
+*Update:* She passes another large black stool. Her pulse is now 124/minute and BP 92/58 mmHg. Repeat hemoglobin is 74 g/L.
 
-- A. Crossmatch and transfuse if Hb below 80 g/L  **(key)**
-- B. Transfuse frozen plasma 2 units now
-- C. Transfuse to keep Hb above 100 g/L
-- D. Transfuse 1 unit of red cells now
-- E. Transfuse 2 units of red cells now
+**Which of the following blood products is most appropriate for her now?**
 
-*Explanation:* His hemoglobin is 96 g/L and he has no coronary disease or heart failure, so a restrictive threshold applies. Blood should be crossmatched now, and red cells given if hemoglobin falls below 80 g/L. Transfusing 1 or 2 units now, or to a target above 100 g/L, is a liberal strategy that adds risk without benefit in this patient. His INR is 1.2, so frozen plasma has no role.
+- A. Cryoprecipitate 10 units IV
+- B. Frozen plasma 15 mL/kg IV
+- C. Platelets and red cells now  **(key)**
+- D. Prothrombin complex concentrate IV
+- E. Red cells alone for now
+
+*Explanation:* She is now in shock from ongoing bleeding with a platelet count of 5 x 10^9/L. Red cells restore oxygen delivery, and the consensus report states that platelet transfusion must not be postponed in life-threatening ITP bleeding. Giving red cells alone leaves the cause of the bleeding untreated. Her fibrinogen is 3.1 g/L, so cryoprecipitate is not needed. Her INR is 1.0, so frozen plasma and prothrombin complex concentrate correct nothing.
 
 *Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
 
-*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
+*Source:* Provan D, Arnold DM, Bussel JB, et al. Updated international consensus report on the investigation and management of primary immune thrombocytopenia. Blood Adv. 2019. https://doi.org/10.1182/bloodadvances.2019000812
 
 #### Q4
-**Which of the following is the most appropriate timing for his upper endoscopy?**
+*Update:* After treatment her platelet count rises to 58 x 10^9/L. Her pulse is 96/minute and she has had no further melena.
 
-- A. After 72 hours of IV PPI therapy
-- B. At outpatient follow-up in 2 weeks
-- C. Before any fluid or blood is given
-- D. Only if he rebleeds in hospital
-- E. Within 24 hours of presentation  **(key)**
+**Which of the following is the most appropriate next step to find and treat the source of her melena?**
 
-*Explanation:* With a Glasgow Blatchford score of 13 he needs inpatient endoscopy within 24 hours, after resuscitation. In a randomized trial, endoscopy within 6 hours did not lower mortality compared with 6 to 24 hours in high risk patients. Delaying to 72 hours or to an outpatient visit is too late for a high risk score. Waiting for a rebleed forgoes treatment of high risk stigmata. Endoscopy should follow, not replace, initial resuscitation.
+- A. Capsule endoscopy
+- B. Colonoscopy after bowel preparation
+- C. CT angiography of the abdomen
+- D. Tagged red cell scan
+- E. Upper endoscopy within 24 hours  **(key)**
+
+*Explanation:* Melena after several days of ibuprofen points to an upper source, and upper endoscopy within 24 hours both finds and treats it. Her platelet count of 58 x 10^9/L is now high enough for an endoscopic procedure. Colonoscopy looks in the wrong place for melena. CT angiography and a tagged red cell scan need active bleeding and cannot treat an ulcer. Capsule endoscopy is used for small bowel bleeding after normal upper and lower endoscopy.
 
 *Key feature:* Gastrointestinal (GI) bleed 6. Arrange targeted therapy like octreotide, IV PPI, endoscopy, or surgery promptly while resuscitation continues.
 
-*Source:* Lau JYW, Yu Y, Tang RSY, et al. Timing of endoscopy for acute upper gastrointestinal bleeding. N Engl J Med. 2020.
+*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
 
 ### gi-bleed-17: Bleeding and drowsiness in a young infant
 
@@ -247,17 +263,17 @@ A 3-day-old girl is brought to the emergency department by her parents after she
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 7-year-old girl is brought to the emergency department by her parents after she vomited about a cup of dark blood and clots at home. She had a tonsillectomy for obstructive sleep apnea 6 days ago. She has been taking acetaminophen for pain and has been eating little. Her mother says she has been swallowing often over the past hour. She has no known bleeding disorder, and there is no family history of bleeding. She is pale and anxious and keeps spitting blood-tinged saliva. Her abdomen is soft and non-tender.
+A 15-year-old boy is brought to the emergency department by his parents after he vomited about a cup of dark blood and clots at home. He had a tonsillectomy for recurrent tonsillitis 6 days ago. He has been taking acetaminophen for pain and has been eating little. His mother says he has been swallowing often over the past hour. He has no known bleeding disorder, and there is no family history of bleeding. He is pale and anxious and keeps spitting blood-tinged saliva. His abdomen is soft and non-tender.
 
 - Temperature: 37.2°C oral
 - Pulse: 136/minute
 - Resp.: 24/minute
 - BP: 96/58 mmHg
 - O2 sat: 98% on room air
-- Weight: 24 kg
+- Weight: 58 kg
 
 #### Q1
-**Which of the following examinations is most likely to identify the source of her bleeding?**
+**Which of the following examinations is most likely to identify the source of his bleeding?**
 
 - A. Anterior rhinoscopy for a septal vessel
 - B. Chest auscultation for crackles
@@ -265,14 +281,14 @@ A 7-year-old girl is brought to the emergency department by her parents after sh
 - D. Inspection of the tonsillar fossae  **(key)**
 - E. Palpation for hepatosplenomegaly
 
-*Explanation:* Delayed post-tonsillectomy hemorrhage is most common 5 to 10 days after surgery, when the eschar separates. Swallowed blood from the tonsillar bed can be vomited and look like hematemesis, so the tonsillar fossae should be inspected first with a good light and suction. Nothing in the stem suggests a nosebleed or a lung source. A rectal examination may show melena from swallowed blood but will not locate the source. She has no history suggesting liver disease.
+*Explanation:* Delayed post-tonsillectomy hemorrhage is most common 5 to 10 days after surgery, when the eschar separates. Swallowed blood from the tonsillar bed can be vomited and look like hematemesis, so the tonsillar fossae should be inspected first with a good light and suction. Nothing in the stem suggests a nosebleed or a lung source. A rectal examination may show melena from swallowed blood but will not locate the source. He has no history suggesting liver disease.
 
 *Key feature:* Gastrointestinal (GI) bleed 4. Examine the nose, throat, and lungs to exclude non-GI sources of apparent melena or hematemesis.
 
 *Source:* Spencer GM, Wilson CA, Davidson J, et al. International practice variation in post-tonsillectomy hemorrhage: a survey study of pediatric otolaryngologists. World J Otorhinolaryngol Head Neck Surg. 2025. https://pmc.ncbi.nlm.nih.gov/articles/PMC13398467/
 
 #### Q2
-**Which of the following of her vital signs is the best early sign of significant blood loss?**
+**Which of the following of his vital signs is the best early sign of significant blood loss?**
 
 - A. BP of 96/58 mmHg
 - B. Oxygen saturation of 98%
@@ -280,7 +296,7 @@ A 7-year-old girl is brought to the emergency department by her parents after sh
 - D. Respiratory rate of 24/minute
 - E. Temperature of 37.2°C
 
-*Explanation:* Children keep a normal BP until they have lost a large part of their blood volume, so tachycardia is the earliest reliable sign of hemorrhage. Her pulse of 136/minute is high for a 7-year-old. Her BP of 96/58 mmHg is normal for her age and should not reassure. Her oxygen saturation, respiratory rate and temperature do not reflect blood loss.
+*Explanation:* Adolescents, like younger children, keep a normal BP until they have lost a large part of their blood volume, so tachycardia is the earliest reliable sign of hemorrhage. His pulse of 136/minute is well above the normal range for a 15-year-old. His BP of 96/58 mmHg is not yet low and should not reassure. His oxygen saturation, respiratory rate and temperature do not reflect blood loss.
 
 *Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
 
@@ -295,14 +311,14 @@ A 7-year-old girl is brought to the emergency department by her parents after sh
 - D. Liver enzymes
 - E. Serum lipase
 
-*Explanation:* She has tachycardia and has vomited a large volume of blood, so blood may be needed soon, and crossmatch should be sent at once with a CBC. Blood culture and C-reactive protein look for infection, which does not explain her bleeding. Liver enzymes and lipase do not help manage bleeding from a tonsillar bed.
+*Explanation:* He has tachycardia and has vomited a large volume of blood, so blood may be needed soon, and crossmatch should be sent at once with a CBC. Blood culture and C-reactive protein look for infection, which does not explain his bleeding. Liver enzymes and lipase do not help manage bleeding from a tonsillar bed.
 
 *Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
 
 *Source:* Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical Guide to Transfusion. Canadian Blood Services. 2021. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion
 
 #### Q4
-*Update:* A clot sits in the right tonsillar fossa with fresh oozing around it. She vomits another 150 mL of blood.
+*Update:* A clot sits in the left tonsillar fossa with fresh oozing around it. He vomits another 150 mL of blood.
 
 **Which of the following is the most appropriate next step?**
 
@@ -438,144 +454,144 @@ A 4-year-old girl is brought to the emergency department with 3 days of crampy a
 
 *Source:* Freedman SB, Xie J, Neufeld MS, et al. Shiga toxin-producing Escherichia coli infection, antibiotics, and risk of developing hemolytic uremic syndrome: a meta-analysis. Clin Infect Dis. 2016.
 
-### gi-bleed-22: A sleepy infant
+### gi-bleed-22: Low blood pressure and a urinary catheter
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 9-month-old boy is brought to the emergency department because he has been unusually sleepy and floppy since this morning. He vomited twice overnight. His parents report no diarrhea, cough or fever. He had a cold last week. He was born at term, and his immunizations are up to date. He is pale and lethargic but rouses to voice. The fontanelle is flat. The lungs are clear. The abdomen is soft, and a vague mass may be felt in the right upper quadrant. Capillary glucose is 5.1 mmol/L.
+A 79-year-old man is brought to the emergency department by ambulance with 1 day of weakness. His home care nurse found his BP low this morning and called 911 for possible sepsis, because he has a long-term urethral catheter for urinary retention that drains cloudy urine. He has had no fever, chills, abdominal pain, vomiting or change in his stools that he has noticed. He had an ischemic stroke 2 years ago. He takes clopidogrel 75 mg daily, escitalopram 20 mg daily, atorvastatin and tamsulosin. He is pale and cool. His lungs are clear and his jugular veins are flat. The abdomen is soft and non-tender. Hemoglobin 71 g/L (132 g/L 4 months ago), WBC 8.9 x 10^9/L, urea 24.6 mmol/L, creatinine 112 umol/L, lactate 3.6 mmol/L. Urinalysis shows leukocytes and bacteria, as on previous visits.
 
-- Temperature: 37.1°C rectal
-- Pulse: 164/minute
-- Resp.: 34/minute
-- BP: 84/50 mmHg
-- O2 sat: 99% on room air
-- Weight: 9 kg
-
-#### Q1
-**Which of the following examinations is most likely to reveal the cause of his lethargy?**
-
-- A. Fundoscopy for retinal hemorrhages
-- B. Otoscopy for otitis media
-- C. Rectal examination for blood  **(key)**
-- D. Skin examination for petechiae
-- E. Tone and reflex examination
-
-*Explanation:* Lethargy and pallor can be the main presentation of intussusception in an infant, even without obvious GI complaints. The vomiting, recent viral illness and a right upper quadrant mass all point there. A rectal examination looking for blood or currant jelly stool is the most useful next step. Fundoscopy, otoscopy, skin and neurological examinations are part of a full assessment but do not fit the mass and pallor as well.
-
-*Key feature:* Gastrointestinal (GI) bleed 3. Suspect hidden GI blood loss in patients with hypoperfusion signs like syncope, angina, or confusion without GI symptoms.
-
-*Source:* Secilmis Y, Gumustekin Bilgin S, Dogan AB. Neurologic presentations of pediatric intussusception lead to diagnostic delay and increased need for surgery. Am Surg. 2026. https://pubmed.ncbi.nlm.nih.gov/42092742/
-
-#### Q2
-*Update:* The rectal examination produces dark red mucoid stool on the glove.
-
-**Which of the following is the most appropriate diagnostic test?**
-
-- A. Abdominal radiograph
-- B. Abdominal ultrasound  **(key)**
-- C. CT abdomen with contrast
-- D. Technetium Meckel scan
-- E. Upper GI contrast series
-
-*Explanation:* Ultrasound is the test of choice for suspected intussusception. It is highly sensitive, uses no radiation and shows the target sign. A plain radiograph can miss intussusception and is mainly used to look for free air or obstruction. CT exposes the child to radiation without advantage. A Meckel scan looks for painless bleeding from ectopic gastric mucosa, which does not fit a lethargic child with a mass. An upper GI series does not image the ileocolic region well.
-
-*Key feature:* Gastrointestinal (GI) bleed 1. In GI bleeding, look for clues to the source such as medications, alcohol, weight loss, liver disease, or coagulopathy.
-
-*Source:* Piccirillo M, Pucinischi V, Mennini M, et al. Gastrointestinal bleeding in children: diagnostic approach. Ital J Pediatr. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC10807079/
-
-#### Q3
-**Which of the following is the most appropriate initial fluid bolus for him before reduction?**
-
-- A. Albumin 5% 90 mL IV
-- B. Dextrose 10% 45 mL IV
-- C. Normal saline 45 mL IV
-- D. Normal saline 180 mL IV  **(key)**
-- E. Normal saline 540 mL IV
-
-*Explanation:* He is pale and lethargic with a pulse of 164/minute, so he needs volume before reduction. An isotonic crystalloid bolus of 20 mL/kg is 180 mL for 9 kg, repeated after reassessment. A 45 mL bolus of saline is only 5 mL/kg. A 540 mL bolus is 60 mL/kg given at once, which is excessive without reassessment. His glucose is 5.1 mmol/L, so dextrose is not needed as a bolus. Albumin offers no advantage over crystalloid for a first bolus.
-
-*Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
-
-*Source:* TREKK. Bottom line recommendations: gastroenteritis. Version 5.0. 2025. https://trekk.ca/resources/bottom-line-recommendations-gastroenteritis
-
-#### Q4
-*Update:* Ultrasound shows an ileocolic intussusception with a target sign and no free fluid. He has no peritoneal signs.
-
-**Which of the following is the most appropriate treatment for him now?**
-
-- A. Air enema reduction by radiology  **(key)**
-- B. Colonoscopic reduction
-- C. Laparotomy and manual reduction
-- D. Nasogastric decompression alone
-- E. Observation and repeat ultrasound
-
-*Explanation:* With no peritoneal signs, air or hydrostatic enema reduction by radiology is first-line treatment, with the surgical team aware. Laparotomy is kept for failed reduction, perforation or peritonitis. Colonoscopy is not used to reduce intussusception. Nasogastric decompression and observation do not reduce the bowel and allow ischemia to progress.
-
-*Key feature:* Gastrointestinal (GI) bleed 6. Arrange targeted therapy like octreotide, IV PPI, endoscopy, or surgery promptly while resuscitation continues.
-
-*Source:* Kelley-Quon LI, Arthur LG, Williams RF, et al. Management of intussusception in children: a systematic review. American Pediatric Surgical Association Outcomes and Evidence-Based Practice Committee. J Pediatr Surg. 2021. https://pubmed.ncbi.nlm.nih.gov/33158508/
-
-### gi-bleed-23: Vomiting clots after a nosebleed
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 76-year-old man is brought to the emergency department by ambulance after vomiting dark blood and clots three times over 2 hours. Earlier tonight he had a nosebleed from the right nostril that he stopped by pinching. He has atrial fibrillation and takes apixaban 5 mg twice daily, last dose 4 hours ago. He also takes metoprolol and amlodipine. He has no abdominal pain, NSAID use or alcohol use. He keeps swallowing and clearing his throat. His abdomen is soft and non-tender.
-
-- Temperature: 36.6°C oral
-- Pulse: 96/minute irregular
-- Resp.: 18/minute
-- BP: 168/92 mmHg
-- O2 sat: 96% on room air
+- Temperature: 36.2°C oral
+- Pulse: 116/minute
+- Resp.: 22/minute
+- BP: 86/52 mmHg
+- O2 sat: 97% on room air
 - Weight: 78 kg
 
 #### Q1
-**Which of the following is the most appropriate next step in his assessment?**
+**Which of the following findings most suggests hidden blood loss as the cause of his shock?**
 
-- A. CT angiography of the abdomen
-- B. Digital rectal examination
-- C. Examine the nose and posterior pharynx  **(key)**
-- D. Nasogastric tube aspiration
-- E. Urgent upper endoscopy
+- A. Absence of fever and chills
+- B. Cloudy urine in the catheter bag
+- C. Fall in hemoglobin of 61 g/L  **(key)**
+- D. Lactate of 3.6 mmol/L
+- E. Pulse of 116/minute
 
-*Explanation:* A nosebleed followed by frequent swallowing and vomiting of dark clots suggests swallowed blood from a posterior nasal source. Examining the nose and posterior pharynx with a light and suction is the quickest way to confirm it. A rectal examination can show melena from swallowed blood but will not show where it came from. Nasogastric aspiration and upper endoscopy look at the stomach, and CT angiography of the abdomen targets a GI source he may not have.
+*Explanation:* A fall in hemoglobin from 132 to 71 g/L, 61 g/L in 4 months, in a man on an antiplatelet drug points to hidden gastrointestinal bleeding even though he reports no bleeding. His urea is also high for his creatinine. Urea 24.6 mmol/L is a urea nitrogen of about 69 mg/dL and creatinine 112 umol/L is about 1.27 mg/dL, a ratio of about 54, and a ratio above 30 raises the likelihood of an upper source (LR 7.5). A raised lactate and tachycardia show shock of any cause. Cloudy urine with bacteria is expected with a long-term catheter. Older adults can be septic without fever, so its absence is weak evidence on its own.
 
-*Key feature:* Gastrointestinal (GI) bleed 4. Examine the nose, throat, and lungs to exclude non-GI sources of apparent melena or hematemesis.
+*Key feature:* Gastrointestinal (GI) bleed 3. Suspect hidden GI blood loss in patients with hypoperfusion signs like syncope, angina, or confusion without GI symptoms.
 
-*Source:* Tunkel DE, Anne S, Payne SC, et al. Clinical practice guideline: nosebleed (epistaxis). American Academy of Otolaryngology-Head and Neck Surgery Foundation. Otolaryngol Head Neck Surg. 2020. https://doi.org/10.1177/0194599819890327
+*Source:* Srygley FD, Gerardo CJ, Tran T, Fisher DA. Does this patient have a severe upper gastrointestinal bleed? JAMA. 2012. https://doi.org/10.1001/jama.2012.253
 
 #### Q2
-*Update:* Fresh blood trickles down the posterior pharynx. After suction and a vasoconstrictor spray, no anterior bleeding site is seen in either nostril.
+*Update:* Rectal examination shows black tarry stool. There is no blood in his nose or mouth.
 
-**Which of the following is the most appropriate management of his bleeding?**
+**Which of the following combinations in his medication list most increases his risk of this bleed?**
 
-- A. Octreotide 50 mcg IV bolus
-- B. Posterior balloon nasal packing  **(key)**
-- C. Silver nitrate cautery
-- D. Transfuse 2 units of red cells
-- E. Urgent upper endoscopy
+- A. atorvastatin with clopidogrel
+- B. atorvastatin with tamsulosin
+- C. clopidogrel with escitalopram  **(key)**
+- D. escitalopram with tamsulosin
+- E. tamsulosin with clopidogrel
 
-*Explanation:* Bleeding down the posterior pharynx with no anterior site seen means a posterior epistaxis. It is controlled with a posterior balloon or pack, followed by admission and otolaryngology care. Silver nitrate cautery works only on a visible anterior vessel. Octreotide and endoscopy target GI sources, not the nose. Transfusion is guided by hemoglobin and hemodynamics, and he is hypertensive rather than in shock.
+*Explanation:* Selective serotonin reuptake inhibitors raise the odds of upper GI bleeding, and the meta-analysis found the highest risk when they were taken with an antiplatelet drug. Escitalopram lowers platelet serotonin and clopidogrel blocks platelet activation, so the two effects add. Atorvastatin and tamsulosin do not impair platelet function. Pairing either with clopidogrel adds no bleeding risk beyond clopidogrel alone. Escitalopram with tamsulosin lacks the antiplatelet partner.
 
-*Key feature:* Gastrointestinal (GI) bleed 4. Examine the nose, throat, and lungs to exclude non-GI sources of apparent melena or hematemesis.
+*Key feature:* Gastrointestinal (GI) bleed 1. In GI bleeding, look for clues to the source such as medications, alcohol, weight loss, liver disease, or coagulopathy.
 
-*Source:* Tunkel DE, Anne S, Payne SC, et al. Clinical practice guideline: nosebleed (epistaxis). American Academy of Otolaryngology-Head and Neck Surgery Foundation. Otolaryngol Head Neck Surg. 2020. https://doi.org/10.1177/0194599819890327
+*Source:* Jiang HY, Chen HZ, Hu XJ, et al. Use of selective serotonin reuptake inhibitors and risk of upper gastrointestinal bleeding: a systematic review and meta-analysis. Clin Gastroenterol Hepatol. 2015. https://doi.org/10.1016/j.cgh.2014.06.021
 
 #### Q3
-*Update:* The balloon controls the bleeding. Hemoglobin 128 g/L, platelets 220 x 10^9/L, INR 1.3. He is admitted.
+*Update:* He has received 500 mL of Ringer's lactate. His pulse is 114/minute and BP 88/54 mmHg. INR is 1.1 and platelets 240 x 10^9/L.
 
-**Which of the following is the most appropriate plan for his apixaban?**
+**Which of the following is the most appropriate resuscitation plan for him now?**
 
-- A. Andexanet alfa bolus then infusion
-- B. Continue apixaban at the usual dose
-- C. Hold apixaban with no reversal agent  **(key)**
-- D. Prothrombin complex concentrate 2 000 units
-- E. Switch apixaban to warfarin today
+- A. Albumin 25% 100 mL IV
+- B. Crystalloid 30 mL/kg IV, no blood
+- C. Frozen plasma 2 units IV
+- D. Red cells now, limit crystalloid  **(key)**
+- E. Red cells only if Hb below 70 g/L
 
-*Explanation:* Epistaxis that needs medical care but is controlled, with a hemoglobin of 128 g/L and stable vital signs, is clinically relevant non-major bleeding. Thrombosis Canada advises holding the DOAC and applying local measures, without reversal. Andexanet alfa and prothrombin complex concentrate are for life-threatening bleeding. Continuing apixaban while a posterior pack is in place risks rebleeding. Warfarin offers no bleeding advantage over apixaban.
+*Explanation:* He remains in shock from bleeding with a hemoglobin of 71 g/L, so red cells should start now. Canadian Blood Services advises limiting crystalloid to about 1 L before switching to blood, because large volumes worsen coagulopathy and cause edema. A 30 mL/kg sepsis bolus is 2.3 L for 78 kg and would dilute his blood further. Waiting for a hemoglobin below 70 g/L ignores his ongoing shock. His INR and platelets are normal, so plasma is not needed. Albumin carries no oxygen.
+
+*Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
+
+*Source:* Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical Guide to Transfusion. Canadian Blood Services. 2021. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion
+
+#### Q4
+*Update:* Endoscopy shows a duodenal ulcer with a visible vessel, treated with epinephrine and clips. Eighteen hours later he passes fresh melena, with pulse 120/minute, BP 90/56 mmHg and hemoglobin 64 g/L.
+
+**Which of the following is the most appropriate next step to control his bleeding?**
+
+- A. Octreotide infusion
+- B. Repeat endoscopic therapy  **(key)**
+- C. Surgical oversew of the ulcer
+- D. Tranexamic acid infusion
+- E. Transcatheter arterial embolization
+
+*Explanation:* The consensus group recommends a second attempt at endoscopic therapy for rebleeding after initial endoscopic hemostasis, while resuscitation continues. Surgery is for bleeding that endoscopy has failed to control, and embolization can be considered as an alternative to surgery at that point. Octreotide lowers portal pressure in variceal bleeding and has no role for an ulcer. Tranexamic acid does not replace endoscopic control of a visible vessel.
 
 *Key feature:* Gastrointestinal (GI) bleed 6. Arrange targeted therapy like octreotide, IV PPI, endoscopy, or surgery promptly while resuscitation continues.
 
-*Source:* Thrombosis Canada. Clinical guide: DOACs: management of bleeding. 2024. https://thrombosiscanada.ca/clinical_guides/pdfs/MANAGEMENTOFBLEEDINGINPATIENTS_75.pdf
+*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
+
+### gi-bleed-23: Blood in the mouth at breakfast
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 63-year-old man presents to the emergency department after two episodes of bright red blood filling his mouth at breakfast, about a cup in total. He thought he had vomited blood. The bleeding stopped on its own 40 minutes ago. Five months ago he finished chemoradiation for squamous cell carcinoma of the left tonsil. He has a gastrostomy feeding tube and 2 weeks of worsening left throat pain. He takes no anticoagulant or antiplatelet drug. He has no liver disease, abdominal pain, nausea, melena or cough. He is alert, pale and anxious and is spitting small amounts of bright red saliva.
+
+- Temperature: 36.8°C oral
+- Pulse: 104/minute
+- Resp.: 18/minute
+- BP: 112/70 mmHg
+- O2 sat: 97% on room air
+- Weight: 64 kg
+
+#### Q1
+**Which of the following examinations is most important to find the source of the blood?**
+
+- A. Abdominal palpation for tenderness
+- B. Auscultation of both lung fields
+- C. Digital rectal examination
+- D. Inspection of the mouth and throat  **(key)**
+- E. Nasal speculum examination
+
+*Explanation:* Bright red blood that fills the mouth without nausea, in a man with recent radiation to the left tonsil and worsening throat pain, points to the oropharynx. Inspection with a good light finds the site and shows whether it is still bleeding. He has no cough, so a lung source is less likely. He has no nasal bleeding. Abdominal and rectal examination look for a gastrointestinal source, and he has no abdominal pain or melena.
+
+*Key feature:* Gastrointestinal (GI) bleed 4. Examine the nose, throat, and lungs to exclude non-GI sources of apparent melena or hematemesis.
+
+*Source:* Slijepcevic AA, Roh J, Pipkorn P, Lipsey K, Bradley JP. Carotid blowout syndrome in head and neck cancer patients: management of patients at risk for CBS. Laryngoscope. 2023. https://doi.org/10.1002/lary.30157
+
+#### Q2
+*Update:* The examination is complete. There is a necrotic ulcer in the left tonsillar fossa with a small adherent clot. The nasal cavities and lungs are clear. The abdomen is soft and non-tender, and rectal examination shows brown stool.
+
+**Which of the following is the most likely source of his bleeding?**
+
+- A. Carotid artery in the tumour bed  **(key)**
+- B. Peptic ulcer disease
+- C. Posterior epistaxis
+- D. Radiation mucositis ooze
+- E. Varices from portal hypertension
+
+*Explanation:* A brisk bleed that stops on its own from a necrotic ulcer in a field irradiated for cancer is a sentinel bleed from the carotid system. It often comes before a catastrophic hemorrhage. Radiation and wound breakdown are its main risk factors. Brown stool and no abdominal symptoms make a peptic ulcer unlikely. The nasal cavities are clear, so this is not posterior epistaxis. He has no liver disease to suggest varices. Mucositis oozes during and just after treatment, not a cup of bright red blood 5 months later.
+
+*Key feature:* Gastrointestinal (GI) bleed 4. Examine the nose, throat, and lungs to exclude non-GI sources of apparent melena or hematemesis.
+
+*Source:* Slijepcevic AA, Roh J, Pipkorn P, Lipsey K, Bradley JP. Carotid blowout syndrome in head and neck cancer patients: management of patients at risk for CBS. Laryngoscope. 2023. https://doi.org/10.1002/lary.30157
+
+#### Q3
+**Which of the following is the most appropriate definitive management of his bleeding?**
+
+- A. Discharge with ENT follow-up
+- B. Endovascular repair by radiology  **(key)**
+- C. Esophagogastroduodenoscopy today
+- D. Open surgical vessel ligation
+- E. Silver nitrate cautery of the ulcer
+
+*Explanation:* A sentinel bleed is an impending carotid blowout, and treatment before a major hemorrhage improves survival. Endovascular embolization or a covered stent is now the standard of care. In one series in the review, mortality was 10% after endovascular therapy and 28.6% after surgical ligation. Endoscopy of the stomach looks in the wrong place. Silver nitrate cannot treat an arterial wall breakdown. Discharge risks a fatal bleed at home.
+
+*Key feature:* Gastrointestinal (GI) bleed 6. Arrange targeted therapy like octreotide, IV PPI, endoscopy, or surgery promptly while resuscitation continues.
+
+*Source:* Suárez C, Fernández-Alvarez V, Hamoir M, et al. Carotid blowout syndrome: modern trends in management. Cancer Manag Res. 2018. https://pmc.ncbi.nlm.nih.gov/articles/PMC6239123/
 
 ### gi-bleed-24: Blood after coughing fits
 
@@ -722,84 +738,80 @@ Select 2.
 
 *Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
 
-### gi-bleed-26: Breathlessness in a woman on dialysis
+### gi-bleed-26: Faint on the bench
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 74-year-old woman presents to the emergency department with 3 days of shortness of breath and chest tightness when she walks to her mailbox. She has end-stage kidney disease on hemodialysis three times weekly and severe aortic stenosis awaiting valve replacement. She takes ASA 81 mg daily. She reports no vomiting or abdominal pain and has not looked at her stools. Her last dialysis was yesterday. She is pale. A harsh systolic murmur is heard at the right upper sternal border. There are fine crackles at both lung bases. She has no leg edema.
+A 17-year-old boy is brought to the emergency department by his coach after he fainted on the bench during a basketball game. He stood up quickly to go back on the court, felt light-headed and slumped to the floor for about 10 seconds. He had no chest pain, palpitations or jerking. For 3 weeks he has taken ibuprofen 600 mg three or four times daily for a wrist sprain. He has no abdominal pain or vomiting and has not noticed any change in his stools. He has no liver disease and no personal or family history of heart disease or sudden death. He has now been lying on the stretcher for 20 minutes. He is pale and sweaty. His heart sounds are normal with no murmur.
 
-- Temperature: 36.5°C oral
-- Pulse: 108/minute regular
-- Resp.: 22/minute
-- BP: 112/58 mmHg
-- O2 sat: 94% on room air
-- Weight: 61 kg
+- Temperature: 36.7°C oral
+- Pulse: 122/minute
+- Resp.: 18/minute
+- BP: 108/64 mmHg
+- O2 sat: 99% on room air
+- Weight: 70 kg
 
 #### Q1
-*Update:* ECG shows sinus tachycardia with 1 mm ST depression in V4 to V6. High sensitivity troponin is 42 ng/L. Hemoglobin 66 g/L (104 g/L 6 weeks ago).
+**Which of the following findings most strongly suggests a serious cause for his faint?**
 
-**Which of the following is the most important next step in her assessment?**
+- A. Faint on standing up quickly
+- B. Heart rate of 122/minute at rest  **(key)**
+- C. Light-headedness before the faint
+- D. Loss of consciousness for 10 seconds
+- E. Sweating and pallor after the event
 
-- A. Coronary angiography today
-- B. CT pulmonary angiography
-- C. Digital rectal examination  **(key)**
-- D. Transthoracic echocardiogram
-- E. Ventilation perfusion scan
-
-*Explanation:* Her hemoglobin has fallen from 104 to 66 g/L in 6 weeks, and her dyspnea and ST depression are likely demand ischemia from anemia. A hidden GI bleed is the leading cause, so a rectal examination for melena is the key next step. Coronary angiography would expose her to more antithrombotic therapy while she may be bleeding. Her echocardiogram findings are already known. Nothing points to a pulmonary embolism.
+*Explanation:* A heart rate of 122/minute after 20 minutes lying down is not explained by a simple faint, which settles once the person lies flat. Persistent tachycardia with pallor points to hypovolemia, and 3 weeks of high dose ibuprofen makes hidden GI bleeding likely. Tachycardia also raises the likelihood of a severe upper GI bleed (LR 4.9). Fainting on standing, a prodrome of light-headedness, a brief loss of consciousness and sweating after the event are all common in benign reflex syncope.
 
 *Key feature:* Gastrointestinal (GI) bleed 3. Suspect hidden GI blood loss in patients with hypoperfusion signs like syncope, angina, or confusion without GI symptoms.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 26, Gastrointestinal Bleeding. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Srygley FD, Gerardo CJ, Tran T, Fisher DA. Does this patient have a severe upper gastrointestinal bleed? JAMA. 2012. https://doi.org/10.1001/jama.2012.253
 
 #### Q2
-*Update:* Rectal examination shows black tarry stool. Her chest tightness settles with rest.
+*Update:* Rectal examination shows black tarry stool. Hemoglobin is 81 g/L, platelets 260 x 10^9/L, INR 1.0, urea 16.2 mmol/L and creatinine 70 umol/L.
 
-**Which of the following transfusion plans is most appropriate for her now?**
+**Which of the following is the most appropriate initial resuscitation for him?**
 
-- A. Frozen plasma 2 units IV
-- B. Red cells to keep Hb above 130 g/L
-- C. Red cells 1 unit, then reassess  **(key)**
-- D. Red cells 4 units as fast as possible
-- E. No transfusion until endoscopy
+- A. Albumin 5% 500 mL IV
+- B. Crystalloid 1 L, then reassess  **(key)**
+- C. Frozen plasma 2 units IV
+- D. Normal saline 3 L IV rapidly
+- E. Red cells 2 units IV now
 
-*Explanation:* She has ischemic symptoms and a hemoglobin of 66 g/L, so red cells are indicated, with a higher threshold than usual because of her cardiovascular disease. Giving one unit at a time and reassessing guards against fluid overload in a dialysis patient who already has crackles. Four rapid units risk pulmonary edema, and a target above 130 g/L is not supported. Plasma does not treat anemia, and waiting for endoscopy leaves her ischemic.
+*Explanation:* He is tachycardic but not hypotensive, and his hemoglobin of 81 g/L is above the threshold of 80 g/L suggested for patients without cardiovascular disease. A crystalloid bolus with close reassessment is the right start, with blood crossmatched in case he worsens. Transfusing 2 units now is a liberal strategy the guideline does not support at this hemoglobin. Three litres of saline risks dilution and edema. The consensus group found no mortality benefit of colloids over crystalloids. His INR is 1.0, so plasma has no role.
 
 *Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
 
 *Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
 
 #### Q3
-*Update:* Upper endoscopy and colonoscopy the next day find no bleeding source. Two days later she has melena again.
+**Which of the following is the most appropriate plan to diagnose and treat his bleeding?**
 
-**Which of the following is the most appropriate next investigation to find the source?**
+- A. Admit for upper endoscopy within 24 hours  **(key)**
+- B. Colonoscopy after bowel preparation
+- C. CT angiography of the abdomen now
+- D. Discharge on a PPI with clinic follow-up
+- E. Tagged red cell nuclear scan
 
-- A. Barium small bowel series
-- B. Repeat colonoscopy in 6 weeks
-- C. Stool occult blood testing
-- D. Technetium Meckel scan
-- E. Video capsule endoscopy  **(key)**
-
-*Explanation:* When upper endoscopy and colonoscopy are negative, the small bowel is the likely source, and video capsule endoscopy is the recommended next test. Angiodysplasia is common in patients with kidney failure and aortic stenosis. Barium studies miss flat vascular lesions. Stool occult blood testing adds nothing when melena is visible. A Meckel scan is used in younger patients. Waiting 6 weeks for another colonoscopy delays diagnosis.
+*Explanation:* His Glasgow Blatchford score is high. Urea 16.2 mmol/L scores 4, hemoglobin 81 g/L in a male scores 6, systolic BP 108 mmHg scores 1, pulse over 100/minute scores 1, melena 1 and syncope 2, for a total of 15. The guideline suggests early endoscopy within 24 hours, which both finds and treats an ulcer. Only very low scores are suitable for discharge. Colonoscopy looks in the wrong place for melena. CT angiography and a nuclear scan cannot treat an ulcer.
 
 *Key feature:* Gastrointestinal (GI) bleed 6. Arrange targeted therapy like octreotide, IV PPI, endoscopy, or surgery promptly while resuscitation continues.
 
-*Source:* Gerson LB, Fidler JL, Cave DR, Leighton JA. ACG clinical guideline: diagnosis and management of small bowel bleeding. Am J Gastroenterol. 2015.
+*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
 
 #### Q4
-**Which of the following conditions in her history is linked to both acquired von Willebrand syndrome and GI angiodysplasia?**
+**Which of the following is the most likely source of his bleeding?**
 
-- A. Aortic valve stenosis  **(key)**
-- B. Being of female sex
-- C. Daily ASA 81 mg use
-- D. End-stage kidney disease
-- E. Her age of 74 years
+- A. Bleeding duodenal ulcer  **(key)**
+- B. Crohn disease of the ileum
+- C. Esophageal varices
+- D. Mallory-Weiss tear
+- E. Meckel diverticulum
 
-*Explanation:* Severe aortic stenosis breaks down large von Willebrand factor multimers as blood passes the narrowed valve, and it is associated with bleeding from GI angiodysplasia. This is called Heyde syndrome. Kidney failure is linked to angiodysplasia and platelet dysfunction but not to loss of von Willebrand multimers. ASA impairs platelet function but does not cause either condition. Age raises the chance of angiodysplasia but not acquired von Willebrand syndrome, and sex is not a factor.
+*Explanation:* Melena makes an upper source far more likely (LR 25 on examination). His urea to creatinine ratio is also high. Urea 16.2 mmol/L is a urea nitrogen of about 45 mg/dL and creatinine 70 umol/L is about 0.79 mg/dL, a ratio of about 57. Three weeks of high dose ibuprofen is the clue to a peptic ulcer. A Mallory-Weiss tear follows retching, and he has not vomited. He has no liver disease to suggest varices. Meckel diverticulum and ileal Crohn disease are small bowel sources that usually cause maroon or red blood rather than melena.
 
 *Key feature:* Gastrointestinal (GI) bleed 1. In GI bleeding, look for clues to the source such as medications, alcohol, weight loss, liver disease, or coagulopathy.
 
-*Source:* Gerson LB, Fidler JL, Cave DR, Leighton JA. ACG clinical guideline: diagnosis and management of small bowel bleeding. Am J Gastroenterol. 2015.
+*Source:* Srygley FD, Gerardo CJ, Tran T, Fisher DA. Does this patient have a severe upper gastrointestinal bleed? JAMA. 2012. https://doi.org/10.1001/jama.2012.253
 
 ### gi-bleed-27: Fatigue and dizziness in a woman on several medications
 
@@ -979,7 +991,7 @@ Select 3.
 - E. Recent dental abscess
 - F. Stopping omeprazole  **(key)**
 
-*Explanation:* A marginal ulcer forms at the gastrojejunal anastomosis after gastric bypass. In a meta-analysis, smoking was a clear predictor of marginal ulcer. NSAID use showed a trend toward higher risk and PPI use a trend toward lower risk, so her ibuprofen and stopping omeprazole also count against her. Age and female sex were not predictors. The dental abscess matters only because it led to ibuprofen use.
+*Explanation:* A marginal ulcer forms at the gastrojejunal anastomosis after gastric bypass. In a meta-analysis, smoking was a clear predictor of marginal ulcer. NSAID use and lack of PPI protection are recognised risk factors for marginal ulcer, although in this meta-analysis their effects did not reach significance. Age and female sex were not predictors. The dental abscess matters only because it led to ibuprofen use.
 
 *Key feature:* Gastrointestinal (GI) bleed 1. In GI bleeding, look for clues to the source such as medications, alcohol, weight loss, liver disease, or coagulopathy.
 
@@ -1232,71 +1244,65 @@ A 6-year-old boy is brought to the emergency department after vomiting a large a
 
 *Source:* Romano C, Oliva S, Martellossi S, et al. Pediatric gastrointestinal bleeding: perspectives from the Italian Society of Pediatric Gastroenterology. World J Gastroenterol. 2017. https://pmc.ncbi.nlm.nih.gov/articles/PMC5330817/
 
-### gi-bleed-33: Bleeding patient who declines blood
+### gi-bleed-33: Vomiting blood in a woman with fatty liver
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in an emergency department in Ontario. A 52-year-old man presents with three episodes of hematemesis and black stools since last night. He has a history of duodenal ulcer and has taken ibuprofen daily for a week. He is a Jehovah's Witness and carries a signed card refusing blood transfusion. He is alert and oriented. He understands that he may die without transfusion and repeats his refusal of red cells, plasma and platelets. His wife supports his decision. He is pale and diaphoretic.
+A 61-year-old woman presents to the emergency department 1 hour after vomiting about 2 cups of dark red blood. She has cirrhosis from metabolic dysfunction-associated steatohepatitis, diagnosed 3 years ago, with type 2 diabetes and obesity. She has never had an endoscopy. She takes metformin and spironolactone. She does not drink alcohol. She is alert and oriented. She has spider angiomas on her chest, mild ascites and no asterixis. Hemoglobin 84 g/L, platelets 62 x 10^9/L, INR 2.0, fibrinogen 2.1 g/L, bilirubin 38 umol/L, albumin 29 g/L, creatinine 74 umol/L.
 
-- Temperature: 36.4°C oral
-- Pulse: 122/minute
-- Resp.: 22/minute
-- BP: 92/56 mmHg
+- Temperature: 36.6°C oral
+- Pulse: 108/minute
+- Resp.: 18/minute
+- BP: 102/64 mmHg
 - O2 sat: 97% on room air
-- Weight: 82 kg
+- Weight: 96 kg
 
 #### Q1
-*Update:* Hemoglobin is 61 g/L. He again declines red cells after you explain that he may die without them.
+**Which of the following is the most appropriate way to manage her INR of 2.0 during this bleed?**
 
-**Which of the following is the most appropriate response to his refusal of transfusion?**
+- A. Cryoprecipitate 10 units IV
+- B. Frozen plasma 15 mL/kg IV
+- C. Prothrombin complex 25 units/kg IV
+- D. Recombinant factor VIIa IV
+- E. No product to correct the INR  **(key)**
 
-- A. Ask his wife to consent on his behalf
-- B. Respect the refusal and document capacity  **(key)**
-- C. Seek an urgent court order to transfuse
-- D. Transfuse if he loses consciousness
-- E. Transfuse under the emergency exception
-
-*Explanation:* A capable adult may refuse blood, even when refusal may be fatal. In Malette v. Shulman, the Ontario Court of Appeal held that transfusing a patient who carried a signed refusal card was battery. So his refusal stands even if he loses consciousness, and the emergency exception does not apply when his wishes are known. A substitute decision maker cannot override a capable patient's own refusal, and no court order is needed or likely to be granted to transfuse a capable adult against his wishes. The priority is to document his capacity and the discussion clearly and treat him with every acceptable alternative.
+*Explanation:* In cirrhosis the INR does not reflect the real balance of clotting, and variceal bleeding is driven by portal pressure. Baveno VII advises against frozen plasma in acute variceal bleeding because it does not correct the coagulopathy and adds volume that raises portal pressure. Prothrombin complex concentrate is also aimed at the INR, which is not the target. Recombinant factor VIIa is not recommended. Her fibrinogen is 2.1 g/L, so cryoprecipitate is not needed.
 
 *Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
 
-*Source:* Malette v. Shulman. Ontario Court of Appeal. 72 OR (2d) 417. 1990. https://www.canlii.org/en/on/onca/doc/1990/1990canlii6868/1990canlii6868.html
+*Source:* de Franchis R, Bosch J, Garcia-Tsao G, Reiberger T, Ripoll C, Baveno VII Faculty. Baveno VII: renewing consensus in portal hypertension. J Hepatol. 2022. https://doi.org/10.1016/j.jhep.2021.12.022
 
 #### Q2
-**Which of the following are the most appropriate measures for him now?**
+**Which of the following is the most appropriate timing for her upper endoscopy?**
 
-Select 3.
+- A. After 48 hours of octreotide
+- B. Before any fluid or blood is given
+- C. Once the INR falls below 1.5
+- D. Within 12 hours of presentation  **(key)**
+- E. Within 24 hours of presentation
 
-- A. Frozen plasma 2 units IV
-- B. Normal saline 4 L IV bolus
-- C. Octreotide 50 mcg IV bolus
-- D. Pantoprazole 80 mg IV  **(key)**
-- E. Pediatric tubes for blood tests  **(key)**
-- F. Recombinant factor VIIa IV
-- G. Urgent upper endoscopy  **(key)**
-
-*Explanation:* Stopping the bleeding quickly matters most when blood cannot be given, so urgent endoscopy and an IV PPI for a likely ulcer are key. Small-volume pediatric tubes limit blood lost to testing. He has refused plasma. Large crystalloid volumes dilute his remaining red cells and clotting factors. Octreotide is for variceal bleeding, and recombinant factor VIIa adds thrombotic risk without proven benefit in ulcer bleeding.
+*Explanation:* Baveno VII advises upper endoscopy within 12 hours of presentation for suspected variceal bleeding, once she is resuscitated. Within 24 hours is the standard for nonvariceal bleeding and is too slow for likely varices. Endoscopy should follow resuscitation, not come before it. Waiting 48 hours delays band ligation. Waiting for the INR to fall is wrong, because the INR does not guide hemostasis in cirrhosis.
 
 *Key feature:* Gastrointestinal (GI) bleed 6. Arrange targeted therapy like octreotide, IV PPI, endoscopy, or surgery promptly while resuscitation continues.
 
-*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
+*Source:* de Franchis R, Bosch J, Garcia-Tsao G, Reiberger T, Ripoll C, Baveno VII Faculty. Baveno VII: renewing consensus in portal hypertension. J Hepatol. 2022. https://doi.org/10.1016/j.jhep.2021.12.022
 
 #### Q3
-*Update:* Endoscopy shows a duodenal ulcer with a nonbleeding visible vessel, treated with clips and epinephrine injection.
+*Update:* Octreotide and ceftriaxone 1 g IV were started in the emergency department. Endoscopy shows bleeding esophageal varices, which are banded. Her Child-Pugh score is 9, class B.
 
-**Which of the following acid suppression regimens is most appropriate after endoscopic therapy?**
+**Which of the following is the most appropriate total duration of her octreotide infusion?**
 
-- A. Famotidine 20 mg IV twice daily
-- B. Misoprostol 200 mcg PO four times daily
-- C. Pantoprazole 80 mg IV then 8 mg/hour  **(key)**
-- D. Pantoprazole 40 mg PO once daily
-- E. Sucralfate 1 g PO four times daily
+- A. 1 day only
+- B. 2 to 5 days  **(key)**
+- C. 6 to 9 days
+- D. 10 to 14 days
+- E. 21 to 28 days
 
-*Explanation:* After endoscopic hemostasis of a high risk lesion such as a visible vessel, high dose PPI for 3 days lowers rebleeding. The usual regimen is an IV bolus followed by continuous infusion. Standard once daily oral PPI is not enough in the first 3 days. H2 receptor antagonists, sucralfate and misoprostol do not provide the sustained acid suppression needed to stabilize the clot.
+*Explanation:* Baveno VII advises starting a vasoactive drug such as octreotide as soon as possible and continuing it for 2 to 5 days, because early rebleeding is most likely in that window. Stopping after 1 day leaves her exposed. Courses of 6 days or more add no benefit, and long-term prevention then moves to a nonselective beta blocker. Her Child-Pugh score is 9: bilirubin 2, albumin 2, INR 2, mild ascites 2 and no encephalopathy 1.
 
 *Key feature:* Gastrointestinal (GI) bleed 6. Arrange targeted therapy like octreotide, IV PPI, endoscopy, or surgery promptly while resuscitation continues.
 
-*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
+*Source:* de Franchis R, Bosch J, Garcia-Tsao G, Reiberger T, Ripoll C, Baveno VII Faculty. Baveno VII: renewing consensus in portal hypertension. J Hepatol. 2022. https://doi.org/10.1016/j.jhep.2021.12.022
 
 ### gi-bleed-34: Cramps then bloody stools in an older woman
 
@@ -1541,88 +1547,82 @@ Select 2.
 
 *Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
 
-### gi-bleed-38: Heavy rectal bleeding at a small hospital
+### gi-bleed-38: Near faint on the toilet
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital with a CT scanner but no endoscopy, interventional radiology or surgeon on site. The referral centre is 90 minutes away by air. An 81-year-old man presents with five large maroon and red stools with clots over 3 hours. He has known diverticulosis and hypertension and takes amlodipine only. He has no vomiting, dyspepsia or NSAID use. He is pale and diaphoretic. Rectal examination shows maroon blood with clots.
+A 68-year-old woman is brought to the emergency department by ambulance after she nearly fainted on the toilet. Since midnight she has passed dark maroon stool four times, the last with red clots. Three days ago she had an ERCP with biliary sphincterotomy and removal of a common bile duct stone and went home the same day. She has stable angina and takes ASA 81 mg daily and bisoprolol. She has no abdominal pain, vomiting or history of liver disease. She is pale and clammy. The abdomen is soft and non-tender. Rectal examination shows maroon blood with clots. Hemoglobin 76 g/L (128 g/L before the ERCP), INR 1.1, platelets 210 x 10^9/L.
 
-- Temperature: 36.3°C oral
-- Pulse: 124/minute
+- Temperature: 36.5°C oral
+- Pulse: 112/minute
 - Resp.: 22/minute
-- BP: 84/50 mmHg
-- O2 sat: 96% on room air
-- Weight: 76 kg
+- BP: 82/50 mmHg
+- O2 sat: 97% on room air
+- Weight: 66 kg
 
 #### Q1
-**Which of the following products is most appropriate to give him first?**
+*Update:* The blood bank can release uncrossmatched red cells now or crossmatched units in 45 minutes. She is expected to need several units quickly.
 
-- A. Albumin 5% 500 mL IV
-- B. Crossmatched red cells when ready
-- C. Normal saline 2 L IV bolus
-- D. Uncrossmatched O negative red cells
-- E. Uncrossmatched O positive red cells  **(key)**
+**Which of the following is most appropriate as her red cell transfusion begins?**
 
-*Explanation:* He is in hemorrhagic shock and needs red cells now. For an older man, group O RhD positive cells are appropriate, and O negative cells are reserved for females of childbearing potential, children and people known to have anti-D. This matters in a small hospital with few O negative units. Waiting for crossmatched cells delays treatment. Crystalloid or albumin boluses dilute clotting factors and carry no oxygen.
+- A. Crystalloid 2 L before any blood
+- B. Give each unit over 2 hours
+- C. Infuse through a blood warmer  **(key)**
+- D. Start warming once she is cold
+- E. Wait for crossmatched units
+
+*Explanation:* She is in hemorrhagic shock and will need several units fast. Canadian Blood Services advises giving all products through an approved blood warming device, because hypothermia worsens platelet and clotting function, slows citrate metabolism and depresses the heart. Waiting until she is cold lets that harm start first. Giving each unit over 2 hours is far too slow in shock, and waiting 45 minutes for crossmatched units delays red cells she needs now. The guide advises limiting crystalloid to about 1 L before switching to blood, so 2 L first dilutes her further.
 
 *Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
 
 *Source:* Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical Guide to Transfusion. Canadian Blood Services. 2021. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion
 
 #### Q2
-*Update:* After 2 units of red cells, pulse is 116/minute and BP 92/58 mmHg. The transport team will arrive in 90 minutes.
+**Which of the following is the most appropriate procedure to find and treat her bleeding?**
 
-**Which of the following investigations is most appropriate before transfer?**
+- A. Colonoscopy after bowel preparation
+- B. Duodenoscopy with a side-viewing scope  **(key)**
+- C. Exploratory laparotomy
+- D. Tagged red cell nuclear scan
+- E. Video capsule endoscopy
 
-- A. Abdominal ultrasound
-- B. CT angiography of the abdomen  **(key)**
-- C. Plain abdominal radiograph
-- D. Stool culture and toxin
-- E. Unprepared flexible sigmoidoscopy
-
-*Explanation:* His shock index remains above 1, so the bleeding is unstable. CT angiography is the recommended first test because it localizes active bleeding and guides the referral centre toward embolization or endoscopy. It can be done during the wait for transport. Ultrasound and plain films do not show bleeding points. Stool tests do not help acute management. Flexible sigmoidoscopy is not available on site and cannot see the right colon.
+*Explanation:* Bleeding 3 days after a sphincterotomy is most often delayed bleeding from the cut papilla. A side-viewing duodenoscope reaches the papilla, and standard endoscopic hemostasis treats it. The ESGE guideline keeps a fully covered metal stent for bleeding that standard methods cannot control. Colonoscopy looks in the wrong place. A nuclear scan and capsule endoscopy cannot treat the bleeding, and capsule is not for an unstable patient. Laparotomy is kept for failed endoscopic and radiological control.
 
 *Key feature:* Gastrointestinal (GI) bleed 6. Arrange targeted therapy like octreotide, IV PPI, endoscopy, or surgery promptly while resuscitation continues.
 
-*Source:* Oakland K, Chadwick G, East JE, et al. Diagnosis and management of acute lower gastrointestinal bleeding: guidelines from the British Society of Gastroenterology. Gut. 2019.
+*Source:* Dumonceau JM, Kapral C, Aabakken L, et al. ERCP-related adverse events: European Society of Gastrointestinal Endoscopy (ESGE) guideline. Endoscopy. 2020. https://doi.org/10.1055/a-1075-4080
 
 #### Q3
-*Update:* CT angiography shows active contrast extravasation into the second part of the duodenum. The colon shows diverticula without extravasation.
+**Which of the following features of her presentation most suggests an upper source for her maroon stool?**
 
-**Which of the following is the most appropriate next step for him?**
+- A. Absence of abdominal pain
+- B. Clots mixed in the stool
+- C. Fall in hemoglobin of 52 g/L
+- D. Hypotension with tachycardia
+- E. Recent biliary sphincterotomy  **(key)**
 
-- A. Bowel preparation, then colonoscopy
-- B. Octreotide 50 mcg IV bolus
-- C. Tranexamic acid 1 g IV
-- D. Transfer for urgent colonoscopy
-- E. Transfer for urgent upper endoscopy  **(key)**
-
-*Explanation:* Brisk upper GI bleeding can pass through the bowel fast enough to appear as maroon or red blood, and here CT shows the source in the duodenum. He needs transfer for urgent upper endoscopy, with a high dose IV PPI started. Colonoscopy, with or without preparation, looks in the wrong place. Octreotide is for variceal bleeding. Tranexamic acid did not reduce death in GI bleeding and increased venous thrombosis.
+*Explanation:* A sphincterotomy 3 days ago left a fresh cut at the papilla in the duodenum, and delayed bleeding from it is a known complication, so brisk bleeding there can pass as maroon stool. Shock with rectal bleeding does raise the chance of an upper source, but it also fits a brisk colonic bleed and is less specific than a known fresh wound. Clots in the stool point toward a lower source (LR 0.05). The size of the hemoglobin fall shows severity, not site. Painless bleeding occurs with both upper and colonic sources.
 
 *Key feature:* Gastrointestinal (GI) bleed 2. Remember that apparent lower GI bleeding can come from an upper GI source.
 
-*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding: guideline recommendations from the International Consensus Group. Ann Intern Med. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC7233308/
+*Source:* Srygley FD, Gerardo CJ, Tran T, Fisher DA. Does this patient have a severe upper gastrointestinal bleed? JAMA. 2012. https://doi.org/10.1001/jama.2012.253
 
 #### Q4
-*Update:* While awaiting transport he has received 6 units of red cells and 2 units of plasma. Ionized calcium 0.84 mmol/L, fibrinogen 1.1 g/L.
+*Update:* The bleeding has been controlled. She has received 3 units of red cells. Her pulse is 88/minute, BP 118/70 mmHg and hemoglobin 86 g/L. She has no chest pain.
 
-**Which of the following are the most appropriate treatments for these results?**
+**Which of the following is the most appropriate threshold for further red cell transfusion?**
 
-Select 2.
+- A. Hb below 60 g/L
+- B. Hb below 70 g/L
+- C. Hb below 80 g/L  **(key)**
+- D. Hb below 100 g/L
+- E. Hb below 120 g/L
 
-- A. Albumin 25% 100 mL IV
-- B. Calcium chloride 1 g IV  **(key)**
-- C. Cryoprecipitate 10 units IV  **(key)**
-- D. Desmopressin 0.3 mcg/kg IV
-- E. Sodium bicarbonate 50 mmol IV
-- F. Tranexamic acid 1 g IV
-- G. Vitamin K 10 mg IV
-
-*Explanation:* Citrate in transfused blood binds calcium, and his ionized calcium of 0.84 mmol/L needs replacement to support clotting and cardiac function. His fibrinogen of 1.1 g/L is below the target of at least 1.5 g/L in bleeding, and in Canada it is replaced with cryoprecipitate or fibrinogen concentrate. Bicarbonate, albumin and desmopressin do not correct either problem. Vitamin K has no role without a vitamin K deficiency, and tranexamic acid is not recommended in GI bleeding.
+*Explanation:* She has known coronary disease with stable angina, so the AABB guideline suggests a threshold of 80 g/L rather than 70 g/L. Now that bleeding is controlled, further red cells are given only if hemoglobin falls below that level. A threshold of 70 g/L is advised for most hospitalized adults without cardiovascular disease. Thresholds of 100 or 120 g/L expose her to more transfusion without shown benefit. A threshold of 60 g/L is lower than any threshold the guideline recommends.
 
 *Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
 
-*Source:* Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical Guide to Transfusion. Canadian Blood Services. 2021. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion
+*Source:* Carson JL, Stanworth SJ, Guyatt G, et al. Red blood cell transfusion: 2023 AABB international guidelines. JAMA. 2023. https://doi.org/10.1001/jama.2023.12914
 
 ### gi-bleed-39: Frequent bloody stools in a young woman
 
@@ -1755,70 +1755,70 @@ A 45-year-old woman presents to the emergency department because her stools have
 
 *Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 26, Gastrointestinal Bleeding. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
 
-### gi-bleed-41: Palpitations and weakness in an older woman
+### gi-bleed-41: A racing heart that will not settle
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 83-year-old woman is brought to the emergency department by ambulance with 1 day of palpitations and weakness. She has atrial fibrillation treated with rivaroxaban 15 mg daily and bisoprolol, chronic kidney disease and osteoarthritis treated with celecoxib 200 mg daily. She has no chest pain, abdominal pain, vomiting or change in her stools that she has noticed. She is pale with cool hands. ECG shows atrial fibrillation at 146/minute with no ST elevation. Capillary glucose is 6.2 mmol/L.
+A 58-year-old man presents to the emergency department with 4 hours of a pounding heartbeat and light-headedness when he stands. He has paroxysmal atrial fibrillation, with two brief episodes in the past year that settled on their own, and takes metoprolol 25 mg twice daily. His heart rate between episodes is 60 to 70/minute. He has no other medical conditions and takes no anticoagulant. For 5 weeks he has taken diclofenac 50 mg three times daily for a shoulder injury. For a week he has felt more tired than usual. He denies chest pain, abdominal pain and vomiting, and he has not looked at his stools. He has not missed or changed any medications. He is pale. His lungs are clear and there is no leg edema. The abdomen is soft and non-tender. The ECG shows atrial fibrillation at 138/minute with a narrow QRS and no ST changes.
 
-- Temperature: 36.4°C oral
-- Pulse: 146/minute irregular
-- Resp.: 22/minute
-- BP: 92/54 mmHg
-- O2 sat: 95% on room air
-- Weight: 58 kg
+- Temperature: 36.7°C oral
+- Pulse: 138/minute
+- Resp.: 20/minute
+- BP: 96/60 mmHg
+- O2 sat: 97% on room air
+- Weight: 80 kg
 
 #### Q1
-**Which of the following is the most appropriate next step in her care?**
+**Which of the following investigations is most important to add to his assessment now?**
 
-- A. Amiodarone 150 mg IV
-- B. Diltiazem 10 mg IV
-- C. Metoprolol 5 mg IV
-- D. Rectal exam and CBC  **(key)**
-- E. Synchronized cardioversion
+- A. Chest radiograph
+- B. Complete blood count  **(key)**
+- C. Echocardiogram today
+- D. High-sensitivity troponin
+- E. Thyroid-stimulating hormone
 
-*Explanation:* Rapid atrial fibrillation with pallor, cool hands and a low BP in a patient on an anticoagulant and an NSAID may be a response to hidden blood loss. A rectal examination and hemoglobin should come before any rate control. Diltiazem and metoprolol can cause collapse if the tachycardia is compensating for hypovolemia. Amiodarone and cardioversion treat the rhythm without addressing the likely cause.
+*Explanation:* His rate of 138/minute is far above his usual rate on metoprolol, and he is pale with a low BP after a week of fatigue. After 5 weeks of diclofenac, hidden GI bleeding is a likely driver even without GI symptoms. The CAEP checklist lists bleeding among the medical causes of rapid atrial fibrillation that must be found and treated first, so a hemoglobin is needed now, with a rectal examination. The checklist advises against routine troponin in rapid atrial fibrillation because a small demand rise is expected. A chest radiograph, thyroid testing and an echocardiogram look for other causes and do not explain pallor with a low BP.
 
 *Key feature:* Gastrointestinal (GI) bleed 3. Suspect hidden GI blood loss in patients with hypoperfusion signs like syncope, angina, or confusion without GI symptoms.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 26, Gastrointestinal Bleeding. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Stiell IG, de Wit K, Scheuermeyer FX, et al. 2021 CAEP acute atrial fibrillation/flutter best practices checklist. CJEM. 2021. https://pmc.ncbi.nlm.nih.gov/articles/PMC8423652/
 
 #### Q2
-*Update:* Rectal examination shows maroon stool. Hemoglobin 71 g/L (122 g/L 2 months ago), urea 21.4 mmol/L, creatinine 104 umol/L.
+*Update:* Rectal examination shows melena. Endoscopy is planned for the morning. A resident asks whether to start an anticoagulant because his atrial fibrillation began 4 hours ago.
 
-**Which of the following findings best supports an upper GI source for her bleeding?**
+**Which of the following is the most appropriate anticoagulation plan for him now?**
 
-- A. Absence of abdominal pain
-- B. Hemoglobin of 71 g/L
-- C. Maroon colour of the stool
-- D. Rivaroxaban anticoagulation
-- E. Urea high relative to creatinine  **(key)**
+- A. apixaban 5 mg PO twice daily
+- B. enoxaparin 1 mg/kg SC twice daily
+- C. Heparin infusion without a bolus
+- D. rivaroxaban 20 mg PO daily
+- E. No anticoagulation  **(key)**
 
-*Explanation:* Blood digested in the upper gut is absorbed as protein and raises urea out of proportion to creatinine. Her urea of 21.4 mmol/L with a creatinine of 104 umol/L fits an upper source, likely an NSAID ulcer. In conventional units her urea nitrogen to creatinine ratio is about 51, and a ratio above 30 made an upper source more likely in a systematic review. Maroon stool is seen in brisk upper bleeding as well as in right colon bleeding, so it does not separate them. The hemoglobin level, the lack of pain and anticoagulation do not indicate where the bleeding comes from.
+*Explanation:* He is bleeding from the gut, so any anticoagulant would add to the bleed. He also has no current indication for one. He meets none of the CHADS-65 criteria of age 65 or more, prior stroke or TIA, hypertension, heart failure or diabetes, so the CAEP checklist does not call for long-term anticoagulation. His atrial fibrillation began 4 hours ago, less than 12 hours, so the checklist would not require anticoagulation before a cardioversion either. Apixaban, rivaroxaban, enoxaparin and a heparin infusion all add bleeding risk with no benefit to him.
 
-*Key feature:* Gastrointestinal (GI) bleed 2. Remember that apparent lower GI bleeding can come from an upper GI source.
+*Key feature:* Arrhythmia 6. Modify arrhythmia treatment for special contexts such as WPW, poisoning, hypothermia, or long QT.
 
-*Source:* Srygley FD, Gerardo CJ, Tran T, Fisher DA. Does this patient have a severe upper gastrointestinal bleed? JAMA. 2012. https://pubmed.ncbi.nlm.nih.gov/22416103/
+*Source:* Stiell IG, de Wit K, Scheuermeyer FX, et al. 2021 CAEP acute atrial fibrillation/flutter best practices checklist. CJEM. 2021. https://pmc.ncbi.nlm.nih.gov/articles/PMC8423652/
 
 #### Q3
-**Which of the following are the most appropriate immediate measures for her?**
+*Update:* His heart rate is 134/minute and his BP 94/58 mmHg despite 500 mL of Ringer's lactate.
 
-Select 2.
+**Which of the following is the most appropriate treatment for his heart rate now?**
 
-- A. Diltiazem 10 mg IV
-- B. Frozen plasma 4 units IV
-- C. Hold rivaroxaban  **(key)**
-- D. Normal saline 3 L IV
-- E. Platelets 1 adult dose
-- F. Tranexamic acid 1 g IV
-- G. Transfuse red cells  **(key)**
-- H. Vitamin K 10 mg IV
+Select 1.
 
-*Explanation:* She has a major GI bleed with hemodynamic instability and a hemoglobin of 71 g/L, so rivaroxaban is held and red cells are given. Vitamin K and frozen plasma do not reverse a factor Xa inhibitor. Tranexamic acid is not recommended for GI bleeding. Platelets are not indicated because she takes no antiplatelet drug and her count has not been shown to be low. A 3 L crystalloid bolus dilutes clotting factors, and diltiazem may cause collapse.
+- A. amiodarone 150 mg IV
+- B. digoxin 0.5 mg IV
+- C. diltiazem 20 mg IV
+- D. metoprolol 5 mg IV
+- E. Red cell transfusion  **(key)**
+- F. Synchronized cardioversion
+
+*Explanation:* His fast rate is a response to blood loss, with melena, pallor and a BP that stays low after crystalloid. The CAEP checklist warns that in rapid atrial fibrillation secondary to a medical cause such as bleeding, cardioversion may be harmful and aggressive rate control should be avoided, and the cause should be treated. Red cells restore volume and oxygen delivery, and his rate should fall as he is resuscitated. Diltiazem 20 mg, the usual 0.25 mg/kg for 80 kg, and metoprolol would lower his BP further and remove the compensation that keeps up his output. Amiodarone and digoxin also target the rhythm, not the bleed. Cardioversion is often chosen for recent-onset atrial fibrillation, but not when bleeding is driving the rate.
 
 *Key feature:* Gastrointestinal (GI) bleed 5. Resuscitate severe GI bleeds well, with early crossmatch, a sensible choice of blood product, and crystalloid.
 
-*Source:* Thrombosis Canada. Clinical guide: DOACs: management of bleeding. 2024. https://thrombosiscanada.ca/clinical_guides/pdfs/MANAGEMENTOFBLEEDINGINPATIENTS_75.pdf
+*Source:* Stiell IG, de Wit K, Scheuermeyer FX, et al. 2021 CAEP acute atrial fibrillation/flutter best practices checklist. CJEM. 2021. https://pmc.ncbi.nlm.nih.gov/articles/PMC8423652/
 
 ### gi-bleed-42: Blood-streaked stools in a thriving baby
 
@@ -1877,63 +1877,63 @@ A 7-week-old girl is brought to the emergency department by her parents because 
 
 *Source:* Applegate KE. Evidence-based diagnosis of malrotation and volvulus. Pediatr Radiol. 2009. https://pubmed.ncbi.nlm.nih.gov/19308378/
 
-### gi-bleed-43: Rash, joint pain and dark stool in a child
+### gi-bleed-43: Blood on the stool in a preschooler
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 6-year-old boy is brought to the emergency department with 3 days of crampy abdominal pain and sore ankles. Today he passed a dark red stool. He had a sore throat 2 weeks ago. He takes no medications. He is uncomfortable but alert. There is a palpable purpuric rash over the buttocks and the backs of both legs. Both ankles are swollen and tender. The abdomen is diffusely tender without a mass or guarding. Hemoglobin 118 g/L, platelets 310 x 10^9/L, creatinine 40 umol/L, INR 1.0.
+A 4-year-old girl is brought to the emergency department by her father because of bright red blood on her stool several times over 3 weeks. Today there was more blood than usual in the toilet. She has no pain when passing stool, and her stools are soft and formed. She has no abdominal pain, vomiting, fever or diarrhea. She is eating well and growing along her usual curve. She takes no medications. There is no family history of bowel disease. She is playful and well. The abdomen is soft and non-tender. There is no anal fissure or skin tag. Rectal examination shows soft stool with red blood and no mass. Hemoglobin 118 g/L, platelets 290 x 10^9/L, INR 1.0.
 
-- Temperature: 37.3°C oral
-- Pulse: 112/minute
+- Temperature: 36.8°C tympanic
+- Pulse: 104/minute
 - Resp.: 22/minute
-- BP: 102/64 mmHg
+- BP: 98/60 mmHg
 - O2 sat: 99% on room air
-- Weight: 21 kg
+- Weight: 17 kg
 
 #### Q1
-**Which of the following is the most likely diagnosis for him?**
+**Which of the following is the most likely cause of her rectal bleeding?**
 
-- A. Acute appendicitis
-- B. Hemolytic uremic syndrome
-- C. IgA vasculitis  **(key)**
-- D. Immune thrombocytopenia
-- E. Meningococcemia
+- A. Anal fissure
+- B. Infectious colitis
+- C. Intussusception
+- D. Juvenile polyp  **(key)**
+- E. Meckel diverticulum
 
-*Explanation:* Palpable purpura on the buttocks and legs with a normal platelet count, arthritis, abdominal pain and GI bleeding after a sore throat is IgA vasculitis. The rash on examination is the key clue to the source of his bleeding. Immune thrombocytopenia is excluded by a platelet count of 310 x 10^9/L. Hemolytic uremic syndrome causes anemia, low platelets and renal failure. Meningococcemia causes fever and rapid deterioration, and appendicitis does not cause purpura.
+*Explanation:* Repeated painless bright red bleeding on formed stool in a well child over 2 years old is typical of a juvenile polyp. An anal fissure causes pain on passing stool and usually follows constipation, and no fissure is seen. Infectious colitis causes diarrhea and often fever. Intussusception causes colicky pain and vomiting. Meckel diverticulum bleeds painlessly but usually as a large maroon bleed with a fall in hemoglobin, and her hemoglobin is normal.
 
 *Key feature:* Gastrointestinal (GI) bleed 1. In GI bleeding, look for clues to the source such as medications, alcohol, weight loss, liver disease, or coagulopathy.
 
-*Source:* Ozen S, Marks SD, Brogan P, et al. European consensus-based recommendations for diagnosis and treatment of immunoglobulin A vasculitis: the SHARE initiative. Rheumatology (Oxford). 2019.
+*Source:* Piccirillo M, Pucinischi V, Mennini M, et al. Gastrointestinal bleeding in children: diagnostic approach. Ital J Pediatr. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC10807079/
 
 #### Q2
-**Which of the following investigations is most important for his abdominal pain and bleeding?**
+**Which of the following features of her history best helps to locate the source of her bleeding?**
 
-- A. Abdominal radiograph
-- B. Abdominal ultrasound  **(key)**
-- C. CT abdomen with contrast
-- D. Technetium Meckel scan
-- E. Upper GI endoscopy
+- A. Bright red blood on formed stool  **(key)**
+- B. Normal hemoglobin level
+- C. Painless bleeding episodes
+- D. Weight gain on her curve
+- E. No family history of polyps
 
-*Explanation:* Intussusception, often ileoileal, is the most important GI complication of IgA vasculitis and can cause pain and bloody stool. Ultrasound detects it and shows bowel wall thickening, without radiation. A plain radiograph is insensitive. CT adds radiation without advantage as a first test. A Meckel scan and upper endoscopy do not address the likely complication.
+*Explanation:* Bright red blood on the surface of formed stool has not travelled far through the bowel, which places the source in the rectum or distal colon. Painless bleeding occurs with sources at many levels, including Meckel diverticulum. A normal hemoglobin and normal growth show that she is not losing much blood, but they do not localize it. A negative family history makes a polyposis syndrome less likely but says nothing about where the bleeding is.
 
 *Key feature:* Gastrointestinal (GI) bleed 1. In GI bleeding, look for clues to the source such as medications, alcohol, weight loss, liver disease, or coagulopathy.
 
-*Source:* Ozen S, Marks SD, Brogan P, et al. European consensus-based recommendations for diagnosis and treatment of immunoglobulin A vasculitis: the SHARE initiative. Rheumatology (Oxford). 2019.
+*Source:* Piccirillo M, Pucinischi V, Mennini M, et al. Gastrointestinal bleeding in children: diagnostic approach. Ital J Pediatr. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC10807079/
 
 #### Q3
-**Which of the following tests is most important to screen for kidney involvement?**
+**Which of the following is the most appropriate next step to identify the cause?**
 
-- A. Antistreptolysin O titre
-- B. Renal ultrasound
-- C. Serum complement levels
-- D. Serum IgA concentration
-- E. Urinalysis for blood and protein  **(key)**
+- A. Abdominal ultrasound today
+- B. Air contrast enema
+- C. Referral for colonoscopy  **(key)**
+- D. Stool culture and reassurance
+- E. Technetium-99m pertechnetate scan
 
-*Explanation:* Nephritis is the main long term risk in IgA vasculitis, so urinalysis for hematuria and proteinuria, with BP checks, is the key screen now and at follow-up. A renal ultrasound does not detect glomerulonephritis early. Serum IgA and complement levels do not predict kidney involvement. An antistreptolysin O titre does not change management.
+*Explanation:* Colonoscopy is recommended for any child with persistent rectal bleeding that is not explained by an anal cause, and it can remove a polyp in the same procedure. She is stable with a normal hemoglobin, so this can be arranged with a pediatric gastroenterologist rather than as an emergency. Ultrasound and air enema look for intussusception, which does not fit. A pertechnetate scan looks for Meckel diverticulum, which usually causes a large painless bleed. Stool culture suits bloody diarrhea, which she does not have.
 
 *Key feature:* Gastrointestinal (GI) bleed 1. In GI bleeding, look for clues to the source such as medications, alcohol, weight loss, liver disease, or coagulopathy.
 
-*Source:* Ozen S, Marks SD, Brogan P, et al. European consensus-based recommendations for diagnosis and treatment of immunoglobulin A vasculitis: the SHARE initiative. Rheumatology (Oxford). 2019.
+*Source:* Piccirillo M, Pucinischi V, Mennini M, et al. Gastrointestinal bleeding in children: diagnostic approach. Ital J Pediatr. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC10807079/
 
 ### gi-bleed-44: Blood in an ileostomy bag
 

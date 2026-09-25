@@ -8,6 +8,13 @@ Quoted from the pipeline notes and the review reports, each with its report name
 
 - s25 asthma-copd-44 rebuilt (Wells 7.0). 32 q1 exertion test source (Rosen only). 31 q2 and q4 CCS 2017 unconfirmed. 45 q3 IPAP 10 EPAP 5. 27 q3 acetaminophen 650 mg.
 - s25 asthma-copd-33 PaO2 62 vs severe threshold 60.
+- Ids from the added list, not the original triage: shock-39, shock-40, shock-43, asthma-copd-26, 28, 35, 36, 38, 41, 42, 43, 45, and burns-16, 19, 21, 24, 27, 28, 31, 32, 33. The triage had shock-40 as HOLD and shock-39 and shock-43 as READY. They were rebuilt because the brief says the added list wins. *(samps-replace-s50-s25-s26.md)*
+- The Alaska burn resuscitation guideline (2021) has no stable public URL in the citation. The text was read from a downloaded copy. Please confirm the link before release. Its advice on urine output, avoiding boluses and not catching up on fluid is used in several burns items. *(samps-replace-s50-s25-s26.md)*
+- Several asthma-copd rebuilds key NIV decisions. The set now tests when to start NIV, when not to, and when to move to intubation, so review them together for balance. *(samps-replace-s50-s25-s26.md)*
+- Rome versus GOLD. GOLD 2026 Figure 4.2 lists PaO2 60 mmHg or less under severe. The Rome proposal it cites does not. Items now key only what both agree on. Please decide which version the bank should teach from now on. *(samps-replace-s50-s25-s26.md)*
+- Inherent "decide, then do" cues remain where the next update must describe the step: asthma-copd-19 q3 (drain placed), asthma-copd-41 q3 (intubated), burns-25 q2 (intubated). This matches house pattern in signed-off items such as asthma-copd-09 and airway-10. *(samps-replace-s50-s25-s26.md)*
+- The asthma and COPD KF5 to KF8 space is saturated across about 50 SAMPs. Core keys such as salbutamol by spacer, prednisone 50 mg and a 2 to 7 day follow-up recur in written-in form in s04. I fixed exact duplicates and copied teaching points, not every recurrence of a core decision. *(samps-replace-s50-s25-s26.md)*
+- burns-19 and the replaced questions in asthma-copd-43 need the planned second check. They contain new scenarios and new keys. *(samps-replace-s50-s25-s26.md)*
 - asthma-copd-32 q1: the exertion test before discharge in a 14-year-old with asthma. No verifiable source was found, and Rosen was not checked. Confirm the item or supply a source. *(samps-s25-lensA.md)*
 - asthma-copd-31 q2 and q4: confirm the CCS 2017 wording on NT-proBNP in ARNI patients and on IV furosemide dose relative to the oral dose. *(samps-s25-lensA.md)*
 - asthma-copd-45 q3: confirm that IPAP 10 and EPAP 5 is an acceptable starting setting for the Canadian audience. UK guidance starts higher. *(samps-s25-lensA.md)*
@@ -17,6 +24,28 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - asthma-copd-48 and asthma-copd-49 (review-extra) are copies of asthma-copd-26 and asthma-copd-37 with the same stems. They would fail the near-duplicate stem test if merged. Do not add them to the batch. *(samps-s25-lensB.md)*
 - Key feature mapping is loose for three questions: asthma-copd-27 q3 (analgesic choice in aspirin-exacerbated respiratory disease, tagged key feature 8), asthma-copd-29 q3 (changing the eye drops, tagged key feature 8) and asthma-copd-16 q3 (admission for hypoxemic bronchiolitis, tagged key feature 3). None fits another key feature better, so I left them. Confirm the tags. *(samps-s25-lensB.md)*
 - asthma-copd-33 now turns on a PaO2 of 62 mmHg, 2 mmHg above the severe threshold. Confirm that the margin reads as intended. *(samps-s25-lensB.md)*
+- **No key was changed.** All edits are to one vital sign, one option label and explanation wording in asthma-copd-42. *(samps-sweep2-final-check-s25.md)*
+- **42 q1 depends on GINA 2026.** The prompt names it. Under BTS/SIGN, a respiratory rate of 25 or more and a heart rate of 110 or more are acute severe features, so both the 28/minute rate and the 118/minute pulse would count as severe. Under GINA 2026 only the SpO2 counts. Please confirm you want the 2026 GINA criteria tested. The pulse was lowered from 126 to 118 so the key also holds under earlier GINA versions (cut-off above 120/minute). *(samps-sweep2-final-check-s25.md)*
+- **42 q2.** The update has a chest X-ray ordered for smoke exposure, and no oxygen is mentioned despite SpO2 90%. The omission is deliberate, so q1 is not cued in mock mode. A reader may still notice it. *(samps-sweep2-final-check-s25.md)*
+- **42 q3.** The writer's ICU question stands. A regional northern Alberta hospital may need "senior airway help or transfer" in place of its own ICU. *(samps-sweep2-final-check-s25.md)*
+- **35 q2.** CTS 2023 and GOLD 2026 disagree on ICS with low eosinophils. The Canadian guideline is keyed and named. Triple escalation is also taught in asthma-copd-19 q4 and s04. *(samps-sweep2-final-check-s25.md)*
+- **41 q1.** Same frame as sob s51 q3, but a different key. The two are complementary, since one keys the bedside sign and the other the gas. Decide whether both should stay. *(samps-sweep2-final-check-s25.md)*
+- **No Canadian source** covers adult ED asthma severity or steroid timing, or NIV location and weaning. GINA and BTS/ICS are the sources of record. *(samps-sweep2-final-check-s25.md)*
+- **asthma-copd-42 needs a rebuild.** A total laryngectomy with the stoma as the only airway is already the scenario of airway-18 (s21). airway-18 also teaches that face devices fail and that support goes through the stoma. airway-18 q2 keys bag ventilation with an infant mask sealed over the stoma. That means bilevel over the stoma is possible, yet 42 q3 keys intubation through the stoma for an alert patient with pH 7.27, where BTS would try NIV first. It could not be fixed in place. *(samps-sweep2-review-sw2-a.md)*
+- **asthma-copd-35 q2 key change.** CTS 2023 and GOLD 2026 disagree on ICS for low eosinophils. The prompt now names CTS. Please confirm you want the Canadian guideline tested this way. The triple-escalation teaching also appears in asthma-copd-19 q4 and s04. The new part is that CTS ignores the eosinophil count. *(samps-sweep2-review-sw2-a.md)*
+- **asthma-copd-35 q3** now states in the update that his medicine comes as a dry powder inhaler or a pMDI. This rests on no triple inhaler being sold as a soft mist inhaler in Canada. *(samps-sweep2-review-sw2-a.md)*
+- **asthma-copd-24 q3** tests a ward decision (start bisoprolol for EF 35% the next morning). Decide whether to keep it or swap it for an ED decision. *(samps-sweep2-review-sw2-a.md)*
+- **asthma-copd-38 q3** stands. The fluticasone plus ritonavir risk of Cushing syndrome is real with long-term use. GINA, the Canadian monograph and Liverpool all accept a short course. *(samps-sweep2-review-sw2-a.md)*
+- **asthma-copd-41 q1** was rebuilt around respiratory rate. It now shares only the question frame with sob s51 q3, not the key. q2 and q3 are loose fits for KF7, which is about recognizing failure and starting NIV. *(samps-sweep2-review-sw2-a.md)*
+- **asthma-copd-43 q1** maps a work history to KF2 (high-risk history). Please confirm. *(samps-sweep2-review-sw2-a.md)*
+- No Canadian source covers NIV location, staffing or weaning. BTS/ICS 2016 is the source for asthma-copd-41 and 42. *(samps-sweep2-review-sw2-a.md)*
+- asthma-copd-24 and 38 carry cardiology and infectious disease content under KF4. That is the "comorbid conditions" key feature, and GINA is the source for the asthma-specific decisions. q2 of 38 (pMDI and spacer, not a nebulizer, with COVID-19) is labelled KF4 because the decision is driven by the coexisting infection. It could also be read as KF5. *(samps-sweep2-sw2-a.md)*
+- asthma-copd-24 q3: labetalol and sotalol are distractors on the basis that they also block beta2 receptors. That is standard pharmacology, not a GINA statement. *(samps-sweep2-sw2-a.md)*
+- asthma-copd-38 q3 follows GINA's advice to switch to an inhaled corticosteroid alone or to ICS-formoterol during nirmatrelvir-ritonavir. Only the first is offered. *(samps-sweep2-sw2-a.md)*
+- asthma-copd-41 and 42 rest on the BTS/ICS 2016 guideline, a UK source, because there is no Canadian guideline on NIV weaning or on ventilating a patient who cannot use a mask. 41 q3 relies on the stem giving a baseline PaCO2 of 46 mmHg. Recommendation 31 allows NIV to stop once pH and PaCO2 have normalized, which her PaCO2 of 55 has not. *(samps-sweep2-sw2-a.md)*
+- asthma-copd-42 q3 keys invasive ventilation through the stoma. No guideline addresses laryngectomy directly. The key rests on BTS/ICS recommendation 34 (intubate when no noninvasive interface can be used) and on the anatomy stated in the stem. *(samps-sweep2-sw2-a.md)*
+- asthma-copd-43 q1 uses KF2 for a work history finding. The official KF2 wording asks for a high-risk history that shapes management, and GINA calls the away-from-work question an essential screen. Please confirm this mapping. *(samps-sweep2-sw2-a.md)*
+- asthma-copd-45 q3 keys high-flow nasal therapy for an alert patient with pH 7.30 who refuses NIV and declines intubation. GOLD describes this use. The evidence is observational and from trials that allowed switching to NIV. *(samps-sweep2-sw2-a.md)*
 - Chapter numbers and titles were checked against the publisher's table of contents. The chapter text was not available, so matching each claim to a chapter is my judgment. Please confirm the 33 kept citations against your copy. *(samps-textbooks-s19-s25-s39-s40.md)*
 - asthma-copd-32 q1. The key is an exertion test with oximetry before discharge. TREKK asthma v2.3 (2025) discharge criteria do not include one. They ask for a PRAM of 3 or less 1 to 2 hours after the last bronchodilator, SpO2 of 92% or more and at most mild wheeze. By those criteria he may already be fit to go home. Please decide whether the key holds. *(samps-textbooks-s19-s25-s39-s40.md)*
 - asthma-copd-29 q2. The supporting study used inhaled oxitropium after inhaled propranolol in people with mild asthma. It did not use ipratropium after timolol drops. *(samps-textbooks-s19-s25-s39-s40.md)*
@@ -250,75 +279,80 @@ A 67-year-old man presents to the emergency department with six weeks of worseni
 
 *Source:* Ernst A, Feller-Kopman D, Becker HD, Mehta AC. Central airway obstruction. Am J Respir Crit Care Med. 2004. https://pubmed.ncbi.nlm.nih.gov/15187010/
 
-### asthma-copd-19: Fast irregular pulse with a chest cold
+### asthma-copd-19: Worse days after a lung procedure
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 78-year-old woman with COPD presents to the emergency department with four days of increased breathlessness, cough and purulent sputum. She uses oxygen at 2 L/minute at home and takes an inhaler containing umeclidinium and vilanterol. She has no chest pain. She is alert and speaks in short sentences. There is diffuse expiratory wheeze with prolonged expiration. The ECG shows an irregular narrow complex tachycardia with at least three different P wave shapes and varying PR intervals.
+A 69-year-old man with severe COPD presents to the emergency department with 3 hours of sudden worsening breathlessness and right-sided chest pain. Five days ago he had endobronchial valves placed in his right upper lobe to reduce hyperinflation. For 2 days before the pain began he had a cold with more sputum. He uses tiotropium-olodaterol and no home oxygen. He speaks in short phrases. Breath sounds are reduced over the right upper chest. He has no fever and no leg swelling. After salbutamol and ipratropium, a venous gas shows pH 7.30 and pCO2 64 mmHg.
 
-- Temperature: 37.6°C oral
-- Pulse: 136/minute irregular
-- Resp.: 28/minute
-- BP: 132/78 mmHg
-- O2 sat: 86% on 2 L/minute by nasal prongs
+- Temperature: 37.2°C oral
+- Pulse: 112/minute
+- Resp.: 30/minute
+- BP: 138/80 mmHg
+- O2 sat: 86% on room air
+- Weight: 64 kg
 
 #### Q1
-**Which of the following best describes the rhythm on her ECG?**
+**Which of the following most likely explains his sudden worsening five days after the procedure?**
 
-- A. Atrial fibrillation
-- B. Atrial flutter with variable block
-- C. Multifocal atrial tachycardia  **(key)**
-- D. Sinus tachycardia with PACs
-- E. Wandering atrial pacemaker
+- A. Acute heart failure
+- B. Lobar collapse from mucus plugging
+- C. Pneumonia in the treated lobe
+- D. Pneumothorax after valve placement  **(key)**
+- E. Pulmonary embolism
 
-*Explanation:* An irregular rhythm faster than 100/minute with at least three P wave shapes and varying PR intervals is multifocal atrial tachycardia, which is strongly linked to decompensated lung disease. Atrial fibrillation has no organized P waves. Atrial flutter shows regular flutter waves. Sinus tachycardia with premature beats has one dominant P wave shape. A wandering atrial pacemaker has the same P wave pattern at a rate under 100/minute, and her rate is 136/minute.
+*Explanation:* The GOLD report describes pneumothorax as the main early complication of endobronchial valve treatment. It reports that about three quarters occur within 72 hours, so a later one is less common but still expected. Sudden pain with abruptly worse breathlessness and reduced breath sounds over the treated side fits it. Pneumonia would usually bring fever and a gradual course. Lobar collapse from mucus reduces breath sounds but rarely causes sudden pleuritic pain. Heart failure would usually bring leg swelling, and he has none. Pulmonary embolism can mimic an exacerbation, but the sudden onset after the procedure with focal signs on the treated side points first to pneumothorax.
 
 *Key feature:* Asthma/COPD 4. Identify and promptly treat coexisting problems in asthma patients, such as heart failure, pneumonia, or pneumothorax.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 65, Dysrhythmias. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
 
 #### Q2
-**Which of the following is the most appropriate initial treatment for her rhythm?**
+*Update:* A chest X-ray shows a large right pneumothorax. His venous pH is 7.30 and pCO2 64 mmHg despite bronchodilators and steroids.
 
-- A. adenosine 6 mg IV push
-- B. digoxin 0.25 mg IV
-- C. Modified Valsalva manoeuvre
-- D. Synchronized cardioversion at 100 J
-- E. Treat the COPD exacerbation  **(key)**
+**Which of the following is the most appropriate next step in his management?**
 
-*Explanation:* Multifocal atrial tachycardia is driven by the underlying lung disease and hypoxemia, so treating the exacerbation and correcting her SpO2 of 86% is the first step. Cardioversion does not work because there are several atrial foci. Adenosine and a modified Valsalva manoeuvre do not terminate the rhythm, because it is not a reentrant tachycardia. Digoxin is generally ineffective for rate control in this rhythm and is not a first step.
+- A. Bilevel ventilation now, drain if worse
+- B. Chest drain, then reassess for NIV  **(key)**
+- C. Needle aspiration and discharge home
+- D. Observe with a repeat X-ray in 6 hours
+- E. Oxygen at 15 L/minute to speed reabsorption
+
+*Explanation:* He has a large pneumothorax and acute hypercapnic acidosis. The BTS/ICS guideline notes that a pneumothorax usually needs intercostal drainage, followed by a review of whether noninvasive ventilation should continue. Positive pressure through an undrained pneumothorax risks enlarging it. Needle aspiration and discharge is unsafe in a hypercapnic patient with severe COPD. Observation leaves a large air leak untreated in a patient with little reserve. High-flow oxygen can worsen hypercapnia in COPD, where the guideline targets a saturation of 88 to 92%.
 
 *Key feature:* Asthma/COPD 4. Identify and promptly treat coexisting problems in asthma patients, such as heart failure, pneumonia, or pneumothorax.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 65, Dysrhythmias. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://doi.org/10.1136/bmjresp-2016-000133
 
 #### Q3
-*Update:* Venous gas: pH 7.29, pCO2 71 mmHg, HCO3 33 mmol/L. She remains alert and able to protect her airway.
+*Update:* After the drain the lung has re-expanded, but his pH is 7.31 and pCO2 62 mmHg on optimal medical treatment. Bilevel ventilation is started. He is anxious and keeps pulling off the mask. He wants intubation if it is needed.
 
-**Which of the following is the most appropriate respiratory support for her now?**
+**Which of the following is the most appropriate step to help him tolerate noninvasive ventilation?**
 
-- A. Bilevel noninvasive ventilation  **(key)**
-- B. Continuous positive airway pressure
-- C. Endotracheal intubation
-- D. Non-rebreather mask at 15 L/minute
-- E. Venturi mask at 40%
+- A. haloperidol 5 mg IM
+- B. midazolam infusion IV
+- C. morphine 2.5 mg IV  **(key)**
+- D. propofol 1 mg/kg IV
+- E. Stop NIV and use a Venturi mask
 
-*Explanation:* A pH of 7.29 with a pCO2 of 71 mmHg is acute on chronic hypercapnic acidosis, and the ERS and ATS recommend bilevel noninvasive ventilation for COPD exacerbations with a pH of 7.35 or less. CPAP does not give the inspiratory pressure support that lowers pCO2. She is alert and protecting her airway, so intubation is not the first step. High concentration oxygen by non-rebreather or a 40% Venturi mask can worsen hypercapnia and does not treat ventilatory failure.
+*Explanation:* The BTS/ICS guideline suggests that in an agitated or distressed patient on noninvasive ventilation, IV morphine 2.5 to 5 mg can relieve symptoms and may improve tolerance. Infused sedatives such as midazolam should only be used in a high dependency or intensive care setting. Propofol at 1 mg/kg is an anesthetic induction dose that would stop his breathing. Haloperidol treats agitation from delirium but does not address his air hunger. He still meets the criteria for noninvasive ventilation, with a pH below 7.35 and a pCO2 above 49 mmHg despite treatment, so stopping it is wrong.
 
 *Key feature:* Asthma/COPD 7. Detect subtle signs of tiring or impending respiratory failure and begin early noninvasive support such as BiPAP.
 
-*Source:* Rochwerg B, Brochard L, Elliott MW, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. Eur Respir J. 2017. https://pubmed.ncbi.nlm.nih.gov/28860265/
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://doi.org/10.1136/bmjresp-2016-000133
 
 #### Q4
-**Which of the following systemic corticosteroid regimens is most appropriate for her exacerbation?**
+*Update:* He recovers and is ready for discharge. This is his second exacerbation treated with prednisone this year despite good inhaler technique. His blood eosinophil count is 0.40 x 10^9/L.
 
-- A. methylprednisolone 1 g IV daily for 3 days
-- B. prednisone 10 mg PO daily for 5 days
-- C. prednisone 40 mg PO daily for 5 days  **(key)**
-- D. prednisone 40 mg PO daily for 14 days
-- E. prednisone 50 mg PO, then 3-week taper
+**Which of the following changes to his maintenance inhalers is most appropriate at discharge?**
 
-*Explanation:* GOLD recommends prednisone 40 mg daily for 5 days in COPD exacerbations. Five days works as well as 14 days, and longer courses were associated with more pneumonia and death in an observational study. Prednisone 10 mg is below the recommended dose. A taper is not needed after a short course. Pulse dose methylprednisolone is not recommended for COPD exacerbations.
+- A. Add an inhaled corticosteroid  **(key)**
+- B. Add azithromycin 250 mg PO daily
+- C. Add montelukast 10 mg PO daily
+- D. Switch to an ICS-LABA inhaler
+- E. No change to his inhalers
+
+*Explanation:* He has had a moderate or severe exacerbation while taking a LABA and a LAMA, and his eosinophil count of 0.40 x 10^9/L is 400 cells/microL. The GOLD report suggests escalating to LABA plus LAMA plus ICS in this situation, with a benefit seen from 100 cells/microL and more likely at higher counts. Azithromycin is considered mainly when eosinophils are below 100 cells/microL. Switching to an ICS-LABA would drop his LAMA, and the report states that triple therapy is superior to ICS-LABA when an ICS is indicated. Leukotriene modifiers have not been tested adequately in COPD. Leaving his inhalers unchanged ignores two exacerbations in a year.
 
 *Key feature:* Asthma/COPD 6. Give systemic or inhaled corticosteroids for asthma and COPD exacerbations when indicated.
 
@@ -611,66 +645,67 @@ A 17-year-old boy with asthma presents to the emergency department with two days
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
-### asthma-copd-24: Sudden pain on the right
+### asthma-copd-24: Heaviness on the stairs
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural emergency department. The regional centre is 3 hours away by road. A 63-year-old woman with COPD and known bullous emphysema presents with 2 hours of sudden right-sided pleuritic chest pain and breathlessness that began while she was carrying groceries. She has had no fever and no change in her sputum. She takes a tiotropium and olodaterol inhaler. She speaks in short phrases. Breath sounds are reduced on the right. The trachea is midline.
+A 64-year-old woman presents to the emergency department with 2 days of wheeze and cough after a cold. Tonight, while climbing stairs, she had 30 minutes of central chest heaviness spreading to her jaw, with sweating and nausea. A milder episode began at rest 20 minutes ago. She says it feels different from her asthma. She has asthma treated with budesonide-formoterol, hypertension and type 2 diabetes. She has taken ibuprofen many times for knee pain with no breathing problems. She speaks in full sentences. There is scattered expiratory wheeze with equal air entry and no crackles. Her calves are soft and not swollen. Her ECG shows new 2 mm horizontal ST depression in V4 to V6.
 
-- Temperature: 36.8°C oral
-- Pulse: 116/minute
-- Resp.: 30/minute
-- BP: 138/84 mmHg
-- O2 sat: 88% on room air
+- Temperature: 36.9°C oral
+- Pulse: 96/minute
+- Resp.: 22/minute
+- BP: 152/88 mmHg
+- O2 sat: 95% on room air
+- Weight: 74 kg
 
 #### Q1
-**Which of the following is the most likely cause of her sudden deterioration?**
+*Update:* High-sensitivity troponin I is 58 ng/L on arrival and 390 ng/L 2 hours later. The upper reference limit is 16 ng/L. Bedside ultrasound shows lung sliding on both sides.
 
-- A. Acute coronary syndrome
-- B. Acute pulmonary embolism
-- C. Community-acquired pneumonia
-- D. Infective COPD exacerbation
-- E. Spontaneous pneumothorax  **(key)**
+**Which of the following is the most likely cause of her chest heaviness?**
 
-*Explanation:* Sudden pleuritic pain and breathlessness with reduced breath sounds on one side in a patient with bullous emphysema is a secondary spontaneous pneumothorax until proven otherwise. A COPD exacerbation develops over days with a change in sputum and gives bilateral findings. She has no fever or sputum change to suggest pneumonia. Pulmonary embolism does not explain breath sounds reduced on one side. Her pain is pleuritic rather than typical of an acute coronary syndrome.
+- A. Acute pulmonary embolism
+- B. Asthma-related chest tightness
+- C. Chest wall strain from coughing
+- D. Non-ST-elevation myocardial infarction  **(key)**
+- E. Spontaneous pneumothorax
+
+*Explanation:* Her troponin rose from 58 to 390 ng/L, far above the upper reference limit of 16 ng/L, and she has ischemic chest heaviness with new horizontal ST depression in V4 to V6. In the ESC guideline, a rising troponin with ischemic symptoms and no persistent ST elevation is a non-ST-elevation myocardial infarction. Asthma tightness does not raise troponin or cause new ST depression, and she says this pain is different. Chest wall strain does not explain the troponin rise. Lung sliding on both sides and equal air entry make a pneumothorax unlikely. Exertional heaviness spreading to the jaw, with soft calves, points to the heart rather than a pulmonary embolism.
 
 *Key feature:* Asthma/COPD 4. Identify and promptly treat coexisting problems in asthma patients, such as heart failure, pneumonia, or pneumothorax.
 
-*Source:* Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society guideline for pleural disease. Thorax. 2023. https://pubmed.ncbi.nlm.nih.gov/37553157/
+*Source:* Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://doi.org/10.1093/eurheartj/ehad191
 
 #### Q2
-*Update:* The chest radiograph shows a right pneumothorax with a 3 cm rim at the level of the hilum. The mediastinum is not shifted.
+**Which of the following is the most appropriate antiplatelet treatment to give her now?**
 
-**Which of the following is the most appropriate management of her pneumothorax?**
+- A. ASA 40 mg PO as a test dose
+- B. ASA 160 mg PO chewed  **(key)**
+- C. clopidogrel 300 mg PO instead of ASA
+- D. ticagrelor 180 mg PO instead of ASA
+- E. No antiplatelet because of her asthma
 
-- A. Large-bore 28 French chest tube
-- B. Needle aspiration and discharge
-- C. Observation without intervention
-- D. Oxygen and repeat film in 4 hours
-- E. Small-bore chest drain insertion  **(key)**
-
-*Explanation:* She has a large secondary pneumothorax with breathlessness and an SpO2 of 88%, so it needs drainage, and the British Thoracic Society favours a small-bore drain inserted by the Seldinger technique. A large-bore tube is not needed for a spontaneous air leak. Patients with a secondary pneumothorax should be admitted, so aspiration with discharge is unsafe. Observation or oxygen alone is not appropriate while she is symptomatic and hypoxemic.
+*Explanation:* GINA advises that ASA and other NSAIDs are not generally contraindicated in asthma unless there has been a previous reaction, and she has taken ibuprofen many times without a problem. Her asthma is therefore no reason to withhold or reduce ASA. The ESC guideline recommends an ASA loading dose of 150 to 300 mg by mouth, and 160 mg chewed fits that range. A 40 mg test dose is below the loading range and is not needed when there has been no reaction. The ESC guideline gives a P2Y12 inhibitor in addition to ASA, not instead of it.
 
 *Key feature:* Asthma/COPD 4. Identify and promptly treat coexisting problems in asthma patients, such as heart failure, pneumonia, or pneumothorax.
 
-*Source:* Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society guideline for pleural disease. Thorax. 2023. https://pubmed.ncbi.nlm.nih.gov/37553157/
+*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q3
-*Update:* A small-bore drain is placed and the lung partly re-expands. Her SpO2 is 87% on room air and her venous pCO2 is 52 mmHg.
+*Update:* She is admitted. The next morning her wheeze has settled and her peak flow is at her personal best. Echocardiography shows an ejection fraction of 35%, and she has no signs of heart failure.
 
-**Which of the following oxygen plans is most appropriate for her now?**
+**Which of the following beta-blocker plans is most appropriate for her?**
 
-- A. Controlled oxygen to 88 to 92%  **(key)**
-- B. High-flow oxygen to target 98%
-- C. Non-rebreather mask at 15 L/minute
-- D. Oxygen to target 94 to 98%
-- E. No oxygen once the drain is in
+- A. bisoprolol started at a low dose  **(key)**
+- B. labetalol started at a low dose
+- C. propranolol started at a low dose
+- D. sotalol started at a low dose
+- E. No beta-blocker because of her asthma
 
-*Explanation:* Her SpO2 of 87% needs correcting, but her raised pCO2 of 52 mmHg marks her as at risk of hypercapnic respiratory failure, and the BTS target for such patients with COPD is 88 to 92%. High-flow oxygen to 98% or a non-rebreather mask at 15 L/minute can worsen hypercapnia. A target of 94 to 98% is the BTS range for patients who are not at risk of hypercapnia. Withholding oxygen leaves her hypoxemic while the lung is only partly re-expanded.
+*Explanation:* The ESC guideline recommends a beta-blocker after an acute coronary syndrome when the ejection fraction is 40% or less, and hers is 35%. GINA states that asthma is not an absolute contraindication to a cardioselective beta-blocker when one is indicated after an acute coronary event, and people with asthma given a beta-blocker within 24 hours of admission for such an event had lower in-hospital mortality. Bisoprolol is cardioselective, and GINA advises that treatment start under close specialist supervision. Propranolol, labetalol and sotalol also block beta2 receptors and are more likely to cause bronchospasm. Withholding a beta-blocker denies her a treatment of proven benefit.
 
 *Key feature:* Asthma/COPD 4. Identify and promptly treat coexisting problems in asthma patients, such as heart failure, pneumonia, or pneumothorax.
 
-*Source:* O'Driscoll BR, Howard LS, Earis J, Mak V. BTS guideline for oxygen use in adults in healthcare and emergency settings. Thorax. 2017. https://pubmed.ncbi.nlm.nih.gov/28507176/
+*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 ### asthma-copd-25: Ready to go home after a busy night
 
@@ -751,65 +786,67 @@ Select 3.
 
 *Source:* TREKK. Bottom Line Recommendations. Asthma exacerbations for children aged 12 months and older. Version 2.1. 2024. https://cms.trekk.ca/wp-content/uploads/2023/11/2024_02_26_Asthma-BLR_FINAL_v2.1.pdf
 
-### asthma-copd-26: Pressure falls after the tube
+### asthma-copd-26: Snoring and drowsy on arrival
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 38-year-old woman with severe asthma was intubated in the emergency department 10 minutes ago for exhaustion and a falling level of consciousness despite maximal therapy. She was induced with ketamine and rocuronium. While the ventilator was being set up she was bagged vigorously by hand at about 30 breaths/minute. Her blood pressure was normal before induction. The chest is hyperexpanded and breath sounds are very quiet but equal on both sides. The neck veins are distended.
+A 61-year-old woman with COPD and obesity is brought to the emergency department by ambulance with 3 days of increasing breathlessness, cough and ankle swelling. Her partner says she snores loudly and stops breathing at night. She uses fluticasone-umeclidinium-vilanterol, has no home oxygen and takes no opioids or sedatives. She is drowsy but rousable and follows commands. She has scattered wheeze. After 1 hour of nebulized bronchodilators, prednisone and controlled oxygen, an arterial gas on 2 L/minute shows pH 7.22, PaCO2 88 mmHg, PaO2 62 mmHg and HCO3 35 mmol/L. Her body mass index is 46 kg/m2.
 
-- Pulse: 138/minute
-- BP: 74/40 mmHg
-- O2 sat: 90% on 100% oxygen by bag
-- Weight: 70 kg
+- Temperature: 37.0°C oral
+- Pulse: 104/minute
+- Resp.: 26/minute
+- BP: 152/88 mmHg
+- O2 sat: 90% on 2 L/minute by nasal prongs
+- Weight: 128 kg
 
 #### Q1
-**Which of the following is the most appropriate immediate step in her management?**
+**Which of the following is the most appropriate respiratory support for her now?**
 
-- A. Bilateral needle decompression
-- B. Disconnect from the bag  **(key)**
-- C. Increase PEEP to 15 cm H2O
-- D. Increase the bagging rate
-- E. Norepinephrine infusion
+- A. Bilevel ventilation, intubation ready  **(key)**
+- B. High-flow nasal oxygen at 60 L/minute
+- C. Immediate intubation for the pH
+- D. Oxygen increased to 6 L/minute
+- E. Venturi mask, repeat gas in 1 hour
 
-*Explanation:* Rapid bagging in severe asthma leaves too little time to exhale, so air is trapped, intrathoracic pressure rises and venous return falls. Brenner and colleagues advise disconnecting the patient to allow full exhalation as the first step. If the BP recovers, dynamic hyperinflation is confirmed. Her breath sounds are equal, and tension pneumothorax is considered if disconnection does not help. Faster bagging and more PEEP raise intrathoracic pressure further. A vasopressor does not treat the cause.
+*Explanation:* Her pH is below 7.35 and her PaCO2 is above 49 mmHg after an hour of optimal medical treatment, so the BTS/ICS guideline recommends noninvasive ventilation. It adds that severe acidosis alone does not preclude a trial of noninvasive ventilation where staff can intubate safely, and she is still rousable and following commands. Intubating for the pH alone skips a trial that often succeeds. More oxygen would raise her PaCO2 further. A Venturi mask and waiting an hour leaves a pH of 7.22 untreated. High-flow nasal oxygen gives no set inspiratory pressure support, so it is not the first choice for her acidosis.
 
 *Key feature:* Asthma/COPD 7. Detect subtle signs of tiring or impending respiratory failure and begin early noninvasive support such as BiPAP.
 
-*Source:* Brenner B, Corbridge T, Kazzi A. Intubation and mechanical ventilation of the asthmatic patient in respiratory failure. J Emerg Med. 2009. https://pubmed.ncbi.nlm.nih.gov/19683662/
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://doi.org/10.1136/bmjresp-2016-000133
 
 #### Q2
-*Update:* Within a minute of disconnection her BP rises to 108/64 mmHg. She is placed on the ventilator.
+*Update:* On bilevel ventilation with an IPAP of 16 and an EPAP of 5 cm H2O, she snores, her chest and abdomen move in opposite directions, and her tidal volumes stay low despite visible effort. The mask fits well without a leak.
 
-**Which of the following measurements best reflects the degree of dynamic hyperinflation on the ventilator?**
+**Which of the following ventilator changes is most appropriate for her?**
 
-- A. End-tidal CO2
-- B. Exhaled tidal volume
-- C. Oxygen saturation
-- D. Peak inspiratory pressure
-- E. Plateau pressure  **(key)**
+- A. Decrease the EPAP
+- B. Decrease the IPAP
+- C. Increase the EPAP  **(key)**
+- D. Increase the oxygen only
+- E. Switch to CPAP of 5 cm H2O
 
-*Explanation:* Plateau pressure, measured during an end-inspiratory pause, reflects alveolar pressure and is the practical bedside marker of hyperinflation, with a target below 30 cm H2O. Peak inspiratory pressure is dominated by airway resistance and is often very high in asthma without predicting harm. End-tidal CO2 underestimates arterial CO2 in severe obstruction. Exhaled tidal volume and SpO2 do not measure trapped gas.
+*Explanation:* Snoring with chest and abdominal paradox on noninvasive ventilation points to upper airway obstruction, and the BTS/ICS troubleshooting guide advises increasing the EPAP. Patients with obesity hypoventilation often need higher pressures than usual. Lowering either pressure worsens obstruction or ventilation. Adding oxygen alone treats the saturation but not the hypercapnia. CPAP of 5 cm H2O gives no inspiratory support to clear her carbon dioxide.
 
 *Key feature:* Asthma/COPD 7. Detect subtle signs of tiring or impending respiratory failure and begin early noninvasive support such as BiPAP.
 
-*Source:* Brenner B, Corbridge T, Kazzi A. Intubation and mechanical ventilation of the asthmatic patient in respiratory failure. J Emerg Med. 2009. https://pubmed.ncbi.nlm.nih.gov/19683662/
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://doi.org/10.1136/bmjresp-2016-000133
 
 #### Q3
-*Update:* Plateau pressure is 34 cm H2O and auto-PEEP is 14 cm H2O. Arterial pH is 7.18 with a PaCO2 of 78 mmHg.
+*Update:* After further ventilator adjustment the snoring and paradox stop. One hour later she is more alert, but her tidal volumes are still small with a good mask seal. Her pH is 7.24 and PaCO2 84 mmHg.
 
-**Which of the following is the most appropriate response to these ventilator values?**
+**Which of the following is the most appropriate next step in her ventilatory support?**
 
-- A. Increase the respiratory rate
-- B. Increase tidal volume to 10 mL/kg
-- C. Reduce minute ventilation  **(key)**
-- D. Start a sodium bicarbonate infusion
-- E. Switch to pressure support mode
+- A. Continue unchanged, repeat gas in 4 hours
+- B. Endotracheal intubation now
+- C. High-flow nasal oxygen instead
+- D. Increase the IPAP setting  **(key)**
+- E. Lower the EPAP setting
 
-*Explanation:* A plateau pressure above 30 cm H2O with high auto-PEEP shows dangerous air trapping, so minute ventilation should be reduced by lowering the rate or tidal volume, accepting a raised PaCO2. A pH of 7.18 is usually tolerated under this permissive hypercapnia approach. Increasing the rate shortens expiratory time and increasing tidal volume adds to trapping, and both worsen hyperinflation. Bicarbonate does not reduce hyperinflation. Pressure support is not suitable for a patient just paralyzed for intubation.
+*Explanation:* Her upper airway is now open, but small tidal volumes mean she is still underventilated. The BTS/ICS troubleshooting guide advises raising the IPAP when tidal volume is inadequate, and notes that patients with obesity hypoventilation often need high pressures, for example an IPAP above 30 and an EPAP above 8 cm H2O. She is more alert and her pH is improving, so she does not meet the guideline's triggers for invasive ventilation, such as a pH persisting below 7.15, a falling pH or a GCS below 8. Leaving the settings unchanged for 4 hours accepts inadequate ventilation. High-flow nasal oxygen gives no inspiratory pressure support. Lowering the EPAP would bring back the obstruction.
 
 *Key feature:* Asthma/COPD 7. Detect subtle signs of tiring or impending respiratory failure and begin early noninvasive support such as BiPAP.
 
-*Source:* Brenner B, Corbridge T, Kazzi A. Intubation and mechanical ventilation of the asthmatic patient in respiratory failure. J Emerg Med. 2009. https://pubmed.ncbi.nlm.nih.gov/19683662/
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://doi.org/10.1136/bmjresp-2016-000133
 
 ### asthma-copd-27: Wheeze after dental pain
 
@@ -885,82 +922,85 @@ You are working in a community hospital emergency department. A 46-year-old woma
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
-### asthma-copd-28: Feeling better at rest
+### asthma-copd-28: Wheezing and living alone
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural emergency department. A 70-year-old man with COPD presents with three days of increased breathlessness and yellow sputum after a cold. He was treated with salbutamol and ipratropium, prednisone 40 mg PO and doxycycline 200 mg PO. After four hours he feels close to his usual self and wants to go home. He lives alone on a farm 45 minutes from town. He takes tiotropium daily. When well he has to stop for breath when walking at his own pace on level ground. He had one other exacerbation treated with prednisone and one hospital admission for COPD in the past year. He smokes 15 cigarettes a day.
+A 68-year-old woman with asthma presents to the emergency department with 2 days of wheeze and breathlessness after a cold. She has never smoked and lives alone. She uses budesonide-formoterol twice daily and a salbutamol inhaler, and she has used 14 puffs of salbutamol in the past 24 hours. She was admitted for asthma last winter. She is speaking in phrases and has diffuse wheeze. Her predicted peak flow is 380 L/minute and her arrival peak flow is 120 L/minute. She receives salbutamol and ipratropium by spacer.
 
-- Temperature: 37.0°C oral
-- Pulse: 92/minute
-- Resp.: 20/minute
-- BP: 142/80 mmHg
-- O2 sat: 93% on room air
+- Temperature: 37.3°C oral
+- Pulse: 110/minute
+- Resp.: 26/minute
+- BP: 146/84 mmHg
+- O2 sat: 91% on room air
 
 #### Q1
-**Which of the following is the most useful check before deciding whether he can go home?**
+**Which of the following best predicts whether she will need admission to hospital?**
 
-- A. Repeat chest auscultation
-- B. Repeat resting peak flow
-- C. Repeat resting pulse oximetry
-- D. Venous blood gas at rest
-- E. Walking pulse oximetry  **(key)**
+- A. Chest X-ray findings
+- B. Heart rate on arrival
+- C. Oxygen saturation on arrival
+- D. Peak flow on arrival
+- E. Status and peak flow at 1 hour  **(key)**
 
-*Explanation:* He feels well at rest, but he lives alone far from care, so the key question is whether his recovery holds when he is active. In the Canadian ED study that derived the Ottawa COPD Risk Scale, patients walked at their own pace for 3 minutes after treatment, and being too ill to do the walk test (SpO2 below 90% or pulse of 120/minute or more) was linked to serious adverse events. Repeat auscultation, resting oximetry, a resting peak flow and a venous gas are all taken at rest. They cannot show how he will manage once he is up and moving at home.
+*Explanation:* The GINA report states that clinical status, including the ability to lie flat, and lung function 1 hour after treatment starts are more reliable predictors of the need for hospitalization than the patient's status on arrival. Her arrival peak flow, heart rate and saturation describe how sick she was before treatment, not how she responds to it. A chest X-ray is not routinely recommended in asthma and does not predict the need for admission unless a complication is suspected.
 
 *Key feature:* Asthma/COPD 8. Before discharge, confirm true recovery with an exertion test and objective measures, then review inhaler technique and follow-up.
 
-*Source:* Stiell IG, Clement CM, Aaron SD, et al. Clinical characteristics associated with adverse events in patients with exacerbation of chronic obstructive pulmonary disease. A prospective cohort study. CMAJ. 2014. https://pmc.ncbi.nlm.nih.gov/articles/PMC3971051/
+*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q2
-*Update:* He walks 60 metres and stops. He is breathless and his SpO2 falls to 84% and does not recover after 3 minutes of rest.
+*Update:* After 1 hour of treatment her peak flow is 160 L/minute. Her SpO2 is 94% and she still cannot lie flat.
 
-**Which of the following is the most appropriate disposition for him now?**
+**Which of the following is the most appropriate disposition for her now?**
 
-- A. Discharge after a second prednisone dose
-- B. Discharge with follow-up in 2 weeks
-- C. Discharge with home oxygen tomorrow
-- D. Keep him in hospital for treatment  **(key)**
-- E. Observe 1 hour, then discharge
+- A. Admit her for ongoing treatment  **(key)**
+- B. Discharge after one more salbutamol dose
+- C. Discharge home with oral prednisone
+- D. Discharge if she walks without desaturating
+- E. Observe for 2 hours, then discharge
 
-*Explanation:* He failed the exertion test, with sustained desaturation to 84% and breathlessness after 60 metres, so he has not recovered enough to go home alone to a remote farm. GOLD notes that the need for long-term oxygen is judged better at follow-up than shortly after an exacerbation, so arranging home oxygen tomorrow is not a substitute for admission. Another prednisone dose or a short period of observation does not change his exertional hypoxemia. Follow-up in 2 weeks leaves him unsafe in the meantime.
+*Explanation:* Her peak flow of 160 L/minute is 42% of her predicted 380 L/minute, and the GINA report lists a final peak flow below 50% of predicted among the features that increase the need for admission. She also cannot lie flat, is older, lives alone and had an admission last winter. Discharge after another dose, with prednisone alone, or after a fixed period of observation ignores her poor lung function. A walking test cannot replace an objective peak flow that is still below half of predicted.
 
 *Key feature:* Asthma/COPD 8. Before discharge, confirm true recovery with an exertion test and objective measures, then review inhaler technique and follow-up.
 
-*Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
+*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q3
-**Which of the following are most appropriate to arrange as he recovers from this exacerbation?**
+**Which of the following features in her history increase her likelihood of needing admission?**
 
 Select 3.
 
-- A. Change tiotropium to triple therapy  **(key)**
-- B. Inhaled corticosteroid alone
-- C. Maintenance prednisone 5 mg daily
-- D. Pulmonary rehabilitation referral  **(key)**
-- E. Smoking cessation treatment  **(key)**
-- F. Theophylline added to tiotropium
+- A. Admission for asthma last winter  **(key)**
+- B. Age of 68 years  **(key)**
+- C. Budesonide-formoterol as her controller
+- D. Cold as the trigger
+- E. Lifelong non-smoker
+- F. Normal temperature
+- G. Salbutamol 14 puffs in 24 hours  **(key)**
 
-*Explanation:* In the past year he has had an admission and a prednisone-treated exacerbation, and now an ED visit, so he is at high risk of exacerbations (2 or more moderate or 1 or more severe in a year). He is breathless on level ground (mMRC 2 or more), so the Canadian Thoracic Society recommends triple therapy with a LAMA, LABA and inhaled corticosteroid. The CTS also names pulmonary rehabilitation and smoking cessation as core nonpharmacologic care, and he still smokes. The CTS recommends against theophylline, maintenance oral corticosteroids and inhaled corticosteroid monotherapy in COPD.
+*Explanation:* The GINA report lists older age, use of more than 8 beta2-agonist actuations in the previous 24 hours and a past history of severe exacerbations such as asthma admissions among the factors linked to a greater need for hospitalization. She has all three. Taking an inhaled corticosteroid-formoterol controller reduces the risk of severe exacerbations, so it does not add to her risk. A cold as the trigger is not among the listed factors. Being a lifelong non-smoker and having a normal temperature do not increase her risk.
 
 *Key feature:* Asthma/COPD 8. Before discharge, confirm true recovery with an exertion test and objective measures, then review inhaler technique and follow-up.
 
-*Source:* Bourbeau J, Bhutani M, Hernandez P, et al. 2023 Canadian Thoracic Society guideline on pharmacotherapy in patients with stable COPD. Chest. 2023. https://pubmed.ncbi.nlm.nih.gov/37690008/
+*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q4
-**Which of the following is the most appropriate total duration for his prednisone course?**
+*Update:* Later that day she vomits twice and cannot keep tablets down.
 
-- A. 3 days
-- B. 5 days  **(key)**
-- C. 10 days
-- D. 14 days
-- E. 21 days
+**Which of the following corticosteroid orders is most appropriate for her today?**
 
-*Explanation:* GOLD recommends prednisone 40 mg daily for 5 days for COPD exacerbations. A 5-day course works as well as a 14-day course, and longer courses add exposure with a higher risk of pneumonia and death in observational data. Ten, 14 and 21 days add steroid exposure without benefit. A 3-day course is shorter than the course studied and recommended.
+- A. dexamethasone 12 mg PO once
+- B. methylprednisolone 40 mg IV daily  **(key)**
+- C. methylprednisolone 125 mg IV every 6 hours
+- D. prednisone 50 mg PO daily
+- E. No corticosteroid until the vomiting stops
+
+*Explanation:* The GINA report states that oral corticosteroids are as effective as IV, but that IV corticosteroids can be given when a patient is vomiting. The usual adult dose is equivalent to prednisone 50 mg a day, and methylprednisolone 40 mg IV is that equivalent dose. Oral prednisone or dexamethasone will not stay down while she is vomiting. Methylprednisolone 125 mg every 6 hours is several times the needed dose and adds side effects without benefit. Withholding steroids from a patient admitted with a severe flare delays a treatment that speeds recovery.
 
 *Key feature:* Asthma/COPD 6. Give systemic or inhaled corticosteroids for asthma and COPD exacerbations when indicated.
 
-*Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
+*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 ### asthma-copd-29: New wheeze at seventy
 
@@ -1234,7 +1274,7 @@ You are working in a community hospital emergency department. A 69-year-old man 
 - D. Pneumonia, not an exacerbation
 - E. Severe exacerbation
 
-*Explanation:* The Rome criteria in GOLD call an exacerbation moderate when at least three of five thresholds are met, and he meets all five: dyspnea 7 (5 or more), respiratory rate 26 (24 or more), pulse 102 (95 or more), SpO2 88% (below 92%, and 6 points below his usual) and CRP 46 mg/L (10 or more). Severe requires a PaO2 of 60 mmHg or less, or hypercapnia with acidosis (PaCO2 above 45 mmHg and pH below 7.35). His PaO2 is 62 mmHg and his pH is 7.37, so he is not severe or life-threatening. His radiograph shows no consolidation.
+*Explanation:* The Rome criteria in GOLD call an exacerbation moderate when at least three of five thresholds are met, and he meets all five: dyspnea 7 (5 or more), respiratory rate 26 (24 or more), pulse 102 (95 or more), SpO2 88% (below 92%, and 6 points below his usual) and CRP 46 mg/L (10 or more). In the original Rome proposal, severe requires hypercapnia with acidosis, a PaCO2 above 45 mmHg with a pH below 7.35. The GOLD figure also lists a PaO2 of 60 mmHg or less under severe. His pH is 7.37 and his PaO2 is 62 mmHg, so he is not severe by either version. The Rome scheme has no life-threatening grade. His radiograph shows no consolidation.
 
 *Key feature:* Asthma/COPD 3. Grade exacerbation severity objectively, using peak flow or FEV1, rising CO2, fatigue, and mental status.
 
@@ -1338,145 +1378,144 @@ Select 2.
 
 *Source:* TREKK. Pediatric severe asthma exacerbation algorithm for children aged 12 months and older. Version 2.0. 2024. https://cms.trekk.ca/wp-content/uploads/2024/02/2024-02-19_Asthma-Algorithm_v2.0-FINAL.pdf
 
-### asthma-copd-35: A mild flare before work
+### asthma-copd-35: Struggling with his inhaler
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 27-year-old woman with asthma presents to the emergency department with one day of chest tightness and wheeze after a cold. She uses budesonide 200 mcg with formoterol 6 mcg, one inhalation as needed, and has used it four times today. She has had no oral steroids in the past year and no admissions. She speaks in full sentences and is not using accessory muscles. There is mild expiratory wheeze. Peak flow is 330 L/minute and her personal best is 420 L/minute.
+An 84-year-old man with COPD is brought to the emergency department by ambulance from his retirement residence with 3 days of increased breathlessness and cough after a cold. He has had two exacerbations treated with prednisone in the past year. He has no history or features of asthma. His only maintenance inhaler is fluticasone-salmeterol by dry powder inhaler twice daily, and he uses salbutamol as needed. He is alert, speaks in short sentences and has scattered wheeze. A chest X-ray shows hyperinflation without consolidation. A venous gas shows pH 7.37 and pCO2 50 mmHg. His blood eosinophil count is 0.06 x 10^9/L.
 
 - Temperature: 37.0°C oral
-- Pulse: 96/minute
-- Resp.: 20/minute
-- BP: 118/74 mmHg
-- O2 sat: 96% on room air
+- Pulse: 100/minute
+- Resp.: 24/minute
+- BP: 144/80 mmHg
+- O2 sat: 90% on room air
+- Weight: 61 kg
 
 #### Q1
-**Which of the following oxygen plans is most appropriate for her in the emergency department?**
+**Which of the following salbutamol regimens is most appropriate for his first few hours of treatment?**
 
-- A. Face mask at 6 L/minute
-- B. Nasal prongs at 2 L/minute
-- C. Oxygen to target 94 to 98%
-- D. Venturi mask at 28%
-- E. No supplemental oxygen  **(key)**
+- A. Continuous nebulized salbutamol for 3 hours
+- B. IV salbutamol by continuous infusion
+- C. Nebulized salbutamol every 20 minutes for 3 hours
+- D. pMDI and spacer hourly for 2 to 3 doses  **(key)**
+- E. Salbutamol only if his SpO2 falls below 88%
 
-*Explanation:* GINA 2026 does not recommend supplemental oxygen in acute asthma unless SpO2 is below 92%, and when it is given the upper target is 95%. Her SpO2 is 96% on room air, so she needs no oxygen. Oxygen by prongs, face mask or Venturi mask adds nothing for her. A target of 94 to 98% exceeds the revised upper limit.
+*Explanation:* The GOLD report recommends inhaled short-acting beta2-agonists, with or without a short-acting anticholinergic, as the first bronchodilators for a COPD exacerbation, and advises against high doses because of side effects. It suggests one or two puffs by pMDI every hour for two or three doses, then every 2 to 4 hours by response, and finds no difference in FEV1 between a pMDI and a nebulizer. Nebulizing every 20 minutes or continuously for 3 hours gives the high doses GOLD advises against. GOLD names inhaled, not IV, short-acting bronchodilators as the initial treatment. Waiting for his saturation to fall withholds treatment he needs now.
 
 *Key feature:* Asthma/COPD 5. Start bronchodilators, steroids, and oxygen for acute asthma before the diagnosis is fully confirmed.
 
-*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
+*Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
 
 #### Q2
-*Update:* She improves after one treatment. Her peak flow is now 400 L/minute and she wants to go home.
+*Update:* He improves over the next day and is ready to go home.
 
-**Which of the following inhaler plans is most appropriate at discharge?**
+**Which of the following maintenance inhaler changes does the 2023 Canadian Thoracic Society guideline support for him?**
 
-- A. Add montelukast 10 mg PO daily
-- B. Add salmeterol twice daily to reliever
-- C. budesonide-formoterol maintenance and reliever  **(key)**
-- D. Continue as-needed budesonide-formoterol alone
-- E. Switch to salbutamol as needed only
+- A. Add daily azithromycin
+- B. Add daily low-dose prednisone
+- C. Change to a LAMA-LABA inhaler
+- D. Continue his current inhaler unchanged
+- E. Switch to a single triple inhaler  **(key)**
 
-*Explanation:* GINA treats any exacerbation needing urgent care as a sign that treatment should be stepped up, and after an ED visit it suggests starting ICS-formoterol maintenance and reliever therapy. Continuing as-needed use alone leaves her treatment unchanged after an ED visit. Switching to salbutamol alone removes her inhaled corticosteroid and is no longer recommended. Adding salmeterol to a reliever regimen is not a standard option. Montelukast is not the step-up GINA prefers after an ED visit.
+*Explanation:* Two moderate exacerbations in the past year, and now an emergency visit, place him at high risk of exacerbations under the 2023 CTS guideline. For such patients without asthma, CTS strongly recommends ICS-LAMA-LABA triple therapy over dual therapy, because it reduces exacerbations and all-cause mortality, and it prefers a single inhaler. CTS no longer uses the blood eosinophil count to decide on an inhaled corticosteroid. Under the GOLD report his count of 0.06 x 10^9/L would favour a LAMA-LABA, but the Canadian guideline does not use that threshold. CTS lists a prophylactic macrolide among add-on oral therapies, not as a substitute for full inhaled treatment. Daily oral prednisone has no role in stable COPD. Continuing unchanged ignores his high risk.
 
 *Key feature:* Asthma/COPD 6. Give systemic or inhaled corticosteroids for asthma and COPD exacerbations when indicated.
 
-*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
+*Source:* Bourbeau J, Bhutani M, Hernandez P, et al. 2023 Canadian Thoracic Society guideline on pharmacotherapy in patients with stable COPD. Chest. 2023. https://pubmed.ncbi.nlm.nih.gov/37690008/
 
 #### Q3
-**Which of the following should be completed before she leaves the emergency department?**
+*Update:* Before he leaves, he shows how he uses his inhaler. Despite coaching, he cannot breathe in forcefully through the dry powder device. His prescribed maintenance medicine comes as a dry powder inhaler or a pMDI.
 
-Select 3.
+**Which of the following is the most appropriate change to his inhaler device?**
 
-- A. Allergy skin testing
-- B. Check inhaler technique  **(key)**
-- C. Chest radiograph
-- D. Complete blood count
-- E. Repeat peak flow measurement  **(key)**
-- F. Sputum culture
-- G. Written asthma action plan  **(key)**
+- A. Add a second dry powder inhaler
+- B. Change to a pMDI with a spacer  **(key)**
+- C. Change to a pMDI without a spacer
+- D. Keep the device and repeat coaching
+- E. Use his current device more often
 
-*Explanation:* GINA 2026 strongly recommends measuring lung function before discharge, and advises reviewing inhaler technique and giving a written asthma action plan after any exacerbation. A chest radiograph is not routinely needed in an uncomplicated exacerbation. A blood count and sputum culture do not guide her care. Allergy testing can be arranged later if needed and is not part of ED discharge.
+*Explanation:* Dry powder inhalers need a forceful inhalation to break up the powder, and the GOLD report advises checking that a patient can inhale forcefully through the device. When there is doubt, it advises checking inspiratory flow or switching to a pMDI or a soft mist inhaler, depending on which devices the drug comes in. His medicine comes as a dry powder inhaler or a pMDI, so a pMDI fits, and it needs only a slow, deep breath. GOLD advises a spacer whenever there is doubt that a pMDI can be used correctly, and an 84-year-old who could not master his device after coaching raises that doubt. A second dry powder inhaler or more frequent use of the same device leaves the same problem, and more coaching has already failed.
 
 *Key feature:* Asthma/COPD 8. Before discharge, confirm true recovery with an exertion test and objective measures, then review inhaler technique and follow-up.
 
-*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
+*Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
 
-### asthma-copd-36: Too breathless to blow
+### asthma-copd-36: Wheezing with no diagnosis yet
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 10-year-old girl with asthma is brought to the emergency department by ambulance with four hours of worsening wheeze. Paramedics gave salbutamol 5 mg by nebulizer once. She takes fluticasone 100 mcg twice daily. She has had two admissions for asthma, one of them to the ICU two years ago. She is alert, sitting forward and speaks in single words. There is marked suprasternal indrawing and scalene contraction, with very faint wheeze and minimal air entry throughout. She cannot perform a peak flow.
+A 58-year-old man presents to the emergency department with 2 days of worsening breathlessness and wheeze after a cold. He has never been given a lung diagnosis, but he has had a winter cough for years and wheezes when he has a cold. He has smoked a pack a day for 40 years. He takes no regular inhalers. He speaks in short phrases, uses his neck muscles to breathe and has a barrel-shaped chest with diffuse wheeze. He has no leg swelling. A venous bicarbonate is 34 mmol/L. No spirometry or chest X-ray is available yet.
 
-- Temperature: 37.0°C oral
-- Pulse: 150/minute
-- Resp.: 40/minute
-- BP: 108/64 mmHg
-- O2 sat: 88% on room air
-- Weight: 32 kg
+- Temperature: 37.1°C oral
+- Pulse: 116/minute
+- Resp.: 30/minute
+- BP: 148/86 mmHg
+- O2 sat: 86% on room air
+- Weight: 82 kg
 
 #### Q1
-**Which of the following is the most appropriate first action after placing her on a monitor?**
+**Which of the following is the most appropriate first step in his treatment?**
 
-- A. Chest radiograph before treatment
-- B. IV access and blood work first
-- C. Oxygen with salbutamol and ipratropium  **(key)**
-- D. Sedation to ease her anxiety
-- E. Venous gas and lactate to guide treatment
+- A. Chest X-ray before any bronchodilator
+- B. furosemide 40 mg IV
+- C. Salbutamol and ipratropium now  **(key)**
+- D. Spirometry to confirm the diagnosis
+- E. Wait for a blood gas before treatment
 
-*Explanation:* She has a severe exacerbation (PRAM 12, SpO2 88%), and GINA advises starting a short-acting beta agonist with ipratropium and giving oxygen when saturation is below 92%, with treatments given together for rapid improvement. A chest radiograph is not routinely needed and a blood gas is not routinely required, so neither should delay treatment, and neither should IV access or blood work. GINA warns that sedation must be avoided in acute asthma because it depresses breathing.
+*Explanation:* Whether this proves to be asthma, COPD or both, he has severe airflow obstruction now. The GINA report advises assessing severity while starting a short-acting beta2-agonist and oxygen, and the GOLD report recommends a short-acting beta2-agonist with or without a short-acting anticholinergic as the initial bronchodilator for an exacerbation. Spirometry confirms a diagnosis later, not during a severe flare. A chest X-ray and a blood gas are useful, but neither should delay bronchodilators. He has no edema or other features of heart failure to justify furosemide.
 
 *Key feature:* Asthma/COPD 5. Start bronchodilators, steroids, and oxygen for acute asthma before the diagnosis is fully confirmed.
 
-*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
+*Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
 
 #### Q2
-**Which of the following corticosteroid orders is most appropriate for her?**
+**Which of the following oxygen saturation targets is most appropriate for him until a blood gas is available?**
 
-- A. dexamethasone 3.2 mg PO
-- B. dexamethasone 12 mg PO  **(key)**
-- C. dexamethasone 19.2 mg PO
-- D. hydrocortisone 400 mg IV
-- E. prednisolone 64 mg PO
+- A. 84 to 88%
+- B. 88 to 92%  **(key)**
+- C. 93 to 95%
+- D. 96 to 98%
+- E. 98 to 100%
 
-*Explanation:* TREKK doses dexamethasone at 0.6 mg/kg to a maximum of 12 mg. For 32 kg that is 19.2 mg, which exceeds the maximum, so she gets 12 mg. Dexamethasone 3.2 mg is only 0.1 mg/kg. Prednisolone 64 mg is 2 mg/kg and exceeds the TREKK maximum of 60 mg. Hydrocortisone is dosed at 8 mg/kg, which is 256 mg, so 400 mg is too much for her. She is alert and can swallow, so the oral route is preferred.
-
-*Key feature:* Asthma/COPD 6. Give systemic or inhaled corticosteroids for asthma and COPD exacerbations when indicated.
-
-*Source:* TREKK. Pediatric severe asthma exacerbation algorithm for children aged 12 months and older. Version 2.0. 2024. https://cms.trekk.ca/wp-content/uploads/2024/02/2024-02-19_Asthma-Algorithm_v2.0-FINAL.pdf
-
-#### Q3
-*Update:* After three back-to-back salbutamol and ipratropium treatments she still speaks in single words. Her SpO2 is 91% on 6 L/minute by mask. She remains alert.
-
-**Which of the following is the most appropriate additional treatment now?**
-
-- A. aminophylline 5 mg/kg IV
-- B. epinephrine 0.32 mg IM
-- C. magnesium sulfate 1 600 mg IV  **(key)**
-- D. magnesium sulfate 2 000 mg IV
-- E. magnesium sulfate 320 mg IV
-
-*Explanation:* TREKK advises IV magnesium for a child still in moderate to severe distress after the first hour, at 50 mg/kg to a maximum of 2 000 mg over at least 20 minutes. For 32 kg that is 1 600 mg. The 2 000 mg dose is the maximum single dose and would be 62.5 mg/kg for her. The 320 mg dose is only 10 mg/kg. Aminophylline is not recommended because of poor efficacy and safety. IM epinephrine is for suspected anaphylaxis.
+*Explanation:* His 40 pack-year smoking history, chronic cough, barrel chest and venous bicarbonate of 34 mmol/L suggest chronic carbon dioxide retention. The BTS/ICS guideline advises a saturation target of 88 to 92% for COPD exacerbations, which limits worsening hypercapnia while still correcting hypoxemia. The 93 to 95% target used in asthma, and higher targets, risk raising his carbon dioxide if he retains it. A target of 84 to 88% accepts hypoxemia with no added benefit.
 
 *Key feature:* Asthma/COPD 5. Start bronchodilators, steroids, and oxygen for acute asthma before the diagnosis is fully confirmed.
 
-*Source:* TREKK. Pediatric severe asthma exacerbation algorithm for children aged 12 months and older. Version 2.0. 2024. https://cms.trekk.ca/wp-content/uploads/2024/02/2024-02-19_Asthma-Algorithm_v2.0-FINAL.pdf
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://doi.org/10.1136/bmjresp-2016-000133
 
-#### Q4
-*Update:* Thirty minutes later she is harder to rouse and her respiratory effort is weaker. Venous pCO2 is 58 mmHg.
+#### Q3
+*Update:* After 1 hour of treatment he is alert and cooperative. A venous gas shows pH 7.31 and pCO2 60 mmHg. He still has diffuse wheeze and a respiratory rate of 28/minute.
 
-**Which of the following best describes her clinical condition at this point?**
+**Which of the following is the most appropriate respiratory support for him now?**
 
-- A. Impending respiratory failure  **(key)**
-- B. Improving asthma with less work
-- C. Moderate exacerbation
-- D. Salbutamol toxicity
-- E. Settling anxiety after treatment
+- A. Bilevel noninvasive ventilation  **(key)**
+- B. Continue treatment, recheck in 4 hours
+- C. High-flow oxygen by non-rebreather mask
+- D. Immediate endotracheal intubation
+- E. IV aminophylline infusion
 
-*Explanation:* TREKK defines lethargy, decreasing respiratory effort and a rising pCO2 as impending respiratory failure, whatever the PRAM score. Less effort from a tiring child is not improvement, and she is harder to rouse rather than calmer. She is not in a moderate exacerbation. Salbutamol toxicity causes tachycardia, tremor and lactic acidosis, not a rising pCO2 with falling consciousness.
+*Explanation:* His pH is below 7.35 and his pCO2 is above 49 mmHg despite an hour of treatment, and he is alert and cooperative. The BTS/ICS guideline recommends noninvasive ventilation in this situation for COPD. It advises against noninvasive ventilation in acute asthma, but states that hypercapnia complicating chronic asthma closely resembles COPD and should be managed the same way, so the uncertain diagnosis does not change the decision. Waiting 4 hours leaves the acidosis untreated. A non-rebreather mask would worsen hypercapnia. He does not yet need intubation. Aminophylline is not recommended because of its side effects.
 
 *Key feature:* Asthma/COPD 7. Detect subtle signs of tiring or impending respiratory failure and begin early noninvasive support such as BiPAP.
 
-*Source:* TREKK. Pediatric severe asthma exacerbation algorithm for children aged 12 months and older. Version 2.0. 2024. https://cms.trekk.ca/wp-content/uploads/2024/02/2024-02-19_Asthma-Algorithm_v2.0-FINAL.pdf
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://doi.org/10.1136/bmjresp-2016-000133
+
+#### Q4
+*Update:* Four days later he is ready for discharge. Spirometry after salbutamol shows an FEV1/FVC of 0.61, and his FEV1 rose by 450 mL (24%) after the bronchodilator.
+
+**Which of the following maintenance inhaler regimens is most appropriate for him at discharge?**
+
+- A. budesonide-formoterol twice daily  **(key)**
+- B. montelukast 10 mg PO daily
+- C. Salbutamol as needed alone
+- D. tiotropium alone once daily
+- E. tiotropium-olodaterol inhaler once daily
+
+*Explanation:* A post-bronchodilator FEV1/FVC below 0.7 after 40 pack-years points to COPD, while wheeze with colds and a large bronchodilator response point to asthma. The GINA report advises that patients with features of both be treated as asthma with ICS-containing therapy, and that a LABA and/or LAMA must not be given alone without an ICS, because of the risk of severe exacerbations and death. Tiotropium-olodaterol is a usual first choice in COPD, but without an inhaled corticosteroid it is unsafe if he has asthma. Tiotropium alone has the same problem. Salbutamol alone leaves both conditions without a controller. Montelukast is less effective than an inhaled corticosteroid.
+
+*Key feature:* Asthma/COPD 6. Give systemic or inhaled corticosteroids for asthma and COPD exacerbations when indicated.
+
+*Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 ### asthma-copd-37: Sleepy after the hip repair
 
@@ -1537,60 +1576,62 @@ A 74-year-old woman with COPD is brought to the emergency department from a reha
 
 *Source:* Boyer EW. Management of opioid analgesic overdose. N Engl J Med. 2012. https://pmc.ncbi.nlm.nih.gov/articles/PMC3739053/
 
-### asthma-copd-38: Fever with the wheeze
+### asthma-copd-38: A positive home test
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 31-year-old man with asthma presents to the emergency department with four days of fever, cough with rusty sputum and wheeze. He has right-sided pleuritic chest pain. He takes fluticasone 250 mcg with salmeterol 50 mcg, one inhalation twice daily, and salbutamol as needed. He does not smoke. He speaks in phrases. There is expiratory wheeze throughout, with bronchial breath sounds and crackles at the right base.
+You are working in a community hospital emergency department. A 67-year-old man with asthma presents with 2 days of fever, sore throat and cough and 1 day of wheeze. A home rapid antigen test for COVID-19 was positive yesterday. He uses fluticasone 250 mcg with salmeterol 50 mcg, one inhalation twice daily, and salbutamol as needed. He finished a 5-day course of prednisone for an asthma flare 6 weeks ago. He has had asthma since early childhood and hay fever every spring. He has never been admitted to hospital for asthma. He speaks in full sentences and has scattered expiratory wheeze. His peak flow is 72% of his personal best.
 
-- Temperature: 39.1°C oral
-- Pulse: 118/minute
-- Resp.: 28/minute
-- BP: 124/76 mmHg
-- O2 sat: 90% on room air
+- Temperature: 38.1°C oral
+- Pulse: 98/minute
+- Resp.: 20/minute
+- BP: 138/82 mmHg
+- O2 sat: 95% on room air
 
 #### Q1
-**Which of the following investigations is most appropriate to confirm the coexisting problem?**
+**Which of the following features of his asthma history most increases his risk of severe COVID-19?**
 
-- A. Chest radiograph  **(key)**
-- B. CT pulmonary angiogram
-- C. Procalcitonin level
-- D. Serum D-dimer
-- E. Two sets of blood cultures
+- A. Asthma since early childhood
+- B. Daily inhaled fluticasone use
+- C. Hay fever every spring
+- D. Prednisone course 6 weeks ago  **(key)**
+- E. Salbutamol use when wheezy
 
-*Explanation:* GINA advises a chest radiograph when a complicating process such as pneumonia is suspected. His fever, rusty sputum, pleuritic pain and focal bronchial breathing with crackles at the right base all point to consolidation. D-dimer and CT pulmonary angiography look for embolism, which his fever and focal findings do not suggest. Blood cultures and procalcitonin do not confirm or locate pneumonia.
+*Explanation:* GINA notes that people with asthma are not, as a group, at higher risk of severe COVID-19, but those with poorly controlled asthma, such as a recent need for oral corticosteroids, are at higher risk of hospitalization if they acquire it. His prednisone course 6 weeks ago is that marker. How long he has had asthma and his seasonal hay fever do not add to this risk. GINA advises patients to keep taking their usual asthma medicines during COVID-19, so daily inhaled fluticasone is not a cause for concern. Occasional salbutamol use is not the marker GINA names.
 
 *Key feature:* Asthma/COPD 4. Identify and promptly treat coexisting problems in asthma patients, such as heart failure, pneumonia, or pneumothorax.
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q2
-*Update:* The radiograph shows right lower lobe consolidation. There is no pleural effusion or pneumothorax.
+*Update:* He needs repeated doses of salbutamol while he is treated in the department.
 
-**Which of the following is the most appropriate change to his treatment?**
+**Which of the following is the most appropriate way to give his salbutamol in the emergency department?**
 
-- A. Add oseltamivir only
-- B. prednisone 100 mg PO daily
-- C. Start antibiotic therapy  **(key)**
-- D. Start IV aminophylline
-- E. Withhold steroids due to infection
+- A. Continuous nebulizer by face mask
+- B. Nebulizer driven by oxygen
+- C. Nebulizer with the curtain drawn
+- D. pMDI and spacer kept for him alone  **(key)**
+- E. Salbutamol by IV infusion
 
-*Explanation:* GINA advises antibiotics in asthma exacerbations only when there is strong evidence of lung infection, such as fever, purulent sputum or radiographic pneumonia, and he has fever, rusty sputum and consolidation. Oseltamivir alone does not treat bacterial pneumonia. Prednisone 100 mg is double the GINA adult dose of about 50 mg daily, and infection is not a reason to increase it. Aminophylline is not recommended. Infection is not a reason to withhold systemic corticosteroids from a moderate to severe asthma exacerbation.
+*Explanation:* GINA advises avoiding nebulizers where COVID-19 is present, because they can carry respiratory viral particles at least 1 metre to other patients and staff. For acute asthma it recommends a pressurized metered-dose inhaler with a spacer, which improves lung function as well as a nebulizer in patients without life-threatening asthma. Spacers that cannot be sterilized should be kept for a single patient. A curtain does not contain the aerosol, and a continuous or oxygen-driven nebulizer still creates it. GINA does not support routine intravenous beta2-agonists in severe asthma, and his flare is not severe.
 
 *Key feature:* Asthma/COPD 4. Identify and promptly treat coexisting problems in asthma patients, such as heart failure, pneumonia, or pneumothorax.
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q3
-**Which of the following systemic corticosteroid orders is most appropriate for his asthma?**
+*Update:* He is prescribed nirmatrelvir-ritonavir for 5 days.
 
-- A. budesonide 1 mg nebulized alone
-- B. dexamethasone 4 mg PO once
-- C. hydrocortisone 100 mg IM once
-- D. methylprednisolone 125 mg IV q6h
-- E. prednisone 50 mg PO daily  **(key)**
+**Which of the following inhaler plans is most appropriate while he takes this antiviral?**
 
-*Explanation:* GINA advises an oral corticosteroid equal to about 50 mg of prednisone daily in adults, and the oral route works as well as IV when the patient can swallow. Methylprednisolone 125 mg every 6 hours is 500 mg a day, more than ten times that dose. Intramuscular dosing has no advantage over oral. A single 4 mg dexamethasone dose is well below the adult dose. Nebulized budesonide alone does not replace systemic corticosteroid in a patient speaking in phrases with an SpO2 of 90%.
+- A. Continue fluticasone-salmeterol unchanged
+- B. Double the fluticasone-salmeterol dose
+- C. Fluticasone alone until 5 days after it ends  **(key)**
+- D. Salmeterol alone until 5 days after it ends
+- E. Stop both controllers until 5 days after it ends
+
+*Explanation:* Ritonavir is a potent CYP3A4 inhibitor, and GINA warns that it may increase the cardiac toxicity of salmeterol. Product information advises against combining CYP3A4 inhibitors with ICS-salmeterol. GINA suggests switching to an inhaled corticosteroid alone, or to ICS-formoterol, for the antiviral course and a further 5 days, and teaching the technique for the new inhaler. The short course makes corticosteroid side effects unlikely. Stopping both controllers raises his risk of an asthma exacerbation. Salmeterol without an inhaled corticosteroid is unsafe in asthma. Continuing or doubling the combination keeps the interaction.
 
 *Key feature:* Asthma/COPD 6. Give systemic or inhaled corticosteroids for asthma and COPD exacerbations when indicated.
 
@@ -1735,188 +1776,185 @@ Select 3.
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
-### asthma-copd-41: Before the plane arrives
+### asthma-copd-41: A long night on the mask
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural emergency department. The nearest ICU is a 90-minute flight away. A 64-year-old woman with COPD presents with five days of increasing breathlessness and green sputum. She takes tiotropium-olodaterol and uses no home oxygen. She is alert but speaks in short phrases and uses her neck and abdominal muscles to breathe. There is poor air entry with diffuse wheeze. Arterial gas on 2 L/minute oxygen: pH 7.31, PaCO2 62 mmHg, PaO2 58 mmHg, HCO3 31 mmol/L.
+A 69-year-old woman with COPD is brought to the emergency department by ambulance with 4 days of increasing breathlessness and purulent sputum. She is drowsy but rousable and follows commands. After 1 hour of nebulized salbutamol and ipratropium, prednisone, an antibiotic and controlled oxygen, an arterial gas shows pH 7.26, PaCO2 78 mmHg and PaO2 58 mmHg. Her PaCO2 when well is 46 mmHg. She wants full treatment, including intubation if needed. Bilevel noninvasive ventilation (NIV) is started by oronasal mask in the resuscitation room.
 
-- Temperature: 37.8°C oral
+- Temperature: 37.9°C oral
 - Pulse: 112/minute
 - Resp.: 32/minute
-- BP: 150/88 mmHg
+- BP: 138/74 mmHg
 - O2 sat: 88% on 2 L/minute by nasal prongs
 
 #### Q1
-**Which of the following findings best separates a severe from a moderate exacerbation in her?**
+*Update:* After 30 minutes of NIV her respiratory rate is 22/minute and her heart rate 108/minute. Her SpO2 is 97% with 4 L/minute of oxygen added to the circuit. She is asleep and snoring on the mask, with quieter wheeze.
 
-- A. Green sputum for 5 days
-- B. PaCO2 of 62 mmHg with pH 7.31  **(key)**
-- C. Pulse of 112/minute
-- D. Temperature of 37.8°C
-- E. Wheeze throughout both lungs
+**Which of the following findings best suggests that noninvasive ventilation is helping her before the repeat blood gas?**
 
-*Explanation:* In the GOLD Rome criteria, moderate and severe exacerbations share the same symptom and vital sign thresholds, and a severe exacerbation is marked by a PaO2 of 60 mmHg or less, or hypercapnia with acidosis (PaCO2 above 45 mmHg and pH below 7.35). Her PaCO2 of 62 mmHg with a pH of 7.31 meets that definition, and her PaO2 of 58 mmHg also meets the hypoxemia threshold. A pulse above 95/minute counts toward both grades. Sputum colour, a low grade temperature and diffuse wheeze do not grade severity.
+- A. Asleep and snoring on the mask
+- B. Heart rate now 108/minute
+- C. Oxygen saturation now 97%
+- D. Quieter wheeze on auscultation
+- E. Respiratory rate now 22/minute  **(key)**
+
+*Explanation:* Her respiratory rate has fallen from 32 to 22/minute, a large and objective change. The BTS/ICS guideline singles out pH and respiratory rate as the physiological measures whose worsening means the plan must change, and it asks for an arterial gas after NIV starts to confirm the response. A saturation of 97% shows oxygenation, not ventilation, and is above the 88 to 92% target the guideline sets, so her added oxygen should be reduced. Sleep on the mask can reflect rising carbon dioxide as well as comfort. Quieter wheeze can mean less airflow. A fall in heart rate from 112 to 108/minute is too small to judge.
 
 *Key feature:* Asthma/COPD 3. Grade exacerbation severity objectively, using peak flow or FEV1, rising CO2, fatigue, and mental status.
 
-*Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4800170/
 
 #### Q2
-**Which of the following is the most appropriate treatment to start while the transfer is arranged?**
+*Update:* She will need NIV for many more hours while she waits for an inpatient bed.
 
-- A. CPAP at 5 cm H2O alone
-- B. High-flow oxygen by non-rebreather
-- C. IV aminophylline infusion
-- D. Nasal prongs at 6 L/minute
-- E. Noninvasive bilevel ventilation  **(key)**
+**Which of the following is the most appropriate setting for her ongoing noninvasive ventilation?**
 
-*Explanation:* She has acute on chronic hypercapnic acidosis with a pH of 7.31, and the ERS and ATS recommend bilevel noninvasive ventilation for COPD exacerbations with a pH of 7.35 or less. She is alert and can cooperate with a mask. CPAP does not give inspiratory pressure support. High-flow oxygen by non-rebreather or prongs at 6 L/minute can worsen hypercapnia. Aminophylline is not recommended in COPD exacerbations.
+- A. Corridor stretcher near the nursing station
+- B. General ward bed with 4-hourly checks
+- C. ICU bed for immediate intubation
+- D. Monitored high-dependency area  **(key)**
+- E. Side room with a nurse caring for 6
+
+*Explanation:* The BTS/ICS guideline describes NIV as a treatment for a specifically identified area of level 2 or high dependency standard, staffed with one nurse for every 2 NIV patients, especially in the first 24 hours. In the emergency department that means a monitored, high-dependency space. A general ward bed with 4-hourly checks, a corridor stretcher or a nurse caring for 6 patients cannot give that level of observation, and problems with the mask, the settings or her level of consciousness would be missed. She is improving on NIV, so immediate intubation is not indicated.
 
 *Key feature:* Asthma/COPD 7. Detect subtle signs of tiring or impending respiratory failure and begin early noninvasive support such as BiPAP.
 
-*Source:* Rochwerg B, Brochard L, Elliott MW, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. Eur Respir J. 2017. https://pubmed.ncbi.nlm.nih.gov/28860265/
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4800170/
 
 #### Q3
-*Update:* After 1 hour of bilevel ventilation, arterial pH is 7.25 and PaCO2 is 79 mmHg. She is now hard to rouse and cannot keep the mask sealed.
+*Update:* On day 2 she is still in the emergency department. Her pH is 7.38 and PaCO2 is 55 mmHg. She is alert and comfortable.
 
-**Which of the following is the most appropriate next step in her airway management before the flight?**
+**Which of the following noninvasive ventilation plans is most appropriate for her now?**
 
-- A. Add IV midazolam for mask tolerance
-- B. Continue bilevel and transfer now
-- C. Increase oxygen and delay transfer
-- D. Intubate before the flight  **(key)**
-- E. Switch to high-flow nasal oxygen
+- A. Keep NIV continuous for 7 days
+- B. Stop all NIV use today
+- C. Stop NIV at night first, keep daytime use
+- D. Switch to high-flow nasal oxygen
+- E. Taper daytime use, keep overnight for now  **(key)**
 
-*Explanation:* Her pH has fallen from 7.31 to 7.25, her PaCO2 has risen from 62 to 79 mmHg and her level of consciousness has dropped, so noninvasive ventilation has failed. GOLD lists failure of noninvasive ventilation as an indication for invasive ventilation, and the airway is best secured in the ED rather than during the flight. Continuing bilevel ventilation risks arrest in transit. Midazolam would further depress her breathing. More oxygen or high-flow nasal oxygen does not reverse her worsening ventilatory failure.
+*Explanation:* Her pH has normalized, but her PaCO2 of 55 mmHg is still above her usual 46 mmHg. The BTS/ICS guideline allows NIV to stop once pH and PaCO2 have normalized with general improvement. Until then it advises maximizing NIV in the first 24 hours, then tapering daytime use over the following 2 to 3 days as her self-ventilating PaCO2 allows, before stopping overnight use. Stopping all NIV use today is premature, and stopping night use first reverses the order the guideline gives. Seven days of continuous NIV is longer than she needs. High-flow nasal oxygen is not a step in this weaning plan.
 
 *Key feature:* Asthma/COPD 7. Detect subtle signs of tiring or impending respiratory failure and begin early noninvasive support such as BiPAP.
 
-*Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4800170/
 
-### asthma-copd-42: Talking less than before
+### asthma-copd-42: Evacuated ahead of the fire
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 24-year-old man with asthma is brought to the emergency department by ambulance with six hours of worsening wheeze. He has had one previous ICU admission for asthma. Paramedics gave salbutamol 5 mg by nebulizer twice. He is sitting forward, sweating, and can say only two or three words at a time. He cannot perform a peak flow manoeuvre. There is widespread faint wheeze with poor air movement. Arterial gas on room air: pH 7.37, PaCO2 43 mmHg, PaO2 57 mmHg.
+You are working in a regional hospital emergency department in northern Alberta during a wildfire evacuation. A 34-year-old woman with asthma is brought to the emergency department by ambulance from an evacuation centre with 1 day of worsening wheeze and breathlessness. Heavy smoke covered her town for 2 days before she left. She takes budesonide-formoterol 200/6 mcg, one inhalation twice daily and as needed, and has used 10 extra inhalations today. She had one asthma admission 3 years ago and has never been intubated. She is alert and sits upright on the stretcher. She talks in phrases and can sip water. She has loud expiratory wheeze in both lungs and no stridor, hives or leg swelling.
 
 - Temperature: 36.9°C oral
-- Pulse: 132/minute
-- Resp.: 34/minute
-- BP: 136/80 mmHg
-- O2 sat: 89% on room air
-- Weight: 78 kg
+- Pulse: 118/minute
+- Resp.: 28/minute
+- BP: 132/80 mmHg
+- O2 sat: 90% on room air
 
 #### Q1
-**Which of the following findings is most concerning for respiratory failure in this patient?**
+**Which of the following findings places her presentation in the severe category of the GINA 2026 emergency department criteria?**
 
-- A. Accessory muscle use
-- B. Diaphoresis at rest
-- C. Heart rate of 132/minute
-- D. PaCO2 of 43 mmHg  **(key)**
-- E. Respiratory rate of 34/minute
+- A. Heart rate of 118/minute
+- B. Loud wheeze in both lungs
+- C. Respiratory rate of 28/minute
+- D. SpO2 of 90% on room air  **(key)**
+- E. Talks in phrases, not sentences
 
-*Explanation:* GINA notes that PaCO2 is usually below 40 mmHg in an asthma exacerbation, and that a PaO2 below 60 mmHg with a normal or raised PaCO2 indicates respiratory failure. His PaO2 is 57 mmHg with a PaCO2 of 43 mmHg, so he is no longer able to blow off CO2. Accessory muscle use, sweating, tachycardia and tachypnea are signs of a severe attack. They do not by themselves show that ventilation is failing.
+*Explanation:* Her room air saturation of 90% is below the GINA 2026 severe threshold of 92%, and any one severe feature is enough to class the presentation as severe. Talking in phrases while preferring to sit is a moderate feature. A respiratory rate of 28/minute is raised but does not reach the severe cut-off of more than 30/minute. Loud expiratory wheeze is listed with moderate presentations, and a quiet chest is the worrying sign. Heart rate is not among the GINA 2026 severe criteria, and earlier GINA versions set the severe cut-off above 120/minute. Her pulse may also partly reflect the 10 extra doses of formoterol she took today.
 
 *Key feature:* Asthma/COPD 3. Grade exacerbation severity objectively, using peak flow or FEV1, rising CO2, fatigue, and mental status.
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q2
-**Which of the following treatments should be started now for this severe exacerbation?**
+*Update:* Salbutamol and ipratropium by pMDI and spacer are started. A chest X-ray is ordered because of her smoke exposure. The portable machine will not be free for 1 hour.
 
-Select 4.
+**Which of the following corticosteroid orders is most appropriate for her at this point?**
 
-- A. IV aminophylline
-- B. IV salbutamol infusion
-- C. lorazepam 1 mg IV
-- D. magnesium sulfate 2 g IV  **(key)**
-- E. Oxygen to target 92 to 95%  **(key)**
-- F. Routine IV antibiotics
-- G. Salbutamol with ipratropium  **(key)**
-- H. Systemic corticosteroid  **(key)**
+- A. budesonide 1 mg nebulized, no prednisone
+- B. methylprednisolone 80 mg IM now
+- C. prednisone 50 mg PO after the chest X-ray
+- D. prednisone 50 mg PO if no better in 1 hour
+- E. prednisone 50 mg PO now  **(key)**
 
-*Explanation:* GINA advises a short-acting beta agonist with ipratropium, a systemic corticosteroid within the first hour, and oxygen to a target of 92 to 95% when saturation is below 92%. IV magnesium is advised for adults who fail to respond to initial treatment and remain hypoxemic, which fits him after two salbutamol doses with an SpO2 of 89%, and GINA notes benefit in adults with very low lung function at presentation, as his inability to do a peak flow suggests. Aminophylline and routine IV salbutamol are not recommended. Sedatives such as lorazepam must be avoided. Antibiotics are not indicated without evidence of infection.
+*Explanation:* GINA advises systemic corticosteroid for all but the mildest exacerbations, given within 1 hour of presentation where possible. Oral corticosteroids take at least 4 hours to help, so the dose should not wait. She can sip water, and oral prednisone is as effective as IV and quicker to give. Waiting for the chest X-ray delays treatment for an investigation that would not change the need for it. GINA does not advise a routine chest X-ray in acute asthma. Waiting 1 hour to judge the response to bronchodilators also delays it, when her presentation is already severe. High-dose inhaled budesonide has shown benefit mainly in patients who receive no systemic corticosteroid. IM methylprednisolone has shown no benefit over the oral route in trials and adds an injection.
 
 *Key feature:* Asthma/COPD 5. Start bronchodilators, steroids, and oxygen for acute asthma before the diagnosis is fully confirmed.
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q3
-*Update:* After 45 minutes he is less agitated, his eyes keep closing, and a repeat PaCO2 is 52 mmHg.
+*Update:* Forty minutes later, after three rounds of bronchodilators, she is restless and keeps trying to climb off the stretcher. She says she is panicking. The nurse asks for an order to calm her.
 
-**Which of the following is the most appropriate next step in his airway management?**
+**Which of the following is the most appropriate response to her restlessness?**
 
-- A. Bilevel ventilation with sedation
-- B. Continuous salbutamol and observe
-- C. Observe as he is now calmer
-- D. Prepare for intubation now  **(key)**
-- E. Repeat the gas in 2 hours
+- A. Bilevel ventilation with midazolam 1 mg IV
+- B. Blood gas and urgent ICU review  **(key)**
+- C. Coached slow breathing and reassurance
+- D. haloperidol 2.5 mg IM, then reassess
+- E. lorazepam 1 mg SL, then reassess
 
-*Explanation:* Somnolence with a PaCO2 that has risen from 43 to 52 mmHg means he is tiring, and GINA notes that fatigue and somnolence suggest rising pCO2 and a possible need for airway intervention. Calmer here means exhausted, not better. GINA advises that noninvasive ventilation not be tried in agitated patients and that patients not be sedated to receive it. Waiting 2 hours or simply continuing salbutamol risks respiratory arrest.
+*Explanation:* New restlessness after three rounds of bronchodilators in a severe exacerbation must be treated as possible worsening gas exchange until shown otherwise. GINA lists not being agitated as a feature of a moderate presentation. It advises a blood gas for a patient who is not responding or is deteriorating, and considering ICU transfer when the patient is worsening. GINA states that sedation must be strictly avoided in acute asthma, because anxiolytic and hypnotic drugs depress breathing and have been linked to avoidable asthma deaths. That rules out lorazepam and argues against haloperidol. GINA also advises that NIV should not be tried in an agitated patient and that patients should not be sedated to receive it. Coaching her breathing assumes panic and could miss respiratory failure.
 
 *Key feature:* Asthma/COPD 7. Detect subtle signs of tiring or impending respiratory failure and begin early noninvasive support such as BiPAP.
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
-### asthma-copd-43: Another visit this spring
+### asthma-copd-43: Wheeze after a double shift
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 29-year-old man with asthma presents to the emergency department with a day of wheeze after helping a friend move. This is his fourth emergency visit in six months. He stopped his budesonide-formoterol inhaler three months ago when he lost his drug coverage. He now uses only salbutamol and fills a new inhaler every two to three weeks. He speaks in full sentences and has mild expiratory wheeze. Peak flow is 360 L/minute and his predicted value is 560 L/minute.
+A 38-year-old man presents to the emergency department with 6 hours of wheeze and chest tightness that began near the end of a double shift. He has painted cars in an autobody shop for 4 years, spraying two-part polyurethane paints. A runny nose and sneezing at work began about 2 years ago. A walk-in clinic diagnosed asthma 8 months ago and prescribed a salmeterol inhaler twice daily and salbutamol as needed. He has never smoked and has no pets. After salbutamol and ipratropium by spacer and prednisone 50 mg PO, his peak flow rises from 55% to 82% of predicted.
 
-- Temperature: 36.7°C oral
-- Pulse: 104/minute
-- Resp.: 22/minute
-- BP: 126/78 mmHg
-- O2 sat: 95% on room air
+- Temperature: 36.8°C oral
+- Pulse: 92/minute
+- Resp.: 18/minute
+- BP: 128/76 mmHg
+- O2 sat: 97% on room air
 
 #### Q1
-**Which of the following additional history items would most increase his risk of a fatal asthma attack?**
+**Which of the following history findings would most change his long-term management?**
 
-Select 2.
+- A. Eczema in early childhood
+- B. Father with childhood asthma
+- C. Symptoms ease on vacations  **(key)**
+- D. Wheeze first began after a cold
+- E. Worse symptoms in cold air
 
-- A. Family history of asthma
-- B. Onset of asthma in childhood
-- C. Peanut allergy with anaphylaxis  **(key)**
-- D. Previous intubation for asthma  **(key)**
-- E. Seasonal allergic rhinitis
-- F. Wheeze with exercise
-- G. Wheeze with viral colds
-
-*Explanation:* GINA lists a history of near fatal asthma needing intubation, and food allergy or anaphylaxis in a patient with asthma, among the red flags for fatal or near fatal asthma. He already has others: frequent emergency visits, no inhaled corticosteroid and more than one salbutamol canister a month. A family history, childhood onset, allergic rhinitis and wheeze with exercise or colds are common in asthma. They are not listed red flags.
+*Explanation:* His asthma began in adult life after rhinitis at work, while he sprays paints. GINA advises that adult-onset asthma needs a systematic inquiry about work exposures, and it calls asking whether symptoms improve away from work an essential screening question. Improvement on vacations would point to occupational asthma, where persistent exposure is linked to worse outcomes and early removal from the sensitizer and specialist referral are central to care. Childhood eczema and a family history make asthma more likely but do not change the plan. A cold or cold air can trigger any asthma.
 
 *Key feature:* Asthma/COPD 2. In asthma or COPD flares, ask about prior ICU care or intubation, recent steroids, and frequent visits to gauge risk.
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q2
-*Update:* After salbutamol and ipratropium his peak flow is 480 L/minute and he feels well.
+**Which of the following changes to his controller treatment is most appropriate at discharge?**
 
-**Which of the following oral corticosteroid orders is most appropriate for him at discharge?**
+- A. Add an inhaled corticosteroid  **(key)**
+- B. Add montelukast to salmeterol
+- C. Add tiotropium to salmeterol
+- D. Continue salmeterol unchanged
+- E. Increase salmeterol to three times daily
 
-- A. prednisone 40 mg PO, 2-week taper
-- B. prednisone 5 mg PO daily for 7 days
-- C. prednisone 40 mg PO daily for 7 days  **(key)**
-- D. prednisone 40 mg PO daily for 21 days
-- E. No oral steroid if he restarts ICS
-
-*Explanation:* His peak flow was 64% of predicted (360 of 560 L/minute) on arrival, and GINA advises prednisone 40 to 50 mg daily for 5 to 7 days after an ED visit. A 21-day course adds exposure without benefit, and a taper is not needed for a course under 2 weeks. Prednisone 5 mg is far below the effective dose. Restarting an inhaled corticosteroid does not replace the oral course for an exacerbation that needed ED care.
+*Explanation:* He is taking a long-acting beta2-agonist with no inhaled corticosteroid. GINA strongly discourages regular LABA use without an inhaled corticosteroid because of the risk of exacerbations, and it advises starting ICS-containing treatment before discharge after an emergency visit. Adding an inhaled corticosteroid, for example by changing to a combination inhaler, treats the airway inflammation that salmeterol leaves untreated. Montelukast adds no inhaled corticosteroid. GINA also warns that a long-acting muscarinic antagonist without an inhaled corticosteroid increases the risk of severe exacerbations. Continuing or increasing salmeterol keeps the unsafe regimen.
 
 *Key feature:* Asthma/COPD 6. Give systemic or inhaled corticosteroids for asthma and COPD exacerbations when indicated.
 
 *Source:* Global Initiative for Asthma. Global Strategy for Asthma Management and Prevention. 2026 update. https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf
 
 #### Q3
-**Which of the following is the most important step to reduce his risk of returning?**
+**Which of the following should be arranged before he leaves the emergency department?**
 
-- A. Advise him to avoid heavy lifting
-- B. Arrange ICS-formoterol coverage  **(key)**
-- C. Prescribe a larger salbutamol supply
-- D. Prescribe prednisone to keep at home
-- E. Refer for allergy skin testing
+Select 2.
 
-*Explanation:* His exacerbations followed loss of his inhaled corticosteroid, and GINA advises that every patient go home on ICS-containing treatment, preferably ICS-formoterol, with barriers such as cost addressed. More salbutamol worsens his main risk factor. A home supply of prednisone does not prevent attacks. Avoiding lifting and allergy testing do not treat his uncontrolled asthma.
+- A. Chest CT before follow-up
+- B. Follow-up visit within 2 to 7 days  **(key)**
+- C. Home nebulizer for salbutamol
+- D. Oral antibiotic for 5 days
+- E. Referral for specialist assessment  **(key)**
+- F. Salbutamol before each shift
+
+*Explanation:* GINA advises a follow-up visit within 2 to 7 days after an emergency visit for asthma. It also advises that suspected occupational asthma be referred for expert assessment, because the diagnosis must be confirmed objectively and has economic and legal consequences. Taking salbutamol before each shift would hide symptoms while exposure continues. A home nebulizer gives no advantage over a pMDI and spacer. Antibiotics are not recommended without strong evidence of lung infection. A chest CT is not part of the assessment GINA describes.
 
 *Key feature:* Asthma/COPD 8. Before discharge, confirm true recovery with an exertion test and objective measures, then review inhaler technique and follow-up.
 
@@ -1960,7 +1998,7 @@ A 33-year-old woman with mild asthma presents to the emergency department with a
 - D. 5.5
 - E. 7.0  **(key)**
 
-*Explanation:* She scores 3 for pulmonary embolism as the most likely diagnosis, 1.5 for a pulse above 100/minute, 1.5 for her previous DVT and 1 for hemoptysis, for a total of 7.0. A total of 5.5 leaves out the previous DVT, and the lower totals leave out further items, such as the 3 points for PE as the most likely diagnosis. She has no signs of DVT, no recent surgery or immobilization and no cancer. Air travel and estrogen use are risk factors but are not Wells items. Thrombosis Canada classifies a score above 6 as high pretest probability and above 4.5 as PE likely.
+*Explanation:* She scores 3 for pulmonary embolism as the most likely diagnosis, 1.5 for a pulse above 100/minute, 1.5 for her previous DVT and 1 for hemoptysis, for a total of 7.0. A total of 5.5 leaves out the previous DVT, and the lower totals leave out further items, such as the 3 points for PE as the most likely diagnosis. She has no signs of DVT, no recent surgery or immobilization and no cancer. Air travel and estrogen use are risk factors but are not Wells items. Thrombosis Canada classifies a score above 6 as high pretest probability and above 4 as PE likely.
 
 *Key feature:* Asthma/COPD 1. For a first wheezing episode, consider mimics such as foreign body, heart failure, PE, or anaphylaxis before labelling it asthma.
 
@@ -1998,64 +2036,69 @@ A 33-year-old woman with mild asthma presents to the emergency department with a
 
 *Source:* Thrombosis Canada. Clinical guide. Pulmonary embolism (PE): diagnosis. 2025. https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_83.pdf
 
-### asthma-copd-45: Numbers on the gas
+### asthma-copd-45: A reassuring number at triage
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department. A 70-year-old woman with COPD presents with two days of increased breathlessness and cough after a cold. Her respirology note from last month, when she was well, records a pCO2 of 52 mmHg and HCO3 of 32 mmol/L. She uses tiotropium and home oxygen at 1 L/minute. She is alert, speaks in short phrases and uses her accessory muscles. There is prolonged expiration with diffuse wheeze. Venous gas now: pH 7.30, pCO2 70 mmHg, HCO3 34 mmol/L.
+A 61-year-old Black man with COPD presents to the emergency department with 3 days of increasing breathlessness and cough with more sputum than usual. He uses tiotropium-olodaterol once daily and salbutamol as needed. He has no home oxygen. At triage his pulse oximeter reads 93% on room air, so no oxygen is started. He is alert, speaks in short sentences and has diffuse wheeze. He has no leg swelling. A chest X-ray shows hyperinflation without consolidation or pneumothorax.
 
-- Temperature: 37.2°C oral
-- Pulse: 104/minute
-- Resp.: 28/minute
-- BP: 148/82 mmHg
-- O2 sat: 89% on 1 L/minute by nasal prongs
+- Temperature: 37.4°C oral
+- Pulse: 108/minute
+- Resp.: 26/minute
+- BP: 146/84 mmHg
+- O2 sat: 93% on room air
+- Weight: 82 kg
 
 #### Q1
-**Which of the following best describes her current acid-base state?**
+*Update:* An arterial gas on room air shows pH 7.34, PaCO2 52 mmHg, PaO2 50 mmHg and a measured SaO2 of 84%. Carboxyhemoglobin is 1.5% and methemoglobin 0.8%. Hemoglobin is 138 g/L. A new oximeter probe still reads 93%.
 
-- A. Acute respiratory acidosis alone
-- B. Acute-on-chronic respiratory acidosis  **(key)**
-- C. Chronic compensated respiratory acidosis
-- D. Mixed respiratory and metabolic acidosis
-- E. Primary metabolic alkalosis
+**Which of the following best explains the gap between his oximeter reading and his measured saturation?**
 
-*Explanation:* When well her pCO2 was 52 mmHg with an HCO3 of 32 mmol/L, a compensated chronic respiratory acidosis. Her pCO2 has now risen by 18 mmHg to 70 mmHg, and her HCO3 has risen only by 2 mmol/L to 34 mmol/L, about the 1 mmol/L per 10 mmHg expected for an acute rise. Her pH of 7.30 is acidemic. This is an acute rise on top of chronic retention. Her HCO3 is above the level expected from the acute change alone, which argues against a pure acute acidosis or an added metabolic acidosis. A primary metabolic alkalosis does not fit an acidemic pH.
+- A. Carbon monoxide exposure
+- B. Faulty oximeter probe
+- C. Low hemoglobin level
+- D. Methemoglobinemia
+- E. Skin pigmentation bias  **(key)**
+
+*Explanation:* His measured arterial saturation of 84% is far below the 93% shown by oximetry. Normal carboxyhemoglobin and methemoglobin levels, a normal hemoglobin of 138 g/L and the same reading from a new probe leave skin pigmentation as the likely cause. In a large study of paired measurements, oximeter readings of 92 to 96% hid an arterial saturation below 88% in 17% of readings in Black patients, nearly three times the rate in White patients. His arterial gas, not the oximeter, now defines his hypoxemia and hypercapnia, and it should guide his oxygen therapy.
 
 *Key feature:* Asthma/COPD 3. Grade exacerbation severity objectively, using peak flow or FEV1, rising CO2, fatigue, and mental status.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 113, Acid-Base Disorders. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Sjoding MW, Dickson RP, Iwashyna TJ, Gay SE, Valley TS. Racial bias in pulse oximetry measurement. N Engl J Med. 2020. https://pmc.ncbi.nlm.nih.gov/articles/PMC7808260/
 
 #### Q2
-**Which of the following is the most appropriate way to deliver her nebulized bronchodilators?**
+*Update:* Salbutamol and ipratropium are started with controlled oxygen and prednisone. The nurse asks about his usual tiotropium-olodaterol.
 
-- A. Air-driven nebulizer  **(key)**
-- B. Dry powder inhaler by mouthpiece
-- C. Hold bronchodilators until gas improves
-- D. IV salbutamol infusion instead
-- E. Oxygen-driven nebulizer at 8 L/minute
+**Which of the following is the most appropriate plan for his usual long-acting inhaler?**
 
-*Explanation:* GOLD advises air-driven rather than oxygen-driven nebulization in COPD exacerbations, because driving the nebulizer with oxygen can raise PaCO2. Oxygen can continue separately by nasal prongs at a controlled rate. Bronchodilators should start at once rather than wait for the gas to improve. GOLD notes that nebulizers may be easier than hand-held inhalers for sicker patients such as her. GOLD recommends inhaled short-acting bronchodilators as initial treatment, so an IV salbutamol infusion is not the recommended route.
+- A. Hold it until the flare settles
+- B. Keep it, alongside short-acting inhalers  **(key)**
+- C. Replace it with IV aminophylline
+- D. Replace it with salbutamol every 20 minutes
+- E. Switch it to nebulized ipratropium alone
+
+*Explanation:* The GOLD report recommends continuing long-acting bronchodilators during an exacerbation, or starting them as soon as possible before discharge, alongside short-acting bronchodilators. Holding his tiotropium-olodaterol removes his baseline bronchodilation. GOLD advises against high doses of short-acting beta2-agonists because of side effects, so salbutamol every 20 minutes is not a substitute. IV methylxanthines such as aminophylline are not recommended because of significant side effects. Nebulized ipratropium alone drops the beta2-agonist and replaces both long-acting agents with one short-acting drug.
 
 *Key feature:* Asthma/COPD 5. Start bronchodilators, steroids, and oxygen for acute asthma before the diagnosis is fully confirmed.
 
 *Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
 
 #### Q3
-*Update:* Despite 1 hour of bronchodilators and prednisone, her pH is 7.29 and pCO2 is 72 mmHg. You start bilevel noninvasive ventilation.
+*Update:* One hour later his pH is 7.30 and PaCO2 60 mmHg. He is alert. Bilevel ventilation is started, but despite coaching and two different masks he pulls the mask off and refuses further attempts. He has capacity, declines intubation and agrees to nasal prongs.
 
-**Which of the following initial bilevel settings is most appropriate for her?**
+**Which of the following is the most appropriate respiratory support for him now?**
 
-- A. CPAP 10 cm H2O alone
-- B. IPAP 5 and EPAP 10 cm H2O
-- C. IPAP 10 and EPAP 5 cm H2O  **(key)**
-- D. IPAP 10 and EPAP 10 cm H2O
-- E. IPAP 30 and EPAP 20 cm H2O
+- A. Continue low-flow prongs and recheck
+- B. High-flow nasal therapy  **(key)**
+- C. Non-rebreather mask at 15 L/minute
+- D. Restart bilevel with another mask
+- E. Venturi mask at 60% oxygen
 
-*Explanation:* The difference between IPAP and EPAP is the pressure support that ventilates her. Of these settings, only an IPAP of 10 with an EPAP of 5 cm H2O gives pressure support at a tolerable starting level, and IPAP is then titrated upward to lower her pCO2. Equal IPAP and EPAP gives no pressure support and acts like CPAP, as does CPAP alone. An IPAP below the EPAP is not a valid setting. Starting at 30 and 20 cm H2O is poorly tolerated and risks gastric insufflation and hypotension.
+*Explanation:* His pH of 7.30 and PaCO2 of 60 mmHg call for ventilatory support, but he will not accept bilevel ventilation and declines intubation. The GOLD report describes high-flow nasal therapy for patients with COPD who are hypercapnic or unable to tolerate NIV, and trials in hypercapnic exacerbations found it lowered PaCO2 about as well as NIV and was more comfortable, though about 30% switched to NIV in one trial, so his gas must be rechecked. Low-flow prongs alone leave the acidosis untreated. A non-rebreather mask or a 60% Venturi mask raises oxygen without supporting ventilation. Restarting a mask he has refused is not an option while he declines it.
 
 *Key feature:* Asthma/COPD 7. Detect subtle signs of tiring or impending respiratory failure and begin early noninvasive support such as BiPAP.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 2, Mechanical Ventilation and Noninvasive Ventilatory Support. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Global Initiative for Chronic Obstructive Lung Disease. Global Strategy for the Diagnosis, Management, and Prevention of Chronic Obstructive Pulmonary Disease. 2026 report. https://goldcopd.org/wp-content/uploads/2026/01/GOLD-REPORT-2026-v1.3-8Dec2025_WMV2.pdf
 
 ### asthma-copd-46: Already on prednisone
 

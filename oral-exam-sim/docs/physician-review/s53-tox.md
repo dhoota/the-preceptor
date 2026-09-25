@@ -9,9 +9,23 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - s49 seizures-30 q2 observation vs second lorazepam. NICE NG217 used for safety and EEG advice (no Canadian equivalent). s53 tox: methadone restart dose after missed doses varies by province.
 - s53 tox-27 cyanide menu omits sodium thiosulfate. tox-39 q2 GHB airway explanation left as is. Overlap notes: bupropion (s49), organophosphate (s49), HF acid (s04).
 - s53 tox-35 q1 key feature does not map. tox-45 q3 arterial vs venous pH switch.
+- Mock mode cues left in place because the stem alone decides the earlier key: loc-24 q2 update ("CT shows ...", after the q1 CT question), multiple-trauma-40 q4 update ("complete tear", after the q3 urethrogram question), and tox-35 q3 and q4 naming naloxone after q2 (pinpoint pupils, a missing buprenorphine tablet and a respiratory rate of 10 decide q2). *(samps-final-check-2.md)*
 - tox-27 no longer tests scene collateral (tox KF1). Tox KF1 still has 16 questions. *(samps-overlap-pass.md)*
 - New cases to check in full: msk-37 (proximal humerus), burns-20 (phenol), tox-26 (brodifacoum), shock-17 (splenic rupture in mononucleosis). *(samps-overlap-pass2a-review.md)*
 - tox-26: the AAPCC guideline is written for poison centre triage. Its advice against vitamin K before the coagulopathy check, and the 48 to 72 hour INR, are applied here to the emergency department. The high-dose oral vitamin K figure (100 mg daily for 3 to 6 months) comes from two case reports (Gunja 2011). *(samps-overlap-pass2a-review.md)*
+- tox-46: the triage fix was not applied because the BCCSU 2023 table says "30 to 40 mg". Please confirm. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-17 q1 keys naloxone 0.04 mg IV for an opioid tolerant palliative patient, within Boland's 20 to 100 mcg range. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-23 q3 converts Purssell's ethanol divisor of 3.7 (mg/dL) to about 1.25 times the ethanol in mmol/L, the same factor tox-06 uses. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-35 relies on one Canadian source, Wu and Austin (CMAJ 2024), for xylazine. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-47 q4 keys discharge against medical advice as the outcome linked to withdrawal during a buprenorphine start, from Thakrar 2024. This is a care outcome rather than a toxic complication. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-35 (re-rebuilt) keys naloxone without a dose. Pediatric first doses differ between sources (0.1 mg/kg in older pediatric tables, 0.1 to 0.4 mg in the Atlantic Canada Poison Centre manual). The q3 update uses two doses of 0.3 mg. Please confirm the infusion rule of two thirds of the effective bolus per hour. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-35 q3 keys overnight admission. Toce reports a median stay of 22 hours and late respiratory depression after 8 hours in two children. It does not set a fixed observation period. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-47 q4 keys discharge against medical advice as the outcome of precipitated withdrawal, which is a care outcome rather than a toxic complication (tox 5). *(samps-replace-s49-s53-s47-s48.md)*
+- tox-24 q4 and tox-25 q4 were moved from tox 5 to tox 6. Batch key feature coverage still passes. *(samps-replace-s49-s53-s47-s48.md)*
+- loc-29 in s32 (another writer's uncommitted rebuild) is now the only xylazine case. Its owner should know that tox-35 no longer covers xylazine. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-35 q4 keys weaning the infusion in 50% steps, then 4 to 6 hours of monitoring, from the ACPC manual. The q3 key (overnight admission) still overlaps in theme with tox-17 q4 (monitored admission after a fentanyl patch). The patient, drug and evidence differ, so it was kept. *(samps-replace-s49-s53-s47-s48.md)*
+- tox-35 q4 (weaning the naloxone infusion) and pre-eclampsia-34 q2 (echocardiography for antenatal pulmonary edema) were rekeyed during the second check. Each new key has had one review. Please read both before sign-off. *(samps-replace-s49-s53-s47-s48.md)*
+- van Mook 2005 and Sheldon 2002 full texts remain unread (403). Please confirm the treatment paragraph in van Mook directly. *(samps-replace-s49-s53-s47-s48.md)*
 - tox-39 q2 keys immediate intubation for a suspected GHB exposure (deeply unresponsive, snoring, RR 10, sat 92%). This is defensible and the distractor reasons are true, so no edit was made. A physician may wish to confirm whether the batch should also offer a positioning and observation pathway. No defect recorded. The GHB SAMP cites Goldfrank only. A physician may prefer to add Chin RL et al, Clinical course of GHB overdose, Ann Emerg Med 1998 (PMID 9624311), which supports the abrupt recovery and bradycardia teaching. *(samps-s53-lensA.md)*
 - tox-27 q1 deliberately omits sodium thiosulfate from the cyanide menu, per the writer. The key (hydroxocobalamin plus high concentration oxygen) is correct and no listed option is a second defensible answer, so this is acceptable as written. Confirm the omission is acceptable for the exam. *(samps-s53-lensA.md)*
 - tox-39 q1 is tagged key feature 1 (collateral) but uses the patient's own history. A physician or writer may add a companion as the informant or retag the question. *(samps-s53-lensA2.md)*
@@ -116,84 +130,86 @@ Select 3.
 
 *Source:* Tenenbein M. Do you really need that emergency drug screen? Clin Toxicol. 2009. https://pubmed.ncbi.nlm.nih.gov/19514875/
 
-### tox-17: Older woman found sweaty and confused at home
+### tox-17: Older man who could not be woken
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 82-year-old woman is brought to the emergency department by her son, who found her sweaty and confused at home. She takes glyburide 5 mg twice daily, ramipril and atorvastatin. She has eaten little for 2 days because of a chest infection. Paramedics measured a capillary glucose of 1.9 mmol/L and gave dextrose IV, after which she woke up. She is now oriented and hungry. Repeat capillary glucose is 7.4 mmol/L. Creatinine 148 umol/L with an estimated glomerular filtration rate of 32 mL/minute. The examination is otherwise normal.
+A 78-year-old man is brought to the emergency department by ambulance because his wife could not wake him this morning. He has prostate cancer with painful bone metastases. His palliative care physician increased his fentanyl patch from 50 to 75 mcg/hour 3 days ago. Since yesterday he has had a cough and fever, and last night he slept under an electric blanket. He takes no other opioid. He groans to a sternal rub but does not open his eyes. His pupils are 1 mm. There are crackles at the right lung base. A 75 mcg/hour patch is on his chest, and a 50 mcg/hour patch dated 4 days ago is still on his back. Capillary glucose is 6.8 mmol/L.
 
-- Temperature: 36.8°C oral
-- Pulse: 88/minute
-- Resp.: 16/minute
-- BP: 132/78 mmHg
-- O2 sat: 96% on room air
-- Weight: 58 kg
+- Temperature: 38.4°C oral
+- Pulse: 62/minute
+- Resp.: 6/minute
+- BP: 108/62 mmHg
+- O2 sat: 85% on room air
+- Weight: 61 kg
 
 #### Q1
-**Which of the following is the most appropriate treatment to prevent recurrent hypoglycemia in her?**
+**Which of the following is the most appropriate first naloxone dose while he is ventilated by bag and mask?**
 
-- A. dextrose 50% 50 mL IV every 4 hours
-- B. glucagon 1 mg IM once
-- C. hydrocortisone 100 mg IV
-- D. octreotide 50 mcg SC every 6 hours  **(key)**
-- E. oral glucose gel as needed
+- A. naloxone 0.04 mg IV  **(key)**
+- B. naloxone 0.4 mg IV
+- C. naloxone 0.8 mg IV
+- D. naloxone 2 mg IV
+- E. naloxone 4 mg IV
 
-*Explanation:* Glyburide keeps stimulating insulin release, and dextrose boluses provoke further release, so hypoglycemia returns. Octreotide suppresses pancreatic insulin secretion and reduces repeat hypoglycemia after sulfonylurea poisoning. Repeated dextrose 50% boluses treat each episode but feed the cycle. Glucagon gives a brief rise that depends on glycogen stores, and she has eaten little for 2 days. Hydrocortisone treats adrenal insufficiency, which her history does not suggest. Oral glucose gel alone will not hold her through a night on glyburide with an estimated glomerular filtration rate of 32 mL/minute.
+*Explanation:* Coma, 1 mm pupils and a respiratory rate of 6/minute are the opioid toxidrome, from two patches and a fever with an electric blanket. He takes opioids every day for cancer pain, so a bolus can cause withdrawal and a crisis of refractory pain. Boland advises titrating 20 to 100 mcg IV every 2 minutes to breathing, not to full wakefulness, so 0.04 mg is right while bag and mask ventilation supports him. Doses of 0.4 mg to 4 mg IV are boluses 10 to 100 times larger than his first titrated step, and they risk that crisis.
 
 *Key feature:* Toxicology 2. Recognize toxidromes from clinical patterns and use antidotes selectively, weighing indications and contraindications.
 
-*Source:* Glatstein M, Scolnik D, Bentur Y. Octreotide for the treatment of sulfonylurea poisoning. Clin Toxicol. 2012. https://pubmed.ncbi.nlm.nih.gov/23046209/
+*Source:* Boland J, Boland E, Brooks D. Importance of the correct diagnosis of opioid-induced respiratory depression in adult cancer patients and titration of naloxone. Clin Med (Lond). 2013. https://doi.org/10.7861/clinmedicine.13-2-149
 
 #### Q2
-**Which of the following is the most appropriate disposition for her from the emergency department?**
+*Update:* After a total of 0.16 mg of naloxone over 8 minutes, his respiratory rate is 14/minute and he opens his eyes to voice. Both patches are removed.
 
-- A. Admit for 24 hours of glucose monitoring  **(key)**
-- B. Discharge after a meal and repeat glucose
-- C. Discharge with a glucagon kit at home
-- D. Observe for 4 hours then discharge home
-- E. Refer to her family physician tomorrow
+**Which of the following complications is most likely over the next several hours?**
 
-*Explanation:* Glyburide and its active metabolites outlast a single meal, and her estimated glomerular filtration rate of 32 mL/minute slows their clearance further, so she needs at least 24 hours of monitored glucose measurement. She also lives with poor oral intake during a chest infection. A meal, a 4 hour observation or an outpatient referral all release her while insulin release is still driven by the drug. A home glucagon kit depends on glycogen stores and on someone to give it, and it does not replace monitoring.
+- A. Acute opioid withdrawal
+- B. Naloxone-induced pulmonary edema
+- C. Recurrent respiratory depression  **(key)**
+- D. Seizures from naloxone
+- E. Serotonin toxicity
+
+*Explanation:* Fentanyl forms a depot in the skin, so absorption continues after the patches are removed and serum levels fall slowly, with a mean half-life of about 20 hours. The half-life of naloxone is only 30 to 81 minutes, so sedation and slow breathing are likely to return, and repeated naloxone may be needed. Small titrated doses restored his breathing without a large reversal, which makes withdrawal unlikely. Pulmonary edema and seizures are rare effects of naloxone and not the expected course here. He takes no serotonergic drug, so serotonin toxicity is not expected.
 
 *Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
 
-*Source:* Glatstein M, Scolnik D, Bentur Y. Octreotide for the treatment of sulfonylurea poisoning. Clin Toxicol. 2012. https://pubmed.ncbi.nlm.nih.gov/23046209/
+*Source:* Sandoz Canada Inc. Product monograph. Sandoz Fentanyl Patch (fentanyl transdermal system). Date of revision 26 February 2020. https://pdf.hres.ca/dpd_pm/00055220.PDF
 
 #### Q3
-**Which of the following investigations best explains why she became hypoglycemic on her usual dose?**
+*Update:* Thirty minutes later he is drowsy but rousable. He is on oxygen at 4 L/minute by nasal prongs, and his saturation is 96%.
 
-- A. Estimated glomerular filtration rate  **(key)**
-- B. Random serum cortisol
-- C. Serum C peptide concentration
-- D. Serum insulin concentration
-- E. Urine sulfonylurea screen
+**Which of the following tests best shows whether his breathing is adequate now?**
 
-*Explanation:* Her estimated glomerular filtration rate of 32 mL/minute shows reduced renal clearance of the active metabolites of glyburide, which together with 2 days of poor intake explains hypoglycemia on an unchanged dose. C peptide and insulin concentrations would confirm endogenous insulin release but not explain why the usual dose became too much. A sulfonylurea screen confirms a drug she is known to take. Random cortisol tests for adrenal insufficiency, which her presentation and recovery do not suggest.
+- A. Chest radiograph
+- B. Peak expiratory flow
+- C. Pulse oximetry trend
+- D. Serum fentanyl concentration
+- E. Venous blood gas for PCO2  **(key)**
+
+*Explanation:* On supplemental oxygen his saturation can stay at 96% while his breathing slows and carbon dioxide rises. Fu and colleagues showed that pulse oximetry detects hypoventilation reliably only on room air, so the oximetry trend can mislead here. A PCO2 from a blood gas shows whether he is ventilating enough and whether he needs more naloxone. A chest radiograph assesses his right basal crackles, not his ventilation. Peak flow needs full effort and measures airway obstruction. A fentanyl concentration does not return in time to guide his care.
 
 *Key feature:* Toxicology 7. Order tests that change management, like ECG, ABG, gaps, and specific drug levels, rather than broad urine screens.
 
-*Source:* Glatstein M, Scolnik D, Bentur Y. Octreotide for the treatment of sulfonylurea poisoning. Clin Toxicol. 2012. https://pubmed.ncbi.nlm.nih.gov/23046209/
+*Source:* Fu ES, Downs JB, Schweiger JW, Miguel RV, Smith RA. Supplemental oxygen impairs detection of hypoventilation by pulse oximetry. Chest. 2004. https://doi.org/10.1378/chest.126.5.1552
 
 #### Q4
-*Update:* She is admitted to the medical unit. Her capillary glucose falls to 3.1 mmol/L 3 hours later and she feels shaky again.
-
-**Which of the following are appropriate parts of her inpatient care over the next 24 hours?**
+**Which of the following are the most appropriate parts of his care over the next 24 hours?**
 
 Select 3.
 
-- A. Continue glyburide at her usual dose
-- B. Dextrose 10% infusion titrated to glucose  **(key)**
-- C. Glucagon infusion IV
-- D. Hold glyburide while in hospital  **(key)**
-- E. Hourly capillary glucose checks  **(key)**
-- F. Insulin infusion for tight control
-- G. Repeat dextrose 50% boluses only
+- A. Activated charcoal 50 g PO
+- B. Apply a 25 mcg/hour patch today
+- C. Discharge after 4 hours of observation
+- D. Flumazenil 0.2 mg IV
+- E. Hold further patches pending palliative review  **(key)**
+- F. Monitored admission for at least 24 hours  **(key)**
+- G. Naloxone infusion if sedation recurs  **(key)**
 
-*Explanation:* Holding glyburide removes the drive to insulin release, a dextrose 10% infusion titrated to her glucose maintains a steady supply between meals, and hourly capillary checks find the next fall early, as her fall to 3.1 mmol/L at 3 hours shows. Continuing glyburide repeats the exposure that caused the problem. Relying on repeat dextrose 50% boluses provokes further insulin release. A glucagon infusion depends on glycogen stores that 2 days of poor intake have reduced. An insulin infusion would lower her glucose further.
+*Explanation:* Serum fentanyl falls by only about half in the 20 to 27 hours after removal, so he needs a monitored bed for at least 24 hours. If sedation returns, repeated doses or an infusion of naloxone cover the gap left by its short half-life. New patches wait until palliative care reviews his dose, because the skin depot is still releasing drug and fever raises absorption. A new patch today, even at 25 mcg/hour, adds to that depot. Discharge at 4 hours comes before the risk has passed. Charcoal does nothing for a drug absorbed through skin. Flumazenil reverses benzodiazepines, not opioids.
 
 *Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
 
-*Source:* Centre antipoison du Quebec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology. Online edition. Accessed 24 September 2026. https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes
+*Source:* Sandoz Canada Inc. Product monograph. Sandoz Fentanyl Patch (fentanyl transdermal system). Date of revision 26 February 2020. https://pdf.hres.ca/dpd_pm/00055220.PDF
 
 ### tox-18: Man with vomiting and fast breathing
 
@@ -571,228 +587,240 @@ A 58-year-old man is brought to the emergency department by his brother, who fou
 
 *Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter 4, Principles of Managing the Acutely Poisoned or Overdosed Patient. https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html
 
-### tox-23: Woman with a slow pulse after taking her migraine tablets
+### tox-23: Sleepy toddler after a play date
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 38-year-old woman presents to the emergency department 90 minutes after swallowing about 40 of her propranolol 40 mg tablets. She takes propranolol for migraine prophylaxis and no other medication. She is drowsy but answers questions and her skin is cool. Capillary glucose is 3.2 mmol/L. The ECG shows a junctional bradycardia with a QRS of 128 ms and a normal QTc. The chest is clear and the abdomen is soft.
+A 2-year-old girl is brought to the emergency department by her father 2 hours after he found her with an open bottle of hand sanitizer containing 70% ethanol. The bottle had tipped over, so how much she swallowed is unknown. She has not eaten since breakfast 6 hours ago. She is sleepy but rouses to voice, and she is unsteady when helped to stand. Her breath smells of alcohol. Her pupils are 4 mm and reactive, and there is no sign of injury. Capillary glucose is 2.2 mmol/L.
 
-- Temperature: 36.7°C oral
-- Pulse: 44/minute
-- Resp.: 14/minute
-- BP: 78/44 mmHg
-- O2 sat: 96% on room air
-- Weight: 65 kg
-
-#### Q1
-**Which of the following treatments best addresses her QRS duration of 128 ms?**
-
-- A. atropine 0.5 mg IV bolus
-- B. calcium chloride 1 g IV
-- C. glucagon 5 mg IV bolus
-- D. magnesium sulfate 2 g IV
-- E. sodium bicarbonate 100 mmol IV  **(key)**
-
-*Explanation:* Propranolol is lipophilic and blocks fast sodium channels in large ingestions, which widens the QRS to 128 ms as seen here. Hypertonic sodium bicarbonate is the treatment that narrows a poisoned QRS. Atropine may raise a vagally mediated rate but does nothing to conduction through the ventricle. Glucagon and calcium support inotropy and rate rather than the QRS. Magnesium is for torsades, and her QTc is normal.
-
-*Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
-
-*Source:* Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023. https://doi.org/10.1161/CIR.0000000000001161
-
-#### Q2
-*Update:* She receives crystalloid and glucagon. Her pulse is 46/minute and her blood pressure is 74/40 mmHg with cool peripheries.
-
-**Which of the following is the most appropriate next treatment for her shock?**
-
-- A. dopamine 5 mcg/kg/minute IV
-- B. high dose insulin with dextrose  **(key)**
-- C. hydrocortisone 100 mg IV
-- D. lipid emulsion 20% 100 mL IV
-- E. transvenous pacing wire
-
-*Explanation:* Shock from beta blocker poisoning that persists after fluid and glucagon is treated with high dose insulin and dextrose, which improves myocardial carbohydrate use and contractility. Standard dose catecholamines such as dopamine are often ineffective against saturating beta blockade. Pacing may capture the ventricle without improving output, so it does not fix the underlying contractility problem. Lipid emulsion is a rescue measure for a patient in arrest or near arrest. Hydrocortisone treats adrenal insufficiency, which she does not have.
-
-*Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
-
-*Source:* Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023. https://doi.org/10.1161/CIR.0000000000001161
-
-#### Q3
-**Which of the following best explains her capillary glucose of 3.2 mmol/L?**
-
-- A. Adrenal insufficiency from stress
-- B. Insulin overdose taken with tablets
-- C. Propranolol block of glycogenolysis  **(key)**
-- D. Sepsis with poor perfusion
-- E. Sulfonylurea co-ingestion
-
-*Explanation:* Beta blockade impairs catecholamine driven glycogenolysis and gluconeogenesis, so hypoglycemia can occur after a large propranolol ingestion, and she reports taking propranolol alone. She is afebrile at 36.7°C with a clear chest, which does not support sepsis. A sulfonylurea or insulin co-ingestion is possible in principle but nothing in the history or the home supply suggests either. Adrenal insufficiency would not appear abruptly 90 minutes after an ingestion.
-
-*Key feature:* Toxicology 3. Suspect co-ingestion when signs are mixed or labs are unexpected, such as a raised osmolar gap.
-
-*Source:* Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023. https://doi.org/10.1161/CIR.0000000000001161
-
-#### Q4
-**Which of the following complications is most characteristic of propranolol in large overdose?**
-
-- A. Acute liver injury with jaundice
-- B. Hyperkalemia with peaked T waves
-- C. Methemoglobinemia with cyanosis
-- D. Pulmonary fibrosis over weeks
-- E. Seizures and rapid coma  **(key)**
-
-*Explanation:* Propranolol crosses into the brain because it is lipophilic, and seizures with a rapid fall in level of consciousness are described early after large ingestions, which matters in a patient who is already drowsy with a glucose of 3.2 mmol/L. Methemoglobinemia follows oxidizing agents such as benzocaine or dapsone. Pulmonary fibrosis is a long term amiodarone effect. Hyperkalemia is more typical of digoxin poisoning. Acute liver injury is not a feature of acute propranolol overdose.
-
-*Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
-
-*Source:* Reith DM, Dawson AH, Epid D, Whyte IM, Buckley NA, Sayer GP. Relative toxicity of beta blockers in overdose. J Toxicol Clin Toxicol. 1996. https://pubmed.ncbi.nlm.nih.gov/8667464/
-
-### tox-24: Sleepy toddler after a visit from his grandmother
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 2-year-old boy is brought to the emergency department by his mother 1 hour after she found him holding his grandmother's blister pack of clonidine 0.1 mg tablets. Two tablets are missing from the pack. He was well earlier today, has no medical problems and takes no medication. He is sleepy but wakes to voice and cries on examination. His pupils are 2 mm. Capillary glucose is 5.2 mmol/L. The chest is clear and capillary refill is 2 seconds.
-
-- Temperature: 36.4°C rectal
-- Pulse: 74/minute
-- Resp.: 18/minute
-- BP: 82/48 mmHg
-- O2 sat: 95% on room air
+- Temperature: 35.8°C rectal
+- Pulse: 128/minute
+- Resp.: 20/minute
+- BP: 90/56 mmHg
+- O2 sat: 97% on room air
 - Weight: 12 kg
 
 #### Q1
-**Which of the following pieces of collateral information is most useful in his assessment now?**
+**Which of the following is the most appropriate first treatment for her?**
 
-- A. The child's immunization record
-- B. The grandmother's pharmacy address
-- C. The mother's recent travel history
-- D. The name of the family physician
-- E. Which other pills are kept in the home  **(key)**
+- A. activated charcoal 12 g PO
+- B. dextrose 10% 60 mL IV  **(key)**
+- C. flumazenil 0.12 mg IV
+- D. fomepizole 180 mg IV
+- E. naloxone 1.2 mg IV
 
-*Explanation:* Two clonidine tablets are missing, but a toddler found with one blister pack may have reached others, and knowing every medication in the home decides what else to watch for and for how long. His immunization record and his family physician's name do not change management of an ingestion. A travel history does not bear on a witnessed exposure at home. The grandmother's pharmacy could confirm her prescriptions, but the question is what is within the child's reach.
+*Explanation:* Her glucose of 2.2 mmol/L needs treatment now. TREKK advises D10W 5 mL/kg IV for a glucose of 2.6 mmol/L or less, which is 5 x 12 = 60 mL, with a recheck in 5 to 10 minutes. Ethanol is absorbed quickly and is not bound well by charcoal, which also adds a risk of aspiration in a drowsy child. Fomepizole blocks the metabolism of toxic alcohols and would slow the clearance of ethanol. She has no sign of opioid or benzodiazepine exposure, so naloxone and flumazenil have no role.
 
-*Key feature:* Toxicology 1. Gather collateral from the scene, including EMS reports, pill bottles, and recent prescriptions, to identify likely toxins.
+*Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
 
-*Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter 4, Principles of Managing the Acutely Poisoned or Overdosed Patient. https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html
+*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Gastroenteritis. Version 5.0. 2025. https://cms.trekk.ca/wp-content/uploads/2023/11/2025_10_14-TREKK-Gastroenteritis-BLR-v5.0_FinalDraft.pdf
 
 #### Q2
-**Which of the following is the most appropriate initial management of his drowsiness?**
+*Update:* Her glucose rises to 6.1 mmol/L, but 1 hour later it is 2.9 mmol/L again and she is harder to rouse.
 
-- A. Flumazenil 0.01 mg/kg IV
-- B. Naloxone 0.1 mg/kg IV
-- C. Physostigmine 0.02 mg/kg IV
-- D. Sodium bicarbonate 1 mmol/kg IV
-- E. Watchful observation with airway care  **(key)**
+**Which of the following is the most appropriate treatment now?**
 
-*Explanation:* Clonidine sedation in a child is managed by watching the airway and breathing until the drug wears off, and he still wakes to voice with a respiratory rate of 18/minute. Naloxone has been tried in clonidine poisoning with inconsistent results and does not replace observation. Flumazenil treats benzodiazepine sedation and carries a seizure risk. Physostigmine is for antimuscarinic delirium, and his pupils are 2 mm. He has no conduction delay to treat with bicarbonate.
+- A. Continuous dextrose infusion  **(key)**
+- B. glucagon 0.5 mg IM
+- C. hydrocortisone 50 mg IV
+- D. octreotide 12 mcg SC
+- E. Repeat bolus, then observe
 
-*Key feature:* Toxicology 2. Recognize toxidromes from clinical patterns and use antidotes selectively, weighing indications and contraindications.
+*Explanation:* Ethanol blocks gluconeogenesis, and young children have small glycogen stores, so her glucose will keep falling while ethanol remains. She needs a repeat bolus followed by a continuous dextrose infusion with frequent checks, not a bolus alone. Glucagon works by releasing liver glycogen, which she has little of. Octreotide blocks insulin release after a sulfonylurea, and this hypoglycemia is not driven by insulin. Nothing suggests adrenal insufficiency, so hydrocortisone is not indicated.
 
-*Source:* Centre antipoison du Quebec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology. Online edition. Accessed 24 September 2026. https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes
+*Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
+
+*Source:* Rayar P, Ratnapalan S. Pediatric ingestions of household products containing ethanol. A review. Clin Pediatr (Phila). 2013. https://doi.org/10.1177/0009922812470970
 
 #### Q3
-**Which of the following complications should be anticipated over the next several hours?**
+*Update:* Sodium 138 mmol/L, glucose 6.0 mmol/L, urea 4.0 mmol/L, measured osmolality 327 mmol/kg and serum ethanol 32 mmol/L.
 
-- A. Hypertensive crisis with seizures
-- B. Hyperthermia with rigidity
-- C. Rhabdomyolysis with kidney injury
-- D. Slow breathing with bradycardia  **(key)**
-- E. Wide complex tachycardia
+**Which of the following best explains the size of her osmolal gap?**
 
-*Explanation:* Clonidine is a central alpha 2 agonist, and within the first 4 hours it can produce sedation, bradycardia and slow or shallow breathing, which fits his pulse of 74/minute and 2 mm pupils. A brief early rise in blood pressure can occur from peripheral alpha stimulation, but a hypertensive crisis with seizures is not the expected course. Clonidine does not widen the QRS or drive a tachycardia. Hyperthermia with rigidity belongs to serotonin toxicity, and nothing suggests prolonged immobility or muscle injury.
+- A. Diabetic ketoacidosis
+- B. Ethanol explains the whole gap  **(key)**
+- C. Hidden methanol ingestion
+- D. Isopropanol from another product
+- E. Laboratory measurement error
 
-*Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
+*Explanation:* Her calculated osmolality is 2 x 138 + 6.0 + 4.0 = 286 mmol/kg, so the osmolal gap is 327 - 286 = 41. Purssell and colleagues showed that ethanol raises osmolality by its concentration in mg/dL divided by 3.7, which is about 1.25 times the ethanol in mmol/L, so 32 x 1.25 = 40. Ethanol explains the whole gap, leaving no sign of a second toxic alcohol. Her glucose of 6.0 mmol/L excludes diabetic ketoacidosis. A laboratory error is not needed to explain a gap that ethanol accounts for.
 
-*Source:* Spiller HA, Klein-Schwartz W, Colvin JM, et al. Toxic clonidine ingestion in children. J Pediatr. 2005. https://pubmed.ncbi.nlm.nih.gov/15689921/
+*Key feature:* Toxicology 3. Suspect co-ingestion when signs are mixed or labs are unexpected, such as a raised osmolar gap.
+
+*Source:* Purssell RA, Pudek M, Brubacher J, Abu-Laban RB. Derivation and validation of a formula to calculate the contribution of ethanol to the osmolal gap. Ann Emerg Med. 2001. https://doi.org/10.1067/mem.2001.119455
 
 #### Q4
-**Which of the following is the most appropriate disposition for this child?**
+**Which of the following complications should be anticipated over the next several hours?**
 
-- A. Discharge after 4 hours if awake
-- B. Discharge now with return advice
-- C. Observe 6 hours then discharge home
-- D. Overnight monitored admission  **(key)**
-- E. Refer to the poison centre clinic
+- A. Acute liver failure
+- B. Delayed kidney injury
+- C. Respiratory depression  **(key)**
+- D. Serotonin toxicity
+- E. Visual loss from formate
 
-*Explanation:* He is already sedated with a pulse of 74/minute at 1 hour after the ingestion, and clonidine effects in a 12 kg child can last well beyond a working day, so he needs admission with cardiac and respiratory monitoring. Discharge now or after 4 or 6 hours would send home a child whose bradycardia and sedation may deepen. An outpatient referral does not provide the monitoring he needs tonight.
+*Explanation:* In the national review of hand sanitizer ingestions by children, serious effects were rare but included coma, seizures, hypoglycemia, metabolic acidosis and respiratory depression. She is already drowsy, so her breathing and airway need close watching as ethanol peaks. Formate causes visual loss after methanol, not ethanol. Ethanol does not cause acute liver failure or delayed kidney injury in a single ingestion. Nothing she took is serotonergic.
 
 *Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
 
-*Source:* Centre antipoison du Quebec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology. Online edition. Accessed 24 September 2026. https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes
+*Source:* Santos C, Kieszak S, Wang A, Law R, Schier J, Wolkin A. Reported adverse health effects in children from ingestion of alcohol-based hand sanitizers. United States, 2011 to 2014. MMWR Morb Mortal Wkly Rep. 2017. https://www.cdc.gov/mmwr/volumes/66/wr/mm6608a5.htm
 
-### tox-25: Man with throat pain after swallowing a cleaner
+### tox-24: Older woman drowsy for two days
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 44-year-old man is brought to the emergency department 45 minutes after he swallowed a mouthful of an industrial drain cleaner during an argument. The label lists sodium hydroxide 20%. He is drooling, has severe throat and chest pain and speaks with a hoarse voice. He has vomited once. The oropharynx shows white ulcerated mucosa. He sits forward and looks anxious. The chest is clear and the abdomen is soft without guarding.
+A 71-year-old woman is brought to the emergency department by her daughter, who found her increasingly drowsy over 2 days. She has chronic kidney disease with a creatinine of 290 umol/L last month, hypertension and osteoarthritis. Her daughter lists her usual medications as amlodipine, calcium carbonate and acetaminophen. Five days ago she saw a walk-in clinic for back spasms, and her daughter does not know what was prescribed. She responds only to pain. Her pupils are 3 mm and reactive. There is no focal deficit and her neck is supple. Capillary glucose is 6.4 mmol/L.
 
-- Temperature: 37.2°C oral
-- Pulse: 112/minute
-- Resp.: 22/minute
-- BP: 146/88 mmHg
-- O2 sat: 96% on room air
+- Temperature: 35.4°C rectal
+- Pulse: 48/minute
+- Resp.: 12/minute
+- BP: 104/60 mmHg
+- O2 sat: 95% on room air
+- Weight: 58 kg
 
 #### Q1
-**Which of the following is the most appropriate immediate priority in his care?**
+**Which of the following sources of collateral information is most useful now?**
 
-- A. Activated charcoal by mouth
-- B. Dilution with 250 mL of milk
-- C. Early airway assessment for intubation  **(key)**
-- D. Nasogastric tube for lavage
-- E. Neutralization with dilute vinegar
+- A. Hospital chart from last year
+- B. Neighbour who visits weekly
+- C. Pharmacy dispensing record  **(key)**
+- D. Previous discharge summary
+- E. Provincial vaccine record
 
-*Explanation:* Drooling, a hoarse voice and a sitting forward posture after a strong alkali point to upper airway injury that can swell shut, so the airway is assessed early and secured while it can still be seen. Charcoal does not bind alkali and obscures endoscopy. A blind nasogastric tube risks perforating injured tissue. Neutralization with an acid releases heat and adds injury. Dilution with milk after 45 minutes does not undo liquefaction necrosis and may provoke vomiting.
+*Explanation:* The drug most likely to explain her drowsiness is whatever the walk-in clinic prescribed 5 days ago, and the pharmacy dispensing record shows it directly, with the dose and date. A hospital chart and a discharge summary from before this visit cannot list a new prescription. A neighbour who visits weekly is unlikely to know it. Her vaccine record does not help.
+
+*Key feature:* Toxicology 1. Gather collateral from the scene, including EMS reports, pill bottles, and recent prescriptions, to identify likely toxins.
+
+*Source:* Ghannoum M, Berling I, Lavergne V, et al. Recommendations from the EXTRIP workgroup on extracorporeal treatment for baclofen poisoning. Kidney Int. 2021. https://doi.org/10.1016/j.kint.2021.07.014
+
+#### Q2
+*Update:* The pharmacy reports baclofen 10 mg three times daily, dispensed 5 days ago.
+
+**Which of the following is the most appropriate management of her decreased consciousness?**
+
+- A. Activated charcoal 50 g PO
+- B. Flumazenil 0.2 mg IV
+- C. Naloxone 0.4 mg IV
+- D. Physostigmine 1 mg IV
+- E. Supportive care only  **(key)**
+
+*Explanation:* Baclofen is cleared by the kidney, and at her creatinine of 290 umol/L it has built up from ordinary doses. EXTRIP describes standard care as stopping baclofen, supporting breathing and treating seizures, because there is no antidote. Naloxone and flumazenil reverse opioids and benzodiazepines, not baclofen. Physostigmine is for anticholinergic toxicity. Charcoal does not help toxicity from doses taken over days and risks aspiration in a patient who responds only to pain.
+
+*Key feature:* Toxicology 2. Recognize toxidromes from clinical patterns and use antidotes selectively, weighing indications and contraindications.
+
+*Source:* Ghannoum M, Berling I, Lavergne V, et al. Recommendations from the EXTRIP workgroup on extracorporeal treatment for baclofen poisoning. Kidney Int. 2021. https://doi.org/10.1016/j.kint.2021.07.014
+
+#### Q3
+**Which of the following complications should be anticipated over the next 24 hours?**
+
+- A. Acute liver failure
+- B. Malignant hyperthermia
+- C. Respiratory depression  **(key)**
+- D. Serotonin toxicity
+- E. Severe hypoglycemia
+
+*Explanation:* EXTRIP lists respiratory depression, seizures, coma, bradycardia and hypothermia in severe baclofen toxicity, and she already has a pulse of 48/minute and a temperature of 35.4°C. Her respiratory rate of 12/minute needs close watching. Baclofen causes low rather than high temperature. It does not injure the liver, lower glucose or cause serotonin toxicity.
 
 *Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
 
-*Source:* Hoffman RS, Burns MM, Gosselin S. Ingestion of caustic substances. N Engl J Med. 2020. https://pubmed.ncbi.nlm.nih.gov/32348645/
+*Source:* Ghannoum M, Berling I, Lavergne V, et al. Recommendations from the EXTRIP workgroup on extracorporeal treatment for baclofen poisoning. Kidney Int. 2021. https://doi.org/10.1016/j.kint.2021.07.014
+
+#### Q4
+*Update:* Six hours later her GCS is 7 and she is intubated. Her creatinine is 296 umol/L.
+
+**Which of the following treatments is most likely to shorten her illness?**
+
+- A. Hemodialysis  **(key)**
+- B. Multiple-dose charcoal
+- C. Naloxone infusion
+- D. Physostigmine infusion
+- E. Urinary alkalinization
+
+*Explanation:* EXTRIP suggests extracorporeal treatment for toxicity from therapeutic baclofen in kidney impairment, especially with coma needing ventilation, because baclofen is dialyzable when the kidneys fail and dialysis can shorten the encephalopathy. Multiple-dose charcoal and urinary alkalinization do not remove baclofen. Naloxone and physostigmine infusions treat other poisonings.
+
+*Key feature:* Toxicology 6. Use decontamination or enhanced elimination when timing and pharmacokinetics support it, as with sustained release drugs or iron.
+
+*Source:* Ghannoum M, Berling I, Lavergne V, et al. Recommendations from the EXTRIP workgroup on extracorporeal treatment for baclofen poisoning. Kidney Int. 2021. https://doi.org/10.1016/j.kint.2021.07.014
+
+### tox-25: Tablets swallowed after an argument
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 26-year-old woman with bipolar disorder presents to the emergency department 2 hours after swallowing 40 of her lithium carbonate sustained-release 300 mg tablets, 12 g in total, after an argument. She takes lithium 900 mg daily and her kidney function has been normal. She has vomited once. She is alert and oriented, with a fine tremor and no clonus. Creatinine 68 umol/L and sodium 139 mmol/L. The ECG is normal. The first lithium level is pending.
+
+- Temperature: 36.8°C oral
+- Pulse: 88/minute
+- Resp.: 16/minute
+- BP: 122/74 mmHg
+- O2 sat: 99% on room air
+- Weight: 60 kg
+
+#### Q1
+**Which of the following complications is she at greatest risk of over the next day?**
+
+- A. Acute liver failure
+- B. Delayed neurotoxicity  **(key)**
+- C. Esophageal stricture in weeks
+- D. Pulmonary edema
+- E. Severe hypoglycemia
+
+*Explanation:* Sustained-release tablets keep releasing lithium for hours, so her level can keep rising after a reassuring first examination, and neurotoxicity with confusion or seizures can appear late. EXTRIP bases its dialysis advice on decreased consciousness, seizures and dysrhythmias because these are the dangerous effects. Lithium does not cause liver failure, hypoglycemia or pulmonary edema in overdose. Esophageal strictures follow caustic ingestions.
+
+*Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
+
+*Source:* Decker BS, Goldfarb DS, Dargan PI, et al. Extracorporeal treatment for lithium poisoning. Systematic review and recommendations from the EXTRIP workgroup. Clin J Am Soc Nephrol. 2015. https://doi.org/10.2215/CJN.10021014
 
 #### Q2
-**Which of the following gastrointestinal decontamination measures is appropriate for him now?**
+**Which of the following decontamination measures is most appropriate for her now?**
 
 Select 1.
 
 - A. Activated charcoal 50 g PO
-- B. Gastric lavage with saline
-- C. Nasogastric aspiration of stomach
-- D. Neutralization with weak acid
-- E. Whole bowel irrigation by tube
-- F. None  **(key)**
+- B. Forced diuresis with furosemide
+- C. Gastric lavage
+- D. Multiple-dose activated charcoal
+- E. Urinary alkalinization
+- F. Whole bowel irrigation  **(key)**
+- G. None
 
-*Explanation:* Alkali injury begins within seconds of contact and no decontamination reverses it 45 minutes later, while each listed measure adds risk. Charcoal does not adsorb sodium hydroxide and coats mucosa before endoscopy. Lavage and blind aspiration can perforate an injured esophagus and re expose it to the cleaner. Neutralizing with an acid is exothermic and deepens the burn. Whole bowel irrigation delivers large volumes through an injured esophagus and has no toxin to carry out. Care is directed at the airway, resuscitation and imaging or endoscopy instead.
+*Explanation:* The position paper on whole bowel irrigation lists substantial lithium ingestions and sustained-release products as situations where it may be considered, and she is alert, protecting her airway and has no sign of obstruction. Charcoal, single or repeated, does not bind lithium. Gastric lavage cannot remove intact sustained-release tablets reliably and adds risk. Furosemide lowers lithium clearance by causing volume loss, and alkalinization does not speed its removal. Doing nothing leaves tablets releasing lithium for hours.
 
 *Key feature:* Toxicology 6. Use decontamination or enhanced elimination when timing and pharmacokinetics support it, as with sustained release drugs or iron.
 
-*Source:* Hoffman RS, Burns MM, Gosselin S. Ingestion of caustic substances. N Engl J Med. 2020. https://pubmed.ncbi.nlm.nih.gov/32348645/
+*Source:* Thanacoody R, Caravati EM, Troutman B, et al. Position paper update. Whole bowel irrigation for gastrointestinal decontamination of overdose patients. Clin Toxicol (Phila). 2015. https://doi.org/10.3109/15563650.2014.989326
 
 #### Q3
-**Which of the following investigations best defines the extent of his injury?**
+*Update:* Her first lithium level, drawn 2 hours after the ingestion, is 1.9 mmol/L.
 
-- A. Barium swallow study now
-- B. Chest x-ray and abdominal film
-- C. Gastric aspirate pH testing
-- D. Serum lactate and blood gas
-- E. Upper endoscopy within 24 hours  **(key)**
+**Which of the following is the most appropriate plan for measuring her lithium over the next day?**
 
-*Explanation:* Endoscopy within the first day grades the depth and extent of mucosal injury and guides feeding, surgery and follow up, which matters here because visible oropharyngeal ulceration does not predict what lies below. Plain films show free air only after perforation. A barium study is insensitive early and leaves contrast in the field. Lactate and blood gas measure systemic effect rather than the injury itself. Testing gastric aspirate pH does not grade tissue damage.
+- A. Daily level until discharge
+- B. Repeat levels until clearly falling  **(key)**
+- C. Single repeat level at 12 hours
+- D. Urine drug screen with next level
+- E. No repeat unless she becomes unwell
+
+*Explanation:* Sustained-release tablets keep releasing lithium for many hours, so a level drawn 2 hours after the ingestion can be far below the peak. EXTRIP notes that absorption after an acute ingestion of a sustained-release product can be delayed, so levels are repeated until they are clearly falling. A single level at 12 hours or once a day can miss a rising level. Waiting for symptoms is unsafe because neurotoxicity lags behind the serum level. A urine drug screen does not measure lithium and rarely changes management.
 
 *Key feature:* Toxicology 7. Order tests that change management, like ECG, ABG, gaps, and specific drug levels, rather than broad urine screens.
 
-*Source:* Hoffman RS, Burns MM, Gosselin S. Ingestion of caustic substances. N Engl J Med. 2020. https://pubmed.ncbi.nlm.nih.gov/32348645/
+*Source:* Decker BS, Goldfarb DS, Dargan PI, et al. Extracorporeal treatment for lithium poisoning. Systematic review and recommendations from the EXTRIP workgroup. Clin J Am Soc Nephrol. 2015. https://doi.org/10.2215/CJN.10021014
 
 #### Q4
-**Which of the following complications is most likely within the first 24 hours?**
+*Update:* Whole bowel irrigation is completed. At 12 hours she is alert, with a fine tremor and no confusion. Her lithium level is 2.2 mmol/L, down from 2.6 mmol/L at 8 hours, and her creatinine is 70 umol/L.
 
-- A. Esophageal stricture with dysphagia
-- B. Gastric outlet obstruction
-- C. Mediastinitis from perforation  **(key)**
-- D. Pyloric scarring with vomiting
-- E. Squamous cell carcinoma
+**Which of the following is the most appropriate next step in her care?**
 
-*Explanation:* A concentrated alkali produces liquefaction necrosis that can reach the full thickness of the esophageal wall within hours, and his severe chest pain raises that concern, so perforation with mediastinitis is the early threat. Strictures and pyloric or gastric outlet scarring develop over weeks as the burn heals. Squamous cell carcinoma is a risk decades later. Recognizing early perforation changes care today.
+- A. Activated charcoal 50 g PO
+- B. Furosemide 40 mg IV
+- C. Hemodialysis now
+- D. IV saline and repeat levels  **(key)**
+- E. Sodium bicarbonate infusion
 
-*Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
+*Explanation:* EXTRIP recommends extracorporeal treatment for a level above 4.0 mmol/L with impaired kidney function, or for decreased consciousness, seizures or dysrhythmias. It suggests it for a level above 5.0 mmol/L, significant confusion, or an expected time above 36 hours to fall below 1.0 mmol/L. She meets none of these. Her creatinine is normal, and the fall from 2.6 to 2.2 mmol/L in 4 hours gives a half-life of about 17 hours, so she should be below 1.0 mmol/L in about 19 hours. Isotonic saline keeps her kidneys clearing lithium while levels are repeated. Hemodialysis adds risk without benefit now. Furosemide lowers lithium clearance, charcoal does not bind lithium and bicarbonate does not remove it.
 
-*Source:* Hoffman RS, Burns MM, Gosselin S. Ingestion of caustic substances. N Engl J Med. 2020. https://pubmed.ncbi.nlm.nih.gov/32348645/
+*Key feature:* Toxicology 6. Use decontamination or enhanced elimination when timing and pharmacokinetics support it, as with sustained release drugs or iron.
+
+*Source:* Decker BS, Goldfarb DS, Dargan PI, et al. Extracorporeal treatment for lithium poisoning. Systematic review and recommendations from the EXTRIP workgroup. Clin J Am Soc Nephrol. 2015. https://doi.org/10.2215/CJN.10021014
 
 ### tox-26: A box from the garage
 
@@ -1056,10 +1084,10 @@ A 4-year-old boy is brought to the emergency department by his father 1 hour aft
 - A. Abdominal ultrasound
 - B. Arterial blood gas sampling
 - C. Bronchoscopy for aspiration
-- D. Chest radiograph in 6 hours  **(key)**
+- D. Chest radiograph now and at 6 hours  **(key)**
 - E. Serum hydrocarbon concentration
 
-*Explanation:* Radiographic changes after hydrocarbon aspiration often lag behind symptoms, so a film taken several hours after the event shows the infiltrate that guides admission and oxygen therapy. He already has crackles and a saturation of 93% on room air, which is being followed clinically. Hydrocarbon concentrations are not available or useful. Bronchoscopy is for a retained foreign body rather than aspirated oil. Abdominal ultrasound does not assess the lungs, and an arterial sample adds pain without adding to pulse oximetry here.
+*Explanation:* He already has crackles and a saturation of 93% on room air, so he needs a chest radiograph now. Radiographic changes after hydrocarbon aspiration lag behind symptoms, so an early film can be normal. It is repeated at about 6 hours to show the infiltrate that guides admission and oxygen therapy. Hydrocarbon concentrations are not available or useful. Bronchoscopy is for a retained foreign body rather than aspirated oil. Abdominal ultrasound does not assess the lungs, and an arterial sample adds pain without adding to pulse oximetry here.
 
 *Key feature:* Toxicology 7. Order tests that change management, like ECG, ABG, gaps, and specific drug levels, rather than broad urine screens.
 
@@ -1469,80 +1497,82 @@ A 54-year-old man presents to the emergency department with 14 hours of profuse 
 
 *Source:* Enjalbert F, Rapior S, Nouguier-Soule J, et al. Treatment of amatoxin poisoning: 20-year retrospective analysis. J Toxicol Clin Toxicol. 2002. https://pubmed.ncbi.nlm.nih.gov/12475187/
 
-### tox-35: Seizure during a laceration repair
+### tox-35: Hard to wake after a nap
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department. A 68-year-old woman becomes agitated and then has a generalized seizure 8 minutes after you infiltrate 40 mL of lidocaine 1% with epinephrine around a large scalp laceration. She has hypertension and chronic kidney disease. The seizure stops after midazolam. She is now unresponsive and poorly perfused. The monitor shows a wide complex bradycardia. Glucose 6.2 mmol/L. There is no head injury and the pupils are 3 mm.
+A 22-month-old boy is brought to the emergency department by his mother because he is hard to wake from a nap. About 3 hours ago he was playing in the room of his uncle, who is staying with the family and takes buprenorphine-naloxone for opioid use disorder. An opened blister card of the uncle's 8 mg sublingual tablets was found on the floor with one tablet missing. The boy has no medical history. He rouses briefly to a firm sternal rub, then falls back to sleep. His pupils are 1 mm. There is no sign of injury. Capillary glucose is 5.4 mmol/L. A urine opiate immunoassay sent from triage is negative.
 
-- Temperature: 36.5°C oral
-- Pulse: 48/minute
-- Resp.: 8/minute
-- BP: 72/40 mmHg
-- O2 sat: 90% on 15 L/minute by non rebreather mask
-- Weight: 52 kg
+- Temperature: 36.6°C rectal
+- Pulse: 98/minute
+- Resp.: 10/minute
+- BP: 86/54 mmHg
+- O2 sat: 90% on room air
+- Weight: 12 kg
 
 #### Q1
-**Which of the following is the total dose of lidocaine she received?**
+**Which of the following best explains his negative urine opiate immunoassay?**
 
-- A. 100 mg
-- B. 200 mg
-- C. 300 mg
-- D. 400 mg  **(key)**
-- E. 500 mg
+- A. Assay does not detect buprenorphine  **(key)**
+- B. Exposure too recent to reach urine
+- C. Naloxone in the tablet blocks the assay
+- D. No buprenorphine was swallowed
+- E. Urine too dilute for detection
 
-*Explanation:* Lidocaine 1% contains 10 mg in each millilitre, so 40 mL delivered 400 mg. For her weight of 52 kg that is about 7.7 mg/kg, which is above the usual ceiling of about 7 mg/kg when lidocaine is given with epinephrine. A seizure followed by wide complex bradycardia 8 minutes after infiltration fits systemic toxicity from that dose.
+*Explanation:* Standard opiate immunoassays are built to detect morphine and codeine. Moeller and colleagues note that buprenorphine, like fentanyl and methadone, differs enough in structure that it is often missed, so a negative screen is expected and does not rule out exposure. His 1 mm pupils, slow breathing and a missing tablet are enough to act on. Timing and a dilute sample do not matter for a drug the assay is not designed to find. The naloxone in the tablet does not interfere with the assay.
 
 *Key feature:* Toxicology 7. Order tests that change management, like ECG, ABG, gaps, and specific drug levels, rather than broad urine screens.
 
-*Source:* Neal JM, Neal EJ, Weinberg GL. American Society of Regional Anesthesia and Pain Medicine local anesthetic systemic toxicity checklist: 2020 version. Reg Anesth Pain Med. 2021. https://pubmed.ncbi.nlm.nih.gov/33148630/
+*Source:* Moeller KE, Kissack JC, Atayee RS, Lee KC. Clinical interpretation of urine drug tests: what clinicians need to know about urine drug screens. Mayo Clin Proc. 2017. https://doi.org/10.1016/j.mayocp.2016.12.007
 
 #### Q2
-**Which of the following is the most appropriate specific treatment for her now?**
+**Which of the following drugs is most appropriate while his breathing is supported by bag and mask?**
 
-- A. Flumazenil 0.2 mg IV
-- B. Intravenous lipid emulsion 20%  **(key)**
-- C. Procainamide 100 mg IV
-- D. Propofol infusion for seizures
-- E. Sodium bicarbonate 50 mmol IV
+- A. Activated charcoal PO
+- B. Atropine IV
+- C. Flumazenil IV
+- D. Naloxone IV  **(key)**
+- E. Physostigmine IV
 
-*Explanation:* Lipid emulsion draws lidocaine out of cardiac tissue and is the treatment for local anesthetic toxicity with cardiovascular collapse, which is what her blood pressure of 72/40 mmHg and wide complex bradycardia represent. Procainamide is itself a sodium channel blocker and deepens the block. Propofol lowers blood pressure further and delivers far too little lipid to help. Flumazenil reverses benzodiazepines and risks further seizures. Bicarbonate is used for other sodium channel blocking drugs and is not the specific treatment here.
+*Explanation:* Drowsiness, 1 mm pupils and a respiratory rate of 10/minute with a saturation of 90% are the opioid toxidrome. He is not opioid dependent, so naloxone carries no risk of withdrawal, and Toce and colleagues gave it to 55% of young children exposed to buprenorphine. Flumazenil reverses benzodiazepines and can provoke seizures. Physostigmine treats anticholinergic toxicity, which causes large pupils. Atropine treats bradycardia, and his pulse is 98/minute. Charcoal in a child who cannot protect his airway risks aspiration.
 
 *Key feature:* Toxicology 2. Recognize toxidromes from clinical patterns and use antidotes selectively, weighing indications and contraindications.
 
-*Source:* Neal JM, Neal EJ, Weinberg GL. American Society of Regional Anesthesia and Pain Medicine local anesthetic systemic toxicity checklist: 2020 version. Reg Anesth Pain Med. 2021. https://pubmed.ncbi.nlm.nih.gov/33148630/
+*Source:* Toce MS, Burns MM, O'Donnell KA. Clinical effects of unintentional pediatric buprenorphine exposures: experience at a single tertiary care center. Clin Toxicol (Phila). 2017. https://doi.org/10.1080/15563650.2016.1244337
 
 #### Q3
-**Which of the following complications should be anticipated over the next hour?**
+*Update:* He wakes after two doses of naloxone 0.3 mg IV, a total of 0.6 mg, and breathes 24/minute. It is now 4 hours since he was found.
 
-- A. Hepatic failure within hours
-- B. Malignant hyperthermia
-- C. Methemoglobinemia from lidocaine
-- D. Serotonin toxicity with clonus
-- E. Ventricular arrest from toxicity  **(key)**
+**Which of the following is the most appropriate plan for his observation?**
 
-*Explanation:* Local anesthetic toxicity progresses from agitation and seizure to conduction block, ventricular dysrhythmia and arrest, and she is already bradycardic at 48/minute with a wide complex rhythm and a blood pressure of 72/40 mmHg. Methemoglobinemia is described mainly with prilocaine and benzocaine. Malignant hyperthermia follows volatile agents and succinylcholine. She takes no serotonergic drug. Acute hepatic failure is not part of this syndrome.
+- A. Admit with overnight monitoring  **(key)**
+- B. Discharge 1 hour after he wakes
+- C. Discharge 2 hours after naloxone
+- D. Discharge with a naloxone kit now
+- E. Observe 6 hours, then discharge
+
+*Explanation:* Buprenorphine acts for many hours and outlasts naloxone. In the series by Toce and colleagues, respiratory depression began a median of 263 minutes after exposure, some children first developed it more than 8 hours after exposure, 41% went to intensive care and the median stay was 22 hours. He has already needed naloxone, so he needs a monitored bed overnight. Discharge 1 or 2 hours after waking or after naloxone ignores how short its effect is. Six hours of observation can miss late respiratory depression. A naloxone kit does not replace monitoring.
 
 *Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
 
-*Source:* Neal JM, Neal EJ, Weinberg GL. American Society of Regional Anesthesia and Pain Medicine local anesthetic systemic toxicity checklist: 2020 version. Reg Anesth Pain Med. 2021. https://pubmed.ncbi.nlm.nih.gov/33148630/
+*Source:* Toce MS, Burns MM, O'Donnell KA. Clinical effects of unintentional pediatric buprenorphine exposures: experience at a single tertiary care center. Clin Toxicol (Phila). 2017. https://doi.org/10.1080/15563650.2016.1244337
 
 #### Q4
-*Update:* She loses her pulse and cardiopulmonary resuscitation begins while lipid emulsion runs.
+*Update:* Three hours after his last naloxone dose his breathing slows to 8/minute and his saturation falls to 89%. A repeat bolus of 0.6 mg IV restores his breathing, and a naloxone infusion of 0.4 mg/hour is started. Twelve hours later he is awake, drinking and breathing 24/minute on the infusion.
 
-**Which of the following vasopressor strategies is most appropriate during her resuscitation?**
+**Which of the following is the most appropriate plan for his naloxone infusion?**
 
-- A. epinephrine 50 mcg IV boluses  **(key)**
-- B. epinephrine 1 mg IV every 3 minutes
-- C. norepinephrine 0.1 mcg/kg/minute
-- D. phenylephrine 100 mcg IV boluses
-- E. vasopressin 40 units IV once
+- A. Continue 0.4 mg/hour for another 24 hours
+- B. Stop it and discharge him 1 hour later
+- C. Stop it now and discharge him home
+- D. Switch to naloxone 0.4 mg IM every 4 hours
+- E. Wean in 50% steps, then watch 4 to 6 hours  **(key)**
 
-*Explanation:* In arrest from local anesthetic toxicity the recommended approach is reduced epinephrine dosing, in the order of 1 mcg/kg or less per dose, because large boluses impair resuscitation and reduce the effect of lipid emulsion. For her 52 kg that is close to 50 mcg. Standard 1 mg boluses are the dose to avoid in this specific arrest. Vasopressin is no longer recommended in this setting. Phenylephrine and a norepinephrine infusion do not address the arrest rhythm.
+*Explanation:* He has been stable for 12 hours, but buprenorphine may still be acting, so the infusion is reduced rather than simply stopped. The Atlantic Canada Poison Centre advises weaning an infusion in 50% decrements, watching for recurrence while it is weaned, and monitoring for 4 to 6 hours after it stops. Stopping it and discharging him now or 1 hour later ignores that naloxone may act for as little as 45 minutes. Intermittent IM doses leave gaps between doses in which his breathing can slow again. Keeping the full rate for a fixed 24 hours prolongs his stay without testing whether he still needs it.
 
 *Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
 
-*Source:* Neal JM, Neal EJ, Weinberg GL. American Society of Regional Anesthesia and Pain Medicine local anesthetic systemic toxicity checklist: 2020 version. Reg Anesth Pain Med. 2021. https://pubmed.ncbi.nlm.nih.gov/33148630/
+*Source:* Atlantic Canada Poison Centre. Antidote kit manual. Naloxone hydrochloride, pediatric. Updated February 2020. https://atlanticcanadapoisoncentre.ca/naloxone-hydrochloride-pediatric.html
 
 ### tox-36: Blue lips after a dental appointment
 
@@ -1917,77 +1947,82 @@ A 34-year-old man is brought to the emergency department by police after he was 
 
 *Source:* Scharman EJ, Troutman WG. Prevention of kidney injury following rhabdomyolysis: a systematic review. Ann Pharmacother. 2013. https://pubmed.ncbi.nlm.nih.gov/23324509/
 
-### tox-41: Older woman with black stools
+### tox-41: Mouth sores and bruising at 76
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 81-year-old woman presents to the emergency department with 2 days of black stools and light headedness. She takes warfarin for atrial fibrillation and started ciprofloxacin 4 days ago for a urinary infection. She has had no vomiting and no abdominal pain. She is pale and cool. Hb 78 g/L, platelets 210 x 10^9/L, INR 7.4, creatinine 96 umol/L. Rectal examination shows melena. The abdomen is soft and not tender.
+A 76-year-old man is brought to the emergency department by his daughter with 5 days of painful mouth sores and trouble swallowing. He has had rheumatoid arthritis for 9 years and takes methotrexate 15 mg once weekly with folic acid. He has taken ramipril and pantoprazole for years. Two weeks ago his pharmacy began packing his pills in daily blister packs. He is tired and pale, with ulcers on the tongue, gums and inside of both cheeks, and bruises on both forearms. He has no cough, the chest is clear and there is no rash. Hemoglobin 94 g/L, white cells 1.2 x 10^9/L, neutrophils 0.2 x 10^9/L, platelets 31 x 10^9/L. Creatinine 148 umol/L, up from 82 umol/L 2 months ago. Potassium 4.6 mmol/L, ALT 58 U/L, bilirubin 14 umol/L.
 
-- Temperature: 36.6°C oral
-- Pulse: 108/minute
-- Resp.: 20/minute
-- BP: 96/58 mmHg
+- Temperature: 37.4°C oral
+- Pulse: 104/minute
+- Resp.: 18/minute
+- BP: 112/66 mmHg
 - O2 sat: 97% on room air
+- Weight: 64 kg
 
 #### Q1
-**Which of the following is the most appropriate treatment for her anticoagulation now?**
+**Which of the following is the most appropriate specific treatment for his methotrexate toxicity?**
 
-- A. Fresh frozen plasma 2 units
-- B. Prothrombin concentrate and vitamin K  **(key)**
-- C. Tranexamic acid 1 g IV alone
-- D. Vitamin K 10 mg IV alone
-- E. Withhold warfarin and observe
+- A. filgrastim 5 mcg/kg SC once daily
+- B. folic acid 5 mg PO daily
+- C. glucarpidase 50 units/kg IV
+- D. leucovorin 15 mg IV every 6 hours  **(key)**
+- E. methylprednisolone 1 g IV
 
-*Explanation:* She has major bleeding with an INR of 7.4, a hemoglobin of 78 g/L and a blood pressure of 96/58 mmHg, so factors are replaced at once with four factor prothrombin complex concentrate, 3 000 units for an INR above 5, which is also the single dose maximum in the Canadian recommendations, and vitamin K 10 mg IV is given so that the correction holds as the concentrate wears off. Vitamin K alone takes hours to work. Plasma needs large volumes in an 81-year-old and corrects more slowly. Tranexamic acid does not replace clotting factors. Withholding warfarin alone leaves her bleeding for days.
+*Explanation:* Mouth ulcers with neutrophils of 0.2 x 10^9/L and platelets of 31 x 10^9/L in a patient on methotrexate mean severe toxicity. Leucovorin is a reduced folate that reverses the folate block, and in the Bhargava trial 15 mg IV every 6 hours did as well as 25 mg. Folic acid must be activated by the enzyme that methotrexate blocks, so it cannot rescue him. Glucarpidase is used after high-dose methotrexate with renal failure, and levels after low-dose toxicity are generally too low for it to help. Filgrastim is often added but does not reverse the block. Methylprednisolone treats neither the block nor the low counts.
 
 *Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
 
-*Source:* National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. Revised 2022. https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada
+*Source:* Bhargava P, et al. Comparison of two doses of leucovorin in severe low-dose methotrexate toxicity. A randomized controlled trial. Arthritis Res Ther. 2023. https://doi.org/10.1186/s13075-023-03054-2
 
 #### Q2
-**Which of the following best explains her INR of 7.4 on a stable dose?**
+*Update:* His daughter brings the blister packs. For the past 2 weeks, every daily compartment has held six methotrexate 2.5 mg tablets.
 
-- A. Dietary vitamin K excess
-- B. Hepatic failure from sepsis
-- C. Interaction with ciprofloxacin  **(key)**
-- D. Platelet dysfunction from age
-- E. Warfarin resistance developing
+**Which of the following best explains his toxicity on a regimen that was stable for years?**
 
-*Explanation:* Ciprofloxacin inhibits the cytochrome enzymes that clear warfarin and also disturbs gut flora that make vitamin K, and her INR rose after it was started 4 days ago. Extra dietary vitamin K would lower the INR rather than raise it. Her platelet count is 210 x 10^9/L, and platelet function does not alter the INR. She is afebrile at 36.6°C with no features of sepsis or liver failure. Warfarin resistance produces a low INR on a usual dose.
+- A. Folic acid taken with each dose
+- B. Interaction with pantoprazole
+- C. Interaction with ramipril
+- D. Progressive rheumatoid disease
+- E. Taking it daily, not weekly  **(key)**
+
+*Explanation:* Six 2.5 mg tablets in every daily compartment is 15 mg a day, or 105 mg a week instead of 15 mg, a sevenfold overdose for 2 weeks. Mix-ups between daily and weekly dosing are a known cause of methotrexate toxicity, and his new daily blister packs made that error easy. His rising creatinine slows clearance and adds to the harm. Pantoprazole and ramipril have been part of his stable regimen for years, so neither explains a sudden change. Folic acid lowers the rate of adverse effects rather than causing them. Active arthritis does not cause mucositis and pancytopenia.
 
 *Key feature:* Toxicology 3. Suspect co-ingestion when signs are mixed or labs are unexpected, such as a raised osmolar gap.
 
-*Source:* National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. Revised 2022. https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada
+*Source:* Pivovarov K, Zipursky JS. Low-dose methotrexate toxicity. CMAJ. 2019. https://doi.org/10.1503/cmaj.181054
 
 #### Q3
-**Which of the following is the most important next step in her resuscitation?**
+**Which of the following complications poses the greatest threat to his life over the coming days?**
 
-- A. Intravenous pantoprazole infusion
-- B. Nasogastric tube for lavage
-- C. Octreotide infusion for varices
-- D. Transfusion of matched red cells  **(key)**
-- E. Urgent colonoscopy tonight
+- A. Acute liver failure
+- B. Hyperkalemic arrhythmia
+- C. Intracranial hemorrhage
+- D. Pulmonary fibrosis
+- E. Sepsis from neutropenia  **(key)**
 
-*Explanation:* A hemoglobin of 78 g/L with a pulse of 108/minute and a blood pressure of 96/58 mmHg after 2 days of melena means she needs red cells alongside factor replacement. A pantoprazole infusion is given for upper gastrointestinal bleeding but does not restore oxygen carriage. Octreotide is for variceal bleeding, and nothing suggests liver disease. Nasogastric lavage does not change management. Colonoscopy is not the first test for melena and is unsafe before she is resuscitated.
+*Explanation:* With neutrophils of 0.2 x 10^9/L and ulcers that breach the lining of his mouth, infection is the main danger. In the Bhargava trial more than 4 in 10 patients with severe low-dose toxicity died within 30 days, most from severe sepsis and respiratory failure during ongoing cytopenia, so any fever is treated at once as neutropenic sepsis. Platelets of 31 x 10^9/L raise the bleeding risk, but sepsis drove the deaths. His potassium of 4.6 mmol/L is normal. An ALT of 58 U/L with a normal bilirubin does not suggest liver failure. He has no cough and his chest is clear.
 
 *Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
 
-*Source:* National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. Revised 2022. https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada
+*Source:* Bhargava P, et al. Comparison of two doses of leucovorin in severe low-dose methotrexate toxicity. A randomized controlled trial. Arthritis Res Ther. 2023. https://doi.org/10.1186/s13075-023-03054-2
 
 #### Q4
-**Which of the following tests best confirms that the reversal has worked?**
+*Update:* Leucovorin, IV fluids and filgrastim are started, and he is admitted.
 
-- A. Complete blood count
-- B. Fibrinogen and platelet count
-- C. Repeat INR after 30 minutes  **(key)**
-- D. Thromboelastography
-- E. Warfarin concentration
+**Which of the following tests best guides how long leucovorin is continued?**
 
-*Explanation:* Prothrombin complex concentrate acts within minutes, and a repeat INR shortly after the infusion shows whether the factors have been replaced and whether a further dose is needed. A blood count follows the bleeding rather than the clotting. Fibrinogen and platelets are not the deficit created by warfarin. A warfarin concentration is not used in acute care. Thromboelastography is not required when the INR answers the question directly.
+- A. Blood folate level
+- B. Bone marrow biopsy
+- C. Daily blood counts  **(key)**
+- D. Serum methotrexate level
+- E. Urine drug screen
+
+*Explanation:* In the Bhargava trial leucovorin continued until the counts recovered, to white cells of at least 4 x 10^9/L and platelets of at least 100 x 10^9/L, or for 10 days, and every patient had daily blood counts. After low-dose toxicity a serum methotrexate level has no established role, because levels are generally low even when the marrow is failing. A folate level does not measure the block. A bone marrow biopsy is invasive and would not change the plan. A urine drug screen adds nothing when the drug is already known.
 
 *Key feature:* Toxicology 7. Order tests that change management, like ECG, ABG, gaps, and specific drug levels, rather than broad urine screens.
 
-*Source:* National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. Revised 2022. https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada
+*Source:* Bhargava P, et al. Comparison of two doses of leucovorin in severe low-dose methotrexate toxicity. A randomized controlled trial. Arthritis Res Ther. 2023. https://doi.org/10.1186/s13075-023-03054-2
 
 ### tox-42: Seizure at a music festival
 
@@ -2355,75 +2390,75 @@ You are working in an emergency department in British Columbia. A 37-year-old ma
 
 *Source:* Kestler A, Miles I, Chai J, Brar R. Missed OAT doses. Emergency Care BC clinical summary. 2024. https://emergencycarebc.ca/clinical_resource/clinical-summary/missed-oat-doses/
 
-### tox-47: Agitated woman 3 days after a fall
+### tox-47: Sick soon after a tablet from a friend
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department. A 58-year-old woman is brought in by her son with 2 days of tremor, vomiting and worsening agitation. She drinks about 1 L of wine daily and stopped 3 days ago after a fall at home. She is disoriented to place and time, picks at her blanket and says there are spiders on the wall. She has had lorazepam 2 mg IV on four occasions over 2 hours with little change. Glucose 5.8 mmol/L. Na 134, K 3.2, Mg 0.62 mmol/L. There is no head injury and no focal weakness.
+A 27-year-old man presents to the emergency department 50 minutes after taking a buprenorphine-naloxone 8 mg tablet under his tongue that a friend gave him. He smokes fentanyl every day and last used 5 hours ago. He wants to stop using and did not want to wait for a clinic appointment. Within 20 minutes he developed vomiting, diarrhea, cramps, sweating and severe restlessness. He takes no other medication and denies other drug use today. He is yawning, with a runny nose, gooseflesh, a coarse tremor and 7 mm pupils. Capillary glucose is 5.6 mmol/L.
 
-- Temperature: 37.8°C oral
-- Pulse: 132/minute
-- Resp.: 24/minute
-- BP: 168/96 mmHg
-- O2 sat: 97% on room air
-- Weight: 60 kg
+- Temperature: 37.2°C oral
+- Pulse: 118/minute
+- Resp.: 20/minute
+- BP: 148/90 mmHg
+- O2 sat: 99% on room air
+- Weight: 72 kg
 
 #### Q1
-**Which of the following best describes her condition three days after her last drink?**
+**Which of the following best describes his condition 50 minutes after the tablet?**
 
-- A. Alcoholic hallucinosis
-- B. Delirium tremens  **(key)**
-- C. Hepatic encephalopathy
-- D. Wernicke encephalopathy
-- E. Withdrawal seizure
+- A. Anticholinergic toxicity
+- B. Buprenorphine overdose
+- C. Precipitated withdrawal  **(key)**
+- D. Serotonin toxicity
+- E. Sympathomimetic toxicity
 
-*Explanation:* Disorientation to place and time with visual hallucinations, picking at the bedclothes, a pulse of 132/minute, a blood pressure of 168/96 mmHg and a temperature of 37.8°C three days after her last drink is delirium tremens rather than a milder syndrome. Alcoholic hallucinosis leaves the sensorium clear. Wernicke encephalopathy brings ophthalmoplegia and ataxia rather than autonomic storm. Hepatic encephalopathy causes a depressed level of consciousness with asterixis. She has had no seizure.
+*Explanation:* Buprenorphine binds opioid receptors tightly but activates them only partly, so taken 5 hours after fentanyl it displaced the fentanyl and set off withdrawal within minutes. His yawning, runny nose, gooseflesh, dilated pupils, tremor, restlessness, vomiting and diarrhea are the objective signs scored on the Clinical Opiate Withdrawal Scale. Overdose would cause sedation and small pupils. Anticholinergic toxicity dries the skin. Serotonin toxicity causes clonus. Sympathomimetic toxicity does not cause yawning, a runny nose or diarrhea.
 
 *Key feature:* Toxicology 8. Assess withdrawal from alcohol or opioids with objective signs to judge its severity and set priorities.
 
-*Source:* British Columbia Centre on Substance Use and BC Ministry of Health. Provincial guideline for the clinical management of high-risk drinking and alcohol use disorder. 2019. https://www.bccsu.ca/alcohol-use-disorder/
+*Source:* Wesson DR, Ling W. The Clinical Opiate Withdrawal Scale (COWS). J Psychoactive Drugs. 2003. https://pubmed.ncbi.nlm.nih.gov/12924748/
 
 #### Q2
-**Which of the following is the most appropriate next treatment for her agitation?**
+**Which of the following is the most appropriate treatment for him now?**
 
-- A. Haloperidol 5 mg IM
-- B. Ketamine 1 mg/kg IV
-- C. Phenobarbital 10 mg/kg IV  **(key)**
-- D. Propofol without intubation
-- E. Restraints and observation
+- A. buprenorphine 8 mg SL  **(key)**
+- B. clonidine 0.1 mg PO every hour
+- C. haloperidol 5 mg IM
+- D. lorazepam 2 mg IV
+- E. naloxone 0.4 mg IV
 
-*Explanation:* She has had 8 mg of lorazepam over 2 hours with little effect, and phenobarbital acts at a different site on the same receptor and at the dose studied in the emergency department it reduced intensive care admission when added to benzodiazepines. Haloperidol lowers the seizure threshold and impairs heat loss. Propofol without a secured airway risks apnea. Ketamine is not an established treatment for this syndrome. Restraint alone drives further agitation and muscle injury.
+*Explanation:* Oakley and colleagues treated precipitated withdrawal with more buprenorphine, giving repeated 8 mg doses up to 24 mg that day, because more of the partial agonist fills the receptors and relieves the withdrawal. Symptom relief alone with antiemetics or sedatives was not enough in their case. Clonidine eases some autonomic signs but not the withdrawal itself. Haloperidol and lorazepam sedate without treating the cause. Naloxone would deepen the withdrawal.
 
 *Key feature:* Toxicology 4. Choose treatments using both the toxidrome and the suspected agent, like bicarbonate for TCA wide complex tachycardia.
 
-*Source:* Rosenson J, Clements C, Simon B, et al. Phenobarbital for acute alcohol withdrawal: a prospective randomized double-blind placebo-controlled study. J Emerg Med. 2013. https://pubmed.ncbi.nlm.nih.gov/22999778/
+*Source:* Oakley B, Wilson H, Hayes V, Lintzeris N. Managing opioid withdrawal precipitated by buprenorphine with buprenorphine. Drug Alcohol Rev. 2021. https://pmc.ncbi.nlm.nih.gov/articles/PMC8248003/
 
 #### Q3
-**Which of the following treatments should accompany her sedation tonight?**
+**Which of the following findings best distinguishes his condition from sympathomimetic toxicity?**
 
-- A. Beta blocker infusion for the pulse
-- B. Intravenous antibiotics empirically
-- C. Intravenous thiamine and electrolytes  **(key)**
-- D. Oral folic acid and multivitamin
-- E. Physical restraint until calm
+- A. Dilated pupils
+- B. Heart rate of 118/minute
+- C. Profuse sweating
+- D. Restlessness and agitation
+- E. Yawning and gooseflesh  **(key)**
 
-*Explanation:* Thiamine given parenterally protects a chronically drinking patient against Wernicke encephalopathy, and her potassium of 3.2 mmol/L and magnesium of 0.62 mmol/L both need replacement because low magnesium sustains tremor and dysrhythmia. Beta blockade masks the autonomic signs used to titrate sedation. Antibiotics are for a documented or strongly suspected infection rather than for a temperature of 37.8°C in withdrawal. Oral vitamins are absorbed poorly and act too slowly. Restraint is not a treatment.
+*Explanation:* Yawning and gooseflesh are items on the Clinical Opiate Withdrawal Scale that point to opioid withdrawal and are not features of stimulant toxicity. Dilated pupils, a fast pulse, sweating and restlessness occur in both conditions, so they do not separate them.
 
 *Key feature:* Toxicology 2. Recognize toxidromes from clinical patterns and use antidotes selectively, weighing indications and contraindications.
 
-*Source:* British Columbia Centre on Substance Use and BC Ministry of Health. Provincial guideline for the clinical management of high-risk drinking and alcohol use disorder. 2019. https://www.bccsu.ca/alcohol-use-disorder/
+*Source:* Wesson DR, Ling W. The Clinical Opiate Withdrawal Scale (COWS). J Psychoactive Drugs. 2003. https://pubmed.ncbi.nlm.nih.gov/12924748/
 
 #### Q4
-**Which of the following complications should be anticipated over the next 24 hours?**
+**Which of the following outcomes is most strongly linked to withdrawal during a buprenorphine start?**
 
-- A. Acute kidney injury from sepsis
-- B. Aspiration with respiratory failure  **(key)**
-- C. Hemolysis with dark urine
-- D. Hypertensive intracerebral hemorrhage
-- E. Thyroid storm with fever
+- A. Acute liver injury
+- B. Discharge against advice  **(key)**
+- C. Prolonged QT interval
+- D. Respiratory arrest
+- E. Seizures from withdrawal
 
-*Explanation:* Deepening sedation is needed to control delirium tremens, and she has been vomiting with a respiratory rate of 24/minute, so aspiration with respiratory failure is the complication that follows treatment in this setting and drives the decision about an airway and transfer. Thyroid storm produces a similar autonomic picture but is not caused by alcohol withdrawal. Hemolysis and intracerebral hemorrhage are not features. Sepsis may coexist but nothing in her presentation points to a source.
+*Explanation:* Thakrar and colleagues found precipitated withdrawal in about 1 in 6 people using fentanyl who started buprenorphine in hospital, and they note that withdrawal during initiation is linked to leaving hospital before medically advised and to poor retention in care. Controlling his withdrawal today helps keep him in treatment. Respiratory arrest, liver injury and QT prolongation are not outcomes the study linked to withdrawal, and opioid withdrawal does not cause seizures in adults.
 
 *Key feature:* Toxicology 5. Anticipate complications of poisoning such as respiratory depression or dysrhythmias.
 
-*Source:* British Columbia Centre on Substance Use and BC Ministry of Health. Provincial guideline for the clinical management of high-risk drinking and alcohol use disorder. 2019. https://www.bccsu.ca/alcohol-use-disorder/
+*Source:* Thakrar AP, et al. Buprenorphine-precipitated withdrawal among hospitalized patients using fentanyl. JAMA Netw Open. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC11437388/

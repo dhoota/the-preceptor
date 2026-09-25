@@ -15,6 +15,9 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - msk-16 q3: the threshold of more than 5 mm of radial shortening for distal radioulnar joint injury comes from a Cureus review (Alajmi 2020). It is a peer-reviewed source but a modest one. *(samps-overlap-pass2a.md)*
 - msk-27 q1: the bumper mechanism for the lateral plateau fracture was checked in the full text of Ramponi 2018 through a search summary. The abstract itself does not state it. *(samps-overlap-pass2a.md)*
 - msk-34 q2: the Gustilo grade is provisional in the emergency department and is confirmed in the operating room. The explanation says so. Type I is defined as a clean wound under 1 cm (Gustilo and Anderson 1976). The cited 1984 paper defines the type III subtypes. *(samps-overlap-pass2a.md)*
+- msk-24 q4 uses SCFE presenting as knee pain. A study of adult hip referral (Lesher 2008) found knee pain in only 2%, so adult hip arthritis was left out of the options. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- msk-38 q3 is a counterfactual cauda equina question sourced to a 2026 Cureus review. A stronger spine source would help. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- msk-24 q4 and msk-38 q1 are both referred-pain items with no link to their own case (the SCFE item had the same design). *(samps-replace-s27-s29-s34-s38-s52.md)*
 - **msk-16 duplicates s06 msk-02 (high confidence).** Both are an external rotation ankle injury with deltoid tenderness and proximal fibular tenderness, full length fibula films, a Maisonneuve injury with a wide medial clear space, and a splint, no weight bearing and fixation. All four teaching points repeat. The writer's notes say the "Ottawa ankle soccer case" was excluded, but msk-02 is that Maisonneuve case. I did not rebuild msk-16 as a new injury in the review. Suggest replacing it with a companion injury pattern not in the bank, such as a Galeazzi or Essex-Lopresti injury, or dropping it. *(samps-s29-lensA.md)*
 - **msk-27 q1 and q3 overlap s06 msk-11 (medium).** "Lift the paramedic dressing, inspect and photograph" and "cefazolin 2 g IV for a low grade open fracture" are the same teaching points as msk-11 q1 and q2. msk-27 q2 (fat-fluid level, CT) and q4 are distinct. Suggest turning q1 into a question on whether the wound enters the knee joint (traumatic arthrotomy). *(samps-s29-lensA.md)*
 - **msk-34 q1 and q3 still overlap s06 msk-08 (medium).** Even after my change to q2, "blood with fat droplets means an open fracture" and "realign a pulseless limb before films" repeat msk-08 q1 and q3, in a different joint. The q3 teaching is KF5 itself, so some repetition may be acceptable. Physician to decide. *(samps-s29-lensA.md)*
@@ -422,7 +425,7 @@ She sits comfortably on her mother's lap. There is no swelling, bruising or defo
 *Source:* Christian CW, Committee on Child Abuse and Neglect. The evaluation of suspected child physical abuse. Pediatrics. 2015.
 
 #### Q4
-*Update:* She returns 2 days later. She has a temperature of 38.9°C, holds the right hip flexed and externally rotated, and cries with any hip movement. The tibia is no longer tender.
+*Update:* She returns 2 days later. She has a temperature of 38.9°C, holds the right hip flexed and externally rotated, and cries with any hip movement.
 
 **Which of the following is the most appropriate next step for her?**
 
@@ -666,81 +669,78 @@ The thumb metacarpophalangeal joint is swollen and tender on its ulnar side. The
 
 *Source:* Beutel BG, Melamed E, Rettig ME. The Stener lesion and complete ulnar collateral ligament injuries of the thumb: a review. Bull Hosp Jt Dis. 2019. https://pubmed.ncbi.nlm.nih.gov/30865860/
 
-### msk-24: Hockey player with shoulder pain
+### msk-24: Inner thigh pain and vomiting
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department with no CT scanner and no surgeon on site. The nearest trauma centre is 2 hours away by road. A 19-year-old man presents 2 hours after he was checked into the boards during a hockey game and struck his left side. He has pain at the tip of the left shoulder that is worse when he lies flat. He has mild left upper abdominal discomfort. He is healthy.
+An 86-year-old woman is brought to the emergency department by her daughter with 2 days of pain along the inside of her right thigh that runs down to the knee. It is worse when she stands and walks. She has vomited four times since last night and has not passed stool or gas for 2 days. She did not fall. She lives alone and has lost weight over the past year. She has osteoarthritis of both knees, hypertension and chronic constipation. Medications: acetaminophen and hydrochlorothiazide. The right knee has no effusion, warmth or joint line tenderness and moves fully without pain. The right hip also moves fully.
 
-He has full, painless active and passive range of motion of the left shoulder. The clavicle and acromioclavicular joint are not tender. He is tender over the left lower ribs and in the left upper quadrant.
-
-- Temperature: 36.5°C oral
-- Pulse: 112/minute
-- Resp.: 22/minute
-- BP: 108/70 mmHg
-- O2 sat: 98% on room air
+- Temperature: 37.4°C oral
+- Pulse: 104/minute regular
+- Resp.: 18/minute
+- BP: 118/70 mmHg
+- O2 sat: 97% on room air
+- Weight: 41 kg
 
 #### Q1
-**Which of the following is the most likely source of his shoulder pain?**
+**Which of the following features most suggests that her thigh and knee pain arise from outside the joints?**
 
-- A. Acromioclavicular sprain
-- B. Clavicle shaft fracture
-- C. Referred pain from the spleen  **(key)**
-- D. Rotator cuff contusion
-- E. Sternoclavicular sprain
+- A. Her age of 86 years
+- B. No fall before the pain began
+- C. Osteoarthritis of both knees
+- D. Pain worse on standing
+- E. Vomiting with no stool or gas  **(key)**
 
-*Explanation:* A shoulder that moves fully and painlessly, with no clavicle or joint tenderness, is not the source of the pain. Shoulder tip pain that worsens lying flat, with left upper quadrant and lower rib tenderness and a pulse of 112/minute, suggests blood under the left diaphragm from a splenic injury, referred along the phrenic nerve. An acromioclavicular sprain or clavicle fracture would be tender to touch. A cuff contusion would hurt with movement. The sternoclavicular joint is not the site of his pain.
+*Explanation:* Vomiting and no stool or gas for 2 days, with a pulse of 104/minute, point to a bowel obstruction that no knee or hip problem explains. Her knee and hip examine normally, so the pain along her inner thigh is probably referred from elsewhere, and her groins and abdomen need examining. In a systematic review of obturator hernias, patients had a mean age of about 79 years and bowel obstruction was the most common presentation. Pain on standing occurs with joint disease and with nerve compression alike. Knee osteoarthritis is common at her age and does not explain vomiting. The absence of a fall makes a fracture less likely but does not place the pain outside the joints. Her age raises the chance of many conditions without locating the pain.
 
 *Key feature:* Common fractures/MSK 3. Consider referred pain when examining a painful site, for instance hip pathology felt in the knee.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025.
+*Source:* Schizas D, Apostolou K, Hasemaki N, and colleagues. Obturator hernias: a systematic review of the literature. Hernia. 2021. https://doi.org/10.1007/s10029-020-02282-8
 
 #### Q2
-**Which of the following is the most appropriate next step in his evaluation?**
+*Update:* Her abdomen is distended and mildly tender with high-pitched bowel sounds. No groin lump is felt. Extending, adducting and internally rotating her right hip reproduces the pain along the inner thigh.
 
-- A. Bedside FAST examination  **(key)**
-- B. Left shoulder X-rays
-- C. Rib series X-rays
-- D. Serial hemoglobin in 4 hours
-- E. Upright abdominal X-ray
+**Which of the following is the most likely cause of her thigh and knee pain?**
 
-*Explanation:* A FAST examination at the bedside is quick and available in a rural department without CT, and it looks for free fluid in the left upper quadrant and pelvis in a tachycardic patient. Shoulder films target a joint that examines normally. Rib films may show fractures but do not show the bleeding that decides his care. A hemoglobin falls late after acute bleeding, so waiting 4 hours delays the diagnosis. An upright abdominal film looks for free air, not blood.
+- A. Adductor muscle strain
+- B. Femoral hernia with strangulation
+- C. Hip osteoarthritis flare
+- D. Incarcerated obturator hernia  **(key)**
+- E. L3 nerve root compression
+
+*Explanation:* Inner thigh pain reproduced by extending, adducting and internally rotating the hip is the Howship-Romberg sign of obturator nerve compression, found in about half of patients in a systematic review of obturator hernias. With vomiting and a distended abdomen, it means bowel is trapped in the obturator canal. A strangulated femoral hernia usually forms a tender lump below the inguinal ligament, and none is felt. Hip osteoarthritis and an adductor strain do not obstruct the bowel. An L3 root lesion causes anterior thigh and knee pain without abdominal signs.
 
 *Key feature:* Common fractures/MSK 3. Consider referred pain when examining a painful site, for instance hip pathology felt in the knee.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) Student Course Manual. 11th edition. Chicago: American College of Surgeons. 2025.
+*Source:* Schizas D, Apostolou K, Hasemaki N, and colleagues. Obturator hernias: a systematic review of the literature. Hernia. 2021. https://doi.org/10.1007/s10029-020-02282-8
 
 #### Q3
-*Update:* FAST shows free fluid around the spleen and in the pelvis. After 1 L of crystalloid his pulse is 124/minute and BP is 94/60 mmHg. Two units of red cells are running.
+*Update:* Lactate is 3.6 mmol/L and white cell count is 15.8 x 10^9/L.
 
-**Which of the following is the most appropriate next step in his care?**
+**Which of the following is the most appropriate next step in the care of this patient?**
 
-- A. Admit for serial abdominal examinations
-- B. Arrange urgent transfer to a trauma centre  **(key)**
-- C. Give 2 L more crystalloid and reassess
-- D. Repeat the FAST in 1 hour
-- E. Transfer by road in the morning
+- A. Admit to medicine for laxatives
+- B. NG tube and review in the morning
+- C. Orthopedic referral for the hip
+- D. Outpatient MRI of the lumbar spine
+- E. Urgent general surgery consultation  **(key)**
 
-*Explanation:* A splenic injury with free fluid and a falling BP despite fluid and blood needs a surgeon or interventional radiology now. With no surgeon on site, he needs urgent transfer to a trauma centre while transfusion continues. Nonoperative management with serial examinations is only for patients who are hemodynamically stable. More crystalloid dilutes clotting factors and worsens bleeding. A repeat FAST adds nothing and delays the transfer. Waiting until morning is unsafe.
+*Explanation:* A raised lactate and white cell count with an obstructed hernia suggest the trapped bowel is becoming ischemic, so a surgeon must see her now. The systematic review concluded that operative repair of an obturator hernia is mandatory, and it found that CT, the usual confirming test, was linked to lower perioperative mortality, so CT should be arranged alongside the consultation rather than instead of it. A tube and observation until morning risks perforation. Laxatives do not relieve a mechanical obstruction. Orthopedic and spine assessments pursue causes her findings do not support.
 
 *Key feature:* Common fractures/MSK 7. Consult surgery promptly for injuries needing urgent operative care like compartment syndrome or open fractures.
 
-*Source:* Stassen NA and colleagues. Selective nonoperative management of blunt splenic injury: an Eastern Association for the Surgery of Trauma practice management guideline. J Trauma Acute Care Surg. 2012. https://pubmed.ncbi.nlm.nih.gov/23114484/
+*Source:* Schizas D, Apostolou K, Hasemaki N, and colleagues. Obturator hernias: a systematic review of the literature. Hernia. 2021. https://doi.org/10.1007/s10029-020-02282-8
 
 #### Q4
-**Which of the following conditions commonly cause pain felt in the shoulder when the joint itself is normal?**
+**Which of the following findings in a patient with shoulder pain most suggests the pain is referred from the neck?**
 
-Select 2.
+- A. Pain on cross-body adduction
+- B. Pain on neck extension and rotation  **(key)**
+- C. Pain with resisted external rotation
+- D. Painful arc between 60 and 120 degrees
+- E. Reduced passive external rotation
 
-- A. Acute appendicitis
-- B. Cervical radiculopathy  **(key)**
-- C. Lateral epicondylitis
-- D. Lumbar disc herniation
-- E. Myocardial ischemia  **(key)**
-- F. Renal colic
-- G. Trochanteric bursitis
-
-*Explanation:* Shoulder girdle pain is often the first symptom of cervical radiculopathy, so the neck is examined whenever a painful shoulder moves freely, as his does. Myocardial ischemia can also be felt in the shoulder and arm and must not be dismissed as a strain. Blood under the diaphragm, as in his splenic injury, is a third source. Lateral epicondylitis stays at the elbow. A lumbar disc refers pain to the buttock and leg, and trochanteric bursitis to the lateral thigh. Appendicitis and renal colic refer pain to the abdomen, flank or groin.
+*Explanation:* Shoulder pain reproduced by extending and rotating the neck toward the painful side, the Spurling test, points to a cervical nerve root. The review cited notes that shoulder girdle pain is often the most common presenting symptom of cervical radiculopathy, and that the form of the test using rotation with extension is the most specific, at 75% to 100%. The other findings come from loading structures of the shoulder itself. A painful arc and pain on resisted external rotation point to the rotator cuff. Pain on cross-body adduction points to the acromioclavicular joint, and loss of passive external rotation to the glenohumeral joint, as in adhesive capsulitis.
 
 *Key feature:* Common fractures/MSK 3. Consider referred pain when examining a painful site, for instance hip pathology felt in the knee.
 
@@ -1215,86 +1215,81 @@ There is swelling below the lateral malleolus. She is tender at the tip of the l
 
 *Source:* von Knoch F and colleagues. Fracture of the lateral process of the talus in snowboarders. J Bone Joint Surg Br. 2007. https://pubmed.ncbi.nlm.nih.gov/17613502/
 
-### msk-31: Wrist pain after rollerblading
+### msk-31: A fingertip that droops
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 7-year-old girl is brought to the emergency department by her father 2 hours after she fell onto her outstretched right hand while rollerblading. She has pain in the distal forearm and holds the wrist still. She is healthy and takes no medications. She has had no analgesia. She rates her pain 5 out of 10.
+A 46-year-old man presents to the emergency department the morning after a basketball struck the tip of his right middle finger during a game. The fingertip now droops, and he cannot straighten it. He is right-handed and works as a courier. He is otherwise healthy and takes no medications. The distal interphalangeal joint of the right middle finger rests in 40 degrees of flexion. He cannot extend it actively, but it straightens fully when pushed. There is mild swelling over the back of the joint and no wound. Sensation and capillary refill in the fingertip are normal. X-rays show no fracture and a normally aligned joint.
 
-There is mild swelling of the distal forearm with no deformity. She is tender over the distal radius dorsally. The elbow, the anatomic snuffbox and the hand are not tender. The skin is intact and the hand is warm with normal sensation.
-
-- Temperature: 36.8°C tympanic
-- Pulse: 104/minute
-- Resp.: 20/minute
+- Temperature: 36.7°C oral
+- Pulse: 72/minute regular
+- Resp.: 14/minute
+- BP: 128/78 mmHg
 - O2 sat: 99% on room air
-- Weight: 23 kg
 
 #### Q1
-**Which of the following is the most appropriate first analgesic for her?**
+**Which of the following is the most appropriate splint for the injury to this patient's finger?**
 
-- A. Codeine 23 mg PO
-- B. Ibuprofen 230 mg PO  **(key)**
-- C. Ibuprofen 460 mg PO
-- D. Morphine 2 mg IV
-- E. Tramadol 46 mg PO
+- A. Buddy taping to the ring finger
+- B. DIP and PIP splinted in extension
+- C. Splint that holds only the DIP straight  **(key)**
+- D. Ulnar gutter splint to the forearm
+- E. Volar splint with the DIP in flexion
 
-*Explanation:* For moderate pain from a limb injury in a child, ibuprofen 10 mg/kg is the first line analgesic, which for 23 kg is 230 mg. A dose of 460 mg is 20 mg/kg, twice the recommended dose. Codeine and tramadol are not recommended in children. Health Canada restricts both, and TREKK advises avoiding codeine under 18, because conversion to active drug is unpredictable and can cause respiratory depression. IV morphine needs an IV and is not needed for pain of 5 out of 10 with no deformity.
+*Explanation:* A fingertip that droops, cannot be straightened actively and extends fully when pushed is a mallet finger from injury to the terminal extensor tendon, and his X-rays show no fracture. Only the DIP joint needs splinting, because the tendon ends separate when the DIP flexes, not when the PIP moves, so the PIP is left free to avoid stiffness. Splinting the DIP in flexion lets the tendon ends pull apart. Buddy taping does not hold the joint straight. A forearm gutter splint immobilizes the wrist and knuckles without controlling the DIP.
 
 *Key feature:* Common fractures/MSK 8. After diagnosis and initial care of an injury, arrange splinting, analgesia, and timely follow-up.
 
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations: pain treatment. Version 4.0. 2023. https://trekk.ca/resources/bottom-line-recommendations-pain-treatment/
+*Source:* Alla SR, Deal ND, Dempsey IJ. Current concepts: mallet finger. Hand (N Y). 2014. https://doi.org/10.1007/s11552-014-9609-y
 
 #### Q2
-*Update:* X-rays show a bulge of the dorsal cortex of the distal radial metaphysis. The volar cortex is intact and there is no angulation. The growth plate is normal.
+**Which of the following is the most appropriate duration of full-time splinting for this patient?**
 
-**Which of the following is the most appropriate immobilization for her fracture?**
+- A. 1 week
+- B. 2 weeks
+- C. 3 weeks
+- D. 6 weeks  **(key)**
+- E. 12 weeks
 
-- A. Above elbow cast for 4 weeks
-- B. Below elbow cast for 4 weeks
-- C. Removable wrist splint  **(key)**
-- D. Thumb spica cast for 4 weeks
-- E. Ulnar gutter splint for 4 weeks
-
-*Explanation:* A buckle fracture has failed in compression on one side only and is stable. In a Canadian trial, children treated with a removable splint functioned better at 2 weeks than those given a cast for 3 weeks, with no refractures. A later trial found a soft bandage equivalent to rigid immobilization for pain. An above or below elbow cast adds skin problems, a clinic visit and missed activities. A thumb spica cast is for a scaphoid injury, and she is not tender in the snuffbox. An ulnar gutter splint treats fourth and fifth metacarpal injuries.
+*Explanation:* The review cited recommends full-time splinting for 6 weeks, followed by 2 to 6 weeks of splinting at night. One, 2 or 3 weeks falls well short of that course and risks a persistent droop. Twelve weeks of full-time splinting is longer than needed, and splints already cause skin problems such as maceration and ulceration in a large share of patients, so a longer course adds harm without a stated benefit.
 
 *Key feature:* Common fractures/MSK 8. After diagnosis and initial care of an injury, arrange splinting, analgesia, and timely follow-up.
 
-*Source:* Plint AC and colleagues. A randomized, controlled trial of removable splinting versus casting for wrist buckle fractures in children. Pediatrics. 2006. https://pubmed.ncbi.nlm.nih.gov/16510648/
+*Source:* Alla SR, Deal ND, Dempsey IJ. Current concepts: mallet finger. Hand (N Y). 2014. https://doi.org/10.1007/s11552-014-9609-y
 
 #### Q3
-**Which of the following X-ray findings, had it been present, would have made a removable splint inappropriate?**
+**Which of the following instructions about the splint is most important for this patient?**
 
-- A. Break in the volar cortex  **(key)**
-- B. Dorsal cortical bulge
-- C. Metaphyseal location
-- D. Soft tissue swelling
-- E. Ulnar styloid tip fleck
+- A. Remove it to shower each day
+- B. Remove the splint at night
+- C. Start bending exercises at week 2
+- D. Support the tip straight during changes  **(key)**
+- E. Wear it only while at work
 
-*Explanation:* A break through the opposite, volar cortex turns a buckle fracture into a greenstick or complete fracture, which can angulate and needs a cast and follow-up. A dorsal cortical bulge in the metaphysis is the buckle fracture itself. Soft tissue swelling is expected. A small fleck from the tip of the ulnar styloid commonly accompanies distal radius fractures in children and does not change the plan for a stable buckle fracture.
+*Explanation:* The splint must be worn continuously, and the DIP joint must stay fully extended even while the skin is cleaned or the splint is changed, for example by resting the fingertip flat on a table. The review notes that 1 mm of lengthening of the terminal extensor tendon produces about 25 degrees of extension lag, so one episode of flexion can undo weeks of treatment. Removing the splint at night, to shower or outside work breaks the continuous period. Bending exercises begin only after the splinting course.
 
 *Key feature:* Common fractures/MSK 8. After diagnosis and initial care of an injury, arrange splinting, analgesia, and timely follow-up.
 
-*Source:* Plint AC and colleagues. A randomized, controlled trial of removable splinting versus casting for wrist buckle fractures in children. Pediatrics. 2006. https://pubmed.ncbi.nlm.nih.gov/16510648/
+*Source:* Alla SR, Deal ND, Dempsey IJ. Current concepts: mallet finger. Hand (N Y). 2014. https://doi.org/10.1007/s11552-014-9609-y
 
 #### Q4
-**Which of the following are the most appropriate discharge instructions for her buckle fracture?**
+**Which of the following findings would call for referral to a hand surgeon rather than splinting alone?**
 
 Select 2.
 
-- A. Codeine for severe pain
-- B. Fracture clinic in 1 week
-- C. Ibuprofen as needed for pain  **(key)**
-- D. Keep the splint on for 6 weeks
-- E. No sport for 3 months
-- F. Remove the splint once comfortable  **(key)**
-- G. Repeat X-rays in 2 weeks
-- H. Sling for 4 weeks
+- A. Age over 40 years
+- B. Full passive DIP extension
+- C. Injury to the dominant hand
+- D. Large fragment with joint subluxation  **(key)**
+- E. Open wound over the DIP joint  **(key)**
+- F. Small dorsal chip of bone
+- G. Swelling over the DIP joint
 
-*Explanation:* A buckle fracture heals without complications, so the family can give ibuprofen as needed and remove the splint when she is comfortable, usually within about 3 weeks. No routine fracture clinic visit or repeat X-ray is needed, because the result will not change care. Codeine is not recommended in children. Six weeks in a splint, a sling for 4 weeks or 3 months away from sport are longer than this stable fracture needs.
+*Explanation:* The review lists open injuries and fractures involving more than 30% of the joint surface with subluxation of the joint among the indications for surgery, along with failure of splinting. Most mallet injuries, including those with a small dorsal chip of bone, are treated with a splint. Swelling over the joint, full passive extension, his age and injury to the dominant hand are expected findings that do not change the treatment.
 
 *Key feature:* Common fractures/MSK 8. After diagnosis and initial care of an injury, arrange splinting, analgesia, and timely follow-up.
 
-*Source:* Perry DC and colleagues. Immobilisation of torus fractures of the wrist in children (FORCE): a randomised controlled equivalence trial in the UK. Lancet. 2022. https://pubmed.ncbi.nlm.nih.gov/35780790/
+*Source:* Alla SR, Deal ND, Dempsey IJ. Current concepts: mallet finger. Hand (N Y). 2014. https://doi.org/10.1007/s11552-014-9609-y
 
 ### msk-32: Rolled ankle at basketball
 
@@ -1764,81 +1759,77 @@ She holds the right arm against her body with her left hand. The right shoulder 
 
 *Source:* Morin SN and colleagues, Osteoporosis Canada. Clinical practice guideline for management of osteoporosis and fracture prevention in Canada: 2023 update. CMAJ. 2023. https://www.cmaj.ca/content/195/39/E1333
 
-### msk-38: Runner with knee pain
+### msk-38: Buttock pain after a step down
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 19-year-old woman presents to the emergency department with 4 weeks of right knee and anterior thigh pain. It began during running and now occurs with walking. She runs cross-country for her university and increased her weekly distance 6 weeks ago. She has not had a period in 6 months. She takes no medications. Urine hCG is negative. Her height is 165 cm.
+A 78-year-old woman is brought to the emergency department by her son with 12 days of pain in her lower back and right buttock that spreads into the back of her right thigh. It began when she stepped down from a curb, and she can now walk only a few steps with a walker. Lying still eases it. She has polymyalgia rheumatica treated with prednisone 10 mg daily for 3 years. She takes no calcium, vitamin D or osteoporosis medication. Pressing over the right side of the sacrum reproduces her pain. Both hips move fully without pain. Straight leg raising to 70 degrees causes only buttock pain. Power, reflexes and sensation in both legs are normal. She is passing urine normally.
 
-She walks with a limp. The right knee has no effusion, a full range of motion, no joint line tenderness and stable ligaments.
-
-- Temperature: 36.5°C oral
-- Pulse: 54/minute
-- Resp.: 14/minute
-- BP: 102/62 mmHg
-- O2 sat: 99% on room air
-- Weight: 47 kg
+- Temperature: 36.8°C oral
+- Pulse: 86/minute regular
+- Resp.: 16/minute
+- BP: 142/80 mmHg
+- O2 sat: 96% on room air
+- Weight: 52 kg
 
 #### Q1
-**Which of the following examination steps is most important next in this woman?**
+**Which of the following is the most likely source of the pain in the back of her right thigh?**
 
-- A. Lachman test of the knee
-- B. McMurray test of the knee
-- C. Ober test for the iliotibial band
-- D. Patellar apprehension test
-- E. Rotation of the hip in flexion  **(key)**
+- A. Hamstring muscle tear
+- B. Hip joint osteoarthritis
+- C. L5 nerve root compression
+- D. Piriformis syndrome
+- E. Sacral insufficiency fracture  **(key)**
 
-*Explanation:* Knee pain with a normal knee examination calls for examination of the hip, because hip disease refers pain along the obturator and femoral nerves to the anterior thigh and knee. Pain on hip rotation in flexion is the key screening test. The Lachman and McMurray tests look for cruciate and meniscal injury in a knee that is already normal. An Ober test looks for iliotibial band tightness, which causes lateral knee pain. Patellar apprehension tests for instability, which she has not described.
+*Explanation:* Low back and buttock pain after little or no trauma, eased by lying still, with tenderness over the sacrum, fits a sacral insufficiency fracture. These fractures cause back, buttock and groin pain and occur mostly in older women with osteoporosis. Her thigh pain is referred rather than radicular, since straight leg raising produces only buttock pain and her power, reflexes and sensation are normal. Her hips move fully without pain, which argues against hip osteoarthritis. A hamstring tear and piriformis syndrome do not cause tenderness over the sacrum.
 
 *Key feature:* Common fractures/MSK 3. Consider referred pain when examining a painful site, for instance hip pathology felt in the knee.
 
-*Source:* Robertson GA, Wood AM. Femoral neck stress fractures in sport: a current concepts review. Sports Med Int Open. 2017. https://pubmed.ncbi.nlm.nih.gov/30539087/
+*Source:* Singh M, Balmaceno-Criss M, Knebel A, and colleagues. Sacroplasty for sacral insufficiency fractures: narrative literature review on patient selection, technical approaches, and outcomes. J Clin Med. 2024. https://doi.org/10.3390/jcm13041101
 
 #### Q2
-*Update:* Internal rotation of the right hip in flexion reproduces pain in the groin and knee. She cannot hop on the right leg. AP pelvis and hip X-rays are normal.
+*Update:* X-rays of the pelvis and lumbar spine show diffuse osteopenia and no fracture. After analgesia she can still take only a few steps with her walker.
 
-**Which of the following is the most appropriate next imaging for her hip?**
+**Which of the following is the most appropriate plan for this patient now?**
 
-- A. Bone scan in 1 week
-- B. CT of the pelvis
-- C. Knee X-ray series
-- D. MRI of the hip  **(key)**
-- E. Ultrasound of the hip
+- A. Admit for MRI and mobilization  **(key)**
+- B. Bed rest at home for 6 weeks
+- C. Discharge, as the X-rays are normal
+- D. Epidural steroid injection
+- E. Outpatient physiotherapy for sciatica
 
-*Explanation:* Normal X-rays are common early in a femoral neck stress fracture, and MRI is the recommended second line test. It shows marrow edema and any fracture line, and it grades the injury. A bone scan is sensitive but less specific, and waiting a week risks displacement. CT is less sensitive for an early stress fracture. Knee films image the site of referred pain, not the source. Ultrasound shows a hip effusion but not a stress fracture.
+*Explanation:* Normal first X-rays do not exclude a sacral insufficiency fracture when the history and sacral tenderness point to one, so she is managed as having the fracture. MRI makes the diagnosis by showing high signal from bone edema on STIR sequences. First-line treatment is early mobilization, multimodal pain control and osteoporosis management, and a woman who can take only a few steps after analgesia needs that in hospital. Bed rest works against early mobilization. Discharge because the X-rays are normal misses the fracture. An epidural steroid injection and physiotherapy for sciatica treat nerve root pain, which she does not have.
 
 *Key feature:* Common fractures/MSK 4. When a suspected fracture has normal first films, consider occult scaphoid, hip, or elbow injury and treat accordingly.
 
-*Source:* Robertson GA, Wood AM. Femoral neck stress fractures in sport: a current concepts review. Sports Med Int Open. 2017. https://pubmed.ncbi.nlm.nih.gov/30539087/
+*Source:* Singh M, Balmaceno-Criss M, Knebel A, and colleagues. Sacroplasty for sacral insufficiency fractures: narrative literature review on patient selection, technical approaches, and outcomes. J Clin Med. 2024. https://doi.org/10.3390/jcm13041101
 
 #### Q3
-*Update:* MRI shows a fracture line on the superior side of the right femoral neck, crossing about 40% of its width, with marrow edema.
+**Which of the following new findings in this patient would most require an urgent surgical consultation?**
 
-**Which of the following is the most appropriate management of her fracture?**
+- A. Bilateral fractures on imaging
+- B. Pain on sitting upright
+- C. Pain rated 8 out of 10
+- D. Retention with saddle numbness  **(key)**
+- E. Wrist fracture 2 years ago
 
-- A. Activity modification and physiotherapy
-- B. Crutches and sports medicine in 2 weeks
-- C. Orthopedic consult for fixation today  **(key)**
-- D. Reduced running and repeat MRI in 6 weeks
-- E. Rest from running for 2 weeks
-
-*Explanation:* A fracture on the superior side of the femoral neck is on the tension side, where it tends to widen and displace. Tension side fractures usually need internal fixation, so she needs strict non weight bearing and an orthopedic consult today. A displaced femoral neck fracture in a young adult risks avascular necrosis and a poor return to sport. Physiotherapy, reduced or paused running, or a sports medicine visit in 2 weeks suits a small compression side fracture, not this one.
+*Explanation:* New urinary retention with numbness of the saddle area means the sacral nerve roots are failing. An emergency medicine review lists painless urinary retention and reduced perineal sensation among the red flags of cauda equina syndrome, confirms the diagnosis with MRI and treats it with surgical consultation for decompression. Severe pain, pain on sitting and fractures on both sides do not threaten the nerve roots, and sacral insufficiency fractures are managed first with mobilization, pain control and treatment of osteoporosis. A wrist fracture 2 years ago strengthens the case for osteoporosis treatment but is not urgent.
 
 *Key feature:* Common fractures/MSK 7. Consult surgery promptly for injuries needing urgent operative care like compartment syndrome or open fractures.
 
-*Source:* Robertson GA, Wood AM. Femoral neck stress fractures in sport: a current concepts review. Sports Med Int Open. 2017. https://pubmed.ncbi.nlm.nih.gov/30539087/
+*Source:* Long B, Koyfman A, Gottlieb M. Evaluation and management of cauda equina syndrome in the emergency department. Am J Emerg Med. 2020. https://doi.org/10.1016/j.ajem.2019.158402
 
 #### Q4
-**Which of the following underlying conditions is most important to assess in her?**
+**Which of the following underlying problems is most important to address before this patient goes home?**
 
-- A. Ankylosing spondylitis
-- B. Hypothyroidism
-- C. Juvenile idiopathic arthritis
-- D. Low energy availability  **(key)**
-- E. Sickle cell disease
+- A. Hamstring weakness from inactivity
+- B. Long-term glucocorticoid treatment  **(key)**
+- C. Polymyalgia muscle inflammation
+- D. Stepping down from a curb
+- E. Use of a walker at home
 
-*Explanation:* A stress fracture in a runner with 6 months of amenorrhea and a BMI of about 17.3, from 47 kg and 1.65 m, points to low energy availability. It lowers estrogen and bone density and is the core of Relative Energy Deficiency in Sport. She needs dietary, menstrual and bone health assessment before she returns to running. Hypothyroidism can disturb menses but does not explain the low weight. Ankylosing spondylitis, juvenile arthritis and sickle cell disease do not fit her history.
+*Explanation:* A pelvic fracture from a force no greater than stepping off a curb is a low-trauma fracture, and Osteoporosis Canada allows a clinical diagnosis of osteoporosis after a low-trauma pelvic fracture in anyone aged 50 years or older. Before treatment starts, the guideline advises assessing for secondary causes of osteoporosis, and it names inflammatory conditions treated with glucocorticoids among the conditions that can induce bone loss. She has taken prednisone for 3 years with no calcium, vitamin D or bone protection. The curb was the trigger, not the cause. Polymyalgia inflames muscles and joints rather than bone, and walker use and hamstring weakness do not explain a sacral fracture.
 
 *Key feature:* Common fractures/MSK 2. Let the injury pattern suggest its cause, like posterior shoulder dislocation after seizure or ulnar shaft fracture after assault.
 
-*Source:* Mountjoy M and colleagues. 2023 International Olympic Committee (IOC) consensus statement on Relative Energy Deficiency in Sport (REDs). Br J Sports Med. 2023. https://pubmed.ncbi.nlm.nih.gov/37752011/
+*Source:* Morin SN and colleagues, Osteoporosis Canada. Clinical practice guideline for management of osteoporosis and fracture prevention in Canada: 2023 update. CMAJ. 2023. https://www.cmaj.ca/content/195/39/E1333

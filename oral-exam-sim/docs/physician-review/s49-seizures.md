@@ -9,6 +9,29 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - s49 seizures-30 q2 observation vs second lorazepam. NICE NG217 used for safety and EEG advice (no Canadian equivalent). s53 tox: methadone restart dose after missed doses varies by province.
 - s27 cva-25 mumbles words V3 vs V2. cva-21 transfusion 2 h timed from arrival vs onset. s49 seizures-16 q3 lorazepam 2 mg is 0.03 mg/kg. s33 Wells PE items 39 and 42 reworded to 'more likely than'.
 - s53 tox-27 cyanide menu omits sodium thiosulfate. tox-39 q2 GHB airway explanation left as is. Overlap notes: bupropion (s49), organophosphate (s49), HF acid (s04).
+- seizures-19 q3 keys potassium repletion to 4.5 to 5.0 mmol/L. Drew and colleagues note that the evidence for that target is limited. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-20 q4 prefers levetiracetam over phenobarbital and valproate for status at 10 weeks. Fosphenytoin was left out of the options to keep one best answer. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-22 assumes a province that gives MMRV at 12 months. Some provinces give MMR and varicella separately at that visit. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-23 q3 keys midazolam 5 mg IM because the man weighs 38 kg, using the AES weight bands. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-41 q2 keys flat supine positioning for cerebral arterial air. Older teaching used a left lateral head-down position, which McCarthy and colleagues reserve for venous air in the right heart. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-44 q2 keys magnesium ahead of more calcium. Some clinicians give both. Ahmed and Mohammed state that calcium cannot correct until magnesium is replaced. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-47 q3 keys MRI because non-contrast CT is not among the options. Harden and colleagues support imaging for focal onset seizures. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-36 q3 applies the CMA rule of 6 months seizure free on medication for a private driver with epilepsy. The seizure had a clear trigger, a urinary infection, and the CMA guide has no shorter interval for that. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-43 q1 keys glucagon for a seizure of 3 minutes with a glucose of 1.6 mmol/L and no IV access. The explanation adds IM midazolam if the seizure passes 5 minutes. *(samps-replace-s49-s53-s47-s48.md)*
+- Sheldon 2002 (seizures-16 q1) and van Mook 2005 (seizures-41) were confirmed at the abstract or citation level only. Please check the claims against the full text. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-19 q2 keys 3% saline over a second line antiseizure drug after two benzodiazepine doses, for a seizure driven by a sodium of 118 mmol/L. Moritz and Ayus also advise continuing desmopressin in hospital to avoid overcorrection. So q3 asks about prevention, not about stopping the drug. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-16 q2 maps "which provoking factor" to key feature 6 (investigate a first seizure for its cause). The key feature was kept from the original. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-35 is still close to signed-off s16 seizures-09. Both are a first generalized seizure in a working man with activity advice and a reporting duty. Its keys (ECG, working at heights, Aeronautics Act) differ, so I left it. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-39 q3 (imipenem as the trigger) and seizures-42 (cefepime neurotoxicity) both teach beta-lactam neurotoxicity with reduced kidney function. The drugs and the other questions differ. Please confirm this is acceptable. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-34 q1 and seizures-45 q1 both key "seizure" from a lateral tongue bite, citing the same Brigo 96% specificity. This is expected for key feature 1, but the two explanations are near identical. *(samps-replace-s49-s53-s47-s48.md)*
+- In mock exams every question of a SAMP shows at once. Some updates still reveal an earlier key. seizures-20 q2 and q4 name lorazepam, seizures-44 q2 gives the magnesium, and seizures-46 q3 names calcium. These follow the usual sequential CFPC style, so I left them. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-22 still assumes a province that gives MMRV at 12 months. *(samps-replace-s49-s53-s47-s48.md)*
+- In mock mode, some later text still shows an earlier result that the next question needs. These cues are structural: seizures-17 q3 (intubation and midazolam infusion), seizures-31 q3 (ECG result), seizures-33 q2 (CT result), seizures-36 q3 (free phenytoin level and UTI), seizures-42 q3 (EEG result) and seizures-47 q3 (glucose result). Later treatment options also name the diagnosis, for example seizures-19 q2 (sodium drugs), seizures-44 q2 (magnesium) and seizures-46 q2 (calcium). Wording cannot remove these without rebuilding each SAMP. Showing mock questions one at a time would. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-16 q3 has another seizure in the ED, which makes the q1 answer (seizure) likely. This is left as structural. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-19 q2 and seizures-44 q2 now key empirical treatment before the level returns. Moritz and Ayus explicitly support this for 3% saline. For magnesium it rests on the clinical picture and normal renal function. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-46 q2 now keys IV calcium without a measured calcium. Turner's indication is symptoms "at any level below reference range", so the key assumes the level will be low. Please confirm you accept this. *(samps-replace-s49-s53-s47-s48.md)*
+- van Mook 2005 and Sheldon 2002 full texts remain unread (403). Please confirm the treatment paragraph in van Mook directly. *(samps-replace-s49-s53-s47-s48.md)*
+- seizures-16 and signed-off s16 seizures-08 both open with a man who comes to on his kitchen floor and has an unwitnessed event. Their keys differ (tramadol and status here, shoulder dislocation and driving there). *(samps-replace-s49-s53-s47-s48.md)*
 - seizures-30 q2: whether observation with EEG, rather than one more dose of lorazepam, is the single best answer after 30 minutes of events in a patient taking levetiracetam. It is now better supported, but it still rests on bedside features. A physician should confirm it. *(samps-s49-lensA.md)*
 - seizures-48 and seizures-49 (review-extra): exact copies of seizures-26 and seizures-37. They should be dropped, not added to the batch. *(samps-s49-lensA.md)*
 - NICE NG217 is a UK guideline, used for safety advice (21, 25, 43) and EEG (21, 37). I found no Canadian guideline that covers the same points. Accept NICE, or name a Canadian source if one exists. *(samps-s49-lensA.md)*
@@ -27,80 +50,82 @@ Review reports: docs/reviews/writer-s49.md, samps-s49-lensA.md, samps-s49-lensB.
 
 ## SAMPs
 
-### seizures-16: Older woman confused for two days
+### seizures-16: Burned while cooking alone
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 79-year-old woman is brought to the emergency department from her long-term care home because she has been confused for 2 days. Staff describe periods when she stares and does not answer, alternating with near normal conversation. They have also noticed brief twitching of her left eyelid and the left corner of her mouth. She had a right hemispheric ischemic stroke 8 months ago with mild residual left arm weakness. She takes ASA, atorvastatin and amlodipine. Glucose 6.2 mmol/L, sodium 138 mmol/L, creatinine 88 umol/L. Calcium, CBC and urinalysis are normal. She opens her eyes to voice but does not follow commands. Rhythmic twitching of the left face comes and goes. Her neck is supple.
+A 44-year-old man presents to the emergency department with a burn on his left forearm. He was frying food alone at home, and his next memory is lying on the kitchen floor beside the spilled pan. He felt no lightheadedness, sweating or chest pain beforehand. His partner arrived 10 minutes later and found him confused, and the confusion lasted about 20 minutes. He now has a headache and aching muscles. For 3 weeks he has taken tramadol 50 mg tablets for low back pain, and for the past 3 days he has taken three tablets four times a day. He takes no other medication, drinks 2 beers a week, slept normally last night and has never had a seizure. There is a 3% partial-thickness burn on the forearm and no head injury. The neurological examination is normal. Capillary glucose is 5.8 mmol/L and the ECG is normal.
 
-- Temperature: 36.9°C oral
-- Pulse: 88/minute
+- Temperature: 37.0°C oral
+- Pulse: 94/minute
 - Resp.: 16/minute
-- BP: 142/80 mmHg
-- O2 sat: 96% on room air
-- Weight: 60 kg
+- BP: 132/80 mmHg
+- O2 sat: 98% on room air
+- Weight: 84 kg
 
 #### Q1
-**Which of the following is the most likely explanation for her fluctuating level of awareness?**
+**Which of the following most likely caused him to fall?**
 
-- A. Delirium from a urinary infection
-- B. Hypoactive delirium from her medications
-- C. Nonconvulsive status epilepticus  **(key)**
-- D. Recurrent ischemic stroke
-- E. Sundowning from vascular dementia
+- A. Cardiac arrhythmia
+- B. Generalized seizure  **(key)**
+- C. Hypoglycemic episode
+- D. Orthostatic hypotension
+- E. Vasovagal syncope
 
-*Explanation:* Fluctuating awareness with staring spells and intermittent rhythmic twitching of the face in a patient with a prior cortical stroke points to nonconvulsive status epilepticus. The stroke is a structural focus for late onset seizures. Her urinalysis is normal, which argues against urinary infection. ASA, atorvastatin and amlodipine are not sedating or anticholinergic. A new stroke gives a fixed deficit rather than rhythmic twitching that comes and goes, and no dementia or evening pattern is described.
+*Explanation:* He has no memory of falling, was confused for about 20 minutes afterward and now has a headache and aching muscles, which point to an unwitnessed generalized seizure. The burn is an unexplained injury, which is itself a reason to consider seizure. Sheldon and colleagues found that confusion after an event favours seizure, while lightheadedness or sweating beforehand favours syncope, and he had neither warning. Vasovagal and orthostatic syncope recover quickly without a long period of confusion. His normal ECG makes an arrhythmia less likely, and his glucose of 5.8 mmol/L excludes hypoglycemia.
 
 *Key feature:* Seizures 1. Consider seizure in unwitnessed events with confusion, incontinence, unexplained falls or injury, or tics in children.
 
-*Source:* Brophy GM, et al. Guidelines for the evaluation and management of status epilepticus. Neurocritical Care Society. Neurocrit Care. 2012.
+*Source:* Sheldon R, Rose S, Ritchie D, et al. Historical criteria that distinguish syncope from seizures. J Am Coll Cardiol. 2002. https://doi.org/10.1016/S0735-1097(02)01940-X
 
 #### Q2
-**Which of the following investigations is most important to confirm the diagnosis in this patient?**
+**Which of the following factors most likely provoked this event?**
 
-- A. CT angiography of head and neck
-- B. EEG as soon as available  **(key)**
-- C. Lumbar puncture with cell count
-- D. MRI brain with diffusion imaging
-- E. Serum ammonia and liver enzymes
+- A. Alcohol withdrawal
+- B. Head injury from the fall
+- C. Low blood glucose
+- D. Sleep deprivation
+- E. Tramadol above 400 mg a day  **(key)**
 
-*Explanation:* Nonconvulsive status can only be confirmed on EEG, and the Neurocritical Care Society advises EEG within an hour when ongoing seizures are suspected. Clinical signs such as her facial twitching are subtle and unreliable for judging response to treatment. CT angiography looks for a vessel occlusion, which does not explain rhythmic twitching that comes and goes. She has no fever or meningism to justify lumbar puncture. MRI may show peri-ictal change but cannot confirm ongoing seizures, and nothing suggests liver disease.
+*Explanation:* Three 50 mg tablets four times a day is 12 x 50 = 600 mg a day, above the 400 mg daily maximum. The Canadian tramadol monograph reports that seizure risk rises with doses above the recommended range, although seizures also occur within it. He drinks 2 beers a week, so alcohol withdrawal is unlikely. He has no head injury, and he fell after losing awareness, so the fall did not cause the seizure. His glucose is 5.8 mmol/L, and he slept normally last night.
 
 *Key feature:* Seizures 6. Investigate a first seizure promptly for its cause, using CT, LP, EEG, or metabolic and toxicology testing as needed.
 
-*Source:* Brophy GM, et al. Guidelines for the evaluation and management of status epilepticus. Neurocritical Care Society. Neurocrit Care. 2012.
+*Source:* Apotex Inc. Product monograph. APO-TRAMADOL (tramadol hydrochloride tablets USP, 50 mg). Date of revision 2 October 2019. https://pdf.hres.ca/dpd_pm/00053394.PDF
 
 #### Q3
-*Update:* EEG shows continuous right hemispheric rhythmic discharges. After lorazepam 2 mg IV the discharges pause, then return within 10 minutes. She remains drowsy.
+*Update:* While his burn is dressed, he has a generalized tonic-clonic seizure that has now lasted 5 minutes. He is on his side with oxygen, breathing adequately, and an IV is in place.
 
-**Which of the following is the most appropriate next treatment for this 60 kg patient?**
+**Which of the following is the most appropriate medication to give him now?**
 
-- A. Fosphenytoin 300 mg PE IV
-- B. Levetiracetam 3 600 mg IV  **(key)**
-- C. Levetiracetam 500 mg IV
-- D. Midazolam infusion after intubation
-- E. Propofol infusion after intubation
+- A. levetiracetam 4 500 mg IV
+- B. lorazepam 4 mg IV  **(key)**
+- C. naloxone 0.4 mg IV
+- D. phenytoin 1 680 mg IV
+- E. propofol 170 mg IV
 
-*Explanation:* Seizures that return after a benzodiazepine need a fully dosed second line agent. Levetiracetam 60 mg/kg, maximum 4 500 mg, is 60 x 60 = 3 600 mg, the dose used in ESETT. Her creatinine of 88 umol/L does not change a loading dose. Levetiracetam 500 mg is a maintenance dose and will not stop status. Fosphenytoin would be 20 mg PE/kg, or 1 200 mg PE, so 300 mg PE is an underdose. Anesthetic infusions with intubation are reserved for seizures that persist after a second line agent.
+*Explanation:* A generalized seizure lasting 5 minutes needs a benzodiazepine now, and lorazepam 0.1 mg/kg is capped at 4 mg for his 84 kg. The tramadol monograph states that seizures in tramadol overdose may be controlled with a benzodiazepine, while naloxone may increase the risk of seizures, and his breathing is adequate. Levetiracetam and phenytoin are second-line drugs, given after a benzodiazepine. A propofol bolus is for refractory status with the airway secured.
 
 *Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
 
-*Source:* Kapur J, et al. Randomized trial of three anticonvulsant medications for status epilepticus. N Engl J Med. 2019.
+*Source:* Apotex Inc. Product monograph. APO-TRAMADOL (tramadol hydrochloride tablets USP, 50 mg). Date of revision 2 October 2019. https://pdf.hres.ca/dpd_pm/00053394.PDF
 
 #### Q4
-**Which of the following is the time after which a focal seizure with impaired awareness is considered status epilepticus?**
+*Update:* The seizure stops 2 minutes after treatment. Fifteen minutes later, before he has regained awareness, another generalized seizure begins.
 
-- A. 5 minutes
-- B. 10 minutes  **(key)**
-- C. 15 minutes
-- D. 30 minutes
-- E. 60 minutes
+**Which of the following terms best describes his condition at this point?**
 
-*Explanation:* The ILAE defines time point t1, when treatment should start, as 10 minutes for focal status epilepticus with impaired awareness. Five minutes is t1 for generalized convulsive status. Thirty minutes is t2 for convulsive status, when long term injury becomes likely. For focal status with impaired awareness t2 is over 60 minutes, which is when damage is expected rather than when treatment begins. Fifteen minutes is not an ILAE time point for either type.
+- A. Clustered provoked seizures
+- B. Convulsive status epilepticus  **(key)**
+- C. Nonepileptic events
+- D. Postictal agitation
+- E. Refractory status epilepticus
+
+*Explanation:* Two seizures without a return of awareness between them is convulsive status epilepticus, whatever the length of each seizure. The Neurocritical Care Society defines status as 5 minutes or more of continuous seizure activity, or recurrent seizures without recovery between them. Refractory status continues after a benzodiazepine and a second-line drug, and he has had only a benzodiazepine. Clustered seizures with recovery between them would not meet the definition. Generalized jerking with loss of awareness is not a nonepileptic event, and postictal agitation does not cause convulsions.
 
 *Key feature:* Seizures 3. Diagnose status epilepticus when seizures recur or the patient does not recover between them, and treat promptly.
 
-*Source:* Trinka E, Cock H, Hesdorffer D, et al. A definition and classification of status epilepticus. Report of the ILAE Task Force on Classification of Status Epilepticus. Epilepsia. 2015. https://pubmed.ncbi.nlm.nih.gov/26336950/
+*Source:* Brophy GM, et al. Guidelines for the evaluation and management of status epilepticus. Neurocritical Care Society. Neurocrit Care. 2012. https://doi.org/10.1007/s12028-012-9695-z
 
 ### seizures-17: Convulsions that continue after treatment
 
@@ -243,7 +268,7 @@ A 16-year-old girl is brought to the emergency department by her mother 3 hours 
 *Source:* Starr P, Klein-Schwartz W, Spiller H, et al. Incidence and onset of delayed seizures after overdoses of extended-release bupropion. Am J Emerg Med. 2009. https://pubmed.ncbi.nlm.nih.gov/19857406/
 
 #### Q4
-**Which of the following would be most appropriate if her seizures continued after two doses of lorazepam?**
+**Which of the following would be most appropriate if her seizures continued after two doses of first-line treatment?**
 
 Select 2.
 
@@ -260,144 +285,144 @@ Select 2.
 
 *Source:* Stork CM. Serotonin reuptake inhibitors and atypical antidepressants. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Serotonin Reuptake Inhibitors and Atypical Antidepressants. https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210274776
 
-### seizures-19: Man found drowsy beside empty packages
+### seizures-19: Headache and vomiting after a birthday party
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 45-year-old man is brought to the emergency department by ambulance after his wife found him drowsy with empty blister packs of amitriptyline 50 mg beside him. She estimates 60 tablets are missing, taken about 2 hours ago. He takes amitriptyline for chronic back pain. In the ambulance he had a 1 minute generalized seizure. He now responds only to pain. Pupils are 7 mm. His skin is dry and flushed. Bowel sounds are absent. Capillary glucose is 7.8 mmol/L.
+An 8-year-old boy is brought to the emergency department by ambulance with a generalized seizure that began at home 15 minutes ago. Paramedics gave midazolam 5 mg IN 8 minutes ago, and he is still jerking all four limbs. Ten days ago his family physician started desmopressin 120 mcg orally disintegrating tablets each evening for bedwetting before summer camp. Yesterday he had a birthday party on a hot day and drank several bottles of water and juice through the evening and at bedtime. This morning he woke with a headache and vomited twice. He has no fever, head injury or history of seizures. An IV is in place. Capillary glucose is 5.6 mmol/L.
 
-- Temperature: 37.9°C oral
-- Pulse: 136/minute
-- Resp.: 14/minute
-- BP: 92/54 mmHg
-- O2 sat: 94% on 4 L/minute by nasal prongs
-- Weight: 85 kg
+- Temperature: 37.0°C tympanic
+- Pulse: 124/minute
+- Resp.: 24/minute
+- BP: 118/72 mmHg
+- O2 sat: 95% on 10 L/minute by non-rebreather mask
+- Weight: 26 kg
 
 #### Q1
-*Update:* His ECG shows sinus tachycardia, a QRS duration of 148 ms and a terminal R wave of 4 mm in lead aVR.
+**Which of the following is the most likely cause of his seizure?**
 
-**Which of the following is the most appropriate immediate treatment for this patient?**
+- A. Exertional heat stroke
+- B. Hypoglycemic seizure
+- C. Hyponatremic seizure  **(key)**
+- D. Unprovoked epileptic seizure
+- E. Viral encephalitis
 
-- A. Amiodarone 150 mg IV
-- B. Lidocaine 100 mg IV
-- C. Magnesium sulfate 2 g IV
-- D. Physostigmine 2 mg IV
-- E. Sodium bicarbonate 150 mmol IV  **(key)**
-
-*Explanation:* A QRS of 148 ms with a large terminal R in aVR shows sodium channel blockade from the tricyclic. The treatment is hypertonic sodium bicarbonate, 1 to 2 mmol/kg, so 85 to 170 mmol for 85 kg. The benefit and safety of amiodarone here are uncertain. Lidocaine is kept for dysrhythmias that persist after bicarbonate, and it lowers the seizure threshold, which matters after his seizure. Magnesium is for torsades, which is not present. Physostigmine can cause bradycardia and asystole in tricyclic poisoning.
+*Explanation:* Desmopressin stops the kidneys from clearing free water, so the large volume he drank in the evening and at bedtime was retained and diluted his sodium. A headache and vomiting before the seizure fit brain swelling from acute hyponatremia. The Canadian product monograph warns of a steep fall in plasma osmolality with seizures in young children when fluid intake is not limited. He has no fever, which argues against heat stroke and encephalitis. His glucose of 5.6 mmol/L excludes hypoglycemia. A new epileptic seizure would not explain the timing after heavy drinking on desmopressin.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Purssell R. Emergency Care BC. Clinical summary: tricyclic antidepressant overdose. Last reviewed 2018. https://emergencycarebc.ca/clinical_resource/clinical-summary/tricyclic-antidepressant-overdose-2/
+*Source:* Ferring Inc. Product monograph. DDAVP Melt (desmopressin acetate orally disintegrating tablets). Date of revision 2 May 2017. https://www.ferring.ca/media/1032/ddavp-melt-pm-control-no-187742-en_2may2017.pdf
 
 #### Q2
-*Update:* Ten minutes after the bicarbonate he has another generalized seizure. It has lasted 3 minutes so far.
+*Update:* Blood tests have been sent. Lorazepam 2.6 mg IV was given 5 minutes ago, and he is still seizing.
 
-**Which of the following is the most appropriate anticonvulsant for this patient now?**
+**Which of the following is the most appropriate treatment for him now?**
 
-- A. Flumazenil 0.5 mg IV
-- B. Fosphenytoin 1 500 mg PE IV
-- C. Haloperidol 5 mg IV
-- D. Lorazepam 4 mg IV  **(key)**
-- E. Physostigmine 2 mg IV
+- A. Fluid restriction alone
+- B. furosemide 26 mg IV
+- C. hypertonic saline 3% 52 mL IV  **(key)**
+- D. isotonic saline 520 mL IV
+- E. levetiracetam 1 560 mg IV
 
-*Explanation:* Benzodiazepines are first line for tricyclic seizures. Stopping the seizure quickly matters because the acidosis it causes worsens sodium channel blockade. Phenytoin also blocks sodium channels and is avoided in tricyclic poisoning. Flumazenil can precipitate seizures. Haloperidol lowers the seizure threshold and prolongs the QT. Physostigmine is dangerous with a wide QRS.
-
-*Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
-
-*Source:* Purssell R. Emergency Care BC. Clinical summary: tricyclic antidepressant overdose. Last reviewed 2018. https://emergencycarebc.ca/clinical_resource/clinical-summary/tricyclic-antidepressant-overdose-2/
-
-#### Q3
-**Which of the following is the usual target when giving repeated sodium bicarbonate for this toxicity?**
-
-- A. Bicarbonate above 35 mmol/L
-- B. Serum pH 7.50 to 7.55  **(key)**
-- C. Serum pH 7.60 to 7.65
-- D. Serum sodium above 150 mmol/L
-- E. Urine pH above 8.0
-
-*Explanation:* Bicarbonate boluses are titrated to narrow the QRS and correct hypotension. Emergency Care BC repeats boluses until the QRS narrows or the serum pH reaches 7.55. AHA experts advise that serum pH should not exceed 7.50 to 7.55 and serum sodium should not exceed 150 to 155 mmol/L, to avoid harm from the treatment. A pH of 7.60 or more is beyond this limit, and hypertonic bicarbonate can also cause hypokalemia. High sodium or bicarbonate values are not the goal. Urine alkalinization is the target in salicylate poisoning, not tricyclic toxicity.
+*Explanation:* His story makes acute hyponatremia the likely cause, and he is still seizing after two benzodiazepine doses, so the priority is to raise his sodium quickly. Moritz and Ayus advise that treatment of suspected symptomatic hyponatremic encephalopathy should begin with a 3% saline bolus. They give 2 mL/kg over 10 minutes, to a maximum of 100 mL, repeated once or twice until symptoms improve, which is 2 x 26 = 52 mL. Levetiracetam 60 mg/kg is the usual next drug after two benzodiazepine doses, but it does not correct the sodium that is causing the seizure. Isotonic saline raises the sodium too slowly to stop a seizure. Furosemide and fluid restriction act far too slowly for a child who is seizing.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023. https://doi.org/10.1161/CIR.0000000000001161
+*Source:* Moritz ML, Ayus JC. New aspects in the pathogenesis, prevention, and treatment of hyponatremic encephalopathy in children. Pediatr Nephrol. 2010. https://pmc.ncbi.nlm.nih.gov/articles/PMC2874061/
 
-### seizures-20: Seizure a week after delivery
+#### Q3
+*Update:* After treatment the seizure stops, and he wakes over the next hour. His parents ask how this could have been prevented.
+
+**Which of the following instructions, if followed, would most likely have prevented this seizure?**
+
+- A. Add a bedwetting alarm
+- B. Give the dose in the morning
+- C. Offer extra fluids on hot days
+- D. Restrict drinks from 1 hour before bed  **(key)**
+- E. Wake him to void at midnight
+
+*Explanation:* The monograph tells families to limit drinks after supper, especially from 1 hour before bedtime until the next morning, at least 8 hours, to prevent water intoxication and convulsions. He drank heavily through the evening and at bedtime, and the water he could not excrete lowered his sodium. Extra fluids on a hot day add to the water he cannot clear. A morning dose would not help night wetting and would still hold back water from daytime drinking. An alarm or waking him to void treats the wetting but does not change how much water the drug retains.
+
+*Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
+
+*Source:* Ferring Inc. Product monograph. DDAVP Melt (desmopressin acetate orally disintegrating tablets). Date of revision 2 May 2017. https://www.ferring.ca/media/1032/ddavp-melt-pm-control-no-187742-en_2may2017.pdf
+
+### seizures-20: Woman who collapsed at work
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 31-year-old woman presents to the emergency department 6 days after an uncomplicated vaginal delivery with a headache that has worsened over 3 days. In the waiting room she has a generalized tonic clonic seizure lasting 2 minutes. Her pregnancy was normal and her blood pressure was normal at delivery. She is breastfeeding and takes no medications. She has no history of seizures. Twenty minutes after the seizure she is drowsy but oriented. She has mild weakness of the left leg. Urine dipstick shows 1+ protein. Capillary glucose is 5.4 mmol/L.
+A 29-year-old woman, G1P0 at 10 weeks of gestation by ultrasound, is brought to the emergency department by ambulance after a generalized tonic-clonic seizure at work. She has no history of seizures. Three weeks ago she started bupropion extended-release 150 mg tablets for smoking cessation, and she has been taking three tablets a day because she felt it helped more. She has no headache or vaginal bleeding. As she is moved to a stretcher, she has a second generalized seizure. It has now lasted 6 minutes. An IV is in place. Capillary glucose is 5.6 mmol/L.
 
-- Temperature: 37.2°C oral
-- Pulse: 104/minute
-- Resp.: 18/minute
-- BP: 162/104 mmHg
-- O2 sat: 97% on room air
-- Weight: 74 kg
+- Temperature: 37.0°C oral
+- Pulse: 118/minute
+- Resp.: 22/minute
+- BP: 132/78 mmHg
+- O2 sat: 94% on room air
+- Weight: 62 kg
 
 #### Q1
 **Which of the following is the most appropriate medication to give her now?**
 
-- A. Dexamethasone 10 mg IV
-- B. Levetiracetam 4 500 mg IV
-- C. Lorazepam 4 mg IV
-- D. Magnesium sulfate 4 g IV  **(key)**
-- E. Phenytoin 1 500 mg IV
+- A. levetiracetam 3 720 mg IV
+- B. lorazepam 4 mg IV  **(key)**
+- C. magnesium sulfate 4 g IV
+- D. phenobarbital 1 240 mg IV
+- E. propofol 100 mg IV bolus
 
-*Explanation:* A seizure in the week after delivery with a BP of 162/104 mmHg and proteinuria must be treated as postpartum eclampsia. Magnesium sulfate 4 g IV then 1 g per hour prevents recurrence better than phenytoin or benzodiazepines. She is no longer seizing, so lorazepam is not needed now. Levetiracetam is not the treatment for eclampsia. Dexamethasone has no role in eclampsia or in the causes being considered.
+*Explanation:* A generalized seizure lasting 6 minutes is status epilepticus, and a benzodiazepine is the first drug, so lorazepam 4 mg IV comes first. Pregnancy does not change that choice. SOGC defines pre-eclampsia, and so eclampsia, as a condition after 20 weeks, and she is at 10 weeks with a normal BP, so magnesium sulfate has no role. Levetiracetam and phenobarbital are second-line drugs after a benzodiazepine fails. A propofol bolus without airway control is not initial therapy.
 
 *Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
 
-*Source:* Magee LA, et al. Guideline No. 426. Hypertensive disorders of pregnancy. Diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022.
+*Source:* Magee LA, et al. Guideline No. 426. Hypertensive disorders of pregnancy. Diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022. https://pubmed.ncbi.nlm.nih.gov/35577426/
 
 #### Q2
-*Update:* Noncontrast CT head shows a hyperdense superior sagittal sinus and a small right parasagittal hemorrhage.
+*Update:* The seizure stops 3 minutes after treatment. An hour later she is awake and oriented with a normal neurological examination. Sodium, calcium and a CBC are normal.
 
-**Which of the following is the most appropriate next investigation for this patient?**
+**Which of the following is the most appropriate imaging decision for her?**
 
-- A. Carotid duplex ultrasound
-- B. Catheter cerebral angiography
-- C. CT venography of the head  **(key)**
-- D. Lumbar puncture with opening pressure
-- E. Urgent EEG in the department
+- A. CT head in the ED today  **(key)**
+- B. Defer imaging until after delivery
+- C. MRI with gadolinium this week
+- D. No imaging because of pregnancy
+- E. Skull radiographs today
 
-*Explanation:* A dense sagittal sinus with a parasagittal hemorrhage in the puerperium suggests cerebral venous thrombosis, which also explains her left leg weakness. Canadian guidance calls for contrast enhanced CT venography or MR venography, because noncontrast CT alone cannot rule it in or out. Carotid ultrasound assesses arteries, not venous sinuses. Catheter angiography is invasive and not first line. Lumbar puncture does not make the diagnosis. EEG would not show the cause.
+*Explanation:* A first seizure that progressed to status epilepticus needs brain imaging before a cause is assumed, even with bupropion as a likely trigger. ACOG advises that CT should not be withheld from a pregnant patient when it is needed, and the fetal dose from a head CT is very low. Deferring imaging until delivery or declining it because of pregnancy would leave a structural cause undiagnosed for months. ACOG advises limiting gadolinium in pregnancy to cases where it clearly changes care. Skull radiographs do not show the brain.
 
 *Key feature:* Seizures 6. Investigate a first seizure promptly for its cause, using CT, LP, EEG, or metabolic and toxicology testing as needed.
 
-*Source:* Field TS, Lindsay MP, Wein T, et al. Canadian Stroke Best Practice Recommendations, 7th edition. Cerebral venous thrombosis, 2024. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/cerebral-venous-thrombosis
+*Source:* American College of Obstetricians and Gynecologists. Committee Opinion No. 723. Guidelines for diagnostic imaging during pregnancy and lactation. Obstet Gynecol. 2017. https://pubmed.ncbi.nlm.nih.gov/28937575/
 
 #### Q3
-*Update:* CT venography confirms thrombosis of the superior sagittal sinus. Platelets are 240 x 10^9/L. Creatinine is normal.
+**Which of the following is the most appropriate plan for her bupropion?**
 
-**Which of the following is the most appropriate initial treatment of the thrombosis?**
+- A. Continue at 150 mg twice daily
+- B. Continue at the current dose
+- C. Reduce to 150 mg once daily
+- D. Stop it and do not restart  **(key)**
+- E. Switch to bupropion XL 300 mg
 
-- A. Alteplase 0.9 mg/kg IV
-- B. Apixaban 10 mg PO twice daily
-- C. ASA 160 mg PO daily
-- D. Enoxaparin 1 mg/kg SC twice daily  **(key)**
-- E. No anticoagulation because of bleeding
-
-*Explanation:* Therapeutic low molecular weight heparin should start as soon as cerebral venous thrombosis is diagnosed, and it is preferred over unfractionated heparin for most patients. Intracranial blood from the thrombosis is not a contraindication to anticoagulation. Systemic thrombolysis is not recommended. Canadian guidance finds insufficient evidence to start a DOAC without a parenteral lead-in, and DOACs are contraindicated while she is breastfeeding. ASA does not treat venous thrombosis.
+*Explanation:* Bupropion carries a dose-dependent seizure risk, and she has taken 450 mg a day, above the 300 mg daily maximum for smoking cessation. The Canadian product monograph states that treatment should not be restarted after a seizure on bupropion. Continuing at any dose, reducing the dose or switching to another bupropion product all ignore that warning. Her plan to stop smoking can continue with counselling or nicotine replacement.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Field TS, Lindsay MP, Wein T, et al. Canadian Stroke Best Practice Recommendations, 7th edition. Cerebral venous thrombosis, 2024. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/cerebral-venous-thrombosis
+*Source:* Bausch Health, Canada Inc. Product monograph. Zyban (bupropion hydrochloride extended-release tablets). Date of revision 1 June 2021. https://bauschhealth.ca/wp-content/uploads/2021/11/Zyban-PM-E-2021-06-01.pdf
 
 #### Q4
-**Which of the following best describes antiseizure treatment for her after this acute symptomatic seizure?**
+*Update:* An hour later, while awaiting admission, she has two more generalized seizures without regaining awareness between them. She has now had two doses of first-line treatment.
 
-- A. Antiseizure drug for life from today
-- B. Antiseizure drug to prevent early recurrence  **(key)**
-- C. Home rescue diazepam as sole therapy
-- D. Observation until a second seizure occurs
-- E. No drug because the seizure was provoked
+**Which of the following is the most appropriate next medication for her?**
 
-*Explanation:* Canadian guidance recommends antiseizure medication after an acute symptomatic seizure from cerebral venous thrombosis, to prevent further early seizures. Long term treatment beyond 3 months is often not needed, so lifelong therapy is not decided today. Waiting for a second seizure, or relying on rescue diazepam alone, leaves her at risk during the period of highest recurrence. A provoked seizure from an ongoing structural cause still warrants treatment.
+- A. levetiracetam 3 720 mg IV  **(key)**
+- B. magnesium sulfate 4 g IV
+- C. midazolam infusion now
+- D. phenobarbital 1 240 mg IV
+- E. valproate 2 480 mg IV
+
+*Explanation:* Seizures recurring without recovery after two doses of lorazepam need a second-line drug. Pack and colleagues state that valproate must be avoided in people who can become pregnant because of malformations and harm to neurodevelopment, and they favour levetiracetam. Levetiracetam 60 mg/kg is 60 x 62 = 3 720 mg, below the 4 500 mg maximum. Phenobarbital causes more sedation and respiratory depression and has its own fetal risks. A midazolam infusion is for refractory status after a second-line drug fails, with airway control. Magnesium does not treat seizures at 10 weeks.
 
 *Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
 
-*Source:* Field TS, Lindsay MP, Wein T, et al. Canadian Stroke Best Practice Recommendations, 7th edition. Cerebral venous thrombosis, 2024. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/cerebral-venous-thrombosis
+*Source:* Pack AM, Oskoui M, Williams Roberson S, et al. Teratogenesis, perinatal, and neurodevelopmental outcomes after in utero exposure to antiseizure medication. Practice guideline from the AAN, AES, and SMFM. Neurology. 2024. https://doi.org/10.1212/WNL.0000000000209279
 
 ### seizures-21: Girl who keeps losing track at school
 
@@ -458,202 +483,198 @@ A 7-year-old girl is brought to the emergency department by her father after she
 
 *Source:* National Institute for Health and Care Excellence. Epilepsies in children, young people and adults. NICE guideline NG217. 2022. https://www.nice.org.uk/guidance/ng217
 
-### seizures-22: Toddler with a cold and a seizure at home
+### seizures-22: Toddler brought in after shaking at home
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department. A 19-month-old boy is brought in by his parents after a seizure at home 40 minutes ago. His mother saw him stiffen and then jerk all four limbs for about 3 minutes. He was sleepy for 15 minutes afterward. He has had cough and runny nose for 2 days and felt hot this morning. He is fully immunized, developing normally and has no past history. He has not had antibiotics. He is now alert, playful and drinking. He has clear rhinorrhea and mild pharyngeal redness. His neck is supple. There is no rash. The neurological examination is normal.
+A 13-month-old girl is brought to the emergency department by ambulance after a seizure at home. Nine days ago she received her 12-month vaccines, including the combined measles, mumps, rubella and varicella (MMRV) vaccine. Since yesterday she has had a fever and a faint rash on her trunk. Her father saw her stiffen and then shake all four limbs for about 90 seconds. She was drowsy for 15 minutes and is now playing and feeding. She has no cough, runny nose or red eyes. She was born at term, is developing normally and has never had a seizure. She is alert and interactive, with a faint pink rash on her trunk. The fontanelle is flat, the neck is supple, the ears are normal and the neurological examination is normal.
+
+- Temperature: 39.0°C rectal
+- Pulse: 150/minute
+- Resp.: 34/minute
+- O2 sat: 99% on room air
+- Weight: 10 kg
+
+#### Q1
+**Which of the following best explains the timing of her fever and seizure?**
+
+- A. Acute otitis media
+- B. Bacterial meningitis
+- C. MMRV vaccine fever  **(key)**
+- D. Primary measles infection
+- E. Viral encephalitis
+
+*Explanation:* Fever with a faint rash 9 days after a first dose of MMRV, in a well child with a normal examination, fits the vaccine. The Canadian Immunization Guide notes a higher risk of fever and febrile seizures 7 to 10 days after MMRV in children aged 12 to 23 months, about 1 extra seizure for every 2 300 to 2 800 doses. Her normal ears exclude otitis media. A flat fontanelle, a supple neck, full recovery and normal play argue against meningitis and encephalitis. She has no cough, runny nose or red eyes, and a mild rash in this window after the vaccine is expected rather than a sign of measles.
+
+*Key feature:* Seizures 8. Diagnose a simple febrile seizure with full recovery on history and exam alone without extra tests.
+
+*Source:* Public Health Agency of Canada. Canadian Immunization Guide. Part 4. Measles vaccines. Updated 2025. https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-12-measles-vaccine.html
+
+#### Q2
+**Which of the following is the most appropriate advice about her future vaccines?**
+
+- A. Avoid all live vaccines
+- B. Continue the routine schedule  **(key)**
+- C. Defer vaccines for 1 year
+- D. EEG before the next dose
+- E. Skin testing before each dose
+
+*Explanation:* The Canadian Immunization Guide states that a febrile seizure after a previous immunization is neither a contraindication nor a precaution for further vaccines, so she continues the routine schedule. Avoiding live vaccines or deferring for a year leaves her unprotected against measles and varicella. An EEG adds nothing after a simple febrile seizure and is not a condition for vaccination. Skin testing is for suspected vaccine allergy, which she does not have.
+
+*Key feature:* Seizures 8. Diagnose a simple febrile seizure with full recovery on history and exam alone without extra tests.
+
+*Source:* Public Health Agency of Canada. Canadian Immunization Guide. Part 2. Contraindications, precautions and concerns. Updated 2026. https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-2-vaccine-safety/page-3-contraindications-precautions-concerns.html
+
+#### Q3
+**Which of the following is closest to her risk of another febrile seizure during childhood?**
+
+- A. 5%
+- B. 15%
+- C. 30%  **(key)**
+- D. 50%
+- E. 75%
+
+*Explanation:* The AAP guideline gives a recurrence risk of about 30% when the first febrile seizure occurs after 12 months of age, as hers did at 13 months. The risk is about 50% when the first seizure occurs before 12 months, so 50% overstates it here. Of children who have a second febrile seizure, about half have another. Figures of 5% or 15% understate how common recurrence is, and 75% is higher than any group in the guideline.
+
+*Key feature:* Seizures 8. Diagnose a simple febrile seizure with full recovery on history and exam alone without extra tests.
+
+*Source:* American Academy of Pediatrics, Steering Committee on Quality Improvement and Management, Subcommittee on Febrile Seizures. Febrile seizures. Clinical practice guideline for the long-term management of the child with simple febrile seizures. Pediatrics. 2008. https://doi.org/10.1542/peds.2008-0939
+
+#### Q4
+**Which of the following statements for her parents are accurate about this simple febrile seizure?**
+
+Select 2.
+
+- A. A future febrile seizure may harm her learning
+- B. Daily antiseizure medicine is not advised  **(key)**
+- C. Her epilepsy risk is close to average  **(key)**
+- D. Regular ibuprofen will prevent another seizure
+- E. She is likely to develop epilepsy
+- F. She needs an MRI before starting school
+
+*Explanation:* The AAP guideline recommends neither continuous nor intermittent antiseizure medicine after simple febrile seizures, because the harms outweigh the benefit of preventing a benign recurrence. Children with simple febrile seizures have about the same 1% risk of epilepsy by age 7 years as other children, so epilepsy is not likely. No decline in learning has been shown after recurrent simple febrile seizures. Antipyretics do not prevent recurrence. Nothing in her history or examination calls for an MRI.
+
+*Key feature:* Seizures 8. Diagnose a simple febrile seizure with full recovery on history and exam alone without extra tests.
+
+*Source:* American Academy of Pediatrics, Steering Committee on Quality Improvement and Management, Subcommittee on Febrile Seizures. Febrile seizures. Clinical practice guideline for the long-term management of the child with simple febrile seizures. Pediatrics. 2008. https://doi.org/10.1542/peds.2008-0939
+
+### seizures-23: Seizure in a man from a group home
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+You are working in a rural hospital emergency department. A 34-year-old man with cerebral palsy, intellectual disability and epilepsy is brought in by ambulance from his group home. Staff saw a generalized tonic-clonic seizure begin 7 minutes ago, and it has not stopped. His jaw is clenched, so they could not give buccal midazolam. He takes levetiracetam and valproate. Paramedics tried twice and your nurse once to place an IV, and all attempts failed because of contractures and small veins. He is on his side with oxygen by non-rebreather mask. Capillary glucose is 6.4 mmol/L.
+
+- Temperature: 37.6°C oral
+- Pulse: 132/minute
+- Resp.: 28/minute
+- BP: 150/90 mmHg
+- O2 sat: 93% on 15 L/minute by non-rebreather mask
+- Weight: 38 kg
+
+#### Q1
+**Which of the following seizure durations marks the point at which drug treatment of a generalized convulsive seizure should begin?**
+
+- A. 1 minute
+- B. 2 minutes
+- C. 5 minutes  **(key)**
+- D. 10 minutes
+- E. 30 minutes
+
+*Explanation:* The ILAE sets time point t1, when a generalized convulsive seizure becomes status epilepticus and treatment should start, at 5 minutes. He has been seizing for 7 minutes, so treatment is already due. Thirty minutes is t2, when long-term injury becomes likely, and waiting until then allows harm. Ten minutes is t1 for focal status with impaired awareness, not for convulsive seizures. One or 2 minutes falls within the length of most seizures that stop on their own.
+
+*Key feature:* Seizures 3. Diagnose status epilepticus when seizures recur or the patient does not recover between them, and treat promptly.
+
+*Source:* Trinka E, Cock H, Hesdorffer D, et al. A definition and classification of status epilepticus. Report of the ILAE Task Force on Classification of Status Epilepticus. Epilepsia. 2015. https://pubmed.ncbi.nlm.nih.gov/26336950/
+
+#### Q2
+**Which of the following is the most appropriate first medication for him while IV access is unavailable?**
+
+- A. Intramuscular lorazepam
+- B. Intramuscular midazolam  **(key)**
+- C. Intramuscular phenytoin
+- D. Oral levetiracetam load
+- E. Rectal diazepam
+
+*Explanation:* The AES guideline names intramuscular midazolam, IV lorazepam and IV diazepam as the first-line options, and with no IV access intramuscular midazolam is the choice. In the trial behind that advice it worked at least as well as IV lorazepam. Rectal diazepam is a reasonable alternative only when none of those three options is available. Intramuscular lorazepam is not among the recommended first-line options. Phenytoin is not given intramuscularly, and a second-line drug does not come before a benzodiazepine. Nothing is given by mouth to a patient who is seizing.
+
+*Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
+
+*Source:* Glauser T, Shinnar S, Gloss D, et al. Evidence-based guideline. Treatment of convulsive status epilepticus in children and adults. Report of the Guideline Committee of the American Epilepsy Society. Epilepsy Curr. 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4749120/
+
+#### Q3
+**Which of the following doses of intramuscular midazolam is most appropriate for this patient?**
+
+- A. 1 mg
+- B. 2.5 mg
+- C. 5 mg  **(key)**
+- D. 10 mg
+- E. 20 mg
+
+*Explanation:* The AES guideline uses 10 mg IM for patients over 40 kg and 5 mg for patients weighing 13 to 40 kg. He weighs 38 kg, so the dose is 5 mg. A 10 mg dose is meant for heavier patients and adds respiratory depression in a small man whose saturation is already 93%. A 20 mg dose is double the largest first dose studied. Doses of 1 or 2.5 mg are below the studied dose for his weight and risk leaving the seizure untreated.
+
+*Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
+
+*Source:* Glauser T, Shinnar S, Gloss D, et al. Evidence-based guideline. Treatment of convulsive status epilepticus in children and adults. Report of the Guideline Committee of the American Epilepsy Society. Epilepsy Curr. 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4749120/
+
+### seizures-24: Feverish toddler with a shunt
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 2-year-old boy is brought to the emergency department after a seizure at home. He has had a fever since yesterday. His mother saw him stiffen and shake all four limbs for 3 minutes, and he was sleepy for 30 minutes afterward. He was born at 27 weeks and has a ventriculoperitoneal shunt for hydrocephalus after an intraventricular hemorrhage. The shunt was revised 5 weeks ago. He has had no cough, vomiting or diarrhea. He is now awake but irritable and wants to be held. The skin over the shunt tubing behind his right ear is red and tender. The neck is supple and there is no rash.
 
 - Temperature: 39.1°C rectal
-- Pulse: 138/minute
+- Pulse: 156/minute
 - Resp.: 30/minute
+- BP: 94/58 mmHg
 - O2 sat: 98% on room air
 - Weight: 12 kg
 
 #### Q1
-**Which of the following investigations is most appropriate for this child?**
-
-- A. CBC and blood culture
-- B. EEG within 48 hours
-- C. Electrolytes, calcium and glucose
-- D. Lumbar puncture and CSF culture
-- E. No investigations  **(key)**
-
-*Explanation:* A generalized seizure of 3 minutes with full recovery in a 19-month-old with fever is a simple febrile seizure, and the source is a viral upper respiratory infection. Routine blood work is not recommended, because electrolyte problems cause under 1% of febrile seizures and serious bacterial infection is no more common than with fever alone. EEG and neuroimaging are not part of the workup. He is immunized, has not had antibiotics and has no meningeal signs, so lumbar puncture is not indicated.
-
-*Key feature:* Seizures 8. Diagnose a simple febrile seizure with full recovery on history and exam alone without extra tests.
-
-*Source:* Gardner K, Schonfeld D, Willemsen MA, Ostrow O. Reducing unnecessary investigations in pediatric simple febrile and first-episode generalized unprovoked seizures. Can Fam Physician. 2025. https://www.cfp.ca/content/71/9/563
-
-#### Q2
-*Update:* His mother asks whether this is likely to happen again.
-
-**Which of the following factors, if present, would most increase his risk of another febrile seizure?**
-
-- A. Family history of febrile seizures  **(key)**
-- B. Fever above 40°C at the seizure
-- C. Fever for 3 days before the seizure
-- D. Up to date immunizations
-- E. Viral cause of the fever
-
-*Explanation:* A family history of febrile seizures is an established risk factor for recurrence. Other risk factors are onset before 18 months, a lower temperature at the time of the seizure and a short interval between fever onset and the seizure. A fever above 40°C and a long febrile period before the seizure are linked with lower recurrence. Immunization status and a viral cause do not raise recurrence risk.
-
-*Key feature:* Seizures 8. Diagnose a simple febrile seizure with full recovery on history and exam alone without extra tests.
-
-*Source:* American Academy of Pediatrics, Steering Committee on Quality Improvement and Management, Subcommittee on Febrile Seizures. Febrile seizures. Clinical practice guideline for the long-term management of the child with simple febrile seizures. Pediatrics. 2008. https://pubmed.ncbi.nlm.nih.gov/18519501/
-
-#### Q3
-**Which of the following is the most appropriate advice about medication at discharge?**
-
-- A. Daily levetiracetam for 6 months
-- B. Fever medicine for comfort only  **(key)**
-- C. Intranasal midazolam kit for home
-- D. Oral diazepam during each fever
-- E. Scheduled ibuprofen to prevent seizures
-
-*Explanation:* Antipyretics can be used to keep him comfortable, but they do not prevent febrile seizures, so scheduled dosing for prevention is not advised. The side effects of continuous or intermittent antiseizure medication outweigh the small risks of a future simple febrile seizure. A home rescue benzodiazepine is not routine after a single brief simple febrile seizure.
-
-*Key feature:* Seizures 8. Diagnose a simple febrile seizure with full recovery on history and exam alone without extra tests.
-
-*Source:* American Academy of Pediatrics, Steering Committee on Quality Improvement and Management, Subcommittee on Febrile Seizures. Febrile seizures. Clinical practice guideline for the long-term management of the child with simple febrile seizures. Pediatrics. 2008. https://pubmed.ncbi.nlm.nih.gov/18519501/
-
-#### Q4
-**Which of the following features would have made this a complex rather than a simple febrile seizure?**
-
-Select 3.
-
-- A. Age of 19 months at onset
-- B. Family history of epilepsy
-- C. Focal onset of the seizure  **(key)**
-- D. Postictal sleep of 15 minutes
-- E. Second seizure within 24 hours  **(key)**
-- F. Seizure lasting 20 minutes  **(key)**
-- G. Temperature above 40°C
-- H. Viral illness as the cause
-
-*Explanation:* A simple febrile seizure is generalized, lasts under 15 minutes and does not recur within 24 hours in a child aged 6 months to 5 years. Focal onset, a duration of 20 minutes or a second seizure within 24 hours each make it complex. His age is within the usual range. A short postictal sleep is expected. Family history, a high temperature and a viral cause do not change the classification.
-
-*Key feature:* Seizures 8. Diagnose a simple febrile seizure with full recovery on history and exam alone without extra tests.
-
-*Source:* Gardner K, Schonfeld D, Willemsen MA, Ostrow O. Reducing unnecessary investigations in pediatric simple febrile and first-episode generalized unprovoked seizures. Can Fam Physician. 2025. https://www.cfp.ca/content/71/9/563
-
-### seizures-23: Feverish toddler still jerking on arrival
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 2-year-old girl is brought to the emergency department by ambulance with a seizure that started 18 minutes ago. She has had fever since yesterday. Her mother saw her stiffen and then jerk all four limbs. Paramedics gave midazolam 2.5 mg intranasal 8 minutes ago. She is still jerking all four limbs with her eyes deviated to the right. She is fully immunized and has no past history. An IV was placed on arrival. Capillary glucose is 5.6 mmol/L.
-
-- Temperature: 39.8°C rectal
-- Pulse: 170/minute
-- Resp.: 28/minute
-- O2 sat: 92% on 10 L/minute by non rebreather mask
-- Weight: 13 kg
-
-#### Q1
-**Which of the following best describes her condition at this time?**
-
-- A. Convulsive status epilepticus  **(key)**
-- B. Febrile delirium with rigors
-- C. Postictal automatisms
-- D. Sepsis with myoclonic jerks
-- E. Simple febrile seizure
-
-*Explanation:* A convulsive seizure lasting more than 5 minutes is status epilepticus, whatever its trigger. Fever does not make an 18 minute seizure simple, because simple febrile seizures last under 15 minutes and she is still seizing. Rhythmic jerking of all limbs with eye deviation is seizure activity, not rigors or delirium. Postictal automatisms occur after a seizure ends.
-
-*Key feature:* Seizures 3. Diagnose status epilepticus when seizures recur or the patient does not recover between them, and treat promptly.
-
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Status epilepticus. Version 1.2. 2026. https://trekk.ca/resources/bottom-line-recommendations-status-epilepticus/
-
-#### Q2
-**Which of the following is the most appropriate medication for her now?**
-
-- A. Diazepam 6.5 mg rectal
-- B. Levetiracetam 780 mg IV
-- C. Lorazepam 1.3 mg IV  **(key)**
-- D. Lorazepam 4 mg IV
-- E. Phenobarbital 260 mg IV
-
-*Explanation:* She has had one benzodiazepine dose, and TREKK advises a second dose before a second line agent. With IV access, lorazepam 0.1 mg/kg is 1.3 mg for 13 kg. Lorazepam 4 mg is the adult maximum and three times her dose. Rectal diazepam is slower and less effective when IV access is available. Levetiracetam and phenobarbital are second line drugs, given if seizures continue after two benzodiazepine doses.
-
-*Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
-
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Status epilepticus. Version 1.2. 2026. https://trekk.ca/resources/bottom-line-recommendations-status-epilepticus/
-
-#### Q3
-*Update:* Five minutes after the lorazepam she is still seizing.
-
-**Which of the following is the most appropriate next medication for this child?**
-
-- A. Fosphenytoin 130 mg PE IV
-- B. Levetiracetam 780 mg IV  **(key)**
-- C. Lorazepam 1.3 mg IV
-- D. Midazolam infusion at 0.1 mg/kg/hour
-- E. Phenobarbital 60 mg IV
-
-*Explanation:* After two benzodiazepine doses, TREKK prefers levetiracetam 60 mg/kg IV, maximum 3 000 mg, which is 780 mg for 13 kg. A third benzodiazepine increases the risk of apnea. Fosphenytoin at 130 mg PE is 10 mg PE/kg, half the loading dose. Phenobarbital 60 mg is well below 20 mg/kg. An infusion is third line, after two second line agents fail.
-
-*Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
-
-*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Status epilepticus. Version 1.2. 2026. https://trekk.ca/resources/bottom-line-recommendations-status-epilepticus/
-
-### seizures-24: Infant with ear pain and a seizure
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 9-month-old boy is brought to the emergency department after a 2 minute generalized seizure at home 1 hour ago. He has had fever for 3 days. A walk-in clinic diagnosed otitis media 2 days ago and started amoxicillin. His parents chose to delay vaccines, and he has received none. He is now sleepy but rousable, feeding poorly and irritable when handled. His anterior fontanelle is full. There is no rash. Both tympanic membranes are dull. He moves all limbs equally.
-
-- Temperature: 38.9°C rectal
-- Pulse: 172/minute
-- Resp.: 40/minute
-- O2 sat: 97% on room air
-- Weight: 8.6 kg
-
-#### Q1
 **Which of the following findings most strongly argues against managing this as a simple febrile seizure?**
 
-- A. Age of 9 months at the seizure
-- B. Duration of 2 minutes
-- C. Full fontanelle and irritability  **(key)**
-- D. Generalized seizure activity
-- E. Temperature of 38.9°C
+- A. Age of 2 years
+- B. Fever of 39.1°C
+- C. Seizure lasting 3 minutes
+- D. Shunt revised 5 weeks ago  **(key)**
+- E. Sleepy for 30 minutes after
 
-*Explanation:* A full fontanelle, irritability when handled and poor feeding an hour after the seizure suggest meningitis, so he has not made the full recovery expected after a simple febrile seizure. An age of 9 months falls within the 6 month to 5 year range. A generalized seizure of 2 minutes fits the simple definition. The height of the fever does not decide whether a febrile seizure is simple.
+*Explanation:* The AAP defines a simple febrile seizure as a brief generalized seizure in a febrile child without an intracranial infection, and a shunt revised 5 weeks ago with red, tender skin over the tubing points to shunt infection. His age, his fever, a generalized seizure of 3 minutes and 30 minutes of drowsiness afterward all fit a simple febrile seizure. Those features do not outweigh a recently revised shunt, which makes infection inside the skull the first concern.
 
 *Key feature:* Seizures 8. Diagnose a simple febrile seizure with full recovery on history and exam alone without extra tests.
 
-*Source:* American Academy of Pediatrics, Subcommittee on Febrile Seizures. Clinical practice guideline. Neurodiagnostic evaluation of the child with a simple febrile seizure. Pediatrics. 2011.
+*Source:* American Academy of Pediatrics, Steering Committee on Quality Improvement and Management, Subcommittee on Febrile Seizures. Febrile seizures. Clinical practice guideline for the long-term management of the child with simple febrile seizures. Pediatrics. 2008. https://doi.org/10.1542/peds.2008-0939
 
 #### Q2
 **Which of the following is the most appropriate next step in his evaluation?**
 
-- A. Blood culture and lumbar puncture  **(key)**
-- B. Change to amoxicillin clavulanate
-- C. EEG before discharge
-- D. Outpatient review in 24 hours
+- A. EEG within 24 hours
+- B. Lumbar puncture in the ED
+- C. Outpatient MRI of the brain
+- D. Shunt CSF via neurosurgery  **(key)**
 - E. Urine culture only
 
-*Explanation:* He has meningeal signs, so lumbar puncture is needed. Even without them, the AAP lists lumbar puncture as an option for an infant of 6 to 12 months who is not immunized against Haemophilus influenzae type b and pneumococcus, and for a child pretreated with antibiotics, which can mask meningitis. Changing the oral antibiotic or arranging outpatient review delays the diagnosis. EEG does not identify infection. A urine culture alone misses meningitis.
+*Explanation:* IDSA advises that when CSF shunt infection is suspected, a neurosurgeon is needed to obtain CSF for analysis, and neuroimaging is also recommended. Cell counts from the shunt and from a lumbar puncture differ, so a lumbar puncture alone does not assess the shunt. An EEG does not look for infection. An outpatient MRI delays diagnosis of a treatable infection. A urine culture alone ignores the red, tender shunt tract.
 
 *Key feature:* Seizures 6. Investigate a first seizure promptly for its cause, using CT, LP, EEG, or metabolic and toxicology testing as needed.
 
-*Source:* American Academy of Pediatrics, Subcommittee on Febrile Seizures. Clinical practice guideline. Neurodiagnostic evaluation of the child with a simple febrile seizure. Pediatrics. 2011.
+*Source:* Tunkel AR, Hasbun R, Bhimraj A, et al. 2017 Infectious Diseases Society of America's clinical practice guidelines for healthcare-associated ventriculitis and meningitis. Clin Infect Dis. 2017. https://doi.org/10.1093/cid/ciw861
 
 #### Q3
-*Update:* Blood culture is drawn. The CSF is cloudy with 1 400 x 10^6/L white cells, mostly neutrophils.
+*Update:* CSF and blood cultures have been sent.
 
-**Which of the following empiric antimicrobial regimens is most appropriate for this infant?**
+**Which of the following empiric antimicrobial regimens is most appropriate now?**
 
-- A. Ampicillin and gentamicin IV
-- B. Ceftriaxone and vancomycin IV  **(key)**
-- C. High dose oral amoxicillin
-- D. Piperacillin tazobactam IV
-- E. Vancomycin alone IV
+- A. ampicillin and gentamicin IV
+- B. cefazolin IV alone
+- C. ceftriaxone IV alone
+- D. meropenem IV alone
+- E. vancomycin and cefepime IV  **(key)**
 
-*Explanation:* The CPS recommends a third generation cephalosporin plus vancomycin for suspected bacterial meningitis in children beyond the first month, to cover cephalosporin resistant pneumococcus. An unimmunized infant is also at risk of Haemophilus influenzae type b. Ampicillin and gentamicin is a neonatal regimen with poor CSF coverage here. Oral amoxicillin has already failed and does not treat meningitis. Piperacillin tazobactam is not a meningitis regimen. Vancomycin alone misses Haemophilus and meningococcus.
+*Explanation:* IDSA recommends vancomycin plus an antipseudomonal beta-lactam, such as cefepime, ceftazidime or meropenem, as empiric therapy for healthcare-associated ventriculitis, which covers staphylococci and gram-negative bacilli including Pseudomonas. Meropenem alone misses methicillin-resistant staphylococci. Ceftriaxone does not cover Pseudomonas or methicillin-resistant staphylococci. Cefazolin misses both. Ampicillin with gentamicin is a regimen for neonatal sepsis and misses resistant staphylococci.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Le Saux N. Canadian Paediatric Society, Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than one month of age. Paediatr Child Health. 2014. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
+*Source:* Tunkel AR, Hasbun R, Bhimraj A, et al. 2017 Infectious Diseases Society of America's clinical practice guidelines for healthcare-associated ventriculitis and meningitis. Clin Infect Dis. 2017. https://doi.org/10.1093/cid/ciw861
 
 ### seizures-25: Boy found stiff and jerking in bed
 
@@ -1094,67 +1115,65 @@ You are working in a community hospital emergency department. An 81-year-old man
 
 *Source:* American Heart Association. Part 9. Adult advanced life support. 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025. https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376
 
-### seizures-32: Agitated man brought in by police
+### seizures-32: Infant with vomiting who will not stop shaking
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 33-year-old man is brought to the emergency department by police after he was found agitated in a downtown alley. Friends told police he had been using cocaine all night. Police held him face down for 10 minutes before the ambulance arrived. On arrival he has a generalized tonic clonic seizure that stops after 2 minutes. He is diaphoretic and confused. Pupils are 7 mm. Capillary glucose is 5.9 mmol/L.
+A 5-month-old girl is brought to the emergency department after she started seizing at home. For 2 days she has had vomiting and diarrhea and has taken only small amounts of formula. This morning she was hard to wake, then stiffened and jerked all four limbs. The jerking has now lasted 8 minutes. She takes propranolol 1 mg/kg twice daily for a large hemangioma on her upper lip, and her mother gave the usual doses. She is sweaty and pale, with dry mucous membranes. Capillary refill is 3 seconds. An IV has just been placed. Capillary glucose is 1.8 mmol/L.
 
-- Temperature: 41.2°C rectal
-- Pulse: 148/minute
-- Resp.: 28/minute
-- BP: 188/110 mmHg
+- Temperature: 37.4°C rectal
+- Pulse: 118/minute
+- Resp.: 36/minute
+- BP: 80/48 mmHg
 - O2 sat: 95% on room air
-- Weight: 80 kg
+- Weight: 7 kg
 
 #### Q1
-*Update:* After the seizure he becomes combative and pulls at his IV.
+**Which of the following is the most appropriate first treatment for her ongoing seizure?**
 
-**Which of the following is the most appropriate medication for him now?**
+- A. dextrose 10% 35 mL IV  **(key)**
+- B. levetiracetam 420 mg IV
+- C. lorazepam 0.7 mg IV
+- D. midazolam 1.4 mg IN
+- E. phenobarbital 140 mg IV
 
-- A. Diazepam 10 mg IV  **(key)**
-- B. Haloperidol 10 mg IM
-- C. Labetalol 20 mg IV
-- D. Metoprolol 5 mg IV
-- E. Phenytoin 1 600 mg IV
-
-*Explanation:* Benzodiazepines treat the seizures, agitation, tachycardia and hypertension of cocaine toxicity, and they reduce heat production from muscle activity. Haloperidol does not treat seizures and may impair heat loss. The safety of beta blockers such as metoprolol or labetalol in cocaine toxicity is controversial, and sedation often controls the BP. Phenytoin does not treat his agitation, tachycardia or hypertension.
+*Explanation:* Her seizure has a treatable cause, a glucose of 1.8 mmol/L, so dextrose comes first. TREKK advises D10W 5 mL/kg IV for a glucose of 2.6 mmol/L or less, which is 5 x 7 = 35 mL, with a recheck in 5 to 10 minutes. Lorazepam 0.1 mg/kg, intranasal midazolam 0.2 mg/kg, levetiracetam 60 mg/kg and phenobarbital 20 mg/kg are doses suited to her weight, but none corrects the low glucose that is driving the seizure. A benzodiazepine is added if she is still seizing once her glucose is corrected.
 
 *Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
 
-*Source:* Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023. https://doi.org/10.1161/CIR.0000000000001161
+*Source:* TREKK (Translating Emergency Knowledge for Kids). Bottom line recommendations. Gastroenteritis. Version 5.0. 2025. https://cms.trekk.ca/wp-content/uploads/2023/11/2025_10_14-TREKK-Gastroenteritis-BLR-v5.0_FinalDraft.pdf
 
 #### Q2
-**Which of the following is the most important treatment for his temperature of 41.2°C?**
+*Update:* The seizure stops 2 minutes after treatment. A repeat glucose is 5.9 mmol/L.
 
-- A. Acetaminophen 1 g PR
-- B. Bromocriptine 2.5 mg PO
-- C. Cold water immersion  **(key)**
-- D. Dantrolene 2.5 mg/kg IV
-- E. Ibuprofen 400 mg PO
+**Which of the following best explains why her glucose fell so low?**
 
-*Explanation:* His hyperthermia comes from muscle activity and sympathetic overdrive, not a change in the hypothalamic set point, so it needs rapid external cooling such as ice water immersion together with sedation. A temperature above 41°C is life threatening. Antipyretics do not work on this kind of hyperthermia. Dantrolene has no proven role in stimulant toxicity. Bromocriptine is used for neuroleptic malignant syndrome, not cocaine toxicity.
+- A. Congenital hyperinsulinism
+- B. Hidden sulfonylurea ingestion
+- C. Inborn error of metabolism
+- D. Propranolol with poor intake  **(key)**
+- E. Sepsis from gastroenteritis
+
+*Explanation:* Drolet and colleagues explain that propranolol can block the glycogenolysis, gluconeogenesis and lipolysis that protect an infant during fasting, and 2 days of vomiting and poor feeding removed her intake. They add that infants are especially vulnerable and that the drug can hide warning signs of hypoglycemia. Congenital hyperinsulinism and inborn errors would not explain why severe hypoglycemia appeared only now, during an illness while on propranolol. Sepsis is not suggested by her temperature and rapid recovery. Nothing in the history suggests access to a sulfonylurea.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023. https://doi.org/10.1161/CIR.0000000000001161
+*Source:* Drolet BA, Frommelt PC, Chamlin SL, et al. Initiation and use of propranolol for infantile hemangioma. Report of a consensus conference. Pediatrics. 2013. https://doi.org/10.1542/peds.2012-1691
 
 #### Q3
-*Update:* He is sedated and cooled to 38.8°C in 20 minutes. CT head is normal.
+**Which of the following is the most appropriate advice about her propranolol?**
 
-**Which of the following laboratory tests is most important for him now?**
+- A. Continue it at the usual dose
+- B. Double the dose when she is well
+- C. Give each dose at bedtime
+- D. Hold it while intake is poor  **(key)**
+- E. Stop it permanently today
 
-- A. Amylase and lipase
-- B. Blood alcohol level
-- C. Potassium, creatinine and CK  **(key)**
-- D. Serum prolactin level
-- E. Urine drug screen
-
-*Explanation:* Seizure, severe agitation, prone restraint and hyperthermia all cause rhabdomyolysis, which can lead to hyperkalemia and acute kidney injury. Potassium, creatinine and CK guide fluids and monitoring. A drug screen adds little when cocaine use is known and will not change treatment. Prolactin, alcohol level and pancreatic enzymes do not address the dangerous complications here.
+*Explanation:* The consensus guidance advises stopping propranolol during an intercurrent illness, especially when oral intake is restricted, and restarting it once she is feeding normally. It also advises giving doses in the daytime with a feed soon after, so moving doses to bedtime is the wrong change. Continuing the usual dose during vomiting led to this seizure. A higher dose adds risk without a reason. Stopping it for good is not needed, because these precautions prevent hypoglycemia and the hemangioma still needs treatment.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023. https://doi.org/10.1161/CIR.0000000000001161
+*Source:* Drolet BA, Frommelt PC, Chamlin SL, et al. Initiation and use of propranolol for infantile hemangioma. Report of a consensus conference. Pediatrics. 2013. https://doi.org/10.1542/peds.2012-1691
 
 ### seizures-33: Seizure at work in a recent immigrant
 
@@ -1216,110 +1235,125 @@ A 34-year-old man who moved to Canada from Guatemala 2 years ago is brought to t
 
 *Source:* White AC Jr, Coyle CM, Rajshekhar V, et al. Diagnosis and treatment of neurocysticercosis. 2017 clinical practice guidelines by the Infectious Diseases Society of America and the American Society of Tropical Medicine and Hygiene. Clin Infect Dis. 2018. https://academic.oup.com/cid/article/66/8/e49/4885412
 
-### seizures-34: Weakness after jerking of the left arm
+### seizures-34: Found on the floor by her roommate
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 63-year-old woman is brought to the emergency department by ambulance 50 minutes after her husband found her with jerking of the left arm that spread to both sides and lasted about 2 minutes. When the jerking stopped she could not move her left arm or leg. A right frontal meningioma was removed 3 years ago, and she had one seizure 6 months after surgery. She stopped levetiracetam on her own 6 months ago. She takes ramipril. She is drowsy but follows commands. She has a dense left hemiparesis and a left facial droop. Capillary glucose is 7.4 mmol/L.
+A 29-year-old woman is brought to the emergency department by her roommate, who found her on the bedroom floor 40 minutes ago, confused and with wet clothes. No one saw what happened. She has generalized epilepsy and was seizure free for 3 years on levetiracetam, so her neurologist tapered it off, and she took the last dose 2 months ago. She takes no other medication and does not drink alcohol. She is now alert and oriented, recalls nothing of the event and says her muscles ache. There is a bite mark on the right side of her tongue. There is no head or scalp injury. The neurological examination is normal. Capillary glucose is 5.2 mmol/L.
 
 - Temperature: 37.1°C oral
-- Pulse: 96/minute
-- Resp.: 18/minute
-- BP: 168/94 mmHg
-- O2 sat: 97% on room air
-- Weight: 68 kg
+- Pulse: 92/minute
+- Resp.: 16/minute
+- BP: 124/76 mmHg
+- O2 sat: 98% on room air
+- Weight: 60 kg
 
 #### Q1
-**Which of the following is the most likely cause of her weakness given this history?**
+**Which of the following is the most likely explanation for this event?**
 
-- A. Conversion disorder
-- B. Hemorrhage into the old tumour bed
-- C. Hypoglycemic hemiparesis
-- D. Postictal Todd paresis  **(key)**
-- E. Right middle cerebral artery stroke
+- A. Generalized seizure  **(key)**
+- B. Mechanical trip and fall
+- C. Orthostatic hypotension
+- D. Panic attack with fainting
+- E. Vasovagal syncope with jerks
 
-*Explanation:* A focal seizure that began in the left arm, from a known right frontal focus, after she stopped her antiseizure drug, followed by weakness of the same side, fits Todd paresis. Stroke and hemorrhage remain possible and must be excluded, but the sequence favours a postictal deficit. Her glucose of 7.4 mmol/L excludes hypoglycemia. Nothing suggests a functional disorder.
+*Explanation:* Confusion afterward, wet clothes, aching muscles, amnesia and a bite on the side of her tongue point to a generalized seizure that no one saw, 2 months after her epilepsy medication was stopped. In a meta-analysis a bitten tongue had a specificity of 96% for an epileptic seizure over syncope. Vasovagal syncope and orthostatic hypotension recover quickly and seldom cause a tongue bite. She has no head injury, and a simple fall does not explain the bite or the incontinence. A panic attack does not cause a tongue bite or incontinence.
 
 *Key feature:* Seizures 1. Consider seizure in unwitnessed events with confusion, incontinence, unexplained falls or injury, or tics in children.
 
-*Source:* Heran M, Lindsay P, Gubitz G, et al. Canadian Stroke Best Practice Recommendations. Acute stroke management, 7th edition practice guidelines update, 2022. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* Brigo F, Nardone R, Bongiovanni LG. Value of tongue biting in the differential diagnosis between epileptic seizures and syncope. Seizure. 2012. https://doi.org/10.1016/j.seizure.2012.06.005
 
 #### Q2
-**Which of the following is the most appropriate imaging for her now?**
+**Which of the following investigations is most useful in her emergency department assessment?**
 
-- A. Carotid Doppler ultrasound
-- B. CT head and CT angiography  **(key)**
-- C. EEG before any imaging
-- D. MRI brain in 48 hours
-- E. No imaging until weakness resolves
+- A. EEG in the emergency department
+- B. Electrolytes and calcium  **(key)**
+- C. Levetiracetam serum level
+- D. Serum prolactin level
+- E. Urine drug screen
 
-*Explanation:* A seizure does not exclude stroke, and she is within the window for reperfusion. Canadian stroke guidance excludes thrombolysis only when the deficit is judged to be postictal Todd paralysis, so noncontrast CT with CT angiography is needed now to look for hemorrhage or a vessel occlusion before that judgment is made. Waiting for the weakness to resolve, or delaying to MRI, loses the treatment window. Carotid ultrasound and EEG do not answer the urgent question.
-
-*Key feature:* Seizures 6. Investigate a first seizure promptly for its cause, using CT, LP, EEG, or metabolic and toxicology testing as needed.
-
-*Source:* Heran M, Lindsay P, Gubitz G, et al. Canadian Stroke Best Practice Recommendations. Acute stroke management, 7th edition practice guidelines update, 2022. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
-
-#### Q3
-*Update:* CT shows postoperative change only. CT angiography shows no occlusion. Ninety minutes later her strength is improving.
-
-**Which of the following is the most appropriate antiseizure plan for her?**
-
-- A. Rescue diazepam only
-- B. Restart levetiracetam today  **(key)**
-- C. Start treatment after an EEG
-- D. Wait for a third seizure
-- E. No treatment until MRI is done
-
-*Explanation:* Two unprovoked seizures more than 24 hours apart, here with a known structural cause, meet the definition of epilepsy. She had been controlled on levetiracetam, so restarting it today is appropriate. Delaying for an EEG or MRI, or waiting for another seizure, leaves her at high risk of recurrence. Rescue diazepam treats a prolonged seizure but does not prevent seizures.
+*Explanation:* Few tests are needed after a seizure with a clear trigger in known epilepsy. NICE advises keeping metabolic disturbance in mind, so electrolytes and calcium are checked along with the glucose already measured. Her levetiracetam was stopped 2 months ago, so a level will be zero and adds nothing. A prolactin level does not change her care. A broad urine drug screen rarely changes management, and she gives no history of drug use. An EEG in the emergency department does not change immediate care, and NICE warns that an EEG cannot exclude epilepsy.
 
 *Key feature:* Seizures 7. In known epilepsy, check adherence, drug levels, and triggers, but avoid unnecessary testing.
 
-*Source:* Fisher RS, Acevedo C, Arzimanoglou A, et al. ILAE official report. A practical clinical definition of epilepsy. Epilepsia. 2014.
+*Source:* National Institute for Health and Care Excellence. Epilepsies in children, young people and adults. NICE guideline NG217. 2022. https://www.nice.org.uk/guidance/ng217
+
+#### Q3
+**Which of the following is the most appropriate imaging plan for her?**
+
+- A. CT angiography of the head
+- B. CT head before discharge
+- C. CT head with contrast
+- D. MRI brain within 24 hours
+- E. No neuroimaging now  **(key)**
+
+*Explanation:* NICE advises against CT for people with established epilepsy who present after a typical seizure unless there are other concerns. She has known generalized epilepsy, a clear trigger in the stopped levetiracetam, full recovery, no head injury and a normal examination. Plain or contrast CT, CT angiography and urgent MRI would add radiation, cost or delay without changing her care.
+
+*Key feature:* Seizures 7. In known epilepsy, check adherence, drug levels, and triggers, but avoid unnecessary testing.
+
+*Source:* National Institute for Health and Care Excellence. Epilepsies in children, young people and adults. NICE guideline NG217. 2022. https://www.nice.org.uk/guidance/ng217
 
 #### Q4
-**Which of the following is the most appropriate advice about her private driving?**
+*Update:* After discussion with her neurologist, she restarts levetiracetam at her previous dose. She drives a car to work.
 
-- A. Now, since the cause is known
-- B. Once off medication for 3 months
-- C. Once seizure free on treatment 6 months  **(key)**
-- D. Once strength returns after 1 week
-- E. Only after a normal EEG at 12 months
+**Which of the following is the most appropriate advice about driving her car?**
 
-*Explanation:* For epilepsy, the CMA guide allows private driving once the patient has been seizure free on medication for at least 6 months and the physician is confident of adherence. Her seizure followed stopping medication on her own, so adherence must be addressed. A known cause does not permit driving now. Recovery of strength and a normal EEG are not the criteria. Driving off medication is not advised after this recurrence.
+- A. Drive as usual from tomorrow
+- B. Drive once her EEG is normal
+- C. Wait 12 months seizure free
+- D. Wait 3 months seizure free  **(key)**
+- E. Wait 5 years seizure free
+
+*Explanation:* The CMA Driver's Guide advises that a private driver whose seizures recur after medication is withdrawn may resume driving after 3 months seizure free on the reinstated medication. Twelve months applies to other situations, such as auras alone or a single seizure in a commercial driver without epilepsy. Five years applies to commercial drivers with epilepsy. Driving from tomorrow ignores the risk of early recurrence. A normal EEG does not show that her seizures are controlled.
 
 *Key feature:* Seizures 5. After a first seizure, advise on risky activities such as driving and meet reporting obligations.
 
 *Source:* Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles. 10th edition. 2023. Nervous system section. https://driversguide.ca/sections/nervous-system
 
-### seizures-35: Man with a seizure who flies for work
+### seizures-35: First seizure in a roofer
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 45-year-old man is brought to the emergency department by his wife after a witnessed generalized tonic clonic seizure at home lasting 90 seconds. He has no past history, takes no medications, drinks 2 beers a week and slept normally last night. He is a commercial airline pilot and also drives a car daily. He is now back to baseline with a normal neurological examination. Glucose 5.5 mmol/L and sodium 140 mmol/L. His ECG is normal. Noncontrast CT head is normal.
+A 38-year-old man is brought to the emergency department after a witnessed generalized tonic-clonic seizure at home that lasted 2 minutes. He has never had a seizure. He works as a roofer and holds a private pilot licence. He takes no medication, drinks 2 beers a week, uses no drugs and slept normally last night. He has no fever, headache or neck stiffness. He is now alert and oriented with a normal neurological examination. There is a bite on the side of his tongue. Glucose, electrolytes, calcium and creatinine are normal. A non-contrast CT head is normal.
 
-- Temperature: 36.7°C oral
-- Pulse: 80/minute
-- Resp.: 14/minute
-- BP: 130/80 mmHg
+- Temperature: 37.0°C oral
+- Pulse: 84/minute
+- Resp.: 16/minute
+- BP: 128/80 mmHg
 - O2 sat: 98% on room air
 
 #### Q1
-**Which of the following is the most appropriate plan for further investigation of this seizure?**
+**Which of the following additional tests is most important before he leaves the emergency department?**
 
-- A. Admission for continuous EEG
-- B. Contrast CT head before discharge
-- C. Lumbar puncture before discharge
-- D. Outpatient EEG and MRI brain  **(key)**
-- E. Serum prolactin and CK level
+- A. 12-lead ECG  **(key)**
+- B. EEG in the ED
+- C. Lumbar puncture
+- D. Serum prolactin
+- E. Urine drug screen
 
-*Explanation:* After a first unprovoked seizure with full recovery, a normal CT and normal labs, EEG and MRI estimate his recurrence risk. An epileptiform EEG or a structural lesion on imaging raises that risk and guides treatment. He does not need admission for continuous EEG because he is at baseline. He has no fever or meningism for lumbar puncture. Contrast CT adds little before MRI. Prolactin and CK do not change management.
+*Explanation:* NICE advises a 12-lead ECG for everyone after a first suspected seizure, because cardiac conditions can mimic an epileptic seizure. If an EEG is requested, NICE advises doing it as soon as possible, ideally within 72 hours, as part of the first seizure assessment rather than in the ED. A lumbar puncture is for suspected infection, and he has no fever, headache or neck stiffness. A prolactin level does not change his care. A broad urine drug screen rarely changes management, and he uses no drugs.
 
 *Key feature:* Seizures 6. Investigate a first seizure promptly for its cause, using CT, LP, EEG, or metabolic and toxicology testing as needed.
 
-*Source:* Krumholz A, et al. Evidence-based guideline. Management of an unprovoked first seizure in adults. American Academy of Neurology and American Epilepsy Society. Neurology. 2015.
+*Source:* National Institute for Health and Care Excellence. Epilepsies in children, young people and adults. NICE guideline NG217. 2022. https://www.nice.org.uk/guidance/ng217
 
 #### Q2
-**Which of the following best describes your obligation regarding his work as a pilot?**
+**Which of the following is the most appropriate advice about his work as a roofer?**
+
+- A. Continue roofing with a harness
+- B. Return to roofing after 24 hours
+- C. Roof only with a coworker present
+- D. Stop working at heights  **(key)**
+- E. Work at heights once CT is normal
+
+*Explanation:* NICE lists avoiding working at heights among the safety measures to discuss after a seizure, and a roofer who seizes on a roof risks a fatal fall. A harness or a coworker does not prevent a fall or the injury a seizure causes on a roof. A normal CT or 24 hours without a seizure does not remove the risk of recurrence. He should stay off roofs until his specialist assessment and advice about recurrence.
+
+*Key feature:* Seizures 5. After a first seizure, advise on risky activities such as driving and meet reporting obligations.
+
+*Source:* National Institute for Health and Care Excellence. Epilepsies in children, young people and adults. NICE guideline NG217. 2022. https://www.nice.org.uk/guidance/ng217
+
+#### Q3
+**Which of the following best describes your obligation regarding his private pilot licence?**
 
 - A. Advise him to self-report only
 - B. Inform the aviation medical adviser  **(key)**
@@ -1327,84 +1361,70 @@ A 45-year-old man is brought to the emergency department by his wife after a wit
 - D. Wait for his neurologist to decide
 - E. No action if he agrees to stop flying
 
-*Explanation:* Under the federal Aeronautics Act, a physician who believes a patient holds an aviation medical certificate and has a condition likely to be a hazard to aviation safety must inform a medical adviser designated by the Minister without delay. The duty applies in every province and is not replaced by his agreement or by self-reporting. Waiting for a second seizure or a neurologist delays a report that is already required. The Act protects a physician who reports in good faith.
+*Explanation:* Under the federal Aeronautics Act, a physician who believes a patient holds an aviation document that requires medical fitness and has a condition likely to be a hazard to aviation safety must inform a medical adviser designated by the Minister without delay. The duty applies in every province and is not replaced by his agreement or by self-reporting. Waiting for a second seizure or a neurologist delays a report that is already required. The Act protects a physician who reports in good faith.
 
 *Key feature:* Seizures 5. After a first seizure, advise on risky activities such as driving and meet reporting obligations.
 
 *Source:* Aeronautics Act, R.S.C. 1985, c. A-2, section 6.5 (Canada). Medical and optometric information. 1985, as amended. https://laws-lois.justice.gc.ca/eng/acts/A-2/section-6.5.html
 
-#### Q3
-**Which of the following is the most appropriate advice about driving his car?**
-
-- A. Continue driving with a passenger
-- B. Drive after 1 month if EEG normal
-- C. Drive again once CT is normal
-- D. Drive only during daylight hours
-- E. No driving for at least 3 months  **(key)**
-
-*Explanation:* The CMA guide advises no private driving for at least 3 months after a single unprovoked seizure, with a complete neurological evaluation including EEG and imaging. A normal CT or a normal EEG at 1 month does not shorten this. A passenger cannot prevent a crash if he loses consciousness. Daylight driving does not reduce the risk of a seizure.
-
-*Key feature:* Seizures 5. After a first seizure, advise on risky activities such as driving and meet reporting obligations.
-
-*Source:* Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles. 10th edition. 2023. Nervous system section. https://driversguide.ca/sections/nervous-system
-
-### seizures-36: Seizure after two years of control
+### seizures-36: Seizure after four quiet years
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 24-year-old woman with focal epilepsy presents to the emergency department after a coworker saw her stare, fumble with papers and not respond for 2 minutes. She has been seizure free for 2 years on lamotrigine 150 mg twice daily and has not missed doses. Seven weeks ago she started a combined oral contraceptive containing ethinyl estradiol. She has had no fever, alcohol or sleep loss. She is now back to baseline with a normal neurological examination and no injury. She drives to work daily.
+A 58-year-old woman with epilepsy after a head injury 20 years ago is brought to the emergency department after a generalized tonic-clonic seizure at home that lasted 2 minutes. She has been seizure free for 4 years on phenytoin 300 mg daily, and her pharmacy confirms she refills it on time. She has alcohol-related cirrhosis and has not drunk alcohol for 3 years. For 2 days she has had fever and burning on urination. She is now alert and oriented. Her neck is supple and the neurological examination is normal. Total phenytoin is 28 umol/L (reference 40 to 80 umol/L), albumin 22 g/L, creatinine 68 umol/L, sodium 137 mmol/L and glucose 6.0 mmol/L.
 
-- Temperature: 36.8°C oral
-- Pulse: 82/minute
-- Resp.: 14/minute
-- BP: 116/70 mmHg
-- O2 sat: 99% on room air
+- Temperature: 38.4°C oral
+- Pulse: 102/minute
+- Resp.: 18/minute
+- BP: 118/70 mmHg
+- O2 sat: 97% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following is the most likely cause of her breakthrough seizure?**
+**Which of the following best explains why her total phenytoin level may be misleading?**
 
-- A. Estrogen induced lamotrigine clearance  **(key)**
-- B. New structural brain lesion
-- C. Progestin induced hyponatremia
-- D. Tolerance to lamotrigine
-- E. Worsening of her epilepsy syndrome
+- A. Cirrhosis speeds phenytoin clearance
+- B. Fever lowers the assay reading
+- C. Low albumin raises the free fraction  **(key)**
+- D. Missed doses lower the total level
+- E. Urinary infection increases binding
 
-*Explanation:* Estrogen containing contraceptives increase lamotrigine clearance and can lower levels by more than half. The timing after starting the pill, with full adherence and no other trigger, fits this interaction. A typical seizure with a normal examination does not suggest a new lesion. Contraceptives do not usually cause hyponatremia. Tolerance to lamotrigine and spontaneous worsening are less likely explanations than a known interaction with a clear start date.
+*Explanation:* Phenytoin is highly bound to albumin, and with an albumin of 22 g/L more of the drug is free and active than the total level suggests. Charlier and colleagues note that total levels mislead in hypoalbuminemia and that a free level should be measured directly. Her pharmacy confirms she refills on time, so missed doses do not explain the result. Cirrhosis does not speed phenytoin clearance. Fever does not change the assay, and an infection does not increase protein binding.
 
 *Key feature:* Seizures 7. In known epilepsy, check adherence, drug levels, and triggers, but avoid unnecessary testing.
 
-*Source:* Sabers A, Ohman I, Christensen J, Tomson T. Oral contraceptives reduce lamotrigine plasma levels. Neurology. 2003.
+*Source:* Charlier B, Coglianese A, De Rosa F, et al. The effect of plasma protein binding on therapeutic drug monitoring of antiseizure medications. Pharmaceutics. 2021. https://doi.org/10.3390/pharmaceutics13081208
 
 #### Q2
-**Which of the following investigations are most appropriate in her emergency department assessment?**
+**Which of the following investigations are most appropriate to guide her care?**
 
 Select 2.
 
 - A. CT head without contrast
-- B. EEG in the department
-- C. Lamotrigine serum level  **(key)**
+- B. EEG in the emergency department
+- C. Free phenytoin level  **(key)**
 - D. Lumbar puncture
-- E. MRI brain before discharge
-- F. Pregnancy test  **(key)**
-- G. Serum prolactin level
-- H. Urine toxicology screen
+- E. Serum prolactin
+- F. Urinalysis and urine culture  **(key)**
 
-*Explanation:* A lamotrigine level, compared with any earlier level, documents the fall and guides the dose change. Levels should be monitored when an estrogen contraceptive is started or stopped. A pregnancy test is needed in any woman of reproductive age with a seizure, because pregnancy also lowers lamotrigine levels and changes treatment choices. A typical seizure with a clear trigger and normal examination does not need imaging, EEG, lumbar puncture or toxicology in the emergency department.
+*Explanation:* A free phenytoin level shows whether the active drug is in range before anyone changes her dose. Fever and burning on urination point to a urinary infection as the trigger for this breakthrough seizure, so a urinalysis and culture look for it. NICE advises against CT for people with established epilepsy after a typical seizure unless there are other concerns, and she has recovered with a normal examination. Her neck is supple, so a lumbar puncture is not needed. An EEG and a prolactin level do not change her emergency care.
 
 *Key feature:* Seizures 7. In known epilepsy, check adherence, drug levels, and triggers, but avoid unnecessary testing.
 
-*Source:* Sabers A, Ohman I, Christensen J, Tomson T. Oral contraceptives reduce lamotrigine plasma levels. Neurology. 2003.
+*Source:* National Institute for Health and Care Excellence. Epilepsies in children, young people and adults. NICE guideline NG217. 2022. https://www.nice.org.uk/guidance/ng217
 
 #### Q3
-**Which of the following is the most appropriate advice about driving at discharge?**
+*Update:* Her free phenytoin level is in the therapeutic range. A urinary infection is confirmed and treated. She drives a car.
 
-- A. Continue driving if she feels well
-- B. Drive only on local roads
-- C. Drive only with a passenger
-- D. Resume once lamotrigine is adjusted
-- E. Stop driving from today  **(key)**
+**Which of the following is the most appropriate advice about her driving?**
 
-*Explanation:* The CMA guide states that any seizure is grounds for stopping all driving at once, and her physician will decide when she can resume. Adjusting the dose does not by itself make driving safe. Feeling well, driving locally or having a passenger does not reduce the risk of a crash during a seizure with impaired awareness.
+- A. Drive after 1 week if afebrile
+- B. Drive as usual once treated
+- C. Drive once her EEG is normal
+- D. Wait 6 months seizure free  **(key)**
+- E. Wait 5 years seizure free
+
+*Explanation:* The CMA Driver's Guide advises that a private driver with epilepsy may drive once seizure free for 6 months on medication, with confidence in adherence. Treating the infection does not remove the need for that interval. Five years applies to commercial drivers with epilepsy. One week without fever is not a recognized interval. A normal EEG does not show that seizures are controlled.
 
 *Key feature:* Seizures 5. After a first seizure, advise on risky activities such as driving and meet reporting obligations.
 
@@ -1543,68 +1563,71 @@ You are working in a rural hospital emergency department with CT but no neurosur
 
 *Source:* Bullock MR, Chesnut R, Ghajar J, et al. Surgical management of acute epidural hematomas. Surgical Management of Traumatic Brain Injury Author Group. Neurosurgery. 2006. https://pubmed.ncbi.nlm.nih.gov/16710967/
 
-### seizures-39: Farmer found in the barn
+### seizures-39: Long-term care resident still jerking
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department. A 52-year-old farmer is brought in by his son 1 hour after he was found in the barn beside a spilled container of organophosphate insecticide. His clothing is soaked with the chemical. He is confused, drooling and sweating. He has vomited and has been incontinent of urine and stool. His pupils are pinpoint. There are diffuse wheezes and crackles. Muscles in his thighs are twitching. While you examine him he has a generalized seizure that has lasted 3 minutes.
+An 87-year-old woman is brought to the emergency department by ambulance from her long-term care home with a generalized seizure that began 20 minutes ago. She has advanced Alzheimer dementia and needs help with all care. Her advance directive, confirmed by her son by phone, declines intubation and ICU admission but accepts other treatment. Four days ago she started imipenem for a urinary infection. Last week her creatinine was 132 umol/L. She has no history of seizures. Paramedics gave midazolam 5 mg IM 10 minutes ago. She is still jerking all four limbs, with gurgling breathing. An IV is in place. Capillary glucose is 7.2 mmol/L and a point-of-care sodium is 138 mmol/L.
 
-- Temperature: 37.2°C tympanic
-- Pulse: 48/minute
-- Resp.: 30/minute
-- BP: 88/50 mmHg
-- O2 sat: 86% on a non rebreather mask
-- Weight: 90 kg
+- Temperature: 37.9°C rectal
+- Pulse: 118/minute
+- Resp.: 24/minute
+- BP: 164/88 mmHg
+- O2 sat: 90% on 6 L/minute by face mask
+- Weight: 45 kg
 
 #### Q1
-**Which of the following are the most appropriate immediate actions for this patient?**
+**Which of the following are the most appropriate immediate actions for her now?**
 
 Select 3.
 
-- A. Atropine 2 mg IV, doubling doses  **(key)**
-- B. Diazepam 10 mg IV  **(key)**
-- C. Flumazenil 0.2 mg IV
-- D. Fosphenytoin 1 500 mg PE IV
-- E. Naloxone 2 mg IV
-- F. Physostigmine 2 mg IV
-- G. Remove clothing, staff in protective gear  **(key)**
-- H. Succinylcholine for intubation
+- A. Bite block between the teeth
+- B. Intubation with rocuronium
+- C. Lateral position with oral suction  **(key)**
+- D. Lorazepam 4 mg IV  **(key)**
+- E. Oxygen by non-rebreather mask  **(key)**
+- F. Phenytoin 300 mg IV
+- G. Physical restraint of her limbs
 
-*Explanation:* He has a cholinergic crisis. Atropine is given early and the dose doubled every 5 minutes until the chest is clear. Benzodiazepines such as diazepam treat the seizures. Contaminated clothing is removed by staff wearing protective equipment. Physostigmine adds to cholinesterase inhibition. Succinylcholine causes prolonged paralysis because cholinesterase is inhibited. Fosphenytoin, naloxone and flumazenil do not treat this toxidrome.
+*Explanation:* She is still seizing 20 minutes after onset and 10 minutes after IM midazolam, so a second benzodiazepine dose is due, and lorazepam 0.1 mg/kg capped at 4 mg is 4 mg for 45 kg. Lying her on her side with suction clears the gurgling secretions, and high flow oxygen treats a saturation of 90%. Her directive declines intubation, so rocuronium and a tube are not offered. Nothing goes between the teeth of a seizing patient. Restraining the limbs causes injury. Phenytoin 300 mg is far below a 20 mg/kg load of 900 mg, and it is a second-line drug.
 
 *Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
 
-*Source:* Eddleston M, Buckley NA, Eyer P, Dawson AH. Management of acute organophosphorus pesticide poisoning. Lancet. 2008. https://pubmed.ncbi.nlm.nih.gov/17706760/
+*Source:* Brophy GM, et al. Guidelines for the evaluation and management of status epilepticus. Neurocritical Care Society. Neurocrit Care. 2012. https://doi.org/10.1007/s12028-012-9695-z
 
 #### Q2
-**Which of the following is the best sign that his atropine dosing is adequate?**
+*Update:* Five minutes after treatment she is still seizing.
 
-- A. Absent bowel sounds
-- B. Bounding pulse over 140/minute
-- C. Drying of bronchial secretions  **(key)**
-- D. Resolution of fasciculations
-- E. Temperature above 38°C
+**Which of the following is the most appropriate next medication, given her goals of care?**
 
-*Explanation:* Atropine is titrated to a clear chest with dry bronchial secretions, along with a heart rate above 80/minute and a systolic BP above 80 mmHg. Absent bowel sounds, marked tachycardia and fever are signs of too much atropine. Fasciculations are nicotinic effects that atropine does not reverse, so waiting for them to settle leads to toxic doses.
+- A. diazepam 10 mg IV
+- B. levetiracetam 2 700 mg IV  **(key)**
+- C. midazolam infusion 0.2 mg/kg/hour
+- D. phenobarbital 900 mg IV
+- E. propofol infusion 2 mg/kg/hour
+
+*Explanation:* After two benzodiazepine doses she needs a second-line drug. Levetiracetam 60 mg/kg is 60 x 45 = 2 700 mg, below the 4 500 mg maximum, and the NCS guideline lists few serious adverse effects for it, which matters because she has declined intubation. Phenobarbital 20 mg/kg, or 900 mg, adds respiratory depression and hypotension. Midazolam and propofol infusions are for refractory status and require mechanical ventilation. A third benzodiazepine dose adds sedation after two doses have failed.
 
 *Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
 
-*Source:* Eddleston M, Buckley NA, Eyer P, Dawson AH. Management of acute organophosphorus pesticide poisoning. Lancet. 2008. https://pubmed.ncbi.nlm.nih.gov/17706760/
+*Source:* Brophy GM, et al. Guidelines for the evaluation and management of status epilepticus. Neurocritical Care Society. Neurocrit Care. 2012. https://doi.org/10.1007/s12028-012-9695-z
 
 #### Q3
-**Which of the following laboratory tests would best support the diagnosis in this patient?**
+*Update:* Her seizures stop.
 
-- A. Carboxyhemoglobin level
-- B. Cholinesterase activity  **(key)**
-- C. Serum lactate level
-- D. Serum osmolal gap
-- E. Urine drug screen
+**Which of the following is the most likely provoking factor for her seizures?**
 
-*Explanation:* Reduced red cell acetylcholinesterase activity supports organophosphate poisoning, though treatment is started on clinical grounds and should not wait for the result. A carboxyhemoglobin level looks for carbon monoxide. Lactate and the osmolal gap are not specific. Standard urine drug screens do not detect organophosphates.
+- A. Alzheimer dementia alone
+- B. Fever from the urinary infection
+- C. Imipenem neurotoxicity  **(key)**
+- D. New ischemic stroke
+- E. Unrecognized hyponatremia
+
+*Explanation:* In a meta-analysis imipenem was the only carbapenem linked to more seizures than other antibiotics, adding about 4 seizures per 1 000 patients, with an odds ratio of 3.5. She started it 4 days ago, has no history of seizures, and her age and creatinine of 132 umol/L at 45 kg make accumulation more likely. Advanced dementia raises seizure risk but does not explain a sudden onset of status now. A temperature of 37.9°C does not cause seizures in an adult. Her sodium of 138 mmol/L is normal. A stroke remains possible and imaging will look for one, but the new drug is the clear exposure.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Eddleston M, Buckley NA, Eyer P, Dawson AH. Management of acute organophosphorus pesticide poisoning. Lancet. 2008. https://pubmed.ncbi.nlm.nih.gov/17706760/
+*Source:* Cannon JP, Lee TA, Clark NM, Setlak P, Grim SA. The risk of seizures among the carbapenems. A meta-analysis. J Antimicrob Chemother. 2014. https://doi.org/10.1093/jac/dku111
 
 ### seizures-40: Man found confused in his parked car
 
@@ -1663,63 +1686,65 @@ A 72-year-old man is brought to the emergency department by his daughter. He was
 
 *Source:* Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles. 10th edition. 2023. Nervous system section. https://driversguide.ca/sections/nervous-system
 
-### seizures-41: Repeated jerking of one arm
+### seizures-41: Headache and a seizure after carotid surgery
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 70-year-old man is brought to the emergency department by his wife with repeated jerking of his left arm and face for 2 days. Each episode lasts 1 to 2 minutes, and he stays aware during them. He has had thirst and frequent urination for 3 weeks and has lost 4 kg. He has no known diabetes. He takes hydrochlorothiazide for hypertension. He is alert and oriented, with dry mucous membranes. There is no weakness between episodes. Glucose 42 mmol/L, sodium 142 mmol/L, potassium 4.6 mmol/L, bicarbonate 22 mmol/L, urea 18 mmol/L, creatinine 160 umol/L. Serum beta-hydroxybutyrate is 0.4 mmol/L.
+A 71-year-old man is brought to the emergency department by ambulance after a generalized tonic-clonic seizure at home that lasted 2 minutes. Five days ago he had a left carotid endarterectomy for a 90% stenosis found after a brief episode of right arm weakness, and he went home the next day. Since yesterday he has had a severe, throbbing left-sided headache. He stopped his amlodipine after surgery because he felt dizzy, and he still takes ASA and atorvastatin. He does not drink alcohol and has never had a seizure. He is drowsy but oriented, with no focal weakness. The neck wound is clean and flat. Capillary glucose is 6.8 mmol/L and sodium is 138 mmol/L.
 
 - Temperature: 37.1°C oral
-- Pulse: 108/minute
+- Pulse: 84/minute
 - Resp.: 18/minute
-- BP: 128/74 mmHg
-- O2 sat: 97% on room air
-- Weight: 76 kg
+- BP: 214/112 mmHg
+- O2 sat: 96% on room air
+- Weight: 80 kg
 
 #### Q1
-**Which of the following is the most important treatment to stop his seizures?**
+**Which of the following is the most likely cause of his seizure?**
 
-- A. Fluid and insulin therapy  **(key)**
-- B. Fosphenytoin 1 500 mg PE IV
-- C. Levetiracetam 4 500 mg IV
-- D. Lorazepam 4 mg IV
-- E. Magnesium sulfate 2 g IV
+- A. Alcohol withdrawal seizure
+- B. Cerebral hyperperfusion syndrome  **(key)**
+- C. Embolic stroke from the repair
+- D. Postoperative hyponatremia
+- E. Unprovoked epileptic seizure
 
-*Explanation:* A glucose of 42 mmol/L with little ketosis and a normal bicarbonate is a hyperosmolar hyperglycemic state, and his focal seizures are provoked by it. Correcting the dehydration and hyperglycemia treats the cause. Anticonvulsants alone do not correct the metabolic trigger. He is aware during the episodes and not in status, so an immediate benzodiazepine is not the priority. Nothing suggests low magnesium or eclampsia.
+*Explanation:* A severe headache on the side of the operation, a seizure and a BP of 214/112 mmHg, 5 days after endarterectomy of a 90% stenosis, point to cerebral hyperperfusion syndrome. Van Mook and colleagues describe headache, seizures and focal deficits after repair of a high-grade stenosis, with high BP as a key risk factor. An embolic stroke would usually cause a focal deficit, and he has none. His sodium of 138 mmol/L is normal, and he does not drink alcohol. A new unprovoked seizure does not explain the headache and severe hypertension after this operation.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Diabetes Canada Clinical Practice Guidelines Expert Committee, Goguen J, Gilbert J. Hyperglycemic emergencies in adults. Can J Diabetes. 2018. https://pubmed.ncbi.nlm.nih.gov/29650082/
+*Source:* van Mook WN, Rennenberg RJ, Schurink GW, et al. Cerebral hyperperfusion syndrome. Lancet Neurol. 2005. https://doi.org/10.1016/S1474-4422(05)70251-9
 
 #### Q2
-**Which of the following is the most appropriate initial IV fluid for this patient?**
+**Which of the following is the most appropriate drug to lower his BP?**
 
-- A. Albumin 25% infusion
-- B. Dextrose 5% in water
-- C. Half normal saline
-- D. Isotonic saline  **(key)**
-- E. Sodium bicarbonate infusion
+- A. hydralazine 10 mg IV
+- B. labetalol 20 mg IV  **(key)**
+- C. nifedipine 10 mg PO
+- D. nitroglycerin 50 mcg/minute IV
+- E. nitroprusside 0.5 mcg/kg/minute IV
 
-*Explanation:* Diabetes Canada recommends starting with 0.9% sodium chloride to restore volume, with a later change to 0.45% sodium chloride once BP is stable, while watching how fast osmolality falls. Starting with hypotonic fluid risks a rapid fall in osmolality. Dextrose 5% adds glucose and free water at the wrong time. His bicarbonate of 22 mmol/L shows no acidosis to treat. Albumin has no role in this condition.
+*Explanation:* Van Mook and colleagues base treatment on strict BP control with labetalol or clonidine until the brain's autoregulation recovers, because high pressure drives the excess flow into the operated territory. They advise against calcium channel blockers such as nifedipine and against direct vasodilators such as hydralazine, nitroglycerin and nitroprusside. These drugs dilate the cerebral vessels and can add to the hyperperfusion. Labetalol lowers BP without that effect and can be repeated or given by infusion.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Diabetes Canada Clinical Practice Guidelines Expert Committee, Goguen J, Gilbert J. Hyperglycemic emergencies in adults. Can J Diabetes. 2018. https://pubmed.ncbi.nlm.nih.gov/29650082/
+*Source:* van Mook WN, Rennenberg RJ, Schurink GW, et al. Cerebral hyperperfusion syndrome. Lancet Neurol. 2005. https://doi.org/10.1016/S1474-4422(05)70251-9
 
 #### Q3
-**Which of the following is his calculated effective serum osmolality?**
+*Update:* His BP is brought down to 158/88 mmHg.
 
-- A. 284 mmol/kg
-- B. 306 mmol/kg
-- C. 326 mmol/kg  **(key)**
-- D. 344 mmol/kg
-- E. 368 mmol/kg
+**Which of the following investigations is most appropriate next for him?**
 
-*Explanation:* Effective osmolality is 2 x sodium plus glucose, so 2 x 142 + 42 = 326 mmol/kg. This is above the 320 mmol/kg used to describe a hyperosmolar state. Adding his urea of 18 gives 344, the total osmolality, but urea crosses cell membranes and is left out of the effective value. The value 284 counts sodium only. The value 368 doubles the glucose as well. The value 306 does not match any correct calculation.
+- A. Duplex scan of the carotid
+- B. EEG within 24 hours
+- C. Lumbar puncture
+- D. MRI brain in 6 weeks
+- E. Non-contrast CT head now  **(key)**
+
+*Explanation:* A first seizure with a severe headache after endarterectomy needs a non-contrast CT head now. Van Mook and colleagues describe brain edema and intracerebral hemorrhage as the serious complications of hyperperfusion, and CT shows a hemorrhage quickly. A duplex scan looks for narrowing or clot at the repair but does not image the brain, and a clot would not explain a headache with severe hypertension. An EEG does not look for bleeding. A lumbar puncture does not answer the question of hemorrhage and adds risk if there is mass effect. An MRI in 6 weeks is far too late.
 
 *Key feature:* Seizures 6. Investigate a first seizure promptly for its cause, using CT, LP, EEG, or metabolic and toxicology testing as needed.
 
-*Source:* Diabetes Canada Clinical Practice Guidelines Expert Committee, Goguen J, Gilbert J. Hyperglycemic emergencies in adults. Can J Diabetes. 2018. https://pubmed.ncbi.nlm.nih.gov/29650082/
+*Source:* van Mook WN, Rennenberg RJ, Schurink GW, et al. Cerebral hyperperfusion syndrome. Lancet Neurol. 2005. https://doi.org/10.1016/S1474-4422(05)70251-9
 
 ### seizures-42: Dialysis patient who is not herself
 
@@ -1781,317 +1806,324 @@ A 68-year-old woman on hemodialysis three times a week is brought to the emergen
 
 *Source:* Payne LE, Gagnon DJ, Riker RR, et al. Cefepime-induced neurotoxicity. A systematic review. Crit Care. 2017. https://pubmed.ncbi.nlm.nih.gov/29137682/
 
-### seizures-43: Woman with lung cancer and a first seizure
+### seizures-43: Student found confused in bed
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 61-year-old woman with lung adenocarcinoma diagnosed 4 months ago is brought to the emergency department after a generalized seizure at home that lasted 2 minutes. For 1 week she has had morning headaches and mild clumsiness of her left hand. She is receiving chemotherapy. She lives alone and bathes every evening. She is now alert and oriented with a mild left pronator drift. Capillary glucose is 6.9 mmol/L. CT head shows a 2.5 cm right parietal enhancing mass with surrounding edema and 4 mm of midline shift. There is no hemorrhage.
+A 21-year-old man with type 1 diabetes is brought to the emergency department by his roommate, who found him sweaty and confused in bed at 07:30. He uses insulin glargine at bedtime and insulin lispro with meals. Last night he played 2 hours of hockey, drank 6 beers and skipped his bedtime snack. In triage he begins jerking all four limbs, and the jerking has now lasted 3 minutes. Two attempts at IV access fail. Capillary glucose is 1.6 mmol/L.
 
-- Temperature: 36.9°C oral
-- Pulse: 90/minute
-- Resp.: 16/minute
-- BP: 138/80 mmHg
-- O2 sat: 96% on room air
-- Weight: 60 kg
+- Temperature: 36.6°C tympanic
+- Pulse: 124/minute
+- Resp.: 24/minute
+- BP: 142/84 mmHg
+- O2 sat: 95% on room air
+- Weight: 76 kg
 
 #### Q1
-**Which of the following is the most appropriate antiseizure plan for this patient?**
+**Which of the following is the most appropriate first treatment for him?**
 
-- A. Levetiracetam started today  **(key)**
-- B. Lorazepam as needed only
-- C. Phenobarbital at bedtime
-- D. Wait for EEG before treating
-- E. No drug until a second seizure
+- A. glucagon 1 mg IM  **(key)**
+- B. glucose gel 15 g buccal
+- C. midazolam 10 mg IM
+- D. orange juice 200 mL PO
+- E. thiamine 100 mg IM
 
-*Explanation:* She has had a seizure from a brain metastasis, a structural cause with a high risk of recurrence, so an antiseizure drug is indicated now. The advice against routine antiseizure drugs applies to patients with brain tumours who have not had a seizure. Levetiracetam has few drug interactions, while enzyme inducers such as phenobarbital interact with many cancer drugs and with dexamethasone. Waiting for an EEG or a second seizure leaves her unprotected.
+*Explanation:* His seizure has a reversible cause, a glucose of 1.6 mmol/L, and IV access has failed. Diabetes Canada advises glucagon 1 mg SC or IM for severe hypoglycemia when no IV is available. Nothing goes into the mouth of a seizing patient, so gel and juice risk aspiration. IM midazolam is added if the seizure reaches 5 minutes, but it does not correct the glucose. Thiamine does not treat hypoglycemia.
 
 *Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
 
-*Source:* Chang SM, Messersmith H, Ahluwalia M, et al. Anticonvulsant prophylaxis and steroid use in adults with metastatic brain tumors. ASCO and SNO endorsement of the Congress of Neurological Surgeons guidelines. J Clin Oncol. 2019.
+*Source:* Diabetes Canada Clinical Practice Guidelines Expert Committee, Yale JF, Paty B, Senior PA. Hypoglycemia. Can J Diabetes. 2018. https://www.diabetes.ca/for-professionals/full-guidelines/chapter-14
 
 #### Q2
-**Which of the following is the most appropriate additional medication for her symptoms?**
+*Update:* Ten minutes after treatment he stops jerking and wakes. His glucose is 5.8 mmol/L.
 
-- A. Dexamethasone 10 mg IV  **(key)**
-- B. Enoxaparin 60 mg SC
-- C. Mannitol 60 g IV
-- D. Nimodipine 60 mg PO
-- E. Tranexamic acid 1 g IV
+**Which of the following best explains his low glucose this morning?**
 
-*Explanation:* Headache, a pronator drift and edema with 4 mm of midline shift are symptoms of mass effect, and dexamethasone is recommended for temporary relief of these symptoms. She is alert with no signs of herniation, so mannitol is not needed. There is no hemorrhage for tranexamic acid, and nimodipine is used for subarachnoid hemorrhage. Anticoagulation does not treat edema.
+- A. Adrenal insufficiency
+- B. Exercise and alcohol without a snack  **(key)**
+- C. Gastroparesis delaying his meal
+- D. Insulin-secreting tumour
+- E. Lispro given at bedtime by mistake
+
+*Explanation:* Diabetes Canada notes that the body's response to hypoglycemia is reduced during sleep and after exercise or alcohol, and he had 2 hours of hockey, 6 beers and no bedtime snack before a night of basal insulin. Nothing suggests he gave lispro at bedtime. Gastroparesis delays meal absorption, but he did not eat. Adrenal insufficiency and an insulin-secreting tumour are rare and not needed to explain a clear trigger.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Chang SM, Messersmith H, Ahluwalia M, et al. Anticonvulsant prophylaxis and steroid use in adults with metastatic brain tumors. ASCO and SNO endorsement of the Congress of Neurological Surgeons guidelines. J Clin Oncol. 2019.
+*Source:* Diabetes Canada Clinical Practice Guidelines Expert Committee, Yale JF, Paty B, Senior PA. Hypoglycemia. Can J Diabetes. 2018. https://www.diabetes.ca/for-professionals/full-guidelines/chapter-14
 
 #### Q3
-**Which of the following is the most appropriate safety advice about her evening bath?**
+*Update:* He has had no previous severe hypoglycemia. He drives to work.
 
-- A. Bathe only in the evening
-- B. Bathe with the door locked
-- C. Shower instead of bathing  **(key)**
-- D. Stop washing until reviewed
-- E. Use a hot tub instead
+**Which of the following is the most appropriate advice about his driving?**
 
-*Explanation:* A seizure in a bath can cause drowning, especially in someone who lives alone, so NICE advises a shower rather than a bath. A locked door delays help if she has a seizure. The time of day does not change the risk. A hot tub carries the same drowning risk. Stopping washing is unnecessary when a safer option exists.
+- A. Check glucose before each drive  **(key)**
+- B. Drive only on short trips
+- C. Drive with no change in routine
+- D. Report to the licensing body now
+- E. Stop driving for 12 months
+
+*Explanation:* Diabetes Canada advises drivers on insulin to consider checking glucose before driving and at least every 4 hours while driving, not to drive below 4.0 mmol/L, and to keep fast-acting carbohydrate within reach. A private driver notifies the licensing body after any severe hypoglycemia while driving in the past 12 months, or more than one severe episode while awake in the past 6 months. This single episode happened during sleep, so neither applies. Short trips do not remove the risk, and a 12-month ban has no basis here.
 
 *Key feature:* Seizures 5. After a first seizure, advise on risky activities such as driving and meet reporting obligations.
 
-*Source:* National Institute for Health and Care Excellence. Epilepsies in children, young people and adults. NICE guideline NG217. 2022. https://www.nice.org.uk/guidance/ng217
+*Source:* Diabetes Canada Clinical Practice Guidelines Expert Committee, Houlden RL, Berard L, Lakoff JM, Woo V, Yale JF. Diabetes and driving. Can J Diabetes. 2018. https://www.diabetes.ca/for-professionals/full-guidelines/chapter-21
 
-### seizures-44: Older woman with a week of unsteadiness
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-You are working in a community hospital emergency department. An 84-year-old woman is brought in by ambulance after a generalized seizure at her retirement home that lasted 2 minutes. For a week she has been more confused, unsteady and nauseated. Her physician started hydrochlorothiazide 3 weeks ago for hypertension. She drinks several cups of tea and water a day and eats little. She takes no other medications. She is drowsy but opens her eyes to voice and follows simple commands. Capillary glucose is 6.4 mmol/L. Sodium on a venous blood gas is 112 mmol/L.
-
-- Temperature: 36.7°C oral
-- Pulse: 86/minute
-- Resp.: 18/minute
-- BP: 142/78 mmHg
-- O2 sat: 96% on room air
-- Weight: 52 kg
-
-#### Q1
-**Which of the following is the most appropriate treatment for her low sodium now?**
-
-- A. Hypertonic 3% saline 150 mL IV  **(key)**
-- B. Levetiracetam 3 000 mg IV
-- C. Normal saline 1 L IV bolus
-- D. Tolvaptan 15 mg PO
-- E. Water restriction to 1 L per day
-
-*Explanation:* A seizure and reduced consciousness with a sodium of 112 mmol/L are severe symptoms, and the European guideline advises 150 mL of 3% saline over 20 minutes, repeated as needed. Water restriction and tolvaptan act over days. A litre of normal saline raises sodium unpredictably and is not the treatment for severe symptoms. An anticonvulsant does not correct the cause of the seizure.
-
-*Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
-
-*Source:* Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014.
-
-#### Q2
-*Update:* The team manages her hyponatremia using the 2014 European clinical practice guideline.
-
-**Which of the following is the target rise in serum sodium during the first hour of treatment?**
-
-- A. 5 mmol/L  **(key)**
-- B. 8 mmol/L
-- C. 10 mmol/L
-- D. 15 mmol/L
-- E. 28 mmol/L
-
-*Explanation:* The guideline aims for a rise of 5 mmol/L in the first hour, which usually improves severe symptoms, then limits the rise to 10 mmol/L in the first 24 hours. A lower daily limit of 8 mmol/L is often used when the risk of osmotic demyelination is high, as with her poor intake. A rise of 8 or 10 mmol/L in the first hour uses up most of the daily limit. A rise of 15 or 28 mmol/L, the latter taking her from 112 back to 140, would exceed it and risk osmotic demyelination.
-
-*Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
-
-*Source:* Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014.
-
-#### Q3
-*Update:* Two hours later her sodium is 118 mmol/L and she is alert. Her urine output has risen to 400 mL per hour.
-
-**Which of the following is the most appropriate next step to prevent overcorrection?**
-
-- A. Continue 3% saline to 130 mmol/L
-- B. Give furosemide 40 mg IV
-- C. Give normal saline 2 L bolus
-- D. Stop 3% saline, check sodium often  **(key)**
-- E. Tolvaptan 15 mg PO
-
-*Explanation:* Her symptoms have improved after a rise of 6 mmol/L, and a brisk water diuresis as the thiazide effect wears off can push sodium up quickly. Active treatment should stop, with sodium checked every few hours, and water with desmopressin given if she exceeds the limit. Continuing 3% saline, tolvaptan or large saline volumes would raise sodium further. Furosemide adds to fluid loss and does not control the rate of correction.
-
-*Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
-
-*Source:* Spasovski G, et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Eur J Endocrinol. 2014.
-
-### seizures-45: Young woman who collapsed at the laboratory
+### seizures-44: Tingling hands and a seizure at 74
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 22-year-old woman is brought to the emergency department from the hospital laboratory, where she collapsed while having blood drawn. She felt hot, nauseated and lightheaded, her vision went grey, and she slumped in the chair. The phlebotomist saw her arms jerk a few times for about 5 seconds. She woke within 20 seconds and was fully oriented, though pale and sweaty. She had no tongue bite or incontinence. She has fainted twice before at the sight of blood. She takes no medications. Her examination and ECG are normal.
+A 74-year-old woman is brought to the emergency department after a generalized seizure at home that lasted 2 minutes. For 3 days she has had cramps in her hands and tingling around her mouth. She has taken pantoprazole 40 mg daily for 9 years for reflux, with amlodipine, atorvastatin, cholecalciferol 1 000 units daily and acetaminophen as needed. She does not drink alcohol. She is now alert. Inflating the BP cuff causes spasm of her hand. Total calcium is 1.74 mmol/L with albumin 38 g/L, potassium 2.9 mmol/L, sodium 139 mmol/L, creatinine 72 umol/L and glucose 6.1 mmol/L. The QTc is 505 ms. An hour after calcium gluconate 2 g IV, her calcium is 1.76 mmol/L.
 
 - Temperature: 36.8°C oral
-- Pulse: 68/minute
+- Pulse: 88/minute
+- Resp.: 18/minute
+- BP: 138/76 mmHg
+- O2 sat: 97% on room air
+- Weight: 58 kg
+
+#### Q1
+**Which of the following tests is most likely to explain why her calcium has not corrected?**
+
+- A. Parathyroid hormone level
+- B. Serum magnesium  **(key)**
+- C. Serum phosphate
+- D. TSH and free T4
+- E. Vitamin D level
+
+*Explanation:* Low calcium with low potassium that does not correct with IV calcium, in a woman on a proton pump inhibitor for 9 years, points to magnesium deficiency. Ahmed and Mohammed explain that low magnesium impairs parathyroid hormone release and action, so the calcium cannot be corrected with calcium or vitamin D until magnesium is replaced. A parathyroid hormone level may be low or normal but does not name the cause. A vitamin D level or phosphate does not explain why IV calcium failed. Thyroid tests do not explain these findings.
+
+*Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
+
+*Source:* Ahmed F, Mohammed A. Magnesium. The forgotten electrolyte. A review on hypomagnesemia. Med Sci (Basel). 2019. https://doi.org/10.3390/medsci7040056
+
+#### Q2
+*Update:* Further blood tests have been sent, and the results will take an hour.
+
+**Which of the following is the most appropriate treatment for her while the results are awaited?**
+
+- A. calcitriol 0.5 mcg PO
+- B. calcium gluconate 2 g IV again
+- C. levetiracetam 1 000 mg IV
+- D. magnesium sulfate 2 g IV  **(key)**
+- E. potassium chloride 40 mmol IV
+
+*Explanation:* Calcium that does not correct with IV calcium, a low potassium and 9 years of a proton pump inhibitor make magnesium deficiency the likely block, and she has had a seizure. Ahmed and Mohammed recommend IV magnesium sulfate for severe symptomatic hypomagnesemia. Replacing magnesium restores parathyroid hormone action, so calcium and potassium can then correct. Her creatinine is 72 umol/L, so there is little risk in giving it before the level returns. Another dose of calcium gluconate had only a brief effect and will fail again until magnesium is given. The kidney keeps losing potassium while magnesium is low, so potassium alone does not correct. Calcitriol acts slowly and does not fix the cause. Levetiracetam does not treat a metabolic cause of seizures.
+
+*Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
+
+*Source:* Ahmed F, Mohammed A. Magnesium. The forgotten electrolyte. A review on hypomagnesemia. Med Sci (Basel). 2019. https://doi.org/10.3390/medsci7040056
+
+#### Q3
+**Which of the following medications on her list most likely caused this presentation?**
+
+- A. acetaminophen
+- B. amlodipine
+- C. atorvastatin
+- D. cholecalciferol
+- E. pantoprazole  **(key)**
+
+*Explanation:* Proton pump inhibitors are linked to severe hypomagnesemia, most often after more than 5 years of use, and it can cause tetany, seizures and arrhythmias. She has taken pantoprazole for 9 years, so its ongoing need should be reviewed and her magnesium rechecked. Amlodipine, atorvastatin and acetaminophen do not cause magnesium loss. Cholecalciferol at 1 000 units daily does not cause low calcium or low magnesium.
+
+*Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
+
+*Source:* Benmassaoud A, McDonald EG, Lee TC. Potential harms of proton pump inhibitor therapy. Rare adverse effects of commonly used drugs. CMAJ. 2016. https://doi.org/10.1503/cmaj.150570
+
+### seizures-45: Confused on three mornings
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 26-year-old woman presents to the emergency department because on three mornings over the past 2 months she has woken with a bitten tongue, aching muscles and a wet bed. Each time she felt confused for about half an hour. She lives alone, and no one has seen an event. She drives a school bus. She rarely drinks alcohol, uses no drugs and takes no medication. She has no daytime episodes and no history of head injury. Her examination is normal apart from a healing bite on the right side of her tongue. Glucose, electrolytes and a 12-lead ECG are normal.
+
+- Temperature: 36.8°C oral
+- Pulse: 76/minute
 - Resp.: 14/minute
-- BP: 112/70 mmHg
+- BP: 118/72 mmHg
 - O2 sat: 99% on room air
 
 #### Q1
-**Which of the following is the most likely diagnosis in this patient?**
+**Which of the following findings most strongly suggests that these events are epileptic seizures?**
 
-- A. Brief absence seizure
-- B. Generalized tonic clonic seizure
-- C. Myoclonic seizure
-- D. Vasovagal syncope with jerks  **(key)**
-- E. Vertebrobasilar TIA
+- A. Bed wet on waking
+- B. ECG and glucose normal
+- C. Events only during sleep
+- D. Lateral tongue bite  **(key)**
+- E. Three events in 2 months
 
-*Explanation:* A clear trigger, warning symptoms of heat, nausea and greying vision, a few seconds of jerks and full orientation within 20 seconds are typical of vasovagal syncope with brief jerks. A generalized seizure usually lasts longer and leaves postictal confusion. An absence seizure does not cause a fall with warning symptoms. Myoclonic seizures do not come with this prodrome. Her age, trigger and normal examination do not fit a vertebrobasilar TIA.
+*Explanation:* A bite on the side of the tongue is the finding that most strongly points to epileptic seizures. In a meta-analysis by Brigo and colleagues a bitten tongue had a specificity of 96% for epileptic seizures over syncope. Urinary incontinence occurs with both seizures and syncope and does not reliably separate them, so a wet bed adds little on its own. Events confined to sleep also fit parasomnias such as REM sleep behaviour disorder. Three events in 2 months shows that the problem recurs but not what it is. A normal ECG and glucose make some causes less likely but do not point to seizures.
 
 *Key feature:* Seizures 1. Consider seizure in unwitnessed events with confusion, incontinence, unexplained falls or injury, or tics in children.
 
-*Source:* Sheldon RS, Morillo CA, Krahn AD, et al. Standardized approaches to the investigation of syncope. Canadian Cardiovascular Society position paper. Can J Cardiol. 2011.
+*Source:* Brigo F, Nardone R, Bongiovanni LG. Value of tongue biting in the differential diagnosis between epileptic seizures and syncope. Seizure. 2012. https://doi.org/10.1016/j.seizure.2012.06.005
 
 #### Q2
-**Which of the following further investigations is required before she is discharged?**
+**Which of the following investigations are most appropriate to arrange for her?**
 
-Select 1.
+Select 2.
 
-- A. CBC and electrolytes
-- B. CT head without contrast
-- C. Echocardiogram
-- D. EEG with sleep deprivation
-- E. Holter monitor for 48 hours
-- F. MRI brain with contrast
-- G. Serum prolactin level
-- H. None  **(key)**
+- A. CT head in the ED today
+- B. Holter monitor for 48 hours
+- C. MRI of the brain  **(key)**
+- D. Polysomnography
+- E. Routine EEG  **(key)**
+- F. Serum prolactin
+- G. Tilt-table test
 
-*Explanation:* A typical vasovagal event with a clear trigger, a normal examination and a normal ECG needs no further tests, and the history makes the diagnosis. Brief jerks during syncope do not make it a seizure, so EEG and brain imaging are not indicated. Echocardiography and Holter monitoring are for suspected cardiac syncope, which her history and ECG do not suggest. Blood tests and prolactin would not change management.
+*Explanation:* NICE advises a routine EEG when epilepsy is suspected, followed by a sleep-deprived EEG if it is normal, and an MRI for people diagnosed with epilepsy. Her normal examination and lack of head injury mean a CT in the ED adds little. Her ECG is normal and the events are not faints, so Holter and tilt-table testing do not answer the question. Polysomnography looks for sleep disorders rather than seizures. A prolactin level is not used to diagnose epilepsy.
 
 *Key feature:* Seizures 6. Investigate a first seizure promptly for its cause, using CT, LP, EEG, or metabolic and toxicology testing as needed.
 
-*Source:* Sheldon RS, Morillo CA, Krahn AD, et al. Standardized approaches to the investigation of syncope. Canadian Cardiovascular Society position paper. Can J Cardiol. 2011.
+*Source:* National Institute for Health and Care Excellence. Epilepsies in children, young people and adults. NICE guideline NG217. 2022. https://www.nice.org.uk/guidance/ng217
 
 #### Q3
-**Which of the following is the most appropriate advice about her driving?**
+**Which of the following is the most appropriate advice about her school bus licence if epilepsy is confirmed?**
 
-- A. Drive as usual  **(key)**
-- B. Drive only after a normal EEG
-- C. Stop driving for a year
-- D. Stop driving for one week
-- E. Stop driving for three months
+- A. Drive after 12 months seizure free
+- B. Drive after 3 months seizure free
+- C. Drive after 5 years seizure free  **(key)**
+- D. Drive if her EEG is normal
+- E. Drive on day routes only
 
-*Explanation:* The CMA guide, based on Canadian Cardiovascular Society advice, sets no driving restriction for private or commercial drivers after typical vasovagal syncope. Treating this event as a seizure would wrongly stop her driving for months. A week off applies to syncope with a reversible cause that has been treated. An EEG is not needed for vasovagal syncope.
+*Explanation:* A school bus is a commercial vehicle, and the CMA Driver's Guide requires a commercial driver with epilepsy to be seizure free for 5 years, with or without medication. The guide keeps the same 5-year bar for commercial drivers whose seizures occur only in sleep. Three months applies to a private driver after a single unprovoked seizure, and 12 months to a commercial driver after a single seizure without a diagnosis of epilepsy. A normal EEG does not exclude epilepsy. Driving only by day does nothing for seizures that can happen at any time she falls asleep.
 
 *Key feature:* Seizures 5. After a first seizure, advise on risky activities such as driving and meet reporting obligations.
 
-*Source:* Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles. 10th edition. 2023. Cardiovascular diseases section. https://driversguide.ca/sections/cardiovascular-diseases
+*Source:* Canadian Medical Association. CMA Driver's Guide. Determining medical fitness to operate motor vehicles. 10th edition. 2023. Nervous system section. https://driversguide.ca/sections/nervous-system
 
-### seizures-46: Boy with a seizure during a power outage
+### seizures-46: Tingling lips two days after neck surgery
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department in January. A 6-year-old boy is brought in by his mother after a generalized seizure at home that lasted 2 minutes. The family has run a gas generator in their attached garage since a power outage 2 days ago. His parents and his sister have had headaches and nausea since yesterday. He is now drowsy but rousable and has vomited twice. He has no fever, rash or neck stiffness. Capillary glucose is 5.6 mmol/L.
+A 46-year-old woman presents to the emergency department 2 days after a total thyroidectomy for Graves disease. She went home yesterday. Since this morning she has had tingling of her lips and fingers and cramps in her hands. In the waiting room she had a generalized seizure that lasted 1 minute. She is now drowsy but answers questions. Tapping in front of her ear makes the corner of her mouth twitch. The neck wound is flat and dry, and there is no stridor. She takes no medication. Capillary glucose is 5.8 mmol/L.
 
-- Temperature: 36.9°C tympanic
-- Pulse: 124/minute
-- Resp.: 24/minute
-- BP: 100/60 mmHg
-- O2 sat: 99% on room air
-- Weight: 21 kg
+- Temperature: 37.1°C oral
+- Pulse: 88/minute
+- Resp.: 16/minute
+- BP: 126/74 mmHg
+- O2 sat: 98% on room air
+- Weight: 64 kg
 
 #### Q1
-**Which of the following is the most appropriate immediate treatment for this child?**
+**Which of the following is the most likely cause of her seizure?**
 
-- A. Hydroxocobalamin 70 mg/kg IV
-- B. Levetiracetam 1 260 mg IV
-- C. Low flow oxygen to O2 sat 94%
-- D. Oxygen at 100% by non rebreather  **(key)**
-- E. Sodium nitrite 6 mg/kg IV
+- A. Cerebral venous sinus thrombosis
+- B. Neck hematoma with hypoxia
+- C. Postoperative hypoparathyroidism  **(key)**
+- D. Postoperative thyroid storm
+- E. SIADH with hyponatremia
 
-*Explanation:* Headaches and nausea in the whole family, a generator in an attached garage and a seizure in the child point to carbon monoxide poisoning. High flow 100% oxygen shortens the half life of carboxyhemoglobin and should start at once. His O2 sat of 99% does not exclude poisoning, so titrating oxygen to a saturation target is wrong. Hydroxocobalamin and sodium nitrite treat cyanide, and nitrite would further reduce oxygen delivery. An anticonvulsant does not treat the cause.
+*Explanation:* Tingling of the lips and fingers, hand cramps and a positive Chvostek sign after a total thyroidectomy point to low calcium from parathyroid injury, which can cause seizures. The Society for Endocrinology names total thyroidectomy as the most common cause of acute symptomatic hypocalcemia in hospital. A flat, dry wound with no stridor and a saturation of 98% argue against a neck hematoma. She has no fever and a pulse of 88/minute, which do not suggest thyroid storm. Low sodium and venous sinus thrombosis do not explain perioral tingling and a positive Chvostek sign.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Rose JJ, Wang L, Xu Q, et al. Carbon monoxide poisoning. Pathogenesis, management, and future directions of therapy. Am J Respir Crit Care Med. 2017. https://pubmed.ncbi.nlm.nih.gov/27753502/
+*Source:* Turner J, Gittoes N, Selby P. Society for Endocrinology emergency endocrine guidance. Emergency management of acute hypocalcaemia in adult patients. Endocr Connect. 2016. https://doi.org/10.1530/EC-16-0056
 
 #### Q2
-**Which of the following investigations will best confirm the diagnosis?**
+*Update:* Magnesium is 0.82 mmol/L and potassium 4.1 mmol/L. The other results will take an hour.
 
-- A. Carboxyhemoglobin by co-oximetry  **(key)**
-- B. CT head without contrast
-- C. Pulse oximetry reading
-- D. Serum lactate level
-- E. Troponin and CK levels
+**Which of the following is the most appropriate initial treatment for her?**
 
-*Explanation:* Co-oximetry on a blood gas measures carboxyhemoglobin directly and confirms carbon monoxide exposure. Standard pulse oximetry cannot tell carboxyhemoglobin from oxyhemoglobin, which is why his reading is normal. Lactate, troponin and CK can show the severity of poisoning but do not confirm it. CT is not needed to make the diagnosis.
+- A. calcitriol 0.5 mcg PO twice daily
+- B. calcium carbonate 1 250 mg PO
+- C. calcium gluconate 2 g IV over 10 minutes  **(key)**
+- D. levothyroxine 100 mcg PO
+- E. magnesium sulfate 2 g IV over 15 minutes
+
+*Explanation:* Tetany, a positive Chvostek sign and a seizure 2 days after total thyroidectomy make acute low calcium the working diagnosis, and it cannot wait an hour. The Society for Endocrinology treats low calcium with symptoms such as tetany or seizures as severe and advises 10 to 20 mL of 10% calcium gluconate, which is 1 to 2 g, in 50 to 100 mL of 5% dextrose IV over 10 minutes with ECG monitoring. Oral calcium and calcitriol are added for ongoing treatment but act too slowly now. Her magnesium of 0.82 mmol/L is normal, so magnesium is not the priority. Levothyroxine replaces thyroid hormone and does not treat low calcium.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Rose JJ, Wang L, Xu Q, et al. Carbon monoxide poisoning. Pathogenesis, management, and future directions of therapy. Am J Respir Crit Care Med. 2017. https://pubmed.ncbi.nlm.nih.gov/27753502/
+*Source:* Turner J, Gittoes N, Selby P. Society for Endocrinology emergency endocrine guidance. Emergency management of acute hypocalcaemia in adult patients. Endocr Connect. 2016. https://doi.org/10.1530/EC-16-0056
 
 #### Q3
-*Update:* His carboxyhemoglobin is 24%. His parents are waiting with his sister in the waiting room.
+*Update:* Before her treatment is started, she has another generalized seizure. It has now lasted 6 minutes.
 
-**Which of the following is the most important additional step for this child?**
+**Which of the following is the most appropriate step now?**
 
-- A. Discuss hyperbaric oxygen therapy  **(key)**
-- B. Home once headache settles
-- C. Outpatient EEG in 2 weeks
-- D. Send the family home to ventilate
-- E. Start daily levetiracetam
+- A. Fosphenytoin 1 280 mg PE IV
+- B. Levetiracetam 3 840 mg IV
+- C. Lorazepam 4 mg IV and treat the cause  **(key)**
+- D. Rapid sequence intubation first
+- E. Treat the cause only, then wait
 
-*Explanation:* A seizure is a sign of severe carbon monoxide poisoning, and hyperbaric oxygen reduced delayed cognitive sequelae in a randomized trial, so a hyperbaric centre should be consulted. The rest of the family was exposed and needs assessment, not a return to the house. Discharge when his headache improves ignores the risk of delayed injury. The seizure was provoked, so long term antiseizure medication and a routine EEG are not the priority.
+*Explanation:* A seizure lasting 6 minutes is status epilepticus, and the AES guideline starts a benzodiazepine at 5 minutes, so lorazepam is given while the calcium gluconate that treats the cause runs. Treating the cause alone leaves the seizure untreated past the 5-minute point. Levetiracetam and fosphenytoin are second-line drugs after a benzodiazepine. Intubation is not the first step while she keeps her saturation and has not yet had a benzodiazepine.
 
 *Key feature:* Seizures 4. In ongoing seizures, support airway and breathing, treat special causes like eclampsia or toxins, and escalate anticonvulsants stepwise.
 
-*Source:* Rose JJ, Wang L, Xu Q, et al. Carbon monoxide poisoning. Pathogenesis, management, and future directions of therapy. Am J Respir Crit Care Med. 2017. https://pubmed.ncbi.nlm.nih.gov/27753502/
+*Source:* Glauser T, Shinnar S, Gloss D, et al. Evidence-based guideline. Treatment of convulsive status epilepticus in children and adults. Report of the Guideline Committee of the American Epilepsy Society. Epilepsy Curr. 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4749120/
 
-### seizures-47: Headache and blurred vision after a transplant
+### seizures-47: Twitching hand that will not settle
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 46-year-old woman who had a kidney transplant 8 months ago presents to the emergency department with a severe headache and blurred vision since this morning. In the department she has two generalized seizures, each lasting 2 minutes, and does not regain awareness between them. She takes tacrolimus, mycophenolate and prednisone. Her tacrolimus dose was increased 2 weeks ago. She is now drowsy but rousable. She cannot count fingers and has no focal weakness. Her neck is supple. Capillary glucose 6.1 mmol/L, sodium 137 mmol/L, creatinine 142 umol/L.
+A 63-year-old man is brought to the emergency department by his wife with 2 days of repeated jerking of his right hand and the right side of his face. The jerks come every few seconds for minutes at a time, and he stays fully aware and can talk during them. He has lost 5 kg over 3 months. He has no known medical problems and takes no medication. He does not drink alcohol or use drugs. He is alert and oriented. Rhythmic twitching of the right hand and face comes and goes during the examination. Between episodes, strength, sensation and speech are normal.
 
-- Temperature: 37.0°C oral
-- Pulse: 102/minute
-- Resp.: 18/minute
-- BP: 204/118 mmHg
+- Temperature: 36.9°C oral
+- Pulse: 96/minute
+- Resp.: 16/minute
+- BP: 146/86 mmHg
 - O2 sat: 97% on room air
-- Weight: 66 kg
+- Weight: 82 kg
 
 #### Q1
-**Which of the following terms best describes two seizures without recovery of awareness between them?**
+**Which of the following terms best describes the seizures he has had over the past 2 days?**
 
-- A. Convulsive status epilepticus  **(key)**
-- B. Nonepileptic events
-- C. Postictal delirium only
-- D. Simple partial seizures
-- E. Two isolated seizures
+- A. Absence status epilepticus
+- B. Focal impaired awareness seizures
+- C. Focal motor status epilepticus  **(key)**
+- D. Generalized convulsive status
+- E. Psychogenic nonepileptic events
 
-*Explanation:* Repeated seizures without a return to baseline between them meet the definition of status epilepticus, even when each seizure is short. She should be treated as status rather than observed. They are not isolated seizures because she did not recover between them. Generalized convulsions with loss of awareness are not simple partial seizures, and nothing suggests nonepileptic events.
+*Explanation:* Repeated focal motor jerking over 2 days with awareness kept is focal motor status epilepticus, the form called epilepsia partialis continua, which the ILAE lists among the types of status with prominent motor signs. His awareness is preserved, so these are not focal impaired awareness seizures or absence status. The jerks stay in one hand and one side of the face, so this is not generalized convulsive status. Rhythmic twitching confined to one side, seen during the examination, does not suggest a psychogenic cause.
 
 *Key feature:* Seizures 3. Diagnose status epilepticus when seizures recur or the patient does not recover between them, and treat promptly.
 
-*Source:* Brophy GM, et al. Guidelines for the evaluation and management of status epilepticus. Neurocritical Care Society. Neurocrit Care. 2012.
+*Source:* Trinka E, Cock H, Hesdorffer D, et al. A definition and classification of status epilepticus. Report of the ILAE Task Force on Classification of Status Epilepticus. Epilepsia. 2015. https://pubmed.ncbi.nlm.nih.gov/26336950/
 
 #### Q2
-**Which of the following is the most likely cause of her seizures?**
+**Which of the following bedside tests is most likely to identify the cause?**
 
-- A. Acute transplant rejection
-- B. Bacterial meningitis
-- C. Cerebral venous thrombosis
-- D. Posterior reversible encephalopathy  **(key)**
-- E. Toxoplasma encephalitis
+- A. Ammonia level
+- B. Blood ethanol concentration
+- C. Point-of-care glucose  **(key)**
+- D. Serum prolactin
+- E. Urine drug screen
 
-*Explanation:* Headache, loss of vision and seizures with a BP of 204/118 mmHg in a patient taking tacrolimus fit posterior reversible encephalopathy syndrome. Calcineurin inhibitors, kidney disease and BP swings are known triggers. She has no fever or neck stiffness to suggest meningitis or encephalitis. Acute rejection affects graft function and does not explain headache, visual loss and seizures, and a creatinine of 142 umol/L is far too low to cause uremic encephalopathy. Venous thrombosis is possible, but severe hypertension and visual loss on a calcineurin inhibitor favour this syndrome.
+*Explanation:* Nonketotic hyperglycemia is a recognized cause of persistent focal motor seizures, and Kumar stresses remembering it in exactly this situation, so a glucose check comes first in a man with unexplained weight loss. An ammonia level does not explain a focal seizure pattern in a man with no liver disease. He does not drink or use drugs, so an ethanol level and a broad urine drug screen add little. A prolactin level does not identify a cause.
 
 *Key feature:* Seizures 6. Investigate a first seizure promptly for its cause, using CT, LP, EEG, or metabolic and toxicology testing as needed.
 
-*Source:* Fugate JE, Rabinstein AA. Posterior reversible encephalopathy syndrome. Clinical and radiological manifestations, pathophysiology, and outstanding questions. Lancet Neurol. 2015.
+*Source:* Kumar S. Epilepsia partialis continua stopped by insulin. J R Soc Med. 2004. https://doi.org/10.1177/014107680409700709
 
 #### Q3
-**Which of the following is the most appropriate imaging to confirm the diagnosis?**
+*Update:* Capillary glucose is 27.4 mmol/L. Sodium 132 mmol/L, bicarbonate 24 mmol/L, and blood ketones are negative.
 
-- A. Abdominal CT with contrast
-- B. Carotid Doppler ultrasound
-- C. CT angiography of the neck
-- D. MRI brain with FLAIR imaging  **(key)**
-- E. Transcranial Doppler study
+**Which of the following is the most appropriate brain imaging plan for him?**
 
-*Explanation:* MRI shows the typical pattern of vasogenic edema in the subcortical white matter, often in both parietal and occipital lobes, and FLAIR images show it best. CT is often normal or less sensitive. Neck vessel imaging, carotid ultrasound and transcranial Doppler do not show the edema. Abdominal CT looks at the graft, not the brain.
+- A. CT angiography of head and neck
+- B. MRI of the brain  **(key)**
+- C. PET scan of the brain
+- D. Skull radiographs
+- E. No brain imaging needed
+
+*Explanation:* Harden and colleagues found neuroimaging useful in emergency patients with seizures, especially with focal seizure onset, and high glucose does not exclude a tumour or stroke at the seizure focus. MRI shows the cortex in the most detail and can show the reversible changes of nonketotic hyperglycemia. Skipping imaging because a metabolic cause is found could miss a lesion. CT angiography looks at vessels rather than brain tissue. PET and skull radiographs have no role in this evaluation.
 
 *Key feature:* Seizures 6. Investigate a first seizure promptly for its cause, using CT, LP, EEG, or metabolic and toxicology testing as needed.
 
-*Source:* Fugate JE, Rabinstein AA. Posterior reversible encephalopathy syndrome. Clinical and radiological manifestations, pathophysiology, and outstanding questions. Lancet Neurol. 2015.
+*Source:* Harden CL, Huff JS, Schwartz TH, et al. Reassessment. Neuroimaging in the emergency patient presenting with seizure. An evidence-based review. Report of the Therapeutics and Technology Assessment Subcommittee of the American Academy of Neurology. Neurology. 2007. https://doi.org/10.1212/01.wnl.0000285083.25882.0e
 
 #### Q4
-**Which of the following is the most appropriate treatment of the underlying cause?**
+*Update:* Phenytoin is being considered for his ongoing jerking.
 
-- A. Gradual BP lowering, tacrolimus review  **(key)**
-- B. Increase the prednisone dose
-- C. Lower BP to normal within 1 hour
-- D. Start acyclovir and ceftriaxone
-- E. Start therapeutic heparin
+**Which of the following treatments is most likely to stop his seizures?**
 
-*Explanation:* Treatment is controlled lowering of BP together with review of the tacrolimus dose with the transplant team, plus seizure control. Dropping BP to normal within an hour risks cerebral ischemia. Higher steroid doses do not treat the cause. Antimicrobials and heparin treat infection and venous thrombosis, which her presentation does not support.
+- A. Fosphenytoin 1 640 mg PE IV
+- B. Levetiracetam 4 500 mg IV
+- C. Lorazepam 4 mg IV every 5 minutes
+- D. Phenobarbital 1 640 mg IV
+- E. Treat glucose with insulin  **(key)**
+
+*Explanation:* Seizures from nonketotic hyperglycemia respond to correcting the glucose better than to antiseizure drugs. Kumar describes focal motor seizures that persisted despite a midazolam infusion and stopped once an insulin infusion brought the glucose below 8 mmol/L. Kumar also warns that phenytoin may do harm by worsening glycemic control, so fosphenytoin is a poor choice. Levetiracetam and phenobarbital do not treat the cause. Lorazepam every 5 minutes risks oversedation in a man who is awake and breathing well.
 
 *Key feature:* Seizures 2. Search for and promptly treat quickly reversible seizure causes such as hypoglycemia, toxins, or arrhythmia.
 
-*Source:* Fugate JE, Rabinstein AA. Posterior reversible encephalopathy syndrome. Clinical and radiological manifestations, pathophysiology, and outstanding questions. Lancet Neurol. 2015.
+*Source:* Kumar S. Epilepsia partialis continua stopped by insulin. J R Soc Med. 2004. https://doi.org/10.1177/014107680409700709

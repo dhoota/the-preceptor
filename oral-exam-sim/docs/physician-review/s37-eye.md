@@ -14,6 +14,8 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - eye-23: traumatic optic neuropathy is new to the bank. The key (observation, no routine high dose steroids) follows the Cochrane reviews. Practice varies, so please confirm. *(samps-pass2-mixed.md)*
 - eye-34 q1: the guideline is a 2015 NHS paediatric document whose review date has passed. The claim that acetone and ethanol injure the cornea is not in it. *(samps-pass2-mixed.md)*
 - eye-37 q2: that ondansetron has no anticholinergic effect is standard pharmacology. Lachkar 2007 supports the risk from drugs with anticholinergic effects as a class. *(samps-pass2-mixed.md)*
+- eye-25 uses the WFH instruction to raise factor levels at once for eye bleeding. WFH gives no eye-specific target level, so no dose is keyed. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- eye-25 no longer confirms a hyphema in the case. q3 rests on WFH treating any ophthalmic bleeding at once. *(samps-replace-s27-s29-s34-s38-s52.md)*
 - eye-25 q3: vancomycin with ceftazidime is keyed as the IV prophylaxis. Many Canadian centres use a fluoroquinolone (for example moxifloxacin) instead. The option is written as an example, and the other options are clearly wrong, so I kept it. *(samps-s37-lensA.md)*
 - eye-21 q2: some ophthalmologists taper rather than stop dexamethasone after 3 weeks because subepithelial infiltrates can rebound. The key reads "Stop them and refer to ophthalmology". Confirm that this wording is acceptable. *(samps-s37-lensA.md)*
 - eye-35 q3 is tagged key feature 4 (steroids in viral infection), but the case is sterile traumatic iritis. The tag is a stretch. KF 4 is still covered by six other questions if it is retagged. *(samps-s37-lensA.md)*
@@ -22,6 +24,9 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - eye-25 and eye-23: see Overlap 1 and 2. Decide whether to rebuild or keep. *(samps-s37-lensA.md)*
 - Key feature tags that fit loosely: eye-18 q2 (abrasion treatment tagged KF 3), eye-35 q3 (sterile traumatic iritis tagged KF 4), eye-37 q3 (timolol in COPD tagged KF 1) and eye-37 q4 (ipratropium delivery tagged KF 2). None was retagged, to keep key feature coverage stable. Low. *(samps-s37-lensB.md)*
 - eye-38 q4: with acuity of 20/200 in a subluxated lens, "prompt outpatient follow-up" for the existing findings is plausible but worth confirming. Low. *(samps-s37-lensB.md)*
+- eye-25 relies on EyeWiki, an AAO-hosted peer-edited resource, not a formal guideline. It is adequate for first-line topical treatment. No Canadian hyphema guideline was found. *(samps-sweep2-review-sw2-d.md)*
+- eye-25 q3 keys a topical beta-blocker as first line. The reasons given for rejecting acetazolamide, mannitol and washout follow the usual escalation but are not quoted from EyeWiki. *(samps-sweep2-sw2-d.md)*
+- eye-25 cites EyeWiki, an AAO resource rather than a journal guideline. No open-access hyphema guideline was found. *(samps-sweep2-sw2-d.md)*
 - eye-17 q2: the College of Optometrists guideline is UK and its full text is behind a login. Onset timing and cause are confirmed. The band of punctate staining in the explanation comes from the stem and standard teaching. *(samps-textbooks-s37.md)*
 - eye-35 q2 and q3 and eye-38 q1 and q4 rest on the textbook alone. *(samps-textbooks-s37.md)*
 
@@ -440,64 +445,62 @@ A 52-year-old man presents to the emergency department with 2 days of a dull ach
 
 *Source:* Cheung AY, Choi DS, Ahmad S, et al, American Academy of Ophthalmology Preferred Practice Pattern Cornea/External Disease Panel. Conjunctivitis Preferred Practice Pattern. Ophthalmology. 2024. https://www.aao.org/education/preferred-practice-pattern/conjunctivitis-ppp-2023
 
-### eye-22: Boy with blisters on his eyelid
+### eye-22: A red eye that will not settle
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 5-year-old boy is brought to the emergency department by his mother with 3 days of a red, watery left eye. Yesterday a cluster of small blisters appeared along the left upper lid margin. Last week he had a fever and painful sores inside his mouth that have healed. He has no itch. His mother asks for the steroid drops that helped his sister's allergic eyes last spring. The left lid margin has grouped vesicles on a red base. The left conjunctiva is injected with follicles. A small tender preauricular node is felt on the left.
+A 6-year-old boy is brought to the emergency department by his father with 7 weeks of a red, irritated right eye with a mild watery discharge. A walk-in clinic diagnosed conjunctivitis twice and prescribed antibiotic drops, which did not help. He has eczema. He has no eye pain, itch, fever or change in vision. His father asks for something stronger, such as steroid drops. Visual acuity is 20/25 in each eye. The right lower lid conjunctiva shows follicles. On the right upper lid margin there is a 3 mm pearly, dome-shaped papule with a central dimple. There are similar papules on his neck. The cornea is clear with fluorescein. The left eye is normal.
 
-- Temperature: 37.2°C oral
-- Pulse: 100/minute
-- Resp.: 22/minute
+- Temperature: 36.7°C tympanic
+- Pulse: 92/minute
+- Resp.: 20/minute
 - O2 sat: 99% on room air
-- Weight: 19 kg
+- Weight: 21 kg
 
 #### Q1
-**Which of the following is the most likely cause of his eye findings?**
+**Which of the following is the most likely cause of the persistent redness of this boy's right eye?**
 
-- A. Adenovirus infection
-- B. Allergic contact dermatitis
-- C. Herpes simplex virus  **(key)**
-- D. Molluscum contagiosum
-- E. Staphylococcal impetigo
+- A. Adenoviral conjunctivitis
+- B. Allergic conjunctivitis
+- C. Bacterial conjunctivitis
+- D. Herpes simplex blepharitis
+- E. Molluscum lesion on the lid margin  **(key)**
 
-*Explanation:* Grouped vesicles on a red base at the lid margin with follicular conjunctivitis and a preauricular node, a week after fever and mouth sores, is primary herpes simplex infection. Adenovirus also causes follicles and a node but not lid vesicles. Allergic dermatitis itches and does not cause a node. Impetigo forms honey coloured crusts. Molluscum gives firm umbilicated papules rather than clustered blisters.
+*Explanation:* A pearly, dome-shaped papule with a central dimple on the lid margin is a molluscum contagiosum lesion, and the papules on his neck support it. In a systematic review of ocular molluscum, children with atopic dermatitis were the main group affected, lesions sat mostly on the eyelid margins and periorbital skin, and secondary follicular conjunctivitis was the most frequent complication. Bacterial conjunctivitis would have responded to two courses of antibiotics. Allergic conjunctivitis itches and is usually bilateral. Herpes simplex causes clustered vesicles rather than a single umbilicated papule. Adenoviral conjunctivitis is self-limited and does not last 7 weeks beside a lid lesion.
 
 *Key feature:* Eye: red eye and loss of vision 1. Before calling a red eye conjunctivitis, exclude serious causes such as glaucoma, iritis, keratitis, or a foreign body.
 
-*Source:* White ML, Chodosh J. Herpes simplex virus keratitis: a treatment guideline. American Academy of Ophthalmology. 2014. https://www.aao.org/education/clinical-statement/herpes-simplex-virus-keratitis-treatment-guideline
+*Source:* Naseer S, Mian SI, Hakim FE. Ocular and periorbital manifestations of molluscum contagiosum: a 20-year systematic review. Int Ophthalmol Clin. 2025. https://doi.org/10.1097/IIO.0000000000000559
 
 #### Q2
-*Update:* Visual acuity is 20/25 on the right and 20/30 on the left. Fluorescein shows a branching epithelial ulcer with terminal bulbs on the left cornea. The anterior chamber is quiet.
+**Which of the following is the most appropriate response to the father's request for steroid drops?**
 
-**Which of the following is the most likely effect of adding a topical steroid to his treatment now?**
+- A. Decline steroid drops  **(key)**
+- B. Dexamethasone and tobramycin drops
+- C. Hydrocortisone cream to the lid
+- D. Loteprednol drops for 1 week
+- E. Prednisolone acetate 1% drops
 
-- A. Better long term acuity
-- B. Faster healing of the dendrite
-- C. Fewer future recurrences
-- D. Geographic ulcer formation  **(key)**
-- E. Reduced viral shedding
-
-*Explanation:* A dendrite means active viral replication in the epithelium. A topical steroid lets the virus spread, and the dendrite can enlarge into a broad geographic ulcer. Steroids delay rather than speed epithelial healing and increase viral replication. They do not prevent recurrence or improve final acuity in epithelial disease. His sister's drops should not be used, and any steroid for later stromal disease is decided by ophthalmology.
+*Explanation:* His conjunctivitis is a reaction to a viral lid lesion, and a systematic review of conjunctivitis advises that topical corticosteroids be avoided in viral conjunctivitis because they potentiate the virus and may cause harm. It also states that steroid drops, and combination drops that contain a steroid, should not be used routinely, and that patients who need steroids should see an ophthalmologist. Prednisolone, loteprednol and a dexamethasone and tobramycin combination are all steroid drops. Hydrocortisone cream on the lid margin puts a steroid onto the eye and does not treat the lesion.
 
 *Key feature:* Eye: red eye and loss of vision 4. Avoid prescribing topical steroids routinely for viral eye infections.
 
-*Source:* White ML, Chodosh J. Herpes simplex virus keratitis: a treatment guideline. American Academy of Ophthalmology. 2014. https://www.aao.org/education/clinical-statement/herpes-simplex-virus-keratitis-treatment-guideline
+*Source:* Azari AA, Barney NP. Conjunctivitis: a systematic review of diagnosis and treatment. JAMA. 2013. https://doi.org/10.1001/jama.2013.280318
 
 #### Q3
-**Which of the following is the most appropriate treatment for his corneal lesion, together with ophthalmology follow-up?**
+**Which of the following is the most appropriate plan for the lesion and his eye?**
 
-- A. Antibiotic ointment alone
-- B. Antiviral treatment  **(key)**
-- C. Debridement and patching
-- D. Lubricating drops alone
-- E. Topical steroid and antibiotic
+- A. Continue antibiotic drops 2 weeks
+- B. Olopatadine drops twice daily
+- C. Ophthalmology referral for lesion removal  **(key)**
+- D. Oral acyclovir for 7 days
+- E. Swab for chlamydia and gonorrhea
 
-*Explanation:* Herpes simplex epithelial keratitis is treated with an antiviral, either topical trifluridine or oral acyclovir. Oral treatment is often easier in a young child who resists drops. Ophthalmology follows the cornea until it heals. Antibiotic ointment and lubricants do not stop viral replication. Epithelial debridement is an adjunct that ophthalmology may choose, but patching is not used for infectious keratitis and debridement alone is not the emergency treatment. A steroid combination drop can worsen the ulcer.
+*Explanation:* The conjunctivitis is driven by the lid margin lesion, and the systematic review found that excision or curettage was the most common treatment and that secondary follicular conjunctivitis often resolved once the lesion was removed. Two courses of antibiotic drops have already failed. Olopatadine treats allergic conjunctivitis, which does not fit a unilateral follicular reaction beside a lesion. Acyclovir treats herpes simplex, and there are no vesicles or dendrites. Nothing in the history suggests a sexually transmitted infection.
 
 *Key feature:* Eye: red eye and loss of vision 1. Before calling a red eye conjunctivitis, exclude serious causes such as glaucoma, iritis, keratitis, or a foreign body.
 
-*Source:* White ML, Chodosh J. Herpes simplex virus keratitis: a treatment guideline. American Academy of Ophthalmology. 2014. https://www.aao.org/education/clinical-statement/herpes-simplex-virus-keratitis-treatment-guideline
+*Source:* Naseer S, Mian SI, Hakim FE. Ocular and periorbital manifestations of molluscum contagiosum: a 20-year systematic review. Int Ophthalmol Clin. 2025. https://doi.org/10.1097/IIO.0000000000000559
 
 ### eye-23: Strap hook to the brow
 
@@ -622,84 +625,81 @@ A 12-year-old boy is brought to the emergency department by his mother 3 hours a
 
 *Source:* Jordan DR, Allen LH, White J, et al. Intervention within days for some orbital floor fractures: the white-eyed blowout. Ophthalmic Plast Reconstr Surg. 1998. https://pubmed.ncbi.nlm.nih.gov/9842557/
 
-### eye-25: Celebration that ended early
+### eye-25: A cork to the eye at a party
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 72-year-old man presents to the emergency department 90 minutes after the cork from a bottle of sparkling wine struck his right eye at a family dinner. He had cataract surgery in the right eye 2 years ago. He takes low-dose ASA and ramipril. He has severe right eye pain and can only see hand motion with that eye. The right lids are swollen. There is a bulging subconjunctival hemorrhage around the whole cornea. The right pupil is teardrop shaped and points toward the 8 o'clock position.
+A 34-year-old woman presents to the emergency department at 00:50 on New Year's Day, 30 minutes after a champagne cork struck her left eye as a friend opened a bottle. The blow knocked off her glasses, which broke. She wears them for nearsightedness. She has pain and blurred vision in the left eye. She has no medical conditions and takes no regular medications. The left upper lid is mildly swollen. There is a small subconjunctival hemorrhage on the nasal side of the left eye. The left pupil is round and reacts to light, and the eye moves fully in all directions. No blood is seen in the front of the eye with a penlight.
 
-- Temperature: 36.6°C oral
-- Pulse: 92/minute
-- Resp.: 18/minute
-- BP: 152/84 mmHg
-- O2 sat: 97% on room air
+- Temperature: 36.8°C oral
+- Pulse: 90/minute
+- Resp.: 16/minute
+- BP: 124/76 mmHg
+- O2 sat: 99% on room air
 
 #### Q1
-**Which of the following is the most appropriate way to protect the right eye while awaiting ophthalmology?**
+**Which of the following slit lamp findings would indicate a microhyphema in her left eye?**
 
-- A. Antibiotic ointment and a patch
-- B. Moist saline gauze on the eye
-- C. Pressure patch over closed lids
-- D. Rigid shield over the orbit  **(key)**
-- E. Tape the lids closed
+- A. Blood in the vitreous behind the lens
+- B. Cells and flare without red cells
+- C. Fluorescein streaming from the cornea
+- D. Red cells circulating in the aqueous  **(key)**
+- E. Red patch beneath the conjunctiva
 
-*Explanation:* A dense bulging subconjunctival hemorrhage around the whole cornea and a peaked pupil after blunt trauma to an eye with a surgical wound mean an open globe until proven otherwise. A rigid shield resting on the orbital bones protects the eye without any pressure on it. A pressure patch, gauze or taping can press on the globe and push contents out through the wound. Ointment should not go into an open globe.
+*Explanation:* A microhyphema is red blood cells suspended in the aqueous of the anterior chamber with no layered blood, and it is seen only with the slit lamp. That is why her normal penlight examination does not exclude one after a blow that caused a subconjunctival hemorrhage. White cells and flare without red cells mark inflammation such as traumatic iritis. A red patch beneath the conjunctiva is the subconjunctival hemorrhage she already has. Fluorescein streaming from the cornea is a positive Seidel test for an open globe. Blood behind the lens is a vitreous hemorrhage, not blood in the anterior chamber.
 
 *Key feature:* Eye: red eye and loss of vision 5. After eye or orbital trauma with subconjunctival bleeding, exclude hyphema, including subtle ones seen only on slit lamp.
 
-*Source:* Zhou Y, DiSclafani M, Jeang L, Shah AA. Open globe injuries: review of evaluation, management, and surgical pearls. Clin Ophthalmol. 2022. https://doi.org/10.2147/OPTH.S372011
+*Source:* Oldham GW and colleagues, American Academy of Ophthalmology EyeWiki. Hyphema. Updated 2026. https://eyewiki.org/Hyphema
 
 #### Q2
-*Update:* Visual acuity is hand motion on the right and 20/40 on the left. The left eye is normal.
+**Which of the following is the most appropriate way to record the visual acuity of her left eye?**
 
-**Which of the following parts of the standard eye examination should be deferred in this patient?**
+- A. Count fingers at 1 metre
+- B. Defer until new glasses arrive
+- C. Snellen chart through a pinhole  **(key)**
+- D. Snellen chart with no correction
+- E. Snellen with a friend's glasses
 
-- A. Confrontation visual fields
-- B. Inspection with a penlight
-- C. Intraocular pressure measurement  **(key)**
-- D. Pupil assessment for an afferent defect
-- E. Testing of visual acuity
-
-*Explanation:* Tonometry presses on the cornea and can push intraocular contents through a rupture, so it is deferred when an open globe is suspected. Acuity, pupils, fields and gentle inspection need no pressure on the eye and give baseline and prognostic information. A relative afferent defect in an injured eye predicts a poor outcome and should be recorded.
+*Explanation:* Her acuity is needed now as a baseline for the injured eye. Her distance glasses broke, so her uncorrected nearsightedness would lower the reading and hide how much of the blur comes from the injury. Viewing the chart through a pinhole removes most uncorrected refractive error, so pinhole acuity separates refractive blur from eye disease. A friend's glasses add a prescription made for someone else. Counting fingers is a crude measure kept for vision too poor to read the chart. Waiting for new glasses delays a baseline she needs tonight.
 
 *Key feature:* Eye: red eye and loss of vision 3. Record visual acuity for every eye complaint, then do a full eye exam including slit lamp.
 
-*Source:* Zhou Y, DiSclafani M, Jeang L, Shah AA. Open globe injuries: review of evaluation, management, and surgical pearls. Clin Ophthalmol. 2022. https://doi.org/10.2147/OPTH.S372011
+*Source:* Kanclerz P, Khoramnia R, Atchison D. Applications of the pinhole effect in clinical vision science. J Cataract Refract Surg. 2024. https://doi.org/10.1097/j.jcrs.0000000000001318
 
 #### Q3
-**Which of the following are appropriate in his emergency department management while ophthalmology is on the way?**
+*Update:* Left visual acuity is 20/40 and right is 20/20. Slit lamp examination confirms a microhyphema. The globe is intact. Intraocular pressure is 31 mmHg on the left and 15 mmHg on the right.
 
-Select 4.
+**Which of the following is the most appropriate first treatment for the raised pressure in her left eye?**
 
-- A. Antiemetic such as ondansetron  **(key)**
-- B. B-scan ultrasound of the globe
-- C. CT of the orbits  **(key)**
-- D. IV vancomycin and ceftazidime  **(key)**
-- E. MRI of the orbits
-- F. Pressure patch over the eye
-- G. Tetanus immunization update  **(key)**
-- H. Topical antibiotic drops
+- A. Acetazolamide 500 mg IV
+- B. Anterior chamber washout now
+- C. Mannitol 1 g/kg IV
+- D. Prednisolone acetate 1% drops
+- E. Timolol 0.5% drops  **(key)**
 
-*Explanation:* Vomiting raises pressure in the eye and can push contents out, so an antiemetic is given early. CT of the orbits looks for a rupture site and foreign body. Broad IV antibiotics such as vancomycin and ceftazidime lower the risk of endophthalmitis, and tetanus status is updated. Ultrasound presses on the globe and is avoided. MRI is not a first test and is slower than CT. Patches and topical drops are avoided in an open globe.
+*Explanation:* Her left pressure of 31 mmHg is raised, and a topical aqueous suppressant such as a beta-blocker is the first-line treatment for a pressure rise after a hyphema. Acetazolamide and IV mannitol are systemic agents held for pressure that does not respond to topical treatment. Surgical washout of the anterior chamber is for pressure that stays high despite medical treatment or for a large clot, and she has only a microhyphema. Topical prednisolone treats inflammation in the eye and does not lower the pressure.
 
 *Key feature:* Eye: red eye and loss of vision 5. After eye or orbital trauma with subconjunctival bleeding, exclude hyphema, including subtle ones seen only on slit lamp.
 
-*Source:* Zhou Y, DiSclafani M, Jeang L, Shah AA. Open globe injuries: review of evaluation, management, and surgical pearls. Clin Ophthalmol. 2022. https://doi.org/10.2147/OPTH.S372011
+*Source:* Oldham GW and colleagues, American Academy of Ophthalmology EyeWiki. Hyphema. Updated 2026. https://eyewiki.org/Hyphema
 
 #### Q4
-**Which of the following history details most increases the risk that this injury has ruptured the globe?**
+*Update:* Her pressure falls after treatment. Ophthalmology will see her in clinic in the morning.
 
-- A. Age of 72 years
-- B. Cataract surgery 2 years ago  **(key)**
-- C. Daily low-dose ASA
-- D. Impact from a flying cork
-- E. Ramipril for hypertension
+**Which of the following further details of her history is most important before she goes home?**
 
-*Explanation:* Incisions from earlier eye surgery, such as cataract surgery, are weak points that are more likely to open when the eye is struck. Low-dose ASA raises the risk of bleeding but not of rupture. Ramipril has no effect on the wall of the globe. The cork is the mechanism in any case, and the question is what made this eye vulnerable to it. Age alone is a weaker factor than a surgical wound in that eye.
+- A. Contact lens wear
+- B. Family history of glaucoma
+- C. Tetanus immunization status
+- D. Time of her last meal
+- E. Use of ASA or ibuprofen  **(key)**
+
+*Explanation:* ASA and other NSAIDs raise the risk of a rebleed into the anterior chamber, which usually happens within the first 5 days after injury. Pain relief after a hyphema should not include them, so her recent use must be known and addressed before she leaves. She takes no regular medications, but occasional use for a headache is easy to miss unless asked. She wears glasses, not contact lenses. A family history of glaucoma does not change the care of this injury tonight. Tetanus status matters for wounds, and she has a closed injury. The time of her last meal matters only when urgent surgery is planned.
 
 *Key feature:* Eye: red eye and loss of vision 2. Take a detailed eye history, including onset, trauma, pain, and vision change, plus related systemic disease like temporal arteritis.
 
-*Source:* Zhou Y, DiSclafani M, Jeang L, Shah AA. Open globe injuries: review of evaluation, management, and surgical pearls. Clin Ophthalmol. 2022. https://doi.org/10.2147/OPTH.S372011
+*Source:* Oldham GW and colleagues, American Academy of Ophthalmology EyeWiki. Hyphema. Updated 2026. https://eyewiki.org/Hyphema
 
 ### eye-26: Eye pain that wakes her at night
 
@@ -1302,7 +1302,7 @@ A 3-year-old boy is brought to the emergency department by his mother 30 minutes
 - D. Forcible separation of the lids
 - E. Warm moist compresses  **(key)**
 
-*Explanation:* Cyanoacrylate bonds to lashes and skin, and washing with warm water and warm moist compresses loosen it while the lids are left to open gently. The eye usually opens without further action within 1 to 4 days. Trimming lashes can help. Forcible separation tears the lid margin and can strip corneal epithelium, so the lids are not pried open. Solvents such as acetone and ethanol are not used near the eye because they injure the cornea. Surgery is rarely needed.
+*Explanation:* The Glasgow paediatric guideline advises washing glued lids thoroughly with warm water, covering the eye with a gauze patch and letting the lids open on their own, which typically happens within 1 to 4 days without further action. It specifically advises against trying to open the eye by manipulation, so forcible separation is not used. The approach needs no solvent, so acetone and ethanol swabs are not part of the treatment. Surgery is not needed when the lids can be expected to open by themselves.
 
 *Key feature:* Eye: red eye and loss of vision 3. Record visual acuity for every eye complaint, then do a full eye exam including slit lamp.
 
@@ -1479,79 +1479,77 @@ A 74-year-old man presents to the emergency department because his wife noticed 
 
 *Source:* Tarlan B, Kiratli H. Subconjunctival hemorrhage: risk factors and potential indicators. Clin Ophthalmol. 2013. https://www.tandfonline.com/doi/full/10.2147/OPTH.S35062
 
-### eye-37: Vomiting during treatment for breathlessness
+### eye-37: Red eyes that look out further
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 69-year-old woman is being treated in the emergency department for a COPD exacerbation. She received salbutamol and ipratropium by face mask nebulizer every 20 minutes for three doses and prednisone 50 mg PO. Three hours later she has nausea, two episodes of vomiting, a headache over her left eye and blurred vision. The nurse suggests ondansetron for gastritis from prednisone. She has worn glasses for farsightedness for years. Her breathing has improved. The left eye is red.
+A 56-year-old woman presents to the emergency department with 4 weeks of red, gritty, watering eyes, worse on the right. A walk-in clinic twice treated her for conjunctivitis with antibiotic drops, without improvement. For 3 days the right eye has seemed dim and colours look washed out, and she sees double when she looks up. Graves disease was diagnosed 5 months ago and treated with radioactive iodine 7 weeks ago. Her thyroid function tests last week were normal. She does not smoke. Visual acuity is 20/70 on the right and 20/25 on the left. Both eyes are proptotic, with upper lid retraction and red, swollen conjunctiva. Upgaze is limited in the right eye. She identifies 4 of 14 colour plates with the right eye and 13 of 14 with the left. There is a right relative afferent pupillary defect.
 
 - Temperature: 36.8°C oral
-- Pulse: 104/minute
-- Resp.: 22/minute
-- BP: 158/88 mmHg
-- O2 sat: 92% on 2 L/minute by nasal prongs
+- Pulse: 84/minute
+- Resp.: 16/minute
+- BP: 134/82 mmHg
+- O2 sat: 98% on room air
 
 #### Q1
-**Which of the following is the most important next step in the assessment of this patient?**
+**Which of the following is the most likely cause of her persistent red eyes?**
 
-- A. CT head without contrast
-- B. Lipase and liver enzymes
-- C. Ondansetron 4 mg IV
-- D. Tonometry of the left eye  **(key)**
-- E. Troponin and ECG
+- A. Allergic conjunctivitis
+- B. Bacterial conjunctivitis
+- C. Orbital cellulitis
+- D. Thyroid eye disease  **(key)**
+- E. Viral conjunctivitis
 
-*Explanation:* A red eye with headache, vomiting and blurred vision after nebulized ipratropium in a farsighted older woman is acute angle closure until pressure says otherwise. Tonometry with acuity and a pupil check confirms it within minutes. Ondansetron alone treats a symptom and delays the diagnosis. CT, lipase and cardiac tests look for other causes and should not come first when the eye explains the picture.
+*Explanation:* Bilateral proptosis with upper lid retraction, swollen red conjunctiva and limited upgaze in a woman with Graves disease is Graves orbitopathy, the main manifestation of Graves disease outside the thyroid. Conjunctivitis of any cause does not push the eyes forward, retract the lids or limit eye movement, and bacterial conjunctivitis would have responded to two courses of antibiotics. Allergic conjunctivitis itches. Orbital cellulitis is usually one-sided and acute, with fever and pain on eye movement.
 
 *Key feature:* Eye: red eye and loss of vision 1. Before calling a red eye conjunctivitis, exclude serious causes such as glaucoma, iritis, keratitis, or a foreign body.
 
-*Source:* Lachkar Y, Bouassida W. Drug-induced acute angle closure glaucoma. Curr Opin Ophthalmol. 2007. https://pubmed.ncbi.nlm.nih.gov/17301614/
+*Source:* Bartalena L, Kahaly GJ, Baldeschi L, and colleagues, European Group on Graves' Orbitopathy. The 2021 EUGOGO clinical practice guidelines for the medical management of Graves' orbitopathy. Eur J Endocrinol. 2021. https://doi.org/10.1530/EJE-21-0479
 
 #### Q2
-*Update:* Visual acuity is 20/200 on the left and 20/40 on the right. The left pupil is 6 mm and nonreactive. The left cornea is hazy and the chamber shallow. Intraocular pressure is 56 mmHg on the left and 18 mmHg on the right.
+**Which of the following findings best shows that her eye disease is threatening her sight?**
 
-**Which of the following antiemetics is most appropriate for her nausea while her eye is treated?**
+- A. Bilateral proptosis
+- B. Conjunctival redness
+- C. Limited upgaze on the right
+- D. Right afferent pupillary defect  **(key)**
+- E. Upper lid retraction
 
-- A. dimenhydrinate 50 mg IV
-- B. diphenhydramine 25 mg IV
-- C. ondansetron 4 mg IV  **(key)**
-- D. promethazine 12.5 mg IV
-- E. scopolamine 1.5 mg transdermal
-
-*Explanation:* Her acute angle closure followed nebulized ipratropium, an anticholinergic that dilated the pupil and closed a narrow angle. Drugs with anticholinergic effects can worsen or trigger pupil block, so the antiemetic must have none. Ondansetron has no anticholinergic action and settles the nausea and vomiting, which also strain the eye. Dimenhydrinate, diphenhydramine and promethazine are antihistamines with anticholinergic effects, and scopolamine is a pure anticholinergic, so each risks deepening the attack.
+*Explanation:* A relative afferent pupillary defect in Graves orbitopathy is very specific for compressive optic neuropathy, and together with her reduced acuity and poor colour vision in the right eye it shows the optic nerve is being compressed at the orbital apex. Colour vision loss is an early sign of this compression. Proptosis, lid retraction, redness and restricted upgaze reflect orbital inflammation and muscle swelling, and optic neuropathy can occur without severe proptosis, so none of these alone signals a threat to sight.
 
 *Key feature:* Eye: red eye and loss of vision 1. Before calling a red eye conjunctivitis, exclude serious causes such as glaucoma, iritis, keratitis, or a foreign body.
 
-*Source:* Lachkar Y, Bouassida W. Drug-induced acute angle closure glaucoma. Curr Opin Ophthalmol. 2007. https://pubmed.ncbi.nlm.nih.gov/17301614/
+*Source:* Tagami M, Honda S, Azumi A. Insights into current management strategies for dysthyroid optic neuropathy: a review. Clin Ophthalmol. 2022. https://doi.org/10.2147/OPTH.S284609
 
 #### Q3
-**Which of the following pressure lowering drops carries the greatest risk for her lungs?**
+**Which of the following is the most appropriate management for her now?**
 
-- A. apraclonidine 1% one drop
-- B. brimonidine 0.2% one drop
-- C. dorzolamide 2% one drop
-- D. latanoprost 0.005% one drop
-- E. timolol 0.5% one drop  **(key)**
+- A. Artificial tears and review in 4 weeks
+- B. Oral prednisone 20 mg daily
+- C. Same-day ophthalmology for IV steroids  **(key)**
+- D. Selenium supplements and follow-up
+- E. Topical dexamethasone drops
 
-*Explanation:* Timolol is a nonselective beta blocker, and systemic absorption through the nasolacrimal duct can cause bronchospasm in COPD or asthma. With an active exacerbation she should receive other suppressants, such as apraclonidine or brimonidine, a carbonic anhydrase inhibitor and then pilocarpine. Alpha agonists and dorzolamide do not affect the airways. Latanoprost is a prostaglandin that is not first line in an acute attack but is not a bronchospasm risk.
+*Explanation:* Optic neuropathy from Graves orbitopathy is sight-threatening, and the first-line treatment is high-dose IV methylprednisolone, 500 to 1000 mg a day for three days or on alternate days in the first week, with urgent orbital decompression if the response is poor after 2 weeks. That needs same-day ophthalmology. Artificial tears and selenium are measures for mild disease. Oral prednisone 20 mg daily is far below the pulse doses used for optic neuropathy. Steroid drops act on the ocular surface and do not relieve compression of the optic nerve in the orbit.
 
 *Key feature:* Eye: red eye and loss of vision 1. Before calling a red eye conjunctivitis, exclude serious causes such as glaucoma, iritis, keratitis, or a foreign body.
 
-*Source:* Lachkar Y, Bouassida W. Drug-induced acute angle closure glaucoma. Curr Opin Ophthalmol. 2007. https://pubmed.ncbi.nlm.nih.gov/17301614/
+*Source:* Tagami M, Honda S, Azumi A. Insights into current management strategies for dysthyroid optic neuropathy: a review. Clin Ophthalmol. 2022. https://doi.org/10.2147/OPTH.S284609
 
 #### Q4
-**Which of the following is the most appropriate change to how she receives ipratropium in future?**
+**Which of the following details of her history most likely contributed to the recent worsening of her eyes?**
 
-- A. Continuous nebulization by mask
-- B. Face mask at half the dose
-- C. Inhaler with a spacer  **(key)**
-- D. Nebulizer mask with tighter seal
-- E. Oral anticholinergic tablets
+- A. Antibiotic drops from the clinic
+- B. Graves diagnosis 5 months ago
+- C. Her age of 56 years
+- D. Normal thyroid tests last week
+- E. Radioactive iodine 7 weeks ago  **(key)**
 
-*Explanation:* A metered dose inhaler with a spacer, or a nebulizer with a mouthpiece, delivers ipratropium to the airways without spraying the eyes. After laser iridotomy the risk from anticholinergics falls, but this change is still sensible. Half dose or continuous mask nebulization still exposes the eye. A tighter mask still leaks around the nose toward the eyes. Oral anticholinergics have systemic effects that can also dilate the pupil.
+*Explanation:* The European Group on Graves' Orbitopathy lists radioactive iodine treatment among the risk factors for Graves orbitopathy, with smoking, thyroid dysfunction, high thyrotropin receptor antibody levels and high cholesterol, and it advises low-dose oral prednisone cover when radioactive iodine is chosen. Her eye symptoms worsened in the weeks after treatment. She does not smoke, and her normal thyroid tests argue against thyroid dysfunction as the trigger. The antibiotic drops treated a wrong diagnosis but do not cause orbitopathy. The Graves diagnosis explains the disease but not its recent flare.
 
 *Key feature:* Eye: red eye and loss of vision 2. Take a detailed eye history, including onset, trauma, pain, and vision change, plus related systemic disease like temporal arteritis.
 
-*Source:* Lachkar Y, Bouassida W. Drug-induced acute angle closure glaucoma. Curr Opin Ophthalmol. 2007. https://pubmed.ncbi.nlm.nih.gov/17301614/
+*Source:* Bartalena L, Kahaly GJ, Baldeschi L, and colleagues, European Group on Graves' Orbitopathy. The 2021 EUGOGO clinical practice guidelines for the medical management of Graves' orbitopathy. Eur J Endocrinol. 2021. https://doi.org/10.1530/EJE-21-0479
 
 ### eye-38: Tall teen seeing double after a basketball game
 

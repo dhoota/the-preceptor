@@ -9,6 +9,13 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - s11 headache-10 (signed off) may key prochlorperazine, which CPS and TREKK 2025 say is not available in Canada. Flagged by s40 writer.
 - s40 headache-25 q2 PCC key changed 3 500 to 2 000 units (Canadian 3 000 cap). 26 q3 menu key changed to drug-neutral "Start a migraine preventive".
 - s40 headache-31 q2 PCC key has no dose (NAC would give 2000 units at INR 3.1).
+- Other batches: s40 headache-41 and s45 multiple-trauma-45 are uncommitted rebuilds from this round. They were the other halves of the loc-31 and loc-29 collisions and are now free of those collisions. *(samps-replace-s32-s28.md)*
+- **Overlaps with other writers.** loc-31 in s32 is now a West Nile virus story that is almost the same as the first draft of headache-41, including a 71-year-old farmer near Winnipeg with a flaccid arm. headache-41 was rebuilt again as Lyme disease to remove the clash, so loc-31 no longer has a twin in s40. The reviewer of s32 may want to confirm loc-31 against the rest of the bank. shock-22 in s50 is an asplenic man in septic shock, which was also the first draft of infectious-diseases-27. That SAMP is now lymphedema cellulitis. *(samps-replace-s39-s42.md)*
+- **Lyme disease now appears three times.** arrhythmia-21 and infectious-diseases-14 are Lyme carditis. headache-41 is Lyme meningitis with a possible facial palsy in eastern Ontario, with a flank rash. The decisions differ, but you may prefer fewer Lyme stories. *(samps-replace-s39-s42.md)*
+- Two re-rebuilds need a second check: gi-bleed-41 (rapid AF from a hidden GI bleed, keyed on red cells rather than rate control) and headache-25 (cough headache and Chiari malformation). *(samps-replace-s39-s42.md)*
+- headache-39 q4 and headache-40 q4 both key an orbital warning sign after sinusitis. *(samps-replace-s39-s42.md)*
+- Claims outside the cited source: gi-bleed-38 q1 (slow transfusion and waiting for crossmatch are reasoned, not quoted), headache-25 q3 (MRI shows the posterior fossa better than CT, lumbar puncture unsafe with low tonsils). *(samps-replace-s39-s42.md)*
+- headache-41 keys doxycycline 100 mg twice daily. IDSA also lists higher doxycycline doses for neurologic disease. *(samps-replace-s39-s42.md)*
 - headache-23 q3. Shunt series radiographs are keyed. The evidence on their yield in children is mixed: low sensitivity alone, and better only when combined with CT. Please confirm the menu key, or accept 2 of 3. *(samps-resource-s19-s39-s40.md)*
 - headache-41 q3. No guideline exists for septic cavernous sinus thrombosis. The key (vancomycin with ceftriaxone) rests on a review of case reports. *(samps-resource-s19-s39-s40.md)*
 - headache-43 q2. I could not find an open, verifiable source for C3 returning to normal by about 8 weeks, so I removed the claim. If you want it back, KDIGO 2021 did not state it in the text I searched. *(samps-resource-s19-s39-s40.md)*
@@ -19,6 +26,8 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - Lens A reported two fixes in review-extra.ts (48 q1 key, 49 q2 lactate sentence) that were not present in the file when this review began. Both are now applied. Someone should check whether that file was reverted after Lens A. *(samps-s40-lensB.md)*
 - headache-31 q2: the key "prothrombin complex with vitamin K IV" carries no dose while every distractor does. Under NAC 2022 dosing, INR 3.1 would take 2 000 units. The SAMP does not cite NAC, so no dose was added. A physician may prefer to add the dose and the NAC source. *(samps-s40-lensB.md)*
 - headache-25 q2: the keyed fixed 2 000 units holds under all Canadian guidance. Some centres use 50 units/kg capped at 3 000 units, which would give 3 000 units here and is not an option. *(samps-s40-lensB.md)*
+- headache-47 q3: tramadol is also contraindicated with MAOIs in its Canadian monograph. The explanation keeps the CHS reason only. *(samps-sweep2-review-sw2-c.md)*
+- headache-47: phenelzine is uncommon but sold in Canada. q2 leaves out prochlorperazine, metoclopramide and sumatriptan, so ketorolac is the only strongly recommended option listed. *(samps-sweep2-sw2-c.md)*
 - Chapter numbers and titles were checked against the publisher's table of contents. The chapter text was not available, so matching each claim to a chapter is my judgment. Please confirm the 33 kept citations against your copy. *(samps-textbooks-s19-s25-s39-s40.md)*
 - These guidelines were found but could not be opened, so the textbook was kept: ESC 2019 and ACC/AHA/HRS 2015 SVT (asthma-copd-19), AHA 2021 pediatric myocarditis (asthma-copd-34), BTS/ICS 2016 NIV (asthma-copd-45 q3) and AHA/ASA 2015 unruptured aneurysm (headache-46 q3). *(samps-textbooks-s19-s25-s39-s40.md)*
 
@@ -726,80 +735,77 @@ A 45-year-old man presents to the emergency department with a worsening right-si
 
 *Source:* Bodilsen J, D'Alessandris QG, Humphreys H, et al. European Society of Clinical Microbiology and Infectious Diseases guidelines on diagnosis and treatment of brain abscess in children and adults. Clin Microbiol Infect. 2024.
 
-### headache-25: Confusion and headache in an older man
+### headache-25: Brief headaches at the back of the head
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 81-year-old man is brought to the emergency department by his daughter because of a dull headache for 3 weeks and increasing confusion for 4 days. He has become unsteady and needs help to walk. He does not recall any fall, but his daughter noticed a bruise on his forehead a month ago. He takes apixaban 5 mg twice daily for atrial fibrillation, and metoprolol. He is oriented to person and place only. He has a mild right pronator drift. Pupils are equal and reactive.
+A 27-year-old woman presents to the emergency department with 3 weeks of brief, severe headaches at the back of her head. Each one starts within a second of a cough, sneeze or laugh, peaks at once and fades over about a minute. She has up to 20 a day. She had a chest cold 4 weeks ago and still coughs often. Between attacks she has no pain, and lying down or standing up makes no difference. She has never had headaches like these before. She has no fever, visual change, weakness or numbness. She takes no medications. She is alert and oriented. During the interview she coughs twice, and each time she grips the back of her head.
 
-- Temperature: 36.6°C oral
-- Pulse: 78/minute irregular
+- Temperature: 36.8°C oral
+- Pulse: 76/minute
 - Resp.: 16/minute
-- BP: 152/84 mmHg
-- O2 sat: 96% on room air
-- Weight: 70 kg
+- BP: 118/74 mmHg
+- O2 sat: 99% on room air
 
 #### Q1
-**Which of the following features of his presentation most increases the likelihood of intracranial bleeding?**
+**Which of the following features of her history most helps to classify her headaches?**
 
-- A. Current apixaban therapy  **(key)**
-- B. Dull quality of the headache
-- C. Gradual onset over weeks
-- D. Metoprolol for rate control
-- E. Normal pupillary responses
+- A. Occipital location of the pain
+- B. Recent chest cold
+- C. Severe intensity at the peak
+- D. Triggered by coughing or sneezing  **(key)**
+- E. No headache between attacks
 
-*Explanation:* Anticoagulation is a major risk factor for subdural hematoma in older adults, who often do not recall the minor trauma, such as the one suggested by his forehead bruise. A new headache after age 50 with confusion, gait change and a drift in a patient on apixaban needs urgent CT. A dull quality and gradual onset over weeks are typical of chronic subdural hematoma and do not lower concern. Metoprolol and normal pupils do not change the risk.
+*Explanation:* Headache brought on only by coughing, sneezing or other straining, with sudden onset and lasting between 1 second and 2 hours, defines cough headache in ICHD-3. The trigger places her headaches in that group, and that group needs a search for a cause. Pain at the back of the head and a severe peak occur in many headache types. The chest cold explains why she coughs so often, not the pattern of her pain. Freedom from pain between attacks is shared by many episodic headaches.
 
 *Key feature:* Headache 1. Take a detailed headache history, covering onset, severity, prior episodes, and associated symptoms, to shape the differential.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 33, Head Trauma. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. Cephalalgia. 2018. https://ichd-3.org/other-primary-headache-disorders/4-1-primary-cough-headache/
 
 #### Q2
-*Update:* CT head shows a left crescentic hypodense collection 18 mm thick with 7 mm of midline shift. His last apixaban dose was 3 hours ago. Creatinine 88 umol/L.
+**Which of the following secondary causes is most likely to explain her headaches?**
 
-**Which of the following is the most appropriate treatment to reverse his anticoagulation?**
+- A. Chiari malformation type I  **(key)**
+- B. Idiopathic intracranial hypertension
+- C. Occipital neuralgia
+- D. Spontaneous intracranial hypotension
+- E. Subarachnoid hemorrhage
 
-- A. frozen plasma 15 mL/kg IV
-- B. idarucizumab 5 g IV
-- C. protamine sulfate 50 mg IV
-- D. prothrombin complex 2 000 units IV  **(key)**
-- E. tranexamic acid 1 g IV
-
-*Explanation:* His last apixaban dose was 3 hours ago, so drug effect is high, and he needs reversal before neurosurgical drainage. For life-threatening bleeding on a factor Xa inhibitor, Canadian guidance supports prothrombin complex concentrate as a fixed 2 000 units or 25 to 50 units/kg, with no single dose above 3 000 units, and andexanet alfa where available. At 70 kg, 50 units/kg would be 3 500 units, above that ceiling. Idarucizumab reverses dabigatran only, and protamine reverses heparin. Plasma is not recommended for factor Xa inhibitor reversal, and tranexamic acid does not reverse apixaban.
-
-*Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
-
-*Source:* National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. Revised February 2022. https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada
-
-#### Q3
-**Which of the following is the most appropriate next step in his care?**
-
-- A. Admission to medicine for delirium
-- B. Discharge with a follow-up CT
-- C. Neurology consultation for dementia
-- D. Neurosurgical consultation  **(key)**
-- E. Transfer to rehabilitation
-
-*Explanation:* A symptomatic chronic subdural hematoma 18 mm thick with 7 mm of midline shift, confusion and a drift needs neurosurgical assessment for drainage. Treating him as delirium or dementia misses a reversible cause of his decline. Discharge or transfer to rehabilitation is unsafe with mass effect.
+*Explanation:* ICHD-3 notes that about 40% of cough headache is symptomatic, and that most of these patients have a Chiari malformation type I. Primary cough headache mostly affects people older than 40, so her age of 27 adds to the concern. Spontaneous intracranial hypotension is also a reported cause, but it is less common and usually gives a headache that worsens on standing, and hers does not change with posture. Idiopathic intracranial hypertension causes a persistent headache, not attacks lasting a minute. Subarachnoid hemorrhage does not cause 3 weeks of brief attacks with no pain between them. Occipital neuralgia causes shooting pain over the scalp that is not set off by coughing.
 
 *Key feature:* Headache 2. Consider and exclude dangerous causes such as bleeding, meningitis, mass lesions, and pre-eclampsia when needed.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 33, Head Trauma. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. Cephalalgia. 2018. https://ichd-3.org/other-primary-headache-disorders/4-1-primary-cough-headache/
+
+#### Q3
+**Which of the following is the most appropriate investigation for the cause of her headaches?**
+
+- A. CT angiography of the head
+- B. Indomethacin trial alone
+- C. Lumbar puncture and pressure
+- D. MRI of the brain  **(key)**
+- E. Skull radiographs
+
+*Explanation:* ICHD-3 states that neuroimaging plays an important role in finding the cause of cough headache. MRI shows the posterior fossa and the junction of the skull and spine, where the common causes lie, much better than CT. Indomethacin often helps primary cough headache, but that diagnosis requires other causes to be excluded, and ICHD-3 notes that a few symptomatic cases also respond. Lumbar puncture does not show a structural lesion and can be unsafe when the cerebellar tonsils sit low. CT angiography shows the vessels and skull radiographs show only bone.
+
+*Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
+
+*Source:* Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. Cephalalgia. 2018. https://ichd-3.org/other-primary-headache-disorders/4-1-primary-cough-headache/
 
 #### Q4
-**Which of the following new examination findings would most indicate impending brain herniation?**
+**Which of the following examination findings would most suggest a structural cause for her headaches?**
 
-- A. Bruise on the forehead
-- B. Confusion about the date
-- C. Dilated left pupil  **(key)**
-- D. Irregularly irregular pulse
-- E. Mild right pronator drift
+- A. Nystagmus and limb ataxia  **(key)**
+- B. Occipital nerve tenderness
+- C. Pain with neck rotation
+- D. Pericranial muscle tenderness
+- E. Tender temporal arteries
 
-*Explanation:* A dilated, unreactive pupil on the side of the hematoma signals uncal herniation compressing the third nerve and needs emergency decompression. The forehead bruise points to the mechanism. The irregular pulse reflects his known atrial fibrillation. A mild drift and disorientation are already present and reflect mass effect but do not by themselves indicate herniation.
+*Explanation:* Nystagmus and limb ataxia are signs of cerebellar or brainstem disease, and with cough headache they point to a lesion in the posterior fossa, a site that ICHD-3 lists among the causes of symptomatic cough headache. Occipital nerve tenderness suggests occipital neuralgia. Pericranial muscle tenderness is common in tension-type headache. Pain with neck rotation suggests a cervical source. Tender temporal arteries suggest giant cell arteritis, which is very unlikely at 27.
 
 *Key feature:* Headache 3. Examine specifically for red flags such as altered mentation, focal deficits, papilledema, meningismus, or rash.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 33, Head Trauma. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. Cephalalgia. 2018. https://ichd-3.org/other-primary-headache-disorders/4-1-primary-cough-headache/
 
 ### headache-26: Asking for something stronger
 
@@ -959,65 +965,67 @@ Select 3.
 
 *Source:* Kaplan A. Canadian guidelines for acute bacterial rhinosinusitis: clinical summary. Can Fam Physician. 2014.
 
-### headache-28: Fever and spots in a rural hospital
+### headache-28: Two weeks of headache and double vision
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department with no CT scanner. The nearest paediatric centre is 3 hours away by road. A 9-year-old girl is brought in by her father with headache, fever and vomiting that began 10 hours ago. Over the past hour she has become sleepy and says her legs hurt. Her immunizations are up to date and she has no medical history. She is drowsy but rousable and answers questions. There are scattered non-blanching purple spots on her legs and trunk. Neck flexion is painful. Capillary refill is 4 seconds.
+A 31-year-old man presents to the emergency department with 2 weeks of worsening headache, evening fevers and a 4 kg weight loss. Since yesterday he has seen double when he looks to the left, and his wife says he has become slow to answer questions. He moved to Canada from Somalia 5 months ago. His HIV test at his immigration medical was negative. He takes no medications. He is drowsy but oriented. GCS 14 (E3 V5 M6). There is neck stiffness. Sodium is 127 mmol/L and capillary glucose is 6.4 mmol/L.
 
-- Temperature: 39.4°C oral
-- Pulse: 146/minute
-- Resp.: 28/minute
-- BP: 86/48 mmHg
-- O2 sat: 95% on room air
-- Weight: 30 kg
+- Temperature: 38.2°C oral
+- Pulse: 104/minute
+- Resp.: 18/minute
+- BP: 128/78 mmHg
+- O2 sat: 98% on room air
+- Weight: 58 kg
 
 #### Q1
-**Which of the following findings most strongly suggests invasive bacterial infection in this girl?**
+**Which of the following examination findings best explains his double vision on looking to the left?**
 
-- A. Fever above 39°C
-- B. Headache with vomiting
-- C. Non-blanching purpuric rash  **(key)**
-- D. Onset within the past day
-- E. Oxygen saturation of 95%
+- A. Left facial nerve palsy
+- B. Left fourth nerve palsy
+- C. Left sixth nerve palsy  **(key)**
+- D. Left third nerve palsy
+- E. Right sixth nerve palsy
 
-*Explanation:* A non-blanching petechial or purpuric rash with fever indicates invasive meningococcal disease until proven otherwise, and with drowsiness, a pulse of 146/minute, BP 86/48 mmHg and delayed capillary refill she is in septic shock. High fever, headache with vomiting and a short history also occur with viral illness. An oxygen saturation of 95% is not specific.
+*Explanation:* Horizontal double vision that is worse on looking left comes from weakness of the left lateral rectus, which the left sixth nerve supplies. The Canadian standards list cranial nerve palsies with meningismus and confusion in the course of tuberculous meningitis. A right sixth nerve palsy causes diplopia on looking right. A third nerve palsy causes ptosis and a dilated pupil with the eye down and out. A fourth nerve palsy causes vertical diplopia. The facial nerve does not move the eye.
 
 *Key feature:* Headache 3. Examine specifically for red flags such as altered mentation, focal deficits, papilledema, meningismus, or rash.
 
-*Source:* Public Health Agency of Canada. Guidelines for the prevention and control of meningococcal disease. Can Commun Dis Rep. 2005. Volume 31 Supplement 1. https://www.phac-aspc.gc.ca/publicat/ccdr-rmtc/05pdf/31s1_e.pdf
+*Source:* Barss L, Connors WJA, Fisher D. Chapter 7: Extra-pulmonary tuberculosis. In: Canadian Tuberculosis Standards, 8th edition. Can J Respir Crit Care Sleep Med. 2022. https://www.canada.ca/en/public-health/services/diseases/tuberculosis/health-professionals/canadian-tuberculosis-standards/extra-pulmonary-tuberculosis.html
 
 #### Q2
-**Which of the following is the most appropriate immediate action?**
+*Update:* CT head shows enhancement of the basal meninges with no mass or midline shift. A lumbar puncture is planned.
 
-- A. Blood cultures then transfer
-- B. Ceftriaxone IV before any procedure  **(key)**
-- C. Dexamethasone then lumbar puncture
-- D. Lumbar puncture then ceftriaxone
-- E. Transfer for CT before antibiotics
+**Which of the following CSF requests is most important for him?**
 
-*Explanation:* She has purpura and shock with no CT available, and antibiotics must not be delayed when imaging is not available or a lumbar puncture cannot be done. Blood cultures are drawn if this causes no delay, and ceftriaxone is given at once. Lumbar puncture should be deferred while she has reduced consciousness and shock. Waiting 3 hours for CT, or transferring without antibiotics, risks death from meningococcal sepsis.
+- A. Bacterial culture and Gram stain
+- B. Cryptococcal antigen
+- C. Herpes simplex PCR
+- D. Large-volume TB NAAT and culture  **(key)**
+- E. West Nile virus IgM
+
+*Explanation:* Two weeks of headache, fever and weight loss with a cranial nerve palsy, low sodium and basal enhancement after recent arrival from a high incidence country point to tuberculous meningitis. The Canadian standards advise large volume CSF samples, 7 to 15 mL, to raise yield, and rate the GeneXpert Ultra NAAT as the most sensitive rapid test. Bacterial culture with Gram stain, cryptococcal antigen, herpes simplex PCR and West Nile IgM may be added, but none of them tests for the likeliest diagnosis.
 
 *Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
 
-*Source:* Le Saux N. Canadian Paediatric Society position statement. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. 2020, reaffirmed 2026. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
+*Source:* Barss L, Connors WJA, Fisher D. Chapter 7: Extra-pulmonary tuberculosis. In: Canadian Tuberculosis Standards, 8th edition. Can J Respir Crit Care Sleep Med. 2022. https://www.canada.ca/en/public-health/services/diseases/tuberculosis/health-professionals/canadian-tuberculosis-standards/extra-pulmonary-tuberculosis.html
 
 #### Q3
-*Update:* Ceftriaxone is given through an intraosseous needle. A paediatric critical care transport team is on the way.
+*Update:* CSF: WBC 280 x 10^6/L with 85% lymphocytes, protein 2.1 g/L, glucose 1.4 mmol/L with serum glucose 6.2 mmol/L. Gram stain is negative. Other CSF results are pending.
 
-**Which of the following should be added to ceftriaxone as empiric antimicrobial therapy?**
+**Which of the following is the most appropriate treatment for him now?**
 
-- A. acyclovir 300 mg IV
-- B. ampicillin 1 500 mg IV
-- C. clindamycin 300 mg IV
-- D. gentamicin 75 mg IV
-- E. vancomycin 450 mg IV  **(key)**
+- A. Acyclovir IV until PCR results
+- B. Amphotericin B and flucytosine
+- C. Ceftriaxone alone and await culture
+- D. Four-drug TB therapy and dexamethasone  **(key)**
+- E. TB therapy once culture is positive
 
-*Explanation:* Until cultures return she needs cover for cephalosporin-resistant pneumococci as well as meningococci, so ceftriaxone or cefotaxime plus vancomycin is recommended as empiric therapy for suspected bacterial meningitis in children. Vancomycin 60 mg/kg/day divided every 6 hours is 15 mg/kg per dose, or 15 x 30 = 450 mg. Ampicillin is added only for immunocompromised children to cover Listeria. Acyclovir targets herpes encephalitis, which a purpuric rash does not suggest. Gentamicin and clindamycin are not part of empiric meningitis therapy.
+*Explanation:* The lymphocytic CSF with glucose below 2.5 mmol/L and protein above 0.5 g/L fits tuberculous meningitis. The Canadian standards suggest starting empiric treatment immediately when suspicion is high, and strongly recommend corticosteroids for everyone with tuberculous meningitis. Waiting for a positive culture delays treatment of a disease where delay costs lives and function. Ceftriaxone alone misses tuberculosis. Acyclovir targets herpes simplex, which does not fit a 2 week course with low CSF glucose. Amphotericin treats cryptococcal meningitis, which is unlikely with a negative HIV test.
 
 *Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
 
-*Source:* Le Saux N. Canadian Paediatric Society position statement. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than 2 months of age. 2020, reaffirmed 2026. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
+*Source:* Barss L, Connors WJA, Fisher D. Chapter 7: Extra-pulmonary tuberculosis. In: Canadian Tuberculosis Standards, 8th edition. Can J Respir Crit Care Sleep Med. 2022. https://www.canada.ca/en/public-health/services/diseases/tuberculosis/health-professionals/canadian-tuberculosis-standards/extra-pulmonary-tuberculosis.html
 
 ### headache-29: Weeks of headache and night sweats
 
@@ -1156,65 +1164,65 @@ A 66-year-old woman presents to the emergency department with 3 weeks of attacks
 
 *Source:* Bendtsen L, Zakrzewska JM, Abbott J, et al. European Academy of Neurology guideline on trigeminal neuralgia. Eur J Neurol. 2019.
 
-### headache-31: Could not stand after gardening
+### headache-31: Headache and a near miss while driving
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 74-year-old man is brought to the emergency department by ambulance 90 minutes after a sudden severe occipital headache with vomiting while he was gardening. He could not stand afterward. He takes warfarin for a mechanical mitral valve and has hypertension. He is drowsy but opens his eyes to voice and follows commands. His speech is slurred. While he lies on the stretcher, strength is full in all four limbs and sensation is normal. Pupils are equal and reactive. GCS 14.
+A 41-year-old man presents to the emergency department with 10 days of worsening headache and low-grade fevers. For 3 days he has not seen cars coming from his right, and yesterday he nearly hit one while turning. He was diagnosed with HIV 6 years ago and stopped antiretroviral therapy 2 years ago. His last CD4 count, 4 months ago, was 38 x 10^6/L. He takes no prophylactic medications. He is alert and oriented. GCS 15. There is no neck stiffness. Strength and sensation are normal. Capillary glucose is 5.6 mmol/L.
 
-- Temperature: 36.8°C oral
-- Pulse: 58/minute
+- Temperature: 37.9°C oral
+- Pulse: 92/minute
 - Resp.: 16/minute
-- BP: 196/104 mmHg
-- O2 sat: 96% on room air
-- Weight: 80 kg
+- BP: 124/78 mmHg
+- O2 sat: 98% on room air
+- Weight: 64 kg
 
 #### Q1
-**Which of the following parts of the neurological examination is most important to complete next?**
+**Which of the following examination findings best explains why he misses cars approaching from his right?**
 
-- A. Deep tendon reflexes
-- B. Gait testing  **(key)**
-- C. Jaw jerk reflex
-- D. Plantar responses
-- E. Visual field testing
+- A. Bitemporal hemianopia
+- B. Left homonymous hemianopia
+- C. Right central scotoma
+- D. Right homonymous hemianopia  **(key)**
+- E. Right sixth nerve palsy
 
-*Explanation:* A patient who cannot stand after a sudden headache with vomiting may have a cerebellar lesion even when limb strength is normal lying down. Testing gait, sitting balance and limb coordination reveals the truncal and limb ataxia of a cerebellar hemorrhage or infarct, which is missed if only strength is examined. Reflexes, plantar responses, jaw jerk and visual fields test other pathways and do not detect cerebellar dysfunction.
+*Explanation:* Loss of the right half of the visual field in both eyes, a right homonymous hemianopia, makes a patient miss things on the right. It localizes to the left optic radiation or occipital lobe, a site of focal lesions in this illness. A left hemianopia affects the left side. A bitemporal hemianopia comes from a chiasmal lesion and affects both outer fields. A central scotoma blurs what he looks at directly rather than one side. A sixth nerve palsy causes double vision rather than field loss.
 
 *Key feature:* Headache 3. Examine specifically for red flags such as altered mentation, focal deficits, papilledema, meningismus, or rash.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 87, Stroke. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Vidal JE. HIV-related cerebral toxoplasmosis revisited: current concepts and controversies of an old disease. J Int Assoc Provid AIDS Care. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC6900575/
 
 #### Q2
-*Update:* He cannot sit without support and has dysmetria of the left arm. INR 3.1. CT head shows a 3.5 cm left cerebellar hemorrhage compressing the fourth ventricle, with enlarged temporal horns.
+**Which of the following is the most appropriate next investigation for him?**
 
-**Which of the following is the most appropriate treatment to reverse his anticoagulation?**
+- A. Carotid Doppler ultrasound
+- B. CT head with IV contrast  **(key)**
+- C. Electroencephalogram
+- D. Lumbar puncture first
+- E. Visual field testing by optometry
 
-- A. frozen plasma 15 mL/kg with vitamin K
-- B. idarucizumab 5 g IV with vitamin K
-- C. protamine sulfate 50 mg IV
-- D. prothrombin complex with vitamin K IV  **(key)**
-- E. vitamin K 10 mg IV alone
-
-*Explanation:* His INR of 3.1 with a warfarin-associated intracranial hemorrhage needs rapid reversal, and for an INR of 2 or more the AHA/ASA guideline recommends four-factor prothrombin complex concentrate over plasma, together with IV vitamin K to sustain the correction. Plasma corrects the INR more slowly and needs a large volume. Vitamin K alone takes hours to act. Idarucizumab reverses dabigatran and protamine reverses heparin, not warfarin. Reversal is still indicated despite his mechanical valve because the bleed is life threatening.
+*Explanation:* A new focal deficit with headache and fever in a man with a CD4 count of 38 x 10^6/L needs brain imaging now. Contrast shows the ring enhancement typical of opportunistic mass lesions. Mass lesions may make a lumbar puncture unsafe, so imaging comes first. Formal field testing and carotid Doppler do not look for a brain lesion. An EEG is not needed without seizures.
 
 *Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
 
-*Source:* Greenberg SM, Ziai WC, Cordonnier C, et al. 2022 Guideline for the management of patients with spontaneous intracerebral hemorrhage: a guideline from the American Heart Association/American Stroke Association. Stroke. 2022.
+*Source:* Vidal JE. HIV-related cerebral toxoplasmosis revisited: current concepts and controversies of an old disease. J Int Assoc Provid AIDS Care. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC6900575/
 
 #### Q3
-**Which of the following is the most appropriate definitive management of the hemorrhage?**
+*Update:* Imaging shows three ring-enhancing lesions with surrounding edema, two of them in the basal ganglia, with no midline shift. Serum Toxoplasma IgG is positive.
 
-- A. Emergency surgical evacuation  **(key)**
-- B. External ventricular drain alone
-- C. Mannitol and observation
-- D. Repeat CT head in 6 hours
-- E. Stroke unit observation
+**Which of the following is the most likely cause of his brain lesions?**
 
-*Explanation:* A cerebellar hemorrhage that compresses the fourth ventricle and causes hydrocephalus, in a drowsy patient, needs immediate surgical evacuation. The AHA/ASA guideline advises against treating such a hemorrhage with an external ventricular drain alone, because it does not relieve brainstem compression. Observation, mannitol or delayed repeat imaging risk sudden deterioration from brainstem compression.
+- A. Brain metastases
+- B. Cerebral toxoplasmosis  **(key)**
+- C. Primary CNS lymphoma
+- D. Pyogenic brain abscess
+- E. Tuberculoma
+
+*Explanation:* Multiple ring-enhancing lesions in the basal ganglia, a CD4 count below 100 x 10^6/L without prophylaxis and a positive Toxoplasma IgG make cerebral toxoplasmosis the most likely cause. Empiric treatment follows, and about 86% of those who respond improve clinically by day 7. Primary CNS lymphoma is the main alternative, favoured by a single periventricular lesion, and is considered if he does not respond. Tuberculomas are more common in low income settings. He has no known cancer or bacteremic source.
 
 *Key feature:* Headache 2. Consider and exclude dangerous causes such as bleeding, meningitis, mass lesions, and pre-eclampsia when needed.
 
-*Source:* Greenberg SM, Ziai WC, Cordonnier C, et al. 2022 Guideline for the management of patients with spontaneous intracerebral hemorrhage: a guideline from the American Heart Association/American Stroke Association. Stroke. 2022.
+*Source:* Vidal JE. HIV-related cerebral toxoplasmosis revisited: current concepts and controversies of an old disease. J Int Assoc Provid AIDS Care. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC6900575/
 
 ### headache-32: A headache that disappears lying down
 
@@ -1481,143 +1489,136 @@ Select 3.
 
 *Source:* Worthington I, Pringsheim T, Gawel MJ, et al. Canadian Headache Society guideline: acute drug therapy for migraine headache. Can J Neurol Sci. 2013.
 
-### headache-36: Headache in the first week after birth
+### headache-36: Collapse during a spin class
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old woman presents to the emergency department 6 days after an uncomplicated vaginal delivery of her first baby with a severe bilateral headache for 12 hours. Acetaminophen has not helped. She sees flashing lights and has nausea. Her BP was normal throughout pregnancy. She did not have an epidural. She is breastfeeding. She is alert and oriented. The neurological examination is normal apart from brisk reflexes. The fundi are normal and there is no neck stiffness.
+A 22-year-old woman is brought to the emergency department by ambulance 50 minutes after a sudden severe headache during a spin class, followed by vomiting and clumsiness of her right hand. She has no history of hypertension, headaches or bleeding. She takes no medications or recreational drugs, and her urine hCG is negative. She is drowsy but follows commands. GCS 14 (E3 V5 M6). There is a mild right pronator drift and a right facial droop. Capillary glucose is 5.8 mmol/L. Non-contrast CT shows a 20 mL left parietal lobar hemorrhage with no subarachnoid blood and no hydrocephalus.
 
-- Temperature: 36.9°C oral
+- Temperature: 36.8°C oral
 - Pulse: 88/minute
 - Resp.: 18/minute
-- BP: 166/108 mmHg
+- BP: 176/98 mmHg
 - O2 sat: 98% on room air
-- Weight: 78 kg
+- Weight: 60 kg
 
 #### Q1
-**Which of the following is the most likely cause of her headache?**
+**Which of the following features of her case most changes the investigations she needs next?**
 
-- A. Cerebral venous thrombosis
-- B. Migraine with aura
-- C. Post-dural puncture headache
-- D. Postpartum pre-eclampsia  **(key)**
-- E. Tension-type headache
+- A. Drowsiness with GCS 14
+- B. Lobar site without hypertension  **(key)**
+- C. Onset during exercise
+- D. Sudden severe headache
+- E. Vomiting twice at onset
 
-*Explanation:* New severe hypertension, with a systolic BP of 160 mmHg or more, plus severe headache, visual symptoms and brisk reflexes after delivery indicates pre-eclampsia with severe features, which can first appear after delivery even following a normotensive pregnancy. She had no epidural, so post-dural puncture headache is not possible. Cerebral venous thrombosis must stay in the differential after delivery but does not explain new severe hypertension with hyperreflexia. Migraine and tension-type headache are diagnoses of exclusion here.
+*Explanation:* The ESO and EANS guideline advises that younger people with a lobar or cerebellar hemorrhage and no history of hypertension be investigated further with CTA, MRI with MRA or catheter angiography. Drowsiness, vomiting and sudden severe headache reflect the size and speed of the bleed, not its cause. Onset during exertion occurs with many causes of hemorrhage and does not point to a vascular lesion on its own.
 
 *Key feature:* Headache 2. Consider and exclude dangerous causes such as bleeding, meningitis, mass lesions, and pre-eclampsia when needed.
 
-*Source:* Magee LA, et al. Guideline No. 426: Hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022.
+*Source:* European Stroke Organisation and European Association of Neurosurgical Societies. Guideline on stroke due to spontaneous intracerebral haemorrhage. Eur Stroke J. 2025. https://pmc.ncbi.nlm.nih.gov/articles/PMC12098356/
 
 #### Q2
-**Which of the following laboratory results in her would be consistent with HELLP syndrome?**
+**Which of the following is the most likely underlying cause of her hemorrhage?**
 
-- A. Alanine aminotransferase 26 U/L
-- B. Creatinine 64 umol/L
-- C. Platelets 82 x 10^9/L  **(key)**
-- D. Sodium 138 mmol/L
-- E. Urine protein 0.2 g/day
+- A. Arteriovenous malformation  **(key)**
+- B. Cerebral amyloid angiopathy
+- C. Coagulation factor deficiency
+- D. Hemorrhagic metastasis
+- E. Hypertensive small vessel disease
 
-*Explanation:* A platelet count below 100 x 10^9/L, together with hemolysis and raised liver enzymes, defines HELLP syndrome, a severe form of pre-eclampsia that can also appear after delivery. An ALT of 26 U/L, creatinine of 64 umol/L and sodium of 138 mmol/L are normal. Proteinuria of 0.2 g/day is below the 0.3 g/day threshold used for pre-eclampsia and does not indicate HELLP.
+*Explanation:* A lobar hemorrhage in a young woman with no hypertension points to a macrovascular cause, most often an arteriovenous malformation. Amyloid angiopathy causes lobar bleeds in older adults. Hypertensive small vessel disease causes deep bleeds in people with long-standing hypertension, and her high BP now is an acute response. She has no bleeding history to suggest a factor deficiency, and no known cancer.
 
 *Key feature:* Headache 2. Consider and exclude dangerous causes such as bleeding, meningitis, mass lesions, and pre-eclampsia when needed.
 
-*Source:* Magee LA, et al. Guideline No. 426: Hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022.
+*Source:* European Stroke Organisation and European Association of Neurosurgical Societies. Guideline on stroke due to spontaneous intracerebral haemorrhage. Eur Stroke J. 2025. https://pmc.ncbi.nlm.nih.gov/articles/PMC12098356/
 
 #### Q3
-**Which of the following is the most appropriate seizure prophylaxis for her?**
+**Which of the following is the most appropriate next investigation for her?**
 
-- A. diazepam 10 mg IV
-- B. levetiracetam 1 000 mg IV
-- C. magnesium sulfate 4 g IV load  **(key)**
-- D. phenytoin 1 500 mg IV
-- E. No prophylaxis needed postpartum
+- A. CT angiography of the head  **(key)**
+- B. Electroencephalogram
+- C. Lumbar puncture
+- D. Repeat CT head tomorrow
+- E. Transcranial Doppler study
 
-*Explanation:* Her severe hypertension, headache, visual symptoms and brisk reflexes put her at risk of eclampsia, and magnesium sulfate, a 4 g IV loading dose followed by 1 g/hour, is the drug of choice to prevent eclampsia in pre-eclampsia with severe features, and this applies after delivery as well as in pregnancy. It is more effective than phenytoin or diazepam. Levetiracetam is not an established alternative for eclampsia prevention. The risk of eclampsia persists after delivery, so prophylaxis is needed despite her being 6 days postpartum.
+*Explanation:* CT angiography can be done at once after the plain CT and has high sensitivity and specificity for vascular malformations in selected patients. If it is normal, the guideline advises further tests, including catheter angiography. A lumbar puncture adds nothing when the CT already shows the blood and could be harmful with a mass lesion. Repeating the plain CT tomorrow delays finding the cause. Transcranial Doppler and EEG do not show a malformation.
 
 *Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
 
-*Source:* Magee LA, et al. Guideline No. 426: Hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022.
+*Source:* European Stroke Organisation and European Association of Neurosurgical Societies. Guideline on stroke due to spontaneous intracerebral haemorrhage. Eur Stroke J. 2025. https://pmc.ncbi.nlm.nih.gov/articles/PMC12098356/
 
 #### Q4
-*Update:* After magnesium and IV labetalol her BP settles to 142/90 mmHg, but the headache persists 12 hours later. The examination is unchanged.
+**Which of the following systolic BP targets is most appropriate for her in the first hours?**
 
-**Which of the following investigations is most appropriate for her persistent headache?**
+- A. Below 100 mmHg
+- B. Below 120 mmHg
+- C. Below 140 mmHg  **(key)**
+- D. Below 160 mmHg
+- E. Below 180 mmHg
 
-- A. Carotid Doppler
-- B. Electroencephalography
-- C. Lumbar puncture
-- D. MRI brain with venography  **(key)**
-- E. Temporal artery ultrasound
-
-*Explanation:* A postpartum headache that persists after BP control needs neuroimaging, because cerebral venous thrombosis, posterior reversible encephalopathy, reversible cerebral vasoconstriction and stroke are all more common after delivery. MRI with venography assesses all of these without radiation. Lumbar puncture, EEG, carotid Doppler and temporal artery ultrasound do not address this differential.
+*Explanation:* Early BP lowering within 6 hours of onset limits hematoma growth, and the guideline states that sustained reduction to below 140 mmHg is safe and linked to better function. Her systolic BP of 176 mmHg is above this. Targets of 160 or 180 mmHg allow more hematoma growth. Driving the pressure below 120 or 100 mmHg risks brain hypoperfusion without proven benefit.
 
 *Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
 
-*Source:* American College of Obstetricians and Gynecologists. Clinical Practice Guideline No. 3. Headaches in pregnancy and postpartum. Obstet Gynecol. 2022.
+*Source:* European Stroke Organisation and European Association of Neurosurgical Societies. Guideline on stroke due to spontaneous intracerebral haemorrhage. Eur Stroke J. 2025. https://pmc.ncbi.nlm.nih.gov/articles/PMC12098356/
 
-### headache-37: Worst headache, no scanner
+### headache-37: Fever and headache after pituitary surgery
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department with no CT scanner. The nearest hospital with CT and neurosurgery is 2 hours away by ground ambulance. A 48-year-old woman presents with a sudden severe occipital headache that reached peak intensity within seconds, 3 hours ago, while she was vacuuming. It is the worst headache of her life. She vomited once. She has no history of headaches. She smokes and takes no medications. She is alert and oriented. GCS 15. Neck flexion is painful and limited. The neurological examination is otherwise normal.
+A 54-year-old woman presents to the emergency department with 1 day of severe headache, fever and vomiting. Twelve days ago she had transsphenoidal surgery to remove a pituitary adenoma and went home on day 3. Since yesterday, clear watery fluid has dripped from her right nostril when she leans forward. She has hypertension and takes amlodipine and a tapering dose of dexamethasone. She is drowsy but oriented. GCS 14 (E3 V5 M6). There is neck stiffness. Clear fluid drips from the right nostril. There is no focal weakness and her visual fields are full.
 
-- Temperature: 36.9°C oral
-- Pulse: 88/minute
-- Resp.: 16/minute
-- BP: 158/92 mmHg
-- O2 sat: 98% on room air
-- Weight: 66 kg
+- Temperature: 38.9°C oral
+- Pulse: 112/minute
+- Resp.: 20/minute
+- BP: 138/82 mmHg
+- O2 sat: 97% on room air
+- Weight: 68 kg
 
 #### Q1
-**Which of the following features of her presentation most strongly suggests a serious secondary cause?**
+**Which of the following features of her history most raises concern for a serious cause of her headache?**
 
-- A. History of cigarette smoking
-- B. Mild hypertension on arrival
-- C. Occipital location of the pain
-- D. Peak intensity within seconds  **(key)**
-- E. Single episode of vomiting
+- A. Amlodipine for hypertension
+- B. Clear fluid dripping from her nose  **(key)**
+- C. Dexamethasone dose being tapered
+- D. Headache after pituitary surgery
+- E. Vomiting since yesterday
 
-*Explanation:* An instantaneous onset, peaking within seconds to a minute, defines a thunderclap headache, which is a high-risk feature for subarachnoid hemorrhage and other vascular causes. Smoking and hypertension are risk factors but do not describe the headache itself. Occipital location and a single episode of vomiting also occur in primary headaches.
+*Explanation:* Clear fluid dripping from the nose after transsphenoidal surgery is likely a CSF leak, which gives bacteria from the nasal passages a direct route to the meninges. With fever and neck stiffness this makes healthcare-associated meningitis likely. Some headache is expected after pituitary surgery. Vomiting and a tapering steroid dose can accompany headache but do not explain fever and meningism. Amlodipine is unrelated.
 
 *Key feature:* Headache 1. Take a detailed headache history, covering onset, severity, prior episodes, and associated symptoms, to shape the differential.
 
-*Source:* Perry JJ, et al. Clinical decision rules to rule out subarachnoid hemorrhage for acute headache. JAMA. 2013.
+*Source:* Tunkel AR, Hasbun R, Bhimraj A, et al. 2017 Infectious Diseases Society of America's clinical practice guidelines for healthcare-associated ventriculitis and meningitis. Clin Infect Dis. 2017. https://pmc.ncbi.nlm.nih.gov/articles/PMC5848239/
 
 #### Q2
-**Which of the following is the most appropriate next step for her?**
+**Which of the following is the most appropriate empiric antimicrobial regimen for her?**
 
-- A. Discharge if pain settles
-- B. Lumbar puncture in this hospital
-- C. Metoclopramide and reassess
-- D. Observation here for 6 hours
-- E. Transfer for urgent CT head  **(key)**
+- A. ampicillin and gentamicin IV
+- B. cefazolin 2 g IV every 8 hours
+- C. ceftriaxone 2 g IV every 12 hours
+- D. vancomycin and cefepime IV  **(key)**
+- E. vancomycin and ceftriaxone IV
 
-*Explanation:* A thunderclap headache during exertion, with vomiting and painful, limited neck flexion in a 48-year-old, cannot be ruled out for subarachnoid hemorrhage clinically, so she needs CT, which requires transfer. She would arrive about 5 hours after onset, when a normal CT on a modern scanner is highly sensitive. A lumbar puncture alone at 3 hours is too early to detect xanthochromia and cannot reliably separate a traumatic tap from hemorrhage. Response to treatment or a period of observation does not exclude bleeding.
+*Explanation:* After neurosurgery the likely organisms are staphylococci and gram-negative bacilli, including Pseudomonas. IDSA recommends vancomycin plus an antipseudomonal beta-lactam such as cefepime, ceftazidime or meropenem. Vancomycin with ceftriaxone is the community-acquired regimen and misses Pseudomonas. Ceftriaxone or cefazolin alone misses resistant staphylococci. Ampicillin with gentamicin targets Listeria and newborn pathogens.
 
 *Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
 
-*Source:* Perry JJ, et al. Sensitivity of computed tomography performed within six hours of onset of headache for diagnosis of subarachnoid haemorrhage: prospective cohort study. BMJ. 2011.
+*Source:* Tunkel AR, Hasbun R, Bhimraj A, et al. 2017 Infectious Diseases Society of America's clinical practice guidelines for healthcare-associated ventriculitis and meningitis. Clin Infect Dis. 2017. https://pmc.ncbi.nlm.nih.gov/articles/PMC5848239/
 
 #### Q3
-**Which of the following are the most appropriate measures before her transfer?**
+**Which of the following investigations is most appropriate before a lumbar puncture?**
 
-Select 3.
+- A. Chest radiograph for a source
+- B. Electroencephalogram
+- C. Head CT or MRI of the brain  **(key)**
+- D. Nasal swab for culture
+- E. Serum procalcitonin
 
-- A. Antiemetic IV  **(key)**
-- B. ASA 160 mg PO
-- C. Call the receiving physician  **(key)**
-- D. Heparin infusion
-- E. Labetalol to systolic below 110
-- F. Lumbar puncture first
-- G. Nimodipine 60 mg PO
-- H. Opioid analgesia IV  **(key)**
-
-*Explanation:* Before transfer she needs an IV antiemetic and titrated opioid analgesia, since pain and vomiting raise BP and worsen her condition if an aneurysm has bled. Direct communication with the receiving physician arranges CT on arrival and neurosurgical access. ASA and heparin are harmful if she is bleeding. Nimodipine is started once aneurysmal hemorrhage is confirmed. Her systolic BP of 158 mmHg needs no urgent lowering, and driving it below 110 mmHg risks cerebral hypoperfusion.
+*Explanation:* IDSA recommends neuroimaging when healthcare-associated meningitis is suspected. After skull base surgery it looks for an abscess, empyema, fluid collection or air that would change treatment and could make a lumbar puncture unsafe. CSF culture remains the key test, and cultures should be taken before antibiotics when possible. A nasal swab grows nasal flora and does not sample CSF. Procalcitonin may help separate infection from postoperative change but does not replace imaging. A chest radiograph and EEG do not assess the operative site.
 
 *Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
 
-*Source:* Hoh BL, et al. 2023 Guideline for the management of patients with aneurysmal subarachnoid hemorrhage: a guideline from the American Heart Association and American Stroke Association. Stroke. 2023.
+*Source:* Tunkel AR, Hasbun R, Bhimraj A, et al. 2017 Infectious Diseases Society of America's clinical practice guidelines for healthcare-associated ventriculitis and meningitis. Clin Infect Dis. 2017. https://pmc.ncbi.nlm.nih.gov/articles/PMC5848239/
 
 ### headache-38: Fever, headache and light sensitivity
 
@@ -1696,84 +1697,78 @@ A 23-year-old man presents to the emergency department with headache, fever and 
 
 *Source:* McGill F, Heyderman RS, Michael BD, et al. The UK joint specialist societies guideline on the diagnosis and management of acute meningitis and meningococcal sepsis in immunocompetent adults. J Infect. 2016.
 
-### headache-39: A sore scalp and aching jaw
+### headache-39: Cheek pain and a bad taste
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 77-year-old man presents to the emergency department with a new left temporal headache for 4 weeks. His scalp is sore when he lies on his pillow, and his jaw aches after a few minutes of chewing. He has stiffness in both shoulders and hips each morning and has lost 4 kg. He has no visual symptoms. He has type 2 diabetes treated with metformin. Visual acuity is normal in both eyes and fundoscopy is normal. The left temporal artery is thickened and tender with a reduced pulse.
+A 52-year-old woman presents to the emergency department with 9 days of left cheek pain and a left-sided headache. She has a foul-smelling discharge from her left nostril and a bad taste in her mouth. Three weeks ago she had a root canal on her upper left first molar. Her family physician started amoxicillin 500 mg three times daily 7 days ago, without improvement. She has no allergies and no visual symptoms. There is tenderness over the left cheek and pus in the left nasal cavity. The upper left first molar is tender to tapping. There is no eyelid swelling, eye movements are full and painless, and the neurological examination is normal. CT of the sinuses shows opacification of the left maxillary sinus and a lucency around the roots of the upper left first molar. The other sinuses are clear.
 
 - Temperature: 37.6°C oral
-- Pulse: 86/minute
+- Pulse: 88/minute
 - Resp.: 16/minute
-- BP: 142/80 mmHg
-- O2 sat: 97% on room air
-- Weight: 74 kg
+- BP: 126/80 mmHg
+- O2 sat: 99% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following features of his presentation is most specific for the suspected diagnosis?**
+**Which of the following clinical features, before any imaging, best pointed to a dental cause of her illness?**
 
-- A. Jaw claudication  **(key)**
-- B. Low-grade fever
-- C. Scalp tenderness
-- D. Shoulder stiffness
-- E. Weight loss
+- A. Blocked nose on the left
+- B. Foul-smelling discharge on one side  **(key)**
+- C. Headache on the left side
+- D. Low-grade fever of 37.6°C
+- E. Tenderness over the left cheek
 
-*Explanation:* Jaw claudication, pain in the jaw muscles after chewing that eases with rest, has one of the highest positive likelihood ratios of the clinical features of giant cell arteritis. Scalp tenderness, polymyalgic stiffness, weight loss and low-grade fever are common in the disease but are less specific and occur with many other conditions.
+*Explanation:* The international consensus lists foul smell and one-sided disease among the clinical features that should make clinicians suspect a dental cause of maxillary sinusitis. A blocked nose, cheek tenderness, fever and headache occur in any maxillary sinusitis and do not separate dental from nondental disease. Suspicion then leads to dental assessment and imaging, which here shows the diseased molar.
 
 *Key feature:* Headache 4. When an intracranial cause is unlikely, consider sources like temporal arteritis, glaucoma, zoster, or sinusitis.
 
-*Source:* Smetana GW, Shmerling RH. Does this patient have temporal arteritis? JAMA. 2002.
+*Source:* Craig JR, Poetker DM, Aksoy U, et al. Diagnosing odontogenic sinusitis: an international multidisciplinary consensus statement. Int Forum Allergy Rhinol. 2021. https://doi.org/10.1002/alr.22777
 
 #### Q2
-**Which of the following blood tests is most useful in his initial assessment?**
+**Which of the following is the most appropriate antibiotic for her now?**
 
-- A. Antinuclear antibody
-- B. C-reactive protein  **(key)**
-- C. Creatine kinase
-- D. Rheumatoid factor
-- E. Serum protein electrophoresis
+- A. amoxicillin-clavulanate 875 mg PO twice daily  **(key)**
+- B. azithromycin 500 mg PO daily
+- C. cephalexin 500 mg PO four times daily
+- D. ciprofloxacin 500 mg PO twice daily
+- E. Continue amoxicillin 500 mg PO
 
-*Explanation:* C-reactive protein, with ESR, is raised in almost all patients with giant cell arteritis, and normal values make the diagnosis much less likely. Creatine kinase is normal in polymyalgia rheumatica and helps exclude myositis but does not assess arteritis. Antinuclear antibody, rheumatoid factor and protein electrophoresis are not part of the initial assessment of suspected arteritis.
+*Explanation:* Sinusitis from a dental source is a mixed infection dominated by oral anaerobes, and she has not improved on amoxicillin. The expert consensus advises a penicillin with a beta-lactamase inhibitor, with or without metronidazole, to cover these organisms. Continuing amoxicillin alone repeats a failed treatment. Ciprofloxacin, cephalexin and azithromycin cover oral anaerobes poorly. She has no penicillin allergy that would call for an alternative.
 
 *Key feature:* Headache 4. When an intracranial cause is unlikely, consider sources like temporal arteritis, glaucoma, zoster, or sinusitis.
 
-*Source:* Mackie SL, et al. British Society for Rheumatology guideline on diagnosis and treatment of giant cell arteritis. Rheumatology (Oxford). 2020.
+*Source:* Lin J, Wang C, Wang X, et al. Expert consensus on odontogenic maxillary sinusitis multi-disciplinary treatment. Int J Oral Sci. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC10834456/
 
 #### Q3
-*Update:* CRP is 68 mg/L and ESR is 74 mm/hour.
+**Which of the following is most important to cure her sinus disease?**
 
-**Which of the following is the most appropriate treatment to start now?**
+- A. Dental treatment of the source tooth  **(key)**
+- B. Four weeks of antibiotics
+- C. Intranasal corticosteroid alone
+- D. MRI of the brain and orbits
+- E. Saline irrigation alone
 
-- A. ibuprofen 600 mg PO three times daily
-- B. methylprednisolone 1 g IV daily
-- C. prednisone 15 mg PO daily
-- D. prednisone 50 mg PO daily  **(key)**
-- E. prednisone once biopsy confirms
-
-*Explanation:* His raised CRP and ESR support giant cell arteritis, and without visual or cerebral ischemic symptoms the BSR guideline advises prednisolone 40 to 60 mg daily, started immediately without waiting for biopsy or ultrasound, and prednisone is the equivalent used in Canada. Delay risks permanent vision loss. IV methylprednisolone is reserved for visual loss or amaurosis, which he does not have. A dose of 15 mg treats isolated polymyalgia rheumatica but is too low for arteritis, and NSAIDs do not prevent ischemic complications.
+*Explanation:* The expert consensus states that antibiotic therapy alone rarely cures sinusitis from a dental source, so the infected tooth must be treated by a dentist, by root canal work or extraction, with sinus surgery when needed. A longer antibiotic course does not remove the source. Intranasal steroids and saline irrigation ease symptoms only. She has no eye or neurological signs, so brain and orbit MRI is not needed.
 
 *Key feature:* Headache 4. When an intracranial cause is unlikely, consider sources like temporal arteritis, glaucoma, zoster, or sinusitis.
 
-*Source:* Mackie SL, et al. British Society for Rheumatology guideline on diagnosis and treatment of giant cell arteritis. Rheumatology (Oxford). 2020.
+*Source:* Lin J, Wang C, Wang X, et al. Expert consensus on odontogenic maxillary sinusitis multi-disciplinary treatment. Int J Oral Sci. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC10834456/
 
 #### Q4
-**Which of the following are the most appropriate additional steps in his care?**
+**Which of the following new findings would most call for urgent admission and further imaging?**
 
-Select 3.
+- A. Pain on tapping the molar
+- B. Purulent nasal discharge
+- C. Swelling of the left eyelids  **(key)**
+- D. Temperature of 37.9°C
+- E. Worse pain on bending forward
 
-- A. Admission for IV steroids
-- B. CT head with contrast
-- C. Glucose monitoring  **(key)**
-- D. Lumbar puncture
-- E. Rheumatology referral  **(key)**
-- F. Stop metformin
-- G. Temporal artery biopsy  **(key)**
-
-*Explanation:* His likely giant cell arteritis needs urgent specialist review through a fast-track pathway and confirmation by temporal artery ultrasound or biopsy, which remain informative for a short time after steroids start. High-dose prednisone will raise his blood glucose, so his diabetes needs monitoring and adjustment rather than stopping metformin. He has no visual symptoms, so IV steroids and admission are not needed. CT head and lumbar puncture do not help confirm arteritis.
+*Explanation:* The roof of the maxillary sinus forms most of the floor of the orbit, so spread of infection upward causes eyelid swelling and threatens the eye. New eyelid swelling calls for urgent admission, contrast imaging of the orbits and IV antibiotics. Pain on tapping the molar, purulent discharge, pain on bending forward and a low-grade temperature are expected features of her current sinus and dental infection.
 
 *Key feature:* Headache 4. When an intracranial cause is unlikely, consider sources like temporal arteritis, glaucoma, zoster, or sinusitis.
 
-*Source:* Mackie SL, et al. British Society for Rheumatology guideline on diagnosis and treatment of giant cell arteritis. Rheumatology (Oxford). 2020.
+*Source:* Lin J, Wang C, Wang X, et al. Expert consensus on odontogenic maxillary sinusitis multi-disciplinary treatment. Int J Oral Sci. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC10834456/
 
 ### headache-40: Pressure in both cheeks
 
@@ -1852,67 +1847,63 @@ Select 3.
 
 *Source:* Kaplan A. Canadian guidelines for acute bacterial rhinosinusitis: clinical summary. Can Fam Physician. 2014.
 
-### headache-41: A boil beside the nose
+### headache-41: Headache after a summer at the cottage
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old man presents to the emergency department with a severe right-sided headache and pain behind the right eye for 2 days. Five days ago he squeezed a painful boil beside his nose. Today he has double vision and his right eye looks swollen. He has had chills. He has no medical history. He is drowsy but oriented. The right eye protrudes, with swollen eyelids and conjunctival swelling. Movements of the right eye are limited in all directions and sensation is reduced over the right forehead. The right pupil is sluggish. The left upper eyelid is starting to swell.
+You are working in a community hospital emergency department in eastern Ontario in July. A 42-year-old man presents with 6 days of headache that is a little worse each day, with an aching neck, fatigue and low fevers. About 3 weeks ago his wife noticed a red patch on his right flank that spread to the size of a dinner plate over a week and then faded. He spends weekends clearing brush at a cottage near Kingston and often finds ticks on his clothes. He has no medical history and takes no medications. He is alert and oriented. His neck is mildly stiff with full range of movement. Fundoscopy is normal.
 
-- Temperature: 39.1°C oral
-- Pulse: 118/minute
-- Resp.: 20/minute
-- BP: 118/68 mmHg
-- O2 sat: 97% on room air
-- Weight: 80 kg
+- Temperature: 38.1°C oral
+- Pulse: 88/minute
+- Resp.: 16/minute
+- BP: 128/78 mmHg
+- O2 sat: 98% on room air
+- Weight: 84 kg
 
 #### Q1
-**Which of the following findings best distinguishes his condition from orbital cellulitis?**
+**Which of the following examination findings would most indicate that the infection has spread to his nervous system?**
 
-- A. Fever of 39.1°C with chills
-- B. Left eyelid swelling  **(key)**
-- C. Painful limited eye movements
-- D. Proptosis of the right eye
-- E. Swollen right eyelids
+- A. Faint ring on the right flank
+- B. Pain in both knees on walking
+- C. Temperature of 38.1°C
+- D. Tender nodes in the right groin
+- E. Weakness of one side of the face  **(key)**
 
-*Explanation:* Swelling of the left eyelid shows spread to the other eye, through the connections between the two cavernous sinuses, which is characteristic of cavernous sinus thrombosis and does not occur with orbital cellulitis. Reduced forehead sensation from the first division of the trigeminal nerve, which runs in the wall of the sinus, also points to it. Proptosis, lid swelling, painful ophthalmoplegia and fever occur in both conditions.
+*Explanation:* An expanding rash after tick exposure in an endemic area fits erythema migrans. The IDSA guideline lists meningitis, painful radiculoneuritis and cranial neuropathies, especially of the facial nerve, as acute neurologic Lyme disease. A facial palsy with his headache and stiff neck would point to spread to the nervous system and changes his treatment. A faded rash, fever, knee pain and enlarged nodes can all occur with Lyme disease but do not show nervous system involvement.
 
 *Key feature:* Headache 3. Examine specifically for red flags such as altered mentation, focal deficits, papilledema, meningismus, or rash.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 57, Ophthalmology. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Lantos PM, Rumbaugh J, Bockenstedt LK, et al. Clinical practice guidelines by the Infectious Diseases Society of America, American Academy of Neurology and American College of Rheumatology: 2020 guidelines for the prevention, diagnosis and treatment of Lyme disease. Clin Infect Dis. 2021. https://doi.org/10.1093/cid/ciaa1215
 
 #### Q2
-**Which of the following is the most appropriate imaging for him?**
+**Which of the following tests best supports a diagnosis of Lyme disease affecting his nervous system?**
 
-- A. Contrast CT head and orbits  **(key)**
-- B. CT angiography of the neck
-- C. Facial radiographs
-- D. Non-contrast CT head
-- E. Orbital ultrasound
+- A. Blood culture for Borrelia
+- B. CSF antibody without serum
+- C. PCR of blood for Borrelia
+- D. Serum Lyme antibody testing  **(key)**
+- E. Skin biopsy of the flank
 
-*Explanation:* His proptosis, ophthalmoplegia and spread to the other eye need contrast-enhanced CT of the head and orbits, with CT venography, or MRI with MR venography. These show filling defects and enlargement of the cavernous sinus and any orbital abscess. A non-contrast CT can miss the thrombosis. Ultrasound and facial radiographs cannot image the sinus, and neck angiography examines arteries rather than the intracranial veins.
+*Explanation:* For possible Lyme neuroborreliosis, the IDSA guideline strongly recommends serum antibody testing rather than PCR or culture. Borrelia is rarely found in blood by culture or PCR. If CSF is tested, it should be paired with serum to calculate an antibody index, and CSF serology alone is not recommended. The rash has faded, so a skin biopsy would not help, and erythema migrans is diagnosed clinically in any case.
 
 *Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
 
-*Source:* Saposnik G, Bushnell C, Coutinho JM, et al. Diagnosis and management of cerebral venous thrombosis: a scientific statement from the American Heart Association. Stroke. 2024. https://pubmed.ncbi.nlm.nih.gov/38284265/
+*Source:* Lantos PM, Rumbaugh J, Bockenstedt LK, et al. Clinical practice guidelines by the Infectious Diseases Society of America, American Academy of Neurology and American College of Rheumatology: 2020 guidelines for the prevention, diagnosis and treatment of Lyme disease. Clin Infect Dis. 2021. https://doi.org/10.1093/cid/ciaa1215
 
 #### Q3
-**Which of the following are the most appropriate initial antimicrobials for him?**
+**Which of the following is the most appropriate antibiotic for his likely diagnosis?**
 
-Select 2.
+- A. amoxicillin 500 mg PO three times daily
+- B. azithromycin 500 mg PO daily
+- C. doxycycline 100 mg PO twice daily  **(key)**
+- D. prednisone 60 mg PO daily
+- E. valacyclovir 1 g PO three times daily
 
-- A. Acyclovir IV
-- B. Amphotericin B IV
-- C. Cefazolin IV
-- D. Ceftriaxone IV  **(key)**
-- E. Clindamycin PO
-- F. Oral cephalexin
-- G. Vancomycin IV  **(key)**
-
-*Explanation:* Septic cavernous sinus thrombosis after a facial boil is usually caused by Staphylococcus aureus, including MRSA, so empiric therapy is IV vancomycin with a third-generation cephalosporin such as ceftriaxone, with metronidazole added for a dental or sinus source. Cefazolin lacks MRSA cover and CNS penetration, and oral cephalexin or clindamycin are inadequate for an intracranial infection. Acyclovir and amphotericin B do not treat a bacterial infection.
+*Explanation:* For Lyme meningitis, cranial neuropathy or radiculoneuropathy, the IDSA guideline recommends IV ceftriaxone, cefotaxime or penicillin G, or oral doxycycline, for 14 to 21 days. Oral doxycycline 100 mg twice daily suits a well adult who can take pills. Amoxicillin and azithromycin treat erythema migrans but are not listed for neurologic disease. Valacyclovir treats herpes viruses. Prednisone is not an antibiotic, and the guideline makes no recommendation on steroids for Lyme facial palsy.
 
 *Key feature:* Headache 6. Investigate a worrying headache promptly with CT or LP, giving empiric therapy first when indicated, as in meningitis.
 
-*Source:* Weerasinghe D, Lueck CJ. Septic cavernous sinus thrombosis: case report and review of the literature. Neuroophthalmology. 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC5120738/
+*Source:* Lantos PM, Rumbaugh J, Bockenstedt LK, et al. Clinical practice guidelines by the Infectious Diseases Society of America, American Academy of Neurology and American College of Rheumatology: 2020 guidelines for the prevention, diagnosis and treatment of Lyme disease. Clin Infect Dis. 2021. https://doi.org/10.1093/cid/ciaa1215
 
 ### headache-42: Morning vomiting and a clumsy boy
 
@@ -2234,60 +2225,62 @@ A 58-year-old woman presents to the emergency department with a left-sided heada
 
 *Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 17, Diplopia. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
 
-### headache-47: Zigzag lines and a new prescription
+### headache-47: A migraine on a new antidepressant
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 27-year-old woman presents to the emergency department with a headache that began 6 hours ago, preceded by 25 minutes of flickering zigzag lines that spread across her left visual field and then resolved. This is her usual pattern, three or four times a year since age 16. The headache is right-sided and throbbing, with nausea. She started a combined oral contraceptive 2 months ago and her attacks have been more frequent since. She smokes 10 cigarettes a day. The neurological examination and fundoscopy are normal.
+A 46-year-old man presents to the emergency department with a left-sided throbbing headache that began 8 hours ago. He has nausea and finds light hard to bear. He has had migraine without aura since his twenties, about 2 attacks a month, and he usually treats them with sumatriptan 50 mg. Three months ago his psychiatrist started phenelzine 45 mg daily for depression. He took acetaminophen 1 000 mg 4 hours ago without relief. He has no kidney disease, peptic ulcer or asthma. He has no neck stiffness. His neurological examination and fundoscopy are normal.
 
-- Temperature: 36.7°C oral
-- Pulse: 84/minute
+- Temperature: 36.8°C oral
+- Pulse: 92/minute
 - Resp.: 16/minute
-- BP: 118/74 mmHg
-- O2 sat: 99% on room air
-- Weight: 60 kg
+- BP: 158/94 mmHg
+- O2 sat: 98% on room air
+- Weight: 82 kg
 
 #### Q1
-**Which of the following features of her visual symptoms is most typical of migraine aura rather than a transient ischemic attack?**
+**Which of the following details of the past day is most important to clarify next?**
 
-- A. Complete resolution of symptoms
-- B. Duration under 1 hour
-- C. Gradual spread over many minutes  **(key)**
-- D. Headache on the right side
-- E. Involvement of one visual field
+- A. Aged or fermented foods eaten  **(key)**
+- B. Family history of migraine
+- C. Hours of screen time today
+- D. Number of attacks this year
+- E. Recent change in eyeglasses
 
-*Explanation:* Visual aura that spreads gradually over 5 minutes or more, with positive features such as flickering zigzag lines, is typical of migraine, whereas ischemia causes sudden, usually negative symptoms. Both aura and transient ischemic attacks resolve completely and usually last under an hour. A disturbance in one visual field and a headache on the opposite side can occur with either.
+*Explanation:* He takes phenelzine, a monoamine oxidase inhibitor, and his blood pressure is raised. The Nardil product monograph names hypertensive crisis as its most important reaction and lists headache, nausea, neck stiffness, palpitations and photophobia among its features, with intracranial bleeding reported. Crises can follow foods high in tyramine, such as aged cheese, cured meats and fermented foods, or cold and sinus remedies. A crisis can therefore mimic his migraine and must be excluded before a migraine is treated. His family history, screen time, attack frequency and eyeglasses do not separate a crisis from migraine.
 
 *Key feature:* Headache 1. Take a detailed headache history, covering onset, severity, prior episodes, and associated symptoms, to shape the differential.
 
-*Source:* Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. Cephalalgia. 2018.
+*Source:* Searchlight Pharma Inc. Nardil (phenelzine sulfate tablets). Canadian product monograph. 2022. https://searchlightpharma.com/wp-content/uploads/2023/10/Nardil-PM-ENG-Oct2022.pdf
 
 #### Q2
-**Which of the following is the most appropriate advice about her contraception?**
+*Update:* Twenty minutes later his blood pressure is 136/84 mmHg. He says the pain matches his usual attacks in site, quality and associated symptoms.
 
-- A. Continue the current pill
-- B. Stop estrogen-containing contraception  **(key)**
-- C. Switch to a lower-dose combined pill
-- D. Take the pill continuously
-- E. Use the contraceptive patch instead
-
-*Explanation:* Her typical visual aura makes combined estrogen-containing contraception contraindicated in the Canadian Contraception Consensus, because of an increased risk of ischemic stroke, and her smoking adds to that risk. A lower-dose combined pill, the patch and continuous pill use all still contain estrogen. Progestin-only methods, such as a levonorgestrel intrauterine system, an implant or a progestin-only pill, and the copper intrauterine device are suitable alternatives.
-
-*Key feature:* Headache 5. Diagnose and treat migraine when the picture fits and serious pathology has been excluded.
-
-*Source:* Black A, Guilbert E, Costescu D, et al. No. 329 Canadian Contraception Consensus Part 4 of 4 Chapter 9: combined hormonal contraception. J Obstet Gynaecol Can. 2017.
-
-#### Q3
-**Which of the following is the most appropriate treatment for her current headache?**
+**Which of the following is the most appropriate treatment for his headache now?**
 
 - A. acetaminophen 1 000 mg IV
 - B. dexamethasone 10 mg IV
-- C. hydromorphone 1 mg IV
+- C. ketorolac 30 mg IV  **(key)**
 - D. magnesium sulfate 2 g IV
-- E. sumatriptan 6 mg SC  **(key)**
+- E. morphine 5 mg IV
 
-*Explanation:* Her aura has ended and she has no known vascular disease, so subcutaneous sumatriptan, strongly recommended for migraine in emergency settings, is appropriate, as typical visual aura is not a contraindication. The Canadian Headache Society recommends against dexamethasone for pain relief and weakly against magnesium sulfate and acetaminophen. Opioids such as hydromorphone are not first-line treatment for migraine.
+*Explanation:* His headache matches his usual migraine, his blood pressure has settled and his examination is normal, so migraine can be treated. The Canadian Headache Society emergency review strongly recommends ketorolac for migraine pain, and he has no kidney disease, peptic ulcer or asthma. The same review recommends against dexamethasone for pain relief, and weakly against acetaminophen, magnesium sulfate and morphine. He has also already failed oral acetaminophen today.
 
 *Key feature:* Headache 5. Diagnose and treat migraine when the picture fits and serious pathology has been excluded.
 
-*Source:* Orr SL, et al. Canadian Headache Society systematic review and recommendations on the treatment of migraine pain in emergency settings. Cephalalgia. 2015.
+*Source:* Orr SL, Aube M, Becker WJ, et al. Canadian Headache Society systematic review and recommendations on the treatment of migraine pain in emergency settings. Cephalalgia. 2015. https://doi.org/10.1177/0333102414535997
+
+#### Q3
+**Which of the following should he take at the start of future attacks while he takes phenelzine?**
+
+- A. butalbital compound PO
+- B. naproxen 500 mg PO  **(key)**
+- C. rizatriptan 10 mg PO
+- D. sumatriptan 100 mg PO
+- E. tramadol with acetaminophen PO
+
+*Explanation:* The Canadian Headache Society guideline gives naproxen sodium a strong recommendation with high quality evidence for acute migraine, and it does not interact with his phenelzine. The same guideline advises avoiding sumatriptan and rizatriptan within 14 days of a monoamine oxidase inhibitor, because both are cleared by monoamine oxidase A. Canadian product monographs for both drugs list this combination as a contraindication, so his usual sumatriptan must stop while he takes phenelzine. The guideline does not recommend tramadol-containing drugs for routine use, and it strongly advises against butalbital-containing drugs.
+
+*Key feature:* Headache 5. Diagnose and treat migraine when the picture fits and serious pathology has been excluded.
+
+*Source:* Worthington I, Pringsheim T, Gawel MJ, et al. Canadian Headache Society guideline: acute drug therapy for migraine headache. Can J Neurol Sci. 2013. https://pubmed.ncbi.nlm.nih.gov/23968886/

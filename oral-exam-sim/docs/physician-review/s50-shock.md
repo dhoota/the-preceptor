@@ -10,9 +10,33 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - s50 shock-30 burn distribution changed to reach 25% (confirm on your chart).
 - Overlap pass 1 review (docs/reviews/samps-overlap-pass-review.md): s42 ischemic-heart-disease-23 q2 key rests on 3 Wells points for "PE most likely". s42 ischemic-heart-disease-46 q3 epinephrine start dose from AHA algorithm, not the cited review. s50 shock-39 rebuilt as obstructive HCM, confirm q3 restart metoprolol on phenylephrine. s42 ischemic-heart-disease-27 q3 "no fibrinolysis without ST elevation" does not allow for posterior MI (correct for this case).
 - s50 shock-45 toddler iron and whole bowel irrigation also keyed in signed-off s18. Physician to decide if shock-45 changes.
+- first-trimester-bleeding-29 q2 still keys red cells after 1 L of crystalloid for ongoing bleeding. This is the same keyed decision as shock-17 q4 (s50) and as other hemorrhage SAMPs. The athlete hook that made it a copy is gone. Every alternative keyed decision for this case is already used elsewhere (O negative cells, os tissue removal, misoprostol). Keep it, or drop one of the two. *(samps-last-check.md)*
 - shock-39 is a new case. Please check the key in q3 (restarting oral metoprolol while on phenylephrine). The AHA/ACC recommendation supports phenylephrine "alone or in combination with beta-blocking drugs". The statement that verapamil is potentially harmful with hypotension comes from the 2020 AHA/ACC guideline, and I believe the 2024 update keeps it. *(samps-overlap-pass-review.md)*
 - New cases to check in full: msk-37 (proximal humerus), burns-20 (phenol), tox-26 (brodifacoum), shock-17 (splenic rupture in mononucleosis). *(samps-overlap-pass2a-review.md)*
 - shock-17 and shock-32: ATLS 10th ed. (2018) is cited in s50 while s29 cites the 11th ed. (2025). Consider aligning. *(samps-overlap-pass2a-review.md)*
+- first-trimester-bleeding-29: decide whether the shared athlete relative-tachycardia hook with shock-17 is acceptable, or which of the two should change. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- **Overlaps with other writers.** loc-31 in s32 is now a West Nile virus story that is almost the same as the first draft of headache-41, including a 71-year-old farmer near Winnipeg with a flaccid arm. headache-41 was rebuilt again as Lyme disease to remove the clash, so loc-31 no longer has a twin in s40. The reviewer of s32 may want to confirm loc-31 against the rest of the bank. shock-22 in s50 is an asplenic man in septic shock, which was also the first draft of infectious-diseases-27. That SAMP is now lymphedema cellulitis. *(samps-replace-s39-s42.md)*
+- Ids from the added list, not the original triage: shock-39, shock-40, shock-43, asthma-copd-26, 28, 35, 36, 38, 41, 42, 43, 45, and burns-16, 19, 21, 24, 27, 28, 31, 32, 33. The triage had shock-40 as HOLD and shock-39 and shock-43 as READY. They were rebuilt because the brief says the added list wins. *(samps-replace-s50-s25-s26.md)*
+- The Alaska burn resuscitation guideline (2021) has no stable public URL in the citation. The text was read from a downloaded copy. Please confirm the link before release. Its advice on urine output, avoiding boluses and not catching up on fluid is used in several burns items. *(samps-replace-s50-s25-s26.md)*
+- shock-28 keys hyperbaric referral for venous air embolism, supported by two reviews (Gordy 2013, Mirski 2007) rather than a guideline. *(samps-replace-s50-s25-s26.md)*
+- shock-27 (Shoshin beriberi) and shock-39 (trazodone) rest on a review and a case report. There is no guideline for either. *(samps-replace-s50-s25-s26.md)*
+- shock-23 cites the IDSA AMR guidance as a web page, not a journal article. *(samps-replace-s50-s25-s26.md)*
+- shock-47 cites the GTFCC field manual web page. The year on that page could not be confirmed. *(samps-replace-s50-s25-s26.md)*
+- shock-29 keys O RhD positive red cells for a 79-year-old woman, per the CBS massive hemorrhage chapter. Please confirm this matches your local blood bank policy. *(samps-replace-s50-s25-s26.md)*
+- Several asthma-copd rebuilds key NIV decisions. The set now tests when to start NIV, when not to, and when to move to intubation, so review them together for balance. *(samps-replace-s50-s25-s26.md)*
+- Two keyed decisions are mirror images within the batch: shock-23 q4 gives bicarbonate at pH 7.14 with stage 3 AKI, and shock-24 q3 withholds it at pH 7.26 with normal kidneys. I kept both because together they teach the full rule, but you may want to replace one. *(samps-replace-s50-s25-s26.md)*
+- shock-25 q3 and shock-36 q3 both key norepinephrine first line, with near-identical distractors and explanations. *(samps-replace-s50-s25-s26.md)*
+- shock-22 q1 keys 5% albumin after 4 L. Under SSC 2026 this is a weak "may be appropriate" remark, and the key holds only because no isotonic crystalloid is offered. *(samps-replace-s50-s25-s26.md)*
+- shock-22 q3: "levosimendan is not marketed in Canada" is from my own knowledge. Please confirm. *(samps-replace-s50-s25-s26.md)*
+- shock-28 q4 (aspiration through a central catheter) rests on the Gordy and Mirski reviews. Aspiration works best with a catheter tip near the right atrium, which the update states. *(samps-replace-s50-s25-s26.md)*
+- shock-37: enoxaparin 70 mg twice daily with a creatinine clearance of 24 mL/minute is an unadjusted dose, which plausibly explains the bleed. The explanation does not mention this. *(samps-replace-s50-s25-s26.md)*
+- shock-40 q2: the cuff overinflation rate (about 71%) and bronchoscopy yield (about 31%) could not be checked in the full text of Joshi 2025. *(samps-replace-s50-s25-s26.md)*
+- shock-33 q3: the point that the spleen releases trapped cells, so red cells should be given in small aliquots, is standard teaching. Zayed 2025 reports small aliquots but not the mechanism. *(samps-replace-s50-s25-s26.md)*
+- shock-27: Pereira et al. was published online in August 2025. The citation gives 2026, which may be the issue year. *(samps-replace-s50-s25-s26.md)*
+- shock-30: the key-feature 2 mapping for q1 to q3 (maintenance, losses, urine sodium) is loose. None of them asks for a deficit estimate. *(samps-replace-s50-s25-s26.md)*
+- Rome versus GOLD. GOLD 2026 Figure 4.2 lists PaO2 60 mmHg or less under severe. The Rome proposal it cites does not. Items now key only what both agree on. Please decide which version the bank should teach from now on. *(samps-replace-s50-s25-s26.md)*
+- The asthma and COPD KF5 to KF8 space is saturated across about 50 SAMPs. Core keys such as salbutamol by spacer, prednisone 50 mg and a 2 to 7 day follow-up recur in written-in form in s04. I fixed exact duplicates and copied teaching points, not every recurrence of a core decision. *(samps-replace-s50-s25-s26.md)*
+- shock-28 (s50) and the old sob-47 had the same story. Whoever owns s50 should know that sob-47 no longer uses it. *(samps-replace-s51.md)*
 - first-trimester-bleeding-25 q1. The point that metoprolol blunts tachycardia in hemorrhage repeats s50 shock-32. The ruptured ectopic scenario also overlaps s50 shock-17 and s10 first-trimester-bleeding-01. The new q2 glucagon angle is distinct. Decide whether q1 should stay. *(samps-s38-lensA.md)*
 - **shock-37 and shock-49 (Baveno).** Baveno VIII was published in J Hepatol in August 2026. It says earlier statements not revised remain valid, but summaries mention refined transfusion thresholds. I could not open its full text. The keys (octreotide plus ceftriaxone, Hb 70 to 80 g/L, tamponade or stent as a bridge to TIPS) match Baveno VII, which is still the citation. Please confirm the transfusion target against Baveno VIII. *(samps-s50-lensA.md)*
 - **shock-34 q3.** A Canadian guideline now exists: CCS/Canadian Pediatric Cardiology Association focused guidelines on acute heart failure in children (Jeewa A et al., Can J Cardiol 2026, PubMed 41951283). It suggests milrinone over dobutamine or levosimendan. I could not verify its wording on hypotension or cardiogenic shock, so I kept the AHA source. Consider citing it once checked. The key depends on the hypotension. *(samps-s50-lensA.md)*
@@ -21,6 +45,7 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - **shock-21.** Most provinces screen newborns for CAH. A salt-wasting crisis at 12 days is still plausible (missed or delayed screen, or a province without screening). No change made. *(samps-s50-lensA.md)*
 - shock-48 and shock-49 (review-extra) are near copies of shock-26 and shock-37, with the same stem, title and options. They add nothing to the bank and would fail the near-duplicate stem test if added. Recommend rejecting both. *(samps-s50-lensB.md)*
 - shock-30. Please confirm the new burn distribution matches 25 percent on the chart you use, or set the percentage to what the described areas give and recompute q1 and q2. *(samps-s50-lensB.md)*
+- first-trimester-bleeding-34 q3: shock-16 (s50, postpartum hemorrhage) also keys a shock index, as a calculation under the shock topic. Here the shock index is keyed as the best vital-sign guide to blood loss, under first-trimester-bleeding KF1. The Pacagnella review draws mostly on non-obstetric studies, and the explanation does not claim a pregnancy-specific cut-off. *(samps-sweep2-sw2-f.md)*
 - shock-26 q3. The phenytoin line ("can worsen conduction in a sodium channel blocking overdose") rests on Rosen's. Emergency Care BC says to avoid phenytoin in TCA overdose. AHA 2023 lists phenytoin among class Ib agents proposed for class Ia and Ic cardiotoxicity. The key, lorazepam, is not in doubt. *(samps-textbooks-s26-s29-s50-s53.md)*
 - Rosen chapter choice. Chapters were chosen by title because the text could not be read. Two are judgment calls: msk-33 q4 (a 13 year old with an elbow dislocation) could sit in Chapter 170, Pediatric Musculoskeletal Disorders, instead of Chapter 44. shock-46 q1 (weight based fluid deficit in an older adult with diarrhea) was placed in Chapter 80, Gastroenteritis. *(samps-textbooks-s26-s29-s50-s53.md)*
 - Goldfrank's chapter numbers. Eight chapters are cited by title and author only. See How the chapters were checked. *(samps-textbooks-s26-s29-s50-s53.md)*
@@ -473,72 +498,74 @@ Select 2.
 
 *Source:* Speiser PW, et al. Congenital adrenal hyperplasia due to steroid 21-hydroxylase deficiency. An Endocrine Society clinical practice guideline. J Clin Endocrinol Metab. 2018. https://academic.oup.com/jcem/article/103/11/4043/5107759
 
-### shock-22: Confused man with a cough
+### shock-22: Fever and chills after a day of aches
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 48-year-old man is brought to the emergency department by ambulance with 3 days of cough, fever and right-sided chest pain. He drinks about 10 beers a day and takes no medications. He is confused and mottled over both knees. Crackles and bronchial breath sounds are heard at the right base. Capillary refill is 5 seconds. Lactate 5.6 mmol/L, WBC 21.4 x 10^9/L, creatinine 186 umol/L. The chest X-ray shows right lower lobe consolidation.
+A 46-year-old man is brought to the emergency department by ambulance with 14 hours of fever, shaking chills, vomiting and muscle aches. His spleen was removed after a car crash 20 years ago, and he is not sure which vaccines he has had since. He takes no medications. He is drowsy but answers questions. His skin is mottled over both knees and his capillary refill is 5 seconds. His chest is clear, and there is no rash or neck stiffness. Lactate is 6.8 mmol/L and platelets are 64 x 10^9/L. Blood cultures are drawn, and ceftriaxone and vancomycin are given within 30 minutes of arrival.
 
-- Temperature: 39.1°C oral
+- Temperature: 39.4°C oral
 - Pulse: 128/minute
-- Resp.: 32/minute
-- BP: 76/40 mmHg
-- O2 sat: 90% on room air
+- Resp.: 28/minute
+- BP: 78/40 mmHg
+- O2 sat: 94% on room air
 - Weight: 80 kg
 
 #### Q1
-**Which of the following is the most appropriate initial crystalloid volume over the first 3 hours?**
+*Update:* Over 2 hours he has received 4 L of Ringer's lactate and norepinephrine has been started. A passive leg raise still increases his stroke volume. His lungs remain clear.
 
-- A. 800 mL
-- B. 1 200 mL
-- C. 2 400 mL  **(key)**
-- D. 4 000 mL
-- E. 5 600 mL
+**Which of the following fluids is most appropriate for his further volume resuscitation?**
 
-*Explanation:* He has septic shock with hypotension and a lactate of 5.6 mmol/L, and the guideline suggests at least 30 mL/kg of crystalloid in the first 3 hours. For 80 kg that is 30 x 80 = 2 400 mL, given in boluses with reassessment. Volumes of 800 and 1 200 mL (10 and 15 mL/kg) under-resuscitate him. Volumes of 4 000 and 5 600 mL (50 and 70 mL/kg) as a fixed first order risk fluid overload in a patient with pneumonia and an O2 sat of 90%.
+- A. albumin 5% 500 mL IV  **(key)**
+- B. dextrose 5% 500 mL IV
+- C. hydroxyethyl starch 6% 500 mL IV
+- D. sodium chloride 0.45% 500 mL IV
+- E. sodium chloride 3% 500 mL IV
+
+*Explanation:* He has already received 4 L of crystalloid, which is 50 mL/kg at 80 kg, and the passive leg raise shows he still responds to volume. The 2026 Surviving Sepsis guideline suggests crystalloid alone as the routine fluid, but notes that supplemental albumin may be appropriate once large volumes of crystalloid have been given. No isotonic crystalloid is offered here, so 5% albumin is the best choice. The guideline recommends against starches, which increase the need for renal replacement therapy. Half-normal saline and 5% dextrose are hypotonic, so most of the volume leaves the circulation. Hypertonic 3% saline is not a resuscitation fluid for septic shock and raises the sodium quickly.
 
 *Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
 
 *Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
 
 #### Q2
-*Update:* After 2.4 L his BP is 80/44 mmHg, a mean arterial pressure of 56 mmHg. He has one 18 gauge forearm IV. A central line will take 45 minutes.
+*Update:* Norepinephrine is now running at 0.3 mcg/kg/minute. His mean arterial pressure is 58 mmHg.
 
-**Which of the following is the most appropriate next step for his blood pressure?**
+**Which of the following is the most appropriate next change to his vasoactive treatment?**
 
-- A. Another 2.4 L of crystalloid
-- B. dopamine through the peripheral IV
-- C. norepinephrine through the peripheral IV  **(key)**
-- D. phenylephrine push doses until central access
-- E. Wait for central access to start a vasopressor
+- A. Add dopamine infusion
+- B. Add epinephrine infusion
+- C. Add vasopressin infusion  **(key)**
+- D. Double the norepinephrine dose
+- E. Start milrinone infusion
 
-*Explanation:* His mean arterial pressure of 56 mmHg is below the target of 65 mmHg after 30 mL/kg, so he needs a vasopressor. Norepinephrine is first line, and the guideline suggests starting it peripherally rather than delaying for a central line, with checks of the site. Waiting 45 minutes prolongs hypoperfusion. Dopamine causes more arrhythmias than norepinephrine. Push dose phenylephrine is a bridge only and does not replace an infusion. A second 2.4 L without signs of fluid response risks pulmonary edema.
+*Explanation:* His MAP stays below 65 mmHg on norepinephrine 0.3 mcg/kg/minute. The guideline suggests adding vasopressin for patients on escalating doses of norepinephrine. In practice it is usually added once norepinephrine reaches 0.25 to 0.5 mcg/kg/minute, at a fixed dose of 0.03 units/minute. Doubling norepinephrine adds more adrenergic load without that benefit. Epinephrine is the agent the guideline suggests only after norepinephrine and vasopressin have failed. Dopamine carries a higher risk of arrhythmia than norepinephrine. Milrinone dilates blood vessels and would lower his pressure further.
 
 *Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
 
 *Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
 
 #### Q3
-*Update:* A central line is placed. Norepinephrine is at 0.3 mcg/kg/minute and his mean arterial pressure is 60 mmHg.
+*Update:* Vasopressin 0.03 units/minute is added and his MAP is now 67 mmHg. Bedside echocardiography shows a severely reduced left ventricular ejection fraction with a normal-sized right ventricle and no effusion. Lactate is 7.4 mmol/L and his capillary refill is still 5 seconds.
 
-**Which of the following agents is most appropriate to add to his norepinephrine now?**
+**Which of the following is the most appropriate addition for his persistent hypoperfusion?**
 
-- A. dobutamine infusion
-- B. epinephrine infusion
-- C. milrinone infusion
-- D. phenylephrine infusion
-- E. vasopressin infusion  **(key)**
+- A. dobutamine infusion IV  **(key)**
+- B. dopamine infusion IV
+- C. levosimendan infusion IV
+- D. milrinone infusion IV
+- E. phenylephrine infusion IV
 
-*Explanation:* The guideline suggests adding vasopressin for a patient on escalating doses of norepinephrine whose mean arterial pressure is still below target. It is usually added at a norepinephrine dose of 0.25 to 0.5 mcg/kg/minute, and his dose is 0.3 mcg/kg/minute. Epinephrine is suggested next if the pressure stays low on both. Dobutamine and milrinone are inotropes for cardiac dysfunction, and nothing in his case shows it. Phenylephrine is a pure alpha agonist with no advantage here.
+*Explanation:* His blood pressure has reached target, yet his lactate is rising and his capillary refill stays at 5 seconds with a poorly contracting left ventricle. This is septic shock with cardiac dysfunction and persistent hypoperfusion despite an adequate pressure. The guideline suggests an inotrope over no inotrope, and specifically adding dobutamine to norepinephrine or using epinephrine alone. Dobutamine is short acting and easy to titrate. The guideline suggests against levosimendan, which gave no benefit in a randomized trial in septic shock and caused more tachyarrhythmias. Milrinone is a longer-acting vasodilating inotrope that is cleared by the kidneys and often drops the pressure. Dopamine adds arrhythmia risk. Phenylephrine raises afterload on a failing ventricle and gives no inotropy.
 
 *Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
 
 *Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
 
 #### Q4
-*Update:* Four hours later he still needs norepinephrine 0.3 mcg/kg/minute and vasopressin 0.03 units/minute.
+*Update:* Six hours after norepinephrine was started, he still needs norepinephrine 0.28 mcg/kg/minute with vasopressin to keep his MAP at 65 mmHg.
 
-**Which of the following additional treatments is suggested for his ongoing vasopressor need?**
+**Which of the following corticosteroid regimens is most appropriate for him now?**
 
 - A. dexamethasone 10 mg IV once
 - B. fludrocortisone 50 mcg PO alone
@@ -546,243 +573,254 @@ A 48-year-old man is brought to the emergency department by ambulance with 3 day
 - D. methylprednisolone 1 g IV daily
 - E. prednisone 50 mg PO daily
 
-*Explanation:* The guideline suggests IV corticosteroids for septic shock with an ongoing need for vasopressors. They are usually started when norepinephrine is at least 0.25 mcg/kg/minute for at least 4 hours, as here. The usual regimen is hydrocortisone 200 mg a day, given as 50 mg IV every 6 hours. A single dexamethasone dose and pulse methylprednisolone are not the studied regimens. Prednisone depends on gut absorption in a patient in shock. Fludrocortisone alone gives no glucocorticoid.
+*Explanation:* He has septic shock that still needs two vasopressors 6 hours after norepinephrine was started. The guideline suggests IV corticosteroids for septic shock, and the usual regimen is hydrocortisone 200 mg a day, given as 50 mg IV every 6 hours. A single dose of dexamethasone is not the studied regimen and has no mineralocorticoid effect. Fludrocortisone alone gives no glucocorticoid. Pulse methylprednisolone is a much higher dose with no proven benefit in septic shock. Oral prednisone depends on absorption in a vomiting patient in shock.
 
 *Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
 
 *Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
 
-### shock-23: Fever after chemotherapy
+### shock-23: Rigors two days after a clinic procedure
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 61-year-old woman presents to the emergency department with fever and shaking chills that began 4 hours ago. She finished her second cycle of chemotherapy for breast cancer 9 days ago. She has a tunnelled central venous catheter. She has no allergies. She is drowsy and flushed. The catheter exit site is clean and her chest is clear. Absolute neutrophil count 0.2 x 10^9/L. Lactate 4.4 mmol/L. Creatinine 102 umol/L.
+A 67-year-old man presents to the emergency department with 6 hours of rigors, fever and confusion. Two days ago he had a transrectal prostate biopsy after a single dose of oral ciprofloxacin. Since this morning he has passed only small dribbles of urine and has lower abdominal pain. Six months ago a urine culture grew an extended-spectrum beta-lactamase (ESBL) producing E. coli. He has hypertension treated with amlodipine. He is drowsy and oriented to person only. The suprapubic area is tender and dull to percussion. Lactate is 5.6 mmol/L and creatinine is 212 umol/L (baseline 88 umol/L).
 
-- Temperature: 39.4°C oral
+- Temperature: 39.8°C oral
 - Pulse: 124/minute
 - Resp.: 26/minute
-- BP: 84/46 mmHg
-- O2 sat: 95% on room air
-- Weight: 66 kg
-
-#### Q1
-**Which of the following empiric antibiotic regimens is most appropriate for this patient?**
-
-- A. ceftriaxone and azithromycin IV
-- B. ciprofloxacin and amoxicillin-clavulanate PO
-- C. meropenem and fluconazole IV
-- D. piperacillin-tazobactam and vancomycin IV  **(key)**
-- E. vancomycin and gentamicin IV
-
-*Explanation:* Febrile neutropenia needs an antipseudomonal beta-lactam such as piperacillin-tazobactam. Vancomycin is added for hemodynamic instability, and she is hypotensive with a lactate of 4.4 mmol/L and a tunnelled catheter. Ceftriaxone and azithromycin do not cover Pseudomonas. The oral regimen is only for low risk outpatients, and she is in shock. Empiric fluconazole is not started at the first fever. Vancomycin with gentamicin lacks an antipseudomonal beta-lactam.
-
-*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
-
-*Source:* Freifeld AG, et al. Clinical practice guideline for the use of antimicrobial agents in neutropenic patients with cancer. 2010 update by the Infectious Diseases Society of America. Clin Infect Dis. 2011.
-
-#### Q2
-**Which of the following is the target time from recognition of her shock to the first antibiotic dose?**
-
-- A. After blood culture results
-- B. After the neutrophil count
-- C. Within 1 hour  **(key)**
-- D. Within 3 hours
-- E. Within 6 hours
-
-*Explanation:* For possible septic shock, the guideline recommends antibiotics immediately, ideally within 1 hour of recognition. Blood cultures should be drawn first only if they cause no delay, and waiting for culture results would take days. Her neutropenia does not need to be confirmed before the first dose, because fever after chemotherapy with hypotension is enough to treat. A 3 hour window is suggested only for possible sepsis without shock, and 6 hours is too long.
-
-*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
-
-*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
-
-#### Q3
-*Update:* After 2 L of crystalloid her BP is 82/44 mmHg, a mean arterial pressure of 57 mmHg. Her lungs remain clear.
-
-**Which of the following vasopressors is the most appropriate first choice for her?**
-
-- A. dopamine infusion
-- B. epinephrine infusion
-- C. norepinephrine infusion  **(key)**
-- D. phenylephrine infusion
-- E. vasopressin infusion
-
-*Explanation:* Norepinephrine is the first-line vasopressor for septic shock and is titrated to a mean arterial pressure of 65 mmHg. Dopamine causes more arrhythmias. Vasopressin is added when norepinephrine needs rise, not used first. Epinephrine is suggested when the pressure stays low despite norepinephrine and vasopressin. Phenylephrine lacks the beta effects that help cardiac output.
-
-*Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
-
-*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
-
-#### Q4
-*Update:* After 1 hour on norepinephrine her mean arterial pressure is 68 mmHg. Lactate is 3.1 mmol/L. The team debates more fluid.
-
-**Which of the following best guides whether she should receive further fluid boluses?**
-
-- A. Central venous pressure target
-- B. Dynamic response to passive leg raise  **(key)**
-- C. Fixed bolus of 1 L every hour
-- D. Hemoglobin every 2 hours
-- E. Urine specific gravity
-
-*Explanation:* The guideline suggests dynamic measures, such as the change in stroke volume or pulse pressure with a passive leg raise, to decide whether more fluid will help. Capillary refill time and falling lactate are useful adjuncts. Central venous pressure predicts fluid response poorly. Fixed hourly boluses ignore her response and risk overload. Hemoglobin and urine specific gravity do not show whether her cardiac output will rise with fluid.
-
-*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
-
-*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
-
-### shock-24: Painful thigh after a small cut
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 44-year-old man presents to the emergency department with severe pain in his left thigh for 18 hours. He cut his knee on a fence 3 days ago. He has type 2 diabetes treated with metformin. He is anxious and sweaty. The thigh is swollen and tense with dusky purple patches and a few blisters. The pain is far worse than the skin findings suggest and extends beyond the redness. There is no crepitus. Sodium 129 mmol/L, glucose 16.2 mmol/L, creatinine 164 umol/L, CK 2 400 units/L, lactate 4.9 mmol/L.
-
-- Temperature: 38.9°C oral
-- Pulse: 132/minute
-- Resp.: 26/minute
-- BP: 82/48 mmHg
+- BP: 82/36 mmHg
 - O2 sat: 96% on room air
 - Weight: 90 kg
 
 #### Q1
-**Which of the following examination findings best distinguish a necrotizing infection from cellulitis in this patient?**
+**Which of the following empiric antibiotics is most appropriate for him?**
 
-Select 3.
+- A. ceftriaxone 2 g IV
+- B. ciprofloxacin 400 mg IV
+- C. gentamicin 5 mg/kg IV
+- D. meropenem 1 g IV  **(key)**
+- E. piperacillin-tazobactam 4.5 g IV
 
-- A. Absence of crepitus
-- B. Blisters over the thigh  **(key)**
-- C. Dusky purple skin patches  **(key)**
-- D. Pain beyond the area of redness  **(key)**
-- E. Swelling of the thigh
-- F. Warmth of the skin
-
-*Explanation:* Pain out of proportion that extends beyond the visible redness, dusky or purple skin and bullae are features that point to necrotizing infection rather than cellulitis. With his shock, CK of 2 400 units/L and low sodium, they call for urgent surgical assessment. Swelling and warmth occur in simple cellulitis as well. Crepitus is a late and inconsistent sign, so its absence does not exclude necrotizing fasciitis.
+*Explanation:* He is in septic shock from a urinary source and has a documented ESBL-producing E. coli. For complicated urinary infection the IDSA guidance prefers trimethoprim-sulfamethoxazole or a fluoroquinolone only when susceptibility is shown, and a carbapenem when they cannot be relied on. It prefers meropenem or imipenem over ertapenem when the patient is critically ill. Ceftriaxone is broken down by ESBL enzymes. His infection began despite ciprofloxacin prophylaxis, so ciprofloxacin cannot be relied on. The guidance lists piperacillin-tazobactam as an alternative for ESBL complicated urinary infection only in patients who are not critically ill and have no bacteremia, and he is in septic shock. Aminoglycosides such as gentamicin are also alternatives, but they are nephrotoxic and his creatinine is already more than twice his baseline.
 
 *Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
 
-*Source:* Stevens DL, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections. 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.
+*Source:* Tamma PD, Bonomo RA, Heil EL, Justo JA, Satlin MJ, Mathers AJ. Infectious Diseases Society of America 2026 guidance on the treatment of antimicrobial-resistant gram-negative infections. Clin Infect Dis. 2026. https://www.idsociety.org/practice-guideline/amr-guidance/
 
 #### Q2
-**Which of the following is the most important step to control the source of his septic shock?**
+*Update:* Meropenem has been given. A bedside bladder scan shows about 950 mL of urine.
 
-- A. CT of the thigh before surgery
-- B. Emergency surgical debridement  **(key)**
-- C. Hyperbaric oxygen therapy
-- D. IV immune globulin infusion
-- E. MRI of the thigh with gadolinium
+**Which of the following is the most appropriate next step to control the source of his infection?**
 
-*Explanation:* Pain out of proportion, dusky skin, blisters, a high CK and shock point to necrotizing fasciitis, and prompt surgical debridement is the key treatment. Imaging should not delay surgery when the findings are this clear, and the absence of crepitus does not exclude the diagnosis. Hyperbaric oxygen is not recommended because it has no proven benefit and can delay surgery. Immune globulin does not replace debridement, and its benefit is uncertain.
+- A. Bladder drainage by catheter now  **(key)**
+- B. CT of the abdomen and pelvis first
+- C. Oral tamsulosin and a voiding trial
+- D. Repeat bladder scan in 4 hours
+- E. Urology review in the morning
+
+*Explanation:* His bladder holds about 950 mL of retained, infected urine, which is an undrained source in a patient in septic shock. The guideline suggests early source control, ideally within 6 hours, and a bladder catheter drains it now at the bedside. A CT delays drainage and adds contrast to a kidney that is already injured. Tamsulosin works over days and a voiding trial leaves the source in place. Rescanning in 4 hours or waiting for a morning review both delay a simple step that should happen now.
 
 *Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
 
-*Source:* Stevens DL, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections. 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
 
 #### Q3
-**Which of the following empiric antibiotic regimens is most appropriate before the organism is known?**
+*Update:* After 1 L of Ringer's lactate over 30 minutes his BP is 80/34 mmHg. He has an 18-gauge IV in the right antecubital fossa.
 
-- A. cefazolin and metronidazole IV
-- B. ceftriaxone and azithromycin IV
-- C. cephalexin and clindamycin PO
-- D. clindamycin and gentamicin IV
-- E. vancomycin and piperacillin-tazobactam IV  **(key)**
+**Which of the following is the most appropriate timing for starting norepinephrine in him?**
 
-*Explanation:* Necrotizing infection may be polymicrobial or caused by group A Streptococcus or MRSA, so the guideline recommends vancomycin plus piperacillin-tazobactam, or a carbapenem, as empiric therapy. Cefazolin with metronidazole misses MRSA and many gram negative organisms. Ceftriaxone with azithromycin is a pneumonia regimen with no MRSA or anaerobic cover. Oral antibiotics are not appropriate in shock. Clindamycin with gentamicin is not a recommended regimen and is unreliable against MRSA because of clindamycin resistance.
+- A. After 1 hour of urine output
+- B. After 30 mL/kg of fluid is complete
+- C. Now, alongside further fluid boluses  **(key)**
+- D. Only if lactate rises on repeat
+- E. Only if MAP falls below 40 mmHg
 
-*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
-
-*Source:* Stevens DL, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections. 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.
-
-#### Q4
-*Update:* He goes to the operating room. Tissue cultures grow group A Streptococcus. He remains on norepinephrine.
-
-**Which of the following antibiotics should be given with penicillin for its effect on toxin production?**
-
-- A. azithromycin
-- B. clindamycin  **(key)**
-- C. doxycycline
-- D. gentamicin
-- E. metronidazole
-
-*Explanation:* For necrotizing fasciitis from group A Streptococcus, the guideline recommends penicillin plus clindamycin. Clindamycin suppresses streptococcal toxin production and works regardless of bacterial growth phase. Azithromycin and doxycycline are not recommended for this role. Gentamicin adds no streptococcal benefit. Metronidazole covers anaerobes only.
-
-*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
-
-*Source:* Stevens DL, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections. 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.
-
-### shock-25: Floppy child at a birthday party
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 4-year-old boy is brought to the emergency department 15 minutes after eating a cookie at a birthday party. He has a known peanut allergy and takes no daily medications. His auto-injector was left at home. He has vomited twice and now has hives over his face and trunk, a hoarse cry and noisy breathing. He is pale and floppy on his father's lap. Capillary refill is 4 seconds. There is diffuse wheeze.
-
-- Temperature: 37.0°C tympanic
-- Pulse: 168/minute
-- Resp.: 40/minute
-- BP: 64/38 mmHg
-- O2 sat: 91% on room air
-- Weight: 18 kg
-
-#### Q1
-**Which of the following is the most appropriate first medication and dose for this child?**
-
-- A. diphenhydramine 18 mg IV
-- B. epinephrine 0.5 mg IM
-- C. epinephrine 0.18 mg IM  **(key)**
-- D. epinephrine 1.8 mg IM
-- E. epinephrine 0.18 mg IV push
-
-*Explanation:* He has anaphylaxis with shock, and his systolic pressure of 64 mmHg is below the pediatric limit of 70 + (2 x 4) = 78 mmHg. The first treatment is epinephrine 0.01 mg/kg of the 1 mg/mL solution IM in the anterolateral thigh, so 0.01 x 18 = 0.18 mg. A dose of 1.8 mg is a tenfold error, and 0.5 mg is the maximum single dose for an adolescent or adult. Undiluted IV push epinephrine risks dysrhythmia and is kept for cardiac arrest. Diphenhydramine does not treat airway swelling or shock.
-
-*Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
-
-*Source:* Cheng A. Canadian Paediatric Society, Acute Care Committee. Emergency treatment of anaphylaxis in infants and children. Paediatr Child Health. 2011. https://academic.oup.com/pch/article/16/1/35/2639430
-
-#### Q2
-**Which of the following fluid orders is most appropriate alongside the epinephrine?**
-
-- A. albumin 25% 90 mL IV
-- B. dextrose 5% in water 360 mL IV
-- C. normal saline 90 mL IV
-- D. normal saline 360 mL IV  **(key)**
-- E. normal saline 1 000 mL IV
-
-*Explanation:* Anaphylactic shock causes large fluid shifts from vasodilation and capillary leak, so he needs a rapid isotonic bolus of 20 mL/kg: 20 x 18 = 360 mL, repeated as needed. A bolus of 90 mL is only 5 mL/kg. A litre is about 55 mL/kg as one order, well beyond a first bolus with reassessment. Dextrose 5% in water leaves the vessels quickly and does not restore volume. Albumin 25% offers no advantage over isotonic saline.
-
-*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
-
-*Source:* Cheng A. Canadian Paediatric Society, Acute Care Committee. Emergency treatment of anaphylaxis in infants and children. Paediatr Child Health. 2011. https://academic.oup.com/pch/article/16/1/35/2639430
-
-#### Q3
-*Update:* He has had two IM epinephrine doses 5 minutes apart and 40 mL/kg of saline. BP is 66/36 mmHg and he is drowsy.
-
-**Which of the following is the most appropriate next vasoactive treatment for this child?**
-
-- A. dopamine infusion IV
-- B. epinephrine infusion IV  **(key)**
-- C. glucagon infusion IV
-- D. norepinephrine infusion IV
-- E. vasopressin infusion IV
-
-*Explanation:* Anaphylaxis that persists after repeated IM epinephrine and fluid needs an IV epinephrine infusion, titrated with continuous monitoring. Epinephrine treats both the vasodilation and the bronchospasm and mediator release. Norepinephrine and vasopressin are considered only if shock persists despite an epinephrine infusion. Glucagon is for patients on beta-blockers, and he takes none. Dopamine has no role here.
+*Explanation:* His diastolic pressure of 34 mmHg reflects very low vascular tone, and his MAP is about (80 + 2 x 34) / 3 = 49 mmHg after his first litre. In the CENSER trial, low-dose norepinephrine started early alongside fluids gave better shock control at 6 hours than standard care, with less cardiogenic pulmonary edema and fewer new arrhythmias. Finishing 30 mL/kg first, which is 2 700 mL for him, prolongs severe hypotension. Watching urine output for an hour also leaves a MAP near 49 mmHg untreated. Waiting for a rising lactate or for a MAP below 40 mmHg accepts perfusion well below the guideline target of 65 mmHg.
 
 *Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
 
-*Source:* Cardona V, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020.
+*Source:* Permpikul C, Tongyoo S, Viarasilpa T, et al. Early use of norepinephrine in septic shock resuscitation (CENSER): a randomized trial. Am J Respir Crit Care Med. 2019. https://doi.org/10.1164/rccm.201806-1034OC
 
 #### Q4
-*Update:* His BP improves on the infusion, but he still has wheeze.
+*Update:* Two hours later he is on norepinephrine 0.15 mcg/kg/minute. Arterial pH is 7.14, bicarbonate 11 mmol/L and lactate 7.2 mmol/L. Creatinine is now 298 umol/L and he has passed 40 mL of urine since the catheter was placed.
 
-**Which of the following second-line medications is most likely to relieve his ongoing wheeze?**
+**Which of the following is the most appropriate treatment for his acidemia?**
 
-- A. dexamethasone 0.6 mg/kg PO
-- B. diphenhydramine 1 mg/kg IV
-- C. famotidine 0.5 mg/kg IV
-- D. montelukast 4 mg PO
-- E. salbutamol 2.5 mg nebulized  **(key)**
+- A. Add dobutamine for cardiac output
+- B. Observe until the lactate clears
+- C. sodium bicarbonate infusion IV  **(key)**
+- D. sodium chloride 0.9% 2 L IV
+- E. Switch Ringer's lactate to saline
 
-*Explanation:* An inhaled beta-2 agonist such as salbutamol is a useful second-line treatment for bronchospasm that persists after epinephrine. H1 and H2 blockers such as diphenhydramine and famotidine help hives and itch but do not relieve bronchospasm. Corticosteroids act over hours and do not treat acute wheeze. Montelukast has no role in acute anaphylaxis.
+*Explanation:* His pH is 7.14, below 7.2, and he has severe acute kidney injury, with a creatinine of 298 umol/L, about 3.4 times his baseline of 88, and almost no urine. The guideline suggests sodium bicarbonate for septic shock with a pH of 7.2 or less and stage 2 or 3 kidney injury. Observation fits milder acidemia, where the guideline suggests against bicarbonate. Large volumes of 0.9% saline add chloride and can worsen the acidosis, and he is already oliguric. Switching from Ringer's lactate to saline has the same chloride problem. Nothing suggests cardiac dysfunction, so dobutamine has no indication.
 
-*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
+*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
 
-*Source:* Cheng A. Canadian Paediatric Society, Acute Care Committee. Emergency treatment of anaphylaxis in infants and children. Paediatr Child Health. 2011. https://academic.oup.com/pch/article/16/1/35/2639430
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+### shock-24: Sweats and pain under the right ribs
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 64-year-old man presents to the emergency department with 5 days of fever, sweats and right upper abdominal pain. Today he became light-headed and confused. He has type 2 diabetes treated with metformin. He has not been in hospital, has not travelled and has never injected drugs. He is flushed and drowsy. The right upper quadrant is tender and the liver edge is 3 cm below the costal margin. There is no jaundice. Lactate is 5.1 mmol/L and capillary glucose is 17.8 mmol/L. Bedside ultrasound shows a 7 cm fluid-filled lesion in the right lobe of the liver. The gallbladder is normal and the bile ducts are not dilated.
+
+- Temperature: 39.5°C oral
+- Pulse: 126/minute
+- Resp.: 26/minute
+- BP: 80/44 mmHg
+- O2 sat: 95% on room air
+- Weight: 88 kg
+
+#### Q1
+*Update:* Blood cultures have been drawn and a balanced crystalloid bolus is running.
+
+**Which of the following are the most appropriate next steps in his care?**
+
+Select 2.
+
+- A. Add gentamicin as a second gram-negative agent
+- B. Add vancomycin for MRSA cover
+- C. Broad-spectrum IV antibiotics now  **(key)**
+- D. CT abdomen before starting antibiotics
+- E. hydrocortisone 50 mg IV every 6 hours
+- F. Percutaneous drainage of the liver lesion  **(key)**
+- G. Surgical open drainage tonight
+
+*Explanation:* A large liver abscess with septic shock needs antibiotics immediately and source control as soon as it is practical. The guideline recommends antimicrobials immediately, ideally within 1 hour, for possible septic shock, so waiting for a CT is wrong. It suggests early source control, ideally within 6 hours. The least invasive method that works is preferred, which for a single 7 cm abscess is percutaneous drainage rather than open surgery. He has no hospital stay, travel or other risk factor for MRSA or for multidrug-resistant gram-negative organisms, so vancomycin or a second gram-negative agent adds toxicity without benefit. Corticosteroids are suggested for septic shock that needs vasopressors, and he has not yet had his fluid bolus or a vasopressor.
+
+*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
+
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+#### Q2
+*Update:* Piperacillin-tazobactam is running and norepinephrine has been started. His capillary glucose is now 18.4 mmol/L.
+
+**Which of the following is the most appropriate approach to his blood glucose?**
+
+- A. Hold insulin until glucose exceeds 20
+- B. Insulin infusion aiming for 4.4 to 6.1
+- C. Insulin infusion aiming for 8 to 10  **(key)**
+- D. Restart his metformin today
+- E. Sliding-scale SC insulin only
+
+*Explanation:* His glucose is 18.4 mmol/L, well above the threshold of 10 mmol/L (180 mg/dL) at which the guideline recommends starting insulin in sepsis. After insulin is started, the typical target is 8 to 10 mmol/L. Tight control to 4.4 to 6.1 mmol/L did not reduce mortality in multicentre trials and caused more hypoglycemia. Waiting until the glucose exceeds 20 mmol/L leaves him hyperglycemic, which is linked to higher mortality. Subcutaneous insulin is absorbed unpredictably when skin perfusion is poor in shock. Metformin should not be restarted while he is in shock with a lactate of 5.1 mmol/L.
+
+*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
+
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+#### Q3
+*Update:* Three hours later he is on norepinephrine 0.1 mcg/kg/minute. His pH is 7.26, bicarbonate 16 mmol/L and lactate 4.0 mmol/L. His creatinine is 94 umol/L and he is passing 60 mL of urine an hour.
+
+**Which of the following is the most appropriate approach to his metabolic acidosis?**
+
+- A. sodium bicarbonate infusion IV
+- B. sodium bicarbonate 1 mmol/kg IV
+- C. Switch fluids to 0.9% saline
+- D. tromethamine infusion IV
+- E. No bicarbonate or buffer therapy  **(key)**
+
+*Explanation:* His acidemia comes from hypoperfusion, his pH is 7.26, and his kidneys are working, with a creatinine of 94 umol/L and good urine output. The guideline suggests against sodium bicarbonate for hypoperfusion-related lactic acidemia to improve hemodynamics or reduce vasopressor needs. It reserves bicarbonate for a pH of 7.2 or less with stage 2 or 3 acute kidney injury, which he does not have. A bolus or an infusion of bicarbonate is therefore not indicated. Tromethamine is a buffer with no evidence of benefit here. Switching to 0.9% saline adds chloride and would tend to worsen the acidosis.
+
+*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
+
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+#### Q4
+*Update:* Percutaneous drainage yields pus. On day 2, blood and pus cultures grow Klebsiella pneumoniae susceptible to ceftriaxone. He is off norepinephrine and his fever is settling.
+
+**Which of the following is the most appropriate change to his antibiotic treatment?**
+
+- A. Add vancomycin to the regimen
+- B. Change to ceftriaxone IV  **(key)**
+- C. Change to oral ciprofloxacin today
+- D. Continue piperacillin-tazobactam
+- E. Stop antibiotics after drainage
+
+*Explanation:* The organism and its susceptibility are now known, and he is improving after drainage. The guideline recommends de-escalation once the organism and its susceptibility are known, so a narrower agent that covers the isolate, such as ceftriaxone, replaces piperacillin-tazobactam. Continuing the broader drug adds no benefit and more resistance pressure. Vancomycin covers gram-positive organisms that were not found. Drainage alone does not treat a bacteremic abscess, so antibiotics must continue. A switch to an oral agent on day 2, just after shock, is premature while he still needs close IV treatment.
+
+*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
+
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+### shock-25: Chills during a planned infusion
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 68-year-old man with myelodysplastic syndrome is receiving a planned unit of apheresis platelets in the emergency department. This morning his platelet count was 8 x 10^9/L, his neutrophil count 0.4 x 10^9/L and his hemoglobin 96 g/L. His temperature, pulse and blood pressure were normal before the transfusion started. Twenty minutes into the unit he develops shaking chills and feels faint. He has no itch, hives, wheeze or lip swelling. He has no back pain and his urine is clear. His chest is clear and his JVP is not raised.
+
+- Temperature: 39.7°C oral
+- Pulse: 136/minute
+- Resp.: 26/minute
+- BP: 76/40 mmHg
+- O2 sat: 95% on room air
+- Weight: 74 kg
+
+#### Q1
+**Which of the following is the most likely cause of his shock?**
+
+- A. Anaphylactic transfusion reaction
+- B. Bacterial contamination of the unit  **(key)**
+- C. Febrile non-hemolytic reaction
+- D. Transfusion-associated circulatory overload
+- E. Transfusion-related acute lung injury
+
+*Explanation:* He developed a high fever, rigors, tachycardia and hypotension minutes into a platelet transfusion. Platelets are stored at room temperature, and bacterial contamination presents with fever, tachycardia and hypotension. A febrile non-hemolytic reaction causes fever and chills without shock. Anaphylaxis would be expected to bring urticaria, wheeze or angioedema, and he has none. Circulatory overload causes breathlessness with signs of volume overload, but his chest is clear and his JVP is not raised. Acute lung injury causes respiratory failure with pulmonary edema, and his lungs are clear.
+
+*Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
+
+*Source:* Laureano M, Khandelwal A, Yan M. Transfusion reactions. In: Clinical guide to transfusion, chapter 10. Canadian Blood Services. 2022. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/transfusion-reactions
+
+#### Q2
+*Update:* The transfusion is stopped. The bag and tubing are clamped and sent to the blood bank, and blood cultures are drawn from the other arm.
+
+**Which of the following is the most appropriate fluid for his hypotension now?**
+
+- A. albumin 25% 100 mL IV
+- B. hydroxyethyl starch 500 mL IV
+- C. red cells 1 unit IV
+- D. Resume the same platelet unit
+- E. Ringer's lactate 1 L IV  **(key)**
+
+*Explanation:* He is in distributive shock from bacteremia, and crystalloid is the first-line resuscitation fluid, with a balanced solution preferred over saline. The implicated platelet unit must not be restarted, and it goes to the blood bank for culture. Red cells do not treat septic hypotension, and his hemoglobin of 96 g/L is above a restrictive threshold. Hyperoncotic 25% albumin gives little volume and is not a first-line fluid. The guideline recommends against starches because they increase the need for renal replacement therapy.
+
+*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
+
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+#### Q3
+*Update:* After 2 L of Ringer's lactate his BP is 80/42 mmHg, a mean arterial pressure of 55 mmHg. There is still no rash, wheeze or angioedema.
+
+**Which of the following vasoactive treatments is most appropriate for him now?**
+
+- A. dopamine infusion IV
+- B. epinephrine 0.5 mg IM
+- C. norepinephrine infusion IV  **(key)**
+- D. phenylephrine infusion IV
+- E. vasopressin infusion IV
+
+*Explanation:* His MAP of 55 mmHg is below 65 mmHg after 2 L of crystalloid, so he needs a vasopressor for septic shock. The guideline recommends norepinephrine as the first-line agent over dopamine and suggests it over vasopressin. Intramuscular epinephrine treats anaphylaxis, and he has no skin, airway or wheezing features of it. Dopamine causes more arrhythmias. Vasopressin is an added agent once norepinephrine is running, not the first choice. Phenylephrine is not among the agents the guideline recommends for septic shock.
+
+*Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
+
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+#### Q4
+*Update:* The blood bank calls. A Gram stain of the platelet bag shows gram-positive cocci in clusters.
+
+**Which of the following empiric antibiotic regimens is most appropriate for him?**
+
+- A. cefazolin plus gentamicin IV
+- B. ceftriaxone plus metronidazole IV
+- C. piperacillin-tazobactam alone IV
+- D. vancomycin plus ceftriaxone IV
+- E. vancomycin plus piperacillin-tazobactam IV  **(key)**
+
+*Explanation:* Gram-positive cocci in clusters point to staphylococci, which include methicillin-resistant strains, so vancomycin is needed. He is also neutropenic, with neutrophils of 0.4 x 10^9/L, and in shock, so he needs broad gram-negative cover that includes Pseudomonas. Vancomycin with piperacillin-tazobactam covers both. The blood services guide advises broad-spectrum antibiotics for suspected contamination. Ceftriaxone does not cover Pseudomonas, and cefazolin does not cover MRSA. Piperacillin-tazobactam alone misses MRSA. Ceftriaxone with metronidazole misses both MRSA and Pseudomonas.
+
+*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
+
+*Source:* Laureano M, Khandelwal A, Yan M. Transfusion reactions. In: Clinical guide to transfusion, chapter 10. Canadian Blood Services. 2022. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/transfusion-reactions
 
 ### shock-26: Drowsy woman with a slow pulse
 
@@ -866,291 +904,300 @@ Select 2.
 
 *Source:* Diabetes Canada Clinical Practice Guidelines Expert Committee, Yale JF, Paty B, Senior PA. Hypoglycemia. Can J Diabetes. 2018. https://guidelines.diabetes.ca/cpg/chapter14
 
-### shock-27: Seizure after a pill ingestion
+### shock-27: Swollen legs and a racing heart
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old woman is brought to the emergency department by ambulance 90 minutes after she was found with an empty bottle of amitriptyline 50 mg. The bottle held 60 tablets. She takes it for chronic pain. She had a brief generalized seizure in the ambulance. She now responds only to pain. Her pupils are dilated and her skin is dry and warm. The ECG shows sinus tachycardia with a QRS of 142 ms.
+A 54-year-old man is brought to the emergency department by his brother with 4 days of increasing breathlessness, leg swelling and vomiting. For 2 months he has eaten very little and has drunk about 20 standard drinks a day. He takes no medications. He is restless but oriented. His hands and feet are warm and his pulses are bounding. The JVP is 8 cm above the sternal angle. He has crackles at both lung bases and pitting edema to the knees. Lactate is 11.2 mmol/L and venous pH is 7.12. Troponin and TSH are normal, and hemoglobin is 138 g/L.
 
-- Temperature: 37.9°C oral
-- Pulse: 136/minute
-- Resp.: 12/minute
-- BP: 78/44 mmHg
-- O2 sat: 93% on room air
-- Weight: 60 kg
+- Temperature: 36.9°C oral
+- Pulse: 128/minute
+- Resp.: 30/minute
+- BP: 78/32 mmHg
+- O2 sat: 92% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following ECG findings best predicts seizures and ventricular dysrhythmia in this poisoning?**
+**Which of the following bedside ultrasound findings best fits his clinical picture?**
 
-- A. PR interval prolongation
-- B. QRS duration of 142 ms  **(key)**
-- C. Sinus tachycardia
-- D. ST depression in V5 and V6
-- E. U waves in V2 and V3
+- A. Hyperdynamic LV, dilated RV and plethoric IVC  **(key)**
+- B. Hyperdynamic LV with a collapsed IVC
+- C. Large pericardial effusion with RV collapse
+- D. Normal LV with absent lung sliding
+- E. Poorly contracting LV with a plethoric IVC
 
-*Explanation:* Tricyclic antidepressants block fast sodium channels, and a QRS of 100 ms or more predicts seizures while 160 ms or more predicts ventricular dysrhythmia. Her QRS of 142 ms and her seizure show serious toxicity. Sinus tachycardia comes from the anticholinergic effect and is common even in mild poisoning. PR prolongation, ST depression and U waves do not predict these outcomes.
+*Explanation:* He is hypotensive yet warm, with bounding pulses, a wide pulse pressure, a raised JVP, crackles and edema. This is high-output heart failure with right-sided congestion, which fits a vigorously contracting left ventricle with a dilated right ventricle and a full IVC. A hyperdynamic ventricle with a collapsed IVC suggests hypovolemia or early sepsis, which his raised JVP and edema argue against. A large effusion with right ventricular collapse is tamponade, which would not give bounding pulses. Absent lung sliding suggests pneumothorax, not a cause of his edema. A poorly contracting ventricle means low-output failure, which brings cool limbs and a narrow pulse pressure, not the warm limbs he has.
 
 *Key feature:* Shock/dehydration 6. Use bedside ultrasound, chest X-ray, and ECG to narrow down the cause of shock.
 
-*Source:* Bruccoleri RE, Burns MM. A literature review of the use of sodium bicarbonate for the treatment of QRS widening. J Med Toxicol. 2016. https://pubmed.ncbi.nlm.nih.gov/26159649/
+*Source:* Pereira AG, Cunha LNP, Paiva SAR, et al. An overview of beriberi. Med Princ Pract. 2026. https://doi.org/10.1159/000547719
 
 #### Q2
-**Which of the following is the most appropriate first treatment for her QRS widening?**
+*Update:* Ultrasound shows a hyperdynamic left ventricle, a dilated right ventricle and a plethoric IVC.
 
-- A. calcium gluconate 3 g IV
-- B. lidocaine 1.5 mg/kg IV
-- C. physostigmine 1 mg IV
-- D. procainamide 1 g IV
-- E. sodium bicarbonate 100 mmol IV  **(key)**
+**Which of the following treatments most directly addresses the cause of his shock?**
 
-*Explanation:* Hypertonic sodium bicarbonate, 1 to 2 mmol/kg IV (60 to 120 mmol for her), narrows the QRS by raising serum sodium and pH. The dose of 100 mmol is 1.7 mmol/kg and can be repeated to effect. Lidocaine is used only for dysrhythmia that persists after bicarbonate. Procainamide is a class Ia drug that blocks sodium channels and worsens toxicity. Physostigmine can cause asystole in tricyclic poisoning. Calcium does not reverse sodium channel blockade.
+- A. dextrose 50% 50 mL IV
+- B. hydrocortisone 100 mg IV
+- C. levothyroxine 200 mcg IV
+- D. sodium bicarbonate 100 mmol IV
+- E. thiamine 200 mg IV  **(key)**
+
+*Explanation:* Two months of heavy drinking with almost no food, high-output heart failure with right-sided congestion, and severe lactic acidosis with a normal troponin point to Shoshin beriberi, the fulminant form of wet beriberi from thiamine deficiency. The review of beriberi recommends immediate parenteral thiamine, commonly 100 to 300 mg a day, with hemodynamic support. Dextrose alone raises the thiamine requirement and can worsen the illness. Nothing in his case suggests adrenal insufficiency. His TSH is normal, so levothyroxine has no role. Bicarbonate treats the pH, not the cause.
 
 *Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
 
-*Source:* Bruccoleri RE, Burns MM. A literature review of the use of sodium bicarbonate for the treatment of QRS widening. J Med Toxicol. 2016. https://pubmed.ncbi.nlm.nih.gov/26159649/
+*Source:* Pereira AG, Cunha LNP, Paiva SAR, et al. An overview of beriberi. Med Princ Pract. 2026. https://doi.org/10.1159/000547719
 
 #### Q3
-*Update:* After two doses of bicarbonate her QRS is 112 ms. After 2 L of crystalloid, BP is 80/46 mmHg.
+*Update:* Thiamine is given. After 500 mL of crystalloid his crackles are worse and his mean arterial pressure is 50 mmHg. The left ventricle still contracts vigorously.
 
-**Which of the following vasopressors is most appropriate for her persistent hypotension?**
+**Which of the following vasoactive agents is most appropriate while the thiamine takes effect?**
 
-- A. dobutamine infusion
-- B. dopamine infusion
-- C. isoproterenol infusion
-- D. milrinone infusion
-- E. norepinephrine infusion  **(key)**
+- A. dobutamine infusion IV
+- B. dopamine infusion IV
+- C. milrinone infusion IV
+- D. nitroglycerin infusion IV
+- E. norepinephrine infusion IV  **(key)**
 
-*Explanation:* Tricyclic antidepressants block alpha-1 receptors and deplete norepinephrine stores, so a direct acting alpha agonist such as norepinephrine is preferred. Dopamine acts partly by releasing norepinephrine and may fail when stores are depleted. Dobutamine, isoproterenol and milrinone cause vasodilation and can worsen hypotension from alpha blockade.
+*Explanation:* Wet beriberi lowers vascular resistance through peripheral vasodilation, and his heart is already contracting vigorously. A vasoconstrictor such as norepinephrine supports his pressure while thiamine acts, and more fluid is worsening his crackles. Dobutamine adds inotropy that a hyperdynamic ventricle does not need and lowers vascular resistance further. Milrinone is also a vasodilating inotrope. Nitroglycerin would drop a MAP that is already 50 mmHg. Dopamine drives the heart rate higher when he is already at 128/minute.
 
 *Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
 
-*Source:* Purssell R. Tricyclic antidepressant overdose. Emergency Care BC clinical summary. Last reviewed 2018. https://emergencycarebc.ca/clinical_resource/clinical-summary/tricyclic-antidepressant-overdose-2/
+*Source:* Pereira AG, Cunha LNP, Paiva SAR, et al. An overview of beriberi. Med Princ Pract. 2026. https://doi.org/10.1159/000547719
 
 #### Q4
-*Update:* She is intubated. Bicarbonate therapy continues and blood gases are checked.
+*Update:* The pharmacist asks how to prepare his ongoing IV thiamine doses.
 
-**Which of the following is the usual target range for her arterial pH during treatment?**
+**Which of the following is the most appropriate diluent for his IV thiamine infusion?**
 
-- A. 7.25 to 7.35
-- B. 7.35 to 7.45
-- C. 7.45 to 7.55  **(key)**
-- D. 7.55 to 7.65
-- E. 7.65 to 7.75
+- A. dextrose 5% in 0.45% saline 100 mL
+- B. dextrose 10% 100 mL
+- C. dextrose 5% 100 mL
+- D. sodium chloride 0.9% 100 mL  **(key)**
+- E. sterile water 100 mL
 
-*Explanation:* Bicarbonate therapy for sodium channel blockade usually targets an arterial pH of 7.45 to 7.55. Mild alkalemia reduces drug binding to sodium channels. A pH above 7.55 risks hypokalemia, hypocalcemia and reduced cerebral blood flow. A pH below 7.45 gives up part of the protective alkalemia, and acidemia below 7.35 increases toxicity.
+*Explanation:* The beriberi review advises that IV thiamine be diluted in saline without added glucose. Carbohydrate metabolism uses thiamine and raises the requirement, which can worsen a deficient patient. For that reason every dextrose-containing diluent, whether 5%, 10% or mixed with half-normal saline, is a poor choice. Sterile water given IV is markedly hypotonic and can cause hemolysis. Normal saline carries the dose without adding glucose.
 
 *Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
 
-*Source:* Bruccoleri RE, Burns MM. A literature review of the use of sodium bicarbonate for the treatment of QRS widening. J Med Toxicol. 2016. https://pubmed.ncbi.nlm.nih.gov/26159649/
+*Source:* Pereira AG, Cunha LNP, Paiva SAR, et al. An overview of beriberi. Med Princ Pract. 2026. https://doi.org/10.1159/000547719
 
-### shock-28: Breathless man with COPD on the bag
+### shock-28: Sudden gasp in the trauma bay
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department with no CT. A 67-year-old man with severe COPD is brought by ambulance after 2 hours of sudden right-sided chest pain and breathlessness. Paramedics started bag-valve-mask ventilation 10 minutes ago when he tired. He uses inhaled tiotropium and salbutamol. He is now drowsy and sweaty. His neck veins are distended. Breath sounds are absent on the right and the right chest is hyperresonant. The trachea is midline.
+A 52-year-old man is in the resuscitation room 40 minutes after a motorcycle crash. He has a splinted open fracture of the left femur. CT of his head, spine, chest, abdomen and pelvis shows no other injury. After 2 units of uncrossmatched red cells by pressure bag through a large-bore right antecubital catheter, his blood pressure improved. During the third unit a nurse sees that the pressurized bag has emptied and the tubing is full of air. Moments later he gasps, grabs at his chest and becomes agitated. He takes no medications. His neck veins are now distended. A loud churning murmur is heard over the precordium. Breath sounds are equal and the trachea is midline. He has no hives or wheeze. The femur dressing is dry.
 
-- Pulse: 142/minute
-- Resp.: 36/minute
-- BP: 70/40 mmHg
-- O2 sat: 78% on bag-valve-mask ventilation
-- Weight: 64 kg
+- Temperature: 36.4°C oral
+- Pulse: 132/minute
+- Resp.: 34/minute
+- BP: 74/40 mmHg
+- O2 sat: 85% on 4 L/minute by nasal prongs
+- Weight: 84 kg
 
 #### Q1
-**Which of the following types of shock is most likely in this patient?**
+**Which of the following is the most likely cause of his sudden deterioration?**
 
-- A. Cardiogenic shock
-- B. Distributive shock
-- C. Hypovolemic shock
-- D. Neurogenic shock
-- E. Obstructive shock  **(key)**
+- A. Anaphylactic transfusion reaction
+- B. Fat embolism syndrome
+- C. Hemorrhage from the femur fracture
+- D. Tension pneumothorax
+- E. Venous air embolism  **(key)**
 
-*Explanation:* Sudden pain, absent breath sounds, hyperresonance, distended neck veins and hypotension during positive pressure ventilation point to tension pneumothorax. Rising intrathoracic pressure obstructs venous return, which is obstructive shock. Tracheal deviation is a late sign, so a midline trachea does not exclude it. Hypovolemic shock gives flat neck veins. Nothing in the case suggests cardiogenic, distributive or neurogenic shock.
+*Explanation:* He collapsed seconds after an emptied pressure bag pushed air down the tubing into his vein. A large volume of air lodges in the right ventricle and its outflow tract and blocks forward flow, which fits his sudden hypoxemia, hypotension, distended neck veins and churning murmur. Bleeding from the femur would flatten his neck veins, and the dressing is dry. A tension pneumothorax gives unequal breath sounds or a shifted trachea, and he has neither. Fat embolism syndrome usually appears 12 to 72 hours after a long-bone fracture, not seconds after an event. Anaphylaxis to the blood would be expected to bring hives or wheeze rather than a churning murmur.
 
 *Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.
+*Source:* Gordy S, Rowell S. Vascular air embolism. Int J Crit Illn Inj Sci. 2013. https://doi.org/10.4103/2229-5151.109428
 
 #### Q2
-**Which of the following bedside ultrasound findings would best support the suspected diagnosis?**
+**Which of the following bedside findings would best support this diagnosis?**
 
 Select 2.
 
-- A. Absent lung sliding on the right  **(key)**
-- B. B lines throughout both lungs
-- C. Collapsing inferior vena cava
-- D. Free fluid in the hepatorenal space
-- E. Hyperdynamic left ventricle alone
-- F. Lung point on the right chest  **(key)**
-- G. Pericardial effusion
+- A. Absent lung sliding on the right
+- B. Bright echogenic foci in the right heart  **(key)**
+- C. Diffuse bilateral B lines
+- D. Dilated right ventricle  **(key)**
+- E. Flat IVC collapsing with breathing
+- F. Large pericardial effusion
+- G. ST elevation in the inferior leads
 
-*Explanation:* Absent lung sliding on the right supports pneumothorax in the RUSH approach, and a lung point, where sliding lung meets the pneumothorax, confirms it. B lines throughout both lungs suggest pulmonary edema, and B lines at a site exclude pneumothorax there. In tension pneumothorax the inferior vena cava is plethoric, not collapsing. Free fluid in the hepatorenal space suggests bleeding into the abdomen. A hyperdynamic left ventricle alone suggests hypovolemia or sepsis. A pericardial effusion would point to tamponade, another cause of obstructive shock.
+*Explanation:* Air in the right heart appears on ultrasound as bright echogenic foci, and Doppler ultrasonography is a sensitive way to detect intracardiac air. The air obstructs right ventricular outflow, much like a large pulmonary embolus, so the right ventricle dilates. Absent lung sliding points to a pneumothorax. Diffuse B lines suggest pulmonary edema, not right heart obstruction. A flat, collapsing IVC suggests hypovolemia, which his distended neck veins contradict. A pericardial effusion would suggest tamponade. Inferior ST elevation suggests infarction, which does not explain a collapse seconds after air entered his vein.
 
 *Key feature:* Shock/dehydration 6. Use bedside ultrasound, chest X-ray, and ECG to narrow down the cause of shock.
 
-*Source:* Perera P, et al. The RUSH exam. Rapid ultrasound in shock in the evaluation of the critically ill. Emerg Med Clin North Am. 2010.
+*Source:* Gordy S, Rowell S. Vascular air embolism. Int J Crit Illn Inj Sci. 2013. https://doi.org/10.4103/2229-5151.109428
 
 #### Q3
-**Which of the following is the most appropriate immediate intervention for this patient?**
+*Update:* The infusion is stopped and the tubing is clamped. He is given 100% oxygen by non-rebreather mask. Echocardiography shows bright echoes in a dilated right ventricle and no pericardial effusion.
 
-- A. Chest X-ray to confirm first
-- B. Crystalloid bolus of 1 L IV
-- C. Decompression of the right chest  **(key)**
-- D. norepinephrine infusion IV
-- E. Rapid sequence intubation
+**Which of the following positions is most appropriate for him now?**
 
-*Explanation:* Tension pneumothorax is a clinical diagnosis, and he needs immediate decompression by needle or finger thoracostomy followed by a chest tube. Waiting for an X-ray delays life saving treatment. Fluid and a vasopressor do not relieve the obstruction to venous return. Intubation adds positive pressure and can worsen the tension before the chest is decompressed.
+- A. Left lateral decubitus, head down  **(key)**
+- B. Right lateral decubitus, head down
+- C. Sitting upright at 90 degrees
+- D. Supine with legs raised
+- E. Supine with the head raised
+
+*Explanation:* Placing him in the left lateral decubitus position with the head down, known as Durant's manoeuvre, lets the trapped air rise toward the apex of the right ventricle. That moves the air lock away from the pulmonary outflow tract and relieves the obstruction. His spine has been cleared on CT, so he can be turned. The right lateral position does not hold the air away from the outflow tract in this way. Sitting upright or raising the head does not trap the air in the ventricular apex and drops his venous return further. Supine with the legs raised helps venous return but leaves the air in the outflow tract.
 
 *Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.
+*Source:* Gordy S, Rowell S. Vascular air embolism. Int J Crit Illn Inj Sci. 2013. https://doi.org/10.4103/2229-5151.109428
 
 #### Q4
-**Which of the following is the recommended site for needle decompression in this adult?**
+*Update:* In the left lateral head-down position his BP is 78/44 mmHg. A right subclavian central venous catheter placed on arrival has its tip at the junction of the superior vena cava and right atrium.
 
-- A. Fifth intercostal space, anterior to midaxillary line  **(key)**
-- B. Fifth intercostal space, midclavicular line
-- C. Second intercostal space, midclavicular line
-- D. Seventh intercostal space, posterior axillary line
-- E. Third intercostal space, parasternal
+**Which of the following is the most appropriate next step to relieve his obstruction?**
 
-*Explanation:* Current trauma guidance for adults is the fourth or fifth intercostal space just anterior to the midaxillary line, where the chest wall is thinner and a needle is more likely to reach the pleural space. The second space in the midclavicular line, the older adult site, is still used for children, but the chest wall there is often too thick in adults. The fifth space in the midclavicular line is not a recommended site. A parasternal site risks the internal mammary vessels. The seventh space posteriorly risks the diaphragm and spleen or liver.
+- A. Aspirate air through the central catheter  **(key)**
+- B. Bilateral needle decompression
+- C. Pericardiocentesis under ultrasound
+- D. Rapid transfusion by pressure bag
+- E. Return him to the supine position
+
+*Explanation:* The reviews of vascular air embolism list three first steps: stop further air entry, aspirate air from the right heart through a central catheter when one is in place, and use the left lateral head-down position. His catheter tip lies at the right atrium, so aspirating through it can withdraw trapped air. More blood by pressure bag treats hypovolemia, which his distended neck veins argue against, and it risks more air. Needle decompression treats tension pneumothorax, and his breath sounds are equal. Pericardiocentesis treats tamponade, and echocardiography showed no effusion. Returning him to the supine position lets the air move back into the outflow tract.
 
 *Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.
+*Source:* Mirski MA, Lele AV, Fitzsimmons L, Toung TJ. Diagnosis and treatment of vascular air embolism. Anesthesiology. 2007. https://doi.org/10.1097/00000542-200701000-00026
 
-### shock-29: Older man who collapsed with back pain
+### shock-29: Light-headed three days after a fall
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 74-year-old man is brought to the emergency department by ambulance after collapsing at home. He has had sudden severe back and left flank pain for 1 hour. He has hypertension and smokes. He takes amlodipine, and his usual systolic pressure is about 170 mmHg. He is pale and sweaty but answers questions. His abdomen is mildly distended and tender with a pulsatile mass above the umbilicus. Femoral pulses are weak. Hemoglobin 108 g/L.
+A 79-year-old woman is brought to the emergency department by ambulance because she became light-headed and short of breath while getting out of bed. Three days ago she fell against a kitchen counter and was discharged from this department with fractures of the left 7th to 9th ribs. Her chest X-ray then showed no pneumothorax or effusion. She takes apixaban 5 mg twice daily for atrial fibrillation, and her last dose was this morning. She is pale and anxious, and her pulse is irregular. Breath sounds are reduced at the left base, which is dull to percussion. Her neck veins are flat.
 
-- Temperature: 36.1°C oral
-- Pulse: 112/minute
-- Resp.: 24/minute
+- Temperature: 36.4°C oral
+- Pulse: 118/minute
+- Resp.: 28/minute
 - BP: 84/52 mmHg
-- O2 sat: 96% on room air
-- Weight: 88 kg
+- O2 sat: 91% on room air
+- Weight: 58 kg
 
 #### Q1
-**Which of the following bedside investigations is the most useful first test in this patient?**
+**Which of the following focused cardiac and IVC ultrasound findings would most support a hypovolemic cause for her shock?**
 
-- A. Abdominal X-ray series
-- B. Bedside aortic ultrasound  **(key)**
-- C. Bedside urinalysis for blood
-- D. Serum lipase level
-- E. Serum troponin level
+- A. Dilated right ventricle with a plethoric IVC
+- B. Large effusion with right atrial collapse
+- C. Normal LV size with a plethoric IVC
+- D. Poor LV function with a plethoric IVC
+- E. Small hyperdynamic LV with a flat IVC  **(key)**
 
-*Explanation:* An older smoker with flank pain, collapse, a pulsatile mass and hypotension has a ruptured abdominal aortic aneurysm until proven otherwise. Bedside ultrasound quickly shows whether an aneurysm is present and allows immediate vascular surgery referral. Blood in the urine is common in renal colic and also occurs with a leaking aneurysm, so it does not separate them. An abdominal X-ray, lipase and troponin do not show the aorta.
+*Explanation:* In the RUSH approach to shock, hypovolemia shows a small, vigorously contracting heart with a flat IVC. That fits her flat neck veins and a possible bleed after rib fractures while on apixaban. A dilated right ventricle with a full IVC points to obstruction such as a large pulmonary embolism. A large effusion with chamber collapse is tamponade. Poor left ventricular function with a full IVC is cardiogenic shock. A plethoric IVC with a normal left ventricle does not suggest low volume and points away from hemorrhage.
 
 *Key feature:* Shock/dehydration 6. Use bedside ultrasound, chest X-ray, and ECG to narrow down the cause of shock.
 
-*Source:* Wanhainen A, et al. European Society for Vascular Surgery (ESVS) 2024 clinical practice guidelines on the management of abdominal aorto-iliac artery aneurysms. Eur J Vasc Endovasc Surg. 2024. https://pubmed.ncbi.nlm.nih.gov/38307694/
+*Source:* Elbaih AH, Housseini AM, Khalifa MEM. Accuracy and outcome of rapid ultrasound in shock and hypotension (RUSH) in Egyptian polytrauma patients. Chin J Traumatol. 2018. https://doi.org/10.1016/j.cjtee.2017.06.009
 
 #### Q2
-*Update:* Bedside ultrasound shows an infrarenal aorta measuring 7.2 cm. No free intraperitoneal fluid is seen.
+*Update:* The heart is small and hyperdynamic and the IVC is flat. A curvilinear probe over the left lower chest shows a large anechoic collection with swirling echoes above the diaphragm. Lung sliding is present at the apex.
 
-**Which of the following aortic diameters defines an abdominal aortic aneurysm on ultrasound?**
+**Which of the following is the most likely cause of these thoracic ultrasound findings?**
 
-- A. Diameter of 2.0 cm or more
-- B. Diameter of 2.5 cm or more
-- C. Diameter of 3.0 cm or more  **(key)**
-- D. Diameter of 4.0 cm or more
-- E. Diameter of 5.5 cm or more
+- A. Consolidation of the left lower lobe
+- B. Diaphragmatic rupture with bowel
+- C. Large left hemothorax  **(key)**
+- D. Splenic laceration with hemoperitoneum
+- E. Subpulmonic pneumothorax
 
-*Explanation:* An abdominal aortic aneurysm is an infrarenal aorta of 3.0 cm or more, so his 7.2 cm aorta is a large aneurysm. A diameter of 5.5 cm is the usual threshold for elective repair in men, not the definition. Most ruptures bleed into the retroperitoneum, which ultrasound shows poorly, so the absence of free fluid does not exclude rupture.
+*Explanation:* A large anechoic collection with swirling echoes above the diaphragm is pleural fluid, and in a hypovolemic patient on an anticoagulant with recent rib fractures it is most likely blood. Chest ultrasound is accurate for detecting hemothorax in trauma. Consolidation appears as tissue-like lung with air bronchograms, not a free anechoic collection. Bowel in the chest would show gut wall and peristalsis. A splenic bleed collects below the diaphragm in the left upper quadrant. A pneumothorax shows absent sliding with A lines, not fluid, and her lung sliding is present.
 
 *Key feature:* Shock/dehydration 6. Use bedside ultrasound, chest X-ray, and ECG to narrow down the cause of shock.
 
-*Source:* Wanhainen A, et al. European Society for Vascular Surgery (ESVS) 2024 clinical practice guidelines on the management of abdominal aorto-iliac artery aneurysms. Eur J Vasc Endovasc Surg. 2024. https://pubmed.ncbi.nlm.nih.gov/38307694/
+*Source:* Staub LJ, Biscaro RRM, Kaszubowski E, Maurici R. Chest ultrasonography for the emergency diagnosis of traumatic pneumothorax and haemothorax: a systematic review and meta-analysis. Injury. 2018. https://doi.org/10.1016/j.injury.2018.01.033
 
 #### Q3
-**Which of the following blood pressure strategies is most appropriate while repair is arranged?**
+*Update:* A chest tube drains 1 400 mL of blood. Her BP is 82/50 mmHg. She has had 1 L of crystalloid. Crossmatched blood will take 40 minutes.
 
-- A. Crystalloid to a systolic of 120 mmHg
-- B. Nitroglycerin to lower his pressure
-- C. norepinephrine to a systolic of 140 mmHg
-- D. Permissive hypotension, minimal fluid  **(key)**
-- E. Pressure restored to his usual level
+**Which of the following is the most appropriate fluid to give her now?**
 
-*Explanation:* For ruptured aneurysm, the guideline recommends permissive hypotension. A lower pressure that keeps him conscious limits further bleeding, and blood is given rather than large volumes of crystalloid. Pushing the systolic pressure to 120 or 140 mmHg or to his usual 170 mmHg with fluid or a vasopressor can worsen bleeding and dilute clotting factors. Nitroglycerin would drop an already low pressure in hemorrhagic shock.
+- A. albumin 5% 500 mL IV
+- B. frozen plasma 2 units IV
+- C. O RhD negative red cells IV
+- D. O RhD positive red cells IV  **(key)**
+- E. Ringer's lactate 2 L IV
+
+*Explanation:* She is in hemorrhagic shock after 1 L of crystalloid and needs red cells now. The blood services guide advises limiting crystalloid to about 1 L before switching to blood, so another 2 L of Ringer's lactate is wrong. It reserves group O RhD negative red cells for females of childbearing age, children and patients known to be alloimmunized. At 79 she can safely receive uncrossmatched O RhD positive red cells, which spares the scarce negative supply. Albumin carries no oxygen. Plasma alone does not restore oxygen delivery, and it does not reverse apixaban.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Source:* Wanhainen A, et al. European Society for Vascular Surgery (ESVS) 2024 clinical practice guidelines on the management of abdominal aorto-iliac artery aneurysms. Eur J Vasc Endovasc Surg. 2024. https://pubmed.ncbi.nlm.nih.gov/38307694/
+*Source:* Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical guide to transfusion, chapter 11. Canadian Blood Services. 2021. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion
 
-### shock-30: Boy scalded by a pot of water
+### shock-30: Dizzy weeks after bowel surgery
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 6-year-old boy is brought to the emergency department by ambulance 1 hour after he pulled a pot of boiling water onto himself. Paramedics did not give fluid. He is crying and alert. He has blistered, moist, painful partial thickness burns over the front of his chest and abdomen, the front of both arms and the front of his left thigh. There are no facial burns and his voice is normal. Using a Lund and Browder chart, the burns cover 25% of total body surface area. Capillary refill is 2 seconds in unburned skin.
+An 81-year-old woman presents to the emergency department with 3 days of dizziness and weakness. Three weeks ago she had a colectomy with an end ileostomy for colon cancer. Her daughter has measured the stoma output at about 2.4 L of watery fluid a day. To keep up, she has been drinking large amounts of water and tea. She takes ramipril and no other medications. She is drowsy but oriented. Her mucous membranes are dry and she has no leg edema. She weighed 63 kg at discharge. Sodium is 129 mmol/L, potassium 3.1 mmol/L and creatinine 178 umol/L (baseline 70 umol/L).
 
-- Temperature: 37.0°C tympanic
-- Pulse: 132/minute
-- Resp.: 26/minute
-- BP: 104/62 mmHg
-- O2 sat: 99% on room air
-- Weight: 20 kg
+- Temperature: 36.6°C oral
+- Pulse: 112/minute
+- Resp.: 20/minute
+- BP: 94/58 mmHg
+- O2 sat: 97% on room air
+- Weight: 60 kg
 
 #### Q1
-**Which of the following is his total burn resuscitation volume for the first 24 hours after injury?**
+**Which of the following daily maintenance fluid volumes is most appropriate for her, before adding deficits or losses?**
 
-- A. 750 mL
-- B. 1 000 mL
-- C. 1 500 mL  **(key)**
-- D. 3 000 mL
-- E. 4 500 mL
+- A. 900 to 1 200 mL
+- B. 1 200 to 1 500 mL  **(key)**
+- C. 1 500 to 1 800 mL
+- D. 2 400 to 3 000 mL
+- E. 3 600 to 4 200 mL
 
-*Explanation:* The pediatric burn formula is 3 mL x weight in kg x percent total body surface area of partial and full thickness burn. For him, 3 x 20 x 25 = 1 500 mL over 24 hours. A volume of 1 000 mL uses the adult figure of 2 mL/kg per percent. A volume of 750 mL uses 1.5 mL, and 3 000 and 4 500 mL use 6 and 9 mL, which would overload him. Children also need maintenance fluid with dextrose on top of this volume.
+*Explanation:* The NICE guideline on IV fluids gives routine maintenance as 25 to 30 mL/kg/day, and suggests less, such as 20 to 25 mL/kg/day, for patients who are older or frail. At 81 years and 60 kg, that is 1 200 to 1 500 mL a day. The range of 1 500 to 1 800 mL uses the standard adult rate without adjusting for her age. The range of 900 to 1 200 mL is only 15 to 20 mL/kg/day. The larger ranges, 40 to 50 and 60 to 70 mL/kg/day, would only be right if her deficit and stoma losses were folded into maintenance.
 
 *Key feature:* Shock/dehydration 2. Estimate the fluid deficit in dehydrated patients accurately, accounting for their age.
 
-*Source:* American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018.
+*Source:* National Institute for Health and Care Excellence. Intravenous fluid therapy in adults in hospital (CG174). 2013. https://www.nice.org.uk/guidance/cg174
 
 #### Q2
-**Which of the following is his burn fluid rate for the rest of the first 8 hours after injury?**
+**Which of the following is the best way to account for her stoma output in her fluid plan?**
 
-- A. 47 mL/hour
-- B. 63 mL/hour
-- C. 94 mL/hour
-- D. 107 mL/hour  **(key)**
-- E. 188 mL/hour
+- A. Add the measured output to maintenance  **(key)**
+- B. Count the output within maintenance
+- C. Encourage more water to match it
+- D. Ignore output below 3 L a day
+- E. Replace half of the measured output
 
-*Explanation:* Half of the 24 hour volume, 750 mL, is given in the first 8 hours counted from the time of the burn, not from arrival. One hour has passed with no fluid, so 750 mL must run over 7 hours, about 107 mL/hour. A rate of 94 mL/hour ignores the hour already lost. A rate of 63 mL/hour spreads the total evenly over 24 hours, 47 mL/hour is the rate for the last 16 hours, and 188 mL/hour gives the whole volume in 8 hours.
+*Explanation:* The NICE guideline advises adding to maintenance to account for ongoing losses, so her measured output of about 2.4 L a day is replaced on top of maintenance. Counting it within maintenance or replacing only half leaves her falling further behind. An output above 1.5 to 2 L a day already defines a high-output stoma, so there is no reason to ignore it below 3 L. Drinking more water or tea is part of the problem, because the best-evidence summary for high-output ileostomy advises limiting hypotonic drinks to 0.5 to 1 L a day and using glucose-electrolyte solutions instead.
 
 *Key feature:* Shock/dehydration 2. Estimate the fluid deficit in dehydrated patients accurately, accounting for their age.
 
-*Source:* American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018.
+*Source:* Wang Y, Peng H, Cui C, Zou Q, Yang M. Summary of best evidence for the dietary management in patients with high-output ileostomy. J Multidiscip Healthc. 2025. https://europepmc.org/article/PMC/PMC11842286
 
 #### Q3
-**Which of the following targets is best used to adjust his burn fluid rate over the first day?**
+**Which of the following tests is recommended to monitor sodium and water depletion in a patient with an ileostomy?**
 
-- A. Central venous pressure of 12 mmHg
-- B. Lactate below 2 mmol/L within an hour
-- C. Urine output of 0.5 mL/kg/hour
-- D. Urine output of 1 mL/kg/hour  **(key)**
-- E. Urine output of 3 mL/kg/hour
+- A. Hemoglobin concentration
+- B. Random urine sodium  **(key)**
+- C. Serum albumin
+- D. Serum sodium
+- E. Urea to creatinine ratio
 
-*Explanation:* The formula gives only a starting rate, and the rate is then adjusted hour by hour to urine output. For a child under 30 kg the target is about 1 mL/kg/hour, which is 20 mL/hour for him. A target of 0.5 mL/kg/hour is the adult target. Aiming for 3 mL/kg/hour drives over-resuscitation, with edema and compartment syndrome. Central venous pressure and early lactate clearance are not the standard titration targets.
+*Explanation:* The best-evidence summary for high-output ileostomy recommends monitoring random urine sodium with serum electrolytes, urea and creatinine. Stoma fluid is rich in sodium, and a low urine sodium shows the kidneys are conserving it. The same summary notes that the urea to creatinine ratio rises only once dehydration is severe. Serum sodium mainly reflects water balance, and hers is low partly because she drinks hypotonic fluids. Hemoglobin and albumin are affected by bleeding, nutrition and inflammation and are poor measures of volume.
 
 *Key feature:* Shock/dehydration 2. Estimate the fluid deficit in dehydrated patients accurately, accounting for their age.
 
-*Source:* American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018.
+*Source:* Wang Y, Peng H, Cui C, Zou Q, Yang M. Summary of best evidence for the dietary management in patients with high-output ileostomy. J Multidiscip Healthc. 2025. https://europepmc.org/article/PMC/PMC11842286
 
 #### Q4
-**Which of the following fluids is recommended for his initial burn resuscitation?**
+**Which of the following IV fluids is most appropriate to begin replacing her deficit and stoma losses?**
 
-- A. albumin 5% solution
-- B. dextrose 5% in water
-- C. hydroxyethyl starch 6%
-- D. Ringer's lactate  **(key)**
-- E. 0.45% sodium chloride
+- A. albumin 5% 500 mL IV
+- B. dextrose 5% in water 1 L IV
+- C. sodium chloride 0.18% in 4% glucose IV
+- D. sodium chloride 0.45% 1 L IV
+- E. sodium chloride 0.9% with KCl 1 L IV  **(key)**
 
-*Explanation:* Ringer's lactate is the recommended crystalloid for burn resuscitation because it is isotonic and causes less hyperchloremic acidosis than large volumes of saline. Dextrose 5% in water and 0.45% sodium chloride are hypotonic and leave the circulation. Starch solutions increase kidney injury. Albumin may be added later in some burn centres as rescue for rising fluid needs, not as the initial fluid.
+*Explanation:* Ileostomy fluid is rich in sodium, and she is hyponatremic at 129 mmol/L and hypokalemic at 3.1 mmol/L. Isotonic 0.9% saline with added potassium replaces both. Dextrose 5% in water and 0.45% saline are hypotonic and would lower her sodium further. The 0.18% saline in 4% glucose solution is a maintenance fluid in the NICE guideline, not a replacement for sodium-rich losses. Albumin does not replace sodium or potassium and has no role in simple volume depletion.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Source:* American Burn Association. Advanced Burn Life Support Course Provider Manual. 2018.
+*Source:* National Institute for Health and Care Excellence. Intravenous fluid therapy in adults in hospital (CG174). 2013. https://www.nice.org.uk/guidance/cg174
 
 ### shock-31: Pregnant woman with flank pain and fever
 
@@ -1303,65 +1350,65 @@ An 81-year-old woman is brought to the emergency department by her daughter beca
 
 *Source:* Rossaint R, et al. The European guideline on management of major bleeding and coagulopathy following trauma. Sixth edition. Crit Care. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC9977110/
 
-### shock-33: Girl hit by a car while cycling
+### shock-33: Pale and sleepy after a cold
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 9-year-old girl is brought to the emergency department by ambulance 40 minutes after she was struck by a car while cycling. She was wearing a helmet. She complains of pain in her left upper abdomen and left shoulder. She is alert but anxious and pale. There is a tire mark across the left lower chest and upper abdomen, with tenderness in the left upper quadrant. Her chest is clear with equal air entry and her pelvis is stable. Capillary refill is 4 seconds.
+A 2-year-old boy with sickle cell anemia (HbSS) is brought to the emergency department because he became pale and sleepy over the afternoon. He has had a runny nose for 2 days. He takes penicillin prophylaxis and folic acid. His usual hemoglobin is 84 g/L. He is pale and lethargic but rousable. His hands and feet are cool, his pulses are weak and his capillary refill is 4 seconds. His spleen is palpable 6 cm below the left costal margin. At his last clinic visit it was 2 cm below. Hemoglobin is 42 g/L with a raised reticulocyte count.
 
-- Temperature: 36.5°C tympanic
-- Pulse: 142/minute
-- Resp.: 28/minute
-- BP: 96/60 mmHg
-- O2 sat: 98% on room air
-- Weight: 30 kg
+- Temperature: 37.8°C tympanic
+- Pulse: 176/minute
+- Resp.: 36/minute
+- BP: 92/56 mmHg
+- O2 sat: 97% on room air
+- Weight: 12 kg
 
 #### Q1
-**Which of the following best describes her circulatory state on arrival?**
+**Which of the following findings best shows that he is in shock despite his normal blood pressure?**
 
-- A. Compensated hemorrhagic shock  **(key)**
-- B. Decompensated hemorrhagic shock
-- C. Neurogenic shock
-- D. Obstructive shock
-- E. No shock, pain explains her pulse
+- A. Cool limbs, refill of 4 seconds  **(key)**
+- B. Hemoglobin of 42 g/L
+- C. Respiratory rate of 36/minute
+- D. Spleen palpable 6 cm below the margin
+- E. Temperature of 37.8°C
 
-*Explanation:* A pulse of 142/minute, capillary refill of 4 seconds, pallor and anxiety after a blow to the spleen show hemorrhagic shock. Her systolic pressure of 96 mmHg is still normal, so the shock is compensated. Children keep a normal systolic pressure after large losses and become hypotensive only after losing about 45% of their blood volume, which makes hypotension a late sign. Pain alone does not explain delayed capillary refill. Her clear chest with equal air entry makes obstructive shock unlikely, and her tachycardia argues against neurogenic shock, which causes bradycardia.
+*Explanation:* The 2026 pediatric sepsis guideline lists heart rate, capillary refill, extremity temperature, pulse quality, level of consciousness and urine output alongside blood pressure as markers of cardiac output. He has cool limbs, a capillary refill of 4 seconds, weak pulses, a pulse of 176/minute and lethargy, so he is in shock even though his systolic pressure is normal for his age. His hemoglobin and spleen size explain the cause, which is acute splenic sequestration, but they do not measure perfusion. A respiratory rate of 36/minute is only mildly raised for a 2-year-old. A temperature of 37.8°C is a low-grade rise and says nothing about perfusion.
 
 *Key feature:* Shock/dehydration 1. Recognize subtle shock in groups that present atypically, including children, pregnant patients, and older adults.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.
+*Source:* Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Intensive Care Med. 2026. https://pubmed.ncbi.nlm.nih.gov/41870559/
 
 #### Q2
-**Which of the following is the lowest acceptable systolic blood pressure for a child of her age?**
+**Which of the following systolic pressures marks the threshold for hypotension at his age?**
 
-- A. 60 mmHg
-- B. 70 mmHg
-- C. 76 mmHg
-- D. 80 mmHg
-- E. 88 mmHg  **(key)**
+- A. 66 mmHg
+- B. 74 mmHg  **(key)**
+- C. 80 mmHg
+- D. 86 mmHg
+- E. 90 mmHg
 
-*Explanation:* For children aged 1 to 10 years, the lowest acceptable systolic pressure is 70 mmHg plus twice the age in years. For her, 70 + (2 x 9) = 88 mmHg. A value of 70 mmHg is the limit for infants, and 60 mmHg is the limit for term newborns. Values of 76 and 80 mmHg do not come from the formula for a 9-year-old and would accept a pressure that is already too low.
+*Explanation:* From 1 to 10 years of age, a systolic pressure below 70 + (2 x age in years) is low. At 2 years that is 70 + (2 x 2) = 74 mmHg. His pressure of 92/56 mmHg is above it, so his perfusion signs, not his blood pressure, show his shock, and waiting for hypotension would delay treatment. The value of 66 mmHg subtracts the age term instead of adding it. The values of 80 and 86 mmHg are the thresholds at 5 and 8 years, and 90 mmHg applies from 11 years.
 
 *Key feature:* Shock/dehydration 1. Recognize subtle shock in groups that present atypically, including children, pregnant patients, and older adults.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.
+*Source:* Sampson HA, Munoz-Furlong A, Campbell RL, et al. Second symposium on the definition and management of anaphylaxis: summary report. J Allergy Clin Immunol. 2006. https://doi.org/10.1016/j.jaci.2005.12.1303
 
 #### Q3
-*Update:* She has received one 20 mL/kg bolus of crystalloid. Her pulse is 148/minute and capillary refill is 4 seconds.
+*Update:* Crossmatched red cells are ready. He has one IV in place.
 
-**Which of the following is the most appropriate next fluid for this child?**
+**Which of the following transfusion approaches is most appropriate for him?**
 
-- A. albumin 5% 600 mL IV
-- B. Crystalloid 1 800 mL IV
-- C. dextrose 5% in water 600 mL IV
-- D. hydroxyethyl starch 300 mL IV
-- E. Red cells 300 mL IV  **(key)**
+- A. albumin 5% 20 mL/kg IV
+- B. Crystalloid 60 mL/kg before any blood
+- C. Exchange transfusion only
+- D. Red cells in small aliquots, then reassess  **(key)**
+- E. Red cells to a hemoglobin of 120 g/L
 
-*Explanation:* A child with hemorrhagic shock who does not respond to the first crystalloid bolus needs blood, at 10 to 20 mL/kg. For 30 kg, 10 mL/kg is 300 mL of red cells, repeated as needed while surgery is involved. A further 1 800 mL of crystalloid is 60 mL/kg and would dilute her clotting factors. Albumin and starch carry no oxygen, and starch harms clotting and kidneys. Dextrose 5% in water leaves the circulation quickly.
+*Explanation:* His hemoglobin has fallen by 42 g/L from baseline while his spleen has grown by 4 cm. A fall of at least 20 g/L with an acutely enlarging spleen and a normal or raised reticulocyte count defines acute splenic sequestration. He needs red cells to restore oxygen delivery. In the cohort study, children with sequestration were treated with small aliquots of red cells. Giving blood in small amounts with reassessment matters because the spleen can release trapped cells as it shrinks and push the hemoglobin higher. Transfusing to 120 g/L risks overshooting and overloading his circulation. Crystalloid and albumin do not carry oxygen. Exchange transfusion is not needed to treat sequestration.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th edition. 2018.
+*Source:* Zayed AM, Almohaimeed S, Alotaibi T, et al. Splenic sequestration crisis in children with sickle cell disease in the Eastern region of Saudi Arabia. BMC Pediatr. 2025. https://doi.org/10.1186/s12887-025-06020-w
 
 ### shock-34: Teen who nearly fainted on the stairs
 
@@ -1436,444 +1483,446 @@ A 15-year-old boy is brought to the emergency department with 2 days of worsenin
 
 *Source:* Law YM, et al. Diagnosis and management of myocarditis in children. A scientific statement from the American Heart Association. Circulation. 2021. https://www.ahajournals.org/doi/10.1161/CIR.0000000000001001
 
-### shock-35: Chest pain and light-headed after a spray
+### shock-35: Collapse minutes after a quick delivery
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 69-year-old man presents to the emergency department with 90 minutes of crushing chest pain and nausea. He has diabetes treated with metformin and he smokes. Paramedics gave him ASA 160 mg and one spray of nitroglycerin, after which he became light-headed. He is pale and clammy. His neck veins are distended and his lungs are clear. The ECG shows ST elevation in II, III and aVF, greater in III than in II, with ST depression in I and aVL. Your hospital has a cardiac catheterization laboratory.
+You are working in a community hospital emergency department with no obstetric unit. A 34-year-old woman, G2P1 at 39 weeks, arrives in active labour and delivers a healthy baby 10 minutes later. The placenta delivers complete and the uterus is firm. Five minutes after the placenta, she becomes agitated, says she cannot breathe and then becomes drowsy. Her pregnancy was uncomplicated, she has no allergies and she has received no medications. She is cyanotic and mottled. Blood begins to ooze from her IV site. Vaginal bleeding is modest.
 
-- Temperature: 36.6°C oral
-- Pulse: 58/minute
-- Resp.: 20/minute
-- BP: 78/50 mmHg
-- O2 sat: 96% on room air
-- Weight: 84 kg
+- Temperature: 36.8°C oral
+- Pulse: 138/minute
+- Resp.: 34/minute
+- BP: 64/30 mmHg
+- O2 sat: 78% on 15 L/minute by non-rebreather mask
 
 #### Q1
-**Which of the following additional ECG leads would best confirm the suspected complication of this infarct?**
+**Which of the following bedside echocardiography findings is most likely in her?**
 
-- A. Lewis lead configuration
-- B. Posterior leads V7 to V9
-- C. Repeat standard leads in 1 hour
-- D. Right-sided lead V4R  **(key)**
-- E. Signal-averaged ECG
+- A. Dilated, hypokinetic RV with a small LV  **(key)**
+- B. Hyperdynamic LV with a collapsed IVC
+- C. Large pericardial effusion with RA collapse
+- D. Normal heart size and function
+- E. Poor LV function with regional wall loss
 
-*Explanation:* Inferior ST elevation greater in III than in II, hypotension after nitroglycerin, distended neck veins and clear lungs suggest right ventricular infarction. ST elevation of 1 mm or more in right-sided lead V4R confirms it, and the guideline recommends right-sided leads in inferior infarction. Posterior leads V7 to V9 detect posterior infarction. A Lewis lead helps find atrial activity. A repeat in 1 hour delays the answer, and signal averaging has no role.
+*Explanation:* Sudden hypoxia, collapse and oozing within 30 minutes of delivery point to amniotic fluid embolism, and the SMFM checklist notes that pulmonary hypertension and right ventricular dysfunction commonly characterize it. The failing right ventricle dilates and underfills the left ventricle. A hyperdynamic ventricle with a flat IVC would suggest hemorrhage, but her uterus is firm and bleeding is modest so far. A pericardial effusion with chamber collapse is tamponade, which has no link to delivery. A normal heart would not explain her collapse. Regional wall motion loss suggests myocardial infarction, which is rare at her age and does not explain the coagulopathy.
 
 *Key feature:* Shock/dehydration 6. Use bedside ultrasound, chest X-ray, and ECG to narrow down the cause of shock.
 
-*Source:* Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.
+*Source:* Society for Maternal-Fetal Medicine, Martinez-King LC, et al. Special statement: checklist for initial management of amniotic fluid embolism, updated 2026. Pregnancy. 2026. https://doi.org/10.1002/pmf2.70364
 
 #### Q2
-**Which of the following best explains his hypotension with clear lungs and distended neck veins?**
+*Update:* Echocardiography shows a dilated, poorly contracting right ventricle and a small left ventricle. Fibrinogen is 0.9 g/L, platelets are 62 x 10^9/L and INR is 2.0.
 
-- A. Anterior wall infarction
-- B. Papillary muscle rupture
-- C. Pulmonary edema from LV failure
-- D. Right ventricular infarction  **(key)**
-- E. Ventricular septal rupture
+**Which of the following is the most likely cause of her shock?**
 
-*Explanation:* An infarcted right ventricle cannot pump enough blood through the lungs to fill the left ventricle, so the neck veins are full while the lungs stay clear. The drop in pressure after nitroglycerin shows how much he depends on preload. Left ventricular failure, papillary muscle rupture and septal rupture cause pulmonary edema, and the last two usually appear days after the infarct with a new murmur. His ECG shows an inferior, not an anterior, infarct.
+- A. Amniotic fluid embolism  **(key)**
+- B. Anaphylactic shock
+- C. Eclampsia-related collapse
+- D. Hemorrhage from uterine atony
+- E. Pulmonary thromboembolism
+
+*Explanation:* She collapsed with hypoxia and hypotension within 30 minutes of delivery, has acute right heart failure and has disseminated intravascular coagulation, with a fibrinogen of 0.9 g/L, platelets of 62 x 10^9/L and an INR of 2.0, and no fever. That triad fits amniotic fluid embolism, which the SMFM guideline says should be considered in sudden cardiorespiratory collapse in a recently delivered woman. Her uterus is firm with modest bleeding, so atony does not explain the shock. Anaphylaxis needs an exposure, and she received nothing. A thrombotic embolus can dilate the right ventricle but does not cause this rapid coagulopathy. Eclampsia causes seizures with hypertension, not hypotension.
 
 *Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
 
-*Source:* Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.
+*Source:* Society for Maternal-Fetal Medicine. Amniotic fluid embolism: diagnosis and management. Am J Obstet Gynecol. 2016. https://doi.org/10.1016/j.ajog.2016.03.012
 
 #### Q3
-**Which of the following is the most appropriate initial treatment for his hypotension?**
+*Update:* She is intubated. Her BP is 72/40 mmHg on norepinephrine and dobutamine. She is now bleeding heavily from the vagina and her hemoglobin is 88 g/L.
 
-- A. Crystalloid bolus of 500 mL IV  **(key)**
-- B. furosemide 40 mg IV
-- C. morphine 5 mg IV
-- D. nitroglycerin infusion IV
-- E. norepinephrine before any fluid
+**Which of the following fluids is most appropriate for her ongoing volume resuscitation?**
 
-*Explanation:* Right ventricular infarction is preload dependent, so hypotension with clear lungs is treated first with a crystalloid bolus, with reassessment, while he goes for reperfusion. Nitrates and diuretics lower preload and worsen hypotension. Morphine can also drop the pressure. A vasopressor or inotrope is added if pressure stays low after fluid, not before it.
+- A. albumin 5% 1 L IV
+- B. frozen plasma 4 units IV
+- C. hydroxyethyl starch 1 L IV
+- D. Red cells and cryoprecipitate IV  **(key)**
+- E. Ringer's lactate 2 L IV
+
+*Explanation:* Her failing right ventricle tolerates volume poorly, and she has active bleeding with a fibrinogen of 0.9 g/L. The SMFM guidance says to avoid excessive fluid, to use blood products rather than crystalloid or colloid for volume, and to favour cryoprecipitate over plasma so coagulopathy is treated with less volume. Red cells with cryoprecipitate meet both needs. Two litres of Ringer's lactate, albumin or starch add volume without oxygen carriage or clotting factors. Frozen plasma corrects clotting factors but delivers more volume than cryoprecipitate for the same fibrinogen.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Source:* Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.
+*Source:* Society for Maternal-Fetal Medicine, Martinez-King LC, et al. Special statement: checklist for initial management of amniotic fluid embolism, updated 2026. Pregnancy. 2026. https://doi.org/10.1002/pmf2.70364
 
-### shock-36: Older woman who is slow and dizzy
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 79-year-old woman is brought to the emergency department from home with 2 days of weakness and dizziness. She has had diarrhea for 4 days and has eaten little. She has hypertension, heart failure and chronic kidney disease. She takes metoprolol 100 mg twice daily, ramipril 10 mg daily and spironolactone 25 mg daily, and she has taken no extra tablets. She is drowsy but rousable. Her mucous membranes are dry. Potassium 6.4 mmol/L, creatinine 248 umol/L (baseline 130), bicarbonate 18 mmol/L. The ECG shows a junctional bradycardia at 34/minute with a narrow QRS and no ST elevation.
-
-- Temperature: 36.4°C oral
-- Pulse: 34/minute
-- Resp.: 18/minute
-- BP: 74/40 mmHg
-- O2 sat: 95% on room air
-- Weight: 62 kg
-
-#### Q1
-**Which of the following best explains her bradycardia and shock?**
-
-- A. Acute inferior myocardial infarction
-- B. Hyperkalemia with AV nodal blockade  **(key)**
-- C. Myxedema crisis from hypothyroidism
-- D. Overdose of her metoprolol
-- E. Sick sinus syndrome progression
-
-*Explanation:* Diarrhea has caused volume loss and acute kidney injury, and with ramipril and spironolactone her potassium has risen to 6.4 mmol/L. Moderate hyperkalemia and an AV nodal blocker act together to cause severe bradycardia, which lowers kidney perfusion further. This cycle is called BRASH syndrome. There is no history of taking extra tablets. Her ECG shows no ST elevation, and nothing in the case suggests hypothyroidism or prior sinus node disease.
-
-*Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
-
-*Source:* Farkas JD, Long B, Koyfman A, Menson K. BRASH syndrome. Bradycardia, renal failure, AV blockade, shock, and hyperkalemia. J Emerg Med. 2020.
-
-#### Q2
-**Which of the following is the most appropriate first medication for this patient?**
-
-- A. calcium gluconate 3 g IV  **(key)**
-- B. glucagon 5 mg IV
-- C. insulin 10 units IV alone
-- D. patiromer 8.4 g PO
-- E. salbutamol 10 mg nebulized
-
-*Explanation:* IV calcium is the first treatment in BRASH syndrome because it stabilizes the myocardium and often improves the heart rate within minutes. Insulin lowers potassium but must be given with dextrose to avoid hypoglycemia, and it does not act as fast as calcium on the heart. Patiromer acts over hours. Salbutamol lowers potassium but is not the first step in a patient with a pulse of 34/minute and shock. Glucagon is for beta-blocker overdose, and she has taken her usual doses.
-
-*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
-
-*Source:* Farkas JD, Long B, Koyfman A, Menson K. BRASH syndrome. Bradycardia, renal failure, AV blockade, shock, and hyperkalemia. J Emerg Med. 2020.
-
-#### Q3
-*Update:* After calcium and a 500 mL crystalloid bolus, her pulse is 40/minute and BP is 78/42 mmHg.
-
-**Which of the following agents is most appropriate to start next for her shock?**
-
-- A. dobutamine infusion
-- B. epinephrine infusion  **(key)**
-- C. milrinone infusion
-- D. phenylephrine infusion
-- E. vasopressin infusion
-
-*Explanation:* Epinephrine raises heart rate and blood pressure and also shifts potassium into cells, so it treats several parts of BRASH syndrome at once. Phenylephrine and vasopressin raise vascular resistance without increasing the heart rate. Milrinone and dobutamine cause vasodilation, which risks lowering her pressure further.
-
-*Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
-
-*Source:* Farkas JD, Long B, Koyfman A, Menson K. BRASH syndrome. Bradycardia, renal failure, AV blockade, shock, and hyperkalemia. J Emerg Med. 2020.
-
-### shock-37: Man with cirrhosis vomiting blood
+### shock-36: Fever days after a cancer treatment
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 58-year-old man is brought to the emergency department by ambulance after vomiting about 500 mL of bright red blood twice this morning. He has alcohol-related cirrhosis and drinks daily. He takes no medications. He is pale, jaundiced and drowsy. He has spider angiomas, a distended abdomen with shifting dullness and a palpable spleen tip. Hemoglobin 72 g/L, platelets 64 x 10^9/L, INR 1.9, albumin 26 g/L, bilirubin 68 umol/L, creatinine 104 umol/L.
+A 58-year-old man with relapsed large B-cell lymphoma presents to the emergency department with fever since last night and light-headedness today. Five days ago he received an infusion of CAR T cells at a regional cancer centre and was discharged the next day with a wallet card and a care plan. He takes acyclovir and levofloxacin prophylaxis. He is flushed and alert, and he writes his name and follows commands normally. His chest is clear and there is no rash. His central line site is clean. Neutrophils are 0.6 x 10^9/L, C-reactive protein is 186 mg/L and ferritin is 4 200 mcg/L.
 
-- Temperature: 36.7°C oral
-- Pulse: 122/minute
-- Resp.: 22/minute
-- BP: 86/54 mmHg
-- O2 sat: 96% on room air
-- Weight: 72 kg
-
-#### Q1
-**Which of the following medications are most appropriate to start before his endoscopy?**
-
-Select 2.
-
-- A. albumin 25% 100 mL IV
-- B. ceftriaxone 1 g IV  **(key)**
-- C. Frozen plasma 15 mL/kg IV
-- D. furosemide 40 mg IV
-- E. octreotide 50 mcg IV then infusion  **(key)**
-- F. Platelets, one adult dose
-- G. propranolol 40 mg PO
-
-*Explanation:* Suspected variceal bleeding in cirrhosis calls for a vasoactive drug such as octreotide as soon as possible, and for antibiotic prophylaxis such as ceftriaxone 1 g every 24 hours, which lowers infection, rebleeding and death. Frozen plasma is not recommended to correct the INR, which poorly reflects bleeding risk in cirrhosis and adds volume that raises portal pressure. A nonselective beta-blocker such as propranolol is held during acute bleeding with hypotension. Furosemide worsens shock. Albumin and platelets are not part of the initial treatment of variceal bleeding.
-
-*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
-
-*Source:* de Franchis R, et al. Baveno VII. Renewing consensus in portal hypertension. J Hepatol. 2022.
-
-#### Q2
-**Which of the following hemoglobin ranges should his red cell transfusions aim to reach?**
-
-- A. 50 to 60 g/L
-- B. 70 to 80 g/L  **(key)**
-- C. 90 to 100 g/L
-- D. 110 to 120 g/L
-- E. 130 to 140 g/L
-
-*Explanation:* A restrictive strategy, transfusing at about 70 g/L to a target of 70 to 80 g/L, is recommended in variceal bleeding. Transfusing to higher levels raises portal pressure and increases rebleeding and death. A range of 50 to 60 g/L leaves an actively bleeding patient with too little oxygen carrying capacity. Ranges from 90 g/L upward over-transfuse him.
-
-*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
-
-*Source:* de Franchis R, et al. Baveno VII. Renewing consensus in portal hypertension. J Hepatol. 2022.
-
-#### Q3
-*Update:* Endoscopy fails to control bleeding from a large esophageal varix. He is on octreotide and has received 4 units of red cells.
-
-**Which of the following is the most appropriate rescue treatment while definitive therapy is arranged?**
-
-- A. Balloon tamponade as a bridge to TIPS  **(key)**
-- B. Double the octreotide infusion rate
-- C. Frozen plasma to correct the INR
-- D. Oral propranolol loading dose
-- E. Transfusion to hemoglobin 120 g/L
-
-*Explanation:* When endoscopic therapy fails, balloon tamponade, kept in place for no more than 24 hours, or an esophageal stent can control bleeding as a bridge to a transjugular intrahepatic portosystemic shunt (TIPS). Increasing octreotide beyond the standard dose is not an effective rescue. Frozen plasma and a hemoglobin of 120 g/L raise portal pressure. Propranolol would worsen shock in active bleeding.
-
-*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
-
-*Source:* de Franchis R, et al. Baveno VII. Renewing consensus in portal hypertension. J Hepatol. 2022.
-
-### shock-38: Feverish baby who will not feed
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-You are working in a rural hospital emergency department. The nearest pediatric intensive care unit is 3 hours away by transfer. A 7-week-old girl is brought in with fever since last night and poor feeding. She has had one wet diaper today. She is lethargic with a weak cry. Her hands and feet are cool and mottled. Capillary refill is 4 seconds. The fontanelle is flat. Two IV attempts fail, and an intraosseous needle is placed in the tibia.
-
-- Temperature: 38.9°C rectal
-- Pulse: 204/minute
-- Resp.: 58/minute
-- BP: 74/40 mmHg
-- O2 sat: 95% on room air
-- Weight: 4.6 kg
-
-#### Q1
-**Which of the following is the most appropriate timing for her first antibiotic dose?**
-
-- A. After a lumbar puncture
-- B. After the chest X-ray
-- C. After transfer to the PICU
-- D. After urine by catheter
-- E. Now, through the IO needle  **(key)**
-
-*Explanation:* She is in septic shock, and the guideline recommends antibiotics as soon as possible, within 1 hour of recognition. Blood culture can be drawn from the intraosseous needle first if it causes no delay. A lumbar puncture is unsafe in a child in shock and should be deferred rather than delay treatment. Waiting for a chest X-ray, a catheter urine or a 3 hour transfer delays a time critical treatment.
-
-*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
-
-*Source:* Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Intensive Care Med. 2026. https://pubmed.ncbi.nlm.nih.gov/41870559/
-
-#### Q2
-*Update:* She receives two 10 mL/kg boluses of balanced crystalloid. Her pulse is 188/minute and capillary refill is 3 seconds.
-
-**Which of the following findings should lead you to stop giving further fluid boluses?**
-
-- A. Capillary refill of 3 seconds
-- B. Heart rate still 188/minute
-- C. Lactate of 3 mmol/L
-- D. New crackles and liver enlargement  **(key)**
-- E. Urine output of 1 mL/kg/hour
-
-*Explanation:* Fluid is given in 10 to 20 mL/kg boluses with reassessment after each, and boluses stop when signs of fluid overload appear, such as crackles or an enlarging liver. Ongoing tachycardia, a capillary refill of 3 seconds and a lactate of 3 mmol/L show continuing shock and are reasons to reassess, not signs of overload. A urine output of 1 mL/kg/hour shows improving perfusion.
-
-*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
-
-*Source:* Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Intensive Care Med. 2026. https://pubmed.ncbi.nlm.nih.gov/41870559/
-
-#### Q3
-*Update:* After 40 mL/kg she remains mottled with a pulse of 196/minute. You start epinephrine. The transport team is 3 hours away.
-
-**Which of the following routes is most appropriate for her epinephrine infusion at this time?**
-
-- A. Femoral central line only
-- B. Intraosseous needle already placed  **(key)**
-- C. Subcutaneous infusion
-- D. Umbilical venous catheter
-- E. Wait for transport team access
-
-*Explanation:* The guideline suggests starting vasoactive infusions through peripheral access, or an intraosseous needle already in place, rather than delaying until a central line is placed. Her intraosseous needle is already working. Waiting 3 hours for the transport team prolongs shock. A femoral central line is difficult in a small infant and should not delay treatment. The umbilical vein closes in the first weeks of life, so it is not usable at 7 weeks. Subcutaneous epinephrine is not absorbed reliably in shock.
-
-*Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
-
-*Source:* Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Intensive Care Med. 2026. https://pubmed.ncbi.nlm.nih.gov/41870559/
-
-### shock-39: Light-headed after two days of vomiting
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 34-year-old woman presents to the emergency department with light-headedness and a near faint when she stood up this morning. She has had vomiting and watery diarrhea for 2 days, and her partner has the same illness. She has obstructive hypertrophic cardiomyopathy and takes metoprolol 50 mg PO twice daily, but she has vomited her last three doses. A clinic letter from last year records a resting outflow gradient of 40 mmHg. She takes no other medications. Her mucous membranes are dry. A harsh grade 3/6 systolic murmur is heard at the left lower sternal border. Her lungs are clear. Her ECG shows sinus tachycardia with left ventricular hypertrophy.
-
-- Temperature: 37.3°C oral
-- Pulse: 118/minute
-- Resp.: 20/minute
-- BP: 82/50 mmHg
-- O2 sat: 98% on room air
-- Weight: 62 kg
-
-#### Q1
-*Update:* Bedside ultrasound shows a small, vigorously contracting left ventricle with systolic anterior motion of the mitral valve. The right ventricle is normal, there is no pericardial effusion and the IVC is collapsed.
-
-**Which of the following best explains the severity of her hypotension?**
-
-- A. Acute adrenal insufficiency
-- B. Beta blocker toxicity
-- C. Cardiac tamponade
-- D. Dynamic outflow tract obstruction  **(key)**
-- E. Left ventricular systolic failure
-
-*Explanation:* Systolic anterior motion of the mitral valve in a small, hyperdynamic left ventricle shows dynamic outflow tract obstruction. Two days of vomiting and diarrhea have left her ventricle underfilled, and a smaller cavity narrows the outflow tract, so her known 40 mmHg gradient can rise sharply and cardiac output falls. A pulse of 118/minute shortens filling and adds to the obstruction. The vigorous contraction excludes systolic failure, and there is no effusion to cause tamponade. She has vomited her metoprolol and is tachycardic, which does not fit beta blocker toxicity. She takes no steroids, and nothing in her history points to adrenal disease.
-
-*Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
-
-*Source:* Ommen SR, Ho CY, Asif IM, et al. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR guideline for the management of hypertrophic cardiomyopathy. Circulation. 2024. https://doi.org/10.1161/CIR.0000000000001250
-
-#### Q2
-*Update:* She receives 2 L of Ringer's lactate. Her BP is 84/52 mmHg, her pulse is 112/minute and the murmur is unchanged.
-
-**Which of the following vasopressors is most appropriate for her now?**
-
-- A. dobutamine infusion
-- B. dopamine infusion
-- C. epinephrine infusion
-- D. norepinephrine infusion
-- E. phenylephrine infusion  **(key)**
-
-*Explanation:* In obstructive hypertrophic cardiomyopathy with hypotension that has not responded to fluid, the AHA and ACC recommend IV phenylephrine or another vasoconstrictor without inotropic activity. Raising afterload widens the outflow tract and lowers the gradient, and phenylephrine does not make the ventricle contract harder. Norepinephrine, epinephrine and dopamine all have beta-1 inotropic and chronotropic effects that can worsen the obstruction and her tachycardia. Dobutamine is an inotrope that also lowers vascular resistance, so it would deepen both the obstruction and the hypotension.
-
-*Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
-
-*Source:* Ommen SR, Ho CY, Asif IM, et al. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR guideline for the management of hypertrophic cardiomyopathy. Circulation. 2024. https://doi.org/10.1161/CIR.0000000000001250
-
-#### Q3
-*Update:* On phenylephrine and a third litre of fluid, her BP is 104/64 mmHg and her pulse is 108/minute in sinus rhythm. Her vomiting has settled and she can swallow tablets.
-
-**Which of the following medications is most appropriate to give her now?**
-
-- A. amiodarone 150 mg IV
-- B. digoxin 0.25 mg IV
-- C. furosemide 20 mg IV
-- D. metoprolol 25 mg PO  **(key)**
-- E. verapamil 5 mg IV
-
-*Explanation:* Her tachycardia shortens diastolic filling and worsens the obstruction, and she has missed three doses of metoprolol. A beta blocker is first line in obstructive hypertrophic cardiomyopathy, and the AHA and ACC support one alongside phenylephrine for acute hypotension, so restarting metoprolol at a lower dose is appropriate now that she can swallow. The guideline lists verapamil as potentially harmful in obstructive disease with hypotension, because its vasodilating effect can raise the gradient. Digoxin increases contractility and furosemide reduces preload, and both can worsen obstruction. She is in sinus rhythm, so amiodarone has no arrhythmia to treat.
-
-*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
-
-*Source:* Ommen SR, Ho CY, Asif IM, et al. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR guideline for the management of hypertrophic cardiomyopathy. Circulation. 2024. https://doi.org/10.1161/CIR.0000000000001250
-
-### shock-40: Young man stabbed in the abdomen
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 23-year-old man is brought to the emergency department by ambulance 25 minutes after being stabbed in the left upper abdomen. Paramedics gave 1 L of crystalloid. He takes no medications. He is agitated and cold to touch. There is a 3 cm wound below the left costal margin with omentum protruding. His chest is clear with equal air entry. He has no head injury. POCUS shows free fluid in the left upper quadrant. The massive hemorrhage protocol is activated and the operating room is being prepared.
-
-- Temperature: 35.4°C tympanic
-- Pulse: 138/minute
-- Resp.: 28/minute
-- BP: 74/48 mmHg
-- O2 sat: 97% on room air
-- Weight: 75 kg
-
-#### Q1
-**Which of the following systolic pressure targets is most appropriate until his bleeding is controlled?**
-
-- A. 60 to 70 mmHg
-- B. 80 to 90 mmHg  **(key)**
-- C. 100 to 110 mmHg
-- D. 120 to 130 mmHg
-- E. 140 to 150 mmHg
-
-*Explanation:* Without a brain injury, the guideline recommends a target systolic pressure of 80 to 90 mmHg until major bleeding is stopped. This restricted volume approach limits further bleeding and dilution of clotting factors. He has no head injury, which would call for a higher mean pressure. A target of 60 to 70 mmHg risks organ ischemia, and targets of 100 mmHg or more encourage bleeding from the injured vessels.
-
-*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
-
-*Source:* Rossaint R, et al. The European guideline on management of major bleeding and coagulopathy following trauma. Sixth edition. Crit Care. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC9977110/
-
-#### Q2
-*Update:* He has received 6 units of red cells and 6 units of plasma. Ionized calcium is 0.82 mmol/L.
-
-**Which of the following is the most appropriate treatment for this laboratory result?**
-
-- A. calcium chloride 1 g IV  **(key)**
-- B. magnesium sulfate 2 g IV
-- C. potassium chloride 10 mmol IV
-- D. sodium bicarbonate 50 mmol IV
-- E. vitamin K 10 mg IV
-
-*Explanation:* Citrate in stored blood products binds calcium, and low ionized calcium impairs clotting and cardiac contraction. The guideline recommends monitoring ionized calcium during massive transfusion and keeping it in the normal range. His level of 0.82 mmol/L is well below normal, so he needs IV calcium. Bicarbonate is not recommended to correct acidosis from hypoperfusion. Magnesium and potassium do not correct his calcium. He takes no warfarin, so vitamin K has no role.
-
-*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
-
-*Source:* Rossaint R, et al. The European guideline on management of major bleeding and coagulopathy following trauma. Sixth edition. Crit Care. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC9977110/
-
-#### Q3
-*Update:* His temperature is now 34.9°C. Fibrinogen is 1.1 g/L. He is on his way to the operating room.
-
-**Which of the following measures are most appropriate to treat his developing coagulopathy?**
-
-Select 2.
-
-- A. Active warming of patient and products  **(key)**
-- B. Crystalloid to a normal pressure
-- C. desmopressin 0.3 mcg/kg IV
-- D. Fibrinogen replacement  **(key)**
-- E. hydroxyethyl starch 500 mL IV
-- F. Recombinant factor VIIa
-- G. vitamin K 10 mg IV
-
-*Explanation:* Hypothermia slows clotting enzymes, so the guideline recommends early measures to reduce heat loss and to warm the patient and all fluids. A fibrinogen of 1.1 g/L is below the treatment threshold of 1.5 g/L, so he needs fibrinogen concentrate or cryoprecipitate. Crystalloid and starch dilute clotting factors, and starch impairs clot formation. Recombinant factor VIIa is not a first-line treatment. Desmopressin is for platelet dysfunction or von Willebrand disease, and vitamin K reverses warfarin, which he does not take.
-
-*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
-
-*Source:* Rossaint R, et al. The European guideline on management of major bleeding and coagulopathy following trauma. Sixth edition. Crit Care. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC9977110/
-
-### shock-41: Confused older man with rigors
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-An 83-year-old man is brought to the emergency department from his retirement home because he is confused and had rigors this morning. He has had right upper abdominal pain for 2 days. He has gallstones and declined surgery last year. He takes amlodipine and atorvastatin. He is jaundiced and tender in the right upper quadrant. Bilirubin 92 umol/L, ALP 410 units/L, ALT 240 units/L, WBC 18.8 x 10^9/L, platelets 88 x 10^9/L, creatinine 150 umol/L, INR 1.2, lactate 4.1 mmol/L.
-
-- Temperature: 38.6°C oral
-- Pulse: 116/minute
+- Temperature: 39.6°C oral
+- Pulse: 128/minute
 - Resp.: 24/minute
 - BP: 82/44 mmHg
-- O2 sat: 94% on room air
+- O2 sat: 95% on room air
+- Weight: 80 kg
+
+#### Q1
+**Which of the following conditions, alongside infection, most likely explains his fever and hypotension?**
+
+- A. Adrenal insufficiency
+- B. Anaphylaxis to the cell infusion
+- C. Cytokine release syndrome  **(key)**
+- D. Heart failure from cardiomyopathy
+- E. Tumour lysis syndrome
+
+*Explanation:* Fever and hypotension within days of CAR T-cell therapy, with a very high CRP and ferritin, fit cytokine release syndrome. The review notes that it must be separated from infection, which remains likely in a neutropenic patient, so both are treated at once. Anaphylaxis occurs during or soon after an infusion, not 5 days later, and he has no rash or wheeze. Nothing in his history suggests adrenal insufficiency. Heart failure would bring congestion rather than a warm, flushed, febrile picture with a clear chest. Tumour lysis causes electrolyte and kidney problems rather than fever with vasodilatory shock.
+
+*Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
+
+*Source:* Arvanitis P, Tziotis A, Papadimatos S, Farmakiotis D. Pathogenesis, diagnosis, and management of cytokine release syndrome in patients with cancer: focus on infectious disease considerations. Curr Oncol. 2025. https://doi.org/10.3390/curroncol32040198
+
+#### Q2
+*Update:* Blood cultures are drawn and piperacillin-tazobactam is given. After 2 L of Ringer's lactate his BP is 86/48 mmHg. The cancer centre's on-call physician agrees this is cytokine release syndrome.
+
+**Which of the following treatments is most appropriate now for his cytokine release syndrome?**
+
+- A. hydrocortisone IV
+- B. immune globulin IV
+- C. methylprednisolone pulse IV
+- D. tocilizumab IV  **(key)**
+- E. vancomycin IV
+
+*Explanation:* His cytokine release syndrome now includes hypotension, which is grade 2 or higher. The review states that grade 2 and above is treated with the interleukin-6 receptor blocker tocilizumab, and that corticosteroids, particularly dexamethasone, are second-line agents for refractory or grade 4 disease. Pulse methylprednisolone is therefore not the first step. Hydrocortisone is the low-dose steroid used for septic shock and is not the treatment for the cytokine storm. Immune globulin is not among the treatments the review lists for the syndrome. Vancomycin adds gram-positive cover but does not treat the syndrome itself.
+
+*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
+
+*Source:* Arvanitis P, Tziotis A, Papadimatos S, Farmakiotis D. Pathogenesis, diagnosis, and management of cytokine release syndrome in patients with cancer: focus on infectious disease considerations. Curr Oncol. 2025. https://doi.org/10.3390/curroncol32040198
+
+#### Q3
+*Update:* Tocilizumab has been given. His mean arterial pressure is now 58 mmHg. His lungs remain clear.
+
+**Which of the following vasoactive agents is most appropriate to start first for him?**
+
+- A. dopamine infusion IV
+- B. milrinone infusion IV
+- C. norepinephrine infusion IV  **(key)**
+- D. phenylephrine infusion IV
+- E. vasopressin infusion IV
+
+*Explanation:* He has distributive shock from cytokine release syndrome, and bacterial sepsis has not been excluded. The Surviving Sepsis guideline recommends norepinephrine as the first-line vasopressor over dopamine and suggests it over vasopressin. Dopamine brings more arrhythmias. Vasopressin is added once norepinephrine is running rather than started alone. Milrinone is a vasodilating inotrope that would lower his pressure. Phenylephrine is not among the agents the guideline recommends for septic shock.
+
+*Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
+
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+### shock-37: Flank pain on a new blood thinner
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 76-year-old woman presents to the emergency department with 6 hours of worsening right flank and groin pain and light-headedness. Five days ago she started enoxaparin 70 mg SC twice daily for a deep vein thrombosis, and her last dose was 3 hours ago. She has chronic kidney disease. She has had no injury. She is pale and sweaty and holds her right hip flexed. There is tender fullness in the right flank and lower quadrant. Hemoglobin is 72 g/L, down from 118 g/L five days ago. Creatinine clearance is 24 mL/minute. CT shows a large right retroperitoneal hematoma with active contrast extravasation.
+
+- Temperature: 36.5°C oral
+- Pulse: 116/minute
+- Resp.: 22/minute
+- BP: 84/50 mmHg
+- O2 sat: 96% on room air
 - Weight: 70 kg
 
 #### Q1
-**Which of the following bedside ultrasound findings would best support the suspected source of his sepsis?**
+**Which of the following is the most appropriate agent to reverse her anticoagulant?**
 
-- A. B lines in both lungs
-- B. Dilated common bile duct  **(key)**
-- C. Free fluid in the pelvis
-- D. Pericardial effusion
-- E. Right hydronephrosis
+Select 1.
 
-*Explanation:* Fever with rigors, jaundice and right upper quadrant pain in a patient with gallstones suggest acute cholangitis. A dilated common bile duct on ultrasound shows biliary obstruction and supports the diagnosis. Hydronephrosis would point to an obstructed urinary source instead. B lines, free pelvic fluid and a pericardial effusion do not identify a biliary source.
+- A. andexanet alfa IV
+- B. desmopressin 0.3 mcg/kg IV
+- C. idarucizumab 5 g IV
+- D. protamine 50 mg IV  **(key)**
+- E. protamine 100 mg IV
+- F. prothrombin complex concentrate IV
+- G. vitamin K 10 mg IV
 
-*Key feature:* Shock/dehydration 6. Use bedside ultrasound, chest X-ray, and ECG to narrow down the cause of shock.
+*Explanation:* Protamine is the approved reversal agent for enoxaparin. Her last dose was 3 hours ago, within 8 hours, so the dose is 1 mg of protamine per 1 mg of enoxaparin, which is 70 mg, capped at the maximum of 50 mg. It neutralizes only about half of the enoxaparin effect. The larger dose of 100 mg exceeds the maximum, and excess protamine can itself impair clotting. Andexanet alfa and idarucizumab are specific reversal agents for the direct oral anticoagulants. Prothrombin complex concentrate and vitamin K reverse warfarin. Desmopressin does not reverse heparins.
 
-*Source:* Miura F, et al. Tokyo Guidelines 2018. Initial management of acute biliary infection and flowchart for acute cholangitis. J Hepatobiliary Pancreat Sci. 2018.
+*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
+
+*Source:* Aldhaeefi M, Badreldin HA, Alsuwayyid F, et al. Practical guide for anticoagulant and antiplatelet reversal in clinical practice. Pharmacy (Basel). 2023. https://doi.org/10.3390/pharmacy11010034
 
 #### Q2
-*Update:* After 2 L of crystalloid his BP is 84/46 mmHg and norepinephrine is started.
+*Update:* Protamine is given. She has received 1 L of Ringer's lactate and her BP is 86/52 mmHg. Crossmatched red cells are ready.
 
-**Which of the following findings in this patient meet the criteria for severe (grade III) acute cholangitis?**
+**Which of the following is the most appropriate fluid to give her now?**
 
-Select 3.
+- A. albumin 5% 500 mL IV
+- B. frozen plasma 2 units IV
+- C. hydroxyethyl starch 500 mL IV
+- D. red cells 1 unit IV  **(key)**
+- E. Ringer's lactate 2 L IV
 
-- A. Acute confusion  **(key)**
-- B. Age of 83 years
-- C. Bilirubin of 92 umol/L
-- D. Creatinine of 150 umol/L
-- E. Hypotension on norepinephrine  **(key)**
-- F. Platelets of 88 x 10^9/L  **(key)**
-- G. Temperature of 38.6°C
-- H. WBC of 18.8 x 10^9/L
+*Explanation:* She is in hemorrhagic shock with a hemoglobin of 72 g/L and ongoing bleeding, and she has already received 1 L of crystalloid. The blood services guide advises limiting crystalloid to about 1 L before switching to blood, so red cells are next. Another 2 L of Ringer's lactate dilutes her clotting factors and carries no oxygen. Albumin and starch also carry no oxygen. Frozen plasma does not reverse enoxaparin and is not indicated without a clotting factor deficit.
 
-*Explanation:* Severe cholangitis is defined by dysfunction of at least one organ system. His confusion (neurological), hypotension that needs norepinephrine (cardiovascular) and platelets below 100 x 10^9/L (hematological) each qualify. Age of 75 or more, a WBC above 12 x 10^9/L and a bilirubin of about 86 umol/L or more are criteria for moderate, not severe, disease. His temperature is below the moderate threshold of 39°C. His creatinine of 150 umol/L is below the severe renal threshold of about 177 umol/L (2.0 mg/dL).
+*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Key feature:* Shock/dehydration 1. Recognize subtle shock in groups that present atypically, including children, pregnant patients, and older adults.
-
-*Source:* Miura F, et al. Tokyo Guidelines 2018. Initial management of acute biliary infection and flowchart for acute cholangitis. J Hepatobiliary Pancreat Sci. 2018.
+*Source:* Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical guide to transfusion, chapter 11. Canadian Blood Services. 2021. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion
 
 #### Q3
-**Which of the following is the most important step to control the source of his sepsis?**
+*Update:* After 2 units of red cells her BP is 88/54 mmHg. Her hemoglobin is 70 g/L and her pain and flank swelling are increasing.
 
-- A. Antibiotics alone for 14 days
-- B. Elective cholecystectomy in 6 weeks
-- C. Emergency open cholecystectomy
-- D. Hepatobiliary scan confirmation
-- E. Urgent endoscopic biliary drainage  **(key)**
+**Which of the following is the most appropriate next step to control her bleeding?**
 
-*Explanation:* Severe cholangitis needs antibiotics, organ support and urgent biliary drainage, usually by endoscopic retrograde cholangiopancreatography, once initial resuscitation is under way. Antibiotics alone do not relieve an obstructed, infected duct. Cholecystectomy removes the gallbladder, not the stone in the duct, and emergency open surgery carries a high risk in this unstable older man. A hepatobiliary scan delays drainage and adds nothing to his ultrasound findings.
+- A. Observation with serial hemoglobin
+- B. Open surgical evacuation
+- C. Repeat CT in 6 hours
+- D. tranexamic acid 1 g IV
+- E. Transarterial embolization  **(key)**
+
+*Explanation:* She has a spontaneous retroperitoneal hematoma with active extravasation on CT and continues to bleed despite reversal and transfusion. Transarterial embolization had high technical success and relatively few complications for life-threatening spontaneous retroperitoneal hematoma in a systematic review. Observation and a repeat CT leave an arterial bleed untreated. Open surgery on a retroperitoneal hematoma in an unstable, anticoagulated older woman carries far more risk than a catheter procedure. Tranexamic acid does not stop a bleeding artery that is visibly leaking contrast.
+
+*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
+
+*Source:* Tiralongo F, Toscano S, Mosconi C, et al. Spontaneous retroperitoneal hematoma treated with transarterial embolization: a systematic review and metanalysis. CVIR Endovasc. 2024. https://doi.org/10.1186/s42155-024-00462-6
+
+### shock-38: Faint with a swollen forearm
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 34-year-old man presents to the emergency department with 2 days of fever and a painful, swollen right forearm. Today he feels faint. He injects fentanyl, and 6 months ago a wound swab from his left arm grew methicillin-resistant Staphylococcus aureus (MRSA). He takes no other medications. He is drowsy but oriented. On the right forearm, at an injection site, there is a 6 cm fluctuant, tender swelling with surrounding redness. There is no crepitus and his pain matches the findings. He has no heart murmur. Lactate is 4.8 mmol/L.
+
+- Temperature: 39.2°C oral
+- Pulse: 122/minute
+- Resp.: 24/minute
+- BP: 84/46 mmHg
+- O2 sat: 97% on room air
+- Weight: 72 kg
+
+#### Q1
+**Which of the following empiric antibiotics is most appropriate for him?**
+
+- A. cefazolin 2 g IV
+- B. ceftriaxone 2 g IV
+- C. clindamycin 900 mg IV
+- D. cloxacillin 2 g IV
+- E. vancomycin 25 mg/kg IV  **(key)**
+
+*Explanation:* He has septic shock from a skin source and is at high risk of MRSA, with injection drug use and a previous MRSA isolate. The guideline suggests empiric cover for a resistant organism when the patient is at high risk, such as after a previous infection with it, and vancomycin covers MRSA. At 72 kg, a 25 mg/kg loading dose is 1 800 mg. Cefazolin, cloxacillin and ceftriaxone do not cover MRSA. Clindamycin covers only some MRSA strains, so it is not reliable as the single agent in septic shock.
 
 *Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
 
-*Source:* Miura F, et al. Tokyo Guidelines 2018. Initial management of acute biliary infection and flowchart for acute cholangitis. J Hepatobiliary Pancreat Sci. 2018.
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+#### Q2
+*Update:* Blood cultures are drawn and vancomycin is running. Bedside ultrasound shows a 5 cm fluid collection under the skin of the forearm.
+
+**Which of the following is the most appropriate management of the forearm collection now?**
+
+- A. Antibiotics alone for 48 hours
+- B. Incision and drainage now  **(key)**
+- C. MRI before any drainage
+- D. Needle aspiration tomorrow
+- E. Operating room debridement tomorrow
+
+*Explanation:* An undrained abscess is the source of his septic shock. The guideline suggests early source control, ideally within 6 hours. Bedside incision and drainage of a superficial 5 cm collection is the least invasive method that works, and it can be done now. Antibiotics alone do not penetrate an undrained abscess well enough to control the source. An MRI delays drainage and adds nothing when ultrasound has shown the collection. Waiting until tomorrow for aspiration or the operating room delays source control in a patient who is already in shock.
+
+*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
+
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+#### Q3
+*Update:* The abscess is drained. He has received 30 mL/kg of crystalloid. On norepinephrine 0.5 mcg/kg/minute and vasopressin 0.03 units/minute, his mean arterial pressure is 58 mmHg. Bedside echocardiography shows normal ventricular function.
+
+**Which of the following is the most appropriate next change to his vasoactive treatment?**
+
+- A. Add dobutamine infusion
+- B. Add dopamine infusion
+- C. Add epinephrine infusion  **(key)**
+- D. Add milrinone infusion
+- E. Double the vasopressin dose
+
+*Explanation:* His MAP stays below 65 mmHg on norepinephrine and vasopressin. For this situation the guideline suggests adding epinephrine. Vasopressin is not titrated, and it is usually given at a fixed dose of 0.03 units/minute because higher doses are linked to cardiac, digital and splanchnic ischemia. His ventricles contract normally, so dobutamine is not indicated, and it lowers vascular resistance. Milrinone is also a vasodilator. Dopamine carries more arrhythmia risk and is not the suggested third agent.
+
+*Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
+
+*Source:* Prescott H, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://www.sccm.org/clinical-resources/guidelines/guidelines/surviving-sepsis-campaign-international-guidelines-for-management-of-sepsis-and-septic-shock-2026
+
+### shock-39: Drowsy beside an empty sleep aid bottle
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 71-year-old woman is brought to the emergency department by her son, who found her drowsy 3 hours after she took about 30 tablets of trazodone 100 mg. She takes trazodone for sleep and amlodipine for hypertension, and the amlodipine blister pack is intact. She has no fever, cough, urinary symptoms, vomiting or diarrhea. She responds to voice and is oriented to person. Her skin is warm and her chest is clear. Glucose is 6.4 mmol/L and lactate is 2.8 mmol/L. The ECG shows sinus tachycardia with a QRS of 92 ms and a QTc of 540 ms. She has received 1 L of 0.9% saline.
+
+- Temperature: 36.7°C oral
+- Pulse: 106/minute
+- Resp.: 16/minute
+- BP: 78/40 mmHg
+- O2 sat: 95% on room air
+- Weight: 64 kg
+
+#### Q1
+**Which of the following mechanisms best explains her persistent hypotension after 1 L of saline?**
+
+- A. Alpha-1 receptor blockade  **(key)**
+- B. Calcium channel blockade
+- C. Hypovolemia from poor intake
+- D. Septic vasodilation
+- E. Sodium channel blockade
+
+*Explanation:* Trazodone blocks alpha-1 adrenergic receptors, and hypotension from this blockade is a recognized complication of overdose. She took about 3 g, and her warm skin and tachycardia fit vasodilation. Her amlodipine pack is intact, so calcium channel blockade is unlikely. Her QRS of 92 ms is normal, which argues against sodium channel blockade. She has no fever or source of infection. She has had no vomiting or diarrhea, and hypovolemia would not explain hypotension that persists after 1 L of saline.
+
+*Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
+
+*Source:* Camacho LD, Stearns J, Amini R. Management of trazodone overdose with severe hypotension. Case Rep Emerg Med. 2019. https://doi.org/10.1155/2019/2470592
+
+#### Q2
+*Update:* After a second litre of saline her BP is 80/42 mmHg, a mean arterial pressure of 55 mmHg.
+
+**Which of the following vasoactive agents is most appropriate for her?**
+
+- A. dobutamine infusion IV
+- B. dopamine infusion IV
+- C. epinephrine infusion IV
+- D. milrinone infusion IV
+- E. norepinephrine infusion IV  **(key)**
+
+*Explanation:* Her hypotension comes from blocked alpha-1 receptors, so she needs a direct vasoconstrictor. Norepinephrine is a strong alpha-1 agonist, and in the reported case of trazodone overdose with severe hypotension, peripheral norepinephrine restored the pressure. Epinephrine and dopamine add beta-2 vasodilation and more tachycardia, and their beta effects act unopposed when alpha-1 receptors are blocked. Dobutamine and milrinone are inotropes that lower vascular resistance, which is the wrong direction for her.
+
+*Key feature:* Shock/dehydration 7. When vasopressors are needed, choose the agent according to the shock type and presentation.
+
+*Source:* Camacho LD, Stearns J, Amini R. Management of trazodone overdose with severe hypotension. Case Rep Emerg Med. 2019. https://doi.org/10.1155/2019/2470592
+
+#### Q3
+*Update:* On norepinephrine her MAP is 68 mmHg. A repeat ECG shows a QTc of 560 ms with occasional ventricular ectopic beats. Potassium is 3.9 mmol/L.
+
+**Which of the following is the most appropriate treatment for her ECG findings?**
+
+- A. amiodarone 150 mg IV
+- B. magnesium sulfate 2 g IV  **(key)**
+- C. procainamide 1 g IV
+- D. sodium bicarbonate 100 mmol IV
+- E. sotalol 80 mg PO
+
+*Explanation:* Trazodone can prolong the QT interval by blocking potassium channels, and her QTc has risen to 560 ms with ectopy. The case review advises IV magnesium when the QT is prolonged, along with continuous cardiac monitoring. Amiodarone, procainamide and sotalol all prolong the QT interval further. Sodium bicarbonate treats sodium channel blockade with a wide QRS, and her QRS is normal.
+
+*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
+
+*Source:* Camacho LD, Stearns J, Amini R. Management of trazodone overdose with severe hypotension. Case Rep Emerg Med. 2019. https://doi.org/10.1155/2019/2470592
+
+### shock-40: Bright red blood from a neck tube
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 67-year-old man is brought to the emergency department by ambulance from his long-term care home because bright red blood is pouring through and around his tracheostomy tube. The tracheostomy was placed 10 weeks ago after a long ICU stay for pneumonia. Two days ago staff saw a small amount of fresh blood when suctioning, and it stopped by itself. He breathes through a cuffed tracheostomy tube. He takes no anticoagulant or antiplatelet drugs. He is pale and anxious and is coughing blood through the tube.
+
+- Temperature: 36.9°C oral
+- Pulse: 134/minute
+- Resp.: 30/minute
+- BP: 82/46 mmHg
+- O2 sat: 88% on 10 L/minute by tracheostomy mask
+- Weight: 76 kg
+
+#### Q1
+*Update:* A point-of-care hemoglobin is 131 g/L. Blood is on its way from the blood bank.
+
+**Which of the following is the most appropriate approach to his fluid resuscitation?**
+
+- A. albumin 5% 1 L IV bolus
+- B. hydroxyethyl starch 1 L IV
+- C. Red cells as soon as available  **(key)**
+- D. Ringer's lactate 2 L IV
+- E. Transfuse when hemoglobin is below 70
+
+*Explanation:* He is in hemorrhagic shock with brisk, ongoing bleeding. A single hemoglobin in the normal range can mask early bleeding, because the concentration does not fall until fluid shifts or crystalloid dilute the blood, so it should not delay transfusion. Waiting for a hemoglobin below 70 g/L ignores his shock. The blood services guide advises limiting crystalloid to about 1 L before switching to blood, so 2 L of Ringer's lactate is too much. Albumin and starch carry no oxygen and do not replace clotting factors.
+
+*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
+
+*Source:* Rossaint R, Afshari A, Bouillon B, et al. The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition. Crit Care. 2023. https://doi.org/10.1186/s13054-023-04327-7
+
+#### Q2
+**Which of the following is the most appropriate immediate step to control his bleeding?**
+
+- A. Bronchoscopy to find the source
+- B. Overinflate the tracheostomy cuff  **(key)**
+- C. Remove the tracheostomy tube
+- D. Suction and observe for 15 minutes
+- E. tranexamic acid 1 g IV
+
+*Explanation:* Massive bleeding weeks after a tracheostomy, preceded by a small sentinel bleed, suggests a tracheo-innominate artery fistula. In a systematic review of 148 cases, a sentinel bleed occurred in about 44%, and overinflating the tracheostomy cuff alone controlled the hemorrhage in about 71%. Removing the tube in a patient who breathes through it risks losing his airway before any other control is in place. Bronchoscopy found the fistula in only about 31% of cases in the review, less often than imaging, and it delays control. Suction and observation leave an arterial bleed untreated. Tranexamic acid cannot seal a fistula into a major artery.
+
+*Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
+
+*Source:* Joshi KD, Singh A, Singh DK, et al. Tracheo-innominate artery fistula: a systematic review of diagnostic and management strategies. Otolaryngol Head Neck Surg. 2025. https://doi.org/10.1002/ohn.1333
+
+#### Q3
+*Update:* Cuff overinflation slows the bleeding. Vascular surgery and interventional radiology are on their way, and the massive hemorrhage protocol is activated.
+
+**Which of the following should the massive hemorrhage protocol provide for his resuscitation?**
+
+Select 3.
+
+- A. albumin 25% 100 mL IV
+- B. Frozen plasma in a fixed ratio  **(key)**
+- C. hydroxyethyl starch 500 mL IV
+- D. Platelets in a fixed ratio  **(key)**
+- E. recombinant factor VIIa IV
+- F. Red cells in a fixed ratio  **(key)**
+- G. Ringer's lactate 2 L IV
+
+*Explanation:* Modern massive hemorrhage protocols provide red cells, plasma and platelets in a ratio that approximates whole blood, about one unit of each. This replaces oxygen-carrying capacity and clotting factors together. Large volumes of crystalloid dilute clotting factors, so the guide advises switching to blood after about 1 L. Albumin and starch carry no oxygen or clotting factors. The European bleeding guideline does not recommend recombinant factor VIIa as first-line treatment.
+
+*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
+
+*Source:* Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical guide to transfusion, chapter 11. Canadian Blood Services. 2021. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion
+
+### shock-41: Confused at 30 weeks with a cough
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 31-year-old woman at 30 weeks gestation is brought to the emergency department by her partner with 3 days of cough and right-sided chest pain. This morning he noticed she was confused. Her pregnancy has been uncomplicated and she takes prenatal vitamins. She is drowsy and oriented to person only. There are crackles and bronchial breath sounds at the right base, and mild swelling of both ankles. The fetal heart rate is 165/minute. Lactate is 4.4 mmol/L, WBC 3.1 x 10^9/L, hemoglobin 108 g/L and platelets 96 x 10^9/L.
+
+- Temperature: 36.1°C oral
+- Pulse: 124/minute
+- Resp.: 30/minute
+- BP: 88/48 mmHg
+- O2 sat: 90% on room air
+
+#### Q1
+**Which of the following is the most appropriate first imaging test to find the source of her shock?**
+
+- A. CT pulmonary angiography
+- B. MRI of the chest
+- C. Portable chest X-ray now  **(key)**
+- D. Ventilation-perfusion scan
+- E. No X-ray until after delivery
+
+*Explanation:* Her cough, pleuritic pain and focal crackles point to pneumonia, and a portable chest X-ray is the fastest way to confirm the source at the bedside. The ACOG opinion states that the radiation from radiography is far below the dose associated with fetal harm and that needed imaging should not be withheld in pregnancy. Delaying the X-ray until after delivery delays diagnosis in a critically ill woman. MRI is impractical in an unstable patient and is not the first test for pneumonia. CT pulmonary angiography and a ventilation-perfusion scan look for pulmonary embolism, not for the infection her examination suggests.
+
+*Key feature:* Shock/dehydration 6. Use bedside ultrasound, chest X-ray, and ECG to narrow down the cause of shock.
+
+*Source:* American College of Obstetricians and Gynecologists. Committee opinion no. 723: guidelines for diagnostic imaging during pregnancy and lactation. Obstet Gynecol. 2017. https://doi.org/10.1097/AOG.0000000000002355
+
+#### Q2
+**Which of the following findings indicate sepsis with organ dysfunction or hypoperfusion in her?**
+
+Select 3.
+
+- A. Hemoglobin of 108 g/L
+- B. Lactate of 4.4 mmol/L  **(key)**
+- C. Mild swelling of both ankles
+- D. New confusion and drowsiness  **(key)**
+- E. Platelets of 96 x 10^9/L  **(key)**
+- F. Temperature of 36.1°C
+
+*Explanation:* Her confusion shows brain dysfunction, her platelets of 96 x 10^9/L show coagulation dysfunction, and her lactate of 4.4 mmol/L shows tissue hypoperfusion. The SMFM guidance recommends considering sepsis in a pregnant patient with unexplained end-organ damage and an infection, regardless of fever, and measuring lactate. Her normal temperature does not exclude sepsis, but it is not a sign of organ dysfunction. A hemoglobin of 108 g/L and mild ankle swelling are common in the third trimester and do not indicate organ failure.
+
+*Key feature:* Shock/dehydration 1. Recognize subtle shock in groups that present atypically, including children, pregnant patients, and older adults.
+
+*Source:* Society for Maternal-Fetal Medicine. SMFM consult series no. 47: sepsis during pregnancy and the puerperium. Am J Obstet Gynecol. 2019. https://doi.org/10.1016/j.ajog.2019.01.216
+
+#### Q3
+*Update:* Her chest X-ray shows right lower lobe consolidation. She has received 2 L of crystalloid and antibiotics, and norepinephrine is running. There are no obstetric complications, and the fetal heart tracing is stable. The obstetric resident asks whether to deliver the baby now.
+
+**Which of the following is the most appropriate plan for delivery?**
+
+- A. Caesarean delivery within the hour
+- B. Deliver if still on norepinephrine tomorrow
+- C. Deliver once the lactate is normal
+- D. Deliver only for obstetric reasons  **(key)**
+- E. Induce labour tonight
+
+*Explanation:* The SMFM guidance recommends against immediate delivery for the sole indication of sepsis and says delivery should be dictated by obstetric indications. The priority is treating the infection and supporting her circulation. An urgent caesarean or an induction adds surgical or labour stress to a woman in septic shock without improving her sepsis. Tying delivery to a vasopressor duration or a normal lactate uses markers of sepsis, not obstetric indications, to time the birth.
+
+*Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
+
+*Source:* Society for Maternal-Fetal Medicine. SMFM consult series no. 47: sepsis during pregnancy and the puerperium. Am J Obstet Gynecol. 2019. https://doi.org/10.1016/j.ajog.2019.01.216
 
 ### shock-42: Fever during dialysis
 
@@ -1933,65 +1982,65 @@ A 66-year-old woman on hemodialysis three times a week presents to the emergency
 
 *Source:* Mermel LA, et al. Clinical practice guidelines for the diagnosis and management of intravascular catheter-related infection. 2009 update by the Infectious Diseases Society of America. Clin Infect Dis. 2009.
 
-### shock-43: Older woman with sudden palpitations
+### shock-43: Vomiting girl with an old brain tumour
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 72-year-old woman presents to the emergency department with palpitations and breathlessness that began suddenly 3 hours ago. She has hypertension treated with hydrochlorothiazide. She has never had palpitations before. She is pale, sweaty and confused. Crackles are heard at both lung bases. The ECG shows atrial fibrillation with a ventricular rate of 172/minute, a narrow QRS and no ST elevation. Potassium 4.0 mmol/L.
+A 9-year-old girl is brought to the emergency department with 2 days of vomiting and loose stools. Three years ago a craniopharyngioma was removed, and since then she has taken hydrocortisone, levothyroxine and desmopressin. She has vomited each hydrocortisone dose since yesterday, and her family has no injection kit at home. She is lethargic but rousable. Her hands and feet are cool, her pulses are weak and her capillary refill is 4 seconds. She has passed urine once today. Glucose is 2.8 mmol/L, sodium 128 mmol/L and potassium 4.2 mmol/L.
 
-- Temperature: 36.8°C oral
-- Pulse: 172/minute irregular
-- Resp.: 30/minute
-- BP: 76/44 mmHg
-- O2 sat: 89% on room air
-- Weight: 68 kg
+- Temperature: 37.9°C oral
+- Pulse: 146/minute
+- Resp.: 28/minute
+- BP: 98/60 mmHg
+- O2 sat: 98% on room air
+- Weight: 28 kg
 
 #### Q1
-**Which of the following findings best shows that her arrhythmia is causing hemodynamic instability?**
+**Which of the following measures should guide her fluid resuscitation?**
 
-- A. Confusion and hypotension  **(key)**
-- B. Hydrochlorothiazide for hypertension
-- C. Narrow QRS on the ECG
-- D. Onset 3 hours before arrival
-- E. Potassium of 4.0 mmol/L
+- A. Blood pressure alone
+- B. Heart rate, refill and urine output  **(key)**
+- C. Serum sodium every 30 minutes
+- D. Spot urine specific gravity
+- E. Weight change over the first day
 
-*Explanation:* Confusion with a BP of 76/44 mmHg, along with crackles and an O2 sat of 89%, shows that the rapid rate is causing shock and pulmonary edema. These signs of instability decide the treatment. A narrow QRS and a potassium of 4.0 mmol/L describe the rhythm and her chemistry, not her stability. The time of onset matters for stroke risk in a stable patient, not for instability. Her diuretic does not show instability.
+*Explanation:* Her pressure is normal for a 9-year-old, yet she is in shock, with cool limbs, weak pulses, a capillary refill of 4 seconds and little urine. The 2026 pediatric sepsis guideline advises titrating fluid boluses to clinical markers of cardiac output, including heart rate, capillary refill and urine output, and stopping if shock resolves or fluid overload develops. Blood pressure alone falls late in children and would miss her shock. Serum sodium and urine specific gravity guide electrolyte care, not moment-to-moment perfusion. Weight change is too slow to guide boluses in the first hour.
 
 *Key feature:* Shock/dehydration 1. Recognize subtle shock in groups that present atypically, including children, pregnant patients, and older adults.
 
-*Source:* Andrade JG, et al. The 2020 Canadian Cardiovascular Society/Canadian Heart Rhythm Society comprehensive guidelines for the management of atrial fibrillation. Can J Cardiol. 2020.
+*Source:* Weiss SL, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Intensive Care Med. 2026. https://pubmed.ncbi.nlm.nih.gov/41870559/
 
 #### Q2
-**Which of the following is the most appropriate immediate treatment for this patient?**
+**Which of the following best explains why she is in shock?**
 
-- A. amiodarone 150 mg IV
-- B. Crystalloid 1 L IV bolus
-- C. diltiazem 20 mg IV
-- D. metoprolol 5 mg IV
-- E. Synchronized cardioversion  **(key)**
+- A. Adrenal crisis from missed hydrocortisone  **(key)**
+- B. Diabetes insipidus from missed desmopressin
+- C. Hypothyroidism from missed levothyroxine
+- D. Septic shock from gastroenteritis
+- E. Volume loss from gastroenteritis alone
 
-*Explanation:* Atrial fibrillation with hemodynamic instability, here shock and pulmonary edema, calls for urgent synchronized electrical cardioversion. Diltiazem and metoprolol lower blood pressure and depress contractility, which can worsen her shock. Amiodarone acts too slowly to be the first treatment for an unstable patient. A litre of fluid would worsen her pulmonary edema and does not treat the cause.
+*Explanation:* She has adrenal insufficiency after pituitary surgery and has not kept down her hydrocortisone. Vomiting, hypotension or shock, hyponatremia and hypoglycemia are features of adrenal crisis, and hypoglycemia is more common in children than adults. Her glucose is 2.8 mmol/L and her sodium is 128 mmol/L. Her potassium is normal because the mineralocorticoid axis is intact in pituitary disease. Volume loss or infection from gastroenteritis would not explain her hypoglycemia. Missed desmopressin would cause dilute urine and a high sodium, not hyponatremia. Missing levothyroxine for a day or two does not cause shock.
 
 *Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
 
-*Source:* Andrade JG, et al. The 2020 Canadian Cardiovascular Society/Canadian Heart Rhythm Society comprehensive guidelines for the management of atrial fibrillation. Can J Cardiol. 2020.
+*Source:* Camtosun E, Sangun O. Treatment and prevention of adrenal crisis and family education. J Clin Res Pediatr Endocrinol. 2025. https://doi.org/10.4274/jcrpe.galenos.2024.2024-6-12-s
 
 #### Q3
-*Update:* Two synchronized shocks restore sinus rhythm briefly, but atrial fibrillation at 160/minute returns. Her BP is 82/48 mmHg.
+*Update:* An IV is placed and a 20 mL/kg bolus of 0.9% saline is running. Dextrose is given for her hypoglycemia.
 
-**Which of the following drugs is most appropriate to control her rate at this point?**
+**Which of the following is the most appropriate glucocorticoid dose for her now?**
 
-- A. amiodarone 150 mg IV  **(key)**
-- B. diltiazem 0.25 mg/kg IV
-- C. metoprolol 5 mg IV
-- D. procainamide 1 g IV
-- E. verapamil 5 mg IV
+- A. dexamethasone 4 mg IV
+- B. fludrocortisone 0.1 mg PO
+- C. hydrocortisone 25 mg IV
+- D. hydrocortisone 100 mg IV  **(key)**
+- E. prednisone 10 mg PO
 
-*Explanation:* In atrial fibrillation with hypotension and heart failure, IV amiodarone can slow the rate with less effect on blood pressure than other agents, and it may help sinus rhythm return. Diltiazem and verapamil are calcium channel blockers that depress contractility and lower pressure, so they are avoided in decompensated heart failure. Metoprolol also lowers pressure in shock. Procainamide causes hypotension and is avoided in heart failure.
+*Explanation:* The pediatric review gives practical bolus doses of hydrocortisone by age and weight: 25 mg under 2 years or under 15 kg, 50 mg from 2 to 6 years or 15 to 25 kg, and 100 mg over 6 years or over 25 kg. At 9 years and 28 kg she needs 100 mg IV now. The 25 mg dose is for children under 2 years or under 15 kg. Fludrocortisone replaces mineralocorticoid, which her pituitary disease leaves intact, and it has no role in the crisis dose. The review advises avoiding long-acting synthetic steroids such as dexamethasone in children. Oral prednisone will not stay down while she is vomiting and is far below a crisis dose.
 
 *Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
 
-*Source:* Andrade JG, et al. The 2020 Canadian Cardiovascular Society/Canadian Heart Rhythm Society comprehensive guidelines for the management of atrial fibrillation. Can J Cardiol. 2020.
+*Source:* Camtosun E, Sangun O. Treatment and prevention of adrenal crisis and family education. J Clin Res Pediatr Endocrinol. 2025. https://doi.org/10.4274/jcrpe.galenos.2024.2024-6-12-s
 
 ### shock-44: Sleepy newborn who is not feeding
 
@@ -2050,80 +2099,80 @@ A 6-day-old girl is brought to the emergency department because she is sleepy an
 
 *Source:* Cellucci MF. Dehydration in children. Merck Manual Professional Version. 2025. https://www.merckmanuals.com/professional/pediatrics/dehydration-and-fluid-therapy-in-children/dehydration-in-children
 
-### shock-45: Toddler with bloody vomit and diarrhea
+### shock-45: Bitten while moving hay bales
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 3-year-old boy is brought to the emergency department 5 hours after he was found with an open bottle of his mother's ferrous sulfate 300 mg tablets. Each tablet contains 60 mg of elemental iron. About 12 tablets are missing. He has vomited several times with streaks of blood and has had bloody diarrhea. He is drowsy and pale. His hands and feet are cool, and capillary refill is 4 seconds. Venous pH 7.18, bicarbonate 11 mmol/L, glucose 9.8 mmol/L. An abdominal X-ray shows several radiopaque tablets in the stomach.
+You are working in a rural hospital emergency department in southern Alberta. A 38-year-old man is brought in 50 minutes after a rattlesnake bit his left hand while he moved hay bales. He has severe pain and swelling that has spread to the mid forearm. He has vomited twice, has a metallic taste and feels light-headed. He takes no medications and has no allergies. There are two fang marks on the back of the hand. He has no hives, wheeze or lip swelling, and no bleeding. Hemoglobin is 148 g/L, platelets 64 x 10^9/L, fibrinogen 0.8 g/L and INR 2.1.
 
-- Temperature: 37.2°C tympanic
-- Pulse: 164/minute
-- Resp.: 34/minute
-- BP: 80/44 mmHg
-- O2 sat: 98% on room air
-- Weight: 15 kg
+- Temperature: 36.9°C oral
+- Pulse: 124/minute
+- Resp.: 22/minute
+- BP: 76/42 mmHg
+- O2 sat: 97% on room air
+- Weight: 82 kg
 
 #### Q1
-**Which of the following is the best estimate of the elemental iron he has ingested?**
+**Which of the following mechanisms best explains his hypotension at this stage?**
 
-- A. 4 mg/kg
-- B. 20 mg/kg
-- C. 24 mg/kg
-- D. 48 mg/kg  **(key)**
-- E. 240 mg/kg
+- A. Anaphylaxis to snake venom
+- B. Dehydration from vomiting
+- C. Hemorrhage from venom coagulopathy
+- D. Vasovagal reaction to pain
+- E. Venom vasodilation and capillary leak  **(key)**
 
-*Explanation:* Twelve tablets of 60 mg elemental iron are 720 mg, and 720 / 15 kg = 48 mg/kg. Serious toxicity is expected above about 60 mg/kg, but his shock, acidosis and bloody losses show that he is already severely poisoned, and the tablet count is only an estimate. A figure of 240 mg/kg uses the 300 mg salt weight instead of elemental iron. A figure of 24 mg/kg counts only half the tablets. Figures of 4 and 20 mg/kg are the elemental and salt content of a single tablet per kilogram.
+*Explanation:* Crotaline venom causes systemic effects that include hypotension from direct cardiovascular toxicity, third spacing and vasodilation, along with nausea, vomiting and a metallic taste. His low platelets and fibrinogen show a systemic hematologic venom effect as well. He has no hives, wheeze or angioedema, so anaphylaxis is unlikely. He has no bleeding and a hemoglobin of 148 g/L, so hemorrhage does not explain his shock. Two episodes of vomiting cannot cause this degree of shock. A vasovagal reaction slows the pulse, and his pulse is 124/minute.
 
 *Key feature:* Shock/dehydration 5. Look past hypovolemia for other shock types such as cardiogenic, neurogenic, toxic, or anaphylactic.
 
-*Source:* Chang TP, Rangan C. Iron poisoning. A literature-based review of epidemiology, diagnosis, and management. Pediatr Emerg Care. 2011. https://pubmed.ncbi.nlm.nih.gov/21975503/
+*Source:* Lavonas EJ, Ruha AM, Banner W, et al. Unified treatment algorithm for the management of crotaline snakebite in the United States: results of an evidence-informed consensus workshop. BMC Emerg Med. 2011. https://doi.org/10.1186/1471-227X-11-2
 
 #### Q2
-**Which of the following antidotes is most appropriate for his poisoning?**
+**Which of the following is the most appropriate treatment for his envenomation?**
 
-- A. activated charcoal 15 g PO
-- B. deferoxamine 15 mg/kg/hour IV  **(key)**
-- C. N-acetylcysteine IV
-- D. penicillamine 10 mg/kg PO
-- E. succimer 10 mg/kg PO
+- A. epinephrine 0.5 mg IM
+- B. Fab antivenom 8 to 12 vials IV  **(key)**
+- C. Fab antivenom 2 vials IV
+- D. frozen plasma 4 units IV
+- E. methylprednisolone 125 mg IV
 
-*Explanation:* Shock, metabolic acidosis and lethargy after iron ingestion are indications for IV deferoxamine, started at 15 mg/kg/hour. Deferoxamine binds free iron to form ferrioxamine, which is excreted in the urine. Activated charcoal does not bind iron. Succimer and penicillamine are oral chelators for lead and copper and have no role in acute iron poisoning. N-acetylcysteine treats acetaminophen poisoning.
+*Explanation:* Hypotension is a systemic venom effect, and the unified treatment algorithm says patients with hypotension should receive antivenom emergently. For immediately life-threatening effects such as shock, the panel recommended raising the initial Fab antivenom dose from the usual 4 to 6 vials to 8 to 12 vials. Two vials is below any studied initial dose. Epinephrine treats anaphylaxis, which he does not have. Corticosteroids are reserved for hypersensitivity reactions and do not neutralize venom. Frozen plasma is a blood product that the algorithm advises against using routinely.
 
 *Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
 
-*Source:* Chang TP, Rangan C. Iron poisoning. A literature-based review of epidemiology, diagnosis, and management. Pediatr Emerg Care. 2011. https://pubmed.ncbi.nlm.nih.gov/21975503/
+*Source:* Lavonas EJ, Ruha AM, Banner W, et al. Unified treatment algorithm for the management of crotaline snakebite in the United States: results of an evidence-informed consensus workshop. BMC Emerg Med. 2011. https://doi.org/10.1186/1471-227X-11-2
 
 #### Q3
-**Which of the following is the most appropriate initial fluid bolus for this child?**
+**Which of the following fluids should be given with his antivenom infusion?**
 
-- A. albumin 25% 75 mL IV
-- B. dextrose 5% in water 300 mL IV
-- C. normal saline 300 mL IV  **(key)**
-- D. 0.45% saline 300 mL IV
-- E. sodium bicarbonate 15 mmol IV
+- A. albumin 5% 500 mL IV
+- B. frozen plasma 4 units IV
+- C. platelets 1 adult dose IV
+- D. red cells 2 units IV
+- E. sodium chloride 0.9% 1 L IV  **(key)**
 
-*Explanation:* Iron corrodes the gut and causes large fluid and blood losses, so his cool hands, capillary refill of 4 seconds and pulse of 164/minute call for an isotonic bolus of 20 mL/kg: 20 x 15 kg = 300 mL, repeated as needed. Restoring perfusion also helps clear his acidosis. Sodium bicarbonate does not restore volume and does not treat the cause of the acidosis. Dextrose 5% in water and 0.45% saline are hypotonic and leave the circulation. Albumin 25% offers no advantage over isotonic saline.
+*Explanation:* The algorithm recommends routine IV crystalloid for any pit viper victim who needs antivenom, because venom causes vasodilation and capillary leak and the antivenom infusion can release histamine. Normal saline is the standard diluent and resuscitation fluid. He is not bleeding and his hemoglobin is 148 g/L, so red cells are not indicated. Platelets and plasma are blood products the algorithm advises against giving routinely, because antivenom, not replacement, reverses the venom coagulopathy. Albumin is not part of the algorithm.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Source:* Chang TP, Rangan C. Iron poisoning. A literature-based review of epidemiology, diagnosis, and management. Pediatr Emerg Care. 2011. https://pubmed.ncbi.nlm.nih.gov/21975503/
+*Source:* Lavonas EJ, Ruha AM, Banner W, et al. Unified treatment algorithm for the management of crotaline snakebite in the United States: results of an evidence-informed consensus workshop. BMC Emerg Med. 2011. https://doi.org/10.1186/1471-227X-11-2
 
 #### Q4
-*Update:* After two saline boluses and the start of deferoxamine, his pulse is 126/minute, BP is 98/60 mmHg and capillary refill is 2 seconds. He is awake, has stopped vomiting and passes no more blood. A repeat X-ray still shows tablets.
+*Update:* One hour after the first antivenom dose, swelling has reached the elbow. Platelets are 41 x 10^9/L and fibrinogen is below 0.5 g/L. His BP is 92/58 mmHg.
 
-**Which of the following methods of gut decontamination is most appropriate for this child now?**
+**Which of the following is the most appropriate next step in his treatment?**
 
-- A. Activated charcoal 1 g/kg
-- B. Gastric lavage with bicarbonate
-- C. Ipecac-induced vomiting
-- D. Whole bowel irrigation with PEG  **(key)**
-- E. No gut decontamination
+- A. Fasciotomy of the forearm
+- B. frozen plasma 4 units IV
+- C. Observe and recheck in 6 hours
+- D. platelets 1 adult dose IV
+- E. Repeat the initial antivenom dose  **(key)**
 
-*Explanation:* Radiopaque tablets that remain in the gut after a toxic iron ingestion are an indication for whole bowel irrigation with polyethylene glycol solution, usually by nasogastric tube, to clear them before more iron is absorbed. It is contraindicated while a patient is hemodynamically unstable, has significant gastrointestinal bleeding or cannot protect his airway, which is why it waits until he is resuscitated and awake. Activated charcoal does not bind iron. Lavage with bicarbonate is no longer recommended and tablets are often too large to pass through a lavage tube. Ipecac delays other treatment and is not recommended. Leaving visible tablets in the gut allows ongoing absorption.
+*Explanation:* Initial control means the local swelling stops progressing and the hematologic and systemic effects improve. His swelling is spreading and his platelets and fibrinogen are worse, so control has not been achieved. The algorithm says to repeat the initial dose of antivenom when the first dose fails. Observation leaves venom effects progressing. Plasma and platelets are not routine because antivenom corrects the coagulopathy. The algorithm recommends against prophylactic fasciotomy.
 
 *Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
 
-*Source:* Ontario Poison Centre. Whole bowel irrigation protocol. 2025. https://www.ontariopoisoncentre.ca/siteassets/pdfs/english/patient-care-resources-documents/whole-bowel-irrigation-protocol-feb-2025.pdf
+*Source:* Lavonas EJ, Ruha AM, Banner W, et al. Unified treatment algorithm for the management of crotaline snakebite in the United States: results of an evidence-informed consensus workshop. BMC Emerg Med. 2011. https://doi.org/10.1186/1471-227X-11-2
 
 ### shock-46: Dizzy older man with diarrhea
 
@@ -2186,62 +2235,62 @@ Select 4.
 
 *Source:* Semler MW, et al. Balanced crystalloids versus saline in critically ill adults. N Engl J Med. 2018.
 
-### shock-47: Woman with epigastric pain and vomiting
+### shock-47: Watery diarrhea after a trip abroad
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 52-year-old woman presents to the emergency department with 12 hours of severe epigastric pain radiating to her back, with repeated vomiting. She has known gallstones and takes no medications. She is uncomfortable and her mucous membranes are dry. Her epigastrium is tender with guarding. Lipase 2 840 units/L, hematocrit 0.49, urea 11.2 mmol/L, creatinine 118 umol/L, calcium 2.08 mmol/L. A chest X-ray is clear.
+A 27-year-old man presents to the emergency department 2 days after returning from volunteering at a clinic in a country with an active cholera outbreak. Since last night he has had more than 20 large, painless, watery stools that look like rice water, and he has vomited several times. He takes no medications. He is lethargic and cannot drink. His eyes are sunken, a skin pinch goes back very slowly and his radial pulse is weak. His abdomen is soft. Sodium is 136 mmol/L, potassium 3.0 mmol/L, bicarbonate 13 mmol/L and creatinine 168 umol/L.
 
-- Temperature: 37.8°C oral
-- Pulse: 116/minute
-- Resp.: 22/minute
-- BP: 102/64 mmHg
-- O2 sat: 96% on room air
+- Temperature: 36.8°C oral
+- Pulse: 132/minute
+- Resp.: 28/minute
+- BP: 78/50 mmHg
+- O2 sat: 98% on room air
 - Weight: 70 kg
 
 #### Q1
-**Which of the following results best indicates that she has lost significant intravascular volume?**
+**Which of the following is the total IV volume he should receive over the first 3 hours?**
 
-- A. Calcium of 2.08 mmol/L
-- B. Chest X-ray that is clear
-- C. Lipase of 2 840 units/L
-- D. Raised hematocrit of 0.49  **(key)**
-- E. Temperature of 37.8°C
+- A. 2 100 mL
+- B. 3 500 mL
+- C. 4 900 mL
+- D. 7 000 mL  **(key)**
+- E. 10 500 mL
 
-*Explanation:* A hematocrit of 0.49 in a woman shows hemoconcentration from fluid lost into the retroperitoneum and from vomiting. Hemoconcentration and a rising urea are also markers of more severe pancreatitis. The lipase level confirms the diagnosis but does not reflect severity or volume. A calcium of 2.08 mmol/L is mildly low and relates to fat necrosis, not volume. A clear chest X-ray and a temperature of 37.8°C say nothing about her volume.
+*Explanation:* He meets the cholera flowchart definition of severe dehydration: he is lethargic, cannot drink, has sunken eyes and a very slow skin pinch, and has a weak pulse. Plan C for anyone aged 1 year or older is 30 mL/kg in 30 minutes, then 70 mL/kg over the next 2.5 hours, which is 100 mL/kg in 3 hours. At 70 kg that is 2 100 mL plus 4 900 mL, or 7 000 mL. The figures of 2 100 and 4 900 mL are each only one phase of the plan. The figure of 3 500 mL is half the deficit. The figure of 10 500 mL is 150 mL/kg. Infants under 1 year receive the same 100 mL/kg more slowly, over 6 hours.
 
 *Key feature:* Shock/dehydration 2. Estimate the fluid deficit in dehydrated patients accurately, accounting for their age.
 
-*Source:* Tenner S, Vege SS, Sheth SG, and colleagues. American College of Gastroenterology guidelines: management of acute pancreatitis. Am J Gastroenterol. 2024. https://pmc.ncbi.nlm.nih.gov/articles/PMC13221274/
+*Source:* Global Task Force on Cholera Control. Cholera patient treatment flowchart, version 1.0. 2024. https://www.gtfcc.org/wp-content/uploads/2025/03/gtfcc-cholera-patient-treatment-flowchart-en.pdf
 
 #### Q2
-**Which of the following initial Ringer's lactate orders for her is best supported by current trial evidence?**
+**Which of the following IV fluids is the first choice for rehydrating him?**
 
-- A. 350 mL bolus, then 70 mL/hour
-- B. 700 mL bolus, then 105 mL/hour  **(key)**
-- C. 1 400 mL bolus, then 210 mL/hour
-- D. 2 100 mL bolus, then 350 mL/hour
-- E. 2 800 mL bolus, then 280 mL/hour
+- A. albumin 5% IV
+- B. dextrose 5% in water IV
+- C. hydroxyethyl starch IV
+- D. Ringer's lactate IV  **(key)**
+- E. sodium chloride 0.45% IV
 
-*Explanation:* In the WATERFALL trial, moderate resuscitation with Ringer's lactate, a 10 mL/kg bolus for hypovolemia and then 1.5 mL/kg/hour, caused less fluid overload than aggressive resuscitation and no worse outcomes. For 70 kg that is 700 mL, then 105 mL/hour. The aggressive arm, a 20 mL/kg bolus then 3 mL/kg/hour, is 1 400 mL then 210 mL/hour, and it was stopped early for harm. Larger volumes carry even more risk, and 350 mL then 70 mL/hour under-treats her hypovolemia.
+*Explanation:* The cholera field manual names Ringer's lactate as the first-choice IV fluid for severe dehydration. Cholera stool is rich in sodium, potassium and bicarbonate, and he has a potassium of 3.0 mmol/L and a bicarbonate of 13 mmol/L. Ringer's lactate supplies sodium and potassium, and lactate acts as a source of bicarbonate. The manual advises against plain 5% dextrose. Half-normal saline is hypotonic and replaces too little sodium. Albumin and starch are not among the fluids the manual lists for cholera.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Source:* de-Madaria E, et al. Aggressive or moderate fluid resuscitation in acute pancreatitis. N Engl J Med. 2022.
+*Source:* Global Task Force on Cholera Control. Cholera outbreak response field manual, section 7: case management in treatment facilities. 2019. https://www.choleraoutbreak.org/book-page/section-7-case-management-treatment-facilities.html
 
 #### Q3
-*Update:* Twelve hours later her pulse is 92/minute and urine output is 0.8 mL/kg/hour. She is now short of breath with crackles at both bases.
+*Update:* Ninety minutes into Plan C he is awake and alert, his pulse is stronger and he asks for a drink.
 
-**Which of the following is the most appropriate change to her fluid therapy now?**
+**Which of the following is the most appropriate change to his rehydration now?**
 
-- A. Add albumin 25% to her fluids
-- B. Give a further 20 mL/kg bolus
-- C. Increase to 3 mL/kg/hour
-- D. Reduce or stop IV fluid and reassess  **(key)**
-- E. Switch to hydroxyethyl starch
+- A. Continue IV fluids alone for 24 hours
+- B. Give ORS by mouth alongside the IV  **(key)**
+- C. Give plain water only by mouth
+- D. Stop all fluids and observe him
+- E. Switch the IV to dextrose 5% water
 
-*Explanation:* Her pulse has settled and her urine output is above 0.5 mL/kg/hour, so her volume is restored, and new crackles show fluid overload. Fluids should be reduced or stopped and her breathing reassessed. More boluses or a higher rate would worsen pulmonary edema, the main harm seen with aggressive fluid in pancreatitis. Albumin and starch do not treat fluid overload, and starch harms the kidneys.
+*Explanation:* The field manual says to give oral rehydration solution as soon as the patient can drink, in addition to IV fluids, and to reassess at 3 hours in anyone older than 1 year before moving to an oral plan. He is now alert and able to drink. Continuing IV fluid alone for a day ignores a safer route that also replaces ongoing losses. Plain water lacks the sodium and glucose that drive absorption. Stopping all fluids ignores his ongoing stool losses. Plain 5% dextrose is not recommended.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Source:* de-Madaria E, et al. Aggressive or moderate fluid resuscitation in acute pancreatitis. N Engl J Med. 2022.
+*Source:* Global Task Force on Cholera Control. Cholera outbreak response field manual, section 7: case management in treatment facilities. 2019. https://www.choleraoutbreak.org/book-page/section-7-case-management-treatment-facilities.html

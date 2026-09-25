@@ -748,7 +748,7 @@ Select 3.
 
 *Key feature:* Critical appraisal 5. Integrate the best available evidence into decisions about the care of an individual patient.
 
-*Source:* Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Intensive Care Medicine 2021. https://pubmed.ncbi.nlm.nih.gov/34599691/
+*Source:* Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Critical Care Medicine 2026. https://doi.org/10.1097/CCM.0000000000007075
 
 ### critical-appraisal-25: A sore throat and a rapid test
 

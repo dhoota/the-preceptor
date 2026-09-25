@@ -8,6 +8,17 @@ Quoted from the pipeline notes and the review reports, each with its report name
 
 - s27 cva-40 q3: activated PCC with a 2 000 unit maximum, confirm agent and dose. cva-34 q1 AHA 2026 endocarditis wording from secondary sources. cva-39 q2 CSBPR NIHSS 0 to 3 vs INSPIRES.
 - s27 cva-25 mumbles words V3 vs V2. cva-21 transfusion 2 h timed from arrival vs onset. s49 seizures-16 q3 lorazepam 2 mg is 0.03 mg/kg. s33 Wells PE items 39 and 42 reworded to 'more likely than'.
+- Rectal ASA dose: abdominal-pain-46 (s19) keys 650 mg PR, the adult suppository Health Canada lists. Two cva SAMPs in s27 key 325 mg PR, which has no listed Canadian suppository. Pick one dose for the bank.
+- cva-35: Hu 2023 suggests cervical CT as the quick first test, with MRI as confirmation. Only MRI is offered. q4 tests the alteplase bolus, and the stem says the hospital stocks alteplase. Please confirm it is worth keeping now that tenecteplase is standard. *(samps-last-check.md)*
+- cva-17 q4 keys idarucizumab before tenecteplase. CSBPR says thrombolysis should not routinely follow DOAC use but that rapid reversal may be considered when a reversal agent is available, with a stroke expert. Please confirm this suits a disabling hand deficit with an NIHSS of 1. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- cva-17 q3 uses the CSBPR target of 180/105 mmHg. BP was set at 172/94 so the key also holds under 185/110. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- cva-23 q2 rests on antiplatelet drugs being absent from the CSBPR exclusion list, since the full 2026 AHA text could not be opened. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- cva-28 q2 keys emergency treatment without consent. The stem makes her incapable and her SDM unreachable. Provincial consent law varies in detail. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- cva-41 q2 relies on CSBPR advice that the TIA ECG looks for prior infarction. The LV aneurysm pattern is not claimed. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- cva-17 q4 now tests the reversal sequence once the team has chosen thrombolysis. Whether to treat an NIHSS 1 dominant-hand deficit on dabigatran remains a judgement the item no longer tests. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- cva-35 (re-rebuilt) keys MRI of the cervical spine. Hu and colleagues suggest cervical CT as the quick option and MRI as confirmation. Only MRI is offered, so the key holds, but a fast cervical CT may suit your centre better. q4 tests the alteplase bolus because the stem hospital stocks alteplase. Please confirm this is still worth teaching now that tenecteplase is standard. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- cva-28 still teaches stroke presenting as confusion, as cva-05 does, but through a PCA field defect and emergency consent rather than aphasia. Please judge whether that is distinct enough. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- cva-41 q1 now uses the Canadian TIA Score. cva-47 also uses it, and ABCD2 remains in cva-42 and cva-43. *(samps-replace-s27-s29-s34-s38-s52.md)*
 - cva-48 and cva-49 in review-extra.ts copy the stems and questions of cva-26 and cva-37 exactly. If they were added to the index, the near duplicate stem gate would reject them. Recommend dropping them. They add nothing once fixed. *(samps-s27-lensA.md)*
 - cva-17 q4: the key assumes PCC before surgery on a subdural hematoma at 50 units/kg. Canadian practice also accepts a fixed 2000 units. No 2000 option is offered, so the key holds, but a physician may prefer to test the fixed dose. *(samps-s27-lensA.md)*
 - cva-39 q2: the key says dual antiplatelet therapy is not recommended at NIHSS 4, per CSBPR 2022 (NIHSS 0 to 3). INSPIRES supports DAPT up to NIHSS 5 within 72 hours. The item holds because the option is oral in a patient who cannot swallow safely. Worth watching when CSBPR updates. *(samps-s27-lensA.md)*
@@ -17,6 +28,9 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - cva-26 NIHSS 7 and cva-29 NIHSS 6 are stated, not derivable item by item from the stems. Both are plausible and the keys do not depend on the exact value except cva-29, where 6 just clears the EVT threshold of more than 5. *(samps-s27-lensB.md)*
 - cva-25 "mumbles words" is scored V3. Some examiners would score mumbling V2 (GCS 10). The key does not depend on it. *(samps-s27-lensB.md)*
 - cva-21 q2 says transfusion should start "without delay beyond 2 hours from presentation". The ASH wording refers to the presentation of acute neurological symptoms. With onset 17:50 and arrival 18:40 the key is the same either way. *(samps-s27-lensB.md)*
+- cva-45 q2 to q4 test secondary prevention under cva KF4 (risk stratification and workup). The mapping comes from HEAD. The teaching overlaps with signed-off cva-08 q4. *(samps-sweep2-review-sw2-f.md)*
+- cva-45 q1 keys CT angiography, which cva-43, 44 and 47 also key. The reason here is new: a TIA despite anticoagulation needs a search for a second cause. CSBPR 7.2.6 says so, but q1 cites the acute management source, so the explanation gives this as reasoning. *(samps-sweep2-sw2-f.md)*
+- cva-45: CSBPR says that after a TIA on anticoagulation, either continuing the agent or switching agents is reasonable. For that reason no "switch to another anticoagulant" option was written as a distractor. *(samps-sweep2-sw2-f.md)*
 - cva-40 q2 cites CSBPR ICH 2020 for the 3000 unit PCC cap. The cap is confirmed by Thrombosis Canada and NAC. I could not open CSBPR ICH to confirm it says the same. *(sourcing-batch1.md)*
 
 Review reports: docs/reviews/writer-s27.md, samps-s27-lensA.md, samps-s27-lensB.md
@@ -99,85 +113,83 @@ You are working in a community hospital emergency department. A 38-year-old man 
 
 *Source:* de Almeida JR and colleagues. Management of Bell palsy: clinical practice guideline. CMAJ. 2014. https://pubmed.ncbi.nlm.nih.gov/24934895/
 
-### cva-17: Weakness and confusion after a fall
+### cva-17: Hand weakness while dressing
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 79-year-old woman is brought to the emergency department by her son because of increasing confusion and right-sided weakness over 5 days. She fell in her garage 3 weeks ago and struck her head but did not seek care. She has had a dull headache since. She has atrial fibrillation and hypertension. Medications: apixaban 5 mg twice daily and amlodipine. Her last apixaban dose was at 08:00 and it is now 14:00. Capillary glucose is 6.2 mmol/L. GCS is 14 (E4 V4 M6). She has a mild right pronator drift and right leg power 4/5. There is no facial droop or aphasia.
+A 71-year-old man presents to the emergency department at 10:20 with weakness of his right hand that began suddenly at 09:30 while he was buttoning his shirt. He woke normally at 07:00 after a night in a recliner following two glasses of wine, and his wife wonders whether he lay on the arm. He is right-handed and repairs watches for a living. He has atrial fibrillation and hypertension. Medications: dabigatran 150 mg PO twice daily, last taken at 08:00, and ramipril. Capillary glucose is 6.4 mmol/L. He cannot extend his right wrist or fingers. With the hand resting flat on a table, finger spreading and grip are also weak. Sensation over the back of the hand is normal. The right biceps and brachioradialis reflexes are brisker than the left. Triceps strength, face, speech, leg and visual fields are normal. NIHSS is 1.
 
-- Temperature: 36.7°C oral
-- Pulse: 84/minute irregular
+- Temperature: 36.8°C oral
+- Pulse: 78/minute irregular
 - Resp.: 16/minute
-- BP: 164/88 mmHg
-- O2 sat: 96% on room air
-- Weight: 58 kg
+- BP: 172/94 mmHg
+- O2 sat: 97% on room air
+- Weight: 84 kg
 
 #### Q1
-**Which of the following features of her presentation favour a subdural hematoma over an acute ischemic stroke?**
+**Which of the following findings favour a cortical cause over a radial nerve palsy in this man?**
 
 Select 2.
 
-- A. Age older than 75 years
-- B. Headache since a head strike  **(key)**
-- C. History of atrial fibrillation
-- D. Normal capillary glucose
-- E. Progression over several days  **(key)**
-- F. Right pronator drift on exam
-- G. Treated hypertension
-- H. Weakness of the right leg
+- A. Age older than 70 years
+- B. Atrial fibrillation history
+- C. Brisk reflexes in the right arm  **(key)**
+- D. Inability to extend the wrist
+- E. NIHSS score of 1
+- F. Normal triceps strength
+- G. Sleeping in a recliner after wine
+- H. Weak finger spreading with hand flat  **(key)**
 
-*Explanation:* Ischemic stroke causes a deficit that is maximal at onset or fluctuates over hours. Confusion and weakness that build over 5 days, with a headache since a head strike 3 weeks ago, point to a chronic subdural hematoma, a common stroke mimic. Her age, hypertension and atrial fibrillation raise stroke risk and do not separate stroke from a mimic. Right-sided drift and leg weakness localize a left hemisphere lesion but not its cause. A normal glucose only excludes hypoglycemia.
+*Explanation:* Finger spreading uses the interossei, which the ulnar nerve supplies. Weakness there, tested with the hand flat to remove the mechanical effect of a dropped wrist, places the lesion above the radial nerve. Brisk reflexes on the weak side are an upper motor neuron sign. A small infarct of the precentral hand knob can imitate a radial, median or ulnar palsy. Wrist drop and normal triceps strength occur with a radial palsy at the spiral groove as well. A night in a chair after alcohol is the history that suggests a radial palsy. His age and atrial fibrillation raise stroke risk but do not locate the lesion, and an NIHSS of 1 does not separate the two.
 
 *Key feature:* Cerebrovascular accident (CVA) 1. For acute neurologic deficits, consider stroke mimics such as hypoglycemia, migraine, Todd's paralysis, or tumour.
 
-*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* Rissardo JP, Byroju VV, Mukkamalla S, Caprara ALF. A narrative review of stroke of cortical hand knob area. Medicina (Kaunas). 2024. https://doi.org/10.3390/medicina60020318
 
 #### Q2
-**Which of the following would most preclude IV thrombolysis had her deficit begun suddenly an hour ago?**
+**Which of the following arteries most likely supplies the area of brain responsible for his weakness?**
 
-- A. Age older than 75 years
-- B. Apixaban taken 6 hours ago  **(key)**
-- C. Atrial fibrillation history
-- D. BP of 164/88 mmHg
-- E. Mild confusion on arrival
+- A. Left anterior cerebral artery
+- B. Left anterior choroidal artery
+- C. Left lenticulostriate artery
+- D. Left middle cerebral artery branch  **(key)**
+- E. Right middle cerebral artery branch
 
-*Explanation:* Canadian guidance lists current use of a DOAC as a relative exclusion and says thrombolysis should not routinely be given to patients taking one, and her last apixaban dose was only 6 hours earlier. Age has no upper limit. Atrial fibrillation explains an embolic stroke but is not an exclusion. Her BP is below 185/110 mmHg, and confusion is part of the deficit being assessed.
+*Explanation:* The hand knob is part of the left precentral gyrus on the lateral surface of the hemisphere, which the superficial branches of the left middle cerebral artery supply. An isolated weak right hand fits a small cortical infarct there. The anterior cerebral artery supplies the medial surface, where the leg is represented. Lenticulostriate and anterior choroidal infarcts involve the internal capsule and usually weaken the face, arm and leg together. A right hemisphere lesion would weaken the left hand.
 
 *Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
 
-*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* Rissardo JP, Byroju VV, Mukkamalla S, Caprara ALF. A narrative review of stroke of cortical hand knob area. Medicina (Kaunas). 2024. https://doi.org/10.3390/medicina60020318
 
 #### Q3
-**Which of the following is the most appropriate initial imaging study for this patient?**
+**Which of the following is the most appropriate blood pressure management before a decision on thrombolysis?**
 
-- A. Carotid Doppler ultrasound
-- B. CT angiography of head and neck
-- C. CT perfusion of the brain
-- D. MRI brain with gadolinium
-- E. Non-contrast CT head  **(key)**
+- A. hydralazine 10 mg IV
+- B. labetalol 10 mg IV
+- C. Lower systolic below 140 mmHg
+- D. nitroglycerin 0.4 mg SL
+- E. No lowering at this level  **(key)**
 
-*Explanation:* A non-contrast CT is fast, widely available and sensitive for acute and subacute blood, and it answers the key question of hemorrhage. Her symptoms began days ago, so there is no reperfusion decision that would need CT angiography or perfusion imaging first. MRI takes longer and adds little to the first decision. Carotid ultrasound looks for a stroke cause and does not image the brain.
+*Explanation:* His BP of 172/94 mmHg is already below 180/105 mmHg, the level the Canadian criteria use as the target around thrombolysis, so no drug is needed. The guideline treats only pressure that cannot be brought below that target as a relative exclusion. Labetalol and hydralazine are the usual IV choices when pressure is above the target, which it is not here, and nitroglycerin would likewise treat a pressure that needs no treatment. A systolic target below 140 mmHg is not used before thrombolysis for ischemic stroke and could reduce flow to brain at risk.
 
 *Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
 
 *Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 #### Q4
-*Update:* CT shows a 17 mm left mixed-density subdural hematoma with 6 mm of midline shift. Neurosurgery plans evacuation tonight.
+**Which of the following is the most appropriate approach to his dabigatran if the stroke team decides to give thrombolysis?**
 
-**Which of the following is the most appropriate treatment to reverse her anticoagulant before surgery?**
+- A. Andexanet alfa, then tenecteplase
+- B. PCC 50 units/kg IV, then tenecteplase
+- C. Protamine 50 mg IV, then tenecteplase
+- D. Tenecteplase after idarucizumab 5 g IV  **(key)**
+- E. Tenecteplase with no reversal agent
 
-- A. Idarucizumab 5 g IV
-- B. PCC 1 000 units IV
-- C. PCC 2 900 units IV  **(key)**
-- D. Plasma 15 mL/kg IV
-- E. Vitamin K 10 mg IV
-
-*Explanation:* For life-threatening bleeding on a factor Xa inhibitor such as apixaban, the Canadian PCC recommendations accept 25 to 50 units/kg to a maximum of 3 000 units, and the Canadian stroke guideline uses 50 units/kg for intracranial bleeding. At 58 kg that is 58 x 50 = 2 900 units. A dose of 1 000 units is about 17 units/kg, below every recommended range. Idarucizumab reverses dabigatran only. Plasma and vitamin K are listed as inappropriate for factor Xa inhibitor bleeding.
+*Explanation:* Canadian guidance says thrombolysis should not routinely be given to a patient taking a DOAC. It adds that it may be considered in centres where a reversal agent is available, with expert input. Once the team decides to treat, dabigatran is reversed with its specific agent, idarucizumab 5 g IV, and tenecteplase follows. His last dose was about 2.5 hours before the decision, so his dabigatran level is likely high, and tenecteplase without reversal would be given at that level. Andexanet reverses factor Xa inhibitors, not dabigatran. Protamine reverses heparin and has no effect on dabigatran. PCC is not the dabigatran reversal agent when idarucizumab is at hand. His NIHSS is only 1, but losing the use of his dominant hand ends his work, so the deficit is disabling.
 
 *Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
 
-*Source:* National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. Revised 2022. https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada
+*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 ### cva-18: Old weakness worse with a fever
 
@@ -550,81 +562,80 @@ A 49-year-old man presents to the emergency department at 11:00 with vertigo, vo
 
 *Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
-### cva-23: Vomiting and unable to walk
+### cva-23: Double vision while reading
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department with CT and CT angiography but no MRI. A 58-year-old woman presents at 09:30 with sudden constant dizziness, vomiting and a severe occipital headache that began at 22:00 last night. She has type 2 diabetes and dyslipidemia. Medications: metformin and rosuvastatin. Capillary glucose is 9.8 mmol/L. She is alert and speaks clearly. She has no diplopia. Eye movements are full. Limb strength is normal. Finger-to-nose and heel-to-shin testing are normal on both sides. She has not been out of bed since arrival.
+A 64-year-old man presents to the emergency department at 10:15 with double vision and a drooping right eyelid that began suddenly at 09:20 while he was reading. Since then his left hand has felt clumsy and weak. He has no headache or neck pain. He has type 2 diabetes, hypertension and coronary artery disease, with a drug-eluting coronary stent placed 2 months ago. Medications: ASA 81 mg daily, clopidogrel 75 mg daily, metformin and atorvastatin. Capillary glucose is 9.8 mmol/L. The right upper lid covers most of the pupil. The right eye rests down and out and cannot move up, down or in. The right pupil is 6 mm and reacts sluggishly. The left arm and leg drift, and the left grip is weak. Speech and sensation are normal.
 
-- Temperature: 36.8°C oral
-- Pulse: 82/minute
-- Resp.: 18/minute
-- BP: 178/96 mmHg
+- Temperature: 36.9°C oral
+- Pulse: 72/minute regular
+- Resp.: 16/minute
+- BP: 158/86 mmHg
 - O2 sat: 97% on room air
+- Weight: 90 kg
 
 #### Q1
-**Which of the following examination steps is most important to complete next in this patient?**
+**Which of the following findings most strongly indicates a stroke rather than an isolated third nerve palsy?**
 
-- A. Assessment of sitting and walking  **(key)**
-- B. Dix-Hallpike manoeuvre
-- C. Fundoscopy for papilledema
-- D. Pronator drift testing
-- E. Rapid alternating movements
+- A. Dilated right pupil
+- B. Drooping right eyelid
+- C. Left arm and leg drift  **(key)**
+- D. Onset while reading
+- E. Type 2 diabetes
 
-*Explanation:* Infarcts of the midline cerebellum can spare limb coordination and cause only truncal ataxia, so gait and unsupported sitting must be tested. Posterior circulation strokes are a common source of missed stroke diagnosis in the emergency department. Rapid alternating movements test limb coordination, which is already normal. The Dix-Hallpike tests for positional vertigo and does not fit constant symptoms. Pronator drift and fundoscopy do not address the midline cerebellum.
+*Explanation:* A third nerve palsy with weakness of the opposite arm and leg means the lesion involves the third nerve fascicle and the cerebral peduncle together, which happens in the midbrain. With a sudden onset, that is a brainstem stroke. In a stroke unit series, isolated midbrain infarcts were dominated by third nerve palsy with contralateral motor deficits. Ptosis and a dilated pupil are part of a complete third nerve palsy from any cause, including a compressing aneurysm. Diabetes causes isolated microvascular third nerve palsies as well as strokes, so it does not decide the question. Onset during quiet reading fits either.
 
 *Key feature:* Cerebrovascular accident (CVA) 2. Recognize stroke in subtle non-MCA presentations, including posterior circulation signs or isolated confusion.
 
-*Source:* Liberman AL, Prabhakaran S. Stroke chameleons and stroke mimics in the emergency department. Curr Neurol Neurosci Rep. 2017. https://pubmed.ncbi.nlm.nih.gov/28229398/
+*Source:* Kumral E, Bayulkem G, Akyol A, Yunten N, Sirin H, Sagduyu A. Mesencephalic and associated posterior circulation infarcts. Stroke. 2002. https://doi.org/10.1161/01.str.0000027438.93029.87
 
 #### Q2
-*Update:* She cannot stand without falling to the left. Non-contrast CT head at 10:15 is normal.
+*Update:* Non-contrast CT shows no hemorrhage. Platelets are 236 x 10^9/L and INR is 1.0. The stroke team judges his deficits disabling.
 
-**Which of the following is the most appropriate next step for this patient?**
+**Which of the following best describes the effect of his ASA and clopidogrel on IV thrombolysis?**
 
-- A. CT angiography of head and neck  **(key)**
-- B. Discharge with oral meclizine
-- C. Epley repositioning manoeuvre
-- D. Outpatient vestibular therapy
-- E. Repeat CT head in 24 hours
+- A. Absolute exclusion from thrombolysis
+- B. Needs a platelet transfusion first
+- C. Not an exclusion to thrombolysis  **(key)**
+- D. Relative exclusion, so halve the dose
+- E. Requires a platelet function test
 
-*Explanation:* A normal CT does not exclude cerebellar or brainstem ischemia, because CT is insensitive in the posterior fossa. Severe truncal ataxia with vomiting and headache needs vascular imaging now and then MRI, which may mean transfer. Meclizine, an Epley manoeuvre or vestibular therapy treat peripheral causes and would send home a patient who may have a stroke. Waiting 24 hours for a repeat CT delays the diagnosis.
+*Explanation:* The Canadian criteria list active bleeding, hemorrhage on imaging, recent serious head trauma or major surgery, current DOAC use, an INR above 1.7 and platelets below 100 x 10^9/L among the exclusions. Single or dual antiplatelet therapy is not on that list, and his platelet count and INR are normal, so he is treated at the usual dose. Platelet transfusion and platelet function testing would add delay without a basis in the criteria. There is no reduced thrombolytic dose for patients taking antiplatelet drugs.
 
 *Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
 
 *Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 #### Q3
-*Update:* CT angiography is normal. She is transferred and MRI shows a 3 cm left cerebellar infarct. Twenty hours after onset she becomes drowsy with GCS 12. CT shows effacement of the fourth ventricle and enlarged temporal horns.
+**Which of the following CT angiography findings would most change his acute treatment?**
 
-**Which of the following is the most appropriate next step for this patient?**
+- A. Calcified carotid bulb plaque
+- B. Hypoplastic left vertebral artery
+- C. Right vertebral artery dominance
+- D. Thrombus in the basilar artery  **(key)**
+- E. Tortuous cervical carotid arteries
 
-- A. Dexamethasone 10 mg IV
-- B. Lumbar puncture to lower pressure
-- C. Mannitol and repeat CT tomorrow
-- D. Tenecteplase 0.25 mg/kg IV
-- E. Urgent neurosurgical consultation  **(key)**
-
-*Explanation:* A swollen cerebellar infarct that compresses the fourth ventricle and causes hydrocephalus with falling consciousness needs urgent neurosurgery for ventricular drainage and suboccipital decompression. Lumbar puncture in a posterior fossa mass risks herniation. Corticosteroids are not recommended for ischemic swelling. Mannitol may buy time but waiting until tomorrow risks fatal brainstem compression. Thrombolysis is contraindicated this late and with an established infarct.
+*Explanation:* Thrombus in the basilar artery would add endovascular thrombectomy to his options, because the Canadian criteria include a relevant basilar occlusion with a disabling deficit. The midbrain is supplied by perforating branches of the basilar artery and the proximal posterior cerebral arteries, so this is the finding to look for. A hypoplastic left vertebral artery and a dominant right vertebral artery are common variants. Calcified plaque at the carotid bulb and tortuous neck arteries do not supply the midbrain and do not change the acute treatment of this stroke.
 
 *Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
 
-*Source:* Wijdicks EF and colleagues. Recommendations for the management of cerebral and cerebellar infarction with swelling. American Heart Association and American Stroke Association. Stroke. 2014. https://pubmed.ncbi.nlm.nih.gov/24481970/
+*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 #### Q4
-**Which of the following signs of deterioration most suggests brainstem compression from cerebellar swelling?**
+**Which of the following is the most likely location of the lesion causing his signs?**
 
-- A. Increased truncal ataxia
-- B. Loss of corneal reflexes  **(key)**
-- C. New fever above 38°C
-- D. Unilateral dilated pupil
-- E. Worsening headache
+- A. Left internal capsule
+- B. Left medulla
+- C. Right cavernous sinus
+- D. Right midbrain  **(key)**
+- E. Right pons
 
-*Explanation:* In swollen cerebellar infarction, falling consciousness comes from direct brainstem compression, and early loss of corneal reflexes and small pupils are warning signs. A unilateral dilated pupil is the classic sign of uncal herniation from a supratentorial mass. Worse headache and ataxia are nonspecific and can occur without compression. Fever suggests a complication such as aspiration rather than compression.
+*Explanation:* A right third nerve palsy with weakness of the left arm and leg is the crossed pattern of a right midbrain lesion, where the third nerve fascicle passes through the cerebral peduncle. A right pontine lesion gives crossed signs with the sixth or seventh nerve instead. A cavernous sinus lesion can cause a third nerve palsy but does not weaken the limbs. A left internal capsule lesion would weaken the right side, and a medullary lesion involves the lower cranial nerves.
 
 *Key feature:* Cerebrovascular accident (CVA) 2. Recognize stroke in subtle non-MCA presentations, including posterior circulation signs or isolated confusion.
 
-*Source:* Wijdicks EF and colleagues. Recommendations for the management of cerebral and cerebellar infarction with swelling. American Heart Association and American Stroke Association. Stroke. 2014. https://pubmed.ncbi.nlm.nih.gov/24481970/
+*Source:* Kumral E, Bayulkem G, Akyol A, Yunten N, Sirin H, Sagduyu A. Mesencephalic and associated posterior circulation infarcts. Stroke. 2002. https://doi.org/10.1161/01.str.0000027438.93029.87
 
 ### cva-24: Bumping into door frames
 
@@ -936,67 +947,67 @@ Select 2.
 
 *Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
-### cva-28: Jerking during the night
+### cva-28: Lost in her own residence
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 62-year-old man is brought to the emergency department by ambulance at 02:40. His wife woke at 01:50 to gurgling sounds and jerking of both arms that lasted about a minute. He was well when they went to bed at 23:00. Paramedics gave midazolam 5 mg IM for presumed seizure. He has no history of seizures. He has hypertension and atrial fibrillation and takes ASA only. Capillary glucose is 7.7 mmol/L. GCS is 7 (E1 V2 M4). Pupils are 2 mm and reactive. There is skew deviation of the eyes. Both plantar responses are extensor.
+An 84-year-old woman is brought to the emergency department by ambulance at 14:10 from her retirement residence. Staff saw her playing cards normally in the lounge at 12:50. At 13:15 she was found pacing the hallway, agitated and unable to find her room. She has hypertension and takes amlodipine. She lives independently, manages her own finances and has no known memory problems. Her son is her substitute decision maker and is on a flight to Vancouver until 19:00. Capillary glucose is 6.9 mmol/L. She is restless and cannot state the month or her age, but she follows simple commands. She does not blink to a threat from the left in either eye. Limb strength, sensation and speech are normal. A urine dipstick shows 2+ leukocytes.
 
-- Temperature: 37.0°C oral
-- Pulse: 104/minute irregular
-- Resp.: 22/minute
-- BP: 186/100 mmHg
-- O2 sat: 93% on room air
-- Weight: 90 kg
+- Temperature: 36.9°C oral
+- Pulse: 88/minute regular
+- Resp.: 18/minute
+- BP: 168/90 mmHg
+- O2 sat: 96% on room air
+- Weight: 72 kg
 
 #### Q1
-**Which of the following is the most likely cause of this patient's decreased level of consciousness?**
+**Which of the following findings most strongly suggests a stroke rather than delirium from another cause?**
 
-- A. Basilar artery occlusion  **(key)**
-- B. Benzodiazepine oversedation
-- C. First unprovoked seizure
-- D. Nonconvulsive status
-- E. Toxic metabolic encephalopathy
+- A. Absent left blink to threat  **(key)**
+- B. Agitation and pacing
+- C. Her age of 84 years
+- D. Leukocytes on urine dipstick
+- E. Not knowing the month
 
-*Explanation:* Coma with skew deviation, small reactive pupils and bilateral extensor plantar responses points to the brainstem. He has atrial fibrillation treated with ASA only, and basilar occlusion can begin with jerking or posturing that is mistaken for a seizure. Midazolam 5 mg IM does not cause skew deviation or bilateral extensor plantars. A first seizure, nonconvulsive status or a toxic metabolic state would not explain skew deviation with bilateral extensor plantars in a man who was well at bedtime.
+*Explanation:* No blink to a threat from the left in either eye is a left homonymous field defect. That focal sign places a lesion in the right occipital lobe, the territory of the right posterior cerebral artery. Infarcts in this territory can present as agitated confusion with few other deficits and are easily mistaken for a toxic or metabolic delirium. Disorientation and restlessness occur with delirium of any cause. Leukocytes on a dipstick are common in older women without infection and cannot explain a field defect. Her age raises the risk of both conditions.
 
 *Key feature:* Cerebrovascular accident (CVA) 2. Recognize stroke in subtle non-MCA presentations, including posterior circulation signs or isolated confusion.
 
-*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* Vatsavayi V, Malhotra S, Franco K. Agitated delirium with posterior cerebral artery infarction. J Emerg Med. 2003. https://doi.org/10.1016/s0736-4679(02)00750-3
 
 #### Q2
-*Update:* He is intubated for airway protection. Non-contrast CT head shows no hemorrhage.
+*Update:* CT shows no hemorrhage or early ischemic change. CT angiography shows no large vessel occlusion.
 
-**Which of the following is the most appropriate next step for this patient?**
+**Which of the following is the most appropriate treatment for her?**
 
-- A. CT angiography of head and neck  **(key)**
-- B. EEG before any further imaging
-- C. Levetiracetam loading dose alone
-- D. Lumbar puncture for encephalitis
-- E. MRI brain in the morning
+- A. alteplase 0.6 mg/kg IV
+- B. ASA 325 mg PO
+- C. tenecteplase 9 mg IV
+- D. tenecteplase 18 mg IV  **(key)**
+- E. tenecteplase 36 mg IV
 
-*Explanation:* A normal CT does not exclude basilar occlusion, and CT angiography is needed at once to find a target for thrombectomy. Waiting for an EEG or a morning MRI would lose hours of a time-dependent treatment. Lumbar puncture does not fit an afebrile patient with focal brainstem signs. An antiseizure drug alone would treat the wrong diagnosis.
+*Explanation:* A complete field defect with confusion that stops her living alone is a disabling deficit. She is within 4.5 hours of 12:50, has no hemorrhage, and her BP of 168/90 mmHg is below the 180/105 mmHg target, so thrombolysis is indicated. Tenecteplase for stroke is 0.25 mg/kg to a maximum of 25 mg, and 0.25 x 72 kg = 18 mg. A dose of 36 mg is 0.5 mg/kg, above the stroke dose, and 9 mg is half of it. The alteplase dose for stroke is 0.9 mg/kg, not 0.6 mg/kg. ASA alone suits a deficit that is not disabling.
 
 *Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
 
 *Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 #### Q3
-*Update:* CT angiography shows occlusion of the mid basilar artery. It is 03:55. Before this event he lived independently and worked full time.
+*Update:* She cannot understand the risks and benefits of thrombolysis, and her son cannot be reached.
 
-**Which of the following is the most appropriate treatment for this patient?**
+**Which of the following is the most appropriate approach to consent for thrombolysis in this patient?**
 
-- A. Basilar artery thrombectomy  **(key)**
-- B. Comfort care given a GCS of 7
-- C. Heparin infusion and ICU care
-- D. Intra-arterial alteplase alone
-- E. Tenecteplase alone and ICU care
+- A. Obtain consent from residence staff
+- B. Seek an urgent capacity board review
+- C. Treat now as emergency treatment  **(key)**
+- D. Wait until her son can be reached
+- E. Withhold, as consent is required
 
-*Explanation:* The 2025 Canadian update includes basilar artery occlusion among the indications for thrombectomy in independent adults with a disabling stroke within 24 hours of last known well. He was last well at 23:00, 4 hours and 55 minutes ago, so he is past the standard thrombolysis window and tenecteplase alone is not the right plan. Heparin does not recanalize the artery. A low GCS on its own is not a reason for comfort care, and intra-arterial alteplase alone is not an established treatment.
+*Explanation:* She lacks capacity for this decision, her substitute decision maker cannot be reached, and each minute of delay reduces the benefit of thrombolysis, so this is emergency treatment. Canadian stroke guidance describes thrombolysis as standard care to which routine emergency consent procedures apply. Residence staff are not her substitute decision maker. Waiting until 19:00 would take her past 17:20, the end of the 4.5-hour window from 12:50. A capacity board review cannot happen in the time available. Withholding standard treatment for lack of consent ignores the emergency exception.
 
 *Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
 
-*Source:* Heran MKS and colleagues. Canadian Stroke Best Practice Recommendations: endovascular thrombectomy for acute ischemic stroke, interim update 2025. Can J Neurol Sci. 2025. https://pubmed.ncbi.nlm.nih.gov/41340372/
+*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 ### cva-29: Walking into furniture after surgery
 
@@ -1458,82 +1469,82 @@ Select 2.
 
 *Source:* Chan KL and colleagues. A randomized trial of aspirin on the risk of embolic events in patients with infective endocarditis. J Am Coll Cardiol. 2003. https://pubmed.ncbi.nlm.nih.gov/12957419/
 
-### cva-35: Headache after delivery
+### cva-35: Weak on one side at her desk
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 31-year-old woman presents to the emergency department 12 days after a vaginal delivery with 4 days of worsening headache that is worse lying down. This morning her left leg became weak and she then had a generalized seizure lasting 2 minutes. Her pregnancy had no hypertension or proteinuria. She is breastfeeding and has no other medical history. Capillary glucose is 5.3 mmol/L. She is drowsy but follows commands. Left leg power is 3/5. Both optic discs are swollen.
+A 66-year-old woman is brought to the emergency department by ambulance at 11:00. At 10:20, while sitting at her desk, she felt a sudden severe pain in the back of her neck, and within 10 minutes her left arm and leg became weak. She has hypertension and takes amlodipine and ASA 81 mg daily. She takes no anticoagulant. She is alert, and her speech, face, eye movements and visual fields are normal. Left arm power is 2/5 and left leg power is 3/5. Pinprick sensation is reduced on the right side of her body below the neck. The back of her neck is tender. Capillary glucose is 6.1 mmol/L. Non-contrast CT head and CT angiography from the aortic arch to the vertex show no hemorrhage, occlusion or dissection.
 
-- Temperature: 37.2°C oral
-- Pulse: 96/minute
-- Resp.: 16/minute
-- BP: 132/84 mmHg
-- O2 sat: 98% on room air
-- Weight: 72 kg
+- Temperature: 36.8°C oral
+- Pulse: 84/minute regular
+- Resp.: 18/minute
+- BP: 186/98 mmHg
+- O2 sat: 97% on room air
+- Weight: 70 kg
 
 #### Q1
-*Update:* Non-contrast CT shows a right parasagittal frontal hemorrhage with surrounding edema and a hyperdense superior sagittal sinus.
+**Which of the following is the most appropriate imaging before a decision on thrombolysis?**
 
-**Which of the following is the most likely diagnosis in this patient?**
+- A. CT perfusion of the brain
+- B. MRI of the brain with diffusion
+- C. MRI of the cervical spine  **(key)**
+- D. Repeat CT head in 6 hours
+- E. Transcranial Doppler study
 
-- A. Arterial ischemic stroke
-- B. Cerebral venous thrombosis  **(key)**
-- C. Hypertensive hemorrhage
-- D. Pituitary apoplexy
-- E. Postpartum eclampsia
+*Explanation:* Sudden neck pain followed by weakness of one arm and leg, with a normal face and speech and pinprick loss on the other side, points to a lesion in the cervical spinal canal rather than the brain. In a review of 51 patients with a spontaneous cervical epidural hematoma that presented like a stroke, 21 were first diagnosed as ischemic stroke, brain MRI showed no responsible lesion, and cervical MRI then made the diagnosis. The authors advise cervical imaging before a potentially harmful treatment such as thrombolysis. CT perfusion, brain MRI and transcranial Doppler all study the brain and its vessels, not the spinal canal. A repeat CT head in 6 hours images the wrong place and runs past the treatment window.
 
-*Explanation:* A postpartum woman with days of positional headache, papilledema, a seizure and a parasagittal hemorrhage beside a hyperdense sagittal sinus has cerebral venous thrombosis. Eclampsia is unlikely with normal BP and no hypertension or proteinuria in pregnancy. Hypertensive hemorrhage occurs in deep structures of hypertensive patients. Pituitary apoplexy causes headache with visual loss and ophthalmoplegia. An arterial stroke would not explain papilledema or the hyperdense sinus.
+*Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
+
+*Source:* Hu Y, Su J, Cui X, Pan L, Jin L, Teng F. How to avoid misdiagnosing spontaneous cervical spinal epidural hematoma as ischemic stroke: 3 case reports and literature review. Cerebrovasc Dis. 2023. https://doi.org/10.1159/000527705
+
+#### Q2
+**Which of the following findings most suggests a stroke mimic in this patient?**
+
+- A. Blood pressure of 186/98 mmHg
+- B. Her age of 66 years
+- C. Left arm weaker than the left leg
+- D. Pinprick loss on the right side  **(key)**
+- E. Sudden onset while sitting
+
+*Explanation:* Weakness of the left arm and leg with pinprick loss on the right is a split pattern that a hemispheric stroke does not produce, because a hemispheric lesion causes weakness and sensory loss on the same side of the body. It fits damage to one half of the cervical cord, the Brown-Sequard pattern, which the review lists among the signs that point to a spinal epidural hematoma rather than a stroke. Sudden onset occurs with both. An arm weaker than the leg is common with a middle cerebral artery stroke. Her age and BP raise the risk of stroke and do not separate the two.
 
 *Key feature:* Cerebrovascular accident (CVA) 1. For acute neurologic deficits, consider stroke mimics such as hypoglycemia, migraine, Todd's paralysis, or tumour.
 
-*Source:* Saposnik G and colleagues. Diagnosis and management of cerebral venous thrombosis: a scientific statement from the American Heart Association. Stroke. 2024. https://pubmed.ncbi.nlm.nih.gov/38284265/
-
-#### Q2
-**Which of the following is the most appropriate imaging to confirm the diagnosis?**
-
-- A. Carotid Doppler ultrasound
-- B. Catheter cerebral angiography
-- C. CT perfusion of the brain
-- D. CT venography of the head  **(key)**
-- E. Transcranial Doppler study
-
-*Explanation:* Cerebral venous thrombosis is confirmed with CT venography or MR venography, which show the filling defect in the sinus. CT perfusion shows blood flow but not the venous occlusion. Carotid and transcranial Doppler studies assess arteries, not the dural sinuses. Catheter angiography is invasive and is typically used only when endovascular treatment is being considered.
-
-*Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
-
-*Source:* Saposnik G and colleagues. Diagnosis and management of cerebral venous thrombosis: a scientific statement from the American Heart Association. Stroke. 2024. https://pubmed.ncbi.nlm.nih.gov/38284265/
+*Source:* Hu Y, Su J, Cui X, Pan L, Jin L, Teng F. How to avoid misdiagnosing spontaneous cervical spinal epidural hematoma as ischemic stroke: 3 case reports and literature review. Cerebrovasc Dis. 2023. https://doi.org/10.1159/000527705
 
 #### Q3
-*Update:* CT venography confirms thrombosis of the superior sagittal sinus. Her hemoglobin and platelets are normal.
+*Update:* The scan can be done in 40 minutes, when she will still be within 4.5 hours of onset. A colleague suggests giving thrombolysis first to avoid delay.
 
-**Which of the following is the most appropriate initial treatment for this patient?**
+**Which of the following is the most appropriate response to this suggestion?**
 
-- A. Apixaban 10 mg PO twice daily
-- B. ASA 160 mg PO daily
-- C. Enoxaparin 1 mg/kg SC every 12 hours  **(key)**
-- D. Tenecteplase 0.25 mg/kg IV
-- E. Withhold anticoagulation for 2 weeks
+- A. Agree, once her BP is below 180/105 mmHg
+- B. Give ASA 160 mg PO while waiting
+- C. Give full-dose thrombolysis now
+- D. Give half-dose thrombolysis now
+- E. Withhold thrombolysis until the scan  **(key)**
 
-*Explanation:* Cerebral venous thrombosis is treated with anticoagulation using low molecular weight or unfractionated heparin, even when there is a hemorrhagic venous infarct, because the bleeding results from venous congestion. At 72 kg, enoxaparin 1 mg/kg is 72 mg every 12 hours. Withholding anticoagulation allows the thrombus to propagate. ASA is not an effective treatment, systemic thrombolysis is not first-line, and apixaban is avoided while breastfeeding.
+*Explanation:* A spinal epidural hematoma is still possible, and thrombolysis can enlarge it. In the review, 10 of the 13 patients with this condition who received alteplase got worse. Full-dose thrombolysis now leans on the low bleeding risk seen when other stroke mimics are lysed, and that does not apply when the mimic is itself a bleed. Waiting 40 minutes keeps her within 4.5 hours of onset, so little is lost. Lowering her BP does not remove the risk of treating a hematoma. A half dose is not an accepted regimen, and ASA adds an antiplatelet effect while a bleed is still possible.
 
 *Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
 
-*Source:* Saposnik G and colleagues. Diagnosis and management of cerebral venous thrombosis: a scientific statement from the American Heart Association. Stroke. 2024. https://pubmed.ncbi.nlm.nih.gov/38284265/
+*Source:* Hu Y, Su J, Cui X, Pan L, Jin L, Teng F. How to avoid misdiagnosing spontaneous cervical spinal epidural hematoma as ischemic stroke: 3 case reports and literature review. Cerebrovasc Dis. 2023. https://doi.org/10.1159/000527705
 
 #### Q4
-**Which of the following is the most appropriate seizure management for this patient?**
+*Update:* The hospital stocks alteplase, not tenecteplase, for stroke.
 
-- A. Levetiracetam loading dose IV  **(key)**
-- B. Lorazepam 2 mg IV every 6 hours
-- C. Magnesium sulfate 4 g IV
-- D. Phenobarbital infusion in ICU
-- E. No antiseizure drug unless it recurs
+**Which of the following is the correct alteplase bolus dose for her if thrombolysis is given?**
 
-*Explanation:* The European guideline suggests antiseizure treatment after an early seizure in cerebral venous thrombosis with a supratentorial lesion, to prevent further early seizures. A levetiracetam loading dose is a reasonable way to start that treatment. Scheduled lorazepam is not maintenance therapy and adds sedation. Magnesium treats eclampsia, which she does not have. A phenobarbital infusion is for refractory status epilepticus. Waiting for a second seizure ignores her high early risk from the hemorrhagic lesion.
+- A. alteplase 4.2 mg IV
+- B. alteplase 6.3 mg IV  **(key)**
+- C. alteplase 9 mg IV
+- D. alteplase 17.5 mg IV
+- E. alteplase 63 mg IV
+
+*Explanation:* Alteplase for stroke is 0.9 mg/kg to a maximum of 90 mg, with 10% given as an IV bolus over 1 minute and the rest infused over 60 minutes. At 70 kg the total is 0.9 x 70 = 63 mg, so the bolus is 6.3 mg and the infusion 56.7 mg. A bolus of 4.2 mg is 10% of a 0.6 mg/kg total, which is not the Canadian regimen. A bolus of 9 mg is 10% of the 90 mg maximum, which applies only from 100 kg. A dose of 17.5 mg is the tenecteplase dose for 70 kg, and 63 mg is the whole alteplase dose, not the bolus.
 
 *Key feature:* Cerebrovascular accident (CVA) 3. For persistent deficits, weigh reperfusion by localizing the territory, seeking a cause, choosing CT imaging, and assessing thrombolysis risk.
 
-*Source:* Ferro JM and colleagues. European Stroke Organization guideline for the diagnosis and treatment of cerebral venous thrombosis. Eur J Neurol. 2017. https://pubmed.ncbi.nlm.nih.gov/28833980/
+*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 ### cva-36: Collapse at 30 weeks
 
@@ -1888,75 +1899,75 @@ A 74-year-old man is brought to the emergency department by ambulance at 21:30 w
 
 *Source:* Shoamanesh A and colleagues. Canadian Stroke Best Practice Recommendations: management of spontaneous intracerebral hemorrhage, 7th edition update 2020. Int J Stroke. 2021. https://pubmed.ncbi.nlm.nih.gov/33174815/
 
-### cva-41: Arm weakness that went away
+### cva-41: Weakness that settled before arrival
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 76-year-old man presents to the emergency department at 15:00 after 25 minutes of right arm weakness and slurred speech that began at 12:30 and resolved fully. He has never had a similar episode. He has known moderate left carotid stenosis found last year. He takes ASA 81 mg daily and atorvastatin. He has hypertension but no gait problems or vertigo. Capillary glucose is 7.2 mmol/L. Neurologic examination is now normal. ECG shows sinus rhythm. CT head shows no infarction. Platelet count is 260 x 10^9/L.
+A 67-year-old man presents to the emergency department at 11:00 after an episode of weakness of his left arm and slurred speech that began at 08:30 and resolved fully after 40 minutes. He has never had a similar episode. Five weeks ago he had 2 days of heavy chest pressure and breathlessness that he did not report to anyone. He has hypertension and smokes. He takes amlodipine. He has no palpitations or headache. His neurological examination is now normal. Capillary glucose is 5.8 mmol/L and platelets are 262 x 10^9/L. Cardiac monitoring shows sinus rhythm. Non-contrast CT head is normal.
 
 - Temperature: 36.6°C oral
-- Pulse: 72/minute
+- Pulse: 78/minute regular
 - Resp.: 16/minute
-- BP: 158/88 mmHg
+- BP: 152/88 mmHg
 - O2 sat: 97% on room air
 
 #### Q1
 **Which of the following is this patient's Canadian TIA Score?**
 
-- A. 5 points
-- B. 7 points
-- C. 9 points
-- D. 11 points  **(key)**
-- E. 13 points
+- A. 4 points
+- B. 5 points
+- C. 6 points  **(key)**
+- D. 7 points
+- E. 9 points
 
-*Explanation:* He scores 2 for a first TIA, 2 for symptoms lasting 10 minutes or more, 2 for known carotid stenosis, 3 for already taking an antiplatelet, 1 for unilateral weakness and 1 for dysarthria, a total of 11. His triage diastolic BP of 88 mmHg is below 110, and he has no gait disturbance, vertigo, atrial fibrillation, infarct on CT, platelets of 400 x 10^9/L or more, or glucose of 15 mmol/L or more. A score of 9 or more is high risk.
+*Explanation:* A first TIA scores 2, since he has never had a similar episode. Symptoms lasting 10 minutes or more score 2, and his lasted 40 minutes. Unilateral weakness scores 1 and slurred speech scores 1. He scores nothing for carotid stenosis, antiplatelet use, gait disturbance, vertigo, a diastolic BP of 110 mmHg or more, atrial fibrillation, infarction on CT, platelets of 400 x 10^9/L or more or glucose of 15 mmol/L or more. The total is 2 + 2 + 1 + 1 = 6, in the medium risk band of 4 to 8. A score of 4 misses the first TIA points, and 5 is his ABCD2 score, not his Canadian TIA Score.
 
 *Key feature:* Cerebrovascular accident (CVA) 4. After a TIA, estimate recurrence risk with a tool like ABCD2 and arrange prompt carotid and cardiac workup.
 
 *Source:* Perry JJ and colleagues. Prospective validation of Canadian TIA Score and comparison with ABCD2 and ABCD2i for subsequent stroke risk after transient ischaemic attack. BMJ. 2021. https://pubmed.ncbi.nlm.nih.gov/33541890/
 
 #### Q2
-**Which of the following is the most appropriate disposition for this patient?**
+*Update:* His ECG shows sinus rhythm at 78/minute, left axis deviation, a PR interval of 210 ms, a QRS duration of 92 ms and Q waves in V1 to V4. Two high-sensitivity troponin values 2 hours apart are low and unchanged.
 
-- A. Discharge and clinic in 2 weeks
-- B. Discharge with a higher ASA dose
-- C. Discharge with a Holter monitor
-- D. Discharge with outpatient MRI
-- E. Stroke specialist review in the ED  **(key)**
+**Which of the following ECG findings most raises concern for a cardiac source of this event?**
 
-*Explanation:* His Canadian TIA Score of 11 places him in the high risk group, with a 7-day risk of stroke or urgent carotid revascularization of about 6%. The validation study suggests stroke consultation in the emergency department for high risk patients. Each discharge option postpones investigation and treatment during the period of greatest risk.
+- A. Anterior Q waves in V1 to V4  **(key)**
+- B. Left axis deviation
+- C. PR interval of 210 ms
+- D. QRS duration of 92 ms
+- E. Sinus rhythm at 78/minute
+
+*Explanation:* Q waves across V1 to V4 point to an anterior myocardial infarction, most likely during the chest pressure 5 weeks ago, and a large anterior infarct can leave a poorly moving apex where thrombus forms. Canadian guidance asks for an ECG in every TIA to look for atrial fibrillation, previous infarction and structural heart disease. Low, unchanged troponin values argue against a new infarct. Left axis deviation, a PR interval of 210 ms and a normal QRS duration are conduction findings that do not create an embolic source. Sinus rhythm at a normal rate does not rule out paroxysmal atrial fibrillation, but it is not a source.
 
 *Key feature:* Cerebrovascular accident (CVA) 4. After a TIA, estimate recurrence risk with a tool like ABCD2 and arrange prompt carotid and cardiac workup.
 
-*Source:* Perry JJ and colleagues. Prospective validation of Canadian TIA Score and comparison with ABCD2 and ABCD2i for subsequent stroke risk after transient ischaemic attack. BMJ. 2021. https://pubmed.ncbi.nlm.nih.gov/33541890/
+*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 #### Q3
-**Which of the following imaging studies should be completed before any discharge?**
+**Which of the following investigations is most likely to identify the source of this patient's event?**
 
-- A. Carotid Doppler within 2 weeks
-- B. CT angiography arch to vertex  **(key)**
-- C. Echocardiogram within a week
-- D. MRI brain within 30 days
-- E. Repeat CT head at 24 hours
+- A. Carotid Doppler ultrasound
+- B. Holter monitor for 24 hours
+- C. MRI of the brain
+- D. Transcranial Doppler study
+- E. Transthoracic echocardiogram  **(key)**
 
-*Explanation:* Canadian guidance says patients seen within 48 hours of a TIA with motor or speech symptoms need brain imaging with CT angiography from the aortic arch to the vertex before leaving the emergency department. Waiting 2 weeks for carotid imaging or 30 days for MRI misses the period of highest risk. A repeat CT adds little, and echocardiography is for selected patients with a suspected cardiac source.
+*Explanation:* Canadian guidance recommends echocardiography when a cardioembolic cause is suspected, and a recent large anterior infarct makes a thrombus in the left ventricle the leading concern. Carotid imaging is still part of every TIA workup, but it looks for large artery disease rather than this suspected source. Holter monitoring looks for paroxysmal atrial fibrillation. Brain MRI shows whether infarction occurred without identifying its cause. Transcranial Doppler assesses intracranial vessels and shunts.
 
 *Key feature:* Cerebrovascular accident (CVA) 4. After a TIA, estimate recurrence risk with a tool like ABCD2 and arrange prompt carotid and cardiac workup.
 
 *Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 #### Q4
-*Update:* CT angiography shows 80% stenosis of the left internal carotid artery origin.
+**Which of the following antithrombotic plans would be most appropriate if a left ventricular thrombus is found?**
 
-**Which of the following is the most appropriate timing for carotid revascularization in this patient?**
+- A. Anticoagulant for over 3 months  **(key)**
+- B. Anticoagulant for 2 weeks only
+- C. ASA and clopidogrel for 21 days
+- D. ASA 81 mg daily alone
+- E. Clopidogrel 75 mg daily alone
 
-- A. After 3 months of dual antiplatelets
-- B. After 6 weeks of medical therapy
-- C. As soon as possible, within 14 days  **(key)**
-- D. Only if symptoms recur
-- E. Within 6 months of the event
-
-*Explanation:* A symptomatic 70 to 99% stenosis in a stable patient should be revascularized as soon as possible, ideally within 14 days, because the risk of recurrent stroke is highest in the first days. Waiting 6 weeks or 3 months exposes him to that early risk, and waiting for recurrence accepts a preventable stroke. The 6-month figure comes from the original trials, and benefit falls as delay grows.
+*Explanation:* Canadian secondary prevention guidance recommends anticoagulant therapy for longer than 3 months after a TIA or stroke in a patient in sinus rhythm with a left ventricular thrombus shown on imaging. Two weeks falls well short of that duration. Antiplatelet therapy alone, single or dual, is not the recommended treatment for a cardiac thrombus. The 21-day course of ASA with clopidogrel is for high-risk TIA without a cardioembolic source.
 
 *Key feature:* Cerebrovascular accident (CVA) 4. After a TIA, estimate recurrence risk with a tool like ABCD2 and arrange prompt carotid and cardiac workup.
 
@@ -2159,86 +2170,81 @@ A 68-year-old man presents to the emergency department at 11:20 after three brie
 
 *Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
-### cva-45: Face and arm weakness for 15 minutes
+### cva-45: A spell of arm weakness
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 63-year-old woman presents to the emergency department at 13:00 after 15 minutes of weakness of her right face and arm that began at 11:00 and resolved fully. She had no speech, vision or balance problems. It is her first such episode. She has hypertension treated with ramipril and takes no antiplatelet. She does not have diabetes. Capillary glucose is 6.1 mmol/L. Neurologic examination is now normal. ECG shows sinus rhythm. CT head is normal. Platelet count is 280 x 10^9/L.
+A 73-year-old man presents to the emergency department at 11:20 after 35 minutes of weakness of his left arm and slurred speech that began at 08:40 and resolved fully. He has atrial fibrillation. A walk-in clinic lowered his apixaban from 5 mg to 2.5 mg twice daily a year ago after a nosebleed that stopped with pressure. He uses a blister pack and has missed no doses. Two months ago he started St. John's wort for low mood. He also takes amlodipine 5 mg and atorvastatin 40 mg daily. He has no coronary disease. His creatinine is 104 umol/L. His examination is now normal. His ECG shows atrial fibrillation at 74/minute. Non-contrast CT of the head shows no infarct or hemorrhage.
 
 - Temperature: 36.7°C oral
-- Pulse: 76/minute
+- Pulse: 74/minute irregular
 - Resp.: 16/minute
-- BP: 152/96 mmHg
-- O2 sat: 98% on room air
+- BP: 148/86 mmHg
+- O2 sat: 97% on room air
+- Weight: 82 kg
 
 #### Q1
-**Which of the following is this patient's Canadian TIA Score?**
+**Which of the following investigations is most appropriate to complete before he leaves the emergency department?**
 
-- A. 3 points
-- B. 5 points  **(key)**
-- C. 7 points
-- D. 9 points
-- E. 11 points
+- A. CT angiography of head and neck  **(key)**
+- B. Holter monitor for 14 days
+- C. MRI of the brain within 30 days
+- D. Transesophageal echocardiography
+- E. No further testing
 
-*Explanation:* She scores 2 for a first TIA, 2 for symptoms lasting 10 minutes or more and 1 for unilateral weakness, a total of 5. She has no dysarthria or aphasia, no carotid stenosis history, no antiplatelet use, no gait disturbance or vertigo, a diastolic BP of 96 mmHg below 110, sinus rhythm, a normal CT, platelets below 400 x 10^9/L and glucose below 15 mmol/L. A score of 4 to 8 is medium risk.
+*Explanation:* Transient motor and speech symptoms within the last 48 hours put him at high risk of early recurrent stroke, and Canadian guidance calls for urgent brain imaging with concurrent CT angiography from the aortic arch to the vertex. His atrial fibrillation does not end the search, because a second cause such as a carotid stenosis would change his management. A Holter monitor looks for atrial fibrillation he is already known to have. Echocardiography is advised for an embolic TIA of undetermined source, and he already has a cardiac source. MRI within 30 days does not replace vessel imaging now, and no further testing could miss a treatable second cause.
 
 *Key feature:* Cerebrovascular accident (CVA) 4. After a TIA, estimate recurrence risk with a tool like ABCD2 and arrange prompt carotid and cardiac workup.
 
-*Source:* Perry JJ and colleagues. Prospective validation of Canadian TIA Score and comparison with ABCD2 and ABCD2i for subsequent stroke risk after transient ischaemic attack. BMJ. 2021. https://pubmed.ncbi.nlm.nih.gov/33541890/
+*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
 
 #### Q2
-**Which of the following is the most appropriate next step for this patient?**
+**Which of the following is the most appropriate plan for his anticoagulant therapy?**
 
-- A. Admission to a monitored bed
-- B. Carotid Doppler in 6 weeks
-- C. CT angiography and rapid follow-up  **(key)**
-- D. Discharge with no further tests
-- E. MRI brain within 3 months
+- A. apixaban 10 mg twice daily for 7 days
+- B. Continue apixaban 2.5 mg twice daily
+- C. Hold apixaban for 3 days
+- D. Increase apixaban to 5 mg twice daily  **(key)**
+- E. Measure an apixaban level first
 
-*Explanation:* A medium Canadian TIA Score carries a 7-day risk of about 2%. The authors suggest CT angiography and rapid specialist follow-up for this group, which also matches Canadian guidance to image the vessels before discharge. Admission to a monitored bed is more than a medium risk patient needs when rapid follow-up is available. Doppler in 6 weeks, MRI in 3 months or no testing would miss the early period of greatest risk.
+*Explanation:* Apixaban 2.5 mg twice daily is advised in atrial fibrillation only when at least two of three features are present: age 80 or older, weight 60 kg or less, or creatinine 133 umol/L or more. He is 73, weighs 82 kg and has a creatinine of 104 umol/L, so he meets none and needs 5 mg twice daily. Continuing 2.5 mg leaves him underdosed after a TIA on that dose. Holding apixaban leaves him unprotected at the time of highest risk. Apixaban 10 mg twice daily for 7 days is the starting regimen for venous thrombosis, not for atrial fibrillation. Apixaban levels are not validated across centres, and no therapeutic range has been set against outcomes.
 
 *Key feature:* Cerebrovascular accident (CVA) 4. After a TIA, estimate recurrence risk with a tool like ABCD2 and arrange prompt carotid and cardiac workup.
 
-*Source:* Perry JJ and colleagues. Prospective validation of Canadian TIA Score and comparison with ABCD2 and ABCD2i for subsequent stroke risk after transient ischaemic attack. BMJ. 2021. https://pubmed.ncbi.nlm.nih.gov/33541890/
+*Source:* Thrombosis Canada. Clinical guide: apixaban (Eliquis). Version dated 2 June 2025. https://thrombosiscanada.ca/clinical_guides/pdfs/APIXABAN_77.pdf
 
 #### Q3
-*Update:* CT angiography shows no significant stenosis. She is well and ready to go home.
+**Which of the following is the most appropriate advice about his St. John's wort?**
 
-**Which of the following investigations are recommended as part of her initial workup?**
+- A. Continue it unchanged
+- B. Halve its daily dose
+- C. Stop the St. John's wort  **(key)**
+- D. Take it at bedtime only
+- E. Take it 12 hours after apixaban
 
-Select 3.
-
-- A. Blood cultures
-- B. ECG monitoring for 24 hours  **(key)**
-- C. Electroencephalogram
-- D. Hemoglobin A1c  **(key)**
-- E. Lipid profile  **(key)**
-- F. Lumbar puncture
-- G. Routine chest X-ray
-- H. Thrombophilia screening panel
-
-*Explanation:* Canadian guidance recommends ECG monitoring for 24 hours or more to detect paroxysmal atrial fibrillation, plus a lipid profile and diabetes screening with a hemoglobin A1c. Extensive thrombophilia testing is not recommended routinely. A chest X-ray is not required without cardiopulmonary concerns. An EEG, lumbar puncture and blood cultures have no indication with a normal examination and no fever.
+*Explanation:* St. John's wort is a strong inducer that can reduce apixaban levels, like rifampin, carbamazepine and phenytoin. He started it 2 months ago, so it may have lowered his anticoagulant effect when the TIA occurred, and it should be stopped. Induction speeds the clearance of apixaban around the clock, so taking the product at bedtime or 12 hours apart does not avoid the interaction. Halving the dose still leaves an inducer in place, and continuing it unchanged keeps the interaction. His low mood still needs attention, for example with his family physician.
 
 *Key feature:* Cerebrovascular accident (CVA) 4. After a TIA, estimate recurrence risk with a tool like ABCD2 and arrange prompt carotid and cardiac workup.
 
-*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* Thrombosis Canada. Clinical guide: apixaban (Eliquis). Version dated 2 June 2025. https://thrombosiscanada.ca/clinical_guides/pdfs/APIXABAN_77.pdf
 
 #### Q4
-*Update:* She is discharged on ASA and clopidogrel. Ambulatory ECG monitoring reported 3 days later shows paroxysmal atrial fibrillation.
+**Which of the following antiplatelet agents should be added to his anticoagulant now?**
 
-**Which of the following is the most appropriate change to her treatment?**
+Select 1.
 
-- A. Add apixaban to both antiplatelets
-- B. Add rate control and continue
-- C. Complete 21 days of dual therapy first
-- D. Repeat monitoring before any change
-- E. Stop antiplatelets and start a DOAC  **(key)**
+- A. ASA and clopidogrel for 21 days
+- B. ASA 81 mg PO daily
+- C. ASA 325 mg PO daily
+- D. clopidogrel 75 mg PO daily
+- E. ticagrelor 90 mg PO twice daily
+- F. None  **(key)**
 
-*Explanation:* Canadian guidance says a patient with TIA who is found to have atrial fibrillation should receive oral anticoagulation instead of antiplatelet therapy, as soon as possible. Finishing dual therapy first delays effective prevention. Adding apixaban to two antiplatelets greatly raises bleeding risk. Rate control does not prevent embolism, and the monitoring result does not need confirmation before acting.
+*Explanation:* Canadian guidance does not recommend adding an antiplatelet drug to chronic anticoagulation for atrial fibrillation unless there is a specific medical indication, because bleeding rises without clear evidence of benefit. He has no coronary disease or other indication for one. Dual antiplatelet therapy with ASA and clopidogrel is used after a TIA without atrial fibrillation, and ticagrelor or clopidogrel alone adds the same bleeding risk to his anticoagulant. His TIA calls for making his anticoagulation work fully, not for adding a second class of drug.
 
 *Key feature:* Cerebrovascular accident (CVA) 4. After a TIA, estimate recurrence risk with a tool like ABCD2 and arrange prompt carotid and cardiac workup.
 
-*Source:* Heran M and colleagues. Canadian Stroke Best Practice Recommendations: Acute Stroke Management, 7th edition practice guidelines update, 2022. Heart and Stroke Foundation of Canada. Can J Neurol Sci. 2024. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* Gladstone DJ and colleagues. Canadian Stroke Best Practice Recommendations: secondary prevention of stroke update 2020. Can J Neurol Sci. 2022. https://pubmed.ncbi.nlm.nih.gov/34140063/
 
 ### cva-46: Asking the same questions
 

@@ -13,6 +13,8 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - environmental-19 q3 and environmental-20 q2: two adjacent heat stroke SAMPs both teach delayed liver and clotting injury. Keep both, or rework one? *(samps-overlap-pass2b-review.md)*
 - environmental-21 q3: please confirm the statement that intubation rarely triggers VF in hypothermia against Paal 2022. *(samps-overlap-pass2b.md)*
 - environmental-17 q1 cites Rosen's textbook for the anticholinergic signs. *(samps-overlap-pass2b.md)*
+- environmental-17 q2 uses a single pediatric series (Incecik 2012) for topiramate hypohidrosis. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- environmental-17: immersion and the rectal probe repeat signed-off keys. This is accepted as unavoidable for the topic's key features. Please confirm. *(samps-replace-s27-s29-s34-s38-s52.md)*
 - environmental-21 q4: the 2025 AHA Part 10 guidance (Cao D, Lavonas EJ and colleagues, PMID 41122889) could not be read. Confirm its current position on shocks and epinephrine below 30°C. The revised explanation says only that North American guidance "is more permissive". *(samps-s36-lensA.md)*
 - environmental-23 q3: iloprost in a patient with an acute 6 mm subdural hematoma. The key stays iloprost because alteplase and heparin are contraindicated, but iloprost has antiplatelet effects. IV iloprost is not marketed in Canada and is obtained through the Special Access Program. The stem's "your centre has a protocol" covers this. *(samps-s36-lensA.md)*
 - environmental-26: by Paal's own criterion (below 32°C in an older patient), she met ECLS transfer criteria on arrival, before the 2 hours of local rewarming the case describes. Consider stating in the stem that transfer was being arranged, or making her younger or warmer. *(samps-s36-lensA.md)*
@@ -25,6 +27,7 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - Lens A overlaps that the writer did not rework remain: environmental-23 with s09 environmental-09, environmental-17 with s09 environmental-02, and environmental-26 with s09 environmental-07. *(samps-s36-lensB.md)*
 - pulmonary-edema-24 overlaps environmental-31 (s36): immersion edema in a woman with hypertension on amlodipine. Kept on coordinator instruction, because the s36 writer is rewriting its item. *(samps-s48-lensA.md)*
 - The Lens A open items remain: pulmonary-edema-24 against environmental-31, pulmonary-edema-29 against pulmonary-edema-09, pulmonary-edema-32 against pulmonary-edema-07, morphine against hydromorphone in pulmonary-edema-33, and the unverified CCS 2017 claim in pulmonary-edema-30 q3. *(samps-s48-lensB.md)*
+- airway-31 q2 keys the same words as burns-25 q1 and environmental-21 q3. The reasons differ, and airway KF2 names edema as a trigger. Consider whether the bank needs three "intubate before the flight" keys. For a rural physician without anesthesia on site, the key assumes the skills to intubate a swollen airway. *(samps-sweep2-review-sw2-f.md)*
 - environmental-17 q1, environmental-33 q1 and environmental-36 q1 and q2 now rest on the Rosen chapters named above. I confirmed the chapter titles and numbers but could not read the chapters. Please confirm that each claim is taught there. *(samps-textbooks-s36.md)*
 - environmental-19 q1: the SCCM guideline is for critically ill adults and gives no potassium threshold. The statement that hyperkalemia with ECG changes rules out succinylcholine is standard teaching. It is not a graded recommendation. *(samps-textbooks-s36.md)*
 - environmental-37 q2: the WMS lightning guideline is from 2014 and no newer WMS update was found. It calls routine cardiac markers of limited use. The stem gives a troponin anyway. The key, telemetry admission and echocardiography, matches the guideline. *(samps-textbooks-s36.md)*
@@ -113,86 +116,80 @@ She is disoriented to time and place, with no focal deficit. Her mucous membrane
 
 *Source:* Bennett BL, Hew-Butler T, Rosner MH, Myers T, Lipman GS. Wilderness Medical Society clinical practice guidelines for the management of exercise-associated hyponatremia. 2019 update. Wilderness Environ Med. 2020. https://pubmed.ncbi.nlm.nih.gov/32044213/
 
-### environmental-17: An older woman found in a hot apartment
+### environmental-17: A boy who stopped sweating at camp
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 83-year-old woman is brought to the emergency department by ambulance on the fourth day of an extreme heat warning in the Fraser Valley. Her daughter found her in bed in her top floor apartment, which has no air conditioning. The indoor thermometer read 34°C. She had a cough for two days before. She has heart failure, atrial fibrillation, type 2 diabetes, overactive bladder and insomnia. She takes apixaban, atorvastatin, furosemide, metformin, oxybutynin and quetiapine at bedtime.
+A 9-year-old boy is brought to the emergency department by ambulance from a day camp in Windsor, Ontario, on a humid 33°C afternoon. After 2 hours of outdoor games he became confused, stumbled and vomited once. His counsellor noticed that his skin was hot and dry while the other children were soaked with sweat. Paramedics moved him into the shade but did not cool him further. He has epilepsy treated with topiramate, started 3 months ago, and attention deficit hyperactivity disorder treated with methylphenidate. He has had no recent illness. He is agitated and does not know where he is. His skin is hot, flushed and dry. His pupils are 4 mm and reactive. His neck is supple, and he passed urine at camp an hour ago.
 
-She responds only to pain. Her skin is hot and dry. There are crackles at the right lung base. There is no neck stiffness or rash. Capillary glucose is 8.2 mmol/L.
-
-- Temperature: 41.3°C rectal
-- Pulse: 124/minute irregular
+- Temperature: 41.4°C rectal
+- Pulse: 152/minute regular
 - Resp.: 30/minute
-- BP: 96/54 mmHg
-- O2 sat: 90% on room air
+- BP: 96/52 mmHg
+- O2 sat: 98% on room air
+- Weight: 30 kg
 
 #### Q1
-**Which of the following findings would most suggest that her medications are contributing through anticholinergic toxicity?**
+**Which of the following is the most appropriate first step in the management of this boy?**
 
-- A. Brisk reflexes with clonus
-- B. Crackles at the right lung base
-- C. Dilated pupils and a full bladder  **(key)**
-- D. Hot, dry skin on the trunk
-- E. Lead pipe rigidity in all limbs
+- A. Blood cultures and CT head first
+- B. Cold water immersion now  **(key)**
+- C. IV fluid bolus and observe
+- D. Lumbar puncture before cooling
+- E. Tepid sponging and a fan
 
-*Explanation:* Dilated pupils and urinary retention are peripheral antimuscarinic signs, and with anticholinergic drugs on her medication list they would point to anticholinergic toxicity adding to the heat. Hot, dry skin occurs in classic heat stroke in older adults as well as in anticholinergic toxicity, so it does not separate them. Brisk reflexes with clonus point to serotonin toxicity. Lead pipe rigidity points to neuroleptic malignant syndrome rather than anticholinergic toxicity. Right basal crackles point to a pneumonia. Cooling proceeds while these causes are sorted out.
+*Explanation:* Confusion with a rectal temperature above 40°C after exertion in the heat is exertional heat stroke, and the damage depends on how long the temperature stays high. The ACSM consensus names ice water immersion as the preferred cooling method in all conditions where it is available, and notes that children, with a large surface area for their mass, cool quickly. Cooling starts before the cause is confirmed, so blood cultures, CT and a lumbar puncture can follow once immersion is under way. Tepid sponging with a fan cools far more slowly. An IV bolus may support his circulation but does not lower his temperature, so giving fluid and observing leaves him hot.
 
 *Key feature:* Environmental 2. Cool severe hyperthermia rapidly with several methods before confirming the cause, while considering NMS, overdose, endocrine, or infection.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 140, Anticholinergics. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Roberts WO, Armstrong LE, Sawka MN, Yeargin SW, Heled Y, O'Connor FG. ACSM expert consensus statement on exertional heat illness: recognition, management, and return to activity. Curr Sports Med Rep. 2023. https://pubmed.ncbi.nlm.nih.gov/37036463/
 
 #### Q2
-*Update:* Chest radiograph shows right lower lobe consolidation. Lactate is 4.8 mmol/L and WBC is 17.2 x 10^9/L. Cooling is under way.
+**Which of the following best explains why this boy did not sweat like the other children?**
 
-**Which of the following is the most appropriate next step in her care?**
+- A. Anticholinergic poisoning
+- B. Dehydration from one vomit
+- C. Meningitis with sepsis
+- D. Methylphenidate stimulant effect
+- E. Topiramate-related hypohidrosis  **(key)**
 
-- A. Antibiotics once cooling is complete
-- B. Antibiotics only if the fever persists
-- C. Blood cultures and IV antibiotics now  **(key)**
-- D. Procalcitonin before antibiotics
-- E. Sputum culture, then antibiotics
-
-*Explanation:* Consolidation, a lactate of 4.8 mmol/L and a BP of 96/54 mmHg mean sepsis from pneumonia is likely, alongside or instead of heat stroke. Surviving Sepsis advises antimicrobials immediately, ideally within one hour, when septic shock is possible, after blood cultures if they cause no delay. Waiting for cooling to finish or for the fever to persist delays antibiotics for hours. A procalcitonin result should not decide whether to start them in a patient this ill. A sputum sample is often not obtainable and should not delay treatment.
+*Explanation:* Topiramate can reduce sweating, and in a series of children taking it, 22 of 173 had hypohidrosis with hyperthermia that resolved when the drug was stopped. The authors advised warning families and avoiding its use in hot weather. Methylphenidate is a stimulant that adds heat production, but it does not stop sweating. Anticholinergic poisoning causes dry skin but also large pupils and urinary retention, and his pupils are 4 mm and he passed urine an hour ago. A single episode of vomiting does not explain dry skin while other children sweat freely. A supple neck and onset during exertion in the heat point away from meningitis, although infection is still considered once cooling is under way.
 
 *Key feature:* Environmental 2. Cool severe hyperthermia rapidly with several methods before confirming the cause, while considering NMS, overdose, endocrine, or infection.
 
-*Source:* Evans L, Rhodes A, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med. 2021. https://pubmed.ncbi.nlm.nih.gov/34599691/
+*Source:* Incecik F, Herguner MO, Altunbasak S. Hypohidrosis and hyperthermia during topiramate treatment in children. Turk J Pediatr. 2012. https://pubmed.ncbi.nlm.nih.gov/23427516/
 
 #### Q3
-**Which of the following of her medications impair her ability to tolerate extreme heat?**
+**Which of the following is the most accurate way to track his core temperature during cooling?**
 
-Select 3.
+- A. Axillary thermometer
+- B. Oral digital thermometer
+- C. Rectal temperature probe  **(key)**
+- D. Temporal artery scanner
+- E. Tympanic thermometer
 
-- A. apixaban
-- B. atorvastatin
-- C. furosemide  **(key)**
-- D. metformin
-- E. oxybutynin  **(key)**
-- F. quetiapine  **(key)**
-
-*Explanation:* Furosemide reduces circulating volume and the reserve available for sweating and skin blood flow. Oxybutynin is anticholinergic and blocks sweating, the main route of heat loss. Quetiapine, like other antipsychotics, impairs central thermoregulation and adds anticholinergic effect. Apixaban, atorvastatin and metformin do not impair heat dissipation. Most of the 619 people who died in the 2021 British Columbia heat dome were older, lived alone and had chronic disease.
+*Explanation:* The ACSM consensus states that rectal temperature gives the valid estimate of core temperature in exertional heat illness. Tympanic, oral, temporal artery or forehead, and axillary readings are inaccurate estimates of core temperature and should not guide decisions. A continuous rectal probe shows when to stop immersion and avoids both undercooling and overcooling.
 
 *Key feature:* Environmental 1. Suspect heat stroke in a confused, febrile patient exposed to heat and start cooling right away.
 
-*Source:* Eifling KP, Gaudio FG, Dumke C, and colleagues. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of heat illness. 2024 update. Wilderness Environ Med. 2024. https://pubmed.ncbi.nlm.nih.gov/38425235/
+*Source:* Roberts WO, Armstrong LE, Sawka MN, Yeargin SW, Heled Y, O'Connor FG. ACSM expert consensus statement on exertional heat illness: recognition, management, and return to activity. Curr Sports Med Rep. 2023. https://pubmed.ncbi.nlm.nih.gov/37036463/
 
 #### Q4
-*Update:* She recovers over five days. Her daughter asks how to protect her during the next heat warning. She will continue to live alone.
+*Update:* He is cooled to 38.9°C in 15 minutes and becomes fully oriented. His laboratory tests show only a mildly raised CK. He is admitted overnight and recovers.
 
-**Which of the following is the most protective plan for her during future extreme heat?**
+**Which of the following is the most appropriate advice before this boy returns to summer camp?**
 
-- A. Cool room and daily wellness checks  **(key)**
-- B. Drink 3 L of water each day
-- C. Electric fan beside her bed at night
-- D. Stop furosemide until the heat ends
-- E. Windows open day and night
+- A. Avoid all outdoor activity this summer
+- B. Return to full games tomorrow
+- C. Review topiramate with his neurologist  **(key)**
+- D. Take acetaminophen before games
+- E. Take extra salt tablets at camp
 
-*Explanation:* In the 2021 British Columbia heat dome, 98% of heat deaths occurred indoors in a residence, only 7% of those who died had air conditioning, and 56% lived alone. The coroners' review called for access to cooled spaces and for checks on older adults who live alone. A fan does not make a very hot room safe. Drinking 3 L a day risks decompensating her heart failure. Stopping furosemide unsupervised risks the same. Open windows let in hot daytime air, so windows are covered by day and opened when it is cooler outside.
+*Explanation:* His heat stroke followed loss of sweating on topiramate, and the authors of the pediatric series advise caution about this effect and avoiding the drug in the hot season, so his neurologist should review it before he returns. Return to activity after exertional heat stroke should be staged, with a follow-up assessment, not full play the next day. Acetaminophen does not restore sweating, and salt tablets do not address the cause. Banning all outdoor activity for the summer is more than he needs once the drug is reviewed and a staged return is planned.
 
 *Key feature:* Environmental 1. Suspect heat stroke in a confused, febrile patient exposed to heat and start cooling right away.
 
-*Source:* BC Coroners Service. Extreme heat and human mortality: a review of heat-related deaths in B.C. in summer 2021. Report to the Chief Coroner of British Columbia. 2022. https://www2.gov.bc.ca/assets/gov/birth-adoption-death-marriage-and-divorce/deaths/coroners-service/death-review-panel/extreme_heat_death_review_panel_report.pdf
+*Source:* Incecik F, Herguner MO, Altunbasak S. Hypohidrosis and hyperthermia during topiramate treatment in children. Turk J Pediatr. 2012. https://pubmed.ncbi.nlm.nih.gov/23427516/
 
 ### environmental-18: A tree planter brought in from camp
 
@@ -1238,11 +1235,11 @@ He now opens his eyes spontaneously and obeys commands, but he is disoriented to
 - D. Tetany from alternating current
 - E. Voltage above 1000 V
 
-*Explanation:* Alternating current causes tetanic muscle contraction that can stop the victim letting go, which prolongs contact and is why it is considered more dangerous. The third rail carries direct current, which does not cause this sustained tetany, so his contact was brief. The sudden violent contraction that throws a victim adds blunt injury from the impact. At 600 volts the injury is low voltage, below the 1000 V threshold. Wet skin increases current flow but does not release the grip. Brainstem current causes apnea, not release.
+*Explanation:* Alternating current causes tetanic muscle contraction that can stop the victim letting go, which prolongs contact and is why it is generally considered more hazardous than direct current. The third rail carries direct current, which does not cause this sustained tetany, so his contact was brief. The sudden violent contraction that throws a victim adds blunt injury from the impact. At 600 volts the injury is low voltage, below the 1000 V threshold. Wet skin increases current flow but does not release the grip. Brainstem current causes apnea, not release.
 
 *Key feature:* Environmental 5. After electrical injury, look for hidden internal and cardiac damage and associated trauma, and monitor until risk has passed.
 
-*Source:* Smith I, Kidd S, Kim S, Tennill RM. Assessment and management of electrical injuries in adults in the emergency department. Cureus. 2026. https://pubmed.ncbi.nlm.nih.gov/42147553/
+*Source:* Liu Y, Jimeno ZKL, Sulaiman WAW. Similarities and differences between lightning and electrical injuries: two case reports. J Trauma Inj. 2025. https://doi.org/10.20408/jti.2024.0067
 
 #### Q2
 **Which of the following investigations or monitoring are most appropriate for him now?**
@@ -1275,11 +1272,11 @@ Select 4.
 - D. Outpatient cardiology referral
 - E. Telemetry admission for 24 hours  **(key)**
 
-*Explanation:* Loss of consciousness at the time of an electrical injury places him at higher risk of cardiac events, so he needs at least 24 hours of monitoring even though his current is low voltage and his ECG is normal. The raised CK and his wounds also need follow-up. Troponin has limited value for risk stratification after electrical injury, so a normal result does not allow discharge. A Holter, clinic referral or a short observation all remove the monitoring he needs.
+*Explanation:* Selected patients with a low voltage injury, no loss of consciousness and a normal ECG may go home, but he lost consciousness, so he needs at least 24 hours of monitoring even though his current is low voltage and his ECG is normal. The raised CK and his wounds also need follow-up. Troponin has limited value for risk stratification after electrical injury, so a normal result does not allow discharge. A Holter, clinic referral or a short observation all remove the monitoring he needs.
 
 *Key feature:* Environmental 5. After electrical injury, look for hidden internal and cardiac damage and associated trauma, and monitor until risk has passed.
 
-*Source:* Smith I, Kidd S, Kim S, Tennill RM. Assessment and management of electrical injuries in adults in the emergency department. Cureus. 2026. https://pubmed.ncbi.nlm.nih.gov/42147553/
+*Source:* Waldmann V, Narayanan K, Combes N, Jost D, Jouven X, Marijon E. Electrical cardiac injuries: current concepts and management. Eur Heart J. 2018. https://pubmed.ncbi.nlm.nih.gov/28444167/
 
 ### environmental-35: An electrician who could not let go
 
@@ -1544,7 +1541,7 @@ Select 2.
 
 *Key feature:* Environmental 2. Cool severe hyperthermia rapidly with several methods before confirming the cause, while considering NMS, overdose, endocrine, or infection.
 
-*Source:* Evans L, Rhodes A, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med. 2021. https://pubmed.ncbi.nlm.nih.gov/34599691/
+*Source:* Prescott HC, Antonelli M, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://doi.org/10.1097/CCM.0000000000007075
 
 #### Q4
 *Update:* His attendant finds that his pump refill was due 6 days ago and was missed, and that the pump alarm has been sounding. His temperature is 39.2°C.

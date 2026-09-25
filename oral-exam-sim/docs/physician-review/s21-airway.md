@@ -8,6 +8,16 @@ Quoted from the pipeline notes and the review reports, each with its report name
 
 - s21 airway-23 q2: pulse 58 in update would call for compressions under PALS. airway-40: 2024 AO Spine MAP range. airway-30 q4 succinylcholine in methamphetamine toxicity.
 - s21 airway-23 pulse 58 in hypoxic 4-year-old with no compressions question.
+- airway-25 now has 3 questions and airway-28 has 3. Both are allowed by the spec. *(samps-final-check-1.md)*
+- airway-25 uses CAFG 2021, an adult consensus, for a 12-year-old. The double setup and the sugammadex limits apply, but a pediatric anesthetist would often choose inhalational induction for tracheal membranes. The stem sets IV induction as the plan. *(samps-last-check.md)*
+- airway-25 q2 keys an induction that keeps the child breathing. This reflects the CAFG approach to upper airway obstruction and usual anesthesia practice in bacterial tracheitis, not a tracheitis-specific trial. *(samps-replace-s19-s24.md)*
+- airway-27 q3 keys lowering the ventilator rate for a PaCO2 of 22 mmHg in pregnancy. Lapinsky gives the normal pregnant PaCO2 of 28 to 32 mmHg and warns about alkalosis. *(samps-replace-s19-s24.md)*
+- airway-47 draws the intubation advice from the HCM guideline's recommendation for phenylephrine and against inotropes in obstructive disease. The guideline does not address induction agents, so no induction drug is keyed. *(samps-replace-s19-s24.md)*
+- airway-22 q2 still cites the NRP 8th edition for tube size. Please update it if you have the 9th edition lesson. *(samps-replace-s19-s24.md)*
+- These writer notes no longer apply because of the changes above: abdominal-pain-36 (SOGC 426), airway-25 q2, anaphylaxis-25 q1 (BMI 46) and arrhythmia-32 (methadone). *(samps-replace-s19-s24.md)*
+- These sources could only be checked by abstract or secondary summary: Shields 2012, ASMBS 2015, Bull 2022, Coté 2019, Sulton 2024, Tebruegge 2009, Wirsching 2018, Mahat 2019, AUA urotrauma 2021, the AHA post-arrest 2025 temperature range and AHA/ACC HCM 2024 (still cited for airway-47 q4). *(samps-replace-s19-s24.md)*
+- airway-28 q2 keys a topical lidocaine maximum of 9 mg/kg lean body weight, from CAFG part 2. *(samps-replace-s19-s24.md)*
+- multiple-trauma-46 uses the 2013 AANS/CNS MAP target of 85 to 90 mmHg. It is a cervical cord injury, like airway-40 and shock-06, but none of its decisions repeat theirs. Please judge whether the setting is too close. *(samps-replace-s33-s44-s45-s46.md)*
 - airway-30 q4: whether avoiding succinylcholine while the potassium and CK are pending in methamphetamine hyperthermia is the expected answer, or seen as over-cautious. I think the key holds. *(samps-s21-lensA.md)*
 - airway-23 q2 update: the pulse is 58/minute in a hypoxic child with no effective ventilation. PALS would start compressions at a heart rate below 60/minute with poor perfusion. No question asks about this, but a physician may want the pulse changed (for example to 64/minute) or a sentence on CPR added. *(samps-s21-lensA.md)*
 - airway-40 q2: confirm the 2024 AO Spine and Praxis MAP range is the target the bank should teach, since some Canadian trauma centres still use 85 to 90 mmHg. *(samps-s21-lensA.md)*
@@ -16,6 +26,11 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - Key feature 6 (confirming tube placement) is used loosely for ventilator management in airway-29 q4, airway-35 q3, airway-41 q1 and airway-43 q3. They test blood gas and capnography interpretation after intubation, which is close but not placement. Low confidence. Left as is. *(samps-s21-lensB.md)*
 - airway-18 q3 (cause of obstruction, a dislodged voice prosthesis) is tagged key feature 1 (move to rescue techniques). Key feature 4 fits better. Low confidence. *(samps-s21-lensB.md)*
 - sob-26 (outside the five named SAMPs, but in this batch): Ludwig angina repeats airway-20 (s21) and the s41 infectious-diseases Ludwig SAMP in scenario and teaching. The earlier reviews did not flag it. Recommend a rebuild or dropping it. *(samps-s51-lensA2.md)*
+- **asthma-copd-42 needs a rebuild.** A total laryngectomy with the stoma as the only airway is already the scenario of airway-18 (s21). airway-18 also teaches that face devices fail and that support goes through the stoma. airway-18 q2 keys bag ventilation with an infant mask sealed over the stoma. That means bilevel over the stoma is possible, yet 42 q3 keys intubation through the stoma for an alert patient with pH 7.27, where BTS would try NIV first. It could not be fixed in place. *(samps-sweep2-review-sw2-a.md)*
+- airway-31 q2 keys the same words as burns-25 q1 and environmental-21 q3. The reasons differ, and airway KF2 names edema as a trigger. Consider whether the bank needs three "intubate before the flight" keys. For a rural physician without anesthesia on site, the key assumes the skills to intubate a swollen airway. *(samps-sweep2-review-sw2-f.md)*
+- airway-31 q3 is asked after q2 in time, but the wires would be cut at arrival. The prompt ("under any airway plan") keeps it from cueing q2. *(samps-sweep2-review-sw2-f.md)*
+- airway-31 q2 keys intubation before an air transfer. CAFG part 2 allows deferral only when the patient can be temporized safely. It does not address air transport directly. Please confirm the key for a rural physician without anesthesia on site. *(samps-sweep2-sw2-f.md)*
+- airway-31 q3: the Kellman source is a 2008 review. It says to cut the wires when significant dyspnea or severe vomiting develops. The claim that the arch bars can stay rests on how the fixation is built, not on a quoted sentence. *(samps-sweep2-sw2-f.md)*
 - airway-22 (NRP). The 9th edition of the NRP textbook (December 2025) and the 2025 AHA and AAP guideline now replace the 8th edition. I could not open either. The questions still cite the 8th edition. Please confirm three things against the 2025 guideline: intubation before compressions when the heart rate stays below 60/minute, the tube size table (3.0 mm for 1 to 2 kg), and epinephrine after 60 seconds of compressions. A search snippet from the 2025 guideline says compressions start when the heart rate stays below 60/minute after corrective ventilation steps "which preferably include endotracheal intubation". That fits the key. *(samps-textbooks-s21-s22.md)*
 - airway-35 q1 (difficult mask ventilation). The key includes "COPD on home oxygen". CAFG 2021 Part 2 Table 4 and Langeron 2000 do not list COPD. Only the Walls mnemonic supports it, where high airway resistance is a predictor. Keep, or drop COPD from the key. *(samps-textbooks-s21-s22.md)*
 - airway-24 q1 and airway-40 q1 use a forced vital capacity threshold of 20 mL/kg. That comes from Guillain-Barre data (Lawn 2001), and I found no open guideline that applies it to myasthenia or cervical cord injury. Both stay on Walls. *(samps-textbooks-s21-s22.md)*
@@ -517,7 +532,7 @@ You are working in a rural hospital emergency department with no obstetric or pe
 
 *Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
 
-*Source:* Weiner GM, Zaichkin J, editors. Textbook of Neonatal Resuscitation (NRP). 8th ed. American Academy of Pediatrics and American Heart Association. 2021. Lesson 5, Alternative Airways: Endotracheal Tubes and Laryngeal Masks.
+*Source:* Lee HC, Strand ML, Finan E, and colleagues. Part 5. Neonatal resuscitation. 2025 American Heart Association and American Academy of Pediatrics guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025. https://doi.org/10.1161/CIR.0000000000001367
 
 #### Q2
 **Which of the following endotracheal tube sizes is most appropriate for this newborn?**
@@ -549,7 +564,7 @@ You are working in a rural hospital emergency department with no obstetric or pe
 
 *Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
 
-*Source:* Weiner GM, Zaichkin J, editors. Textbook of Neonatal Resuscitation (NRP). 8th ed. American Academy of Pediatrics and American Heart Association. 2021. Lesson 6, Chest Compressions.
+*Source:* Lee HC, Strand ML, Finan E, and colleagues. Part 5. Neonatal resuscitation. 2025 American Heart Association and American Academy of Pediatrics guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025. https://doi.org/10.1161/CIR.0000000000001367
 
 ### airway-23: Child choking at lunch
 
@@ -577,7 +592,7 @@ A 4-year-old girl is carried into the emergency department by her father after c
 *Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 28, Foreign Body in the Pediatric Airway. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
 
 #### Q2
-*Update:* Laryngoscopy shows no object above the cords. Bag-mask ventilation gives no chest rise. Her pulse is 58/minute. You decide to intubate her to reach the obstruction.
+*Update:* Laryngoscopy shows no object above the cords. Bag-mask ventilation gives no chest rise. Her pulse is 66/minute. You decide to intubate her to reach the obstruction.
 
 **Which of the following endotracheal tubes does the PALS cuffed tube formula give for her age?**
 
@@ -689,82 +704,71 @@ A 68-year-old woman with myasthenia gravis presents to the emergency department 
 
 *Source:* Blichfeldt-Lauridsen L, Hansen BD. Anesthesia and myasthenia gravis. Acta Anaesthesiol Scand. 2012. https://doi.org/10.1111/j.1399-6576.2011.02558.x
 
-### airway-25: Rising weakness after a bout of diarrhea
+### airway-25: Transfer for fever and noisy breathing
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old man presents to the emergency department with 5 days of tingling in his feet and 2 days of leg weakness that is now spreading to his arms. He had diarrhea 2 weeks ago. He is short of breath when lying flat. He has symmetric weakness, graded 3 of 5 in the legs and 4 of 5 in the arms, and his reflexes are absent. His neck flexion is weak. Bedside spirometry shows a forced vital capacity of 1.4 L. His negative inspiratory force is minus 26 cmH2O.
+A 12-year-old girl is transferred to your emergency department from a community hospital with suspected bacterial tracheitis. A cold began 5 days ago. Last night she developed a fever of 40°C, a hoarse, brassy cough and noisy breathing. A lateral neck X-ray there showed a normal epiglottis and ragged densities inside the tracheal air column. Blood cultures were drawn and IV antibiotics started before transfer. She is previously well and fully immunized.
 
-- Temperature: 36.9°C oral
-- Pulse: 108/minute
-- Resp.: 26/minute
-- BP: 146/92 mmHg
-- O2 sat: 97% on room air
-- Weight: 80 kg
+She sits bolt upright, flushed and anxious, and speaks in short phrases. She has stridor on inspiration and expiration and coughs up purulent sputum. She swallows her saliva without difficulty.
+
+- Temperature: 39.4°C oral
+- Pulse: 142/minute
+- Resp.: 32/minute
+- BP: 104/62 mmHg
+- O2 sat: 92% on 40% oxygen by face mask
+- Weight: 41 kg
 
 #### Q1
-**Which of the following is the most appropriate airway plan for this patient?**
+*Update:* Anesthesia will intubate her in the operating room before she tires.
 
-- A. Admission with continuous oximetry
-- B. BiPAP with repeat spirometry in 4 hours
-- C. Early controlled intubation  **(key)**
-- D. Intubation if O2 saturation drops
-- E. IVIG and spirometry again tomorrow
+**Which of the following is the most important preparation before her induction?**
 
-*Explanation:* His forced vital capacity is 1400 / 80 = 17.5 mL/kg, below 20 mL/kg, and his inspiratory force of minus 26 cmH2O is weaker than minus 30 cmH2O. Both cross the thresholds, a vital capacity under 20 mL/kg and an inspiratory pressure weaker than minus 30 cmH2O, that predict respiratory failure in Guillain-Barre syndrome. Rapid progression, orthopnea and neck weakness add to the risk, so a controlled intubation now is safer than a crash intubation later. Oximetry and waiting for a saturation drop miss failure until it is late. BiPAP does not stop the progression. IVIG treats the disease but will not protect his breathing tonight.
+- A. Chest X-ray before leaving the ED
+- B. ENT surgeon ready to intervene  **(key)**
+- C. Nasal tube chosen as first route
+- D. Parents asked to leave the room
+- E. Supine position before induction
 
-*Key feature:* Airway management 2. Anticipate early intubation in patients likely to deteriorate, such as those with burns, trauma, airway swelling, coma, or obesity.
+*Explanation:* For a patient with obstructing airway pathology, the Canadian Airway Focus Group advises that a surgeon be physically present for fallback front of neck access, as part of a double setup prepared before induction. An ENT surgeon can also clear membranes by rigid bronchoscopy. The guideline notes that a semi-seated or upright position extends safe apnea time, and laying her supine before induction can worsen her obstruction. A parent at her side eases distress, which worsens stridor. A nasal first route adds risk in an airway lined with membranes. A chest X-ray can wait until her airway is secure.
 
-*Source:* Lawn ND, Fletcher DD, Henderson RD, Wolter TD, Wijdicks EF. Anticipating mechanical ventilation in Guillain-Barre syndrome. Arch Neurol. 2001.
+*Key feature:* Airway management 3. Before intubating, predict difficulty with tools like LEMON or 3-3-2 and prepare equipment and backups to match.
+
+*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
 
 #### Q2
-**Which of the following neuromuscular blockers is most appropriate for his intubation?**
+*Update:* The plan is an IV induction with rocuronium, with sugammadex drawn up in case the airway is lost.
 
-- A. cisatracurium 8 mg IV
-- B. rocuronium 40 mg IV
-- C. rocuronium 100 mg IV  **(key)**
-- D. succinylcholine 80 mg IV
-- E. succinylcholine 120 mg IV
+**Which of the following statements about reversing rocuronium with sugammadex if her airway is lost is most accurate?**
 
-*Explanation:* Denervation in Guillain-Barre syndrome spreads acetylcholine receptors across the muscle membrane, and succinylcholine can then cause a sudden, dangerous rise in potassium, whatever the dose. Rocuronium at about 1.2 mg/kg, which is 1.2 x 80 = 96 mg rounded to 100 mg, gives fast intubating conditions without that risk. Rocuronium 40 mg is only 0.5 mg/kg and gives slow, incomplete relaxation. Cisatracurium at 0.1 mg/kg takes several minutes to work and is poorly suited to rapid sequence intubation.
+- A. Reversal also ends the sedative effect
+- B. Reversal is fast enough to prevent hypoxemia
+- C. Reversal leaves her obstruction in place  **(key)**
+- D. Reversal works for cisatracurium too
+- E. Reversal works for succinylcholine too
+
+*Explanation:* The Canadian Airway Focus Group notes that sugammadex will not necessarily reverse a cannot ventilate, cannot oxygenate situation caused by obstructing airway pathology, such as the membranes in her trachea. It also notes that some patients desaturate critically in the time it takes to draw up, give and act, so reversal cannot be relied on to prevent hypoxemia. Sugammadex binds the steroidal blockers rocuronium and vecuronium only, so it does not reverse succinylcholine or cisatracurium. It has no effect on the induction agent, which keeps working.
 
 *Key feature:* Airway management 5. Choose RSI drugs carefully when the patient has contraindications or conditions that favour specific agents.
 
-*Source:* Martyn JA, Richtsfeld M. Succinylcholine-induced hyperkalemia in acquired pathologic states. Etiologic factors and molecular mechanisms. Anesthesiology. 2006.
+*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
 
 #### Q3
-*Update:* During preparation his pulse varies between 58/minute and 124/minute, and his BP swings between 88/50 mmHg and 176/98 mmHg.
+*Update:* She is intubated and ventilated. Thick membranes and pus are suctioned from the tube and sent for Gram stain and culture.
 
-**Which of the following preparations is most important before induction in this patient?**
+**Which of the following organisms is the most likely cause of her infection?**
 
-- A. Higher induction dose of propofol
-- B. Labetalol for his blood pressure first
-- C. Nasogastric tube before induction
-- D. Topical lidocaine to the pharynx
-- E. Vasopressor and atropine at the bedside  **(key)**
+- A. Haemophilus influenzae type b
+- B. Moraxella catarrhalis
+- C. Staphylococcus aureus  **(key)**
+- D. Streptococcus pneumoniae
+- E. Streptococcus pyogenes
 
-*Explanation:* Swinging heart rate and blood pressure show autonomic dysfunction, which is common in severe Guillain-Barre syndrome. Induction and positive pressure ventilation can then cause profound hypotension or bradycardia, so a vasopressor and atropine must be drawn up before induction. Treating the high readings with labetalol risks severe hypotension when the swing reverses. A larger propofol dose adds to the hypotension. A nasogastric tube and topical lidocaine do not address the main danger.
+*Explanation:* Staphylococcus aureus is the organism most often found in bacterial tracheitis. In a multicentre series it was isolated from the respiratory tract in 55.8% of cases, and it is why empiric treatment covers staphylococci. Moraxella catarrhalis, Streptococcus pneumoniae and Streptococcus pyogenes are recognized causes but are isolated less often. Haemophilus influenzae type b has become rare in immunized children, and she is fully immunized.
 
-*Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
+*Key feature:* Infectious diseases 8. Choose empiric antibiotics for bacterial infection based on likely organisms and local resistance before cultures return.
 
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 33, The Unstable Patient: Cardiopulmonary Optimization for Emergency Airway Management. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
-
-#### Q4
-*Update:* He is intubated uneventfully. Three hours later his O2 saturation falls to 85%. Peak pressure has risen but plateau pressure is unchanged. A suction catheter stops 4 cm into the tube. Capnography shows a small waveform.
-
-**Which of the following is the most likely cause of his deterioration?**
-
-- A. Bronchospasm from the ventilator
-- B. Displacement into the esophagus
-- C. Right mainstem migration
-- D. Secretions blocking the tube  **(key)**
-- E. Tension pneumothorax
-
-*Explanation:* A suction catheter that stops 4 cm into the tube shows that the tube itself is blocked, and a ventilated patient with neuromuscular weakness is prone to retained secretions. A rise in peak pressure with an unchanged plateau pressure is a resistance problem, which fits a blocked tube. Esophageal displacement would abolish the capnography waveform and let the catheter pass. A mainstem tube and a tension pneumothorax also let the catheter pass, and a pneumothorax raises plateau pressure. Bronchospasm raises resistance but would not stop the catheter.
-
-*Key feature:* Airway management 6. Confirm tube placement with end tidal CO2, oximetry, and blood gases to catch misplacement that is not obvious.
-
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 10, Mechanical Ventilation. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
+*Source:* Tebruegge M, Pantazidou A, Thorburn K, and colleagues. Bacterial tracheitis: a multi-centre perspective. Scand J Infect Dis. 2009. https://doi.org/10.1080/00365540902913478
 
 ### airway-26: Teenager with a weak cough and fever
 
@@ -824,127 +828,132 @@ A 15-year-old boy with Duchenne muscular dystrophy is brought to the emergency d
 
 *Source:* Birnkrant DJ, Bushby K, Bann CM, et al. Diagnosis and management of Duchenne muscular dystrophy, part 2. Respiratory, cardiac, bone health, and orthopaedic management. Lancet Neurol. 2018. https://doi.org/10.1016/S1474-4422(18)30025-5
 
-### airway-27: Breathless and faint after knee surgery
+### airway-27: Tiring on high-flow oxygen at 30 weeks
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 58-year-old woman presents to the emergency department with 2 days of worsening shortness of breath and a near faint today. She had a total knee replacement 3 weeks ago. She is anxious and diaphoretic, and her jugular venous pressure is raised. POCUS shows a right ventricle larger than the left, with a flattened septum and a small, underfilled left ventricle. CT pulmonary angiography shows saddle pulmonary emboli. Alteplase is being prepared.
+A 31-year-old woman, G2P1 at 30 weeks, presents to the emergency department with 4 days of fever, cough and worsening shortness of breath. A swab is positive for influenza A. She has been on high-flow nasal oxygen at 60 L/minute and FiO2 0.8 for 1 hour and is tiring. Her brother had malignant hyperthermia during an operation 5 years ago. She has no other medical history.
 
-- Temperature: 37.0°C oral
-- Pulse: 124/minute
+She is using her accessory muscles and speaks in single words. There are crackles over both lower lobes. The fetal heart rate is 150/minute. The chest X-ray shows bilateral lower lobe consolidation. You decide to intubate her.
+
+- Temperature: 38.9°C oral
+- Pulse: 122/minute
+- Resp.: 38/minute
+- BP: 108/64 mmHg
+- O2 sat: 89% on high-flow oxygen, FiO2 0.8
+- Weight: 82 kg
+
+#### Q1
+**Which of the following best describes how pregnancy changes her risk during intubation?**
+
+- A. Faster desaturation during apnea  **(key)**
+- B. Larger airway from hormonal change
+- C. Lower risk of failed intubation
+- D. Lower risk of gastric aspiration
+- E. Nasal route safer than the oral
+
+*Explanation:* Late pregnancy lowers the functional residual capacity and raises oxygen consumption, so she will desaturate quickly once apneic, and preoxygenation and apneic oxygenation matter even more. Failed intubation is far more common in pregnancy than in other patients, and airway mucosal swelling narrows rather than widens the airway, so a smaller tube may be needed. Slow gastric emptying and higher abdominal pressure raise the risk of aspiration. The swollen, hyperemic nasal mucosa bleeds easily, so the nasal route should be avoided.
+
+*Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
+
+*Source:* Lapinsky SE, Posadas-Calleja JG, McCullagh I. Clinical review: ventilatory strategies for obstetric, brain-injured and obese patients. Crit Care. 2009. https://doi.org/10.1186/cc7146
+
+#### Q2
+**Which of the following neuromuscular blockers is most appropriate for her rapid sequence intubation?**
+
+- A. atracurium 40 mg IV
+- B. cisatracurium 15 mg IV
+- C. rocuronium 100 mg IV  **(key)**
+- D. succinylcholine 120 mg IV
+- E. vecuronium 8 mg IV
+
+*Explanation:* Her brother had malignant hyperthermia, so she may carry the same inherited susceptibility, and succinylcholine is a trigger that must be avoided. Nondepolarizing blockers and all IV induction agents are safe. Rocuronium at about 1.2 mg/kg, roughly 100 mg for 82 kg, gives intubating conditions within about a minute, which matters when she will desaturate quickly. Atracurium, cisatracurium and vecuronium do not trigger malignant hyperthermia either, but at these doses they take several minutes to work, which is too slow for rapid sequence intubation.
+
+*Key feature:* Airway management 5. Choose RSI drugs carefully when the patient has contraindications or conditions that favour specific agents.
+
+*Source:* Rosenberg H, Pollock N, Schiemann A, and colleagues. Malignant hyperthermia: a review. Orphanet J Rare Dis. 2015. https://doi.org/10.1186/s13023-015-0310-1
+
+#### Q3
+*Update:* She is intubated and ventilated. Thirty minutes later an arterial blood gas on the ventilator shows pH 7.55, PaCO2 22 mmHg and PaO2 84 mmHg.
+
+**Which of the following ventilator changes is most appropriate for her now?**
+
+- A. Add an inspiratory hold
+- B. Increase the set rate
+- C. Increase the tidal volume
+- D. Lower the set respiratory rate  **(key)**
+- E. Raise the FiO2 to 1.0
+
+*Explanation:* A normal PaCO2 in late pregnancy is about 28 to 32 mmHg, and she is now well below that with a pH of 7.55. Respiratory alkalosis from overventilation can constrict the uterine arteries and reduce blood flow to the fetus, so the set rate should be lowered toward her normal pregnant range. Increasing the rate or tidal volume would worsen the alkalosis. Her PaO2 of 84 mmHg is adequate, so raising the FiO2 is not the priority. An inspiratory hold measures plateau pressure but does not correct the problem.
+
+*Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
+
+*Source:* Lapinsky SE, Posadas-Calleja JG, McCullagh I. Clinical review: ventilatory strategies for obstetric, brain-injured and obese patients. Crit Care. 2009. https://doi.org/10.1186/cc7146
+
+### airway-28: Choking at dinner after throat cancer treatment
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 66-year-old man presents to the emergency department 4 hours after choking on a piece of steak at dinner. He coughed it up at the table but has been short of breath and coughing ever since. Two years ago he had chemoradiation for cancer of the base of the tongue, and since then he has had trouble swallowing and opening his mouth. He has a full beard. His BMI is 19 kg/m2.
+
+He is alert and cooperative and speaks in short sentences. He can open his mouth 2 cm and cannot extend his neck. The skin of the neck is thickened and woody, and the cricothyroid membrane cannot be felt. There are crackles over both lung bases, and the chest X-ray shows patchy opacities in both lower lobes. He remains hypoxemic on high-flow nasal oxygen at 60 L/minute with FiO2 1.0, and you decide he needs intubation.
+
+- Temperature: 37.9°C oral
+- Pulse: 114/minute
 - Resp.: 32/minute
-- BP: 88/56 mmHg
-- O2 sat: 86% on 15 L/minute by nonrebreather mask
-- Weight: 75 kg
+- BP: 124/74 mmHg
+- O2 sat: 88% on high-flow oxygen, FiO2 1.0
+- Weight: 58 kg
 
 #### Q1
-**Which of the following is the most appropriate approach to her oxygenation while thrombolysis is given?**
+**Which of the following findings in him predict a difficult front of neck airway?**
 
-- A. Awake intubation with light sedation
-- B. Immediate rapid sequence intubation
-- C. Noninvasive ventilation with high PEEP
-- D. Oxygen by high-flow nasal cannula  **(key)**
-- E. Sedation to reduce oxygen demand
+Select 2.
 
-*Explanation:* Her failing right ventricle depends on preload and tolerates added afterload badly. Positive pressure ventilation raises intrathoracic pressure, cuts venous return and increases right ventricular afterload, and induction drugs lower systemic tone, so intubation can precipitate arrest. High-flow nasal oxygen improves oxygenation without positive pressure ventilation while alteplase works. Noninvasive ventilation with high PEEP carries the same hemodynamic risk as intubation. Awake intubation still ends in positive pressure ventilation. Sedation can drop her blood pressure and blunt her respiratory drive.
+- A. Age of 66 years
+- B. Cricothyroid not palpable  **(key)**
+- C. Full beard on the face
+- D. Mouth opening of 2 cm
+- E. Previous neck radiation  **(key)**
+- F. Thin build, BMI 19 kg/m2
+
+*Explanation:* The Canadian Airway Focus Group lists previous neck radiation and indistinct landmarks, including induration of the neck, among the predictors of a difficult front of neck airway. His radiated, woody neck and a cricothyroid membrane that cannot be felt both apply. A mouth opening of 2 cm predicts difficult laryngoscopy and supraglottic airway insertion. A beard and an age over 46 years predict difficult face mask ventilation. Obesity, not a thin build, makes the landmarks hard to find.
+
+*Key feature:* Airway management 3. Before intubating, predict difficulty with tools like LEMON or 3-3-2 and prepare equipment and backups to match.
+
+*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
+
+#### Q2
+**Which of the following is the most appropriate approach to his intubation?**
+
+- A. Awake tracheal intubation  **(key)**
+- B. Blind nasal intubation
+- C. Inhalational induction without paralysis
+- D. Noninvasive ventilation first
+- E. Rapid sequence with video laryngoscopy
+
+*Explanation:* Limited mouth opening and neck extension predict difficult laryngoscopy, his beard and radiated neck predict difficult face mask ventilation, and his neck predicts a difficult surgical airway. When difficulty is predicted with two or more of these methods, the Canadian Airway Focus Group advises an awake approach. He is alert and cooperative, and high-flow nasal oxygen can continue while he keeps breathing, which matters because his aspiration limits how long he can tolerate apnea. Rapid sequence intubation removes his own breathing, and every rescue is predicted to be difficult if laryngoscopy fails. The guideline does not endorse inhalational induction as the sole strategy in adults with a predicted difficult airway. Blind nasal intubation is not a controlled technique. His SpO2 of 88% on FiO2 1.0 means he needs a secure airway now, and noninvasive ventilation is unsafe in a man who cannot protect his airway when he swallows.
 
 *Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
 
-*Source:* Kornas RL, Owyang CG, Sakles JC, Foley LJ, Mosier JM. Evaluation and management of the physiologically difficult airway. Consensus recommendations from Society for Airway Management. Anesth Analg. 2021. https://doi.org/10.1213/ANE.0000000000005233
-
-#### Q2
-*Update:* Alteplase is given. Twenty minutes later she is obtunded, with O2 saturation 78% and BP 76/44 mmHg. You decide that she must be intubated.
-
-**Which of the following is the most appropriate step immediately before induction?**
-
-- A. Crystalloid bolus of 2 L
-- B. milrinone 50 mcg/kg IV bolus
-- C. nitroglycerin infusion for preload
-- D. norepinephrine infusion first  **(key)**
-- E. propofol infusion for sedation
-
-*Explanation:* She is hypotensive with right ventricular failure, and the Society for Airway Management advises correcting hemodynamics before induction in a physiologically difficult airway. A norepinephrine infusion raises systemic pressure and perfusion of the right coronary artery, which helps the right ventricle through induction and the start of positive pressure. A 2 L crystalloid bolus overdistends the right ventricle and pushes the septum further into the left. Milrinone and nitroglycerin both lower blood pressure. A propofol infusion adds vasodilation and myocardial depression.
-
-*Key feature:* Airway management 5. Choose RSI drugs carefully when the patient has contraindications or conditions that favour specific agents.
-
-*Source:* Kornas RL, Owyang CG, Sakles JC, Foley LJ, Mosier JM. Evaluation and management of the physiologically difficult airway. Consensus recommendations from Society for Airway Management. Anesth Analg. 2021. https://doi.org/10.1213/ANE.0000000000005233
+*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
 
 #### Q3
-*Update:* She is intubated with reduced dose induction and remains on norepinephrine. BP is 92/58 mmHg.
+*Update:* He is intubated, and the tube is taped at 17 cm at the teeth. He groans with each breath, there is a loud leak around the tube, and the capnography waveform is small and irregular. The cuff pressure is 28 cmH2O.
 
-**Which of the following ventilator strategies is most appropriate for her right ventricular failure?**
+**Which of the following is the most likely explanation for these findings?**
 
-- A. High PEEP of 15 cmH2O
-- B. Higher tidal volume of 12 mL/kg
-- C. Low tidal volume with permissive hypercapnia
-- D. Normocapnia with modest PEEP  **(key)**
-- E. Prolonged inspiratory time
-
-*Explanation:* Hypoxemia, hypercapnia and acidosis all raise pulmonary vascular resistance, and high intrathoracic pressure raises right ventricular afterload. Normal pCO2 with modest PEEP avoids both problems. Permissive hypercapnia suits lung protection in ARDS but worsens pulmonary vasoconstriction here. High PEEP, large tidal volumes and a long inspiratory time all raise mean airway pressure and strain the right ventricle.
-
-*Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
-
-*Source:* Kornas RL, Owyang CG, Sakles JC, Foley LJ, Mosier JM. Evaluation and management of the physiologically difficult airway. Consensus recommendations from Society for Airway Management. Anesth Analg. 2021. https://doi.org/10.1213/ANE.0000000000005233
-
-### airway-28: Frothy sputum in an older man with a heart murmur
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-An 81-year-old man presents to the emergency department with 6 hours of worsening breathlessness. He has known severe aortic stenosis, with a valve area of 0.7 cm2, and was awaiting valve replacement. He is coughing frothy pink sputum and has crackles to both apices. BiPAP was started 40 minutes ago. He has received furosemide 40 mg IV. He is now drowsy and hard to rouse. A venous blood gas shows pH 7.16 and pCO2 68 mmHg.
-
-- Temperature: 36.8°C oral
-- Pulse: 112/minute
-- Resp.: 34/minute
-- BP: 96/64 mmHg
-- O2 sat: 86% on BiPAP with FiO2 1.0
-- Weight: 72 kg
-
-#### Q1
-**Which of the following is the most appropriate next step in his management?**
-
-- A. furosemide 80 mg IV and continue BiPAP
-- B. High-dose nitroglycerin infusion
-- C. Increase BiPAP pressures
-- D. Prepare for intubation now  **(key)**
-- E. Switch to high-flow nasal oxygen
-
-*Explanation:* He is drowsy and hard to rouse, with a pH of 7.16, a pCO2 of 68 mmHg and a saturation of 86% after 40 minutes of BiPAP, so noninvasive ventilation is failing and he can no longer protect his airway. He needs intubation. More furosemide or higher BiPAP pressures delay a needed step in a patient who is already obtunded. High-dose nitroglycerin can drop his pressure dangerously, because a fixed aortic valve cannot let cardiac output rise when preload and afterload fall. High-flow nasal oxygen gives less support than BiPAP.
-
-*Key feature:* Airway management 2. Anticipate early intubation in patients likely to deteriorate, such as those with burns, trauma, airway swelling, coma, or obesity.
-
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 9, Non-Invasive Positive Pressure Ventilation and High-Flow Nasal Oxygen. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
-
-#### Q2
-**Which of the following hemodynamic goals is most important during his induction and intubation?**
-
-- A. Deliberate hypotension to systolic 80 mmHg
-- B. Heart rate above 120/minute
-- C. Lower afterload with a vasodilator
-- D. Maintain systemic vascular resistance  **(key)**
-- E. Reduce preload before induction
-
-*Explanation:* With severe aortic stenosis the stroke volume is fixed, so blood pressure depends on systemic vascular resistance, and coronary perfusion of a thick left ventricle depends on diastolic pressure. Keeping vascular tone up, with a vasopressor running and a reduced induction dose, prevents the spiral of hypotension and ischemia. A vasodilator or deliberate hypotension removes that support. Tachycardia shortens diastole and worsens ischemia. Reducing preload lowers the filling that a stiff ventricle needs.
-
-*Key feature:* Airway management 5. Choose RSI drugs carefully when the patient has contraindications or conditions that favour specific agents.
-
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 39, Cardiovascular Emergencies. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
-
-#### Q3
-*Update:* One minute after intubation his BP is 64/40 mmHg. Capnography shows a sustained waveform. Breath sounds are equal on both sides, and there is no rash or wheeze. The tube is at 23 cm at the teeth.
-
-**Which of the following is the most likely cause of his hypotension?**
-
-- A. Anaphylaxis to rocuronium
+- A. Cuff at or above the vocal cords  **(key)**
 - B. Esophageal intubation
 - C. Right mainstem intubation
-- D. Tension pneumothorax
-- E. Vasodilation and lower preload  **(key)**
+- D. Ruptured tracheal cuff
+- E. Tube blocked by secretions
 
-*Explanation:* Induction drugs remove sympathetic tone and positive pressure ventilation reduces venous return, and a stenotic aortic valve cannot compensate for either. That is the commonest cause of hypotension just after intubation in a patient like him. A sustained capnography waveform excludes esophageal intubation. Equal breath sounds and a tube at 23 cm make mainstem intubation and tension pneumothorax unlikely. There is no rash or wheeze to suggest anaphylaxis. A vasopressor is the immediate treatment.
+*Explanation:* A tube at 17 cm at the teeth in an adult man sits too shallow, and a cuff lying at or above the cords lets him make sounds and gives a large leak with a small, irregular capnography trace despite a normal cuff pressure. It should be advanced under scope vision. An esophageal tube can also let a patient make sounds, but it gives no sustained capnography waveform. A right mainstem tube lies too deep, not too shallow. A ruptured cuff would not hold a pressure of 28 cmH2O. A tube blocked by secretions makes bagging stiff without a leak.
 
 *Key feature:* Airway management 6. Confirm tube placement with end tidal CO2, oximetry, and blood gases to catch misplacement that is not obvious.
 
-*Source:* Kornas RL, Owyang CG, Sakles JC, Foley LJ, Mosier JM. Evaluation and management of the physiologically difficult airway. Consensus recommendations from Society for Airway Management. Anesth Analg. 2021. https://doi.org/10.1213/ANE.0000000000005233
+*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 1. Difficult airway management encountered in an unconscious patient. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02007-0
 
 ### airway-29: Tiring on high-flow oxygen
 
@@ -1102,70 +1111,69 @@ A 31-year-old man is brought to the emergency department by paramedics after smo
 
 *Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 1. Difficult airway management encountered in an unconscious patient. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02007-0
 
-### airway-31: Child with hives and a hoarse cry
+### airway-31: A shake after jaw surgery
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 5-year-old boy is brought to the emergency department by his mother 20 minutes after eating a cookie that contained peanuts. He has a known peanut allergy. He has hives over his trunk, swollen lips and a hoarse cry, and he is drooling. He has soft inspiratory stridor at rest and wheeze in both lungs. He vomited once. He has not received epinephrine.
+You are working in a rural hospital emergency department. The nearest tertiary centre is 90 minutes away by air ambulance. A 34-year-old man is brought in by ambulance 30 minutes after drinking a protein shake that a friend made. He is allergic to peanut, and the shake contained peanut butter. Six days ago his fractured mandible was repaired with plates, and his upper and lower teeth were wired together. Within 10 minutes of the shake he had hives, a thick tongue and a tight throat. Paramedics gave epinephrine 0.5 mg IM 15 minutes ago.
 
-- Temperature: 37.0°C tympanic
-- Pulse: 156/minute
-- Resp.: 40/minute
-- BP: 76/44 mmHg
-- O2 sat: 91% on room air
-- Weight: 20 kg
+His voice is hoarse and he is drooling through the gaps between his teeth. His lips are swollen and his tongue presses against his closed teeth. There is soft inspiratory stridor and scattered wheeze. Hives cover his trunk. IV access is in place.
+
+- Temperature: 36.8°C oral
+- Pulse: 128/minute
+- Resp.: 28/minute
+- BP: 84/50 mmHg
+- O2 sat: 93% on room air
+- Weight: 80 kg
 
 #### Q1
-**Which of the following is the most appropriate first medication and dose for this child?**
+*Update:* You give a second dose of epinephrine 0.5 mg IM and 2 L of crystalloid IV. Ten minutes later his BP is 82/48 mmHg and the stridor is unchanged.
 
-- A. epinephrine 1 mg IM
-- B. epinephrine 0.5 mg IM
-- C. epinephrine 0.2 mg IM  **(key)**
-- D. epinephrine 0.01 mg IM
-- E. epinephrine 0.2 mg IV push
+**Which of the following is the most appropriate next medication for him?**
 
-*Explanation:* Stridor, wheeze, hypotension and hives after peanut exposure are anaphylaxis, and IM epinephrine is the first treatment. The dose is 0.01 mg/kg of the 1 mg/mL solution, so 0.01 x 20 kg = 0.2 mg, into the anterolateral thigh. The 0.01 mg option confuses the per kilogram dose with the total dose. The 0.5 mg option is the adult maximum and 1 mg is five times his dose. An undiluted IV push of 0.2 mg risks arrhythmia and severe hypertension, and IV epinephrine is given as a titrated infusion when IM doses fail.
+- A. diphenhydramine 50 mg IV
+- B. epinephrine infusion IV  **(key)**
+- C. epinephrine 1 mg IV push
+- D. methylprednisolone 125 mg IV
+- E. norepinephrine infusion IV
+
+*Explanation:* He is still hypotensive, with unchanged stridor, after two IM doses of epinephrine and 2 L of crystalloid, so his anaphylaxis is refractory to IM treatment. WAO guidance supports a low-dose IV epinephrine infusion by pump, in a monitored patient, for reactions that do not respond to IM epinephrine. A 1 mg IV push is a bolus at the cardiac arrest dose, and IV boluses of epinephrine can cause fatal arrhythmias in a patient with a pulse. Norepinephrine can raise his BP but does not replace epinephrine, the drug WAO names for anaphylaxis. Diphenhydramine mainly relieves skin symptoms, and glucocorticoids such as methylprednisolone may give no acute benefit.
 
 *Key feature:* Anaphylaxis 3. Treat anaphylaxis fast with epinephrine, early airway management when needed, IV access, and fluid resuscitation.
 
-*Source:* Cardona V, Ansotegui IJ, Ebisawa M, et al. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020. https://doi.org/10.1016/j.waojou.2020.100472
+*Source:* Cardona V, Ansotegui IJ, Ebisawa M, and colleagues. World Allergy Organization anaphylaxis guidance 2020. World Allergy Organ J. 2020. https://doi.org/10.1016/j.waojou.2020.100472
 
 #### Q2
-*Update:* He receives two doses of IM epinephrine and an epinephrine infusion is started. Ten minutes later his stridor is louder, his voice is muffled and his O2 saturation is 88% on a nonrebreather mask.
+*Update:* Twenty minutes later his BP is 106/64 mmHg and the hives are fading. His tongue is larger, his speech is harder to understand and the stridor is louder. The air ambulance can leave in 15 minutes.
 
-**Which of the following is the most appropriate airway action now?**
+**Which of the following is the most appropriate airway plan for his transfer?**
 
-- A. dexamethasone 12 mg IV and observe
-- B. Nebulized salbutamol and reassess
-- C. Needle cricothyroidotomy now
-- D. Prompt intubation by a skilled operator  **(key)**
-- E. Trial of nebulized epinephrine
+- A. Fly awake on nebulized epinephrine
+- B. Fly awake sitting upright
+- C. Fly awake with a surgical airway kit
+- D. Intubate here before the flight  **(key)**
+- E. Keep him here until swelling settles
 
-*Explanation:* Stridor that worsens despite IM and IV epinephrine, a muffled voice and falling saturation show progressive upper airway swelling. Every minute of delay makes intubation harder, so the most skilled available operator should secure the airway now. Steroids act over hours and do not treat the swelling in time. Nebulized salbutamol treats wheeze, not laryngeal edema. Nebulized epinephrine can be an adjunct but does not replace a definitive airway when systemic epinephrine has failed. Needle cricothyroidotomy is a rescue for failed oxygenation, not the first plan.
+*Explanation:* His airway is getting worse while his circulation recovers: the tongue is larger, his speech is harder to understand and the stridor is louder. Upper airway swelling that keeps progressing on treatment can close the airway, and an aircraft cabin offers little space, noise and few hands if that happens. CAFG guidance allows a predicted difficult intubation to be deferred only when the patient can be safely temporized while expertise is found or transfer occurs, and progressive obstruction does not allow that. Flying awake, whether sitting up, on nebulized epinephrine or with a surgical kit on board, leaves the definitive step to the flight. Keeping him here until the swelling settles delays the transfer he needs while the swelling is still growing.
 
 *Key feature:* Airway management 2. Anticipate early intubation in patients likely to deteriorate, such as those with burns, trauma, airway swelling, coma, or obesity.
 
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 37, Distorted Airways and Acute Upper Airway Obstruction. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
+*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
 
 #### Q3
-**Which of the following preparations are most appropriate for intubating this child?**
+**Which of the following steps is needed first under any airway plan for him?**
 
-Select 2.
+- A. Cut the fixation wires  **(key)**
+- B. Give glycopyrrolate 0.2 mg IV
+- C. Insert a nasogastric tube
+- D. Obtain a CT scan of the neck
+- E. Remove the arch bars
 
-- A. Blind nasotracheal intubation kit
-- B. Cricoid pressure during induction
-- C. ENT surgeon at the bedside  **(key)**
-- D. Larger tube to limit airway resistance
-- E. Lying flat for preoxygenation
-- F. Nasal route for the tube
-- G. propofol 3 mg/kg IV for induction
-- H. Smaller tubes than the age formula  **(key)**
-
-*Explanation:* Laryngeal swelling narrows the glottis, so tubes half a size or more below the age formula should be ready, alongside the usual size. A surgeon able to perform an emergency surgical airway should be at the bedside, because a swollen airway can defeat both intubation and mask ventilation. A larger tube will not pass the swollen glottis. Propofol at 3 mg/kg would worsen his shock. Lying flat worsens obstruction and preoxygenation, and cricoid pressure can distort an already narrow view. Blind and nasal approaches traumatize swollen tissue.
+*Explanation:* His upper and lower teeth are wired together, so there is no oral route for laryngoscopy, a supraglottic airway, suction or rescue ventilation, and he cannot clear vomit. Kellman and Losquadro advise keeping wire cutters at the bedside and cutting the fixation wires when significant dyspnea or severe nausea or vomiting develops, and he has stridor with worsening swelling. The arch bars can stay, because cutting the wires that join the jaws frees the mouth and removing the bars is a surgical task. A nasogastric tube adds a device to a swollen airway and does not open the mouth. Glycopyrrolate may dry secretions but gives no access, and a CT scan takes him away from the resuscitation area.
 
 *Key feature:* Airway management 3. Before intubating, predict difficulty with tools like LEMON or 3-3-2 and prepare equipment and backups to match.
 
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 37, Distorted Airways and Acute Upper Airway Obstruction. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
+*Source:* Kellman RM, Losquadro WD. Comprehensive airway management of patients with maxillofacial trauma. Craniomaxillofac Trauma Reconstr. 2008. https://doi.org/10.1055/s-0028-1098962
 
 ### airway-32: Young woman who can no longer lie flat
 
@@ -1264,21 +1272,6 @@ A 76-year-old man is brought to the emergency department by ambulance after fall
 - Weight: 70 kg
 
 #### Q1
-**Which of the following is the most appropriate way to restrict motion of his cervical spine?**
-
-- A. Padding to hold his usual flexed posture  **(key)**
-- B. Rigid collar in neutral alignment
-- C. Sandbags with the head flat
-- D. Traction to straighten the neck
-- E. No spinal motion restriction
-
-*Explanation:* In ankylosing spondylitis the spine is fused and brittle, and a fracture behaves like a break in a long bone. Forcing the neck into neutral with a rigid collar, flat positioning or traction can displace the fracture and injure the cord. The spine should be supported in the flexed posture he had before the fall, as the paramedics did with padding. A three-column fracture with new hand tingling is unstable, so he needs motion restriction.
-
-*Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
-
-*Source:* Clarke A, James S, Ahuja S. Ankylosing spondylitis. Inadvertent application of a rigid collar after cervical fracture, leading to neurological complications and death. Acta Orthop Belg. 2010. https://pubmed.ncbi.nlm.nih.gov/20698467/
-
-#### Q2
 **Which of the following findings in this patient predict difficult laryngoscopy?**
 
 Select 2.
@@ -1298,7 +1291,7 @@ Select 2.
 
 *Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
 
-#### Q3
+#### Q2
 *Update:* Over the next 2 hours his breathing becomes shallow and his forced vital capacity falls to 0.9 L. He remains alert and cooperative. You decide to intubate him.
 
 **Which of the following is the most appropriate intubation technique for this patient?**
@@ -1315,8 +1308,8 @@ Select 2.
 
 *Source:* Ahmad I, El-Boghdadly K, Bhagrath R, et al. Difficult Airway Society guidelines for awake tracheal intubation (ATI) in adults. Anaesthesia. 2020. https://doi.org/10.1111/anae.14904
 
-#### Q4
-*Update:* The tube is passed with the awake flexible scope and capnography confirms tracheal placement. He is still awake.
+#### Q3
+*Update:* The tube is placed and capnography confirms tracheal placement. He can still follow commands.
 
 **Which of the following should be done before he is given deeper sedation?**
 
@@ -1476,7 +1469,7 @@ A 63-year-old man is brought to the emergency department by paramedics in cardia
 - D. Pause CPR to auscultate after intubation
 - E. Ventilate at 20 breaths per minute
 
-*Explanation:* In a witnessed ventricular fibrillation arrest, survival depends most on high-quality compressions and early defibrillation. Bag-mask ventilation is already working, so an advanced airway should be placed without interrupting compressions, and never at the cost of a shock. Pausing CPR to listen for breath sounds wastes perfusion time and is less reliable than waveform capnography. Once an advanced airway is in, ventilation is 1 breath every 6 seconds, and 20 breaths per minute raises intrathoracic pressure and cuts venous return. Routine cricoid pressure is not recommended.
+*Explanation:* In a witnessed ventricular fibrillation arrest, survival depends most on high-quality compressions and early defibrillation. Bag-mask ventilation is already working, so an advanced airway should be placed without interrupting compressions, and never at the cost of a shock. Pausing CPR to listen for breath sounds wastes perfusion time and is less reliable than waveform capnography. Ventilating at 20 breaths per minute raises intrathoracic pressure and cuts venous return. Routine cricoid pressure is not recommended.
 
 *Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
 
@@ -2040,205 +2033,209 @@ A 67-year-old man presents to the emergency department after coughing up about 3
 
 *Source:* Davidson K, Shojaee S. Managing massive hemoptysis. Chest. 2020.
 
-### airway-45: Three failed attempts after an overdose
+### airway-45: Pneumonia in a woman with a stiff jaw and neck
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 44-year-old man is brought to the emergency department by paramedics after an overdose of quetiapine and alcohol. GCS is 7, and he has vomited. His BMI is 41 kg/m2. His neck is short, and the distance from his chin to his thyroid notch is 1 fingerbreadth. After suction and preoxygenation, rapid sequence intubation with rocuronium is performed. Three attempts by two operators, including two with a video laryngoscope and a bougie, show nothing beyond the tip of the epiglottis. Between attempts, two-person bag-mask ventilation with an oral airway keeps his O2 saturation at 93%.
+A 40-year-old woman with long-standing rheumatoid arthritis is brought to the emergency department with 3 days of fever and cough and increasing confusion. She takes methotrexate and prednisone. She has had several jaw and neck surgeries in the past, and her neck is fused at C1 and C2.
 
-- Temperature: 36.2°C oral
-- Pulse: 112/minute
-- BP: 108/66 mmHg
-- O2 sat: 93% on bag-mask ventilation with oxygen
-- Weight: 128 kg
+She is confused and cannot follow instructions. She has right lower lobe crackles. She can open her mouth about 2.5 cm, and her neck barely extends. Her thyromental distance is 7 cm and her BMI is 23 kg/m2. Her dentition is normal. Her SpO2 remains 86% on noninvasive ventilation, and you decide she needs intubation now.
+
+- Temperature: 38.8°C oral
+- Pulse: 118/minute
+- Resp.: 34/minute
+- BP: 102/60 mmHg
+- O2 sat: 86% on noninvasive ventilation, FiO2 1.0
 
 #### Q1
-**Which of the following findings in this patient predicted difficult laryngoscopy?**
+**Which of the following findings in this patient predict difficult laryngoscopy?**
 
 Select 2.
 
-- A. Age of 44 years
-- B. BMI of 41 kg/m2  **(key)**
-- C. Glasgow Coma Scale of 7
-- D. Pulse of 112/minute
-- E. Quetiapine ingestion
-- F. Recent alcohol intake
-- G. Short thyromental distance  **(key)**
-- H. Vomiting before arrival
+- A. BMI of 23 kg/m2
+- B. Limited neck extension  **(key)**
+- C. Mouth opening of 2.5 cm  **(key)**
+- D. Normal dentition
+- E. Temperature of 38.8°C
+- F. Thyromental distance of 7 cm
 
-*Explanation:* A distance of only one fingerbreadth from chin to thyroid notch, where about three fingerbreadths or 6 cm are expected, means the larynx sits high and anterior and the tongue has little room to be displaced. Obesity also predicts a difficult view and makes positioning and mask ventilation harder. His age and pulse are not predictors. Alcohol and quetiapine explain his level of consciousness but not his anatomy. A GCS of 7 is the reason to intubate, not a predictor of a hard view. Vomiting soils the airway, but suction before induction had cleared it and the view still failed.
+*Explanation:* Laryngoscopy needs neck extension and enough mouth opening to insert a blade, and her fused upper neck and 2.5 cm opening both limit the view and the space. A thyromental distance of 7 cm is above the 6 cm threshold, and a BMI of 23 kg/m2 and normal teeth are reassuring. Her fever raises oxygen demand but does not predict a difficult view.
 
 *Key feature:* Airway management 3. Before intubating, predict difficulty with tools like LEMON or 3-3-2 and prepare equipment and backups to match.
 
 *Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
 
 #### Q2
-**Which of the following is the most appropriate next step in his airway management?**
+*Update:* After induction and paralysis, the first attempt with a hyperangulated video laryngoscope gives a view of the epiglottis only. Her SpO2 falls from 95% to 88% during the attempt.
 
-- A. Fourth attempt by the same operator
-- B. Fourth attempt with a smaller tube
-- C. Halt laryngoscopy and declare failure  **(key)**
-- D. Needle cricothyroidotomy
-- E. sugammadex to wake the patient
+**Which of the following is the most appropriate next step?**
 
-*Explanation:* The Canadian Airway Focus Group limits intubation attempts to three before failure is declared, because each attempt adds swelling and bleeding and brings closer the loss of the oxygenation that bag-mask ventilation still provides. Declaring failure moves the team to a planned exit strategy while he is oxygenated. A fourth attempt, with the same operator or a smaller tube, repeats what has failed. The guideline allows one further attempt only with a different technique, as an exit option. Waking him is not a real option, because his overdose will leave him unable to protect his airway after the rocuronium is reversed. Needle cricothyroidotomy is for a patient who cannot be oxygenated.
+- A. Continue the attempt a little longer
+- B. Hand the laryngoscope to a colleague
+- C. Remove the blade and reoxygenate  **(key)**
+- D. Scalpel cricothyrotomy now
+- E. Switch to a direct laryngoscope
+
+*Explanation:* Further attempts are reasonable only while oxygenation is maintained, so the blade should come out and she should be reoxygenated by face mask with two hands and an oral airway before any change of device, operator or technique. Continuing the attempt lets her desaturate further. Handing over or switching devices without first restoring oxygen repeats the same risk. A cricothyrotomy is for a cannot ventilate, cannot oxygenate situation, which has not been established.
 
 *Key feature:* Airway management 1. When first attempts at airway control fail, move promptly to alternative rescue techniques.
 
 *Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 1. Difficult airway management encountered in an unconscious patient. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02007-0
 
 #### Q3
-*Update:* A second-generation supraglottic airway is placed. Capnography shows a normal waveform, and his O2 saturation rises to 97%.
+*Update:* Two more attempts by a second operator fail. A second-generation supraglottic airway is placed and ventilates well, with a sustained capnography waveform and SpO2 of 95%.
 
 **Which of the following is the most appropriate way to obtain a definitive airway?**
 
 - A. Blind intubation through the device
-- B. Flexible scope intubation through the device  **(key)**
-- C. Keep the device for 48 hours
-- D. Remove it for more laryngoscopy
-- E. Swap for a first-generation device
+- B. Direct laryngoscopy by a third person
+- C. Flexible scope intubation through the device  **(key)**
+- D. Nasal intubation over a bougie
+- E. Scalpel cricothyrotomy now
 
-*Explanation:* With oxygenation restored through the supraglottic airway, intubation through it with a flexible bronchoscope, often over an exchange catheter, is a recommended exit strategy that keeps ventilation going during the attempt. Blind passage of a tube through the device has a low success rate. Removing the device for more laryngoscopy gives up oxygenation for a technique that has already failed three times. A supraglottic airway is not a definitive airway for days of ventilation in a patient who vomited. A first-generation device lacks the gastric drain that protects him.
+*Explanation:* Three attempts have failed, so another laryngoscopy repeats a failed strategy. With the supraglottic airway oxygenating her well, it can serve as a conduit for flexible scope intubation, which passes the tube under vision without needing neck movement or a wide mouth opening. Blind passage through the device has a high failure rate and risks trauma. Nasal intubation over a bougie is blind and unsafe. A surgical airway is not needed while she is oxygenating well through the device.
 
 *Key feature:* Airway management 1. When first attempts at airway control fail, move promptly to alternative rescue techniques.
 
 *Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 1. Difficult airway management encountered in an unconscious patient. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02007-0
 
-### airway-46: Ventilator alarm after a motorcycle crash
+### airway-46: Falling oxygen after a house fire
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 36-year-old man was intubated in the emergency department 40 minutes ago for a GCS of 6 after a motorcycle crash. A chest X-ray after intubation showed the tube tip 4 cm above the carina, fractures of the left fourth to seventh ribs and no pneumothorax. The tube remains at 23 cm at the teeth. He is on volume control ventilation with a tidal volume of 500 mL and PEEP of 5 cmH2O. The ventilator now alarms. Peak pressure has risen from 24 to 48 cmH2O and plateau pressure from 18 to 44 cmH2O.
+A 46-year-old man was carried out of a burning house by firefighters after 20 minutes in a smoke-filled basement. He was intubated in the emergency department 90 minutes ago for hoarseness, stridor and soot in the mouth, with a cuffed tube at 23 cm at the teeth and a normal post-intubation chest X-ray. He has partial thickness burns to his face and hands.
 
-- Pulse: 134/minute
-- BP: 78/40 mmHg
-- O2 sat: 82% on FiO2 1.0 by ventilator
-- Weight: 80 kg
+The ventilator now alarms for high pressure. His SpO2 has fallen from 98% to 86%. The capnography trace has shrunk to a small, rounded waveform. Breath sounds are quiet but equal on both sides, with no wheeze. The tube remains at 23 cm. The trachea is midline.
+
+- Temperature: 37.4°C tympanic
+- Pulse: 118/minute
+- Resp.: 18/minute
+- BP: 124/72 mmHg
+- O2 sat: 86% on FiO2 1.0
 
 #### Q1
-**Which of the following does the change in his airway pressures most likely indicate?**
+**Which of the following is the most likely cause of his deterioration?**
 
-- A. Increased airway resistance
-- B. Kinked or bitten tube
-- C. Leak in the ventilator circuit
-- D. Oversedation of the patient
-- E. Reduced respiratory compliance  **(key)**
+- A. Bronchospasm from the smoke
+- B. Esophageal tube migration
+- C. Obstructed endotracheal tube  **(key)**
+- D. Right mainstem migration
+- E. Tension pneumothorax
 
-*Explanation:* Peak pressure reflects resistance plus compliance, and plateau pressure reflects compliance alone. Both have risen by a similar amount, from 24 to 48 and from 18 to 44 cmH2O, so the problem is stiffness of the lung or chest wall, such as a pneumothorax. Increased resistance from a kinked tube, secretions or bronchospasm raises peak pressure with little change in plateau pressure. A circuit leak lowers pressures. Oversedation does not raise airway pressures.
+*Explanation:* Smoke injury strips the airway lining and forms thick casts of mucus and fibrin that can block the tube, which raises airway pressure and shrinks the capnography trace while breath sounds stay equal and the tube depth is unchanged. Bronchospasm causes wheeze. An esophageal tube would lose the waveform completely and would usually follow a change in depth. Right mainstem migration and tension pneumothorax give unequal breath sounds, and he has a midline trachea and normal BP.
 
 *Key feature:* Airway management 6. Confirm tube placement with end tidal CO2, oximetry, and blood gases to catch misplacement that is not obvious.
 
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 10, Mechanical Ventilation. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
+*Source:* Walker PF, Buehner MF, Wood LA, and colleagues. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015. https://doi.org/10.1186/s13054-015-1077-4
 
 #### Q2
 **Which of the following is the most appropriate first step?**
 
-- A. Give a 1 L crystalloid bolus
-- B. Hand-bag with 100% oxygen  **(key)**
-- C. Increase PEEP to 15 cmH2O
-- D. Increase the sedation infusion
-- E. Order a portable chest X-ray
+- A. Chest X-ray before any change
+- B. Increase the pressure alarm limit
+- C. Needle decompression of the chest
+- D. Pass a suction catheter down the tube  **(key)**
+- E. Salbutamol through the circuit
 
-*Explanation:* In a ventilated patient who desaturates suddenly, disconnecting the ventilator and bagging by hand with 100% oxygen removes the ventilator as a cause and lets you feel how stiff the lungs are while the tube, the chest and the equipment are checked. A chest X-ray takes time he does not have. Raising PEEP adds to intrathoracic pressure in a hypotensive patient. Fluid and sedation do not address the cause of the pressure rise.
+*Explanation:* Passing a suction catheter tests whether the tube is patent and can remove a cast at the same time, after disconnecting the ventilator and bagging with 100% oxygen. If the catheter will not pass, the tube is obstructed and must be exchanged. Raising the alarm limit ignores the cause. Needle decompression treats a tension pneumothorax, which the equal breath sounds and normal BP do not suggest. Salbutamol does not clear a cast. Waiting for a chest X-ray delays rescue while he desaturates.
 
 *Key feature:* Airway management 1. When first attempts at airway control fail, move promptly to alternative rescue techniques.
 
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 10, Mechanical Ventilation. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
+*Source:* Walker PF, Buehner MF, Wood LA, and colleagues. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015. https://doi.org/10.1186/s13054-015-1077-4
 
 #### Q3
-*Update:* Hand bagging is very stiff. Capnography shows a waveform. A suction catheter passes easily down the tube. Breath sounds are absent on the left, and the trachea is deviated to the right.
+*Update:* The problem is found and corrected. The capnography waveform returns to normal and his SpO2 reads 99%. His lactate is 5.1 mmol/L.
 
-**Which of the following is the most appropriate next step?**
+**Which of the following is the most appropriate test to confirm that his oxygenation is adequate?**
 
-- A. Chest X-ray before any procedure
-- B. Decompress the left pleural space  **(key)**
-- C. Pull the tube back by 2 cm
-- D. Replace the endotracheal tube
-- E. Suction the tube for a mucus plug
+- A. Blood gas with co-oximetry  **(key)**
+- B. Continuous pulse oximetry
+- C. End-tidal CO2 trend
+- D. Peak airway pressure trend
+- E. Portable chest X-ray
 
-*Explanation:* A capnography waveform and an unchanged depth of 23 cm make displacement unlikely, and an easily passed suction catheter excludes obstruction. Absent left breath sounds, tracheal deviation to the right, hypotension and left rib fractures under positive pressure point to a tension pneumothorax. The left chest needs immediate decompression by finger thoracostomy or needle, then a chest tube. A chest X-ray delays treatment. Pulling back or replacing the tube and suctioning do not treat a pneumothorax.
+*Explanation:* After smoke exposure, carboxyhemoglobin reads as oxyhemoglobin on a standard pulse oximeter, so an SpO2 of 99% can hide severe carbon monoxide poisoning. A blood gas with co-oximetry measures the carboxyhemoglobin and the true oxygen saturation, and his lactate of 5.1 mmol/L raises concern for carbon monoxide or cyanide toxicity. Continuous pulse oximetry is the misleading test here. End-tidal CO2 and peak pressure show ventilation and tube patency, not oxygen content. A chest X-ray does not measure oxygenation.
 
 *Key feature:* Airway management 6. Confirm tube placement with end tidal CO2, oximetry, and blood gases to catch misplacement that is not obvious.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support (ATLS) student course manual. 11th edition. 2025.
+*Source:* Walker PF, Buehner MF, Wood LA, and colleagues. Diagnosis and management of inhalation injury: an updated review. Crit Care. 2015. https://doi.org/10.1186/s13054-015-1077-4
 
-### airway-47: Light-headed with distended neck veins
+### airway-47: Young man with a thick heart and pneumonia
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 58-year-old woman with metastatic lung cancer presents to the emergency department with 3 days of increasing shortness of breath and light-headedness. She speaks in full sentences while sitting up. Her neck veins are distended and her heart sounds are muffled. Her pulsus paradoxus is 22 mmHg. POCUS shows a large circumferential pericardial effusion with collapse of the right ventricle in diastole. A colleague suggests intubating her because she looks unwell.
+A 26-year-old man with known obstructive hypertrophic cardiomyopathy is brought to the emergency department with 3 days of fever and cough and 12 hours of worsening breathlessness. His last echocardiogram showed a septal thickness of 24 mm and a resting outflow gradient of 70 mmHg. He takes metoprolol. He has vomited repeatedly today.
 
-- Temperature: 37.2°C oral
-- Pulse: 128/minute
-- Resp.: 28/minute
-- BP: 86/64 mmHg
-- O2 sat: 93% on 4 L/minute by nasal prongs
-- Weight: 54 kg
+He is confused and exhausted, with crackles over the left lung. His mucous membranes are dry. A harsh systolic murmur is heard at the left sternal border. Chest X-ray shows left lower lobe consolidation. He needs intubation for hypoxemic respiratory failure.
+
+- Temperature: 39.1°C oral
+- Pulse: 126/minute
+- Resp.: 36/minute
+- BP: 92/56 mmHg
+- O2 sat: 85% on 15 L/minute by nonrebreather mask
+- Weight: 78 kg
 
 #### Q1
-**Which of the following is the most appropriate next step in her management?**
+**Which of the following is the most important step before his induction?**
 
-- A. BiPAP to reduce her work of breathing
-- B. furosemide 40 mg IV for congestion
-- C. nitroglycerin spray for dyspnea
-- D. Rapid sequence intubation with ketamine
-- E. Urgent pericardiocentesis first  **(key)**
+- A. Crystalloid bolus to restore preload  **(key)**
+- B. Dobutamine infusion for contractility
+- C. Furosemide 40 mg IV
+- D. Nitroglycerin to lower afterload
+- E. Stop metoprolol for the heart rate
 
-*Explanation:* She has cardiac tamponade, and her circulation depends on high venous pressure filling a compressed heart. Positive pressure from intubation or BiPAP raises intrathoracic pressure, cuts venous return and can cause arrest, so the effusion should be drained first while she breathes on her own. She is speaking in full sentences, so her airway is not the immediate threat. Furosemide and nitroglycerin reduce the preload that keeps her heart filling and can precipitate collapse.
+*Explanation:* In obstructive hypertrophic cardiomyopathy the outflow gradient worsens when the ventricle is underfilled, and he is dry from fever and vomiting, so a crystalloid bolus before induction protects him against the drop in preload that induction and positive pressure bring. Dobutamine increases contractility and worsens the obstruction. Nitroglycerin and furosemide reduce preload and afterload and can cause collapse. His beta blocker slows the heart and helps filling, so it should not be stopped.
 
 *Key feature:* Airway management 4. Adapt the airway strategy to special contexts such as trauma, children, or significant comorbid illness.
 
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 33, The Unstable Patient: Cardiopulmonary Optimization for Emergency Airway Management. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
+*Source:* Arbelo E, Protonotarios A, Gimeno JR, and colleagues. 2023 ESC guidelines for the management of cardiomyopathies. Eur Heart J. 2023. https://doi.org/10.1093/eurheartj/ehad194
 
 #### Q2
-*Update:* While the pericardiocentesis is being set up, she becomes obtunded and her O2 saturation falls to 82%. She must be intubated before drainage.
+**Which of the following drugs is most appropriate to treat hypotension during his induction?**
 
-**Which of the following strategies is most appropriate for her intubation?**
+- A. dobutamine 5 mcg/kg/minute IV
+- B. ephedrine 10 mg IV
+- C. epinephrine 10 mcg IV
+- D. milrinone 0.5 mcg/kg/minute IV
+- E. phenylephrine 100 mcg IV  **(key)**
 
-- A. High PEEP to recruit the lungs
-- B. Induction with propofol 2 mg/kg
-- C. Ketamine in a reduced dose, low PEEP  **(key)**
-- D. Large tidal volumes of 10 mL/kg
-- E. Supine flat before induction
-
-*Explanation:* Every part of the intubation should protect venous return and sympathetic tone. A reduced dose of ketamine keeps vascular tone better than other agents, and low PEEP with small tidal volumes keeps intrathoracic pressure down. Propofol at 2 mg/kg causes vasodilation and would likely precipitate arrest. High PEEP and large tidal volumes both raise intrathoracic pressure. She should stay as upright as possible until induction, because lying flat worsens her breathing and does not help her circulation.
+*Explanation:* When a patient with obstructive hypertrophic cardiomyopathy stays hypotensive after fluid, a vasoconstrictor should be considered, and phenylephrine is a pure vasoconstrictor without inotropic effect. It raises afterload and reduces the outflow gradient. Ephedrine, epinephrine and dobutamine increase contractility and heart rate, which worsen the obstruction. Milrinone adds contractility and vasodilation, which both lower BP further in this condition.
 
 *Key feature:* Airway management 5. Choose RSI drugs carefully when the patient has contraindications or conditions that favour specific agents.
 
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 33, The Unstable Patient: Cardiopulmonary Optimization for Emergency Airway Management. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
+*Source:* Arbelo E, Protonotarios A, Gimeno JR, and colleagues. 2023 ESC guidelines for the management of cardiomyopathies. Eur Heart J. 2023. https://doi.org/10.1093/eurheartj/ehad194
 
 #### Q3
-**Which of the following should be ready at the bedside before her induction?**
+**Which of the following physiologic findings in him most increase the risk of his intubation?**
 
-Select 2.
+Select 3.
 
-- A. Extra propofol drawn up
-- B. furosemide 40 mg IV ready
-- C. Nasogastric tube in place
-- D. nitroglycerin infusion running
-- E. norepinephrine infusion running  **(key)**
-- F. PEEP valve set at 15 cmH2O
-- G. Pericardiocentesis set up  **(key)**
+- A. Age of 26 years
+- B. Beta blocker taken at home
+- C. Hypoxemia on high oxygen  **(key)**
+- D. Low BP with obstruction  **(key)**
+- E. Repeated vomiting today  **(key)**
+- F. Weight of 78 kg
 
-*Explanation:* Induction and positive pressure may cause arrest in tamponade, so a norepinephrine infusion should be running and the pericardiocentesis kit should be open and ready, with the operator scrubbed to drain the effusion at once if her pressure falls. Extra propofol adds vasodilation. Furosemide and nitroglycerin reduce the preload she depends on. A PEEP of 15 cmH2O raises intrathoracic pressure. A nasogastric tube does not address the main danger.
+*Explanation:* Hypoxemia despite high-concentration oxygen shortens the time he can tolerate apnea. Repeated vomiting means a full stomach and a high risk of aspiration at induction. Hypotension with a fixed outflow obstruction means induction can cause collapse. Each is a physiologic issue that should be planned for before the airway is managed. His age and weight add no risk, and his home beta blocker slows the heart and helps the ventricle fill in obstructive hypertrophic cardiomyopathy.
 
 *Key feature:* Airway management 3. Before intubating, predict difficulty with tools like LEMON or 3-3-2 and prepare equipment and backups to match.
 
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 33, The Unstable Patient: Cardiopulmonary Optimization for Emergency Airway Management. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
+*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
 
 #### Q4
-*Update:* She is intubated with the ventilator on small tidal volumes and unchanged settings. Over 2 minutes her end-tidal CO2 falls from 34 to 12 mmHg with a normal-shaped but smaller waveform, and her BP falls to 60/40 mmHg.
+*Update:* After intubation he is ventilated with PEEP of 12 cmH2O. His BP falls to 70/40 mmHg, his heart rate rises to 140/minute and the murmur is louder. The end-tidal CO2 falls from 38 to 18 mmHg with a normal waveform shape.
 
-**Which of the following best explains the fall in her end-tidal CO2?**
+**Which of the following best explains the fall in his end-tidal CO2?**
 
 - A. Bronchospasm after intubation
-- B. Esophageal tube migration
+- B. Esophageal intubation
 - C. Hyperventilation by the ventilator
-- D. Leak around the cuff
-- E. Reduced cardiac output  **(key)**
+- D. Pulmonary embolism
+- E. Worsened outflow obstruction  **(key)**
 
-*Explanation:* End-tidal CO2 depends on the blood carrying CO2 to the lungs. With unchanged ventilator settings and a normal-shaped waveform, a fall from 34 to 12 mmHg alongside a BP of 60/40 mmHg means her cardiac output has collapsed, so the effusion must be drained now. An esophageal tube would lose the waveform altogether. Bronchospasm changes the shape of the waveform to a sloped upstroke. The settings have not changed, so the fall is not from hyperventilation. A cuff leak causes low volumes and alarms, not this pattern with hypotension.
+*Explanation:* End-tidal CO2 falls when less blood reaches the lungs, and a normal waveform shape shows the tube is in the trachea and the airways are open. High PEEP lowers venous return, and with tachycardia this worsens his outflow obstruction, which the louder murmur supports, cutting cardiac output. Esophageal intubation would lose the waveform. Bronchospasm changes the waveform shape. Overventilation would not cause hypotension with a louder murmur. A pulmonary embolism is possible but does not explain the louder murmur.
 
 *Key feature:* Airway management 6. Confirm tube placement with end tidal CO2, oximetry, and blood gases to catch misplacement that is not obvious.
 
-*Source:* Brown CA, Sakles JC, Mick NW, Mosier JM, Braude DA, editors. The Walls Manual of Emergency Airway Management. 6th ed. Wolters Kluwer. 2023. Chapter 11, Oxygen and Carbon Dioxide Monitoring. https://emergency.lwwhealthlibrary.com/book.aspx?bookid=3233
+*Source:* Ommen SR, Ho CY, Asif IM, and colleagues. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR guideline for the management of hypertrophic cardiomyopathy. Circulation. 2024. https://doi.org/10.1161/CIR.0000000000001250

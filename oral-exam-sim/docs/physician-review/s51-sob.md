@@ -10,6 +10,32 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - s51 sob-23 q3 serial leg US after nondiagnostic V/Q at high pretest (Thrombosis Canada vs Wells 1998). sob-43 rebuilt as stopped epoprostenol infusion.
 - s48 Lens B: reject or keep pulmonary-edema-39 and 40 (near copies of 23 and 31). Repeated teaching 16 q1 (s28, s42), 21 q1 (s12, s05), 35 q2 (s51 sob-17), 38 q1 (s15 pe-03). Four questions key "NIV failing, intubate". 29 q1 bendopnea at BMI 43 may be weak.
 - sob-26 q3: I could not confirm from the sources that stridor at rest marks a specific lumen size. The explanation says only that symptoms move from exertion to rest as the lumen narrows. *(samps-overlap-pass2b.md)*
+- sob-20 keys phentolamine as the alpha blocker for the crisis. Please confirm it is stocked in your hospital. The sources support alpha blockade first and a beta blocker only afterward. *(samps-replace-s51.md)*
+- sob-16 rests on case literature for retropharyngeal hematoma, because no guideline covers it. The reversal dose follows the NAC sample INR-based schedule of 2 000 units for an INR of 3 to 5. *(samps-replace-s51.md)*
+- sob-17 q2 is a menu question keyed None. Please confirm that no antibiotic or steroid is wanted for a drowning patient with crackles and pink frothy sputum. *(samps-replace-s51.md)*
+- sob-18 q2 keys azithromycin before the PCR result. Erythromycin and clarithromycin were kept out of the options because CDC lists them as acceptable at 1 to 5 months. *(samps-replace-s51.md)*
+- sob-21 q3 keys intubation over NIV in a drowsy woman at 31 weeks. The NIV guideline is cited for the principle that NIV needs an alert, cooperative patient, not for a pregnancy-specific rule. *(samps-replace-s51.md)*
+- sob-24 states in the stem that the department uses PEGeD, so the 1 000 ng/mL threshold applies. His age-adjusted cut-off (630) would give a different answer, and the explanation says so. *(samps-replace-s51.md)*
+- sob-27 cites the 2011 ATS/ERS/JRS/ALAT recommendation against mechanical ventilation for most patients with IPF. Later IPF guidelines did not revisit this question. *(samps-replace-s51.md)*
+- sob-29 q2 uses Winter's formula. It is cited to the original 1967 paper. *(samps-replace-s51.md)*
+- sob-36 q3 keys referral for TIPS for refractory hepatic hydrothorax. An indwelling pleural catheter, which AASLD allows with caution, was kept out of the options. *(samps-replace-s51.md)*
+- sob-39 q3 keys pulse methylprednisolone. The ACR/VF guideline accepts pulse IV or high-dose oral glucocorticoids, so high-dose oral prednisone was kept out of the options. *(samps-replace-s51.md)*
+- sob-40 cites CDC interim guidance because no Canadian guideline for vaping lung injury exists. *(samps-replace-s51.md)*
+- sob-41 q4 relies on the ESC three level scale, where a Wells score of 4.5 is intermediate. Thrombosis Canada allows more testing when suspicion stays high after a negative CT, so a reviewer may want the pretest wording checked. *(samps-replace-s51.md)*
+- sob-44 cites a 2023 narrative review for hypermagnesemia. The review's magnesium thresholds are in unusual units, so the SAMP relies only on the order in which signs appear and on IV calcium 1 g. *(samps-replace-s51.md)*
+- sob-47 keys the left lateral head-down position with 100% oxygen. The evidence for positioning in venous air embolism is weak but it is standard advice. *(samps-replace-s51.md)*
+- sob-24 q3 and q4 rest on CHEST 2021 for subsegmental PE, because no Canadian guideline covers it. The key avoids the anticoagulation versus surveillance question, which is still in equipoise, by adding a popliteal DVT. *(samps-replace-s51.md)*
+- sob-29 relies on a CJEM case report and the ATSDR toluene guideline. ATSDR suggests potassium phosphate, so the key reads "potassium replacement IV". *(samps-replace-s51.md)*
+- sob-47 cites a single review (Luzzatto 2020). Please confirm transfusion is the keyed first step at a hemoglobin of 57 g/L with dyspnea at rest. *(samps-replace-s51.md)*
+- sob-17 q4 accepts that a long QT arrhythmia is still possible in any unexplained drowning. The key rests on the breath-holding history. *(samps-replace-s51.md)*
+- sob-45 q2 keys small fluid boluses with a vasopressor. The cited source supports careful fluids, not vasopressors specifically. *(samps-replace-s51.md)*
+- shock-28 (s50) and the old sob-47 had the same story. Whoever owns s50 should know that sob-47 no longer uses it. *(samps-replace-s51.md)*
+- sob-20 phentolamine supply in Canada remains to be confirmed, as the writer noted. *(samps-replace-s51.md)*
+- sob-24 q4 is mapped to KF3 (emergency treatment of severe dyspnea, invasive or noninvasive ventilation), kept from the original SAMP. Starting anticoagulation for a popliteal DVT in a stable patient does not really test KF3. Consider a remap if batch coverage allows. *(samps-replace-s51.md)*
+- sob-29 q3 and sob-47 q3 are also mapped to KF3 for potassium replacement and transfusion. This is a loose fit. *(samps-replace-s51.md)*
+- sob-24 q4 update still implies leg imaging, so a careful candidate can infer the q3 key. The cue is weaker than before and cannot be removed without changing q3. *(samps-replace-s51.md)*
+- Counts: fixed 2 (sob-24, sob-47), pass 1 (sob-29). None re-rebuilt. *(samps-replace-s51.md)*
+- Checks: SAMP_BATCH=s51 npx vitest run tests/samps.test.ts tests/samp-quality.test.ts 647 passed. npx tsc --noEmit -p . clean. *(samps-replace-s51.md)*
 - pulmonary-edema-35 q2 (signs that CPAP is failing) and q3 (intubate) repeat pulmonary-edema-08 q1 and q2 (s15) and sob-17 q3 (s51). The rural transfer angle in q3 is new. q2 is not. Flagged, not rewritten, because I could not fetch a source for a verifiable replacement (CPAP settings in Masip 2018). *(samps-s48-lensA.md)*
 - pulmonary-edema-16 q3 (ECG, troponin, echo to find the trigger, with blood cultures, D-dimer, lipase and drug screen as distractors) nearly repeats sob-17 q4 (s51) and pulmonary-edema-01 q3 (s15). Flagged. *(samps-s48-lensA.md)*
 - pulmonary-edema-35 q2 (escalate nitrate, not beta-blocker, in hypertensive edema) overlaps sob-17 q2 (s51), which keys a nitroglycerin infusion at 100 mcg/minute with the same beta-blocker distractors. The bolus angle is new. *(samps-s48-lensB.md)*
@@ -34,223 +60,217 @@ Review reports: docs/reviews/writer-s51.md, samps-s51-lensA.md, samps-s51-lensB.
 
 ## SAMPs
 
-### sob-16: Sore throat and a muffled voice
+### sob-16: Throat pain after a fall at home
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department. The on-call otolaryngologist and anesthetist are 30 minutes away. A 48-year-old man presents to the emergency department with 10 hours of severe sore throat and pain on swallowing. Over the last 2 hours his voice has become muffled and he cannot swallow his saliva. He has type 2 diabetes treated with metformin. He is sitting upright, leaning forward and drooling. The oropharynx looks nearly normal apart from pooled saliva. The anterior neck is very tender over the hyoid. There is no stridor and the chest is clear.
+A 71-year-old woman presents to the emergency department 8 hours after she tripped on a rug and struck her chin and the front of her neck on the edge of a kitchen counter. Over the last 3 hours she has had pain on swallowing, a muffled voice and tightness in her throat. She is more breathless lying flat. She takes warfarin for atrial fibrillation. Her INR today is 4.6. She is sitting upright and spitting saliva into a cup. There is bruising over the front of the neck. The posterior pharyngeal wall bulges forward and looks dark purple. There is no stridor. The chest is clear. The cervical spine is not tender.
 
-- Temperature: 38.9°C oral
-- Pulse: 116/minute
+- Temperature: 36.9°C oral
+- Pulse: 104/minute irregular
 - Resp.: 22/minute
-- BP: 142/86 mmHg
+- BP: 164/88 mmHg
 - O2 sat: 96% on room air
+- Weight: 68 kg
 
 #### Q1
-**Which of the following is the most likely diagnosis in this patient?**
+**Which of the following findings best places the cause of her breathlessness in the upper airway?**
 
-- A. Acute supraglottitis  **(key)**
-- B. Bacterial tracheitis
-- C. Peritonsillar abscess
-- D. Retropharyngeal abscess
-- E. Streptococcal pharyngitis
+- A. Breathlessness when lying flat
+- B. Bulging dark posterior pharyngeal wall  **(key)**
+- C. Clear breath sounds in both lungs
+- D. Irregular pulse of 104/minute
+- E. Oxygen saturation of 96%
 
-*Explanation:* Severe pain on swallowing that is out of proportion to a near normal oropharynx, a muffled voice, drooling and tenderness over the hyoid place the problem above the glottis, in the epiglottis and supraglottic tissues. A peritonsillar abscess shows visible tonsillar bulging and uvular deviation, which this oropharynx lacks. A retropharyngeal abscess is uncommon in adults and causes neck stiffness and posterior pharyngeal swelling rather than anterior tenderness at the hyoid. Bacterial tracheitis is mainly a disease of children and causes a brassy cough and stridor. Streptococcal pharyngitis produces a red, exudative pharynx and does not stop a patient swallowing his saliva.
+*Explanation:* A dark, bulging posterior pharyngeal wall shows a mass directly behind the airway, and it fits with her muffled voice, painful swallowing and pooled saliva. Breathlessness when lying flat occurs with heart failure as well as upper airway narrowing, so it does not place the problem. Clear lungs make a lower airway cause less likely but do not show where the obstruction is. The irregular pulse reflects her known atrial fibrillation. A normal saturation does not measure how narrow the airway has become.
 
 *Key feature:* Shortness of breath 1. In acute dyspnea, distinguish upper from lower airway causes because emergency management differs.
 
-*Source:* Guldfred LA, Lyhne D, Becker BC. Acute epiglottitis. Epidemiology, clinical presentation, management and outcome. J Laryngol Otol. 2008.
+*Source:* Eskander A, de Almeida JR, Irish JC. Acute upper airway obstruction. N Engl J Med. 2019. https://doi.org/10.1056/NEJMra1811697
 
 #### Q2
-**Which of the following investigations is most appropriate to confirm the diagnosis and gauge airway narrowing?**
+**Which of the following is the most likely cause of her throat symptoms and breathlessness?**
 
-- A. Bedside flexible nasolaryngoscopy  **(key)**
-- B. CT of the neck with contrast
-- C. Lateral neck radiograph in radiology
-- D. Rapid antigen throat swab
-- E. Ultrasound of the neck soft tissues
+- A. Acute epiglottitis
+- B. Angioedema of the pharynx
+- C. Cervical esophageal perforation
+- D. Retropharyngeal abscess
+- E. Retropharyngeal hematoma  **(key)**
 
-*Explanation:* Flexible nasolaryngoscopy done with the patient sitting upright shows the swollen epiglottis directly and lets the operator judge how much of the airway is left, without moving him from the resuscitation room. CT needs him to lie supine in the scanner, away from airway equipment, which can precipitate obstruction. A lateral neck radiograph can miss supraglottitis and also sends him out of the department. A rapid antigen swab looks for streptococcal pharyngitis and does not assess the airway. Ultrasound of the epiglottis is operator dependent and does not grade supraglottic narrowing reliably.
+*Explanation:* A blow to the front of the neck, bruising over the neck and a dark purple swelling of the posterior pharyngeal wall in a woman with an INR of 4.6 point to bleeding into the retropharyngeal space. Minor trauma is enough to cause this in a patient taking warfarin, and the hematoma can compromise the airway. A retropharyngeal abscess develops over days with fever, and she is afebrile. Epiglottitis follows a febrile sore throat and does not bruise the neck. Angioedema swells the lips, tongue or uvula rather than the posterior pharyngeal wall. Esophageal perforation follows forceful vomiting or instrumentation, which she has not had.
 
 *Key feature:* Shortness of breath 1. In acute dyspnea, distinguish upper from lower airway causes because emergency management differs.
 
-*Source:* Guldfred LA, Lyhne D, Becker BC. Acute epiglottitis. Epidemiology, clinical presentation, management and outcome. J Laryngol Otol. 2008.
+*Source:* Akoglu E, Seyfeli E, Akoglu S, et al. Retropharyngeal hematoma as a complication of anticoagulation therapy. Ear Nose Throat J. 2008. https://pubmed.ncbi.nlm.nih.gov/18404913/
 
 #### Q3
-*Update:* Nasolaryngoscopy shows a swollen, red epiglottis. Twenty minutes later he develops soft inspiratory stridor and can no longer finish a sentence. O2 saturation is 91%. The otolaryngologist and anesthetist have just arrived.
+*Update:* CT of the neck confirms a large retropharyngeal hematoma narrowing the oropharyngeal airway. Anesthesia and otolaryngology are on their way to plan her airway.
 
-**Which of the following is the most appropriate airway plan for this patient?**
+**Which of the following treatments should be given now while the airway team prepares?**
 
-- A. Awake intubation with neck access ready  **(key)**
-- B. Bag-mask ventilation to assist breathing
-- C. High flow nasal oxygen and observation
-- D. Noninvasive positive pressure ventilation
-- E. Rapid sequence intubation in the department
+- A. Frozen plasma 4 units IV
+- B. Hold warfarin and repeat the INR
+- C. PCC 2 000 units and vitamin K 10 mg IV  **(key)**
+- D. tranexamic acid 1 g IV alone
+- E. vitamin K 10 mg IV alone
 
-*Explanation:* New stridor and falling saturation mean the supraglottic airway is closing. The Canadian Airway Focus Group advises awake tracheal intubation for an anticipated difficult airway with obstruction, so he keeps breathing on his own, with the front of the neck marked and a surgeon ready for a surgical airway. Rapid sequence induction removes his own airway tone and can turn partial obstruction into a cannot intubate, cannot oxygenate emergency. Noninvasive ventilation and bag-mask ventilation push gas against a swollen supraglottis and do not relieve the obstruction. Observation on high flow oxygen delays action while the stridor gets worse.
+*Explanation:* An INR of 4.6 lets the hematoma keep growing toward complete obstruction, so warfarin must be reversed at once. The National Advisory Committee on Blood and Blood Products gives 2 000 units of prothrombin complex concentrate (PCC) as a sample dose for an INR of 3 to 5, with IV vitamin K given at the same time, since vitamin K starts to lower the INR only after about 6 hours. Vitamin K alone is therefore too slow. The committee calls plasma for warfarin reversal inappropriate. Tranexamic acid does not replace the missing clotting factors. Holding warfarin and waiting lets the INR fall over days.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
+*Source:* National Advisory Committee on Blood and Blood Products. Recommendations for use of prothrombin complex concentrates in Canada. Revised 2022. https://nacblood.ca/en/resource/recommendations-use-prothrombin-complex-concentrates-canada
 
-### sob-17: Woke from sleep unable to breathe
+### sob-17: Found at the bottom of the pool
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 69-year-old woman is brought to the emergency department by ambulance with 40 minutes of severe shortness of breath that woke her from sleep. She has hypertension and type 2 diabetes. She ran out of her amlodipine and ramipril 1 week ago. Paramedics gave one 0.4 mg dose of nitroglycerin spray. She is sitting bolt upright, sweaty and speaking 1 or 2 words at a time. She is alert and follows commands. The JVP is 6 cm above the sternal angle. There are crackles to the apices of both lungs. There is no leg edema.
+A 17-year-old boy is brought to the emergency department by ambulance after a lifeguard pulled him from the bottom of a public swimming pool. He is a strong competitive swimmer. His friends say he had been swimming lengths underwater on one breath, after breathing fast and deep at the wall for a minute to stay under longer. He did not dive. He was not breathing for about 1 minute and started breathing after two rescue breaths, then coughed and vomited pool water. He has not vomited since. His friends say he used no alcohol or drugs. He is alert and oriented. He coughs pink frothy sputum. There are crackles throughout both lungs without wheeze. There is no sign of head or neck injury.
 
-- Temperature: 36.8°C oral
-- Pulse: 124/minute
-- Resp.: 36/minute
-- BP: 212/118 mmHg
-- O2 sat: 86% on 15 L/minute by nonrebreather mask
+- Temperature: 36.1°C tympanic
+- Pulse: 118/minute
+- Resp.: 32/minute
+- BP: 126/74 mmHg
+- O2 sat: 88% on 15 L/minute by nonrebreather mask
 
 #### Q1
-**Which of the following is the most appropriate respiratory support for this patient now?**
+**Which of the following is the most appropriate respiratory support for him now?**
 
-- A. High flow nasal oxygen at 60 L/minute
-- B. Noninvasive positive pressure ventilation  **(key)**
-- C. Rapid sequence intubation and ventilation
-- D. Simple face mask at 10 L/minute
-- E. Venturi mask at 60% FiO2
+- A. Bag-valve-mask ventilation
+- B. High flow nasal oxygen at 40 L/minute
+- C. Noninvasive ventilation by face mask  **(key)**
+- D. Rapid sequence intubation
+- E. Venturi mask at 60% oxygen
 
-*Explanation:* She has acute cardiogenic pulmonary edema, is alert and can protect her airway. The ERS/ATS guideline strongly recommends bilevel or CPAP noninvasive ventilation here, because positive pressure recruits flooded alveoli, lowers preload and afterload and reduces the need for intubation. High flow nasal oxygen gives only a small, variable positive pressure and is not the recommended first choice for cardiogenic edema. Intubation is not needed yet, as she is alert, and induction in a hypertensive, hypoxemic patient carries a high risk of arrest. A simple face mask or Venturi mask gives less oxygen than she is already receiving and no positive pressure.
+*Explanation:* He is alert, protecting his airway and no longer vomiting, but he stays hypoxemic on a nonrebreather mask because aspirated water has flooded his alveoli. The Wilderness Medical Society notes that noninvasive positive pressure ventilation has been used successfully in alert drowning patients with mild to moderate respiratory symptoms, with caution in those who are vomiting or confused. A Venturi mask gives less oxygen than he already receives. High flow nasal oxygen adds only a small and variable positive pressure. Intubation is kept for a falling level of consciousness or failure of noninvasive support. Bag-mask ventilation is for a patient who is not breathing adequately.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Rochwerg B, Brochard L, Elliott MW, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. Eur Respir J. 2017.
+*Source:* Davis CA, Schmidt AC, Sempsrott JR, et al. Wilderness Medical Society clinical practice guidelines for the treatment and prevention of drowning. 2024 update. Wilderness Environ Med. 2024. https://doi.org/10.1177/10806032241227460
 
 #### Q2
-*Update:* Noninvasive ventilation is started. Her BP is now 206/114 mmHg and her respiratory rate is 34/minute.
+**Which of the following medications should be started now to treat the lung injury from drowning?**
 
-**Which of the following medications is the most appropriate to give next?**
+Select 1.
 
-- A. furosemide 120 mg IV as a single bolus
-- B. labetalol 20 mg IV then infusion
-- C. metoprolol 5 mg IV every 5 minutes
-- D. morphine 4 mg IV every 10 minutes
-- E. nitroglycerin 100 mcg/minute IV infusion  **(key)**
+- A. ceftriaxone IV
+- B. dexamethasone IV
+- C. furosemide IV
+- D. methylprednisolone IV
+- E. piperacillin-tazobactam IV
+- F. salbutamol by inhaler
+- G. None  **(key)**
 
-*Explanation:* Sudden pulmonary edema with a BP of 212/118 mmHg after stopping her antihypertensives, and no leg edema, is driven by afterload and fluid redistribution more than by volume overload. A high dose intravenous nitrate lowers preload and afterload within minutes, and the ESC guideline supports vasodilators when systolic pressure is above 110 mmHg. Furosemide acts more slowly, and a large dose in a patient who is not volume overloaded risks hypovolemia and kidney injury once the edema clears. Beta-blockers such as metoprolol and labetalol reduce contractility and can precipitate cardiogenic shock in acute pulmonary edema. Morphine is linked to more intubation and is not recommended routinely.
+*Explanation:* The Wilderness Medical Society finds no evidence to support antibiotics or corticosteroids for the initial treatment of drowning. Ceftriaxone, piperacillin-tazobactam, dexamethasone and methylprednisolone therefore add risk without benefit. Antibiotics are considered later only if signs of pneumonia develop. Furosemide treats volume overload, which a healthy teenager who has just aspirated water does not have. Salbutamol treats bronchospasm, and he has crackles without wheeze. Support with oxygen and positive pressure is the treatment.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* McDonagh TA, Metra M, Adamo M, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. Eur Heart J. 2021.
+*Source:* Davis CA, Schmidt AC, Sempsrott JR, et al. Wilderness Medical Society clinical practice guidelines for the treatment and prevention of drowning. 2024 update. Wilderness Environ Med. 2024. https://doi.org/10.1177/10806032241227460
 
 #### Q3
-*Update:* Thirty minutes later she is drowsy, opens her eyes only to voice and breathes shallowly. She has received no opioid. Venous gas: pH 7.14, PCO2 78 mmHg. BP 164/96 mmHg.
+*Update:* After 1 hour of noninvasive ventilation at an FiO2 of 0.6, his O2 saturation is 93% and his pulse is 112/minute. He still has crackles in both lungs and pink frothy sputum. He has become drowsy and has vomited once into the mask.
 
-**Which of the following is the most appropriate next step in her management?**
+**Which of the following findings best shows that noninvasive ventilation is no longer safe for him?**
 
-- A. Change to high flow nasal oxygen
-- B. Give naloxone 0.4 mg IV
-- C. Increase the NIV inspiratory pressure
-- D. Rapid sequence intubation  **(key)**
-- E. Repeat the venous gas in 1 hour
+- A. Crackles still heard in both lungs
+- B. Drowsiness with vomiting into the mask  **(key)**
+- C. O2 saturation of 93% on an FiO2 of 0.6
+- D. Pink frothy sputum with coughing
+- E. Pulse of 112/minute
 
-*Explanation:* A falling level of consciousness with a pH of 7.14 and a PCO2 of 78 mmHg after 30 minutes of noninvasive ventilation means that NIV has failed. Drowsiness also removes her ability to protect her airway, so she needs intubation now. Raising the inspiratory pressure is reasonable only in an alert patient who is improving. High flow nasal oxygen gives less ventilatory support than NIV. She received no opioid, so naloxone has no target. Waiting an hour for another gas lets hypercapnic coma progress to arrest.
+*Explanation:* A falling level of consciousness with vomiting means he can no longer protect his airway under a tight mask, and the Wilderness Medical Society warns that noninvasive ventilation carries a higher risk of vomiting and aspiration in a drowning patient with altered mental status. He now needs intubation. His saturation of 93% has improved on support. Crackles and frothy sputum are expected while aspirated water clears and do not by themselves mean failure. A pulse of 112/minute has fallen from 118/minute.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* Rochwerg B, Brochard L, Elliott MW, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. Eur Respir J. 2017.
+*Source:* Davis CA, Schmidt AC, Sempsrott JR, et al. Wilderness Medical Society clinical practice guidelines for the treatment and prevention of drowning. 2024 update. Wilderness Environ Med. 2024. https://doi.org/10.1177/10806032241227460
 
 #### Q4
-*Update:* She is intubated and her BP settles to 138/80 mmHg on a nitroglycerin infusion.
+**Which of the following best explains why he lost consciousness under water?**
 
-**Which of the following investigations is most important to identify a treatable trigger for this episode?**
+- A. Arrhythmia from a long QT syndrome
+- B. Cold shock from sudden immersion
+- C. Hypoglycemia during hard exercise
+- D. Hypoxic blackout after hyperventilating  **(key)**
+- E. Seizure from new onset epilepsy
 
-- A. Blood cultures
-- B. D-dimer level
-- C. Electrocardiogram  **(key)**
-- D. Serum lipase
-- E. Urine drug screen
-
-*Explanation:* Acute coronary syndrome and arrhythmia are common triggers of acute heart failure that need their own urgent treatment, and the ESC guideline asks for an ECG as soon as possible in every patient. Her missed antihypertensives explain much of the episode, but ischemia can coexist and would change management. She has no fever to prompt blood cultures. D-dimer is not specific in acute heart failure and she has no features of PE. Lipase and a urine drug screen do not look for the usual cardiac triggers.
+*Explanation:* Breathing fast and deep before swimming underwater lowers his carbon dioxide, which delays the urge to surface. His oxygen falls first, and he loses consciousness under water without warning. In a New York State series, these dangerous breath-holding behaviours mainly affected advanced swimmers, and all the deaths were in swimmers aged 17 to 22 years. Cold shock occurs in the first minutes after sudden immersion in cold water, and he had been swimming lengths. Nothing in his history suggests hypoglycemia or a seizure disorder. A long QT arrhythmia remains possible in any unexplained drowning, but his breath-holding history explains this event.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* McDonagh TA, Metra M, Adamo M, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. Eur Heart J. 2021.
+*Source:* Boyd C, Levy A, McProud T, et al. Fatal and nonfatal drowning outcomes related to dangerous underwater breath-holding behaviors. New York State, 1988 to 2011. MMWR Morb Mortal Wkly Rep. 2015. https://pmc.ncbi.nlm.nih.gov/articles/PMC4584570/
 
-### sob-18: A cold and a wheezy 6-year-old
+### sob-18: Coughing spells in a young infant
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 6-year-old boy is brought to the emergency department by his mother with 1 day of cough and increasing wheeze after a cold. He has asthma and uses fluticasone 50 mcg twice daily and salbutamol as needed. He has had 6 puffs of salbutamol at home in the past 2 hours with little effect. He has never been admitted to an ICU. He is sitting up and speaks in short sentences. There are suprasternal retractions and scalene muscle contraction. Air entry is decreased throughout both lungs. There is inspiratory and expiratory wheeze.
+A 7-week-old girl is brought to the emergency department by her parents with 10 days of cough. For 4 days she has had coughing spells that end in vomiting. Twice today her face turned blue during a spell and she stopped breathing for several seconds until her mother picked her up. She has had no fever. She was born at term and has not yet had any vaccines. Her mother did not receive a pertussis vaccine in pregnancy. Her 12-year-old brother has had a cough for 3 weeks. Between spells she looks well and feeds. Her chest is clear.
 
-- Temperature: 37.4°C tympanic
-- Pulse: 138/minute
-- Resp.: 36/minute
-- O2 sat: 91% on room air
-- Weight: 22 kg
+- Temperature: 37.0°C rectal
+- Pulse: 156/minute
+- Resp.: 48/minute
+- O2 sat: 97% on room air
+- Weight: 4.4 kg
 
 #### Q1
-**Which of the following is this child's Pediatric Respiratory Assessment Measure (PRAM) score at triage?**
+**Which of the following features of her illness most indicates that her disease is severe?**
 
-- A. 4 points
-- B. 6 points
-- C. 8 points
-- D. 10 points  **(key)**
-- E. 12 points
+- A. Absence of fever
+- B. Brother with a long cough
+- C. Clear chest between spells
+- D. Cyanosis and apnea with coughing  **(key)**
+- E. Vomiting after coughing spells
 
-*Explanation:* The PRAM scores suprasternal retractions 2, scalene contraction 2, widespread decrease in air entry 2, inspiratory and expiratory wheeze 2 and an O2 saturation below 92% 2, which gives 10 points. A score of 8 to 12 is a severe exacerbation. A score of 8 leaves out one 2 point finding, such as the scalene contraction. A score of 12 needs absent or minimal air entry and a silent chest or wheeze audible without a stethoscope, which he does not have. Scores of 4 and 6 leave out findings the stem describes.
+*Explanation:* Apnea and cyanosis with coughing spells mark severe pertussis in a young infant. In a Quebec series of children with pertussis, every reported episode of apnea occurred in infants under 3 months of age, and 92% of those infants needed hospital care. Vomiting after coughing spells is common in pertussis and supports the diagnosis without marking severity. A clear chest and no fever are typical of pertussis without complications. Her brother is the likely source, but his cough says nothing about how sick she is.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* Ducharme FM, Chalut D, Plotnick L, et al. The Pediatric Respiratory Assessment Measure. A valid clinical score for assessing acute asthma severity from toddlers to teenagers. J Pediatr. 2008.
+*Source:* Desjardins M, Iachimov D, Mousseau S, et al. Clinical characteristics of pediatric pertussis cases, Quebec 2015 to 2017. Can Commun Dis Rep. 2018. https://pmc.ncbi.nlm.nih.gov/articles/PMC6449091/
 
 #### Q2
-**Which of the following treatments should be started now for this child?**
+**Which of the following is the most appropriate antibiotic plan while her pertussis test result is pending?**
 
-Select 3.
+- A. azithromycin 44 mg PO daily for 5 days  **(key)**
+- B. azithromycin 44 mg PO once PCR is positive
+- C. ceftriaxone 220 mg IV daily
+- D. doxycycline 9 mg PO twice daily
+- E. trimethoprim-sulfamethoxazole PO twice daily
 
-- A. amoxicillin by mouth
-- B. Chest physiotherapy
-- C. High dose inhaled budesonide
-- D. Inhaled ipratropium bromide  **(key)**
-- E. Intramuscular epinephrine
-- F. montelukast by mouth
-- G. Oral corticosteroid  **(key)**
-- H. salbutamol by MDI with spacer  **(key)**
-
-*Explanation:* A PRAM of 10 is a severe exacerbation. The Canadian Paediatric Society recommends repeated salbutamol, with an MDI and spacer as the preferred device, plus ipratropium in moderate to severe attacks, and an oral corticosteroid given early. Inhaled budesonide does not replace a systemic steroid in the emergency department. Montelukast has no role in acute treatment. There is no fever or focal sign to justify an antibiotic, and chest physiotherapy does not help. Intramuscular epinephrine is for anaphylaxis, and he has no features of it.
+*Explanation:* Treatment should start on clinical suspicion in a young infant rather than after the PCR result. The CDC regimen for infants under 6 months is azithromycin 10 mg/kg once daily for 5 days, which is 44 mg for her 4.4 kg. In a California case-control study, infants who died of pertussis were less likely to have received a macrolide, so a delay matters. Trimethoprim-sulfamethoxazole should not be given under 2 months of age because of the risk of kernicterus. Ceftriaxone and doxycycline are not among the recommended agents for pertussis, and doxycycline is not used in infants.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Trottier ED, Chan K, Allain D, Chauvin-Kimoff L. Canadian Paediatric Society. Managing an acute asthma exacerbation in children. Paediatr Child Health. 2021. https://doi.org/10.1093/pch/pxab058
+*Source:* Tiwari T, Murphy TV, Moran J. Recommended antimicrobial agents for the treatment and postexposure prophylaxis of pertussis. 2005 CDC guidelines. MMWR Recomm Rep. 2005. https://www.cdc.gov/mmwr/preview/mmwrhtml/rr5414a1.htm
 
 #### Q3
-*Update:* He has had three doses of salbutamol with ipratropium over 1 hour and oral dexamethasone, which he kept down. His PRAM score is now 9. O2 saturation is 92% on 2 L/minute by nasal prongs.
+**Which of the following is the most appropriate disposition for this infant?**
 
-**Which of the following is the most appropriate additional treatment now?**
+- A. Admit to a monitored bed  **(key)**
+- B. Discharge with a home apnea monitor
+- C. Discharge with review tomorrow
+- D. Observe 4 hours in the department
+- E. Transfer for elective intubation
 
-- A. budesonide 1 mg nebulized
-- B. epinephrine 0.2 mg IM
-- C. ketamine 22 mg IV
-- D. magnesium sulfate 1 g IV  **(key)**
-- E. methylprednisolone 44 mg IV
-
-*Explanation:* A PRAM that stays in the severe range after an hour of salbutamol and ipratropium is an incomplete response. The Canadian Paediatric Society advises IV magnesium sulfate at this point, with cardiorespiratory monitoring, and 1 g is about 45 mg/kg for a 22 kg child. He kept down oral dexamethasone, and a second steroid by the IV route acts no faster and does not replace a bronchodilator step. Nebulized budesonide is not an escalation step for severe asthma. Intramuscular epinephrine is not needed when inhaled drugs can be delivered. There is not enough evidence to support ketamine in a child who is not intubated.
+*Explanation:* An infant under 3 months with apnea and cyanosis during coughing spells needs admission with continuous cardiorespiratory monitoring, because further spells can be prolonged and are often unwitnessed at home. In the Quebec series, 92% of infants under 3 months were admitted and 28% needed intensive care. A home apnea monitor or a review tomorrow leaves her without trained help at the next spell. Four hours of observation is too short to see the pattern of her spells. Elective intubation is not needed while she recovers from each spell and breathes well between them.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Trottier ED, Chan K, Allain D, Chauvin-Kimoff L. Canadian Paediatric Society. Managing an acute asthma exacerbation in children. Paediatr Child Health. 2021. https://doi.org/10.1093/pch/pxab058
+*Source:* Desjardins M, Iachimov D, Mousseau S, et al. Clinical characteristics of pediatric pertussis cases, Quebec 2015 to 2017. Can Commun Dis Rep. 2018. https://pmc.ncbi.nlm.nih.gov/articles/PMC6449091/
 
 #### Q4
-*Update:* Two hours later he is sleepy and hard to rouse. Air entry is minimal and the wheeze is now faint. Capillary gas: pH 7.26, PCO2 52 mmHg.
+*Update:* Her CBC shows a white cell count of 52 x 10^9/L with 78% lymphocytes. Hemoglobin and platelets are normal. Her nasopharyngeal PCR later confirms Bordetella pertussis.
 
-**Which of the following best explains the change in this child's examination?**
+**Which of the following best describes the significance of her white cell count?**
 
-- A. Clearing of bronchospasm
-- B. Fatigue after a long night
-- C. Hypermagnesemia after the infusion
-- D. Impending respiratory failure  **(key)**
-- E. Tension pneumothorax
+- A. Bacterial superinfection needing broader antibiotics
+- B. Expected finding with no prognostic value
+- C. Marker of high risk of a fatal course  **(key)**
+- D. Sign of leukemia needing a marrow biopsy
+- E. Stress response to repeated vomiting
 
-*Explanation:* A quiet chest with minimal air entry, drowsiness and a PCO2 of 52 mmHg mean he is tiring and moving too little air to wheeze. The Canadian Paediatric Society lists drowsiness as a sign of impending respiratory failure and warns that even a normal CO2 in a child who is still working hard to breathe can signal it. Clearing bronchospasm would bring better air entry and a falling CO2. Ordinary tiredness does not cause hypercapnic acidosis. A single 1 g dose of magnesium rarely causes drowsiness, and a pneumothorax would give one sided findings.
+*Explanation:* A white cell count of 52 x 10^9/L with a marked lymphocytosis signals severe pertussis. In a California case-control study of young infants, a higher peak white cell count independently predicted death, and fatal cases more often developed pulmonary hypertension. She needs close monitoring and early involvement of a pediatric intensive care team. A lymphocyte predominance is not the pattern of a bacterial superinfection. Normal hemoglobin and platelets argue against leukemia. Vomiting does not produce a lymphocytosis of this size.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* Trottier ED, Chan K, Allain D, Chauvin-Kimoff L. Canadian Paediatric Society. Managing an acute asthma exacerbation in children. Paediatr Child Health. 2021. https://doi.org/10.1093/pch/pxab058
+*Source:* Winter K, Zipprich J, Harriman K, et al. Risk factors associated with infant deaths from pertussis. A case-control study. Clin Infect Dis. 2015. https://doi.org/10.1093/cid/civ472
 
 ### sob-19: Fast breathing and poor feeding at 10 weeks
 
@@ -311,207 +331,199 @@ A 10-week-old girl is brought to the emergency department by her parents with 3 
 
 *Source:* Friedman JN, Rieder MJ, Walton JM. Canadian Paediatric Society. Bronchiolitis. Recommendations for diagnosis, monitoring and management of children one to 24 months of age. Paediatr Child Health. 2014. https://cps.ca/en/documents/position/bronchiolitis
 
-### sob-20: Breathless walking to the kitchen
+### sob-20: Breathless and sweating after a clinic visit
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 81-year-old woman presents to the emergency department with 2 weeks of increasing shortness of breath on exertion. She now gets breathless walking from her bedroom to the kitchen. She has atrial fibrillation treated with apixaban 5 mg twice daily. She has taken naproxen daily for 1 month for knee osteoarthritis. She has noticed black stools for 10 days. She has no chest pain, cough or fever. She is pale. The JVP is not elevated. The chest is clear and there is no leg edema. Rectal examination shows black, tarry stool.
+A 44-year-old woman is brought to the emergency department by ambulance with 40 minutes of severe shortness of breath, a pounding headache, palpitations and sweating. An hour ago an urgent care clinic gave her metoclopramide 10 mg IV for nausea, and her symptoms began 20 minutes later. For 6 months she has had brief spells of headache, racing heart and sweating, which were labelled panic attacks. High BP was found at a pharmacy last month. She takes no medications. She is pale, sweaty and tremulous. There is no goitre. There are crackles to the mid lung fields. The JVP is not raised. The ECG shows sinus tachycardia without ST changes.
 
-- Temperature: 36.6°C oral
-- Pulse: 108/minute irregular
-- Resp.: 22/minute
-- BP: 118/66 mmHg
-- O2 sat: 97% on room air
+- Temperature: 37.8°C oral
+- Pulse: 138/minute
+- Resp.: 32/minute
+- BP: 238/134 mmHg
+- O2 sat: 88% on room air
 
 #### Q1
-**Which of the following initial investigations are most useful for this patient?**
+**Which of the following is the most likely cause of her pulmonary edema?**
 
-Select 3.
+- A. Acute coronary syndrome
+- B. Catecholamine crisis from a pheochromocytoma  **(key)**
+- C. Essential hypertension with a BP surge
+- D. Panic attack with hyperventilation
+- E. Thyroid storm from a toxic goitre
 
-- A. Blood cultures
-- B. BNP level
-- C. Complete blood count  **(key)**
-- D. CT pulmonary angiogram
-- E. D-dimer level
-- F. Electrocardiogram  **(key)**
-- G. Group and screen  **(key)**
-- H. Procalcitonin level
-- I. Sputum culture
-
-*Explanation:* Pallor and melena in a patient taking naproxen and apixaban make blood loss the leading cause of her breathlessness, so a complete blood count and a group and screen come first. An ECG checks her rhythm and looks for ischemia, which severe anemia can provoke in an 81-year-old. BNP adds little when the JVP is normal, the chest is clear and there is no edema, and it is often raised by atrial fibrillation and age alone. She is fully anticoagulated and melena explains her symptoms, so D-dimer and CT angiography are not the first tests. She has no fever or cough to justify cultures or procalcitonin.
+*Explanation:* Months of brief spells of headache, palpitations and sweating, new hypertension, and a crisis that began soon after a dose of metoclopramide point to a catecholamine surge from a pheochromocytoma. Drugs such as metoclopramide are recognized triggers of a crisis, which can present with severe hypertension and pulmonary edema. Essential hypertension does not explain the months of spells or the trigger. Panic does not cause crackles, hypoxemia or a BP of this level. There is no goitre to suggest thyroid storm. The ECG shows no ST changes to suggest an acute coronary syndrome, although troponin should still be checked.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding. Guideline recommendations from the International Consensus Group. Ann Intern Med. 2019.
+*Source:* Whitelaw BC, Prague JK, Mustafa OG, et al. Phaeochromocytoma crisis. Clin Endocrinol (Oxf). 2014. https://doi.org/10.1111/cen.12324
 
 #### Q2
-*Update:* Hemoglobin is 64 g/L, down from 128 g/L 6 months ago. MCV is 76 fL. Urea is 18.2 mmol/L and creatinine is 92 umol/L. The ECG shows atrial fibrillation at 106/minute with no ST changes.
+**Which of the following tests is most useful to confirm the underlying cause of her crisis?**
 
-**Which of the following is the most likely cause of this patient's shortness of breath?**
+- A. Aldosterone to renin ratio
+- B. Morning serum cortisol level
+- C. Plasma free metanephrines  **(key)**
+- D. TSH and free thyroxine
+- E. Urine 5-HIAA over 24 hours
 
-- A. Acute decompensated heart failure
-- B. Atrial fibrillation with rapid rate
-- C. Blood loss anemia from the gut  **(key)**
-- D. Community acquired pneumonia
-- E. Pulmonary embolism
-
-*Explanation:* Her hemoglobin has halved, she has melena while taking an NSAID with an anticoagulant, and her urea is high out of proportion to her creatinine, as happens when blood is digested in the upper gut. Reduced oxygen carrying capacity explains exertional breathlessness with a normal saturation. Heart failure is unlikely with a normal JVP, a clear chest and no edema. A ventricular rate of 106/minute is modest and is in part a response to the anemia. She is on therapeutic apixaban and has a normal saturation, which makes PE unlikely, and she has no fever, cough or crackles to suggest pneumonia.
+*Explanation:* The Endocrine Society recommends plasma free metanephrines or urinary fractionated metanephrines as the first test for pheochromocytoma, because tumours release metanephrines continuously even between spells. An aldosterone to renin ratio screens for primary aldosteronism, which causes hypertension without these spells. A morning cortisol looks for adrenal insufficiency or Cushing syndrome, which do not explain her paroxysms. Urine 5-HIAA looks for carcinoid tumours, which cause flushing and diarrhea. Thyroid tests are reasonable in a tachycardic patient, but she has no goitre, and they do not confirm the cause suggested by her spells and trigger.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding. Guideline recommendations from the International Consensus Group. Ann Intern Med. 2019.
+*Source:* Lenders JWM, Duh QY, Eisenhofer G, et al. Pheochromocytoma and paraganglioma. An Endocrine Society clinical practice guideline. J Clin Endocrinol Metab. 2014. https://doi.org/10.1210/jc.2014-1498
 
 #### Q3
-**Which of the following is the most appropriate transfusion plan for this patient?**
+**Which of the following is the most appropriate medication to lower her BP now?**
 
-- A. Four units of red cells rapidly
-- B. One unit of red cells, then reassess  **(key)**
-- C. Oral iron and outpatient follow up
-- D. tranexamic acid 1 g IV alone
-- E. Transfuse to a hemoglobin of 120 g/L
+- A. esmolol 500 mcg/kg IV bolus
+- B. furosemide 80 mg IV
+- C. labetalol 20 mg IV
+- D. metoprolol 5 mg IV
+- E. phentolamine 5 mg IV  **(key)**
 
-*Explanation:* A hemoglobin of 64 g/L with symptoms is below the transfusion thresholds the International Consensus Group recommends, with or without cardiovascular disease, so she needs red cells now. Giving one unit and then reassessing symptoms and hemoglobin limits the risk of circulatory overload in an 81-year-old. Four rapid units invite that overload. A liberal target of 120 g/L adds volume without benefit and liberal strategies have been linked to more rebleeding. Oral iron is too slow for symptomatic anemia with ongoing bleeding. Tranexamic acid alone does not correct the anemia that is causing her symptoms.
+*Explanation:* Alpha-adrenergic blockade treats the cause of the crisis, and its use is strongly associated with survival. Phentolamine is a short-acting IV alpha blocker that can be repeated to control her BP, and a beta blocker is added only after alpha blockade to control the heart rate. Metoprolol, esmolol and labetalol, which has much more beta than alpha effect, can leave alpha stimulation unopposed and worsen the vasoconstriction. Furosemide is not the answer because a catecholamine crisis often leaves patients volume depleted, and her JVP is not raised.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Barkun AN, Almadi M, Kuipers EJ, et al. Management of nonvariceal upper gastrointestinal bleeding. Guideline recommendations from the International Consensus Group. Ann Intern Med. 2019.
+*Source:* Whitelaw BC, Prague JK, Mustafa OG, et al. Phaeochromocytoma crisis. Clin Endocrinol (Oxf). 2014. https://doi.org/10.1111/cen.12324
 
-### sob-21: Weak voice and trouble swallowing
+### sob-21: Fever and breathlessness at 31 weeks
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 58-year-old woman presents to the emergency department with 2 days of worsening shortness of breath and difficulty swallowing. She has generalized myasthenia gravis treated with pyridostigmine 60 mg four times daily and prednisone 10 mg daily. Five days ago she started ciprofloxacin for a urinary tract infection. She speaks in short phrases with a nasal voice and coughs weakly after sips of water. She has bilateral ptosis and weak neck flexion. Her abdomen moves inward as she breathes in while lying back. The chest is clear.
+A 29-year-old woman, G2P1 at 31 weeks gestation, presents to the emergency department with 3 days of fever, cough and muscle aches and 1 day of worsening shortness of breath. Her 3-year-old son had influenza A confirmed last week. She did not receive an influenza vaccine this season. The pregnancy has been uncomplicated and she takes a prenatal vitamin. She speaks in short sentences. There are crackles at the right lung base. The uterus is soft and nontender. The fetal heart rate is 165/minute.
 
-- Temperature: 37.2°C oral
-- Pulse: 104/minute
-- Resp.: 28/minute
-- BP: 146/88 mmHg
-- O2 sat: 95% on room air
-- Weight: 72 kg
+- Temperature: 39.1°C oral
+- Pulse: 122/minute
+- Resp.: 30/minute
+- BP: 106/64 mmHg
+- O2 sat: 90% on room air
 
 #### Q1
-**Which of the following bedside measurements best predicts impending respiratory failure in this patient?**
+*Update:* On 4 L/minute by nasal prongs her O2 saturation is 93%. Arterial gas: pH 7.32, PaCO2 40 mmHg, PaO2 68 mmHg, HCO3 20 mmol/L.
 
-- A. Arterial blood gas PaO2
-- B. End tidal CO2 by nasal cannula
-- C. Forced vital capacity  **(key)**
-- D. Peak expiratory flow
-- E. Pulse oximetry trend
+**Which of the following best interprets her arterial blood gas?**
 
-*Explanation:* Her breathing problem is weakness of the respiratory muscles, shown by paradoxical abdominal movement, a weak cough and bulbar signs. In neuromuscular weakness, serial forced vital capacity falls before gas exchange fails, and a value below about 20 mL/kg signals the need for ventilatory support. Oxygen saturation and PaO2 stay normal until late, especially if she is given oxygen. End tidal CO2 by nasal cannula underestimates arterial CO2 and rises only when failure is established. Peak flow measures airway obstruction and is not used to predict ventilatory failure from weakness.
+- A. Acute respiratory acidosis from fatigue  **(key)**
+- B. Compensated respiratory alkalosis of pregnancy
+- C. Metabolic acidosis from lactate
+- D. Normal gas for the third trimester
+- E. Primary metabolic alkalosis
+
+*Explanation:* Normal pregnancy lowers the arterial PCO2 to about 30 mmHg or less, with a bicarbonate of 18 to 22 mmol/L and a pH near 7.44. A PaCO2 of 40 mmHg in a woman breathing 30 times a minute is therefore high for her, and a pH of 7.32 shows an acute respiratory acidosis. She is tiring. Reading 40 mmHg as normal misses early ventilatory failure. Her bicarbonate of 20 mmol/L is expected in pregnancy, so there is no primary metabolic acidosis or alkalosis. The compensated respiratory alkalosis of pregnancy has a pH above 7.40.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* Wendell LC, Levine JM. Myasthenic crisis. Neurohospitalist. 2011. https://doi.org/10.1177/1941875210382918
+*Source:* Soma-Pillay P, Nelson-Piercy C, Tolppanen H, Mebazaa A. Physiological changes in pregnancy. Cardiovasc J Afr. 2016. https://doi.org/10.5830/CVJA-2016-021
 
 #### Q2
-*Update:* Her FVC is 0.9 L. She is pooling saliva and cannot clear her secretions. Venous gas: pH 7.36, PCO2 46 mmHg.
+**Which of the following is the most appropriate antiviral plan for her now?**
 
-**Which of the following is the most appropriate next step in her respiratory management?**
+- A. oseltamivir after a positive swab
+- B. oseltamivir 75 mg PO daily
+- C. oseltamivir 75 mg PO twice daily now  **(key)**
+- D. zanamivir 10 mg inhaled twice daily
+- E. No antiviral after 48 hours of illness
 
-- A. Bilevel noninvasive ventilation
-- B. Edrophonium test at the bedside
-- C. Increase the pyridostigmine dose
-- D. Intubation and mechanical ventilation  **(key)**
-- E. Repeat FVC in 4 hours on the ward
-
-*Explanation:* Her FVC of 0.9 L is 900 mL divided by 72 kg, or about 12.5 mL/kg, well below 20 mL/kg, and she cannot clear her secretions, so she cannot protect her airway. She needs elective intubation before she tires, even though her venous PCO2 is still near normal. Bilevel ventilation can help in myasthenic crisis only when bulbar function is good enough to manage secretions. More pyridostigmine increases secretions and can cause cholinergic weakness. An edrophonium test does not change management. A ward bed with a repeat FVC in 4 hours is unsafe with these numbers.
+*Explanation:* She is pregnant, hypoxemic and tiring, which is severe and progressive influenza. AMMI Canada advises empiric antiviral treatment for severe, complicated or progressive illness regardless of the time since symptoms began, prescribed as soon as possible without waiting for laboratory confirmation. The treatment dose is oseltamivir 75 mg by mouth twice daily for 5 days. Once daily dosing is a prophylaxis dose. Waiting for a swab result delays treatment in a woman who is getting worse. Inhaled zanamivir is hard to deliver to a woman breathing 30 times a minute.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Wendell LC, Levine JM. Myasthenic crisis. Neurohospitalist. 2011. https://doi.org/10.1177/1941875210382918
+*Source:* Harrison R, Mubareka S, Papenburg J, et al. AMMI Canada 2023 update on influenza. Management and emerging issues. J Assoc Med Microbiol Infect Dis Can. 2023. https://pmc.ncbi.nlm.nih.gov/articles/PMC10697102/
 
 #### Q3
-**Which of the following responses to neuromuscular blocking drugs should be expected during intubation of this patient?**
+*Update:* Two hours later she is drowsy and hard to rouse. Her O2 saturation is 86% on 15 L/minute by nonrebreather mask. Arterial gas: pH 7.22, PaCO2 54 mmHg.
 
-- A. Hyperkalemia after succinylcholine
-- B. Increased sensitivity to rocuronium  **(key)**
-- C. Increased sensitivity to succinylcholine
-- D. Resistance to rocuronium
-- E. No change from other adults
+**Which of the following is the most appropriate respiratory management for her now?**
 
-*Explanation:* Myasthenia gravis reduces the number of working acetylcholine receptors. Patients are therefore very sensitive to nondepolarizing drugs such as rocuronium, so a reduced dose with neuromuscular monitoring is advised. The same receptor loss makes them resistant to succinylcholine, which may need a larger than usual dose. Hyperkalemia after succinylcholine follows receptor upregulation after denervation, burns or prolonged immobility, not myasthenia gravis.
+- A. Bilevel noninvasive ventilation
+- B. Emergency caesarean delivery first
+- C. High flow nasal oxygen
+- D. Rapid sequence intubation  **(key)**
+- E. Repeat the gas in 1 hour
+
+*Explanation:* A falling level of consciousness with worsening hypercapnic acidosis and refractory hypoxemia means she needs intubation now. Noninvasive ventilation depends on a patient who is awake, cooperative and able to protect her airway, and a drowsy woman in late pregnancy is at high risk of aspiration. High flow nasal oxygen does not treat ventilatory failure. Waiting an hour risks maternal arrest and fetal hypoxia. Delivery does not treat her pneumonia and should not come before securing her airway and oxygenation.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Blichfeldt-Lauridsen L, Hansen BD. Anesthesia and myasthenia gravis. Acta Anaesthesiol Scand. 2012. https://doi.org/10.1111/j.1399-6576.2011.02558.x
+*Source:* Rochwerg B, Brochard L, Elliott MW, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. Eur Respir J. 2017.
 
 #### Q4
-**Which of the following steps should be taken now to treat the cause of this patient's crisis?**
+*Update:* After intubation her BP falls to 84/50 mmHg while she lies flat on her back.
 
-Select 2.
+**Which of the following is the most appropriate first step to restore her blood pressure?**
 
-- A. gentamicin for the UTI
-- B. Increase pyridostigmine
-- C. IV immune globulin  **(key)**
-- D. magnesium sulfate IV
-- E. rituximab infusion
-- F. Stop ciprofloxacin  **(key)**
+- A. Displace the uterus to the left  **(key)**
+- B. norepinephrine infusion IV
+- C. phenylephrine 100 mcg IV
+- D. Raise the head of the bed
+- E. Saline 2 L IV bolus
 
-*Explanation:* Myasthenic crisis is treated with a rapid immunotherapy, either IV immune globulin or plasma exchange, which acts within days. Ciprofloxacin started 5 days ago is a likely trigger, because fluoroquinolones worsen neuromuscular transmission, so it should be stopped and the infection treated with a safer drug. Gentamicin and magnesium also impair neuromuscular transmission and can deepen the crisis. Rituximab is a long term therapy that takes weeks to act. More pyridostigmine adds secretions in a patient who cannot clear them.
+*Explanation:* At 31 weeks, the uterus compresses the inferior vena cava when she lies on her back, which cuts venous return, and turning from the lateral to the supine position can lower cardiac output by about 25%. Relieving that compression by displacing the uterus to the left, or tilting her to the left, is the first step and costs nothing. A vasopressor may still be needed if her pressure stays low, but it does not remove the obstruction to venous return. A 2 L bolus risks pulmonary edema in a woman with pneumonia and hypoxemia. Raising the head of the bed does not relieve caval compression.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Wendell LC, Levine JM. Myasthenic crisis. Neurohospitalist. 2011. https://doi.org/10.1177/1941875210382918
+*Source:* Soma-Pillay P, Nelson-Piercy C, Tolppanen H, Mebazaa A. Physiological changes in pregnancy. Cardiovasc J Afr. 2016. https://doi.org/10.5830/CVJA-2016-021
 
-### sob-22: Faint when she stands, breathless when she sits
+### sob-22: Breathless after day surgery
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 63-year-old woman presents to the emergency department with 1 week of progressive shortness of breath, now present at rest, and feeling faint when she stands. She has metastatic breast cancer treated with chemotherapy. She has no chest pain, cough or fever. She is pale and sweaty and prefers to sit forward. Her neck veins are distended to the angle of the jaw while she sits upright. The heart sounds are quiet. The chest is clear. Her radial pulse weakens noticeably when she breathes in. Her face and arms are not swollen.
+A 66-year-old man presents to the emergency department at 21:00 with 4 hours of increasing shortness of breath. This morning he had day surgery to repair a torn rotator cuff in his right shoulder under general anesthesia with an interscalene nerve block. He has COPD with an FEV1 of 55% predicted and a BMI of 36 kg/m2. His right arm is still numb and weak. He has no chest pain, fever, cough or change in sputum. He breathes more easily sitting up. He is alert. There are decreased breath sounds at the right base without wheeze or crackles. The JVP is not raised. Compared with his film from last month, today's chest radiograph shows a newly raised right hemidiaphragm, with no pneumothorax or consolidation.
 
-- Temperature: 37.0°C oral
-- Pulse: 122/minute
-- Resp.: 28/minute
-- BP: 92/74 mmHg
-- O2 sat: 94% on room air
+- Temperature: 36.8°C oral
+- Pulse: 98/minute
+- Resp.: 26/minute
+- BP: 148/86 mmHg
+- O2 sat: 89% on room air
 
 #### Q1
-**Which of the following is the most likely cause of this patient's shortness of breath?**
+**Which of the following is the most likely cause of his shortness of breath?**
 
-- A. Cardiac tamponade  **(key)**
-- B. Lymphangitic carcinomatosis
-- C. Malignant pleural effusion
-- D. Pulmonary embolism
-- E. Superior vena cava obstruction
+- A. Aspiration pneumonitis
+- B. COPD exacerbation
+- C. Opioid hypoventilation
+- D. Pneumothorax from the block
+- E. Right phrenic nerve block  **(key)**
 
-*Explanation:* Low blood pressure with a narrow pulse pressure of 18 mmHg, distended neck veins and quiet heart sounds make up Beck's triad, and a pulse that weakens on inspiration is pulsus paradoxus. With a clear chest and known metastatic breast cancer, a malignant pericardial effusion with tamponade is most likely. Lymphangitic spread causes crackles and marked hypoxemia without these circulatory signs. A pleural effusion causes dullness and reduced breath sounds, and her chest is clear. PE can raise the neck veins and lower the BP, but it does not muffle the heart sounds. Superior vena cava obstruction swells the face and arms and does not cause hypotension or pulsus paradoxus.
+*Explanation:* The phrenic nerve arises from C3 to C5, close to where an interscalene block is placed, and the block commonly paralyzes the diaphragm on the same side. His still numb and weak right arm shows the block is still working, and the newly raised right hemidiaphragm with reduced breath sounds at that base fits. His COPD and obesity leave little reserve to cope with the loss of one hemidiaphragm. The radiograph shows no pneumothorax. He has no fever, consolidation, wheeze or new sputum to suggest aspiration or a COPD exacerbation. He is alert and breathing 26 times a minute, which argues against opioid hypoventilation.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Adler Y, Charron P, Imazio M, et al. 2015 ESC Guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015.
+*Source:* El-Boghdadly K, Chin KJ, Chan VWS. Phrenic nerve palsy and regional anesthesia for shoulder surgery. Anatomical, physiologic, and clinical considerations. Anesthesiology. 2017. https://doi.org/10.1097/ALN.0000000000001668
 
 #### Q2
-**Which of the following is the most appropriate next investigation for this patient?**
+**Which of the following bedside tests would best confirm the cause of his shortness of breath?**
 
-- A. Chest radiograph
-- B. CT pulmonary angiogram
-- C. Point of care echocardiography  **(key)**
-- D. Serum troponin level
-- E. Venous duplex of the legs
+- A. Arterial blood gas on room air
+- B. Diaphragm ultrasound during a sniff  **(key)**
+- C. Lung ultrasound for B lines
+- D. Peak expiratory flow rate
+- E. Spirometry at the bedside
 
-*Explanation:* Echocardiography at the bedside confirms a pericardial effusion within minutes, shows chamber collapse and guides drainage, and the ESC guideline makes it the first imaging test for suspected tamponade. It also looks for a dilated right ventricle, which would point instead to PE. A chest radiograph may show a large heart but cannot show tamponade physiology. CT angiography means lying flat in the scanner while hypotensive and delays treatment. Troponin and leg duplex do not answer the question at hand.
+*Explanation:* Ultrasound of the right hemidiaphragm during a sniff shows reduced, absent or paradoxical movement when the phrenic nerve is blocked. In the study that established this, every patient given an interscalene block developed paradoxical motion of the hemidiaphragm on the block side within minutes. A blood gas measures the effect on gas exchange but not its cause. B lines point to pulmonary edema. Peak flow and spirometry are already reduced by his COPD and cannot show which hemidiaphragm is failing.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Adler Y, Charron P, Imazio M, et al. 2015 ESC Guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015.
+*Source:* Urmey WF, Talts KH, Sharrock NE. One hundred percent incidence of hemidiaphragmatic paresis associated with interscalene brachial plexus anesthesia as diagnosed by ultrasonography. Anesth Analg. 1991. https://doi.org/10.1213/00000539-199104000-00014
 
 #### Q3
-*Update:* Echocardiography shows a large circumferential pericardial effusion with diastolic collapse of the right ventricle. The right ventricle is not dilated. Her BP is now 84/68 mmHg.
+*Update:* Ultrasound shows paradoxical motion of the right hemidiaphragm. Arterial gas on 1 L/minute by nasal prongs: pH 7.37, PaCO2 47 mmHg, PaO2 62 mmHg. He remains alert.
 
-**Which of the following is the most appropriate immediate management of this patient?**
+**Which of the following is the most appropriate management for him now?**
 
-- A. alteplase 100 mg IV over 2 hours
-- B. furosemide 40 mg IV
-- C. Rapid sequence intubation
-- D. Surgical pericardial window tomorrow
-- E. Urgent echo-guided pericardiocentesis  **(key)**
+- A. Bilevel noninvasive ventilation
+- B. Rapid sequence intubation
+- C. Right chest tube insertion
+- D. salbutamol and prednisone
+- E. Upright position with controlled oxygen  **(key)**
 
-*Explanation:* Right ventricular diastolic collapse with a falling BP is tamponade with circulatory compromise, and the ESC guideline recommends urgent pericardiocentesis, guided by echocardiography. Positive pressure ventilation after induction reduces venous return and can cause arrest in tamponade. Furosemide lowers the preload she depends on. Alteplase treats massive PE, and the echocardiogram shows an effusion with a small right ventricle. A surgical window suits loculated or recurrent effusions, and waiting until tomorrow is unsafe.
+*Explanation:* His pH is normal, he is alert and his saturation responds to low flow oxygen, so he can be supported while the block wears off. He breathes better sitting up, and the BTS guideline advises a target saturation of 88 to 92% in COPD to avoid oxygen induced hypercapnia. Noninvasive ventilation is for acidotic hypercapnic respiratory failure, which he does not have. Intubation is not needed in an alert patient with a normal pH. There is no pneumothorax to drain. Salbutamol and prednisone treat bronchospasm, and he has no wheeze.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Adler Y, Charron P, Imazio M, et al. 2015 ESC Guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015.
+*Source:* O'Driscoll BR, Howard LS, Earis J, Mak V. BTS guideline for oxygen use in adults in healthcare and emergency settings. Thorax. 2017.
 
 ### sob-23: Pleuritic pain three weeks after gallbladder surgery
 
@@ -574,153 +586,158 @@ A 41-year-old woman presents to the emergency department with 2 days of right si
 
 *Source:* Thrombosis Canada. Pulmonary embolism (PE). Diagnosis. Clinical guide. 2023. https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_80.pdf
 
-### sob-24: Sudden breathlessness after a hip replacement
+### sob-24: Breathless after a household flu
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 52-year-old woman presents to the emergency department 2 hours after sudden shortness of breath when she got out of bed. She had a right hip arthroplasty 12 days ago. Her right calf has been painful and swollen for 3 days. She has chronic kidney disease from diabetes, with an eGFR of 15 mL/minute/1.73 m2 last month. She has no hemoptysis and no prior clot. The right calf is 4 cm larger than the left and tender along the deep veins. The chest is clear. The ECG shows sinus tachycardia and the chest radiograph is normal. PE is your leading diagnosis. It is 23:00 and nuclear medicine opens at 08:00.
+A 52-year-old man presents to the emergency department with 5 days of shortness of breath on exertion, a dry cough and aching muscles. His wife and son had a flu-like illness last week. He has hypertension treated with ramipril. He has no previous VTE, cancer, recent surgery, immobilization, hemoptysis or leg symptoms. His chest is clear and his legs look and feel normal. The ECG shows sinus rhythm and the chest radiograph is normal. You judge a viral illness to be more likely than PE. A triage protocol for shortness of breath has already ordered a CT pulmonary angiogram, which has not yet been done.
 
-- Temperature: 37.1°C oral
-- Pulse: 112/minute
-- Resp.: 26/minute
-- BP: 128/78 mmHg
-- O2 sat: 91% on room air
+- Temperature: 37.8°C oral
+- Pulse: 96/minute
+- Resp.: 20/minute
+- BP: 138/84 mmHg
+- O2 sat: 96% on room air
+- Weight: 84 kg
 
 #### Q1
-**Which of the following is this patient's Wells score for pulmonary embolism?**
+**Which of the following is the most appropriate next step in his evaluation for PE?**
 
-- A. 4.5 points
-- B. 6 points
-- C. 7.5 points
-- D. 9 points  **(key)**
-- E. 10.5 points
+- A. Bilateral leg compression ultrasound
+- B. CT pulmonary angiogram as ordered
+- C. D-dimer before any imaging  **(key)**
+- D. Ventilation perfusion scan
+- E. No further testing for PE
 
-*Explanation:* She scores 3 for clinical signs of DVT, 3 because PE is the most likely diagnosis, 1.5 for a heart rate above 100/minute and 1.5 for surgery within 4 weeks, a total of 9. That places her well above the threshold at which PE is likely. A total of 10.5 counts surgery and immobilization twice, although they form one item. Lower totals leave out items the stem shows.
+*Explanation:* His Wells score is 0. His pulse of 96/minute is below 100/minute, he has none of the other items, and PE is not the most likely diagnosis. Thrombosis Canada advises a D-dimer as the first test when PE is unlikely, and a negative result excludes PE without imaging. Going straight to CT exposes him to contrast, radiation and the false positive results that come with a low pretest probability. Stopping without any test would rest on the PERC rule, which cannot be used because he is older than 49 years. Leg ultrasound and a ventilation perfusion scan are imaging tests that a negative D-dimer could make unnecessary.
 
 *Key feature:* Shortness of breath 5. Choose PE tests with pretest probability in mind, for example not relying on D-dimer in high risk or a normal CXR.
 
 *Source:* Thrombosis Canada. Pulmonary embolism (PE). Diagnosis. Clinical guide. 2023. https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_80.pdf
 
 #### Q2
-**Which of the following is the most appropriate next step in her diagnostic workup?**
+*Update:* CT pulmonary angiography shows a single small filling defect in one subsegmental artery of the right lower lobe, with no other defect and a normal right ventricle.
 
-- A. CT pulmonary angiogram now
-- B. D-dimer before any imaging
-- C. Leg compression ultrasound now  **(key)**
-- D. PERC rule to decide on testing
-- E. V/Q scan in the morning
+**Which of the following features most lowers the likelihood that this filling defect is a true PE?**
 
-*Explanation:* With a Wells score of 9, a negative D-dimer would not exclude PE, and PERC applies only to patients with a low pretest probability. Her eGFR of 15 mL/minute makes contrast CT a real risk, and a V/Q scan is not available for 9 hours. She has a swollen, tender leg, and the ESC guideline accepts a proximal DVT on compression ultrasound in a patient with suspected PE as enough to start treatment. A bedside ultrasound therefore answers the question now, without contrast.
+- A. Age of 52 years
+- B. Normal chest radiograph
+- C. Normal right ventricle on CT
+- D. Oxygen saturation of 96%
+- E. Wells score of 0  **(key)**
+
+*Explanation:* A positive CT result is less reliable when the clinical probability is low. In PIOPED II the positive predictive value of CT angiography was 96% with a high clinical probability but only 58% with a low one, so his Wells score of 0 makes a false positive result a real possibility. A saturation of 96% on room air is common in PE, which often causes no hypoxemia. A normal chest radiograph is common in PE and does not lower its likelihood. A normal right ventricle shows that any clot is small, not that it is absent. His age does not lower the likelihood of PE.
 
 *Key feature:* Shortness of breath 5. Choose PE tests with pretest probability in mind, for example not relying on D-dimer in high risk or a normal CXR.
 
-*Source:* Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Stein PD, Fowler SE, Goodman LR, et al. Multidetector computed tomography for acute pulmonary embolism. N Engl J Med. 2006. https://doi.org/10.1056/NEJMoa052367
 
 #### Q3
-*Update:* Ultrasound shows occlusive thrombus in the right femoral and popliteal veins.
+**Which of the following is the most appropriate next test for him?**
 
-**Which of the following further tests are needed before treating this patient for pulmonary embolism?**
+- A. Bilateral leg compression ultrasound  **(key)**
+- B. Echocardiogram for right heart strain
+- C. MR pulmonary angiogram
+- D. Repeat CT angiogram in 24 hours
+- E. Troponin and BNP levels
 
-- A. CT pulmonary angiogram after hydration
-- B. D-dimer to confirm clot burden
-- C. Echocardiography to confirm PE
-- D. V/Q scan in the morning
-- E. No lung imaging before treatment  **(key)**
-
-*Explanation:* A proximal DVT in the femoral and popliteal veins, in a patient with suspected PE, confirms venous thromboembolism, and the ESC guideline accepts it as enough to start the same anticoagulation PE would need. Lung imaging adds nothing to that decision tonight, and contrast CT is a real risk with an eGFR of 15. Waiting until morning for a V/Q scan delays treatment. A D-dimer does not measure clot burden and has no role once thrombosis is proven. A normal echocardiogram cannot exclude PE, and she is stable.
+*Explanation:* The CHEST guideline advises bilateral leg compression ultrasound for patients with a subsegmental PE, whether or not the legs have symptoms. A proximal DVT confirms venous thromboembolism that needs treatment, whatever the CT shows. With no proximal DVT and a low risk of recurrence, the guideline suggests clinical surveillance over anticoagulation. An echocardiogram, troponin or BNP measures strain on the heart but cannot confirm or refute a small clot. A repeat CT adds radiation without settling the question. MR angiography is less accurate than CT and is not a standard test here.
 
 *Key feature:* Shortness of breath 5. Choose PE tests with pretest probability in mind, for example not relying on D-dimer in high risk or a normal CXR.
 
-*Source:* Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Stevens SM, Woller SC, Baumann Kreuziger L, et al. Executive summary. Antithrombotic therapy for VTE disease. Second update of the CHEST guideline and expert panel report. Chest. 2021. https://doi.org/10.1016/j.chest.2021.07.056
 
 #### Q4
-**Which of the following is the most appropriate initial anticoagulant for this patient?**
+*Update:* Further testing finds a thrombus in the right popliteal vein. His hemoglobin, platelets and creatinine are normal and he has no bleeding risk factors.
 
-- A. apixaban 10 mg PO twice daily
-- B. dabigatran 150 mg PO twice daily
-- C. enoxaparin 1.5 mg/kg SC daily
-- D. rivaroxaban 15 mg PO twice daily
-- E. unfractionated heparin IV infusion  **(key)**
+**Which of the following is the most appropriate management for him now?**
 
-*Explanation:* The ESC guideline recommends unfractionated heparin when creatinine clearance is 30 mL/minute or less. Her eGFR is 15. Heparin is not cleared by the kidney, and its short half-life and reversibility suit a patient 12 days after major surgery. Enoxaparin accumulates below a clearance of 30 mL/minute. Dabigatran is contraindicated below 30 mL/minute and also needs 5 days of parenteral heparin first. Rivaroxaban and apixaban were not studied in patients with this degree of kidney failure.
+- A. Clinical surveillance with repeat ultrasound
+- B. IVC filter without anticoagulation
+- C. Repeat CT angiogram in 1 week
+- D. Start anticoagulation for 3 months or more  **(key)**
+- E. Systemic alteplase infusion
+
+*Explanation:* A thrombus in the popliteal vein is a proximal DVT. It confirms venous thromboembolism, which needs anticoagulation for at least 3 months whatever the CT showed. The CHEST guideline keeps clinical surveillance for a subsegmental PE with no proximal DVT and a low risk of recurrence, and he now has a proximal DVT. An IVC filter is for patients who cannot be anticoagulated, and he has no bleeding risk. Systemic thrombolysis is for PE with hypotension, and he is stable. Repeating the CT does not change the need to treat his DVT.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Stevens SM, Woller SC, Baumann Kreuziger L, et al. Executive summary. Antithrombotic therapy for VTE disease. Second update of the CHEST guideline and expert panel report. Chest. 2021. https://doi.org/10.1016/j.chest.2021.07.056
 
-### sob-25: Fever, drooling and a stiff neck at 3
+### sob-25: A barking cough that keeps getting worse
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 3-year-old boy is brought to the emergency department by his parents with 3 days of fever and sore throat. Today he refuses to eat or drink, is drooling and holds his head stiffly. His breathing has become noisy, especially when he lies down. He had a viral illness last week. He is fully immunized and otherwise well. He cries when asked to look up and will not extend his neck. There is tender swelling behind the angle of the left mandible. There is soft inspiratory stridor at rest. The chest is clear with good air entry.
+A 5-year-old boy is brought to the emergency department by his parents with a barking cough and noisy breathing. Five days ago he had fever, cough and aches, and his sister had influenza B confirmed that week. He had been improving until last night, when his fever rose again and his breathing became noisy. This morning a walk-in clinic gave him oral dexamethasone for croup. Since then he has become more unwell. He is fully immunized. He is sitting up, pale and ill looking, and coughs up thick yellow secretions. He has inspiratory stridor at rest with suprasternal retractions. He is not drooling.
 
-- Temperature: 39.3°C rectal
-- Pulse: 150/minute
-- Resp.: 32/minute
-- O2 sat: 97% on room air
-- Weight: 15 kg
+- Temperature: 39.8°C rectal
+- Pulse: 156/minute
+- Resp.: 38/minute
+- O2 sat: 93% on room air
+- Weight: 19 kg
 
 #### Q1
-**Which of the following findings most clearly places this child's breathing problem in the upper airway?**
+**Which of the following findings most suggests a cause of his stridor other than viral croup?**
 
-- A. Fever of 39.3°C
-- B. Inspiratory stridor at rest  **(key)**
-- C. Refusal to eat or drink
-- D. Respiratory rate of 32/minute
-- E. Tachycardia of 150/minute
+- A. Barking cough with hoarseness
+- B. High fever with a toxic look  **(key)**
+- C. Inspiratory stridor at rest
+- D. Retractions above the sternum
+- E. Worse breathing overnight
 
-*Explanation:* Inspiratory stridor comes from narrowing at or above the glottis, and with a clear chest and good air entry it places the problem in the upper airway. That changes management, because sedation, lying flat and agitation can worsen an upper airway obstruction, and bronchodilators do not help it. Fever, tachycardia and refusal to eat reflect infection and pain wherever it lies. A respiratory rate of 32/minute is raised but does not tell upper from lower airway disease.
+*Explanation:* Children with bacterial tracheitis have higher fevers and look more unwell than children with viral croup, and the illness often follows influenza or parainfluenza. A child who worsens with a high fever and a toxic appearance after a viral illness should be assessed for it. A barking cough with hoarseness, stridor at rest and suprasternal retractions occur in both croup and tracheitis, so they do not separate them. Croup symptoms are also often worse at night.
 
 *Key feature:* Shortness of breath 1. In acute dyspnea, distinguish upper from lower airway causes because emergency management differs.
 
-*Source:* Craig FW, Schunk JE. Retropharyngeal abscess in children. Clinical presentation, utility of imaging, and current management. Pediatrics. 2003.
+*Source:* Al-Mutairi B, Kirk V. Bacterial tracheitis in children. Approach to diagnosis and treatment. Paediatr Child Health. 2004. https://doi.org/10.1093/pch/9.1.25
 
 #### Q2
+*Update:* He receives nebulized epinephrine 5 mL of 1 mg/mL with little change in his stridor. A lateral neck radiograph shows subglottic narrowing with ragged, irregular edges along the tracheal wall.
+
 **Which of the following is the most likely diagnosis in this child?**
 
-- A. Acute epiglottitis
-- B. Bacterial tracheitis
-- C. Peritonsillar abscess
-- D. Retropharyngeal abscess  **(key)**
-- E. Viral laryngotracheitis
+- A. Bacterial tracheitis  **(key)**
+- B. Foreign body in the trachea
+- C. Retropharyngeal abscess
+- D. Severe viral croup
+- E. Supraglottitis
 
-*Explanation:* A preschool child with fever, drooling, neck swelling and a refusal to extend the neck after a recent viral illness fits a retropharyngeal abscess. Limited neck movement, especially extension, was the typical finding in the Craig and Schunk series. Epiglottitis is rare in an immunized child and starts abruptly, without neck stiffness. Bacterial tracheitis causes a brassy cough and a toxic child after croup. A peritonsillar abscess is seen mainly in adolescents, with trismus and a deviated uvula. Viral croup causes a barking cough without drooling or neck stiffness.
+*Explanation:* A poor response to epinephrine and a corticosteroid, a high fever, purulent secretions and irregular tracheal margins on the lateral film point to bacterial tracheitis. It should be considered in any child with croup that does not respond to usual treatment, and the lateral view may show haziness and irregularity of the tracheal wall. Severe viral croup usually improves at least briefly after epinephrine. Supraglottitis causes drooling and difficulty swallowing, which he does not have. A retropharyngeal abscess causes neck stiffness and pain on swallowing rather than a barking cough. A foreign body does not cause a febrile illness after influenza.
 
 *Key feature:* Shortness of breath 1. In acute dyspnea, distinguish upper from lower airway causes because emergency management differs.
 
-*Source:* Craig FW, Schunk JE. Retropharyngeal abscess in children. Clinical presentation, utility of imaging, and current management. Pediatrics. 2003.
+*Source:* Al-Mutairi B, Kirk V. Bacterial tracheitis in children. Approach to diagnosis and treatment. Paediatr Child Health. 2004. https://doi.org/10.1093/pch/9.1.25
 
 #### Q3
-**Which of the following investigations best confirms the diagnosis and guides drainage in this child?**
+**Which of the following additional investigations is most likely to change his management now?**
 
-- A. Blood culture and CBC
-- B. Chest radiograph
-- C. CT of the neck with IV contrast  **(key)**
-- D. Lateral neck radiograph
-- E. Rapid antigen throat swab
+- A. Chest radiograph  **(key)**
+- B. CT of the neck with contrast
+- C. Rapid influenza antigen test
+- D. Serum procalcitonin
+- E. Throat swab for strep
 
-*Explanation:* Contrast CT of the neck shows whether there is a drainable abscess or only cellulitis and maps its extent, which decides between surgical drainage and antibiotics alone. It should be done only with the airway judged safe and a clinician present. A lateral neck radiograph can show widening of the prevertebral soft tissue but cannot separate abscess from cellulitis. A chest radiograph does not image the neck. Blood tests and a throat swab do not confirm a deep neck infection.
+*Explanation:* Chest radiographs show pneumonia in more than half of children with bacterial tracheitis, and finding it changes oxygen needs, antibiotic plans and the level of care. A contrast CT of the neck needs him to lie flat and still, which is unsafe with stridor at rest, and adds little once the lateral film shows tracheal disease. An influenza test will not change management after his sister's confirmed case and his course. A strep swab looks for pharyngitis, not tracheal infection. Procalcitonin will not change the need for antibiotics in a child who already needs them.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Craig FW, Schunk JE. Retropharyngeal abscess in children. Clinical presentation, utility of imaging, and current management. Pediatrics. 2003.
+*Source:* Al-Mutairi B, Kirk V. Bacterial tracheitis in children. Approach to diagnosis and treatment. Paediatr Child Health. 2004. https://doi.org/10.1093/pch/9.1.25
 
 #### Q4
-*Update:* While he waits for CT, his stridor becomes louder. He is restless, with suprasternal retractions, and he will only sit upright on his mother's lap. O2 saturation is 92%.
+*Update:* Despite oxygen, his O2 saturation falls to 88% and his retractions worsen. He is tiring and has thick secretions pooling in his mouth.
 
-**Which of the following is the most appropriate next step for this child?**
+**Which of the following is the most appropriate next step in his airway management?**
 
-- A. dexamethasone 9 mg PO and observe
-- B. Intubation in the operating room  **(key)**
-- C. Needle cricothyroidotomy now
-- D. Proceed to CT lying supine
-- E. Rapid sequence intubation in the department
+- A. Heliox by face mask
+- B. High flow nasal cannula
+- C. Noninvasive ventilation by mask
+- D. Repeat nebulized epinephrine
+- E. Tracheal intubation and suctioning  **(key)**
 
-*Explanation:* Worsening stridor with retractions and falling saturation means the abscess is compressing his airway. The safest place to secure this anticipated difficult airway is the operating room, with an experienced anesthetist keeping spontaneous breathing during induction and a surgeon ready for a surgical airway. Rapid sequence induction removes airway tone and may turn partial obstruction into complete obstruction. Lying supine in the scanner can close the airway. Dexamethasone treats croup and does not relieve an abscess. Needle cricothyroidotomy is a rescue for failed oxygenation, which has not occurred.
+*Explanation:* A tiring child with worsening hypoxemia and thick secretions blocking the trachea needs a secure airway, and intubation allows the purulent secretions to be suctioned directly. Many children with bacterial tracheitis need intubation, and the decision is made on the degree of obstruction. Heliox and high flow nasal oxygen may ease the work of breathing but do nothing for secretions in the tracheal lumen. Noninvasive ventilation pushes gas against a narrowed, secretion-filled trachea. Nebulized epinephrine has already failed to help.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
+*Source:* Al-Mutairi B, Kirk V. Bacterial tracheitis in children. Approach to diagnosis and treatment. Paediatr Child Health. 2004. https://doi.org/10.1093/pch/9.1.25
 
 ### sob-26: Not helped by her new inhaler
 
@@ -797,66 +814,66 @@ A 49-year-old woman presents to the emergency department with 6 weeks of worseni
 
 *Source:* Klopper GJ, Adeniyi OV. Diagnostic accuracy of non-invasive modalities for laryngotracheal stenosis. A systematic review and meta-analysis. Eur Arch Otorhinolaryngol. 2025. https://doi.org/10.1007/s00405-025-09773-3
 
-### sob-27: Sudden pain while carrying groceries
+### sob-27: Worse breathing in a man with scarred lungs
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 67-year-old man with severe COPD presents to the emergency department 3 hours after sudden right sided chest pain and worse shortness of breath while carrying groceries. He normally walks 1 block before he has to stop. He uses tiotropium and salbutamol and smokes 1 pack a day. He has had no fever or change in sputum. He is speaking in short phrases. Breath sounds are reduced on the right and the percussion note is hard to judge. The trachea is midline. The neck veins are not distended.
+A 74-year-old man presents to the emergency department with 10 days of worsening shortness of breath and dry cough. He has idiopathic pulmonary fibrosis diagnosed 3 years ago and takes nintedanib. He normally walks 2 blocks and uses oxygen only on exertion. He has no fever, chest pain, leg swelling or orthopnea. He lives with his wife and makes his own decisions. He speaks in short phrases. There are fine inspiratory crackles at both lung bases, unchanged from his last clinic note. The JVP is not raised and there is no leg edema.
 
-- Temperature: 36.8°C oral
-- Pulse: 112/minute
-- Resp.: 28/minute
-- BP: 146/88 mmHg
-- O2 sat: 88% on room air
+- Temperature: 37.2°C oral
+- Pulse: 108/minute
+- Resp.: 30/minute
+- BP: 136/80 mmHg
+- O2 sat: 85% on 4 L/minute by nasal prongs
 
 #### Q1
-**Which of the following is the most likely cause of this patient's worsening shortness of breath?**
+**Which of the following investigations is most useful to find the cause of his deterioration?**
 
-- A. Acute exacerbation of COPD
-- B. Pneumonia of the right lower lobe
-- C. Pulmonary embolism
-- D. Right sided pneumothorax  **(key)**
-- E. Tension pneumothorax
+- A. Bronchoscopy with lavage
+- B. CT chest with pulmonary angiography  **(key)**
+- C. Serum procalcitonin
+- D. Sputum bacterial culture
+- E. Transthoracic echocardiogram
 
-*Explanation:* Sudden one sided chest pain with reduced breath sounds on that side in a patient with severe COPD is a secondary spontaneous pneumothorax until proven otherwise, a new problem that can be mistaken for his chronic disease. An exacerbation of COPD builds over days, with more cough or sputum and bilateral findings. He has no fever or new sputum to suggest pneumonia. PE can cause sudden pain and hypoxemia but not unilateral loss of breath sounds. A midline trachea, flat neck veins and a normal BP argue against tension.
+*Explanation:* An acute respiratory deterioration in IPF can come from an acute exacerbation, infection, PE, pneumothorax or heart failure, and the international working group uses CT to separate them. CT with pulmonary angiography shows new bilateral ground glass against his fibrosis and excludes PE and pneumothorax in one test. Bronchoscopy with lavage risks worsening hypoxemia in a man with a saturation of 85% on 4 L/minute. An echocardiogram looks only for a cardiac cause, which his normal JVP and lack of edema make less likely. Sputum culture and procalcitonin cannot show PE, pneumothorax or new ground glass.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society guideline for pleural disease. Thorax. 2023.
+*Source:* Collard HR, Ryerson CJ, Corte TJ, et al. Acute exacerbation of idiopathic pulmonary fibrosis. An international working group report. Am J Respir Crit Care Med. 2016. https://doi.org/10.1164/rccm.201604-0801CI
 
 #### Q2
-*Update:* The chest radiograph shows a right pneumothorax with a 2.5 cm rim at the level of the hilum. There are large bullae in both upper lobes.
+*Update:* CT shows new bilateral ground glass opacity over his fibrosis, with no PE, pneumothorax or consolidation. He has never discussed his wishes about life support.
 
-**Which of the following is the most appropriate management of this patient's pneumothorax?**
+**Which of the following is the most appropriate approach to invasive ventilation for this patient?**
 
-- A. Conservative care with a repeat film
-- B. Discharge with an ambulatory valve
-- C. High flow oxygen and observation
-- D. Needle aspiration and discharge
-- E. Small bore chest drain and admission  **(key)**
+- A. Discuss its poor outcome and his wishes  **(key)**
+- B. Intubate if his saturation falls below 80%
+- C. Intubate now before he tires further
+- D. Let his wife make the decision
+- E. Offer it as a routine bridge to recovery
 
-*Explanation:* He has a secondary pneumothorax with breathlessness and a saturation of 88%. The BTS guideline advises intervention and admission for a breathless patient with a secondary pneumothorax, and a small bore chest drain is the usual choice because aspiration fails more often when the lung is diseased. Conservative care is for patients with few symptoms. Ambulatory devices and discharge after aspiration are mainly for primary pneumothorax in healthy lungs. High flow oxygen does not treat the pneumothorax and risks hypercapnia in severe COPD.
+*Explanation:* The ATS/ERS/JRS/ALAT guideline recommends against mechanical ventilation for most patients with respiratory failure from IPF, while accepting it as a reasonable choice for a minority. He can make his own decisions, so the choice is his, after a clear discussion of the likely outcome and of what he values. Intubating now, or at a saturation trigger, commits him to an invasive treatment he has not chosen. His wife does not decide while he is able to decide for himself. Offering intubation as a routine bridge to recovery misstates its expected benefit in this disease.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society guideline for pleural disease. Thorax. 2023.
+*Source:* Raghu G, Collard HR, Egan JJ, et al. An official ATS/ERS/JRS/ALAT statement. Idiopathic pulmonary fibrosis. Evidence-based guidelines for diagnosis and management. Am J Respir Crit Care Med. 2011. https://doi.org/10.1164/rccm.2009-040GL
 
 #### Q3
-*Update:* A drain is placed under local anesthetic alone and the lung re-expands. On 4 L/minute by nasal prongs his O2 saturation is 97%. Two hours later he is drowsy but rousable. Arterial gas: pH 7.26, PaCO2 68 mmHg, PaO2 98 mmHg, HCO3 30 mmol/L.
+*Update:* He chooses a trial of high flow nasal oxygen. On 50 L/minute at an FiO2 of 0.80, his arterial PaO2 is 56 mmHg.
 
-**Which of the following is the most appropriate next step in his management?**
+**Which of the following is closest to his ratio of PaO2 to FiO2 on this support?**
 
-- A. Increase oxygen to 6 L/minute
-- B. Lower the O2 target and start NIV  **(key)**
-- C. naloxone 0.4 mg IV and observation
-- D. Rapid sequence intubation now
-- E. Repeat arterial gas in 2 hours
+- A. 45
+- B. 56
+- C. 70  **(key)**
+- D. 112
+- E. 140
 
-*Explanation:* A saturation of 97% is above the 88 to 92% target the BTS guideline sets for patients at risk of hypercapnia, and the drowsiness with a pH of 7.26 and PaCO2 of 68 mmHg is acute on chronic hypercapnic failure. Oxygen should be reduced to that target and noninvasive ventilation started, as he is still rousable. More oxygen worsens the hypercapnia. The drain went in under local anesthetic alone, so naloxone has no target. Intubation is kept for failure of NIV or inability to protect the airway. Waiting 2 hours lets the acidosis progress.
+*Explanation:* The ratio of PaO2 to FiO2 is 56 divided by 0.80, which is 70. A ratio this low confirms severe hypoxemia despite high flow support, and it gives an objective measure of how sick he is that his breathlessness alone cannot. A value of 45 comes from multiplying the PaO2 by the FiO2 instead of dividing. A value of 56 is the PaO2 alone. Values of 112 and 140 come from dividing by an FiO2 of 0.50 or 0.40 instead of 0.80.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* O'Driscoll BR, Howard LS, Earis J, Mak V. BTS guideline for oxygen use in adults in healthcare and emergency settings. Thorax. 2017.
+*Source:* Collard HR, Ryerson CJ, Corte TJ, et al. Acute exacerbation of idiopathic pulmonary fibrosis. An international working group report. Am J Respir Crit Care Med. 2016. https://doi.org/10.1164/rccm.201604-0801CI
 
 ### sob-28: Rusty sputum and a falling saturation
 
@@ -938,126 +955,126 @@ A 61-year-old man presents to the emergency department with 4 days of fever, cou
 
 *Source:* Lim WS, van der Eerden MM, Laing R, et al. Defining community acquired pneumonia severity on presentation to hospital. An international derivation and validation study. Thorax. 2003.
 
-### sob-29: Grey lips after an endoscopy
+### sob-29: Weak and breathing fast
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 46-year-old woman presents to the emergency department 90 minutes after an outpatient upper endoscopy. The endoscopist sprayed her throat several times with benzocaine because she gagged. She now has a headache, light-headedness and shortness of breath when she walks. She has no chest pain. She is otherwise healthy, takes no medications and is not pregnant. Her lips and fingertips are grey-blue. The chest is clear and the heart sounds are normal.
+A 26-year-old man is brought to the emergency department by his roommate with 2 days of worsening shortness of breath and weakness. Since this morning he cannot climb stairs or lift his arms above his head. His roommate says he has inhaled spray paint from a bag most evenings for months. He has had no vomiting, diarrhea or fever. He takes no medications, sedatives or opioids. There is silver paint around his nose and mouth. He is alert. His breathing is fast and shallow and his chest is clear. His limbs are weak with reduced reflexes. Labs: Na 139 mmol/L, K 1.9 mmol/L, Cl 117 mmol/L, HCO3 10 mmol/L, glucose 5.6 mmol/L, creatinine 104 umol/L, calcium 2.30 mmol/L, lactate 1.3 mmol/L, osmolal gap 5 mOsm/kg. Serum ketones are negative.
 
 - Temperature: 36.9°C oral
 - Pulse: 108/minute
-- Resp.: 22/minute
-- BP: 132/80 mmHg
-- O2 sat: 85% on 15 L/minute by nonrebreather mask
-- Weight: 60 kg
+- Resp.: 32/minute
+- BP: 112/70 mmHg
+- O2 sat: 97% on room air
 
 #### Q1
-*Update:* Arterial gas on 15 L/minute: pH 7.40, PaCO2 36 mmHg, PaO2 410 mmHg. The blood in the syringe is dark brown.
+**Which of the following is the most likely cause of his acidosis?**
 
-**Which of the following is the most likely cause of this patient's low oxygen saturation?**
+- A. Diabetic ketoacidosis
+- B. Salicylate poisoning
+- C. Severe diarrhea
+- D. Toluene inhalation  **(key)**
+- E. Toxic alcohol ingestion
 
-- A. Aspiration pneumonitis
-- B. Carbon monoxide poisoning
-- C. Methemoglobinemia  **(key)**
-- D. Pulmonary embolism
-- E. Sulfhemoglobinemia
-
-*Explanation:* A PaO2 of 410 mmHg should give a saturation close to 100%, so a pulse oximeter reading of 85% on high flow oxygen is a saturation gap. With cyanosis, chocolate brown blood and recent benzocaine spray, the cause is methemoglobinemia. Aspiration and PE lower the PaO2, which here is very high. Carbon monoxide makes the pulse oximeter read falsely normal, not low. Sulfhemoglobinemia is rare and follows sulfur containing drugs, while benzocaine is a well known cause of methemoglobinemia.
+*Explanation:* His anion gap is 139 minus 117 minus 10, which is 12 mmol/L, so this is a normal anion gap acidosis with severe hypokalemia. Toluene in spray paint and glue causes this pattern. It is a recognized cause of distal renal tubular acidosis, and its breakdown product, hippuric acid, is excreted in the urine with sodium and potassium. Diabetic ketoacidosis, salicylate poisoning and a toxic alcohol raise the anion gap, and his glucose, ketones and osmolal gap are normal. Severe diarrhea causes a normal anion gap acidosis with hypokalemia, but he has had none.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Skold A, Cosco DL, Klein R. Methemoglobinemia. Pathogenesis, diagnosis, and management. South Med J. 2011.
+*Source:* Tuchscherer J, Rehman H. Metabolic acidosis in toluene sniffing. CJEM. 2013. https://doi.org/10.2310/8000.2013.130974
 
 #### Q2
-**Which of the following is the most appropriate test to confirm the diagnosis in this patient?**
+*Update:* Arterial gas on room air: pH 7.09, PaCO2 34 mmHg, HCO3 10 mmol/L.
 
-- A. Arterial co-oximetry  **(key)**
-- B. CT pulmonary angiogram
-- C. Hemoglobin electrophoresis
-- D. Repeat pulse oximetry
-- E. Serum lactate level
+**Which of the following best describes his respiratory compensation for this metabolic acidosis?**
 
-*Explanation:* Co-oximetry measures light absorption at several wavelengths and reports the methemoglobin fraction directly, which confirms the diagnosis and guides treatment. A standard pulse oximeter uses two wavelengths and tends toward a reading of about 85% as methemoglobin rises, so repeating it adds nothing. CT angiography looks for PE, which the high PaO2 argues against. Hemoglobin electrophoresis detects inherited hemoglobin variants, not an acquired drug effect. Lactate may rise but does not identify the cause.
+- A. Appropriate for the degree of acidosis
+- B. Excessive, from a primary respiratory alkalosis
+- C. Inadequate, from a central respiratory depressant
+- D. Inadequate, from weak respiratory muscles  **(key)**
+- E. Not assessable until potassium is normal
+
+*Explanation:* By Winter's formula his expected PaCO2 is 1.5 x 10 + 8 = 23 mmHg, plus or minus 2, so 21 to 25 mmHg. His PaCO2 of 34 mmHg is well above that, so his breathing is not keeping pace with the acidosis. With a potassium of 1.9 mmol/L and weak limbs, the weakness is reaching his breathing muscles, and he is at risk of respiratory failure even though his saturation is 97%. A primary respiratory alkalosis would push the PaCO2 below the expected range. He is alert and has taken no sedative or opioid. The gas can be read now, and waiting for a normal potassium would delay recognition of his failing ventilation.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* Skold A, Cosco DL, Klein R. Methemoglobinemia. Pathogenesis, diagnosis, and management. South Med J. 2011.
+*Source:* Albert MS, Dell RB, Winters RW. Quantitative displacement of acid-base equilibrium in metabolic acidosis. Ann Intern Med. 1967. https://doi.org/10.7326/0003-4819-66-2-312
 
 #### Q3
-*Update:* Co-oximetry shows a methemoglobin level of 32%. She has no known G6PD deficiency.
+**Which of the following is the most appropriate first treatment for his acidosis and electrolyte disorder?**
 
-**Which of the following is the most appropriate treatment for this patient?**
+- A. calcium gluconate IV
+- B. insulin with dextrose IV
+- C. potassium replacement IV  **(key)**
+- D. salbutamol by nebulizer
+- E. sodium bicarbonate IV
 
-- A. ascorbic acid 1 g IV
-- B. hyperbaric oxygen therapy
-- C. methylene blue 60 mg IV over 5 minutes  **(key)**
-- D. methylene blue 300 mg IV over 5 minutes
-- E. sodium thiosulfate 12.5 g IV
-
-*Explanation:* A methemoglobin level of 32% with symptoms is an indication for methylene blue, which speeds the reduction of methemoglobin back to hemoglobin. The usual dose is 1 to 2 mg/kg, and 1 mg/kg for 60 kg is 60 mg. The 300 mg dose is 5 mg/kg, far above the usual starting dose, and large doses of methylene blue can themselves cause hemolysis and methemoglobinemia. Ascorbic acid acts too slowly for a symptomatic patient. Hyperbaric oxygen is used for carbon monoxide, and sodium thiosulfate treats cyanide.
+*Explanation:* Potassium must be replaced first, by IV infusion with cardiac monitoring. The ATSDR guideline for toluene advises that bicarbonate not be given until potassium and calcium are adequately replaced, because alkali drives potassium into cells and can deepen the weakness, including of his breathing muscles. Insulin with dextrose and salbutamol also shift potassium into cells and would make it worse. His calcium of 2.30 mmol/L is normal, so calcium gluconate is not needed. Ventilatory support may still be needed if his breathing weakens further.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Skold A, Cosco DL, Klein R. Methemoglobinemia. Pathogenesis, diagnosis, and management. South Med J. 2011.
+*Source:* Agency for Toxic Substances and Disease Registry. Medical management guidelines for toluene. 2014. https://wwwn.cdc.gov/tsp/MMG/MMGDetails.aspx?mmgid=157&toxid=29
 
-### sob-30: Headaches during a power outage
+### sob-30: A young child who stopped walking
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 38-year-old man presents to the emergency department in January with 1 day of headache, nausea and shortness of breath on exertion. His wife and teenage son also have headaches. Their power has been out for 2 days and they have been running a gasoline generator in their attached garage. He has no past medical history and takes no medications. He is alert and oriented. The chest is clear and the neurologic examination is normal.
+You are working in a rural hospital emergency department in the interior of British Columbia in May. A 4-year-old girl is brought in by her parents because she has been unsteady and falling since yesterday. Today she cannot walk or lift her arms well, and her voice is weak. She spent the weekend at a family ranch. She has had no fever, vomiting or diarrhea. She is alert and follows commands. Her legs are floppy with absent knee and ankle reflexes, and her arms are weak. Sensation seems normal. Her cough is weak, and her abdomen moves inward as her chest rises when she breathes in.
 
-- Temperature: 36.8°C oral
-- Pulse: 112/minute
-- Resp.: 22/minute
-- BP: 136/84 mmHg
-- O2 sat: 99% on room air
+- Temperature: 36.9°C tympanic
+- Pulse: 124/minute
+- Resp.: 34/minute
+- BP: 98/60 mmHg
+- O2 sat: 96% on room air
+- Weight: 17 kg
 
 #### Q1
-**Which of the following tests is most appropriate to confirm the suspected diagnosis in this patient?**
+**Which of the following findings best shows how severely her breathing is affected?**
 
-- A. Arterial PaO2 measurement
-- B. Carboxyhemoglobin by co-oximetry  **(key)**
-- C. CT head without contrast
-- D. Serum lactate and electrolytes
-- E. Urine toxicology screen
+- A. Absent knee and ankle reflexes
+- B. Oxygen saturation of 96%
+- C. Paradoxical breathing and weak cough  **(key)**
+- D. Pulse of 124/minute
+- E. Unsteady gait since yesterday
 
-*Explanation:* A household cluster of headache, nausea and breathlessness while a generator runs in an attached garage points to carbon monoxide. The diagnosis is confirmed by measuring carboxyhemoglobin with co-oximetry on a venous or arterial sample. A standard pulse oximeter reads carboxyhemoglobin as oxyhemoglobin, so his saturation of 99% is falsely reassuring. The PaO2 reflects dissolved oxygen and stays normal. CT of the head, lactate and a urine screen do not measure carbon monoxide.
+*Explanation:* A weak cough and inward movement of the abdomen as the chest rises show that the ascending paralysis has reached her breathing muscles, including the diaphragm, and she is at risk of respiratory failure. A saturation of 96% on room air does not measure the strength of those muscles and can stay normal until ventilation fails. Absent reflexes and an unsteady gait describe the neurological deficit but not the threat to her breathing. A fast pulse is nonspecific in a frightened, unwell child.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* Rose JJ, Wang L, Xu Q, et al. Carbon monoxide poisoning. Pathogenesis, management, and future directions of therapy. Am J Respir Crit Care Med. 2017.
+*Source:* Brown N, Waja N. Tick paralysis in a 6-year-old boy. Can Fam Physician. 2022. https://doi.org/10.46747/cfp.680122
 
 #### Q2
-*Update:* His carboxyhemoglobin level is 24%.
+*Update:* While a nurse brushes her long hair, she finds an engorged tick attached to the scalp behind the right ear.
 
-**Which of the following is the most appropriate initial treatment for this patient?**
+**Which of the following is the most appropriate treatment for her now?**
 
-- A. hydroxocobalamin 5 g IV
-- B. methylene blue 1 mg/kg IV
-- C. Nasal prongs at 2 L/minute
-- D. Observation on room air
-- E. Oxygen 15 L/minute by nonrebreather  **(key)**
+- A. Botulism antitoxin via public health
+- B. Cover the tick with petroleum jelly
+- C. doxycycline 37 mg PO twice daily
+- D. IV immune globulin 2 g/kg
+- E. Remove the tick with fine tweezers  **(key)**
 
-*Explanation:* High flow oxygen by nonrebreather mask is the first treatment for carbon monoxide poisoning. It shortens the half-life of carboxyhemoglobin from about 5 hours on room air to about 1 hour. Low flow nasal prongs and room air leave the carbon monoxide bound for much longer. Hydroxocobalamin treats cyanide from smoke inhalation, and he was exposed to generator exhaust, not a fire. Methylene blue treats methemoglobinemia.
+*Explanation:* Ascending flaccid paralysis with lost reflexes over 1 to 2 days and an attached engorged tick is tick paralysis. Removing the tick is the treatment, and strength usually improves within hours. Grasp the tick with tweezers as close to the skin as possible. Covering it with petroleum jelly delays removal. Immune globulin treats Guillain-Barré syndrome, which usually progresses more slowly, over up to 4 weeks, and is not reversed by removing a tick. Botulism antitoxin is for a descending paralysis, and hers is ascending. Doxycycline treats tick-borne infections, not the paralysis.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Rose JJ, Wang L, Xu Q, et al. Carbon monoxide poisoning. Pathogenesis, management, and future directions of therapy. Am J Respir Crit Care Med. 2017.
+*Source:* Brown N, Waja N. Tick paralysis in a 6-year-old boy. Can Fam Physician. 2022. https://doi.org/10.46747/cfp.680122
 
 #### Q3
-**Which of the following additional findings would most support referral for hyperbaric oxygen therapy?**
+*Update:* Two hours after the tick is removed she can lift her arms, her cough is stronger and her breathing is no longer paradoxical. Her legs are still weak.
 
-- A. Carboxyhemoglobin of 20% on repeat
-- B. Headache that improves on oxygen
-- C. Nausea with one episode of vomiting
-- D. Syncope in the garage before arrival  **(key)**
-- E. Tachycardia of 112/minute
+**Which of the following is the most appropriate plan for her now?**
 
-*Explanation:* Loss of consciousness is one of the accepted markers of severe carbon monoxide poisoning that prompt consideration of hyperbaric oxygen, along with neurologic deficits, a carboxyhemoglobin level above about 25%, cardiac ischemia and severe acidosis. A repeat level of 20% is falling on oxygen and, like his first level of 24%, is below the usual threshold in a patient who is not pregnant. Headache that settles, nausea and tachycardia are features of mild to moderate poisoning that are treated with normobaric oxygen.
+- A. Discharge home now with her parents
+- B. Elective intubation before transfer
+- C. Lumbar puncture to exclude Guillain-Barré
+- D. MRI of the spine before any decision
+- E. Observe with serial checks of breathing  **(key)**
+
+*Explanation:* Rapid improvement within hours of removing the tick confirms the diagnosis, and recovery is usually complete by about 36 hours. Until then she should stay where her strength, cough and breathing can be rechecked at set times, because weakness that reached her breathing muscles can still threaten ventilation. Sending her home now removes that monitoring while her legs are still weak. Intubation is not needed while her breathing improves. A lumbar puncture and spinal MRI are not needed once removal of the tick has produced clear improvement.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* Rose JJ, Wang L, Xu Q, et al. Carbon monoxide poisoning. Pathogenesis, management, and future directions of therapy. Am J Respir Crit Care Med. 2017.
+*Source:* Brown N, Waja N. Tick paralysis in a 6-year-old boy. Can Fam Physician. 2022. https://doi.org/10.46747/cfp.680122
 
 ### sob-31: Fever, palpitations and orthopnea at 79
 
@@ -1121,129 +1138,122 @@ Select 3.
 
 *Source:* Metlay JP, Waterer GW, Long AC, et al. Diagnosis and treatment of adults with community-acquired pneumonia. An official clinical practice guideline of the American Thoracic Society and Infectious Diseases Society of America. Am J Respir Crit Care Med. 2019.
 
-### sob-32: Pressure falls after the tube goes in
+### sob-32: Fever and a wet cough in a man with weak muscles
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 31-year-old man with severe asthma is brought to the emergency department by ambulance after 2 days of worsening wheeze. He has had 2 prior ICU admissions for asthma. Despite continuous salbutamol, ipratropium, methylprednisolone 125 mg IV and magnesium sulfate 2 g IV, he became exhausted and confused. He was intubated 20 minutes ago with ketamine and rocuronium. The ventilator is on volume control with a tidal volume of 500 mL, a rate of 22/minute, PEEP of 5 cmH2O and an FiO2 of 1.0. Breath sounds are very faint on both sides and the chest looks hyperinflated.
+A 63-year-old man with amyotrophic lateral sclerosis is brought to the emergency department by ambulance with 3 days of fever and a wet cough that he cannot clear, and 1 day of worsening shortness of breath. He uses bilevel noninvasive ventilation at night and has a gastrostomy tube. His peak cough flow at clinic last month was 190 L/minute. His advance directive, written with his neurologist, accepts noninvasive ventilation and antibiotics and declines intubation and tracheostomy. He is drowsy but rousable. There are coarse crackles at the right lung base. Paramedics started oxygen by nonrebreather mask.
 
-- Pulse: 132/minute
-- BP: 74/40 mmHg
-- O2 sat: 90% on FiO2 1.0 by ventilator
-- Weight: 80 kg
+- Temperature: 38.4°C oral
+- Pulse: 112/minute
+- Resp.: 30/minute
+- BP: 132/78 mmHg
+- O2 sat: 97% on 15 L/minute by nonrebreather mask
 
 #### Q1
-**Which of the following is the most appropriate immediate action for this patient's hypotension?**
+**Which of the following is the most appropriate respiratory support for him now?**
 
-- A. Disconnect the circuit to allow exhalation  **(key)**
-- B. Increase the PEEP to 10 cmH2O
-- C. Increase the respiratory rate to 28/minute
-- D. Needle decompression of both sides
-- E. norepinephrine infusion alone
+- A. Bilevel ventilation by face mask  **(key)**
+- B. Comfort care with morphine only
+- C. High flow nasal oxygen
+- D. Keep the nonrebreather mask
+- E. Rapid sequence intubation
 
-*Explanation:* Hypotension soon after intubation in severe asthma, with faint breath sounds and a hyperinflated chest, is most often dynamic hyperinflation. A rate of 22/minute leaves too little time to exhale through narrowed airways, so breaths stack and intrathoracic pressure blocks venous return. Disconnecting the circuit for 30 to 60 seconds lets the lungs empty, and the BP usually recovers at once. If it does not, tension pneumothorax is considered next, but blind bilateral decompression can create pneumothoraces. More PEEP or a faster rate worsens trapping. A vasopressor alone leaves the cause untreated.
+*Explanation:* He is drowsy, and high flow oxygen can keep his saturation normal while his weak breathing muscles let carbon dioxide rise. Canadian ALS recommendations treat noninvasive ventilation as the standard of care for respiratory insufficiency and advise against oxygen as a routine treatment, with low oxygen levels treated first by noninvasive ventilation. His advance directive accepts noninvasive ventilation and declines intubation, so intubation would override his stated wishes. High flow nasal oxygen gives no inspiratory pressure support. Comfort care alone withholds a treatment he has chosen.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Leatherman J. Mechanical ventilation for severe asthma. Chest. 2015. https://doi.org/10.1378/chest.14-1733
+*Source:* Shoesmith C, Abrahao A, Benstead T, et al. Canadian best practice recommendations for the management of amyotrophic lateral sclerosis. CMAJ. 2020. https://doi.org/10.1503/cmaj.191721
 
 #### Q2
-*Update:* His BP rises to 112/70 mmHg within a minute of disconnection. The ventilator is about to be reconnected.
+**Which of the following is the most effective way to help him clear his airway secretions?**
 
-**Which of the following ventilator changes is most appropriate for this patient?**
+- A. Bronchoscopy at the bedside
+- B. glycopyrrolate 0.2 mg SC every 6 hours
+- C. Incentive spirometry every hour
+- D. Mechanical insufflation-exsufflation  **(key)**
+- E. Nebulized acetylcysteine every 6 hours
 
-- A. Increase PEEP to 12 cmH2O
-- B. Increase tidal volume to 700 mL
-- C. Lower the rate to 10/minute  **(key)**
-- D. Raise the rate to 30/minute
-- E. Slow the inspiratory flow rate
-
-*Explanation:* The aim in severe asthma is controlled hypoventilation. A low rate, such as 10 to 12/minute, with a modest tidal volume and a high inspiratory flow gives the longest possible time to exhale and limits hyperinflation, accepting a raised PaCO2. A faster rate or larger tidal volume increases minute ventilation and trapping. Slowing inspiratory flow lengthens inspiration and shortens the time left to exhale. Added external PEEP does not help and may add to hyperinflation in a paralyzed patient.
+*Explanation:* His peak cough flow of 190 L/minute is well below the 270 L/minute threshold at which Canadian ALS recommendations advise mechanical insufflation-exsufflation for trouble clearing secretions, with more frequent use during a chest infection. The device inflates the lungs and then applies negative pressure to produce an effective cough. Incentive spirometry depends on muscle strength he does not have. Glycopyrrolate treats drooling of saliva, not retained chest secretions. Nebulized acetylcysteine does not give him the cough he needs to bring secretions up. Bronchoscopy is invasive and is kept for failure of the device.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Leatherman J. Mechanical ventilation for severe asthma. Chest. 2015. https://doi.org/10.1378/chest.14-1733
+*Source:* Shoesmith C, Abrahao A, Benstead T, et al. Canadian best practice recommendations for the management of amyotrophic lateral sclerosis. CMAJ. 2020. https://doi.org/10.1503/cmaj.191721
 
 #### Q3
-*Update:* Thirty minutes later the arterial gas shows pH 7.19, PaCO2 78 mmHg, PaO2 88 mmHg. The plateau pressure is 26 cmH2O and the BP is 118/72 mmHg.
+*Update:* His arrival arterial gas showed pH 7.26 and PaCO2 68 mmHg. After 1 hour of bilevel ventilation with added oxygen, his O2 saturation is 95%.
 
-**Which of the following is the most appropriate response to this arterial gas result?**
+**Which of the following is the best measure of whether noninvasive ventilation is working for him?**
 
-- A. Increase the rate to 20/minute
-- B. Increase tidal volume to 650 mL
-- C. sodium bicarbonate 100 mmol IV
-- D. Start inhaled nitric oxide
-- E. Tolerate the current hypercapnia  **(key)**
+- A. Chest radiograph appearance
+- B. Oxygen saturation of 95%
+- C. Peak expiratory flow rate
+- D. Repeat arterial PaCO2 and pH  **(key)**
+- E. Temperature trend over 1 hour
 
-*Explanation:* Permissive hypercapnia is the accepted strategy in ventilated severe asthma. A pH of 7.19 is tolerated when oxygenation is adequate, the plateau pressure is below 30 cmH2O and he is hemodynamically stable, as he now is. Increasing the rate or tidal volume to lower the PaCO2 brings back the hyperinflation that caused his hypotension. Bicarbonate is not needed at this pH and adds CO2. Inhaled nitric oxide dilates pulmonary vessels and does not relieve airflow obstruction.
+*Explanation:* His failure is ventilatory, so success is judged by a falling PaCO2 and a rising pH, and the BTS/ICS guideline advises a repeat blood gas 1 to 2 hours after starting noninvasive ventilation. A saturation of 95% on added oxygen can coexist with a PaCO2 that is still rising. Peak flow needs effort and a lip seal he cannot give and measures airflow obstruction, not ventilation. The chest radiograph and temperature follow the pneumonia over days, not his response to ventilation in the first hours.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* Leatherman J. Mechanical ventilation for severe asthma. Chest. 2015. https://doi.org/10.1378/chest.14-1733
+*Source:* Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. Thorax. 2016.
 
-### sob-33: Noisy breathing that inhalers do not help
+### sob-33: Noisy breathing and a very sore throat
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 67-year-old man presents to the emergency department with 3 weeks of worsening shortness of breath on walking and noisy breathing. Two weeks ago his family physician diagnosed COPD and prescribed salbutamol and tiotropium, which have not helped. He has smoked for 45 pack-years and drinks 6 beers a day. His voice has been hoarse for 4 months and he has lost 7 kg. He is sitting upright and speaking in short sentences. There is a high-pitched noise on inspiration, loudest over the neck. There is no wheeze. There is a firm, nontender 2 cm node in the left side of the neck.
+A 15-year-old boy is brought to the emergency department by his father after 8 days of fever, sore throat and tiredness. Since last night his breathing has become noisy and he cannot sleep lying down. Swallowing is painful but he can manage sips of water. He is fully immunized and has not travelled. He is sitting up and speaks in a thick voice. Both tonsils are grossly enlarged, meet in the midline and are covered with white exudate. The uvula is in the midline and he can open his mouth fully. There are large tender nodes in the back of the neck, and the spleen tip is palpable. There is a loud snoring noise with each breath.
 
-- Temperature: 36.9°C oral
-- Pulse: 104/minute
+- Temperature: 38.6°C oral
+- Pulse: 112/minute
 - Resp.: 24/minute
-- BP: 152/88 mmHg
+- BP: 118/70 mmHg
 - O2 sat: 95% on room air
+- Weight: 58 kg
 
 #### Q1
-**Which of the following best explains why his inhalers have not relieved his breathing?**
+**Which of the following findings indicates that his upper airway is becoming narrowed?**
 
-- A. Fixed airway obstruction from COPD
-- B. Obstruction at the level of the larynx  **(key)**
-- C. Poor inhaler technique
-- D. Undertreated asthma with remodeling
-- E. Viral bronchitis still resolving
+- A. Palpable spleen tip
+- B. Posterior cervical lymph nodes
+- C. Snoring noise and cannot lie flat  **(key)**
+- D. Temperature of 38.6°C
+- E. White tonsillar exudate
 
-*Explanation:* A high-pitched inspiratory noise that is loudest over the neck, with no wheeze, is stridor from narrowing at or near the larynx. Bronchodilators relax the smooth muscle of the lower airways and do nothing for a fixed laryngeal obstruction. Four months of hoarseness, weight loss, heavy smoking and drinking and a firm neck node point to a laryngeal cancer. COPD and asthma cause expiratory wheeze and a prolonged expiration, not inspiratory stridor over the neck. Poor inhaler technique or a slowly resolving bronchitis would not explain the stridor, the hoarseness or the node.
+*Explanation:* A snoring noise with each breath while awake, called stertor, and being unable to lie down show that tonsils meeting in the midline are narrowing his upper airway. Lying flat lets the enlarged tonsils fall back and worsens the obstruction. A palpable spleen, posterior cervical nodes, fever and tonsillar exudate support the cause of his illness but say nothing about the size of his airway. The distinction matters because upper airway narrowing needs a different response from a lower airway problem.
 
 *Key feature:* Shortness of breath 1. In acute dyspnea, distinguish upper from lower airway causes because emergency management differs.
 
 *Source:* Eskander A, de Almeida JR, Irish JC. Acute upper airway obstruction. N Engl J Med. 2019. https://doi.org/10.1056/NEJMra1811697
 
 #### Q2
-**Which of the following findings in this patient point to a problem other than COPD?**
+**Which of the following is the most likely cause of his upper airway narrowing?**
 
-Select 3.
+- A. Acute epiglottitis
+- B. Infectious mononucleosis  **(key)**
+- C. Peritonsillar abscess
+- D. Respiratory diphtheria
+- E. Retropharyngeal abscess
 
-- A. Breathlessness when walking
-- B. Firm left neck node  **(key)**
-- C. Heart rate of 104/minute
-- D. Hoarse voice for 4 months  **(key)**
-- E. Inspiratory noise over the neck  **(key)**
-- F. O2 sat of 95% on room air
-- G. Smoking history of 45 pack-years
-- H. Speaking in short sentences
-
-*Explanation:* Hoarseness lasting 4 months, inspiratory noise over the neck and a firm neck node each point to a new problem, most likely a laryngeal cancer with spread to a neck node, and none is a feature of COPD. A new diagnosis in a patient already labelled with a chronic lung disease is easy to miss when every symptom is put down to that label. Breathlessness on walking, a heart rate of 104/minute, short sentences and a saturation of 95% fit COPD as well as they fit laryngeal obstruction. Heavy smoking is a risk factor for both, so it does not separate them.
+*Explanation:* Eight days of fever and tiredness, huge symmetrical tonsils with exudate, posterior cervical nodes and a palpable spleen tip in a teenager point to infectious mononucleosis. A peritonsillar abscess is usually one-sided, with trismus and deviation of the uvula, and his uvula is central and his mouth opens fully. Epiglottitis causes severe pain with a nearly normal oropharynx, not tonsils that meet in the midline. He is fully immunized and has not travelled, which makes diphtheria very unlikely. A retropharyngeal abscess bulges the posterior pharyngeal wall and stiffens the neck.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Eskander A, de Almeida JR, Irish JC. Acute upper airway obstruction. N Engl J Med. 2019. https://doi.org/10.1056/NEJMra1811697
+*Source:* Luzuriaga K, Sullivan JL. Infectious mononucleosis. N Engl J Med. 2010. https://doi.org/10.1056/NEJMcp1001116
 
 #### Q3
-*Update:* Flexible nasolaryngoscopy shows a large glottic mass that leaves an airway of a few millimetres. Over the next hour his stridor becomes louder and his O2 saturation falls to 91%. An otolaryngologist and an anesthetist are at the bedside.
+**Which of the following is the most appropriate treatment to start for him now?**
 
-**Which of the following is the most appropriate airway plan for this patient?**
+- A. acyclovir 800 mg PO five times daily
+- B. amoxicillin 500 mg PO three times daily
+- C. Awake flexible intubation now
+- D. dexamethasone 10 mg IV  **(key)**
+- E. Needle aspiration of both tonsils
 
-- A. Awake tracheostomy under local anesthesia  **(key)**
-- B. Nebulized salbutamol and ipratropium
-- C. Noninvasive positive pressure ventilation
-- D. Rapid sequence intubation with a bougie
-- E. Supraglottic airway after sedation
-
-*Explanation:* A glottic tumour that leaves only a few millimetres of airway may not let a tube pass, and any sedation can turn partial obstruction into complete obstruction. A tracheostomy under local anesthesia while he stays awake and breathing secures the airway below the tumour and avoids both problems. Awake flexible intubation is sometimes tried for a difficult airway, but a friable mass this tight may block the scope or bleed, so the awake surgical airway is the safer plan here. Rapid sequence induction removes his own airway tone, and a bougie or tube may not pass the mass or may make it bleed. A supraglottic airway sits above the obstruction and cannot bypass it. Noninvasive ventilation and bronchodilators do not relieve a fixed laryngeal obstruction.
+*Explanation:* Corticosteroids are not used for the usual symptoms of mononucleosis but are reserved for impending airway obstruction, and stertor with inability to lie flat is that situation. A corticosteroid such as dexamethasone IV can shrink the swollen lymphoid tissue while he is watched closely in case the obstruction progresses. An antiviral such as acyclovir adds nothing. Amoxicillin does not treat a viral illness and often causes a rash in mononucleosis. There is no abscess to aspirate. He keeps a saturation of 95% and is talking, so even an awake intubation is not yet needed, although the airway team should be told about him.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
+*Source:* Gomes K, Goldman RD. Corticosteroids for infectious mononucleosis. Can Fam Physician. 2023. https://doi.org/10.46747/cfp.6902101
 
 ### sob-34: Lunch tray in a stretcher bay
 
@@ -1362,65 +1372,64 @@ A 71-year-old woman presents to the emergency department with 3 weeks of increas
 
 *Source:* Roberts ME, Rahman NM, Maskell NA, et al. British Thoracic Society guideline for pleural disease. Thorax. 2023.
 
-### sob-36: Breathless while hanging laundry
+### sob-36: Breathless with a swollen abdomen
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department. The nearest PCI centre is 3 hours away by road. A 76-year-old woman presents to the emergency department with 3 hours of shortness of breath and nausea that began while she was hanging laundry. She has no chest pain. She has type 2 diabetes treated with insulin, hypertension and stage 3 chronic kidney disease. She has no history of stroke or bleeding. She is sweaty and pale. The JVP is not raised. There are faint crackles at both bases. Her legs are not swollen.
+A 58-year-old man with alcohol-related cirrhosis presents to the emergency department with 1 week of increasing shortness of breath, now at rest, and he cannot lie flat. He stopped drinking 1 year ago. He takes spironolactone 100 mg and furosemide 40 mg daily. He has no fever, cough or chest pain. There is dullness and absent breath sounds over the lower two thirds of the right chest. He has moderate ascites and spider angiomas. The JVP is not raised and there is mild ankle edema. A chest radiograph shows a large right pleural effusion with a normal heart size and a clear left lung.
 
-- Temperature: 36.7°C oral
-- Pulse: 98/minute
-- Resp.: 24/minute
-- BP: 148/88 mmHg
-- O2 sat: 93% on room air
-- Weight: 68 kg
+- Temperature: 36.8°C oral
+- Pulse: 104/minute
+- Resp.: 28/minute
+- BP: 104/62 mmHg
+- O2 sat: 89% on room air
 
 #### Q1
-**Which of the following investigations should be done first for this patient?**
+**Which of the following is the most likely cause of his pleural effusion?**
 
-- A. Arterial blood gas
-- B. Chest radiograph
-- C. D-dimer level
-- D. Electrocardiogram  **(key)**
-- E. Serum troponin level
+- A. Ascites moving across the diaphragm  **(key)**
+- B. Heart failure with fluid overload
+- C. Malignancy spreading to the pleura
+- D. Parapneumonic effusion
+- E. Pulmonary embolism with infarction
 
-*Explanation:* Sudden breathlessness with nausea and sweating on exertion in an older woman with diabetes can be an anginal equivalent, with no chest pain at all. An ECG within 10 minutes of arrival identifies ST elevation myocardial infarction, which needs reperfusion decisions within minutes. Troponin takes time to result and does not decide reperfusion. A chest radiograph and blood gas describe the lungs but do not find the cause if it is ischemic. A D-dimer is not the first test before the ECG has excluded a coronary cause.
+*Explanation:* A large right-sided effusion in a man with cirrhosis and ascites, with a normal heart size, a normal JVP and no fever, is most likely a hepatic hydrothorax, where ascitic fluid passes through small defects in the diaphragm into the pleural space. Heart failure usually causes bilateral effusions with a raised JVP and a large heart. A parapneumonic effusion comes with fever, cough and consolidation. Pulmonary infarction causes pleuritic pain and a small effusion. Malignancy, including liver cancer, remains possible and is one reason to send the fluid for analysis.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Wong GC, Welsford M, Ainsworth C, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction. Focused update on regionalization and reperfusion. Can J Cardiol. 2019.
+*Source:* Biggins SW, Angeli P, Garcia-Tsao G, et al. Diagnosis, evaluation, and management of ascites, spontaneous bacterial peritonitis and hepatorenal syndrome. 2021 practice guidance by the American Association for the Study of Liver Diseases. Hepatology. 2021. https://doi.org/10.1002/hep.31884
 
 #### Q2
-*Update:* The ECG shows 3 mm of ST elevation in V1 to V4 with reciprocal ST depression in II, III and aVF.
+**Which of the following is the most appropriate treatment for his breathlessness now?**
 
-**Which of the following is the most appropriate reperfusion strategy for this patient?**
+- A. albumin 25% 100 mL IV
+- B. Increase furosemide to 80 mg IV
+- C. Large-volume paracentesis alone
+- D. Noninvasive ventilation
+- E. Therapeutic thoracentesis  **(key)**
 
-- A. Fibrinolysis and admission locally
-- B. Fibrinolysis then transfer for PCI  **(key)**
-- C. heparin infusion and admission locally
-- D. Transfer for primary PCI without lysis
-- E. Troponin first, then decide
-
-*Explanation:* A 3 hour road transfer means first medical contact to device time will be well over 120 minutes. The Canadian Cardiovascular Society guideline then recommends fibrinolysis within 30 minutes of arrival, followed by routine transfer to a PCI centre for angiography within 24 hours, or at once for failed reperfusion. Transfer for primary PCI alone delays reperfusion past the recommended window. Lysis without transfer misses early angiography. Heparin alone does not reperfuse the artery. Waiting for troponin delays treatment of a diagnosis the ECG has already made.
+*Explanation:* The large effusion is causing his hypoxemia and orthopnea, and the AASLD guidance advises therapeutic thoracentesis for dyspnea, followed by diuretics to slow reaccumulation. Draining the fluid relieves him within minutes and provides fluid to exclude infection and malignancy. Paracentesis alone removes abdominal fluid but leaves the pleural collection that is compressing his lung. A higher dose of IV furosemide acts over days and risks kidney injury with his low BP. Albumin does not drain the effusion. Noninvasive ventilation does not remove a collection of fluid.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Wong GC, Welsford M, Ainsworth C, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction. Focused update on regionalization and reperfusion. Can J Cardiol. 2019.
+*Source:* Biggins SW, Angeli P, Garcia-Tsao G, et al. Diagnosis, evaluation, and management of ascites, spontaneous bacterial peritonitis and hepatorenal syndrome. 2021 practice guidance by the American Association for the Study of Liver Diseases. Hepatology. 2021. https://doi.org/10.1002/hep.31884
 
 #### Q3
-**Which of the following fibrinolytic regimens is most appropriate for this patient?**
+*Update:* He improves after removal of 1.5 L of transudate with a low neutrophil count and a negative culture. Four days later the effusion has returned to the same size despite diuretics.
 
-- A. alteplase 100 mg IV over 2 hours
-- B. tenecteplase 8.75 mg IV bolus
-- C. tenecteplase 17.5 mg IV bolus  **(key)**
-- D. tenecteplase 35 mg IV bolus
-- E. tenecteplase 50 mg IV bolus
+**Which of the following is the most appropriate plan for his recurrent pleural effusion?**
 
-*Explanation:* She is 76 years old. The Canadian guideline suggests a half dose of fibrinolytic for patients older than 75 in a pharmacoinvasive strategy, because full dose tenecteplase raised intracranial hemorrhage in this age group in the STREAM trial. The full weight-based dose for 68 kg is 35 mg, so half is 17.5 mg. The 35 mg dose is the full dose meant for younger patients of her weight, and 50 mg is the dose for 90 kg or more. A quarter dose of 8.75 mg has not been tested. Alteplase 100 mg over 2 hours is the regimen used for massive PE.
+- A. Chest tube for continuous drainage
+- B. Chest tube with talc pleurodesis
+- C. Discharge and review in 4 weeks
+- D. Repeat thoracentesis and TIPS referral  **(key)**
+- E. Stop both diuretics
+
+*Explanation:* A hydrothorax that returns despite diuretics is refractory, and repeat thoracentesis controls his symptoms while he is assessed for a transjugular intrahepatic portosystemic shunt (TIPS) or liver transplantation. The AASLD guidance advises avoiding chest tubes in hepatic hydrothorax because they are linked to high morbidity, clinical deterioration, death and fistula formation. Talc pleurodesis also needs a chest tube. Stopping diuretics speeds reaccumulation. Waiting 4 weeks leaves a large recurrent effusion untreated.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Wong GC, Welsford M, Ainsworth C, et al. 2019 Canadian Cardiovascular Society/Canadian Association of Interventional Cardiology guidelines on the acute management of ST-elevation myocardial infarction. Focused update on regionalization and reperfusion. Can J Cardiol. 2019.
+*Source:* Biggins SW, Angeli P, Garcia-Tsao G, et al. Diagnosis, evaluation, and management of ascites, spontaneous bacterial peritonitis and hepatorenal syndrome. 2021 practice guidance by the American Association for the Study of Liver Diseases. Hepatology. 2021. https://doi.org/10.1002/hep.31884
 
 ### sob-37: Sleepy and breathless after a cold
 
@@ -1486,332 +1495,322 @@ A 58-year-old woman is brought to the emergency department by her daughter becau
 
 *Source:* Mokhlesi B, Masa JF, Brozek JL, et al. Evaluation and management of obesity hypoventilation syndrome. An official American Thoracic Society clinical practice guideline. Am J Respir Crit Care Med. 2019. https://doi.org/10.1164/rccm.201905-1071ST
 
-### sob-38: Back pain, then fever and chest pain
+### sob-38: Breathless during cancer treatment
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 17-year-old boy with sickle cell disease (HbSS) presents to the emergency department with 2 days of pain in his back and legs, and since this morning fever, cough and right sided chest pain. He has had 3 painful crises this year. He takes hydroxyurea and folic acid and has been using hydromorphone at home. He is speaking in short sentences. There are crackles and reduced breath sounds at the right base. The chest radiograph shows a new right lower lobe infiltrate. Hemoglobin is 84 g/L, his usual level.
-
-- Temperature: 38.6°C oral
-- Pulse: 118/minute
-- Resp.: 30/minute
-- BP: 124/72 mmHg
-- O2 sat: 90% on room air
-- Weight: 58 kg
-
-#### Q1
-**Which of the following is the most likely diagnosis in this patient?**
-
-- A. Acute chest syndrome  **(key)**
-- B. Opioid induced hypoventilation
-- C. Pulmonary embolism
-- D. Splenic sequestration crisis
-- E. Vaso-occlusive rib infarction
-
-*Explanation:* A new pulmonary infiltrate with fever, cough, chest pain and hypoxemia in a patient with sickle cell disease is acute chest syndrome, whatever the trigger. It often follows a painful crisis, as here. Rib infarction causes chest pain and splinting but not a new infiltrate with fever. Opioid hypoventilation lowers the respiratory rate, and his is 30/minute. Splenic sequestration causes a falling hemoglobin and a large spleen, and his hemoglobin is at baseline. PE can occur in sickle cell disease but does not explain fever with a lobar infiltrate.
-
-*Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
-
-*Source:* Howard J, Hart N, Roberts-Harewood M, et al. Guideline on the management of acute chest syndrome in sickle cell disease. Br J Haematol. 2015. https://doi.org/10.1111/bjh.13348
-
-#### Q2
-**Which of the following treatments should be started now for this patient?**
-
-Select 4.
-
-- A. Cephalosporin plus macrolide  **(key)**
-- B. dexamethasone
-- C. Fluids at twice maintenance
-- D. Incentive spirometry  **(key)**
-- E. Opioid analgesia  **(key)**
-- F. Stopping hydroxyurea
-- G. Supplemental oxygen  **(key)**
-- H. Withholding all opioids
-
-*Explanation:* The British guideline advises oxygen for hypoxemia, antibiotics that cover both typical and atypical organisms, such as a cephalosporin with a macrolide, adequate analgesia and incentive spirometry to prevent further atelectasis. Pain causes splinting, so opioids are continued with monitoring rather than withheld. Fluids at twice maintenance can cause pulmonary edema and worsen hypoxemia, so fluids are given to maintain euvolemia only. Routine corticosteroids are not recommended, because they are linked to rebound sickling and readmission. Hydroxyurea is a disease modifying drug that the same guideline recommends to prevent further episodes, so stopping it does not treat this one.
-
-*Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
-
-*Source:* Howard J, Hart N, Roberts-Harewood M, et al. Guideline on the management of acute chest syndrome in sickle cell disease. Br J Haematol. 2015. https://doi.org/10.1111/bjh.13348
-
-#### Q3
-*Update:* Eight hours later the infiltrate involves both lower lobes. His O2 saturation is 88% on 10 L/minute by face mask and his respiratory rate is 38/minute. Hemoglobin has fallen to 66 g/L. He is more drowsy.
-
-**Which of the following is the most appropriate next step in management?**
-
-- A. furosemide 40 mg IV
-- B. Increase the hydromorphone dose
-- C. IV methylprednisolone
-- D. Red cell exchange transfusion  **(key)**
-- E. Repeat chest radiograph tomorrow
-
-*Explanation:* Spread to both lower lobes, hypoxemia on 10 L/minute of oxygen, a respiratory rate of 38/minute, a falling hemoglobin and drowsiness mark severe, progressing acute chest syndrome. The guideline recommends urgent exchange transfusion, with ICU involvement, to lower the proportion of sickle hemoglobin quickly. Waiting for a radiograph tomorrow ignores that progression. More hydromorphone in a drowsy, hypoxemic patient risks respiratory depression. Steroids are not recommended routinely. Furosemide is not indicated without volume overload.
-
-*Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
-
-*Source:* Howard J, Hart N, Roberts-Harewood M, et al. Guideline on the management of acute chest syndrome in sickle cell disease. Br J Haematol. 2015. https://doi.org/10.1111/bjh.13348
-
-### sob-39: Three weeks of dry cough and thrush
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 34-year-old man presents to the emergency department with 3 weeks of dry cough, low grade fevers and shortness of breath that now comes on when he climbs one flight of stairs. He has lost 5 kg. He has had a sore, white-coated mouth for a month. He has not seen a physician in 6 years and has had condomless sex with male partners. He speaks in full sentences at rest. There are white plaques on the tongue and palate. The chest is clear. The chest radiograph shows faint bilateral perihilar interstitial opacities.
-
-- Temperature: 38.0°C oral
-- Pulse: 104/minute
-- Resp.: 24/minute
-- BP: 118/70 mmHg
-- O2 sat: 93% on room air
-
-#### Q1
-*Update:* After 2 minutes of walking in the hallway, his O2 saturation falls to 84% and he has to stop.
-
-**Which of the following findings best shows the severity of this patient's gas exchange problem?**
-
-- A. Clear chest on auscultation
-- B. O2 sat of 84% on walking  **(key)**
-- C. Respiratory rate of 24/minute
-- D. Temperature of 38.0°C
-- E. Weight loss of 5 kg
-
-*Explanation:* A fall in saturation from 93% to 84% with brief exertion is an objective sign of a significant diffusion problem, typical of Pneumocystis pneumonia, and it is more telling than his resting values. A clear chest is common in this infection and does not measure severity. A respiratory rate of 24/minute is raised but not specific. Fever and weight loss reflect the underlying illness, not how well he is exchanging gas.
-
-*Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
-
-*Source:* Panel on Guidelines for the Prevention and Treatment of Opportunistic Infections in Adults and Adolescents With HIV. Guidelines for the prevention and treatment of opportunistic infections in adults and adolescents with HIV. Pneumocystis pneumonia. National Institutes of Health. 2026. https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-opportunistic-infections/pneumocystis
-
-#### Q2
-**Which of the following investigations are most useful now in this patient?**
-
-Select 3.
-
-- A. Arterial blood gas  **(key)**
-- B. CT pulmonary angiogram
-- C. D-dimer level
-- D. HIV antigen and antibody test  **(key)**
-- E. Induced sputum for Pneumocystis  **(key)**
-- F. Legionella urine antigen
-- G. Pulmonary function tests
-
-*Explanation:* Thrush, weight loss, subacute dry cough, exertional desaturation and perihilar interstitial opacities point to Pneumocystis pneumonia with undiagnosed HIV. An HIV test confirms the underlying cause. Induced sputum looks for the organism. An arterial gas gives the PaO2 and alveolar-arterial gradient that decide whether he needs adjunctive steroids. His 3 week course and interstitial pattern do not fit PE, so CT angiography and D-dimer are not the priority. Legionella causes an acute lobar pneumonia, and pulmonary function tests have no role in acute illness.
-
-*Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
-
-*Source:* Panel on Guidelines for the Prevention and Treatment of Opportunistic Infections in Adults and Adolescents With HIV. Guidelines for the prevention and treatment of opportunistic infections in adults and adolescents with HIV. Pneumocystis pneumonia. National Institutes of Health. 2026. https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-opportunistic-infections/pneumocystis
-
-#### Q3
-*Update:* The HIV test is positive. Induced sputum is positive for Pneumocystis jirovecii. Arterial gas on room air: pH 7.47, PaCO2 32 mmHg, PaO2 62 mmHg.
-
-**Which of the following is the most appropriate treatment for this patient?**
-
-- A. atovaquone suspension alone
-- B. ceftriaxone plus azithromycin
-- C. prednisone and antiretrovirals only
-- D. trimethoprim-sulfamethoxazole alone
-- E. trimethoprim-sulfamethoxazole plus prednisone  **(key)**
-
-*Explanation:* His PaO2 of 62 mmHg is below 70 mmHg, and his alveolar-arterial gradient is about 150 minus 40 minus 62, or 48 mmHg, above 35. By either measure he has moderate to severe Pneumocystis pneumonia. The guideline recommends trimethoprim-sulfamethoxazole with prednisone started within 72 hours, which lowers mortality in this group. Trimethoprim-sulfamethoxazole alone omits the steroid he qualifies for. Atovaquone is an alternative only for mild to moderate disease and is less effective. Ceftriaxone and azithromycin do not treat Pneumocystis. Antiretroviral therapy starts within 2 weeks, but never in place of treating the infection.
-
-*Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
-
-*Source:* Panel on Guidelines for the Prevention and Treatment of Opportunistic Infections in Adults and Adolescents With HIV. Guidelines for the prevention and treatment of opportunistic infections in adults and adolescents with HIV. Pneumocystis pneumonia. National Institutes of Health. 2026. https://clinicalinfo.hiv.gov/en/guidelines/hiv-clinical-guidelines-adult-and-adolescent-opportunistic-infections/pneumocystis
-
-### sob-40: Tired and breathless after a stomach bug
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 9-year-old girl is brought to the emergency department by her father with 3 days of worsening shortness of breath and fatigue. She had a febrile illness with diarrhea 10 days ago. Today she vomited twice and became short of breath climbing the stairs. She has no history of asthma or heart disease. She is pale and tired. Her hands and feet are cool, with a capillary refill of 4 seconds. There is a gallop rhythm. There are fine crackles at both bases and no wheeze. The liver edge is 4 cm below the right costal margin.
+A 64-year-old woman presents to the emergency department with 10 days of dry cough and shortness of breath that has progressed to breathlessness at rest. She has metastatic non-small cell lung cancer treated with pembrolizumab every 3 weeks. Her fourth dose was 2 weeks ago. She has never had chest radiation. She has no fever, chest pain or leg swelling. She now needs help to walk to the bathroom. There are fine crackles at both lung bases. The JVP is not raised.
 
 - Temperature: 37.3°C oral
-- Pulse: 148/minute
-- Resp.: 36/minute
-- BP: 88/60 mmHg
-- O2 sat: 94% on room air
-- Weight: 30 kg
+- Pulse: 104/minute
+- Resp.: 26/minute
+- BP: 128/76 mmHg
+- O2 sat: 87% on room air
+- Weight: 60 kg
 
 #### Q1
-**Which of the following is the most likely diagnosis in this child?**
+*Update:* Her white cell count is normal. CT with pulmonary angiography shows no PE and new patchy ground glass opacity and consolidation in both lower lobes. Her tumour is smaller than on her last scan.
 
-- A. Asthma exacerbation
-- B. Community acquired pneumonia
-- C. Diabetic ketoacidosis
-- D. Gastroenteritis with dehydration
-- E. Viral myocarditis  **(key)**
+**Which of the following is the most likely cause of her shortness of breath?**
 
-*Explanation:* A gallop rhythm, an enlarged liver, basal crackles and cool peripheries with a slow capillary refill after a recent viral illness point to heart failure from myocarditis. Children with myocarditis often present with breathlessness, vomiting and fatigue, which are easily taken for a respiratory or gut illness. Dehydration does not cause a gallop, crackles or hepatomegaly. She has no wheeze or asthma history, and no focal chest signs of pneumonia. Diabetic ketoacidosis causes deep breathing with dry mucous membranes, not congestion.
+- A. Community-acquired bacterial pneumonia
+- B. Heart failure with pulmonary edema
+- C. Immune checkpoint inhibitor pneumonitis  **(key)**
+- D. Lymphangitic spread of the cancer
+- E. Radiation pneumonitis of both lungs
+
+*Explanation:* New bilateral ground glass and consolidation during treatment with pembrolizumab, with no fever, a normal white count, no PE and a shrinking tumour, point to immune checkpoint inhibitor pneumonitis. It is diagnosed after infection, heart failure, PE and cancer progression have been considered. Bacterial pneumonia is less likely without fever or a raised white count, although cultures are still sent. A normal JVP and no leg swelling argue against heart failure. A smaller tumour makes lymphangitic spread unlikely. She has never had chest radiation.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Law YM, Lal AK, Chen S, et al. Diagnosis and management of myocarditis in children. A scientific statement from the American Heart Association. Circulation. 2021. https://doi.org/10.1161/CIR.0000000000001001
+*Source:* Schneider BJ, Naidoo J, Santomasso BD, et al. Management of immune-related adverse events in patients treated with immune checkpoint inhibitor therapy. ASCO guideline update. J Clin Oncol. 2021. https://doi.org/10.1200/JCO.21.01440
 
 #### Q2
-**Which of the following investigations is most useful to confirm the cause of her illness?**
+**Which of the following is the most appropriate treatment to start for her now?**
 
-- A. Abdominal ultrasound
-- B. Blood cultures
-- C. Chest radiograph
-- D. Echocardiography  **(key)**
-- E. Venous blood gas
+- A. budesonide 400 mcg inhaled twice daily
+- B. Continue pembrolizumab and observe
+- C. infliximab 300 mg IV once
+- D. methylprednisolone 60 mg IV daily  **(key)**
+- E. prednisone 10 mg PO daily
 
-*Explanation:* Echocardiography shows ventricular size and function, looks for a pericardial effusion and excludes structural heart disease, so it confirms the cardiac cause and guides treatment. The AHA statement places it at the centre of the initial workup, along with ECG and troponin. A chest radiograph may show cardiomegaly and edema but cannot measure function. A venous gas and blood cultures describe her physiology and look for sepsis without identifying myocarditis. Abdominal ultrasound follows the vomiting, not the cause.
-
-*Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
-
-*Source:* Law YM, Lal AK, Chen S, et al. Diagnosis and management of myocarditis in children. A scientific statement from the American Heart Association. Circulation. 2021. https://doi.org/10.1161/CIR.0000000000001001
-
-#### Q3
-*Update:* Echocardiography shows a dilated left ventricle with an ejection fraction of 25%. Lactate is 4.2 mmol/L. Her BP is now 84/56 mmHg.
-
-**Which of the following is the most appropriate initial treatment to support her circulation?**
-
-- A. epinephrine 0.05 mcg/kg/minute IV  **(key)**
-- B. furosemide 30 mg IV
-- C. IV immune globulin 2 g/kg
-- D. normal saline 1 800 mL IV over 1 hour
-- E. normal saline 600 mL IV, repeated twice
-
-*Explanation:* She is in cardiogenic shock, with a BP of 84/56 mmHg, a lactate of 4.2 mmol/L and an ejection fraction of 25%. The AHA statement calls for prompt treatment of low cardiac output and keeps inotropes with vasopressor effect, such as epinephrine, for children with hypotension and cardiogenic shock, as she now has. Boluses of 20 mL/kg repeated, or 60 mL/kg in an hour, load a failing ventricle when she already has crackles and a large liver. Furosemide before perfusion is restored can deepen shock. IV immune globulin has uncertain benefit in myocarditis and does not support her circulation now.
+*Explanation:* She needs oxygen and help with self-care, which makes this severe pneumonitis. The ASCO guideline advises holding the checkpoint inhibitor and giving IV methylprednisolone 1 to 2 mg/kg per day, which is 60 to 120 mg for her 60 kg. Prednisone 10 mg is far below that dose. Infliximab is a second-line drug for pneumonitis that has not improved after 48 hours of corticosteroids. Inhaled budesonide is not a treatment for immune pneumonitis. Continuing pembrolizumab keeps driving the injury.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Law YM, Lal AK, Chen S, et al. Diagnosis and management of myocarditis in children. A scientific statement from the American Heart Association. Circulation. 2021. https://doi.org/10.1161/CIR.0000000000001001
+*Source:* Schneider BJ, Naidoo J, Santomasso BD, et al. Management of immune-related adverse events in patients treated with immune checkpoint inhibitor therapy. ASCO guideline update. J Clin Oncol. 2021. https://doi.org/10.1200/JCO.21.01440
 
-### sob-41: A second panic attack
+#### Q3
+**Which of the following findings best marks her pneumonitis as severe rather than moderate?**
+
+- A. Bilateral lower lobe involvement
+- B. Cough lasting 10 days
+- C. Crackles at both lung bases
+- D. Heart rate of 104/minute
+- E. Needing oxygen for a saturation of 87%  **(key)**
+
+*Explanation:* The grade of checkpoint inhibitor pneumonitis rests on symptoms and function. Grade 3, or severe, pneumonitis has severe symptoms that limit self-care and need oxygen, as she does with a saturation of 87% on room air and needing help to walk to the bathroom. Involvement of more than one lobe fits grade 2 and on its own does not make the illness severe. Cough duration, crackles and a heart rate of 104/minute do not set the grade.
+
+*Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
+
+*Source:* Schneider BJ, Naidoo J, Santomasso BD, et al. Management of immune-related adverse events in patients treated with immune checkpoint inhibitor therapy. ASCO guideline update. J Clin Oncol. 2021. https://doi.org/10.1200/JCO.21.01440
+
+### sob-39: Blood-streaked sputum after months of sinus trouble
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old woman presents to the emergency department with 1 hour of sudden breathlessness, tingling in her fingers and around her mouth, and a sense of doom that began at her desk. She has generalized anxiety disorder and had a similar episode 2 years ago. She takes sertraline and a combined oral contraceptive. She flew home from Australia 5 days ago. She has no chest pain, hemoptysis or leg symptoms. She is anxious and breathing quickly. The chest is clear and the legs are normal. The ECG shows sinus tachycardia.
+A 52-year-old man presents to the emergency department with 1 week of cough and 2 days of increasing shortness of breath. Yesterday he coughed up a small amount of blood-streaked sputum twice. For 3 months he has had nasal crusting and bloody nasal discharge, treated as sinusitis with two courses of antibiotics. His joints have ached for a month. He does not smoke and takes no medications. The nasal mucosa is crusted. There are crackles in both lungs. His hemoglobin was 128 g/L at a walk-in clinic 1 week ago. A chest radiograph shows bilateral patchy alveolar opacities.
 
-- Temperature: 36.8°C oral
+- Temperature: 37.8°C oral
 - Pulse: 112/minute
 - Resp.: 28/minute
-- BP: 124/78 mmHg
-- O2 sat: 94% on room air
+- BP: 158/94 mmHg
+- O2 sat: 89% on room air
 
 #### Q1
-**Which of the following features should most prompt testing for a physical cause of this patient's symptoms?**
+*Update:* His hemoglobin today is 92 g/L. He has no melena and no other source of bleeding.
 
-- A. History of generalized anxiety
-- B. O2 saturation of 94% on room air  **(key)**
-- C. Perioral and finger tingling
-- D. Rapid breathing with a sense of doom
-- E. Similar episode 2 years ago
+**Which of the following findings best shows how much he is bleeding into his lungs?**
 
-*Explanation:* Anxiety driven overbreathing raises alveolar oxygen, so a healthy 34-year-old who is hyperventilating should have a normal or high saturation. A saturation of 94% on room air means a gas exchange problem, and with estrogen use and a long flight, PE must be considered. Tingling, rapid breathing and a sense of doom occur with both panic and PE, so they do not separate the two. A history of anxiety and a similar past episode make anchoring on panic tempting, but they do not lower her risk of PE.
+- A. Bilateral alveolar opacities
+- B. Blood-streaked sputum twice yesterday
+- C. Crackles in both lungs
+- D. Fall in hemoglobin of 36 g/L  **(key)**
+- E. Nasal crusting and bleeding
+
+*Explanation:* A fall in hemoglobin from 128 to 92 g/L in a week, with no other source of bleeding, shows that a large volume of blood has entered his alveoli. Hemoptysis is absent in up to one third of patients with diffuse alveolar hemorrhage, so a little blood-streaked sputum can badly underestimate the bleed. Crackles and bilateral alveolar opacities occur with any process that fills the alveoli and do not measure the amount of blood. Nasal crusting points to the cause, not to the amount of lung bleeding.
+
+*Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
+
+*Source:* Lara AR, Schwarz MI. Diffuse alveolar hemorrhage. Chest. 2010. https://doi.org/10.1378/chest.08-2084
+
+#### Q2
+**Which of the following tests is most useful now to identify the cause of his lung bleeding?**
+
+- A. B-type natriuretic peptide
+- B. Serum D-dimer level
+- C. Sputum bacterial culture
+- D. Transthoracic echocardiogram
+- E. Urinalysis for blood and casts  **(key)**
+
+*Explanation:* Nasal crusting, joint aches and alveolar hemorrhage suggest an ANCA-associated vasculitis such as granulomatosis with polyangiitis, which often involves the kidneys as well. A urinalysis with blood and red cell casts identifies a pulmonary renal syndrome within minutes, and glomerulonephritis with alveolar hemorrhage defines severe, organ-threatening disease. D-dimer and BNP do not point to a cause of alveolar bleeding. Sputum culture looks for infection, which does not explain the nasal disease or anemia. Echocardiography looks for heart failure, which nothing in his findings suggests.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Thrombosis Canada. Pulmonary embolism (PE). Diagnosis. Clinical guide. 2023. https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_80.pdf
+*Source:* Chung SA, Langford CA, Maz M, et al. 2021 American College of Rheumatology/Vasculitis Foundation guideline for the management of antineutrophil cytoplasmic antibody-associated vasculitis. Arthritis Rheumatol. 2021. https://doi.org/10.1002/art.41773
+
+#### Q3
+*Update:* Urinalysis shows 3+ blood with red cell casts and his creatinine is 214 umol/L. His O2 saturation is 90% on 6 L/minute by nasal prongs. ANCA testing is sent.
+
+**Which of the following is the most appropriate treatment to start for him now?**
+
+- A. methylprednisolone 1 g IV daily  **(key)**
+- B. piperacillin-tazobactam 4.5 g IV alone
+- C. Plasma exchange as the first therapy
+- D. prednisone 10 mg PO daily
+- E. tranexamic acid 1 g IV alone
+
+*Explanation:* Alveolar hemorrhage with glomerulonephritis is severe vasculitis, and immunosuppression should start without waiting for the ANCA result. Pulse IV methylprednisolone is one accepted way to begin glucocorticoids, alongside induction therapy such as rituximab. The 2021 ACR/Vasculitis Foundation guideline advises against routinely adding plasma exchange to induction therapy for alveolar hemorrhage, because the PEXIVAS trial showed no reduction in death or end-stage kidney disease. Prednisone 10 mg is far too low a dose for severe disease. Tranexamic acid does not treat the inflammation causing the bleeding. An antibiotic alone does not treat vasculitis.
+
+*Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
+
+*Source:* Chung SA, Langford CA, Maz M, et al. 2021 American College of Rheumatology/Vasculitis Foundation guideline for the management of antineutrophil cytoplasmic antibody-associated vasculitis. Arthritis Rheumatol. 2021. https://doi.org/10.1002/art.41773
+
+### sob-40: A teenager with fever, vomiting and breathlessness
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 17-year-old boy is brought to the emergency department by his mother with 5 days of cough, fever and increasing shortness of breath. He also has nausea, vomiting and crampy abdominal pain. Two days ago a walk-in clinic diagnosed gastroenteritis. He has no medical history and takes no medications. He plays hockey and has not travelled. His mother waits outside while you interview him alone. He speaks in full sentences. There are fine crackles at both lung bases. The abdomen is soft with mild diffuse tenderness.
+
+- Temperature: 38.4°C oral
+- Pulse: 118/minute
+- Resp.: 26/minute
+- BP: 122/70 mmHg
+- O2 sat: 91% on room air
+
+#### Q1
+**Which of the following questions is most likely to identify the cause of his illness?**
+
+- A. Contact with sick birds or farm animals
+- B. Recent insect or tick bites
+- C. Recent sexual partners
+- D. Recent swimming in a lake or river
+- E. Use of vaping products, including cannabis  **(key)**
+
+*Explanation:* Respiratory symptoms with nausea, vomiting and abdominal pain in a teenager with hypoxemia and bilateral crackles fit e-cigarette or vaping product use-associated lung injury. The CDC advises asking every patient with respiratory, gastrointestinal or constitutional symptoms about vaping, and seeing a teenager without a parent present makes an honest answer more likely. Contact with birds or farm animals and freshwater swimming point to uncommon zoonotic infections that his history gives no reason to suspect. Tick bites and sexual contacts do not explain bilateral lung disease with gastrointestinal symptoms.
+
+*Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
+
+*Source:* Jatlaoui TC, Wiltz JL, Kabbani S, et al. Update. Interim guidance for health care providers for managing patients with suspected e-cigarette, or vaping, product use-associated lung injury. United States, November 2019. MMWR Morb Mortal Wkly Rep. 2019. https://doi.org/10.15585/mmwr.mm6846e2
 
 #### Q2
-*Update:* You judge an alternative diagnosis to be more likely than PE.
+*Update:* He says he has vaped cannabis oil bought from a friend several times a day for 3 months. It is January and influenza is circulating in the community.
 
-**Which of the following is the most appropriate next step in the evaluation for pulmonary embolism?**
+**Which of the following investigations is most important before his illness is attributed to vaping?**
 
-- A. CT pulmonary angiogram
-- B. High sensitivity D-dimer  **(key)**
-- C. lorazepam 1 mg SL and reassess
-- D. PERC rule to stop testing
-- E. Reassure and discharge home
+- A. Bronchoscopy with lavage
+- B. Influenza and viral respiratory testing  **(key)**
+- C. Serum lipase and liver tests
+- D. Transthoracic echocardiogram
+- E. Urine drug screen for THC
 
-*Explanation:* She fails three PERC criteria: a heart rate of 112/minute, a saturation below 95% and estrogen use. PERC therefore cannot exclude PE. Her Wells score is 1.5, for tachycardia alone, so PE is unlikely and a high sensitivity D-dimer with the standard cutoff for her age is the next step. CT angiography first exposes a young woman to radiation without need. Lorazepam and discharge both treat panic as the diagnosis before PE has been excluded.
+*Explanation:* Vaping-associated lung injury is a diagnosis of exclusion, and its symptoms overlap with influenza and other respiratory infections, which can also occur together. During influenza season the CDC advises testing for influenza and treating infection according to usual guidelines. A urine test for THC only confirms what he has told you and does not change management. Bronchoscopy is not needed routinely. Lipase and liver tests look at his abdominal symptoms, which are part of the syndrome. An echocardiogram looks for a cardiac cause that nothing in his examination suggests.
+
+*Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
+
+*Source:* Jatlaoui TC, Wiltz JL, Kabbani S, et al. Update. Interim guidance for health care providers for managing patients with suspected e-cigarette, or vaping, product use-associated lung injury. United States, November 2019. MMWR Morb Mortal Wkly Rep. 2019. https://doi.org/10.15585/mmwr.mm6846e2
+
+#### Q3
+*Update:* Influenza and other viral tests are negative. CT shows bilateral ground glass opacity with sparing just beneath the pleura. His O2 saturation is 90% on room air.
+
+**Which of the following is the most appropriate management plan for him now?**
+
+- A. Admit for antibiotics and a corticosteroid  **(key)**
+- B. Admit for inhaled salbutamol alone
+- C. Admit for oseltamivir alone
+- D. Discharge on amoxicillin with follow-up
+- E. Discharge on prednisone with follow-up
+
+*Explanation:* A saturation of 90% on room air means he needs admission, as outpatient care is reserved for stable patients with normal oxygenation. In hospital, CDC guidance supports considering empiric corticosteroids for the lung injury together with antimicrobials while infection has not been fully excluded. Discharging him on amoxicillin or prednisone sends a hypoxemic patient home, and corticosteroids are used with caution in outpatients because they can worsen infection. Oseltamivir alone treats influenza, which testing did not find. Salbutamol alone does not treat inflammatory lung injury.
+
+*Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
+
+*Source:* Evans ME, Twentyman E, Click ES, et al. Update. Interim guidance for health care professionals evaluating and caring for patients with suspected e-cigarette, or vaping, product use-associated lung injury. MMWR Morb Mortal Wkly Rep. 2020. https://doi.org/10.15585/mmwr.mm685152e2
+
+### sob-41: Pleuritic pain in a young man with swollen legs
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 29-year-old man presents to the emergency department with 2 days of right-sided pleuritic chest pain and shortness of breath. Three weeks ago both his legs and his face began to swell. Last week his family physician diagnosed nephrotic syndrome, with a serum albumin of 18 g/L and 9 g of protein in the urine per day, and started furosemide. His creatinine is 76 umol/L. He has no other medical history and no recent travel, surgery or immobilization. He has symmetrical pitting edema to both knees without calf tenderness. There are reduced breath sounds at both lung bases. A chest radiograph shows small bilateral pleural effusions.
+
+- Temperature: 37.1°C oral
+- Pulse: 108/minute
+- Resp.: 24/minute
+- BP: 128/82 mmHg
+- O2 sat: 92% on room air
+
+#### Q1
+**Which of the following is the most important diagnosis to exclude in this patient?**
+
+- A. Acute heart failure
+- B. Acute pericarditis
+- C. Community-acquired pneumonia
+- D. Pleural effusions from low albumin
+- E. Pulmonary embolism  **(key)**
+
+*Explanation:* The risk of venous thromboembolism in nephrotic syndrome is highest with heavy proteinuria and a low serum albumin, and his albumin is 18 g/L. New pleuritic pain with tachycardia and a saturation of 92% makes PE the diagnosis that must be excluded. Small effusions from a low albumin cause gradual breathlessness, not new pleuritic pain. There is no fever or productive cough to suggest pneumonia. Pericarditis causes central chest pain that changes with position rather than one-sided pleuritic pain. His normal creatinine and generalized edema do not make heart failure a likely cause of sudden pleuritic pain.
+
+*Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
+
+*Source:* Kidney Disease. Improving Global Outcomes (KDIGO) Glomerular Diseases Work Group. KDIGO 2021 clinical practice guideline for the management of glomerular diseases. Kidney Int. 2021. https://doi.org/10.1016/j.kint.2021.05.021
+
+#### Q2
+*Update:* You judge PE to be more likely than any other diagnosis.
+
+**Which of the following is this patient's Wells score for pulmonary embolism?**
+
+- A. 1.5 points
+- B. 3.0 points
+- C. 4.5 points  **(key)**
+- D. 6.0 points
+- E. 7.5 points
+
+*Explanation:* He scores 3 points because PE is the most likely diagnosis and 1.5 points for a heart rate above 100/minute, which gives 4.5 points. His leg swelling is symmetrical and caused by nephrotic syndrome, without calf tenderness, so he does not score the 3 points for clinical signs of DVT. He has no previous VTE, recent surgery or immobilization, hemoptysis or cancer. Scores of 6.0 and 7.5 wrongly count his bilateral edema as a sign of DVT. Scores of 1.5 and 3.0 leave out one of the two items he has.
 
 *Key feature:* Shortness of breath 5. Choose PE tests with pretest probability in mind, for example not relying on D-dimer in high risk or a normal CXR.
 
-*Source:* Kline JA, Courtney DM, Kabrhel C, et al. Prospective multicenter evaluation of the pulmonary embolism rule-out criteria. J Thromb Haemost. 2008.
+*Source:* Thrombosis Canada. Pulmonary embolism (PE). Diagnosis. Clinical guide. 2023. https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_80.pdf
 
 #### Q3
-*Update:* The D-dimer is 1 450 mcg/L. The chest radiograph is normal.
+**Which of the following is the most appropriate next test to evaluate him for PE?**
 
-**Which of the following is the most appropriate next step in the evaluation for pulmonary embolism?**
+- A. Bilateral leg compression ultrasound
+- B. CT pulmonary angiogram  **(key)**
+- C. High sensitivity D-dimer
+- D. Transthoracic echocardiogram
+- E. Ventilation perfusion scan
 
-- A. CT angiogram or V/Q scan  **(key)**
-- B. Echocardiography first
-- C. Leg compression ultrasound only
-- D. Repeat D-dimer tomorrow
-- E. Start apixaban and discharge
-
-*Explanation:* A D-dimer of 1 450 mcg/L is well above her cutoff of 500 mcg/L, so PE has not been excluded and she needs lung imaging. Thrombosis Canada accepts CT angiography, and prefers a V/Q scan for young patients with a normal chest radiograph. A normal leg ultrasound would not exclude PE in a patient with no leg symptoms. Echocardiography is for unstable patients, and she is stable. Repeating the D-dimer, or treating without a diagnosis, commits her either to missed PE or to months of anticoagulation she may not need.
+*Explanation:* Thrombosis Canada advises going straight to imaging without a D-dimer when the Wells score is 4.5 or more, because a negative D-dimer cannot exclude PE at that pretest probability. His creatinine is normal, so CT pulmonary angiography is safe. His radiograph shows bilateral effusions, and a ventilation perfusion scan performs best in patients with a normal chest radiograph. Leg ultrasound is a poor first test when his leg swelling is symmetrical from nephrotic syndrome, and a negative scan would not exclude PE. Echocardiography is for patients too unstable for CT and does not exclude PE in a stable patient.
 
 *Key feature:* Shortness of breath 5. Choose PE tests with pretest probability in mind, for example not relying on D-dimer in high risk or a normal CXR.
 
 *Source:* Thrombosis Canada. Pulmonary embolism (PE). Diagnosis. Clinical guide. 2023. https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_80.pdf
 
 #### Q4
-*Update:* The CT pulmonary angiogram is of good quality and shows no PE. Her breathing settles over the next hour.
+*Update:* The CT pulmonary angiogram is of good quality and shows no filling defect in the main, lobar or segmental arteries. It confirms small bilateral pleural effusions.
 
-**Which of the following is the most appropriate next step for this patient?**
+**Which of the following is the most appropriate next step in his evaluation for PE?**
 
-- A. Admit for serial leg ultrasound
-- B. Anticoagulate for 3 months
-- C. Discharge with anxiety follow up  **(key)**
-- D. Repeat CT angiogram in 1 week
-- E. V/Q scan to confirm the result
+- A. Bilateral leg compression ultrasound
+- B. Repeat CT angiogram in 1 week
+- C. Start dalteparin while testing continues
+- D. Ventilation perfusion scan
+- E. No further testing for PE  **(key)**
 
-*Explanation:* A good quality negative CT angiogram excludes PE in a patient whose pretest probability was unlikely, with a Wells score of 1.5. Thrombosis Canada reserves further testing, such as V/Q scanning or leg ultrasound, for patients in whom clinical suspicion stays high despite a negative CT, which is not her situation. Serial leg ultrasound, repeat CT and a confirmatory V/Q scan add cost and radiation without benefit. Anticoagulation without a diagnosis exposes her to bleeding risk. Her anxiety disorder needs follow up now that PE has been excluded.
+*Explanation:* The ESC guideline accepts a normal CT pulmonary angiogram as excluding PE in patients with a low or intermediate clinical probability, and a Wells score of 4.5 is intermediate on its three level scale. A ventilation perfusion scan would be hard to read with bilateral effusions and is not needed. Repeating the CT adds radiation without a new question. Leg ultrasound and empiric dalteparin are not needed once PE has been excluded, although his thrombosis risk from nephrotic syndrome should be addressed with his nephrologist.
 
 *Key feature:* Shortness of breath 5. Choose PE tests with pretest probability in mind, for example not relying on D-dimer in high risk or a normal CXR.
 
-*Source:* Thrombosis Canada. Pulmonary embolism (PE). Diagnosis. Clinical guide. 2023. https://thrombosiscanada.ca/clinical_guides/pdfs/PULMONARYEMBOLISMDIAGNOSISANDM_80.pdf
+*Source:* Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
 
-### sob-42: A tight neck on the evening of day surgery
+### sob-42: Sore throat and noisy breathing after travel
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 58-year-old woman is brought back to the emergency department by her husband 6 hours after discharge from a day surgery total thyroidectomy. Over the last 40 minutes her neck has become swollen and tight and she feels short of breath. It is hard to swallow and her voice is hoarse. She takes no anticoagulants. She is sitting upright and anxious. The front of her neck is swollen and tense beneath the sutured incision, and the swelling is increasing as you watch. There is soft inspiratory stridor. There is no rash or wheeze.
+A 26-year-old man presents to the emergency department with 4 days of sore throat, low grade fever and pain on swallowing, and since this morning noisy breathing and a hoarse voice. Nine days ago he returned from visiting family in a region with an ongoing diphtheria outbreak. He did not receive routine childhood vaccines. His neck is diffusely swollen. A grey-white membrane covers both tonsils and extends onto the soft palate and posterior pharynx. It bleeds when touched with a tongue depressor. There is soft inspiratory stridor at rest. The chest is clear.
 
-- Temperature: 36.9°C oral
+- Temperature: 38.2°C oral
 - Pulse: 118/minute
-- Resp.: 28/minute
-- BP: 168/94 mmHg
-- O2 sat: 93% on room air
+- Resp.: 26/minute
+- BP: 118/72 mmHg
+- O2 sat: 94% on room air
 
 #### Q1
-**Which of the following is the most likely cause of this patient's breathing difficulty?**
+**Which of the following is the most likely cause of his noisy breathing?**
 
-- A. Anaphylaxis to the dressing
-- B. Bilateral vocal cord palsy
-- C. Expanding neck hematoma  **(key)**
-- D. Hypocalcemic laryngospasm
-- E. Tracheomalacia after surgery
+- A. Acute epiglottitis
+- B. Infectious mononucleosis
+- C. Peritonsillar abscess
+- D. Respiratory diphtheria  **(key)**
+- E. Streptococcal pharyngitis
 
-*Explanation:* A tense, enlarging swelling under a fresh thyroidectomy wound with new stridor is a hematoma compressing the airway, and the venous congestion it causes swells the larynx as well. Bilateral recurrent laryngeal nerve palsy causes stridor soon after extubation without neck swelling. Hypocalcemia usually appears after 24 to 48 hours, with tingling and spasm rather than a mass. Anaphylaxis would bring urticaria, wheeze or hypotension, and she has none. Tracheomalacia is uncommon and does not produce a swelling that grows.
+*Explanation:* An adherent grey-white membrane on the tonsils and pharynx, a swollen bull neck and new stridor in an unvaccinated traveller from an outbreak region is respiratory diphtheria. The membrane can extend into the larynx and trachea and obstruct the upper airway, which his hoarseness and stridor suggest is happening. Streptococcal pharyngitis and mononucleosis cause tonsillar exudate but not a spreading membrane that bleeds when touched. A peritonsillar abscess causes a one-sided bulge with deviation of the uvula. Epiglottitis causes severe pain with a nearly normal oropharynx.
 
 *Key feature:* Shortness of breath 1. In acute dyspnea, distinguish upper from lower airway causes because emergency management differs.
 
-*Source:* Iliff HA, El-Boghdadly K, Ahmad I, et al. Management of haematoma after thyroid surgery. Systematic review and multidisciplinary consensus guidelines from the Difficult Airway Society, the British Association of Endocrine and Thyroid Surgeons and the British Association of Otorhinolaryngology, Head and Neck Surgery. Anaesthesia. 2022. https://doi.org/10.1111/anae.15585
+*Source:* Ontario Ministry of Health. Diphtheria. Guide for health care professionals. 2024. https://www.ontario.ca/files/2024-02/moh-diphtheria-guide-health-care-professionals-en-2024-02-09.pdf
 
 #### Q2
-**Which of the following is the most appropriate immediate action for this patient?**
+**Which of the following is the most appropriate treatment to arrange for him now?**
 
-- A. dexamethasone 8 mg IV and observe
-- B. Needle aspiration of the swelling
-- C. Rapid sequence intubation first
-- D. Remove sutures and open the wound  **(key)**
-- E. Transfer to the operating room
+- A. Antitoxin now through public health  **(key)**
+- B. Antitoxin once the culture confirms diphtheria
+- C. dexamethasone 10 mg IV alone
+- D. penicillin G 2 million units IV alone
+- E. Tdap vaccine as the only treatment
 
-*Explanation:* With stridor and a growing hematoma, the multidisciplinary guideline advises decompression at the bedside without delay. Staff open the skin and deep layers, cut the sutures and evacuate the clot, which often relieves the obstruction at once. Intubating first through a compressed, edematous larynx is hazardous and often fails. Moving her to the operating room delays decompression. A needle cannot aspirate clotted blood. Dexamethasone does not act fast enough and does not remove the cause.
+*Explanation:* The Public Health Agency of Canada advises giving diphtheria antitoxin when diphtheria is suspected clinically, without waiting for laboratory confirmation, and it is available on an emergency basis through local public health authorities. Antitoxin neutralizes circulating toxin before it binds to the heart and nerves but cannot reverse toxin already bound, so waiting for culture lets the damage grow. An antibiotic such as penicillin is needed as well, but antibiotics alone do not neutralize toxin. A vaccine does not treat the current illness. Dexamethasone does not neutralize toxin.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Iliff HA, El-Boghdadly K, Ahmad I, et al. Management of haematoma after thyroid surgery. Systematic review and multidisciplinary consensus guidelines from the Difficult Airway Society, the British Association of Endocrine and Thyroid Surgeons and the British Association of Otorhinolaryngology, Head and Neck Surgery. Anaesthesia. 2022. https://doi.org/10.1111/anae.15585
+*Source:* Public Health Agency of Canada. Diphtheria. For health professionals. 2023. https://www.canada.ca/en/public-health/services/immunization/vaccine-preventable-diseases/diphtheria/health-professionals.html
 
 #### Q3
-*Update:* The wound is opened and clot is evacuated at the bedside. Her stridor settles and O2 saturation rises to 97%. The wound is loosely packed.
+*Update:* His stridor worsens and his O2 saturation falls to 89% on oxygen. He is sitting forward and anxious.
 
-**Which of the following is the most appropriate next step for this patient?**
+**Which of the following is the most appropriate airway plan for him now?**
 
-- A. Close the wound with staples
-- B. Compress the neck with a tight dressing
-- C. Discharge after 4 hours of observation
-- D. tranexamic acid 1 g IV and observe
-- E. Urgent return to the operating room  **(key)**
+- A. Bilevel ventilation by face mask
+- B. Blind nasotracheal intubation
+- C. Heliox by nonrebreather mask
+- D. Intubation with a surgical airway ready  **(key)**
+- E. Nebulized epinephrine and reassess
 
-*Explanation:* Evacuating the clot relieves the obstruction, but the bleeding point is still open and laryngeal edema can worsen over hours. The guideline advises urgent return to the operating room for hemostasis and airway management, with a senior anesthetist present. Closing the skin or applying a tight dressing traps new bleeding and rebuilds the compression. Tranexamic acid does not replace surgical hemostasis. Discharge is unsafe after an airway threatening hematoma.
+*Explanation:* Worsening stridor and falling saturation mean the membrane is closing his airway, and he needs a definitive airway now. The Canadian Airway Focus Group advises that an anticipated difficult airway be managed by the most experienced operator with a front of neck access plan ready, since a friable membrane can bleed or come loose and block the tube or trachea. Blind nasal intubation passes through the membrane without seeing it. Bilevel ventilation and heliox do not relieve a fixed obstruction. Nebulized epinephrine does not remove an adherent membrane.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Iliff HA, El-Boghdadly K, Ahmad I, et al. Management of haematoma after thyroid surgery. Systematic review and multidisciplinary consensus guidelines from the Difficult Airway Society, the British Association of Endocrine and Thyroid Surgeons and the British Association of Otorhinolaryngology, Head and Neck Surgery. Anaesthesia. 2022. https://doi.org/10.1111/anae.15585
+*Source:* Law JA, Duggan LV, Asselin M, et al. Canadian Airway Focus Group updated consensus-based recommendations for management of the difficult airway. Part 2. Planning and implementing safe management of the patient with an anticipated difficult airway. Can J Anesth. 2021. https://doi.org/10.1007/s12630-021-02008-z
 
 ### sob-43: Breathless after her pump alarmed
 
@@ -1877,126 +1876,125 @@ Select 2.
 
 *Source:* Wilcox SR, Kabrhel C, Channick RN. Pulmonary hypertension and right ventricular failure in emergency medicine. Ann Emerg Med. 2015. https://pubmed.ncbi.nlm.nih.gov/26342901/
 
-### sob-44: Sleepy and breathless at the nursing home
+### sob-44: Drowsy and breathing slowly
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 84-year-old woman is brought to the emergency department by ambulance from her nursing home because she is short of breath and more drowsy than usual. Staff say she has been sleepy for 2 days. She has chronic back pain from osteoporotic fractures and stage 4 chronic kidney disease. A fentanyl 25 mcg/hour patch was started 4 days ago, and she has received hydromorphone 1 mg by mouth 5 times in the last day. She has no lung disease. She rouses to voice and then drifts off. Her pupils are 2 mm. There are a few crackles at the right base. Paramedics placed her on oxygen.
+A 67-year-old woman is brought to the emergency department by her husband because she has become drowsy and weak and is breathing slowly. For constipation she takes magnesium hydroxide tablets most days, and over the last 2 days she drank 3 bottles of magnesium citrate. She has stage 4 chronic kidney disease, with a creatinine of 240 umol/L last month. She takes no opioids, benzodiazepines or other sedatives. She is drowsy but opens her eyes to voice. Her face is flushed. Her pupils are 4 mm and reactive. Knee and ankle reflexes are absent. Her chest is clear.
 
-- Temperature: 36.4°C oral
-- Pulse: 64/minute
+- Temperature: 36.2°C oral
+- Pulse: 52/minute
 - Resp.: 8/minute
-- BP: 118/64 mmHg
-- O2 sat: 98% on 10 L/minute by nonrebreather mask
+- BP: 86/50 mmHg
+- O2 sat: 93% on room air
 
 #### Q1
-**Which of the following best reflects the adequacy of this patient's ventilation?**
+**Which of the following findings most clearly signals impending respiratory failure in this patient?**
 
-- A. Blood gas PCO2  **(key)**
-- B. Chest radiograph findings
-- C. Heart rate of 64/minute
-- D. O2 saturation of 98%
-- E. Pupil size of 2 mm
+- A. Absent knee and ankle reflexes
+- B. Flushed skin of the face
+- C. Oxygen saturation of 93%
+- D. Pulse of 52/minute
+- E. Slow breathing with drowsiness  **(key)**
 
-*Explanation:* Ventilation is measured by carbon dioxide, so a blood gas PCO2 tells whether she is moving enough air. On high flow oxygen her saturation can stay at 98% while her PCO2 climbs, and the BTS guideline warns that oxygen can hide hypoventilation. Small pupils suggest an opioid effect but do not measure ventilation. Her heart rate and chest radiograph describe other problems.
+*Explanation:* A respiratory rate of 8/minute with drowsiness shows that her ventilation is failing, and her PCO2 is likely rising even though her saturation is 93% on room air. Saturation measures oxygenation, not ventilation, and can look acceptable while carbon dioxide builds up. Depressed reflexes appear at lower magnesium levels than slow breathing, so they are an earlier and less urgent sign. Flushing and a slow pulse reflect effects on blood vessels and the heart rather than the state of her breathing.
 
 *Key feature:* Shortness of breath 4. Gauge dyspnea severity with subjective and objective measures like mental status, peak flow, or ABG to catch respiratory failure early.
 
-*Source:* O'Driscoll BR, Howard LS, Earis J, Mak V. BTS guideline for oxygen use in adults in healthcare and emergency settings. Thorax. 2017.
+*Source:* Aal-Hamad AH, Al-Alawi AM, Kashoub MS, Falhammar H. Hypermagnesemia in clinical practice. Medicina (Kaunas). 2023. https://doi.org/10.3390/medicina59071190
 
 #### Q2
-*Update:* Venous gas: pH 7.21, PCO2 74 mmHg, HCO3 29 mmol/L.
+*Update:* Arterial gas on room air: pH 7.24, PaCO2 62 mmHg. Magnesium 5.6 mmol/L, calcium 2.12 mmol/L, potassium 5.1 mmol/L, creatinine 262 umol/L, glucose 6.4 mmol/L.
 
-**Which of the following is the most likely main cause of this patient's respiratory failure?**
+**Which of the following is the most likely cause of her hypoventilation?**
 
-- A. Aspiration pneumonia
-- B. Brainstem stroke
-- C. Hypercapnic COPD exacerbation
-- D. Opioid accumulation  **(key)**
-- E. Pulmonary embolism
+- A. Guillain-Barré syndrome
+- B. Hidden opioid toxicity
+- C. Hypercalcemia from kidney disease
+- D. Hypermagnesemia from laxatives  **(key)**
+- E. Uremic encephalopathy
 
-*Explanation:* A respiratory rate of 8/minute, pinpoint pupils and drowsiness with acute hypercapnia after a new fentanyl patch and repeated hydromorphone point to opioid toxicity. Kidney disease and old age slow the clearance of opioids and their metabolites. The crackles at the right base may be aspiration, a common complication of opioid sedation, but aspiration causes tachypnea, not a rate of 8/minute. She has no lung disease, which makes a COPD exacerbation unlikely. PE causes tachypnea and a low PCO2. A brainstem stroke is possible, but she has no focal signs.
+*Explanation:* A magnesium of 5.6 mmol/L follows large doses of magnesium laxatives in a woman whose kidneys cannot excrete them, and hypermagnesemia causes drowsiness, lost reflexes, a slow pulse, low BP and slow breathing. Her calcium of 2.12 mmol/L is normal, not high. Her creatinine of 262 umol/L is close to her baseline of 240 umol/L, which does not explain an acute change. Reactive 4 mm pupils and no opioid use argue against opioid toxicity. Guillain-Barré syndrome does not cause drowsiness.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Boyer EW. Management of opioid analgesic overdose. N Engl J Med. 2012.
+*Source:* Aal-Hamad AH, Al-Alawi AM, Kashoub MS, Falhammar H. Hypermagnesemia in clinical practice. Medicina (Kaunas). 2023. https://doi.org/10.3390/medicina59071190
 
 #### Q3
-**Which of the following is the most appropriate initial reversal treatment for this patient?**
+**Which of the following is the most appropriate first treatment for this patient?**
 
-- A. flumazenil 0.2 mg IV
-- B. naloxone 4 mg IN
-- C. naloxone 0.04 mg IV  **(key)**
+- A. calcium gluconate 1 g IV  **(key)**
+- B. flumazenil 0.2 mg IV
+- C. furosemide 80 mg IV
 - D. naloxone 0.4 mg IV
-- E. naloxone 2 mg IV
+- E. sodium bicarbonate 50 mmol IV
 
-*Explanation:* She is breathing and has a pulse, and she has chronic pain treated with opioids. A small dose of 0.04 mg IV, repeated every few minutes until her breathing improves, restores ventilation without causing abrupt withdrawal and a pain crisis. The fentanyl patch should also be removed, and she needs monitoring, because the patch keeps releasing drug. Doses of 0.4 mg, 2 mg IV or 4 mg IN risk withdrawal, severe pain and agitation in an opioid-dependent patient. Flumazenil reverses benzodiazepines, not opioids, and can cause seizures.
+*Explanation:* Calcium antagonizes the neuromuscular and cardiac effects of magnesium, so IV calcium, about 1 g given over a few minutes, is the first treatment while hemodialysis is arranged, since her kidneys cannot clear the load. Furosemide relies on kidney function she lacks and acts too slowly. Naloxone and flumazenil reverse opioids and benzodiazepines, which she has not taken. Bicarbonate does not treat the cause of her hypoventilation. Ventilatory support may still be needed if calcium does not improve her breathing.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Boyer EW. Management of opioid analgesic overdose. N Engl J Med. 2012.
+*Source:* Aal-Hamad AH, Al-Alawi AM, Kashoub MS, Falhammar H. Hypermagnesemia in clinical practice. Medicina (Kaunas). 2023. https://doi.org/10.3390/medicina59071190
 
-### sob-45: Breathless during the second unit
+### sob-45: Fever and breathlessness after cleaning a shed
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 78-year-old man with myelodysplastic syndrome and heart failure with a reduced ejection fraction is receiving red cells in the emergency department for a hemoglobin of 68 g/L. Both units have run at 250 mL/hour. Forty minutes into the second unit he becomes acutely short of breath and anxious. Before the transfusion his temperature was 37.0°C, his O2 saturation was 96% on room air and his systolic BP was 142 mmHg. He is sitting up and speaking in short phrases. The JVP is 8 cm above the sternal angle. There are crackles to the mid chest on both sides. There is no rash or wheeze.
+You are working in a rural hospital emergency department in southern Alberta in June. A 34-year-old man presents with 4 days of fever, muscle aches, headache and nausea, and 1 day of dry cough and rapidly increasing shortness of breath. Two weeks ago he spent a weekend clearing out an old grain shed full of mouse droppings, without a mask. He has no medical history. There are fine crackles in both lungs. The JVP is not raised. A chest radiograph shows bilateral interstitial edema with a normal heart size. Platelets are 58 x 10^9/L, hematocrit 0.54 and white cell count 15.2 x 10^9/L with immature forms.
 
-- Temperature: 37.2°C oral
-- Pulse: 112/minute
-- Resp.: 30/minute
-- BP: 188/98 mmHg
+- Temperature: 38.7°C oral
+- Pulse: 124/minute
+- Resp.: 32/minute
+- BP: 98/60 mmHg
 - O2 sat: 86% on room air
 
 #### Q1
-**Which of the following is the most likely cause of this patient's breathlessness?**
+**Which of the following is the most likely diagnosis in this patient?**
 
-- A. Acute hemolytic transfusion reaction
-- B. Anaphylactic transfusion reaction
-- C. Bacterial contamination of the unit
-- D. Circulatory overload from transfusion  **(key)**
-- E. Transfusion-related acute lung injury
+- A. Hantavirus pulmonary syndrome  **(key)**
+- B. Influenza pneumonia
+- C. Legionella pneumonia
+- D. Leptospirosis with lung bleeding
+- E. Psittacosis from bird contact
 
-*Explanation:* New breathlessness during a transfusion with a rising BP, a raised JVP and bilateral crackles, in a patient with reduced ejection fraction receiving two units quickly, is transfusion associated circulatory overload. Transfusion-related acute lung injury also causes hypoxemia and crackles, but usually with low or normal BP, fever and a normal JVP. Anaphylaxis causes hypotension, wheeze or urticaria. An acute hemolytic reaction and bacterial contamination cause fever, rigors and hypotension, and his temperature has risen only from 37.0°C to 37.2°C.
+*Explanation:* A febrile prodrome followed by rapidly developing pulmonary edema with a normal heart size, a low platelet count and a raised hematocrit, 2 weeks after sweeping out a building full of mouse droppings in western Canada, is hantavirus pulmonary syndrome. Thrombocytopenia with a raised hematocrit is highly sensitive and specific for it, and the median incubation is about 2 weeks. Influenza and Legionella pneumonia do not usually cause this pairing of blood findings. Leptospirosis follows contact with water or soil contaminated by animal urine. Psittacosis needs contact with birds.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Laureano M, Khandelwal A, Yan M. Transfusion reactions. In: Clinical Guide to Transfusion. Canadian Blood Services. 2022. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/transfusion-reactions
+*Source:* Drebot MA, Jones S, Grolla A, et al. Hantavirus pulmonary syndrome in Canada. An overview of clinical and diagnostic features, epidemiology and prevention. Can Commun Dis Rep. 2015. https://doi.org/10.14745/ccdr.v41i06a02
 
 #### Q2
-**Which of the following actions are most appropriate now for this patient?**
+*Update:* His BP falls to 84/52 mmHg and his O2 saturation is 88% on 15 L/minute by nonrebreather mask.
 
-Select 3.
+**Which of the following is the most appropriate approach to supporting his circulation?**
 
-- A. diphenhydramine IV
-- B. epinephrine IM
-- C. furosemide IV  **(key)**
-- D. hydrocortisone IV
-- E. normal saline bolus
-- F. Oxygen, sitting upright  **(key)**
-- G. Restart at a slower rate
-- H. Stop the transfusion  **(key)**
+- A. Crystalloid 30 mL/kg IV bolus
+- B. furosemide 80 mg IV bolus
+- C. oseltamivir 75 mg PO twice daily
+- D. ribavirin IV loading dose
+- E. Small fluid boluses and a vasopressor  **(key)**
 
-*Explanation:* The transfusion is stopped first. He is sat upright and given oxygen, and IV furosemide removes the excess volume, with noninvasive ventilation if hypoxemia persists. Canadian Blood Services advises stopping the transfusion, giving a diuretic and oxygen, and reporting the reaction. Restarting now, even at a slower rate, adds volume he cannot yet handle. A saline bolus adds to the overload. Epinephrine, diphenhydramine and hydrocortisone treat allergic reactions, and he has no hives, wheeze or hypotension.
+*Explanation:* Hantavirus pulmonary syndrome makes the pulmonary capillaries leak, so large volumes of fluid pour into the lungs and worsen hypoxemia. Management depends on careful fluid administration with ventilatory support, and a vasopressor supports BP without flooding the lungs. A 30 mL/kg bolus is the sepsis approach and fits poorly here. Furosemide lowers an already falling BP in a man who is not volume overloaded. There is no proven antiviral therapy, so ribavirin is not a treatment. Oseltamivir treats influenza, which does not explain his findings.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Laureano M, Khandelwal A, Yan M. Transfusion reactions. In: Clinical Guide to Transfusion. Canadian Blood Services. 2022. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/transfusion-reactions
+*Source:* Drebot MA, Jones S, Grolla A, et al. Hantavirus pulmonary syndrome in Canada. An overview of clinical and diagnostic features, epidemiology and prevention. Can Commun Dis Rep. 2015. https://doi.org/10.14745/ccdr.v41i06a02
 
 #### Q3
-**Which of the following findings would most favour transfusion-related acute lung injury over circulatory overload?**
+*Update:* Despite norepinephrine and intubation, his lactate rises to 6.2 mmol/L and his hands and feet are cool and mottled.
 
-- A. Elevated NT-proBNP level
-- B. Hypotension with fever  **(key)**
-- C. Quick response to diuretic
-- D. Raised jugular venous pressure
-- E. Rise in BP during transfusion
+**Which of the following investigations best explains why his shock is getting worse?**
 
-*Explanation:* Transfusion-related acute lung injury is an immune reaction that makes the lungs leak, so it often comes with fever and a fall in BP, and the JVP is normal. Circulatory overload is hydrostatic, so it tends to raise the BP and JVP, raise NT-proBNP and respond quickly to diuresis. Each of those other findings therefore points toward overload rather than lung injury.
+- A. Blood cultures from two sites
+- B. CT pulmonary angiogram
+- C. Focused cardiac ultrasound  **(key)**
+- D. Hantavirus serology
+- E. Serum procalcitonin
+
+*Explanation:* Death in hantavirus pulmonary syndrome comes from respiratory failure, myocardial dysfunction and shock, and cool mottled extremities with a rising lactate despite a vasopressor suggest the heart is failing. A focused cardiac ultrasound shows poor ventricular function at the bedside and helps separate it from low filling, which guides the need for inotropes and urgent referral for ECMO. Serology confirms the diagnosis days later through the National Microbiology Laboratory. Blood cultures and procalcitonin look for a bacterial cause that his picture does not suggest. CT would mean moving an unstable patient.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Laureano M, Khandelwal A, Yan M. Transfusion reactions. In: Clinical Guide to Transfusion. Canadian Blood Services. 2022. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/transfusion-reactions
+*Source:* Drebot MA, Jones S, Grolla A, et al. Hantavirus pulmonary syndrome in Canada. An overview of clinical and diagnostic features, epidemiology and prevention. Can Commun Dis Rep. 2015. https://doi.org/10.14745/ccdr.v41i06a02
 
 ### sob-46: Still febrile on amoxicillin at 4
 
@@ -2058,61 +2056,64 @@ A 4-year-old girl is brought to the emergency department by her mother with 7 da
 
 *Source:* Harris M, Clark J, Coote N, et al. British Thoracic Society guidelines for the management of community acquired pneumonia in children. Update 2011. Thorax. 2011.
 
-### sob-47: Cannot lie flat 4 weeks after delivery
+### sob-47: Breathless with dark urine
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 31-year-old woman presents to the emergency department 4 weeks after an uncomplicated vaginal delivery of her second child. For 1 week she has had increasing shortness of breath, a cough at night and swollen ankles. Tonight she could not lie flat. Her pregnancy was complicated by gestational hypertension. She is breastfeeding and takes no medications. The JVP is 6 cm above the sternal angle. There is a third heart sound and there are crackles at both bases. Both ankles are equally swollen and the calves are not tender. Her hemoglobin is 124 g/L.
+A 24-year-old man presents to the emergency department with 1 day of shortness of breath on exertion, tiredness and low back pain. This morning his urine was dark brown. Two days ago he ate a large dish of fresh fava beans at a family dinner. He has no fever, cough or chest pain, takes no medications and has not travelled. He is pale and his sclerae are yellow. His chest is clear, the spleen is not palpable and there is no leg swelling. Labs: hemoglobin 64 g/L (148 g/L 1 year ago), MCV 96 fL, platelets 256 x 10^9/L, total bilirubin 86 umol/L, mostly unconjugated, LDH 1 380 U/L, CK 140 U/L, creatinine 92 umol/L. Urine dipstick shows 3+ blood, with no red cells on microscopy.
 
-- Temperature: 36.9°C oral
-- Pulse: 118/minute
-- Resp.: 28/minute
-- BP: 132/84 mmHg
-- O2 sat: 92% on room air
+- Temperature: 37.3°C oral
+- Pulse: 124/minute
+- Resp.: 26/minute
+- BP: 116/66 mmHg
+- O2 sat: 98% on room air
+- Weight: 74 kg
 
 #### Q1
-**Which of the following is the most likely diagnosis in this patient?**
+**Which of the following is the most likely cause of his shortness of breath?**
 
-- A. Amniotic fluid embolism
-- B. Peripartum cardiomyopathy  **(key)**
-- C. Postpartum anemia
-- D. Postpartum preeclampsia
-- E. Pulmonary embolism
+- A. Acute hemolytic anemia  **(key)**
+- B. Acute viral hepatitis
+- C. Community-acquired pneumonia
+- D. Pulmonary embolism
+- E. Rhabdomyolysis
 
-*Explanation:* New heart failure, with orthopnea, a raised JVP, a third heart sound, crackles and symmetric edema, a month after delivery in a woman with a history of gestational hypertension fits peripartum cardiomyopathy. Postpartum preeclampsia with pulmonary edema would need a BP of at least 140/90 mmHg, and hers is 132/84 mmHg. Amniotic fluid embolism occurs during labour or just after it, not weeks later. Her hemoglobin of 124 g/L excludes significant anemia. PE remains in the differential after delivery but does not explain a third heart sound, bilateral crackles and orthopnea.
+*Explanation:* His hemoglobin has fallen from 148 to 64 g/L, with unconjugated jaundice, a high LDH and dark urine that is positive for blood without red cells, which means hemoglobin in the urine. Anemia this severe cuts the oxygen his blood can carry, so he is breathless and tachycardic although his saturation is 98%. Fava beans are a classic trigger of acute hemolysis in G6PD deficiency. Rhabdomyolysis also darkens the urine, but his CK is normal and it does not cause anemia. Hepatitis does not explain the fall in hemoglobin. A clear chest, no fever and a normal saturation argue against pneumonia and PE.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Bauersachs J, Konig T, van der Meer P, et al. Pathophysiology, diagnosis and management of peripartum cardiomyopathy. A position statement from the Heart Failure Association of the European Society of Cardiology Study Group on peripartum cardiomyopathy. Eur J Heart Fail. 2019. https://doi.org/10.1002/ejhf.1493
+*Source:* Luzzatto L, Ally M, Notaro R. Glucose-6-phosphate dehydrogenase deficiency. Blood. 2020. https://doi.org/10.1182/blood.2019000944
 
 #### Q2
-**Which of the following investigations is most useful to confirm the diagnosis in this patient?**
+*Update:* The blood film shows bite cells and blister cells.
 
-- A. Chest radiograph
-- B. CT pulmonary angiogram
-- C. D-dimer level
-- D. Echocardiography  **(key)**
-- E. Ventilation perfusion scan
+**Which of the following tests best separates an immune from a nonimmune cause of his illness?**
 
-*Explanation:* Peripartum cardiomyopathy is defined by a left ventricular ejection fraction below 45% near the end of pregnancy or in the months after it, with no other cause. Echocardiography measures that directly and should be done promptly. A chest radiograph can show edema and cardiomegaly but cannot measure function. CT angiography and V/Q scanning look for PE, which does not explain her findings. D-dimer is often raised after delivery and does not confirm or exclude heart failure.
+- A. Blood cultures, two sets
+- B. Direct antiglobulin test  **(key)**
+- C. Haptoglobin level
+- D. Hemoglobin electrophoresis
+- E. Serum ferritin level
+
+*Explanation:* A direct antiglobulin test detects antibody or complement on the red cells. It is positive in autoimmune hemolytic anemia and negative in the oxidative hemolysis of G6PD deficiency, where bite and blister cells are typical. A low haptoglobin confirms hemolysis of any cause but does not separate the causes. Hemoglobin electrophoresis looks for sickle cell disease or thalassemia. Ferritin measures iron stores. Blood cultures look for infection, and he has no fever or source.
 
 *Key feature:* Shortness of breath 2. Keep a broad dyspnea differential, seeking combined causes, new problems in chronic disease, and non-pulmonary causes like acidosis or anemia.
 
-*Source:* Bauersachs J, Konig T, van der Meer P, et al. Pathophysiology, diagnosis and management of peripartum cardiomyopathy. A position statement from the Heart Failure Association of the European Society of Cardiology Study Group on peripartum cardiomyopathy. Eur J Heart Fail. 2019. https://doi.org/10.1002/ejhf.1493
+*Source:* Luzzatto L, Ally M, Notaro R. Glucose-6-phosphate dehydrogenase deficiency. Blood. 2020. https://doi.org/10.1182/blood.2019000944
 
 #### Q3
-*Update:* Echocardiography shows a dilated left ventricle with an ejection fraction of 30%.
+*Update:* An hour later he is breathless at rest, his pulse is 134/minute and his hemoglobin is 57 g/L.
 
-**Which of the following is the most appropriate treatment to start first in the emergency department?**
+**Which of the following is the most appropriate treatment for him now?**
 
-- A. bromocriptine 2.5 mg PO
-- B. furosemide 40 mg IV  **(key)**
-- C. metoprolol 5 mg IV
-- D. milrinone infusion IV
-- E. normal saline 1 L IV
+- A. folic acid 5 mg PO alone
+- B. methylene blue 1 mg/kg IV
+- C. prednisone 75 mg PO
+- D. Red blood cell transfusion  **(key)**
+- E. sodium bicarbonate IV infusion
 
-*Explanation:* She is congested, with orthopnea, crackles, a raised JVP and edema, and her BP is adequate, so IV furosemide is the first treatment. Oxygen and noninvasive ventilation are added if she remains hypoxemic. The ESC position statement lists bromocriptine as an option in selected patients after specialist review, with anticoagulation, but it stops lactation and does not relieve congestion now. IV metoprolol can worsen acute decompensation. Inotropes are for low output shock, which she does not have, and catecholamines may be harmful in this condition. Saline adds to the overload.
+*Explanation:* Breathlessness at rest, a rising pulse and a hemoglobin still falling, now 57 g/L, show that his anemia is severe and symptomatic, so he needs a red cell transfusion now. The hemolysis usually settles on its own once the trigger is gone and the oldest, most enzyme-deficient red cells have been destroyed, but he must be supported until then. Methylene blue needs NADPH, which G6PD-deficient cells cannot make, and it can itself cause hemolysis. His saturation of 98% also gives no reason to suspect methemoglobinemia. Prednisone treats autoimmune hemolysis, and his bite and blister cells point to oxidative damage from G6PD deficiency instead. Folic acid supports red cell production over weeks. Bicarbonate does not treat the anemia.
 
 *Key feature:* Shortness of breath 3. Begin emergency treatment for severe dyspnea before a final diagnosis, deciding between invasive and noninvasive ventilation.
 
-*Source:* Bauersachs J, Konig T, van der Meer P, et al. Pathophysiology, diagnosis and management of peripartum cardiomyopathy. A position statement from the Heart Failure Association of the European Society of Cardiology Study Group on peripartum cardiomyopathy. Eur J Heart Fail. 2019. https://doi.org/10.1002/ejhf.1493
+*Source:* Luzzatto L, Ally M, Notaro R. Glucose-6-phosphate dehydrogenase deficiency. Blood. 2020. https://doi.org/10.1182/blood.2019000944

@@ -8,6 +8,50 @@ Quoted from the pipeline notes and the review reports, each with its report name
 
 - s32 loc-37 q3: mannitol 1 g/kg keyed, BTF no longer gives a dose. loc-26: bicarbonate dose from UK guideline.
 - s32 loc-17 q3 PCC 25 units/kg (1450 units) vs fixed 2000 units common in Canada.
+- loc-24 q2 keys platelets with IVIG and IV steroid for ITP with an intracranial bleed. gi-bleed-16 in s39 teaches the same treatment across its q2 and q3 for ITP with melena in an adult. The patient, the bleed site and the topic differ, so it was kept. Drop one if you want no shared teaching. *(samps-final-check-2.md)*
+- loc-32 and pulmonary-edema-27 are both altitude illness with a helicopter evacuation. The keys differ (dexamethasone against CPAP and nifedipine), but each uses the other's key as a distractor. Keep both or drop one. *(samps-final-check-2.md)*
+- Mock mode cues left in place because the stem alone decides the earlier key: loc-24 q2 update ("CT shows ...", after the q1 CT question), multiple-trauma-40 q4 update ("complete tear", after the q3 urethrogram question), and tox-35 q3 and q4 naming naloxone after q2 (pinpoint pupils, a missing buprenorphine tablet and a respiratory rate of 10 decide q2). *(samps-final-check-2.md)*
+- loc-21 is being rebuilt by another writer in s32. Please check it does not collide with the new abdominal-pain-27 (cannabinoid hyperemesis). *(samps-replace-s19-s24.md)*
+- Every rebuilt SAMP stays reviewed: false. This is an AI rebuild and audit, not clinician *(samps-replace-s32-s28.md)*
+- verification. Please recompute doses and thresholds and read each explanation against *(samps-replace-s32-s28.md)*
+- its stem before sign-off. *(samps-replace-s32-s28.md)*
+- Doses to verify: clonidine atropine 0.02 mg/kg (loc-22), sodium benzoate and IV 10% *(samps-replace-s32-s28.md)*
+- dextrose for hyperammonemia (loc-18), deferoxamine and whole bowel irrigation for iron *(samps-replace-s32-s28.md)*
+- (loc-28), methylene blue 1 to 2 mg/kg (loc-38), octreotide for sulfonylurea (loc-40), *(samps-replace-s32-s28.md)*
+- high-dose insulin euglycemia therapy for the calcium channel blocker overdose (loc-19). *(samps-replace-s32-s28.md)*
+- Guideline currency: several rebuilds rest on international guidance where no current *(samps-replace-s32-s28.md)*
+- Canadian one was found (BTS pleural disease for tension pneumothorax, ESC cardio-oncology *(samps-replace-s32-s28.md)*
+- for fluoropyrimidine vasospasm, AHA infective endocarditis, IDSA encephalitis, BAP *(samps-replace-s32-s28.md)*
+- catatonia, Brophy status epilepticus). Please confirm these remain acceptable. *(samps-replace-s32-s28.md)*
+- Two SCAPE and eating-disorder sources are recent and less commonly cited. The SCAPE *(samps-replace-s32-s28.md)*
+- Confirm you are comfortable with these as the source of record. *(samps-replace-s32-s28.md)*
+- does not carry near-duplicate dissection cases. *(samps-replace-s32-s28.md)*
+- All 11 re-rebuilt SAMPs need a second independent check before sign-off. *(samps-replace-s32-s28.md)*
+- loc-17: hypertonic saline or mannitol for dialysis disequilibrium rests on a narrative review (Mistry 2019). No Canadian guideline exists. *(samps-replace-s32-s28.md)*
+- loc-19: bilirubin of 468 micromol/L at 37 weeks. Confirm the CPS 2025 exchange threshold figure for day 4. Albumin is framed as "not a routine treatment". Check that this matches the 2025 statement. *(samps-replace-s32-s28.md)*
+- loc-22: lorazepam 0.1 mg/kg (1.7 mg for 17 kg). Red cell transfusion is keyed at a hemoglobin of 58 g/L in a drowsy child. Antibiotics are framed as not recommended for Shiga toxin E. coli. *(samps-replace-s32-s28.md)*
+- loc-24: ASH 2020 lets the type of transfusion depend on patient factors. The key says "Prompt blood transfusion", not exchange. *(samps-replace-s32-s28.md)*
+- loc-27: the phenytoin range of 40 to 80 micromol/L and the fluconazole interaction rest on Goldfrank. Hemodialysis was deliberately left out of the options. *(samps-replace-s32-s28.md)*
+- loc-28: methylprednisolone 30 mg/kg daily to a maximum of 1 g for 3 to 5 days. *(samps-replace-s32-s28.md)*
+- loc-29 and loc-38 both key hydrocortisone 100 mg IV. The rest of their decisions differ (adrenal suppression from steroid withdrawal versus Sheehan syndrome with hydrocortisone before thyroid hormone). *(samps-replace-s32-s28.md)*
+- loc-32: the reversal source is the adult Neurocritical Care Society guideline. Pediatric vitamin K and PCC dosing is left out of the key. Please confirm. *(samps-replace-s32-s28.md)*
+- loc-40: 3% saline 2 mL/kg (13.6 mL for 6.8 kg) per Moritz and Ayus. No correction-rate number is keyed. *(samps-replace-s32-s28.md)*
+- loc-41 q4 (consider nonconvulsive status after a prolonged postictal state) overlaps loc-26 in teaching point but not in patient story. Kept, low confidence. *(samps-replace-s32-s28.md)*
+- The batch is now heavier in pediatrics (loc-19, 22, 24, 28, 32, 40 are children or infants). Most free, non-toxicology causes of decreased consciousness left in the bank were pediatric. *(samps-replace-s32-s28.md)*
+- The rebuilt set avoids toxicology because s18 and s53 already cover almost every common toxidrome and antidote. *(samps-replace-s32-s28.md)*
+- loc-24: platelets with IVIG and IV methylprednisolone for ITP with a subdural hemorrhage. No doses are keyed. q3 (baseline from the father) cites the GCS source, because Provan does not cover collateral history. *(samps-replace-s32-s28.md)*
+- loc-29: q3 (a CT after a head strike on apixaban) cites Newman, which does not cover imaging. The teaching point on missed levodopa overlaps s08 delirium-agitation-12, where missed levodopa is one contributor to delirium. The syndrome, the keys and the patient differ. *(samps-replace-s32-s28.md)*
+- loc-31: hemin (Panhematin) is available in Canada through Canadian Blood Services. Hemin is not keyed here. *(samps-replace-s32-s28.md)*
+- loc-32: the keys follow a US wilderness society guideline, because no Canadian guideline exists. *(samps-replace-s32-s28.md)*
+- loc-21: IV dextrose 25 g is also keyed in s07 loc-03, and q3 (look for a drug cause) is close to loc-03 q3. Kept at low confidence because the patient has no diabetes and the question tests not blaming dementia. *(samps-replace-s32-s28.md)*
+- loc-26 and loc-41 q4 repeat the nonconvulsive status teaching of signed-off s07 loc-05 (benzodiazepine, second-line drug, EEG, CT and electrolytes). The stories differ. Low confidence. *(samps-replace-s32-s28.md)*
+- Cueing by updates: in loc-27 (phenytoin level), loc-40 (formula mixing) and loc-45 (sodium), a later update reports the result of an earlier keyed history question or test. This matches the CFPC sample style and was left unchanged. *(samps-replace-s32-s28.md)*
+- Other batches: s40 headache-41 and s45 multiple-trauma-45 are uncommitted rebuilds from this round. They were the other halves of the loc-31 and loc-29 collisions and are now free of those collisions. *(samps-replace-s32-s28.md)*
+- loc-24 (ITP with subdural bleed), loc-29 (parkinsonism-hyperpyrexia), loc-31 (acute intermittent porphyria) and loc-32 (high-altitude cerebral edema) were rebuilt during the second check because concurrent rebuilds collided. Each has had one review. Please read them first. *(samps-replace-s32-s28.md)*
+- loc-32 (HACE) and pulmonary-edema-27 (HAPE) are both altitude illness. They key different decisions (dexamethasone against nifedipine and CPAP). Keep both or drop one. *(samps-replace-s32-s28.md)*
+- **Overlaps with other writers.** loc-31 in s32 is now a West Nile virus story that is almost the same as the first draft of headache-41, including a 71-year-old farmer near Winnipeg with a flaccid arm. headache-41 was rebuilt again as Lyme disease to remove the clash, so loc-31 no longer has a twin in s40. The reviewer of s32 may want to confirm loc-31 against the rest of the bank. shock-22 in s50 is an asplenic man in septic shock, which was also the first draft of infectious-diseases-27. That SAMP is now lymphedema cellulitis. *(samps-replace-s39-s42.md)*
+- **Settings that look alike.** ischemic-heart-disease-24 and ischemic-heart-disease-19 both place an older woman with atypical symptoms 3 hours from PCI. The first is a 2-hour STEMI given half-dose tenecteplase, the second a completed infarct 30 hours old. ischemic-heart-disease-23 and loc-30 both involve a woman who collapses with a thunderclap headache from SAH. The first is keyed on ECG changes and cardiac workup, the second on grading and drainage. *(samps-replace-s39-s42.md)*
+- loc-29 in s32 (another writer's uncommitted rebuild) is now the only xylazine case. Its owner should know that tox-35 no longer covers xylazine. *(samps-replace-s49-s53-s47-s48.md)*
 - review-extra.ts: loc-48 is a word-for-word copy of loc-26, and loc-49 of loc-37. Their stems would fail the bank's near-duplicate test (trigram overlap 1.0). They should not be added to the bank in this form. I fixed their clinical errors only so the file is not left teaching a wrong key. *(samps-s32-lensA.md)*
 - loc-37 q3: mannitol 1 g/kg is keyed. The BTF 4th edition did not carry forward the 3rd edition mannitol dose as a recommendation, and hypertonic saline is an equal alternative. The key holds because saline is not offered, but a physician may want a Canadian trauma source. *(samps-s32-lensA.md)*
 - loc-26 q1: GEMNet 2011 (UK) is the only guideline cited for bicarbonate dosing. No Canadian guideline exists. 100 mmol (1.6 mmol/kg) is within usual practice. *(samps-s32-lensA.md)*
@@ -20,6 +64,17 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - sob-33 q2 and q3: same teaching point as loc-38 q1 and q2. Recommend refocusing sob-33 on the airway and burn items and dropping or rebuilding the cyanide antidote question. *(samps-s51-lensB.md)*
 - tox-28 versus s32 loc-42. The barn organophosphate case exists twice in the bank with the same setting, the same interval, the same findings and the same two teaching points. A reviewer cannot fix this by editing an explanation. Rewrite or drop one. *(samps-s53-lensB.md)*
 - tox-39 versus s32 loc-44, and tox-21 versus s32 loc-25, for the same reason at slightly lower severity. *(samps-s53-lensB.md)*
+- loc-41 q1 is new. It keys dialysis unit nurses as the best collateral source for his recent baseline. The support is the 4AT guidance on "other staff who know the patient". No Canadian source was found that names dialysis staff specifically. *(samps-sweep2-final-check.md)*
+- loc-45: in mock mode the q2 laboratory results show the acidosis behind the q1 key. This is flagged, not fixed, because any "alcohol does not explain this" item is answered by the later diagnosis. Please decide whether that is acceptable. *(samps-sweep2-final-check.md)*
+- loc-45 q3 keys GCS 10 (E2 V3 M5), the same combination as signed-off loc-07 and loc-14. Scoring the GCS is the skill being tested, and every total in the bank repeats, so it was left as is. *(samps-sweep2-final-check.md)*
+- loc-41 q1 and loc-24 q3 (both s32, both loc KF3) key the same kind of decision. Each picks the staff who saw the patient in the window that matters, and each has the family physician and triage as distractors. The settings differ (dialysis unit against daycare) and so does the window (recent baseline against the first hour after an injury). Please decide whether to keep both. *(samps-sweep2-last-check.md)*
+- loc-41 q1 and q2 both test KF3 with collateral history. The q2 prompt ("how his mental state has changed") leaves only one option about mental state, so q2 is easy. This was not changed because it is outside the two items under review. *(samps-sweep2-last-check.md)*
+- loc-41 q1: the key is right, but the bank already keys the same interpreter decision three times (s52 suicide-risk, s30 cqi, s22 analgesia-sedation). The s52 option set is almost the same. Decide whether to keep it or replace it with another KF3 question. I did not find a well-sourced replacement that later updates would not cue. *(samps-sweep2-review-sw2-c.md)*
+- loc-45 was re-rebuilt. It needs a second independent check. The stem says the triage glucose meter is out of service. Without that, a capillary glucose at triage would answer q1. In mock mode the q2 laboratory results show an acidosis, which a candidate who knows the physiology could link back to the q1 key. *(samps-sweep2-review-sw2-c.md)*
+- loc-26: BAP is a UK guideline. No Canadian catatonia guideline was found. *(samps-sweep2-review-sw2-c.md)*
+- loc-26: catatonia is a new presentation for the loc topic. The source is the 2023 British Association for Psychopharmacology guideline, because I found no Canadian guideline. The diagnosis rests on catalepsy and negativism in the stem. *(samps-sweep2-sw2-c.md)*
+- loc-41: the q1 key follows Flores et al, a US paediatric emergency study. Please confirm that a telephone interpreter over a bilingual teenager is the answer you want keyed. q4 keys the most frequent feature in one case series. *(samps-sweep2-sw2-c.md)*
+- loc-45: q2 overlaps in theme with loc-02 and ems-06 (opioids with co-ingestants), but those keys concern naloxone and adulterants. Here the key is recognising an opioid as the cause of a decline in a patient labelled as drunk. *(samps-sweep2-sw2-c.md)*
 - loc-22 q1. The WHO pocket book dose is 5 mL/kg of dextrose 10%. A 2021 WHO Bulletin exchange proposed 2 mL/kg, but that proposal was not adopted. The key uses 5 mL/kg. *(samps-textbooks-s32-s46-s49.md)*
 - loc-25 q3. The AACT methanol guideline dates from 2002. It names folinic acid, so the explanation now says folinic acid, not folic acid. *(samps-textbooks-s32-s46-s49.md)*
 - Goldfrank's chapter numbers. Four chapters are cited by title without a number because the full 11th edition table of contents could not be opened: Antidiabetics and Hypoglycemics/Antiglycemics, Antiepileptics, Antidotes in Depth: L-Carnitine, and Serotonin Reuptake Inhibitors and Atypical Antidepressants. Chapter 76, Ethanol, comes only from the publisher's chapter address, not a table of contents. *(samps-textbooks-s32-s46-s49.md)*
@@ -104,445 +159,445 @@ You are working in a rural hospital emergency department. A 48-year-old man is b
 
 *Source:* Galvin R, Brathen G, Ivashynka A, et al. EFNS guidelines for diagnosis, therapy and prevention of Wernicke encephalopathy. European Journal of Neurology 2010. https://doi.org/10.1111/j.1468-1331.2010.03153.x
 
-### loc-17: Sleepy two days after a slip
+### loc-17: Headache after a first treatment
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 83-year-old woman is brought to the emergency department by ambulance from her retirement residence. Staff say she slipped in the dining room 2 days ago and struck her forehead but seemed well afterward. Since this morning she has been sleepy and has not eaten. She has atrial fibrillation treated with warfarin, hypertension and mild cognitive impairment. Staff say she normally walks with a walker, chats with other residents and knows the date. She opens her eyes to voice, says inappropriate words and localizes to pressure. There is a healing bruise on her forehead. Her left arm drifts downward. Capillary glucose is 6.8 mmol/L.
+A 63-year-old man is brought to the emergency department by his wife 3 hours after his first hemodialysis session. He has type 2 diabetes and stage 5 chronic kidney disease, and a dialysis catheter was placed yesterday. His urea before dialysis was 58 mmol/L. At home he developed a headache, vomited twice and became confused, then increasingly drowsy. The dialysis nurse had told his wife that feeling washed out after a session is common. He opens his eyes to voice, uses inappropriate words and localizes to pressure. He moves all four limbs. His pupils are equal and reactive. Capillary glucose is 7.2 mmol/L.
 
 - Temperature: 36.8°C oral
-- Pulse: 78/minute irregular
+- Pulse: 64/minute
 - Resp.: 16/minute
-- BP: 168/92 mmHg
-- O2 sat: 95% on room air
-- Weight: 58 kg
+- BP: 172/94 mmHg
+- O2 sat: 97% on room air
+- Weight: 82 kg
 
 #### Q1
-**Which of the following is the correct Glasgow Coma Scale score for this patient, with its components?**
+**Which of the following is his Glasgow Coma Scale score on arrival, with its components?**
 
-- A. GCS 9 (E2 V3 M4)
-- B. GCS 10 (E2 V3 M5)
-- C. GCS 11 (E3 V3 M5)  **(key)**
-- D. GCS 12 (E3 V4 M5)
+- A. GCS 10 (E3 V2 M5)
+- B. GCS 11 (E3 V3 M5)  **(key)**
+- C. GCS 12 (E3 V4 M5)
+- D. GCS 12 (E4 V3 M5)
 - E. GCS 13 (E3 V4 M6)
 
-*Explanation:* She opens her eyes to voice (E3), says inappropriate words (V3) and localizes to pressure (M5), for a GCS of 11. E2 would mean eye opening only to pressure. V4 is confused conversation, which is more than inappropriate words. M6 requires obeying commands, and M4 is normal flexion or withdrawal rather than localizing.
+*Explanation:* He opens his eyes to voice (E3), uses inappropriate words (V3) and localizes to pressure (M5), for a GCS of 11. V2 is incomprehensible sounds and V4 is confused conversation. E4 needs spontaneous eye opening, and M6 needs him to obey commands. Recording each component gives a baseline against which the next hours can be compared.
 
 *Key feature:* Decreased level of consciousness 5. Document and trend consciousness with descriptive terms and a scored scale such as the GCS.
 
 *Source:* Teasdale G, Maas A, Lecky F, et al. The Glasgow Coma Scale at 40 years. Standing the test of time. Lancet Neurology 2014. https://doi.org/10.1016/S1474-4422(14)70120-6
 
 #### Q2
-**Which of the following is the most appropriate imaging decision for this patient?**
+**Which of the following is the most appropriate response to the view that he is simply worn out after dialysis?**
 
-- A. Apply the Canadian CT Head Rule first
-- B. CT head without contrast now  **(key)**
-- C. MRI brain within 24 hours
-- D. Observe and repeat GCS in 4 hours
-- E. Skull radiographs now
+- A. Advise rest and fluids at home
+- B. Arrange a dialysis clinic review
+- C. Assess now for a serious cause  **(key)**
+- D. Give an antiemetic and observe
+- E. Reassure that this is expected
 
-*Explanation:* She takes warfarin, has a GCS of 11 and a new left arm drift, so she needs CT head now to exclude intracranial bleeding. The Canadian CT Head Rule applies only to patients with a GCS of 13 to 15 and excluded patients on oral anticoagulants or with an acute focal deficit, so it cannot be used to decide on imaging here. Observation delays diagnosis of a treatable hematoma. MRI is slower and less available, and skull radiographs cannot show a bleed.
+*Explanation:* A new headache, vomiting and a GCS of 11 are not the fatigue that can follow dialysis, so a serious cause must be sought now. The differential includes dialysis disequilibrium syndrome after a first session with a high urea, a subdural hemorrhage, a hypertensive emergency and hypoglycemia. Rest at home, reassurance, an antiemetic alone or a clinic review would each delay that assessment.
 
 *Key feature:* Decreased level of consciousness 4. Do not attribute decreased consciousness to something minor like alcohol until head injury and other serious causes are excluded.
 
-*Source:* Stiell IG, Wells GA, Vandemheen K, et al. The Canadian CT Head Rule for patients with minor head injury. Lancet 2001. https://doi.org/10.1016/S0140-6736(00)04561-X
+*Source:* Mistry K. Dialysis disequilibrium syndrome prevention and management. International Journal of Nephrology and Renovascular Disease 2019. https://doi.org/10.2147/IJNRD.S165925
 
 #### Q3
-*Update:* CT shows an acute on chronic right subdural hematoma with 6 mm of midline shift. INR is 3.1. Neurosurgery has been called.
+*Update:* CT head shows mild diffuse brain swelling with no hemorrhage. He vomits again and becomes more difficult to rouse.
 
-**Which of the following is the most appropriate treatment for her anticoagulation?**
+**Which of the following is the most appropriate treatment for him now?**
 
-- A. fresh frozen plasma 15 mL/kg IV
-- B. prothrombin complex concentrate 25 units/kg IV  **(key)**
-- C. recombinant factor VIIa 40 mcg/kg IV
-- D. tranexamic acid 1 g IV over 10 minutes
-- E. vitamin K 10 mg IV as the sole agent
+- A. Hypertonic saline bolus IV  **(key)**
+- B. Immediate repeat hemodialysis
+- C. Labetalol infusion IV
+- D. Levetiracetam load IV
+- E. Sodium bicarbonate IV
 
-*Explanation:* For intracranial hemorrhage on warfarin, the guideline recommends 4-factor prothrombin complex concentrate dosed by INR and weight, given with vitamin K 10 mg IV. With an INR of 3.1 the dose is 25 units/kg, about 1450 units for her 58 kg. Vitamin K alone takes many hours to correct the INR, so it is given with the concentrate rather than on its own. Fresh frozen plasma corrects the INR more slowly and needs a large volume. Recombinant factor VIIa is not recommended for warfarin reversal, and tranexamic acid does not reverse warfarin.
+*Explanation:* Headache, vomiting and falling consciousness after a first dialysis in a man whose urea was 58 mmol/L, with swelling and no bleed on CT, fit dialysis disequilibrium syndrome. Urea falls faster in the blood than in the brain, so water moves into the brain and causes edema. Hypertonic saline, or mannitol, raises plasma osmolality and treats the raised intracranial pressure. More dialysis would lower osmolality further and worsen the swelling. Bicarbonate is not indicated, and rapid correction of acidosis is itself a risk factor. His blood pressure does not need an infusion, and levetiracetam treats seizures, which he has not had.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Frontera JA, Lewin JJ, Rabinstein AA, et al. Guideline for reversal of antithrombotics in intracranial hemorrhage. A statement for healthcare professionals from the Neurocritical Care Society and Society of Critical Care Medicine. Neurocritical Care 2016. https://doi.org/10.1007/s12028-015-0222-x
+*Source:* Mistry K. Dialysis disequilibrium syndrome prevention and management. International Journal of Nephrology and Renovascular Disease 2019. https://doi.org/10.2147/IJNRD.S165925
 
 #### Q4
-*Update:* Two hours later, while she waits for surgery, the nurse reports that she seems less alert.
+**Which of the following is the most appropriate way to monitor him over the next few hours?**
 
-**Which of the following is the best way to record her level of consciousness for the neurosurgical team?**
+- A. AVPU score every 4 hours
+- B. Frequent GCS and pupil checks  **(key)**
+- C. Glucose checks every hour only
+- D. Repeat CT head in 24 hours
+- E. Urea level every 6 hours
 
-- A. AVPU category with the time
-- B. GCS components and pupil reactivity  **(key)**
-- C. GCS total with the time
-- D. Nursing note stating less alert
-- E. Richmond Agitation-Sedation Scale
-
-*Explanation:* Each GCS component with the pupil response, recorded with the time, gives the team a trend they can compare and flags a new unreactive pupil early. The GCS total hides which response has changed. AVPU is too coarse to show a fall from voice to pressure within the same category. A note that she is less alert is not reproducible, and the Richmond scale measures sedation and agitation rather than coma depth.
-
-*Key feature:* Decreased level of consciousness 5. Document and trend consciousness with descriptive terms and a scored scale such as the GCS.
-
-*Source:* Brennan PM, Murray GD, Teasdale GM. Simplifying the use of prognostic information in traumatic brain injury. Part 1. The GCS-Pupils score. Journal of Neurosurgery 2018. https://doi.org/10.3171/2017.12.JNS172780
-
-### loc-18: A sleepy infant after a fall
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 4-month-old boy is brought to the emergency department at 2200 by his mother's partner, who says the baby has been sleepy since the afternoon and has vomited three times. He says the baby rolled off a couch onto a carpeted floor yesterday. The baby was born at term and has been well. By phone, his mother says he is not yet rolling over. He is lethargic and does not fix on faces. His anterior fontanelle is full. There is a 1 cm bruise on the left upper arm. Capillary glucose is 5.2 mmol/L.
-
-- Temperature: 36.9°C rectal
-- Pulse: 112/minute
-- Resp.: 30/minute
-- BP: 96/58 mmHg
-- O2 sat: 97% on room air
-- Weight: 6.4 kg
-
-#### Q1
-**Which of the following details from the history most raises concern about the cause of his presentation?**
-
-- A. Absence of prior illness
-- B. Fall onto a carpeted floor
-- C. History given by a non-parent
-- D. Inability yet to roll over  **(key)**
-- E. Onset of vomiting today
-
-*Explanation:* A baby who cannot yet roll over could not have rolled off a couch, so the history does not fit his development. A mechanism that does not match the child's abilities is a key warning sign of abusive head trauma. A fall onto carpet is low energy and would not explain a full fontanelle. Vomiting is a symptom, not a discrepancy, and a history from a parent's partner is not suspicious in itself. His lack of prior illness does not point to any cause.
-
-*Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
-
-*Source:* Narang SK, Fingarson A, Lukefahr J, Council on Child Abuse and Neglect, American Academy of Pediatrics. Abusive head trauma in infants and children. Pediatrics 2020. https://doi.org/10.1542/peds.2020-0203
-
-#### Q2
-**Which of the following investigations should be done first for this infant?**
-
-- A. CT head without contrast  **(key)**
-- B. Lumbar puncture for cell count
-- C. MRI brain with contrast
-- D. Skeletal survey
-- E. Urine toxicology screen
-
-*Explanation:* A lethargic infant with a full fontanelle and vomiting needs CT head first to find intracranial bleeding that may need urgent neurosurgery. The skeletal survey is part of the workup but does not change immediate management. Lumbar puncture is unsafe while raised intracranial pressure is possible, and he is afebrile. MRI adds detail later but is slower and needs sedation. Toxicology does not explain a full fontanelle.
-
-*Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
-
-*Source:* Narang SK, Fingarson A, Lukefahr J, Council on Child Abuse and Neglect, American Academy of Pediatrics. Abusive head trauma in infants and children. Pediatrics 2020. https://doi.org/10.1542/peds.2020-0203
-
-#### Q3
-*Update:* CT shows bilateral subdural hematomas of different densities. Neurosurgery will manage them without surgery for now.
-
-**Which of the following additional steps are most appropriate for this infant?**
-
-Select 3.
-
-- A. Confront the partner about abuse
-- B. Dilated retinal examination  **(key)**
-- C. Discharge after neurosurgical review
-- D. Outpatient EEG in 2 weeks
-- E. Report to child protection services  **(key)**
-- F. Skeletal survey  **(key)**
-- G. Wait for MRI before reporting
-
-*Explanation:* Subdural hematomas of different ages in an infant with an inconsistent history call for a skeletal survey, a dilated retinal examination for hemorrhages, and a report to child protection services. The duty to report arises from reasonable suspicion, so the report does not wait for MRI or for certainty. Confronting the partner is not the physician's role and may put the child at risk. He cannot be discharged, and an outpatient EEG does not address the immediate concerns.
-
-*Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
-
-*Source:* Narang SK, Fingarson A, Lukefahr J, Council on Child Abuse and Neglect, American Academy of Pediatrics. Abusive head trauma in infants and children. Pediatrics 2020. https://doi.org/10.1542/peds.2020-0203
-
-#### Q4
-**Which of the following is the best method to document his level of consciousness for serial reassessment?**
-
-- A. Adult GCS verbal scale
-- B. AVPU category alone
-- C. Brief note that he is sleepy
-- D. Pediatric GCS with components  **(key)**
-- E. Pupil size alone
-
-*Explanation:* A preverbal infant needs the pediatric GCS, which scores the verbal response by cooing, crying and irritability, recorded as components so trends are clear. The adult verbal scale depends on words and orientation that a 4-month-old cannot give. AVPU is too coarse to show a gradual decline. A note that he is sleepy cannot be compared between examiners, and pupil size is one sign rather than a measure of consciousness.
+*Explanation:* His consciousness is changing, so a GCS recorded by component with pupil checks at short intervals shows whether the hypertonic saline is working or whether he needs airway protection and repeat imaging. AVPU every 4 hours is too coarse and too infrequent. Glucose or urea values do not measure consciousness, and waiting 24 hours for another CT would miss deterioration in the meantime.
 
 *Key feature:* Decreased level of consciousness 5. Document and trend consciousness with descriptive terms and a scored scale such as the GCS.
 
 *Source:* Teasdale G, Maas A, Lecky F, et al. The Glasgow Coma Scale at 40 years. Standing the test of time. Lancet Neurology 2014. https://doi.org/10.1016/S1474-4422(14)70120-6
 
-### loc-19: Restless and breathing fast
+### loc-18: A newborn who feeds poorly
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 19-year-old woman is brought to the emergency department by her roommate, who found her confused and vomiting in their university residence. An empty bottle of 325 mg acetylsalicylic acid tablets and a note were beside her. The roommate last saw her well 6 hours earlier. She has no medical history. She says her ears are ringing. She opens her eyes to voice, is disoriented and obeys commands. She is breathing deeply. Laboratory results: venous pH 7.38, PCO2 21 mmHg, bicarbonate 12 mmol/L, sodium 140 mmol/L, chloride 104 mmol/L, glucose 5.4 mmol/L, creatinine 72 umol/L, salicylate 5.1 mmol/L.
+A 5-day-old boy is brought to the emergency department by his parents because he has fed poorly and vomited since yesterday and is now difficult to wake. He was born at term after an uncomplicated pregnancy and went home well on day 2. His parents are first cousins. He has had no fever. He is floppy and is breathing rapidly and deeply. The anterior fontanelle is soft. Capillary glucose is 3.6 mmol/L.
 
-- Temperature: 37.9°C oral
-- Pulse: 118/minute
-- Resp.: 32/minute
-- BP: 112/68 mmHg
-- O2 sat: 98% on room air
-- Weight: 60 kg
+- Temperature: 36.7°C rectal
+- Pulse: 172/minute
+- Resp.: 66/minute
+- BP: 74/44 mmHg
+- O2 sat: 97% on room air
+- Weight: 3.4 kg
 
 #### Q1
-**Which of the following best describes her acid-base status on these results?**
+**Which of the following details from the history is most useful in identifying the cause of his decline?**
 
-- A. Compensated respiratory acidosis
-- B. Metabolic acidosis with respiratory alkalosis  **(key)**
-- C. Metabolic alkalosis with respiratory acidosis
-- D. Normal anion gap metabolic acidosis
-- E. Pure respiratory alkalosis
+- A. Absence of any fever
+- B. Consanguinity of the parents  **(key)**
+- C. Normal birth weight
+- D. Timing of the last feed
+- E. Uncomplicated pregnancy
 
-*Explanation:* Her anion gap is 140 minus (104 plus 12), which is 24 mmol/L, so she has an anion gap metabolic acidosis. Winter's formula predicts a PCO2 of 1.5 x 12 plus 8, which is 26 plus or minus 2 mmHg. Her PCO2 of 21 mmHg is lower, so there is also a primary respiratory alkalosis, the typical mixed picture of salicylate poisoning. The near normal pH of 7.38 hides both disorders. The gap is raised, so this is not a normal anion gap acidosis.
+*Explanation:* Parental consanguinity raises the chance of an autosomal recessive inborn error such as a urea cycle disorder, which classically presents in the first week with poor feeding, vomiting, lethargy and deep rapid breathing after a symptom-free interval. Absence of fever does not localize a cause. Normal birth weight, an uncomplicated pregnancy and the timing of the last feed do not point to a diagnosis.
+
+*Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
+
+*Source:* Häberle J, Burlina A, Chakrapani A, et al. Suggested guidelines for the diagnosis and management of urea cycle disorders. First revision. Journal of Inherited Metabolic Disease 2019. https://doi.org/10.1002/jimd.12100
+
+#### Q2
+**Which of the following investigations is most important to obtain immediately for this infant?**
+
+- A. Cranial ultrasound
+- B. Lumbar puncture
+- C. Plasma ammonia  **(key)**
+- D. Serum lactate
+- E. Urine organic acids
+
+*Explanation:* Deep rapid breathing with encephalopathy after a well interval in a neonate suggests hyperammonemia, so plasma ammonia is the decisive, time-critical test because a high level triggers emergency ammonia removal. Lactate and urine organic acids help classify the disorder later. A cranial ultrasound and a lumbar puncture do not explain the metabolic picture, though a sepsis workup still proceeds.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Palmer BF, Clegg DJ. Salicylate toxicity. New England Journal of Medicine 2020. https://doi.org/10.1056/NEJMra2010852
-
-#### Q2
-**Which of the following findings on its own is an indication for extracorporeal treatment in this patient?**
-
-- A. Altered level of consciousness  **(key)**
-- B. Anion gap of 24 mmol/L
-- C. Salicylate level of 5.1 mmol/L
-- D. Temperature of 37.9°C
-- E. Tinnitus on arrival
-
-*Explanation:* Her altered mental status is on its own an indication, because the EXTRIP workgroup recommends extracorporeal treatment for salicylate poisoning with altered mental status at any level, as it reflects salicylate in the brain. Her level of 5.1 mmol/L is below the level thresholds of 6.5 mmol/L and 7.2 mmol/L. An anion gap of 24 mmol/L is not a stated criterion. Tinnitus and a low-grade temperature are common features of salicylate toxicity and do not on their own call for dialysis.
-
-*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
-
-*Source:* Juurlink DN, Gosselin S, Kielstein JT, et al. Extracorporeal treatment for salicylate poisoning. Systematic review and recommendations from the EXTRIP workgroup. Annals of Emergency Medicine 2015. https://doi.org/10.1016/j.annemergmed.2015.03.031
+*Source:* Häberle J, Burlina A, Chakrapani A, et al. Suggested guidelines for the diagnosis and management of urea cycle disorders. First revision. Journal of Inherited Metabolic Disease 2019. https://doi.org/10.1002/jimd.12100
 
 #### Q3
-*Update:* The nephrologist is on the way. She becomes drowsier, and her respiratory rate is 36/minute. The resident suggests intubation.
+*Update:* Plasma ammonia is 620 micromol/L. The blood gas shows a respiratory alkalosis. Blood and urine cultures are sent.
 
-**Which of the following is the most dangerous consequence of intubating her and ventilating at usual settings?**
+**Which of the following are the most appropriate immediate steps once hyperammonemia is confirmed?**
 
-- A. Aspiration during laryngoscopy
-- B. Hyperkalemia from succinylcholine
-- C. Pneumothorax from high pressures
-- D. Rapid rise in PCO2 and acidemia  **(key)**
-- E. Ventilator associated pneumonia
+Select 3.
 
-*Explanation:* She keeps her pH near normal by breathing fast and deep, with a PCO2 of 21 mmHg. Apnea during intubation and usual ventilator settings let the PCO2 rise, the blood becomes more acidic, and more salicylate moves into the brain, which can cause sudden deterioration and death. Aspiration is a general intubation risk but is less specific here. She has no reason for hyperkalemia with succinylcholine. Pneumothorax and ventilator associated pneumonia are later, less likely harms.
+- A. Discontinue all protein intake  **(key)**
+- B. Empiric antibiotics alone
+- C. Intravenous 10% dextrose  **(key)**
+- D. Nasogastric protein feeds
+- E. Oral lactulose
+- F. Reduce the intravenous fluid rate
+- G. Sodium benzoate infusion  **(key)**
 
-*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
+*Explanation:* Emergency management of hyperammonemia reverses catabolism with intravenous 10% dextrose, stops all protein intake and starts a nitrogen scavenger such as sodium benzoate. At 620 micromol/L in a neonate, the guideline also advises urgent hemodialysis, so transfer to a centre that can provide it is arranged at once. Lactulose treats hepatic encephalopathy, not a urea cycle disorder. Protein feeds and continued protein add nitrogen. Antibiotics alone do not lower ammonia, and reducing fluids limits dextrose delivery.
 
-*Source:* Palmer BF, Clegg DJ. Salicylate toxicity. New England Journal of Medicine 2020. https://doi.org/10.1056/NEJMra2010852
+*Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
+
+*Source:* Häberle J, Burlina A, Chakrapani A, et al. Suggested guidelines for the diagnosis and management of urea cycle disorders. First revision. Journal of Inherited Metabolic Disease 2019. https://doi.org/10.1002/jimd.12100
 
 #### Q4
-**Which of the following is the most appropriate treatment while hemodialysis is arranged?**
+**Which of the following is the best way to document his level of consciousness for serial reassessment?**
 
-- A. acetazolamide 500 mg IV
-- B. furosemide 40 mg IV
-- C. naloxone 0.4 mg IV
-- D. sodium bicarbonate 60 mmol IV  **(key)**
-- E. whole bowel irrigation
+- A. Adult Glasgow Coma Scale
+- B. AVPU category alone
+- C. Note that he is floppy
+- D. Pediatric Glasgow Coma Scale  **(key)**
+- E. Pupil size alone
 
-*Explanation:* IV sodium bicarbonate, given as a bolus of 1 mmol/kg (60 mmol for her 60 kg) and then an infusion, alkalinizes the serum and urine, which keeps salicylate ionized, limits its entry into the brain and increases its excretion. Acetazolamide alkalinizes the urine but causes a metabolic acidosis that drives salicylate into tissues. Forced diuresis with furosemide does not add clearance and risks fluid overload. Naloxone has no role because she has no opioid features. Whole bowel irrigation is not routine in salicylate poisoning and is unsafe in a drowsy patient who is vomiting.
+*Explanation:* A preverbal infant is scored with the modified pediatric Glasgow Coma Scale, recorded by eye, verbal and motor components so trends between examiners are clear. The adult verbal scale needs orientation a neonate cannot give. AVPU is too coarse to show gradual decline. A free-text note cannot be compared, and pupil size is one sign rather than a measure of consciousness.
 
-*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
+*Key feature:* Decreased level of consciousness 5. Document and trend consciousness with descriptive terms and a scored scale such as the GCS.
 
-*Source:* Palmer BF, Clegg DJ. Salicylate toxicity. New England Journal of Medicine 2020. https://doi.org/10.1056/NEJMra2010852
+*Source:* Teasdale G, Maas A, Lecky F, et al. The Glasgow Coma Scale at 40 years. Standing the test of time. Lancet Neurology 2014. https://doi.org/10.1016/S1474-4422(14)70120-6
 
-### loc-20: Harder to wake after three days of cough
+### loc-19: A yellow baby who will not wake
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 71-year-old man is brought to the emergency department by ambulance with 3 days of increased cough and dyspnea. His wife says he became confused and hard to wake over the last 2 hours. He has severe COPD, uses home oxygen at 2 L/minute and takes only tiotropium and salbutamol inhalers. Paramedics placed him on a non-rebreather mask at 15 L/minute. He opens his eyes to voice, says inappropriate words and localizes to pressure. He protects his airway. He has asterixis. Breath sounds are quiet with scattered wheezes. Venous blood gas: pH 7.19, PCO2 92 mmHg, bicarbonate 34 mmol/L. Capillary glucose is 7.4 mmol/L.
+You are working in a community hospital emergency department with no neonatal intensive care unit. A 4-day-old girl is brought in by her parents because she is yellow, feeding poorly and hard to wake. She was born at 37 weeks and went home at 30 hours of age. She is exclusively breastfed. Her mother's blood group is O positive. Today she has had a shrill, high-pitched cry, and her neck and back arch backward when she is handled. She is deeply jaundiced down to her soles. Capillary glucose is 3.8 mmol/L.
 
-- Temperature: 37.2°C oral
-- Pulse: 108/minute
-- Resp.: 12/minute
-- BP: 154/88 mmHg
-- O2 sat: 99% on 15 L/minute by non-rebreather mask
+- Temperature: 37.2°C rectal
+- Pulse: 164/minute
+- Resp.: 48/minute
+- O2 sat: 97% on room air
+- Weight: 2.9 kg
+
+#### Q1
+**Which of the following is the most likely cause of her decreased level of consciousness?**
+
+- A. Abusive head trauma
+- B. Bacterial meningitis
+- C. Bilirubin encephalopathy  **(key)**
+- D. Hypernatremic dehydration
+- E. Neonatal herpes encephalitis
+
+*Explanation:* Deep jaundice with lethargy, poor feeding, a high-pitched cry and backward arching of the neck and trunk are signs of acute bilirubin encephalopathy. Birth at 37 weeks, exclusive breastfeeding and possible ABO incompatibility with a group O mother all add to her risk. Meningitis and herpes encephalitis still need to be considered, but they do not explain the deep jaundice with arching. Hypernatremic dehydration and abusive head trauma do not account for the jaundice, although her sodium and a careful examination are still checked.
+
+*Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
+
+*Source:* Ng E, Altit G, Joynt C, Radziminski N, Narvey M. Guidelines for detection and management of hyperbilirubinemia in term and late preterm newborns (35 weeks gestational age or more). Canadian Paediatric Society position statement. Paediatrics and Child Health 2026. https://doi.org/10.1093/pch/pxaf034
+
+#### Q2
+**Which of the following is the most appropriate immediate treatment while further tests are sent?**
+
+- A. Albumin 1 g/kg IV infusion
+- B. Intensive phototherapy now  **(key)**
+- C. Phenobarbital 5 mg/kg PO
+- D. Supplemental formula feeds
+- E. Vitamin K 1 mg IM
+
+*Explanation:* Intensive phototherapy with maximal skin exposure starts at once, while total serum bilirubin, blood group, direct antiglobulin test, CBC and electrolytes are sent. Extra feeds help but lower bilirubin far too slowly for an infant with neurological signs. Phenobarbital acts over days and has no role in acute treatment. Albumin is not a routine treatment, and vitamin K does not treat jaundice.
+
+*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
+
+*Source:* Ng E, Altit G, Joynt C, Radziminski N, Narvey M. Guidelines for detection and management of hyperbilirubinemia in term and late preterm newborns (35 weeks gestational age or more). Canadian Paediatric Society position statement. Paediatrics and Child Health 2026. https://doi.org/10.1093/pch/pxaf034
+
+#### Q3
+*Update:* Total serum bilirubin is 468 micromol/L. The direct antiglobulin test is positive and her blood group is A positive.
+
+**Which of the following is the most appropriate definitive treatment for her?**
+
+- A. Double-volume exchange transfusion  **(key)**
+- B. Repeat bilirubin in 6 hours
+- C. Simple red cell transfusion
+- D. Top-up formula feeds
+- E. Wait for phototherapy response
+
+*Explanation:* The Canadian Paediatric Society advises an urgent double-volume exchange transfusion for any signs of acute bilirubin encephalopathy, whatever the bilirubin level, and her level of 468 micromol/L with isoimmune hemolysis adds to the urgency. Phototherapy continues, but waiting for its effect or repeating the level lets brain injury progress. A simple transfusion does not remove bilirubin or maternal antibody, and feeding alone is far too slow.
+
+*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
+
+*Source:* Ng E, Altit G, Joynt C, Radziminski N, Narvey M. Guidelines for detection and management of hyperbilirubinemia in term and late preterm newborns (35 weeks gestational age or more). Canadian Paediatric Society position statement. Paediatrics and Child Health 2026. https://doi.org/10.1093/pch/pxaf034
+
+#### Q4
+*Update:* The regional neonatal unit accepts her, but transport and the exchange transfusion cannot start for at least 4 hours.
+
+**Which of the following is the most appropriate additional treatment while her transfer is arranged?**
+
+- A. Albumin 25% IV infusion
+- B. Cholestyramine by mouth
+- C. IVIG 0.5 to 1 g/kg IV  **(key)**
+- D. Phenobarbital loading dose
+- E. Stop breastfeeding for 48 hours
+
+*Explanation:* In isoimmune hemolytic disease with a positive direct antiglobulin test, IV immune globulin 0.5 to 1 g/kg may be considered when an exchange transfusion cannot be done promptly, as here, while intensive phototherapy continues. It slows hemolysis but does not replace the exchange. Albumin, cholestyramine and phenobarbital are not recommended acute treatments, and stopping breastfeeding treats neither the hemolysis nor the encephalopathy.
+
+*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
+
+*Source:* Ng E, Altit G, Joynt C, Radziminski N, Narvey M. Guidelines for detection and management of hyperbilirubinemia in term and late preterm newborns (35 weeks gestational age or more). Canadian Paediatric Society position statement. Paediatrics and Child Health 2026. https://doi.org/10.1093/pch/pxaf034
+
+### loc-20: Drowsy before dialysis could start
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 67-year-old man is brought to the emergency department by his daughter because he has been increasingly drowsy and confused over 3 days. He has stage 5 chronic kidney disease and was to start hemodialysis next month, once his new arteriovenous fistula matured. He has hypertension. He is drowsy and has a coarse flapping tremor of the outstretched hands. A scratchy rub is heard at the left sternal edge. He has mild ankle edema. There is no neck stiffness and no focal weakness. Capillary glucose is 6.4 mmol/L.
+
+- Temperature: 36.8°C oral
+- Pulse: 92/minute
+- Resp.: 22/minute
+- BP: 176/98 mmHg
+- O2 sat: 96% on room air
+- Weight: 78 kg
 
 #### Q1
 **Which of the following is the most likely cause of his decreased level of consciousness?**
 
-- A. Carbon monoxide poisoning
-- B. Hepatic encephalopathy
-- C. Hypercapnic respiratory failure  **(key)**
-- D. Hypoxic ischemic brain injury
-- E. Opioid analgesic toxicity
+- A. Hepatic encephalopathy
+- B. Hypoglycemic coma
+- C. Nonconvulsive seizures
+- D. Uremic encephalopathy  **(key)**
+- E. Wernicke encephalopathy
 
-*Explanation:* He has an acute respiratory acidosis with a pH of 7.19 and PCO2 of 92 mmHg on top of chronic retention, shown by the bicarbonate of 34 mmol/L. High-flow oxygen from the paramedics likely worsened the hypercapnia in severe COPD. Asterixis occurs with hypercapnia as well as liver failure, and he has no history of liver disease. His saturation of 99% argues against hypoxic injury. His only medications are inhalers, so opioid toxicity is unlikely, and nothing suggests a carbon monoxide source.
+*Explanation:* Stage 5 kidney disease without dialysis, with a flapping tremor and a pericardial rub from uremic pericarditis, points to uremic encephalopathy from retained solutes. The glucose is normal, which excludes hypoglycemia. No liver disease or alcohol history is given for hepatic or Wernicke causes. Nonconvulsive status is possible, but the metabolic picture and the rub make uremia the most likely cause.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Austin MA, Wills KE, Blizzard L, et al. Effect of high flow oxygen on mortality in chronic obstructive pulmonary disease patients in prehospital setting. Randomised controlled trial. BMJ 2010. https://doi.org/10.1136/bmj.c5462
+*Source:* Nesrallah GE, Mustafa RA, Clark WF, et al. Canadian Society of Nephrology 2014 clinical practice guideline for timing the initiation of chronic dialysis. CMAJ 2014. https://doi.org/10.1503/cmaj.130363
 
 #### Q2
-**Which of the following oxygen saturation targets is most appropriate for him now?**
+**Which of the following is the most appropriate definitive treatment for his encephalopathy?**
 
-- A. 82 to 85%
-- B. 88 to 92%  **(key)**
-- C. 92 to 96%
-- D. 94 to 98%
-- E. 98 to 100%
+- A. Levetiracetam load
+- B. Mannitol bolus
+- C. Oral lactulose
+- D. Thiamine infusion
+- E. Urgent hemodialysis  **(key)**
 
-*Explanation:* In a randomized trial of prehospital COPD exacerbations, oxygen titrated to a saturation of 88 to 92% reduced mortality compared with high-flow oxygen. His saturation of 99% on 15 L/minute is higher than needed and adds to his hypercapnia. Targets of 92 to 96% or higher suit most patients without chronic hypercapnia. A target of 82 to 85% risks tissue hypoxia without further benefit.
+*Explanation:* Urgent hemodialysis removes the retained solutes causing uremic encephalopathy and also treats the uremic pericarditis, both recognized indications to start dialysis. Thiamine treats Wernicke encephalopathy, lactulose treats hepatic encephalopathy, levetiracetam treats seizures, and mannitol lowers intracranial pressure, none of which is the cause of his decline here.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Austin MA, Wills KE, Blizzard L, et al. Effect of high flow oxygen on mortality in chronic obstructive pulmonary disease patients in prehospital setting. Randomised controlled trial. BMJ 2010. https://doi.org/10.1136/bmj.c5462
+*Source:* Nesrallah GE, Mustafa RA, Clark WF, et al. Canadian Society of Nephrology 2014 clinical practice guideline for timing the initiation of chronic dialysis. CMAJ 2014. https://doi.org/10.1503/cmaj.130363
 
 #### Q3
-*Update:* Oxygen is titrated down to 1 L/minute. He still opens his eyes to voice.
+**Which of the following findings in this man is by itself a reason to start his definitive treatment today?**
 
-**Which of the following is the most appropriate ventilatory support now?**
+- A. Blood pressure of 176/98 mmHg
+- B. Mild ankle edema
+- C. Serum bicarbonate of 24 mmol/L
+- D. Uremic pericarditis  **(key)**
+- E. Well controlled potassium
 
-- A. Continuous positive airway pressure
-- B. Heliox by face mask
-- C. High-flow nasal oxygen at 60 L/minute
-- D. Immediate intubation and ventilation
-- E. Noninvasive bilevel ventilation  **(key)**
-
-*Explanation:* His pH of 7.19 from acute hypercapnia in COPD meets the ERS/ATS recommendation for bilevel noninvasive ventilation, which applies at a pH of 7.35 or lower. He protects his airway, and hypercapnic drowsiness often improves quickly on bilevel support if he is watched closely. Continuous positive airway pressure gives no inspiratory support to clear carbon dioxide. High-flow nasal oxygen and heliox are not first-line in this setting. Intubation is kept for failure of a monitored bilevel trial or loss of airway protection.
+*Explanation:* Uremic pericarditis is a recognized indication for urgent dialysis, as is uremic encephalopathy, because both reflect retained uremic toxins that only dialysis removes. Mild ankle edema can be managed with diuretics and salt restriction. His blood pressure, a normal bicarbonate and a controlled potassium are not, on their own, indications to start dialysis urgently.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Rochwerg B, Brochard L, Elliott MW, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. European Respiratory Journal 2017. https://doi.org/10.1183/13993003.02426-2016
+*Source:* Nesrallah GE, Mustafa RA, Clark WF, et al. Canadian Society of Nephrology 2014 clinical practice guideline for timing the initiation of chronic dialysis. CMAJ 2014. https://doi.org/10.1503/cmaj.130363
 
 #### Q4
-**Which of the following findings at reassessment in 1 hour would best show that he is improving?**
+**Which of the following is the most appropriate way to monitor his conscious level over the next hours?**
 
-- A. Heart rate falling to 96/minute
-- B. Oxygen saturation of 92%
-- C. Quieter chest on auscultation
-- D. Respiratory rate of 8/minute
-- E. Rising GCS from 11 to 14  **(key)**
+- A. AVPU category only
+- B. Hourly pupil checks only
+- C. Repeat capillary glucose
+- D. Reports that he seems better
+- E. Scored Glasgow Coma Scale  **(key)**
 
-*Explanation:* His GCS on arrival was 11 (E3 V3 M5), and a rise to 14 shows that his hypercapnic encephalopathy is reversing on bilevel support. A falling respiratory rate to 8/minute may mean worsening narcosis, not recovery. A quieter chest can mean less air movement. A saturation of 92% is within target but says nothing about carbon dioxide. A lower heart rate is nonspecific. A repeat blood gas and serial GCS components are the best trend.
+*Explanation:* A scored Glasgow Coma Scale recorded by eye, verbal and motor components lets different staff track his trend objectively during and after dialysis. AVPU is too coarse to show gradual change. Pupil checks and repeat glucose are single measures rather than a consciousness scale, and vague notes cannot be compared between examiners.
 
 *Key feature:* Decreased level of consciousness 5. Document and trend consciousness with descriptive terms and a scored scale such as the GCS.
 
-*Source:* Rochwerg B, Brochard L, Elliott MW, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. European Respiratory Journal 2017. https://doi.org/10.1183/13993003.02426-2016
+*Source:* Teasdale G, Maas A, Lecky F, et al. The Glasgow Coma Scale at 40 years. Standing the test of time. Lancet Neurology 2014. https://doi.org/10.1016/S1474-4422(14)70120-6
 
-### loc-21: Found sweaty in bed
+### loc-21: Slumped in her chair after lunch
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old woman is brought to the emergency department by ambulance. Her partner found her sweaty and unresponsive in bed at 0600. She has type 1 diabetes treated with insulin glargine and insulin lispro. Her partner says she drank 5 beers at a hockey game last night. Paramedics could not obtain IV access. She opens her eyes to pressure, moans and withdraws from pressure. She is diaphoretic. There is no sign of head injury. Capillary glucose is 1.7 mmol/L. Two nurses cannot place an IV.
+An 86-year-old woman is brought to the emergency department by ambulance from her long-term care home because staff found her slumped in her wheelchair and hard to rouse after lunch. She has moderate Alzheimer dementia, hypertension and osteoarthritis. She does not have diabetes. Staff say she is usually chatty and feeds herself. She is pale and sweaty. She opens her eyes to pressure, makes incomprehensible sounds and localizes to pressure. There is no focal weakness and no sign of injury. Capillary glucose is 1.7 mmol/L. A paramedic has placed an IV line.
 
-- Temperature: 36.1°C oral
-- Pulse: 112/minute
-- Resp.: 18/minute
-- BP: 128/76 mmHg
-- O2 sat: 97% on room air
-- Weight: 64 kg
+- Temperature: 36.3°C oral
+- Pulse: 98/minute
+- Resp.: 16/minute
+- BP: 148/82 mmHg
+- O2 sat: 96% on room air
+- Weight: 54 kg
 
 #### Q1
-**Which of the following is the most appropriate immediate treatment for this patient?**
+**Which of the following is the most appropriate immediate treatment for her?**
 
-- A. glucagon 1 mg IM  **(key)**
-- B. glucose gel 15 g buccal
-- C. hydrocortisone 100 mg IM
-- D. octreotide 50 mcg SC
-- E. thiamine 100 mg IM
+- A. Buccal glucose gel 15 g
+- B. Dextrose 50% 50 mL IV  **(key)**
+- C. Glucagon 1 mg IM
+- D. Oral juice 200 mL
+- E. Thiamine 100 mg IV
 
-*Explanation:* Her glucose is 1.7 mmol/L, she cannot swallow safely, and neither the paramedics nor two nurses could place an IV. Diabetes Canada recommends glucagon 1 mg SC or IM, or 3 mg intranasal, for severe hypoglycemia in an unconscious person without IV access. It works less well after more than 2 drinks in the previous few hours, so her glucose is rechecked soon and access efforts continue. Glucose gel is unsafe because she cannot swallow and protect her airway. Octreotide treats sulfonylurea-induced insulin release, not injected insulin. Hydrocortisone and thiamine do not raise glucose promptly.
+*Explanation:* With a glucose of 1.7 mmol/L, a decreased level of consciousness and an IV line in place, Diabetes Canada advises 10 to 25 g of IV glucose, and 50 mL of dextrose 50% gives 25 g. Glucagon is the choice when there is no IV access. Buccal gel and juice are unsafe when she cannot protect her airway. Thiamine does not raise glucose, and nothing in her history suggests Wernicke encephalopathy.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
 *Source:* Lega IC, Yale JF, Chadha A, et al. Hypoglycemia in adults. Diabetes Canada Clinical Practice Guidelines. Canadian Journal of Diabetes 2023. https://doi.org/10.1016/j.jcjd.2023.08.003
 
 #### Q2
-**Which of the following is the correct Glasgow Coma Scale score on arrival, with its components?**
+**Which of the following is her Glasgow Coma Scale score on arrival, with its components?**
 
-- A. GCS 7 (E2 V2 M3)
-- B. GCS 8 (E2 V2 M4)  **(key)**
-- C. GCS 9 (E2 V3 M4)
-- D. GCS 9 (E3 V2 M4)
+- A. GCS 7 (E1 V2 M4)
+- B. GCS 8 (E2 V2 M4)
+- C. GCS 8 (E2 V1 M5)
+- D. GCS 9 (E2 V2 M5)  **(key)**
 - E. GCS 10 (E2 V3 M5)
 
-*Explanation:* She opens her eyes to pressure (E2), moans without words (V2) and withdraws from pressure (M4), for a GCS of 8. V3 would require recognizable but inappropriate words. E3 is eye opening to voice. M3 is abnormal flexion, and M5 is localizing, neither of which she shows. Recording the components makes her recovery after treatment easy to track.
+*Explanation:* She opens her eyes to pressure (E2), makes incomprehensible sounds (V2) and localizes to pressure (M5), for a GCS of 9. V1 is no sound and V3 is inappropriate words. M4 is withdrawal rather than localizing. Recording the components before and after dextrose shows whether she returns to the chatty, self-feeding baseline her care home describes.
 
 *Key feature:* Decreased level of consciousness 5. Document and trend consciousness with descriptive terms and a scored scale such as the GCS.
 
 *Source:* Teasdale G, Maas A, Lecky F, et al. The Glasgow Coma Scale at 40 years. Standing the test of time. Lancet Neurology 2014. https://doi.org/10.1016/S1474-4422(14)70120-6
 
 #### Q3
-*Update:* Thirty minutes after glucagon, capillary glucose is 6.8 mmol/L. She now opens her eyes to voice but is confused and moves her right arm and leg less than her left.
+*Update:* Twenty minutes after dextrose her glucose is 6.8 mmol/L and she is talking. A nurse from the home suggests she has been eating poorly because her dementia is progressing.
 
-**Which of the following is the most appropriate next step for this patient?**
+**Which of the following is the most appropriate response to this explanation for her hypoglycemia?**
 
-- A. Electroencephalogram
-- B. Noncontrast CT head  **(key)**
-- C. Observe 1 hour for recovery
-- D. Repeat glucagon 1 mg IM
-- E. Serum ethanol level
+- A. Check for a drug cause  **(key)**
+- B. Discharge once she has eaten
+- C. Increase meal supervision
+- D. Refer for feeding assessment
+- E. Start a dementia review
 
-*Explanation:* Her glucose is now normal, yet she remains confused with new right-sided weakness, so a structural cause such as stroke or hemorrhage must be excluded with CT head before blaming hypoglycemia or alcohol. Hypoglycemic hemiparesis is a diagnosis of exclusion. Waiting an hour delays diagnosis of a treatable lesion. More glucagon is not needed with a glucose of 6.8 mmol/L. An ethanol level would not explain a focal deficit, and EEG is not the first test.
+*Explanation:* Poor intake from dementia rarely lowers the glucose to 1.7 mmol/L in a woman without diabetes, so the hypoglycemia must be explained before it is put down to her dementia. Insulin or a sulfonylurea given in error is the most important cause to exclude, starting with the home's medication administration record. Blood drawn while her glucose was low can be sent for insulin and C-peptide if the cause stays unclear. Discharge, meal changes or a dementia review would leave a medication error undiscovered and allow it to recur.
 
 *Key feature:* Decreased level of consciousness 4. Do not attribute decreased consciousness to something minor like alcohol until head injury and other serious causes are excluded.
 
 *Source:* Lega IC, Yale JF, Chadha A, et al. Hypoglycemia in adults. Diabetes Canada Clinical Practice Guidelines. Canadian Journal of Diabetes 2023. https://doi.org/10.1016/j.jcjd.2023.08.003
 
-### loc-22: Hard to wake from a nap
+### loc-22: Pale, puffy and sleepy after diarrhea
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 3-year-old boy is brought to the emergency department by his mother at 2100 because he is hard to wake from a nap. His grandfather, who has type 2 diabetes, has been staying with the family this week. At 1500 the mother found an open pill organizer on the kitchen table. The boy has been well and takes no medications. He opens his eyes to voice, cries and localizes to pressure. He is pale and sweaty. There are no signs of injury. Capillary glucose is 1.8 mmol/L. An IV is in place.
+A 4-year-old boy is brought to the emergency department by his parents because he has become pale, puffy and increasingly sleepy over 2 days. Eight days ago he had crampy abdominal pain and bloody diarrhea, which settled. He has passed very little urine since yesterday. This morning he had a generalized seizure that lasted 2 minutes. He opens his eyes to voice and is confused. His eyelids and ankles are swollen. There are scattered petechiae on his legs. Hemoglobin 58 g/L, platelets 34 x 10^9/L, creatinine 402 umol/L, potassium 5.6 mmol/L, sodium 131 mmol/L. The blood film shows schistocytes. Capillary glucose is 5.2 mmol/L.
 
-- Temperature: 36.6°C axillary
-- Pulse: 138/minute
+- Temperature: 37.1°C oral
+- Pulse: 128/minute
 - Resp.: 26/minute
-- BP: 94/58 mmHg
-- O2 sat: 98% on room air
-- Weight: 15 kg
+- BP: 138/92 mmHg
+- O2 sat: 96% on room air
+- Weight: 17 kg
 
 #### Q1
-**Which of the following is the most appropriate initial treatment for this child?**
+**Which of the following is the most appropriate initial treatment for him?**
 
-- A. dextrose 50% 30 mL IV
-- B. dextrose 10% 15 mL IV
-- C. dextrose 10% 75 mL IV  **(key)**
-- D. glucagon 0.5 mg IM
-- E. octreotide 15 mcg SC
+- A. Azithromycin by mouth
+- B. Ceftriaxone 50 mg/kg IV
+- C. Platelet transfusion 10 mL/kg
+- D. Red cell transfusion 10 mL/kg  **(key)**
+- E. Saline bolus 20 mL/kg IV
 
-*Explanation:* WHO advises 5 mL/kg of IV dextrose 10%, which is 0.5 g/kg, for hypoglycemia in a child. For 15 kg that is 75 mL, or 7.5 g. The 15 mL dose gives only 1.5 g, or 0.1 g/kg. Dextrose 50% is too concentrated for a small child's peripheral vein. Glucagon is not needed when IV access is in place. Octreotide is an adjunct for recurrent hypoglycemia, not the first treatment of a glucose of 1.8 mmol/L.
+*Explanation:* A hemoglobin of 58 g/L in a drowsy child warrants a red cell transfusion, given slowly because he is oliguric, swollen and hypertensive. Platelet transfusion is avoided in hemolytic uremic syndrome unless there is active bleeding or a procedure, because it may worsen microvascular thrombosis. A saline bolus would add to his fluid overload. Antibiotics are not recommended for Shiga toxin-producing E. coli infection and do not treat the syndrome.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* World Health Organization. Pocket book of hospital care for children. Guidelines for the management of common childhood illnesses. 2nd edition. WHO. 2013. https://www.ncbi.nlm.nih.gov/books/NBK154447/
+*Source:* Walsh PR, Johnson S. Treatment and management of children with haemolytic uraemic syndrome. Archives of Disease in Childhood 2018. https://doi.org/10.1136/archdischild-2016-311377
 
 #### Q2
-**Which of the following is the most important information to obtain from the grandfather now?**
+**Which of the following details from his parents is most useful in identifying the cause of his illness?**
 
-- A. Date of his last clinic visit
-- B. Duration of his diabetes
-- C. His most recent HbA1c value
-- D. Names of his diabetes medications  **(key)**
-- E. Times he checks his glucose
+- A. Family history of epilepsy
+- B. Food and animal exposures  **(key)**
+- C. Recent ibuprofen use
+- D. Toilet training progress
+- E. Vaccination record
 
-*Explanation:* Knowing which diabetes drugs the child could have taken sets the expected duration of hypoglycemia and the treatment. A sulfonylurea can cause recurrent hypoglycemia for many hours and may need octreotide and admission, while metformin alone rarely causes hypoglycemia. The grandfather's HbA1c, clinic visits, glucose checks and years with diabetes do not change the child's management.
+*Explanation:* Bloody diarrhea followed a week later by hemolytic anemia with schistocytes, low platelets and acute kidney injury is typical of hemolytic uremic syndrome after Shiga toxin-producing E. coli infection. Asking about undercooked ground beef, unpasteurized milk or juice, petting farms and sick contacts identifies the likely source, which matters for public health reporting and for other exposed children. Ibuprofen can injure the kidneys but does not cause hemolysis and low platelets. Epilepsy in the family, toilet training and vaccinations do not explain the picture.
 
 *Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
 
-*Source:* Bosse GM. Antidiabetics and hypoglycemics/antiglycemics. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter: Antidiabetics and Hypoglycemics/Antiglycemics. https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210272153
+*Source:* Walsh PR, Johnson S. Treatment and management of children with haemolytic uraemic syndrome. Archives of Disease in Childhood 2018. https://doi.org/10.1136/archdischild-2016-311377
 
 #### Q3
-*Update:* After dextrose, his glucose rises to 6.2 mmol/L. At 2230 it is 2.6 mmol/L again. The grandfather takes gliclazide MR 60 mg daily.
+*Update:* His potassium rises to 6.4 mmol/L. He has passed 20 mL of urine in 12 hours, and his GCS falls to 11 (E3 V3 M5).
 
-**Which of the following is the most appropriate treatment for the recurrent hypoglycemia?**
+**Which of the following is the most appropriate definitive treatment for him now?**
 
-- A. activated charcoal 15 g PO
-- B. diazoxide 45 mg PO
-- C. glucagon 0.5 mg IM
-- D. hydrocortisone 30 mg IV
-- E. octreotide 15 mcg SC  **(key)**
+- A. Continuous furosemide infusion
+- B. Dialysis via a central catheter  **(key)**
+- C. Fluid challenge 20 mL/kg IV
+- D. Plasma exchange sessions
+- E. Salbutamol nebulizers alone
 
-*Explanation:* Gliclazide stimulates insulin release, and each dose of dextrose triggers more insulin, so hypoglycemia recurs. Octreotide blocks insulin release and is the preferred treatment. The suggested pediatric dose is 1 to 1.5 mcg/kg, so 15 mcg SC is 1 mcg/kg for this child. Octreotide worked better than diazoxide in human studies. Glucagon gives at most a short rise. Hydrocortisone does not block insulin release. Charcoal is unlikely to help at least 7 hours after ingestion and is risky in a drowsy child.
+*Explanation:* Near anuria with a rising potassium and worsening encephalopathy are indications for dialysis, which supports him while the kidneys recover. Salbutamol shifts potassium into cells for a short time but removes neither potassium nor uremic toxins. A furosemide infusion rarely works once he is almost anuric, and a fluid challenge would worsen overload. Plasma exchange is not standard treatment for Shiga toxin hemolytic uremic syndrome in children.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Glatstein M, Scolnik D, Bentur Y. Octreotide for the treatment of sulfonylurea poisoning. Clinical Toxicology 2012. https://doi.org/10.3109/15563650.2012.734626
+*Source:* Walsh PR, Johnson S. Treatment and management of children with haemolytic uraemic syndrome. Archives of Disease in Childhood 2018. https://doi.org/10.1136/archdischild-2016-311377
 
 #### Q4
-**Which of the following is the most appropriate disposition for this child?**
+*Update:* While the dialysis catheter is being arranged he has another generalized seizure. It has now lasted 6 minutes.
 
-- A. Discharge after 4 hours of normal glucose
-- B. Discharge once he tolerates food
-- C. Discharge with a home glucometer
-- D. Observe in the ED for 6 hours
-- E. Ward admission with glucose checks  **(key)**
+**Which of the following is the most appropriate first treatment for this seizure?**
 
-*Explanation:* In reported children, sulfonylurea hypoglycemia began up to 16 hours after ingestion, and half had a recurrence even after octreotide. He has already needed octreotide for a recurrence. He needs admission with frequent glucose checks until he has been free of hypoglycemia off treatment. A 4 or 6 hour period of normal glucose is too short to exclude late recurrence. Eating does not prevent recurrence, and a home glucometer cannot replace monitored care.
+- A. Dextrose 10% 5 mL/kg IV
+- B. Fosphenytoin 20 mg PE/kg IV
+- C. Hypertonic saline 3% IV
+- D. Levetiracetam 60 mg/kg IV
+- E. Lorazepam 0.1 mg/kg IV  **(key)**
+
+*Explanation:* A convulsive seizure lasting 6 minutes is status epilepticus, so a benzodiazepine is given first, here lorazepam 0.1 mg/kg IV, which is 1.7 mg for 17 kg. Levetiracetam and fosphenytoin are second-line drugs if seizures continue. His sodium of 131 mmol/L is too mild to need hypertonic saline, and his glucose of 5.2 mmol/L does not call for dextrose. Uremia, hypertension and small-vessel injury in the brain all contribute to seizures in hemolytic uremic syndrome.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Glatstein M, Scolnik D, Bentur Y. Octreotide for the treatment of sulfonylurea poisoning. Clinical Toxicology 2012. https://doi.org/10.3109/15563650.2012.734626
+*Source:* Brophy GM, Bell R, Claassen J, et al. Guidelines for the evaluation and management of status epilepticus. Neurocritical Care 2012. https://doi.org/10.1007/s12028-012-9695-z
 
 ### loc-23: Drowsy with a cough
 
@@ -566,11 +621,11 @@ A 69-year-old man is brought to the emergency department by his daughter because
 - D. crystalloid 80 mL/hour IV
 - E. hydroxyethyl starch 500 mL IV
 
-*Explanation:* His mean arterial pressure is (78 plus 2 x 42) divided by 3, about 54 mmHg, and his lactate is 5.2 mmol/L, so he has sepsis-induced hypoperfusion. The Surviving Sepsis Campaign suggests at least 30 mL/kg of IV crystalloid within the first 3 hours, which is 30 x 80 = 2400 mL. A 500 mL bolus or a maintenance rate of 80 mL/hour is far too little. Starches are recommended against because they increase kidney injury. Albumin is not the initial fluid.
+*Explanation:* His mean arterial pressure is (78 plus 2 x 42) divided by 3, about 54 mmHg, and his lactate is 5.2 mmol/L, so he has sepsis-induced hypoperfusion. The Surviving Sepsis Campaign suggests at least 30 mL/kg of IV crystalloid within the first 3 hours, which is 30 x 80 = 2400 mL. A 500 mL bolus or a maintenance rate of 80 mL/hour is far too little. Starches are recommended against because they increase kidney injury. Crystalloid alone is preferred over adding albumin.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Critical Care Medicine 2021. https://doi.org/10.1097/CCM.0000000000005337
+*Source:* Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Critical Care Medicine 2026. https://doi.org/10.1097/CCM.0000000000007075
 
 #### Q2
 *Update:* After 2.4 L of crystalloid, his BP is 84/46 mmHg. He remains confused.
@@ -587,7 +642,7 @@ A 69-year-old man is brought to the emergency department by his daughter because
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Critical Care Medicine 2021. https://doi.org/10.1097/CCM.0000000000005337
+*Source:* Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Critical Care Medicine 2026. https://doi.org/10.1097/CCM.0000000000007075
 
 #### Q3
 **Which of the following is the correct Glasgow Coma Scale score on arrival, with its components?**
@@ -617,82 +672,84 @@ A 69-year-old man is brought to the emergency department by his daughter because
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Critical Care Medicine 2021. https://doi.org/10.1097/CCM.0000000000005337
+*Source:* Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Critical Care Medicine 2026. https://doi.org/10.1097/CCM.0000000000007075
 
-### loc-24: Found on the floor in a heat wave
+### loc-24: Sleepy after a bump at daycare
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 81-year-old woman is brought to the emergency department by ambulance during a week-long heat wave. Her neighbour found her on the floor of her top-floor apartment, which has no air conditioning. She was last seen well 2 days ago. She has hypertension and Parkinson disease and takes hydrochlorothiazide, carbidopa-levodopa and benztropine. She opens her eyes to pressure, makes incomprehensible sounds and localizes to pressure. Her skin is hot and dry. There is no neck stiffness, rigidity or focal deficit. Capillary glucose is 7.2 mmol/L.
+A 4-year-old girl is brought to the emergency department by her father because she has vomited twice and become sleepy since she hit her forehead on a table at daycare 3 hours ago. For 4 days she has had bruises and small red spots on her legs and trunk, which began 2 weeks after a cold. She takes no medications and has no known bleeding disorder. Her father collected her from daycare an hour after the bump. She opens her eyes to voice and answers with single words. There are petechiae and bruises of different ages on her legs and trunk, and blood blisters inside her cheeks. She has a small bruise on her forehead. There is no lymphadenopathy and no enlarged liver or spleen. Capillary glucose is 5.3 mmol/L. A CBC drawn at triage shows platelets 3 x 10^9/L, hemoglobin 121 g/L and white cells 7.4 x 10^9/L with a normal differential.
 
-- Temperature: 41.2°C rectal
-- Pulse: 128/minute
-- Resp.: 28/minute
-- BP: 96/54 mmHg
-- O2 sat: 94% on room air
-- Weight: 58 kg
+- Temperature: 36.8°C axillary
+- Pulse: 112/minute
+- Resp.: 22/minute
+- BP: 108/66 mmHg
+- O2 sat: 99% on room air
+- Weight: 17 kg
 
 #### Q1
-**Which of the following is the most likely cause of her decreased level of consciousness?**
+**Which of the following is the most appropriate next investigation for her?**
 
-- A. Bacterial meningitis
-- B. Classic heat stroke  **(key)**
-- C. Neuroleptic malignant syndrome
-- D. Serotonin toxicity
-- E. Thyrotoxic crisis
+- A. Blood film review
+- B. Bone marrow aspiration
+- C. CT head without contrast  **(key)**
+- D. Lumbar puncture
+- E. Skeletal survey
 
-*Explanation:* A core temperature of 41.2°C with a decreased level of consciousness after days in a hot apartment during a heat wave is classic heat stroke. Her age, a diuretic and an anticholinergic drug all impair heat loss. She has no neck stiffness, although infection stays on the differential until excluded. Missed levodopa doses while she lay on the floor could cause a neuroleptic malignant-like syndrome, but that usually brings rigidity, which she lacks. She takes no serotonergic drug and has no known thyroid disease.
+*Explanation:* Vomiting and sleepiness after a head bump in a child with a platelet count of 3 x 10^9/L mean intracranial hemorrhage until proven otherwise, so a non-contrast CT head is needed now. A blood film belongs in the workup of isolated thrombocytopenia but does not change the next hour. The consensus report does not require a bone marrow examination for typical isolated thrombocytopenia. A lumbar puncture risks bleeding and does not look for a bleed in the brain. Petechiae with a very low platelet count explain her bruises, and a skeletal survey does not assess her brain.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Eifling KP, Gaudio FG, Dumke C, et al. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of heat illness. 2024 update. Wilderness and Environmental Medicine 2024. https://doi.org/10.1177/10806032241227924
+*Source:* Provan D, Arnold DM, Bussel JB, et al. Updated international consensus report on the investigation and management of primary immune thrombocytopenia. Blood Advances 2019. https://doi.org/10.1182/bloodadvances.2019000812
 
 #### Q2
-**Which of the following is the most effective method to lower her temperature?**
+*Update:* CT shows an 8 mm left subdural hemorrhage with 3 mm of midline shift. Neurosurgery is on the way.
 
-- A. acetaminophen 1 g PR
-- B. Cooling blanket under the patient
-- C. dantrolene 2.5 mg/kg IV
-- D. Ice packs to the neck only
-- E. Immersion in cold water  **(key)**
+**Which of the following is the most appropriate treatment to raise her platelet count now?**
 
-*Explanation:* Her core temperature of 41.2°C with coma needs the fastest possible cooling, and the Wilderness Medical Society recommends whole-body cold water immersion, started at once, before the cause is confirmed. Acetaminophen does not work because the hypothalamic set point is normal in heat stroke. Dantrolene has no proven benefit. Ice packs to the neck alone and a cooling blanket under the patient cool far more slowly than immersion.
+- A. IVIG and IV steroid only
+- B. Oral prednisone with observation
+- C. Plasma exchange and steroid
+- D. Platelet transfusion only
+- E. Platelets, IVIG and IV steroid  **(key)**
+
+*Explanation:* An intracranial hemorrhage with a platelet count of 3 x 10^9/L is life-threatening bleeding in immune thrombocytopenia. The international consensus report advises IV corticosteroids with IV immune globulin when the count must rise within 24 hours, and says platelet transfusion must not be postponed when the bleed is intracranial. IVIG and steroid alone take hours to days to act, and transfused platelets alone are quickly destroyed. Oral prednisone is too slow for this bleed, and the consensus report lists plasma exchange as not recommended in immune thrombocytopenia.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Eifling KP, Gaudio FG, Dumke C, et al. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of heat illness. 2024 update. Wilderness and Environmental Medicine 2024. https://doi.org/10.1177/10806032241227924
+*Source:* Provan D, Arnold DM, Bussel JB, et al. Updated international consensus report on the investigation and management of primary immune thrombocytopenia. Blood Advances 2019. https://doi.org/10.1182/bloodadvances.2019000812
 
 #### Q3
-**Which of the following items of collateral history is most important to obtain from her family?**
+**Which of the following sources can best describe her level of alertness in the first hour after the bump?**
 
-- A. Date of her last flu vaccine
-- B. Her smoking history
-- C. Her usual cognition and mobility  **(key)**
-- D. Name of her neurologist
-- E. Year Parkinson disease began
+- A. Her daycare staff  **(key)**
+- B. Her family physician
+- C. Her father's account
+- D. Her own account
+- E. Triage nursing notes
 
-*Explanation:* Her usual cognition and mobility set the baseline against which her recovery is judged, and they show how far her state differs from normal. Parkinson disease can affect cognition, so a clear baseline matters. The year her Parkinson disease began, the name of her neurologist, her vaccination date and her smoking history do not help judge her level of consciousness or guide immediate care.
+*Explanation:* Her father collected her an hour after the bump, so only the daycare staff saw whether she lost consciousness and how alert she was before she became sleepy. A period of normal behaviour followed by decline points to an expanding bleed and sets the start of her trend. For children aged 2 and older, the PECARN rule counts loss of consciousness, vomiting and altered mental status among its predictors of brain injury, so the first hour needs a reliable witness. Her father can describe her usual self and how she was when he arrived, but not the first hour. Her family physician knows her history but not today's events. Triage notes begin at arrival, and a drowsy 4-year-old cannot give a reliable account.
 
 *Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
 
-*Source:* Eifling KP, Gaudio FG, Dumke C, et al. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of heat illness. 2024 update. Wilderness and Environmental Medicine 2024. https://doi.org/10.1177/10806032241227924
+*Source:* Kuppermann N, Holmes JF, Dayan PS, et al. Identification of children at very low risk of clinically-important brain injuries after head trauma. A prospective cohort study. Lancet 2009. https://doi.org/10.1016/S0140-6736(09)61558-0
 
 #### Q4
-*Update:* After cold water immersion, her temperature is 38.6°C. Thirty minutes later, she still opens her eyes only to pressure and makes incomprehensible sounds.
+*Update:* Treatment to raise her platelet count is started, with diphenhydramine as a premedication. Two hours later she opens her eyes only to pressure. A resident suggests the diphenhydramine explains this.
 
-**Which of the following is the most appropriate next step for her persistent decreased level of consciousness?**
+**Which of the following is the most appropriate response to this explanation?**
 
-- A. Continue cooling to 37.0°C
-- B. Electroencephalogram
-- C. Head CT without contrast  **(key)**
-- D. Observe for 24 hours
-- E. Start empiric dantrolene
+- A. Accept it and observe overnight
+- B. Give physostigmine and reassess
+- C. Hold further IV infusions
+- D. Recheck platelets in 6 hours
+- E. Urgent repeat CT head  **(key)**
 
-*Explanation:* She was found on the floor, may have fallen and still responds only to pressure after cooling, so an intracranial cause such as a subdural hematoma must be excluded with CT. Her decreased level of consciousness should not be put down to heat alone. Immersion is stopped at a target of 38.3 to 38.8°C to avoid overshoot hypothermia, so cooling to 37.0°C is not advised. Dantrolene has no proven role, and observation or EEG would delay finding a bleed.
+*Explanation:* A fall in her level of consciousness after an intracranial hemorrhage may mean the hematoma is growing, so it must not be put down to diphenhydramine until a repeat CT and neurosurgical review exclude expansion. Observing overnight or waiting 6 hours for another count delays treatment of a growing bleed. Physostigmine is not a test for this idea and cannot exclude hematoma growth. Holding her infusions removes treatment she still needs.
 
 *Key feature:* Decreased level of consciousness 4. Do not attribute decreased consciousness to something minor like alcohol until head injury and other serious causes are excluded.
 
-*Source:* Eifling KP, Gaudio FG, Dumke C, et al. Wilderness Medical Society clinical practice guidelines for the prevention and treatment of heat illness. 2024 update. Wilderness and Environmental Medicine 2024. https://doi.org/10.1177/10806032241227924
+*Source:* Provan D, Arnold DM, Bussel JB, et al. Updated international consensus report on the investigation and management of primary immune thrombocytopenia. Blood Advances 2019. https://doi.org/10.1182/bloodadvances.2019000812
 
 ### loc-25: Confused outside a shelter
 
@@ -771,284 +828,279 @@ Select 3.
 
 *Source:* Roberts DM, Yates C, Megarbane B, et al. Recommendations for the role of extracorporeal treatments in the management of acute methanol poisoning. A systematic review and consensus statement. Critical Care Medicine 2015. https://doi.org/10.1097/CCM.0000000000000708
 
-### loc-26: Drowsy beside an empty bottle
+### loc-26: Silent and still for two days
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 27-year-old woman is brought to the emergency department by ambulance after her sister found her drowsy on the bathroom floor beside an empty bottle of amitriptyline 50 mg tablets. The bottle was filled 3 days ago with 60 tablets. She has depression and chronic pain. She opens her eyes to pressure, mumbles words that cannot be understood and withdraws from pressure. Her pupils are 6 mm. Her skin is warm and dry, and her bladder is distended. ECG shows sinus tachycardia with a QRS duration of 148 ms and a terminal R wave in lead aVR.
-
-- Temperature: 37.8°C oral
-- Pulse: 132/minute
-- Resp.: 14/minute
-- BP: 88/50 mmHg
-- O2 sat: 95% on room air
-- Weight: 62 kg
-
-#### Q1
-**Which of the following is the most appropriate first drug treatment for this patient?**
-
-- A. amiodarone 150 mg IV
-- B. flumazenil 0.2 mg IV
-- C. physostigmine 1 mg IV
-- D. procainamide 17 mg/kg IV
-- E. sodium bicarbonate 100 mmol IV  **(key)**
-
-*Explanation:* Her QRS of 148 ms and hypotension show sodium channel blockade from tricyclic poisoning. A QRS over 100 ms is treated with hypertonic sodium bicarbonate boluses of 1 to 2 mmol/kg. For 62 kg, 100 mmol is about 1.6 mmol/kg. Boluses are repeated every 3 to 5 minutes until the QRS narrows or the serum pH reaches 7.55. Physostigmine can cause bradycardia and asystole in tricyclic poisoning. Flumazenil can provoke seizures. Procainamide is a sodium channel blocker that widens the QRS further, and amiodarone also prolongs conduction.
-
-*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
-
-*Source:* Purssell R. Emergency Care BC. Clinical summary: tricyclic antidepressant overdose. Last reviewed 2018. https://emergencycarebc.ca/clinical_resource/clinical-summary/tricyclic-antidepressant-overdose-2/
-
-#### Q2
-**Which of the following additional investigations are most important for this patient now?**
-
-Select 2.
-
-- A. Acetaminophen level  **(key)**
-- B. Capillary glucose  **(key)**
-- C. Electroencephalogram
-- D. Lumbar puncture
-- E. MRI of the brain
-- F. Serum amitriptyline level
-- G. Urine drug screen
-
-*Explanation:* Acetaminophen is a common and often silent co-ingestion in intentional overdose, and it has an effective antidote, so a level is needed. Capillary glucose has not been checked, and hypoglycemia is a quickly reversible cause of decreased consciousness. A serum amitriptyline level is not available in time and guides care less than the ECG. A urine drug screen does not change management. EEG, lumbar puncture and MRI are not indicated.
-
-*Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
-
-*Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter 4, Principles of Managing the Acutely Poisoned or Overdosed Patient. https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html
-
-#### Q3
-*Update:* After sodium bicarbonate, her QRS is 118 ms. She now opens her eyes only to pressure, makes no sounds and has abnormal flexion to pressure. Her gag reflex is weak.
-
-**Which of the following is the most appropriate airway management now?**
-
-- A. Bag-valve-mask ventilation only
-- B. Nasopharyngeal airway and observation
-- C. Noninvasive bilevel ventilation
-- D. Rapid sequence intubation  **(key)**
-- E. Recovery position and observation
-
-*Explanation:* Her GCS has fallen to 6 (E2 V1 M3), her gag is weak and tricyclic poisoning can cause seizures and further decline, so she needs a definitive airway. After intubation, ventilation must keep up with her needs, because a rise in PCO2 causes acidemia that worsens cardiac toxicity. Noninvasive ventilation is unsafe when she cannot protect her airway. Bag-valve-mask ventilation, a nasopharyngeal airway or the recovery position do not protect against aspiration.
-
-*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
-
-*Source:* Purssell R. Emergency Care BC. Clinical summary: tricyclic antidepressant overdose. Last reviewed 2018. https://emergencycarebc.ca/clinical_resource/clinical-summary/tricyclic-antidepressant-overdose-2/
-
-#### Q4
-**Which of the following details from her sister is most useful for planning her care?**
-
-- A. Her employment status
-- B. Her history of migraines
-- C. Her usual alcohol intake
-- D. Name of her psychiatrist
-- E. Time she was last seen well  **(key)**
-
-*Explanation:* The time she was last seen well gives the latest possible time of ingestion. Serious tricyclic toxicity usually appears within about 6 hours, so this sets how long she must be monitored. It also sets the timing of the acetaminophen level, which is read against the time since ingestion. Her employment, migraine history, psychiatrist's name and usual alcohol intake do not change immediate management.
-
-*Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
-
-*Source:* Purssell R. Emergency Care BC. Clinical summary: tricyclic antidepressant overdose. Last reviewed 2018. https://emergencycarebc.ca/clinical_resource/clinical-summary/tricyclic-antidepressant-overdose-2/
-
-### loc-27: Unsteady and drowsy for four days
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 64-year-old woman is brought to the emergency department by her husband because she has been increasingly drowsy and unsteady for 4 days. She has bipolar disorder treated with lithium carbonate 900 mg daily for 12 years. Ten days ago her family physician started ramipril for hypertension, and she has been taking naproxen for knee pain. She has had diarrhea for 3 days. Her husband says she is usually active and sharp. She opens her eyes to voice, is confused and obeys commands. She has a coarse tremor, myoclonic jerks and slurred speech. Laboratory results: lithium 3.4 mmol/L, sodium 136 mmol/L, creatinine 168 umol/L (78 umol/L 3 months ago).
+A 31-year-old woman is brought to the emergency department by her sister, who shares her apartment. For 2 days she has stayed in bed, stopped speaking and barely eaten or drunk. Today she did not answer when her sister spoke to her. She has bipolar I disorder treated with lamotrigine 200 mg daily and clonazepam 1 mg twice daily. She has no seizure history and takes no other medications. She lies with her eyes open, staring, and does not speak or follow commands. She pulls her arm away when the examiner tries to move it. When her arm is lifted, it stays raised for over a minute. There is no rigidity, tremor, twitching or neck stiffness. Her pupils are 4 mm and reactive. Capillary glucose is 5.6 mmol/L.
 
 - Temperature: 37.1°C oral
-- Pulse: 58/minute
+- Pulse: 106/minute
 - Resp.: 16/minute
-- BP: 106/64 mmHg
-- O2 sat: 97% on room air
-- Weight: 70 kg
+- BP: 124/78 mmHg
+- O2 sat: 99% on room air
+- Weight: 58 kg
 
 #### Q1
-**Which of the following is the most likely cause of her decreased level of consciousness?**
+**Which of the following is the most likely cause of her unresponsiveness?**
 
-- A. Hypertensive encephalopathy
-- B. Lithium toxicity  **(key)**
-- C. Nonconvulsive status epilepticus
-- D. Serotonin syndrome
-- E. Viral encephalitis
+- A. Catatonic stupor  **(key)**
+- B. Functional unresponsiveness
+- C. Hypoactive delirium
+- D. Neuroleptic malignant syndrome
+- E. Opioid toxicity
 
-*Explanation:* Ramipril, naproxen and diarrhea all reduce lithium clearance, and her creatinine has more than doubled, so lithium has accumulated to 3.4 mmol/L. Confusion, coarse tremor, myoclonus and slurred speech are typical of chronic lithium toxicity. Her BP of 106/64 mmHg excludes hypertensive encephalopathy. Serotonin syndrome is unlikely because she takes no serotonergic drug besides lithium, and she has no fever to suggest it or encephalitis. Nonconvulsive status stays on the differential but is not needed to explain her findings.
+*Explanation:* She has stupor, mutism, staring and negativism, and her lifted arm stays where it is placed, which is catalepsy. The BAP guideline states that catatonia is diagnosed by observation and examination, and that positive signs such as catalepsy and posturing discriminate better than mutism or stupor alone. Functional unresponsiveness is tempting, but the guideline warns that stupor, mutism and negativism are easily misread as wilful non-engagement. The guideline notes that catatonia can be misdiagnosed as delirium or coma, and her catalepsy and negativism are catatonic signs that neither explains. Neuroleptic malignant syndrome follows dopamine antagonists and brings rigidity, fever and autonomic instability, and she takes no antipsychotic and has none of these. Normal pupils and a respiratory rate of 16/minute argue against opioid toxicity.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Decker BS, Goldfarb DS, Dargan PI, et al. Extracorporeal treatment for lithium poisoning. Systematic review and recommendations from the EXTRIP workgroup. Clinical Journal of the American Society of Nephrology 2015. https://doi.org/10.2215/CJN.10021014
+*Source:* Rogers JP, Oldham MA, Fricchione G, et al. Evidence-based consensus guidelines for the management of catatonia. Recommendations from the British Association for Psychopharmacology. Journal of Psychopharmacology 2023. https://doi.org/10.1177/02698811231158232
 
 #### Q2
-**Which of the following statements from her husband most clearly establishes that her mental state has changed?**
+**Which of the following is the most appropriate treatment to give now?**
 
-- A. She had diarrhea for 3 days
-- B. She has had knee pain this month
-- C. She is usually active and sharp  **(key)**
-- D. She started a new pill 10 days ago
-- E. She takes lithium every morning
+- A. haloperidol 5 mg IM
+- B. lorazepam 2 mg IV  **(key)**
+- C. naloxone 0.4 mg IV
+- D. olanzapine 10 mg IM
+- E. ziprasidone 20 mg IM
 
-*Explanation:* A description of her usual function is what shows that her drowsiness and confusion are new rather than her baseline. The diarrhea, the new pill and her daily lithium help explain the cause, but they do not describe her usual mental state. Knee pain explains the naproxen but says nothing about her baseline. Collateral history about baseline is essential in any patient who cannot give a reliable history.
+*Explanation:* The BAP guideline recommends a lorazepam challenge of 1 to 2 mg IV for suspected catatonia, with reassessment about 5 minutes later. A 50% fall in catatonic signs makes the diagnosis more likely, and a good response on the first day predicts response to further lorazepam. The guideline states that catatonia is diagnosed clinically, not by investigations. Haloperidol, olanzapine and ziprasidone are dopamine antagonists, which the guideline warns can induce or worsen catatonia and trigger neuroleptic malignant syndrome. Naloxone would help only opioid toxicity, and her normal pupils and breathing do not suggest it.
+
+*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
+
+*Source:* Rogers JP, Oldham MA, Fricchione G, et al. Evidence-based consensus guidelines for the management of catatonia. Recommendations from the British Association for Psychopharmacology. Journal of Psychopharmacology 2023. https://doi.org/10.1177/02698811231158232
+
+#### Q3
+*Update:* Her mucous membranes are dry. Her creatinine is 142 umol/L, compared with 70 umol/L last year.
+
+**Which of the following is the most appropriate additional treatment for her now?**
+
+- A. Encourage oral fluids hourly
+- B. Hypotonic saline IV infusion
+- C. Isotonic crystalloid IV bolus  **(key)**
+- D. Nasogastric water flushes
+- E. Restrict fluids overnight
+
+*Explanation:* The BAP guideline lists dehydration and renal failure among the complications of catatonic stupor and advises active prevention and management of complications alongside treatment of the catatonia. She has barely drunk for 2 days, her pulse is 106/minute, her mucous membranes are dry and her creatinine has doubled, so she is volume depleted. An isotonic crystalloid bolus IV restores her circulating volume quickly. Oral fluids depend on a mute, negativistic patient who has barely drunk for 2 days, so they cannot be relied on. Nasogastric water needs a tube in a negativistic patient and gives free water rather than volume. Hypotonic saline expands the circulation less than isotonic fluid, and restricting fluids would worsen her kidney injury.
+
+*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
+
+*Source:* Rogers JP, Oldham MA, Fricchione G, et al. Evidence-based consensus guidelines for the management of catatonia. Recommendations from the British Association for Psychopharmacology. Journal of Psychopharmacology 2023. https://doi.org/10.1177/02698811231158232
+
+#### Q4
+**Which of the following details from her sister is most important to clarify now?**
+
+- A. Clonazepam doses missed  **(key)**
+- B. Her age at first mania
+- C. Her usual caffeine intake
+- D. Hours of sleep last month
+- E. Recent stress at work
+
+*Explanation:* The BAP guideline advises seeking collateral history about exposure to or withdrawal from medications, and it lists benzodiazepine discontinuation among the triggers of catatonia. She takes clonazepam twice daily, so her sister should be asked whether doses were missed or the supply ran out. The guideline recommends restarting a benzodiazepine when catatonia follows benzodiazepine withdrawal, so the answer changes her treatment plan. Her age at first mania, her caffeine intake, her sleep last month and recent stress may add to her psychiatric history, but none of them changes what is done for her in the emergency department today.
 
 *Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
 
-*Source:* National Institute for Health and Care Excellence. Delirium: prevention, diagnosis and management in hospital and long-term care. Clinical guideline CG103. 2010, updated 2023. https://www.nice.org.uk/guidance/cg103
+*Source:* Rogers JP, Oldham MA, Fricchione G, et al. Evidence-based consensus guidelines for the management of catatonia. Recommendations from the British Association for Psychopharmacology. Journal of Psychopharmacology 2023. https://doi.org/10.1177/02698811231158232
 
-#### Q3
-**Which of the following is the most appropriate treatment to remove lithium in this patient?**
-
-- A. activated charcoal 50 g PO
-- B. furosemide 40 mg IV
-- C. Hemodialysis now  **(key)**
-- D. sodium polystyrene sulfonate PO
-- E. Whole bowel irrigation
-
-*Explanation:* Her decreased level of consciousness is the deciding finding, because the EXTRIP workgroup recommends extracorporeal treatment for lithium poisoning with a decreased level of consciousness whatever the lithium level, and she also has acute kidney injury. Activated charcoal does not bind lithium. Whole bowel irrigation is for large acute ingestions of sustained release tablets, not chronic accumulation. Furosemide adds to volume loss and does not clear lithium. Sodium polystyrene sulfonate is not a standard treatment and can cause hypokalemia.
-
-*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
-
-*Source:* Decker BS, Goldfarb DS, Dargan PI, et al. Extracorporeal treatment for lithium poisoning. Systematic review and recommendations from the EXTRIP workgroup. Clinical Journal of the American Society of Nephrology 2015. https://doi.org/10.2215/CJN.10021014
-
-#### Q4
-*Update:* Hemodialysis is arranged. The resident asks what to do with her home medications.
-
-**Which of the following is the most appropriate plan for her medications?**
-
-- A. Continue lithium at half dose
-- B. Hold lithium, ramipril and naproxen  **(key)**
-- C. Hold naproxen, continue lithium
-- D. Hold ramipril, continue lithium
-- E. Switch naproxen to ibuprofen
-
-*Explanation:* Lithium must be held while she is toxic, and both ramipril and naproxen reduce lithium clearance and harm kidney function, so all three are stopped. Holding only naproxen or only ramipril leaves the other interacting drug in place and continues lithium while she is toxic. Ibuprofen is also an NSAID with the same effect on lithium. A half dose of lithium still adds to a toxic level.
-
-*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
-
-*Source:* Yatham LN, Kennedy SH, Parikh SV, et al. Canadian Network for Mood and Anxiety Treatments (CANMAT) and International Society for Bipolar Disorders (ISBD) 2018 guidelines for the management of patients with bipolar disorder. Bipolar Disorders 2018. https://doi.org/10.1111/bdi.12609
-
-### loc-28: A headache during treatment
+### loc-27: Unsteady after a new prescription
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 9-year-old girl is brought to the emergency department by her parents with 3 days of thirst, frequent urination and vomiting. She has no medical history. Initial results were glucose 38 mmol/L, venous pH 6.98, bicarbonate 4 mmol/L and PCO2 18 mmHg. She received 10 mL/kg of 0.9% saline, then IV fluids and an insulin infusion at 0.1 units/kg/hour. Four hours after treatment began, she says she has a severe headache, and she is hard to rouse. She opens her eyes to pressure, says inappropriate words and localizes to pressure. Capillary glucose is 14.2 mmol/L. Sodium is 136 mmol/L.
+A 44-year-old man is brought to the emergency department by his partner because he has become increasingly drowsy, unsteady and slurred over 3 days. He has had generalized epilepsy since his teens and has taken phenytoin 350 mg daily for 10 years without a seizure. Six days ago a walk-in clinic prescribed oral fluconazole for a fungal groin rash. He is drowsy but rousable and oriented to person and place. He has coarse nystagmus in all directions of gaze and a wide-based, unsteady gait. There is no focal weakness and no neck stiffness. Capillary glucose is 5.9 mmol/L.
 
 - Temperature: 36.9°C oral
-- Pulse: 58/minute
-- Resp.: 22/minute
-- BP: 132/86 mmHg
-- O2 sat: 98% on room air
-- Weight: 28 kg
+- Pulse: 84/minute
+- Resp.: 16/minute
+- BP: 132/80 mmHg
+- O2 sat: 97% on room air
+- Weight: 80 kg
 
 #### Q1
-**Which of the following is the most likely cause of her decreased level of consciousness?**
+**Which of the following is the most likely cause of his presentation?**
 
-- A. Bacterial meningitis
-- B. Cerebral edema  **(key)**
-- C. Hypoglycemia
-- D. Ischemic stroke
-- E. Worsening ketoacidosis
+- A. Elevated phenytoin level  **(key)**
+- B. Postictal state
+- C. Subdural hematoma
+- D. Vertebrobasilar stroke
+- E. Wernicke encephalopathy
 
-*Explanation:* Headache and a falling level of consciousness 4 hours into treatment, with a heart rate of 58/minute and a BP of 132/86 mmHg, both abnormal for a 9-year-old, fit cerebral edema from diabetic ketoacidosis. Her severe acidosis at presentation is a risk factor. A glucose of 14.2 mmol/L excludes hypoglycemia. She is afebrile without signs of meningitis, and she has no focal deficit to suggest stroke. Worsening acidosis would not explain bradycardia with hypertension.
+*Explanation:* Drowsiness, slurred speech, nystagmus in all directions of gaze and ataxia developing over days in a man on phenytoin who has just started fluconazole point to an elevated phenytoin level. A postictal state follows a seizure and improves within hours. A vertebrobasilar stroke usually starts suddenly. A subdural hematoma must be considered if he has fallen, and nothing in his history suggests Wernicke encephalopathy.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Glaser N, Fritsch M, Priyambada L, et al. ISPAD clinical practice consensus guidelines 2022. Diabetic ketoacidosis and hyperglycemic hyperosmolar state. Pediatric Diabetes 2022. https://doi.org/10.1111/pedi.13406
+*Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter: Antiepileptics. https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210272255
 
 #### Q2
-**Which of the following is the most appropriate immediate treatment?**
+**Which of the following details from his partner would most change his immediate investigation?**
 
-- A. acetazolamide 250 mg IV
-- B. dexamethasone 4 mg IV
-- C. mannitol 14 g IV over 15 minutes  **(key)**
-- D. 0.9% saline 280 mL IV bolus
-- E. sodium bicarbonate 28 mmol IV
+- A. Age at his first seizure
+- B. Any fall or head strike this week  **(key)**
+- C. Date of his last neurology visit
+- D. His usual daily diet
+- E. Type of rash that was treated
 
-*Explanation:* Her falling GCS with bradycardia and hypertension calls for osmotherapy at once, without waiting for imaging. ISPAD recommends mannitol 0.5 to 1 g/kg IV over 10 to 15 minutes, or 3% saline, and for 28 kg, 0.5 g/kg is 14 g. IV fluid should be reduced, so a 10 mL/kg bolus of saline is wrong. Bicarbonate is linked to cerebral edema in DKA. Dexamethasone and acetazolamide have no role.
+*Explanation:* A man with ataxia is likely to fall, and a fall or blow to the head would call for a CT to exclude a subdural hematoma before his drowsiness is blamed on the drug. His age at the first seizure, the date of his last neurology visit, his diet and the type of rash do not change what he needs now.
+
+*Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
+
+*Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter: Antiepileptics. https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210272255
+
+#### Q3
+*Update:* He has not fallen. His serum phenytoin is 152 micromol/L (therapeutic range 40 to 80 micromol/L) and his albumin is 38 g/L.
+
+**Which of the following is the most appropriate management of his phenytoin?**
+
+- A. Continue at half the dose
+- B. Hold doses until levels fall  **(key)**
+- C. Load levetiracetam now
+- D. Recheck the level in a month
+- E. Switch to IV fosphenytoin
+
+*Explanation:* His level of 152 micromol/L is about twice the upper therapeutic limit and explains his signs, so phenytoin is held until the level falls into range and then restarted at an adjusted dose. Because phenytoin elimination is saturable, the level may take several days to fall. Continuing at half the dose keeps adding drug while he is toxic, fosphenytoin is the same drug, and rechecking in a month leaves him toxic. Levetiracetam is not needed while his phenytoin level is high.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Glaser N, Fritsch M, Priyambada L, et al. ISPAD clinical practice consensus guidelines 2022. Diabetic ketoacidosis and hyperglycemic hyperosmolar state. Pediatric Diabetes 2022. https://doi.org/10.1111/pedi.13406
+*Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter: Antiepileptics. https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210272255
+
+#### Q4
+**Which of the following is the most appropriate additional step to prevent this from recurring?**
+
+- A. Add a second antiseizure drug
+- B. Continue fluconazole as planned
+- C. Increase his daily phenytoin
+- D. Start oral multivitamins
+- E. Use topical antifungal instead  **(key)**
+
+*Explanation:* Fluconazole inhibits CYP2C9, the main enzyme that metabolizes phenytoin, which explains why a dose he had tolerated for 10 years became toxic 6 days after it was started. Stopping fluconazole and treating the groin rash with a topical antifungal removes the interaction. Increasing phenytoin or adding another antiseizure drug is not needed while his level is high, and multivitamins do not affect phenytoin metabolism.
+
+*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
+
+*Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter: Antiepileptics. https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210272255
+
+### loc-28: Sleepy and unsteady after a cold
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 6-year-old boy is brought to the emergency department by his parents because he has become increasingly sleepy and unsteady over 2 days. Twelve days ago he had a fever with a cough and runny nose that resolved. Today he is irritable when woken and will not walk. He is fully immunized and has no medical history. He opens his eyes to voice and says only a few words. He has weakness of the left arm, brisk reflexes and upgoing plantar responses on both sides. His neck is supple. Capillary glucose is 5.4 mmol/L.
+
+- Temperature: 37.6°C oral
+- Pulse: 104/minute
+- Resp.: 22/minute
+- BP: 104/64 mmHg
+- O2 sat: 98% on room air
+- Weight: 21 kg
+
+#### Q1
+**Which of the following investigations is most likely to establish his diagnosis?**
+
+- A. CT head with contrast
+- B. Electroencephalogram
+- C. Lumbar puncture alone
+- D. MRI brain and spine  **(key)**
+- E. Nerve conduction studies
+
+*Explanation:* Drowsiness, ataxia, a focal deficit and upgoing plantar responses 2 weeks after a viral illness suggest acute disseminated encephalomyelitis. MRI of the brain and spine shows its large, poorly defined white matter and deep grey matter lesions, which CT often misses. A lumbar puncture helps exclude infection but cannot make the diagnosis alone. An EEG and nerve conduction studies do not show the lesions.
+
+*Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
+
+*Source:* Pohl D, Alper G, Van Haren K, et al. Acute disseminated encephalomyelitis. Updates on an inflammatory CNS syndrome. Neurology 2016. https://doi.org/10.1212/WNL.0000000000002825
+
+#### Q2
+*Update:* MRI shows multiple large, poorly defined T2 lesions in both hemispheres and both thalami. Cerebrospinal fluid has 18 white cells x 10^6/L with a normal glucose, and bacterial culture and herpes simplex PCR are negative.
+
+**Which of the following is the most appropriate first-line treatment for him?**
+
+- A. Acyclovir for 21 days
+- B. High-dose IV methylprednisolone  **(key)**
+- C. Intravenous immune globulin
+- D. Oral prednisone 5 mg daily
+- E. Plasma exchange sessions
+
+*Explanation:* With MRI features of acute disseminated encephalomyelitis and infection excluded, first-line treatment is high-dose IV methylprednisolone, typically 30 mg/kg daily to a maximum of 1 g for 3 to 5 days, followed by an oral taper. IV immune globulin and plasma exchange are kept for children who do not respond to steroids. Low-dose prednisone is inadequate, and acyclovir is not needed once herpes simplex PCR is negative and the MRI shows demyelination.
+
+*Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
+
+*Source:* Pohl D, Alper G, Van Haren K, et al. Acute disseminated encephalomyelitis. Updates on an inflammatory CNS syndrome. Neurology 2016. https://doi.org/10.1212/WNL.0000000000002825
 
 #### Q3
-*Update:* She improves within 20 minutes of treatment and is admitted to the pediatric ICU.
+**Which of the following is the best way to record his level of consciousness for serial comparison?**
 
-**Which of the following is the best way to monitor for this complication in children being treated for DKA?**
+- A. AVPU category alone
+- B. Description as sleepy
+- C. Hourly vital signs
+- D. Serial GCS by component  **(key)**
+- E. Temperature trend alone
 
-- A. Continuous EEG monitoring
-- B. Head CT every 4 hours
-- C. Hourly GCS and neurological checks  **(key)**
-- D. Pupil checks every 4 hours
-- E. Serum osmolality every 12 hours
-
-*Explanation:* Her edema was found because her headache and falling GCS were noticed, and ISPAD advises hourly neurological observations, including the GCS, during treatment of DKA so that such early signs are found and treated at once. Pupil checks every 4 hours are too infrequent and too narrow. Repeated CT exposes her to radiation and misses early clinical change. Continuous EEG and serum osmolality every 12 hours do not detect edema in time.
+*Explanation:* A GCS recorded by eye, verbal and motor component at each check gives a shared, comparable measure of his consciousness while treatment starts, so a fall that suggests worsening swelling is noticed early. At 6 years he can be scored on the standard verbal scale. AVPU is too coarse, and a description, vital signs or temperature do not measure consciousness.
 
 *Key feature:* Decreased level of consciousness 5. Document and trend consciousness with descriptive terms and a scored scale such as the GCS.
 
-*Source:* Glaser N, Fritsch M, Priyambada L, et al. ISPAD clinical practice consensus guidelines 2022. Diabetic ketoacidosis and hyperglycemic hyperosmolar state. Pediatric Diabetes 2022. https://doi.org/10.1111/pedi.13406
+*Source:* Teasdale G, Maas A, Lecky F, et al. The Glasgow Coma Scale at 40 years. Standing the test of time. Lancet Neurology 2014. https://doi.org/10.1016/S1474-4422(14)70120-6
 
-### loc-29: Confused after two days of vomiting
+### loc-29: Stiff and feverish after a stomach bug
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 38-year-old man is brought to the emergency department by his brother, who found him lying on the couch, confused and difficult to rouse. He has had vomiting and diarrhea for 2 days and could not keep his pills down. He has primary adrenal insufficiency treated with hydrocortisone and fludrocortisone. He opens his eyes to voice, is confused and localizes to pressure. His mucous membranes are dry, and the creases of his palms are darkly pigmented. Laboratory results: sodium 124 mmol/L, potassium 6.1 mmol/L, glucose 3.1 mmol/L, creatinine 164 umol/L.
+A 72-year-old man is brought to the emergency department by his wife because he has become drowsy, stiff and feverish over the past day. He has had Parkinson disease for 11 years and takes levodopa 100 mg with carbidopa 25 mg five times daily. A stomach virus made him vomit for 3 days, and he has kept down none of his tablets for the last 48 hours. He also has atrial fibrillation treated with apixaban 5 mg twice daily. He opens his eyes to voice and mutters a few words. He is sweaty, with marked rigidity of all four limbs and no tremor. His chest is clear. CK 7 400 U/L, creatinine 142 umol/L, sodium 146 mmol/L, WBC 11.2 x 10^9/L. Urinalysis is normal. Capillary glucose is 6.4 mmol/L.
 
-- Temperature: 37.6°C oral
+- Temperature: 39.8°C rectal
 - Pulse: 124/minute
-- Resp.: 22/minute
-- BP: 76/44 mmHg
-- O2 sat: 97% on room air
-- Weight: 72 kg
+- Resp.: 24/minute
+- BP: 96/58 mmHg
+- O2 sat: 95% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following is the most appropriate immediate treatment for this patient?**
+**Which of the following is the most appropriate treatment for the cause of his condition?**
 
-- A. dexamethasone 4 mg IV
-- B. fludrocortisone 0.1 mg PO
-- C. hydrocortisone 100 mg IV  **(key)**
-- D. methylprednisolone 1 g IV
-- E. prednisone 50 mg PO
+- A. Acetaminophen 1 g PR
+- B. Ceftriaxone 2 g IV
+- C. Haloperidol 2 mg IM
+- D. Metoclopramide 10 mg IV
+- E. NG levodopa-carbidopa  **(key)**
 
-*Explanation:* He has an adrenal crisis, with hypotension, confusion, hyponatremia, hyperkalemia and hypoglycemia after 2 days without his steroids. The Endocrine Society recommends hydrocortisone 100 mg IV at once, then 200 mg over 24 hours, with IV fluids. At this dose hydrocortisone also gives mineralocorticoid effect, so fludrocortisone is not needed acutely, and he cannot keep oral drugs down. Dexamethasone has no mineralocorticoid effect, and methylprednisolone 1 g is not indicated.
+*Explanation:* Fever, rigidity, a reduced level of consciousness, tachycardia and a CK of 7 400 U/L after 48 hours without levodopa fit the parkinsonism-hyperpyrexia syndrome, which follows sudden withdrawal of dopaminergic drugs. Replacing the dopaminergic drug treats the cause, so his usual levodopa-carbidopa is restarted through a nasogastric tube because he cannot swallow safely. Haloperidol and metoclopramide block dopamine and would make it worse. Acetaminophen treats the fever but not its cause, and ceftriaxone treats an infection that his clear chest and normal urinalysis do not suggest.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Bornstein SR, Allolio B, Arlt W, et al. Diagnosis and treatment of primary adrenal insufficiency. An Endocrine Society clinical practice guideline. Journal of Clinical Endocrinology and Metabolism 2016. https://doi.org/10.1210/jc.2015-1710
+*Source:* Newman EJ, Grosset DG, Kennedy PG. The parkinsonism-hyperpyrexia syndrome. Neurocritical Care 2009. https://doi.org/10.1007/s12028-008-9125-4
 
 #### Q2
-*Update:* Hydrocortisone has been given. His ECG shows sinus tachycardia without peaked T waves or QRS widening.
+**Which of the following are the most appropriate additional measures in the first hours?**
 
-**Which of the following additional treatments are most appropriate in the first hour?**
+Select 3.
 
-Select 2.
+- A. Active external cooling  **(key)**
+- B. Furosemide 40 mg IV
+- C. IV isotonic crystalloid  **(key)**
+- D. Olanzapine 5 mg IM
+- E. Oral fluids only
+- F. Restrict fluids to 1 L a day
+- G. Serial CK and creatinine  **(key)**
 
-- A. calcium gluconate 3 g IV
-- B. dextrose 50% 50 mL IV  **(key)**
-- C. fludrocortisone 0.1 mg PO
-- D. furosemide 40 mg IV
-- E. insulin regular 10 units IV
-- F. norepinephrine infusion IV
-- G. normal saline 1 L IV  **(key)**
-- H. sodium polystyrene sulfonate 15 g PO
-
-*Explanation:* His glucose of 3.1 mmol/L with a decreased level of consciousness needs IV dextrose now, and his hypotension and dehydration need about 1 L of isotonic saline in the first hour. His potassium of 6.1 mmol/L without ECG changes will fall with hydrocortisone and fluid, so calcium is not needed. Insulin would worsen his hypoglycemia, and furosemide would worsen his volume loss. Norepinephrine is not started before fluid and steroid, and sodium polystyrene sulfonate acts too slowly to matter.
+*Explanation:* A temperature of 39.8°C needs active cooling. A BP of 96/58 mmHg with a raised creatinine and a CK of 7 400 U/L after 3 days of vomiting calls for IV isotonic fluid to restore volume and protect his kidneys. Serial CK and creatinine track muscle breakdown and acute kidney injury, which are recognized complications of the syndrome. Furosemide and fluid restriction would worsen his volume depletion. Olanzapine blocks dopamine and can worsen the syndrome, and oral fluids are unsafe while he is drowsy and cannot swallow reliably.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Bornstein SR, Allolio B, Arlt W, et al. Diagnosis and treatment of primary adrenal insufficiency. An Endocrine Society clinical practice guideline. Journal of Clinical Endocrinology and Metabolism 2016. https://doi.org/10.1210/jc.2015-1710
+*Source:* Newman EJ, Grosset DG, Kennedy PG. The parkinsonism-hyperpyrexia syndrome. Neurocritical Care 2009. https://doi.org/10.1007/s12028-008-9125-4
 
 #### Q3
-**Which of the following results best distinguishes primary from secondary adrenal insufficiency in this patient?**
+*Update:* Twelve hours later his temperature is 37.9°C and his rigidity has eased, but he is harder to rouse than on arrival. His wife now recalls that he fell and struck his head 3 days ago, when the vomiting began.
 
-- A. Creatinine of 164 umol/L
-- B. Glucose of 3.1 mmol/L
-- C. Potassium of 6.1 mmol/L  **(key)**
-- D. Sodium of 124 mmol/L
-- E. Temperature of 37.6°C
+**Which of the following is the most appropriate next investigation for him?**
 
-*Explanation:* Hyperkalemia reflects aldosterone deficiency, which occurs when the adrenal gland itself fails. In secondary adrenal insufficiency the renin and aldosterone system is intact, so potassium is usually normal. Hyponatremia and hypoglycemia occur in both forms. The raised creatinine reflects volume depletion, and a low-grade temperature is nonspecific. His palmar pigmentation also points to primary disease, from high ACTH.
+- A. Ammonia level
+- B. Blood cultures
+- C. Electroencephalogram
+- D. Lumbar puncture
+- E. Non-contrast CT head  **(key)**
+
+*Explanation:* A head strike in a man taking apixaban, followed by a falling level of consciousness while his fever settles, raises the possibility of a subdural hemorrhage, so a non-contrast CT head comes first. The new decline should not be blamed on the syndrome until bleeding is excluded. An EEG looks for nonconvulsive seizures, and a lumbar puncture is unsafe before a CT in a patient on an anticoagulant. Blood cultures and an ammonia level do not address the most dangerous cause. NICE advises CT within 1 hour for an adult whose GCS is below 15 at 2 hours after a head injury, and it gives anticoagulant use its own pathway to CT.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Bornstein SR, Allolio B, Arlt W, et al. Diagnosis and treatment of primary adrenal insufficiency. An Endocrine Society clinical practice guideline. Journal of Clinical Endocrinology and Metabolism 2016. https://doi.org/10.1210/jc.2015-1710
+*Source:* National Institute for Health and Care Excellence. Head injury. Assessment and early management. NICE guideline NG232. 2023. https://www.nice.org.uk/guidance/ng232
 
 ### loc-30: Collapsed while lifting boxes
 
@@ -1111,198 +1163,196 @@ A 52-year-old woman is brought to the emergency department by ambulance. At 1340
 
 *Source:* Hoh BL, Ko NU, Amin-Hanjani S, et al. 2023 Guideline for the management of patients with aneurysmal subarachnoid hemorrhage. A guideline from the American Heart Association and American Stroke Association. Stroke 2023. https://doi.org/10.1161/STR.0000000000000436
 
-### loc-31: Headache and a seizure after delivery
+### loc-31: Belly pain, then confusion
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 31-year-old woman is brought to the emergency department by her husband 12 days after a vaginal delivery. She has had a worsening headache for 4 days. This morning she had a generalized seizure lasting 2 minutes and has been drowsy since. She is breastfeeding. She has no medical history and takes no medications. She opens her eyes to voice, is confused and obeys commands. Her optic discs are swollen. She has mild weakness of the left leg. Capillary glucose is 5.3 mmol/L. Noncontrast CT head shows a small right parietal hemorrhage and a hyperdense superior sagittal sinus.
+A 25-year-old woman is brought to the emergency department by her partner because she has become confused and drowsy since last night. For 3 days she has had severe, poorly localized abdominal pain with vomiting and constipation. Six days ago a walk-in clinic prescribed trimethoprim-sulfamethoxazole for a urinary tract infection. Two years ago she had a milder episode of similar pain, and a CT of the abdomen then was normal. She opens her eyes to voice and is disoriented. Her abdomen is soft and diffusely tender without guarding. Both arms are weak proximally with reduced reflexes. Her urine turned reddish brown after standing in the collection cup. Sodium 119 mmol/L, potassium 3.7 mmol/L, hemoglobin 132 g/L, platelets 248 x 10^9/L. Lipase and liver enzymes are normal, and beta-hCG is negative. Capillary glucose is 5.2 mmol/L.
 
-- Temperature: 37.3°C oral
-- Pulse: 96/minute
-- Resp.: 16/minute
-- BP: 138/84 mmHg
+- Temperature: 37.2°C oral
+- Pulse: 126/minute
+- Resp.: 18/minute
+- BP: 166/98 mmHg
 - O2 sat: 98% on room air
-- Weight: 74 kg
+- Weight: 57 kg
 
 #### Q1
-**Which of the following other diagnoses must also be considered in this postpartum patient with headache and seizure?**
+**Which of the following is the most likely cause of her decreased level of consciousness?**
 
-- A. Cluster headache
-- B. Migraine with aura
-- C. Postpartum eclampsia  **(key)**
-- D. Sheehan syndrome
-- E. Tension-type headache
+- A. Acute intermittent porphyria  **(key)**
+- B. Anti-NMDA receptor encephalitis
+- C. Lead encephalopathy
+- D. Serotonin toxicity
+- E. Thrombotic thrombocytopenic purpura
 
-*Explanation:* Eclampsia can occur after delivery, and a new seizure with headache in the weeks postpartum must be treated as possible eclampsia until excluded, with BP checks, urine protein and blood work. Her BP of 138/84 mmHg does not exclude it. Sheehan syndrome causes pituitary failure and usually failure of lactation, and she is breastfeeding. Migraine, tension-type and cluster headaches do not cause papilledema or a hemorrhage on CT.
+*Explanation:* Recurrent severe abdominal pain without peritonism, vomiting, constipation, proximal weakness, tachycardia, hypertension, a sodium of 119 mmol/L and urine that darkens on standing, starting days after a sulfonamide antibiotic, fit an attack of acute intermittent porphyria. Lead can cause colic, motor weakness and encephalopathy, but nothing suggests an exposure and her hemoglobin is normal. Thrombotic thrombocytopenic purpura needs a low platelet count, and hers is 248 x 10^9/L. Anti-NMDA receptor encephalitis does not explain the abdominal attacks or the dark urine, and she takes no serotonergic drug.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Magee LA, Smith GN, Bloch C, et al. Guideline No. 426. Hypertensive disorders of pregnancy. Diagnosis, prediction, prevention, and management. Journal of Obstetrics and Gynaecology Canada 2022. https://doi.org/10.1016/j.jogc.2022.03.002
+*Source:* Anderson KE, Bloomer JR, Bonkovsky HL, et al. Recommendations for the diagnosis and treatment of the acute porphyrias. Annals of Internal Medicine 2005. https://doi.org/10.7326/0003-4819-142-6-200503150-00010
 
 #### Q2
-**Which of the following investigations will best confirm the most likely diagnosis?**
+**Which of the following tests best confirms the likely diagnosis?**
 
-- A. Carotid duplex ultrasound
-- B. Electroencephalogram
-- C. Lumbar puncture opening pressure
-- D. Transcranial Doppler study
-- E. Venography by CT or MRI  **(key)**
+- A. ADAMTS13 activity level
+- B. Blood lead level
+- C. CSF autoimmune antibody panel
+- D. Serum ammonia level
+- E. Spot urine porphobilinogen  **(key)**
 
-*Explanation:* A postpartum patient with headache, seizure, papilledema, a lobar hemorrhage and a hyperdense sagittal sinus most likely has cerebral venous thrombosis, which is confirmed by CT or MR venography. Lumbar puncture is unsafe with a hemorrhage and papilledema and does not confirm the diagnosis. EEG, carotid duplex and transcranial Doppler do not show the venous sinuses.
+*Explanation:* A markedly raised porphobilinogen in a single urine sample rapidly confirms an attack of acute porphyria, and the same sample is saved for quantitative porphobilinogen, aminolevulinic acid and porphyrin levels. A blood lead level, ADAMTS13 activity and CSF antibodies test for the other conditions considered, which her history and results make unlikely. An ammonia level looks for hyperammonemia, which would not explain her abdominal attacks or dark urine.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Saposnik G, Bushnell C, Coutinho JM, et al. Diagnosis and management of cerebral venous thrombosis. A scientific statement from the American Heart Association. Stroke 2024. https://doi.org/10.1161/STR.0000000000000456
+*Source:* Anderson KE, Bloomer JR, Bonkovsky HL, et al. Recommendations for the diagnosis and treatment of the acute porphyrias. Annals of Internal Medicine 2005. https://doi.org/10.7326/0003-4819-142-6-200503150-00010
 
 #### Q3
-*Update:* CT venography confirms thrombosis of the superior sagittal sinus. Her platelet count and INR are normal.
+**Which of the following findings in her case is most specific for her likely diagnosis?**
 
-**Which of the following is the most appropriate initial treatment?**
+- A. Constipation
+- B. Dark urine on standing  **(key)**
+- C. Drowsiness and confusion
+- D. Proximal arm weakness
+- E. Severe abdominal pain
 
-- A. alteplase 0.9 mg/kg IV
-- B. ASA 81 mg PO once daily
-- C. enoxaparin 74 mg SC twice daily  **(key)**
-- D. warfarin 5 mg PO once daily
-- E. No anticoagulation for 2 weeks
-
-*Explanation:* Cerebral venous thrombosis is treated with anticoagulation, usually weight-based low molecular weight heparin, even when there is a hemorrhage caused by the venous thrombosis. For 74 kg, enoxaparin at 1 mg/kg is 74 mg SC twice daily, and it is compatible with breastfeeding. Withholding anticoagulation because of the bleed is not recommended. ASA does not treat venous thrombosis. Warfarin is not started alone, and systemic alteplase is not used.
+*Explanation:* Excess porphobilinogen in the urine forms reddish brown pigments as the urine stands, which is a clue to an acute porphyria. Severe abdominal pain, constipation, proximal weakness, drowsiness and confusion are all part of an attack, but each is common to many other conditions, including lead poisoning. Lead blocks an earlier step in heme synthesis, so aminolevulinic acid rises but porphobilinogen does not, and the urine does not darken in this way.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Saposnik G, Bushnell C, Coutinho JM, et al. Diagnosis and management of cerebral venous thrombosis. A scientific statement from the American Heart Association. Stroke 2024. https://doi.org/10.1161/STR.0000000000000456
+*Source:* Anderson KE, Bloomer JR, Bonkovsky HL, et al. Recommendations for the diagnosis and treatment of the acute porphyrias. Annals of Internal Medicine 2005. https://doi.org/10.7326/0003-4819-142-6-200503150-00010
 
-### loc-32: Sleepy with spots on her legs
+### loc-32: Unsteady and confused after a climb
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 14-month-old girl is brought to the emergency department by her parents because she has been very sleepy for 3 hours. She had a fever and was irritable overnight. This morning they noticed dark spots on her legs. Her immunizations are up to date. She opens her eyes only to pressure, makes no sounds and withdraws from pressure. There are purpuric lesions on her legs and trunk that do not blanch. Her capillary refill time is 4 seconds. Capillary glucose is 5.6 mmol/L.
+You are working in a hospital emergency department in Whitehorse. A 41-year-old man is flown in by helicopter from a high camp at 4 300 m on Mount Logan. His team climbed from 2 700 m to 4 300 m over 3 days. For 2 days he had a severe headache, nausea and poor sleep. Since last night he has been unsteady and confused. His tent partners, who cooked in the same tent, are well. He has no medical history and takes no medications. He opens his eyes to voice, is disoriented and localizes to pressure. He sways when sitting and cannot walk heel to toe. His pupils are equal and reactive. There is no neck stiffness and no focal weakness. His chest is clear. Sodium 139 mmol/L. Capillary glucose is 6.2 mmol/L.
 
-- Temperature: 39.6°C rectal
-- Pulse: 172/minute
-- Resp.: 40/minute
-- BP: 70/38 mmHg
-- O2 sat: 95% on room air
-- Weight: 10 kg
+- Temperature: 37.0°C oral
+- Pulse: 112/minute
+- Resp.: 20/minute
+- BP: 138/84 mmHg
+- O2 sat: 90% on room air
+- Weight: 78 kg
 
 #### Q1
-**Which of the following is the most appropriate approach to antibiotics and lumbar puncture for this child?**
+**Which of the following is the most likely cause of his decreased level of consciousness?**
 
-- A. Antibiotics now, defer lumbar puncture  **(key)**
-- B. Await blood culture before antibiotics
-- C. Await CSF results before antibiotics
-- D. CT head, then lumbar puncture
-- E. Lumbar puncture, then antibiotics
+- A. Acute mountain sickness alone
+- B. Carbon monoxide from a stove
+- C. High-altitude cerebral edema  **(key)**
+- D. Hyponatremia from overdrinking
+- E. Subarachnoid hemorrhage
 
-*Explanation:* She has fever, a decreased level of consciousness, non-blanching purpura and signs of shock, so she needs IV antibiotics at once. The Canadian Paediatric Society lists decreased consciousness, an unstable clinical status and coagulopathy as reasons to delay lumbar puncture, so it is deferred until she is stable. A blood culture is drawn first only if it causes no delay, and treatment never waits for results. CT head before antibiotics only adds delay.
+*Explanation:* Ataxia and confusion that follow 2 days of headache, nausea and poor sleep during a fast ascent to 4 300 m fit high-altitude cerebral edema, which usually develops from acute mountain sickness. Acute mountain sickness alone does not cause ataxia or a change in consciousness. Carbon monoxide from a tent stove would also have affected his tent partners, who are well, and a sodium of 139 mmol/L excludes hyponatremia. A subarachnoid hemorrhage starts suddenly, whereas his headache built over days, although imaging is reasonable if he does not improve.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than one month of age. Canadian Paediatric Society position statement. 2014, updated 2020. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
+*Source:* Luks AM, Beidleman BA, Freer L, et al. Wilderness Medical Society clinical practice guidelines for the prevention, diagnosis, and treatment of acute altitude illness. 2024 update. Wilderness and Environmental Medicine 2024. https://doi.org/10.1016/j.wem.2023.05.013
 
 #### Q2
-**Which of the following is the most appropriate ceftriaxone dose for this child?**
+**Which of the following is the most appropriate drug treatment to start now?**
 
-- A. ceftriaxone 250 mg IV every 12 hours
-- B. ceftriaxone 400 mg IV every 24 hours
-- C. ceftriaxone 500 mg IV every 24 hours
-- D. ceftriaxone 500 mg IV every 12 hours  **(key)**
-- E. ceftriaxone 1000 mg IV every 12 hours
+- A. Acetazolamide 250 mg PO alone
+- B. Dexamethasone 8 mg IV  **(key)**
+- C. Furosemide 40 mg IV
+- D. Mannitol 1 g/kg IV
+- E. Nifedipine 30 mg PO
 
-*Explanation:* At 10 kg she needs 1000 mg of ceftriaxone a day, given as 500 mg IV every 12 hours, because the Canadian Paediatric Society recommends 100 mg/kg/day in two divided doses for suspected meningitis, with vancomycin. A dose of 500 mg every 24 hours gives only half the daily dose, and 250 mg every 12 hours also totals only 500 mg a day. A dose of 1000 mg every 12 hours doubles the recommended dose.
+*Explanation:* The Wilderness Medical Society advises dexamethasone for high-altitude cerebral edema, 8 mg and then 4 mg every 6 hours, together with descent, which he has now made, and oxygen to keep his saturation above 90%. Acetazolamide aids acclimatization and treats acute mountain sickness but is not enough on its own for cerebral edema. Nifedipine is used for high-altitude pulmonary edema, and his chest is clear. The WMS guideline recommends neither furosemide nor mannitol for this condition.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Le Saux N, Canadian Paediatric Society Infectious Diseases and Immunization Committee. Guidelines for the management of suspected and confirmed bacterial meningitis in Canadian children older than one month of age. Canadian Paediatric Society position statement. 2014, updated 2020. https://cps.ca/en/documents/position/management-of-bacterial-meningitis
+*Source:* Luks AM, Beidleman BA, Freer L, et al. Wilderness Medical Society clinical practice guidelines for the prevention, diagnosis, and treatment of acute altitude illness. 2024 update. Wilderness and Environmental Medicine 2024. https://doi.org/10.1016/j.wem.2023.05.013
 
 #### Q3
-**Which of the following is the correct pediatric Glasgow Coma Scale score, with its components?**
+**Which of the following is his Glasgow Coma Scale score on arrival, with its components?**
 
-- A. GCS 7 (E2 V1 M4)  **(key)**
-- B. GCS 8 (E2 V2 M4)
-- C. GCS 8 (E3 V1 M4)
-- D. GCS 9 (E2 V2 M5)
-- E. GCS 10 (E3 V2 M5)
+- A. GCS 11 (E3 V3 M5)
+- B. GCS 12 (E3 V4 M5)  **(key)**
+- C. GCS 13 (E3 V4 M6)
+- D. GCS 13 (E4 V4 M5)
+- E. GCS 14 (E4 V4 M6)
 
-*Explanation:* She opens her eyes to pressure (E2), makes no sounds (V1) and withdraws from pressure (M4), for a GCS of 7. Any cry or moan would score at least V2 on the pediatric verbal scale. E3 would require eye opening to voice. M5 would require localizing. Recording each component lets the team see whether her response to treatment is improving.
+*Explanation:* He opens his eyes to voice (E3), talks but is disoriented (V4) and localizes to pressure (M5), for a GCS of 12. V3 is inappropriate words, E4 needs spontaneous eye opening and M6 needs him to obey commands. Recording the components now gives a baseline, because a falling score despite dexamethasone and oxygen would call for imaging and airway protection.
 
 *Key feature:* Decreased level of consciousness 5. Document and trend consciousness with descriptive terms and a scored scale such as the GCS.
 
 *Source:* Teasdale G, Maas A, Lecky F, et al. The Glasgow Coma Scale at 40 years. Standing the test of time. Lancet Neurology 2014. https://doi.org/10.1016/S1474-4422(14)70120-6
 
-### loc-33: Hard to rouse after hip surgery
+### loc-33: Collapsed while starting to eat again
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 86-year-old man is brought to the emergency department by ambulance. His daughter found him very hard to rouse this morning. He had a hip fracture repaired 2 weeks ago and went home with morphine 10 mg PO every 4 hours as needed. She says he has been taking it regularly and has had little to drink for 3 days. He has chronic kidney disease. He opens his eyes briefly to pressure, makes no sounds and withdraws from pressure. His pupils are 2 mm. Capillary glucose is 6.4 mmol/L. Creatinine is 248 umol/L, up from 130 umol/L at discharge.
+A 19-year-old woman is brought to the emergency department by her mother because she collapsed at home and is now drowsy and slow to answer. She has anorexia nervosa and has eaten very little for weeks. Her mother says she began eating more 3 days ago after a clinic visit. She looks emaciated. She is cold and drowsy. There is no neck stiffness and no focal weakness. Capillary glucose is 2.2 mmol/L.
 
-- Temperature: 36.2°C oral
-- Pulse: 64/minute
-- Resp.: 7/minute
-- BP: 118/64 mmHg
-- O2 sat: 86% on room air
-- Weight: 62 kg
+- Temperature: 35.4°C oral
+- Pulse: 42/minute
+- Resp.: 12/minute
+- BP: 84/54 mmHg
+- O2 sat: 97% on room air
+- Weight: 38 kg
 
 #### Q1
-**Which of the following is the most appropriate initial naloxone dose for this patient?**
+**Which of the following is the most appropriate immediate treatment?**
 
-- A. naloxone 0.04 mg IV  **(key)**
-- B. naloxone 0.4 mg IV
-- C. naloxone 1 mg IV
-- D. naloxone 2 mg IV
-- E. naloxone 0.8 mg SC
+- A. Intravenous 10% dextrose  **(key)**
+- B. Intravenous insulin infusion
+- C. Intravenous phosphate
+- D. Oral glucose gel
+- E. Warmed intravenous saline
 
-*Explanation:* He is on regular opioids for pain after surgery, so naloxone should start at 0.04 mg IV and be repeated every few minutes until his breathing is adequate, not until he is fully awake. Starting at 0.4 mg or more risks acute withdrawal, sudden severe hip pain, agitation, vomiting and aspiration. Subcutaneous naloxone is absorbed unpredictably and cannot be titrated quickly in a patient breathing 7 times a minute.
+*Explanation:* She has symptomatic hypoglycemia at 2.2 mmol/L with a decreased level of consciousness, so intravenous dextrose is the immediate treatment. Oral glucose is unsafe when she cannot protect her airway, insulin would deepen the hypoglycemia, and although phosphate replacement and warming matter in her care they do not correct the acute low glucose.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Boyer EW. Management of opioid analgesic overdose. New England Journal of Medicine 2012. https://doi.org/10.1056/NEJMra1202561
+*Source:* Coret M, Vyver E, Harrison M, et al. A guide to the community management of paediatric eating disorders. Canadian Paediatric Society position statement. Paediatrics and Child Health 2024. https://doi.org/10.1093/pch/pxae037
 
 #### Q2
-**Which of the following best explains why he has become toxic now?**
+**Which of the following complications should be anticipated as she is refed?**
 
-- A. Accumulation of active metabolites  **(key)**
-- B. Delayed fat embolism
-- C. Drug interaction with acetaminophen
-- D. Hypothyroidism after surgery
-- E. Loss of opioid tolerance
+- A. Hypercalcemia
+- B. Hyperphosphatemia
+- C. Hypophosphatemia  **(key)**
+- D. Metabolic alkalosis
+- E. Polycythemia
 
-*Explanation:* His creatinine has almost doubled with poor fluid intake, and morphine-6-glucuronide, an active metabolite cleared by the kidney, accumulates in kidney failure and causes prolonged sedation and respiratory depression. Fat embolism usually appears within about 3 days of a fracture, not 2 weeks later. Acetaminophen does not raise morphine levels. He has taken morphine regularly, so he has not lost tolerance. Nothing suggests hypothyroidism.
+*Explanation:* Refeeding after prolonged starvation drives phosphate into cells and can cause life-threatening hypophosphatemia with cardiac and neurological complications, so phosphate must be monitored and replaced. Refeeding lowers rather than raises phosphate and calcium, and metabolic alkalosis and polycythemia are not features of the refeeding syndrome.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Boyer EW. Management of opioid analgesic overdose. New England Journal of Medicine 2012. https://doi.org/10.1056/NEJMra1202561
+*Source:* Society for Adolescent Health and Medicine. Medical management of restrictive eating disorders in adolescents and young adults. Position paper. Journal of Adolescent Health 2022. https://doi.org/10.1016/j.jadohealth.2022.08.006
 
 #### Q3
-*Update:* After two doses of naloxone 0.04 mg IV, his respiratory rate is 14/minute and he opens his eyes to voice. Fifty minutes later, his respiratory rate is 6/minute.
+*Update:* After dextrose her glucose is 6.0 mmol/L. Her phosphate returns at 0.35 mmol/L, potassium 3.0 mmol/L and magnesium 0.55 mmol/L.
 
-**Which of the following is the most appropriate next step for this patient?**
+**Which of the following is the most appropriate next step in her management?**
 
-- A. flumazenil 0.2 mg IV
-- B. Nasal prong oxygen alone
-- C. Repeat naloxone 2 mg IV
-- D. Start a naloxone infusion  **(key)**
-- E. Transfer to a ward bed
+- A. Push rapid high calorie feeding
+- B. Replace phosphate and electrolytes  **(key)**
+- C. Restrict all intake for a day
+- D. Start a rapid insulin infusion
+- E. Transfuse packed red cells
 
-*Explanation:* Naloxone acts for a shorter time than the accumulated morphine metabolites, so his respiratory depression has returned. A naloxone infusion, titrated to adequate breathing and often started at about two thirds of the effective bolus dose per hour, keeps him safe while the drug clears. Oxygen alone hides hypoventilation without treating it. A 2 mg bolus risks withdrawal and pain crisis. Nothing in his history points to a benzodiazepine for flumazenil to reverse, and a ward bed does not give the monitoring he needs.
+*Explanation:* Severe hypophosphatemia with low potassium and magnesium is refeeding syndrome, so intravenous electrolyte replacement with a slower, monitored increase in calories is needed. Rapid high calorie feeding worsens the shifts, insulin drives phosphate lower, and neither a red cell transfusion nor a full day of fasting addresses the problem.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Boyer EW. Management of opioid analgesic overdose. New England Journal of Medicine 2012. https://doi.org/10.1056/NEJMra1202561
+*Source:* Society for Adolescent Health and Medicine. Medical management of restrictive eating disorders in adolescents and young adults. Position paper. Journal of Adolescent Health 2022. https://doi.org/10.1016/j.jadohealth.2022.08.006
 
 #### Q4
-**Which of the following sources would best confirm how much morphine he has taken?**
+**Which of the following collateral details is most important to obtain from her mother?**
 
-- A. Family physician's chart
-- B. His own recollection
-- C. Hospital discharge summary
-- D. Pharmacy record and pill count  **(key)**
-- E. Urine opioid screen
+- A. Date of her last menstrual period
+- B. Her target weight
+- C. Her usual exercise pattern
+- D. Recent food and fluid intake  **(key)**
+- E. School attendance this term
 
-*Explanation:* The pharmacy dispensing record shows how many tablets he received and when, and a count of what remains shows how many he has taken. He cannot give a reliable history in his current state. The discharge summary and the family physician's chart show what was prescribed, not what he took. A urine opioid screen is qualitative and does not show the amount.
+*Explanation:* Knowing exactly what and how much she has eaten and drunk over the past days establishes the refeeding timeline and the risk of ongoing electrolyte shifts, which guides safe caloric advancement and monitoring. Her menstrual history, target weight, exercise pattern and school attendance matter for her longer-term care but do not guide her immediate refeeding risk.
 
 *Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
 
-*Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter 4, Principles of Managing the Acutely Poisoned or Overdosed Patient. https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html
+*Source:* Coret M, Vyver E, Harrison M, et al. A guide to the community management of paediatric eating disorders. Canadian Paediatric Society position statement. Paediatrics and Child Health 2024. https://doi.org/10.1093/pch/pxae037
 
 ### loc-34: Slow to answer for two days
 
@@ -1558,63 +1608,63 @@ A 34-year-old man is brought to the emergency department by ambulance after a mo
 
 *Source:* Carney N, Totten AM, O'Reilly C, et al. Guidelines for the management of severe traumatic brain injury. Fourth edition. Brain Trauma Foundation. Neurosurgery 2017. https://doi.org/10.1227/NEU.0000000000001432
 
-### loc-38: Carried out of a burning house
+### loc-38: Exhausted since the birth
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 45-year-old man is brought to the emergency department by ambulance after firefighters carried him out of a burning house. He was inside for about 15 minutes. He opens his eyes to pressure, makes incomprehensible sounds and withdraws from pressure. There is soot in his mouth and nostrils. He has no burns. Arterial blood gas on 15 L/minute of oxygen: pH 7.12, PCO2 32 mmHg, PO2 410 mmHg, bicarbonate 10 mmol/L, lactate 12.4 mmol/L, carboxyhemoglobin 18%.
+A 31-year-old woman is brought to the emergency department by her partner because she has become increasingly drowsy and confused over 2 days. She gave birth 5 weeks ago, and the birth was complicated by a postpartum hemorrhage that needed 6 units of red cells. Her milk never came in, so she could not breastfeed. She has felt exhausted and cold since the birth, and her family thought this was normal for a new mother. She opens her eyes to voice and is confused. Sodium 121 mmol/L, potassium 4.3 mmol/L. Capillary glucose is 2.9 mmol/L.
 
-- Temperature: 36.8°C oral
-- Pulse: 122/minute
-- Resp.: 26/minute
-- BP: 84/50 mmHg
-- O2 sat: 100% on 15 L/minute by non-rebreather mask
-- Weight: 82 kg
+- Temperature: 36.0°C oral
+- Pulse: 108/minute
+- Resp.: 18/minute
+- BP: 86/52 mmHg
+- O2 sat: 98% on room air
+- Weight: 64 kg
 
 #### Q1
-**Which of the following best explains the severity of his lactic acidosis?**
+**Which of the following is the most likely cause of her presentation?**
 
-- A. Carbon monoxide alone
-- B. Hypovolemia from burns
-- C. Methemoglobinemia from smoke
-- D. Seizure before arrival
-- E. Smoke-derived cyanide toxicity  **(key)**
+- A. Autoimmune Addison disease
+- B. Cerebral venous thrombosis
+- C. Late postpartum eclampsia
+- D. Pituitary failure after hemorrhage  **(key)**
+- E. Postpartum depression
 
-*Explanation:* Fire smoke contains hydrogen cyanide, and a very high lactate with hypotension and decreased consciousness after smoke inhalation is a marker of significant cyanide poisoning. Carbon monoxide contributes, but a carboxyhemoglobin of 18% does not on its own explain a lactate of 12.4 mmol/L with shock. He has no burns to cause hypovolemia. No seizure was reported, and nothing in the case suggests methemoglobinemia.
+*Explanation:* Failure of lactation after a major postpartum hemorrhage, followed by fatigue, cold intolerance, hypoglycemia, hyponatremia and hypotension, points to Sheehan syndrome, in which the pituitary enlarged by pregnancy is infarcted by the hypotension of the hemorrhage. Her normal potassium fits secondary adrenal insufficiency rather than Addison disease, which also would not explain the failed lactation. Eclampsia causes hypertension and seizures, and cerebral venous thrombosis usually causes headache and focal signs. Depression does not cause hypoglycemia or hyponatremia.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Anseeuw K, Delvau N, Burillo-Putze G, et al. Cyanide poisoning by fire smoke inhalation. A European expert consensus. European Journal of Emergency Medicine 2013. https://doi.org/10.1097/MEJ.0b013e328357170b
+*Source:* Karaca Z, Laway BA, Dokmetas HS, et al. Sheehan syndrome. Nature Reviews Disease Primers 2016. https://www.nature.com/articles/nrdp201692
 
 #### Q2
-**Which of the following is the most appropriate antidote for this patient?**
+**Which of the following hormone treatments should be started first?**
 
-- A. amyl nitrite by inhalation
-- B. fomepizole 15 mg/kg IV
-- C. hydroxocobalamin 5 g IV  **(key)**
-- D. methylene blue 1 mg/kg IV
-- E. sodium nitrite 300 mg IV
+- A. Desmopressin 1 mcg IV
+- B. Estrogen replacement
+- C. Hydrocortisone 100 mg IV  **(key)**
+- D. Levothyroxine 100 mcg IV
+- E. Liothyronine 25 mcg PO
 
-*Explanation:* His coma, hypotension and lactate of 12.4 mmol/L after smoke inhalation call for hydroxocobalamin 5 g IV over about 15 minutes, the recommended antidote for suspected cyanide poisoning from fire smoke. It binds cyanide to form cyanocobalamin without harming oxygen delivery. Nitrites work by creating methemoglobin, which further reduces oxygen carrying in a patient who already has carboxyhemoglobin. Methylene blue treats methemoglobinemia, and fomepizole treats toxic alcohols.
+*Explanation:* Cortisol deficiency is the immediately life-threatening part of hypopituitarism, so hydrocortisone 100 mg IV is given first, with IV dextrose and saline for her glucose and BP. Levothyroxine or liothyronine must wait until glucocorticoid has been replaced, because thyroid hormone speeds cortisol clearance and can precipitate adrenal crisis. Desmopressin is not needed without signs of diabetes insipidus, and estrogen replacement is not an emergency.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Anseeuw K, Delvau N, Burillo-Putze G, et al. Cyanide poisoning by fire smoke inhalation. A European expert consensus. European Journal of Emergency Medicine 2013. https://doi.org/10.1097/MEJ.0b013e328357170b
+*Source:* Fleseriu M, Hashim IA, Karavitaki N, et al. Hormonal replacement in hypopituitarism in adults. An Endocrine Society clinical practice guideline. Journal of Clinical Endocrinology and Metabolism 2016. https://academic.oup.com/jcem/article/101/11/3888/2764912
 
 #### Q3
-**Which of the following best explains his oxygen saturation reading of 100%?**
+**Which of the following investigations best supports the diagnosis in this woman?**
 
-- A. Carboxyhemoglobin read as oxyhemoglobin  **(key)**
-- B. Cyanide raising venous oxygen
-- C. High inspired oxygen alone
-- D. Methemoglobin raising the reading
-- E. Normal oxygen delivery
+- A. Anterior pituitary hormones  **(key)**
+- B. CT pulmonary angiogram
+- C. Electroencephalogram
+- D. Serum calcium level
+- E. Urine drug screen
 
-*Explanation:* Standard pulse oximeters cannot tell carboxyhemoglobin from oxyhemoglobin, so the reading overstates true oxygen saturation in carbon monoxide poisoning. Co-oximetry is needed to measure carboxyhemoglobin. High inspired oxygen raises his PO2, but it does not explain why 18% of his hemoglobin is missed. Cyanide raises venous oxygen content, not the pulse oximeter reading. Methemoglobin pulls the reading toward 85%, and his lactate shows oxygen delivery is not normal.
+*Explanation:* Cortisol with ACTH, TSH with free T4, and prolactin, ideally drawn before the hydrocortisone, show the pattern of anterior pituitary failure, with a low cortisol and a low or inappropriately normal ACTH, and a low free T4 without a raised TSH. Pituitary MRI follows. A CT pulmonary angiogram, EEG, calcium level and drug screen do not test pituitary function.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Hampson NB, Piantadosi CA, Thom SR, Weaver LK. Practice recommendations in the diagnosis, management, and prevention of carbon monoxide poisoning. American Journal of Respiratory and Critical Care Medicine 2012. https://doi.org/10.1164/rccm.201207-1284CI
+*Source:* Karaca Z, Laway BA, Dokmetas HS, et al. Sheehan syndrome. Nature Reviews Disease Primers 2016. https://www.nature.com/articles/nrdp201692
 
 ### loc-39: Asleep on a couch at a party
 
@@ -1679,279 +1729,281 @@ Select 2.
 
 *Source:* Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter 4, Principles of Managing the Acutely Poisoned or Overdosed Patient. https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html
 
-### loc-40: Drowsy after a household stomach bug
+### loc-40: A seizure in a well baby
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 88-year-old woman is brought to the emergency department by her husband, who cares for her at home. She has advanced Alzheimer dementia and needs help to eat and drink. For 5 days she has had fever and diarrhea, and her husband has been unwell with the same illness. He says she usually recognizes him, speaks in short sentences and feeds herself with help. Today she is very hard to rouse. She opens her eyes to pressure, moans and localizes to pressure. Her mucous membranes are very dry. Laboratory results: sodium 166 mmol/L, glucose 7.0 mmol/L, urea 24 mmol/L, creatinine 142 umol/L.
+A 5-month-old girl is brought to the emergency department by ambulance after a generalized seizure at home that lasted 3 minutes and stopped on its own. She has been irritable and sleepy since this morning. She has had no fever, vomiting or diarrhea. She is formula fed and was well at her 4-month visit. She opens her eyes to a loud voice and cries weakly. The fontanelle is soft. She has no bruises. Capillary glucose is 5.1 mmol/L. Serum sodium is 118 mmol/L.
 
-- Temperature: 37.9°C oral
-- Pulse: 112/minute
-- Resp.: 20/minute
-- BP: 98/56 mmHg
-- O2 sat: 95% on room air
-- Weight: 50 kg
+- Temperature: 36.1°C rectal
+- Pulse: 132/minute
+- Resp.: 32/minute
+- BP: 90/54 mmHg
+- O2 sat: 98% on room air
+- Weight: 6.8 kg
 
 #### Q1
-**Which of the following details from her husband best establishes that her current state is a change from her baseline?**
+**Which of the following details from her parents is most likely to identify the cause?**
 
-- A. He has been unwell with the same illness
-- B. She has advanced Alzheimer dementia
-- C. She has had diarrhea for 5 days
-- D. She needs help to eat and drink
-- E. She usually speaks in short sentences  **(key)**
+- A. Family history of epilepsy
+- B. Her immunization dates
+- C. Her sleep position
+- D. How her formula is prepared  **(key)**
+- E. Type of bottle she uses
 
-*Explanation:* Her usual ability to speak in short sentences and recognize her husband, compared with moaning only to pressure today, shows a clear decline from baseline. A diagnosis of advanced dementia does not describe what she can normally do. Her diarrhea, her need for help with drinking and her husband's illness explain why she became dehydrated, but they do not describe her baseline mental state.
+*Explanation:* A sodium of 118 mmol/L in a formula-fed infant with no vomiting or diarrhea most often comes from too much free water, such as formula diluted to make it last or extra water given in bottles. Asking exactly how the formula is mixed, and what else she drinks, identifies the cause and guides safe feeding. A family history of epilepsy, her immunization dates, sleep position and bottle type do not explain hyponatremia.
 
 *Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
 
-*Source:* Adrogue HJ, Madias NE. Hypernatremia. New England Journal of Medicine 2000. https://doi.org/10.1056/NEJM200005183422006
+*Source:* Moritz ML, Ayus JC. New aspects in the pathogenesis, prevention, and treatment of hyponatremic encephalopathy in children. Pediatric Nephrology 2010. https://doi.org/10.1007/s00467-009-1323-6
 
 #### Q2
-**Which of the following is her approximate free water deficit?**
+*Update:* In the department she has another generalized seizure. It has lasted 2 minutes.
 
-- A. 2.1 L
-- B. 2.8 L
-- C. 3.5 L
-- D. 3.9 L
-- E. 4.2 L  **(key)**
+**Which of the following is the most appropriate treatment for this seizure?**
 
-*Explanation:* Total body water in an older woman is about 0.45 x weight, or 0.45 x 50 = 22.5 L. The free water deficit is total body water x (sodium divided by 140, minus 1), which is 22.5 x (166 divided by 140 minus 1) = 22.5 x 0.186, about 4.2 L. Dividing by the current sodium of 166 instead of 140 gives about 3.5 L. Ongoing losses from diarrhea are added to this deficit.
+- A. Dextrose 10% 5 mL/kg IV
+- B. Hypertonic saline 3% 2 mL/kg IV  **(key)**
+- C. Normal saline 20 mL/kg IV
+- D. Phenobarbital 20 mg/kg IV
+- E. Sodium bicarbonate 1 mmol/kg IV
+
+*Explanation:* A seizure from acute hyponatremia is treated by raising the sodium quickly by about 5 mmol/L, using 3% saline 2 mL/kg IV, which is 13.6 mL for 6.8 kg, repeated if the seizure continues. Anticonvulsants such as phenobarbital often fail until the sodium rises. Normal saline raises sodium too slowly and adds volume. Her glucose of 5.1 mmol/L is normal, and bicarbonate has no role.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Adrogue HJ, Madias NE. Hypernatremia. New England Journal of Medicine 2000. https://doi.org/10.1056/NEJM200005183422006
+*Source:* Moritz ML, Ayus JC. New aspects in the pathogenesis, prevention, and treatment of hyponatremic encephalopathy in children. Pediatric Nephrology 2010. https://doi.org/10.1007/s00467-009-1323-6
 
 #### Q3
-**Which of the following is the most appropriate maximum fall in her serum sodium over the first 24 hours?**
+*Update:* The seizure stops. One hour later her sodium is 123 mmol/L. Her parents say they have been adding extra water to each bottle to make the formula last until payday.
 
-- A. 10 mmol/L in 24 hours  **(key)**
-- B. 15 mmol/L in 24 hours
-- C. 20 mmol/L in 24 hours
-- D. 26 mmol/L in 24 hours
-- E. 30 mmol/L in 24 hours
+**Which of the following is the most appropriate next step in her fluid management?**
 
-*Explanation:* Her hypernatremia developed over days, so her brain cells have adapted, and lowering sodium too fast risks cerebral edema and seizures. A fall of no more than about 10 mmol/L in 24 hours is advised for chronic hypernatremia. Lowering it by 26 mmol/L would return her to 140 mmol/L in one day, which is far too fast. Falls of 15, 20 or 30 mmol/L in 24 hours also exceed this limit.
+- A. Continue 3% saline infusion
+- B. Free water feeds as tolerated
+- C. Furosemide 1 mg/kg IV
+- D. Normal saline 20 mL/kg bolus
+- E. Stop free water, check sodium often  **(key)**
+
+*Explanation:* Once the seizure has stopped, more hypertonic saline is not needed. Correctly mixed formula without extra free water lets her kidneys excrete the excess water, and her sodium is checked every few hours because a brisk water diuresis can raise it faster than intended. A saline bolus and furosemide are not indicated in an infant who is not volume depleted or overloaded, and more free water would lower the sodium again.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Adrogue HJ, Madias NE. Hypernatremia. New England Journal of Medicine 2000. https://doi.org/10.1056/NEJM200005183422006
+*Source:* Moritz ML, Ayus JC. New aspects in the pathogenesis, prevention, and treatment of hyponatremic encephalopathy in children. Pediatric Nephrology 2010. https://doi.org/10.1007/s00467-009-1323-6
 
 #### Q4
-*Update:* She receives 1 L of normal saline, and her BP rises to 118/66 mmHg. She is passing urine.
+**Which of the following is the most appropriate disposition for her?**
 
-**Which of the following is the most appropriate fluid to correct her free water deficit after her circulation is restored?**
+- A. Discharge after a normal sodium
+- B. Discharge with feeding advice
+- C. Home with next-day clinic review
+- D. Observe 4 hours then discharge
+- E. Ward admission, serial sodium  **(key)**
 
-- A. dextrose 5% in water IV  **(key)**
-- B. hypertonic saline 3% IV
-- C. normal saline IV
-- D. Ringer's lactate IV
-- E. sodium bicarbonate 8.4% IV
-
-*Explanation:* Once her circulation is restored, her free water deficit is replaced with a hypotonic fluid such as dextrose 5% in water, given at a rate that keeps her sodium within the daily limit. Normal saline treated her hypovolemia but adds little free water. Ringer's lactate is only slightly hypotonic and corrects the deficit slowly. Hypertonic saline and 8.4% sodium bicarbonate would raise her sodium further.
+*Explanation:* She has had a hyponatremic seizure and her sodium is still low, so she needs admission for serial sodium checks, correct feeding and observation for further seizures. The family's difficulty affording formula should be addressed with a social worker before she goes home. Discharge after one value, a short observation period or a next-day review risks a recurrence or an unnoticed overly rapid correction.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Adrogue HJ, Madias NE. Hypernatremia. New England Journal of Medicine 2000. https://doi.org/10.1056/NEJM200005183422006
+*Source:* Moritz ML, Ayus JC. New aspects in the pathogenesis, prevention, and treatment of hyponatremic encephalopathy in children. Pediatric Nephrology 2010. https://doi.org/10.1007/s00467-009-1323-6
 
-### loc-41: Found slumped in his chair
+### loc-41: Hiccups between dialysis sessions
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 76-year-old man is brought to the emergency department by ambulance at 0715. His wife found him at 0630 slumped in his chair, unable to speak properly. She says he watched the news with her and went to bed at 2300, talking normally. When she woke at 0200, he appeared to be asleep beside her. He has atrial fibrillation and takes apixaban 5 mg twice daily. He opens his eyes to voice, makes incomprehensible sounds and does not follow commands, but localizes with his left hand. He has a right facial droop, right hemiplegia and left gaze deviation. Capillary glucose is 6.9 mmol/L.
+A 69-year-old man is brought to the emergency department by his wife because he has had hiccups for 3 days, has vomited twice and has been confused since last night. He has type 2 diabetes and end-stage kidney disease treated with hemodialysis three times a week through an arm fistula. His last session was 2 days ago, and his wife did not go with him. He last saw his family physician 4 months ago. He opens his eyes to voice, is disoriented and obeys commands. He hiccups every few seconds. His eye movements are full. There is no neck stiffness or focal weakness. Capillary glucose is 7.4 mmol/L.
 
 - Temperature: 36.7°C oral
-- Pulse: 88/minute irregular
-- Resp.: 16/minute
-- BP: 172/94 mmHg
-- O2 sat: 96% on room air
+- Pulse: 84/minute
+- Resp.: 18/minute
+- BP: 162/88 mmHg
+- O2 sat: 97% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following is his time last known well?**
+**Which of the following people, besides his wife, can best describe his mental state in the days before he became confused?**
 
-- A. At 2300  **(key)**
-- B. At 0200
-- C. At 0630
-- D. At 0715
-- E. Unknown
+- A. His community pharmacist
+- B. His dialysis unit nurses  **(key)**
+- C. His family physician
+- D. His next-door neighbour
+- E. The triage nurse tonight
 
-*Explanation:* The time last known well is the last time he was seen at his neurological baseline, which was 2300, when he went to bed talking normally. Seeing him asleep at 0200 does not confirm that he was normal then. The time he was found, 0630, and his arrival at 0715 are later than symptom onset may have been. The time is known from his wife, so it is not unknown. It sets his eligibility for acute treatment.
+*Explanation:* His dialysis unit nurses see him three times a week and assessed him at his session 2 days ago. They know his usual mental state and can say whether he was already confused, vomiting or hiccupping then, which helps date the change. The 4AT names other staff who know the patient as a source for judging an acute change. His family physician last saw him 4 months ago and cannot describe this week. The triage nurse has seen him only while he is confused. Nothing in the case says that his pharmacist or a neighbour has seen him this week. A pharmacist dispenses medicines and is not placed to judge his mental state.
 
 *Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
 
-*Source:* Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management. 7th edition. 2022. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* MacLullich A, Ryan T, Cash H. 4AT rapid clinical test for delirium and cognitive impairment, version 1.2, with guidance notes. 2014. https://www.the4at.com/4at-download
 
 #### Q2
-**Which of the following items of history from his wife is most important for acute treatment decisions?**
+**Which of the following details from his wife best establishes how his mental state has changed?**
 
-- A. Date of his last ECG
-- B. His childhood illnesses
-- C. Name of his cardiologist
-- D. Time of his last apixaban dose  **(key)**
-- E. Year his arrhythmia began
+- A. His dialysis access type
+- B. His usual blood pressure
+- C. His usual dry weight
+- D. When he last seemed his usual self  **(key)**
+- E. Year he started dialysis
 
-*Explanation:* Canadian guidance advises against routine thrombolysis in a patient taking a DOAC. The time of his last apixaban dose shows whether drug effect is likely, and it also informs bleeding risk during any procedure. The date of his last ECG, the name of his cardiologist, the year his arrhythmia began and his childhood illnesses do not change acute stroke treatment.
+*Explanation:* The NICE delirium guideline advises assessing for recent changes or fluctuations, over hours or days, in thinking, perception and function, as reported by the person, a carer or a relative. Knowing when he last seemed his usual self tells you whether his confusion is new, how fast it developed and how it relates to his last dialysis session 2 days ago. His dialysis access type, dry weight, usual blood pressure and the year he started dialysis matter for his dialysis care, but none of them shows whether or when his mental state changed.
 
 *Key feature:* Decreased level of consciousness 3. Seek collateral and prehospital history to establish how the patient's mental status differs from usual.
 
-*Source:* Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management. 7th edition. 2022. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* National Institute for Health and Care Excellence. Delirium: prevention, diagnosis and management in hospital and long-term care. Clinical guideline CG103. 2010, updated 2023. https://www.nice.org.uk/guidance/cg103
 
 #### Q3
-**Which of the following is the most appropriate imaging now?**
+*Update:* His wife says that for 4 days he has drunk juice made from 3 or 4 fresh star fruit a day, bought at a market. His potassium is 4.9 mmol/L, sodium 137 mmol/L and calcium 2.31 mmol/L. A non-contrast CT head is normal.
 
-- A. Carotid Doppler ultrasound
-- B. CT head with CT angiography  **(key)**
-- C. CT head without contrast alone
-- D. MRI brain tomorrow morning
-- E. Transthoracic echocardiogram
+**Which of the following is the most likely cause of his decreased level of consciousness?**
 
-*Explanation:* His right hemiplegia, loss of speech and gaze deviation suggest a large vessel occlusion, and thrombectomy can be offered up to 24 hours after last known well with suitable imaging. Canadian stroke guidelines recommend immediate noncontrast CT with CT angiography from the aortic arch to the vertex for possible thrombectomy candidates. CT alone cannot show the occlusion. Carotid Doppler, echocardiography and MRI tomorrow are for later workup.
+- A. Dialysis disequilibrium syndrome
+- B. Star fruit neurotoxicity  **(key)**
+- C. Subdural hematoma
+- D. Uremic encephalopathy
+- E. Wernicke encephalopathy
+
+*Explanation:* Star fruit is neurotoxic in people with kidney failure. In the series of 32 uremic patients reported by Neto and colleagues, 20 were on regular hemodialysis, and the main features were persistent hiccups, vomiting and disturbed consciousness. His hiccups, vomiting and confusion began after days of star fruit juice. Dialysis disequilibrium syndrome is tied to a dialysis session, and his confusion began more than a day after his last one. His normal CT head argues against a subdural hematoma. Uremic encephalopathy does not explain the timing with the new juice in a man whose regular dialysis continues. His full eye movements do not suggest Wernicke encephalopathy.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management. 7th edition. 2022. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* Neto MM, da Costa JA, Garcia-Cairasco N, et al. Intoxication by star fruit (Averrhoa carambola) in 32 uraemic patients. Treatment and outcome. Nephrology Dialysis Transplantation 2003. https://doi.org/10.1093/ndt/18.1.120
 
 #### Q4
-*Update:* CT shows no hemorrhage. CT angiography shows a left M1 occlusion with good collaterals and a small core. His wife says he took apixaban at 2100.
+**Which of the following features of his presentation is most characteristic of his diagnosis?**
 
-**Which of the following is the most appropriate treatment for this patient?**
+- A. Confusion since last night
+- B. Raised blood pressure
+- C. Two episodes of vomiting
+- D. Type 2 diabetes
+- E. Unrelenting hiccups for 3 days  **(key)**
 
-- A. Alteplase then thrombectomy
-- B. ASA 160 mg PO now
-- C. Endovascular thrombectomy  **(key)**
-- D. Heparin infusion IV
-- E. tenecteplase 0.25 mg/kg IV
-
-*Explanation:* He has a proximal middle cerebral artery occlusion with a small core and good collaterals within 24 hours of last known well, so endovascular thrombectomy is recommended. He is beyond the standard 4.5 hour window from last known well, and Canadian guidance advises against routine thrombolysis in a patient taking a DOAC, here apixaban at 2100, so neither tenecteplase nor alteplase before thrombectomy is appropriate. A heparin infusion does not improve outcome in acute stroke. ASA does not treat a large vessel occlusion.
+*Explanation:* Persistent, intractable hiccups were the most frequent feature in the series by Neto and colleagues, present in 30 of 32 patients (93.75%). Vomiting occurred in 22 (68.7%) and disturbed consciousness in 21 (65.6%), so both are common but less typical. Confusion and vomiting also occur with many other causes of illness in a patient on dialysis. The series did not report raised blood pressure or diabetes as features. In that series, patients promptly treated with hemodialysis recovered without sequelae, while peritoneal dialysis was of no use.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute stroke management. 7th edition. 2022. https://www.strokebestpractices.ca/recommendations/acute-stroke-management
+*Source:* Neto MM, da Costa JA, Garcia-Cairasco N, et al. Intoxication by star fruit (Averrhoa carambola) in 32 uraemic patients. Treatment and outcome. Nephrology Dialysis Transplantation 2003. https://doi.org/10.1093/ndt/18.1.120
 
-### loc-42: Collapsed in the barn
+### loc-42: Nosebleeds and blurred vision
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department. A 58-year-old man is brought in by his son, who found him collapsed in their farm barn beside a leaking container of insecticide 40 minutes ago. He is drooling, has vomited and has soiled himself with urine and stool. His clothing is wet and smells of solvent. He opens his eyes to pressure, makes incomprehensible sounds and withdraws from pressure. His pupils are 1 mm. There are coarse crackles and wheezes in both lungs. He has fasciculations in his thighs. Capillary glucose is 7.8 mmol/L.
+A 74-year-old man is brought to the emergency department by his wife because he has become confused and drowsy over 3 days. For 2 weeks he has had blurred vision, headaches and repeated nosebleeds. He has lost 5 kg in 3 months. He has hypertension. He opens his eyes to voice and is confused. Fundoscopy shows dilated, tortuous retinal veins with flame hemorrhages. There is no focal weakness and no neck stiffness. Hemoglobin 86 g/L, platelets 182 x 10^9/L, total protein 118 g/L, albumin 30 g/L, creatinine 128 umol/L, calcium 2.36 mmol/L. The blood film shows rouleaux. Capillary glucose is 6.0 mmol/L.
 
-- Temperature: 36.6°C oral
-- Pulse: 48/minute
-- Resp.: 28/minute
-- BP: 86/50 mmHg
-- O2 sat: 84% on 15 L/minute by non-rebreather mask
-- Weight: 90 kg
+- Temperature: 36.9°C oral
+- Pulse: 92/minute
+- Resp.: 18/minute
+- BP: 152/88 mmHg
+- O2 sat: 96% on room air
+- Weight: 70 kg
 
 #### Q1
 **Which of the following is the most likely cause of his decreased level of consciousness?**
 
-- A. Carbon monoxide poisoning
-- B. Clonidine toxicity
-- C. Opioid toxicity
-- D. Organophosphate poisoning  **(key)**
-- E. Pontine hemorrhage
+- A. Hyperviscosity syndrome  **(key)**
+- B. Metastatic brain disease
+- C. Subdural hematoma
+- D. Uremic encephalopathy
+- E. Wernicke encephalopathy
 
-*Explanation:* Drooling, vomiting, incontinence, bronchorrhea with wheeze, bradycardia and pinpoint pupils form the muscarinic cholinergic toxidrome, and fasciculations add a nicotinic effect. With an insecticide leak this points to organophosphate poisoning. Opioids, clonidine and pontine hemorrhage cause small pupils but not heavy secretions or fasciculations. Carbon monoxide does not cause this pattern.
+*Explanation:* Headache, blurred vision, nosebleeds and confusion with engorged retinal veins, a globulin fraction of 88 g/L and rouleaux describe hyperviscosity syndrome from a paraprotein, often IgM from Waldenstrom macroglobulinemia. His creatinine of 128 micromol/L is far too mild for uremic encephalopathy. A subdural hematoma and brain metastases are excluded with CT, but neither explains the retinal findings or the protein level, and nothing suggests Wernicke encephalopathy.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Eddleston M, Buckley NA, Eyer P, Dawson AH. Management of acute organophosphorus pesticide poisoning. Lancet 2008. https://doi.org/10.1016/S0140-6736(07)61202-1
+*Source:* Gertz MA. Acute hyperviscosity. Syndromes and management. Blood 2018. https://doi.org/10.1182/blood-2018-06-846816
 
 #### Q2
-**Which of the following immediate actions are most appropriate for this patient?**
+**Which of the following are the most appropriate initial measures for him?**
 
 Select 3.
 
-- A. atropine 2 mg IV  **(key)**
-- B. Decontaminate skin and remove clothes  **(key)**
-- C. flumazenil 0.2 mg IV
-- D. furosemide 40 mg IV
-- E. naloxone 2 mg IV
-- F. physostigmine 1 mg IV
-- G. Staff protective gloves and gowns  **(key)**
-- H. succinylcholine 1.5 mg/kg IV
+- A. Arrange urgent plasma exchange  **(key)**
+- B. Give 2 units of red cells now
+- C. IV crystalloid for hydration  **(key)**
+- D. Oral prednisone 60 mg daily
+- E. Serum protein electrophoresis  **(key)**
+- F. Start furosemide for his BP
+- G. Transfuse platelets for epistaxis
 
-*Explanation:* Atropine 1 to 3 mg IV, doubled every 5 minutes until the chest is clear, treats the bronchorrhea and bradycardia that threaten his oxygenation. His wet clothing must be removed and his skin washed, with staff wearing gloves and gowns, to stop further absorption and protect staff. Physostigmine is itself a cholinesterase inhibitor. Succinylcholine causes prolonged paralysis in this poisoning. Furosemide does not treat bronchorrhea, and naloxone and flumazenil have no role.
+*Explanation:* Confusion and bleeding from hyperviscosity are an emergency treated with plasma exchange, which removes the paraprotein and relieves symptoms quickly. IV fluids keep him well hydrated, because dehydration raises viscosity further, and serum protein electrophoresis with immunofixation identifies the paraprotein. Red cell transfusion raises whole blood viscosity and is delayed until after plasma exchange. Furosemide worsens dehydration, his platelet count of 182 x 10^9/L does not need transfusion, and prednisone does not lower viscosity quickly.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Eddleston M, Buckley NA, Eyer P, Dawson AH. Management of acute organophosphorus pesticide poisoning. Lancet 2008. https://doi.org/10.1016/S0140-6736(07)61202-1
+*Source:* Gertz MA. Acute hyperviscosity. Syndromes and management. Blood 2018. https://doi.org/10.1182/blood-2018-06-846816
 
 #### Q3
-*Update:* After atropine 2 mg IV, his chest still has crackles and wheeze, and his heart rate is 52/minute.
+*Update:* Your hospital has no apheresis service. The regional centre 2 hours away can start plasma exchange on arrival. He is becoming drowsier.
 
-**Which of the following is the most appropriate endpoint for titrating his atropine?**
+**Which of the following is the most appropriate next step for him?**
 
-- A. Clear chest on auscultation  **(key)**
-- B. Heart rate above 120/minute
-- C. Pupils fully dilated
-- D. Resolution of fasciculations
-- E. Return of full alertness
+- A. Admit and await apheresis tomorrow
+- B. Give IV dexamethasone
+- C. Hemodialysis tonight
+- D. Transfer now for urgent exchange  **(key)**
+- E. Wait for an oncology clinic
 
-*Explanation:* Atropine is doubled until the chest is clear of crackles and wheeze, with a heart rate above 80/minute, a systolic BP above 80 mmHg, dry axillae and pupils no longer pinpoint. Clearing the bronchorrhea is the key target. A heart rate above 120/minute is not a target, and tachycardia alone does not mean atropine should stop. Fully dilated pupils are not required. Atropine does not reverse the nicotinic effects that cause fasciculations, and alertness is not an atropine endpoint.
+*Explanation:* A falling level of consciousness from hyperviscosity needs plasma exchange within hours, so he should be transferred now to the centre that can start it. Waiting until tomorrow or for a clinic allows neurological injury and bleeding to progress. Dexamethasone does not lower viscosity quickly, and hemodialysis does not remove a large paraprotein such as IgM.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Eddleston M, Buckley NA, Eyer P, Dawson AH. Management of acute organophosphorus pesticide poisoning. Lancet 2008. https://doi.org/10.1016/S0140-6736(07)61202-1
+*Source:* Gertz MA. Acute hyperviscosity. Syndromes and management. Blood 2018. https://doi.org/10.1182/blood-2018-06-846816
 
-### loc-43: Floppy and sleepy after crying spells
+### loc-43: A floppy infant who stopped stooling
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 9-month-old boy is brought to the emergency department by his mother because he has been unusually floppy and sleepy for 4 hours. Earlier today he had several episodes of crying and drawing up his legs, with vomiting between them. He had a viral illness last week. He has no fever. He is pale and lethargic, opens his eyes only briefly to voice and has a weak cry. His abdomen is soft, with a vague sausage-shaped fullness in the right upper quadrant. His diaper contains a small amount of stool mixed with blood and mucus. Capillary glucose is 4.8 mmol/L.
+A 4-month-old boy is brought to the emergency department by his parents because he has been increasingly floppy and feeds poorly over 4 days. He has not passed stool for 5 days. His cry is weak and he no longer holds his head up. His parents recently gave him a little honey on a soother. He is afebrile. He has drooping eyelids, a weak suck and reduced limb tone. There is no neck stiffness. Capillary glucose is 4.8 mmol/L.
 
-- Temperature: 37.2°C rectal
-- Pulse: 168/minute
-- Resp.: 36/minute
-- BP: 84/50 mmHg
-- O2 sat: 98% on room air
-- Weight: 8.6 kg
+- Temperature: 36.8°C rectal
+- Pulse: 128/minute
+- Resp.: 34/minute
+- BP: 92/56 mmHg
+- O2 sat: 97% on room air
+- Weight: 6.6 kg
 
 #### Q1
-**Which of the following is the most likely cause of his lethargy?**
+**Which of the following is the most likely diagnosis for him?**
 
-- A. Intussusception  **(key)**
-- B. Nonaccidental head injury
-- C. Pyloric stenosis
-- D. Toxic ingestion
-- E. Viral gastroenteritis
+- A. Bacterial sepsis
+- B. Congenital hypothyroidism
+- C. Guillain-Barre syndrome
+- D. Infant botulism  **(key)**
+- E. Spinal muscular atrophy
 
-*Explanation:* Episodes of crying with drawn-up legs, vomiting, a sausage-shaped mass and stool with blood and mucus in a 9-month-old fit intussusception, and lethargy can be its main or only presenting sign. Pyloric stenosis presents at a few weeks of age with nonbilious vomiting. Viral gastroenteritis does not cause a mass or episodic pain with lethargy. Nothing suggests an ingestion or head injury, although both stay on the differential for a lethargic infant.
+*Explanation:* A previously well infant with constipation, poor feeding, a weak cry, drooping eyelids and descending hypotonia after honey exposure is typical of infant botulism from Clostridium botulinum spores. Guillain-Barre is rare at this age and ascending, sepsis usually causes fever, and spinal muscular atrophy and hypothyroidism follow a more chronic course.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Applegate KE. Intussusception in children. Evidence-based diagnosis and treatment. Pediatric Radiology 2009. https://doi.org/10.1007/s00247-009-1178-9
+*Source:* Arnon SS, Schechter R, Maslanka SE, Jewell NP, Hatheway CL. Human botulism immune globulin for the treatment of infant botulism. New England Journal of Medicine 2006. https://doi.org/10.1056/NEJMoa051926
 
 #### Q2
-**Which of the following is the most appropriate first imaging study?**
+**Which of the following is the most appropriate step to confirm the diagnosis?**
 
-- A. Abdominal radiographs
-- B. CT abdomen with contrast
-- C. CT head without contrast
-- D. Ultrasound of the abdomen  **(key)**
-- E. Upper GI series with contrast
+- A. Lumbar puncture and culture
+- B. Muscle biopsy sample
+- C. Serum ammonia level
+- D. Stool for botulinum toxin  **(key)**
+- E. Thyroid function tests
 
-*Explanation:* Ultrasound is the imaging study of choice for suspected intussusception, with high sensitivity and specificity and no radiation. Plain radiographs can be normal and cannot exclude it. CT exposes him to radiation and is not needed. An upper GI study does not assess the ileocolic region. CT head would be considered only if his lethargy persisted without an abdominal cause.
+*Explanation:* Infant botulism is confirmed by detecting Clostridium botulinum toxin or organism in the stool, so a stool sample should be sent while treatment proceeds. A lumbar puncture, ammonia and thyroid tests address other diagnoses, and muscle biopsy is not used to make this diagnosis in an infant.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Applegate KE. Intussusception in children. Evidence-based diagnosis and treatment. Pediatric Radiology 2009. https://doi.org/10.1007/s00247-009-1178-9
+*Source:* Arnon SS, Schechter R, Maslanka SE, Jewell NP, Hatheway CL. Human botulism immune globulin for the treatment of infant botulism. New England Journal of Medicine 2006. https://doi.org/10.1056/NEJMoa051926
 
 #### Q3
-*Update:* Ultrasound shows an ileocolic intussusception with a target sign. The surgical team has been called.
+*Update:* His breathing becomes shallow and his oxygen saturation falls. He tires with feeds.
 
-**Which of the following is the most appropriate treatment before enema reduction?**
+**Which of the following is the most appropriate management now?**
 
-- A. albumin 5% 10 mL/kg IV
-- B. dextrose 10% 5 mL/kg IV
-- C. packed red cells 10 mL/kg IV
-- D. Ringer's lactate 20 mL/kg IV  **(key)**
-- E. sodium bicarbonate 1 mmol/kg IV
+- A. Honey avoidance advice
+- B. IV immunoglobulin (IVIG)
+- C. Penicillin and metronidazole
+- D. Pyridostigmine therapy
+- E. Support and immune globulin  **(key)**
 
-*Explanation:* His heart rate of 168/minute, pallor and lethargy show compensated shock, so he needs an isotonic crystalloid bolus of 20 mL/kg, or 172 mL, before reduction is attempted. His glucose of 4.8 mmol/L does not need dextrose. His pallor fits shock, and no hemoglobin result shows anemia that would call for red cells. Albumin is not a first-line resuscitation fluid. Bicarbonate does not treat shock.
+*Explanation:* Infant botulism is treated with prompt airway and respiratory support and human botulism immune globulin, which shortens the illness. Antibiotics such as penicillin and metronidazole are not used to treat it, and aminoglycosides can worsen the weakness. Standard intravenous immunoglobulin contains no reliable antitoxin, pyridostigmine is not the treatment, and advice alone is inadequate for a deteriorating infant.
 
 *Key feature:* Decreased level of consciousness 2. Promptly correct reversible causes of altered consciousness such as hypoglycemia, hypoxia, opioid toxicity, or hypotension.
 
-*Source:* Applegate KE. Intussusception in children. Evidence-based diagnosis and treatment. Pediatric Radiology 2009. https://doi.org/10.1007/s00247-009-1178-9
+*Source:* Arnon SS, Schechter R, Maslanka SE, Jewell NP, Hatheway CL. Human botulism immune globulin for the treatment of infant botulism. New England Journal of Medicine 2006. https://doi.org/10.1056/NEJMoa051926
 
 ### loc-44: Collapsed at a nightclub
 
@@ -2010,63 +2062,63 @@ A 22-year-old woman is brought to the emergency department by ambulance from a n
 
 *Source:* Busardo FP, Jones AW. GHB pharmacology and toxicology. Acute intoxication, concentrations in blood and urine in forensic cases and treatment of the withdrawal syndrome. Current Neuropharmacology 2015. https://doi.org/10.2174/1570159X13666141210215423
 
-### loc-45: Could not be woken in the cells
+### loc-45: Turned away at the door
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 50-year-old man is brought to the emergency department from the police cells at 0600. He was arrested at 2200 for public intoxication after officers found him staggering outside a bar with a cut on his head. Officers checked him every hour through the cell door and say he was snoring loudly. At 0530 they could not wake him. He opens his eyes to pressure, makes incomprehensible sounds and localizes with his left hand only. His left pupil is 6 mm and sluggish. There is a 2 cm laceration with swelling over the left temple. Capillary glucose is 5.9 mmol/L. Serum ethanol is 11 mmol/L.
+A 24-year-old man is brought to the emergency department by police at 01:30. Door staff at a bar refused him entry because he seemed drunk, and he then sat down on the sidewalk and would not get up. He says he had a few beers this evening and has vomited three times. No friend or relative is with him, and he cannot give a clear history. He smells of beer and his speech is slurred. He opens his eyes to voice, gives confused answers and obeys commands. He breathes deeply and regularly. His mucous membranes are dry. There is no sign of head injury, and his eye movements are full. The triage glucose meter is out of service and a replacement is on its way.
 
-- Temperature: 36.3°C oral
-- Pulse: 56/minute
-- Resp.: 10/minute
-- BP: 178/98 mmHg
-- O2 sat: 94% on room air
+- Temperature: 36.9°C oral
+- Pulse: 112/minute
+- Resp.: 30/minute
+- BP: 118/70 mmHg
+- O2 sat: 99% on room air
+- Weight: 72 kg
 
 #### Q1
-**Which of the following findings argue against alcohol intoxication as the cause of his decreased level of consciousness?**
+**Which of the following findings most strongly indicates that alcohol alone does not explain his state?**
 
-Select 3.
+- A. Beer on his breath
+- B. Drowsy with slurred speech
+- C. Dry mucous membranes
+- D. Heart rate of 112/minute
+- E. Respiratory rate of 30/minute  **(key)**
 
-- A. Arrest for public intoxication
-- B. Capillary glucose of 5.9 mmol/L
-- C. Dilated left pupil  **(key)**
-- D. Ethanol of 11 mmol/L  **(key)**
-- E. Localizing with left hand only  **(key)**
-- F. Oxygen saturation of 94%
-- G. Staggering outside a bar
-- H. Temperature of 36.3°C
-
-*Explanation:* An ethanol of 11 mmol/L, about 50 mg/dL, is far too low to cause coma. A dilated, sluggish left pupil and movement of only the left hand are lateralizing signs of a structural lesion, here likely a left-sided hematoma under the temple injury. His arrest and staggering fit intoxication but do not explain his current state. A normal glucose excludes hypoglycemia, and his temperature and saturation do not point either way.
+*Explanation:* Deep, regular breathing at 30/minute is air hunger, the breathing of a metabolic acidosis, and Diabetes Canada lists air hunger among the features of ketoacidosis. Ethanol does not drive breathing faster, and in large amounts it slows it. The smell of beer and his drowsy, slurred speech fit intoxication but do not show that alcohol explains his state. A heart rate of 112/minute and dry mucous membranes can follow vomiting and the diuresis of a night of drinking, so they do not separate alcohol from another cause.
 
 *Key feature:* Decreased level of consciousness 4. Do not attribute decreased consciousness to something minor like alcohol until head injury and other serious causes are excluded.
 
-*Source:* Teasdale G, Maas A, Lecky F, et al. The Glasgow Coma Scale at 40 years. Standing the test of time. Lancet Neurology 2014. https://doi.org/10.1016/S1474-4422(14)70120-6
+*Source:* Diabetes Canada Clinical Practice Guidelines Expert Committee, Goguen J, Gilbert J. Hyperglycemic emergencies in adults. Canadian Journal of Diabetes 2018. https://doi.org/10.1016/j.jcjd.2017.10.013
 
 #### Q2
-**Which of the following is the most appropriate investigation once his airway is secured?**
+*Update:* His glucose is 32.4 mmol/L, venous pH 7.06, bicarbonate 5 mmol/L, sodium 131 mmol/L, chloride 95 mmol/L, beta-hydroxybutyrate 6.8 mmol/L and ethanol 17 mmol/L. A medical alert bracelet reads type 1 diabetes.
 
-- A. CT head without contrast  **(key)**
-- B. Lumbar puncture
-- C. Repeat ethanol level in 2 hours
-- D. Skull radiographs
-- E. Urine toxicology screen
+**Which of the following is the most likely cause of his decreased level of consciousness?**
 
-*Explanation:* He has a head injury, a GCS well below 13 and lateralizing signs, so he needs CT head at once and early neurosurgical contact. The Canadian CT Head Rule applies only to patients with a GCS of 13 to 15, so it is not used to decide here. A repeat ethanol level would only delay diagnosis. Lumbar puncture is dangerous with a possible mass lesion. Skull radiographs and urine toxicology do not show intracranial bleeding.
+- A. Acute alcohol intoxication
+- B. Cerebral contusion
+- C. Diabetic ketoacidosis  **(key)**
+- D. Hyperosmolar hyperglycemic state
+- E. Wernicke encephalopathy
+
+*Explanation:* His pH of 7.06, bicarbonate of 5 mmol/L, anion gap of 31 mmol/L (131 minus 95 minus 5) and raised beta-hydroxybutyrate meet the Diabetes Canada criteria for diabetic ketoacidosis: pH 7.3 or less, bicarbonate 15 mmol/L or less, an anion gap above 12 mmol/L and positive ketones. His bracelet and glucose of 32.4 mmol/L fit. An ethanol of 17 mmol/L, about 78 mg/100 mL, does not cause a ketoacidosis and is too low to explain his drowsiness in most adults. The guideline describes the hyperosmolar hyperglycemic state as having minimal acid-base disturbance, which does not fit a pH of 7.06. He has no sign of head injury to suggest a contusion. His full eye movements and his ketoacidosis do not point to Wernicke encephalopathy.
 
 *Key feature:* Decreased level of consciousness 1. Build a broad differential for altered consciousness while quickly excluding intracranial bleeding, CNS infection, or toxins.
 
-*Source:* Stiell IG, Wells GA, Vandemheen K, et al. The Canadian CT Head Rule for patients with minor head injury. Lancet 2001. https://doi.org/10.1016/S0140-6736(00)04561-X
+*Source:* Diabetes Canada Clinical Practice Guidelines Expert Committee, Goguen J, Gilbert J. Hyperglycemic emergencies in adults. Canadian Journal of Diabetes 2018. https://doi.org/10.1016/j.jcjd.2017.10.013
 
 #### Q3
-**Which of the following observation methods would best have detected his deterioration in the cells?**
+*Update:* At 02:45 the nurse finds him harder to rouse. He opens his eyes only to pressure, says inappropriate words and reaches toward the site of pressure.
 
-- A. Checks every 4 hours by a nurse
-- B. Hourly checks that he was breathing
-- C. Hourly rousal with GCS and pupils  **(key)**
-- D. Leaving him to sleep undisturbed
-- E. Video monitoring of the cell
+**Which of the following is his Glasgow Coma Scale score now, with its components?**
 
-*Explanation:* Deterioration after head injury and intoxication is found by rousing the person and scoring the response, which here means hourly GCS and pupil checks. Loud snoring can be a sign of airway obstruction from a falling level of consciousness, so checking that he was breathing was not enough. Video monitoring and leaving him to sleep do not test responsiveness. Checks every 4 hours are too infrequent.
+- A. GCS 8 (E2 V2 M4)
+- B. GCS 9 (E2 V2 M5)
+- C. GCS 9 (E2 V3 M4)
+- D. GCS 10 (E2 V3 M5)  **(key)**
+- E. GCS 11 (E3 V3 M5)
+
+*Explanation:* He opens his eyes to pressure (E2), says inappropriate words (V3) and localizes by reaching toward the stimulus (M5), for a GCS of 10. At arrival he opened his eyes to voice, was confused and obeyed commands, a GCS of 13 (E3 V4 M6). Teasdale and colleagues advise recording each component, which here shows a fall in all three and calls for urgent reassessment. GCS 11 (E3 V3 M5) scores eye opening to voice. GCS 9 (E2 V3 M4) scores normal flexion rather than localizing. GCS 9 (E2 V2 M5) scores sounds without words, and GCS 8 (E2 V2 M4) scores both of those lower responses.
 
 *Key feature:* Decreased level of consciousness 5. Document and trend consciousness with descriptive terms and a scored scale such as the GCS.
 

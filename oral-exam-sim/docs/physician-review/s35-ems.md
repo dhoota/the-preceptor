@@ -8,11 +8,18 @@ Quoted from the pipeline notes and the review reports, each with its report name
 
 - s35 ems-35 q3 IM field TXA as loading dose. ems-26 q1 crush statements from Sever abstract. ems-25 q2 radiation PPE risk. ems-29 q3 bicarbonate. s34 delirium-agitation-35 sepsis with hypotension wording.
 - s35 ems-35 q3 IM field TXA and 8 h infusion. ems-27 q4 pediatric pralidoxime dose. s44 multiple-patients-24 SOFA breathing rule before ventilation.
+- ems-27 still teaches SALT in an opioid cluster. See the earlier note in samps-replace-s27-s29-s34-s38-s52.md. *(samps-last-check.md)*
 - ems-16 q4: an epinephrine key in a poisoned arrest, mapped to tox KF4. Please confirm the mapping. *(samps-overlap-pass2b-review.md)*
 - ems-28 q3: Warren 2004 wording on transport pumps and spare infusions not verified against the full text. *(samps-overlap-pass2b-review.md)*
 - ems-16 q4: an agent-independent ALS key mapped to tox KF4. *(samps-overlap-pass2b-review.md)*
 - ems-16 q4 now maps to tox KF4 inside an EMS SAMP. EMS KF1 drops from 59 to 58. *(samps-overlap-pass2b.md)*
 - ems-28 q3 (battery pumps and spare infusions) cites Warren 2004. I did not recheck its equipment list wording against the full text. *(samps-overlap-pass2b.md)*
+- ems-21 assumes Ontario base hospital physicians give positioning and catheter advice. No Ontario directive covers autonomic dysreflexia drugs, so nitroglycerin is prepared in the department, not given by the crew. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- ems-27 q1 applies SALT, which triages a patient who does not breathe after airway opening as dead. Please confirm this is acceptable for an opioid arrest in a mass casualty setting. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- ems-36 teaches the ACP seizure treat-and-discharge exclusion for pregnancy in version 5.4 of the Ontario ALS standards. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- ems-27: SALT tags an adult who stays apneic after the airway is opened as dead, whatever the cause. In an opioid cluster with antidote and ventilation available, that rule would abandon salvageable patients. The SAMP now avoids that branch. Please confirm whether you want SALT taught in an opioid context at all. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- ems-27 q2 relies on the Ontario directive threshold (naloxone when the rate is below 10). It is not keyed with an SpO2 threshold. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- Genre balance: s28 now has no aortic dissection or tamponade case. Both are well covered elsewhere (s05 chest-pain-01, cva-09, ems-30, and s50 shock), and new dissection cases kept colliding with them. *(samps-replace-s32-s28.md)*
 - ems-37 and ems-38 in review-extra are copies of ems-23 and ems-30 with planted defects (now fixed). As duplicates they should not ship. *(samps-s35-lensA.md)*
 - ems-30 q1 and q2 repeat s19 abdominal-pain (esmolol before vasodilators, SBP below 120 mmHg and HR 60 to 80/minute). The transfer setting is new but the teaching point is not. Rewrite or accept. *(samps-s35-lensA.md)*
 - ems-24 q2 (stridor and hoarse voice transported first) repeats s44 multiple-patients-22 q4 (the same patient assessed first). Left in place, flagged. *(samps-s35-lensA.md)*
@@ -183,85 +190,80 @@ Select 3.
 
 *Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4, in force 2 June 2025, including the PCP and ACP core and auxiliary medical directives. 2025. https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf
 
-### ems-18: A restaurant patron who feels better
+### ems-18: A patch about a man with a pump
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in an Ontario emergency department that also takes base hospital calls. A primary care paramedic crew patches from a restaurant. A 31-year-old woman with a known peanut allergy developed hives, throat tightness and wheeze 25 minutes ago after eating a satay sauce. She used her own epinephrine autoinjector 0.3 mg IM before the crew arrived, and her symptoms resolved within 10 minutes. She has no other medical history and takes no medications. She is alert, speaks in full sentences and has no wheeze, stridor or rash. She tells the crew she feels fine and will not go to hospital because she must collect her son from daycare.
+You are working in an Ontario emergency department that also takes base hospital calls. A primary care paramedic crew patches from a home 20 minutes away. A 62-year-old man with a left ventricular assist device placed 8 months ago for heart failure has had 2 days of vomiting and diarrhea and is now weak and lightheaded. His wife says the pump controller gave a low-flow alarm twice this morning. The crew cannot feel a radial or carotid pulse, and the automated cuff gives no reading. He is awake, answers questions correctly and says he feels faint when he sits up. His skin is cool. The pulse oximeter will not register. The crew asks whether to start CPR.
 
-- Pulse: 104/minute
-- Resp.: 18/minute
-- BP: 124/78 mmHg
-- O2 sat: 98% on room air
-- Weight: 60 kg
+- Temperature: 36.9°C oral
+- Resp.: 22/minute
 
 #### Q1
-**Which of the following determines whether the crew may accept her refusal of transport?**
+**Which of the following is the most appropriate direction to the crew about CPR for this patient?**
 
-- A. Her signature on the refusal form
-- B. Presence of an adult to watch her
-- C. Resolution of all her symptoms
-- D. Whether she has capacity to decide  **(key)**
-- E. Your agreement as base physician
+- A. Apply the AED pads and analyze
+- B. Begin chest compressions now
+- C. Compress only if the pump stops
+- D. Ventilate by bag-valve mask first
+- E. Withhold CPR and keep reassessing  **(key)**
 
-*Explanation:* A person who can understand the information relevant to the decision and appreciate its reasonably foreseeable consequences is capable under the Health Care Consent Act, and a capable person may refuse transport even when the choice seems unwise. The paramedic refusal standard requires the crew to confirm that capacity. She has no duty to sign the form, and a refusal to sign is simply documented. Resolved symptoms do not decide her right to refuse. An adult companion is sensible advice but not the test. The base physician's agreement is not needed for a capable refusal.
+*Explanation:* A continuous-flow pump leaves little pulsatility, so a missing pulse, an absent automated cuff reading and a failed pulse oximeter are expected and do not mean arrest. He is awake and answering correctly, which shows his brain is perfused. The approach summarized from the American Heart Association statement reserves chest compressions for a patient with an assist device who is unresponsive and pulseless with evidence of poor perfusion. Compressions and an AED analysis would harm a perfusing, conscious patient. A pump that stops in a patient who remains awake is a device emergency, not an indication for compressions. He is breathing on his own and does not need assisted ventilation.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
-*Source:* Health Care Consent Act, 1996, S.O. 1996, c. 2, Sched. A (Ontario). https://www.ontario.ca/laws/statute/96h02
+*Source:* Hockstein MA. Continuous-flow left ventricular assist devices: management in the emergency department. J Am Coll Emerg Physicians Open. 2020. https://doi.org/10.1002/emp2.12178
 
 #### Q2
-**Which of the following is the most important risk to explain to her before she decides?**
+**Which of the following contacts should your department make as early as possible for this patient?**
 
-- A. Arrhythmia from the epinephrine dose
-- B. Hypertensive crisis in the next hour
-- C. Recurrence as epinephrine wears off  **(key)**
-- D. Serum sickness over the next week
-- E. Stress cardiomyopathy within 48 hours
+- A. Cardiac surgery on call here
+- B. His family physician's office
+- C. His VAD program coordinator  **(key)**
+- D. Home care nursing agency
+- E. The ICU charge nurse
 
-*Explanation:* IM epinephrine acts for a short time, and symptoms can return as it wears off or as a biphasic reaction hours later, when she may be alone with her child. That is the risk she must weigh to appreciate the consequences of refusing. Her pulse of 104/minute and BP of 124/78 mmHg after one 0.3 mg dose do not suggest an arrhythmia or hypertensive crisis. Serum sickness is not a feature of food anaphylaxis. Stress cardiomyopathy after epinephrine is rare and would not be the leading concern in a healthy 31-year-old.
+*Explanation:* Patients with an assist device are discharged with a VAD coordinator from their advanced heart failure program, who should be involved as early as possible, even when the patient arrives at a hospital other than the implanting centre. The coordinator links the emergency team with the heart failure team, helps interpret alarms and device settings, and arranges disposition. A local surgeon may have no experience with his device. His family physician and home care agency cannot guide acute device care. The ICU charge nurse is part of internal preparation but is not the device expert.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
-*Source:* Shaker MS, Wallace DV, Golden DBK, et al. Anaphylaxis, a 2020 practice parameter update, systematic review, and GRADE analysis. J Allergy Clin Immunol. 2020. https://pubmed.ncbi.nlm.nih.gov/32001253/
+*Source:* Hockstein MA. Continuous-flow left ventricular assist devices: management in the emergency department. J Am Coll Emerg Physicians Open. 2020. https://doi.org/10.1002/emp2.12178
 
 #### Q3
-*Update:* You speak with her on the patch. She understands and appreciates the risk of recurrence and still declines transport. You judge her capable.
-
-**Which of the following instructions should the crew give her before they leave the restaurant?**
+**Which of the following should your team prepare before this patient arrives?**
 
 Select 3.
 
-- A. Arrange follow-up with her own physician  **(key)**
-- B. Call 911 if any symptoms return  **(key)**
-- C. Drive herself to hospital if symptoms return
-- D. Replace the used autoinjector today  **(key)**
-- E. Take diphenhydramine first for throat tightness
-- F. Take prednisone 50 mg daily for 3 days
-- G. Use the next autoinjector only if she faints
+- A. Automated cuff as the BP guide
+- B. Crystalloid for cautious boluses  **(key)**
+- C. Manual cuff for return-to-flow MAP  **(key)**
+- D. Nitroglycerin infusion
+- E. Pads for immediate cardioversion
+- F. Pulse oximetry as perfusion guide
+- G. Resuscitation bay with monitoring  **(key)**
 
-*Explanation:* The refusal standard requires the crew to advise her to call 911 again if concerns arise. She used her only autoinjector, so she needs a replacement today, and follow-up with her physician allows allergy referral and an action plan. Driving herself risks a reaction at the wheel. Diphenhydramine does not treat airway swelling and delays epinephrine. Glucocorticoids have not been shown to prevent a biphasic reaction. Epinephrine should be used at the first sign of airway or breathing symptoms, not held until she faints.
+*Explanation:* He should go to a resuscitation bay with monitoring, where the team can listen for the pump hum and assess him. Automated cuffs and pulse oximeters are unreliable with little pulsatility, so mean arterial pressure is measured with a manual cuff by the return-to-flow method, or with an arterial line if that fails. Vomiting and diarrhea with low-flow alarms suggest an underfilled left ventricle causing suction events, which cautious fluid can correct, while watching for right ventricular failure. Cardioversion pads are for an arrhythmia, which has not been reported. Nitroglycerin would reduce filling further.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
-*Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Basic Life Support Patient Care Standards, version 3.4, including the paramedic prompt cards. 2023. https://files.ontario.ca/moh_2/moh-standards-basic-life-support-patient-care-standards-v3-4-en-2023-03-10.pdf
+*Source:* Hockstein MA. Continuous-flow left ventricular assist devices: management in the emergency department. J Am Coll Emerg Physicians Open. 2020. https://doi.org/10.1002/emp2.12178
 
 #### Q4
-*Update:* Three hours later the same crew brings her in. Her throat tightness and wheeze returned at home. They gave epinephrine IM twice, 5 minutes apart, and she improved.
+*Update:* The crew arrives with him awake. The paramedic begins the handover while your team moves him to the stretcher.
 
-**Which of the following details from the crew handover most supports a prolonged period of observation?**
+**Which of the following details from the crew is most useful for your next decisions about this patient?**
 
-- A. Food trigger was a peanut sauce
-- B. Heart rate of 104/minute earlier
-- C. Hives present when they arrived
-- D. Time since her last meal
-- E. Two more epinephrine doses needed  **(key)**
+- A. Automated BP readings en route
+- B. Controller alarms and readings en route  **(key)**
+- C. His current level of alertness
+- D. His home medication list
+- E. Pulse oximetry values en route
 
-*Explanation:* She needed two more doses of epinephrine for a recurrence, and the 2020 practice parameter advises extended observation for patients with severe anaphylaxis or those who need more than one dose. The crew's count of doses and their timing is information only they hold. A peanut trigger and hives do not by themselves predict a further reaction. Her earlier heart rate reflected the first dose of epinephrine. The time since her last meal has no role in deciding how long to observe.
+*Explanation:* The controller shows flow, power and alarms, and what it displayed at home and during transport is known only to the crew and his wife. Low-flow alarms with dehydration point to suction events from an underfilled ventricle, while power spikes suggest pump thrombosis, which changes management. Automated BP and pulse oximetry readings are unreliable in patients with continuous-flow pumps. His alertness can be assessed on arrival, and his medication list can come from his wife or pharmacy.
 
 *Key feature:* Emergency medical services (EMS) 2. At handover, ask paramedics for details only they know, like scene findings, treatments given, and changes en route.
 
-*Source:* Shaker MS, Wallace DV, Golden DBK, et al. Anaphylaxis, a 2020 practice parameter update, systematic review, and GRADE analysis. J Allergy Clin Immunol. 2020. https://pubmed.ncbi.nlm.nih.gov/32001253/
+*Source:* Hockstein MA. Continuous-flow left ventricular assist devices: management in the emergency department. J Am Coll Emerg Physicians Open. 2020. https://doi.org/10.1002/emp2.12178
 
 ### ems-19: A call for breathlessness at home
 
@@ -386,77 +388,78 @@ Select 4.
 
 *Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Basic Life Support Patient Care Standards, version 3.4, including the paramedic prompt cards. 2023. https://files.ontario.ca/moh_2/moh-standards-basic-life-support-patient-care-standards-v3-4-en-2023-03-10.pdf
 
-### ems-21: Patch from a farmhouse at breakfast
+### ems-21: A headache in a man who uses a wheelchair
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a small Ontario community hospital emergency department that is not a designated stroke centre. A primary care paramedic crew patches at 0740 from a farmhouse. A 66-year-old man was found by his wife at 0710 with left arm weakness and slurred speech. She last saw him well at 0620. He takes gliclazide and metformin. His glucose was 2.6 mmol/L, and after glucagon 1 mg IM it is now 6.8 mmol/L. His left facial droop and slurred speech persist. His left arm falls rapidly when raised and his left grip is weak, for a Los Angeles Motor Scale score of 4. A designated stroke centre with thrombectomy is 50 minutes away by land. Your hospital is 15 minutes away.
+You are working in an Ontario emergency department that also takes base hospital calls. An advanced care paramedic crew patches from an apartment 25 minutes away. A 36-year-old man with C6 complete tetraplegia from a diving injury 10 years ago has had a pounding headache, a stuffy nose and blurred vision for 30 minutes. He is flushed and sweating above the level of his injury. He is lying flat in bed. His indwelling urethral catheter drains into a leg bag, which is empty. He takes baclofen and oxybutynin. His usual systolic pressure is about 100 mmHg.
 
-- Pulse: 88/minute irregular
+- Pulse: 52/minute regular
 - Resp.: 16/minute
-- BP: 172/94 mmHg
-- O2 sat: 96% on room air
-- Weight: 92 kg
+- BP: 186/102 mmHg
+- O2 sat: 97% on room air
 
 #### Q1
-**Which of the following is the most appropriate direction to the crew?**
+**Which of the following is the most appropriate first direction to the crew for this patient?**
 
-- A. Bring him to your department first
-- B. Direct transport to the stroke centre  **(key)**
-- C. Observe on scene for 20 minutes
-- D. Release him at home with his wife
-- E. Repeat glucagon and recheck in 15 minutes
+- A. Apply nitroglycerin paste now
+- B. Check a 12-lead ECG first
+- C. Give ketorolac for the headache
+- D. Sit him up and lower his legs  **(key)**
+- E. Start oxygen and transport flat
 
-*Explanation:* A glucose below 3 mmol/L excludes a patient from the Ontario acute stroke protocol only until it is corrected. His deficit persists at a glucose of 6.8 mmol/L, so he remains eligible, and he can reach the stroke centre well within 6 hours of 0620. Stopping first at a hospital that is not a stroke centre delays imaging and treatment. Observing on scene wastes time that decides the outcome. His glucose is already corrected, so more glucagon is not needed. A persistent deficit cannot be attributed to hypoglycemia, so leaving him at home would miss a stroke.
+*Explanation:* His systolic pressure of 186 mmHg is 86 mmHg above his usual 100 mmHg, far more than the 20 mmHg rise that defines the condition, with a pounding headache, flushing and sweating above his injury and a slow pulse, which is autonomic dysreflexia. The first step in the Consortium for Spinal Cord Medicine guideline is to sit the person up and lower the legs, and to loosen clothing or constrictive devices. Keeping him flat forgoes this step. A drug comes only if the pressure stays at 150 mmHg or more after the trigger is sought. An ECG and ketorolac do not remove the cause.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
-*Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Basic Life Support Patient Care Standards, version 3.4, including the paramedic prompt cards. 2023. https://files.ontario.ca/moh_2/moh-standards-basic-life-support-patient-care-standards-v3-4-en-2023-03-10.pdf
+*Source:* Krassioukov A, Linsenmeyer TA, Beck LA, and colleagues, Consortium for Spinal Cord Medicine. Evaluation and management of autonomic dysreflexia and other autonomic dysfunctions: preventing the highs and lows. Management of blood pressure, sweating, and temperature dysfunction. Top Spinal Cord Inj Rehabil. 2021. https://doi.org/10.46292/sci2702-225
 
 #### Q2
-**Which of the following best describes the significance of his Los Angeles Motor Scale score of 4?**
+**Which of the following is the most important next step for the crew in this patient?**
 
-- A. Contraindication to thrombolysis
-- B. Excludes a posterior circulation stroke
-- C. Positive large vessel occlusion screen  **(key)**
-- D. Predicts an intracerebral hemorrhage
-- E. Requires an air ambulance response
+- A. Apply a cold cloth to his head
+- B. Check catheter and tubing for kinks  **(key)**
+- C. Give acetaminophen 1 g PO
+- D. Recheck BP in 30 minutes
+- E. Wait for pressure to settle alone
 
-*Explanation:* A score of 4 or more is a positive clinical screen for large vessel occlusion. The Ontario prompt card then classifies him as CTAS 2, asks the crew to report the positive screen, and in some regions allows direct transport to a thrombectomy centre within 6 hours of onset. The scale does not separate hemorrhage from infarction, which needs CT. It tests face, arm and grip only, so it cannot exclude a posterior stroke. It is not a contraindication to thrombolysis and does not by itself call for an aircraft.
+*Explanation:* Bladder and bowel problems are the most common triggers, and an empty leg bag in a man with an indwelling catheter suggests the drainage is blocked. The guideline advises checking the catheter system along its full length for kinks, folds, constrictions or an overfilled bag. Pressure is checked every few minutes during an episode, not every 30 minutes. The pressure will not settle while the trigger persists. Acetaminophen and a cold cloth treat the headache but not its cause.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
-*Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Basic Life Support Patient Care Standards, version 3.4, including the paramedic prompt cards. 2023. https://files.ontario.ca/moh_2/moh-standards-basic-life-support-patient-care-standards-v3-4-en-2023-03-10.pdf
+*Source:* Krassioukov A, Linsenmeyer TA, Beck LA, and colleagues, Consortium for Spinal Cord Medicine. Evaluation and management of autonomic dysreflexia and other autonomic dysfunctions: preventing the highs and lows. Management of blood pressure, sweating, and temperature dysfunction. Top Spinal Cord Inj Rehabil. 2021. https://doi.org/10.46292/sci2702-225
 
 #### Q3
-**Which of the following findings would have excluded him from transport under the Ontario acute stroke protocol?**
+**Which of the following medications should your department have ready if his systolic pressure stays at 150 mmHg or more?**
 
-- A. GCS of 9 on the crew's assessment  **(key)**
-- B. Glucose of 2.6 mmol/L before glucagon
-- C. Improvement in weakness during transport
-- D. Last seen well 4 hours earlier
-- E. Use of apixaban for atrial fibrillation
+- A. amlodipine 10 mg PO
+- B. lorazepam 1 mg SL
+- C. metoprolol 5 mg IV
+- D. nitroglycerin paste 2.5 cm  **(key)**
+- E. ondansetron 4 mg IV
 
-*Explanation:* A GCS below 10 is a listed contraindication, because such a patient needs airway assessment and stabilization at the closest emergency department first. A low glucose excludes him only if the deficit resolves after correction. Improvement during transport does not change the destination, and the protocol says to continue to the stroke centre. A last seen well time of 4 hours still allows arrival within 6 hours. Anticoagulant use is important for the stroke team but is not a contraindication to transport.
+*Explanation:* The guideline recommends a rapid-onset, short-acting antihypertensive, such as nitroglycerin paste, nifedipine, hydralazine or sublingual clonidine, when systolic pressure stays at 150 mmHg or more after positioning and a search for the trigger. Recent use of a phosphodiesterase-5 inhibitor should be excluded before a nitrate is given. Metoprolol would worsen his slow pulse. Amlodipine acts too slowly and lasts too long. Lorazepam and ondansetron treat symptoms rather than the pressure.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
-*Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Basic Life Support Patient Care Standards, version 3.4, including the paramedic prompt cards. 2023. https://files.ontario.ca/moh_2/moh-standards-basic-life-support-patient-care-standards-v3-4-en-2023-03-10.pdf
+*Source:* Krassioukov A, Linsenmeyer TA, Beck LA, and colleagues, Consortium for Spinal Cord Medicine. Evaluation and management of autonomic dysreflexia and other autonomic dysfunctions: preventing the highs and lows. Management of blood pressure, sweating, and temperature dysfunction. Top Spinal Cord Inj Rehabil. 2021. https://doi.org/10.46292/sci2702-225
 
 #### Q4
-**Which of the following details is most important for the crew to relay to the stroke centre before arrival?**
+*Update:* The crew straightens a kink in the tubing, and 700 mL of urine drains. He is sitting up, his headache is easing, and his BP is now 124/78 mmHg.
 
-- A. Blood pressure at the scene
-- B. Current glucose of 6.8 mmol/L
-- C. Daily use of gliclazide
-- D. Last seen normal at 0620  **(key)**
-- E. Time found by his wife, 0710
+**Which of the following is the most appropriate direction to the crew now for this patient?**
 
-*Explanation:* Eligibility for thrombolysis and thrombectomy is timed from when he was last known to be well, 0620, not from when he was found at 0710. Reporting the discovery time as onset would shorten or distort his treatment window. The scene blood pressure and the corrected glucose will be measured again at the door. Gliclazide explains the low glucose but does not change the stroke team's decisions before arrival.
+- A. Give nitroglycerin paste anyway
+- B. Leave him at home with no follow-up
+- C. Lie him flat to rest
+- D. Remove the catheter and leave
+- E. Transport for monitoring of recurrence  **(key)**
+
+*Explanation:* After an episode resolves, the guideline advises checking pressure every few minutes until stable and close monitoring for at least 2 hours for recurrent dysreflexia or low blood pressure, which is not possible if the crew leaves. A nitrate after the pressure has normalized risks hypotension. Lying him flat works against the position that helps control pressure. Removing the catheter leaves his bladder without drainage.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
-*Source:* Heart and Stroke Foundation of Canada. Canadian Stroke Best Practice Recommendations. Acute Stroke Management module. 7th edition, 2022 update. https://pubmed.ncbi.nlm.nih.gov/36529857/
+*Source:* Krassioukov A, Linsenmeyer TA, Beck LA, and colleagues, Consortium for Spinal Cord Medicine. Evaluation and management of autonomic dysreflexia and other autonomic dysfunctions: preventing the highs and lows. Management of blood pressure, sweating, and temperature dysfunction. Top Spinal Cord Inj Rehabil. 2021. https://doi.org/10.46292/sci2702-225
 
 ### ems-22: Patch from a highway rest stop
 
@@ -805,77 +808,72 @@ You are working in a regional hospital emergency department in Saskatchewan. At 
 
 *Source:* Sever MS, Vanholder R, and the Renal Disaster Relief Task Force of the International Society of Nephrology with European Renal Best Practice. Recommendation for the management of crush victims in mass disasters. Nephrol Dial Transplant. 2012. Includes the short field version. https://doi.org/10.1093/ndt/gfs156
 
-### ems-27: A morning call from a subway station
+### ems-27: A call from a house party
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a Toronto emergency department that takes base hospital calls. At 0815 a paramedic supervisor patches from a subway station 2 km away. A liquid was released on a crowded platform. Many commuters have pinpoint pupils, runny noses, vomiting and chest tightness. Fire crews in protective suits are bringing people to the street. The service's paramedics are authorized for the adult and pediatric nerve agent exposure auxiliary directives. The supervisor first describes a 48-year-old man, about 80 kg, who is vomiting and wheezing with copious bronchial secretions. He is alert, oriented and moving all limbs.
+You are working in an Ontario emergency department that takes base hospital calls. At 0140 an advanced care paramedic supervisor patches from a house party 6 minutes away. Eleven young adults became unwell after snorting a white powder sold as cocaine. Four are unresponsive with pinpoint pupils, each breathing 2 to 6 times a minute. Three more are drowsy but rousable, breathing 10 to 12 times a minute with oxygen saturations of 95% to 97%. The rest are anxious but alert. Two paramedic crews and a fire truck are on scene, and two more crews are 10 minutes away. A firefighter says he touched powder on a table, feels dizzy and asks whether he needs hazmat decontamination.
 
-- Pulse: 52/minute
-- Resp.: 28/minute
-- BP: 150/90 mmHg
-- O2 sat: 90% on room air
-- Weight: 80 kg
 
 #### Q1
-**Which of the following is the initial atropine dose for this man under the Ontario nerve agent directive?**
+**Which of the following patients should the crews treat first under SALT mass casualty triage?**
 
-- A. atropine 0.5 mg IM
-- B. atropine 2 mg IM  **(key)**
-- C. atropine 4 mg IM
-- D. atropine 6 mg IM
-- E. atropine 8 mg IM
+- A. Alert man with chest tightness
+- B. Drowsy woman breathing 12/minute
+- C. Man with a pulse, breathing 4/minute  **(key)**
+- D. Tense, alert woman with pulse 130/minute
+- E. Vomiting man who is fully alert
 
-*Explanation:* Vomiting, bronchospasm and bronchial secretions with a normal level of awareness make this a moderate exposure, for which the directive gives atropine 2 mg IM, repeated every 5 minutes until the secretions are controlled. The 6 mg dose is for severe exposure, defined by decreased awareness, paralysis, seizure or apnea, which he does not have. A dose of 0.5 mg is the pediatric dose for a child under 10 kg. Doses of 4 and 8 mg are not steps in the directive.
+*Explanation:* SALT directs crews to assess first those who are still or have an obvious life threat, and to begin with brief lifesaving interventions such as opening the airway. A man with a pulse breathing 4 times a minute does not obey commands and has failing breathing, so he is immediate and can be rescued with ventilation and an antidote. The tense woman with a pulse of 130/minute obeys commands, has a pulse and is not in respiratory distress, so she passes every SALT check, because SALT uses no heart rate cut-off. The drowsy woman is still breathing adequately, and alert patients who can speak and move are assessed last.
 
 *Key feature:* Emergency medical services (EMS) 4. In mass casualty or disaster events, guide EMS on field triage, early treatment, and decontamination before arrival.
 
-*Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4, in force 2 June 2025, including the PCP and ACP core and auxiliary medical directives. 2025. https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf
+*Source:* Lerner EB, Schwartz RB, Coule PL, et al. Mass casualty triage: an evaluation of the data and development of a proposed national guideline. Disaster Med Public Health Prep. 2008. https://pubmed.ncbi.nlm.nih.gov/18769263/
 
 #### Q2
-**Which of the following best describes when he should be decontaminated?**
+**Which of the following is the most appropriate direction for the three drowsy patients breathing 10 to 12 times a minute?**
 
-- A. After antidotes, at the hospital doors
-- B. Alongside antidote treatment at scene  **(key)**
-- C. Before antidotes, with a full wet wash
-- D. Not needed after a vapour exposure
-- E. Only if skin symptoms develop later
+- A. Buprenorphine-naloxone 16 mg SL each
+- B. Monitor, naloxone if rate below 10  **(key)**
+- C. Naloxone 0.4 mg IM each now
+- D. Naloxone 2 mg IN each now
+- E. Release them to friends at the scene
 
-*Explanation:* The directive states that decontamination must be integrated with antidote treatment. A liquid agent keeps absorbing through skin and clothing, so removing clothing and decontaminating proceeds at the same time as atropine and pralidoxime. Holding antidotes until a full wash is finished lets secretions drown him. Leaving decontamination until the hospital doors carries the agent to the ambulance and the department. This was a liquid release, so it is not a vapour exposure only. Waiting for skin symptoms allows ongoing absorption.
+*Explanation:* The Ontario opioid toxicity directive gives naloxone for altered consciousness with a respiratory rate below 10/minute, or when ventilation is inadequate or needs ongoing assistance. These three breathe 10 to 12 times a minute with saturations of 95% or more, so they meet neither condition and need close watching, with naloxone if the rate falls below 10. Naloxone given now, by any route, goes beyond the directive and can provoke withdrawal and combative behaviour. Buprenorphine-naloxone is only for withdrawal after naloxone, with a COWS score of 8 or more. Drowsy patients who took an unknown potent powder cannot be released at the scene, because their sedation may deepen.
 
 *Key feature:* Emergency medical services (EMS) 4. In mass casualty or disaster events, guide EMS on field triage, early treatment, and decontamination before arrival.
 
 *Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4, in force 2 June 2025, including the PCP and ACP core and auxiliary medical directives. 2025. https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf
 
 #### Q3
-*Update:* A 30-year-old woman, about 60 kg, is unresponsive and seizing, with pinpoint pupils and secretions pouring from her mouth. The crew is preparing to manage her airway.
+*Update:* The firefighter is alert and talking. His respiratory rate is 16/minute, his pupils are normal and his oxygen saturation is 98%.
 
-**Which of the following should the crew give her before attempting to manage her airway?**
+**Which of the following is the most appropriate direction for the firefighter who touched the powder?**
 
-- A. atropine 6 mg IM  **(key)**
-- B. diazepam 10 mg IM
-- C. midazolam 10 mg IM
-- D. naloxone 2 mg IN
-- E. pralidoxime 1800 mg IM
+- A. Alcohol gel on his hands, then work
+- B. Full hazmat decontamination shower
+- C. Naloxone 0.4 mg IM as a precaution
+- D. Transport him as a priority patient
+- E. Wash skin with water and observe  **(key)**
 
-*Explanation:* Seizure and unresponsiveness make this a severe exposure, and the directive calls for atropine 6 mg IM before airway interventions when secretions are copious, because no airway device can ventilate through bronchorrhea. Pralidoxime 1800 mg IM follows as soon as possible after the atropine. A benzodiazepine such as midazolam or diazepam 10 mg IM treats the seizure but does not dry the airway. Her pinpoint pupils come from cholinergic excess, not opioids, so naloxone does not help.
+*Explanation:* The ACMT and AACT position statement says incidental skin contact is very unlikely to cause opioid toxicity, and that skin should be washed with water right away. Alcohol-based hand sanitizers should not be used, because they do not remove the drug and may increase absorption. Naloxone is for objective signs of hypoventilation, not dizziness or anxiety, and he is breathing normally. A hazmat shower and priority transport would pull resources from patients who are barely breathing. Nitrile gloves protect responders during routine handling.
 
 *Key feature:* Emergency medical services (EMS) 4. In mass casualty or disaster events, guide EMS on field triage, early treatment, and decontamination before arrival.
 
-*Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4, in force 2 June 2025, including the PCP and ACP core and auxiliary medical directives. 2025. https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf
+*Source:* Moss MJ, Warrick BJ, Nelson LS, and colleagues. ACMT and AACT position statement: preventing occupational fentanyl and fentanyl analog exposure to emergency responders. J Med Toxicol. 2017. https://doi.org/10.1007/s13181-017-0628-2
 
 #### Q4
-*Update:* Crews carry out a 7-year-old boy, about 24 kg. He is alert, vomiting and wheezing, with copious secretions. He has received his first dose of atropine IM.
+*Update:* One man is still breathing only 2 times a minute, with a pulse, after three intranasal doses of naloxone. He is being ventilated with a bag-valve mask.
 
-**Which of the following pralidoxime doses should the crew give him next under the Ontario pediatric directive?**
+**Which of the following is the most appropriate direction to the crew for this man?**
 
-- A. pralidoxime 240 mg IM
-- B. pralidoxime 360 mg IM  **(key)**
-- C. pralidoxime 600 mg IM
-- D. pralidoxime 1080 mg IM
-- E. pralidoxime 1800 mg IM
+- A. Flumazenil 0.2 mg IV now
+- B. Rapid transport without bagging
+- C. Stop bagging and reassess later
+- D. Tag as expectant and move on
+- E. Ventilate and authorize more naloxone  **(key)**
 
-*Explanation:* He is alert, with vomiting, bronchospasm and secretions, which makes this a moderate exposure. For a child under 40 kg the pediatric directive gives pralidoxime 15 mg/kg IM, and 24 kg x 15 mg/kg is 360 mg, below the 600 mg maximum single dose. A dose of 240 mg is 10 mg/kg and underdoses him. The 600 mg dose is the adult moderate dose, 25 mg/kg for him. A dose of 1080 mg is 45 mg/kg, the severe exposure dose, which is capped at 600 mg under 40 kg and does not apply because he has no decreased awareness, paralysis, seizure or apnea. The 1800 mg dose is for a severely exposed adult.
+*Explanation:* The directive allows three doses of naloxone and advises a patch for further doses when there is no response, with continued airway management. A very potent opioid in the powder may need more naloxone than usual. If there is still no response, glucose should be checked. He has a pulse and can be kept alive with ventilation, so he is not expectant. Stopping ventilation or transporting without it would let him become hypoxic. Flumazenil is not part of the directive and can provoke seizures when other drugs are involved.
 
 *Key feature:* Emergency medical services (EMS) 4. In mass casualty or disaster events, guide EMS on field triage, early treatment, and decontamination before arrival.
 
@@ -1389,76 +1387,79 @@ You are working in the emergency department of an Ontario lead trauma hospital. 
 
 *Source:* CRASH-2 collaborators. The importance of early treatment with tranexamic acid in bleeding trauma patients: an exploratory analysis of the CRASH-2 randomised controlled trial. Lancet. 2011. https://pubmed.ncbi.nlm.nih.gov/21439633/
 
-### ems-36: Patch after missed dialysis during a storm
+### ems-36: A patch from a shopping mall
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in an Ontario emergency department that also takes base hospital calls. An advanced care paramedic crew patches from a farmhouse 30 minutes away. A 67-year-old woman on hemodialysis missed her last two sessions because of a snowstorm. She is weak and lightheaded. The crew's 12-lead ECG shows a regular wide complex rhythm at 44/minute with a QRS of 160 ms, peaked T waves and no visible P waves. They have a running IV in the right forearm. Her left forearm has an arteriovenous fistula. She has mild crackles at both lung bases.
+You are working in an Ontario emergency department that also takes base hospital calls. An advanced care paramedic crew patches from a shopping mall. A 34-year-old woman with epilepsy had a generalized convulsion lasting about 90 seconds while waiting in line. It stopped before the crew arrived, and she has had no medication. She is now alert, oriented and back to her usual self. She takes lamotrigine and has not missed doses. Her last seizure, 8 months ago, looked the same. She is 11 weeks pregnant. She has no injuries, no fever and no recent illness. Her vital signs and glucose are normal. Her roommate can stay with her tonight. She asks to go home, and the crew asks whether she meets the treat-and-discharge criteria.
 
-- Pulse: 44/minute
-- Resp.: 22/minute
-- BP: 82/50 mmHg
-- O2 sat: 93% on room air
+- Temperature: 36.8°C oral
+- Pulse: 84/minute regular
+- Resp.: 16/minute
+- BP: 118/72 mmHg
+- O2 sat: 98% on room air
 - Weight: 70 kg
 
 #### Q1
-**Which of the following is the most appropriate first direction to the crew?**
+**Which of the following features excludes her from paramedic treat and discharge under the Ontario seizure directive?**
 
-- A. calcium gluconate 1 g IV  **(key)**
-- B. dopamine 5 mcg/kg/minute IV
-- C. epinephrine 0.02 mg IV
-- D. furosemide 80 mg IV
-- E. sodium bicarbonate 50 mmol IV
+- A. Her age of 34 years
+- B. Last seizure 8 months ago
+- C. Pregnancy at 11 weeks  **(key)**
+- D. Roommate staying overnight
+- E. Seizure lasting 90 seconds
 
-*Explanation:* She is on dialysis and has ECG changes of hyperkalemia with hypotension and bradycardia, which meets the Ontario advanced care hyperkalemia directive. Calcium gluconate 1 g IV over 2 to 3 minutes stabilizes the myocardium within minutes and may be repeated after 5 minutes. Her rate and pressure also meet the advanced care symptomatic bradycardia directive, which includes dopamine, but a bradycardia caused by hyperkalemia responds poorly to chronotropes until calcium stabilizes the myocardium, so dopamine is not the first direction. Push-dose epinephrine and sodium bicarbonate are not part of the directive. Furosemide does little in a patient who depends on dialysis.
+*Explanation:* The Ontario seizure directive allows treat and discharge only when every criterion is met, and one criterion is that the patient is not pregnant. She otherwise qualifies: she is between 18 and 65, has known epilepsy, takes her medication, had a single seizure like her usual ones, is back to normal with normal vital signs, received no midazolam and has no injury. A responsible adult staying for 4 hours is a requirement that her roommate meets. A 90-second seizure matching her usual pattern does not exclude her.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
 *Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4, in force 2 June 2025, including the PCP and ACP core and auxiliary medical directives. 2025. https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf
 
 #### Q2
-**Which of the following should the crew give along with the calcium gluconate?**
+**Which of the following is the most appropriate direction to the crew about this patient now?**
 
-- A. furosemide 40 mg IV
-- B. ipratropium 0.5 mg NEB
-- C. magnesium sulfate 2 g IV
-- D. normal saline 2 L IV
-- E. salbutamol 10 mg NEB  **(key)**
+- A. Arrange a clinic visit tomorrow
+- B. Discharge her with her roommate
+- C. Give midazolam 10 mg IM first
+- D. Recommend transport for assessment  **(key)**
+- E. Transport only if she seizes again
 
-*Explanation:* The directive pairs calcium with salbutamol 10 mg nebulized, or 1600 mcg by inhaler, because the two act differently: calcium protects the heart while salbutamol shifts potassium into cells. Ipratropium and magnesium do not lower potassium. Two litres of saline would worsen the fluid overload shown by her crackles after missed dialysis. Furosemide does not help a patient who depends on dialysis.
+*Explanation:* Because she is pregnant, the crew cannot use the treat-and-discharge pathway, so the direction is to recommend transport for assessment and explain why. Discharging her with her roommate, or arranging a clinic visit instead, would apply a pathway she does not meet. Midazolam is indicated only for an active generalized motor seizure. Waiting for another seizure before transport ignores the directive's exclusion.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
 *Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4, in force 2 June 2025, including the PCP and ACP core and auxiliary medical directives. 2025. https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf
 
 #### Q3
-**Which of the following routes should the crew use to give the calcium gluconate?**
+*Update:* While the crew is still with her, she has a second generalized convulsion that has lasted 3 minutes. The crew has IV access.
 
-- A. Any IV, even if positional
-- B. Fistula in the left forearm
-- C. Intramuscular injection
-- D. Right forearm IV running well  **(key)**
-- E. Subcutaneous infusion
+**Which of the following midazolam doses should the crew give her now under the Ontario directive?**
 
-*Explanation:* The directive allows calcium gluconate only through an IV, intraosseous line or central venous access device that is running well, because extravasation injures tissue. Her right forearm IV meets that condition. A positional IV risks extravasation. The fistula is not one of the listed routes and must be protected for her dialysis. Intramuscular and subcutaneous injection are not routes for calcium and would cause tissue injury.
+- A. midazolam 14 mg IM
+- B. midazolam 2 mg IV
+- C. midazolam 5 mg IV  **(key)**
+- D. midazolam 7 mg IV
+- E. midazolam 10 mg IV
+
+*Explanation:* The directive gives midazolam 0.1 mg/kg IV to a maximum single dose of 5 mg, repeated once after 5 minutes if needed. At 70 kg, 0.1 x 70 = 7 mg, which is capped at 5 mg. The IM dose is 0.2 mg/kg to a maximum of 10 mg, so 14 mg IM exceeds the cap. A dose of 10 mg IV is the IM maximum given by the wrong route, and 2 mg IV is below the directive dose.
 
 *Key feature:* Emergency medical services (EMS) 1. When EMS calls ahead, get a focused report, give field direction as needed, and ready the department and hospital.
 
 *Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4, in force 2 June 2025, including the PCP and ACP core and auxiliary medical directives. 2025. https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf
 
 #### Q4
-*Update:* She arrives after two doses of calcium gluconate and one of salbutamol. The paramedic begins the handover.
+*Update:* The crew arrives. She is drowsy but breathing well. The paramedic begins the handover.
 
-**Which of the following details from the crew is most useful for your next decisions?**
+**Which of the following handover details is most important for your team's next decisions about her?**
 
-- A. Current heart rate on the monitor
-- B. Current oxygen saturation
-- C. Her usual dry weight
-- D. Phone number of her dialysis unit
-- E. QRS width before and after calcium  **(key)**
+- A. Current capillary glucose
+- B. Her current level of alertness
+- C. Her roommate's phone number
+- D. Her usual lamotrigine dose
+- E. Seizure length and midazolam time  **(key)**
 
-*Explanation:* The directive asks crews to record a 12-lead ECG before and after treatment so that the response can be judged. How far her QRS narrowed after calcium, and whether it is widening again as the 20 to 60 minute effect wears off, tells you when to repeat calcium and how urgently she needs dialysis. Her current heart rate and saturation are on your monitor. Her dry weight and the dialysis unit's number come from her chart and do not guide the next minutes.
+*Explanation:* A structured handover covers the treatments given and the response. How long the second seizure lasted and when midazolam was given are known only to the crew, and they tell your team whether another benzodiazepine dose is due and when to move to a second-line drug if she seizes again. Her glucose and alertness can be checked on arrival. Her lamotrigine dose and her roommate's number can come from her or her bottles later.
 
 *Key feature:* Emergency medical services (EMS) 2. At handover, ask paramedics for details only they know, like scene findings, treatments given, and changes en route.
 
-*Source:* Ontario Ministry of Health, Emergency Health Regulatory and Accountability Branch. Advanced Life Support Patient Care Standards, version 5.4, in force 2 June 2025, including the PCP and ACP core and auxiliary medical directives. 2025. https://www.ontario.ca/files/2025-04/moh-advanced-life-support-als-patient-care-standards-pcs-5.4-en-2025-04-23.pdf
+*Source:* Iedema R, Ball C, Daly B, et al. Design and trial of a new ambulance-to-emergency department handover protocol: IMIST-AMBO. BMJ Qual Saf. 2012. https://pubmed.ncbi.nlm.nih.gov/22626739/

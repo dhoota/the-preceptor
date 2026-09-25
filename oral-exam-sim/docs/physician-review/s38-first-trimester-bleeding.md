@@ -7,10 +7,19 @@
 Quoted from the pipeline notes and the review reports, each with its report name. A later review may have fixed an earlier flag. The SAMP text below is always the current version.
 
 - s38 ftb-17 q3 same-day review. 35 q3 progesterone to 10 weeks. 36 q2 low anti-D titre. 37 q4 SOGC 460 via secondary summary.
+- first-trimester-bleeding-29 q2 still keys red cells after 1 L of crystalloid for ongoing bleeding. This is the same keyed decision as shock-17 q4 (s50) and as other hemorrhage SAMPs. The athlete hook that made it a copy is gone. Every alternative keyed decision for this case is already used elsewhere (O negative cells, os tissue removal, misoprostol). Keep it, or drop one of the two. *(samps-last-check.md)*
+- first-trimester-bleeding-29 q1 and q3 and first-trimester-bleeding-34 q3 all teach the postural pulse rise, as signed-off first-trimester-bleeding-02 and -15 do. KF1 names orthostatic change, so some repetition is expected. Consider cutting one. *(samps-last-check.md)*
 - first-trimester-bleeding-25 q3 still cites ACOG 2018. SOGC 414 may cover the same advice. *(samps-overlap-pass2a-review.md)*
 - msk-16 and first-trimester-bleeding-19 are new cases. Please check them in full. *(samps-overlap-pass2a.md)*
 - first-trimester-bleeding-19 q3 cites a US source (CDC U.S. SPR 2024) with the SOGC 2016 consensus. The SOGC chapter supports removal once ectopic pregnancy is excluded. The CDC text supplies the risks of leaving the IUD in, including septic miscarriage and preterm birth. The figure of 15 to 50% ectopic with an IUD in situ comes from the SOGC chapter abstract. *(samps-overlap-pass2a.md)*
 - first-trimester-bleeding-25 q1 and q2 rely on SOGC Guideline No. 414 for two claims: a previous ectopic is the strongest risk factor, and rupture can occur at any hCG level. I confirmed the guideline and its scope, but not the exact sentences, because the full text is behind a paywall. *(samps-overlap-pass2a.md)*
+- first-trimester-bleeding-25 and -34 cite the US Society of Family Planning and first-trimester-bleeding-25 and -38 cite NICE NG126, because SOGC 414 and 460 could not be opened. Please check them against the SOGC guidelines. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- first-trimester-bleeding-34 q2 is conceptually close to first-trimester-bleeding-03 and -12 (pregnancy of unknown location, and a cervical source not locating the pregnancy). The setting and the other keys differ. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- first-trimester-bleeding-38 q3 avoids IV immunoglobulin as a distractor because ESHRE conditionally allows it after four or more losses. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- first-trimester-bleeding-29: decide whether the shared athlete relative-tachycardia hook with shock-17 is acceptable, or which of the two should change. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- first-trimester-bleeding-33 q3 still rests on ACOG 200 for a 1 to 2 week visit. SOGC 460 leaves the form of follow-up open. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- first-trimester-bleeding-21 still cites only ACOG for the day 4 to day 7 fall of 15%. SOGC 414 body text could not be opened. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- first-trimester-bleeding-38: SOGC 460 recommendation 12 advises against routine RhIg before 12 weeks. The key assumes 13 weeks by dates counts, and the embryo is now sized at about 12 weeks. *(samps-replace-s27-s29-s34-s38-s52.md)*
 - first-trimester-bleeding-19. The scenario (10 weeks, a live intrauterine pregnancy on an earlier scan, heavy bleeding with clots and strong cramps) and the q1 and q3 teaching (remove tissue from the os, then uterine aspiration) repeat s10 first-trimester-bleeding-07. q2 is now new. Decide whether to rebuild the whole case. *(samps-s38-lensA.md)*
 - first-trimester-bleeding-25 q1. The point that metoprolol blunts tachycardia in hemorrhage repeats s50 shock-32. The ruptured ectopic scenario also overlaps s50 shock-17 and s10 first-trimester-bleeding-01. The new q2 glucagon angle is distinct. Decide whether q1 should stay. *(samps-s38-lensA.md)*
 - first-trimester-bleeding-38 q2. RhIG after molar evacuation is also an accepted answer in s10 first-trimester-bleeding-11 q4. The s38 version adds the pending pathology and partial versus complete mole reasoning, so I left it. *(samps-s38-lensA.md)*
@@ -23,6 +32,18 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - first-trimester-bleeding-39 and first-trimester-bleeding-40 in review-extra.ts are verbatim copies of 23 and 31. They must not enter the batch, as Lens A also said. *(samps-s38-lensB.md)*
 - first-trimester-bleeding-17 q2. The option "Two prior vaginal examinations" rests only on the earlier visit implied by "planned recheck". It is a weak distractor but true as rejected. Low confidence. *(samps-s38-lensB.md)*
 - first-trimester-bleeding-19 q2. The explanation says "young patients hold their BP until late" for a 37-year-old. This is true for her age but could be worded more precisely. *(samps-s38-lensB.md)*
+- first-trimester-bleeding-29 q3 is new. It uses KF1 (detect shock by vital signs) to recognise hidden bleeding after aspiration, even though the vaginal bleeding is light. Please confirm that this fits KF1 and that uterine perforation is the single best answer over hematometra, given an empty uterine cavity and hepatorenal free fluid. The source is Ipas, an international NGO, because the SOGC full texts could not be checked. *(samps-sweep2-final-check.md)*
+- first-trimester-bleeding-29 q3 maps to KF1 ("detect early shock using vital signs and orthostatic changes"). The question uses the vital signs to find hidden bleeding while pad loss is light, which is KF1. But the answer asked for is the cause, uterine perforation. That goes a step past KF1. Please confirm that the mapping is acceptable. *(samps-sweep2-last-check.md)*
+- first-trimester-bleeding-29 q3 still cites Ipas, an international NGO. The spec prefers a Canadian source, and SOGC No. 360 (2018) covers the topic. Its full text could not be opened, so its perforation figures were not checked. If you can open it, it could replace Ipas once the rate is checked. The explanation now gives the rate as Ipas states it, per 1 000 induced abortion procedures. Her aspiration was for a miscarriage. *(samps-sweep2-last-check.md)*
+- first-trimester-bleeding-25 now cites SOGC 460, whose target population is a located intrauterine loss. q1 (location) leans on its general statement about ultrasound. The confidentiality point in q3 has no source. It is a general privacy principle. *(samps-sweep2-review-sw2-f.md)*
+- first-trimester-bleeding-34 q2 now cites SOGC 460 for the limits of hCG. Crochet stays for q1. *(samps-sweep2-review-sw2-f.md)*
+- first-trimester-bleeding-29: the q3 option "No rise in pulse on standing" shows in mock mode with q1 and points to the q1 key. Removing it means rebuilding q3. q3 also stretches McGee, which studied the detection of blood loss, not the proof of restored volume. first-trimester-bleeding-29 q1 and first-trimester-bleeding-34 q3 both ask for the vital sign that best reflects blood loss, with different keys (postural pulse rise, shock index). Neither offers the other's answer, so they do not contradict. A candidate may still find the pair confusing. *(samps-sweep2-review-sw2-f.md)*
+- NICE NG126 is no longer cited by first-trimester-bleeding-25. It is still cited elsewhere in s38. *(samps-sweep2-review-sw2-f.md)*
+- first-trimester-bleeding-34 q3: shock-16 (s50, postpartum hemorrhage) also keys a shock index, as a calculation under the shock topic. Here the shock index is keyed as the best vital-sign guide to blood loss, under first-trimester-bleeding KF1. The Pacagnella review draws mostly on non-obstetric studies, and the explanation does not claim a pregnancy-specific cut-off. *(samps-sweep2-sw2-f.md)*
+- first-trimester-bleeding-34 q2 is mapped to KF4 through the limits of hCG and urine testing. The keyed action is transfer for ultrasound, so it also touches KF2. *(samps-sweep2-sw2-f.md)*
+- first-trimester-bleeding-25 cites only NICE NG126, a UK guideline. SOGC Guideline No. 460 covers the same ground, but I could read only its abstract, so it is not cited. NICE 1.6.4 asks for a second opinion or a repeat scan when the CRL is 7.0 mm or more. The stem supplies the second opinion. *(samps-sweep2-sw2-f.md)*
+- first-trimester-bleeding-25 q1 ("main reason for the scan is the location") leaves viability out of the options on purpose, because NICE names both location and heartbeat as reasons for the scan. *(samps-sweep2-sw2-f.md)*
+- The rule that a later item never implies an earlier key was followed. The one soft spot: first-trimester-bleeding-25 q2 reports an intrauterine embryo, which answers where the pregnancy is, but the update does not name the purpose that q1 keys. *(samps-sweep2-sw2-f.md)*
 - SOGC Guideline 414 (ectopic) and SOGC 460 (early pregnancy loss) are behind a publisher block. Only their abstracts could be read, and neither abstract contains the recommendations. NICE NG126, updated June 2026, was opened and used instead. If you want Canadian sources on first-trimester-bleeding-18 q3, 29 q1, 34 q1, 34 q3 and 37 q1, check SOGC 414 or 460 and swap them in. *(samps-textbooks-s20-s38-s43.md)*
 - NICE NG126 covers tubal ectopic pregnancy. For first-trimester-bleeding-29 q1 it supports only the need for urgent surgery. It does not specifically support calling the receiving surgeon before transfer. For 34 q1, NICE lists adnexal tenderness as a common sign but does not name an adnexal mass. *(samps-textbooks-s20-s38-s43.md)*
 - first-trimester-bleeding-22 q3: Fouks 2020 is a single-centre retrospective study. It found that piperacillin tazobactam gave the best coverage of any single agent, at 93.3%. Ampicillin, gentamicin and metronidazole together performed better. The key is defensible, but the combination is a reasonable alternative. The main pathogens were Enterobacteriaceae, streptococci, staphylococci and enterococci. The explanation's mention of clostridia comes from standard teaching, not from this study. *(samps-textbooks-s20-s38-s43.md)*
@@ -467,11 +488,11 @@ Select 3.
 - G. Urgent gynecology for uterine evacuation  **(key)**
 - H. Vaginal packing to control bleeding
 
-*Explanation:* A temperature of 39.1°C, pulse of 124/minute, BP of 86/50 mmHg and drowsiness mean septic shock. She needs cultures and IV antibiotics within the hour, crystalloid of about 30 mL/kg, which is 1800 mL at 60 kg, and source control. The source is infected tissue in the uterus, so evacuation is part of treatment, not an afterthought. Oral antibiotics are inadequate in shock. Imaging and hCG must not delay antibiotics. Methotrexate and packing have no role.
+*Explanation:* A temperature of 39.1°C, pulse of 124/minute, BP of 86/50 mmHg and drowsiness mean septic shock. She needs cultures and IV antibiotics within the hour, at least 30 mL/kg of crystalloid within 3 hours, which is 1800 mL at 60 kg, and early source control. The source is infected tissue in the uterus, so evacuation is part of treatment, not an afterthought. Oral antibiotics are inadequate in shock. Imaging and hCG must not delay antibiotics. Methotrexate and packing have no role.
 
 *Key feature:* Shock/dehydration 4. Treat septic shock aggressively, adjusting fluids and antibiotics through ongoing clinical reassessment.
 
-*Source:* Evans L, Rhodes A, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021.
+*Source:* Prescott HC, Antonelli M, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://doi.org/10.1097/CCM.0000000000007075
 
 #### Q3
 **Which of the following is the most appropriate initial antibiotic regimen for her?**
@@ -625,68 +646,68 @@ Speculum examination shows a small amount of blood and a closed os. Bimanual exa
 
 *Source:* Miller R, Timor-Tritsch IE, Gyamfi-Bannerman C, Society for Maternal-Fetal Medicine. SMFM Consult Series #49: cesarean scar pregnancy. Am J Obstet Gynecol. 2020. https://pubmed.ncbi.nlm.nih.gov/31972162/
 
-### first-trimester-bleeding-25: Near faint at 7 weeks
+### first-trimester-bleeding-25: Spotting after an embryo transfer
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 38-year-old woman presents to the emergency department after nearly fainting at home. She has had 1 day of lower abdominal pain and light vaginal bleeding. Her last menstrual period was 7 weeks ago. She takes metoprolol 50 mg PO twice daily for recurrent supraventricular tachycardia. She had a right tubal ectopic pregnancy treated with methotrexate 4 years ago.
+A 34-year-old woman presents to the emergency department with 1 day of dark spotting and mild lower abdominal cramps. She is a gestational carrier for another couple. A fertility clinic transferred a single embryo, and the clinic dates the pregnancy at 8 weeks. Her first clinic ultrasound is booked for next week. She has had two uncomplicated vaginal births of her own children. She uses progesterone vaginal suppositories from the clinic. The intended parents came with her and are in the waiting room.
 
-She is pale. The abdomen is diffusely tender with guarding in the lower quadrants. A urine pregnancy test is positive.
+Speculum examination shows a small amount of dark blood and a closed os. Bimanual examination finds a nontender uterus of about 8 weeks in size and no adnexal mass or tenderness.
 
-- Temperature: 36.4°C oral
-- Pulse: 76/minute
-- Resp.: 20/minute
-- BP: 102/64 mmHg
+- Temperature: 36.7°C oral
+- Pulse: 82/minute
+- Resp.: 16/minute
+- BP: 118/74 mmHg
 - O2 sat: 99% on room air
 
 #### Q1
-**Which of the following features of her history most raises the probability that this pregnancy is ectopic?**
+**Which of the following is the main reason she needs a transvaginal ultrasound today?**
 
-- A. Her age of 38 years
-- B. Light vaginal bleeding
-- C. Metoprolol for SVT
-- D. Previous tubal ectopic pregnancy  **(key)**
-- E. Seven weeks since her last period
+- A. Check for a twin pregnancy
+- B. Confirm where the pregnancy is  **(key)**
+- C. Date the pregnancy for the clinic
+- D. Measure her cervical length
+- E. Reassure the intended parents
 
-*Explanation:* A previous tubal ectopic pregnancy is the strongest risk factor for another, because the conditions that led to it, such as tubal damage, often persist. Age over 35 raises the risk only modestly. Light bleeding and a period 7 weeks ago are features of early pregnancy and its complications, not factors that make an ectopic location more likely. Metoprolol and supraventricular tachycardia have no effect on where a pregnancy implants. With this history, near syncope and guarding, a ruptured ectopic pregnancy is the working diagnosis.
+*Explanation:* No scan has yet shown where this pregnancy is, and SOGC guidance names ultrasound as the key test for establishing both the location and the viability of an early pregnancy. Transferring an embryo into the uterus does not by itself show where it implanted, so an ectopic pregnancy remains possible until a scan shows it in the uterus. The clinic already dates the pregnancy from the transfer, so dating is not the reason. A twin check or a cervical length would not change her care today. Reassuring the intended parents is not a medical reason, and her results are hers to share.
 
 *Key feature:* First trimester bleeding 2. Consider pregnancy in any vaginal bleeding, and if positive, work up to exclude ectopic pregnancy.
 
-*Source:* Po L, Thomas J, Mills K, and colleagues. Guideline No. 414: management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. J Obstet Gynaecol Can. 2021. https://pubmed.ncbi.nlm.nih.gov/33453378/
+*Source:* Pymar H, Waddington A, Prager S, Shorter J, Thomas J. Guideline No. 460: diagnosis and management of intrauterine early pregnancy loss. J Obstet Gynaecol Can. 2025. https://pubmed.ncbi.nlm.nih.gov/40349974/
 
 #### Q2
-*Update:* Bedside ultrasound shows an empty uterus with free fluid around the liver and in the pelvis. Gynecology agrees to take her to the operating room. A resident suggests waiting for a quantitative beta hCG.
+*Update:* Transvaginal ultrasound shows an intrauterine embryo with a crown-rump length of 12 mm and no heartbeat, confirmed by a second sonographer. Her hCG is 46 000 IU/L. She asks whether this high level means the pregnancy may still be alive.
 
-**Which of the following best describes the value of a quantitative beta hCG for her now?**
+**Which of the following is the most accurate response to her question?**
 
-- A. A level below 1 500 IU/L excludes rupture
-- B. A level over 3 500 IU/L confirms rupture
-- C. It is needed before choosing methotrexate
-- D. Surgery should wait for the result
-- E. The result will not change surgery  **(key)**
+- A. A repeat hCG in 48 hours is needed first
+- B. hCG cannot show whether the embryo is alive  **(key)**
+- C. Her hCG is too high for a failed pregnancy
+- D. Her hCG shows the embryo is still growing
+- E. Progesterone may restart the heartbeat
 
-*Explanation:* Tubal pregnancies can rupture at any hCG level, so no value excludes or confirms rupture. An empty uterus with free fluid around the liver, near syncope and guarding already mean a ruptured ectopic pregnancy that needs the operating room, so the result will not change that decision and must not delay it. A level below 1 500 IU/L does not exclude rupture, and a level over 3 500 IU/L does not confirm it. Methotrexate is only for a stable, unruptured tubal pregnancy. A level can be drawn with her other blood work, but surgery does not wait for it.
+*Explanation:* The diagnosis rests on the scan. SOGC guidance treats an embryo with a crown-rump length of 7 mm or more and no heartbeat on endovaginal scan as diagnostic of early pregnancy loss, and hers measures 12 mm. It also advises against using hCG values alone to judge a pregnancy, because values overlap between viable, nonviable and ectopic pregnancies. hCG comes from placental tissue, not from the embryo's heartbeat, so a high level cannot show that the embryo is alive. Paired hCG values 48 hours apart help when the location is unknown, and this pregnancy has been located. No known treatment changes the outcome of a threatened loss, and progesterone cannot restart a heartbeat that has stopped.
 
 *Key feature:* First trimester bleeding 4. Know that beta-hCG levels and ultrasound findings have limits when excluding ectopic pregnancy.
 
-*Source:* Po L, Thomas J, Mills K, and colleagues. Guideline No. 414: management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. J Obstet Gynaecol Can. 2021. https://pubmed.ncbi.nlm.nih.gov/33453378/
+*Source:* Pymar H, Waddington A, Prager S, Shorter J, Thomas J. Guideline No. 460: diagnosis and management of intrauterine early pregnancy loss. J Obstet Gynaecol Can. 2025. https://pubmed.ncbi.nlm.nih.gov/40349974/
 
 #### Q3
-*Update:* She has a left salpingectomy for a ruptured tubal pregnancy and recovers well.
+*Update:* She chooses medical management with mifepristone and misoprostol and will go home today. She is tearful and says the intended parents will be devastated.
 
-**Which of the following is the most important advice for her about a future pregnancy?**
+**Which of the following is the most appropriate step before she leaves the department?**
 
-- A. Early assessment to locate the pregnancy  **(key)**
-- B. In vitro fertilization is now required
-- C. Pregnancy care can begin at 12 weeks
-- D. Remove the right tube to prevent recurrence
-- E. Wait 12 months before trying to conceive
+- A. Arrange her own follow-up and support  **(key)**
+- B. Book a routine uterine aspiration
+- C. Give the results to the intended parents
+- D. Offer follow-up only if bleeding persists
+- E. Reassure her that grief is unlikely
 
-*Explanation:* After two tubal pregnancies her risk of another ectopic is high, so she should seek care as soon as a pregnancy test is positive for an early ultrasound to confirm the location. Starting care at 12 weeks is too late to find an ectopic before rupture. Her right tube remains, so natural conception is possible and in vitro fertilization is not required. Removing a tube that may still work is not advised, and no waiting period is needed after salpingectomy.
+*Explanation:* Her own care comes first. SOGC guidance notes that early pregnancy loss can bring depression, anxiety and post-traumatic stress, and advises screening for depression with treatment or referral when needed. She may grieve this loss even though the embryo is not genetically hers, so telling her that grief is unlikely dismisses her. After medical management she needs a follow-up plan, such as a home urine pregnancy test, and clear advice on when and where to return for heavy bleeding, pain or signs of infection, so follow-up is not only for persistent bleeding. She chose medical management, so a routine aspiration is not needed. Her health information is hers, so the results go to the intended parents only with her consent.
 
 *Key feature:* First trimester bleeding 6. Before sending home a patient with a failed pregnancy, arrange counselling, emotional support, and follow-up care.
 
-*Source:* American College of Obstetricians and Gynecologists. Practice Bulletin No. 193: tubal ectopic pregnancy. Obstet Gynecol. 2018.
+*Source:* Pymar H, Waddington A, Prager S, Shorter J, Thomas J. Guideline No. 460: diagnosis and management of intrauterine early pregnancy loss. J Obstet Gynaecol Can. 2025. https://pubmed.ncbi.nlm.nih.gov/40349974/
 
 ### first-trimester-bleeding-26: Antibody screen after a birth abroad
 
@@ -869,68 +890,73 @@ Speculum examination shows a small amount of blood and a closed os. Bimanual exa
 
 *Source:* Farren J, Jalmbrant M, Falconieri N, and colleagues. Posttraumatic stress, anxiety and depression following miscarriage and ectopic pregnancy: a multicenter, prospective, cohort study. Am J Obstet Gynecol. 2020.
 
-### first-trimester-bleeding-29: Collapse far from a surgeon
+### first-trimester-bleeding-29: Heavy bleeding with clots at ten weeks
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department with no surgeon, no gynecologist and no radiology ultrasound. The nearest surgical centre is 2 hours away by road. The blood bank holds 4 units of O Rh D negative red cells. A 25-year-old woman is brought to the emergency department by her partner after fainting. She has had 3 hours of lower abdominal pain. Her last menstrual period was 8 weeks ago. Her blood group is not known.
+A 29-year-old woman presents to the emergency department with 5 hours of heavy vaginal bleeding with clots. She is 10 weeks pregnant, and an ultrasound at 7 weeks showed a live intrauterine pregnancy. She has soaked 7 pads in the past 3 hours and felt faint in the washroom. She has no medical history and takes no medications. She is pale. Speculum examination shows an open cervical os with active bleeding and no tissue at the os. The uterus is 10 weeks in size and nontender.
 
-She is pale and diaphoretic. The abdomen is distended with guarding. A urine pregnancy test is positive. Your bedside ultrasound shows free fluid in the hepatorenal space and no intrauterine pregnancy.
-
-- Temperature: 36.2°C oral
-- Pulse: 132/minute
-- Resp.: 26/minute
-- BP: 80/50 mmHg
-- O2 sat: 98% on room air
+- Temperature: 36.9°C oral
+- Pulse: 88/minute regular
+- Resp.: 18/minute
+- BP: 104/68 mmHg
+- O2 sat: 99% on room air
+- Weight: 62 kg
 
 #### Q1
-**Which of the following are the most appropriate immediate actions for her in your department?**
+*Update:* When she stands, her pulse rises to 122/minute and she becomes lightheaded.
 
-Select 2.
+**Which of the following findings best shows that she has lost a large volume of blood?**
 
-- A. Call the receiving surgeon now  **(key)**
-- B. Culdocentesis to confirm blood
-- C. Delay transfer until BP is normal
-- D. Methotrexate 50 mg/m2 IM
-- E. Norepinephrine infusion to MAP 65
-- F. Quantitative beta hCG before transfer
-- G. Two large bore IV lines  **(key)**
+Select 1.
 
-*Explanation:* A pulse of 132/minute, BP of 80/50 mmHg and hepatorenal free fluid with a positive pregnancy test mean a ruptured ectopic pregnancy, and she needs surgery that your site cannot provide. Calling the receiving surgeon at once starts the clock on definitive care while you gain access. Waiting for a normal BP delays the only treatment that stops bleeding. Culdocentesis and hCG add nothing to the ultrasound. Vasopressors and methotrexate do not treat hemorrhage.
+- A. BP of 104/68 mmHg lying down
+- B. Open cervical os on speculum
+- C. Oxygen saturation of 99%
+- D. Pulse of 88/minute lying down
+- E. Pulse rise of 34/minute on standing  **(key)**
+- F. Respiratory rate of 18/minute
+- G. Temperature of 36.9°C
+
+*Explanation:* Her pulse rose by 122 - 88 = 34/minute on standing. A rise in pulse of 30/minute or more on standing, or dizziness severe enough to stop measurement, is the most helpful bedside sign of large blood loss. Supine tachycardia and supine hypotension are often absent even after substantial blood loss, so a lying pulse of 88/minute and a lying BP of 104/68 mmHg do not reassure. Her temperature, respiratory rate and oxygen saturation are normal. An open os shows the pregnancy is being lost but does not measure how much blood she has lost.
 
 *Key feature:* First trimester bleeding 1. With acute vaginal bleeding, detect early shock using vital signs and orthostatic changes.
 
-*Source:* National Institute for Health and Care Excellence. Ectopic pregnancy and miscarriage: diagnosis and initial management. NICE guideline NG126. 2019, updated 2026. https://www.nice.org.uk/guidance/ng126
+*Source:* McGee S, Abernethy WB, Simel DL. The rational clinical examination. Is this patient hypovolemic? JAMA. 1999. https://doi.org/10.1001/jama.281.11.1022
 
 #### Q2
-**Which of the following is the most appropriate resuscitation fluid for her?**
+*Update:* After 1 L of Ringer's lactate her pulse lying is 104/minute and bleeding continues. Hemoglobin is 86 g/L. Gynecology is on the way for uterine aspiration.
 
-- A. Albumin 5% 500 mL IV
-- B. Normal saline 3 L IV
-- C. O Rh D negative red cells  **(key)**
-- D. O Rh D positive red cells
-- E. Ringer's lactate 3 L IV
+**Which of the following is the most appropriate resuscitation fluid for her now?**
 
-*Explanation:* She is bleeding, so she needs red cells, not more crystalloid or colloid, which carry no oxygen and dilute clotting factors. Her blood group is unknown, and in a patient who could become pregnant again O Rh D negative cells avoid sensitization that could cause hemolytic disease in a future fetus. O Rh D positive cells are reserved for when negative stock runs short. Your site holds 4 units of O Rh D negative cells.
+- A. 5% albumin 500 mL IV
+- B. Another 2 L of Ringer's lactate
+- C. Hydroxyethyl starch 500 mL IV
+- D. Normal saline 2 L IV
+- E. Packed red blood cells 2 units  **(key)**
+
+*Explanation:* She is still bleeding, her pulse remains high after 1 L of crystalloid and her hemoglobin is 86 g/L, so red cells are the fluid she needs. The Canadian Blood Services guide describes limiting crystalloid to about 1 L before switching to blood products, because large volumes of crystalloid dilute clotting factors and worsen coagulopathy. More Ringer's lactate or normal saline would do exactly that. Hydroxyethyl starch also impairs hemostasis. Albumin expands volume but carries no oxygen and does not replace lost red cells.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
 *Source:* Trudeau JD, Dawe P, Shih AW. Massive hemorrhage and emergency transfusion. In: Clinical Guide to Transfusion. Canadian Blood Services. 2021. https://professionaleducation.blood.ca/en/transfusion/clinical-guide/massive-hemorrhage-and-emergency-transfusion
 
 #### Q3
-**Which of the following is the most appropriate way to transfer her?**
+*Update:* After uterine aspiration her vaginal bleeding is light. One hour later she has new lower abdominal pain, her pulse is 124/minute and her BP is 86/54 mmHg. Bedside ultrasound shows an empty uterine cavity and free fluid in the hepatorenal space.
 
-- A. Ground ambulance with a basic crew
-- B. Paramedic critical care transport with blood  **(key)**
-- C. Private vehicle to save time
-- D. Transfer after BP normalizes
-- E. Transfer once crossmatch is complete
+**Which of the following best explains the change in her vital signs after the aspiration?**
 
-*Explanation:* She needs continued transfusion and monitoring on the way, so a critical care paramedic team that can give blood is the safest choice. A basic crew cannot run blood, and a private vehicle offers no care if she arrests. Waiting for a normal BP or a crossmatch delays surgery, and O Rh D negative cells can be given without a crossmatch.
+- A. Hematometra after aspiration
+- B. Retained products of conception
+- C. Ruptured ectopic pregnancy
+- D. Uterine perforation  **(key)**
+- E. Vasovagal reaction
+
+*Explanation:* Her pulse has risen to 124/minute and her BP has fallen to 86/54 mmHg while her vaginal bleeding is light. She is losing blood where no pad can show it. Free fluid in the hepatorenal space soon after the uterus was instrumented points to a uterine perforation bleeding into the abdomen. Ipas puts perforation at about 0.1 to 3 per 1 000 induced abortion procedures. A perforation with heavy bleeding and unstable vital signs needs urgent surgery. Hematometra and retained products both leave blood or tissue inside the uterus, and her uterine cavity is empty. A ruptured ectopic pregnancy is very unlikely after a live intrauterine pregnancy was seen at 7 weeks. A vasovagal reaction slows the pulse rather than raising it.
 
 *Key feature:* First trimester bleeding 1. With acute vaginal bleeding, detect early shock using vital signs and orthostatic changes.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 173, Complications of Pregnancy. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Ipas. Clinical updates in reproductive health: managing uterine perforation. Reviewed 2025. https://www.ipas.org/clinical-update/english/postabortion-care/managing-uterine-perforation/
 
 ### first-trimester-bleeding-30: Heavy painless bleeding after prior procedures
 
@@ -1158,11 +1184,11 @@ Select 3.
 - D. Passing clots and small tissue
 - E. Soaking 2 pads an hour for 2 hours  **(key)**
 
-*Explanation:* Soaking 2 or more large pads an hour for 2 hours in a row suggests hemorrhage and needs urgent assessment. Heavy cramping and the passage of clots and tissue are how misoprostol works. Chills on the day of the dose are a common drug effect, while fever after that day raises concern for infection. Light bleeding can continue for up to 2 weeks.
+*Explanation:* SOGC defines heavy bleeding as soaking through 2 or more pads an hour for 2 hours in a row, which needs urgent assessment and may need uterine aspiration. Heavy cramping and the passage of clots and tissue are how misoprostol works. Chills on the day of the dose are a common drug effect, while fever after that day raises concern for infection. SOGC advises that lighter bleeding tapers over 1 to 2 weeks after the heavy phase.
 
 *Key feature:* First trimester bleeding 1. With acute vaginal bleeding, detect early shock using vital signs and orthostatic changes.
 
-*Source:* American College of Obstetricians and Gynecologists. Practice Bulletin No. 200: early pregnancy loss. Obstet Gynecol. 2018.
+*Source:* Pymar H, Waddington A, Prager S, Shorter J, Thomas J. Guideline No. 460: diagnosis and management of intrauterine early pregnancy loss. J Obstet Gynaecol Can. 2025. https://pubmed.ncbi.nlm.nih.gov/40349974/
 
 #### Q3
 **Which of the following is the most appropriate follow-up after she takes misoprostol?**
@@ -1179,68 +1205,68 @@ Select 3.
 
 *Source:* American College of Obstetricians and Gynecologists. Practice Bulletin No. 200: early pregnancy loss. Obstet Gynecol. 2018.
 
-### first-trimester-bleeding-34: Visitor due to fly home
+### first-trimester-bleeding-34: Call from a nursing station
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a community hospital emergency department. A 23-year-old woman presents to the emergency department with 2 days of spotting and mild lower abdominal cramps. She is 6 weeks by last menstrual period. She lives in a fly-in community 400 km north, served by a nursing station, and is due to fly home tomorrow. She has had one prior pregnancy, a term vaginal birth. She takes no medications.
+You are the on-call physician for a nursing station in a remote community with no road access. The nearest hospital with ultrasound is 90 minutes away by air. The nurse calls about a 24-year-old woman with 2 days of vaginal spotting and left lower abdominal pain that is worse today. Her last menstrual period was 8 weeks ago, and a urine pregnancy test at the station is positive. She has had one vaginal birth and two episodes of chlamydia. She has had no ultrasound in this pregnancy.
 
-The abdomen is soft with mild left lower quadrant tenderness. Speculum examination shows a small amount of blood and a closed os.
+The nurse has done a speculum and a bimanual examination. There is a small amount of dark blood in the vault, and the cervical os is closed. Moving the cervix causes sharp pain. The left adnexa is tender, with no definite mass. The uterus is soft and about 7 weeks in size. Her vital signs were taken lying down.
 
-- Temperature: 36.6°C oral
-- Pulse: 84/minute
-- Resp.: 16/minute
-- BP: 114/70 mmHg
+- Temperature: 37.0°C oral
+- Pulse: 96/minute
+- Resp.: 18/minute
+- BP: 112/72 mmHg
 - O2 sat: 99% on room air
 
 #### Q1
-**Which of the following findings on bimanual examination would most raise concern for an ectopic pregnancy?**
+**Which of the following examination findings most increases the likelihood of an ectopic pregnancy?**
 
-- A. Bluish discolouration of the cervix
-- B. Mild midline uterine tenderness
-- C. Soft cervix on palpation
-- D. Tender mass beside the uterus  **(key)**
-- E. Uterus enlarged to 6 week size
+- A. Cervical motion tenderness  **(key)**
+- B. Closed cervical os
+- C. Dark blood in the vaginal vault
+- D. Left adnexal tenderness
+- E. Soft uterus of 7-week size
 
-*Explanation:* A tender adnexal mass beside the uterus in a pregnant patient with bleeding suggests an ectopic pregnancy until ultrasound shows otherwise. A bluish, soft cervix and a uterus enlarged to 6 week size are normal changes of early pregnancy and do not locate it. Mild midline uterine tenderness is common with miscarriage. An absent mass does not exclude an ectopic, but a present one changes urgency.
+*Explanation:* Cervical motion tenderness is the examination finding that most raises the likelihood of an ectopic pregnancy, with a positive likelihood ratio of about 4.9 (95% CI 1.7 to 14) in a systematic review. Adnexal tenderness helps less, at about 1.9, and history features such as her past chlamydia each carry a likelihood ratio below 1.5. A closed os and a little dark blood in the vault occur in both a threatened miscarriage and an ectopic pregnancy, so they do not separate the two. A soft uterus is expected in early pregnancy. These findings come only from doing both the speculum and the bimanual examination.
 
 *Key feature:* First trimester bleeding 3. Perform both a speculum and a bimanual pelvic exam in first trimester bleeding.
 
-*Source:* National Institute for Health and Care Excellence. Ectopic pregnancy and miscarriage: diagnosis and initial management. NICE guideline NG126. 2019, updated 2026. https://www.nice.org.uk/guidance/ng126
+*Source:* Crochet JR, Bastian LA, Chireau MV. Does this woman have an ectopic pregnancy? The rational clinical examination systematic review. JAMA. 2013. https://doi.org/10.1001/jama.2013.3914
 
 #### Q2
-*Update:* Bimanual examination finds mild left adnexal tenderness without a mass. Quantitative beta hCG is 1600 IU/L. Transvaginal ultrasound shows no intrauterine pregnancy, no adnexal mass and no free fluid.
+*Update:* The nurse can draw blood, but the samples go out on the next scheduled flight and results take 2 days.
 
-**Which of the following is the most appropriate plan for her before she leaves the emergency department?**
+**Which of the following is the most appropriate plan for her?**
 
-- A. Arrange serial hCG with named follow-up  **(key)**
-- B. Discharge home with return advice only
-- C. Methotrexate before she flies home
-- D. Reassure that ectopic is now excluded
-- E. Uterine aspiration to look for villi
+- A. Methotrexate at the station today
+- B. Physician review at next week's clinic
+- C. Repeat urine pregnancy test in 48 hours
+- D. Serum hCG now, repeat in 48 hours
+- E. Transfer by air today for ultrasound  **(key)**
 
-*Explanation:* An empty uterus with an hCG of 1600 IU/L is a pregnancy of unknown location, and ectopic pregnancy is not excluded. She needs repeat hCG in 48 hours, which the nursing station can draw, with results going to a named clinician who will act on them. Return advice alone is unsafe when loss to follow-up is likely. Methotrexate is not given without a diagnosis. Aspiration is a gynecology decision after serial testing.
+*Explanation:* Ultrasound is the key test for the location of a pregnancy, and hCG values alone cannot settle it, because they overlap between viable, nonviable and ectopic pregnancies. A urine test shows only that she is pregnant, not where. With cervical motion tenderness and worsening one-sided pain, she needs a transvaginal scan today, which means transfer. An hCG pair resulted in 2 days leaves her at the station without a diagnosis. A repeat urine test can show neither the trend nor the location. Methotrexate would treat a diagnosis that has not been made, and a clinic visit next week leaves a possible ectopic pregnancy unassessed.
 
 *Key feature:* First trimester bleeding 4. Know that beta-hCG levels and ultrasound findings have limits when excluding ectopic pregnancy.
 
-*Source:* Hahn SA, Promes SB, Brown MD, American College of Emergency Physicians Clinical Policies Subcommittee. Clinical policy: critical issues in the initial evaluation and management of patients presenting to the emergency department in early pregnancy. Ann Emerg Med. 2017. https://www.acep.org/patient-care/clinical-policies/early-pregnancy
+*Source:* Pymar H, Waddington A, Prager S, Shorter J, Thomas J. Guideline No. 460: diagnosis and management of intrauterine early pregnancy loss. J Obstet Gynaecol Can. 2025. https://pubmed.ncbi.nlm.nih.gov/40349974/
 
 #### Q3
-*Update:* Two days later the nurse calls from her community. She has sudden severe left pelvic pain and shoulder tip pain. Her pulse is 118/minute and BP 98/60 mmHg.
+*Update:* Forty minutes later the nurse calls back. Her pain is worse. Lying down her pulse is 116/minute, her BP is 104/70 mmHg, her respiratory rate is 20/minute and her oxygen saturation is 98%.
 
-**Which of the following is the most appropriate instruction to the nurse?**
+**Which of the following measures best reflects how much blood she may have lost?**
 
-- A. Give morphine and observe overnight
-- B. Oral fluids and reassess in 4 hours
-- C. Recheck vital signs in 2 hours
-- D. Repeat hCG at the nursing station
-- E. Urgent medevac to a surgical centre  **(key)**
+- A. Blood pressure of 104/70 mmHg
+- B. Heart rate of 116/minute
+- C. Oxygen saturation of 98%
+- D. Respiratory rate of 20/minute
+- E. Shock index of 1.1  **(key)**
 
-*Explanation:* Sudden pelvic pain, shoulder tip pain from blood under the diaphragm and a pulse of 118/minute mean a probable ruptured ectopic pregnancy in early shock. Her BP of 98/60 mmHg is still maintained, which is typical of a young patient before collapse. She needs urgent air transfer to a surgical centre, with IV access and fluids started by the nurse. Waiting to recheck vitals or repeat hCG wastes time she does not have.
+*Explanation:* Her shock index is her heart rate divided by her systolic BP: 116 / 104 = 1.1. In a systematic review of blood loss and clinical signs, the shock index tracked blood loss better than heart rate or systolic BP alone, with areas under the curve of 0.77 to 0.84, against 0.56 to 0.74 for heart rate and 0.56 to 0.79 for systolic BP. Her systolic BP of 104 mmHg looks reassuring on its own, yet the index shows that her circulation is compensating. Her pulse is abnormal, but read alone it is a weaker guide than the index. Her oxygen saturation and respiratory rate do not measure blood loss.
 
 *Key feature:* First trimester bleeding 1. With acute vaginal bleeding, detect early shock using vital signs and orthostatic changes.
 
-*Source:* National Institute for Health and Care Excellence. Ectopic pregnancy and miscarriage: diagnosis and initial management. NICE guideline NG126. 2019, updated 2026. https://www.nice.org.uk/guidance/ng126
+*Source:* Pacagnella RC, Souza JP, Durocher J, and colleagues. A systematic review of the relationship between blood loss and clinical signs. PLoS One. 2013. https://doi.org/10.1371/journal.pone.0057594
 
 ### first-trimester-bleeding-35: Sudden pain after intercourse at seven weeks
 
@@ -1444,65 +1470,63 @@ The abdomen is soft with mild suprapubic tenderness.
 
 *Source:* Pymar H, Waddington A, Prager S, Shorter J, Thomas J. Guideline No. 460: diagnosis and management of intrauterine early pregnancy loss. J Obstet Gynaecol Can. 2025. https://pubmed.ncbi.nlm.nih.gov/40349974/
 
-### first-trimester-bleeding-38: Dark bleeding and constant nausea
+### first-trimester-bleeding-38: Bleeding after three earlier losses
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old woman presents to the emergency department with 1 week of intermittent dark vaginal bleeding and severe nausea. She is 13 weeks and 3 days by a certain last menstrual period. She has had no ultrasound in this pregnancy. She has one child. She takes doxylamine and pyridoxine.
+A 35-year-old woman presents to the emergency department with 2 days of brown spotting that became heavier today with cramps. She is 13 weeks and 1 day pregnant by a dating ultrasound at 7 weeks that showed a live intrauterine pregnancy. She has had three earlier pregnancy losses, all before 10 weeks, and has no living children. Her prenatal record shows that RHD genotyping found partial D category DVI, and her antibody screen at 9 weeks was negative. A clinic once told her that her blood type is Rh positive. She takes folic acid.
 
-Speculum examination shows dark blood and several small grape-like vesicles in the vault. The os is closed. Quantitative beta hCG is 186 000 IU/L. Transvaginal ultrasound shows a heterogeneous intrauterine mass with many small cystic spaces and no fetus. Her blood group is B Rh D negative with a negative antibody screen.
-
-- Temperature: 36.9°C oral
-- Pulse: 96/minute
+- Temperature: 36.8°C oral
+- Pulse: 86/minute
 - Resp.: 16/minute
-- BP: 124/78 mmHg
+- BP: 116/72 mmHg
 - O2 sat: 99% on room air
 
 #### Q1
-**Which of the following is the most likely diagnosis for her presentation?**
+*Update:* Speculum examination shows a closed cervical os with dark blood in the vault and no tissue.
 
-- A. Choriocarcinoma
-- B. Hydatidiform mole  **(key)**
-- C. Incomplete miscarriage
-- D. Missed miscarriage
-- E. Septic abortion
+**Which of the following is the most appropriate next step in the examination of this patient?**
 
-*Explanation:* Grape-like vesicles passed into the vagina, an hCG of 186 000 IU/L and an intrauterine mass with many cystic spaces and no fetus point to a hydatidiform mole. The vesicles seen on speculum examination are swollen villi. A miscarriage does not produce this ultrasound pattern. Choriocarcinoma usually follows a pregnancy rather than presenting as its first sign. She has no fever to suggest sepsis.
+- A. Bimanual pelvic examination  **(key)**
+- B. Cervical cytology sample
+- C. Digital rectal examination
+- D. Handheld fetal Doppler check
+- E. Vaginal swab for yeast
+
+*Explanation:* A speculum examination and a bimanual examination are both part of assessing bleeding in early pregnancy. The bimanual examination gives the uterine size compared with her dates and looks for pelvic or adnexal tenderness, cervical motion tenderness and masses. NICE lists these bimanual findings among the examination signs to seek in early pregnancy, and they cannot be found with a speculum alone. A cervical cytology sample is a screening test, not part of the acute assessment. A rectal examination does not assess the uterus. A handheld Doppler that finds no heartbeat cannot establish a pregnancy loss, which needs ultrasound. A yeast swab does not explain uterine bleeding.
 
 *Key feature:* First trimester bleeding 3. Perform both a speculum and a bimanual pelvic exam in first trimester bleeding.
 
-*Source:* Eiriksson L, Dean E, Sebastianelli A, and colleagues. Guideline No. 408: management of gestational trophoblastic diseases. J Obstet Gynaecol Can. 2021. https://rmtq.ca/en/guidelines/driving-lines/recommendations/
+*Source:* National Institute for Health and Care Excellence. Ectopic pregnancy and miscarriage: diagnosis and initial management. NICE guideline NG126. 2019, updated 2026. https://www.nice.org.uk/guidance/ng126
 
 #### Q2
-*Update:* Gynecology performs suction evacuation the same day. Pathology will take about a week.
+*Update:* Ultrasound shows an intrauterine pregnancy with a crown-rump length of 55 mm and no cardiac activity. She chooses medical management.
 
 **Which of the following is the most appropriate Rh immune globulin plan for her now?**
 
-- A. Rh immune globulin after pathology returns
+- A. Kleihauer-Betke test before deciding
 - B. Rh immune globulin 120 mcg IM
 - C. Rh immune globulin 300 mcg IM  **(key)**
-- D. Serum anti-D titre before dosing
+- D. Rh immune globulin only at 28 weeks
 - E. No Rh immune globulin
 
-*Explanation:* SOGC advises offering Rh immune globulin to Rh D negative patients after evacuation of a mole, and at 13 weeks the dose is 300 mcg within 72 hours. SOGC says it is not required only when a complete mole is certain. Pathology is pending, and a partial mole contains fetal tissue that can carry the D antigen. Waiting a week for pathology would miss the 72 hour window. Her antibody screen is already negative.
+*Explanation:* SOGC Guideline No. 448 states that weak D types 1, 2 and 3 carry no risk of alloimmunization, but that other weak D variants and partial D do carry a risk, so Rh immune globulin prophylaxis is recommended for her despite being told she is Rh positive. After 12 weeks, the guideline suggests 300 mcg for a spontaneous pregnancy loss, and her antibody screen is negative. A dose of 120 mcg is matched to a small measured fetomaternal hemorrhage. Kleihauer-Betke or flow cytometry testing is advised after 20 weeks, not now. Waiting until 28 weeks leaves this event unprotected.
 
 *Key feature:* First trimester bleeding 5. Check Rh status in pregnant patients with bleeding so anti-D prophylaxis can be offered.
 
 *Source:* Fung-Kee-Fung K, Wong K, Walsh J, Hamel C, Clarke G. Guideline No. 448: prevention of Rh D alloimmunization. J Obstet Gynaecol Can. 2024. https://pubmed.ncbi.nlm.nih.gov/38553007/
 
 #### Q3
-*Update:* One week later, pathology confirms a complete hydatidiform mole. Her hCG has already started to fall.
+**Which of the following follow-up arrangements is most appropriate for her before she leaves?**
 
-**Which of the following is the recommended hCG surveillance for her after evacuation of a complete mole?**
+- A. Empiric levothyroxine next pregnancy
+- B. Follow-up only after a fourth loss
+- C. G-CSF in her next pregnancy
+- D. Reassurance that losses are chance
+- E. Referral to a recurrent loss clinic  **(key)**
 
-- A. Monthly hCG for 2 years after evacuation
-- B. Pelvic ultrasound monthly for 6 months
-- C. Single hCG level 4 weeks after evacuation
-- D. Weekly to 3 normal results, then monthly for 6 months  **(key)**
-- E. Weekly until one normal result, then stop
-
-*Explanation:* After a complete mole, SOGC recommends weekly hCG from 2 weeks after evacuation until it is undetectable for 3 weeks in a row, then monthly for 6 months, to detect persistent trophoblastic disease early. One level, or stopping at the first normal result, misses late rises, and even a partial mole needs a confirming level a month later. Ultrasound does not detect persistent disease as early as hCG. Two years of monthly tests exceeds the schedule. She needs reliable contraception throughout.
+*Explanation:* The ESHRE guideline defines recurrent pregnancy loss as the loss of two or more pregnancies, and this is her fourth. It recommends a specialist outpatient clinic that offers investigations, information and support, with attention to the emotional impact of the losses. Waiting for another loss ignores the definition. Reassurance alone omits the investigations and support she needs. ESHRE finds insufficient evidence for G-CSF, and it advises that euthyroid women with recurrent loss should not be given levothyroxine even when thyroid antibodies are present.
 
 *Key feature:* First trimester bleeding 6. Before sending home a patient with a failed pregnancy, arrange counselling, emotional support, and follow-up care.
 
-*Source:* Eiriksson L, Dean E, Sebastianelli A, and colleagues. Guideline No. 408: management of gestational trophoblastic diseases. J Obstet Gynaecol Can. 2021. https://rmtq.ca/en/guidelines/driving-lines/recommendations/
+*Source:* ESHRE Guideline Group on RPL, Bender Atik R, Christiansen OB, and colleagues. ESHRE guideline: recurrent pregnancy loss: an update in 2022. Hum Reprod Open. 2023. https://doi.org/10.1093/hropen/hoad002

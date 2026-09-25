@@ -13,6 +13,8 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - suicide-risk-28 q1 maps "constant observation while results are pending" to suicide-risk KF3 (the patient who wants to leave). No key feature fits exactly. The source is a US protocol study, because I found no current Canadian ED observation standard. *(samps-overlap-pass2b.md)*
 - suicide-risk-31 q3 maps psychiatric admission for a high risk patient to KF4, as the old version did. KF4 is written for low risk patients. *(samps-overlap-pass2b.md)*
 - suicide-risk-31 q1 rests on VAC release-cohort data from 1976 to 2012. Please confirm you are content to teach age at release as the key risk marker. *(samps-overlap-pass2b.md)*
+- suicide-risk-22 cites a qualitative review for gambling treatment. No Canadian ED guideline on gambling-related suicidality was found. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- suicide-risk-22 safety plan and follow-up keys repeat teaching found across suicide-risk. That is driven by key features 4 and 5. *(samps-replace-s27-s29-s34-s38-s52.md)*
 - suicide-risk-39 and suicide-risk-40: reject as duplicates of suicide-risk-23 and suicide-risk-31. *(samps-s52-lensA.md)*
 - suicide-risk-28 q1: repeated teaching point (see overlap). Rewrite or accept. *(samps-s52-lensA.md)*
 - suicide-risk-31: overlap with s17 suicide-risk-02. Consider a different older adult scenario. *(samps-s52-lensA.md)*
@@ -438,68 +440,65 @@ A 27-year-old man is brought to a Montreal emergency department by his roommate 
 
 *Source:* Owens D, Horrocks J, House A. Fatal and non-fatal repetition of self-harm: systematic review. Br J Psychiatry. 2002. https://pubmed.ncbi.nlm.nih.gov/12204922/
 
-### suicide-risk-22: First term away from home
+### suicide-risk-22: Debts he could no longer hide
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 19-year-old woman presents to the emergency department at 22:00 with her roommate. She is in her first term at university, 1 500 km from home. She failed 2 midterm exams last week and has thought for several days that everyone would be better off without her. She has no plan, no intent and no past attempts. She has never had mental health care. She drinks 3 or 4 drinks on weekends and uses no other substances. She calls her mother daily and wants to stay in school. She is sober, tearful and engaged.
+A 24-year-old man presents to the emergency department at 21:00 with his partner. Over 8 months he has lost 18 000 dollars on online sports betting, much of it on credit cards, and he told her about it for the first time today. Since then he has thought he would be better off not waking up. He has no plan or intent, has never harmed himself and has no psychiatric history. He drinks two beers on weekends and uses no other drugs. He works full time as an electrician's apprentice and says his partner and parents support him. He has no access to firearms. He feels relieved that he has told her and wants help to stop gambling. His partner will stay with him tonight.
 
-- Temperature: 36.6°C oral
+- Temperature: 36.8°C oral
 - Pulse: 84/minute
-- Resp.: 14/minute
-- BP: 112/70 mmHg
+- Resp.: 16/minute
+- BP: 126/78 mmHg
 - O2 sat: 99% on room air
 
 #### Q1
-*Update:* You work through a written safety plan with her, and she can describe each step in her own words.
+**Which of the following is the most appropriate way to build his outpatient plan before he goes home?**
 
-**Which of the following findings best supports discharging her with an outpatient plan tonight?**
+- A. Ask him to sign a no-suicide contract
+- B. Give him a printed list of clinics
+- C. Keep him until the clinic opens Monday
+- D. Let his partner decide the plan for him
+- E. Write a safety plan with him and his partner  **(key)**
 
-- A. Denial of ideation at triage
-- B. Low score on a risk scale
-- C. Promise not to harm herself
-- D. Shared plan she helped write  **(key)**
-- E. Stated wish to go home
-
-*Explanation:* A plan she helped build and can describe shows engagement, and her supports make it workable. Together with no plan, intent or past attempts, that places her at low acute risk. Denial at triage would carry little weight against what she tells you in a full interview. A low score on a risk scale should not decide disposition because scales predict poorly. A promise not to self-harm protects no one. Wanting to go home is expected and is not evidence of safety.
+*Explanation:* His risk is low: passive thoughts without a plan, intent or past self-harm, no psychiatric illness, no firearms, supportive family and a partner staying with him, and he wants help. A safety plan written with him lists his warning signs, coping steps, people who can help, professional and crisis contacts and ways to make his surroundings safer, and his partner can support it. No-suicide contracts are ineffective, and collaborative safety plans are recommended in their place. A printed list of clinics gives him no plan for a crisis. Holding him until Monday is not needed at this level of risk. A plan imposed by his partner leaves out his own engagement.
 
 *Key feature:* Suicide risk 4. For low risk suicidal patients, agree on an outpatient plan together and discharge at the right time.
 
-*Source:* Stanley B, Brown GK. Safety planning intervention: a brief intervention to mitigate suicide risk. Cogn Behav Pract. 2012.
+*Source:* Stanley B, Brown GK, Brenner LA, and colleagues. Comparison of the safety planning intervention with follow-up vs usual care of suicidal patients treated in the emergency department. JAMA Psychiatry. 2018. https://pubmed.ncbi.nlm.nih.gov/29998307/
 
 #### Q2
-**Which of the following items belong in her written safety plan?**
+**Which of the following should be part of his crisis and follow-up arrangements?**
 
-Select 3.
+Select 2.
 
-- A. Coping steps she can use alone  **(key)**
-- B. Crisis line and campus contacts  **(key)**
-- C. Her personal warning signs  **(key)**
-- D. Her risk level from triage
-- E. List of her risk factors
-- F. Pledge not to harm herself
-- G. Rules for her roommate to follow
+- A. 9-8-8 crisis line in his plan  **(key)**
+- B. Call from the team within 72 hours  **(key)**
+- C. Follow-up only if he feels worse
+- D. Psychiatric admission tonight
+- E. Signed no-suicide contract
+- F. Zopiclone 30 tablets for sleep
 
-*Explanation:* A safety plan is a written, prioritized list in the patient's own words. It starts with her warning signs, then coping steps she can use alone, people and places that distract her, people she can ask for help, professional and crisis contacts such as 9-8-8 and campus services, and steps to make her surroundings safer. A risk level and a list of risk factors belong in the chart, not the plan. A pledge is a no-harm contract. Rules for her roommate do not give her skills to use.
-
-*Key feature:* Suicide risk 5. Outpatient plans should include scheduled follow-up, crisis contacts, and, when used, medication counselling on effects and side effects.
-
-*Source:* Stanley B, Brown GK. Safety planning intervention: a brief intervention to mitigate suicide risk. Cogn Behav Pract. 2012.
-
-#### Q3
-**Which of the following follow-up measures has been shown to reduce suicidal behaviour after an emergency visit?**
-
-- A. Advice to return if she feels worse
-- B. Pamphlet on campus wellness services
-- C. Referral letter for her to deliver
-- D. Repeat emergency visit in 1 week
-- E. Structured follow-up phone calls  **(key)**
-
-*Explanation:* Brief structured telephone contacts after discharge, added to a safety plan, were associated with less suicidal behaviour and better attendance at outpatient care in a large emergency department cohort. The weeks after discharge are a high risk period and many patients never attend the first appointment. Advice to return, a pamphlet and a letter she must deliver rely on her acting while unwell. A repeat emergency visit is not a treatment and delays real follow-up.
+*Explanation:* In a large emergency department study, a safety plan that listed crisis contacts, combined with telephone follow-up that began within 72 hours of discharge and continued weekly, was associated with fewer suicidal behaviours over 6 months, 3.03% against 5.29% with usual care. The months after an emergency visit are a high-risk period, so waiting until he feels worse misses them. A no-suicide contract is ineffective. A 30-tablet supply of a sedative adds a means of overdose. Admission is not needed for a man at low risk with support at home.
 
 *Key feature:* Suicide risk 5. Outpatient plans should include scheduled follow-up, crisis contacts, and, when used, medication counselling on effects and side effects.
 
 *Source:* Stanley B, Brown GK, Brenner LA, and colleagues. Comparison of the safety planning intervention with follow-up vs usual care of suicidal patients treated in the emergency department. JAMA Psychiatry. 2018. https://pubmed.ncbi.nlm.nih.gov/29998307/
+
+#### Q3
+**Which of the following is the most important addition to his outpatient plan given what led to this visit?**
+
+- A. Advice to gamble less often
+- B. Antidepressant started today
+- C. Couples therapy alone
+- D. Debt consolidation loan alone
+- E. Specialized gambling treatment service  **(key)**
+
+*Explanation:* In a systematic review of qualitative studies, the two main processes linking gambling to suicidal behaviour were debt and shame, which can also stop people from seeking help, so treatment of the gambling itself is central to his plan. Advice to gamble less does not treat a loss of control that has already cost 18 000 dollars. A debt consolidation loan may ease one pressure but leaves the gambling untreated. Couples therapy alone does not treat the gambling disorder. He has no diagnosis of depression to justify starting an antidepressant tonight.
+
+*Key feature:* Suicide risk 5. Outpatient plans should include scheduled follow-up, crisis contacts, and, when used, medication counselling on effects and side effects.
+
+*Source:* Marionneau V, Nikkinen J. Gambling-related suicides and suicidality: a systematic review of qualitative evidence. Front Psychiatry. 2022. https://doi.org/10.3389/fpsyt.2022.980303
 
 ### suicide-risk-23: Better off with the insurance
 
@@ -685,11 +684,11 @@ Select 3.
 - G. Take-home naloxone kit  **(key)**
 - H. Tapering supply of oral morphine
 
-*Explanation:* Opioid agonist treatment such as buprenorphine, which can be started in the department once he is in withdrawal, lowers overdose deaths and is the preferred treatment for opioid use disorder. A take-home naloxone kit and a named follow-up this week cover the high risk days after discharge. Detox without medication leaves him with lost tolerance, which is how this overdose happened. A benzodiazepine adds respiratory depression. A morphine taper is not an evidence based treatment. A urine screen and a police report do not change his care.
+*Explanation:* Opioid agonist treatment with buprenorphine, which can be started in the department once he is in withdrawal, is a preferred first-line treatment for opioid use disorder in the 2024 national guideline. A take-home naloxone kit and a named follow-up this week cover the high risk days after discharge. The guideline advises against withdrawal management as a standalone treatment, and detox without medication leaves him with lost tolerance, which is how this overdose happened. A benzodiazepine adds respiratory depression. A short morphine taper is withdrawal management by another name, not maintenance treatment. A urine screen and a police report do not change his care.
 
 *Key feature:* Suicide risk 5. Outpatient plans should include scheduled follow-up, crisis contacts, and, when used, medication counselling on effects and side effects.
 
-*Source:* British Columbia Centre on Substance Use and BC Ministry of Health. A guideline for the clinical management of opioid use disorder. 2023 update. https://www.bccsu.ca/opioid-use-disorder/
+*Source:* Yakovenko I, Mukaneza Y, Germe K, and colleagues. Management of opioid use disorder: 2024 update to the national clinical practice guideline. CMAJ. 2024. https://doi.org/10.1503/cmaj.241173
 
 ### suicide-risk-26: Staying with a friend's family
 
@@ -1494,6 +1493,6 @@ A 34-year-old woman is brought to the emergency department by ambulance after a 
 
 *Explanation:* A high lethality attempt needs a psychiatric assessment before discharge, whichever service admits her for the fractures. Suicide risk after a serious attempt does not fall because the physical injuries heal. Physiotherapy clearance and pain control address mobility, not safety. An opioid supply at discharge is also a means that needs planning. A housing referral may help her later. A no-harm contract has no protective value.
 
-*Key feature:* Suicide risk 4. For low risk suicidal patients, agree on an outpatient plan together and discharge at the right time.
+*Key feature:* Suicide risk 3. If a suicidal patient wants to leave, assess and document certification criteria, weighing patient rights and legal implications.
 
 *Source:* Substance Abuse and Mental Health Services Administration. Suicide Assessment Five-step Evaluation and Triage (SAFE-T) pocket card for clinicians. 2009. https://store.samhsa.gov/product/SAFE-T-Pocket-Card-Suicide-Assessment-Five-Step-Evaluation-and-Triage-for-Clinicians/sma09-4432

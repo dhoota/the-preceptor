@@ -9,6 +9,16 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - s19 abdominal-pain-46 q3: ASA 160 mg loading dose. abdominal-pain-16: arm BP difference exactly 20 mmHg. abdominal-pain-43: cite IDSA/SHEA or AMMI rather than Rosen alone.
 - s19 abdominal-pain-40 q1: distractors all say "usually", key does not.
 - s41 infectious-diseases-31 q2 (Fournier and SGLT2) and 35 q4 (fidaxomicin for first recurrence) were rewritten by Lens B to remove overlap with s19. Each had one review only. Confirm fidaxomicin as the Canadian first choice.
+- Rectal ASA dose: abdominal-pain-46 (s19) keys 650 mg PR, the adult suppository Health Canada lists. Two cva SAMPs in s27 key 325 mg PR, which has no listed Canadian suppository. Pick one dose for the bank.
+- abdominal-pain-20 keys normal saline over Ringer's lactate because of hypochloremic alkalosis from vomiting. Ringer's lactate is not offered as an option, to avoid two defensible answers. *(samps-replace-s19-s24.md)*
+- abdominal-pain-36 relies on SOGC 426 for delivery in HELLP and magnesium, which I could not open. The keys are standard, but please confirm. *(samps-replace-s19-s24.md)*
+- These writer notes no longer apply because of the changes above: abdominal-pain-36 (SOGC 426), airway-25 q2, anaphylaxis-25 q1 (BMI 46) and arrhythmia-32 (methadone). *(samps-replace-s19-s24.md)*
+- abdominal-pain-27 keys haloperidol 5 mg IV and capsaicin cream for cannabinoid hyperemesis. Please confirm the dose matches your practice. *(samps-replace-s19-s24.md)*
+- abdominal-pain-36 keys admitting postpartum HELLP to obstetrics, not medicine. Please confirm this matches local practice. *(samps-replace-s19-s24.md)*
+- Remaining overlaps, not copies: *(samps-replace-s19-s24.md)*
+- anaphylaxis-25 q3 uses the same fluid-choice pattern as abdominal-pain-20 and -44. *(samps-replace-s19-s24.md)*
+- The HELLP and anaphylaxis topics are crowded with similar scenarios. Watch this in future rebuilds. *(samps-replace-s19-s24.md)*
+- loc-21 is being rebuilt by another writer in s32. Please check it does not collide with the new abdominal-pain-27 (cannabinoid hyperemesis). *(samps-replace-s19-s24.md)*
 - abdominal-pain-24 q1. Goonewardene 2015 is behind a paywall I could not open. Its link to diverticulitis rests on the Chan, Dorfman and Chan 2014 abstract it cites (Acad Emerg Med 21 Suppl 1: S206), which reported sterile pyuria in 72.7% of diverticulitis cases. I found no guideline (WSES 2020 checked) that states it. The teaching point is standard, but its best support is a conference abstract. *(samps-resource-s19-s39-s40.md)*
 - abdominal-pain-32 q1. The best primary study found is old: Scott 1983, 50 adults and 50 children. The key "Pyuria is common in appendicitis" rests on 12 of 50 children (24%). Please confirm "common" is acceptable. *(samps-resource-s19-s39-s40.md)*
 - abdominal-pain-48 and 49 duplicate 26 and 37. Confirm that both are rejected. *(samps-s19-lensA.md)*
@@ -19,6 +29,13 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - abdominal-pain-40 q1 wording cue, above. *(samps-s19-lensB.md)*
 - infectious-diseases-35 stem: the scenario (older woman, watery diarrhea after clindamycin, WBC and creatinine rise) still resembles abdominal-pain-43. The teaching now differs, but consider a different antibiotic or setting. *(samps-s41-lensB.md)*
 - infectious-diseases-31 stem: the scenario still carries euglycemic DKA labs similar to abdominal-pain-26 (Na 136, chloride 100, empagliflozin with poor intake). They now serve the Fournier and SGLT2 teaching only. *(samps-s41-lensB.md)*
+- ischemic-heart-disease-42: in mock mode the q2 and q3 options imply the q1 key (exertional angina). It also shares that keyed diagnosis with abdominal-pain-46 q2. The stories and distractors differ (back pain against a musculoskeletal differential, compared with epigastric pain against mesenteric angina). Keep both or replace one. *(samps-sweep2-final-check.md)*
+- abdominal-pain-46 q3 keys ASA 650 mg PR. It is the only adult ASA suppository listed in Canada, and the published PR range is 300 to 600 mg. Two s27 cva SAMPs key ASA 325 mg PR. Please choose one rectal dose for the bank, or accept that the two topics differ. *(samps-sweep2-review-sw2-b.md)*
+- abdominal-pain-36 q3 (breastfeeding while on labetalol) is mapped to PE4. It is true and well sourced, but it tests postpartum counselling more than BP control, seizure prophylaxis or delivery planning. Keep it, or swap in a PE4 decision that does not repeat pre-eclampsia-02 (magnesium) or the old admission key. *(samps-sweep2-review-sw2-b.md)*
+- abdominal-pain-36 q2 keys 60 minutes as the longest acceptable delay. ISSHP 2021 gives "within 60 min", and ACOG gives 30 to 60 minutes. No SOGC wording was confirmed. *(samps-sweep2-review-sw2-b.md)*
+- abdominal-pain-23 q2 says a noncontrast CT can be normal in renal infarction. This rests on one case report whose abstract does not state it. The claim is plausible, because renal infarction needs contrast to show. *(samps-sweep2-review-sw2-b.md)*
+- abdominal-pain-46 q3 keys ASA 650 mg PR. The only trial data I found used a 600 mg suppository against 162 mg chewed ASA. The Canadian Drug Product Database lists ASA suppositories of 150 mg and 650 mg. The s27 stroke SAMPs use 325 mg PR from Canadian stroke guidance. Please confirm the rectal dose you want keyed for ACS. *(samps-sweep2-sw2-b.md)*
+- abdominal-pain-36 q2 uses the ACOG 30 to 60 minute window. ISSHP says only that severe hypertension needs urgent treatment. I found no Canadian source that gives a time limit. *(samps-sweep2-sw2-b.md)*
 - Chapter numbers and titles were checked against the publisher's table of contents. The chapter text was not available, so matching each claim to a chapter is my judgment. Please confirm the 33 kept citations against your copy. *(samps-textbooks-s19-s25-s39-s40.md)*
 - abdominal-pain-46 q3. ASA 160 mg falls in the ESC range of 150 to 300 mg. It is just under the ACC/AHA range of 162 to 325 mg. *(samps-textbooks-s19-s25-s39-s40.md)*
 - abdominal-pain-29 q3. The Beutner trial enrolled immunocompetent adults aged 50 or older. This patient is immunosuppressed. *(samps-textbooks-s19-s25-s39-s40.md)*
@@ -28,83 +45,83 @@ Review reports: docs/reviews/writer-s19.md, samps-s19-lensA.md, samps-s19-lensB.
 
 ## SAMPs
 
-### abdominal-pain-16: Older man with abrupt epigastric and back pain
+### abdominal-pain-16: Older woman retching after supper
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 67-year-old man is brought to the emergency department by ambulance with severe epigastric pain that began abruptly 50 minutes ago while he was lifting a box. Within minutes the pain moved into his back between the shoulder blades. He now reports numbness of the left leg. He has hypertension and smokes. He takes amlodipine.
+A 78-year-old woman is brought to the emergency department by ambulance with 3 hours of severe epigastric and lower chest pain that began after supper. She has retched repeatedly but brings up only small amounts of saliva. She has a large paraesophageal hiatal hernia and declined surgery for it 2 years ago. She has hypertension and takes amlodipine.
 
-He is diaphoretic. The systolic pressure in the left arm is 30 mmHg lower than in the right arm. The abdomen is soft with mild epigastric tenderness. The left femoral pulse is weak and the left foot is cool. The ECG shows left ventricular hypertrophy without ST elevation.
+She is distressed and keeps sitting forward to retch. The epigastrium is distended and tender, with no guarding or rebound. The triage ECG shows sinus tachycardia with no ST changes. Her first high-sensitivity troponin is 6 ng/L. Lipase is 38 U/L (upper limit of normal 60 U/L).
 
-- Temperature: 36.8°C oral
-- Pulse: 104/minute
-- Resp.: 22/minute
-- BP: 178/96 mmHg
-- O2 sat: 97% on room air
+- Temperature: 36.9°C oral
+- Pulse: 112/minute
+- Resp.: 24/minute
+- BP: 158/88 mmHg
+- O2 sat: 95% on room air
 
 #### Q1
-**Which of the following is the most likely diagnosis for his pain?**
+**Which of the following is the most likely cause of her pain?**
 
-- A. Acute aortic dissection  **(key)**
+- A. Acute gastric volvulus  **(key)**
 - B. Acute pancreatitis
-- C. Perforated peptic ulcer
-- D. Saddle aortic embolus
-- E. Superior mesenteric artery embolus
+- C. Biliary colic
+- D. Inferior wall infarction
+- E. Perforated peptic ulcer
 
-*Explanation:* Abrupt maximal pain that moves from the epigastrium to the back, a 30 mmHg difference between the arms, above the 20 mmHg that counts as significant, and a new left leg pulse deficit point to aortic dissection with branch involvement. Pancreatitis builds over hours and does not cause pulse deficits. A perforated ulcer causes peritoneal signs, and this abdomen is soft. A saddle embolus causes ischemia of both legs and no difference between the arms. A mesenteric embolus needs an embolic source such as atrial fibrillation and does not explain the limb findings.
+*Explanation:* Severe epigastric pain with repeated retching that brings up almost nothing, epigastric distension and a known large paraesophageal hernia point to the stomach twisting within the hernia. A lipase of 38 U/L makes pancreatitis unlikely. Biliary colic causes vomiting of gastric contents and right upper quadrant pain, and does not explain unproductive retching. An inferior infarction stays on the list until serial troponins are done, but a normal ECG and a troponin of 6 ng/L after 3 hours of pain do not support it, and it does not explain the distension. A perforated ulcer causes guarding and rebound, which she does not have.
 
 *Key feature:* Abdominal pain 1. Weigh age, sex, pain site and migration, and lethal or atypical causes such as AAA when building the differential.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022. https://www.ahajournals.org/doi/10.1161/CIR.0000000000001106
+*Source:* Akhtar A, Siddiqui FS, Sheikh AAE, Sheikh AB, Perisetti A. Gastric volvulus: a rare entity case report and literature review. Cureus. 2018. https://doi.org/10.7759/cureus.2312
 
 #### Q2
-**Which of the following is the most appropriate imaging test to confirm the diagnosis?**
+**Which of the following is the most appropriate imaging test to confirm her diagnosis?**
 
-- A. Abdominal ultrasound of the aorta
-- B. CT abdomen without contrast
-- C. CT angiography chest to pelvis  **(key)**
-- D. MRI angiography of the aorta
-- E. Transthoracic echocardiography
+- A. Abdominal ultrasound
+- B. Barium swallow and meal
+- C. CT with IV contrast  **(key)**
+- D. MRI of the abdomen
+- E. Upright abdominal X-ray
 
-*Explanation:* CT angiography from the chest to the pelvis is fast and widely available, and it shows the extent of the flap and which branches are involved, here including the left leg. Abdominal ultrasound can sometimes show a flap but cannot define the thoracic aorta. CT without contrast cannot show the flap or branch perfusion. MRI angiography is accurate but slow and takes a monitored patient away from resuscitation. Transthoracic echocardiography cannot see most of the descending aorta.
+*Explanation:* CT of the chest and abdomen with IV contrast shows the position and twist of the stomach, the level of obstruction and whether the gastric wall still enhances, which decides how urgent surgery is. Ultrasound cannot see a stomach that sits in the chest behind gas. A barium study can show the twist but is slow, risks aspiration in a patient who keeps retching, and says nothing about blood supply. MRI is slow and hard to obtain in a distressed patient. An upright X-ray may show a gas-filled viscus above the diaphragm but cannot confirm the twist or judge ischemia.
 
 *Key feature:* Abdominal pain 5. Match imaging to the leading diagnosis, for example FAST in trauma or ultrasound for biliary and pelvic disease.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022. https://www.ahajournals.org/doi/10.1161/CIR.0000000000001106
+*Source:* Akhtar A, Siddiqui FS, Sheikh AAE, Sheikh AB, Perisetti A. Gastric volvulus: a rare entity case report and literature review. Cureus. 2018. https://doi.org/10.7759/cureus.2312
 
 #### Q3
-*Update:* While CT is being arranged, you plan to control his heart rate and BP.
+*Update:* While imaging is arranged she keeps retching. A second ECG is unchanged.
 
-**Which of the following is the most appropriate first IV medication for him?**
+**Which of the following is the most appropriate early treatment for her while she waits for imaging?**
 
-- A. Esmolol IV infusion  **(key)**
-- B. Hydralazine 10 mg IV
-- C. Nicardipine IV infusion
-- D. Nitroglycerin IV infusion
-- E. Nitroprusside IV infusion
+- A. Metoclopramide 10 mg IV
+- B. Nasogastric tube decompression  **(key)**
+- C. Oral water-soluble contrast
+- D. Pantoprazole 80 mg IV then infusion
+- E. Sucralfate 1 g PO
 
-*Explanation:* In acute aortic dissection an IV beta blocker such as esmolol comes first, aiming for a heart rate of 60 to 80/minute and a systolic BP below 120 mmHg, to reduce the force of each ejection on the torn wall. Vasodilators such as nitroprusside, nicardipine, nitroglycerin and hydralazine cause reflex tachycardia if given first, which raises aortic wall stress. They are added only after the heart rate is controlled.
+*Explanation:* Gentle passage of a nasogastric tube can decompress a twisted, distended stomach, ease her pain and lower the risk of ischemia and perforation, and in many patients it allows surgery to be done in a planned way. It should not be forced, and failure to pass it is itself a clue to volvulus. Metoclopramide pushes the stomach to contract against a closed outlet. Oral contrast adds fluid to an obstructed stomach and raises the risk of aspiration. Pantoprazole and sucralfate treat acid injury, which is not the problem here.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022. https://www.ahajournals.org/doi/10.1161/CIR.0000000000001106
+*Source:* Akhtar A, Siddiqui FS, Sheikh AAE, Sheikh AB, Perisetti A. Gastric volvulus: a rare entity case report and literature review. Cureus. 2018. https://doi.org/10.7759/cureus.2312
 
 #### Q4
-*Update:* CT angiography shows a dissection that starts beyond the left subclavian artery and extends into the left common iliac artery, with poor flow to the left leg. Lactate is 3.9 mmol/L.
+*Update:* Imaging confirms the diagnosis and shows poor enhancement of the gastric wall. Her pain and distension are no better, and she is still retching. Lactate is 4.2 mmol/L.
 
-**Which of the following is the most appropriate next step in his care?**
+**Which of the following is the most appropriate next step in her care?**
 
-- A. Admit to medicine for BP control
-- B. Arterial Doppler of the left leg
-- C. Repeat lactate in 2 hours
-- D. Serial abdominal examinations
-- E. Vascular surgery consult now  **(key)**
+- A. Admit to medicine for observation
+- B. Endoscopic reduction tomorrow morning
+- C. General surgery for emergency repair  **(key)**
+- D. Repeat CT in 6 hours
+- E. Serial lactate measurements
 
-*Explanation:* Leg malperfusion with a lactate of 3.9 mmol/L makes this a complicated type B dissection, which needs urgent endovascular or open repair, so the vascular surgeon is called now while heart rate and BP are controlled. Admission to a medical ward for BP control suits only uncomplicated type B dissection. A Doppler study adds nothing to a cool leg with poor flow already shown on CT. Repeating the lactate or relying on serial examinations delays repair while the leg, and possibly the gut, remain ischemic.
+*Explanation:* Poor enhancement of the gastric wall with a lactate of 4.2 mmol/L means the twisted stomach is becoming ischemic, and her pain and distension have not settled, so she needs the surgeon now for emergency reduction and repair. Staged care with decompression first and planned surgery later suits only patients without signs of ischemia. Endoscopy in the morning, admission to a medical ward, a repeat CT and serial lactates all delay surgery while the gastric wall may necrose and perforate.
 
 *Key feature:* Abdominal pain 4. When findings point to a surgical emergency, involve the surgeon without waiting for needless extra tests.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022. https://www.ahajournals.org/doi/10.1161/CIR.0000000000001106
+*Source:* Wirsching A, El Lakis MA, Mohiuddin K, and colleagues. Acute vs. elective paraesophageal hernia repair: endoscopic gastric decompression allows semi-elective surgery in a majority of acute patients. J Gastrointest Surg. 2018. https://doi.org/10.1007/s11605-017-3495-x
 
 ### abdominal-pain-17: Young woman with constant periumbilical pain
 
@@ -316,84 +333,85 @@ Select 3.
 
 *Source:* Okamoto K, Suzuki K, Takada T, et al. Tokyo Guidelines 2018: flowchart for the management of acute cholecystitis. J Hepatobiliary Pancreat Sci. 2018. https://pubmed.ncbi.nlm.nih.gov/29045062/
 
-### abdominal-pain-20: Woman with epigastric pain radiating to the back
+### abdominal-pain-20: Vomiting and cramps at 26 weeks
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 63-year-old woman presents to the emergency department with 8 hours of severe epigastric pain radiating to the back, with repeated vomiting. She does not drink alcohol. She has hypertension and takes ramipril.
+A 29-year-old woman, G2P1 at 26 weeks, presents to the emergency department with 18 hours of crampy central abdominal pain and repeated green vomiting. She has not passed stool or flatus since yesterday. At age 15 she had an open appendectomy for a perforated appendix. Her pregnancy has been uncomplicated, and she takes a prenatal vitamin.
 
-Her mucous membranes are moist. There is epigastric tenderness without guarding. Lipase is 2 400 U/L (upper limit of normal 60 U/L). ALT is 310 U/L. Bilirubin is 22 umol/L. Triglycerides are 1.8 mmol/L. Calcium is normal. Creatinine is 74 umol/L. The ECG is normal.
+Her mucous membranes are dry. The abdomen is distended with high-pitched bowel sounds and mild diffuse tenderness, without guarding. The uterus is soft and nontender, and the fetal heart rate is 150/minute. Sodium is 134 mmol/L, potassium 3.3 mmol/L, chloride 91 mmol/L and bicarbonate 31 mmol/L. Lactate is 1.6 mmol/L. WBC is 12.1 x 10^9/L.
 
-- Temperature: 37.3°C oral
-- Pulse: 92/minute
-- Resp.: 18/minute
-- BP: 134/80 mmHg
-- O2 sat: 97% on room air
-- Weight: 70 kg
+- Temperature: 37.1°C oral
+- Pulse: 118/minute
+- Resp.: 20/minute
+- BP: 98/60 mmHg
+- O2 sat: 98% on room air
 
 #### Q1
-**Which of the following is the most appropriate imaging test in the emergency department?**
+**Which of the following is the most appropriate first imaging test for her?**
 
-- A. CT abdomen with IV contrast
-- B. Endoscopic ultrasound
-- C. MR cholangiopancreatography
-- D. Right upper quadrant ultrasound  **(key)**
-- E. No imaging needed today
+- A. Abdominal ultrasound  **(key)**
+- B. CT abdomen with IV contrast
+- C. MRI with gadolinium
+- D. Supine and upright X-rays
+- E. Upper GI series with barium
 
-*Explanation:* Typical pain with a lipase 40 times the upper limit (2 400 against 60 U/L) confirms pancreatitis without CT. In a woman who does not drink, with a raised ALT and normal triglycerides and calcium, transabdominal ultrasound is recommended to look for gallstones, which changes management. Early CT is reserved for diagnostic doubt or failure to improve. Endoscopic ultrasound and MRCP are second line tests if ultrasound is unrevealing. Skipping imaging leaves the cause unknown.
+*Explanation:* Her crampy pain, bilious vomiting, distension and prior open surgery suggest adhesive small bowel obstruction. In pregnancy, ultrasound is the first test because it uses no radiation, and in skilled hands it shows dilated fluid-filled loops, abnormal peristalsis and free fluid, with MRI added for anatomy if needed. CT is the usual test outside pregnancy, but ultrasound comes first here. Gadolinium is avoided in pregnancy. Plain X-rays add radiation and give less information than ultrasound. A barium study is slow and gives no information about strangulation.
 
 *Key feature:* Abdominal pain 5. Match imaging to the leading diagnosis, for example FAST in trauma or ultrasound for biliary and pelvic disease.
 
-*Source:* Tenner S and colleagues. American College of Gastroenterology guidelines: management of acute pancreatitis. Am J Gastroenterol. 2024.
+*Source:* Ten Broek RPG, Krielen P, Di Saverio S, and colleagues. Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update of the evidence-based guidelines from the World Society of Emergency Surgery ASBO working group. World J Emerg Surg. 2018. https://doi.org/10.1186/s13017-018-0185-2
 
 #### Q2
-**Which of the following is the most appropriate initial IV fluid plan for her?**
+*Update:* Imaging confirms dilated, fluid-filled small bowel loops of 3.4 cm. Fluid resuscitation is started.
 
-- A. Albumin 5% 500 mL IV
-- B. Normal saline 250 mL/hour
-- C. Oral fluids only as tolerated
-- D. Ringer's lactate 3 mL/kg/hour
-- E. Ringer's lactate 1.5 mL/kg/hour  **(key)**
+**Which of the following is the most appropriate initial IV fluid for her?**
 
-*Explanation:* In the WATERFALL trial, moderate resuscitation with Ringer's lactate at 1.5 mL/kg/hour, with a 10 mL/kg bolus only for hypovolemia, caused less fluid overload than aggressive fluids and gave similar outcomes. She has moist mucous membranes and normal vital signs, so no bolus is needed. At 70 kg, 3 mL/kg/hour is 210 mL/hour, the aggressive rate. Normal saline at 250 mL/hour is about 3.6 mL/kg/hour, also aggressive. Albumin has no role, and with repeated vomiting she cannot rely on oral fluids.
+- A. Albumin 25% 100 mL IV
+- B. Dextrose 5% water 1 L IV
+- C. Half-normal saline 1 L IV
+- D. Hydroxyethyl starch 500 mL IV
+- E. Normal saline 1 L IV bolus  **(key)**
+
+*Explanation:* She is volume depleted from vomiting and third spacing, with a pulse of 118/minute and a BP of 98/60 mmHg, so she needs an isotonic crystalloid bolus. Her chloride of 91 mmol/L and bicarbonate of 31 mmol/L show a hypochloremic metabolic alkalosis from vomiting, and normal saline is the logical choice for that loss because it replaces chloride. No trial has shown albumin to be better than crystalloid for resuscitation, and 100 mL of 25% albumin adds little volume. Glucose solutions stay mainly outside the circulation, and half-normal saline is hypotonic, so both expand the circulating volume poorly. Hydroxyethyl starch is toxic to the kidneys and should not be used.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Source:* de-Madaria E and colleagues. Aggressive or moderate fluid resuscitation in acute pancreatitis. N Engl J Med. 2022. The WATERFALL trial. https://www.nejm.org/doi/full/10.1056/NEJMoa2202884
+*Source:* Malbrain MLNG, Langer T, Annane D, and colleagues. Intravenous fluid therapy in the perioperative and critical care setting: executive summary of the International Fluid Academy (IFA). Ann Intensive Care. 2020. https://doi.org/10.1186/s13613-020-00679-3
 
 #### Q3
-*Update:* The surgical resident asks for a contrast CT today to grade the severity.
+*Update:* After 2 L of IV fluid her pulse is 96/minute. The first imaging test cannot show the site or cause of the obstruction.
 
-**Which of the following is the most accurate response about CT for her today?**
+**Which of the following is the most appropriate next imaging test for her?**
 
-- A. CT now is needed to find necrosis
-- B. CT today predicts her need for ICU
-- C. Defer CT unless she fails to improve  **(key)**
-- D. MRI should replace CT today
-- E. Severity grading requires CT today
+- A. CT abdomen with oral contrast
+- B. MRI abdomen without gadolinium  **(key)**
+- C. Nuclear medicine bowel transit study
+- D. Repeat ultrasound in 24 hours
+- E. Small bowel follow-through
 
-*Explanation:* The diagnosis is already secure, and necrosis is often not visible in the first 72 hours, so early CT adds radiation and contrast without changing care. Guidelines reserve CT for diagnostic doubt or failure to improve after 48 to 72 hours. Severity is judged by organ failure and whether it persists, not by early imaging. MRI is an alternative when imaging is needed, not a routine early test.
+*Explanation:* MRI without gadolinium shows the transition point, the cause and signs of ischemia without ionizing radiation, so it is the preferred next test in pregnancy when ultrasound is not enough. Gadolinium is left out unless it would clearly change care. CT should not be withheld if MRI is unavailable, because the fetal dose from one abdominal CT is well below the level linked to harm, but it is not the first choice here. A follow-through series and a nuclear study add radiation, take hours and do not show strangulation. Waiting 24 hours to repeat the ultrasound delays the diagnosis.
 
 *Key feature:* Abdominal pain 7. Factor radiation dose and lifetime cancer risk into imaging decisions for abdominal pain.
 
-*Source:* Tenner S and colleagues. American College of Gastroenterology guidelines: management of acute pancreatitis. Am J Gastroenterol. 2024.
+*Source:* American College of Obstetricians and Gynecologists. Committee Opinion No. 723: guidelines for diagnostic imaging during pregnancy and lactation. Obstet Gynecol. 2017. https://doi.org/10.1097/AOG.0000000000002355
 
 #### Q4
-*Update:* Ultrasound shows gallstones and a normal common bile duct. Her pain settles and her liver enzymes fall over 48 hours.
+*Update:* While she waits for further imaging her pain becomes constant and she develops guarding in the right lower abdomen. Her pulse is 124/minute. Repeat lactate is 3.4 mmol/L.
 
-**Which of the following is the most appropriate plan for her gallstones?**
+**Which of the following is the most appropriate next step in her care?**
 
-- A. Cholecystectomy in 6 to 8 weeks
-- B. Cholecystectomy this admission  **(key)**
-- C. ERCP before discharge
-- D. Ursodiol and outpatient review
-- E. No surgery unless pain recurs
+- A. Complete imaging before a consult
+- B. Nasogastric tube, reassess tomorrow
+- C. Obstetric consult to plan delivery
+- D. Surgical consult for laparotomy now  **(key)**
+- E. Water-soluble contrast challenge
 
-*Explanation:* For mild gallstone pancreatitis, cholecystectomy during the same admission prevents recurrent attacks, so the surgeon should be involved before discharge. Waiting 6 to 8 weeks allows recurrent pancreatitis, cholecystitis or cholangitis in the interval. ERCP is for cholangitis or a retained duct stone, and her duct is normal with falling enzymes. Ursodiol does not prevent recurrence. Deferring surgery until pain recurs accepts a high risk of another attack.
+*Explanation:* Constant pain, new guarding, a rising pulse and a lactate that has climbed to 3.4 mmol/L suggest strangulation, which rules out nonoperative care and calls for the surgeon now, without waiting for more imaging. Obstruction in pregnancy carries a real risk of fetal loss, and delay makes it worse. The obstetric team should be involved, but delivery at 26 weeks does not treat the bowel. Completing imaging, a contrast challenge or waiting overnight with a nasogastric tube are options only when there are no signs of ischemia.
 
 *Key feature:* Abdominal pain 4. When findings point to a surgical emergency, involve the surgeon without waiting for needless extra tests.
 
-*Source:* Tenner S and colleagues. American College of Gastroenterology guidelines: management of acute pancreatitis. Am J Gastroenterol. 2024.
+*Source:* Ten Broek RPG, Krielen P, Di Saverio S, and colleagues. Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (ASBO): 2017 update of the evidence-based guidelines from the World Society of Emergency Surgery ASBO working group. World J Emerg Surg. 2018. https://doi.org/10.1186/s13017-018-0185-2
 
 ### abdominal-pain-21: Older man with a distended abdomen
 
@@ -460,150 +478,146 @@ The abdomen is massively distended and tympanic, with mild diffuse tenderness an
 
 *Source:* Tian BWCA and colleagues. WSES consensus guidelines on sigmoid volvulus management. World J Emerg Surg. 2023. https://link.springer.com/article/10.1186/s13017-023-00502-x
 
-### abdominal-pain-22: Resident of long-term care with vomiting
+### abdominal-pain-22: Lower abdominal pain after a night out
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 81-year-old woman is brought to the emergency department from her long-term care home with 2 days of vomiting, poor intake and a swollen abdomen. Staff sent her for a urinary tract infection because a urine dipstick was positive for leukocytes and nitrites. She has moderate dementia and cannot describe her pain. She has never had abdominal surgery. She takes donepezil and amlodipine.
+A 31-year-old woman presents to the emergency department at 14:00 with lower abdominal pain that she noticed on waking at 08:00. She drank heavily at a party last night. At about 02:00 she slipped in the bathroom and fell against the edge of the bathtub before she had emptied her bladder. Since waking she has passed only small amounts of blood-tinged urine despite a strong urge. A friend told her it sounds like a bladder infection. She has no medical history.
 
-She grimaces on palpation of the lower abdomen. The abdomen is distended with high pitched bowel sounds and mild diffuse tenderness. There is no suprapubic or costovertebral angle tenderness. WBC is 12.4 x 10^9/L. Lactate is 2.2 mmol/L.
+There is a small bruise above the pubis, with suprapubic and mild diffuse lower abdominal tenderness. Urine dipstick shows large blood, 1+ leukocytes and no nitrites. Creatinine is 162 umol/L. It was 64 umol/L 3 months ago. Urine beta hCG is negative. Bedside ultrasound shows free fluid in the pelvis and around the liver.
 
-- Temperature: 37.2°C tympanic
-- Pulse: 106/minute
-- Resp.: 20/minute
-- BP: 108/64 mmHg
-- O2 sat: 95% on room air
+- Temperature: 37.2°C oral
+- Pulse: 102/minute
+- Resp.: 18/minute
+- BP: 118/72 mmHg
+- O2 sat: 99% on room air
 
 #### Q1
-*Update:* The nurse from the home asks whether antibiotics for a urinary tract infection will be enough.
+**Which of the following findings most strongly argues against a bladder infection as the cause of her pain?**
 
-**Which of the following statements about her positive urine dipstick is most accurate?**
+- A. Blood on the urine dipstick
+- B. Free fluid with a rising creatinine  **(key)**
+- C. Leukocytes on the urine dipstick
+- D. Negative nitrite on the dipstick
+- E. Suprapubic tenderness
 
-- A. Her vomiting is typical of cystitis
-- B. It may be asymptomatic bacteriuria  **(key)**
-- C. Leukocytes and nitrites confirm a UTI
-- D. Nitrites alone justify antibiotics
-- E. UTI explains her distension
-
-*Explanation:* Asymptomatic bacteriuria is common in older women in long-term care, and a positive dipstick cannot separate it from infection, so it must not end the search for another cause. She has no suprapubic or flank tenderness, and distension with high pitched bowel sounds points to bowel obstruction. Leukocytes and nitrites are both common with bacteriuria alone. Guidelines advise against treating bacteriuria in older adults without localizing urinary symptoms. Cystitis does not cause abdominal distension or obstructive bowel sounds, and vomiting is not a typical feature.
+*Explanation:* Cystitis does not put fluid in the abdomen or raise the creatinine in a few hours. Free fluid with a creatinine that has climbed from 64 to 162 umol/L suggests urine leaking into the peritoneum, where urea and creatinine are absorbed back into the blood. Blood and leukocytes on the dipstick occur with both infection and injury, so they cannot separate the two. A negative nitrite does not exclude infection. Suprapubic tenderness fits cystitis as well as a bladder injury.
 
 *Key feature:* Abdominal pain 8. Avoid blaming abdominal pain on a urinary tract infection too readily, particularly in women.
 
-*Source:* Nicolle LE and colleagues. Clinical practice guideline for the management of asymptomatic bacteriuria: 2019 update by the Infectious Diseases Society of America. Clin Infect Dis. 2019. https://pubmed.ncbi.nlm.nih.gov/30895288/
+*Source:* Mahat Y, Leong JY, Chung PH. A contemporary review of adult bladder trauma. J Inj Violence Res. 2019. https://doi.org/10.5249/jivr.v11i2.1069
 
 #### Q2
-**Which of the following examinations is most likely to reveal the cause of her obstruction?**
+**Which of the following is the most likely diagnosis for her?**
 
-- A. Assessment for a Murphy sign
-- B. Digital rectal examination
-- C. Inspection of both groins  **(key)**
-- D. Pelvic speculum examination
-- E. Test for a Rovsing sign
+- A. Acute pyelonephritis
+- B. Extraperitoneal bladder rupture
+- C. Intraperitoneal bladder rupture  **(key)**
+- D. Ruptured ovarian cyst
+- E. Urethral injury
 
-*Explanation:* Bowel obstruction in a patient who has never had surgery should prompt a search for a hernia, and a femoral hernia, most common in older women, is small, easily missed under a distended abdomen and prone to strangulation. A rectal examination may find stool but does not explain the obstruction. A Murphy sign tests for cholecystitis and a Rovsing sign for appendicitis, neither of which causes this picture. A speculum examination adds nothing to an obstructed bowel.
+*Explanation:* A blow to a full bladder while intoxicated can burst the dome, the weakest part of the bladder, which rises out of the pelvis when full. Urine then leaks into the peritoneal cavity, giving free fluid around the liver and a rising creatinine from peritoneal absorption. Extraperitoneal rupture usually comes with a pelvic fracture, and the leak stays around the bladder. Pyelonephritis causes fever and flank pain, not free fluid. A ruptured ovarian cyst does not explain the bloody urine or the creatinine. Urethral injury is rare in women and usually follows pelvic fracture.
 
 *Key feature:* Abdominal pain 1. Weigh age, sex, pain site and migration, and lethal or atypical causes such as AAA when building the differential.
 
-*Source:* Birindelli A and colleagues. 2017 update of the WSES guidelines for emergency repair of complicated abdominal wall hernias. World J Emerg Surg. 2017. https://pubmed.ncbi.nlm.nih.gov/28804507/
+*Source:* Mahat Y, Leong JY, Chung PH. A contemporary review of adult bladder trauma. J Inj Violence Res. 2019. https://doi.org/10.5249/jivr.v11i2.1069
 
 #### Q3
-*Update:* There is a firm, tender, irreducible 3 cm lump below the right inguinal ligament, lateral to the pubic tubercle, with redness of the overlying skin.
+*Update:* CT cystography confirms the diagnosis. There is no pelvic fracture.
 
 **Which of the following is the most appropriate next step in her care?**
 
-- A. Admit to medicine for IV fluids
-- B. Attempt manual reduction
-- C. CT before calling surgery
-- D. Emergency surgical consultation  **(key)**
-- E. Ultrasound of the groin first
+- A. Admit to medicine for kidney injury
+- B. Catheter drainage alone for 14 days
+- C. Repeat CT cystogram in 24 hours
+- D. Suprapubic tube by radiology
+- E. Urology for surgical repair now  **(key)**
 
-*Explanation:* An irreducible, tender femoral hernia with skin redness, bowel obstruction, a raised WBC and a lactate of 2.2 mmol/L suggests strangulation, which needs emergency repair. The surgeon should be called now, and any imaging the surgeon wants should not delay that call. Manual reduction is avoided when strangulation is suspected because dead bowel may be pushed back into the abdomen. Ultrasound or CT before the call adds delay. Admission to medicine for fluids misses a surgical emergency.
+*Explanation:* Intraperitoneal bladder rupture needs surgical repair, because the dome tear lets urine keep draining into the peritoneum and rarely heals with a catheter alone. The urologist should be called now rather than after more tests. Catheter drainage is the usual treatment for uncomplicated extraperitoneal injury. Her creatinine rise comes from absorbed urine, so admission to medicine for kidney injury misreads the problem. A repeat cystogram or a suprapubic tube delays the repair.
 
 *Key feature:* Abdominal pain 4. When findings point to a surgical emergency, involve the surgeon without waiting for needless extra tests.
 
-*Source:* Birindelli A and colleagues. 2017 update of the WSES guidelines for emergency repair of complicated abdominal wall hernias. World J Emerg Surg. 2017. https://pubmed.ncbi.nlm.nih.gov/28804507/
+*Source:* Morey AF, Broghammer JA, Hollowell CMP, and colleagues. Urotrauma guideline 2020: AUA guideline. J Urol. 2021. https://doi.org/10.1097/JU.0000000000001408
 
 #### Q4
-*Update:* The surgeon is on the way and the operating room is being prepared.
+**Which of the following are the most appropriate measures while she waits for definitive treatment?**
 
-**Which of the following are the most appropriate measures for her while she waits?**
+Select 2.
 
-Select 3.
+- A. Furosemide 40 mg IV
+- B. Hemodialysis for the creatinine
+- C. Nothing by mouth  **(key)**
+- D. Renal ultrasound first
+- E. Retrograde urethrogram
+- F. Urethral catheter to free drainage  **(key)**
+- G. Wait for urine culture
 
-- A. Broad-spectrum IV antibiotics  **(key)**
-- B. Crystalloid bolus IV  **(key)**
-- C. Laxative suppository
-- D. Manual reduction under sedation
-- E. Nasogastric tube to suction  **(key)**
-- F. Nitrofurantoin for the urine
-- G. Oral water-soluble contrast
-
-*Explanation:* A likely strangulated hernia with obstruction needs fluid resuscitation for vomiting and tachycardia, nasogastric decompression, and broad-spectrum antibiotics because the bowel may be ischemic. Manual reduction risks returning dead bowel to the abdomen. Oral contrast and a laxative have no role in a strangulated obstruction going to surgery. Nitrofurantoin treats a bacteriuria that is unlikely to explain her illness.
+*Explanation:* A urethral catheter to free drainage keeps the bladder empty and reduces the leak into the peritoneum until repair, and she should take nothing by mouth before anesthesia. Her creatinine comes from urine absorbed across the peritoneum and falls once the leak is repaired, so furosemide and dialysis treat a kidney failure she does not have. A renal ultrasound and waiting for a urine culture delay surgery without changing it. A retrograde urethrogram looks for urethral injury, which is rare in women and not suspected here.
 
 *Key feature:* Abdominal pain 4. When findings point to a surgical emergency, involve the surgeon without waiting for needless extra tests.
 
-*Source:* Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 78, Small Intestine. https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html
+*Source:* Mahat Y, Leong JY, Chung PH. A contemporary review of adult bladder trauma. J Inj Violence Res. 2019. https://doi.org/10.5249/jivr.v11i2.1069
 
-### abdominal-pain-23: Older woman with pain and maroon stool
+### abdominal-pain-23: Man with constant right flank pain
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 76-year-old woman presents to the emergency department with 6 hours of sudden crampy right-sided abdominal pain, followed by two episodes of maroon stool. She has atrial fibrillation, heart failure and hypertension. She stopped apixaban 5 days ago for a dental extraction. She has no vomiting of blood.
+A 58-year-old man presents to the emergency department with 5 hours of constant, severe right flank and right upper abdominal pain. It began suddenly while he was reading and has not come in waves. He vomited once. He has paroxysmal atrial fibrillation and hypertension treated with ramipril. He stopped apixaban 3 weeks ago because of nosebleeds. He has never had a kidney stone.
 
-There is tenderness in the right lower quadrant and right flank without guarding or rebound. Rectal examination shows maroon stool. Hemoglobin is 118 g/L, unchanged from last month. Lactate is 2.4 mmol/L. Creatinine is 96 umol/L.
+He is restless and rates the pain 9 out of 10. The abdomen is soft, with mild tenderness at the right flank and no guarding. Bedside ultrasound shows an abdominal aorta of normal calibre and no hydronephrosis. Urinalysis shows 10 to 20 red cells per high-power field, with no leukocytes or nitrites. WBC is 12.8 x 10^9/L. Creatinine is 96 umol/L.
 
-- Temperature: 37.1°C oral
-- Pulse: 98/minute irregular
+- Temperature: 37.6°C oral
+- Pulse: 104/minute irregular
 - Resp.: 18/minute
-- BP: 136/78 mmHg
-- O2 sat: 96% on room air
+- BP: 152/90 mmHg
+- O2 sat: 97% on room air
 
 #### Q1
-**Which of the following is the most likely cause of her symptoms?**
+**Which of the following features of his history most widens the differential diagnosis beyond renal colic?**
 
-- A. Colon ischemia  **(key)**
-- B. Diverticular bleeding
-- C. Infectious colitis
-- D. Inflammatory bowel disease
-- E. Right colon cancer
+- A. First episode of flank pain
+- B. His age of 58 years
+- C. Hypertension treated with ramipril
+- D. One episode of vomiting
+- E. Stopped apixaban 3 weeks ago  **(key)**
 
-*Explanation:* Sudden crampy pain followed within 24 hours by bloody or maroon stool in an older patient with vascular disease is the typical pattern of colon ischemia. Stopping apixaban with atrial fibrillation adds an embolic risk. Diverticular bleeding is usually painless. Infectious colitis usually brings fever and diarrhea over days. New inflammatory bowel disease rarely begins this abruptly at 76. Colon cancer causes slow blood loss and a change in bowel habit, not sudden pain.
+*Explanation:* He has atrial fibrillation and stopped apixaban 3 weeks ago, so a clot from the heart can lodge in a renal artery, and renal infarction must join renal colic on the list. Atrial fibrillation was the usual source in the cardiac group of a large series of renal infarction. His constant pain that does not come in waves, with no hydronephrosis, fits that concern. An aorta of normal calibre on bedside ultrasound makes a leaking aneurysm unlikely. A first episode of flank pain fits a first stone as well as other causes. His age and treated hypertension are common in both conditions. One episode of vomiting occurs with any severe flank pain.
 
 *Key feature:* Abdominal pain 1. Weigh age, sex, pain site and migration, and lethal or atypical causes such as AAA when building the differential.
 
-*Source:* Brandt LJ and colleagues. ACG clinical guideline: epidemiology, risk factors, patterns of presentation, diagnosis, and management of colon ischemia. Am J Gastroenterol. 2015. https://pubmed.ncbi.nlm.nih.gov/25559486/
+*Source:* Bourgault M, Grimbert P, Verret C, and colleagues. Acute renal infarction: a case series. Clin J Am Soc Nephrol. 2013. https://doi.org/10.2215/CJN.05570612
 
 #### Q2
-**Which of the following is the most appropriate imaging test for her now?**
+**Which of the following is the most appropriate imaging test to find the cause of his pain?**
 
-- A. Abdominal ultrasound
-- B. Multiphase CT angiography  **(key)**
-- C. Tagged red cell scan
-- D. Upper endoscopy
-- E. Urgent colonoscopy
+- A. Abdominal X-ray series
+- B. Formal renal ultrasound
+- C. MRI of the abdomen
+- D. Noncontrast CT for stones
+- E. Renal CT with IV contrast  **(key)**
 
-*Explanation:* When colon ischemia may involve only the right colon, CT angiography is advised, because isolated right colon ischemia can signal acute mesenteric ischemia from superior mesenteric artery disease, which is lethal if missed. It also shows the extent of colitis. Ultrasound is limited by bowel gas. A tagged red cell scan localizes brisk bleeding, not ischemia. Upper endoscopy is not the first test with a stable hemoglobin, no hematemesis and right-sided pain. Colonoscopy comes later, within 48 hours, once mesenteric ischemia is excluded.
+*Explanation:* Renal infarction shows on CT with IV contrast as a wedge-shaped area of kidney that does not enhance, and the same scan shows the renal arteries and the aorta. His creatinine of 96 umol/L allows contrast. A noncontrast CT for stones cannot show perfusion and can be normal in renal infarction, which is one way the diagnosis is missed. A formal renal ultrasound would mainly repeat the search for hydronephrosis that bedside ultrasound has already done. An abdominal X-ray shows only some stones. MRI can show an infarct but takes longer to obtain and adds nothing to contrast CT here.
 
 *Key feature:* Abdominal pain 5. Match imaging to the leading diagnosis, for example FAST in trauma or ultrasound for biliary and pelvic disease.
 
-*Source:* Brandt LJ and colleagues. ACG clinical guideline: epidemiology, risk factors, patterns of presentation, diagnosis, and management of colon ischemia. Am J Gastroenterol. 2015. https://pubmed.ncbi.nlm.nih.gov/25559486/
+*Source:* Motaouakil A, Yacoub AO, El Moudane A, Barki A. Acute renal infarction mimicking renal colic: a case report and review of the literature. Urol Case Rep. 2024. https://doi.org/10.1016/j.eucr.2024.102823
 
 #### Q3
-*Update:* While she waits for CT, her pain rises to 10 out of 10. The abdomen remains soft without guarding. Repeat lactate is 4.1 mmol/L.
+*Update:* Forty minutes after ketorolac 15 mg IV and morphine 5 mg IV, he still rates his pain 9 out of 10. His abdomen remains soft.
 
-**Which of the following is the most appropriate action while CT is arranged?**
+**Which of the following findings most strongly suggests a serious cause for his pain?**
 
-- A. IV metronidazole for colitis
-- B. Morphine and reassess in 1 hour
-- C. Reassurance as abdomen is soft
-- D. Stool culture and toxin testing
-- E. Urgent vascular surgery consult  **(key)**
+- A. Microscopic hematuria
+- B. Mild tenderness at the right flank
+- C. Pain despite two analgesics  **(key)**
+- D. Temperature of 37.6°C
+- E. WBC of 12.8 x 10^9/L
 
-*Explanation:* Pain that escalates far beyond a soft abdomen, with lactate rising from 2.4 to 4.1 mmol/L, must be treated as acute mesenteric ischemia until proven otherwise, so a vascular surgeon should see her now while CT angiography is expedited. Analgesia is appropriate, but waiting an hour to reassess loses bowel. Stool tests and antibiotics for colitis do not treat an occluded artery. A soft abdomen is expected in early mesenteric ischemia and is not reassuring.
+*Explanation:* Pain that stays severe after two analgesics while the abdomen remains soft is pain out of proportion to the examination. It points to a vascular cause such as renal infarction and must not be dismissed as a stubborn stone. In a series of 94 patients with renal infarction, 96.8% had abdominal or flank pain. Microscopic hematuria occurs with stones and was found in only 42% of tested patients with renal infarction, so it does not separate the two. Mild flank tenderness is expected with a stone. A temperature of 37.6°C and a WBC of 12.8 x 10^9/L are nonspecific findings that occur with many causes of acute pain.
 
 *Key feature:* Abdominal pain 2. When pain seems far worse than the exam suggests, actively exclude serious disease such as mesenteric ischemia or pancreatitis.
 
-*Source:* Bala M and colleagues. Acute mesenteric ischemia: updated guidelines of the World Society of Emergency Surgery. World J Emerg Surg. 2022. https://wjes.biomedcentral.com/articles/10.1186/s13017-022-00443-x
+*Source:* Bourgault M, Grimbert P, Verret C, and colleagues. Acute renal infarction: a case series. Clin J Am Soc Nephrol. 2013. https://doi.org/10.2215/CJN.05570612
 
 ### abdominal-pain-24: Woman with left lower quadrant pain and urinary frequency
 
@@ -791,71 +805,67 @@ His mucous membranes are dry and his breathing is deep and rapid. The abdomen is
 
 *Source:* Goguen J, Gilbert J. Diabetes Canada Clinical Practice Guidelines Expert Committee. Hyperglycemic emergencies in adults. Can J Diabetes. 2018.
 
-### abdominal-pain-27: Young woman with vomiting and dizziness
+### abdominal-pain-27: Third visit for vomiting in two months
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 38-year-old woman presents to the emergency department with 1 day of diffuse abdominal pain, vomiting and dizziness. She has had a fever and sore throat for 3 days. She has primary adrenal insufficiency and takes hydrocortisone 10 mg in the morning and 5 mg in the afternoon, and fludrocortisone. She could not keep her tablets down today.
+A 24-year-old man presents to the emergency department with 2 days of crampy diffuse abdominal pain and vomiting more than 20 times a day. This is his third visit in 2 months with the same pattern, and each episode has lasted 1 to 2 days. A CT of the abdomen 6 weeks ago was normal. He says only long hot showers ease the nausea, and he has taken several today. He has smoked cannabis several times a day for 4 years, most recently this morning. He rarely drinks alcohol and takes no medications.
 
-She is drowsy but oriented. There is diffuse abdominal tenderness with voluntary guarding and no rebound. Sodium is 128 mmol/L, potassium 5.8 mmol/L and glucose 3.4 mmol/L. Lactate is 2.8 mmol/L. Urine beta hCG is negative.
+He is alert and uncomfortable. His mucous membranes are dry. The abdomen is soft with mild diffuse tenderness and no guarding. Sodium is 137 mmol/L, potassium 3.1 mmol/L, chloride 94 mmol/L and bicarbonate 31 mmol/L. Glucose is 6.0 mmol/L. Lipase and liver enzymes are normal. The ECG shows sinus tachycardia with a QTc of 440 ms.
 
-- Temperature: 37.9°C oral
-- Pulse: 124/minute
-- Resp.: 22/minute
-- BP: 78/44 mmHg
-- O2 sat: 97% on room air
-- Weight: 62 kg
+- Temperature: 36.8°C oral
+- Pulse: 108/minute
+- Resp.: 16/minute
+- BP: 118/72 mmHg
+- O2 sat: 99% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following is the most likely cause of her abdominal pain?**
+**Which of the following is the most likely cause of his symptoms?**
 
-- A. Acute appendicitis
-- B. Acute pancreatitis
-- C. Adrenal crisis  **(key)**
-- D. Pelvic inflammatory disease
-- E. Viral gastroenteritis
+- A. Acute pancreatitis
+- B. Acute viral gastroenteritis
+- C. Biliary colic from gallstones
+- D. Cannabinoid hyperemesis syndrome  **(key)**
+- E. Diabetic ketoacidosis
 
-*Explanation:* A patient with known adrenal insufficiency who has missed doses during an intercurrent illness, with hypotension, hyponatremia, hyperkalemia and hypoglycemia, is in adrenal crisis, which commonly causes abdominal pain and guarding. Appendicitis and pancreatitis do not explain the electrolyte pattern or low glucose. Pelvic inflammatory disease does not cause shock with this chemistry. Viral gastroenteritis does not explain hyperkalemia and hypoglycemia, and her recent illness is better seen as the trigger for the crisis.
+*Explanation:* Repeated bouts of severe vomiting and abdominal pain lasting 1 to 2 days in a man who has used cannabis daily for years, eased by hot showers, with a normal CT, a soft abdomen and normal lipase and liver enzymes, fit cannabinoid hyperemesis syndrome, a cause that lies outside the abdominal organs. Compulsive hot showers are reported by most patients with this syndrome. Viral gastroenteritis does not return every few weeks in the same pattern. A normal lipase argues against pancreatitis, and normal liver enzymes with attacks lasting days argue against biliary colic. A glucose of 6.0 mmol/L with a raised bicarbonate argues against diabetic ketoacidosis.
 
 *Key feature:* Abdominal pain 3. If no intra-abdominal source is found, search for causes outside the abdomen such as ACS, pneumonia, or DKA.
 
-*Source:* Bornstein SR and colleagues. Diagnosis and treatment of primary adrenal insufficiency: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab. 2016. https://academic.oup.com/jcem/article/101/2/364/2810222
+*Source:* Razban M, Exadaktylos AK, Della Santa V, Heymann EP. Cannabinoid hyperemesis syndrome and cannabis withdrawal syndrome: a review of the management of cannabis-related syndrome in the emergency department. Int J Emerg Med. 2022. https://doi.org/10.1186/s12245-022-00446-0
 
 #### Q2
-**Which of the following is the most appropriate treatment to give her now?**
+**Which of the following is the most appropriate medication for his vomiting?**
 
-- A. Dexamethasone 4 mg IV
-- B. Fludrocortisone 0.1 mg PO
-- C. Hydrocortisone 100 mg IV  **(key)**
-- D. Hydrocortisone 20 mg PO
-- E. Methylprednisolone 1 g IV
+- A. domperidone 10 mg PO
+- B. haloperidol 5 mg IV  **(key)**
+- C. metoclopramide 10 mg IV
+- D. ondansetron 8 mg IV
+- E. pantoprazole 40 mg IV
 
-*Explanation:* Adrenal crisis is treated at once with hydrocortisone 100 mg IV, followed by 200 mg over 24 hours, together with IV saline. Oral hydrocortisone will not be absorbed while she is vomiting. Fludrocortisone is not needed acutely because high dose hydrocortisone has enough mineralocorticoid effect. Dexamethasone has no mineralocorticoid effect and is not the treatment of choice in known adrenal insufficiency. Methylprednisolone 1 g is an immunosuppressive dose with no role here.
+*Explanation:* Haloperidol at 0.05 to 0.1 mg/kg IV, which is 3.5 to 7 mg for his 70 kg, relieved nausea, vomiting and pain better than ondansetron in a randomized trial in this syndrome, and patients went home sooner. An ECG should be checked first, and his QTc of 440 ms allows it. His potassium of 3.1 mmol/L should be replaced as well. Usual antiemetics such as metoclopramide, ondansetron and domperidone have little or no effect in this syndrome, and a tablet will not stay down. Pantoprazole may protect the esophagus and stomach from repeated vomiting but does not stop it.
 
 *Key feature:* Shock/dehydration 8. Give non-fluid therapies when indicated, such as steroids for adrenal crisis or antidotes for poisoning.
 
-*Source:* Bornstein SR and colleagues. Diagnosis and treatment of primary adrenal insufficiency: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab. 2016. https://academic.oup.com/jcem/article/101/2/364/2810222
+*Source:* Razban M, Exadaktylos AK, Della Santa V, Heymann EP. Cannabinoid hyperemesis syndrome and cannabis withdrawal syndrome: a review of the management of cannabis-related syndrome in the emergency department. Int J Emerg Med. 2022. https://doi.org/10.1186/s12245-022-00446-0
 
 #### Q3
-*Update:* The ECG shows sinus tachycardia with normal T waves. Hydrocortisone has been given.
+*Update:* His vomiting settles, but he still rates his abdominal pain 7 out of 10.
 
-**Which of the following additional treatments are most appropriate for her now?**
+**Which of the following is the most appropriate treatment for his abdominal pain?**
 
-Select 2.
+- A. acetaminophen 1 g IV
+- B. Capsaicin cream to the abdomen  **(key)**
+- C. hydromorphone 1 mg IV
+- D. hyoscine butylbromide 20 mg IV
+- E. ketorolac 15 mg IV
 
-- A. Calcium gluconate 10% 10 mL IV
-- B. Dextrose 50% 50 mL IV  **(key)**
-- C. Hypertonic saline 3% 100 mL IV
-- D. Insulin 10 units IV with dextrose
-- E. Norepinephrine infusion
-- F. Normal saline 1 L IV bolus  **(key)**
-- G. Sodium polystyrene sulfonate PO
+*Explanation:* Topical capsaicin applied to the abdomen and forearms seems particularly effective for the pain of this syndrome, and it is also given as a cream to use at home. Opioids such as hydromorphone can worsen nausea and vomiting, carry a risk of dependence and are linked to repeat visits. Acetaminophen and anti-inflammatory drugs such as ketorolac work less well for this pain. Hyoscine butylbromide, also called butylscopolamine, is suggested for the cramps of cannabis withdrawal, which starts more than a day after the last use, while he smoked this morning.
 
-*Explanation:* A normal saline bolus restores volume and sodium, and dextrose corrects her glucose of 3.4 mmol/L. Hyperkalemia of 5.8 mmol/L with a normal ECG corrects with hydrocortisone and saline, so calcium, insulin and a potassium binder are not needed. A sodium of 128 mmol/L without seizures does not need hypertonic saline, which risks overly rapid correction. Norepinephrine is considered only if hypotension persists after fluids and hydrocortisone.
+*Key feature:* Analgesia/sedation 2. Pick the safest effective pain control for the condition, including drugs, splints, local infiltration, and nerve blocks.
 
-*Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
-
-*Source:* Bornstein SR and colleagues. Diagnosis and treatment of primary adrenal insufficiency: an Endocrine Society clinical practice guideline. J Clin Endocrinol Metab. 2016. https://academic.oup.com/jcem/article/101/2/364/2810222
+*Source:* Razban M, Exadaktylos AK, Della Santa V, Heymann EP. Cannabinoid hyperemesis syndrome and cannabis withdrawal syndrome: a review of the management of cannabis-related syndrome in the emergency department. Int J Emerg Med. 2022. https://doi.org/10.1186/s12245-022-00446-0
 
 ### abdominal-pain-28: Boy with abdominal pain and a leg rash
 
@@ -1122,82 +1132,84 @@ She has right lower quadrant tenderness without rebound. Urinalysis is normal. U
 
 *Source:* American College of Obstetricians and Gynecologists. Committee Opinion No. 783. Adnexal torsion in adolescents. Obstet Gynecol. 2019. https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/08/adnexal-torsion-in-adolescents
 
-### abdominal-pain-32: Boy with abdominal pain and pyuria
+### abdominal-pain-32: Girl who cannot pass urine
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 9-year-old boy is brought to the emergency department by his mother with 30 hours of abdominal pain. It began around the umbilicus and moved to the right lower quadrant. He has not wanted to eat and vomited once. He says it stings a little when he urinates.
+A 13-year-old girl is brought to the emergency department by her mother with 2 days of lower abdominal pain and 10 hours of being unable to pass urine despite a strong urge. For 4 months she has had lower abdominal cramps for a few days each month. She has not had a period. Her breasts began to develop at age 10 and she has pubic hair. Her mother thought she had a bladder infection and gave her cranberry juice. She has no medical history.
 
-He has right lower quadrant tenderness, and hopping on the spot hurts his right lower abdomen. Urinalysis shows moderate leukocytes with no nitrites. WBC is 13.8 x 10^9/L with neutrophils of 10.9 x 10^9/L.
+An in-and-out catheter drains 700 mL of urine, which shows trace leukocytes and no nitrites. After drainage, a tender, firm midline lower abdominal mass remains, reaching 4 cm below the umbilicus. Urine beta hCG is negative.
 
-- Temperature: 38.4°C oral
-- Pulse: 118/minute
-- Resp.: 20/minute
-- BP: 104/66 mmHg
+- Temperature: 36.9°C oral
+- Pulse: 104/minute
+- Resp.: 18/minute
+- BP: 118/70 mmHg
 - O2 sat: 99% on room air
-- Weight: 30 kg
+- Weight: 46 kg
 
 #### Q1
-**Which of the following statements about his urinalysis is most accurate?**
+**Which of the following best explains her inability to pass urine?**
 
-- A. Dysuria points to a urinary source
-- B. Leukocytes make appendicitis unlikely
-- C. Negative nitrites exclude cystitis
-- D. Pyuria confirms a urinary infection
-- E. Pyuria is common in appendicitis  **(key)**
+- A. Bladder infection
+- B. Constipation with fecal load
+- C. Mass compressing the urethra  **(key)**
+- D. Neurogenic bladder
+- E. Urethral stone
 
-*Explanation:* About a quarter of children with appendicitis have an abnormal urinalysis, often because the inflamed appendix lies near the bladder or ureter. Pyuria and mild urinary discomfort therefore do not lower the likelihood of appendicitis when pain has migrated to the right lower quadrant. Pyuria alone does not confirm a urinary infection. Mild dysuria is also seen with pelvic appendicitis. Negative nitrites do not exclude infection. None of these findings should delay assessment for appendicitis.
+*Explanation:* A tender midline pelvic mass that remains after the bladder is emptied, in a girl with breast and pubic hair development, monthly cramps and no periods, points to a collection behind a blocked outflow that presses on the bladder neck and urethra. Urinary retention is a common way this presents. Trace leukocytes without nitrites do not explain retention, and cystitis causes frequency rather than an inability to void. Constipation can cause retention but does not explain the cyclic pain or amenorrhea. A neurogenic bladder or a urethral stone would be unusual and does not fit the mass.
 
 *Key feature:* Abdominal pain 8. Avoid blaming abdominal pain on a urinary tract infection too readily, particularly in women.
 
-*Source:* Scott JH, Amin M, Harty JI. Abnormal urinalysis in appendicitis. J Urol. 1983. https://pubmed.ncbi.nlm.nih.gov/6854742/
+*Source:* Lee KH, Hong JS, Jung HJ, and colleagues. Imperforate hymen: a comprehensive systematic review. J Clin Med. 2019. https://doi.org/10.3390/jcm8010056
 
 #### Q2
-**Which of the following is his Pediatric Appendicitis Score based on the findings given?**
+**Which of the following examination steps is most likely to reveal the cause of her symptoms?**
 
-- A. 6 of 10
-- B. 7 of 10
-- C. 8 of 10
-- D. 9 of 10
-- E. 10 of 10  **(key)**
+- A. Digital rectal examination
+- B. Inspection of the external genitalia  **(key)**
+- C. Neurologic examination of the legs
+- D. Palpation of the flanks
+- E. Speculum examination
 
-*Explanation:* He scores 2 for pain on hopping and 2 for right lower quadrant tenderness. He scores 1 each for anorexia, fever of 38.4°C, vomiting, migration of pain, WBC above 10 x 10^9/L and neutrophils above 7.5 x 10^9/L. The total is 2 plus 2 plus 6, which is 10, the maximum score. Lower totals come from missing one or more of these items.
+*Explanation:* Gentle inspection of the vulva, with her consent and a chaperone, shows a bulging, bluish membrane at the introitus when an imperforate hymen traps menstrual blood. This quick look makes the diagnosis in most girls with this history. A rectal examination may feel the mass but does not show its cause. A leg neurologic examination looks for a neurogenic bladder, which does not fit. Flank palpation does not explain a pelvic mass. A speculum cannot pass an intact hymen and would be distressing.
 
 *Key feature:* Abdominal pain 1. Weigh age, sex, pain site and migration, and lethal or atypical causes such as AAA when building the differential.
 
-*Source:* Samuel M. Pediatric appendicitis score. J Pediatr Surg. 2002. https://pubmed.ncbi.nlm.nih.gov/12037754/
+*Source:* Lee KH, Hong JS, Jung HJ, and colleagues. Imperforate hymen: a comprehensive systematic review. J Clin Med. 2019. https://doi.org/10.3390/jcm8010056
 
 #### Q3
-**Which of the following is the most appropriate first imaging test for him?**
+*Update:* Examination confirms an imperforate hymen, bulging and bluish, with no opening.
 
-- A. Abdominal ultrasound  **(key)**
-- B. Abdominal x-ray series
-- C. CT with IV contrast
-- D. Low-dose CT of abdomen
-- E. MRI of the abdomen
+**Which of the following is the most appropriate imaging test for her?**
 
-*Explanation:* In children, ultrasound should be considered before CT for suspected appendicitis because it is accurate in experienced hands and avoids ionizing radiation, to which children are more sensitive over a lifetime. CT, even low-dose CT, adds radiation and is reserved for an equivocal ultrasound when it will change management. Plain films do not diagnose appendicitis. MRI is accurate but less available and slower in the emergency department.
+- A. CT abdomen and pelvis
+- B. MRI pelvis with contrast
+- C. Pelvic X-ray
+- D. Transabdominal ultrasound  **(key)**
+- E. Voiding cystourethrogram
+
+*Explanation:* Transabdominal ultrasound shows the fluid-filled vagina and uterus behind the membrane and checks the kidneys, with no radiation in a 13-year-old. CT exposes a young girl to radiation and adds nothing that ultrasound does not show. MRI is kept for unclear anatomy, such as a suspected vaginal septum or agenesis, and is not needed when the membrane is seen. A pelvic X-ray shows only a soft tissue shadow. A voiding cystourethrogram adds radiation and studies reflux, which is not the question.
 
 *Key feature:* Abdominal pain 7. Factor radiation dose and lifetime cancer risk into imaging decisions for abdominal pain.
 
-*Source:* Choosing Wisely Canada. Canadian Association of Paediatric Surgeons. Paediatric surgery recommendations. Updated 2021. https://choosingwiselycanada.org/recommendation/paediatric-surgery/
+*Source:* Lee KH, Hong JS, Jung HJ, and colleagues. Imperforate hymen: a comprehensive systematic review. J Clin Med. 2019. https://doi.org/10.3390/jcm8010056
 
 #### Q4
-*Update:* The ultrasound does not see the appendix. There is no free fluid. He still has right lower quadrant tenderness.
+*Update:* Imaging shows the vagina distended to 9 cm with dark fluid and a mildly distended uterus. She needs the catheter again for retention.
 
-**Which of the following is the most appropriate next step for him?**
+**Which of the following is the most appropriate next step in her care?**
 
-- A. Antibiotics and discharge home
-- B. CT before surgical consultation
-- C. Discharge with follow-up tomorrow
-- D. Pediatric surgery consultation  **(key)**
-- E. Urine culture and reassess
+- A. Gynecology consult for hymenotomy  **(key)**
+- B. Hormonal suppression and follow-up
+- C. Oral antibiotics for cystitis
+- D. Outpatient gynecology in 3 months
+- E. Repeat ultrasound in 1 month
 
-*Explanation:* A Pediatric Appendicitis Score of 10 means high risk, and an ultrasound that does not see the appendix does not exclude it, so the pediatric surgeon should assess him now. The surgeon can decide between operating, observation, repeat ultrasound or further imaging. Getting CT first delays the consult and adds radiation that may not be needed. Discharge, with or without antibiotics, risks perforation. A urine culture does not address the likely diagnosis.
+*Explanation:* Trapped menstrual blood with urinary retention needs surgical drainage by hymenotomy, so the gynecologist should be involved now. Left untreated it can become infected and can obstruct the kidneys. Hormonal suppression does not drain what has already collected. She has no evidence of cystitis, so antibiotics treat the wrong problem. A clinic visit in 3 months or a repeat ultrasound in 1 month leaves her obstructed and at risk of retention recurring.
 
 *Key feature:* Abdominal pain 4. When findings point to a surgical emergency, involve the surgeon without waiting for needless extra tests.
 
-*Source:* Samuel M. Pediatric appendicitis score. J Pediatr Surg. 2002. https://pubmed.ncbi.nlm.nih.gov/12037754/
+*Source:* Lee KH, Hong JS, Jung HJ, and colleagues. Imperforate hymen: a comprehensive systematic review. J Clin Med. 2019. https://doi.org/10.3390/jcm8010056
 
 ### abdominal-pain-33: Girl who fell onto her bicycle
 
@@ -1227,7 +1239,7 @@ GCS is 15. There is a 3 cm round bruise in the epigastrium, with epigastric tend
 
 *Key feature:* Abdominal pain 5. Match imaging to the leading diagnosis, for example FAST in trauma or ultrasound for biliary and pelvic disease.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th ed. 2018.
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025.
 
 #### Q2
 **Which of the following is the most appropriate imaging decision for her?**
@@ -1276,206 +1288,205 @@ GCS is 15. There is a 3 cm round bruise in the epigastrium, with epigastric tend
 
 *Key feature:* Abdominal pain 4. When findings point to a surgical emergency, involve the surgeon without waiting for needless extra tests.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th ed. 2018.
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025.
 
-### abdominal-pain-34: Teenager with pain after a clinic visit
+### abdominal-pain-34: Fever and a limp despite antibiotics
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 17-year-old girl presents to the emergency department with 3 days of lower abdominal pain and burning on urination. A walk-in clinic prescribed nitrofurantoin for a urinary tract infection 2 days ago, but the pain is worse. She has had a new sexual partner for 1 month and uses condoms sometimes. Her last menstrual period was 2 weeks ago.
+A 46-year-old woman presents to the emergency department with 6 days of right lower abdominal and right flank pain, fever and pain when she walks. A virtual care visit 3 days ago diagnosed a kidney infection and prescribed ciprofloxacin, but she is worse. Three weeks ago her family physician drained a boil on her right thigh, and the culture grew methicillin-resistant Staphylococcus aureus. She has type 2 diabetes and takes metformin. She has no dysuria or vaginal discharge.
 
-She has bilateral lower abdominal tenderness without guarding. There is no costovertebral angle tenderness. Urine beta hCG is negative. Urinalysis shows leukocytes with no nitrites.
+She lies with her right hip flexed. Passive extension of the right hip causes severe pain. There is right lower quadrant tenderness without guarding and no costovertebral angle tenderness. Urinalysis is normal. A urine culture taken 3 days ago, before her first dose of ciprofloxacin, grew nothing. WBC is 17.4 x 10^9/L and CRP is 210 mg/L. Glucose is 14 mmol/L.
 
-- Temperature: 38.1°C oral
-- Pulse: 98/minute
-- Resp.: 16/minute
-- BP: 116/72 mmHg
-- O2 sat: 99% on room air
+- Temperature: 38.6°C oral
+- Pulse: 108/minute
+- Resp.: 20/minute
+- BP: 124/76 mmHg
+- O2 sat: 97% on room air
 
 #### Q1
-**Which of the following is the most appropriate next step in her assessment?**
+**Which of the following is the most accurate interpretation of her course so far?**
 
-- A. Change to ciprofloxacin
-- B. CT abdomen with contrast
-- C. Pelvic examination with swabs  **(key)**
-- D. Renal ultrasound
-- E. Urine culture and wait
+- A. Ciprofloxacin resistance is likely
+- B. Fever may take 7 days to settle
+- C. She needs IV therapy for pyelonephritis
+- D. The urinary diagnosis is likely wrong  **(key)**
+- E. The urine culture was falsely negative
 
-*Explanation:* Lower abdominal pain in a sexually active young woman that has worsened on treatment for a presumed urinary infection calls for a pelvic examination with swabs for gonorrhea and chlamydia, because pyuria and dysuria also occur with cervicitis and pelvic inflammatory disease. Changing antibiotics repeats the error of assuming a urinary source. CT gives radiation before a simple examination has been done. Renal ultrasound and a urine culture do not assess the pelvis.
+*Explanation:* A urine culture taken before antibiotics grew nothing, today's urinalysis is normal and she is worse after 3 days of treatment, so the diagnosis of kidney infection is likely wrong and the source must be found elsewhere. Resistance and a false negative culture are unlikely explanations when the urine has never shown infection. Waiting for the fever to settle is not reassuring when the urine never showed infection. Switching to IV therapy for the same wrong diagnosis would delay finding the real cause.
 
 *Key feature:* Abdominal pain 8. Avoid blaming abdominal pain on a urinary tract infection too readily, particularly in women.
 
-*Source:* Public Health Agency of Canada. STI-associated syndromes guide: pelvic inflammatory disease. Canadian guidelines on sexually transmitted infections. Page modified 2026. https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/sti-associated-syndromes/pelvic-inflammatory-disease.html
+*Source:* Shields D, Robinson P, Crowley TP. Iliopsoas abscess: a review and update on the literature. Int J Surg. 2012. https://doi.org/10.1016/j.ijsu.2012.08.016
 
 #### Q2
-*Update:* Speculum examination shows mucopurulent cervical discharge. There is cervical motion tenderness and tenderness of both adnexa without a mass.
+**Which of the following findings best localizes the source of her fever?**
 
-**Which of the following is the most likely diagnosis for her?**
+- A. Blood glucose of 14 mmol/L
+- B. Pain on passive hip extension  **(key)**
+- C. Right lower quadrant tenderness
+- D. Tachycardia of 108/minute
+- E. Temperature of 38.6°C
 
-- A. Acute appendicitis
-- B. Acute pyelonephritis
-- C. Ovarian torsion
-- D. Pelvic inflammatory disease  **(key)**
-- E. Tubo-ovarian abscess
-
-*Explanation:* Lower abdominal tenderness with cervical motion tenderness and adnexal tenderness meets the minimum criteria for pelvic inflammatory disease, and fever with mucopurulent discharge supports it. Appendicitis causes right-sided pain and does not explain cervical discharge. Pyelonephritis causes flank pain and costovertebral angle tenderness, which she does not have. Torsion is usually one-sided and sudden. No adnexal mass was felt, which makes a tubo-ovarian abscess less likely.
+*Explanation:* Pain when the hip is passively extended, with the hip held flexed and pain on walking, is the psoas sign, which points to inflammation in or along the psoas muscle. Right lower quadrant tenderness is present but could come from the appendix, bowel or ovary, so it localizes less well. Fever and tachycardia show infection but not where it is. Her glucose of 14 mmol/L reflects diabetes stressed by infection and adds risk, not location.
 
 *Key feature:* Abdominal pain 1. Weigh age, sex, pain site and migration, and lethal or atypical causes such as AAA when building the differential.
 
-*Source:* Public Health Agency of Canada. STI-associated syndromes guide: pelvic inflammatory disease. Canadian guidelines on sexually transmitted infections. Page modified 2026. https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/sti-associated-syndromes/pelvic-inflammatory-disease.html
+*Source:* Shields D, Robinson P, Crowley TP. Iliopsoas abscess: a review and update on the literature. Int J Surg. 2012. https://doi.org/10.1016/j.ijsu.2012.08.016
 
 #### Q3
-**Which of the following is the most appropriate outpatient treatment for her?**
+*Update:* CT shows a 6 cm rim-enhancing retroperitoneal collection on the right. Blood cultures are drawn.
 
-- A. Azithromycin 1 g PO once
-- B. Cefixime 800 mg PO once
-- C. Ceftriaxone, doxycycline, metronidazole  **(key)**
-- D. Ciprofloxacin 500 mg PO for 7 days
-- E. Continue nitrofurantoin for 7 days
+**Which of the following is the most appropriate empiric antibiotic for her?**
 
-*Explanation:* The PHAC outpatient regimen for pelvic inflammatory disease is ceftriaxone 500 mg IM once with doxycycline 100 mg PO twice daily and metronidazole 500 mg PO twice daily, both for 14 days. This covers gonorrhea, chlamydia and anaerobes. A single dose of azithromycin covers chlamydia and a single dose of cefixime covers gonorrhea, but neither alone treats the mixed upper genital tract infection of pelvic inflammatory disease. Fluoroquinolones are not advised because of gonococcal resistance. Nitrofurantoin does not reach the pelvic organs.
+- A. cefazolin 2 g IV
+- B. ceftriaxone 2 g IV
+- C. ciprofloxacin 400 mg IV
+- D. piperacillin-tazobactam 4.5 g IV
+- E. vancomycin 25 mg/kg IV  **(key)**
+
+*Explanation:* A psoas abscess without a bowel source usually comes from Staphylococcus aureus spread through the blood, and her recent boil grew methicillin-resistant S. aureus, so empiric therapy must cover it. Vancomycin, with a loading dose of about 25 mg/kg in serious infection, is first-line for invasive MRSA. Cefazolin, ceftriaxone and piperacillin-tazobactam do not treat MRSA. Ciprofloxacin is not reliable against S. aureus and has already failed her.
 
 *Key feature:* Infectious diseases 8. Choose empiric antibiotics for bacterial infection based on likely organisms and local resistance before cultures return.
 
-*Source:* Public Health Agency of Canada. STI-associated syndromes guide: pelvic inflammatory disease. Canadian guidelines on sexually transmitted infections. Page modified 2026. https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/sti-associated-syndromes/pelvic-inflammatory-disease.html
+*Source:* Liu C, Bayer A, Cosgrove SE, and colleagues. Clinical practice guidelines by the Infectious Diseases Society of America for the treatment of methicillin-resistant Staphylococcus aureus infections in adults and children. Clin Infect Dis. 2011. https://doi.org/10.1093/cid/ciq146
 
 #### Q4
-**Which of the following findings would most clearly require admission rather than outpatient treatment?**
+**Which of the following is the most appropriate management of the collection?**
 
-- A. Age under 18 years
-- B. An IUD in the uterus
-- C. New sexual partner
-- D. Temperature of 38.1°C
-- E. Tubo-ovarian abscess  **(key)**
+- A. Antibiotics alone for 6 weeks
+- B. CT-guided percutaneous drainage  **(key)**
+- C. Needle aspiration if fever persists
+- D. Oral antibiotics and clinic review
+- E. Repeat CT in 1 week
 
-*Explanation:* A tubo-ovarian abscess is an indication for admission and IV antibiotics, as are pregnancy, severe illness, inability to take oral treatment, failure to improve within 2 to 3 days or an uncertain surgical diagnosis. Adolescence alone is not a reason to admit. An IUD does not by itself require admission or removal. A new partner is a risk factor, not a severity marker. Her temperature of 38.1°C does not by itself mean severe illness.
+*Explanation:* An abscess of 6 cm in a febrile patient needs drainage along with antibiotics, and CT-guided percutaneous drainage is the usual first choice, with open surgery kept for failure or a bowel source. Antibiotics alone are reserved for small collections. Waiting for persistent fever before aspirating, oral antibiotics with clinic review or a repeat CT in a week leave a large abscess undrained in a patient with diabetes and bacteremia risk.
 
 *Key feature:* Infectious diseases 4. Look beyond an apparently minor infection for complications, such as peritonsillar abscess, necrotizing fasciitis, or PID.
 
-*Source:* Public Health Agency of Canada. STI-associated syndromes guide: pelvic inflammatory disease. Canadian guidelines on sexually transmitted infections. Page modified 2026. https://www.canada.ca/en/public-health/services/infectious-diseases/sexual-health-sexually-transmitted-infections/canadian-guidelines/sti-associated-syndromes/pelvic-inflammatory-disease.html
+*Source:* Shields D, Robinson P, Crowley TP. Iliopsoas abscess: a review and update on the literature. Int J Surg. 2012. https://doi.org/10.1016/j.ijsu.2012.08.016
 
-### abdominal-pain-35: Woman with an IUD and lower abdominal pain
+### abdominal-pain-35: Third bladder infection in two months
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 29-year-old woman presents to the emergency department with 2 days of lower abdominal pain, worse on the left, and a frequent urge to urinate. A clinic started nitrofurantoin for a urinary tract infection yesterday. She has had a levonorgestrel IUD for 2 years and has had no periods since it was placed. She has no vaginal bleeding.
+A 64-year-old man presents to the emergency department with 4 days of left lower abdominal pain and fever. A walk-in clinic has treated him twice in the past 2 months for bladder infections, and each time his symptoms returned within days of finishing the antibiotic. He again has burning and frequency when he passes urine. For 2 weeks he has noticed bubbles of air in his urine stream and small brown particles in the toilet. A colonoscopy 3 years ago showed sigmoid diverticulosis. He has hypertension and takes ramipril.
 
-She has left lower quadrant tenderness without guarding. There is no costovertebral angle tenderness. Urinalysis shows trace leukocytes with no nitrites.
+The left lower quadrant is tender with a vague fullness and no rebound. Urinalysis shows many leukocytes and positive nitrites. His last two urine cultures grew mixed Escherichia coli and Enterococcus. WBC is 16.8 x 10^9/L.
 
-- Temperature: 37.0°C oral
-- Pulse: 96/minute
-- Resp.: 16/minute
-- BP: 118/74 mmHg
-- O2 sat: 99% on room air
+- Temperature: 38.4°C oral
+- Pulse: 112/minute
+- Resp.: 22/minute
+- BP: 96/58 mmHg
+- O2 sat: 96% on room air
 
 #### Q1
-**Which of the following is the most important test to do next for her?**
+**Which of the following features most strongly suggests that his urinary symptoms are not a simple bladder infection?**
 
-- A. Beta hCG pregnancy test  **(key)**
-- B. CT abdomen and pelvis
-- C. Renal ultrasound
-- D. Repeat urinalysis
-- E. Urine culture
+- A. Air bubbles passed with urine  **(key)**
+- B. Dysuria with frequency
+- C. Fever of 38.4°C
+- D. Nitrite-positive urine
+- E. Recurrence after 2 courses
 
-*Explanation:* Every woman of reproductive age with lower abdominal pain needs a pregnancy test before the pain is blamed on a urinary infection. Absent periods are common with a levonorgestrel IUD and do not exclude pregnancy, and when pregnancy occurs with an IUD a high proportion are ectopic. Trace leukocytes and frequency can come from pelvic irritation. A CT before a pregnancy test risks fetal exposure. Renal ultrasound, repeat urinalysis and culture all keep the focus on the urine.
+*Explanation:* Air in the urine, with particles that look like stool and a culture of mixed bowel organisms, means the bladder is connected to the bowel. In a man with sigmoid diverticulosis and left lower quadrant pain this is most likely a colovesical fistula from diverticulitis. Dysuria, frequency and positive nitrites occur with any cystitis. Fever shows infection but not its source. Recurrence after two courses should prompt a search in a man, but it has many causes and is far less specific than air in the urine.
 
 *Key feature:* Abdominal pain 8. Avoid blaming abdominal pain on a urinary tract infection too readily, particularly in women.
 
-*Source:* Po L and colleagues. Guideline No. 414: management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. J Obstet Gynaecol Can. 2021.
+*Source:* Zizzo M, Tumiati D, Bassi MC, and colleagues. Management of colovesical fistula: a systematic review. Minerva Urol Nephrol. 2022. https://doi.org/10.23736/S2724-6051.21.04750-9
 
 #### Q2
-*Update:* The urine pregnancy test is positive. Serum quantitative beta hCG is 2 900 IU/L.
+**Which of the following is the most appropriate imaging test for him now?**
 
-**Which of the following is the most appropriate imaging test for her now?**
+- A. Abdominal ultrasound
+- B. CT abdomen with IV contrast  **(key)**
+- C. MRI of the pelvis
+- D. Plain abdominal X-ray
+- E. Retrograde cystogram
 
-- A. CT abdomen with contrast
-- B. MRI of the pelvis
-- C. Renal ultrasound
-- D. Transabdominal ultrasound only
-- E. Transvaginal ultrasound  **(key)**
-
-*Explanation:* Transvaginal ultrasound is the key test for suspected ectopic pregnancy. It can show an intrauterine pregnancy, an adnexal mass and free fluid, and it is more sensitive than a transabdominal scan early in pregnancy. CT adds radiation to a possible pregnancy and is not needed. MRI is slow and not a first test. A renal ultrasound does not assess the pelvis.
+*Explanation:* CT of the abdomen and pelvis with IV contrast is the most useful test here. It shows air in the bladder, the thickened sigmoid next to the bladder and any abscess, and it guides urgent management. Ultrasound cannot reliably show the colon or a fistula tract. MRI is slower and less available for a febrile, hypotensive patient. A plain X-ray adds little. A cystogram often misses colovesical fistulas and does not show an abscess.
 
 *Key feature:* Abdominal pain 5. Match imaging to the leading diagnosis, for example FAST in trauma or ultrasound for biliary and pelvic disease.
 
-*Source:* Po L and colleagues. Guideline No. 414: management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. J Obstet Gynaecol Can. 2021.
+*Source:* Zizzo M, Tumiati D, Bassi MC, and colleagues. Management of colovesical fistula: a systematic review. Minerva Urol Nephrol. 2022. https://doi.org/10.23736/S2724-6051.21.04750-9
 
 #### Q3
-*Update:* Transvaginal ultrasound shows no intrauterine pregnancy, a 2.5 cm left adnexal mass separate from the ovary and a small amount of free fluid. She remains stable.
+*Update:* Imaging shows sigmoid diverticulitis with a 6 cm pelvic abscess against the bladder dome and a tract between the two. After 2 L of fluid his BP is 98/62 mmHg.
 
-**Which of the following is the most appropriate next step in her care?**
+**Which of the following is the most appropriate next step in his care?**
 
-- A. Continue nitrofurantoin and review
-- B. Gynecology consultation now  **(key)**
-- C. Remove the IUD now
-- D. Repeat hCG in 48 hours
-- E. Repeat ultrasound in 1 week
+- A. Colonoscopy before any consult
+- B. Cystoscopy by urology next week
+- C. General surgery consult now  **(key)**
+- D. Oral antibiotics and discharge
+- E. Repeat CT in 48 hours
 
-*Explanation:* An empty uterus with an adnexal mass separate from the ovary is a tubal ectopic pregnancy, so the gynecologist should see her now to choose between methotrexate and surgery. A repeat hCG in 48 hours is for a pregnancy of unknown location, and this ectopic pregnancy has already been seen. Waiting a week for another scan risks rupture. Removing the IUD does not treat the ectopic pregnancy. The urinary diagnosis should be abandoned.
+*Explanation:* He has sepsis from a 6 cm diverticular abscess, which is too large to treat with antibiotics alone and needs source control by percutaneous drainage or surgery, along with IV antibiotics. The surgeon should be involved now to plan drainage and the later resection of the fistula. Colonoscopy is done after the acute episode, not before surgical review. Cystoscopy next week, oral antibiotics at home or a repeat CT in 48 hours all leave an undrained abscess in a hypotensive patient.
 
 *Key feature:* Abdominal pain 4. When findings point to a surgical emergency, involve the surgeon without waiting for needless extra tests.
 
-*Source:* Po L and colleagues. Guideline No. 414: management of pregnancy of unknown location and tubal and nontubal ectopic pregnancies. J Obstet Gynaecol Can. 2021.
+*Source:* Sartelli M, Weber DG, Kluger Y, and colleagues. 2020 update of the WSES guidelines for the management of acute colonic diverticulitis in the emergency setting. World J Emerg Surg. 2020. https://doi.org/10.1186/s13017-020-00313-4
 
-### abdominal-pain-36: Pregnant woman with epigastric pain
+### abdominal-pain-36: Epigastric pain five days after a caesarean birth
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 34-year-old woman, G2P1 at 33 weeks, presents to the emergency department with 6 hours of epigastric and right upper quadrant pain and nausea. She thought it was heartburn, but antacids did not help. She has no headache or visual change. Her pregnancy has been uncomplicated.
+A 33-year-old woman presents to the emergency department 5 days after an elective repeat caesarean birth at 39 weeks, with 8 hours of epigastric pain and nausea. She went home 2 days ago. She thinks the pain is trapped gas from the surgery. Her BP was normal throughout the pregnancy and at discharge. She is breastfeeding. She takes acetaminophen. She has no headache or visual change.
 
-She has epigastric and right upper quadrant tenderness. The uterus is soft and nontender. Fetal heart rate is 142/minute. Urine dipstick shows 2+ protein. Hemoglobin is 108 g/L and platelets are 88 x 10^9/L. AST is 240 U/L and ALT is 210 U/L. LDH is 720 U/L. Glucose is 5.1 mmol/L. INR is 1.0.
+Her BP is the same when repeated 15 minutes later. The incision is clean and dry. The abdomen is soft and not distended, with mild epigastric tenderness. Bowel sounds are normal, and she is passing flatus. Hemoglobin is 106 g/L, platelets 236 x 10^9/L, AST 31 U/L, ALT 27 U/L, LDH 238 U/L, bilirubin 7 umol/L, lipase 32 U/L (normal below 60 U/L) and creatinine 64 umol/L. The blood film shows no schistocytes. Urine protein to creatinine ratio is 48 mg/mmol.
 
 - Temperature: 36.9°C oral
-- Pulse: 96/minute
-- Resp.: 18/minute
-- BP: 152/98 mmHg
+- Pulse: 88/minute
+- Resp.: 16/minute
+- BP: 166/110 mmHg
 - O2 sat: 98% on room air
-- Weight: 78 kg
 
 #### Q1
-**Which of the following is the most likely cause of her pain?**
+**Which of the following is the most likely cause of her epigastric pain?**
 
-- A. Acute cholecystitis
-- B. Biliary colic
-- C. Fatty liver of pregnancy
-- D. Gastroesophageal reflux
-- E. HELLP syndrome  **(key)**
+- A. Acute pancreatitis
+- B. HELLP syndrome
+- C. Postoperative ileus
+- D. Postpartum pre-eclampsia  **(key)**
+- E. Wound infection
 
-*Explanation:* New hypertension and proteinuria at 33 weeks with epigastric pain, platelets of 88 x 10^9/L, raised liver enzymes and an LDH of 720 U/L suggesting hemolysis fit HELLP syndrome. Epigastric pain in late pregnancy must not be dismissed as reflux. Cholecystitis and biliary colic do not cause thrombocytopenia or proteinuria. Acute fatty liver of pregnancy typically causes hypoglycemia and coagulopathy, and her glucose and INR are normal.
+*Explanation:* New severe hypertension with a urine protein to creatinine ratio of 48 mg/mmol, above the 30 mg/mmol threshold, 5 days after birth is postpartum pre-eclampsia, and epigastric pain is one of its symptoms. BP after birth peaks on days 3 to 7, and pre-eclampsia can appear for the first time then. Her platelets of 236 x 10^9/L, AST of 31 U/L, LDH of 238 U/L and a film without schistocytes show no sign of HELLP syndrome now. A lipase of 32 U/L argues against pancreatitis. Normal bowel sounds, passing flatus and a soft abdomen without distension argue against ileus. A clean, dry incision and a normal temperature argue against a wound infection.
 
 *Key feature:* Pre-eclampsia 3. Exclude HELLP syndrome in pregnant patients with vague symptoms like nausea, vomiting, or abdominal pain before other diagnoses.
 
-*Source:* Magee LA and colleagues. Guideline No. 426: hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022. https://pubmed.ncbi.nlm.nih.gov/35577426/
+*Source:* Magee LA, Brown MA, Hall DR, and colleagues. The 2021 International Society for the Study of Hypertension in Pregnancy classification, diagnosis and management recommendations for international practice. Pregnancy Hypertens. 2022. https://doi.org/10.1016/j.preghy.2021.09.008
 
 #### Q2
-**Which of the following is the most appropriate seizure prophylaxis for her?**
+**Which of the following is the longest acceptable time between confirming her severe BP and giving the first antihypertensive dose?**
 
-- A. Diazepam 10 mg IV
-- B. Levetiracetam 1 g IV
-- C. Magnesium sulfate 4 g IV  **(key)**
-- D. Magnesium sulfate 2 g IV
-- E. Phenytoin 20 mg/kg IV
+- A. 60 minutes  **(key)**
+- B. 90 minutes
+- C. 120 minutes
+- D. 180 minutes
+- E. 240 minutes
 
-*Explanation:* Magnesium sulfate is recommended for HELLP syndrome and severe pre-eclampsia, given as a 4 g IV loading dose followed by 1 g per hour. A 2 g dose is too small to serve as the loading dose. Diazepam and phenytoin are less effective than magnesium at preventing eclampsia. Levetiracetam is not proven equivalent and is kept for women who cannot receive magnesium.
+*Explanation:* Her BP of 166/110 mmHg, confirmed on repeat, is severe hypertension, and it needs a first-line drug as soon as possible. ISSHP notes that treatment within 60 minutes may reduce severe maternal morbidity. The urgency is the same after birth, when about half of strokes and half of eclampsia occur. Waiting 90 minutes or longer, for example until the obstetric team arrives or until her pain settles, leaves her exposed to that risk. First-line choices include oral nifedipine, oral labetalol, IV labetalol and IV hydralazine.
 
 *Key feature:* Pre-eclampsia 4. Begin BP control and seizure prophylaxis, monitor mother and fetus, and arrange urgent obstetric planning for delivery.
 
-*Source:* Magee LA and colleagues. Guideline No. 426: hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022. https://pubmed.ncbi.nlm.nih.gov/35577426/
+*Source:* Magee LA, Brown MA, Hall DR, and colleagues. The 2021 International Society for the Study of Hypertension in Pregnancy classification, diagnosis and management recommendations for international practice. Pregnancy Hypertens. 2022. https://doi.org/10.1016/j.preghy.2021.09.008
 
 #### Q3
-**Which of the following is the most appropriate disposition for her?**
+*Update:* She receives labetalol 20 mg IV, and her BP falls to 148/96 mmHg. Her partner is giving the baby formula in the waiting room.
 
-- A. Admit to general surgery
-- B. Discharge with clinic follow-up
-- C. Gastroenterology consultation
-- D. Repeat labs in 24 hours
-- E. Urgent obstetric consultation  **(key)**
+**Which of the following is the most appropriate advice about breastfeeding while she is treated?**
 
-*Explanation:* HELLP syndrome at 33 weeks needs urgent obstetric care for maternal stabilization, fetal monitoring, antenatal corticosteroids and planning of delivery, which is the definitive treatment. Surgery and gastroenterology do not manage HELLP syndrome. Discharge or waiting 24 hours to repeat tests risks liver hematoma, eclampsia and abruption.
+- A. Express and discard for 24 hours
+- B. Formula feed until BP is normal
+- C. Keep breastfeeding as usual  **(key)**
+- D. Stop breastfeeding permanently
+- E. Wait until labetalol is stopped
+
+*Explanation:* Breastfeeding is recommended after pre-eclampsia, and most antihypertensive drugs, including labetalol, nifedipine and enalapril, are acceptable while breastfeeding. She can keep feeding as usual while her treatment continues. Expressing and discarding milk, formula feeding until her BP is normal, or waiting until labetalol is stopped interrupts feeding without protecting the baby. Stopping permanently gives up the benefits of breastfeeding, which after pre-eclampsia include a lower risk of later maternal hypertension in observational studies.
 
 *Key feature:* Pre-eclampsia 4. Begin BP control and seizure prophylaxis, monitor mother and fetus, and arrange urgent obstetric planning for delivery.
 
-*Source:* Magee LA and colleagues. Guideline No. 426: hypertensive disorders of pregnancy: diagnosis, prediction, prevention, and management. J Obstet Gynaecol Can. 2022. https://pubmed.ncbi.nlm.nih.gov/35577426/
+*Source:* Magee LA, Brown MA, Hall DR, and colleagues. The 2021 International Society for the Study of Hypertension in Pregnancy classification, diagnosis and management recommendations for international practice. Pregnancy Hypertens. 2022. https://doi.org/10.1016/j.preghy.2021.09.008
 
 ### abdominal-pain-37: Young man with right lower quadrant pain
 
@@ -1633,7 +1644,7 @@ His airway is clear and breath sounds are equal. He is pale and anxious. The lef
 
 *Key feature:* Abdominal pain 5. Match imaging to the leading diagnosis, for example FAST in trauma or ultrasound for biliary and pelvic disease.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th ed. 2018.
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025.
 
 #### Q2
 *Update:* FAST shows free fluid in the splenorenal space. BP is 82/50 mmHg after 1 L of crystalloid and 1 unit of O negative red cells.
@@ -1650,7 +1661,7 @@ His airway is clear and breath sounds are equal. He is pale and anxious. The lef
 
 *Key feature:* Abdominal pain 4. When findings point to a surgical emergency, involve the surgeon without waiting for needless extra tests.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th ed. 2018.
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025.
 
 #### Q3
 **Which of the following are the most appropriate measures while he awaits transport?**
@@ -1669,7 +1680,7 @@ Select 3.
 
 *Key feature:* Multiple trauma 6. Guide fluid and blood replacement in major trauma with defined targets such as MAP and a massive transfusion protocol.
 
-*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 10th ed. 2018.
+*Source:* American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025.
 
 ### abdominal-pain-40: Very old man with vague lower abdominal discomfort
 
@@ -1688,11 +1699,11 @@ He has mild right lower quadrant tenderness without guarding or rebound. There i
 #### Q1
 **Which of the following statements about appendicitis at his age is most accurate?**
 
-- A. Fever is usually present
-- B. Leukocytosis is usually marked
+- A. Fever is typically present
+- B. Leukocytosis is marked
 - C. Perforation at diagnosis is common  **(key)**
-- D. Symptoms usually start abruptly
-- E. Typical migration is usually seen
+- D. Symptoms start abruptly
+- E. Typical migration is seen
 
 *Explanation:* Older adults with appendicitis often present late with vague symptoms, and perforation is found at diagnosis in a much higher share than in younger adults. Fever is often absent, and his temperature of 37.0°C does not lower the likelihood. The WBC can be normal, as his is. Symptoms tend to build slowly, and classic migration of pain is often missing.
 
@@ -1949,84 +1960,85 @@ Select 3.
 
 *Source:* Sartelli M, Di Bella S, McFarland LV, et al. 2019 update of the WSES guidelines for management of Clostridioides (Clostridium) difficile infection in surgical patients. World J Emerg Surg. 2019. https://pmc.ncbi.nlm.nih.gov/articles/PMC6394026/
 
-### abdominal-pain-44: Older woman who fainted with back pain
+### abdominal-pain-44: Fast pulse a week after weight loss surgery
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 76-year-old woman is brought to the emergency department by ambulance after fainting on the toilet. She now has constant lower back pain and vague lower abdominal pain that began an hour ago. She has COPD and hypertension and smokes. Her usual systolic BP is in the 150s. She takes amlodipine and a tiotropium inhaler.
+A 42-year-old woman presents to the emergency department with 1 day of left upper abdominal pain, pain at the tip of her left shoulder and feeling unwell. Six days ago she had a laparoscopic sleeve gastrectomy and went home on the second day. She has been drinking small sips but feels too sick to take her protein shakes. She has obstructive sleep apnea and hypertension. Her BMI is 44 kg/m2.
 
-She is pale and sweaty. The abdomen is obese and mildly tender, and no mass can be felt. Femoral pulses are present. There is no spinal tenderness. Urinalysis shows trace blood.
+She looks unwell. The port sites are clean. There is mild left upper quadrant tenderness, and the abdominal examination is limited by her body habitus. Calves are soft and nontender. WBC is 18.9 x 10^9/L. Lactate is 2.8 mmol/L. Hemoglobin is 138 g/L.
 
-- Temperature: 36.5°C oral
-- Pulse: 108/minute
-- Resp.: 22/minute
-- BP: 104/66 mmHg
+- Temperature: 38.3°C oral
+- Pulse: 128/minute
+- Resp.: 26/minute
+- BP: 104/62 mmHg
 - O2 sat: 94% on room air
+- Weight: 118 kg
 
 #### Q1
-**Which of the following is the most important diagnosis to exclude first in her?**
+**Which of the following is the most likely cause of her presentation?**
 
-- A. Acute pulmonary embolism
-- B. Leaking aortic aneurysm  **(key)**
-- C. Lumbar compression fracture
-- D. Pyelonephritis with urosepsis
-- E. Vasovagal syncope with back strain
+- A. Gastric staple line leak  **(key)**
+- B. Left lower lobe pneumonia
+- C. Port site wound infection
+- D. Pulmonary embolism
+- E. Splenic infarction
 
-*Explanation:* Syncope with new back and abdominal pain in an older smoker, with a BP of 104/66 mmHg against a usual systolic in the 150s, suggests a leaking abdominal aortic aneurysm. Aneurysms are less common in women but rupture at smaller sizes and are more often missed. An impalpable mass does not exclude it, especially in obesity. Pulmonary embolism can cause syncope but not this pain pattern. A compression fracture does not cause syncope or hypotension. Trace blood without fever does not suggest pyelonephritis. Vasovagal syncope is a diagnosis of exclusion here.
+*Explanation:* Persistent tachycardia above 120/minute is often the earliest sign of a staple line leak after sleeve gastrectomy, and with fever, left upper quadrant pain referred to the left shoulder, leukocytosis and a raised lactate on day 6, a leak is the most likely cause. Pulmonary embolism must also be considered after bariatric surgery, but it does not explain the fever, abdominal pain and white count as well. Pneumonia would usually bring cough and chest findings. The port sites are clean. Splenic infarction is rare after a sleeve and does not explain sepsis this early.
 
 *Key feature:* Abdominal pain 1. Weigh age, sex, pain site and migration, and lethal or atypical causes such as AAA when building the differential.
 
-*Source:* Wanhainen A and colleagues. European Society for Vascular Surgery (ESVS) 2024 clinical practice guidelines on the management of abdominal aorto-iliac artery aneurysms. Eur J Vasc Endovasc Surg. 2024. https://pubmed.ncbi.nlm.nih.gov/38307694/
+*Source:* Kim J, Azagury D, Eisenberg D, and colleagues. ASMBS position statement on prevention, detection, and treatment of gastrointestinal leak after gastric bypass and sleeve gastrectomy, including the roles of imaging, surgical exploration, and nonoperative management. Surg Obes Relat Dis. 2015. https://doi.org/10.1016/j.soard.2015.05.001
 
 #### Q2
-**Which of the following is the fastest test to support your leading diagnosis?**
+**Which of the following is the most appropriate imaging test for her now?**
 
-- A. Abdominal x-ray series
-- B. Bedside ultrasound of the aorta  **(key)**
-- C. CT angiography of the aorta
-- D. Lumbar spine x-ray
-- E. MRI of the lumbar spine
+- A. Abdominal ultrasound
+- B. CT with oral and IV contrast  **(key)**
+- C. Plain abdominal X-ray
+- D. Portable chest X-ray
+- E. Upper endoscopy
 
-*Explanation:* Bedside ultrasound can show an aneurysm within minutes without moving the patient, and it is accurate for aortic diameter even when obesity hides the mass on palpation. CT angiography defines a rupture and plans repair, but it takes longer and needs transport. Plain films and spinal imaging do not assess the aorta.
+*Explanation:* CT with oral contrast and IV contrast shows a contrast leak from the staple line, a fluid and gas collection near the upper stomach and other causes, and the chest can be scanned for pulmonary embolism at the same visit. Ultrasound is limited by her habitus and cannot show a small leak. Plain abdominal and chest X-rays miss most leaks. Endoscopy is used for treatment once a leak is defined, not as the first diagnostic test in a septic patient.
 
 *Key feature:* Abdominal pain 5. Match imaging to the leading diagnosis, for example FAST in trauma or ultrasound for biliary and pelvic disease.
 
-*Source:* Wanhainen A and colleagues. European Society for Vascular Surgery (ESVS) 2024 clinical practice guidelines on the management of abdominal aorto-iliac artery aneurysms. Eur J Vasc Endovasc Surg. 2024. https://pubmed.ncbi.nlm.nih.gov/38307694/
+*Source:* Kim J, Azagury D, Eisenberg D, and colleagues. ASMBS position statement on prevention, detection, and treatment of gastrointestinal leak after gastric bypass and sleeve gastrectomy, including the roles of imaging, surgical exploration, and nonoperative management. Surg Obes Relat Dis. 2015. https://doi.org/10.1016/j.soard.2015.05.001
 
 #### Q3
-*Update:* Ultrasound shows a 5.8 cm infrarenal aortic aneurysm. BP is now 98/60 mmHg. She remains alert.
+*Update:* Imaging confirms the diagnosis and shows a 5 cm collection of fluid and gas beside the upper stomach. Her pulse is 126/minute.
 
 **Which of the following is the most appropriate next step in her care?**
 
-- A. Admit to medicine for monitoring
-- B. Call vascular surgery now  **(key)**
-- C. CT angiography, then decide
-- D. Fluid bolus to 140 systolic
-- E. Serial ultrasound in 6 hours
+- A. Admit to medicine on antibiotics
+- B. Bariatric surgery consult now  **(key)**
+- C. Endoscopic stent next week
+- D. Repeat CT in 48 hours
+- E. Start oral clear fluids
 
-*Explanation:* A symptomatic aneurysm with syncope and falling BP is a presumed rupture, so the vascular surgeon is called at once. The surgeon decides whether CT angiography can be done safely on the way to repair. Waiting for CT before calling delays definitive care. Restoring a normal BP with fluids can worsen bleeding. Admission to medicine and serial ultrasound ignore a surgical emergency.
+*Explanation:* A leak with a collection and ongoing sepsis needs the bariatric surgeon now to choose between operative washout and drainage or percutaneous drainage with endoscopic therapy. The patient should stay nothing by mouth. Admission to medicine on antibiotics alone leaves the source uncontrolled. An endoscopic stent may be part of the plan but not a week from now. A repeat CT in 48 hours delays source control, and oral fluids feed the leak.
 
 *Key feature:* Abdominal pain 4. When findings point to a surgical emergency, involve the surgeon without waiting for needless extra tests.
 
-*Source:* Wanhainen A and colleagues. European Society for Vascular Surgery (ESVS) 2024 clinical practice guidelines on the management of abdominal aorto-iliac artery aneurysms. Eur J Vasc Endovasc Surg. 2024. https://pubmed.ncbi.nlm.nih.gov/38307694/
+*Source:* Kim J, Azagury D, Eisenberg D, and colleagues. ASMBS position statement on prevention, detection, and treatment of gastrointestinal leak after gastric bypass and sleeve gastrectomy, including the roles of imaging, surgical exploration, and nonoperative management. Surg Obes Relat Dis. 2015. https://doi.org/10.1016/j.soard.2015.05.001
 
 #### Q4
-**Which of the following are the most appropriate measures while the vascular team prepares?**
+**Which of the following is the most appropriate first IV fluid for her resuscitation?**
 
-Select 2.
+Select 1.
 
-- A. Crossmatch red cells  **(key)**
-- B. Labetalol to lower BP
-- C. Nitroglycerin infusion
-- D. Norepinephrine to 140 systolic
-- E. Normal saline 2 L bolus
-- F. Permissive hypotension  **(key)**
+- A. Albumin 25% 100 mL
+- B. Dextrose 5% water 1 L
+- C. Half-normal saline 1 L
+- D. Hydroxyethyl starch 500 mL
+- E. Red blood cells 2 units
+- F. Ringer's lactate 1 L  **(key)**
 
-*Explanation:* Blood should be crossmatched for a suspected rupture, and permissive hypotension, accepting a lower systolic BP while she stays alert, limits further bleeding until the aorta is controlled. A large saline bolus or vasopressors to a normal BP can increase bleeding. Labetalol and nitroglycerin lower BP further in a patient who is already hypotensive for her.
+*Explanation:* She has sepsis with a lactate of 2.8 mmol/L and a pulse of 128/minute, so a balanced crystalloid such as Ringer's lactate is the preferred first fluid, given in boluses and reassessed. Starches increase kidney injury and are recommended against. Crystalloid alone is preferred over adding albumin. Dextrose in water and half-normal saline are hypotonic and poor volume expanders. Her hemoglobin is 138 g/L, so red cells are not indicated.
 
 *Key feature:* Shock/dehydration 3. Choose the right resuscitation fluid for the shocked patient, whether blood, crystalloid, or colloid.
 
-*Source:* Wanhainen A and colleagues. European Society for Vascular Surgery (ESVS) 2024 clinical practice guidelines on the management of abdominal aorto-iliac artery aneurysms. Eur J Vasc Endovasc Surg. 2024. https://pubmed.ncbi.nlm.nih.gov/38307694/
+*Source:* Prescott HC, Antonelli M, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://doi.org/10.1097/CCM.0000000000007075
 
 ### abdominal-pain-45: Man on hemodialysis with severe abdominal pain
 
@@ -2093,68 +2105,68 @@ Select 3.
 
 *Source:* Bala M and colleagues. Acute mesenteric ischemia: updated guidelines of the World Society of Emergency Surgery. World J Emerg Surg. 2022. https://wjes.biomedcentral.com/articles/10.1186/s13017-022-00443-x
 
-### abdominal-pain-46: Woman with diabetes and epigastric discomfort
+### abdominal-pain-46: Man from a group home who cannot say what hurts
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 66-year-old woman with type 2 diabetes presents to the emergency department with 3 hours of epigastric discomfort, nausea and unusual tiredness. An antacid at home gave slight relief. She has hypertension and dyslipidemia. She takes metformin, ramipril and atorvastatin.
+A 69-year-old man is brought to the emergency department from his group home by a support worker with 2 hours of vomiting and restlessness. He keeps rubbing his upper abdomen and grimacing. A stroke 4 years ago left him with expressive aphasia and right arm weakness, so he cannot describe his symptoms. He has type 2 diabetes and hypertension. His medication list is at the group home, and his transfer sheet lists no drug allergies. He failed a swallowing assessment last year and eats a pureed diet. Staff think he is constipated because he has not had a stool for 3 days.
 
-She looks tired. The heart and lungs are normal. There is mild epigastric tenderness without guarding. Lipase and liver enzymes are normal. Her first ECG is normal and her first high-sensitivity troponin is 9 ng/L.
+He is pale and sweaty. The chest is clear. The abdomen is soft, with mild epigastric tenderness and no guarding or distension. Rectal examination shows soft brown stool. Capillary glucose is 11.2 mmol/L.
 
-- Temperature: 36.7°C oral
-- Pulse: 92/minute
-- Resp.: 18/minute
-- BP: 154/88 mmHg
-- O2 sat: 97% on room air
+- Temperature: 36.8°C oral
+- Pulse: 58/minute
+- Resp.: 20/minute
+- BP: 112/68 mmHg
+- O2 sat: 95% on room air
 
 #### Q1
-*Update:* The resident suggests discharge on a proton pump inhibitor because the antacid helped.
+**Which of the following findings most suggests that the cause of his distress lies outside the abdomen?**
 
-**Which of the following is the most appropriate next step for her?**
+- A. Capillary glucose of 11.2 mmol/L
+- B. Mild epigastric tenderness
+- C. Pallor and sweating  **(key)**
+- D. Three days without a stool
+- E. Vomiting for 2 hours
 
-- A. Serial ECG and troponin  **(key)**
-- B. Trial of antacid and discharge
-- C. Ultrasound of the gallbladder
-- D. Upper endoscopy as outpatient
-- E. Viscous lidocaine and discharge
-
-*Explanation:* Epigastric discomfort with nausea and fatigue in an older woman with diabetes can be acute coronary syndrome. Epigastric pain is a recognized chest pain equivalent, and people with diabetes more often present with non-specific symptoms. Relief with an antacid does not separate cardiac from GI pain, and a single early troponin does not exclude myocardial infarction. A repeat ECG and troponin at the interval set by the local pathway are needed. Discharge after an antacid or lidocaine trial risks a missed infarction. Gallbladder ultrasound and endoscopy do not address the dangerous diagnosis first, and her liver enzymes and lipase are normal.
+*Explanation:* Pallor and sweating show a strong sympathetic response, which a few days without a stool does not cause. In a man with diabetes, hypertension and a past stroke, they point toward myocardial ischemia, which his aphasia stops him from describing. Three days without a stool supports the staff's view, but soft stool in the rectum argues against impaction. Mild epigastric tenderness and vomiting occur with both abdominal and cardiac causes, so they do not separate them. A capillary glucose of 11.2 mmol/L is common in people with diabetes and does not explain his distress on its own.
 
 *Key feature:* Abdominal pain 3. If no intra-abdominal source is found, search for causes outside the abdomen such as ACS, pneumonia, or DKA.
 
-*Source:* Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://pubmed.ncbi.nlm.nih.gov/37622654/
+*Source:* Byrne RA, Rossello X, Coughlan JJ, and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://doi.org/10.1093/eurheartj/ehad191
 
 #### Q2
-*Update:* At 2 hours, troponin is 64 ng/L. The repeat ECG shows 1 mm horizontal ST depression in V4 to V6.
+*Update:* The support worker calls the group home. For 2 weeks he has stopped partway through his daily walk, rubbed his upper abdomen and sweated, then recovered after a few minutes of rest.
 
-**Which of the following is the most likely diagnosis for her?**
+**Which of the following best explains the episodes during his walks?**
 
-- A. Acute pericarditis
-- B. Biliary colic
-- C. Esophageal spasm
-- D. Myocarditis
-- E. Non-ST elevation MI  **(key)**
+- A. Biliary colic
+- B. Chronic mesenteric ischemia
+- C. Esophageal reflux
+- D. Exertional angina  **(key)**
+- E. Musculoskeletal strain
 
-*Explanation:* A rise in troponin from 9 to 64 ng/L with new horizontal ST depression in a woman with diabetes, hypertension and dyslipidemia is a non-ST elevation myocardial infarction. Pericarditis causes diffuse ST elevation and pleuritic pain. Biliary colic and esophageal spasm do not cause a troponin rise. Myocarditis can raise troponin but usually follows a viral illness in a younger patient and rarely causes regional ST depression.
+*Explanation:* Discomfort brought on by walking and relieved within minutes by rest is angina, and sweating with it adds weight. Older adults, people with diabetes and people who cannot describe chest pain often present with anginal equivalents such as upper abdominal discomfort. New exertional episodes over 2 weeks, followed today by prolonged symptoms, raise concern for an acute coronary syndrome. Chronic mesenteric ischemia causes pain after meals, not with walking. Biliary colic follows meals and lasts longer than a few minutes. Esophageal reflux is not brought on by walking and relieved by rest. A muscle strain does not cause sweating that settles with a short rest.
 
 *Key feature:* Ischemic heart disease 5. Consider ACS in atypical presentations such as fatigue or dyspnea, particularly in elderly, diabetic, female, or cocaine using patients.
 
-*Source:* Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://pubmed.ncbi.nlm.nih.gov/37622654/
+*Source:* Byrne RA, Rossello X, Coughlan JJ, and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://doi.org/10.1093/eurheartj/ehad191
 
 #### Q3
-**Which of the following antiplatelet orders is most appropriate for her now?**
+*Update:* While his ECG is being recorded, he vomits again.
 
-- A. ASA 160 mg chewed  **(key)**
-- B. ASA 81 mg chewed
-- C. Clopidogrel 75 mg PO
-- D. Enteric-coated ASA 81 mg
-- E. Ibuprofen 400 mg PO
+**Which of the following is the most appropriate medication to give him first?**
 
-*Explanation:* ASA 160 mg chewed falls within the 150 to 300 mg oral loading dose in the 2023 ESC guideline, and chewing gives rapid platelet inhibition in acute coronary syndrome. A single 81 mg tablet is a maintenance dose, not a loading dose. Enteric coating delays absorption. Clopidogrel 75 mg is a maintenance dose without the loading dose. Ibuprofen and other NSAIDs raise cardiovascular risk and interfere with ASA.
+- A. ASA 160 mg PO chewed
+- B. ASA 650 mg PR  **(key)**
+- C. ondansetron 4 mg IV
+- D. pantoprazole 40 mg IV
+- E. sodium phosphate enema PR
+
+*Explanation:* ASA is given as soon as an acute coronary syndrome is suspected, without waiting for a full history or his medication list, because he has no known allergy and no active bleeding. He is vomiting and failed a swallowing assessment, so a chewed tablet may be lost or aspirated. In healthy volunteers a 600 mg ASA suppository gave salicylate levels as high as or higher than 162 mg chewed ASA within 90 minutes, and 650 mg is the adult suppository strength sold in Canada. Ondansetron and pantoprazole ease symptoms but do not protect the myocardium. An enema treats constipation, which soft stool in the rectum makes unlikely.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://pubmed.ncbi.nlm.nih.gov/37622654/
+*Source:* Maalouf R, Mosley M, James Kallail K, Kramer KM, Kumar G. A comparison of salicylic acid levels in normal subjects after rectal versus oral dosing. Acad Emerg Med. 2009. https://doi.org/10.1111/j.1553-2712.2008.00318.x
 
 ### abdominal-pain-47: Young woman with sudden pelvic pain
 

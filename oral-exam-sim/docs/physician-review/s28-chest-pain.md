@@ -12,6 +12,31 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - s42 rework: 8 SAMPs rewritten to remove overlap with s28 (17, 21, 25, 26, 30, 35, 37, 47).
 - s42 ischemic-heart-disease-26 q1 HEART score taught again (also s28, s12, s05). 17 q1 and 35 q1 repeat the 120 min FMC-to-device rule (core KF). 35 q3 relies on ESC 2017. 25 q3 rebuilt to 5 days before permanent pacing.
 - s48 Lens B: reject or keep pulmonary-edema-39 and 40 (near copies of 23 and 31). Repeated teaching 16 q1 (s28, s42), 21 q1 (s12, s05), 35 q2 (s51 sob-17), 38 q1 (s15 pe-03). Four questions key "NIV failing, intubate". 29 q1 bendopnea at BMI 43 may be weak.
+- Every rebuilt SAMP stays reviewed: false. This is an AI rebuild and audit, not clinician *(samps-replace-s32-s28.md)*
+- verification. Please recompute doses and thresholds and read each explanation against *(samps-replace-s32-s28.md)*
+- its stem before sign-off. *(samps-replace-s32-s28.md)*
+- Guideline currency: several rebuilds rest on international guidance where no current *(samps-replace-s32-s28.md)*
+- Canadian one was found (BTS pleural disease for tension pneumothorax, ESC cardio-oncology *(samps-replace-s32-s28.md)*
+- for fluoropyrimidine vasospasm, AHA infective endocarditis, IDSA encephalitis, BAP *(samps-replace-s32-s28.md)*
+- catatonia, Brophy status epilepticus). Please confirm these remain acceptable. *(samps-replace-s32-s28.md)*
+- Two SCAPE and eating-disorder sources are recent and less commonly cited. The SCAPE *(samps-replace-s32-s28.md)*
+- entity source (loc and chest-pain-35) is an emergency department observational study. *(samps-replace-s32-s28.md)*
+- Confirm you are comfortable with these as the source of record. *(samps-replace-s32-s28.md)*
+- chest-pain-43 remains an aortic dissection case, rebuilt with a distinct patient so it no *(samps-replace-s32-s28.md)*
+- longer copies cva-09. It sits alongside chest-pain-18 (right ventricular infarct) and *(samps-replace-s32-s28.md)*
+- chest-pain-45 (fluoropyrimidine vasospasm), which were moved off dissection so the batch *(samps-replace-s32-s28.md)*
+- does not carry near-duplicate dissection cases. *(samps-replace-s32-s28.md)*
+- All 11 re-rebuilt SAMPs need a second independent check before sign-off. *(samps-replace-s32-s28.md)*
+- chest-pain-17 q4: enoxaparin 1 mg/kg SC (68 mg) as the added treatment for NSTE-ACS after ASA. Please confirm your local choice of anticoagulant (enoxaparin, fondaparinux or unfractionated heparin). *(samps-replace-s32-s28.md)*
+- chest-pain-21 q2: empiric vancomycin with gram-negative cover for post-sternotomy mediastinitis. Please confirm against local antibiograms. *(samps-replace-s32-s28.md)*
+- chest-pain-30 q3: cannabis smoking keyed as the pneumothorax risk factor. The evidence is weaker than for tobacco. Please confirm, or change the key to tobacco. *(samps-replace-s32-s28.md)*
+- chest-pain-33 q1: the explanation relies on the CCS 2021 dyslipidemia guideline treating long-standing type 1 diabetes as a statin-indicated condition. *(samps-replace-s32-s28.md)*
+- chest-pain-38 q4: a coronary calcium score above 400 is described as extensive atherosclerosis at high risk. *(samps-replace-s32-s28.md)*
+- chest-pain-43 (atrioesophageal fistula) is uncommon. Please confirm it suits exam practice for CCFP-EM. *(samps-replace-s32-s28.md)*
+- The rebuilt set avoids toxicology because s18 and s53 already cover almost every common toxidrome and antidote. *(samps-replace-s32-s28.md)*
+- chest-pain-30 q3: cannabis as the keyed risk factor. Reviews of the 2023 BTS guideline link cannabis to apical bullae and advise stopping it. Please confirm. *(samps-replace-s32-s28.md)*
+- chest-pain-17 q4 and 22 q4: the IV metoprolol distractor is rejected as "routine early IV metoprolol is not recommended". Both patients have no heart failure and a systolic pressure above 120 mmHg, so this rests on "routine" rather than on a contraindication. *(samps-replace-s32-s28.md)*
+- chest-pain-33 q4 is new and needs the same sign-off as the other rebuilt questions. *(samps-replace-s32-s28.md)*
 - review-extra.ts. chest-pain-48 is a near-exact copy of chest-pain-26 (same title, stem and questions), and chest-pain-49 is a copy of chest-pain-37. Each carried one planted error, now fixed. Neither should be added to the bank, because each duplicates a SAMP already in the batch and would fail the near duplicate stem gate. Recommend dropping both. *(samps-s28-lensA.md)*
 - chest-pain-24 q3. The line "Steroids are linked to rebound pain crises" is true but not in the cited NHLBI report. A physician may want a specific source added or the sentence removed. Also consider whether the whole SAMP should rest on the Canadian 2015 consensus, which I could only confirm in part. *(samps-s28-lensA.md)*
 - chest-pain-27 q2 and chest-pain-28 q2. Troponin thresholds are assay and laboratory specific in Canada. The stems name the assay and threshold, so the keys hold, but local protocols vary. *(samps-s28-lensA.md)*
@@ -104,163 +129,157 @@ A 47-year-old man presents to the emergency department at 07:15 with 40 minutes 
 
 *Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
 
-### chest-pain-17: Tearing pain at the gym
+### chest-pain-17: Pressure years after lymphoma treatment
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 26-year-old man is brought to the emergency department by ambulance with severe chest pain that began suddenly 50 minutes ago while he was lifting weights. He describes it as tearing and maximal at onset, and it is now felt between his shoulder blades. He has Marfan syndrome and stopped taking losartan a year ago. He denies drug use. He is anxious and diaphoretic. Radial pulses are equal and there is no murmur. The ECG shows sinus tachycardia without ST changes.
+A 44-year-old woman presents to the emergency department with 90 minutes of central chest pressure that began while she carried groceries up two flights of stairs. It has continued at rest and spreads to her left shoulder. She is not short of breath. At age 19 she was treated for Hodgkin lymphoma with chemotherapy and radiation to the mediastinum, and she has had no relapse. She smokes 10 cigarettes a day and takes no medications. Her menstrual periods are regular. Her mother had breast cancer at 60. She is diaphoretic. The JVP is not raised, the heart sounds are normal and the lungs are clear. There is no leg swelling. Her ECG shows 1 mm horizontal ST depression in V4 to V6.
 
-- Temperature: 36.9°C oral
-- Pulse: 112/minute
-- Resp.: 22/minute
-- BP: 158/84 mmHg
+- Temperature: 36.8°C oral
+- Pulse: 94/minute
+- Resp.: 18/minute
+- BP: 146/88 mmHg
 - O2 sat: 98% on room air
-- Weight: 84 kg
+- Weight: 68 kg
 
 #### Q1
-**Which of the following features count toward his aortic dissection detection risk score?**
+**Which of the following raise her pretest probability of coronary artery disease?**
 
 Select 2.
 
-- A. Abrupt tearing chest pain  **(key)**
-- B. Age younger than 40 years
-- C. Heart rate of 112/minute
-- D. Marfan syndrome  **(key)**
-- E. Normal ECG without ST changes
-- F. Onset while lifting weights
-- G. Stopping losartan a year ago
+- A. Age of 44 years
+- B. Current cigarette smoking  **(key)**
+- C. Mediastinal radiation at 19  **(key)**
+- D. Mother with breast cancer
+- E. Premenopausal status
+- F. Weight of 68 kg
 
-*Explanation:* The score has three categories: high-risk conditions such as Marfan syndrome, high-risk pain that is abrupt, severe or tearing, and high-risk examination findings. He scores 1 for Marfan syndrome and 1 for his pain, a total of 2. His equal pulses and absent murmur add nothing. Tachycardia, age, the trigger, a normal ECG and stopping losartan are not score items.
+*Explanation:* Radiation to the mediastinum accelerates coronary atherosclerosis, often in the proximal and ostial vessels, and the risk appears years to decades after treatment. Current smoking is an established coronary risk factor. Her age of 44 and her premenopausal status, shown by regular periods, place her in a lower baseline risk group rather than raising it. Her mother's breast cancer is not a coronary risk factor, and a weight of 68 kg does not raise her risk.
 
 *Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Desai MY, Windecker S, Lancellotti P and colleagues. Prevention, diagnosis, and management of radiation-associated cardiac disease: JACC scientific expert panel. J Am Coll Cardiol. 2019. https://www.jacc.org/doi/10.1016/j.jacc.2019.07.006
 
 #### Q2
-**Which of the following is the most appropriate next investigation?**
+**Which of the following is the most likely cause of her chest pressure?**
 
-- A. CT angiogram of the aorta  **(key)**
-- B. D-dimer to guide the need for imaging
-- C. Repeat ECG and serial troponins
-- D. Transthoracic echo before any CT
-- E. Upright chest X-ray
+- A. Acute pericarditis
+- B. Constrictive pericarditis
+- C. Pulmonary embolism
+- D. Radiation pneumonitis
+- E. Unstable angina or NSTEMI  **(key)**
 
-*Explanation:* With a score of 2 he is high risk, so he goes straight to CT angiography. D-dimer is used only to help rule out dissection when the score is 0 or 1. A chest X-ray or transthoracic echo cannot exclude dissection and would delay the definitive test. Serial troponins pursue ACS, which his ECG and history make less likely.
+*Explanation:* Exertional pressure that continues at rest, spreads to the shoulder and comes with sweating and new ST depression in V4 to V6 is an acute coronary syndrome until proven otherwise. Radiation 25 years ago explains coronary disease at her age. Acute pericarditis gives sharp positional pain with diffuse ST elevation. Constrictive pericarditis is a late radiation effect but causes gradual edema and a raised JVP, not sudden pressure. Radiation pneumonitis occurs within months of treatment, and she has no breathlessness or leg swelling to suggest pulmonary embolism.
 
 *Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
 
-*Source:* Nazerian P and colleagues. Diagnostic accuracy of the aortic dissection detection risk score plus D-dimer for acute aortic syndromes (ADvISED). Circulation. 2018.
+*Source:* Desai MY, Windecker S, Lancellotti P and colleagues. Prevention, diagnosis, and management of radiation-associated cardiac disease: JACC scientific expert panel. J Am Coll Cardiol. 2019. https://www.jacc.org/doi/10.1016/j.jacc.2019.07.006
 
 #### Q3
-*Update:* While he waits for CT, a portable chest X-ray is read as a normal mediastinal width.
+*Update:* Her chart shows a normal survivorship echocardiogram 8 months ago, with normal ventricular function and valves.
 
-**Which of the following is the most appropriate interpretation of this chest X-ray in this patient?**
+**Which of the following statements about her normal echocardiogram 8 months ago is most accurate?**
 
-- A. It excludes a type A dissection
-- B. It is insufficient to exclude dissection  **(key)**
-- C. It lowers his score so D-dimer can decide
-- D. It makes pneumothorax the leading diagnosis
-- E. It shifts the likely diagnosis to ACS
+- A. It argues against an unstable plaque
+- B. It assessed function, not coronary lumens  **(key)**
+- C. It makes an ACS less likely today
+- D. It rules out a critical stenosis
+- E. It supports early discharge home
 
-*Explanation:* A normal mediastinum is common in acute aortic dissection and does not lower a high pretest probability. The chest X-ray is not part of the risk score, so it cannot move him to a D-dimer strategy. A normal film also shows no pneumothorax. His ECG and history give no new reason to favour ACS.
+*Explanation:* A resting echocardiogram shows ventricular function, valves and the pericardium. It does not image the coronary lumens, so a normal study 8 months ago says nothing about an unstable plaque or a critical stenosis today. Radiation coronary disease progresses over years, and a plaque can rupture without any prior change in wall motion. Her ongoing pain and new ST depression keep ACS likely today, so the old echo gives no support for discharge.
 
 *Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 #### Q4
-*Update:* CT shows a Stanford type A dissection from the aortic root to the proximal arch.
+*Update:* Paramedics gave ASA 160 mg chewed and two nitroglycerin sprays. Her pain has eased to 2 out of 10.
 
-**Which of the following is the most appropriate disposition for this patient?**
+**Which of the following is the most appropriate additional treatment now?**
 
-- A. Admission to cardiology for medical therapy
-- B. Emergency cardiac surgery consultation  **(key)**
-- C. ICU admission for blood pressure control
-- D. Interventional radiology endograft
-- E. Transfer to the cardiology ward
+- A. Enoxaparin 1 mg/kg SC  **(key)**
+- B. Metoprolol 5 mg IV
+- C. Morphine 10 mg IV
+- D. Oxygen 10 L/minute by mask
+- E. Tenecteplase 35 mg IV
 
-*Explanation:* Type A dissection involves the ascending aorta and needs emergency open surgical repair. Heart rate and blood pressure control start at once but only bridge him to the operating room. Medical therapy alone on a ward or in the ICU is the approach for uncomplicated type B dissection. Endovascular grafting is used for complicated type B disease, not the aortic root.
+*Explanation:* With a working diagnosis of non-ST elevation ACS, parenteral anticoagulation is started at diagnosis alongside ASA, and enoxaparin 1 mg/kg SC is 68 mg for her. Tenecteplase is for ST elevation infarction and gives no benefit with ST depression. Routine early IV metoprolol is not recommended because it can precipitate shock. Oxygen is not indicated with a saturation of 98%. Her pain has eased, and morphine can delay the absorption of oral P2Y12 inhibitors.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
 
-### chest-pain-18: Preparing to give a lytic
+### chest-pain-18: Breathless after a morning treatment
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department with no CT scanner and no catheterization laboratory. The nearest PCI centre is 3 hours away by road. A 68-year-old man presents with severe chest pain that began 1 hour ago. He has long-standing hypertension treated with hydrochlorothiazide. He is diaphoretic. The ECG shows 2 mm ST elevation in II, III and aVF with reciprocal ST depression in aVL. The nurse has prepared tenecteplase.
+A 52-year-old woman presents to the emergency department with 6 hours of sharp left upper chest pain that is worse with deep breaths, and breathlessness on stairs. The pain began in the early afternoon. She has chronic neck and shoulder pain and had acupuncture this morning, with needles placed over both trapezius muscles and the upper back. She has no lung disease and has never smoked. She has had no leg swelling, recent travel or surgery. She takes naproxen as needed. She is speaking in full sentences. The trachea is midline. Breath sounds are reduced at the left apex. An upright chest X-ray taken at triage was reported as normal.
 
-- Temperature: 36.6°C oral
-- Pulse: 88/minute
+- Temperature: 36.9°C oral
+- Pulse: 96/minute
 - Resp.: 20/minute
-- BP: 172/96 mmHg
+- BP: 132/80 mmHg
 - O2 sat: 96% on room air
-- Weight: 80 kg
 
 #### Q1
-**Which of the following questions about his pain is most important to ask before fibrinolysis?**
+**Which of the following details of her history most helps explain her symptoms?**
 
-- A. Whether antacids eased the pain
-- B. Whether it is worse on deep breathing
-- C. Whether it is worse with arm movement
-- D. Whether it tore through to his back  **(key)**
-- E. Whether it was preceded by exertion
+- A. Chronic neck and shoulder pain
+- B. Lifelong non-smoker
+- C. Needles placed over the upper back  **(key)**
+- D. Onset in the early afternoon
+- E. Taking naproxen as needed
 
-*Explanation:* Aortic dissection can extend into the right coronary ostium and produce an inferior STEMI, and a lytic in that setting can be fatal. Tearing pain radiating to the back is the history feature that most raises that concern. Response to antacids does not separate cardiac from other causes. Pleuritic or positional pain and an exertional trigger do not change the decision to give a lytic.
+*Explanation:* Needles over the trapezius and upper back can pass through the thin chest wall into the pleura, and pneumothorax is the most often reported serious complication of acupuncture. Pleuritic pain and breathlessness starting hours after the session fit this. Her chronic neck pain was the reason for treatment, not a cause of new pleuritic pain. Being a lifelong non-smoker lowers her risk of a primary spontaneous pneumothorax. The time of onset and naproxen use do not explain one-sided reduced breath sounds.
 
 *Key feature:* Chest pain 3. Take a detailed pain and symptom history to separate dangerous from benign causes and shape the differential.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Th'ng F, Rao KA, Huang PY. Case series: acupuncture-related pneumothorax. Int J Emerg Med. 2022. https://pmc.ncbi.nlm.nih.gov/articles/PMC9465868/
 
 #### Q2
-*Update:* He says the pain was maximal at onset, felt like tearing and moved to his back. BP is 174/98 mmHg in the right arm and 136/80 mmHg in the left arm.
+**Which of the following is the most likely diagnosis in this woman?**
 
-**Which of the following is the most likely diagnosis in this patient?**
+- A. Acute pericarditis
+- B. Muscle strain from needling
+- C. Pulmonary embolism
+- D. Traumatic left pneumothorax  **(key)**
+- E. Viral pleurisy
 
-- A. Inferior STEMI from plaque rupture
-- B. Inferior STEMI with right ventricular infarct
-- C. Pericarditis with regional ST elevation
-- D. Takotsubo syndrome with ST elevation
-- E. Type A dissection involving a coronary  **(key)**
-
-*Explanation:* Abrupt tearing pain radiating to the back with a 38 mmHg difference in arm systolic pressures points to aortic dissection. Inferior ST elevation in this setting suggests the flap involves the right coronary artery. Plaque rupture or right ventricular infarction does not explain the pain quality or the pressure difference. Reciprocal depression in aVL argues against pericarditis.
+*Explanation:* One-sided pleuritic pain, breathlessness and reduced breath sounds at the left apex hours after needling near the chest wall point to a traumatic pneumothorax. A muscle strain does not reduce breath sounds. Viral pleurisy does not cause a focal loss of breath sounds. Pericarditis gives central positional pain. Pulmonary embolism is less likely with no leg swelling, travel or surgery, and it does not explain the apical findings.
 
 *Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Th'ng F, Rao KA, Huang PY. Case series: acupuncture-related pneumothorax. Int J Emerg Med. 2022. https://pmc.ncbi.nlm.nih.gov/articles/PMC9465868/
 
 #### Q3
-**Which of the following is the most appropriate treatment decision now?**
+**Which of the following is the most appropriate next investigation?**
 
-- A. ASA, heparin, then transfer for PCI
-- B. Full-dose tenecteplase within 30 minutes
-- C. Half-dose tenecteplase and transfer
-- D. Nitroglycerin infusion alone, then transfer
-- E. Withhold lytics, start IV beta blocker  **(key)**
+- A. Bedside lung ultrasound  **(key)**
+- B. CT pulmonary angiography
+- C. D-dimer blood test
+- D. High-sensitivity troponin
+- E. Ventilation perfusion scan
 
-*Explanation:* Suspected dissection is a contraindication to fibrinolysis and anticoagulation. The immediate goal is to lower heart rate first with an IV beta blocker, then blood pressure, and arrange transfer for imaging and surgery. A lytic at any dose, or ASA with heparin, risks catastrophic bleeding into the aortic wall. A vasodilator alone causes reflex tachycardia and more shear on the aorta.
+*Explanation:* Bedside ultrasound can show absent lung sliding and a lung point within minutes, and it is more sensitive than a chest X-ray for a small pneumothorax. A D-dimer and CT pulmonary angiography pursue pulmonary embolism, which the history does not support. A ventilation perfusion scan is slower and asks the same question. A troponin does not assess the pleura and would not change her immediate care.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Roberts ME and colleagues. British Thoracic Society guideline for pleural disease. Thorax. 2023.
 
 #### Q4
-*Update:* A bedside ultrasound shows no pericardial effusion and an aortic root of 4.1 cm. No intimal flap is seen.
+**Which of the following statements about her normal triage chest X-ray is most accurate?**
 
-**Which of the following is the most appropriate next step?**
+- A. It excludes a clinically important leak
+- B. It lowers her risk of later enlargement
+- C. It makes pulmonary embolism more likely
+- D. It misses some small air leaks  **(key)**
+- E. It shows the pain is from muscle strain
 
-- A. Give tenecteplase since no flap is seen
-- B. Repeat the ultrasound in 1 hour
-- C. Start heparin and observe for 6 hours
-- D. Transfer urgently for CT angiography  **(key)**
-- E. Treat as STEMI and transfer for PCI
-
-*Explanation:* Bedside ultrasound can support a diagnosis of dissection but cannot exclude it, and his root is dilated. He needs urgent transfer for CT angiography and surgical assessment. Giving a lytic or heparin because no flap was seen relies on an insensitive test. Repeating the ultrasound adds little and delays definitive imaging.
+*Explanation:* A small pneumothorax is easily missed on a single chest X-ray, so a normal film does not exclude one when her history and reduced apical breath sounds suggest it. The film result does not change how a leak behaves, and a small pneumothorax can still enlarge, so she needs reassessment before any discharge. A normal film does not make pulmonary embolism more likely, and it cannot show that the pain is muscular.
 
 *Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Roberts ME and colleagues. British Thoracic Society guideline for pleural disease. Thorax. 2023.
 
 ### chest-pain-19: Sudden pain during a lecture
 
@@ -415,144 +434,146 @@ A 36-year-old woman presents to the emergency department with 1 hour of heavy ce
 
 *Source:* Hayes SN, Kim ESH, Saw J and colleagues. Spontaneous coronary artery dissection: current state of the science. A scientific statement from the American Heart Association. Circulation. 2018. https://www.ahajournals.org/doi/10.1161/CIR.0000000000000564
 
-### chest-pain-21: Collapse six weeks after surgery
+### chest-pain-21: Fever and chest pain after heart surgery
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-You are working in a rural hospital emergency department with no CT scanner. A 63-year-old man is brought to the emergency department by ambulance after collapsing at home. He had a right hip replacement 6 weeks ago. His 35-day course of enoxaparin prophylaxis ended last week. He has had pleuritic right chest pain and breathlessness since yesterday. He is pale and diaphoretic. The jugular veins are distended. Breath sounds are equal and the lungs are clear. The right calf is swollen.
+A 67-year-old man presents to the emergency department with 2 days of worsening central chest pain, fever and chills. He had coronary artery bypass grafting through a median sternotomy 12 days ago and went home on day 6. He has type 2 diabetes treated with insulin and a body mass index of 38 kg/m2. He takes ASA, metoprolol, atorvastatin and insulin. The lower third of the sternal wound is red, with cloudy drainage. The sternum clicks when he coughs. Breath sounds are equal. His ECG shows sinus tachycardia with no new ST changes.
 
-- Temperature: 36.9°C oral
-- Pulse: 128/minute
-- Resp.: 30/minute
-- BP: 82/50 mmHg
-- O2 sat: 88% on 15 L/minute by non-rebreather mask
-- Weight: 92 kg
+- Temperature: 38.9°C oral
+- Pulse: 118/minute
+- Resp.: 22/minute
+- BP: 104/62 mmHg
+- O2 sat: 95% on room air
+- Weight: 118 kg
 
 #### Q1
-**Which of the following is the most likely cause of his shock?**
+**Which of the following is the most likely cause of his chest pain?**
 
-- A. Hemorrhage from the surgical site
-- B. Massive pulmonary embolism  **(key)**
-- C. Pericardial tamponade
-- D. Septic shock from the prosthetic joint
-- E. Tension pneumothorax
+- A. Acute graft occlusion
+- B. Deep sternal wound infection  **(key)**
+- C. Postpericardiotomy syndrome
+- D. Pulmonary embolism
+- E. Superficial wound cellulitis
 
-*Explanation:* Recent hip replacement, a swollen calf, pleuritic pain, hypoxemia, distended neck veins and hypotension point to a massive PE. Equal breath sounds argue against tension pneumothorax. Hemorrhage causes flat neck veins. He has no fever to suggest joint sepsis. Tamponade also raises the neck veins but does not explain the calf or the hypoxemia.
+*Explanation:* Fever, purulent drainage and a clicking, unstable sternum 12 days after sternotomy point to a deep sternal wound infection with mediastinitis, which is lethal without early surgery. Diabetes and obesity are major risk factors. Superficial cellulitis does not make the sternum unstable. Postpericardiotomy syndrome causes pleuritic pain and a rub, not purulent drainage. Graft occlusion would usually give ischemic ECG changes, and pulmonary embolism does not explain an infected, unstable wound.
 
 *Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
 
-*Source:* Konstantinides SV and colleagues. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Lazar HL, Vander Salm T, Engelman R and colleagues. Prevention and management of sternal wound infections. J Thorac Cardiovasc Surg. 2016. https://www.jtcvs.org/article/S0022-5223(16)30872-8/fulltext
 
 #### Q2
-*Update:* Bedside ultrasound shows a right ventricle larger than the left with septal flattening and no pericardial effusion. The right femoral vein does not compress. He has no history of stroke, bleeding or recent head injury.
+**Which of the following is the most appropriate treatment once blood cultures are drawn?**
 
-**Which of the following is the most appropriate treatment now?**
+- A. Bedside opening of the wound
+- B. IV cefazolin 2 g alone
+- C. Oral cephalexin and wound review
+- D. Vancomycin with gram-negative cover  **(key)**
+- E. Wound swab and await results
 
-- A. Alteplase 100 mg IV over 2 hours  **(key)**
-- B. Apixaban 10 mg PO twice daily
-- C. Enoxaparin 90 mg SC, then transfer
-- D. Heparin infusion and transfer for CT
-- E. Normal saline 3 L IV rapid bolus
-
-*Explanation:* He has high-risk PE with shock, and ultrasound shows right ventricular strain and a femoral DVT, so systemic thrombolysis is indicated without waiting for CT. His surgery was 6 weeks ago, outside the 3-week window that the ESC lists as a contraindication. Anticoagulation alone and transfer for imaging do not treat obstructive shock. Large fluid volumes can worsen a failing, dilated right ventricle.
+*Explanation:* Mediastinitis with fever, tachycardia and a soft blood pressure needs prompt empiric IV therapy. Vancomycin is the usual first-line drug because coagulase-negative staphylococci are often multiresistant and MRSA is common, and gram-negative bacilli are added to the cover in a septic patient. Cefazolin alone does not cover MRSA or many gram-negative organisms. Oral cephalexin, or a swab with treatment deferred until results return, is inadequate for a deep infection with sepsis. Opening the wound at the bedside is not a substitute for operative debridement.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Konstantinides SV and colleagues. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Abu-Omar Y, Kocher GJ, Bosco P and colleagues. European Association for Cardio-Thoracic Surgery expert consensus statement on the prevention and management of mediastinitis. Eur J Cardiothorac Surg. 2017. https://doi.org/10.1093/ejcts/ezw326
 
 #### Q3
-**Which of the following anticoagulants is preferred alongside thrombolysis in this patient?**
+*Update:* Antibiotics are running. His blood pressure has improved after 2 L of Ringer's lactate.
 
-- A. Apixaban 10 mg PO
-- B. Dalteparin 18 000 units SC
-- C. Enoxaparin 90 mg SC
-- D. Fondaparinux 10 mg SC
-- E. Unfractionated heparin IV  **(key)**
+**Which of the following is the most appropriate next step to define the infection and plan care?**
 
-*Explanation:* In high-risk PE the ESC recommends IV unfractionated heparin with a weight-based bolus. It can be stopped quickly and has a short half-life if bleeding occurs after the lytic. LMWH, fondaparinux and DOACs have not been adequately tested in hypotensive patients and are longer acting. Oral absorption is also unreliable in shock.
+- A. Admit to medicine for IV therapy
+- B. Bedside wound probing only
+- C. CT chest and cardiac surgery call  **(key)**
+- D. Nuclear medicine bone scan
+- E. Transthoracic echo only
+
+*Explanation:* Contrast CT of the chest is the imaging test of choice and can show sternal separation, gas beneath the sternum and mediastinal collections, and deep sternal wound infection is treated with operative debridement by the cardiac surgery team. Admission to medicine for antibiotics alone delays source control. Probing the wound at the bedside cannot show the mediastinal extent. A bone scan is slow and nonspecific after recent surgery. A transthoracic echo may show an effusion but does not assess the sternum or mediastinum.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Konstantinides SV and colleagues. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Abu-Omar Y, Kocher GJ, Bosco P and colleagues. European Association for Cardio-Thoracic Surgery expert consensus statement on the prevention and management of mediastinitis. Eur J Cardiothorac Surg. 2017. https://doi.org/10.1093/ejcts/ezw326
 
-### chest-pain-22: Faint at basketball practice
+### chest-pain-22: Chest discomfort described through her son
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 15-year-old boy is brought to the emergency department by his mother after he fainted during basketball practice. He had chest tightness during sprint drills just before he fell and woke within 30 seconds. Over the past month he has had chest pain with running that settles with rest. His uncle died suddenly at age 32. He takes no medications and denies drug use. A harsh systolic murmur at the left sternal border gets louder when he stands.
+A 66-year-old woman presents to the emergency department with her adult son. She speaks Tamil and little English. Her son says she has had gas in her chest on and off for 3 days and asks for something for indigestion. She has type 2 diabetes and hypertension and takes metformin and amlodipine. She moved to Canada from Sri Lanka 10 years ago. She has never smoked. She is rubbing her sternum and looks uncomfortable. The lungs are clear and there is no chest wall tenderness.
 
-- Temperature: 36.8°C oral
-- Pulse: 84/minute
-- Resp.: 16/minute
-- BP: 118/68 mmHg
-- O2 sat: 99% on room air
-- Weight: 62 kg
+- Temperature: 36.7°C oral
+- Pulse: 92/minute
+- Resp.: 18/minute
+- BP: 158/90 mmHg
+- O2 sat: 97% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following is the most likely diagnosis in this patient?**
+**Which of the following diagnoses should be considered first in this woman?**
 
-- A. Anomalous coronary artery origin
-- B. Bicuspid aortic valve stenosis
-- C. Hypertrophic cardiomyopathy  **(key)**
-- D. Vasovagal syncope
-- E. Viral myocarditis
+- A. Biliary colic from gallstones
+- B. Gastroesophageal reflux
+- C. Peptic ulcer disease
+- D. Somatic symptom disorder
+- E. Unstable angina or infarction  **(key)**
 
-*Explanation:* Exertional chest pain and syncope with a family history of sudden death and a murmur that gets louder on standing suggest hypertrophic cardiomyopathy with outflow obstruction. The murmur of aortic stenosis gets softer on standing. An anomalous coronary can cause exertional syncope but gives no murmur. Syncope during exertion is not vasovagal. He has no viral illness or fever to suggest myocarditis.
+*Explanation:* A woman with diabetes and recurrent chest discomfort that her family calls gas has an acute coronary syndrome until an ECG and troponins show otherwise, because it is the lethal cause that needs action within minutes. Reflux, peptic ulcer disease and biliary colic are common, but they are diagnoses to reach after ischemia has been addressed. A somatic symptom label has no place as a first consideration in a new presentation.
 
 *Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
 
-*Source:* Ommen SR and colleagues. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR guideline for the management of hypertrophic cardiomyopathy. Circulation. 2024. https://www.ahajournals.org/doi/abs/10.1161/CIR.0000000000001250
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 #### Q2
-**Which of the following features of his history most increases the likelihood of this diagnosis?**
+**Which of the following most raises her pretest probability of coronary disease?**
 
-- A. Age of 15 years
-- B. Brief recovery after the faint
-- C. Participation in team sport
-- D. Sudden death of an uncle at 32  **(key)**
-- E. No medication or drug use
+- A. Diabetes with South Asian ancestry  **(key)**
+- B. Female sex and her age
+- C. Her lifelong non-smoking
+- D. Her move to Canada 10 years ago
+- E. Her use of amlodipine
 
-*Explanation:* Hypertrophic cardiomyopathy is usually inherited, and sudden death of a young relative is a major clue and a risk marker. Quick recovery is typical of cardiac syncope too, so it does not help. Age and sport participation do not raise the probability. Having no drug exposure removes a cause but does not point toward this diagnosis.
+*Explanation:* Diabetes is a major coronary risk factor, and Canadians of South Asian ancestry have more cardiovascular disease and more glucose intolerance and dyslipidemia than Canadians of European ancestry, so together they sharply raise her pretest probability. Her age of 66 adds some risk and female sex offsets part of it, so together they add less than diabetes with South Asian ancestry. Never smoking removes one risk factor but does not offset diabetes. The timing of her migration and her amlodipine use do not change her coronary risk.
 
 *Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
 
-*Source:* Ommen SR and colleagues. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR guideline for the management of hypertrophic cardiomyopathy. Circulation. 2024. https://www.ahajournals.org/doi/abs/10.1161/CIR.0000000000001250
+*Source:* Anand SS, Yusuf S, Vuksan V and colleagues. Differences in risk factors, atherosclerosis, and cardiovascular disease between ethnic groups in Canada: the Study of Health Assessment and Risk in Ethnic groups (SHARE). Lancet. 2000. https://www.thelancet.com/journals/lancet/article/PIIS0140673600025022/abstract
 
 #### Q3
-*Update:* The ECG shows left ventricular hypertrophy with deep narrow Q waves in II, III and aVF.
+*Update:* A professional telephone interpreter is connected. She describes a heavy pressure behind the sternum.
 
-**Which of the following bedside manoeuvres would make his murmur softer?**
+**Which of the following features of her pain, if present, would favour myocardial ischemia?**
 
 Select 3.
 
-- A. Amyl nitrite inhalation
-- B. Isometric handgrip  **(key)**
-- C. Nitroglycerin 0.4 mg SL
-- D. Passive leg raise  **(key)**
-- E. Squatting from standing  **(key)**
-- F. Standing from squatting
-- G. Valsalva strain phase
+- A. Brought on by walking uphill  **(key)**
+- B. Eased within minutes by rest  **(key)**
+- C. Pain lasting a few seconds
+- D. Pain reproduced by pressing
+- E. Sharp and worse with breathing
+- F. Sour taste after large meals
+- G. Spreading to the jaw or arm  **(key)**
 
-*Explanation:* The obstructive murmur softens when the left ventricle fills more or afterload rises. Squatting and passive leg raising increase preload, and handgrip increases afterload. Standing, the Valsalva strain phase, amyl nitrite and nitroglycerin reduce preload or afterload and make the murmur louder.
+*Explanation:* Pain brought on by exertion, eased by rest within minutes and spreading to the jaw or arm favours ischemia. Fleeting pain lasting seconds, pain reproduced by pressing, sharp pleuritic pain and a sour taste after meals point toward musculoskeletal, pleural or esophageal causes, though none excludes ACS on its own. A professional interpreter rather than a relative should take this history, because relatives can filter or reinterpret symptoms, as her son did by calling this gas.
 
 *Key feature:* Chest pain 3. Take a detailed pain and symptom history to separate dangerous from benign causes and shape the differential.
 
-*Source:* Ommen SR and colleagues. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR guideline for the management of hypertrophic cardiomyopathy. Circulation. 2024. https://www.ahajournals.org/doi/abs/10.1161/CIR.0000000000001250
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 #### Q4
-**Which of the following is the most appropriate plan for this patient?**
+*Update:* Her ECG, recorded 8 minutes after arrival, shows 1 mm horizontal ST depression in V4 to V6. She has taken no medication today.
 
-- A. Admission with monitoring and echocardiogram  **(key)**
-- B. Discharge home with a Holter monitor
-- C. Discharge with outpatient echo in 6 weeks
-- D. Exercise stress test in the department
-- E. Nitroglycerin SL for chest pain as needed
+**Which of the following medications should she receive first at this point?**
 
-*Explanation:* Exertional syncope with suspected hypertrophic cardiomyopathy and a family history of sudden death is high risk for a fatal arrhythmia. He needs monitoring and an echocardiogram before any decision about discharge. Delaying the echo or sending him home with a Holter leaves him unprotected. Exercise testing in the emergency department could provoke syncope. Nitrates worsen outflow obstruction.
+- A. ASA 160 mg PO chewed  **(key)**
+- B. Metoprolol 5 mg IV
+- C. Morphine 5 mg IV
+- D. Pantoprazole 40 mg IV
+- E. Viscous lidocaine 10 mL PO
+
+*Explanation:* New ST depression with ongoing symptoms supports non-ST elevation ACS, and chewed ASA 160 mg is the first drug to give. Pantoprazole and viscous lidocaine treat a presumed gastric cause and would delay antiplatelet therapy. Routine early IV metoprolol is not recommended and can precipitate shock. Morphine is not first-line and can slow the absorption of oral P2Y12 inhibitors.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Ommen SR and colleagues. 2024 AHA/ACC/AMSSM/HRS/PACES/SCMR guideline for the management of hypertrophic cardiomyopathy. Circulation. 2024. https://www.ahajournals.org/doi/abs/10.1161/CIR.0000000000001250
+*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
 
 ### chest-pain-23: Pain three days after a vaccine
 
@@ -992,159 +1013,156 @@ Select 2.
 
 *Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
 
-### chest-pain-29: Crushing pain with a wide QRS
+### chest-pain-29: A fall on the stairs at a party
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 73-year-old man is brought to the emergency department by ambulance with 50 minutes of crushing central chest pain and sweating. He has hypertension and heart failure, and a left bundle branch block was present on an ECG 1 year ago. He takes ramipril, bisoprolol and furosemide. The paramedics gave ASA 160 mg chewed. He is pale and clammy. There are fine crackles at both lung bases. The hospital has a catheterization laboratory on site.
+A 57-year-old man is brought to the emergency department at 01:00 by friends from a party. They say he suddenly went pale, clutched his chest and sat down on the stairs, then slid down three steps and struck his left chest on the railing. He has had four beers and smells of alcohol. He smokes and has hypertension. He now has central pressure-like chest pain and nausea. He is sweaty. There is a small bruise over the left upper chest that is tender to touch. Breath sounds are equal. His first ECG shows sinus rhythm with no ST elevation or depression.
 
-- Temperature: 36.5°C oral
-- Pulse: 96/minute
-- Resp.: 24/minute
-- BP: 104/66 mmHg
-- O2 sat: 93% on room air
-- Weight: 82 kg
-
-#### Q1
-*Update:* The ECG shows left bundle branch block with 2 mm ST elevation in V5 and V6, in the same direction as the QRS.
-
-**Which of the following is the most appropriate interpretation of this ECG?**
-
-- A. Expected secondary change of old LBBB
-- B. Hyperkalemia until proven otherwise
-- C. Nondiagnostic, await serial troponins
-- D. Occlusion MI by Sgarbossa criteria  **(key)**
-- E. Rate-related repolarization change
-
-*Explanation:* In LBBB the ST segment normally moves opposite to the main QRS deflection. Concordant ST elevation of 1 mm or more is a Sgarbossa criterion that is highly specific for acute coronary occlusion. Secondary change from an old LBBB is discordant, not concordant. His heart rate of 96/minute does not cause concordant elevation. Nothing in the case suggests hyperkalemia.
-
-*Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
-
-*Source:* Smith SW, Dodd KW, Henry TD and colleagues. Diagnosis of ST-elevation myocardial infarction in the presence of left bundle branch block with the ST-elevation to S-wave ratio in a modified Sgarbossa rule. Ann Emerg Med. 2012. https://pubmed.ncbi.nlm.nih.gov/22939607/
-
-#### Q2
-**Which of the following statements about his known old LBBB is most accurate?**
-
-- A. It excludes new ischemia on this ECG
-- B. It makes the ECG uninterpretable for MI
-- C. It means STEMI criteria cannot apply
-- D. It requires troponin before reperfusion
-- E. It still permits an occlusion MI diagnosis  **(key)**
-
-*Explanation:* An old LBBB does not make the ECG uninterpretable. Sgarbossa criteria and the Smith modification identify acute occlusion in LBBB. The ESC advises a primary PCI strategy for LBBB with symptoms suggesting ongoing ischemia, without waiting for troponin. A known LBBB therefore neither excludes ischemia nor delays reperfusion.
-
-*Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
-
-*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
-
-#### Q3
-**Which of the following is the most appropriate management now?**
-
-- A. Activate the cath lab for primary PCI  **(key)**
-- B. CCU admission and serial troponins
-- C. Furosemide 40 mg IV and reassess
-- D. Nitroglycerin infusion, then angiography
-- E. Tenecteplase 45 mg IV now
-
-*Explanation:* He has ongoing pain with ECG criteria for acute occlusion, and the hospital can do primary PCI now. Admission for serial troponins or treating his crackles alone delays reperfusion. A lytic is inferior to timely primary PCI when a cath lab is on site. Delaying angiography for a nitroglycerin infusion is not justified, and his systolic BP of 104 mmHg leaves little room for it.
-
-*Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
-
-*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
-
-#### Q4
-**Which of the following ECG findings in a patient with LBBB meet the modified Sgarbossa criteria?**
-
-Select 3.
-
-- A. Concordant ST depression of 1 mm in V2  **(key)**
-- B. Concordant ST elevation of 2 mm in V5  **(key)**
-- C. Discordant STE 3 mm, S wave 20 mm in V3
-- D. Discordant STE 6 mm, S wave 20 mm in V3  **(key)**
-- E. Discordant T wave inversion in V6
-- F. Left axis deviation
-- G. QRS duration of 160 ms
-- H. QS complexes in V1 and V2
-
-*Explanation:* The modified rule is positive with concordant ST elevation of 1 mm or more, concordant ST depression of 1 mm or more in V1 to V3, or discordant ST elevation at least 25% of the preceding S wave depth. A 6 mm elevation after a 20 mm S wave gives a ratio of 6 / 20 = 0.30, which meets the cutoff. A 3 mm elevation gives 3 / 20 = 0.15, which does not. Discordant T wave inversion, left axis deviation, a wide QRS and QS complexes in V1 and V2 are expected in LBBB.
-
-*Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
-
-*Source:* Smith SW, Dodd KW, Henry TD and colleagues. Diagnosis of ST-elevation myocardial infarction in the presence of left bundle branch block with the ST-elevation to S-wave ratio in a modified Sgarbossa rule. Ann Emerg Med. 2012. https://pubmed.ncbi.nlm.nih.gov/22939607/
-
-### chest-pain-30: Burning band around the chest
-
-- [ ] Approved  - [ ] Needs change  - [ ] Reject
-
-A 76-year-old woman presents to the emergency department with 2 days of burning pain in a band from her left mid back around to below her left breast. The pain is constant, worse when her clothing touches the skin and not related to exertion. She has hypertension and type 2 diabetes and takes metformin and amlodipine. She lives alone and walks daily. The skin looks normal. Light touch over the band reproduces the burning.
-
-- Temperature: 36.9°C oral
-- Pulse: 82/minute
-- Resp.: 16/minute
-- BP: 152/84 mmHg
+- Temperature: 36.6°C oral
+- Pulse: 98/minute
+- Resp.: 20/minute
+- BP: 148/92 mmHg
 - O2 sat: 97% on room air
 
 #### Q1
-**Which of the following features of her pain history best supports a nerve root cause?**
+**Which of the following is the most important diagnosis to consider first?**
 
-- A. Absence of an exertional trigger
-- B. Band-like pain in one dermatome  **(key)**
-- C. Onset while at rest
-- D. Pain radiating to the left arm
-- E. Pain worse with deep breathing
+- A. Acute coronary syndrome  **(key)**
+- B. Alcohol-related gastritis
+- C. Chest wall contusion
+- D. Isolated rib fracture
+- E. Traumatic pneumothorax
 
-*Explanation:* Pain confined to a band from back to front on one side follows a thoracic dermatome, which is typical of a nerve root cause such as the prodrome of herpes zoster. Pain unrelated to exertion or starting at rest lowers the odds of stable angina but does not point to a nerve root. Pleuritic pain suggests the pleura or pericardium. Radiation to the arm favours ischemia.
+*Explanation:* His friends saw him go pale and clutch his chest before he fell, and he now has pressure, nausea and sweating, so an acute coronary syndrome is the lethal cause to consider first. A contusion or rib fracture explains local tenderness but not pressure with sweating. A pneumothorax is unlikely after a short slide with equal breath sounds and a normal saturation. Gastritis does not explain the collapse before the fall.
 
-*Key feature:* Chest pain 3. Take a detailed pain and symptom history to separate dangerous from benign causes and shape the differential.
+*Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
 
-*Source:* Cohen JI. Clinical practice: herpes zoster. N Engl J Med. 2013. https://pubmed.ncbi.nlm.nih.gov/23863052/
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 #### Q2
-**Which of the following is the most appropriate next step?**
+**Which of the following statements about the tender bruise on his chest is most accurate?**
 
-- A. Discharge with gabapentin for neuralgia
-- B. ECG and troponin before any diagnosis  **(key)**
-- C. Empiric valacyclovir and discharge
-- D. Outpatient MRI of the thoracic spine
-- E. Topical lidocaine and follow-up in 1 week
+- A. It confirms a musculoskeletal cause
+- B. It explains his sweating and nausea
+- C. It explains only the local soreness  **(key)**
+- D. It makes troponin testing unnecessary
+- E. It proves the pain began with the fall
 
-*Explanation:* Zoster pain can precede the rash by days, so a normal skin examination leaves the cause uncertain. In an older woman with diabetes and hypertension, ACS must be excluded first with an ECG and troponin. Treating as neuralgia or presumed zoster before that risks missing MI. Spine imaging is not needed without red flags.
+*Explanation:* The symptoms began before the fall, so tenderness over a fresh bruise explains the local soreness but cannot account for pressure, sweating and nausea, and it does not exclude a serious cause. Chest wall tenderness is also found in some patients with acute coronary syndromes. It does not remove the need for troponin testing, and the witnessed history shows the pain did not begin with the fall.
 
 *Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
 
 *Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 #### Q3
-**Which of the following features of her history most increases her pretest probability of ACS?**
+**Which of the following is the most appropriate next step in his care?**
 
-- A. Constant burning quality
-- B. Daily walking routine
-- C. Diabetes and older age  **(key)**
-- D. Normal skin examination
-- E. Pain reproduced by light touch
+- A. Chest X-ray then discharge if clear
+- B. Observe until he is sober
+- C. Oral NSAID and ice for the bruise
+- D. Repeat ECG, troponin and ASA  **(key)**
+- E. Rib series X-rays and analgesia
 
-*Explanation:* Diabetes and age over 65 both raise the prevalence of coronary disease and the chance of an atypical presentation. A normal skin examination does not raise the probability of ACS. Burning quality and reproduction by touch lower the likelihood somewhat but do not exclude ACS. Regular walking does not raise her risk.
-
-*Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
-
-*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
-
-#### Q4
-*Update:* Her ECG and two high-sensitivity troponins are normal. Two days later she returns with grouped vesicles on a red base in the same band. They appeared this morning. Her creatinine is normal.
-
-**Which of the following is the most appropriate treatment for this patient?**
-
-- A. Acyclovir 400 mg PO five times daily
-- B. Famciclovir 250 mg PO three times daily
-- C. Prednisone 50 mg PO daily alone
-- D. Valacyclovir 1 g PO three times daily  **(key)**
-- E. Valacyclovir 500 mg PO twice daily
-
-*Explanation:* Herpes zoster in an older adult should be treated with an antiviral started within 72 hours of rash onset, and valacyclovir 1 g three times daily for 7 days is a standard regimen. The acyclovir, famciclovir and lower valacyclovir doses listed are below the zoster doses of 800 mg five times daily, 500 mg three times daily and 1 g three times daily. Steroids alone are not antiviral treatment.
+*Explanation:* Ongoing pressure with sweating in a smoker with hypertension needs chewed ASA, repeat ECGs every 15 to 30 minutes and a high-sensitivity troponin, because the first ECG can be normal early in ACS. Rib films and an NSAID treat the bruise, and NSAIDs add cardiac risk in ACS. Waiting until he is sober delays the diagnosis, and four beers do not explain his symptoms. Discharge after a clear chest X-ray would miss an infarction.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Cohen JI. Clinical practice: herpes zoster. N Engl J Med. 2013. https://pubmed.ncbi.nlm.nih.gov/23863052/
+*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
+
+#### Q4
+**Which of the following features of this presentation point to a medical cause rather than an injury from the fall?**
+
+Select 3.
+
+- A. Bruise over the upper chest
+- B. Chest pressure with nausea  **(key)**
+- C. Equal breath sounds
+- D. Four beers at the party
+- E. Pain beginning before the fall  **(key)**
+- F. Pallor and sweating at onset  **(key)**
+- G. Tenderness at the bruise
+
+*Explanation:* Pressure with nausea, pallor and sweating at onset and pain that began before the fall all point to a medical cause, most importantly an acute coronary syndrome. The bruise and its tenderness reflect the minor injury and do not argue against ischemia. Equal breath sounds help exclude a pneumothorax but do not point to a medical cause. Four beers do not cause sudden pallor, chest clutching and pressure with sweating.
+
+*Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
+
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
+
+### chest-pain-30: Light-headed after sudden chest pain
+
+- [ ] Approved  - [ ] Needs change  - [ ] Reject
+
+A 24-year-old man presents to the emergency department with sudden sharp right chest pain and breathlessness that began 3 hours ago while he was sitting at his desk. Over the last hour he has felt light-headed when he stands. He has had no injury. He is a software developer who sits at a desk all day. He smokes cannabis daily and takes no medications. He is tall and thin. He is pale. Breath sounds are absent over the right chest, and the lower right chest is dull to percussion. The trachea is midline. Hemoglobin is 138 g/L.
+
+- Temperature: 36.8°C oral
+- Pulse: 124/minute
+- Resp.: 24/minute
+- BP: 98/60 mmHg
+- O2 sat: 93% on room air
+- Weight: 66 kg
+
+#### Q1
+**Which of the following features of his history is most concerning?**
+
+- A. Onset while sitting at rest
+- B. Postural light-headedness  **(key)**
+- C. Sharp one-sided pain
+- D. Sudden onset of breathlessness
+- E. Three hours of symptoms
+
+*Explanation:* Light-headedness on standing, with pallor and tachycardia, signals blood loss, which turns a spontaneous pneumothorax into a hemopneumothorax that can bleed briskly from a torn pleural adhesion. Sudden sharp one-sided pain and breathlessness at rest are typical of a spontaneous pneumothorax but do not by themselves signal instability. A 3-hour history does not mark danger, because bleeding can start at any time.
+
+*Key feature:* Chest pain 3. Take a detailed pain and symptom history to separate dangerous from benign causes and shape the differential.
+
+*Source:* Hsu NY, Shih CS, Hsu CP, Chen PR. Spontaneous hemopneumothorax revisited: clinical approach and systemic review of the literature. Ann Thorac Surg. 2005. https://pubmed.ncbi.nlm.nih.gov/16242469/
+
+#### Q2
+**Which of the following statements about his hemoglobin of 138 g/L is most accurate?**
+
+- A. It excludes a significant hemothorax
+- B. It lags behind acute blood loss  **(key)**
+- C. It permits discharge after drainage
+- D. It rules out a need for transfusion
+- E. It suggests the bleeding has stopped
+
+*Explanation:* Hemoglobin falls only after fluid shifts or resuscitation dilute the blood, so an early normal value does not exclude major acute bleeding. His postural symptoms, tachycardia and dullness matter more. A single value says nothing about whether bleeding continues, which is judged from vital signs and chest tube output. It cannot exclude a significant hemothorax or a later need for transfusion, and it gives no basis for discharge.
+
+*Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
+
+*Source:* Hsu NY, Shih CS, Hsu CP, Chen PR. Spontaneous hemopneumothorax revisited: clinical approach and systemic review of the literature. Ann Thorac Surg. 2005. https://pubmed.ncbi.nlm.nih.gov/16242469/
+
+#### Q3
+**Which of the following in his history raises his risk of a spontaneous pneumothorax?**
+
+- A. Daily cannabis smoking  **(key)**
+- B. Onset while seated at rest
+- C. Sitting at a desk all day
+- D. Taking no medications
+- E. No history of chest injury
+
+*Explanation:* Smoking raises the risk of spontaneous pneumothorax, and smoked cannabis is linked to bullous lung disease, so his daily use is the relevant risk factor, alongside his tall, thin build. Onset at rest is typical of spontaneous pneumothorax and does not change risk. Long hours of sitting raise the risk of venous thromboembolism, not pneumothorax. Having no chest injury marks the event as spontaneous rather than raising its risk, and taking no medications does not raise it either.
+
+*Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
+
+*Source:* Roberts ME and colleagues. British Thoracic Society guideline for pleural disease. Thorax. 2023.
+
+#### Q4
+*Update:* Chest X-ray shows a large right pneumothorax with an air-fluid level at the base.
+
+**Which of the following is the most appropriate immediate management?**
+
+- A. Conservative care and repeat X-ray
+- B. Needle aspiration only
+- C. Needle decompression at 2nd space
+- D. Oxygen and admission to observe
+- E. Tube thoracostomy and crossmatch  **(key)**
+
+*Explanation:* A hemopneumothorax with signs of hypovolemia needs a chest tube to drain air and blood and measure ongoing loss, with blood crossmatched and thoracic surgery involved, because continued bleeding often needs surgery. Conservative care, oxygen alone and needle aspiration leave blood in the chest and do not measure bleeding. Needle decompression is for tension physiology, and his trachea is midline.
+
+*Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
+
+*Source:* Hsu NY, Shih CS, Hsu CP, Chen PR. Spontaneous hemopneumothorax revisited: clinical approach and systemic review of the literature. Ann Thorac Surg. 2005. https://pubmed.ncbi.nlm.nih.gov/16242469/
 
 ### chest-pain-31: Pleuritic pain at 24 weeks
 
@@ -1223,156 +1241,155 @@ A 31-year-old woman who is 24 weeks pregnant presents to the emergency departmen
 
 *Source:* van der Pol LM, Tromeur C, Bistervels IM and colleagues. Pregnancy-adapted YEARS algorithm for diagnosis of suspected pulmonary embolism. N Engl J Med. 2019. https://www.nejm.org/doi/full/10.1056/NEJMoa1813865
 
-### chest-pain-32: Pleuritic pain after a bus tour
+### chest-pain-32: Pressure during a bad flu
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 78-year-old man presents to the emergency department with 2 days of left-sided pleuritic chest pain. He has no shortness of breath, hemoptysis or leg swelling. He took a 9-hour bus trip 1 week ago. He has hypertension and osteoarthritis and takes hydrochlorothiazide. He has no history of cancer, recent surgery or blood clots. Pressing on the left lower ribs reproduces part of the pain. The lungs are clear.
+A 71-year-old man presents to the emergency department with 2 hours of central chest pressure and breathlessness. Four days ago he developed fever, cough and muscle aches, and a nasal swab at a walk-in clinic was positive for influenza A. He thought the chest pain came from coughing. He has hypertension and dyslipidemia and takes ramipril and rosuvastatin. He is diaphoretic. There are a few crackles at the right base. Coughing and pressing on the chest do not change the pressure.
 
-- Temperature: 36.8°C oral
-- Pulse: 84/minute
-- Resp.: 18/minute
-- BP: 148/82 mmHg
-- O2 sat: 96% on room air
+- Temperature: 37.9°C oral
+- Pulse: 102/minute
+- Resp.: 22/minute
+- BP: 152/88 mmHg
+- O2 sat: 94% on room air
+- Weight: 84 kg
 
 #### Q1
-**Which of the following explains why the PERC rule cannot be used to exclude PE in him?**
+**Which of the following most raises his risk of acute myocardial infarction this week?**
 
-- A. Age 50 years or older  **(key)**
-- B. Hypertension treated with a diuretic
-- C. Oxygen saturation of 96%
-- D. Recent long-distance travel
-- E. Reproducible chest wall pain
+- A. Confirmed influenza 4 days ago  **(key)**
+- B. Frequent coughing fits
+- C. Muscle aches with the fever
+- D. Rosuvastatin therapy
+- E. Temperature of 37.9°C
 
-*Explanation:* PERC requires age under 50, and he is 78, so he fails the rule and needs further testing. A saturation of 96% meets the PERC threshold of 95% or more. Travel, hypertension and chest wall tenderness are not PERC items.
+*Explanation:* Hospital admission for acute myocardial infarction is about six times more likely in the 7 days after laboratory-confirmed influenza, so his infection sharply raises his short-term risk on top of hypertension and dyslipidemia. Coughing fits and muscle aches are symptoms of the infection, not separate coronary risk factors. A low-grade fever is part of the same illness. Rosuvastatin lowers his coronary risk.
 
 *Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
 
-*Source:* Kline JA and colleagues. Prospective multicenter evaluation of the pulmonary embolism rule-out criteria. J Thromb Haemost. 2008.
+*Source:* Kwong JC, Schwartz KL, Campitelli MA and colleagues. Acute myocardial infarction after laboratory-confirmed influenza infection. N Engl J Med. 2018. https://www.nejm.org/doi/full/10.1056/NEJMoa1702090
 
 #### Q2
-**Which of the following statements about his chest wall tenderness is most accurate?**
+**Which of the following statements about his belief that the pain comes from coughing is most accurate?**
 
-- A. It confirms costochondritis
-- B. It does not exclude PE  **(key)**
-- C. It lowers his Wells score by 3
-- D. It makes PERC applicable
-- E. It removes the need for D-dimer
+- A. It explains the sweating
+- B. It is confirmed by the crackles
+- C. It makes an ECG unnecessary
+- D. It still leaves ischemia possible  **(key)**
+- E. It still leaves reflux most likely
 
-*Explanation:* Chest wall tenderness is found in some patients with PE, so it does not exclude the diagnosis. It does not confirm costochondritis. It is not a Wells or PERC item, so it cannot change his score or make PERC usable. It does not replace the D-dimer.
+*Explanation:* Pressure that coughing and palpation do not change, with sweating and breathlessness, is not explained by strained muscles, and blaming the cough is an unreliable reason to stop looking for ischemia. Muscle strain does not cause sweating. The crackles fit his infection or early heart failure and do not confirm a muscular cause. Reflux does not explain central pressure with sweating and breathlessness, so it is not the leading alternative. An ECG is still needed within minutes.
 
 *Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
 
-*Source:* Kline JA and colleagues. Prospective multicenter evaluation of the pulmonary embolism rule-out criteria. J Thromb Haemost. 2008.
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 #### Q3
-*Update:* His Wells score is 0. D-dimer is 690 ng/mL FEU. The laboratory cutoff is 500 ng/mL FEU.
+**Which of the following family history findings would most raise his pretest probability of coronary disease?**
 
-**Which of the following is the most appropriate next step?**
+- A. Father with MI at age 79
+- B. Mother with a stroke at 85
+- C. Sister with atrial fibrillation
+- D. Uncle with MI at age 50
+- E. Younger brother with MI at 48  **(key)**
 
-- A. Bilateral leg ultrasound
-- B. CT pulmonary angiogram
-- C. Repeat D-dimer in 24 hours
-- D. Ventilation-perfusion scan
-- E. No imaging, PE ruled out  **(key)**
-
-*Explanation:* For patients over 50 with PE unlikely, the age-adjusted cutoff is age x 10 ng/mL. His cutoff is 78 x 10 = 780 ng/mL, and 690 ng/mL is below it, so PE is excluded without imaging. Using the fixed 500 ng/mL cutoff would send him for imaging he does not need. Repeating the D-dimer adds nothing.
+*Explanation:* Premature coronary disease in a first-degree relative, before 55 in a man or before 65 in a woman, is a recognized risk factor, so a brother with an MI at 48 counts. A father's MI at 79 and a mother's stroke at 85 are not premature. An uncle is a second-degree relative. Atrial fibrillation in a sister is not a coronary risk factor.
 
 *Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
 
-*Source:* Righini M and colleagues. Age-adjusted D-dimer cutoff levels to rule out pulmonary embolism: the ADJUST-PE study. JAMA. 2014. https://pubmed.ncbi.nlm.nih.gov/24643601/
+*Source:* Pearson GJ and colleagues. 2021 Canadian Cardiovascular Society guidelines for the management of dyslipidemia for the prevention of cardiovascular disease in adults. Can J Cardiol. 2021. https://onlinecjc.ca/article/S0828-282X(21)00165-3/fulltext
 
 #### Q4
-**Which of the following new features would most increase concern for PE in this patient?**
+**Which of the following findings most favours myocardial ischemia over a musculoskeletal cause of his pain?**
 
-- A. Gradual onset over days
-- B. New unexplained breathlessness  **(key)**
-- C. Pain on twisting the trunk
-- D. Pain relieved by acetaminophen
-- E. Recent lifting of heavy luggage
+- A. Crackles at the right base
+- B. Diaphoresis with the pressure  **(key)**
+- C. Fever of 37.9°C
+- D. Muscle aches for 4 days
+- E. Onset during a flu illness
 
-*Explanation:* Unexplained new dyspnea is the most common symptom of PE and would raise his pretest probability. Pain on twisting, a lifting injury and relief with acetaminophen point toward a musculoskeletal cause but do not exclude PE. Gradual onset does not favour PE.
+*Explanation:* Pressure with sweating is an ischemic pattern, and muscular pain from coughing does not cause diaphoresis. Crackles at the base and a low-grade fever fit influenza or a secondary pneumonia. Myalgia is part of influenza. Onset during the illness does not separate the two causes, because influenza can strain the chest wall and also trigger infarction.
 
 *Key feature:* Chest pain 3. Take a detailed pain and symptom history to separate dangerous from benign causes and shape the differential.
 
-*Source:* Konstantinides SV and colleagues. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
-### chest-pain-33: Breathless during chemotherapy
+### chest-pain-33: Tightness on the ride to work
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 58-year-old woman presents to the emergency department with 2 days of right-sided pleuritic chest pain and breathlessness on exertion. She has metastatic gastric cancer with the primary tumour still in place. She receives chemotherapy every 2 weeks through a port, most recently 5 days ago. She has no hemoptysis, recent surgery or previous clots. The right calf is 3 cm larger than the left and tender along the deep veins.
+A 38-year-old man presents to the emergency department with 1 hour of central chest tightness and shortness of breath that began while he was cycling to work. He has had type 1 diabetes since age 9 and uses an insulin pump. He has diabetic retinopathy and microalbuminuria. His last hemoglobin A1c was 9.2%. He does not smoke and takes no other medications. He is diaphoretic and anxious. The lungs are clear and there is no murmur. Capillary glucose is 11.4 mmol/L. His ECG shows 1 mm horizontal ST depression in V4 to V6.
 
-- Temperature: 37.4°C oral
-- Pulse: 108/minute
-- Resp.: 22/minute
-- BP: 118/72 mmHg
-- O2 sat: 92% on room air
-- Weight: 61 kg
+- Temperature: 36.7°C oral
+- Pulse: 104/minute
+- Resp.: 20/minute
+- BP: 142/86 mmHg
+- O2 sat: 97% on room air
+- Weight: 78 kg
 
 #### Q1
-*Update:* After reviewing the history and examination, you judge PE to be the most likely diagnosis.
+**Which of the following most raises his pretest probability of coronary disease?**
 
-**Which of the following is her Wells score for pulmonary embolism?**
+- A. His age of 38 years
+- B. His anxiety at triage
+- C. Insulin pump therapy
+- D. Lifelong non-smoking
+- E. Long-standing type 1 diabetes  **(key)**
 
-- A. 4.5 points
-- B. 6 points
-- C. 7.5 points
-- D. 8.5 points  **(key)**
-- E. 10 points
-
-*Explanation:* Clinical signs of DVT score 3. PE as the most likely diagnosis scores 3. A heart rate over 100/minute scores 1.5. Active cancer scores 1. The total is 3 + 3 + 1.5 + 1 = 8.5, so PE is likely. She has no hemoptysis, prior clot or recent surgery to add.
+*Explanation:* Type 1 diabetes for 29 years, with retinopathy and microalbuminuria, confers coronary risk far above that expected at 38, and Canadian lipid guidance treats diabetes of this duration as a statin-indicated condition. Young age lowers the baseline probability but does not outweigh this. Anxiety is not a risk factor, and never smoking removes only one factor. The pump is a way of giving insulin and does not itself change his risk.
 
 *Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
 
-*Source:* Wells PS, Anderson DR, Rodger M and colleagues. Derivation of a simple clinical model to categorize patients' probability of pulmonary embolism. Thromb Haemost. 2000.
+*Source:* Pearson GJ and colleagues. 2021 Canadian Cardiovascular Society guidelines for the management of dyslipidemia for the prevention of cardiovascular disease in adults. Can J Cardiol. 2021. https://onlinecjc.ca/article/S0828-282X(21)00165-3/fulltext
 
 #### Q2
-**Which of the following is the most appropriate next step?**
+**Which of the following is the most likely diagnosis in this man?**
 
-- A. Chest X-ray, then decide on CT
-- B. CT pulmonary angiogram  **(key)**
-- C. D-dimer to guide imaging
-- D. Echocardiogram before any CT
-- E. Repeat Wells score in 6 hours
+- A. Acute pericarditis
+- B. Diabetic ketoacidosis
+- C. Non-ST elevation ACS  **(key)**
+- D. Panic attack
+- E. Pulmonary embolism
 
-*Explanation:* With PE likely by Wells, she goes straight to CT pulmonary angiography. A D-dimer cannot exclude PE at this probability and is often raised in cancer. A chest X-ray does not decide whether CT is needed. An echo does not exclude PE in a normotensive patient. Waiting to rescore delays diagnosis.
+*Explanation:* Exertional chest tightness with sweating and new horizontal ST depression in V4 to V6 is a non-ST elevation ACS in a man whose long-standing diabetes has aged his coronary arteries. Ketoacidosis would need blood ketones and an acidosis, and it does not explain exertional tightness with regional ST depression. Pericarditis gives positional pain with diffuse ST elevation. A panic label is unsafe with ischemic ECG changes, and nothing in the history points to pulmonary embolism.
 
 *Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
 
-*Source:* Konstantinides SV and colleagues. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
 
 #### Q3
-*Update:* CT shows bilateral segmental PE with a normal right ventricle. Creatinine is 70 umol/L and platelets are 142 x 10^9/L. She has no bleeding.
+*Update:* He chewed ASA 160 mg in the ambulance. The tightness continues at 6 out of 10.
 
-**Which of the following is the most appropriate anticoagulant for this patient?**
+**Which of the following is the most appropriate treatment for his ongoing pain now?**
 
-- A. Apixaban 10 mg PO twice daily
-- B. Dalteparin 12 500 units SC daily  **(key)**
-- C. Edoxaban 60 mg PO daily
-- D. Rivaroxaban 15 mg PO twice daily
-- E. Warfarin 5 mg PO daily
+- A. Hydromorphone 1 mg IV
+- B. Ketorolac 15 mg IV
+- C. Lorazepam 1 mg SL
+- D. Metoprolol 5 mg IV
+- E. Nitroglycerin 0.4 mg SL  **(key)**
 
-*Explanation:* The Canadian consensus prefers LMWH for cancer-associated thrombosis with an unresected luminal gastrointestinal tumour, because DOACs raised the rate of GI bleeding in these patients. Dalteparin 200 units/kg daily for 61 kg is 12 200 units, given as the 12 500 unit syringe. DOACs suit other cancers with low bleeding risk. Warfarin is less effective than LMWH in cancer and needs overlap with a parenteral drug.
+*Explanation:* Sublingual nitroglycerin 0.4 mg is the first treatment for ongoing ischemic pain when the systolic pressure is well above 90 mmHg and no phosphodiesterase inhibitor has been taken, and he takes no other medications. Ketorolac and other NSAIDs raise the risk of adverse cardiac events in ACS. Lorazepam treats anxiety, not ischemia. Opioids are kept for pain that persists despite nitrates, and routine early IV metoprolol can precipitate shock.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Carrier M and colleagues. Treatment algorithm in cancer-associated thrombosis: updated Canadian expert consensus. Curr Oncol. 2021. https://pmc.ncbi.nlm.nih.gov/articles/PMC8700468/
+*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
 
 #### Q4
-**Which of the following statements about a D-dimer test for her at presentation is most accurate?**
+*Update:* He tells you he thought this was a low blood sugar. He stopped cycling and drank juice, and he felt a little better for a few minutes before the tightness returned.
 
-- A. It can exclude PE if negative
-- B. It is needed before CT
-- C. It is not useful at this probability  **(key)**
-- D. It should use an age-adjusted cutoff
-- E. It will be normal in cancer
+**Which of the following is the most appropriate response to his belief that this was a low blood sugar?**
 
-*Explanation:* When PE is likely, a negative D-dimer does not lower the probability enough to skip imaging, so the ESC advises going straight to CT. D-dimer is often raised in active cancer rather than normal. The age-adjusted cutoff applies to patients over 50 with PE unlikely.
+- A. Accept hypoglycemia as the cause
+- B. Continue the ACS pathway  **(key)**
+- C. Dextrose 25 g IV
+- D. Recheck glucose, then reassess
+- E. Suspend the insulin pump
+
+*Explanation:* Ischemic pain waxes and wanes, so brief improvement after juice does not show that hypoglycemia caused it, and exertional tightness with sweating and new ST depression keeps ACS the working diagnosis. His capillary glucose of 11.4 mmol/L gives no support to hypoglycemia, and dextrose would only raise it further. Waiting for a repeat glucose delays ACS care. Suspending the pump in type 1 diabetes risks ketoacidosis within hours.
 
 *Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
 
-*Source:* Konstantinides SV and colleagues. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 ### chest-pain-34: Tightness on the stairs
 
@@ -1434,80 +1451,80 @@ An 81-year-old man presents to the emergency department with chest tightness tha
 
 *Source:* Otto CM, Nishimura RA, Bonow RO and colleagues. 2020 ACC/AHA guideline for the management of patients with valvular heart disease. Circulation. 2021.
 
-### chest-pain-35: Unable to lie flat
+### chest-pain-35: Chest pressure in a man on long-term therapy
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 63-year-old woman presents to the emergency department with 1 week of dull central chest pain and increasing shortness of breath. Since yesterday she cannot lie flat. She has metastatic lung adenocarcinoma diagnosed 4 months ago. She is anxious and sitting upright. The jugular veins are distended to the angle of the jaw. Heart sounds are muffled. The lungs are clear. Her systolic BP falls by 18 mmHg on inspiration.
+A 49-year-old man presents to the emergency department with 70 minutes of central chest pressure that spreads to his left arm, with nausea. It began at rest while he was reading. He has had HIV infection for 20 years, and his viral load has been undetectable for 12 years on bictegravir, emtricitabine and tenofovir alafenamide in one daily tablet. He has never smoked and takes no other medications. He is diaphoretic. The lungs are clear and there is no murmur.
 
-- Temperature: 37.1°C oral
-- Pulse: 124/minute
-- Resp.: 26/minute
-- BP: 92/70 mmHg
-- O2 sat: 94% on room air
-- Weight: 56 kg
+- Temperature: 36.8°C oral
+- Pulse: 90/minute
+- Resp.: 18/minute
+- BP: 144/86 mmHg
+- O2 sat: 98% on room air
+- Weight: 80 kg
 
 #### Q1
-**Which of the following is the most likely diagnosis in this patient?**
+**Which of the following diagnoses should be considered first in this man?**
 
-- A. Cardiac tamponade  **(key)**
-- B. Malignant pleural effusion
-- C. Massive pulmonary embolism
-- D. Superior vena cava syndrome
-- E. Tension pneumothorax
+- A. Acute coronary syndrome  **(key)**
+- B. Esophageal candidiasis
+- C. Gastroesophageal reflux
+- D. Pneumocystis pneumonia
+- E. Viral pericarditis
 
-*Explanation:* Hypotension, distended neck veins and muffled heart sounds form Beck's triad, and an inspiratory fall in systolic pressure of 18 mmHg is pulsus paradoxus. With known metastatic lung cancer, malignant pericardial effusion with tamponade is most likely. Her clear lungs argue against a large pleural effusion or pneumothorax. SVC syndrome causes facial swelling, not pulsus. Massive PE is possible in cancer but does not muffle the heart sounds.
+*Explanation:* Central pressure spreading to the left arm with nausea and sweating is an acute coronary syndrome until proven otherwise, and it is the lethal cause to address first. Pneumocystis pneumonia and esophageal candidiasis are opportunistic infections that are unlikely after 12 years of viral suppression, and neither causes pressure spreading to the arm. Reflux is considered only after ischemia is addressed, and pericarditis gives sharp positional pain.
 
 *Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
 
-*Source:* Adler Y and colleagues. 2015 ESC guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015.
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 #### Q2
-**Which of the following investigations is most appropriate next for this patient?**
+**Which of the following should be completed within 10 minutes of his arrival?**
 
-- A. Bedside echocardiography  **(key)**
-- B. Chest X-ray, PA and lateral
-- C. CT pulmonary angiogram
-- D. D-dimer with age cutoff
-- E. Serial troponin measurement
+- A. Chest X-ray in the department
+- B. Full HIV history and CD4 count
+- C. High-sensitivity troponin result
+- D. Pulmonary CT angiography
+- E. Twelve-lead ECG interpreted  **(key)**
 
-*Explanation:* Echocardiography confirms a pericardial effusion and shows signs of tamponade at the bedside within minutes. Sending a hypotensive patient to CT is unsafe before tamponade is excluded. A chest X-ray may show a large heart but cannot confirm tamponade. D-dimer and troponin do not answer the immediate question.
+*Explanation:* A 12-lead ECG should be recorded and read within 10 minutes of arrival in anyone with possible ACS, before the history is complete, because ST elevation changes management at once. A troponin is drawn early, but its result takes longer. A chest X-ray and CT angiography can follow if the ECG and history point elsewhere. His HIV history matters for risk but should not delay the ECG.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Adler Y and colleagues. 2015 ESC guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015.
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 #### Q3
-*Update:* Ultrasound shows a large circumferential pericardial effusion with right ventricular diastolic collapse and a plethoric IVC.
+*Update:* The ECG shows 1 mm horizontal ST depression in V4 to V6. He has been given ASA 160 mg chewed.
 
-**Which of the following is the most appropriate treatment for this patient?**
+**Which of the following is the most appropriate next investigation?**
 
-- A. Furosemide 40 mg IV
-- B. Intubation and positive pressure
-- C. Nitroglycerin infusion for dyspnea
-- D. Normal saline 500 mL bolus
-- E. Pericardiocentesis under ultrasound  **(key)**
+- A. Coronary CT angiography
+- B. D-dimer to exclude PE
+- C. Exercise stress test today
+- D. Serial high-sensitivity troponin  **(key)**
+- E. Single troponin at 6 hours
 
-*Explanation:* Tamponade with right ventricular collapse needs urgent drainage, and ultrasound-guided pericardiocentesis is the treatment of choice. A small fluid bolus may support her briefly but does not treat the cause. Diuretics and nitrates lower preload and can cause collapse. Positive pressure ventilation reduces venous return and can precipitate arrest.
+*Explanation:* With new ST depression, high-sensitivity troponin at presentation and again at 1 to 2 hours shows whether this is a non-ST elevation infarction and guides the timing of angiography. A single troponin at 6 hours delays the answer. Exercise testing is unsafe with ongoing symptoms and ischemic ECG changes. Coronary CT angiography is for patients at low to intermediate risk with a normal ECG and troponin. A D-dimer does not address his most likely diagnosis.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Adler Y and colleagues. 2015 ESC guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015.
+*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
 
 #### Q4
-**Which of the following features of her history most increases her risk of this condition?**
+**Which of the following most raises his pretest probability of coronary disease?**
 
-- A. Age older than 60 years
-- B. Anxiety at presentation
-- C. Chest pain for 1 week
-- D. Inability to lie flat
-- E. Metastatic lung adenocarcinoma  **(key)**
+- A. Bictegravir-based regimen
+- B. Chronic HIV infection  **(key)**
+- C. Lifelong non-smoking
+- D. Rest onset of the pain
+- E. Undetectable viral load
 
-*Explanation:* Malignancy, especially lung and breast cancer, is one of the most common causes of a large pericardial effusion with tamponade. Chest pain and orthopnea are symptoms of the effusion rather than risk factors for it. Anxiety and age do not raise the risk.
+*Explanation:* People living with HIV have higher rates of myocardial infarction than people without HIV, and the excess remains in those with a suppressed viral load, so his 20 years of infection raise his pretest probability. An undetectable viral load does not return his risk to baseline. His bictegravir-based regimen is not an established coronary risk factor. Never smoking removes a major risk factor, and onset at rest describes the pain rather than his background risk.
 
 *Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
 
-*Source:* Adler Y and colleagues. 2015 ESC guidelines for the diagnosis and management of pericardial diseases. Eur Heart J. 2015.
+*Source:* Freiberg MS, Chang CC, Kuller LH and colleagues. HIV infection and the risk of acute myocardial infarction. JAMA Intern Med. 2013. https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/1659742
 
 ### chest-pain-36: Pain six weeks after a procedure
 
@@ -1632,79 +1649,80 @@ A 55-year-old man presents to the emergency department at 01:30 with 45 minutes 
 
 *Source:* Amsterdam EA and colleagues. 2014 AHA/ACC guideline for the management of patients with non-ST-elevation acute coronary syndromes. Circulation. 2014. https://www.ahajournals.org/doi/10.1161/CIR.0000000000000134
 
-### chest-pain-38: Pain that eased with the spray
+### chest-pain-38: Tightness near the end of a long ride
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 62-year-old woman is brought to the emergency department by ambulance with 2 hours of squeezing retrosternal pain that began while she was eating dinner. Over 6 months she has had brief similar episodes with meals, and food sometimes feels stuck. She has type 2 diabetes and hypertension and is a former smoker. Paramedics gave nitroglycerin 0.4 mg SL, and the pain settled within 5 minutes. The ECG is normal.
+A 56-year-old man presents to the emergency department with chest tightness that came on during the last climb of a 90 km bicycle ride this morning and eased 10 minutes after he stopped. He had two shorter episodes on hill climbs last week, the first he has ever had. He has raced bicycles for 30 years. He smoked for 15 years before quitting at 30. A private screening CT last year gave a coronary artery calcium score of 410, and he was told his fitness would protect him. He takes no medications. He feels well now. His examination is normal. His ECG shows sinus bradycardia and is otherwise normal.
 
-- Temperature: 36.8°C oral
-- Pulse: 80/minute
-- Resp.: 16/minute
-- BP: 142/80 mmHg
-- O2 sat: 98% on room air
+- Temperature: 36.6°C oral
+- Pulse: 50/minute
+- Resp.: 14/minute
+- BP: 128/76 mmHg
+- O2 sat: 99% on room air
+- Weight: 70 kg
 
 #### Q1
-**Which of the following statements about her response to nitroglycerin is most accurate?**
+**Which of the following statements about his high level of fitness is most accurate?**
 
-- A. It confirms an ischemic cause
-- B. It does not identify the cause  **(key)**
-- C. It excludes esophageal spasm
-- D. It predicts a positive troponin
-- E. It supports discharge after one ECG
+- A. Angina is physiologically unlikely in him
+- B. Athletes still develop coronary plaque  **(key)**
+- C. Endurance training prevents plaque rupture
+- D. His tightness is best explained by overuse
+- E. Troponin testing is unnecessary for him
 
-*Explanation:* Relief with nitroglycerin did not predict active coronary disease in patients admitted with chest pain. Nitrates relax esophageal smooth muscle and can relieve esophageal spasm, so relief does not confirm ischemia or exclude the esophagus. It says nothing about the troponin and does not support early discharge.
+*Explanation:* Lifelong endurance athletes still develop coronary atherosclerosis, and the highest training volumes are associated with more coronary calcification, so his fitness does not exclude coronary disease. Tightness that comes with climbing and stops with rest is typical angina, not overuse. Fitness does not make angina unlikely, protect against plaque rupture or remove the need for troponin testing.
 
 *Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
 
-*Source:* Henrikson CA and colleagues. Chest pain relief by nitroglycerin does not predict active coronary artery disease. Ann Intern Med. 2003. https://pubmed.ncbi.nlm.nih.gov/14678917/
+*Source:* Aengevaeren VL, Mosterd A, Braber TL and colleagues. Relationship between lifelong exercise volume and coronary atherosclerosis in athletes. Circulation. 2017. https://www.ahajournals.org/doi/10.1161/circulationaha.117.027834
 
 #### Q2
-**Which of the following features of her history most favours an esophageal cause?**
+**Which of the following features of his history places him at higher short-term risk?**
 
-- A. Diabetes and hypertension
-- B. Duration of 2 hours
-- C. Dysphagia during meals  **(key)**
-- D. Relief after nitroglycerin
-- E. Squeezing retrosternal quality
+- A. Heart rate of 50 at rest
+- B. New angina within the past week  **(key)**
+- C. Smoking that stopped at 30
+- D. Symptoms only on exertion
+- E. Well between episodes
 
-*Explanation:* Food sticking with meal-related episodes points to an esophageal motility disorder. Squeezing retrosternal pain occurs with both esophageal spasm and angina. Relief with nitroglycerin does not discriminate. Diabetes and hypertension favour coronary disease, and a 2-hour duration fits either cause.
+*Explanation:* Angina that is new within recent weeks is a form of unstable angina and carries a higher short-term risk of infarction than long-standing stable symptoms. A resting heart rate of 50 is expected in a trained cyclist. He stopped smoking 26 years ago, which has lowered that risk. Symptoms confined to exertion and feeling well between episodes do not lower his risk when the angina is new.
 
 *Key feature:* Chest pain 3. Take a detailed pain and symptom history to separate dangerous from benign causes and shape the differential.
 
-*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
+*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
 
 #### Q3
-*Update:* Her first high-sensitivity troponin, drawn 2 hours after pain onset, is normal.
+*Update:* His high-sensitivity troponin T is below 5 ng/L at arrival and at 1 hour (99th percentile 14 ng/L).
 
-**Which of the following is the most appropriate next step?**
+**Which of the following statements about his normal troponins and ECG is most accurate?**
 
-- A. Barium swallow before discharge
-- B. Discharge on a proton pump inhibitor
-- C. Outpatient esophageal manometry
-- D. Repeat troponin per rapid protocol  **(key)**
-- E. Urgent upper endoscopy today
+- A. They confirm a noncardiac cause
+- B. They exclude infarction, not stenosis  **(key)**
+- C. They permit a return to racing
+- D. They rule out coronary disease
+- E. They show the pain was muscular
 
-*Explanation:* A single troponin drawn 2 hours after onset cannot rule out MI, so a repeat per the rapid protocol is needed before ACS is set aside. Esophageal testing can follow once ACS is excluded. Discharge on a proton pump inhibitor rests on an incomplete workup.
+*Explanation:* Normal troponins and a normal resting ECG exclude myocardial infarction, not the stenosis that causes his angina, so he needs prompt functional or anatomical coronary testing and should not race until it is done. They do not confirm a noncardiac or muscular cause, and they do not rule out coronary disease.
 
 *Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
 
-*Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
+*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
 
 #### Q4
-**Which of the following features of her history most increases her pretest probability of ACS?**
+**Which of the following in his history most raises his pretest probability of coronary disease?**
 
-- A. Brief episodes over 6 months
-- B. Diabetes and hypertension  **(key)**
-- C. Normal initial ECG
-- D. Onset while eating
-- E. Sensation of food sticking
+- A. Calcium score of 410 last year  **(key)**
+- B. Resting heart rate of 50
+- C. Smoking that ended at 30
+- D. Thirty years of racing
+- E. Weight of 70 kg
 
-*Explanation:* Diabetes and hypertension raise the prevalence of coronary disease in a 62-year-old former smoker. Meal-related onset and dysphagia point toward the esophagus. A normal first ECG lowers the probability a little but does not exclude ACS. Brief recurrent episodes fit either diagnosis.
+*Explanation:* A coronary artery calcium score above 400 means extensive coronary atherosclerosis and a high risk of coronary events, whatever his fitness. Thirty years of racing does not lower this, and high training volumes are linked to more calcification. His smoking ended 26 years ago. A resting rate of 50 and a weight of 70 kg reflect his training.
 
 *Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
 
-*Source:* Gulati M and colleagues. 2021 AHA/ACC guideline for the evaluation and diagnosis of chest pain. Circulation. 2021.
+*Source:* Pearson GJ and colleagues. 2021 Canadian Cardiovascular Society guidelines for the management of dyslipidemia for the prevention of cardiovascular disease in adults. Can J Cardiol. 2021. https://onlinecjc.ca/article/S0828-282X(21)00165-3/fulltext
 
 ### chest-pain-39: This time feels different
 
@@ -1984,65 +2002,64 @@ A 61-year-old woman is brought to the emergency department by ambulance with 35 
 
 *Source:* Byrne RA and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023. https://academic.oup.com/eurheartj/article/44/38/3720/7243210
 
-### chest-pain-43: Weakness after a moment of pain
+### chest-pain-43: Fever and painful swallowing weeks after a procedure
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 69-year-old man is brought to the emergency department by ambulance 70 minutes after sudden left arm and leg weakness. His wife says he grabbed his chest and said it felt like something ripped just before the weakness began. He now denies pain. He has hypertension and takes amlodipine. He has a left facial droop and weakness of the left arm and leg. The right radial pulse is weaker than the left.
+A 64-year-old woman presents to the emergency department with 2 days of fever, chest pain and retrosternal pain on swallowing. Three weeks ago she had catheter ablation for paroxysmal atrial fibrillation. She takes apixaban and metoprolol. This morning her husband noticed 10 minutes of right arm weakness that has fully resolved. She looks unwell. The heart sounds are normal and the lungs are clear. The neurological examination is now normal. Her ECG shows sinus tachycardia.
 
-- Temperature: 36.6°C oral
-- Pulse: 96/minute
-- Resp.: 20/minute
-- BP: 168/94 mmHg
-- O2 sat: 97% on room air
-- Weight: 84 kg
+- Temperature: 38.8°C oral
+- Pulse: 116/minute
+- Resp.: 22/minute
+- BP: 108/64 mmHg
+- O2 sat: 95% on room air
 
 #### Q1
-**Which of the following features of his history is most important to consider before treating his stroke?**
+**Which of the following details of her history is most important for the diagnosis?**
 
-- A. Hypertension on amlodipine
-- B. Onset 70 minutes ago
-- C. Ripping chest pain before onset  **(key)**
-- D. Sudden left-sided weakness
-- E. Wife witnessed the onset
+- A. Apixaban anticoagulation
+- B. Brief right arm weakness
+- C. Metoprolol therapy
+- D. Pain on swallowing
+- E. Recent catheter ablation  **(key)**
 
-*Explanation:* Ripping chest pain just before a stroke suggests aortic dissection extending into the carotid circulation, which makes thrombolysis dangerous. The time of onset and a witness matter for the stroke pathway but do not signal this hazard. Hypertension is common in both conditions. Sudden unilateral weakness is the stroke itself.
+*Explanation:* Fever, painful swallowing and a transient neurological deficit 3 weeks after catheter ablation for atrial fibrillation fit an atrioesophageal fistula, which usually appears within weeks of the procedure. Without the ablation history, painful swallowing and fever suggest esophagitis and the arm weakness a simple embolic event from atrial fibrillation. Apixaban and metoprolol do not cause this syndrome.
 
 *Key feature:* Chest pain 3. Take a detailed pain and symptom history to separate dangerous from benign causes and shape the differential.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Han HC, Ha FJ, Sanders P and colleagues. Atrioesophageal fistula: clinical presentation, procedural characteristics, diagnostic investigations, and treatment outcomes. Circ Arrhythm Electrophysiol. 2017. https://www.ahajournals.org/doi/10.1161/circep.117.005579
 
 #### Q2
-*Update:* CT head shows no hemorrhage. The stroke team is preparing tenecteplase.
+**Which of the following is the most likely diagnosis in this woman?**
 
-**Which of the following is the most appropriate next step?**
+- A. Atrioesophageal fistula  **(key)**
+- B. Candida esophagitis
+- C. Infective endocarditis
+- D. Post-ablation pericarditis
+- E. Pulmonary vein stenosis
 
-- A. Give tenecteplase without further imaging
-- B. MRI brain before any treatment
-- C. Transthoracic echo after thrombolysis
-- D. Treat BP to below 140/90 mmHg and lyse
-- E. Urgent CT angiogram of the aorta  **(key)**
-
-*Explanation:* Ripping chest pain and a weaker right radial pulse raise concern for aortic dissection, which contraindicates thrombolysis. CT angiography that includes the aorta, carried out with the stroke CT angiogram, answers the question within minutes. Lysis before that could be fatal. MRI takes too long. An echo after thrombolysis comes too late.
+*Explanation:* Fever, a neurological event from air or septic emboli and chest pain or painful swallowing weeks after ablation are the usual features of an atrioesophageal fistula, which is lethal without urgent surgery. Endocarditis can cause fever and emboli but not painful swallowing. Candida esophagitis causes painful swallowing without emboli. Pericarditis after ablation usually occurs within days and gives positional pain. Pulmonary vein stenosis causes breathlessness and hemoptysis rather than fever.
 
 *Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Han HC, Ha FJ, Sanders P and colleagues. Atrioesophageal fistula: clinical presentation, procedural characteristics, diagnostic investigations, and treatment outcomes. Circ Arrhythm Electrophysiol. 2017. https://www.ahajournals.org/doi/10.1161/circep.117.005579
 
 #### Q3
-**Which of the following statements about his current lack of chest pain is most accurate?**
+*Update:* A chest X-ray and a first CT of the chest with IV contrast are reported as normal, with no mediastinal air.
 
-- A. It does not exclude aortic dissection  **(key)**
-- B. It makes dissection very unlikely
-- C. It means lysis can proceed safely
-- D. It points to a cardioembolic stroke
-- E. It rules out coronary involvement
+**Which of the following is the most accurate interpretation of the normal CT?**
 
-*Explanation:* Pain from aortic dissection can ease or be masked, and patients with neurologic deficits may not report it. Painless presentations are well described in dissection with stroke or syncope. The absence of pain now does not make dissection unlikely or lysis safe. It says nothing about the cause of the stroke or coronary involvement.
+- A. It favours a transient ischemic attack
+- B. It may need to be repeated  **(key)**
+- C. It permits upper endoscopy next
+- D. It rules out an esophageal injury
+- E. It supports outpatient antibiotics
+
+*Explanation:* CT of the chest is the usual first test, but a fistula can be missed on the first scan and several reported cases needed repeat imaging, so one normal CT does not exclude it or an esophageal injury when the picture fits. Upper endoscopy is avoided because insufflated air can enter the left atrium and cause massive air embolism. A transient ischemic attack does not explain her fever and painful swallowing. She needs admission and cardiac surgery input, not outpatient antibiotics.
 
 *Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Han HC, Ha FJ, Sanders P and colleagues. Atrioesophageal fistula: clinical presentation, procedural characteristics, diagnostic investigations, and treatment outcomes. Circ Arrhythm Electrophysiol. 2017. https://www.ahajournals.org/doi/10.1161/circep.117.005579
 
 ### chest-pain-44: Pressure during a hockey game
 
@@ -2119,129 +2136,125 @@ A 13-year-old boy is brought to the emergency department by his father with 1 ho
 
 *Source:* McCrindle BW and colleagues. Diagnosis, treatment, and long-term management of Kawasaki disease. A scientific statement for health professionals from the American Heart Association. Circulation. 2017. https://www.ahajournals.org/doi/10.1161/CIR.0000000000000484
 
-### chest-pain-45: Back pain and a cold leg
+### chest-pain-45: Tightness during cancer treatment
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 64-year-old man presents to the emergency department with severe pain that began suddenly between his shoulder blades 90 minutes ago and has moved down to his lower back. He says it feels like tearing. His left leg now feels numb and cold. He has poorly controlled hypertension and smokes. The left femoral and pedal pulses are absent. The right-sided pulses are normal. The ECG shows left ventricular hypertrophy.
+A 58-year-old woman presents to the emergency department with 30 minutes of central chest tightness and sweating. She started a 46-hour intravenous fluorouracil infusion for colon cancer 2 days ago and had a similar shorter episode yesterday during the infusion. The pump is still running. She has hypertension. She is not short of breath. She looks uncomfortable and diaphoretic. There is no chest wall tenderness and the lungs are clear. There is no leg swelling.
 
-- Temperature: 36.6°C oral
-- Pulse: 104/minute
-- Resp.: 20/minute
-- BP: 192/108 mmHg
-- O2 sat: 97% on room air
-- Weight: 94 kg
+- Temperature: 36.8°C oral
+- Pulse: 92/minute
+- Resp.: 18/minute
+- BP: 150/88 mmHg
+- O2 sat: 98% on room air
+- Weight: 66 kg
 
 #### Q1
-**Which of the following pain features is reported most often in acute aortic dissection?**
+**Which of the following features of her presentation most points to a cardiac cause?**
 
-- A. Abrupt onset of severe pain  **(key)**
-- B. Migration down the back
-- C. Pleuritic worsening
-- D. Radiation to the jaw
-- E. Tearing or ripping quality
+- A. Active colon cancer
+- B. Age of 58 years
+- C. History of hypertension
+- D. Pain during the infusion  **(key)**
+- E. No leg swelling
 
-*Explanation:* In the International Registry of Acute Aortic Dissection, abrupt onset was reported by about 85% of patients. A tearing or ripping quality was reported by about half, and migrating pain by a minority. The absence of tearing or migrating pain therefore does not exclude dissection. Pleuritic worsening and jaw radiation are not typical features.
+*Explanation:* Tightness with sweating during and shortly after a fluorouracil infusion, recurring on consecutive days, ties the pain to the drug and points to coronary vasospasm. Active cancer raises her risk of pulmonary embolism rather than pointing to a cardiac cause. Her age and hypertension are background coronary risk factors that do not explain the timing. The absence of leg swelling does not localize the cause.
 
 *Key feature:* Chest pain 3. Take a detailed pain and symptom history to separate dangerous from benign causes and shape the differential.
 
-*Source:* Hagan PG, Nienaber CA, Isselbacher EM and colleagues. The International Registry of Acute Aortic Dissection (IRAD): new insights into an old disease. JAMA. 2000.
+*Source:* Lyon AR, Lopez-Fernandez T, Couch LS and colleagues. 2022 ESC guidelines on cardio-oncology. Eur Heart J. 2022. https://doi.org/10.1093/eurheartj/ehac244
 
 #### Q2
-*Update:* A portable chest X-ray, taken while the CT scanner is being cleared, shows a normal mediastinum.
+**Which of the following is the most likely cause of her chest pain?**
 
-**Which of the following is the most appropriate imaging for this patient?**
+- A. A panic attack
+- B. Chest wall pain
+- C. Coronary vasospasm  **(key)**
+- D. Pulmonary embolism
+- E. Reflux esophagitis
 
-- A. Bedside ultrasound of the aorta only
-- B. CT angiogram of chest, abdomen and pelvis  **(key)**
-- C. CT angiogram of the chest only
-- D. Lower limb arterial duplex
-- E. MRI angiogram of the aorta
-
-*Explanation:* Abrupt tearing pain, a pulse deficit and a cold leg make dissection likely despite a normal mediastinum. CT angiography from the chest to the pelvis shows the extent of the flap and which branches are malperfused. Chest-only imaging would miss abdominal and iliac extension, which his cold leg suggests. Ultrasound and duplex cannot map the whole aorta. MRI takes too long for an emergency diagnosis.
+*Explanation:* Fluorouracil can cause coronary vasospasm and ischemia during or within days of an infusion, so recurrent tightness with sweating tied to each infusion is most likely vasospasm. Reflux and chest wall pain do not explain recurrent tightness with sweating that tracks the infusion. A panic attack is a diagnosis of exclusion. Active cancer keeps pulmonary embolism in mind, but she is not short of breath or hypoxic and the timing fits the drug.
 
 *Key feature:* Chest pain 1. In undifferentiated chest pain, first consider and quickly recognize lethal causes like ACS, PE, pneumothorax, and aortic dissection.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Lyon AR, Lopez-Fernandez T, Couch LS and colleagues. 2022 ESC guidelines on cardio-oncology. Eur Heart J. 2022. https://doi.org/10.1093/eurheartj/ehac244
 
 #### Q3
-*Update:* CT shows a Stanford type B dissection from beyond the left subclavian artery to the left iliac artery, with poor flow to the left leg. IV esmolol has been started.
+*Update:* Her ECG shows transient ST elevation that resolves as the pain eases with nitroglycerin.
 
-**Which of the following is the most appropriate consultation for this patient?**
+**Which of the following is the most appropriate management for her now?**
 
-- A. Cardiac surgery for open arch repair
-- B. Interventional cardiology for PCI
-- C. Medical therapy and ward admission
-- D. Outpatient vascular clinic review
-- E. Vascular surgery for urgent repair  **(key)**
+- A. Continue the infusion unchanged
+- B. Start IV metoprolol
+- C. Stop the drug and give nitrates  **(key)**
+- D. Switch to capecitabine tablets
+- E. Thrombolysis for the ST elevation
 
-*Explanation:* Type B dissection with limb malperfusion is complicated and needs urgent repair, usually endovascular, by the vascular team. Medical therapy alone suits uncomplicated type B dissection. Open arch repair is for type A disease. PCI treats coronary occlusion, not an aortic flap. Outpatient review risks limb loss.
+*Explanation:* Fluoropyrimidine vasospasm is managed by stopping the infusion and giving nitrates, with a calcium channel blocker if needed, and cardiology review with coronary assessment before any rechallenge. Continuing the infusion, or switching to oral capecitabine, which is also a fluoropyrimidine, risks recurrent spasm and infarction. Beta blockers can worsen coronary vasospasm. Thrombolysis is not indicated for ST elevation that resolves with nitroglycerin.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Isselbacher EM and colleagues. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.
+*Source:* Lyon AR, Lopez-Fernandez T, Couch LS and colleagues. 2022 ESC guidelines on cardio-oncology. Eur Heart J. 2022. https://doi.org/10.1093/eurheartj/ehac244
 
-### chest-pain-46: Pain two weeks after ankle surgery
+### chest-pain-46: Fever and pleuritic pain with a new murmur
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 44-year-old man presents to the emergency department with 1 day of left-sided pleuritic chest pain and a cough that brought up a small amount of blood this morning. Two weeks ago he had open reduction and internal fixation of a right ankle fracture. He has no other medical history. The right thigh is swollen and tender along the deep veins above his splint. The lungs are clear.
+A 34-year-old man presents to the emergency department with 4 days of fever, cough and right-sided pleuritic chest pain. He injects fentanyl and crystal methamphetamine several times a day and sometimes reuses needles. He has track marks on both forearms. He is flushed and unwell. A soft holosystolic murmur is heard at the left lower sternal border and becomes louder with inspiration. There are scattered crackles in both lungs. There is no leg swelling. A chest X-ray shows multiple small nodules in both lower zones, some with central lucency.
 
-- Temperature: 37.8°C oral
-- Pulse: 108/minute
-- Resp.: 22/minute
-- BP: 132/80 mmHg
-- O2 sat: 95% on room air
-- Weight: 96 kg
+- Temperature: 38.9°C oral
+- Pulse: 118/minute
+- Resp.: 24/minute
+- BP: 104/64 mmHg
+- O2 sat: 92% on room air
+- Weight: 66 kg
 
 #### Q1
-*Update:* After reviewing the history and examination, you judge PE to be the most likely diagnosis.
+**Which of the following features most raises his pretest probability of infective endocarditis?**
 
-**Which of the following is his Wells score for pulmonary embolism?**
+- A. Age of 34 years
+- B. Cough for 4 days
+- C. Injection drug use  **(key)**
+- D. Pleuritic chest pain
+- E. Scattered lung crackles
 
-- A. 6 points
-- B. 7.5 points
-- C. 8.5 points
-- D. 10 points  **(key)**
-- E. 11.5 points
-
-*Explanation:* Clinical signs of DVT score 3. PE as the most likely diagnosis scores 3. A heart rate over 100/minute scores 1.5. Surgery within 4 weeks scores 1.5. Hemoptysis scores 1. The total is 3 + 3 + 1.5 + 1.5 + 1 = 10.
+*Explanation:* Injection drug use is the major risk factor for right-sided endocarditis, because skin organisms and contaminants are injected into venous blood that reaches the tricuspid valve first, and reusing needles adds to this. Cough, crackles and pleuritic pain are effects of septic emboli to the lungs rather than background risk factors. His age alone does not raise the probability.
 
 *Key feature:* Chest pain 4. Identify risk factors that shift the pretest likelihood of key diagnoses like ACS or PE.
 
-*Source:* Wells PS, Anderson DR, Rodger M and colleagues. Derivation of a simple clinical model to categorize patients' probability of pulmonary embolism. Thromb Haemost. 2000.
+*Source:* Baddour LM, Wilson WR, Bayer AS and colleagues. Infective endocarditis in adults: diagnosis, antimicrobial therapy, and management of complications. A scientific statement from the American Heart Association. Circulation. 2015. https://doi.org/10.1161/CIR.0000000000000296
 
 #### Q2
-**Which of the following statements about his oxygen saturation of 95% is most accurate?**
+*Update:* He was seen at another emergency department 2 days ago and sent home on amoxicillin. One set of blood cultures drawn there has no growth at 48 hours.
 
-- A. It does not lower his probability of PE  **(key)**
-- B. It excludes a large clot burden
-- C. It favours pneumonia over PE
-- D. It lets PERC rule out PE
-- E. It makes D-dimer the next test
+**Which of the following statements about the negative blood culture is most accurate?**
 
-*Explanation:* Many patients with PE have a normal oxygen saturation, so a value of 95% does not lower a high probability. It does not measure clot burden or favour pneumonia. A saturation of 95% meets the PERC threshold, but PERC applies only when pretest probability is low, and he fails it on heart rate, hemoptysis, recent surgery and unilateral leg swelling. With PE likely, D-dimer is not the next test.
+- A. It confirms a community pneumonia
+- B. It does not exclude endocarditis  **(key)**
+- C. It makes an echocardiogram unneeded
+- D. It still favours a simple pneumonia
+- E. It supports discharge on amoxicillin
+
+*Explanation:* A single set of cultures can miss the bacteremia of endocarditis, so three sets from separate sites are needed before antibiotics are changed. The negative set does not confirm pneumonia, and a simple pneumonia does not explain a murmur louder with inspiration or multiple cavitating nodules. A murmur that increases with inspiration and nodules suggesting septic emboli still call for echocardiography, and he is too unwell for discharge.
 
 *Key feature:* Chest pain 5. Do not exclude serious causes on unreliable clues like chest wall tenderness, antacid response, or single normal tests.
 
-*Source:* Konstantinides SV and colleagues. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Baddour LM, Wilson WR, Bayer AS and colleagues. Infective endocarditis in adults: diagnosis, antimicrobial therapy, and management of complications. A scientific statement from the American Heart Association. Circulation. 2015. https://doi.org/10.1161/CIR.0000000000000296
 
 #### Q3
-*Update:* CT pulmonary angiography is available in 3 hours. He has no bleeding and his surgical wound is healing well.
+**Which of the following is the most appropriate next step in his management?**
 
-**Which of the following is the most appropriate management while he waits for CT?**
+- A. Blood cultures, then IV vancomycin  **(key)**
+- B. CT pulmonary angiography first
+- C. Heparin for presumed embolism
+- D. IV ceftriaxone for pneumonia
+- E. Transesophageal echo before antibiotics
 
-- A. D-dimer to decide on anticoagulation
-- B. Leg ultrasound before any treatment
-- C. Start anticoagulation before the CT  **(key)**
-- D. Thrombolysis with alteplase
-- E. Withhold treatment until CT results
-
-*Explanation:* With a high clinical probability of PE and a delay to imaging, the ESC recommends starting anticoagulation while diagnosis is confirmed, as his bleeding risk is acceptable. Withholding treatment for 3 hours exposes him to further embolism. D-dimer does not change management at this probability. He is stable, so thrombolysis is not indicated.
+*Explanation:* Three sets of blood cultures from separate sites, then prompt empiric IV vancomycin to cover Staphylococcus aureus including MRSA, come first in a septic patient with suspected endocarditis, followed by echocardiography. Echocardiography should not delay antibiotics when he is this unwell. Ceftriaxone for pneumonia misses MRSA. The nodules are septic emboli, so heparin and CT pulmonary angiography for thromboembolism are not indicated.
 
 *Key feature:* Chest pain 2. Begin early treatment and tests, like ASA and an ECG, as possibilities emerge, even before the history is complete.
 
-*Source:* Konstantinides SV and colleagues. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism. Eur Heart J. 2020.
+*Source:* Baddour LM, Wilson WR, Bayer AS and colleagues. Infective endocarditis in adults: diagnosis, antimicrobial therapy, and management of complications. A scientific statement from the American Heart Association. Circulation. 2015. https://doi.org/10.1161/CIR.0000000000000296
 
 ### chest-pain-47: Heartburn in the waiting room
 

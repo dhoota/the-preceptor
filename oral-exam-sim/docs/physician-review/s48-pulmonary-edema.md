@@ -8,6 +8,14 @@ Quoted from the pipeline notes and the review reports, each with its report name
 
 - s48 pulmonary-edema-33 q3 morphine in stage 4 CKD. pe-30 CCS home support citation unverified.
 - s48 Lens B: reject or keep pulmonary-edema-39 and 40 (near copies of 23 and 31). Repeated teaching 16 q1 (s28, s42), 21 q1 (s12, s05), 35 q2 (s51 sob-17), 38 q1 (s15 pe-03). Four questions key "NIV failing, intubate". 29 q1 bendopnea at BMI 43 may be weak.
+- loc-32 and pulmonary-edema-27 are both altitude illness with a helicopter evacuation. The keys differ (dexamethasone against CPAP and nifedipine), but each uses the other's key as a distractor. Keep both or drop one. *(samps-final-check-2.md)*
+- loc-32 (HACE) and pulmonary-edema-27 (HAPE) are both altitude illness. They key different decisions (dexamethasone against nifedipine and CPAP). Keep both or drop one. *(samps-replace-s32-s28.md)*
+- pulmonary-edema-25 q3 keys methimazole 30 mg from the ATA dosing table: a free T4 of 64 pmol/L is 2.9 times the upper limit of 22 pmol/L. Beta blockade was left out of the options. *(samps-replace-s49-s53-s47-s48.md)*
+- pulmonary-edema-27 q3 keys phentolamine. It is already keyed in signed-off tox-09, but please confirm local availability. *(samps-replace-s49-s53-s47-s48.md)*
+- pulmonary-edema-27 (re-rebuilt) q3 keys nifedipine ER as an add-on in hospital after oxygen alone failed, following the WMS 2024 update. Please confirm the dose and formulation (30 mg ER) against Canadian supply. *(samps-replace-s49-s53-s47-s48.md)*
+- pulmonary-edema-25 q3 now treats the case as thyroid storm. Beta blockade, hydrocortisone and iodine timing are left out of the options to keep one best answer. Beta blockade in thyrotoxic heart failure needs caution. *(samps-replace-s49-s53-s47-s48.md)*
+- pulmonary-edema-27 q3: the WMS 2024 summary notes that nifedipine added to oxygen and descent showed no extra benefit in one trial. The key relies on the WMS hospital statement that nifedipine can be added when oxygen alone fails. *(samps-replace-s49-s53-s47-s48.md)*
+- van Mook 2005 and Sheldon 2002 full texts remain unread (403). Please confirm the treatment paragraph in van Mook directly. *(samps-replace-s49-s53-s47-s48.md)*
 - pulmonary-edema-26 repeats sob-09 (s17) almost exactly: older woman with knee osteoarthritis on ASA, confused, crackles, pH 7.44 with a low PCO2, the same salicylate level of 4.1 mmol/L, dialysis for altered mental status and hypoxemia, and intubation that matches minute ventilation. The coordinator told me to keep the s48 version for the s36 overlap. The s17 overlap is separate and still needs a decision, either a rebuild here or acceptance. *(samps-s48-lensA.md)*
 - pulmonary-edema-24 overlaps environmental-31 (s36): immersion edema in a woman with hypertension on amlodipine. Kept on coordinator instruction, because the s36 writer is rewriting its item. *(samps-s48-lensA.md)*
 - pulmonary-edema-35 q2 (signs that CPAP is failing) and q3 (intubate) repeat pulmonary-edema-08 q1 and q2 (s15) and sob-17 q3 (s51). The rural transfer angle in q3 is new. q2 is not. Flagged, not rewritten, because I could not fetch a source for a verifiable replacement (CPAP settings in Masip 2018). *(samps-s48-lensA.md)*
@@ -35,7 +43,7 @@ Review reports: docs/reviews/writer-s48.md, samps-s48-lensA.md, samps-s48-lensB.
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 71-year-old man presents to the emergency department with 90 minutes of worsening shortness of breath that began while he was watching television. He has hypertension, type 2 diabetes and benign prostatic hyperplasia. He takes amlodipine, ramipril, metformin, a second diabetes tablet he cannot name, and tadalafil 5 mg daily for his prostate, last taken 9 hours ago. He takes no diuretic. He is sweaty, sitting upright and cannot finish a sentence, but he is alert and follows commands. The JVP is 5 cm above the sternal angle. There are crackles to the mid zones of both lungs and trace ankle edema.
+A 71-year-old man presents to the emergency department with 90 minutes of worsening shortness of breath that began while he was watching television. He has hypertension, type 2 diabetes and benign prostatic hyperplasia. He takes amlodipine, ramipril, metformin, pioglitazone, and tadalafil 5 mg daily for his prostate, last taken 9 hours ago. He takes no diuretic. He is sweaty, sitting upright and cannot finish a sentence, but he is alert and follows commands. The JVP is 5 cm above the sternal angle. There are crackles to the mid zones of both lungs and trace ankle edema.
 
 - Temperature: 36.9°C oral
 - Pulse: 118/minute
@@ -61,7 +69,7 @@ A 71-year-old man presents to the emergency department with 90 minutes of worsen
 *Source:* Kloner RA, Hutter AM, Emmick JT, et al. Time course of the interaction between tadalafil and nitrates. J Am Coll Cardiol. 2003.
 
 #### Q2
-*Update:* After 40 minutes on noninvasive ventilation his BP is 158/92 mmHg, his pulse is 98/minute and his saturation is 94%. His daughter says the second diabetes tablet was started 2 months ago, and his ankles have swollen since.
+*Update:* After 40 minutes on noninvasive ventilation his BP is 158/92 mmHg, his pulse is 98/minute and his saturation is 94%. His daughter says pioglitazone was started 2 months ago, and his ankles have swollen since.
 
 **Which of the following of his regular medications most likely contributed to this episode?**
 
@@ -71,7 +79,7 @@ A 71-year-old man presents to the emergency department with 90 minutes of worsen
 - D. ramipril
 - E. tadalafil
 
-*Explanation:* Of the options, the only diabetes drug besides metformin is pioglitazone, so it is the tablet started 2 months ago, after which his ankles swelled. The ESC guideline notes that thiazolidinediones cause sodium and water retention and does not recommend them in heart failure, because they increase the risk of worsening and admission. Amlodipine causes ankle swelling by dilating arterioles, not by retaining fluid, and it does not cause pulmonary edema. Ramipril lowers afterload and is protective. Metformin does not retain fluid. Tadalafil matters for nitrate safety but does not cause fluid retention.
+*Explanation:* The ESC guideline notes that thiazolidinediones cause sodium and water retention and does not recommend them in heart failure, because they increase the risk of worsening and admission. Amlodipine causes ankle swelling by dilating arterioles, not by retaining fluid, and it does not cause pulmonary edema. Ramipril lowers afterload and is protective. Metformin does not retain fluid. Tadalafil matters for nitrate safety but does not cause fluid retention.
 
 *Key feature:* Pulmonary edema 2. While stabilizing pulmonary edema, search for the underlying cause, such as MI, volume overload, or anemia.
 
@@ -642,82 +650,82 @@ Select 2.
 
 *Source:* Moon RE, Martina SD, Peacher DF, et al. Swimming-induced pulmonary edema. Pathophysiology and risk reduction with sildenafil. Circulation. 2016.
 
-### pulmonary-edema-25: A puffy face and a cough at 8
+### pulmonary-edema-25: Night cough that inhalers did not help
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 8-year-old boy presents to the emergency department with his mother because of 3 days of cough and puffy eyelids. Since last night he cannot lie flat. A walk-in clinic diagnosed bronchitis yesterday. He had a sore throat 2 weeks ago that was not treated. His urine has looked dark brown and he has passed less of it. He has no medical history. There is periorbital and pretibial edema. There are crackles at both bases and the liver edge is 3 cm below the costal margin.
+A 34-year-old woman presents to the emergency department with 3 weeks of shortness of breath on stairs and a cough that wakes her at night. A walk-in clinic diagnosed asthma 10 days ago, and salbutamol has not helped. Since last night she cannot lie flat. Over 2 months she has lost 6 kg without trying, and she feels hot and shaky and has loose stools. She has no medical history and takes no other medication. She is anxious and sweaty, with a fine tremor. Her eyes are prominent, and she has a smooth, nontender goitre with a bruit. The JVP is 6 cm above the sternal angle. There are crackles to the mid zones and no wheeze. The pulse is irregularly irregular.
 
-- Temperature: 37.0°C oral
-- Pulse: 112/minute
-- Resp.: 32/minute
-- BP: 148/98 mmHg
-- O2 sat: 92% on room air
-- Weight: 26 kg
+- Temperature: 37.6°C oral
+- Pulse: 146/minute
+- Resp.: 30/minute
+- BP: 138/64 mmHg
+- O2 sat: 90% on room air
+- Weight: 58 kg
 
 #### Q1
-**Which of the following findings most strongly suggests his cough is not from a respiratory infection?**
+**Which of the following findings most strongly suggests that her breathlessness is not from asthma?**
 
-- A. Blood pressure of 148/98 mmHg  **(key)**
-- B. Cough for 3 days
-- C. Crackles at both bases
-- D. Oxygen saturation of 92%
-- E. Respiratory rate of 32/minute
+- A. Cough that wakes her at night
+- B. Crackles with a raised JVP  **(key)**
+- C. Failure to respond to salbutamol
+- D. Oxygen saturation of 90%
+- E. Respiratory rate of 30/minute
 
-*Explanation:* A BP of 148/98 mmHg is well above the 95th percentile for any 8-year-old and points to fluid retention or kidney disease rather than bronchitis. With orthopnea, edema, dark urine and a recent sore throat, it suggests volume overload from acute glomerulonephritis. Cough, basal crackles, a saturation of 92% and a respiratory rate of 32/minute are all found in lower respiratory infections as well as in pulmonary edema, so none of them separates the two.
+*Explanation:* Crackles to the mid zones with a JVP 6 cm above the sternal angle are signs of congestion, and with orthopnea they point to pulmonary edema rather than asthma. She also has no wheeze. A night cough occurs in both asthma and heart failure, so it does not separate them. Salbutamol can fail in severe asthma or with poor inhaler technique. A saturation of 90% and a respiratory rate of 30/minute show how sick she is but occur with either diagnosis.
 
 *Key feature:* Pulmonary edema 5. Consider subtle pulmonary edema in patients with apparent respiratory complaints like exertional dyspnea or wheeze.
 
-*Source:* Rodriguez-Iturbe B, Musser JM. The current state of poststreptococcal glomerulonephritis. J Am Soc Nephrol. 2008.
+*Source:* McDonagh TA, Metra M, Adamo M, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. Eur Heart J. 2021. https://doi.org/10.1093/eurheartj/ehab368
 
 #### Q2
-**Which of the following is the most useful first test to confirm the cause of his fluid overload?**
+**Which of the following investigations is most likely to identify the cause of her heart failure?**
 
-- A. Antinuclear antibody
-- B. Echocardiography
-- C. Throat swab culture
-- D. Two-view chest X-ray
-- E. Urinalysis with microscopy  **(key)**
+- A. Coronary CT angiography
+- B. D-dimer concentration
+- C. Iron studies and ferritin
+- D. Thyroid function tests  **(key)**
+- E. Viral serology panel
 
-*Explanation:* Dark urine, oliguria, edema and hypertension 2 weeks after a sore throat point to poststreptococcal glomerulonephritis. Urinalysis with microscopy showing blood, red cell casts and protein confirms a nephritic cause at the bedside. Rodriguez-Iturbe and Musser note that throat cultures are often negative by the time nephritis appears, so serology and a low C3 are used instead. A chest X-ray shows the edema but not its cause. Echocardiography looks for a cardiac cause his history does not suggest. Antinuclear antibody testing is for lupus nephritis, which is less likely here.
+*Explanation:* Weight loss, heat intolerance, tremor, loose stools, prominent eyes and a goitre with a bruit point to Graves thyrotoxicosis, which is driving her irregular tachycardia and heart failure. TSH and free T4 confirm it and guide treatment. She is 34 with no coronary risk factors given, so coronary imaging is unlikely to find the cause. Pulmonary embolism does not explain a goitre, weight loss or mid zone crackles, so a D-dimer does not help. Iron deficiency can cause high output failure but not these thyroid signs. Viral serology rarely changes emergency care.
 
 *Key feature:* Pulmonary edema 2. While stabilizing pulmonary edema, search for the underlying cause, such as MI, volume overload, or anemia.
 
-*Source:* Rodriguez-Iturbe B, Musser JM. The current state of poststreptococcal glomerulonephritis. J Am Soc Nephrol. 2008.
+*Source:* Ross DS, Burch HB, Cooper DS, et al. 2016 American Thyroid Association guidelines for diagnosis and management of hyperthyroidism and other causes of thyrotoxicosis. Thyroid. 2016. https://doi.org/10.1089/thy.2016.0229
 
 #### Q3
-*Update:* Urinalysis shows 3+ blood, red cell casts and 1+ protein. Creatinine is 88 umol/L and potassium is 5.1 mmol/L.
+*Update:* TSH is below 0.01 mU/L and free T4 is 64 pmol/L (reference 10 to 22 pmol/L). Hemoglobin is 128 g/L. She is not pregnant. Bedside ultrasound shows a normal sized left ventricle that contracts vigorously, with B lines in both lungs. She receives furosemide 40 mg IV. No antithyroid drug has been given.
 
-**Which of the following is the most appropriate treatment for his pulmonary edema?**
+**Which of the following is the most appropriate first antithyroid treatment for her?**
 
-- A. ceftriaxone 1.3 g IV
-- B. furosemide 26 mg IV  **(key)**
-- C. methylprednisolone 26 mg IV
-- D. normal saline 520 mL IV
-- E. salbutamol 5 mg nebulized
+- A. Lugol iodine solution PO now
+- B. methimazole 10 mg PO daily
+- C. methimazole 20 mg PO every 6 hours  **(key)**
+- D. propylthiouracil 50 mg PO daily
+- E. radioactive iodine ablation
 
-*Explanation:* Pulmonary edema and hypertension in poststreptococcal glomerulonephritis come from salt and water retention, and Rodriguez-Iturbe and Musser describe loop diuretics as the main treatment. Furosemide 1 mg/kg IV at 26 kg is 26 mg. A 20 mL/kg saline bolus of 520 mL would worsen the overload. Antibiotics clear the streptococcus but do not change the course of the nephritis. Corticosteroids have no role in typical poststreptococcal disease. Salbutamol does not treat edema.
+*Explanation:* Her Burch-Wartofsky score is at least 65: a pulse of 140/minute or more scores 25, pulmonary edema 15, atrial fibrillation 10, loose stools 10 and a temperature of 37.6°C scores 5. A score of 45 or more is highly suggestive of thyroid storm, so the ATA advises storm doses of a thionamide, methimazole 60 to 80 mg a day, and methimazole 20 mg every 6 hours gives 80 mg a day. Methimazole 10 mg daily is a dose for mild, uncomplicated hyperthyroidism. Propylthiouracil in storm is loaded at 500 to 1000 mg, so 50 mg daily is far too little. Iodine given before a thionamide can supply substrate for new hormone, so the ATA advises giving it at least an hour after. Radioactive iodine is not an emergency treatment and can briefly worsen thyrotoxicosis.
 
 *Key feature:* Pulmonary edema 3. Treat the identified cause of pulmonary edema, for example with reperfusion, diuresis, or transfusion, to prevent worsening.
 
-*Source:* Rodriguez-Iturbe B, Musser JM. The current state of poststreptococcal glomerulonephritis. J Am Soc Nephrol. 2008.
+*Source:* Ross DS, Burch HB, Cooper DS, et al. 2016 American Thyroid Association guidelines for diagnosis and management of hyperthyroidism and other causes of thyrotoxicosis. Thyroid. 2016. https://doi.org/10.1089/thy.2016.0229
 
 #### Q4
-*Update:* Over 4 hours after furosemide his urine output is 0.3 mL/kg/hour. His saturation is 88% on 4 L/minute and his work of breathing is rising. Potassium is now 6.6 mmol/L and creatinine 214 umol/L.
+*Update:* Forty minutes later she is more tired. Her respiratory rate is 36/minute and her saturation is 86% on 15 L/minute by non-rebreather mask. She is alert and protecting her airway. Her BP is 128/70 mmHg.
 
-**Which of the following is the most appropriate next step in his management?**
+**Which of the following is the most appropriate next step for her breathing?**
 
-- A. Arrange urgent dialysis  **(key)**
-- B. Give normal saline 20 mL/kg
-- C. Start enalapril 0.1 mg/kg PO
-- D. Start IV methylprednisolone
-- E. Start oral sodium polystyrene
+- A. Heliox by face mask
+- B. High-dose nebulized salbutamol
+- C. Immediate intubation
+- D. Morphine 2 mg IV
+- E. Noninvasive ventilation  **(key)**
 
-*Explanation:* He has oliguria despite furosemide, worsening pulmonary edema, a potassium of 6.6 mmol/L and a creatinine that has more than doubled from 88 to 214 umol/L. Rodriguez-Iturbe and Musser note that dialysis may be needed for severe fluid overload or hyperkalemia, and he needs a pediatric nephrology team for it now. A saline bolus adds to the overload. Enalapril can raise potassium further in acute kidney injury. Sodium polystyrene is too slow for a potassium of 6.6 mmol/L. Corticosteroids do not treat typical poststreptococcal nephritis.
+*Explanation:* She is tiring, with a saturation of 86% despite high flow oxygen, from cardiogenic pulmonary edema. The ERS/ATS guideline makes a strong recommendation for bilevel ventilation or CPAP in this setting, because it lowers the need for intubation and mortality. She is alert, protects her airway and has a BP of 128/70 mmHg, so a trial of noninvasive ventilation comes before intubation. Salbutamol adds to her tachycardia and she has no bronchospasm. Heliox is for upper airway obstruction. Morphine does not treat hypoxemia and depresses her breathing.
 
 *Key feature:* Pulmonary edema 4. Watch for impending respiratory failure in pulmonary edema and escalate with ventilatory support or vasoactive drugs.
 
-*Source:* Rodriguez-Iturbe B, Musser JM. The current state of poststreptococcal glomerulonephritis. J Am Soc Nephrol. 2008.
+*Source:* Rochwerg B, Brochard L, Elliott MW, et al. Official ERS/ATS clinical practice guidelines. Noninvasive ventilation for acute respiratory failure. Eur Respir J. 2017. https://doi.org/10.1183/13993003.02426-2016
 
 ### pulmonary-edema-26: Double vision during cancer treatment
 
@@ -785,66 +793,67 @@ Select 2.
 
 *Source:* McDonagh TA, Metra M, Adamo M, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. Eur Heart J. 2021. https://doi.org/10.1093/eurheartj/ehab368
 
-### pulmonary-edema-27: Tired, dizzy and short of breath at 83
+### pulmonary-edema-27: Breathless after a ski-touring trip
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 83-year-old man is brought to the emergency department by ambulance with 2 days of fatigue, shortness of breath and two near-fainting spells. Last night he slept sitting up. He has hypertension treated with ramipril and amlodipine. He takes no rate-slowing drugs. He is pale and speaking in full sentences. The pulse is slow and regular. There are cannon a waves in the neck. There are crackles at both lung bases and mild ankle edema.
+You are working in a rural emergency department in the Rocky Mountains, at an elevation of 1 400 m. A 36-year-old man is flown in by helicopter from a backcountry hut at 2 900 m. He climbed from 1 500 m to the hut in one day, 2 days ago. Since yesterday he has fallen behind his group, with a dry cough and breathlessness on minimal effort. Overnight he became breathless at rest and coughed pink frothy sputum. He has no medical history and takes no medication. He is alert and oriented, has no headache and walks heel to toe normally. There are crackles over the right mid zone and both bases, and no wheeze. The JVP is not visible and there is no leg edema. The ECG shows sinus tachycardia. A chest radiograph shows patchy opacities, worst in the right mid zone, with a normal heart size.
 
-- Temperature: 36.5°C oral
-- Pulse: 34/minute regular
-- Resp.: 26/minute
-- BP: 168/62 mmHg
-- O2 sat: 90% on room air
+- Temperature: 37.9°C oral
+- Pulse: 118/minute
+- Resp.: 30/minute
+- BP: 128/78 mmHg
+- O2 sat: 72% on room air
+- Weight: 82 kg
 
 #### Q1
-**Which of the following investigations will most quickly identify the cause of his decompensation?**
+**Which of the following is the most likely cause of his pulmonary edema?**
 
-- A. Arterial blood gas
-- B. Bedside echocardiography
-- C. Electrocardiogram  **(key)**
-- D. Portable chest X-ray
-- E. Serum troponin level
+- A. Acute viral myocarditis
+- B. Community-acquired pneumonia
+- C. High-altitude pulmonary edema  **(key)**
+- D. Negative-pressure pulmonary edema
+- E. Pulmonary embolism
 
-*Explanation:* A regular pulse of 34/minute with cannon a waves means the atria and ventricles are beating independently, which suggests complete heart block. An ECG confirms this in minutes and shows the level of the block. The wide pulse pressure fits the large stroke volume of a slow heart. A chest X-ray and blood gas show the edema and its effect on gas exchange but not its cause. Echocardiography shows function but not the rhythm. Troponin looks for infarction, which can cause block, but the ECG comes first and is faster.
+*Explanation:* He climbed rapidly to 2 900 m and within 2 days developed a dry cough, falling exercise tolerance, breathlessness at rest and pink frothy sputum, with tachycardia, tachypnea and crackles. The WMS guideline defines high-altitude pulmonary edema by this combination of symptoms and signs after a recent gain in altitude. A low-grade temperature does not separate pneumonia from altitude illness, but the timing after ascent and the rapid progression do. A normal heart size and an invisible JVP argue against myocarditis. Negative-pressure edema follows airway obstruction, which he has not had. Pulmonary embolism does not produce frothy sputum and patchy edema.
 
 *Key feature:* Pulmonary edema 2. While stabilizing pulmonary edema, search for the underlying cause, such as MI, volume overload, or anemia.
 
-*Source:* Glikson M, Nielsen JC, Kronborg MB, et al. 2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy. Eur Heart J. 2021.
+*Source:* Luks AM, Beidleman BA, Freer L, et al. Wilderness Medical Society clinical practice guidelines for the prevention, diagnosis, and treatment of acute altitude illness. 2024 update. Wilderness Environ Med. 2024. https://doi.org/10.1016/j.wem.2023.05.013
 
 #### Q2
-*Update:* The ECG shows complete heart block with a wide complex escape rhythm at 34/minute. Two doses of atropine 1 mg IV had no effect. Transcutaneous pacing does not capture at maximum output. His BP is now 84/40 mmHg.
+*Update:* He receives oxygen at 15 L/minute by non-rebreather mask. After 30 minutes his saturation is 84%, his respiratory rate is 34/minute and he is tiring. He remains alert, cooperative and able to clear his secretions. His BP is 124/76 mmHg.
 
-**Which of the following infusions is most appropriate while transvenous pacing is arranged?**
+**Which of the following is the most appropriate next step for his breathing?**
 
-- A. dobutamine 5 mcg/kg/minute IV
-- B. epinephrine 2 mcg/minute IV  **(key)**
-- C. furosemide 10 mg/hour IV
-- D. milrinone 0.25 mcg/kg/minute IV
-- E. nitroglycerin 20 mcg/minute IV
+- A. CPAP by tight-fitting face mask  **(key)**
+- B. Furosemide 40 mg IV
+- C. Morphine 2 mg IV
+- D. Rapid sequence intubation
+- E. Salbutamol 5 mg nebulized
 
-*Explanation:* He has symptomatic bradycardia with hypotension after atropine has failed and pacing will not capture. The AHA guideline, used in Canada through Heart and Stroke, advises an epinephrine infusion at 2 to 10 mcg/minute or dopamine as a bridge to transvenous pacing. Epinephrine raises both rate and contractility. Dobutamine and milrinone lower systemic resistance and can drop his BP further. Nitroglycerin and furosemide treat congestion but would worsen hypotension when the cause is a rate of 34/minute.
+*Explanation:* His saturation of 84% on a non-rebreather mask and his rising respiratory rate show that oxygen alone is failing. The WMS guideline supports CPAP as an adjunct to oxygen in hospital, and he is alert, cooperative and clearing secretions, so a mask is safe. Intubation is kept for failure of CPAP or loss of airway protection. The guideline advises against diuretics, because many people with high-altitude pulmonary edema are volume depleted and can become hypotensive. Morphine depresses breathing. He has no wheeze, and salbutamol does not correct his hypoxemia.
 
 *Key feature:* Pulmonary edema 4. Watch for impending respiratory failure in pulmonary edema and escalate with ventilatory support or vasoactive drugs.
 
-*Source:* Wigginton JG, Agarwal S, Bartos JA, et al. Part 9. Adult advanced life support. 2025 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025. https://doi.org/10.1161/CIR.0000000000001376
+*Source:* Luks AM, Beidleman BA, Freer L, et al. Wilderness Medical Society clinical practice guidelines for the prevention, diagnosis, and treatment of acute altitude illness. 2024 update. Wilderness Environ Med. 2024. https://doi.org/10.1016/j.wem.2023.05.013
 
 #### Q3
-*Update:* A transvenous pacing wire is placed and his edema clears over 24 hours. Troponin is normal. Echo shows an ejection fraction of 55%. The block persists.
+*Update:* Thirty minutes later his saturation is 91% and his breathing is easier. Transfer to a regional centre is arranged.
 
-**Which of the following is the definitive treatment for the cause of his pulmonary edema?**
+**Which of the following medications is most appropriate to add for the cause of his pulmonary edema?**
 
-- A. Coronary angiography
-- B. Diuretic uptitration
-- C. Dual-chamber pacemaker  **(key)**
-- D. Implantable defibrillator
-- E. Sacubitril-valsartan
+- A. acetazolamide 250 mg PO
+- B. dexamethasone 8 mg IV
+- C. furosemide 40 mg IV
+- D. nifedipine 30 mg ER PO  **(key)**
+- E. nitroglycerin 0.4 mg SL
 
-*Explanation:* Persistent complete heart block without a reversible cause is an indication for a permanent pacemaker in the ESC pacing guideline, and a dual-chamber device restores atrioventricular timing. His edema came from a very slow rate, so restoring the rate treats the cause. A normal troponin does not point to ischemia, so angiography is not needed to explain the block. An implantable defibrillator treats ventricular arrhythmias and is not indicated with an ejection fraction of 55%. Diuretics and sacubitril-valsartan do not correct heart block.
+*Explanation:* High-altitude pulmonary edema comes from uneven hypoxic constriction of the pulmonary arteries and high pulmonary artery pressure, not from a failing left heart. In hospital the WMS guideline advises adding nifedipine when oxygen alone does not bring a response, as it did not here, and extended-release nifedipine lowers pulmonary artery pressure. Nitroglycerin treats cardiogenic edema from high left-sided pressure, and his heart size and JVP are normal. Furosemide risks hypotension in a volume-depleted patient. Acetazolamide is for acute mountain sickness. Dexamethasone treats high-altitude cerebral edema, and he is alert with a normal gait and no headache.
 
 *Key feature:* Pulmonary edema 3. Treat the identified cause of pulmonary edema, for example with reperfusion, diuresis, or transfusion, to prevent worsening.
 
-*Source:* Glikson M, Nielsen JC, Kronborg MB, et al. 2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy. Eur Heart J. 2021.
+*Source:* Luks AM, Beidleman BA, Freer L, et al. Wilderness Medical Society clinical practice guidelines for the prevention, diagnosis, and treatment of acute altitude illness. 2024 update. Wilderness Environ Med. 2024. https://doi.org/10.1016/j.wem.2023.05.013
 
 ### pulmonary-edema-28: Flu symptoms 18 days after a new medication
 
@@ -1258,7 +1267,7 @@ A 74-year-old woman presents to the emergency department with 2 days of fever, f
 
 *Key feature:* Pulmonary edema 3. Treat the identified cause of pulmonary edema, for example with reperfusion, diuresis, or transfusion, to prevent worsening.
 
-*Source:* Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021.
+*Source:* Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026. https://doi.org/10.1097/CCM.0000000000007075
 
 #### Q2
 *Update:* On norepinephrine her BP is 102/58 mmHg. Her saturation is 88% and she remains congested.

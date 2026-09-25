@@ -9,10 +9,13 @@ Quoted from the pipeline notes and the review reports, each with its report name
 - s34 delirium-agitation-21 q2 lorazepam 1 mg IV first dose at 72. 25 q3 PCI under Quebec CCQ art 13. 33 q2 CMPA emergency principle for intoxicated patient leaving.
 - s34 delirium-agitation-19 q3 SSKI not marketed in Canada (Lugol). 28 q4 akathisia options. 33 q3 option without dose.
 - s35 ems-35 q3 IM field TXA as loading dose. ems-26 q1 crush statements from Sever abstract. ems-25 q2 radiation PPE risk. ems-29 q3 bicarbonate. s34 delirium-agitation-35 sepsis with hypotension wording.
+- delirium-agitation-34 q1 keys onset over days, as delirium-agitation-16 q1 does in the same batch. Reduced arousal, the other obvious key, is already keyed in another s34 item (delirium against schizophrenia). The rest of the SAMP (4AT scoring, codeine and loperamide, rectal examination) is distinct. *(samps-last-check.md)*
 - delirium-agitation-35 q4: a fourth low dose haloperidol key for older delirium. *(samps-overlap-pass2b-review.md)*
 - delirium-agitation-35 q4: the dose is supported by CCSMH end-of-life delirium guidance, not by Beers. Consider citing CCSMH. *(samps-overlap-pass2b-review.md)*
 - delirium-agitation-35 q1 cites Gower 2012 (WestJEM). The CCSMH delirium guideline PDF could not be text-searched to confirm its wording on urinary retention. *(samps-overlap-pass2b.md)*
 - delirium-agitation-38 q1: Hughes 2007 supports the symptoms of tobacco abstinence but not their exact onset time. The explanation states no timing. *(samps-overlap-pass2b.md)*
+- delirium-agitation-34 q3 and q4 are menus. Zoledronic acid is mentioned only in general terms because her creatinine clearance would affect dosing. *(samps-replace-s27-s29-s34-s38-s52.md)*
+- delirium-agitation-34 (re-rebuilt) keys loperamide as a contributor through worsened overflow, not through a direct CNS effect. Please confirm. *(samps-replace-s27-s29-s34-s38-s52.md)*
 - delirium-agitation-19 q3: "potassium iodide 5 drops PO" is SSKI, which the ATA 2016 guideline uses. SSKI is not a marketed product in Canada. Lugol solution is dispensed instead. Consider rewording to Lugol solution. That would change the alphabetical key position, so it was not done in review. *(samps-s34-lensA.md)*
 - delirium-agitation-25 q3: whether primary PCI in an 88-year-old with dementia could be "unusual" care under CCQ article 13. *(samps-s34-lensA.md)*
 - delirium-agitation-28 q4: in Canadian emergency practice, many physicians treat acute akathisia first with diphenhydramine or a benzodiazepine. None is offered, so propranolol stands, but the physician may prefer an option set that shows this. *(samps-s34-lensA.md)*
@@ -147,7 +150,7 @@ A 38-year-old woman is brought to the emergency department by staff from her gro
 
 *Key feature:* Delirium/agitation 2. Keep a wide differential for delirium, including structural, toxic, withdrawal, and metabolic causes, and quickly treat reversible ones.
 
-*Source:* Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry. 14th edition. Wiley Blackwell. 2021.
+*Source:* Mould S, Hogan R, Oxford Health NHS Foundation Trust Drugs and Therapeutics Group. Guidance on the effects of smoking and smoking cessation on psychotropic and other medications. December 2023. https://www.oxfordhealthformulary.nhs.uk/docs/Smoking%20and%20cessation%20effetcs%20on%20psychotropics%20and%20other%20medications_DTG%20approved%20Dec%202023.pdf
 
 #### Q3
 **Which of the following is the most appropriate next step in managing her clozapine?**
@@ -162,7 +165,7 @@ A 38-year-old woman is brought to the emergency department by staff from her gro
 
 *Key feature:* Delirium/agitation 2. Keep a wide differential for delirium, including structural, toxic, withdrawal, and metabolic causes, and quickly treat reversible ones.
 
-*Source:* Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry. 14th edition. Wiley Blackwell. 2021.
+*Source:* Mould S, Hogan R, Oxford Health NHS Foundation Trust Drugs and Therapeutics Group. Guidance on the effects of smoking and smoking cessation on psychotropic and other medications. December 2023. https://www.oxfordhealthformulary.nhs.uk/docs/Smoking%20and%20cessation%20effetcs%20on%20psychotropics%20and%20other%20medications_DTG%20approved%20Dec%202023.pdf
 
 #### Q4
 **Which of the following is the most important safety measure while she remains in the department?**
@@ -225,7 +228,7 @@ A 13-year-old boy with autism spectrum disorder is brought to the emergency depa
 *Source:* Gerson R, Malas N, Feuer V, et al. Best practices for evaluation and treatment of agitated children and adolescents (BETA) in the emergency department. Consensus statement of the American Association for Emergency Psychiatry. Western Journal of Emergency Medicine 2019. https://pubmed.ncbi.nlm.nih.gov/30881565/
 
 #### Q3
-*Update:* He has a tender swelling over the right mandible and a fluctuant abscess beside a lower molar. Oral surgery will drain it under general anesthesia in 4 hours. He screams when approached but will take liquid medicine from his mother.
+*Update:* He has a tender swelling over the right mandible and a fluctuant abscess beside a lower molar. Oral surgery will drain it under general anesthesia in 4 hours. He screams when approached but will take liquid medicine from his mother. He has been given acetaminophen and ibuprofen by mouth.
 
 **Which of the following is the most appropriate medication to settle him while he waits for surgery?**
 
@@ -235,7 +238,7 @@ A 13-year-old boy with autism spectrum disorder is brought to the emergency depa
 - D. olanzapine 10 mg IM
 - E. risperidone 0.5 mg PO  **(key)**
 
-*Explanation:* He will take oral medicine, and the pediatric consensus prefers oral before IM. For youth with autism it suggests an extra dose of the child's regular medicine, because they are prone to adverse effects such as paradoxical disinhibition with benzodiazepines. An extra 0.5 mg of risperidone brings his day to 1.5 mg, within the adolescent maximum of 2 to 3 mg. The consensus does not recommend ketamine for agitation, and 180 mg IM, or 4 mg/kg, is a dissociative dose that needs procedural monitoring. IM haloperidol or olanzapine is not needed in a child who accepts oral medicine.
+*Explanation:* Analgesia for the abscess comes first, and he has already had acetaminophen and ibuprofen. He will take oral medicine, and the pediatric consensus prefers oral before IM. For youth with autism it suggests an extra dose of the child's regular medicine, because they are prone to adverse effects such as paradoxical disinhibition with benzodiazepines. An extra 0.5 mg of risperidone brings his day to 1.5 mg, within the adolescent maximum of 2 to 3 mg. The consensus does not recommend ketamine for agitation, and 180 mg IM, or 4 mg/kg, is a dissociative dose that needs procedural monitoring. IM haloperidol or olanzapine is not needed in a child who accepts oral medicine.
 
 *Key feature:* Delirium/agitation 4. If restraint is needed, sedate with medication first, then monitor closely for as long as restraints remain.
 
@@ -1014,7 +1017,7 @@ A 34-year-old man with schizophrenia is brought to the emergency department by p
 
 *Key feature:* Delirium/agitation 4. If restraint is needed, sedate with medication first, then monitor closely for as long as restraints remain.
 
-*Source:* Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry. 14th edition. Wiley Blackwell. 2021.
+*Source:* Poyurovsky M. Acute antipsychotic-induced akathisia revisited. Br J Psychiatry. 2010. https://doi.org/10.1192/bjp.bp.109.070540
 
 #### Q4
 **Which of the following is the most appropriate treatment for his restlessness?**
@@ -1029,7 +1032,7 @@ A 34-year-old man with schizophrenia is brought to the emergency department by p
 
 *Key feature:* Delirium/agitation 4. If restraint is needed, sedate with medication first, then monitor closely for as long as restraints remain.
 
-*Source:* Taylor DM, Barnes TRE, Young AH. The Maudsley Prescribing Guidelines in Psychiatry. 14th edition. Wiley Blackwell. 2021.
+*Source:* Poyurovsky M. Acute antipsychotic-induced akathisia revisited. Br J Psychiatry. 2010. https://doi.org/10.1192/bjp.bp.109.070540
 
 ### delirium-agitation-29: A father shouting in the resuscitation room
 
@@ -1367,11 +1370,11 @@ You are working in a rural hospital emergency department without CT. The nearest
 
 - A. Consent from the friends who brought him
 - B. Emergency care when he lacks capacity  **(key)**
-- C. His blood alcohol above the driving limit
+- C. His intake of about 10 beers
 - D. Psychiatric certificate for involuntary care
 - E. The nurse's request after being pushed
 
-*Explanation:* He may have an intracranial bleed, which is an imminent threat to his life, and he cannot appreciate that risk, so he lacks capacity for this decision. The CMPA guide states that in an emergency, when the patient cannot consent, the physician has a duty to do what is immediately necessary. A blood alcohol level alone does not determine capacity. Friends are not substitute decision makers. A psychiatric certificate addresses a mental disorder, not a head injury. The assault is a separate matter for the nurse to report.
+*Explanation:* He may have an intracranial bleed, which is an imminent threat to his life, and he cannot appreciate that risk, so he lacks capacity for this decision. The CMPA guide states that in an emergency, when the patient cannot consent, the physician has a duty to do what is immediately necessary. Intoxication alone, such as his intake of about 10 beers, does not determine capacity. Friends are not substitute decision makers. A psychiatric certificate addresses a mental disorder, not a head injury. The assault is a separate matter for the nurse to report.
 
 *Key feature:* Delirium/agitation 5. Assess decision making capacity in delirium and decide whether a surrogate decision maker or involuntary treatment is needed.
 
@@ -1407,83 +1410,81 @@ You are working in a rural hospital emergency department without CT. The nearest
 
 *Source:* Stiell IG, Wells GA, Vandemheen K, et al. The Canadian CT Head Rule for patients with minor head injury. Lancet 2001. https://doi.org/10.1016/S0140-6736(00)04561-X
 
-### delirium-agitation-34: Found on the kitchen floor
+### delirium-agitation-34: Not herself for three days
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-An 84-year-old man is brought to the emergency department by his daughter, who found him on his kitchen floor this morning. A neighbour last saw him well 30 hours ago. He lives alone and manages his own affairs. He is awake and looks at you when spoken to. He gives his age and date of birth correctly but says the year is 2019 and that he is in a hotel. He recites the months backward correctly from December to May. His daughter says he is much more muddled than when she saw him 2 days ago. He has a pressure mark over his left hip and his urine is dark brown. There is no deformity of his limbs. Capillary glucose is 7.0 mmol/L.
+A 91-year-old woman is brought to the emergency department from her long-term care home because staff find her restless and calling out for the past 4 days. She has moderate Alzheimer dementia. Her daughter says that until this week she recognized her and fed herself. Two weeks ago codeine 30 mg with acetaminophen 300 mg four times daily was started for knee pain. For 2 days staff have given loperamide 2 mg as needed for small, frequent watery stools. For over a year she has also taken donepezil 10 mg, amlodipine 5 mg, sertraline 50 mg and levothyroxine 50 mcg daily. She has not fallen and has no urinary symptoms. She falls asleep during the interview and must be roused repeatedly. She gives her date of birth but not her age, the place or the year, and she cannot start the months of the year backwards. There are no focal neurological signs. The abdomen is soft and mildly distended. A bladder scan shows 60 mL.
 
-- Temperature: 36.1°C oral
-- Pulse: 104/minute
+- Temperature: 36.9°C tympanic
+- Pulse: 92/minute
 - Resp.: 18/minute
-- BP: 108/64 mmHg
-- O2 sat: 96% on room air
-- Weight: 70 kg
+- BP: 132/76 mmHg
+- O2 sat: 95% on room air
+- Weight: 52 kg
 
 #### Q1
-**Which of the following is his total score on the 4AT delirium screening tool?**
+**Which of the following findings best indicates delirium rather than progression of her dementia?**
 
-- A. 2
-- B. 4
-- C. 5
-- D. 6  **(key)**
-- E. 8
+- A. Change over 4 days  **(key)**
+- B. Moderate Alzheimer dementia
+- C. Not knowing the year
+- D. Taking donepezil daily
+- E. Watery stools for 2 days
 
-*Explanation:* Alertness is normal, which scores 0. On the four orientation questions he makes two errors, the year and the place, which scores 2. He gives at least 7 months backward correctly, which scores 0. His daughter reports an acute change, which scores 4. The total is 0 + 2 + 0 + 4 = 6. Missing the acute change item gives 2, and scoring the months as abnormal gives 7 or 8.
-
-*Key feature:* Delirium/agitation 1. In an agitated patient, look for features that separate delirium from dementia and from psychosis.
-
-*Source:* Bellelli G, Morandi A, Davis DH, et al. Validation of the 4AT, a new instrument for rapid delirium screening. A study in 234 hospitalised older people. Age and Ageing 2014. https://pubmed.ncbi.nlm.nih.gov/24590568/
-
-#### Q2
-**Which of the following is the best interpretation of his 4AT score?**
-
-- A. Cognitive impairment only, not delirium
-- B. Delirium excluded by intact attention
-- C. Possible delirium, assess further  **(key)**
-- D. Result invalid without a baseline MoCA
-- E. Severe dementia requiring placement
-
-*Explanation:* A 4AT score of 4 or more indicates possible delirium, with or without cognitive impairment, and calls for a full assessment. A score of 1 to 3 suggests cognitive impairment without delirium. The 4AT is a screen, so normal performance on one attention task does not exclude delirium when an acute change is reported. It needs no baseline cognitive test to be valid. Nothing in his history suggests severe dementia, since he managed his own affairs until this week.
+*Explanation:* Delirium develops over hours to days and dementia over months, so a clear change over 4 days in a woman who last week recognized her daughter and fed herself points to delirium. The 4AT gives acute change or fluctuating course 4 points, the same weight as clearly abnormal alertness. Moderate dementia raises the risk of delirium but does not explain a decline this fast. Not knowing the year is expected with her dementia. Donepezil use reflects the dementia diagnosis, and watery stools point toward a cause rather than separating the two conditions.
 
 *Key feature:* Delirium/agitation 1. In an agitated patient, look for features that separate delirium from dementia and from psychosis.
 
 *Source:* Tieges Z, Maclullich AMJ, Anand A, et al. Diagnostic accuracy of the 4AT for delirium detection in older adults. Systematic review and meta-analysis. Age and Ageing 2021. https://pubmed.ncbi.nlm.nih.gov/33951145/
 
+#### Q2
+**Which of the following is her total score on the 4AT delirium screening tool?**
+
+- A. 6 points
+- B. 8 points
+- C. 10 points
+- D. 11 points
+- E. 12 points  **(key)**
+
+*Explanation:* She falls asleep and must be roused repeatedly, so alertness is clearly abnormal and scores 4. She makes 3 mistakes on the four orientation questions of age, date of birth, place and year, which scores 2. She cannot start the months backwards, which counts as untestable and scores 2. Her daughter reports an acute change, which scores 4. The total is 4 + 2 + 2 + 4 = 12, and any score of 4 or more suggests delirium. A score of 11 treats the months item as a refusal, 10 scores the months as normal, and 8 misses the abnormal alertness.
+
+*Key feature:* Delirium/agitation 1. In an agitated patient, look for features that separate delirium from dementia and from psychosis.
+
+*Source:* Bellelli G, Morandi A, Davis DH, et al. Validation of the 4AT, a new instrument for rapid delirium screening. A study in 234 hospitalised older people. Age and Ageing 2014. https://pubmed.ncbi.nlm.nih.gov/24590568/
+
 #### Q3
-**Which of the following investigations are most important for him now?**
+**Which of the following medications are most likely contributing to her delirium?**
 
 Select 2.
 
-- A. Creatine kinase  **(key)**
-- B. CT head without contrast  **(key)**
-- C. Electroencephalogram
-- D. Lumbar puncture
-- E. Serum ammonia level
-- F. Thyroid-stimulating hormone
+- A. amlodipine 5 mg daily
+- B. codeine 30 mg with acetaminophen  **(key)**
+- C. donepezil 10 mg daily
+- D. levothyroxine 50 mcg daily
+- E. loperamide 2 mg as needed  **(key)**
+- F. sertraline 50 mg daily
 
-*Explanation:* A long lie of up to 30 hours with a pressure mark and dark brown urine points to rhabdomyolysis, which creatine kinase confirms, and it threatens his kidneys. An unwitnessed fall with new confusion in an older man needs CT head to exclude a subdural or other bleed. EEG and lumbar puncture are not first-line without seizures, fever or meningism. Ammonia is unhelpful without liver disease. Thyroid function can wait until the urgent causes are addressed.
+*Explanation:* The Beers Criteria advise avoiding opioids in older adults with or at high risk of delirium, and codeine, started 2 weeks ago, is the newest drug on her list. Opioids also slow the bowel, and loperamide given for her watery stools slows it further, which fits constipation with overflow as the driver of her decline. Both should be stopped. Donepezil, amlodipine, sertraline and levothyroxine have not changed for over a year and do not explain a change over 4 days.
 
 *Key feature:* Delirium/agitation 2. Keep a wide differential for delirium, including structural, toxic, withdrawal, and metabolic causes, and quickly treat reversible ones.
 
-*Source:* Bosch X, Poch E, Grau JM. Rhabdomyolysis and acute kidney injury. New England Journal of Medicine 2009. https://doi.org/10.1056/NEJMra0801327
+*Source:* American Geriatrics Society Beers Criteria Update Expert Panel. American Geriatrics Society 2023 updated AGS Beers Criteria for potentially inappropriate medication use in older adults. Journal of the American Geriatrics Society 2023. https://doi.org/10.1111/jgs.18372
 
 #### Q4
-*Update:* CT head is normal. Creatine kinase is 38 000 U/L, creatinine 168 umol/L and potassium 5.1 mmol/L. Urine dipstick shows large blood with few red cells on microscopy.
+**Which of the following is the most important next step in finding the cause of her delirium?**
 
-**Which of the following is the most appropriate initial treatment?**
+- A. CT head without contrast
+- B. Digital rectal examination  **(key)**
+- C. Electroencephalogram
+- D. Lumbar puncture
+- E. Urine culture
 
-- A. furosemide 40 mg IV
-- B. mannitol 25 g IV
-- C. Saline infusion at a high rate  **(key)**
-- D. sodium bicarbonate 150 mmol IV
-- E. Urgent hemodialysis
-
-*Explanation:* Early, generous isotonic fluid to maintain a high urine output is the main treatment to prevent kidney injury from myoglobin, adjusted to his volume status and heart function. Mannitol and bicarbonate have not been shown to add benefit over fluids alone. Furosemide can acidify the urine and worsen volume depletion. Dialysis is for refractory hyperkalemia, acidosis, fluid overload or kidney failure, and his potassium of 5.1 mmol/L does not need it now.
+*Explanation:* Small, frequent watery stools with a distended abdomen in a woman taking codeine suggest overflow around a fecal impaction. A systematic review of its complications describes this paradoxical overflow diarrhea and names older people and those with neuropsychiatric disease as groups at high risk. It includes a digital rectal examination in the assessment, although a normal one does not exclude impaction higher in the colon. A urine culture in a woman with no fever or urinary symptoms risks treating bacteria that are often present without infection. She has not fallen and has no focal signs to prompt a CT head, and nothing suggests meningitis or seizures to justify a lumbar puncture or EEG.
 
 *Key feature:* Delirium/agitation 2. Keep a wide differential for delirium, including structural, toxic, withdrawal, and metabolic causes, and quickly treat reversible ones.
 
-*Source:* Bosch X, Poch E, Grau JM. Rhabdomyolysis and acute kidney injury. New England Journal of Medicine 2009. https://doi.org/10.1056/NEJMra0801327
+*Source:* Serrano Falcon B, Barcelo Lopez M, Mateos Munoz B, Alvarez Sanchez A, Rey E. Fecal impaction: a systematic review of its medical complications. BMC Geriatrics 2016. https://doi.org/10.1186/s12877-015-0162-5
 
 ### delirium-agitation-35: Restless since yesterday
 
@@ -1558,11 +1559,11 @@ A 79-year-old man is brought to the emergency department by his daughter with 1 
 - D. olanzapine 10 mg IM
 - E. quetiapine 100 mg PO
 
-*Explanation:* Reorientation, a quiet room and his daughter's presence have failed and he has struck a nurse, which is when the Beers Criteria accept an antipsychotic in delirium. Haloperidol has little anticholinergic effect, and 0.5 mg PO suits an older man whose delirium followed an anticholinergic drug. Olanzapine is strongly anticholinergic, and 10 mg IM is a large dose at 79. Methotrimeprazine is sedating, hypotensive and anticholinergic. Quetiapine 100 mg causes sedation and orthostatic hypotension. Lorazepam worsens delirium in older adults unless the cause is alcohol or sedative withdrawal.
+*Explanation:* Reorientation, a quiet room and his daughter's presence have failed and he has struck a nurse, which is when medication for delirium becomes reasonable. The Canadian delirium guideline suggests low-dose, short-term haloperidol as the antipsychotic of choice in older adults. Haloperidol has little anticholinergic effect, and 0.5 mg PO is a low dose that suits an older man whose delirium followed an anticholinergic drug. Olanzapine is strongly anticholinergic, and 10 mg IM is a large dose at 79. Methotrimeprazine is sedating, hypotensive and anticholinergic. Quetiapine 100 mg causes sedation and orthostatic hypotension. Lorazepam worsens delirium in older adults unless the cause is alcohol or sedative withdrawal.
 
 *Key feature:* Delirium/agitation 4. If restraint is needed, sedate with medication first, then monitor closely for as long as restraints remain.
 
-*Source:* American Geriatrics Society Beers Criteria Update Expert Panel. American Geriatrics Society 2023 updated AGS Beers Criteria for potentially inappropriate medication use in older adults. Journal of the American Geriatrics Society 2023. https://doi.org/10.1111/jgs.18372
+*Source:* Canadian Coalition for Seniors' Mental Health. National guidelines for seniors' mental health. The assessment and treatment of delirium. 2006, updated 2014. https://ccsmh.ca/wp-content/uploads/2016/03/2014-ccsmh-Guideline-Update-Delirium.pdf
 
 ### delirium-agitation-36: Terrified after her first vape
 

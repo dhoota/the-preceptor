@@ -8,6 +8,11 @@ Quoted from the pipeline notes and the review reports, each with its report name
 
 - s44 CTAS 2025 revision unchecked (16 q1, 29 q1 q3, 34 q1 q2). 24 q2 SOFA 3 not reachable. 20 q4 SALT rescue breaths. s30 cqi-18 q2 apixaban 'daily' distractor.
 - s35 ems-35 q3 IM field TXA and 8 h infusion. ems-27 q4 pediatric pralidoxime dose. s44 multiple-patients-24 SOFA breathing rule before ventilation.
+- multiple-patients-22 q1 is mapped to KF4 (activate disaster plans), but it tests cohorting. No option offers activating the hospital's external disaster plan. *(samps-final-check-2.md)*
+- Some keys are standard steps that already appear elsewhere in the bank, such as ultrasound first for a likely DVT or apixaban 10 mg twice daily. In each case the scenario and the deciding feature are new. *(samps-replace-s33-s44-s45-s46.md)*
+- multiple-patients-35 q3 simplifies the AACT fomepizole criteria to "suspected ingestion with an osmolal gap above 10 or a metabolic acidosis". The full text could not be opened. Please confirm, and confirm that you would not give fomepizole to the well 29-year-old with an osmolal gap of 3 about a day after one drink. *(samps-replace-s33-s44-s45-s46.md)*
+- multiple-patients-35 q4 (call in a second physician) keys the same action as multiple-patients-18 q4 and several s13 items. It is the core of key feature 3 and was kept. *(samps-replace-s33-s44-s45-s46.md)*
+- Mock mode cues that remain and seem acceptable: dvt-pe-43 q4 opens with "The first imaging test finds no thrombus", which implies imaging was needed (q2). dvt-pe-27 q4 offers a heparin bolus, which hints at the q3 key. multiple-patients-35 q1 has two options for the same patient ("the 44-year-old man" and "the patient with the lowest pH"). *(samps-replace-s33-s44-s45-s46.md)*
 - ems-24 q2 (stridor and hoarse voice transported first) repeats s44 multiple-patients-22 q4 (the same patient assessed first). Left in place, flagged. *(samps-s35-lensA.md)*
 - ems-16 q4 (termination exclusions such as hypothermia) overlaps s09 ems-04 q3. ems-18 q1 (capacity decides refusal) overlaps s09 ems-05 q1. ems-21 q4 (last known well, not time found) overlaps s09 ems-02 q2. ems-28 q3 (peripheral norepinephrine rather than delay for a central line) overlaps s50 shock. ems-33 q1 and q3 (scene GCS and pupils known only to the crew) overlap s09 ems-03 q3. ems-27 q4 partly overlaps s44 multiple-patients-22 q2. Each adds a province-specific or transfer-specific angle, so I flagged these rather than rewriting them. *(samps-s35-lensA.md)*
 - CTAS 2025. The current CTAS is the 2025 revision (Hall et al, CJEM 2025). Every CTAS key in this batch follows 2016, 2008 and 2004. The 2025 booklet appears to restructure temperature and frailty modifiers. A physician with access should check 16 q1 (frailty), 29 q1 and q3 (heat), 34 q1 and q2 (fever age bands, 3 to 18 months), and 34 q2 (immunocompromised threshold). If 2025 differs, either rekey or add "Using CTAS 2016" to the affected stems. *(samps-s44-lensA.md)*
@@ -83,7 +88,7 @@ Select 3.
 - G. O2 sat 91% with increased work of breathing  **(key)**
 - H. Oral temperature 37.9°C
 
-*Explanation:* A glucose below 3 mmol/L with sweating or confusion in a patient with diabetes is level 2, and gliclazide makes it likely in her. A GCS of 10 to 13 is level 2, and 12 with new confusion qualifies. Moderate respiratory distress with O2 sat below 92% is level 2. An O2 sat of 92 to 94% is level 3. A glucose of 16 mmol/L is below the 18 mmol/L threshold. A BP of 204/100 mmHg without symptoms is level 4. Peripheral pain of 5 out of 10 maps to level 4, and 37.9°C is below the 38.5°C adult fever threshold in CTAS.
+*Explanation:* A glucose below 3 mmol/L with sweating or confusion in a patient with diabetes is level 2, and gliclazide makes it likely in her. A GCS of 10 to 13 is level 2, and 12 with new confusion qualifies. Moderate respiratory distress with O2 sat below 92% is level 2. An O2 sat of 92 to 94% is level 3. A glucose of 16 mmol/L is below the 18 mmol/L threshold. A BP of 204/100 mmHg without symptoms is level 4. Peripheral pain of 5 out of 10 maps to level 4, and 37.9°C does not meet the CTAS fever modifier.
 
 *Key feature:* Multiple patients 1. Triage several simultaneous patients using the presenting complaint, vitals, and airway, breathing, circulation.
 
@@ -484,80 +489,79 @@ A 27-year-old woman walks into the emergency department 12 minutes after an expl
 
 *Source:* Auf der Heide E. The importance of evidence-based disaster planning. Ann Emerg Med. 2006. https://pubmed.ncbi.nlm.nih.gov/16387217/
 
-### multiple-patients-22: Workers from a chemical plant
+### multiple-patients-22: A call about a wedding reception
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 44-year-old man walks into the emergency department 20 minutes after a drum of an unlabelled liquid ruptured at the fertilizer plant where he works. His shirt and pants are soaked. He has burning eyes, a cough and red skin on both forearms. Five coworkers are following in a pickup truck. The triage nurse who has been standing next to him now has watery eyes and a cough. The vital signs listed are his.
+You are the physician in charge of a community hospital emergency department at 01:30. The EMS district supervisor calls from a community hall 15 km away. About 60 guests at a wedding reception began vomiting and having watery diarrhea over the past 3 hours. Four ambulances are on scene, and many guests plan to drive themselves. Your department has 14 stretchers, and 11 are full. You have 2 physicians and 6 nurses. The supervisor describes one guest, an 82-year-old woman who takes furosemide and ramipril. She is drowsy, and her vital signs are listed.
 
-- Pulse: 108/minute
+- Temperature: 37.8°C tympanic
+- Pulse: 118/minute
 - Resp.: 22/minute
-- BP: 146/88 mmHg
-- O2 sat: 95% on room air
+- BP: 82/44 mmHg
+- O2 sat: 96% on room air
 
 #### Q1
-**Which of the following is the most appropriate immediate action for this man?**
+**Which of the following is the most appropriate way to prepare your department for the arriving guests?**
 
-- A. Admit him to a negative pressure room
-- B. Bring him to a resuscitation bay to assess
-- C. Irrigate his eyes at the triage sink
-- D. Move him outside for decontamination  **(key)**
-- E. Start an IV and draw blood at triage
+- A. Cohort guests in one area with dedicated staff  **(key)**
+- B. Place each guest in an airborne isolation room
+- C. Seat guests among other waiting patients
+- D. Stop assessing new walk-in patients
+- E. Turn away all ambulances
 
-*Explanation:* His soaked clothing is still releasing the agent, and the triage nurse already has symptoms. That is secondary contamination of staff. He must leave the building and be decontaminated outside, starting with removal of his clothing, before he enters any clinical area. A negative pressure room is built for airborne infection, not a liquid chemical on clothing. Bringing him inside, even to irrigate his eyes or start an IV, spreads the agent to more staff and patients.
+*Explanation:* Norovirus causes about half of gastroenteritis outbreaks and spreads easily on hands and surfaces. The CDC guideline advises cohorting ill patients together with dedicated nursing staff, with careful handwashing with soap and water. Seating guests among other patients spreads the illness through the department. Norovirus does not need airborne isolation, and a community hospital has too few such rooms for 60 guests. Turning away all ambulances or stopping walk-in assessment abandons other emergencies in the community.
 
 *Key feature:* Multiple patients 4. When demand exceeds ED capacity, activate disaster plans and extra resources early and coordinate with EMS.
 
-*Source:* Okumura T, Suzuki K, Fukuda A, et al. The Tokyo subway sarin attack. Disaster management, part 2. Hospital response. Acad Emerg Med. 1998. https://pubmed.ncbi.nlm.nih.gov/9660290/
+*Source:* Centers for Disease Control and Prevention. Updated norovirus outbreak management and disease prevention guidelines. MMWR Recomm Rep. 2011. https://pubmed.ncbi.nlm.nih.gov/21368741/
 
 #### Q2
-**Which of the following hospital actions is most appropriate before the coworkers arrive?**
+*Update:* In the first hour 16 guests arrive. Four of them are described below. The others are vomiting but alert, drinking small sips and have normal vital signs.
 
-- A. Activate the plan for a chemical disaster  **(key)**
-- B. Call the poison centre before any other step
-- C. Close the emergency department to all patients
-- D. Send the coworkers to another hospital
-- E. Wait for fire services to identify the agent
+**Which of the following guests should receive physician assessment and treatment first?**
 
-*Explanation:* Six contaminated patients and an exposed nurse need a hospital response. That means a decontamination area outside the entrance, staff in protective equipment, locked entrances and call-in of extra staff. Hospitals in large chemical events have been swamped by self-presenting patients, and staff who worked without protection developed symptoms. The poison centre is worth calling, but it does not protect the department. Waiting for the agent to be named leaves the building open to contamination. Closing the department or redirecting the truck moves the problem without solving it.
+- A. A 7-year-old boy vomiting but drinking
+- B. A 45-year-old man with severe cramps
+- C. A 30-year-old woman at 32 weeks gestation
+- D. An 82-year-old woman with a BP of 82/44 mmHg  **(key)**
+- E. The groom with a pounding headache
 
-*Key feature:* Multiple patients 4. When demand exceeds ED capacity, activate disaster plans and extra resources early and coordinate with EMS.
-
-*Source:* Okumura T, Suzuki K, Fukuda A, et al. The Tokyo subway sarin attack. Disaster management, part 2. Hospital response. Acad Emerg Med. 1998. https://pubmed.ncbi.nlm.nih.gov/9660290/
-
-#### Q3
-*Update:* The coworkers arrive and are decontaminated outside. One is unresponsive with gasping respirations and goes to the resuscitation bay. The other four walk in with a cough or sore eyes and saturations of 96% to 98%. The agent is still unknown.
-
-**Which of the following is the most appropriate plan for the four coworkers who walked in?**
-
-- A. Admit all four to the intensive care unit
-- B. Discharge each once decontaminated
-- C. Observe together with repeated reassessment  **(key)**
-- D. Refer to occupational health tomorrow
-- E. Treat only after the agent is named
-
-*Explanation:* The agent is unknown and some industrial chemicals cause delayed lung injury, so an unidentified exposure calls for an extended period of observation or admission, and discharge is considered only for people without symptoms after 6 to 8 hours. While the resuscitation goes on, the four can be observed together by a nurse with scheduled reassessment of their breathing and saturation, so everyone is managed in parallel. Discharge after decontamination misses delayed toxicity. Intensive care for walking patients with normal saturations uses beds the unresponsive worker may need. A referral tomorrow comes too late for effects that appear within hours. Symptom care cannot wait until the agent is named.
+*Explanation:* The older woman has hypotension, tachycardia and drowsiness from fluid loss, made worse by her diuretic and ACE inhibitor, so she needs resuscitation first with IV fluid. The other guests are then managed in parallel, with nurses repeating vital signs on a schedule. The pregnant woman needs early assessment and fetal monitoring, but she has no stated instability. A drinking child, cramps and headache can wait for reassessment.
 
 *Key feature:* Multiple patients 2. With several patients, stabilize those needing resuscitation first, then manage everyone in parallel with timely reassessment.
 
-*Source:* Agency for Toxic Substances and Disease Registry. Medical management guidelines for unidentified chemical exposure. 2017. https://wwwn.cdc.gov/TSP/MMG/MMGDetails.aspx?mmgid=1138&toxid=243
+*Source:* Kollek D, Bezanson J, Carby S, et al. CAEP position statement. Hospital disaster preparedness. CJEM. 2020. https://pubmed.ncbi.nlm.nih.gov/32425150/
+
+#### Q3
+**Which of the following is the most appropriate plan for the guests who are alert with normal vital signs?**
+
+- A. Discharge home without assessment
+- B. IV saline bolus for every guest
+- C. Nurse-led oral fluids with timed reassessment  **(key)**
+- D. Physician review before any treatment
+- E. Stool culture before any treatment
+
+*Explanation:* The CDC guideline notes that this illness usually settles in 1 to 3 days and that dehydration is treated with oral or IV fluid. Guests who are alert, drinking and have normal vital signs can start oral fluids by nursing protocol, with vital signs repeated on a schedule, while the physicians treat the unstable. Waiting for a physician before any treatment delays care for all of them. An IV bolus for every guest uses stretchers and staff that the sick need. Discharge without assessment could miss a guest who is becoming dehydrated. A stool culture does not guide treatment tonight.
+
+*Key feature:* Multiple patients 2. With several patients, stabilize those needing resuscitation first, then manage everyone in parallel with timely reassessment.
+
+*Source:* Centers for Disease Control and Prevention. Updated norovirus outbreak management and disease prevention guidelines. MMWR Recomm Rep. 2011. https://pubmed.ncbi.nlm.nih.gov/21368741/
 
 #### Q4
-*Update:* The triage nurse who stood beside the first man still has watery eyes and a cough 30 minutes later. She wants to keep working.
+**Which of the following additional actions is most appropriate for this cluster of illness?**
 
-**Which of the following is the most appropriate action for this triage nurse?**
+- A. Clear ill guests to return to work tomorrow
+- B. Give ciprofloxacin to every guest
+- C. Keep guests until stool results return
+- D. Notify public health of the cluster  **(key)**
+- E. Send stool for culture from every guest
 
-- A. Give her a surgical mask and continue triage
-- B. Relieve her of duty and decontaminate her  **(key)**
-- C. Rinse her eyes, then return her to triage
-- D. Send her home to shower and rest
-- E. Watch her at the desk for 1 hour
-
-*Explanation:* She stood beside a man with soaked clothing and still has symptoms, so she is now an exposed patient, not a member of the working team. She should stop work, remove and bag her uniform, be decontaminated and then be assessed and recorded as a casualty. In the Tokyo sarin attack many staff at the receiving hospital developed symptoms from secondary exposure. A surgical mask does not remove the agent from her clothing or skin. Rinsing her eyes and returning her to triage, or watching her at the desk, keeps a contaminated person in the department. Sending her home spreads the agent to her car and family and loses follow up of an exposure that can worsen.
+*Explanation:* The CDC guideline states that every outbreak of acute gastroenteritis should be reported to the local health department, which leads the investigation, sampling and control. Ill food handlers and health care workers should stay off work during the illness and for 48 to 72 hours after symptoms end, so clearing them for work tomorrow is unsafe. Antibiotics do not treat viral gastroenteritis. Public health decides which stool samples to collect, and guests do not need to stay for results that take days.
 
 *Key feature:* Multiple patients 4. When demand exceeds ED capacity, activate disaster plans and extra resources early and coordinate with EMS.
 
-*Source:* Okumura T, Suzuki K, Fukuda A, et al. The Tokyo subway sarin attack. Disaster management, part 2. Hospital response. Acad Emerg Med. 1998. https://pubmed.ncbi.nlm.nih.gov/9660290/
+*Source:* Centers for Disease Control and Prevention. Updated norovirus outbreak management and disease prevention guidelines. MMWR Recomm Rep. 2011. https://pubmed.ncbi.nlm.nih.gov/21368741/
 
 ### multiple-patients-23: Respiratory season surge
 
@@ -1410,81 +1414,74 @@ Select 2.
 
 *Source:* Warren DW, Jarvis A, LeBlanc L, Gravel J. Revisions to the Canadian Triage and Acuity Scale paediatric guidelines (PaedCTAS). CJEM. 2008. https://doi.org/10.1017/S1481803500010149
 
-### multiple-patients-35: A rash after a crowded wait
+### multiple-patients-35: Four arrivals from the same party
 
 - [ ] Approved  - [ ] Needs change  - [ ] Reject
 
-A 19-year-old man presents to the emergency department with 4 days of fever, cough, red eyes and runny nose. A red blotchy rash began on his face yesterday and has spread to his trunk. He returned from travel abroad 12 days ago. He has never been vaccinated. He waited 2 hours in the waiting room with about 30 other patients, including infants and a pregnant woman, before a nurse recognized the rash. The vital signs listed are his.
+You are the only physician in a community hospital emergency department at 23:00, with four nurses and a respiratory therapist. The nearest hemodialysis unit is at a regional hospital 1 hour away. Four adults arrive from a party last night where they drank homemade vodka bought from a neighbour. The poison centre suspects methanol and has notified public health. A 52-year-old man had a seizure in the car and now has a GCS of 7 with snoring respirations, a venous pH of 7.08 and bicarbonate 6 mmol/L. His vital signs are listed. A 44-year-old man has blurred vision and deep, fast breathing, with a pH of 7.02, bicarbonate 5 mmol/L and an anion gap of 30 mmol/L. A 38-year-old woman has a headache without visual symptoms, with a pH of 7.31, bicarbonate 18 mmol/L and an osmolal gap of 14 mOsm/kg. A 29-year-old woman who had one small drink feels well, with a normal blood gas and an osmolal gap of 3 mOsm/kg.
 
-- Temperature: 39.4°C oral
-- Pulse: 108/minute
-- Resp.: 20/minute
-- BP: 118/70 mmHg
-- O2 sat: 97% on room air
+- Temperature: 36.4°C tympanic
+- Pulse: 124/minute
+- Resp.: 30/minute
+- BP: 108/64 mmHg
+- O2 sat: 90% on room air
 
 #### Q1
-**Which of the following is the most appropriate placement for this man now?**
+**Which of the following patients should you assess and treat first?**
 
-- A. Airborne precautions in a negative pressure room  **(key)**
-- B. Cohort with other patients with fever and rash
-- C. Contact precautions in a shared room
-- D. Droplet precautions with a surgical mask
-- E. Routine practices in a hallway stretcher
+- A. The 52-year-old man with a GCS of 7  **(key)**
+- B. The 44-year-old man with blurred vision
+- C. The 29-year-old woman who feels well
+- D. The 38-year-old woman with a headache
+- E. The patient with the lowest pH
 
-*Explanation:* Fever, cough, coryza, conjunctivitis and a rash spreading from the face in an unvaccinated traveller suggest measles until proven otherwise. Measles spreads by the airborne route, and the virus can linger in room air after a patient leaves, so he needs an airborne isolation room with the door closed. Staff should have documented immunity. Droplet or contact precautions do not stop airborne spread. A hallway stretcher exposes more people. Cohorting him with other rash patients risks infecting anyone among them who does not have measles.
+*Explanation:* A GCS of 7 with snoring respirations and an O2 saturation of 90% after a seizure is an immediate threat to his airway and breathing, and CTAS places a GCS of 3 to 9 at level 1. He needs airway positioning, oxygen and likely intubation first. The man with blurred vision and a pH of 7.02 is also critically ill and comes next, with a nurse starting antidote treatment at once. Choosing by the lowest pH alone ignores the airway. The woman with a headache and the well woman can be managed in parallel.
 
 *Key feature:* Multiple patients 1. Triage several simultaneous patients using the presenting complaint, vitals, and airway, breathing, circulation.
 
-*Source:* National Advisory Committee on Immunization, Public Health Agency of Canada. Canadian Immunization Guide. Part 4, active vaccines. Measles vaccine. Updated 2025. https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-12-measles-vaccine.html
+*Source:* Bullard MJ, Musgrave E, Warren D, et al. Revisions to the Canadian Emergency Department Triage and Acuity Scale (CTAS) Guidelines 2016. CJEM. 2017. https://doi.org/10.1017/cem.2017.365
 
 #### Q2
-**Which of the following is the most important next step to protect the patients who shared the waiting room?**
+**Which of the following calls is most important to make early for this group?**
 
-- A. Close the waiting room for 24 hours
-- B. Give MMR vaccine to all 30 patients now
-- C. Report to public health and list the exposed  **(key)**
-- D. Test all exposed patients for measles IgM
-- E. Wait for his measles PCR result
+- A. Local police about the seller
+- B. Ophthalmology about the blurred vision
+- C. Regional hospital to arrange dialysis  **(key)**
+- D. The patients' family physicians
+- E. The public health unit
 
-*Explanation:* Measles is reportable, and public health leads contact tracing and post-exposure prophylaxis. A list of everyone who shared the waiting room with him lets susceptible contacts get MMR within 72 hours or immune globulin within 6 days. Waiting for PCR uses up those windows. Giving MMR to everyone ignores those already immune and those in whom a live vaccine is contraindicated. IgM testing of contacts does not prevent disease. Closing the room does nothing for people already exposed.
+*Explanation:* Two patients already meet EXTRIP criteria for extracorporeal treatment, the 52-year-old man through coma, seizure and a pH of 7.08, and the 44-year-old man through vision loss, a pH of 7.02 and an anion gap above 24 mmol/L. Dialysis removes methanol and its toxic acid, so arranging transfer to the only dialysis unit an hour away is the step most likely to change outcome. Calling early lets the unit prepare staff and machines. Public health has already been notified by the poison centre. Ophthalmology cannot reverse formate toxicity, which is treated with the antidote, bicarbonate and dialysis. Police and family physicians can be contacted later.
 
 *Key feature:* Multiple patients 3. Lead clearly, delegate tasks to nurses and RTs, and call in colleagues, consultants, or the OR early.
 
-*Source:* National Advisory Committee on Immunization, Public Health Agency of Canada. Canadian Immunization Guide. Part 4, active vaccines. Measles vaccine. Updated 2025. https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-12-measles-vaccine.html
+*Source:* Roberts DM, et al. Recommendations for the role of extracorporeal treatments in the management of acute methanol poisoning. A systematic review and consensus statement. EXTRIP Work Group. Crit Care Med. 2015. https://pubmed.ncbi.nlm.nih.gov/25493973/
 
 #### Q3
-*Update:* Public health asks you to sort the exposed adults in the waiting room and the department by evidence of measles immunity.
+**Which of the following patients from the party should receive fomepizole now?**
 
-**Which of the following exposed adults meet Canadian criteria for measles immunity and need no prophylaxis?**
+- A. Both men and the 38-year-old woman  **(key)**
+- B. Every person from the party
+- C. Only the 44-year-old man
+- D. Only the 52-year-old man
+- E. The 38-year-old and 29-year-old women
 
-Select 2.
-
-- A. Adult born in 1990 who recalls having measles
-- B. Adult born in 1962 with no vaccine records  **(key)**
-- C. Adult born in 1988 with two documented doses  **(key)**
-- D. Nurse born in 1964 with no vaccine records
-- E. Pregnant woman with negative measles serology
-- F. Unvaccinated man of 25 with no history of measles
-
-*Explanation:* Adults born before 1970 are presumed immune, so the adult born in 1962 needs nothing. Two documented doses of measles vaccine are proof of immunity at any age. A remembered illness without laboratory confirmation does not count, so the adult born in 1990 is treated as susceptible and should get MMR within 72 hours. Health care workers need two documented doses or laboratory evidence of immunity whatever their year of birth, so the nurse born in 1964 is susceptible until serology or records show otherwise. The pregnant woman and the unvaccinated man are susceptible.
+*Explanation:* The AACT guideline gives fomepizole when methanol poisoning is strongly suspected and at least two of these are present: arterial pH below 7.3, bicarbonate below 20 mmol/L and an osmolal gap above 10 mOsm/kg. Both men have a pH below 7.3 and a bicarbonate far below 20 mmol/L. The 38-year-old woman has a pH of 7.31, just above the cut-off, but her bicarbonate of 18 mmol/L and osmolal gap of 14 mOsm/kg meet two criteria. Unmetabolized methanol is likely still present, and blocking its metabolism now prevents acidosis and eye injury. The 29-year-old woman had one small drink, and a normal gas with an osmolal gap of 3 mOsm/kg about a day later meets none of the criteria, so she needs observation and repeat testing rather than an antidote. Treating only the men leaves the third patient to become acidotic.
 
 *Key feature:* Multiple patients 1. Triage several simultaneous patients using the presenting complaint, vitals, and airway, breathing, circulation.
 
-*Source:* National Advisory Committee on Immunization, Public Health Agency of Canada. Canadian Immunization Guide. Part 4, active vaccines. Measles vaccine. Updated 2025. https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-12-measles-vaccine.html
+*Source:* Barceloux DG, Bond GR, Krenzelok EP, Cooper H, Vale JA. American Academy of Clinical Toxicology practice guidelines on the treatment of methanol poisoning. J Toxicol Clin Toxicol. 2002. https://pubmed.ncbi.nlm.nih.gov/12216995/
 
 #### Q4
-*Update:* He tells you he spent an afternoon at a shopping mall 3 days before his rash began.
+**Which of the following is the most appropriate step for you as the only physician right now?**
 
-**Which of the following describes the period during which he could spread measles to others?**
+- A. Ask for help only if one worsens
+- B. Ask the RT to lead the airway alone
+- C. Call in a second physician now  **(key)**
+- D. Manage each patient in turn yourself
+- E. Send the well woman to the waiting room
 
-- A. First fever until the rash appears
-- B. From rash onset until it fades
-- C. Only while the fever is above 38.5°C
-- D. The 4 days before and after rash onset  **(key)**
-- E. Until his cough and fever resolve
-
-*Explanation:* Measles is infectious from 4 days before to 4 days after rash onset, so his afternoon at the mall 3 days before the rash falls inside that period. Public health needs to hear about that visit to trace exposed people in the community, not only in the waiting room. Much of the spread happens in the prodrome, before anyone suspects measles. Counting only from the rash, only while he is febrile or only until the rash appears misses part of the infectious period. Waiting for the cough and fever to settle has no defined end and extends isolation beyond what is needed.
+*Explanation:* Two critically ill patients need an airway, antidotes, bicarbonate and transfer at the same time, which one physician cannot safely lead. Calling in help early lets you run the airway while a colleague leads the second patient, with each nurse given a named task. Handling patients one at a time delays the second critical patient. The respiratory therapist should support the airway, not lead it without a physician. The well woman still needs monitoring and repeat testing in a clinical area. Waiting until a patient worsens loses the time when help is most needed.
 
 *Key feature:* Multiple patients 3. Lead clearly, delegate tasks to nurses and RTs, and call in colleagues, consultants, or the OR early.
 
-*Source:* National Advisory Committee on Immunization, Public Health Agency of Canada. Canadian Immunization Guide. Part 4, active vaccines. Measles vaccine. Updated 2025. https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-12-measles-vaccine.html
+*Source:* Hicks C, Petrosoniak A. The human factor. Optimizing trauma team performance in dynamic clinical environments. Emerg Med Clin North Am. 2018. https://pubmed.ncbi.nlm.nih.gov/29132571/
