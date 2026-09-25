@@ -1,0 +1,266 @@
+[
+ {
+  "id": "first-trimester-bleeding-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Interstitial ectopic on ultrasound, same day gynecology and resuscitation after rupture are correct.",
+  "checked": [
+   "3 mm myometrial mantle and interstitial line in stem",
+   "hCG 8400 high for methotrexate",
+   "pulse 128 and BP 92/58 in q3 update"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Slow hCG rise, prior ectopic as the risk factor and same day early pregnancy review are correct. Local practice on the q3 disposition varies, but no competing option is offered.",
+  "checked": [
+   "recomputed 1200 to 1460 = 21.7%, below Barnhart 49% minimum",
+   "same assay stated",
+   "q2 rests on ACOG 193, SOGC 414 agrees"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Endocervical polyp, no RhIG for weak D type 1 under SOGC 448, and return advice are correct.",
+  "checked": [
+   "SOGC 448 weak D types 1 to 3 need no RhIG",
+   "first pregnancy now in stem",
+   "q3 tagged KF6 with a live pregnancy, a loose fit"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Exclude ectopic with an IUD pregnancy, then speculum and bimanual, then remove the IUD by the strings match SOGC 2016.",
+  "checked": [
+   "IUD 15 to 50% ectopic figure from SOGC chapter",
+   "strings visible in q3 update",
+   "rebuilt case no longer mirrors s10 ftb-07"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Pregnancy test regardless of gender, trauma-informed speculum exam, formal TVUS and testosterone is not contraception are correct.",
+  "checked": [
+   "hCG 2900 with empty uterus on bedside scan",
+   "q4 distractors now each have a reason",
+   "KF remapped to 2"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-21",
+  "verdict": "FIX",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Keys are correct. The day 4 to day 7 15% fall and the rupture teaching rest only on ACOG PB 193, a US source, where SOGC 414 covers the same methotrexate follow-up.",
+  "fix": "Add SOGC Guideline No. 414 (Po 2021), already in the batch, as the source for q1 and q2 after confirming its day 4 to 7 wording, and keep ACOG as a second source.",
+  "checked": [
+   "recomputed 2100 to 2350 = 11.9% rise",
+   "day of injection = day 1, today = day 4",
+   "hepatorenal fluid absent in stem"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Septic incomplete abortion, cultures with antibiotics, 30 mL/kg and evacuation, piperacillin-tazobactam and the legal answer are correct.",
+  "checked": [
+   "recomputed 30 x 60 = 1800 mL",
+   "Criminal Code s 287 repealed 2019",
+   "Fouks 2020 supports pip-tazo as best single agent"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "MSD 18 mm without embryo is suspicious, repeat scan in 7 to 10 days, and MSD 25 mm confirms failure, per Doubilet 2013.",
+  "checked": [
+   "MSD 16 to 24 suspicious, 25 or more diagnostic",
+   "embryo under 7 mm without heartbeat only suspicious",
+   "uncertain dates in stem"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Cesarean scar pregnancy, high morbidity if continued, and contraception counselling match SMFM 2020.",
+  "checked": [
+   "CRL 10 mm consistent with 7w1d",
+   "2 mm myometrium toward bladder",
+   "SMFM advises against methotrexate alone and curettage alone"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-25",
+  "verdict": "FIX",
+  "questions": [
+   "q1"
+  ],
+  "reason": "q2 and q3 are sound. q1 now asks which history feature most raises the chance of ectopic, with the key Previous tubal ectopic pregnancy. That is the same prompt and key as first-trimester-bleeding-17 q2 in this batch.",
+  "fix": "Rebuild q1 on a different key feature 2 point, for example which bedside finding should come first to confirm hemoperitoneum or how to read her normal pulse, while avoiding the metoprolol teaching in s50 shock-32, or rework first-trimester-bleeding-17 q2 instead.",
+  "checked": [
+   "grep: identical option text at s38 lines 140 and 659",
+   "prompts differ by one word",
+   "pass 2a created this q1 to avoid the metoprolol overlap"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "No RhIG once alloimmunized, MFM referral and missed postpartum prophylaxis are correct.",
+  "checked": [
+   "titre 1:32 with no injection this pregnancy",
+   "7% sensitization figure from SOGC 448",
+   "CBS HDFN chapter"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Exclude ectopic after medical abortion without ultrasound, a urine test can stay positive for weeks, and serial hCG with gynecology are correct.",
+  "checked": [
+   "Barnhart 2004 60 to 84% fall over a week",
+   "no pre-treatment scan in stem",
+   "Health Canada 2019 Mifegymiso update real"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Resolving failed PUL, follow hCG to undetectable, and PTSD after early loss are correct.",
+  "checked": [
+   "recomputed 2400 to 1300 = 45.8% fall",
+   "Barnhart minimum 2 day fall 21 to 35%",
+   "Farren 2020 29% corrected"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Call the surgeon with IV access, O Rh D negative cells and critical care transfer with blood are correct for a rural ruptured ectopic.",
+  "checked": [
+   "pulse 132 and BP 80/50 with hepatorenal fluid",
+   "blood group unknown now in stem",
+   "CBS emergency transfusion chapter"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Barrel cervix, fixed sac without sliding sign and urgent gynecology before instrumentation are correct.",
+  "checked": [
+   "hourglass cervix in q1 update",
+   "two prior D and C in stem",
+   "pulse 104 supports no discharge"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Open internal os defines inevitable loss, RhIG 300 mcg after 12 weeks, and hematoma risk are correct.",
+  "checked": [
+   "20 h since bleed within 72 h",
+   "SOGC 448 300 mcg after 12 weeks",
+   "Tuuli 2011 9% to 18%"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Complete miscarriage signs, capacity-based consent in Ontario and immediate hormonal contraception are correct.",
+  "checked": [
+   "prior live IUP on youth clinic scan",
+   "CMPA consent for minors",
+   "Quebec age 14 statement true"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-33",
+  "verdict": "FIX",
+  "questions": [
+   "q2",
+   "q3"
+  ],
+  "reason": "Keys are correct. The return threshold of 2 pads an hour for 2 hours and the 1 to 2 week follow-up rest only on ACOG PB 200, a US source, although SOGC 460 (2025), already cited in q1, covers both.",
+  "fix": "Cite SOGC Guideline No. 460 (Pymar 2025) for q2 and q3 after confirming its return and follow-up wording, and keep ACOG as a second source.",
+  "checked": [
+   "22 mm retained tissue with closed os",
+   "misoprostol 600 mcg matches SOGC 460 range",
+   "update now names dose and plan"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Tender adnexal mass, serial hCG with named follow-up for a remote patient and medevac for rupture are correct.",
+  "checked": [
+   "hCG 1600 with empty uterus = PUL",
+   "pulse 118 with shoulder tip pain in q3 update",
+   "NICE and ACEP used, SOGC 414 paywalled"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Ruptured corpus luteum, urgent gynecology and progesterone after luteectomy are correct.",
+  "checked": [
+   "hepatorenal fluid and pulse 108",
+   "luteectomy at 7 weeks before placental shift",
+   "Csapo 1973 supports replacement"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Posterior fornix laceration, passive anti-D after recent RhIG and continued prophylaxis eligibility are correct.",
+  "checked": [
+   "RhIG 6 days ago with titre 1:2",
+   "first pregnancy and no transfusion now in stem",
+   "no polyp or ectropion now in update"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Pregnancy test first, missed miscarriage at CRL 62 mm, RhIG 300 mcg and patient-preferred terms are correct.",
+  "checked": [
+   "CRL 62 mm = 12w4d, over 7 mm without heartbeat",
+   "bleed 2 days ago within 72 h",
+   "SOGC 448 300 mcg after 12 weeks"
+  ]
+ },
+ {
+  "id": "first-trimester-bleeding-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Hydatidiform mole, RhIG 300 mcg while pathology is pending and SOGC 408 hCG schedule are correct.",
+  "checked": [
+   "web check: SOGC 408 weekly to 3 undetectable then monthly 6 months for complete mole",
+   "hCG 186 000 and vesicles in stem",
+   "SOGC 448 RhIG unless complete mole certain"
+  ]
+ }
+]

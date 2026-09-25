@@ -1,0 +1,260 @@
+[
+ {
+  "id": "eye-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Gonococcal ophthalmia, corneal fluorescein, ceftriaxone 125 mg and admission with parent treatment match CPS 2015.",
+  "checked": [
+   "recomputed 50 mg/kg x 2.5 kg = 125 mg, CPS max 125 mg",
+   "250 mg = 100 mg/kg",
+   "day 4 onset and no prophylaxis in stem"
+  ]
+ },
+ {
+  "id": "eye-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Anesthetic then acuity, UV keratitis, infiltrate as red flag and ointment with oral analgesia are correct.",
+  "checked": [
+   "6 h unprotected snow exposure, onset hours later",
+   "acuity 20/30 recorded after tetracaine",
+   "no home anesthetic teaching consistent"
+  ]
+ },
+ {
+  "id": "eye-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Vertical linear abrasions mean a subtarsal foreign body. Lid eversion, erythromycin and infiltrate as red flag are correct.",
+  "checked": [
+   "vertical upper corneal lines in update",
+   "no contact lens wording traces to mechanism",
+   "Wipperman 2013 supports no patching"
+  ]
+ },
+ {
+  "id": "eye-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Topiramate angle closure, aqueous suppressants with a cycloplegic, no pilocarpine and stopping the drug match Fraunfelder 2004.",
+  "checked": [
+   "started 9 days ago, within 2 weeks",
+   "IOP 48 and 46 bilateral with shallow chambers",
+   "migraine age of onset now in stem"
+  ]
+ },
+ {
+  "id": "eye-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Pain on eye movement, RAPD, contrast MRI and ONTT oral prednisone recurrence finding are correct.",
+  "checked": [
+   "ONTT oral prednisone alone had more recurrences",
+   "prior leg numbness in stem supports MRI",
+   "plasma exchange statement no longer attributed to ONTT"
+  ]
+ },
+ {
+  "id": "eye-21",
+  "verdict": "HOLD",
+  "questions": [
+   "q2"
+  ],
+  "reason": "q1 and q3 are sound. q2 keys stopping dexamethasone outright after 3 weeks. Some ophthalmologists would taper or switch to loteprednol because subepithelial infiltrates rebound, so the key and the loteprednol distractor are practice-dependent.",
+  "checked": [
+   "IOP 31 and 38 with deep quiet chambers",
+   "steroid response timing 2 to 6 weeks",
+   "explanation itself notes opacities can flare on withdrawal"
+  ]
+ },
+ {
+  "id": "eye-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Primary HSV with dendrite, geographic ulcer risk with steroid, and antiviral treatment match the AAO HSV guideline.",
+  "checked": [
+   "vesicles, follicles and node in stem",
+   "trifluridine 1% marketed in Canada (lens A DPD check)",
+   "debridement reason now accurate"
+  ]
+ },
+ {
+  "id": "eye-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Swinging flashlight test before dilation, traumatic optic neuropathy and observation over steroids or decompression match the Cochrane reviews.",
+  "checked": [
+   "RAPD, normal disc and normal CT in update",
+   "two Cochrane citations real",
+   "lateral canthotomy reason traces to normal IOP"
+  ]
+ },
+ {
+  "id": "eye-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "White-eyed blowout with oculocardiac reflex, CT orbits and urgent surgery match Jordan 1998.",
+  "checked": [
+   "pulse 48 with vomiting and restricted upgaze",
+   "alert and oriented now in stem",
+   "IOP 17 excludes retrobulbar hemorrhage"
+  ]
+ },
+ {
+  "id": "eye-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Shield, defer tonometry, antiemetic, CT, IV antibiotics and tetanus, and prior cataract surgery as the weak point are correct. Vancomycin with ceftazidime is one accepted regimen.",
+  "checked": [
+   "peaked pupil and 360 bullous hemorrhage in stem",
+   "grep: s10 eye-13 is a write-in with a different mechanism",
+   "menu select 4 keys all defensible"
+  ]
+ },
+ {
+  "id": "eye-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Phenylephrine blanching, night pain, urgent ophthalmology and scleritis associations are correct.",
+  "checked": [
+   "RA on methotrexate in stem",
+   "Okhravi URL corrected to PMID 15967190",
+   "menu keys GPA, IBD, polychondritis, SLE"
+  ]
+ },
+ {
+  "id": "eye-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "CRVO picture, ophthalmology within days, neovascular glaucoma and vascular risk tests match the 2025 AAO RVO PPP.",
+  "checked": [
+   "four-quadrant hemorrhages and disc swelling in update",
+   "carotid Doppler reason corrected",
+   "thrombophilia kept for under 50"
+  ]
+ },
+ {
+  "id": "eye-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "POCUS for a dense vitreous hemorrhage, continuing ASA and ophthalmology in 1 to 2 days are correct.",
+  "checked": [
+   "no fundus view in update supports POCUS",
+   "ETDRS ASA finding",
+   "retina attached on ultrasound update"
+  ]
+ },
+ {
+  "id": "eye-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Post-traumatic carotid-cavernous fistula, CTA and endovascular referral are correct.",
+  "checked": [
+   "skull base fracture 6 weeks ago",
+   "bruit, IOP 32 and abduction deficit in update",
+   "Ellis 2012 review"
+  ]
+ },
+ {
+  "id": "eye-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Endogenous endophthalmitis in injection drug use, cultures with IV and intravitreal antibiotics and endocarditis search are correct.",
+  "checked": [
+   "fever 74% per Jackson 2014 (lens A)",
+   "no rash now in stem",
+   "hypopyon and no view in update"
+  ]
+ },
+ {
+  "id": "eye-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Proptosis as a red flag, H. influenzae conjunctivitis-otitis and amoxicillin-clavulanate match CPS AOM reaffirmed 2024.",
+  "checked": [
+   "CPS text on otitis-conjunctivitis verified by lens A",
+   "bulging TM in stem",
+   "normal lids exclude periorbital cellulitis"
+  ]
+ },
+ {
+  "id": "eye-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Seasonal allergic conjunctivitis, olopatadine, steroid pressure rise and vision loss as red flag are correct.",
+  "checked": [
+   "no giant papillae or limbal nodules in update",
+   "olopatadine 0.1% marketed in Canada",
+   "q3 prompt timeframe matches steroid response"
+  ]
+ },
+ {
+  "id": "eye-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Plant trauma, fungal keratitis, stop steroid and urgent transfer for scraping are correct. Natamycin via SAP is stated.",
+  "checked": [
+   "central infiltrate now in q2 update",
+   "fluconazole reason corrected",
+   "3 h to ophthalmology in stem"
+  ]
+ },
+ {
+  "id": "eye-34",
+  "verdict": "FIX",
+  "questions": [
+   "q1"
+  ],
+  "reason": "Keys are correct. The q1 source is a 2015 NHS paediatric guideline past its review date, and it does not state that acetone and ethanol injure the cornea or that lash trimming helps.",
+  "fix": "Either cite a current source that states the solvent and lash-trimming points, or remove those two claims from the q1 explanation and keep only what the GGC guideline supports.",
+  "checked": [
+   "picture chart acuity 20/40 in update",
+   "fragment and abrasion in q3 update",
+   "lens A and pass 2 both flagged the source"
+  ]
+ },
+ {
+  "id": "eye-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Consensual photophobia, traumatic iritis and cycloplegic with steroid, then angle recession screening, are correct. q2 and q3 rest on Rosen, which is standard teaching.",
+  "checked": [
+   "2+ cells, no red cells, IOP 12 in update",
+   "Au 1981 consensual pain test",
+   "key feature 4 tag on q3 is loose"
+  ]
+ },
+ {
+  "id": "eye-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "INR on warfarin, trauma as the changing factor and reassurance with warfarin continued are correct.",
+  "checked": [
+   "INR 2.6 in range in update",
+   "mechanical valve in stem supports no vitamin K",
+   "flat, sharply bordered hemorrhage in stem"
+  ]
+ },
+ {
+  "id": "eye-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Tonometry first, ondansetron as the non-anticholinergic antiemetic, timolol as the airway risk and spacer delivery are correct.",
+  "checked": [
+   "IOP 56 with fixed 6 mm pupil in update",
+   "farsighted and nebulized ipratropium in stem",
+   "s10 eye-01 overlap is a write-in with a different drug"
+  ]
+ },
+ {
+  "id": "eye-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Monocular diplopia from lens subluxation, Marfan syndrome, echocardiography and anterior dislocation as the urgent finding are correct.",
+  "checked": [
+   "20/200 improving to 20/60 with pinhole",
+   "lens up and out fits Marfan",
+   "pinhole distractor wording now accurate"
+  ]
+ }
+]

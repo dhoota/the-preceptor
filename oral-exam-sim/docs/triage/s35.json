@@ -1,0 +1,235 @@
+[
+ {
+  "id": "ems-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Non-opioid overdose excludes the medical TOR directive, so transport with CPR is right. Epinephrine for PEA matches AHA 2025.",
+  "checked": [
+   "Ontario ALS PCS 5.4 PDF opened: Medical TOR contraindication is non-opioid drug overdose/toxicology",
+   "21 min CPR vs 20 min directive",
+   "q4 mapped to tox KF4, acceptable"
+  ]
+ },
+ {
+  "id": "ems-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Penetrating torso wound to the lead trauma hospital, EDT preparation and trauma TOR criteria are correct.",
+  "checked": [
+   "trauma TOR age 16, asystole, PEA only if ED 30 min or more",
+   "q3 update 14 min matches 12 min drive",
+   "EAST 2015 EDT for penetrating thoracic with signs of life"
+  ]
+ },
+ {
+  "id": "ems-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Capacity decides refusal, biphasic risk, discharge advice and observation after multiple doses are correct.",
+  "checked": [
+   "HCCA capacity test wording",
+   "Shaker 2020 extended observation after more than one dose",
+   "prednisone distractor reason true"
+  ]
+ },
+ {
+  "id": "ems-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Subcutaneous opioid, fan and home care with palliative team match BCEHS P04 and Carter 2019.",
+  "checked": [
+   "SpO2 97% vs BCEHS 94% oxygen threshold",
+   "stem now says no wheeze",
+   "Carter CJEM 2019 is Canadian"
+  ]
+ },
+ {
+  "id": "ems-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "DNR Confirmation Form withholds only CPR. Treatment, comfort care and a capable request for CPR are applied correctly.",
+  "checked": [
+   "menu keys match CPR elements in BLS PCS DNR standard",
+   "signers include RN and RPN",
+   "son SDM request consistent with key"
+  ]
+ },
+ {
+  "id": "ems-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Corrected glucose with persistent deficit keeps him in the stroke protocol. LAMS 4, GCS below 10 and last known well are correct.",
+  "checked": [
+   "BLS PCS 3.4 PDF opened: GCS below 10 contraindication",
+   "0620 to arrival well under 6 h",
+   "grep last known well: only in write-in s05, s07, s09"
+  ]
+ },
+ {
+  "id": "ems-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Paced rhythm excludes bypass, pads on at STEMI, diversion in arrest and pre-arrest ECG are correct.",
+  "checked": [
+   "Ontario ALS PCS 5.4 PDF opened: apply defibrillation pads when a STEMI is identified",
+   "nitroglycerin 0.4 mg max single dose",
+   "timeline 15 min in, 8 min to your ED"
+  ]
+ },
+ {
+  "id": "ems-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Do not wait for an aircraft not on final approach. Blood, TXA and eFAST, then an escorted land transfer, are correct.",
+  "checked": [
+   "BLS PCS 3.4 PDF opened: wait only if helicopter on final approach",
+   "crash 1355, arrival 50 min later within TXA 3 h",
+   "ems-37 review-extra twin is not in the bank file"
+  ]
+ },
+ {
+  "id": "ems-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Wet decontamination for ammonia, stridor transported first, alerting hospitals and 20 minute eye irrigation are correct.",
+  "checked": [
+   "BLS PCS 3.4 PDF opened: remove readily removable lenses, alkali irrigate at least 20 min",
+   "s44 multiple-patients-22 q4 now about a triage nurse, so the overlap flag is stale",
+   "Okumura Part 1 used for private vehicle figures"
+  ]
+ },
+ {
+  "id": "ems-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Undress and transport, barrier PPE, and a separate entrance with a control line match REMM.",
+  "checked": [
+   "REMM PPE page wording per lens A",
+   "BP 86/50 supports no delay",
+   "potassium iodide reasons true"
+  ]
+ },
+ {
+  "id": "ems-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Saline before extrication at 1 L/hour, SALT global sort and entrapment time match Sever 2012 and Lerner 2008.",
+  "checked": [
+   "entrapment 0815 to about 1045, arrival 1130",
+   "SALT order still or life threat, then wavers, then walkers",
+   "Sever rate 1 L/h then 500 mL/h after 2 h"
+  ]
+ },
+ {
+  "id": "ems-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Atropine 2 mg, integrated decontamination, atropine 6 mg before airway and pralidoxime 360 mg match the Ontario nerve agent directive.",
+  "checked": [
+   "Ontario ALS PCS 5.4 PDF opened: atropine 2 mg and 6 mg adult, pralidoxime 15 mg/kg moderate under 40 kg, max 600 mg",
+   "recomputed 24 x 15 = 360 mg",
+   "update now gives pinpoint pupils"
+  ]
+ },
+ {
+  "id": "ems-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Hospital escort, confirmed tube with capnography and second IV, pumps with spare infusions and transfer papers are correct.",
+  "checked": [
+   "FiO2 0.6 in vitals supports rejecting 0.3",
+   "30 mL/kg given, norepinephrine running",
+   "Warren 2004 is dated but content standard"
+  ]
+ },
+ {
+  "id": "ems-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Passive cooling, rectal 33 to 34°C every 15 minutes, glucose and seizure watch, and the 6 hour window match CPS 2018.",
+  "checked": [
+   "CPS page opened: 33.5 plus or minus 0.5, check every 15 min, 6 h",
+   "pH 6.92 and BD 17 meet criteria",
+   "CPS antiepileptic caution quoted"
+  ]
+ },
+ {
+  "id": "ems-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Nitroprusside after esmolol, ACC/AHA 2022 targets named in the stem, and fentanyl are correct.",
+  "checked": [
+   "pulse 72 in range, SBP 164 above 120",
+   "stem names ACC/AHA 2022 targets",
+   "nitroprusside sold in Canada"
+  ]
+ },
+ {
+  "id": "ems-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Hydrocortisone 40 mg IM and the vial condition match the Ontario directive.",
+  "checked": [
+   "Ontario ALS PCS 5.4 PDF opened: 2 mg/kg, max 100 mg, round to 10 mg, vial presented",
+   "recomputed 21 x 2 = 42, rounds to 40",
+   "glucose 3.4 below 4.0 noted"
+  ]
+ },
+ {
+  "id": "ems-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Methadone in 72 hours as contraindication, COWS 8 threshold and supportive care for the methadone patient match the directive.",
+  "checked": [
+   "Ontario ALS PCS 5.4 PDF opened: age 16 or more, COWS 8 or more, methadone past 72 h",
+   "COWS 14 in stem",
+   "q3 reasons true"
+  ]
+ },
+ {
+  "id": "ems-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Falling GCS with a blown pupil, expanding hematoma and scene pupil size are correct handover teaching.",
+  "checked": [
+   "GCS 2+3+5 = 10 recomputed",
+   "Cushing response BP 172/94 with pulse 58",
+   "s09 ems-03 overlap is a write-in item"
+  ]
+ },
+ {
+  "id": "ems-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Medical TOR does not apply under 16, epinephrine 0.09 mg with IO and airway, and obvious death criteria are correct.",
+  "checked": [
+   "recomputed 0.01 x 9 = 0.09 mg",
+   "medical TOR age 16 or more in ALS PCS",
+   "AHA 2025 PALS citation"
+  ]
+ },
+ {
+  "id": "ems-35",
+  "verdict": "HOLD",
+  "questions": [
+   "q3"
+  ],
+  "reason": "q1 and q2 are correct. q3 keys a 1 g IV infusion over 8 hours after a single field IM dose. The Ontario directive gives one 1 g dose only, and no Canadian source says the field dose is the CRASH-2 loading dose.",
+  "checked": [
+   "Ontario ALS PCS 5.4 PDF opened: TXA single 1 g IV or IM, max 1 dose, HR 110 or hypotension, over 3 h excluded",
+   "timeline 1350 to 1500 = 70 min",
+   "both review lenses flagged q3"
+  ]
+ },
+ {
+  "id": "ems-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Calcium gluconate 1 g, salbutamol 10 mg, a well running IV and QRS width before and after match the ACP hyperkalemia directive.",
+  "checked": [
+   "Ontario ALS PCS 5.4 PDF opened: calcium gluconate 1 g over 2 to 3 min, repeat at 5 min, salbutamol 10 mg NEB, IV/IO/CVAD",
+   "QRS 160 and peaked T in stem",
+   "dopamine distractor reason rewritten and true"
+  ]
+ }
+]

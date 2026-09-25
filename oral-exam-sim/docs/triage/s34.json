@@ -1,0 +1,273 @@
+[
+ {
+  "id": "delirium-agitation-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and numbers check out. Pregabalin 300 mg a day is double the 150 mg ceiling for CrCl 15 to 30.",
+  "checked": [
+   "pregabalin renal ceiling 150 mg/day at CrCl 15 to 30 vs monograph (lens A PI table)",
+   "eGFR 24 in stem supports q2",
+   "q4 capacity reasons match Appelbaum four abilities"
+  ]
+ },
+ {
+  "id": "delirium-agitation-17",
+  "verdict": "FIX",
+  "questions": [
+   "q2",
+   "q3",
+   "q4"
+  ],
+  "reason": "Clozapine and smoking teaching is correct. Every question cites only the Maudsley book, which a candidate cannot read, and q3 states specific numbers from it.",
+  "fix": "Add a readable source for q2 and q3, such as the Oxford Health NHS Foundation Trust guidance on smoking and cessation effects on psychotropics (2023) that lens A read, and keep Maudsley as a second source.",
+  "checked": [
+   "q3 dose cut of about 25% and 48 hour re-titration vs NHS Maudsley-derived guidance read by lens A",
+   "neutrophils, sodium, CK in update exclude distractors",
+   "12 days after stopping fits 1 to 2 week induction loss"
+  ]
+ },
+ {
+  "id": "delirium-agitation-18",
+  "verdict": "FIX",
+  "questions": [
+   "q3"
+  ],
+  "reason": "Keys are sound. The case is built on dental pain driving agitation, yet q3 settles him with risperidone and nothing in the update or explanation gives analgesia.",
+  "fix": "Add to the q3 update: He has been given acetaminophen and ibuprofen by mouth. Add one sentence to the explanation that analgesia for the abscess comes first.",
+  "checked": [
+   "risperidone 0.5 + 1.0 = 1.5 mg/day recomputed",
+   "ketamine 180 mg / 45 kg = 4 mg/kg",
+   "Gerson 2019 oral before IM and extra home dose in autism (lens A full text)"
+  ]
+ },
+ {
+  "id": "delirium-agitation-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "BWPS of 100 recomputes. Lugol 8 drops four times daily at least 1 hour after the thionamide matches the 2026 ETJ consensus, so the SSKI flag is resolved.",
+  "checked": [
+   "recomputed BWPS 25+20+10+25+0+10+10 = 100",
+   "ETJ 2026 thyroid storm consensus opened on PMC: Lugol 8 drops QID, wait 1 h after thionamide, acetaminophen preferred",
+   "chest clear and no edema in stem supports heart failure 0"
+  ]
+ },
+ {
+  "id": "delirium-agitation-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Anti-NMDA receptor encephalitis workup and benzodiazepine key are correct. The adult-cohort limit is now stated.",
+  "checked": [
+   "lorazepam ceiling 0.1 mg/kg = 5.4 mg for 54 kg",
+   "stem says no medications, supporting lithium rejection",
+   "MRI normal rules out ADEM distractor"
+  ]
+ },
+ {
+  "id": "delirium-agitation-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Benzodiazepine withdrawal delirium, lorazepam first and slow taper are correct. The 1 mg IV dose at 72 is reasonable.",
+  "checked": [
+   "lorazepam 1 + 2 = 3 mg/day recomputed",
+   "coarse tremor distractor is in stem",
+   "one glass of wine a week excludes alcohol withdrawal"
+  ]
+ },
+ {
+  "id": "delirium-agitation-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Weapon safety, BETA de-escalation and oral lorazepam for stimulant agitation are correct.",
+  "checked": [
+   "q3 key vs Wilson 2012 BETA benzodiazepine first for stimulant",
+   "stem gives orientation and coherent speech used in q4",
+   "grep: intact-attention theme repeats in 30, 36, 38 but scenarios differ"
+  ]
+ },
+ {
+  "id": "delirium-agitation-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "CAM combination and BC HCCA sections 12, 16 and 19 are applied correctly.",
+  "checked": [
+   "TSDM 12-month contact rule vs lens A reading of s16",
+   "CAM criteria counted: acute onset, inattention, disorganized thinking",
+   "sister in q4 option is the patient's daughter, consistent"
+  ]
+ },
+ {
+  "id": "delirium-agitation-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Precipitants, lactulose dose and Nova Scotia spouse ranking are correct.",
+  "checked": [
+   "ascitic PMN 90 below 250",
+   "lactulose 25 mL q1 to 2 h vs AASLD/EASL 2014",
+   "NS PDA s14 spouse includes cohabiting common-law partner (lens A official PDF)"
+  ]
+ },
+ {
+  "id": "delirium-agitation-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Silent STEMI workup, CCQ article 15 spouse and article 13 emergency exception are applied correctly. Treating primary PCI as usual care is a reasonable reading.",
+  "checked": [
+   "CCQ art 13 and 15 wording vs lens A text",
+   "daughter now in stem",
+   "saturation 91% and crackles in stem support q3 reason"
+  ]
+ },
+ {
+  "id": "delirium-agitation-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Opioid neurotoxicity signs, rotation and hydration, and capacity after recovery are correct.",
+  "checked": [
+   "creatinine 95 to 212 in q2 update matches explanation",
+   "RR 16 in vitals supports rejecting slow breathing",
+   "Gallagher CFP 2007 is a Canadian source"
+  ]
+ },
+ {
+  "id": "delirium-agitation-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Postpartum psychosis workup, infant safety and BC MHA section 22 single certificate for 48 hours are correct.",
+  "checked": [
+   "BC MHA s22 one certificate 48 h vs lens A statute read",
+   "designated facility named in stem",
+   "hCG positive 8 days postpartum is true"
+  ]
+ },
+ {
+  "id": "delirium-agitation-28",
+  "verdict": "FIX",
+  "questions": [
+   "q3",
+   "q4"
+  ],
+  "reason": "Akathisia recognition and propranolol are sound among the options offered. Both questions cite only the Maudsley book, which cannot be read.",
+  "fix": "Add a readable source for q3 and q4, such as Poyurovsky M. Acute antipsychotic-induced akathisia revisited. British Journal of Psychiatry 2010, after confirming it supports low dose propranolol.",
+  "checked": [
+   "timeline 21:00 lorazepam to 23:30 = 2.5 h",
+   "no fever or rigidity in q3 update excludes NMS",
+   "s11 headache teaches diphenhydramine or benzodiazepine for akathisia, none offered here so no competing key"
+  ]
+ },
+ {
+  "id": "delirium-agitation-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Security with one voice, empathic statement, behavioural limits and debrief are correct.",
+  "checked": [
+   "stem says parents witnessed the seizure, supporting q2",
+   "explanation now says shoved, not injured",
+   "q4 reason matches stem"
+  ]
+ },
+ {
+  "id": "delirium-agitation-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Dementia behaviour without delirium, non-drug first, then low dose risperidone with stroke and mortality consent are correct.",
+  "checked": [
+   "risperidone 0.25 mg BID start and Canadian indication for aggression in severe AD",
+   "stem gives normal days backward for q1",
+   "Beers antipsychotic restriction matches q2 and q4"
+  ]
+ },
+ {
+  "id": "delirium-agitation-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Steroid mania, dose above 40 mg as risk, taper with rheumatology and low dose risperidone are correct.",
+  "checked": [
+   "glucose 19.8 below HHS range",
+   "Warrington 2006 dose relationship",
+   "grep for duplicate steroid psychosis: none in bank"
+  ]
+ },
+ {
+  "id": "delirium-agitation-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Removable precipitants, sitter and low bed, haloperidol 0.5 mg and QTc check are correct.",
+  "checked": [
+   "zopiclone 7.5 = 2 x 3.75 mg",
+   "haloperidol 5 = 10 x 0.5 mg",
+   "stem now lists ceftriaxone, acetaminophen, heparin used in menu"
+  ]
+ },
+ {
+  "id": "delirium-agitation-33",
+  "verdict": "FIX",
+  "questions": [
+   "q2"
+  ],
+  "reason": "Canadian CT Head Rule, capacity, haloperidol and escorted transfer keys are correct. The q2 distractor about blood alcohol above the driving limit implies a measured level the case never gives.",
+  "fix": "Change the q2 option His blood alcohol above the driving limit to His intake of about 10 beers, re-sort options, and keep the explanation sentence that intoxication alone does not determine capacity.",
+  "checked": [
+   "recomputed GCS 4+4+6 = 14 at 1 h, under the 2 h criterion",
+   "two vomits meets CCHR high risk",
+   "q3 options now all carry doses"
+  ]
+ },
+ {
+  "id": "delirium-agitation-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "4AT of 6 recomputes and interpretation, CK with CT, and fluids are correct.",
+  "checked": [
+   "recomputed 4AT 0+2+0+4 = 6",
+   "neighbour 30 h timeline consistent",
+   "K 5.1 does not need dialysis"
+  ]
+ },
+ {
+  "id": "delirium-agitation-35",
+  "verdict": "FIX",
+  "questions": [
+   "q4"
+  ],
+  "reason": "Retention from amitriptyline, capacity, stopping the drug and haloperidol 0.5 mg are correct. The q4 dose rests on Beers, which gives no dose. It is also the second low dose haloperidol key in this batch after 32 q3.",
+  "fix": "Add the CCSMH 2014 delirium guideline, already cited in the batch, as the q4 source for the haloperidol 0.5 to 2 mg starting range.",
+  "checked": [
+   "bladder volume 1 100 mL in update",
+   "update now says he accepts a tablet",
+   "grep: s08 delirium-agitation-01 oxybutynin case differs in drug and decisions"
+  ]
+ },
+ {
+  "id": "delirium-agitation-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Substance-induced paranoia, quiet room with observer and oral lorazepam are correct.",
+  "checked": [
+   "lorazepam 0.1 mg/kg = 5.5 mg for 55 kg",
+   "ketamine 250/55 = 4.5 mg/kg",
+   "Gerson favours lorazepam for unknown substance (lens A full text)"
+  ]
+ },
+ {
+  "id": "delirium-agitation-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Midazolam-droperidol key matches Taylor 2017. Capnography and a medical search after sedation are correct.",
+  "checked": [
+   "Taylor 2017 25.0 and 25.4 point differences at 10 min",
+   "asleep at 6 min within 10 min endpoint",
+   "explanation reasons for q3 distractors true"
+  ]
+ },
+ {
+  "id": "delirium-agitation-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Nicotine withdrawal, capacity by reasoning, de-escalation with a patch and documented AMA discharge are correct.",
+  "checked": [
+   "VBG pH 7.38 PCO2 48 excludes hypercapnic encephalopathy",
+   "normal temperature distractor now matches vitals",
+   "CMPA consent guide for capable refusal"
+  ]
+ }
+]

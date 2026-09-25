@@ -1,0 +1,262 @@
+[
+ {
+  "id": "environmental-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Exercise-associated hyponatremia, 3% saline 100 mL bolus and fluid restriction match WMS 2019. q2 and q3 are tagged to key feature 2 (hyperthermia), a loose fit that does not harm a candidate.",
+  "checked": [
+   "recomputed 11 x 750 mL = 8.25 L",
+   "sodium 121 to 126 = 5 mmol/L, within 4 to 5 target",
+   "weight 61 to 63 kg in stem and vitals"
+  ]
+ },
+ {
+  "id": "environmental-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Anticholinergic signs, immediate antibiotics, heat-impairing drugs and cooled space with checks are correct. Heat dome figures match the coroners' report.",
+  "checked": [
+   "BC Coroners 2022 report opened: 619 deaths, 98% indoors, 56% alone, 7% had AC",
+   "menu keys furosemide, oxybutynin, quetiapine",
+   "q1 rests on Rosen but is standard teaching"
+  ]
+ },
+ {
+  "id": "environmental-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Meningococcemia over heat stroke, ceftriaxone at once and cooling alongside antibiotics are correct.",
+  "checked": [
+   "symptoms began before exertion, in stem",
+   "purpura, meningism and hypotension in stem",
+   "IDSA 2004 is old but key unchanged in current practice"
+  ]
+ },
+ {
+  "id": "environmental-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Rocuronium with K 6.3 and peaked T, tarp immersion and serial liver and clotting tests are correct.",
+  "checked": [
+   "rocuronium 1.2 x 85 = 102 mg",
+   "38.9°C in 22 min stops cooling as ACSM",
+   "q3 differs from 20 q2 as a test plan versus disposition"
+  ]
+ },
+ {
+  "id": "environmental-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Heat stroke diagnosis after field cooling, admission for labs and ACSM return to play are correct.",
+  "checked": [
+   "41.6 to 38.9°C in 14 min",
+   "ACSM 7 days rest then graded return",
+   "creatinine 128 and CK 4200 in update"
+  ]
+ },
+ {
+  "id": "environmental-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Asphyxial versus hypothermic avalanche arrest, ECLS transfer, intubation and transport with mechanical CPR are correct. The q4 key holds under both European and North American drug rules.",
+  "checked": [
+   "burial 20 min and 34.6°C vs ICAR 2023 normothermic pathway",
+   "26.4°C and SBP 78 vs Paal ECLS criteria",
+   "q4 distractors no longer depend on the ERC drug rule"
+  ]
+ },
+ {
+  "id": "environmental-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Revised Swiss stage II, trunk heat under insulation, ECLS destination and an epitympanic probe match Paal 2022.",
+  "checked": [
+   "responds to voice = stage II",
+   "SBP 88 below 90",
+   "frozen fingers not thawed before stable, per WMS"
+  ]
+ },
+ {
+  "id": "environmental-23",
+  "verdict": "HOLD",
+  "questions": [
+   "q3"
+  ],
+  "reason": "q1 and q2 are correct. q3 keys IV iloprost in a man with a 6 mm acute subdural hematoma. Iloprost inhibits platelets, no data support its safety with an acute bleed, and it is only available through the Special Access Program.",
+  "checked": [
+   "WMS frostbite 2024 thaw after core stabilization",
+   "CT now vs rewarming decision in Paal",
+   "30.2°C and SBP 104 meet no ECLS criterion"
+  ]
+ },
+ {
+  "id": "environmental-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "D10W 5 mL/kg, a 20 mL/kg warmed bolus for rewarming hypotension and VT as an ECLS trigger are correct.",
+  "checked": [
+   "recomputed 5 x 12 = 60 mL = 6 g",
+   "20 x 12 = 240 mL, 600 mL = 50 mL/kg",
+   "1.4°C in 40 min within Paal rewarming rates"
+  ]
+ },
+ {
+  "id": "environmental-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Mild hypothermia with shivering, admission for symptomatic drowning and rescue collapse are correct.",
+  "checked": [
+   "33.8°C alert and shivering = mild",
+   "SpO2 91% with crackles supports admission",
+   "WMS drowning 2024 no prophylactic antibiotics or steroids"
+  ]
+ },
+ {
+  "id": "environmental-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Observe hypothermic AF, look for sepsis and endocrine causes of failed rewarming, then transfer for ECLS are correct.",
+  "checked": [
+   "arrival 32.8°C and SBP 102 met no criterion",
+   "after 2 h 31.8°C and SBP 84 meet two",
+   "hip fracture wording now suggests, not states"
+  ]
+ },
+ {
+  "id": "environmental-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Local non-ECLS rewarming with CPR, peritoneal lavage and 5 on, 10 off below 20°C match Paal 2022.",
+  "checked": [
+   "19.8°C below 20 = pauses up to 10 min",
+   "K 4.1 supports survivable arrest",
+   "ECLS 750 km and aircraft grounded 12 h in stem"
+  ]
+ },
+ {
+  "id": "environmental-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Cerebral DCS is serious, altitude after diving is the trigger, and recompression proceeds despite resolution.",
+  "checked": [
+   "surfaced 13:00, drive 14:30 = 90 min",
+   "skin finding now itch without mottling",
+   "UHMS 2011 recompress even if resolved"
+  ]
+ },
+ {
+  "id": "environmental-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Musculoskeletal DCS after flying, full neuro exam before calling it mild, and a diving physician call are correct.",
+  "checked": [
+   "flight 20 h after last dive",
+   "normal neuro exam in update",
+   "distractor options no longer carry justifications"
+  ]
+ },
+ {
+  "id": "environmental-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Ciguatera, onset after the fish meal as the separating feature, and avoiding alcohol and all fish are correct. q3 is tagged to the dysbarism key feature, a loose fit.",
+  "checked": [
+   "recomputed dive 96 h ago, meal 60 h, onset 54 h ago = 42 h after dive",
+   "fatigue now in stem",
+   "Friedman 2017 3 to 6 month avoidance"
+  ]
+ },
+ {
+  "id": "environmental-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Cerebral DCS in a breath-hold diver, risk factors, recompression and PFO screening match Schipke 2026.",
+  "checked": [
+   "PubMed check: Schipke, Breath-hold diving and DCS, Am J Med 2026 is real",
+   "depths 18 to 22 m not called deep",
+   "menu options now traced to stem"
+  ]
+ },
+ {
+  "id": "environmental-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Facial baroparesis, forehead involvement separating it from AGE and arm weakness as a red flag are correct.",
+  "checked": [
+   "hemotympanum and equalizing trouble in stem",
+   "q3 prompt no longer says new",
+   "peripheral vs central forehead rule correct"
+  ]
+ },
+ {
+  "id": "environmental-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Benzodiazepine with active cooling, leaving a periorbital probe for ophthalmology and CT head are correct.",
+  "checked": [
+   "40.4°C with meth use",
+   "Vilke 2019 probe near eye and no routine cardiac tests",
+   "q1 rests on Rosen but is standard teaching"
+  ]
+ },
+ {
+  "id": "environmental-34",
+  "verdict": "FIX",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Keys are correct. All three questions rest only on a 2026 Cureus review, a thin source for the claims on DC contact, 24 hour monitoring and troponin.",
+  "fix": "Add Waldmann V et al. Electrical cardiac injuries. Eur Heart J 2018, already in the batch, as a second source for q2 and q3, and a second established source for the AC versus DC point in q1.",
+  "checked": [
+   "600 V below 1000 V",
+   "stem now says disoriented to time for GCS below 15",
+   "PubMed check: Smith 2026 is a Cureus review"
+  ]
+ },
+ {
+  "id": "environmental-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Hand to hand path, admission with monitoring for new AF and troponin as the cardiac marker match Waldmann 2018.",
+  "checked": [
+   "347 V low voltage",
+   "AF at 128 in stem",
+   "AF explanation softened to what the source supports"
+  ]
+ },
+ {
+  "id": "environmental-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Hemorrhage from the fall, FAST, ABA referral criteria and cardiac monitoring after high voltage are correct.",
+  "checked": [
+   "7200 V, 12% partial thickness, age 13 each meet ABA criteria",
+   "SBP 88 hypotensive at 13",
+   "escharotomy distractor reason traces to stem"
+  ]
+ },
+ {
+  "id": "environmental-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Lichtenberg figures need no treatment, telemetry with echo for myocardial injury, and CT for thoracic tenderness are correct.",
+  "checked": [
+   "troponin 180 and QTc 510 in update",
+   "T7 to T8 midline tenderness in stem",
+   "key no longer carries its reason in the option"
+  ]
+ },
+ {
+  "id": "environmental-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Combined cooling before the cause is known, baclofen withdrawal signs, sepsis workup and restoring intrathecal baclofen fit the Lioresal monograph. It had only one review after its rebuild.",
+  "checked": [
+   "itching and rebound spasticity vs monograph withdrawal signs",
+   "missed refill 6 days and alarm in update",
+   "cloudy urine with catheter supports q3 keys"
+  ]
+ }
+]
