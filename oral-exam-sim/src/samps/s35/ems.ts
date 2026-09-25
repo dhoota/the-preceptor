@@ -27,7 +27,6 @@ const S = {
   remmHospital: { id: "remm-hospital", citation: "US Department of Health and Human Services. Radiation Emergency Medical Management (REMM). Hospital activities during radiation emergencies. Accessed 24 September 2026.", url: "https://remm.hhs.gov/hospitalprep.htm" },
   salt: { id: "salt", citation: "Lerner EB, Schwartz RB, Coule PL, et al. Mass casualty triage: an evaluation of the data and development of a proposed national guideline. Disaster Med Public Health Prep. 2008.", url: "https://pubmed.ncbi.nlm.nih.gov/18769263/" },
   warren: { id: "warren-transport", citation: "Warren J, Fromm RE Jr, Orr RA, Rotello LC, Horst HM. Guidelines for the inter- and intrahospital transport of critically ill patients. Crit Care Med. 2004.", url: "https://pubmed.ncbi.nlm.nih.gov/14707589/" },
-  ssc: { id: "ssc-2021", citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/34605781/" },
   cpsHie: { id: "cps-hie", citation: "Lemyre B, Chau V. Canadian Paediatric Society, Fetus and Newborn Committee. Hypothermia for newborns with hypoxic-ischemic encephalopathy. Paediatr Child Health. 2018.", url: "https://cps.ca/en/documents/position/hypothermia-for-newborns" },
   aha25: { id: "aha-als-2025", citation: "Wigginton JG, Agarwal S, Bartos JA, et al. Part 9: adult advanced life support. 2025 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.", url: "https://doi.org/10.1161/CIR.0000000000001376" },
   aorta: { id: "acc-aha-aorta", citation: "Isselbacher EM, Preventza O, Hamilton Black J, et al. 2022 ACC/AHA guideline for the diagnosis and management of aortic disease. Circulation. 2022.", url: "https://pubmed.ncbi.nlm.nih.gov/36322642/" },
@@ -762,7 +761,7 @@ export const EMS_S35: Samp[] = [
       {
         id: "q4",
         kind: "single",
-        update: "One man remains apneic with a pulse after three intranasal doses of naloxone. He is being ventilated with a bag-valve mask.",
+        update: "One man is still breathing only 2 times a minute, with a pulse, after three intranasal doses of naloxone. He is being ventilated with a bag-valve mask.",
         prompt: "Which of the following is the most appropriate direction to the crew for this man?",
         options: [
           "Flumazenil 0.2 mg IV now",

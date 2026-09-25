@@ -1151,7 +1151,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
     topic: "arrhythmia",
     alsoTopics: ["sob"],
     title: "Found limp in his crib",
-    stem: "A 7-month-old boy is brought to the emergency department by ambulance. He has had 3 days of cough, runny nose and poor feeding, and his 4-year-old sister has a cold. An hour ago his mother found him limp, blue and not breathing in his crib. Paramedics have given bag-mask ventilation with 100% oxygen for 8 minutes with good chest rise, and an IO needle is in his left tibia. He was born at term and has been well. There are no medications in the home.\n\nHe is unresponsive and mottled, with a weak brachial pulse and a capillary refill of 5 seconds. The anterior fontanelle is flat. The monitor shows a P wave before each narrow QRS complex. Glucose is 5.8 mmol/L and potassium 4.6 mmol/L.",
+    stem: "A 7-month-old boy is brought to the emergency department by ambulance. He has had 3 days of cough, runny nose and poor feeding, and his 4-year-old sister has a cold. Twenty minutes ago his mother found him limp, blue and not breathing in his crib. Paramedics have given bag-mask ventilation with 100% oxygen for 12 minutes with good chest rise, and an IO needle is in his left tibia. He was born at term and has been well. There are no medications in the home.\n\nHe is unresponsive and mottled, with a weak brachial pulse and a capillary refill of 5 seconds. The anterior fontanelle is flat. The monitor shows a P wave before each narrow QRS complex. Glucose is 5.8 mmol/L and potassium 4.6 mmol/L.",
     vitals: { temperature: "36.9°C rectal", pulse: "48/minute", bp: "62/38 mmHg", o2sat: "94% on bag-mask ventilation with 100% oxygen", weight: "8 kg" },
     questions: [
       {
@@ -1172,7 +1172,7 @@ export const ARRHYTHMIA_S24: Samp[] = [
         options: ["atropine 0.02 mg/kg IO", "Continue ventilation and observe", "Endotracheal intubation first", "Start chest compressions", "Transcutaneous pacing"],
         correct: 3,
         explanation:
-          "A heart rate below 60/minute with signs of poor perfusion that persists despite effective oxygenation and ventilation calls for high quality CPR, even when a pulse can be felt. Eight minutes of bag-mask ventilation with good chest rise and a saturation of 94% show that his ventilation is effective, yet he stays mottled with a capillary refill of 5 seconds. Observation and intubation delay compressions while his perfusion is failing. Atropine is for bradycardia from increased vagal tone. Pacing is considered for complete heart block or sinus node dysfunction.",
+          "A heart rate below 60/minute with signs of poor perfusion that persists despite effective oxygenation and ventilation calls for high quality CPR, even when a pulse can be felt. Twelve minutes of bag-mask ventilation with good chest rise and a saturation of 94% show that his ventilation is effective, yet he stays mottled with a capillary refill of 5 seconds. Observation and intubation delay compressions while his perfusion is failing. Atropine is for bradycardia from increased vagal tone. Pacing is considered for complete heart block or sinus node dysfunction.",
         keyFeature: { topic: "arrhythmia", n: 4 },
         source: "aha-pals-2025"
       },

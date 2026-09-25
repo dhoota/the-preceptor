@@ -620,7 +620,7 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
           "T inversion in the lateral leads"
         ],
         "correct": 2,
-        "explanation": "Ischemic T wave inversion changes over hours to days, so a pattern unchanged from an ECG 3 years ago points to a chronic cause. Giant negative T waves of 10 mm or more in the precordial leads, often with voltage criteria for left ventricular hypertrophy, are typical of apical hypertrophic cardiomyopathy, which commonly presents with chest pain and T wave inversion that mimic ACS. The absence of Q waves or ST elevation does not exclude an occlusion. Symmetric T wave inversion and inversion in the lateral leads occur with ischemia as well.",
+        "explanation": "Ischemic T wave inversion changes over hours to days, so a pattern unchanged from an ECG 3 years ago points to a chronic cause. Deep precordial T wave inversion that has stayed fixed for years, with high QRS voltage, points to a structural cause in the heart muscle, and such causes can present with chest pain and T wave inversion that mimic ACS. The absence of Q waves or ST elevation does not exclude an occlusion. Symmetric T wave inversion and inversion in the lateral leads occur with ischemia as well.",
         "keyFeature": {
           "topic": "ischemic-heart-disease",
           "n": 2
@@ -640,7 +640,7 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
           "Start heparin and admit"
         ],
         "correct": 2,
-        "explanation": "Two troponins well below the 99th percentile with no change, and an ECG unchanged over 3 years, make an acute coronary syndrome unlikely, so heparin and inpatient angiography are not needed. His deep T wave inversion and exertional symptoms still need an explanation, and imaging of the left ventricle, starting with echocardiography, is the next step. Hughes and colleagues note that echocardiography missed apical hypertrophy in 40% of cases later found on cardiac MRI, so a cardiologist should review the result and arrange further imaging if it is normal. An exercise ECG cannot be read with marked baseline T wave inversion. Discharge without follow-up leaves his symptoms and abnormal ECG unexplained.",
+        "explanation": "Two troponins well below the 99th percentile with no change, and an ECG unchanged over 3 years, make an acute coronary syndrome unlikely, so heparin and inpatient angiography are not needed. His deep T wave inversion and exertional symptoms still need an explanation, and imaging of the left ventricle, starting with echocardiography, is the next step. In the series of Hughes and colleagues, echocardiography missed 40% of the cases later found on cardiac MRI, so a cardiologist should review the result and arrange further imaging if it is normal. An exercise ECG cannot be read with marked baseline T wave inversion. Discharge without follow-up leaves his symptoms and abnormal ECG unexplained.",
         "keyFeature": {
           "topic": "ischemic-heart-disease",
           "n": 8
