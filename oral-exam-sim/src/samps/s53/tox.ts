@@ -7,8 +7,22 @@ const META = { reviewed: false, author: "Draft for review by Arjan Dhoot, MD", v
 
 const S = {
   cag: { id: "cag", citation: "Centre antipoison du Quebec and CIUSSS de la Capitale-Nationale. Canadian Antidote Guide in Acute Care Toxicology. Online edition. Accessed 24 September 2026.", url: "https://www.ciusss-capitalenationale.gouv.qc.ca/en/antidotes" },
-  aha: { id: "aha-2023", citation: "Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023." },
-  goldfrank: { id: "goldfrank", citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019." },
+  aha: { id: "aha-2023", citation: "Lavonas EJ, Akpunonu PD, Arens AM, et al. 2023 American Heart Association focused update on the management of patients with cardiac arrest or life-threatening toxicity due to poisoning. Circulation. 2023.", url: "https://doi.org/10.1161/CIR.0000000000001161" },
+  gfCh3: { id: "goldfrank-ch3", citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter 3, Initial Evaluation of the Patient: Vital Signs and Toxic Syndromes.", url: "https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html" },
+  gfCh4: { id: "goldfrank-ch4", citation: "Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter 4, Principles of Managing the Acutely Poisoned or Overdosed Patient.", url: "https://www.mheducation.com/highered/mhp/product/goldfrank-s-toxicologic-emergencies-eleventh-edition.html" },
+  gfToxAlc: { id: "goldfrank-toxic-alcohols", citation: "Wiener SW. Toxic Alcohols. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Toxic Alcohols.", url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210275462" },
+  gfAntiepileptics: { id: "goldfrank-antiepileptics", citation: "Doyon S. Antiepileptics. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Antiepileptics.", url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210272255" },
+  gfMethylxanthines: { id: "goldfrank-methylxanthines", citation: "Hoffman RJ. Methylxanthines and Selective β2-Adrenergic Agonists. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Methylxanthines and Selective β2-Adrenergic Agonists.", url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210274122" },
+  gfMetHb: { id: "goldfrank-methemoglobin", citation: "Price DP. Methemoglobin Inducers. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Methemoglobin Inducers.", url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210264643" },
+  gfAntipsychotics: { id: "goldfrank-antipsychotics", citation: "Juurlink DN. Antipsychotics. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Antipsychotics.", url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210274542" },
+  gfAmphetamines: { id: "goldfrank-amphetamines", citation: "Spyres MB, Jang DH. Amphetamines. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Amphetamines.", url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210259500" },
+  gfFluid: { id: "goldfrank-fluid-electrolyte", citation: "Charney AN, Hoffman RS. Fluid, Electrolyte, and Acid-Base Principles. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Fluid, Electrolyte, and Acid-Base Principles.", url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210258523" },
+  gfNicotine: { id: "goldfrank-nicotine", citation: "Fernández D, Soghoian S. Nicotine. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th ed. McGraw Hill. 2019. Chapter: Nicotine.", url: "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=2569&sectionid=210260322" },
+  aacMdac: { id: "aact-mdac", citation: "American Academy of Clinical Toxicology, European Association of Poisons Centres and Clinical Toxicologists. Position statement and practice guidelines on the use of multi-dose activated charcoal in the treatment of acute poisoning. J Toxicol Clin Toxicol. 1999.", url: "https://pubmed.ncbi.nlm.nih.gov/10584586/" },
+  reith: { id: "reith-bb", citation: "Reith DM, Dawson AH, Epid D, Whyte IM, Buckley NA, Sayer GP. Relative toxicity of beta blockers in overdose. J Toxicol Clin Toxicol. 1996.", url: "https://pubmed.ncbi.nlm.nih.gov/8667464/" },
+  spiller: { id: "spiller-clonidine", citation: "Spiller HA, Klein-Schwartz W, Colvin JM, et al. Toxic clonidine ingestion in children. J Pediatr. 2005.", url: "https://pubmed.ncbi.nlm.nih.gov/15689921/" },
+  scharman: { id: "scharman-rhabdo", citation: "Scharman EJ, Troutman WG. Prevention of kidney injury following rhabdomyolysis: a systematic review. Ann Pharmacother. 2013.", url: "https://pubmed.ncbi.nlm.nih.gov/23324509/" },
+  sfe: { id: "sfe-hyponatraemia", citation: "Ball S, Barth J, Levy M, Society for Endocrinology Clinical Committee. Society for Endocrinology endocrine emergency guidance: emergency management of severe symptomatic hyponatraemia in adult patients. Endocr Connect. 2016.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5314809/" },
   tenenbein: { id: "tenenbein-screen", citation: "Tenenbein M. Do you really need that emergency drug screen? Clin Toxicol. 2009.", url: "https://pubmed.ncbi.nlm.nih.gov/19514875/" },
   glatstein: { id: "glatstein-octreotide", citation: "Glatstein M, Scolnik D, Bentur Y. Octreotide for the treatment of sulfonylurea poisoning. Clin Toxicol. 2012.", url: "https://pubmed.ncbi.nlm.nih.gov/23046209/" },
   extripMet: { id: "extrip-metformin", citation: "Calello DP, Liu KD, Wiegand TJ, et al. Extracorporeal treatment for metformin poisoning: systematic review and recommendations from the EXTRIP workgroup. Crit Care Med. 2015.", url: "https://pubmed.ncbi.nlm.nih.gov/25860205/" },
@@ -207,7 +221,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "A measured serum osmolality compared with one calculated from his sodium, glucose and urea gives the osmolal gap, which rises early after a toxic alcohol is drunk. A normal gap does not fully exclude one, and his kidney failure and lactate raise the gap a little on their own, so the result is read with those in mind. Beta hydroxybutyrate tests for ketones and a salicylate concentration for a different poison, so neither addresses alcohols. Calcium oxalate crystals appear late after ethylene glycol and are absent in many poisoned patients. Routine urine drug screens do not report methanol, ethylene glycol or their metabolites.",
         keyFeature: { topic: "tox", n: 3 },
-        source: "goldfrank",
+        source: "goldfrank-toxic-alcohols",
       },
       {
         id: "q4",
@@ -221,7 +235,7 @@ export const TOX_S53: Samp[] = [
         source: "extrip-metformin",
       },
     ],
-    sources: [S.extripMet, S.goldfrank],
+    sources: [S.extripMet, S.gfToxAlc],
     ...META,
   },
 
@@ -301,7 +315,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Carbamazepine is absorbed slowly, forms concretions and undergoes enterohepatic recirculation, so repeated doses of activated charcoal continue to bind drug in the gut and shorten its half life. She is rousable and can protect her airway at present. Gastric lavage 4 hours after ingestion carries aspiration risk with little yield. Repeated cathartics cause fluid and electrolyte loss without added benefit. Whole bowel irrigation is for iron, lithium, packets and modified release products. Carbamazepine is not appreciably cleared by alkalinizing the urine.",
         keyFeature: { topic: "tox", n: 6 },
-        source: "goldfrank",
+        source: "aact-mdac",
       },
       {
         id: "q2",
@@ -312,7 +326,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Carbamazepine promotes water retention through an antidiuretic effect, and the syndrome of inappropriate antidiuresis is the usual reason a patient taking it presents with a sodium of 128 mmol/L. She takes carbamazepine and nothing else, so a thiazide effect does not apply. Cerebral salt wasting follows intracranial injury or surgery, which she has not had. She has not vomited or been described as drinking large volumes of water. Pseudohyponatremia needs marked hyperlipidemia or paraproteinemia, and neither is described.",
         keyFeature: { topic: "tox", n: 3 },
-        source: "goldfrank",
+        source: "goldfrank-antiepileptics",
       },
       {
         id: "q3",
@@ -324,7 +338,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "She has already had one seizure, and her sodium of 128 mmol/L lowers the threshold for another. Absorption of carbamazepine is slow and erratic, so the concentration of 165 umol/L, about 39 mg/L, can still climb and deepen the coma to the point of apnea, which is why she is watched in a monitored bed. Acute hepatic failure, pancreatitis and marrow suppression with bleeding are described during long term carbamazepine use rather than in the hours after an acute overdose. Nothing in her results points to kidney injury, and thyroid storm is unrelated to this drug.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "extrip-carbamazepine",
       },
       {
         id: "q4",
@@ -339,7 +353,7 @@ export const TOX_S53: Samp[] = [
         source: "extrip-carbamazepine",
       },
     ],
-    sources: [S.goldfrank, S.extripCbz],
+    sources: [S.extripCbz, S.aacMdac, S.gfAntiepileptics],
     ...META,
   },
 
@@ -454,10 +468,10 @@ export const TOX_S53: Samp[] = [
         explanation:
           "The brother saw the empty bottles at home, and their labels name the alcohol and its concentration, which no test in this hospital reports quickly. A medication profile lists prescriptions and he takes none. Urine screens report drug classes and do not detect isopropanol or acetone. Repeating the osmolal gap tracks clearance without naming the product. The poison centre gives advice on management but depends on knowing what was swallowed.",
         keyFeature: { topic: "tox", n: 1 },
-        source: "goldfrank",
+        source: "goldfrank-ch4",
       },
     ],
-    sources: [S.slaughter, S.goldfrank],
+    sources: [S.slaughter, S.gfCh4],
     ...META,
   },
 
@@ -500,9 +514,9 @@ export const TOX_S53: Samp[] = [
         options: ["Adrenal insufficiency from stress", "Insulin overdose taken with tablets", "Propranolol block of glycogenolysis", "Sepsis with poor perfusion", "Sulfonylurea co-ingestion"],
         correct: 2,
         explanation:
-          "Beta blockade impairs catecholamine driven glycogenolysis and gluconeogenesis, so hypoglycemia is expected after a large propranolol ingestion, and she reports taking propranolol alone. She is afebrile at 36.7°C with a clear chest, which does not support sepsis. A sulfonylurea or insulin co-ingestion is possible in principle but nothing in the history or the home supply suggests either. Adrenal insufficiency would not appear abruptly 90 minutes after an ingestion.",
+          "Beta blockade impairs catecholamine driven glycogenolysis and gluconeogenesis, so hypoglycemia can occur after a large propranolol ingestion, and she reports taking propranolol alone. She is afebrile at 36.7°C with a clear chest, which does not support sepsis. A sulfonylurea or insulin co-ingestion is possible in principle but nothing in the history or the home supply suggests either. Adrenal insufficiency would not appear abruptly 90 minutes after an ingestion.",
         keyFeature: { topic: "tox", n: 3 },
-        source: "goldfrank",
+        source: "aha-2023",
       },
       {
         id: "q4",
@@ -513,10 +527,10 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Propranolol crosses into the brain because it is lipophilic, and seizures with a rapid fall in level of consciousness are described early after large ingestions, which matters in a patient who is already drowsy with a glucose of 3.2 mmol/L. Methemoglobinemia follows oxidizing agents such as benzocaine or dapsone. Pulmonary fibrosis is a long term amiodarone effect. Hyperkalemia is more typical of digoxin poisoning. Acute liver injury is not a feature of acute propranolol overdose.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "reith-bb",
       },
     ],
-    sources: [S.aha, S.goldfrank],
+    sources: [S.aha, S.reith],
     ...META,
   },
 
@@ -538,7 +552,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Two clonidine tablets are missing, but a toddler found with one blister pack may have reached others, and knowing every medication in the home decides what else to watch for and for how long. His immunization record and his family physician's name do not change management of an ingestion. A travel history does not bear on a witnessed exposure at home. The grandmother's pharmacy could confirm her prescriptions, but the question is what is within the child's reach.",
         keyFeature: { topic: "tox", n: 1 },
-        source: "goldfrank",
+        source: "goldfrank-ch4",
       },
       {
         id: "q2",
@@ -558,9 +572,9 @@ export const TOX_S53: Samp[] = [
         options: ["Hypertensive crisis with seizures", "Hyperthermia with rigidity", "Rhabdomyolysis with kidney injury", "Slow breathing with bradycardia", "Wide complex tachycardia"],
         correct: 3,
         explanation:
-          "Clonidine is a central alpha 2 agonist, and after the first hours it produces sedation, bradycardia and periods of shallow or slow breathing, which fits his pulse of 74/minute and 2 mm pupils. A brief early rise in blood pressure can occur from peripheral alpha stimulation, but a hypertensive crisis with seizures is not the expected course. Clonidine does not widen the QRS or drive a tachycardia. Hyperthermia with rigidity belongs to serotonin toxicity, and nothing suggests prolonged immobility or muscle injury.",
+          "Clonidine is a central alpha 2 agonist, and within the first 4 hours it can produce sedation, bradycardia and slow or shallow breathing, which fits his pulse of 74/minute and 2 mm pupils. A brief early rise in blood pressure can occur from peripheral alpha stimulation, but a hypertensive crisis with seizures is not the expected course. Clonidine does not widen the QRS or drive a tachycardia. Hyperthermia with rigidity belongs to serotonin toxicity, and nothing suggests prolonged immobility or muscle injury.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "spiller-clonidine",
       },
       {
         id: "q4",
@@ -574,7 +588,7 @@ export const TOX_S53: Samp[] = [
         source: "cag",
       },
     ],
-    sources: [S.goldfrank, S.cag],
+    sources: [S.cag, S.gfCh4, S.spiller],
     ...META,
   },
 
@@ -785,7 +799,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Theophylline raises circulating catecholamines, which stimulate beta 2 receptors and drive potassium into cells, so her total body potassium is near normal and the measured 2.8 mmol/L rebounds as the drug is cleared. Potassium chloride at 10 mmol/hour is a cautious rate, given with repeated measurement rather than in large loads. Insulin with dextrose and nebulized salbutamol would push the potassium lower. Magnesium is replaced when it is low but does not correct this shift. Bicarbonate would also move potassium into cells, and her pH is already 7.46.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "goldfrank",
+        source: "goldfrank-methylxanthines",
       },
       {
         id: "q3",
@@ -811,7 +825,7 @@ export const TOX_S53: Samp[] = [
         source: "extrip-theophylline",
       },
     ],
-    sources: [S.extripTheo, S.goldfrank],
+    sources: [S.extripTheo, S.gfMethylxanthines],
     ...META,
   },
 
@@ -1244,7 +1258,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Co-oximetry measures the methemoglobin fraction directly, which is what explains cyanosis with chocolate brown blood and a saturation that stays at 85% on high flow oxygen. The oxygen tension on a blood gas is normal in methemoglobinemia because dissolved oxygen is unaffected, so it misleads. Carboxyhemoglobin identifies a different pigment and there has been no fire or exhaust exposure. A chest radiograph, ECG and bubble study look for cardiac and pulmonary shunts, and his chest and heart sounds are normal.",
         keyFeature: { topic: "tox", n: 7 },
-        source: "goldfrank",
+        source: "goldfrank-methemoglobin",
       },
       {
         id: "q2",
@@ -1266,7 +1280,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Methemoglobin carries no oxygen and shifts the remaining hemoglobin so that it releases oxygen less readily, so as the fraction climbs tissue hypoxia produces lactic acidosis, dysrhythmia, seizures and coma. His glucose is 5.4 mmol/L, so hypoglycemic seizures do not apply. Potassium handling and lung water are not affected by the pigment itself, and raised intracranial pressure with papilledema is not part of this poisoning.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "goldfrank-methemoglobin",
       },
       {
         id: "q4",
@@ -1280,7 +1294,7 @@ export const TOX_S53: Samp[] = [
         source: "cag",
       },
     ],
-    sources: [S.goldfrank, S.cag],
+    sources: [S.cag, S.gfMetHb],
     ...META,
   },
 
@@ -1302,7 +1316,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "He responds to voice, breathes at 14/minute and maintains a saturation of 96% on room air, so quetiapine sedation is managed by watching the airway, the blood pressure and the ECG until it wears off. Immediate intubation is reserved for a patient who cannot protect the airway or ventilate. Flumazenil treats benzodiazepine sedation, which he has not taken, and can provoke seizures. Naloxone reverses opioids and his pupils are 6 mm. Physostigmine is used for agitated antimuscarinic delirium, and his depressed consciousness comes mainly from histamine blockade, which it does not reverse, while it risks bradycardia and seizures.",
         keyFeature: { topic: "tox", n: 2 },
-        source: "goldfrank",
+        source: "goldfrank-antipsychotics",
       },
       {
         id: "q2",
@@ -1313,7 +1327,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Quetiapine blocks muscarinic receptors as well as dopamine, histamine and alpha receptors, and the muscarinic effect produces dry flushed skin, large pupils, reduced bowel sounds, urinary retention and a pulse of 134/minute. Alpha blockade explains his blood pressure of 96/54 mmHg rather than the dry skin. Dopamine blockade produces movement disorders. Serotonin excess brings clonus and sweating, and his skin is dry. He took extra quetiapine rather than stopping it.",
         keyFeature: { topic: "tox", n: 3 },
-        source: "goldfrank",
+        source: "goldfrank-antipsychotics",
       },
       {
         id: "q3",
@@ -1325,7 +1339,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Absorption from up to 60 quetiapine tablets continues well beyond 3 hours, so the sedation that now leaves him mumbling to voice deepens further. Alpha blockade lowers vascular tone, and his blood pressure of 96/54 mmHg with a pulse of 134/minute is likely to fall further and need fluid. Dystonic reactions are uncommon with quetiapine because of its low affinity for dopamine receptors. Neuroleptic malignant syndrome develops over days and he is afebrile at 37.3°C. His QRS is 96 ms, and he takes no serotonergic drug. Pulmonary embolism is a later risk of immobility rather than an event of the next few hours.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "goldfrank-antipsychotics",
       },
       {
         id: "q4",
@@ -1336,10 +1350,10 @@ export const TOX_S53: Samp[] = [
         explanation:
           "His QTc is already 480 ms, and quetiapine prolongs repolarization further as the concentration peaks, so serial ECGs decide on monitoring, electrolyte correction and magnesium. A quetiapine concentration is a send out test that does not return in time. A urine drug screen reports classes he is not suspected of taking. Head CT is for focal signs or an unexplained coma. Ammonia is measured when valproate or liver failure is suspected, and neither applies.",
         keyFeature: { topic: "tox", n: 7 },
-        source: "goldfrank",
+        source: "goldfrank-antipsychotics",
       },
     ],
-    sources: [S.goldfrank],
+    sources: [S.gfAntipsychotics],
     ...META,
   },
 
@@ -1384,7 +1398,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Ethanol and benzodiazepine sedation should lighten as the hours pass, so deterioration at 2 hours with a respiratory rate of 8/minute and pupils narrowing from 3 mm to 2 mm points to a second agent, and that pattern is opioid. An unwitnessed seizure would not constrict the pupils. Carbon dioxide retention follows the hypoventilation rather than starting it. Ethanol at 42 mmol/L falls steadily with time rather than deepening.",
         keyFeature: { topic: "tox", n: 3 },
-        source: "goldfrank",
+        source: "goldfrank-ch3",
       },
       {
         id: "q4",
@@ -1398,7 +1412,7 @@ export const TOX_S53: Samp[] = [
         source: "cag",
       },
     ],
-    sources: [S.penninga, S.goldfrank, S.cag],
+    sources: [S.penninga, S.cag, S.gfCh3],
     ...META,
   },
 
@@ -1476,9 +1490,9 @@ export const TOX_S53: Samp[] = [
         options: ["Active cooling with sedation", "Dantrolene 2.5 mg/kg IV", "Haloperidol 5 mg IM alone", "Physical restraint and observation", "Propranolol 1 mg IV"],
         correct: 0,
         explanation:
-          "A rectal temperature of 40.4°C with agitation is the finding that will kill him first, and benzodiazepine sedation with active external cooling lowers heat production and heat load together. Continued physical restraint without sedation drives muscle heat and worsens the creatine kinase of 42 000 U/L. Haloperidol alone lowers the seizure threshold and impairs heat loss. Dantrolene treats malignant hyperthermia from volatile anesthetics. Propranolol leaves alpha stimulation unopposed at a blood pressure of 176/104 mmHg.",
+          "A rectal temperature of 40.4°C with agitation is the finding that will kill him first, and benzodiazepine sedation with active external cooling lowers heat production and heat load together. Continued physical restraint without sedation drives muscle heat and worsens the creatine kinase of 42 000 U/L. Haloperidol alone may control the agitation, but it leaves a temperature of 40.4°C without the rapid external cooling he needs. Dantrolene treats malignant hyperthermia from volatile anesthetics. Propranolol treats neither the agitation nor the heat, and adequate sedation usually controls a blood pressure of 176/104 mmHg without antihypertensives.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "goldfrank",
+        source: "aha-2023",
       },
       {
         id: "q2",
@@ -1489,7 +1503,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "His creatine kinase of 42 000 U/L and creatinine of 190 umol/L put him at risk of a rising potassium, which is already 5.6 mmol/L, so repeated potassium measurement with an ECG decides on calcium, insulin and dialysis. A urine screen confirms the drug he has already described and changes nothing. Head CT is for focal signs or persistent confusion after cooling and sedation. Blood cultures and a chest film address infection, which his history of 3 days of stimulant use and restraint does not point to.",
         keyFeature: { topic: "tox", n: 7 },
-        source: "goldfrank",
+        source: "goldfrank-amphetamines",
       },
       {
         id: "q3",
@@ -1500,7 +1514,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Myoglobin released from injured muscle obstructs and injures tubules, and his creatinine has already reached 190 umol/L with a potassium of 5.6 mmol/L, so worsening kidney injury with hyperkalemia is the expected complication. Stimulant use can cause bowel ischemia and arterial events, but neither fits a soft presentation with no abdominal or focal findings. Cerebral venous thrombosis and pancreatitis are not features of this picture, and he has no history of aspiration.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "goldfrank-amphetamines",
       },
       {
         id: "q4",
@@ -1510,12 +1524,12 @@ export const TOX_S53: Samp[] = [
         options: ["Furosemide 40 mg IV bolus", "Hemodialysis without delay", "Intravenous crystalloid infusion", "Mannitol 25 g IV once", "Sodium bicarbonate 100 mmol boluses"],
         correct: 2,
         explanation:
-          "Volume repletion with crystalloid restores renal perfusion and flushes myoglobin through the tubules, and 20 mL of dark urine in 2 hours after 3 days without food or sleep shows he is dry. Furosemide lowers intravascular volume further in a patient who is already under filled. Mannitol has not been shown to add benefit and risks volume shifts. Bicarbonate boluses are given to alkalinize urine only once volume is restored. Dialysis is for refractory hyperkalemia, acidosis or anuria rather than a first measure.",
+          "Volume repletion with crystalloid restores renal perfusion and flushes myoglobin through the tubules, and 20 mL of dark urine in 2 hours after 3 days of stimulant use without sleep shows he is dry. Furosemide lowers intravascular volume further in a patient who is already under filled. Neither mannitol nor sodium bicarbonate has been shown to add benefit over fluid alone, and bicarbonate is kept for systemic acidosis. Dialysis is for refractory hyperkalemia, acidosis or anuria rather than a first measure.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "goldfrank",
+        source: "scharman-rhabdo",
       },
     ],
-    sources: [S.goldfrank],
+    sources: [S.aha, S.gfAmphetamines, S.scharman],
     ...META,
   },
 
@@ -1595,7 +1609,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "She has had a seizure and remains confused with a sodium of 118 mmol/L, which is symptomatic hyponatremia and calls for a small bolus of hypertonic saline to raise the sodium by a few millimoles and pull water out of brain cells. Isotonic saline corrects too slowly and can worsen the sodium when antidiuretic hormone is high. Fluid restriction alone is for stable patients. Furosemide adds losses without correcting the sodium quickly. Tolvaptan acts over hours to days.",
         keyFeature: { topic: "tox", n: 4 },
-        source: "goldfrank",
+        source: "sfe-hyponatraemia",
       },
       {
         id: "q2",
@@ -1606,7 +1620,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Paired urine sodium and osmolality separate free water intake with appropriate dilute urine from the inappropriate antidiuresis that ecstasy provokes, and that distinction sets how fast and how far her sodium of 118 mmol/L should be corrected. A urine screen confirms an exposure she has already described. Cortisol and thyroid testing look for endocrine causes that a night at a festival does not suggest. A 24 hour urine volume is not available in time to guide care.",
         keyFeature: { topic: "tox", n: 7 },
-        source: "goldfrank",
+        source: "sfe-hyponatraemia",
       },
       {
         id: "q3",
@@ -1617,7 +1631,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Water has moved into brain cells at a sodium of 118 mmol/L, and she has already seized and remains confused with a headache, so further swelling with brainstem compression is the immediate threat. Liver injury after ecstasy develops over days and she has no jaundice. Malignant hyperthermia follows volatile anesthetics and succinylcholine. Thrombocytopenia with bleeding and pulmonary fibrosis are not part of this presentation.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "sfe-hyponatraemia",
       },
       {
         id: "q4",
@@ -1628,10 +1642,10 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Twice her sodium of 118 plus a glucose of 6.2 and a urea of 3.6 gives a calculated osmolality of 245.8 mmol/kg, within about 2 mmol/kg of the measured 248 mmol/kg, so the low value reflects dilution by the water she drank rather than an unmeasured substance. A toxic alcohol or ethanol co-ingestion raises measured osmolality above the calculated value instead of lowering it. Hyperglycemia and a high urea also raise it, and her glucose is 6.2 mmol/L with a urea of 3.6 mmol/L.",
         keyFeature: { topic: "tox", n: 3 },
-        source: "goldfrank",
+        source: "goldfrank-fluid-electrolyte",
       },
     ],
-    sources: [S.goldfrank],
+    sources: [S.sfe, S.gfFluid],
     ...META,
   },
 
@@ -1712,7 +1726,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Nicotine crosses skin readily, and liquid remains on her face, hands and clothing, so taking the clothes off and washing the skin stops a source of continuing absorption. Charcoal in a child who has vomited three times and is drooling risks aspiration. Lavage and nasogastric aspiration provoke vomiting of a liquid that is already absorbed. Whole bowel irrigation is for packets and modified release tablets rather than a swallowed liquid.",
         keyFeature: { topic: "tox", n: 6 },
-        source: "goldfrank",
+        source: "goldfrank-nicotine",
       },
       {
         id: "q2",
@@ -1723,7 +1737,7 @@ export const TOX_S53: Samp[] = [
         explanation:
           "Nicotine first stimulates autonomic ganglia, which explains her pulse of 164/minute, vomiting and drooling, and then blocks them, so bradycardia, weakness and respiratory muscle failure follow in significant exposures. Her glucose is 5.6 mmol/L, and hypoglycemia is not a feature of nicotine poisoning. Methemoglobinemia follows oxidizing agents. A stroke from hypertension is not a described course in a toddler, and nicotine does not produce severe hyperthermia.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "goldfrank-nicotine",
       },
       {
         id: "q3",
@@ -1745,10 +1759,10 @@ export const TOX_S53: Samp[] = [
         explanation:
           "She is symptomatic with vomiting, drooling and a pulse of 164/minute at 30 minutes, and the later phase of bradycardia and weakness can appear several hours after a concentrated liquid exposure, so she stays on a monitor for at least 6 hours. Discharge now or after 1 or 2 hours would send home a child before that phase could declare itself. An outpatient referral does not provide observation today.",
         keyFeature: { topic: "tox", n: 5 },
-        source: "goldfrank",
+        source: "goldfrank-nicotine",
       },
     ],
-    sources: [S.goldfrank, S.cag],
+    sources: [S.cag, S.gfNicotine],
     ...META,
   },
 

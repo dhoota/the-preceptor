@@ -30,7 +30,10 @@ const S = {
   hoffman: { id: "hoffman-commissure", citation: "Hoffman KA, Trigger CC. Pediatric oral commissure burn. Clin Pract Cases Emerg Med. 2017.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5965444/" },
   motov: { id: "motov-ketamine", citation: "Motov S, Rockoff B, Cohen V, and colleagues. Intravenous subdissociative-dose ketamine versus morphine for analgesia in the emergency department: a randomized controlled trial. Ann Emerg Med. 2015.", url: "https://pubmed.ncbi.nlm.nih.gov/25817884/" },
   streitz: { id: "merck-escharotomy", citation: "Streitz MJ. How to do burn escharotomy. Merck Manual Professional Edition. Revised 2025.", url: "https://www.merckmanuals.com/professional/injuries-poisoning/how-to-do-skin-soft-tissue-and-minor-surgical-procedures/how-to-do-burn-escharotomy" },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023." },
+  rosenCh54: { id: "rosen-ch54", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 54, Thermal Injuries.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  niceHead: { id: "nice-head-injury", citation: "National Institute for Health and Care Excellence. Head injury: assessment and early management. NICE guideline NG232. 2023.", url: "https://www.nice.org.uk/guidance/ng232" },
+  osler: { id: "osler-baux", citation: "Osler T, Glance LG, Hosmer DW. Simplified estimates of the probability of death after burn injuries: extending and updating the Baux score. J Trauma. 2010.", url: "https://pubmed.ncbi.nlm.nih.gov/20038856/" },
+  alyahya: { id: "alyahya-apap-screen", citation: "Alyahya B, Alalshaikh A, Almohawes M, and colleagues. The clinical value of screening for acetaminophen in all patients with intentional overdose or altered mental status suspected to be secondary to overdose. Front Pharmacol. 2025.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12343594/" },
   atsdrPhenol: { id: "atsdr-phenol", citation: "Agency for Toxic Substances and Disease Registry. Medical management guidelines for phenol. Centers for Disease Control and Prevention. Last reviewed 2014.", url: "https://wwwn.cdc.gov/TSp/MMG/MMGDetails.aspx?mmgid=144&toxid=27" },
   levis: { id: "levis-acs-burns", citation: "Levis C, Ali F. Significance of early diagnosis of abdominal compartment syndrome in major burns. Can J Plast Surg. 2006.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2539035/" },
 } satisfies Record<string, Source>;
@@ -213,7 +216,7 @@ export const BURNS_S26: Samp[] = [
         explanation:
           "She fell while taking apixaban, has a bruise over the temple and a GCS of 14, so intracranial hemorrhage must be excluded with a noncontrast CT of the head. Associated trauma is looked for in every burned patient, and here it may change anticoagulation now. An echocardiogram or Holter monitor may later help explain the light-headedness, but neither is urgent. Carotid Doppler and EEG do not fit a fall on standing.",
         keyFeature: { topic: "burns", n: 1 },
-        source: "rosen",
+        source: "nice-head-injury",
       },
       {
         id: "q4",
@@ -228,7 +231,7 @@ export const BURNS_S26: Samp[] = [
         source: "aba-referral",
       },
     ],
-    sources: [S.bosch, S.rosen, S.abaRef],
+    sources: [S.bosch, S.abaRef, S.niceHead],
     ...META,
   },
   {
@@ -853,7 +856,7 @@ export const BURNS_S26: Samp[] = [
         explanation:
           "Once cooled, tar is removed with a lipophilic agent such as mineral oil or petrolatum, applied and left under a dressing to dissolve the tar over hours. Peeling or scrubbing tears off viable skin, deepens the wound and causes severe pain. Acetone and other solvents are toxic to tissue. Hot water would burn the skin again.",
         keyFeature: { topic: "burns", n: 3 },
-        source: "rosen",
+        source: "rosen-ch54",
       },
       {
         id: "q4",
@@ -867,7 +870,7 @@ export const BURNS_S26: Samp[] = [
         source: "aba-referral",
       },
     ],
-    sources: [S.abaPain, S.motov, S.rosen, S.abaRef],
+    sources: [S.abaPain, S.motov, S.abaRef, S.rosenCh54],
     ...META,
   },
   {
@@ -1000,7 +1003,7 @@ export const BURNS_S26: Samp[] = [
         explanation:
           "The Baux score is age plus percent TBSA burned, 79 + 27 = 106, which predicts a high risk of death and should inform an early goals of care conversation. 123 adds 17 points for inhalation injury, as in the revised Baux score, but she has no signs of inhalation injury. 79 uses age alone. 97 adds only the 18% of the anterior trunk and leaves out the arms. 133 adds the burn size twice.",
         keyFeature: { topic: "burns", n: 5 },
-        source: "rosen",
+        source: "osler-baux",
       },
       {
         id: "q2",
@@ -1036,7 +1039,7 @@ export const BURNS_S26: Samp[] = [
         source: "aba-referral",
       },
     ],
-    sources: [S.rosen, S.abaResus, S.abaPain, S.abaRef],
+    sources: [S.abaResus, S.abaPain, S.abaRef, S.osler],
     ...META,
   },
   {
@@ -1067,7 +1070,7 @@ export const BURNS_S26: Samp[] = [
         explanation:
           "Every patient who self-harms, and who will not say what else he took, needs an acetaminophen level, because early acetaminophen poisoning causes no symptoms and is treatable only if found in time. Carboxyhemoglobin matters after smoke exposure in an enclosed space, and he has no smoke or airway findings. A small burn does not cause rhabdomyolysis. He is alert with no head injury in the history, so head CT is not indicated. Lipase does not change his care.",
         keyFeature: { topic: "burns", n: 1 },
-        source: "rosen",
+        source: "alyahya-apap-screen",
       },
       {
         id: "q3",
@@ -1082,7 +1085,7 @@ export const BURNS_S26: Samp[] = [
         source: "ontario-mha",
       },
     ],
-    sources: [S.abaPain, S.rosen, S.mha],
+    sources: [S.abaPain, S.mha, S.alyahya],
     ...META,
   },
   {
@@ -1159,7 +1162,7 @@ export const BURNS_S26: Samp[] = [
         explanation:
           "A flash burn that removed his eyebrows and eyelashes may also have burned the corneas, and fluorescein staining should be done early, before lid swelling closes the eyes and makes the examination much harder. Fundoscopy and visual fields look for other problems and do not detect corneal burns. Audiometry is not a resuscitation bay test. Rectal tone is part of spinal assessment and he has no reported spinal injury.",
         keyFeature: { topic: "burns", n: 1 },
-        source: "rosen",
+        source: "rosen-ch54",
       },
       {
         id: "q3",
@@ -1174,7 +1177,7 @@ export const BURNS_S26: Samp[] = [
         source: "aba-pain",
       },
     ],
-    sources: [S.walker, S.rosen, S.abaPain],
+    sources: [S.walker, S.abaPain, S.rosenCh54],
     ...META,
   },
   {

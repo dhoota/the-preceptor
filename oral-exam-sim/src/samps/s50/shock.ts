@@ -1084,7 +1084,7 @@ export const SHOCK_SAMPS_S50: Samp[] = [
           topic: "shock",
           n: 5
         },
-        source: "rosen"
+        source: "reith-bb"
       },
       {
         id: "q2",
@@ -1124,12 +1124,12 @@ export const SHOCK_SAMPS_S50: Samp[] = [
           "valproic acid 40 mg/kg IV"
         ],
         correct: 2,
-        explanation: "A benzodiazepine such as lorazepam is the first treatment for a toxin induced seizure. Phenytoin is a sodium channel blocker and can worsen conduction in a sodium channel blocking overdose, and it works poorly for toxic seizures. Levetiracetam and valproic acid are second-line agents after a benzodiazepine. Carbamazepine is oral and has no role in an active seizure.",
+        explanation: "A benzodiazepine such as lorazepam is the first treatment for a toxin induced seizure. Phenytoin works poorly for toxin induced seizures and is not a first treatment for them. Levetiracetam and valproic acid are second-line agents after a benzodiazepine. Carbamazepine is oral and has no role in an active seizure.",
         keyFeature: {
           topic: "shock",
           n: 8
         },
-        source: "rosen"
+        source: "rosen-ch142"
       },
       {
         id: "q4",
@@ -1149,7 +1149,7 @@ export const SHOCK_SAMPS_S50: Samp[] = [
           topic: "shock",
           n: 8
         },
-        source: "rosen"
+        source: "dc-hypoglycemia"
       }
     ],
     sources: [
@@ -1158,8 +1158,19 @@ export const SHOCK_SAMPS_S50: Samp[] = [
         citation: "Rotella JA, Greene SL, Koutsogiannis Z, et al. Treatment for beta-blocker poisoning. A systematic review. Clin Toxicol (Phila). 2020."
       },
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023."
+        id: "reith-bb",
+        citation: "Reith DM, Dawson AH, Epid D, Whyte IM, Buckley NA, Sayer GP. Relative toxicity of beta blockers in overdose. J Toxicol Clin Toxicol. 1996.",
+        url: "https://pubmed.ncbi.nlm.nih.gov/8667464/"
+      },
+      {
+        id: "rosen-ch142",
+        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 142, Cardiovascular Drugs.",
+        url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"
+      },
+      {
+        id: "dc-hypoglycemia",
+        citation: "Diabetes Canada Clinical Practice Guidelines Expert Committee, Yale JF, Paty B, Senior PA. Hypoglycemia. Can J Diabetes. 2018.",
+        url: "https://guidelines.diabetes.ca/cpg/chapter14"
       }
     ],
     ...META,
@@ -1234,7 +1245,7 @@ export const SHOCK_SAMPS_S50: Samp[] = [
           topic: "shock",
           n: 7
         },
-        source: "rosen"
+        source: "ecbc-tca"
       },
       {
         id: "q4",
@@ -1264,8 +1275,9 @@ export const SHOCK_SAMPS_S50: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/26159649/"
       },
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023."
+        id: "ecbc-tca",
+        citation: "Purssell R. Tricyclic antidepressant overdose. Emergency Care BC clinical summary. Last reviewed 2018.",
+        url: "https://emergencycarebc.ca/clinical_resource/clinical-summary/tricyclic-antidepressant-overdose-2/"
       }
     ],
     ...META,
@@ -1623,12 +1635,12 @@ export const SHOCK_SAMPS_S50: Samp[] = [
           "nitrofurantoin PO"
         ],
         correct: 0,
-        explanation: "Ceftriaxone IV treats the gram negative organisms that cause pyelonephritis and is safe in pregnancy. Fluoroquinolones such as ciprofloxacin and tetracyclines such as doxycycline are avoided in pregnancy. Nitrofurantoin and fosfomycin do not reach adequate levels in kidney tissue or blood, so they are used for cystitis, not for pyelonephritis with septic shock.",
+        explanation: "Ceftriaxone IV treats the gram negative organisms that cause pyelonephritis and is a first-line choice in pregnancy. Fluoroquinolones such as ciprofloxacin and tetracyclines such as doxycycline are generally avoided in pregnancy when other options exist. Nitrofurantoin and fosfomycin do not reach adequate levels in kidney tissue, so they are used for cystitis, not for pyelonephritis with septic shock.",
         keyFeature: {
           topic: "shock",
           n: 4
         },
-        source: "rosen"
+        source: "acog-uti"
       },
       {
         id: "q4",
@@ -1682,8 +1694,9 @@ export const SHOCK_SAMPS_S50: Samp[] = [
         url: "https://pubmed.ncbi.nlm.nih.gov/30684460/"
       },
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023."
+        id: "acog-uti",
+        citation: "American College of Obstetricians and Gynecologists. Urinary tract infections in pregnant individuals. Clinical Consensus No. 4. Obstet Gynecol. 2023.",
+        url: "https://www.acog.org/clinical/clinical-guidance/clinical-consensus/articles/2023/08/urinary-tract-infections-in-pregnant-individuals"
       }
     ],
     ...META,
@@ -2936,7 +2949,7 @@ export const SHOCK_SAMPS_S50: Samp[] = [
           topic: "shock",
           n: 2
         },
-        source: "rosen"
+        source: "rosen-ch80"
       },
       {
         id: "q2",
@@ -2986,8 +2999,9 @@ export const SHOCK_SAMPS_S50: Samp[] = [
     ],
     sources: [
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023."
+        id: "rosen-ch80",
+        citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 80, Gastroenteritis.",
+        url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html"
       },
       {
         id: "dc-sickday",
@@ -3031,7 +3045,7 @@ export const SHOCK_SAMPS_S50: Samp[] = [
           topic: "shock",
           n: 2
         },
-        source: "rosen"
+        source: "acg-pancreatitis"
       },
       {
         id: "q2",
@@ -3079,8 +3093,9 @@ export const SHOCK_SAMPS_S50: Samp[] = [
         citation: "de-Madaria E, et al. Aggressive or moderate fluid resuscitation in acute pancreatitis. N Engl J Med. 2022."
       },
       {
-        id: "rosen",
-        citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023."
+        id: "acg-pancreatitis",
+        citation: "Tenner S, Vege SS, Sheth SG, and colleagues. American College of Gastroenterology guidelines: management of acute pancreatitis. Am J Gastroenterol. 2024.",
+        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13221274/"
       }
     ],
     ...META,

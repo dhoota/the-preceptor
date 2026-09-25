@@ -8,7 +8,13 @@ const META = { topic: "msk", reviewed: false, author: "Draft for review by Arjan
 const S = {
   oar94: { id: "ottawa-ankle", citation: "Stiell IG and colleagues. Implementation of the Ottawa ankle rules. JAMA. 1994.", url: "https://pubmed.ncbi.nlm.nih.gov/8114236/" },
   okr: { id: "ottawa-knee", citation: "Stiell IG and colleagues. Prospective validation of a decision rule for the use of radiography in acute knee injuries. JAMA. 1996.", url: "https://pubmed.ncbi.nlm.nih.gov/8594242/" },
-  rosen: { id: "rosen", citation: "Walls RM, Hockberger RS, Gausche-Hill M, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023." },
+  rosenCh43: { id: "rosen-ch43", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 43, Wrist and Forearm Injuries.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh44: { id: "rosen-ch44", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 44, Humerus and Elbow Injuries.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rosenCh49: { id: "rosen-ch49", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 49, Ankle and Foot Injuries.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
+  rchPulled: { id: "rch-pulled-elbow", citation: "Royal Children's Hospital Melbourne. Clinical practice guideline: pulled elbow. Updated 2023.", url: "https://www.rch.org.au/clinicalguide/guideline_index/Pulled_elbow/" },
+  rchPulledParent: { id: "rch-pulled-elbow-parent", citation: "Royal Children's Hospital Melbourne. Kids Health Info fact sheet: pulled elbow. Reviewed 2018.", url: "https://www.rch.org.au/kidsinfo/fact_sheets/Pulled_elbow/" },
+  boastArterial: { id: "boast-arterial", citation: "British Orthopaedic Association Trauma Committee. BOAST: diagnosis and management of arterial injuries associated with extremity fractures and dislocations. Injury. 2021.", url: "https://www.boa.ac.uk/resource/boast-6-pdf.html" },
+  akhCast: { id: "akh-cast-care", citation: "SickKids AboutKidsHealth. Cast care: arm or leg cast. Last updated 2019.", url: "https://www.aboutkidshealth.ca/cast" },
   ross: { id: "ross-lisfranc", citation: "Ross G and colleagues. Plantar ecchymosis sign: a clinical aid to diagnosis of occult Lisfranc tarsometatarsal injuries. J Orthop Trauma. 1996.", url: "https://pubmed.ncbi.nlm.nih.gov/8932671/" },
   sherief: { id: "sherief-lisfranc", citation: "Sherief TI and colleagues. Lisfranc injury: how frequently does it get missed? And how can we improve? Injury. 2007.", url: "https://pubmed.ncbi.nlm.nih.gov/17214988/" },
   fresno: { id: "fresno-quebec", citation: "Emond M and colleagues. Selective prereduction radiography in anterior shoulder dislocation: the Fresno-Quebec rule. J Emerg Med. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/29861274/" },
@@ -165,7 +171,7 @@ export const MSK_S29: Samp[] = [
         explanation:
           "The dorsalis pedis artery dives into the sole between the bases of the first and second metatarsals, exactly where a Lisfranc injury displaces bone. A displaced injury can tear it or cause a compartment syndrome of the foot, so the pulse is rechecked after any swelling or manipulation. The common peroneal nerve is at risk at the fibular neck. The posterior tibial artery and tibialis posterior tendon pass behind the medial malleolus. The sural nerve runs along the lateral heel.",
         keyFeature: { topic: "msk", n: 1 },
-        source: "rosen",
+        source: "rosen-ch49",
       },
       {
         id: "q4",
@@ -181,7 +187,7 @@ export const MSK_S29: Samp[] = [
         source: "ross-lisfranc",
       },
     ],
-    sources: [S.ross, S.sherief, S.rosen],
+    sources: [S.ross, S.sherief, S.rosenCh49],
     ...META,
   },
   {
@@ -371,7 +377,7 @@ export const MSK_S29: Samp[] = [
         explanation:
           "A sudden pull on the hand of a 2-year-old, followed at once by refusal to use the arm held pronated at his side, is the typical story of radial head subluxation. The annular ligament slips over the radial head. There is no swelling, bruising or bony tenderness, which argues against every fracture listed. A clavicle or distal radius fracture would be tender at that site. Lateral condyle and olecranon fractures follow falls and cause elbow swelling.",
         keyFeature: { topic: "msk", n: 2 },
-        source: "rosen",
+        source: "rch-pulled-elbow",
       },
       {
         id: "q2",
@@ -393,7 +399,7 @@ export const MSK_S29: Samp[] = [
         explanation:
           "Swelling or bruising at the elbow suggests a fracture, such as a supracondylar or lateral condyle fracture, and a manipulation should wait for films. A subluxed radial head causes no swelling. An arm held against the trunk, a pronated forearm, crying at the moment of the pull and refusal to reach for a toy are all part of the usual picture. With a clear pull mechanism and none of these warning signs, reduction can be tried without films.",
         keyFeature: { topic: "msk", n: 5 },
-        source: "rosen",
+        source: "rch-pulled-elbow",
       },
       {
         id: "q4",
@@ -403,12 +409,12 @@ export const MSK_S29: Samp[] = [
         options: ["Avoid lifting him by the hands", "Collar and cuff sling for 1 week", "Elbow X-rays at a follow-up visit", "Fracture clinic review in 1 week", "Posterior splint for 10 days"],
         correct: 0,
         explanation:
-          "He reaches with the arm within 15 minutes, which confirms the reduction. The subluxation often recurs in the preschool years, so the father should avoid lifting or swinging him by the hands or wrists. No immobilization is needed after a successful reduction, so a sling or splint adds nothing. No X-ray is needed when function returns. Fracture clinic review is not needed, because there is no fracture and the arm now works normally.",
+          "He reaches with the arm within 15 minutes, which confirms the reduction. The subluxation can happen again, mostly in children under 5, so the father should avoid lifting or swinging him by the hands or wrists. No immobilization is needed after a successful reduction, so a sling or splint adds nothing. No X-ray is needed when function returns. Fracture clinic review is not needed, because there is no fracture and the arm now works normally.",
         keyFeature: { topic: "msk", n: 8 },
-        source: "rosen",
+        source: "rch-pulled-elbow-parent",
       },
     ],
-    sources: [S.rosen, S.krul],
+    sources: [S.krul, S.rchPulled, S.rchPulledParent],
     ...META,
   },
   {
@@ -439,7 +445,7 @@ export const MSK_S29: Samp[] = [
         explanation:
           "Tingling in the thumb, index and middle fingers with two-point discrimination widened to 10 mm in the index finger is acute median nerve compression in the carpal tunnel. The displaced carpus and the swelling crowd the tunnel. The anterior interosseous nerve is motor only and causes no sensory loss. A brachial plexus stretch needs a traction mechanism and causes more proximal deficits. The superficial radial nerve supplies the dorsal first web space. Ulnar tunnel compression affects the little and ring fingers.",
         keyFeature: { topic: "msk", n: 1 },
-        source: "rosen",
+        source: "rosen-ch43",
       },
       {
         id: "q3",
@@ -461,10 +467,10 @@ export const MSK_S29: Samp[] = [
         explanation:
           "The median nerve is the nerve at risk, and two-point discrimination in the index finger pulp was 10 mm before reduction. Repeating it after reduction gives an objective comparison and shows whether the nerve is improving. Finger abduction and little finger sensation test the ulnar nerve. Wrist extension and dorsal first web space sensation test the radial nerve. These findings are worth recording but do not track the injured median nerve.",
         keyFeature: { topic: "msk", n: 5 },
-        source: "rosen",
+        source: "rosen-ch43",
       },
     ],
-    sources: [S.herzberg, S.rosen],
+    sources: [S.herzberg, S.rosenCh43],
     ...META,
   },
   {
@@ -676,7 +682,7 @@ export const MSK_S29: Samp[] = [
         explanation:
           "A coaptation splint runs from the axilla around the elbow and up to the shoulder, and with a sling or collar and cuff it lets gravity help align a humeral shaft fracture. A posterior long arm splint stops at the upper arm and does not control the shaft. A shoulder immobilizer alone holds the arm against the chest without supporting the fracture. A forearm sugar tong splint controls the wrist and forearm only. A volar wrist splint supports a wrist drop but does not treat the fracture.",
         keyFeature: { topic: "msk", n: 8 },
-        source: "rosen",
+        source: "rosen-ch44",
       },
       {
         id: "q4",
@@ -691,7 +697,7 @@ export const MSK_S29: Samp[] = [
         source: "shao-radial",
       },
     ],
-    sources: [S.shao, S.rosen],
+    sources: [S.shao, S.rosenCh44],
     ...META,
   },
   {
@@ -745,10 +751,10 @@ export const MSK_S29: Samp[] = [
         explanation:
           "An open, depressed intra-articular fracture needs orthopedic surgery for debridement of the wound and the fracture, then elevation and fixation of the plateau. The surgeon is called from the emergency department. Antibiotics alone do not clear contamination from the fracture. Bedside irrigation cannot reach the fracture and a discharge would delay surgery. An immobilizer and fracture clinic treat a closed, undisplaced fracture. Closing the wound with oral antibiotics seals contamination in over the fracture.",
         keyFeature: { topic: "msk", n: 7 },
-        source: "rosen",
+        source: "boast-open",
       },
     ],
-    sources: [S.ramponi, S.gardner, S.rosen],
+    sources: [S.ramponi, S.gardner, S.boast],
     ...META,
   },
   {
@@ -1074,10 +1080,10 @@ export const MSK_S29: Samp[] = [
         explanation:
           "After reduction of a stable elbow, a well padded posterior above elbow splint at about 90 degrees protects the joint and the fragment until orthopedic review within about a week, where fixation or early motion is decided. A collar and cuff or an elastic bandage with a sling does not protect the reduction. A cast in extension is uncomfortable, risks stiffness and cannot accommodate swelling. A hinged brace is a later step in rehabilitation.",
         keyFeature: { topic: "msk", n: 8 },
-        source: "rosen",
+        source: "rosen-ch44",
       },
     ],
-    sources: [S.gottschalk, S.rosen],
+    sources: [S.gottschalk, S.rosenCh44],
     ...META,
   },
   {
@@ -1095,9 +1101,9 @@ export const MSK_S29: Samp[] = [
         options: ["Arterial duplex ultrasound", "CT angiography of the forearm", "Gentle realignment before X-rays", "Urgent X-rays then reduction", "Vascular surgery consult first"],
         correct: 2,
         explanation:
-          "A pale, pulseless hand beside a grossly angulated fracture is often caused by kinking of the artery, and it improves when the limb is gently realigned. Realignment is done before X-rays, with pulses and capillary refill checked before and after. Waiting for films, duplex, CT angiography or a vascular consult prolongs ischemia when the likely cause can be corrected at the bedside. If the pulse does not return after realignment, those steps follow.",
+          "A pale, pulseless hand beside a grossly angulated fracture may be caused by kinking of the artery, which can improve when the limb is gently realigned. Realignment is done before X-rays, with pulses and capillary refill checked before and after. Waiting for films, duplex, CT angiography or a vascular consult prolongs ischemia when the likely cause can be corrected at the bedside. If the pulse does not return after realignment, those steps follow.",
         keyFeature: { topic: "msk", n: 5 },
-        source: "rosen",
+        source: "boast-arterial",
       },
       {
         id: "q2",
@@ -1135,7 +1141,7 @@ export const MSK_S29: Samp[] = [
         source: "east-open-fracture",
       },
     ],
-    sources: [S.east, S.boast, S.rosen, S.gustilo],
+    sources: [S.east, S.boast, S.gustilo, S.boastArterial],
     ...META,
   },
   {
@@ -1187,12 +1193,12 @@ export const MSK_S29: Samp[] = [
         options: ["Cut the cast at home if tight", "Hang the arm down to ease stiffness", "Keep the arm at heart level or higher", "Remove the cast after 1 week", "Return for pain despite analgesia", "Use a stick to scratch under the cast", "Wait until the next clinic visit for pain"],
         correct: [2, 4],
         explanation:
-          "For routine cast care, families should raise the limb to heart level or a little above in the first days to limit swelling and return at once for pain that analgesia does not control, or for numbness or colour change in the fingers. These catch compartment syndrome early. Letting the arm hang down increases swelling inside the cast. Once compartment syndrome is suspected, the limb is kept at heart level instead. Families should not cut the cast themselves, remove it early or push objects under it. Waiting until the clinic visit for rising pain is how this complication is missed.",
+          "For routine cast care, families should keep the limb raised, for example on a pillow while resting, to limit swelling. They should return at once for pain that analgesia does not control, or for numbness or colour change in the fingers. These catch compartment syndrome early. Letting the arm hang down increases swelling inside the cast. Once compartment syndrome is suspected, the limb is kept at heart level instead. Families should not cut the cast themselves, remove it early or push objects under it. Waiting until the clinic visit for rising pain is how this complication is missed.",
         keyFeature: { topic: "msk", n: 8 },
-        source: "rosen",
+        source: "akh-cast-care",
       },
     ],
-    sources: [S.keudell, S.rosen],
+    sources: [S.keudell, S.akhCast],
     ...META,
   },
   {
