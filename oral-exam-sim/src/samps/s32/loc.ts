@@ -110,10 +110,10 @@ const SRC_GF_ETHANOL: Source = {
   citation: "Yip L. Ethanol. In: Nelson LS, Howland MA, Lewin NA, Smith SW, Goldfrank LR, Hoffman RS, editors. Goldfrank's Toxicologic Emergencies. 11th edition. McGraw-Hill Education. 2019. Chapter 76, Ethanol.",
   url: "https://accessemergencymedicine.mhmedical.com/content.aspx?legacysectionid=goldtox11_ch76",
 };
-const SRC_SSC_2021: Source = {
-  id: "ssc-2021",
-  citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Critical Care Medicine 2021.",
-  url: "https://doi.org/10.1097/CCM.0000000000005337",
+const SRC_SSC_2026: Source = {
+  id: "ssc-2026",
+  citation: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Critical Care Medicine 2026.",
+  url: "https://doi.org/10.1097/CCM.0000000000007075",
 };
 const SRC_WMS_HEAT: Source = {
   id: "wms-heat",
@@ -747,9 +747,9 @@ export const LOC_S32: Samp[] = [
         prompt: "Which of the following is the most appropriate initial fluid resuscitation for this patient?",
         options: ["albumin 20% 100 mL IV", "crystalloid 2.4 L IV within 3 hours", "crystalloid 500 mL IV over 3 hours", "crystalloid 80 mL/hour IV", "hydroxyethyl starch 500 mL IV"],
         correct: 1,
-        explanation: "His mean arterial pressure is (78 plus 2 x 42) divided by 3, about 54 mmHg, and his lactate is 5.2 mmol/L, so he has sepsis-induced hypoperfusion. The Surviving Sepsis Campaign suggests at least 30 mL/kg of IV crystalloid within the first 3 hours, which is 30 x 80 = 2400 mL. A 500 mL bolus or a maintenance rate of 80 mL/hour is far too little. Starches are recommended against because they increase kidney injury. Albumin is not the initial fluid.",
+        explanation: "His mean arterial pressure is (78 plus 2 x 42) divided by 3, about 54 mmHg, and his lactate is 5.2 mmol/L, so he has sepsis-induced hypoperfusion. The Surviving Sepsis Campaign suggests at least 30 mL/kg of IV crystalloid within the first 3 hours, which is 30 x 80 = 2400 mL. A 500 mL bolus or a maintenance rate of 80 mL/hour is far too little. Starches are recommended against because they increase kidney injury. Crystalloid alone is preferred over adding albumin.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "ssc-2021",
+        source: "ssc-2026",
       },
       {
         id: "q2",
@@ -760,7 +760,7 @@ export const LOC_S32: Samp[] = [
         correct: 2,
         explanation: "His mean arterial pressure is (84 plus 2 x 46) divided by 3, about 59 mmHg, below the target of 65 mmHg after 30 mL/kg of fluid, so a vasopressor is needed. Norepinephrine is the recommended first-line agent. Vasopressin is added when norepinephrine alone is not enough, not started first. Dopamine causes more arrhythmias. Dobutamine is an inotrope for low cardiac output, and phenylephrine is not a first-line agent.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "ssc-2021",
+        source: "ssc-2026",
       },
       {
         id: "q3",
@@ -780,10 +780,10 @@ export const LOC_S32: Samp[] = [
         correct: 2,
         explanation: "He has probable septic shock, with hypotension and a lactate of 5.2 mmol/L, so antibiotics should be given within 1 hour of recognition. Blood cultures are drawn first when this causes no delay, but treatment does not wait for results. A 3 hour window is suggested only for possible sepsis without shock. Waiting for the chest radiograph or for 6 hours adds risk without benefit.",
         keyFeature: { topic: "loc", n: 2 },
-        source: "ssc-2021",
+        source: "ssc-2026",
       },
     ],
-    sources: [SRC_SSC_2021, SRC_GCS_40],
+    sources: [SRC_SSC_2026, SRC_GCS_40],
     reviewed: false,
     author: AUTHOR,
     version: 1,

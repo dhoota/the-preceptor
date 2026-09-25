@@ -1576,14 +1576,14 @@ export const ABDOMINAL_PAIN_S19: Samp[] = [
         options: ["Albumin 25% 100 mL", "Dextrose 5% water 1 L", "Half-normal saline 1 L", "Hydroxyethyl starch 500 mL", "Red blood cells 2 units", "Ringer's lactate 1 L"],
         correct: [5],
         explanation:
-          "She has sepsis with a lactate of 2.8 mmol/L and a pulse of 128/minute, so a balanced crystalloid such as Ringer's lactate is the preferred first fluid, given in boluses and reassessed. Starches increase kidney injury and are not recommended. Albumin is considered only after large volumes of crystalloid. Dextrose in water and half-normal saline are hypotonic and poor volume expanders. Her hemoglobin is 138 g/L, so red cells are not indicated.",
+          "She has sepsis with a lactate of 2.8 mmol/L and a pulse of 128/minute, so a balanced crystalloid such as Ringer's lactate is the preferred first fluid, given in boluses and reassessed. Starches increase kidney injury and are recommended against. Crystalloid alone is preferred over adding albumin. Dextrose in water and half-normal saline are hypotonic and poor volume expanders. Her hemoglobin is 138 g/L, so red cells are not indicated.",
         keyFeature: { topic: "shock", n: 3 },
-        source: "ssc-2021",
+        source: "ssc-2026",
       },
     ],
     sources: [
       { id: "asmbs-leak", citation: "Kim J, Azagury D, Eisenberg D, and colleagues. ASMBS position statement on prevention, detection, and treatment of gastrointestinal leak after gastric bypass and sleeve gastrectomy, including the roles of imaging, surgical exploration, and nonoperative management. Surg Obes Relat Dis. 2015.", url: "https://doi.org/10.1016/j.soard.2015.05.001" },
-      { id: "ssc-2021", citation: "Evans L, Rhodes A, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021.", url: "https://doi.org/10.1097/CCM.0000000000005337" },
+      { id: "ssc-2026", citation: "Prescott HC, Antonelli M, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.", url: "https://doi.org/10.1097/CCM.0000000000007075" },
     ],
     reviewed: false,
     author: "Draft for review by Arjan Dhoot, MD",

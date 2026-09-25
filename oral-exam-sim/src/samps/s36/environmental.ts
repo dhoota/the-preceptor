@@ -9,7 +9,7 @@ const S = {
   wmsEah: { id: "wms-eah", citation: "Bennett BL, Hew-Butler T, Rosner MH, Myers T, Lipman GS. Wilderness Medical Society clinical practice guidelines for the management of exercise-associated hyponatremia. 2019 update. Wilderness Environ Med. 2020.", url: "https://pubmed.ncbi.nlm.nih.gov/32044213/" },
   acsm: { id: "acsm-ehi", citation: "Roberts WO, Armstrong LE, Sawka MN, Yeargin SW, Heled Y, O'Connor FG. ACSM expert consensus statement on exertional heat illness: recognition, management, and return to activity. Curr Sports Med Rep. 2023.", url: "https://pubmed.ncbi.nlm.nih.gov/37036463/" },
   bcHeat: { id: "bc-heat", citation: "BC Coroners Service. Extreme heat and human mortality: a review of heat-related deaths in B.C. in summer 2021. Report to the Chief Coroner of British Columbia. 2022.", url: "https://www2.gov.bc.ca/assets/gov/birth-adoption-death-marriage-and-divorce/deaths/coroners-service/death-review-panel/extreme_heat_death_review_panel_report.pdf" },
-  ssc: { id: "ssc-2021", citation: "Evans L, Rhodes A, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med. 2021.", url: "https://pubmed.ncbi.nlm.nih.gov/34599691/" },
+  ssc: { id: "ssc-2026", citation: "Prescott HC, Antonelli M, Alhazzani W, and colleagues. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.", url: "https://doi.org/10.1097/CCM.0000000000007075" },
   tunkel: { id: "idsa-meningitis", citation: "Tunkel AR, Hartman BJ, Kaplan SL, and colleagues. Practice guidelines for the management of bacterial meningitis. Infectious Diseases Society of America. Clin Infect Dis. 2004.", url: "https://pubmed.ncbi.nlm.nih.gov/15494903/" },
   rosenCh54: { id: "rosen-ch54", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 54, Thermal Injuries.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
   rosenCh38: { id: "rosen-ch38", citation: "Walls RM, Hockberger RS, Gausche-Hill M, Erickson TB, Wilcox SR, editors. Rosen's Emergency Medicine: Concepts and Clinical Practice. 10th ed. Elsevier. 2023. Chapter 38, Abdominal Trauma.", url: "https://www.us.elsevierhealth.com/rosens-emergency-medicine-concepts-and-clinical-practice-9780323757898.html" },
@@ -1226,7 +1226,7 @@ export const ENVIRONMENTAL_S36: Samp[] = [
         explanation:
           "Advanced baclofen withdrawal can resemble sepsis, and his indwelling catheter and cloudy urine make urinary infection a real second cause of fever, so blood cultures and a urine culture are sent before antibiotics, provided they cause no delay. Carboxyhemoglobin, D-dimer, lipase and CT of the abdomen look for problems that his history and examination do not suggest. A urine drug screen does not explain fever with itching and rebound spasticity in a man who takes no other drugs.",
         keyFeature: { topic: "environmental", n: 2 },
-        source: "ssc-2021",
+        source: "ssc-2026",
       },
       {
         id: "q4",

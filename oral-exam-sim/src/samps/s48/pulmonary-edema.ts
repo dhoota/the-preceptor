@@ -128,7 +128,8 @@ const BCPAL: Source = {
 };
 const SSC: Source = {
   id: "ssc",
-  citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Crit Care Med. 2021.",
+  citation: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.",
+  url: "https://doi.org/10.1097/CCM.0000000000007075",
 };
 
 const NPE: Source = {

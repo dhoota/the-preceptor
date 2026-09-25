@@ -89,9 +89,9 @@ const S: Record<string, Source> = {
     url: "https://pubmed.ncbi.nlm.nih.gov/30413417/",
   },
   ssc: {
-    id: "ssc-2021",
-    citation: "Evans L, Rhodes A, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2021. Intensive Care Medicine 2021.",
-    url: "https://pubmed.ncbi.nlm.nih.gov/34599691/",
+    id: "ssc-2026",
+    citation: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign. International guidelines for management of sepsis and septic shock 2026. Critical Care Medicine 2026.",
+    url: "https://doi.org/10.1097/CCM.0000000000007075",
   },
   pecarn: {
     id: "pecarn",
@@ -850,7 +850,7 @@ export const CRITICAL_APPRAISAL_S31: Samp[] = [
         explanation:
           "She has probable pyelonephritis with hypotension and a lactate of 3.4 mmol/L, so she needs fluid resuscitation, blood and urine cultures, and IV antibiotics within the first hour. Doubt about the alert's value does not weaken the evidence for early treatment of sepsis with hypoperfusion. Waiting for culture results or for CT delays antibiotics in a patient at high risk of death. Discharge on oral therapy is unsafe with hypotension and a raised lactate. The outreach team can help, but treatment should not wait for them.",
         keyFeature: { topic: "critical-appraisal", n: 5 },
-        source: "ssc-2021",
+        source: "ssc-2026",
       },
     ],
     sources: [S.ug, S.steppedWedge, S.ssc],
