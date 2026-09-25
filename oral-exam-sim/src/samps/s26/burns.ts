@@ -1319,99 +1319,110 @@ export const BURNS_S26: Samp[] = [
   {
     id: "burns-32",
     topic: "burns",
-    title: "A spill at the sugar shack",
-    stem: "You are working in a community hospital emergency department in the Eastern Townships of Quebec. A 13-year-old boy arrives with his parents at 15:00. At 14:00 he was helping at the family sugar shack when he slipped while carrying a pail of boiling maple sap from the evaporator. The sap soaked the front of both legs and his lower abdomen. His father cooled the burns under running water for 20 minutes. The burns are pink, wet and blistered and blanch with pressure. On a Lund and Browder chart they total 22% TBSA. There is no full thickness area and no circumferential burn. He is otherwise healthy. His pain has settled after IV morphine given on arrival.",
+    title: "A flare from the table burner",
+    stem: "You are working in a community hospital emergency department with a labour and delivery unit but no burn unit or neonatal intensive care unit. A 34-year-old woman, G3P2 at 26 weeks, arrives by private car 3 hours after a tabletop gel fuel burner flared at a lakeside cottage and set her dress alight. Her partner smothered the flames and drove her in. She has had no IV fluid. She has blistered, moist, pink partial thickness burns to the front of both legs and most of her right arm, and her burns have not yet been mapped. There is no soot in her mouth, her voice is normal and she has no stridor. Her pregnancy has been uncomplicated. She lies tilted to her left side on the stretcher and has received IV morphine.",
     vitals: {
-      temperature: "36.9°C oral",
-      pulse: "116/minute",
+      temperature: "36.8°C oral",
+      pulse: "114/minute",
       resp: "20/minute",
-      bp: "118/70 mmHg",
-      o2sat: "99% on room air",
-      weight: "45 kg"
+      bp: "106/62 mmHg",
+      o2sat: "98% on room air",
+      weight: "70 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate IV fluid plan for his burn resuscitation?",
+        prompt: "Which of the following Ringer's lactate rates is most appropriate until her burn size is measured?",
         options: [
-          "Maintenance D5RL only",
-          "Oral fluids only while in hospital",
-          "Ringer's lactate 2 mL/kg per %TBSA",
-          "Ringer's lactate 3 mL/kg per %TBSA plus D5RL",
-          "sodium chloride 0.9% 4 mL/kg per %TBSA"
+          "125 mL/hour",
+          "250 mL/hour",
+          "500 mL/hour",
+          "1 000 mL/hour",
+          "2 000 mL/hour"
         ],
         correct: 2,
-        explanation: "The TREKK burns guidance calls for a formula-based fluid estimate for burns over 15% TBSA, using warmed Ringer's lactate. It gives 3 mL/kg per %TBSA for children aged 12 years and younger and 2 mL/kg per %TBSA for those aged 13 and older. At 13 years and 45 kg he uses the lower figure. Added dextrose maintenance is for children aged 12 and younger or at risk of hypoglycemia. Maintenance fluid or oral fluids alone are too little for a 22% burn. Saline adds a risk of hyperchloremic acidosis, and 4 mL/kg is excessive.",
+        explanation: "The Trauma New Brunswick burn statement gives a starting rate of 500 mL/hour of Ringer's lactate for patients older than 13 years with a major burn, before the exact TBSA is calculated. It defines a major burn in an adult as more than 20% TBSA. The front of both legs and most of one arm already exceed that, so fluid should start now at 500 mL/hour and change to the calculated rate once her burns are mapped. The rates of 125 and 250 mL/hour are its starting rates for children aged 5 years or younger and 6 to 12 years. Rates of 1 000 and 2 000 mL/hour risk the over-resuscitation that the statement says must be avoided.",
         keyFeature: {
           topic: "burns",
           n: 4
         },
-        source: "trekk-burns"
+        source: "nb-burn"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the time by which the first half of his 24-hour volume should be given?",
+        update: "Her burns are mapped at 24% TBSA and the calculated rate is started. Twenty minutes later, still tilted to her left, her blood pressure is 84/50 mmHg.",
+        prompt: "Which of the following is the most appropriate response to her blood pressure?",
         options: [
-          "02:00 tomorrow",
-          "14:00 tomorrow",
-          "15:00 tomorrow",
-          "22:00 today",
-          "23:00 today"
+          "Accept it as early burn shock",
+          "Double the Ringer's lactate rate",
+          "Give 2 L Ringer's lactate rapidly",
+          "Give 500 mL and seek another cause",
+          "Start a norepinephrine infusion"
         ],
         correct: 3,
-        explanation: "The TREKK guidance gives half of the 24-hour volume over the first 8 hours after the injury and the rest over the next 16 hours. The clock starts at the time of the burn, 14:00, not at arrival or when the IV starts, so the first half is due by 22:00. The time of 23:00 counts from arrival and gives too little fluid early. The time of 02:00 spreads the first half over 12 hours. The times of 14:00 and 15:00 tomorrow mark the end of the full 24 hours, not the first half.",
+        explanation: "The Alaska burn guideline states that a systolic pressure below 90 mmHg is rare in the initial burn period. When it occurs, the guideline advises a single bolus of 250 to 500 mL of crystalloid while alternative causes of hypotension, such as a medical, toxic or traumatic condition, are considered. It also advises consulting the burn centre for a systolic pressure below 90 mmHg. Accepting the pressure as burn shock misses that warning. Giving 2 L rapidly is the large bolus the guideline advises against. Doubling the rate goes far beyond its hourly changes of 10%, which are guided by urine output, and it adds to fluid creep. Starting a norepinephrine infusion skips both the limited bolus and the search for a cause.",
         keyFeature: {
           topic: "burns",
           n: 4
         },
-        source: "trekk-burns"
+        source: "alaska"
       },
       {
         id: "q3",
         kind: "single",
-        update: "His IV is running and a urinary catheter is placed.",
-        prompt: "Which of the following hourly urine outputs is the most appropriate target for him?",
+        prompt: "Which of the following features of her case is most likely to raise her fluid needs above the formula estimate?",
         options: [
-          "11 mL/hour",
-          "23 mL/hour",
-          "45 mL/hour",
-          "68 mL/hour",
-          "90 mL/hour"
+          "Burns on both legs",
+          "Clear voice without stridor",
+          "Partial thickness depth",
+          "Three hours without fluid",
+          "Weight of 70 kg"
         ],
-        correct: 1,
-        explanation: "The TREKK guidance targets a urine output of 1 mL/kg/hour for children who weigh 30 kg or less and 0.5 mL/kg/hour for those over 30 kg. At 45 kg his target is about 23 mL/hour. The figure of 45 mL/hour applies the smaller child target to his weight and would push extra fluid and edema. The figures of 68 and 90 mL/hour are higher still. The figure of 11 mL/hour is only 0.25 mL/kg/hour and accepts under-resuscitation. The rate is then adjusted along with his mental status, pulses and capillary refill.",
+        correct: 3,
+        explanation: "The Alaska burn guideline lists resuscitation delay among the factors known to increase fluid needs, with inhalation injury, electrical burns, associated trauma, intoxication and very deep burns. She reached hospital 3 hours after the burn with no IV fluid, so she may need more than the formula predicts and her response needs extra attention. Her clear voice, with no soot or stridor, argues against the inhalation injury that would raise her needs. Her partial thickness burns are not the very deep burns on that list. The site of her burns and her weight are already built into the formula through TBSA and kilograms.",
         keyFeature: {
           topic: "burns",
           n: 4
         },
-        source: "trekk-burns"
+        source: "alaska"
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following is the most appropriate disposition for him?",
+        prompt: "Which of the following is the most appropriate disposition for her?",
         options: [
+          "Admit to labour and delivery here",
           "Admit under general surgery here",
-          "Discharge after the first dressing",
-          "Paediatric burn centre transfer",
-          "Plastic surgery clinic in 1 week",
-          "Repeat assessment here in 24 hours"
+          "Burn centre with obstetric care",
+          "Discharge with burn clinic review",
+          "Transfer to a tertiary obstetric unit"
         ],
         correct: 2,
-        explanation: "The TREKK guidance lists partial thickness burns of 10% TBSA or more as a reason to transfer a child to a paediatric referral or burn centre. His burn is 22% and needs IV resuscitation, a urinary catheter and specialist wound care. Discharge after one dressing, clinic follow-up in a week or a repeat check tomorrow do not meet his needs. Admission under a general service at a community hospital does not provide burn centre care. Large wounds for transfer stay covered with plastic wrap or sterile towels until the burn centre applies definitive dressings.",
+        explanation: "The Trauma New Brunswick burn statement recommends immediate consultation, with transfer considered, for partial thickness burns over 10% TBSA and for pre-existing conditions that could complicate management. She has a 24% burn and is 26 weeks pregnant. Her hospital has no burn unit and no neonatal intensive care unit, so she needs a burn centre in a hospital that can also care for her pregnancy and a preterm baby. Admission to labour and delivery or general surgery here lacks burn care, and so does a tertiary obstetric unit without a burn service. Discharge is unsafe while she needs IV resuscitation.",
         keyFeature: {
           topic: "burns",
           n: 5
         },
-        source: "trekk-burns"
+        source: "nb-burn"
       }
     ],
-    sources: [S.trekkBurns],
+    sources: [
+      {
+        id: "alaska",
+        citation: "Alaska Department of Health, Trauma System Review Committee. Burn resuscitation guidelines for Alaska providers. 2021.",
+        url: "https://health.alaska.gov/media/0zwppk25/alaska-burn-care-guidelines-2021.pdf"
+      },
+      {
+        id: "nb-burn",
+        citation: "Trauma New Brunswick. Consensus statement. Emergency burn care. Version 2. 2025.",
+        url: "https://nbtrauma.ca/wp-content/uploads/2025/10/Consensus-Statement-Emergency-Burn-Care-AUGUST-2025-FINAL.pdf"
+      }
+    ],
     reviewed: false,
     author: META.author,
-    version: 2,
+    version: 3,
   },
   {
     id: "burns-33",

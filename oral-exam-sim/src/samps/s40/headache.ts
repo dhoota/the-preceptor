@@ -2589,68 +2589,69 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
   {
     "id": "headache-47",
     "topic": "headache",
-    "title": "A headache while nursing a baby",
-    "stem": "A 33-year-old woman presents to the emergency department with a right-sided throbbing headache that began 10 hours ago. She has nausea, has vomited twice and finds light and noise hard to bear. She had a vaginal birth 5 months ago after an uncomplicated pregnancy and is exclusively breastfeeding. She had headaches like this a few times a month from age 16. They stopped during pregnancy and returned 6 weeks ago, and this is her third since then. She took acetaminophen 1 000 mg 5 hours ago without relief. She takes no other medications and has no allergies. She has no neck stiffness. Her neurological examination and fundoscopy are normal.",
+    "title": "A migraine on a new antidepressant",
+    "stem": "A 46-year-old man presents to the emergency department with a left-sided throbbing headache that began 8 hours ago. He has nausea and finds light hard to bear. He has had migraine without aura since his twenties, about 2 attacks a month, and he usually treats them with sumatriptan 50 mg. Three months ago his psychiatrist started phenelzine 45 mg daily for depression. He took acetaminophen 1 000 mg 4 hours ago without relief. He has no kidney disease, peptic ulcer or asthma. He has no neck stiffness. His neurological examination and fundoscopy are normal.",
     "vitals": {
-      "temperature": "36.7°C oral",
-      "pulse": "86/minute",
+      "temperature": "36.8°C oral",
+      "pulse": "92/minute",
       "resp": "16/minute",
-      "bp": "118/74 mmHg",
-      "o2sat": "99% on room air",
-      "weight": "64 kg"
+      "bp": "158/94 mmHg",
+      "o2sat": "98% on room air",
+      "weight": "82 kg"
     },
     "questions": [
       {
         "id": "q1",
         "kind": "single",
-        "prompt": "Which of the following features of her history most supports migraine as the cause of this headache?",
+        "prompt": "Which of the following details of the past day is most important to clarify next?",
         "options": [
-          "Acetaminophen gave no relief",
-          "Delivery 5 months ago",
-          "Nausea with this headache",
-          "Same as her attacks since age 16",
-          "Throbbing quality of the pain"
+          "Aged or fermented foods eaten",
+          "Family history of migraine",
+          "Hours of screen time today",
+          "Number of attacks this year",
+          "Recent change in eyeglasses"
         ],
-        "correct": 3,
-        "explanation": "ICHD-3 diagnoses migraine from repeated attacks with a typical pattern, and it requires at least five attacks. Years of the same attacks, a pause in pregnancy and a return after birth fit her known migraine, and her examination is normal. A change from her usual pattern would be the warning sign. Throbbing pain and nausea are migraine features but also occur with secondary headaches. Her delivery was 5 months ago, so it does not point to migraine. Failure of acetaminophen does not separate migraine from a secondary headache.",
+        "correct": 0,
+        "explanation": "He takes phenelzine, a monoamine oxidase inhibitor, and his blood pressure is raised. The Nardil product monograph names hypertensive crisis as its most important reaction and lists headache, nausea, neck stiffness, palpitations and photophobia among its features, with intracranial bleeding reported. Crises can follow foods high in tyramine, such as aged cheese, cured meats and fermented foods, or cold and sinus remedies. A crisis can therefore mimic his migraine and must be excluded before a migraine is treated. His family history, screen time, attack frequency and eyeglasses do not separate a crisis from migraine.",
         "keyFeature": {
           "topic": "headache",
           "n": 1
         },
-        "source": "ichd3"
+        "source": "nardil-pm"
       },
       {
         "id": "q2",
         "kind": "single",
-        "prompt": "Which of the following is the most appropriate treatment for her headache now, given that she is breastfeeding?",
+        "update": "Twenty minutes later his blood pressure is 136/84 mmHg. He says the pain matches his usual attacks in site, quality and associated symptoms.",
+        "prompt": "Which of the following is the most appropriate treatment for his headache now?",
         "options": [
-          "codeine 30 mg PO",
-          "dihydroergotamine 1 mg IV",
-          "hydromorphone 1 mg IV",
-          "meperidine 50 mg IV",
-          "sumatriptan 6 mg SC"
+          "acetaminophen 1 000 mg IV",
+          "dexamethasone 10 mg IV",
+          "ketorolac 30 mg IV",
+          "magnesium sulfate 2 g IV",
+          "morphine 5 mg IV"
         ],
-        "correct": 4,
-        "explanation": "LactMed reports low sumatriptan levels in breastmilk and poor oral absorption by the infant, and it names sumatriptan a triptan of choice in breastfeeding. Most breastfed infants would not be expected to have adverse effects, so she does not need to stop nursing. Ergot drugs such as dihydroergotamine may harm the infant and reduce milk supply, and most authorities consider them contraindicated while nursing. Opioids such as hydromorphone, meperidine and codeine can sedate a breastfed infant, and other agents are preferred.",
+        "correct": 2,
+        "explanation": "His headache matches his usual migraine, his blood pressure has settled and his examination is normal, so migraine can be treated. The Canadian Headache Society emergency review strongly recommends ketorolac for migraine pain, and he has no kidney disease, peptic ulcer or asthma. The same review recommends against dexamethasone for pain relief, and weakly against acetaminophen, magnesium sulfate and morphine. He has also already failed oral acetaminophen today.",
         "keyFeature": {
           "topic": "headache",
           "n": 5
         },
-        "source": "lactmed"
+        "source": "chs-ed"
       },
       {
         "id": "q3",
         "kind": "single",
-        "prompt": "Which of the following is the most appropriate medication for her to take early in future attacks while she is breastfeeding?",
+        "prompt": "Which of the following should he take at the start of future attacks while he takes phenelzine?",
         "options": [
-          "acetaminophen with codeine",
           "butalbital compound PO",
-          "ergotamine with caffeine",
-          "ibuprofen 400 mg PO",
-          "tramadol 50 mg PO"
+          "naproxen 500 mg PO",
+          "rizatriptan 10 mg PO",
+          "sumatriptan 100 mg PO",
+          "tramadol with acetaminophen PO"
         ],
-        "correct": 3,
-        "explanation": "The Canadian Headache Society gives ibuprofen a strong recommendation for acute migraine and includes a strategy for migraine during lactation. Ibuprofen passes into breastmilk in very small amounts and is a preferred analgesic in nursing mothers. The guideline does not recommend codeine-containing or tramadol-containing drugs or ergotamine for routine use, and it strongly advises against butalbital-containing drugs. These choices also carry more risk for a breastfed infant.",
+        "correct": 1,
+        "explanation": "The Canadian Headache Society guideline gives naproxen sodium a strong recommendation with high quality evidence for acute migraine, and it does not interact with his phenelzine. The same guideline advises avoiding sumatriptan and rizatriptan within 14 days of a monoamine oxidase inhibitor, because both are cleared by monoamine oxidase A. Canadian product monographs for both drugs list this combination as a contraindication, so his usual sumatriptan must stop while he takes phenelzine. The guideline does not recommend tramadol-containing drugs for routine use, and it strongly advises against butalbital-containing drugs.",
         "keyFeature": {
           "topic": "headache",
           "n": 5
@@ -2660,14 +2661,14 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
     ],
     "sources": [
     {
-      "id": "ichd3",
-      "citation": "Headache Classification Committee of the International Headache Society. The International Classification of Headache Disorders, 3rd edition. Cephalalgia. 2018.",
-      "url": "https://doi.org/10.1177/0333102417738202"
+      "id": "nardil-pm",
+      "citation": "Searchlight Pharma Inc. Nardil (phenelzine sulfate tablets). Canadian product monograph. 2022.",
+      "url": "https://searchlightpharma.com/wp-content/uploads/2023/10/Nardil-PM-ENG-Oct2022.pdf"
     },
     {
-      "id": "lactmed",
-      "citation": "National Institute of Child Health and Human Development. Drugs and Lactation Database (LactMed). Entries for sumatriptan (2025), dihydroergotamine (2021), hydromorphone (2026), meperidine (2026) and codeine (2026).",
-      "url": "https://www.ncbi.nlm.nih.gov/books/NBK501255/"
+      "id": "chs-ed",
+      "citation": "Orr SL, Aube M, Becker WJ, et al. Canadian Headache Society systematic review and recommendations on the treatment of migraine pain in emergency settings. Cephalalgia. 2015.",
+      "url": "https://doi.org/10.1177/0333102414535997"
     },
     {
       "id": "chs-acute",
@@ -2676,6 +2677,6 @@ export const HEADACHE_S40_SAMPS: Samp[] = [
     }
   ],
     ...META,
-    "version": 2
+    "version": 3
   },
 ];

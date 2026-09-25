@@ -1,0 +1,47 @@
+# Sweep 2 rebuilds, batches s26, s32 and s40 (label sw2-c)
+
+Writer SW2-C. Files: `src/samps/s26/burns.ts`, `src/samps/s32/loc.ts` and `src/samps/s40/headache.ts`. Only the five listed SAMPs were rebuilt: burns-32, loc-26, loc-41, loc-45 and headache-47. The only other edits are new source constants in `loc.ts` (bap-catatonia, flores-interpreters, neto-star-fruit, jones-ethanol, boyer-opioid). Two older constants in `loc.ts` (SRC_NICE_EPILEPSY and SRC_BEER_POTOMANIA) are now unused and were left in place. Nothing was committed.
+
+## Search before writing
+
+I dumped the whole bank (s01 to s53) and read every SAMP for each topic, with its neighbours, by scenario and keyed decision, not by wording:
+
+- burns-32: every burns SAMP and every SAMP with a burns key feature, every pregnancy trauma SAMP, and every KF4 and KF5 key in the bank.
+- loc-26, loc-41 and loc-45: every loc SAMP, and the tox, seizures, delirium-agitation, sob and environmental SAMPs that describe a drowsy or unresponsive patient. I listed every loc KF1 to KF5 key.
+- headache-47: every headache SAMP and every migraine treatment key, plus tox-10 (serotonin toxicity with an MAOI in the history).
+
+Ideas I dropped because the bank already holds them: hypermagnesemia from laxatives (sob-44), Duchenne or ALS with hypercapnia (airway-26, sob-32), cerebral malaria (infectious-diseases-06, pediatric-fever-07), adult meningitis labelled as drunk (headache-04, headache-05, infectious-diseases-02), a drug interaction from a walk-in prescription (loc-27, tox-24), euglycemic DKA (abdominal-pain-26), and painless aortic dissection in a man labelled as drunk. I wrote that last one first, then dropped it because cva-09 already keys an arm pulse difference and CT angiography for dissection. I also wrote a first burns-32 draft about a pregnant woman at 31 weeks. It keyed uterine displacement and fetal monitoring. I replaced it because multiple-trauma-03 is a 29-year-old G2P1 at 31 weeks with those same keys. I re-ran the searches just before finalising.
+
+## Rebuilt SAMPs
+
+| SAMP | Old scenario (copied) | New scenario | Keyed decisions (KF) | Sources |
+|---|---|---|---|---|
+| burns-32 (v3) | A 13-year-old scalded with maple sap at a sugar shack. Keys were the TREKK fluid plan, the time the first half is due, the urine target and paediatric burn centre transfer (copied burns-17) | Community hospital with labour and delivery but no burn unit or NICU. A 34-year-old G3P2 at 26 weeks, burned by a tabletop gel fuel burner at a cottage, arrives 3 hours later by car with no IV fluid. Her burns are not yet mapped | q1 Ringer's lactate 500 mL/hour until the burn is mapped (KF4). q2 hypotension early after a burn: 500 mL and a search for another cause, not large boluses or a vasopressor (KF4). q3 the 3-hour delay in fluid as the factor that raises her fluid needs (KF4). q4 a burn centre with obstetric and neonatal care (KF5) | Alaska burn resuscitation guidelines 2021 (PDF read: prehospital rates, hypotension under 90 mmHg, factors that raise fluid needs). ABA burn referral guideline (web page read) |
+| loc-26 (v3) | An 84-year-old in a nursing home with facial twitching from nonconvulsive status. Keys were IV lorazepam, EEG with CT and electrolytes, levetiracetam, and her usual alertness (copied loc-05) | A 31-year-old woman with bipolar I disorder, on lamotrigine and clonazepam, lies mute and staring for 2 days. She shows negativism and catalepsy. No seizure, no twitching, no antipsychotic | q1 catatonic stupor as the cause (KF1). q2 lorazepam 2 mg IV challenge, not an antipsychotic (KF2). q3 isotonic IV fluid for dehydration and a doubled creatinine (KF2). q4 ask about missed clonazepam, a withdrawal trigger (KF3) | Rogers et al, BAP catatonia guideline, J Psychopharmacol 2023 (doi 10.1177/02698811231158232, full text read on PMC10101189) |
+| loc-41 (v3) | A 44-year-old man who did not wake after a first seizure. Keys were the witnessed account, head injury history, CT head and nonconvulsive seizures (copied loc-05) | A 69-year-old man on hemodialysis with 3 days of hiccups, vomiting and new confusion. His wife speaks Tagalog. He has drunk star fruit juice for 4 days | q1 a professional phone interpreter, not the teenage grandson (KF3). q2 when he last seemed his usual self (KF3). q3 star fruit neurotoxicity as the cause (KF1). q4 unrelenting hiccups as the most characteristic feature (KF1) | Flores et al, Ann Emerg Med 2012 (abstract read). NICE CG103 delirium, updated 2023 (recommendation 1.3.1 read). Neto et al, Nephrol Dial Transplant 2003 (abstract read) |
+| loc-45 (v4) | A heavy beer drinker who stopped eating for 2 weeks after losing his job, with an ethanol of 9 mmol/L and severe hyponatremia. Keys were the low ethanol, electrolytes and GCS 13 (copied loc-16) | A 44-year-old woman brought by police from a pub, ethanol 52 mmol/L, put on a hallway stretcher to sober up. At 03:00 she is harder to rouse, breathing 7/minute with 2 mm pupils | q1 worse at 03:00 than at arrival while her ethanol should be falling (KF4). q2 opioid co-ingestion as the cause of the decline (KF1). q3 GCS 8 (E2 V2 M4) (KF5) | Jones, Forensic Sci Int 2010 (abstract read: elimination 10 to 35 mg/100 mL per hour). Boyer, NEJM 2012 (full text read on PMC3739053). Teasdale et al, Lancet Neurol 2014 (existing source) |
+| headache-47 (v3) | A breastfeeding 33-year-old with her usual right-sided migraine. Keys were "same as her attacks since 16", sumatriptan SC and ibuprofen (copied headache-10) | A 46-year-old man with lifelong migraine who usually takes sumatriptan. His psychiatrist started phenelzine 3 months ago. His BP is 158/94 with a typical attack | q1 ask about aged or fermented foods to exclude an MAOI hypertensive crisis (KF1). q2 ketorolac 30 mg IV once the BP settles and the attack matches his usual (KF5). q3 naproxen for future attacks, because sumatriptan and rizatriptan must be avoided within 14 days of an MAOI (KF5) | Nardil Canadian product monograph 2022 (PDF read). Orr et al, CHS emergency migraine review, Cephalalgia 2015 (abstract read). Worthington et al, CHS acute migraine guideline 2013 (PDF read, including the triptan interaction table) |
+
+Question counts and key features are unchanged. burns-32 keeps 4, 4, 4 and 5. loc-26 keeps 1, 2, 2 and 3, reordered so the diagnosis comes first. loc-41 keeps 3, 3, 1 and 1. loc-45 keeps 4, 1 and 5. headache-47 keeps 1, 5 and 5. All questions are single best answer. loc-26 q2 was a menu before. Each version went up by 1, `reviewed` stays false, and every title is neutral. No later update, prompt or option names an earlier key. For example, the loc-26 q3 update says "soon after treatment" and does not name lorazepam.
+
+## Numbers checked
+
+- loc-45: ethanol 52 mmol/L x 4.6 = about 240 mg/100 mL. After 4.5 hours at 15 to 19 mg/100 mL per hour it should fall by 68 to 86 mg/100 mL. The explanation says "roughly 70 to 85". GCS at arrival E4 V4 M6 = 14. At 03:00 E2 V2 M4 = 8.
+- loc-41: Neto series. Hiccups 30 of 32 (93.75%), vomiting 22 (68.7%), disturbed consciousness 21 (65.6%), 20 of 32 on regular hemodialysis.
+- burns-32: Alaska starting rates 125 mL/hour (under 5 years), 250 (6 to 13 years), 500 (14 years and older). Bolus of 250 to 500 mL if the systolic is below 90 mmHg.
+- headache-47: the CHS 2013 table lists MAO-A metabolism for sumatriptan and rizatriptan, and advises avoiding both within 14 days of an MAOI. Naproxen sodium has a strong recommendation with high quality evidence. The CHS 2015 emergency review strongly recommends ketorolac and recommends strongly against dexamethasone for pain relief. It recommends weakly against acetaminophen, magnesium sulfate and morphine.
+
+## For the physician
+
+- loc-26: catatonia is a new presentation for the loc topic. The source is the 2023 British Association for Psychopharmacology guideline, because I found no Canadian guideline. The diagnosis rests on catalepsy and negativism in the stem.
+- loc-41: the q1 key follows Flores et al, a US paediatric emergency study. Please confirm that a telephone interpreter over a bilingual teenager is the answer you want keyed. q4 keys the most frequent feature in one case series.
+- loc-45: q2 overlaps in theme with loc-02 and ems-06 (opioids with co-ingestants), but those keys concern naloxone and adulterants. Here the key is recognising an opioid as the cause of a decline in a patient labelled as drunk.
+- burns-32: the fluid decisions follow the Alaska 2021 guideline, which the bank already cites. It has no Canadian adult equivalent. The guideline does not address pregnancy. The stem says she lies tilted to her left, so that aortocaval compression is excluded as the cause of her hypotension. Please confirm that a bolus with a search for another cause is the key you want over immediate obstetric assessment.
+- headache-47: phenelzine is uncommon but sold in Canada. q2 leaves out prochlorperazine, metoclopramide and sumatriptan, so ketorolac is the only strongly recommended option listed.
+
+## Checks
+
+- `SAMP_BATCH=s26`: 516 passed. `s32`: 675 passed. `s40`: 691 passed. (`npx vitest run tests/samps.test.ts tests/samp-quality.test.ts`)
+- `npx tsc --noEmit -p .`: clean.
+- `LAUNCH_GATE=1 npx vitest run tests/samps.test.ts`: 4503 passed.
+- Key positions stay within the 25% gate in all three batches. In s32, I reworded options in loc-26 q4, loc-41 q4 and loc-45 to keep every position at 25% or less.
