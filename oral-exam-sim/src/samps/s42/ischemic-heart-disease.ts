@@ -678,115 +678,88 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
     "version": 3
   },
   {
-    "id": "ischemic-heart-disease-24",
-    "topic": "ischemic-heart-disease",
-    "title": "Sweating and vomiting far from a PCI centre",
-    "stem": "You are working in a rural hospital emergency department. The nearest PCI centre is 3 hours away by road, and air transport is not available tonight. A 78-year-old man presents with 2 hours of sweating, nausea and vomiting that began while he was splitting firewood. He has had no chest pain. He has COPD and hypertension. He has no history of stroke, bleeding or recent surgery and takes no anticoagulant. He is thin and pale. His lungs are clear. His ECG shows 3 mm ST elevation in V1 to V4 with ST depression in III and aVF.",
-    "vitals": {
-      "temperature": "36.6°C oral",
-      "pulse": "96/minute",
-      "resp": "20/minute",
-      "bp": "138/82 mmHg",
-      "o2sat": "95% on room air",
-      "weight": "58 kg"
-    },
-    "questions": [
+    id: "ischemic-heart-disease-24",
+    topic: TOPIC,
+    title: "Aching forearms while reading",
+    stem:
+      "You are working in a community hospital emergency department. The regional PCI centre is 2 hours away by road. A 79-year-old man presents with 3 hours of aching in both forearms and wrists that began while he sat reading. He feels sweaty and slightly short of breath. He has had no chest pain. He thought it was arthritis. One week ago he started diclofenac 50 mg PO three times daily for knee osteoarthritis. He also takes insulin glargine for type 2 diabetes, amlodipine for hypertension, atorvastatin, and tamsulosin for prostate enlargement. He has no numbness, weakness or neck pain. He is diaphoretic. His wrists are not swollen or tender and move fully. His lungs are clear. His ECG shows 1.5 mm horizontal ST depression in V4 to V6 that was not present last year. Creatinine is 88 umol/L.",
+    vitals: { temperature: "36.8°C oral", pulse: "92/minute", resp: "18/minute", bp: "152/86 mmHg", o2sat: "96% on room air", weight: "72 kg" },
+    questions: [
       {
-        "id": "q1",
-        "kind": "single",
-        "prompt": "Which of the following tenecteplase doses is most appropriate for him?",
-        "options": [
-          "7.5 mg IV",
-          "15 mg IV",
-          "30 mg IV",
-          "40 mg IV",
-          "50 mg IV"
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most likely cause of the aching in his forearms?",
+        options: [
+          "Median nerve compression",
+          "Myocardial ischemia",
+          "Polymyalgia rheumatica",
+          "Radiculopathy from the neck",
+          "Wrist osteoarthritis flare",
         ],
-        "correct": 1,
-        "explanation": "Primary PCI cannot be reached in time, so fibrinolysis is indicated. Full-dose tenecteplase raises the risk of intracranial hemorrhage in older patients. In STREAM-2, patients aged 60 or more given half-dose tenecteplase followed by angiography had outcomes comparable to primary PCI. His full weight-band dose under 60 kg is 30 mg, so half is 15 mg. A dose of 30 mg is the full dose, 40 and 50 mg are for heavier patients, and 7.5 mg is a quarter dose without supporting evidence.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 7
-        },
-        "source": "stream-2-2023"
+        correct: 1,
+        explanation:
+          "New ST depression in V4 to V6 with sweating and breathlessness makes the forearm ache most likely ischemic. The ESC guideline lists pain in the left or right arm among the chest pain-equivalent symptoms of ACS and notes that a missed diagnosis is sometimes due to an incomplete history. Median nerve compression causes numbness, and he has none. A radiculopathy from the neck would come with neck pain, which he denies. His wrists are not swollen or tender and move fully, which argues against an arthritis flare. Polymyalgia rheumatica would not explain his sweating or the new ST depression.",
+        keyFeature: { topic: TOPIC, n: 5 },
+        source: "esc-acs-2023",
       },
       {
-        "id": "q2",
-        "kind": "single",
-        "prompt": "Which of the following is the most appropriate plan after he receives tenecteplase?",
-        "options": [
-          "Admit locally and review in 2 weeks",
-          "Angiography only if pain returns",
-          "Outpatient stress test in 6 weeks",
-          "Planned angiography within 6 to 24 hours",
-          "Repeat tenecteplase at 30 minutes"
+        id: "q2",
+        kind: "single",
+        update:
+          "High sensitivity troponin I is 58 ng/L at arrival and 164 ng/L at 1 hour (male 99th percentile 26 ng/L). He has chewed ASA 160 mg. The PCI centre will accept him for angiography in 3 days.",
+        prompt: "Which of the following anticoagulant plans is most appropriate while he waits for angiography?",
+        options: [
+          "enoxaparin 1 mg/kg SC every 12 hours",
+          "fondaparinux 2.5 mg SC daily",
+          "heparin IV infusion by weight nomogram",
+          "tenecteplase 40 mg IV bolus",
+          "No anticoagulant until angiography",
         ],
-        "correct": 3,
-        "explanation": "A pharmaco-invasive strategy pairs fibrinolysis with coronary angiography and PCI if indicated 6 to 24 hours later, as in STREAM-2, so he should be transferred for planned angiography. Waiting for recurrent pain, keeping him locally for 2 weeks or relying on an outpatient stress test leaves a residual stenosis untreated. A second dose of tenecteplase adds bleeding risk and is not part of this strategy.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 7
-        },
-        "source": "stream-2-2023"
+        correct: 1,
+        explanation:
+          "A rising troponin with ST depression fits an NSTEMI, and his angiography will not happen within 24 hours. For NSTE-ACS without early angiography, the ESC guideline recommends fondaparinux 2.5 mg SC daily in preference to enoxaparin, with a single heparin bolus at the time of PCI. It advises avoiding fondaparinux when CrCl is below 20 mL/minute. His estimated CrCl is about 61 mL/minute: (140 minus 79) x 72 x 1.23 / 88. Heparin, or enoxaparin as an alternative, is the choice when angiography is planned within 24 hours. Enoxaparin is kept for when fondaparinux is not available. Tenecteplase is a reperfusion option for ST elevation, which he does not have. The guideline recommends parenteral anticoagulation for NSTE-ACS, so withholding it is wrong.",
+        keyFeature: { topic: TOPIC, n: 7 },
+        source: "esc-acs-2023",
       },
       {
-        "id": "q3",
-        "kind": "single",
-        "prompt": "Which of the following statements about his presentation without chest pain is most accurate?",
-        "options": [
-          "It carries higher hospital mortality",
-          "It is rare, under 1% of cases",
-          "It is usually recognized at triage",
-          "It lowers his risk of dying",
-          "It makes an acute MI unlikely"
-        ],
-        "correct": 0,
-        "explanation": "In the GRACE registry, 8.4% of patients with ACS presented without chest pain, and almost a quarter of them were not initially recognized as having ACS. Their hospital mortality was 13% compared with 4.3% for patients with typical pain. Dominant nausea or vomiting and dyspnea each marked higher risk. It is therefore neither rare nor reassuring, and it does not make MI unlikely.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 5
-        },
-        "source": "brieger-2004"
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following of his current medications should be stopped now?",
+        options: ["amlodipine", "atorvastatin", "diclofenac", "insulin glargine", "tamsulosin"],
+        correct: 2,
+        explanation:
+          "Diclofenac should be stopped. In a Danish national cohort of patients after a first MI, NSAID treatment was linked with more deaths and recurrent MIs from the start of treatment, with a hazard ratio of 1.45. Diclofenac carried the highest risk, a hazard ratio of 3.26 for death or MI in days 1 to 7. The authors advise against both short and long term NSAID use in this group. He started it only a week ago, for knee osteoarthritis. Amlodipine and insulin glargine treat his hypertension and diabetes, and stopping them would leave both uncontrolled. Nothing in his presentation calls for stopping atorvastatin or tamsulosin.",
+        keyFeature: { topic: TOPIC, n: 7 },
+        source: "olsen-nsaid-2011",
       },
       {
-        "id": "q4",
-        "kind": "single",
-        "prompt": "Which of the following best describes his risk with tenecteplase compared with patients under 65 years?",
-        "options": [
-          "Higher bleeding, similar mortality",
-          "Higher mortality and bleeding",
-          "Lower bleeding, higher mortality",
-          "Lower mortality and bleeding",
-          "Similar mortality and bleeding"
+        id: "q4",
+        kind: "single",
+        prompt: "Which of the following findings, if it developed while he waits, would call for immediate angiography?",
+        options: [
+          "Creatinine rising to 140 umol/L",
+          "Glucose of 16 mmol/L",
+          "Troponin of 400 ng/L at 6 hours",
+          "Unchanged 1.5 mm ST depression",
+          "Ventricular tachycardia",
         ],
-        "correct": 1,
-        "explanation": "In the ASSENT-2 data in the Canadian product monograph, patients aged 75 or more had a 30-day mortality of 16.2% against 2.5% under 65, intracranial hemorrhage of 1.7% against 0.4%, and major bleeding of 7.7% against 3.1%. Both his mortality and his bleeding risk are therefore higher. This is why the benefit must be weighed carefully and why lower dosing strategies are used in older patients.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 3
-        },
-        "source": "tnkase-pm"
-      }
+        correct: 4,
+        explanation:
+          "The ESC guideline recommends immediate angiography in NSTE-ACS with any very high-risk feature: hemodynamic instability or cardiogenic shock, refractory chest pain, acute heart failure from ischemia, life-threatening arrhythmias or cardiac arrest, mechanical complications, or recurrent dynamic ECG changes. Ventricular tachycardia is a life-threatening arrhythmia. A higher troponin confirms the NSTEMI he already has and keeps him in the high-risk group, for whom early or inpatient angiography is advised. ST depression that stays the same is not a recurrent dynamic change. A creatinine of 140 umol/L and a glucose of 16 mmol/L need attention but are not very high-risk features.",
+        keyFeature: { topic: TOPIC, n: 3 },
+        source: "esc-acs-2023",
+      },
     ],
-    "sources": [
-    {
-      "id": "stream-2-2023",
-      "citation": "Van de Werf F, Ristić AD, Averkov OV, et al. STREAM-2: half-dose tenecteplase or primary percutaneous coronary intervention in older patients with ST-segment elevation myocardial infarction. Circulation. 2023.",
-      "url": "https://doi.org/10.1161/CIRCULATIONAHA.123.064521"
-    },
-    {
-      "id": "brieger-2004",
-      "citation": "Brieger D, Eagle KA, Goodman SG, et al. Acute coronary syndromes without chest pain, an underdiagnosed and undertreated high-risk group: insights from the Global Registry of Acute Coronary Events. Chest. 2004.",
-      "url": "https://doi.org/10.1378/chest.126.2.461"
-    },
-    {
-      "id": "tnkase-pm",
-      "citation": "Hoffmann-La Roche Limited. TNKase (tenecteplase for injection) product monograph. Health Canada. 2025.",
-      "url": "https://pdf.hres.ca/dpd_pm/00082394.PDF"
-    }
-  ],
+    sources: [
+      S.esc,
+      {
+        id: "olsen-nsaid-2011",
+        citation: "Schjerning Olsen AM, Fosbøl EL, Lindhardsen J, et al. Duration of treatment with nonsteroidal anti-inflammatory drugs and impact on risk of death and recurrent myocardial infarction in patients with prior myocardial infarction: a nationwide cohort study. Circulation. 2011.",
+        url: "https://doi.org/10.1161/CIRCULATIONAHA.110.004671",
+      },
+    ],
     ...META,
-    "version": 2
+    version: 3,
   },
   {
     id: "ischemic-heart-disease-25",
@@ -1938,175 +1911,141 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
     ...META,
   },
   {
-    "id": "ischemic-heart-disease-41",
-    "topic": "ischemic-heart-disease",
-    "title": "Two morning episodes of tightness",
-    "stem": "A 58-year-old man presents to the emergency department at 1400 with central chest tightness at rest, once last evening while reading and once at noon, each lasting about 10 minutes. He says the pain was partly sharp. He is now pain free. He has peripheral arterial disease with an iliac artery stent placed 2 years ago and takes ASA and atorvastatin. He does not smoke and has no other risk factors. He had a normal exercise stress test 4 years ago. His examination is normal. His ECG is normal. A high sensitivity troponin at 1430 is below the 99th percentile.",
-    "vitals": {
-      "temperature": "36.6°C oral",
-      "pulse": "72/minute",
-      "resp": "16/minute",
-      "bp": "136/80 mmHg",
-      "o2sat": "98% on room air",
-      "weight": "84 kg"
-    },
-    "questions": [
+    id: "ischemic-heart-disease-41",
+    topic: TOPIC,
+    title: "Heaviness that woke her",
+    stem:
+      "A 66-year-old woman presents to the emergency department at 0930. At 0500 she woke with central chest heaviness and sweating that lasted 20 minutes and then settled. She has had no pain since. She has hypertension and dyslipidemia treated with ramipril and rosuvastatin. She stopped smoking 4 years ago after 35 pack-years. A low-dose CT for lung cancer screening 18 months ago reported no coronary artery calcium. Her examination is normal. Her ECG is normal. High sensitivity troponin T is 12 ng/L at 0945, 13 ng/L at 1045 and 13 ng/L at 1245 (99th percentile 14 ng/L). Under the hospital protocol these results fall in the observe zone, neither ruled in nor ruled out.",
+    vitals: { temperature: "36.7°C oral", pulse: "76/minute", resp: "16/minute", bp: "142/84 mmHg", o2sat: "98% on room air" },
+    questions: [
       {
-        "id": "q1",
-        "kind": "single",
-        "prompt": "Which of the following is his HEART score based on these findings?",
-        "options": [
-          "2",
-          "3",
-          "4",
-          "5",
-          "6"
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following statements about her screening CT finding is most accurate?",
+        options: [
+          "It makes further cardiac testing unnecessary",
+          "It places her at very low cardiac risk",
+          "It rules out obstructive disease",
+          "It suggests the pain may be esophageal",
+          "Noncalcified plaque can still cause stenosis",
         ],
-        "correct": 2,
-        "explanation": "His history mixes typical and non-typical features, which scores 1. The normal ECG scores 0. Age 58 scores 1. Known peripheral arterial disease scores 2 for risk factors automatically. A troponin below the discriminating level scores 0. The total is 1 + 0 + 1 + 2 + 0 = 4, which is moderate risk. A total of 3 misses the automatic 2 points for vascular disease.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 8
-        },
-        "source": "heart-score-2018"
+        correct: 4,
+        explanation:
+          "Absent coronary calcium lowers but does not remove the chance of obstructive disease in a patient with symptoms, because plaque without calcium can still narrow an artery. In the CONFIRM registry of symptomatic patients with a calcium score of 0, 13% had nonobstructive plaque and 3.5% had a stenosis of 50% or more on CT coronary angiography. Those with a zero score and a 50% stenosis had more events, counting death, MI and late revascularization together, than those without obstructive disease, 3.9% against 0.8%. A zero score therefore neither rules out obstructive disease nor makes further testing unnecessary. It does not measure her current risk of an acute event, and her troponins are still in the observe zone. It says nothing about an esophageal or other cause for waking with heaviness and sweating.",
+        keyFeature: { topic: TOPIC, n: 4 },
+        source: "confirm-cac0-2011",
       },
       {
-        "id": "q2",
-        "kind": "single",
-        "update": "A repeat troponin at 3 hours is also below the 99th percentile.",
-        "prompt": "Which of the following is the most appropriate disposition for him?",
-        "options": [
-          "Admit for observation and further testing",
-          "Cardiology clinic in 6 months",
-          "Discharge with family physician review",
-          "Emergency coronary angiography",
-          "No further cardiac evaluation"
+        id: "q2",
+        kind: "single",
+        prompt: "Which of the following is the most appropriate disposition for her now?",
+        options: [
+          "Discharge with a clinic visit in 3 months",
+          "Discharge with no further testing",
+          "Invasive coronary angiography today",
+          "Repeat troponin at 12 hours, then home",
+          "Ward admission for further evaluation",
         ],
-        "correct": 0,
-        "explanation": "In the HEART Pathway, a patient with a score above 3 and a negative repeat troponin at 3 hours should go to an observation or inpatient unit for further evaluation, while only those with a score of 3 or less are candidates for early discharge. Discharge with routine review or a clinic visit in 6 months misses this step. With two normal troponins and a normal ECG, emergency angiography is not indicated.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 8
-        },
-        "source": "heart-score-2018"
+        correct: 4,
+        explanation:
+          "The ESC guideline notes that patients in the observe zone have a mortality comparable to patients whose MI is ruled in. It recommends a third troponin at 3 hours, which she has had, and her value has not risen relevantly. Observe-zone patients with a low to intermediate likelihood of ACS are candidates for non-invasive imaging after transfer from the ED to the ward. Invasive angiography is for a high clinical suspicion, such as a relevant troponin rise by 3 hours. Discharge with no testing, or with a clinic visit in 3 months, leaves an observe-zone result unexplained. Another troponin at 12 hours would not show her coronary arteries.",
+        keyFeature: { topic: TOPIC, n: 8 },
+        source: "esc-acs-2023",
       },
       {
-        "id": "q3",
-        "kind": "single",
-        "prompt": "Which of the following statements about the sharp quality of some of his pain is most accurate?",
-        "options": [
-          "It confirms a musculoskeletal cause",
-          "It does not exclude ACS",
-          "It lowers his HEART history score to 0",
-          "It may allow discharge after one troponin",
-          "It points to pericarditis"
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following tests is most appropriate to resolve her diagnosis?",
+        options: [
+          "CT coronary angiography",
+          "Exercise ECG treadmill test",
+          "Holter monitoring for 48 hours",
+          "Invasive coronary angiography",
+          "Ventilation perfusion lung scan",
         ],
-        "correct": 1,
-        "explanation": "The HEART score gives 1 point to a history with mixed typical and non-typical features, so a partly sharp pain still counts toward risk and does not exclude ACS. A score of 0 is kept for a history not consistent with ACS. The review notes that women and older patients often present atypically. Sharp pain does not confirm a musculoskeletal cause or pericarditis. Its quality also cannot justify discharge after a single troponin, because the HEART pathway uses a repeat troponin before any early discharge decision.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 4
-        },
-        "source": "heart-score-2018"
-      }
+        correct: 0,
+        explanation:
+          "The ESC guideline names CT coronary angiography for observe-zone patients with a low to intermediate likelihood of ACS. It can identify patients with non-obstructed coronary arteries who may go home once other serious causes are excluded, and it can find obstructive disease that may need revascularization. Invasive angiography is kept for a high clinical suspicion, such as a relevant troponin rise, which she does not have. An exercise ECG and a Holter monitor do not show the coronary arteries. Nothing in her history points to pulmonary embolism, so a ventilation perfusion scan would not answer the question.",
+        keyFeature: { topic: TOPIC, n: 8 },
+        source: "esc-acs-2023",
+      },
     ],
-    "sources": [
-    {
-      "id": "heart-score-2018",
-      "citation": "Brady W, de Souza K. The HEART score: a guide to its application in the emergency department. Turk J Emerg Med. 2018.",
-      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6005932/"
-    }
-  ],
+    sources: [
+      {
+        id: "confirm-cac0-2011",
+        citation: "Villines TC, Hulten EA, Shaw LJ, et al. Prevalence and severity of coronary artery disease and adverse events among symptomatic patients with coronary artery calcification scores of zero undergoing coronary computed tomography angiography: results from the CONFIRM registry. J Am Coll Cardiol. 2011.",
+        url: "https://doi.org/10.1016/j.jacc.2011.10.851",
+      },
+      S.esc,
+    ],
     ...META,
-    "version": 2
+    version: 3,
   },
   {
-    "id": "ischemic-heart-disease-42",
-    "topic": "ischemic-heart-disease",
-    "title": "Breathless pushing a wheelchair",
-    "stem": "A 63-year-old man presents to the emergency department with three episodes in the past week of breathlessness, sweating and light-headedness while pushing his manual wheelchair up the ramp to his building. Each settled within 5 minutes of rest, and the last ended 8 hours ago. He has had no chest, arm or jaw pain. He lost his right leg below the knee in a work accident 20 years ago and does not use a prosthesis. He has had type 2 diabetes for 18 years, with neuropathy in his feet, and hypertension. He takes metformin, empagliflozin and ramipril. He does not smoke. His heart and lung examination is normal. His ECG shows sinus rhythm with no ischemic changes.",
-    "vitals": {
-      "temperature": "36.7°C oral",
-      "pulse": "78/minute",
-      "resp": "16/minute",
-      "bp": "138/80 mmHg",
-      "o2sat": "98% on room air",
-      "weight": "88 kg"
-    },
-    "questions": [
+    id: "ischemic-heart-disease-42",
+    topic: TOPIC,
+    title: "Sent by her physiotherapist",
+    stem:
+      "A 64-year-old woman is sent to the emergency department by her physiotherapist. For 5 weeks she has had an aching pain between her shoulder blades, treated as a thoracic strain. Today, on the clinic treadmill, the physiotherapist saw that the pain came on only with brisk walking and eased within 2 minutes of stopping. Neck and back movements and firm pressure over the spine did not bring it on. The last episode was 4 hours ago. She has hypertension and dyslipidemia and takes perindopril and atorvastatin. She has never smoked. She has had no chest pain, breathlessness, cough or fever. Her examination is normal, with no spinal tenderness. Her ECG is normal.",
+    vitals: { temperature: "36.6°C oral", pulse: "74/minute", resp: "16/minute", bp: "146/86 mmHg", o2sat: "98% on room air" },
+    questions: [
       {
-        "id": "q1",
-        "kind": "single",
-        "prompt": "Which of the following features of his episodes most suggests myocardial ischemia?",
-        "options": [
-          "Absence of chest pain",
-          "Light-headedness with the episodes",
-          "Normal ECG between episodes",
-          "Onset with exertion, relief with rest",
-          "Three episodes in one week"
+        id: "q1",
+        kind: "single",
+        prompt: "Which of the following is the most likely cause of her upper back pain?",
+        options: [
+          "Costovertebral joint dysfunction",
+          "Exertional angina",
+          "Gallbladder colic",
+          "Thoracic disc herniation",
+          "Thoracic facet joint strain",
         ],
-        "correct": 3,
-        "explanation": "Breathlessness that comes on with exertion and settles within minutes of rest follows the pattern of angina even without pain. Diabetes Canada notes that dyspnea on exertion may indicate coronary disease in people with diabetes and that almost one third of MIs occur without recognized or typical symptoms. The absence of chest pain does not lower concern in a man with long-standing diabetes. A normal resting ECG between episodes is common with coronary disease. Light-headedness is nonspecific, and the number of episodes says nothing about their cause.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 5
-        },
-        "source": "dc-cvd-screening-2018"
+        correct: 1,
+        explanation:
+          "Pain brought on by brisk walking and gone within 2 minutes of stopping follows the pattern of angina, even when it sits in the back. The ESC guideline lists pain in the upper back among possible angina equivalents. It describes angina as coming on with effort and settling within 1 to 5 minutes of stopping, and it contrasts this with pain set off by pressing on the ribs or sternum. Her pain did not change with neck and back movement or with firm pressure over the spine, which argues against facet, costovertebral and disc causes. Gallbladder colic is not brought on by walking and does not end within minutes of rest.",
+        keyFeature: { topic: TOPIC, n: 5 },
+        source: "esc-ccs-2024",
       },
       {
-        "id": "q2",
-        "kind": "single",
-        "update": "High sensitivity troponin I on arrival and 3 hours later is below the 99th percentile, and his repeat ECG is unchanged. He has no symptoms.",
-        "prompt": "Which of the following is the most appropriate disposition for him?",
-        "options": [
-          "Admit for stress testing tomorrow",
-          "Coronary angiography before discharge",
-          "CT coronary angiography in the ED now",
-          "Discharge with outpatient ischemia testing",
-          "Observation for 24 hours of telemetry"
+        id: "q2",
+        kind: "single",
+        update:
+          "High sensitivity troponin T is below 5 ng/L at arrival and at 1 hour. Her repeat ECG is unchanged, and she is pain free.",
+        prompt: "Which of the following is the most appropriate next step in her investigation?",
+        options: [
+          "Ambulatory ECG for 48 hours",
+          "Invasive coronary angiography",
+          "MRI of the thoracic spine",
+          "Noninvasive coronary testing",
+          "Repeat troponin in 6 hours",
         ],
-        "correct": 3,
-        "explanation": "Two normal troponins, an unchanged ECG and no symptoms make an acute MI unlikely, so he does not need admission, observation or emergency coronary imaging. His unexplained exertional breathlessness still needs an answer, and Diabetes Canada advises investigation for coronary disease in people with diabetes who have typical or atypical cardiac symptoms such as unexplained dyspnea. This can be arranged promptly as an outpatient. Invasive angiography before discharge is not justified without evidence of an acute coronary syndrome or a positive noninvasive test.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 8
-        },
-        "source": "dc-cvd-screening-2018"
+        correct: 3,
+        explanation:
+          "Her troponins and ECG do not suggest an acute event, but her exertional pain still needs a coronary answer. She has 2 of the 3 anginal features: pain brought on by exertion and relieved within 5 minutes of rest. The CCS guideline suggests noninvasive testing for adults aged 30 or more with 2 or 3 of these features. With a normal resting ECG and the ability to exercise, it suggests an exercise ECG, and it places CT coronary angiography best in the lower intermediate range of pretest probability. Either can serve her, depending on local access. Invasive angiography is kept for a high pretest likelihood, high-risk noninvasive results, survived cardiac arrest or life-threatening arrhythmia, and she has none of these. An ambulatory ECG records rhythm and does not provoke exertional ischemia. Two troponins below 5 ng/L an hour apart show no myocardial injury, so a third adds little. Her pain is not mechanical, so a spine MRI would not answer the question.",
+        keyFeature: { topic: TOPIC, n: 8 },
+        source: "ccs-sihd-2014",
       },
       {
-        "id": "q3",
-        "kind": "single",
-        "prompt": "Which of the following medications is most appropriate to add for his episodes?",
-        "options": [
-          "clopidogrel 75 mg PO daily",
-          "isosorbide mononitrate 30 mg daily",
-          "nitroglycerin 0.4 mg SL as needed",
-          "rivaroxaban 2.5 mg PO twice daily",
-          "ticagrelor 90 mg PO twice daily"
+        id: "q3",
+        kind: "single",
+        prompt: "Which of the following should also be arranged as part of her evaluation?",
+        options: [
+          "Ambulatory blood pressure monitoring",
+          "Carotid artery ultrasound",
+          "CT pulmonary angiogram",
+          "Resting echocardiogram",
+          "Thoracic spine X-ray",
         ],
-        "correct": 2,
-        "explanation": "The CCS guideline supports sublingual nitroglycerin for exertional angina, taken when an episode starts or beforehand for an activity known to bring it on, such as pushing his chair up the ramp. It suggests a long-acting nitrate such as isosorbide mononitrate only when a beta blocker or a long-acting calcium channel blocker is not tolerated, not enough or contraindicated. Ticagrelor is given with ASA for an acute coronary syndrome, which his normal troponins argue against. Rivaroxaban at this dose is added to ASA for proven coronary or peripheral artery disease, which has not been shown in him. Clopidogrel replaces ASA only when ASA cannot be taken.",
-        "keyFeature": {
-          "topic": "ischemic-heart-disease",
-          "n": 8
-        },
-        "source": "ccs-sihd-2014"
-      }
+        correct: 3,
+        explanation:
+          "The CCS guideline recommends a noninvasive assessment of resting LV function for every patient with suspected stable ischemic heart disease, and a resting echocardiogram provides it. The same study shows regional wall motion and other heart disease, such as valve disease or hypertrophy. Carotid ultrasound images the neck arteries and does not assess the heart. She has no breathlessness, cough or other feature of pulmonary embolism, so a CT pulmonary angiogram is not indicated. Her pain does not behave like spinal pain, so a spine X-ray adds nothing. Her hypertension is already treated, and ambulatory monitoring does not address this problem.",
+        keyFeature: { topic: TOPIC, n: 8 },
+        source: "ccs-sihd-2014",
+      },
     ],
-    "sources": [
-    {
-      "id": "dc-cvd-screening-2018",
-      "citation": "Diabetes Canada Clinical Practice Guidelines Expert Committee, Poirier P, Bertrand OF, Leipsic J, Mancini GBJ, Raggi P, Roussin A. Screening for the presence of cardiovascular disease. Can J Diabetes. 2018.",
-      "url": "https://guidelines.diabetes.ca/cpg/chapter24"
-    },
-    {
-      "id": "ccs-sihd-2014",
-      "citation": "Mancini GBJ, Gosselin G, Chow B, et al. Canadian Cardiovascular Society guidelines for the diagnosis and management of stable ischemic heart disease. Can J Cardiol. 2014.",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/25064578/"
-    }
-  ],
+    sources: [S.vrints, S.mancini],
     ...META,
-    "version": 3
+    version: 4,
   },
   {
     id: "ischemic-heart-disease-43",
