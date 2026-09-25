@@ -402,91 +402,108 @@ export const ASTHMA_COPD_S25: Samp[] = [
   {
     id: "asthma-copd-19",
     topic: "asthma-copd",
-    title: "Fast irregular pulse with a chest cold",
-    stem:
-      "A 78-year-old woman with COPD presents to the emergency department with four days of increased breathlessness, cough and purulent sputum. She uses oxygen at 2 L/minute at home and takes an inhaler containing umeclidinium and vilanterol. She has no chest pain. She is alert and speaks in short sentences. There is diffuse expiratory wheeze with prolonged expiration. The ECG shows an irregular narrow complex tachycardia with at least three different P wave shapes and varying PR intervals.",
+    title: "Worse days after a lung procedure",
+    stem: "A 69-year-old man with severe COPD presents to the emergency department with 3 hours of sudden worsening breathlessness and right-sided chest pain. Five days ago he had endobronchial valves placed in his right upper lobe to reduce hyperinflation. For 2 days before the pain began he had a cold with more sputum. He uses tiotropium-olodaterol and no home oxygen. He speaks in short phrases. Breath sounds are reduced over the right upper chest. He has no fever and no leg swelling. After salbutamol and ipratropium, a venous gas shows pH 7.30 and pCO2 64 mmHg.",
     vitals: {
-      temperature: "37.6°C oral",
-      pulse: "136/minute irregular",
-      resp: "28/minute",
-      bp: "132/78 mmHg",
-      o2sat: "86% on 2 L/minute by nasal prongs",
+      temperature: "37.2°C oral",
+      pulse: "112/minute",
+      resp: "30/minute",
+      bp: "138/80 mmHg",
+      o2sat: "86% on room air",
+      weight: "64 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best describes the rhythm on her ECG?",
+        prompt: "Which of the following most likely explains his sudden worsening five days after the procedure?",
         options: [
-          "Atrial fibrillation",
-          "Atrial flutter with variable block",
-          "Multifocal atrial tachycardia",
-          "Sinus tachycardia with PACs",
-          "Wandering atrial pacemaker",
+          "Acute heart failure",
+          "Lobar collapse from mucus plugging",
+          "Pneumonia in the treated lobe",
+          "Pneumothorax after valve placement",
+          "Pulmonary embolism"
         ],
-        correct: 2,
-        explanation:
-          "An irregular rhythm faster than 100/minute with at least three P wave shapes and varying PR intervals is multifocal atrial tachycardia, which is strongly linked to decompensated lung disease. Atrial fibrillation has no organized P waves. Atrial flutter shows regular flutter waves. Sinus tachycardia with premature beats has one dominant P wave shape. A wandering atrial pacemaker has the same P wave pattern at a rate under 100/minute, and her rate is 136/minute.",
-        keyFeature: { topic: "asthma-copd", n: 4 },
-        source: "rosen-ch65",
+        correct: 3,
+        explanation: "The GOLD report describes pneumothorax as the main early complication of endobronchial valve treatment. It reports that about three quarters occur within 72 hours, so a later one is less common but still expected. Sudden pain with abruptly worse breathlessness and reduced breath sounds over the treated side fits it. Pneumonia would usually bring fever and a gradual course. Lobar collapse from mucus reduces breath sounds but rarely causes sudden pleuritic pain. Heart failure would usually bring leg swelling, and he has none. Pulmonary embolism can mimic an exacerbation, but the sudden onset after the procedure with focal signs on the treated side points first to pneumothorax.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 4
+        },
+        source: "gold"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate initial treatment for her rhythm?",
+        update: "A chest X-ray shows a large right pneumothorax. His venous pH is 7.30 and pCO2 64 mmHg despite bronchodilators and steroids.",
+        prompt: "Which of the following is the most appropriate next step in his management?",
         options: [
-          "adenosine 6 mg IV push",
-          "digoxin 0.25 mg IV",
-          "Modified Valsalva manoeuvre",
-          "Synchronized cardioversion at 100 J",
-          "Treat the COPD exacerbation",
+          "Bilevel ventilation now, drain if worse",
+          "Chest drain, then reassess for NIV",
+          "Needle aspiration and discharge home",
+          "Observe with a repeat X-ray in 6 hours",
+          "Oxygen at 15 L/minute to speed reabsorption"
         ],
-        correct: 4,
-        explanation:
-          "Multifocal atrial tachycardia is driven by the underlying lung disease and hypoxemia, so treating the exacerbation and correcting her SpO2 of 86% is the first step. Cardioversion does not work because there are several atrial foci. Adenosine and a modified Valsalva manoeuvre do not terminate the rhythm, because it is not a reentrant tachycardia. Digoxin is generally ineffective for rate control in this rhythm and is not a first step.",
-        keyFeature: { topic: "asthma-copd", n: 4 },
-        source: "rosen-ch65",
+        correct: 1,
+        explanation: "He has a large pneumothorax and acute hypercapnic acidosis. The BTS/ICS guideline notes that a pneumothorax usually needs intercostal drainage, followed by a review of whether noninvasive ventilation should continue. Positive pressure through an undrained pneumothorax risks enlarging it. Needle aspiration and discharge is unsafe in a hypercapnic patient with severe COPD. Observation leaves a large air leak untreated in a patient with little reserve. High-flow oxygen can worsen hypercapnia in COPD, where the guideline targets a saturation of 88 to 92%.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 4
+        },
+        source: "bts-ics"
       },
       {
         id: "q3",
         kind: "single",
-        update: "Venous gas: pH 7.29, pCO2 71 mmHg, HCO3 33 mmol/L. She remains alert and able to protect her airway.",
-        prompt: "Which of the following is the most appropriate respiratory support for her now?",
+        update: "After the drain the lung has re-expanded, but his pH is 7.31 and pCO2 62 mmHg on optimal medical treatment. Bilevel ventilation is started. He is anxious and keeps pulling off the mask. He wants intubation if it is needed.",
+        prompt: "Which of the following is the most appropriate step to help him tolerate noninvasive ventilation?",
         options: [
-          "Bilevel noninvasive ventilation",
-          "Continuous positive airway pressure",
-          "Endotracheal intubation",
-          "Non-rebreather mask at 15 L/minute",
-          "Venturi mask at 40%",
+          "haloperidol 5 mg IM",
+          "midazolam infusion IV",
+          "morphine 2.5 mg IV",
+          "propofol 1 mg/kg IV",
+          "Stop NIV and use a Venturi mask"
         ],
-        correct: 0,
-        explanation:
-          "A pH of 7.29 with a pCO2 of 71 mmHg is acute on chronic hypercapnic acidosis, and the ERS and ATS recommend bilevel noninvasive ventilation for COPD exacerbations with a pH of 7.35 or less. CPAP does not give the inspiratory pressure support that lowers pCO2. She is alert and protecting her airway, so intubation is not the first step. High concentration oxygen by non-rebreather or a 40% Venturi mask can worsen hypercapnia and does not treat ventilatory failure.",
-        keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "ers-ats-niv",
+        correct: 2,
+        explanation: "The BTS/ICS guideline suggests that in an agitated or distressed patient on noninvasive ventilation, IV morphine 2.5 to 5 mg can relieve symptoms and may improve tolerance. Infused sedatives such as midazolam should only be used in a high dependency or intensive care setting. Propofol at 1 mg/kg is an anesthetic induction dose that would stop his breathing. Haloperidol treats agitation from delirium but does not address his air hunger. He still meets the criteria for noninvasive ventilation, with a pH below 7.35 and a pCO2 above 49 mmHg despite treatment, so stopping it is wrong.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 7
+        },
+        source: "bts-ics"
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following systemic corticosteroid regimens is most appropriate for her exacerbation?",
+        update: "He recovers and is ready for discharge. This is his second exacerbation treated with prednisone this year despite good inhaler technique. His blood eosinophil count is 0.40 x 10^9/L.",
+        prompt: "Which of the following changes to his maintenance inhalers is most appropriate at discharge?",
         options: [
-          "methylprednisolone 1 g IV daily for 3 days",
-          "prednisone 10 mg PO daily for 5 days",
-          "prednisone 40 mg PO daily for 5 days",
-          "prednisone 40 mg PO daily for 14 days",
-          "prednisone 50 mg PO, then 3-week taper",
+          "Add an inhaled corticosteroid",
+          "Add azithromycin 250 mg PO daily",
+          "Add montelukast 10 mg PO daily",
+          "Switch to an ICS-LABA inhaler",
+          "No change to his inhalers"
         ],
-        correct: 2,
-        explanation:
-          "GOLD recommends prednisone 40 mg daily for 5 days in COPD exacerbations. Five days works as well as 14 days, and longer courses were associated with more pneumonia and death in an observational study. Prednisone 10 mg is below the recommended dose. A taper is not needed after a short course. Pulse dose methylprednisolone is not recommended for COPD exacerbations.",
-        keyFeature: { topic: "asthma-copd", n: 6 },
-        source: "gold",
-      },
+        correct: 0,
+        explanation: "He has had a moderate or severe exacerbation while taking a LABA and a LAMA, and his eosinophil count of 0.40 x 10^9/L is 400 cells/microL. The GOLD report suggests escalating to LABA plus LAMA plus ICS in this situation, with a benefit seen from 100 cells/microL and more likely at higher counts. Azithromycin is considered mainly when eosinophils are below 100 cells/microL. Switching to an ICS-LABA would drop his LAMA, and the report states that triple therapy is superior to ICS-LABA when an ICS is indicated. Leukotriene modifiers have not been tested adequately in COPD. Leaving his inhalers unchanged ignores two exacerbations in a year.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 6
+        },
+        source: "gold"
+      }
     ],
-    sources: [ERS_ATS_NIV, GOLD, ROSEN_CH65],
+    sources: [
+      GOLD,
+      {
+        id: "bts-ics",
+        citation: "Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016.",
+        url: "https://doi.org/10.1136/bmjresp-2016-000133"
+      }
+    ],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-20",
@@ -999,74 +1016,87 @@ export const ASTHMA_COPD_S25: Samp[] = [
   {
     id: "asthma-copd-26",
     topic: "asthma-copd",
-    title: "Pressure falls after the tube",
-    stem:
-      "A 38-year-old woman with severe asthma was intubated in the emergency department 10 minutes ago for exhaustion and a falling level of consciousness despite maximal therapy. She was induced with ketamine and rocuronium. While the ventilator was being set up she was bagged vigorously by hand at about 30 breaths/minute. Her blood pressure was normal before induction. The chest is hyperexpanded and breath sounds are very quiet but equal on both sides. The neck veins are distended.",
+    title: "Snoring and drowsy on arrival",
+    stem: "A 61-year-old woman with COPD and obesity is brought to the emergency department by ambulance with 3 days of increasing breathlessness, cough and ankle swelling. Her partner says she snores loudly and stops breathing at night. She uses fluticasone-umeclidinium-vilanterol, has no home oxygen and takes no opioids or sedatives. She is drowsy but rousable and follows commands. She has scattered wheeze. After 1 hour of nebulized bronchodilators, prednisone and controlled oxygen, an arterial gas on 2 L/minute shows pH 7.22, PaCO2 88 mmHg, PaO2 62 mmHg and HCO3 35 mmol/L. Her body mass index is 46 kg/m2.",
     vitals: {
-      pulse: "138/minute",
-      bp: "74/40 mmHg",
-      o2sat: "90% on 100% oxygen by bag",
-      weight: "70 kg",
+      temperature: "37.0°C oral",
+      pulse: "104/minute",
+      resp: "26/minute",
+      bp: "152/88 mmHg",
+      o2sat: "90% on 2 L/minute by nasal prongs",
+      weight: "128 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate immediate step in her management?",
+        prompt: "Which of the following is the most appropriate respiratory support for her now?",
         options: [
-          "Bilateral needle decompression",
-          "Disconnect from the bag",
-          "Increase PEEP to 15 cm H2O",
-          "Increase the bagging rate",
-          "Norepinephrine infusion",
+          "Bilevel ventilation, intubation ready",
+          "High-flow nasal oxygen at 60 L/minute",
+          "Immediate intubation for the pH",
+          "Oxygen increased to 6 L/minute",
+          "Venturi mask, repeat gas in 1 hour"
         ],
-        correct: 1,
-        explanation:
-          "Rapid bagging in severe asthma leaves too little time to exhale, so air is trapped, intrathoracic pressure rises and venous return falls. Brenner and colleagues advise disconnecting the patient to allow full exhalation as the first step. If the BP recovers, dynamic hyperinflation is confirmed. Her breath sounds are equal, and tension pneumothorax is considered if disconnection does not help. Faster bagging and more PEEP raise intrathoracic pressure further. A vasopressor does not treat the cause.",
-        keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "brenner",
+        correct: 0,
+        explanation: "Her pH is below 7.35 and her PaCO2 is above 49 mmHg after an hour of optimal medical treatment, so the BTS/ICS guideline recommends noninvasive ventilation. It adds that severe acidosis alone does not preclude a trial of noninvasive ventilation where staff can intubate safely, and she is still rousable and following commands. Intubating for the pH alone skips a trial that often succeeds. More oxygen would raise her PaCO2 further. A Venturi mask and waiting an hour leaves a pH of 7.22 untreated. High-flow nasal oxygen gives no set inspiratory pressure support, so it is not the first choice for her acidosis.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 7
+        },
+        source: "bts-ics"
       },
       {
         id: "q2",
         kind: "single",
-        update: "Within a minute of disconnection her BP rises to 108/64 mmHg. She is placed on the ventilator.",
-        prompt: "Which of the following measurements best reflects the degree of dynamic hyperinflation on the ventilator?",
+        update: "On bilevel ventilation with an IPAP of 16 and an EPAP of 5 cm H2O, she snores, her chest and abdomen move in opposite directions, and her tidal volumes stay low despite visible effort. The mask fits well without a leak.",
+        prompt: "Which of the following ventilator changes is most appropriate for her?",
         options: [
-          "End-tidal CO2",
-          "Exhaled tidal volume",
-          "Oxygen saturation",
-          "Peak inspiratory pressure",
-          "Plateau pressure",
+          "Decrease the EPAP",
+          "Decrease the IPAP",
+          "Increase the EPAP",
+          "Increase the oxygen only",
+          "Switch to CPAP of 5 cm H2O"
         ],
-        correct: 4,
-        explanation:
-          "Plateau pressure, measured during an end-inspiratory pause, reflects alveolar pressure and is the practical bedside marker of hyperinflation, with a target below 30 cm H2O. Peak inspiratory pressure is dominated by airway resistance and is often very high in asthma without predicting harm. End-tidal CO2 underestimates arterial CO2 in severe obstruction. Exhaled tidal volume and SpO2 do not measure trapped gas.",
-        keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "brenner",
+        correct: 2,
+        explanation: "Snoring with chest and abdominal paradox on noninvasive ventilation points to upper airway obstruction, and the BTS/ICS troubleshooting guide advises increasing the EPAP. Patients with obesity hypoventilation often need higher pressures than usual. Lowering either pressure worsens obstruction or ventilation. Adding oxygen alone treats the saturation but not the hypercapnia. CPAP of 5 cm H2O gives no inspiratory support to clear her carbon dioxide.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 7
+        },
+        source: "bts-ics"
       },
       {
         id: "q3",
         kind: "single",
-        update: "Plateau pressure is 34 cm H2O and auto-PEEP is 14 cm H2O. Arterial pH is 7.18 with a PaCO2 of 78 mmHg.",
-        prompt: "Which of the following is the most appropriate response to these ventilator values?",
+        update: "After further ventilator adjustment the snoring and paradox stop. One hour later she is more alert, but her tidal volumes are still small with a good mask seal. Her pH is 7.24 and PaCO2 84 mmHg.",
+        prompt: "Which of the following is the most appropriate next step in her ventilatory support?",
         options: [
-          "Increase the respiratory rate",
-          "Increase tidal volume to 10 mL/kg",
-          "Reduce minute ventilation",
-          "Start a sodium bicarbonate infusion",
-          "Switch to pressure support mode",
+          "Continue unchanged, repeat gas in 4 hours",
+          "Endotracheal intubation now",
+          "High-flow nasal oxygen instead",
+          "Increase the IPAP setting",
+          "Lower the EPAP setting"
         ],
-        correct: 2,
-        explanation:
-          "A plateau pressure above 30 cm H2O with high auto-PEEP shows dangerous air trapping, so minute ventilation should be reduced by lowering the rate or tidal volume, accepting a raised PaCO2. A pH of 7.18 is usually tolerated under this permissive hypercapnia approach. Increasing the rate shortens expiratory time and increasing tidal volume adds to trapping, and both worsen hyperinflation. Bicarbonate does not reduce hyperinflation. Pressure support is not suitable for a patient just paralyzed for intubation.",
-        keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "brenner",
-      },
+        correct: 3,
+        explanation: "Her upper airway is now open, but small tidal volumes mean she is still underventilated. The BTS/ICS troubleshooting guide advises raising the IPAP when tidal volume is inadequate, and notes that patients with obesity hypoventilation often need high pressures, for example an IPAP above 30 and an EPAP above 8 cm H2O. She is more alert and her pH is improving, so she does not meet the guideline's triggers for invasive ventilation, such as a pH persisting below 7.15, a falling pH or a GCS below 8. Leaving the settings unchanged for 4 hours accepts inadequate ventilation. High-flow nasal oxygen gives no inspiratory pressure support. Lowering the EPAP would bring back the obstruction.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 7
+        },
+        source: "bts-ics"
+      }
     ],
-    sources: [BRENNER],
+    sources: [
+      {
+        id: "bts-ics",
+        citation: "Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016.",
+        url: "https://doi.org/10.1136/bmjresp-2016-000133"
+      }
+    ],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-27",
@@ -1160,93 +1190,106 @@ export const ASTHMA_COPD_S25: Samp[] = [
   {
     id: "asthma-copd-28",
     topic: "asthma-copd",
-    title: "Feeling better at rest",
-    stem:
-      "You are working in a rural emergency department. A 70-year-old man with COPD presents with three days of increased breathlessness and yellow sputum after a cold. He was treated with salbutamol and ipratropium, prednisone 40 mg PO and doxycycline 200 mg PO. After four hours he feels close to his usual self and wants to go home. He lives alone on a farm 45 minutes from town. He takes tiotropium daily. When well he has to stop for breath when walking at his own pace on level ground. He had one other exacerbation treated with prednisone and one hospital admission for COPD in the past year. He smokes 15 cigarettes a day.",
+    title: "Wheezing and living alone",
+    stem: "A 68-year-old woman with asthma presents to the emergency department with 2 days of wheeze and breathlessness after a cold. She has never smoked and lives alone. She uses budesonide-formoterol twice daily and a salbutamol inhaler, and she has used 14 puffs of salbutamol in the past 24 hours. She was admitted for asthma last winter. She is speaking in phrases and has diffuse wheeze. Her predicted peak flow is 380 L/minute and her arrival peak flow is 120 L/minute. She receives salbutamol and ipratropium by spacer.",
     vitals: {
-      temperature: "37.0°C oral",
-      pulse: "92/minute",
-      resp: "20/minute",
-      bp: "142/80 mmHg",
-      o2sat: "93% on room air",
+      temperature: "37.3°C oral",
+      pulse: "110/minute",
+      resp: "26/minute",
+      bp: "146/84 mmHg",
+      o2sat: "91% on room air"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most useful check before deciding whether he can go home?",
+        prompt: "Which of the following best predicts whether she will need admission to hospital?",
         options: [
-          "Repeat chest auscultation",
-          "Repeat resting peak flow",
-          "Repeat resting pulse oximetry",
-          "Venous blood gas at rest",
-          "Walking pulse oximetry",
+          "Chest X-ray findings",
+          "Heart rate on arrival",
+          "Oxygen saturation on arrival",
+          "Peak flow on arrival",
+          "Status and peak flow at 1 hour"
         ],
         correct: 4,
-        explanation:
-          "He feels well at rest, but he lives alone far from care, so the key question is whether his recovery holds when he is active. In the Canadian ED study that derived the Ottawa COPD Risk Scale, patients walked at their own pace for 3 minutes after treatment, and being too ill to do the walk test (SpO2 below 90% or pulse of 120/minute or more) was linked to serious adverse events. Repeat auscultation, resting oximetry, a resting peak flow and a venous gas are all taken at rest. They cannot show how he will manage once he is up and moving at home.",
-        keyFeature: { topic: "asthma-copd", n: 8 },
-        source: "stiell-copd",
+        explanation: "The GINA report states that clinical status, including the ability to lie flat, and lung function 1 hour after treatment starts are more reliable predictors of the need for hospitalization than the patient's status on arrival. Her arrival peak flow, heart rate and saturation describe how sick she was before treatment, not how she responds to it. A chest X-ray is not routinely recommended in asthma and does not predict the need for admission unless a complication is suspected.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 8
+        },
+        source: "gina"
       },
       {
         id: "q2",
         kind: "single",
-        update: "He walks 60 metres and stops. He is breathless and his SpO2 falls to 84% and does not recover after 3 minutes of rest.",
-        prompt: "Which of the following is the most appropriate disposition for him now?",
+        update: "After 1 hour of treatment her peak flow is 160 L/minute. Her SpO2 is 94% and she still cannot lie flat.",
+        prompt: "Which of the following is the most appropriate disposition for her now?",
         options: [
-          "Discharge after a second prednisone dose",
-          "Discharge with follow-up in 2 weeks",
-          "Discharge with home oxygen tomorrow",
-          "Keep him in hospital for treatment",
-          "Observe 1 hour, then discharge",
+          "Admit her for ongoing treatment",
+          "Discharge after one more salbutamol dose",
+          "Discharge home with oral prednisone",
+          "Discharge if she walks without desaturating",
+          "Observe for 2 hours, then discharge"
         ],
-        correct: 3,
-        explanation:
-          "He failed the exertion test, with sustained desaturation to 84% and breathlessness after 60 metres, so he has not recovered enough to go home alone to a remote farm. GOLD notes that the need for long-term oxygen is judged better at follow-up than shortly after an exacerbation, so arranging home oxygen tomorrow is not a substitute for admission. Another prednisone dose or a short period of observation does not change his exertional hypoxemia. Follow-up in 2 weeks leaves him unsafe in the meantime.",
-        keyFeature: { topic: "asthma-copd", n: 8 },
-        source: "gold",
+        correct: 0,
+        explanation: "Her peak flow of 160 L/minute is 42% of her predicted 380 L/minute, and the GINA report lists a final peak flow below 50% of predicted among the features that increase the need for admission. She also cannot lie flat, is older, lives alone and had an admission last winter. Discharge after another dose, with prednisone alone, or after a fixed period of observation ignores her poor lung function. A walking test cannot replace an objective peak flow that is still below half of predicted.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 8
+        },
+        source: "gina"
       },
       {
         id: "q3",
         kind: "menu",
-        prompt: "Which of the following are most appropriate to arrange as he recovers from this exacerbation?",
+        prompt: "Which of the following features in her history increase her likelihood of needing admission?",
         options: [
-          "Change tiotropium to triple therapy",
-          "Inhaled corticosteroid alone",
-          "Maintenance prednisone 5 mg daily",
-          "Pulmonary rehabilitation referral",
-          "Smoking cessation treatment",
-          "Theophylline added to tiotropium",
+          "Admission for asthma last winter",
+          "Age of 68 years",
+          "Budesonide-formoterol as her controller",
+          "Cold as the trigger",
+          "Lifelong non-smoker",
+          "Normal temperature",
+          "Salbutamol 14 puffs in 24 hours"
         ],
         select: 3,
-        correct: [0, 3, 4],
-        explanation:
-          "In the past year he has had an admission and a prednisone-treated exacerbation, and now an ED visit, so he is at high risk of exacerbations (2 or more moderate or 1 or more severe in a year). He is breathless on level ground (mMRC 2 or more), so the Canadian Thoracic Society recommends triple therapy with a LAMA, LABA and inhaled corticosteroid. The CTS also names pulmonary rehabilitation and smoking cessation as core nonpharmacologic care, and he still smokes. The CTS recommends against theophylline, maintenance oral corticosteroids and inhaled corticosteroid monotherapy in COPD.",
-        keyFeature: { topic: "asthma-copd", n: 8 },
-        source: "cts-copd",
+        correct: [
+          0,
+          1,
+          6
+        ],
+        explanation: "The GINA report lists older age, use of more than 8 beta2-agonist actuations in the previous 24 hours and a past history of severe exacerbations such as asthma admissions among the factors linked to a greater need for hospitalization. She has all three. Taking an inhaled corticosteroid-formoterol controller reduces the risk of severe exacerbations, so it does not add to her risk. A cold as the trigger is not among the listed factors. Being a lifelong non-smoker and having a normal temperature do not increase her risk.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 8
+        },
+        source: "gina"
       },
       {
         id: "q4",
         kind: "single",
-        prompt: "Which of the following is the most appropriate total duration for his prednisone course?",
+        update: "Later that day she vomits twice and cannot keep tablets down.",
+        prompt: "Which of the following corticosteroid orders is most appropriate for her today?",
         options: [
-          "3 days",
-          "5 days",
-          "10 days",
-          "14 days",
-          "21 days",
+          "dexamethasone 12 mg PO once",
+          "methylprednisolone 40 mg IV daily",
+          "methylprednisolone 125 mg IV every 6 hours",
+          "prednisone 50 mg PO daily",
+          "No corticosteroid until the vomiting stops"
         ],
         correct: 1,
-        explanation:
-          "GOLD recommends prednisone 40 mg daily for 5 days for COPD exacerbations. A 5-day course works as well as a 14-day course, and longer courses add exposure with a higher risk of pneumonia and death in observational data. Ten, 14 and 21 days add steroid exposure without benefit. A 3-day course is shorter than the course studied and recommended.",
-        keyFeature: { topic: "asthma-copd", n: 6 },
-        source: "gold",
-      },
+        explanation: "The GINA report states that oral corticosteroids are as effective as IV, but that IV corticosteroids can be given when a patient is vomiting. The usual adult dose is equivalent to prednisone 50 mg a day, and methylprednisolone 40 mg IV is that equivalent dose. Oral prednisone or dexamethasone will not stay down while she is vomiting. Methylprednisolone 125 mg every 6 hours is several times the needed dose and adds side effects without benefit. Withholding steroids from a patient admitted with a severe flare delays a treatment that speeds recovery.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 6
+        },
+        source: "gina"
+      }
     ],
-    sources: [STIELL_COPD, GOLD, CTS_COPD],
+    sources: [GINA],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-29",
@@ -1580,7 +1623,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         ],
         correct: 2,
         explanation:
-          "The Rome criteria in GOLD call an exacerbation moderate when at least three of five thresholds are met, and he meets all five: dyspnea 7 (5 or more), respiratory rate 26 (24 or more), pulse 102 (95 or more), SpO2 88% (below 92%, and 6 points below his usual) and CRP 46 mg/L (10 or more). Severe requires a PaO2 of 60 mmHg or less, or hypercapnia with acidosis (PaCO2 above 45 mmHg and pH below 7.35). His PaO2 is 62 mmHg and his pH is 7.37, so he is not severe or life-threatening. His radiograph shows no consolidation.",
+          "The Rome criteria in GOLD call an exacerbation moderate when at least three of five thresholds are met, and he meets all five: dyspnea 7 (5 or more), respiratory rate 26 (24 or more), pulse 102 (95 or more), SpO2 88% (below 92%, and 6 points below his usual) and CRP 46 mg/L (10 or more). In the original Rome proposal, severe requires hypercapnia with acidosis, a PaCO2 above 45 mmHg with a pH below 7.35. The GOLD figure also lists a PaO2 of 60 mmHg or less under severe. His pH is 7.37 and his PaO2 is 62 mmHg, so he is not severe by either version. The Rome scheme has no life-threatening grade. His radiograph shows no consolidation.",
         keyFeature: { topic: "asthma-copd", n: 3 },
         source: "gold",
       },
@@ -1706,168 +1749,194 @@ export const ASTHMA_COPD_S25: Samp[] = [
   {
     id: "asthma-copd-35",
     topic: "asthma-copd",
-    title: "A mild flare before work",
-    stem:
-      "A 27-year-old woman with asthma presents to the emergency department with one day of chest tightness and wheeze after a cold. She uses budesonide 200 mcg with formoterol 6 mcg, one inhalation as needed, and has used it four times today. She has had no oral steroids in the past year and no admissions. She speaks in full sentences and is not using accessory muscles. There is mild expiratory wheeze. Peak flow is 330 L/minute and her personal best is 420 L/minute.",
+    title: "Smoky air and a tight chest",
+    stem: "You are working in an emergency department in the British Columbia interior during a week of heavy wildfire smoke. A 45-year-old woman with asthma presents with 1 day of chest tightness, cough and wheeze. She uses a salbutamol inhaler only and has used it 10 times since yesterday. She had a course of prednisone for asthma 4 months ago. She has no fever, hives, lip swelling or throat tightness. She speaks in phrases and has diffuse wheeze. Her peak flow is 190 L/minute, and her predicted value is 400 L/minute.",
     vitals: {
-      temperature: "37.0°C oral",
-      pulse: "96/minute",
-      resp: "20/minute",
-      bp: "118/74 mmHg",
-      o2sat: "96% on room air",
+      temperature: "36.9°C oral",
+      pulse: "108/minute",
+      resp: "24/minute",
+      bp: "132/80 mmHg",
+      o2sat: "94% on room air",
+      weight: "70 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following oxygen plans is most appropriate for her in the emergency department?",
+        prompt: "Which of the following is the most appropriate first bronchodilator treatment for her?",
         options: [
-          "Face mask at 6 L/minute",
-          "Nasal prongs at 2 L/minute",
-          "Oxygen to target 94 to 98%",
-          "Venturi mask at 28%",
-          "No supplemental oxygen",
+          "aminophylline IV loading dose",
+          "epinephrine 0.5 mg IM",
+          "magnesium sulfate 2 g IV",
+          "montelukast 10 mg PO",
+          "salbutamol by inhaler and spacer"
         ],
         correct: 4,
-        explanation:
-          "GINA 2026 does not recommend supplemental oxygen in acute asthma unless SpO2 is below 92%, and when it is given the upper target is 95%. Her SpO2 is 96% on room air, so she needs no oxygen. Oxygen by prongs, face mask or Venturi mask adds nothing for her. A target of 94 to 98% exceeds the revised upper limit.",
-        keyFeature: { topic: "asthma-copd", n: 5 },
-        source: "gina",
+        explanation: "The GINA report advises starting a short-acting beta2-agonist while severity is being assessed, in most patients by metered-dose inhaler and spacer. Her peak flow is 48% of predicted, a moderate to severe flare, so ipratropium is also added early. Epinephrine is not indicated for asthma without anaphylaxis, and she has no features of it. Magnesium is reserved for patients who fail to respond to initial treatment. Aminophylline should not be used because of poor efficacy and safety. The evidence for leukotriene receptor antagonists in acute asthma is limited.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 5
+        },
+        source: "gina"
       },
       {
         id: "q2",
         kind: "single",
-        update: "She improves after one treatment. Her peak flow is now 400 L/minute and she wants to go home.",
-        prompt: "Which of the following inhaler plans is most appropriate at discharge?",
+        prompt: "Which of the following systemic corticosteroid orders is most appropriate for her now?",
         options: [
-          "Add montelukast 10 mg PO daily",
-          "Add salmeterol twice daily to reliever",
-          "budesonide-formoterol maintenance and reliever",
-          "Continue as-needed budesonide-formoterol alone",
-          "Switch to salbutamol as needed only",
+          "budesonide nebulized alone",
+          "methylprednisolone 125 mg IV",
+          "prednisone 10 mg PO daily",
+          "prednisone 50 mg PO now",
+          "No corticosteroid unless salbutamol fails"
         ],
-        correct: 2,
-        explanation:
-          "GINA treats any exacerbation needing urgent care as a sign that treatment should be stepped up, and after an ED visit it suggests starting ICS-formoterol maintenance and reliever therapy. Continuing as-needed use alone leaves her treatment unchanged after an ED visit. Switching to salbutamol alone removes her inhaled corticosteroid and is no longer recommended. Adding salmeterol to a reliever regimen is not a standard option. Montelukast is not the step-up GINA prefers after an ED visit.",
-        keyFeature: { topic: "asthma-copd", n: 6 },
-        source: "gina",
+        correct: 3,
+        explanation: "Systemic corticosteroids should be used in all but the mildest exacerbations and given within 1 hour of presentation where possible. They matter most when the patient has needed oral corticosteroids for past flares, as she has. Oral treatment is as effective as IV and is preferred when she can swallow, so IV methylprednisolone adds nothing. The usual adult dose is equivalent to prednisone 50 mg a day, so 10 mg is too low. Waiting to see whether salbutamol fails delays a drug that needs at least 4 hours to act. High-dose inhaled budesonide alone is not the preferred treatment for a flare of this severity in a patient who has needed oral courses before.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 6
+        },
+        source: "gina"
       },
       {
         id: "q3",
         kind: "menu",
-        prompt: "Which of the following should be completed before she leaves the emergency department?",
+        update: "Three hours later her peak flow is 330 L/minute, her SpO2 is 97% and she wants to go home. She will stay indoors with a portable air cleaner while the smoke lasts.",
+        prompt: "Which of the following should be part of her discharge plan?",
         options: [
-          "Allergy skin testing",
-          "Check inhaler technique",
-          "Chest radiograph",
-          "Complete blood count",
-          "Repeat peak flow measurement",
-          "Sputum culture",
-          "Written asthma action plan",
+          "Antibiotic course for 5 days",
+          "Budesonide-formoterol maintenance and reliever",
+          "Follow-up visit within 2 to 7 days",
+          "Home nebulizer for salbutamol",
+          "Montelukast instead of an inhaled steroid",
+          "Prednisone taper over 3 weeks",
+          "Salbutamol alone as needed",
+          "Written asthma action plan"
         ],
         select: 3,
-        correct: [1, 4, 6],
-        explanation:
-          "GINA 2026 strongly recommends measuring lung function before discharge, and advises reviewing inhaler technique and giving a written asthma action plan after any exacerbation. A chest radiograph is not routinely needed in an uncomplicated exacerbation. A blood count and sputum culture do not guide her care. Allergy testing can be arranged later if needed and is not part of ED discharge.",
-        keyFeature: { topic: "asthma-copd", n: 8 },
-        source: "gina",
-      },
+        correct: [
+          1,
+          2,
+          7
+        ],
+        explanation: "The GINA report advises that every patient leaves on ICS-containing treatment, preferably budesonide-formoterol maintenance-and-reliever therapy after an emergency visit, with a follow-up visit in 2 to 7 days and a written action plan. Salbutamol alone is no longer recommended. Tapering prednisone gives no benefit over stopping a short course. Antibiotics are not recommended without strong evidence of lung infection, and she has none. Nebulized salbutamol use is a red flag for fatal asthma rather than a safer option. Montelukast is less effective than inhaled corticosteroids.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 8
+        },
+        source: "gina"
+      }
     ],
     sources: [GINA],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-36",
     topic: "asthma-copd",
-    title: "Too breathless to blow",
-    stem:
-      "A 10-year-old girl with asthma is brought to the emergency department by ambulance with four hours of worsening wheeze. Paramedics gave salbutamol 5 mg by nebulizer once. She takes fluticasone 100 mcg twice daily. She has had two admissions for asthma, one of them to the ICU two years ago. She is alert, sitting forward and speaks in single words. There is marked suprasternal indrawing and scalene contraction, with very faint wheeze and minimal air entry throughout. She cannot perform a peak flow.",
+    title: "Wheezing with no diagnosis yet",
+    stem: "A 58-year-old man presents to the emergency department with 2 days of worsening breathlessness and wheeze after a cold. He has never been given a lung diagnosis, but he has had a winter cough for years and wheezes when he has a cold. He has smoked a pack a day for 40 years. He takes no regular inhalers. He speaks in short phrases, uses his neck muscles to breathe and has a barrel-shaped chest with diffuse wheeze. He has no leg swelling. A venous bicarbonate is 34 mmol/L. No spirometry or chest X-ray is available yet.",
     vitals: {
-      temperature: "37.0°C oral",
-      pulse: "150/minute",
-      resp: "40/minute",
-      bp: "108/64 mmHg",
-      o2sat: "88% on room air",
-      weight: "32 kg",
+      temperature: "37.1°C oral",
+      pulse: "116/minute",
+      resp: "30/minute",
+      bp: "148/86 mmHg",
+      o2sat: "86% on room air",
+      weight: "82 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate first action after placing her on a monitor?",
+        prompt: "Which of the following is the most appropriate first step in his treatment?",
         options: [
-          "Chest radiograph before treatment",
-          "IV access and blood work first",
-          "Oxygen with salbutamol and ipratropium",
-          "Sedation to ease her anxiety",
-          "Venous gas and lactate to guide treatment",
+          "Chest X-ray before any bronchodilator",
+          "furosemide 40 mg IV",
+          "Salbutamol and ipratropium now",
+          "Spirometry to confirm the diagnosis",
+          "Wait for a blood gas before treatment"
         ],
         correct: 2,
-        explanation:
-          "She has a severe exacerbation (PRAM 12, SpO2 88%), and GINA advises starting a short-acting beta agonist with ipratropium and giving oxygen when saturation is below 92%, with treatments given together for rapid improvement. A chest radiograph is not routinely needed and a blood gas is not routinely required, so neither should delay treatment, and neither should IV access or blood work. GINA warns that sedation must be avoided in acute asthma because it depresses breathing.",
-        keyFeature: { topic: "asthma-copd", n: 5 },
-        source: "gina",
+        explanation: "Whether this proves to be asthma, COPD or both, he has severe airflow obstruction now. The GINA report advises assessing severity while starting a short-acting beta2-agonist and oxygen, and the GOLD report recommends a short-acting beta2-agonist with or without a short-acting anticholinergic as the initial bronchodilator for an exacerbation. Spirometry confirms a diagnosis later, not during a severe flare. A chest X-ray and a blood gas are useful, but neither should delay bronchodilators. He has no edema or other features of heart failure to justify furosemide.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 5
+        },
+        source: "gold"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following corticosteroid orders is most appropriate for her?",
+        prompt: "Which of the following oxygen saturation targets is most appropriate for him until a blood gas is available?",
         options: [
-          "dexamethasone 3.2 mg PO",
-          "dexamethasone 12 mg PO",
-          "dexamethasone 19.2 mg PO",
-          "hydrocortisone 400 mg IV",
-          "prednisolone 64 mg PO",
+          "84 to 88%",
+          "88 to 92%",
+          "93 to 95%",
+          "96 to 98%",
+          "98 to 100%"
         ],
         correct: 1,
-        explanation:
-          "TREKK doses dexamethasone at 0.6 mg/kg to a maximum of 12 mg. For 32 kg that is 19.2 mg, which exceeds the maximum, so she gets 12 mg. Dexamethasone 3.2 mg is only 0.1 mg/kg. Prednisolone 64 mg is 2 mg/kg and exceeds the TREKK maximum of 60 mg. Hydrocortisone is dosed at 8 mg/kg, which is 256 mg, so 400 mg is too much for her. She is alert and can swallow, so the oral route is preferred.",
-        keyFeature: { topic: "asthma-copd", n: 6 },
-        source: "trekk-severe",
+        explanation: "His 40 pack-year smoking history, chronic cough, barrel chest and venous bicarbonate of 34 mmol/L suggest chronic carbon dioxide retention. The BTS/ICS guideline advises a saturation target of 88 to 92% for COPD exacerbations, which limits worsening hypercapnia while still correcting hypoxemia. The 93 to 95% target used in asthma, and higher targets, risk raising his carbon dioxide if he retains it. A target of 84 to 88% accepts hypoxemia with no added benefit.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 5
+        },
+        source: "bts-ics"
       },
       {
         id: "q3",
         kind: "single",
-        update: "After three back-to-back salbutamol and ipratropium treatments she still speaks in single words. Her SpO2 is 91% on 6 L/minute by mask. She remains alert.",
-        prompt: "Which of the following is the most appropriate additional treatment now?",
+        update: "After 1 hour of treatment he is alert and cooperative. A venous gas shows pH 7.31 and pCO2 60 mmHg. He still has diffuse wheeze and a respiratory rate of 28/minute.",
+        prompt: "Which of the following is the most appropriate respiratory support for him now?",
         options: [
-          "aminophylline 5 mg/kg IV",
-          "epinephrine 0.32 mg IM",
-          "magnesium sulfate 1 600 mg IV",
-          "magnesium sulfate 2 000 mg IV",
-          "magnesium sulfate 320 mg IV",
+          "Bilevel noninvasive ventilation",
+          "Continue treatment, recheck in 4 hours",
+          "High-flow oxygen by non-rebreather mask",
+          "Immediate endotracheal intubation",
+          "IV aminophylline infusion"
         ],
-        correct: 2,
-        explanation:
-          "TREKK advises IV magnesium for a child still in moderate to severe distress after the first hour, at 50 mg/kg to a maximum of 2 000 mg over at least 20 minutes. For 32 kg that is 1 600 mg. The 2 000 mg dose is the maximum single dose and would be 62.5 mg/kg for her. The 320 mg dose is only 10 mg/kg. Aminophylline is not recommended because of poor efficacy and safety. IM epinephrine is for suspected anaphylaxis.",
-        keyFeature: { topic: "asthma-copd", n: 5 },
-        source: "trekk-severe",
+        correct: 0,
+        explanation: "His pH is below 7.35 and his pCO2 is above 49 mmHg despite an hour of treatment, and he is alert and cooperative. The BTS/ICS guideline recommends noninvasive ventilation in this situation for COPD. It advises against noninvasive ventilation in acute asthma, but states that hypercapnia complicating chronic asthma closely resembles COPD and should be managed the same way, so the uncertain diagnosis does not change the decision. Waiting 4 hours leaves the acidosis untreated. A non-rebreather mask would worsen hypercapnia. He does not yet need intubation. Aminophylline is not recommended because of its side effects.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 7
+        },
+        source: "bts-ics"
       },
       {
         id: "q4",
         kind: "single",
-        update: "Thirty minutes later she is harder to rouse and her respiratory effort is weaker. Venous pCO2 is 58 mmHg.",
-        prompt: "Which of the following best describes her clinical condition at this point?",
+        update: "Four days later he is ready for discharge. Spirometry after salbutamol shows an FEV1/FVC of 0.61, and his FEV1 rose by 450 mL (24%) after the bronchodilator.",
+        prompt: "Which of the following maintenance inhaler regimens is most appropriate for him at discharge?",
         options: [
-          "Impending respiratory failure",
-          "Improving asthma with less work",
-          "Moderate exacerbation",
-          "Salbutamol toxicity",
-          "Settling anxiety after treatment",
+          "budesonide-formoterol twice daily",
+          "montelukast 10 mg PO daily",
+          "Salbutamol as needed alone",
+          "tiotropium alone once daily",
+          "tiotropium-olodaterol inhaler once daily"
         ],
         correct: 0,
-        explanation:
-          "TREKK defines lethargy, decreasing respiratory effort and a rising pCO2 as impending respiratory failure, whatever the PRAM score. Less effort from a tiring child is not improvement, and she is harder to rouse rather than calmer. She is not in a moderate exacerbation. Salbutamol toxicity causes tachycardia, tremor and lactic acidosis, not a rising pCO2 with falling consciousness.",
-        keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "trekk-severe",
-      },
+        explanation: "A post-bronchodilator FEV1/FVC below 0.7 after 40 pack-years points to COPD, while wheeze with colds and a large bronchodilator response point to asthma. The GINA report advises that patients with features of both be treated as asthma with ICS-containing therapy, and that a LABA and/or LAMA must not be given alone without an ICS, because of the risk of severe exacerbations and death. Tiotropium-olodaterol is a usual first choice in COPD, but without an inhaled corticosteroid it is unsafe if he has asthma. Tiotropium alone has the same problem. Salbutamol alone leaves both conditions without a controller. Montelukast is less effective than an inhaled corticosteroid.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 6
+        },
+        source: "gina"
+      }
     ],
-    sources: [GINA, TREKK_SEVERE],
+    sources: [
+      GINA,
+      GOLD,
+      {
+        id: "bts-ics",
+        citation: "Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016.",
+        url: "https://doi.org/10.1136/bmjresp-2016-000133"
+      }
+    ],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-37",
@@ -1944,74 +2013,79 @@ export const ASTHMA_COPD_S25: Samp[] = [
   {
     id: "asthma-copd-38",
     topic: "asthma-copd",
-    title: "Fever with the wheeze",
-    stem:
-      "A 31-year-old man with asthma presents to the emergency department with four days of fever, cough with rusty sputum and wheeze. He has right-sided pleuritic chest pain. He takes fluticasone 250 mcg with salmeterol 50 mcg, one inhalation twice daily, and salbutamol as needed. He does not smoke. He speaks in phrases. There is expiratory wheeze throughout, with bronchial breath sounds and crackles at the right base.",
+    title: "Admitted from his wheelchair",
+    stem: "A 72-year-old man with COPD presents to the emergency department with 4 days of increasing breathlessness. He is coughing up more sputum than usual, and it has turned green. He has had no fever or chest pain. He has used a wheelchair since a spinal cord injury 20 years ago and cannot stand. He takes tiotropium-olodaterol. He speaks in full sentences and has scattered wheeze without crackles. His legs are symmetric and not swollen. Chest X-ray shows hyperinflation with no consolidation, effusion or pneumothorax. A venous gas shows pH 7.37. He is to be admitted because he cannot manage his care at home.",
     vitals: {
-      temperature: "39.1°C oral",
-      pulse: "118/minute",
-      resp: "28/minute",
-      bp: "124/76 mmHg",
+      temperature: "37.2°C oral",
+      pulse: "98/minute",
+      resp: "24/minute",
+      bp: "128/76 mmHg",
       o2sat: "90% on room air",
+      weight: "78 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following investigations is most appropriate to confirm the coexisting problem?",
+        prompt: "Which of the following best describes the need for antibiotics in his exacerbation?",
         options: [
-          "Chest radiograph",
-          "CT pulmonary angiogram",
-          "Procalcitonin level",
-          "Serum D-dimer",
-          "Two sets of blood cultures",
+          "Indicated, from purulent and increased sputum",
+          "Not indicated, as he has no fever",
+          "Not indicated, as the X-ray is clear",
+          "Only if a sputum culture grows bacteria",
+          "Only if procalcitonin is raised"
         ],
         correct: 0,
-        explanation:
-          "GINA advises a chest radiograph when a complicating process such as pneumonia is suspected. His fever, rusty sputum, pleuritic pain and focal bronchial breathing with crackles at the right base all point to consolidation. D-dimer and CT pulmonary angiography look for embolism, which his fever and focal findings do not suggest. Blood cultures and procalcitonin do not confirm or locate pneumonia.",
-        keyFeature: { topic: "asthma-copd", n: 4 },
-        source: "gina",
+        explanation: "The GOLD report advises antibiotics when at least two of increased dyspnea, fever, increased sputum volume and increased sputum purulence are present, if purulence is one of them. He has increased dyspnea, volume and purulence. A clear chest X-ray rules out pneumonia but not a bacterial exacerbation. Fever is one of the qualifying symptoms, but it is not required when purulence comes with another. The report states it cannot recommend procalcitonin-based protocols to decide on antibiotics. Waiting for a sputum culture delays treatment, and culture is advised mainly for frequent or ventilated exacerbations.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 4
+        },
+        source: "gold"
       },
       {
         id: "q2",
         kind: "single",
-        update: "The radiograph shows right lower lobe consolidation. There is no pleural effusion or pneumothorax.",
-        prompt: "Which of the following is the most appropriate change to his treatment?",
+        prompt: "Which of the following is the most appropriate approach to venous thromboembolism during his admission?",
         options: [
-          "Add oseltamivir only",
-          "prednisone 100 mg PO daily",
-          "Start antibiotic therapy",
-          "Start IV aminophylline",
-          "Withhold steroids due to infection",
+          "ASA 81 mg PO daily",
+          "CT pulmonary angiography first",
+          "Prophylactic-dose LMWH SC",
+          "Therapeutic-dose anticoagulation",
+          "No prophylaxis while he is on steroids"
         ],
         correct: 2,
-        explanation:
-          "GINA advises antibiotics in asthma exacerbations only when there is strong evidence of lung infection, such as fever, purulent sputum or radiographic pneumonia, and he has fever, rusty sputum and consolidation. Oseltamivir alone does not treat bacterial pneumonia. Prednisone 100 mg is double the GINA adult dose of about 50 mg daily, and infection is not a reason to increase it. Aminophylline is not recommended. Infection is not a reason to withhold systemic corticosteroids from a moderate to severe asthma exacerbation.",
-        keyFeature: { topic: "asthma-copd", n: 4 },
-        source: "gina",
+        explanation: "The GOLD report notes that patients hospitalized with COPD exacerbations are at increased risk of deep vein thrombosis and pulmonary embolism, with pulmonary embolism found in up to 5.9%, and it advises prophylaxis for these patients. He is also immobile. Prophylactic-dose low molecular weight heparin fits. He has no signs of an embolism, so CT angiography or therapeutic anticoagulation is not indicated. ASA is not adequate prophylaxis against venous thrombosis in a medical inpatient. Corticosteroid treatment is not a reason to withhold prophylaxis.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 4
+        },
+        source: "gold"
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following systemic corticosteroid orders is most appropriate for his asthma?",
+        prompt: "Which of the following prednisone courses is most appropriate for him?",
         options: [
-          "budesonide 1 mg nebulized alone",
-          "dexamethasone 4 mg PO once",
-          "hydrocortisone 100 mg IM once",
-          "methylprednisolone 125 mg IV q6h",
-          "prednisone 50 mg PO daily",
+          "10 mg daily for 3 months",
+          "40 mg daily for 5 days",
+          "40 mg daily for 14 days",
+          "60 mg daily, tapered over 3 weeks",
+          "No systemic corticosteroid"
         ],
-        correct: 4,
-        explanation:
-          "GINA advises an oral corticosteroid equal to about 50 mg of prednisone daily in adults, and the oral route works as well as IV when the patient can swallow. Methylprednisolone 125 mg every 6 hours is 500 mg a day, more than ten times that dose. Intramuscular dosing has no advantage over oral. A single 4 mg dexamethasone dose is well below the adult dose. Nebulized budesonide alone does not replace systemic corticosteroid in a patient speaking in phrases with an SpO2 of 90%.",
-        keyFeature: { topic: "asthma-copd", n: 6 },
-        source: "gina",
-      },
+        correct: 1,
+        explanation: "The GOLD report recommends 40 mg of prednisone equivalent a day for 5 days in exacerbations, and a systematic review found 5 days likely sufficient. Longer courses have been linked with more pneumonia and higher mortality, so 14 days or a 3-week taper adds risk without benefit. Long-term low-dose prednisone is not a treatment for an exacerbation. Systemic corticosteroids shorten recovery and improve lung function, so withholding them is wrong.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 6
+        },
+        source: "gold"
+      }
     ],
-    sources: [GINA],
+    sources: [GOLD],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-39",
@@ -2182,226 +2256,264 @@ export const ASTHMA_COPD_S25: Samp[] = [
   {
     id: "asthma-copd-41",
     topic: "asthma-copd",
-    title: "Before the plane arrives",
-    stem:
-      "You are working in a rural emergency department. The nearest ICU is a 90-minute flight away. A 64-year-old woman with COPD presents with five days of increasing breathlessness and green sputum. She takes tiotropium-olodaterol and uses no home oxygen. She is alert but speaks in short phrases and uses her neck and abdominal muscles to breathe. There is poor air entry with diffuse wheeze. Arterial gas on 2 L/minute oxygen: pH 7.31, PaCO2 62 mmHg, PaO2 58 mmHg, HCO3 31 mmol/L.",
+    title: "Found wheezing after smoking",
+    stem: "A 33-year-old woman with asthma is brought to the emergency department by ambulance after a friend found her struggling to breathe 1 hour after they smoked heroin together from foil. She uses a salbutamol inhaler and no controller. Paramedics gave salbutamol 5 mg and ipratropium 0.5 mg by nebulizer twice and naloxone 0.4 mg IM with no change in her breathing. On arrival she is sitting upright, agitated and can say only single words. Her pupils are 4 mm. There is very little air movement and almost no wheeze over either lung.",
     vitals: {
-      temperature: "37.8°C oral",
-      pulse: "112/minute",
-      resp: "32/minute",
-      bp: "150/88 mmHg",
-      o2sat: "88% on 2 L/minute by nasal prongs",
+      temperature: "36.8°C tympanic",
+      pulse: "132/minute",
+      resp: "34/minute",
+      bp: "142/88 mmHg",
+      o2sat: "88% on 10 L/minute by non-rebreather mask",
+      weight: "58 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following findings best separates a severe from a moderate exacerbation in her?",
+        prompt: "Which of the following findings most strongly indicates a life-threatening attack in her?",
         options: [
-          "Green sputum for 5 days",
-          "PaCO2 of 62 mmHg with pH 7.31",
-          "Pulse of 112/minute",
-          "Temperature of 37.8°C",
-          "Wheeze throughout both lungs",
+          "Blood pressure of 142/88 mmHg",
+          "Heart rate of 132/minute",
+          "Pupils of 4 mm after naloxone",
+          "Quiet chest with little air movement",
+          "Temperature of 36.8°C"
         ],
-        correct: 1,
-        explanation:
-          "In the GOLD Rome criteria, moderate and severe exacerbations share the same symptom and vital sign thresholds, and a severe exacerbation is marked by a PaO2 of 60 mmHg or less, or hypercapnia with acidosis (PaCO2 above 45 mmHg and pH below 7.35). Her PaCO2 of 62 mmHg with a pH of 7.31 meets that definition, and her PaO2 of 58 mmHg also meets the hypoxemia threshold. A pulse above 95/minute counts toward both grades. Sputum colour, a low grade temperature and diffuse wheeze do not grade severity.",
-        keyFeature: { topic: "asthma-copd", n: 3 },
-        source: "gold",
+        correct: 3,
+        explanation: "A chest with almost no wheeze and little air movement in a patient who can say only single words means airflow is severely limited, not improving. The GINA report lists a silent chest, drowsiness and confusion as signs that warrant intensive care. Her heart rate of 132/minute shows a severe attack but is less specific. Her pupils and lack of response to naloxone argue against opioid-induced hypoventilation as the main problem. Her blood pressure and temperature do not grade asthma severity.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 3
+        },
+        source: "gina"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate treatment to start while the transfer is arranged?",
+        update: "Despite continuous salbutamol, ipratropium, methylprednisolone and magnesium sulfate 2 g IV, she becomes drowsy and her venous pCO2 rises from 44 to 62 mmHg over 30 minutes.",
+        prompt: "Which of the following is the most appropriate next step for her breathing?",
         options: [
-          "CPAP at 5 cm H2O alone",
-          "High-flow oxygen by non-rebreather",
-          "IV aminophylline infusion",
-          "Nasal prongs at 6 L/minute",
-          "Noninvasive bilevel ventilation",
+          "Bilevel NIV with midazolam to tolerate it",
+          "Continue nebulizers and recheck in 1 hour",
+          "Heliox by face mask and observe",
+          "naloxone 2 mg IV and reassess",
+          "Prepare for intubation now"
         ],
         correct: 4,
-        explanation:
-          "She has acute on chronic hypercapnic acidosis with a pH of 7.31, and the ERS and ATS recommend bilevel noninvasive ventilation for COPD exacerbations with a pH of 7.35 or less. She is alert and can cooperate with a mask. CPAP does not give inspiratory pressure support. High-flow oxygen by non-rebreather or prongs at 6 L/minute can worsen hypercapnia. Aminophylline is not recommended in COPD exacerbations.",
-        keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "ers-ats-niv",
+        explanation: "She is drowsy with a rising pCO2 after maximal treatment, which signals impending respiratory failure. The BTS/ICS guideline recommends against noninvasive ventilation in acute asthma with hypercapnic respiratory failure, and the GINA report warns that patients should not be sedated to receive it and that sedatives must be avoided in asthma flares. Waiting an hour risks arrest. Heliox has no role in routine care and does not treat ventilatory failure. More naloxone will not help, because her pupils are not small and 0.4 mg IM changed nothing, so her drowsiness reflects rising carbon dioxide rather than opioid effect.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 7
+        },
+        source: "bts-ics"
       },
       {
         id: "q3",
         kind: "single",
-        update: "After 1 hour of bilevel ventilation, arterial pH is 7.25 and PaCO2 is 79 mmHg. She is now hard to rouse and cannot keep the mask sealed.",
-        prompt: "Which of the following is the most appropriate next step in her airway management before the flight?",
+        update: "She is intubated with ketamine and rocuronium. On a rate of 12/minute with a long expiratory time, her plateau pressure is 26 cm H2O. An arterial gas shows pH 7.22 and PaCO2 70 mmHg.",
+        prompt: "Which of the following ventilator changes is most appropriate for her now?",
         options: [
-          "Add IV midazolam for mask tolerance",
-          "Continue bilevel and transfer now",
-          "Increase oxygen and delay transfer",
-          "Intubate before the flight",
-          "Switch to high-flow nasal oxygen",
+          "Add PEEP of 15 cm H2O",
+          "Increase the rate to 24/minute",
+          "Increase tidal volume to 10 mL/kg",
+          "Shorten expiration to an I:E of 1:1",
+          "No change, accept the hypercapnia"
         ],
-        correct: 3,
-        explanation:
-          "Her pH has fallen from 7.31 to 7.25, her PaCO2 has risen from 62 to 79 mmHg and her level of consciousness has dropped, so noninvasive ventilation has failed. GOLD lists failure of noninvasive ventilation as an indication for invasive ventilation, and the airway is best secured in the ED rather than during the flight. Continuing bilevel ventilation risks arrest in transit. Midazolam would further depress her breathing. More oxygen or high-flow nasal oxygen does not reverse her worsening ventilatory failure.",
-        keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "gold",
-      },
+        correct: 4,
+        explanation: "Her pH of 7.22 lies in the permissive hypercapnia range of about 7.2 to 7.25 that the BTS/ICS guideline accepts to avoid high airway pressures when airflow obstruction is severe. Her low rate and long expiratory time are limiting air trapping, and her plateau pressure is acceptable. Raising the rate to 24/minute to clear carbon dioxide shortens expiration and worsens dynamic hyperinflation. A tidal volume of 10 mL/kg adds volume she cannot exhale. An I:E of 1:1 cuts expiratory time, where the guideline advises 1:3 or longer. It also advises that applied PEEP should not normally exceed 12 cm H2O.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 7
+        },
+        source: "bts-ics"
+      }
     ],
-    sources: [GOLD, ERS_ATS_NIV],
+    sources: [
+      GINA,
+      {
+        id: "bts-ics",
+        citation: "Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016.",
+        url: "https://doi.org/10.1136/bmjresp-2016-000133"
+      }
+    ],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-42",
     topic: "asthma-copd",
-    title: "Talking less than before",
-    stem:
-      "A 24-year-old man with asthma is brought to the emergency department by ambulance with six hours of worsening wheeze. He has had one previous ICU admission for asthma. Paramedics gave salbutamol 5 mg by nebulizer twice. He is sitting forward, sweating, and can say only two or three words at a time. He cannot perform a peak flow manoeuvre. There is widespread faint wheeze with poor air movement. Arterial gas on room air: pH 7.37, PaCO2 43 mmHg, PaO2 57 mmHg.",
+    title: "Wheezing on the last night of camp",
+    stem: "You are working in a rural emergency department. A 16-year-old boy is brought in by a counsellor from a nearby summer camp with 4 hours of wheeze and breathlessness that began during a campfire. He has asthma and uses a fluticasone inhaler that he left at home. He has used his salbutamol inhaler 12 times since the evening started. He has no food allergy, and he has no hives, lip swelling or throat tightness. He is sitting forward and speaks in short phrases. He has diffuse wheeze. His predicted peak flow is 520 L/minute.",
     vitals: {
-      temperature: "36.9°C oral",
-      pulse: "132/minute",
-      resp: "34/minute",
-      bp: "136/80 mmHg",
-      o2sat: "89% on room air",
-      weight: "78 kg",
+      temperature: "37.0°C oral",
+      pulse: "124/minute",
+      resp: "30/minute",
+      bp: "124/72 mmHg",
+      o2sat: "90% on room air",
+      weight: "62 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following findings is most concerning for respiratory failure in this patient?",
+        prompt: "Which of the following is the most reliable way to grade the severity of his exacerbation now?",
         options: [
-          "Accessory muscle use",
-          "Diaphoresis at rest",
-          "Heart rate of 132/minute",
-          "PaCO2 of 43 mmHg",
-          "Respiratory rate of 34/minute",
+          "Heart rate compared with his usual rate",
+          "His own rating of breathlessness",
+          "Loudness of his wheeze",
+          "Peak flow as a percentage of predicted",
+          "Time since his last salbutamol dose"
         ],
         correct: 3,
-        explanation:
-          "GINA notes that PaCO2 is usually below 40 mmHg in an asthma exacerbation, and that a PaO2 below 60 mmHg with a normal or raised PaCO2 indicates respiratory failure. His PaO2 is 57 mmHg with a PaCO2 of 43 mmHg, so he is no longer able to blow off CO2. Accessory muscle use, sweating, tachycardia and tachypnea are signs of a severe attack. They do not by themselves show that ventilation is failing.",
-        keyFeature: { topic: "asthma-copd", n: 3 },
-        source: "gina",
+        explanation: "The GINA report states that in the acute setting, lung function measured by peak flow or FEV1 compared with the patient's previous or predicted values is a more reliable indicator of severity than symptoms, and it strongly recommends objective measurement. The loudness of wheeze can mislead, because a severely obstructed chest may be quiet. Patients perceive airflow limitation poorly, so his own rating can underestimate severity. Heart rate is affected by salbutamol and anxiety. The time since his last dose does not grade severity.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 3
+        },
+        source: "gina"
       },
       {
         id: "q2",
         kind: "menu",
-        prompt: "Which of the following treatments should be started now for this severe exacerbation?",
+        update: "His peak flow is 170 L/minute.",
+        prompt: "Which of the following treatments should be started now for his severe exacerbation?",
         options: [
-          "IV aminophylline",
-          "IV salbutamol infusion",
-          "lorazepam 1 mg IV",
-          "magnesium sulfate 2 g IV",
-          "Oxygen to target 92 to 95%",
-          "Routine IV antibiotics",
-          "Salbutamol with ipratropium",
-          "Systemic corticosteroid",
+          "Antibiotic for a presumed chest infection",
+          "Chest X-ray before bronchodilators",
+          "epinephrine 0.5 mg IM",
+          "Ipratropium with the salbutamol",
+          "lorazepam 1 mg for anxiety",
+          "Oral corticosteroid within 1 hour",
+          "Oxygen to keep SpO2 at 93 to 95%",
+          "Salbutamol by inhaler and spacer",
+          "theophylline PO loading dose"
         ],
         select: 4,
-        correct: [3, 4, 6, 7],
-        explanation:
-          "GINA advises a short-acting beta agonist with ipratropium, a systemic corticosteroid within the first hour, and oxygen to a target of 92 to 95% when saturation is below 92%. IV magnesium is advised for adults who fail to respond to initial treatment and remain hypoxemic, which fits him after two salbutamol doses with an SpO2 of 89%, and GINA notes benefit in adults with very low lung function at presentation, as his inability to do a peak flow suggests. Aminophylline and routine IV salbutamol are not recommended. Sedatives such as lorazepam must be avoided. Antibiotics are not indicated without evidence of infection.",
-        keyFeature: { topic: "asthma-copd", n: 5 },
-        source: "gina",
+        correct: [
+          3,
+          5,
+          6,
+          7
+        ],
+        explanation: "His peak flow of 170 L/minute is 33% of his predicted 520 L/minute, a severe exacerbation. The GINA report advises a short-acting beta2-agonist by inhaler and spacer, adding ipratropium in moderate to severe flares, a systemic corticosteroid within 1 hour, and oxygen when saturation is below 92%, aiming for 93 to 95%. Sedatives must be avoided in an asthma flare. Epinephrine is only for asthma with anaphylaxis. Antibiotics are not recommended without strong evidence of infection. A chest X-ray is not routine and should not delay treatment. Theophylline and aminophylline are not recommended because of poor efficacy and safety.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 5
+        },
+        source: "gina"
       },
       {
         id: "q3",
         kind: "single",
-        update: "After 45 minutes he is less agitated, his eyes keep closing, and a repeat PaCO2 is 52 mmHg.",
-        prompt: "Which of the following is the most appropriate next step in his airway management?",
+        update: "After 1 hour of this treatment his peak flow is 190 L/minute. He is alert and still speaks in short phrases. His respiratory rate is 26/minute and his SpO2 is 94% on oxygen.",
+        prompt: "Which of the following investigations is most appropriate to add now?",
         options: [
-          "Bilevel ventilation with sedation",
-          "Continuous salbutamol and observe",
-          "Observe as he is now calmer",
-          "Prepare for intubation now",
-          "Repeat the gas in 2 hours",
+          "Blood gas for pCO2",
+          "CT pulmonary angiogram",
+          "D-dimer level",
+          "Formal spirometry",
+          "Portable chest X-ray"
         ],
-        correct: 3,
-        explanation:
-          "Somnolence with a PaCO2 that has risen from 43 to 52 mmHg means he is tiring, and GINA notes that fatigue and somnolence suggest rising pCO2 and a possible need for airway intervention. Calmer here means exhausted, not better. GINA advises that noninvasive ventilation not be tried in agitated patients and that patients not be sedated to receive it. Waiting 2 hours or simply continuing salbutamol risks respiratory arrest.",
-        keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "gina",
-      },
+        correct: 0,
+        explanation: "His peak flow of 190 L/minute is still only 37% of his predicted 520 L/minute after an hour of treatment. The GINA report advises considering a blood gas when peak flow or FEV1 is below 50% of predicted, or when a patient is not responding or is deteriorating. In a flare the pCO2 is usually low, so a normal or raised value signals tiring and possible respiratory failure, which a saturation of 94% on oxygen cannot show. A chest X-ray is not routine and is kept for a suspected complication or an alternative diagnosis. Nothing in his case points to pulmonary embolism, so a D-dimer or CT angiography adds nothing. Formal spirometry is impractical during a severe flare, and his peak flow already tracks his airflow.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 7
+        },
+        source: "gina"
+      }
     ],
     sources: [GINA],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-43",
     topic: "asthma-copd",
-    title: "Another visit this spring",
-    stem:
-      "A 29-year-old man with asthma presents to the emergency department with a day of wheeze after helping a friend move. This is his fourth emergency visit in six months. He stopped his budesonide-formoterol inhaler three months ago when he lost his drug coverage. He now uses only salbutamol and fills a new inhaler every two to three weeks. He speaks in full sentences and has mild expiratory wheeze. Peak flow is 360 L/minute and his predicted value is 560 L/minute.",
+    title: "A night-shift worker with a cat",
+    stem: "A 23-year-old woman presents to the emergency department with 1 day of wheeze and chest tightness. She has had asthma since childhood and was intubated for it at age 17. She works night shifts at a warehouse and has a cat at home. She uses about two salbutamol inhalers a month and stopped her inhaled corticosteroid a year ago because she felt well. She finished a 5-day course of prednisone from a walk-in clinic 1 week ago. A chest X-ray last year was normal. After salbutamol and ipratropium by spacer and prednisone 50 mg, her peak flow improves from 45% to 82% of predicted and she wants to go home.",
     vitals: {
-      temperature: "36.7°C oral",
-      pulse: "104/minute",
-      resp: "22/minute",
-      bp: "126/78 mmHg",
-      o2sat: "95% on room air",
+      temperature: "36.8°C oral",
+      pulse: "96/minute",
+      resp: "18/minute",
+      bp: "118/72 mmHg",
+      o2sat: "97% on room air"
     },
     questions: [
       {
         id: "q1",
         kind: "menu",
-        prompt: "Which of the following additional history items would most increase his risk of a fatal asthma attack?",
+        prompt: "Which of the following features in her history increase her risk of fatal or near-fatal asthma?",
         options: [
-          "Family history of asthma",
-          "Onset of asthma in childhood",
-          "Peanut allergy with anaphylaxis",
-          "Previous intubation for asthma",
-          "Seasonal allergic rhinitis",
-          "Wheeze with exercise",
-          "Wheeze with viral colds",
+          "A cat living in her apartment",
+          "Asthma diagnosed in early childhood",
+          "Intubation for asthma at age 17",
+          "Night shifts at a warehouse",
+          "Normal chest X-ray last year",
+          "Prednisone course ending 1 week ago",
+          "Stopped her inhaled steroid a year ago",
+          "Two salbutamol inhalers a month"
         ],
-        select: 2,
-        correct: [2, 3],
-        explanation:
-          "GINA lists a history of near fatal asthma needing intubation, and food allergy or anaphylaxis in a patient with asthma, among the red flags for fatal or near fatal asthma. He already has others: frequent emergency visits, no inhaled corticosteroid and more than one salbutamol canister a month. A family history, childhood onset, allergic rhinitis and wheeze with exercise or colds are common in asthma. They are not listed red flags.",
-        keyFeature: { topic: "asthma-copd", n: 2 },
-        source: "gina",
+        select: 4,
+        correct: [
+          2,
+          5,
+          6,
+          7
+        ],
+        explanation: "The GINA red flags for fatal or near-fatal asthma include a history of intubation for asthma, not using inhaled corticosteroids, currently using or recently stopping oral corticosteroids, and over-use of short-acting beta2-agonists, with extremely high risk above one inhaler a month. She has all four. Childhood onset, a pet, shift work and a normal chest X-ray are not among these red flags, although a cat may trigger her symptoms if she is sensitized.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 2
+        },
+        source: "gina"
       },
       {
         id: "q2",
         kind: "single",
-        update: "After salbutamol and ipratropium his peak flow is 480 L/minute and he feels well.",
-        prompt: "Which of the following oral corticosteroid orders is most appropriate for him at discharge?",
+        update: "She is prescribed prednisone 50 mg daily for 5 days. She asks whether she must taper it because this is her second course in 3 weeks.",
+        prompt: "Which of the following is the most appropriate way to end this prednisone course?",
         options: [
-          "prednisone 40 mg PO, 2-week taper",
-          "prednisone 5 mg PO daily for 7 days",
-          "prednisone 40 mg PO daily for 7 days",
-          "prednisone 40 mg PO daily for 21 days",
-          "No oral steroid if he restarts ICS",
+          "Check a morning cortisol before stopping",
+          "Continue 10 mg daily for a month",
+          "Stop after day 5 without a taper",
+          "Taper over 10 days after the course",
+          "Taper over 3 weeks after the course"
         ],
         correct: 2,
-        explanation:
-          "His peak flow was 64% of predicted (360 of 560 L/minute) on arrival, and GINA advises prednisone 40 to 50 mg daily for 5 to 7 days after an ED visit. A 21-day course adds exposure without benefit, and a taper is not needed for a course under 2 weeks. Prednisone 5 mg is far below the effective dose. Restarting an inhaled corticosteroid does not replace the oral course for an exacerbation that needed ED care.",
-        keyFeature: { topic: "asthma-copd", n: 6 },
-        source: "gina",
+        explanation: "The GINA report states that tapering is not needed when oral corticosteroids are taken for less than 2 weeks, and that tapering gives no benefit either in the short term or over several weeks. Her two 5-day courses add up to 10 days, well short of that. A 10-day or 3-week taper adds steroid exposure and side effects without reducing relapse. A month of 10 mg is a maintenance dose that treats nothing here. A morning cortisol is not needed after courses this short. Her repeated courses matter more as a sign of risk than as a reason to taper.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 6
+        },
+        source: "gina"
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most important step to reduce his risk of returning?",
+        update: "She is started on budesonide-formoterol 200/6 mcg, one inhalation twice daily as maintenance and reliever therapy. Her inhaler technique is checked and follow-up is booked.",
+        prompt: "Which of the following reliever instructions is most appropriate for her new inhaler plan?",
         options: [
-          "Advise him to avoid heavy lifting",
-          "Arrange ICS-formoterol coverage",
-          "Prescribe a larger salbutamol supply",
-          "Prescribe prednisone to keep at home",
-          "Refer for allergy skin testing",
+          "Extra inhalations only if peak flow drops",
+          "One extra inhalation as needed for symptoms",
+          "Salbutamol 2 puffs as needed for symptoms",
+          "Two extra inhalations every 4 hours regularly",
+          "Up to 24 inhalations a day before calling"
         ],
         correct: 1,
-        explanation:
-          "His exacerbations followed loss of his inhaled corticosteroid, and GINA advises that every patient go home on ICS-containing treatment, preferably ICS-formoterol, with barriers such as cost addressed. More salbutamol worsens his main risk factor. A home supply of prednisone does not prevent attacks. Avoiding lifting and allergy testing do not treat his uncontrolled asthma.",
-        keyFeature: { topic: "asthma-copd", n: 8 },
-        source: "gina",
-      },
+        explanation: "In maintenance and reliever therapy the same budesonide-formoterol inhaler is the reliever. The GINA report prescribes it as one inhalation twice daily plus one inhalation whenever needed for symptoms, and advises seeking care if more than 12 inhalations in total are needed in a day. Using salbutamol as the reliever removes the inhaled steroid dose that comes with each reliever puff, which is how this regimen prevents severe exacerbations. Two inhalations every 4 hours is scheduled use, and with her maintenance doses it passes the daily limit. A limit of 24 inhalations is twice the maximum. Relief is taken for symptoms, not only when peak flow falls.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 8
+        },
+        source: "gina"
+      }
     ],
     sources: [GINA],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-44",
@@ -2448,7 +2560,7 @@ export const ASTHMA_COPD_S25: Samp[] = [
         ],
         correct: 4,
         explanation:
-          "She scores 3 for pulmonary embolism as the most likely diagnosis, 1.5 for a pulse above 100/minute, 1.5 for her previous DVT and 1 for hemoptysis, for a total of 7.0. A total of 5.5 leaves out the previous DVT, and the lower totals leave out further items, such as the 3 points for PE as the most likely diagnosis. She has no signs of DVT, no recent surgery or immobilization and no cancer. Air travel and estrogen use are risk factors but are not Wells items. Thrombosis Canada classifies a score above 6 as high pretest probability and above 4.5 as PE likely.",
+          "She scores 3 for pulmonary embolism as the most likely diagnosis, 1.5 for a pulse above 100/minute, 1.5 for her previous DVT and 1 for hemoptysis, for a total of 7.0. A total of 5.5 leaves out the previous DVT, and the lower totals leave out further items, such as the 3 points for PE as the most likely diagnosis. She has no signs of DVT, no recent surgery or immobilization and no cancer. Air travel and estrogen use are risk factors but are not Wells items. Thrombosis Canada classifies a score above 6 as high pretest probability and above 4 as PE likely.",
         keyFeature: { topic: "asthma-copd", n: 1 },
         source: "thrombosis-canada",
       },
@@ -2496,74 +2608,88 @@ export const ASTHMA_COPD_S25: Samp[] = [
   {
     id: "asthma-copd-45",
     topic: "asthma-copd",
-    title: "Numbers on the gas",
-    stem:
-      "You are working in a community hospital emergency department. A 70-year-old woman with COPD presents with two days of increased breathlessness and cough after a cold. Her respirology note from last month, when she was well, records a pCO2 of 52 mmHg and HCO3 of 32 mmol/L. She uses tiotropium and home oxygen at 1 L/minute. She is alert, speaks in short phrases and uses her accessory muscles. There is prolonged expiration with diffuse wheeze. Venous gas now: pH 7.30, pCO2 70 mmHg, HCO3 34 mmol/L.",
+    title: "Breathless during an outbreak at the care home",
+    stem: "A 77-year-old woman with COPD is sent from her long-term care home, where there is an outbreak of respiratory syncytial virus, with 2 days of increasing breathlessness, cough and sputum. She rates her breathlessness as 8 on a 10-point visual analogue scale. She uses tiotropium-olodaterol once daily and has no home oxygen. She is alert and speaks in short sentences. She has scattered wheeze and no leg swelling. CRP is 42 mg/L. An arterial gas on room air shows pH 7.33, PaCO2 52 mmHg and PaO2 54 mmHg.",
     vitals: {
-      temperature: "37.2°C oral",
-      pulse: "104/minute",
+      temperature: "37.8°C oral",
+      pulse: "108/minute",
       resp: "28/minute",
-      bp: "148/82 mmHg",
-      o2sat: "89% on 1 L/minute by nasal prongs",
+      bp: "136/78 mmHg",
+      o2sat: "85% on room air",
+      weight: "58 kg"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best describes her current acid-base state?",
+        prompt: "Which of the following best grades her exacerbation using the Rome classification in the GOLD report?",
         options: [
-          "Acute respiratory acidosis alone",
-          "Acute-on-chronic respiratory acidosis",
-          "Chronic compensated respiratory acidosis",
-          "Mixed respiratory and metabolic acidosis",
-          "Primary metabolic alkalosis",
+          "Life-threatening exacerbation",
+          "Mild exacerbation",
+          "Moderate exacerbation",
+          "Needs spirometry to grade",
+          "Severe exacerbation"
         ],
-        correct: 1,
-        explanation:
-          "When well her pCO2 was 52 mmHg with an HCO3 of 32 mmol/L, a compensated chronic respiratory acidosis. Her pCO2 has now risen by 18 mmHg to 70 mmHg, and her HCO3 has risen only by 2 mmol/L to 34 mmol/L, about the 1 mmol/L per 10 mmHg expected for an acute rise. Her pH of 7.30 is acidemic. This is an acute rise on top of chronic retention. Her HCO3 is above the level expected from the acute change alone, which argues against a pure acute acidosis or an added metabolic acidosis. A primary metabolic alkalosis does not fit an acidemic pH.",
-        keyFeature: { topic: "asthma-copd", n: 3 },
-        source: "rosen-ch113",
+        correct: 4,
+        explanation: "She meets all five moderate-level criteria: breathlessness of 8 (5 or more), a respiratory rate of 28 (24 or more), a heart rate of 108 (95 or more), a saturation of 85% (below 92%) and a CRP of 42 mg/L (10 or more). What makes her severe is hypercapnia with acidosis, a PaCO2 of 52 mmHg (above 45) with a pH of 7.33 (below 7.35). The original Rome proposal and the GOLD figure agree on that criterion. The GOLD figure also lists a PaO2 of 60 mmHg or less under severe, but the original proposal places hypoxemia without acidosis in the moderate grade, so her PaO2 alone would not settle it. The Rome scheme has no life-threatening grade. Spirometry is not used to grade an acute exacerbation.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 3
+        },
+        source: "gold"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate way to deliver her nebulized bronchodilators?",
+        update: "Salbutamol and ipratropium are started by metered-dose inhaler and spacer, with controlled oxygen and prednisone. The nurse asks about her usual tiotropium-olodaterol.",
+        prompt: "Which of the following is the most appropriate plan for her usual long-acting inhaler?",
         options: [
-          "Air-driven nebulizer",
-          "Dry powder inhaler by mouthpiece",
-          "Hold bronchodilators until gas improves",
-          "IV salbutamol infusion instead",
-          "Oxygen-driven nebulizer at 8 L/minute",
+          "Continue it with the short-acting inhalers",
+          "Replace it with IV aminophylline",
+          "Replace it with salbutamol every 20 minutes",
+          "Stop it until the exacerbation settles",
+          "Switch it to nebulized ipratropium alone"
         ],
         correct: 0,
-        explanation:
-          "GOLD advises air-driven rather than oxygen-driven nebulization in COPD exacerbations, because driving the nebulizer with oxygen can raise PaCO2. Oxygen can continue separately by nasal prongs at a controlled rate. Bronchodilators should start at once rather than wait for the gas to improve. GOLD notes that nebulizers may be easier than hand-held inhalers for sicker patients such as her. GOLD recommends inhaled short-acting bronchodilators as initial treatment, so an IV salbutamol infusion is not the recommended route.",
-        keyFeature: { topic: "asthma-copd", n: 5 },
-        source: "gold",
+        explanation: "The GOLD report recommends continuing long-acting bronchodilators during an exacerbation, or starting them before discharge, alongside short-acting bronchodilators. Stopping her usual tiotropium-olodaterol removes baseline bronchodilation. The report recommends against high doses of short-acting beta2-agonists because of side effects, so salbutamol every 20 minutes as a replacement is wrong. IV methylxanthines such as aminophylline are not recommended because of significant side effects. Nebulized ipratropium alone drops the beta2-agonist and replaces her long-acting agents with a short-acting one.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 5
+        },
+        source: "gold"
       },
       {
         id: "q3",
         kind: "single",
-        update: "Despite 1 hour of bronchodilators and prednisone, her pH is 7.29 and pCO2 is 72 mmHg. You start bilevel noninvasive ventilation.",
-        prompt: "Which of the following initial bilevel settings is most appropriate for her?",
+        update: "One hour later she is on 2 L/minute by nasal prongs with an SpO2 of 90%. She is alert. A repeat gas shows pH 7.36, PaCO2 47 mmHg and PaO2 62 mmHg. Her respiratory rate is 24/minute.",
+        prompt: "Which of the following is the most appropriate respiratory support for her now?",
         options: [
-          "CPAP 10 cm H2O alone",
-          "IPAP 5 and EPAP 10 cm H2O",
-          "IPAP 10 and EPAP 5 cm H2O",
-          "IPAP 10 and EPAP 10 cm H2O",
-          "IPAP 30 and EPAP 20 cm H2O",
+          "Bilevel noninvasive ventilation now",
+          "Continue controlled oxygen and medical care",
+          "High-flow nasal oxygen at 60 L/minute",
+          "Increase oxygen to 15 L/minute by mask",
+          "Intubation for her hypoxemia"
         ],
-        correct: 2,
-        explanation:
-          "The difference between IPAP and EPAP is the pressure support that ventilates her. Of these settings, only an IPAP of 10 with an EPAP of 5 cm H2O gives pressure support at a tolerable starting level, and IPAP is then titrated upward to lower her pCO2. Equal IPAP and EPAP gives no pressure support and acts like CPAP, as does CPAP alone. An IPAP below the EPAP is not a valid setting. Starting at 30 and 20 cm H2O is poorly tolerated and risks gastric insufflation and hypotension.",
-        keyFeature: { topic: "asthma-copd", n: 7 },
-        source: "rosen-ch2",
-      },
+        correct: 1,
+        explanation: "Her acidosis has cleared with an hour of medical treatment, from pH 7.33 to 7.36. The BTS/ICS guideline starts noninvasive ventilation only when a pH below 7.35 and a pCO2 above 49 mmHg persist or develop despite optimal medical therapy, so she no longer meets the threshold. She is alert, improving, and within the 88 to 92% saturation target on low-flow oxygen. Raising oxygen to 15 L/minute risks worsening hypercapnia. The GOLD report describes high-flow nasal therapy for patients who stay hypoxemic on conventional oxygen or cannot tolerate noninvasive ventilation. She is at target on 2 L/minute and improving, so it adds nothing now. She has no indication for intubation.",
+        keyFeature: {
+          topic: "asthma-copd",
+          n: 7
+        },
+        source: "bts-ics"
+      }
     ],
-    sources: [GOLD, ROSEN_CH113, ROSEN_CH2],
+    sources: [
+      GOLD,
+      {
+        id: "bts-ics",
+        citation: "Davidson AC, Banham S, Elliott M, et al. BTS/ICS guideline for the ventilatory management of acute hypercapnic respiratory failure in adults. BMJ Open Respir Res. 2016.",
+        url: "https://doi.org/10.1136/bmjresp-2016-000133"
+      }
+    ],
     reviewed: false,
     author: AUTHOR,
-    version: 1,
+    version: 2,
   },
   {
     id: "asthma-copd-46",
