@@ -2351,80 +2351,80 @@ export const ASTHMA_COPD_S25: Samp[] = [
   {
     id: "asthma-copd-42",
     topic: "asthma-copd",
-    title: "Breathing through his neck",
-    stem: "A 66-year-old man with COPD is brought to the emergency department by ambulance with 3 days of increasing breathlessness and thick sputum after a cold. He had a total laryngectomy for laryngeal cancer 6 years ago. He breathes only through a permanent stoma in his neck, and his mouth and nose no longer connect to his trachea. He speaks with an electrolarynx but is too breathless to use it now. In the department, oxygen is given by a tracheostomy mask over the stoma and thick mucus is suctioned from it. He is alert, uses his neck muscles to breathe and has diffuse wheeze. An arterial gas shows pH 7.31, PaCO2 62 mmHg and PaO2 58 mmHg.",
+    title: "Evacuated ahead of the fire",
+    stem: "You are working in a regional hospital emergency department in northern Alberta during a wildfire evacuation. A 34-year-old woman with asthma is brought to the emergency department by ambulance from an evacuation centre with 1 day of worsening wheeze and breathlessness. Heavy smoke covered her town for 2 days before she left. She takes budesonide-formoterol 200/6 mcg, one inhalation twice daily and as needed, and has used 10 extra inhalations today. She had one asthma admission 3 years ago and has never been intubated. She is alert and sits upright on the stretcher. She talks in phrases and can sip water. She has loud expiratory wheeze in both lungs and no stridor, hives or leg swelling.",
     vitals: {
-      temperature: "37.6°C oral",
-      pulse: "116/minute",
-      resp: "30/minute",
-      bp: "150/86 mmHg",
-      o2sat: "88% on 28% oxygen by tracheostomy mask"
+      temperature: "36.9°C oral",
+      pulse: "118/minute",
+      resp: "28/minute",
+      bp: "132/80 mmHg",
+      o2sat: "90% on room air"
     },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following findings best indicates the severity of his exacerbation?",
+        prompt: "Which of the following findings places her presentation in the severe category of the GINA 2026 emergency department criteria?",
         options: [
-          "Heart rate of 116/minute",
-          "pH 7.31 with PaCO2 62 mmHg",
-          "SpO2 of 88% on oxygen",
-          "Unable to use his voice device",
-          "Wheeze heard over both lungs"
+          "Heart rate of 118/minute",
+          "Loud wheeze in both lungs",
+          "Respiratory rate of 28/minute",
+          "SpO2 of 90% on room air",
+          "Talks in phrases, not sentences"
         ],
-        correct: 1,
-        explanation: "His arterial gas shows acidemia with hypercapnia, a pH of 7.31 and a PaCO2 of 62 mmHg. The GOLD report uses blood gases to judge whether an exacerbation needs ventilatory support, and hypercapnia with acidosis marks a severe episode. After a laryngectomy his speech depends on a device, so being unable to use it does not grade his breathlessness the way speaking in phrases would. A saturation of 88% on oxygen reflects oxygenation, not ventilation, and is within the usual COPD target of 88 to 92%. A heart rate of 116/minute and wheeze are less specific, and wheeze can fade as airflow worsens.",
+        correct: 3,
+        explanation: "Her room air saturation of 90% is below the GINA 2026 severe threshold of 92%, and any one severe feature is enough to class the presentation as severe. Talking in phrases while preferring to sit is a moderate feature. A respiratory rate of 28/minute is raised but does not reach the severe cut-off of more than 30/minute. Loud expiratory wheeze is listed with moderate presentations, and a quiet chest is the worrying sign. Heart rate is not among the GINA 2026 severe criteria, and earlier GINA versions set the severe cut-off above 120/minute. Her pulse may also partly reflect the 10 extra doses of formoterol she took today.",
         keyFeature: {
           topic: "asthma-copd",
           n: 3
         },
-        source: "gold"
+        source: "gina"
       },
       {
         id: "q2",
         kind: "single",
-        update: "Nebulized salbutamol and ipratropium are ordered.",
-        prompt: "Which of the following is the most appropriate way to run his nebulized treatment?",
+        update: "Salbutamol and ipratropium by pMDI and spacer are started. A chest X-ray is ordered because of her smoke exposure. The portable machine will not be free for 1 hour.",
+        prompt: "Which of the following corticosteroid orders is most appropriate for her at this point?",
         options: [
-          "Compressed air, with no added oxygen",
-          "Compressed air, with stoma mask oxygen",
-          "Oxygen at 15 L/minute through it",
-          "Oxygen at 8 L/minute through it",
-          "Oxygen through it via a face mask"
+          "budesonide 1 mg nebulized, no prednisone",
+          "methylprednisolone 80 mg IM now",
+          "prednisone 50 mg PO after the chest X-ray",
+          "prednisone 50 mg PO if no better in 1 hour",
+          "prednisone 50 mg PO now"
         ],
-        correct: 1,
-        explanation: "His PaCO2 of 62 mmHg with acidemia shows hypercapnic respiratory failure. The BTS guideline advises that nebulizers for such patients be driven by compressed air, with oxygen given at the same time to keep saturation at 88 to 92%, and that hypoxemia not be allowed during nebulized treatment. After a laryngectomy it gives that oxygen by tracheostomy mask. Driving the nebulizer with oxygen at 8 or 15 L/minute delivers high oxygen concentrations that can raise his PaCO2. Air with no added oxygen would let him become hypoxemic during treatment. A face mask cannot reach his lungs.",
+        correct: 4,
+        explanation: "GINA advises systemic corticosteroid for all but the mildest exacerbations, given within 1 hour of presentation where possible. Oral corticosteroids take at least 4 hours to help, so the dose should not wait. She can sip water, and oral prednisone is as effective as IV and quicker to give. Waiting for the chest X-ray delays treatment for an investigation that would not change the need for it. GINA does not advise a routine chest X-ray in acute asthma. Waiting 1 hour to judge the response to bronchodilators also delays it, when her presentation is already severe. High-dose inhaled budesonide has shown benefit mainly in patients who receive no systemic corticosteroid. IM methylprednisolone has shown no benefit over the oral route in trials and adds an injection.",
         keyFeature: {
           topic: "asthma-copd",
           n: 5
         },
-        source: "bts-oxygen"
+        source: "gina"
       },
       {
         id: "q3",
         kind: "single",
-        update: "After 1 hour of treatment his pH is 7.27 and PaCO2 70 mmHg. He is alert but tiring.",
-        prompt: "Which of the following is the most appropriate ventilatory support for him now?",
+        update: "Forty minutes later, after three rounds of bronchodilators, she is restless and keeps trying to climb off the stretcher. She says she is panicking. The nurse asks for an order to calm her.",
+        prompt: "Which of the following is the most appropriate response to her restlessness?",
         options: [
-          "Bilevel ventilation by full face mask",
-          "Bilevel ventilation by nasal mask",
-          "Continue treatment and recheck in 2 hours",
-          "High-flow oxygen by nasal cannula",
-          "Invasive ventilation through the stoma"
+          "Bilevel ventilation with midazolam 1 mg IV",
+          "Blood gas and urgent ICU review",
+          "Coached slow breathing and reassurance",
+          "haloperidol 2.5 mg IM, then reassess",
+          "lorazepam 1 mg SL, then reassess"
         ],
-        correct: 4,
-        explanation: "His pH of 7.27 and PaCO2 of 70 mmHg have worsened despite an hour of optimal medical treatment, which meets the BTS/ICS threshold for ventilatory support. His mouth and nose no longer connect to his trachea, so a full face mask, a nasal mask or a nasal cannula cannot deliver pressure or flow to his lungs. The BTS/ICS guideline advises intubation when a noninvasive interface cannot be fitted or used. None of the offered noninvasive options reaches his trachea, so the tube goes through the stoma. It also warns that NIV should not delay escalation when invasive ventilation is more appropriate, so waiting 2 hours with a falling pH is unsafe.",
+        correct: 1,
+        explanation: "New restlessness after three rounds of bronchodilators in a severe exacerbation must be treated as possible worsening gas exchange until shown otherwise. GINA lists not being agitated as a feature of a moderate presentation. It advises a blood gas for a patient who is not responding or is deteriorating, and considering ICU transfer when the patient is worsening. GINA states that sedation must be strictly avoided in acute asthma, because anxiolytic and hypnotic drugs depress breathing and have been linked to avoidable asthma deaths. That rules out lorazepam and argues against haloperidol. GINA also advises that NIV should not be tried in an agitated patient and that patients should not be sedated to receive it. Coaching her breathing assumes panic and could miss respiratory failure.",
         keyFeature: {
           topic: "asthma-copd",
           n: 7
         },
-        source: "bts-ics"
+        source: "gina"
       }
     ],
-    sources: [GOLD, BTS_OXYGEN, BTS_ICS],
+    sources: [GINA],
     reviewed: false,
     author: AUTHOR,
-    version: 3,
+    version: 4,
   },
   {
     id: "asthma-copd-43",

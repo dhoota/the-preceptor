@@ -245,7 +245,7 @@ export const ABUSE_DOMESTIC_S20: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate investigation to find injuries to his abdominal organs?",
+        prompt: "Which of the following is the most appropriate next investigation for him?",
         options: ["Abdominal ultrasound", "Abdominal x-ray series", "Admission for serial examinations", "CT abdomen with IV contrast", "Repeat AST and ALT in 6 hours"],
         correct: 3,
         explanation:

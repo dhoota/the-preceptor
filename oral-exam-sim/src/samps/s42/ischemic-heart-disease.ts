@@ -1927,11 +1927,11 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
           "It places her at very low cardiac risk",
           "It rules out obstructive disease",
           "It suggests the pain may be esophageal",
-          "Noncalcified plaque can still cause stenosis",
+          "It would not show noncalcified plaque",
         ],
         correct: 4,
         explanation:
-          "Absent coronary calcium lowers but does not remove the chance of obstructive disease in a patient with symptoms, because plaque without calcium can still narrow an artery. In the CONFIRM registry of symptomatic patients with a calcium score of 0, 13% had nonobstructive plaque and 3.5% had a stenosis of 50% or more on CT coronary angiography. Those with a zero score and a 50% stenosis had more events, counting death, MI and late revascularization together, than those without obstructive disease, 3.9% against 0.8%. A zero score therefore neither rules out obstructive disease nor makes further testing unnecessary. It does not measure her current risk of an acute event, and her troponins are still in the observe zone. It says nothing about an esophageal or other cause for waking with heaviness and sweating.",
+          "A calcium score comes from a CT without contrast, which would not show plaque that holds no calcium. Such plaque can still narrow an artery, so absent calcium lowers but does not remove the chance of obstructive disease in a patient with symptoms. In the CONFIRM registry of symptomatic patients with a calcium score of 0, 13% had nonobstructive plaque and 3.5% had a stenosis of 50% or more on CT coronary angiography. Those with a zero score and a 50% stenosis had more events, counting death, MI and late revascularization together, than those without obstructive disease, 3.9% against 0.8%. A zero score therefore neither rules out obstructive disease nor makes further testing unnecessary. It does not measure her current risk of an acute event, and her troponins are still in the observe zone. It says nothing about an esophageal or other cause for waking with heaviness and sweating.",
         keyFeature: { topic: TOPIC, n: 4 },
         source: "confirm-cac0-2011",
       },

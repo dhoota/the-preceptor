@@ -359,10 +359,10 @@ const SRC_BAP_CATATONIA: Source = {
   citation: "Rogers JP, Oldham MA, Fricchione G, et al. Evidence-based consensus guidelines for the management of catatonia. Recommendations from the British Association for Psychopharmacology. Journal of Psychopharmacology 2023.",
   url: "https://doi.org/10.1177/02698811231158232",
 };
-const SRC_FLORES_INTERPRETERS: Source = {
-  id: "flores-interpreters",
-  citation: "Flores G, Abreu M, Barone CP, Bachur R, Lin H. Errors of medical interpretation and their potential clinical consequences. A comparison of professional versus ad hoc versus no interpreters. Annals of Emergency Medicine 2012.",
-  url: "https://doi.org/10.1016/j.annemergmed.2012.01.025",
+const SRC_4AT: Source = {
+  id: "4at-delirium",
+  citation: "MacLullich A, Ryan T, Cash H. 4AT rapid clinical test for delirium and cognitive impairment, version 1.2, with guidance notes. 2014.",
+  url: "https://www.the4at.com/4at-download",
 };
 const SRC_NETO_STAR_FRUIT: Source = {
   id: "neto-star-fruit",
@@ -945,7 +945,7 @@ export const LOC_S32: Samp[] = [
         id: "q4",
         kind: "single",
         prompt: "Which of the following details from her sister is most important to clarify now?",
-        options: ["Clonazepam doses missed recently", "Her age at first mania", "Her usual caffeine intake", "Hours of sleep last month", "Recent stress at work"],
+        options: ["Clonazepam doses missed", "Her age at first mania", "Her usual caffeine intake", "Hours of sleep last month", "Recent stress at work"],
         correct: 0,
         explanation: "The BAP guideline advises seeking collateral history about exposure to or withdrawal from medications, and it lists benzodiazepine discontinuation among the triggers of catatonia. She takes clonazepam twice daily, so her sister should be asked whether doses were missed or the supply ran out. The guideline recommends restarting a benzodiazepine when catatonia follows benzodiazepine withdrawal, so the answer changes her treatment plan. Her age at first mania, her caffeine intake, her sleep last month and recent stress may add to her psychiatric history, but none of them changes what is done for her in the emergency department today.",
         keyFeature: { topic: "loc", n: 3 },
@@ -1617,18 +1617,18 @@ export const LOC_S32: Samp[] = [
     id: "loc-41",
     topic: "loc",
     title: "Hiccups between dialysis sessions",
-    stem: "A 69-year-old man is brought to the emergency department by his wife because he has had hiccups for 3 days, has vomited twice and has been confused since last night. He has type 2 diabetes and end-stage kidney disease treated with hemodialysis three times a week through an arm fistula. His last session was 2 days ago. His wife speaks Tagalog and little English. Their 15-year-old grandson, who speaks both languages, came with them. Their adult daughter can arrive in about 3 hours. He opens his eyes to voice, is disoriented and obeys commands. He hiccups every few seconds. His eye movements are full. There is no neck stiffness or focal weakness. Capillary glucose is 7.4 mmol/L.",
+    stem: "A 69-year-old man is brought to the emergency department by his wife because he has had hiccups for 3 days, has vomited twice and has been confused since last night. He has type 2 diabetes and end-stage kidney disease treated with hemodialysis three times a week through an arm fistula. His last session was 2 days ago, and his wife did not go with him. He last saw his family physician 4 months ago. He opens his eyes to voice, is disoriented and obeys commands. He hiccups every few seconds. His eye movements are full. There is no neck stiffness or focal weakness. Capillary glucose is 7.4 mmol/L.",
     vitals: { temperature: "36.7°C oral", pulse: "84/minute", resp: "18/minute", bp: "162/88 mmHg", o2sat: "97% on room air", weight: "70 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate way to obtain his wife's account of his illness?",
-        options: ["Bilingual hospital cleaner", "Grandson as interpreter", "Professional interpreter by phone", "Simple English and gestures", "Wait for his adult daughter"],
-        correct: 2,
-        explanation: "His wife is the best witness to how his illness began, and a professional interpreter gives the most reliable account. Flores and colleagues audiotaped emergency visits and found that errors with potential clinical consequences made up 12% of errors with professional interpreters, 22% with ad hoc interpreters and 20% with no interpreter. His teenage grandson and a bilingual cleaner are ad hoc interpreters with no training in medical interpretation. Simple English and gestures amount to no interpreter. Waiting for his daughter delays the history of a confused patient, while a telephone interpreter is available now.",
+        prompt: "Which of the following people, besides his wife, can best describe his usual mental state this week?",
+        options: ["His community pharmacist", "His dialysis unit nurses", "His family physician", "His next-door neighbour", "The triage nurse tonight"],
+        correct: 1,
+        explanation: "His dialysis unit nurses see him three times a week and assessed him at his session 2 days ago. They know his usual mental state and can say whether he was already confused, vomiting or hiccupping then, which helps date the change. The 4AT names other staff who know the patient as a source for judging an acute change. His family physician last saw him 4 months ago and cannot describe this week. The triage nurse has seen him only while he is confused. His pharmacist dispenses his medicines but does not observe his mental state, and a neighbour sees less of him than his wife does.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "flores-interpreters",
+        source: "4at-delirium",
       },
       {
         id: "q2",
@@ -1662,10 +1662,10 @@ export const LOC_S32: Samp[] = [
         source: "neto-star-fruit",
       },
     ],
-    sources: [SRC_FLORES_INTERPRETERS, SRC_NICE_DELIRIUM, SRC_NETO_STAR_FRUIT],
+    sources: [SRC_4AT, SRC_NICE_DELIRIUM, SRC_NETO_STAR_FRUIT],
     reviewed: false,
     author: AUTHOR,
-    version: 3,
+    version: 4,
   },
   {
     id: "loc-42",
