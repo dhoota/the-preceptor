@@ -76,7 +76,7 @@ async function captureApp(size) {
   await wait(800);
   // Buy everything (simulated in the dev server) so no lock icons show.
   await click("Get full access");
-  await click("Buy complete");
+  await click("Subscribe to complete");
   await wait();
 
   // 01 Written tab: topics with scores.
