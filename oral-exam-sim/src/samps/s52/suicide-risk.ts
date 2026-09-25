@@ -46,6 +46,8 @@ const S = {
   gournellis: { id: "gournellis-psychotic-depression", citation: "Gournellis R, Tournikioti K, Touloumi G, and colleagues. Psychotic (delusional) depression and completed suicide: a systematic review and meta-analysis. Ann Gen Psychiatry. 2018.", url: "https://pubmed.ncbi.nlm.nih.gov/30258483/" },
   borges: { id: "borges-acute-alcohol", citation: "Borges G, Bagge CL, Cherpitel CJ, and colleagues. A meta-analysis of acute use of alcohol and the risk of suicide attempt. Psychol Med. 2017.", url: "https://pubmed.ncbi.nlm.nih.gov/27928972/" },
   line988: { id: "988", citation: "Public Health Agency of Canada. 9-8-8 Suicide Crisis Helpline: call or text, 24 hours a day. 2026.", url: "https://988.ca" },
+  marionneau: { id: "marionneau-gambling", citation: "Marionneau V, Nikkinen J. Gambling-related suicides and suicidality: a systematic review of qualitative evidence. Front Psychiatry. 2022.", url: "https://doi.org/10.3389/fpsyt.2022.980303" },
+  yakovenko: { id: "yakovenko-oud", citation: "Yakovenko I, Mukaneza Y, Germe K, and colleagues. Management of opioid use disorder: 2024 update to the national clinical practice guideline. CMAJ. 2024.", url: "https://doi.org/10.1503/cmaj.241173" },
 } satisfies Record<string, Source>;
 
 export const SUICIDE_RISK_S52: Samp[] = [
@@ -370,49 +372,64 @@ export const SUICIDE_RISK_S52: Samp[] = [
   {
     id: "suicide-risk-22",
     topic: "suicide-risk",
-    title: "First term away from home",
-    stem:
-      "A 19-year-old woman presents to the emergency department at 22:00 with her roommate. She is in her first term at university, 1 500 km from home. She failed 2 midterm exams last week and has thought for several days that everyone would be better off without her. She has no plan, no intent and no past attempts. She has never had mental health care. She drinks 3 or 4 drinks on weekends and uses no other substances. She calls her mother daily and wants to stay in school. She is sober, tearful and engaged.",
-    vitals: { temperature: "36.6°C oral", pulse: "84/minute", resp: "14/minute", bp: "112/70 mmHg", o2sat: "99% on room air" },
+    title: "Debts he could no longer hide",
+    stem: "A 24-year-old man presents to the emergency department at 21:00 with his partner. Over 8 months he has lost 18 000 dollars on online sports betting, much of it on credit cards, and he told her about it for the first time today. Since then he has thought he would be better off not waking up. He has no plan or intent, has never harmed himself and has no psychiatric history. He drinks two beers on weekends and uses no other drugs. He works full time as an electrician's apprentice and says his partner and parents support him. He has no access to firearms. He feels relieved that he has told her and wants help to stop gambling. His partner will stay with him tonight.",
+    vitals: { temperature: "36.8°C oral", pulse: "84/minute", resp: "16/minute", bp: "126/78 mmHg", o2sat: "99% on room air" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        update: "You work through a written safety plan with her, and she can describe each step in her own words.",
-        prompt: "Which of the following findings best supports discharging her with an outpatient plan tonight?",
-        options: ["Denial of ideation at triage", "Low score on a risk scale", "Promise not to harm herself", "Shared plan she helped write", "Stated wish to go home"],
-        correct: 3,
-        explanation:
-          "A plan she helped build and can describe shows engagement, and her supports make it workable. Together with no plan, intent or past attempts, that places her at low acute risk. Denial at triage would carry little weight against what she tells you in a full interview. A low score on a risk scale should not decide disposition because scales predict poorly. A promise not to self-harm protects no one. Wanting to go home is expected and is not evidence of safety.",
+        prompt: "Which of the following is the most appropriate way to build his outpatient plan before he goes home?",
+        options: [
+          "Ask him to sign a no-suicide contract",
+          "Give him a printed list of clinics",
+          "Keep him until the clinic opens Monday",
+          "Let his partner decide the plan for him",
+          "Write a safety plan with him and his partner",
+        ],
+        correct: 4,
+        explanation: "His risk is low: passive thoughts without a plan, intent or past self-harm, no psychiatric illness, no firearms, supportive family and a partner staying with him, and he wants help. A safety plan written with him lists his warning signs, coping steps, people who can help, professional and crisis contacts and ways to make his surroundings safer, and his partner can support it. No-suicide contracts are ineffective, and collaborative safety plans are recommended in their place. A printed list of clinics gives him no plan for a crisis. Holding him until Monday is not needed at this level of risk. A plan imposed by his partner leaves out his own engagement.",
         keyFeature: { topic: "suicide-risk", n: 4 },
-        source: "stanley-2012",
+        source: "stanley-2018",
       },
       {
         id: "q2",
         kind: "menu",
-        select: 3,
-        prompt: "Which of the following items belong in her written safety plan?",
-        options: ["Coping steps she can use alone", "Crisis line and campus contacts", "Her personal warning signs", "Her risk level from triage", "List of her risk factors", "Pledge not to harm herself", "Rules for her roommate to follow"],
-        correct: [0, 1, 2],
-        explanation:
-          "A safety plan is a written, prioritized list in the patient's own words. It starts with her warning signs, then coping steps she can use alone, people and places that distract her, people she can ask for help, professional and crisis contacts such as 9-8-8 and campus services, and steps to make her surroundings safer. A risk level and a list of risk factors belong in the chart, not the plan. A pledge is a no-harm contract. Rules for her roommate do not give her skills to use.",
+        prompt: "Which of the following should be part of his crisis and follow-up arrangements?",
+        options: [
+          "9-8-8 crisis line in his plan",
+          "Call from the team within 72 hours",
+          "Follow-up only if he feels worse",
+          "Psychiatric admission tonight",
+          "Signed no-suicide contract",
+          "Zopiclone 30 tablets for sleep",
+        ],
+        select: 2,
+        correct: [0, 1],
+        explanation: "In a large emergency department study, a safety plan that listed crisis contacts, combined with telephone follow-up that began within 72 hours of discharge and continued weekly, was associated with fewer suicidal behaviours over 6 months, 3.03% against 5.29% with usual care. The months after an emergency visit are a high-risk period, so waiting until he feels worse misses them. A no-suicide contract is ineffective. A 30-tablet supply of a sedative adds a means of overdose. Admission is not needed for a man at low risk with support at home.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "stanley-2012",
+        source: "stanley-2018",
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following follow-up measures has been shown to reduce suicidal behaviour after an emergency visit?",
-        options: ["Advice to return if she feels worse", "Pamphlet on campus wellness services", "Referral letter for her to deliver", "Repeat emergency visit in 1 week", "Structured follow-up phone calls"],
+        prompt: "Which of the following is the most important addition to his outpatient plan given what led to this visit?",
+        options: [
+          "Advice to gamble less often",
+          "Antidepressant started today",
+          "Couples therapy alone",
+          "Debt consolidation loan alone",
+          "Specialized gambling treatment service",
+        ],
         correct: 4,
-        explanation:
-          "Brief structured telephone contacts after discharge, added to a safety plan, were associated with less suicidal behaviour and better attendance at outpatient care in a large emergency department cohort. The weeks after discharge are a high risk period and many patients never attend the first appointment. Advice to return, a pamphlet and a letter she must deliver rely on her acting while unwell. A repeat emergency visit is not a treatment and delays real follow-up.",
+        explanation: "In a systematic review of qualitative studies, the two main processes linking gambling to suicidal behaviour were debt and shame, which can also stop people from seeking help, so treatment of the gambling itself is central to his plan. Advice to gamble less does not treat a loss of control that has already cost 18 000 dollars. A debt consolidation loan may ease one pressure but leaves the gambling untreated. Couples therapy alone does not treat the gambling disorder. He has no diagnosis of depression to justify starting an antidepressant tonight.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "stanley-2018",
+        source: "marionneau-gambling",
       },
     ],
-    sources: [S.stanley12, S.stanley18],
+    sources: [S.stanley18, S.marionneau],
     ...META,
+    version: 2,
   },
   /* 23 Medication counselling after a tricyclic start --------------------- */
   {
@@ -552,12 +569,12 @@ export const SUICIDE_RISK_S52: Samp[] = [
         options: ["Buprenorphine offered in the department", "Discharge only once a urine screen is clear", "Follow-up with a named clinician this week", "Night-time benzodiazepine for sleep", "Police report about his drug supply", "Referral to detox without medication", "Take-home naloxone kit", "Tapering supply of oral morphine"],
         correct: [0, 2, 6],
         explanation:
-          "Opioid agonist treatment such as buprenorphine, which can be started in the department once he is in withdrawal, lowers overdose deaths and is the preferred treatment for opioid use disorder. A take-home naloxone kit and a named follow-up this week cover the high risk days after discharge. Detox without medication leaves him with lost tolerance, which is how this overdose happened. A benzodiazepine adds respiratory depression. A morphine taper is not an evidence based treatment. A urine screen and a police report do not change his care.",
+          "Opioid agonist treatment with buprenorphine, which can be started in the department once he is in withdrawal, is a preferred first-line treatment for opioid use disorder in the 2024 national guideline. A take-home naloxone kit and a named follow-up this week cover the high risk days after discharge. The guideline advises against withdrawal management as a standalone treatment, and detox without medication leaves him with lost tolerance, which is how this overdose happened. A benzodiazepine adds respiratory depression. A short morphine taper is withdrawal management by another name, not maintenance treatment. A urine screen and a police report do not change his care.",
         keyFeature: { topic: "suicide-risk", n: 5 },
-        source: "bccsu-oud",
+        source: "yakovenko-oud",
       },
     ],
-    sources: [S.bohnert, S.bccsu],
+    sources: [S.bohnert, S.yakovenko],
     ...META,
   },
   /* 26 Self-harm in a transgender adolescent ------------------------------ */
@@ -1190,7 +1207,7 @@ export const SUICIDE_RISK_S52: Samp[] = [
         correct: 3,
         explanation:
           "A high lethality attempt needs a psychiatric assessment before discharge, whichever service admits her for the fractures. Suicide risk after a serious attempt does not fall because the physical injuries heal. Physiotherapy clearance and pain control address mobility, not safety. An opioid supply at discharge is also a means that needs planning. A housing referral may help her later. A no-harm contract has no protective value.",
-        keyFeature: { topic: "suicide-risk", n: 4 },
+        keyFeature: { topic: "suicide-risk", n: 3 },
         source: "safe-t",
       },
     ],
