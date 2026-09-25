@@ -2232,15 +2232,15 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
     topic: "pediatric-fever",
     title: "Eleven week old seen after a fever at home",
     stem:
-      "An 11-week-old girl is brought to the emergency department because her mother measured a rectal temperature of 38.7°C this afternoon. She was born at 39 weeks and has been healthy. She has fed a little less than usual today but has had five wet diapers. She is alert and consolable, with a capillary refill under 2 seconds. Her fontanelle is soft, and the examination shows no source of fever. A catheter urinalysis shows leukocyte esterase 2+, positive nitrite and pyuria, and a urine culture is sent. Her absolute neutrophil count, CRP and procalcitonin are normal, and a blood culture is sent. The family has a children's acetaminophen suspension of 160 mg per 5 mL at home.",
-    vitals: { temperature: "38.3°C rectal", pulse: "156/minute", resp: "38/minute", o2sat: "99% on room air", weight: "4.6 kg" },
+      "An 11-week-old girl is brought to the emergency department by her parents after a rectal temperature of 38.7°C at home this afternoon. She was born at 39 weeks and has had no illnesses. Her parents say she is feeding normally and settles when held. She is smiling and alert, with pink skin and a capillary refill under 2 seconds. Her fontanelle is soft. There is no rash, and her ears, chest and abdomen are normal. A catheter urinalysis shows leukocyte esterase 2+, positive nitrite and pyuria, and a urine culture is sent. ANC 3.6 x 10^9/L, CRP 8 mg/L and procalcitonin 0.12 mcg/L, and a blood culture is sent. The family has a children's acetaminophen suspension of 160 mg per 5 mL at home.",
+    vitals: { temperature: "38.3°C rectal", pulse: "156/minute", resp: "38/minute", o2sat: "99% on room air", weight: "5.4 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
         prompt: "Which of the following is the most appropriate plan for her now?",
         options: [
-          "Admit for IV antibiotics for 48 hours",
+          "Admit for a 7 day IV antibiotic course",
           "Home on an oral antibiotic, review in 24 hours",
           "Home without antibiotics until the culture grows",
           "IM ceftriaxone once, then no further antibiotic",
@@ -2248,7 +2248,7 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "She is 77 days old and well appearing, with a positive urinalysis and a normal neutrophil count, CRP and procalcitonin. The Canadian Paediatric Society considers such infants low risk and states that they do not require hospitalization when clinically well, so she can go home on an oral antibiotic with review in 24 hours while cultures incubate. A lumbar puncture and admission add procedures and a hospital stay that her low risk markers do not require. Leaving a probable urinary infection untreated until the culture grows risks spread to the kidneys and blood. A single dose of ceftriaxone does not complete treatment.",
+          "She is 77 days old and well appearing, with a positive urinalysis, an ANC of 3.6 x 10^9/L, a CRP of 8 mg/L and a procalcitonin of 0.12 mcg/L. The Canadian Paediatric Society no longer treats a positive urinalysis alone as high risk. It advises oral or IV antibiotics for such infants, with oral cefixime an option, and allows discharge with follow-up within 24 to 48 hours at 61 to 90 days. She can go home on an oral antibiotic with review in 24 hours while cultures incubate. The CPS bases the decision on a lumbar puncture on the inflammatory markers, and hers are normal. A fixed 7 day IV course keeps a well infant in hospital when oral treatment is enough. Leaving a probable urinary infection untreated until the culture grows risks spread to the kidneys and blood. A single dose of ceftriaxone does not complete treatment.",
         keyFeature: { topic: "pediatric-fever", n: 1 },
         source: "cps-infant",
       },
@@ -2257,22 +2257,22 @@ export const PEDIATRIC_FEVER_S46: Samp[] = [
         kind: "single",
         prompt: "Which of the following volumes of the 160 mg per 5 mL suspension is the correct acetaminophen dose for her?",
         options: [
-          "0.9 mL every 4 to 6 hours",
-          "2.2 mL every 4 to 6 hours",
-          "3.5 mL every 4 to 6 hours",
+          "1 mL every 4 to 6 hours",
+          "2.5 mL every 4 to 6 hours",
+          "4 mL every 4 to 6 hours",
           "5 mL every 4 to 6 hours",
           "7.5 mL every 4 to 6 hours"
         ],
         correct: 1,
         explanation:
-          "At 15 mg/kg, her 4.6 kg gives about 69 mg. The suspension has 32 mg per mL, so 69 divided by 32 is about 2.2 mL. The American Academy of Pediatrics advises dosing by weight and measuring with a proper syringe. 0.9 mL would be the right volume of the stronger 80 mg per mL infant drops, and here gives only about 29 mg, or 6 mg/kg. 3.5 mL gives 112 mg, about 24 mg/kg. 5 mL and 7.5 mL give 160 mg and 240 mg, doses for older children.",
+          "At 15 mg/kg, her 5.4 kg gives 81 mg. The suspension has 32 mg per mL, so 81 divided by 32 is about 2.5 mL. The American Academy of Pediatrics advises dosing by weight and measuring with a proper syringe. 1 mL would be the right volume of the stronger 80 mg per mL infant drops, and here gives only 32 mg, or about 6 mg/kg. 4 mL gives 128 mg, about 24 mg/kg. 5 mL and 7.5 mL give 160 mg and 240 mg, doses for older children.",
         keyFeature: { topic: "pediatric-fever", n: 8 },
         source: "aap-antipyretic",
       },
       {
         id: "q3",
         kind: "single",
-        update: "Twenty-four hours later her urine culture is growing gram negative rods. She had acetaminophen 3 hours ago, and her temperature is 37.4°C rectal. Her pulse is 188/minute, and her hands are cool. She cries during the examination and hiccups after a feed.",
+        update: "The next day her urine culture is growing gram negative rods. She had acetaminophen 3 hours ago, and her temperature is 37.4°C rectal. Her pulse is 188/minute, and her hands are cool. She cries during the examination and hiccups after a feed.",
         prompt: "Which of the following findings at this point most suggests that she is becoming septic?",
         options: [
           "Crying during the examination",

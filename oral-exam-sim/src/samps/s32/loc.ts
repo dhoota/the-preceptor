@@ -308,6 +308,16 @@ const SRC_ADEM: Source = {
   citation: "Pohl D, Alper G, Van Haren K, et al. Acute disseminated encephalomyelitis. Updates on an inflammatory CNS syndrome. Neurology 2016.",
   url: "https://doi.org/10.1212/WNL.0000000000002825",
 };
+const SRC_PECARN_HEAD: Source = {
+  id: "pecarn-head",
+  citation: "Kuppermann N, Holmes JF, Dayan PS, et al. Identification of children at very low risk of clinically-important brain injuries after head trauma. A prospective cohort study. Lancet 2009.",
+  url: "https://doi.org/10.1016/S0140-6736(09)61558-0",
+};
+const SRC_NICE_HEAD_INJURY: Source = {
+  id: "nice-head-injury",
+  citation: "National Institute for Health and Care Excellence. Head injury. Assessment and early management. NICE guideline NG232. 2023.",
+  url: "https://www.nice.org.uk/guidance/ng232",
+};
 const SRC_PORPHYRIA: Source = {
   id: "acute-porphyria",
   citation: "Anderson KE, Bloomer JR, Bonkovsky HL, et al. Recommendations for the diagnosis and treatment of the acute porphyrias. Annals of Internal Medicine 2005.",
@@ -782,7 +792,7 @@ export const LOC_S32: Samp[] = [
     id: "loc-24",
     topic: "loc",
     title: "Sleepy after a bump at daycare",
-    stem: "A 4-year-old girl is brought to the emergency department by her father because she has vomited twice and become sleepy since she hit her forehead on a table at daycare 3 hours ago. For 4 days she has had bruises and small red spots on her legs and trunk, which began 2 weeks after a cold. She takes no medications and has no known bleeding disorder. She opens her eyes to voice and answers with single words. There are petechiae and bruises of different ages on her legs and trunk, and blood blisters inside her cheeks. She has a small bruise on her forehead. There is no lymphadenopathy and no enlarged liver or spleen. Capillary glucose is 5.3 mmol/L. A CBC drawn at triage shows platelets 3 x 10^9/L, hemoglobin 121 g/L and white cells 7.4 x 10^9/L with a normal differential.",
+    stem: "A 4-year-old girl is brought to the emergency department by her father because she has vomited twice and become sleepy since she hit her forehead on a table at daycare 3 hours ago. For 4 days she has had bruises and small red spots on her legs and trunk, which began 2 weeks after a cold. She takes no medications and has no known bleeding disorder. Her father collected her from daycare an hour after the bump. She opens her eyes to voice and answers with single words. There are petechiae and bruises of different ages on her legs and trunk, and blood blisters inside her cheeks. She has a small bruise on her forehead. There is no lymphadenopathy and no enlarged liver or spleen. Capillary glucose is 5.3 mmol/L. A CBC drawn at triage shows platelets 3 x 10^9/L, hemoglobin 121 g/L and white cells 7.4 x 10^9/L with a normal differential.",
     vitals: { temperature: "36.8°C axillary", pulse: "112/minute", resp: "22/minute", bp: "108/66 mmHg", o2sat: "99% on room air", weight: "17 kg" },
     questions: [
       {
@@ -809,12 +819,12 @@ export const LOC_S32: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following details from her father best establishes how her current state differs from usual?",
-        options: ["Date of her last cold", "Family history of bleeding", "Her immunization record", "Her last meal time", "Her usual alertness and speech"],
-        correct: 4,
-        explanation: "Her father can say how alert and talkative she usually is, which shows whether her single-word answers and sleepiness are a true change and gives a baseline for later checks. A family history of bleeding and the date of her cold help explain the low platelet count, not her mental state. The time of her last meal matters if she needs anesthesia for surgery, and her immunization record does not describe her usual behaviour.",
+        prompt: "Which of the following sources can best describe her level of alertness in the first hour after the bump?",
+        options: ["Her daycare staff", "Her family physician", "Her father's account", "Her own account", "Triage nursing notes"],
+        correct: 0,
+        explanation: "Her father collected her an hour after the bump, so only the daycare staff saw whether she lost consciousness and how alert she was before she became sleepy. A period of normal behaviour followed by decline points to an expanding bleed and sets the start of her trend. For children aged 2 and older, the PECARN rule counts loss of consciousness, vomiting and altered mental status among its predictors of brain injury, so the first hour needs a reliable witness. Her father can describe her usual self and how she was when he arrived, but not the first hour. Her family physician knows her history but not today's events. Triage notes begin at arrival, and a drowsy 4-year-old cannot give a reliable account.",
         keyFeature: { topic: "loc", n: 3 },
-        source: "gcs-40",
+        source: "pecarn-head",
       },
       {
         id: "q4",
@@ -828,7 +838,7 @@ export const LOC_S32: Samp[] = [
         source: "itp-consensus",
       },
     ],
-    sources: [SRC_ITP, SRC_GCS_40],
+    sources: [SRC_ITP, SRC_PECARN_HEAD],
     reviewed: false,
     author: AUTHOR,
     version: 4,
@@ -1075,12 +1085,12 @@ export const LOC_S32: Samp[] = [
         prompt: "Which of the following is the most appropriate next investigation for him?",
         options: ["Ammonia level", "Blood cultures", "Electroencephalogram", "Lumbar puncture", "Non-contrast CT head"],
         correct: 4,
-        explanation: "A head strike in a man taking apixaban, followed by a falling level of consciousness while his fever settles, raises the possibility of a subdural hemorrhage, so a non-contrast CT head comes first. The new decline should not be blamed on the syndrome until bleeding is excluded. An EEG looks for nonconvulsive seizures, and a lumbar puncture is unsafe before a CT in a patient on an anticoagulant. Blood cultures and an ammonia level do not address the most dangerous cause.",
+        explanation: "A head strike in a man taking apixaban, followed by a falling level of consciousness while his fever settles, raises the possibility of a subdural hemorrhage, so a non-contrast CT head comes first. The new decline should not be blamed on the syndrome until bleeding is excluded. An EEG looks for nonconvulsive seizures, and a lumbar puncture is unsafe before a CT in a patient on an anticoagulant. Blood cultures and an ammonia level do not address the most dangerous cause. NICE advises CT within 1 hour for an adult whose GCS is below 15 at 2 hours after a head injury, and it gives anticoagulant use its own pathway to CT.",
         keyFeature: { topic: "loc", n: 1 },
-        source: "phs-review",
+        source: "nice-head-injury",
       },
     ],
-    sources: [SRC_PHS],
+    sources: [SRC_PHS, SRC_NICE_HEAD_INJURY],
     reviewed: false,
     author: AUTHOR,
     version: 4,
@@ -1160,10 +1170,10 @@ export const LOC_S32: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following findings best separates her likely diagnosis from lead poisoning?",
+        prompt: "Which of the following findings in her case is most specific for her likely diagnosis?",
         options: ["Constipation", "Dark urine on standing", "Drowsiness and confusion", "Proximal arm weakness", "Severe abdominal pain"],
         correct: 1,
-        explanation: "Excess porphobilinogen in the urine forms reddish brown pigments as the urine stands, which is a clue to an acute porphyria. Lead blocks an earlier step in heme synthesis, so aminolevulinic acid rises but porphobilinogen does not, and the urine does not darken in this way. Abdominal pain, constipation, motor weakness and encephalopathy occur in both conditions, so none of them separates the two.",
+        explanation: "Excess porphobilinogen in the urine forms reddish brown pigments as the urine stands, which is a clue to an acute porphyria. Severe abdominal pain, constipation, proximal weakness, drowsiness and confusion are all part of an attack, but each is common to many other conditions, including lead poisoning. Lead blocks an earlier step in heme synthesis, so aminolevulinic acid rises but porphobilinogen does not, and the urine does not darken in this way.",
         keyFeature: { topic: "loc", n: 1 },
         source: "acute-porphyria",
       },
@@ -1196,7 +1206,7 @@ export const LOC_S32: Samp[] = [
         prompt: "Which of the following is the most appropriate drug treatment to start now?",
         options: ["Acetazolamide 250 mg PO alone", "Dexamethasone 8 mg IV", "Furosemide 40 mg IV", "Mannitol 1 g/kg IV", "Nifedipine 30 mg PO"],
         correct: 1,
-        explanation: "The Wilderness Medical Society advises dexamethasone for high-altitude cerebral edema, 8 mg and then 4 mg every 6 hours, together with descent, which he has now made, and oxygen to keep his saturation above 90%. Acetazolamide aids acclimatization and treats acute mountain sickness but is not enough on its own for cerebral edema. Nifedipine is used for high-altitude pulmonary edema, and his chest is clear. Furosemide and mannitol have no established role in this condition.",
+        explanation: "The Wilderness Medical Society advises dexamethasone for high-altitude cerebral edema, 8 mg and then 4 mg every 6 hours, together with descent, which he has now made, and oxygen to keep his saturation above 90%. Acetazolamide aids acclimatization and treats acute mountain sickness but is not enough on its own for cerebral edema. Nifedipine is used for high-altitude pulmonary edema, and his chest is clear. The WMS guideline recommends neither furosemide nor mannitol for this condition.",
         keyFeature: { topic: "loc", n: 2 },
         source: "wms-altitude",
       },

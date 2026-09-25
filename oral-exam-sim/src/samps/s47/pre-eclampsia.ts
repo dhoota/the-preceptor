@@ -1404,7 +1404,7 @@ export const PRE_ECLAMPSIA_S47_SAMPS: Samp[] = [
       {
         id: "q3",
         kind: "single",
-        update: "Echocardiography shows a normal sized left ventricle with an ejection fraction of 60% and normal valves. Obstetrics plans her birth today once she is stable.",
+        update: "Her breathing is settling on noninvasive ventilation. Obstetrics plans her birth today once she is stable.",
         prompt: "Which of the following is the main purpose of her magnesium sulfate infusion?",
         options: [
           "Lowering her BP",

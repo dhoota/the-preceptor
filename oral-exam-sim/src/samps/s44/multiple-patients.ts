@@ -1455,7 +1455,7 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
     topic: "multiple-patients",
     title: "Four arrivals from the same party",
     stem:
-      "You are the only physician in a community hospital emergency department at 23:00, with four nurses and a respiratory therapist. The nearest hemodialysis unit is at a regional hospital 1 hour away by road. Four adults arrive together from a party last night where they drank homemade vodka bought from a neighbour. The poison centre suspects methanol and has notified public health. A 52-year-old man had a seizure in the car and now has a GCS of 7 with snoring respirations and a venous pH of 7.08. His vital signs are listed. A 44-year-old man has blurred vision and deep, fast breathing, with a pH of 7.02 and an anion gap of 30 mmol/L. A 38-year-old woman has a headache without visual symptoms, with a pH of 7.31, bicarbonate 18 mmol/L and an osmolal gap of 14 mOsm/kg. A 29-year-old woman who had one small drink feels well, with a normal blood gas and an osmolal gap of 3 mOsm/kg.",
+      "You are the only physician in a community hospital emergency department at 23:00, with four nurses and a respiratory therapist. The nearest hemodialysis unit is at a regional hospital 1 hour away. Four adults arrive from a party last night where they drank homemade vodka bought from a neighbour. The poison centre suspects methanol and has notified public health. A 52-year-old man had a seizure in the car and now has a GCS of 7 with snoring respirations, a venous pH of 7.08 and bicarbonate 6 mmol/L. His vital signs are listed. A 44-year-old man has blurred vision and deep, fast breathing, with a pH of 7.02, bicarbonate 5 mmol/L and an anion gap of 30 mmol/L. A 38-year-old woman has a headache without visual symptoms, with a pH of 7.31, bicarbonate 18 mmol/L and an osmolal gap of 14 mOsm/kg. A 29-year-old woman who had one small drink feels well, with a normal blood gas and an osmolal gap of 3 mOsm/kg.",
     vitals: { temperature: "36.4°C tympanic", pulse: "124/minute", resp: "30/minute", bp: "108/64 mmHg", o2sat: "90% on room air" },
     questions: [
       {
@@ -1505,7 +1505,7 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
         ],
         correct: 0,
         explanation:
-          "The AACT guideline gives an antidote that blocks alcohol dehydrogenase when methanol ingestion is suspected and there is evidence of toxic exposure, such as an osmolal gap above 10 mOsm/kg or a metabolic acidosis. Both men are severely poisoned. The 38-year-old woman has an osmolal gap of 14 mOsm/kg and a bicarbonate of 18 mmol/L, so unmetabolized methanol is likely still present, and blocking it now prevents acidosis and eye injury. The 29-year-old woman had one small drink, and a normal gas with an osmolal gap of 3 mOsm/kg about a day later shows no significant exposure, so she needs observation and repeat testing rather than an antidote. Treating only the men leaves the third patient to become acidotic.",
+          "The AACT guideline gives fomepizole when methanol poisoning is strongly suspected and at least two of these are present: arterial pH below 7.3, bicarbonate below 20 mmol/L and an osmolal gap above 10 mOsm/kg. Both men have a pH below 7.3 and a bicarbonate far below 20 mmol/L. The 38-year-old woman has a pH of 7.31, just above the cut-off, but her bicarbonate of 18 mmol/L and osmolal gap of 14 mOsm/kg meet two criteria. Unmetabolized methanol is likely still present, and blocking its metabolism now prevents acidosis and eye injury. The 29-year-old woman had one small drink, and a normal gas with an osmolal gap of 3 mOsm/kg about a day later meets none of the criteria, so she needs observation and repeat testing rather than an antidote. Treating only the men leaves the third patient to become acidotic.",
         keyFeature: { topic: "multiple-patients", n: 1 },
         source: "aact-methanol",
       },
@@ -1514,15 +1514,15 @@ export const MULTIPLE_PATIENTS_S44: Samp[] = [
         kind: "single",
         prompt: "Which of the following is the most appropriate step for you as the only physician right now?",
         options: [
+          "Ask for help only if one worsens",
           "Ask the RT to lead the airway alone",
           "Call in a second physician now",
           "Manage each patient in turn yourself",
           "Send the well woman to the waiting room",
-          "Wait for transfer before asking for help",
         ],
-        correct: 1,
+        correct: 2,
         explanation:
-          "Two critically ill patients need an airway, antidotes, bicarbonate and transfer at the same time, which one physician cannot safely lead. Calling in help early lets you run the airway while a colleague leads the second patient, with each nurse given a named task. Handling patients one at a time delays the second critical patient. The respiratory therapist should support the airway, not lead it without a physician. The well woman still needs monitoring and repeat testing in a clinical area. Waiting until transfer loses the time when help is most needed.",
+          "Two critically ill patients need an airway, antidotes, bicarbonate and transfer at the same time, which one physician cannot safely lead. Calling in help early lets you run the airway while a colleague leads the second patient, with each nurse given a named task. Handling patients one at a time delays the second critical patient. The respiratory therapist should support the airway, not lead it without a physician. The well woman still needs monitoring and repeat testing in a clinical area. Waiting until a patient worsens loses the time when help is most needed.",
         keyFeature: { topic: "multiple-patients", n: 3 },
         source: "hicks",
       },

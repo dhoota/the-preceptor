@@ -2666,7 +2666,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           "Swollen bruised scrotum and perineum"
         ],
         correct: [0, 6],
-        explanation: "Blood at the meatus after pelvic trauma is the classic sign of urethral injury, and the AUA guideline calls for a retrograde urethrogram in that setting. Perineal and scrotal swelling and bruising from extravasated blood and urine also point to it, as does his inability to void. Groin pain comes from the pelvic fracture. Tachycardia reflects bleeding. Foot pulses, leg length and his GCS say nothing about the urethra.",
+        explanation: "Blood at the meatus after pelvic trauma is the classic sign of urethral injury, and the AUA guideline calls for a retrograde urethrogram in that setting. Perineal and scrotal swelling and bruising from extravasated blood and urine also point to it, as does his inability to void. Groin pain is expected with any crush to the pelvis. Tachycardia reflects bleeding. Foot pulses, leg length and his GCS say nothing about the urethra.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 3
@@ -2706,7 +2706,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
           "Urethral catheter over a guidewire"
         ],
         correct: 3,
-        explanation: "A complete urethral tear with a distended bladder needs drainage, and the AUA guideline recommends prompt urinary drainage after a pelvic fracture urethral injury. A suprapubic catheter drains the bladder without passing through the torn urethra. The guideline limits primary realignment to patients who are hemodynamically stable, and he remains in shock. A catheter passed over a guidewire still crosses the injury blindly. Observation or delayed drainage leaves a distended bladder that can leak or rupture.",
+        explanation: "A complete urethral tear with a distended bladder needs drainage, and the AUA guideline recommends prompt urinary drainage after a pelvic fracture urethral injury. It names percutaneous or open suprapubic tube placement as the preferred initial management for most of these injuries, because the tube drains the bladder without passing through the torn urethra. The guideline limits primary realignment to patients who are hemodynamically stable, and he remains in shock. A catheter passed over a guidewire still crosses the injury blindly. Observation or delayed drainage leaves a distended bladder that can leak or rupture.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 5
@@ -3289,17 +3289,17 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
       {
         id: "q2",
         kind: "single",
-        update: "While he waits for the helicopter, he becomes anxious. His respiratory rate has risen from 16 to 26/minute. His pulse is 106/minute, his BP is 124/88 mmHg and his SpO2 is 97%.",
-        prompt: "Which of the following findings now most suggests that he is losing blood?",
+        update: "A second 500 mL of crystalloid brings his pulse down to 92/minute. Twenty minutes later, while he waits for the helicopter, he is anxious. His pulse is 114/minute, his BP is 118/90 mmHg and his SpO2 is 97%.",
+        prompt: "Which of the following is the most appropriate response to these changes?",
         options: [
-          "BP of 124/88 mmHg",
-          "Pulse of 106/minute",
-          "Respiratory rate of 26/minute",
-          "SpO2 of 97% on room air",
-          "Temperature of 36.4°C"
+          "lorazepam 1 mg IV",
+          "norepinephrine infusion IV",
+          "Normal saline 1 L IV bolus",
+          "Red cell transfusion now",
+          "Repeat vital signs in 30 minutes"
         ],
-        correct: 2,
-        explanation: "His respiratory rate has risen from 16 to 26/minute with new anxiety, while his breath sounds and saturation are normal. ATLS places a respiratory rate of 20 to 30/minute and anxiety in class II hemorrhage, a loss of 15 to 30% of blood volume, when the systolic BP is still maintained. His BP of 124/88 mmHg is falsely reassuring, and its pulse pressure has already narrowed from 46 to 36 mmHg. His pulse of 106/minute has barely changed from arrival. A normal saturation and a temperature of 36.4°C do not track blood loss.",
+        correct: 3,
+        explanation: "His pulse fell after the fluid and then rose again within 20 minutes, with new anxiety and a pulse pressure that has narrowed from 46 to 28 mmHg. ATLS calls this a transient response, which points to ongoing bleeding and a need for blood and an operation. He has now had 1 L of crystalloid, the ATLS initial bolus for an adult, so red cells are given now and the receiving trauma centre is told that he is bleeding. More saline dilutes his clotting factors and red cells. Norepinephrine does not replace lost volume, and his BP does not call for it. Lorazepam treats the anxiety that signals poor perfusion and can blunt his compensation. Waiting 30 minutes to repeat his vital signs loses time he may not have.",
         keyFeature: {
           topic: "multiple-trauma",
           n: 5
@@ -3310,7 +3310,7 @@ export const MULTIPLE_TRAUMA_S45: Samp[] = [
         id: "q3",
         kind: "single",
         update: "A venous blood gas shows a lactate of 4.8 mmol/L and a base deficit of 7 mmol/L. His hemoglobin is 138 g/L.",
-        prompt: "Which of the following measures best tracks the extent of his bleeding and shock during resuscitation?",
+        prompt: "Which of the following measures best tracks his tissue perfusion during resuscitation?",
         options: [
           "Central venous pressure",
           "Hemoglobin on a single sample",
