@@ -1,0 +1,404 @@
+[
+ {
+  "id": "shock-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Shock index, oxytocin first, TXA timing and MHP with O negative blood are correct.",
+  "checked": [
+   "recomputed SI 124/96 = 1.29",
+   "WOMAN trial TXA within 3 h, 70 min in stem",
+   "O negative for woman of childbearing age",
+   "compared with s13 multiple-patients and s47 pre-eclampsia-23: PPH is one item there, not a copy"
+  ]
+ },
+ {
+  "id": "shock-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Athlete baseline pulse, atraumatic splenic rupture, early hemoglobin and red cells are correct.",
+  "checked": [
+   "pulse 96 vs baseline 52",
+   "negative pregnancy test in stem",
+   "grep splenic rupture in mononucleosis: no other case",
+   "cites ATLS 10th edition while bank elsewhere cites 11th, minor"
+  ]
+ },
+ {
+  "id": "shock-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Pyloric stenosis deficit, saline bolus, maintenance fluid and alkalosis mechanism are correct.",
+  "checked": [
+   "recomputed 4.2 minus 3.8 = 0.4 kg, 9.5%",
+   "Cl 84, HCO3 34, K 2.9",
+   "grep pyloric: s19 and s32 list it only as a distractor"
+  ]
+ },
+ {
+  "id": "shock-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Adolescent deficit, isotonic bolus and Holliday-Segar rate are correct.",
+  "checked": [
+   "recomputed 0.06 x 45 = 2700 mL",
+   "20 mL/kg x 45 = 900 mL",
+   "Holliday-Segar 40 + 20 + 25 = 85 mL/h",
+   "compared with s16 shock-01: toddler gastroenteritis, different numbers and teaching"
+  ]
+ },
+ {
+  "id": "shock-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Duct dependent coarctation, alprostadil, apnea and cautious fluid are correct.",
+  "checked": [
+   "absent femorals with brachials palpable at 9 days",
+   "alprostadil 0.05 mcg/kg/min in usual range",
+   "grep alprostadil: no other case"
+  ]
+ },
+ {
+  "id": "shock-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Salt wasting CAH, hydrocortisone, saline bolus and pre-steroid labs are correct.",
+  "checked": [
+   "Na 121, K 7.6, glucose 2.4, pigmented scrotum",
+   "recomputed 20 x 3.2 = 64 mL",
+   "grep adrenal hyperplasia: no other case"
+  ]
+ },
+ {
+  "id": "shock-22",
+  "verdict": "REJECT",
+  "questions": [
+   "q2"
+  ],
+  "reason": "Near duplicate of s41 infectious-diseases-27: a heavy drinker with 3 days of cough, fever and right chest pain from right lower lobe pneumonia who is confused and in septic shock, keyed to peripheral norepinephrine. q1 (30 mL/kg), q3 (vasopressin) and q4 (hydrocortisone) are new and could move to another case. Keep s41.",
+  "checked": [
+   "recomputed 30 x 80 = 2400 mL",
+   "vasopressin at NE 0.25 to 0.5 per SSC 2021",
+   "hydrocortisone 50 mg q6h",
+   "compared with s41 infectious-diseases-27: same patient and q2 key"
+  ]
+ },
+ {
+  "id": "shock-23",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of signed off s12 infectious-diseases-03: a woman with breast cancer 9 days after chemotherapy with a central port and fever, keyed to an antipseudomonal beta-lactam, vancomycin for instability or a line, and antibiotics within 1 hour without waiting for the neutrophil count. The q3 and q4 vasopressor and fluid response items are new.",
+  "checked": [
+   "compared with s12 infectious-diseases-03: same patient and same antibiotic and timing keys",
+   "norepinephrine first line and passive leg raise correct"
+  ]
+ },
+ {
+  "id": "shock-24",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3",
+   "q4"
+  ],
+  "reason": "Near duplicate of signed off s12 infectious-diseases-04: a man with diabetes and thigh pain after a minor skin injury, keyed to features beyond cellulitis, urgent surgery, vancomycin with broad gram negative cover and clindamycin for toxin.",
+  "checked": [
+   "compared with s12 infectious-diseases-04: all four teaching points repeat",
+   "keys themselves are correct"
+  ]
+ },
+ {
+  "id": "shock-25",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of s23 anaphylaxis-23 (and s23 anaphylaxis-18, s21 airway-31): a young child with a nut allergy who eats a cookie at a birthday party and develops a hoarse voice, vomiting and shock, keyed to IM epinephrine 0.01 mg/kg, a 20 mL/kg bolus and an epinephrine infusion. Keep s23.",
+  "checked": [
+   "recomputed 0.01 x 18 = 0.18 mg, 20 x 18 = 360 mL",
+   "compared with s23 anaphylaxis-23: same setting and same dose and bolus questions"
+  ]
+ },
+ {
+  "id": "shock-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Propranolol sodium channel effect, epinephrine plus high dose insulin, lorazepam and IV dextrose are correct.",
+  "checked": [
+   "QRS 128 fits propranolol",
+   "Rotella 2020 review supports catecholamines and HIET",
+   "compared with s16 amlodipine and s18 verapamil cases: calcium channel blockers, not a copy",
+   "s53 tox-23 repeats beta blocker overdose, later batch"
+  ]
+ },
+ {
+  "id": "shock-27",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q4"
+  ],
+  "reason": "Near duplicate of signed off s18 tox-03: amitriptyline overdose found beside an empty container, a seizure and a QRS over 140 ms, keyed to QRS as the predictor, sodium bicarbonate 1 to 2 mmol/kg and an alkaline pH target. s49 seizures-19 repeats it too.",
+  "checked": [
+   "compared with s18 tox-03: same drug, ECG and treatment keys",
+   "q4 pH 7.45 to 7.55 differs from s49 seizures-19 wording of 7.50 to 7.55"
+  ]
+ },
+ {
+  "id": "shock-28",
+  "verdict": "REJECT",
+  "questions": [
+   "q3",
+   "q4"
+  ],
+  "reason": "Near duplicate of signed off s05 chest-pain-06: a man with severe COPD and sudden right chest pain, absent breath sounds and a hyperresonant chest, keyed to immediate right chest decompression at the fourth or fifth space anterior to the midaxillary line.",
+  "checked": [
+   "compared with s05 chest-pain-06: same diagnosis, decompression and site keys",
+   "q1 obstructive shock and q2 lung point are new"
+  ]
+ },
+ {
+  "id": "shock-29",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s01 abdominal-pain-01: a 74-year-old hypertensive smoker with sudden left flank pain and shock, bedside aortic ultrasound showing a 7.2 cm aorta and permissive hypotension. s19 abdominal-pain-44 repeats it too.",
+  "checked": [
+   "compared with s01 abdominal-pain-01: same age, 7.2 cm aorta, near same BP",
+   "3.0 cm AAA definition correct"
+  ]
+ },
+ {
+  "id": "shock-30",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of s26 burns-32: a child scalded by a pot pulled off the stove, keyed to the 3 mL/kg per %TBSA formula, a rate counted from the time of the burn and a urine output target of 1 mL/kg/hour. Keep s26.",
+  "checked": [
+   "recomputed 3 x 20 x 25 = 1500 mL, 750 over 7 h = 107 mL/h",
+   "Lund and Browder anterior trunk 13, front arms about 7, front thigh about 4, total about 24, near 25",
+   "compared with s26 burns-32: same formula, timing and urine target"
+  ]
+ },
+ {
+  "id": "shock-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Pregnancy creatinine, left tilt, ceftriaxone, cultures and norepinephrine are correct.",
+  "checked": [
+   "creatinine 96 abnormal at 30 weeks",
+   "ceftriaxone first line in pregnancy",
+   "five questions, all consistent with stem",
+   "compared with s47 pre-eclampsia-31: HELLP mimic, not a copy"
+  ]
+ },
+ {
+  "id": "shock-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Lactate as hypoperfusion marker, PCC with vitamin K and red cells for active bleeding are correct.",
+  "checked": [
+   "INR 4.8 gives 2000 IU by NAC table, 35 IU/kg x 58 = 2030",
+   "Hb 124 to 78",
+   "PCC teaching also in s45 multiple-trauma-17, different bleed and questions"
+  ]
+ },
+ {
+  "id": "shock-33",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s14 multiple-trauma-09: a school age child struck by a car with left upper quadrant injury, tachycardia, capillary refill 4 seconds and a normal BP, keyed to shock despite normal pressure and red cells 10 mL/kg.",
+  "checked": [
+   "compared with s14 multiple-trauma-09: same case and red cell key",
+   "recomputed 70 + 2 x 9 = 88 mmHg and 10 x 30 = 300 mL"
+  ]
+ },
+ {
+  "id": "shock-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Myocarditis with cardiogenic shock, poor LV on POCUS, epinephrine and early ECMO transfer are correct.",
+  "checked": [
+   "SBP 80 favours epinephrine over milrinone",
+   "CCS paediatric AHF 2026 prefers milrinone without hypotension (lens A)",
+   "grep myocarditis shock: s51 sob-40 later batch"
+  ]
+ },
+ {
+  "id": "shock-35",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s09 ems-01 (and s12 ischemic-heart-disease-01): inferior STEMI with hypotension after one nitroglycerin spray, keyed to right-sided leads for RV infarction and a fluid bolus.",
+  "checked": [
+   "compared with s09 ems-01: same nitro spray and hypotension, fluid bolus and right-sided ECG in its keys",
+   "compared with s12 ischemic-heart-disease-01 q1: V4R"
+  ]
+ },
+ {
+  "id": "shock-36",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of s24 arrhythmia-20: an older woman with diarrhea on an AV nodal blocker and potassium sparing drugs with a junctional bradycardia, keyed to hyperkalemia with AV nodal blockade (BRASH). Its update even repeats calcium gluconate 3 g, a 500 mL bolus, pulse 40 and BP 78/42. Keep s24.",
+  "checked": [
+   "compared with s24 arrhythmia-20: same diagnosis key and near identical update numbers"
+  ]
+ },
+ {
+  "id": "shock-37",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s11 gi-bleed-11 and gi-bleed-01: variceal bleeding in alcohol related cirrhosis keyed to octreotide with ceftriaxone, a restrictive transfusion target and balloon tamponade as a bridge to TIPS.",
+  "checked": [
+   "compared with s11 gi-bleed-01 and gi-bleed-11: all three teaching points appear there",
+   "Baveno VIII transfusion target not verified (lens A)"
+  ]
+ },
+ {
+  "id": "shock-38",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of s41 infectious-diseases-29: an infant in septic shock in a rural ED hours from a PICU with an intraosseous line, keyed to antibiotics now through the IO, stopping boluses at crackles and liver enlargement, and an epinephrine infusion through the IO. Keep s41.",
+  "checked": [
+   "compared with s41 infectious-diseases-29: identical keys",
+   "s14 pediatric-fever-03 also teaches the fluid overload stop"
+  ]
+ },
+ {
+  "id": "shock-39",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Obstructive HCM hypotension, phenylephrine and restarting metoprolol are correct.",
+  "checked": [
+   "SAM with collapsed IVC",
+   "AHA/ACC HCM: phenylephrine alone or with beta blocker",
+   "verapamil harmful with hypotension",
+   "grep HCM shock: no other case"
+  ]
+ },
+ {
+  "id": "shock-40",
+  "verdict": "HOLD",
+  "questions": [
+   "q2"
+  ],
+  "reason": "Keys are correct, but q2 (iCa about 0.8 after 6 units of red cells and plasma, keyed to calcium chloride 1 g with bicarbonate and magnesium distractors) repeats s45 multiple-trauma-18 q4 almost word for word, also a stabbed 23-year-old man. Physician to decide whether to replace q2.",
+  "checked": [
+   "permissive SBP 80 to 90 without head injury per Rossaint 2023",
+   "fibrinogen 1.1 below 1.5",
+   "compared with s45 multiple-trauma-18 q4: same calcium item"
+  ]
+ },
+ {
+  "id": "shock-41",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of s41 infectious-diseases-28 (and s19 abdominal-pain-18): an older man with gallstones who declined surgery presenting with rigors, jaundice and confusion, keyed to ultrasound and urgent biliary drainage. The Tokyo grade III item in q2 is new. Keep s41.",
+  "checked": [
+   "compared with s41 infectious-diseases-28 q3 and s19 abdominal-pain-18: same drainage key",
+   "Tokyo severe criteria recomputed: confusion, pressor, platelets 88"
+  ]
+ },
+ {
+  "id": "shock-42",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Cautious fluid with early norepinephrine in anuric HFrEF, B lines and vancomycin plus ceftazidime are sound.",
+  "checked": [
+   "anuric, EF 30%, crackles, sat 90%",
+   "30 mL/kg is a weak SSC suggestion, so key is defensible",
+   "compared with s41 infectious-diseases-33: PICC line bacteremia, different teaching"
+  ]
+ },
+ {
+  "id": "shock-43",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Unstable AF, synchronized cardioversion and amiodarone for rate control are correct.",
+  "checked": [
+   "BP 76/44, confusion, crackles",
+   "CCS AF: amiodarone acceptable with hypotension and HF",
+   "grep unstable AF cardioversion: s24 arrhythmia-45 is SVT, not a copy"
+  ]
+ },
+ {
+  "id": "shock-44",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Weight loss, hypernatremic physiology and isotonic bolus are correct.",
+  "checked": [
+   "recomputed 0.5 / 3.5 = 14%",
+   "20 x 3.0 = 60 mL",
+   "grep breastfeeding hypernatremia: no other case"
+  ]
+ },
+ {
+  "id": "shock-45",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q4"
+  ],
+  "reason": "Near duplicate of signed off s18 tox-13: a 3-year-old who took 12 ferrous sulfate 300 mg tablets (48 mg/kg elemental iron) with tablets on X-ray, keyed to deferoxamine and whole bowel irrigation.",
+  "checked": [
+   "compared with s18 tox-13: same product, count and mg/kg, same WBI and deferoxamine teaching",
+   "recomputed 12 x 60 / 15 = 48 mg/kg"
+  ]
+ },
+ {
+  "id": "shock-46",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Weight based deficit, sick day holds and balanced crystalloid are correct.",
+  "checked": [
+   "recomputed 84 minus 80 = 4 kg, about 5%",
+   "sick day list: SGLT2, diuretic, metformin, ACEi",
+   "grep sick day: s16 Addison case differs"
+  ]
+ },
+ {
+  "id": "shock-47",
+  "verdict": "REJECT",
+  "questions": [
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of s19 abdominal-pain-20: a woman with gallstone pancreatitis, epigastric pain to the back and vomiting, keyed to moderate Ringer's lactate at 1.5 mL/kg/hour from WATERFALL. The whole case is about the same fluid strategy. Keep s19.",
+  "checked": [
+   "recomputed 10 x 70 = 700 mL, 1.5 x 70 = 105 mL/h",
+   "compared with s19 abdominal-pain-20 q2: same key"
+  ]
+ }
+]

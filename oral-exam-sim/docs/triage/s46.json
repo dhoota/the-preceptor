@@ -1,0 +1,395 @@
+[
+ {
+  "id": "pediatric-fever-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Neonatal HSV workup, regimen, gentamicin dose and 21 day course are correct.",
+  "checked": [
+   "CPS febrile infant statement opened: gentamicin 4 mg/kg q24h at 0 to 7 days",
+   "recomputed 4 x 3.2 = 12.8 mg",
+   "CSF 48 above 15 cells for 28 days or younger (CPS)",
+   "CPS HSV: 21 days IV for CNS disease",
+   "compared with s14 pediatric-fever-01: 12-day-old routine workup, HSV maternal history and CNS course are new"
+  ]
+ },
+ {
+  "id": "pediatric-fever-17",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q4"
+  ],
+  "reason": "Near duplicate of signed off s14 pediatric-fever-02: a well 6 to 7 week old with fever at home, same investigation set, the same markers (ANC 3.1, CRP 8, procalcitonin 0.2) and a weight based acetaminophen dose. Only the UTI twist in q2 and q3 is new.",
+  "checked": [
+   "compared with s14 pediatric-fever-02: identical marker values and same q1 and dosing question",
+   "CPS 29 to 60 day oral cefixime 8 mg/kg and 24 to 48 h review confirmed on CPS page",
+   "recomputed 15 x 4.9 = 73.5 mg"
+  ]
+ },
+ {
+  "id": "pediatric-fever-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Post-immunization fever keys follow the CPS text, which I opened.",
+  "checked": [
+   "CPS page: SBI 0.6% within 24 h, 8.9% beyond 24 h, urine testing for prolonged fever",
+   "CPS 61 to 90 day minimum urine testing differs, but no option offers urine testing now",
+   "recomputed 1 mL of 80 mg/mL = 80 mg, 15 mg/kg at 5.4 kg",
+   "hourly dosing: 6th dose 480 mg passes 405 mg max",
+   "CPS UTI 2026 catheter preferred"
+  ]
+ },
+ {
+  "id": "pediatric-fever-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Virus positive risk, age based workup and bronchiolitis care match CPS.",
+  "checked": [
+   "CPS page: bacteremia 0.8% with confirmed virus, rhinovirus higher risk",
+   "42 days is in 29 to 60 day group",
+   "CPS bronchiolitis: no antibiotics, no salbutamol",
+   "grep for duplicate: s51 sob-19 is a respiratory case, not a copy"
+  ]
+ },
+ {
+  "id": "pediatric-fever-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "High risk markers, traumatic tap correction, ceftriaxone dose and 36 h admission are correct.",
+  "checked": [
+   "CPS page: 877 to 1 ratio and 1000 to 1 both quoted, over 9 cells for older than 28 days",
+   "recomputed 14 minus 9000/877 = about 4",
+   "ceftriaxone 100 mg/kg x 4.6 = 460 mg",
+   "high risk admitted 36 h per CPS",
+   "compared with s14 pediatric-fever-01 and 02: different risk group and questions"
+  ]
+ },
+ {
+  "id": "pediatric-fever-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Neonatal hypothermia as sepsis, perfusion signs, IO and early antibiotics are correct.",
+  "checked": [
+   "CPS HSV score counts under 36.4°C",
+   "four keyed sepsis signs all in stem",
+   "IO after failed IV per CPS sepsis",
+   "IO then immediate antibiotics also taught in s41 infectious-diseases-29, neonatal case differs"
+  ]
+ },
+ {
+  "id": "pediatric-fever-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Compensated shock recognition, early meningococcal features and first hour orders are correct.",
+  "checked": [
+   "HR 168, CRT 4 s, mottling with BP 98/60",
+   "Thompson 2006 leg pain and cold hands at median 8 h",
+   "recomputed 20 mL/kg x 15 = 300 mL",
+   "compared with s16 shock-12 and s41 infectious-diseases-29: rash and IO cases, this one tests pre-rash recognition"
+  ]
+ },
+ {
+  "id": "pediatric-fever-23",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of s40 headache-28: a school age child in a rural ED 3 hours from a paediatric centre with fever, headache and vomiting for about 10 hours who becomes drowsy, keyed to IV ceftriaxone before any procedure and vancomycin by weight. Keep s40 headache-28.",
+  "checked": [
+   "compared with s40 headache-28 q2 and q3: antibiotics before LP or CT, ceftriaxone plus vancomycin",
+   "recomputed ceftriaxone 2 g q12h and vancomycin 600 mg q6h at 40 kg, correct but repeated"
+  ]
+ },
+ {
+  "id": "pediatric-fever-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Caregiver report, Phoenix septic shock and urine output are correct.",
+  "checked": [
+   "Phoenix: lactate 5.8 gives 1 CV point, platelets 88 gives 1 coag point, total 2 with CV point is septic shock",
+   "room air so no respiratory point",
+   "grep Phoenix and group home CP: no other case"
+  ]
+ },
+ {
+  "id": "pediatric-fever-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Unimmunized occult bacteremia risk, workup, ibuprofen dose and plan are sound.",
+  "checked": [
+   "recomputed ibuprofen 10 x 10.5 = 105 mg, max 420 mg",
+   "every 2 h reaches 420 at 4th dose",
+   "CPS UTI 2026 catheter specimen",
+   "q1 rests on Nelson chapter, standard teaching",
+   "grep occult bacteremia in unimmunized toddler: none"
+  ]
+ },
+ {
+  "id": "pediatric-fever-26",
+  "verdict": "REJECT",
+  "questions": [
+   "q2"
+  ],
+  "reason": "Near duplicate of s41 infectious-diseases-33: fever and rigors starting soon after a home parenteral nutrition infusion through a central line in short bowel syndrome, with the same paired culture question and near identical options. Only the age differs. Keep s41.",
+  "checked": [
+   "compared with s41 infectious-diseases-33 q2: same key and distractors",
+   "q3 vancomycin plus gram negative and q4 TPN antifungal risk are correct and could move to another case"
+  ]
+ },
+ {
+  "id": "pediatric-fever-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Incomplete Kawasaki criteria, IVIG dose and live vaccine deferral are correct.",
+  "checked": [
+   "infant under 12 months with 7 days fever",
+   "four supplemental criteria: albumin 28, ALT 64, WBC 17.8, urine 15 WBC",
+   "recomputed IVIG 2 x 7.2 = 14.4 g",
+   "11 month live vaccine deferral",
+   "compared with s14 pediatric-fever-06: complete Kawasaki in a 3-year-old, different teaching"
+  ]
+ },
+ {
+  "id": "pediatric-fever-28",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of signed off s14 pediatric-fever-07: a school age child with fever and a palpable spleen weeks after visiting relatives in West Africa, keyed to urgent malaria testing with repeat smears every 12 to 24 hours.",
+  "checked": [
+   "compared with s14 pediatric-fever-07: same case, repeat smear teaching in its accept list",
+   "recomputed acetaminophen 15 x 21 = 315 mg"
+  ]
+ },
+ {
+  "id": "pediatric-fever-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "sJIA recognition, marrow before steroids, MAS criteria and pulse steroids are correct.",
+  "checked": [
+   "Ravelli 2016: ferritin 9200 over 684 plus platelets, AST, TG, fibrinogen all meet",
+   "q2 bone marrow rests on Nelson, APLAR says exclude malignancy",
+   "grep JIA or MAS: s14 lists sJIA only as a differential"
+  ]
+ },
+ {
+  "id": "pediatric-fever-30",
+  "verdict": "REJECT",
+  "questions": [
+   "q3"
+  ],
+  "reason": "Near duplicate of s21 airway-32: a teenage or young adult woman with weeks of cough, night sweats, weight loss, orthopnea and supraclavicular nodes from a mediastinal mass, keyed to keeping her upright and avoiding sedation. Keep s21 airway-32.",
+  "checked": [
+   "compared with s21 airway-32: same presentation and same airway safety teaching",
+   "recomputed weight loss 6/58 = 10.3%"
+  ]
+ },
+ {
+  "id": "pediatric-fever-31",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q4"
+  ],
+  "reason": "Near duplicate of signed off s18 tox-11 (and s08 delirium-agitation-06): diphenhydramine anticholinergic delirium with picking at the air, dilated pupils and dry skin, keyed to the toxidrome, QRS as the gate for physostigmine and titrated physostigmine. Only the age differs.",
+  "checked": [
+   "compared with s18 tox-11: same drug, toxidrome and physostigmine teaching",
+   "recomputed bicarbonate 1 mmol/kg x 15 = 15 mmol",
+   "physostigmine only via Special Access in Canada (lens A)"
+  ]
+ },
+ {
+  "id": "pediatric-fever-32",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3",
+   "q4"
+  ],
+  "reason": "Near duplicate of signed off s18 tox-10 (and s08 delirium-agitation-11): sertraline plus an added serotonergic drug with clonus, benzodiazepine and cyproheptadine, paralysis with rocuronium for temperature above 41°C, and features that separate it from NMS. Only the age differs.",
+  "checked": [
+   "compared with s18 tox-10: same four teaching points",
+   "cyproheptadine 12 mg first dose correct"
+  ]
+ },
+ {
+  "id": "pediatric-fever-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Sympathomimetic versus anticholinergic, midazolam dose, cooling and CK are correct.",
+  "checked": [
+   "recomputed midazolam 0.1 x 12 = 1.2 mg",
+   "sweaty skin separates from anticholinergic",
+   "grep paediatric amphetamine ingestion: none"
+  ]
+ },
+ {
+  "id": "pediatric-fever-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Classic heat stroke, cold water immersion and complication labs are correct. Cooling and lab teaching overlap s14's exertional heat stroke case.",
+  "checked": [
+   "core 41.6°C with seizure and GCS change after hot car",
+   "cold water immersion fastest",
+   "compared with s14 soccer tournament heat stroke: exertional teen, different scenario"
+  ]
+ },
+ {
+  "id": "pediatric-fever-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Viral LRTI, supportive care, bacterial signs and dose are correct.",
+  "checked": [
+   "recomputed 6 mL of 160 mg/5 mL = 192 mg, about 15 mg/kg",
+   "every 2 h passes 975 mg at 6th dose",
+   "CPS pneumonia viral cause and amoxicillin for lobar",
+   "compared with s25 asthma-copd-39: wheeze teaching, not a copy"
+  ]
+ },
+ {
+  "id": "pediatric-fever-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "OME versus AOM, no antibiotics and ibuprofen dose are correct.",
+  "checked": [
+   "CPS AOM: bulging is key sign, air fluid level without bulging not predictive",
+   "recomputed ibuprofen 10 x 12 = 120 mg, max 480 mg",
+   "compared with s14 pediatric-fever-08: AOM with bulging, the contrast case"
+  ]
+ },
+ {
+  "id": "pediatric-fever-37",
+  "verdict": "REJECT",
+  "questions": [
+   "q1"
+  ],
+  "reason": "Near duplicate of s41 infectious-diseases-19: a teenage hockey player with 6 days of sore throat, grey tonsillar exudate, posterior nodes and fatigue from mononucleosis, where amoxicillin causes a maculopapular rash. Keep s41.",
+  "checked": [
+   "compared with s41 infectious-diseases-19 q4: amoxicillin rash is its keyed effect",
+   "q3 SJS warning signs is correct but the case repeats"
+  ]
+ },
+ {
+  "id": "pediatric-fever-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Roseola, stopping amoxicillin, antipyretic goals and red flags are correct.",
+  "checked": [
+   "fever resolves then blanching truncal rash",
+   "grep roseola: no other case",
+   "antipyretic comfort principle standard"
+  ]
+ },
+ {
+  "id": "pediatric-fever-39",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "SSSS diagnosis, mucosal sparing and IV cloxacillin with admission are correct.",
+  "checked": [
+   "Nikolsky, flexural erythema, perinasal crusts",
+   "mucosa normal separates from TEN",
+   "grep scalded skin: no other case"
+  ]
+ },
+ {
+  "id": "pediatric-fever-40",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Eczema herpeticum, IV acyclovir dose and ophthalmology plus PCR are correct.",
+  "checked": [
+   "recomputed acyclovir 10 x 14 = 140 mg",
+   "eyelid lesions justify ophthalmology",
+   "dose rests on Nelson, NICE gives no dose (textbook report)",
+   "grep eczema herpeticum: no other case"
+  ]
+ },
+ {
+  "id": "pediatric-fever-41",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Scarlet fever, rapid test, CPS amoxicillin dose and sibling plan are correct.",
+  "checked": [
+   "CPS: amoxicillin 50 mg/kg once daily max 1 g for 10 days",
+   "recomputed 50 x 21 = 1050, capped at 1 g",
+   "grep sandpaper: no other case"
+  ]
+ },
+ {
+  "id": "pediatric-fever-42",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "All dose arithmetic checks out.",
+  "checked": [
+   "recomputed 80 mg / 11 kg = 7.3 mg/kg",
+   "5 mL = 160 mg, 14.5 mg/kg",
+   "max 75 x 11 = 825 mg, hourly passes at 6th dose (960)",
+   "compared with s14 pediatric-fever-09: overdose case, this is underdose"
+  ]
+ },
+ {
+  "id": "pediatric-fever-43",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s16 seizures-11: an immunized toddler with a 2 minute generalized febrile seizure during a cold who is back to baseline, keyed to no investigations, antipyretics for comfort not prevention, and return for ongoing drowsiness.",
+  "checked": [
+   "compared with s16 seizures-11: same case and discharge points",
+   "s49 seizures-22 also repeats this case"
+  ]
+ },
+ {
+  "id": "pediatric-fever-44",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of s19 abdominal-pain-28: a 5 to 6 year old boy after a sore throat with palpable purpura on buttocks and legs, swollen ankles and crampy abdominal pain, keyed to IgA vasculitis and serial urinalysis and BP follow up. Keep s19.",
+  "checked": [
+   "compared with s19 abdominal-pain-28 q1 and q3: same diagnosis and follow up key",
+   "q2 CBC and urinalysis correct"
+  ]
+ },
+ {
+  "id": "pediatric-fever-45",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Bulging fontanelle, LP timing and CPS meningitis doses are correct.",
+  "checked": [
+   "recomputed ceftriaxone 100 x 8 / 2 = 400 mg, vancomycin 60 x 8 / 4 = 120 mg",
+   "no CPS indication for CT before LP",
+   "dose teaching also in s46 pediatric-fever-23 and s40 headache-28, infant case differs"
+  ]
+ },
+ {
+  "id": "pediatric-fever-46",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s14 pediatric-fever-03 (and s41 infectious-diseases-29): an infant in septic shock given 10 to 20 mL/kg boluses who develops hepatomegaly after 40 mL/kg, keyed to epinephrine. Only the age and source differ.",
+  "checked": [
+   "compared with s14 pediatric-fever-03: bolus size, reassess for hepatomegaly, epinephrine after 40 mL/kg",
+   "recomputed 20 x 9 = 180 mL"
+  ]
+ },
+ {
+  "id": "pediatric-fever-47",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "HFMD, supportive care and acetaminophen dose are correct.",
+  "checked": [
+   "recomputed 15 x 12 = 180 mg",
+   "max 900 mg",
+   "grep hand foot and mouth: no other case"
+  ]
+ }
+]

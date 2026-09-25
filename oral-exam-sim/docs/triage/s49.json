@@ -1,0 +1,404 @@
+[
+ {
+  "id": "seizures-16",
+  "verdict": "FIX",
+  "questions": [
+   "q3"
+  ],
+  "reason": "Keys are correct. The q3 update gives lorazepam 2 mg to a 60 kg patient, which is 0.03 mg/kg, and quietly models an underdose that the batch teaches against elsewhere.",
+  "fix": "In the q3 update change 'After lorazepam 2 mg IV' to 'After lorazepam 4 mg IV'. No other change is needed.",
+  "checked": [
+   "recomputed levetiracetam 60 x 60 = 3600 mg under 4500 max",
+   "fosphenytoin 20 x 60 = 1200 PE, so 300 is an underdose",
+   "ILAE t1 10 min for focal impaired awareness",
+   "lorazepam 2 / 60 = 0.03 mg/kg",
+   "compared with s07 loc-05: NCSE after GTC in young epileptic, this is post-stroke late onset, not a copy"
+  ]
+ },
+ {
+  "id": "seizures-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Refractory status definition, intubation with infusion, hidden seizures and cEEG are correct.",
+  "checked": [
+   "levetiracetam 4500 max and fosphenytoin 1500 PE max at 82 kg",
+   "RR 10 and sat 88% justify intubation",
+   "compared with s02 airway-05: paediatric intubation technique, different teaching"
+  ]
+ },
+ {
+  "id": "seizures-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Bupropion seizure care, QRS threshold, 24 h monitoring and second line choices are correct.",
+  "checked": [
+   "lorazepam 0.1 x 55 = 5.5, capped at 4 mg",
+   "20 x 300 mg = 6000 mg XL",
+   "Starr series seizures up to 24 h (lens A)",
+   "grep bupropion: s16 and s07 list it only as a threshold lowering drug",
+   "s53 tox-16 repeats the 24 h point, later batch"
+  ]
+ },
+ {
+  "id": "seizures-19",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s18 tox-03: amitriptyline overdose found beside empty blister packs, QRS about 146 to 148 ms with a big terminal R in aVR, keyed to sodium bicarbonate 1 to 2 mmol/kg, benzodiazepine for the seizure and a pH ceiling of 7.50 to 7.55.",
+  "checked": [
+   "compared with s18 tox-03: same drug, ECG, bicarbonate, benzodiazepine and pH teaching",
+   "recomputed bicarbonate 1 to 2 x 85 = 85 to 170 mmol"
+  ]
+ },
+ {
+  "id": "seizures-20",
+  "verdict": "REJECT",
+  "questions": [
+   "q2",
+   "q3",
+   "q4"
+  ],
+  "reason": "Near duplicate of signed off s11 headache-07 (also s27 cva-35 and s32 loc-31): a woman about a week after vaginal delivery with worsening headache, a seizure and a hyperdense superior sagittal sinus, keyed to CT venography, LMWH and antiseizure treatment. Only the q1 magnesium point is new.",
+  "checked": [
+   "compared with s11 headache-07: same CVT case, CTV and heparin despite hemorrhage",
+   "compared with s27 cva-35: same left leg weakness and enoxaparin key",
+   "q1 MgSO4 for BP 162/104 with proteinuria is correct"
+  ]
+ },
+ {
+  "id": "seizures-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Absence recognition, outpatient EEG and water safety advice are correct.",
+  "checked": [
+   "hyperventilation provokes absences",
+   "NICE EEG and safety advice (no Canadian equivalent, lens A)",
+   "grep absence seizure: no other case"
+  ]
+ },
+ {
+  "id": "seizures-22",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s16 seizures-11: an immunized toddler with a brief generalized febrile seizure during a cold who is back to normal, keyed to no investigations and antipyretics for comfort only. s46 pediatric-fever-43 repeats it too.",
+  "checked": [
+   "compared with s16 seizures-11: same case and discharge teaching",
+   "q2 recurrence risk and q4 complex features are correct and could move to another case"
+  ]
+ },
+ {
+  "id": "seizures-23",
+  "verdict": "REJECT",
+  "questions": [
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s16 seizures-02: a toddler still convulsing after one benzodiazepine dose, keyed to a second benzodiazepine and then levetiracetam 60 mg/kg by weight. Only the fever differs.",
+  "checked": [
+   "compared with s16 seizures-02: same sequence and second line dose question",
+   "recomputed lorazepam 0.1 x 13 = 1.3 mg, levetiracetam 60 x 13 = 780 mg"
+  ]
+ },
+ {
+  "id": "seizures-24",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of s46 pediatric-fever-45: a febrile infant with irritability and a full fontanelle, keyed to the fontanelle as the warning sign, lumbar puncture and ceftriaxone with vancomycin. Keep s46 pediatric-fever-45.",
+  "checked": [
+   "compared with s46 pediatric-fever-45: same sign, LP and regimen keys",
+   "AAP LP option for unimmunized or pretreated infant is correct"
+  ]
+ },
+ {
+  "id": "seizures-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "First unprovoked paediatric seizure workup, imaging red flag and bath safety are correct.",
+  "checked": [
+   "full recovery, normal exam, outpatient EEG",
+   "persistent focal deficit is the imaging red flag",
+   "grep paediatric first unprovoked seizure: no other case"
+  ]
+ },
+ {
+  "id": "seizures-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Hypocalcemic seizures from vitamin D deficiency rickets are handled correctly.",
+  "checked": [
+   "iCa 0.72, Mg 0.80 normal",
+   "IV calcium gluconate with monitoring",
+   "vitamin D 400 IU from birth per CPS",
+   "grep rickets: no other case"
+  ]
+ },
+ {
+  "id": "seizures-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Lamotrigine clearance in pregnancy, level, levetiracetam dose and uterine displacement are correct.",
+  "checked": [
+   "recomputed levetiracetam 60 x 72 = 4320 mg",
+   "valproate 40 x 72 = 2880 correct but teratogenic",
+   "BP 118/72 and no proteinuria exclude eclampsia",
+   "grep lamotrigine pregnancy: no other case"
+  ]
+ },
+ {
+  "id": "seizures-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Carbapenem and valproate interaction is correctly keyed.",
+  "checked": [
+   "valproate 480 to 95 umol/L on same dose",
+   "switch antibiotic is the fix",
+   "grep valproate carbapenem: no other case"
+  ]
+ },
+ {
+  "id": "seizures-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Missed dose breakthrough, no tests, adherence plan and rescue timing are correct.",
+  "checked": [
+   "TREKK: no CT or LP without red flags, levetiracetam level not useful",
+   "rescue at 5 min, max two benzodiazepine doses",
+   "compared with s16 seizures-10: adult phenytoin case, different teaching"
+  ]
+ },
+ {
+  "id": "seizures-30",
+  "verdict": "HOLD",
+  "questions": [
+   "q2"
+  ],
+  "reason": "q2 keys observation with EEG over a further benzodiazepine after 30 minutes of events on bedside features alone. This is practice dependent and a wrong call is dangerous either way, so a physician must confirm it.",
+  "checked": [
+   "25 plus 5 = 30 min, sat 99%, reactive pupils",
+   "q1 forced eye closure favours PNES",
+   "q3 real and treatable explanation",
+   "no Canadian guideline found for the q2 decision (lens A)"
+  ]
+ },
+ {
+  "id": "seizures-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Convulsive syncope from complete heart block and pacing are correct.",
+  "checked": [
+   "HR 34 with BP 96/50",
+   "atropine failed, transcutaneous pacing",
+   "compared with s49 seizures-45 and s24 arrhythmia cases: bradyarrhythmia focus is distinct"
+  ]
+ },
+ {
+  "id": "seizures-32",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s18 tox-09: an agitated, diaphoretic cocaine user with 7 mm pupils brought in by police, keyed to IV benzodiazepines, active cooling and screening for rhabdomyolysis and hyperkalemia.",
+  "checked": [
+   "compared with s18 tox-09: same toxidrome and the same three management points",
+   "s53 tox-40 repeats it again (later batch)"
+  ]
+ },
+ {
+  "id": "seizures-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Focal first seizure imaging, neurocysticercosis and antiseizure plus referral are correct.",
+  "checked": [
+   "focal onset needs imaging",
+   "scolex dot is diagnostic",
+   "antiparasitics with steroids after eye exam, not in ED",
+   "grep cysticercosis: no other case"
+  ]
+ },
+ {
+  "id": "seizures-34",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of signed off s05 cva-02: a woman with a resected right frontal meningioma who stopped levetiracetam, has a seizure and then left sided weakness, keyed to Todd paresis versus stroke with CT and CT angiography now.",
+  "checked": [
+   "compared with s05 cva-02: same history, same imaging key",
+   "q3 restart levetiracetam and q4 CMA 6 month driving are correct"
+  ]
+ },
+ {
+  "id": "seizures-35",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s16 seizures-09: an adult with a first unprovoked generalized seizure and a safety critical licence, keyed to outpatient EEG and MRI, driving restriction and mandatory reporting. The Aeronautics Act point in q2 is new and could move to another case.",
+  "checked": [
+   "compared with s16 seizures-09: same case, outpatient EEG and MRI, driving and reporting",
+   "CMA 3 months after a single unprovoked seizure",
+   "Aeronautics Act duty to report is correct"
+  ]
+ },
+ {
+  "id": "seizures-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Estrogen lamotrigine interaction, level plus pregnancy test and driving stop are correct.",
+  "checked": [
+   "COC started 7 weeks ago, full adherence",
+   "CMA: any seizure stops driving now",
+   "compared with s49 seizures-27: pregnancy trigger, different question set"
+  ]
+ },
+ {
+  "id": "seizures-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "JME recognition, outpatient EEG, driving and triggers are correct.",
+  "checked": [
+   "morning myoclonus for a year",
+   "CMA 6 months seizure free on treatment, JME needs medication",
+   "compared with s16 seizures-09: first seizure case, JME is new"
+  ]
+ },
+ {
+  "id": "seizures-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Early post-traumatic seizure management and EDH evacuation are correct.",
+  "checked": [
+   "recomputed fosphenytoin 20 x 75 = 1500 PE",
+   "BTF phenytoin for early PTS",
+   "GCS E1 V2 M4 = 7",
+   "compared with s09 ems-08 and s45 multiple-trauma-46: those test transfer steps, this tests seizures"
+  ]
+ },
+ {
+  "id": "seizures-39",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of s32 loc-42: a farmer found in the barn beside spilled organophosphate, soaked and cholinergic, keyed to atropine 2 mg, decontamination with staff protection, and a clear chest as the atropine end point. Keep s32 loc-42.",
+  "checked": [
+   "compared with s32 loc-42: same menu keys and same atropine end point",
+   "s13 multiple-patients-06 also teaches doubling atropine"
+  ]
+ },
+ {
+  "id": "seizures-40",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Focal impaired awareness seizures in an older man, MRI plus EEG and driving stop are correct.",
+  "checked": [
+   "automatisms with postictal confusion",
+   "NICE MRI for non idiopathic epilepsy",
+   "CMA stop driving",
+   "grep for duplicate: none"
+  ]
+ },
+ {
+  "id": "seizures-41",
+  "verdict": "REJECT",
+  "questions": [
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s07 loc-12: an older man with weeks of thirst and polyuria from a hyperosmolar hyperglycemic state, keyed to isotonic saline and effective osmolality with urea as the distractor. The focal seizure angle in q1 is the only new point.",
+  "checked": [
+   "recomputed 2 x 142 + 42 = 326, with urea 344",
+   "compared with s07 loc-12 q1 and q2: same calculation and fluid"
+  ]
+ },
+ {
+  "id": "seizures-42",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Cefepime neurotoxicity, EEG and stopping the drug with dialysis are correct.",
+  "checked": [
+   "cefepime 2 g q12h on dialysis is excessive",
+   "grep cefepime neurotoxicity: no other case"
+  ]
+ },
+ {
+  "id": "seizures-43",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Seizure from a brain metastasis, levetiracetam, dexamethasone and shower advice are correct.",
+  "checked": [
+   "structural cause justifies AED now",
+   "4 mm shift with symptoms, dexamethasone",
+   "compared with s11 headache-15: headache mass case without seizure, dexamethasone overlap only"
+  ]
+ },
+ {
+  "id": "seizures-44",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s07 loc-06: an older woman on hydrochlorothiazide with high water intake who seizes from hyponatremia, keyed to 3% saline 150 mL over 20 minutes and to stopping active treatment when a 400 mL/hour water diuresis appears.",
+  "checked": [
+   "compared with s07 loc-06: same case, same bolus and overcorrection scenario",
+   "5 mmol/L first hour target per European 2014 guideline correct"
+  ]
+ },
+ {
+  "id": "seizures-45",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of s24 arrhythmia-46: a woman of 22 to 23 who faints while having blood drawn after warmth, nausea and greying vision, recovers at once and has fainted before, keyed to vasovagal syncope and discharge without tests. Keep s24.",
+  "checked": [
+   "compared with s24 arrhythmia-46: near identical stem and disposition",
+   "CMA and CCS: no driving restriction after typical vasovagal syncope"
+  ]
+ },
+ {
+  "id": "seizures-46",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s18 tox-12 (and s11 headache-12): a family with headaches after running a generator during a winter power outage, with a drowsy 6-year-old of 21 kg, keyed to 100% oxygen, co-oximetry and hyperbaric oxygen.",
+  "checked": [
+   "compared with s18 tox-12: same child age and weight, same three keys",
+   "s51 sob-30 repeats it again (later batch)"
+  ]
+ },
+ {
+  "id": "seizures-47",
+  "verdict": "REJECT",
+  "questions": [
+   "q2",
+   "q3",
+   "q4"
+  ],
+  "reason": "Near duplicate of s40 headache-45: a woman of about 45 with a kidney transplant on tacrolimus who has headache, blurred vision and seizures from PRES, keyed to MRI and controlled BP lowering with tacrolimus review. Keep s40.",
+  "checked": [
+   "compared with s40 headache-45: same drug, diagnosis, imaging and treatment keys",
+   "q1 status definition is the only new point"
+  ]
+ }
+]

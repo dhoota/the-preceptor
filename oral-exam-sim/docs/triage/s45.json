@@ -1,0 +1,402 @@
+[
+ {
+  "id": "multiple-trauma-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Tourniquet, TXA timing and transfer steps are correct.",
+  "checked": [
+   "q1 pulsatile bleeding through 3 min pressure, tourniquet per Rossaint 2023",
+   "q2 55 min inside 3 h TXA window, 1 g over 10 min",
+   "q4 cefazolin 2 g at 90 kg, four keyed items all defensible",
+   "grep tourniquet cases: s35 ems-35 handover item only, not a copy"
+  ]
+ },
+ {
+  "id": "multiple-trauma-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "PCC dose, CT decision and rebleed reasoning check out.",
+  "checked": [
+   "NAC 2022 INR 3 to 5 gives 2000 IU, 25 IU/kg x 80 kg = 2000 IU",
+   "q3 responder after 1 unit goes to CT",
+   "q4 pulse 72 to 84 and SBP 118 to 104 from stem",
+   "beta blocker masking also taught in s44 multiple-patients-33 q1 and s14 multiple-trauma-04, one question overlap only"
+  ]
+ },
+ {
+  "id": "multiple-trauma-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Junctional packing, ABC score, product choice and calcium dose are correct.",
+  "checked": [
+   "recomputed ABC score: penetrating 1, SBP 84 1, HR 134 1, FAST negative 0 = 3",
+   "Callum 2019: O positive for men, O negative for females of child-bearing potential",
+   "CaCl 1 g about 6.8 mmol vs gluconate 1 g about 2.2 mmol",
+   "compared with s43 lacerations-25 thigh stab: stable patient, different teaching"
+  ]
+ },
+ {
+  "id": "multiple-trauma-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Ontario HCCA capacity and prior capable wishes applied correctly.",
+  "checked": [
+   "stem names Ontario, capable patient decides",
+   "q4 SDM bound by prior capable wish under HCCA s.21",
+   "q2 SpO2 91 to 86, glucose 6.8 excludes hypoglycemia",
+   "q3 NIV consented, EAST flail chest"
+  ]
+ },
+ {
+  "id": "multiple-trauma-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Pregnant trauma keys hold under SOGC 2015. q1 uterine displacement repeats s14 multiple-trauma-03 and s16 shock-04 but the rest of the case is new.",
+  "checked": [
+   "fundus 6 cm above umbilicus fits 26 weeks",
+   "q3 fibrinogen 1.8 low for pregnancy with tender firm uterus, abruption",
+   "q4 maternal resuscitation first",
+   "compared with s14 multiple-trauma-03 and s16 shock-04: one shared teaching point"
+  ]
+ },
+ {
+  "id": "multiple-trauma-21",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of signed off s14 multiple-trauma-08: rollover driver just intubated, tube 23 cm with capnography, rising peak pressure, hypotension and absent left breath sounds, keyed to finger thoracostomy at the left fifth space. s21 airway-46 teaches the same again.",
+  "checked": [
+   "compared with s14 multiple-trauma-08 q1: same findings and same key",
+   "compared with s21 airway-46: ventilated trauma tension pneumothorax",
+   "q3 laparotomy and q4 CXR before OR are sound but not enough to save the case"
+  ]
+ },
+ {
+  "id": "multiple-trauma-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Shock index, product volume and NG tube are correct. q1 handlebar pattern overlaps s19 abdominal-pain-33 but the case and other questions differ.",
+  "checked": [
+   "recomputed SI 124/98 = 1.27, SIPA cutoff 1.0 for 7 to 12 years (Acker 2015)",
+   "red cells 10 mL/kg x 30 kg = 300 mL",
+   "TXA 14 h after injury outside 3 h",
+   "compared with s19 abdominal-pain-33: stable girl, FAST and CT teaching, not a copy"
+  ]
+ },
+ {
+  "id": "multiple-trauma-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Traumatic arrest priorities and ETCO2 sign follow ERC guidance.",
+  "checked": [
+   "q1 reversible causes before compressions per ERC 2021",
+   "q2 four parallel interventions, POCUS excludes effusion",
+   "q4 abrupt ETCO2 rise per ERC 2025 ALS",
+   "grep traumatic cardiac arrest in bank: none other"
+  ]
+ },
+ {
+  "id": "multiple-trauma-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Seatbelt sign pattern, admission and delayed perforation are correct.",
+  "checked": [
+   "q1 lap belt bruise plus lumbar tenderness, Chance plus hollow viscus",
+   "q2 free fluid without solid organ injury needs admission",
+   "q4 fever 38.4, HR 118, guarding at 18 h",
+   "grep Chance or seatbelt sign: s26 burns only in passing"
+  ]
+ },
+ {
+  "id": "multiple-trauma-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Pelvic source, named delegation, binder position and closed loop are correct.",
+  "checked": [
+   "q1 negative eFAST and CXR leave pelvis",
+   "q3 greater trochanters per Bonner 2011",
+   "q2 and q4 per Hicks 2018",
+   "closed loop also in s44 multiple-patients-26 q2, one item overlap"
+  ]
+ },
+ {
+  "id": "multiple-trauma-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Standard hip dislocation teaching. Keys rest on Rosen chapters, and the 6 hour figure is the usual teaching though evidence points to 12 hours.",
+  "checked": [
+   "q1 sciatic nerve before reduction",
+   "q2 only as soon as possible option, Kellam 2016 meta-analysis AVN rise after 12 h (textbook report)",
+   "q3 posterior sag sign is PCL",
+   "q4 new deficit after reduction, CT and ortho",
+   "grep posterior hip dislocation: none other"
+  ]
+ },
+ {
+  "id": "multiple-trauma-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Laryngotracheal injury recognition, awake scope airway and CTA screen are correct.",
+  "checked": [
+   "q1 hoarse voice, laryngeal tenderness, spreading emphysema",
+   "q2 awake flexible scope with surgeon ready, awake trach not offered",
+   "q4 CTA per EAST BCVI 2020",
+   "grep laryngotracheal or clothesline: none other"
+  ]
+ },
+ {
+  "id": "multiple-trauma-28",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of s26 burns-22: a man who jumped from a third floor to escape a fire, with partial thickness burns and hypotension from a splenic injury. Only the age and burn site differ. Keep s26 burns-22.",
+  "checked": [
+   "compared with s26 burns-22: same mechanism, same hidden splenic bleed, q1 hypotension source",
+   "q2 inhalation airway and q4 dry dressings are sound but not enough to save the case"
+  ]
+ },
+ {
+  "id": "multiple-trauma-29",
+  "verdict": "FIX",
+  "questions": [
+   "q4"
+  ],
+  "reason": "Keys are correct. q4 distractors and explanation refer to PEEP of 5 cmH2O and a tranexamic acid infusion that the case never says he received.",
+  "fix": "Add to the stem after the transfusion sentence: 'He received tranexamic acid and is ventilated with PEEP of 5 cmH2O.'",
+  "checked": [
+   "WSACS 2013: supine, end expiration, midaxillary zero, max 25 mL",
+   "IAP 28 over 20 with new organ failure is ACS",
+   "q4 6 L crystalloid in stem",
+   "compared with s26 burns-31: burn ACS treated by escharotomy, different teaching",
+   "q4 PEEP 5 and TXA absent from stem (lens B flag still open)"
+  ]
+ },
+ {
+  "id": "multiple-trauma-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Fat embolism triad, supportive care and early fixation are correct.",
+  "checked": [
+   "30 h after femur fracture, hypoxia, confusion, axillary petechiae",
+   "q2 steroids not standard",
+   "q3 fixation within 24 h",
+   "source is a 2026 narrative review, no guideline exists",
+   "grep fat embolism: no other case"
+  ]
+ },
+ {
+  "id": "multiple-trauma-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "BCI screen, admission and tamponade management are correct.",
+  "checked": [
+   "EAST 2012 ECG plus troponin I",
+   "q3 pulse pressure 92 minus 78 = 14",
+   "q4 OR with surgeon ready",
+   "compared with s14 multiple-trauma-02 penetrating tamponade: blunt case, BCI screen new"
+  ]
+ },
+ {
+  "id": "multiple-trauma-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "MHP targets, calcium, warming and termination match Callum 2019.",
+  "checked": [
+   "Callum 2019 targets fibrinogen 1.5, iCa 1.15, platelets 50, Hb 80, INR 1.8",
+   "q2 K 6.6 plus iCa 0.78 with peaked T, CaCl",
+   "q4 stop criteria met",
+   "calcium after transfusion also in s45 multiple-trauma-18 q4, minor overlap"
+  ]
+ },
+ {
+  "id": "multiple-trauma-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Early transfer call, intubation, TXA dose and ETCO2 target are correct.",
+  "checked": [
+   "recomputed TXA 15 mg/kg x 15 kg = 225 mg",
+   "q4 normocapnia 35 to 40 per BTF paediatric 2019",
+   "GCS 8 E2 V2 M4 sums to 8",
+   "grep for paediatric fall GCS 8: none"
+  ]
+ },
+ {
+  "id": "multiple-trauma-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Reduction of the pulseless ankle, splint choice and rewarming are correct.",
+  "checked": [
+   "q1 reduce before 3 h transfer",
+   "q2 traction splint contraindicated with ipsilateral ankle fracture",
+   "q3 temp 35.0 rectal, three keyed measures",
+   "grep for duplicate: none"
+  ]
+ },
+ {
+  "id": "multiple-trauma-35",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s13 multiple-patients-08: a lone physician receives three patients from one crash, one with a right tension pneumothorax, one with an open limb fracture and one with hip or pelvic pain, keyed to treat and decompress the tension patient first.",
+  "checked": [
+   "compared with s13 multiple-patients-08 q1 and q2: same triage and same decompression key",
+   "needle site 4th or 5th space AAL is correct, but the case repeats"
+  ]
+ },
+ {
+  "id": "multiple-trauma-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Rocuronium with hyperkalemia, ESKD care and BTF SBP threshold are correct.",
+  "checked": [
+   "K 6.9 with peaked T, avoid succinylcholine",
+   "BTF 4th ed SBP 100 or more for age 50 to 69, he is 64",
+   "Cushing triad from stem vitals 52, 182/98, RR 10",
+   "q2 six options meets menu rule"
+  ]
+ },
+ {
+  "id": "multiple-trauma-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Idarucizumab, thrombin time and narrowing pulse pressure are correct.",
+  "checked": [
+   "dabigatran 3 h ago, CrCl 45",
+   "pulse pressure 34 to 18 recomputed",
+   "thrombin time sensitive to dabigatran",
+   "other idarucizumab items in bank are GI or ICH cases"
+  ]
+ },
+ {
+  "id": "multiple-trauma-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Hemothorax tube, site, thoracotomy criteria and diaphragm injury are correct.",
+  "checked": [
+   "ATLS 1500 mL, 200 mL/h for 2 to 4 h, ongoing transfusion",
+   "q4 sixth space AAL in thoracoabdominal zone",
+   "compared with s14 multiple-trauma-02: tamponade case, different"
+  ]
+ },
+ {
+  "id": "multiple-trauma-39",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Spine board removal, rewarming and rib analgesia are correct.",
+  "checked": [
+   "CT spine negative in stem, sacral redness present",
+   "34.8°C mild hypothermia per Paal 2022",
+   "q3 ACS 2025 chest wall guideline regional anesthesia",
+   "grep for duplicate: none"
+  ]
+ },
+ {
+  "id": "multiple-trauma-40",
+  "verdict": "REJECT",
+  "questions": [
+   "q2",
+   "q3",
+   "q4"
+  ],
+  "reason": "Near duplicate of s21 airway-40 (shrugs shoulders only, no sensation below the clavicles, warm dry skin, FVC for intubation, in line stabilization) and of signed off s16 shock-06 (signs of neurogenic versus hemorrhagic shock). Three of four questions repeat.",
+  "checked": [
+   "compared with s21 airway-40: same stem findings, FVC and MILS keys",
+   "compared with s16 shock-06 q1: bradycardia and warm skin favour neurogenic",
+   "q1 hemorrhage first is the only new point"
+  ]
+ },
+ {
+  "id": "multiple-trauma-41",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "No routine platelets, repeat CT and transfer are correct.",
+  "checked": [
+   "platelets 210 above 100 target",
+   "Rossaint 2023 against routine platelets on antiplatelets, not on an MHP",
+   "GCS 14 to 12 recomputed E3 V4 M5",
+   "compared with s14 multiple-trauma-04 and s27 cva-17: DOAC cases, different drug and teaching"
+  ]
+ },
+ {
+  "id": "multiple-trauma-42",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "O negative red cells and AB plasma for a young woman, fibrinogen dose and counselling are correct.",
+  "checked": [
+   "CBS Clinical Guide opened: Kell negative blood used in Canada for women of childbearing age",
+   "Callum 2019 fibrinogen concentrate 4 g for fibrinogen under 1.5",
+   "group A plasma not offered so AB is the only safe plasma option",
+   "compared with s19 abdominal-pain-39 ATV: different teaching"
+  ]
+ },
+ {
+  "id": "multiple-trauma-43",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Handover pause, MIST, tension decompression and scalp staples are correct.",
+  "checked": [
+   "MIST four elements keyed",
+   "q3 hypoxia, hypotension, absent left breath sounds",
+   "compared with s35 ems-33: same 80 km/h guardrail mechanism but that item tests which handover detail matters, not a copy"
+  ]
+ },
+ {
+  "id": "multiple-trauma-44",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Crush hyperkalemia, treatment, fluids and compartment sign are defensible.",
+  "checked": [
+   "q2 K 6.8 with wide QRS, CaCl plus insulin plus salbutamol",
+   "q3 1 to 1.5 L/h per ISN 2012, dark urine in stem",
+   "FPHC 2026 calls hyperkalemia uncommon but key is still the fastest killer",
+   "compared with s35 ems-26 crush at scene: different phase and questions"
+  ]
+ },
+ {
+  "id": "multiple-trauma-45",
+  "verdict": "REJECT",
+  "questions": [
+   "q1"
+  ],
+  "reason": "Near duplicate of s21 airway-33: an older man with ankylosing spondylitis and a fixed flexed neck falls, has a C6 fracture and hand symptoms, and q1 keys support in his usual flexed posture in both. Keep s21 airway-33.",
+  "checked": [
+   "compared with s21 airway-33: same patient type, same q1 key, same C6 fracture",
+   "q2 CT whole spine and q3 MRI are sound but the case repeats"
+  ]
+ },
+ {
+  "id": "multiple-trauma-46",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of signed off s09 ems-08: young man with brief LOC, lucid interval, then falling GCS and left pupil from an epidural hematoma at a hospital without neurosurgery, keyed to intubate with ETCO2 before transfer and keep SBP above 110.",
+  "checked": [
+   "compared with s09 ems-08: same diagnosis, transfer setting, intubation and SBP 110 keys",
+   "BTF SBP 110 for 15 to 49 is correct",
+   "GCS E3 V3 M5 = 11"
+  ]
+ },
+ {
+  "id": "multiple-trauma-47",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "BTAI recognition, CTA, bleeding first and esmolol are correct.",
+  "checked": [
+   "widened mediastinum, apical cap, first rib per EAST 2015",
+   "q3 hypotensive splenic bleed before aortic repair",
+   "q4 esmolol impulse control after bleeding controlled",
+   "grep widened mediastinum: no other trauma case",
+   "q4 key feature mapping loose, not a content defect"
+  ]
+ }
+]

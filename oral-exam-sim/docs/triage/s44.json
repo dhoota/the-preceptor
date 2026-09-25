@@ -1,0 +1,270 @@
+[
+ {
+  "id": "multiple-patients-16",
+  "verdict": "FIX",
+  "questions": [
+   "q3"
+  ],
+  "reason": "Keys hold under CTAS 2016. The q3 explanation states a 38.5°C adult fever threshold, and CTAS 2025 reportedly lowers adult fever to above 38°C, so the stated number may now be false.",
+  "fix": "In q3 explanation replace '37.9°C is below the 38.5°C adult fever threshold in CTAS' with '37.9°C does not meet the CTAS fever modifier'. Consider adding 'Using CTAS 2016' to the stem.",
+  "checked": [
+   "CTAS 2016 full text opened: frailty definition lists wheelchair bound, cognitive impairment and over 80, so q1 level 3 holds",
+   "q2 SBP over 220 with symptoms is level 2 per CTAS 2004",
+   "q3 each finding recomputed: 204/100 no symptoms level 4, glucose 16 below 18, sat 93% level 3",
+   "q4 level 2 reassessment 15 min",
+   "CTAS 2025 full text paywalled, web summary says adult fever now above 38°C",
+   "grep for duplicate: s13 multiple-patients-02 covers CTAS timing only, not a copy"
+  ]
+ },
+ {
+  "id": "multiple-patients-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Mechanism, reassessment and record keeping keys match CTAS 2004 and 2016.",
+  "checked": [
+   "unrestrained over 40 km/h is CTAS 2004 table 7 level 2",
+   "CTAS 2016 internal waiting area for high risk mechanism (lens B read full text)",
+   "q2 explanation now says at least level 2, consistent with 118 and 96/60",
+   "q3 initial level kept plus reassessment level per CTAS 2004",
+   "grep for duplicate: none"
+  ]
+ },
+ {
+  "id": "multiple-patients-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Epinephrine dose, leadership and backup call are correct.",
+  "checked": [
+   "recomputed epinephrine 0.01 x 58 = 0.58 mg, capped at 0.5 mg IM",
+   "q3 repeat IM dose at 5 min, glucagon reason ties to no beta blocker in stem",
+   "q4 two sick plus two level 2 waiting justifies backup",
+   "compared with s13 multiple-patients-09 (VF plus stroke plus sepsis): different second patient, not a copy"
+  ]
+ },
+ {
+  "id": "multiple-patients-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "JumpSTART categories and the carried child rule check out.",
+  "checked": [
+   "q1 RR 34 inside 15 to 45, pulse, alert, not walking gives yellow",
+   "q2 infant with no significant external injury is green per JumpSTART",
+   "q3 carried children assessed first in the green area",
+   "q4 Auf der Heide: most casualties self present (lens A read full text)",
+   "grep JumpSTART in bank: s09 ems and s13-03 test apneic child breaths, not these points"
+  ]
+ },
+ {
+  "id": "multiple-patients-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "SALT checks and categories are correct and distinct from the s35 SALT item.",
+  "checked": [
+   "q1 failed check after hemorrhage control, likely to survive, immediate",
+   "q2 four SALT checks keyed, no vital sign cut offs",
+   "q3 passes checks, open fracture not minor, delayed",
+   "q4 expectant reassessed when resources permit",
+   "grep SALT: s35 ems-26 tests global sort, not a copy"
+  ]
+ },
+ {
+  "id": "multiple-patients-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Disaster principles are sourced to Auf der Heide and Frykberg and hold.",
+  "checked": [
+   "q1 least injured arrive first per Auf der Heide assumption 7 (lens A full text)",
+   "q2 overtriage linked to critical mortality per Frykberg 2002",
+   "q3 senior physician as triage officer",
+   "q4 EMS incident commander",
+   "grep blast or explosion MCI in bank: burns-36 is a single burn case, no copy"
+  ]
+ },
+ {
+  "id": "multiple-patients-22",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of signed off s13 multiple-patients-06: a worker soaked by a chemical walks into the ED ahead of coworkers who are on their way, keyed to moving him out for decontamination and preparing the department for contaminated arrivals. s09 ems-13 repeats the preparation point. q3 (observe an unknown agent) and q4 (the exposed nurse) are new and could move to another case.",
+  "checked": [
+   "compared with s13 multiple-patients-06: soaked walk in worker moved outside for decon, same teaching",
+   "compared with s09 ems-13 q4 and s35 ems-24: decon area outside, same point",
+   "q3 ATSDR 6 to 8 h observation for unknown agent, not independently opened",
+   "q4 exposed nurse as casualty is new content"
+  ]
+ },
+ {
+  "id": "multiple-patients-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "PaedCTAS level, surge options and escalation are correct.",
+  "checked": [
+   "q1 sat 91% with moderate retractions is PaedCTAS moderate distress, level 2",
+   "RR 64 and HR 172 at 5 months fall in band III per lens B tables",
+   "q2 three contingency measures per Hick 2014",
+   "q3 sat 88% on O2 plus apneas, no HFNC, refer PICU",
+   "q4 stable asthma q4h is the lowest risk discharge"
+  ]
+ },
+ {
+  "id": "multiple-patients-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "SOFA allocation, triage officer role and 48 and 120 hour review match Christian 2006.",
+  "checked": [
+   "SOFA for man recomputed: unventilated so respiratory capped at 2, other organs 0, total 2",
+   "woman SOFA 14 above 11 exclusion per Christian CMAJ 2006",
+   "48 and 120 h review per Christian (lens A PMC full text)",
+   "stem states the province activated a triage protocol",
+   "grep SOFA and ventilator allocation in bank: none"
+  ]
+ },
+ {
+  "id": "multiple-patients-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Priorities, DKA orders and head injury escalation are correct and Canadian sourced.",
+  "checked": [
+   "q1 BP 82/48 mottled confused is level 1 shock",
+   "recomputed saline 10 mL/kg x 36 kg = 360 mL, CPS 2023 10 to 20 mL/kg",
+   "no insulin bolus and infusion after first hour per CPS 2023",
+   "q3 GCS E3 V3 M5 = 11, fall of 3 from 14",
+   "compared with s13 multiple-patients-01: different patient mix, not a copy"
+  ]
+ },
+ {
+  "id": "multiple-patients-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Role allocation, closed loop orders, GI call and STEMI activation all hold.",
+  "checked": [
+   "q1 attending takes the peri arrest asthma airway",
+   "q2 closed loop per El-Shafy 2018",
+   "q3 BP 80/46 after 4 units with ongoing hematemesis needs urgent endoscopy",
+   "q4 3 mm STE V2 to V5 activates cath lab per CCS 2019",
+   "grep for duplicate: none"
+  ]
+ },
+ {
+  "id": "multiple-patients-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "CTAS 4 for 4 out of 10 peripheral pain and stroke prioritisation are correct.",
+  "checked": [
+   "q1 CTAS 2004 pain table: 4 to 7 peripheral is level 4",
+   "q2 LKW 50 min inside 4.5 h window",
+   "q3 BP 168/94 below 185/110, ASA before imaging unsafe per CSBPR",
+   "s13 multiple-patients-02 q2 also tests laceration CTAS but different case"
+  ]
+ },
+ {
+  "id": "multiple-patients-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "START sequence, dynamic retriage and distribution to regional hospitals are correct.",
+  "checked": [
+   "q1 RR 24 at or under 30 moves to perfusion per START",
+   "q2 cannot follow commands is immediate",
+   "q3 distribution per Auf der Heide",
+   "compared with s13 multiple-patients-03 START sorting: different items tested"
+  ]
+ },
+ {
+  "id": "multiple-patients-29",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Keys follow the CTAS 2016 heat table, which I confirmed. CTAS 2025 reportedly restructures temperature modifiers and its tables could not be opened, so a physician must confirm or add 'Using CTAS 2016' to the stem.",
+  "checked": [
+   "CTAS 2016 table 2 opened: core over 41°C level 1, 39 to 41°C level 2, ongoing cramps level 3",
+   "q2 40.4°C with confusion is heat stroke per Epstein 2019",
+   "CTAS 2025 paywalled, not verified",
+   "compared with s09 environmental-02 and s36 environmental-17: same kind of patient but questions test triage and surge, not cooling"
+  ]
+ },
+ {
+  "id": "multiple-patients-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Intranasal midazolam without IV, PaedCTAS level 1 and delegation are correct.",
+  "checked": [
+   "q1 CPS 2021 midazolam IN or buccal when no IV",
+   "q2 sat 88% single words is PaedCTAS level 1",
+   "q3 post benzodiazepine monitoring plan",
+   "q4 analgesia by directive while waiting",
+   "grep for duplicate: none"
+  ]
+ },
+ {
+  "id": "multiple-patients-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Ventilation first, cluster prioritisation and St. Paul's rule are correct.",
+  "checked": [
+   "q1 RR 2 with pulse, BVM first per AHA 2021",
+   "q2 RR 6 sat 84% is next most urgent",
+   "q3 St. Paul's criteria checked one by one against Christenson 2000 strict limits",
+   "St. Paul's rule also in s18 tox, single question overlap only",
+   "compared with s13 multiple-patients-01 patient B: partial theme only"
+  ]
+ },
+ {
+  "id": "multiple-patients-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Transfer priority, physician only task and waiting plan are correct.",
+  "checked": [
+   "GCS E2 V2 M5 = 9, fall from 14 with blown pupil and Cushing response",
+   "q2 airway before flight",
+   "q3 blood not crystalloid, keep binder",
+   "compared with s13 multiple-patients-08 and s09 ems-08: different decision tested"
+  ]
+ },
+ {
+  "id": "multiple-patients-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Beta blocker masking, CTAS 2 for rollover and secondary triage are correct.",
+  "checked": [
+   "q1 metoprolol in stem, usual SBP 150 given",
+   "q2 rollover is CTAS 2004 table 7 mechanism, 2016 geriatric RR over 27 and SBP under 110",
+   "q4 GCS 13 is level 2, warfarin in update",
+   "grep tour bus and field tag: s35 ems-35 was rebuilt, no copy remains"
+  ]
+ },
+ {
+  "id": "multiple-patients-34",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Keys follow CTAS 2016 fever bands (under 3 months, 3 to 18 months) and the 38.5°C immunocompromised threshold, which I confirmed. CTAS 2025 reportedly revises temperature modifiers and could not be opened, so a physician must confirm.",
+  "checked": [
+   "CTAS 2016 opened: fever modifier limited to 3 to 18 months, under 3 months level 2",
+   "q2 chemo child now 38.9°C, above 38.5°C",
+   "q3 HR 190 above 165 for 1 to 3 years per PaedCTAS table 6 (lens reports)",
+   "CTAS 2025 paywalled, not verified"
+  ]
+ },
+ {
+  "id": "multiple-patients-35",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of signed off s14 pediatric-fever-05: an unvaccinated returned traveller with measles prodrome and rash found after sitting in a busy waiting room, keyed to airborne isolation and public health listing of exposed contacts. Only the age differs. q3 and q4 are new and correct and could move to another case.",
+  "checked": [
+   "compared with s14 pediatric-fever-05 q2: airborne room, notify public health, identify waiting room contacts",
+   "compared with s41 infectious-diseases-40: PEP content",
+   "q3 born before 1970 and two documented doses per CIG 2025",
+   "q4 4 days before to 4 days after rash"
+  ]
+ }
+]
