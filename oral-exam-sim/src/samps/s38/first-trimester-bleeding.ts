@@ -938,7 +938,7 @@ export const FIRST_TRIMESTER_BLEEDING_S38: Samp[] = [
           "Vasovagal reaction",
         ],
         correct: 3,
-        explanation: "Her pulse has risen to 124/minute and her BP has fallen to 86/54 mmHg while her vaginal bleeding is light. She is losing blood where no pad can show it. Free fluid in the hepatorenal space soon after the uterus was instrumented points to a uterine perforation bleeding into the abdomen. Perforation complicates about 0.1 to 3 of every 1 000 vacuum aspirations, and hemodynamic instability calls for urgent surgical care. Hematometra and retained products both leave blood or tissue inside the uterus, and her uterine cavity is empty. A ruptured ectopic pregnancy is very unlikely after a live intrauterine pregnancy was seen at 7 weeks. A vasovagal reaction slows the pulse rather than raising it.",
+        explanation: "Her pulse has risen to 124/minute and her BP has fallen to 86/54 mmHg while her vaginal bleeding is light. She is losing blood where no pad can show it. Free fluid in the hepatorenal space soon after the uterus was instrumented points to a uterine perforation bleeding into the abdomen. Ipas puts perforation at about 0.1 to 3 per 1 000 induced abortion procedures. A perforation with heavy bleeding and unstable vital signs needs urgent surgery. Hematometra and retained products both leave blood or tissue inside the uterus, and her uterine cavity is empty. A ruptured ectopic pregnancy is very unlikely after a live intrauterine pregnancy was seen at 7 weeks. A vasovagal reaction slows the pulse rather than raising it.",
         keyFeature: { topic: "first-trimester-bleeding", n: 1 },
         source: "ipas-perforation",
       },

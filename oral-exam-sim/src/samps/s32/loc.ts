@@ -1623,10 +1623,10 @@ export const LOC_S32: Samp[] = [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following people, besides his wife, can best describe his usual mental state this week?",
+        prompt: "Which of the following people, besides his wife, can best describe his mental state in the days before he became confused?",
         options: ["His community pharmacist", "His dialysis unit nurses", "His family physician", "His next-door neighbour", "The triage nurse tonight"],
         correct: 1,
-        explanation: "His dialysis unit nurses see him three times a week and assessed him at his session 2 days ago. They know his usual mental state and can say whether he was already confused, vomiting or hiccupping then, which helps date the change. The 4AT names other staff who know the patient as a source for judging an acute change. His family physician last saw him 4 months ago and cannot describe this week. The triage nurse has seen him only while he is confused. His pharmacist dispenses his medicines but does not observe his mental state, and a neighbour sees less of him than his wife does.",
+        explanation: "His dialysis unit nurses see him three times a week and assessed him at his session 2 days ago. They know his usual mental state and can say whether he was already confused, vomiting or hiccupping then, which helps date the change. The 4AT names other staff who know the patient as a source for judging an acute change. His family physician last saw him 4 months ago and cannot describe this week. The triage nurse has seen him only while he is confused. Nothing in the case says that his pharmacist or a neighbour has seen him this week. A pharmacist dispenses medicines and is not placed to judge his mental state.",
         keyFeature: { topic: "loc", n: 3 },
         source: "4at-delirium",
       },
