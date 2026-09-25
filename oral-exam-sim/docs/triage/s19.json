@@ -1,0 +1,425 @@
+[
+ {
+  "id": "abdominal-pain-16",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q2",
+   "q4"
+  ],
+  "reason": "Near duplicate of chest-pain-45 in s28: older hypertensive smoker with dissection, a cold numb left leg, LVH, CT angiography and surgical consult. Keep one of the pair. If this one is kept, also fix the q4 CT wording, since an entry beyond the left subclavian does not explain the lower left arm pressure.",
+  "checked": [
+   "key dissection vs ACC/AHA 2022",
+   "esmolol first, HR 60 to 80, SBP below 120",
+   "complicated type B with malperfusion needs repair",
+   "arm BP difference now 30 mmHg (flag fixed)",
+   "arm deficit vs CT entry site: inconsistent",
+   "similarity scan and read of chest-pain-45: same scenario and q2, q4 teaching"
+  ]
+ },
+ {
+  "id": "abdominal-pain-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and management check out.",
+  "checked": [
+   "MVT fits pain out of proportion, OCP, family VTE",
+   "biphasic CT per WSES 2022",
+   "heparin plus surgical consult keyed, laparotomy correctly rejected with enhancing bowel",
+   "grep for duplicate mesenteric venous: none"
+  ]
+ },
+ {
+  "id": "abdominal-pain-18",
+  "verdict": "HOLD",
+  "questions": [
+   "q3"
+  ],
+  "reason": "Near duplicate of shock-41 in s50 and infectious-diseases-28 in s41: older adult who declined gallbladder surgery, confusion, grade III cholangitis and urgent drainage. The afebrile teaching in q1 is new, but only one of these should carry the drainage teaching.",
+  "checked": [
+   "TG18 criteria vs stem: WBC 14.8, bilirubin 68, ALP and ALT raised",
+   "grade III from confusion and hypotension",
+   "ultrasound first per ACR",
+   "grep cholangitis: shock-41 in s50 overlaps scenario and q3",
+   "similarity scan: infectious-diseases-28 in s41 also overlaps"
+  ]
+ },
+ {
+  "id": "abdominal-pain-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and Tokyo criteria check out.",
+  "checked": [
+   "TG18 local plus systemic signs: Murphy, 38.1, WBC 13.6",
+   "POCUS by credentialed physician fits weekend setting",
+   "early lap chole per TG18 flowchart",
+   "normal bilirubin and ALT argue against CBD stone"
+  ]
+ },
+ {
+  "id": "abdominal-pain-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and numbers check out.",
+  "checked": [
+   "lipase 2 400 is 40 times ULN 60",
+   "WATERFALL: 1.5 mL/kg/hour moderate, 3 mL/kg/hour aggressive, 70 kg gives 210 mL/hour",
+   "NS 250/70 is 3.6 mL/kg/hour",
+   "same admission chole for mild gallstone pancreatitis per ACG 2024",
+   "option order allowed by house rule for doses of one drug",
+   "overlap with s50 shock WATERFALL item: different angle, hypovolemic vs euvolemic"
+  ]
+ },
+ {
+  "id": "abdominal-pain-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and management check out.",
+  "checked": [
+   "inverted U loop from pelvis to RUQ with empty rectum fits sigmoid volvulus",
+   "endoscopic detorsion first without ischemia per WSES 2023",
+   "same admission sigmoidectomy in fit patient per WSES 2023",
+   "grep sigmoid volvulus: only this SAMP"
+  ]
+ },
+ {
+  "id": "abdominal-pain-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and anatomy check out.",
+  "checked": [
+   "femoral hernia below inguinal ligament, lateral to pubic tubercle: correct",
+   "ASB in LTC and IDSA 2019 advice",
+   "no manual reduction when strangulation suspected",
+   "grep femoral hernia: only this SAMP"
+  ]
+ },
+ {
+  "id": "abdominal-pain-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and escalation logic check out.",
+  "checked": [
+   "isolated right colon ischemia needs CTA per ACG 2015",
+   "lactate 2.4 to 4.1 stated in update",
+   "colonoscopy after mesenteric ischemia excluded",
+   "all q3 distractor reasons true"
+  ]
+ },
+ {
+  "id": "abdominal-pain-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and management check out. The q1 source is a review article, but the teaching point is standard.",
+  "checked": [
+   "sterile pyuria from adjacent colon inflammation, Goonewardene review names it",
+   "CT with IV contrast first per WSES 2020",
+   "no antibiotics for uncomplicated immunocompetent without systemic inflammation per WSES 2020",
+   "stem gives normal temp and HR, WBC 10.9"
+  ]
+ },
+ {
+  "id": "abdominal-pain-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and sign naming check out.",
+  "checked": [
+   "Fothergill sign: mass persists with rectus tensed means wall origin",
+   "Hb 128 to 102 and apixaban in stem",
+   "CT with contrast shows extravasation",
+   "grep rectus sheath: only this SAMP"
+  ]
+ },
+ {
+  "id": "abdominal-pain-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and numbers check out.",
+  "checked": [
+   "recomputed anion gap 136 minus 100 minus 8 is 28",
+   "euglycemic DKA with SGLT2 and poor intake",
+   "insulin plus dextrose from start at glucose 11.2",
+   "bicarbonate not advised at pH 7.14 per Diabetes Canada",
+   "overlap with infectious-diseases-31 already fixed there"
+  ]
+ },
+ {
+  "id": "abdominal-pain-27",
+  "verdict": "HOLD",
+  "questions": [
+   "q2",
+   "q3"
+  ],
+  "reason": "Keys and doses are correct, but loc-29 in s32 is a near duplicate: known primary adrenal insufficiency, missed pills with vomiting, the same electrolyte pattern, hydrocortisone and first hour fluids and dextrose. Keep one of the pair.",
+  "checked": [
+   "hydrocortisone 100 mg IV then 200 mg per 24 hours per Endocrine Society 2016",
+   "Na 128, K 5.8, glucose 3.4 in stem",
+   "normal ECG supports no calcium or insulin",
+   "s01 adrenal crisis item is write-in, different angle",
+   "similarity scan and read of loc-29: same teaching in q2 and q3"
+  ]
+ },
+ {
+  "id": "abdominal-pain-28",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Keys are correct, but pediatric-fever-44 in s46 is a near duplicate: school age boy after a sore throat with palpable purpura on the legs and buttocks, ankle swelling, abdominal pain and a urinalysis and BP follow-up key. The intussusception question here is new. Keep one or trim the overlap.",
+  "checked": [
+   "palpable purpura, normal platelets 310, arthritis, hematuria fit IgA vasculitis",
+   "ultrasound first for ileo-ileal intussusception",
+   "serial urinalysis and BP per SHARE 2019",
+   "afebrile 37.3 supports rejecting meningococcemia",
+   "similarity scan and read of pediatric-fever-44"
+  ]
+ },
+ {
+  "id": "abdominal-pain-29",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Keys and doses are correct, but chest-pain-30 in s28 is a near duplicate: older woman with burning band pain from the left mid back, normal skin, allodynia, a nerve root cause and zoster treatment. Keep one of the pair.",
+  "checked": [
+   "valacyclovir 1 g TID vs acyclovir 800 mg five times daily",
+   "distractor doses 400 mg TID and 500 mg daily are subtherapeutic",
+   "methotrexate and prednisone 7.5 mg is not severe immunosuppression needing IV acyclovir",
+   "Beutner trial population noted",
+   "similarity scan and read of chest-pain-30: same scenario and teaching"
+  ]
+ },
+ {
+  "id": "abdominal-pain-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and escalation check out.",
+  "checked": [
+   "bilious vomiting in neonate is malrotation until proven otherwise",
+   "upper GI series is the reference test",
+   "shock and bloody stool means laparotomy without delay",
+   "weight and age consistent"
+  ]
+ },
+ {
+  "id": "abdominal-pain-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and Doppler teaching check out.",
+  "checked": [
+   "Doppler flow does not exclude torsion per ACOG 783",
+   "enlarged ovary with peripheral follicles",
+   "laparoscopy now with ovarian preservation",
+   "torsion also in s01 write-in, different angle"
+  ]
+ },
+ {
+  "id": "abdominal-pain-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Score and keys check out. The pyuria source is old, but the claim is standard.",
+  "checked": [
+   "recomputed PAS: hop 2, RLQ 2, anorexia, fever 38.4, vomiting, migration, WBC 13.8, ANC 10.9 each 1, total 10",
+   "ultrasound first per Choosing Wisely Canada",
+   "nonvisualized appendix does not exclude with PAS 10",
+   "Scott 1983 supports pyuria in about a quarter"
+  ]
+ },
+ {
+  "id": "abdominal-pain-33",
+  "verdict": "FIX",
+  "questions": [
+   "q1",
+   "q4"
+  ],
+  "reason": "Keys and PECARN count are correct. The ATLS citation is the 10th edition of 2018, and the 11th edition was released in 2025.",
+  "fix": "Replace the ATLS source with: American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025.",
+  "checked": [
+   "PECARN predictors counted: wall bruising, tenderness, pain equals 3",
+   "brother has none of 7 predictors",
+   "admission for pancreatic contusion and duodenal hematoma",
+   "ATLS 11 launch confirmed on facs.org Sept 2025"
+  ]
+ },
+ {
+  "id": "abdominal-pain-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and regimen check out against the PHAC page.",
+  "checked": [
+   "PHAC PID page opened: ceftriaxone 500 mg IM plus doxycycline and metronidazole 14 days",
+   "PHAC admission criteria include TOA",
+   "minimum criteria met on update",
+   "fluoroquinolone resistance reason true"
+  ]
+ },
+ {
+  "id": "abdominal-pain-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and sequence check out.",
+  "checked": [
+   "pregnancy test before blaming UTI",
+   "amenorrhea with LNG IUD does not exclude pregnancy",
+   "TVUS first per SOGC 414",
+   "adnexal mass separate from ovary with empty uterus means ectopic, gyne now"
+  ]
+ },
+ {
+  "id": "abdominal-pain-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and dose check out.",
+  "checked": [
+   "platelets 88, AST 240, LDH 720, BP 152/98, 2+ protein fit HELLP",
+   "magnesium 4 g IV load then 1 g/hour per SOGC 426",
+   "normal glucose and INR argue against AFLP",
+   "overlap with s47 HELLP items: different angle",
+   "pre-eclampsia-16 and 37 in s47 overlap only partly"
+  ]
+ },
+ {
+  "id": "abdominal-pain-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Score and keys check out.",
+  "checked": [
+   "recomputed Alvarado: RLQ 2, WBC 2, anorexia, nausea, shift each 1, total 7",
+   "37.2 below 37.3 threshold, no migration, no rebound",
+   "low dose CT noninferior per Kim 2012",
+   "surgical consult on confirmed appendicitis"
+  ]
+ },
+ {
+  "id": "abdominal-pain-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out. The q1 radiation source is general, but the claim is standard.",
+  "checked": [
+   "MR enterography avoids radiation after 7 CTs",
+   "urgent CT justified with fever, mass, guarding",
+   "4 cm abscess: antibiotics and percutaneous drainage per ECCO 2024",
+   "distractor reasons true"
+  ]
+ },
+ {
+  "id": "abdominal-pain-39",
+  "verdict": "FIX",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Keys are correct. All three questions cite the ATLS 10th edition of 2018, which the 11th edition replaced in 2025.",
+  "fix": "Replace the ATLS source with: American College of Surgeons Committee on Trauma. Advanced Trauma Life Support Student Course Manual. 11th ed. 2025.",
+  "checked": [
+   "FAST first in unstable blunt trauma",
+   "transfer now from rural site without CT or surgeon",
+   "blood, SBP 80 to 90 target with GCS 15, TXA 1 g within 3 hours",
+   "ATLS 11 launch confirmed"
+  ]
+ },
+ {
+  "id": "abdominal-pain-40",
+  "verdict": "FIX",
+  "questions": [
+   "q1"
+  ],
+  "reason": "Every q1 distractor contains 'usually' and the key does not, so a test-wise candidate can pick the key without the clinical point.",
+  "fix": "Remove 'usually' from the four distractors: 'Fever is typically present', 'Leukocytosis is marked', 'Symptoms start abruptly', 'Typical migration is seen'. Keep option order and the key.",
+  "checked": [
+   "perforation at diagnosis higher in elderly per WSES elderly 2019",
+   "metoprolol blunts HR, stem lists metoprolol",
+   "CT with contrast in elderly",
+   "abscess drainage for stable pelvic abscess",
+   "q1 option wording cue confirmed"
+  ]
+ },
+ {
+  "id": "abdominal-pain-41",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and escalation check out.",
+  "checked": [
+   "internal hernia after RYGB with soft abdomen",
+   "CT with IV contrast, swirl sign per Dilauro 2017",
+   "negative CT does not exclude, surgery for persistent pain",
+   "grep internal hernia: only this SAMP"
+  ]
+ },
+ {
+  "id": "abdominal-pain-42",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and numbers check out.",
+  "checked": [
+   "PMN 640 is at least 250",
+   "albumin 1.5 g/kg times 80 kg is 120 g, creatinine 138 above threshold per AASLD 2021",
+   "Runyon criteria: glucose below 2.8, protein above 10 g/L",
+   "SAAG 11 g/L equals 1.1 g/dL"
+  ]
+ },
+ {
+  "id": "abdominal-pain-43",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and regimen check out. WSES is cited in place of AMMI, but the regimen matches both.",
+  "checked": [
+   "fulminant: PO vancomycin 500 mg QID plus IV metronidazole 500 mg q8h",
+   "WBC 31.4, lactate 3.2, creatinine 188 in stem",
+   "IV vancomycin does not reach lumen",
+   "overlap with infectious-diseases-35 fixed in s41"
+  ]
+ },
+ {
+  "id": "abdominal-pain-44",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and resuscitation check out.",
+  "checked": [
+   "syncope, back pain, relative hypotension vs usual SBP 150s",
+   "bedside aorta ultrasound fastest",
+   "call vascular now for symptomatic 5.8 cm AAA per ESVS 2024",
+   "permissive hypotension and crossmatch"
+  ]
+ },
+ {
+  "id": "abdominal-pain-45",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and management check out.",
+  "checked": [
+   "NOMI after intradialytic hypotension with lactate 3.6",
+   "CTA acceptable on dialysis, gadolinium NSF risk",
+   "vasopressin worsens mesenteric flow",
+   "grep NOMI: only this SAMP"
+  ]
+ },
+ {
+  "id": "abdominal-pain-46",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and dose check out. ASA 160 mg chewed is standard Canadian practice and within the ESC range.",
+  "checked": [
+   "troponin 9 to 64 with ST depression is NSTEMI",
+   "ASA 160 mg within ESC 150 to 300 mg",
+   "81 mg and enteric coated are not loading doses",
+   "serial troponin after single early value"
+  ]
+ },
+ {
+  "id": "abdominal-pain-47",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Key and escalation check out.",
+  "checked": [
+   "day 21 of regular cycle is luteal, fits corpus luteum",
+   "Hb 128 to 98 with free fluid to Morison pouch",
+   "pelvic ultrasound first per ACR 2023",
+   "distractor reasons true"
+  ]
+ }
+]

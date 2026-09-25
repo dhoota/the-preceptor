@@ -1,0 +1,397 @@
+[
+ {
+  "id": "arrhythmia-16",
+  "verdict": "HOLD",
+  "questions": [
+   "q2",
+   "q3",
+   "q4"
+  ],
+  "reason": "Keys are correct, but chest-pain-22 in s28 is a near duplicate: teenage basketball player with exertional syncope and chest pain, an uncle's sudden death, a left sternal border murmur, a manoeuvre question and the plan. Keep one of the pair.",
+  "checked": [
+   "exertional syncope high risk per CCS 2020",
+   "HCM ECG: high voltage, lateral Q waves, lateral TWI",
+   "standing from squat louder, handgrip softer",
+   "admit for monitoring and ICD assessment per AHA/ACC 2024 HCM",
+   "similarity scan and read of chest-pain-22: same scenario and manoeuvre teaching"
+  ]
+ },
+ {
+  "id": "arrhythmia-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Score and keys check out.",
+  "checked": [
+   "recomputed CSRS: heart disease 1, SBP 188 above 180 gives 2, axis minus 60 gives 1, total 4",
+   "QRS 118 below 130, QTc 450 below 480, troponin normal",
+   "CSRS 4 to 5 is high risk",
+   "Mobitz II: constant PR, regular P waves",
+   "atropine failed so TCP plus dopamine or epinephrine"
+  ]
+ },
+ {
+  "id": "arrhythmia-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and doses check out.",
+  "checked": [
+   "fixed rate 270 favours SVT",
+   "ice to face first with adequate perfusion",
+   "recomputed adenosine 0.1 x 4.5 = 0.45 mg",
+   "sync 0.5 to 1 J/kg = 2.25 to 4.5 J so 4 J, 18 J is 4 J/kg",
+   "amiodarone 22 mg and procainamide 67 mg match 5 and 15 mg/kg"
+  ]
+ },
+ {
+  "id": "arrhythmia-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and dose check out against the CAEP checklist.",
+  "checked": [
+   "2:1 flutter with two inferior flutter waves per cycle",
+   "onset 3 days so rate control, no cardioversion",
+   "CAEP page opened: diltiazem 0.25 mg/kg, 0.25 x 88 = 22 mg",
+   "4:1 at atrial 300 gives 75"
+  ]
+ },
+ {
+  "id": "arrhythmia-20",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of shock-36 in s50: older woman with diarrhea, AKI with creatinine 248, ramipril, spironolactone and metoprolol, junctional bradycardia in the 30s, BRASH and an epinephrine infusion. Keys are correct, but only one of the pair should ship.",
+  "checked": [
+   "junctional escape at 36 with no P waves",
+   "BRASH mechanism per Farkas 2020",
+   "epinephrine infusion treats rate, pressure and potassium",
+   "hold metoprolol, ramipril, spironolactone",
+   "grep BRASH: s50 shock-36 has same stem pattern and keys",
+   "similarity scan confirms shock-36 as top match"
+  ]
+ },
+ {
+  "id": "arrhythmia-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "Lyme carditis with PR 360 in endemic Nova Scotia",
+   "P 90 and QRS 46 dissociated is third degree",
+   "stable narrow escape: monitor with pads, no PPM",
+   "ceftriaxone 2 g IV for high degree block per Yeung 2019"
+  ]
+ },
+ {
+  "id": "arrhythmia-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "TSH for thyrotoxic features",
+   "beta blocker first per ATA 2016, no asthma or HF in stem",
+   "AF over 48 hours without anticoagulation so defer cardioversion per CCS 2020"
+  ]
+ },
+ {
+  "id": "arrhythmia-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "PE trigger: post op, stopped enoxaparin, calf swelling, SpO2 88",
+   "high pretest so CTPA not D-dimer",
+   "treat PE rather than rate control with RV strain",
+   "S1Q3T3 and V1 to V3 TWI keyed"
+  ]
+ },
+ {
+  "id": "arrhythmia-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "monomorphic VT at 190 in scarred LV",
+   "K 2.9 and Mg 0.58 after furosemide increase",
+   "electrical storm: 3 or more episodes in 24 hours, amiodarone",
+   "sedation to cut sympathetic drive per ESC 2022"
+  ]
+ },
+ {
+  "id": "arrhythmia-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out against CAEP and device guidance.",
+  "checked": [
+   "irregular narrow 170 while awake means inappropriate shocks for AF",
+   "magnet suspends ICD tachy therapy, pacing continues",
+   "external pads while magnet on",
+   "CAEP page: digoxin first line in HF, avoid diltiazem with LV dysfunction",
+   "urgent interrogation before discharge"
+  ]
+ },
+ {
+  "id": "arrhythmia-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out. asthma-copd-19 in s25 repeats this MAT teaching and is triaged there.",
+  "checked": [
+   "MAT: rate over 100, 3 or more P morphologies, varying PR",
+   "treat COPD flare and hypoxemia first",
+   "IV magnesium with Mg 0.62",
+   "grep multifocal: asthma-copd-19 overlaps"
+  ]
+ },
+ {
+  "id": "arrhythmia-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "NSVT after reperfusion needs monitoring only per ESC 2023",
+   "no prophylactic antiarrhythmic",
+   "unstable VT: synchronized cardioversion",
+   "recurrent ST elevation after lysis: rescue PCI"
+  ]
+ },
+ {
+  "id": "arrhythmia-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "reperfusion sinus bradycardia with BP 106/64 observe",
+   "symptomatic hypotension at 38: atropine 1 mg",
+   "inferior MI with hypotension: right sided leads",
+   "progressive PR 200 to 320 then drop: Wenckebach",
+   "shock-35 in s50 overlaps q3 only"
+  ]
+ },
+ {
+  "id": "arrhythmia-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out against the 2025 AHA post-arrest guidance.",
+  "checked": [
+   "temperature control 32 to 37.5 for comatose after any rhythm",
+   "at least 36 hours confirmed in AHA 2025 Part 11 summary",
+   "hypoxic PEA arrest from asthma",
+   "prevent fever afterward"
+  ]
+ },
+ {
+  "id": "arrhythmia-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "sinus bradycardia 46 at 33.5 degrees with good perfusion",
+   "emergent angiography for recurrent VT or VF, not coma alone",
+   "witnessed VF: immediate unsynchronized shock"
+  ]
+ },
+ {
+  "id": "arrhythmia-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and doses check out.",
+  "checked": [
+   "drowning arrest is hypoxic, asystole",
+   "continuous core monitoring and fever prevention in comatose child",
+   "HR 48 with poor perfusion: compressions",
+   "recomputed epinephrine 0.01 x 17 = 0.17 mg, atropine 0.02 x 17 = 0.34 mg"
+  ]
+ },
+ {
+  "id": "arrhythmia-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and QTc check out.",
+  "checked": [
+   "auditory trigger typical of LQT2",
+   "recomputed Bazett 420 / sqrt 0.64 = 525 ms, RR 0.64 matches HR 94",
+   "nadolol first line",
+   "avoid QT drugs, remove loud alarms"
+  ]
+ },
+ {
+  "id": "arrhythmia-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and dose check out.",
+  "checked": [
+   "regular WCT treated as VT, LBBB superior axis RV origin",
+   "procainamide 15 x 72 = 1080 mg for tolerated VT",
+   "epsilon wave with V1 to V4 TWI suggests ARVC",
+   "admit for EP and ICD assessment"
+  ]
+ },
+ {
+  "id": "arrhythmia-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "polymorphic VT with QTc 430 is not torsades",
+   "ischemia with ST depression, K 4.3 and Mg 0.88 normal",
+   "pulseless: unsynchronized shock",
+   "recurrent ischemic PMVT: amiodarone"
+  ]
+ },
+ {
+  "id": "arrhythmia-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "AF offset then 5 s pause with no P waves: tachy brady",
+   "pacemaker before AV or sinus node blocking drugs",
+   "TSH as reversible cause per ACC/AHA/HRS 2018",
+   "amlodipine does not slow sinus node"
+  ]
+ },
+ {
+  "id": "arrhythmia-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "donepezil increase plus metoprolol with HR 42",
+   "no orthostatic drop in stem",
+   "hold both drugs in stable patient",
+   "K 6.1 as added cause",
+   "select 4: digoxin, diltiazem, donepezil, metoprolol"
+  ]
+ },
+ {
+  "id": "arrhythmia-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "spikes without QRS: failure to capture",
+   "symptomatic HR 32 and BP 96/54: TCP",
+   "10 days post implant: lead dislodgement",
+   "pacemaker magnet gives asynchronous fixed rate pacing"
+  ]
+ },
+ {
+  "id": "arrhythmia-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and dose check out.",
+  "checked": [
+   "variable 185 to 210 with upright P in II: sinus tach",
+   "recomputed NS 20 x 8.5 = 170 mL",
+   "220 threshold for infant SVT",
+   "same threshold also taught in arrhythmia-18 q1, minor overlap"
+  ]
+ },
+ {
+  "id": "arrhythmia-39",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and doses check out.",
+  "checked": [
+   "narrow regular with retrograde P and no delta: orthodromic AVRT",
+   "adenosine 0.1 x 45 = 4.5 mg with defibrillator ready",
+   "pre-excited AF with shock: sync 1 J/kg = 45 J",
+   "amiodarone 225 and procainamide 675 match 5 and 15 mg/kg"
+  ]
+ },
+ {
+  "id": "arrhythmia-40",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "U waves most specific for hypokalemia",
+   "bicarbonate 36 with vomiting: metabolic alkalosis",
+   "KCl and magnesium keyed, Mg 0.52 in stem",
+   "insulin and salbutamol would lower K"
+  ]
+ },
+ {
+  "id": "arrhythmia-41",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out. The PACES 2021 threshold of 50/minute was confirmed, and the key rests on symptoms anyway.",
+  "checked": [
+   "P 140 and QRS 55 dissociated: third degree",
+   "maternal lupus: anti-Ro",
+   "PACES 2021 average rate 50 or less for asymptomatic infant confirmed by search",
+   "sweating with feeds and 3 cm liver: symptomatic, admit"
+  ]
+ },
+ {
+  "id": "arrhythmia-42",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "seated syncope with palpitations, prior MI, EF 30 percent",
+   "high risk features: EF, prior MI, palpitations",
+   "inpatient monitoring and EP per CCS 2020"
+  ]
+ },
+ {
+  "id": "arrhythmia-43",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out against the CAEP checklist.",
+  "checked": [
+   "CAEP page: 12 to 48 h needs fewer than 2 CHADS-65 criteria, he has 3",
+   "3 weeks uninterrupted apixaban makes cardioversion safe",
+   "CAEP page: start at 150 to 200 J",
+   "apixaban dose reduction criteria: none met, creatinine 88, weight 84, age 74"
+  ]
+ },
+ {
+  "id": "arrhythmia-44",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "adenosine first after failed vagal in pregnancy per ESC 2019",
+   "metoprolol for prevention, atenolol avoided",
+   "cardioversion safe in all trimesters, usual energy"
+  ]
+ },
+ {
+  "id": "arrhythmia-45",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "unstable SVT with BP 74/46 and crackles: synchronized cardioversion",
+   "ST depression resolves with sinus: demand ischemia",
+   "delta wave would change long term plan"
+  ]
+ },
+ {
+  "id": "arrhythmia-46",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Score and keys check out.",
+  "checked": [
+   "recomputed CSRS: vasovagal predisposition minus 1, ED vasovagal diagnosis minus 2, total minus 3",
+   "options now ordered minus 3 to 1",
+   "very low risk: discharge with education",
+   "Brugada type 1, pre-excitation, QTc 510 keyed"
+  ]
+ },
+ {
+  "id": "arrhythmia-47",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "VF after puck to chest: commotio cordis",
+   "follows commands so no deliberate temperature control",
+   "echocardiogram to exclude structural disease",
+   "commotio in s28 appears only as an option"
+  ]
+ }
+]

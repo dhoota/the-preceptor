@@ -1,0 +1,413 @@
+[
+ {
+  "id": "airway-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and CICO sequence check out.",
+  "checked": [
+   "expanding hematoma plus hoarseness as intubation trigger",
+   "mark CTM before induction per CAFG 2021 Part 2",
+   "failed ETI, BMV and SGA with falling SpO2 is CICO, scalpel-bougie-tube",
+   "right-only breath sounds after cric means endobronchial tube"
+  ]
+ },
+ {
+  "id": "airway-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys follow the NTSP algorithm.",
+  "checked": [
+   "inner cannula first, then cuff deflation, then tube removal per McGrath 2012",
+   "normal upper airway so face mask with stoma occluded",
+   "flat capnography with surgical emphysema means false passage",
+   "9-day percutaneous tract immature"
+  ]
+ },
+ {
+  "id": "airway-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys follow the laryngectomy pathway.",
+  "checked": [
+   "oxygen to stoma after laryngectomy",
+   "infant mask over stoma for ventilation",
+   "missing voice prosthesis explains obstruction",
+   "short stoma to carina distance, endobronchial risk"
+  ]
+ },
+ {
+  "id": "airway-19",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Keys and the lidocaine dose are correct, but sob-16 in s51 is a near duplicate: 48-year-old man with diabetes on metformin, drooling, near normal oropharynx, hyoid tenderness, nasendoscopy and an airway plan. Keep one of the pair.",
+  "checked": [
+   "drooling and tripod posture predict intervention per Berger 2003",
+   "upright nasendoscopy",
+   "awake flexible intubation with ENT",
+   "recomputed lidocaine 9 mg/kg x 70 kg LBW = 630 mg per DAS ATI 2020, distractors 315, 490, 738, 1050 all recomputed",
+   "similarity scan and read of sob-16: same stem details and questions"
+  ]
+ },
+ {
+  "id": "airway-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out. The q2 airway plan also appears in the s41 Ludwig SAMP, which is the place to trim it.",
+  "checked": [
+   "IIO 1.5 cm and woody floor of mouth predict difficult laryngoscopy",
+   "awake nasal FOI per DAS ATI",
+   "dexmedetomidine for light sedation",
+   "awake tracheostomy after failed awake FOI",
+   "grep Ludwig: s41 infectious-diseases overlaps q2 only"
+  ]
+ },
+ {
+  "id": "airway-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and numbers check out.",
+  "checked": [
+   "apnea with pH 7.18 and pCO2 78 means intubation",
+   "3.0 cuffed for infant over 3 kg",
+   "recomputed rocuronium 1.2 x 4.2 = 5.0 mg",
+   "depth 3 x 3.0 = 9 cm, 12 cm is endobronchial",
+   "PALS 2025 cited"
+  ]
+ },
+ {
+  "id": "airway-22",
+  "verdict": "FIX",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Keys match NRP teaching, but all three questions cite the NRP 8th edition of 2021. The 2025 AHA and AAP neonatal guideline now replaces it.",
+  "fix": "Add and cite on q1 to q3: Lee HC and colleagues. Part 5. Neonatal resuscitation. 2025 American Heart Association and American Academy of Pediatrics guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025. Keep the NRP textbook only if updated to the 9th edition.",
+  "checked": [
+   "HR below 60 after 30 s effective PPV: alternative airway then compressions",
+   "tube 3.0 mm for 1 to 2 kg and 28 to 34 weeks",
+   "compressions 3 to 1 with 100% O2 before epinephrine",
+   "2025 AHA/AAP Part 5 existence confirmed by search"
+  ]
+ },
+ {
+  "id": "airway-23",
+  "verdict": "FIX",
+  "questions": [
+   "q2"
+  ],
+  "reason": "The q2 update gives a pulse of 58/minute in a pale, floppy, hypoxic child, which under PALS calls for compressions, and no question or explanation addresses it. Keys are sound.",
+  "fix": "In the q2 update, change 'Her pulse is 58/minute' to 'Her pulse is 66/minute'.",
+  "checked": [
+   "laryngoscopy with Magill forceps first with equipment present",
+   "PALS cuffed formula 3.5 + 4/4 = 4.5 mm",
+   "push object distally when tube meets tracheal obstruction",
+   "rigid bronchoscopy definitive",
+   "PALS HR below 60 with poor perfusion needs CPR"
+  ]
+ },
+ {
+  "id": "airway-24",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Keys and numbers are correct, but sob-21 in s51 is a near duplicate: myasthenia crisis after ciprofloxacin for a UTI, pyridostigmine 60 mg four times daily, prednisone 10 mg, nasal voice, weak cough after sips and the same neuromuscular blocker question. Keep one of the pair.",
+  "checked": [
+   "recomputed FVC 1100/70 = 15.7 mL/kg, below 20",
+   "weak cough after sips and nasal voice in stem",
+   "nondepolarizers prolonged in MG",
+   "sugammadex effective in MG",
+   "similarity scan and read of sob-21: same stem details and q3 teaching"
+  ]
+ },
+ {
+  "id": "airway-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and numbers check out.",
+  "checked": [
+   "recomputed FVC 1400/80 = 17.5 mL/kg, NIF minus 26 weaker than minus 30, per Lawn 2001",
+   "rocuronium 1.2 x 80 = 96 rounded to 100 mg",
+   "succinylcholine hyperkalemia in denervation",
+   "peak up with unchanged plateau means resistance, catheter stops so blocked tube"
+  ]
+ },
+ {
+  "id": "airway-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and numbers check out.",
+  "checked": [
+   "failed home BiPAP with pH 7.24 and drowsy",
+   "shock index 128/104 = 1.2, ketamine 1 mg/kg = 40 mg",
+   "succinylcholine avoided in DMD per Birnkrant 2018",
+   "rocuronium 1.2 x 38 = 45.6 rounded to 45 mg"
+  ]
+ },
+ {
+  "id": "airway-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "avoid PPV in massive PE with RV failure, HFNC while lysis given",
+   "norepinephrine before induction per Kornas 2021",
+   "normocapnia with modest PEEP for RV afterload"
+  ]
+ },
+ {
+  "id": "airway-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "failing BiPAP with pH 7.16 and obtundation",
+   "severe AS: maintain SVR, avoid tachycardia",
+   "post-intubation hypotension with waveform, equal air entry, 23 cm tube"
+  ]
+ },
+ {
+  "id": "airway-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and numbers check out.",
+  "checked": [
+   "NIV preoxygenation per PREOXI 2024",
+   "BMV during apnea per PreVent 2019",
+   "recomputed PBW 50 + 0.91 x 25.6 = 73.3 kg, 6 mL/kg = 440 mL, distractors 540, 720, 900, 220 recomputed",
+   "raise rate for pH 7.21 per ARDSNet"
+  ]
+ },
+ {
+  "id": "airway-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out. Rocuronium over succinylcholine with pending potassium in hyperthermic stimulant toxicity is defensible.",
+  "checked": [
+   "ketamine 1 mg/kg = 75 mg for delayed sequence per Weingart 2015",
+   "BiPAP until SpO2 plateaus",
+   "rocuronium 1.2 x 75 = 90 mg",
+   "continuous waveform capnography for transport"
+  ]
+ },
+ {
+  "id": "airway-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and dose check out. The q1 pediatric IM dose also appears in s23 anaphylaxis items, a teaching overlap only.",
+  "checked": [
+   "epinephrine 0.01 x 20 = 0.2 mg IM",
+   "worsening stridor despite IM and IV epinephrine means early intubation",
+   "ENT at bedside and smaller tubes",
+   "grep peanut: s23 overlaps q1 dose only"
+  ]
+ },
+ {
+  "id": "airway-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "orthopnea, positional stridor and SVC signs predict collapse per Blank 2011",
+   "preserve spontaneous breathing",
+   "reposition upright or lateral on collapse",
+   "awake flexible intubation without paralysis"
+  ]
+ },
+ {
+  "id": "airway-33",
+  "verdict": "FIX",
+  "questions": [
+   "q1"
+  ],
+  "reason": "q1 (support the flexed posture in ankylosing spondylitis, not a rigid collar) repeats the q1 teaching of the ankylosing spondylitis SAMP in s45 multiple-trauma, which has the same scenario. q2 to q4 are distinct airway teaching.",
+  "fix": "Delete q1 so the SAMP keeps q2 to q4, or replace q1 with an airway question. Leave the padding sentence in the stem.",
+  "checked": [
+   "fixed flexion and 2 fingerbreadth opening predict difficult laryngoscopy",
+   "awake FOB for unstable C6 fracture",
+   "neuro check before deep sedation",
+   "grep ankylosing: s45 multiple-trauma teaches same posture point"
+  ]
+ },
+ {
+  "id": "airway-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "RSI with double setup when awake technique not possible",
+   "CSF rhinorrhea contraindicates nasal route",
+   "two rigid suctions and scalpel kit",
+   "ATLS 11th ed cited"
+  ]
+ },
+ {
+  "id": "airway-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and gas interpretation check out. COPD counts under the Walls MOANS stiffness item, which the cited source uses.",
+  "checked": [
+   "beard, edentulous, age over 55, COPD per Walls MOANS",
+   "second generation SGA per CAFG 2021",
+   "auto-PEEP with pH 7.52 and HCO3 30, lower rate"
+  ]
+ },
+ {
+  "id": "airway-36",
+  "verdict": "FIX",
+  "questions": [
+   "q1",
+   "q4"
+  ],
+  "reason": "The q1 explanation states that ventilation is 1 breath every 6 seconds once an advanced airway is in, which is the q4 key. Keys are correct.",
+  "fix": "In the q1 explanation, replace 'Once an advanced airway is in, ventilation is 1 breath every 6 seconds, and 20 breaths per minute raises intrathoracic pressure and cuts venous return.' with 'Ventilating at 20 breaths per minute raises intrathoracic pressure and cuts venous return.'",
+  "checked": [
+   "airway placement without pausing compressions per AHA 2025",
+   "no waveform with ETCO2 2 means esophageal",
+   "abrupt ETCO2 rise 12 to 42 means ROSC",
+   "10 breaths per minute with advanced airway",
+   "q1 explanation gives away q4"
+  ]
+ },
+ {
+  "id": "airway-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "crepitus and hoarseness signal laryngeal injury",
+   "awake flexible intubation to pass tear",
+   "carina seen plus capnography as DAS two point check",
+   "extra airway-49 duplicate is not in the bank"
+  ]
+ },
+ {
+  "id": "airway-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "hoarse voice with stridor after alkali ingestion",
+   "awake flexible intubation with ENT",
+   "topical lidocaine and marked CTM",
+   "no charcoal, no neutralization"
+  ]
+ },
+ {
+  "id": "airway-39",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and tube sizes check out.",
+  "checked": [
+   "drowsy with poor air entry per CPS 2017 croup",
+   "cuffed formula 3.5 + 2/4 = 4.0, half size smaller 3.5",
+   "downsize to 3.0 when subglottis blocks"
+  ]
+ },
+ {
+  "id": "airway-40",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Keys and numbers are correct, but multiple-trauma-40 in s45 is a near duplicate: shoulder shrug only, no sensation below the clavicles, warm dry skin, ventilatory reserve and the c-spine intubation technique. Keep one of the pair.",
+  "checked": [
+   "recomputed FVC 900/80 = 11 mL/kg",
+   "atropine and vasopressor ready for vagal response",
+   "AO Spine 2024 MAP 75 to 80 lower, 90 to 95 upper, 3 to 7 days",
+   "VL with MILS and collar front opened",
+   "similarity scan and read of multiple-trauma-40"
+  ]
+ },
+ {
+  "id": "airway-41",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and numbers check out.",
+  "checked": [
+   "recomputed pCO2 52 x 12/20 = 31",
+   "analgesia first sedation after rocuronium",
+   "tip 1 cm above carina, withdraw 3 cm to about 4 cm",
+   "physostigmine contraindicated in TCA"
+  ]
+ },
+ {
+  "id": "airway-42",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and doses check out.",
+  "checked": [
+   "sit up and lean forward for tonsillar bleed",
+   "volume before induction",
+   "recomputed ketamine 1 x 20 = 20 mg, rocuronium 1.2 x 20 = 24 mg, propofol 60 mg = 3 mg/kg",
+   "two rigid suctions and cuffed tubes"
+  ]
+ },
+ {
+  "id": "airway-43",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and doses check out.",
+  "checked": [
+   "GCS E1 V2 M4 = 7",
+   "ketamine 40/26 = 1.5 mg/kg, propofol 80/26 = 3.1 mg/kg",
+   "ETCO2 22 means hyperventilation, avoid without herniation per BTF 2019"
+  ]
+ },
+ {
+  "id": "airway-44",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "bleeding side down, left lateral decubitus",
+   "large tube for bronchoscopy per Davidson 2020",
+   "right mainstem intubation isolates the healthy lung for a left sided bleed"
+  ]
+ },
+ {
+  "id": "airway-45",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys follow CAFG 2021.",
+  "checked": [
+   "BMI 41 and 1 fingerbreadth thyromental distance",
+   "three attempts then declare failure",
+   "waking not viable after overdose",
+   "flexible scope through second generation SGA"
+  ]
+ },
+ {
+  "id": "airway-46",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys and pressure logic check out.",
+  "checked": [
+   "peak 24 to 48 and plateau 18 to 44, both rose so compliance",
+   "disconnect and hand bag first",
+   "waveform present, catheter passes, left absent air entry, trachea right: decompress left",
+   "multiple-trauma-21 in s45 overlaps partly, different angle"
+  ]
+ },
+ {
+  "id": "airway-47",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys check out.",
+  "checked": [
+   "tamponade: drain before PPV when airway allows",
+   "reduced dose ketamine, low PEEP",
+   "norepinephrine running and pericardiocentesis set up",
+   "ETCO2 fall with normal waveform and hypotension means low cardiac output"
+  ]
+ }
+]
