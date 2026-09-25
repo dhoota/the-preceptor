@@ -1,0 +1,281 @@
+[
+ {
+  "id": "pulmonary-edema-16",
+  "verdict": "FIX",
+  "questions": [
+   "q2"
+  ],
+  "reason": "q2 is answered by elimination. The stem hides the drug name and the explanation admits pioglitazone is the only other diabetes drug listed, so no knowledge of thiazolidinedione fluid retention is needed.",
+  "fix": "In the stem replace 'metformin, a second diabetes tablet he cannot name' with 'metformin, pioglitazone'. In the q2 update replace 'the second diabetes tablet was started 2 months ago' with 'pioglitazone was started 2 months ago'. Delete the first sentence of the q2 explanation.",
+  "checked": [
+   "q1 tadalafil 9 h ago is inside Kloner 48 h window",
+   "q1 furosemide 20 to 40 mg for diuretic naive per ESC",
+   "q3 EF 55%, LVH, BP 194/108 supports antihypertensive intensification",
+   "grep tadalafil: s28 and s09 teach nitrate avoidance, key here differs"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Pickering syndrome picture is complete and keys follow ESC 2024.",
+  "checked": [
+   "recomputed creatinine rise 98 to 162 = 65%",
+   "stem gives bruit, 3 drug HTN, EF 60%, normal wall thickness",
+   "q2 duplex first line",
+   "q3 kidneys over 8 cm for viability"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Rheumatic MS in pregnancy with AF. Rate control, diuretic and LMWH keys are correct.",
+  "checked": [
+   "stem gives loud S1, rumble, childhood monthly penicillin",
+   "q4 enoxaparin 1 mg/kg x 70 kg = 70 mg BID",
+   "DOACs contraindicated in pregnancy and MS",
+   "q3 ACEi, nitroprusside, spironolactone reasons true"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Obstructive mechanical valve thrombosis with surgery on site. Surgery is favoured under both ESC and AHA factors here.",
+  "checked": [
+   "INR 1.3 after 10 days off warfarin, muffled click",
+   "q3 large thrombus, NYHA IV, surgery available favour surgery over lysis",
+   "q4 norepinephrine first for cardiogenic shock"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Re-expansion edema after 4 day collapse. Unclamped drain and CPAP keys are sound.",
+  "checked": [
+   "timeline 40 min after drainage fits",
+   "opacity confined to drained lung",
+   "q2 bubbling drain must not be clamped",
+   "grep re-expansion: s51 covers effusion aspiration limits, different point"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Cocaine pulmonary edema. Benzodiazepine plus nitrate first, intubation on NIV failure, NTG infusion are correct.",
+  "checked": [
+   "q2 pH 7.21, PCO2 58, mask intolerance means NIV failure",
+   "AHA 2008 advises against beta blockers acutely",
+   "labetalol reason matches AHA conditional wording"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Opioid associated noncardiogenic edema. CPAP, repeat naloxone and discharge steps are appropriate.",
+  "checked": [
+   "stem gives normal LV, flat JVP, no vomiting",
+   "q3 RR 8, pinpoint pupils, PCO2 64 at 90 min",
+   "Yakovenko CMAJ 2024 OUD guideline is real and Canadian",
+   "q4 three keys match KF6 and harm reduction"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Post laryngospasm negative pressure edema. Keys are correct.",
+  "checked": [
+   "stem says no vomiting, equal breath sounds, no rash",
+   "q3 SpO2 85 on FiO2 0.8 with fatigue means CPAP failure",
+   "grep negative pressure: no other bank SAMP"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Immersion edema case is clear and follow-up advice is sound. The s36 overlap is gone.",
+  "checked": [
+   "grep environmental-31: now a spearfisher case, no overlap",
+   "grep immersion or wetsuit: no other edema SAMP",
+   "Moon 2016 on single dose sildenafil, not daily"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-25",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of headache-43 (s40). Both are an 8-year-old boy with puffy eyes, cola urine and an untreated sore throat 2 weeks earlier. Both ask for the test that confirms the cause, and they key different answers (urinalysis here, C3 there).",
+  "checked": [
+   "compared with s40 headache-43 stem and keys",
+   "furosemide 1 mg/kg x 26 = 26 mg, saline 520 mL = 20 mL/kg",
+   "creatinine 88 to 214",
+   "q3 and q4 management content is correct and could be moved into a different case"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Checkpoint inhibitor myocarditis with myositis and ptosis. Rebuilt case is coherent and SITC dosing is quoted correctly.",
+  "checked": [
+   "troponin 1850, new RBBB, PR 240, EF 40 given",
+   "SITC methylprednisolone 1000 mg daily 3 to 5 days (lens B corrected)",
+   "old salicylate overlap flag is stale after rebuild",
+   "grep nivolumab: only s48"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Complete heart block with pacing failure. Epinephrine infusion bridge and permanent pacing are correct.",
+  "checked": [
+   "cannon a waves and regular 34 fit CHB",
+   "AHA 2025 epinephrine 2 to 10 mcg/min",
+   "q3 troponin normal and block persists"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Clozapine myocarditis at day 18 with shock. Ronaldson thresholds are met.",
+  "checked": [
+   "troponin 310 vs ULN 14 is over 20 times",
+   "CRP 142 above 100 stop threshold",
+   "CK 180 and no rigidity against NMS",
+   "grep clozapine: s34 is toxicity after smoking cessation, different point"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Numbers are right and bendopnea is the only heart failure symptom among the options. Lower specificity at BMI 43 does not make another option better.",
+  "checked": [
+   "recomputed obesity halved cutoffs 150 and 450",
+   "410 between both sets of cutoffs",
+   "q4 ESC review 1 to 2 weeks",
+   "s15 pe-09 overlap on asthma label is a write-in, q2 obesity point new"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Nonadherence precipitant, 40 mg IV and home support are sound.",
+  "checked": [
+   "furosemide 40 mg daily oral so 40 mg IV is 1x dose",
+   "160 mg = 4 times usual",
+   "CCS 2017 recommends HF disease management programs, specific wording not opened"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Diuretic response assessment and escalation follow ESC and HFA.",
+  "checked": [
+   "80 mg BID = 160 mg daily",
+   "110 mL over 2 h = 55 mL/h",
+   "doubling 160 to 320 mg within ESC daily limits",
+   "q3 80 mL/h still below 100 so add metolazone"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Ottawa Heart Failure Risk Scale total recomputed as 5. Admission follows.",
+  "checked": [
+   "recomputed OHFRS: intubation 2, SpO2 below 90 1, urea 14.6 1, walk HR 116 1 = 5",
+   "arrival HR 104 below 110 scores 0",
+   "score 5 or more is very high risk",
+   "s15 pe-07 teaches walk test, q2 score is new"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-33",
+  "verdict": "HOLD",
+  "questions": [
+   "q3"
+  ],
+  "reason": "q3 keys morphine and says 2.5 mg SC suits stage 4 CKD. Canadian palliative guidance usually prefers hydromorphone or fentanyl in severe renal failure, so the key needs a physician decision.",
+  "checked": [
+   "q1 DNI directive allows NIV",
+   "q2 pH 7.16, PCO2 74, GCS falling means NIV failure",
+   "q3 fentanyl 100 mcg distractor too large for opioid naive",
+   "BC palliative dyspnea guideline cited, not opened"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Fluid overloaded septic shock with low EF. Norepinephrine, loop diuretic and intubation are correct.",
+  "checked": [
+   "recomputed MAP (84+100)/3 = 61",
+   "IVC 2.4 cm noncollapsing and B lines",
+   "q2 furosemide 1 to 2 times 40 mg oral dose",
+   "q3 GCS falling and pH 7.22 on pressor"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "SCAPE in a rural site. Treatments, NTG bolus and mask leak keys are sound.",
+  "checked": [
+   "stem states no PDE5 inhibitor, supports SL nitrate",
+   "ESC 2021 1 to 2 mg NTG bolus wording verified by lens B",
+   "q3 gauge cannot hold 10 cm H2O so leak is the fault",
+   "sob-17 overlap is on infusion, bolus angle new",
+   "s15 pulmonary-edema-01 overlap: q1 immediate treatments repeat, q2 bolus and q3 mask leak are new"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Neurogenic pulmonary edema from SAH. Keys are correct.",
+  "checked": [
+   "stem gives thunderclap headache, confusion, deep TWI",
+   "q2 no antithrombotic with SAH",
+   "q3 PEEP with normocapnia",
+   "grep neurogenic pulmonary edema: only s48"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Grade 2 drowning managed with oxygen and discharged after normalising at 6 hours.",
+  "checked": [
+   "SpO2 92 with local crackles is Szpilman grade 2",
+   "furosemide 1 mg/kg = 17 mg, ceftriaxone 50 mg/kg = 850 mg, methylpred 2 mg/kg = 34 mg",
+   "lens A matched discharge wording to Szpilman text",
+   "stem gives three sided fence for q3"
+  ]
+ },
+ {
+  "id": "pulmonary-edema-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Cardiac wheeze from anterior STEMI. Primary PCI and NIV keys follow CCS and ERS/ATS.",
+  "checked": [
+   "ECG STE V1 to V4 with inferior reciprocal change",
+   "CCS/CAIC 2019 120 min FMC to device",
+   "q3 alert, SpO2 86 on NRB, BP 152/88 suits BiPAP",
+   "s15 pe-03 overlap on wheeze teaching only, q2 and q3 new"
+  ]
+ }
+]

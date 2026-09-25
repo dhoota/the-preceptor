@@ -1,0 +1,377 @@
+[
+ {
+  "id": "tox-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Rebuilt hydroxychloroquine case. Epinephrine, dysrhythmia risk and targeted tests are correct.",
+  "checked": [
+   "QRS 126, QTc 520, K 2.4, BP 84/48 given in stem",
+   "Riou 1988 epinephrine plus diazepam regimen",
+   "q4 three keys acetaminophen, K, ECG",
+   "rebuilt after lens B overlap with seizures-18, now distinct"
+  ]
+ },
+ {
+  "id": "tox-17",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q4"
+  ],
+  "reason": "Near duplicate of loc-03 (s07): older woman with diabetes and CKD (eGFR about 30) hard to rouse from sulfonylurea hypoglycemia. loc-03 already keys octreotide, D10, stopping glyburide, hourly checks and 24 hour admission with the same MCQ option.",
+  "checked": [
+   "opened s07 loc-03 accept lists and q5 options",
+   "octreotide 50 mcg SC q6h matches Canadian Antidote Guide",
+   "q4 update never states octreotide was given, a gap if kept"
+  ]
+ },
+ {
+  "id": "tox-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Metformin associated lactic acidosis meeting EXTRIP criteria. Numbers check out.",
+  "checked": [
+   "recomputed anion gap 137-99-5 = 33",
+   "EXTRIP recommended criteria lactate over 20 and pH 7.0 or less met",
+   "shock-11 (s16) is amlodipine with metformin, different teaching"
+  ]
+ },
+ {
+  "id": "tox-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Valproate coma with hyperammonemia. Carnitine dose and EXTRIP thresholds recomputed.",
+  "checked": [
+   "6800 umol/L x 0.144 = 980 mg/L, above 900 suggested threshold",
+   "L-carnitine 100 mg/kg x 72 = 7.2 g capped at 6 g",
+   "grep valproate overdose: no duplicate"
+  ]
+ },
+ {
+  "id": "tox-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Carbamazepine overdose with MDAC then IHD per EXTRIP. Unit conversions are right.",
+  "checked": [
+   "165 umol/L x 0.236 = 39 mg/L, 220 = 52 mg/L",
+   "EXTRIP suggests ECTR for coma needing ventilation",
+   "SIADH explains Na 128"
+  ]
+ },
+ {
+  "id": "tox-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Rebuilt sustained release KCl overdose. WBI and transfer for dialysis are correct.",
+  "checked": [
+   "60 x 20 mmol = 1200 mmol",
+   "pH 7.38 so no acidosis shift",
+   "q2 rebuilt away from calcium dose overlap",
+   "q1 KF3 tag is loose (noted by lens B2)"
+  ]
+ },
+ {
+  "id": "tox-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Isopropanol with osmolal gap and no acidosis. Arithmetic checks out.",
+  "checked": [
+   "recomputed calc osm 2x140+5.1+4.2 = 289.3, gap 62.7",
+   "recomputed anion gap 10",
+   "s18 tox-06 is ethylene glycol, different"
+  ]
+ },
+ {
+  "id": "tox-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Propranolol overdose. Bicarbonate for QRS, HIET for shock and seizure risk follow AHA 2023.",
+  "checked": [
+   "QRS 128 given",
+   "HIET after fluids and glucagon per AHA 2023",
+   "grep beta blocker overdose: no duplicate"
+  ]
+ },
+ {
+  "id": "tox-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Clonidine toddler, already symptomatic. Keys are sound.",
+  "checked": [
+   "2 x 0.1 mg / 12 kg = 0.017 mg/kg, above Spiller 0.015 mg/kg coma threshold",
+   "HR 74, BP 82/48, 2 mm pupils given",
+   "loc-10 (s07) is a grandmother's-home toddler with sulfonylurea hypoglycemia, different key"
+  ]
+ },
+ {
+  "id": "tox-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Alkali ingestion. Airway first, no decontamination, early endoscopy and perforation risk are correct.",
+  "checked": [
+   "drooling, hoarse voice, ulcerated mucosa given",
+   "Hoffman NEJM 2020",
+   "airway-38 (s21) shares only the airway point, other questions new"
+  ]
+ },
+ {
+  "id": "tox-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Brodifacoum ingestion. Withholding prophylactic vitamin K and high dose oral vitamin K on coagulopathy are defensible.",
+  "checked": [
+   "recomputed 200 g x 0.005% = 10 mg",
+   "INR check at 48 to 72 h per AAPCC",
+   "Gunja 2011 100 mg daily case reports",
+   "grep rodenticide: no duplicate"
+  ]
+ },
+ {
+  "id": "tox-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Hydrogen sulfide knockdown in a manure pit. Supportive care, 24 hour admission and CXR follow ATSDR.",
+  "checked": [
+   "COHb 1.2% excludes CO",
+   "rescuer collapse and faded smell given",
+   "grep manure or H2S: no duplicate"
+  ]
+ },
+ {
+  "id": "tox-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Rebuilt theophylline overdose. MDAC, cautious KCl and targeted tests are correct.",
+  "checked": [
+   "210 umol/L x 0.18 = 38 mg/L",
+   "pH 7.46, K 2.8 shift",
+   "q3 four keys include acetaminophen after lens A2 fix",
+   "old loc-42 overlap removed by rebuild"
+  ]
+ },
+ {
+  "id": "tox-29",
+  "verdict": "FIX",
+  "questions": [
+   "q2"
+  ],
+  "reason": "Keys are otherwise sound. q2 keys a chest radiograph at 6 hours for a child who already has crackles and a saturation of 93%, which reads as delaying imaging in a hypoxic child.",
+  "fix": "Change q2 option D to 'Chest radiograph now and at 6 hours' and add to the explanation that an early film can be normal and is repeated because changes lag.",
+  "checked": [
+   "SpO2 93 then 92 at 4 h with RR 34 supports admission",
+   "no decontamination",
+   "grep lamp oil: no duplicate",
+   "Tormoehlen 2014 advises repeat film at 4 to 6 h, not deferral"
+  ]
+ },
+ {
+  "id": "tox-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Edible cannabis in a toddler. Keys are sound and the source is Canadian.",
+  "checked": [
+   "Zwiebel CFP 2025 Child Health Update",
+   "5 mm pupils, red conjunctivae, ataxia, tachycardia given",
+   "loc-10 (s07) lists cannabis only as a differential"
+  ]
+ },
+ {
+  "id": "tox-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Loperamide cardiotoxicity. Torsades, bicarbonate for QRS and COWS before buprenorphine are correct.",
+  "checked": [
+   "QRS 132, QTc 560, HR 58 given",
+   "Eggleston 2017",
+   "grep loperamide toxicity: no duplicate"
+  ]
+ },
+ {
+  "id": "tox-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Intentional glargine and aspart overdose. D10 with potassium and admission are correct.",
+  "checked": [
+   "K 3.2 supports potassium in infusion",
+   "C-peptide low with injected insulin",
+   "loc-21 (s32) is accidental hypoglycemia after alcohol, different"
+  ]
+ },
+ {
+  "id": "tox-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Colchicine poisoning. Supportive care, marrow and cardiac complications, no effective ECTR are correct.",
+  "checked": [
+   "WBC 18.4 early leukocytosis",
+   "Finkelstein 2010",
+   "grep colchicine overdose: no duplicate"
+  ]
+ },
+ {
+  "id": "tox-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Amatoxin mushroom poisoning. Latency, delayed hepatotoxicity, MDAC and serial INR are correct.",
+  "checked": [
+   "10 h latency plus 14 h symptoms = about 24 h",
+   "ALT 68 and INR 1.1 early",
+   "grep mushroom: no duplicate"
+  ]
+ },
+ {
+  "id": "tox-35",
+  "verdict": "FIX",
+  "questions": [
+   "q1"
+  ],
+  "reason": "Keys are correct. q1 is a dose calculation mapped to Toxicology 7 (order tests that change management), which it does not test.",
+  "fix": "Change q1 keyFeature from toxicology 7 to toxicology 2 (recognize toxidromes), since the dose confirms LAST.",
+  "checked": [
+   "recomputed 40 mL x 10 mg/mL = 400 mg, 400/52 = 7.7 mg/kg",
+   "ASRA 2020 epinephrine 1 mcg/kg or less, avoid vasopressin",
+   "lipid emulsion key"
+  ]
+ },
+ {
+  "id": "tox-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Benzocaine methemoglobinemia with G6PD safety question. Keep this one and drop sob-29.",
+  "checked": [
+   "chocolate blood and SpO2 85 on NRB given",
+   "methylene blue 1 mg/kg",
+   "sob-29 in s51 is a duplicate and marked REJECT"
+  ]
+ },
+ {
+  "id": "tox-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Quetiapine overdose with antimuscarinic signs. Keys are sound.",
+  "checked": [
+   "60 x 300 mg = 18 g maximum",
+   "QRS 96, QTc 480",
+   "airway-45 (s21) is an airway item, different teaching"
+  ]
+ },
+ {
+  "id": "tox-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Benzodiazepine and ethanol sedation, flumazenil risk, then an emerging opioid. Keys hold.",
+  "checked": [
+   "ethanol 42 mmol/L, RR 12 then 8, pupils 3 to 2 mm",
+   "Penninga 2016 flumazenil seizures",
+   "q4 titrated naloxone"
+  ]
+ },
+ {
+  "id": "tox-39",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Rebuilt nitrous oxide myeloneuropathy. MMA and parenteral B12 keys are correct.",
+  "checked": [
+   "MCV 104, absent ankle and brisk knee reflexes given",
+   "Paris 2023 Pract Neurol",
+   "q1 KF1 tag uses patient history rather than collateral, minor",
+   "old GHB overlap with loc-44 removed by rebuild"
+  ]
+ },
+ {
+  "id": "tox-40",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Methamphetamine hyperthermia with rhabdomyolysis. Cooling with sedation and crystalloid are correct.",
+  "checked": [
+   "T 40.4, CK 42000, K 5.6, Cr 190",
+   "urine 20 mL in 2 h",
+   "delirium-agitation-03 (s08) is a write-in on excited delirium with cooling, partial overlap only"
+  ]
+ },
+ {
+  "id": "tox-41",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of gi-bleed-13 (s11): older woman on warfarin for AF with melena after an antibiotic for a UTI, INR about 7 and Hb about 80. It teaches the same interaction, PCC with vitamin K 10 mg IV, and resuscitation.",
+  "checked": [
+   "opened s11 gi-bleed-13 accept lists",
+   "NAC 2022 PCC 3000 units for INR over 5 is correct",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "tox-42",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "MDMA hyponatremia with seizure. Hypertonic saline is the only hypertonic option, so the 100 or 150 mL choice does not change the key.",
+  "checked": [
+   "recomputed calc osm 2x118+6.2+3.6 = 245.8",
+   "measured 248 consistent",
+   "textbook report notes 100 vs 150 mL bolus sources"
+  ]
+ },
+ {
+  "id": "tox-43",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Body packer. WBI while asymptomatic and laparotomy after rupture are correct.",
+  "checked": [
+   "Traub NEJM 2003",
+   "sympathomimetic signs at 6 h",
+   "grep body packing: no duplicate"
+  ]
+ },
+ {
+  "id": "tox-44",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Liquid nicotine exposure in a toddler. Skin decontamination, biphasic course and 6 hour monitoring are correct.",
+  "checked": [
+   "liquid on skin and clothes given",
+   "HR 164 early stimulation phase",
+   "grep nicotine poisoning: no duplicate"
+  ]
+ },
+ {
+  "id": "tox-45",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Repeated supratherapeutic acetaminophen. Keys follow Dart 2023. The venous vs arterial pH point in q3 is handled in the explanation.",
+  "checked": [
+   "2 x 500 mg q4h = 6 g/day",
+   "ALT 3200, INR 2.1",
+   "King's College arterial pH under 7.30"
+  ]
+ },
+ {
+  "id": "tox-46",
+  "verdict": "FIX",
+  "questions": [
+   "q2"
+  ],
+  "reason": "Key 45 mg is right for BC. The explanation says the floor is '30 to 40 mg', but BCCSU says 50% of the dose or 30 mg, whichever is higher.",
+  "fix": "In q2 explanation replace 'or 30 to 40 mg, whichever is higher' with 'or 30 mg, whichever is higher'.",
+  "checked": [
+   "BCCSU: 4 missed doses gives 50% or 30 mg, 5 or more gives max 30 mg (web search)",
+   "half of 90 = 45 mg",
+   "stem names British Columbia"
+  ]
+ },
+ {
+  "id": "tox-47",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Delirium tremens refractory to lorazepam. Phenobarbital, thiamine and aspiration risk are correct.",
+  "checked": [
+   "4 x 2 mg lorazepam = 8 mg",
+   "Rosenson 2013 phenobarbital 10 mg/kg",
+   "delirium-agitation-04 (s08) write-in covers first line DT care, phenobarbital escalation is new"
+  ]
+ }
+]

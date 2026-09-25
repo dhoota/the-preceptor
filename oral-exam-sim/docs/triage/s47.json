@@ -1,0 +1,293 @@
+[
+ {
+  "id": "pre-eclampsia-16",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of abdominal-pain-36 (s19). Both are a woman at about 33 weeks with epigastric pain taken for heartburn, antacids failed, and HELLP labs almost the same (platelets 88, AST about 240, LDH over 700, glucose 5.1, INR 1.0). s15 pre-eclampsia-02 teaches the same point again.",
+  "checked": [
+   "compared stem and labs with s19 abdominal-pain-36: same scenario, q2 same diagnosis key",
+   "s15 pre-eclampsia-02 also teaches reflux vs HELLP",
+   "q3 schistocytes and q4 betamethasone are new and could be moved to another case",
+   "clinical content itself is correct"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys match SOGC and ISSHP. Rural no IV drug setting supports oral nifedipine.",
+  "checked": [
+   "q1 repeat within 15 min per SOGC 2022",
+   "q2 nifedipine 10 mg PO, methyldopa 1000 mg urgent dose per ISSHP table (lens A read full text)",
+   "q3 MgSO4 4 g over 20 min then 1 g/h",
+   "q4 neurological features are an ISSHP delivery indication at 34+3"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Case is plausible and keys hold. Ramoska figure matches the abstract.",
+  "checked": [
+   "Ramoska 1989 abstract: at least 10% pregnant despite favourable history (web search)",
+   "fundus 12 cm above umbilicus fits about 32 weeks",
+   "q3 two systolics 162 and 164 are severe",
+   "q2 PCR 92 above 30 mg/mmol",
+   "q4 continuous CTG from 26 weeks on MgSO4 per ISSHP table 9 (lens A)"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Numbers and SOGC classification are correct.",
+  "checked": [
+   "recomputed average 145/93 from 146/94 and 144/92",
+   "PCR 14 below 30",
+   "q3 ALT 96 above SOGC liver threshold, headache is adverse condition",
+   "q1 large cuff at 33 cm or more per ISSHP",
+   "q4 CHIPS dBP 85 target"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Classification, risk factors, ASA and drug switch are all correct.",
+  "checked": [
+   "q2 four keyed factors are ISSHP and SOGC high risk (BMI over 30, chronic HTN, prior PE, pregestational DM)",
+   "q3 ASA 162 mg at bedtime before 16 weeks, she is 13 weeks",
+   "q4 ACEi and ARB stopped, nifedipine XL first line"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Severe systolic hypertension is treated. Labetalol escalation and MgSO4 duration are correct.",
+  "checked": [
+   "q1 166/94 confirms severe systolic",
+   "Martin 2005 figures 23 of 24 and 3 of 24 (lens A checked abstract)",
+   "q2 labetalol 20 then 40 mg, 300 mg course maximum",
+   "q3 PE at 38+2 so deliver",
+   "q4 ISSHP MgSO4 for proteinuria plus severe HTN, continue 24 h postpartum"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Abruption case is coherent and keys are standard.",
+  "checked": [
+   "stem gives firm tender uterus, dark blood, smoking, BP fall",
+   "q3 FHR 90 for 3 min justifies emergency caesarean",
+   "q4 fibrinogen 1.1 g/L is the dominant deficit so cryoprecipitate",
+   "source Oyelese 2006 real, DOI given"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-23",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "q2 keys 12 hours as the longest acceptable lab interval. It carries ACOG antepartum wording into the postpartum period and a single right number is practice dependent. q1 shows ergonovine 0.2 mg while the Canadian product and SOGC use 0.25 mg.",
+  "checked": [
+   "q2 recomputed 78 x 0.6 = 46.8",
+   "writer notes the 12 h figure is ACOG antepartum wording",
+   "q1 ergonovine key holds, dose 0.2 vs Canadian 0.25 mg/mL",
+   "q3 fibrinogen 3.0 and INR 1.0 argue against DIC",
+   "current q1 no longer duplicates s15 pre-eclampsia-07 or 12"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "TTP features are clear and distinct from HELLP. Keys are correct.",
+  "checked": [
+   "platelets 14, LDH 1680, schistocytes, neuro symptom, fever 37.8 given",
+   "BP 132/82 and PCR 20 exclude pre-eclampsia",
+   "q2 ADAMTS13 below 10% standard threshold",
+   "q3 plasma exchange over delivery"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-25",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Gestational thrombocytopenia case is sound. q3 names ACOG explicitly so the US threshold is fair.",
+  "checked": [
+   "q2 labs normal AST, ALT, LDH, film",
+   "q3 ACOG severe feature below 100",
+   "ISSHP below 50 delivery threshold confirmed by lens A",
+   "ACOG PB 207 on platelet antibody testing"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-26",
+  "verdict": "FIX",
+  "questions": [
+   "q2"
+  ],
+  "reason": "q2 calls severe hypertension on readings of 158/102 and 162/104. Only one reading is 160 or more and the average sits exactly on 160, which is fragile teaching.",
+  "fix": "Change the triage BP in vitals to 164/104 mmHg and in the q2 explanation change 'Her two readings average 160/103 mmHg' to 'Her two readings average 163/104 mmHg'.",
+  "checked": [
+   "recomputed average (158+162)/2 = 160, (102+104)/2 = 103",
+   "q1 creatinine 68 to 132 after PPH on ibuprofen",
+   "q3 BP peak days 3 to 7 per ISSHP",
+   "q1 codeine distractor reason true"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Toxicity sign, fluid limit and delivery indication are all correct.",
+  "checked": [
+   "75 mL over 4 h = 19 mL/h, below ISSHP 30 mL/h warning",
+   "q1 slurred speech listed by ISSHP as toxicity",
+   "q2 80 mL/h per ISSHP",
+   "q3 creatinine 60 to 168 rising, delivery indication",
+   "s15 pre-eclampsia-05 teaches overdose with absent reflexes, this asks an earlier step, not a duplicate"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "PROGNOSIS figures are right and the key is the best option. Limited Canadian ED access is a teaching caveat, not an error.",
+  "checked": [
+   "PROGNOSIS cutoff 38, NPV 99.3% (lens A confirmed)",
+   "recomputed average 143/91",
+   "headache removed from stem so gestational hypertension label holds",
+   "q3 160/110 return threshold"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Stroke in pre-eclampsia case is coherent. Drug choice and distractor reasons are correct.",
+  "checked": [
+   "q3 vomiting and GCS 13 make oral nifedipine unsuitable",
+   "hydralazine 5 mg start and 20 mg maximum per ISSHP (lens A)",
+   "q4 TXA reason cites trial result, not coagulopathy",
+   "pulse 64 allows labetalol"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-30",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "In utero transfer, steroids and the 8 cm exception are sound.",
+  "checked": [
+   "stem gives no NICU and 90 min air transfer",
+   "q2 betamethasone 24 to 34+6 per SOGC 364",
+   "q3 ISSHP proteinuria and uric acid not delivery drivers"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Numbers support pre-eclampsia without full HELLP. Keys hold.",
+  "checked": [
+   "recomputed average 145/95",
+   "platelets 128 and LDH 410 below ACOG HELLP thresholds",
+   "q1 no leukocytes or nitrites argues against pyelonephritis",
+   "q3 admission per ISSHP"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Timing discussion at 35+1 matches SOGC 2022. MgSO4 and nifedipine keys hold.",
+  "checked": [
+   "SOGC discuss delivery 34+0 to 35+6 (lens A via Ontario midwives CPG quoting SOGC)",
+   "PCR 45 above 30",
+   "q3 166 and 164 systolic confirm severe",
+   "ISSHP nifedipine with MgSO4 allowed"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Labetalol total is exactly 300 mg. Keys follow ISSHP.",
+  "checked": [
+   "recomputed 20+40+80+80+80 = 300 mg",
+   "q2 150/100 not severe so maintenance therapy",
+   "q3 three drug classes delivery indication confirmed in ISSHP"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-34",
+  "verdict": "FIX",
+  "questions": [
+   "q2"
+  ],
+  "reason": "Keys are sound. The last sentence of the q2 explanation says bradycardia favours nifedipine or hydralazine over labetalol, which is debatable for a trained athlete with a normal ECG and not needed for the key.",
+  "fix": "In q2 explanation replace 'although it favours immediate-release nifedipine or hydralazine over labetalol as the first drug' with 'although it is a reason to review the choice of first drug'.",
+  "checked": [
+   "q2 172/112 and 170/110 confirm severe",
+   "ACOG CO 767 30 to 60 min window",
+   "q3 31+4 under 33+6 neuroprotection limit",
+   "q1 four labs give SOGC adverse conditions",
+   "s15 pre-eclampsia-14 q1 overlap now removed"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "APS risk factor, pre-viable counselling and HELLP progression are correct.",
+  "checked": [
+   "21+4 is after 20 weeks",
+   "ISSHP pre-viability perinatal mortality above 80% (lens A)",
+   "q3 platelets 96 to 72, schistocytes, low haptoglobin",
+   "APS is ISSHP high risk"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Headache as an SOGC adverse condition makes pre-eclampsia correct. Numbers check out.",
+  "checked": [
+   "recomputed average 143/95",
+   "PCR 18 below 30",
+   "SOGC adverse condition new headache (Ontario CPG quoting SOGC, lens A)",
+   "ACOG CPG 3 2022 is real"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "HELLP thresholds are met and no tocolysis is correct.",
+  "checked": [
+   "platelets 88, AST 212, LDH 690 meet ACOG thresholds",
+   "recomputed average 147/95",
+   "glucose and INR normal against AFLP",
+   "bed rest distractor rejected on own merits"
+  ]
+ },
+ {
+  "id": "pre-eclampsia-38",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Eclampsia causing the crash is well supported. Vaginal labour at 5 cm is correct.",
+  "checked": [
+   "stem gives tongue bite, amnesia, headache, BP 166/108, glucose, alcohol",
+   "q2 CT head for trauma plus eclampsia",
+   "q3 ACOG eclampsia not an indication for caesarean",
+   "q3 no longer repeats s15 pre-eclampsia-04 q4"
+  ]
+ }
+]

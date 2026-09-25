@@ -1,0 +1,274 @@
+[
+ {
+  "id": "suicide-risk-16",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "ASQ positive, non-acute. Brief assessment, low risk discharge and means restriction are correct.",
+  "checked": [
+   "stem reports no to the acuity question, so non-acute positive",
+   "ASQ validated for ages 10 to 21",
+   "q4 two keys lock and dispose",
+   "grep ASQ: no other SAMP"
+  ]
+ },
+ {
+  "id": "suicide-risk-17",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Interrupted CO attempt with a note. Form 1 and risk factor keys are correct for Ontario.",
+  "checked": [
+   "Ontario MHA Form 1 box A serious harm test with attempted self harm",
+   "section 17 is a police power, Form 2 is a JP order",
+   "q3 three risk and three protective factors separable",
+   "grep garage engine: CO items elsewhere are accidental"
+  ]
+ },
+ {
+  "id": "suicide-risk-18",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Dialysis refusal with depressive features. Appreciation question and psychiatric capacity assessment are sound.",
+  "checked": [
+   "Appelbaum four abilities, appreciation applies facts to self",
+   "q3 update gives her statement that her death would not matter",
+   "grep dialysis refusal: no duplicate"
+  ]
+ },
+ {
+  "id": "suicide-risk-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "BC certification criteria and the 48 hour second certificate rule are stated correctly.",
+  "checked": [
+   "BC MHA s22 criteria include unsuitable for voluntary admission",
+   "second certificate by a different physician within 48 h",
+   "post discharge period risk per Chung 2017",
+   "delirium-agitation-27 (s34) asks about the first BC certificate, not the second"
+  ]
+ },
+ {
+  "id": "suicide-risk-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Alberta criteria and the 72 hour conveyance limit match the Act.",
+  "checked": [
+   "opened Alberta MHA s2: potential to benefit from treatment is a criterion",
+   "s4(2): conveyance authority expires 72 h after issue",
+   "s4(1)(b) 24 h runs from arrival",
+   "q4 off site firearm storage"
+  ]
+ },
+ {
+  "id": "suicide-risk-21",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Quebec grave and immediate danger test and 72 hour preventive confinement are correct.",
+  "checked": [
+   "P-38.001 s7 preventive confinement up to 72 h without court order",
+   "distractor wordings match AB, ON and BC tests",
+   "Owens 2002 prior attempt strongest predictor"
+  ]
+ },
+ {
+  "id": "suicide-risk-22",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Low risk discharge, safety plan components and follow-up calls follow Stanley and Brown.",
+  "checked": [
+   "q2 three safety plan elements",
+   "Stanley 2018 JAMA Psychiatry follow-up calls",
+   "s17 suicide-risk-06 is a write-in on a similar safety plan, different scenario"
+  ]
+ },
+ {
+  "id": "suicide-risk-23",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "TCA to SSRI switch and disposal of the remaining supply are sound.",
+  "checked": [
+   "90 tablets less 21 doses = 69 left, matches q3 update",
+   "CANMAT 2023 SSRI first line",
+   "q2 counselling key standard",
+   "s17 suicide-risk-07 keys sertraline start, this case adds TCA means removal"
+  ]
+ },
+ {
+  "id": "suicide-risk-24",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Postpartum depression with passive ideation. Grigoriadis figures used in q2 check out.",
+  "checked": [
+   "Grigoriadis 2017: hanging and jumping more common perinatally (web)",
+   "39% mental health contact within 30 days matches 'about 4 in 10'",
+   "q3 clinic in 2 days with mother at home"
+  ]
+ },
+ {
+  "id": "suicide-risk-25",
+  "verdict": "FIX",
+  "questions": [
+   "q3"
+  ],
+  "reason": "Keys are sound. The case is set in Winnipeg but q3 cites the BC provincial OUD guideline when a national Canadian guideline exists.",
+  "fix": "Replace the q3 source with: Yakovenko I, Mukaneza Y, Germe K, et al. Management of opioid use disorder. 2024 update to the national clinical practice guideline. CMAJ. 2024. https://doi.org/10.1503/cmaj.241173",
+  "checked": [
+   "q1 passive intent key vs accidental features",
+   "Bohnert and Ilgen NEJM 2019 real",
+   "q3 three keys: buprenorphine, named follow-up, naloxone kit",
+   "yawning, irritable, 5 mm pupils fit early withdrawal"
+  ]
+ },
+ {
+  "id": "suicide-risk-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Adolescent self-harm, chosen name as protective factor and safe discharge are correct.",
+  "checked": [
+   "Russell 2018 chosen name use and lower ideation",
+   "q3 update gives safe home, supervision, secured means",
+   "Hawton 2012 self-harm predicts suicide"
+  ]
+ },
+ {
+  "id": "suicide-risk-27",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Preteen suicidal statement handled correctly. The 7 day interval is not in the CPS source but every distractor is clearly worse.",
+  "checked": [
+   "ASQ validated from age 10 (Lanzillo 2019)",
+   "q2 safety plan includes securing methylphenidate",
+   "q3 distractors 3 months, return only, school only, weekly ED"
+  ]
+ },
+ {
+  "id": "suicide-risk-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Unknown ingestion in a patient eyeing the exit. Constant observation, capacity and no further routine labs are correct.",
+  "checked": [
+   "sertraline 20 x 50 mg = 1 g, ECG QRS 88 and QTc 440 unchanged",
+   "ACEP 2017 medical clearance policy",
+   "q2 capacity before AMA"
+  ]
+ },
+ {
+  "id": "suicide-risk-29",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Professional interpreter, PTSD and burden as risk factors, and refugee clinic follow-up are sound.",
+  "checked": [
+   "Karliner 2007 professional interpreters",
+   "child interpreter inappropriate for suicide inquiry",
+   "q2 two risk and four protective factors separable"
+  ]
+ },
+ {
+  "id": "suicide-risk-30",
+  "verdict": "HOLD",
+  "questions": [
+   "q2"
+  ],
+  "reason": "q2 calls a 48-year-old man low risk two days after criminal charges with public exposure, separation and no sleep, and keys discharge home. Legal charges and public shame are strong acute triggers, so many physicians would want a crisis or psychiatry assessment first.",
+  "checked": [
+   "q1 troponin x2 normal so ask about suicide",
+   "SAFE-T bands reviewed against his factors",
+   "q3 ED-SAFE follow-up calls (Miller 2017)"
+  ]
+ },
+ {
+  "id": "suicide-risk-31",
+  "verdict": "HOLD",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "q1 teaches release before age 25 as the top veteran risk marker from a single 1976 to 2012 VAC cohort, which is narrow trivia for an EM exam. q3 is a high risk admission mapped to KF4, which is written for low risk discharge.",
+  "checked": [
+   "VanTil 2021 figures quoted consistently in explanation",
+   "q2 medals and dog are preparatory acts",
+   "q4 VAC Assistance Service covers family 24/7",
+   "s17 suicide-risk-02 overlap flagged by lens A is older adult hidden suicidality, partial"
+  ]
+ },
+ {
+  "id": "suicide-risk-32",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Sextortion case is new to the bank. Keys are sound.",
+  "checked": [
+   "Cybertip.ca advice: stop contact, keep evidence, report",
+   "q3 two keys crisis contacts and follow-up this week",
+   "grep sextortion: no other SAMP"
+  ]
+ },
+ {
+  "id": "suicide-risk-33",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Low risk after a retracted remark. Discharge without Form 1 and documentation keys are correct.",
+  "checked": [
+   "Form 1 serious harm test not met",
+   "q1 SAFE-T low risk features present",
+   "q3 documentation elements"
+  ]
+ },
+ {
+  "id": "suicide-risk-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Repetition rate, caring letters and CBT evidence match the cited sources.",
+  "checked": [
+   "Owens 2002 median 16% non-fatal repetition at 1 year",
+   "Motto 2001 caring letters in those who refused care",
+   "Witt 2021 Cochrane CBT low certainty",
+   "grep caring letters: no duplicate"
+  ]
+ },
+ {
+  "id": "suicide-risk-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Psychotic depression in an older man. Collateral over denial and failed appreciation are correct.",
+  "checked": [
+   "Gournellis 2018 psychotic depression and suicide",
+   "stem says delirium excluded",
+   "q3 rotting body delusion blocks appreciation"
+  ]
+ },
+ {
+  "id": "suicide-risk-36",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Sober reassessment, morning discharge to his support and 9-8-8 are sound.",
+  "checked": [
+   "Borges 2017 acute alcohol and attempts",
+   "9-8-8 national line call or text",
+   "s17 suicide-risk-08 is intoxicated man at bar, different decision"
+  ]
+ },
+ {
+  "id": "suicide-risk-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Post-concussion depression screen and the doubled suicide risk match Fralick 2019.",
+  "checked": [
+   "Fralick 2019 RR about 2",
+   "q3 two keys concussion clinic and mental health follow-up",
+   "grep concussion with suicide: none"
+  ]
+ },
+ {
+  "id": "suicide-risk-38",
+  "verdict": "FIX",
+  "questions": [
+   "q3"
+  ],
+  "reason": "Keys are sound. q3 is a high lethality attempt asking to go home but is mapped to KF4, which is for low risk discharge.",
+  "fix": "Change q3 keyFeature from suicide-risk 4 to suicide-risk 3 (patient who wants to leave).",
+  "checked": [
+   "bilateral calcaneal and L1 fractures fit feet first fall",
+   "q1 chest height railing argues against slipping",
+   "q3 update: she wants to go home"
+  ]
+ }
+]

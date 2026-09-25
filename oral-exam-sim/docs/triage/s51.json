@@ -1,0 +1,440 @@
+[
+ {
+  "id": "sob-16",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of airway-19 (s21), which has the same title and the same 48-year-old man with diabetes on metformin, drooling, a near normal oropharynx and hyoid tenderness. Both key nasendoscopy sitting upright and awake intubation with ENT ready.",
+  "checked": [
+   "opened s21 airway-19 stem and keys",
+   "vitals nearly identical (pulse 116, RR 22, SpO2 96%)",
+   "clinical content is correct"
+  ]
+ },
+ {
+  "id": "sob-17",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3",
+   "q4"
+  ],
+  "reason": "Near duplicate of s15 pulmonary-edema-01 (woman with HTN and diabetes who woke at night, bolt upright, few words, crackles, high dose nitrate, ECG and troponin for the trigger) and pulmonary-edema-08 (NIV failure, intubate). pulmonary-edema-35 in s48 covers the same ground as an MCQ.",
+  "checked": [
+   "opened s15 pe-01 and pe-08 stems and keys",
+   "q2 NTG 100 mcg/min matches s15 pe-01 q2 key",
+   "keys themselves are correct"
+  ]
+ },
+ {
+  "id": "sob-18",
+  "verdict": "REJECT",
+  "questions": [
+   "q3",
+   "q4"
+  ],
+  "reason": "Repeats asthma-copd-36 (s25) in q3 (IV magnesium after incomplete response) and q4 (quiet chest with drowsiness is impending respiratory failure). asthma-copd-20 already works through a PRAM of 10 from the same five findings.",
+  "checked": [
+   "recomputed PRAM 10 (2+2+2+2+2)",
+   "magnesium 1 g / 22 kg = 45 mg/kg",
+   "opened s25 asthma-copd-20 and -36 keys",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-19",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Keys follow CPS and PARIS. Overlap with asthma-copd-16 (s25) is partial and a physician may want q3 varied.",
+  "checked": [
+   "SpO2 88 below CPS 90% threshold",
+   "HFNC 2 L/kg x 4.6 kg = 9.2 L/min",
+   "q2 update states no apnea",
+   "s25 asthma-copd-16 asks the same q3 prompt with a different key"
+  ]
+ },
+ {
+  "id": "sob-20",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Anemia from GI bleeding as a non-pulmonary cause of dyspnea. Numbers and keys check out.",
+  "checked": [
+   "Hb 128 to 64 is half",
+   "urea 18.2 high relative to creatinine",
+   "one unit then reassess per restrictive strategy",
+   "grep melena with dyspnea: no duplicate"
+  ]
+ },
+ {
+  "id": "sob-21",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of airway-24 (s21): myasthenia gravis on pyridostigmine 60 mg QID and prednisone 10 mg after ciprofloxacin, nasal voice, weak cough after sips, FVC based intubation and increased rocuronium sensitivity.",
+  "checked": [
+   "opened s21 airway-24 keys, q3 same rocuronium key",
+   "FVC 900/72 = 12.5 mL/kg",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-22",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of chest-pain-35 (s28): 63-year-old woman with metastatic cancer, JVP to the angle of the jaw, muffled heart sounds, clear lungs, pulsus. Same three keys (tamponade, bedside echo, pericardiocentesis).",
+  "checked": [
+   "opened s28 chest-pain-35 keys",
+   "pulse pressure 92-74 = 18",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-23",
+  "verdict": "HOLD",
+  "questions": [
+   "q3"
+  ],
+  "reason": "q3 keys serial leg ultrasound after a nondiagnostic V/Q in a patient with a Wells score of 7.5. Thrombosis Canada supports it, but the study behind that pathway used angiography for high pretest probability, and many would repeat CTPA. A physician must pick the key or lower the pretest probability.",
+  "checked": [
+   "recomputed Wells 3+1.5+1.5+1.5 = 7.5",
+   "q2 CT nondiagnostic at segmental level so V/Q",
+   "lens A2 notes Wells 1998 pathway difference",
+   "dvt-pe-19 (s33) shares the lap chole Wells setting but keys differ"
+  ]
+ },
+ {
+  "id": "sob-24",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of dvt-pe-31 (s33): sudden dyspnea after lower limb surgery with a swollen tender calf, imaging unavailable, Wells score, and proximal DVT on ultrasound meaning no further lung imaging. Only q4 (UFH at eGFR 15) is new.",
+  "checked": [
+   "recomputed Wells 3+3+1.5+1.5 = 9",
+   "opened s33 dvt-pe-31: q4 key 'No further imaging to confirm PE'",
+   "q4 UFH at CrCl under 30 is correct"
+  ]
+ },
+ {
+  "id": "sob-25",
+  "verdict": "REJECT",
+  "questions": [
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of infectious-diseases-43 (s41): 3-year-old after a cold with 3 days of fever, refusal to eat, drooling, stiff neck. Same diagnosis key and the same contrast CT key, from the same Craig and Schunk source.",
+  "checked": [
+   "opened s41 infectious-diseases-43 keys",
+   "dexamethasone 9 mg = 0.6 mg/kg x 15",
+   "q1 and q4 are new but the case is the same"
+  ]
+ },
+ {
+  "id": "sob-26",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Post-intubation tracheal stenosis misdiagnosed as asthma. Keys are correct and sources are real.",
+  "checked": [
+   "Klopper 2025 meta-analysis exists (Eur Arch ORL, PMC13002695)",
+   "fixed obstruction flattens both limbs",
+   "q3 wording avoids a lumen size claim",
+   "old Ludwig overlap flag is stale after rebuild"
+  ]
+ },
+ {
+  "id": "sob-27",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of asthma-copd-24 (s25): COPD with bullae, sudden right pleuritic pain while carrying groceries, secondary pneumothorax, small bore drain, and controlled oxygen to 88 to 92%.",
+  "checked": [
+   "opened s25 asthma-copd-24 keys",
+   "gas pH 7.26 with PaCO2 68 and HCO3 30 checked by lens B",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-28",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "ROX and CURB-65 recomputed. HFNC and intubation keys are sound.",
+  "checked": [
+   "recomputed ROX 90/0.6/32 = 4.69 and each distractor",
+   "recomputed CURB-65 = 2",
+   "Rochwerg 2020 strong recommendation for HFNC",
+   "no other ROX question in bank"
+  ]
+ },
+ {
+  "id": "sob-29",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Duplicate of tox-36 in s53: benzocaine spray, chocolate brown blood, co-oximetry confirms, methylene blue 1 mg/kg. Keep tox-36, which sits in the toxicology topic and adds the G6PD question.",
+  "checked": [
+   "compared with s53 tox-36 keys",
+   "methylene blue 1 mg/kg x 60 = 60 mg",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-30",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "The generator carbon monoxide cluster with co-oximetry, 100% oxygen and hyperbaric criteria is already in tox-12 (s18), headache-12 (s11), ems-15 (s09) and seizures-46 (s49).",
+  "checked": [
+   "opened s18 tox-12 and s11 headache-12 prompts",
+   "COHb half-life on oxygen claim is standard",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-31",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Multiple coexisting causes of dyspnea. Keys follow CAEP and ATS/IDSA. q2 repeats the teaching of arrhythmia-08 (s03) but the case is distinct.",
+  "checked": [
+   "stem now states no chest pain",
+   "bronchial breathing at left base only",
+   "CAEP 2021 secondary AF treat cause",
+   "s03 arrhythmia-08 has the same secondary AF point"
+  ]
+ },
+ {
+  "id": "sob-32",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of asthma-copd-26 (s25), titled 'Pressure falls after the tube': post intubation hypotension in severe asthma, disconnect first, then reduce minute ventilation and accept hypercapnia.",
+  "checked": [
+   "opened s25 asthma-copd-26 keys",
+   "tidal 500 mL at 80 kg",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-33",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of asthma-copd-18 (s25): 67-year-old heavy smoker labelled COPD by his family physician, inhalers failed, noisy breathing and weight loss from an upper or central airway tumour. It also overlaps sob-26 in this batch. The awake tracheostomy in q3 is new and could be kept in a rebuild.",
+  "checked": [
+   "opened s25 asthma-copd-18 stem and keys",
+   "CAFG 2021 awake front of neck access for critical glottic obstruction",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-34",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Adult choking sequence matches AHA 2025. No adult choking SAMP elsewhere.",
+  "checked": [
+   "AHA 2025 adds back blows before abdominal thrusts for adults",
+   "q2 pulse check limit 10 s",
+   "grep choking: other items are pediatric"
+  ]
+ },
+ {
+  "id": "sob-35",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Light's criteria recomputed. Thoracentesis limits follow BTS 2023.",
+  "checked": [
+   "recomputed 42/68 = 0.62, 380/210 = 1.81, 2/3 of 250 = 167",
+   "BTS 1.5 L limit",
+   "grep Light's criteria: no duplicate"
+  ]
+ },
+ {
+  "id": "sob-36",
+  "verdict": "REJECT",
+  "questions": [
+   "q2",
+   "q3"
+  ],
+  "reason": "Repeats chest-pain-15 (s05): rural site 3 hours from PCI, pharmacoinvasive lysis and half dose tenecteplase at 75 or older. q2 ECG text is word for word the same as pulmonary-edema-38 q2.",
+  "checked": [
+   "TNK 68 kg band 35 mg, half 17.5 mg",
+   "opened s05 chest-pain-15 explanation on half dose at 75",
+   "compared ECG update with s48 pe-38"
+  ]
+ },
+ {
+  "id": "sob-37",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Obesity hypoventilation case is new to the bank. Keys follow ATS 2019 and BTS/ICS.",
+  "checked": [
+   "Henderson-Hasselbalch for pH 7.24 checked by lens A2",
+   "q3 home NIV until sleep study per ATS",
+   "grep obesity hypoventilation: no other SAMP"
+  ]
+ },
+ {
+  "id": "sob-38",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of chest-pain-24 (s28): HbSS on hydroxyurea and folic acid after a pain crisis, baseline Hb about 85, acute chest syndrome, ceftriaxone with azithromycin, oxygen, incentive spirometry and exchange transfusion.",
+  "checked": [
+   "opened s28 chest-pain-24 options and keys",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-39",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of infectious-diseases-26 (s41): MSM with thrush, 3 weeks of dry cough, weight loss, interstitial opacities, HIV test and TMP-SMX with prednisone.",
+  "checked": [
+   "opened s41 infectious-diseases-26 keys",
+   "recomputed A-a gradient 150 - 40 - 62 = 48",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-40",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of asthma-copd-34 (s25): school age child after a diarrheal illness with a gallop, liver 4 cm below the margin and capillary refill of 4 seconds from myocarditis, confirmed on cardiac ultrasound.",
+  "checked": [
+   "opened s25 asthma-copd-34 stem and keys",
+   "epinephrine vs fluid options recomputed at 30 kg",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-41",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of chest-pain-39 (s28): panic disorder on sertraline and a combined pill after a long flight, with a saturation of 94% as the finding against panic, then imaging for PE.",
+  "checked": [
+   "opened s28 chest-pain-39 keys, q1 same SpO2 94% key",
+   "PERC fails on HR, SpO2, estrogen",
+   "Wells 1.5"
+  ]
+ },
+ {
+  "id": "sob-42",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2",
+   "q3"
+  ],
+  "reason": "Near duplicate of airway-08 (s02): return after day surgery thyroidectomy with a tense neck and stridor. airway-08 q2 is an MCQ with the same key, open the wound at the bedside.",
+  "checked": [
+   "opened s02 airway-08 stem and q2 options",
+   "DAS 2022 guideline is real",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-43",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Epoprostenol interruption crisis is new to the bank. Keys match Wilcox 2015.",
+  "checked": [
+   "grep epoprostenol: no other SAMP",
+   "lactate 4.6 marks hypoperfusion",
+   "lens A2 checked each point against Wilcox"
+  ]
+ },
+ {
+  "id": "sob-44",
+  "verdict": "REJECT",
+  "questions": [
+   "q2",
+   "q3"
+  ],
+  "reason": "q2 and q3 repeat asthma-copd-37 (s25) with near identical options: opioid toxicity over stroke, COPD, pneumonia and PE, then naloxone 0.04 mg IV over flumazenil 0.2 mg and naloxone 2 mg.",
+  "checked": [
+   "opened s25 asthma-copd-37 options and keys",
+   "gas pH 7.21, PCO2 74",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-45",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q2"
+  ],
+  "reason": "Near duplicate of s15 pulmonary-edema-12, which has the same title and the same scenario (heart failure, second unit at 250 mL/hour, dyspnea 40 minutes in, TACO, stop and diurese).",
+  "checked": [
+   "opened s15 pe-12 stem and prompts",
+   "temperature 37.0 to 37.2",
+   "keys are correct"
+  ]
+ },
+ {
+  "id": "sob-46",
+  "verdict": "READY",
+  "questions": [],
+  "reason": "Pediatric empyema case with Canadian sources. Keys are sound.",
+  "checked": [
+   "CPS 2015 reassess at 48 to 72 h",
+   "CPS 2011 early drainage in moderate to severe distress",
+   "BTS 2011 oxygen at 92% or below",
+   "grep empyema: no pediatric duplicate"
+  ]
+ },
+ {
+  "id": "sob-47",
+  "verdict": "REJECT",
+  "questions": [
+   "q1",
+   "q3"
+  ],
+  "reason": "Near duplicate of s15 pulmonary-edema-10: 31-year-old weeks after a vaginal delivery with gestational hypertension, cough, orthopnea and a raised JVP from peripartum cardiomyopathy.",
+  "checked": [
+   "opened s15 pe-10 stem",
+   "EF under 45% definition correct",
+   "keys are correct"
+  ]
+ }
+]
