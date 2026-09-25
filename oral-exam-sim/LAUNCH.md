@@ -58,6 +58,8 @@ The app record exists under `com.preceptor.oral`. Update the name to Preceptor: 
 
 ## 4. Google Play Console
 
+The app is a Draft with zero testers. Subscriptions can only be created after a bundle with billing is uploaded. Production access needs a closed test with at least 12 opted-in testers for 14 days first. Play is therefore at least two weeks out. The ordered steps are at the top of `docs/SUBMISSION-CHECKLIST.md`.
+
 1. Rename the app to Preceptor: CCFP-EM.
 2. Monetize > Products > Subscriptions. Create three subscriptions with the same product IDs: `ccfpem_complete_1y`, `ccfpem_written_1y` and `ccfpem_oral_1y`. Give each one auto-renewing base plan with a billing period of 1 year (for example base plan ID `yearly`) at the prices above. Activate the base plans. Play has no subscription group, so the app itself replaces Written or Oral when a subscriber upgrades to Complete. It passes the old product to Play Billing with immediate time proration, so nobody pays for both. If any `_lifetime` or `_11mo` products were created in Play, leave them inactive. Play IDs cannot be reused either.
    Then in RevenueCat:

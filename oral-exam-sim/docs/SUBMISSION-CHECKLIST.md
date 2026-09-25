@@ -6,6 +6,33 @@ Nothing here happens automatically. No step in this repository builds, uploads o
 
 Store menus get renamed from time to time. If a screen name below does not match exactly, look for the nearest match.
 
+## Critical path: Google Play is at least 14 days away
+
+Read this first. The Play launch is gated by Google's timeline, not by the build.
+
+State on 25 September 2026: Preceptor: CCFP-EM is a Draft in Play Console with zero testers. No bundle has been uploaded.
+
+1. **Upload a bundle with billing.**
+   - Play will not let you create subscriptions until a bundle that uses Play Billing has been uploaded.
+   - This app's bundle includes Play Billing through RevenueCat.
+   - Steps D3 and F0 below.
+2. **Create the three annual subscriptions.**
+   - Step B1, only after step 1.
+   - Then do B2 and B3 in RevenueCat.
+3. **Run a closed test with at least 12 opted-in testers for 14 days in a row.**
+   - Google requires this before you can even apply for production access.
+   - The 14 days start when 12 testers have opted in, not when you invite them.
+   - Recruit the testers now, before the build exists. See F0.
+4. **Apply for production access.**
+   - Screen: Play Console > Dashboard.
+   - Answer Google's questions about the closed test.
+   - Google then reviews the application, which can take up to about a week.
+5. **Release to production.** Step F4.
+
+So the earliest Play launch is 14 days after the 12th tester opts in, plus Google's review of the application, plus review of the release.
+
+The App Store has no such wait. It needs only the `appl_` key pasted in (A4), a build (D2) and App Review. So iOS will very likely ship first. Nothing in the app needs both stores live at once.
+
 ## Facts you will need
 
 | Item | Value |
@@ -50,6 +77,7 @@ Store menus get renamed from time to time. If a screen name below does not match
   - support is at preceptor.app@gmail.com
 
 **A4. iOS RevenueCat key.**
+- The iOS app in RevenueCat exists. You paste the key yourself. This is the only step left on the RevenueCat side for iOS.
 - Screen: RevenueCat > Preceptor project > API keys.
 - Copy the public key that starts `appl_` for the app config "Preceptor: CCFP-EM (App Store)".
 - It must replace `appl_REPLACE_WITH_CCFPEM_IOS_PUBLIC_KEY` on line 21 of `src/lib/purchases.ts`.
@@ -59,6 +87,7 @@ Store menus get renamed from time to time. If a screen name below does not match
 ## Phase B. Google Play products and RevenueCat
 
 **B1. Create the three subscriptions.**
+- **Blocked until a bundle is uploaded (D3 and F0).** Play disables subscription setup until then. This is why the annual products could not be made yet.
 - Screen: Play Console > Preceptor app > Monetize with Play > Products > Subscriptions > Create subscription.
 - Make one per row:
 
@@ -156,6 +185,7 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
 - Screen: the same Codemagic app > Start new build.
 - Workflow: `android-play-internal`.
 - It builds a signed bundle and uploads it to the Play internal testing track only.
+- **UNKNOWN:** Play usually refuses uploads through its API while an app is still a Draft that has never had a release. The error says only draft releases are allowed. If the upload step fails that way, take the `.aab` from the Codemagic build's artifacts. Then upload it by hand in step F0.
 
 **D4. Test on devices.**
 - Install from TestFlight and from the Play internal testing link.
@@ -204,6 +234,16 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
 
 ## Phase F. Submit on Google Play
 
+**F0. Closed test (start this as early as you can).**
+- Recruit at least 12 testers now. Each needs a Google account and must agree to stay opted in for 14 days. Colleagues and residents are fine. Recruit a few extra in case some drop out.
+- Screen: Play Console > the app > Test and release > Testing > Closed testing > Create track, or use the default "Closed testing - Alpha" track.
+- Testers: add an email list with the testers' Google account addresses, or a Google Group.
+- Release: create a release on the closed track. Choose "Add from library" to reuse the bundle from D3. If D3 could not upload, upload the `.aab` here by hand.
+- Countries: at least Canada.
+- Send for review. When the closed test is live, copy the opt-in link and send it to every tester. A tester counts only after opening the link and choosing to join.
+- Keep at least 12 opted in for 14 days in a row. Testers may also give feedback. Google asks about the test when you apply for production.
+- After 14 days: Dashboard > "Apply for production". Answer the questions. Wait for Google's decision.
+
 **F1. Main store listing.**
 - Screen: Play Console > the app > Grow users > Store presence > Main store listing.
 - Paste:
@@ -240,7 +280,7 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
 - Release notes: section "Release notes (500)" in `store/listing.md`.
 - Countries: see the UNKNOWN in B1.
 - Then choose Review release, then Start rollout to Production.
-- **UNKNOWN:** a personal developer account created after November 2023 must first run a closed test with at least 12 testers for 14 days before Production unlocks. If the Production button is locked, that is why. An organisation account is exempt. Only you can see which kind of account this is.
+- Production stays locked until Google grants production access after the closed test in F0. See the critical path at the top.
 
 ## Phase G. After approval
 
@@ -251,9 +291,9 @@ All of these are in App Store Connect > Apps > the app with bundle `com.precepto
 ## Still unknown, all in one place
 
 - Whether Draft (unsigned) SAMPs may be visible at launch (A1).
-- The iOS `appl_` key (A4).
 - Countries to sell in (B1, C5, F4).
 - The state of build 7 in App Review (D2).
 - The copyright line (E1).
 - The Play health apps declaration (F2).
-- Whether the Play account needs the 12 tester, 14 day closed test (F4).
+- Whether the Codemagic upload works while the Play app is a Draft, or the first bundle must go up by hand (D3).
+- Who the 12 closed testers are (F0).
