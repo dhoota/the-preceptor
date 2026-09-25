@@ -1086,65 +1086,61 @@ export const ARRHYTHMIA_S24: Samp[] = [
   {
     id: "arrhythmia-27",
     topic: "arrhythmia",
-    title: "Pain eases while the team is on the way",
-    stem: "A 57-year-old man presents to the emergency department of a PCI centre at 02:00 with 90 minutes of central chest pressure. His ECG shows 3 mm ST elevation in V2 to V5. The catheterization laboratory team has been called in and will arrive in 30 minutes. He has received ASA, ticagrelor and IV heparin. He has hypertension and takes ramipril.\n\nTen minutes later his pain suddenly eases. A repeat ECG shows the ST elevation has fallen by more than half. The monitor then shows a regular wide complex rhythm at 88/minute for about a minute, with sinus rhythm before and after it. He is alert and comfortable. Potassium is 4.2 mmol/L and magnesium is 0.9 mmol/L.",
-    vitals: { temperature: "36.7°C oral", pulse: "86/minute", resp: "16/minute", bp: "126/76 mmHg", o2sat: "97% on room air", weight: "84 kg" },
+    title: "Pressure while gardening",
+    stem: "A 74-year-old woman presents to the emergency department of a PCI centre with 50 minutes of central chest pressure and nausea that began suddenly while she was gardening. She has permanent atrial fibrillation. She stopped apixaban 6 days ago for a colonoscopy and has not restarted it. Three days ago her family physician started clarithromycin 500 mg twice daily for bronchitis. She also takes furosemide 40 mg daily, atorvastatin 40 mg daily and pantoprazole 40 mg daily.\n\nHer ECG shows atrial fibrillation at 92/minute with 3 mm ST elevation in II, III and aVF. She has received ASA 160 mg chewed and heparin 5 000 units IV. The catheterization laboratory team has been called in.",
+    vitals: { temperature: "36.8°C oral", pulse: "92/minute irregular", resp: "18/minute", bp: "134/78 mmHg", o2sat: "96% on room air", weight: "68 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following best explains the new wide complex rhythm?",
-        options: ["Complete heart block", "Extension of the infarct", "Low potassium level", "Scar-related ventricular tachycardia", "Spontaneous reperfusion"],
-        correct: 4,
-        explanation:
-          "Sudden relief of pain with more than 50% resolution of ST elevation, followed by a regular wide rhythm at 88/minute, points to spontaneous reperfusion of the artery with an accelerated idioventricular rhythm, a rhythm often seen during reperfusion that is usually benign and well tolerated. Infarct extension brings more pain and ST elevation, not less. Complete heart block would show P waves marching through at a separate rate, and he was in sinus rhythm before and after the run. His potassium of 4.2 mmol/L is normal. A ventricular rhythm below 100/minute is too slow to be called ventricular tachycardia.",
+        update: "Twenty minutes later her pain eases and the ST elevation falls by more than half. The monitor then shows frequent ventricular ectopic beats and three runs of 5 wide beats at 150/minute. Her BP is 128/74 mmHg. Potassium is 3.1 mmol/L and magnesium is 0.84 mmol/L.",
+        prompt: "Which of the following is the most appropriate treatment for her ventricular ectopy now?",
+        options: ["amiodarone 150 mg IV", "lidocaine 100 mg IV", "potassium chloride 20 mmol IV", "procainamide 15 mg/kg IV", "No drug treatment"],
+        correct: 2,
+        explanation: "Sudden easing of pain with more than half of the ST elevation resolving points to reperfusion, and ventricular ectopy with short runs that end by themselves is common around an infarct. These runs last seconds and her BP is normal, so they do not need an antiarrhythmic drug. Her potassium of 3.1 mmol/L, while she takes furosemide, is the abnormality to correct, because treating hypokalemia and hypomagnesemia is a core part of managing ventricular arrhythmias after infarction. Lidocaine given to prevent arrhythmias after infarction has been linked to higher mortality, and amiodarone is not recommended for routine suppression. Procainamide is another antiarrhythmic with no role for brief runs that leave her circulation intact. No drug treatment would leave the low potassium uncorrected.",
         keyFeature: { topic: "arrhythmia", n: 7 },
-        source: "riera-aivr"
+        source: "frampton-2023"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate management of this rhythm?",
-        options: ["amiodarone 150 mg IV", "atropine 0.5 mg IV", "lidocaine 100 mg IV", "Monitor, then angiography", "Overdrive ventricular pacing"],
-        correct: 3,
-        explanation:
-          "His rhythm is brief, he is alert and his BP is normal, so it needs monitoring only. Antiarrhythmic drugs are not recommended for ventricular arrhythmias that cause no symptoms or hemodynamic change after a myocardial infarction, so lidocaine and amiodarone add risk without benefit. Easing of pain and ST elevation does not remove the culprit lesion, so he still needs urgent angiography. Atropine and overdrive pacing treat a slow rhythm or recurrent tachycardia, which he does not have.",
+        update: "Fifteen minutes later her ventricular rate falls to 44/minute. The rhythm is still irregular, with narrow QRS complexes, and the ST elevation has not returned. She is alert and pain free, with warm hands. Her BP is 116/70 mmHg.",
+        prompt: "Which of the following best explains her slower ventricular rate?",
+        options: ["Complete heart block from infarct extension", "Drug effect on the AV node", "Increased vagal tone after reperfusion", "Reocclusion of the infarct artery", "Sinus node dysfunction"],
+        correct: 2,
+        explanation: "Slow AV conduction after an inferior infarct comes mainly from ischemia or from enhanced vagal activity at the AV node, and it often recovers once the artery reopens and the high vagal tone settles. Her pain has gone and the ST elevation has not returned, so increased vagal tone after reperfusion fits best. It tends to be transient. She is alert, warm and normotensive, so she needs monitoring only, with atropine or pacing kept for symptoms or hemodynamic compromise. Reocclusion would bring back pain and ST elevation. Complete heart block would give a regular escape rhythm, and hers is still irregular. She is in atrial fibrillation, so the sinus node does not set her rate, and none of her medications slows the AV node.",
         keyFeature: { topic: "arrhythmia", n: 7 },
-        source: "esc-acs-2023"
+        source: "frampton-2023"
       },
       {
         id: "q3",
         kind: "single",
-        update: "Twenty minutes later his chest pain returns. He becomes confused and clammy. The monitor shows polymorphic ventricular tachycardia at 220/minute, and a weak carotid pulse is felt. BP is 70/40 mmHg.",
-        prompt: "Which of the following is the most appropriate immediate treatment?",
-        options: ["amiodarone 150 mg IV", "Immediate shock at 200 J", "lidocaine 100 mg IV", "magnesium sulfate 2 g IV", "procainamide 15 mg/kg IV"],
+        update: "Thirty minutes later, before she leaves for angiography, she has repeated runs of polymorphic ventricular tachycardia with a twisting QRS axis. Each run ends by itself within 10 seconds. Between runs the QTc is 570 ms. She is alert, with BP 112/66 mmHg.",
+        prompt: "Which of the following is the most appropriate immediate treatment for her?",
+        options: ["amiodarone 150 mg IV", "magnesium sulfate 2 g IV", "procainamide 15 mg/kg IV", "Synchronized cardioversion", "Unsynchronized shock now"],
         correct: 1,
-        explanation:
-          "Polymorphic ventricular tachycardia with confusion and a BP of 70/40 mmHg is unstable, and it is terminated with an immediate high-energy electrical shock, more than 150 J with a biphasic defibrillator, not with drugs. Amiodarone is added when polymorphic tachycardia does not respond to shocks, and lidocaine is not a first treatment for an unstable rhythm. Procainamide suits a tolerated monomorphic ventricular tachycardia. Magnesium is used for torsades with a long QT and does not reliably end an unstable polymorphic rhythm.",
+        explanation: "Short runs of polymorphic ventricular tachycardia with a twisting axis and a QTc of 570 ms are torsades de pointes. Each run stops by itself and she stays alert with a normal BP, so she is stable and drug treatment comes first. Magnesium sulfate 2 g IV is the first-line agent to terminate torsades, whatever the serum magnesium. Direct-current shock is kept for torsades that does not stop by itself or that degenerates into ventricular fibrillation, so neither form of shock fits runs that end within seconds. Procainamide is itself a cause of torsades, and amiodarone lengthens the QT further.",
         keyFeature: { topic: "arrhythmia", n: 4 },
-        source: "jcs-2020"
+        source: "drew-tdp"
       },
       {
         id: "q4",
         kind: "single",
-        update: "He returns to sinus rhythm. The ECG now shows 4 mm ST elevation in V2 to V5. His QTc is 430 ms.",
-        prompt: "Which of the following is the most likely trigger of his polymorphic ventricular tachycardia?",
-        options: ["Acute ischemia from reocclusion", "Congenital long QT syndrome", "Drug-induced QT prolongation", "Low magnesium level", "Low potassium level"],
-        correct: 0,
-        explanation:
-          "Polymorphic ventricular tachycardia with a normal QTc, recurrent pain and new ST elevation is driven by acute ischemia, here from reocclusion of the artery, and prompt revascularization is recommended to treat the ischemia behind recurrent ventricular tachycardia or fibrillation. His QTc of 430 ms argues against congenital or drug-induced long QT. His potassium of 4.2 mmol/L and magnesium of 0.9 mmol/L are normal.",
+        prompt: "Which of the following medications most likely contributed to her polymorphic ventricular tachycardia?",
+        options: ["ASA 160 mg PO", "atorvastatin 40 mg PO", "clarithromycin 500 mg PO", "heparin 5 000 units IV", "pantoprazole 40 mg PO"],
+        correct: 2,
+        explanation: "Clarithromycin, started 3 days ago, is a macrolide listed among the drugs that prolong the QT and cause torsades de pointes. She also carries several listed risk factors that add to it: female sex, age over 65, an acute infarct, diuretic treatment, a slow ventricular rate and a potassium of 3.1 mmol/L. ASA, heparin, atorvastatin and pantoprazole do not prolong the QT, and her magnesium is normal. Clarithromycin should be stopped and the reaction recorded, and any further QT-prolonging drug avoided or given with ECG monitoring.",
         keyFeature: { topic: "arrhythmia", n: 5 },
-        source: "esc-acs-2023"
+        source: "drew-tdp"
       }
     ],
     sources: [
-      { id: "riera-aivr", citation: "Riera AR, Barros RB, de Sousa FD, Baranchuk A. Accelerated idioventricular rhythm: history and chronology of the main discoveries. Indian Pacing Electrophysiol J. 2010.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2803604/" },
-      { id: "esc-acs-2023", citation: "Byrne RA, Rossello X, Coughlan JJ, and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.", url: "https://doi.org/10.1093/eurheartj/ehad191" },
-      { id: "jcs-2020", citation: "Ono K, Iwasaki YK, Akao M, and colleagues. JCS/JHRS 2020 guideline on pharmacotherapy of cardiac arrhythmias. J Arrhythm. 2022.", url: "https://doi.org/10.1002/joa3.12714" }
+      { id: "frampton-2023", citation: "Frampton J, Ortengren AR, Zeitler EP. Arrhythmias after acute myocardial infarction. Yale J Biol Med. 2023.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10052595/" },
+      { id: "drew-tdp", citation: "Drew BJ, Ackerman MJ, Funk M, and colleagues. Prevention of torsade de pointes in hospital settings: a scientific statement from the American Heart Association and the American College of Cardiology Foundation. Circulation. 2010.", url: "https://doi.org/10.1161/CIRCULATIONAHA.109.192704" }
     ],
     reviewed: false,
     author: AUTHOR,
-    version: 2
+    version: 3
   },
   {
     id: "arrhythmia-28",
