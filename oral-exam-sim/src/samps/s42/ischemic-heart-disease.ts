@@ -242,7 +242,7 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
         ],
         correct: 1,
         explanation:
-          "In a paced rhythm the ST segment normally moves opposite to the main QRS deflection. The modified Sgarbossa criteria call discordant ST elevation abnormal when it is 25% or more of the depth of the preceding S wave. Here 5 mm divided by 16 mm is about 0.31, which meets the criterion and suggests acute coronary occlusion. The elevation is not concordant, because it follows a negative S wave. A paced rhythm at 80/minute shows that capture is intact.",
+          "In a paced rhythm the ST segment normally moves opposite to the main QRS deflection. The modified Sgarbossa criteria call discordant ST elevation abnormal when it is 25% or more of the depth of the preceding S wave. Here 5 mm divided by 16 mm is about 0.31, which meets the criterion and suggests acute coronary occlusion. The elevation is not concordant, because it follows a negative S wave. A paced rhythm at 80/minute shows that capture is intact. A ratio below 0.25 without other criteria would not be diagnostic, so serial ECGs and troponins would continue.",
         keyFeature: { topic: TOPIC, n: 2 },
         source: "dodd-paced-2021",
       },
@@ -262,24 +262,6 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
           "A positive modified Sgarbossa criterion in a paced rhythm, with ongoing ischemic symptoms, is managed as a STEMI equivalent. At a PCI centre he needs emergency angiography rather than fibrinolysis. Interrogating the pacemaker or waiting 2 hours for a troponin delays reperfusion without changing the decision. His diaphoresis, nausea and crackles fit ischemia with heart failure better than pulmonary embolism.",
         keyFeature: { topic: TOPIC, n: 6 },
         source: "esc-acs-2023",
-      },
-      {
-        id: "q4",
-        kind: "single",
-        update: "Suppose instead the ST elevation in V2 had been 3 mm after the 16 mm S wave, a ratio of about 0.19, with no other criteria met, and his first troponin was normal.",
-        prompt: "Which of the following is the most appropriate next step in his evaluation?",
-        options: [
-          "CT coronary angiography now",
-          "Discharge with pacemaker clinic follow-up",
-          "Exercise stress test today",
-          "Repeat ECGs and serial troponins",
-          "Reprogram pacing to see native rhythm",
-        ],
-        correct: 3,
-        explanation:
-          "Without a diagnostic criterion, a paced ECG neither confirms nor excludes ACS, so testing must continue. Repeat ECGs can show evolving changes, and serial troponins show whether there is a rise and fall. He has complete heart block, so turning pacing down to see a native rhythm risks asystole. Exercise testing and CT coronary angiography are for patients in whom MI has already been ruled out, and discharge leaves the diagnosis unresolved.",
-        keyFeature: { topic: TOPIC, n: 1 },
-        source: "aha-chest-pain-2021",
       },
     ],
     sources: [S.gulati, S.dodd, S.esc],
@@ -511,233 +493,305 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
     ...META,
   },
   {
-    id: "ischemic-heart-disease-22",
-    topic: TOPIC,
-    title: "Black stools and chest heaviness",
-    stem:
-      "A 76-year-old man presents to the emergency department with 3 days of black stools and 1 day of chest heaviness and breathlessness on exertion. The heaviness settles within minutes of rest. He takes naproxen for knee osteoarthritis and has hypertension. He has no known coronary disease. He is pale. His abdomen is soft and nontender, and rectal examination shows black stool. Hemoglobin is 64 g/L, down from 138 g/L a year ago. His ECG shows sinus tachycardia with 1.5 mm horizontal ST depression in V4 to V6. High sensitivity troponin I is 88 ng/L at arrival and 131 ng/L at 2 hours (99th percentile 34 ng/L).",
-    vitals: { pulse: "112/minute", resp: "20/minute", bp: "104/62 mmHg", o2sat: "97% on room air", weight: "72 kg" },
-    questions: [
+    "id": "ischemic-heart-disease-22",
+    "topic": "ischemic-heart-disease",
+    "title": "Palpitations and chest tightness",
+    "stem": "A 74-year-old woman presents to the emergency department with 2 days of palpitations and 3 hours of chest tightness and breathlessness. She has hypertension treated with amlodipine and no known coronary disease. She takes no anticoagulant. She has had no recent viral illness or emotional stress. She is alert. Her lungs are clear, her jugular veins are not raised and there is no leg swelling. Her ECG shows atrial fibrillation at 164/minute with 1.5 mm horizontal ST depression in V4 to V6 and no ST elevation. High sensitivity troponin I is 64 ng/L (female 99th percentile 16 ng/L). Hemoglobin is 132 g/L and potassium 4.1 mmol/L.",
+    "vitals": {
+      "temperature": "36.8°C oral",
+      "pulse": "164/minute irregular",
+      "resp": "22/minute",
+      "bp": "134/82 mmHg",
+      "o2sat": "96% on room air",
+      "weight": "70 kg"
+    },
+    "questions": [
       {
-        id: "q1",
-        kind: "single",
-        prompt: "Which of the following best classifies his myocardial injury using the universal definition of MI?",
-        options: [
-          "Chronic myocardial injury",
-          "Takotsubo syndrome",
-          "Type 1 myocardial infarction",
-          "Type 2 myocardial infarction",
-          "Unstable angina",
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following best explains her troponin elevation and ST depression?",
+        "options": [
+          "Acute coronary plaque rupture",
+          "Acute pulmonary embolism",
+          "Demand ischemia from rapid AF",
+          "Stress cardiomyopathy",
+          "Viral myocarditis"
         ],
-        correct: 3,
-        explanation:
-          "His troponin rose from 88 to 131 ng/L, above the 99th percentile, with ischemic symptoms and ST depression, so this is an acute MI. The cause is a mismatch between oxygen supply and demand from severe anemia, with a hemoglobin of 64 g/L and a pulse of 112/minute, which defines type 2 MI. Type 1 MI results from atherothrombotic plaque disruption, which is not the leading mechanism here. Chronic injury has stable values, and unstable angina has no troponin rise above the 99th percentile. Nothing in his case suggests takotsubo.",
-        keyFeature: { topic: TOPIC, n: 3 },
-        source: "udmi-2018",
+        "correct": 2,
+        "explanation": "A ventricular rate of 164/minute raises myocardial oxygen demand and shortens filling time, so supply cannot meet demand. The AHA statement lists tachyarrhythmia as a classic trigger of type 2 MI when troponin rises with signs of ischemia. Her ST depression is in the lateral leads that often show rate-related change. Plaque rupture is possible but less likely with a clear trigger and no prior coronary disease. Her clear lungs, lack of leg swelling and normal oxygenation do not suggest embolism. She has no emotional trigger or viral illness to suggest the other causes.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 3
+        },
+        "source": "aha-type2-2019"
       },
       {
-        id: "q2",
-        kind: "single",
-        prompt: "Which of the following is the most appropriate initial treatment for his myocardial ischemia?",
-        options: [
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate initial treatment for her?",
+        "options": [
+          "ASA and ticagrelor loading doses",
+          "Enoxaparin with urgent angiography",
+          "Nitroglycerin IV infusion",
+          "Rate control with IV metoprolol",
+          "Synchronized cardioversion now"
+        ],
+        "correct": 3,
+        "explanation": "For type 2 MI the statement makes treatment of the underlying cause paramount and advises early judicious use of a beta blocker to lower demand when there is no bradycardia, hypotension or acute heart failure, as here. With a low likelihood of type 1 MI, it advises caution with antithrombotic therapy and invasive angiography, so loading antiplatelets or enoxaparin with urgent angiography is premature. Nitroglycerin does not slow the rate. She is stable, and after 2 days of AF without anticoagulation, cardioversion now carries a risk of stroke.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 7
+        },
+        "source": "aha-type2-2019"
+      },
+      {
+        "id": "q3",
+        "kind": "single",
+        "update": "Two hours later the tightness has settled. A second high sensitivity troponin I is 131 ng/L.",
+        "prompt": "Which of the following is the most appropriate next step in her cardiac assessment?",
+        "options": [
+          "Continue serial ECGs and troponins",
+          "CT pulmonary angiogram",
+          "Discharge once the rate is controlled",
+          "Immediate coronary angiography",
+          "Tenecteplase by weight"
+        ],
+        "correct": 0,
+        "explanation": "The rise from 64 to 131 ng/L shows acute myocardial injury, and serial testing is needed to show the peak and fall and to watch for new ischemia while the trigger is treated. The statement stresses that decisions should be re-evaluated as new data arrive. Discharge is premature while troponin is rising. She has no ST elevation, so fibrinolysis has no role. With a clear demand trigger and settled symptoms, immediate angiography is not required. Nothing suggests embolism.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 1
+        },
+        "source": "aha-type2-2019"
+      },
+      {
+        "id": "q4",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate cardiac plan once her rhythm problem is controlled?",
+        "options": [
+          "Elective testing for coronary disease",
+          "Lifelong dual antiplatelet therapy",
+          "Repeat troponin in 3 months",
+          "Urgent angiography before discharge",
+          "No further cardiac evaluation"
+        ],
+        "correct": 0,
+        "explanation": "The statement recommends considering functional or anatomic testing for coronary disease after type 2 MI, because a high demand state may unmask flow-limiting coronary disease. This can be done electively once the trigger is controlled. Dual antiplatelet therapy carries bleeding risk and has no proven benefit in type 2 MI without coronary disease. Urgent angiography is not needed once she is stable. A repeat troponin does not assess her coronary anatomy.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 8
+        },
+        "source": "aha-type2-2019"
+      }
+    ],
+    "sources": [
+    {
+      "id": "aha-type2-2019",
+      "citation": "DeFilippis AP, Chapman AR, Mills NL, et al. Assessment and treatment of patients with type 2 myocardial infarction and acute nonischemic myocardial injury. A scientific statement from the American Heart Association. Circulation. 2019.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6855329/"
+    }
+  ],
+    ...META,
+    "version": 2
+  },
+  {
+    "id": "ischemic-heart-disease-23",
+    "topic": "ischemic-heart-disease",
+    "title": "An abnormal ECG from a walk-in clinic",
+    "stem": "A 48-year-old man is sent to the emergency department by a walk-in clinic because of an abnormal ECG. For 2 months he has had occasional aching left chest discomfort lasting up to 30 minutes, sometimes at rest and sometimes on exertion. His last episode was yesterday, and he is pain free now. He has hypertension treated with amlodipine and does not smoke. His examination is normal, with no murmur. His ECG shows sinus rhythm with high QRS voltage and symmetric T wave inversion of 12 to 14 mm in V3 to V6, deepest in V4 and V5, with no ST elevation. An ECG taken before minor surgery 3 years ago shows the same pattern. High sensitivity troponin I is 6 ng/L (male 99th percentile 26 ng/L).",
+    "vitals": {
+      "temperature": "36.7°C oral",
+      "pulse": "72/minute",
+      "resp": "16/minute",
+      "bp": "146/88 mmHg",
+      "o2sat": "98% on room air",
+      "weight": "86 kg"
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following ECG features most suggests a cause other than an acute coronary syndrome?",
+        "options": [
+          "Absence of Q waves",
+          "No ST elevation in any lead",
+          "Same pattern on an ECG 3 years ago",
+          "Symmetric shape of the T waves",
+          "T inversion in the lateral leads"
+        ],
+        "correct": 2,
+        "explanation": "Ischemic T wave inversion changes over hours to days, so a pattern unchanged from an ECG 3 years ago points to a chronic cause. Giant negative T waves of 10 mm or more in the precordial leads, often with voltage criteria for left ventricular hypertrophy, are typical of apical hypertrophic cardiomyopathy, which commonly presents with chest pain and T wave inversion that mimic ACS. The absence of Q waves or ST elevation does not exclude an occlusion. Symmetric T wave inversion and inversion in the lateral leads occur with ischemia as well.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 2
+        },
+        "source": "hughes-aphcm-2020"
+      },
+      {
+        "id": "q2",
+        "kind": "single",
+        "update": "A repeat high sensitivity troponin I at 3 hours is 6 ng/L. He remains pain free and his repeat ECG is unchanged.",
+        "prompt": "Which of the following treatments is most appropriate for him in the department?",
+        "options": [
           "ASA 160 mg chewed",
-          "enoxaparin 72 mg SC",
-          "metoprolol 25 mg PO",
-          "red blood cell transfusion",
-          "ticagrelor 180 mg PO",
+          "Heparin bolus and infusion",
+          "Tenecteplase by weight",
+          "Ticagrelor 180 mg PO",
+          "No antithrombotic treatment"
         ],
-        correct: 3,
-        explanation:
-          "Type 2 MI is treated by correcting its cause. He is bleeding from the upper GI tract with a hemoglobin of 64 g/L, so transfusion restores oxygen delivery to the myocardium. ASA, ticagrelor and enoxaparin would worsen the bleeding without treating the cause, and he has already been taking naproxen. Metoprolol would blunt the tachycardia that is supporting his cardiac output at a BP of 104/62 mmHg.",
-        keyFeature: { topic: TOPIC, n: 7 },
-        source: "esc-acs-2023",
+        "correct": 4,
+        "explanation": "Two troponins well below the 99th percentile with no change, no pain and an ECG unchanged over 3 years make an acute coronary syndrome very unlikely. The ESC guideline reserves fibrinolysis for ST elevation MI, and antiplatelet and anticoagulant loading is part of treating a confirmed or likely ACS. Here ASA, ticagrelor and heparin would add bleeding risk without a coronary event to treat. Tenecteplase carries a risk of intracranial hemorrhage and has no indication without ST elevation.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 7
+        },
+        "source": "esc-acs-2023"
       },
       {
-        id: "q3",
-        kind: "single",
-        update: "After 2 units of red cells, hemoglobin is 84 g/L and the chest heaviness has resolved. Endoscopy is planned.",
-        prompt: "Which of the following is the most appropriate next step in his cardiac assessment?",
-        options: [
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate next investigation for his ECG pattern?",
+        "options": [
+          "CT pulmonary angiography",
+          "Echocardiography",
           "Emergency coronary angiography",
           "Exercise stress test today",
-          "Repeat ECG and troponin trend",
-          "Start dual antiplatelet therapy",
-          "No further cardiac testing",
+          "Repeat troponin in 6 hours"
         ],
-        correct: 2,
-        explanation:
-          "His cardiac assessment is not finished once the anemia is corrected. A repeat ECG and further troponins show whether the injury is settling as expected for type 2 MI or still evolving. Emergency angiography and dual antiplatelet therapy carry a high bleeding risk before the bleeding source is treated, and his chest heaviness has resolved. An exercise test is unsafe so soon after an MI and with active bleeding. Once he recovers, outpatient evaluation can look for underlying coronary disease.",
-        keyFeature: { topic: TOPIC, n: 1 },
-        source: "esc-acs-2023",
-      },
-      {
-        id: "q4",
-        kind: "single",
-        update: "Endoscopy shows a duodenal ulcer, which is treated. Hemoglobin is stable at 92 g/L and he has had no further chest heaviness.",
-        prompt: "Which of the following follow-up plans is most appropriate for his heart once the bleeding is controlled?",
-        options: [
-          "Lifelong dual antiplatelet therapy",
-          "Restart naproxen with a proton pump inhibitor",
-          "Testing for underlying coronary disease",
-          "Warfarin for secondary prevention",
-          "No cardiac follow-up needed",
-        ],
-        correct: 2,
-        explanation:
-          "His chest heaviness came on with exertion during anemia, and many patients with type 2 MI have coronary narrowing that lowered the threshold for ischemia. Once the bleeding is controlled, he should be assessed for underlying coronary disease, with the test chosen by cardiology. Dual antiplatelet therapy treats plaque rupture or stents and would add to his bleeding risk from a fresh ulcer. Naproxen caused the bleed and should not be restarted, and warfarin has no role. No follow-up would miss treatable coronary disease.",
-        keyFeature: { topic: TOPIC, n: 8 },
-        source: "esc-acs-2023",
-      },
+        "correct": 1,
+        "explanation": "Deep T wave inversion without evidence of infarction calls for imaging of the left ventricle, and echocardiography shows the thickened apex and spade-shaped cavity of apical hypertrophic cardiomyopathy. Hughes and colleagues note that echocardiography missed apical hypertrophy in 40% of cases later found on cardiac MRI, so a normal study with deep T wave inversion needs further imaging. Emergency angiography exposes him to an invasive procedure without an acute coronary syndrome. An exercise ECG cannot be read with marked baseline T wave inversion. A third troponin adds little, and nothing suggests embolism.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 7
+        },
+        "source": "hughes-aphcm-2020"
+      }
     ],
-    sources: [S.udmi, S.esc],
+    "sources": [
+    {
+      "id": "hughes-aphcm-2020",
+      "citation": "Hughes RK, Knott KD, Malcolmson J, et al. Apical hypertrophic cardiomyopathy: the variant less known. J Am Heart Assoc. 2020.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7335568/"
+    },
+    {
+      "id": "esc-acs-2023",
+      "citation": "Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.",
+      "url": "https://doi.org/10.1093/eurheartj/ehad191"
+    }
+  ],
     ...META,
+    "version": 2
   },
   {
-    id: "ischemic-heart-disease-23",
-    topic: TOPIC,
-    alsoTopics: ["dvt-pe"],
-    title: "Breathless weeks after bowel surgery",
-    stem:
-      "A 64-year-old woman presents to the emergency department with 2 days of breathlessness on exertion and a near faint while climbing stairs this morning. She also has mild central chest tightness. Three weeks ago she had a laparoscopic colectomy for colon cancer. She has hypertension treated with ramipril. Her lungs are clear and her calves are not swollen. Her ECG shows sinus tachycardia, a normal QRS axis, no ST deviation and T wave inversion in V1 to V4, III and aVF. High sensitivity troponin I is 64 ng/L (female 99th percentile 16 ng/L).",
-    vitals: { temperature: "37.1°C oral", pulse: "112/minute", resp: "24/minute", bp: "112/70 mmHg", o2sat: "88% on room air", weight: "72 kg" },
-    questions: [
+    "id": "ischemic-heart-disease-24",
+    "topic": "ischemic-heart-disease",
+    "title": "Sweating and vomiting far from a PCI centre",
+    "stem": "You are working in a rural hospital emergency department. The nearest PCI centre is 3 hours away by road, and air transport is not available tonight. A 78-year-old man presents with 2 hours of sweating, nausea and vomiting that began while he was splitting firewood. He has had no chest pain. He has COPD and hypertension. He has no history of stroke, bleeding or recent surgery and takes no anticoagulant. He is thin and pale. His lungs are clear. His ECG shows 3 mm ST elevation in V1 to V4 with ST depression in III and aVF.",
+    "vitals": {
+      "temperature": "36.6°C oral",
+      "pulse": "96/minute",
+      "resp": "20/minute",
+      "bp": "138/82 mmHg",
+      "o2sat": "95% on room air",
+      "weight": "58 kg"
+    },
+    "questions": [
       {
-        id: "q1",
-        kind: "single",
-        prompt: "Which of the following features of her ECG most favours pulmonary embolism over anterior ischemia?",
-        options: [
-          "Absence of ST elevation",
-          "Negative T waves in III and V1",
-          "Normal QRS axis",
-          "Sinus tachycardia",
-          "T wave inversion in V3 and V4",
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following tenecteplase doses is most appropriate for him?",
+        "options": [
+          "7.5 mg IV",
+          "15 mg IV",
+          "30 mg IV",
+          "40 mg IV",
+          "50 mg IV"
         ],
-        correct: 1,
-        explanation:
-          "Negative T waves in both III and V1 are the deciding feature, and she has them. Kosuge and colleagues studied patients with negative precordial T waves in V1 to V4 on admission and found this pair in 88% of those with pulmonary embolism but in only 1% of those with an acute coronary syndrome, a specificity of 99%. In that study, negative T waves in V3 and V4 were less frequent with pulmonary embolism than with ACS, so they point toward anterior ischemia rather than away from it. Sinus tachycardia, a normal axis and the absence of ST elevation occur with either diagnosis.",
-        keyFeature: { topic: TOPIC, n: 2 },
-        source: "kosuge-2007",
+        "correct": 1,
+        "explanation": "Primary PCI cannot be reached in time, so fibrinolysis is indicated. Full-dose tenecteplase raises the risk of intracranial hemorrhage in older patients. In STREAM-2, patients aged 60 or more given half-dose tenecteplase followed by angiography had outcomes comparable to primary PCI. His full weight-band dose under 60 kg is 30 mg, so half is 15 mg. A dose of 30 mg is the full dose, 40 and 50 mg are for heavier patients, and 7.5 mg is a quarter dose without supporting evidence.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 7
+        },
+        "source": "stream-2-2023"
       },
       {
-        id: "q2",
-        kind: "single",
-        update: "The first team diagnosed NSTEMI. She received ASA 160 mg and ticagrelor 180 mg, and a heparin infusion was started. Cardiology offers invasive angiography this afternoon.",
-        prompt: "Which of the following is the most appropriate next step in her care?",
-        options: [
-          "CT coronary angiography",
-          "CT pulmonary angiogram",
-          "D-dimer before any imaging",
-          "Invasive coronary angiography",
-          "Repeat troponin in 2 hours",
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate plan after he receives tenecteplase?",
+        "options": [
+          "Admit locally and review in 2 weeks",
+          "Angiography only if pain returns",
+          "Outpatient stress test in 6 weeks",
+          "Planned angiography within 6 to 24 hours",
+          "Repeat tenecteplase at 30 minutes"
         ],
-        correct: 1,
-        explanation:
-          "Pulmonary embolism is now the leading diagnosis. She has an oxygen saturation of 88% with clear lungs, a near faint, surgery for cancer 3 weeks ago and negative T waves in III and V1. It should be confirmed before she is exposed to the risks of an invasive coronary procedure. Her Wells score is 1.5 for a pulse over 100, 1.5 for surgery in the past 4 weeks, 1 for cancer treated in the past 6 months and 3 because embolism is the most likely diagnosis, a total of 7, so embolism is likely. When embolism is likely the ESC advises CT pulmonary angiography without a D-dimer, because a normal D-dimer would not exclude it. Invasive or CT coronary angiography looks at the wrong vessels. A repeat troponin delays the diagnosis and cannot separate the two conditions.",
-        keyFeature: { topic: TOPIC, n: 7 },
-        source: "esc-pe-2019",
+        "correct": 3,
+        "explanation": "A pharmaco-invasive strategy pairs fibrinolysis with coronary angiography and PCI if indicated 6 to 24 hours later, as in STREAM-2, so he should be transferred for planned angiography. Waiting for recurrent pain, keeping him locally for 2 weeks or relying on an outpatient stress test leaves a residual stenosis untreated. A second dose of tenecteplase adds bleeding risk and is not part of this strategy.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 7
+        },
+        "source": "stream-2-2023"
       },
       {
-        id: "q3",
-        kind: "single",
-        update: "CT pulmonary angiography shows bilateral segmental emboli. On 2 L/minute of oxygen by nasal prongs her saturation is 93%. She remains on cardiac monitoring, the heparin infusion, ticagrelor 90 mg twice daily and acetaminophen as needed.",
-        prompt: "Which of the following of her current treatments should now be stopped?",
-        options: [
-          "Acetaminophen as needed",
-          "Cardiac monitoring",
-          "Heparin infusion",
-          "Oxygen by nasal prongs",
-          "ticagrelor 90 mg twice daily",
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following statements about his presentation without chest pain is most accurate?",
+        "options": [
+          "It carries higher hospital mortality",
+          "It is rare, under 1% of cases",
+          "It is usually recognized at triage",
+          "It lowers his risk of dying",
+          "It makes an acute MI unlikely"
         ],
-        correct: 4,
-        explanation:
-          "Ticagrelor was started for a presumed acute coronary syndrome, and the CT has now explained her illness as pulmonary embolism. It adds bleeding risk on top of full anticoagulation and gives no benefit here. Heparin is the treatment for her embolism and continues until a longer term anticoagulant is chosen. Her saturation of 88% on room air is below the 90% level at which the ESC advises oxygen, so oxygen continues. Monitoring suits a pulse of 112/minute with right ventricular strain on the ECG. Acetaminophen does not add to bleeding risk.",
-        keyFeature: { topic: TOPIC, n: 7 },
-        source: "esc-pe-2019",
+        "correct": 0,
+        "explanation": "In the GRACE registry, 8.4% of patients with ACS presented without chest pain, and almost a quarter of them were not initially recognized as having ACS. Their hospital mortality was 13% compared with 4.3% for patients with typical pain. Dominant nausea or vomiting and dyspnea each marked higher risk. It is therefore neither rare nor reassuring, and it does not make MI unlikely.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 5
+        },
+        "source": "brieger-2004"
       },
+      {
+        "id": "q4",
+        "kind": "single",
+        "prompt": "Which of the following best describes his risk with tenecteplase compared with patients under 65 years?",
+        "options": [
+          "Higher bleeding, similar mortality",
+          "Higher mortality and bleeding",
+          "Lower bleeding, higher mortality",
+          "Lower mortality and bleeding",
+          "Similar mortality and bleeding"
+        ],
+        "correct": 1,
+        "explanation": "In the ASSENT-2 data in the Canadian product monograph, patients aged 75 or more had a 30-day mortality of 16.2% against 2.5% under 65, intracranial hemorrhage of 1.7% against 0.4%, and major bleeding of 7.7% against 3.1%. Both his mortality and his bleeding risk are therefore higher. This is why the benefit must be weighed carefully and why lower dosing strategies are used in older patients.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 3
+        },
+        "source": "tnkase-pm"
+      }
     ],
-    sources: [S.kosuge, S.escPe],
+    "sources": [
+    {
+      "id": "stream-2-2023",
+      "citation": "Van de Werf F, Ristić AD, Averkov OV, et al. STREAM-2: half-dose tenecteplase or primary percutaneous coronary intervention in older patients with ST-segment elevation myocardial infarction. Circulation. 2023.",
+      "url": "https://doi.org/10.1161/CIRCULATIONAHA.123.064521"
+    },
+    {
+      "id": "brieger-2004",
+      "citation": "Brieger D, Eagle KA, Goodman SG, et al. Acute coronary syndromes without chest pain, an underdiagnosed and undertreated high-risk group: insights from the Global Registry of Acute Coronary Events. Chest. 2004.",
+      "url": "https://doi.org/10.1378/chest.126.2.461"
+    },
+    {
+      "id": "tnkase-pm",
+      "citation": "Hoffmann-La Roche Limited. TNKase (tenecteplase for injection) product monograph. Health Canada. 2025.",
+      "url": "https://pdf.hres.ca/dpd_pm/00082394.PDF"
+    }
+  ],
     ...META,
-  },
-  {
-    id: "ischemic-heart-disease-24",
-    topic: TOPIC,
-    title: "Weakness and arm heaviness in an older woman",
-    stem:
-      "You are working in a community hospital emergency department. An 84-year-old woman is brought to the emergency department by her son with 1 day of weakness and nausea, and an episode of heaviness in her left arm this morning. She lives alone and walks with a cane. She has hypertension and osteoarthritis. She is alert and oriented. Her lungs are clear. Her ECG shows 1 mm horizontal ST depression in I, aVL, V5 and V6. High sensitivity troponin I is 240 ng/L (female 99th percentile 16 ng/L). Creatinine is 160 umol/L.",
-    vitals: { pulse: "84/minute", resp: "18/minute", bp: "150/82 mmHg", o2sat: "96% on room air", weight: "50 kg" },
-    questions: [
-      {
-        id: "q1",
-        kind: "single",
-        prompt: "Which of the following is her estimated creatinine clearance by the Cockcroft-Gault equation?",
-        options: [
-          "12 mL/minute",
-          "18 mL/minute",
-          "22 mL/minute",
-          "31 mL/minute",
-          "42 mL/minute",
-        ],
-        correct: 1,
-        explanation:
-          "The Cockcroft-Gault equation in SI units for a woman is (140 minus age) times weight in kg times 1.04, divided by creatinine in umol/L. For her, 140 minus 84 is 56, times 50 kg is 2800, times 1.04 is 2912, and 2912 divided by 160 is about 18 mL/minute. Using the male factor of 1.23 gives about 22 mL/minute, which overestimates her clearance. Her low weight makes her kidney function much worse than the creatinine alone suggests, and anticoagulant doses must be set from this estimate.",
-        keyFeature: { topic: TOPIC, n: 7 },
-        source: "esc-acs-2023",
-      },
-      {
-        id: "q2",
-        kind: "single",
-        prompt: "Which of the following anticoagulant regimens is most appropriate for her NSTEMI given this clearance?",
-        options: [
-          "enoxaparin 30 mg IV, then 50 mg SC",
-          "enoxaparin 50 mg SC daily",
-          "enoxaparin 38 mg SC every 12 hours",
-          "enoxaparin 50 mg SC every 12 hours",
-          "fondaparinux 2.5 mg SC daily",
-        ],
-        correct: 1,
-        explanation:
-          "With a creatinine clearance below 30 mL/minute, enoxaparin is reduced to 1 mg/kg SC once daily, which at 50 kg is 50 mg SC daily. Twice daily dosing at 1 mg/kg would accumulate and raise her bleeding risk. The 30 mg IV bolus and the 0.75 mg/kg twice daily regimen belong to fibrinolysis for STEMI, not to NSTEMI. Fondaparinux is not recommended when clearance is below 20 mL/minute.",
-        keyFeature: { topic: TOPIC, n: 7 },
-        source: "esc-acs-2023",
-      },
-      {
-        id: "q3",
-        kind: "single",
-        prompt: "Which of the following features of this patient most increases the chance that ACS presents without chest pain?",
-        options: [
-          "Age over 75 years",
-          "Hypertension",
-          "Living alone",
-          "Osteoarthritis",
-          "Walking with a cane",
-        ],
-        correct: 0,
-        explanation:
-          "Adults over 75 often present with ACS as weakness, nausea, dyspnea or arm discomfort rather than chest pain, and she had weakness, nausea and arm heaviness. Her age is the feature that makes this presentation likely. Hypertension is a coronary risk factor but does not change how ischemia presents. Living alone, osteoarthritis and using a cane may delay care, but they do not make painless ACS more likely.",
-        keyFeature: { topic: TOPIC, n: 5 },
-        source: "aha-chest-pain-2021",
-      },
-      {
-        id: "q4",
-        kind: "single",
-        update: "The regional PCI centre accepts her in transfer. She remains pain free with stable vital signs.",
-        prompt: "Which of the following is the most appropriate timing of invasive angiography for her?",
-        options: [
-          "Immediately, within 2 hours",
-          "Only if a stress test is positive",
-          "Within 24 hours of diagnosis",
-          "Within 72 hours of diagnosis",
-          "No angiography because of age",
-        ],
-        correct: 2,
-        explanation:
-          "A troponin of 240 ng/L, far above the 99th percentile, with ischemic symptoms and ST depression is an NSTEMI, which is high risk and warrants invasive angiography within 24 hours. She has none of the very high risk features, such as shock, refractory pain, acute heart failure or dangerous arrhythmias, that call for angiography within 2 hours. A 72 hour window is the older target for lower risk patients, and waiting for a stress test is unsafe with a confirmed MI. Age alone is not a reason to withhold an invasive strategy in an independent, cognitively intact patient.",
-        keyFeature: { topic: TOPIC, n: 3 },
-        source: "esc-acs-2023",
-      },
-    ],
-    sources: [S.esc, S.gulati],
-    ...META,
+    "version": 2
   },
   {
     id: "ischemic-heart-disease-25",
@@ -1001,68 +1055,86 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
     ...META,
   },
   {
-    id: "ischemic-heart-disease-29",
-    topic: TOPIC,
-    title: "Collapse at a curling rink",
-    stem:
-      "A 54-year-old man is brought to the emergency department by ambulance after a witnessed collapse at a curling rink. A bystander started CPR within 1 minute. Paramedics found ventricular fibrillation and achieved return of spontaneous circulation after 2 shocks and 9 minutes of resuscitation. He had complained of indigestion earlier in the day. He is intubated and sedated. His pupils are equal and reactive. His first ECG, 8 minutes after ROSC, shows sinus tachycardia with a right bundle branch block and 1 mm ST depression in V2 and V3. There is no ST elevation.",
-    vitals: { temperature: "35.9°C core", pulse: "112/minute", resp: "16/minute", bp: "104/66 mmHg", o2sat: "98% on 50% oxygen by ventilator", weight: "92 kg" },
-    questions: [
+    "id": "ischemic-heart-disease-29",
+    "topic": "ischemic-heart-disease",
+    "title": "Pressure in front of the television",
+    "stem": "A 69-year-old man presents to the emergency department of a hospital with a catheterization laboratory, 1 hour after crushing central chest pressure began while he was watching television. The pain is ongoing, and he is pale, sweaty and nauseated. He has hypertension and type 2 diabetes. There are fine crackles at both lung bases. His ECG shows sinus tachycardia with a right bundle branch block and left axis deviation from left anterior fascicular block. There is no ST elevation. An ECG from his family physician 8 months ago showed normal conduction. His potassium is 4.3 mmol/L, and his first high sensitivity troponin is pending.",
+    "vitals": {
+      "temperature": "36.6°C oral",
+      "pulse": "104/minute",
+      "resp": "22/minute",
+      "bp": "102/64 mmHg",
+      "o2sat": "94% on room air",
+      "weight": "88 kg"
+    },
+    "questions": [
       {
-        id: "q1",
-        kind: "single",
-        prompt: "Which of the following is the most appropriate approach to coronary angiography based on this first ECG?",
-        options: [
-          "CT coronary angiography now",
-          "Deferred rather than immediate angiography",
-          "Immediate angiography within 2 hours",
-          "Stress testing before any angiography",
-          "Tenecteplase in the department",
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate management for him now?",
+        "options": [
+          "Activate the cath lab for primary PCI",
+          "Admit and repeat troponin at 3 hours",
+          "CT pulmonary angiography now",
+          "Tenecteplase by weight now",
+          "Transvenous pacing, then observe"
         ],
-        correct: 1,
-        explanation:
-          "He was resuscitated from VF and his early post-resuscitation ECG shows no ST elevation. In COACT, immediate angiography in such patients did not improve 90 day survival compared with delayed angiography, and the 2023 ESC guideline advises against routine immediate angiography in stable patients without persistent ST elevation. Fibrinolysis has no role without a STEMI. CT coronary angiography and stress testing are not suitable for an intubated patient early after cardiac arrest.",
-        keyFeature: { topic: TOPIC, n: 6 },
-        source: "coact-2019",
+        "correct": 0,
+        "explanation": "Ongoing ischemic pain with a new right bundle branch block should be treated like a STEMI. In this registry, new or presumably new RBBB was often caused by complete occlusion of the infarct artery and carried the highest in-hospital mortality of any ECG pattern. The authors report missed occlusions when ST elevation was required before referral. This hospital can do primary PCI, so fibrinolysis is not the best option. Waiting for troponins or imaging for embolism delays reperfusion, and pacing alone does not treat the cause.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 6
+        },
+        "source": "widimsky-rbbb-2012"
       },
       {
-        id: "q2",
-        kind: "single",
-        update: "A repeat ECG 20 minutes later shows 3 mm ST elevation in V1 to V4, with the right bundle branch block unchanged.",
-        prompt: "Which of the following is now the most appropriate management for him?",
-        options: [
-          "Deferred angiography in 24 hours",
-          "Repeat ECG in 1 hour",
-          "tenecteplase 50 mg IV",
-          "Troponin before deciding",
-          "Urgent primary PCI",
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate ECG plan while he remains in the department?",
+        "options": [
+          "Holter monitor application",
+          "Posterior leads V7 to V9 only",
+          "Right-sided leads only",
+          "Serial 12-lead ECGs on a monitor",
+          "No further ECGs for now"
         ],
-        correct: 4,
-        explanation:
-          "An ECG recorded soon after ROSC can mislead, which is why it is repeated. His new 3 mm ST elevation in V1 to V4 is diagnostic of STEMI, because right bundle branch block does not hide ST elevation. Resuscitated patients with ST elevation need immediate angiography and primary PCI, and this is a PCI centre. Tenecteplase is inferior to primary PCI when PCI is available. Waiting for a troponin or another ECG only delays reperfusion.",
-        keyFeature: { topic: TOPIC, n: 1 },
-        source: "esc-acs-2023",
+        "correct": 3,
+        "explanation": "Unlike left bundle branch block, a right bundle branch block is thought not to mask ST changes or Q waves, and the registry authors note that minor ST elevation can be missed. Repeat 12-lead ECGs with continuous monitoring can show evolving ST elevation, a higher degree of block or an arrhythmia. A Holter recording is read too late. Posterior or right-sided leads alone give a narrow view, and stopping ECGs misses change.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 1
+        },
+        "source": "widimsky-rbbb-2012"
       },
       {
-        id: "q3",
-        kind: "single",
-        prompt: "Which of the following statements about ST elevation in right bundle branch block is most accurate?",
-        options: [
-          "RBBB does not mask STEMI criteria",
-          "RBBB makes ST elevation uninterpretable",
-          "RBBB requires 5 mm of ST elevation",
-          "Sgarbossa criteria must be applied",
-          "ST elevation in V1 is expected in RBBB",
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following best explains his new ECG pattern?",
+        "options": [
+          "Acute pulmonary embolism",
+          "Brugada type 1 pattern",
+          "Degenerative conduction disease",
+          "Occlusion of a coronary artery",
+          "Tricyclic drug toxicity"
         ],
-        correct: 0,
-        explanation:
-          "Right bundle branch block delays right ventricular activation but leaves the early ST segment readable. Its expected repolarization change in V1 to V3 is ST depression with T wave inversion, so ST elevation in those leads is abnormal. The usual STEMI criteria apply without adjustment. Sgarbossa criteria and higher thresholds are used for left bundle branch block and paced rhythms.",
-        keyFeature: { topic: TOPIC, n: 2 },
-        source: "esc-acs-2023",
-      },
+        "correct": 3,
+        "explanation": "A block that is new since 8 months ago, with ongoing ischemic pain, points to acute coronary occlusion. In the registry, bifascicular block with RBBB and left anterior hemiblock was common in left main and proximal LAD occlusion. Embolism can cause right bundle branch block, but his pain and left axis deviation fit an anterior infarct. Degenerative disease develops slowly without acute pain. He has no coved ST elevation of Brugada pattern and has taken no tricyclic drug.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 2
+        },
+        "source": "widimsky-rbbb-2012"
+      }
     ],
-    sources: [S.lemkes, S.esc],
+    "sources": [
+    {
+      "id": "widimsky-rbbb-2012",
+      "citation": "Widimsky P, Rohác F, Stásek J, et al. Primary angioplasty in acute myocardial infarction with right bundle branch block: should new onset right bundle branch block be added to future guidelines as an indication for reperfusion therapy? Eur Heart J. 2012.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3249219/"
+    }
+  ],
     ...META,
+    "version": 2
   },
   {
     id: "ischemic-heart-disease-30",
@@ -1610,134 +1682,180 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
     ...META,
   },
   {
-    id: "ischemic-heart-disease-38",
-    topic: TOPIC,
-    title: "Woken by breathlessness",
-    stem:
-      "A 77-year-old woman is brought to the emergency department by ambulance with 1 hour of severe breathlessness that woke her from sleep. She had chest tightness for 20 minutes before the breathlessness began. She has hypertension and type 2 diabetes. She is sitting upright, diaphoretic and speaking in short phrases. There are crackles to the mid lung fields on both sides. Her extremities are warm. Her ECG shows sinus tachycardia with 2 mm horizontal ST depression in V3 to V6, I and aVL. High sensitivity troponin I is 420 ng/L (female 99th percentile 16 ng/L). Your hospital has a catheterization laboratory on site.",
-    vitals: { pulse: "118/minute", resp: "32/minute", bp: "188/102 mmHg", o2sat: "86% on room air", weight: "72 kg" },
-    questions: [
+    "id": "ischemic-heart-disease-38",
+    "topic": "ischemic-heart-disease",
+    "title": "Chest pain and a very slow pulse",
+    "stem": "A 66-year-old man presents to the emergency department of a PCI-capable hospital with 90 minutes of crushing central chest pain. He is pale and sweaty. He has hypertension and takes ramipril. His ECG shows 3 mm ST elevation in V1 to V5 with complete heart block and a wide complex ventricular escape rhythm at 34/minute. He is drowsy but responds to voice. His lungs are clear. The catheterization laboratory team is on the way.",
+    "vitals": {
+      "temperature": "36.5°C oral",
+      "pulse": "34/minute",
+      "resp": "22/minute",
+      "bp": "84/50 mmHg",
+      "o2sat": "94% on room air",
+      "weight": "82 kg"
+    },
+    "questions": [
       {
-        id: "q1",
-        kind: "menu",
-        prompt: "Which of the following initial treatments are most appropriate for her in the first minutes?",
-        options: [
-          "CPAP or BiPAP ventilation",
-          "diltiazem 10 mg IV",
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate immediate treatment for his rhythm?",
+        "options": [
+          "amiodarone 150 mg IV",
+          "atropine 1 mg IV and observe",
           "metoprolol 5 mg IV",
-          "morphine 4 mg IV",
-          "nitroglycerin IV infusion",
-          "normal saline 500 mL IV",
-          "tenecteplase 40 mg IV",
+          "Observe on the monitor",
+          "Temporary pacing now"
         ],
-        select: 2,
-        correct: [0,4],
-        explanation:
-          "She has hypertensive acute pulmonary edema with ischemia, a BP of 188/102 mmHg and a saturation of 86%. Noninvasive positive pressure ventilation improves oxygenation and reduces the work of breathing, and high dose IV nitroglycerin lowers preload and afterload quickly. Metoprolol and diltiazem depress contractility and can precipitate cardiogenic shock in acute heart failure. Morphine is not routinely advised in acute heart failure, a fluid bolus worsens congestion, and fibrinolysis has no role without ST elevation.",
-        keyFeature: { topic: TOPIC, n: 7 },
-        source: "esc-acs-2023",
+        "correct": 4,
+        "explanation": "In anterior STEMI, complete heart block reflects septal necrosis involving the His bundle and bundle branches, so the escape rhythm is wide, slow and unstable, and asystole may occur suddenly. He is hypotensive and drowsy, so temporary pacing is needed now. Atropine acts on the AV node and is unlikely to help a block below it. Observation suits the narrow junctional escape of inferior STEMI, which is often transient. Amiodarone and metoprolol would slow the escape rhythm further.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 7
+        },
+        "source": "kawamura-cavb-2021"
       },
       {
-        id: "q2",
-        kind: "single",
-        prompt: "Which of the following is the most appropriate timing of coronary angiography for her?",
-        options: [
-          "Immediately, within 2 hours",
-          "Only after a positive stress test",
-          "Only if troponin keeps rising",
-          "Within 24 hours of admission",
-          "Within 72 hours of admission",
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following best describes his prognosis from this complication?",
+        "options": [
+          "Better than inferior MI with block",
+          "Higher mortality than without block",
+          "Lower risk once the rate is corrected",
+          "Same as anterior MI without block",
+          "Unaffected by the level of block"
         ],
-        correct: 0,
-        explanation:
-          "Acute heart failure caused by ongoing ischemia is a very high risk feature of NSTE-ACS. The ESC recommends an immediate invasive strategy, within 2 hours, for such patients, and this hospital can provide it. A 24 or 72 hour window is for stable patients at high or lower risk. Waiting for a rising troponin or a stress test is unsafe in a patient with pulmonary edema.",
-        keyFeature: { topic: TOPIC, n: 3 },
-        source: "esc-acs-2023",
+        "correct": 1,
+        "explanation": "In a series treated with primary PCI, in-hospital mortality in anterior STEMI with complete heart block was 55%, against 7% without it, with more cardiogenic shock and heart failure. The block marks extensive septal necrosis, so pacing corrects the rate but not the size of the infarct. Its outcome is worse than inferior STEMI with block, where the AV nodal block is usually transient.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 3
+        },
+        "source": "kawamura-cavb-2021"
       },
       {
-        id: "q3",
-        kind: "single",
-        update: "After CPAP and nitroglycerin her breathing improves. BP is 146/84 mmHg and pulse is 108/minute. A resident suggests IV metoprolol.",
-        prompt: "Which of the following best describes the role of IV metoprolol for her at this time?",
-        options: [
-          "Avoid while in acute heart failure",
-          "Give at half the usual dose",
-          "Give only if troponin rises further",
-          "Give to control the tachycardia",
-          "Give to reduce infarct size",
+        "id": "q3",
+        "kind": "single",
+        "update": "After PCI of the proximal LAD, complete heart block persists on day 6.",
+        "prompt": "Which of the following is the most appropriate next step for his conduction disease?",
+        "options": [
+          "Isoproterenol infusion",
+          "Observe for 2 more weeks",
+          "Oral theophylline three times daily",
+          "Permanent pacemaker implantation",
+          "Repeat coronary angiography"
         ],
-        correct: 0,
-        explanation:
-          "Her tachycardia is a response to acute heart failure, and her pulmonary edema is still being treated. In COMMIT, early IV then oral metoprolol increased cardiogenic shock, mainly in patients with heart failure, tachycardia or older age, all of which apply to her. A lower dose does not remove this risk, and neither the troponin level nor the hope of limiting infarct size changes it. Oral beta blockade is started once she is stable without congestion.",
-        keyFeature: { topic: TOPIC, n: 7 },
-        source: "commit-2005",
-      },
+        "correct": 3,
+        "explanation": "The 2021 ESC pacing guideline recommends a permanent pacemaker when AV block does not resolve within 5 days after acute MI. His block has lasted 6 days, so waiting another 2 weeks prolongs his dependence on temporary pacing, with its risks of infection and lead displacement. Isoproterenol and theophylline are not treatments for persistent infranodal block. Repeat angiography is not indicated without new ischemia.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 7
+        },
+        "source": "esc-pacing-2021-summary"
+      }
     ],
-    sources: [S.esc, S.commit],
+    "sources": [
+    {
+      "id": "kawamura-cavb-2021",
+      "citation": "Kawamura Y, Yokoyama H, Kitayama K, et al. Clinical impact of complete atrioventricular block in patients with ST-segment elevation myocardial infarction. Clin Cardiol. 2021.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7803372/"
+    },
+    {
+      "id": "esc-pacing-2021-summary",
+      "citation": "Dan GA. 2021 ESC guidelines on cardiac pacing and cardiac resynchronisation therapy. Eur Cardiol. 2021.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8785099/"
+    }
+  ],
     ...META,
+    "version": 2
   },
   {
-    id: "ischemic-heart-disease-39",
-    topic: TOPIC,
-    title: "Worse days after a heavy chest",
-    stem:
-      "A 66-year-old man with type 2 diabetes is brought to the emergency department by his wife with 4 days of fatigue and worsening breathlessness. Five days ago he had a heavy feeling in his chest that he thought was the flu, and he did not seek care. Today he became short of breath at rest. He is pale and cool. A new loud, harsh holosystolic murmur is heard at the left lower sternal border with a palpable thrill. There are crackles at both lung bases. His ECG shows Q waves in II, III and aVF with 1 mm ST elevation.",
-    vitals: { pulse: "114/minute", resp: "28/minute", bp: "86/58 mmHg", o2sat: "91% on room air", weight: "80 kg" },
-    questions: [
+    "id": "ischemic-heart-disease-39",
+    "topic": "ischemic-heart-disease",
+    "title": "Chest pressure after a recent bleed",
+    "stem": "A 77-year-old man presents to the emergency department with 1 hour of central chest pressure at rest, which has now eased. He has chronic kidney disease with an eGFR of 26 mL/minute/1.73 m2. Four months ago he was admitted with a bleeding duodenal ulcer that needed 3 units of red cells. He takes pantoprazole and takes no antiplatelet or anticoagulant drug. His hemoglobin is 121 g/L and platelets 214 x 10^9/L. His ECG shows 1 mm horizontal ST depression in V4 to V6. The first high sensitivity troponin I is 48 ng/L (male 99th percentile 26 ng/L).",
+    "vitals": {
+      "temperature": "36.7°C oral",
+      "pulse": "88/minute",
+      "resp": "18/minute",
+      "bp": "142/84 mmHg",
+      "o2sat": "96% on room air",
+      "weight": "76 kg"
+    },
+    "questions": [
       {
-        id: "q1",
-        kind: "single",
-        prompt: "Which of the following is the most likely cause of his deterioration today?",
-        options: [
-          "Acute pericarditis",
-          "Free wall rupture",
-          "Papillary muscle rupture",
-          "Right ventricular infarction",
-          "Ventricular septal rupture",
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the number of major ARC-HBR bleeding risk criteria that he meets?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
         ],
-        correct: 4,
-        explanation:
-          "A new loud, harsh holosystolic murmur at the left lower sternal border with a palpable thrill, together with shock and congestion days after an untreated inferior MI, is typical of ventricular septal rupture. Papillary muscle rupture causes acute mitral regurgitation with severe pulmonary edema, and its murmur is often soft or absent, apical and without a thrill. Free wall rupture causes tamponade and sudden collapse rather than a new murmur. Right ventricular infarction and pericarditis do not produce a loud holosystolic murmur with a thrill.",
-        keyFeature: { topic: TOPIC, n: 3 },
-        source: "aha-mechanical-2021",
+        "correct": 1,
+        "explanation": "Two major criteria apply. An eGFR below 30 mL/minute is a major criterion, and spontaneous bleeding that needed hospital admission or transfusion in the past 6 months is another. Age 75 or more is only a minor criterion. A hemoglobin of 110 to 129 g/L in a man is minor, and only a value below 110 g/L is major. His platelets are normal. One major or two minor criteria are enough to define high bleeding risk, so he clearly meets it.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 3
+        },
+        "source": "arc-hbr-2019"
       },
       {
-        id: "q2",
-        kind: "single",
-        prompt: "Which of the following tests will most quickly confirm the cause of his deterioration?",
-        options: [
-          "Bedside color Doppler echo",
-          "CT pulmonary angiography",
-          "Portable chest X-ray",
-          "Right-sided ECG leads",
-          "Serial troponin measurement",
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate next step to confirm or exclude acute MI?",
+        "options": [
+          "CT coronary angiography now",
+          "Diagnose NSTEMI from this value",
+          "Discharge if the pain stays settled",
+          "Exercise stress test today",
+          "Repeat troponin to show a change"
         ],
-        correct: 0,
-        explanation:
-          "Echocardiography with color Doppler shows the septal defect and the left to right shunt at the bedside, and separates it from papillary muscle rupture and free wall rupture. A chest X-ray shows congestion but cannot identify the lesion. Right-sided leads look for right ventricular infarction, and serial troponins confirm infarction but not a mechanical complication. CT pulmonary angiography is not indicated and delays care in a patient in shock.",
-        keyFeature: { topic: TOPIC, n: 1 },
-        source: "aha-mechanical-2021",
+        "correct": 4,
+        "explanation": "Troponin can be chronically raised in kidney disease, so a single value above the 99th percentile does not separate acute from chronic injury. The AHA statement explains that serial testing showing a rise or fall is needed to diagnose acute injury, while a stable pattern with a nonischemic ECG suggests chronic injury. Discharge ignores his ischemic ECG. Stress testing and CT angiography are not for a patient with possible ongoing MI.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 1
+        },
+        "source": "aha-type2-2019"
       },
       {
-        id: "q3",
-        kind: "single",
-        prompt: "Which of the following is the most important next step in his definitive management?",
-        options: [
-          "Emergency cardiac surgical consultation",
-          "IV metoprolol for rate control",
-          "PCI of the culprit artery alone",
-          "Pericardiocentesis at the bedside",
-          "Tenecteplase in the department",
+        "id": "q3",
+        "kind": "single",
+        "update": "Acute NSTEMI is confirmed and coronary angiography with PCI is planned.",
+        "prompt": "Which of the following antiplatelet strategies after PCI best balances his bleeding and ischemic risks?",
+        "options": [
+          "Abbreviated DAPT, then one agent",
+          "Aspirin alone, no P2Y12 inhibitor",
+          "Prasugrel and ASA for 12 months",
+          "Ticagrelor and ASA for 24 months",
+          "Triple therapy with an anticoagulant"
         ],
-        correct: 0,
-        explanation:
-          "Ventricular septal rupture needs surgical repair, and mortality without it is very high, so cardiac surgery must be involved at once. Afterload reduction and mechanical circulatory support can bridge him to surgery. Revascularization of the culprit artery alone does not close the defect. Fibrinolysis is not indicated days after an MI with a mechanical complication, a beta blocker would worsen cardiogenic shock, and there is no tamponade to drain.",
-        keyFeature: { topic: TOPIC, n: 7 },
-        source: "aha-mechanical-2021",
-      },
+        "correct": 0,
+        "explanation": "He is at high bleeding risk. The ARC-HBR document notes that short dual antiplatelet therapy halved major bleeding in older patients compared with 12 months, and trials of patients at high bleeding risk used 1 month of dual therapy after stenting. Twelve or more months of potent dual therapy with prasugrel or ticagrelor raises his bleeding risk. Aspirin alone early after a stent leaves him exposed to stent thrombosis. He has no indication for an anticoagulant, so triple therapy adds bleeding without benefit.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 7
+        },
+        "source": "arc-hbr-2019"
+      }
     ],
-    sources: [S.damluji],
+    "sources": [
+    {
+      "id": "arc-hbr-2019",
+      "citation": "Urban P, Mehran R, Colleran R, et al. Defining high bleeding risk in patients undergoing percutaneous coronary intervention: a consensus document from the Academic Research Consortium for High Bleeding Risk. Circulation. 2019.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6636810/"
+    },
+    {
+      "id": "aha-type2-2019",
+      "citation": "DeFilippis AP, Chapman AR, Mills NL, et al. Assessment and treatment of patients with type 2 myocardial infarction and acute nonischemic myocardial injury. A scientific statement from the American Heart Association. Circulation. 2019.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6855329/"
+    }
+  ],
     ...META,
+    "version": 2
   },
   {
     id: "ischemic-heart-disease-40",
@@ -1825,134 +1943,170 @@ export const ISCHEMIC_HEART_DISEASE_S42_SAMPS: Samp[] = [
     ...META,
   },
   {
-    id: "ischemic-heart-disease-41",
-    topic: TOPIC,
-    title: "Stair climbing with a known bundle branch block",
-    stem:
-      "A 58-year-old man presents to the emergency department at 1000 because his wife insisted. For 4 months he has had chest tightness while climbing stairs, lasting about 5 minutes and relieved by rest. The pattern has not changed, and he has none now. He has hypertension and dyslipidemia and no known coronary disease. He has had a left bundle branch block on ECGs for 4 years. His examination is normal. Today's ECG shows his known left bundle branch block, unchanged from before, with no concordant ST changes. High sensitivity troponin T is 7 ng/L at arrival and 7 ng/L at 1 hour (99th percentile 14 ng/L).",
-    vitals: { pulse: "72/minute", resp: "14/minute", bp: "136/82 mmHg", o2sat: "98% on room air", weight: "90 kg" },
-    questions: [
+    "id": "ischemic-heart-disease-41",
+    "topic": "ischemic-heart-disease",
+    "title": "Two morning episodes of tightness",
+    "stem": "A 58-year-old man presents to the emergency department at 1400 with central chest tightness at rest, once last evening while reading and once at noon, each lasting about 10 minutes. He says the pain was partly sharp. He is now pain free. He has peripheral arterial disease with an iliac artery stent placed 2 years ago and takes ASA and atorvastatin. He does not smoke and has no other risk factors. He had a normal exercise stress test 4 years ago. His examination is normal. His ECG is normal. A high sensitivity troponin at 1430 is below the 99th percentile.",
+    "vitals": {
+      "temperature": "36.6°C oral",
+      "pulse": "72/minute",
+      "resp": "16/minute",
+      "bp": "136/80 mmHg",
+      "o2sat": "98% on room air",
+      "weight": "84 kg"
+    },
+    "questions": [
       {
-        id: "q1",
-        kind: "single",
-        prompt: "Which of the following further tests is most appropriate to assess him for coronary disease?",
-        options: [
-          "CT coronary angiography",
-          "Exercise ECG stress test",
-          "Holter monitor for 48 hours",
-          "Repeat troponin in 6 hours",
-          "Resting echocardiogram only",
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is his HEART score based on these findings?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
         ],
-        correct: 0,
-        explanation:
-          "MI has been ruled out, but he has exertional chest tightness with two risk factors, so he is not low risk and further testing is advised. With no known coronary disease, CT coronary angiography is a first line option in the 2021 chest pain guideline. An exercise ECG cannot be read for ischemia with a left bundle branch block. A resting echo does not test for inducible ischemia, a Holter monitor looks for arrhythmia, and more troponins add nothing after normal 0 hour and 1 hour results.",
-        keyFeature: { topic: TOPIC, n: 8 },
-        source: "aha-chest-pain-2021",
+        "correct": 2,
+        "explanation": "His history mixes typical and non-typical features, which scores 1. The normal ECG scores 0. Age 58 scores 1. Known peripheral arterial disease scores 2 for risk factors automatically. A troponin below the discriminating level scores 0. The total is 1 + 0 + 1 + 2 + 0 = 4, which is moderate risk. A total of 3 misses the automatic 2 points for vascular disease.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 8
+        },
+        "source": "heart-score-2018"
       },
       {
-        id: "q2",
-        kind: "menu",
-        prompt: "Which of the following should be part of his plan while he awaits outpatient testing?",
-        options: [
-          "Bed rest until testing",
-          "Call 911 for rest or prolonged pain",
-          "clopidogrel 300 mg PO now",
-          "Exercise to provoke symptoms",
-          "nitroglycerin 0.4 mg SL as needed",
-          "ticagrelor 90 mg PO twice daily",
-          "warfarin with INR monitoring",
+        "id": "q2",
+        "kind": "single",
+        "update": "A repeat troponin at 3 hours is also below the 99th percentile.",
+        "prompt": "Which of the following is the most appropriate disposition for him?",
+        "options": [
+          "Admit for observation and further testing",
+          "Cardiology clinic in 6 months",
+          "Discharge with family physician review",
+          "Emergency coronary angiography",
+          "No further cardiac evaluation"
         ],
-        select: 2,
-        correct: [1,4],
-        explanation:
-          "Patients with suspected stable angina awaiting testing should carry sublingual nitroglycerin and know to call 911 for pain at rest, or pain that lasts longer than usual or does not settle with nitroglycerin. Clopidogrel loading and ticagrelor belong to ACS or PCI, not to suspected stable angina. Warfarin has no role in coronary disease without another indication. Deliberately provoking symptoms is unsafe, and bed rest is not needed.",
-        keyFeature: { topic: TOPIC, n: 8 },
-        source: "ccs-sihd-2014",
+        "correct": 0,
+        "explanation": "In the HEART Pathway, a patient with a score above 3 and a negative repeat troponin at 3 hours should go to an observation or inpatient unit for further evaluation, while only those with a score of 3 or less are candidates for early discharge. Discharge with routine review or a clinic visit in 6 months misses this step. With two normal troponins and a normal ECG, emergency angiography is not indicated.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 8
+        },
+        "source": "heart-score-2018"
       },
       {
-        id: "q3",
-        kind: "single",
-        update: "He asks whether the two normal troponin results mean that his heart is healthy.",
-        prompt: "Which of the following statements about his two normal troponin results is most accurate?",
-        options: [
-          "They exclude coronary disease",
-          "They exclude MI but not coronary disease",
-          "They exclude unstable angina",
-          "They make further testing unnecessary",
-          "They mean his LBBB is benign",
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following statements about the sharp quality of some of his pain is most accurate?",
+        "options": [
+          "It confirms a musculoskeletal cause",
+          "It does not exclude ACS",
+          "It lowers his HEART history score to 0",
+          "It may allow discharge after one troponin",
+          "It points to pericarditis"
         ],
-        correct: 1,
-        explanation:
-          "Normal troponins at 0 and 1 hour rule out acute MI, but they say nothing about stable coronary stenoses that cause exertional angina. Unstable angina is also diagnosed from the history rather than from troponin. His exertional symptoms therefore still need testing for coronary disease. The troponin results do not address the cause or prognosis of his bundle branch block.",
-        keyFeature: { topic: TOPIC, n: 4 },
-        source: "esc-acs-2023",
-      },
+        "correct": 1,
+        "explanation": "The HEART score gives 1 point to a history with mixed typical and non-typical features, so a partly sharp pain still counts toward risk and does not exclude ACS. A score of 0 is kept for a history not consistent with ACS. The review notes that women and older patients often present atypically. Sharp pain does not confirm a musculoskeletal cause or pericarditis. Its quality also cannot justify discharge after a single troponin, because the HEART pathway uses a repeat troponin before any early discharge decision.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 4
+        },
+        "source": "heart-score-2018"
+      }
     ],
-    sources: [S.gulati, S.mancini, S.esc],
+    "sources": [
+    {
+      "id": "heart-score-2018",
+      "citation": "Brady W, de Souza K. The HEART score: a guide to its application in the emergency department. Turk J Emerg Med. 2018.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6005932/"
+    }
+  ],
     ...META,
+    "version": 2
   },
   {
-    id: "ischemic-heart-disease-42",
-    topic: TOPIC,
-    title: "Jaw tightness on morning walks",
-    stem:
-      "A 51-year-old woman presents to the emergency department at 1600 with jaw and throat tightness that comes on during her brisk morning walks. It began 4 months ago, and the pattern has not changed. Each episode lasts 3 to 5 minutes and stops when she slows down. It has never occurred at rest. Her dentist found no dental cause. She had preeclampsia in both of her pregnancies and now has hypertension. She does not smoke. Her examination and ECG are normal. High sensitivity troponin I is 3 ng/L at arrival and 3 ng/L at 2 hours (99th percentile 16 ng/L). Her last episode was at 0800.",
-    vitals: { pulse: "70/minute", resp: "14/minute", bp: "142/86 mmHg", o2sat: "99% on room air", weight: "78 kg" },
-    questions: [
+    "id": "ischemic-heart-disease-42",
+    "topic": "ischemic-heart-disease",
+    "title": "Breathless pushing a wheelchair",
+    "stem": "A 63-year-old man presents to the emergency department with three episodes in the past week of breathlessness, sweating and light-headedness while pushing his manual wheelchair up the ramp to his building. Each settled within 5 minutes of rest, and the last ended 8 hours ago. He has had no chest, arm or jaw pain. He lost his right leg below the knee in a work accident 20 years ago and does not use a prosthesis. He has had type 2 diabetes for 18 years, with neuropathy in his feet, and hypertension. He takes metformin, empagliflozin and ramipril. He does not smoke. His heart and lung examination is normal. His ECG shows sinus rhythm with no ischemic changes.",
+    "vitals": {
+      "temperature": "36.7°C oral",
+      "pulse": "78/minute",
+      "resp": "16/minute",
+      "bp": "138/80 mmHg",
+      "o2sat": "98% on room air",
+      "weight": "88 kg"
+    },
+    "questions": [
       {
-        id: "q1",
-        kind: "single",
-        prompt: "Which of the following diagnoses best describes her recurrent jaw and throat symptoms?",
-        options: [
-          "Anxiety with hyperventilation",
-          "Esophageal reflux disease",
-          "Stable exertional angina",
-          "Temporomandibular joint pain",
-          "Unstable angina pectoris",
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following features of his episodes most suggests myocardial ischemia?",
+        "options": [
+          "Absence of chest pain",
+          "Light-headedness with the episodes",
+          "Normal ECG between episodes",
+          "Onset with exertion, relief with rest",
+          "Three episodes in one week"
         ],
-        correct: 2,
-        explanation:
-          "Jaw or throat discomfort brought on by exertion and relieved within minutes by slowing down is an anginal equivalent, and women more often describe angina this way. The pattern has been stable for 4 months and never occurs at rest, so this is stable rather than unstable angina. Temporomandibular pain is not triggered by walking and relieved by rest, and reflux and anxiety do not follow this exertional pattern. Her history of preeclampsia adds to her cardiovascular risk.",
-        keyFeature: { topic: TOPIC, n: 5 },
-        source: "aha-chest-pain-2021",
+        "correct": 3,
+        "explanation": "Breathlessness that comes on with exertion and settles within minutes of rest follows the pattern of angina even without pain. Diabetes Canada notes that dyspnea on exertion may indicate coronary disease in people with diabetes and that almost one third of MIs occur without recognized or typical symptoms. The absence of chest pain does not lower concern in a man with long-standing diabetes. A normal resting ECG between episodes is common with coronary disease. Light-headedness is nonspecific, and the number of episodes says nothing about their cause.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 5
+        },
+        "source": "dc-cvd-screening-2018"
       },
       {
-        id: "q2",
-        kind: "single",
-        prompt: "Which of the following is the most appropriate plan for her after these results?",
-        options: [
-          "Admit for coronary angiography",
-          "Dental referral for jaw pain",
+        "id": "q2",
+        "kind": "single",
+        "update": "High sensitivity troponin I on arrival and 3 hours later is below the 99th percentile, and his repeat ECG is unchanged. He has no symptoms.",
+        "prompt": "Which of the following is the most appropriate disposition for him?",
+        "options": [
+          "Admit for stress testing tomorrow",
+          "Coronary angiography before discharge",
+          "CT coronary angiography in the ED now",
           "Discharge with outpatient ischemia testing",
-          "Treat with a proton pump inhibitor",
-          "No further follow-up needed",
+          "Observation for 24 hours of telemetry"
         ],
-        correct: 2,
-        explanation:
-          "Serial troponins have ruled out MI and her pattern is stable, so she can be discharged. Her symptoms are still likely angina and need outpatient testing, such as CT coronary angiography or stress imaging, with follow-up. Admission for angiography is not needed without high risk features. A dental referral or a proton pump inhibitor treats the wrong diagnosis, and no follow-up leaves likely coronary disease uninvestigated.",
-        keyFeature: { topic: TOPIC, n: 8 },
-        source: "aha-chest-pain-2021",
+        "correct": 3,
+        "explanation": "Two normal troponins, an unchanged ECG and no symptoms make an acute MI unlikely, so he does not need admission, observation or emergency coronary imaging. His unexplained exertional breathlessness still needs an answer, and Diabetes Canada advises investigation for coronary disease in people with diabetes who have typical or atypical cardiac symptoms such as unexplained dyspnea. This can be arranged promptly as an outpatient. Invasive angiography before discharge is not justified without evidence of an acute coronary syndrome or a positive noninvasive test.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 8
+        },
+        "source": "dc-cvd-screening-2018"
       },
       {
-        id: "q3",
-        kind: "single",
-        prompt: "Which of the following medications should she be given while she awaits testing?",
-        options: [
-          "clopidogrel 75 mg PO daily",
-          "nitroglycerin 0.4 mg SL as needed",
-          "pantoprazole 40 mg PO daily",
-          "prasugrel 10 mg PO daily",
-          "warfarin 5 mg PO daily",
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following tests is most appropriate to look for coronary disease in him?",
+        "options": [
+          "Exercise treadmill ECG test",
+          "Holter monitor for 48 hours",
+          "Pharmacologic stress imaging",
+          "Repeat resting ECG in 1 month",
+          "Resting echocardiogram only"
         ],
-        correct: 1,
-        explanation:
-          "Everyone with suspected stable angina should have sublingual nitroglycerin to use for episodes and before exertion, with instructions to call 911 if pain lasts longer than usual. Clopidogrel is used in stable coronary disease mainly when ASA cannot be taken, and prasugrel is limited to ACS treated with PCI. Warfarin has no role in coronary disease without another indication. A proton pump inhibitor targets reflux, which does not fit her pattern.",
-        keyFeature: { topic: TOPIC, n: 8 },
-        source: "ccs-sihd-2014",
-      },
+        "correct": 2,
+        "explanation": "He cannot walk on a treadmill after a below-knee amputation without a prosthesis. Diabetes Canada advises pharmacological stress echocardiography or nuclear imaging for people with diabetes who need stress testing and are unable to exercise. An exercise treadmill test depends on walking. A resting echocardiogram and a repeat resting ECG do not provoke ischemia. A Holter monitor records rhythm, not exertional ischemia.",
+        "keyFeature": {
+          "topic": "ischemic-heart-disease",
+          "n": 8
+        },
+        "source": "dc-cvd-screening-2018"
+      }
     ],
-    sources: [S.gulati, S.mancini],
+    "sources": [
+    {
+      "id": "dc-cvd-screening-2018",
+      "citation": "Diabetes Canada Clinical Practice Guidelines Expert Committee, Poirier P, Bertrand OF, Leipsic J, Mancini GBJ, Raggi P, Roussin A. Screening for the presence of cardiovascular disease. Can J Diabetes. 2018.",
+      "url": "https://guidelines.diabetes.ca/cpg/chapter24"
+    }
+  ],
     ...META,
+    "version": 2
   },
   {
     id: "ischemic-heart-disease-43",

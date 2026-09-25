@@ -115,105 +115,106 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     ...META
   },
   {
-    id: "infectious-diseases-17",
-    topic: "infectious-diseases",
-    title: "Jaw swelling after a toothache",
-    stem: "A 36-year-old man presents to the emergency department with 3 days of right lower molar pain and 1 day of swelling under his jaw. Since this morning he has had trouble swallowing and his voice sounds thick. He has type 2 diabetes treated with metformin. He is sitting upright and leaning forward, drooling into a basin. There is firm, tender swelling of both submandibular regions that extends into the upper neck. The floor of the mouth is raised and woody, pushing the tongue up and back. He has no stridor. Capillary glucose is 18.2 mmol/L.",
-    vitals: {
-      temperature: "38.9°C oral",
-      pulse: "118/minute",
-      resp: "22/minute",
-      bp: "134/82 mmHg",
-      o2sat: "97% on room air",
-      weight: "92 kg"
+    "id": "infectious-diseases-17",
+    "topic": "infectious-diseases",
+    "title": "A painful breast three weeks after birth",
+    "stem": "A 31-year-old woman presents to the emergency department 3 weeks after the birth of her first baby with 5 days of pain and redness in her left breast. A walk-in clinic started cephalexin 500 mg four times daily 4 days ago, and she has taken every dose. The pain is worse and she has had fevers and chills since yesterday. She is breastfeeding. Her baby was born at term and has jaundice that is being followed by the family physician. She has no allergies. There is a 7 cm area of warm, red, firm skin in the upper outer left breast, with a tender, fluctuant centre about 3 cm across. The right breast is normal.",
+    "vitals": {
+      "temperature": "38.6°C oral",
+      "pulse": "108/minute",
+      "resp": "18/minute",
+      "bp": "116/72 mmHg",
+      "o2sat": "99% on room air",
+      "weight": "68 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following is the most likely diagnosis for this man?",
-        kind: "single",
-        options: [
-          "Acute sialadenitis",
-          "Ludwig angina",
-          "Peritonsillar abscess",
-          "Retropharyngeal abscess",
-          "Submandibular lymphadenitis"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate test to assess the fluctuant area in her breast?",
+        "options": [
+          "Breast ultrasound",
+          "CT of the chest",
+          "Mammography",
+          "MRI of the breast",
+          "Needle core biopsy"
         ],
-        correct: 1,
-        explanation: "Bilateral firm submandibular swelling, a raised woody floor of the mouth and an upward displaced tongue after a lower molar infection define Ludwig angina. Diabetes is a recognized risk factor, and a lower molar is the usual dental source. Sialadenitis and lymphadenitis are usually one sided and do not lift the floor of the mouth. A peritonsillar abscess causes a bulging tonsillar pillar and uvular deviation. A retropharyngeal abscess causes posterior pharyngeal swelling rather than floor of mouth induration.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 0,
+        "explanation": "Worsening redness with a fluctuant centre despite 4 days of antibiotics suggests that bacterial mastitis has progressed to an abscess. The ABM protocol notes that abscess is often diagnosed clinically but that ultrasound may be used, and ultrasound also guides drainage. Mammography is painful in an inflamed lactating breast and poorly shows a fluid collection. CT and MRI add cost and delay without changing management. A core biopsy is not a test for an infected collection.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "bridwell"
+        "source": "abm-36"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is the most important immediate priority in his care?",
-        kind: "single",
-        options: [
-          "Airway plan with anesthesia and ENT",
-          "Bedside drainage of the swelling",
-          "CT neck before airway planning",
-          "Racemic epinephrine by nebulizer",
-          "Rapid sequence intubation now"
+        "id": "q2",
+        "kind": "single",
+        "update": "Imaging shows a 3.2 cm fluid collection in the upper outer left breast.",
+        "prompt": "Which of the following is the most appropriate management of the collection?",
+        "options": [
+          "Antibiotics alone for 14 days",
+          "Drainage with fluid culture",
+          "Hot compresses and review in 1 week",
+          "Mastectomy of the affected segment",
+          "Stop breastfeeding to rest the breast"
         ],
-        correct: 0,
-        explanation: "Drooling, a thick voice and a tongue pushed upward warn of impending airway obstruction even without stridor. The airway should be planned early with anesthesia and ENT, often as awake fibreoptic intubation with a surgical airway ready. Rapid sequence induction with paralysis risks a failed airway because the anatomy is distorted. Lying him flat for CT before an airway plan can precipitate obstruction. Nebulized epinephrine does not shrink infected tissue, and early Ludwig angina is often firm cellulitis without a collection to drain at the bedside.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 1,
+        "explanation": "The ABM protocol advises draining an abscess for source control, by needle aspiration with culture or by drain placement, because it may keep worsening until the collection is drained. Antibiotics alone do not clear a walled-off collection. Waiting a week with compresses delays source control. Surgical excision is not needed for a simple lactational abscess. Stopping breastfeeding does not treat the abscess and risks engorgement.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "bridwell"
+        "source": "abm-36"
       },
       {
-        id: "q3",
-        prompt: "Which of the following is the most appropriate empiric antibiotic regimen?",
-        kind: "single",
-        options: [
-          "amoxicillin-clavulanate 875 mg PO",
-          "cefazolin 2 g IV",
-          "clindamycin 300 mg PO",
-          "metronidazole 500 mg IV",
-          "piperacillin-tazobactam 4.5 g IV"
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate change to her oral antibiotic now?",
+        "options": [
+          "amoxicillin 500 mg PO three times daily",
+          "ciprofloxacin 500 mg PO twice daily",
+          "clindamycin 300 mg PO four times daily",
+          "Continue cephalexin 500 mg PO",
+          "trimethoprim-sulfamethoxazole DS PO twice daily"
         ],
-        correct: 4,
-        explanation: "Ludwig angina is a polymicrobial odontogenic infection of streptococci and oral anaerobes and needs broad IV cover. Piperacillin-tazobactam covers both, which matters more in a patient with diabetes. Oral agents are not appropriate for a spreading deep neck infection that threatens the airway. Cefazolin misses many oral anaerobes. Metronidazole alone does not cover the aerobic streptococci.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 8
+        "correct": 2,
+        "explanation": "She has not improved after more than 48 hours of first-line therapy, so the ABM protocol advises culture and consideration of resistant organisms such as MRSA. Clindamycin 300 mg four times daily is a listed second-line choice. Trimethoprim-sulfamethoxazole is the other second-line option, but it should be used with caution when the infant is under 30 days old or has hyperbilirubinemia, and her 3-week-old baby is jaundiced. Continuing cephalexin repeats a failing drug. Amoxicillin and ciprofloxacin are not recommended for mastitis because they miss staphylococci.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 8
         },
-        source: "bridwell"
+        "source": "abm-36"
       },
       {
-        id: "q4",
-        update: "His airway is secured by awake fibreoptic intubation. CT of the neck with contrast shows gas and rim enhancing fluid collections in the submandibular and sublingual spaces on both sides.",
-        prompt: "Which of the following is the most appropriate next step in management?",
-        kind: "single",
-        options: [
-          "Dental extraction in clinic tomorrow",
-          "IV dexamethasone and observation",
-          "Needle aspiration by the ED physician",
-          "Repeat CT of the neck in 48 hours",
-          "Urgent surgical drainage in the OR"
+        "id": "q4",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate advice about feeding her baby?",
+        "options": [
+          "Breastfeed only from the right side",
+          "Continue breastfeeding from both sides",
+          "Pump and discard milk from the left side",
+          "Stop breastfeeding until healed",
+          "Switch to formula for 2 weeks"
         ],
-        correct: 4,
-        explanation: "Drainable collections with gas in the deep neck spaces need surgical source control in the operating room, along with IV antibiotics and ICU care. The source tooth is usually dealt with at the same operation, not deferred to a clinic. Steroids and observation do not treat an established abscess. Bedside needle aspiration cannot drain several spaces and delays definitive care. Waiting 48 hours for repeat imaging allows spread toward the mediastinum.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 1,
+        "explanation": "After aspiration or drain placement, the ABM protocol advises continuing to breastfeed from the affected breast, and the risk of a milk fistula is under 2%. Milk removal helps resolve inflammation. Feeding only from the right side, pumping and discarding, stopping, or switching to formula all reduce milk removal from the left breast and risk ending breastfeeding without benefit to healing.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "bridwell"
+        "source": "abm-36"
       }
     ],
-    sources: [
-      {
-        id: "bridwell",
-        citation: "Bridwell R, Gottlieb M, Koyfman A, Long B. Diagnosis and management of Ludwig's angina: an evidence-based review. Am J Emerg Med. 2021.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/33383265/"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "abm-36",
+      "citation": "Mitchell KB, Johnson HM, Rodríguez JM, et al. Academy of Breastfeeding Medicine clinical protocol #36: the mastitis spectrum, revised 2022. Breastfeed Med. 2022.",
+      "url": "https://doi.org/10.1089/bfm.2022.29207.kbm"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
     id: "infectious-diseases-18",
@@ -505,222 +506,216 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     ...META
   },
   {
-    id: "infectious-diseases-21",
-    topic: "infectious-diseases",
-    title: "Facial pressure and congestion",
-    stem: "A 39-year-old woman presents to the emergency department with 4 days of nasal congestion, cloudy nasal discharge and pressure over both cheeks. The symptoms began with a sore throat and cough. She is a teacher and several of her students have colds. She has mild asthma treated with inhaled budesonide and has no allergies. She has tenderness over both maxillary sinuses. There is no swelling around the eyes, eye movements are full and painless, and her neck is supple. Her neurological examination is normal.",
-    vitals: {
-      temperature: "37.8°C oral",
-      pulse: "88/minute",
-      resp: "16/minute",
-      bp: "124/78 mmHg",
-      o2sat: "98% on room air"
+    "id": "infectious-diseases-21",
+    "topic": "infectious-diseases",
+    "title": "A cold and sores around the nose",
+    "stem": "A 6-year-old boy is brought to the emergency department by his mother with 4 days of runny nose, cough and a low fever that has now settled. For 2 days he has had sores around his left nostril and upper lip. His mother asks for an antibiotic because the cold is not going away. He has no medical history, no eczema and no allergies, and his immunizations are up to date. He is playful and drinking well. His nose has clear discharge, his throat is mildly red, his ears are normal and his chest is clear. Around the left nostril and on the upper lip there are three shallow erosions with honey-coloured crusts, together about 2 cm across, with no blisters, spreading redness or swelling.",
+    "vitals": {
+      "temperature": "37.4°C oral",
+      "pulse": "96/minute",
+      "resp": "20/minute",
+      "bp": "98/60 mmHg",
+      "o2sat": "99% on room air",
+      "weight": "21 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following is the most appropriate treatment for her today?",
-        kind: "single",
-        options: [
-          "Amoxicillin for 10 days",
-          "Amoxicillin-clavulanate for 7 days",
-          "Cefuroxime for 10 days",
-          "Intranasal corticosteroid spray",
-          "Moxifloxacin for 5 days"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate treatment for his runny nose and cough?",
+        "options": [
+          "amoxicillin PO for 10 days",
+          "azithromycin PO for 5 days",
+          "cefprozil PO for 10 days",
+          "Fluids and acetaminophen as needed",
+          "prednisolone PO for 3 days"
         ],
-        correct: 3,
-        explanation: "Four days of symptoms after a cold is most likely viral rhinosinusitis, and bacterial sinusitis is usually considered only after 7 days or with worsening. The Canadian guideline supports an intranasal corticosteroid, with saline irrigation and analgesia, for mild to moderate symptoms. An antibiotic now exposes her to adverse effects without benefit. Moxifloxacin and amoxicillin-clavulanate are second line even when a bacterial infection is likely.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 9
+        "correct": 3,
+        "explanation": "His runny nose, cough and mild throat redness fit a common cold, which is viral. The 2025 Cochrane review found no benefit from antibiotics for the common cold in children or adults, and routine use is not recommended. Antibiotics add side effects and resistance without shortening the illness, so amoxicillin, azithromycin and cefprozil are all wrong for the cold. A corticosteroid has no role in a cold. Fluids and acetaminophen for comfort are the right care.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 9
         },
-        source: "desrosiers"
+        "source": "cochrane-cold-2025"
       },
       {
-        id: "q2",
-        prompt: "Which of the following investigations is most appropriate for her today?",
-        kind: "single",
-        options: [
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following investigations is most appropriate for him today?",
+        "options": [
           "CBC and C-reactive protein",
-          "CT of the paranasal sinuses",
-          "Nasal swab for bacterial culture",
-          "Sinus X-ray series",
-          "No imaging or laboratory tests"
+          "Nasal swab for viral PCR",
+          "Swab of the crusts for culture",
+          "Throat swab for group A strep",
+          "No tests needed today"
         ],
-        correct: 4,
-        explanation: "Acute rhinosinusitis is a clinical diagnosis, and the Canadian guideline advises against imaging in uncomplicated cases. She has no orbital, neurological or meningeal signs that would call for CT. Plain sinus films and blood tests do not separate viral from bacterial infection. Nasal swab cultures do not reflect sinus bacteriology.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 7
+        "correct": 4,
+        "explanation": "The IDSA guideline recommends culture of impetigo exudate to identify the organism, but it accepts treatment without culture in typical cases. His crusted sores are typical and limited, so a swab would not change treatment today. He is well with a viral cold, so blood tests and a viral swab add nothing. A throat swab is not needed for a child whose cough and runny nose point to a viral cause.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 7
         },
-        source: "desrosiers"
+        "source": "idsa-ssti-2014"
       },
       {
-        id: "q3",
-        prompt: "Which of the following findings would call for urgent imaging and specialist assessment in acute sinusitis?",
-        kind: "menu",
-        options: [
-          "Cloudy nasal discharge",
-          "Double vision",
-          "Maxillary tooth pain",
-          "Neck stiffness",
-          "Night time cough",
-          "Periorbital swelling",
-          "Postnasal drip",
-          "Reduced sense of smell",
-          "Symptoms for 10 days"
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following new findings over the next few weeks would most call for urgent reassessment?",
+        "options": [
+          "Cough for 2 more weeks",
+          "Dark urine and puffy eyelids",
+          "New sores on his chin",
+          "Runny nose for 10 days",
+          "Yellow nasal mucus"
         ],
-        select: 3,
-        correct: [
-          1,
-          3,
-          5
-        ],
-        explanation: "Double vision and periorbital swelling suggest orbital spread, and neck stiffness suggests meningitis or intracranial spread. The Canadian guideline lists these among the red flags that need urgent imaging and referral. Symptoms for 10 days point toward bacterial sinusitis but are not an emergency. Cloudy discharge, tooth pain, cough, postnasal drip and reduced smell are common features of uncomplicated sinusitis.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 1,
+        "explanation": "Acute post-streptococcal glomerulonephritis can follow a group A streptococcal infection of the throat or of the skin, and it presents with hematuria, hypertension and edema. Dark urine and puffy eyelids in the weeks after streptococcal impetigo need urgent assessment of urine and blood pressure. A cough can last 2 weeks after a cold, and a runny nose with yellow mucus is part of a normal cold. A new sore nearby is spread of impetigo and can be treated at a routine visit.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "desrosiers"
+        "source": "ong-apsgn-2022"
       },
       {
-        id: "q4",
-        update: "She returns 6 days later. After improving for a few days, her facial pain and purulent nasal discharge have worsened over the last 2 days. Her examination shows no orbital, neurological or meningeal signs.",
-        prompt: "Which of the following is the most appropriate first line antibiotic?",
-        kind: "single",
-        options: [
-          "amoxicillin 500 mg PO three times daily",
-          "azithromycin 500 mg PO once daily",
-          "ciprofloxacin 500 mg PO twice daily",
-          "clindamycin 300 mg PO four times daily",
-          "moxifloxacin 400 mg PO once daily"
+        "id": "q4",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate treatment for the sores around his nose?",
+        "options": [
+          "cephalexin PO for 7 days",
+          "clotrimazole 1% cream",
+          "hydrocortisone 1% cream",
+          "mupirocin ointment for 5 days",
+          "nystatin cream for 7 days"
         ],
-        correct: 0,
-        explanation: "Worsening after initial improvement, with purulent discharge and facial pain beyond 7 days, now fits acute bacterial sinusitis. She has no allergy, so amoxicillin is first line in the Canadian guideline. A macrolide is a substitute only for beta-lactam allergy, and pneumococcal resistance to macrolides limits its use. Ciprofloxacin has weak pneumococcal activity and clindamycin does not cover Haemophilus influenzae. Moxifloxacin is kept for treatment failure or allergy.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 8
+        "correct": 3,
+        "explanation": "Golden crusted erosions around the nose are impetigo, usually from Staphylococcus aureus or group A streptococcus. The IDSA guideline recommends topical mupirocin twice daily for 5 days for a small number of lesions. Oral agents such as cephalexin are for numerous lesions or outbreaks, and he has three small sores. Clotrimazole and nystatin treat fungal infection. A topical steroid does not treat a bacterial infection.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 8
         },
-        source: "desrosiers"
+        "source": "idsa-ssti-2014"
       }
     ],
-    sources: [
-      {
-        id: "desrosiers",
-        citation: "Desrosiers M, Evans GA, Keith PK, et al. Canadian clinical practice guidelines for acute and chronic rhinosinusitis. Allergy Asthma Clin Immunol. 2011.",
-        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC3055847/"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "cochrane-cold-2025",
+      "citation": "Kenealy T, Arroll B. Antibiotics for the common cold and acute purulent rhinitis. Cochrane Database Syst Rev. 2025.",
+      "url": "https://doi.org/10.1002/14651858.CD000247.pub4"
+    },
+    {
+      "id": "idsa-ssti-2014",
+      "citation": "Stevens DL, Bisno AL, Chambers HF, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.",
+      "url": "https://doi.org/10.1093/cid/ciu444"
+    },
+    {
+      "id": "ong-apsgn-2022",
+      "citation": "Ong LT. Management and outcomes of acute post-streptococcal glomerulonephritis in children. World J Nephrol. 2022.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9521512/"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
-    id: "infectious-diseases-22",
-    topic: "infectious-diseases",
-    title: "Swollen eyelids in a school-aged child",
-    stem: "A 7-year-old boy is brought to the emergency department by his father with 2 days of increasing swelling and redness of the left eyelids. He has had a cold with thick nasal discharge for a week. Today he says it hurts to look to the side and that he sees two of things. He has no medical history and his immunizations are up to date. The left eyelids are swollen and red and can be opened only with help. The left eye is pushed forward, and abduction and upgaze are painful and limited. Visual acuity is normal and equal in both eyes. The pupils react normally.",
-    vitals: {
-      temperature: "38.7°C oral",
-      pulse: "112/minute",
-      resp: "22/minute",
-      bp: "104/64 mmHg",
-      o2sat: "99% on room air",
-      weight: "24 kg"
+    "id": "infectious-diseases-22",
+    "topic": "infectious-diseases",
+    "title": "A red, swollen upper ear",
+    "stem": "A 19-year-old woman presents to the emergency department with 3 days of increasing pain, redness and swelling of her right ear. Ten days ago she had a piercing through the cartilage of the upper right ear at a shopping mall kiosk. A walk-in clinic started cephalexin 500 mg four times daily 2 days ago, and she is worse. She has no medical history or allergies. The upper right ear is red, hot, swollen and very tender, and its normal folds are lost. There is a fluctuant area 1.5 cm across on the front of the helix beside the stud. The earlobe looks normal. The ear canal and tympanic membrane are normal.",
+    "vitals": {
+      "temperature": "37.8°C oral",
+      "pulse": "92/minute",
+      "resp": "16/minute",
+      "bp": "118/72 mmHg",
+      "o2sat": "99% on room air",
+      "weight": "60 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following findings indicate that the infection has spread behind the orbital septum?",
-        kind: "menu",
-        options: [
-          "Double vision",
-          "Eyelid redness",
-          "Eyelid swelling",
-          "Fever over 38.5°C",
-          "Painful eye movements",
-          "Proptosis",
-          "Recent nasal congestion",
-          "Tender eyelids"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following findings best shows that the infection involves the ear cartilage?",
+        "options": [
+          "Fever of 37.8°C",
+          "Normal ear canal and drum",
+          "Redness around the stud",
+          "Sparing of the earlobe",
+          "Tenderness to light touch"
         ],
-        select: 3,
-        correct: [
-          0,
-          4,
-          5
-        ],
-        explanation: "Proptosis, pain with eye movement, limited movement and double vision mean orbital (postseptal) cellulitis, a complication of sinusitis in this boy. Preseptal cellulitis also causes red, swollen and tender eyelids, so those findings do not separate the two. Fever and a recent cold occur with both. Orbital involvement changes management to IV antibiotics, imaging and specialist review.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 3,
+        "explanation": "The earlobe has no cartilage, so an infection that swells the upper ear and loses its folds but spares the lobe is following the cartilage and its perichondrium. Auricular perichondritis can deform the ear if it is not treated promptly. Redness around the stud, tenderness and a low-grade fever occur with simple skin infection at a piercing site. A normal canal and drum exclude otitis externa and media but do not show cartilage involvement.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "wong-orbit"
+        "source": "ungar-perichondritis"
       },
       {
-        id: "q2",
-        prompt: "Which of the following investigations is most appropriate for him now?",
-        kind: "single",
-        options: [
-          "CT orbits and sinuses with contrast",
-          "MRI brain without contrast",
-          "Plain X-rays of the sinuses",
-          "Swab of the nasal discharge",
-          "No imaging unless no improvement"
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following investigations is most appropriate before her antibiotic is changed?",
+        "options": [
+          "Blood cultures and lactate",
+          "CBC and CRP only",
+          "CT of the temporal bones",
+          "Culture of pus from the ear",
+          "No tests are needed"
         ],
-        correct: 0,
-        explanation: "Proptosis, ophthalmoplegia and diplopia are indications for contrast enhanced CT of the orbits and sinuses, which shows a subperiosteal or orbital abscess that may need drainage. Delaying imaging until he fails treatment is appropriate only for mild cases without these signs. Plain films cannot show orbital collections. MRI without contrast is less useful for abscess and is slower in a child who may need sedation. Nasal swabs do not reflect the organisms in the orbit.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 7
+        "correct": 3,
+        "explanation": "The authors recommend culture before systemic antibiotics for every new case of auricular perichondritis, because resistance to fluoroquinolones is rising and some cases are not caused by Pseudomonas. Pus from the fluctuant area gives the best sample. She is not septic, so blood cultures and lactate add little. Blood counts and CRP do not guide the antibiotic. CT is not needed for a localized infection of the outer ear.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 7
         },
-        source: "wong-orbit"
+        "source": "ungar-perichondritis"
       },
       {
-        id: "q3",
-        prompt: "Which of the following is the most appropriate antibiotic therapy for him?",
-        kind: "single",
-        options: [
-          "amoxicillin-clavulanate PO",
-          "cefazolin IV alone",
-          "ceftriaxone and vancomycin IV",
-          "cephalexin PO for 10 days",
-          "clindamycin PO for 10 to 14 days"
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following oral antibiotics is most appropriate for her now?",
+        "options": [
+          "amoxicillin-clavulanate 875 mg PO twice daily",
+          "ciprofloxacin 750 mg PO twice daily",
+          "clindamycin 300 mg PO four times daily",
+          "Continue cephalexin 500 mg PO",
+          "doxycycline 100 mg PO twice daily"
         ],
-        correct: 2,
-        explanation: "Orbital cellulitis needs admission and broad IV antibiotics that cover streptococci, Staphylococcus aureus including MRSA, and Haemophilus influenzae, such as ceftriaxone with vancomycin. Oral antibiotics are suitable only for mild preseptal cellulitis. Cefazolin alone gives weaker cover of the respiratory gram negative organisms that come from the sinuses. Oral clindamycin misses Haemophilus influenzae.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 8
+        "correct": 1,
+        "explanation": "Pseudomonas aeruginosa is the usual cause of auricular perichondritis, and piercing-related cases were colonized with it significantly more often. Empiric treatment usually consists of ciprofloxacin, adjusted to the culture result. Cephalexin, amoxicillin-clavulanate, clindamycin and doxycycline do not cover Pseudomonas, which explains why she worsened on cephalexin.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 8
         },
-        source: "wong-orbit"
+        "source": "ungar-perichondritis"
       },
       {
-        id: "q4",
-        update: "CT shows left ethmoid sinusitis with a 14 mm subperiosteal abscess along the medial wall of the left orbit. Visual acuity is unchanged.",
-        prompt: "Which of the following is the most appropriate next step in management?",
-        kind: "single",
-        options: [
-          "Discharge on oral antibiotics",
-          "Ophthalmology and ENT consult now",
-          "Oral prednisone and reassessment",
-          "Outpatient repeat CT in 1 week",
-          "Warm compresses and observation"
+        "id": "q4",
+        "kind": "single",
+        "prompt": "Which of the following is the most important additional step in her treatment?",
+        "options": [
+          "Incision and drainage of the collection",
+          "Leave the stud in place",
+          "Plastic surgery review in 6 weeks",
+          "Topical mupirocin to the site",
+          "Warm compresses alone"
         ],
-        correct: 1,
-        explanation: "A subperiosteal abscess is a complication that can threaten vision, and larger abscesses often need surgical drainage. Ophthalmology and ENT should see him now, while IV antibiotics continue and vision is checked often. Discharge or outpatient imaging is unsafe with an orbital abscess. Steroids and warm compresses do not treat the collection.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 0,
+        "explanation": "Abscess formation was the strongest predictor of complications, and a subperichondral abscess needs incision and drainage along with antibiotics. Pus left under the perichondrium can destroy cartilage and cause a cauliflower deformity. Topical mupirocin and warm compresses do not treat a collection. The stud is a foreign body in infected cartilage. Reconstruction is for deformity after the infection, not for acute care.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "wong-orbit"
+        "source": "ungar-perichondritis"
       }
     ],
-    sources: [
-      {
-        id: "wong-orbit",
-        citation: "Wong SJ, Levi J. Management of pediatric orbital cellulitis: a systematic review. Int J Pediatr Otorhinolaryngol. 2018.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/29859573/"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "ungar-perichondritis",
+      "citation": "Ungar OJ, Bursztyn N, Shilo S, et al. Auricular perichondritis in the cartilage piercing era. Laryngoscope. 2025.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12706554/"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
     id: "infectious-diseases-23",
@@ -837,207 +832,221 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     ...META
   },
   {
-    id: "infectious-diseases-24",
-    topic: "infectious-diseases",
-    title: "Strange behaviour and fever in a retired teacher",
-    stem: "A 66-year-old woman is brought to the emergency department by her husband with 2 days of fever and headache and 1 day of strange behaviour. This morning she did not recognize their kitchen and spoke in words that made no sense. An hour ago she had a 1 minute episode of lip smacking and unresponsiveness. She has hypothyroidism treated with levothyroxine. She has not travelled. She is drowsy and disoriented, with word finding difficulty. GCS is 13 (E3 V4 M6). There is no neck stiffness and no rash. Capillary glucose is 6.1 mmol/L.",
-    vitals: {
-      temperature: "38.5°C oral",
-      pulse: "102/minute",
-      resp: "18/minute",
-      bp: "146/84 mmHg",
-      o2sat: "97% on room air",
-      weight: "62 kg"
+    "id": "infectious-diseases-24",
+    "topic": "infectious-diseases",
+    "title": "Fever and aches at 29 weeks",
+    "stem": "A 30-year-old woman who is 29 weeks pregnant presents to the emergency department with 2 days of fever, chills, muscle aches and low back pain. Four days ago she had watery diarrhea that has settled. She has no cough, urinary symptoms, vaginal bleeding or leaking fluid, and the baby is moving normally. Her pregnancy has been uncomplicated. Three weeks ago she ate soft cheese made from unpasteurized milk that she bought at a farm stand. She has not travelled. She is flushed but alert. Her uterus is non-tender and there is no costovertebral angle tenderness. Urinalysis is normal. Influenza and COVID-19 swabs are negative. The fetal heart rate is 158/minute.",
+    "vitals": {
+      "temperature": "38.7°C oral",
+      "pulse": "110/minute",
+      "resp": "18/minute",
+      "bp": "112/66 mmHg",
+      "o2sat": "98% on room air",
+      "weight": "74 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following is the most likely cause of her presentation?",
-        kind: "single",
-        options: [
-          "Acute ischemic stroke",
-          "Bacterial meningitis",
-          "Delirium from urinary infection",
-          "Herpes simplex encephalitis",
-          "Primary psychiatric illness"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following exposures in her history most likely explains her illness?",
+        "options": [
+          "Changing a cat litter box",
+          "Contact with a child with a cold",
+          "Swimming in a lake last month",
+          "Travel to Florida last winter",
+          "Unpasteurized soft cheese"
         ],
-        correct: 3,
-        explanation: "Fever with altered behaviour, aphasia and a focal seizure with lip smacking point to temporal lobe involvement, which is typical of herpes simplex encephalitis. Bacterial meningitis is possible without neck stiffness, but the focal cortical features favour encephalitis. Stroke does not explain 2 days of fever and headache. A urinary infection does not cause a focal seizure and aphasia. A first psychiatric illness at 66 with fever and seizure should not be assumed.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 5
+        "correct": 4,
+        "explanation": "Fever, muscle aches and back pain after a bout of diarrhea in a pregnant woman who ate unpasteurized soft cheese 3 weeks ago point to listeriosis. PHAC notes that the incubation period in pregnancy is often about 4 weeks and can be up to about 70 days. Cat litter carries toxoplasmosis, which rarely causes a febrile illness like this. A child's cold and her negative viral swabs make a viral cause less likely. A lake swim a month ago and travel last winter do not fit this illness.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 5
         },
-        source: "tunkel-enc"
+        "source": "phac-listeria"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is the most appropriate sequence of care now?",
-        kind: "single",
-        options: [
-          "Acyclovir IV now, then CT and LP",
-          "CT head, then acyclovir if abnormal",
-          "LP first, then acyclovir if CSF abnormal",
-          "MRI brain, then decide on treatment",
-          "Wait for the CSF HSV PCR result"
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate timing for her antibiotics?",
+        "options": [
+          "After culture results are back",
+          "After obstetric ultrasound",
+          "After stool testing",
+          "Now, before test results",
+          "Only if fever lasts 48 hours"
         ],
-        correct: 0,
-        explanation: "IDSA advises starting acyclovir in every patient with suspected encephalitis while tests are pending, because delay worsens outcomes in herpes simplex encephalitis. Her reduced level of consciousness and seizure mean CT should come before the lumbar puncture. Neither the scan nor the LP should delay the first dose. Early CT can be normal in herpes encephalitis, so a normal scan is not a reason to withhold treatment.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 1
+        "correct": 3,
+        "explanation": "ACOG advises that a pregnant woman with a possible exposure, fever above 38.1°C and symptoms of listeriosis with no other cause should be tested and treated at the same time. Waiting for culture results, stool tests, an obstetric ultrasound or 48 hours of fever risks infection of the fetus, preterm labour and fetal loss, which are the main harms of this infection.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 1
         },
-        source: "tunkel-enc"
+        "source": "acog-listeria"
       },
       {
-        id: "q3",
-        update: "Her blood tests show a creatinine of 68 umol/L, Na 137 mmol/L and a WBC of 9.8 x 10^9/L.",
-        prompt: "Which of the following is the most appropriate acyclovir dose for her?",
-        kind: "single",
-        options: [
-          "acyclovir 620 mg IV every 8 hours",
-          "acyclovir 310 mg IV every 8 hours",
-          "acyclovir 620 mg IV every 24 hours",
-          "acyclovir 800 mg PO five times daily",
-          "valacyclovir 1 g PO three times daily"
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate empiric antibiotic regimen for her?",
+        "options": [
+          "ampicillin and gentamicin IV",
+          "cefazolin IV alone",
+          "ceftriaxone and azithromycin IV",
+          "ceftriaxone IV alone",
+          "vancomycin and ceftriaxone IV"
         ],
-        correct: 0,
-        explanation: "The dose for herpes simplex encephalitis is 10 mg/kg IV every 8 hours. For 62 kg that is 62 x 10 = 620 mg. Her creatinine of 68 umol/L is normal, so there is no reason to extend the interval to 24 hours. Half the dose undertreats. Oral acyclovir and valacyclovir are not used for initial treatment of encephalitis.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 8
+        "correct": 0,
+        "explanation": "Ampicillin or amoxicillin with gentamicin is the primary treatment for Listeria monocytogenes, according to the PHAC pathogen safety data sheet. Cephalosporins are not active against this organism, so cefazolin, ceftriaxone alone, ceftriaxone with azithromycin, and vancomycin with ceftriaxone all miss it. Intravenous trimethoprim-sulfamethoxazole is the alternative for someone who cannot take a beta-lactam.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 8
         },
-        source: "tunkel-enc"
+        "source": "phac-psds-listeria"
       },
       {
-        id: "q4",
-        update: "CT of the head is normal. CSF shows WBC 86 x 10^6/L with 90% lymphocytes, red cells 420 x 10^6/L, protein 0.9 g/L and glucose 3.6 mmol/L. Gram stain shows no organisms.",
-        prompt: "Which of the following CSF tests best confirms the suspected diagnosis?",
-        kind: "single",
-        options: [
-          "Bacterial culture",
-          "Cryptococcal antigen",
-          "Enterovirus PCR",
-          "Herpes simplex virus PCR",
-          "Oligoclonal bands"
+        "id": "q4",
+        "kind": "single",
+        "prompt": "Which of the following tests is most useful to confirm the cause of her illness?",
+        "options": [
+          "Blood cultures",
+          "Serum IgM serology",
+          "Stool culture",
+          "Urine culture",
+          "Vaginal swab culture"
         ],
-        correct: 3,
-        explanation: "CSF PCR for herpes simplex virus is the diagnostic test of choice for herpes encephalitis. A lymphocytic pleocytosis with red cells, raised protein and normal glucose fits the diagnosis. Bacterial culture is sent but the profile is not typical of bacterial meningitis. Cryptococcal antigen is for immunocompromised patients. Enterovirus rarely causes focal encephalitis at her age, and oligoclonal bands are used for demyelinating disease.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 7
+        "correct": 0,
+        "explanation": "Invasive listeriosis is confirmed by growing the organism from a normally sterile site such as blood or CSF. PHAC states that stool testing is not useful for diagnosing invasive disease. Serology is not used for diagnosis. Her urinalysis is normal and she has no urinary symptoms. A vaginal swab samples a non-sterile site and does not confirm invasive infection.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 7
         },
-        source: "tunkel-enc"
+        "source": "phac-listeria"
       }
     ],
-    sources: [
-      {
-        id: "tunkel-enc",
-        citation: "Tunkel AR, Glaser CA, Bloch KC, et al. The management of encephalitis: clinical practice guidelines by the Infectious Diseases Society of America. Clin Infect Dis. 2008.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/18582201/"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "phac-listeria",
+      "citation": "Public Health Agency of Canada. Listeria (listeriosis): for health professionals. 2024.",
+      "url": "https://www.canada.ca/en/public-health/services/diseases/listeriosis/health-professionals-listeriosis.html"
+    },
+    {
+      "id": "acog-listeria",
+      "citation": "American College of Obstetricians and Gynecologists. Committee Opinion No. 614: management of pregnant women with presumptive exposure to Listeria monocytogenes. Obstet Gynecol. 2014.",
+      "url": "https://doi.org/10.1097/01.AOG.0000457501.73326.6c"
+    },
+    {
+      "id": "phac-psds-listeria",
+      "citation": "Public Health Agency of Canada. Pathogen safety data sheet: Listeria monocytogenes. 2023.",
+      "url": "https://www.canada.ca/en/public-health/services/laboratory-biosafety-biosecurity/pathogen-safety-data-sheets-risk-assessment/listeria-monocytogenes.html"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
-    id: "infectious-diseases-25",
-    topic: "infectious-diseases",
-    title: "Weeks of malaise and new hand weakness",
-    stem: "A 71-year-old man is brought to the emergency department by his daughter with 3 weeks of fatigue, night sweats and poor appetite. This morning at 0700 his right hand became weak and clumsy, and it is now 1000. Eight months ago he had a bioprosthetic aortic valve replacement. He had a dental cleaning 5 weeks ago. He takes ASA 81 mg daily and ramipril, and no anticoagulant. He is alert and oriented. There is a new grade 3 of 6 diastolic murmur at the left sternal border. He has painless red macules on both soles and a splinter hemorrhage under the left thumbnail. Right hand grip is weak.",
-    vitals: {
-      temperature: "38.2°C oral",
-      pulse: "98/minute",
-      resp: "18/minute",
-      bp: "138/70 mmHg",
-      o2sat: "97% on room air",
-      weight: "80 kg"
+    "id": "infectious-diseases-25",
+    "topic": "infectious-diseases",
+    "title": "A pneumonia that did not settle",
+    "stem": "A 48-year-old man presents to the emergency department with 6 weeks of cough, evening sweats and a 6 kg weight loss. He lives near Kenora in northwestern Ontario and fishes on local lakes most weekends. A walk-in clinic treated him for pneumonia with amoxicillin and then doxycycline, without improvement. For 2 weeks he has had low back pain and two slowly growing crusted skin lesions on his shin and cheek. He has not travelled outside Canada. His HIV test is negative. He smokes. The skin lesions are raised, 2 to 3 cm across, with crusted, warty surfaces and small pustules at the edges. There is tenderness over the L3 spinous process. Chest X-ray shows a mass-like consolidation in the right upper lobe.",
+    "vitals": {
+      "temperature": "37.9°C oral",
+      "pulse": "96/minute",
+      "resp": "20/minute",
+      "bp": "128/78 mmHg",
+      "o2sat": "95% on room air",
+      "weight": "74 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following is the most likely unifying diagnosis?",
-        kind: "single",
-        options: [
-          "Atrial fibrillation with cardioembolism",
-          "Giant cell arteritis",
-          "Infective endocarditis with embolism",
-          "Lacunar stroke with a viral illness",
-          "Polymyalgia rheumatica"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most likely cause of his illness?",
+        "options": [
+          "Blastomycosis",
+          "Histoplasmosis",
+          "Lung cancer with metastases",
+          "Pulmonary nocardiosis",
+          "Pulmonary tuberculosis"
         ],
-        correct: 2,
-        explanation: "Weeks of fever and night sweats in a man with a prosthetic valve, a new regurgitant murmur, painless plantar macules (Janeway lesions), a splinter hemorrhage and a sudden focal deficit point to endocarditis with a cerebral embolus. A prosthetic valve is a major risk factor. Atrial fibrillation is not described and does not explain the fever and skin signs. Giant cell arteritis and polymyalgia do not cause a new murmur or embolic skin lesions. A viral illness does not explain a new valve lesion.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 5
+        "correct": 0,
+        "explanation": "Blastomyces lives in soil near freshwater drainage basins, including areas from Quebec into Saskatchewan, and northwestern Ontario is a known focus. A pneumonia that fails antibiotics, with warty crusted skin lesions and a painful vertebra, fits disseminated blastomycosis. Tuberculosis remains possible and must be excluded, but it does not usually cause these skin lesions. Histoplasmosis rarely causes this skin picture. Nocardiosis mostly affects immunocompromised people. Lung cancer could explain the mass and weight loss but not the skin lesions with pustules.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 5
         },
-        source: "esc-ie"
+        "source": "ecmm-endemic"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is the most appropriate blood culture strategy before antibiotics?",
-        kind: "single",
-        options: [
-          "Cultures after the first antibiotic dose",
-          "Cultures only if fever exceeds 38.5°C",
-          "One set, then start antibiotics",
-          "Three sets from separate venipunctures",
-          "Two sets from one venipuncture"
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following tests is most likely to give a rapid diagnosis?",
+        "options": [
+          "Biopsy of a skin lesion for microscopy",
+          "PET-CT to stage the lung mass",
+          "Repeat chest X-ray in 6 weeks",
+          "Serum antibody serology",
+          "Sputum Gram stain and culture"
         ],
-        correct: 3,
-        explanation: "He is hemodynamically stable, so at least three sets of blood cultures should be drawn from separate venipunctures before antibiotics, spaced about 30 minutes apart as the ESC guideline advises. Several sets raise the yield and help show continuous bacteremia. Antibiotics given first can make cultures negative and hide the organism. Fever height does not decide the need for cultures. A single set or two sets from one venipuncture give lower yield and cannot separate true bacteremia from contamination.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 7
+        "correct": 0,
+        "explanation": "The ECMM guideline advises examining clinical specimens under the microscope with fungal stains, which show the typical broad-based budding yeast, with fungal culture that may take up to 6 weeks. A skin lesion is easy to sample. Antibody tests lack the specificity needed for diagnosis. Sputum Gram stain and routine culture do not detect this organism. PET-CT and a repeat X-ray delay the diagnosis.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 7
         },
-        source: "esc-ie"
+        "source": "ecmm-endemic"
       },
       {
-        id: "q3",
-        update: "It is now 1030. CT of the head shows no hemorrhage. CT angiography shows no large vessel occlusion. His neurological deficit is unchanged.",
-        prompt: "Which of the following is the most appropriate approach to reperfusion therapy?",
-        kind: "single",
-        options: [
-          "Alteplase 0.9 mg/kg IV now",
-          "Heparin infusion without a bolus",
-          "Tenecteplase 0.25 mg/kg IV now",
-          "Thrombectomy referral now",
-          "Withhold thrombolytic therapy"
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following precautions is most appropriate while his tests are pending?",
+        "options": [
+          "Airborne isolation until TB is excluded",
+          "Contact precautions only",
+          "Droplet precautions for 24 hours",
+          "Protective isolation for immunosuppression",
+          "No isolation precautions"
         ],
-        correct: 4,
-        explanation: "Thrombolysis is not recommended for embolic stroke caused by infective endocarditis because the risk of intracranial hemorrhage is high. Recognizing endocarditis as the cause is therefore essential before any lytic is given. Starting heparin is not indicated for embolic stroke from endocarditis and adds bleeding risk. Thrombectomy may be considered for a large vessel occlusion, but CT angiography shows none.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 5
+        "correct": 0,
+        "explanation": "Weeks of cough, night sweats, weight loss and an upper lobe consolidation mean pulmonary tuberculosis must be excluded, even when another infection seems more likely. The Canadian TB Standards describe how easily TB is confused with other causes. Airborne isolation protects others until sputum testing excludes it. Blastomycosis itself does not spread from person to person, but that cannot yet be assumed. Droplet or contact precautions do not stop airborne TB. He is not immunosuppressed.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 5
         },
-        source: "esc-ie"
+        "source": "cts-eptb"
       },
       {
-        id: "q4",
-        prompt: "Which of the following imaging studies is most important to confirm the diagnosis?",
-        kind: "single",
-        options: [
-          "Abdominal CT for emboli",
-          "Cardiac MRI with gadolinium",
-          "Carotid Doppler ultrasound",
-          "Transesophageal echocardiography",
-          "Transthoracic echo only"
+        "id": "q4",
+        "kind": "single",
+        "prompt": "Which of the following additional investigations is most appropriate because of his back pain?",
+        "options": [
+          "Abdominal ultrasound",
+          "Bone marrow biopsy",
+          "CT of the head",
+          "Echocardiogram",
+          "MRI of the lumbar spine"
         ],
-        correct: 3,
-        explanation: "Transesophageal echocardiography is recommended when endocarditis is suspected on a prosthetic valve, because transthoracic images often miss vegetations and abscesses around the prosthesis. A transthoracic study can be done first but cannot exclude the diagnosis here. Carotid Doppler looks for atherosclerotic sources, which do not explain the fever and skin signs. Abdominal CT may show emboli but does not confirm valve infection, and cardiac MRI is not the standard test for vegetations.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 7
+        "correct": 4,
+        "explanation": "The ECMM guideline advises further imaging guided by symptoms to find complications, and bone is a site of disseminated disease that needs a longer course of treatment. His focal tenderness at L3 calls for spinal MRI. He has no neurological symptoms to justify head CT, no murmur or embolic signs for echocardiography, and no abdominal or blood count findings for ultrasound or marrow biopsy.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 7
         },
-        source: "esc-ie"
+        "source": "ecmm-endemic"
       }
     ],
-    sources: [
-      {
-        id: "esc-ie",
-        citation: "Delgado V, Ajmone Marsan N, de Waha S, et al. 2023 ESC Guidelines for the management of endocarditis. Eur Heart J. 2023.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/37622656/"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "ecmm-endemic",
+      "citation": "Thompson GR 3rd, Le T, Chindamporn A, et al. Global guideline for the diagnosis and management of the endemic mycoses: an initiative of the European Confederation of Medical Mycology. Lancet Infect Dis. 2021.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9450022/"
+    },
+    {
+      "id": "cts-eptb",
+      "citation": "Barss L, Connors WJA, Fisher D. Chapter 7: Extra-pulmonary tuberculosis. In: Canadian Tuberculosis Standards, 8th edition. Can J Respir Crit Care Sleep Med. 2022.",
+      "url": "https://www.canada.ca/en/public-health/services/diseases/tuberculosis/health-professionals/canadian-tuberculosis-standards/extra-pulmonary-tuberculosis.html"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
     id: "infectious-diseases-26",
@@ -1145,284 +1154,277 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     ...META
   },
   {
-    id: "infectious-diseases-27",
-    topic: "infectious-diseases",
-    title: "Man found confused at home with a cough",
-    stem: "A 56-year-old man is brought to the emergency department by ambulance after his landlord found him confused at home. He has had 3 days of cough, fever and right sided chest pain. He drinks about 20 standard drinks a day and has cirrhosis. He takes no regular medications. He is drowsy but rousable and answers questions slowly. There are bronchial breath sounds over the right lower chest. His skin is mottled over both knees and capillary refill is 5 seconds. Lactate is 6.1 mmol/L. Chest X-ray shows dense right lower lobe consolidation.",
-    vitals: {
-      temperature: "38.9°C oral",
-      pulse: "128/minute",
-      resp: "32/minute",
-      bp: "78/40 mmHg",
-      o2sat: "90% on room air",
-      weight: "70 kg"
+    "id": "infectious-diseases-27",
+    "topic": "infectious-diseases",
+    "title": "Fever and a red, swollen arm",
+    "stem": "A 58-year-old woman is brought to the emergency department by ambulance after she fainted while getting out of bed. For 1 day she has had fever and a painful, spreading redness of her left arm. Six years ago she had a left mastectomy with axillary node dissection for breast cancer, and her left arm has been swollen since. She has had two milder infections of that arm before. She takes no regular medications and has no allergies. She is confused about the date. Bright red, hot, tender skin extends from her left wrist to her shoulder, with no blisters, crepitus or wound. Her hands are cold and capillary refill is 5 seconds. Lactate is 5.6 mmol/L and hemoglobin is 104 g/L. Two attempts at IV access in her right arm have failed, and blood cultures have not been drawn.",
+    "vitals": {
+      "temperature": "39.4°C oral",
+      "pulse": "124/minute",
+      "resp": "26/minute",
+      "bp": "80/42 mmHg",
+      "o2sat": "95% on room air",
+      "weight": "70 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following should be started within the first hour of his care?",
-        kind: "menu",
-        options: [
-          "Albumin 25% infusion",
-          "Balanced crystalloid bolus",
-          "Blood cultures",
-          "Broad spectrum IV antibiotics",
-          "CT of the chest",
-          "Dopamine infusion",
-          "Procalcitonin level",
-          "Red cell transfusion",
-          "Sodium bicarbonate infusion"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate next step to get her first antibiotic dose?",
+        "options": [
+          "Intraosseous line and antibiotics now",
+          "Oral cephalexin while access is sought",
+          "Wait for a central venous line",
+          "Wait for blood cultures first",
+          "Wait for ultrasound of the arm"
         ],
-        select: 3,
-        correct: [
-          1,
-          2,
-          3
-        ],
-        explanation: "He has hypotension, mottling, a capillary refill of 5 seconds and a lactate of 6.1 mmol/L from pneumonia, so he needs the first hour sepsis bundle. That means blood cultures, ideally before antibiotics, broad spectrum IV antibiotics within the hour and a balanced crystalloid bolus. Antibiotics must not wait for further tests such as CT or procalcitonin. Dopamine is not a first line vasopressor. Crystalloid comes first, and supplemental albumin is at most considered later, after large crystalloid volumes or in cirrhosis. Bicarbonate and red cell transfusion need a specific indication.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 1
+        "correct": 0,
+        "explanation": "She is in septic shock, and the SSC guideline recommends antimicrobials immediately, ideally within 1 hour of recognition. Blood cultures should be collected as soon as possible and ideally before the first dose, but the dose must not wait while attempts at access keep failing. With two failed IV attempts, an intraosseous needle gives access within minutes for antibiotics and fluids. Waiting for a central line, cultures or imaging of the arm delays treatment. An oral drug is not reliably absorbed in shock.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 1
         },
-        source: "ssc26"
+        "source": "ssc-2026"
       },
       {
-        id: "q2",
-        update: "He has received 2 L of Ringer's lactate over 1 hour. His BP is now 82/44 mmHg, he remains mottled and he has new crackles at both lung bases.",
-        prompt: "Which of the following is the most appropriate next step in his resuscitation?",
-        kind: "single",
-        options: [
-          "Another 3 L of Ringer's lactate",
-          "Dopamine by peripheral IV now",
-          "Norepinephrine by peripheral IV now",
-          "Phenylephrine by peripheral IV now",
-          "Vasopressor after central line placed"
+        "id": "q2",
+        "kind": "single",
+        "update": "Ninety minutes later she has received 2 L of Ringer's lactate, and a norepinephrine infusion has started. Her MAP is 62 mmHg.",
+        "prompt": "Which of the following best guides whether she should receive more IV fluid now?",
+        "options": [
+          "Central venous pressure",
+          "Chest X-ray appearance",
+          "Heart rate trend alone",
+          "Passive leg raise response",
+          "Urine output over 4 hours"
         ],
-        correct: 2,
-        explanation: "His mean arterial pressure is (82 + 2 x 44) / 3 = 57 mmHg after fluid, with ongoing hypoperfusion, so he is in septic shock and needs a vasopressor. Norepinephrine is first line, and the Surviving Sepsis Campaign suggests starting it peripherally rather than waiting for central access. Dopamine causes more arrhythmias and phenylephrine is not a first line agent. Further large fluid boluses without reassessment risk overload, especially with cirrhosis and hypoxemia.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 2
+        "correct": 3,
+        "explanation": "The SSC guideline suggests dynamic measures to guide fluid resuscitation over physical examination or static measures alone. A passive leg raise with a measure of stroke volume or pulse pressure is one of these dynamic tests. Heart rate and central venous pressure are poor guides to fluid status. A chest X-ray shows overload late. Urine output over 4 hours is too slow to decide on the next bolus for a patient in shock.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 2
         },
-        source: "ssc26"
+        "source": "ssc-2026"
       },
       {
-        id: "q3",
-        prompt: "Which of the following is the most appropriate initial mean arterial pressure target for him?",
-        kind: "single",
-        options: [
-          "60 mmHg",
-          "65 mmHg",
-          "70 mmHg",
-          "75 mmHg",
-          "85 mmHg"
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate measure to track her response to resuscitation over the next few hours?",
+        "options": [
+          "Central venous oxygen saturation",
+          "Daily procalcitonin levels",
+          "Hemoglobin concentration",
+          "Serial lactate levels",
+          "Temperature curve"
         ],
-        correct: 1,
-        explanation: "The Surviving Sepsis Campaign recommends an initial mean arterial pressure target of 65 mmHg in adults with septic shock on vasopressors. Aiming higher, at 70 mmHg or more, increases vasopressor exposure and arrhythmias without improving survival. A target of 60 mmHg sits below the recommended initial threshold for a 56-year-old and accepts ongoing hypoperfusion. His lactate and mental status are then used to judge whether perfusion is adequate at that pressure.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 2
+        "correct": 3,
+        "explanation": "Her lactate of 5.6 mmol/L shows poor tissue perfusion. The SSC guideline suggests serial lactate measurements to guide resuscitation, with capillary refill time as an adjunct to other measures of perfusion. Trials that targeted central venous oxygen saturation did not show benefit over usual care. Procalcitonin, hemoglobin and temperature do not measure perfusion from hour to hour.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 2
         },
-        source: "ssc26"
+        "source": "ssc-2026"
       },
       {
-        id: "q4",
-        update: "Norepinephrine is running and his mean arterial pressure is 66 mmHg. A repeat lactate 2 hours after arrival is 5.4 mmol/L. Capillary refill is 4 seconds.",
-        prompt: "Which of the following is the most appropriate way to guide his ongoing fluid resuscitation?",
-        kind: "single",
-        options: [
-          "Central venous pressure of 8 to 12 mmHg",
-          "Fixed total of 5 L over 6 hours",
-          "Hemoglobin level every 2 hours",
-          "Serial lactate and capillary refill",
-          "Urine specific gravity"
+        "id": "q4",
+        "kind": "single",
+        "update": "Six hours after arrival she has received 4 L of crystalloid and her MAP is 68 mmHg on norepinephrine. Her hemoglobin is now 78 g/L. She has no bleeding, no chest pain and no new ECG changes.",
+        "prompt": "Which of the following is the most appropriate management of her hemoglobin now?",
+        "options": [
+          "Erythropoietin SC now",
+          "Iron sucrose IV now",
+          "Red cells 1 unit IV now",
+          "Red cells 2 units IV now",
+          "No transfusion at this level"
         ],
-        correct: 3,
-        explanation: "The Surviving Sepsis Campaign suggests serial lactate measurements to guide resuscitation, with capillary refill time as an adjunct, together with frequent reassessment of the response to each bolus. His lactate, down from 6.1 to 5.4 mmol/L, and his slow capillary refill give measurable targets. Central venous pressure alone predicts fluid responsiveness poorly. A fixed volume ignores his response and risks overload with cirrhosis. Hemoglobin and urine specific gravity do not track tissue perfusion.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 2
+        "correct": 4,
+        "explanation": "Her hemoglobin has fallen from 104 to 78 g/L with dilution from 4 L of fluid, and she has no bleeding or cardiac ischemia. The SSC guideline recommends a restrictive transfusion strategy in sepsis, which typically uses a trigger of 70 g/L, judged with her overall state. Red cells now would add risk without benefit. Iron and erythropoietin work over weeks and do not correct an acute fall.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 2
         },
-        source: "ssc26"
+        "source": "ssc-2026"
       }
     ],
-    sources: [
-      {
-        id: "ssc26",
-        citation: "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.",
-        url: "https://www.sccm.org/survivingsepsiscampaign/guidelines-and-resources/surviving-sepsis-campaign-adult-guidelines"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "ssc-2026",
+      "citation": "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.",
+      "url": "https://doi.org/10.1097/CCM.0000000000007075"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
-    id: "infectious-diseases-28",
-    topic: "infectious-diseases",
-    title: "Older man with rigors and yellow eyes",
-    stem: "A 78-year-old man is brought to the emergency department by ambulance with 1 day of fever, rigors and right upper quadrant pain. His wife noticed his eyes turned yellow yesterday. Gallstones were seen on an ultrasound 2 years ago and he declined surgery. He has atrial fibrillation treated with apixaban and hypertension treated with amlodipine. He is confused about the date. He is tender in the right upper quadrant without peritonism. Bilirubin is 96 umol/L, ALP 410 U/L, WBC 21 x 10^9/L, creatinine 168 umol/L, platelets 88 x 10^9/L, INR 1.6 and lactate 4.2 mmol/L.",
-    vitals: {
-      temperature: "39.0°C oral",
-      pulse: "118/minute irregular",
-      resp: "24/minute",
-      bp: "84/48 mmHg",
-      o2sat: "94% on room air",
-      weight: "76 kg"
+    "id": "infectious-diseases-28",
+    "topic": "infectious-diseases",
+    "title": "Flank pain and fever at a small hospital",
+    "stem": "You are working in a rural hospital emergency department with CT but no urologist. A 63-year-old man presents with 2 days of right flank pain, fever and rigors. He has type 2 diabetes. Four months ago he was treated for a urinary infection with Enterobacter cloacae that was resistant to ampicillin, amoxicillin-clavulanate and cefazolin and susceptible to cefepime. He is drowsy but oriented. There is right costovertebral angle tenderness. Lactate is 4.1 mmol/L and creatinine is 186 umol/L. CT shows a 9 mm stone in the right proximal ureter with moderate hydronephrosis. Blood and urine cultures have been drawn. Urology at the regional centre, 2 hours away by road, has accepted him.",
+    "vitals": {
+      "temperature": "39.4°C oral",
+      "pulse": "118/minute",
+      "resp": "24/minute",
+      "bp": "88/52 mmHg",
+      "o2sat": "96% on room air",
+      "weight": "92 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following is the most appropriate timing of his first antibiotic dose?",
-        kind: "single",
-        options: [
-          "After bile cultures from ERCP",
-          "After CT confirms obstruction",
-          "After ultrasound of the bile ducts",
-          "Now, before imaging or drainage",
-          "Only if blood cultures are positive"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate timing of his first antibiotic dose?",
+        "options": [
+          "After the urine culture result",
+          "Give the first dose now, here",
+          "On arrival at the regional centre",
+          "Once the stone has been treated",
+          "Only if his BP stays low after fluids"
         ],
-        correct: 3,
-        explanation: "Fever, jaundice and right upper quadrant pain with hypotension and confusion make acute cholangitis with septic shock likely. Antibiotics should be given now, after blood cultures, and not held for imaging, ERCP or culture results. Waiting for bile cultures or imaging delays treatment of a rapidly fatal infection. Blood cultures are negative in many cases, so they cannot decide whether to treat.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 1
+        "correct": 1,
+        "explanation": "He has sepsis with hypotension and a high lactate, and the SSC guideline recommends antimicrobials immediately, ideally within 1 hour of recognition. His cultures are already drawn, so there is nothing to wait for. Giving the first dose on arrival 2 hours away, after culture results, after the stone is treated, or only if fluids fail all delay treatment of septic shock.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 1
         },
-        source: "tg18-mx"
+        "source": "ssc-2026"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is the most appropriate empiric antibiotic?",
-        kind: "single",
-        options: [
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate empiric antibiotic for him?",
+        "options": [
+          "amoxicillin-clavulanate 875 mg PO twice daily",
           "ampicillin 2 g IV every 6 hours",
           "cefazolin 2 g IV every 8 hours",
-          "ciprofloxacin 500 mg PO twice daily",
-          "piperacillin-tazobactam 4.5 g IV every 6 hours",
-          "vancomycin 25 mg/kg IV loading dose"
+          "cefepime 2 g IV every 8 hours",
+          "ceftriaxone 2 g IV every 24 hours"
         ],
-        correct: 3,
-        explanation: "He has severe (grade III) cholangitis, because he has organ dysfunction: confusion, an INR of 1.6 (above 1.5) and platelets of 88 x 10^9/L (below 100). Tokyo Guidelines 2018 recommend broad agents such as piperacillin-tazobactam for severe community acquired cholangitis, to cover Enterobacterales, enterococci and anaerobes. Ampicillin and cefazolin leave gaps in gram negative cover. Oral ciprofloxacin is inadequate in shock. Vancomycin does not cover gram negative organisms.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 8
+        "correct": 3,
+        "explanation": "The IDSA guidance asks clinicians to use microbiology from the past 12 months when choosing empiric therapy. Enterobacter cloacae is at moderate risk of clinically significant AmpC production, and its basal AmpC makes it intrinsically resistant to ampicillin, amoxicillin-clavulanate and first-generation cephalosporins such as cefazolin. Cefepime is stable against AmpC, induces it little and is suggested when it tests susceptible, as his did. Ceftriaxone risks resistance emerging during treatment of a serious infection.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 8
         },
-        source: "tg18"
+        "source": "idsa-amr-2026"
       },
       {
-        id: "q3",
-        prompt: "Which of the following is the most appropriate plan for biliary drainage?",
-        kind: "single",
-        options: [
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following is the most important step to control the source of his sepsis?",
+        "options": [
           "Antibiotics alone for 14 days",
-          "Cholecystectomy within 72 hours",
-          "Drainage only if cultures are positive",
-          "Elective ERCP in 6 weeks",
-          "Urgent drainage after resuscitation"
+          "Decompression by stent or nephrostomy",
+          "Shock wave lithotripsy today",
+          "Tamsulosin to pass the stone",
+          "Wait 48 hours for the stone to pass"
         ],
-        correct: 4,
-        explanation: "Severe cholangitis needs urgent biliary drainage, usually by ERCP, as soon as he is resuscitated and organ support is in place. Source control is part of structured septic shock care, and antibiotics alone often fail with an obstructed duct. Waiting for culture results or an elective procedure allows ongoing sepsis. Cholecystectomy does not drain an obstructed common bile duct and is planned later.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 2
+        "correct": 1,
+        "explanation": "An infected, obstructed kidney is a closed collection that antibiotics alone cannot clear. The SSC guideline suggests early source control, ideally within 6 hours of diagnosis. Here that means urgent drainage with a ureteric stent or a nephrostomy. Lithotripsy is avoided during active infection, and tamsulosin to help the stone pass does not drain infected urine from the obstructed kidney. Waiting 48 hours leaves pus under pressure.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 2
         },
-        source: "tg18-mx"
+        "source": "ssc-2026"
       }
     ],
-    sources: [
-      {
-        id: "tg18",
-        citation: "Gomi H, Solomkin JS, Schlossberg D, et al. Tokyo Guidelines 2018: antimicrobial therapy for acute cholangitis and cholecystitis. J Hepatobiliary Pancreat Sci. 2018.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/29090866/"
-      },
-      {
-        id: "tg18-mx",
-        citation: "Miura F, Okamoto K, Takada T, et al. Tokyo Guidelines 2018: initial management of acute biliary infection and flowchart for acute cholangitis. J Hepatobiliary Pancreat Sci. 2018.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/28941329/"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "ssc-2026",
+      "citation": "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.",
+      "url": "https://doi.org/10.1097/CCM.0000000000007075"
+    },
+    {
+      "id": "idsa-amr-2026",
+      "citation": "Tamma PD, Heil EL, Justo JA, et al. Infectious Diseases Society of America 2026 guidance on the treatment of antimicrobial-resistant gram-negative infections. Clin Infect Dis. 2026.",
+      "url": "https://www.idsociety.org/practice-guideline/amr-guidance/"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
-    id: "infectious-diseases-29",
-    topic: "infectious-diseases",
-    title: "Drowsy toddler with fever in a small hospital",
-    stem: "You are working in a rural hospital emergency department. The nearest pediatric ICU is 3 hours away by air. A 2-year-old girl is brought in by her parents with 1 day of fever and decreased activity. Over the past hour a spotty rash has spread over her legs. She has had one wet diaper today. She has no medical history and her immunizations are up to date. She is lethargic and responds only to a loud voice. There are non blanching purple spots on her legs and trunk. Her hands and feet are cold with a capillary refill of 5 seconds. Two IV attempts have failed.",
-    vitals: {
-      temperature: "39.8°C rectal",
-      pulse: "180/minute",
-      resp: "44/minute",
-      bp: "70/38 mmHg",
-      o2sat: "95% on room air",
-      weight: "12 kg"
+    "id": "infectious-diseases-29",
+    "topic": "infectious-diseases",
+    "title": "Tummy pain in a boy with swollen legs",
+    "stem": "A 5-year-old boy is brought to the emergency department by his parents with 1 day of fever, abdominal pain and vomiting. He has steroid-sensitive nephrotic syndrome and is in relapse, taking prednisone 40 mg daily for the past 3 weeks. Since this morning he has been sleepy. He is lethargic but rouses to voice. His hands and feet are cool and mottled, with a capillary refill of 5 seconds. He has puffy eyelids and pitting edema of both legs. The abdomen is distended and tender all over, with guarding. His lungs are clear and his liver edge is not enlarged. Blood cultures have been drawn through a new IV.",
+    "vitals": {
+      "temperature": "39.3°C tympanic",
+      "pulse": "168/minute",
+      "resp": "32/minute",
+      "bp": "76/40 mmHg",
+      "o2sat": "96% on room air",
+      "weight": "20 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        update: "An intraosseous needle is placed in her right proximal tibia. A blood culture and a capillary glucose of 4.8 mmol/L are obtained from it.",
-        prompt: "Which of the following is the most appropriate timing of her first antibiotic dose?",
-        kind: "single",
-        options: [
-          "After a lumbar puncture",
-          "After the first 20 mL/kg bolus",
-          "After transfer to the pediatric ICU",
-          "Immediately, through the IO line",
-          "When the CBC and CRP return"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate timing of his first antibiotic dose?",
+        "options": [
+          "After abdominal ultrasound",
+          "After diagnostic paracentesis",
+          "Once the CBC and CRP are back",
+          "When the surgeon has assessed him",
+          "Within 1 hour of recognition"
         ],
-        correct: 3,
-        explanation: "She has septic shock with a non blanching rash, so antibiotics should be given as soon as possible and ideally within 1 hour of recognition. The intraosseous line can be used for antibiotics right away. A lumbar puncture is unsafe in shock and must not delay treatment. Fluids and antibiotics are given together, not in sequence. Waiting for laboratory results or for transfer loses hours.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 1
+        "correct": 4,
+        "explanation": "He has septic shock with hypotension and poor perfusion, likely from peritonitis, to which nephrotic syndrome and steroids predispose. The pediatric SSC guideline advises antimicrobials as soon as possible, within 1 hour of recognizing septic shock, and his blood cultures are already drawn. Waiting for ultrasound, paracentesis, blood tests or a surgical assessment delays treatment of a shocked child.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 1
         },
-        source: "ssc-peds26"
+        "source": "ssc-peds-2026"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is the most appropriate first fluid bolus for her?",
-        kind: "single",
-        options: [
-          "Albumin 5% 240 mL IO bolus",
-          "Dextrose 5% water 240 mL IO bolus",
-          "Ringer's lactate 240 mL IO bolus",
-          "Ringer's lactate 720 mL IO bolus",
-          "Ringer's lactate 60 mL IO bolus"
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate first fluid bolus for him?",
+        "options": [
+          "Albumin 25% 20 mL/kg IV",
+          "Balanced crystalloid 1 200 mL IV at once",
+          "Balanced crystalloid 400 mL IV, then reassess",
+          "Furosemide 1 mg/kg IV first",
+          "No fluid until albumin is checked"
         ],
-        correct: 2,
-        explanation: "Children with septic shock receive boluses of 10 to 20 mL/kg of crystalloid, with reassessment after each for response and signs of overload. For 12 kg, 20 mL/kg is 240 mL. Balanced crystalloid is preferred over saline, and albumin is not recommended for initial resuscitation. 720 mL is 60 mL/kg given as one bolus without reassessment. 60 mL is only 5 mL/kg, and 5% dextrose in water is not a resuscitation fluid.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 2
+        "correct": 2,
+        "explanation": "Despite his edema, his circulating volume is low, and cool mottled limbs with hypotension show shock. The pediatric SSC guideline suggests boluses of 10 to 20 mL/kg, repeated up to 40 to 60 mL/kg in the first hour while there are no signs of fluid overload. A bolus of 20 mL/kg is 20 x 20 = 400 mL, followed by reassessment of perfusion, liver size and lungs. Giving 60 mL/kg, 1 200 mL, at once skips those checks. Withholding fluid or giving furosemide worsens shock, and an albumin level does not change the need for a bolus. The guideline suggests crystalloids rather than albumin for initial resuscitation, and concentrated 25% albumin at 20 mL/kg is not a resuscitation bolus.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 2
         },
-        source: "ssc-peds26"
+        "source": "ssc-peds-2026"
       },
       {
-        id: "q3",
-        update: "After three boluses of 20 mL/kg, her BP is 72/40 mmHg and her hands and feet remain cold. Her liver edge is now 4 cm below the costal margin and she has new crackles at both bases.",
-        prompt: "Which of the following is the most appropriate next step in her treatment?",
-        kind: "single",
-        options: [
-          "Dopamine infusion through the IO",
-          "Epinephrine infusion through the IO",
-          "Further 20 mL/kg crystalloid bolus",
-          "Milrinone infusion through the IO",
-          "Vasoactive drug after central access"
+        "id": "q3",
+        "kind": "single",
+        "update": "After 60 mL/kg of crystalloid and an epinephrine infusion, he remains hypotensive with cool extremities.",
+        "prompt": "Which of the following is the most appropriate additional treatment for him?",
+        "options": [
+          "Additional 20 mL/kg crystalloid bolus",
+          "Double his usual prednisone PO",
+          "Fludrocortisone PO",
+          "Hydrocortisone at stress dose IV",
+          "No corticosteroid"
         ],
-        correct: 1,
-        explanation: "Shock persists after 60 mL/kg and the new hepatomegaly and crackles show she is no longer fluid responsive, so she needs a vasoactive infusion now. Epinephrine is an accepted first choice for cold, fluid refractory shock in children, and it can be started through peripheral or intraosseous access rather than waiting for a central line. Dopamine is not preferred. More fluid will worsen the overload. Milrinone is an inodilator that can worsen hypotension, so it is not a first choice in a hypotensive child.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 2
+        "correct": 3,
+        "explanation": "Three weeks of daily prednisone makes adrenal suppression likely, and the pediatric SSC guideline advises stress-dose corticosteroids for suspected or documented adrenal insufficiency. Oral prednisone is unreliable in shock and doubling it is not stress replacement. Fludrocortisone alone lacks the glucocorticoid effect. More fluid after 60 mL/kg without response risks overload, and withholding steroids ignores his suppressed adrenal axis.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 2
         },
-        source: "ssc-peds26"
+        "source": "ssc-peds-2026"
       }
     ],
-    sources: [
-      {
-        id: "ssc-peds26",
-        citation: "Weiss SL, Peters MJ, Oczkowski SJW, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Pediatr Crit Care Med. 2026.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/41869844/"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "ssc-peds-2026",
+      "citation": "Weiss SL, Peters MJ, Oczkowski SJ, et al. Surviving Sepsis Campaign international guidelines for the management of sepsis and septic shock in children 2026. Pediatr Crit Care Med. 2026.",
+      "url": "https://doi.org/10.1097/PCC.0000000000003927"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
     id: "infectious-diseases-30",
@@ -1618,86 +1620,91 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     ...META
   },
   {
-    id: "infectious-diseases-32",
-    topic: "infectious-diseases",
-    title: "Fever in a bedbound nursing home resident",
-    stem: "An 84-year-old man is brought to the emergency department by ambulance from his long term care home with 1 day of reduced responsiveness. Staff recorded an oral temperature of 36.6°C yesterday. He is bedbound after a stroke 2 years ago and has vascular dementia and type 2 diabetes. He has no urinary catheter. The nursing note reports no cough, vomiting or diarrhea. He groans when moved but does not follow commands. His chest is clear. His abdomen is soft. Urinalysis shows no leukocytes or nitrites. Lactate is 2.8 mmol/L.",
-    vitals: {
-      temperature: "37.9°C oral",
-      pulse: "108/minute",
-      resp: "22/minute",
-      bp: "108/62 mmHg",
-      o2sat: "95% on room air",
-      weight: "56 kg"
+    "id": "infectious-diseases-32",
+    "topic": "infectious-diseases",
+    "title": "Feeling unwell with a normal CRP",
+    "stem": "A 61-year-old woman presents to the emergency department with 2 days of chills, malaise and poor appetite. She has rheumatoid arthritis treated with monthly tocilizumab infusions, last given 2 weeks ago, and prednisone 5 mg daily. Yesterday her family physician found a temperature of 37.3°C and a CRP of 3 mg/L and reassured her. She took acetaminophen 650 mg 8 hours ago. Today she feels worse and is slow to answer questions. She has no cough, urinary symptoms, abdominal pain, headache or rash that she has noticed. She wears compression stockings for leg swelling. Her chest is clear, her abdomen is soft and there is no neck stiffness. Urinalysis and chest X-ray are normal. Lactate is 3.2 mmol/L.",
+    "vitals": {
+      "temperature": "37.6°C oral",
+      "pulse": "118/minute",
+      "resp": "24/minute",
+      "bp": "94/58 mmHg",
+      "o2sat": "96% on room air",
+      "weight": "70 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following best defines fever in an older long term care resident?",
-        kind: "single",
-        options: [
-          "Oral temperature over 37.8°C once",
-          "Oral temperature over 38.3°C once",
-          "Oral temperature over 38.9°C once",
-          "Rectal temperature over 38.5°C twice",
-          "Tympanic temperature over 39.0°C once"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following best explains why her temperature and CRP were near normal despite serious illness?",
+        "options": [
+          "Acetaminophen taken 8 hours ago",
+          "Early stage of a viral illness",
+          "Her age of 61 years",
+          "Interleukin-6 blockade by tocilizumab",
+          "Low-dose daily prednisone"
         ],
-        correct: 0,
-        explanation: "Older residents often mount a blunted fever, so IDSA defines fever in long term care as a single oral temperature over 37.8°C, repeated readings over 37.2°C oral or 37.5°C rectal, or a rise of more than 1.1°C over baseline. His 37.9°C meets the single reading threshold and is also a rise of 1.3°C from yesterday. The higher cut offs would miss infection in many older adults.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 3
+        "correct": 3,
+        "explanation": "Tocilizumab blocks interleukin-6 signalling, which drives fever and the hepatic acute phase response. The Canadian product monograph warns that signs and symptoms of acute inflammation may be lessened because acute phase reactants are suppressed, so infection can be missed. Acetaminophen can lower her temperature but not her CRP. Prednisone 5 mg has only a modest effect. Her age and an early viral illness do not explain a normal CRP with tachycardia, hypotension and a raised lactate.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 3
         },
-        source: "idsa-ltc"
+        "source": "actemra-pm"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is the most important next step in his examination?",
-        kind: "single",
-        options: [
-          "Digital rectal exam for impaction",
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most important next step in her examination?",
+        "options": [
+          "Count of tender and swollen joints",
+          "Full skin check with stockings removed",
           "Fundoscopy for papilledema",
-          "Inspection of the sacrum and heels",
-          "Kernig and Brudzinski signs",
-          "Repeat chest auscultation"
+          "Repeat auscultation of the chest",
+          "Tender point examination"
         ],
-        correct: 2,
-        explanation: "A bedbound resident with fever and no source in the chest, abdomen or urine needs a full skin examination, including the sacrum, hips and heels, where infected pressure injuries are easily missed. He must be turned to examine his back. His chest is already clear. Fundoscopy, meningeal signs and a rectal examination are less likely to find the source in this setting.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 6
+        "correct": 1,
+        "explanation": "Her history and first examination give no source, and blunted inflammation makes local signs less obvious. The skin under clothing and stockings is an often missed site of cellulitis or a wound, and she cannot see her own legs well under the stockings. The monograph advises a prompt and complete workup for new infection. A joint count assesses arthritis activity, not sepsis. Her chest is already clear and she has no headache or neurological signs to direct fundoscopy. Tender points belong to fibromyalgia.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 6
         },
-        source: "idsa-ltc"
+        "source": "actemra-pm"
       },
       {
-        id: "q3",
-        update: "On turning him, there is a 6 cm sacral pressure injury with black eschar at one edge, foul purulent drainage and 3 cm of surrounding redness. Bone is visible at its base.",
-        prompt: "Which of the following is the most appropriate microbiology testing?",
-        kind: "single",
-        options: [
-          "Blood cultures and deep tissue sample",
-          "Nasal swab for MRSA only",
-          "Stool for C. difficile toxin",
-          "Superficial swab of the eschar",
-          "Urine culture from the bag"
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following investigations is most important to send now?",
+        "options": [
+          "Antinuclear antibody titre",
+          "Blood cultures, two sets",
+          "Erythrocyte sedimentation rate",
+          "Repeat CRP in 12 hours",
+          "Rheumatoid factor level"
         ],
-        correct: 0,
-        explanation: "An infected pressure injury with systemic signs calls for blood cultures and a deep tissue or bone specimen, because exposed bone raises concern for osteomyelitis and bacteremia. Superficial swabs grow colonizing organisms, and IDSA advises against surface swab cultures for these infections. He has no diarrhea, so C. difficile testing is not indicated. A urine culture from a collection bag is contaminated and his urinalysis is negative. A nasal MRSA swab alone does not identify the cause.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 7
+        "correct": 1,
+        "explanation": "She has a systolic BP of 94 mmHg, tachycardia, confusion and a lactate of 3.2 mmol/L on an immunosuppressive drug, so she needs a full workup for sepsis before antibiotics start. The SSC guideline recommends collecting blood cultures as soon as possible and ideally before antimicrobials. A repeat CRP or an ESR will stay falsely reassuring while interleukin-6 is blocked. Antinuclear antibody and rheumatoid factor tests assess autoimmune disease and do not guide treatment of infection.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 7
         },
-        source: "idsa-ltc"
+        "source": "ssc-2026"
       }
     ],
-    sources: [
-      {
-        id: "idsa-ltc",
-        citation: "High KP, Bradley SF, Gravenstein S, et al. Clinical practice guideline for the evaluation of fever and infection in older adult residents of long-term care facilities: 2008 update by the Infectious Diseases Society of America. Clin Infect Dis. 2009.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/19072244/"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "actemra-pm",
+      "citation": "Hoffmann-La Roche Limited. Actemra (tocilizumab) product monograph. Health Canada. 2023.",
+      "url": "https://assets.roche.com/f/173850/x/26aa4f5e44/actemra_pm_e.pdf"
+    },
+    {
+      "id": "ssc-2026",
+      "citation": "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.",
+      "url": "https://doi.org/10.1097/CCM.0000000000007075"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
     id: "infectious-diseases-33",
@@ -2100,114 +2107,112 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     ...META
   },
   {
-    id: "infectious-diseases-37",
-    topic: "infectious-diseases",
-    title: "Swollen finger after a pet bite",
-    stem: "A 44-year-old woman presents to the emergency department 30 hours after her own cat bit the palm side of her right index finger. The puncture wounds were small and she washed them at home. Since this morning the whole finger has become swollen and very painful. She is a pianist. She has no medical history and no allergies. She completed her childhood immunizations and her last tetanus booster was 12 years ago. She has not had a pertussis booster as an adult. The finger is diffusely swollen and held slightly bent. Passive extension causes severe pain. There is tenderness along the palm side of the finger into the palm.",
-    vitals: {
-      temperature: "37.8°C oral",
-      pulse: "94/minute",
-      resp: "16/minute",
-      bp: "128/78 mmHg",
-      o2sat: "99% on room air",
-      weight: "64 kg"
+    "id": "infectious-diseases-37",
+    "topic": "infectious-diseases",
+    "title": "Fever and a girl who will not walk",
+    "stem": "A 6-year-old girl is brought to the emergency department by her father with 2 days of fever and 1 day of refusing to stand on her left leg. A week ago she had a sore throat that settled without treatment. She has not fallen. She has no medical history, her immunizations are up to date and she has no allergies. She lives with her parents and her 3-year-old brother, and her mother is 28 weeks pregnant. She is miserable but alert, with warm hands and a capillary refill of 2 seconds. She holds her left hip flexed and turned outward and screams with any passive movement of it. There is no rash.",
+    "vitals": {
+      "temperature": "39.2°C oral",
+      "pulse": "132/minute",
+      "resp": "24/minute",
+      "bp": "102/64 mmHg",
+      "o2sat": "99% on room air",
+      "weight": "21 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following is the most likely diagnosis in her finger?",
-        kind: "single",
-        options: [
-          "Acute paronychia",
-          "Cellulitis of the finger",
-          "Felon of the fingertip",
-          "Herpetic whitlow",
-          "Pyogenic flexor tenosynovitis"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most likely cause of her refusal to walk?",
+        "options": [
+          "Abscess of the iliopsoas muscle",
+          "Osteomyelitis of the distal femur",
+          "Reactive arthritis after the sore throat",
+          "Septic arthritis of the left hip",
+          "Transient synovitis of the hip"
         ],
-        correct: 4,
-        explanation: "She has all four Kanavel signs: a uniformly swollen finger, a slightly flexed resting position, severe pain on passive extension and tenderness along the flexor tendon sheath. A cat bite can inoculate the sheath directly. Cellulitis does not cause pain on passive extension or sheath tenderness. Paronychia and felon stay at the nail fold or fingertip pulp. Herpetic whitlow causes vesicles.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 3,
+        "explanation": "High fever, refusal to bear weight and severe pain with any passive movement of a hip held flexed and turned outward point to septic arthritis, which the CPS statement treats as an urgent diagnosis. A recent sore throat can be the start of a group A streptococcal infection that later seeds a joint. An iliopsoas abscess causes pain mainly when the hip is extended, not with every movement. Osteomyelitis of the distal femur causes pain and tenderness above the knee, not severe pain on moving the hip. Transient synovitis and reactive arthritis cause milder pain in a child who looks less unwell.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "kennedy"
+        "source": "cps-osteoarticular"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is the most appropriate management of her finger?",
-        kind: "single",
-        options: [
-          "Incision of the puncture wounds",
-          "IV antibiotics and urgent hand surgery",
-          "Oral antibiotics and review in 48 hours",
-          "Primary closure of the wounds",
-          "Splint, elevate and discharge"
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate next step in her care?",
+        "options": [
+          "Hip ultrasound and urgent orthopaedic review",
+          "Ibuprofen and review in 48 hours",
+          "MRI of the pelvis as an outpatient",
+          "Plain X-ray of the hip only",
+          "Throat swab for group A strep"
         ],
-        correct: 1,
-        explanation: "Pyogenic flexor tenosynovitis can destroy the tendon and spread into the palm, so it needs IV antibiotics and urgent hand surgery review, often for irrigation of the sheath. Oral antibiotics and delayed review risk permanent loss of function, which matters greatly to a pianist. Opening only the puncture wounds does not drain the sheath. Bite wounds should not be closed.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 0,
+        "explanation": "The CPS statement notes that ultrasound detects excess fluid in the joint and that a child with suspected septic arthritis needs prompt assessment by an orthopaedic surgeon for urgent irrigation. Delay risks damage to the joint. A plain X-ray alone is often normal early. An outpatient MRI or a 48-hour review wastes time. A throat swab does not answer whether the hip is infected.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "kennedy"
+        "source": "cps-osteoarticular"
       },
       {
-        id: "q3",
-        prompt: "Which of the following is the most appropriate IV antibiotic regimen?",
-        kind: "single",
-        options: [
-          "cefazolin 2 g IV alone",
-          "ceftriaxone and metronidazole IV",
-          "clindamycin 600 mg IV every 8 hours",
-          "cloxacillin 2 g IV alone",
-          "vancomycin 1 g IV alone"
+        "id": "q3",
+        "kind": "single",
+        "update": "Two sets of blood cultures have been drawn, and she is to receive her first antibiotic dose now.",
+        "prompt": "Which of the following is the most appropriate empiric IV antibiotic for her?",
+        "options": [
+          "cefazolin 1 g IV every 8 hours",
+          "clindamycin 280 mg IV every 8 hours",
+          "gentamicin 150 mg IV daily",
+          "piperacillin-tazobactam IV",
+          "vancomycin 300 mg IV every 6 hours"
         ],
-        correct: 1,
-        explanation: "Cat bites carry Pasteurella multocida as well as streptococci, staphylococci and anaerobes. In the IDSA animal bite table, ceftriaxone has good activity against Pasteurella multocida but misses anaerobes, so metronidazole is added. First generation cephalosporins, cloxacillin and clindamycin have poor activity against Pasteurella multocida. Vancomycin does not cover Pasteurella or gram negative anaerobes.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 8
+        "correct": 0,
+        "explanation": "The CPS statement recommends cefazolin 100 to 150 mg/kg/day divided every 6 or 8 hours for bone and joint infection. For 21 kg, 1 g every 8 hours is about 143 mg/kg/day. It covers Staphylococcus aureus and group A streptococcus. Vancomycin is added when MRSA is suspected, and Kingella kingae resists vancomycin and clindamycin. Gentamicin alone misses these organisms. Piperacillin-tazobactam is broader than she needs.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 8
         },
-        source: "idsa-ssti"
+        "source": "cps-osteoarticular"
       },
       {
-        id: "q4",
-        prompt: "Which of the following is the most appropriate tetanus prophylaxis for her?",
-        kind: "single",
-        options: [
-          "Td vaccine and immune globulin",
-          "Tdap vaccine alone",
-          "Tdap vaccine and immune globulin",
-          "Tetanus immune globulin alone",
-          "No tetanus prophylaxis needed"
+        "id": "q4",
+        "kind": "single",
+        "update": "Her blood culture grows group A streptococcus. She has had no low blood pressure, rash, organ dysfunction or tissue necrosis.",
+        "prompt": "Which of the following is the most appropriate advice for her household contacts?",
+        "options": [
+          "Amoxicillin for her brother only",
+          "Cephalexin for all household contacts",
+          "Cephalexin for her pregnant mother",
+          "Penicillin V for all contacts",
+          "Warning signs only, no antibiotics"
         ],
-        correct: 1,
-        explanation: "A bite is not a clean minor wound. She has had at least 3 doses and her last booster was more than 10 years ago, so she needs a tetanus containing vaccine but not immune globulin. Immune globulin is for people with an unknown history or fewer than 3 doses. Adults who have not had a pertussis dose in adulthood should receive Tdap, so Tdap is preferred over Td.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 10
+        "correct": 4,
+        "explanation": "The CPS practice point offers chemoprophylaxis only to close contacts of severe invasive group A streptococcal disease, such as toxic shock, necrotizing fasciitis or meningitis. Bacteremia or septic arthritis without these features is non-severe, and routine chemoprophylaxis is not recommended. All close contacts should be told the warning signs and to seek care for fever or other signs of infection within 30 days. Pregnancy does not change this for a non-severe case.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 10
         },
-        source: "cig-tetanus"
+        "source": "cps-igas"
       }
     ],
-    sources: [
-      {
-        id: "kennedy",
-        citation: "Kennedy CD, Huang JI, Hanel DP. In brief: Kanavel's signs and pyogenic flexor tenosynovitis. Clin Orthop Relat Res. 2016.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/26022113/"
-      },
-      {
-        id: "idsa-ssti",
-        citation: "Stevens DL, Bisno AL, Chambers HF, et al. Practice guidelines for the diagnosis and management of skin and soft tissue infections: 2014 update by the Infectious Diseases Society of America. Clin Infect Dis. 2014.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/24973422/"
-      },
-      {
-        id: "cig-tetanus",
-        citation: "Public Health Agency of Canada. Canadian Immunization Guide. Tetanus toxoid chapter, including tetanus prophylaxis in wound management. Updated 2026.",
-        url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "cps-osteoarticular",
+      "citation": "Le Saux N. Diagnosis and management of acute osteoarticular infections in children. Canadian Paediatric Society position statement. Paediatr Child Health. 2018.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6054183/"
+    },
+    {
+      "id": "cps-igas",
+      "citation": "Moore DL, Allen UD, Mailman T. Invasive group A streptococcal disease: management and chemoprophylaxis. Canadian Paediatric Society practice point (reaffirmed 2024). Paediatr Child Health. 2019.",
+      "url": "https://cps.ca/en/documents/position/Invasive-group-A-streptococcal-disease"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
     id: "infectious-diseases-38",
@@ -2315,198 +2320,198 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     ...META
   },
   {
-    id: "infectious-diseases-39",
-    topic: "infectious-diseases",
-    title: "Young woman seen after an assault",
-    stem: "A 23-year-old woman presents to the emergency department 30 hours after she was sexually assaulted by a man she did not know. There was vaginal penetration without a condom. His HIV status is unknown. She has no injuries that need repair. She has no medical history and takes no medications. She completed hepatitis B vaccination in grade 6 and had a protective antibody level documented when she started nursing school. Her last menstrual period was 2 weeks ago and urine hCG is negative. She wants all preventive care that is available.",
-    vitals: {
-      temperature: "36.8°C oral",
-      pulse: "88/minute",
-      resp: "16/minute",
-      bp: "116/72 mmHg",
-      o2sat: "99% on room air",
-      weight: "60 kg"
+    "id": "infectious-diseases-39",
+    "topic": "infectious-diseases",
+    "title": "A needle in the sandbox",
+    "stem": "An 8-year-old boy is brought to the emergency department by his mother 2 hours after he pricked the tip of his finger on a discarded needle and syringe in a park sandbox. The syringe had no visible blood. The puncture is shallow and bled a little, and his mother washed it with soap and water. His routine immunizations are up to date, including the complete hepatitis B series as an infant, and his last tetanus-containing vaccine was at age 4. He has no medical history. There is a 1 mm puncture on the pad of his left index finger with no foreign body. His mother brought the needle in a plastic bottle.",
+    "vitals": {
+      "temperature": "36.8°C tympanic",
+      "pulse": "96/minute",
+      "resp": "20/minute",
+      "o2sat": "99% on room air",
+      "weight": "26 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following is the most appropriate approach to HIV postexposure prophylaxis?",
-        kind: "single",
-        options: [
-          "Start after her HIV test result returns",
-          "Start now and continue for 28 days",
-          "Start now and continue for 7 days",
-          "Start only if the assailant is found",
-          "Wait, as over 24 hours have passed"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate approach to HIV postexposure prophylaxis for him?",
+        "options": [
+          "Discuss the low risk without offering PEP",
+          "Start PEP if his mother is anxious",
+          "Start PEP once the needle is tested",
+          "Start three-drug PEP for 28 days",
+          "Start two-drug PEP for 14 days"
         ],
-        correct: 1,
-        explanation: "The Canadian guideline advises offering PEP after sexual assault unless the assailant is unlikely to have transmissible HIV, which cannot be known here. PEP should start as soon as possible, up to 72 hours after exposure, and she is at 30 hours. It is given for 28 days. A baseline HIV test is drawn, but the first dose should not wait for the result. A 7 day course is too short to be effective.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 10
+        "correct": 0,
+        "explanation": "No case of HIV infection from a discarded needle in the community has been reported, and the risk is extremely unlikely. The CPS statement advises discussing but not recommending prophylaxis in low-risk situations and keeping it for high-risk ones, such as a needle with visible blood or blood injected. His shallow puncture with no visible blood is low risk. Testing the needle is not indicated because a negative result would not rule out infection. Anxiety alone does not justify antiretroviral drugs.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 10
         },
-        source: "can-pep"
+        "source": "cps-needle"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is a preferred PEP regimen in the Canadian guideline?",
-        kind: "single",
-        options: [
-          "abacavir/lamivudine plus nevirapine",
-          "bictegravir/tenofovir alafenamide/emtricitabine",
-          "lopinavir/ritonavir plus zidovudine",
-          "tenofovir disoproxil/emtricitabine alone",
-          "zidovudine/lamivudine plus nevirapine"
-        ],
-        correct: 1,
-        explanation: "The 2025 Canadian guideline names two preferred PEP regimens, bictegravir/tenofovir alafenamide/emtricitabine once daily, or dolutegravir with tenofovir disoproxil/emtricitabine. Tenofovir disoproxil/emtricitabine alone is a PrEP regimen and is not enough for PEP. Nevirapine can cause severe liver toxicity in people without HIV. Zidovudine and lopinavir based regimens are older options with more side effects.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 10
-        },
-        source: "can-pep"
-      },
-      {
-        id: "q3",
-        prompt: "Which of the following baseline tests are most appropriate today?",
-        kind: "menu",
-        options: [
-          "Blood culture",
-          "CT abdomen and pelvis",
-          "Gonorrhea and chlamydia NAAT",
-          "Hepatitis B surface antibody",
-          "Herpes simplex serology",
-          "HIV antigen and antibody test",
-          "Pelvic ultrasound",
-          "Syphilis serology"
-        ],
-        select: 3,
-        correct: [
-          2,
-          5,
-          7
-        ],
-        explanation: "Baseline testing before PEP includes a fourth generation HIV antigen and antibody test and screening for sexually transmitted infections, including gonorrhea and chlamydia NAAT and syphilis serology. Hepatitis B testing is for people of unknown status, and she has documented immunity. Herpes serology does not change management. She has no injuries or findings that need imaging or blood cultures.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 7
-        },
-        source: "can-pep"
-      },
-      {
-        id: "q4",
-        prompt: "Which of the following hepatitis B measures does she need after this exposure?",
-        kind: "single",
-        options: [
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate hepatitis B management for him?",
+        "options": [
+          "Check anti-HBs, vaccine dose if delayed",
           "Hepatitis B immune globulin alone",
-          "Hepatitis B vaccine booster dose",
-          "Repeat anti-HBs, then decide",
-          "Vaccine and immune globulin now",
-          "No hepatitis B prophylaxis needed"
+          "Immune globulin and full vaccine series",
+          "Restart the full vaccine series",
+          "No hepatitis B measures are needed"
         ],
-        correct: 4,
-        explanation: "She completed the vaccine series and has a documented protective anti-HBs level, so she is a known responder. Known responders are protected and need no hepatitis B vaccine, immune globulin or further testing after an exposure. Immune globulin and vaccine are for people who are unvaccinated, known non-responders or of unknown response. Boosters are not needed in healthy people who have responded.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 10
+        "correct": 0,
+        "explanation": "For a child who completed the hepatitis B series, the CPS statement advises testing anti-HBs and HBsAg. If the anti-HBs result is not available within 48 hours, one dose of hepatitis B vaccine is given. A protective titre needs no further action, while a non-protective result calls for immune globulin with a vaccine dose. Immune globulin with a full series is for unvaccinated children. Restarting the series or doing nothing ignores his status and the unknown source.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 10
         },
-        source: "cig-hbv"
-      }
-    ],
-    sources: [
-      {
-        id: "can-pep",
-        citation: "Tan DHS, Hull MW, Onyegbule SO, et al. Canadian guideline on HIV pre- and postexposure prophylaxis: 2025 update. CMAJ. 2025.",
-        url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12680393/"
+        "source": "cps-needle"
       },
       {
-        id: "cig-hbv",
-        citation: "Public Health Agency of Canada. Canadian Immunization Guide. Hepatitis B vaccine chapter, including post-exposure prophylaxis. Updated 2026.",
-        url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-7-hepatitis-b-vaccine.html"
+        "id": "q3",
+        "kind": "menu",
+        "select": 3,
+        "prompt": "Which of the following baseline tests should be drawn from him today?",
+        "options": [
+          "CBC with differential",
+          "Culture of the needle tip",
+          "Hepatitis B serology",
+          "Hepatitis C antibody",
+          "HIV antibody test",
+          "Liver enzymes",
+          "Testing the needle for viruses"
+        ],
+        "correct": [
+          2,
+          3,
+          4
+        ],
+        "explanation": "The CPS statement advises baseline HBV, HCV and HIV serology, so that any later infection can be shown to have come from this injury, with repeat testing at 4 to 6 weeks and 4 to 6 months. Testing the needle or syringe is not indicated because a negative result does not exclude infection. Needle culture, a blood count and liver enzymes do not change management of a well child with a minor puncture.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 7
+        },
+        "source": "cps-needle"
+      },
+      {
+        "id": "q4",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate tetanus management for him?",
+        "options": [
+          "Td vaccine booster now",
+          "Tdap and tetanus immune globulin",
+          "Tdap vaccine booster now",
+          "Tetanus immune globulin alone",
+          "No tetanus vaccine or immune globulin"
+        ],
+        "correct": 4,
+        "explanation": "He has had at least 3 doses of tetanus vaccine, the last at age 4, which is under 5 years ago. The Canadian Immunization Guide advises no vaccine and no immune globulin for any wound, clean or contaminated, when the last dose was under 5 years ago in a child with 3 or more doses. Tetanus immune globulin is for people with fewer than 3 doses or an unknown history and a contaminated wound. A Td or Tdap booster is not due.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 10
+        },
+        "source": "cig-tetanus"
       }
     ],
-    ...META
+    "sources": [
+    {
+      "id": "cps-needle",
+      "citation": "Moore DL, Bitnun A, Fanella S, Penner J, Barton M. Needle stick injuries in the community. Canadian Paediatric Society position statement (updated 2024). Paediatr Child Health. 2018.",
+      "url": "https://cps.ca/en/documents/position/needle-stick-injuries-in-the-community"
+    },
+    {
+      "id": "cig-tetanus",
+      "citation": "Public Health Agency of Canada. Tetanus toxoid: Canadian Immunization Guide. 2026.",
+      "url": "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-22-tetanus-toxoid.html"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
-    id: "infectious-diseases-40",
-    topic: "infectious-diseases",
-    title: "Infant exposed in a clinic waiting room",
-    stem: "A 9-month-old boy is brought to the emergency department by his mother because public health called her about a measles exposure. Fifty hours ago they sat for 2 hours in a walk in clinic waiting room with a child who has since been confirmed to have measles. He has had his 2, 4 and 6 month vaccines but no measles vaccine. He was born at term and is healthy with no immune problems. He is well, feeding normally and has no rash, cough or fever.",
-    vitals: {
-      temperature: "37.0°C rectal",
-      pulse: "124/minute",
-      resp: "30/minute",
-      o2sat: "99% on room air",
-      weight: "9 kg"
+    "id": "infectious-diseases-40",
+    "topic": "infectious-diseases",
+    "title": "Worried after his girlfriend's admission",
+    "stem": "You are working in an emergency department in Manitoba. A 20-year-old man presents because his girlfriend, a 19-year-old university student, was admitted last night with meningococcal septicemia. The laboratory now reports Neisseria meningitidis serogroup W from her blood. He kissed her the day before she became ill and last saw her 30 hours ago. He feels well, with no fever, headache or rash. He received a meningococcal ACYW conjugate vaccine at age 14 and has no condition that raises his risk of meningococcal disease. He takes no medications and has no allergies. Her roommate, who shares her dormitory room and is 28 weeks pregnant, has come with him. His examination is normal.",
+    "vitals": {
+      "temperature": "36.8°C oral",
+      "pulse": "76/minute",
+      "resp": "16/minute",
+      "bp": "124/76 mmHg",
+      "o2sat": "99% on room air",
+      "weight": "78 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following is the most appropriate postexposure prophylaxis for him?",
-        kind: "single",
-        options: [
-          "Immune globulin IM now",
-          "MMR vaccine and immune globulin",
-          "MMR vaccine now",
-          "Wait until 12 months for MMR",
-          "No prophylaxis, observe for a rash"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate timing of chemoprophylaxis for close contacts of this case?",
+        "options": [
+          "After a nasal swab confirms carriage",
+          "As soon as possible, within 24 hours",
+          "At day 7 if he stays well",
+          "Only if he develops fever or rash",
+          "Within 14 days of the last contact"
         ],
-        correct: 2,
-        explanation: "Susceptible infants aged 6 to under 12 months should receive MMR vaccine within 72 hours of exposure, and he is at 50 hours. Immune globulin is used for this age group only when more than 72 hours have passed. Giving both together is not needed and immune globulin can blunt the vaccine response. Waiting or observation leaves a susceptible infant unprotected after a real exposure.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 10
+        "correct": 1,
+        "explanation": "Kissing on the mouth is direct contact with her oral secretions, so he is a close contact. The Manitoba protocol advises chemoprophylaxis as soon as possible and preferably within 24 hours of identifying the case. It is still recommended up to 10 days after the last contact, not 14. A healthy person with a positive nasopharyngeal culture needs prophylaxis only if they are also a close contact, so a swab does not decide who is treated and waiting for it only delays treatment. Waiting for fever, a rash or day 7 gives up the benefit of early prophylaxis.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 10
         },
-        source: "cig-measles"
+        "source": "mb-imd"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is correct about the MMR dose he receives today?",
-        kind: "single",
-        options: [
-          "Antibody testing decides further doses",
-          "It completes his measles series",
-          "It replaces his 12 month dose",
-          "One more dose at 4 to 6 years",
-          "Two more doses after 12 months"
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate chemoprophylaxis for the pregnant roommate?",
+        "options": [
+          "amoxicillin 500 mg PO three times daily",
+          "azithromycin 500 mg PO once",
+          "ceftriaxone 250 mg IM once",
+          "ciprofloxacin 500 mg PO once",
+          "rifampin 600 mg PO every 12 hours for 2 days"
         ],
-        correct: 4,
-        explanation: "An MMR dose given before 12 months of age does not count toward the routine series. He still needs 2 more doses of measles containing vaccine after his first birthday. So this dose neither completes the series nor replaces the 12 month dose. Serology is not used to decide routine doses.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 10
+        "correct": 2,
+        "explanation": "She shares a sleeping room with the case, which makes her a close contact. The provincial protocol lists ceftriaxone 250 mg IM once as the recommended drug for pregnant women. Ciprofloxacin and rifampin are both listed as contraindicated in pregnancy. Amoxicillin does not eradicate nasopharyngeal carriage. Azithromycin is not a listed option in the provincial protocol.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 10
         },
-        source: "cig-measles"
+        "source": "mb-imd"
       },
       {
-        id: "q3",
-        update: "His 4-month-old cousin, who is healthy and weighs 6 kg, sat beside them in the same waiting room for the same 2 hours.",
-        prompt: "Which of the following is the most appropriate prophylaxis for the cousin?",
-        kind: "single",
-        options: [
-          "IM immune globulin 0.5 mL/kg",
-          "IV immune globulin 400 mg/kg",
-          "MMR and IM immune globulin",
-          "MMR vaccine now",
-          "No prophylaxis until 6 months"
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate plan for him?",
+        "options": [
+          "ACYW conjugate vaccine only",
+          "Chemoprophylaxis only, no vaccine",
+          "Chemoprophylaxis plus ACYW vaccine",
+          "Chemoprophylaxis plus MenB vaccine",
+          "No chemoprophylaxis or vaccine"
         ],
-        correct: 0,
-        explanation: "Infants younger than 6 months are protected with IM immune globulin at 0.5 mL/kg, given within 6 days of exposure. For 6 kg that is 3 mL. MMR vaccine is not given before 6 months of age. IV immune globulin at 400 mg/kg is reserved for groups such as immunocompromised people, not a healthy infant. No prophylaxis leaves a young infant at high risk of severe measles.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 10
+        "correct": 2,
+        "explanation": "Chemoprophylaxis is recommended for close contacts regardless of immunization status. The case is serogroup W, which Men-C-ACYW vaccine covers. A close contact who was vaccinated after age 1, is not at high risk and was last vaccinated at least a year ago should receive a further dose of Men-C-ACYW, so he needs both. A MenB vaccine does not cover serogroup W. Vaccine alone does not act fast enough to prevent early secondary cases.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 10
         },
-        source: "cig-measles"
+        "source": "mb-imd"
       }
     ],
-    sources: [
-      {
-        id: "cig-measles",
-        citation: "Public Health Agency of Canada. Canadian Immunization Guide. Measles vaccine chapter, including post-exposure management. 2015, partially updated 2025.",
-        url: "https://www.canada.ca/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-4-active-vaccines/page-12-measles-vaccine.html"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "mb-imd",
+      "citation": "Manitoba Health. Communicable disease management protocol: invasive meningococcal disease (updated January 2025). Government of Manitoba. 2025.",
+      "url": "https://www.gov.mb.ca/health/publichealth/cdc/protocol/mid.pdf"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
     id: "infectious-diseases-41",
@@ -2885,104 +2890,105 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
     ...META
   },
   {
-    id: "infectious-diseases-45",
-    topic: "infectious-diseases",
-    title: "Severe sore throat with a normal looking pharynx",
-    stem: "A 45-year-old man presents to the emergency department with 12 hours of rapidly worsening sore throat and pain on swallowing. He now cannot swallow his saliva and his voice is muffled. He has hypertension and smokes. He is sitting upright, leaning forward and spitting into a cup. There is no stridor. His oropharynx is only mildly red and the tonsils are normal. There is marked tenderness when the larynx is gently moved from side to side. There is no neck swelling and no trismus.",
-    vitals: {
-      temperature: "38.7°C oral",
-      pulse: "112/minute",
-      resp: "20/minute",
-      bp: "148/90 mmHg",
-      o2sat: "97% on room air",
-      weight: "88 kg"
+    "id": "infectious-diseases-45",
+    "topic": "infectious-diseases",
+    "title": "Ear pain that keeps an older man awake",
+    "stem": "A 76-year-old man presents to the emergency department with 5 weeks of right ear pain and discharge. He has used three courses of ciprofloxacin and dexamethasone ear drops from his family physician without improvement. The pain is severe, keeps him awake at night and now spreads to the right side of his head. He has type 2 diabetes with an A1c of 9.8% and chronic kidney disease. The right ear canal is swollen with foul discharge and pink granulation tissue on its floor, and the tympanic membrane cannot be seen. There is no swelling behind the ear. CRP is 64 mg/L and ESR is 78 mm/hour.",
+    "vitals": {
+      "temperature": "37.4°C oral",
+      "pulse": "84/minute",
+      "resp": "16/minute",
+      "bp": "146/82 mmHg",
+      "o2sat": "97% on room air",
+      "weight": "82 kg"
     },
-    questions: [
+    "questions": [
       {
-        id: "q1",
-        prompt: "Which of the following is the most likely diagnosis in this man?",
-        kind: "single",
-        options: [
-          "Acute epiglottitis",
-          "Infectious mononucleosis",
-          "Peritonsillar abscess",
-          "Streptococcal pharyngitis",
-          "Viral laryngitis"
+        "id": "q1",
+        "kind": "single",
+        "prompt": "Which of the following is the most likely diagnosis for his ear problem?",
+        "options": [
+          "Fungal otitis externa",
+          "Furunculosis of the canal",
+          "Middle ear cholesteatoma",
+          "Necrotizing otitis externa",
+          "Uncomplicated otitis externa"
         ],
-        correct: 0,
-        explanation: "Severe sore throat and inability to swallow saliva out of proportion to a nearly normal oropharynx, with a muffled voice and tenderness over the larynx, suggest acute epiglottitis. It is now seen mainly in adults. Pharyngitis and mononucleosis show obvious tonsillar or pharyngeal findings. A peritonsillar abscess causes trismus and a bulging pillar. Viral laryngitis causes hoarseness without drooling.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 3,
+        "explanation": "Weeks of severe ear pain that is worse at night and out of keeping with the findings, granulation tissue in the canal, failure of topical treatment and raised CRP and ESR in an older man with poorly controlled diabetes point to necrotizing otitis externa. Uncomplicated otitis externa responds to drops within days. Fungal otitis externa causes itch and debris rather than granulation and raised inflammatory markers. A furuncle is a localized pustule. A middle ear cholesteatoma causes painless discharge and hearing loss.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "guldfred"
+        "source": "costa-noe"
       },
       {
-        id: "q2",
-        prompt: "Which of the following is the most appropriate way to confirm the diagnosis?",
-        kind: "single",
-        options: [
-          "CT of the neck with him supine",
-          "Flexible nasolaryngoscopy",
-          "Monospot heterophile test",
-          "Rapid streptococcal antigen test",
-          "Tongue depressor examination"
+        "id": "q2",
+        "kind": "single",
+        "prompt": "Which of the following examinations is most important to complete now?",
+        "options": [
+          "Cranial nerve examination",
+          "Fundoscopy for retinopathy",
+          "Palpation of the neck nodes",
+          "Rinne and Weber tests",
+          "Temporal artery palpation"
         ],
-        correct: 1,
-        explanation: "The larynx must be examined to find the problem, and flexible nasolaryngoscopy shows the swollen epiglottis directly. It should be done with him sitting up and with airway equipment and staff ready. Lying him flat for CT risks sudden obstruction. A tongue depressor cannot see the epiglottis in adults. Streptococcal and monospot tests address pharyngitis, not the supraglottis.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 6
+        "correct": 0,
+        "explanation": "Spread of the infection through the skull base can damage the facial nerve and the lower cranial nerves. In the cohort, 35% had cranial nerve involvement and 29% had a facial palsy, which changes imaging and admission decisions. Tuning fork tests describe hearing loss but do not show spread. Neck nodes and retinopathy do not stage the infection. Temporal artery palpation looks for arteritis, and his pain has an obvious ear source.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 6
         },
-        source: "guldfred"
+        "source": "costa-noe"
       },
       {
-        id: "q3",
-        prompt: "Which of the following is the most appropriate antibiotic for him?",
-        kind: "single",
-        options: [
-          "amoxicillin 1 g PO",
-          "azithromycin 500 mg PO",
-          "ceftriaxone 2 g IV",
-          "cephalexin 500 mg PO",
-          "penicillin V 600 mg PO"
+        "id": "q3",
+        "kind": "single",
+        "prompt": "Which of the following is the most appropriate empiric antibiotic after cultures are taken?",
+        "options": [
+          "amoxicillin-clavulanate 875 mg PO twice daily",
+          "cefazolin 2 g IV every 8 hours",
+          "ceftazidime 2 g IV every 8 hours",
+          "clindamycin 600 mg IV every 8 hours",
+          "More ciprofloxacin ear drops"
         ],
-        correct: 2,
-        explanation: "Adult epiglottitis needs IV antibiotics that cover Haemophilus influenzae, streptococci and Staphylococcus aureus, and a third generation cephalosporin such as ceftriaxone is standard. He cannot swallow his saliva, so oral drugs are not an option. Amoxicillin and penicillin miss beta-lactamase producing Haemophilus influenzae. Azithromycin and cephalexin give unreliable cover for a threatened airway.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 8
+        "correct": 2,
+        "explanation": "Pseudomonas aeruginosa is the most frequent pathogen, and a third of isolates in the cohort were resistant to ciprofloxacin. The protocol uses IV ceftazidime for admitted patients until the antibiogram returns, with at least 6 weeks of IV therapy. More ciprofloxacin drops repeat a failed treatment. Cefazolin, clindamycin and amoxicillin-clavulanate do not cover Pseudomonas.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 8
         },
-        source: "guldfred"
+        "source": "costa-noe"
       },
       {
-        id: "q4",
-        prompt: "Which of the following is the most appropriate disposition for him?",
-        kind: "single",
-        options: [
-          "Dexamethasone and discharge home",
-          "Discharge on oral antibiotics",
-          "ICU admission for airway monitoring",
-          "Observe in the ED for 4 hours",
-          "Ward bed with pulse oximetry"
+        "id": "q4",
+        "kind": "single",
+        "prompt": "Which of the following investigations is most appropriate to define the extent of his disease?",
+        "options": [
+          "CT of the temporal bones",
+          "Formal audiogram",
+          "Plain skull radiograph",
+          "Swab of the canal alone",
+          "Ultrasound of the neck"
         ],
-        correct: 2,
-        explanation: "Adult epiglottitis can progress to complete airway obstruction within hours, and he already cannot swallow his saliva. He needs admission to a monitored setting such as the ICU, where a team can secure the airway at once if needed. A general ward bed or a short ED observation period does not give this protection. Discharge is unsafe.",
-        keyFeature: {
-          topic: "infectious-diseases",
-          n: 4
+        "correct": 0,
+        "explanation": "The protocol suggests CT for everyone with suspected necrotizing otitis externa, because it shows soft tissue thickening and erosion of the bony canal, and it guides treatment. MRI is added for cranial nerve involvement or intracranial spread. A skull radiograph cannot show early skull base erosion. An audiogram and a neck ultrasound do not stage the infection. A swab guides antibiotics but does not define its extent.",
+        "keyFeature": {
+          "topic": "infectious-diseases",
+          "n": 4
         },
-        source: "guldfred"
+        "source": "costa-noe"
       }
     ],
-    sources: [
-      {
-        id: "guldfred",
-        citation: "Guldfred LA, Lyhne D, Becker BC. Acute epiglottitis: epidemiology, clinical presentation, management and outcome. J Laryngol Otol. 2008.",
-        url: "https://pubmed.ncbi.nlm.nih.gov/17892608/"
-      }
-    ],
-    ...META
+    "sources": [
+    {
+      "id": "costa-noe",
+      "citation": "Costa MB, Onishi ET, Penido NO, et al. Necrotizing otitis externa: a proposal for diagnostic and therapeutic approach. Int Arch Otorhinolaryngol. 2023.",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10593509/"
+    }
+  ],
+    ...META,
+    "version": 2
   },
   {
     id: "infectious-diseases-46",
