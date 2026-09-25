@@ -1,0 +1,762 @@
+{
+ "note": "Bank-wide duplicate sweep. Each entry: rejected or held SAMP, the copy that is kept, and why.",
+ "rejected": [
+  {
+   "id": "abdominal-pain-16",
+   "keeps": "cva-09",
+   "why": "Both are men who develop sudden tearing pain to the back while lifting with a leg or neurologic deficit and the key teaching in both is recognizing aortic dissection with a blood pressure differential and starting esmolol while arranging CT angiography."
+  },
+  {
+   "id": "abdominal-pain-20",
+   "keeps": "abdominal-pain-13",
+   "why": "Both are severe epigastric pain radiating to the back with vomiting and a high lipase, and both key right upper quadrant ultrasound, Ringer's lactate and holding CT unless the patient fails to improve."
+  },
+  {
+   "id": "abdominal-pain-22",
+   "keeps": "abdominal-pain-07",
+   "why": "Both are a woman with dementia sent from long term care as a urinary infection because of a positive dipstick who has a surgical abdomen, and both key that the urine finding may be asymptomatic bacteriuria."
+  },
+  {
+   "id": "abdominal-pain-23",
+   "keeps": "abdominal-pain-02",
+   "why": "Both are patients with atrial fibrillation who recently stopped their anticoagulant and now have abdominal pain from bowel ischemia and the key teaching in both is CT angiography with an urgent vascular surgery consult."
+  },
+  {
+   "id": "abdominal-pain-27",
+   "keeps": "shock-10",
+   "why": "Both are a woman with vomiting, abdominal pain and hypotension with low sodium, high potassium and low glucose from adrenal crisis, and both key hydrocortisone 100 mg IV with dextrose and saline."
+  },
+  {
+   "id": "abdominal-pain-32",
+   "keeps": "abdominal-pain-03",
+   "why": "Both key on the teaching point that pyuria from an inflamed appendix lying near the ureter should not be mistaken for a urinary tract infection in a patient with right lower quadrant pain."
+  },
+  {
+   "id": "abdominal-pain-34",
+   "keeps": "infectious-diseases-15",
+   "why": "Both are young women with pelvic inflammatory disease diagnosed by mucopurulent discharge and cervical motion tenderness and treated with ceftriaxone and doxycycline"
+  },
+  {
+   "id": "abdominal-pain-35",
+   "keeps": "first-trimester-bleeding-13",
+   "why": "Both are a woman whose contraception led to a missed pregnancy and a misattributed complaint, with an hCG near 2600 to 2900 IU/L, an empty uterus, a left adnexal mass and free fluid, and both key urgent gynecology consultation."
+  },
+  {
+   "id": "abdominal-pain-36",
+   "keeps": "pre-eclampsia-02",
+   "why": "Both are pregnant women at 33 weeks with epigastric pain from HELLP syndrome treated with magnesium sulfate"
+  },
+  {
+   "id": "abdominal-pain-44",
+   "keeps": "abdominal-pain-01",
+   "why": "Both are an older smoker with sudden flank or back pain and syncope found to have a ruptured or leaking abdominal aortic aneurysm managed with bedside aortic ultrasound, an urgent call to vascular surgery and permissive hypotension."
+  },
+  {
+   "id": "abdominal-pain-46",
+   "keeps": "abdominal-pain-05",
+   "why": "Both are a patient with type 2 diabetes and epigastric pain with nausea that an antacid slightly relieved which proves to be a myocardial infarction, and both key serial ECG and troponin with ASA 160 mg chewed."
+  },
+  {
+   "id": "abuse-domestic-18",
+   "keeps": "abuse-domestic-06",
+   "why": "Both are young children brought in for a minor complaint after a trivial reported fall who turn out to have a bruise on the ear and an occult internal injury prompting a same day report to child protection."
+  },
+  {
+   "id": "airway-25",
+   "keeps": "sob-13",
+   "why": "Both are a patient with ascending Guillain-Barre weakness after a diarrheal illness whose key teaching point is recognizing impending neuromuscular respiratory failure and intubating early before hypoxemia develops."
+  },
+  {
+   "id": "airway-27",
+   "keeps": "shock-09",
+   "why": "Both are women who develop a massive or submassive pulmonary embolism with right ventricular strain shortly after a total knee replacement and are treated with alteplase and a norepinephrine infusion."
+  },
+  {
+   "id": "airway-28",
+   "keeps": "pulmonary-edema-14",
+   "why": "Both are elderly men with known severe critical aortic stenosis awaiting valve replacement who decompensate and need hemodynamic management that maintains systemic vascular resistance and avoids vasodilation."
+  },
+  {
+   "id": "airway-31",
+   "keeps": "sob-15",
+   "why": "Both are severe anaphylaxis cases with upper airway involvement needing early intubation with surgical airway backup"
+  },
+  {
+   "id": "airway-45",
+   "keeps": "airway-01",
+   "why": "Both are an obese overdose patient who vomits and fails three intubation attempts with video laryngoscope and bougie, and both key declaring the failed airway and placing a second generation supraglottic airway."
+  },
+  {
+   "id": "airway-46",
+   "keeps": "multiple-trauma-08",
+   "why": "Both are intubated trauma patients with rib fractures whose peak airway pressure rises and the key teaching in both is chest decompression for a suspected pneumothorax after hand ventilating to confirm."
+  },
+  {
+   "id": "airway-47",
+   "keeps": "shock-15",
+   "why": "Both are a woman in her late fifties with metastatic lung cancer, raised neck veins and quiet heart sounds from tamponade, and both key urgent pericardiocentesis."
+  },
+  {
+   "id": "analgesia-sedation-33",
+   "keeps": "analgesia-sedation-12",
+   "why": "Both are patients who become hard to rouse after receiving an opioid together with a benzodiazepine and the key teaching in both is titrated naloxone with continuous monitoring since the benzodiazepine effect is not reversed."
+  },
+  {
+   "id": "analgesia-sedation-42",
+   "keeps": "lacerations-05",
+   "why": "Found by the blind audit."
+  },
+  {
+   "id": "anaphylaxis-16",
+   "keeps": "anaphylaxis-01",
+   "why": "Both are a healthy man with anaphylaxis to a wasp or yellow jacket sting who stays hypotensive after the first dose, and both key epinephrine 0.5 mg IM, a crystalloid bolus, a repeat dose and allergist referral for venom testing."
+  },
+  {
+   "id": "anaphylaxis-17",
+   "keeps": "anaphylaxis-12",
+   "why": "Both are pneumonia patients who develop anaphylaxis to their antibiotic treated by stopping the drug and giving epinephrine"
+  },
+  {
+   "id": "anaphylaxis-18",
+   "keeps": "anaphylaxis-03",
+   "why": "Both are young children with a first or second exposure food reaction that progresses from hives and vomiting to lethargy and are discharged with two 0.15 mg epinephrine autoinjectors."
+  },
+  {
+   "id": "anaphylaxis-25",
+   "keeps": "asthma-copd-13",
+   "why": "Both are anaphylaxis patients whose wheeze and hypotension persist after repeated IM epinephrine so they need an epinephrine infusion."
+  },
+  {
+   "id": "anaphylaxis-27",
+   "keeps": "anaphylaxis-19",
+   "why": "Both are patients whose anaphylaxis has resolved and who want to leave early, with the key teaching of extended observation and allergist referral"
+  },
+  {
+   "id": "anaphylaxis-40",
+   "keeps": "anaphylaxis-10",
+   "why": "Both are a school age child with asthma who wheezes after a seed or nut food and has had epinephrine 0.15 mg, and both key salbutamol, two autoinjectors and a school anaphylaxis plan."
+  },
+  {
+   "id": "anaphylaxis-42",
+   "keeps": "anaphylaxis-32",
+   "why": "Both involve a granola bar containing a nut allergen and teach epinephrine dosing and carrying an autoinjector"
+  },
+  {
+   "id": "arrhythmia-17",
+   "keeps": "arrhythmia-01",
+   "why": "Both are patients who faint without warning while seated and are found to have conduction disease that progresses to symptomatic high degree AV block needing atropine, catecholamines and transcutaneous pacing."
+  },
+  {
+   "id": "arrhythmia-27",
+   "keeps": "arrhythmia-11",
+   "why": "Both are a rural STEMI treated with tenecteplase that then shows a reperfusion ventricular rhythm, and both key watching on the monitor with no antiarrhythmic drug."
+  },
+  {
+   "id": "arrhythmia-28",
+   "keeps": "arrhythmia-11",
+   "why": "Both are rural thrombolysis patients who develop a reperfusion arrhythmia followed by symptomatic bradycardia treated with atropine"
+  },
+  {
+   "id": "arrhythmia-31",
+   "keeps": "arrhythmia-29",
+   "why": "Both are patients resuscitated from a cardiac arrest caused by hypoxemia and the key teaching in both is that targeted temperature management is still indicated with careful fever prevention."
+  },
+  {
+   "id": "arrhythmia-32",
+   "keeps": "seizures-07",
+   "why": "Both are teenage girls whose brief collapse is triggered by a loud noise and turn out to have congenital long QT syndrome treated with nadolol and avoidance of QT prolonging drugs."
+  },
+  {
+   "id": "asthma-copd-26",
+   "keeps": "airway-10",
+   "why": "Both involve a severe asthma patient just intubated and the key teaching in both is recognizing breath stacking from dynamic hyperinflation and disconnecting the circuit to allow full exhalation."
+  },
+  {
+   "id": "asthma-copd-28",
+   "keeps": "asthma-copd-14",
+   "why": "Both are a COPD exacerbation treated in the ED where the patient feels close to baseline and wants to go home, and both key a walking oximetry test before discharge and stepping up maintenance inhalers."
+  },
+  {
+   "id": "asthma-copd-35",
+   "keeps": "asthma-copd-07",
+   "why": "Both are a young working adult with asthma who improves in the ED and wants to leave, and both key peak flow checks before discharge, budesonide formoterol maintenance and reliever and inhaler technique."
+  },
+  {
+   "id": "asthma-copd-36",
+   "keeps": "sob-04",
+   "why": "Both are a severe asthma attack arriving by ambulance, too breathless for a peak flow, who becomes drowsy with a rising pCO2 despite treatment, and both key salbutamol with ipratropium and recognising impending respiratory failure."
+  },
+  {
+   "id": "asthma-copd-38",
+   "keeps": "asthma-copd-08",
+   "why": "Both are a patient with obstructive lung disease and four days of fever, rusty sputum and basal crackles whose key teaching point is a chest radiograph confirming pneumonia treated with antibiotics and a course of prednisone."
+  },
+  {
+   "id": "asthma-copd-41",
+   "keeps": "sob-05",
+   "why": "Both are a COPD exacerbation with purulent sputum and acute hypercapnic acidosis who worsens and becomes hard to rouse after an hour on BiPAP, and both key noninvasive ventilation then intubation."
+  },
+  {
+   "id": "asthma-copd-42",
+   "keeps": "asthma-copd-36",
+   "why": "Both are severe asthma patients who look less alarming on exam while quietly progressing to impending respiratory failure needing magnesium sulfate and preparation to intubate."
+  },
+  {
+   "id": "asthma-copd-43",
+   "keeps": "asthma-copd-07",
+   "why": "Both are a young man with asthma who uses only salbutamol, recovers his peak flow after ED treatment and wants to leave, and both key a prednisone course and an ICS formoterol controller."
+  },
+  {
+   "id": "asthma-copd-45",
+   "keeps": "sob-05",
+   "why": "Both are a COPD patient with acute on chronic hypercapnic respiratory failure whose key teaching point is starting bilevel noninvasive ventilation at an IPAP of 10 and EPAP of 5 cm H2O."
+  },
+  {
+   "id": "burns-16",
+   "keeps": "burns-02",
+   "why": "Both are an adult flame burn of the whole anterior trunk and arms, about 27 to 36% TBSA, seen two hours after injury with low urine output hours later, and both key the TBSA, the hourly fluid rate and raising the rate."
+  },
+  {
+   "id": "burns-19",
+   "keeps": "environmental-14",
+   "why": "Both include a toddler who bites an electric cord and gets a grey white oral commissure burn with the same key warning about delayed labial artery bleeding when the eschar separates."
+  },
+  {
+   "id": "burns-21",
+   "keeps": "burns-04",
+   "why": "Both are patients pulled from a smoke filled fire with a lactate of 11 mmol/L from cyanide poisoning treated with hydroxocobalamin"
+  },
+  {
+   "id": "burns-24",
+   "keeps": "airway-02",
+   "why": "Both rescue a patient trapped about 10 minutes in a smoke filled bedroom with hoarseness, soot and face and neck burns, and both key early intubation with an uncut tube tied in place."
+  },
+  {
+   "id": "burns-27",
+   "keeps": "burns-08",
+   "why": "Both are an older diabetic with neuropathy who lives alone and presents two days after a hot water scald with white nonblanching areas and an overdue tetanus, and both key diabetes with neuropathy and full thickness burns needing admission."
+  },
+  {
+   "id": "burns-28",
+   "keeps": "abuse-domestic-19",
+   "why": "Both are toddlers with an inflicted burn and a healing round buttock burn needing a skeletal survey and a child protection report"
+  },
+  {
+   "id": "burns-31",
+   "keeps": "burns-07",
+   "why": "Both are an intubated major burn with circumferential full thickness eschar and steadily rising peak airway pressures, and both key escharotomy to restore ventilation."
+  },
+  {
+   "id": "burns-32",
+   "keeps": "burns-17",
+   "why": "Both are a toddler who pulled a hot liquid off the counter with blistered scalds over the front of the trunk and arms of about 16% TBSA and IV access an hour later, and both key the hourly paediatric fluid rate."
+  },
+  {
+   "id": "burns-33",
+   "keeps": "burns-16",
+   "why": "Both are a woman whose clothing caught fire at the stove with deep burns over the whole anterior trunk and both arms at 27% TBSA, and both key Ringer's lactate at 2 mL/kg per %TBSA, IV fentanyl and burn centre transfer."
+  },
+  {
+   "id": "chest-pain-17",
+   "keeps": "chest-pain-01",
+   "why": "Both are sudden maximal pain radiating between the shoulder blades with a normal mediastinum on portable X ray and a type A dissection on CT, and both key CT angiography and that a normal chest X ray does not exclude dissection."
+  },
+  {
+   "id": "chest-pain-18",
+   "keeps": "cva-09",
+   "why": "Both are a hypertensive man with tearing interscapular pain and an arm blood pressure difference while tenecteplase is being prepared, and both key withholding thrombolysis and giving an IV beta blocker for dissection."
+  },
+  {
+   "id": "chest-pain-29",
+   "keeps": "ischemic-heart-disease-09",
+   "why": "Both are men with a known left bundle branch block and chest pain whose ECG meets Sgarbossa criteria for concordant ST elevation leading to cath lab activation for primary PCI."
+  },
+  {
+   "id": "chest-pain-30",
+   "keeps": "abdominal-pain-29",
+   "why": "Both are older women with dermatomal band pain who turn out to have herpes zoster confirmed by a later vesicular rash and are treated with valacyclovir 1 g three times daily."
+  },
+  {
+   "id": "chest-pain-32",
+   "keeps": "sob-10",
+   "why": "Both test an older patient with pleuritic pain, a Wells score of 0 and a D dimer just above 500, and both key the age adjusted cutoff that rules out PE without imaging."
+  },
+  {
+   "id": "chest-pain-33",
+   "keeps": "dvt-pe-04",
+   "why": "Both are a 58 year old on chemotherapy for metastatic cancer with leg swelling and bilateral segmental PE with a normal RV, and both key the high Wells score, CT pulmonary angiogram and dalteparin."
+  },
+  {
+   "id": "chest-pain-35",
+   "keeps": "airway-47",
+   "why": "Both are women with metastatic lung cancer developing cardiac tamponade diagnosed by bedside ultrasound and treated with pericardiocentesis"
+  },
+  {
+   "id": "chest-pain-38",
+   "keeps": "chest-pain-07",
+   "why": "Both patients get symptomatic relief of their chest pain from a treatment aimed at another cause and the key teaching in both is that this relief does not exclude acute coronary syndrome and does not identify the true cause."
+  },
+  {
+   "id": "chest-pain-43",
+   "keeps": "cva-09",
+   "why": "Both are a patient with sudden interscapular or chest pain followed by limb weakness whose key teaching point is that the presentation mimics stroke and a CT angiogram of the aorta is needed before any thrombolysis to catch aortic dissection."
+  },
+  {
+   "id": "cva-17",
+   "keeps": "delirium-agitation-10",
+   "why": "Both are older women on an anticoagulant who fall and strike their head then present with confusion from an acute subdural hematoma with midline shift needing anticoagulant reversal and neurosurgery."
+  },
+  {
+   "id": "cva-23",
+   "keeps": "cva-03",
+   "why": "Both are a patient with a cerebellar infarct causing sudden dizziness and truncal ataxia who later deteriorates and the key teaching point is urgent CT angiography and neurosurgical consultation for swelling or herniation."
+  },
+  {
+   "id": "cva-28",
+   "keeps": "loc-09",
+   "why": "Both are older men with atrial fibrillation whose posterior circulation symptoms progress to a falling GCS from a basilar artery occlusion found on CT angiography and treated with thrombectomy."
+  },
+  {
+   "id": "cva-35",
+   "keeps": "headache-07",
+   "why": "Both are postpartum women with worsening headache worse lying flat who then seize and the key teaching in both is recognizing cerebral venous sinus thrombosis."
+  },
+  {
+   "id": "cva-41",
+   "keeps": "cva-10",
+   "why": "Both are patients with a high risk TIA score whose CT angiography finds an 80% internal carotid stenosis needing urgent stroke specialist review and referral for endarterectomy within 14 days."
+  },
+  {
+   "id": "cva-45",
+   "keeps": "cva-42",
+   "why": "Both are a TIA scoring 5 on the ABCD2 score found to be due to atrial fibrillation and the key teaching point is starting a DOAC for the cardioembolic source."
+  },
+  {
+   "id": "delirium-agitation-34",
+   "keeps": "burns-18",
+   "why": "Both are an 84 year old found on the floor after a long lie with dark urine, a CK of 38 000 U/L and a creatinine of 168 umol/L, and both key the creatine kinase and a noncontrast CT head."
+  },
+  {
+   "id": "dvt-pe-21",
+   "keeps": "chest-pain-04",
+   "why": "Both are a breastfeeding woman with pleuritic chest pain after a recent caesarean delivery found to have a pulmonary embolism and the key teaching point is choosing a therapeutic dose of low molecular weight heparin safe in breastfeeding."
+  },
+  {
+   "id": "dvt-pe-23",
+   "keeps": "dvt-pe-01",
+   "why": "Both are a man with a proximal DVT after long travel whose treatment choice turns on injections versus pills, and both key starting apixaban 10 mg twice daily and outpatient anticoagulation."
+  },
+  {
+   "id": "dvt-pe-33",
+   "keeps": "dvt-pe-10",
+   "why": "Both are bilateral lobar PE with an RV to LV ratio above 1 and the ESC risk class decides care, and both key the intermediate risk category, admission on anticoagulation and hypotension as the sign of high risk."
+  },
+  {
+   "id": "dvt-pe-36",
+   "keeps": "dvt-pe-01",
+   "why": "Both are a middle aged man with a likely proximal DVT confirmed by ultrasound who goes home on an oral DOAC, and both key the Wells score, compression ultrasound and the starting DOAC regimen."
+  },
+  {
+   "id": "ems-18",
+   "keeps": "anaphylaxis-44",
+   "why": "Both are adults whose anaphylaxis has resolved after their own autoinjector and who want to leave right away and the key teaching in both is warning that symptoms can recur as epinephrine wears off and replacing the used autoinjector."
+  },
+  {
+   "id": "ems-21",
+   "keeps": "ems-02",
+   "why": "Both are a paramedic patch about sudden one sided weakness with a positive large vessel occlusion screen near a small hospital, and both key direct transport to the stroke centre and the exact last known well time."
+  },
+  {
+   "id": "ems-27",
+   "keeps": "ems-13",
+   "why": "Both are mass casualty organophosphate or nerve agent poisonings managed with atropine and pralidoxime dosing"
+  },
+  {
+   "id": "ems-36",
+   "keeps": "arrhythmia-03",
+   "why": "Both are patients who missed hemodialysis and present weak with ECG changes of hyperkalemia and the key teaching in both is treating with calcium and nebulized salbutamol."
+  },
+  {
+   "id": "environmental-17",
+   "keeps": "environmental-02",
+   "why": "Both are elderly people found confused with hot dry skin on the fourth day of a heat wave in a top floor apartment without air conditioning and the key teaching in both is that their anticholinergic, diuretic and antipsychotic medications raised their heat stroke risk and should be stopped."
+  },
+  {
+   "id": "eye-22",
+   "keeps": "eye-03",
+   "why": "Both are a red watery eye where steroid drops are the trap and fluorescein shows a dendritic ulcer, and both key HSV keratitis, geographic ulcer risk and antiviral treatment."
+  },
+  {
+   "id": "eye-25",
+   "keeps": "eye-13",
+   "why": "Both are a projectile striking the eye with a teardrop pupil and signs of open globe injury, and both key a rigid shield, CT of the orbits and tetanus update."
+  },
+  {
+   "id": "eye-37",
+   "keeps": "eye-01",
+   "why": "Both are an older farsighted woman whose vomiting and eye pain are misread after an anticholinergic triggers acute angle closure, and both key tonometry and timolol."
+  },
+  {
+   "id": "first-trimester-bleeding-25",
+   "keeps": "first-trimester-bleeding-02",
+   "why": "Both are a woman near fainting with a positive pregnancy test, an empty uterus and free fluid while a resident leans on the hCG level, and both key that the hCG value must not steer care of a ruptured ectopic."
+  },
+  {
+   "id": "first-trimester-bleeding-29",
+   "keeps": "first-trimester-bleeding-01",
+   "why": "Both are a young woman who faints at about 7 to 8 weeks with hepatorenal free fluid and no intrauterine pregnancy, and both key two large bore IV lines and O Rh D negative red cells for a ruptured ectopic."
+  },
+  {
+   "id": "first-trimester-bleeding-34",
+   "keeps": "first-trimester-bleeding-03",
+   "why": "Both are spotting at six weeks with an empty uterus and an hCG between 1000 and 1600 IU/L, and both key a pregnancy of unknown location managed with serial hCG and named follow up."
+  },
+  {
+   "id": "first-trimester-bleeding-38",
+   "keeps": "first-trimester-bleeding-11",
+   "why": "Both are a week of dark bleeding with severe nausea near 12 to 13 weeks, a very high hCG and a cystic intrauterine mass with no fetus, and both key the molar pregnancy and serial hCG surveillance after evacuation."
+  },
+  {
+   "id": "gi-bleed-16",
+   "keeps": "gi-bleed-02",
+   "why": "Both are an older patient with melena, orthostatic light headedness, a hemoglobin near 95 g/L and a raised urea, and both key the NSAID history, a restrictive transfusion threshold and endoscopy within 24 hours."
+  },
+  {
+   "id": "gi-bleed-22",
+   "keeps": "abdominal-pain-10",
+   "why": "Both are infants with a right upper quadrant mass and dark red mucoid stool from an ileocolic intussusception managed with abdominal ultrasound and air enema reduction."
+  },
+  {
+   "id": "gi-bleed-23",
+   "keeps": "gi-bleed-05",
+   "why": "Both are patients who vomit blood after a nosebleed and the key teaching in both is examining the nose and posterior pharynx to recognize swallowed blood rather than a true upper GI bleed."
+  },
+  {
+   "id": "gi-bleed-26",
+   "keeps": "gi-bleed-14",
+   "why": "Both are exertional chest pressure with ST depression in V4 to V6, a raised troponin and a hemoglobin near 70 g/L from occult melena, and both key the rectal examination and red cell transfusion."
+  },
+  {
+   "id": "gi-bleed-33",
+   "keeps": "multiple-trauma-07",
+   "why": "Both are a bleeding Jehovah's Witness with a signed card who refuses blood, and both key confirming capacity and respecting and documenting the refusal."
+  },
+  {
+   "id": "gi-bleed-38",
+   "keeps": "gi-bleed-04",
+   "why": "Both are a man passing large maroon and red stools with clots who is pale and diaphoretic and bleeds from a duodenal source, and both key an upper source for hematochezia and uncrossmatched group O red cells."
+  },
+  {
+   "id": "gi-bleed-41",
+   "keeps": "shock-13",
+   "why": "Both are older patients on an anticoagulant and a beta blocker whose gastrointestinal bleed presents atypically as syncope or palpitations rather than melena and the key teaching in both is that the beta blocker blunts the compensatory tachycardia so the bleed is easy to miss."
+  },
+  {
+   "id": "headache-25",
+   "keeps": "cva-17",
+   "why": "Both are an older person on apixaban with a head strike, progressive confusion and a subdural hematoma whose key teaching point is reversal with prothrombin complex concentrate."
+  },
+  {
+   "id": "headache-28",
+   "keeps": "loc-32",
+   "why": "Both are toddlers with a non blanching purpuric rash and a falling level of consciousness from meningococcemia where ceftriaxone is given before any procedure such as the lumbar puncture."
+  },
+  {
+   "id": "headache-37",
+   "keeps": "headache-01",
+   "why": "Both are a woman in her forties with a headache that peaked within seconds during exertion 3 hours ago with one vomit and a normal exam, and both key onset speed as the feature that demands imaging for subarachnoid hemorrhage."
+  },
+  {
+   "id": "headache-39",
+   "keeps": "headache-08",
+   "why": "Both present giant cell arteritis with jaw claudication as a key diagnostic clue"
+  },
+  {
+   "id": "headache-41",
+   "keeps": "eye-14",
+   "why": "Both are a patient with periorbital swelling, pain on eye movement and proptosis from orbital cellulitis whose key teaching point is contrast CT of the orbits and IV ceftriaxone with vancomycin."
+  },
+  {
+   "id": "headache-47",
+   "keeps": "cva-12",
+   "why": "Both are a young smoker with classic migraine with aura on a combined oral contraceptive whose key teaching point is to stop the estrogen containing contraceptive."
+  },
+  {
+   "id": "infectious-diseases-17",
+   "keeps": "airway-20",
+   "why": "Both are patients with a dental infection that has spread into the floor of the mouth causing Ludwig angina and the key teaching in both is a specialized airway plan with ENT or anesthesia standing by."
+  },
+  {
+   "id": "infectious-diseases-22",
+   "keeps": "eye-14",
+   "why": "Both are seven year old boys with orbital cellulitis progressing to a subperiosteal abscess needing CT and IV ceftriaxone and vancomycin"
+  },
+  {
+   "id": "infectious-diseases-24",
+   "keeps": "headache-05",
+   "why": "Both are older women with fever headache and altered behaviour who have a brief seizure and the key teaching in both is recognizing herpes simplex encephalitis and starting acyclovir with PCR testing."
+  },
+  {
+   "id": "infectious-diseases-25",
+   "keeps": "cva-34",
+   "why": "Both are patients with fever and a new stroke deficit found to have infective endocarditis on echocardiography where thrombolysis is withheld because of the embolic source."
+  },
+  {
+   "id": "infectious-diseases-27",
+   "keeps": "shock-03",
+   "why": "Both are septic shock with confusion and a high lactate where crackles appear after about 2 L of fluid and MAP stays low, and both key cultures, early antibiotics and norepinephrine through a peripheral IV."
+  },
+  {
+   "id": "infectious-diseases-28",
+   "keeps": "abdominal-pain-18",
+   "why": "Both are elderly patients with gallstone cholangitis and confusion needing urgent biliary drainage"
+  },
+  {
+   "id": "infectious-diseases-29",
+   "keeps": "pediatric-fever-03",
+   "why": "Both are a febrile young child in septic shock with cold mottled limbs who after boluses develops hepatomegaly and crackles, and both key intraosseous access, fluid boluses and an epinephrine infusion."
+  },
+  {
+   "id": "infectious-diseases-37",
+   "keeps": "lacerations-12",
+   "why": "Both are patients bitten by their own cat on the finger who develop pyogenic flexor tenosynovitis needing IV antibiotics and hand surgery"
+  },
+  {
+   "id": "infectious-diseases-39",
+   "keeps": "abuse-domestic-07",
+   "why": "Both are a young woman seen soon after a sexual assault where the key teaching point is starting HIV post exposure prophylaxis along with STI testing."
+  },
+  {
+   "id": "infectious-diseases-40",
+   "keeps": "pediatric-fever-05",
+   "why": "Both involve measles exposure in a waiting room where a young infant needs protection, and both key intramuscular immune globulin for the infant too young for vaccine."
+  },
+  {
+   "id": "ischemic-heart-disease-23",
+   "keeps": "arrhythmia-23",
+   "why": "Both are patients recovering from surgery whose breathlessness and T wave inversion in leads III and V1 are mistaken for cardiac ischemia but turn out to be a pulmonary embolism."
+  },
+  {
+   "id": "ischemic-heart-disease-24",
+   "keeps": "ischemic-heart-disease-02",
+   "why": "Both are an elderly woman brought in by her son with weakness and nausea, lateral ST depression and a raised troponin, and both key the features of atypical ACS and angiography within 24 hours."
+  },
+  {
+   "id": "ischemic-heart-disease-29",
+   "keeps": "arrhythmia-12",
+   "why": "Both are men who collapse in cardiac arrest at a curling rink and are found to have a STEMI needing PCI"
+  },
+  {
+   "id": "ischemic-heart-disease-38",
+   "keeps": "pulmonary-edema-01",
+   "why": "Both are an older woman with hypertension and diabetes woken at night by sudden breathlessness, sitting upright and diaphoretic with crackles to the mid fields, and both key CPAP or BiPAP and a nitroglycerin infusion."
+  },
+  {
+   "id": "ischemic-heart-disease-39",
+   "keeps": "pulmonary-edema-11",
+   "why": "Both are a patient who ignored an inferior MI days earlier and now has sudden breathlessness with a new holosystolic murmur, and both key a mechanical complication confirmed by echo and emergency cardiac surgery."
+  },
+  {
+   "id": "ischemic-heart-disease-41",
+   "keeps": "ischemic-heart-disease-15",
+   "why": "Both are a middle aged man with stable exertional chest tightness relieved by rest, now pain free with normal serial troponins, and both key outpatient CT coronary angiography, SL nitroglycerin and that a normal troponin does not exclude coronary disease."
+  },
+  {
+   "id": "ischemic-heart-disease-42",
+   "keeps": "ischemic-heart-disease-15",
+   "why": "Both are exertional symptoms relieved by rest with a normal ECG and unchanged troponins, and both key discharge with expedited outpatient ischemia testing and sublingual nitroglycerin."
+  },
+  {
+   "id": "loc-17",
+   "keeps": "delirium-agitation-10",
+   "why": "Both are older women on an anticoagulant who fall and strike their head then become confused from an acute on chronic subdural hematoma with midline shift needing prothrombin complex concentrate and neurosurgery."
+  },
+  {
+   "id": "loc-19",
+   "keeps": "airway-09",
+   "why": "Both are salicylate overdoses with the same mixed metabolic acidosis and respiratory alkalosis picture and the key teaching in both is that a falling pH and rising pCO2 are dangerous and sodium bicarbonate must be given before any attempt at intubation."
+  },
+  {
+   "id": "loc-21",
+   "keeps": "cva-01",
+   "why": "Both are diabetic patients whose stroke like presentation is actually hypoglycemia treated with dextrose or glucagon with a residual deficit needing a CT"
+  },
+  {
+   "id": "loc-28",
+   "keeps": "ems-11",
+   "why": "Both are children in diabetic ketoacidosis who develop cerebral edema treated with mannitol"
+  },
+  {
+   "id": "loc-32",
+   "keeps": "pediatric-fever-04",
+   "why": "Both are young children with fever and a spreading nonblanching purpuric rash and the key teaching in both is giving antibiotics right away and deferring the lumbar puncture."
+  },
+  {
+   "id": "msk-24",
+   "keeps": "abdominal-pain-39",
+   "why": "Both are a young man with left upper quadrant blunt trauma in a rural hospital with no CT or surgeon, a FAST showing splenic free fluid and hypotension after crystalloid, and both key the FAST and urgent transfer to a trauma centre."
+  },
+  {
+   "id": "msk-31",
+   "keeps": "critical-appraisal-15",
+   "why": "Both are seven year old girls with a distal radius buckle fracture managed with a removable splint instead of a cast"
+  },
+  {
+   "id": "msk-38",
+   "keeps": "msk-07",
+   "why": "Both present as knee or leg pain with a normal knee but the key teaching in both is examining the hip and getting an MRI of the hip to find an occult fracture causing referred pain."
+  },
+  {
+   "id": "multiple-trauma-25",
+   "keeps": "shock-05",
+   "why": "Both are a pale motorcyclist with a painful pelvis, a negative eFAST and pelvic fracture bleeding, and both key the pelvic binder centred over the greater trochanters."
+  },
+  {
+   "id": "multiple-trauma-27",
+   "keeps": "airway-37",
+   "why": "Both are neck trauma patients with crepitus and a hoarse voice from a laryngotracheal injury managed with awake flexible scope intubation"
+  },
+  {
+   "id": "multiple-trauma-31",
+   "keeps": "multiple-trauma-02",
+   "why": "Both are chest trauma patients who develop cardiac tamponade found on ultrasound and needing operative decompression"
+  },
+  {
+   "id": "multiple-trauma-44",
+   "keeps": "arrhythmia-03",
+   "why": "Both present with ECG changes of hyperkalemia and the key teaching in both is the same treatment cascade of calcium, insulin with dextrose and nebulized salbutamol."
+  },
+  {
+   "id": "pediatric-fever-16",
+   "keeps": "seizures-15",
+   "why": "Both are a sleepy, poorly feeding newborn whose mother had an untested genital lesion at delivery, and both key empiric ampicillin, cefotaxime and acyclovir for neonatal HSV."
+  },
+  {
+   "id": "pediatric-fever-19",
+   "keeps": "pediatric-fever-02",
+   "why": "Both are six week old infants with fever worked up with the same standard septic panel of blood culture, CBC, procalcitonin and urine tests"
+  },
+  {
+   "id": "pre-eclampsia-34",
+   "keeps": "headache-06",
+   "why": "Both are a primigravida with a frontal headache, BP about 170/110 mmHg and ankle clonus on a magnesium infusion, and both key the HELLP bloods of platelets, AST and ALT, creatinine and urine protein."
+  },
+  {
+   "id": "pre-eclampsia-36",
+   "keeps": "headache-11",
+   "why": "Both are pregnant women with a history of migraine whose headache feels different from usual and prompts a pre-eclampsia workup with repeated blood pressure."
+  },
+  {
+   "id": "pulmonary-edema-27",
+   "keeps": "ischemic-heart-disease-07",
+   "why": "Both are elderly patients with complete heart block refractory to atropine needing pacing and an epinephrine infusion"
+  },
+  {
+   "id": "seizures-16",
+   "keeps": "loc-05",
+   "why": "Both are a patient who does not return to baseline with subtle rhythmic twitching of the mouth corner from nonconvulsive status epilepticus, and both key EEG and IV levetiracetam."
+  },
+  {
+   "id": "seizures-36",
+   "keeps": "seizures-27",
+   "why": "Both are a woman seizure free on lamotrigine who has a breakthrough seizure because hormones speed its clearance, and both key a lamotrigine serum level."
+  },
+  {
+   "id": "seizures-43",
+   "keeps": "cva-15",
+   "why": "Both are patients with known lung cancer who present with a new focal neurologic problem from a brain metastasis and are treated with dexamethasone 10 mg IV."
+  },
+  {
+   "id": "shock-39",
+   "keeps": "chest-pain-25",
+   "why": "Both patients develop hypotension from dynamic left ventricular outflow tract obstruction and the key teaching point is avoiding inotropes and instead giving fluid with a vasoconstrictor such as phenylephrine."
+  },
+  {
+   "id": "shock-40",
+   "keeps": "multiple-trauma-11",
+   "why": "Both are a young man with penetrating upper abdominal trauma in hemorrhagic shock managed with the massive transfusion protocol, permissive hypotension of 80 to 90 mmHg, calcium chloride and active warming of products."
+  },
+  {
+   "id": "shock-43",
+   "keeps": "pulmonary-edema-05",
+   "why": "Both are a patient with unstable atrial fibrillation and rapid ventricular response whose key teaching point is synchronized cardioversion followed by amiodarone 150 mg IV when the rhythm reverts."
+  },
+  {
+   "id": "sob-20",
+   "keeps": "gi-bleed-41",
+   "why": "Both are elderly women with atrial fibrillation on a DOAC and an NSAID who present with a gastrointestinal bleed and a urea raised out of proportion to creatinine needing red cell transfusion."
+  },
+  {
+   "id": "suicide-risk-22",
+   "keeps": "suicide-risk-06",
+   "why": "Both are low risk patients with passive suicidal thoughts discharged with the same safety plan components of warning signs, coping strategies and crisis contacts"
+  },
+  {
+   "id": "tox-23",
+   "keeps": "shock-26",
+   "why": "Both are propranolol overdose patients with bradycardia and hypoglycemia treated with high dose insulin and dextrose"
+  },
+  {
+   "id": "tox-24",
+   "keeps": "loc-10",
+   "why": "Both are a sleepy 2 year old with 2 mm pupils after time with a grandmother who takes clonidine 0.1 mg, and both key asking what other pills are in the home and monitored observation."
+  },
+  {
+   "id": "tox-25",
+   "keeps": "airway-38",
+   "why": "Both are caustic sodium hydroxide ingestions with stridor requiring urgent airway assessment for intubation"
+  },
+  {
+   "id": "tox-35",
+   "keeps": "analgesia-sedation-04",
+   "why": "Both are a patient who seizes and arrests from local anesthetic systemic toxicity during laceration repair with lidocaine and the key teaching point is treatment with 20% intravenous lipid emulsion."
+  },
+  {
+   "id": "tox-47",
+   "keeps": "tox-15",
+   "why": "Both are heavy drinkers with delirium tremens refractory to benzodiazepines treated with phenobarbital"
+  }
+ ],
+ "held": [
+  {
+   "id": "airway-40",
+   "pair": "shock-06",
+   "why": "Both are a young man quadriplegic after diving into a shallow lake with warm dry skin, and both key the vasopressor for neurogenic shock with bradycardia."
+  },
+  {
+   "id": "anaphylaxis-38",
+   "pair": "anaphylaxis-19",
+   "why": "Both are anaphylaxis minutes after an injection at a clinic next door where staff gave one IM epinephrine dose, and both key a repeat epinephrine 0.5 mg IM and extended observation."
+  },
+  {
+   "id": "asthma-copd-25",
+   "pair": "asthma-copd-06",
+   "why": "Both are a school age child with a viral wheeze who used salbutamol at home without a spacer and is ready for discharge after treatment, and both key the spacer, the written action plan and the daily inhaled steroid controller."
+  },
+  {
+   "id": "burns-38",
+   "pair": "burns-01",
+   "why": "Both are a man pulled from a basement fire after minutes in smoke, and both key the enclosed space fire, soot and carbonaceous sputum and a raised carboxyhemoglobin as inhalation injury markers."
+  },
+  {
+   "id": "dvt-pe-19",
+   "pair": "chest-pain-31",
+   "why": "Both are a young woman with one day of right pleuritic pain and mild breathlessness, no YEARS items and a D dimer near 800, and both key the 1000 cutoff that excludes PE without imaging."
+  },
+  {
+   "id": "first-trimester-bleeding-27",
+   "pair": "first-trimester-bleeding-10",
+   "why": "Both are a woman who believes her early pregnancy has ended but has an empty uterus and an hCG near 1400 to 1850 IU/L, and both key managing it as a possible ectopic with serial hCG and gynecology follow up."
+  },
+  {
+   "id": "multiple-trauma-25",
+   "pair": "multiple-trauma-01",
+   "why": "Both are a hypotensive motorcyclist with perineal bruising, a negative eFAST and pelvic ring bleeding, and both key a pelvic binder centred over the greater trochanters."
+  },
+  {
+   "id": "pulmonary-edema-28",
+   "pair": "pulmonary-edema-26",
+   "why": "Both are a man on a new drug with breathlessness, crackles, a high troponin and later cardiogenic shock with cool hands and a raised lactate, and both key drug induced myocarditis."
+  }
+ ]
+}
