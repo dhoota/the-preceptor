@@ -1259,30 +1259,31 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
   {
     "id": "infectious-diseases-28",
     "topic": "infectious-diseases",
-    "title": "Flank pain and fever at a small hospital",
-    "stem": "You are working in a rural hospital emergency department with CT but no urologist. A 63-year-old man presents with 2 days of right flank pain, fever and rigors. He has type 2 diabetes. Four months ago he was treated for a urinary infection with Enterobacter cloacae that was resistant to ampicillin, amoxicillin-clavulanate and cefazolin and susceptible to cefepime. He is drowsy but oriented. There is right costovertebral angle tenderness. Lactate is 4.1 mmol/L and creatinine is 186 umol/L. CT shows a 9 mm stone in the right proximal ureter with moderate hydronephrosis. Blood and urine cultures have been drawn. Urology at the regional centre, 2 hours away by road, has accepted him.",
+    "title": "Fever and a swollen knee in an older man",
+    "stem": "A 71-year-old man is brought to the emergency department by ambulance with 1 day of fever, rigors and increasing pain and swelling in his right knee. He had a right total knee replacement 3 years ago. Twelve days ago a boil on his thigh was drained at a walk-in clinic, and the swab grew methicillin-resistant Staphylococcus aureus (MRSA). He has hypertension and type 2 diabetes. He is drowsy but oriented. The right knee is hot, red and swollen with a large effusion, and he will not let it bend. Lactate is 4.6 mmol/L. Blood cultures have been drawn. His blood pressure has not improved after 2 L of Ringer's lactate.",
     "vitals": {
-      "temperature": "39.4°C oral",
-      "pulse": "118/minute",
-      "resp": "24/minute",
-      "bp": "88/52 mmHg",
-      "o2sat": "96% on room air",
-      "weight": "92 kg"
+      "temperature": "39.3°C oral",
+      "pulse": "122/minute",
+      "resp": "26/minute",
+      "bp": "80/44 mmHg",
+      "o2sat": "95% on room air",
+      "weight": "88 kg"
     },
     "questions": [
       {
         "id": "q1",
         "kind": "single",
+        "update": "The orthopedic resident asks you to hold antibiotics until the knee is aspirated in the operating room tomorrow morning, so that joint cultures are not affected.",
         "prompt": "Which of the following is the most appropriate timing of his first antibiotic dose?",
         "options": [
-          "After the urine culture result",
-          "Give the first dose now, here",
-          "On arrival at the regional centre",
-          "Once the stone has been treated",
-          "Only if his BP stays low after fluids"
+          "After aspiration in the morning",
+          "After blood culture results",
+          "Now, before the knee is aspirated",
+          "Once the knee x-ray is reported",
+          "Only if his lactate rises further"
         ],
-        "correct": 1,
-        "explanation": "He has sepsis with hypotension and a high lactate, and the SSC guideline recommends antimicrobials immediately, ideally within 1 hour of recognition. His cultures are already drawn, so there is nothing to wait for. Giving the first dose on arrival 2 hours away, after culture results, after the stone is treated, or only if fluids fail all delay treatment of septic shock.",
+        "correct": 2,
+        "explanation": "He has septic shock, with hypotension that persists after 2 L of fluid and a lactate of 4.6 mmol/L. The Surviving Sepsis Campaign recommends antimicrobials immediately, ideally within 1 hour, for possible, probable or definite septic shock. His blood cultures are already drawn. Holding antibiotics until a morning aspiration would leave his shock untreated for many hours, and better joint culture yield does not justify that delay. Waiting for blood culture results or an x-ray report also delays treatment, and his lactate is already high enough to act on.",
         "keyFeature": {
           "topic": "infectious-diseases",
           "n": 1
@@ -1292,35 +1293,36 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
       {
         "id": "q2",
         "kind": "single",
-        "prompt": "Which of the following is the most appropriate empiric antibiotic for him?",
+        "prompt": "Which of the following is the most appropriate empiric antibiotic regimen for him?",
         "options": [
-          "amoxicillin-clavulanate 875 mg PO twice daily",
-          "ampicillin 2 g IV every 6 hours",
           "cefazolin 2 g IV every 8 hours",
-          "cefepime 2 g IV every 8 hours",
-          "ceftriaxone 2 g IV every 24 hours"
+          "ceftriaxone 2 g IV every 24 hours",
+          "meropenem 1 g IV every 8 hours",
+          "piperacillin-tazobactam 4.5 g IV every 6 hours",
+          "vancomycin 25 mg/kg IV plus ceftriaxone 2 g IV"
         ],
-        "correct": 3,
-        "explanation": "The IDSA guidance asks clinicians to use microbiology from the past 12 months when choosing empiric therapy. Enterobacter cloacae is at moderate risk of clinically significant AmpC production, and its basal AmpC makes it intrinsically resistant to ampicillin, amoxicillin-clavulanate and first-generation cephalosporins such as cefazolin. Cefepime is stable against AmpC, induces it little and is suggested when it tests susceptible, as his did. Ceftriaxone risks resistance emerging during treatment of a serious infection.",
+        "correct": 4,
+        "explanation": "A boil drained 12 days ago grew MRSA, and his knee is the likely source, so his risk of MRSA infection is high. The Surviving Sepsis Campaign suggests empiric cover for this resistant organism in patients at high risk. Vancomycin covers MRSA, and ceftriaxone adds cover for streptococci and gram-negative bacteria while cultures are pending. For his 88 kg, 25 mg/kg is a loading dose of 2200 mg. Cefazolin, ceftriaxone alone, meropenem and piperacillin-tazobactam each leave MRSA uncovered.",
         "keyFeature": {
           "topic": "infectious-diseases",
           "n": 8
         },
-        "source": "idsa-amr-2026"
+        "source": "ssc-2026"
       },
       {
         "id": "q3",
         "kind": "single",
-        "prompt": "Which of the following is the most important step to control the source of his sepsis?",
+        "update": "Norepinephrine is started through a peripheral IV while further fluid is given.",
+        "prompt": "Which of the following is the most appropriate initial mean arterial pressure target for him?",
         "options": [
-          "Antibiotics alone for 14 days",
-          "Decompression by stent or nephrostomy",
-          "Shock wave lithotripsy today",
-          "Tamsulosin to pass the stone",
-          "Wait 48 hours for the stone to pass"
+          "MAP 55 to 60 mmHg",
+          "MAP 60 to 65 mmHg",
+          "MAP 70 to 75 mmHg",
+          "MAP 80 to 85 mmHg",
+          "MAP 90 to 95 mmHg"
         ],
         "correct": 1,
-        "explanation": "An infected, obstructed kidney is a closed collection that antibiotics alone cannot clear. The SSC guideline suggests early source control, ideally within 6 hours of diagnosis. Here that means urgent drainage with a ureteric stent or a nephrostomy. Lithotripsy is avoided during active infection, and tamsulosin to help the stone pass does not drain infected urine from the obstructed kidney. Waiting 48 hours leaves pus under pressure.",
+        "explanation": "For adults with septic shock the Surviving Sepsis Campaign recommends an initial MAP target of 65 mmHg over higher targets. For adults aged 65 years or older, as he is at 71, it suggests an initial range of 60 to 65 mmHg. That suggestion is conditional and rests on low certainty evidence, mainly one large trial in older patients in which a lower target reduced vasopressor exposure without raising mortality. Higher targets of 70 mmHg or more mean more norepinephrine with no survival benefit shown. A target of 55 to 60 mmHg falls below the recommended range and risks ongoing hypoperfusion.",
         "keyFeature": {
           "topic": "infectious-diseases",
           "n": 2
@@ -1333,15 +1335,10 @@ export const INFECTIOUS_DISEASES_S41_SAMPS: Samp[] = [
       "id": "ssc-2026",
       "citation": "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving Sepsis Campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026.",
       "url": "https://doi.org/10.1097/CCM.0000000000007075"
-    },
-    {
-      "id": "idsa-amr-2026",
-      "citation": "Tamma PD, Heil EL, Justo JA, et al. Infectious Diseases Society of America 2026 guidance on the treatment of antimicrobial-resistant gram-negative infections. Clin Infect Dis. 2026.",
-      "url": "https://www.idsociety.org/practice-guideline/amr-guidance/"
     }
   ],
     ...META,
-    "version": 2
+    "version": 3
   },
   {
     "id": "infectious-diseases-29",
