@@ -1,0 +1,381 @@
+[
+  {
+    "id": "loc-16",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Wernicke case is correct. The EFNS thiamine regimen is the best of the options given.",
+    "checked": [
+      "GCS E3 V4 M6 = 13 from stem descriptors",
+      "four Caine criteria present in stem",
+      "EFNS 200 mg IV three times daily",
+      "grep of s01 to s18 and s19 to s31: no Wernicke thiamine dosing case"
+    ]
+  },
+  {
+    "id": "loc-17",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "GCS, imaging and PCC keys are sound. The 25 units/kg dose matches the INR 2 to 4 band on the Canadian product monographs. s05 cva-14 shares only the PCC point.",
+    "checked": [
+      "GCS E3 V3 M5 = 11",
+      "25 units/kg x 58 kg = 1 450 units",
+      "CCHR excludes anticoagulated and GCS under 13",
+      "compared with s05 cva-14: different case"
+    ]
+  },
+  {
+    "id": "loc-18",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of s20 abuse-domestic-17, an earlier new batch. Both have an infant brought by the mother's partner with vomiting, a full fontanelle and drowsiness, and both key head CT then skeletal survey and fundoscopy.",
+    "checked": [
+      "compared q2 and q3 keys with abuse-domestic-17 q2 and q3",
+      "s20 is the earlier batch",
+      "clinical content itself is correct"
+    ]
+  },
+  {
+    "id": "loc-19",
+    "verdict": "HOLD",
+    "questions": [
+      "q2",
+      "q3",
+      "q4"
+    ],
+    "reason": "Keys and acid-base are correct, but q2 to q4 repeat signed-off s18 tox-02: EXTRIP indications, the danger of intubating at usual settings, and bicarbonate. The acute teen overdose scenario is new. The physician should decide whether a second salicylate case is wanted.",
+    "checked": [
+      "AG 140 minus 116 = 24",
+      "Winter 1.5 x 12 + 8 = 26, PCO2 21 lower",
+      "pH from HCO3 12 and PCO2 21 recomputes to 7.38",
+      "EXTRIP: altered mental status is an indication at any level",
+      "compared with s18 tox-02 and s17 sob-09"
+    ]
+  },
+  {
+    "id": "loc-20",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s04 asthma-copd-02. Both have a 71-year-old man with COPD, 3 days of worse dyspnea, a non-rebreather at 15 L/minute, drowsiness, and a VBG with HCO3 34, and both key an 88 to 92% target and NIV.",
+    "checked": [
+      "VBG 7.19, 92, 34 is internally consistent",
+      "compared stem and keys with asthma-copd-02",
+      "same teaching also in s17 sob-05"
+    ]
+  },
+  {
+    "id": "loc-21",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Glucagon without IV access, GCS and CT for a persisting focal deficit are correct. q1 shares the glucagon point with signed-off s07 loc-03, but the case and other questions differ.",
+    "checked": [
+      "Diabetes Canada 2023: glucagon 1 mg IM or 3 mg IN",
+      "GCS E2 V2 M4 = 8",
+      "q3 update gives normal glucose with new right weakness",
+      "compared with s07 loc-03"
+    ]
+  },
+  {
+    "id": "loc-22",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s18 tox-14. Both have a toddler exposed to a grandparent's pill organizer with sulfonylurea hypoglycemia. Both key D10 dosing, octreotide 1 mcg/kg and admission for late recurrence.",
+    "checked": [
+      "D10 5 mL/kg x 15 kg = 75 mL",
+      "octreotide 15 mcg = 1 mcg/kg",
+      "compared all four keys with tox-14 q1, q3, q4"
+    ]
+  },
+  {
+    "id": "loc-23",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "MAP (78 + 84)/3 = 54, then (84 + 92)/3 = 59",
+      "30 mL/kg x 80 kg = 2 400 mL",
+      "GCS E3 V4 M5 = 12",
+      "SSC 2021 antibiotics within 1 hour for shock"
+    ]
+  },
+  {
+    "id": "loc-24",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s09 environmental-02. Both have an older patient in a heat wave in an upper floor apartment with no air conditioning, on benztropine and hydrochlorothiazide with hot dry skin, and both key cold water immersion.",
+    "checked": [
+      "compared stem, medications and cooling key with environmental-02",
+      "WMS 2024 source is current",
+      "q4 CT point is new but the case repeats"
+    ]
+  },
+  {
+    "id": "loc-25",
+    "verdict": "HOLD",
+    "questions": [
+      "q2",
+      "q3"
+    ],
+    "reason": "Numbers and keys are correct, but q2 (osmolal gap) and q3 (fomepizole 15 mg/kg) repeat signed-off s18 tox-06, also a police-found man with a toxic alcohol. The methanol vision and EXTRIP teaching is new. The physician should decide whether to keep both.",
+    "checked": [
+      "calculated osm 276 + 6 + 5 = 287, gap 31",
+      "AG 138 minus 106 = 32",
+      "EXTRIP methanol: vision, pH 7.15 or lower, AG over 24",
+      "fomepizole 15 mg/kg x 70 = 1 050 mg",
+      "compared with s18 tox-06"
+    ]
+  },
+  {
+    "id": "loc-26",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s18 tox-03. Both have a young woman with amitriptyline 50 mg, 6 mm pupils, warm dry skin, a QRS near 146 ms and a terminal R in aVR, and both key sodium bicarbonate with physostigmine rejected.",
+    "checked": [
+      "100 mmol / 62 kg = 1.6 mmol/kg",
+      "compared stem and q1 key with tox-03",
+      "bicarbonate TCA key recurs in at least four other SAMPs per overlap pass"
+    ]
+  },
+  {
+    "id": "loc-27",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s18 tox-07. Both have an older woman on lithium 900 mg daily with confusion, coarse tremor, myoclonus, GCS 13 and acute kidney injury. Both key hemodialysis for decreased consciousness, with the same charcoal, furosemide and bowel irrigation distractors.",
+    "checked": [
+      "EXTRIP lithium: decreased LOC is an indication at any level",
+      "creatinine 168 vs 78 more than doubled",
+      "compared q1 and q3 with tox-07 q1 and q2"
+    ]
+  },
+  {
+    "id": "loc-28",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "mannitol 0.5 g/kg x 28 kg = 14 g",
+      "HR 58 and BP 132/86 abnormal for age as stated",
+      "ISPAD 2022 hourly neuro checks",
+      "grep s01 to s31: no pediatric DKA cerebral edema case"
+    ]
+  },
+  {
+    "id": "loc-29",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s16 shock-10. Both have adrenal crisis with the same Na 124, K 6.1 and glucose 3.1, a BP near 78/44 and pigmented creases. Both key hydrocortisone 100 mg IV then saline and dextrose.",
+    "checked": [
+      "compared labs and keys with shock-10 q2 and q3",
+      "Endocrine Society 2016 dose correct",
+      "q3 potassium point is the only new teaching"
+    ]
+  },
+  {
+    "id": "loc-30",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and grading check out.",
+    "checked": [
+      "GCS E3 V4 M6 = 13, no deficit, WFNS II",
+      "Ottawa SAH rule applies only to alert GCS 15",
+      "q3 update gives hydrocephalus and falling GCS",
+      "s07 loc-14 is ICH, not SAH"
+    ]
+  },
+  {
+    "id": "loc-31",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s11 headache-07. Both have a postpartum woman 9 to 12 days after vaginal delivery with 4 days of headache, a seizure and drowsiness. Both key CT or MR venography and LMWH despite hemorrhage.",
+    "checked": [
+      "compared q2 and q3 keys with headache-07 q3 and q4",
+      "enoxaparin 1 mg/kg x 74 kg = 74 mg is correct",
+      "postpartum eclampsia point also in headache-07 q1"
+    ]
+  },
+  {
+    "id": "loc-32",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Keys and numbers check out. Pediatric purpura cases exist in s14 and s16 but test different decisions.",
+    "checked": [
+      "ceftriaxone 100 mg/kg/day x 10 kg = 500 mg every 12 hours",
+      "pediatric GCS E2 V1 M4 = 7",
+      "CPS contraindications to LP",
+      "compared with s16 shock-12 and s14 pediatric-fever-04"
+    ]
+  },
+  {
+    "id": "loc-33",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s02 analgesia-sedation-12. Both have an older man with CKD on morphine who is hard to rouse with 2 mm pupils. Both key naloxone 0.04 mg titrated and prolonged cover because metabolites accumulate.",
+    "checked": [
+      "creatinine 248 vs 130 given",
+      "compared q1 to q3 with analgesia-sedation-12 q2 and q3",
+      "infusion at two thirds of effective dose per hour is standard"
+    ]
+  },
+  {
+    "id": "loc-34",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "VPA 620 within 350 to 700 umol/L",
+      "normal ALT, bilirubin, INR exclude liver failure",
+      "levocarnitine 100 mg/kg x 60 = 6 g",
+      "grep hyperammonemia: only s07 cirrhosis and s53"
+    ]
+  },
+  {
+    "id": "loc-35",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "GCS and CATCH application check out.",
+    "checked": [
+      "GCS E4 V4 M6 = 14",
+      "CATCH: GCS under 15 at 2 h is high risk, fall 1.5 m is dangerous mechanism",
+      "2.5 h since injury given in stem",
+      "grep CATCH pediatric fall: no other case"
+    ]
+  },
+  {
+    "id": "loc-36",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "corrected Ca 3.72 + 0.02 x 14 = 4.00",
+      "Endocrine Society 2023: IV bisphosphonate or denosumab",
+      "GCS E3 V4 M6 = 13",
+      "grep hypercalcemia treatment: no other case"
+    ]
+  },
+  {
+    "id": "loc-37",
+    "verdict": "HOLD",
+    "questions": [
+      "q2",
+      "q3",
+      "q4"
+    ],
+    "reason": "Numbers are correct, but the case repeats signed-off s09 ems-08 (epidural hematoma, dilated pupil, intubate, mannitol 1 g/kg with dexamethasone and labetalol distractors) and s14 multiple-trauma-12 (TBI SBP target). The mannitol dose rests on an ENLS consensus protocol only. The physician should decide on overlap and source.",
+    "checked": [
+      "scene E1 V2 M5 = 8, arrival E2 V1 M3 = 6",
+      "mannitol 1 g/kg x 80 = 80 g",
+      "BTF 4th ed SBP 110 or more for ages 15 to 49",
+      "compared with ems-08 q3 and multiple-trauma-12 q1"
+    ]
+  },
+  {
+    "id": "loc-38",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s04 burns-04. Both have a patient pulled from a smoke-filled home unresponsive with lactate about 11 to 12 and a raised carboxyhemoglobin. Both key hydroxocobalamin 5 g with nitrites and methylene blue rejected.",
+    "checked": [
+      "compared q1 and q2 with burns-04 q2 options and explanation",
+      "SpO2 and co-oximetry point in q3 is correct",
+      "s13 multiple-patients-10 also keys hydroxocobalamin"
+    ]
+  },
+  {
+    "id": "loc-39",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "D10 250 mL = 25 g, 0.52 g/kg for 48 kg",
+      "ethanol 14 mmol/L about 65 mg/dL",
+      "q2 update gives normal glucose and persisting coma",
+      "grep teen binge hypoglycemia: no other case"
+    ]
+  },
+  {
+    "id": "loc-40",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s16 shock-14. Both have an older woman with advanced dementia and poor intake, sodium 166 to 168, a free water deficit calculation and a maximum fall of 10 mmol/L in 24 hours.",
+    "checked": [
+      "FWD 0.45 x 50 x (166/140 minus 1) = 4.2 L",
+      "compared q2 and q3 with shock-14 q2 and q3"
+    ]
+  },
+  {
+    "id": "loc-41",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s05 cva-07. Both are wake-up strokes with bedtime at 23:00, right hemiplegia and aphasia. Both key last known well at 23:00, CTA and endovascular thrombectomy, with ASA 160, heparin and tenecteplase as distractors.",
+    "checked": [
+      "compared q1, q3, q4 with cva-07 q1 to q3",
+      "apixaban point is the only new teaching",
+      "CSBPR 2022 source correct"
+    ]
+  },
+  {
+    "id": "loc-42",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s13 multiple-patients-06, whose soaked, drooling farm worker keys decontamination, PPE and atropine 1 to 2 mg doubled until the chest clears. s09 ems-13 repeats it too. s53 tox-28 is a further copy.",
+    "checked": [
+      "compared q2 and q3 with multiple-patients-06 q1 and q3",
+      "Eddleston 2008 endpoints correct",
+      "atropine 2 mg matches 1 to 3 mg start"
+    ]
+  },
+  {
+    "id": "loc-43",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s01 abdominal-pain-10. Both have an infant of 9 to 10 months with episodic crying, legs drawn up, vomiting, a right upper quadrant mass and bloody mucus stool. Both key ultrasound and a 20 mL/kg crystalloid bolus.",
+    "checked": [
+      "20 mL/kg x 8.6 kg = 172 mL",
+      "compared q2 and q3 with abdominal-pain-10 q2 and q4"
+    ]
+  },
+  {
+    "id": "loc-44",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "GHB toxidrome, GCS and supportive care are correct.",
+    "checked": [
+      "GCS E2 V1 M4 = 7",
+      "HR 54, temp 35.9, 3 mm pupils fit GHB",
+      "no antidote, supportive care",
+      "grep hydroxybutyrate coma in s01 to s31: no other case"
+    ]
+  },
+  {
+    "id": "loc-45",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s07 loc-07, with s07 loc-01. It is another police-custody drinker with a left temple laceration, low ethanol, a lateralized head injury, why not alcohol, and CT now with the CCHR not applicable.",
+    "checked": [
+      "ethanol 11 mmol/L about 50 mg/dL",
+      "compared q1 and q2 with loc-07 q1 and q2 and loc-01 q2",
+      "q3 cell observation point is the only new teaching"
+    ]
+  },
+  {
+    "id": "loc-46",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "GCS E3 V4 M6 = 13",
+      "RR 14 and SpO2 95% support supportive care",
+      "Penninga 2016 flumazenil harms",
+      "flumazenil appears elsewhere only as a distractor"
+    ]
+  },
+  {
+    "id": "loc-47",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Critical sample, ketotic hypoglycemia and isotonic dextrose fluid are correct.",
+    "checked": [
+      "q2 update gives BOHB 4.8, insulin undetectable, cortisol 640",
+      "PES 2015 critical sample",
+      "s20 abuse-domestic-23 is factitious insulin, a different case"
+    ]
+  }
+]

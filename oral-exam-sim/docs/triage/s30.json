@@ -1,0 +1,243 @@
+[
+  {
+    "id": "cqi-16",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Incident classification, securing evidence, hierarchy of effectiveness and disclosure keys are sound.",
+    "checked": [
+      "110 kg vs 50 kg gives 2.2 times the dose, matches about twice",
+      "harm given in stem (hives, wheeze needing treatment)",
+      "q3 forcing function and automation above double check",
+      "grep pounds and weight error: no other bank case"
+    ]
+  },
+  {
+    "id": "cqi-17",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Two identifier, near miss disclosure, multi-incident analysis and barcode keys check out.",
+    "checked": [
+      "dose not given, so near miss is correct",
+      "q3 update gives 11 further events, 12 in total",
+      "s06 cqi items reviewed: no wrong patient hallway case",
+      "barcode as automation vs reminders"
+    ]
+  },
+  {
+    "id": "cqi-18",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "SBAR elements are correctly assigned. q3 was rewritten and no longer repeats the s13 read-back question.",
+    "checked": [
+      "q1 to q3 options map to S, B, A, R correctly",
+      "q3 update gives Hb 58 g/L",
+      "q3 now keys the recommendation, not read-back",
+      "option \"apixaban daily\" read as every day, not false"
+    ]
+  },
+  {
+    "id": "cqi-19",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Run chart rules applied correctly.",
+    "checked": [
+      "90, 84, 79, 71, 62 is five consecutive falls, a trend",
+      "five points below the median is short of the six needed for a shift",
+      "aim A is specific, measurable and dated",
+      "baseline 22% and 94 minutes used consistently"
+    ]
+  },
+  {
+    "id": "cqi-20",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Contributing factors, disclosure, comprehensive analysis and the reassessment indicator are sound. q4 keys a process measure under a key feature about outcome indicators, which is a weak mapping only.",
+    "checked": [
+      "stem gives 22 boarders, nurse moved, no reassessment",
+      "CIAF comprehensive analysis for a death",
+      "CMPA disclosure: facts, regret, no blame",
+      "q4 process measure matches 30 minute policy in stem"
+    ]
+  },
+  {
+    "id": "cqi-21",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Incident decision tree tests and the CAS pre-block pause are correctly stated.",
+    "checked": [
+      "substitution, deliberate harm, health and foresight tests named correctly",
+      "CAS 2026 guideline pause recommendation per lens A source check",
+      "stem gives interruptions, no marking, no pause",
+      "s06 wrong side chest tube case is a different scenario"
+    ]
+  },
+  {
+    "id": "cqi-22",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and list membership check out.",
+    "checked": [
+      "ISMP Canada 2024 high-alert list opened: insulins, injectable anticoagulants and IV acetylcysteine as antidote listed",
+      "metformin, cefazolin, ondansetron, oral acetaminophen not listed",
+      "grep insulin pen: only s30",
+      "extra copies cqi-36 and cqi-37 are not in the file"
+    ]
+  },
+  {
+    "id": "cqi-23",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "CAEP targets and arithmetic check out. q3 shares the overcapacity protocol point with signed-off s13, but the case and other questions are new.",
+    "checked": [
+      "CAEP 2026 page opened: bed median 2 h, 90th 8 h, assessment median 1 h",
+      "14/2 = 7 times, 39/8 = 4.9 times",
+      "compared with s13 Full department on a Monday evening q2 and q3",
+      "41 h wait sits above the 39 h 90th percentile"
+    ]
+  },
+  {
+    "id": "cqi-24",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Ontario program criteria are correct and the province is named.",
+    "checked": [
+      "Ontario RVQP: all 7 day returns admitted with AMI, SAH or pediatric sepsis confirmed by search",
+      "return on day 4 is past 72 hours",
+      "thunderclap onset during exertion given in stem",
+      "CMPA no speculation or blame"
+    ]
+  },
+  {
+    "id": "cqi-25",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "116 minus 36 = 80 outside the rule",
+      "38 + 26 + 10 + 6 = 80, top two 64/80 = 80%",
+      "36/116 = 31% baseline",
+      "5 below and 3 above meets no run chart rule"
+    ]
+  },
+  {
+    "id": "cqi-26",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Every audit and feedback claim matches the 2025 Cochrane abstract.",
+    "checked": [
+      "Ivers 2025 abstract: individual data, top peer or benchmark, local champion, action plans larger effects",
+      "average of all peers and number of indicators no significant effect",
+      "q3 PDSA adapt and retest",
+      "no other audit and feedback SAMP in bank"
+    ]
+  },
+  {
+    "id": "cqi-27",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Second victim support and disclosure leadership are consistent with Scott 2009 and the CMPA handbook.",
+    "checked": [
+      "CMPA: MRP leads, resident encouraged to take part",
+      "grep second victim: only s30",
+      "3 questions, all distinct teaching"
+    ]
+  },
+  {
+    "id": "cqi-28",
+    "verdict": "FIX",
+    "questions": [
+      "q2"
+    ],
+    "reason": "The stem says no interaction was flagged because another pharmacy filled the script. In provinces with a shared dispensing record the pharmacist would have seen warfarin, and the q2 key assumes provincial drug data exist.",
+    "fix": "Add to the stem: \"The department is in Ontario. The emergency record is not linked to the provincial drug repository, and community pharmacies see only their own dispensing records.\" Keep the q2 key.",
+    "checked": [
+      "q1 BPMH is correct practice though the ROP applies to admitted patients",
+      "IHI trigger tool: INR above 6 and vitamin K are medication triggers",
+      "INR 8.9 and Hb 82 g/L in stem",
+      "s06 outdated medication list case is a different scenario"
+    ]
+  },
+  {
+    "id": "cqi-29",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Information transfer minimum set, handover tool, no harm disclosure and audit keys are sound.",
+    "checked": [
+      "Accreditation Canada information transfer minimum set matches explanation",
+      "CMPA: no harm incidents require disclosure",
+      "drug reached patient, so not a near miss",
+      "timeline 90 min onset plus 140 km transfer still inside window"
+    ]
+  },
+  {
+    "id": "cqi-30",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Universal falls precautions, disclosure to the substitute decision-maker and the post-fall huddle are correct.",
+    "checked": [
+      "stem gives high stretcher, rails up, daughter warning",
+      "SDM named in stem for q2",
+      "grep falls precautions: only s30"
+    ]
+  },
+  {
+    "id": "cqi-31",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "61 minus 44 = 17 non-overdose naloxone uses",
+      "IHI GTT: naloxone and oversedation or hypotension are triggers",
+      "IHI white paper 10 to 20% reporting figure",
+      "s06 drowsy after analgesia case tests disclosure and look-alike drugs, not trigger tools"
+    ]
+  },
+  {
+    "id": "cqi-32",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "SPC interpretation is correct. The tampering point cites Perla, which lens A found supports it.",
+    "checked": [
+      "6.1% above UCL 4.4%, single point special cause",
+      "limits symmetric about 2.6% mean",
+      "q3 update all points within limits, common cause",
+      "s06 control chart items use different data"
+    ]
+  },
+  {
+    "id": "cqi-33",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and dosing error check out.",
+    "checked": [
+      "rivaroxaban 15 mg twice daily for 21 days then 20 mg daily is the labelled regimen",
+      "taking 20 mg twice daily is 40 mg/day, a real overdose",
+      "CMPA prefers a health care interpreter over family",
+      "grep teach-back: only s30"
+    ]
+  },
+  {
+    "id": "cqi-34",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "The Ottawa M&M model elements and CIAF framing are correctly stated.",
+    "checked": [
+      "Calder 2014 four elements match the three keys plus presenter training",
+      "stem gives no prompt for episodic crying",
+      "CIAF statement of findings format",
+      "grep M&M model: only s30"
+    ]
+  },
+  {
+    "id": "cqi-35",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Concentration thresholds and arithmetic check out.",
+    "checked": [
+      "ISMP Canada list opened: magnesium sulfate over 20%, potassium 2 mmol/mL or more",
+      "20 mmol in 100 mL = 0.2 mmol/mL, 2 g in 50 mL = 4%",
+      "FMEA is prospective",
+      "grep concentrated potassium: only s30"
+    ]
+  }
+]

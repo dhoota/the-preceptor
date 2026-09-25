@@ -1,0 +1,383 @@
+[
+  {
+    "id": "dvt-pe-16",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Keys hold under both pediatric and adult rules. Three months is correct because of persistent occlusion at 6 weeks.",
+    "checked": [
+      "enoxaparin 1 mg/kg x 58 kg = 58, rounds to 60 mg",
+      "ASH/ISTH 2024: 6 weeks only without persistent occlusion",
+      "q4 update gives persistent occlusive thrombus",
+      "no teen post-arthroscopy DVT case in s08"
+    ]
+  },
+  {
+    "id": "dvt-pe-17",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Effort thrombosis case is correct. Duplex first, apixaban 10 mg twice daily and outpatient care are standard.",
+    "checked": [
+      "apixaban 10 mg twice daily for 7 days then 5 mg",
+      "rivaroxaban loading 15 mg twice daily correctly stated",
+      "grep subclavian or effort thrombosis in s01 to s32: none"
+    ]
+  },
+  {
+    "id": "dvt-pe-18",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s08 dvt-pe-12. Both are calf DVTs with 3.5 cm swelling, Wells 3 to 4, compression ultrasound, then an isolated peroneal thrombus and the serial ultrasound versus anticoagulation decision. The serial ultrasound key is also debatable with his severe symptoms.",
+    "checked": [
+      "Wells DVT 1 + 1 + 1 = 3, 2 day admission does not score",
+      "compared q1 to q3 with s08 dvt-pe-12 q2 to q4",
+      "CHEST and Thrombosis Canada split on surveillance with severe symptoms"
+    ]
+  },
+  {
+    "id": "dvt-pe-19",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Wells PE 1.5 + 1.5 = 3.0",
+      "PEGeD low under 4.5, D-dimer 820 below 1 000",
+      "previous DVT adds 1.5 to 4.5, moderate",
+      "hemoptysis or cancer add 1 to 4.0, still low"
+    ]
+  },
+  {
+    "id": "dvt-pe-20",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of s28 chest-pain-31, an earlier new batch. Both have a pregnant woman at 22 to 24 weeks with pleuritic pain, no leg symptoms and no YEARS items, managed with pregnancy-adapted YEARS D-dimer. Imaging choice and LMWH dosing also repeat s08 dvt-pe-05 and s17 sob-12.",
+    "checked": [
+      "dalteparin 200 x 74 = 14 800, rounds to 15 000",
+      "ASH 2018 VQ over CTPA confirmed by search",
+      "compared with chest-pain-31 q2 and q3 and s08 dvt-pe-05 q2 and q3"
+    ]
+  },
+  {
+    "id": "dvt-pe-21",
+    "verdict": "HOLD",
+    "questions": [
+      "q1",
+      "q2"
+    ],
+    "reason": "Keys and doses are correct, but q1 (postpartum and caesarean risk) and q2 (LMWH while breastfeeding) repeat signed-off s05 chest-pain-04, a breastfeeding woman with PE after caesarean. The outpatient and duration questions are new. The physician should decide whether both are kept.",
+    "checked": [
+      "dalteparin 200 x 90 = 18 000",
+      "sPESI 0: HR 96, SBP 128, SpO2 96%",
+      "3 months minimum exceeds 6 weeks postpartum",
+      "compared with s05 chest-pain-04 q1 and q4"
+    ]
+  },
+  {
+    "id": "dvt-pe-22",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of s28 chest-pain-33, an earlier new batch. Both have PE with metastatic gastric cancer, the primary in place and chemotherapy, and both key dalteparin over a DOAC for luminal GI cancer. The sPESI 2 at SpO2 93% also repeats s08 dvt-pe-04.",
+    "checked": [
+      "sPESI cancer + HR 114 = 2",
+      "dalteparin 200 x 70 = 14 000, rounds to 15 000",
+      "compared with chest-pain-33 q3 and s08 dvt-pe-04 q4"
+    ]
+  },
+  {
+    "id": "dvt-pe-23",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "ISTH 2021: apixaban or rivaroxaban standard dose above 120 kg",
+      "enoxaparin 1 mg/kg x 152 = 152, 150 mg syringe",
+      "1.5 mg/kg daily = 228 mg, so 150 mg daily is an underdose",
+      "phlegmasia point also in dvt-pe-26, minor overlap"
+    ]
+  },
+  {
+    "id": "dvt-pe-24",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s08 dvt-pe-09. Both are segmental PE on carbamazepine 400 mg twice daily, with the DOAC interaction, LMWH or warfarin, and outpatient care keyed.",
+    "checked": [
+      "Wells PE 3 + 1.5 + 1.5 + 1 = 7.0",
+      "compared q3 to q5 with s08 dvt-pe-09 q1 and q3",
+      "the cast-and-surgery PE scenario also recurs in s08 dvt-pe-12"
+    ]
+  },
+  {
+    "id": "dvt-pe-25",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "fall 256 to 88 = 66%, nadir 88, 2 points",
+      "day 8 of first exposure, 2 points",
+      "new DVT 2, no other cause 2, total 8",
+      "grep HIT or 4Ts in s01 to s32: none"
+    ]
+  },
+  {
+    "id": "dvt-pe-26",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Phlegmasia cerulea dolens, UFH around intervention, IR admission and LMWH for GI-invading cancer are correct.",
+    "checked": [
+      "stem gives cyanosis, faint Doppler pulses, reduced sensation",
+      "duodenal wall invasion given for q4 LMWH key",
+      "grep phlegmasia in s01 to s32: none"
+    ]
+  },
+  {
+    "id": "dvt-pe-27",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s08 dvt-pe-08, s16 shock-09 and s17 sob-11. Each is a collapse with obstructive shock, a dilated RV on bedside ultrasound and a DVT, with alteplase 100 mg over 2 hours keyed. Only the arrest bolus in q4 is new.",
+    "checked": [
+      "compared q1 to q3 with s08 dvt-pe-08 q1, q2, q4",
+      "alteplase 50 mg bolus in arrest is correct",
+      "5 weeks after surgery given"
+    ]
+  },
+  {
+    "id": "dvt-pe-28",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Wells DVT 4, bedridden 3 days scores",
+      "tinzaparin 175 x 80 = 14 000",
+      "enoxaparin 1.5 mg/kg x 80 = 120 mg daily",
+      "likely score, negative US, positive D-dimer, repeat US in 5 to 7 days"
+    ]
+  },
+  {
+    "id": "dvt-pe-29",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Wells DVT 1 + 1 minus 2 = 0",
+      "ASH 2018 D-dimer first for unlikely recurrent DVT",
+      "9 mm vs 3 mm is 6 mm, above the 4 mm criterion",
+      "second DVT unprovoked, indefinite therapy"
+    ]
+  },
+  {
+    "id": "dvt-pe-30",
+    "verdict": "HOLD",
+    "questions": [
+      "q1",
+      "q2"
+    ],
+    "reason": "Keys are correct, but q1 (compression ultrasound first in pregnancy) and q2 (therapeutic LMWH) repeat signed-off s08 dvt-pe-05 and s17 sob-12, both pregnant women at 28 to 29 weeks with leg symptoms. The negative ultrasound and suspected iliac DVT branch is new. The physician should decide on the overlap.",
+    "checked": [
+      "dalteparin 200 x 80 = 16 000, nearest syringe 15 000",
+      "ASH 2018 serial US or MRV after negative US",
+      "compared with s08 dvt-pe-05 and s17 sob-12"
+    ]
+  },
+  {
+    "id": "dvt-pe-31",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Wells PE 3 + 3 + 1.5 + 1.5 + 1 = 10",
+      "high probability, no D-dimer",
+      "CT delay of 4 hours given, apixaban while waiting",
+      "proximal DVT on CUS confirms VTE"
+    ]
+  },
+  {
+    "id": "dvt-pe-32",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "sPESI age 84, HR 112, SpO2 88% = 3",
+      "apixaban 10 mg twice daily, no change for CrCl 40",
+      "edoxaban 30 mg at 60 kg or less correctly stated"
+    ]
+  },
+  {
+    "id": "dvt-pe-33",
+    "verdict": "HOLD",
+    "questions": [
+      "q2"
+    ],
+    "reason": "Risk category, dose and high-risk definition are correct. Admitting an intermediate-low risk patient with sPESI 0 is practice-dependent, as lens A flagged. The case also mirrors s08 dvt-pe-10 with the opposite category.",
+    "checked": [
+      "ESC 2019: RV dysfunction with sPESI 0 is intermediate-low",
+      "dalteparin 200 x 86 = 17 200, rounds to 18 000",
+      "ESC high risk: vasopressor need or SBP under 90 for 15 minutes",
+      "compared with s08 dvt-pe-10 q2 and q3"
+    ]
+  },
+  {
+    "id": "dvt-pe-34",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Wells DVT 1 + 1 minus 2 = 0",
+      "unlikely, positive D-dimer, negative CUS excludes DVT",
+      "lymphangitis, fever and abrasion given in stem",
+      "s08 dvt-pe-15 is a Baker cyst, a different alternative"
+    ]
+  },
+  {
+    "id": "dvt-pe-35",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Occult cancer, LMWH after warfarin failure and the Virchow node are correct.",
+    "checked": [
+      "ASH 2020: LMWH over DOAC for recurrence on therapeutic VKA",
+      "dalteparin 200 x 74 = 14 800, rounds to 15 000",
+      "stem gives weight loss, iron deficiency, INR 2.1 to 2.8",
+      "grep VKA failure in s01 to s32: none"
+    ]
+  },
+  {
+    "id": "dvt-pe-36",
+    "verdict": "HOLD",
+    "questions": [
+      "q2",
+      "q3",
+      "q4"
+    ],
+    "reason": "Every key is correct, but this uncomplicated proximal DVT repeats teaching already signed off: Wells likely then ultrasound (s08 dvt-pe-12) and DOAC single-drug loading (s08 dvt-pe-01). dvt-pe-17 and dvt-pe-23 in this batch also key outpatient DOAC loading. The physician should decide whether it adds enough.",
+    "checked": [
+      "Wells DVT 1 + 1 + 1 + 1 = 4",
+      "rivaroxaban 15 mg twice daily for 21 days",
+      "compared with s08 dvt-pe-01 q5 and dvt-pe-12 q3"
+    ]
+  },
+  {
+    "id": "dvt-pe-37",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Retrievable filter as a bridge after ICH, and removal once anticoagulation is safe, match Thrombosis Canada.",
+    "checked": [
+      "update gives neurologist advice against anticoagulation for 2 weeks",
+      "paralytic stroke as moderate risk factor",
+      "grep filter with ICH in s01 to s32: none"
+    ]
+  },
+  {
+    "id": "dvt-pe-38",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of signed-off s08 dvt-pe-04 and s28 chest-pain-33. It is a cancer patient with DVT signs and PE most likely, the same Wells arithmetic, leg ultrasound as the first test, and DOAC or LMWH choice by tumour site. The sPESI items also repeat.",
+    "checked": [
+      "Wells PE 3 + 3 + 1.5 + 1 = 8.5, same as chest-pain-33",
+      "compared all four questions with s08 dvt-pe-04"
+    ]
+  },
+  {
+    "id": "dvt-pe-39",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "PERC teaching is the inverse of signed-off items, and the numbers check out.",
+    "checked": [
+      "all 8 PERC criteria met at age 29, HR 96, SpO2 96%",
+      "gestalt 30% above the 15% PERC threshold",
+      "Wells 3.0, PEGeD low, 2 300 above 1 000, so CTPA",
+      "stem rewording to more likely than any other diagnosis confirmed"
+    ]
+  },
+  {
+    "id": "dvt-pe-40",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Withholding LMWH in labour, the 24 hour neuraxial interval after a therapeutic dose, and 6 weeks postpartum follow Thrombosis Canada.",
+    "checked": [
+      "last dose 08:00, now 14:00, earliest neuraxial 08:00 next day",
+      "25 to 37 weeks is 12 weeks treated",
+      "grep neuraxial with LMWH: only s11 headache-07, a different point"
+    ]
+  },
+  {
+    "id": "dvt-pe-41",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "enoxaparin 1 mg/kg x 82 = 82, about 80 mg",
+      "mechanical mitral valve INR 2.5 to 3.5",
+      "DOACs contraindicated with mechanical valve",
+      "grep mechanical valve DVT: none"
+    ]
+  },
+  {
+    "id": "dvt-pe-42",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Wells PE 3 + 1.5 + 1 = 5.5, moderate",
+      "PEGeD moderate threshold 500, 720 above",
+      "stem reworded to more likely than bronchitis",
+      "oral HRT not a Wells item"
+    ]
+  },
+  {
+    "id": "dvt-pe-43",
+    "verdict": "REJECT",
+    "questions": [],
+    "reason": "Near duplicate of s28 chest-pain-32, an earlier new batch. Both have an older patient with PE unlikely, an age-adjusted cutoff near 760 to 780 and a D-dimer of 690, keyed no imaging. Signed-off s08 dvt-pe-03 and s17 sob-10 teach the same point.",
+    "checked": [
+      "age adjusted 76 x 10 = 760",
+      "compared with chest-pain-32 q3, s08 dvt-pe-03 q3, s17 sob-10 q4"
+    ]
+  },
+  {
+    "id": "dvt-pe-44",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Child-Pugh bilirubin 3 + albumin 3 + INR 2 + ascites 2 + no HE 1 = 11, class C",
+      "dalteparin 200 x 76 = 15 200, rounds to 15 000",
+      "apixaban and rivaroxaban hepatic contraindications per monographs",
+      "grep Child-Pugh anticoagulation: none"
+    ]
+  },
+  {
+    "id": "dvt-pe-45",
+    "verdict": "FIX",
+    "questions": [
+      "q3"
+    ],
+    "reason": "The key of 28 mg (1 mg/kg every 12 hours) is correct. The explanation ties that dose to children older than 5 years and the 1.5 mg/kg dose to infants under 3 months. Standard pediatric dosing uses 2 months as the cutoff for both.",
+    "fix": "In the q3 explanation change \"For children older than 5 years\" to \"For children aged 2 months or older\" and change \"a starting dose for infants under 3 months\" to \"a starting dose for infants under 2 months\".",
+    "checked": [
+      "1 mg/kg x 28 kg = 28 mg, 42 mg = 1.5 mg/kg",
+      "ASH 2018 pediatric: keep a functioning needed CVAD",
+      "duplex first in children, rules not validated"
+    ]
+  },
+  {
+    "id": "dvt-pe-46",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Extension risk factors and anticoagulation for high-risk distal DVT in cancer are correct.",
+    "checked": [
+      "6 cm, two veins, active cancer given in stem",
+      "apixaban 10 mg twice daily for non-GI cancer",
+      "edoxaban 30 mg at 58 kg correctly stated",
+      "distinct from dvt-pe-18 surveillance branch"
+    ]
+  },
+  {
+    "id": "dvt-pe-47",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Surgical embolectomy when lysis is contraindicated after craniotomy is correct. ESC absolute contraindications are accurately listed.",
+    "checked": [
+      "ESC 2019: ischemic stroke within 6 months, CNS surgery within 3 weeks",
+      "norepinephrine need defines high risk",
+      "s17 sob-11 lists contraindications but keys lysis, not embolectomy"
+    ]
+  }
+]

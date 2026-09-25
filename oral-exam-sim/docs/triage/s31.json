@@ -1,0 +1,256 @@
+[
+  {
+    "id": "critical-appraisal-16",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "rule of three 3/600 = 0.5%, exact limit 0.498%",
+      "distractors 1/600 = 0.17%, 3/300 = 1%, 3/100 = 3% as stated",
+      "age 71 vs study range 30 to 64 given in stem",
+      "q4 serial troponin with 3 h onset"
+    ]
+  },
+  {
+    "id": "critical-appraisal-17",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "odds 0.333 x 5 = 1.67, probability 62.5%, about 63%",
+      "LR 1.8 gives 37.5%, LR 3 gives 50%, 83% needs LR about 15",
+      "q3 CRP correlated with WBC in score, stem says score uses WBC and neutrophils",
+      "rural setting with no surgeon overnight given for q4"
+    ]
+  },
+  {
+    "id": "critical-appraisal-18",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Every 2 by 2 figure was rebuilt and matches.",
+    "checked": [
+      "verified 2x2: TP 72, FP 8, FN 3, TN 27, sens 96.0%, spec 77.1%",
+      "corrected: FN 12, TN 108, sens 85.7%, spec 93.1%",
+      "prevalence 84/200 = 42%, LR minus 0.154, post-test 10.0%",
+      "uncorrected LR minus 0.052 gives 3.6%"
+    ]
+  },
+  {
+    "id": "critical-appraisal-19",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Both confidence intervals recompute from the stated rates and group sizes. The ITT versus per-protocol teaching partly repeats signed-off s07 critical-appraisal-07, but the discordant analysis is new.",
+    "checked": [
+      "ITT 8% vs 7%, n 500 each: 1.0 plus or minus 3.3 = -2.3 to 4.3",
+      "per protocol 8% vs 5.1%, IV n 410: 2.9 plus or minus 3.2 = -0.3 to 6.1",
+      "5 point margin applied consistently in q1 and q3",
+      "compared with s07 critical-appraisal-07 q3"
+    ]
+  },
+  {
+    "id": "critical-appraisal-20",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "NNT 1/0.04 = 25, RRR 28.6%",
+      "design effect 1 + 199 x 0.02 = 4.98, 2 400/4.98 = 482",
+      "q4 too narrow CI when clustering ignored",
+      "q5 update gives non-hypoxic, normal glucose, pain controlled"
+    ]
+  },
+  {
+    "id": "critical-appraisal-21",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "RR 0.30/0.15 = 2.0",
+      "OR 60 x 510 / (140 x 90) = 2.43",
+      "NNH 1/0.15 = 6.7, rounds to 7",
+      "2 years nightly lorazepam in stem supports taper"
+    ]
+  },
+  {
+    "id": "critical-appraisal-22",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Numbers check out. The below-MCID point repeats signed-off s07 critical-appraisal-02 q4, but the add-on design, responder NNT and multiplicity questions are new.",
+    "checked": [
+      "responder NNT 1/0.04 = 25",
+      "4/58 = 6.9% relative increase for the 7 distractor",
+      "20 outcomes at 0.05 gives about 1 false positive",
+      "compared with s07 critical-appraisal-02"
+    ]
+  },
+  {
+    "id": "critical-appraisal-23",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "NNT 1/0.217 = 4.6, rounds to 5",
+      "Fisher exact p for 46/60 vs 33/60 recomputed at 0.020",
+      "moving 2 saline patients gives p 0.051, fragility index 2 confirmed",
+      "64 gel plus 60 saline = 124 randomized"
+    ]
+  },
+  {
+    "id": "critical-appraisal-24",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "RRR 3/18 = 16.7%, RR 0.83, NNT 33.3",
+      "stem gives outreach team and coding change for q2",
+      "BP 86/54 and lactate 3.4 support q5 sepsis care",
+      "stepped wedge for region-wide alert"
+    ]
+  },
+  {
+    "id": "critical-appraisal-25",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "LR plus 17.2, odds 0.0526 x 17.2 = 0.905, 47.5%",
+      "LR minus 0.147, post-test 0.77%",
+      "per 1 000: 43 TP and 47.5 FP",
+      "cough, no fever, no exudate, no nodes given, so no test is standard"
+    ]
+  },
+  {
+    "id": "critical-appraisal-26",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Wilson CI for 120/124 recomputed 92.0% to 98.7%",
+      "PECARN under 2: non-frontal hematoma and fall over 0.9 m present",
+      "parietal hematoma and 1 m fall given in stem",
+      "rule is labelled fictional, not CCHR"
+    ]
+  },
+  {
+    "id": "critical-appraisal-27",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Numbers check out. The two-gate design and spectrum bias point partly repeats signed-off s07 critical-appraisal-09, but PPV at low prevalence and the patient decision are new.",
+    "checked": [
+      "PPV 18/(18 + 98) = 15.5%",
+      "at 10% prevalence 90/(90 + 90) = 50%",
+      "pleuritic, positional pain after a cold given for q4",
+      "compared with s07 critical-appraisal-09 q1 and q2"
+    ]
+  },
+  {
+    "id": "critical-appraisal-28",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Numbers check out. The q4 source is a US guideline, but surgical exploration for suspected necrotizing infection with hypotension is not disputed.",
+    "checked": [
+      "LR minus at 1.0: 0.05/0.40 = 0.125",
+      "LR minus at 2.5 = 0.267, at 5.0 = 0.526, LR plus at 1.0 = 1.58",
+      "post-test 0.125/1.125 = 11.1%",
+      "BP 88/56 in vitals supports hypotension claim"
+    ]
+  },
+  {
+    "id": "critical-appraisal-29",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "GRADE domains are correctly applied to the stated review.",
+    "checked": [
+      "CI 0.98 to 1.72 crosses 1, imprecision",
+      "I squared 65%, inconsistency",
+      "4 of 6 trials unconcealed, risk of bias",
+      "median 6 days in ENT clinics, indirectness, symmetric funnel"
+    ]
+  },
+  {
+    "id": "critical-appraisal-30",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "NNT 1/0.05 = 20",
+      "HR CI 0.55 to 1.10 crosses 1",
+      "pain CI 1.6 to 2.6 above MCID 1.3 given in q4 update",
+      "crossover of 20% and 10% given in stem for q3"
+    ]
+  },
+  {
+    "id": "critical-appraisal-31",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Calibration and discrimination teaching is correct.",
+    "checked": [
+      "O/E 6/2 = 3.0",
+      "mean age 52 vs 68 gives 16 years",
+      "same 30 day follow-up stated in stem",
+      "C statistic 0.82 good discrimination"
+    ]
+  },
+  {
+    "id": "critical-appraisal-32",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "NNT 1/0.08 = 12.5, rounds to 13, RRR 26.7%",
+      "age 7 weeks and 32 weeks gestation outside 3 to 12 months and 36 weeks",
+      "CPS bronchiolitis: no routine salbutamol or steroids",
+      "half feeds and SpO2 92% given for admission"
+    ]
+  },
+  {
+    "id": "critical-appraisal-33",
+    "verdict": "HOLD",
+    "questions": [
+      "q4"
+    ],
+    "reason": "The q4 key of prophylactic LMWH in a below-knee cast rests on NICE NG89. No Canadian guideline covers cast thromboprophylaxis and ACCP 2012 advises against routine use, so a physician must confirm the key for prior VTE.",
+    "checked": [
+      "NNT 1/0.012 = 83.3, rounds to 84",
+      "NNH 1/0.004 = 250",
+      "individual ARR 0.6 x 8% = 4.8%, NNT 20.8, rounds to 21",
+      "no Canadian cast prophylaxis guideline found, s33 has no duplicate cast case"
+    ]
+  },
+  {
+    "id": "critical-appraisal-34",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Numbers and Loeb criteria check out. The oxybutynin delirium and pyuria points recur from signed-off s08 and s07 loc, but the likelihood ratio work and case are new.",
+    "checked": [
+      "LR plus 1.8, odds 0.111 x 1.8 = 0.2, 16.7%",
+      "LR minus 0.2, post-test 2.2%",
+      "Loeb 2001: dysuria alone, or fever over 37.9 with CVA tenderness or urgency",
+      "compared with s08 delirium oxybutynin case and s07 loc pyuria item"
+    ]
+  },
+  {
+    "id": "critical-appraisal-35",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "NNT 1/0.15 = 6.7, rounds to 7, RRR 37.5%",
+      "allocation by date and unblinded nurse rater given in stem",
+      "CPS 2019 topical anesthetic with distraction",
+      "capillary refill 3 s, can wait for topical"
+    ]
+  },
+  {
+    "id": "critical-appraisal-36",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "sens 72/80 = 90%, CXR 40/80 = 50%",
+      "spec 314/320 = 98.1%, LR plus 48",
+      "odds 0.25 x 48 = 12, probability 92.3%",
+      "fellowship-trained sonographers given in stem for q3"
+    ]
+  }
+]

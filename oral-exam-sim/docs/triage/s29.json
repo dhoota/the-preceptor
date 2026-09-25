@@ -1,0 +1,285 @@
+[
+  {
+    "id": "msk-16",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Rebuilt as a Galeazzi case, so the old Maisonneuve duplicate flag no longer applies. Keys and film signs are standard.",
+    "checked": [
+      "current text is Galeazzi, not the s06 msk-02 Maisonneuve case",
+      "grep galeazzi in src/samps: only s29",
+      "q3 threshold more than 5 mm shortening vs 7 mm and 2 mm options",
+      "q4 ORIF in an adult is standard"
+    ]
+  },
+  {
+    "id": "msk-17",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Lisfranc case is correct. CT when she cannot bear weight and the 3 mm diastasis plan check out.",
+    "checked": [
+      "plantar ecchymosis and second metatarsal base tenderness given in stem",
+      "q3 dorsalis pedis course between first and second metatarsals",
+      "q4 3 mm diastasis above 2 mm instability threshold",
+      "grep lisfranc: s43 mentions it only as a distractor"
+    ]
+  },
+  {
+    "id": "msk-18",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and rule application check out.",
+    "checked": [
+      "Fresno-Quebec rule verified by search: over 35 with first episode or blunt mechanism",
+      "stem gives age 71, first episode, fall",
+      "q3 cuff tear with axillary nerve deficit in older patient per Robinson 2012",
+      "q4 options distinct"
+    ]
+  },
+  {
+    "id": "msk-19",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Pediatric Monteggia with PIN palsy is correct throughout. q2 repeats the Monteggia exclusion point of signed-off s06 msk-04, but the rest of the case is new.",
+    "checked": [
+      "grep monteggia: s06 msk-04 q3 shares only the exclusion point",
+      "q3 PIN signs given in update (MCP extension loss, radial deviation, normal sensation)",
+      "q4 urgent reduction",
+      "weight 24 kg not used for any dose"
+    ]
+  },
+  {
+    "id": "msk-20",
+    "verdict": "FIX",
+    "questions": [
+      "q4"
+    ],
+    "reason": "Keys are sound. The q4 update says the tibia is no longer tender 2 days after the candidate was told to presume a fracture, which is implausible for a true fracture and cues the answer.",
+    "fix": "In the q4 update delete the sentence \"The tibia is no longer tender.\" The key and explanation hold without it.",
+    "checked": [
+      "q1 hip rotates fully, no fever given in stem",
+      "q2 presume occult toddler fracture is standard",
+      "q4 fever 38.9 and hip posture given in update",
+      "lens B flag on tibia tenderness re-read and agreed"
+    ]
+  },
+  {
+    "id": "msk-21",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Cochrane figures and NNT check out.",
+    "checked": [
+      "Krul 2017 verified: 9.2% vs 26.4%, 8 trials",
+      "recomputed NNT 1/(0.264 minus 0.092) = 5.8, about 6",
+      "q3 swelling as the film trigger per RCH guideline",
+      "grep pulled elbow: only s29"
+    ]
+  },
+  {
+    "id": "msk-22",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Perilunate film description, median nerve reasoning and management check out.",
+    "checked": [
+      "q1 lateral view description matches dorsal perilunate, not lunate dislocation",
+      "two-point discrimination 10 mm vs 4 mm given in stem for q2 and q4",
+      "Herzberg 1993 one in four missed",
+      "grep perilunate: only s29"
+    ]
+  },
+  {
+    "id": "msk-23",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Skier's thumb case is correct. The stress test numbers meet the complete tear definition.",
+    "checked": [
+      "q3 40 vs 10 degrees, no end point, more than 30 degrees difference",
+      "q2 films before stress testing per BSSH 2024",
+      "q4 Stener anatomy direction",
+      "grep stener: only s29, review-extra copies not wired in"
+    ]
+  },
+  {
+    "id": "msk-24",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Referred shoulder pain from a splenic injury is well built for the rural setting. Shoulder tip pain appears elsewhere in the bank, but no SAMP repeats this case.",
+    "checked": [
+      "stem gives full painless shoulder motion and LUQ tenderness",
+      "q3 update gives falling BP after 1 L and blood",
+      "q4 menu rewritten to cervical radiculopathy and ischemia",
+      "grep shoulder tip: s44, s50, s01, s10, s38 are different cases"
+    ]
+  },
+  {
+    "id": "msk-25",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Atypical femoral fracture teaching matches ASBMR 2014.",
+    "checked": [
+      "q1 radiograph features given in update",
+      "8 years alendronate and 3 month prodrome in stem",
+      "q3 contralateral ache given in update before MRI key",
+      "grep atypical femoral: only s29"
+    ]
+  },
+  {
+    "id": "msk-26",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Shao 2005 radial nerve palsy about 12% and about 70% spontaneous recovery",
+      "q4 update gives deficit unchanged before and after splint",
+      "q3 coaptation splint description correct"
+    ]
+  },
+  {
+    "id": "msk-27",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "q1 and q3 were rebuilt and no longer repeat s06 msk-11. The keys are sound.",
+    "checked": [
+      "q3 Gardner 2005 lateral meniscus 91%, medial 44%",
+      "q2 update gives the 4 mm oozing wound and fat-fluid level",
+      "compared with s06 msk-11: dressing and cefazolin questions no longer present",
+      "q4 BOAST source British but the key is uncontroversial"
+    ]
+  },
+  {
+    "id": "msk-28",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Trial figures check out. The calf squeeze and plantar flexion splint points recur in s43 lacerations, a different case.",
+    "checked": [
+      "q4 Willits 2010: 144 patients, complications 13 vs 6, rerupture 2 vs 3",
+      "q4 Myhrvold 2022: rerupture 6.2% vs 0.6%, nerve injury 5.2% and 2.8% vs 0.6%",
+      "q2 cipro course 1 week ago given in stem",
+      "grep achilles: s43 laceration case shares q1 teaching only"
+    ]
+  },
+  {
+    "id": "msk-29",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Posterior sternoclavicular dislocation is correct. Imaging, OR reduction with thoracic backup and compression signs are standard.",
+    "checked": [
+      "stem gives hollow at medial clavicle and throat tightness",
+      "q3 update gives venous and tracheal compression",
+      "q4 three keys all compression signs",
+      "grep sternoclavicular: only s29"
+    ]
+  },
+  {
+    "id": "msk-30",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Ottawa ankle rule is applied correctly. Lateral talar process management is standard.",
+    "checked": [
+      "Ottawa ankle: tip of lateral malleolus tender, foot criteria absent",
+      "q2 tenderness anterior and inferior to malleolus given in update",
+      "q4 5 mm displacement into subtalar joint",
+      "grep talar process: only s29"
+    ]
+  },
+  {
+    "id": "msk-31",
+    "verdict": "FIX",
+    "questions": [
+      "q3"
+    ],
+    "reason": "Dose and keys are correct. The q3 claim that an ulnar styloid fleck does not change the buckle plan is not in the cited Plint 2006 trial.",
+    "fix": "Add TREKK Bottom line recommendations: pediatric fractures, version 4.0, 2025 (already used in msk-19) to the sources and cite it for q3.",
+    "checked": [
+      "recomputed ibuprofen 10 mg/kg x 23 kg = 230 mg, 460 mg = 20 mg/kg",
+      "q2 volar cortex intact given in update",
+      "Plint 2006 and FORCE 2022 support splint and no follow-up",
+      "s07 buckle item is critical appraisal, not a duplicate"
+    ]
+  },
+  {
+    "id": "msk-32",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Canadian evidence supports the brace and self-guided follow-up. Keys check out.",
+    "checked": [
+      "Boutis 2016 3% SH-I on MRI",
+      "stem gives normal films and no distal tibia tenderness",
+      "q2 brace vs cast per Boutis 2007",
+      "grep Salter-Harris fibula: no other bank case"
+    ]
+  },
+  {
+    "id": "msk-33",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "Gottschalk 2012 verified: about 60% of medial epicondyle fractures occur with dislocation, so more than half is true",
+      "q3 incarcerated fragment and redislocation as surgical indications",
+      "q4 update gives stable elbow and 3 mm displacement"
+    ]
+  },
+  {
+    "id": "msk-34",
+    "verdict": "HOLD",
+    "questions": [
+      "q1",
+      "q3"
+    ],
+    "reason": "The q3 key of debridement within 24 hours rests only on the British BOAST 2017 standard. No Canadian standard was found and practice varies. q1 also repeats the realign before films point of signed-off s06 msk-08.",
+    "checked": [
+      "q2 Gustilo I: wound 5 mm, clean, low energy",
+      "q3 BOAST 12 and 24 hour targets match the explanation",
+      "no Canadian open fracture timing standard found",
+      "compared with s06 msk-08 q1 realignment question"
+    ]
+  },
+  {
+    "id": "msk-35",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Compartment syndrome steps and the family advice are consistent and correct. The source is mostly an adult review, but the teaching is standard.",
+    "checked": [
+      "stem gives analgesia every 3 hours and pain on passive extension",
+      "q1 heart level vs high elevation matches q4 explanation",
+      "q2 update gives persistent pain after split",
+      "grep compartment in pediatric cast: no duplicate"
+    ]
+  },
+  {
+    "id": "msk-36",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Ottawa foot rule and Jones fracture teaching are correct.",
+    "checked": [
+      "Ottawa foot: fifth metatarsal base tenderness given",
+      "q2 update 2 cm from tuberosity into 4 and 5 intermetatarsal joint",
+      "no prior foot pain given, so stress fracture excluded",
+      "grep jones: only s29"
+    ]
+  },
+  {
+    "id": "msk-37",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Axillary view, sling care per PROFHER and the discharge function check are sound. The grip bruise and interview overlap with s20 is gone.",
+    "checked": [
+      "Wilber 2010 verified: upper limb fracture or dislocation OR 5.5 for decline",
+      "q3 walker and dominant arm given in stem",
+      "q4 Osteoporosis Canada 2023 cited",
+      "stem no longer has grip bruises"
+    ]
+  },
+  {
+    "id": "msk-38",
+    "verdict": "READY",
+    "questions": [],
+    "reason": "Key and numbers check out.",
+    "checked": [
+      "recomputed BMI 47 / 1.65 squared = 17.3",
+      "q3 tension side, 40% width given in update",
+      "6 months amenorrhea in stem for q4",
+      "grep femoral neck stress: only s29"
+    ]
+  }
+]
