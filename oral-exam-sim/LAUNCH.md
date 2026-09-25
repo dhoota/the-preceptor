@@ -60,9 +60,25 @@ The app record exists under `com.preceptor.oral`. Update the name to Preceptor: 
 
 1. Rename the app to Preceptor: CCFP-EM.
 2. Monetize > Products > Subscriptions. Create three subscriptions with the same product IDs: `ccfpem_complete_1y`, `ccfpem_written_1y` and `ccfpem_oral_1y`. Give each one auto-renewing base plan with a billing period of 1 year (for example base plan ID `yearly`) at the prices above. Activate the base plans. Play has no subscription group, so the app itself replaces Written or Oral when a subscriber upgrades to Complete. It passes the old product to Play Billing with immediate time proration, so nobody pays for both. If any `_lifetime` or `_11mo` products were created in Play, leave them inactive. Play IDs cannot be reused either.
+   Then in RevenueCat:
+   - Import the three Play subscriptions.
+   - Attach each to the same entitlements as its App Store twin.
+   - Add each to its package in `ccfpem` beside the App Store product.
+   - Detach the three lifetime placeholders from every entitlement and package, then delete them. They are "not found" because they never existed in Play.
+   Turn on Real-time developer notifications (Play Console > Monetization setup) with the Pub/Sub topic RevenueCat gives. Renewals and cancellations then reach RevenueCat without waiting for the app to open.
 3. Data safety, content rating and target audience: see `store/listing.md`.
 
 ## 5. RevenueCat
+
+Status on 25 September 2026:
+- App Store side done. The app config "Preceptor: CCFP-EM (App Store)" for `com.preceptor.oral` exists in the Preceptor project, and the three annual products are imported from App Store Connect.
+- `written_access` holds `ccfpem_written_1y` and `ccfpem_complete_1y`. `oral_full_access` holds `ccfpem_oral_1y` and `ccfpem_complete_1y`.
+- Offering `ccfpem` (display name "CCFP-EM Subscriptions") has packages `complete`, `written` and `oral`, each with its App Store product. These match `src/lib/purchases.ts` exactly.
+- Still open:
+  - The iOS public SDK key (`appl_...`) for this app config is not yet in `src/lib/purchases.ts`.
+  - The Play subscriptions do not exist yet (section 4).
+  - The three lifetime placeholders in RevenueCat still need to be detached and deleted.
+
 
 All Preceptor apps share one RevenueCat project. Its Current offering belongs to another app, so this app fetches its offering by id (`offerings.all["ccfpem"]`) and never reads `offerings.current`. Do not make `ccfpem` the Current offering.
 
@@ -147,6 +163,8 @@ To regenerate the screenshots after content changes, build a seeded static copy 
 - [ ] No copied textbook or question bank text. All cases were written for this app.
 - [ ] Practice score is self-marked. The app says it does not predict exam results.
 - [ ] Privacy policy on thepreceptor.ca covers this app. Store privacy labels match it.
+- [ ] App Store Connect: delete the three unsubmitted lifetime drafts (`ccfpem_complete_lifetime`, `ccfpem_written_lifetime`, `oral_full_lifetime`). They are leftovers. The app never references them. Their IDs cannot be reused either way.
+- [ ] Not this app: the separate CCFP written and study App Store config in the same RevenueCat project shows a credentials warning on its in-app purchase key that re-validating did not clear. Arjan to check that key in App Store Connect.
 - [ ] Terms of use cover yearly subscriptions that renew automatically, how to cancel in the App Store or Google Play account, that cancelling stops the next renewal and access runs to the end of the paid year, and the refund route. Refunds go through Apple or Google. The terms page at thepreceptor.ca is outside this repo and must be updated by hand.
 - [ ] Sales tax: Apple and Google collect and remit GST and HST on app sales in Canada. Keep records for your own filings.
 - [ ] Accessibility: test with VoiceOver and TalkBack on a device. All controls are real buttons with labels.
