@@ -114,125 +114,65 @@ export const ARRHYTHMIA_S24: Samp[] = [
   {
     id: "arrhythmia-17",
     topic: "arrhythmia",
-    title: "Slumped over at the kitchen table",
-    stem: "A 69-year-old man presents to the emergency department after fainting while seated at his kitchen table. His wife says he slumped over without warning and was unresponsive for about 15 seconds. He recovered fully within a minute. He had no chest pain, palpitations or dyspnea before or after. He has coronary artery disease with a stent placed 4 years ago. He takes ASA, atorvastatin and ramipril. His examination is normal apart from a forehead abrasion. His ECG shows sinus rhythm at 64, PR 190 ms, QRS 118 ms, a QRS axis of minus 60 degrees and a QTc of 450 ms. His high-sensitivity troponin is below the 99th percentile.",
-    vitals: {
-      pulse: "64/minute",
-      resp: "16/minute",
-      bp: "188/92 mmHg",
-      o2sat: "97% on room air"
-    },
+    title: "Faint after a pill for palpitations",
+    stem: "A 64-year-old woman is brought to the emergency department by ambulance after fainting in her kitchen. She has paroxysmal atrial flutter and atrial fibrillation. Two hours ago she took flecainide 300 mg, prescribed to take as needed for palpitations. She stopped her metoprolol a month ago because it made her tired. Forty minutes ago she felt a sudden pounding in her chest while standing at the counter, then collapsed and woke within a minute. She felt nauseated afterward. She also takes apixaban, atorvastatin, calcium carbonate and vitamin D. Her ECG last month showed atrial flutter with 2:1 block and a ventricular rate of 140/minute, with a right bundle branch block.\n\nShe is pale, clammy and slow to answer questions.",
+    vitals: { temperature: "36.6°C oral", pulse: "220/minute regular", resp: "22/minute", bp: "78/46 mmHg", o2sat: "95% on room air", weight: "74 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is his Canadian Syncope Risk Score, before any emergency department diagnosis is assigned?",
-        options: [
-          "1",
-          "2",
-          "3",
-          "4",
-          "5"
-        ],
+        prompt: "Which of the following features of her faint most suggests an arrhythmic cause?",
+        options: ["Faint while standing up", "Her age of 64 years", "Nausea after she woke", "Pounding palpitations beforehand", "Quick return to alertness"],
         correct: 3,
-        explanation: "He scores 1 point for coronary artery disease, 2 points for a systolic pressure above 180 mmHg (188 mmHg) and 1 point for an abnormal QRS axis of minus 60 degrees, for a total of 4. He loses no point for a vasovagal predisposition because he fainted while seated with no trigger or warning. His troponin, QRS duration of 118 ms and QTc of 450 ms fall below the score thresholds. A total of 3 counts the blood pressure as 1 point, and 5 wrongly adds the QRS duration, which is not above 130 ms.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 1
-        },
-        source: "csrs"
+        explanation:
+          "Palpitations just before a faint strongly suggest an arrhythmia as the cause. Fainting while standing and a quick return to alertness occur with reflex syncope as well. Nausea around a faint is common in reflex syncope and does not point to an arrhythmia. Older age raises the prior likelihood of cardiac syncope but is far less specific than palpitations at the onset.",
+        keyFeature: { topic: "arrhythmia", n: 1 },
+        source: "esc-syncope"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate next step for him?",
-        options: [
-          "Discharge after 2 hours of monitoring",
-          "Discharge with a 14-day patch monitor",
-          "Discharge with family physician follow-up",
-          "Hospital admission with cardiac monitoring",
-          "Outpatient tilt table testing"
-        ],
+        prompt: "Which of the following parts of her medication history is most relevant to her faint?",
+        options: ["Apixaban for stroke prevention", "Atorvastatin for cholesterol", "Calcium carbonate at night", "Flecainide without her metoprolol", "Vitamin D supplement"],
         correct: 3,
-        explanation: "A score of 4 places him in the high-risk group, and the CCS practice update advises in-hospital assessment with cardiac monitoring for high-risk syncope. Sudden syncope while seated without warning, coronary disease and marked left axis deviation all point toward a conduction or rhythm cause. Discharge with a patch monitor or family physician follow-up suits patients at very low or low risk. Two hours of monitoring is too short for his risk, and tilt testing investigates reflex syncope, which his history does not suggest.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 1
-        },
-        source: "ccs-syncope"
+        explanation:
+          "Class IC drugs such as flecainide can turn atrial fibrillation into a slower atrial flutter that conducts rapidly to the ventricles, so they should be combined with an AV node blocker such as a beta blocker, diltiazem or verapamil. She took flecainide a month after stopping her metoprolol, which removed that protection. Apixaban, atorvastatin, calcium and vitamin D do not provoke a tachyarrhythmia.",
+        keyFeature: { topic: "arrhythmia", n: 1 },
+        source: "leblanc-ccs-af"
       },
       {
         id: "q3",
         kind: "single",
-        update: "On the monitor, P waves march out at a regular rate of 76. Most P waves are followed by a QRS with a constant PR interval of 190 ms, but every third or fourth P wave is not conducted, with no PR lengthening before it.",
-        prompt: "Which of the following best describes the rhythm now seen on his monitor?",
-        options: [
-          "First-degree AV block",
-          "Mobitz type I second-degree AV block",
-          "Mobitz type II second-degree AV block",
-          "Nonconducted premature atrial beats",
-          "Third-degree AV block"
-        ],
-        correct: 2,
-        explanation: "Dropped beats with a constant PR interval before and after each blocked P wave define Mobitz type II block, and his QRS of 118 ms suggests disease below the AV node. In Mobitz type I the PR lengthens progressively before the dropped beat. Nonconducted premature atrial beats arrive early, but here the P waves march out at a regular rate of 76. First-degree block conducts every P wave, and third-degree block shows no relationship between P waves and QRS complexes.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 3
-        },
-        source: "acc-brady"
+        update: "Her ECG shows a regular wide complex tachycardia at 220/minute. The QRS has the same right bundle branch block shape as her old ECG.",
+        prompt: "Which of the following best describes her rhythm on this ECG?",
+        options: ["Atrial flutter with 1:1 conduction", "AV nodal reentry with aberrancy", "Pre-excited atrial fibrillation", "Sinus tachycardia with RBBB", "Ventricular tachycardia"],
+        correct: 0,
+        explanation:
+          "Her flutter conducted 2:1 at 140/minute last month, an atrial rate of about 280/minute. Flecainide slows the flutter circuit, here to about 220/minute, and without an AV node blocker every flutter wave now reaches the ventricles, so she has a regular rate of 220/minute with the QRS shape of her known bundle branch block. Pre-excited atrial fibrillation is irregular with changing QRS shapes. Ventricular tachycardia would not usually match her baseline QRS shape. Sinus tachycardia does not reach 220/minute at 64 years. AV nodal reentry does not fit her known flutter and the setting of a new class IC drug.",
+        keyFeature: { topic: "arrhythmia", n: 3 },
+        source: "leblanc-ccs-af"
       },
       {
         id: "q4",
         kind: "menu",
-        update: "His pulse falls to 38/minute with 2:1 block. His BP is 76/44 mmHg and he is pale and confused. Two doses of atropine 1 mg IV have not changed his rate.",
-        prompt: "Which of the following are the most appropriate next treatments?",
-        options: [
-          "adenosine 6 mg IV",
-          "amiodarone 150 mg IV",
-          "calcium gluconate 3 g IV",
-          "dopamine infusion",
-          "epinephrine infusion",
-          "magnesium sulfate 2 g IV",
-          "procainamide infusion",
-          "transcutaneous pacing"
-        ],
-        select: 3,
-        correct: [
-          3,
-          4,
-          7
-        ],
-        explanation: "His bradycardia now causes hypotension and confusion and has not responded to 2 mg of atropine, so transcutaneous pacing and a chronotropic infusion of epinephrine or dopamine are the next steps while transvenous pacing is arranged. Atropine often fails in Mobitz type II block because the block lies below the AV node. Amiodarone and procainamide slow conduction and could worsen the block. Adenosine blocks the AV node. Calcium and magnesium have no role without hyperkalemia or torsades de pointes.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 4
-        },
-        source: "aha-als"
+        prompt: "Which of the following is the most appropriate treatment for her rhythm now?",
+        select: 1,
+        options: ["adenosine 6 mg IV", "amiodarone 150 mg IV", "diltiazem 0.25 mg/kg IV", "procainamide 15 mg/kg IV", "Synchronized cardioversion", "Unsynchronized defibrillation", "Vagal manoeuvres"],
+        correct: [4],
+        explanation:
+          "A systolic BP below 90 mmHg with an altered mental state makes her unstable, and an unstable patient with an acute atrial arrhythmia needs urgent synchronized electrical cardioversion with procedural sedation, starting at 150 to 200 J. Procainamide is another sodium channel blocker and would add to the flecainide effect. IV amiodarone is slow and works poorly for acute conversion, and diltiazem lowers her BP further. Adenosine and vagal manoeuvres may briefly slow conduction but do not terminate flutter. Unsynchronized shocks are for pulseless or polymorphic rhythms and risk inducing ventricular fibrillation here.",
+        keyFeature: { topic: "arrhythmia", n: 4 },
+        source: "caep-af"
       }
     ],
     sources: [
-      {
-        id: "csrs",
-        citation: "Thiruganasambandamoorthy V, et al. Development of the Canadian Syncope Risk Score to predict serious adverse events after emergency department assessment of syncope. CMAJ. 2016.",
-        url: "https://www.cmaj.ca/content/188/12/e289"
-      },
-      {
-        id: "ccs-syncope",
-        citation: "Sandhu RK, et al. Canadian Cardiovascular Society Clinical Practice Update on the Assessment and Management of Syncope. Can J Cardiol. 2020."
-      },
-      {
-        id: "acc-brady",
-        citation: "Kusumoto FM, et al. 2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay. Circulation. 2019."
-      },
-      {
-        id: "aha-als",
-        citation: "American Heart Association. Part 9. Adult advanced life support. 2025 Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025.",
-        url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376"
-      }
+      { id: "esc-syncope", citation: "Brignole M, Moya A, de Lange FJ, and colleagues. 2018 ESC guidelines for the diagnosis and management of syncope. Eur Heart J. 2018.", url: "https://doi.org/10.1093/eurheartj/ehy037" },
+      { id: "leblanc-ccs-af", citation: "Leblanc K, MacGillivray J, Carroccia A, Macle L, Andrade JG. The 2020 CCS atrial fibrillation guidelines for pharmacists: top 10 takeaways. Can Pharm J. 2022.", url: "https://doi.org/10.1177/17151635211058160" },
+      { id: "caep-af", citation: "Stiell IG, de Wit K, Scheuermeyer FX, and colleagues. 2021 CAEP acute atrial fibrillation/flutter best practices checklist. CJEM. 2021.", url: "https://doi.org/10.1007/s43678-021-00167-y" }
     ],
     reviewed: false,
     author: AUTHOR,
-    version: 1
+    version: 2
   },
   {
     id: "arrhythmia-18",
@@ -1146,217 +1086,129 @@ export const ARRHYTHMIA_S24: Samp[] = [
   {
     id: "arrhythmia-27",
     topic: "arrhythmia",
-    title: "Ectopy after thrombolysis",
-    stem: "You are working in a rural hospital emergency department in northern Saskatchewan, 4 hours by road from a PCI centre. A 61-year-old man presents with 1 hour of crushing central chest pain. His ECG shows ST elevation of 4 mm in V1 to V5. He receives tenecteplase, enoxaparin, ASA and clopidogrel. Sixty minutes later his pain has resolved and the ST elevation has fallen by more than half. The monitor now shows frequent premature ventricular beats and runs of 4 to 7 beats of a wide complex rhythm at 150 that stop on their own. He feels well. Potassium is 4.2 mmol/L and magnesium 0.86 mmol/L.",
-    vitals: {
-      pulse: "84/minute",
-      resp: "16/minute",
-      bp: "128/78 mmHg",
-      o2sat: "97% on room air",
-      weight: "86 kg"
-    },
+    title: "Pain eases while the team is on the way",
+    stem: "A 57-year-old man presents to the emergency department of a PCI centre at 02:00 with 90 minutes of central chest pressure. His ECG shows 3 mm ST elevation in V2 to V5. The catheterization laboratory team has been called in and will arrive in 30 minutes. He has received ASA, ticagrelor and IV heparin. He has hypertension and takes ramipril.\n\nTen minutes later his pain suddenly eases. A repeat ECG shows the ST elevation has fallen by more than half. The monitor then shows a regular wide complex rhythm at 88/minute for about a minute, with sinus rhythm before and after it. He is alert and comfortable. Potassium is 4.2 mmol/L and magnesium is 0.9 mmol/L.",
+    vitals: { temperature: "36.7°C oral", pulse: "86/minute", resp: "16/minute", bp: "126/76 mmHg", o2sat: "97% on room air", weight: "84 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate management of these ventricular beats?",
-        options: [
-          "amiodarone 150 mg IV",
-          "lidocaine 1 mg/kg IV",
-          "magnesium sulfate 2 g IV",
-          "procainamide 15 mg/kg IV",
-          "Telemetry monitoring alone"
-        ],
+        prompt: "Which of the following best explains the new wide complex rhythm?",
+        options: ["Complete heart block", "Extension of the infarct", "Low potassium level", "Scar-related ventricular tachycardia", "Spontaneous reperfusion"],
         correct: 4,
-        explanation: "Frequent premature ventricular beats and short, self-terminating runs of VT are common within hours of reperfusion, and in a man who feels well with a BP of 128/78 mmHg they need only monitoring. His resolved pain and ST resolution of more than half suggest the artery has opened. Amiodarone, lidocaine and procainamide add side effects without benefit for asymptomatic ventricular ectopy. His magnesium of 0.86 mmol/L is normal and there is no torsades, so magnesium is not needed.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 7
-        },
-        source: "esc-acs"
+        explanation:
+          "Sudden relief of pain with more than 50% resolution of ST elevation, followed by a regular wide rhythm at 88/minute, points to spontaneous reperfusion of the artery with an accelerated idioventricular rhythm, a rhythm often seen during reperfusion that is usually benign and well tolerated. Infarct extension brings more pain and ST elevation, not less. Complete heart block would show P waves marching through at a separate rate, and he was in sinus rhythm before and after the run. His potassium of 4.2 mmol/L is normal. A ventricular rhythm below 100/minute is too slow to be called ventricular tachycardia.",
+        keyFeature: { topic: "arrhythmia", n: 7 },
+        source: "riera-aivr"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate antiarrhythmic plan for his transfer?",
-        options: [
-          "Amiodarone infusion for 24 hours",
-          "Lidocaine infusion during transport",
-          "Magnesium infusion during transport",
-          "Procainamide infusion for 24 hours",
-          "No prophylactic antiarrhythmic drug"
-        ],
-        correct: 4,
-        explanation: "Treating asymptomatic ventricular arrhythmias after reperfusion with antiarrhythmic drugs is not recommended, so he should travel on a monitor with defibrillation pads and no preventive infusion. Routine lidocaine prophylaxis after infarction was abandoned because it did not lower mortality. Amiodarone and procainamide infusions add hypotension and QT effects without benefit. Magnesium is not indicated with a normal level of 0.86 mmol/L.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 7
-        },
-        source: "esc-acs"
+        prompt: "Which of the following is the most appropriate management of this rhythm?",
+        options: ["amiodarone 150 mg IV", "atropine 0.5 mg IV", "lidocaine 100 mg IV", "Monitor, then angiography", "Overdrive ventricular pacing"],
+        correct: 3,
+        explanation:
+          "His rhythm is brief, he is alert and his BP is normal, so it needs monitoring only. Antiarrhythmic drugs are not recommended for ventricular arrhythmias that cause no symptoms or hemodynamic change after a myocardial infarction, so lidocaine and amiodarone add risk without benefit. Easing of pain and ST elevation does not remove the culprit lesion, so he still needs urgent angiography. Atropine and overdrive pacing treat a slow rhythm or recurrent tachycardia, which he does not have.",
+        keyFeature: { topic: "arrhythmia", n: 7 },
+        source: "esc-acs-2023"
       },
       {
         id: "q3",
         kind: "single",
-        update: "Two hours later, while awaiting transport, he develops a sustained regular wide complex tachycardia at 180. He is pale and confused, with BP 72/40 mmHg.",
+        update: "Twenty minutes later his chest pain returns. He becomes confused and clammy. The monitor shows polymorphic ventricular tachycardia at 220/minute, and a weak carotid pulse is felt. BP is 70/40 mmHg.",
         prompt: "Which of the following is the most appropriate immediate treatment?",
-        options: [
-          "adenosine 6 mg IV rapid push",
-          "amiodarone 150 mg IV over 10 minutes",
-          "lidocaine 100 mg IV push",
-          "procainamide 1 g IV over 60 minutes",
-          "Synchronized cardioversion"
-        ],
-        correct: 4,
-        explanation: "He has a pulse but is hypotensive at 72/40 mmHg and confused, so his sustained VT is unstable and needs immediate synchronized cardioversion, with brief sedation only if it causes no delay. Amiodarone, lidocaine and procainamide suit stable VT or prevention after cardioversion, but they act too slowly for a patient in shock. Adenosine does not treat ventricular tachycardia.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 4
-        },
-        source: "aha-als"
+        options: ["amiodarone 150 mg IV", "Immediate shock at 200 J", "lidocaine 100 mg IV", "magnesium sulfate 2 g IV", "procainamide 15 mg/kg IV"],
+        correct: 1,
+        explanation:
+          "Polymorphic ventricular tachycardia with confusion and a BP of 70/40 mmHg is unstable, and it is terminated with an immediate high-energy electrical shock, more than 150 J with a biphasic defibrillator, not with drugs. Amiodarone is added when polymorphic tachycardia does not respond to shocks, and lidocaine is not a first treatment for an unstable rhythm. Procainamide suits a tolerated monomorphic ventricular tachycardia. Magnesium is used for torsades with a long QT and does not reliably end an unstable polymorphic rhythm.",
+        keyFeature: { topic: "arrhythmia", n: 4 },
+        source: "jcs-2020"
       },
       {
         id: "q4",
         kind: "single",
-        update: "After one shock he is in sinus rhythm at 90. His chest pain has returned and the ECG shows new ST elevation of 3 mm in V2 to V4.",
-        prompt: "Which of the following is the most appropriate next step?",
-        options: [
-          "Amiodarone infusion and observation",
-          "Echocardiography before transfer",
-          "Emergent transfer for rescue PCI",
-          "Repeat full dose of tenecteplase",
-          "Serial troponins every 6 hours"
-        ],
-        correct: 2,
-        explanation: "Recurrent chest pain, new ST elevation and sustained VT after tenecteplase mean failed reperfusion or reocclusion, and the ongoing ischemia is driving the arrhythmia, so he needs emergent transfer for rescue PCI. Repeat thrombolysis is less effective than rescue PCI and adds bleeding risk. An amiodarone infusion treats the rhythm but not its cause. Echocardiography and serial troponins only delay revascularization.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 5
-        },
-        source: "esc-acs"
+        update: "He returns to sinus rhythm. The ECG now shows 4 mm ST elevation in V2 to V5. His QTc is 430 ms.",
+        prompt: "Which of the following is the most likely trigger of his polymorphic ventricular tachycardia?",
+        options: ["Acute ischemia from reocclusion", "Congenital long QT syndrome", "Drug-induced QT prolongation", "Low magnesium level", "Low potassium level"],
+        correct: 0,
+        explanation:
+          "Polymorphic ventricular tachycardia with a normal QTc, recurrent pain and new ST elevation is driven by acute ischemia, here from reocclusion of the artery, and prompt revascularization is recommended to treat the ischemia behind recurrent ventricular tachycardia or fibrillation. His QTc of 430 ms argues against congenital or drug-induced long QT. His potassium of 4.2 mmol/L and magnesium of 0.9 mmol/L are normal.",
+        keyFeature: { topic: "arrhythmia", n: 5 },
+        source: "esc-acs-2023"
       }
     ],
     sources: [
-      {
-        id: "esc-acs",
-        citation: "Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.",
-        url: "https://academic.oup.com/eurheartj/article/44/38/3720/7243210"
-      },
-      {
-        id: "aha-als",
-        citation: "American Heart Association. Part 9. Adult advanced life support. 2025 Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025.",
-        url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001376"
-      }
+      { id: "riera-aivr", citation: "Riera AR, Barros RB, de Sousa FD, Baranchuk A. Accelerated idioventricular rhythm: history and chronology of the main discoveries. Indian Pacing Electrophysiol J. 2010.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2803604/" },
+      { id: "esc-acs-2023", citation: "Byrne RA, Rossello X, Coughlan JJ, and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.", url: "https://doi.org/10.1093/eurheartj/ehad191" },
+      { id: "jcs-2020", citation: "Ono K, Iwasaki YK, Akao M, and colleagues. JCS/JHRS 2020 guideline on pharmacotherapy of cardiac arrhythmias. J Arrhythm. 2022.", url: "https://doi.org/10.1002/joa3.12714" }
     ],
     reviewed: false,
     author: AUTHOR,
-    version: 1
+    version: 2
   },
   {
     id: "arrhythmia-28",
     topic: "arrhythmia",
-    title: "Slow pulse after clot-busting treatment",
-    stem: "You are working in a community hospital emergency department 2 hours by air from the nearest PCI centre. A 70-year-old woman presents with 90 minutes of chest pressure, nausea and sweating. Her ECG shows ST elevation of 3 mm in II, III and aVF with ST depression in I and aVL, and no ST depression in V1 to V3. She receives tenecteplase, enoxaparin, ASA and clopidogrel. Forty minutes later her chest pain has eased and the inferior ST elevation has fallen by more than half. She feels warm and nauseated, and the monitor shows sinus bradycardia at 48. She is alert and her lungs are clear.",
-    vitals: {
-      pulse: "48/minute",
-      resp: "16/minute",
-      bp: "106/64 mmHg",
-      o2sat: "96% on room air",
-      weight: "64 kg"
-    },
+    alsoTopics: ["tox"],
+    title: "Chest pressure after a night out",
+    stem: "A 33-year-old man presents to the emergency department at 03:00 with 40 minutes of heavy chest pressure that began 1 hour after he snorted cocaine at a party. He has no medical history and takes no medications. His ECG shows 3 mm ST elevation in II, III and aVF. He receives lorazepam 2 mg IV, ASA and two doses of nitroglycerin 0.4 mg SL.\n\nWithin 5 minutes his pain resolves and a repeat ECG shows the ST elevation has returned to baseline. The monitor then shows runs of a regular wide complex rhythm at 90/minute, lasting 20 to 30 seconds, with no P waves linked to the QRS complexes, alternating with sinus rhythm at 88/minute. He is alert and comfortable.",
+    vitals: { temperature: "37.2°C oral", pulse: "90/minute", resp: "18/minute", bp: "134/80 mmHg", o2sat: "98% on room air", weight: "76 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most appropriate management of her heart rate at this point?",
-        options: [
-          "atropine 1 mg IV",
-          "dopamine infusion",
-          "epinephrine infusion",
-          "Observation on the monitor",
-          "Transcutaneous pacing"
-        ],
-        correct: 3,
-        explanation: "Sinus bradycardia with nausea and warmth soon after reperfusion of an inferior infarction is a vagal reflex that is usually brief, and with a BP of 106/64 mmHg and a clear mind she needs only observation on the monitor. Her pain relief and ST resolution suggest the artery has opened. Atropine, dopamine, epinephrine and pacing are for bradycardia that causes hypotension or poor perfusion, which she does not have.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 7
-        },
-        source: "esc-acs"
+        prompt: "Which of the following is the most appropriate management of these brief runs?",
+        options: ["amiodarone 150 mg IV", "Continue monitoring only", "lidocaine 100 mg IV", "metoprolol 5 mg IV", "Synchronized cardioversion"],
+        correct: 1,
+        explanation:
+          "A slow wide rhythm that appears just after the pain and ST elevation resolve is an accelerated idioventricular rhythm, a reperfusion rhythm, and brief runs in an alert patient with a normal BP need monitoring only. Antiarrhythmic drugs are not recommended for ventricular arrhythmias that cause no symptoms or hemodynamic change, so lidocaine and amiodarone add risk without benefit. Metoprolol slows the sinus node, which lets the ventricular rhythm take over more often. Cardioversion is not indicated for a stable rhythm at 90/minute.",
+        keyFeature: { topic: "arrhythmia", n: 7 },
+        source: "esc-acs-2023"
       },
       {
         id: "q2",
         kind: "single",
-        update: "Fifteen minutes later her pulse is 38/minute in sinus rhythm, her BP is 78/46 mmHg and she is light-headed and pale.",
-        prompt: "Which of the following is the most appropriate next treatment for her heart rate?",
-        options: [
-          "amiodarone 150 mg IV",
-          "atropine 1 mg IV",
-          "isoproterenol infusion",
-          "nitroglycerin 0.4 mg SL",
-          "Transcutaneous pacing"
-        ],
+        update: "An hour later his sinus rate slows to 70/minute and a run lasts 3 minutes. During it his BP falls to 86/52 mmHg and he feels light-headed.",
+        prompt: "Which of the following is the most appropriate treatment for him now?",
+        options: ["amiodarone 150 mg IV", "atropine 0.5 mg IV", "lidocaine 100 mg IV", "metoprolol 5 mg IV", "Synchronized cardioversion"],
         correct: 1,
-        explanation: "Her sinus bradycardia now causes hypotension and light-headedness, so treatment is clearly needed, and atropine 1 mg IV is the first drug for symptomatic sinus bradycardia of vagal origin. Transcutaneous pacing is the next step if atropine fails. Isoproterenol raises myocardial oxygen demand and can provoke ventricular arrhythmias during infarction. Nitroglycerin would worsen her hypotension, and amiodarone slows the sinus rate further.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 7
-        },
-        source: "esc-acs"
+        explanation:
+          "The rhythm is now sustained and causes hypotension, so it needs treatment. An accelerated idioventricular rhythm takes over when the sinus rate falls below the rate of the ventricular focus, so atropine, which speeds the sinus node, lets the sinus rhythm recapture the heart, and atropine has been reported to suppress this rhythm in acute infarction. Lidocaine and amiodarone suppress the ventricular focus without speeding the sinus node and can leave a slow rhythm behind. Metoprolol slows the sinus node further and favours the ventricular rhythm. Cardioversion is used for reentrant tachycardias, not for a rhythm at 90/minute.",
+        keyFeature: { topic: "arrhythmia", n: 7 },
+        source: "riera-aivr"
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following ECG steps is most useful to assess the cause of her hypotension?",
-        options: [
-          "Leads placed one space higher",
-          "Lewis lead placement",
-          "Posterior leads V7 to V9",
-          "Repeat ECG in 30 minutes",
-          "Right-sided precordial leads"
-        ],
-        correct: 4,
-        explanation: "Hypotension with an inferior infarction raises concern for right ventricular infarction, and ST elevation in V4R on right-sided leads identifies it and shifts care toward fluids and away from nitrates. Posterior leads look for posterior infarction, which shows as ST depression in V1 to V3, absent here. Lewis leads help find hidden atrial activity, and leads placed one space higher look for a Brugada pattern. Waiting 30 minutes delays the answer.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 5
-        },
-        source: "esc-acs"
+        prompt: "Which of the following most likely caused his transient ST elevation?",
+        options: ["Acute aortic dissection", "Acute myopericarditis", "Benign early repolarization", "Cocaine-induced coronary spasm", "Coronary artery embolism"],
+        correct: 3,
+        explanation:
+          "Cocaine stimulates adrenergic receptors on the coronary arteries and causes coronary spasm, and ST elevation that resolves within minutes of nitroglycerin and a benzodiazepine fits spasm that has been relieved. Cocaine also promotes thrombosis, so he still needs cardiology assessment. Early repolarization does not come and go with pain. Myopericarditis causes diffuse ST elevation that does not resolve with nitroglycerin in minutes. Aortic dissection and coronary embolism do not fit rapid resolution with nitroglycerin.",
+        keyFeature: { topic: "arrhythmia", n: 5 },
+        source: "kim-cocaine"
       },
       {
         id: "q4",
         kind: "single",
-        update: "After treatment her P waves come at a regular rate of 70. The PR interval lengthens from 200 ms to 320 ms over three beats, then a P wave is not conducted, and the cycle repeats.",
-        prompt: "Which of the following best describes the rhythm now seen on her monitor?",
-        options: [
-          "Blocked premature atrial beats",
-          "First-degree AV block",
-          "Mobitz type I second-degree AV block",
-          "Mobitz type II second-degree AV block",
-          "Third-degree AV block"
-        ],
+        update: "A rhythm strip shows that the first complex of each run arrives at the expected time of a sinus beat and has a shape halfway between his normal QRS and the wide complexes.",
+        prompt: "Which of the following best describes the first complex of each run?",
+        options: ["Aberrant conduction", "Capture beat", "Fusion beat", "Premature atrial beat", "Ventricular escape beat"],
         correct: 2,
-        explanation: "Progressive PR lengthening before a single dropped P wave, with the cycle repeating, is Mobitz type I (Wenckebach) block, which is common with inferior infarction because of AV nodal ischemia and vagal tone. Mobitz type II drops beats without PR lengthening. First-degree block conducts every P wave, and third-degree block has no P to QRS relationship. Blocked premature atrial beats arrive early rather than at a regular rate of 70.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 3
-        },
-        source: "acc-brady"
+        explanation:
+          "A complex with a shape halfway between the sinus QRS and the ventricular QRS, arriving on time, is a fusion beat, formed when a sinus impulse and the ventricular focus activate the ventricles together. Fusion and capture beats are typical of an accelerated idioventricular rhythm when its rate is close to the sinus rate, and they confirm that the wide complexes arise in the ventricle. A capture beat is a fully normal, narrow QRS conducted from the sinus node during a ventricular rhythm. Aberrant conduction and a premature atrial beat are early, with a P wave before the complex. An escape beat follows a pause rather than arriving on time.",
+        keyFeature: { topic: "arrhythmia", n: 3 },
+        source: "riera-aivr"
       }
     ],
     sources: [
-      {
-        id: "esc-acs",
-        citation: "Byrne RA, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.",
-        url: "https://academic.oup.com/eurheartj/article/44/38/3720/7243210"
-      },
-      {
-        id: "acc-brady",
-        citation: "Kusumoto FM, et al. 2018 ACC/AHA/HRS Guideline on the Evaluation and Management of Patients With Bradycardia and Cardiac Conduction Delay. Circulation. 2019."
-      }
+      { id: "esc-acs-2023", citation: "Byrne RA, Rossello X, Coughlan JJ, and colleagues. 2023 ESC guidelines for the management of acute coronary syndromes. Eur Heart J. 2023.", url: "https://doi.org/10.1093/eurheartj/ehad191" },
+      { id: "riera-aivr", citation: "Riera AR, Barros RB, de Sousa FD, Baranchuk A. Accelerated idioventricular rhythm: history and chronology of the main discoveries. Indian Pacing Electrophysiol J. 2010.", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2803604/" },
+      { id: "kim-cocaine", citation: "Kim ST, Park T. Acute and chronic effects of cocaine on cardiovascular health. Int J Mol Sci. 2019.", url: "https://doi.org/10.3390/ijms20030584" }
     ],
     reviewed: false,
     author: AUTHOR,
-    version: 1
+    version: 3
   },
   {
     id: "arrhythmia-29",
@@ -1551,191 +1403,114 @@ export const ARRHYTHMIA_S24: Samp[] = [
   {
     id: "arrhythmia-31",
     topic: "arrhythmia",
-    title: "Pulled from a backyard pool",
-    stem: "A 4-year-old boy is brought to the emergency department by ambulance after being pulled from a backyard pool in July. He was underwater for an estimated 5 minutes. His father started CPR and paramedics found asystole. After ventilation, CPR and one dose of epinephrine, he had return of spontaneous circulation 12 minutes after rescue. He is now intubated and does not respond to pain. His pupils are 3 mm and sluggish. There are no signs of trauma. Glucose is 8.1 mmol/L.",
-    vitals: {
-      temperature: "35.9°C rectal",
-      pulse: "132/minute",
-      resp: "24/minute",
-      bp: "94/58 mmHg",
-      o2sat: "99% on FiO2 0.5",
-      weight: "17 kg"
-    },
+    title: "Seizure during a forearm block",
+    stem: "A 34-year-old woman is in the emergency department for reduction of a distal radius fracture under an intravenous regional (Bier) block. She weighs 60 kg. She received lidocaine 0.5% 40 mL, which is 200 mg, into the arm with the tourniquet inflated. Five minutes later the tourniquet failed and deflated. She reported numbness around her mouth and ringing in her ears, then had a generalized seizure, followed by ventricular fibrillation. She received CPR, two shocks and midazolam, and had return of spontaneous circulation after 8 minutes.\n\nShe is intubated and does not respond to voice or pain. Her pupils are reactive.",
+    vitals: { temperature: "36.4°C core", pulse: "112/minute", resp: "14/minute", bp: "104/62 mmHg", o2sat: "98% on FiO2 0.5", weight: "60 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following is the most likely mechanism of his cardiac arrest?",
-        options: [
-          "Cervical spine injury from a dive",
-          "Congenital long QT syndrome",
-          "Hypoxemia from submersion",
-          "Primary ventricular fibrillation",
-          "Reflex asystole from cold water"
-        ],
-        correct: 2,
-        explanation: "Drowning causes cardiac arrest mainly through hypoxemia, which progresses to bradycardia, pulseless electrical activity and asystole, the rhythm paramedics found. Primary ventricular fibrillation and an arrhythmia from long QT syndrome would more often present with a shockable rhythm. Reflex asystole from cold water is unlikely in a backyard pool in July. He has no signs of trauma to suggest a spine injury.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 5
-        },
-        source: "aha-pals"
+        prompt: "Which of the following most likely caused her cardiac arrest?",
+        options: ["Air embolism from the IV", "Anaphylaxis to lidocaine", "Fat embolism from the fracture", "Local anesthetic toxicity", "Vasovagal reaction to pain"],
+        correct: 3,
+        explanation:
+          "Early tourniquet failure released lidocaine into her circulation, and perioral numbness and ringing in the ears followed by a seizure and then ventricular fibrillation is the typical sequence of local anesthetic systemic toxicity. Intravenous regional anesthesia carries a real risk of this complication, which can occur even with the tourniquet inflated and up to 30 minutes after it is released. Anaphylaxis would bring hives, wheeze or hypotension rather than a neurologic prodrome and a seizure first. Fat embolism, air embolism from a peripheral IV and a vasovagal reaction do not explain perioral numbness, tinnitus and a seizure minutes after the tourniquet failed.",
+        keyFeature: { topic: "arrhythmia", n: 5 },
+        source: "elboghdadly-last"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is the most appropriate approach to his temperature over the next days?",
-        options: [
-          "Continuous core monitoring and fever prevention",
-          "Cooling only if seizures occur",
-          "Hourly axillary checks and fever treatment",
-          "Passive rewarming then routine checks",
-          "No temperature targeting in children"
-        ],
-        correct: 0,
-        explanation: "In children who remain comatose after return of circulation, core temperature should be measured continuously and fever prevented, with a controlled target chosen by the treating team. Hourly axillary checks are less accurate and can miss fever between readings. Passive rewarming followed by routine checks, and cooling only for seizures, both leave fever uncontrolled. Temperature control applies to comatose children as well as adults.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 8
-        },
-        source: "aha-pals"
+        prompt: "Which of the following is the most appropriate temperature plan for her?",
+        options: ["Active warming to 38°C", "Allow fever to reveal infection", "Control between 32 and 37.5°C", "Cool to 30°C for 24 hours", "No control, as the cause is reversible"],
+        correct: 2,
+        explanation:
+          "She does not respond to voice after return of circulation, and the 2025 guideline recommends deliberate temperature control between 32 and 37.5°C for adults who do not follow commands after cardiac arrest, whatever the cause of the arrest. A reversible cause does not remove the brain injury from 8 minutes of low flow. Allowing a fever is the opposite of temperature control and is not a way to look for infection. Cooling to 30°C is below the recommended range, and warming to 38°C is above it.",
+        keyFeature: { topic: "arrhythmia", n: 8 },
+        source: "aha-post-arrest-2025"
       },
       {
         id: "q3",
         kind: "single",
-        update: "Before transfer, his pulse falls to 48/minute and his BP to 60/34 mmHg, with mottled skin, while he is ventilated with 100% oxygen and the tube position is confirmed.",
-        prompt: "Which of the following is the most appropriate immediate treatment?",
-        options: [
-          "atropine 0.34 mg IV",
-          "Chest compressions",
-          "epinephrine 1.7 mg IV",
-          "Observation on 100% oxygen",
-          "Transcutaneous pacing"
-        ],
-        correct: 1,
-        explanation: "In a child, a heart rate below 60/minute with poor perfusion despite effective oxygenation and ventilation calls for chest compressions, followed by epinephrine 0.01 mg/kg IV, which is 0.17 mg for 17 kg. Epinephrine 1.7 mg is ten times that dose. Atropine 0.02 mg/kg (0.34 mg) is for bradycardia from vagal tone or primary AV block, and this bradycardia is hypoxic-ischemic. Pacing rarely helps hypoxic bradycardia in children, and observation alone allows arrest.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 4
-        },
-        source: "aha-pals"
+        update: "Thirty minutes later she has frequent runs of monomorphic ventricular tachycardia lasting 5 to 10 seconds. Her BP stays about 104/62 mmHg. Specific treatment for the cause of her arrest has been started.",
+        prompt: "Which of the following is the most appropriate antiarrhythmic for her?",
+        options: ["amiodarone 150 mg IV", "diltiazem 20 mg IV", "lidocaine 100 mg IV", "metoprolol 5 mg IV", "procainamide 20 mg/minute IV"],
+        correct: 0,
+        explanation:
+          "Treatment of arrhythmias in local anesthetic toxicity differs from standard advanced life support. The American Society of Regional Anesthesia checklist lists local anesthetics, beta blockers, calcium channel blockers and vasopressin as drugs to avoid, so lidocaine, metoprolol and diltiazem are all wrong choices. Procainamide blocks the same sodium channels as lidocaine and adds to the toxicity. Amiodarone is the only option here that is not on that list, and lipid emulsion, 1.5 mL/kg as a bolus, which is 90 mL for her 60 kg, then an infusion, continues alongside it.",
+        keyFeature: { topic: "arrhythmia", n: 4 },
+        source: "asra-last"
       }
     ],
     sources: [
-      {
-        id: "aha-pals",
-        citation: "American Heart Association and American Academy of Pediatrics. Part 8. Pediatric advanced life support. 2025 Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2025.",
-        url: "https://www.ahajournals.org/doi/10.1161/CIR.0000000000001368"
-      }
+      { id: "asra-last", citation: "Neal JM, Neal EJ, Weinberg GL. American Society of Regional Anesthesia and Pain Medicine local anesthetic systemic toxicity checklist: 2020 version. Reg Anesth Pain Med. 2021.", url: "https://doi.org/10.1136/rapm-2020-101986" },
+      { id: "elboghdadly-last", citation: "El-Boghdadly K, Pawa A, Chin KJ. Local anesthetic systemic toxicity: current perspectives. Local Reg Anesth. 2018.", url: "https://doi.org/10.2147/LRA.S154512" },
+      { id: "aha-post-arrest-2025", citation: "Hirsch KG, Amorim E, Coppler PJ, and colleagues. Part 11. Post-cardiac arrest care. 2025 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care. Circulation. 2025.", url: "https://doi.org/10.1161/CIR.0000000000001375" }
     ],
     reviewed: false,
     author: AUTHOR,
-    version: 1
+    version: 2
   },
   {
     id: "arrhythmia-32",
     topic: "arrhythmia",
-    title: "Faint when the alarm rang",
-    stem: "A 15-year-old girl is brought to the emergency department by her mother after fainting at home this morning. Her alarm clock went off, she sat up, felt her heart pound and collapsed. Her mother saw a few jerks of her arms, and she was awake and oriented within 30 seconds. She fainted once last year when the fire alarm sounded at school. She takes no medications. Her examination is normal. Her ECG shows sinus rhythm at 94 with notched, low-amplitude T waves in several leads. The measured QT interval is 420 ms and the RR interval is 0.64 seconds.",
-    vitals: {
-      pulse: "94/minute",
-      resp: "16/minute",
-      bp: "108/64 mmHg",
-      o2sat: "99% on room air",
-      weight: "52 kg"
-    },
+    title: "Fluttering spells while breastfeeding",
+    stem: "A 34-year-old woman presents to the emergency department after three spells today of sudden light-headedness and a fluttering heartbeat, each lasting a few seconds while she sat breastfeeding. She did not lose consciousness. She gave birth 5 weeks ago. Three weeks ago her family physician started domperidone 20 mg four times daily to increase her milk supply. For 2 days she has had vomiting and diarrhea. She also takes ferrous fumarate and a prenatal vitamin. No relative has died suddenly.\n\nShe is alert and her examination is normal. Potassium is 3.0 mmol/L and magnesium 0.64 mmol/L. Her ECG shows sinus rhythm at 58/minute, a PR interval of 164 ms, a QRS of 90 ms and a QTc of 552 ms, with T wave inversion in V1 only.",
+    vitals: { temperature: "36.9°C oral", pulse: "58/minute", resp: "16/minute", bp: "112/70 mmHg", o2sat: "99% on room air", weight: "64 kg" },
     questions: [
       {
         id: "q1",
         kind: "single",
-        prompt: "Which of the following features of her history most strongly suggests an arrhythmic cause of her faint?",
-        options: [
-          "A few jerks of her arms",
-          "Collapse triggered by a loud noise",
-          "Female sex at age 15",
-          "Recovery within 30 seconds",
-          "Syncope soon after sitting up"
-        ],
-        correct: 1,
-        explanation: "Two faints set off by a sudden loud noise, her alarm clock and a school fire alarm, are a recognized trigger for arrhythmia in long QT syndrome type 2. Brief jerking movements are common with any syncope and do not point to a seizure or to a particular cause. Quick recovery occurs in both reflex and arrhythmic syncope. Sitting up is a brief change in posture, not the prolonged standing that triggers orthostatic or reflex syncope, and her age and sex do not separate the causes.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 1
-        },
-        source: "esc-va"
+        prompt: "Which of the following findings on her ECG is the most important warning sign?",
+        options: ["Inverted T wave in V1 only", "PR interval of 164 ms", "QRS duration of 90 ms", "QTc of 552 ms", "Sinus rate of 58/minute"],
+        correct: 3,
+        explanation:
+          "A QTc above 500 ms is highly abnormal and carries a 2 to 3 fold higher risk of torsades de pointes, and her brief spells of light-headedness with a fluttering heartbeat may be self-limited runs of it. A PR interval of 164 ms and a QRS of 90 ms are normal, and T wave inversion confined to V1 is a normal finding. A slow sinus rate adds to the risk of torsades in a patient with a long QT but is not in itself a warning of a dangerous rhythm.",
+        keyFeature: { topic: "arrhythmia", n: 2 },
+        source: "drew-tdp"
       },
       {
         id: "q2",
         kind: "single",
-        prompt: "Which of the following is her QTc calculated with the Bazett formula?",
-        options: [
-          "420 ms",
-          "460 ms",
-          "480 ms",
-          "525 ms",
-          "656 ms"
-        ],
-        correct: 3,
-        explanation: "Bazett's formula divides the QT interval by the square root of the RR interval in seconds. The square root of 0.64 is 0.8, so her QTc is 420 divided by 0.8, or 525 ms. Reading the uncorrected QT of 420 ms underestimates it at a rate of 94. Dividing by 0.64 instead of its square root gives 656 ms. Values of 460 and 480 ms come from guessing the correction rather than calculating it.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 2
-        },
-        source: "esc-va"
+        prompt: "Which of the following is the most appropriate plan for her now?",
+        options: ["Admit with cardiac monitoring", "Discharge once vomiting settles", "Discharge with a Holter monitor", "Outpatient echocardiogram", "Repeat ECG in 1 week"],
+        correct: 0,
+        explanation:
+          "Spells of light-headedness and palpitations with a QTc of 552 ms, low potassium and low magnesium put her at risk of torsades de pointes, so she needs admission to a unit with continuous ECG monitoring while the culprit drug is stopped and her electrolytes are corrected. Discharge once the vomiting settles, a Holter monitor, an outpatient echocardiogram or a repeat ECG next week would leave her unmonitored while the risk is highest.",
+        keyFeature: { topic: "arrhythmia", n: 1 },
+        source: "drew-tdp"
       },
       {
         id: "q3",
         kind: "single",
-        prompt: "Which of the following is the most appropriate medication to start after cardiology review?",
-        options: [
-          "amiodarone",
-          "flecainide",
-          "mexiletine",
-          "nadolol",
-          "verapamil"
-        ],
+        prompt: "Which of the following is the most appropriate change to her domperidone?",
+        options: ["Continue at the same dose", "Continue once potassium is normal", "Reduce to 10 mg three times daily", "Stop domperidone now", "Switch to 20 mg twice daily"],
         correct: 3,
-        explanation: "Beta blockers are the first treatment for congenital long QT syndrome with a prolonged QTc, and a nonselective, long-acting agent such as nadolol is preferred. Amiodarone prolongs the QT further and can provoke torsades de pointes. Flecainide and verapamil are not used to prevent arrhythmia in long QT syndrome. Mexiletine shortens the QT mainly in long QT syndrome type 3, not in the noise-triggered type 2 pattern she shows.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 6
-        },
-        source: "esc-va"
+        explanation:
+          "Domperidone is associated with serious abnormal heart rhythms and sudden death, it is contraindicated in patients with QT prolongation or significant electrolyte disturbances, and its recommended maximum is 30 mg a day, while she takes 80 mg a day. It should be stopped now. Reducing to 30 mg a day, switching to 40 mg a day or waiting for her potassium to recover all keep a contraindicated drug going in a patient with a QTc of 552 ms. Patients taking domperidone are advised to stop it and seek care if they have symptoms of an abnormal heart rhythm, as she has.",
+        keyFeature: { topic: "arrhythmia", n: 6 },
+        source: "hc-domperidone"
       },
       {
         id: "q4",
-        kind: "menu",
-        prompt: "Which of the following advice is most appropriate while she awaits cardiology follow-up?",
-        options: [
-          "Avoid drugs that prolong the QT",
-          "Carry an epinephrine autoinjector",
-          "Remove loud alarms from the bedroom",
-          "Restrict dietary salt",
-          "Stop all exercise permanently",
-          "Take daily potassium supplements"
-        ],
-        select: 2,
-        correct: [
-          0,
-          2
-        ],
-        explanation: "Drugs that prolong the QT interval, such as some antibiotics, antiemetics and antipsychotics, can trigger torsades de pointes in long QT syndrome and should be avoided. Both of her faints followed sudden loud noises, so replacing loud alarms by her bed removes a known trigger for type 2 disease. Salt restriction and routine potassium supplements are not standard advice. An epinephrine autoinjector treats anaphylaxis, and a permanent ban on all exercise is not required before cardiology assessment.",
-        keyFeature: {
-          topic: "arrhythmia",
-          n: 6
-        },
-        source: "esc-va"
+        kind: "single",
+        update: "An hour later she has another spell, and a rhythm strip shows a 6-second run of polymorphic ventricular tachycardia with QRS complexes twisting around the baseline, starting after a pause. It ends on its own and she stays awake.",
+        prompt: "Which of the following treatments is most likely to make her rhythm worse?",
+        options: ["isoproterenol 2 mcg/minute IV", "magnesium sulfate 2 g IV", "potassium chloride 10 mmol/hour IV", "procainamide 15 mg/kg IV", "Temporary pacing at 90/minute"],
+        correct: 3,
+        explanation:
+          "Procainamide prolongs the QT, and antiarrhythmics of its kind cause torsades de pointes in 1 to 10% of patients who take them, so it can worsen this rhythm even though it is a usual drug for monomorphic ventricular tachycardia. Magnesium sulfate 2 g IV is the first treatment to stop torsades, whatever the serum magnesium. Potassium should be replaced. When torsades follows pauses, raising the heart rate above 70/minute with isoproterenol or temporary pacing suppresses it.",
+        keyFeature: { topic: "arrhythmia", n: 6 },
+        source: "drew-tdp"
       }
     ],
     sources: [
-      {
-        id: "esc-va",
-        citation: "Zeppenfeld K, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J. 2022."
-      }
+      { id: "drew-tdp", citation: "Drew BJ, Ackerman MJ, Funk M, and colleagues. Prevention of torsade de pointes in hospital settings: a scientific statement from the American Heart Association and the American College of Cardiology Foundation. Circulation. 2010.", url: "https://doi.org/10.1161/CIRCULATIONAHA.109.192704" },
+      { id: "hc-domperidone", citation: "Health Canada. Domperidone maleate: association with serious abnormal heart rhythms and sudden death (cardiac arrest). Information update for health professionals. 2015.", url: "https://recalls-rappels.canada.ca/en/alert-recall/domperidone-maleate-association-serious-abnormal-heart-rhythms-and-sudden-death-1" }
     ],
     reviewed: false,
     author: AUTHOR,
-    version: 1
+    version: 3
   },
   {
     id: "arrhythmia-33",
